@@ -1,9 +1,17 @@
 {
-  "status": "not_run",
-  "lastAttempt": null,
-  "lastSuccessfulUpdate": null,
+  "status": "partial",
+  "lastAttempt": "2026-07-30T03:13:56Z",
+  "lastSuccessfulUpdate": "2026-07-30T03:13:56Z",
   "eventsPublished": 0,
   "artistsConfigured": 50,
-  "sourcesChecked": 0,
-  "message": "The automated collector has not run yet."
+  "artistsMatchedOnTicketmaster": 0,
+  "officialEventsFound": 0,
+  "ticketmasterEventsFound": 0,
+  "sourcesChecked": 9,
+  "unmatchedArtists": [],
+  "errors": [
+    "Dee-1 official tour: Unable to retrieve https://www.dee1music.com/tour: HTTP Error 429: Too Many Requests",
+    "Ticketmaster is not configured. Add the TICKETMASTER_API_KEY repository secret for broader coverage."
+  ],
+  "message": "The site updated, but one or more sources need attention."
 }
