@@ -3,10 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>The Kingdom Circuit</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #080808;
+      color: #f4f1e8;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      padding: 60px 24px 35px;
+      text-align: center;
+      border-bottom: 1px solid #2b2b2b;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 42px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .tagline {
+      color: #c69a46;
+      margin-top: 12px;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 24px;
+    }
+
+    .empty {
+      padding: 50px 20px;
+      text-align: center;
+      border: 1px solid #333;
+      border-radius: 8px;
+      color: #aaa;
+    }
+
+    .event {
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+
+    .event h2 {
+      margin-top: 0;
+    }
+
+    .event a {
+      color: #c69a46;
+      font-weight: bold;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>The Kingdom Circuit</h1>
-  <p>Christian hip-hop shows, live and connected.</p>
+  <header>
+    <h1>The Kingdom Circuit</h1>
+    <div class="tagline">Christian hip-hop, live and connected.</div>
+  </header>
+
+  <main>
+    <h2>Upcoming Shows</h2>
+    <div id="events">Loading shows...</div>
+  </main>
+
+  <script>
+    fetch("./events.json")
+      .then(response => response.json())
+      .then(events => {
+        const container = document.getElementById("events");
+
+        if (!events.length) {
+          container.innerHTML =
+            '<div class="empty">No upcoming shows have been added yet.</div>';
+          return;
+        }
+
+        container.innerHTML = events.map(event => `
+          <article class="event">
+            <h2>${event.title}</h2>
+            <p>${event.date}${event.time ? " · " + event.time : ""}</p>
+            <p>${event.venue} · ${event.city}, ${event.state}</p>
+            <p>${event.artists.join(", ")}</p>
+            <a href="${event.ticketUrl}" target="_blank" rel="noopener">
+              Official Tickets
+            </a>
+          </article>
+        `).join("");
+      })
+      .catch(() => {
+        document.getElementById("events").innerHTML =
+          '<div class="empty">Unable to load shows.</div>';
+      });
+  </script>
 </body>
 </html>
