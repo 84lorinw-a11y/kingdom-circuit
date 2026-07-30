@@ -1,13 +1,13 @@
 {
   "status": "ok",
-  "lastAttempt": "2026-07-30T05:22:48Z",
-  "lastSuccessfulUpdate": "2026-07-30T05:22:48Z",
+  "lastAttempt": "2026-07-30T17:00:43Z",
+  "lastSuccessfulUpdate": "2026-07-30T17:00:43Z",
   "eventsPublished": 105,
   "artistsConfigured": 58,
   "artistsMatchedOnTicketmaster": 40,
-  "officialEventsFound": 87,
+  "officialEventsFound": 86,
   "ticketmasterEventsFound": 55,
-  "sourcesChecked": 78,
+  "sourcesChecked": 77,
   "unmatchedArtists": [
     "Kieran the Light",
     "Childlike CiCi",
@@ -173,8 +173,8 @@
     },
     {
       "name": "Rural Music Festival official event",
-      "status": "ok",
-      "eventsFound": 1
+      "status": "warning",
+      "eventsFound": 0
     },
     {
       "name": "NF official tour",
@@ -273,6 +273,7 @@
     }
   ],
   "warnings": [
+    "Rural Music Festival official event: Unable to retrieve https://www.ruralmusic.org/event-details/rural-music-festival-2026: HTTP Error 429: Too Many Requests",
     "NF Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11969355-nf: HTTP Error 403: Forbidden",
     "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
     "Mike Malagies Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15593996-mike-malagies: HTTP Error 403: Forbidden",
