@@ -1,17 +1,31 @@
 {
   "status": "partial",
-  "lastAttempt": "2026-07-30T03:13:56Z",
-  "lastSuccessfulUpdate": "2026-07-30T03:13:56Z",
-  "eventsPublished": 0,
+  "lastAttempt": "2026-07-30T03:45:25Z",
+  "lastSuccessfulUpdate": "2026-07-30T03:45:25Z",
+  "eventsPublished": 40,
   "artistsConfigured": 50,
-  "artistsMatchedOnTicketmaster": 0,
+  "artistsMatchedOnTicketmaster": 36,
   "officialEventsFound": 0,
-  "ticketmasterEventsFound": 0,
-  "sourcesChecked": 9,
-  "unmatchedArtists": [],
+  "ticketmasterEventsFound": 55,
+  "sourcesChecked": 45,
+  "unmatchedArtists": [
+    "Kieran the Light",
+    "Childlike CiCi",
+    "Red Tips",
+    "Scootie Wop",
+    "Beacon Light",
+    "C4 Crotona",
+    "Parris Chariz",
+    "J. Monty",
+    "Mogli the Iceburg",
+    "Q-Flo",
+    "Gavin the HotRod",
+    "Nathan Davis Jr.",
+    "Tommy Royale",
+    "Alexxander"
+  ],
   "errors": [
-    "Dee-1 official tour: Unable to retrieve https://www.dee1music.com/tour: HTTP Error 429: Too Many Requests",
-    "Ticketmaster is not configured. Add the TICKETMASTER_API_KEY repository secret for broader coverage."
+    "Dee-1 official tour: Unable to retrieve https://www.dee1music.com/tour: HTTP Error 429: Too Many Requests"
   ],
   "message": "The site updated, but one or more sources need attention."
 }
