@@ -1,31 +1,15 @@
 {
-  "status": "partial",
-  "lastAttempt": "2026-07-30T04:05:22Z",
-  "lastSuccessfulUpdate": "2026-07-30T04:05:22Z",
-  "eventsPublished": 40,
-  "artistsConfigured": 50,
-  "artistsMatchedOnTicketmaster": 36,
+  "status": "ready",
+  "lastAttempt": "2026-07-30T04:54:33Z",
+  "lastSuccessfulUpdate": "2026-07-30T04:54:33Z",
+  "eventsPublished": 7,
+  "artistsConfigured": 58,
   "officialEventsFound": 0,
-  "ticketmasterEventsFound": 55,
-  "sourcesChecked": 45,
-  "unmatchedArtists": [
-    "Kieran the Light",
-    "Childlike CiCi",
-    "Red Tips",
-    "Scootie Wop",
-    "Beacon Light",
-    "C4 Crotona",
-    "Parris Chariz",
-    "J. Monty",
-    "Mogli the Iceburg",
-    "Q-Flo",
-    "Gavin the HotRod",
-    "Nathan Davis Jr.",
-    "Tommy Royale",
-    "Alexxander"
-  ],
-  "errors": [
-    "Dee-1 official tour: Unable to retrieve https://www.dee1music.com/tour: HTTP Error 429: Too Many Requests"
-  ],
-  "message": "The site updated, but one or more sources need attention."
+  "ticketmasterEventsFound": 0,
+  "sourcesChecked": 0,
+  "unmatchedArtists": [],
+  "sourceResults": [],
+  "warnings": [],
+  "errors": [],
+  "message": "Package ready. Commit it to run the full live collector."
 }

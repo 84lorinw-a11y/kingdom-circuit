@@ -1,49 +1,53 @@
 # The Kingdom Circuit
 
-A free GitHub Pages website and scheduled event collector for U.S.-based Christian hip-hop shows.
+A free GitHub Pages website and scheduled collector for U.S. Christian hip-hop shows.
 
-## What is included
+## Included in this build
 
-- Responsive black, cream, and gold event website
-- Search, artist, state, and event-type filters
-- Registry of 50 Christian hip-hop artists
-- Daily GitHub Actions automation
-- Official-site Schema.org event extraction
-- Optional Ticketmaster Discovery API integration
-- Duplicate detection and U.S.-only filtering
-- Automatic event sorting, status display, and source links
-- GitHub show-submission form
+- 58 tracked artists
+- 49 approved source feeds
+- Daily GitHub Actions updates
+- Ticketmaster Discovery API integration
+- Reach Records consolidated and artist calendars
+- Holy Culture, ChristianHits shows, and ChristianHits festival monitoring
+- TPR Live, Awakening Events, and official artist tour pages
+- Holy Smoke, Space City Fest, Rural Music Festival, Uprise Festival, OneFest, and Off The Charts coverage
+- NF, Mike Malagies, Social Club Misfits, and Reflection Music Group monitoring
+- Duplicate removal, U.S.-only filtering, and stale-event protection
+- Search and filters for artist, state, event type, date, and free events
 
-## How the automation works
+## Verified fallback events
 
-Every day, GitHub Actions runs `scripts/update_events.py`. The collector:
+`config/manual-events.json` contains seven source-backed listings that are retained even when a site blocks automated retrieval:
 
-1. Checks approved official artist and label pages for structured event data.
-2. Checks Ticketmaster for exact artist matches when `TICKETMASTER_API_KEY` is configured.
-3. Excludes parking passes, add-ons, non-U.S. listings, and past events.
-4. Merges duplicates and writes the final list to `events.json`.
-5. Deploys the refreshed site to GitHub Pages.
+- Holy Smoke 2026
+- OneFest 2026
+- Off The Charts Music Festival 2026
+- Konnect Concert Series
+- Rural Music Festival 2026
+- Uprise Festival 2026
+- Space City Fest 2026
 
-No paid AI model is required. This is a free scheduled collector. It is intentionally conservative: it publishes only high-confidence structured listings rather than guessing from social posts or flyers.
+## How it works
 
-## First-time setup
+Each day, `.github/workflows/update-and-deploy.yml` runs `scripts/update_events.py`. The collector checks the approved source registry, queries Ticketmaster, removes past and duplicate records, writes `events.json`, and deploys the site.
 
-Follow [`SETUP-CHECKLIST.md`](SETUP-CHECKLIST.md).
+No paid AI service is required. The system uses free scheduled automation and conservative extraction rules.
 
 ## Important files
 
 - `config/artists.json` — tracked artists and aliases
-- `config/official-sources.json` — approved official pages
-- `config/manual-events.json` — optional verified events not found automatically
-- `events.json` — generated public show list
-- `run-status.json` — latest collector status
+- `config/official-sources.json` — approved source registry
+- `config/manual-events.json` — verified fallback events
 - `scripts/update_events.py` — collection and deduplication logic
+- `events.json` — generated public event list
+- `run-status.json` — latest run diagnostics
 - `.github/workflows/update-and-deploy.yml` — daily schedule and deployment
 
-## Ticketmaster coverage
+## Ticketmaster key
 
-Ticketmaster's Discovery API is optional but recommended. Add the API key as a GitHub repository secret named `TICKETMASTER_API_KEY`. Do not paste it into code or commit it to the repository.
+The repository secret must remain named `TICKETMASTER_API_KEY`. Never place the key in a public file.
 
 ## Limitations
 
-No single event source covers every Christian hip-hop show. Official pages that do not expose structured event data may require a future source-specific connector. Social platforms are not scraped. Review the Actions log periodically for source errors or unmatched artists.
+No source covers every show. Social posts and image-only flyers are not auto-published because they are difficult to verify reliably. The manual fallback file is used for important verified events that are poorly structured online.

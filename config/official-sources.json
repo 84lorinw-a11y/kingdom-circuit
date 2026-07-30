@@ -1,62 +1,498 @@
 [
   {
+    "name": "Reach Records consolidated calendar",
+    "url": "https://www.reachrecords.com/events/",
+    "parser": "reach_records",
+    "priority": 92,
+    "enabled": true
+  },
+  {
+    "name": "Reach Records - 1K Phew",
+    "url": "https://www.reachrecords.com/artists/1k-phew/",
+    "parser": "reach_records",
+    "artist": "1K Phew",
+    "priority": 90,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Reach Records - Alexxander",
+    "url": "https://www.reachrecords.com/artists/alexxander/",
+    "parser": "reach_records",
+    "artist": "Alexxander",
+    "priority": 90,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Reach Records - Anike",
+    "url": "https://www.reachrecords.com/artists/wande/",
+    "parser": "reach_records",
+    "artist": "Anike",
+    "priority": 90,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Reach Records - Hulvey",
+    "url": "https://www.reachrecords.com/artists/hulvey/",
+    "parser": "reach_records",
+    "artist": "Hulvey",
+    "priority": 90,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Reach Records - Jackie Hill Perry",
+    "url": "https://www.reachrecords.com/artists/jackie-hill-perry/",
+    "parser": "reach_records",
+    "artist": "Jackie Hill Perry",
+    "priority": 90,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Reach Records - Lecrae",
+    "url": "https://www.reachrecords.com/artists/lecrae/",
+    "parser": "reach_records",
+    "artist": "Lecrae",
+    "priority": 90,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Reach Records - Limoblaze",
+    "url": "https://www.reachrecords.com/artists/limoblaze/",
+    "parser": "reach_records",
+    "artist": "Limoblaze",
+    "priority": 90,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Reach Records - Tedashii",
+    "url": "https://www.reachrecords.com/artists/tedashii/",
+    "parser": "reach_records",
+    "artist": "Tedashii",
+    "priority": 90,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Reach Records - Trip Lee",
+    "url": "https://www.reachrecords.com/artists/trip-lee/",
+    "parser": "reach_records",
+    "artist": "Trip Lee",
+    "priority": 90,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Reach Records - WHATUPRG",
+    "url": "https://www.reachrecords.com/artists/whatuprg/",
+    "parser": "reach_records",
+    "artist": "WHATUPRG",
+    "priority": 90,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Holy Smoke official festival",
+    "url": "https://indietribe.us/",
+    "parser": "holy_smoke",
+    "lineupUrl": "https://rapzilla.com/2026-05-holy-smoke-announces-2026-lineup/",
+    "artists": [
+      "indie tribe.",
+      "nobigdyl.",
+      "Torey D'Shaun",
+      "Jon Keith",
+      "Mogli the Iceburg",
+      "DJ Mykael V",
+      "Hulvey",
+      "Jackie Hill Perry",
+      "Miles Minnick",
+      "Social Club Misfits",
+      "Parris Chariz",
+      "LaNell Grant",
+      "Tommy Zuko",
+      "C4 Crotona"
+    ],
+    "venue": "Rocketown",
+    "address": "601 4th Ave S",
+    "city": "Nashville",
+    "state": "TN",
+    "priority": 100,
+    "enabled": true
+  },
+  {
+    "name": "Space City Fest - Discovery Green",
+    "url": "https://www.discoverygreen.com/event/space-city-church/october-25-2026-400-pm/",
+    "parser": "space_city",
+    "eventTitle": "Space City Fest",
+    "venue": "Discovery Green - Anheuser-Busch Stage",
+    "address": "1600 McKinney St",
+    "city": "Houston",
+    "state": "TX",
+    "startTime": "16:00",
+    "price": "Free",
+    "artists": [
+      "Lecrae"
+    ],
+    "priority": 100,
+    "enabled": true
+  },
+  {
+    "name": "Space City Fest official organizer",
+    "url": "https://www.spacecitychurch.com/spacecityfest",
+    "parser": "space_city",
+    "eventTitle": "Space City Fest",
+    "venue": "Discovery Green - Anheuser-Busch Stage",
+    "address": "1600 McKinney St",
+    "city": "Houston",
+    "state": "TX",
+    "startTime": "16:00",
+    "price": "Free",
+    "artists": [
+      "Lecrae"
+    ],
+    "priority": 98,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Holy Culture CHH calendar",
+    "url": "https://holyculture.net/events/",
+    "parser": "holy_culture",
+    "maxPages": 35,
+    "priority": 55,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "TPR - Caleb Gordon Eden Experience",
+    "url": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+    "parser": "tpr",
+    "eventTitle": "Caleb Gordon - The Eden Experience",
+    "artists": [
+      "Caleb Gordon"
+    ],
+    "priority": 82,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "TPR - Forrest Frank Jesus Generation Tour",
+    "url": "https://tprlive.co/collections/forrest-frank-the-jesus-generation-tour",
+    "parser": "tpr",
+    "eventTitle": "Forrest Frank: The Jesus Generation Tour",
+    "artists": [
+      "Forrest Frank"
+    ],
+    "priority": 82,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "TPR - Lecrae Reconstruction World Tour",
+    "url": "https://tprlive.co/collections/lecrae-reconstruction-world-tour",
+    "parser": "tpr",
+    "eventTitle": "Lecrae - Reconstruction World Tour",
+    "artists": [
+      "Lecrae"
+    ],
+    "priority": 82,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "TPR - KB Signal Tour",
+    "url": "https://tprlive.co/collections/kb-the-signal-tour",
+    "parser": "tpr",
+    "eventTitle": "KB - The Signal Tour",
+    "artists": [
+      "KB"
+    ],
+    "priority": 82,
+    "softFail": true,
+    "enabled": true
+  },
+  {
     "name": "KB official tour",
     "url": "https://www.whoiskb.com/tour/",
     "artist": "KB",
+    "priority": 90,
+    "softFail": true,
     "enabled": true
   },
   {
     "name": "Andy Mineo official tour",
     "url": "https://andymineo.com/tour/",
     "artist": "Andy Mineo",
+    "priority": 90,
+    "softFail": true,
     "enabled": true
   },
   {
     "name": "nobigdyl. official shows",
     "url": "https://www.dyllie.com/shows",
     "artist": "nobigdyl.",
+    "priority": 90,
+    "softFail": true,
     "enabled": true
   },
   {
     "name": "Forrest Frank official tour",
     "url": "https://forrestfrank.com/pages/tour",
     "artist": "Forrest Frank",
+    "priority": 90,
+    "softFail": true,
     "enabled": true
   },
   {
-    "name": "Reach Records events",
-    "url": "https://www.reachrecords.com/events/",
-    "artist": null,
-    "enabled": true
-  },
-  {
-    "name": "indie tribe. official site",
-    "url": "https://indietribe.us/",
-    "artist": "indie tribe.",
+    "name": "Miles Minnick official tour",
+    "url": "https://milesminnick.com/tour",
+    "parser": "bandsintown_widget",
+    "artist": "Miles Minnick",
+    "priority": 85,
+    "softFail": true,
     "enabled": true
   },
   {
     "name": "Zauntee official tour",
     "url": "https://www.zauntee.com/tour",
     "artist": "Zauntee",
-    "enabled": true
-  },
-  {
-    "name": "Jackie Hill Perry official site",
-    "url": "https://www.jackiehillperry.com/",
-    "artist": "Jackie Hill Perry",
-    "enabled": true
-  },
-  {
-    "name": "Dee-1 official tour",
-    "url": "https://www.dee1music.com/tour",
-    "artist": "Dee-1",
+    "priority": 90,
+    "softFail": true,
     "enabled": true
   },
   {
     "name": "Derek Minor official site",
     "url": "https://derekminor.com/",
     "artist": "Derek Minor",
+    "priority": 90,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Awakening Events calendar",
+    "url": "https://www.awakeningevents.com/shows",
+    "priority": 60,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "ChristianHits consolidated show feed",
+    "url": "https://christianhits.net/shows.php",
+    "parser": "christian_hits",
+    "priority": 58,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "ChristianHits and ChristianRock festival directory",
+    "url": "https://www.christianhits.net/festivals.php",
+    "parser": "christian_festivals",
+    "priority": 62,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Rural Music Festival official event",
+    "url": "https://www.ruralmusic.org/event-details/rural-music-festival-2026",
+    "parser": "rural_festival",
+    "eventTitle": "Rural Music Festival 2026",
+    "venue": "Redemption Hill",
+    "address": "43694 State Hwy 47",
+    "city": "Isle",
+    "state": "MN",
+    "price": "Free",
+    "artists": [
+      "Social Club Misfits",
+      "Rare of Breed"
+    ],
+    "priority": 102,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "NF official tour",
+    "url": "https://www.nfrealmusic.com/tour/",
+    "artist": "NF",
+    "priority": 94,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "NF Bandsintown public calendar",
+    "url": "https://www.bandsintown.com/a/11969355-nf",
+    "parser": "bandsintown_public",
+    "artist": "NF",
+    "priority": 72,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Mike Malagies official events",
+    "url": "https://www.mikemalagiesofficial.com/event-list",
+    "parser": "wix_event_list",
+    "artist": "Mike Malagies",
+    "priority": 94,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Mike Malagies Bandsintown public calendar",
+    "url": "https://www.bandsintown.com/a/15593996-mike-malagies",
+    "parser": "bandsintown_public",
+    "artist": "Mike Malagies",
+    "priority": 72,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Canon official site",
+    "url": "https://www.getthecanon.com/",
+    "artist": "Canon",
+    "priority": 92,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Parris Chariz Bandsintown public calendar",
+    "url": "https://www.bandsintown.com/a/14726057-parris-chariz",
+    "parser": "bandsintown_public",
+    "artist": "Parris Chariz",
+    "priority": 74,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Torey D'Shaun Bandsintown public calendar",
+    "url": "https://www.bandsintown.com/a/14363770-torey-d%27shaun",
+    "parser": "bandsintown_public",
+    "artist": "Torey D'Shaun",
+    "priority": 72,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Derek Minor Bandsintown public calendar",
+    "url": "https://www.bandsintown.com/a/12211056-derek-minor",
+    "parser": "bandsintown_public",
+    "artist": "Derek Minor",
+    "priority": 72,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Byron Juane Bandsintown public calendar",
+    "url": "https://www.bandsintown.com/a/14690526-byron-juane",
+    "parser": "bandsintown_public",
+    "artist": "Byron Juane",
+    "priority": 72,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Trendsetter Sense official events",
+    "url": "https://www.trendsettersense.com/event-list",
+    "parser": "wix_event_list",
+    "artist": "Trendsetter Sense",
+    "priority": 90,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Social Club Misfits Bandsintown public calendar",
+    "url": "https://www.bandsintown.com/a/13345973-social-club-misfits",
+    "parser": "bandsintown_public",
+    "artist": "Social Club Misfits",
+    "priority": 72,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Konnect Concert Series - Space City Church",
+    "url": "https://www.eventbrite.com/e/konnect-concert-series-tickets-1986784128812",
+    "artists": [
+      "1K Phew",
+      "Parris Chariz"
+    ],
+    "priority": 96,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Uprise Festival official 2026 page",
+    "url": "https://www.uprisefest.com/uprise-2026",
+    "artists": [
+      "1K Phew",
+      "Anike",
+      "Hulvey",
+      "KB",
+      "Miles Minnick",
+      "nobigdyl."
+    ],
+    "priority": 94,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Off The Charts official schedule",
+    "url": "https://www.offthechartsnd.com/schedule",
+    "artists": [
+      "gio."
+    ],
+    "priority": 92,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "OneFest official 2026 tickets",
+    "url": "https://onefest-ltd-3zxb.vivenushop.com/event/onefest-2026-shtq5k",
+    "artists": [
+      "Aaron Cole"
+    ],
+    "priority": 92,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Reflection Music Group official roster",
+    "url": "https://rmgforever.com/",
+    "artists": [
+      "Canon",
+      "Parris Chariz",
+      "Torey D'Shaun",
+      "Trendsetter Sense",
+      "Derek Minor"
+    ],
+    "priority": 68,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Social Club Misfits official site",
+    "url": "https://socialclubmisfits.com/",
+    "artist": "Social Club Misfits",
+    "priority": 90,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "Canon official tour feed",
+    "url": "https://bnds.us/nyg2ta",
+    "artist": "Canon",
+    "priority": 78,
+    "softFail": true,
+    "enabled": true
+  },
+  {
+    "name": "350 official links",
+    "url": "https://linktr.ee/350music",
+    "artist": "350",
+    "priority": 60,
+    "softFail": true,
     "enabled": true
   }
 ]
