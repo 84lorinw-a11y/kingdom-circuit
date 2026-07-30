@@ -1,15 +1,290 @@
 {
-  "status": "ready",
-  "lastAttempt": "2026-07-30T04:54:33Z",
-  "lastSuccessfulUpdate": "2026-07-30T04:54:33Z",
-  "eventsPublished": 7,
+  "status": "ok",
+  "lastAttempt": "2026-07-30T05:22:48Z",
+  "lastSuccessfulUpdate": "2026-07-30T05:22:48Z",
+  "eventsPublished": 105,
   "artistsConfigured": 58,
-  "officialEventsFound": 0,
-  "ticketmasterEventsFound": 0,
-  "sourcesChecked": 0,
-  "unmatchedArtists": [],
-  "sourceResults": [],
-  "warnings": [],
+  "artistsMatchedOnTicketmaster": 40,
+  "officialEventsFound": 87,
+  "ticketmasterEventsFound": 55,
+  "sourcesChecked": 78,
+  "unmatchedArtists": [
+    "Kieran the Light",
+    "Childlike CiCi",
+    "Red Tips",
+    "Scootie Wop",
+    "Beacon Light",
+    "C4 Crotona",
+    "Parris Chariz",
+    "J. Monty",
+    "Mogli the Iceburg",
+    "Q-Flo",
+    "Gavin the HotRod",
+    "Nathan Davis Jr.",
+    "Tommy Royale",
+    "Alexxander",
+    "Mike Malagies"
+  ],
+  "sourceResults": [
+    {
+      "name": "Reach Records consolidated calendar",
+      "status": "ok",
+      "eventsFound": 49
+    },
+    {
+      "name": "Reach Records - 1K Phew",
+      "status": "ok",
+      "eventsFound": 4
+    },
+    {
+      "name": "Reach Records - Alexxander",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "Reach Records - Anike",
+      "status": "ok",
+      "eventsFound": 4
+    },
+    {
+      "name": "Reach Records - Hulvey",
+      "status": "ok",
+      "eventsFound": 3
+    },
+    {
+      "name": "Reach Records - Jackie Hill Perry",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "Reach Records - Lecrae",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "Reach Records - Limoblaze",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "Reach Records - Tedashii",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "Reach Records - Trip Lee",
+      "status": "ok",
+      "eventsFound": 1
+    },
+    {
+      "name": "Reach Records - WHATUPRG",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "Holy Smoke official festival",
+      "status": "ok",
+      "eventsFound": 1
+    },
+    {
+      "name": "Space City Fest - Discovery Green",
+      "status": "ok",
+      "eventsFound": 1
+    },
+    {
+      "name": "Space City Fest official organizer",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "Holy Culture CHH calendar",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "TPR - Caleb Gordon Eden Experience",
+      "status": "ok",
+      "eventsFound": 8
+    },
+    {
+      "name": "TPR - Forrest Frank Jesus Generation Tour",
+      "status": "ok",
+      "eventsFound": 2
+    },
+    {
+      "name": "TPR - Lecrae Reconstruction World Tour",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "TPR - KB Signal Tour",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "KB official tour",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "Andy Mineo official tour",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "nobigdyl. official shows",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "Forrest Frank official tour",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "Miles Minnick official tour",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "Zauntee official tour",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "Derek Minor official site",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "Awakening Events calendar",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "ChristianHits consolidated show feed",
+      "status": "ok",
+      "eventsFound": 7
+    },
+    {
+      "name": "ChristianHits and ChristianRock festival directory",
+      "status": "ok",
+      "eventsFound": 5
+    },
+    {
+      "name": "Rural Music Festival official event",
+      "status": "ok",
+      "eventsFound": 1
+    },
+    {
+      "name": "NF official tour",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "NF Bandsintown public calendar",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "Mike Malagies official events",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "Mike Malagies Bandsintown public calendar",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "Canon official site",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "Parris Chariz Bandsintown public calendar",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "Torey D'Shaun Bandsintown public calendar",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "Derek Minor Bandsintown public calendar",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "Byron Juane Bandsintown public calendar",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "Trendsetter Sense official events",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "Social Club Misfits Bandsintown public calendar",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "Konnect Concert Series - Space City Church",
+      "status": "ok",
+      "eventsFound": 1
+    },
+    {
+      "name": "Uprise Festival official 2026 page",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "Off The Charts official schedule",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "OneFest official 2026 tickets",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "Reflection Music Group official roster",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "Social Club Misfits official site",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "Canon official tour feed",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "350 official links",
+      "status": "warning",
+      "eventsFound": 0
+    }
+  ],
+  "warnings": [
+    "NF Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11969355-nf: HTTP Error 403: Forbidden",
+    "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
+    "Mike Malagies Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15593996-mike-malagies: HTTP Error 403: Forbidden",
+    "Parris Chariz Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14726057-parris-chariz: HTTP Error 403: Forbidden",
+    "Torey D'Shaun Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14363770-torey-d%27shaun: HTTP Error 403: Forbidden",
+    "Derek Minor Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/12211056-derek-minor: HTTP Error 403: Forbidden",
+    "Byron Juane Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14690526-byron-juane: HTTP Error 403: Forbidden",
+    "Trendsetter Sense official events: Unable to retrieve https://www.trendsettersense.com/event-list: HTTP Error 429: Too Many Requests",
+    "Social Club Misfits Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/13345973-social-club-misfits: HTTP Error 403: Forbidden",
+    "Off The Charts official schedule: Unable to retrieve https://www.offthechartsnd.com/schedule: HTTP Error 429: Too Many Requests",
+    "350 official links: robots.txt does not allow automated retrieval"
+  ],
   "errors": [],
-  "message": "Package ready. Commit it to run the full live collector."
+  "message": "Show listings updated successfully."
 }
