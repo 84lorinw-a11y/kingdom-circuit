@@ -3,106 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>The Kingdom Circuit</title>
-
-  <style>
-    body {
-      margin: 0;
-      background: #080808;
-      color: #f4f1e8;
-      font-family: Arial, sans-serif;
-    }
-
-    header {
-      padding: 60px 24px 35px;
-      text-align: center;
-      border-bottom: 1px solid #2b2b2b;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 42px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-    }
-
-    .tagline {
-      color: #c69a46;
-      margin-top: 12px;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 24px;
-    }
-
-    .empty {
-      padding: 50px 20px;
-      text-align: center;
-      border: 1px solid #333;
-      border-radius: 8px;
-      color: #aaa;
-    }
-
-    .event {
-      border: 1px solid #333;
-      border-radius: 8px;
-      padding: 22px;
-      margin-bottom: 18px;
-    }
-
-    .event h2 {
-      margin-top: 0;
-    }
-
-    .event a {
-      color: #c69a46;
-      font-weight: bold;
-    }
-  </style>
+  <meta name="description" content="Discover upcoming Christian hip-hop concerts, festivals, and tour dates across the United States.">
+  <meta name="theme-color" content="#080808">
+  <title>The Kingdom Circuit | Christian Hip-Hop Shows</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
-
 <body>
-  <header>
-    <h1>The Kingdom Circuit</h1>
-    <div class="tagline">Christian hip-hop, live and connected.</div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./" aria-label="The Kingdom Circuit home">
+        <img src="assets/logo.png" alt="The Kingdom Circuit — Christian hip-hop, live and connected">
+      </a>
+      <a class="header-action" href="https://github.com/84lorinw-a11y/kingdom-circuit/issues/new?template=submit-show.yml" target="_blank" rel="noopener">
+        Submit a show
+      </a>
+    </div>
   </header>
 
   <main>
-    <h2>Upcoming Shows</h2>
-    <div id="events">Loading shows...</div>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Live event discovery</p>
+        <h1 id="hero-title">Never miss a Christian hip-hop show.</h1>
+        <p class="hero-text">Search upcoming concerts and festivals featuring 50 U.S.-based Christian hip-hop artists.</p>
+      </div>
+      <div class="update-card" aria-live="polite">
+        <span class="status-dot" id="status-dot"></span>
+        <div>
+          <span class="update-label">Calendar status</span>
+          <strong id="last-updated">Loading update status...</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="calendar" aria-labelledby="calendar-title">
+      <div class="calendar-heading">
+        <div>
+          <p class="eyebrow">Verified listings</p>
+          <h2 id="calendar-title">Upcoming shows</h2>
+        </div>
+        <p class="results-count" id="results-count">Loading shows...</p>
+      </div>
+
+      <form class="filters" id="filters" role="search">
+        <label class="field field-search">
+          <span>Search</span>
+          <input id="search-filter" type="search" placeholder="Artist, city, venue, or event" autocomplete="off">
+        </label>
+
+        <label class="field">
+          <span>Artist</span>
+          <select id="artist-filter">
+            <option value="">All artists</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>State</span>
+          <select id="state-filter">
+            <option value="">All states</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Type</span>
+          <select id="type-filter">
+            <option value="">All events</option>
+            <option value="concert">Concerts</option>
+            <option value="festival">Festivals</option>
+          </select>
+        </label>
+
+        <button class="reset-button" id="reset-filters" type="button">Clear filters</button>
+      </form>
+
+      <div id="notice" class="notice" hidden></div>
+      <div id="events" class="event-grid" aria-live="polite">
+        <div class="loading-card">Loading upcoming shows...</div>
+      </div>
+    </section>
   </main>
 
-  <script>
-    fetch("./events.json")
-      .then(response => response.json())
-      .then(events => {
-        const container = document.getElementById("events");
-
-        if (!events.length) {
-          container.innerHTML =
-            '<div class="empty">No upcoming shows have been added yet.</div>';
-          return;
-        }
-
-        container.innerHTML = events.map(event => `
-          <article class="event">
-            <h2>${event.title}</h2>
-            <p>${event.date}${event.time ? " · " + event.time : ""}</p>
-            <p>${event.venue} · ${event.city}, ${event.state}</p>
-            <p>${event.artists.join(", ")}</p>
-            <a href="${event.ticketUrl}" target="_blank" rel="noopener">
-              Official Tickets
-            </a>
-          </article>
-        `).join("");
-      })
-      .catch(() => {
-        document.getElementById("events").innerHTML =
-          '<div class="empty">Unable to load shows.</div>';
-      });
-  </script>
+  <footer class="site-footer">
+    <div>
+      <strong>The Kingdom Circuit</strong>
+      <p>Christian hip-hop, live and connected.</p>
+    </div>
+    <p class="disclaimer">Event details may change. Confirm final information with the official organizer or ticket seller before purchasing or traveling.</p>
+  </footer>
 </body>
 </html>
