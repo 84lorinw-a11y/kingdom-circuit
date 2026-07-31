@@ -1,15 +1,15 @@
 {
   "status": "ok",
   "collectorVersion": 2,
-  "lastAttempt": "2026-07-31T08:54:16Z",
-  "lastSuccessfulUpdate": "2026-07-31T08:54:16Z",
+  "lastAttempt": "2026-07-31T17:08:51Z",
+  "lastSuccessfulUpdate": "2026-07-31T17:08:51Z",
   "eventsPublished": 81,
-  "candidatesCollected": 172,
+  "candidatesCollected": 173,
   "artistsConfigured": 113,
   "artistsMatchedOnTicketmaster": 47,
-  "officialEventsFound": 87,
+  "officialEventsFound": 88,
   "ticketmasterEventsFound": 78,
-  "sourcesChecked": 85,
+  "sourcesChecked": 86,
   "unmatchedArtists": [
     "Kieran the Light",
     "Childlike CiCi",
@@ -43,7 +43,7 @@
     {
       "name": "Reach Records consolidated calendar",
       "status": "ok",
-      "eventsFound": 49
+      "eventsFound": 50
     },
     {
       "name": "Reach Records - 1K Phew",
@@ -132,7 +132,7 @@
     },
     {
       "name": "Off The Charts official schedule",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -287,7 +287,6 @@
     }
   ],
   "warnings": [
-    "Off The Charts official schedule: Unable to retrieve https://www.offthechartsnd.com/schedule: HTTP Error 429: Too Many Requests",
     "Zauntee official tour: Unable to retrieve https://www.zauntee.com/tour: HTTP Error 429: Too Many Requests",
     "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
     "Trendsetter Sense official events: Unable to retrieve https://www.trendsettersense.com/event-list: HTTP Error 429: Too Many Requests",
