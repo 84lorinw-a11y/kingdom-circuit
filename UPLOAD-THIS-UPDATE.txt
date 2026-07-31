@@ -1,9 +1,14 @@
-Your GitHub Pages and Ticketmaster setup are already complete.
+UPLOAD THE CONTENTS OF THIS FOLDER TO THE ROOT OF YOUR GITHUB REPOSITORY.
 
-1. Upload the visible files and folders from this package into the root of `kingdom-circuit`.
-2. Allow GitHub to replace files with the same names.
-3. Commit the upload to `main`.
-4. Open **Actions** and wait for **Update and deploy show calendar** to finish with a green check.
-5. Refresh the live site.
+Correct GitHub upload paths:
+  index.html
+  events.json
+  config/artists.json
+  scripts/update_events.py
 
-The hidden `.github` folder is included as a backup, but your existing workflow is already correct. You do not need to re-add the Ticketmaster key.
+Incorrect path:
+  UPLOAD_TO_REPOSITORY/index.html
+
+Commit directly to main, then wait for the Update and deploy show calendar Action to finish with a green check.
+
+Do not replace .github and do not re-enter the Ticketmaster key.

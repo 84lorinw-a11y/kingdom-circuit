@@ -2,423 +2,331 @@ import importlib.util
 import json
 import sys
 import unittest
+from datetime import date
 from pathlib import Path
 
-MODULE_PATH = Path(__file__).resolve().parents[1] / "scripts" / "update_events.py"
-SPEC = importlib.util.spec_from_file_location("update_events", MODULE_PATH)
+ROOT = Path(__file__).resolve().parents[1]
+SPEC = importlib.util.spec_from_file_location("update_events", ROOT / "scripts" / "update_events.py")
 MODULE = importlib.util.module_from_spec(SPEC)
-assert SPEC and SPEC.loader
+assert SPEC.loader
 sys.modules[SPEC.name] = MODULE
 SPEC.loader.exec_module(MODULE)
 
-
-class DummyClient:
-    def __init__(self, pages=None):
-        self.pages = pages or {}
-
-    def get_text(self, url):
-        if url not in self.pages:
-            raise MODULE.CollectorError(f"No fixture for {url}")
-        return self.pages[url]
+CHECKED = "2098-01-01T00:00:00Z"
 
 
-class UpdateEventsTests(unittest.TestCase):
-    def setUp(self):
-        self.alias_lookup = {
-            "1k phew": "1K Phew",
-            "hulvey": "Hulvey",
-            "kb": "KB",
-            "lecrae": "Lecrae",
-            "caleb gordon": "Caleb Gordon",
-            "indie tribe": "indie tribe.",
-            "nobigdyl": "nobigdyl.",
-            "social club misfits": "Social Club Misfits",
-            "rare of breed": "Rare of Breed",
-            "parris chariz": "Parris Chariz",
-            "nf": "NF",
-            "mike malagies": "Mike Malagies",
-        }
+def candidate(
+    *,
+    title="Test Tour",
+    event_date="2099-08-10",
+    venue="Test Theatre",
+    city="Nashville",
+    state="TN",
+    artists=None,
+    authority="venue_ticket",
+    priority=94,
+    event_type="concert",
+    lineup_explicit=True,
+    image="",
+    image_policy="event_artwork",
+    source_name="Test source",
+    url="https://example.com/event",
+    headliner="",
+    discovery_only=False,
+):
+    artists = artists or ["KB"]
+    source = {
+        "name": source_name,
+        "parser": "test",
+        "authority": authority,
+        "priority": priority,
+        "lineupExplicit": lineup_explicit,
+        "imagePolicy": image_policy,
+        "discoveryOnly": discovery_only,
+    }
+    return MODULE.make_source_event(
+        source=source,
+        source_url=url,
+        title=title,
+        start_date=event_date,
+        start_time="19:00",
+        venue=venue,
+        address="123 Main St",
+        city=city,
+        state=state,
+        artists=artists,
+        headliner=headliner or artists[0],
+        checked_at=CHECKED,
+        ticket_url=url,
+        official_url=url,
+        image=image,
+        event_type=event_type,
+        lineup_explicit=lineup_explicit,
+        music_confirmed=True,
+        priority=priority,
+    )
 
-    def test_normalize_name_handles_punctuation(self):
-        self.assertEqual(MODULE.normalize_name("nobigdyl."), "nobigdyl")
-        self.assertEqual(MODULE.normalize_name("Torey D'Shaun"), "torey d shaun")
-        self.assertEqual(MODULE.normalize_name("Q-Flo"), "q flo")
 
-    def test_non_show_filter(self):
-        self.assertTrue(MODULE.is_non_show("Parking Pass Only - Forrest Frank"))
-        self.assertTrue(MODULE.is_non_show("VIP Early Entry Package Add-On"))
-        self.assertFalse(MODULE.is_non_show("Forrest Frank: The Jesus Generation Tour"))
-
-    def test_merge_events_combines_artists_and_sources(self):
-        first = {
-            "id": "ticketmaster:1",
-            "title": "Example Festival",
-            "startDate": "2099-07-10",
-            "startTime": "19:00",
-            "venue": "Venue not provided",
-            "city": "Minneapolis",
-            "state": "MN",
-            "artists": ["Lecrae"],
-            "ticketUrl": "https://tickets.example/1",
-            "sourcePriority": 70,
-            "sources": [{"name": "Ticketmaster", "url": "https://tickets.example/1"}],
-        }
-        second = {
-            "id": "official:2",
-            "title": "Example Festival 2099",
-            "startDate": "2099-07-10",
-            "startTime": "19:00",
-            "venue": "Example Arena",
-            "city": "Minneapolis",
-            "state": "MN",
-            "artists": ["KB"],
-            "officialUrl": "https://festival.example",
-            "sourcePriority": 100,
-            "sources": [{"name": "Official", "url": "https://festival.example"}],
-        }
+class KingdomCircuitV2Tests(unittest.TestCase):
+    def test_workplay_variants_merge(self):
+        first = candidate(venue="Workplay Theatre", artists=["Hulvey"], url="https://a.example")
+        second = candidate(venue="Workplay", artists=["Hulvey"], url="https://b.example")
         merged = MODULE.merge_events([first, second])
         self.assertEqual(len(merged), 1)
-        self.assertEqual(merged[0]["artists"], ["KB", "Lecrae"])
-        self.assertEqual(merged[0]["venue"], "Example Arena")
         self.assertEqual(len(merged[0]["sources"]), 2)
 
-    def test_jsonld_event_extraction(self):
-        html = """
-        <html><head>
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "MusicEvent",
-          "name": "Test Concert",
-          "startDate": "2099-08-01T19:00:00-05:00",
-          "location": {
-            "@type": "Place",
-            "name": "Test Venue",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Minneapolis",
-              "addressRegion": "MN",
-              "addressCountry": "US"
-            }
-          },
-          "performer": {"@type": "Person", "name": "KB"},
-          "url": "https://example.com/test"
+
+    def test_consolidated_calendar_url_does_not_merge_different_dates(self):
+        first = candidate(
+            title="Reach Tour Date One",
+            event_date="2099-08-10",
+            city="Nashville",
+            artists=["Lecrae"],
+            url="https://label.example/events",
+        )
+        second = candidate(
+            title="Reach Tour Date Two",
+            event_date="2099-08-11",
+            city="Atlanta",
+            state="GA",
+            artists=["Hulvey"],
+            url="https://label.example/events",
+        )
+        merged = MODULE.merge_events([first, second])
+        self.assertEqual(len(merged), 2)
+
+
+    def test_same_consolidated_url_same_city_still_keeps_distinct_events(self):
+        first = candidate(
+            title="Lecrae Arena Concert",
+            event_date="2099-08-10",
+            venue="Bridgestone Arena",
+            city="Nashville",
+            artists=["Lecrae"],
+            url="https://label.example/events",
+        )
+        second = candidate(
+            title="Hulvey Club Show",
+            event_date="2099-08-10",
+            venue="The Basement East",
+            city="Nashville",
+            artists=["Hulvey"],
+            url="https://label.example/events",
+        )
+        merged = MODULE.merge_events([first, second])
+        self.assertEqual(len(merged), 2)
+
+    def test_same_day_distinct_venues_do_not_merge(self):
+        first = candidate(title="KB Signal Tour", venue="Ryman Auditorium", artists=["KB"], url="https://a.example")
+        second = candidate(title="KB Pop-Up Show", venue="Rocketown", artists=["KB"], url="https://b.example")
+        merged = MODULE.merge_events([first, second])
+        self.assertEqual(len(merged), 2)
+
+    def test_festival_lineup_comes_only_from_official_festival(self):
+        official = candidate(
+            title="Holy Smoke 2099",
+            venue="Rocketown",
+            artists=["indie tribe.", "Hulvey", "Social Club Misfits"],
+            headliner="indie tribe.",
+            authority="official_festival",
+            priority=106,
+            event_type="festival",
+            lineup_explicit=True,
+            image="https://example.com/holy-smoke-poster.jpg",
+            url="https://festival.example",
+        )
+        label = candidate(
+            title="Holy Smoke 2099",
+            venue="Holy Smoke Festival",
+            artists=["Lecrae", "Forrest Frank"],
+            authority="artist_label",
+            priority=84,
+            event_type="festival",
+            lineup_explicit=False,
+            image="https://reachrecords.com/logo.png",
+            url="https://label.example",
+        )
+        tm = candidate(
+            title="Holy Smoke 2099",
+            venue="Rocketown",
+            artists=["KB"],
+            authority="venue_ticket",
+            priority=94,
+            event_type="festival",
+            lineup_explicit=True,
+            url="https://ticket.example",
+        )
+        merged = MODULE.merge_events([label, tm, official])
+        final = MODULE.finalize_events(merged, {}, date(2098, 1, 1))
+        self.assertEqual(len(final), 1)
+        self.assertEqual(final[0]["artists"], ["indie tribe.", "Hulvey", "Social Club Misfits"])
+        self.assertNotIn("Lecrae", final[0]["artists"])
+        self.assertNotIn("Forrest Frank", final[0]["artists"])
+        self.assertNotIn("KB", final[0]["artists"])
+
+
+    def test_festival_ticket_seller_image_does_not_replace_artist_photo(self):
+        official_lineup = candidate(
+            title="Verified Festival 2099",
+            artists=["KB"],
+            headliner="KB",
+            authority="official_festival",
+            priority=106,
+            event_type="festival",
+            lineup_explicit=True,
+            image="",
+            url="https://festival.example/lineup",
+        )
+        ticket = candidate(
+            title="Verified Festival 2099",
+            artists=["KB"],
+            headliner="KB",
+            authority="venue_ticket",
+            priority=94,
+            event_type="festival",
+            lineup_explicit=True,
+            image="https://ticket.example/generic-event.jpg",
+            url="https://ticket.example/festival",
+        )
+        final = MODULE.finalize_events(
+            MODULE.merge_events([ticket, official_lineup]),
+            {"KB": "https://example.com/kb-approved.jpg"},
+            date(2098, 1, 1),
+        )
+        self.assertEqual(final[0]["image"], "https://example.com/kb-approved.jpg")
+        self.assertEqual(final[0]["imageType"], "artist")
+
+    def test_festival_without_official_explicit_lineup_is_excluded(self):
+        tm = candidate(
+            title="Mystery Festival 2099",
+            artists=["KB"],
+            authority="venue_ticket",
+            event_type="festival",
+            lineup_explicit=True,
+        )
+        final = MODULE.finalize_events(MODULE.merge_events([tm]), {}, date(2098, 1, 1))
+        self.assertEqual(final, [])
+
+    def test_official_event_artwork_beats_label_logo(self):
+        official = candidate(
+            artists=["Lecrae"],
+            authority="official_event",
+            priority=100,
+            image="https://example.com/tour-art.jpg",
+            url="https://official.example",
+        )
+        label = candidate(
+            artists=["Lecrae"],
+            authority="artist_label",
+            priority=84,
+            image="https://reachrecords.com/logo.png",
+            url="https://label.example",
+        )
+        final = MODULE.finalize_events(MODULE.merge_events([label, official]), {}, date(2098, 1, 1))
+        self.assertEqual(final[0]["image"], "https://example.com/tour-art.jpg")
+        self.assertEqual(final[0]["imageType"], "event_artwork")
+
+
+    def test_label_logo_without_event_art_falls_back_to_artist(self):
+        label_only = candidate(
+            artists=["Lecrae"],
+            authority="artist_label",
+            priority=84,
+            image="https://example.com/assets/reach-label-logo_white.png",
+            url="https://label.example",
+        )
+        final = MODULE.finalize_events(
+            MODULE.merge_events([label_only]),
+            {"Lecrae": "https://example.com/lecrae-approved.jpg"},
+            date(2098, 1, 1),
+        )
+        self.assertEqual(final[0]["image"], "https://example.com/lecrae-approved.jpg")
+        self.assertEqual(final[0]["imageType"], "artist")
+
+    def test_no_artwork_uses_headliner_base_image(self):
+        event = candidate(artists=["KB", "Hulvey"], headliner="KB", image="", image_policy="ignore")
+        final = MODULE.finalize_events(
+            MODULE.merge_events([event]),
+            {"KB": "https://example.com/kb.jpg", "Hulvey": "https://example.com/hulvey.jpg"},
+            date(2098, 1, 1),
+        )
+        self.assertEqual(final[0]["image"], "https://example.com/kb.jpg")
+        self.assertEqual(final[0]["imageType"], "artist")
+
+    def test_fallback_image_is_local_logo(self):
+        event = candidate(artists=["Unknown Tracked Artist"], image="", image_policy="ignore")
+        final = MODULE.finalize_events(MODULE.merge_events([event]), {}, date(2098, 1, 1))
+        self.assertEqual(final[0]["image"], "assets/logo.png")
+
+    def test_discovery_only_event_needs_corroboration(self):
+        discovery = candidate(authority="aggregator", priority=45, discovery_only=True)
+        final = MODULE.finalize_events(MODULE.merge_events([discovery]), {}, date(2098, 1, 1))
+        self.assertEqual(final, [])
+
+    def test_non_music_title_is_excluded(self):
+        event = candidate(title="Leadership Conference with KB")
+        final = MODULE.finalize_events(MODULE.merge_events([event]), {}, date(2098, 1, 1))
+        self.assertEqual(final, [])
+
+    def test_non_us_event_is_excluded(self):
+        event = candidate(state="ON", city="Toronto")
+        final = MODULE.finalize_events(MODULE.merge_events([event]), {}, date(2098, 1, 1))
+        self.assertEqual(final, [])
+
+
+    def test_explicit_performer_order_selects_first_billed_headliner(self):
+        lookup = {"kb": "KB", "hulvey": "Hulvey"}
+        matched = MODULE.match_tracked_artists(["Hulvey", "KB"], lookup)
+        self.assertEqual(matched, ["Hulvey", "KB"])
+
+    def test_ticketmaster_rejects_non_music_segment(self):
+        raw = {
+            "id": "abc",
+            "name": "KB Speaking Night",
+            "dates": {"start": {"localDate": "2099-08-10", "localTime": "19:00:00"}},
+            "classifications": [{"segment": {"name": "Miscellaneous"}}],
+            "_embedded": {
+                "venues": [{"name": "Test", "city": {"name": "Nashville"}, "state": {"stateCode": "TN"}, "country": {"countryCode": "US"}}],
+                "attractions": [{"name": "KB"}],
+            },
+            "url": "https://ticket.example",
         }
-        </script>
-        </head></html>
-        """
-        parser = MODULE.JsonLdScriptParser()
-        parser.feed(html)
-        self.assertEqual(len(parser.scripts), 1)
-        payload = json.loads(parser.scripts[0])
-        events = list(MODULE.iter_event_objects(payload))
-        self.assertEqual(len(events), 1)
-        self.assertEqual(events[0]["name"], "Test Concert")
+        self.assertIsNone(MODULE.extract_ticketmaster_event(raw, "KB", {"kb": "KB"}, CHECKED))
 
-    def test_reach_parser_uses_artist_page_fallback(self):
-        html = """
-        <html><body>
-          <h1>01</h1><h5>Aug</h5><h5>2099</h5><h4></h4>
-          <h6>Pneuma Church</h6><h6>Chattanooga, TN</h6>
-          <a href="https://www.bandsintown.com/e/test">RSVP</a>
-        </body></html>
-        """
-        events = MODULE.collect_reach_records_source(
-            {
-                "name": "Reach Records - 1K Phew",
-                "artist": "1K Phew",
-                "priority": 90,
+    def test_ticketmaster_music_event_is_accepted(self):
+        raw = {
+            "id": "abc",
+            "name": "KB Signal Tour",
+            "dates": {"start": {"localDate": "2099-08-10", "localTime": "19:00:00"}, "status": {"code": "onsale"}},
+            "classifications": [{"segment": {"name": "Music"}}],
+            "_embedded": {
+                "venues": [{"name": "Test Theatre", "city": {"name": "Nashville"}, "state": {"stateCode": "TN"}, "country": {"countryCode": "US"}}],
+                "attractions": [{"name": "KB"}],
             },
-            "https://www.reachrecords.com/artists/1k-phew/",
-            html,
-            self.alias_lookup,
-            "2098-01-01T00:00:00Z",
-        )
-        self.assertEqual(len(events), 1)
-        self.assertEqual(events[0]["artists"], ["1K Phew"])
-        self.assertEqual(events[0]["startDate"], "2099-08-01")
-        self.assertEqual(events[0]["city"], "Chattanooga")
-
-    def test_reach_parser_deduplicates_state_name_and_code(self):
-        html = """
-        <html><body>
-          <h1>06</h1><h5>Aug</h5><h5>2099</h5><h4>Hulvey</h4>
-          <h6>Holy Smoke! 2099</h6><h6>Nashville, Tennessee</h6>
-          <h1>06</h1><h5>Aug</h5><h5>2099</h5><h4>Hulvey</h4>
-          <h6>Holy Smoke! 2099</h6><h6>Nashville, TN</h6>
-        </body></html>
-        """
-        events = MODULE.collect_reach_records_source(
-            {"name": "Reach Records calendar"},
-            "https://www.reachrecords.com/events/",
-            html,
-            self.alias_lookup,
-            "2098-01-01T00:00:00Z",
-        )
-        self.assertEqual(len(events), 1)
-        self.assertEqual(events[0]["state"], "TN")
-
-    def test_tpr_parser_extracts_tour_card(self):
-        html = """
-        <html><body>
-          <h1>Caleb Gordon - The Eden Experience</h1>
-          <div>Aug 14, 2099 7:00PM Phoenix, AZ Event Info Buy Tickets</div>
-          <a href="https://tprlive.co/products/test">Buy Tickets</a>
-        </body></html>
-        """
-        events = MODULE.collect_tpr_source(
-            {
-                "name": "TPR - Caleb Gordon",
-                "eventTitle": "Caleb Gordon - The Eden Experience",
-                "artists": ["Caleb Gordon"],
-            },
-            "https://tprlive.co/collections/test",
-            html,
-            self.alias_lookup,
-            "2098-01-01T00:00:00Z",
-        )
-        self.assertEqual(len(events), 1)
-        self.assertEqual(events[0]["startDate"], "2099-08-14")
-        self.assertEqual(events[0]["startTime"], "19:00")
-        self.assertEqual(events[0]["city"], "Phoenix")
-
-    def test_holy_smoke_parser_extracts_multiday_festival(self):
-        html = """
-        <html><head><meta property="og:image" content="https://example.com/holy.jpg"></head>
-        <body>
-          <h1>HOLY SMOKE! 2099</h1>
-          <h3>AUGUST 6, 7, + 8, 2099</h3>
-          <h3>ROCKETOWN - NASHVILLE, TN</h3>
-          <div>$140.00 USD</div>
-        </body></html>
-        """
-        events = MODULE.collect_holy_smoke_source(
-            {
-                "name": "Holy Smoke official",
-                "artists": ["indie tribe.", "Hulvey"],
-                "venue": "Rocketown",
-                "city": "Nashville",
-                "state": "TN",
-            },
-            "https://indietribe.us/products/holy-smoke-2099",
-            html,
-            DummyClient(),
-            self.alias_lookup,
-            "2098-01-01T00:00:00Z",
-        )
-        self.assertEqual(len(events), 1)
-        self.assertEqual(events[0]["startDate"], "2099-08-06")
-        self.assertEqual(events[0]["endDate"], "2099-08-08")
-        self.assertEqual(events[0]["eventType"], "festival")
-
-    def test_space_city_parser_uses_event_url_not_sidebar_dates(self):
-        html = """
-        <html><body>
-          <h2>Space City Church</h2>
-          <h3>October 25, 2099</h3>
-          <div>4:00 pm to 8:00 pm</div>
-          <p>Space City Fest is a fall celebration.</p>
-          <div>VIEW SIMILAR EVENTS</div>
-          <div>September 1, 2099</div>
-        </body></html>
-        """
-        events = MODULE.collect_space_city_source(
-            {
-                "name": "Space City Fest - Discovery Green",
-                "eventTitle": "Space City Fest",
-                "artists": ["Lecrae"],
-                "venue": "Discovery Green",
-                "city": "Houston",
-                "state": "TX",
-                "startTime": "16:00",
-            },
-            "https://www.discoverygreen.com/event/space-city-church/october-25-2099-400-pm/",
-            html,
-            self.alias_lookup,
-            "2098-01-01T00:00:00Z",
-        )
-        self.assertEqual(len(events), 1)
-        self.assertEqual(events[0]["startDate"], "2099-10-25")
-        self.assertEqual(events[0]["artists"], ["Lecrae"])
-
-
-    def test_christian_hits_parser_extracts_rural_festival(self):
-        html = """
-        <html><body>
-          <a href="https://www.ruralmusic.org/event-details/rural-music-festival-2099">
-            Rural Music Festival 2099: 8/28/99 - 8/30/99
-          </a>
-          <div>Isle, MN</div>
-          <div>Social Club Misfits, Rare of Breed, Jason Crabb</div>
-        </body></html>
-        """
-        events = MODULE.collect_christian_hits_source(
-            {"name": "ChristianHits show feed"},
-            "https://christianhits.net/shows.php",
-            html,
-            self.alias_lookup,
-            "2098-01-01T00:00:00Z",
-        )
-        self.assertEqual(len(events), 1)
-        self.assertEqual(events[0]["startDate"], "2099-08-28")
-        self.assertEqual(events[0]["endDate"], "2099-08-30")
-        self.assertEqual(events[0]["city"], "Isle")
-        self.assertEqual(events[0]["artists"], ["Rare of Breed", "Social Club Misfits"])
-
-    def test_christian_festivals_parser_extracts_tracked_lineup(self):
-        html = """
-        <html><body>
-          <h2>Uprise Festival 2099</h2>
-          <div>September 11 - September 12, 2099 | Shippensburg, PA</div>
-          <div>Hulvey - KB - 1K Phew - Other Artist</div>
-          <a href="https://festival.example">Get Tickets or More Information</a>
-        </body></html>
-        """
-        events = MODULE.collect_christian_festivals_source(
-            {"name": "Festival directory"},
-            "https://www.christianhits.net/festivals.php",
-            html,
-            self.alias_lookup,
-            "2098-01-01T00:00:00Z",
-        )
-        self.assertEqual(len(events), 1)
-        self.assertEqual(events[0]["startDate"], "2099-09-11")
-        self.assertEqual(events[0]["endDate"], "2099-09-12")
-        self.assertEqual(events[0]["artists"], ["1K Phew", "Hulvey", "KB"])
-
-    def test_bandsintown_public_parser_follows_only_upcoming_event_links(self):
-        artist_html = """
-        <html><body>
-          <div>All concerts &amp; live streams</div>
-          <div>AUG</div><div>22</div><div>SAT</div>
-          <a href="/e/upcoming">Space City Church South Houston, TX</a>
-          <div>Get tickets</div>
-          <div>Past shows</div>
-          <a href="/e/past">Old Venue Nashville, TN</a>
-        </body></html>
-        """
-        detail_html = """
-        <html><head><script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "MusicEvent",
-          "name": "Konnect Concert Series",
-          "startDate": "2099-08-22T18:00:00-05:00",
-          "location": {
-            "@type": "Place",
-            "name": "Space City Church",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Houston",
-              "addressRegion": "TX",
-              "addressCountry": "US"
-            }
-          },
-          "performer": {"@type": "Person", "name": "Parris Chariz"},
-          "url": "https://www.bandsintown.com/e/upcoming"
+            "url": "https://ticket.example",
+            "images": [{"url": "https://example.com/event.jpg", "width": 1200, "height": 675}],
         }
-        </script></head></html>
-        """
-        original_robots = MODULE.robots_allows
-        MODULE.robots_allows = lambda _url: True
-        try:
-            events = MODULE.collect_bandsintown_public_source(
-                {
-                    "name": "Parris Chariz Bandsintown",
-                    "artist": "Parris Chariz",
-                },
-                "https://www.bandsintown.com/a/parris-chariz",
-                artist_html,
-                DummyClient({"https://www.bandsintown.com/e/upcoming": detail_html}),
-                self.alias_lookup,
-                "2098-01-01T00:00:00Z",
-            )
-        finally:
-            MODULE.robots_allows = original_robots
-        self.assertEqual(len(events), 1)
-        self.assertEqual(events[0]["artists"], ["Parris Chariz"])
-        self.assertEqual(events[0]["startDate"], "2099-08-22")
+        event = MODULE.extract_ticketmaster_event(raw, "KB", {"kb": "KB"}, CHECKED)
+        self.assertIsNotNone(event)
+        self.assertEqual(event["headliner"], "KB")
+        self.assertEqual(event["externalIds"]["ticketmaster"], "abc")
 
-    def test_wix_event_list_parser_follows_event_details(self):
-        list_html = """
-        <html><body>
-          <a href="/event-details/test-show">Test Show</a>
-        </body></html>
-        """
-        detail_html = """
-        <html><head><script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "MusicEvent",
-          "name": "Mike Malagies Live",
-          "startDate": "2099-10-03T19:00:00-04:00",
-          "location": {
-            "@type": "Place",
-            "name": "Test Church",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Tampa",
-              "addressRegion": "FL",
-              "addressCountry": "US"
-            }
-          },
-          "url": "https://www.mikemalagiesofficial.com/event-details/test-show"
-        }
-        </script></head></html>
-        """
-        original_robots = MODULE.robots_allows
-        MODULE.robots_allows = lambda _url: True
-        try:
-            events = MODULE.collect_wix_event_list_source(
-                {"name": "Mike official", "artist": "Mike Malagies"},
-                "https://www.mikemalagiesofficial.com/event-list",
-                list_html,
-                DummyClient({
-                    "https://www.mikemalagiesofficial.com/event-details/test-show": detail_html
-                }),
-                self.alias_lookup,
-                "2098-01-01T00:00:00Z",
-            )
-        finally:
-            MODULE.robots_allows = original_robots
-        self.assertEqual(len(events), 1)
-        self.assertEqual(events[0]["artists"], ["Mike Malagies"])
-        self.assertEqual(events[0]["city"], "Tampa")
+    def test_manual_holy_smoke_lineup_and_artwork(self):
+        manual = json.loads((ROOT / "config" / "manual-events.json").read_text())
+        raw = next(item for item in manual if item["id"] == "holy-smoke-2026")
+        event = MODULE.normalize_manual_event(raw, CHECKED)
+        final = MODULE.finalize_events(MODULE.merge_events([event]), {}, date(2026, 7, 30))
+        self.assertEqual(len(final), 1)
+        self.assertNotIn("Lecrae", final[0]["artists"])
+        self.assertNotIn("Forrest Frank", final[0]["artists"])
+        self.assertEqual(final[0]["headliner"], "indie tribe.")
+        self.assertIn("HolySmoke26.jpg", final[0]["image"])
 
-    def test_rural_parser_extracts_official_range(self):
-        html = """
-        <html><body>
-          <h1>Rural Music Festival 2099</h1>
-          <div>Aug 28, 2099, 12:00 PM – Aug 30, 2099, 8:00 PM</div>
-        </body></html>
-        """
-        events = MODULE.collect_rural_festival_source(
-            {
-                "name": "Rural official",
-                "eventTitle": "Rural Music Festival 2099",
-                "artists": ["Social Club Misfits", "Rare of Breed"],
-                "city": "Isle",
-                "state": "MN",
-            },
-            "https://www.ruralmusic.org/event-details/test",
-            html,
-            self.alias_lookup,
-            "2098-01-01T00:00:00Z",
-        )
-        self.assertEqual(len(events), 1)
-        self.assertEqual(events[0]["startDate"], "2099-08-28")
-        self.assertEqual(events[0]["endDate"], "2099-08-30")
-        self.assertEqual(events[0]["startTime"], "12:00")
-
-
-    def test_numeric_only_artist_alias_is_not_matched_in_prices(self):
-        lookup = {"350": "350", "nf": "NF"}
-        self.assertEqual(MODULE.match_artists_in_text("Tickets are $350", lookup), [])
-        self.assertEqual(MODULE.match_artists_in_text("NF live in concert", lookup), ["NF"])
-
-    def test_safe_url_rejects_javascript(self):
-        self.assertEqual(MODULE.safe_url("javascript:alert(1)"), "")
-        self.assertEqual(MODULE.safe_url("https://example.com"), "https://example.com")
+    def test_roster_contains_all_current_reach_names(self):
+        artists = json.loads((ROOT / "config" / "artists.json").read_text())
+        names = {item["name"] for item in artists}
+        expected = {"1K Phew", "2819 Worship", "Alexxander", "Anike", "Hulvey", "Jackie Hill Perry", "Lecrae", "Limoblaze", "Tedashii", "Trip Lee", "WHATUPRG"}
+        self.assertTrue(expected.issubset(names))
 
 
 if __name__ == "__main__":

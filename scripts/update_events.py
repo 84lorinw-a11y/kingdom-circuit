@@ -20,6 +20,7 @@ import sys
 import time
 import unicodedata
 from dataclasses import dataclass
+from difflib import SequenceMatcher
 from datetime import date, datetime, timedelta, timezone
 from html.parser import HTMLParser
 from pathlib import Path
@@ -91,6 +92,41 @@ NON_SHOW_PATTERN = re.compile(
     re.IGNORECASE,
 )
 FESTIVAL_PATTERN = re.compile(r"\b(festival|fest)\b", re.IGNORECASE)
+
+NON_MUSIC_PATTERN = re.compile(
+    r"\b(conference|summit|workshop|seminar|podcast|book tour|book signing|"
+    r"speaking|speaker|sermon|lecture|panel discussion|meet[ -]?and[ -]?greet only|"
+    r"chapel service|church service|prayer breakfast|leadership event|women['’]s event)\b",
+    re.IGNORECASE,
+)
+
+AUTHORITY_RANKS = {
+    "aggregator": 45,
+    "artist_calendar": 72,
+    "artist_label": 82,
+    "promoter": 88,
+    "venue_ticket": 94,
+    "official_event": 100,
+    "official_festival": 106,
+    "manual_verified": 112,
+}
+
+IMAGE_REJECT_PATTERN = re.compile(
+    r"(?:favicon|(?:^|[/_.-])logo(?:[/_.-]|$)|placeholder|default[-_ ]?image|"
+    r"sprite|icon[-_.]|reachrecords(?:\.com)?/(?:wp-content/)?"
+    r"(?:themes|images)?/?(?:logo)?)",
+    re.IGNORECASE,
+)
+
+VENUE_STOPWORDS = {
+    "the", "at", "venue", "theater", "theatre", "center", "centre", "hall",
+    "auditorium", "arena", "club", "live", "event", "events", "music",
+    "performance", "performing", "arts", "stage", "room", "complex",
+}
+TITLE_STOPWORDS = {
+    "the", "a", "an", "live", "concert", "tickets", "ticket", "official",
+    "presents", "present", "tour", "show", "featuring", "feat", "with",
+}
 
 
 class CollectorError(RuntimeError):
@@ -334,12 +370,10 @@ def event_is_future(event: dict[str, Any], today: date) -> bool:
 
 
 def is_non_show(title: str) -> bool:
-    return bool(NON_SHOW_PATTERN.search(title or ""))
-
+    return bool(NON_SHOW_PATTERN.search(title) or NON_MUSIC_PATTERN.search(title))
 
 def detect_event_type(title: str) -> str:
-    return "festival" if FESTIVAL_PATTERN.search(title or "") else "concert"
-
+    return "festival" if FESTIVAL_PATTERN.search(title) else "concert"
 
 def choose_image(images: Any) -> str:
     if not isinstance(images, list):
@@ -374,12 +408,19 @@ def build_alias_lookup(artists: list[dict[str, Any]]) -> dict[str, str]:
 def match_tracked_artists(
     names: Iterable[str], alias_lookup: dict[str, str]
 ) -> list[str]:
-    matched: set[str] = set()
+    # Preserve the source's performer order so the first-billed confirmed artist
+    # remains the headliner. A set/sort here would incorrectly choose the
+    # alphabetically first artist for images and display order.
+    matched: list[str] = []
+    seen: set[str] = set()
     for name in names:
         normalized = normalize_name(name)
-        if normalized in alias_lookup:
-            matched.add(alias_lookup[normalized])
-    return sorted(matched, key=str.casefold)
+        canonical = alias_lookup.get(normalized)
+        key = normalize_name(canonical) if canonical else ""
+        if canonical and key not in seen:
+            seen.add(key)
+            matched.append(canonical)
+    return matched
 
 
 def iter_event_objects(value: Any) -> Iterable[dict[str, Any]]:
@@ -633,12 +674,66 @@ def find_best_link(
     return best_url
 
 
-def source_priority(source: dict[str, Any], default: int) -> int:
-    try:
-        return int(source.get("priority", default))
-    except (TypeError, ValueError):
-        return default
+def authority_name(source: dict[str, Any]) -> str:
+    explicit = str(source.get("authority") or "").strip().lower()
+    if explicit in AUTHORITY_RANKS:
+        return explicit
+    parser = str(source.get("parser") or "jsonld").strip().lower()
+    if parser in {"holy_smoke", "space_city", "rural_festival", "official_festival"}:
+        return "official_festival"
+    if parser in {"tpr"}:
+        return "promoter"
+    if parser in {"reach_records"}:
+        return "artist_label"
+    if parser in {"bandsintown_public", "bandsintown_widget"}:
+        return "artist_calendar"
+    if parser in {"holy_culture", "christian_hits", "christian_festivals"}:
+        return "aggregator"
+    return "artist_label"
 
+
+def authority_rank(source: dict[str, Any], default: int = 80) -> int:
+    try:
+        configured = int(source.get("priority", 0))
+    except (TypeError, ValueError):
+        configured = 0
+    return configured or AUTHORITY_RANKS.get(authority_name(source), default)
+
+
+def source_priority(source: dict[str, Any], default: int) -> int:
+    return authority_rank(source, default)
+
+
+def is_valid_image_url(value: Any, allow_event_artwork: bool = False) -> bool:
+    url = safe_url(value)
+    if not url:
+        return False
+    if not IMAGE_REJECT_PATTERN.search(url):
+        return True
+    # A file explicitly named like a poster, flyer, tour, or festival graphic can
+    # still be legitimate event art. Generic source/label logos are rejected.
+    return bool(
+        allow_event_artwork
+        and re.search(r"(?:poster|flyer|artwork|tour[-_ ]?art|festival|fest[-_ ])", url, re.IGNORECASE)
+    )
+
+
+def ordered_unique(values: Iterable[str]) -> list[str]:
+    result: list[str] = []
+    seen: set[str] = set()
+    for value in values:
+        clean = str(value or "").strip()
+        key = normalize_name(clean)
+        if clean and key and key not in seen:
+            seen.add(key)
+            result.append(clean)
+    return result
+
+
+def schema_is_music_event(raw_event: dict[str, Any]) -> bool:
+    raw_type = raw_event.get("@type")
+    values = raw_type if isinstance(raw_type, list) else [raw_type]
+    return any("musicevent" in normalize_name(str(value)) for value in values if value)
 
 def make_source_event(
     *,
@@ -662,8 +757,30 @@ def make_source_event(
     event_type: str = "",
     end_date: str = "",
     priority: int = 80,
+    headliner: str = "",
+    lineup_explicit: bool | None = None,
+    music_confirmed: bool = True,
+    external_ids: dict[str, str] | None = None,
 ) -> dict[str, Any]:
     identifier = event_hash([source_url, title, start_date, venue, city, state])
+    event_type = event_type or detect_event_type(title)
+    clean_artists = ordered_unique(artists)
+    authority = authority_name(source)
+    rank = max(priority, authority_rank(source, priority))
+    explicit_lineup = bool(source.get("lineupExplicit", False)) if lineup_explicit is None else bool(lineup_explicit)
+    configured_headliner = str(headliner or source.get("headliner") or "").strip()
+    chosen_headliner = configured_headliner if configured_headliner in clean_artists else (clean_artists[0] if clean_artists else "")
+    image_policy = str(source.get("imagePolicy") or "event_artwork").strip().lower()
+    configured_artwork = safe_url(source.get("eventArtworkUrl"))
+    event_artwork = configured_artwork or (safe_url(image) if image_policy == "event_artwork" and is_valid_image_url(image, True) else "")
+    source_link = official_url or source_url
+    source_record = {
+        "name": str(source.get("name") or "Official source"),
+        "url": source_link,
+        "type": str(source.get("parser") or "official"),
+        "authority": authority,
+        "priority": rank,
+    }
     event = {
         "id": f"official:{identifier}",
         "title": title,
@@ -675,29 +792,49 @@ def make_source_event(
         "city": city,
         "state": state.upper(),
         "country": "US",
-        "artists": sorted(set(artists), key=str.casefold),
-        "eventType": event_type or detect_event_type(title),
+        "artists": clean_artists,
+        "headliner": chosen_headliner,
+        "eventType": event_type,
         "status": status,
-        "ticketUrl": ticket_url or official_url or source_url,
-        "officialUrl": official_url or source_url,
-        "image": image,
+        "ticketUrl": ticket_url or source_link,
+        "officialUrl": source_link,
+        "image": "",
+        "eventArtwork": event_artwork,
         "price": price,
-        "sourceName": str(source.get("name") or "Official source"),
-        "sources": [
-            {
-                "name": str(source.get("name") or "Official source"),
-                "url": official_url or source_url,
-                "type": str(source.get("parser") or "official"),
-            }
-        ],
+        "sourceName": source_record["name"],
+        "sources": [source_record],
         "lastVerified": checked_at,
         "confidence": confidence,
-        "sourcePriority": priority,
+        "sourcePriority": rank,
+        "sourceAuthority": authority,
+        "lineupExplicit": explicit_lineup,
+        "festivalLineupAuthoritative": bool(
+            event_type == "festival"
+            and explicit_lineup
+            and authority in {"official_festival", "official_event", "manual_verified"}
+        ),
+        "musicConfirmed": bool(music_confirmed),
+        "requiresCorroboration": bool(source.get("discoveryOnly", False)),
+        "artistEvidence": [{
+            "artists": clean_artists,
+            "headliner": chosen_headliner,
+            "authority": authority,
+            "priority": rank,
+            "lineupExplicit": explicit_lineup,
+            "sourceUrl": source_link,
+        }],
+        "artworkEvidence": ([{
+            "url": event_artwork,
+            "authority": authority,
+            "priority": rank,
+            "kind": "event",
+            "sourceUrl": source_link,
+        }] if event_artwork else []),
+        "externalIds": external_ids or {},
     }
     if end_date:
         event["endDate"] = end_date
     return event
-
 
 def robots_allows(url: str) -> bool:
     """Check robots.txt once with a short timeout.
@@ -742,14 +879,10 @@ def collect_jsonld_source_from_html(
     parser = JsonLdScriptParser()
     parser.feed(html)
     events: list[dict[str, Any]] = []
-    configured_artists = [
-        str(item).strip()
-        for item in source.get("artists", [])
-        if str(item).strip()
-    ]
-    source_artist = str(source.get("artist") or "").strip()
-    if source_artist:
-        configured_artists.append(source_artist)
+    configured_artists = ordered_unique([
+        *[str(item).strip() for item in source.get("artists", []) if str(item).strip()],
+        str(source.get("artist") or "").strip(),
+    ])
 
     for script in parser.scripts:
         if not script:
@@ -762,6 +895,9 @@ def collect_jsonld_source_from_html(
             title = str(raw_event.get("name") or "").strip()
             if not title or is_non_show(title):
                 continue
+            music_confirmed = schema_is_music_event(raw_event) or bool(source.get("musicConfirmed", False))
+            if not music_confirmed:
+                continue
             start_date, start_time = parse_date_prefix(raw_event.get("startDate"))
             end_date, _ = parse_date_prefix(raw_event.get("endDate"))
             if not start_date:
@@ -771,14 +907,14 @@ def collect_jsonld_source_from_html(
             if not city or state not in US_STATE_CODES or not is_us_location(state, country):
                 continue
             performer_names = flatten_names(raw_event.get("performer"))
-            performer_names.extend(flatten_names(raw_event.get("organizer")))
             artists = match_tracked_artists(performer_names, alias_lookup)
+            event_type = detect_event_type(title)
+            # A configured artist is a safe fallback for a dedicated artist page,
+            # but never authoritative evidence for a festival lineup.
+            if not artists and event_type != "festival":
+                artists = configured_artists
             if not artists:
-                artists = sorted(set(configured_artists), key=str.casefold)
-            if not artists:
-                artists = match_artists_in_text(
-                    " ".join([title, *performer_names]), alias_lookup
-                )
+                artists = match_artists_in_text(" ".join([title, *performer_names]), alias_lookup)
             if not artists:
                 continue
             ticket_url = extract_offer_url(raw_event.get("offers")) or safe_url(raw_event.get("url"))
@@ -801,15 +937,18 @@ def collect_jsonld_source_from_html(
                 city=city,
                 state=state,
                 artists=artists,
+                headliner=artists[0] if artists else "",
                 checked_at=checked_at,
                 ticket_url=ticket_url or url,
                 official_url=safe_url(raw_event.get("url")) or url,
                 image=image,
                 status=schema_status(raw_event.get("eventStatus")),
+                event_type=event_type,
+                lineup_explicit=bool(performer_names),
+                music_confirmed=True,
                 priority=source_priority(source, 90),
             ))
     return events
-
 
 def collect_reach_records_source(
     source: dict[str, Any],
@@ -882,7 +1021,9 @@ def collect_reach_records_source(
             checked_at=checked_at,
             ticket_url=ticket_url,
             official_url=url,
-            image=safe_url(page.meta.get("og:image")),
+            image="",
+            lineup_explicit=False,
+            music_confirmed=True,
             priority=source_priority(source, 88),
         ))
     return merge_events(events)
@@ -1075,10 +1216,12 @@ def collect_holy_smoke_source(
                 city = normalize_whitespace(location_match.group(2))
                 state = parsed_state
                 break
-    artists = [
+    configured_artists = [
         str(item).strip() for item in source.get("artists", []) if str(item).strip()
     ]
-    artists.extend(match_artists_in_text(text, alias_lookup))
+    artists = list(configured_artists)
+    if not configured_artists:
+        artists.extend(match_artists_in_text(text, alias_lookup))
     lineup_url = safe_url(source.get("lineupUrl"))
     if not lineup_url:
         lineup_url = next(
@@ -1089,7 +1232,7 @@ def collect_holy_smoke_source(
             ),
             "",
         )
-    if lineup_url:
+    if lineup_url and not configured_artists:
         try:
             lineup_html = client.get_text(lineup_url)
             lineup_page = PageContentParser()
@@ -1177,11 +1320,11 @@ def collect_space_city_source(
     if not event_date or event_date < now_utc().date():
         return []
 
-    artists = match_artists_in_text(text, alias_lookup)
-    artists.extend(
+    configured_artists = [
         str(item).strip() for item in source.get("artists", []) if str(item).strip()
-    )
-    artists = sorted(set(artists), key=str.casefold)
+    ]
+    artists = configured_artists or match_artists_in_text(text, alias_lookup)
+    artists = ordered_unique(artists)
     if not artists:
         return []
 
@@ -1756,6 +1899,9 @@ def attraction_cache_is_fresh(entry: dict[str, Any]) -> bool:
         checked_date = datetime.fromisoformat(checked.replace("Z", "+00:00"))
     except ValueError:
         return False
+    # Version-1 cache records did not include image resolution. Refresh them once.
+    if entry.get("id") and not entry.get("imageChecked"):
+        return False
     max_age = timedelta(days=180 if entry.get("id") else 30)
     return now_utc() - checked_date <= max_age
 
@@ -1769,10 +1915,11 @@ def find_ticketmaster_attraction(
 ) -> str | None:
     canonical = str(artist.get("name") or "").strip()
     explicit_id = str(artist.get("ticketmasterAttractionId") or "").strip()
-    if explicit_id:
-        return explicit_id
-
     cached = cache.get(canonical)
+    if explicit_id:
+        if not isinstance(cached, dict):
+            cache[canonical] = {"id": explicit_id, "matchedName": canonical, "checkedAt": checked_at}
+        return explicit_id
     if isinstance(cached, dict) and attraction_cache_is_fresh(cached):
         cached_id = cached.get("id")
         return str(cached_id) if cached_id else None
@@ -1799,19 +1946,17 @@ def find_ticketmaster_attraction(
             continue
         if normalize_name(str(attraction.get("name") or "")) in aliases:
             exact.append(attraction)
-
-    exact.sort(
-        key=lambda item: int(item.get("upcomingEvents", {}).get("_total") or 0),
-        reverse=True,
-    )
+    exact.sort(key=lambda item: int(item.get("upcomingEvents", {}).get("_total") or 0), reverse=True)
     selected = exact[0] if exact else None
+    image = choose_image(selected.get("images")) if selected else ""
     cache[canonical] = {
         "id": selected.get("id") if selected else None,
         "matchedName": selected.get("name") if selected else None,
+        "image": image if is_valid_image_url(image) else "",
+        "imageChecked": True,
         "checkedAt": checked_at,
     }
     return str(selected.get("id")) if selected and selected.get("id") else None
-
 
 def ticketmaster_status(raw_event: dict[str, Any]) -> str:
     code = raw_event.get("dates", {}).get("status", {}).get("code")
@@ -1835,6 +1980,19 @@ def ticketmaster_price(raw_event: dict[str, Any]) -> str:
     return f"{symbol}{minimum:,.0f}-${maximum:,.0f}"
 
 
+def ticketmaster_is_music(raw_event: dict[str, Any]) -> bool:
+    classifications = raw_event.get("classifications", [])
+    if not isinstance(classifications, list):
+        return False
+    for item in classifications:
+        if not isinstance(item, dict):
+            continue
+        segment = item.get("segment", {})
+        if normalize_name(str(segment.get("name") or "")) == "music":
+            return True
+    return False
+
+
 def extract_ticketmaster_event(
     raw_event: dict[str, Any],
     fallback_artist: str,
@@ -1842,71 +2000,71 @@ def extract_ticketmaster_event(
     checked_at: str,
 ) -> dict[str, Any] | None:
     title = str(raw_event.get("name") or "").strip()
-    if not title or is_non_show(title):
+    if not title or is_non_show(title) or not ticketmaster_is_music(raw_event):
         return None
-
     event_id = str(raw_event.get("id") or "").strip()
     local_date = str(raw_event.get("dates", {}).get("start", {}).get("localDate") or "").strip()
     local_time = str(raw_event.get("dates", {}).get("start", {}).get("localTime") or "").strip()
     if not event_id or not local_date:
         return None
-
     venues = raw_event.get("_embedded", {}).get("venues", [])
     venue_data = venues[0] if isinstance(venues, list) and venues and isinstance(venues[0], dict) else {}
     country_code = str(venue_data.get("country", {}).get("countryCode") or "").upper()
     if country_code and country_code != "US":
         return None
-
     city = str(venue_data.get("city", {}).get("name") or "").strip()
     state = str(venue_data.get("state", {}).get("stateCode") or "").strip().upper()
     venue = str(venue_data.get("name") or "Venue not provided").strip()
     address = str(venue_data.get("address", {}).get("line1") or "").strip()
-    if not city or not state:
+    if not city or state not in US_STATE_CODES:
         return None
 
-    attractions = raw_event.get("_embedded", {}).get("attractions", [])
+    attraction_items = raw_event.get("_embedded", {}).get("attractions", [])
     attraction_names = [
-        str(item.get("name") or "")
-        for item in attractions
+        str(item.get("name") or "") for item in attraction_items
         if isinstance(item, dict)
-    ] if isinstance(attractions, list) else []
-    artists = match_tracked_artists(attraction_names, alias_lookup)
-    if fallback_artist not in artists:
-        artists.append(fallback_artist)
-    artists = sorted(set(artists), key=str.casefold)
-
+    ] if isinstance(attraction_items, list) else []
+    artists: list[str] = []
+    for name in attraction_names:
+        matched = match_tracked_artists([name], alias_lookup)
+        artists.extend(matched)
+    artists = ordered_unique(artists)
+    if fallback_artist and fallback_artist not in artists:
+        artists.insert(0, fallback_artist)
+    if not artists:
+        return None
     event_url = safe_url(raw_event.get("url"))
-    return {
-        "id": f"ticketmaster:{event_id}",
-        "title": title,
-        "startDate": local_date,
-        "startTime": local_time[:5] if local_time else "",
-        "timezone": str(raw_event.get("dates", {}).get("timezone") or ""),
-        "venue": venue,
-        "address": address,
-        "city": city,
-        "state": state,
-        "country": "US",
-        "artists": artists,
-        "eventType": detect_event_type(title),
-        "status": ticketmaster_status(raw_event),
-        "ticketUrl": event_url,
-        "officialUrl": event_url,
-        "image": choose_image(raw_event.get("images")),
-        "price": ticketmaster_price(raw_event),
-        "sourceName": "Ticketmaster",
-        "sources": [
-            {
-                "name": "Ticketmaster",
-                "url": event_url,
-                "type": "ticketing",
-            }
-        ],
-        "lastVerified": checked_at,
-        "confidence": "high",
-        "sourcePriority": 60,
+    source = {
+        "name": "Ticketmaster",
+        "parser": "ticketmaster",
+        "authority": "venue_ticket",
+        "priority": AUTHORITY_RANKS["venue_ticket"],
+        "imagePolicy": "event_artwork",
     }
-
+    return make_source_event(
+        source=source,
+        source_url=event_url,
+        title=title,
+        start_date=local_date,
+        start_time=local_time[:5] if local_time else "",
+        venue=venue,
+        address=address,
+        city=city,
+        state=state,
+        artists=artists,
+        headliner=artists[0],
+        checked_at=checked_at,
+        ticket_url=event_url,
+        official_url=event_url,
+        image=choose_image(raw_event.get("images")),
+        price=ticketmaster_price(raw_event),
+        status=ticketmaster_status(raw_event),
+        event_type=detect_event_type(title),
+        lineup_explicit=True,
+        music_confirmed=True,
+        priority=AUTHORITY_RANKS["venue_ticket"],
+        external_ids={"ticketmaster": event_id},
+    ) | {"id": f"ticketmaster:{event_id}", "timezone": str(raw_event.get("dates", {}).get("timezone") or "")}
 
 def collect_ticketmaster_artist(
     artist: dict[str, Any],
@@ -1958,112 +2116,260 @@ def collect_ticketmaster_artist(
 
 
 def normalize_event_title(value: str) -> str:
+    tokens = normalize_name(value).split()
+    tokens = [token for token in tokens if token not in TITLE_STOPWORDS and not re.fullmatch(r"20\d{2}", token)]
+    return " ".join(tokens)
+
+
+def normalize_venue(value: str) -> str:
     normalized = normalize_name(value)
-    normalized = re.sub(r"\b20\d{2}\b", "", normalized)
-    normalized = re.sub(r"\b(?:live in concert|official|tickets?)\b", "", normalized)
-    return " ".join(normalized.split())
+    normalized = normalized.replace("first ave", "first avenue")
+    normalized = normalized.replace("work play", "workplay")
+    tokens = [token for token in normalized.split() if token not in VENUE_STOPWORDS]
+    return " ".join(tokens)
+
+
+def token_similarity(left: str, right: str) -> float:
+    left_tokens = set(left.split())
+    right_tokens = set(right.split())
+    if not left_tokens or not right_tokens:
+        return 0.0
+    return len(left_tokens & right_tokens) / len(left_tokens | right_tokens)
+
+
+def text_similarity(left: str, right: str) -> float:
+    if not left or not right:
+        return 0.0
+    return max(SequenceMatcher(None, left, right).ratio(), token_similarity(left, right))
+
+
+def artist_overlap(left: dict[str, Any], right: dict[str, Any]) -> bool:
+    a = {normalize_name(value) for value in left.get("artists", []) if value}
+    b = {normalize_name(value) for value in right.get("artists", []) if value}
+    return bool(a & b)
+
+
+def external_id_overlap(left: dict[str, Any], right: dict[str, Any]) -> bool:
+    left_ids = left.get("externalIds", {}) if isinstance(left.get("externalIds"), dict) else {}
+    right_ids = right.get("externalIds", {}) if isinstance(right.get("externalIds"), dict) else {}
+    return any(key in right_ids and value and right_ids.get(key) == value for key, value in left_ids.items())
+
+
+def source_url_overlap(left: dict[str, Any], right: dict[str, Any]) -> bool:
+    left_urls = {safe_url(item.get("url")) for item in left.get("sources", []) if isinstance(item, dict)}
+    right_urls = {safe_url(item.get("url")) for item in right.get("sources", []) if isinstance(item, dict)}
+    left_urls.discard("")
+    right_urls.discard("")
+    return bool(left_urls & right_urls)
+
+
+def events_are_duplicates(left: dict[str, Any], right: dict[str, Any]) -> bool:
+    # A provider event ID is globally authoritative. A shared source URL is not:
+    # consolidated calendar pages can contain dozens of unrelated events.
+    if external_id_overlap(left, right):
+        return True
+    if str(left.get("startDate") or "") != str(right.get("startDate") or ""):
+        return False
+    if normalize_name(str(left.get("city") or "")) != normalize_name(str(right.get("city") or "")):
+        return False
+    if normalize_state(str(left.get("state") or "")) != normalize_state(str(right.get("state") or "")):
+        return False
+
+    left_title = normalize_event_title(str(left.get("title") or ""))
+    right_title = normalize_event_title(str(right.get("title") or ""))
+    left_venue = normalize_venue(str(left.get("venue") or ""))
+    right_venue = normalize_venue(str(right.get("venue") or ""))
+    title_score = text_similarity(left_title, right_title)
+    venue_score = text_similarity(left_venue, right_venue)
+    overlap = artist_overlap(left, right)
+    festival_pair = left.get("eventType") == "festival" or right.get("eventType") == "festival"
+
+    if left_venue and right_venue and left_venue == right_venue and (overlap or title_score >= 0.45):
+        return True
+    if festival_pair and title_score >= 0.66:
+        return True
+    if overlap and (venue_score >= 0.66 or title_score >= 0.66):
+        return True
+    if overlap and venue_score >= 0.52 and title_score >= 0.52:
+        return True
+    return False
 
 
 def canonical_event_keys(event: dict[str, Any]) -> list[str]:
     event_date = str(event.get("startDate") or "")
-    venue = normalize_name(str(event.get("venue") or ""))
-    title = normalize_event_title(str(event.get("title") or ""))
     city = normalize_name(str(event.get("city") or ""))
-    state = normalize_name(str(event.get("state") or ""))
+    state = normalize_state(str(event.get("state") or ""))
+    venue = normalize_venue(str(event.get("venue") or ""))
+    title = normalize_event_title(str(event.get("title") or ""))
     keys: list[str] = []
+    for provider, value in (event.get("externalIds") or {}).items() if isinstance(event.get("externalIds"), dict) else []:
+        if value:
+            keys.append(f"external|{provider}|{value}")
     if event_date and city:
-        if venue not in GENERIC_VENUES and venue != title:
+        if venue:
             keys.append(f"venue|{event_date}|{venue}|{city}|{state}")
         if title:
             keys.append(f"title|{event_date}|{title}|{city}|{state}")
-    if not keys:
-        keys.append(normalize_name(str(event.get("id") or event.get("title") or "")))
-    return [key for key in keys if key]
+    return keys or [normalize_name(str(event.get("id") or event.get("title") or ""))]
 
 
 def canonical_event_key(event: dict[str, Any]) -> str:
-    keys = canonical_event_keys(event)
-    return keys[0] if keys else ""
+    return canonical_event_keys(event)[0]
 
 
 def merge_two_events(existing: dict[str, Any], incoming: dict[str, Any]) -> dict[str, Any]:
     merged = dict(existing)
-    try:
-        existing_priority = int(existing.get("sourcePriority") or 0)
-    except (TypeError, ValueError):
-        existing_priority = 0
-    try:
-        incoming_priority = int(incoming.get("sourcePriority") or 0)
-    except (TypeError, ValueError):
-        incoming_priority = 0
-    prefer_incoming = incoming_priority >= existing_priority
-
+    existing_priority = int(existing.get("sourcePriority") or 0)
+    incoming_priority = int(incoming.get("sourcePriority") or 0)
+    prefer_incoming = incoming_priority > existing_priority
     for key in (
         "title", "startDate", "endDate", "startTime", "timezone", "venue", "address",
-        "city", "state", "country", "eventType", "status", "ticketUrl",
-        "officialUrl", "image", "price", "lastVerified", "confidence",
+        "city", "state", "country", "eventType", "status", "ticketUrl", "officialUrl",
+        "price", "lastVerified", "confidence", "headliner",
     ):
-        incoming_value = incoming.get(key)
-        if not incoming_value:
-            continue
-        if key in {"ticketUrl", "image", "price"} and merged.get(key):
-            continue
-        if prefer_incoming or not merged.get(key):
-            merged[key] = incoming_value
-
+        value = incoming.get(key)
+        if value and (prefer_incoming or not merged.get(key)):
+            merged[key] = value
     merged["sourcePriority"] = max(existing_priority, incoming_priority)
-    merged["artists"] = sorted(
-        set(existing.get("artists", [])) | set(incoming.get("artists", [])),
-        key=str.casefold,
-    )
-
-    sources: list[dict[str, str]] = []
-    seen_urls: set[str] = set()
+    merged["musicConfirmed"] = bool(existing.get("musicConfirmed") or incoming.get("musicConfirmed"))
+    merged["requiresCorroboration"] = bool(existing.get("requiresCorroboration") and incoming.get("requiresCorroboration"))
+    merged["artists"] = ordered_unique([*existing.get("artists", []), *incoming.get("artists", [])])
+    merged["artistEvidence"] = [*existing.get("artistEvidence", []), *incoming.get("artistEvidence", [])]
+    merged["artworkEvidence"] = [*existing.get("artworkEvidence", []), *incoming.get("artworkEvidence", [])]
+    merged["festivalLineupAuthoritative"] = bool(existing.get("festivalLineupAuthoritative") or incoming.get("festivalLineupAuthoritative"))
+    merged["lineupExplicit"] = bool(existing.get("lineupExplicit") or incoming.get("lineupExplicit"))
+    external = dict(existing.get("externalIds", {}) if isinstance(existing.get("externalIds"), dict) else {})
+    external.update(incoming.get("externalIds", {}) if isinstance(incoming.get("externalIds"), dict) else {})
+    merged["externalIds"] = external
+    sources: list[dict[str, Any]] = []
+    seen: set[str] = set()
     for source in [*existing.get("sources", []), *incoming.get("sources", [])]:
         if not isinstance(source, dict):
             continue
-        url = safe_url(source.get("url"))
-        identity = url or str(source.get("name") or "")
-        if identity and identity not in seen_urls:
-            seen_urls.add(identity)
+        identity = safe_url(source.get("url")) or str(source.get("name") or "")
+        if identity and identity not in seen:
+            seen.add(identity)
             sources.append(source)
+    sources.sort(key=lambda item: int(item.get("priority") or 0), reverse=True)
     merged["sources"] = sources
     if sources:
-        merged["sourceName"] = str(sources[0].get("name") or merged.get("sourceName") or "")
+        merged["sourceName"] = str(sources[0].get("name") or "")
+        merged["sourceAuthority"] = str(sources[0].get("authority") or "")
     return merged
 
 
 def merge_events(events: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
-    by_id: dict[str, dict[str, Any]] = {}
-    key_to_id: dict[str, str] = {}
+    clusters: list[dict[str, Any]] = []
+    for raw in events:
+        if not isinstance(raw, dict) or not raw.get("id"):
+            continue
+        match_index = next((index for index, item in enumerate(clusters) if events_are_duplicates(item, raw)), None)
+        if match_index is None:
+            clusters.append(dict(raw))
+        else:
+            clusters[match_index] = merge_two_events(clusters[match_index], raw)
+    clusters.sort(key=lambda item: (
+        str(item.get("startDate") or "9999-12-31"),
+        str(item.get("startTime") or "23:59"),
+        str(item.get("title") or "").casefold(),
+    ))
+    return clusters
+
+
+def artist_image_map(artists: list[dict[str, Any]], attraction_cache: dict[str, Any]) -> dict[str, str]:
+    images: dict[str, str] = {}
+    for artist in artists:
+        name = str(artist.get("name") or "").strip()
+        configured = safe_url(artist.get("imageUrl"))
+        cached = attraction_cache.get(name) if isinstance(attraction_cache, dict) else None
+        cached_image = safe_url(cached.get("image")) if isinstance(cached, dict) else ""
+        chosen = configured if is_valid_image_url(configured) else (cached_image if is_valid_image_url(cached_image) else "")
+        if name and chosen:
+            images[name] = chosen
+    return images
+
+
+def finalize_event(event: dict[str, Any], images: dict[str, str]) -> dict[str, Any] | None:
+    if not event.get("musicConfirmed") or is_non_show(str(event.get("title") or "")):
+        return None
+    status = str(event.get("status") or "scheduled").lower()
+    if status in {"cancelled", "canceled", "postponed"}:
+        return None
+    if str(event.get("country") or "US").upper() != "US":
+        return None
+    if not event.get("startDate") or not event.get("city") or normalize_state(str(event.get("state") or "")) not in US_STATE_CODES:
+        return None
+    sources = [item for item in event.get("sources", []) if isinstance(item, dict)]
+    if not sources:
+        return None
+    non_discovery = [item for item in sources if str(item.get("authority") or "aggregator") != "aggregator"]
+    if event.get("requiresCorroboration") and not non_discovery:
+        return None
+
+    evidence = [item for item in event.get("artistEvidence", []) if isinstance(item, dict)]
+    if event.get("eventType") == "festival":
+        authoritative = [
+            item for item in evidence
+            if item.get("lineupExplicit")
+            and str(item.get("authority") or "") in {"official_festival", "official_event", "manual_verified"}
+        ]
+        if not authoritative:
+            return None
+        authoritative.sort(key=lambda item: int(item.get("priority") or 0), reverse=True)
+        artists = ordered_unique(value for item in authoritative for value in item.get("artists", []))
+        headliner = next((str(item.get("headliner") or "") for item in authoritative if item.get("headliner")), "")
+    else:
+        strong = [item for item in evidence if int(item.get("priority") or 0) >= AUTHORITY_RANKS["artist_calendar"]]
+        artists = ordered_unique(value for item in (strong or evidence) for value in item.get("artists", []))
+        ranked = sorted(strong or evidence, key=lambda item: int(item.get("priority") or 0), reverse=True)
+        headliner = next((str(item.get("headliner") or "") for item in ranked if item.get("headliner")), "")
+    if not artists:
+        return None
+    if headliner not in artists:
+        headliner = artists[0]
+
+    artwork = ""
+    artwork_items = [item for item in event.get("artworkEvidence", []) if isinstance(item, dict) and is_valid_image_url(item.get("url"), True)]
+    if event.get("eventType") == "festival":
+        artwork_items = [
+            item for item in artwork_items
+            if str(item.get("authority") or "") in {"official_festival", "official_event", "manual_verified"}
+        ]
+    artwork_items.sort(key=lambda item: int(item.get("priority") or 0), reverse=True)
+    if artwork_items:
+        artwork = safe_url(artwork_items[0].get("url"))
+    image = artwork or images.get(headliner, "") or "assets/logo.png"
+
+    result = {key: value for key, value in event.items() if key not in {
+        "artistEvidence", "artworkEvidence", "eventArtwork", "requiresCorroboration",
+        "festivalLineupAuthoritative", "lineupExplicit", "musicConfirmed", "sourcePriority",
+        "sourceAuthority", "externalIds",
+    }}
+    result["artists"] = artists
+    result["headliner"] = headliner
+    result["image"] = image
+    result["imageType"] = "event_artwork" if artwork else ("artist" if images.get(headliner) else "fallback")
+    result["sources"] = sorted(sources, key=lambda item: int(item.get("priority") or 0), reverse=True)
+    result["sourceName"] = str(result["sources"][0].get("name") or "Verified source")
+    result["confidence"] = "high"
+    result["verifiedVersion"] = 2
+    return result
+
+
+def finalize_events(events: Iterable[dict[str, Any]], images: dict[str, str], today: date) -> list[dict[str, Any]]:
+    output: list[dict[str, Any]] = []
     for event in events:
-        event_id = str(event.get("id") or "").strip()
-        if not event_id:
+        if not event_is_future(event, today):
             continue
-        keys = canonical_event_keys(event)
-        existing_id = event_id if event_id in by_id else next(
-            (key_to_id[key] for key in keys if key in key_to_id),
-            None,
-        )
-        if existing_id and existing_id in by_id:
-            by_id[existing_id] = merge_two_events(by_id[existing_id], event)
-            for key in canonical_event_keys(by_id[existing_id]):
-                key_to_id[key] = existing_id
-            continue
-        by_id[event_id] = event
-        for key in keys:
-            key_to_id[key] = event_id
-
-    values = list(by_id.values())
-    values.sort(
-        key=lambda item: (
-            str(item.get("startDate") or "9999-12-31"),
-            str(item.get("startTime") or "23:59"),
-            str(item.get("title") or "").casefold(),
-        )
-    )
-    return values
-
+        normalized = finalize_event(event, images)
+        if normalized:
+            output.append(normalized)
+    output.sort(key=lambda item: (
+        str(item.get("startDate") or "9999-12-31"),
+        str(item.get("startTime") or "23:59"),
+        str(item.get("title") or "").casefold(),
+    ))
+    return output
 
 def normalize_manual_event(event: Any, checked_at: str) -> dict[str, Any] | None:
     if not isinstance(event, dict):
@@ -2071,44 +2377,48 @@ def normalize_manual_event(event: Any, checked_at: str) -> dict[str, Any] | None
     title = str(event.get("title") or "").strip()
     start_date = str(event.get("startDate") or "").strip()
     city = str(event.get("city") or "").strip()
-    state = str(event.get("state") or "").strip().upper()
-    artists = [str(value).strip() for value in event.get("artists", []) if str(value).strip()]
-    if not title or not start_date or not city or state not in US_STATE_CODES or not artists:
+    state = normalize_state(str(event.get("state") or ""))
+    artists = ordered_unique(event.get("artists", []))
+    if not title or not start_date or not city or state not in US_STATE_CODES or not artists or is_non_show(title):
         return None
     identifier = str(event.get("id") or event_hash([title, start_date, city, state]))
     source_url = safe_url(event.get("officialUrl")) or safe_url(event.get("ticketUrl"))
-    return {
-        "id": f"manual:{identifier}",
-        "title": title,
-        "startDate": start_date,
-        "endDate": str(event.get("endDate") or ""),
-        "startTime": str(event.get("startTime") or ""),
-        "timezone": str(event.get("timezone") or ""),
-        "venue": str(event.get("venue") or "Venue not provided"),
-        "address": str(event.get("address") or ""),
-        "city": city,
-        "state": state,
-        "country": "US",
-        "artists": sorted(set(artists), key=str.casefold),
-        "eventType": str(event.get("eventType") or detect_event_type(title)),
-        "status": str(event.get("status") or "scheduled"),
-        "ticketUrl": safe_url(event.get("ticketUrl")) or source_url,
-        "officialUrl": source_url,
-        "image": safe_url(event.get("image")),
-        "price": str(event.get("price") or ""),
-        "sourceName": "Manual verified listing",
-        "sources": [
-            {
-                "name": "Manual verified listing",
-                "url": source_url,
-                "type": "manual",
-            }
-        ] if source_url else [],
-        "lastVerified": checked_at,
-        "confidence": "high",
-        "sourcePriority": 110,
+    source = {
+        "name": str(event.get("sourceName") or "Official event listing"),
+        "parser": "manual_verified",
+        "authority": str(event.get("authority") or ("official_festival" if str(event.get("eventType")) == "festival" else "official_event")),
+        "priority": AUTHORITY_RANKS["manual_verified"],
+        "lineupExplicit": bool(event.get("lineupExplicit", True)),
+        "imagePolicy": "event_artwork",
     }
-
+    result = make_source_event(
+        source=source,
+        source_url=source_url,
+        title=title,
+        start_date=start_date,
+        end_date=str(event.get("endDate") or ""),
+        start_time=str(event.get("startTime") or ""),
+        venue=str(event.get("venue") or "Venue not provided"),
+        address=str(event.get("address") or ""),
+        city=city,
+        state=state,
+        artists=artists,
+        headliner=str(event.get("headliner") or artists[0]),
+        checked_at=checked_at,
+        ticket_url=safe_url(event.get("ticketUrl")) or source_url,
+        official_url=source_url,
+        image=safe_url(event.get("image")),
+        price=str(event.get("price") or ""),
+        status=str(event.get("status") or "scheduled"),
+        confidence="high",
+        event_type=str(event.get("eventType") or detect_event_type(title)),
+        lineup_explicit=bool(event.get("lineupExplicit", True)),
+        music_confirmed=True,
+        priority=AUTHORITY_RANKS["manual_verified"],
+        external_ids={"manual": identifier},
+    )
+    result["id"] = f"manual:{identifier}"
+    return result
 
 def preserve_recent_existing(
     fresh_events: list[dict[str, Any]],
@@ -2116,44 +2426,17 @@ def preserve_recent_existing(
     today: date,
     checked_at: str,
 ) -> list[dict[str, Any]]:
-    fresh_ids = {str(event.get("id") or "") for event in fresh_events}
-    fresh_keys = {canonical_event_key(event) for event in fresh_events}
-    preserved: list[dict[str, Any]] = []
-    current_time = now_utc()
-    for event in existing_events:
-        if not isinstance(event, dict) or not event_is_future(event, today):
-            continue
-        event_id = str(event.get("id") or "")
-        if event_id in fresh_ids or canonical_event_key(event) in fresh_keys:
-            continue
-        verified = str(event.get("lastVerified") or "")
-        try:
-            verified_at = datetime.fromisoformat(verified.replace("Z", "+00:00"))
-        except ValueError:
-            continue
-        if current_time - verified_at <= timedelta(days=STALE_GRACE_DAYS):
-            copy = dict(event)
-            copy["stale"] = True
-            copy["staleSince"] = checked_at
-            preserved.append(copy)
-    return [*fresh_events, *preserved]
-
+    # Version 2 intentionally does not retain stale version-1 records. This prevents
+    # previously incorrect festival lineups and duplicates from lingering after deploy.
+    return fresh_events
 
 def main() -> int:
     started = now_utc()
     checked_at = iso_z(started)
     today = started.date()
-
-    artists = [
-        item for item in load_json(ARTISTS_FILE, [])
-        if isinstance(item, dict) and item.get("enabled", True)
-    ]
-    official_sources = [
-        item for item in load_json(OFFICIAL_SOURCES_FILE, [])
-        if isinstance(item, dict) and item.get("enabled", True)
-    ]
+    artists = [item for item in load_json(ARTISTS_FILE, []) if isinstance(item, dict) and item.get("enabled", True)]
+    official_sources = [item for item in load_json(OFFICIAL_SOURCES_FILE, []) if isinstance(item, dict) and item.get("enabled", True)]
     manual_events = load_json(MANUAL_EVENTS_FILE, [])
-    existing_events = load_json(EVENTS_FILE, [])
     previous_status = load_json(STATUS_FILE, {})
     attraction_cache = load_json(ATTRACTION_CACHE_FILE, {})
     if not isinstance(attraction_cache, dict):
@@ -2174,34 +2457,16 @@ def main() -> int:
     for source in official_sources:
         source_name = str(source.get("name") or source.get("url") or "Official source")
         try:
-            source_events = collect_official_source(
-                source, client, alias_lookup, checked_at
-            )
+            source_events = collect_official_source(source, client, alias_lookup, checked_at)
             collected.extend(source_events)
             official_events_count += len(source_events)
             sources_checked += 1
-            source_results.append({
-                "name": source_name,
-                "status": "ok",
-                "eventsFound": len(source_events),
-            })
+            source_results.append({"name": source_name, "status": "ok", "eventsFound": len(source_events)})
             print(f"Official source: {source_name}: {len(source_events)} event(s)")
         except CollectorError as exc:
             message = f"{source_name}: {exc}"
-            if source.get("softFail", False):
-                warnings.append(message)
-                source_results.append({
-                    "name": source_name,
-                    "status": "warning",
-                    "eventsFound": 0,
-                })
-            else:
-                errors.append(message)
-                source_results.append({
-                    "name": source_name,
-                    "status": "error",
-                    "eventsFound": 0,
-                })
+            warnings.append(message)
+            source_results.append({"name": source_name, "status": "warning", "eventsFound": 0})
             print(f"WARNING: {message}", file=sys.stderr)
 
     api_key = os.getenv("TICKETMASTER_API_KEY", "").strip()
@@ -2209,36 +2474,23 @@ def main() -> int:
         for artist in artists:
             name = str(artist.get("name") or "")
             if not artist.get("ticketmasterEnabled", True):
-                print(f"Ticketmaster: skipped by configuration for {name}")
                 continue
             try:
-                attraction_id = find_ticketmaster_attraction(
-                    artist, api_key, client, attraction_cache, checked_at
-                )
+                attraction_id = find_ticketmaster_attraction(artist, api_key, client, attraction_cache, checked_at)
                 if not attraction_id:
                     unmatched_artists.append(name)
-                    print(f"Ticketmaster: no exact attraction match for {name}")
                     continue
                 artists_matched += 1
-                artist_events = collect_ticketmaster_artist(
-                    artist,
-                    attraction_id,
-                    api_key,
-                    client,
-                    alias_lookup,
-                    checked_at,
-                )
+                artist_events = collect_ticketmaster_artist(artist, attraction_id, api_key, client, alias_lookup, checked_at)
                 collected.extend(artist_events)
                 ticketmaster_events_count += len(artist_events)
                 sources_checked += 1
                 print(f"Ticketmaster: {name}: {len(artist_events)} event(s)")
             except CollectorError as exc:
-                errors.append(f"Ticketmaster - {name}: {exc}")
+                warnings.append(f"Ticketmaster - {name}: {exc}")
                 print(f"WARNING: Ticketmaster - {name}: {exc}", file=sys.stderr)
     else:
-        errors.append(
-            "Ticketmaster is not configured. Add the TICKETMASTER_API_KEY repository secret for broader coverage."
-        )
+        errors.append("Ticketmaster is not configured. Add the TICKETMASTER_API_KEY repository secret.")
 
     if isinstance(manual_events, list):
         for raw_event in manual_events:
@@ -2246,33 +2498,22 @@ def main() -> int:
             if event:
                 collected.append(event)
 
-    fresh_events = [event for event in collected if event_is_future(event, today)]
-    fresh_events = merge_events(fresh_events)
-    events = preserve_recent_existing(
-        fresh_events,
-        existing_events if isinstance(existing_events, list) else [],
-        today,
-        checked_at,
-    )
-    events = merge_events(events)
-
+    candidates = merge_events(event for event in collected if event_is_future(event, today))
+    images = artist_image_map(artists, attraction_cache)
+    events = finalize_events(candidates, images, today)
     write_json(EVENTS_FILE, events)
     write_json(ATTRACTION_CACHE_FILE, attraction_cache)
 
-    any_source_succeeded = sources_checked > 0
-    if errors and any_source_succeeded:
-        status_name = "partial"
-    elif errors:
-        status_name = "needs_configuration" if not api_key else "error"
-    else:
-        status_name = "ok"
-
+    any_source_succeeded = sources_checked > 0 or bool(manual_events)
+    status_name = "ok" if not errors else ("partial" if any_source_succeeded else "needs_configuration")
     last_success = checked_at if any_source_succeeded else previous_status.get("lastSuccessfulUpdate")
     status = {
         "status": status_name,
+        "collectorVersion": 2,
         "lastAttempt": checked_at,
         "lastSuccessfulUpdate": last_success,
         "eventsPublished": len(events),
+        "candidatesCollected": len(collected),
         "artistsConfigured": len(artists),
         "artistsMatchedOnTicketmaster": artists_matched,
         "officialEventsFound": official_events_count,
@@ -2280,23 +2521,13 @@ def main() -> int:
         "sourcesChecked": sources_checked,
         "unmatchedArtists": unmatched_artists,
         "sourceResults": source_results,
-        "warnings": warnings[:25],
-        "errors": errors[:25],
-        "message": (
-            "Show listings updated successfully."
-            if status_name == "ok"
-            else "The site updated, but one or more sources need attention."
-        ),
+        "warnings": warnings[:30],
+        "errors": errors[:10],
+        "message": "Verified U.S. music listings updated with strict festival, image, and duplicate rules.",
     }
     write_json(STATUS_FILE, status)
-
-    print(
-        f"Published {len(events)} event(s); "
-        f"official={official_events_count}; ticketmaster={ticketmaster_events_count}; "
-        f"errors={len(errors)}; warnings={len(warnings)}"
-    )
+    print(f"Published {len(events)} event(s); candidates={len(collected)}; errors={len(errors)}; warnings={len(warnings)}")
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())

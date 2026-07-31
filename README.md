@@ -1,53 +1,64 @@
-# The Kingdom Circuit
+# The Kingdom Circuit — Master v2
 
-A free GitHub Pages website and scheduled collector for U.S. Christian hip-hop shows.
+A free GitHub Pages website and scheduled collector for verified U.S. Christian hip-hop and faith-driven music shows.
 
-## Included in this build
+## What changed in v2
 
-- 58 tracked artists
+- Rebuilds the event list from current sources instead of retaining old v1 records.
+- Merges near-duplicates such as minor venue-name variations while preserving every source link.
+- Publishes festivals only when an official festival or event source explicitly confirms the lineup.
+- Prevents artist and label pages from adding unconfirmed performers to festivals.
+- Uses official event artwork first. Otherwise it uses the first-billed artist's approved base image.
+- Rejects source logos and label logos as event images.
+- Publishes U.S. music performances only. Speaking events, conferences, workshops, and uncertain listings are excluded.
+- Includes all current Reach Records artists plus a broad CHH, crossover, collective, and legacy roster.
+
+## Current configuration
+
+- 113 tracked artists and groups
 - 49 approved source feeds
-- Daily GitHub Actions updates
 - Ticketmaster Discovery API integration
 - Reach Records consolidated and artist calendars
-- Holy Culture, ChristianHits shows, and ChristianHits festival monitoring
-- TPR Live, Awakening Events, and official artist tour pages
-- Holy Smoke, Space City Fest, Rural Music Festival, Uprise Festival, OneFest, and Off The Charts coverage
-- NF, Mike Malagies, Social Club Misfits, and Reflection Music Group monitoring
-- Duplicate removal, U.S.-only filtering, and stale-event protection
-- Search and filters for artist, state, event type, date, and free events
+- TPR, Awakening Events, official artist pages, selected festival pages, and corroborating CHH calendars
+- Verified fallbacks for Holy Smoke, Space City Fest, Rural Music Festival, OneFest, Uprise, Off The Charts, and the Konnect Concert Series
 
-## Verified fallback events
+## Publishing rules
 
-`config/manual-events.json` contains seven source-backed listings that are retained even when a site blocks automated retrieval:
-
-- Holy Smoke 2026
-- OneFest 2026
-- Off The Charts Music Festival 2026
-- Konnect Concert Series
-- Rural Music Festival 2026
-- Uprise Festival 2026
-- Space City Fest 2026
-
-## How it works
-
-Each day, `.github/workflows/update-and-deploy.yml` runs `scripts/update_events.py`. The collector checks the approved source registry, queries Ticketmaster, removes past and duplicate records, writes `events.json`, and deploys the site.
-
-No paid AI service is required. The system uses free scheduled automation and conservative extraction rules.
+1. High-confidence qualifying events publish automatically.
+2. Uncertain or conflicting events do not publish.
+3. Source priority is: official event/festival, venue or ticket seller, artist/label, then aggregator.
+4. Festival lineups must be explicit on an official festival/event source.
+5. Official event artwork wins. If none exists, the first-billed artist's base image is used.
+6. U.S. music performances only.
 
 ## Important files
 
-- `config/artists.json` — tracked artists and aliases
+- `config/artists.json` — canonical roster, aliases, Ticketmaster settings, and optional approved `imageUrl` overrides
 - `config/official-sources.json` — approved source registry
-- `config/manual-events.json` — verified fallback events
-- `scripts/update_events.py` — collection and deduplication logic
+- `config/manual-events.json` — source-backed fallbacks and official-social confirmations that cannot be parsed reliably
+- `scripts/update_events.py` — collection, validation, image selection, and duplicate merging
+- `tests/test_update_events.py` — automated rule tests
 - `events.json` — generated public event list
-- `run-status.json` — latest run diagnostics
-- `.github/workflows/update-and-deploy.yml` — daily schedule and deployment
+- `run-status.json` — latest collector diagnostics
+
+## Images
+
+Artist base-image priority is:
+
+1. An approved `imageUrl` in `config/artists.json`
+2. The artist image returned by the verified Ticketmaster attraction
+3. The neutral Kingdom Circuit fallback if neither is available
+
+A label or source logo is never selected as event artwork.
 
 ## Ticketmaster key
 
-The repository secret must remain named `TICKETMASTER_API_KEY`. Never place the key in a public file.
+The existing GitHub repository secret must remain named `TICKETMASTER_API_KEY`. Never place the key in a public file.
 
-## Limitations
+## Social-only announcements
 
-No source covers every show. Social posts and image-only flyers are not auto-published because they are difficult to verify reliably. The manual fallback file is used for important verified events that are poorly structured online.
+The free workflow does not log into or scrape closed social platforms. An official artist, festival, venue, or promoter social announcement can be added to `config/manual-events.json` as a verified fallback. It will then auto-publish with the rest of the calendar.
+
+## Maintenance
+
+The GitHub Action runs the tests first. If a rule test fails, the site is not redeployed. The collector then refreshes sources, writes the cleaned event list, commits data changes, and deploys GitHub Pages.

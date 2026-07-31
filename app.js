@@ -32,6 +32,15 @@ function safeHttpUrl(value) {
   }
 }
 
+function safeImageUrl(value) {
+  try {
+    const url = new URL(String(value), window.location.href);
+    return ["http:", "https:"].includes(url.protocol) ? url.href : "";
+  } catch {
+    return "";
+  }
+}
+
 function localDate(dateText) {
   const parts = String(dateText).split("-").map(Number);
   if (parts.length !== 3 || parts.some(Number.isNaN)) {
@@ -127,7 +136,7 @@ function renderEvent(event) {
   const card = createElement("article", "event-card");
 
   const image = createElement("div", "event-image");
-  const imageUrl = safeHttpUrl(event.image);
+  const imageUrl = safeImageUrl(event.image);
   if (imageUrl) {
     image.style.backgroundImage = `linear-gradient(145deg, rgba(8,8,8,.1), rgba(8,8,8,.55)), url("${imageUrl.replaceAll('"', '%22')}")`;
   }
@@ -185,14 +194,23 @@ function renderEvent(event) {
   }
 
   const sourceBlock = createElement("div", "source-link");
-  const source = Array.isArray(event.sources) && event.sources.length ? event.sources[0] : null;
-  if (source && safeHttpUrl(source.url)) {
-    sourceBlock.append("Source: ");
-    const sourceAnchor = createElement("a", "", source.name || "Official source");
-    sourceAnchor.href = safeHttpUrl(source.url);
-    sourceAnchor.target = "_blank";
-    sourceAnchor.rel = "noopener";
-    sourceBlock.appendChild(sourceAnchor);
+  const sources = (Array.isArray(event.sources) ? event.sources : [])
+    .filter((source) => source && safeHttpUrl(source.url));
+  if (sources.length) {
+    sourceBlock.append(sources.length === 1 ? "Source: " : "Sources: ");
+    sources.slice(0, 4).forEach((source, index) => {
+      if (index) {
+        sourceBlock.append(" · ");
+      }
+      const sourceAnchor = createElement("a", "", source.name || "Official source");
+      sourceAnchor.href = safeHttpUrl(source.url);
+      sourceAnchor.target = "_blank";
+      sourceAnchor.rel = "noopener";
+      sourceBlock.appendChild(sourceAnchor);
+    });
+    if (sources.length > 4) {
+      sourceBlock.append(` · +${sources.length - 4} more`);
+    }
   } else {
     sourceBlock.textContent = event.sourceName ? `Source: ${event.sourceName}` : "Source verified";
   }
