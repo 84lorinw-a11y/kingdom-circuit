@@ -1,16 +1,19 @@
-# The Kingdom Circuit — Master v3
+# The Kingdom Circuit — Master v4
 
 A free GitHub Pages website and daily collector for verified U.S. Christian hip-hop and faith-driven music shows.
 
-## What v3 adds
+## What v4 adds
 
-- Checks all 113 configured artists individually through a free public Instagram search-index scan.
-- Reads known official Instagram post/Reel URLs, including Mike Malagies' current announcement Reel.
-- Auto-publishes an Instagram event only when the official artist identity, future date, U.S. city/state, and live-music context are explicit.
-- Keeps uncertain Instagram findings in `run-status.json` as internal candidates instead of publishing them.
-- Adds verified listings for Steven Malcolm, Scootie Wop, and Mike Teezy.
-- Adds dedicated Steven Malcolm, Scootie Wop, and Mike Teezy source feeds.
-- Preserves Master v2's strict duplicate, festival-lineup, image, U.S.-only, and music-only rules.
+- Stronger near-duplicate merging for shortened venue names, sponsor suffixes, and city suffixes.
+- Clear public titles when a source incorrectly uses the venue name as the event title.
+- "Venue to be announced" instead of internal placeholder wording.
+- A gold calendar-status state when source checks return warnings and a red state for update errors.
+- Quick filters for this weekend, the next 30 days, this month, and festivals.
+- Collapsed festival lineups with an expandable full lineup.
+- Real image elements with useful alternative text instead of decorative background images.
+- Free local browser alerts that highlight new shows matching a saved artist or state on return visits.
+- A clean on-site submission form that prepares a verified GitHub submission.
+- 32 automated validation tests.
 
 ## Current configuration
 
@@ -19,8 +22,7 @@ A free GitHub Pages website and daily collector for verified U.S. Christian hip-
 - Ticketmaster Discovery API integration
 - One per-artist public Instagram search each scheduled run
 - Known Instagram post registry
-- 11 source-backed fallback events
-- 26 automated validation tests
+- Source-backed fallback events for listings that cannot be parsed reliably
 
 ## Publishing rules
 
@@ -31,6 +33,14 @@ A free GitHub Pages website and daily collector for verified U.S. Christian hip-
 5. Official event artwork wins; otherwise the first-billed artist image is used.
 6. U.S. music performances only.
 7. Near-duplicates merge while all useful source links are retained.
+
+## Free local alerts
+
+The alert feature stores an artist and/or state preference in the visitor's browser. When the visitor returns, newly added matching shows are highlighted. It does not collect email addresses and does not require a backend or account.
+
+## Show submissions
+
+The on-site form gathers the required event details and opens a prefilled GitHub Issue. This keeps the site free and prevents anonymous spam, but the submitter needs a free GitHub account for the final step.
 
 ## Instagram coverage
 
@@ -43,7 +53,7 @@ The free workflow does not log into Instagram or bypass access controls. It sear
 - `config/known-instagram-posts.json` — official Instagram post/Reel URLs to monitor
 - `config/manual-events.json` — source-backed fallbacks for listings that cannot be parsed reliably
 - `scripts/instagram_monitor.py` — free public Instagram discovery and strict validation
-- `scripts/update_events.py` — collection, validation, image selection, and duplicate merging
+- `scripts/update_events.py` — collection, validation, image selection, public-title cleanup, and duplicate merging
 - `tests/test_update_events.py` — automated rule tests
 - `events.json` — generated public event list
 - `run-status.json` — latest collector diagnostics and unresolved Instagram candidates

@@ -2,13 +2,17 @@ UPLOAD EVERYTHING INSIDE THIS FOLDER TO THE ROOT OF THE GITHUB REPOSITORY.
 
 Correct paths:
   index.html
+  app.js
+  styles.css
   config/artists.json
-  config/known-instagram-posts.json
-  scripts/instagram_monitor.py
   scripts/update_events.py
+  tests/test_update_events.py
 
 Incorrect path:
   UPLOAD_TO_REPOSITORY/index.html
 
-Commit directly to main, then wait for the Update and deploy show calendar Action to finish with a green check.
+Commit directly to main with:
+  Replace site with Kingdom Circuit Master v4
+
+Then wait for the Update and deploy show calendar Action to finish with a green check.
 Do not replace .github and do not re-enter the Ticketmaster key.

@@ -16,9 +16,7 @@
       <a class="brand" href="./" aria-label="The Kingdom Circuit home">
         <img src="assets/logo.png" alt="The Kingdom Circuit — Christian hip-hop, live and connected">
       </a>
-      <a class="header-action" href="https://github.com/84lorinw-a11y/kingdom-circuit/issues/new?title=Show%20submission%3A%20&body=Please%20provide%20the%20official%20information%20below.%20Uncertain%20or%20incomplete%20events%20will%20not%20be%20published.%0A%0AEvent%20name%3A%0ADate%20and%20local%20time%3A%0AVenue%3A%0ACity%20and%20state%3A%0AConfirmed%20artist%20lineup%3A%0AOfficial%20event%20or%20ticket%20URL%3A%0AOfficial%20artwork%20URL%20%28optional%29%3A%0AYour%20relationship%20to%20the%20event%3A%0A" target="_blank" rel="noopener">
-        Submit a show
-      </a>
+      <button class="header-action" id="open-submit" type="button">Submit a show</button>
     </div>
   </header>
 
@@ -32,10 +30,35 @@
       <div class="update-card" aria-live="polite">
         <span class="status-dot" id="status-dot"></span>
         <div>
-          <span class="update-label">Calendar status</span>
+          <span class="update-label" id="status-label">Calendar status</span>
           <strong id="last-updated">Loading update status...</strong>
         </div>
       </div>
+    </section>
+
+    <section class="alert-panel" aria-labelledby="alert-title">
+      <div class="alert-copy">
+        <p class="eyebrow">Local show watch</p>
+        <h2 id="alert-title">Save an artist or state.</h2>
+        <p>New matching shows will be highlighted the next time you visit on this device. No account is required.</p>
+      </div>
+      <form class="alert-form" id="alert-form">
+        <label class="field">
+          <span>Artist</span>
+          <select id="alert-artist">
+            <option value="">Any artist</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>State</span>
+          <select id="alert-state">
+            <option value="">Any state</option>
+          </select>
+        </label>
+        <button class="primary-button" type="submit">Save local alert</button>
+        <button class="secondary-button" id="clear-alert" type="button" hidden>Clear</button>
+      </form>
+      <div class="alert-message" id="alert-message" aria-live="polite"></div>
     </section>
 
     <section class="calendar" aria-labelledby="calendar-title">
@@ -47,26 +70,31 @@
         <p class="results-count" id="results-count">Loading shows...</p>
       </div>
 
+      <div class="quick-filters" role="group" aria-label="Quick event filters">
+        <button class="filter-chip active" type="button" data-date-mode="all">All dates</button>
+        <button class="filter-chip" type="button" data-date-mode="weekend">This weekend</button>
+        <button class="filter-chip" type="button" data-date-mode="next30">Next 30 days</button>
+        <button class="filter-chip" type="button" data-date-mode="month">This month</button>
+        <button class="filter-chip" type="button" data-type-mode="festival">Festivals</button>
+      </div>
+
       <form class="filters" id="filters" role="search">
         <label class="field field-search">
           <span>Search</span>
           <input id="search-filter" type="search" placeholder="Artist, city, venue, or event" autocomplete="off">
         </label>
-
         <label class="field">
           <span>Artist</span>
           <select id="artist-filter">
             <option value="">All artists</option>
           </select>
         </label>
-
         <label class="field">
           <span>State</span>
           <select id="state-filter">
             <option value="">All states</option>
           </select>
         </label>
-
         <label class="field">
           <span>Type</span>
           <select id="type-filter">
@@ -75,7 +103,6 @@
             <option value="festival">Festivals</option>
           </select>
         </label>
-
         <button class="reset-button" id="reset-filters" type="button">Clear filters</button>
       </form>
 
@@ -93,5 +120,65 @@
     </div>
     <p class="disclaimer">Event details may change. Confirm final information with the official organizer or ticket seller before purchasing or traveling.</p>
   </footer>
+
+  <dialog class="submission-dialog" id="submission-dialog" aria-labelledby="submission-title">
+    <form method="dialog" class="dialog-close-form">
+      <button class="dialog-close" aria-label="Close submission form">×</button>
+    </form>
+    <div class="dialog-content">
+      <p class="eyebrow">Event submission</p>
+      <h2 id="submission-title">Submit a verified show</h2>
+      <p class="dialog-intro">Provide an official event, venue, promoter, festival, ticket, or artist source. Incomplete or uncertain listings will not publish.</p>
+      <form id="submission-form" class="submission-form">
+        <label class="field">
+          <span>Event name</span>
+          <input id="submit-event-name" required>
+        </label>
+        <div class="form-row">
+          <label class="field">
+            <span>Date</span>
+            <input id="submit-date" type="date" required>
+          </label>
+          <label class="field">
+            <span>Local time</span>
+            <input id="submit-time" type="time">
+          </label>
+        </div>
+        <label class="field">
+          <span>Venue</span>
+          <input id="submit-venue" required>
+        </label>
+        <div class="form-row">
+          <label class="field">
+            <span>City</span>
+            <input id="submit-city" required>
+          </label>
+          <label class="field">
+            <span>State</span>
+            <input id="submit-state" maxlength="2" placeholder="TX" required>
+          </label>
+        </div>
+        <label class="field">
+          <span>Confirmed artist lineup</span>
+          <textarea id="submit-lineup" rows="3" required></textarea>
+        </label>
+        <label class="field">
+          <span>Official event or ticket URL</span>
+          <input id="submit-url" type="url" placeholder="https://" required>
+        </label>
+        <label class="field">
+          <span>Official artwork URL <em>optional</em></span>
+          <input id="submit-artwork" type="url" placeholder="https://">
+        </label>
+        <label class="field">
+          <span>Your relationship to the event</span>
+          <input id="submit-relationship" placeholder="Promoter, artist team, venue, fan..." required>
+        </label>
+        <p class="form-note">The final step opens a prefilled GitHub submission. A free GitHub account is currently required.</p>
+        <button class="primary-button" type="submit">Continue to submit</button>
+        <p class="form-feedback" id="submission-feedback" aria-live="polite"></p>
+      </form>
+    </div>
+  </dialog>
 </body>
 </html>

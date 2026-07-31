@@ -67,13 +67,62 @@ def candidate(
     )
 
 
-class KingdomCircuitV2Tests(unittest.TestCase):
+class KingdomCircuitV4Tests(unittest.TestCase):
     def test_workplay_variants_merge(self):
         first = candidate(venue="Workplay Theatre", artists=["Hulvey"], url="https://a.example")
         second = candidate(venue="Workplay", artists=["Hulvey"], url="https://b.example")
         merged = MODULE.merge_events([first, second])
         self.assertEqual(len(merged), 1)
         self.assertEqual(len(merged[0]["sources"]), 2)
+
+    def test_tower_theatre_city_suffix_merges(self):
+        first = candidate(
+            title="Hulvey w/ Indie Tribe",
+            venue="Tower Theatre - Oklahoma City",
+            city="Oklahoma City",
+            state="OK",
+            artists=["Hulvey", "indie tribe."],
+            url="https://ticket.example/tower",
+        )
+        second = candidate(
+            title="Tower Theatre",
+            venue="Tower Theatre",
+            city="Oklahoma City",
+            state="OK",
+            artists=["Hulvey"],
+            url="https://artist.example/tower",
+        )
+        merged = MODULE.merge_events([first, second])
+        self.assertEqual(len(merged), 1)
+        self.assertEqual(len(merged[0]["sources"]), 2)
+
+    def test_novo_sponsor_suffix_merges(self):
+        first = candidate(
+            title="Hulvey",
+            venue="The Novo by Microsoft",
+            city="Los Angeles",
+            state="CA",
+            artists=["Hulvey"],
+            url="https://ticket.example/novo",
+        )
+        second = candidate(
+            title="The Novo",
+            venue="The Novo",
+            city="Los Angeles",
+            state="CA",
+            artists=["Hulvey"],
+            url="https://artist.example/novo",
+        )
+        merged = MODULE.merge_events([first, second])
+        self.assertEqual(len(merged), 1)
+
+    def test_same_artist_same_city_different_show_times_do_not_merge(self):
+        first = candidate(title="KB Matinee", venue="Ryman Auditorium", artists=["KB"], url="https://a.example")
+        second = candidate(title="KB Late Show", venue="Ryman Auditorium", artists=["KB"], url="https://b.example")
+        first["startTime"] = "13:00"
+        second["startTime"] = "20:00"
+        merged = MODULE.merge_events([first, second])
+        self.assertEqual(len(merged), 2)
 
 
     def test_consolidated_calendar_url_does_not_merge_different_dates(self):
@@ -257,6 +306,40 @@ class KingdomCircuitV2Tests(unittest.TestCase):
         event = candidate(artists=["Unknown Tracked Artist"], image="", image_policy="ignore")
         final = MODULE.finalize_events(MODULE.merge_events([event]), {}, date(2098, 1, 1))
         self.assertEqual(final[0]["image"], "assets/logo.png")
+
+    def test_venue_only_title_becomes_artist_live_title(self):
+        event = candidate(
+            title="The Novo",
+            venue="The Novo",
+            city="Los Angeles",
+            state="CA",
+            artists=["Hulvey"],
+        )
+        final = MODULE.finalize_events(MODULE.merge_events([event]), {}, date(2098, 1, 1))
+        self.assertEqual(final[0]["title"], "Hulvey — Live at The Novo")
+
+    def test_unknown_venue_uses_public_tba_language(self):
+        event = candidate(
+            title="Caleb Gordon - The Eden Experience",
+            venue="Venue not provided",
+            city="Phoenix",
+            state="AZ",
+            artists=["Caleb Gordon"],
+        )
+        final = MODULE.finalize_events(MODULE.merge_events([event]), {}, date(2098, 1, 1))
+        self.assertEqual(final[0]["venue"], "Venue to be announced")
+
+    def test_at_venue_is_extracted_when_source_repeats_title_as_venue(self):
+        event = candidate(
+            title="Hip Hop Nights @The Rock Box w/ 1K Phew",
+            venue="Hip Hop Nights @The Rock Box w/ 1K Phew",
+            city="San Antonio",
+            state="TX",
+            artists=["1K Phew"],
+        )
+        final = MODULE.finalize_events(MODULE.merge_events([event]), {}, date(2098, 1, 1))
+        self.assertEqual(final[0]["venue"], "The Rock Box")
+        self.assertEqual(final[0]["title"], "Hip Hop Nights @The Rock Box w/ 1K Phew")
 
     def test_discovery_only_event_needs_corroboration(self):
         discovery = candidate(authority="aggregator", priority=45, discovery_only=True)

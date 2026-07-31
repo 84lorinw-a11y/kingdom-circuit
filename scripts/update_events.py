@@ -128,7 +128,7 @@ IMAGE_REJECT_PATTERN = re.compile(
 VENUE_STOPWORDS = {
     "the", "at", "venue", "theater", "theatre", "center", "centre", "hall",
     "auditorium", "arena", "club", "live", "event", "events", "music",
-    "performance", "performing", "arts", "stage", "room", "complex",
+    "performance", "performing", "arts", "stage", "room", "complex", "by",
 }
 TITLE_STOPWORDS = {
     "the", "a", "an", "live", "concert", "tickets", "ticket", "official",
@@ -2128,12 +2128,37 @@ def normalize_event_title(value: str) -> str:
     return " ".join(tokens)
 
 
-def normalize_venue(value: str) -> str:
-    normalized = normalize_name(value)
+def normalize_venue(value: str, city: str = "") -> str:
+    raw = normalize_whitespace(value)
+    city_raw = normalize_whitespace(city)
+    if city_raw:
+        raw = re.sub(
+            rf"\s*[-–—|]\s*{re.escape(city_raw)}(?:\s*,?\s*[A-Z]{{2}})?\s*$",
+            "",
+            raw,
+            flags=re.IGNORECASE,
+        )
+    raw = re.sub(
+        r"\s+(?:presented|sponsored|powered)\s+by\s+.+$|\s+by\s+[^,|–—-]+$",
+        "",
+        raw,
+        flags=re.IGNORECASE,
+    )
+    normalized = normalize_name(raw)
     normalized = normalized.replace("first ave", "first avenue")
     normalized = normalized.replace("work play", "workplay")
-    tokens = [token for token in normalized.split() if token not in VENUE_STOPWORDS]
-    return " ".join(tokens)
+    city_tokens = set(normalize_name(city_raw).split()) if city_raw else set()
+    base_tokens = [token for token in normalized.split() if token not in VENUE_STOPWORDS]
+    tokens = [token for token in base_tokens if token not in city_tokens]
+    return " ".join(tokens or base_tokens)
+
+
+def token_containment(left: str, right: str) -> float:
+    left_tokens = set(left.split())
+    right_tokens = set(right.split())
+    if not left_tokens or not right_tokens:
+        return 0.0
+    return len(left_tokens & right_tokens) / min(len(left_tokens), len(right_tokens))
 
 
 def token_similarity(left: str, right: str) -> float:
@@ -2170,6 +2195,21 @@ def source_url_overlap(left: dict[str, Any], right: dict[str, Any]) -> bool:
     return bool(left_urls & right_urls)
 
 
+def _time_minutes(value: Any) -> int | None:
+    match = re.match(r"^(\d{1,2}):(\d{2})", str(value or ""))
+    if not match:
+        return None
+    return int(match.group(1)) * 60 + int(match.group(2))
+
+
+def times_compatible(left: dict[str, Any], right: dict[str, Any]) -> bool:
+    left_minutes = _time_minutes(left.get("startTime"))
+    right_minutes = _time_minutes(right.get("startTime"))
+    if left_minutes is None or right_minutes is None:
+        return True
+    return abs(left_minutes - right_minutes) <= 150
+
+
 def events_are_duplicates(left: dict[str, Any], right: dict[str, Any]) -> bool:
     # A provider event ID is globally authoritative. A shared source URL is not:
     # consolidated calendar pages can contain dozens of unrelated events.
@@ -2181,21 +2221,34 @@ def events_are_duplicates(left: dict[str, Any], right: dict[str, Any]) -> bool:
         return False
     if normalize_state(str(left.get("state") or "")) != normalize_state(str(right.get("state") or "")):
         return False
+    if not times_compatible(left, right):
+        return False
 
+    city = str(left.get("city") or right.get("city") or "")
     left_title = normalize_event_title(str(left.get("title") or ""))
     right_title = normalize_event_title(str(right.get("title") or ""))
-    left_venue = normalize_venue(str(left.get("venue") or ""))
-    right_venue = normalize_venue(str(right.get("venue") or ""))
+    left_venue = normalize_venue(str(left.get("venue") or ""), city)
+    right_venue = normalize_venue(str(right.get("venue") or ""), city)
     title_score = text_similarity(left_title, right_title)
     venue_score = text_similarity(left_venue, right_venue)
+    venue_containment = token_containment(left_venue, right_venue)
     overlap = artist_overlap(left, right)
     festival_pair = left.get("eventType") == "festival" or right.get("eventType") == "festival"
 
+    # Common source variants include sponsor suffixes, city suffixes, and shortened
+    # venue names: "The Novo by Microsoft" / "The Novo" and
+    # "Tower Theatre - Oklahoma City" / "Tower Theatre".
+    smaller_venue_tokens = min(len(left_venue.split()), len(right_venue.split()))
+    if (
+        overlap and left_venue and right_venue and venue_containment >= 0.80
+        and (left_venue == right_venue or smaller_venue_tokens >= 2)
+    ):
+        return True
     if left_venue and right_venue and left_venue == right_venue and (overlap or title_score >= 0.45):
         return True
     if festival_pair and title_score >= 0.66:
         return True
-    if overlap and (venue_score >= 0.66 or title_score >= 0.66):
+    if overlap and (venue_score >= 0.66 or title_score >= 0.72):
         return True
     if overlap and venue_score >= 0.52 and title_score >= 0.52:
         return True
@@ -2204,9 +2257,10 @@ def events_are_duplicates(left: dict[str, Any], right: dict[str, Any]) -> bool:
 
 def canonical_event_keys(event: dict[str, Any]) -> list[str]:
     event_date = str(event.get("startDate") or "")
-    city = normalize_name(str(event.get("city") or ""))
+    city_raw = str(event.get("city") or "")
+    city = normalize_name(city_raw)
     state = normalize_state(str(event.get("state") or ""))
-    venue = normalize_venue(str(event.get("venue") or ""))
+    venue = normalize_venue(str(event.get("venue") or ""), city_raw)
     title = normalize_event_title(str(event.get("title") or ""))
     keys: list[str] = []
     for provider, value in (event.get("externalIds") or {}).items() if isinstance(event.get("externalIds"), dict) else []:
@@ -2283,6 +2337,38 @@ def merge_events(events: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
     return clusters
 
 
+def public_venue(event: dict[str, Any]) -> str:
+    venue = normalize_whitespace(str(event.get("venue") or ""))
+    title = normalize_whitespace(str(event.get("title") or ""))
+    if normalize_name(venue) in {normalize_name(value) for value in GENERIC_VENUES}:
+        return "Venue to be announced"
+    if venue and title and normalize_name(venue) == normalize_name(title):
+        match = re.search(
+            r"@\s*(.+?)(?=\s+(?:w/|with\b|feat\.?\b|featuring\b)|$)",
+            title,
+            flags=re.IGNORECASE,
+        )
+        if match:
+            candidate = normalize_whitespace(match.group(1))
+            if candidate:
+                return candidate
+    return venue or "Venue to be announced"
+
+
+def public_event_title(event: dict[str, Any], artists: list[str], headliner: str, venue: str) -> str:
+    title = normalize_whitespace(str(event.get("title") or ""))
+    if event.get("eventType") == "festival":
+        return title or (f"{headliner} Festival Appearance" if headliner else "Festival")
+    if not title or normalize_name(title) in {normalize_name(value) for value in GENERIC_VENUES}:
+        return f"{headliner} — Live" if headliner else "Live music event"
+    if venue != "Venue to be announced":
+        title_as_venue = normalize_venue(title, str(event.get("city") or ""))
+        venue_normalized = normalize_venue(venue, str(event.get("city") or ""))
+        if title_as_venue and venue_normalized and text_similarity(title_as_venue, venue_normalized) >= 0.92:
+            return f"{headliner} — Live at {venue}" if headliner else title
+    return title
+
+
 def artist_image_map(artists: list[dict[str, Any]], attraction_cache: dict[str, Any]) -> dict[str, str]:
     images: dict[str, str] = {}
     for artist in artists:
@@ -2352,14 +2438,18 @@ def finalize_event(event: dict[str, Any], images: dict[str, str]) -> dict[str, A
         "festivalLineupAuthoritative", "lineupExplicit", "musicConfirmed", "sourcePriority",
         "sourceAuthority", "externalIds",
     }}
+    clean_venue = public_venue(event)
+    clean_title = public_event_title(event, artists, headliner, clean_venue)
     result["artists"] = artists
     result["headliner"] = headliner
+    result["title"] = clean_title
+    result["venue"] = clean_venue
     result["image"] = image
     result["imageType"] = "event_artwork" if artwork else ("artist" if images.get(headliner) else "fallback")
     result["sources"] = sorted(sources, key=lambda item: int(item.get("priority") or 0), reverse=True)
     result["sourceName"] = str(result["sources"][0].get("name") or "Verified source")
     result["confidence"] = "high"
-    result["verifiedVersion"] = 2
+    result["verifiedVersion"] = 4
     return result
 
 
@@ -2610,11 +2700,16 @@ def main() -> int:
     write_json(ATTRACTION_CACHE_FILE, attraction_cache)
 
     any_source_succeeded = sources_checked > 0 or bool(manual_events)
-    status_name = "ok" if not errors else ("partial" if any_source_succeeded else "needs_configuration")
+    if errors:
+        status_name = "partial" if any_source_succeeded else "needs_configuration"
+    elif warnings:
+        status_name = "warning"
+    else:
+        status_name = "ok"
     last_success = checked_at if any_source_succeeded else previous_status.get("lastSuccessfulUpdate")
     status = {
         "status": status_name,
-        "collectorVersion": 3,
+        "collectorVersion": 4,
         "lastAttempt": checked_at,
         "lastSuccessfulUpdate": last_success,
         "eventsPublished": len(events),
@@ -2633,9 +2728,11 @@ def main() -> int:
         "sourcesChecked": sources_checked,
         "unmatchedArtists": unmatched_artists,
         "sourceResults": source_results,
+        "warningCount": len(warnings),
+        "errorCount": len(errors),
         "warnings": warnings[:30],
         "errors": errors[:10],
-        "message": "Verified U.S. music listings updated with strict festival, image, duplicate, and public Instagram-announcement rules.",
+        "message": "Verified U.S. music listings updated with improved duplicate merging, public titles, source health, images, and public Instagram-announcement rules.",
     }
     write_json(STATUS_FILE, status)
     print(f"Published {len(events)} event(s); candidates={len(collected)}; errors={len(errors)}; warnings={len(warnings)}")
