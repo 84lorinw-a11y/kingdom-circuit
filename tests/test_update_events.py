@@ -329,5 +329,119 @@ class KingdomCircuitV2Tests(unittest.TestCase):
         self.assertTrue(expected.issubset(names))
 
 
+class InstagramMonitoringTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        social_path = ROOT / "scripts" / "instagram_monitor.py"
+        social_spec = importlib.util.spec_from_file_location("instagram_monitor_test", social_path)
+        cls.social = importlib.util.module_from_spec(social_spec)
+        assert social_spec.loader
+        social_spec.loader.exec_module(cls.social)
+
+    def test_instagram_queries_cover_every_artist(self):
+        artists = json.loads((ROOT / "config" / "artists.json").read_text())
+        queries = self.social.build_search_queries(artists, 2099, batch_size=5)
+        combined = " ".join(queries)
+        enabled = [artist for artist in artists if artist.get("enabled", True)]
+        for artist in enabled:
+            self.assertIn(f'"{artist["name"]}"', combined)
+        # The live scanner uses one search query per artist so every roster
+        # entry is checked independently rather than hidden in a broad batch.
+        self.assertEqual(len(self.social.build_search_queries(artists, 2099)), len(enabled))
+
+    def test_high_confidence_official_instagram_post_becomes_event(self):
+        records = self.social._artist_records([
+            {
+                "name": "Scootie Wop",
+                "aliases": ["Scootie Wop"],
+                "enabled": True,
+                "instagramProfile": "https://www.instagram.com/scootiewop/",
+            }
+        ])
+        item = {
+            "title": 'Scootie Wop (@scootiewop) on Instagram: "Houston concert June 10, 2099 at MATCH in Houston, TX"',
+            "description": "Tickets available now. Doors open at 6:00 PM.",
+            "link": "https://www.instagram.com/reel/TESTSOCIAL123/",
+            "pubDate": "",
+        }
+        event, candidate_item = self.social.parse_result(item, records, date(2098, 1, 1), 550)
+        self.assertIsNotNone(event)
+        self.assertIsNone(candidate_item)
+        self.assertEqual(event["artists"], ["Scootie Wop"])
+        self.assertEqual(event["startDate"], "2099-06-10")
+        self.assertEqual(event["city"], "Houston")
+        self.assertEqual(event["state"], "TX")
+
+    def test_uncertain_instagram_post_is_candidate_not_published(self):
+        records = self.social._artist_records([
+            {"name": "Mike Malagies", "aliases": ["Mike Malagies"], "enabled": True}
+        ])
+        item = {
+            "title": "Mike Malagies on Instagram: Big announcement soon",
+            "description": "See you there!",
+            "link": "https://www.instagram.com/reel/UNRESOLVED123/",
+            "pubDate": "",
+        }
+        event, candidate_item = self.social.parse_result(item, records, date(2098, 1, 1), 550)
+        self.assertIsNone(event)
+        self.assertIsNotNone(candidate_item)
+        self.assertIn("future date", candidate_item["reason"])
+
+    def test_instagram_festival_post_waits_for_official_festival_lineup(self):
+        records = self.social._artist_records([
+            {
+                "name": "Social Club Misfits",
+                "aliases": ["Social Club Misfits"],
+                "enabled": True,
+                "instagramProfile": "https://www.instagram.com/socialclubmisfits/",
+            }
+        ])
+        item = {
+            "title": 'Social Club Misfits on Instagram: "Festival August 28, 2099 in Isle, MN"',
+            "description": "We are performing live at Rural Music Festival.",
+            "link": "https://www.instagram.com/p/FESTIVALPOST123/",
+            "pubDate": "",
+        }
+        event, candidate_item = self.social.parse_result(item, records, date(2098, 1, 1), 550)
+        self.assertIsNone(event)
+        self.assertIsNotNone(candidate_item)
+        self.assertIn("official festival lineup", candidate_item["reason"])
+
+    def test_social_event_normalizes_as_artist_calendar(self):
+        raw = {
+            "id": "instagram:reel:ABC",
+            "title": "Steven Malcolm Live in Adrian",
+            "startDate": "2099-08-20",
+            "startTime": "19:30",
+            "venue": "The Centre",
+            "city": "Adrian",
+            "state": "MI",
+            "artists": ["Steven Malcolm"],
+            "headliner": "Steven Malcolm",
+            "officialUrl": "https://www.instagram.com/reel/ABC/",
+            "sourceUrl": "https://www.instagram.com/reel/ABC/",
+        }
+        event = MODULE.normalize_social_event(raw, CHECKED)
+        self.assertIsNotNone(event)
+        self.assertEqual(event["sourceAuthority"], "artist_calendar")
+        self.assertTrue(event["musicConfirmed"])
+
+    def test_new_verified_manual_events_are_present(self):
+        manual = json.loads((ROOT / "config" / "manual-events.json").read_text())
+        identifiers = {item["id"] for item in manual}
+        expected = {
+            "steven-malcolm-the-centre-adrian-2026",
+            "scootie-wop-southwest-trail-riders-houston-2026",
+            "scootie-wop-match-houston-2026",
+            "mike-teezy-stellar-popup-charlotte-2026",
+        }
+        self.assertTrue(expected.issubset(identifiers))
+
+    def test_known_mike_malagies_instagram_post_is_monitored(self):
+        posts = json.loads((ROOT / "config" / "known-instagram-posts.json").read_text())
+        urls = {item["url"] for item in posts}
+        self.assertIn("https://www.instagram.com/reel/DadaZKqPnGY/", urls)
+
+
 if __name__ == "__main__":
     unittest.main()

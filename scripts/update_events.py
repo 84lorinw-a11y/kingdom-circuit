@@ -5,6 +5,7 @@ The collector uses free structured and public first-party inputs:
 1. Ticketmaster Discovery API when TICKETMASTER_API_KEY is configured.
 2. Official artist, label, promoter, and festival pages.
 3. Selected CHH calendars that are filtered to the tracked artist roster.
+4. A free, best-effort public-index scan of Instagram announcements for every tracked artist.
 
 Only high-confidence, future, U.S. events are published. The script is designed
 for a scheduled GitHub Actions workflow and uses only Python's standard library.
@@ -30,10 +31,16 @@ from urllib.parse import urlencode, urljoin, urlparse
 from urllib.request import Request, urlopen
 from urllib.robotparser import RobotFileParser
 
+SCRIPT_DIR = Path(__file__).resolve().parent
+if str(SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_DIR))
+from instagram_monitor import scan_instagram_index
+
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 OFFICIAL_SOURCES_FILE = ROOT / "config" / "official-sources.json"
 MANUAL_EVENTS_FILE = ROOT / "config" / "manual-events.json"
+KNOWN_INSTAGRAM_POSTS_FILE = ROOT / "config" / "known-instagram-posts.json"
 ATTRACTION_CACHE_FILE = ROOT / "cache" / "ticketmaster-attractions.json"
 EVENTS_FILE = ROOT / "events.json"
 STATUS_FILE = ROOT / "run-status.json"
@@ -2420,13 +2427,65 @@ def normalize_manual_event(event: Any, checked_at: str) -> dict[str, Any] | None
     result["id"] = f"manual:{identifier}"
     return result
 
+def normalize_social_event(event: Any, checked_at: str) -> dict[str, Any] | None:
+    """Normalize a high-confidence official Instagram announcement."""
+    if not isinstance(event, dict):
+        return None
+    title = str(event.get("title") or "").strip()
+    start_date = str(event.get("startDate") or "").strip()
+    city = str(event.get("city") or "").strip()
+    state = normalize_state(str(event.get("state") or ""))
+    artists = ordered_unique(event.get("artists", []))
+    source_url = safe_url(event.get("sourceUrl")) or safe_url(event.get("officialUrl"))
+    if (
+        not title or not start_date or not city or state not in US_STATE_CODES
+        or not artists or not source_url or is_non_show(title)
+    ):
+        return None
+    source = {
+        "name": str(event.get("sourceName") or "Official Instagram announcement"),
+        "parser": "instagram_index",
+        "authority": "artist_calendar",
+        "priority": 78,
+        "lineupExplicit": True,
+        "imagePolicy": "ignore",
+    }
+    identifier = str(event.get("id") or event_hash([source_url, title, start_date, city, state]))
+    result = make_source_event(
+        source=source,
+        source_url=source_url,
+        title=title,
+        start_date=start_date,
+        start_time=str(event.get("startTime") or ""),
+        venue=str(event.get("venue") or "Venue not provided"),
+        address=str(event.get("address") or ""),
+        city=city,
+        state=state,
+        artists=artists,
+        headliner=str(event.get("headliner") or artists[0]),
+        checked_at=checked_at,
+        ticket_url=safe_url(event.get("ticketUrl")) or source_url,
+        official_url=source_url,
+        image="",
+        status=str(event.get("status") or "scheduled"),
+        confidence="high",
+        event_type=str(event.get("eventType") or "concert"),
+        lineup_explicit=True,
+        music_confirmed=True,
+        priority=78,
+        external_ids={"instagram": identifier},
+    )
+    result["id"] = identifier if identifier.startswith("instagram:") else f"instagram:{identifier}"
+    return result
+
+
 def preserve_recent_existing(
     fresh_events: list[dict[str, Any]],
     existing_events: list[dict[str, Any]],
     today: date,
     checked_at: str,
 ) -> list[dict[str, Any]]:
-    # Version 2 intentionally does not retain stale version-1 records. This prevents
+    # Version 3 intentionally does not retain stale version-1/2 records. This prevents
     # previously incorrect festival lineups and duplicates from lingering after deploy.
     return fresh_events
 
@@ -2437,6 +2496,7 @@ def main() -> int:
     artists = [item for item in load_json(ARTISTS_FILE, []) if isinstance(item, dict) and item.get("enabled", True)]
     official_sources = [item for item in load_json(OFFICIAL_SOURCES_FILE, []) if isinstance(item, dict) and item.get("enabled", True)]
     manual_events = load_json(MANUAL_EVENTS_FILE, [])
+    known_instagram_posts = load_json(KNOWN_INSTAGRAM_POSTS_FILE, [])
     previous_status = load_json(STATUS_FILE, {})
     attraction_cache = load_json(ATTRACTION_CACHE_FILE, {})
     if not isinstance(attraction_cache, dict):
@@ -2451,6 +2511,16 @@ def main() -> int:
     sources_checked = 0
     official_events_count = 0
     ticketmaster_events_count = 0
+    instagram_events_count = 0
+    instagram_report: dict[str, Any] = {
+        "artistsConfigured": len(artists),
+        "queriesRun": 0,
+        "queriesAttempted": 0,
+        "resultsFound": 0,
+        "eventsFound": 0,
+        "candidates": [],
+        "warnings": [],
+    }
     artists_matched = 0
     unmatched_artists: list[str] = []
 
@@ -2468,6 +2538,41 @@ def main() -> int:
             warnings.append(message)
             source_results.append({"name": source_name, "status": "warning", "eventsFound": 0})
             print(f"WARNING: {message}", file=sys.stderr)
+
+    try:
+        raw_instagram_events, instagram_report = scan_instagram_index(
+            client=client,
+            artists=artists,
+            known_posts=known_instagram_posts if isinstance(known_instagram_posts, list) else [],
+            today=today,
+            checked_at=checked_at,
+            lookahead_days=LOOKAHEAD_DAYS,
+        )
+        for raw_event in raw_instagram_events:
+            event = normalize_social_event(raw_event, checked_at)
+            if event:
+                collected.append(event)
+                instagram_events_count += 1
+        queries_run = int(instagram_report.get("queriesRun") or 0)
+        sources_checked += queries_run
+        warnings.extend(str(item) for item in instagram_report.get("warnings", []) if str(item))
+        source_results.append({
+            "name": "Instagram public announcement scan",
+            "status": "ok" if not instagram_report.get("warnings") else "warning",
+            "eventsFound": instagram_events_count,
+            "artistsChecked": int(instagram_report.get("artistsConfigured") or len(artists)),
+            "queriesRun": queries_run,
+        })
+        print(
+            "Instagram public-index scan: "
+            f"{instagram_events_count} publishable event(s); "
+            f"{len(instagram_report.get('candidates', []))} candidate(s)"
+        )
+    except Exception as exc:
+        warning = f"Instagram public-index scan: {exc}"
+        warnings.append(warning)
+        source_results.append({"name": "Instagram public announcement scan", "status": "warning", "eventsFound": 0})
+        print(f"WARNING: {warning}", file=sys.stderr)
 
     api_key = os.getenv("TICKETMASTER_API_KEY", "").strip()
     if api_key:
@@ -2509,7 +2614,7 @@ def main() -> int:
     last_success = checked_at if any_source_succeeded else previous_status.get("lastSuccessfulUpdate")
     status = {
         "status": status_name,
-        "collectorVersion": 2,
+        "collectorVersion": 3,
         "lastAttempt": checked_at,
         "lastSuccessfulUpdate": last_success,
         "eventsPublished": len(events),
@@ -2518,12 +2623,19 @@ def main() -> int:
         "artistsMatchedOnTicketmaster": artists_matched,
         "officialEventsFound": official_events_count,
         "ticketmasterEventsFound": ticketmaster_events_count,
+        "instagramArtistsConfigured": int(instagram_report.get("artistsConfigured") or len(artists)),
+        "instagramQueriesRun": int(instagram_report.get("queriesRun") or 0),
+        "instagramQueriesAttempted": int(instagram_report.get("queriesAttempted") or 0),
+        "instagramResultsFound": int(instagram_report.get("resultsFound") or 0),
+        "instagramEventsFound": instagram_events_count,
+        "instagramCandidates": instagram_report.get("candidates", [])[:30],
+        "instagramMode": instagram_report.get("mode", "free public-index scan"),
         "sourcesChecked": sources_checked,
         "unmatchedArtists": unmatched_artists,
         "sourceResults": source_results,
         "warnings": warnings[:30],
         "errors": errors[:10],
-        "message": "Verified U.S. music listings updated with strict festival, image, and duplicate rules.",
+        "message": "Verified U.S. music listings updated with strict festival, image, duplicate, and public Instagram-announcement rules.",
     }
     write_json(STATUS_FILE, status)
     print(f"Published {len(events)} event(s); candidates={len(collected)}; errors={len(errors)}; warnings={len(warnings)}")

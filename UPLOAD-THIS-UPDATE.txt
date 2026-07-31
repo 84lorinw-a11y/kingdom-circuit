@@ -1,14 +1,14 @@
-UPLOAD THE CONTENTS OF THIS FOLDER TO THE ROOT OF YOUR GITHUB REPOSITORY.
+UPLOAD EVERYTHING INSIDE THIS FOLDER TO THE ROOT OF THE GITHUB REPOSITORY.
 
-Correct GitHub upload paths:
+Correct paths:
   index.html
-  events.json
   config/artists.json
+  config/known-instagram-posts.json
+  scripts/instagram_monitor.py
   scripts/update_events.py
 
 Incorrect path:
   UPLOAD_TO_REPOSITORY/index.html
 
 Commit directly to main, then wait for the Update and deploy show calendar Action to finish with a green check.
-
 Do not replace .github and do not re-enter the Ticketmaster key.

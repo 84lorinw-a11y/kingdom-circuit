@@ -668,5 +668,65 @@
     "headliner": "1K Phew",
     "musicConfirmed": true,
     "softFail": true
+  },
+  {
+    "name": "Steven Malcolm official tour",
+    "url": "https://stevenmalcolm.com/",
+    "parser": "jsonld",
+    "enabled": true,
+    "artist": "Steven Malcolm",
+    "authority": "artist_calendar",
+    "priority": 76,
+    "imagePolicy": "ignore",
+    "musicConfirmed": true,
+    "softFail": true
+  },
+  {
+    "name": "Steven Malcolm Apple Music concerts",
+    "url": "https://music.apple.com/us/concerts/artist/308036242",
+    "parser": "jsonld",
+    "enabled": true,
+    "artist": "Steven Malcolm",
+    "authority": "artist_calendar",
+    "priority": 74,
+    "imagePolicy": "ignore",
+    "musicConfirmed": true,
+    "softFail": true
+  },
+  {
+    "name": "Scootie Wop official artist page",
+    "url": "https://www.even.biz/artists/scootie-wop",
+    "parser": "jsonld",
+    "enabled": true,
+    "artist": "Scootie Wop",
+    "authority": "artist_calendar",
+    "priority": 72,
+    "imagePolicy": "ignore",
+    "musicConfirmed": true,
+    "softFail": true
+  },
+  {
+    "name": "Scootie Wop Apple Music concert",
+    "url": "https://music.apple.com/us/concerts/ce.b01ccaf9-dcf3-44a6-afbf-4bd6d2fc60ae",
+    "parser": "jsonld",
+    "enabled": true,
+    "artist": "Scootie Wop",
+    "authority": "artist_calendar",
+    "priority": 74,
+    "imagePolicy": "ignore",
+    "musicConfirmed": true,
+    "softFail": true
+  },
+  {
+    "name": "Mike Teezy official tour",
+    "url": "https://www.miketeezymusic.com/tour",
+    "parser": "wix_event_list",
+    "enabled": true,
+    "artist": "Mike Teezy",
+    "authority": "artist_calendar",
+    "priority": 78,
+    "imagePolicy": "event_artwork",
+    "musicConfirmed": true,
+    "softFail": true
   }
 ]
