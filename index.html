@@ -16,7 +16,9 @@
       <a class="brand" href="./" aria-label="The Kingdom Circuit home">
         <img src="assets/logo.png" alt="The Kingdom Circuit — Christian hip-hop, live and connected">
       </a>
-      <button class="header-action" id="open-submit" type="button">Submit a show</button>
+      <div class="header-actions">
+        <button class="header-action" id="open-submit" type="button">Submit a show</button>
+      </div>
     </div>
   </header>
 
@@ -70,41 +72,43 @@
         <p class="results-count" id="results-count">Loading shows...</p>
       </div>
 
-      <div class="quick-filters" role="group" aria-label="Quick event filters">
-        <button class="filter-chip active" type="button" data-date-mode="all">All dates</button>
-        <button class="filter-chip" type="button" data-date-mode="weekend">This weekend</button>
-        <button class="filter-chip" type="button" data-date-mode="next30">Next 30 days</button>
-        <button class="filter-chip" type="button" data-date-mode="month">This month</button>
-        <button class="filter-chip" type="button" data-type-mode="festival">Festivals</button>
-      </div>
+      <div class="filter-dock">
+        <div class="quick-filters" role="group" aria-label="Quick event filters">
+          <button class="filter-chip active" type="button" data-date-mode="all">All dates</button>
+          <button class="filter-chip" type="button" data-date-mode="weekend">This weekend</button>
+          <button class="filter-chip" type="button" data-date-mode="next30">Next 30 days</button>
+          <button class="filter-chip" type="button" data-date-mode="month">This month</button>
+          <button class="filter-chip" type="button" data-type-mode="festival">Festivals</button>
+        </div>
 
-      <form class="filters" id="filters" role="search">
-        <label class="field field-search">
-          <span>Search</span>
-          <input id="search-filter" type="search" placeholder="Artist, city, venue, or event" autocomplete="off">
-        </label>
-        <label class="field">
-          <span>Artist</span>
-          <select id="artist-filter">
-            <option value="">All artists</option>
-          </select>
-        </label>
-        <label class="field">
-          <span>State</span>
-          <select id="state-filter">
-            <option value="">All states</option>
-          </select>
-        </label>
-        <label class="field">
-          <span>Type</span>
-          <select id="type-filter">
-            <option value="">All events</option>
-            <option value="concert">Concerts</option>
-            <option value="festival">Festivals</option>
-          </select>
-        </label>
-        <button class="reset-button" id="reset-filters" type="button">Clear filters</button>
-      </form>
+        <form class="filters" id="filters" role="search">
+          <label class="field field-search">
+            <span>Search</span>
+            <input id="search-filter" type="search" placeholder="Artist, city, venue, or event" autocomplete="off">
+          </label>
+          <label class="field">
+            <span>Artist</span>
+            <select id="artist-filter">
+              <option value="">All artists</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>State</span>
+            <select id="state-filter">
+              <option value="">All states</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Type</span>
+            <select id="type-filter">
+              <option value="">All events</option>
+              <option value="concert">Concerts</option>
+              <option value="festival">Festivals</option>
+            </select>
+          </label>
+          <button class="reset-button" id="reset-filters" type="button">Clear filters</button>
+        </form>
+      </div>
 
       <div id="notice" class="notice" hidden></div>
       <div id="events" class="event-grid" aria-live="polite">

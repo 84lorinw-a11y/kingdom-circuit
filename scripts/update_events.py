@@ -27,7 +27,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any, Iterable
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlencode, urljoin, urlparse
+from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
 from urllib.request import Request, urlopen
 from urllib.robotparser import RobotFileParser
 
@@ -355,6 +355,23 @@ def safe_url(value: Any) -> str:
     parsed = urlparse(value.strip())
     if parsed.scheme in {"http", "https"} and parsed.netloc:
         return value.strip()
+    return ""
+
+
+def safe_image_reference(value: Any) -> str:
+    """Return a safe remote URL or a repository-local image path."""
+    remote = safe_url(value)
+    if remote:
+        return remote
+    if not isinstance(value, str):
+        return ""
+    candidate = value.strip().replace("\\", "/")
+    if (
+        candidate.startswith("assets/")
+        and ".." not in candidate.split("/")
+        and re.search(r"\.(?:avif|gif|jpe?g|png|svg|webp)$", candidate, re.IGNORECASE)
+    ):
+        return candidate
     return ""
 
 
@@ -712,7 +729,7 @@ def source_priority(source: dict[str, Any], default: int) -> int:
 
 
 def is_valid_image_url(value: Any, allow_event_artwork: bool = False) -> bool:
-    url = safe_url(value)
+    url = safe_image_reference(value)
     if not url:
         return False
     if not IMAGE_REJECT_PATTERN.search(url):
@@ -2195,6 +2212,82 @@ def source_url_overlap(left: dict[str, Any], right: dict[str, Any]) -> bool:
     return bool(left_urls & right_urls)
 
 
+def normalize_address(value: Any) -> str:
+    normalized = normalize_name(str(value or ""))
+    replacements = {
+        "street": "st", "avenue": "ave", "road": "rd", "boulevard": "blvd",
+        "drive": "dr", "lane": "ln", "highway": "hwy", "suite": "ste",
+        "north": "n", "south": "s", "east": "e", "west": "w",
+    }
+    return " ".join(replacements.get(token, token) for token in normalized.split())
+
+
+def normalize_city(value: Any) -> str:
+    tokens = normalize_name(str(value or "")).split()
+    while tokens and tokens[0] in {"north", "south", "east", "west", "greater", "downtown"}:
+        tokens.pop(0)
+    while tokens and tokens[-1] in {"city", "metro", "area"}:
+        tokens.pop()
+    return " ".join(tokens)
+
+
+def cities_compatible(left: dict[str, Any], right: dict[str, Any]) -> bool:
+    left_city = normalize_city(left.get("city"))
+    right_city = normalize_city(right.get("city"))
+    return bool(left_city and right_city and left_city == right_city)
+
+
+def event_url_identity(value: Any) -> str:
+    """Extract a stable event identity while rejecting generic calendar pages."""
+    url = safe_url(value)
+    if not url:
+        return ""
+    parsed = urlparse(url)
+    host = parsed.netloc.lower().removeprefix("www.")
+    path = re.sub(r"/+", "/", parsed.path).rstrip("/").lower()
+
+    patterns = (
+        ("bandsintown.com", r"/(?:e|t)/(\d+)", "bandsintown"),
+        ("ticketmaster.com", r"/event/([^/]+)", "ticketmaster"),
+        ("eventbrite.com", r"(?:-tickets-|/e/[^/]*-)(\d+)$", "eventbrite"),
+        ("music.apple.com", r"/concerts/(ce\.[a-z0-9-]+)$", "applemusic"),
+        ("universe.com", r"/events/([^/]+)-tickets-[^/]+$", "universe"),
+    )
+    for domain, pattern, provider in patterns:
+        if host.endswith(domain):
+            match = re.search(pattern, path, re.IGNORECASE)
+            if match:
+                return f"{provider}:{match.group(1).lower()}"
+
+    generic_paths = {
+        "", "/events", "/event", "/tour", "/tours", "/shows", "/calendar",
+        "/collections", "/concerts", "/artists", "/lineup", "/schedule",
+    }
+    if path in generic_paths or re.search(r"/(?:artists?|concerts/artist)/[^/]+$", path):
+        return ""
+    # Keep only parameters that are commonly stable provider IDs.
+    stable_query = [
+        (key.lower(), value)
+        for key, value in parse_qsl(parsed.query, keep_blank_values=False)
+        if key.lower() in {"eventid", "event_id", "id"}
+    ]
+    normalized = urlunparse((parsed.scheme.lower(), host, path, "", urlencode(stable_query), ""))
+    return f"url:{normalized}"
+
+
+def event_url_identities(event: dict[str, Any]) -> set[str]:
+    values: list[Any] = [event.get("ticketUrl"), event.get("officialUrl")]
+    values.extend(
+        item.get("url") for item in event.get("sources", [])
+        if isinstance(item, dict)
+    )
+    return {identity for value in values if (identity := event_url_identity(value))}
+
+
+def event_url_overlap(left: dict[str, Any], right: dict[str, Any]) -> bool:
+    return bool(event_url_identities(left) & event_url_identities(right))
+
+
 def _time_minutes(value: Any) -> int | None:
     match = re.match(r"^(\d{1,2}):(\d{2})", str(value or ""))
     if not match:
@@ -2202,26 +2295,54 @@ def _time_minutes(value: Any) -> int | None:
     return int(match.group(1)) * 60 + int(match.group(2))
 
 
-def times_compatible(left: dict[str, Any], right: dict[str, Any]) -> bool:
+def time_difference(left: dict[str, Any], right: dict[str, Any]) -> int | None:
     left_minutes = _time_minutes(left.get("startTime"))
     right_minutes = _time_minutes(right.get("startTime"))
     if left_minutes is None or right_minutes is None:
-        return True
-    return abs(left_minutes - right_minutes) <= 150
+        return None
+    return abs(left_minutes - right_minutes)
+
+
+def times_compatible(left: dict[str, Any], right: dict[str, Any]) -> bool:
+    difference = time_difference(left, right)
+    return difference is None or difference <= 150
+
+
+def clearly_distinct_same_day_events(
+    left: dict[str, Any],
+    right: dict[str, Any],
+    title_score: float,
+    venue_score: float,
+) -> bool:
+    """Protect genuine matinee/evening events from aggressive deduplication."""
+    difference = time_difference(left, right)
+    left_ids = event_url_identities(left)
+    right_ids = event_url_identities(right)
+    return bool(
+        difference is not None
+        and difference > 180
+        and left_ids
+        and right_ids
+        and not (left_ids & right_ids)
+        and title_score < 0.50
+    )
 
 
 def events_are_duplicates(left: dict[str, Any], right: dict[str, Any]) -> bool:
-    # A provider event ID is globally authoritative. A shared source URL is not:
-    # consolidated calendar pages can contain dozens of unrelated events.
-    if external_id_overlap(left, right):
+    # Provider IDs and event-specific URLs are authoritative even when a source
+    # formats a nearby city or time differently.
+    if external_id_overlap(left, right) or event_url_overlap(left, right):
         return True
     if str(left.get("startDate") or "") != str(right.get("startDate") or ""):
         return False
-    if normalize_name(str(left.get("city") or "")) != normalize_name(str(right.get("city") or "")):
-        return False
     if normalize_state(str(left.get("state") or "")) != normalize_state(str(right.get("state") or "")):
         return False
-    if not times_compatible(left, right):
+
+    left_address = normalize_address(left.get("address"))
+    right_address = normalize_address(right.get("address"))
+    same_address = bool(left_address and right_address and left_address == right_address)
+    city_match = cities_compatible(left, right)
+    if not city_match and not same_address:
         return False
 
     city = str(left.get("city") or right.get("city") or "")
@@ -2234,6 +2355,19 @@ def events_are_duplicates(left: dict[str, Any], right: dict[str, Any]) -> bool:
     venue_containment = token_containment(left_venue, right_venue)
     overlap = artist_overlap(left, right)
     festival_pair = left.get("eventType") == "festival" or right.get("eventType") == "festival"
+    difference = time_difference(left, right)
+
+    # Keep clearly separate matinee/evening performances. The only exception is
+    # a near-identical same-address listing whose time was shifted by an
+    # aggregator timezone conversion (the Steven Malcolm/The Centre case).
+    if difference is not None and difference > 150:
+        return bool(same_address and overlap and venue_score >= 0.90 and title_score >= 0.72)
+    if clearly_distinct_same_day_events(left, right, title_score, venue_score):
+        return False
+    # Exact addresses plus an overlapping artist are stronger than conflicting
+    # aggregator times (for example Apple Music UTC/local-time variants).
+    if same_address and overlap and (venue_score >= 0.45 or title_score >= 0.35):
+        return True
 
     # Common source variants include sponsor suffixes, city suffixes, and shortened
     # venue names: "The Novo by Microsoft" / "The Novo" and
@@ -2248,12 +2382,11 @@ def events_are_duplicates(left: dict[str, Any], right: dict[str, Any]) -> bool:
         return True
     if festival_pair and title_score >= 0.66:
         return True
-    if overlap and (venue_score >= 0.66 or title_score >= 0.72):
+    if overlap and times_compatible(left, right) and (venue_score >= 0.66 or title_score >= 0.72):
         return True
-    if overlap and venue_score >= 0.52 and title_score >= 0.52:
+    if overlap and times_compatible(left, right) and venue_score >= 0.52 and title_score >= 0.52:
         return True
     return False
-
 
 def canonical_event_keys(event: dict[str, Any]) -> list[str]:
     event_date = str(event.get("startDate") or "")
@@ -2373,16 +2506,40 @@ def artist_image_map(artists: list[dict[str, Any]], attraction_cache: dict[str, 
     images: dict[str, str] = {}
     for artist in artists:
         name = str(artist.get("name") or "").strip()
-        configured = safe_url(artist.get("imageUrl"))
+        configured = safe_image_reference(artist.get("imageUrl"))
         cached = attraction_cache.get(name) if isinstance(attraction_cache, dict) else None
-        cached_image = safe_url(cached.get("image")) if isinstance(cached, dict) else ""
+        cached_image = safe_image_reference(cached.get("image")) if isinstance(cached, dict) else ""
         chosen = configured if is_valid_image_url(configured) else (cached_image if is_valid_image_url(cached_image) else "")
         if name and chosen:
             images[name] = chosen
     return images
 
 
-def finalize_event(event: dict[str, Any], images: dict[str, str]) -> dict[str, Any] | None:
+def artist_image_positions(artists: list[dict[str, Any]]) -> dict[str, str]:
+    positions: dict[str, str] = {}
+    pattern = re.compile(r"^(?:left|center|right|(?:\d{1,3}(?:\.\d+)?%))(?:\s+(?:top|center|bottom|(?:\d{1,3}(?:\.\d+)?%)))?$")
+    for artist in artists:
+        name = str(artist.get("name") or "").strip()
+        value = str(artist.get("imagePosition") or "").strip().lower()
+        if name and value and pattern.fullmatch(value):
+            positions[name] = value
+    return positions
+
+
+def preferred_artist_images(artists: list[dict[str, Any]]) -> set[str]:
+    return {
+        str(artist.get("name") or "").strip()
+        for artist in artists
+        if artist.get("preferArtistImage") and str(artist.get("name") or "").strip()
+    }
+
+
+def finalize_event(
+    event: dict[str, Any],
+    images: dict[str, str],
+    image_positions: dict[str, str] | None = None,
+    prefer_artist: set[str] | None = None,
+) -> dict[str, Any] | None:
     if not event.get("musicConfirmed") or is_non_show(str(event.get("title") or "")):
         return None
     status = str(event.get("status") or "scheduled").lower()
@@ -2428,10 +2585,16 @@ def finalize_event(event: dict[str, Any], images: dict[str, str]) -> dict[str, A
             item for item in artwork_items
             if str(item.get("authority") or "") in {"official_festival", "official_event", "manual_verified"}
         ]
+    if headliner in (prefer_artist or set()) and event.get("eventType") != "festival":
+        artwork_items = [
+            item for item in artwork_items
+            if str(item.get("authority") or "") in {"official_event", "manual_verified", "promoter"}
+        ]
     artwork_items.sort(key=lambda item: int(item.get("priority") or 0), reverse=True)
     if artwork_items:
-        artwork = safe_url(artwork_items[0].get("url"))
-    image = artwork or images.get(headliner, "") or "assets/logo.png"
+        artwork = safe_image_reference(artwork_items[0].get("url"))
+    artist_image = images.get(headliner, "")
+    image = artwork or artist_image or "assets/logo.png"
 
     result = {key: value for key, value in event.items() if key not in {
         "artistEvidence", "artworkEvidence", "eventArtwork", "requiresCorroboration",
@@ -2445,20 +2608,31 @@ def finalize_event(event: dict[str, Any], images: dict[str, str]) -> dict[str, A
     result["title"] = clean_title
     result["venue"] = clean_venue
     result["image"] = image
-    result["imageType"] = "event_artwork" if artwork else ("artist" if images.get(headliner) else "fallback")
+    result["imageType"] = "event_artwork" if artwork else ("artist" if artist_image else "fallback")
+    result["imagePosition"] = (
+        "center" if artwork
+        else (image_positions or {}).get(headliner, "50% 30%") if artist_image
+        else "center"
+    )
     result["sources"] = sorted(sources, key=lambda item: int(item.get("priority") or 0), reverse=True)
     result["sourceName"] = str(result["sources"][0].get("name") or "Verified source")
     result["confidence"] = "high"
-    result["verifiedVersion"] = 4
+    result["verifiedVersion"] = 5
     return result
 
 
-def finalize_events(events: Iterable[dict[str, Any]], images: dict[str, str], today: date) -> list[dict[str, Any]]:
+def finalize_events(
+    events: Iterable[dict[str, Any]],
+    images: dict[str, str],
+    today: date,
+    image_positions: dict[str, str] | None = None,
+    prefer_artist: set[str] | None = None,
+) -> list[dict[str, Any]]:
     output: list[dict[str, Any]] = []
     for event in events:
         if not event_is_future(event, today):
             continue
-        normalized = finalize_event(event, images)
+        normalized = finalize_event(event, images, image_positions, prefer_artist)
         if normalized:
             output.append(normalized)
     output.sort(key=lambda item: (
@@ -2579,6 +2753,24 @@ def preserve_recent_existing(
     # previously incorrect festival lineups and duplicates from lingering after deploy.
     return fresh_events
 
+def apply_first_seen(
+    events: list[dict[str, Any]],
+    existing_events: list[dict[str, Any]],
+    checked_at: str,
+) -> list[dict[str, Any]]:
+    """Keep the original discovery timestamp and mark only truly new listings."""
+    for event in events:
+        match = next(
+            (existing for existing in existing_events if isinstance(existing, dict) and events_are_duplicates(existing, event)),
+            None,
+        )
+        if match and match.get("firstSeen"):
+            event["firstSeen"] = str(match["firstSeen"])
+        elif not match:
+            event["firstSeen"] = checked_at
+    return events
+
+
 def main() -> int:
     started = now_utc()
     checked_at = iso_z(started)
@@ -2588,6 +2780,9 @@ def main() -> int:
     manual_events = load_json(MANUAL_EVENTS_FILE, [])
     known_instagram_posts = load_json(KNOWN_INSTAGRAM_POSTS_FILE, [])
     previous_status = load_json(STATUS_FILE, {})
+    existing_events = load_json(EVENTS_FILE, [])
+    if not isinstance(existing_events, list):
+        existing_events = []
     attraction_cache = load_json(ATTRACTION_CACHE_FILE, {})
     if not isinstance(attraction_cache, dict):
         attraction_cache = {}
@@ -2695,7 +2890,10 @@ def main() -> int:
 
     candidates = merge_events(event for event in collected if event_is_future(event, today))
     images = artist_image_map(artists, attraction_cache)
-    events = finalize_events(candidates, images, today)
+    image_positions = artist_image_positions(artists)
+    prefer_artist = preferred_artist_images(artists)
+    events = finalize_events(candidates, images, today, image_positions, prefer_artist)
+    events = apply_first_seen(events, existing_events, checked_at)
     write_json(EVENTS_FILE, events)
     write_json(ATTRACTION_CACHE_FILE, attraction_cache)
 
@@ -2709,7 +2907,7 @@ def main() -> int:
     last_success = checked_at if any_source_succeeded else previous_status.get("lastSuccessfulUpdate")
     status = {
         "status": status_name,
-        "collectorVersion": 4,
+        "collectorVersion": 5,
         "lastAttempt": checked_at,
         "lastSuccessfulUpdate": last_success,
         "eventsPublished": len(events),

@@ -1,19 +1,19 @@
-# The Kingdom Circuit — Master v4
+# The Kingdom Circuit — Master v5
 
 A free GitHub Pages website and daily collector for verified U.S. Christian hip-hop and faith-driven music shows.
 
-## What v4 adds
+## What v5 adds
 
-- Stronger near-duplicate merging for shortened venue names, sponsor suffixes, and city suffixes.
-- Clear public titles when a source incorrectly uses the venue name as the event title.
-- "Venue to be announced" instead of internal placeholder wording.
-- A gold calendar-status state when source checks return warnings and a red state for update errors.
-- Quick filters for this weekend, the next 30 days, this month, and festivals.
-- Collapsed festival lineups with an expandable full lineup.
-- Real image elements with useful alternative text instead of decorative background images.
-- Free local browser alerts that highlight new shows matching a saved artist or state on return visits.
-- A clean on-site submission form that prepares a verified GitHub submission.
-- 32 automated validation tests.
+- A centered, larger Kingdom Circuit masthead with a cleaner desktop and mobile header.
+- Subtle stage-light and grain effects that preserve the black, cream, and gold identity.
+- A locked, approved 1K Phew artist portrait and focal-point crop.
+- Stronger duplicate detection for same-event provider IDs, event URLs, nearby city variants, normalized addresses, venue aliases, and aggregator time shifts.
+- Explicit regression coverage for the duplicated Steven Malcolm and 1K Phew listings.
+- A sticky desktop filter dock so search and filters remain available while browsing.
+- A **Just announced** badge for events first discovered within the previous seven days.
+- Improved artist-image crops and card hover treatment.
+- Reduced mobile hero spacing so visitors reach the show list faster.
+- 37 automated validation tests.
 
 ## Current configuration
 
@@ -30,9 +30,16 @@ A free GitHub Pages website and daily collector for verified U.S. Christian hip-
 2. Uncertain or conflicting events do not publish.
 3. Source priority: official event/festival, venue or ticket seller, artist/label, then aggregator.
 4. Festival performers must be explicitly named by the official festival/event source.
-5. Official event artwork wins; otherwise the first-billed artist image is used.
+5. Official event artwork wins; otherwise the first-billed approved artist image is used.
 6. U.S. music performances only.
 7. Near-duplicates merge while all useful source links are retained.
+
+## Image rules
+
+- Official event or festival artwork is used when it is available from an authoritative source.
+- Otherwise, the first-billed artist's approved image is used.
+- `config/artists.json` can define `imageUrl`, `imagePosition`, and `preferArtistImage` for an artist.
+- 1K Phew is configured to use `assets/artists/1k-phew.webp` when authoritative event artwork is unavailable.
 
 ## Free local alerts
 

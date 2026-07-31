@@ -67,7 +67,7 @@ def candidate(
     )
 
 
-class KingdomCircuitV4Tests(unittest.TestCase):
+class KingdomCircuitV5Tests(unittest.TestCase):
     def test_workplay_variants_merge(self):
         first = candidate(venue="Workplay Theatre", artists=["Hulvey"], url="https://a.example")
         second = candidate(venue="Workplay", artists=["Hulvey"], url="https://b.example")
@@ -124,6 +124,104 @@ class KingdomCircuitV4Tests(unittest.TestCase):
         merged = MODULE.merge_events([first, second])
         self.assertEqual(len(merged), 2)
 
+
+    def test_steven_malcolm_timezone_shift_duplicate_merges(self):
+        official = candidate(
+            title="Steven Malcolm at The Centre",
+            venue="The Centre Cafe",
+            city="Adrian",
+            state="MI",
+            artists=["Steven Malcolm"],
+            url="https://stevenmalcolm.com/",
+        )
+        apple = candidate(
+            title="Steven Malcolm",
+            venue="The Centre Café",
+            city="Adrian",
+            state="MI",
+            artists=["Steven Malcolm"],
+            url="https://music.apple.com/us/concerts/ce.8211b80e-7b98-426e-8b33-0c157be143e2",
+        )
+        official["address"] = "1800 W Maumee St"
+        apple["address"] = "1800 West Maumee Street"
+        official["startTime"] = "19:30"
+        apple["startTime"] = "23:30"
+        merged = MODULE.merge_events([official, apple])
+        self.assertEqual(len(merged), 1)
+        self.assertEqual(len(merged[0]["sources"]), 2)
+
+    def test_1k_phew_space_city_bandsintown_identity_merges(self):
+        first = candidate(
+            title="Konnect Concert Series",
+            venue="Space City Church",
+            city="Houston",
+            state="TX",
+            artists=["1K Phew", "Parris Chariz"],
+            url="https://www.bandsintown.com/e/1038610442-1k-phew-at-space-city-church",
+        )
+        second = candidate(
+            title="1K Phew at Space City Church",
+            venue="Space City Church",
+            city="South Houston",
+            state="TX",
+            artists=["1K Phew"],
+            url="https://www.bandsintown.com/e/1038610442-1k-phew-at-space-city-church?came_from=253",
+        )
+        merged = MODULE.merge_events([first, second])
+        self.assertEqual(len(merged), 1)
+        self.assertIn("Parris Chariz", merged[0]["artists"])
+
+    def test_1k_phew_fastivalle_ticket_identity_merges(self):
+        first = candidate(
+            title="Fastivalle 2026",
+            venue="Everwise Amphitheater",
+            city="Indianapolis",
+            state="IN",
+            artists=["1K Phew"],
+            url="https://www.bandsintown.com/e/1040026694-1k-phew-at-everwise-amphitheater",
+        )
+        second = candidate(
+            title="1K Phew - Fastivalle",
+            venue="Everwise Amphitheater at White River State Park",
+            city="North Indianapolis",
+            state="IN",
+            artists=["1K Phew"],
+            url="https://www.bandsintown.com/e/1040026694-1k-phew-at-everwise-amphitheater?came_from=257",
+        )
+        merged = MODULE.merge_events([first, second])
+        self.assertEqual(len(merged), 1)
+
+    def test_1k_phew_uses_approved_local_artist_image(self):
+        artists = json.loads((ROOT / "config" / "artists.json").read_text())
+        images = MODULE.artist_image_map(artists, {})
+        positions = MODULE.artist_image_positions(artists)
+        preferred = MODULE.preferred_artist_images(artists)
+        event = candidate(
+            title="1K Phew Live",
+            artists=["1K Phew"],
+            headliner="1K Phew",
+            authority="venue_ticket",
+            image="https://example.com/generic-ticket-image.jpg",
+        )
+        final = MODULE.finalize_events(
+            MODULE.merge_events([event]),
+            images,
+            date(2098, 1, 1),
+            positions,
+            preferred,
+        )
+        self.assertEqual(final[0]["image"], "assets/artists/1k-phew.webp")
+        self.assertEqual(final[0]["imageType"], "artist")
+        self.assertEqual(final[0]["imagePosition"], "50% 24%")
+
+    def test_first_seen_marks_only_genuinely_new_events(self):
+        existing = candidate(title="Existing Show", artists=["KB"], url="https://example.com/existing")
+        existing["firstSeen"] = "2097-12-01T00:00:00Z"
+        fresh_existing = candidate(title="Existing Show", artists=["KB"], url="https://example.com/existing")
+        new_event = candidate(title="Brand New Show", event_date="2099-09-10", artists=["Hulvey"], url="https://example.com/new")
+        result = MODULE.apply_first_seen([fresh_existing, new_event], [existing], CHECKED)
+        self.assertEqual(result[0]["firstSeen"], "2097-12-01T00:00:00Z")
+        self.assertEqual(result[1]["firstSeen"], CHECKED)
 
     def test_consolidated_calendar_url_does_not_merge_different_dates(self):
         first = candidate(

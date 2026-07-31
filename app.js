@@ -3,6 +3,7 @@
 const REPOSITORY_URL = "https://github.com/84lorinw-a11y/kingdom-circuit";
 const ALERT_PREFS_KEY = "kingdomCircuitAlertPreferencesV1";
 const ALERT_SEEN_KEY = "kingdomCircuitAlertSeenV1";
+const JUST_ANNOUNCED_DAYS = 7;
 
 const state = {
   events: [],
@@ -59,8 +60,14 @@ function safeImageUrl(value) {
   }
 }
 
+function safeObjectPosition(value) {
+  const candidate = String(value || "").trim().toLowerCase();
+  const pattern = /^(?:left|center|right|\d{1,3}(?:\.\d+)?%)(?:\s+(?:top|center|bottom|\d{1,3}(?:\.\d+)?%))?$/;
+  return pattern.test(candidate) ? candidate : "center";
+}
+
 function localDate(dateText) {
-  const parts = String(dateText).split("-").map(Number);
+  const parts = String(dateText || "").split("-").map(Number);
   if (parts.length !== 3 || parts.some(Number.isNaN)) {
     return null;
   }
@@ -94,7 +101,7 @@ function formatTime(timeText) {
   if (!timeText) {
     return "";
   }
-  const match = String(timeText).match(/^(\d{2}):(\d{2})/);
+  const match = String(timeText).match(/^(\d{1,2}):(\d{2})/);
   if (!match) {
     return String(timeText);
   }
@@ -153,6 +160,7 @@ function eventMatchesDateMode(event, mode) {
   if (!start || !end) {
     return false;
   }
+
   const today = startOfDay(new Date());
   let rangeStart = today;
   let rangeEnd = today;
@@ -164,7 +172,6 @@ function eventMatchesDateMode(event, mode) {
     rangeEnd = new Date(today.getFullYear(), today.getMonth() + 1, 0);
   } else if (mode === "weekend") {
     const day = today.getDay();
-    const daysUntilFriday = day <= 5 ? (5 - day) : (day === 6 ? 0 : 0);
     if (day === 6) {
       rangeStart = today;
       rangeEnd = addDays(today, 1);
@@ -172,7 +179,7 @@ function eventMatchesDateMode(event, mode) {
       rangeStart = today;
       rangeEnd = today;
     } else {
-      rangeStart = addDays(today, daysUntilFriday);
+      rangeStart = addDays(today, (5 - day + 7) % 7);
       rangeEnd = addDays(rangeStart, 2);
     }
   }
@@ -188,8 +195,8 @@ function filteredEvents() {
       (event.artists || []).includes(state.filters.artist);
     const stateMatch = !state.filters.state || event.state === state.filters.state;
     const typeMatch = !state.filters.type || event.eventType === state.filters.type;
-    const dateMatch = eventMatchesDateMode(event, state.filters.dateMode);
-    return searchMatch && artistMatch && stateMatch && typeMatch && dateMatch;
+    return searchMatch && artistMatch && stateMatch && typeMatch &&
+      eventMatchesDateMode(event, state.filters.dateMode);
   });
 }
 
@@ -197,26 +204,41 @@ function badge(text, className = "") {
   return createElement("span", `badge ${className}`.trim(), text);
 }
 
+function isJustAnnounced(event) {
+  if (!event.firstSeen) {
+    return false;
+  }
+  const firstSeen = new Date(event.firstSeen);
+  if (Number.isNaN(firstSeen.getTime())) {
+    return false;
+  }
+  const age = Date.now() - firstSeen.getTime();
+  return age >= 0 && age <= JUST_ANNOUNCED_DAYS * 24 * 60 * 60 * 1000;
+}
+
 function eventImageAlt(event) {
-  if (event.eventType === "festival") {
-    return `${event.title || "Festival"} artwork`;
+  if (event.imageType === "event_artwork" || event.eventType === "festival") {
+    return `Official artwork for ${event.title || "this event"}`;
   }
   const artist = event.headliner || (event.artists || [])[0] || "Christian hip-hop artist";
-  return `${artist} event image for ${event.title || "upcoming show"}`;
+  return `${artist} artist image for ${event.title || "an upcoming show"}`;
 }
 
 function createEventImage(event) {
   const media = createElement("div", "event-media");
   const image = document.createElement("img");
-  image.className = "event-image";
+  image.className = `event-image event-image--${event.imageType || "fallback"}`;
   image.loading = "lazy";
   image.decoding = "async";
   image.alt = eventImageAlt(event);
   image.src = safeImageUrl(event.image) || "assets/logo.png";
+  image.style.objectPosition = safeObjectPosition(event.imagePosition);
   image.addEventListener("error", () => {
-    if (!image.src.endsWith("assets/logo.png")) {
+    if (!image.dataset.fallbackApplied) {
+      image.dataset.fallbackApplied = "true";
       image.src = "assets/logo.png";
-      image.alt = "The Kingdom Circuit";
+      image.alt = `The Kingdom Circuit fallback artwork for ${event.title || "this event"}`;
+      image.style.objectPosition = "center";
     }
   }, { once: true });
   media.appendChild(image);
@@ -245,6 +267,22 @@ function isNewAlertMatch(event) {
   return state.newAlertMatches.has(String(event.id || ""));
 }
 
+function correctionUrl(event) {
+  const title = `Correction: ${event.title || "event listing"}`;
+  const body = [
+    "Please describe the correction and provide an official source.",
+    "",
+    `Event: ${event.title || ""}`,
+    `Date: ${event.startDate || ""}`,
+    `Location: ${event.city || ""}, ${event.state || ""}`,
+    `Current official link: ${event.officialUrl || event.ticketUrl || ""}`,
+    "",
+    "Correction:",
+    "Official source URL:"
+  ].join("\n");
+  return `${REPOSITORY_URL}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+}
+
 function renderEvent(event) {
   const card = createElement("article", "event-card");
   if (isNewAlertMatch(event)) {
@@ -256,6 +294,9 @@ function renderEvent(event) {
   const main = createElement("div", "event-main");
   const badges = createElement("div", "event-badges");
   badges.appendChild(badge(event.eventType === "festival" ? "Festival" : "Concert", "gold"));
+  if (isJustAnnounced(event)) {
+    badges.appendChild(badge("Just announced", "announced"));
+  }
   if (isNewAlertMatch(event)) {
     badges.appendChild(badge("New for your alert", "new"));
   }
@@ -324,6 +365,13 @@ function renderEvent(event) {
     sourceBlock.textContent = event.sourceName ? `Source: ${event.sourceName}` : "Source verified";
   }
   actions.appendChild(sourceBlock);
+
+  const correction = createElement("a", "correction-link", "Report a correction");
+  correction.href = correctionUrl(event);
+  correction.target = "_blank";
+  correction.rel = "noopener";
+  actions.appendChild(correction);
+
   content.appendChild(actions);
   card.appendChild(content);
   return card;
@@ -333,11 +381,13 @@ function render() {
   const events = filteredEvents();
   elements.events.replaceChildren();
   elements.resultsCount.textContent = `${events.length} ${events.length === 1 ? "show" : "shows"}`;
+
   if (!events.length) {
-    const message = state.events.length
-      ? "No shows match the current filters."
-      : "No verified upcoming shows are available yet. The collector will check again automatically.";
-    elements.events.appendChild(createElement("div", "empty-state", message));
+    elements.events.appendChild(createElement(
+      "div",
+      "empty-state",
+      "No verified shows match these filters. Clear the filters or check again after the next daily update."
+    ));
     return;
   }
 
@@ -346,39 +396,38 @@ function render() {
   elements.events.appendChild(fragment);
 }
 
-function addOptions(select, values) {
-  const fragment = document.createDocumentFragment();
+function populateSelect(select, values) {
+  const existing = new Set([...select.options].map((option) => option.value));
   values.forEach((value) => {
-    const option = document.createElement("option");
-    option.value = value;
-    option.textContent = value;
-    fragment.appendChild(option);
+    if (!value || existing.has(value)) {
+      return;
+    }
+    select.appendChild(new Option(value, value));
+    existing.add(value);
   });
-  select.appendChild(fragment);
 }
 
 function updateQuickFilterState() {
   elements.quickFilters.forEach((button) => {
-    const dateMode = button.dataset.dateMode;
-    const typeMode = button.dataset.typeMode;
-    const active = dateMode
-      ? state.filters.dateMode === dateMode
-      : typeMode === "festival" && state.filters.type === "festival";
-    button.classList.toggle("active", active);
-    button.setAttribute("aria-pressed", String(active));
+    const dateActive = button.dataset.dateMode && button.dataset.dateMode === state.filters.dateMode;
+    const festivalActive = button.dataset.typeMode === "festival" && state.filters.type === "festival";
+    button.classList.toggle("active", Boolean(dateActive || festivalActive));
+    button.setAttribute("aria-pressed", String(Boolean(dateActive || festivalActive)));
   });
 }
 
 function configureFilters() {
   const artists = [...new Set(state.events.flatMap((event) => event.artists || []))]
+    .filter(Boolean)
     .sort((a, b) => a.localeCompare(b));
-  const states = [...new Set(state.events.map((event) => event.state).filter(Boolean))]
+  const states = [...new Set(state.events.map((event) => event.state))]
+    .filter(Boolean)
     .sort((a, b) => a.localeCompare(b));
 
-  addOptions(elements.artist, artists);
-  addOptions(elements.state, states);
-  addOptions(elements.alertArtist, artists);
-  addOptions(elements.alertState, states);
+  populateSelect(elements.artist, artists);
+  populateSelect(elements.alertArtist, artists);
+  populateSelect(elements.state, states);
+  populateSelect(elements.alertState, states);
 
   elements.search.addEventListener("input", (event) => {
     state.filters.search = event.target.value.trim();
@@ -472,9 +521,12 @@ function loadLocalAlert() {
   localStorage.setItem(ALERT_SEEN_KEY, JSON.stringify(matches));
   const description = [preferences.artist, preferences.state].filter(Boolean).join(" in ");
   if (state.newAlertMatches.size) {
-    setAlertMessage(`${state.newAlertMatches.size} new ${state.newAlertMatches.size === 1 ? "show" : "shows"} match your saved alert for ${description}.`, "success");
+    setAlertMessage(
+      `${state.newAlertMatches.size} new ${state.newAlertMatches.size === 1 ? "show" : "shows"} match your saved alert for ${description}.`,
+      "success"
+    );
   } else {
-    setAlertMessage(`Alert saved for ${description}. No new matches since your last saved check.`, "saved");
+    setAlertMessage(`Alert saved for ${description}. No new matches since your last visit.`, "saved");
   }
 }
 
@@ -538,8 +590,8 @@ async function loadStatus() {
         ? "Updated with source gaps"
         : "Update issue";
 
-    if (errors.length || warnings.length) {
-      elements.notice.hidden = false;
+    elements.notice.hidden = !(errors.length || warnings.length);
+    if (!elements.notice.hidden) {
       elements.notice.className = `notice ${severity}`;
       elements.notice.textContent = errors.length
         ? `The latest update encountered ${errors.length} ${errors.length === 1 ? "error" : "errors"}. Verified listings remain available while the collector retries.`
@@ -581,14 +633,10 @@ function configureSubmissionDialog() {
   });
 
   elements.submissionDialog.addEventListener("click", (event) => {
-    if (event.target === elements.submissionDialog) {
+    if (event.target === elements.submissionDialog && typeof elements.submissionDialog.close === "function") {
       elements.submissionDialog.close();
     }
   });
-  const closeButton = elements.submissionDialog.querySelector(".dialog-close");
-  if (closeButton) {
-    closeButton.addEventListener("click", () => elements.submissionDialog.close());
-  }
 
   elements.submissionForm.addEventListener("submit", (event) => {
     event.preventDefault();
