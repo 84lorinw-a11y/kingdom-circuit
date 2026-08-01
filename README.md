@@ -1,19 +1,14 @@
-# The Kingdom Circuit — Master v5
+# The Kingdom Circuit — Master v6
 
 A free GitHub Pages website and daily collector for verified U.S. Christian hip-hop and faith-driven music shows.
 
-## What v5 adds
+## What v6 changes
 
-- A centered, larger Kingdom Circuit masthead with a cleaner desktop and mobile header.
-- Subtle stage-light and grain effects that preserve the black, cream, and gold identity.
-- A locked, approved 1K Phew artist portrait and focal-point crop.
-- Stronger duplicate detection for same-event provider IDs, event URLs, nearby city variants, normalized addresses, venue aliases, and aggregator time shifts.
-- Explicit regression coverage for the duplicated Steven Malcolm and 1K Phew listings.
-- A sticky desktop filter dock so search and filters remain available while browsing.
-- A **Just announced** badge for events first discovered within the previous seven days.
-- Improved artist-image crops and card hover treatment.
-- Reduced mobile hero spacing so visitors reach the show list faster.
-- 37 automated validation tests.
+- Replaces the public warning phrase **Updated with source gaps** with the cleaner **Calendar updated** label.
+- Keeps the timestamp and status indicator so visitors can still see when the calendar last refreshed.
+- Removes the Local Show Watch section and all browser-based alert code.
+- Leaves the collector schedule, show-validation rules, duplicate handling, images, filters, submissions, and event-retirement behavior unchanged.
+- Retains all Master v5 data-quality and design improvements.
 
 ## Current configuration
 
@@ -41,10 +36,6 @@ A free GitHub Pages website and daily collector for verified U.S. Christian hip-
 - `config/artists.json` can define `imageUrl`, `imagePosition`, and `preferArtistImage` for an artist.
 - 1K Phew is configured to use `assets/artists/1k-phew.webp` when authoritative event artwork is unavailable.
 
-## Free local alerts
-
-The alert feature stores an artist and/or state preference in the visitor's browser. When the visitor returns, newly added matching shows are highlighted. It does not collect email addresses and does not require a backend or account.
-
 ## Show submissions
 
 The on-site form gathers the required event details and opens a prefilled GitHub Issue. This keeps the site free and prevents anonymous spam, but the submitter needs a free GitHub account for the final step.
@@ -71,4 +62,8 @@ Keep the existing GitHub repository secret named `TICKETMASTER_API_KEY`. Never p
 
 ## Automation
 
-The existing GitHub Action runs daily, on repository updates, and when started manually. It runs the tests, collects shows, refreshes `events.json` and `run-status.json`, and redeploys GitHub Pages.
+The existing GitHub Action runs daily at 11:23 UTC, on repository updates, and when started manually. It runs the tests, collects shows, refreshes `events.json` and `run-status.json`, and redeploys GitHub Pages.
+
+## Event retirement
+
+Single-day shows remain available through their event date and are removed on the next collector run after that date. Multi-day festivals remain through their listed final date.

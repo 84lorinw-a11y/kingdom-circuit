@@ -210,55 +210,6 @@ h1 {
   font-size: 0.95rem;
 }
 
-.alert-panel {
-  display: grid;
-  grid-template-columns: minmax(250px, 1fr) minmax(460px, 1.5fr);
-  gap: 36px;
-  align-items: center;
-  padding: 34px 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.alert-copy h2 {
-  margin: 0;
-  font-size: clamp(1.7rem, 3vw, 2.5rem);
-  line-height: 1;
-  letter-spacing: -0.035em;
-  text-transform: uppercase;
-}
-
-.alert-copy p:last-child {
-  max-width: 540px;
-  margin: 14px 0 0;
-  color: var(--muted);
-}
-
-.alert-form {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(130px, 1fr)) auto auto;
-  gap: 10px;
-  align-items: end;
-}
-
-.alert-message {
-  grid-column: 2;
-  margin-top: -18px;
-  color: var(--muted);
-  font-size: 0.88rem;
-}
-
-.alert-message.success {
-  color: var(--success);
-}
-
-.alert-message.error {
-  color: var(--danger);
-}
-
-.alert-message.saved {
-  color: var(--gold-light);
-}
-
 .calendar {
   padding: 64px 0 84px;
 }
@@ -430,11 +381,6 @@ h1 {
   transform: translateY(-2px);
 }
 
-.event-card.new-alert-match {
-  border-color: rgba(118, 184, 137, 0.7);
-  box-shadow: 0 0 0 1px rgba(118, 184, 137, 0.12);
-}
-
 .event-media {
   min-height: 220px;
   overflow: hidden;
@@ -484,11 +430,6 @@ h1 {
 .badge.gold {
   border-color: rgba(198, 154, 70, 0.6);
   color: var(--gold-light);
-}
-
-.badge.new {
-  border-color: rgba(118, 184, 137, 0.6);
-  color: var(--success);
 }
 
 .badge.cancelled {
@@ -668,8 +609,7 @@ h1 {
 }
 
 @media (max-width: 980px) {
-  .hero,
-  .alert-panel {
+  .hero {
     grid-template-columns: 1fr;
     align-items: start;
   }
@@ -678,14 +618,6 @@ h1 {
     max-width: 420px;
   }
 
-  .alert-form {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .alert-message {
-    grid-column: 1;
-    margin-top: -18px;
-  }
 
   .filters {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -720,19 +652,11 @@ h1 {
     padding: 54px 0 42px;
   }
 
-  .alert-panel {
-    gap: 24px;
-  }
-
-  .alert-form,
   .filters,
   .form-row {
     grid-template-columns: 1fr;
   }
 
-  .alert-message {
-    margin-top: 0;
-  }
 
   .calendar {
     padding-top: 48px;
@@ -789,7 +713,7 @@ h1 {
   }
 }
 
-/* Kingdom Circuit Master v5 refinements */
+/* Kingdom Circuit Master v6 refinements */
 .site-header {
   position: relative;
   overflow: hidden;

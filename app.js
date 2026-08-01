@@ -1,8 +1,6 @@
 "use strict";
 
 const REPOSITORY_URL = "https://github.com/84lorinw-a11y/kingdom-circuit";
-const ALERT_PREFS_KEY = "kingdomCircuitAlertPreferencesV1";
-const ALERT_SEEN_KEY = "kingdomCircuitAlertSeenV1";
 const JUST_ANNOUNCED_DAYS = 7;
 
 const state = {
@@ -13,9 +11,7 @@ const state = {
     state: "",
     type: "",
     dateMode: "all"
-  },
-  alertPreferences: null,
-  newAlertMatches: new Set()
+  }
 };
 
 const elements = {
@@ -31,11 +27,6 @@ const elements = {
   type: document.getElementById("type-filter"),
   reset: document.getElementById("reset-filters"),
   quickFilters: [...document.querySelectorAll(".filter-chip")],
-  alertForm: document.getElementById("alert-form"),
-  alertArtist: document.getElementById("alert-artist"),
-  alertState: document.getElementById("alert-state"),
-  alertMessage: document.getElementById("alert-message"),
-  clearAlert: document.getElementById("clear-alert"),
   openSubmit: document.getElementById("open-submit"),
   submissionDialog: document.getElementById("submission-dialog"),
   submissionForm: document.getElementById("submission-form"),
@@ -263,10 +254,6 @@ function createLineup(event) {
   return details;
 }
 
-function isNewAlertMatch(event) {
-  return state.newAlertMatches.has(String(event.id || ""));
-}
-
 function correctionUrl(event) {
   const title = `Correction: ${event.title || "event listing"}`;
   const body = [
@@ -285,9 +272,6 @@ function correctionUrl(event) {
 
 function renderEvent(event) {
   const card = createElement("article", "event-card");
-  if (isNewAlertMatch(event)) {
-    card.classList.add("new-alert-match");
-  }
   card.appendChild(createEventImage(event));
 
   const content = createElement("div", "event-content");
@@ -296,9 +280,6 @@ function renderEvent(event) {
   badges.appendChild(badge(event.eventType === "festival" ? "Festival" : "Concert", "gold"));
   if (isJustAnnounced(event)) {
     badges.appendChild(badge("Just announced", "announced"));
-  }
-  if (isNewAlertMatch(event)) {
-    badges.appendChild(badge("New for your alert", "new"));
   }
   if (event.status && !["scheduled", "onsale"].includes(event.status)) {
     badges.appendChild(badge(event.status, event.status === "cancelled" ? "cancelled" : ""));
@@ -425,9 +406,7 @@ function configureFilters() {
     .sort((a, b) => a.localeCompare(b));
 
   populateSelect(elements.artist, artists);
-  populateSelect(elements.alertArtist, artists);
   populateSelect(elements.state, states);
-  populateSelect(elements.alertState, states);
 
   elements.search.addEventListener("input", (event) => {
     state.filters.search = event.target.value.trim();
@@ -470,102 +449,6 @@ function configureFilters() {
   });
 }
 
-function readJsonStorage(key, fallback) {
-  try {
-    const value = JSON.parse(localStorage.getItem(key));
-    return value ?? fallback;
-  } catch {
-    return fallback;
-  }
-}
-
-function alertMatches(event, preferences) {
-  if (!preferences || (!preferences.artist && !preferences.state)) {
-    return false;
-  }
-  const artistMatch = !preferences.artist || (event.artists || []).includes(preferences.artist);
-  const stateMatch = !preferences.state || event.state === preferences.state;
-  return artistMatch && stateMatch;
-}
-
-function currentAlertEventIds(preferences) {
-  return state.events
-    .filter((event) => alertMatches(event, preferences))
-    .map((event) => String(event.id || ""))
-    .filter(Boolean);
-}
-
-function setAlertMessage(text, tone = "") {
-  elements.alertMessage.textContent = text;
-  elements.alertMessage.className = `alert-message ${tone}`.trim();
-}
-
-function loadLocalAlert() {
-  const preferences = readJsonStorage(ALERT_PREFS_KEY, null);
-  if (!preferences || (!preferences.artist && !preferences.state)) {
-    state.alertPreferences = null;
-    state.newAlertMatches.clear();
-    elements.clearAlert.hidden = true;
-    setAlertMessage("Choose an artist, a state, or both.");
-    return;
-  }
-
-  state.alertPreferences = preferences;
-  elements.alertArtist.value = preferences.artist || "";
-  elements.alertState.value = preferences.state || "";
-  elements.clearAlert.hidden = false;
-
-  const seen = new Set(readJsonStorage(ALERT_SEEN_KEY, []));
-  const matches = currentAlertEventIds(preferences);
-  state.newAlertMatches = new Set(matches.filter((id) => !seen.has(id)));
-  localStorage.setItem(ALERT_SEEN_KEY, JSON.stringify(matches));
-  const description = [preferences.artist, preferences.state].filter(Boolean).join(" in ");
-  if (state.newAlertMatches.size) {
-    setAlertMessage(
-      `${state.newAlertMatches.size} new ${state.newAlertMatches.size === 1 ? "show" : "shows"} match your saved alert for ${description}.`,
-      "success"
-    );
-  } else {
-    setAlertMessage(`Alert saved for ${description}. No new matches since your last visit.`, "saved");
-  }
-}
-
-function configureLocalAlert() {
-  elements.alertForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const preferences = {
-      artist: elements.alertArtist.value,
-      state: elements.alertState.value
-    };
-    if (!preferences.artist && !preferences.state) {
-      setAlertMessage("Select at least one artist or state.", "error");
-      return;
-    }
-    localStorage.setItem(ALERT_PREFS_KEY, JSON.stringify(preferences));
-    localStorage.setItem(ALERT_SEEN_KEY, JSON.stringify(currentAlertEventIds(preferences)));
-    state.alertPreferences = preferences;
-    state.newAlertMatches.clear();
-    elements.clearAlert.hidden = false;
-    const description = [preferences.artist, preferences.state].filter(Boolean).join(" in ");
-    setAlertMessage(`Saved for ${description}. New matching shows will be highlighted on your next visit.`, "success");
-    render();
-  });
-
-  elements.clearAlert.addEventListener("click", () => {
-    localStorage.removeItem(ALERT_PREFS_KEY);
-    localStorage.removeItem(ALERT_SEEN_KEY);
-    state.alertPreferences = null;
-    state.newAlertMatches.clear();
-    elements.alertArtist.value = "";
-    elements.alertState.value = "";
-    elements.clearAlert.hidden = true;
-    setAlertMessage("Local alert cleared.");
-    render();
-  });
-
-  loadLocalAlert();
-}
-
 async function loadStatus() {
   try {
     const response = await fetch(`run-status.json?v=${Date.now()}`, { cache: "no-store" });
@@ -587,7 +470,7 @@ async function loadStatus() {
     elements.statusLabel.textContent = severity === "ok"
       ? "Calendar current"
       : severity === "warning"
-        ? "Updated with source gaps"
+        ? "Calendar updated"
         : "Update issue";
 
     elements.notice.hidden = !(errors.length || warnings.length);
@@ -670,7 +553,6 @@ async function loadEvents() {
         return left.localeCompare(right);
       });
     configureFilters();
-    configureLocalAlert();
     updateQuickFilterState();
     render();
   } catch (error) {
