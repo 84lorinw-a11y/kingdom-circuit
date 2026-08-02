@@ -1,14 +1,14 @@
 {
   "status": "warning",
   "collectorVersion": 5,
-  "lastAttempt": "2026-08-01T18:02:06Z",
-  "lastSuccessfulUpdate": "2026-08-01T18:02:06Z",
-  "eventsPublished": 73,
-  "candidatesCollected": 175,
+  "lastAttempt": "2026-08-02T14:52:21Z",
+  "lastSuccessfulUpdate": "2026-08-02T14:52:21Z",
+  "eventsPublished": 71,
+  "candidatesCollected": 169,
   "artistsConfigured": 113,
   "artistsMatchedOnTicketmaster": 47,
-  "officialEventsFound": 86,
-  "ticketmasterEventsFound": 78,
+  "officialEventsFound": 81,
+  "ticketmasterEventsFound": 77,
   "instagramArtistsConfigured": 113,
   "instagramQueriesRun": 114,
   "instagramQueriesAttempted": 113,
@@ -29,7 +29,7 @@
     }
   ],
   "instagramMode": "free per-artist public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 203,
+  "sourcesChecked": 204,
   "unmatchedArtists": [
     "Kieran the Light",
     "Childlike CiCi",
@@ -63,7 +63,7 @@
     {
       "name": "Reach Records consolidated calendar",
       "status": "ok",
-      "eventsFound": 47
+      "eventsFound": 46
     },
     {
       "name": "Reach Records - 1K Phew",
@@ -152,7 +152,7 @@
     },
     {
       "name": "Off The Charts official schedule",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -163,7 +163,7 @@
     {
       "name": "TPR - Forrest Frank Jesus Generation Tour",
       "status": "ok",
-      "eventsFound": 1
+      "eventsFound": 0
     },
     {
       "name": "TPR - Lecrae Reconstruction World Tour",
@@ -293,12 +293,12 @@
     {
       "name": "ChristianHits consolidated show feed",
       "status": "ok",
-      "eventsFound": 7
+      "eventsFound": 5
     },
     {
       "name": "ChristianHits festival directory",
       "status": "ok",
-      "eventsFound": 5
+      "eventsFound": 4
     },
     {
       "name": "Konnect Concert Series - Space City Church",
@@ -338,10 +338,9 @@
       "queriesRun": 114
     }
   ],
-  "warningCount": 12,
+  "warningCount": 11,
   "errorCount": 0,
   "warnings": [
-    "Off The Charts official schedule: Unable to retrieve https://www.offthechartsnd.com/schedule: HTTP Error 429: Too Many Requests",
     "Zauntee official tour: Unable to retrieve https://www.zauntee.com/tour: HTTP Error 429: Too Many Requests",
     "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
     "Trendsetter Sense official events: Unable to retrieve https://www.trendsettersense.com/event-list: HTTP Error 429: Too Many Requests",
