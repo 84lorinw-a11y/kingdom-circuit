@@ -1,8 +1,8 @@
 {
   "status": "warning",
   "collectorVersion": 5,
-  "lastAttempt": "2026-08-03T17:31:51Z",
-  "lastSuccessfulUpdate": "2026-08-03T17:31:51Z",
+  "lastAttempt": "2026-08-04T17:23:55Z",
+  "lastSuccessfulUpdate": "2026-08-04T17:23:55Z",
   "eventsPublished": 70,
   "candidatesCollected": 169,
   "artistsConfigured": 113,
@@ -29,7 +29,7 @@
     }
   ],
   "instagramMode": "free per-artist public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 204,
+  "sourcesChecked": 203,
   "unmatchedArtists": [
     "Kieran the Light",
     "Childlike CiCi",
@@ -152,7 +152,7 @@
     },
     {
       "name": "Off The Charts official schedule",
-      "status": "ok",
+      "status": "warning",
       "eventsFound": 0
     },
     {
@@ -338,9 +338,10 @@
       "queriesRun": 114
     }
   ],
-  "warningCount": 11,
+  "warningCount": 12,
   "errorCount": 0,
   "warnings": [
+    "Off The Charts official schedule: Unable to retrieve https://www.offthechartsnd.com/schedule: HTTP Error 429: Too Many Requests",
     "Zauntee official tour: Unable to retrieve https://www.zauntee.com/tour: HTTP Error 429: Too Many Requests",
     "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
     "Trendsetter Sense official events: Unable to retrieve https://www.trendsettersense.com/event-list: HTTP Error 429: Too Many Requests",
