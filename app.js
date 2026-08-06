@@ -1,7 +1,8 @@
 "use strict";
 
-const REPOSITORY_URL = "https://github.com/84lorinw-a11y/kingdom-circuit";
 const JUST_ANNOUNCED_DAYS = 7;
+const JUST_ANNOUNCED_START = new Date("2026-08-10T00:00:00-05:00");
+const SUBMISSION_ENDPOINT = "https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID";
 
 const state = {
   events: [],
@@ -30,7 +31,9 @@ const elements = {
   openSubmit: document.getElementById("open-submit"),
   submissionDialog: document.getElementById("submission-dialog"),
   submissionForm: document.getElementById("submission-form"),
-  submissionFeedback: document.getElementById("submission-feedback")
+  submissionFeedback: document.getElementById("submission-feedback"),
+  submissionSubmit: document.getElementById("submission-submit"),
+  submissionTitle: document.getElementById("submission-title")
 };
 
 function safeHttpUrl(value) {
@@ -196,11 +199,11 @@ function badge(text, className = "") {
 }
 
 function isJustAnnounced(event) {
-  if (!event.firstSeen) {
+  if (!event.firstSeen || Date.now() < JUST_ANNOUNCED_START.getTime()) {
     return false;
   }
   const firstSeen = new Date(event.firstSeen);
-  if (Number.isNaN(firstSeen.getTime())) {
+  if (Number.isNaN(firstSeen.getTime()) || firstSeen < JUST_ANNOUNCED_START) {
     return false;
   }
   const age = Date.now() - firstSeen.getTime();
@@ -254,22 +257,46 @@ function createLineup(event) {
   return details;
 }
 
-function correctionUrl(event) {
-  const title = `Correction: ${event.title || "event listing"}`;
-  const body = [
-    "Please describe the correction and provide an official source.",
-    "",
-    `Event: ${event.title || ""}`,
-    `Date: ${event.startDate || ""}`,
-    `Location: ${event.city || ""}, ${event.state || ""}`,
-    `Current official link: ${event.officialUrl || event.ticketUrl || ""}`,
-    "",
-    "Correction:",
-    "Official source URL:"
-  ].join("\n");
-  return `${REPOSITORY_URL}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+function submissionEndpointIsConfigured() {
+  try {
+    const url = new URL(SUBMISSION_ENDPOINT);
+    return url.protocol === "https:" && url.hostname === "formspree.io" &&
+      /^\/f\/[A-Za-z0-9_-]+$/.test(url.pathname) &&
+      !SUBMISSION_ENDPOINT.includes("REPLACE_WITH_YOUR_FORM_ID");
+  } catch {
+    return false;
+  }
 }
 
+function setSubmissionMode(mode, event = null) {
+  elements.submissionForm.reset();
+  elements.submissionFeedback.textContent = "";
+  document.getElementById("submission-kind").value = mode === "correction" ? "Correction" : "New show";
+  elements.submissionTitle.textContent = mode === "correction" ? "Report a correction" : "Submit a verified show";
+  elements.submissionSubmit.textContent = mode === "correction" ? "Send correction" : "Send for review";
+
+  if (event) {
+    document.getElementById("submit-event-name").value = event.title || "";
+    document.getElementById("submit-date").value = event.startDate || "";
+    document.getElementById("submit-time").value = event.startTime || "";
+    document.getElementById("submit-venue").value = event.venue || "";
+    document.getElementById("submit-city").value = event.city || "";
+    document.getElementById("submit-state").value = event.state || "";
+    document.getElementById("submit-lineup").value = (event.artists || []).join(", ");
+    document.getElementById("submit-url").value = event.officialUrl || event.ticketUrl || "";
+    document.getElementById("submit-relationship").value = "Correction to an existing listing";
+    document.getElementById("submit-notes").value = "Please describe what should be corrected and include an official source when possible.";
+  }
+}
+
+function openSubmissionDialog(mode = "new", event = null) {
+  setSubmissionMode(mode, event);
+  if (typeof elements.submissionDialog.showModal === "function") {
+    elements.submissionDialog.showModal();
+  } else {
+    elements.submissionDialog.setAttribute("open", "");
+  }
+}
 function renderEvent(event) {
   const card = createElement("article", "event-card");
   card.appendChild(createEventImage(event));
@@ -347,10 +374,9 @@ function renderEvent(event) {
   }
   actions.appendChild(sourceBlock);
 
-  const correction = createElement("a", "correction-link", "Report a correction");
-  correction.href = correctionUrl(event);
-  correction.target = "_blank";
-  correction.rel = "noopener";
+  const correction = createElement("button", "correction-link", "Report a correction");
+  correction.type = "button";
+  correction.addEventListener("click", () => openSubmissionDialog("correction", event));
   actions.appendChild(correction);
 
   content.appendChild(actions);
@@ -488,32 +514,8 @@ async function loadStatus() {
   }
 }
 
-function submissionBody() {
-  return [
-    "Please review this show for The Kingdom Circuit.",
-    "",
-    `Event name: ${document.getElementById("submit-event-name").value.trim()}`,
-    `Date: ${document.getElementById("submit-date").value}`,
-    `Local time: ${document.getElementById("submit-time").value || "Not provided"}`,
-    `Venue: ${document.getElementById("submit-venue").value.trim()}`,
-    `City and state: ${document.getElementById("submit-city").value.trim()}, ${document.getElementById("submit-state").value.trim().toUpperCase()}`,
-    `Confirmed artist lineup: ${document.getElementById("submit-lineup").value.trim()}`,
-    `Official event or ticket URL: ${document.getElementById("submit-url").value.trim()}`,
-    `Official artwork URL: ${document.getElementById("submit-artwork").value.trim() || "Not provided"}`,
-    `Submitter relationship: ${document.getElementById("submit-relationship").value.trim()}`,
-    "",
-    "Confirmation: This is a U.S. music performance and the source above is official or directly authorized."
-  ].join("\n");
-}
-
 function configureSubmissionDialog() {
-  elements.openSubmit.addEventListener("click", () => {
-    if (typeof elements.submissionDialog.showModal === "function") {
-      elements.submissionDialog.showModal();
-    } else {
-      elements.submissionDialog.setAttribute("open", "");
-    }
-  });
+  elements.openSubmit.addEventListener("click", () => openSubmissionDialog("new"));
 
   elements.submissionDialog.addEventListener("click", (event) => {
     if (event.target === elements.submissionDialog && typeof elements.submissionDialog.close === "function") {
@@ -521,20 +523,64 @@ function configureSubmissionDialog() {
     }
   });
 
-  elements.submissionForm.addEventListener("submit", (event) => {
+  elements.submissionForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+    elements.submissionFeedback.className = "form-feedback";
+
+    if (!submissionEndpointIsConfigured()) {
+      elements.submissionFeedback.textContent = "Email submissions are being configured. Please try again shortly.";
+      return;
+    }
+
+    if (!elements.submissionForm.reportValidity()) {
+      return;
+    }
+
     const officialUrl = safeHttpUrl(document.getElementById("submit-url").value.trim());
     if (!officialUrl) {
       elements.submissionFeedback.textContent = "Enter a valid official URL beginning with https://";
       return;
     }
+
+    const formData = new FormData(elements.submissionForm);
     const eventName = document.getElementById("submit-event-name").value.trim();
-    const issueUrl = `${REPOSITORY_URL}/issues/new?title=${encodeURIComponent(`Show submission: ${eventName}`)}&body=${encodeURIComponent(submissionBody())}`;
-    elements.submissionFeedback.textContent = "Opening the prepared submission...";
-    window.open(issueUrl, "_blank", "noopener");
+    formData.set("official_url", officialUrl);
+    formData.set("state", document.getElementById("submit-state").value.trim().toUpperCase());
+    formData.set("page_url", window.location.href);
+    formData.set("submitted_at", new Date().toISOString());
+    formData.set("_subject", `Kingdom Circuit ${formData.get("submission_type")}: ${eventName}`);
+
+    const originalText = elements.submissionSubmit.textContent;
+    elements.submissionSubmit.disabled = true;
+    elements.submissionSubmit.textContent = "Sending...";
+    elements.submissionFeedback.textContent = "";
+
+    try {
+      const response = await fetch(SUBMISSION_ENDPOINT, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "application/json" }
+      });
+      if (!response.ok) {
+        throw new Error(`Submission failed: ${response.status}`);
+      }
+      elements.submissionFeedback.className = "form-feedback success";
+      elements.submissionFeedback.textContent = "Thank you. The show information was sent for review.";
+      elements.submissionForm.reset();
+      setTimeout(() => {
+        if (typeof elements.submissionDialog.close === "function") {
+          elements.submissionDialog.close();
+        }
+      }, 1400);
+    } catch (error) {
+      console.error(error);
+      elements.submissionFeedback.textContent = "The submission could not be sent. Please try again in a few minutes.";
+    } finally {
+      elements.submissionSubmit.disabled = false;
+      elements.submissionSubmit.textContent = originalText;
+    }
   });
 }
-
 async function loadEvents() {
   try {
     const response = await fetch(`events.json?v=${Date.now()}`, { cache: "no-store" });

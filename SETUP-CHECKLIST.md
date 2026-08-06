@@ -1,11 +1,11 @@
-# Replace the current repository with Master v6
+# Kingdom Circuit Master v7 checklist
 
-1. In GitHub, open `kingdom-circuit` and choose **Code → Add file → Upload files**.
-2. Open the downloaded `UPLOAD_TO_REPOSITORY` folder in Finder.
-3. Select everything inside that folder and drag it into GitHub. Do not drag the outer folder itself.
-4. Confirm paths look like `index.html`, `assets/artists/1k-phew.webp`, `config/artists.json`, and `scripts/update_events.py`, with no extra folder name in front.
-5. Commit directly to `main` with: `Replace site with Kingdom Circuit Master v6`.
-6. Open **Actions** and wait for **Update and deploy show calendar** to show a green check.
-7. Hard-refresh the live site with **Command + Shift + R**.
-
-Do not delete or replace `.github`. The existing workflow and `TICKETMASTER_API_KEY` secret remain in place.
+- [ ] Upload everything inside `UPLOAD_TO_REPOSITORY` to the repository root.
+- [ ] Commit directly to `main`.
+- [ ] Wait for the GitHub Action to finish successfully.
+- [ ] Create a free Formspree form and point it to your private review inbox.
+- [ ] Put the Formspree form ID in the `SUBMISSION_ENDPOINT` line near the top of `app.js`.
+- [ ] Test one show submission from an incognito browser.
+- [ ] Confirm the submission arrives by email.
+- [ ] Confirm current listings do not show `Just announced`.
+- [ ] After August 10, confirm only genuinely new listings receive the badge for seven days.

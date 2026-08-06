@@ -53,6 +53,8 @@ USER_AGENT = (
 REQUEST_TIMEOUT = 25
 STALE_GRACE_DAYS = int(os.getenv("STALE_GRACE_DAYS", "3"))
 LOOKAHEAD_DAYS = int(os.getenv("LOOKAHEAD_DAYS", "550"))
+JUST_ANNOUNCED_START_DATE = date.fromisoformat(os.getenv("JUST_ANNOUNCED_START_DATE", "2026-08-10"))
+BASELINE_FIRST_SEEN = "2026-08-09T00:00:00Z"
 
 US_STATE_CODES = {
     "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI",
@@ -1824,6 +1826,124 @@ def collect_wix_event_list_source(
     return merge_events(events)
 
 
+
+def collect_sevin_tour_source(
+    source: dict[str, Any],
+    url: str,
+    html: str,
+    alias_lookup: dict[str, str],
+    checked_at: str,
+) -> list[dict[str, Any]]:
+    """Parse the official HOG MOB / Sevin tour schedule."""
+
+    page = PageContentParser()
+    page.feed(html)
+    text = normalize_whitespace(page.text).replace("–", "-").replace("—", "-")
+    pattern = re.compile(
+        rf"([A-Z][A-Z .'-]+),\s*([A-Z]{{2}})\s+Location:\s*(.+?)\s+"
+        rf"({MONTH_PATTERN})\s+(\d{{1,2}})(?:st|nd|rd|th)?\s+(20\d{{2}})\s*"
+        r"\((\d{1,2}(?::\d{2})?\s*[AP]M)\s*-\s*(\d{1,2}(?::\d{2})?\s*[AP]M)\)",
+        re.IGNORECASE,
+    )
+    matches = list(pattern.finditer(text))
+    ticket_urls = [
+        safe_url(urljoin(url, href))
+        for href, _ in page.links
+        if "eventbrite.com" in urlparse(urljoin(url, href)).netloc.lower()
+    ]
+    ticket_urls = [item for item in ticket_urls if item]
+    events: list[dict[str, Any]] = []
+    for index, match in enumerate(matches):
+        city_text = re.sub(r"^(?:BUY\s+TICKET\s+)+", "", " ".join(match.group(1).split()), flags=re.IGNORECASE)
+        city = city_text.title()
+        state = normalize_state(match.group(2))
+        start_date = infer_date(match.group(4), int(match.group(5)), int(match.group(6)), now_utc().date())
+        if not start_date or state not in US_STATE_CODES:
+            continue
+        venue_text = normalize_whitespace(match.group(3)).strip(" -")
+        venue = "Venue not provided" if normalize_name(venue_text) in {"tbd", "location tbd"} else venue_text
+        ticket_url = ticket_urls[index] if index < len(ticket_urls) else url
+        events.append(make_source_event(
+            source=source,
+            source_url=url,
+            title=f"Sevin Live Concert — {city}",
+            start_date=start_date,
+            start_time=parse_clock(match.group(7)),
+            venue=venue,
+            address="",
+            city=city,
+            state=state,
+            artists=["Sevin"],
+            headliner="Sevin",
+            checked_at=checked_at,
+            ticket_url=ticket_url,
+            official_url=ticket_url,
+            price="Donate what you can",
+            confidence="high",
+            event_type="concert",
+            lineup_explicit=True,
+            priority=source_priority(source, 80),
+        ))
+    return merge_events(events)
+
+
+def collect_nicky_gracious_source(
+    source: dict[str, Any],
+    url: str,
+    html: str,
+    client: HttpClient,
+    alias_lookup: dict[str, str],
+    checked_at: str,
+) -> list[dict[str, Any]]:
+    """Follow Nicky Gracious show-detail pages and their official ticket links."""
+
+    page = PageContentParser()
+    page.feed(html)
+    product_urls: list[str] = []
+    seen: set[str] = set()
+    for href, link_text in page.links:
+        absolute = safe_url(urljoin(url, href))
+        if not absolute or "/products/" not in urlparse(absolute).path:
+            continue
+        combined = f"{link_text} {absolute}"
+        if "2026" not in combined and not re.search(MONTH_PATTERN, combined, re.IGNORECASE):
+            continue
+        if absolute not in seen:
+            seen.add(absolute)
+            product_urls.append(absolute)
+
+    events: list[dict[str, Any]] = []
+    for detail_url in product_urls[: int(source.get("maxPages") or 12)]:
+        try:
+            if not robots_allows(detail_url):
+                continue
+            detail_html = client.get_text(detail_url)
+        except CollectorError:
+            continue
+        events.extend(collect_jsonld_source_from_html(
+            source, detail_url, detail_html, alias_lookup, checked_at
+        ))
+        detail_page = PageContentParser()
+        detail_page.feed(detail_html)
+        external_urls = ordered_unique([
+            safe_url(urljoin(detail_url, href))
+            for href, _ in detail_page.links
+            if any(host in urlparse(urljoin(detail_url, href)).netloc.lower() for host in (
+                "eventbrite.com", "ticketmaster.com", "tixr.com", "etix.com", "seetickets.us"
+            ))
+        ])
+        for ticket_url in external_urls[:3]:
+            try:
+                if not robots_allows(ticket_url):
+                    continue
+                ticket_html = client.get_text(ticket_url)
+                events.extend(collect_jsonld_source_from_html(
+                    source, ticket_url, ticket_html, alias_lookup, checked_at
+                ))
+            except CollectorError:
+                continue
+    return merge_events(events)
+
 def collect_rural_festival_source(
     source: dict[str, Any],
     url: str,
@@ -1912,6 +2032,10 @@ def collect_official_source(
         return collect_rural_festival_source(source, url, html, alias_lookup, checked_at)
     if parser_type == "wix_event_list":
         return collect_wix_event_list_source(source, url, html, client, alias_lookup, checked_at)
+    if parser_type == "sevin_tour":
+        return collect_sevin_tour_source(source, url, html, alias_lookup, checked_at)
+    if parser_type == "nicky_gracious":
+        return collect_nicky_gracious_source(source, url, html, client, alias_lookup, checked_at)
     return collect_jsonld_source_from_html(source, url, html, alias_lookup, checked_at)
 
 
@@ -2617,7 +2741,7 @@ def finalize_event(
     result["sources"] = sorted(sources, key=lambda item: int(item.get("priority") or 0), reverse=True)
     result["sourceName"] = str(result["sources"][0].get("name") or "Verified source")
     result["confidence"] = "high"
-    result["verifiedVersion"] = 5
+    result["verifiedVersion"] = 7
     return result
 
 
@@ -2758,7 +2882,12 @@ def apply_first_seen(
     existing_events: list[dict[str, Any]],
     checked_at: str,
 ) -> list[dict[str, Any]]:
-    """Keep the original discovery timestamp and mark only truly new listings."""
+    """Preserve discovery dates and start new-listing badges on August 10, 2026."""
+    try:
+        checked_date = datetime.fromisoformat(checked_at.replace("Z", "+00:00")).date()
+    except ValueError:
+        checked_date = now_utc().date()
+
     for event in events:
         match = next(
             (existing for existing in existing_events if isinstance(existing, dict) and events_are_duplicates(existing, event)),
@@ -2766,7 +2895,10 @@ def apply_first_seen(
         )
         if match and match.get("firstSeen"):
             event["firstSeen"] = str(match["firstSeen"])
-        elif not match:
+        elif match or checked_date < JUST_ANNOUNCED_START_DATE:
+            # Current catalog items are the baseline; they are not newly announced.
+            event["firstSeen"] = BASELINE_FIRST_SEEN
+        else:
             event["firstSeen"] = checked_at
     return events
 
@@ -2907,7 +3039,7 @@ def main() -> int:
     last_success = checked_at if any_source_succeeded else previous_status.get("lastSuccessfulUpdate")
     status = {
         "status": status_name,
-        "collectorVersion": 5,
+        "collectorVersion": 7,
         "lastAttempt": checked_at,
         "lastSuccessfulUpdate": last_success,
         "eventsPublished": len(events),

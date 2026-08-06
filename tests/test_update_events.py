@@ -67,7 +67,7 @@ def candidate(
     )
 
 
-class KingdomCircuitV5Tests(unittest.TestCase):
+class KingdomCircuitV7Tests(unittest.TestCase):
     def test_workplay_variants_merge(self):
         first = candidate(venue="Workplay Theatre", artists=["Hulvey"], url="https://a.example")
         second = candidate(venue="Workplay", artists=["Hulvey"], url="https://b.example")
@@ -508,6 +508,76 @@ class KingdomCircuitV5Tests(unittest.TestCase):
         names = {item["name"] for item in artists}
         expected = {"1K Phew", "2819 Worship", "Alexxander", "Anike", "Hulvey", "Jackie Hill Perry", "Lecrae", "Limoblaze", "Tedashii", "Trip Lee", "WHATUPRG"}
         self.assertTrue(expected.issubset(names))
+
+
+    def test_requested_v7_artist_roster_is_present(self):
+        artists = json.loads((ROOT / "config" / "artists.json").read_text())
+        names = {item["name"] for item in artists}
+        expected = {
+            "EGR", "Sevin", "ASAP Preach", "Nicky Gracious", "Brother Bo",
+            "Tommy Chapa", "B. Cody Shields", "Santana Rose", "DJ Winn",
+            "J.List", "BIG HOLY", "KJ-52", "Bryann T", "Young Bro",
+            "D-Maub", "K-Drama", "GAWVI", "Monster Tarver", "Taelor Gray",
+            "ZEE", "IMRSQD", "TJ Carroll", "Coop", "CJ Emulous",
+            "Lul DreDay", "REDEEMED", "Pishko",
+        }
+        self.assertTrue(expected.issubset(names))
+
+    def test_just_announced_catalog_is_baselined_before_activation(self):
+        new_event = candidate(title="New Before Launch", url="https://example.com/prelaunch")
+        result = MODULE.apply_first_seen([new_event], [], "2026-08-06T12:00:00Z")
+        self.assertEqual(result[0]["firstSeen"], MODULE.BASELINE_FIRST_SEEN)
+
+    def test_just_announced_marks_new_event_after_activation(self):
+        new_event = candidate(title="New After Launch", url="https://example.com/postlaunch")
+        checked = "2026-08-11T12:00:00Z"
+        result = MODULE.apply_first_seen([new_event], [], checked)
+        self.assertEqual(result[0]["firstSeen"], checked)
+
+    def test_sevin_tour_parser_finds_future_us_dates(self):
+        source = {
+            "name": "Sevin official tour",
+            "parser": "sevin_tour",
+            "authority": "artist_calendar",
+            "priority": 80,
+            "lineupExplicit": True,
+            "imagePolicy": "ignore",
+        }
+        html = """
+          <h4>SAN DIEGO, CA</h4><p>Location: TBD</p>
+          <p>August 29th 2099 (8pm – 11pm)</p>
+          <a href="https://www.eventbrite.com/e/test-one">BUY TICKET</a>
+          <h4>KANSAS CITY, MO</h4><p>Location: TBD</p>
+          <p>September 26th 2099 (8pm – 11pm)</p>
+          <a href="https://www.eventbrite.com/e/test-two">BUY TICKET</a>
+        """
+        events = MODULE.collect_sevin_tour_source(
+            source,
+            "https://hogmob.com/sevin-live-concert/",
+            html,
+            {"sevin": "Sevin"},
+            CHECKED,
+        )
+        self.assertEqual(len(events), 2)
+        self.assertEqual(events[0]["artists"], ["Sevin"])
+        self.assertEqual(events[0]["city"], "San Diego")
+        self.assertEqual(events[0]["state"], "CA")
+
+    def test_egr_official_youtube_source_is_configured(self):
+        sources = json.loads((ROOT / "config" / "official-sources.json").read_text())
+        egr_sources = [item for item in sources if item.get("artist") == "EGR"]
+        self.assertTrue(egr_sources)
+        self.assertTrue(any("youtube.com" in item.get("url", "") for item in egr_sources))
+
+    def test_new_verified_independent_events_are_present(self):
+        manual = json.loads((ROOT / "config" / "manual-events.json").read_text())
+        identifiers = {item["id"] for item in manual}
+        expected = {
+            "hope-fest-daytona-2026",
+            "turned-up-for-christ-corbin-2026",
+            "faith-jam-sparta-2026",
+        }
+        self.assertTrue(expected.issubset(identifiers))
 
 
 class InstagramMonitoringTests(unittest.TestCase):

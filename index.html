@@ -108,53 +108,72 @@
       <p class="eyebrow">Event submission</p>
       <h2 id="submission-title">Submit a verified show</h2>
       <p class="dialog-intro">Provide an official event, venue, promoter, festival, ticket, or artist source. Incomplete or uncertain listings will not publish.</p>
-      <form id="submission-form" class="submission-form">
+      <form id="submission-form" class="submission-form" novalidate>
+        <input id="submission-kind" name="submission_type" type="hidden" value="New show">
+        <label class="field honeypot-field" aria-hidden="true">
+          <span>Leave this field blank</span>
+          <input name="_gotcha" tabindex="-1" autocomplete="off">
+        </label>
+        <div class="form-row">
+          <label class="field">
+            <span>Your name</span>
+            <input id="submitter-name" name="submitter_name" autocomplete="name" required>
+          </label>
+          <label class="field">
+            <span>Your email</span>
+            <input id="submitter-email" name="email" type="email" autocomplete="email" required>
+          </label>
+        </div>
         <label class="field">
           <span>Event name</span>
-          <input id="submit-event-name" required>
+          <input id="submit-event-name" name="event_name" required>
         </label>
         <div class="form-row">
           <label class="field">
             <span>Date</span>
-            <input id="submit-date" type="date" required>
+            <input id="submit-date" name="date" type="date" required>
           </label>
           <label class="field">
             <span>Local time</span>
-            <input id="submit-time" type="time">
+            <input id="submit-time" name="local_time" type="time">
           </label>
         </div>
         <label class="field">
           <span>Venue</span>
-          <input id="submit-venue" required>
+          <input id="submit-venue" name="venue" required>
         </label>
         <div class="form-row">
           <label class="field">
             <span>City</span>
-            <input id="submit-city" required>
+            <input id="submit-city" name="city" required>
           </label>
           <label class="field">
             <span>State</span>
-            <input id="submit-state" maxlength="2" placeholder="TX" required>
+            <input id="submit-state" name="state" maxlength="2" placeholder="TX" required>
           </label>
         </div>
         <label class="field">
           <span>Confirmed artist lineup</span>
-          <textarea id="submit-lineup" rows="3" required></textarea>
+          <textarea id="submit-lineup" name="artist_lineup" rows="3" required></textarea>
         </label>
         <label class="field">
           <span>Official event or ticket URL</span>
-          <input id="submit-url" type="url" placeholder="https://" required>
+          <input id="submit-url" name="official_url" type="url" placeholder="https://" required>
         </label>
         <label class="field">
           <span>Official artwork URL <em>optional</em></span>
-          <input id="submit-artwork" type="url" placeholder="https://">
+          <input id="submit-artwork" name="artwork_url" type="url" placeholder="https://">
         </label>
         <label class="field">
           <span>Your relationship to the event</span>
-          <input id="submit-relationship" placeholder="Promoter, artist team, venue, fan..." required>
+          <input id="submit-relationship" name="relationship" placeholder="Promoter, artist team, venue, fan..." required>
         </label>
-        <p class="form-note">The final step opens a prefilled GitHub submission. A free GitHub account is currently required.</p>
-        <button class="primary-button" type="submit">Continue to submit</button>
+        <label class="field">
+          <span>Additional details <em>optional</em></span>
+          <textarea id="submit-notes" name="details" rows="3" placeholder="Anything that will help verify the show"></textarea>
+        </label>
+        <p class="form-note">Your submission is emailed privately for review. Your email address is not displayed on the website.</p>
+        <button class="primary-button" id="submission-submit" type="submit">Send for review</button>
         <p class="form-feedback" id="submission-feedback" aria-live="polite"></p>
       </form>
     </div>

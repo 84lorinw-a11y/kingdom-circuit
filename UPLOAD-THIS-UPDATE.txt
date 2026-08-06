@@ -1,19 +1,9 @@
-UPLOAD EVERYTHING INSIDE THIS FOLDER TO THE ROOT OF THE GITHUB REPOSITORY.
+UPLOAD EVERYTHING INSIDE THIS FOLDER TO THE ROOT OF THE kingdom-circuit GITHUB REPOSITORY.
 
-Correct paths:
-  index.html
-  app.js
-  styles.css
-  assets/artists/1k-phew.webp
-  config/artists.json
-  scripts/update_events.py
-  tests/test_update_events.py
+Commit message:
+Replace site with Kingdom Circuit Master v7
 
-Incorrect path:
-  UPLOAD_TO_REPOSITORY/index.html
+Do not upload the UPLOAD_TO_REPOSITORY folder itself.
+After the upload, wait for the Update and deploy show calendar action to finish.
 
-Commit directly to main with:
-  Replace site with Kingdom Circuit Master v6
-
-Then wait for the Update and deploy show calendar Action to finish with a green check.
-Do not replace .github and do not re-enter the Ticketmaster key.
+IMPORTANT: complete the one-time email form setup described in EMAIL-FORM-SETUP.txt.

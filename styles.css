@@ -929,3 +929,31 @@ h1 {
     object-position: 50% 27%;
   }
 }
+
+
+/* Kingdom Circuit Master v7: private email submissions */
+.correction-link {
+  appearance: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.honeypot-field {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+}
+
+.form-feedback.success {
+  color: #8dd69a;
+}
+
+.primary-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
