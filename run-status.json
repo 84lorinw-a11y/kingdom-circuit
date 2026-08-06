@@ -1,10 +1,10 @@
 {
   "status": "warning",
   "collectorVersion": 7,
-  "lastAttempt": "2026-08-06T04:13:20Z",
-  "lastSuccessfulUpdate": "2026-08-06T04:13:20Z",
-  "eventsPublished": 77,
-  "candidatesCollected": 185,
+  "lastAttempt": "2026-08-06T12:50:06Z",
+  "lastSuccessfulUpdate": "2026-08-06T12:50:06Z",
+  "eventsPublished": 78,
+  "candidatesCollected": 186,
   "artistsConfigured": 140,
   "artistsMatchedOnTicketmaster": 50,
   "officialEventsFound": 94,
@@ -12,7 +12,7 @@
   "instagramArtistsConfigured": 140,
   "instagramQueriesRun": 141,
   "instagramQueriesAttempted": 140,
-  "instagramResultsFound": 0,
+  "instagramResultsFound": 1,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -26,6 +26,16 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
+    },
+    {
+      "url": "https://www.instagram.com/p/signin/",
+      "title": "Instagram",
+      "artists": [],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
     }
   ],
   "instagramMode": "free per-artist public-index scan; Stories, private posts, and unindexed posts are not visible",
