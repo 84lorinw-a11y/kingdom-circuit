@@ -2,7 +2,7 @@
 
 const JUST_ANNOUNCED_DAYS = 7;
 const JUST_ANNOUNCED_START = new Date("2026-08-10T00:00:00-05:00");
-const SUBMISSION_ENDPOINT = "https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID";
+const SUBMISSION_ENDPOINT = "https://formspree.io/f/mljreawj";
 
 const state = {
   events: [],
