@@ -1,8 +1,8 @@
 {
   "status": "warning",
   "collectorVersion": 7,
-  "lastAttempt": "2026-08-07T02:23:08Z",
-  "lastSuccessfulUpdate": "2026-08-07T02:23:08Z",
+  "lastAttempt": "2026-08-07T14:40:32Z",
+  "lastSuccessfulUpdate": "2026-08-07T14:40:32Z",
   "eventsPublished": 78,
   "candidatesCollected": 186,
   "artistsConfigured": 140,
@@ -12,7 +12,7 @@
   "instagramArtistsConfigured": 140,
   "instagramQueriesRun": 141,
   "instagramQueriesAttempted": 140,
-  "instagramResultsFound": 1,
+  "instagramResultsFound": 0,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -26,20 +26,10 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
-    },
-    {
-      "url": "https://www.instagram.com/p/DbiRtT-Eetd/",
-      "title": "Double R Crafts | Two brands. One booth. Both inspired by the ...",
-      "artists": [],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
     }
   ],
   "instagramMode": "free per-artist public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 247,
+  "sourcesChecked": 252,
   "unmatchedArtists": [
     "Kieran the Light",
     "Childlike CiCi",
@@ -80,7 +70,7 @@
     {
       "name": "Reach Records consolidated calendar",
       "status": "ok",
-      "eventsFound": 46
+      "eventsFound": 45
     },
     {
       "name": "Reach Records - 1K Phew",
@@ -105,7 +95,7 @@
     {
       "name": "Reach Records - Hulvey",
       "status": "ok",
-      "eventsFound": 3
+      "eventsFound": 4
     },
     {
       "name": "Reach Records - Jackie Hill Perry",
@@ -224,7 +214,7 @@
     },
     {
       "name": "Zauntee official tour",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -239,7 +229,7 @@
     },
     {
       "name": "Mike Malagies official events",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -254,7 +244,7 @@
     },
     {
       "name": "Trendsetter Sense official events",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -344,7 +334,7 @@
     },
     {
       "name": "Mike Teezy official tour",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -409,7 +399,7 @@
     },
     {
       "name": "CJ Emulous official site",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -425,21 +415,16 @@
       "queriesRun": 141
     }
   ],
-  "warningCount": 12,
+  "warningCount": 7,
   "errorCount": 0,
   "warnings": [
-    "Zauntee official tour: Unable to retrieve https://www.zauntee.com/tour: HTTP Error 429: Too Many Requests",
-    "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
-    "Trendsetter Sense official events: Unable to retrieve https://www.trendsettersense.com/event-list: HTTP Error 429: Too Many Requests",
     "NF Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11969355-nf: HTTP Error 403: Forbidden",
     "Mike Malagies Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15593996-mike-malagies: HTTP Error 403: Forbidden",
     "Parris Chariz Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14726057-parris-chariz: HTTP Error 403: Forbidden",
     "Torey D'Shaun Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14363770-torey-d%27shaun: HTTP Error 403: Forbidden",
     "Derek Minor Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/12211056-derek-minor: HTTP Error 403: Forbidden",
     "Byron Juane Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14690526-byron-juane: HTTP Error 403: Forbidden",
-    "Social Club Misfits Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/13345973-social-club-misfits: HTTP Error 403: Forbidden",
-    "Mike Teezy official tour: Unable to retrieve https://www.miketeezymusic.com/tour: HTTP Error 429: Too Many Requests",
-    "CJ Emulous official site: Unable to retrieve https://www.cjemulous.com/: HTTP Error 429: Too Many Requests"
+    "Social Club Misfits Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/13345973-social-club-misfits: HTTP Error 403: Forbidden"
   ],
   "errors": [],
   "message": "Verified U.S. music listings updated with improved duplicate merging, public titles, source health, images, and public Instagram-announcement rules."
