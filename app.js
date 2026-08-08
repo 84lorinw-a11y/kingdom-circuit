@@ -225,13 +225,13 @@ function createEventImage(event) {
   image.loading = "lazy";
   image.decoding = "async";
   image.alt = eventImageAlt(event);
-  image.src = safeImageUrl(event.image) || "assets/logo.png";
+  image.src = safeImageUrl(event.image) || "assets/event-fallback.webp";
   image.style.objectPosition = safeObjectPosition(event.imagePosition);
   image.addEventListener("error", () => {
     if (!image.dataset.fallbackApplied) {
       image.dataset.fallbackApplied = "true";
-      image.src = "assets/logo.png";
-      image.alt = `The Kingdom Circuit fallback artwork for ${event.title || "this event"}`;
+      image.src = "assets/event-fallback.webp";
+      image.alt = `Neutral concert artwork for ${event.title || "this event"}`;
       image.style.objectPosition = "center";
     }
   }, { once: true });

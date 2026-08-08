@@ -1130,7 +1130,10 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 71
+    "rosterOrder": 71,
+    "imageUrl": "assets/artists/sevin.webp",
+    "imagePosition": "50% 30%",
+    "preferArtistImage": true
   },
   {
     "name": "Bryann T",
@@ -1220,7 +1223,10 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 76
+    "rosterOrder": 76,
+    "imageUrl": "assets/artists/egr.webp",
+    "imagePosition": "50% 38%",
+    "preferArtistImage": true
   },
   {
     "name": "Nicky Gracious",
@@ -3944,25 +3950,6 @@
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
     "rosterOrder": 251
-  },
-  {
-    "name": "TobyMac",
-    "aliases": [
-      "TobyMac",
-      "TOBYMAC",
-      "tobyMac"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "crossover",
-    "monitoringPriority": 3,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": false,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": true,
-    "ticketmasterAttractionId": "867069",
-    "instagramProfile": "https://www.instagram.com/tobymac/",
-    "rosterOrder": 252
   },
   {
     "name": "Paul Russell",

@@ -400,10 +400,10 @@ class KingdomCircuitV7Tests(unittest.TestCase):
         self.assertEqual(final[0]["image"], "https://example.com/kb.jpg")
         self.assertEqual(final[0]["imageType"], "artist")
 
-    def test_fallback_image_is_local_logo(self):
+    def test_fallback_image_is_neutral_event_artwork(self):
         event = candidate(artists=["Unknown Tracked Artist"], image="", image_policy="ignore")
         final = MODULE.finalize_events(MODULE.merge_events([event]), {}, date(2098, 1, 1))
-        self.assertEqual(final[0]["image"], "assets/logo.png")
+        self.assertEqual(final[0]["image"], "assets/event-fallback.webp")
 
     def test_venue_only_title_becomes_artist_live_title(self):
         event = candidate(
@@ -579,14 +579,14 @@ class KingdomCircuitV7Tests(unittest.TestCase):
         }
         self.assertTrue(expected.issubset(identifiers))
 
-    def test_master_v8_roster_has_300_unique_artists(self):
+    def test_master_v9_roster_has_299_unique_artists(self):
         artists = json.loads((ROOT / "config" / "artists.json").read_text())
         names = [item["name"] for item in artists]
-        self.assertEqual(len(names), 300)
-        self.assertEqual(len({name.casefold() for name in names}), 300)
+        self.assertEqual(len(names), 299)
+        self.assertEqual(len({name.casefold() for name in names}), 299)
         self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 1), 100)
         self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 2), 100)
-        self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 3), 100)
+        self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 3), 99)
 
     def test_top_streaming_priority_artists_are_present(self):
         artists = json.loads((ROOT / "config" / "artists.json").read_text())
@@ -629,7 +629,7 @@ class KingdomCircuitV7Tests(unittest.TestCase):
             "GRITS Bandsintown public calendar",
             "Nic D Bandsintown public calendar",
             "Pastor Mike Jr. Bandsintown public calendar",
-            "TobyMac official tour",
+            "LifeLight Sioux Falls official lineup",
             "Yung Kriss Bandsintown public calendar",
         }
         self.assertTrue(expected.issubset(names))
@@ -751,6 +751,114 @@ class InstagramMonitoringTests(unittest.TestCase):
         posts = json.loads((ROOT / "config" / "known-instagram-posts.json").read_text())
         urls = {item["url"] for item in posts}
         self.assertIn("https://www.instagram.com/reel/DadaZKqPnGY/", urls)
+
+
+
+class KingdomCircuitV9Tests(unittest.TestCase):
+    def test_tobymac_removed_from_monitoring_roster(self):
+        artists = json.loads((ROOT / "config" / "artists.json").read_text())
+        self.assertNotIn("TobyMac", {artist.get("name") for artist in artists})
+
+    def test_tobymac_kept_only_when_explicitly_billed_with_kb(self):
+        alias_lookup = {"kb": "KB"}
+        raw = {
+            "id": "test-kb-tobymac",
+            "name": "KB and TobyMac",
+            "dates": {"start": {"localDate": "2099-09-01", "localTime": "19:00:00"}},
+            "classifications": [{"segment": {"name": "Music"}}],
+            "url": "https://example.com/kb-tobymac",
+            "_embedded": {
+                "venues": [{
+                    "name": "Test Arena",
+                    "city": {"name": "Nashville"},
+                    "state": {"stateCode": "TN"},
+                    "country": {"countryCode": "US"},
+                    "address": {"line1": "1 Arena Way"},
+                }],
+                "attractions": [{"name": "TobyMac"}, {"name": "KB"}],
+            },
+        }
+        event = MODULE.extract_ticketmaster_event(raw, "KB", alias_lookup, CHECKED)
+        self.assertEqual(event["artists"], ["KB", "TobyMac"])
+
+    def test_same_instagram_schedule_url_keeps_different_dates(self):
+        first = candidate(
+            title="EGR Live — Trenton",
+            event_date="2099-08-08",
+            city="Trenton",
+            state="NJ",
+            artists=["EGR"],
+            url="https://www.instagram.com/p/example-schedule/",
+        )
+        second = candidate(
+            title="EGR Live — Tacoma",
+            event_date="2099-08-15",
+            city="Tacoma",
+            state="WA",
+            artists=["EGR"],
+            url="https://www.instagram.com/p/example-schedule/",
+        )
+        self.assertEqual(len(MODULE.merge_events([first, second])), 2)
+
+    def test_tobymac_not_added_without_kb(self):
+        alias_lookup = {"lecrae": "Lecrae"}
+        raw = {
+            "id": "test-tobymac-solo",
+            "name": "TobyMac Live",
+            "dates": {"start": {"localDate": "2099-09-01", "localTime": "19:00:00"}},
+            "classifications": [{"segment": {"name": "Music"}}],
+            "url": "https://example.com/tobymac",
+            "_embedded": {
+                "venues": [{
+                    "name": "Test Arena",
+                    "city": {"name": "Nashville"},
+                    "state": {"stateCode": "TN"},
+                    "country": {"countryCode": "US"},
+                }],
+                "attractions": [{"name": "TobyMac"}],
+            },
+        }
+        self.assertIsNone(MODULE.extract_ticketmaster_event(raw, "", alias_lookup, CHECKED))
+
+    def test_v9_manual_events_include_requested_additions(self):
+        events = json.loads((ROOT / "config" / "manual-events.json").read_text())
+        ids = {event.get("id") for event in events}
+        self.assertIn("flame-live-plano-2026", ids)
+        self.assertIn("lifelight-sioux-falls-2026", ids)
+        self.assertEqual(sum(1 for event in events if str(event.get("id", "")).startswith("caleb-gordon-eden-")), 8)
+        self.assertEqual(sum(1 for event in events if str(event.get("id", "")).startswith("egr-")), 21)
+        self.assertIn("let-the-church-sing-tour-dunedin-2026", ids)
+
+    def test_neutral_fallback_replaces_brand_logo(self):
+        event = candidate(title="Unknown Image Show", artists=["KB"])
+        final = MODULE.finalize_events([event], {}, date(2098, 1, 1))
+        self.assertEqual(final[0]["image"], "assets/event-fallback.webp")
+
+    def test_manual_local_event_artwork_is_preserved(self):
+        raw = {
+            "id": "local-artwork-test",
+            "title": "Local Artwork Test",
+            "startDate": "2099-08-10",
+            "venue": "Test Venue",
+            "city": "Nashville",
+            "state": "TN",
+            "artists": ["KB"],
+            "headliner": "KB",
+            "officialUrl": "https://example.com/local-artwork",
+            "image": "assets/events/local-artwork.webp",
+            "lineupExplicit": True,
+        }
+        normalized = MODULE.normalize_manual_event(raw, CHECKED)
+        final = MODULE.finalize_events([normalized], {}, date(2098, 1, 1))
+        self.assertEqual(final[0]["image"], "assets/events/local-artwork.webp")
+        self.assertEqual(final[0]["imageType"], "event_artwork")
+
+    def test_footer_notice_and_uniform_ticket_button(self):
+        html = (ROOT / "index.html").read_text()
+        css = (ROOT / "styles.css").read_text()
+        self.assertGreater(html.index('id="notice"'), html.index('<footer class="site-footer">'))
+        self.assertIn('min-width: 154px;', css)
+        self.assertNotIn('.ticket-link {\n  width: 100%;', css)
 
 
 if __name__ == "__main__":

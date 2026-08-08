@@ -1041,30 +1041,6 @@
     "softFail": true
   },
   {
-    "name": "TobyMac official tour",
-    "url": "https://tobymac.com/tour/",
-    "parser": "jsonld",
-    "enabled": true,
-    "artist": "TobyMac",
-    "authority": "artist_calendar",
-    "priority": 80,
-    "imagePolicy": "event_artwork",
-    "musicConfirmed": true,
-    "softFail": true
-  },
-  {
-    "name": "TobyMac Bandsintown public calendar",
-    "url": "https://www.bandsintown.com/a/817-tobymac",
-    "parser": "bandsintown_public",
-    "enabled": true,
-    "artist": "TobyMac",
-    "authority": "artist_calendar",
-    "priority": 72,
-    "imagePolicy": "artist",
-    "musicConfirmed": true,
-    "softFail": true
-  },
-  {
     "name": "Alex Jean Bandsintown public calendar",
     "url": "https://www.bandsintown.com/a/15570394-alex-jean",
     "parser": "bandsintown_public",
@@ -1097,6 +1073,35 @@
     "authority": "artist_calendar",
     "priority": 72,
     "imagePolicy": "artist",
+    "musicConfirmed": true,
+    "softFail": true
+  },
+  {
+    "name": "LifeLight Sioux Falls official lineup",
+    "url": "https://lifelight.org/llsf-lineup/",
+    "parser": "jsonld",
+    "enabled": true,
+    "artists": [
+      "KB"
+    ],
+    "headliner": "KB",
+    "authority": "official_festival",
+    "priority": 106,
+    "imagePolicy": "event_artwork",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "softFail": true
+  },
+  {
+    "name": "FLAME Plano official registration",
+    "url": "https://onrealm.org/MessiahLutheran43217/PublicRegistrations/Event?linkString=YzkzNmFlZTktYzUwOS00OGU5LWE4OTQtYjQ2YzAwMmE3YjE1",
+    "parser": "jsonld",
+    "enabled": true,
+    "artist": "FLAME",
+    "authority": "official_event",
+    "priority": 104,
+    "imagePolicy": "ignore",
+    "lineupExplicit": true,
     "musicConfirmed": true,
     "softFail": true
   }

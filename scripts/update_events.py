@@ -821,8 +821,11 @@ def make_source_event(
     configured_headliner = str(headliner or source.get("headliner") or "").strip()
     chosen_headliner = configured_headliner if configured_headliner in clean_artists else (clean_artists[0] if clean_artists else "")
     image_policy = str(source.get("imagePolicy") or "event_artwork").strip().lower()
-    configured_artwork = safe_url(source.get("eventArtworkUrl"))
-    event_artwork = configured_artwork or (safe_url(image) if image_policy == "event_artwork" and is_valid_image_url(image, True) else "")
+    configured_artwork = safe_image_reference(source.get("eventArtworkUrl"))
+    image_reference = safe_image_reference(image)
+    event_artwork = configured_artwork or (
+        image_reference if image_policy == "event_artwork" and is_valid_image_url(image_reference, True) else ""
+    )
     source_link = official_url or source_url
     source_record = {
         "name": str(source.get("name") or "Official source"),
@@ -2203,6 +2206,11 @@ def extract_ticketmaster_event(
     artists = ordered_unique(artists)
     if fallback_artist and fallback_artist not in artists:
         artists.insert(0, fallback_artist)
+    # TobyMac is intentionally not monitored as a CHH artist. Preserve him only
+    # when Ticketmaster explicitly bills him on the same event as KB.
+    if "KB" in artists and any(normalize_name(name) == "tobymac" for name in attraction_names):
+        kb_index = artists.index("KB")
+        artists.insert(kb_index + 1, "TobyMac")
     if not artists:
         return None
     event_url = safe_url(raw_event.get("url"))
@@ -2477,11 +2485,17 @@ def clearly_distinct_same_day_events(
 
 
 def events_are_duplicates(left: dict[str, Any], right: dict[str, Any]) -> bool:
-    # Provider IDs and event-specific URLs are authoritative even when a source
-    # formats a nearby city or time differently.
-    if external_id_overlap(left, right) or event_url_overlap(left, right):
+    # Provider IDs are authoritative even when a source formats a nearby city
+    # or time differently. A plain official URL can also represent a multi-date
+    # schedule post, so it merges different dates only when it contains a known
+    # provider event ID (Ticketmaster, Bandsintown, Eventbrite, etc.).
+    if external_id_overlap(left, right):
         return True
-    if str(left.get("startDate") or "") != str(right.get("startDate") or ""):
+    same_date = str(left.get("startDate") or "") == str(right.get("startDate") or "")
+    shared_url_ids = event_url_identities(left) & event_url_identities(right)
+    if shared_url_ids and (same_date or any(not identity.startswith("url:") for identity in shared_url_ids)):
+        return True
+    if not same_date:
         return False
     if normalize_state(str(left.get("state") or "")) != normalize_state(str(right.get("state") or "")):
         return False
@@ -2742,7 +2756,7 @@ def finalize_event(
     if artwork_items:
         artwork = safe_image_reference(artwork_items[0].get("url"))
     artist_image = images.get(headliner, "")
-    image = artwork or artist_image or "assets/logo.png"
+    image = artwork or artist_image or "assets/event-fallback.webp"
 
     result = {key: value for key, value in event.items() if key not in {
         "artistEvidence", "artworkEvidence", "eventArtwork", "requiresCorroboration",
@@ -2765,7 +2779,7 @@ def finalize_event(
     result["sources"] = sorted(sources, key=lambda item: int(item.get("priority") or 0), reverse=True)
     result["sourceName"] = str(result["sources"][0].get("name") or "Verified source")
     result["confidence"] = "high"
-    result["verifiedVersion"] = 7
+    result["verifiedVersion"] = 9
     return result
 
 
@@ -2826,7 +2840,7 @@ def normalize_manual_event(event: Any, checked_at: str) -> dict[str, Any] | None
         checked_at=checked_at,
         ticket_url=safe_url(event.get("ticketUrl")) or source_url,
         official_url=source_url,
-        image=safe_url(event.get("image")),
+        image=safe_image_reference(event.get("image")),
         price=str(event.get("price") or ""),
         status=str(event.get("status") or "scheduled"),
         confidence="high",
