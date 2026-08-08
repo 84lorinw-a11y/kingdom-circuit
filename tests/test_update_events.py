@@ -579,6 +579,61 @@ class KingdomCircuitV7Tests(unittest.TestCase):
         }
         self.assertTrue(expected.issubset(identifiers))
 
+    def test_master_v8_roster_has_300_unique_artists(self):
+        artists = json.loads((ROOT / "config" / "artists.json").read_text())
+        names = [item["name"] for item in artists]
+        self.assertEqual(len(names), 300)
+        self.assertEqual(len({name.casefold() for name in names}), 300)
+        self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 1), 100)
+        self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 2), 100)
+        self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 3), 100)
+
+    def test_top_streaming_priority_artists_are_present(self):
+        artists = json.loads((ROOT / "config" / "artists.json").read_text())
+        names = {item["name"] for item in artists}
+        required = {
+            "Lecrae", "Hulvey", "KB", "Caleb Gordon", "Andy Mineo",
+            "nobigdyl.", "Alex Jean", "gio.", "Torey D'Shaun", "Redimi2",
+            "GRITS", "Funky", "Forrest Frank", "NF", "Nic D", "1K Phew",
+            "Jon Keith", "Miles Minnick", "Tedashii", "Trip Lee", "Manafest",
+            "Pastor Mike Jr.", "Pregador Luo", "Nesk Only", "Futuristic",
+            "Beacon Light", "Sondae", "FLAME", "Scootie Wop", "Aaron Cole",
+        }
+        self.assertTrue(required.issubset(names))
+        top = {item["name"] for item in artists if item.get("topStreamingPriority")}
+        self.assertEqual(top, required)
+
+    def test_mike_malagies_manual_show_is_preserved(self):
+        manual = json.loads((ROOT / "config" / "manual-events.json").read_text())
+        event = next(item for item in manual if item.get("id") == "let-the-church-sing-tour-dunedin-2026")
+        self.assertEqual(event["startDate"], "2026-10-02")
+        self.assertIn("Mike Malagies", event["artists"])
+
+    def test_ambiguous_artist_names_are_blocked_only_in_free_text(self):
+        artists = json.loads((ROOT / "config" / "artists.json").read_text())
+        lookup = MODULE.build_alias_lookup(artists)
+        original = MODULE.TEXT_MATCH_BLOCKLIST.copy()
+        try:
+            MODULE.TEXT_MATCH_BLOCKLIST = MODULE.configure_text_match_blocklist(artists)
+            self.assertNotIn("Mission", MODULE.match_artists_in_text("Our mission is to serve the city", lookup))
+            self.assertNotIn("Canon", MODULE.match_artists_in_text("Canon cameras are not allowed", lookup))
+            self.assertEqual(MODULE.match_tracked_artists(["Mission"], lookup), ["Mission"])
+        finally:
+            MODULE.TEXT_MATCH_BLOCKLIST = original
+
+    def test_expanded_high_value_sources_are_configured(self):
+        sources = json.loads((ROOT / "config" / "official-sources.json").read_text())
+        names = {item.get("name") for item in sources}
+        expected = {
+            "Manafest official tour",
+            "GRITS Bandsintown public calendar",
+            "Nic D Bandsintown public calendar",
+            "Pastor Mike Jr. Bandsintown public calendar",
+            "TobyMac official tour",
+            "Yung Kriss Bandsintown public calendar",
+        }
+        self.assertTrue(expected.issubset(names))
+
 
 class InstagramMonitoringTests(unittest.TestCase):
     @classmethod
@@ -589,16 +644,20 @@ class InstagramMonitoringTests(unittest.TestCase):
         assert social_spec.loader
         social_spec.loader.exec_module(cls.social)
 
-    def test_instagram_queries_cover_every_artist(self):
+    def test_instagram_queries_cover_the_social_priority_tier(self):
         artists = json.loads((ROOT / "config" / "artists.json").read_text())
         queries = self.social.build_search_queries(artists, 2099, batch_size=5)
         combined = " ".join(queries)
-        enabled = [artist for artist in artists if artist.get("enabled", True)]
+        enabled = [artist for artist in artists if self.social.social_search_enabled(artist)]
+        disabled = [artist for artist in artists if artist.get("enabled", True) and not self.social.social_search_enabled(artist)]
         for artist in enabled:
             self.assertIn(f'"{artist["name"]}"', combined)
-        # The live scanner uses one search query per artist so every roster
-        # entry is checked independently rather than hidden in a broad batch.
+        for artist in disabled[:25]:
+            self.assertNotIn(f'"{artist["name"]}"', combined)
+        # The live scanner uses one search query per selected artist so the
+        # highest-priority accounts are checked independently.
         self.assertEqual(len(self.social.build_search_queries(artists, 2099)), len(enabled))
+        self.assertLess(len(enabled), len([artist for artist in artists if artist.get("enabled", True)]))
 
     def test_high_confidence_official_instagram_post_becomes_event(self):
         records = self.social._artist_records([

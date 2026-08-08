@@ -102,8 +102,13 @@ def _chunks(values: list[Any], size: int) -> Iterable[list[Any]]:
         yield values[index:index + size]
 
 
+def social_search_enabled(item: dict[str, Any]) -> bool:
+    """Return whether an artist should receive the expensive public-index scan."""
+    return bool(item.get("enabled", True) and item.get("socialSearchEnabled", True))
+
+
 def build_search_queries(artists: list[dict[str, Any]], year: int, batch_size: int = 1) -> list[str]:
-    names = [str(item.get("name") or "").strip() for item in artists if item.get("enabled", True)]
+    names = [str(item.get("name") or "").strip() for item in artists if social_search_enabled(item)]
     names = [name for name in names if name]
     queries: list[str] = []
     for group in _chunks(names, batch_size):
@@ -124,7 +129,7 @@ def _artist_records(artists: list[dict[str, Any]]) -> list[dict[str, Any]]:
     records: list[dict[str, Any]] = []
     for item in artists:
         name = str(item.get("name") or "").strip()
-        if not name or not item.get("enabled", True):
+        if not name or not social_search_enabled(item):
             continue
         aliases = [name, *[str(alias) for alias in item.get("aliases", [])]]
         aliases = sorted({normalize(alias) for alias in aliases if normalize(alias)}, key=len, reverse=True)
@@ -391,7 +396,7 @@ def scan_instagram_index(
     checked_at: str,
     lookahead_days: int,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
-    """Check every configured artist through public Instagram search indexing."""
+    """Check the configured social-search tier through public Instagram indexing."""
 
     records = _artist_records(artists)
     queries = build_search_queries(artists, today.year)
@@ -481,6 +486,7 @@ def scan_instagram_index(
 
     report = {
         "artistsConfigured": len(records),
+        "totalArtistRoster": len([item for item in artists if item.get("enabled", True)]),
         "queriesRun": queries_run,
         "queriesAttempted": queries_attempted,
         "resultsFound": len(unique_items),
@@ -492,6 +498,6 @@ def scan_instagram_index(
         "profilesDiscovered": list(discovered_profiles.values())[:30],
         "warnings": warnings[:10],
         "checkedAt": checked_at,
-        "mode": "free per-artist public-index scan; Stories, private posts, and unindexed posts are not visible",
+        "mode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
     }
     return list(event_by_url.values()), report

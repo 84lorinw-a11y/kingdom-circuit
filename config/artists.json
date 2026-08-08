@@ -7,16 +7,13 @@
     "enabled": true,
     "ticketmasterEnabled": true,
     "category": "core",
-    "label": "Reach Records"
-  },
-  {
-    "name": "Forrest Frank",
-    "aliases": [
-      "Forrest Frank"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "crossover"
+    "label": "Reach Records",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 1
   },
   {
     "name": "Hulvey",
@@ -26,7 +23,13 @@
     "enabled": true,
     "ticketmasterEnabled": true,
     "category": "core",
-    "label": "Reach Records"
+    "label": "Reach Records",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 2
   },
   {
     "name": "KB",
@@ -35,7 +38,13 @@
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "core"
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 3
   },
   {
     "name": "Caleb Gordon",
@@ -44,7 +53,13 @@
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "core"
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 4
   },
   {
     "name": "Andy Mineo",
@@ -53,7 +68,13 @@
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "core"
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 5
   },
   {
     "name": "nobigdyl.",
@@ -63,7 +84,13 @@
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "core"
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 6
   },
   {
     "name": "Alex Jean",
@@ -72,16 +99,143 @@
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "core"
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 7
   },
   {
-    "name": "Miles Minnick",
+    "name": "gio.",
     "aliases": [
-      "Miles Minnick"
+      "gio.",
+      "gio"
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "core"
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 8
+  },
+  {
+    "name": "Torey D'Shaun",
+    "aliases": [
+      "Torey D'Shaun",
+      "Torey D'Shawn"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "rmg",
+    "label": "Reflection Music Group",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 9
+  },
+  {
+    "name": "Redimi2",
+    "aliases": [
+      "Redimi2"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "international",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "instagramProfile": "https://www.instagram.com/redimi2/",
+    "rosterOrder": 10
+  },
+  {
+    "name": "GRITS",
+    "aliases": [
+      "GRITS",
+      "Grits"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 11
+  },
+  {
+    "name": "Funky",
+    "aliases": [
+      "Funky"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "international",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "instagramProfile": "https://www.instagram.com/funkypr/",
+    "rosterOrder": 12
+  },
+  {
+    "name": "Forrest Frank",
+    "aliases": [
+      "Forrest Frank"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "crossover",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 13
+  },
+  {
+    "name": "NF",
+    "aliases": [
+      "NF",
+      "NF Real Music"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "crossover",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 14
+  },
+  {
+    "name": "Nic D",
+    "aliases": [
+      "Nic D",
+      "NicD"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "crossover",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "ticketmasterAttractionId": "4228898",
+    "instagramProfile": "https://www.instagram.com/nicd/",
+    "rosterOrder": 15
   },
   {
     "name": "1K Phew",
@@ -96,29 +250,13 @@
     "label": "Reach Records",
     "imageUrl": "assets/artists/1k-phew.webp",
     "imagePosition": "50% 24%",
-    "preferArtistImage": true
-  },
-  {
-    "name": "WHATUPRG",
-    "aliases": [
-      "WHATUPRG",
-      "WHATUPRG?"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "reach",
-    "label": "Reach Records"
-  },
-  {
-    "name": "Anike",
-    "aliases": [
-      "Anike",
-      "Wande"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "reach",
-    "label": "Reach Records"
+    "preferArtistImage": true,
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 16
   },
   {
     "name": "Jon Keith",
@@ -127,89 +265,28 @@
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "core"
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 17
   },
   {
-    "name": "Torey D'Shaun",
+    "name": "Miles Minnick",
     "aliases": [
-      "Torey D'Shaun",
-      "Torey D'Shawn"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "rmg",
-    "label": "Reflection Music Group"
-  },
-  {
-    "name": "gio.",
-    "aliases": [
-      "gio.",
-      "gio"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core"
-  },
-  {
-    "name": "Social Club Misfits",
-    "aliases": [
-      "Social Club Misfits",
-      "Social Club"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "group"
-  },
-  {
-    "name": "Steven Malcolm",
-    "aliases": [
-      "Steven Malcolm"
+      "Miles Minnick"
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
     "category": "core",
-    "instagramProfile": "https://www.instagram.com/stevenmalcolmmusic/",
-    "imageUrl": "https://bigchurchfestival.com/wp-content/uploads/steve-malcolmFULL-HEIGHT-TWO-COLUMN-1000x1313.jpg"
-  },
-  {
-    "name": "Aaron Cole",
-    "aliases": [
-      "Aaron Cole"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "crossover"
-  },
-  {
-    "name": "Jackie Hill Perry",
-    "aliases": [
-      "Jackie Hill Perry",
-      "Jackie Hill-Perry"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "reach",
-    "label": "Reach Records"
-  },
-  {
-    "name": "Limoblaze",
-    "aliases": [
-      "Limoblaze"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "reach",
-    "label": "Reach Records"
-  },
-  {
-    "name": "Trip Lee",
-    "aliases": [
-      "Trip Lee"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "reach",
-    "label": "Reach Records"
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 18
   },
   {
     "name": "Tedashii",
@@ -219,16 +296,95 @@
     "enabled": true,
     "ticketmasterEnabled": true,
     "category": "reach",
-    "label": "Reach Records"
+    "label": "Reach Records",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 19
   },
   {
-    "name": "Tommy Zuko",
+    "name": "Trip Lee",
     "aliases": [
-      "Tommy Zuko"
+      "Trip Lee"
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "core"
+    "category": "reach",
+    "label": "Reach Records",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 20
+  },
+  {
+    "name": "Manafest",
+    "aliases": [
+      "Manafest"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "crossover",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "instagramProfile": "https://www.instagram.com/manafest/",
+    "rosterOrder": 21
+  },
+  {
+    "name": "Pastor Mike Jr.",
+    "aliases": [
+      "Pastor Mike Jr.",
+      "Pastor Mike Jr",
+      "PMJ"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "crossover",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "ticketmasterAttractionId": "2978933",
+    "instagramProfile": "https://www.instagram.com/pastormikejr/",
+    "rosterOrder": 22
+  },
+  {
+    "name": "Pregador Luo",
+    "aliases": [
+      "Pregador Luo"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 23
+  },
+  {
+    "name": "Nesk Only",
+    "aliases": [
+      "Nesk Only",
+      "NESK ONLY"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 24
   },
   {
     "name": "Futuristic",
@@ -237,45 +393,60 @@
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "crossover"
+    "category": "crossover",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 25
   },
   {
-    "name": "Kieran the Light",
+    "name": "Beacon Light",
     "aliases": [
-      "Kieran the Light"
+      "Beacon Light"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "ticketmasterNote": "Disabled until an exact Ticketmaster attraction ID is verified; name is ambiguous.",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 26
+  },
+  {
+    "name": "Sondae",
+    "aliases": [
+      "Sondae"
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "core"
+    "category": "crossover",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 27
   },
   {
-    "name": "Childlike CiCi",
+    "name": "FLAME",
     "aliases": [
-      "Childlike CiCi",
-      "Childlike Cici"
+      "FLAME",
+      "Flame"
     ],
     "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core"
-  },
-  {
-    "name": "Dee-1",
-    "aliases": [
-      "Dee-1",
-      "Dee 1"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "crossover"
-  },
-  {
-    "name": "Red Tips",
-    "aliases": [
-      "Red Tips"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core"
+    "ticketmasterEnabled": false,
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 28
   },
   {
     "name": "Scootie Wop",
@@ -286,45 +457,238 @@
     "ticketmasterEnabled": true,
     "category": "core",
     "instagramProfile": "https://www.instagram.com/scootiewop/",
-    "imageUrl": "https://www.even.biz/_next/image?q=75&url=https%3A%2F%2Fdt7m7kl3brv3f.cloudfront.net%2Fimages%2F4fovkhwb35e2t8zi4p9ajnxa22a5&w=828"
+    "imageUrl": "https://www.even.biz/_next/image?q=75&url=https%3A%2F%2Fdt7m7kl3brv3f.cloudfront.net%2Fimages%2F4fovkhwb35e2t8zi4p9ajnxa22a5&w=828",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 29
   },
   {
-    "name": "Dell Mac",
+    "name": "Aaron Cole",
     "aliases": [
-      "Dell Mac"
+      "Aaron Cole"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "crossover",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 30
+  },
+  {
+    "name": "WHATUPRG",
+    "aliases": [
+      "WHATUPRG",
+      "WHATUPRG?"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "reach",
+    "label": "Reach Records",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 31
+  },
+  {
+    "name": "Anike",
+    "aliases": [
+      "Anike",
+      "Wande"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "reach",
+    "label": "Reach Records",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 32
+  },
+  {
+    "name": "Limoblaze",
+    "aliases": [
+      "Limoblaze"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "reach",
+    "label": "Reach Records",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 33
+  },
+  {
+    "name": "Jackie Hill Perry",
+    "aliases": [
+      "Jackie Hill Perry",
+      "Jackie Hill-Perry"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "reach",
+    "label": "Reach Records",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 34
+  },
+  {
+    "name": "Social Club Misfits",
+    "aliases": [
+      "Social Club Misfits",
+      "Social Club"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "group",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 35
+  },
+  {
+    "name": "Steven Malcolm",
+    "aliases": [
+      "Steven Malcolm"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "instagramProfile": "https://www.instagram.com/stevenmalcolmmusic/",
+    "imageUrl": "https://bigchurchfestival.com/wp-content/uploads/steve-malcolmFULL-HEIGHT-TWO-COLUMN-1000x1313.jpg",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 36
+  },
+  {
+    "name": "Dee-1",
+    "aliases": [
+      "Dee-1",
+      "Dee 1"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "crossover",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 37
+  },
+  {
+    "name": "Kieran the Light",
+    "aliases": [
+      "Kieran the Light"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 38
+  },
+  {
+    "name": "Childlike CiCi",
+    "aliases": [
+      "Childlike CiCi",
+      "Childlike Cici"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 39
+  },
+  {
+    "name": "Yung Kriss",
+    "aliases": [
+      "Yung Kriss"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "instagramProfile": "https://www.instagram.com/yungkriss/",
+    "rosterOrder": 40
+  },
+  {
+    "name": "Eluzai",
+    "aliases": [
+      "Eluzai"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 41
+  },
+  {
+    "name": "tylerhateslife",
+    "aliases": [
+      "tylerhateslife",
+      "Tyler Hates Life"
     ],
     "enabled": true,
     "ticketmasterEnabled": false,
-    "category": "core"
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "legacy",
+    "textMatchEnabled": false,
+    "rosterOrder": 42
   },
   {
-    "name": "Beacon Light",
+    "name": "S.B.G.",
     "aliases": [
-      "Beacon Light"
+      "S.B.G.",
+      "SBG"
     ],
     "enabled": true,
     "ticketmasterEnabled": false,
     "category": "core",
-    "ticketmasterNote": "Disabled until an exact Ticketmaster attraction ID is verified; name is ambiguous."
-  },
-  {
-    "name": "FLAME",
-    "aliases": [
-      "FLAME",
-      "Flame"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "legacy"
-  },
-  {
-    "name": "Bizzle",
-    "aliases": [
-      "Bizzle"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core"
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 43
   },
   {
     "name": "Zauntee",
@@ -333,164 +697,28 @@
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "crossover"
+    "category": "crossover",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 44
   },
   {
-    "name": "C4 Crotona",
+    "name": "Bizzle",
     "aliases": [
-      "C4 Crotona"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core"
-  },
-  {
-    "name": "Parris Chariz",
-    "aliases": [
-      "Parris Chariz"
+      "Bizzle"
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "rmg",
-    "label": "Reflection Music Group"
-  },
-  {
-    "name": "J. Monty",
-    "aliases": [
-      "J. Monty",
-      "J Monty"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core"
-  },
-  {
-    "name": "Aha Gazelle",
-    "aliases": [
-      "Aha Gazelle"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core"
-  },
-  {
-    "name": "Aklesso",
-    "aliases": [
-      "Aklesso"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core"
-  },
-  {
-    "name": "indie tribe.",
-    "aliases": [
-      "indie tribe.",
-      "indie tribe",
-      "Indie Tribe"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "group"
-  },
-  {
-    "name": "Mogli the Iceburg",
-    "aliases": [
-      "Mogli the Iceburg",
-      "Mogli The Iceburg"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core"
-  },
-  {
-    "name": "DJ Mykael V",
-    "aliases": [
-      "DJ Mykael V",
-      "DJ Mykael V Super Set"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core"
-  },
-  {
-    "name": "Porsha Love",
-    "aliases": [
-      "Porsha Love"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core"
-  },
-  {
-    "name": "LaNell Grant",
-    "aliases": [
-      "LaNell Grant",
-      "Lanell Grant"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core"
-  },
-  {
-    "name": "Q-Flo",
-    "aliases": [
-      "Q-Flo",
-      "Q Flo"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core"
-  },
-  {
-    "name": "Gavin the HotRod",
-    "aliases": [
-      "Gavin the HotRod",
-      "Gavin The HotRod"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core"
-  },
-  {
-    "name": "Nathan Davis Jr.",
-    "aliases": [
-      "Nathan Davis Jr.",
-      "Nathan Davis Jr"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "crossover"
-  },
-  {
-    "name": "Tommy Royale",
-    "aliases": [
-      "Tommy Royale"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core"
-  },
-  {
-    "name": "Alexxander",
-    "aliases": [
-      "Alexxander"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "reach",
-    "label": "Reach Records"
-  },
-  {
-    "name": "Ruslan",
-    "aliases": [
-      "Ruslan",
-      "Ruslan KD"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
     "category": "core",
-    "ticketmasterNote": "Disabled until an exact Ticketmaster attraction ID is verified; name is ambiguous."
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 45
   },
   {
     "name": "Derek Minor",
@@ -500,28 +728,13 @@
     "enabled": true,
     "ticketmasterEnabled": true,
     "category": "rmg",
-    "label": "Reflection Music Group"
-  },
-  {
-    "name": "Mike Malagies",
-    "aliases": [
-      "Mike Malagies"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core",
-    "instagramProfile": "https://www.instagram.com/mikemalagies/",
-    "imageUrl": "https://static.wixstatic.com/media/61a78b_7545031064f049a6843e4c7d0666886f~mv2.jpg/v1/fill/w_327%2Ch_491%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/61a78b_7545031064f049a6843e4c7d0666886f~mv2.jpg"
-  },
-  {
-    "name": "NF",
-    "aliases": [
-      "NF",
-      "NF Real Music"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "crossover"
+    "label": "Reflection Music Group",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 46
   },
   {
     "name": "Canon",
@@ -531,253 +744,90 @@
     "enabled": true,
     "ticketmasterEnabled": false,
     "category": "rmg",
-    "label": "Reflection Music Group"
+    "label": "Reflection Music Group",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 47
   },
   {
-    "name": "350",
+    "name": "Parris Chariz",
     "aliases": [
-      "350"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core"
-  },
-  {
-    "name": "Byron Juane",
-    "aliases": [
-      "Byron Juane"
+      "Parris Chariz"
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "rmg"
+    "category": "rmg",
+    "label": "Reflection Music Group",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 48
   },
   {
-    "name": "Trendsetter Sense",
+    "name": "Aha Gazelle",
     "aliases": [
-      "Trendsetter Sense"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "rmg"
-  },
-  {
-    "name": "Rare of Breed",
-    "aliases": [
-      "Rare of Breed",
-      "RareofBreed"
+      "Aha Gazelle"
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "crossover"
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 49
   },
   {
-    "name": "2819 Worship",
+    "name": "Aklesso",
     "aliases": [
-      "2819 Worship"
+      "Aklesso"
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "reach",
-    "label": "Reach Records"
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 50
   },
   {
-    "name": "Hollyn",
+    "name": "Tommy Zuko",
     "aliases": [
-      "Hollyn"
+      "Tommy Zuko"
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "crossover"
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 51
   },
   {
-    "name": "The Weathrman",
+    "name": "EmanuelDaProphet",
     "aliases": [
-      "The Weathrman",
-      "Weathrman"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core"
-  },
-  {
-    "name": "Swaizy",
-    "aliases": [
-      "Swaizy"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core"
-  },
-  {
-    "name": "Ryan Trey",
-    "aliases": [
-      "Ryan Trey"
+      "EmanuelDaProphet",
+      "Emanuel Da Prophet"
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "crossover"
-  },
-  {
-    "name": "Toschii",
-    "aliases": [
-      "Toschii"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core"
-  },
-  {
-    "name": "De La Cruz",
-    "aliases": [
-      "De La Cruz"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core"
-  },
-  {
-    "name": "Marty",
-    "aliases": [
-      "Marty",
-      "Marty of Social Club Misfits",
-      "Marty Mar"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "solo"
-  },
-  {
-    "name": "Fern",
-    "aliases": [
-      "Fern",
-      "Fern of Social Club Misfits"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "solo"
-  },
-  {
-    "name": "Sho Baraka",
-    "aliases": [
-      "Sho Baraka"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "legacy"
-  },
-  {
-    "name": "Propaganda",
-    "aliases": [
-      "Propaganda"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "legacy"
-  },
-  {
-    "name": "Da' T.R.U.T.H.",
-    "aliases": [
-      "Da' T.R.U.T.H.",
-      "Da Truth",
-      "Da T.R.U.T.H."
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "legacy"
-  },
-  {
-    "name": "Eshon Burgundy",
-    "aliases": [
-      "Eshon Burgundy"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "legacy"
-  },
-  {
-    "name": "Thi'sl",
-    "aliases": [
-      "Thi'sl",
-      "Thizl"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "legacy"
-  },
-  {
-    "name": "Ty Brasel",
-    "aliases": [
-      "Ty Brasel"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core"
-  },
-  {
-    "name": "Jay-Way",
-    "aliases": [
-      "Jay-Way",
-      "Jay Way"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core"
-  },
-  {
-    "name": "Jered Sanders",
-    "aliases": [
-      "Jered Sanders"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core"
-  },
-  {
-    "name": "Datin",
-    "aliases": [
-      "Datin"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core"
-  },
-  {
-    "name": "Mission",
-    "aliases": [
-      "Mission"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core"
-  },
-  {
-    "name": "BrvndonP",
-    "aliases": [
-      "BrvndonP",
-      "Brvndon P"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core"
-  },
-  {
-    "name": "Angie Rose",
-    "aliases": [
-      "Angie Rose"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core"
-  },
-  {
-    "name": "A.I. The Anomaly",
-    "aliases": [
-      "A.I. The Anomaly",
-      "AI The Anomaly"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core"
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 52
   },
   {
     "name": "Mike Teezy",
@@ -788,65 +838,28 @@
     "ticketmasterEnabled": true,
     "category": "core",
     "instagramProfile": "https://www.instagram.com/officialmiketeezy/",
-    "imageUrl": "https://www.even.biz/_next/image?q=75&url=https%3A%2F%2Fdt7m7kl3brv3f.cloudfront.net%2Fimages%2Fzlirs9n3bpjitnofexx4m095koo3&w=828"
+    "imageUrl": "https://www.even.biz/_next/image?q=75&url=https%3A%2F%2Fdt7m7kl3brv3f.cloudfront.net%2Fimages%2Fzlirs9n3bpjitnofexx4m095koo3&w=828",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 53
   },
   {
-    "name": "Swoope",
+    "name": "Porsha Love",
     "aliases": [
-      "Swoope"
+      "Porsha Love"
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "legacy"
-  },
-  {
-    "name": "Shai Linne",
-    "aliases": [
-      "Shai Linne"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "legacy"
-  },
-  {
-    "name": "JGivens",
-    "aliases": [
-      "JGivens",
-      "J Givens"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "legacy"
-  },
-  {
-    "name": "Wordsplayed",
-    "aliases": [
-      "Wordsplayed",
-      "Wordsplayed.",
-      "Wordsplayed?"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core"
-  },
-  {
-    "name": "No Malice",
-    "aliases": [
-      "No Malice"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "crossover"
-  },
-  {
-    "name": "EmanuelDaProphet",
-    "aliases": [
-      "EmanuelDaProphet",
-      "Emanuel Da Prophet"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core"
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 54
   },
   {
     "name": "Reece Lache'",
@@ -856,119 +869,216 @@
     ],
     "enabled": true,
     "ticketmasterEnabled": false,
-    "category": "core"
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 55
   },
   {
-    "name": "George.Rose",
+    "name": "LaNell Grant",
     "aliases": [
-      "George.Rose",
-      "George Rose"
+      "LaNell Grant",
+      "Lanell Grant"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 56
+  },
+  {
+    "name": "Red Tips",
+    "aliases": [
+      "Red Tips"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 57
+  },
+  {
+    "name": "Dell Mac",
+    "aliases": [
+      "Dell Mac"
     ],
     "enabled": true,
     "ticketmasterEnabled": false,
-    "category": "core"
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 58
   },
   {
-    "name": "DaeShawn Forrest",
+    "name": "indie tribe.",
     "aliases": [
-      "DaeShawn Forrest",
-      "Daeshawn Forrest"
+      "indie tribe.",
+      "indie tribe",
+      "Indie Tribe"
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "core"
+    "category": "group",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 59
   },
   {
-    "name": "Xay Hill",
+    "name": "DJ Mykael V",
     "aliases": [
-      "Xay Hill"
+      "DJ Mykael V",
+      "DJ Mykael V Super Set"
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "core"
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 60
   },
   {
-    "name": "BigBreeze",
+    "name": "Mogli the Iceburg",
     "aliases": [
-      "BigBreeze",
-      "Big Breeze"
+      "Mogli the Iceburg",
+      "Mogli The Iceburg"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 61
+  },
+  {
+    "name": "Tommy Royale",
+    "aliases": [
+      "Tommy Royale"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 62
+  },
+  {
+    "name": "Jay-Way",
+    "aliases": [
+      "Jay-Way",
+      "Jay Way"
     ],
     "enabled": true,
     "ticketmasterEnabled": false,
-    "category": "core"
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 63
   },
   {
-    "name": "Aasha Marie",
+    "name": "Ty Brasel",
     "aliases": [
-      "Aasha Marie"
+      "Ty Brasel"
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "rmg",
-    "label": "Reflection Music Group"
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 64
   },
   {
-    "name": "Kaleb Mitchell",
+    "name": "J. Monty",
     "aliases": [
-      "Kaleb Mitchell"
+      "J. Monty",
+      "J Monty"
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "core"
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 65
   },
   {
-    "name": "Jude Barclay",
+    "name": "Datin",
     "aliases": [
-      "Jude Barclay"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "crossover"
-  },
-  {
-    "name": "Sondae",
-    "aliases": [
-      "Sondae"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "crossover"
-  },
-  {
-    "name": "Skema Boy",
-    "aliases": [
-      "Skema Boy"
+      "Datin"
     ],
     "enabled": true,
     "ticketmasterEnabled": false,
-    "category": "core"
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 66
   },
   {
-    "name": "Coby James",
+    "name": "Jered Sanders",
     "aliases": [
-      "Coby James"
+      "Jered Sanders"
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "crossover"
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 67
   },
   {
-    "name": "Redimi2",
+    "name": "A.I. The Anomaly",
     "aliases": [
-      "Redimi2"
+      "A.I. The Anomaly",
+      "AI The Anomaly"
     ],
     "enabled": true,
     "ticketmasterEnabled": false,
-    "category": "international"
-  },
-  {
-    "name": "Funky",
-    "aliases": [
-      "Funky"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "international"
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 68
   },
   {
     "name": "Selah the Corner",
@@ -977,7 +1087,13 @@
     ],
     "enabled": true,
     "ticketmasterEnabled": false,
-    "category": "legacy"
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 69
   },
   {
     "name": "Bumps INF",
@@ -987,123 +1103,13 @@
     ],
     "enabled": true,
     "ticketmasterEnabled": false,
-    "category": "legacy"
-  },
-  {
-    "name": "Beautiful Eulogy",
-    "aliases": [
-      "Beautiful Eulogy"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "group"
-  },
-  {
-    "name": "Braille",
-    "aliases": [
-      "Braille"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "legacy"
-  },
-  {
-    "name": "Odd Thomas",
-    "aliases": [
-      "Odd Thomas"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "legacy"
-  },
-  {
-    "name": "R-Swift",
-    "aliases": [
-      "R-Swift",
-      "R Swift"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "legacy"
-  },
-  {
-    "name": "116",
-    "aliases": [
-      "116",
-      "116 Clique"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "group"
-  },
-  {
-    "name": "Kijan Boone",
-    "aliases": [
-      "Kijan Boone"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core"
-  },
-  {
-    "name": "Madison Ryann Ward",
-    "aliases": [
-      "Madison Ryann Ward"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "crossover"
-  },
-  {
-    "name": "Kings Kaleidoscope",
-    "aliases": [
-      "Kings Kaleidoscope"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "crossover"
-  },
-  {
-    "name": "DKG Kie",
-    "aliases": [
-      "DKG Kie"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core"
-  },
-  {
-    "name": "J. Crum",
-    "aliases": [
-      "J. Crum",
-      "J Crum"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core"
-  },
-  {
-    "name": "Battz",
-    "aliases": [
-      "Battz"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core"
-  },
-  {
-    "name": "EGR",
-    "aliases": [
-      "EGR",
-      "EGR MUZIK",
-      "EGRxOFFICIAL"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core",
-    "officialProfile": "https://www.youtube.com/@EGRxOFFICIAL",
-    "youtubeProfile": "https://www.youtube.com/@EGRxOFFICIAL",
-    "instagramProfile": "https://www.instagram.com/egrxofficial/"
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 70
   },
   {
     "name": "Sevin",
@@ -1118,114 +1124,13 @@
     "ticketmasterEnabled": false,
     "category": "core",
     "collective": "HOG MOB Ministries",
-    "officialProfile": "https://hogmob.com/sevin/"
-  },
-  {
-    "name": "ASAP Preach",
-    "aliases": [
-      "ASAP Preach",
-      "A.S.A.P. Preach"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core",
-    "officialProfile": "https://asappreachmusic.com/"
-  },
-  {
-    "name": "Nicky Gracious",
-    "aliases": [
-      "Nicky Gracious"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core",
-    "officialProfile": "https://nickygraciousmusic.com/"
-  },
-  {
-    "name": "Brother Bo",
-    "aliases": [
-      "Brother Bo"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core",
-    "officialProfile": "https://www.youtube.com/c/BrotherBoMusic"
-  },
-  {
-    "name": "Tommy Chapa",
-    "aliases": [
-      "Tommy Chapa"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core",
-    "officialProfile": "https://music.apple.com/us/artist/tommy-chapa/1508864414"
-  },
-  {
-    "name": "B. Cody Shields",
-    "aliases": [
-      "B. Cody Shields",
-      "B Cody Shields"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core",
-    "officialProfile": "https://thisishismusic.com/pages/about"
-  },
-  {
-    "name": "Santana Rose",
-    "aliases": [
-      "Santana Rose"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core",
-    "officialProfile": "https://www.youtube.com/@SantanaRoseMusic"
-  },
-  {
-    "name": "DJ Winn",
-    "aliases": [
-      "DJ Winn",
-      "DJ WINN"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "dj"
-  },
-  {
-    "name": "J.List",
-    "aliases": [
-      "J.List",
-      "J List",
-      "JLIST"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core",
-    "officialProfile": "https://www.youtube.com/@RevivalmusicJlist/videos"
-  },
-  {
-    "name": "BIG HOLY",
-    "aliases": [
-      "BIG HOLY",
-      "Big Holy"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "provisional",
-    "monitoringNote": "Artist name is ambiguous; publish only when an official event or artist source confirms the identity."
-  },
-  {
-    "name": "KJ-52",
-    "aliases": [
-      "KJ-52",
-      "KJ52",
-      "KJ 52"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "legacy",
-    "officialProfile": "https://www.kj52.com/"
+    "officialProfile": "https://hogmob.com/sevin/",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 71
   },
   {
     "name": "Bryann T",
@@ -1237,7 +1142,13 @@
     "ticketmasterEnabled": true,
     "category": "core",
     "collective": "Kingdom Muzic",
-    "officialProfile": "https://www.youtube.com/channel/UCOL7Z7dqD6If3UlmA8Lgggw"
+    "officialProfile": "https://www.youtube.com/channel/UCOL7Z7dqD6If3UlmA8Lgggw",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 72
   },
   {
     "name": "Young Bro",
@@ -1248,7 +1159,2581 @@
     "enabled": true,
     "ticketmasterEnabled": false,
     "category": "core",
-    "officialProfile": "https://www.youtube.com/@youngbro356"
+    "officialProfile": "https://www.youtube.com/@youngbro356",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 73
+  },
+  {
+    "name": "KJ-52",
+    "aliases": [
+      "KJ-52",
+      "KJ52",
+      "KJ 52"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "officialProfile": "https://www.kj52.com/",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 74
+  },
+  {
+    "name": "GAWVI",
+    "aliases": [
+      "GAWVI",
+      "Gawvi"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "officialProfile": "https://www.gawvi.co/",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 75
+  },
+  {
+    "name": "EGR",
+    "aliases": [
+      "EGR",
+      "EGR MUZIK",
+      "EGRxOFFICIAL"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "officialProfile": "https://www.youtube.com/@EGRxOFFICIAL",
+    "youtubeProfile": "https://www.youtube.com/@EGRxOFFICIAL",
+    "instagramProfile": "https://www.instagram.com/egrxofficial/",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 76
+  },
+  {
+    "name": "Nicky Gracious",
+    "aliases": [
+      "Nicky Gracious"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "officialProfile": "https://nickygraciousmusic.com/",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 77
+  },
+  {
+    "name": "ASAP Preach",
+    "aliases": [
+      "ASAP Preach",
+      "A.S.A.P. Preach"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "officialProfile": "https://asappreachmusic.com/",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 78
+  },
+  {
+    "name": "Mike Malagies",
+    "aliases": [
+      "Mike Malagies"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "instagramProfile": "https://www.instagram.com/mikemalagies/",
+    "imageUrl": "https://static.wixstatic.com/media/61a78b_7545031064f049a6843e4c7d0666886f~mv2.jpg/v1/fill/w_327%2Ch_491%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/61a78b_7545031064f049a6843e4c7d0666886f~mv2.jpg",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 79
+  },
+  {
+    "name": "Eshon Burgundy",
+    "aliases": [
+      "Eshon Burgundy"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 80
+  },
+  {
+    "name": "Sho Baraka",
+    "aliases": [
+      "Sho Baraka"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 81
+  },
+  {
+    "name": "Propaganda",
+    "aliases": [
+      "Propaganda"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 82
+  },
+  {
+    "name": "Shai Linne",
+    "aliases": [
+      "Shai Linne"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 83
+  },
+  {
+    "name": "Da' T.R.U.T.H.",
+    "aliases": [
+      "Da' T.R.U.T.H.",
+      "Da Truth",
+      "Da T.R.U.T.H."
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 84
+  },
+  {
+    "name": "Thi'sl",
+    "aliases": [
+      "Thi'sl",
+      "Thizl"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 85
+  },
+  {
+    "name": "Swoope",
+    "aliases": [
+      "Swoope"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 86
+  },
+  {
+    "name": "Ruslan",
+    "aliases": [
+      "Ruslan",
+      "Ruslan KD"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "ticketmasterNote": "Disabled until an exact Ticketmaster attraction ID is verified; name is ambiguous.",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 87
+  },
+  {
+    "name": "Mission",
+    "aliases": [
+      "Mission"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 88
+  },
+  {
+    "name": "DaeShawn Forrest",
+    "aliases": [
+      "DaeShawn Forrest",
+      "Daeshawn Forrest"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 89
+  },
+  {
+    "name": "BigBreeze",
+    "aliases": [
+      "BigBreeze",
+      "Big Breeze"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 90
+  },
+  {
+    "name": "C4 Crotona",
+    "aliases": [
+      "C4 Crotona"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 91
+  },
+  {
+    "name": "Alexxander",
+    "aliases": [
+      "Alexxander"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "reach",
+    "label": "Reach Records",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 92
+  },
+  {
+    "name": "2819 Worship",
+    "aliases": [
+      "2819 Worship"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "reach",
+    "label": "Reach Records",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 93
+  },
+  {
+    "name": "George.Rose",
+    "aliases": [
+      "George.Rose",
+      "George Rose"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 94
+  },
+  {
+    "name": "Kijan Boone",
+    "aliases": [
+      "Kijan Boone"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 95
+  },
+  {
+    "name": "Jude Barclay",
+    "aliases": [
+      "Jude Barclay"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "crossover",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 96
+  },
+  {
+    "name": "Kaleb Mitchell",
+    "aliases": [
+      "Kaleb Mitchell"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 97
+  },
+  {
+    "name": "Xay Hill",
+    "aliases": [
+      "Xay Hill"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 98
+  },
+  {
+    "name": "DKG Kie",
+    "aliases": [
+      "DKG Kie"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 99
+  },
+  {
+    "name": "J. Crum",
+    "aliases": [
+      "J. Crum",
+      "J Crum"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 1,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 100
+  },
+  {
+    "name": "Nathan Davis Jr.",
+    "aliases": [
+      "Nathan Davis Jr.",
+      "Nathan Davis Jr"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "crossover",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 101
+  },
+  {
+    "name": "Angie Rose",
+    "aliases": [
+      "Angie Rose"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 102
+  },
+  {
+    "name": "Aasha Marie",
+    "aliases": [
+      "Aasha Marie"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "rmg",
+    "label": "Reflection Music Group",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 103
+  },
+  {
+    "name": "R-Swift",
+    "aliases": [
+      "R-Swift",
+      "R Swift"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "legacy",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 104
+  },
+  {
+    "name": "No Malice",
+    "aliases": [
+      "No Malice"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "crossover",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 105
+  },
+  {
+    "name": "Marty",
+    "aliases": [
+      "Marty",
+      "Marty of Social Club Misfits",
+      "Marty Mar"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "solo",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 106
+  },
+  {
+    "name": "Fern",
+    "aliases": [
+      "Fern",
+      "Fern of Social Club Misfits"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "solo",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 107
+  },
+  {
+    "name": "DC3",
+    "aliases": [
+      "DC3"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "international",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 108
+  },
+  {
+    "name": "Don Ready",
+    "aliases": [
+      "Don Ready"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 109
+  },
+  {
+    "name": "Not Klyde",
+    "aliases": [
+      "Not Klyde"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 110
+  },
+  {
+    "name": "404 Chew",
+    "aliases": [
+      "404 Chew"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 111
+  },
+  {
+    "name": "Alphein",
+    "aliases": [
+      "Alphein"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 112
+  },
+  {
+    "name": "Bill B.",
+    "aliases": [
+      "Bill B."
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 113
+  },
+  {
+    "name": "G3rm 43",
+    "aliases": [
+      "G3rm 43",
+      "Germ 43"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 114
+  },
+  {
+    "name": "GiNŌSKŌ",
+    "aliases": [
+      "GiNŌSKŌ",
+      "Ginosko"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 115
+  },
+  {
+    "name": "Glenn Ray",
+    "aliases": [
+      "Glenn Ray"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 116
+  },
+  {
+    "name": "I.A.N.",
+    "aliases": [
+      "I.A.N.",
+      "IAN"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 117
+  },
+  {
+    "name": "IDEGO",
+    "aliases": [
+      "IDEGO"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 118
+  },
+  {
+    "name": "Isreal Perez",
+    "aliases": [
+      "Isreal Perez"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 119
+  },
+  {
+    "name": "J J L",
+    "aliases": [
+      "J J L",
+      "JJL"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 120
+  },
+  {
+    "name": "Jacob Beard",
+    "aliases": [
+      "Jacob Beard"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 121
+  },
+  {
+    "name": "JWoodz",
+    "aliases": [
+      "JWoodz",
+      "J Woodz"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 122
+  },
+  {
+    "name": "Kaden Jordan",
+    "aliases": [
+      "Kaden Jordan"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 123
+  },
+  {
+    "name": "MAYIA",
+    "aliases": [
+      "MAYIA",
+      "Mayia"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 124
+  },
+  {
+    "name": "Megan Tossi",
+    "aliases": [
+      "Megan Tossi"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 125
+  },
+  {
+    "name": "mica",
+    "aliases": [
+      "mica",
+      "Mica"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 126
+  },
+  {
+    "name": "Myles Maestro",
+    "aliases": [
+      "Myles Maestro"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 127
+  },
+  {
+    "name": "Nat Lauren",
+    "aliases": [
+      "Nat Lauren"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 128
+  },
+  {
+    "name": "Peair",
+    "aliases": [
+      "Peair"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 129
+  },
+  {
+    "name": "Razzie",
+    "aliases": [
+      "Razzie"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 130
+  },
+  {
+    "name": "Saint Jones",
+    "aliases": [
+      "Saint Jones"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 131
+  },
+  {
+    "name": "Stixx aka Conejo",
+    "aliases": [
+      "Stixx aka Conejo",
+      "Stixx"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 132
+  },
+  {
+    "name": "Tay Stunna",
+    "aliases": [
+      "Tay Stunna"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 133
+  },
+  {
+    "name": "YakiTheKid",
+    "aliases": [
+      "YakiTheKid",
+      "Yaki The Kid"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 134
+  },
+  {
+    "name": "yumiya!",
+    "aliases": [
+      "yumiya!",
+      "yumiya"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 135
+  },
+  {
+    "name": "Vic Lucas",
+    "aliases": [
+      "Vic Lucas"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 136
+  },
+  {
+    "name": "Kevi Morse",
+    "aliases": [
+      "Kevi Morse"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 137
+  },
+  {
+    "name": "Chris Caro",
+    "aliases": [
+      "Chris Caro"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 138
+  },
+  {
+    "name": "EJ Swavv",
+    "aliases": [
+      "EJ Swavv"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 139
+  },
+  {
+    "name": "Kelo",
+    "aliases": [
+      "Kelo"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 140
+  },
+  {
+    "name": "J.Solo",
+    "aliases": [
+      "J.Solo",
+      "J Solo"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 141
+  },
+  {
+    "name": "Tds Cam",
+    "aliases": [
+      "Tds Cam",
+      "TDS Cam"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 142
+  },
+  {
+    "name": "Kham",
+    "aliases": [
+      "Kham"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 143
+  },
+  {
+    "name": "WHEREISDAVINCI",
+    "aliases": [
+      "WHEREISDAVINCI",
+      "Where Is Da Vinci"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 144
+  },
+  {
+    "name": "Tukool Tiff",
+    "aliases": [
+      "Tukool Tiff"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 145
+  },
+  {
+    "name": "Tylynn",
+    "aliases": [
+      "Tylynn"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 146
+  },
+  {
+    "name": "De'Aris",
+    "aliases": [
+      "De'Aris",
+      "DeAris"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 147
+  },
+  {
+    "name": "Will Kellum",
+    "aliases": [
+      "Will Kellum"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 148
+  },
+  {
+    "name": "Jonah Daniel",
+    "aliases": [
+      "Jonah Daniel"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 149
+  },
+  {
+    "name": "outr.cty",
+    "aliases": [
+      "outr.cty",
+      "outr cty"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 150
+  },
+  {
+    "name": "B. Cooper",
+    "aliases": [
+      "B. Cooper",
+      "B Cooper"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 151
+  },
+  {
+    "name": "YP aka Young Paul",
+    "aliases": [
+      "YP aka Young Paul",
+      "Young Paul",
+      "YP"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 152
+  },
+  {
+    "name": "Untidld",
+    "aliases": [
+      "Untidld"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 153
+  },
+  {
+    "name": "DEON",
+    "aliases": [
+      "DEON"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 154
+  },
+  {
+    "name": "Jamil",
+    "aliases": [
+      "Jamil"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 155
+  },
+  {
+    "name": "Kvng Flvcko",
+    "aliases": [
+      "Kvng Flvcko"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 156
+  },
+  {
+    "name": "Y Shadey",
+    "aliases": [
+      "Y Shadey"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 157
+  },
+  {
+    "name": "MotionPlus",
+    "aliases": [
+      "MotionPlus"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 158
+  },
+  {
+    "name": "Dante' Pride",
+    "aliases": [
+      "Dante' Pride",
+      "Dante Pride"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 159
+  },
+  {
+    "name": "Adriel Cruz",
+    "aliases": [
+      "Adriel Cruz"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 160
+  },
+  {
+    "name": "Drea LP",
+    "aliases": [
+      "Drea LP"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 161
+  },
+  {
+    "name": "Solachi Voz",
+    "aliases": [
+      "Solachi Voz"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 162
+  },
+  {
+    "name": "Jeannie Ortega",
+    "aliases": [
+      "Jeannie Ortega"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 163
+  },
+  {
+    "name": "A Mose",
+    "aliases": [
+      "A Mose",
+      "A. Mose"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 164
+  },
+  {
+    "name": "Arielle Nichole",
+    "aliases": [
+      "Arielle Nichole"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 165
+  },
+  {
+    "name": "Jekasole",
+    "aliases": [
+      "Jekasole"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 166
+  },
+  {
+    "name": "Heesun Lee",
+    "aliases": [
+      "Heesun Lee"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 167
+  },
+  {
+    "name": "Mahogany Jones",
+    "aliases": [
+      "Mahogany Jones"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 168
+  },
+  {
+    "name": "Linga TheBoss",
+    "aliases": [
+      "Linga TheBoss"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 169
+  },
+  {
+    "name": "Latoria",
+    "aliases": [
+      "Latoria"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 170
+  },
+  {
+    "name": "Shy Speaks",
+    "aliases": [
+      "Shy Speaks"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 171
+  },
+  {
+    "name": "Serious Voice",
+    "aliases": [
+      "Serious Voice"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 172
+  },
+  {
+    "name": "Tarcea Renee",
+    "aliases": [
+      "Tarcea Renee"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 173
+  },
+  {
+    "name": "4eva",
+    "aliases": [
+      "4eva"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 174
+  },
+  {
+    "name": "Ada Betsabé",
+    "aliases": [
+      "Ada Betsabé"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 175
+  },
+  {
+    "name": "BreeKay & Kasairi",
+    "aliases": [
+      "BreeKay & Kasairi",
+      "BreeKay and Kasairi"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 176
+  },
+  {
+    "name": "Bri Smilez",
+    "aliases": [
+      "Bri Smilez"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 177
+  },
+  {
+    "name": "Butta P",
+    "aliases": [
+      "Butta P"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 178
+  },
+  {
+    "name": "Carita Cole",
+    "aliases": [
+      "Carita Cole"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 179
+  },
+  {
+    "name": "Cass",
+    "aliases": [
+      "Cass"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 180
+  },
+  {
+    "name": "Dice Gamble",
+    "aliases": [
+      "Dice Gamble"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 181
+  },
+  {
+    "name": "Keiana",
+    "aliases": [
+      "Keiana"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 182
+  },
+  {
+    "name": "Licy Be",
+    "aliases": [
+      "Licy Be"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 183
+  },
+  {
+    "name": "Pristavia",
+    "aliases": [
+      "Pristavia"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 184
+  },
+  {
+    "name": "Erica Mason",
+    "aliases": [
+      "Erica Mason"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 185
+  },
+  {
+    "name": "Kay Sade",
+    "aliases": [
+      "Kay Sade"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 186
+  },
+  {
+    "name": "Jackie Legere",
+    "aliases": [
+      "Jackie Legere"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 187
+  },
+  {
+    "name": "Foure",
+    "aliases": [
+      "Foure"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 188
+  },
+  {
+    "name": "Chozenn",
+    "aliases": [
+      "Chozenn"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 189
+  },
+  {
+    "name": "V. Rose",
+    "aliases": [
+      "V. Rose",
+      "V Rose"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 190
+  },
+  {
+    "name": "Mike REAL",
+    "aliases": [
+      "Mike REAL",
+      "Mike Real"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 191
+  },
+  {
+    "name": "Spec",
+    "aliases": [
+      "Spec"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 192
+  },
+  {
+    "name": "Christon Gray",
+    "aliases": [
+      "Christon Gray"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 193
+  },
+  {
+    "name": "Dre Murray",
+    "aliases": [
+      "Dre Murray"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 194
+  },
+  {
+    "name": "S.O.",
+    "aliases": [
+      "S.O.",
+      "SO"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 195
+  },
+  {
+    "name": "Reconcile",
+    "aliases": [
+      "Reconcile"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 196
+  },
+  {
+    "name": "Corey Paul",
+    "aliases": [
+      "Corey Paul"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 197
+  },
+  {
+    "name": "Alex Faith",
+    "aliases": [
+      "Alex Faith"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 198
+  },
+  {
+    "name": "Tony Tillman",
+    "aliases": [
+      "Tony Tillman"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 199
+  },
+  {
+    "name": "Chad Jones",
+    "aliases": [
+      "Chad Jones"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 200
+  },
+  {
+    "name": "Dillon Chase",
+    "aliases": [
+      "Dillon Chase"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 201
+  },
+  {
+    "name": "Json",
+    "aliases": [
+      "Json"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 202
+  },
+  {
+    "name": "J.R.",
+    "aliases": [
+      "J.R.",
+      "JR"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 203
+  },
+  {
+    "name": "Stephen the Levite",
+    "aliases": [
+      "Stephen the Levite"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 204
+  },
+  {
+    "name": "Timothy Brindle",
+    "aliases": [
+      "Timothy Brindle"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 205
+  },
+  {
+    "name": "Hazakim",
+    "aliases": [
+      "Hazakim"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 206
+  },
+  {
+    "name": "Evangel",
+    "aliases": [
+      "Evangel"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 207
+  },
+  {
+    "name": "God's Servant",
+    "aliases": [
+      "God's Servant",
+      "Gods Servant"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 208
+  },
+  {
+    "name": "Beautiful Eulogy",
+    "aliases": [
+      "Beautiful Eulogy"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "group",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 209
+  },
+  {
+    "name": "Braille",
+    "aliases": [
+      "Braille"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 210
+  },
+  {
+    "name": "116",
+    "aliases": [
+      "116",
+      "116 Clique"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "group",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 211
+  },
+  {
+    "name": "350",
+    "aliases": [
+      "350"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 212
+  },
+  {
+    "name": "Battz",
+    "aliases": [
+      "Battz"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 213
+  },
+  {
+    "name": "BrvndonP",
+    "aliases": [
+      "BrvndonP",
+      "Brvndon P"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 214
+  },
+  {
+    "name": "Byron Juane",
+    "aliases": [
+      "Byron Juane"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "rmg",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 215
+  },
+  {
+    "name": "Coby James",
+    "aliases": [
+      "Coby James"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "crossover",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 216
+  },
+  {
+    "name": "De La Cruz",
+    "aliases": [
+      "De La Cruz"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 217
+  },
+  {
+    "name": "Gavin the HotRod",
+    "aliases": [
+      "Gavin the HotRod",
+      "Gavin The HotRod"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 218
+  },
+  {
+    "name": "Hollyn",
+    "aliases": [
+      "Hollyn"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "crossover",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 219
+  },
+  {
+    "name": "JGivens",
+    "aliases": [
+      "JGivens",
+      "J Givens"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 220
+  },
+  {
+    "name": "Kings Kaleidoscope",
+    "aliases": [
+      "Kings Kaleidoscope"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "crossover",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 221
+  },
+  {
+    "name": "Madison Ryann Ward",
+    "aliases": [
+      "Madison Ryann Ward"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "crossover",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 222
+  },
+  {
+    "name": "Odd Thomas",
+    "aliases": [
+      "Odd Thomas"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 223
+  },
+  {
+    "name": "Q-Flo",
+    "aliases": [
+      "Q-Flo",
+      "Q Flo"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 224
+  },
+  {
+    "name": "Rare of Breed",
+    "aliases": [
+      "Rare of Breed",
+      "RareofBreed"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "crossover",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 225
+  },
+  {
+    "name": "Ryan Trey",
+    "aliases": [
+      "Ryan Trey"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "crossover",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 226
+  },
+  {
+    "name": "Skema Boy",
+    "aliases": [
+      "Skema Boy"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 227
+  },
+  {
+    "name": "Swaizy",
+    "aliases": [
+      "Swaizy"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 228
+  },
+  {
+    "name": "The Weathrman",
+    "aliases": [
+      "The Weathrman",
+      "Weathrman"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 229
+  },
+  {
+    "name": "Toschii",
+    "aliases": [
+      "Toschii"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 230
+  },
+  {
+    "name": "Trendsetter Sense",
+    "aliases": [
+      "Trendsetter Sense"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "rmg",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 231
+  },
+  {
+    "name": "Wordsplayed",
+    "aliases": [
+      "Wordsplayed",
+      "Wordsplayed.",
+      "Wordsplayed?"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 232
+  },
+  {
+    "name": "Brother Bo",
+    "aliases": [
+      "Brother Bo"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "officialProfile": "https://www.youtube.com/c/BrotherBoMusic",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 233
+  },
+  {
+    "name": "Tommy Chapa",
+    "aliases": [
+      "Tommy Chapa"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "officialProfile": "https://music.apple.com/us/artist/tommy-chapa/1508864414",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 234
+  },
+  {
+    "name": "B. Cody Shields",
+    "aliases": [
+      "B. Cody Shields",
+      "B Cody Shields"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "officialProfile": "https://thisishismusic.com/pages/about",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 235
+  },
+  {
+    "name": "Santana Rose",
+    "aliases": [
+      "Santana Rose"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "officialProfile": "https://www.youtube.com/@SantanaRoseMusic",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 236
+  },
+  {
+    "name": "DJ Winn",
+    "aliases": [
+      "DJ Winn",
+      "DJ WINN"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "dj",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 237
+  },
+  {
+    "name": "J.List",
+    "aliases": [
+      "J.List",
+      "J List",
+      "JLIST"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "officialProfile": "https://www.youtube.com/@RevivalmusicJlist/videos",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 238
+  },
+  {
+    "name": "BIG HOLY",
+    "aliases": [
+      "BIG HOLY",
+      "Big Holy"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "provisional",
+    "monitoringNote": "Artist name is ambiguous; publish only when an official event or artist source confirms the identity.",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 239
   },
   {
     "name": "D-Maub",
@@ -1259,7 +3744,13 @@
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "legacy"
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 240
   },
   {
     "name": "K-Drama",
@@ -1271,18 +3762,13 @@
     "enabled": true,
     "ticketmasterEnabled": false,
     "category": "legacy",
-    "officialProfile": "https://k-dramatherapper.com/"
-  },
-  {
-    "name": "GAWVI",
-    "aliases": [
-      "GAWVI",
-      "Gawvi"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core",
-    "officialProfile": "https://www.gawvi.co/"
+    "officialProfile": "https://k-dramatherapper.com/",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 241
   },
   {
     "name": "Monster Tarver",
@@ -1292,7 +3778,13 @@
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
-    "category": "core"
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 242
   },
   {
     "name": "Taelor Gray",
@@ -1302,7 +3794,13 @@
     "enabled": true,
     "ticketmasterEnabled": true,
     "category": "core",
-    "officialProfile": "https://www.taelorgray.com/"
+    "officialProfile": "https://www.taelorgray.com/",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 243
   },
   {
     "name": "ZEE",
@@ -1316,7 +3814,13 @@
     "category": "core",
     "collective": "Kingdom Muzic",
     "officialProfile": "https://www.youtube.com/@408zee",
-    "monitoringNote": "Generic artist name; use official Kingdom Muzic or 408Zee sources for confirmation."
+    "monitoringNote": "Generic artist name; use official Kingdom Muzic or 408Zee sources for confirmation.",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 244
   },
   {
     "name": "IMRSQD",
@@ -1327,7 +3831,13 @@
     "ticketmasterEnabled": true,
     "category": "core",
     "label": "Alienz Alive",
-    "officialProfile": "https://alienzalive.com/artist/imrsqd/"
+    "officialProfile": "https://alienzalive.com/artist/imrsqd/",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 245
   },
   {
     "name": "TJ Carroll",
@@ -1339,7 +3849,13 @@
     "ticketmasterEnabled": false,
     "category": "core",
     "label": "Alienz Alive",
-    "officialProfile": "https://www.tjcarrollmusic.com/"
+    "officialProfile": "https://www.tjcarrollmusic.com/",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 246
   },
   {
     "name": "Coop",
@@ -1350,7 +3866,13 @@
     "enabled": true,
     "ticketmasterEnabled": false,
     "category": "core",
-    "monitoringNote": "Generic artist name; require an official CHH source before publishing."
+    "monitoringNote": "Generic artist name; require an official CHH source before publishing.",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 247
   },
   {
     "name": "CJ Emulous",
@@ -1362,7 +3884,13 @@
     "ticketmasterEnabled": false,
     "category": "core",
     "collective": "GLO",
-    "officialProfile": "https://www.cjemulous.com/"
+    "officialProfile": "https://www.cjemulous.com/",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 248
   },
   {
     "name": "Lul DreDay",
@@ -1374,7 +3902,13 @@
     "ticketmasterEnabled": false,
     "category": "core",
     "collective": "GLO",
-    "officialProfile": "https://www.youtube.com/@LulDreDay"
+    "officialProfile": "https://www.youtube.com/@LulDreDay",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 249
   },
   {
     "name": "REDEEMED",
@@ -1386,7 +3920,13 @@
     "ticketmasterEnabled": false,
     "category": "core",
     "officialProfile": "https://www.youtube.com/@redeemedmuzic",
-    "monitoringNote": "Generic artist name; require a matching official profile or event source."
+    "monitoringNote": "Generic artist name; require a matching official profile or event source.",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 250
   },
   {
     "name": "Pishko",
@@ -1397,6 +3937,758 @@
     "enabled": true,
     "ticketmasterEnabled": false,
     "category": "core",
-    "officialProfile": "https://www.youtube.com/@PISHKO"
+    "officialProfile": "https://www.youtube.com/@PISHKO",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 251
+  },
+  {
+    "name": "TobyMac",
+    "aliases": [
+      "TobyMac",
+      "TOBYMAC",
+      "tobyMac"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "crossover",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "ticketmasterAttractionId": "867069",
+    "instagramProfile": "https://www.instagram.com/tobymac/",
+    "rosterOrder": 252
+  },
+  {
+    "name": "Paul Russell",
+    "aliases": [
+      "Paul Russell"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "crossover",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "ticketmasterAttractionId": "3031627",
+    "rosterOrder": 253
+  },
+  {
+    "name": "MC Jin",
+    "aliases": [
+      "MC Jin",
+      "Jin"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 254
+  },
+  {
+    "name": "Gemstones",
+    "aliases": [
+      "Gemstones"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 255
+  },
+  {
+    "name": "Mouthpi3ce",
+    "aliases": [
+      "Mouthpi3ce"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 256
+  },
+  {
+    "name": "John Givez",
+    "aliases": [
+      "John Givez"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 257
+  },
+  {
+    "name": "Beleaf",
+    "aliases": [
+      "Beleaf"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 258
+  },
+  {
+    "name": "J. Han",
+    "aliases": [
+      "J. Han",
+      "J Han"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 259
+  },
+  {
+    "name": "Sam Ock",
+    "aliases": [
+      "Sam Ock"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 260
+  },
+  {
+    "name": "Dream Junkies",
+    "aliases": [
+      "Dream Junkies"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 261
+  },
+  {
+    "name": "Jet Trouble",
+    "aliases": [
+      "Jet Trouble"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 262
+  },
+  {
+    "name": "Skrip",
+    "aliases": [
+      "Skrip"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 263
+  },
+  {
+    "name": "Deraj",
+    "aliases": [
+      "Deraj"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 264
+  },
+  {
+    "name": "Surf Gvng",
+    "aliases": [
+      "Surf Gvng"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 265
+  },
+  {
+    "name": "Ki'Shon Furlow",
+    "aliases": [
+      "Ki'Shon Furlow",
+      "Kishon Furlow"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 266
+  },
+  {
+    "name": "Dru Bex",
+    "aliases": [
+      "Dru Bex"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 267
+  },
+  {
+    "name": "Brinson",
+    "aliases": [
+      "Brinson"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 268
+  },
+  {
+    "name": "Canton Jones",
+    "aliases": [
+      "Canton Jones"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 269
+  },
+  {
+    "name": "Mr. Del",
+    "aliases": [
+      "Mr. Del"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 270
+  },
+  {
+    "name": "Pettidee",
+    "aliases": [
+      "Pettidee"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 271
+  },
+  {
+    "name": "Fresh IE",
+    "aliases": [
+      "Fresh IE",
+      "Fresh I.E."
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 272
+  },
+  {
+    "name": "Applejaxx",
+    "aliases": [
+      "Applejaxx"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 273
+  },
+  {
+    "name": "Fedel",
+    "aliases": [
+      "Fedel"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 274
+  },
+  {
+    "name": "Antwoine Hill",
+    "aliases": [
+      "Antwoine Hill"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 275
+  },
+  {
+    "name": "Brandon Trejo",
+    "aliases": [
+      "Brandon Trejo"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 276
+  },
+  {
+    "name": "Monica Hill Trejo",
+    "aliases": [
+      "Monica Hill Trejo"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 277
+  },
+  {
+    "name": "Moe Grant",
+    "aliases": [
+      "Moe Grant"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 278
+  },
+  {
+    "name": "Isaiah Robin",
+    "aliases": [
+      "Isaiah Robin"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 279
+  },
+  {
+    "name": "Guvna B",
+    "aliases": [
+      "Guvna B"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 280
+  },
+  {
+    "name": "Faith Child",
+    "aliases": [
+      "Faith Child"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 281
+  },
+  {
+    "name": "Still Shadey",
+    "aliases": [
+      "Still Shadey"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 282
+  },
+  {
+    "name": "Feed'Em",
+    "aliases": [
+      "Feed'Em",
+      "Feed Em"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 283
+  },
+  {
+    "name": "Reblah",
+    "aliases": [
+      "Reblah"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 284
+  },
+  {
+    "name": "Triple O",
+    "aliases": [
+      "Triple O"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 285
+  },
+  {
+    "name": "A Star",
+    "aliases": [
+      "A Star"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 286
+  },
+  {
+    "name": "J Vessel",
+    "aliases": [
+      "J Vessel",
+      "J-Vessel"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 287
+  },
+  {
+    "name": "Dwayne Tryumf",
+    "aliases": [
+      "Dwayne Tryumf"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 288
+  },
+  {
+    "name": "Manny Montes",
+    "aliases": [
+      "Manny Montes"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 289
+  },
+  {
+    "name": "Alex Zurdo",
+    "aliases": [
+      "Alex Zurdo"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 290
+  },
+  {
+    "name": "Musiko",
+    "aliases": [
+      "Musiko"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 291
+  },
+  {
+    "name": "Indiomar",
+    "aliases": [
+      "Indiomar"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 292
+  },
+  {
+    "name": "Gabriel EMC",
+    "aliases": [
+      "Gabriel EMC"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 293
+  },
+  {
+    "name": "Jay Kalyl",
+    "aliases": [
+      "Jay Kalyl"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 294
+  },
+  {
+    "name": "Niko Eme",
+    "aliases": [
+      "Niko Eme"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 295
+  },
+  {
+    "name": "Lizzy Parra",
+    "aliases": [
+      "Lizzy Parra"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 296
+  },
+  {
+    "name": "Rubinsky RBK",
+    "aliases": [
+      "Rubinsky RBK"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 297
+  },
+  {
+    "name": "Madiel Lara",
+    "aliases": [
+      "Madiel Lara"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 298
+  },
+  {
+    "name": "Ariel Kelly",
+    "aliases": [
+      "Ariel Kelly"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 299
+  },
+  {
+    "name": "Oba Reengy",
+    "aliases": [
+      "Oba Reengy"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 300
   }
 ]

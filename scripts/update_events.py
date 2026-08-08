@@ -95,6 +95,11 @@ MONTH_PATTERN = (
 )
 GENERIC_VENUES = {"", "venue not provided", "tba", "to be announced"}
 
+# Artist aliases that are safe for exact performer matching can still be unsafe in
+# free-form page text (for example, Mission, Canon, or Spec). This set is
+# populated from config/artists.json at runtime.
+TEXT_MATCH_BLOCKLIST: set[str] = set()
+
 NON_SHOW_PATTERN = re.compile(
     r"\b(parking|not a show ticket|add[- ]?on|fast lane|lawn chair|"
     r"club level seating|hospitality package|vip early entry package)\b",
@@ -417,6 +422,20 @@ def choose_image(images: Any) -> str:
     return safe_url(candidates[0].get("url"))
 
 
+def configure_text_match_blocklist(artists: list[dict[str, Any]]) -> set[str]:
+    """Build the free-text alias blocklist from artist-level safety settings."""
+    blocked: set[str] = set()
+    for artist in artists:
+        if artist.get("textMatchEnabled", True):
+            continue
+        canonical = str(artist.get("name", "")).strip()
+        for alias in [canonical, *artist.get("aliases", [])]:
+            normalized = normalize_name(str(alias))
+            if normalized:
+                blocked.add(normalized)
+    return blocked
+
+
 def build_alias_lookup(artists: list[dict[str, Any]]) -> dict[str, str]:
     lookup: dict[str, str] = {}
     for artist in artists:
@@ -593,7 +612,12 @@ def match_artists_in_text(text: str, alias_lookup: dict[str, str]) -> list[str]:
     for alias, canonical in alias_lookup.items():
         # Numeric-only names (for example, "350") are safe when a source
         # supplies an exact performer name, but unsafe in general page text.
-        if alias and not alias.isdigit() and f" {alias} " in normalized:
+        if (
+            alias
+            and alias not in TEXT_MATCH_BLOCKLIST
+            and not alias.isdigit()
+            and f" {alias} " in normalized
+        ):
             matched.add(canonical)
     return sorted(matched, key=str.casefold)
 
@@ -2908,6 +2932,8 @@ def main() -> int:
     checked_at = iso_z(started)
     today = started.date()
     artists = [item for item in load_json(ARTISTS_FILE, []) if isinstance(item, dict) and item.get("enabled", True)]
+    global TEXT_MATCH_BLOCKLIST
+    TEXT_MATCH_BLOCKLIST = configure_text_match_blocklist(artists)
     official_sources = [item for item in load_json(OFFICIAL_SOURCES_FILE, []) if isinstance(item, dict) and item.get("enabled", True)]
     manual_events = load_json(MANUAL_EVENTS_FILE, [])
     known_instagram_posts = load_json(KNOWN_INSTAGRAM_POSTS_FILE, [])
@@ -3039,12 +3065,20 @@ def main() -> int:
     last_success = checked_at if any_source_succeeded else previous_status.get("lastSuccessfulUpdate")
     status = {
         "status": status_name,
-        "collectorVersion": 7,
+        "collectorVersion": 8,
         "lastAttempt": checked_at,
         "lastSuccessfulUpdate": last_success,
         "eventsPublished": len(events),
         "candidatesCollected": len(collected),
         "artistsConfigured": len(artists),
+        "artistsByPriority": {
+            "priority1": sum(1 for item in artists if int(item.get("monitoringPriority") or 3) == 1),
+            "priority2": sum(1 for item in artists if int(item.get("monitoringPriority") or 3) == 2),
+            "priority3": sum(1 for item in artists if int(item.get("monitoringPriority") or 3) == 3),
+        },
+        "ticketmasterArtistsEnabled": sum(1 for item in artists if item.get("ticketmasterEnabled", True)),
+        "socialSearchArtistsEnabled": sum(1 for item in artists if item.get("socialSearchEnabled", True)),
+        "freeTextAliasesProtected": len(TEXT_MATCH_BLOCKLIST),
         "artistsMatchedOnTicketmaster": artists_matched,
         "officialEventsFound": official_events_count,
         "ticketmasterEventsFound": ticketmaster_events_count,
@@ -3062,7 +3096,7 @@ def main() -> int:
         "errorCount": len(errors),
         "warnings": warnings[:30],
         "errors": errors[:10],
-        "message": "Verified U.S. music listings updated with improved duplicate merging, public titles, source health, images, and public Instagram-announcement rules.",
+        "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings.",
     }
     write_json(STATUS_FILE, status)
     print(f"Published {len(events)} event(s); candidates={len(collected)}; errors={len(errors)}; warnings={len(warnings)}")
