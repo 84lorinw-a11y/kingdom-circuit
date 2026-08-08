@@ -1,18 +1,26 @@
 {
   "status": "warning",
-  "collectorVersion": 7,
-  "lastAttempt": "2026-08-07T14:40:32Z",
-  "lastSuccessfulUpdate": "2026-08-07T14:40:32Z",
-  "eventsPublished": 78,
-  "candidatesCollected": 186,
-  "artistsConfigured": 140,
-  "artistsMatchedOnTicketmaster": 50,
-  "officialEventsFound": 94,
+  "collectorVersion": 8,
+  "lastAttempt": "2026-08-08T11:17:16Z",
+  "lastSuccessfulUpdate": "2026-08-08T11:17:16Z",
+  "eventsPublished": 95,
+  "candidatesCollected": 199,
+  "artistsConfigured": 300,
+  "artistsByPriority": {
+    "priority1": 100,
+    "priority2": 100,
+    "priority3": 100
+  },
+  "ticketmasterArtistsEnabled": 205,
+  "socialSearchArtistsEnabled": 99,
+  "freeTextAliasesProtected": 97,
+  "artistsMatchedOnTicketmaster": 71,
+  "officialEventsFound": 107,
   "ticketmasterEventsFound": 77,
-  "instagramArtistsConfigured": 140,
-  "instagramQueriesRun": 141,
-  "instagramQueriesAttempted": 140,
-  "instagramResultsFound": 0,
+  "instagramArtistsConfigured": 99,
+  "instagramQueriesRun": 100,
+  "instagramQueriesAttempted": 99,
+  "instagramResultsFound": 1,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -26,51 +34,163 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
+    },
+    {
+      "url": "https://www.instagram.com/p/DIVzl4DgDjU/",
+      "title": "Instagram",
+      "artists": [
+        "Anike"
+      ],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
     }
   ],
-  "instagramMode": "free per-artist public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 252,
+  "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
+  "sourcesChecked": 229,
   "unmatchedArtists": [
+    "Pregador Luo",
+    "Sondae",
+    "Scootie Wop",
     "Kieran the Light",
     "Childlike CiCi",
-    "Red Tips",
-    "Scootie Wop",
+    "Eluzai",
     "Parris Chariz",
-    "J. Monty",
-    "Mogli the Iceburg",
-    "Nathan Davis Jr.",
-    "Tommy Royale",
-    "Alexxander",
-    "Mike Malagies",
-    "2819 Worship",
-    "Sho Baraka",
-    "Eshon Burgundy",
-    "Ty Brasel",
-    "Jered Sanders",
-    "BrvndonP",
-    "Angie Rose",
-    "Mike Teezy",
     "EmanuelDaProphet",
-    "DaeShawn Forrest",
-    "Xay Hill",
-    "Aasha Marie",
-    "Kaleb Mitchell",
-    "Jude Barclay",
-    "Sondae",
-    "Coby James",
-    "ASAP Preach",
-    "Nicky Gracious",
-    "Tommy Chapa",
+    "Mike Teezy",
+    "Red Tips",
+    "Mogli the Iceburg",
+    "Tommy Royale",
+    "Ty Brasel",
+    "J. Monty",
+    "Jered Sanders",
     "Bryann T",
+    "Nicky Gracious",
+    "ASAP Preach",
+    "Mike Malagies",
+    "Eshon Burgundy",
+    "Sho Baraka",
+    "DaeShawn Forrest",
+    "Alexxander",
+    "2819 Worship",
+    "Jude Barclay",
+    "Kaleb Mitchell",
+    "Xay Hill",
+    "Nathan Davis Jr.",
+    "Angie Rose",
+    "Aasha Marie",
+    "404 Chew",
+    "Alphein",
+    "G3rm 43",
+    "GiNŌSKŌ",
+    "IDEGO",
+    "Isreal Perez",
+    "JWoodz",
+    "Kaden Jordan",
+    "Megan Tossi",
+    "Myles Maestro",
+    "Nat Lauren",
+    "Saint Jones",
+    "Stixx aka Conejo",
+    "Tay Stunna",
+    "YakiTheKid",
+    "yumiya!",
+    "Vic Lucas",
+    "Kevi Morse",
+    "Chris Caro",
+    "EJ Swavv",
+    "Tds Cam",
+    "WHEREISDAVINCI",
+    "Tukool Tiff",
+    "Tylynn",
+    "De'Aris",
+    "Will Kellum",
+    "Jonah Daniel",
+    "outr.cty",
+    "B. Cooper",
+    "YP aka Young Paul",
+    "Kvng Flvcko",
+    "Y Shadey",
+    "MotionPlus",
+    "Dante' Pride",
+    "Adriel Cruz",
+    "Drea LP",
+    "Solachi Voz",
+    "Jeannie Ortega",
+    "A Mose",
+    "Arielle Nichole",
+    "Jekasole",
+    "Mahogany Jones",
+    "Linga TheBoss",
+    "Shy Speaks",
+    "Serious Voice",
+    "Tarcea Renee",
+    "Ada Betsabé",
+    "BreeKay & Kasairi",
+    "Bri Smilez",
+    "Butta P",
+    "Carita Cole",
+    "Dice Gamble",
+    "Licy Be",
+    "Pristavia",
+    "Erica Mason",
+    "Kay Sade",
+    "Jackie Legere",
+    "V. Rose",
+    "Mike REAL",
+    "Dre Murray",
+    "Corey Paul",
+    "Alex Faith",
+    "Tony Tillman",
+    "Chad Jones",
+    "Json",
+    "Stephen the Levite",
+    "Timothy Brindle",
+    "Hazakim",
+    "BrvndonP",
+    "Coby James",
+    "Tommy Chapa",
     "Monster Tarver",
     "Taelor Gray",
-    "IMRSQD"
+    "IMRSQD",
+    "J. Han",
+    "Sam Ock",
+    "Surf Gvng",
+    "Ki'Shon Furlow",
+    "Dru Bex",
+    "Brinson",
+    "Pettidee",
+    "Fresh IE",
+    "Applejaxx",
+    "Antwoine Hill",
+    "Brandon Trejo",
+    "Monica Hill Trejo",
+    "Moe Grant",
+    "Isaiah Robin",
+    "Faith Child",
+    "Feed'Em",
+    "Reblah",
+    "Triple O",
+    "J Vessel",
+    "Manny Montes",
+    "Musiko",
+    "Indiomar",
+    "Gabriel EMC",
+    "Jay Kalyl",
+    "Niko Eme",
+    "Lizzy Parra",
+    "Rubinsky RBK",
+    "Madiel Lara",
+    "Ariel Kelly",
+    "Oba Reengy"
   ],
   "sourceResults": [
     {
       "name": "Reach Records consolidated calendar",
       "status": "ok",
-      "eventsFound": 45
+      "eventsFound": 41
     },
     {
       "name": "Reach Records - 1K Phew",
@@ -214,7 +334,7 @@
     },
     {
       "name": "Zauntee official tour",
-      "status": "ok",
+      "status": "warning",
       "eventsFound": 0
     },
     {
@@ -229,7 +349,7 @@
     },
     {
       "name": "Mike Malagies official events",
-      "status": "ok",
+      "status": "warning",
       "eventsFound": 0
     },
     {
@@ -244,7 +364,7 @@
     },
     {
       "name": "Trendsetter Sense official events",
-      "status": "ok",
+      "status": "warning",
       "eventsFound": 0
     },
     {
@@ -300,7 +420,7 @@
     {
       "name": "ChristianHits consolidated show feed",
       "status": "ok",
-      "eventsFound": 6
+      "eventsFound": 5
     },
     {
       "name": "ChristianHits festival directory",
@@ -334,7 +454,7 @@
     },
     {
       "name": "Mike Teezy official tour",
-      "status": "ok",
+      "status": "warning",
       "eventsFound": 0
     },
     {
@@ -399,7 +519,7 @@
     },
     {
       "name": "CJ Emulous official site",
-      "status": "ok",
+      "status": "warning",
       "eventsFound": 0
     },
     {
@@ -408,24 +528,117 @@
       "eventsFound": 0
     },
     {
+      "name": "Manafest official tour",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
+      "name": "Manafest Bandsintown public calendar",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "GRITS Bandsintown public calendar",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "Nic D Bandsintown public calendar",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "Pastor Mike Jr. Bandsintown public calendar",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "Yung Kriss Bandsintown public calendar",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "Paul Russell Bandsintown public calendar",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "Funky Bandsintown public calendar",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "Redimi2 Bandsintown public calendar",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "FLAME Bandsintown public calendar",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "TobyMac official tour",
+      "status": "ok",
+      "eventsFound": 18
+    },
+    {
+      "name": "TobyMac Bandsintown public calendar",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "Alex Jean Bandsintown public calendar",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "KB Bandsintown public calendar",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
+      "name": "Anike Bandsintown public calendar",
+      "status": "warning",
+      "eventsFound": 0
+    },
+    {
       "name": "Instagram public announcement scan",
       "status": "ok",
       "eventsFound": 0,
-      "artistsChecked": 140,
-      "queriesRun": 141
+      "artistsChecked": 99,
+      "queriesRun": 100
     }
   ],
-  "warningCount": 7,
+  "warningCount": 25,
   "errorCount": 0,
   "warnings": [
+    "Zauntee official tour: Unable to retrieve https://www.zauntee.com/tour: HTTP Error 429: Too Many Requests",
+    "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
+    "Trendsetter Sense official events: Unable to retrieve https://www.trendsettersense.com/event-list: HTTP Error 429: Too Many Requests",
     "NF Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11969355-nf: HTTP Error 403: Forbidden",
     "Mike Malagies Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15593996-mike-malagies: HTTP Error 403: Forbidden",
     "Parris Chariz Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14726057-parris-chariz: HTTP Error 403: Forbidden",
     "Torey D'Shaun Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14363770-torey-d%27shaun: HTTP Error 403: Forbidden",
     "Derek Minor Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/12211056-derek-minor: HTTP Error 403: Forbidden",
     "Byron Juane Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14690526-byron-juane: HTTP Error 403: Forbidden",
-    "Social Club Misfits Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/13345973-social-club-misfits: HTTP Error 403: Forbidden"
+    "Social Club Misfits Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/13345973-social-club-misfits: HTTP Error 403: Forbidden",
+    "Mike Teezy official tour: Unable to retrieve https://www.miketeezymusic.com/tour: HTTP Error 429: Too Many Requests",
+    "CJ Emulous official site: Unable to retrieve https://www.cjemulous.com/: HTTP Error 429: Too Many Requests",
+    "Manafest Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4465-manafest: HTTP Error 403: Forbidden",
+    "GRITS Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/805-grits: HTTP Error 403: Forbidden",
+    "Nic D Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11283620-nic-d: HTTP Error 403: Forbidden",
+    "Pastor Mike Jr. Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15540358-pastor-mike-jr.: HTTP Error 403: Forbidden",
+    "Yung Kriss Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14481378-yung-kriss: HTTP Error 403: Forbidden",
+    "Paul Russell Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/463417-paul-russell: HTTP Error 403: Forbidden",
+    "Funky Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4329-funky: HTTP Error 403: Forbidden",
+    "Redimi2 Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/371097-redimi2: HTTP Error 403: Forbidden",
+    "FLAME Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/16627-flame: HTTP Error 403: Forbidden",
+    "TobyMac Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/817-tobymac: HTTP Error 403: Forbidden",
+    "Alex Jean Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15570394-alex-jean: HTTP Error 403: Forbidden",
+    "KB Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/165768-kb: HTTP Error 403: Forbidden",
+    "Anike Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4673148-anike: HTTP Error 403: Forbidden"
   ],
   "errors": [],
-  "message": "Verified U.S. music listings updated with improved duplicate merging, public titles, source health, images, and public Instagram-announcement rules."
+  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings."
 }
