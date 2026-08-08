@@ -48,12 +48,50 @@
         "priority": 108
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "endDate": "2026-08-08",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:flame-live-plano-2026",
+    "title": "FLAME Live in Concert",
+    "startDate": "2026-08-08",
+    "startTime": "19:00",
+    "timezone": "",
+    "venue": "Celebration Hall at Messiah Lutheran Church",
+    "address": "1801 W Plano Parkway",
+    "city": "Plano",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "FLAME"
+    ],
+    "headliner": "FLAME",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://onrealm.org/MessiahLutheran43217/PublicRegistrations/Event?linkString=YzkzNmFlZTktYzUwOS00OGU5LWE4OTQtYjQ2YzAwMmE3YjE1",
+    "officialUrl": "https://onrealm.org/MessiahLutheran43217/PublicRegistrations/Event?linkString=YzkzNmFlZTktYzUwOS00OGU5LWE4OTQtYjQ2YzAwMmE3YjE1",
+    "image": "assets/events/flame-plano-2026.webp",
+    "price": "Fundraising concert",
+    "sourceName": "Official Messiah Lutheran registration and FLAME announcement",
+    "sources": [
+      {
+        "name": "Official Messiah Lutheran registration and FLAME announcement",
+        "url": "https://onrealm.org/MessiahLutheran43217/PublicRegistrations/Event?linkString=YzkzNmFlZTktYzUwOS00OGU5LWE4OTQtYjQ2YzAwMmE3YjE1",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -94,49 +132,49 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 24%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "official:c99a40c62ed255addcb7",
-    "title": "TobyMac - Sunday August 9th 2026 - Montana Fair",
-    "startDate": "2026-08-09",
-    "startTime": "19:00",
+    "id": "manual:egr-2026-08-08-trenton-nj",
+    "title": "EGR Live — Trenton",
+    "startDate": "2026-08-08",
+    "startTime": "",
     "timezone": "",
-    "venue": "Montana Fair",
+    "venue": "Endtime Gospel Revival",
     "address": "",
-    "city": "Billings",
-    "state": "MT",
+    "city": "Trenton",
+    "state": "NJ",
     "country": "US",
     "artists": [
-      "TobyMac"
+      "EGR"
     ],
-    "headliner": "TobyMac",
+    "headliner": "EGR",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108135159?app_id=umg_cmg_tobymac&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://tobymac.com/tour/",
-    "image": "assets/logo.png",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
     "price": "",
-    "sourceName": "TobyMac official tour",
+    "sourceName": "EGR official Instagram schedule",
     "sources": [
       {
-        "name": "TobyMac official tour",
-        "url": "https://tobymac.com/tour/",
-        "type": "jsonld",
-        "authority": "artist_calendar",
-        "priority": 80
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -184,11 +222,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -238,20 +276,20 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
     "id": "official:60a881c47e7f9e670f14",
-    "title": "Caleb Gordon - The Eden Experience",
+    "title": "Caleb Gordon — The Eden Experience",
     "startDate": "2026-08-14",
     "startTime": "19:00",
     "timezone": "",
-    "venue": "Venue to be announced",
+    "venue": "Mountain Park Church",
     "address": "",
     "city": "Phoenix",
     "state": "AZ",
@@ -262,12 +300,19 @@
     "headliner": "Caleb Gordon",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://tprlive.co/collections",
-    "officialUrl": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
-    "image": "http://tprlive.co/cdn/shop/collections/CG_TEE_TourAdmat_General_1080x1080_1.webp?v=1784735114",
+    "ticketUrl": "https://www.ticketweb.com/event/caleb-gordon-the-eden-experience-mountain-park-church-tickets/14861023?pl=TPR",
+    "officialUrl": "https://tprlive.co/products/caleb-gordon-the-eden-experience-phoenix-az-august-14-2026",
+    "image": "assets/events/caleb-gordon-eden-experience.webp",
     "price": "",
-    "sourceName": "TPR - Caleb Gordon Eden Experience",
+    "sourceName": "TPR official Eden Experience tour",
     "sources": [
+      {
+        "name": "TPR official Eden Experience tour",
+        "url": "https://tprlive.co/products/caleb-gordon-the-eden-experience-phoenix-az-august-14-2026",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
       {
         "name": "TPR - Caleb Gordon Eden Experience",
         "url": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
@@ -276,11 +321,49 @@
         "priority": 90
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:egr-2026-08-14-san-bernardino-ca",
+    "title": "EGR Live — San Bernardino",
+    "startDate": "2026-08-14",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Victory Outreach",
+    "address": "",
+    "city": "San Bernardino",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -321,11 +404,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 24%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -366,11 +449,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -411,12 +494,12 @@
         "priority": 46
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "endDate": "2026-08-16",
     "imageType": "artist",
     "imagePosition": "50% 30%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -464,11 +547,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -502,11 +585,239 @@
         "priority": 86
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:egr-2026-08-15-tacoma-wa",
+    "title": "EGR Live — Tacoma",
+    "startDate": "2026-08-15",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Victory Outreach",
+    "address": "",
+    "city": "Tacoma",
+    "state": "WA",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:987162dbb4b4f72f6a95",
+    "title": "Caleb Gordon - The Eden Experience",
+    "startDate": "2026-08-16",
+    "startTime": "19:00",
+    "timezone": "",
+    "venue": "Venue to be announced",
+    "address": "",
+    "city": "Pomona (Los Angeles)",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Caleb Gordon"
+    ],
+    "headliner": "Caleb Gordon",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://tprlive.co/collections",
+    "officialUrl": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+    "image": "http://tprlive.co/cdn/shop/collections/CG_TEE_TourAdmat_General_1080x1080_1.webp?v=1784735114",
+    "price": "",
+    "sourceName": "TPR - Caleb Gordon Eden Experience",
+    "sources": [
+      {
+        "name": "TPR - Caleb Gordon Eden Experience",
+        "url": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+        "type": "tpr",
+        "authority": "promoter",
+        "priority": 90
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:caleb-gordon-eden-2026-08-16-pomona",
+    "title": "Caleb Gordon — The Eden Experience",
+    "startDate": "2026-08-16",
+    "startTime": "19:00",
+    "timezone": "",
+    "venue": "The Cathedral Pomona",
+    "address": "",
+    "city": "Pomona",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Caleb Gordon"
+    ],
+    "headliner": "Caleb Gordon",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketweb.com/event/caleb-gordon-the-eden-experience-the-cathedral-pomona-tickets/14861053?pl=TPR",
+    "officialUrl": "https://tprlive.co/products/caleb-gordon-the-eden-experience-pomona-los-angeles-ca-august-16-2026",
+    "image": "assets/events/caleb-gordon-eden-experience.webp",
+    "price": "",
+    "sourceName": "TPR official Eden Experience tour",
+    "sources": [
+      {
+        "name": "TPR official Eden Experience tour",
+        "url": "https://tprlive.co/products/caleb-gordon-the-eden-experience-pomona-los-angeles-ca-august-16-2026",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:egr-2026-08-16-spokane-wa",
+    "title": "EGR Live — Spokane",
+    "startDate": "2026-08-16",
+    "startTime": "",
+    "timezone": "",
+    "venue": "One Heart",
+    "address": "",
+    "city": "Spokane",
+    "state": "WA",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:a7a1ac553e3dd59452ff",
+    "title": "Caleb Gordon - The Eden Experience",
+    "startDate": "2026-08-18",
+    "startTime": "19:00",
+    "timezone": "",
+    "venue": "Venue to be announced",
+    "address": "",
+    "city": "Fair Oaks (Sacramento)",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Caleb Gordon"
+    ],
+    "headliner": "Caleb Gordon",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketweb.com/event/caleb-gordon-the-eden-experience-mountain-park-church-tickets/14861023?pl=TPR",
+    "officialUrl": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+    "image": "http://tprlive.co/cdn/shop/collections/CG_TEE_TourAdmat_General_1080x1080_1.webp?v=1784735114",
+    "price": "",
+    "sourceName": "TPR - Caleb Gordon Eden Experience",
+    "sources": [
+      {
+        "name": "TPR - Caleb Gordon Eden Experience",
+        "url": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+        "type": "tpr",
+        "authority": "promoter",
+        "priority": 90
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:caleb-gordon-eden-2026-08-18-fair-oaks",
+    "title": "Caleb Gordon — The Eden Experience",
+    "startDate": "2026-08-18",
+    "startTime": "19:00",
+    "timezone": "",
+    "venue": "Sunrise Community Church",
+    "address": "",
+    "city": "Fair Oaks",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Caleb Gordon"
+    ],
+    "headliner": "Caleb Gordon",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketweb.com/event/caleb-gordon-the-eden-experience-sunrise-community-church-tickets/14866103?pl=TPR",
+    "officialUrl": "https://tprlive.co/products/caleb-gordon-the-eden-experience-fair-oaks-sacramento-ca-august-18-2026",
+    "image": "assets/events/caleb-gordon-eden-experience.webp",
+    "price": "",
+    "sourceName": "TPR official Eden Experience tour",
+    "sources": [
+      {
+        "name": "TPR official Eden Experience tour",
+        "url": "https://tprlive.co/products/caleb-gordon-the-eden-experience-fair-oaks-sacramento-ca-august-18-2026",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -547,11 +858,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -592,49 +903,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:bd4e8d6dc4254ef51daa",
-    "title": "TobyMac - Wednesday August 19th 2026 - Northwest Washington Fair",
-    "startDate": "2026-08-19",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "Northwest Washington Fair",
-    "address": "",
-    "city": "Lynden",
-    "state": "WA",
-    "country": "US",
-    "artists": [
-      "TobyMac"
-    ],
-    "headliner": "TobyMac",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://tobymac.com",
-    "officialUrl": "https://tobymac.com/tour/",
-    "image": "assets/logo.png",
-    "price": "",
-    "sourceName": "TobyMac official tour",
-    "sources": [
-      {
-        "name": "TobyMac official tour",
-        "url": "https://tobymac.com/tour/",
-        "type": "jsonld",
-        "authority": "artist_calendar",
-        "priority": 80
-      }
-    ],
-    "lastVerified": "2026-08-08T11:17:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -675,12 +948,12 @@
         "priority": 74
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "endDate": "2026-08-21",
     "imageType": "artist",
     "imagePosition": "50% 30%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -723,49 +996,49 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "official:6d23bb9bc63c9cdd2577",
-    "title": "TobyMac - Friday August 21st 2026 - Faith Night",
+    "id": "manual:egr-2026-08-21-bakersfield-ca",
+    "title": "EGR Live — Bakersfield",
     "startDate": "2026-08-21",
-    "startTime": "19:00",
+    "startTime": "",
     "timezone": "",
-    "venue": "Faith Night",
+    "venue": "Victory Outreach Bakersfield East",
     "address": "",
-    "city": "Kansas City",
-    "state": "MO",
+    "city": "Bakersfield",
+    "state": "CA",
     "country": "US",
     "artists": [
-      "TobyMac"
+      "EGR"
     ],
-    "headliner": "TobyMac",
+    "headliner": "EGR",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108474621?app_id=umg_cmg_tobymac&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://tobymac.com/tour/",
-    "image": "assets/logo.png",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
     "price": "",
-    "sourceName": "TobyMac official tour",
+    "sourceName": "EGR official Instagram schedule",
     "sources": [
       {
-        "name": "TobyMac official tour",
-        "url": "https://tobymac.com/tour/",
-        "type": "jsonld",
-        "authority": "artist_calendar",
-        "priority": 80
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -794,7 +1067,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/hope-fest-tickets-1984166920672",
     "officialUrl": "https://www.riverfrontesplanade.com/upcoming-events/hope-fest",
-    "image": "assets/logo.png",
+    "image": "assets/event-fallback.webp",
     "price": "Free",
     "sourceName": "Hope Fest official venue and ticket page",
     "sources": [
@@ -806,12 +1079,12 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "endDate": "2026-08-22",
     "imageType": "fallback",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -860,12 +1133,12 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "endDate": "2026-08-22",
     "imageType": "artist",
     "imagePosition": "50% 24%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -899,11 +1172,11 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -944,11 +1217,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -989,11 +1262,49 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 24%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:egr-2026-08-22-fresno-ca",
+    "title": "EGR Live — Fresno",
+    "startDate": "2026-08-22",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Victory Outreach Fresno West",
+    "address": "",
+    "city": "Fresno",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -1036,11 +1347,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -1074,11 +1385,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 24%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -1121,11 +1432,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -1168,11 +1479,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -1206,11 +1517,11 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -1252,19 +1563,19 @@
         "priority": 46
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "endDate": "2026-08-30",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
     "id": "manual:turned-up-for-christ-corbin-2026",
     "title": "Turned Up for Christ",
     "startDate": "2026-08-28",
-    "startTime": "16:00",
+    "startTime": "18:00",
     "timezone": "",
     "venue": "Corbin Civic Center",
     "address": "128 Civic Center Drive",
@@ -1283,7 +1594,7 @@
     "status": "scheduled",
     "ticketUrl": "https://nickygraciousmusic.com/products/faith-jam-2026-saturday-september-26th-copy",
     "officialUrl": "https://nickygraciousmusic.com/products/faith-jam-2026-saturday-september-26th-copy",
-    "image": "assets/logo.png",
+    "image": "assets/events/turned-up-for-christ-2026.webp",
     "price": "Free",
     "sourceName": "Nicky Gracious official schedule and Corbin event reporting",
     "sources": [
@@ -1295,11 +1606,11 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
-    "imageType": "fallback",
+    "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -1342,11 +1653,49 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:egr-2026-08-28-forest-falls-ca",
+    "title": "EGR Live — Forest Falls",
+    "startDate": "2026-08-28",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Water Walkers Worldwide Ministries",
+    "address": "",
+    "city": "Forest Falls",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -1389,11 +1738,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -1415,7 +1764,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/1976534238113?aff=oddtdtcreator",
     "officialUrl": "https://www.eventbrite.com/e/1976534238113?aff=oddtdtcreator",
-    "image": "assets/logo.png",
+    "image": "assets/artists/sevin.webp",
     "price": "Donate what you can",
     "sourceName": "Sevin / HOG MOB official tour",
     "sources": [
@@ -1427,11 +1776,49 @@
         "priority": 80
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:egr-2026-08-29-santa-ana-ca",
+    "title": "EGR Live — Santa Ana",
+    "startDate": "2026-08-29",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Victory Outreach",
+    "address": "",
+    "city": "Santa Ana",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -1481,11 +1868,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -1526,11 +1913,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -1564,11 +1951,49 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:egr-2026-09-05-nashville-tn",
+    "title": "EGR Live — Nashville",
+    "startDate": "2026-09-05",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Victory Outreach",
+    "address": "",
+    "city": "Nashville",
+    "state": "TN",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -1602,11 +2027,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -1647,11 +2072,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -1694,11 +2119,49 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:lifelight-sioux-falls-2026",
+    "title": "LifeLight Festival 2026",
+    "startDate": "2026-09-06",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Nelson Park",
+    "address": "",
+    "city": "Sioux Falls",
+    "state": "SD",
+    "country": "US",
+    "artists": [
+      "KB"
+    ],
+    "headliner": "KB",
+    "eventType": "festival",
+    "status": "scheduled",
+    "ticketUrl": "https://lifelight.org/llsf-lineup/",
+    "officialUrl": "https://lifelight.org/llsf-lineup/",
+    "image": "assets/events/lifelight-sioux-falls-2026.webp",
+    "price": "Free",
+    "sourceName": "LifeLight Sioux Falls official lineup",
+    "sources": [
+      {
+        "name": "LifeLight Sioux Falls official lineup",
+        "url": "https://lifelight.org/llsf-lineup/",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -1734,11 +2197,11 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -1772,11 +2235,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -1810,11 +2273,11 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -1857,11 +2320,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -1895,50 +2358,11 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:8102b0c253bdd3312441",
-    "title": "TobyMac - Saturday September 12th 2026 - FaithFest Wilkesboro 2026",
-    "startDate": "2026-09-11",
-    "startTime": "00:00",
-    "timezone": "",
-    "venue": "FaithFest Wilkesboro 2026",
-    "address": "",
-    "city": "Wilkesboro",
-    "state": "NC",
-    "country": "US",
-    "artists": [
-      "TobyMac"
-    ],
-    "headliner": "TobyMac",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://tobymac.com",
-    "officialUrl": "https://tobymac.com/tour/",
-    "image": "assets/logo.png",
-    "price": "",
-    "sourceName": "TobyMac official tour",
-    "sources": [
-      {
-        "name": "TobyMac official tour",
-        "url": "https://tobymac.com/tour/",
-        "type": "jsonld",
-        "authority": "artist_calendar",
-        "priority": 80
-      }
-    ],
-    "lastVerified": "2026-08-08T11:17:16Z",
-    "confidence": "high",
-    "endDate": "2026-09-12",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -1972,11 +2396,11 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2023,12 +2447,12 @@
         "priority": 46
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "endDate": "2026-09-12",
     "imageType": "artist",
     "imagePosition": "50% 30%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2062,11 +2486,49 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:egr-2026-09-12-corpus-christi-tx",
+    "title": "EGR Live — Corpus Christi",
+    "startDate": "2026-09-12",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Juvenile Detention Center",
+    "address": "",
+    "city": "Corpus Christi",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2100,11 +2562,11 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2147,11 +2609,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2194,11 +2656,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2232,11 +2694,11 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2279,11 +2741,125 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:4077048ad6372bfbcafb",
+    "title": "Caleb Gordon - The Eden Experience",
+    "startDate": "2026-09-18",
+    "startTime": "19:00",
+    "timezone": "",
+    "venue": "Venue to be announced",
+    "address": "",
+    "city": "Southlake (Dallas)",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Caleb Gordon"
+    ],
+    "headliner": "Caleb Gordon",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketweb.com/event/caleb-gordon-the-eden-experience-the-cathedral-pomona-tickets/14861053?pl=TPR",
+    "officialUrl": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+    "image": "http://tprlive.co/cdn/shop/collections/CG_TEE_TourAdmat_General_1080x1080_1.webp?v=1784735114",
+    "price": "",
+    "sourceName": "TPR - Caleb Gordon Eden Experience",
+    "sources": [
+      {
+        "name": "TPR - Caleb Gordon Eden Experience",
+        "url": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+        "type": "tpr",
+        "authority": "promoter",
+        "priority": 90
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:caleb-gordon-eden-2026-09-18-southlake",
+    "title": "Caleb Gordon — The Eden Experience",
+    "startDate": "2026-09-18",
+    "startTime": "19:00",
+    "timezone": "",
+    "venue": "The King's University",
+    "address": "",
+    "city": "Southlake",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Caleb Gordon"
+    ],
+    "headliner": "Caleb Gordon",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketweb.com/event/caleb-gordon-the-eden-experience-the-kings-university-tickets/14866183?pl=TPR",
+    "officialUrl": "https://tprlive.co/products/caleb-gordon-the-eden-experience-southlake-tx-september-18-2026",
+    "image": "assets/events/caleb-gordon-eden-experience.webp",
+    "price": "",
+    "sourceName": "TPR official Eden Experience tour",
+    "sources": [
+      {
+        "name": "TPR official Eden Experience tour",
+        "url": "https://tprlive.co/products/caleb-gordon-the-eden-experience-southlake-tx-september-18-2026",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:egr-2026-09-18-carson-ca",
+    "title": "EGR Live — Carson",
+    "startDate": "2026-09-18",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Victory Outreach",
+    "address": "",
+    "city": "Carson",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2298,10 +2874,10 @@
     "state": "MN",
     "country": "US",
     "artists": [
-      "TobyMac",
-      "KB"
+      "KB",
+      "TobyMac"
     ],
-    "headliner": "TobyMac",
+    "headliner": "KB",
     "eventType": "concert",
     "status": "onsale",
     "ticketUrl": "https://www.ticketmaster.com/celebrate-minnesota-tobymac-kb-waite-park-minnesota-09-19-2026/event/06006496E5AC900E",
@@ -2318,11 +2894,11 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2365,49 +2941,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:8b02be8f51f36a439c02",
-    "title": "TobyMac - Saturday September 19th 2026 - Celebrate Minnesota",
-    "startDate": "2026-09-19",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "Celebrate Minnesota",
-    "address": "",
-    "city": "Waite Park",
-    "state": "MN",
-    "country": "US",
-    "artists": [
-      "TobyMac"
-    ],
-    "headliner": "TobyMac",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108135058?app_id=umg_cmg_tobymac&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://tobymac.com/tour/",
-    "image": "assets/logo.png",
-    "price": "",
-    "sourceName": "TobyMac official tour",
-    "sources": [
-      {
-        "name": "TobyMac official tour",
-        "url": "https://tobymac.com/tour/",
-        "type": "jsonld",
-        "authority": "artist_calendar",
-        "priority": 80
-      }
-    ],
-    "lastVerified": "2026-08-08T11:17:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2441,11 +2979,94 @@
         "priority": 86
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:egr-2026-09-19-manteca-ca",
+    "title": "EGR Live — Manteca",
+    "startDate": "2026-09-19",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Show & Shine",
+    "address": "",
+    "city": "Manteca",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:cfa71e64850aa1fa9f39",
+    "title": "Caleb Gordon — The Eden Experience",
+    "startDate": "2026-09-20",
+    "startTime": "19:00",
+    "timezone": "",
+    "venue": "Cross Mountain Church",
+    "address": "",
+    "city": "San Antonio",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Caleb Gordon"
+    ],
+    "headliner": "Caleb Gordon",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketweb.com/event/caleb-gordon-the-eden-experience-cross-mountain-church-tickets/14866193?pl=TPR",
+    "officialUrl": "https://tprlive.co/products/caleb-gordon-the-eden-experience-san-antonio-tx-september-20-2026",
+    "image": "assets/events/caleb-gordon-eden-experience.webp",
+    "price": "",
+    "sourceName": "TPR official Eden Experience tour",
+    "sources": [
+      {
+        "name": "TPR official Eden Experience tour",
+        "url": "https://tprlive.co/products/caleb-gordon-the-eden-experience-san-antonio-tx-september-20-2026",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "TPR - Caleb Gordon Eden Experience",
+        "url": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+        "type": "tpr",
+        "authority": "promoter",
+        "priority": 90
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2479,11 +3100,87 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:120917fb9608dd188970",
+    "title": "Caleb Gordon - The Eden Experience",
+    "startDate": "2026-09-22",
+    "startTime": "19:00",
+    "timezone": "",
+    "venue": "Venue to be announced",
+    "address": "",
+    "city": "Leander (Austin)",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Caleb Gordon"
+    ],
+    "headliner": "Caleb Gordon",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketweb.com/event/caleb-gordon-the-eden-experience-the-kings-university-tickets/14866183?pl=TPR",
+    "officialUrl": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+    "image": "http://tprlive.co/cdn/shop/collections/CG_TEE_TourAdmat_General_1080x1080_1.webp?v=1784735114",
+    "price": "",
+    "sourceName": "TPR - Caleb Gordon Eden Experience",
+    "sources": [
+      {
+        "name": "TPR - Caleb Gordon Eden Experience",
+        "url": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+        "type": "tpr",
+        "authority": "promoter",
+        "priority": 90
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:caleb-gordon-eden-2026-09-22-leander",
+    "title": "Caleb Gordon — The Eden Experience",
+    "startDate": "2026-09-22",
+    "startTime": "19:00",
+    "timezone": "",
+    "venue": "Exchange ATX",
+    "address": "",
+    "city": "Leander",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Caleb Gordon"
+    ],
+    "headliner": "Caleb Gordon",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketweb.com/event/caleb-gordon-the-eden-experience-exchange-atx-tickets/14866213?pl=TPR",
+    "officialUrl": "https://tprlive.co/products/caleb-gordon-the-eden-experience-leander-austin-tx-september-22-2026",
+    "image": "assets/events/caleb-gordon-eden-experience.webp",
+    "price": "",
+    "sourceName": "TPR official Eden Experience tour",
+    "sources": [
+      {
+        "name": "TPR official Eden Experience tour",
+        "url": "https://tprlive.co/products/caleb-gordon-the-eden-experience-leander-austin-tx-september-22-2026",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2517,11 +3214,11 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2555,11 +3252,11 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2593,11 +3290,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2631,11 +3328,11 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2669,11 +3366,87 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:436dedf4f197e9587ed4",
+    "title": "Caleb Gordon - The Eden Experience",
+    "startDate": "2026-09-24",
+    "startTime": "19:00",
+    "timezone": "",
+    "venue": "Venue to be announced",
+    "address": "",
+    "city": "Richmond (Houston)",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Caleb Gordon"
+    ],
+    "headliner": "Caleb Gordon",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketweb.com/event/caleb-gordon-the-eden-experience-cross-mountain-church-tickets/14866193?pl=TPR",
+    "officialUrl": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+    "image": "http://tprlive.co/cdn/shop/collections/CG_TEE_TourAdmat_General_1080x1080_1.webp?v=1784735114",
+    "price": "",
+    "sourceName": "TPR - Caleb Gordon Eden Experience",
+    "sources": [
+      {
+        "name": "TPR - Caleb Gordon Eden Experience",
+        "url": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+        "type": "tpr",
+        "authority": "promoter",
+        "priority": 90
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:caleb-gordon-eden-2026-09-24-richmond",
+    "title": "Caleb Gordon — The Eden Experience",
+    "startDate": "2026-09-24",
+    "startTime": "19:00",
+    "timezone": "",
+    "venue": "Anchor Bend Church",
+    "address": "",
+    "city": "Richmond",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Caleb Gordon"
+    ],
+    "headliner": "Caleb Gordon",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketweb.com/event/caleb-gordon-the-eden-experience-anchor-bend-church-tickets/14866223?pl=TPR",
+    "officialUrl": "https://tprlive.co/products/caleb-gordon-the-eden-experience-richmond-houston-tx-september-24-2026",
+    "image": "assets/events/caleb-gordon-eden-experience.webp",
+    "price": "",
+    "sourceName": "TPR official Eden Experience tour",
+    "sources": [
+      {
+        "name": "TPR official Eden Experience tour",
+        "url": "https://tprlive.co/products/caleb-gordon-the-eden-experience-richmond-houston-tx-september-24-2026",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2716,11 +3489,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2759,12 +3532,12 @@
         "priority": 80
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "endDate": "2026-09-26",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2807,11 +3580,56 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:cd85847561e539a411e8",
+    "title": "Caleb Gordon — The Eden Experience",
+    "startDate": "2026-09-26",
+    "startTime": "19:00",
+    "timezone": "",
+    "venue": "Church In The Son",
+    "address": "",
+    "city": "Orlando",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Caleb Gordon"
+    ],
+    "headliner": "Caleb Gordon",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketweb.com/event/caleb-gordon-the-eden-experience-church-in-the-son-tickets/14873033?pl=TPR",
+    "officialUrl": "https://tprlive.co/products/caleb-gordon-the-eden-experience-orlando-fl-september-26-2026",
+    "image": "assets/events/caleb-gordon-eden-experience.webp",
+    "price": "",
+    "sourceName": "TPR official Eden Experience tour",
+    "sources": [
+      {
+        "name": "TPR official Eden Experience tour",
+        "url": "https://tprlive.co/products/caleb-gordon-the-eden-experience-orlando-fl-september-26-2026",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "TPR - Caleb Gordon Eden Experience",
+        "url": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+        "type": "tpr",
+        "authority": "promoter",
+        "priority": 90
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2833,7 +3651,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/1976535062579?aff=oddtdtcreator",
     "officialUrl": "https://www.eventbrite.com/e/1976535062579?aff=oddtdtcreator",
-    "image": "assets/logo.png",
+    "image": "assets/artists/sevin.webp",
     "price": "Donate what you can",
     "sourceName": "Sevin / HOG MOB official tour",
     "sources": [
@@ -2845,11 +3663,11 @@
         "priority": 80
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2883,11 +3701,49 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 24%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:egr-2026-09-26-whittier-ca",
+    "title": "EGR Live — Whittier",
+    "startDate": "2026-09-26",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Revolution Friends Church",
+    "address": "",
+    "city": "Whittier",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2930,11 +3786,11 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -2968,11 +3824,11 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -3008,11 +3864,11 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -3046,11 +3902,49 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 24%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:egr-2026-10-03-chandler-az",
+    "title": "EGR Live — Chandler",
+    "startDate": "2026-10-03",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Zion Christian Ultralounge",
+    "address": "",
+    "city": "Chandler",
+    "state": "AZ",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -3084,11 +3978,11 @@
         "priority": 86
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -3122,11 +4016,87 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:egr-2026-10-10-visalia-ca",
+    "title": "EGR Live — Visalia",
+    "startDate": "2026-10-10",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Back to the Basics",
+    "address": "",
+    "city": "Visalia",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:egr-2026-10-16-fresno-ca",
+    "title": "EGR Live — Fresno",
+    "startDate": "2026-10-16",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Unshakable Youth Conference",
+    "address": "",
+    "city": "Fresno",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -3148,7 +4118,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/1976535113732?aff=oddtdtcreator",
     "officialUrl": "https://www.eventbrite.com/e/1976535113732?aff=oddtdtcreator",
-    "image": "assets/logo.png",
+    "image": "assets/artists/sevin.webp",
     "price": "Donate what you can",
     "sourceName": "Sevin / HOG MOB official tour",
     "sources": [
@@ -3160,11 +4130,11 @@
         "priority": 80
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -3205,11 +4175,49 @@
         "priority": 104
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:egr-2026-10-31-patterson-ca",
+    "title": "EGR Live — Patterson",
+    "startDate": "2026-10-31",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Family Christian Center",
+    "address": "",
+    "city": "Patterson",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -3244,11 +4252,11 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -3283,125 +4291,11 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:02f17008b86f17e7947c",
-    "title": "TobyMac - Thursday November 5th 2026 - Mizzou Arena",
-    "startDate": "2026-11-05",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "Mizzou Arena",
-    "address": "",
-    "city": "Columbia",
-    "state": "MO",
-    "country": "US",
-    "artists": [
-      "TobyMac"
-    ],
-    "headliner": "TobyMac",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108368760?app_id=umg_cmg_tobymac&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://tobymac.com/tour/",
-    "image": "assets/logo.png",
-    "price": "",
-    "sourceName": "TobyMac official tour",
-    "sources": [
-      {
-        "name": "TobyMac official tour",
-        "url": "https://tobymac.com/tour/",
-        "type": "jsonld",
-        "authority": "artist_calendar",
-        "priority": 80
-      }
-    ],
-    "lastVerified": "2026-08-08T11:17:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:6f0493f370b9b4148e93",
-    "title": "TobyMac - Friday November 6th 2026 - Ford Center",
-    "startDate": "2026-11-06",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "Ford Center",
-    "address": "",
-    "city": "Evansville",
-    "state": "IN",
-    "country": "US",
-    "artists": [
-      "TobyMac"
-    ],
-    "headliner": "TobyMac",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108368756?app_id=umg_cmg_tobymac&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://tobymac.com/tour/",
-    "image": "assets/logo.png",
-    "price": "",
-    "sourceName": "TobyMac official tour",
-    "sources": [
-      {
-        "name": "TobyMac official tour",
-        "url": "https://tobymac.com/tour/",
-        "type": "jsonld",
-        "authority": "artist_calendar",
-        "priority": 80
-      }
-    ],
-    "lastVerified": "2026-08-08T11:17:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:5e648c39afaaa87ec953",
-    "title": "TobyMac - Saturday November 7th 2026 - Wolstein Center",
-    "startDate": "2026-11-07",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "Wolstein Center",
-    "address": "",
-    "city": "New Cleveland",
-    "state": "OH",
-    "country": "US",
-    "artists": [
-      "TobyMac"
-    ],
-    "headliner": "TobyMac",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108368759?app_id=umg_cmg_tobymac&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://tobymac.com/tour/",
-    "image": "assets/logo.png",
-    "price": "",
-    "sourceName": "TobyMac official tour",
-    "sources": [
-      {
-        "name": "TobyMac official tour",
-        "url": "https://tobymac.com/tour/",
-        "type": "jsonld",
-        "authority": "artist_calendar",
-        "priority": 80
-      }
-    ],
-    "lastVerified": "2026-08-08T11:17:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -3436,49 +4330,11 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:5c2c4eb22f1d022dd167",
-    "title": "TobyMac - Sunday November 8th 2026 - First Horizon Coliseum",
-    "startDate": "2026-11-08",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "First Horizon Coliseum",
-    "address": "",
-    "city": "Greensboro",
-    "state": "NC",
-    "country": "US",
-    "artists": [
-      "TobyMac"
-    ],
-    "headliner": "TobyMac",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108368754?app_id=umg_cmg_tobymac&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://tobymac.com/tour/",
-    "image": "assets/logo.png",
-    "price": "",
-    "sourceName": "TobyMac official tour",
-    "sources": [
-      {
-        "name": "TobyMac official tour",
-        "url": "https://tobymac.com/tour/",
-        "type": "jsonld",
-        "authority": "artist_calendar",
-        "priority": 80
-      }
-    ],
-    "lastVerified": "2026-08-08T11:17:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -3512,87 +4368,11 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:2e8f93717218eab19e04",
-    "title": "TobyMac - Thursday November 12th 2026 - GIANT Center",
-    "startDate": "2026-11-12",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "GIANT Center",
-    "address": "",
-    "city": "Hershey",
-    "state": "PA",
-    "country": "US",
-    "artists": [
-      "TobyMac"
-    ],
-    "headliner": "TobyMac",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108368752?app_id=umg_cmg_tobymac&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://tobymac.com/tour/",
-    "image": "assets/logo.png",
-    "price": "",
-    "sourceName": "TobyMac official tour",
-    "sources": [
-      {
-        "name": "TobyMac official tour",
-        "url": "https://tobymac.com/tour/",
-        "type": "jsonld",
-        "authority": "artist_calendar",
-        "priority": 80
-      }
-    ],
-    "lastVerified": "2026-08-08T11:17:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:b118f5a87271d6f786a0",
-    "title": "TobyMac - Friday November 13th 2026 - KeyBank Center",
-    "startDate": "2026-11-13",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "KeyBank Center",
-    "address": "",
-    "city": "Buffalo",
-    "state": "NY",
-    "country": "US",
-    "artists": [
-      "TobyMac"
-    ],
-    "headliner": "TobyMac",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108368753?app_id=umg_cmg_tobymac&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://tobymac.com/tour/",
-    "image": "assets/logo.png",
-    "price": "",
-    "sourceName": "TobyMac official tour",
-    "sources": [
-      {
-        "name": "TobyMac official tour",
-        "url": "https://tobymac.com/tour/",
-        "type": "jsonld",
-        "authority": "artist_calendar",
-        "priority": 80
-      }
-    ],
-    "lastVerified": "2026-08-08T11:17:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -3626,126 +4406,12 @@
         "priority": 74
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "endDate": "2026-11-15",
     "imageType": "artist",
     "imagePosition": "50% 30%",
-    "verifiedVersion": 7,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:def40374c5ef6b045736",
-    "title": "TobyMac - Saturday November 14th 2026 - Cross Insurance Arena",
-    "startDate": "2026-11-14",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "Cross Insurance Arena",
-    "address": "",
-    "city": "Portland",
-    "state": "ME",
-    "country": "US",
-    "artists": [
-      "TobyMac"
-    ],
-    "headliner": "TobyMac",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108368761?app_id=umg_cmg_tobymac&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://tobymac.com/tour/",
-    "image": "assets/logo.png",
-    "price": "",
-    "sourceName": "TobyMac official tour",
-    "sources": [
-      {
-        "name": "TobyMac official tour",
-        "url": "https://tobymac.com/tour/",
-        "type": "jsonld",
-        "authority": "artist_calendar",
-        "priority": 80
-      }
-    ],
-    "lastVerified": "2026-08-08T11:17:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:177287233920e0ec0b62",
-    "title": "TobyMac - Sunday November 15th 2026 - CFG Bank Arena",
-    "startDate": "2026-11-15",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "CFG Bank Arena",
-    "address": "",
-    "city": "Baltimore",
-    "state": "MD",
-    "country": "US",
-    "artists": [
-      "TobyMac"
-    ],
-    "headliner": "TobyMac",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108368757?app_id=umg_cmg_tobymac&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://tobymac.com/tour/",
-    "image": "assets/logo.png",
-    "price": "",
-    "sourceName": "TobyMac official tour",
-    "sources": [
-      {
-        "name": "TobyMac official tour",
-        "url": "https://tobymac.com/tour/",
-        "type": "jsonld",
-        "authority": "artist_calendar",
-        "priority": 80
-      }
-    ],
-    "lastVerified": "2026-08-08T11:17:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:5d664a4a0f90cff9bdc3",
-    "title": "TobyMac - Thursday November 19th 2026 - Casey's Center",
-    "startDate": "2026-11-19",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "Casey's Center",
-    "address": "",
-    "city": "Des Moines",
-    "state": "IA",
-    "country": "US",
-    "artists": [
-      "TobyMac"
-    ],
-    "headliner": "TobyMac",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108368755?app_id=umg_cmg_tobymac&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://tobymac.com/tour/",
-    "image": "assets/logo.png",
-    "price": "",
-    "sourceName": "TobyMac official tour",
-    "sources": [
-      {
-        "name": "TobyMac official tour",
-        "url": "https://tobymac.com/tour/",
-        "type": "jsonld",
-        "authority": "artist_calendar",
-        "priority": 80
-      }
-    ],
-    "lastVerified": "2026-08-08T11:17:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -3780,87 +4446,11 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 7,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:f952012d025cd6cc5016",
-    "title": "TobyMac - Friday November 20th 2026 - Pinnacle Bank Arena",
-    "startDate": "2026-11-20",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "Pinnacle Bank Arena",
-    "address": "",
-    "city": "Lincoln",
-    "state": "NE",
-    "country": "US",
-    "artists": [
-      "TobyMac"
-    ],
-    "headliner": "TobyMac",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108368758?app_id=umg_cmg_tobymac&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://tobymac.com/tour/",
-    "image": "assets/logo.png",
-    "price": "",
-    "sourceName": "TobyMac official tour",
-    "sources": [
-      {
-        "name": "TobyMac official tour",
-        "url": "https://tobymac.com/tour/",
-        "type": "jsonld",
-        "authority": "artist_calendar",
-        "priority": 80
-      }
-    ],
-    "lastVerified": "2026-08-08T11:17:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:9546c468d74228fcdfa2",
-    "title": "TobyMac - Saturday November 21st 2026 - Peoria Civic Center",
-    "startDate": "2026-11-21",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "Peoria Civic Center",
-    "address": "",
-    "city": "Peoria",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "TobyMac"
-    ],
-    "headliner": "TobyMac",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108368762?app_id=umg_cmg_tobymac&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://tobymac.com/tour/",
-    "image": "assets/logo.png",
-    "price": "",
-    "sourceName": "TobyMac official tour",
-    "sources": [
-      {
-        "name": "TobyMac official tour",
-        "url": "https://tobymac.com/tour/",
-        "type": "jsonld",
-        "authority": "artist_calendar",
-        "priority": 80
-      }
-    ],
-    "lastVerified": "2026-08-08T11:17:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -3882,7 +4472,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/1976534090672?aff=oddtdtcreator",
     "officialUrl": "https://www.eventbrite.com/e/1976534090672?aff=oddtdtcreator",
-    "image": "assets/logo.png",
+    "image": "assets/artists/sevin.webp",
     "price": "Donate what you can",
     "sourceName": "Sevin / HOG MOB official tour",
     "sources": [
@@ -3894,49 +4484,49 @@
         "priority": 80
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "official:cd43a4d89eb58b04f4ba",
-    "title": "TobyMac - Sunday November 22nd 2026 - Simmons Bank Arena",
-    "startDate": "2026-11-22",
-    "startTime": "19:00",
+    "id": "manual:egr-2026-11-21-bradley-ca",
+    "title": "EGR Live — Bradley",
+    "startDate": "2026-11-21",
+    "startTime": "",
     "timezone": "",
-    "venue": "Simmons Bank Arena",
+    "venue": "Miracle House Ministries",
     "address": "",
-    "city": "North Little Rock",
-    "state": "AR",
+    "city": "Bradley",
+    "state": "CA",
     "country": "US",
     "artists": [
-      "TobyMac"
+      "EGR"
     ],
-    "headliner": "TobyMac",
+    "headliner": "EGR",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108368763?app_id=umg_cmg_tobymac&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://tobymac.com/tour/",
-    "image": "assets/logo.png",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
     "price": "",
-    "sourceName": "TobyMac official tour",
+    "sourceName": "EGR official Instagram schedule",
     "sources": [
       {
-        "name": "TobyMac official tour",
-        "url": "https://tobymac.com/tour/",
-        "type": "jsonld",
-        "authority": "artist_calendar",
-        "priority": 80
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
@@ -3958,7 +4548,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/1976538907078?aff=oddtdtcreator",
     "officialUrl": "https://www.eventbrite.com/e/1976538907078?aff=oddtdtcreator",
-    "image": "assets/logo.png",
+    "image": "assets/artists/sevin.webp",
     "price": "Donate what you can",
     "sourceName": "Sevin / HOG MOB official tour",
     "sources": [
@@ -3970,11 +4560,125 @@
         "priority": 80
       }
     ],
-    "lastVerified": "2026-08-08T11:17:16Z",
+    "lastVerified": "2026-08-08T12:42:53Z",
     "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 7,
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:egr-2026-12-05-big-bear-lake-ca",
+    "title": "EGR Live — Big Bear Lake",
+    "startDate": "2026-12-05",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Lighthouse Students SNC",
+    "address": "",
+    "city": "Big Bear Lake",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:egr-2026-12-11-fargo-nd",
+    "title": "EGR Live — Fargo",
+    "startDate": "2026-12-11",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Hip Hop and Hope",
+    "address": "",
+    "city": "Fargo",
+    "state": "ND",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:egr-2026-12-12-jamestown-nd",
+    "title": "EGR Live — Jamestown",
+    "startDate": "2026-12-12",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Hip Hop and Hope",
+    "address": "",
+    "city": "Jamestown",
+    "state": "ND",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-08-08T12:42:53Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   }
 ]
