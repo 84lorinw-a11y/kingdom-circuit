@@ -1,24 +1,23 @@
-# The Kingdom Circuit — Master v10
+# The Kingdom Circuit
 
-This release converts Kingdom Circuit from a single-page calendar into a multi-page static website while preserving the existing event collector, artist roster, manual events, Google Analytics, Formspree submissions, brand assets, and custom domain.
+A free, automated U.S. Christian hip-hop concert and festival calendar.
 
-## Generated pages
+## Master v9
 
-- `/` — mission-led homepage plus the complete searchable calendar
-- `/shows/` — all verified shows
-- `/shows/this-month/` — current-month shows, updated automatically
-- `/festivals/` — verified festival listings
-- `/new-shows/` — shows first added to Kingdom Circuit within the last 14 days
-- `/artists/` — searchable artist directory
-- `/artists/<artist>/` — artist image, verified links, and upcoming shows; no biography
-- `/submit/` — private Formspree show and correction submission form
-- `/shows/<event>/` — individual event pages with Event structured data
-- `/states/<state>/` — automatically generated state pages
+- Removes TobyMac from active CHH monitoring while preserving his name only on Ticketmaster events explicitly shared with KB.
+- Moves source-warning details to a small footer notice.
+- Standardizes all Official details buttons to the compact size.
+- Replaces branded fallback cards with neutral concert artwork.
+- Adds approved event or artist images for Turned Up for Christ, Sevin, EGR, FLAME, LifeLight, and Caleb Gordon.
+- Adds the verified FLAME Plano show, LifeLight Sioux Falls with KB, 21 future EGR schedule dates, and all eight Caleb Gordon Eden Experience dates.
+- Preserves all existing manually verified listings, including Mike Malagies on October 2.
 
-## Automation
+## Required repository secret
 
-The existing daily collector still runs at 11:23 UTC. After collecting and deduplicating events, `scripts/build_site.py` regenerates the complete site, sitemap, artist pages, event pages, and location pages before deployment.
+- `TICKETMASTER_API_KEY`
 
-## Important
+## Existing integrations preserved
 
-This package intentionally does not include `events.json`, `run-status.json`, or the Ticketmaster cache. Uploading it will preserve the live collected event data and GitHub secret.
+- Google Analytics: `G-N2KK9XF4TJ`
+- Formspree submission endpoint
+- Custom domain and GitHub Actions workflow

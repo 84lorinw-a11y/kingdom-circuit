@@ -1,226 +1,616 @@
 "use strict";
 
-const menuToggle = document.querySelector(".menu-toggle");
-const menuDrawer = document.querySelector(".menu-drawer");
-const menuClose = document.querySelector(".menu-close");
-const menuBackdrop = document.querySelector(".menu-backdrop");
+const JUST_ANNOUNCED_DAYS = 7;
+const JUST_ANNOUNCED_START = new Date("2026-08-10T00:00:00-05:00");
+const SUBMISSION_ENDPOINT = "https://formspree.io/f/mljreawj";
 
-function setMenuOpen(open) {
-  if (!menuToggle || !menuDrawer || !menuBackdrop) return;
-  menuToggle.setAttribute("aria-expanded", String(open));
-  menuDrawer.setAttribute("aria-hidden", String(!open));
-  menuDrawer.classList.toggle("open", open);
-  menuBackdrop.hidden = !open;
-  document.body.classList.toggle("menu-open", open);
-  if (open) menuClose?.focus();
+const state = {
+  events: [],
+  filters: {
+    search: "",
+    artist: "",
+    state: "",
+    type: "",
+    dateMode: "all"
+  }
+};
+
+const elements = {
+  events: document.getElementById("events"),
+  resultsCount: document.getElementById("results-count"),
+  notice: document.getElementById("notice"),
+  lastUpdated: document.getElementById("last-updated"),
+  statusDot: document.getElementById("status-dot"),
+  statusLabel: document.getElementById("status-label"),
+  search: document.getElementById("search-filter"),
+  artist: document.getElementById("artist-filter"),
+  state: document.getElementById("state-filter"),
+  type: document.getElementById("type-filter"),
+  reset: document.getElementById("reset-filters"),
+  quickFilters: [...document.querySelectorAll(".filter-chip")],
+  openSubmit: document.getElementById("open-submit"),
+  submissionDialog: document.getElementById("submission-dialog"),
+  submissionForm: document.getElementById("submission-form"),
+  submissionFeedback: document.getElementById("submission-feedback"),
+  submissionSubmit: document.getElementById("submission-submit"),
+  submissionTitle: document.getElementById("submission-title")
+};
+
+function safeHttpUrl(value) {
+  try {
+    const url = new URL(String(value));
+    return ["http:", "https:"].includes(url.protocol) ? url.href : "";
+  } catch {
+    return "";
+  }
 }
 
-menuToggle?.addEventListener("click", () => {
-  setMenuOpen(menuToggle.getAttribute("aria-expanded") !== "true");
-});
-menuClose?.addEventListener("click", () => setMenuOpen(false));
-menuBackdrop?.addEventListener("click", () => setMenuOpen(false));
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") setMenuOpen(false);
-});
-menuDrawer?.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => setMenuOpen(false));
-});
+function safeImageUrl(value) {
+  try {
+    const url = new URL(String(value), window.location.href);
+    return ["http:", "https:"].includes(url.protocol) ? url.href : "";
+  } catch {
+    return "";
+  }
+}
 
-function parseLocalDate(value) {
-  if (!value) return null;
-  const [year, month, day] = value.split("-").map(Number);
-  if (!year || !month || !day) return null;
-  return new Date(year, month - 1, day, 12, 0, 0, 0);
+function safeObjectPosition(value) {
+  const candidate = String(value || "").trim().toLowerCase();
+  const pattern = /^(?:left|center|right|\d{1,3}(?:\.\d+)?%)(?:\s+(?:top|center|bottom|\d{1,3}(?:\.\d+)?%))?$/;
+  return pattern.test(candidate) ? candidate : "center";
+}
+
+function localDate(dateText) {
+  const parts = String(dateText || "").split("-").map(Number);
+  if (parts.length !== 3 || parts.some(Number.isNaN)) {
+    return null;
+  }
+  return new Date(parts[0], parts[1] - 1, parts[2]);
 }
 
 function startOfDay(value) {
   return new Date(value.getFullYear(), value.getMonth(), value.getDate());
 }
 
-function dateMatchesMode(startDate, endDate, mode) {
-  if (mode === "all" || !mode) return true;
+function addDays(value, amount) {
+  const result = new Date(value);
+  result.setDate(result.getDate() + amount);
+  return result;
+}
+
+function formatDate(dateText) {
+  const value = localDate(dateText);
+  if (!value) {
+    return "Date not provided";
+  }
+  return new Intl.DateTimeFormat("en-US", {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    year: "numeric"
+  }).format(value);
+}
+
+function formatTime(timeText) {
+  if (!timeText) {
+    return "";
+  }
+  const match = String(timeText).match(/^(\d{1,2}):(\d{2})/);
+  if (!match) {
+    return String(timeText);
+  }
+  const value = new Date(2000, 0, 1, Number(match[1]), Number(match[2]));
+  return new Intl.DateTimeFormat("en-US", {
+    hour: "numeric",
+    minute: "2-digit"
+  }).format(value);
+}
+
+function formatUpdateTime(value) {
+  if (!value) {
+    return "Waiting for the first automated update";
+  }
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) {
+    return "Update time unavailable";
+  }
+  return `Updated ${new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    timeZoneName: "short"
+  }).format(parsed)}`;
+}
+
+function createElement(tag, className, text) {
+  const element = document.createElement(tag);
+  if (className) {
+    element.className = className;
+  }
+  if (text !== undefined) {
+    element.textContent = text;
+  }
+  return element;
+}
+
+function eventSearchText(event) {
+  return [
+    event.title,
+    event.venue,
+    event.city,
+    event.state,
+    ...(Array.isArray(event.artists) ? event.artists : [])
+  ].join(" ").toLowerCase();
+}
+
+function eventMatchesDateMode(event, mode) {
+  if (!mode || mode === "all") {
+    return true;
+  }
+  const start = localDate(event.startDate);
+  const end = localDate(event.endDate || event.startDate);
+  if (!start || !end) {
+    return false;
+  }
+
   const today = startOfDay(new Date());
-  const start = parseLocalDate(startDate);
-  const end = parseLocalDate(endDate) || start;
-  if (!start || !end) return false;
+  let rangeStart = today;
+  let rangeEnd = today;
 
   if (mode === "next30") {
-    const last = new Date(today);
-    last.setDate(last.getDate() + 30);
-    return end >= today && start <= last;
-  }
-
-  if (mode === "month") {
-    return start.getFullYear() === today.getFullYear() && start.getMonth() === today.getMonth();
-  }
-
-  if (mode === "weekend") {
+    rangeEnd = addDays(today, 30);
+  } else if (mode === "month") {
+    rangeStart = new Date(today.getFullYear(), today.getMonth(), 1);
+    rangeEnd = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+  } else if (mode === "weekend") {
     const day = today.getDay();
-    const daysUntilFriday = (5 - day + 7) % 7;
-    const friday = new Date(today);
-    friday.setDate(friday.getDate() + daysUntilFriday);
-    const sunday = new Date(friday);
-    sunday.setDate(sunday.getDate() + 2);
-    return end >= friday && start <= sunday;
+    if (day === 6) {
+      rangeStart = today;
+      rangeEnd = addDays(today, 1);
+    } else if (day === 0) {
+      rangeStart = today;
+      rangeEnd = today;
+    } else {
+      rangeStart = addDays(today, (5 - day + 7) % 7);
+      rangeEnd = addDays(rangeStart, 2);
+    }
   }
 
-  return true;
+  return start <= rangeEnd && end >= rangeStart;
 }
 
-function setupEventFilters() {
-  const grid = document.querySelector("[data-event-grid]");
-  const form = document.querySelector("[data-event-filters]");
-  if (!grid || !form) return;
+function filteredEvents() {
+  return state.events.filter((event) => {
+    const searchMatch = !state.filters.search ||
+      eventSearchText(event).includes(state.filters.search.toLowerCase());
+    const artistMatch = !state.filters.artist ||
+      (event.artists || []).includes(state.filters.artist);
+    const stateMatch = !state.filters.state || event.state === state.filters.state;
+    const typeMatch = !state.filters.type || event.eventType === state.filters.type;
+    return searchMatch && artistMatch && stateMatch && typeMatch &&
+      eventMatchesDateMode(event, state.filters.dateMode);
+  });
+}
 
-  const cards = [...grid.querySelectorAll("[data-event-card]")];
-  const search = form.querySelector("[data-search-filter]");
-  const artist = form.querySelector("[data-artist-filter]");
-  const state = form.querySelector("[data-state-filter]");
-  const type = form.querySelector("[data-type-filter]");
-  const reset = form.querySelector("[data-reset-filters]");
-  const count = document.querySelector("[data-results-count]");
-  const empty = document.querySelector("[data-filtered-empty]");
-  const chips = [...document.querySelectorAll(".filter-chip[data-date-mode], .filter-chip[data-type-mode]")];
-  let dateMode = "all";
+function badge(text, className = "") {
+  return createElement("span", `badge ${className}`.trim(), text);
+}
 
-  const url = new URL(window.location.href);
-  const queryArtist = url.searchParams.get("artist");
-  const queryState = url.searchParams.get("state");
-  const queryType = url.searchParams.get("type");
-  if (queryArtist && artist) artist.value = queryArtist.toLocaleLowerCase();
-  if (queryState && state) state.value = queryState.toUpperCase();
-  if (queryType && type) type.value = queryType.toLocaleLowerCase();
+function isJustAnnounced(event) {
+  if (!event.firstSeen || Date.now() < JUST_ANNOUNCED_START.getTime()) {
+    return false;
+  }
+  const firstSeen = new Date(event.firstSeen);
+  if (Number.isNaN(firstSeen.getTime()) || firstSeen < JUST_ANNOUNCED_START) {
+    return false;
+  }
+  const age = Date.now() - firstSeen.getTime();
+  return age >= 0 && age <= JUST_ANNOUNCED_DAYS * 24 * 60 * 60 * 1000;
+}
 
-  function apply() {
-    const needle = (search?.value || "").trim().toLocaleLowerCase();
-    const artistValue = artist?.value || "";
-    const stateValue = state?.value || "";
-    const typeValue = type?.value || "";
-    let visible = 0;
+function eventImageAlt(event) {
+  if (event.imageType === "event_artwork" || event.eventType === "festival") {
+    return `Official artwork for ${event.title || "this event"}`;
+  }
+  const artist = event.headliner || (event.artists || [])[0] || "Christian hip-hop artist";
+  return `${artist} artist image for ${event.title || "an upcoming show"}`;
+}
 
-    cards.forEach((card) => {
-      const artists = (card.dataset.artists || "").split("|").filter(Boolean);
-      const matches =
-        (!needle || (card.dataset.search || "").includes(needle)) &&
-        (!artistValue || artists.includes(artistValue)) &&
-        (!stateValue || card.dataset.state === stateValue) &&
-        (!typeValue || card.dataset.type === typeValue) &&
-        dateMatchesMode(card.dataset.date, card.dataset.endDate, dateMode);
-      card.hidden = !matches;
-      if (matches) visible += 1;
-    });
+function createEventImage(event) {
+  const media = createElement("div", "event-media");
+  const image = document.createElement("img");
+  image.className = `event-image event-image--${event.imageType || "fallback"}`;
+  image.loading = "lazy";
+  image.decoding = "async";
+  image.alt = eventImageAlt(event);
+  image.src = safeImageUrl(event.image) || "assets/event-fallback.webp";
+  image.style.objectPosition = safeObjectPosition(event.imagePosition);
+  image.addEventListener("error", () => {
+    if (!image.dataset.fallbackApplied) {
+      image.dataset.fallbackApplied = "true";
+      image.src = "assets/event-fallback.webp";
+      image.alt = `Neutral concert artwork for ${event.title || "this event"}`;
+      image.style.objectPosition = "center";
+    }
+  }, { once: true });
+  media.appendChild(image);
+  return media;
+}
 
-    if (count) count.textContent = `${visible} show${visible === 1 ? "" : "s"}`;
-    if (empty) empty.hidden = visible !== 0;
+function createLineup(event) {
+  const artists = Array.isArray(event.artists) ? event.artists.filter(Boolean) : [];
+  if (!artists.length) {
+    return createElement("p", "artist-line", "Artist lineup not provided");
+  }
+  if (artists.length <= 4) {
+    return createElement("p", "artist-line", artists.join(" · "));
   }
 
-  [search, artist, state, type].forEach((control) => {
-    control?.addEventListener(control === search ? "input" : "change", apply);
-  });
+  const details = createElement("details", "lineup-details");
+  const summary = createElement("summary", "artist-line");
+  summary.append(`${artists.slice(0, 4).join(" · ")} `);
+  summary.appendChild(createElement("span", "lineup-more", `+${artists.length - 4} more`));
+  details.appendChild(summary);
+  details.appendChild(createElement("p", "lineup-full", artists.join(" · ")));
+  return details;
+}
 
-  chips.forEach((chip) => {
-    chip.addEventListener("click", () => {
-      if (chip.dataset.typeMode) {
-        if (type) type.value = chip.dataset.typeMode;
-        dateMode = "all";
-      } else {
-        dateMode = chip.dataset.dateMode || "all";
-        if (type && chip.dataset.dateMode) type.value = "";
+function submissionEndpointIsConfigured() {
+  try {
+    const url = new URL(SUBMISSION_ENDPOINT);
+    return url.protocol === "https:" && url.hostname === "formspree.io" &&
+      /^\/f\/[A-Za-z0-9_-]+$/.test(url.pathname) &&
+      !SUBMISSION_ENDPOINT.includes("REPLACE_WITH_YOUR_FORM_ID");
+  } catch {
+    return false;
+  }
+}
+
+function setSubmissionMode(mode, event = null) {
+  elements.submissionForm.reset();
+  elements.submissionFeedback.textContent = "";
+  document.getElementById("submission-kind").value = mode === "correction" ? "Correction" : "New show";
+  elements.submissionTitle.textContent = mode === "correction" ? "Report a correction" : "Submit a verified show";
+  elements.submissionSubmit.textContent = mode === "correction" ? "Send correction" : "Send for review";
+
+  if (event) {
+    document.getElementById("submit-event-name").value = event.title || "";
+    document.getElementById("submit-date").value = event.startDate || "";
+    document.getElementById("submit-time").value = event.startTime || "";
+    document.getElementById("submit-venue").value = event.venue || "";
+    document.getElementById("submit-city").value = event.city || "";
+    document.getElementById("submit-state").value = event.state || "";
+    document.getElementById("submit-lineup").value = (event.artists || []).join(", ");
+    document.getElementById("submit-url").value = event.officialUrl || event.ticketUrl || "";
+    document.getElementById("submit-relationship").value = "Correction to an existing listing";
+    document.getElementById("submit-notes").value = "Please describe what should be corrected and include an official source when possible.";
+  }
+}
+
+function openSubmissionDialog(mode = "new", event = null) {
+  setSubmissionMode(mode, event);
+  if (typeof elements.submissionDialog.showModal === "function") {
+    elements.submissionDialog.showModal();
+  } else {
+    elements.submissionDialog.setAttribute("open", "");
+  }
+}
+function renderEvent(event) {
+  const card = createElement("article", "event-card");
+  card.appendChild(createEventImage(event));
+
+  const content = createElement("div", "event-content");
+  const main = createElement("div", "event-main");
+  const badges = createElement("div", "event-badges");
+  badges.appendChild(badge(event.eventType === "festival" ? "Festival" : "Concert", "gold"));
+  if (isJustAnnounced(event)) {
+    badges.appendChild(badge("Just announced", "announced"));
+  }
+  if (event.status && !["scheduled", "onsale"].includes(event.status)) {
+    badges.appendChild(badge(event.status, event.status === "cancelled" ? "cancelled" : ""));
+  }
+  if (event.stale) {
+    badges.appendChild(badge("Rechecking"));
+  }
+  main.appendChild(badges);
+  main.appendChild(createElement("h3", "", event.title || "Untitled event"));
+  main.appendChild(createLineup(event));
+
+  const meta = createElement("div", "event-meta");
+  const dateLine = [formatDate(event.startDate), formatTime(event.startTime)]
+    .filter(Boolean)
+    .join(" · ");
+  meta.appendChild(createElement("p", "", dateLine));
+  const venue = event.venue && event.venue !== "Venue not provided"
+    ? event.venue
+    : "Venue to be announced";
+  meta.appendChild(createElement(
+    "p",
+    "",
+    [venue, [event.city, event.state].filter(Boolean).join(", ")]
+      .filter(Boolean)
+      .join(" · ")
+  ));
+  if (event.price) {
+    meta.appendChild(createElement("p", "", `Listed price: ${event.price}`));
+  }
+  main.appendChild(meta);
+  content.appendChild(main);
+
+  const actions = createElement("div", "event-actions");
+  const ticketUrl = safeHttpUrl(event.ticketUrl || event.officialUrl);
+  if (ticketUrl && event.status !== "cancelled") {
+    const ticket = createElement("a", "ticket-link", "Official details");
+    ticket.href = ticketUrl;
+    ticket.target = "_blank";
+    ticket.rel = "noopener";
+    actions.appendChild(ticket);
+  } else {
+    actions.appendChild(createElement("span", "badge cancelled", "No active ticket link"));
+  }
+
+  const sourceBlock = createElement("div", "source-link");
+  const sources = (Array.isArray(event.sources) ? event.sources : [])
+    .filter((source) => source && safeHttpUrl(source.url));
+  if (sources.length) {
+    sourceBlock.append(sources.length === 1 ? "Source: " : "Sources: ");
+    sources.slice(0, 3).forEach((source, index) => {
+      if (index) {
+        sourceBlock.append(" · ");
       }
-      chips.forEach((item) => item.classList.remove("active"));
-      chip.classList.add("active");
-      apply();
+      const sourceAnchor = createElement("a", "", source.name || "Official source");
+      sourceAnchor.href = safeHttpUrl(source.url);
+      sourceAnchor.target = "_blank";
+      sourceAnchor.rel = "noopener";
+      sourceBlock.appendChild(sourceAnchor);
     });
-  });
+    if (sources.length > 3) {
+      sourceBlock.append(` · +${sources.length - 3} more`);
+    }
+  } else {
+    sourceBlock.textContent = event.sourceName ? `Source: ${event.sourceName}` : "Source verified";
+  }
+  actions.appendChild(sourceBlock);
 
-  reset?.addEventListener("click", () => {
-    form.reset();
-    dateMode = "all";
-    chips.forEach((chip) => chip.classList.toggle("active", chip.dataset.dateMode === "all"));
-    apply();
-  });
+  const correction = createElement("button", "correction-link", "Report a correction");
+  correction.type = "button";
+  correction.addEventListener("click", () => openSubmissionDialog("correction", event));
+  actions.appendChild(correction);
 
-  apply();
+  content.appendChild(actions);
+  card.appendChild(content);
+  return card;
 }
 
-function setupArtistDirectory() {
-  const grid = document.querySelector("[data-artist-grid]");
-  if (!grid) return;
-  const cards = [...grid.querySelectorAll("[data-artist-card]")];
-  const search = document.querySelector("[data-artist-search]");
-  const showFilter = document.querySelector("[data-has-shows-filter]");
-  const count = document.querySelector("[data-artist-count]");
-  const empty = document.querySelector("[data-artist-empty]");
+function render() {
+  const events = filteredEvents();
+  elements.events.replaceChildren();
+  elements.resultsCount.textContent = `${events.length} ${events.length === 1 ? "show" : "shows"}`;
 
-  function apply() {
-    const needle = (search?.value || "").trim().toLocaleLowerCase();
-    const requireShows = Boolean(showFilter?.checked);
-    let visible = 0;
-    cards.forEach((card) => {
-      const matches = (!needle || (card.dataset.search || "").includes(needle)) &&
-        (!requireShows || card.dataset.hasShows === "true");
-      card.hidden = !matches;
-      if (matches) visible += 1;
-    });
-    if (count) count.textContent = `${visible} artist${visible === 1 ? "" : "s"}`;
-    if (empty) empty.hidden = visible !== 0;
+  if (!events.length) {
+    elements.events.appendChild(createElement(
+      "div",
+      "empty-state",
+      "No verified shows match these filters. Clear the filters or check again after the next daily update."
+    ));
+    return;
   }
 
-  search?.addEventListener("input", apply);
-  showFilter?.addEventListener("change", apply);
-  apply();
+  const fragment = document.createDocumentFragment();
+  events.forEach((event) => fragment.appendChild(renderEvent(event)));
+  elements.events.appendChild(fragment);
 }
 
-function setupSubmissionForm() {
-  const form = document.querySelector("[data-submission-form]");
-  if (!form) return;
-  const feedback = form.querySelector("[data-submission-feedback]");
-  const submit = form.querySelector("[data-submission-submit]");
-  const kind = form.querySelector("[data-submission-kind]");
-  const eventName = form.querySelector("[data-event-name]");
-  const modeButtons = [...form.querySelectorAll("[data-submission-mode]")];
-  const params = new URLSearchParams(window.location.search);
+function populateSelect(select, values) {
+  const existing = new Set([...select.options].map((option) => option.value));
+  values.forEach((value) => {
+    if (!value || existing.has(value)) {
+      return;
+    }
+    select.appendChild(new Option(value, value));
+    existing.add(value);
+  });
+}
 
-  function setMode(value) {
-    if (kind) kind.value = value;
-    modeButtons.forEach((button) => button.classList.toggle("active", button.dataset.submissionMode === value));
-    if (submit) submit.textContent = value === "Correction" ? "Send Correction" : "Send for Review";
+function updateQuickFilterState() {
+  elements.quickFilters.forEach((button) => {
+    const dateActive = button.dataset.dateMode && button.dataset.dateMode === state.filters.dateMode;
+    const festivalActive = button.dataset.typeMode === "festival" && state.filters.type === "festival";
+    button.classList.toggle("active", Boolean(dateActive || festivalActive));
+    button.setAttribute("aria-pressed", String(Boolean(dateActive || festivalActive)));
+  });
+}
+
+function configureFilters() {
+  const artists = [...new Set(state.events.flatMap((event) => event.artists || []))]
+    .filter(Boolean)
+    .sort((a, b) => a.localeCompare(b));
+  const states = [...new Set(state.events.map((event) => event.state))]
+    .filter(Boolean)
+    .sort((a, b) => a.localeCompare(b));
+
+  populateSelect(elements.artist, artists);
+  populateSelect(elements.state, states);
+
+  elements.search.addEventListener("input", (event) => {
+    state.filters.search = event.target.value.trim();
+    render();
+  });
+  elements.artist.addEventListener("change", (event) => {
+    state.filters.artist = event.target.value;
+    render();
+  });
+  elements.state.addEventListener("change", (event) => {
+    state.filters.state = event.target.value;
+    render();
+  });
+  elements.type.addEventListener("change", (event) => {
+    state.filters.type = event.target.value;
+    updateQuickFilterState();
+    render();
+  });
+  elements.quickFilters.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.dataset.dateMode) {
+        state.filters.dateMode = button.dataset.dateMode;
+      }
+      if (button.dataset.typeMode === "festival") {
+        state.filters.type = state.filters.type === "festival" ? "" : "festival";
+        elements.type.value = state.filters.type;
+      }
+      updateQuickFilterState();
+      render();
+    });
+  });
+  elements.reset.addEventListener("click", () => {
+    state.filters = { search: "", artist: "", state: "", type: "", dateMode: "all" };
+    elements.search.value = "";
+    elements.artist.value = "";
+    elements.state.value = "";
+    elements.type.value = "";
+    updateQuickFilterState();
+    render();
+  });
+}
+
+async function loadStatus() {
+  try {
+    const response = await fetch(`run-status.json?v=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error(`Status request failed: ${response.status}`);
+    }
+    const status = await response.json();
+    const warnings = Array.isArray(status.warnings) ? status.warnings : [];
+    const errors = Array.isArray(status.errors) ? status.errors : [];
+    let severity = "ok";
+    if (errors.length || ["partial", "needs_configuration", "error"].includes(status.status)) {
+      severity = "error";
+    } else if (warnings.length || status.status === "warning") {
+      severity = "warning";
+    }
+
+    elements.lastUpdated.textContent = formatUpdateTime(status.lastSuccessfulUpdate || status.lastAttempt);
+    elements.statusDot.className = `status-dot ${severity}`;
+    elements.statusLabel.textContent = severity === "ok"
+      ? "Calendar current"
+      : severity === "warning"
+        ? "Calendar updated"
+        : "Update issue";
+
+    elements.notice.hidden = !(errors.length || warnings.length);
+    if (!elements.notice.hidden) {
+      elements.notice.className = `notice ${severity}`;
+      elements.notice.textContent = errors.length
+        ? `The latest update encountered ${errors.length} ${errors.length === 1 ? "error" : "errors"}. Verified listings remain available while the collector retries.`
+        : `The calendar updated, but ${warnings.length} source ${warnings.length === 1 ? "check was" : "checks were"} temporarily unavailable. Published listings remain verified.`;
+      elements.notice.title = [...errors, ...warnings].slice(0, 5).join("\n");
+    }
+  } catch {
+    elements.lastUpdated.textContent = "Update status unavailable";
+    elements.statusDot.className = "status-dot error";
+    elements.statusLabel.textContent = "Status unavailable";
   }
+}
 
-  modeButtons.forEach((button) => button.addEventListener("click", () => setMode(button.dataset.submissionMode || "New show")));
+function configureSubmissionDialog() {
+  elements.openSubmit.addEventListener("click", () => openSubmissionDialog("new"));
 
-  if ((params.get("type") || "").includes("correction")) setMode("Correction");
-  if (params.get("event") && eventName) eventName.value = params.get("event");
-  if (params.get("artist") && eventName) eventName.value = `${params.get("artist")} profile correction`;
-  if (params.get("url")) {
-    const notes = form.querySelector('textarea[name="details"]');
-    if (notes) notes.value = `Page to review: ${params.get("url")}\n`;
-  }
+  elements.submissionDialog.addEventListener("click", (event) => {
+    if (event.target === elements.submissionDialog && typeof elements.submissionDialog.close === "function") {
+      elements.submissionDialog.close();
+    }
+  });
 
-  form.addEventListener("submit", async (event) => {
+  elements.submissionForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-    if (!form.reportValidity()) return;
-    if (feedback) feedback.textContent = "Sending submission...";
-    if (submit) submit.disabled = true;
+    elements.submissionFeedback.className = "form-feedback";
+
+    if (!submissionEndpointIsConfigured()) {
+      elements.submissionFeedback.textContent = "Email submissions are being configured. Please try again shortly.";
+      return;
+    }
+
+    if (!elements.submissionForm.reportValidity()) {
+      return;
+    }
+
+    const officialUrl = safeHttpUrl(document.getElementById("submit-url").value.trim());
+    if (!officialUrl) {
+      elements.submissionFeedback.textContent = "Enter a valid official URL beginning with https://";
+      return;
+    }
+
+    const formData = new FormData(elements.submissionForm);
+    const eventName = document.getElementById("submit-event-name").value.trim();
+    formData.set("official_url", officialUrl);
+    formData.set("state", document.getElementById("submit-state").value.trim().toUpperCase());
+    formData.set("page_url", window.location.href);
+    formData.set("submitted_at", new Date().toISOString());
+    formData.set("_subject", `Kingdom Circuit ${formData.get("submission_type")}: ${eventName}`);
+
+    const originalText = elements.submissionSubmit.textContent;
+    elements.submissionSubmit.disabled = true;
+    elements.submissionSubmit.textContent = "Sending...";
+    elements.submissionFeedback.textContent = "";
+
     try {
-      const response = await fetch(form.action, {
+      const response = await fetch(SUBMISSION_ENDPOINT, {
         method: "POST",
-        body: new FormData(form),
-        headers: { Accept: "application/json" }
+        body: formData,
+        headers: { "Accept": "application/json" }
       });
-      if (!response.ok) throw new Error("Submission failed");
-      form.reset();
-      setMode("New show");
-      if (feedback) feedback.textContent = "Submission received. Thank you for helping strengthen the Christian hip-hop community. The Kingdom Circuit will review the information before publishing or updating the event.";
-    } catch {
-      if (feedback) feedback.textContent = "The submission could not be sent. Please try again in a few minutes.";
+      if (!response.ok) {
+        throw new Error(`Submission failed: ${response.status}`);
+      }
+      elements.submissionFeedback.className = "form-feedback success";
+      elements.submissionFeedback.textContent = "Thank you. The show information was sent for review.";
+      elements.submissionForm.reset();
+      setTimeout(() => {
+        if (typeof elements.submissionDialog.close === "function") {
+          elements.submissionDialog.close();
+        }
+      }, 1400);
+    } catch (error) {
+      console.error(error);
+      elements.submissionFeedback.textContent = "The submission could not be sent. Please try again in a few minutes.";
     } finally {
-      if (submit) submit.disabled = false;
+      elements.submissionSubmit.disabled = false;
+      elements.submissionSubmit.textContent = originalText;
     }
   });
 }
+async function loadEvents() {
+  try {
+    const response = await fetch(`events.json?v=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error(`Event request failed: ${response.status}`);
+    }
+    const payload = await response.json();
+    if (!Array.isArray(payload)) {
+      throw new Error("events.json must contain a JSON array");
+    }
+    state.events = payload
+      .filter((event) => event && typeof event === "object")
+      .sort((a, b) => {
+        const left = `${a.startDate || "9999-12-31"} ${a.startTime || "23:59"}`;
+        const right = `${b.startDate || "9999-12-31"} ${b.startTime || "23:59"}`;
+        return left.localeCompare(right);
+      });
+    configureFilters();
+    updateQuickFilterState();
+    render();
+  } catch (error) {
+    elements.resultsCount.textContent = "Unable to load";
+    elements.events.replaceChildren(createElement(
+      "div",
+      "empty-state",
+      "The show list could not be loaded. Refresh the page or check the latest GitHub Actions run."
+    ));
+    console.error(error);
+  }
+}
 
-setupEventFilters();
-setupArtistDirectory();
-setupSubmissionForm();
+configureSubmissionDialog();
+Promise.all([loadStatus(), loadEvents()]);

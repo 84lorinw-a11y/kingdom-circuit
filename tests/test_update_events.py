@@ -853,11 +853,11 @@ class KingdomCircuitV9Tests(unittest.TestCase):
         self.assertEqual(final[0]["image"], "assets/events/local-artwork.webp")
         self.assertEqual(final[0]["imageType"], "event_artwork")
 
-    def test_footer_status_and_uniform_ticket_button(self):
-        builder = (ROOT / "scripts" / "build_site.py").read_text()
+    def test_footer_notice_and_uniform_ticket_button(self):
+        html = (ROOT / "index.html").read_text()
         css = (ROOT / "styles.css").read_text()
-        self.assertIn('class="footer-status"', builder)
-        self.assertIn('.ticket-link-small', css)
+        self.assertGreater(html.index('id="notice"'), html.index('<footer class="site-footer">'))
+        self.assertIn('min-width: 154px;', css)
         self.assertNotIn('.ticket-link {\n  width: 100%;', css)
 
 
