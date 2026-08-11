@@ -1,8 +1,8 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-08-11T18:15:08Z",
-  "lastSuccessfulUpdate": "2026-08-11T18:15:08Z",
+  "lastAttempt": "2026-08-11T18:21:47Z",
+  "lastSuccessfulUpdate": "2026-08-11T18:21:47Z",
   "eventsPublished": 108,
   "candidatesCollected": 210,
   "artistsConfigured": 299,
@@ -49,7 +49,7 @@
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 230,
+  "sourcesChecked": 235,
   "unmatchedArtists": [
     "Pregador Luo",
     "Sondae",
@@ -334,7 +334,7 @@
     },
     {
       "name": "Zauntee official tour",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -349,7 +349,7 @@
     },
     {
       "name": "Mike Malagies official events",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -364,7 +364,7 @@
     },
     {
       "name": "Trendsetter Sense official events",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -454,7 +454,7 @@
     },
     {
       "name": "Mike Teezy official tour",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -519,7 +519,7 @@
     },
     {
       "name": "CJ Emulous official site",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -610,12 +610,9 @@
       "queriesRun": 101
     }
   ],
-  "warningCount": 24,
+  "warningCount": 19,
   "errorCount": 0,
   "warnings": [
-    "Zauntee official tour: Unable to retrieve https://www.zauntee.com/tour: HTTP Error 429: Too Many Requests",
-    "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
-    "Trendsetter Sense official events: Unable to retrieve https://www.trendsettersense.com/event-list: HTTP Error 429: Too Many Requests",
     "NF Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11969355-nf: HTTP Error 403: Forbidden",
     "Mike Malagies Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15593996-mike-malagies: HTTP Error 403: Forbidden",
     "Parris Chariz Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14726057-parris-chariz: HTTP Error 403: Forbidden",
@@ -623,8 +620,6 @@
     "Derek Minor Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/12211056-derek-minor: HTTP Error 403: Forbidden",
     "Byron Juane Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14690526-byron-juane: HTTP Error 403: Forbidden",
     "Social Club Misfits Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/13345973-social-club-misfits: HTTP Error 403: Forbidden",
-    "Mike Teezy official tour: Unable to retrieve https://www.miketeezymusic.com/tour: HTTP Error 429: Too Many Requests",
-    "CJ Emulous official site: Unable to retrieve https://www.cjemulous.com/: HTTP Error 429: Too Many Requests",
     "Manafest Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4465-manafest: HTTP Error 403: Forbidden",
     "GRITS Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/805-grits: HTTP Error 403: Forbidden",
     "Nic D Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11283620-nic-d: HTTP Error 403: Forbidden",
