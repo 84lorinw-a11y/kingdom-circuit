@@ -2779,7 +2779,7 @@ def finalize_event(
     result["sources"] = sorted(sources, key=lambda item: int(item.get("priority") or 0), reverse=True)
     result["sourceName"] = str(result["sources"][0].get("name") or "Verified source")
     result["confidence"] = "high"
-    result["verifiedVersion"] = 9
+    result["verifiedVersion"] = 10
     return result
 
 
