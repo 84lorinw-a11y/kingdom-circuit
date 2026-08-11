@@ -1,8 +1,8 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-08-11T16:58:30Z",
-  "lastSuccessfulUpdate": "2026-08-11T16:58:30Z",
+  "lastAttempt": "2026-08-11T18:15:08Z",
+  "lastSuccessfulUpdate": "2026-08-11T18:15:08Z",
   "eventsPublished": 108,
   "candidatesCollected": 210,
   "artistsConfigured": 299,
@@ -49,7 +49,7 @@
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 229,
+  "sourcesChecked": 230,
   "unmatchedArtists": [
     "Pregador Luo",
     "Sondae",
@@ -279,7 +279,7 @@
     },
     {
       "name": "Off The Charts official schedule",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -610,10 +610,9 @@
       "queriesRun": 101
     }
   ],
-  "warningCount": 25,
+  "warningCount": 24,
   "errorCount": 0,
   "warnings": [
-    "Off The Charts official schedule: Unable to retrieve https://www.offthechartsnd.com/schedule: HTTP Error 429: Too Many Requests",
     "Zauntee official tour: Unable to retrieve https://www.zauntee.com/tour: HTTP Error 429: Too Many Requests",
     "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
     "Trendsetter Sense official events: Unable to retrieve https://www.trendsettersense.com/event-list: HTTP Error 429: Too Many Requests",
