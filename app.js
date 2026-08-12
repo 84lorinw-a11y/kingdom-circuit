@@ -27,7 +27,6 @@ const ARTIST_OVERRIDES = {
     imagePosition: "50% 32%",
     officialProfile: "https://zauntee.com/",
     instagramProfile: "https://www.instagram.com/zauntee/",
-    spotifyProfile: "https://open.spotify.com/search/Zauntee",
     youtubeProfile: "https://www.youtube.com/results?search_query=Zauntee+official"
   }
 };
