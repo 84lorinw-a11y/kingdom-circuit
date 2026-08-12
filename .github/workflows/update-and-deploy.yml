@@ -32,8 +32,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run automated tests
-        run: python -m unittest discover -s tests -v
+      - name: Run all automated tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
 
       - name: Collect upcoming shows
         env:
@@ -52,12 +52,121 @@ jobs:
             git push
           fi
 
-      - name: Prepare static site
+      - name: Prepare verified multi-page production site
         run: |
+          set -euo pipefail
+
+          test -s index.html
+          test -s styles.css
+          test -s app.js
+          test -s events.json
+          test -s run-status.json
+          test -s supplemental-events.json
+          test -s config/artists.json
+          test -s scripts/verify_multipage_site.py
+
+          test -s shows/index.html
+          test -s shows/this-month/index.html
+          test -s festivals/index.html
+          test -s new-shows/index.html
+          test -s artists/index.html
+          test -s artists/profile/index.html
+          test -s event/index.html
+          test -s submit/index.html
+
           rm -rf _site
-          mkdir -p _site
-          cp index.html styles.css app.js events.json run-status.json 404.html robots.txt sitemap.xml _site/
-          cp -R assets _site/assets
+          mkdir -p _site/config
+
+          cp index.html styles.css app.js events.json run-status.json \
+             supplemental-events.json 404.html robots.txt sitemap.xml _site/
+
+          cp config/artists.json _site/config/artists.json
+          cp -R shows festivals new-shows artists event submit assets _site/
+
+          if [ -f CNAME ]; then
+            cp CNAME _site/
+          fi
+
+      - name: Verify complete deployment artifact
+        run: |
+          set -euo pipefail
+
+          python scripts/verify_multipage_site.py _site
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          site = Path("_site")
+          events = json.loads((site / "events.json").read_text(encoding="utf-8"))
+          artists = json.loads((site / "config/artists.json").read_text(encoding="utf-8"))
+          supplemental = json.loads((site / "supplemental-events.json").read_text(encoding="utf-8"))
+          status = json.loads((site / "run-status.json").read_text(encoding="utf-8"))
+
+          if not isinstance(events, list) or not events:
+              raise SystemExit("events.json is missing or contains no events")
+          if not isinstance(artists, list) or len(artists) < 250:
+              raise SystemExit("config/artists.json is missing or unexpectedly small")
+          if not isinstance(supplemental, list):
+              raise SystemExit("supplemental-events.json is not a JSON array")
+          if not isinstance(status, dict):
+              raise SystemExit("run-status.json is not a JSON object")
+
+          required = [
+              "index.html",
+              "shows/index.html",
+              "shows/this-month/index.html",
+              "festivals/index.html",
+              "new-shows/index.html",
+              "artists/index.html",
+              "artists/profile/index.html",
+              "event/index.html",
+              "submit/index.html",
+              "events.json",
+              "config/artists.json",
+              "supplemental-events.json",
+              "run-status.json",
+          ]
+          for relative in required:
+              path = site / relative
+              if not path.is_file() or path.stat().st_size == 0:
+                  raise SystemExit(f"Missing runtime dependency: {relative}")
+
+          print(
+              f"Artifact verified: {len(events)} live events, "
+              f"{len(artists)} monitored artists, "
+              f"{len(supplemental)} supplemental events."
+          )
+          PY
+
+          python -m http.server 8765 --directory _site >/tmp/kingdom-circuit-http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+
+          READY=0
+          for attempt in 1 2 3 4 5 6 7 8 9 10; do
+            if curl -fsS http://127.0.0.1:8765/ >/dev/null; then
+              READY=1
+              break
+            fi
+            sleep 1
+          done
+
+          if [ "$READY" -ne 1 ]; then
+            cat /tmp/kingdom-circuit-http.log
+            exit 1
+          fi
+
+          curl -fsS http://127.0.0.1:8765/events.json >/dev/null
+          curl -fsS http://127.0.0.1:8765/config/artists.json >/dev/null
+          curl -fsS http://127.0.0.1:8765/supplemental-events.json >/dev/null
+          curl -fsS http://127.0.0.1:8765/run-status.json >/dev/null
+          curl -fsS http://127.0.0.1:8765/shows/ >/dev/null
+          curl -fsS http://127.0.0.1:8765/shows/this-month/ >/dev/null
+          curl -fsS http://127.0.0.1:8765/festivals/ >/dev/null
+          curl -fsS http://127.0.0.1:8765/new-shows/ >/dev/null
+          curl -fsS http://127.0.0.1:8765/artists/ >/dev/null
+          curl -fsS http://127.0.0.1:8765/submit/ >/dev/null
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
