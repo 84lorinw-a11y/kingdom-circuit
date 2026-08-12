@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="Browse the Kingdom Circuit artist directory.">
+  <meta name="theme-color" content="#080808">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css?v=10.3">
+  <script src="/app.js?v=10.3" defer></script>
+  <title>Christian Hip-Hop Artist Directory | The Kingdom Circuit</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2KK9XF4TJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N2KK9XF4TJ');
+  </script>
+  <link rel="canonical" href="https://kingdomcircuit.com/artists/">
+</head>
+<body data-page="artists">
+<header class="site-header"><div class="header-inner"><a class="brand" href="/" aria-label="The Kingdom Circuit home"><img src="/assets/logo.png" alt="The Kingdom Circuit - Christian hip-hop, live and connected"></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation"><span></span><span></span><span></span></button></div></header>
+  <div class="menu-backdrop" hidden></div>
+  <nav class="menu-drawer" id="site-menu" aria-label="Primary navigation" aria-hidden="true"><div class="menu-drawer-head"><span>Explore Kingdom Circuit</span><button class="menu-close" type="button" aria-label="Close navigation">x</button></div><div class="menu-links"><a href="/">Home</a><a href="/shows/">All Shows</a><a href="/shows/this-month/">This Month</a><a href="/festivals/">Festivals</a><a href="/new-shows/">New Shows</a><a href="/artists/" aria-current="page">Artists</a><a href="/submit/">Submit a Show</a></div><p class="menu-mission">Christian hip-hop, live and connected.</p></nav>
+  <main>
+    <section class="page-hero hero-compact"><p class="eyebrow">Artist database</p><h1>Christian Hip-Hop Artist Directory</h1><p class="hero-text">Browse every artist and group currently monitored by Kingdom Circuit. Open Instagram and Spotify directly from the directory; missing verified links remain clearly marked until they are confirmed.</p></section>
+    <section class="directory-section" data-artist-directory>
+      <div class="directory-toolbar"><label class="field field-search"><span>Search artists</span><input data-artist-search type="search" placeholder="Search by artist name"></label><label class="check-field"><input data-has-shows-filter type="checkbox"> Only artists with upcoming shows</label><p class="results-count" data-artist-count>Loading...</p></div>
+      <div class="loading-panel" data-artist-loading>Loading the monitored artist roster...</div>
+      <div class="artist-grid" data-artist-grid></div>
+      <div class="empty-panel" data-artist-empty hidden>No artists match that search.</div>
+    </section>
+  </main>
+  <footer class="site-footer"><div><strong>The Kingdom Circuit</strong><p>Christian hip-hop, live and connected.</p></div><div class="footer-links"><a href="/shows/">All Shows</a><a href="/artists/">Artists</a><a href="/festivals/">Festivals</a><a href="/submit/">Submit a Show</a></div><p class="footer-note">Event details may change. Confirm final information with the official organizer or ticket seller before purchasing or traveling.</p><div id="notice" class="footer-status" data-calendar-status hidden></div></footer>
+</body>
+</html>

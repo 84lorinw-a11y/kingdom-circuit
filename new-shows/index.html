@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="Shows added to Kingdom Circuit in the last 14 days.">
+  <meta name="theme-color" content="#080808">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css?v=10.3">
+  <script src="/app.js?v=10.3" defer></script>
+  <title>New Shows | The Kingdom Circuit</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2KK9XF4TJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N2KK9XF4TJ');
+  </script>
+  <link rel="canonical" href="https://kingdomcircuit.com/new-shows/">
+</head>
+<body data-page="new-shows">
+<header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="The Kingdom Circuit home">
+        <img src="/assets/logo.png" alt="The Kingdom Circuit — Christian hip-hop, live and connected">
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="menu-backdrop" hidden></div>
+  <nav class="menu-drawer" id="site-menu" aria-label="Primary navigation" aria-hidden="true">
+    <div class="menu-drawer-head"><span>Explore Kingdom Circuit</span><button class="menu-close" type="button" aria-label="Close navigation">×</button></div>
+    <div class="menu-links"><a href="/">Home</a><a href="/shows/">All Shows</a><a href="/shows/this-month/">This Month</a><a href="/festivals/">Festivals</a><a href="/new-shows/" aria-current="page">New Shows</a><a href="/artists/">Artists</a><a href="/submit/">Submit a Show</a></div>
+    <p class="menu-mission">Christian hip-hop, live and connected.</p>
+  </nav>
+  <main><section class="page-hero hero-compact"><p class="eyebrow">Recently added</p><h1>New to Kingdom Circuit</h1><p class="hero-text">These shows were first added to our calendar within the last 14 days. The event itself may have been announced earlier.</p></section>
+<section class="calendar" id="calendar" data-event-list-mode="new" aria-labelledby="calendar-title">
+  <div class="calendar-heading"><div><p class="eyebrow">Verified listings</p><h2 id="calendar-title">Recently Added Shows</h2><p class="section-intro">After 14 days, a listing remains on the main calendar but leaves this page.</p></div><p class="results-count" data-results-count>Loading…</p></div>
+  
+<div class="filter-dock" data-filter-dock>
+  <div class="quick-filters" role="group" aria-label="Quick event filters">
+    <button class="filter-chip active" type="button" data-date-mode="all">All dates</button>
+    <button class="filter-chip" type="button" data-date-mode="weekend">This weekend</button>
+    <button class="filter-chip" type="button" data-date-mode="next30">Next 30 days</button>
+    <button class="filter-chip" type="button" data-date-mode="month">This month</button>
+    <button class="filter-chip" type="button" data-type-mode="festival">Festivals</button>
+  </div>
+  <form class="filters" role="search" data-event-filters>
+    <label class="field field-search"><span>Search</span><input data-search-filter type="search" placeholder="Artist, city, venue, or event" autocomplete="off"></label>
+    <label class="field"><span>Artist</span><select data-artist-filter><option value="">All artists</option></select></label>
+    <label class="field"><span>State</span><select data-state-filter><option value="">All states</option></select></label>
+    <label class="field"><span>Type</span><select data-type-filter><option value="">All events</option><option value="concert">Concerts</option><option value="festival">Festivals</option></select></label>
+    <button class="reset-button" data-reset-filters type="button">Clear filters</button>
+  </form>
+</div>
+  <div class="loading-panel" data-loading-panel>Loading the current live calendar…</div>
+  <div class="event-grid" data-event-grid></div>
+  <div class="empty-panel" data-filtered-empty hidden>No shows currently match those filters.</div>
+</section></main>
+  <footer class="site-footer">
+    <div><strong>The Kingdom Circuit</strong><p>Christian hip-hop, live and connected.</p></div>
+    <div class="footer-links"><a href="/shows/">All Shows</a><a href="/artists/">Artists</a><a href="/festivals/">Festivals</a><a href="/submit/">Submit a Show</a></div>
+    <p class="footer-note">Event details may change. Confirm final information with the official organizer or ticket seller before purchasing or traveling.</p><div id="notice" class="footer-status" data-calendar-status hidden></div>
+  </footer>
+</body>
+</html>

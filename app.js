@@ -1,616 +1,498 @@
 "use strict";
 
-const JUST_ANNOUNCED_DAYS = 7;
-const JUST_ANNOUNCED_START = new Date("2026-08-10T00:00:00-05:00");
-const SUBMISSION_ENDPOINT = "https://formspree.io/f/mljreawj";
+console.info("Kingdom Circuit production multipage build loaded");
 
-const state = {
-  events: [],
-  filters: {
-    search: "",
-    artist: "",
-    state: "",
-    type: "",
-    dateMode: "all"
+const BASE = "/";
+const LIVE_EVENTS_URL = `${BASE}events.json`;
+const LIVE_ARTISTS_URL = `${BASE}config/artists.json`;
+const SITE_BUILD = "production-v1";
+const SUPPLEMENTAL_EVENTS_URL = `${BASE}supplemental-events.json?v=1`;
+const RUN_STATUS_URL = `${BASE}run-status.json`;
+const FALLBACK_EVENT_IMAGE = `${BASE}assets/event-fallback.webp`;
+const STATE_NAMES = {AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",DE:"Delaware",DC:"District of Columbia",FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming"};
+
+const ARTIST_OVERRIDES = {
+  "kb": {
+    spotifyProfile: "https://open.spotify.com/artist/77IKXFvO7SpWrq8hflrUXc"
+  },
+  "skema boy": {
+    imageUrl: "assets/artists/skema-boy.webp",
+    instagramProfile: "https://www.instagram.com/skema.boy/",
+    spotifyProfile: "https://open.spotify.com/artist/1KTljUXZGt7HkAFFEnDBn1",
+    youtubeProfile: "https://www.youtube.com/@skemaboy",
+    officialProfile: "https://rixonentertainment.com/skema-boy"
   }
 };
 
-const elements = {
-  events: document.getElementById("events"),
-  resultsCount: document.getElementById("results-count"),
-  notice: document.getElementById("notice"),
-  lastUpdated: document.getElementById("last-updated"),
-  statusDot: document.getElementById("status-dot"),
-  statusLabel: document.getElementById("status-label"),
-  search: document.getElementById("search-filter"),
-  artist: document.getElementById("artist-filter"),
-  state: document.getElementById("state-filter"),
-  type: document.getElementById("type-filter"),
-  reset: document.getElementById("reset-filters"),
-  quickFilters: [...document.querySelectorAll(".filter-chip")],
-  openSubmit: document.getElementById("open-submit"),
-  submissionDialog: document.getElementById("submission-dialog"),
-  submissionForm: document.getElementById("submission-form"),
-  submissionFeedback: document.getElementById("submission-feedback"),
-  submissionSubmit: document.getElementById("submission-submit"),
-  submissionTitle: document.getElementById("submission-title")
-};
+let EVENTS = [];
+let ARTISTS = [];
 
-function safeHttpUrl(value) {
+const esc = value => String(value ?? "").replace(/[&<>'"]/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[ch]));
+const normalize = value => String(value || "").trim().toLocaleLowerCase();
+
+async function loadJson(primary, fallback) {
   try {
-    const url = new URL(String(value));
-    return ["http:", "https:"].includes(url.protocol) ? url.href : "";
-  } catch {
-    return "";
+    const response = await fetch(primary, { cache: "no-store" });
+    if (!response.ok) throw new Error(`${response.status}`);
+    return await response.json();
+  } catch (error) {
+    console.warn(`Primary data unavailable; using ${fallback}`, error);
+    const response = await fetch(`${BASE}${fallback}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`Could not load ${fallback}`);
+    return await response.json();
   }
 }
 
-function safeImageUrl(value) {
+async function loadOptionalJson(url) {
   try {
-    const url = new URL(String(value), window.location.href);
-    return ["http:", "https:"].includes(url.protocol) ? url.href : "";
-  } catch {
-    return "";
+    const response = await fetch(url, { cache: "no-store" });
+    if (!response.ok) return [];
+    const data = await response.json();
+    return Array.isArray(data) ? data : [];
+  } catch (error) {
+    console.warn("Supplemental event data was unavailable.", error);
+    return [];
   }
 }
 
-function safeObjectPosition(value) {
-  const candidate = String(value || "").trim().toLowerCase();
-  const pattern = /^(?:left|center|right|\d{1,3}(?:\.\d+)?%)(?:\s+(?:top|center|bottom|\d{1,3}(?:\.\d+)?%))?$/;
-  return pattern.test(candidate) ? candidate : "center";
+function applyArtistOverrides(artists) {
+  return artists.map(artist => ({ ...artist, ...(ARTIST_OVERRIDES[normalize(artist.name)] || {}) }));
 }
 
-function localDate(dateText) {
-  const parts = String(dateText || "").split("-").map(Number);
-  if (parts.length !== 3 || parts.some(Number.isNaN)) {
-    return null;
+function eventArtistSet(event) {
+  return new Set((event.artists || []).map(normalize));
+}
+
+function sameEvent(existing, incoming) {
+  if (!existing || !incoming || existing.startDate !== incoming.startDate) return false;
+  if (normalize(existing.city) !== normalize(incoming.city)) return false;
+  const sameVenue = normalize(existing.venue) && normalize(existing.venue) === normalize(incoming.venue);
+  const existingArtists = eventArtistSet(existing);
+  const sharedArtist = [...eventArtistSet(incoming)].some(name => existingArtists.has(name));
+  return sameVenue || sharedArtist;
+}
+
+function mergeEventLists(primary, supplemental) {
+  const merged = primary.map(event => ({ ...event, artists: [...(event.artists || [])] }));
+  supplemental.forEach(incoming => {
+    const existing = merged.find(event => sameEvent(event, incoming));
+    if (!existing) {
+      merged.push(incoming);
+      return;
+    }
+    existing.artists = [...new Set([...(existing.artists || []), ...(incoming.artists || [])])];
+    if (!existing.image) existing.image = incoming.image;
+    if (!existing.imageType) existing.imageType = incoming.imageType;
+    if (!existing.imagePosition) existing.imagePosition = incoming.imagePosition;
+    if (!existing.firstSeen) existing.firstSeen = incoming.firstSeen;
+  });
+  return merged;
+}
+
+function localAssetUrl(value) {
+  if (!value) return "";
+  if (/^https?:\/\//i.test(value)) return value.replace(/^http:\/\//i, "https://");
+  return `${BASE}${value.replace(/^\//, "")}`;
+}
+
+function artistConfig(name) {
+  const target = normalize(name);
+  return ARTISTS.find(artist => normalize(artist.name) === target || (artist.aliases || []).some(alias => normalize(alias) === target));
+}
+
+function eventImage(event) {
+  const config = artistConfig(event.headliner || event.artists?.[0]);
+  return localAssetUrl(event.image || config?.imageUrl) || FALLBACK_EVENT_IMAGE;
+}
+
+function imageClass(event) {
+  return event.imageType === "event_artwork" ? "event-artwork" : "artist-photo";
+}
+
+function imagePosition(event) {
+  return event.imagePosition || artistConfig(event.headliner)?.imagePosition || "center";
+}
+
+function parseLocalDate(value) {
+  if (!value) return null;
+  const [year, month, day] = value.split("-").map(Number);
+  if (!year || !month || !day) return null;
+  return new Date(year, month - 1, day, 12, 0, 0, 0);
+}
+
+function formatDate(event) {
+  const date = parseLocalDate(event.startDate);
+  if (!date) return "Date to be announced";
+  let text = new Intl.DateTimeFormat("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" }).format(date);
+  if (event.startTime) {
+    const [hour, minute] = event.startTime.split(":").map(Number);
+    const time = new Date(2000, 0, 1, hour, minute || 0);
+    text += ` - ${new Intl.DateTimeFormat("en-US", { hour: "numeric", minute: "2-digit" }).format(time)}`;
   }
-  return new Date(parts[0], parts[1] - 1, parts[2]);
+  return text;
+}
+
+function sourceText(event) {
+  return event.sourceName || event.sources?.[0]?.name || "Official source";
+}
+
+function eventDetailUrl(event) {
+  return `${BASE}event/?id=${encodeURIComponent(event.id)}`;
+}
+
+function artistProfileUrl(name) {
+  return `${BASE}artists/profile/?name=${encodeURIComponent(name)}`;
+}
+
+function artistLinks(event) {
+  return (event.artists || []).map(name => `<a href="${artistProfileUrl(name)}">${esc(name)}</a>`).join(" - ");
+}
+
+function isNew(event) {
+  if (!event.firstSeen) return false;
+  const seen = new Date(event.firstSeen);
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - 14);
+  return seen >= cutoff;
+}
+
+function eventCard(event) {
+  const search = [event.title, event.venue, event.city, event.state, event.sourceName, ...(event.artists || [])].join(" ").toLocaleLowerCase();
+  const artists = (event.artists || []).map(normalize).join("|");
+  const img = eventImage(event);
+  const location = [event.city, event.state].filter(Boolean).join(", ") || "Location to be announced";
+  const price = event.price ? `<p class="price-line">Listed price: ${esc(event.price)}</p>` : "";
+  const recent = isNew(event) ? `<span class="badge">New to Kingdom Circuit</span>` : "";
+  return `<article class="event-card" data-event-card data-search="${esc(search)}" data-artists="${esc(artists)}" data-state="${esc(event.state || "")}" data-type="${esc(event.eventType || "concert")}" data-date="${esc(event.startDate || "")}" data-end-date="${esc(event.endDate || event.startDate || "")}">
+    <a class="event-media" href="${eventDetailUrl(event)}" aria-label="View ${esc(event.title)}"><img class="${imageClass(event)}" src="${esc(img)}" alt="${esc(event.title)} image" loading="lazy" style="object-position:${esc(imagePosition(event))}" onerror="this.onerror=null;this.className='event-artwork';this.src='${FALLBACK_EVENT_IMAGE}';"></a>
+    <div class="event-content"><div class="event-main"><div class="event-badges"><span class="badge badge-gold">${esc(event.eventType === "festival" ? "Festival" : "Concert")}</span>${recent}</div><h3><a href="${eventDetailUrl(event)}">${esc(event.title)}</a></h3><p class="artist-line">${artistLinks(event)}</p><dl class="event-meta"><div><dt>Date</dt><dd>${esc(formatDate(event))}</dd></div><div><dt>Venue</dt><dd>${esc(event.venue || "Venue to be announced")}</dd></div><div><dt>Location</dt><dd>${esc(location)}</dd></div></dl>${price}</div><div class="event-footer"><a class="official-button" href="${esc(event.officialUrl || event.ticketUrl || "#")}" target="_blank" rel="noopener">Official details</a><p class="source-line">Source: ${esc(sourceText(event))}</p></div></div>
+  </article>`;
+}
+
+function filterEvents(mode) {
+  const today = new Date();
+  if (mode === "festival") return EVENTS.filter(event => event.eventType === "festival");
+  if (mode === "month") return EVENTS.filter(event => { const date = parseLocalDate(event.startDate); return date && date.getFullYear() === today.getFullYear() && date.getMonth() === today.getMonth(); });
+  if (mode === "new") return EVENTS.filter(isNew);
+  return EVENTS;
+}
+
+function fillSelect(select, values, labeler = value => value) {
+  if (!select) return;
+  const first = select.querySelector("option");
+  select.innerHTML = first ? first.outerHTML : "";
+  values.forEach(value => select.insertAdjacentHTML("beforeend", `<option value="${esc(value)}">${esc(labeler(value))}</option>`));
 }
 
 function startOfDay(value) {
   return new Date(value.getFullYear(), value.getMonth(), value.getDate());
 }
 
-function addDays(value, amount) {
-  const result = new Date(value);
-  result.setDate(result.getDate() + amount);
-  return result;
-}
-
-function formatDate(dateText) {
-  const value = localDate(dateText);
-  if (!value) {
-    return "Date not provided";
-  }
-  return new Intl.DateTimeFormat("en-US", {
-    weekday: "short",
-    month: "short",
-    day: "numeric",
-    year: "numeric"
-  }).format(value);
-}
-
-function formatTime(timeText) {
-  if (!timeText) {
-    return "";
-  }
-  const match = String(timeText).match(/^(\d{1,2}):(\d{2})/);
-  if (!match) {
-    return String(timeText);
-  }
-  const value = new Date(2000, 0, 1, Number(match[1]), Number(match[2]));
-  return new Intl.DateTimeFormat("en-US", {
-    hour: "numeric",
-    minute: "2-digit"
-  }).format(value);
-}
-
-function formatUpdateTime(value) {
-  if (!value) {
-    return "Waiting for the first automated update";
-  }
-  const parsed = new Date(value);
-  if (Number.isNaN(parsed.getTime())) {
-    return "Update time unavailable";
-  }
-  return `Updated ${new Intl.DateTimeFormat("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-    hour: "numeric",
-    minute: "2-digit",
-    timeZoneName: "short"
-  }).format(parsed)}`;
-}
-
-function createElement(tag, className, text) {
-  const element = document.createElement(tag);
-  if (className) {
-    element.className = className;
-  }
-  if (text !== undefined) {
-    element.textContent = text;
-  }
-  return element;
-}
-
-function eventSearchText(event) {
-  return [
-    event.title,
-    event.venue,
-    event.city,
-    event.state,
-    ...(Array.isArray(event.artists) ? event.artists : [])
-  ].join(" ").toLowerCase();
-}
-
-function eventMatchesDateMode(event, mode) {
-  if (!mode || mode === "all") {
-    return true;
-  }
-  const start = localDate(event.startDate);
-  const end = localDate(event.endDate || event.startDate);
-  if (!start || !end) {
-    return false;
-  }
-
+function dateMatchesMode(startDate, endDate, mode) {
+  if (!mode || mode === "all") return true;
   const today = startOfDay(new Date());
-  let rangeStart = today;
-  let rangeEnd = today;
-
-  if (mode === "next30") {
-    rangeEnd = addDays(today, 30);
-  } else if (mode === "month") {
-    rangeStart = new Date(today.getFullYear(), today.getMonth(), 1);
-    rangeEnd = new Date(today.getFullYear(), today.getMonth() + 1, 0);
-  } else if (mode === "weekend") {
-    const day = today.getDay();
-    if (day === 6) {
-      rangeStart = today;
-      rangeEnd = addDays(today, 1);
-    } else if (day === 0) {
-      rangeStart = today;
-      rangeEnd = today;
-    } else {
-      rangeStart = addDays(today, (5 - day + 7) % 7);
-      rangeEnd = addDays(rangeStart, 2);
-    }
-  }
-
-  return start <= rangeEnd && end >= rangeStart;
+  const start = parseLocalDate(startDate);
+  const end = parseLocalDate(endDate) || start;
+  if (!start || !end) return false;
+  if (mode === "next30") { const last = new Date(today); last.setDate(last.getDate() + 30); return end >= today && start <= last; }
+  if (mode === "month") return start.getFullYear() === today.getFullYear() && start.getMonth() === today.getMonth();
+  if (mode === "weekend") { const friday = new Date(today); friday.setDate(friday.getDate() + ((5 - today.getDay() + 7) % 7)); const sunday = new Date(friday); sunday.setDate(sunday.getDate() + 2); return end >= friday && start <= sunday; }
+  return true;
 }
 
-function filteredEvents() {
-  return state.events.filter((event) => {
-    const searchMatch = !state.filters.search ||
-      eventSearchText(event).includes(state.filters.search.toLowerCase());
-    const artistMatch = !state.filters.artist ||
-      (event.artists || []).includes(state.filters.artist);
-    const stateMatch = !state.filters.state || event.state === state.filters.state;
-    const typeMatch = !state.filters.type || event.eventType === state.filters.type;
-    return searchMatch && artistMatch && stateMatch && typeMatch &&
-      eventMatchesDateMode(event, state.filters.dateMode);
-  });
-}
+function setupEventFilters(cards) {
+  const form = document.querySelector("[data-event-filters]");
+  if (!form) return;
+  const search = form.querySelector("[data-search-filter]");
+  const artist = form.querySelector("[data-artist-filter]");
+  const state = form.querySelector("[data-state-filter]");
+  const type = form.querySelector("[data-type-filter]");
+  const reset = form.querySelector("[data-reset-filters]");
+  const count = document.querySelector("[data-results-count]");
+  const empty = document.querySelector("[data-filtered-empty]");
+  const chips = [...document.querySelectorAll(".filter-chip[data-date-mode],.filter-chip[data-type-mode]")];
+  let dateMode = "all";
+  const params = new URLSearchParams(location.search);
+  if (params.get("artist") && artist) artist.value = normalize(params.get("artist"));
+  if (params.get("state") && state) state.value = params.get("state").toUpperCase();
 
-function badge(text, className = "") {
-  return createElement("span", `badge ${className}`.trim(), text);
-}
-
-function isJustAnnounced(event) {
-  if (!event.firstSeen || Date.now() < JUST_ANNOUNCED_START.getTime()) {
-    return false;
-  }
-  const firstSeen = new Date(event.firstSeen);
-  if (Number.isNaN(firstSeen.getTime()) || firstSeen < JUST_ANNOUNCED_START) {
-    return false;
-  }
-  const age = Date.now() - firstSeen.getTime();
-  return age >= 0 && age <= JUST_ANNOUNCED_DAYS * 24 * 60 * 60 * 1000;
-}
-
-function eventImageAlt(event) {
-  if (event.imageType === "event_artwork" || event.eventType === "festival") {
-    return `Official artwork for ${event.title || "this event"}`;
-  }
-  const artist = event.headliner || (event.artists || [])[0] || "Christian hip-hop artist";
-  return `${artist} artist image for ${event.title || "an upcoming show"}`;
-}
-
-function createEventImage(event) {
-  const media = createElement("div", "event-media");
-  const image = document.createElement("img");
-  image.className = `event-image event-image--${event.imageType || "fallback"}`;
-  image.loading = "lazy";
-  image.decoding = "async";
-  image.alt = eventImageAlt(event);
-  image.src = safeImageUrl(event.image) || "assets/event-fallback.webp";
-  image.style.objectPosition = safeObjectPosition(event.imagePosition);
-  image.addEventListener("error", () => {
-    if (!image.dataset.fallbackApplied) {
-      image.dataset.fallbackApplied = "true";
-      image.src = "assets/event-fallback.webp";
-      image.alt = `Neutral concert artwork for ${event.title || "this event"}`;
-      image.style.objectPosition = "center";
-    }
-  }, { once: true });
-  media.appendChild(image);
-  return media;
-}
-
-function createLineup(event) {
-  const artists = Array.isArray(event.artists) ? event.artists.filter(Boolean) : [];
-  if (!artists.length) {
-    return createElement("p", "artist-line", "Artist lineup not provided");
-  }
-  if (artists.length <= 4) {
-    return createElement("p", "artist-line", artists.join(" · "));
-  }
-
-  const details = createElement("details", "lineup-details");
-  const summary = createElement("summary", "artist-line");
-  summary.append(`${artists.slice(0, 4).join(" · ")} `);
-  summary.appendChild(createElement("span", "lineup-more", `+${artists.length - 4} more`));
-  details.appendChild(summary);
-  details.appendChild(createElement("p", "lineup-full", artists.join(" · ")));
-  return details;
-}
-
-function submissionEndpointIsConfigured() {
-  try {
-    const url = new URL(SUBMISSION_ENDPOINT);
-    return url.protocol === "https:" && url.hostname === "formspree.io" &&
-      /^\/f\/[A-Za-z0-9_-]+$/.test(url.pathname) &&
-      !SUBMISSION_ENDPOINT.includes("REPLACE_WITH_YOUR_FORM_ID");
-  } catch {
-    return false;
-  }
-}
-
-function setSubmissionMode(mode, event = null) {
-  elements.submissionForm.reset();
-  elements.submissionFeedback.textContent = "";
-  document.getElementById("submission-kind").value = mode === "correction" ? "Correction" : "New show";
-  elements.submissionTitle.textContent = mode === "correction" ? "Report a correction" : "Submit a verified show";
-  elements.submissionSubmit.textContent = mode === "correction" ? "Send correction" : "Send for review";
-
-  if (event) {
-    document.getElementById("submit-event-name").value = event.title || "";
-    document.getElementById("submit-date").value = event.startDate || "";
-    document.getElementById("submit-time").value = event.startTime || "";
-    document.getElementById("submit-venue").value = event.venue || "";
-    document.getElementById("submit-city").value = event.city || "";
-    document.getElementById("submit-state").value = event.state || "";
-    document.getElementById("submit-lineup").value = (event.artists || []).join(", ");
-    document.getElementById("submit-url").value = event.officialUrl || event.ticketUrl || "";
-    document.getElementById("submit-relationship").value = "Correction to an existing listing";
-    document.getElementById("submit-notes").value = "Please describe what should be corrected and include an official source when possible.";
-  }
-}
-
-function openSubmissionDialog(mode = "new", event = null) {
-  setSubmissionMode(mode, event);
-  if (typeof elements.submissionDialog.showModal === "function") {
-    elements.submissionDialog.showModal();
-  } else {
-    elements.submissionDialog.setAttribute("open", "");
-  }
-}
-function renderEvent(event) {
-  const card = createElement("article", "event-card");
-  card.appendChild(createEventImage(event));
-
-  const content = createElement("div", "event-content");
-  const main = createElement("div", "event-main");
-  const badges = createElement("div", "event-badges");
-  badges.appendChild(badge(event.eventType === "festival" ? "Festival" : "Concert", "gold"));
-  if (isJustAnnounced(event)) {
-    badges.appendChild(badge("Just announced", "announced"));
-  }
-  if (event.status && !["scheduled", "onsale"].includes(event.status)) {
-    badges.appendChild(badge(event.status, event.status === "cancelled" ? "cancelled" : ""));
-  }
-  if (event.stale) {
-    badges.appendChild(badge("Rechecking"));
-  }
-  main.appendChild(badges);
-  main.appendChild(createElement("h3", "", event.title || "Untitled event"));
-  main.appendChild(createLineup(event));
-
-  const meta = createElement("div", "event-meta");
-  const dateLine = [formatDate(event.startDate), formatTime(event.startTime)]
-    .filter(Boolean)
-    .join(" · ");
-  meta.appendChild(createElement("p", "", dateLine));
-  const venue = event.venue && event.venue !== "Venue not provided"
-    ? event.venue
-    : "Venue to be announced";
-  meta.appendChild(createElement(
-    "p",
-    "",
-    [venue, [event.city, event.state].filter(Boolean).join(", ")]
-      .filter(Boolean)
-      .join(" · ")
-  ));
-  if (event.price) {
-    meta.appendChild(createElement("p", "", `Listed price: ${event.price}`));
-  }
-  main.appendChild(meta);
-  content.appendChild(main);
-
-  const actions = createElement("div", "event-actions");
-  const ticketUrl = safeHttpUrl(event.ticketUrl || event.officialUrl);
-  if (ticketUrl && event.status !== "cancelled") {
-    const ticket = createElement("a", "ticket-link", "Official details");
-    ticket.href = ticketUrl;
-    ticket.target = "_blank";
-    ticket.rel = "noopener";
-    actions.appendChild(ticket);
-  } else {
-    actions.appendChild(createElement("span", "badge cancelled", "No active ticket link"));
-  }
-
-  const sourceBlock = createElement("div", "source-link");
-  const sources = (Array.isArray(event.sources) ? event.sources : [])
-    .filter((source) => source && safeHttpUrl(source.url));
-  if (sources.length) {
-    sourceBlock.append(sources.length === 1 ? "Source: " : "Sources: ");
-    sources.slice(0, 3).forEach((source, index) => {
-      if (index) {
-        sourceBlock.append(" · ");
-      }
-      const sourceAnchor = createElement("a", "", source.name || "Official source");
-      sourceAnchor.href = safeHttpUrl(source.url);
-      sourceAnchor.target = "_blank";
-      sourceAnchor.rel = "noopener";
-      sourceBlock.appendChild(sourceAnchor);
+  function apply() {
+    const needle = normalize(search?.value);
+    const artistValue = artist?.value || "";
+    const stateValue = state?.value || "";
+    const typeValue = type?.value || "";
+    let visible = 0;
+    cards.forEach(card => {
+      const names = (card.dataset.artists || "").split("|");
+      const match = (!needle || (card.dataset.search || "").includes(needle)) && (!artistValue || names.includes(artistValue)) && (!stateValue || card.dataset.state === stateValue) && (!typeValue || card.dataset.type === typeValue) && dateMatchesMode(card.dataset.date, card.dataset.endDate, dateMode);
+      card.hidden = !match;
+      if (match) visible += 1;
     });
-    if (sources.length > 3) {
-      sourceBlock.append(` · +${sources.length - 3} more`);
-    }
-  } else {
-    sourceBlock.textContent = event.sourceName ? `Source: ${event.sourceName}` : "Source verified";
+    if (count) count.textContent = `${visible} show${visible === 1 ? "" : "s"}`;
+    if (empty) empty.hidden = visible !== 0;
   }
-  actions.appendChild(sourceBlock);
 
-  const correction = createElement("button", "correction-link", "Report a correction");
-  correction.type = "button";
-  correction.addEventListener("click", () => openSubmissionDialog("correction", event));
-  actions.appendChild(correction);
-
-  content.appendChild(actions);
-  card.appendChild(content);
-  return card;
+  [search, artist, state, type].forEach(control => control?.addEventListener(control === search ? "input" : "change", apply));
+  chips.forEach(chip => chip.addEventListener("click", () => {
+    if (chip.dataset.typeMode) { if (type) type.value = chip.dataset.typeMode; dateMode = "all"; }
+    else { dateMode = chip.dataset.dateMode || "all"; if (type) type.value = ""; }
+    chips.forEach(item => item.classList.remove("active"));
+    chip.classList.add("active");
+    apply();
+  }));
+  reset?.addEventListener("click", () => { form.reset(); dateMode = "all"; chips.forEach(item => item.classList.toggle("active", item.dataset.dateMode === "all")); apply(); });
+  apply();
 }
 
-function render() {
-  const events = filteredEvents();
-  elements.events.replaceChildren();
-  elements.resultsCount.textContent = `${events.length} ${events.length === 1 ? "show" : "shows"}`;
+function renderEventList() {
+  const grid = document.querySelector("[data-event-grid]");
+  if (!grid) return;
+  const mode = document.querySelector("[data-event-list-mode]")?.dataset.eventListMode || "all";
+  const list = filterEvents(mode).sort((a, b) => (a.startDate || "").localeCompare(b.startDate || "") || (a.startTime || "").localeCompare(b.startTime || ""));
+  grid.innerHTML = list.map(eventCard).join("");
+  document.querySelector("[data-loading-panel]")?.remove();
+  const artistValues = [...new Set(list.flatMap(event => event.artists || []).map(normalize))].sort();
+  const displayByNorm = new Map(list.flatMap(event => event.artists || []).map(name => [normalize(name), name]));
+  fillSelect(document.querySelector("[data-artist-filter]"), artistValues, value => displayByNorm.get(value) || value);
+  const states = [...new Set(list.map(event => event.state).filter(Boolean))].sort();
+  fillSelect(document.querySelector("[data-state-filter]"), states, state => STATE_NAMES[state] || state);
+  setupEventFilters([...grid.querySelectorAll("[data-event-card]")]);
+  if (mode === "month") {
+    const now = new Date();
+    const label = new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric" }).format(now);
+    const title = document.querySelector("[data-current-month-title]");
+    if (title) title.textContent = `Christian Hip-Hop Shows in ${label}`;
+    document.querySelector("[data-month-show-count]")?.replaceChildren(String(list.length));
+    document.querySelector("[data-month-state-count]")?.replaceChildren(String(new Set(list.map(event => event.state).filter(Boolean)).size));
+    document.querySelector("[data-month-festival-count]")?.replaceChildren(String(list.filter(event => event.eventType === "festival").length));
+  }
+}
 
-  if (!events.length) {
-    elements.events.appendChild(createElement(
-      "div",
-      "empty-state",
-      "No verified shows match these filters. Clear the filters or check again after the next daily update."
-    ));
+function friendlyCategory(value) {
+  return ({core:"Core CHH",reach:"Reach Records",crossover:"Crossover",group:"Group",legacy:"Legacy"})[value] || "CHH artist";
+}
+
+function spotifyInfo(artist) {
+  const directProfile = artist.spotifyProfile || (artist.spotifyId ? `https://open.spotify.com/artist/${encodeURIComponent(artist.spotifyId)}` : "");
+  if (directProfile) return { url: directProfile, exact: true, status: "Open verified Spotify profile" };
+  return { url: "", exact: false, status: "Spotify link pending verification" };
+}
+
+function instagramInfo(artist) {
+  return artist.instagramProfile ? { url: artist.instagramProfile, status: "Open verified Instagram profile" } : { url: "", status: "Instagram link pending verification" };
+}
+
+function youtubeInfo(artist) {
+  const official = artist.youtubeProfile || (/youtu\.be|youtube\.com/i.test(artist.officialProfile || "") ? artist.officialProfile : "");
+  return official ? { url: official, status: "Open verified YouTube profile" } : { url: "", status: "YouTube link pending verification" };
+}
+
+function websiteInfo(artist) {
+  const candidate = artist.website || artist.officialWebsite || artist.officialProfile || "";
+  const isPlatform = /instagram\.com|open\.spotify\.com|youtu\.be|youtube\.com|music\.apple\.com|bandsintown\.com/i.test(candidate);
+  return candidate && !isPlatform ? { url: candidate, status: "Open official website" } : { url: "", status: "Website link pending verification" };
+}
+
+function compactPlatformLink(label, info) {
+  if (!info.url) return `<span class="artist-platform-link is-missing" title="${esc(info.status)}">${esc(label)}</span>`;
+  return `<a class="artist-platform-link" href="${esc(info.url)}" target="_blank" rel="noopener" title="${esc(info.status)}">${esc(label)}</a>`;
+}
+
+function renderArtistDirectory() {
+  const grid = document.querySelector("[data-artist-grid]");
+  if (!grid) return;
+  const byArtist = new Map();
+  EVENTS.forEach(event => (event.artists || []).forEach(name => {
+    const key = normalize(name);
+    if (!byArtist.has(key)) byArtist.set(key, []);
+    byArtist.get(key).push(event);
+  }));
+  const enabled = ARTISTS.filter(artist => artist.enabled !== false).sort((a, b) => (a.rosterOrder || 9999) - (b.rosterOrder || 9999) || a.name.localeCompare(b.name));
+  grid.innerHTML = enabled.map(artist => {
+    const events = byArtist.get(normalize(artist.name)) || [];
+    const instagram = instagramInfo(artist);
+    const spotify = spotifyInfo(artist);
+    return `<article class="artist-card artist-card-text" data-artist-card data-search="${esc(normalize([artist.name, ...(artist.aliases || []), artist.label].join(" ")))}" data-has-shows="${events.length > 0}">
+      <a class="artist-visual artist-visual-empty" href="${artistProfileUrl(artist.name)}" aria-label="View ${esc(artist.name)}"></a>
+      <div class="artist-card-body"><h2><a href="${artistProfileUrl(artist.name)}">${esc(artist.name)}</a></h2><p>${events.length} upcoming show${events.length === 1 ? "" : "s"}</p><div class="artist-card-links">${compactPlatformLink("Instagram", instagram)}${compactPlatformLink("Spotify", spotify)}</div><div class="artist-card-footer"><a class="text-link" href="${artistProfileUrl(artist.name)}">View artist</a></div></div>
+    </article>`;
+  }).join("");
+  document.querySelector("[data-artist-loading]")?.remove();
+  const cards = [...grid.querySelectorAll("[data-artist-card]")];
+  const search = document.querySelector("[data-artist-search]");
+  const show = document.querySelector("[data-has-shows-filter]");
+  const count = document.querySelector("[data-artist-count]");
+  const empty = document.querySelector("[data-artist-empty]");
+  function apply() {
+    const needle = normalize(search?.value);
+    const requireShows = Boolean(show?.checked);
+    let visible = 0;
+    cards.forEach(card => {
+      const ok = (!needle || (card.dataset.search || "").includes(needle)) && (!requireShows || card.dataset.hasShows === "true");
+      card.hidden = !ok;
+      if (ok) visible += 1;
+    });
+    if (count) count.textContent = `${visible} artist${visible === 1 ? "" : "s"}`;
+    if (empty) empty.hidden = visible !== 0;
+  }
+  search?.addEventListener("input", apply);
+  show?.addEventListener("change", apply);
+  apply();
+}
+
+function platformCard(label, info) {
+  if (!info.url) return `<div class="profile-platform-card is-missing"><span class="profile-platform-label">${esc(label)}</span><span class="profile-platform-status">${esc(info.status)}</span></div>`;
+  return `<a class="profile-platform-card" href="${esc(info.url)}" target="_blank" rel="noopener"><span class="profile-platform-label">${esc(label)}</span><span class="profile-platform-status">${esc(info.status)}</span></a>`;
+}
+
+function renderArtistProfile() {
+  const root = document.querySelector("[data-artist-profile]");
+  if (!root) return;
+  const name = new URLSearchParams(location.search).get("name") || "";
+  const artist = artistConfig(name);
+  if (!artist) {
+    root.innerHTML = `<section class="page-hero hero-compact"><h1>Artist not found.</h1><a class="primary-button" href="${BASE}artists/">Return to artists</a></section>`;
     return;
   }
-
-  const fragment = document.createDocumentFragment();
-  events.forEach((event) => fragment.appendChild(renderEvent(event)));
-  elements.events.appendChild(fragment);
+  const events = EVENTS.filter(event => (event.artists || []).some(item => normalize(item) === normalize(artist.name))).sort((a, b) => (a.startDate || "").localeCompare(b.startDate || ""));
+  root.innerHTML = `<section class="profile-hero profile-hero-no-image"><div><p class="eyebrow">Artist profile</p><h1>${esc(artist.name)}</h1><p class="profile-image-note">Artist image pending verification.</p><div class="profile-platforms">${platformCard("Instagram", instagramInfo(artist))}${platformCard("Spotify", spotifyInfo(artist))}${platformCard("YouTube", youtubeInfo(artist))}${platformCard("Website", websiteInfo(artist))}</div><p class="profile-count">${events.length} upcoming U.S. show${events.length === 1 ? "" : "s"} currently listed.</p></div></section><section class="calendar"><div class="calendar-heading"><div><p class="eyebrow">Verified listings</p><h2>Upcoming ${esc(artist.name)} Shows</h2></div><p class="results-count">${events.length} shows</p></div><div class="event-grid">${events.map(eventCard).join("") || '<div class="empty-panel">No upcoming U.S. shows are currently confirmed.</div>'}</div></section>`;
+  document.title = `${artist.name} Shows | The Kingdom Circuit`;
+  ensureCanonical(`${location.origin}${BASE}artists/profile/?name=${encodeURIComponent(artist.name)}`);
+  setMetaDescription(`Find verified upcoming U.S. shows and official links for ${artist.name}.`);
 }
 
-function populateSelect(select, values) {
-  const existing = new Set([...select.options].map((option) => option.value));
-  values.forEach((value) => {
-    if (!value || existing.has(value)) {
-      return;
-    }
-    select.appendChild(new Option(value, value));
-    existing.add(value);
-  });
+function renderEventDetail() {
+  const root = document.querySelector("[data-event-detail]");
+  if (!root) return;
+  const id = new URLSearchParams(location.search).get("id");
+  const event = EVENTS.find(item => item.id === id);
+  if (!event) {
+    root.innerHTML = `<section class="page-hero hero-compact"><h1>Event not found.</h1><a class="primary-button" href="${BASE}shows/">View all shows</a></section>`;
+    return;
+  }
+  const img = eventImage(event);
+  const locationText = [event.city, event.state].filter(Boolean).join(", ");
+  root.innerHTML = `<article class="event-detail"><div class="event-detail-media"><img class="${imageClass(event)}" src="${esc(img)}" alt="${esc(event.title)}" style="object-position:${esc(imagePosition(event))}" onerror="this.onerror=null;this.className='event-artwork';this.src='${FALLBACK_EVENT_IMAGE}';"></div><div class="event-detail-copy"><p class="eyebrow">${esc(event.eventType === "festival" ? "Festival" : "Concert")}</p><h1>${esc(event.title)}</h1><p class="artist-line">${artistLinks(event)}</p><dl class="detail-list"><div><dt>Date</dt><dd>${esc(formatDate(event))}</dd></div><div><dt>Venue</dt><dd>${esc(event.venue || "Venue to be announced")}</dd></div><div><dt>Location</dt><dd>${esc(locationText || "Location to be announced")}</dd></div>${event.price ? `<div><dt>Price</dt><dd>${esc(event.price)}</dd></div>` : ""}<div><dt>Source</dt><dd>${esc(sourceText(event))}</dd></div></dl><a class="primary-button" href="${esc(event.officialUrl || event.ticketUrl || "#")}" target="_blank" rel="noopener">Official details</a><p class="disclaimer">Event details, availability, pricing, and lineups may change. Confirm final information with the official organizer or ticket provider before purchasing or traveling.</p></div></article>`;
+  document.title = `${event.title} | The Kingdom Circuit`;
+  ensureCanonical(`${location.origin}${BASE}event/?id=${encodeURIComponent(event.id)}`);
+  setMetaDescription(`${event.title} in ${locationText || "the United States"}. View verified event details and the official source.`);
 }
 
-function updateQuickFilterState() {
-  elements.quickFilters.forEach((button) => {
-    const dateActive = button.dataset.dateMode && button.dataset.dateMode === state.filters.dateMode;
-    const festivalActive = button.dataset.typeMode === "festival" && state.filters.type === "festival";
-    button.classList.toggle("active", Boolean(dateActive || festivalActive));
-    button.setAttribute("aria-pressed", String(Boolean(dateActive || festivalActive)));
-  });
+
+function ensureCanonical(url) {
+  let link = document.querySelector('link[rel="canonical"]');
+  if (!link) {
+    link = document.createElement("link");
+    link.rel = "canonical";
+    document.head.appendChild(link);
+  }
+  link.href = url;
 }
 
-function configureFilters() {
-  const artists = [...new Set(state.events.flatMap((event) => event.artists || []))]
-    .filter(Boolean)
-    .sort((a, b) => a.localeCompare(b));
-  const states = [...new Set(state.events.map((event) => event.state))]
-    .filter(Boolean)
-    .sort((a, b) => a.localeCompare(b));
-
-  populateSelect(elements.artist, artists);
-  populateSelect(elements.state, states);
-
-  elements.search.addEventListener("input", (event) => {
-    state.filters.search = event.target.value.trim();
-    render();
-  });
-  elements.artist.addEventListener("change", (event) => {
-    state.filters.artist = event.target.value;
-    render();
-  });
-  elements.state.addEventListener("change", (event) => {
-    state.filters.state = event.target.value;
-    render();
-  });
-  elements.type.addEventListener("change", (event) => {
-    state.filters.type = event.target.value;
-    updateQuickFilterState();
-    render();
-  });
-  elements.quickFilters.forEach((button) => {
-    button.addEventListener("click", () => {
-      if (button.dataset.dateMode) {
-        state.filters.dateMode = button.dataset.dateMode;
-      }
-      if (button.dataset.typeMode === "festival") {
-        state.filters.type = state.filters.type === "festival" ? "" : "festival";
-        elements.type.value = state.filters.type;
-      }
-      updateQuickFilterState();
-      render();
-    });
-  });
-  elements.reset.addEventListener("click", () => {
-    state.filters = { search: "", artist: "", state: "", type: "", dateMode: "all" };
-    elements.search.value = "";
-    elements.artist.value = "";
-    elements.state.value = "";
-    elements.type.value = "";
-    updateQuickFilterState();
-    render();
-  });
+function setMetaDescription(text) {
+  let meta = document.querySelector('meta[name="description"]');
+  if (!meta) {
+    meta = document.createElement("meta");
+    meta.name = "description";
+    document.head.appendChild(meta);
+  }
+  meta.content = text;
 }
 
-async function loadStatus() {
+async function renderCalendarStatus() {
+  const root = document.querySelector("[data-calendar-status]");
+  if (!root) return;
   try {
-    const response = await fetch(`run-status.json?v=${Date.now()}`, { cache: "no-store" });
-    if (!response.ok) {
-      throw new Error(`Status request failed: ${response.status}`);
-    }
+    const response = await fetch(RUN_STATUS_URL, { cache: "no-store" });
+    if (!response.ok) throw new Error(String(response.status));
     const status = await response.json();
-    const warnings = Array.isArray(status.warnings) ? status.warnings : [];
-    const errors = Array.isArray(status.errors) ? status.errors : [];
-    let severity = "ok";
-    if (errors.length || ["partial", "needs_configuration", "error"].includes(status.status)) {
-      severity = "error";
-    } else if (warnings.length || status.status === "warning") {
-      severity = "warning";
-    }
-
-    elements.lastUpdated.textContent = formatUpdateTime(status.lastSuccessfulUpdate || status.lastAttempt);
-    elements.statusDot.className = `status-dot ${severity}`;
-    elements.statusLabel.textContent = severity === "ok"
-      ? "Calendar current"
-      : severity === "warning"
-        ? "Calendar updated"
-        : "Update issue";
-
-    elements.notice.hidden = !(errors.length || warnings.length);
-    if (!elements.notice.hidden) {
-      elements.notice.className = `notice ${severity}`;
-      elements.notice.textContent = errors.length
-        ? `The latest update encountered ${errors.length} ${errors.length === 1 ? "error" : "errors"}. Verified listings remain available while the collector retries.`
-        : `The calendar updated, but ${warnings.length} source ${warnings.length === 1 ? "check was" : "checks were"} temporarily unavailable. Published listings remain verified.`;
-      elements.notice.title = [...errors, ...warnings].slice(0, 5).join("\n");
-    }
-  } catch {
-    elements.lastUpdated.textContent = "Update status unavailable";
-    elements.statusDot.className = "status-dot error";
-    elements.statusLabel.textContent = "Status unavailable";
-  }
-}
-
-function configureSubmissionDialog() {
-  elements.openSubmit.addEventListener("click", () => openSubmissionDialog("new"));
-
-  elements.submissionDialog.addEventListener("click", (event) => {
-    if (event.target === elements.submissionDialog && typeof elements.submissionDialog.close === "function") {
-      elements.submissionDialog.close();
-    }
-  });
-
-  elements.submissionForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    elements.submissionFeedback.className = "form-feedback";
-
-    if (!submissionEndpointIsConfigured()) {
-      elements.submissionFeedback.textContent = "Email submissions are being configured. Please try again shortly.";
-      return;
-    }
-
-    if (!elements.submissionForm.reportValidity()) {
-      return;
-    }
-
-    const officialUrl = safeHttpUrl(document.getElementById("submit-url").value.trim());
-    if (!officialUrl) {
-      elements.submissionFeedback.textContent = "Enter a valid official URL beginning with https://";
-      return;
-    }
-
-    const formData = new FormData(elements.submissionForm);
-    const eventName = document.getElementById("submit-event-name").value.trim();
-    formData.set("official_url", officialUrl);
-    formData.set("state", document.getElementById("submit-state").value.trim().toUpperCase());
-    formData.set("page_url", window.location.href);
-    formData.set("submitted_at", new Date().toISOString());
-    formData.set("_subject", `Kingdom Circuit ${formData.get("submission_type")}: ${eventName}`);
-
-    const originalText = elements.submissionSubmit.textContent;
-    elements.submissionSubmit.disabled = true;
-    elements.submissionSubmit.textContent = "Sending...";
-    elements.submissionFeedback.textContent = "";
-
-    try {
-      const response = await fetch(SUBMISSION_ENDPOINT, {
-        method: "POST",
-        body: formData,
-        headers: { "Accept": "application/json" }
-      });
-      if (!response.ok) {
-        throw new Error(`Submission failed: ${response.status}`);
-      }
-      elements.submissionFeedback.className = "form-feedback success";
-      elements.submissionFeedback.textContent = "Thank you. The show information was sent for review.";
-      elements.submissionForm.reset();
-      setTimeout(() => {
-        if (typeof elements.submissionDialog.close === "function") {
-          elements.submissionDialog.close();
-        }
-      }, 1400);
-    } catch (error) {
-      console.error(error);
-      elements.submissionFeedback.textContent = "The submission could not be sent. Please try again in a few minutes.";
-    } finally {
-      elements.submissionSubmit.disabled = false;
-      elements.submissionSubmit.textContent = originalText;
-    }
-  });
-}
-async function loadEvents() {
-  try {
-    const response = await fetch(`events.json?v=${Date.now()}`, { cache: "no-store" });
-    if (!response.ok) {
-      throw new Error(`Event request failed: ${response.status}`);
-    }
-    const payload = await response.json();
-    if (!Array.isArray(payload)) {
-      throw new Error("events.json must contain a JSON array");
-    }
-    state.events = payload
-      .filter((event) => event && typeof event === "object")
-      .sort((a, b) => {
-        const left = `${a.startDate || "9999-12-31"} ${a.startTime || "23:59"}`;
-        const right = `${b.startDate || "9999-12-31"} ${b.startTime || "23:59"}`;
-        return left.localeCompare(right);
-      });
-    configureFilters();
-    updateQuickFilterState();
-    render();
+    const updated = status.lastSuccessfulUpdate || status.lastAttempt;
+    const updatedText = updated
+      ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit", timeZoneName: "short" }).format(new Date(updated))
+      : "Update time unavailable";
+    const warnings = Number(status.warningCount || 0);
+    const published = Number(status.eventsPublished || EVENTS.length || 0);
+    root.innerHTML = `<span><strong>Calendar updated:</strong> ${esc(updatedText)}</span><span>${published} automated listing${published === 1 ? "" : "s"}</span>${warnings ? `<span class="footer-source-warning">${warnings} source check${warnings === 1 ? "" : "s"} unavailable; published listings remain verified.</span>` : ""}`;
+    root.hidden = false;
   } catch (error) {
-    elements.resultsCount.textContent = "Unable to load";
-    elements.events.replaceChildren(createElement(
-      "div",
-      "empty-state",
-      "The show list could not be loaded. Refresh the page or check the latest GitHub Actions run."
-    ));
-    console.error(error);
+    console.warn("Calendar status was unavailable.", error);
+    root.hidden = true;
   }
 }
 
-configureSubmissionDialog();
-Promise.all([loadStatus(), loadEvents()]);
+function setMenuOpen(open) {
+  const toggle = document.querySelector(".menu-toggle");
+  const drawer = document.querySelector(".menu-drawer");
+  const backdrop = document.querySelector(".menu-backdrop");
+  if (!toggle || !drawer || !backdrop) return;
+  toggle.setAttribute("aria-expanded", String(open));
+  drawer.setAttribute("aria-hidden", String(!open));
+  drawer.classList.toggle("open", open);
+  backdrop.hidden = !open;
+  document.body.classList.toggle("menu-open", open);
+}
+
+document.querySelector(".menu-toggle")?.addEventListener("click", () => setMenuOpen(document.querySelector(".menu-toggle")?.getAttribute("aria-expanded") !== "true"));
+document.querySelector(".menu-close")?.addEventListener("click", () => setMenuOpen(false));
+document.querySelector(".menu-backdrop")?.addEventListener("click", () => setMenuOpen(false));
+document.addEventListener("keydown", event => { if (event.key === "Escape") setMenuOpen(false); });
+
+function setupSubmissionForm() {
+  const form = document.querySelector("[data-submission-form]");
+  if (!form) return;
+  const feedback = form.querySelector("[data-submission-feedback]");
+  const submit = form.querySelector("[data-submission-submit]");
+  const kind = form.querySelector("[data-submission-kind]");
+  const eventName = form.querySelector("[data-event-name]");
+  const buttons = [...form.querySelectorAll("[data-submission-mode]")];
+  const params = new URLSearchParams(location.search);
+  function setMode(value) {
+    if (kind) kind.value = value;
+    buttons.forEach(button => button.classList.toggle("active", button.dataset.submissionMode === value));
+    if (submit) submit.textContent = value === "Correction" ? "Send Correction" : "Send for Review";
+  }
+  buttons.forEach(button => button.addEventListener("click", () => setMode(button.dataset.submissionMode || "New show")));
+  if ((params.get("type") || "").includes("correction")) setMode("Correction");
+  if (params.get("event") && eventName) eventName.value = params.get("event");
+  form.addEventListener("submit", async event => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    if (feedback) feedback.textContent = "Sending submission...";
+    if (submit) submit.disabled = true;
+    try {
+      const response = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+      if (!response.ok) throw new Error();
+      form.reset();
+      setMode("New show");
+      if (feedback) feedback.textContent = "Submission received. The Kingdom Circuit will review the information before publishing or updating the event.";
+    } catch {
+      if (feedback) feedback.textContent = "The submission could not be sent. Please try again in a few minutes.";
+    } finally {
+      if (submit) submit.disabled = false;
+    }
+  });
+}
+
+async function boot() {
+  try {
+    const [liveEvents, liveArtists, supplemental] = await Promise.all([
+      loadJson(LIVE_EVENTS_URL, "events.json"),
+      loadJson(LIVE_ARTISTS_URL, "config/artists.json"),
+      loadOptionalJson(SUPPLEMENTAL_EVENTS_URL)
+    ]);
+    ARTISTS = applyArtistOverrides(liveArtists);
+    EVENTS = mergeEventLists(liveEvents, supplemental);
+  } catch (error) {
+    console.error(error);
+    document.querySelectorAll(".loading-panel").forEach(element => { element.textContent = "The calendar could not load its data. Please refresh in a moment."; });
+    return;
+  }
+  renderEventList();
+  renderArtistDirectory();
+  renderArtistProfile();
+  renderEventDetail();
+  setupSubmissionForm();
+  renderCalendarStatus();
+}
+
+boot();

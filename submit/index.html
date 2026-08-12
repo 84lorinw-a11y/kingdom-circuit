@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="Submit a verified Christian hip-hop event.">
+  <meta name="theme-color" content="#080808">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css?v=10.3">
+  <script src="/app.js?v=10.3" defer></script>
+  <title>Submit a CHH Show | The Kingdom Circuit</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2KK9XF4TJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N2KK9XF4TJ');
+  </script>
+  <link rel="canonical" href="https://kingdomcircuit.com/submit/">
+</head>
+<body data-page="submit">
+<header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="The Kingdom Circuit home">
+        <img src="/assets/logo.png" alt="The Kingdom Circuit — Christian hip-hop, live and connected">
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="menu-backdrop" hidden></div>
+  <nav class="menu-drawer" id="site-menu" aria-label="Primary navigation" aria-hidden="true">
+    <div class="menu-drawer-head"><span>Explore Kingdom Circuit</span><button class="menu-close" type="button" aria-label="Close navigation">×</button></div>
+    <div class="menu-links"><a href="/">Home</a><a href="/shows/">All Shows</a><a href="/shows/this-month/">This Month</a><a href="/festivals/">Festivals</a><a href="/new-shows/">New Shows</a><a href="/artists/">Artists</a><a href="/submit/" aria-current="page">Submit a Show</a></div>
+    <p class="menu-mission">Christian hip-hop, live and connected.</p>
+  </nav>
+  <main>
+<section class="page-hero hero-compact"><p class="eyebrow">Help build the calendar</p><h1>Submit a CHH Show</h1><p class="hero-text">Know about a Christian hip-hop concert, festival, tour date, church-hosted music event, or campus performance that is missing? Send us the official details.</p></section>
+<section class="submission-section">
+  <form class="submission-form" data-submission-form action="https://formspree.io/f/mljreawj" method="POST" novalidate>
+    <input data-submission-kind name="submission_type" type="hidden" value="New show">
+    <div class="quick-filters"><button class="filter-chip active" type="button" data-submission-mode="New show">Submit a new show</button><button class="filter-chip" type="button" data-submission-mode="Correction">Report a correction</button></div>
+    <div class="form-grid">
+      <label class="field"><span>Your name</span><input name="submitter_name" required></label>
+      <label class="field"><span>Your email</span><input name="email" type="email" required></label>
+      <label class="field field-wide"><span>Event name</span><input data-event-name name="event_name" required></label>
+      <label class="field"><span>Date</span><input name="date" type="date" required></label>
+      <label class="field"><span>Local time</span><input name="local_time" type="time"></label>
+      <label class="field field-wide"><span>Venue</span><input name="venue" required></label>
+      <label class="field"><span>City</span><input name="city" required></label>
+      <label class="field"><span>State</span><input name="state" maxlength="2" placeholder="TX" required></label>
+      <label class="field field-wide"><span>Confirmed artist lineup</span><textarea name="artist_lineup" required></textarea></label>
+      <label class="field field-wide"><span>Official event, ticket, or social URL</span><input name="official_url" type="url" placeholder="https://" required></label>
+      <label class="field field-wide"><span>Official artwork URL (optional)</span><input name="artwork_url" type="url" placeholder="https://"></label>
+      <label class="field field-wide"><span>Your relationship to the event</span><input name="relationship" placeholder="Promoter, artist team, venue, fan…"></label>
+      <label class="field field-wide"><span>Additional details (optional)</span><textarea name="details"></textarea></label>
+    </div>
+    <p class="form-note">Every submission is reviewed before publication. Submitting an event does not guarantee inclusion.</p>
+    <button class="primary-button" type="submit" data-submission-submit>Send for Review</button>
+    <p class="form-feedback" data-submission-feedback aria-live="polite"></p>
+  </form>
+</section></main>
+  <footer class="site-footer">
+    <div><strong>The Kingdom Circuit</strong><p>Christian hip-hop, live and connected.</p></div>
+    <div class="footer-links"><a href="/shows/">All Shows</a><a href="/artists/">Artists</a><a href="/festivals/">Festivals</a><a href="/submit/">Submit a Show</a></div>
+    <p class="footer-note">Event details may change. Confirm final information with the official organizer or ticket seller before purchasing or traveling.</p><div id="notice" class="footer-status" data-calendar-status hidden></div>
+  </footer>
+</body>
+</html>

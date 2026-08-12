@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="Find verified Christian hip-hop concerts and festivals.">
+  <meta name="theme-color" content="#080808">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css?v=10.3">
+  <script src="/app.js?v=10.3" defer></script>
+  <title>Christian Hip-Hop Shows &amp; Festivals | The Kingdom Circuit</title>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2KK9XF4TJ"></script>
   <script>
@@ -9,182 +18,69 @@
     gtag('js', new Date());
     gtag('config', 'G-N2KK9XF4TJ');
   </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover upcoming Christian hip-hop concerts, festivals, and tour dates across the United States.">
-  <meta name="theme-color" content="#080808">
-  <title>The Kingdom Circuit | Christian Hip-Hop Shows</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+  <link rel="canonical" href="https://kingdomcircuit.com/">
 </head>
-<body>
-  <header class="site-header">
+<body data-page="home">
+<header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="./" aria-label="The Kingdom Circuit home">
-        <img src="assets/logo.png" alt="The Kingdom Circuit — Christian hip-hop, live and connected">
+      <a class="brand" href="/" aria-label="The Kingdom Circuit home">
+        <img src="/assets/logo.png" alt="The Kingdom Circuit - Christian hip-hop, live and connected">
       </a>
-      <div class="header-actions">
-        <button class="header-action" id="open-submit" type="button">Submit a show</button>
-      </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation"><span></span><span></span><span></span></button>
     </div>
   </header>
-
+  <div class="menu-backdrop" hidden></div>
+  <nav class="menu-drawer" id="site-menu" aria-label="Primary navigation" aria-hidden="true">
+    <div class="menu-drawer-head"><span>Explore Kingdom Circuit</span><button class="menu-close" type="button" aria-label="Close navigation">x</button></div>
+    <div class="menu-links"><a href="/" aria-current="page">Home</a><a href="/shows/">All Shows</a><a href="/shows/this-month/">This Month</a><a href="/festivals/">Festivals</a><a href="/new-shows/">New Shows</a><a href="/artists/">Artists</a><a href="/submit/">Submit a Show</a></div>
+    <p class="menu-mission">Christian hip-hop, live and connected.</p>
+  </nav>
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow">Live event discovery</p>
-        <h1 id="hero-title">Never miss a Christian hip-hop show.</h1>
-        <p class="hero-text">Search upcoming concerts and festivals featuring Christian hip-hop and faith-driven artists performing across the U.S.</p>
-      </div>
-      <div class="update-card" aria-live="polite">
-        <span class="status-dot" id="status-dot"></span>
-        <div>
-          <span class="update-label" id="status-label">Calendar status</span>
-          <strong id="last-updated">Loading update status...</strong>
-        </div>
-      </div>
-    </section>
-
-    <section class="calendar" aria-labelledby="calendar-title">
-      <div class="calendar-heading">
-        <div>
-          <p class="eyebrow">Verified listings</p>
-          <h2 id="calendar-title">Upcoming shows</h2>
-        </div>
-        <p class="results-count" id="results-count">Loading shows...</p>
-      </div>
-
-      <div class="filter-dock">
-        <div class="quick-filters" role="group" aria-label="Quick event filters">
-          <button class="filter-chip active" type="button" data-date-mode="all">All dates</button>
-          <button class="filter-chip" type="button" data-date-mode="weekend">This weekend</button>
-          <button class="filter-chip" type="button" data-date-mode="next30">Next 30 days</button>
-          <button class="filter-chip" type="button" data-date-mode="month">This month</button>
-          <button class="filter-chip" type="button" data-type-mode="festival">Festivals</button>
-        </div>
-
-        <form class="filters" id="filters" role="search">
-          <label class="field field-search">
-            <span>Search</span>
-            <input id="search-filter" type="search" placeholder="Artist, city, venue, or event" autocomplete="off">
-          </label>
-          <label class="field">
-            <span>Artist</span>
-            <select id="artist-filter">
-              <option value="">All artists</option>
-            </select>
-          </label>
-          <label class="field">
-            <span>State</span>
-            <select id="state-filter">
-              <option value="">All states</option>
-            </select>
-          </label>
-          <label class="field">
-            <span>Type</span>
-            <select id="type-filter">
-              <option value="">All events</option>
-              <option value="concert">Concerts</option>
-              <option value="festival">Festivals</option>
-            </select>
-          </label>
-          <button class="reset-button" id="reset-filters" type="button">Clear filters</button>
-        </form>
-      </div>
-
-      <div id="events" class="event-grid" aria-live="polite">
-        <div class="loading-card">Loading upcoming shows...</div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div>
-      <strong>The Kingdom Circuit</strong>
-      <p>Christian hip-hop, live and connected.</p>
+<section class="page-hero home-hero">
+  <p class="eyebrow">Christian hip-hop, live and connected</p>
+  <h1>Find Christian hip-hop shows.</h1>
+  <p class="mission-statement">The Kingdom Circuit exists to connect people with CHH music, concerts, festivals, and community so the music reaches farther and more people have the opportunity to hear the gospel.</p>
+  <p class="hero-text">Discover Christian hip-hop concerts, festivals, tours, and independent events across the United States. Search by artist, location, date, or event type, then connect directly to the official event or ticket source.</p>
+  <p class="trust-line">Updated daily - U.S. music performances only - Official sources prioritized</p>
+  <div class="home-paths" aria-label="Explore The Kingdom Circuit">
+    <a class="home-path-card" href="/shows/this-month/">
+      <span class="home-path-number">01</span><span class="home-path-title">This Month</span><span class="home-path-arrow" aria-hidden="true">&rarr;</span>
+    </a>
+    <a class="home-path-card" href="/artists/">
+      <span class="home-path-number">02</span><span class="home-path-title">Artists</span><span class="home-path-arrow" aria-hidden="true">&rarr;</span>
+    </a>
+    <a class="home-path-card" href="/festivals/">
+      <span class="home-path-number">03</span><span class="home-path-title">Festivals</span><span class="home-path-arrow" aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+</section>
+<section class="calendar" id="calendar" data-event-list-mode="all" aria-labelledby="calendar-title">
+  <div class="calendar-heading"><div><p class="eyebrow">Verified listings</p><h2 id="calendar-title">Find Your Next Show</h2><p class="section-intro">Browse the complete live Kingdom Circuit calendar. Use the filters to search by artist, state, date, festival, or event type.</p></div><p class="results-count" data-results-count>Loading...</p></div>
+  <div class="filter-dock" data-filter-dock>
+    <div class="quick-filters" role="group" aria-label="Quick event filters">
+      <button class="filter-chip active" type="button" data-date-mode="all">All dates</button>
+      <button class="filter-chip" type="button" data-date-mode="weekend">This weekend</button>
+      <button class="filter-chip" type="button" data-date-mode="next30">Next 30 days</button>
+      <button class="filter-chip" type="button" data-date-mode="month">This month</button>
+      <button class="filter-chip" type="button" data-type-mode="festival">Festivals</button>
     </div>
-    <p class="disclaimer">Event details may change. Confirm final information with the official organizer or ticket seller before purchasing or traveling.</p>
-    <div id="notice" class="notice notice-footer" hidden></div>
-  </footer>
-
-  <dialog class="submission-dialog" id="submission-dialog" aria-labelledby="submission-title">
-    <form method="dialog" class="dialog-close-form">
-      <button class="dialog-close" aria-label="Close submission form">×</button>
+    <form class="filters" role="search" data-event-filters>
+      <label class="field field-search"><span>Search</span><input data-search-filter type="search" placeholder="Artist, city, venue, or event" autocomplete="off"></label>
+      <label class="field"><span>Artist</span><select data-artist-filter><option value="">All artists</option></select></label>
+      <label class="field"><span>State</span><select data-state-filter><option value="">All states</option></select></label>
+      <label class="field"><span>Type</span><select data-type-filter><option value="">All events</option><option value="concert">Concerts</option><option value="festival">Festivals</option></select></label>
+      <button class="reset-button" data-reset-filters type="button">Clear filters</button>
     </form>
-    <div class="dialog-content">
-      <p class="eyebrow">Event submission</p>
-      <h2 id="submission-title">Submit a verified show</h2>
-      <p class="dialog-intro">Provide an official event, venue, promoter, festival, ticket, or artist source. Incomplete or uncertain listings will not publish.</p>
-      <form id="submission-form" class="submission-form" novalidate>
-        <input id="submission-kind" name="submission_type" type="hidden" value="New show">
-        <label class="field honeypot-field" aria-hidden="true">
-          <span>Leave this field blank</span>
-          <input name="_gotcha" tabindex="-1" autocomplete="off">
-        </label>
-        <div class="form-row">
-          <label class="field">
-            <span>Your name</span>
-            <input id="submitter-name" name="submitter_name" autocomplete="name" required>
-          </label>
-          <label class="field">
-            <span>Your email</span>
-            <input id="submitter-email" name="email" type="email" autocomplete="email" required>
-          </label>
-        </div>
-        <label class="field">
-          <span>Event name</span>
-          <input id="submit-event-name" name="event_name" required>
-        </label>
-        <div class="form-row">
-          <label class="field">
-            <span>Date</span>
-            <input id="submit-date" name="date" type="date" required>
-          </label>
-          <label class="field">
-            <span>Local time</span>
-            <input id="submit-time" name="local_time" type="time">
-          </label>
-        </div>
-        <label class="field">
-          <span>Venue</span>
-          <input id="submit-venue" name="venue" required>
-        </label>
-        <div class="form-row">
-          <label class="field">
-            <span>City</span>
-            <input id="submit-city" name="city" required>
-          </label>
-          <label class="field">
-            <span>State</span>
-            <input id="submit-state" name="state" maxlength="2" placeholder="TX" required>
-          </label>
-        </div>
-        <label class="field">
-          <span>Confirmed artist lineup</span>
-          <textarea id="submit-lineup" name="artist_lineup" rows="3" required></textarea>
-        </label>
-        <label class="field">
-          <span>Official event or ticket URL</span>
-          <input id="submit-url" name="official_url" type="url" placeholder="https://" required>
-        </label>
-        <label class="field">
-          <span>Official artwork URL <em>optional</em></span>
-          <input id="submit-artwork" name="artwork_url" type="url" placeholder="https://">
-        </label>
-        <label class="field">
-          <span>Your relationship to the event</span>
-          <input id="submit-relationship" name="relationship" placeholder="Promoter, artist team, venue, fan..." required>
-        </label>
-        <label class="field">
-          <span>Additional details <em>optional</em></span>
-          <textarea id="submit-notes" name="details" rows="3" placeholder="Anything that will help verify the show"></textarea>
-        </label>
-        <p class="form-note">Your submission is emailed privately for review. Your email address is not displayed on the website.</p>
-        <button class="primary-button" id="submission-submit" type="submit">Send for review</button>
-        <p class="form-feedback" id="submission-feedback" aria-live="polite"></p>
-      </form>
-    </div>
-  </dialog>
+  </div>
+  <div class="loading-panel" data-loading-panel>Loading the current live calendar...</div>
+  <div class="event-grid" data-event-grid></div>
+  <div class="empty-panel" data-filtered-empty hidden>No shows currently match those filters.</div>
+</section>
+</main>
+  <footer class="site-footer">
+    <div><strong>The Kingdom Circuit</strong><p>Christian hip-hop, live and connected.</p></div>
+    <div class="footer-links"><a href="/shows/">All Shows</a><a href="/artists/">Artists</a><a href="/festivals/">Festivals</a><a href="/submit/">Submit a Show</a></div>
+    <p class="footer-note">Event details may change. Confirm final information with the official organizer or ticket seller before purchasing or traveling.</p><div id="notice" class="footer-status" data-calendar-status hidden></div>
+  </footer>
 </body>
 </html>
