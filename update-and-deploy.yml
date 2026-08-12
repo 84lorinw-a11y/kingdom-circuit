@@ -3,6 +3,8 @@ name: Update and deploy show calendar
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - ".github/workflows/update-and-deploy.yml"
   schedule:
     - cron: "23 11 * * *"
   workflow_dispatch:
@@ -32,8 +34,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run collector tests
-        run: python -m unittest discover -s tests -p 'test_update_events.py' -v
+      - name: Run all automated tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
 
       - name: Collect upcoming shows
         env:
@@ -52,17 +54,17 @@ jobs:
             git push
           fi
 
-      - name: Prepare single-page production site
+      - name: Prepare tested multi-page production site
         run: |
           rm -rf _site
-          mkdir -p _site
-          cp index.html styles.css app.js events.json run-status.json 404.html robots.txt sitemap.xml _site/
-          cp -R assets _site/assets
+          mkdir -p _site/config
+          cp index.html styles.css app.js supplemental-events.json 404.html robots.txt sitemap.xml events.json run-status.json _site/
+          cp config/artists.json _site/config/artists.json
+          cp -R shows festivals new-shows artists event submit assets _site/
           if [ -f CNAME ]; then cp CNAME _site/; fi
-          test -s _site/index.html
-          test -s _site/app.js
-          test -s _site/events.json
-          echo "Single-page Kingdom Circuit site prepared successfully."
+
+      - name: Verify Pages artifact
+        run: python scripts/verify_multipage_site.py _site
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
