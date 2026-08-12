@@ -1,8 +1,8 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-08-12T02:37:33Z",
-  "lastSuccessfulUpdate": "2026-08-12T02:37:33Z",
+  "lastAttempt": "2026-08-12T02:44:36Z",
+  "lastSuccessfulUpdate": "2026-08-12T02:44:36Z",
   "eventsPublished": 108,
   "candidatesCollected": 210,
   "artistsConfigured": 299,
@@ -49,7 +49,7 @@
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 235,
+  "sourcesChecked": 234,
   "unmatchedArtists": [
     "Pregador Luo",
     "Sondae",
@@ -594,7 +594,7 @@
     },
     {
       "name": "LifeLight Sioux Falls official lineup",
-      "status": "ok",
+      "status": "warning",
       "eventsFound": 0
     },
     {
@@ -610,7 +610,7 @@
       "queriesRun": 101
     }
   ],
-  "warningCount": 19,
+  "warningCount": 20,
   "errorCount": 0,
   "warnings": [
     "NF Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11969355-nf: HTTP Error 403: Forbidden",
@@ -631,7 +631,8 @@
     "FLAME Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/16627-flame: HTTP Error 403: Forbidden",
     "Alex Jean Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15570394-alex-jean: HTTP Error 403: Forbidden",
     "KB Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/165768-kb: HTTP Error 403: Forbidden",
-    "Anike Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4673148-anike: HTTP Error 403: Forbidden"
+    "Anike Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4673148-anike: HTTP Error 403: Forbidden",
+    "LifeLight Sioux Falls official lineup: Unable to retrieve https://lifelight.org/llsf-lineup/: <urlopen error timed out>"
   ],
   "errors": [],
   "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings."
