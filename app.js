@@ -6,7 +6,7 @@ const BASE = "/";
 const LIVE_EVENTS_URL = `${BASE}events.json`;
 const LIVE_ARTISTS_URL = `${BASE}config/artists.json`;
 const SITE_BUILD = "production-v1";
-const SUPPLEMENTAL_EVENTS_URL = `${BASE}supplemental-events.json?v=1`;
+const SUPPLEMENTAL_EVENTS_URL = `${BASE}supplemental-events.json?v=2`;
 const RUN_STATUS_URL = `${BASE}run-status.json`;
 const FALLBACK_EVENT_IMAGE = `${BASE}assets/event-fallback.webp`;
 const STATE_NAMES = {AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",DE:"Delaware",DC:"District of Columbia",FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming"};
@@ -21,6 +21,14 @@ const ARTIST_OVERRIDES = {
     spotifyProfile: "https://open.spotify.com/artist/1KTljUXZGt7HkAFFEnDBn1",
     youtubeProfile: "https://www.youtube.com/@skemaboy",
     officialProfile: "https://rixonentertainment.com/skema-boy"
+  },
+  "zauntee": {
+    imageUrl: "assets/artists/zauntee.webp",
+    imagePosition: "50% 32%",
+    officialProfile: "https://zauntee.com/",
+    instagramProfile: "https://www.instagram.com/zauntee/",
+    spotifyProfile: "https://open.spotify.com/search/Zauntee",
+    youtubeProfile: "https://www.youtube.com/results?search_query=Zauntee+official"
   }
 };
 
@@ -72,6 +80,14 @@ function sameEvent(existing, incoming) {
   return sameVenue || sharedArtist;
 }
 
+function shouldUseIncomingImage(existing, incoming) {
+  if (!incoming.image) return false;
+  if (incoming.imageOverride) return true;
+  if (!existing.image) return true;
+  const current = normalize(existing.image);
+  return current === "assets/event-fallback.webp" || current.endsWith("/assets/event-fallback.webp") || existing.imageType === "fallback";
+}
+
 function mergeEventLists(primary, supplemental) {
   const merged = primary.map(event => ({ ...event, artists: [...(event.artists || [])] }));
   supplemental.forEach(incoming => {
@@ -81,9 +97,11 @@ function mergeEventLists(primary, supplemental) {
       return;
     }
     existing.artists = [...new Set([...(existing.artists || []), ...(incoming.artists || [])])];
-    if (!existing.image) existing.image = incoming.image;
-    if (!existing.imageType) existing.imageType = incoming.imageType;
-    if (!existing.imagePosition) existing.imagePosition = incoming.imagePosition;
+    if (shouldUseIncomingImage(existing, incoming)) {
+      existing.image = incoming.image;
+      existing.imageType = incoming.imageType || existing.imageType;
+      existing.imagePosition = incoming.imagePosition || existing.imagePosition;
+    }
     if (!existing.firstSeen) existing.firstSeen = incoming.firstSeen;
   });
   return merged;
