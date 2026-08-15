@@ -4,11 +4,13 @@ console.info("Kingdom Circuit production multipage build loaded");
 const BASE = "/";
 const LIVE_EVENTS_URL = `${BASE}events.json`;
 const LIVE_ARTISTS_URL = `${BASE}config/artists.json`;
-const SITE_BUILD = "production-v2-verified-artist-images-icons";
+const SITE_BUILD = "production-v3-mobile-artist-circuit";
 const SUPPLEMENTAL_EVENTS_URL = `${BASE}supplemental-events.json?v=2`;
 const RUN_STATUS_URL = `${BASE}run-status.json`;
 const FALLBACK_EVENT_IMAGE = `${BASE}assets/event-fallback.webp`;
+const ARTIST_SUBMISSION_ENDPOINT = "https://formspree.io/f/mljreawj";
 const VERIFIED_ARTIST_IMAGE_ENDPOINT = "https://open.voidware.de/artist/";
+let PLATFORM_ICON_SEQUENCE = 0;
 const STATE_NAMES = {AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",DE:"Delaware",DC:"District of Columbia",FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming"};
 // Artist source registry imported from Book4.xlsx. Only rows marked Verified are enriched.
 const ARTIST_ROSTER_ORDER = [
@@ -1100,24 +1102,27 @@ function platformIcon(label, extraClass = "") {
   const iconClass = ["platform-icon", extraClass].filter(Boolean).join(" ");
   const common = `class="${iconClass}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"`;
   switch (normalize(label)) {
-    case "instagram":
-      return `<svg ${common}><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.25" fill="currentColor"/></svg>`;
+    case "instagram": { 
+      const gradientId = `kc-instagram-${++PLATFORM_ICON_SEQUENCE}`;
+      return `<svg ${common}><defs><radialGradient id="${gradientId}-glow" cx="30%" cy="100%" r="105%"><stop offset="0" stop-color="#feda75"/><stop offset=".3" stop-color="#fa7e1e"/><stop offset=".61" stop-color="#e1306c"/><stop offset=".82" stop-color="#c13584"/><stop offset="1" stop-color="#833ab4"/></radialGradient><linearGradient id="${gradientId}-sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#405de6"/><stop offset=".42" stop-color="#5851db" stop-opacity=".8"/><stop offset="1" stop-color="#833ab4" stop-opacity="0"/></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.4" fill="url(#${gradientId}-glow)"/><rect x="1" y="1" width="22" height="22" rx="6.4" fill="url(#${gradientId}-sky)"/><rect x="6.1" y="6.1" width="11.8" height="11.8" rx="3.7" fill="none" stroke="#fff" stroke-width="1.85"/><circle cx="12" cy="12" r="3" fill="none" stroke="#fff" stroke-width="1.85"/><circle cx="17.25" cy="6.85" r="1.15" fill="#fff"/></svg>`;
+    }
     case "spotify":
-      return `<svg ${common}><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M7.2 9.1c3.55-1.02 7.54-.7 10.72.98M8 12.1c2.93-.8 6.25-.54 8.85.73M8.8 15c2.27-.57 4.8-.37 6.83.56" fill="none" stroke="#080808" stroke-width="1.65" stroke-linecap="round"/></svg>`;
+      return `<svg ${common}><circle cx="12" cy="12" r="11" fill="#1ed760"/><path d="M6.35 9.05c3.92-1.12 8.32-.77 11.83 1.08M7.2 12.15c3.22-.88 6.87-.59 9.74.81M8.05 15.1c2.5-.63 5.29-.41 7.52.62" fill="none" stroke="#090909" stroke-width="1.75" stroke-linecap="round"/></svg>`;
     case "youtube":
-      return `<svg ${common}><path d="M21.45 7.15a2.95 2.95 0 0 0-2.08-2.09C17.54 4.55 12 4.55 12 4.55s-5.54 0-7.37.51a2.95 2.95 0 0 0-2.08 2.09A30.5 30.5 0 0 0 2.05 12c0 1.62.17 3.24.5 4.85a2.95 2.95 0 0 0 2.08 2.09c1.83.51 7.37.51 7.37.51s5.54 0 7.37-.51a2.95 2.95 0 0 0 2.08-2.09c.33-1.61.5-3.23.5-4.85s-.17-3.24-.5-4.85Z" fill="currentColor"/><path d="m10 15.35 5.2-3.35L10 8.65v6.7Z" fill="#080808"/></svg>`;
+      return `<svg ${common}><rect x="1" y="4.25" width="22" height="15.5" rx="4.4" fill="#ff0033"/><path d="m10 8.45 6 3.55-6 3.55v-7.1Z" fill="#fff"/></svg>`;
     case "website":
-      return `<svg ${common}><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 12h17M12 3c2.35 2.45 3.55 5.45 3.55 9S14.35 18.55 12 21M12 3C9.65 5.45 8.45 8.45 8.45 12S9.65 18.55 12 21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>`;
+      return `<svg ${common}><circle cx="12" cy="12" r="9.5" fill="none" stroke="#e3b75d" stroke-width="1.9"/><path d="M2.75 12h18.5M12 2.5c2.45 2.55 3.72 5.7 3.72 9.5S14.45 18.95 12 21.5M12 2.5C9.55 5.05 8.28 8.2 8.28 12S9.55 18.95 12 21.5" fill="none" stroke="#e3b75d" stroke-width="1.65" stroke-linecap="round"/></svg>`;
     default:
-      return `<svg ${common}><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/></svg>`;
+      return `<svg ${common}><path d="M5 12h14M12 5v14" fill="none" stroke="#e3b75d" stroke-width="2" stroke-linecap="round"/></svg>`;
   }
 }
 function compactPlatformLink(label, info, artistName = "") {
   const context = artistName ? ` for ${artistName}` : "";
+  const platform = normalize(label).replace(/\s+/g, "-");
   const accessibleLabel = info.url ? `Open ${label}${context}` : `${label}${context}: link pending verification`;
   const content = `${platformIcon(label)}<span class="kc-visually-hidden">${esc(accessibleLabel)}</span>`;
-  if (!info.url) return `<span class="artist-platform-link is-missing" role="img" aria-label="${esc(accessibleLabel)}" title="${esc(info.status)}">${content}</span>`;
-  return `<a class="artist-platform-link" href="${esc(info.url)}" target="_blank" rel="noopener" aria-label="${esc(accessibleLabel)}" title="${esc(info.status)}">${content}</a>`;
+  if (!info.url) return `<span class="artist-platform-link artist-platform-link--${esc(platform)} is-missing" role="img" aria-label="${esc(accessibleLabel)}" title="${esc(info.status)}">${content}</span>`;
+  return `<a class="artist-platform-link artist-platform-link--${esc(platform)}" href="${esc(info.url)}" target="_blank" rel="noopener" aria-label="${esc(accessibleLabel)}" title="${esc(info.status)}" data-artist-social="${esc(label)}" data-artist-name="${esc(artistName)}">${content}</a>`;
 }
 function optionalCompactPlatformLink(label, info, artistName = "") {
   return info.url ? compactPlatformLink(label, info, artistName) : "";
@@ -1128,20 +1133,161 @@ function ensureArtistEnhancementStyles() {
   style.id = "kc-artist-enhancement-styles";
   style.textContent = `
     .kc-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
-    .artist-card-links{gap:10px;align-items:center}
-    .artist-platform-link{position:relative;width:42px;height:42px;min-height:42px;padding:0;border-radius:50%;transition:border-color .18s ease,color .18s ease,background .18s ease,transform .18s ease}
-    .artist-platform-link .platform-icon{width:22px;height:22px;display:block;flex:0 0 auto}
-    .artist-platform-link:hover{transform:translateY(-1px);background:rgba(198,148,60,.08)}
-    .artist-platform-link:focus-visible{outline:2px solid var(--gold-light);outline-offset:3px}
-    .artist-platform-link.is-missing{opacity:.42;transform:none;background:transparent}
+    [data-artist-grid]{align-items:stretch}
+    .artist-card{min-width:0;min-height:0!important;display:flex;flex-direction:column;scroll-margin-top:112px}
+    .artist-visual,.artist-visual-empty{position:relative;display:block;width:100%;aspect-ratio:1/1!important;min-height:0!important;overflow:hidden;background:linear-gradient(145deg,#17120a,#080808);border-bottom:1px solid var(--line,var(--border,#2d2d2d))}
+    .artist-visual img{position:absolute;inset:0;display:block;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center;background:#090909;transition:transform .28s ease}
+    .artist-card:hover .artist-visual img{transform:scale(1.025)}
+    .artist-visual-empty{display:grid;place-items:center}
+    .artist-card-body{display:flex;flex:1;flex-direction:column;min-width:0}
+    .artist-card-links{display:flex;gap:11px;align-items:center;flex-wrap:wrap;margin-top:13px}
+    .artist-platform-link{position:relative;display:inline-flex!important;align-items:center;justify-content:center;width:32px!important;height:32px!important;min-width:32px!important;min-height:32px!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;color:inherit!important;text-decoration:none;box-shadow:none!important;transition:transform .18s ease,filter .18s ease,opacity .18s ease}
+    .artist-platform-link .platform-icon{display:block;width:28px;height:28px;flex:0 0 auto;filter:drop-shadow(0 2px 7px rgba(0,0,0,.3))}
+    .artist-platform-link:hover{transform:translateY(-2px) scale(1.08);filter:brightness(1.08)}
+    .artist-platform-link:focus-visible{outline:2px solid var(--gold-light,#e0bd72);outline-offset:4px;border-radius:4px!important}
+    .artist-platform-link.is-missing{opacity:.2;transform:none!important;filter:grayscale(1)}
+    .artist-card-footer .text-link{display:inline-flex;align-items:center;gap:7px;text-transform:uppercase;letter-spacing:.085em;font-size:.76rem;text-decoration:none}
+    .artist-card-footer .text-link::after{content:"→";font-size:1rem;transition:transform .18s ease}
+    .artist-card-footer .text-link:hover::after{transform:translateX(3px)}
     .profile-platform-card{gap:14px}
     .profile-platform-heading{display:flex;align-items:center;gap:11px}
-    .profile-platform-icon{width:31px;height:31px;display:block;flex:0 0 auto;color:var(--cream)}
-    .profile-platform-card:hover .profile-platform-icon{color:var(--gold-light)}
-    .profile-platform-card.is-missing .profile-platform-icon{color:#777}
-    @media(max-width:600px){.artist-platform-link{width:40px;height:40px;min-height:40px}.artist-platform-link .platform-icon{width:21px;height:21px}}
+    .profile-platform-icon{display:block;width:31px;height:31px;flex:0 0 auto}
+    .profile-platform-card.is-missing .profile-platform-icon{opacity:.3;filter:grayscale(1)}
+    .kc-directory-dashboard{display:grid;grid-template-columns:minmax(170px,.75fr) minmax(240px,1.25fr) minmax(260px,1.35fr);gap:16px;margin:8px 0 26px;padding:18px;border:1px solid rgba(198,148,60,.34);border-radius:18px;background:linear-gradient(135deg,rgba(198,148,60,.11),rgba(15,15,15,.98) 42%,#0b0b0b);box-shadow:0 18px 45px rgba(0,0,0,.2)}
+    .kc-directory-total,.kc-artist-jump,.kc-artist-submit-prompt{min-width:0;border:1px solid rgba(255,255,255,.07);border-radius:14px;background:rgba(8,8,8,.58);padding:16px}
+    .kc-directory-total{display:flex;flex-direction:column;justify-content:center}
+    .kc-directory-number{display:block;color:var(--gold-light,#e0bd72);font-size:clamp(3.7rem,7vw,6.3rem);font-weight:950;line-height:.78;letter-spacing:-.065em}
+    .kc-directory-label{display:block;margin-top:14px;color:var(--cream,var(--text,#f2efe7));font-size:.72rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
+    .kc-directory-note{display:block;margin-top:7px;color:var(--muted,#a7a39b);font-size:.82rem}
+    .kc-control-label{display:block;margin:0 0 9px;color:var(--gold-light,#e0bd72);font-size:.7rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
+    .kc-artist-jump select{width:100%;min-height:48px;border:1px solid #484848;border-radius:10px;background:#080808;color:var(--cream,var(--text,#f2efe7));padding:0 42px 0 13px;font:inherit;font-weight:800;cursor:pointer}
+    .kc-artist-jump p,.kc-artist-submit-prompt p{margin:10px 0 0;color:var(--muted,#a7a39b);font-size:.83rem;line-height:1.45}
+    .kc-artist-submit-prompt{display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+    .kc-artist-submit-prompt strong{font-size:1.35rem;line-height:1.03;text-transform:uppercase;letter-spacing:-.025em}
+    .kc-put-us-on{margin-top:14px;border:1px solid var(--gold,#c69a46);border-radius:999px;background:var(--gold,#c69a46);color:#080808;padding:11px 18px;font:inherit;font-size:.78rem;font-weight:950;letter-spacing:.105em;text-transform:uppercase;cursor:pointer;transition:transform .18s ease,filter .18s ease}
+    .kc-put-us-on:hover{transform:translateY(-2px);filter:brightness(1.08)}
+    .kc-put-us-on:focus-visible{outline:2px solid var(--cream,var(--text,#f2efe7));outline-offset:3px}
+    .artist-card.is-jump-target{border-color:var(--gold,#c69a46)!important;box-shadow:0 0 0 2px rgba(198,148,60,.28),0 16px 36px rgba(0,0,0,.38);animation:kcArtistPulse .9s ease}
+    @keyframes kcArtistPulse{0%{transform:scale(.98)}45%{transform:scale(1.015)}100%{transform:scale(1)}}
+    .kc-artist-dialog{width:min(620px,calc(100vw - 28px));max-height:calc(100vh - 32px);overflow:auto;border:1px solid rgba(198,148,60,.55);border-radius:20px;background:#0d0d0d;color:var(--cream,var(--text,#f2efe7));padding:0;box-shadow:0 30px 90px rgba(0,0,0,.72)}
+    .kc-artist-dialog::backdrop{background:rgba(0,0,0,.78);backdrop-filter:blur(4px)}
+    .kc-artist-dialog-inner{padding:24px}
+    .kc-artist-dialog-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding-bottom:18px;border-bottom:1px solid var(--line,var(--border,#2d2d2d))}
+    .kc-artist-dialog-head h2{margin:4px 0 0;font-size:clamp(2rem,7vw,3.4rem);line-height:.9;text-transform:uppercase;letter-spacing:-.045em}
+    .kc-artist-dialog-close{display:grid;place-items:center;width:42px;height:42px;flex:0 0 auto;border:1px solid #555;border-radius:50%;background:transparent;color:var(--cream,var(--text,#f2efe7));font-size:1.55rem;cursor:pointer}
+    .kc-artist-dialog-copy{margin:15px 0 19px;color:var(--muted)}
+    .kc-artist-form{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+    .kc-artist-form .kc-field{display:grid;gap:7px}
+    .kc-artist-form .kc-field-wide{grid-column:1/-1}
+    .kc-artist-form label{color:var(--muted,#a7a39b);font-size:.7rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
+    .kc-artist-form input,.kc-artist-form textarea{width:100%;border:1px solid #464646;border-radius:10px;background:#080808;color:var(--cream,var(--text,#f2efe7));padding:13px;font:inherit}
+    .kc-artist-form textarea{min-height:96px;resize:vertical}
+    .kc-artist-form input:focus,.kc-artist-form textarea:focus{outline:2px solid rgba(227,183,93,.72);outline-offset:1px;border-color:var(--gold,#c69a46)}
+    .kc-artist-form-actions{grid-column:1/-1;display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:4px}
+    .kc-artist-form-submit{border:1px solid var(--gold,#c69a46);border-radius:999px;background:var(--gold,#c69a46);color:#080808;padding:12px 18px;font:inherit;font-weight:950;text-transform:uppercase;letter-spacing:.09em;cursor:pointer}
+    .kc-artist-form-submit:disabled{opacity:.55;cursor:wait}
+    .kc-artist-form-feedback{min-height:1.4em;margin:0;color:var(--muted,#a7a39b);font-size:.86rem}
+    .kc-artist-form-feedback.is-success{color:#8bd8a5}
+    .kc-artist-form-feedback.is-error{color:#ff9c9c}
+    @media(max-width:900px){.kc-directory-dashboard{grid-template-columns:1fr 1fr}.kc-artist-submit-prompt{grid-column:1/-1}}
+    @media(max-width:640px){
+      [data-artist-grid]{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+      .artist-card{border-radius:13px!important}
+      .artist-visual,.artist-visual-empty{aspect-ratio:1/1!important}
+      .artist-card-body{padding:11px!important;min-height:134px}
+      .artist-card h2,.artist-card-body>h2{margin:0!important;font-size:clamp(.96rem,4.5vw,1.14rem)!important;line-height:1.04;letter-spacing:-.025em;overflow-wrap:anywhere}
+      .artist-card-body>p:not(.artist-category){margin:7px 0 0!important;font-size:.74rem!important;line-height:1.25}
+      .artist-card-links{gap:7px;margin-top:10px}
+      .artist-platform-link{width:29px!important;height:29px!important;min-width:29px!important;min-height:29px!important}
+      .artist-platform-link .platform-icon{width:25px;height:25px}
+      .artist-card-footer{padding-top:11px!important}
+      .artist-card-footer .text-link{font-size:.68rem;letter-spacing:.075em}
+      [data-artist-directory] .directory-toolbar{gap:12px!important;margin-bottom:14px!important}
+      [data-artist-directory] .check-field{padding-bottom:0!important;min-height:38px}
+      [data-artist-directory] .results-count{margin:0!important;font-size:.86rem}
+      .kc-directory-dashboard{grid-template-columns:minmax(112px,.76fr) minmax(0,1.24fr);gap:9px;margin:3px 0 18px;padding:10px;border-radius:15px}
+      .kc-directory-total,.kc-artist-jump,.kc-artist-submit-prompt{padding:12px;border-radius:12px}
+      .kc-directory-total{grid-column:1;grid-row:1;padding:10px}
+      .kc-directory-number{font-size:4.2rem}
+      .kc-directory-label{margin-top:10px;font-size:.64rem;line-height:1.35}
+      .kc-directory-note{font-size:.72rem;line-height:1.4}
+      .kc-artist-submit-prompt{grid-column:2;grid-row:1;padding:12px}
+      .kc-artist-submit-prompt strong{font-size:1.02rem;line-height:1.02}
+      .kc-artist-submit-prompt p{margin-top:7px;font-size:.72rem;line-height:1.35}
+      .kc-put-us-on{width:100%;margin-top:10px;padding:10px 11px;font-size:.7rem}
+      .kc-artist-jump{grid-column:1/-1;grid-row:2}
+      .kc-artist-jump p{margin-top:7px;font-size:.76rem}
+      .kc-artist-dialog-inner{padding:19px}
+      .kc-artist-form{grid-template-columns:1fr}
+      .kc-artist-form .kc-field-wide,.kc-artist-form-actions{grid-column:auto}
+      .profile-platform-icon{width:29px;height:29px}
+    }
+    @media(max-width:380px){[data-artist-grid]{gap:8px!important}.artist-card-body{padding:9px!important;min-height:128px}.artist-platform-link{width:26px!important;height:26px!important;min-width:26px!important;min-height:26px!important}.artist-platform-link .platform-icon{width:23px;height:23px}.artist-card-links{gap:4px}.kc-directory-dashboard{grid-template-columns:minmax(104px,.74fr) minmax(0,1.26fr)}.kc-directory-number{font-size:3.75rem}.kc-directory-total{padding:8px}.kc-directory-note{display:none}.kc-artist-jump,.kc-artist-submit-prompt{padding:10px}}
   `;
   document.head.appendChild(style);
+}
+function trackArtistInteraction(action, artistName = "", platform = "") {
+  if (typeof window.gtag !== "function") return;
+  window.gtag("event", action, {
+    artist_name: artistName,
+    platform,
+    page_location: window.location.href
+  });
+}
+function ensureArtistSuggestionDialog() {
+  let dialog = document.querySelector("[data-kc-artist-dialog]");
+  if (dialog) return dialog;
+  dialog = document.createElement("dialog");
+  dialog.className = "kc-artist-dialog";
+  dialog.setAttribute("data-kc-artist-dialog", "");
+  dialog.innerHTML = `<div class="kc-artist-dialog-inner"><div class="kc-artist-dialog-head"><div><p class="eyebrow">Build the circuit</p><h2>Put Us On</h2></div><button class="kc-artist-dialog-close" type="button" aria-label="Close artist submission">×</button></div><p class="kc-artist-dialog-copy">Know a Christian hip-hop artist or group we should be tracking? Send one official link. Every submission is reviewed before it is added.</p><form class="kc-artist-form" data-kc-artist-form action="${esc(ARTIST_SUBMISSION_ENDPOINT)}" method="post"><input type="hidden" name="submission_type" value="Artist suggestion - missing from roster"><input type="hidden" name="_subject" value="Kingdom Circuit missing artist suggestion"><label class="kc-field kc-field-wide">Artist or group name<input name="artist_name" autocomplete="off" required></label><label class="kc-field kc-field-wide">Official artist link<input name="official_url" type="url" inputmode="url" placeholder="https://" required></label><label class="kc-field">Your name (optional)<input name="submitted_by" autocomplete="name"></label><label class="kc-field">Your email (optional)<input name="reply_to" type="email" autocomplete="email"></label><label class="kc-field kc-field-wide">Why should they be in the circuit? (optional)<textarea name="notes" placeholder="CHH releases, city, label, official socials, or upcoming shows"></textarea></label><div class="kc-artist-form-actions"><button class="kc-artist-form-submit" type="submit">Send Artist</button><p class="kc-artist-form-feedback" role="status" aria-live="polite"></p></div></form></div>`;
+  document.body.appendChild(dialog);
+  const close = dialog.querySelector(".kc-artist-dialog-close");
+  const form = dialog.querySelector("[data-kc-artist-form]");
+  const submit = dialog.querySelector(".kc-artist-form-submit");
+  const feedback = dialog.querySelector(".kc-artist-form-feedback");
+  close?.addEventListener("click", () => {
+    if (typeof dialog.close === "function") dialog.close();
+    else dialog.removeAttribute("open");
+  });
+  dialog.addEventListener("click", event => {
+    if (event.target !== dialog) return;
+    if (typeof dialog.close === "function") dialog.close();
+    else dialog.removeAttribute("open");
+  });
+  form?.addEventListener("submit", async event => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    feedback.className = "kc-artist-form-feedback";
+    feedback.textContent = "Sending artist suggestion...";
+    submit.disabled = true;
+    const formData = new FormData(form);
+    formData.set("page_url", window.location.href);
+    formData.set("submitted_at", new Date().toISOString());
+    try {
+      const response = await fetch(form.action, { method: "POST", body: formData, headers: { Accept: "application/json" } });
+      if (!response.ok) throw new Error(`Artist suggestion failed: ${response.status}`);
+      const artistName = String(formData.get("artist_name") || "");
+      form.reset();
+      feedback.className = "kc-artist-form-feedback is-success";
+      feedback.textContent = "Artist submitted. We will verify the official sources before adding them.";
+      trackArtistInteraction("artist_suggestion_submit", artistName);
+    } catch (error) {
+      console.error(error);
+      feedback.className = "kc-artist-form-feedback is-error";
+      feedback.textContent = "The suggestion could not be sent. Please try again in a few minutes.";
+    } finally {
+      submit.disabled = false;
+    }
+  });
+  return dialog;
+}
+function openArtistSuggestionDialog() {
+  const dialog = ensureArtistSuggestionDialog();
+  trackArtistInteraction("artist_suggestion_open");
+  if (typeof dialog.showModal === "function") dialog.showModal();
+  else dialog.setAttribute("open", "");
+  window.setTimeout(() => dialog.querySelector('input[name="artist_name"]')?.focus(), 50);
 }
 function renderArtistDirectory() {
   const grid = document.querySelector("[data-artist-grid]");
@@ -1153,27 +1299,38 @@ function renderArtistDirectory() {
     byArtist.get(key).push(event);
   }));
   const enabled = ARTISTS.filter(artist => artist.enabled !== false).sort((a, b) => (a.rosterOrder || 9999) - (b.rosterOrder || 9999) || a.name.localeCompare(b.name));
-  grid.innerHTML = enabled.map(artist => {
+  grid.innerHTML = enabled.map((artist, index) => {
     const events = byArtist.get(normalize(artist.name)) || [];
     const instagram = instagramInfo(artist);
     const spotify = spotifyInfo(artist);
     const youtube = youtubeInfo(artist);
     const website = websiteInfo(artist);
     const image = artistImageInfo(artist);
+    const loading = index < 8 ? "eager" : "lazy";
+    const priority = index < 4 ? ' fetchpriority="high"' : "";
     const visual = image.url
-      ? `<a class="artist-visual" href="${artistProfileUrl(artist.name)}" aria-label="View ${esc(artist.name)}"><img src="${esc(image.url)}" data-fallback-src="${esc(image.fallbackUrl)}" alt="${esc(artist.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer" style="object-position:${esc(image.position)}" onerror="handleArtistImageError(this,'${esc(artistInitial(artist.name))}')"></a>`
-      : `<a class="artist-visual artist-visual-empty" href="${artistProfileUrl(artist.name)}" aria-label="View ${esc(artist.name)}"></a>`;
-    return `<article class="artist-card artist-card-text" data-artist-card data-search="${esc(normalize([artist.name, ...(artist.aliases || []), artist.label].join(" ")))}" data-has-shows="${events.length > 0}">
+      ? `<a class="artist-visual" href="${artistProfileUrl(artist.name)}" aria-label="Open ${esc(artist.name)} profile"><img src="${esc(image.url)}" data-fallback-src="${esc(image.fallbackUrl)}" alt="${esc(artist.name)}" loading="${loading}" decoding="async"${priority} referrerpolicy="no-referrer" style="object-position:${esc(image.position)}" onerror="handleArtistImageError(this,'${esc(artistInitial(artist.name))}')"></a>`
+      : `<a class="artist-visual artist-visual-empty" href="${artistProfileUrl(artist.name)}" aria-label="Open ${esc(artist.name)} profile"></a>`;
+    return `<article class="artist-card artist-card-text" data-artist-card data-artist-key="${esc(normalize(artist.name))}" data-search="${esc(normalize([artist.name, ...(artist.aliases || []), artist.label].join(" ")))}" data-has-shows="${events.length > 0}">
       ${visual}
-      <div class="artist-card-body"><h2><a href="${artistProfileUrl(artist.name)}">${esc(artist.name)}</a></h2><p>${events.length} upcoming show${events.length === 1 ? "" : "s"}</p><div class="artist-card-links">${compactPlatformLink("Instagram", instagram, artist.name)}${compactPlatformLink("Spotify", spotify, artist.name)}${optionalCompactPlatformLink("YouTube", youtube, artist.name)}${optionalCompactPlatformLink("Website", website, artist.name)}</div><div class="artist-card-footer"><a class="text-link" href="${artistProfileUrl(artist.name)}">View artist</a></div></div>
+      <div class="artist-card-body"><h2><a href="${artistProfileUrl(artist.name)}">${esc(artist.name)}</a></h2><p>${events.length} upcoming show${events.length === 1 ? "" : "s"}</p><div class="artist-card-links">${compactPlatformLink("Instagram", instagram, artist.name)}${compactPlatformLink("Spotify", spotify, artist.name)}${optionalCompactPlatformLink("YouTube", youtube, artist.name)}${optionalCompactPlatformLink("Website", website, artist.name)}</div><div class="artist-card-footer"><a class="text-link" href="${artistProfileUrl(artist.name)}">Tap In</a></div></div>
     </article>`;
   }).join("");
   document.querySelector("[data-artist-loading]")?.remove();
+  document.querySelector("[data-kc-directory-dashboard]")?.remove();
   const cards = [...grid.querySelectorAll("[data-artist-card]")];
   const search = document.querySelector("[data-artist-search]");
   const show = document.querySelector("[data-has-shows-filter]");
   const count = document.querySelector("[data-artist-count]");
   const empty = document.querySelector("[data-artist-empty]");
+  const dashboard = document.createElement("section");
+  dashboard.className = "kc-directory-dashboard";
+  dashboard.setAttribute("data-kc-directory-dashboard", "");
+  dashboard.setAttribute("aria-label", "Artist directory tools");
+  dashboard.innerHTML = `<div class="kc-directory-total"><span class="kc-directory-number">${enabled.length}</span><span class="kc-directory-label">Artists in the circuit</span><span class="kc-directory-note">Official links. Upcoming shows. One CHH directory.</span></div><div class="kc-artist-jump"><label class="kc-control-label" for="kc-artist-jump-select">Scroll &amp; select an artist</label><select id="kc-artist-jump-select" data-kc-artist-jump><option value="">Choose an artist</option>${enabled.map(artist => `<option value="${esc(normalize(artist.name))}">${esc(artist.name)}</option>`).join("")}</select><p>Pick a name and jump straight to their card.</p></div><div class="kc-artist-submit-prompt"><strong>Who are we missing?</strong><p>Know a Christian hip-hop artist we missed? Put us on. Every source is reviewed before it goes live.</p><button class="kc-put-us-on" type="button" data-kc-open-artist-submit>Put Us On</button></div>`;
+  grid.before(dashboard);
+  const jump = dashboard.querySelector("[data-kc-artist-jump]");
+  dashboard.querySelector("[data-kc-open-artist-submit]")?.addEventListener("click", openArtistSuggestionDialog);
   function apply() {
     const needle = normalize(search?.value);
     const requireShows = Boolean(show?.checked);
@@ -1183,17 +1340,39 @@ function renderArtistDirectory() {
       card.hidden = !ok;
       if (ok) visible += 1;
     });
-    if (count) count.textContent = `${visible} artist${visible === 1 ? "" : "s"}`;
+    if (count) count.textContent = visible === enabled.length ? `${visible} artists` : `${visible} showing · ${enabled.length} total`;
     if (empty) empty.hidden = visible !== 0;
   }
-  search?.addEventListener("input", apply);
+  search?.addEventListener("input", () => {
+    if (jump) jump.value = "";
+    apply();
+  });
   show?.addEventListener("change", apply);
+  jump?.addEventListener("change", () => {
+    const key = jump.value;
+    if (!key) return;
+    if (search) search.value = "";
+    if (show) show.checked = false;
+    apply();
+    const target = cards.find(card => card.dataset.artistKey === key);
+    if (!target) return;
+    cards.forEach(card => card.classList.remove("is-jump-target"));
+    target.classList.add("is-jump-target");
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.setTimeout(() => target.classList.remove("is-jump-target"), 1800);
+    const artist = enabled.find(item => normalize(item.name) === key);
+    trackArtistInteraction("artist_jump_select", artist?.name || key);
+  });
+  grid.addEventListener("click", event => {
+    const social = event.target.closest?.("[data-artist-social]");
+    if (social) trackArtistInteraction("artist_social_click", social.dataset.artistName || "", social.dataset.artistSocial || "");
+  });
   apply();
 }
 function platformCard(label, info, artistName = "") {
   const heading = `<span class="profile-platform-heading">${platformIcon(label, "profile-platform-icon")}<span class="profile-platform-label">${esc(label)}</span></span>`;
   if (!info.url) return `<div class="profile-platform-card is-missing" aria-label="${esc(`${label}${artistName ? ` for ${artistName}` : ""}: link pending verification`)}">${heading}<span class="profile-platform-status">${esc(info.status)}</span></div>`;
-  return `<a class="profile-platform-card" href="${esc(info.url)}" target="_blank" rel="noopener" aria-label="${esc(`Open ${label}${artistName ? ` for ${artistName}` : ""}`)}">${heading}<span class="profile-platform-status">${esc(info.status)}</span></a>`;
+  return `<a class="profile-platform-card" href="${esc(info.url)}" target="_blank" rel="noopener" aria-label="${esc(`Open ${label}${artistName ? ` for ${artistName}` : ""}`)}" data-artist-social="${esc(label)}" data-artist-name="${esc(artistName)}">${heading}<span class="profile-platform-status">${esc(info.status)}</span></a>`;
 }
 function renderArtistProfile() {
   const root = document.querySelector("[data-artist-profile]");
@@ -1216,6 +1395,7 @@ show${events.length === 1 ? "" : "s"} currently listed.</p></div></section><sect
   document.title = `${artist.name} Shows | The Kingdom Circuit`;
   ensureCanonical(`${location.origin}${BASE}artists/profile/?name=${encodeURIComponent(artist.name)}`);
   setMetaDescription(`Find verified upcoming U.S. shows and official links for ${artist.name}.`);
+  root.querySelectorAll("[data-artist-social]").forEach(link => link.addEventListener("click", () => trackArtistInteraction("artist_social_click", link.dataset.artistName || artist.name, link.dataset.artistSocial || "")));
 }
 function renderEventDetail() {
   const root = document.querySelector("[data-event-detail]");
