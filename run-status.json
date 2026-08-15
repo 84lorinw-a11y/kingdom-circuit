@@ -1,9 +1,9 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-08-15T16:52:53Z",
-  "lastSuccessfulUpdate": "2026-08-15T16:52:53Z",
-  "eventsPublished": 101,
+  "lastAttempt": "2026-08-15T20:23:53Z",
+  "lastSuccessfulUpdate": "2026-08-15T20:23:53Z",
+  "eventsPublished": 102,
   "candidatesCollected": 203,
   "artistsConfigured": 299,
   "artistsByPriority": {
@@ -20,9 +20,21 @@
   "instagramArtistsConfigured": 99,
   "instagramQueriesRun": 101,
   "instagramQueriesAttempted": 99,
-  "instagramResultsFound": 1,
+  "instagramResultsFound": 8,
   "instagramEventsFound": 0,
   "instagramCandidates": [
+    {
+      "url": "https://www.instagram.com/reel/DbrHCgUSqBk/",
+      "title": "Instagram",
+      "artists": [
+        "Zauntee"
+      ],
+      "date": "",
+      "city": "Denver",
+      "state": "CO",
+      "score": 4,
+      "reason": "official artist ownership was not clear; a future date was not explicit"
+    },
     {
       "url": "https://www.instagram.com/p/DboKM3GJM4A/",
       "title": "Official EGR 2026 schedule graphic supplied to The Kingdom Circuit and manually transcribed.",
@@ -48,14 +60,88 @@
       "reason": "the known post was not publicly indexed with enough event details"
     },
     {
-      "url": "https://www.instagram.com/p/DXwyIIpCG5d/",
-      "title": "Tommy Hilfiger on Instagram: \"On track for the Miami GP with ...",
-      "artists": [],
+      "url": "https://www.instagram.com/reel/Db8qD1CSLa5/",
+      "title": "Instagram",
+      "artists": [
+        "Zauntee"
+      ],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 2,
+      "reason": "official artist ownership was not clear; a future date was not explicit; a U.S. city/state was not explicit"
+    },
+    {
+      "url": "https://www.instagram.com/reel/Dbv5yKryiFX/",
+      "title": "Instagram",
+      "artists": [
+        "Zauntee"
+      ],
       "date": "",
       "city": "",
       "state": "",
       "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
+    },
+    {
+      "url": "https://www.instagram.com/p/DPFlGGCDnzY/",
+      "title": "Instagram",
+      "artists": [
+        "Zauntee"
+      ],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
+    },
+    {
+      "url": "https://www.instagram.com/p/DOPpCVyjuop/",
+      "title": "Instagram",
+      "artists": [
+        "Zauntee"
+      ],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DX1_I8AOVmd/",
+      "title": "Instagram",
+      "artists": [
+        "Zauntee"
+      ],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DaoRxlEuJkL/",
+      "title": "Instagram",
+      "artists": [
+        "Zauntee"
+      ],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DUjcXdJDi1g/",
+      "title": "Instagram",
+      "artists": [
+        "Zauntee"
+      ],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
@@ -289,7 +375,7 @@
     },
     {
       "name": "Off The Charts official schedule",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -604,7 +690,7 @@
     },
     {
       "name": "LifeLight Sioux Falls official lineup",
-      "status": "ok",
+      "status": "warning",
       "eventsFound": 0
     },
     {
@@ -623,7 +709,6 @@
   "warningCount": 24,
   "errorCount": 0,
   "warnings": [
-    "Off The Charts official schedule: Unable to retrieve https://www.offthechartsnd.com/schedule: HTTP Error 429: Too Many Requests",
     "Zauntee official tour: Unable to retrieve https://www.zauntee.com/tour: HTTP Error 429: Too Many Requests",
     "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
     "Trendsetter Sense official events: Unable to retrieve https://www.trendsettersense.com/event-list: HTTP Error 429: Too Many Requests",
@@ -646,7 +731,8 @@
     "FLAME Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/16627-flame: HTTP Error 403: Forbidden",
     "Alex Jean Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15570394-alex-jean: HTTP Error 403: Forbidden",
     "KB Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/165768-kb: HTTP Error 403: Forbidden",
-    "Anike Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4673148-anike: HTTP Error 403: Forbidden"
+    "Anike Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4673148-anike: HTTP Error 403: Forbidden",
+    "LifeLight Sioux Falls official lineup: Unable to retrieve https://lifelight.org/llsf-lineup/: <urlopen error timed out>"
   ],
   "errors": [],
   "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings."
