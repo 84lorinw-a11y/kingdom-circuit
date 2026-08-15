@@ -1,10 +1,10 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-08-15T11:53:29Z",
-  "lastSuccessfulUpdate": "2026-08-15T11:53:29Z",
+  "lastAttempt": "2026-08-15T16:52:53Z",
+  "lastSuccessfulUpdate": "2026-08-15T16:52:53Z",
   "eventsPublished": 101,
-  "candidatesCollected": 202,
+  "candidatesCollected": 203,
   "artistsConfigured": 299,
   "artistsByPriority": {
     "priority1": 100,
@@ -15,12 +15,12 @@
   "socialSearchArtistsEnabled": 99,
   "freeTextAliasesProtected": 97,
   "artistsMatchedOnTicketmaster": 70,
-  "officialEventsFound": 82,
+  "officialEventsFound": 83,
   "ticketmasterEventsFound": 74,
   "instagramArtistsConfigured": 99,
   "instagramQueriesRun": 101,
   "instagramQueriesAttempted": 99,
-  "instagramResultsFound": 0,
+  "instagramResultsFound": 1,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,10 +46,20 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
+    },
+    {
+      "url": "https://www.instagram.com/p/DXwyIIpCG5d/",
+      "title": "Tommy Hilfiger on Instagram: \"On track for the Miami GP with ...",
+      "artists": [],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 228,
+  "sourcesChecked": 230,
   "unmatchedArtists": [
     "Pregador Luo",
     "Sondae",
@@ -254,8 +264,8 @@
     },
     {
       "name": "Space City Fest official organizer",
-      "status": "warning",
-      "eventsFound": 0
+      "status": "ok",
+      "eventsFound": 1
     },
     {
       "name": "Space City Fest venue listing",
@@ -514,7 +524,7 @@
     },
     {
       "name": "TJ Carroll official site",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -610,10 +620,9 @@
       "queriesRun": 101
     }
   ],
-  "warningCount": 26,
+  "warningCount": 24,
   "errorCount": 0,
   "warnings": [
-    "Space City Fest official organizer: Unable to retrieve https://www.spacecitychurch.com/spacecityfest: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>",
     "Off The Charts official schedule: Unable to retrieve https://www.offthechartsnd.com/schedule: HTTP Error 429: Too Many Requests",
     "Zauntee official tour: Unable to retrieve https://www.zauntee.com/tour: HTTP Error 429: Too Many Requests",
     "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
@@ -626,7 +635,6 @@
     "Byron Juane Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14690526-byron-juane: HTTP Error 403: Forbidden",
     "Social Club Misfits Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/13345973-social-club-misfits: HTTP Error 403: Forbidden",
     "Mike Teezy official tour: Unable to retrieve https://www.miketeezymusic.com/tour: HTTP Error 429: Too Many Requests",
-    "TJ Carroll official site: Unable to retrieve https://www.tjcarrollmusic.com/: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>",
     "Manafest Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4465-manafest: HTTP Error 403: Forbidden",
     "GRITS Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/805-grits: HTTP Error 403: Forbidden",
     "Nic D Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11283620-nic-d: HTTP Error 403: Forbidden",
