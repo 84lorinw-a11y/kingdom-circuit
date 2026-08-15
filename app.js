@@ -1,16 +1,770 @@
 "use strict";
 
 console.info("Kingdom Circuit production multipage build loaded");
-
 const BASE = "/";
 const LIVE_EVENTS_URL = `${BASE}events.json`;
 const LIVE_ARTISTS_URL = `${BASE}config/artists.json`;
-const SITE_BUILD = "production-v1";
+const SITE_BUILD = "production-v1-verified-artist-registry";
 const SUPPLEMENTAL_EVENTS_URL = `${BASE}supplemental-events.json?v=2`;
 const RUN_STATUS_URL = `${BASE}run-status.json`;
 const FALLBACK_EVENT_IMAGE = `${BASE}assets/event-fallback.webp`;
 const STATE_NAMES = {AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",DE:"Delaware",DC:"District of Columbia",FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming"};
-
+// Artist source registry imported from Book4.xlsx. Only rows marked Verified are enriched.
+const ARTIST_ROSTER_ORDER = [
+  "Lecrae",
+  "Hulvey",
+  "KB",
+  "Caleb Gordon",
+  "Andy Mineo",
+  "nobigdyl.",
+  "1K Phew",
+  "Miles Minnick",
+  "Jon Keith",
+  "Tedashii",
+  "Trip Lee",
+  "FLAME",
+  "Scootie Wop",
+  "Aaron Cole",
+  "WHATUPRG",
+  "Anike",
+  "Limoblaze",
+  "Jackie Hill Perry",
+  "Social Club Misfits",
+  "Steven Malcolm",
+  "GAWVI",
+  "EGR",
+  "Mike Malagies",
+  "Fern",
+  "Marty",
+  "BrvndonP",
+  "Skema Boy",
+  "Madison Ryann Ward",
+  "Zauntee",
+  "Bizzle",
+  "Derek Minor",
+  "Canon",
+  "Parris Chariz",
+  "Aklesso",
+  "Tommy Zuko",
+  "Sevin",
+  "Da' T.R.U.T.H.",
+  "Wordsplayed",
+  "Forrest Frank",
+  "Alex Jean",
+  "gio.",
+  "Torey D'Shaun",
+  "Redimi2",
+  "GRITS",
+  "Funky",
+  "NF",
+  "Nic D",
+  "Manafest",
+  "Pastor Mike Jr.",
+  "Pregador Luo",
+  "Nesk Only",
+  "Futuristic",
+  "Beacon Light",
+  "Sondae",
+  "Dee-1",
+  "Kieran the Light",
+  "Childlike CiCi",
+  "Yung Kriss",
+  "Eluzai",
+  "tylerhateslife",
+  "S.B.G.",
+  "Aha Gazelle",
+  "EmanuelDaProphet",
+  "Mike Teezy",
+  "Porsha Love",
+  "Reece Lache'",
+  "LaNell Grant",
+  "Red Tips",
+  "Dell Mac",
+  "indie tribe.",
+  "DJ Mykael V",
+  "Mogli the Iceburg",
+  "Tommy Royale",
+  "Jay-Way",
+  "Ty Brasel",
+  "J. Monty",
+  "Datin",
+  "Jered Sanders",
+  "A.I. The Anomaly",
+  "Selah the Corner",
+  "Bumps INF",
+  "Bryann T",
+  "Young Bro",
+  "KJ-52",
+  "Nicky Gracious",
+  "ASAP Preach",
+  "Eshon Burgundy",
+  "Sho Baraka",
+  "Propaganda",
+  "Shai Linne",
+  "Thi'sl",
+  "Swoope",
+  "Ruslan",
+  "Mission",
+  "DaeShawn Forrest",
+  "BigBreeze",
+  "C4 Crotona",
+  "Alexxander",
+  "2819 Worship",
+  "George.Rose",
+  "Kijan Boone",
+  "Jude Barclay",
+  "Kaleb Mitchell",
+  "Xay Hill",
+  "DKG Kie",
+  "J. Crum",
+  "Nathan Davis Jr.",
+  "Angie Rose",
+  "Aasha Marie",
+  "R-Swift",
+  "No Malice",
+  "DC3",
+  "Don Ready",
+  "Not Klyde",
+  "404 Chew",
+  "Alphein",
+  "Bill B.",
+  "G3rm 43",
+  "GiNŌSKŌ",
+  "Glenn Ray",
+  "I.A.N.",
+  "IDEGO",
+  "Isreal Perez",
+  "J J L",
+  "Jacob Beard",
+  "JWoodz",
+  "Kaden Jordan",
+  "MAYIA",
+  "Megan Tossi",
+  "mica",
+  "Myles Maestro",
+  "Nat Lauren",
+  "Peair",
+  "Razzie",
+  "Saint Jones",
+  "Stixx aka Conejo",
+  "Tay Stunna",
+  "YakiTheKid",
+  "yumiya!",
+  "Vic Lucas",
+  "Kevi Morse",
+  "Chris Caro",
+  "EJ Swavv",
+  "Kelo",
+  "J.Solo",
+  "Tds Cam",
+  "Kham",
+  "WHEREISDAVINCI",
+  "Tukool Tiff",
+  "Tylynn",
+  "De'Aris",
+  "Will Kellum",
+  "Jonah Daniel",
+  "outr.cty",
+  "B. Cooper",
+  "YP aka Young Paul",
+  "Untidld",
+  "DEON",
+  "Jamil",
+  "Kvng Flvcko",
+  "Y Shadey",
+  "MotionPlus",
+  "Dante' Pride",
+  "Adriel Cruz",
+  "Drea LP",
+  "Solachi Voz",
+  "Jeannie Ortega",
+  "A Mose",
+  "Arielle Nichole",
+  "Jekasole",
+  "Heesun Lee",
+  "Mahogany Jones",
+  "Linga TheBoss",
+  "Latoria",
+  "Shy Speaks",
+  "Serious Voice",
+  "Tarcea Renee",
+  "4eva",
+  "Ada Betsabé",
+  "BreeKay & Kasairi",
+  "Bri Smilez",
+  "Butta P",
+  "Carita Cole",
+  "Cass",
+  "Dice Gamble",
+  "Keiana",
+  "Licy Be",
+  "Pristavia",
+  "Erica Mason",
+  "Kay Sade",
+  "Jackie Legere",
+  "Foure",
+  "Chozenn",
+  "V. Rose",
+  "Mike REAL",
+  "Spec",
+  "Christon Gray",
+  "Dre Murray",
+  "S.O.",
+  "Reconcile",
+  "Corey Paul",
+  "Alex Faith",
+  "Tony Tillman",
+  "Chad Jones",
+  "Dillon Chase",
+  "Json",
+  "J.R.",
+  "Stephen the Levite",
+  "Timothy Brindle",
+  "Hazakim",
+  "Evangel",
+  "God's Servant",
+  "Beautiful Eulogy",
+  "Braille",
+  "116",
+  "350",
+  "Battz",
+  "Byron Juane",
+  "Coby James",
+  "De La Cruz",
+  "Gavin the HotRod",
+  "Hollyn",
+  "JGivens",
+  "Kings Kaleidoscope",
+  "Odd Thomas",
+  "Q-Flo",
+  "Rare of Breed",
+  "Ryan Trey",
+  "Swaizy",
+  "The Weathrman",
+  "Toschii",
+  "Trendsetter Sense",
+  "Brother Bo",
+  "Tommy Chapa",
+  "B. Cody Shields",
+  "Santana Rose",
+  "DJ Winn",
+  "J.List",
+  "BIG HOLY",
+  "D-Maub",
+  "K-Drama",
+  "Monster Tarver",
+  "Taelor Gray",
+  "ZEE",
+  "IMRSQD",
+  "TJ Carroll",
+  "Coop",
+  "CJ Emulous",
+  "Lul DreDay",
+  "REDEEMED",
+  "Pishko",
+  "Paul Russell",
+  "MC Jin",
+  "Gemstones",
+  "Mouthpi3ce",
+  "John Givez",
+  "Beleaf",
+  "J. Han",
+  "Sam Ock",
+  "Dream Junkies",
+  "Jet Trouble",
+  "Skrip",
+  "Deraj",
+  "Surf Gvng",
+  "Ki'Shon Furlow",
+  "Dru Bex",
+  "Brinson",
+  "Canton Jones",
+  "Mr. Del",
+  "Pettidee",
+  "Fresh IE",
+  "Applejaxx",
+  "Fedel",
+  "Antwoine Hill",
+  "Brandon Trejo",
+  "Monica Hill Trejo",
+  "Moe Grant",
+  "Isaiah Robin",
+  "Guvna B",
+  "Faith Child",
+  "Still Shadey",
+  "Feed'Em",
+  "Reblah",
+  "Triple O",
+  "A Star",
+  "J Vessel",
+  "Dwayne Tryumf",
+  "Manny Montes",
+  "Alex Zurdo",
+  "Musiko",
+  "Indiomar",
+  "Gabriel EMC",
+  "Jay Kalyl",
+  "Niko Eme",
+  "Lizzy Parra",
+  "Rubinsky RBK",
+  "Madiel Lara",
+  "Ariel Kelly",
+  "Oba Reengy"
+];
+const VERIFIED_ARTIST_REGISTRY = {
+  "lecrae": {
+    "aliases": [
+      "Lecrae"
+    ],
+    "website": "https://lecrae.com",
+    "instagramProfile": "https://www.instagram.com/lecrae/",
+    "spotifyProfile": "https://open.spotify.com/artist/1CFCsEqKrCyvAFKOATQHiW",
+    "youtubeProfile": "https://www.youtube.com/@lecraeofficial",
+    "officialImageSource": "https://lecrae.com",
+    "sourceRegistryVerified": true
+  },
+  "hulvey": {
+    "aliases": [
+      "Hulvey"
+    ],
+    "website": "https://hulvey.com",
+    "instagramProfile": "https://www.instagram.com/hulvey/",
+    "spotifyProfile": "https://open.spotify.com/artist/3zSrc5vUlUxyDdS0KrxFJO",
+    "youtubeProfile": "https://www.youtube.com/@hulvey",
+    "officialImageSource": "https://hulvey.com",
+    "sourceRegistryVerified": true
+  },
+  "kb": {
+    "aliases": [
+      "KB"
+    ],
+    "website": "https://www.whoiskb.com",
+    "instagramProfile": "https://www.instagram.com/kb_hga/",
+    "spotifyProfile": "https://open.spotify.com/artist/77IKXFvO7SpWrq8hflrUXc",
+    "youtubeProfile": "https://www.youtube.com/@KB_HGA",
+    "officialImageSource": "https://www.whoiskb.com",
+    "sourceRegistryVerified": true
+  },
+  "caleb gordon": {
+    "aliases": [
+      "Caleb Gordon"
+    ],
+    "website": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+    "instagramProfile": "https://www.instagram.com/calebfromeden",
+    "spotifyProfile": "https://open.spotify.com/artist/6s3XaJkcT7464G4oII9V41",
+    "youtubeProfile": "https://www.youtube.com/@CalebGordon",
+    "officialImageSource": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+    "sourceRegistryVerified": true
+  },
+  "andy mineo": {
+    "aliases": [
+      "Andy Mineo"
+    ],
+    "website": "https://andymineo.com",
+    "instagramProfile": "https://www.instagram.com/andymineo/",
+    "spotifyProfile": "https://open.spotify.com/artist/1TMrnxBwZfmfRxsGzkNIHw",
+    "youtubeProfile": "https://www.youtube.com/@AndyMineo",
+    "officialImageSource": "https://andymineo.com",
+    "sourceRegistryVerified": true
+  },
+  "nobigdyl.": {
+    "aliases": [
+      "nobigdyl.",
+      "nobigdyl"
+    ],
+    "website": "https://www.dyllie.com/",
+    "instagramProfile": "https://www.instagram.com/nobigdyl/",
+    "spotifyProfile": "https://open.spotify.com/artist/2d8NsBa8O4C6bgQatFP5V4",
+    "youtubeProfile": "https://www.youtube.com/@nobigdyl.official",
+    "officialImageSource": "https://www.instagram.com/nobigdyl/",
+    "sourceRegistryVerified": true
+  },
+  "1k phew": {
+    "aliases": [
+      "1K Phew",
+      "1K PHEW",
+      "1KPhew"
+    ],
+    "website": "https://www.1kphew.com/",
+    "instagramProfile": "https://www.instagram.com/1kphew/",
+    "spotifyProfile": "https://open.spotify.com/artist/6CQGrt3AJ2gx5oMSR0mwbl",
+    "youtubeProfile": "https://www.youtube.com/@Phewskii",
+    "officialImageSource": "https://www.1kphew.com/bio",
+    "sourceRegistryVerified": true
+  },
+  "miles minnick": {
+    "aliases": [
+      "Miles Minnick"
+    ],
+    "website": "https://milesminnick.com/",
+    "instagramProfile": "https://www.instagram.com/miles.minnick/",
+    "spotifyProfile": "https://open.spotify.com/artist/1VEtrxO5KlDXfYGKBI6Ldr",
+    "youtubeProfile": "https://www.youtube.com/@MilesMinnick",
+    "officialImageSource": "https://milesminnick.com/",
+    "sourceRegistryVerified": true
+  },
+  "jon keith": {
+    "aliases": [
+      "Jon Keith"
+    ],
+    "website": "https://alienzalive.com/artist/jon-keith/",
+    "instagramProfile": "https://www.instagram.com/jonkeith/",
+    "spotifyProfile": "https://open.spotify.com/artist/0PUc1lwaZpPJaMr0v4Gdvo",
+    "youtubeProfile": "https://www.youtube.com/@JonKeith",
+    "officialImageSource": "https://open.spotify.com/artist/0PUc1lwaZpPJaMr0v4Gdvo",
+    "sourceRegistryVerified": true
+  },
+  "tedashii": {
+    "aliases": [
+      "Tedashii"
+    ],
+    "website": "https://www.reachrecords.com/artists/tedashii/",
+    "instagramProfile": "https://www.instagram.com/tedashii/",
+    "spotifyProfile": "https://open.spotify.com/artist/4c6lhwoOrmgNWvl0GxHlW1",
+    "youtubeProfile": "https://www.youtube.com/@tedashii_116",
+    "officialImageSource": "https://www.reachrecords.com/artists/tedashii/",
+    "sourceRegistryVerified": true
+  },
+  "trip lee": {
+    "aliases": [
+      "Trip Lee"
+    ],
+    "website": "https://builttobrag.com/",
+    "instagramProfile": "https://www.instagram.com/triplee/",
+    "spotifyProfile": "https://open.spotify.com/artist/12H1Dmi64fAmmARrsyVFzy",
+    "youtubeProfile": "https://www.youtube.com/@triplee_116",
+    "officialImageSource": "https://builttobrag.com/",
+    "sourceRegistryVerified": true
+  },
+  "flame": {
+    "aliases": [
+      "FLAME",
+      "Flame"
+    ],
+    "website": "https://www.instagram.com/flame314/",
+    "instagramProfile": "https://www.instagram.com/flame314/",
+    "spotifyProfile": "https://open.spotify.com/artist/2s6kyMmJZFgPCHXU0QxJLp",
+    "youtubeProfile": "https://www.youtube.com/@ClearSightMusic",
+    "officialImageSource": "https://www.instagram.com/flame314/",
+    "sourceRegistryVerified": true
+  },
+  "scootie wop": {
+    "aliases": [
+      "Scootie Wop"
+    ],
+    "website": "https://starrbaby.com/",
+    "instagramProfile": "https://www.instagram.com/scootiewop/",
+    "spotifyProfile": "https://open.spotify.com/artist/1JAoqu34UmPWUUAjLMXt5I",
+    "youtubeProfile": "https://www.youtube.com/channel/UCxiuNRFW37J9uXL6SGCW0MQ",
+    "officialImageSource": "https://starrbaby.com/",
+    "sourceRegistryVerified": true
+  },
+  "aaron cole": {
+    "aliases": [
+      "Aaron Cole"
+    ],
+    "website": "https://www.iamaaroncole.com/",
+    "instagramProfile": "https://www.instagram.com/iamaaroncole/",
+    "spotifyProfile": "https://open.spotify.com/artist/0OQ8y7heASb1vEX5WXvjCr",
+    "youtubeProfile": "https://www.youtube.com/channel/UCFV59kjh9BTGJGYwfrQ247Q",
+    "officialImageSource": "https://www.iamaaroncole.com/",
+    "sourceRegistryVerified": true
+  },
+  "whatuprg": {
+    "aliases": [
+      "WHATUPRG",
+      "WHATUPRG?"
+    ],
+    "website": "https://www.reachrecords.com/artists/whatuprg/",
+    "instagramProfile": "https://www.instagram.com/whatuprg/",
+    "spotifyProfile": "https://open.spotify.com/artist/6YgYm3f9ifsz4OwQt8jql7",
+    "youtubeProfile": "https://www.youtube.com/@WHATUPRG",
+    "officialImageSource": "https://www.reachrecords.com/artists/whatuprg/",
+    "sourceRegistryVerified": true
+  },
+  "anike": {
+    "aliases": [
+      "Anike",
+      "Wande"
+    ],
+    "website": "https://anike.net/",
+    "instagramProfile": "https://www.instagram.com/anike/",
+    "spotifyProfile": "https://open.spotify.com/artist/0GdzQJqgRL5SHp7kXOKba0",
+    "youtubeProfile": "https://www.youtube.com/c/wandeisola",
+    "officialImageSource": "https://anike.net/",
+    "sourceRegistryVerified": true
+  },
+  "limoblaze": {
+    "aliases": [
+      "Limoblaze"
+    ],
+    "website": "https://www.limoblaze.com/",
+    "instagramProfile": "https://www.instagram.com/limoblaze_/",
+    "spotifyProfile": "https://open.spotify.com/artist/0liXA3xwx6pncxYQA30ahT",
+    "youtubeProfile": "https://www.youtube.com/@limoblaze",
+    "officialImageSource": "https://www.limoblaze.com/",
+    "sourceRegistryVerified": true
+  },
+  "jackie hill perry": {
+    "aliases": [
+      "Jackie Hill Perry",
+      "Jackie Hill-Perry"
+    ],
+    "website": "https://www.jackiehillperry.com/",
+    "instagramProfile": "https://www.instagram.com/jackiehillperry/",
+    "spotifyProfile": "https://open.spotify.com/artist/0Lf9qKpKwy6fJtfM7UWLV0",
+    "youtubeProfile": "https://www.youtube.com/@jackiehillperrychannel",
+    "officialImageSource": "https://www.jackiehillperry.com/",
+    "sourceRegistryVerified": true
+  },
+  "social club misfits": {
+    "aliases": [
+      "Social Club Misfits",
+      "Social Club"
+    ],
+    "website": "https://socialclubmisfits.com/",
+    "instagramProfile": "https://www.instagram.com/socialclubmisfits/",
+    "spotifyProfile": "https://open.spotify.com/artist/0wnsM0ziqToBwQeEbH0akL",
+    "youtubeProfile": "https://www.youtube.com/@socialclubmisfits",
+    "officialImageSource": "https://socialclubmisfits.com/",
+    "sourceRegistryVerified": true
+  },
+  "steven malcolm": {
+    "aliases": [
+      "Steven Malcolm"
+    ],
+    "website": "https://stevenmalcolm.com/",
+    "instagramProfile": "https://www.instagram.com/stevenmalcolmmusic/",
+    "spotifyProfile": "https://open.spotify.com/artist/5yqWHaDl8ZrYgeKANLyIv8",
+    "youtubeProfile": "https://www.youtube.com/c/StevenMalcolm",
+    "officialImageSource": "https://stevenmalcolm.com/",
+    "sourceRegistryVerified": true
+  },
+  "gawvi": {
+    "aliases": [
+      "GAWVI",
+      "Gawvi"
+    ],
+    "website": "https://www.gawvi.co/",
+    "instagramProfile": "https://www.instagram.com/gawvi/",
+    "spotifyProfile": "https://open.spotify.com/artist/0oPd8f0W82Tgrazx2PYNab",
+    "youtubeProfile": "https://www.youtube.com/@GAWVI",
+    "officialImageSource": "https://www.gawvi.co/",
+    "sourceRegistryVerified": true
+  },
+  "egr": {
+    "aliases": [
+      "EGR",
+      "EGR MUZIK",
+      "EGRxOFFICIAL"
+    ],
+    "website": "https://www.youtube.com/@EGRxOFFICIAL",
+    "instagramProfile": "https://www.instagram.com/egrxofficial/",
+    "spotifyProfile": "https://open.spotify.com/artist/4EJIkbig1thbV3C3B68c56",
+    "youtubeProfile": "https://www.youtube.com/@EGRxOFFICIAL",
+    "officialImageSource": "https://www.youtube.com/@EGRxOFFICIAL",
+    "sourceRegistryVerified": true
+  },
+  "mike malagies": {
+    "aliases": [
+      "Mike Malagies"
+    ],
+    "website": "https://www.mikemalagiesofficial.com/",
+    "instagramProfile": "https://www.instagram.com/mikemalagies/",
+    "spotifyProfile": "https://open.spotify.com/artist/6Ms95MzjHZvqs79Nw3hXrx",
+    "youtubeProfile": "https://www.youtube.com/channel/UCLbkU1IRos-VlB7fwACr_YQ",
+    "officialImageSource": "https://www.mikemalagiesofficial.com/",
+    "sourceRegistryVerified": true
+  },
+  "fern": {
+    "aliases": [
+      "Fern",
+      "Fern of Social Club Misfits"
+    ],
+    "website": "https://fernofficial.com/",
+    "instagramProfile": "https://www.instagram.com/fernie_sc/",
+    "spotifyProfile": "https://open.spotify.com/artist/0aDl6JJeQf1eZ35ymzirwp",
+    "youtubeProfile": "https://www.youtube.com/channel/UCjB6amZ5v-e6H8lK2HerjmQ",
+    "officialImageSource": "https://fernofficial.com/",
+    "sourceRegistryVerified": true
+  },
+  "marty": {
+    "aliases": [
+      "Marty",
+      "Marty of Social Club Misfits",
+      "Marty Mar"
+    ],
+    "website": "https://www.instagram.com/deathbymartymar/?hl=en",
+    "instagramProfile": "https://www.instagram.com/deathbymartymar/",
+    "spotifyProfile": "https://open.spotify.com/artist/5BfKKSmpGmj2moMNlaWeJK",
+    "youtubeProfile": "https://www.youtube.com/@deathbymartymar",
+    "officialImageSource": "https://www.instagram.com/deathbymartymar/?hl=en",
+    "sourceRegistryVerified": true
+  },
+  "brvndonp": {
+    "aliases": [
+      "BrvndonP",
+      "Brvndon P"
+    ],
+    "website": "https://iambrvndonp.com/",
+    "instagramProfile": "https://www.instagram.com/iambrvndonp/",
+    "spotifyProfile": "https://open.spotify.com/artist/0hO40pJ3oZNnq7joT2xQGy",
+    "youtubeProfile": "https://www.youtube.com/@BRVNDONP",
+    "officialImageSource": "https://iambrvndonp.com/",
+    "sourceRegistryVerified": true
+  },
+  "skema boy": {
+    "aliases": [
+      "Skema Boy"
+    ],
+    "website": "https://rixonentertainment.com/skema-boy",
+    "instagramProfile": "https://www.instagram.com/skema.boy/",
+    "spotifyProfile": "https://open.spotify.com/artist/1KTljUXZGt7HkAFFEnDBn1",
+    "youtubeProfile": "https://www.youtube.com/@skemaboy",
+    "officialImageSource": "https://rixonentertainment.com/skema-boy",
+    "sourceRegistryVerified": true
+  },
+  "madison ryann ward": {
+    "aliases": [
+      "Madison Ryann Ward"
+    ],
+    "website": "https://madisonryannward.com/",
+    "instagramProfile": "https://www.instagram.com/madisonryannward/",
+    "spotifyProfile": "https://open.spotify.com/artist/6eAUAR4N9NOpirukqdIzVI",
+    "youtubeProfile": "https://www.youtube.com/@madisonryannward9730",
+    "officialImageSource": "https://madisonryannward.com/",
+    "sourceRegistryVerified": true
+  },
+  "zauntee": {
+    "aliases": [
+      "Zauntee"
+    ],
+    "website": "https://www.zauntee.com/",
+    "instagramProfile": "https://www.instagram.com/zauntee/",
+    "spotifyProfile": "https://open.spotify.com/artist/7jyr9Co4MKL1iWML1G7vch",
+    "youtubeProfile": "https://www.youtube.com/@zauntee",
+    "officialImageSource": "https://www.zauntee.com/",
+    "sourceRegistryVerified": true
+  },
+  "bizzle": {
+    "aliases": [
+      "Bizzle"
+    ],
+    "website": "https://bizzle.vip/",
+    "instagramProfile": "https://www.instagram.com/bizzle/",
+    "spotifyProfile": "https://open.spotify.com/artist/0P8V2XSw1mIo8739T1qjzr",
+    "youtubeProfile": "https://www.youtube.com/user/playbizzle21",
+    "officialImageSource": "https://bizzle.vip/",
+    "sourceRegistryVerified": true
+  },
+  "derek minor": {
+    "aliases": [
+      "Derek Minor"
+    ],
+    "website": "https://derekminor.com/",
+    "instagramProfile": "https://www.instagram.com/thederekminor/",
+    "spotifyProfile": "https://open.spotify.com/artist/3fn8lZLy7Q61AXCWWPYC4B",
+    "youtubeProfile": "https://www.youtube.com/@derekminor",
+    "officialImageSource": "https://derekminor.com/",
+    "sourceRegistryVerified": true
+  },
+  "canon": {
+    "aliases": [
+      "Canon"
+    ],
+    "website": "https://www.getthecanon.com/",
+    "instagramProfile": "https://www.instagram.com/getthecanon/",
+    "spotifyProfile": "https://open.spotify.com/artist/1dIjbaW9JTTQQ7ufrQnGsq",
+    "youtubeProfile": "https://www.youtube.com/@getthecanon",
+    "officialImageSource": "https://www.getthecanon.com/",
+    "sourceRegistryVerified": true
+  },
+  "parris chariz": {
+    "aliases": [
+      "Parris Chariz"
+    ],
+    "website": "https://www.instagram.com/parrischariz/?hl=en",
+    "instagramProfile": "https://www.instagram.com/parrischariz/",
+    "spotifyProfile": "https://open.spotify.com/artist/2Vt6gyhUH7Vj2cybfQWOqM",
+    "youtubeProfile": "https://www.youtube.com/@parrischariz",
+    "officialImageSource": "https://www.instagram.com/parrischariz/?hl=en",
+    "sourceRegistryVerified": true
+  },
+  "aklesso": {
+    "aliases": [
+      "Aklesso"
+    ],
+    "website": "https://www.aklesso.com/",
+    "instagramProfile": "https://www.instagram.com/aklesso/",
+    "spotifyProfile": "https://open.spotify.com/artist/7r3HxO330lmabOprT2MMFK",
+    "youtubeProfile": "https://www.youtube.com/@aklesso",
+    "officialImageSource": "https://www.aklesso.com/",
+    "sourceRegistryVerified": true
+  },
+  "tommy zuko": {
+    "aliases": [
+      "Tommy Zuko"
+    ],
+    "website": "https://www.tommyzuko.com/",
+    "instagramProfile": "https://www.instagram.com/tommyzuko/",
+    "spotifyProfile": "https://open.spotify.com/artist/6GEZnFo9mFSItpAWzswBpT",
+    "youtubeProfile": "https://www.youtube.com/@TommyZuko",
+    "officialImageSource": "https://www.tommyzuko.com/",
+    "sourceRegistryVerified": true
+  },
+  "sevin": {
+    "aliases": [
+      "Sevin",
+      "Sevin Duce",
+      "Sevin HOG MOB",
+      "HOG MOB Ministries",
+      "HOG MOB"
+    ],
+    "website": "https://hogmob.com/sevin/",
+    "instagramProfile": "https://www.instagram.com/sevinhogmob/",
+    "spotifyProfile": "https://open.spotify.com/artist/1I402d4s0Xe8EntQI3u96l",
+    "youtubeProfile": "https://www.youtube.com/@HOGMOBSEVIN",
+    "officialImageSource": "https://hogmob.com/sevin/",
+    "sourceRegistryVerified": true
+  },
+  "da' t.r.u.t.h.": {
+    "aliases": [
+      "Da' T.R.U.T.H.",
+      "Da Truth",
+      "Da T.R.U.T.H."
+    ],
+    "website": "https://www.instagram.com/datruthonduty/?hl=en",
+    "instagramProfile": "https://www.instagram.com/datruthonduty/",
+    "spotifyProfile": "https://open.spotify.com/artist/2ISIE0MEDMdAF2LDMLrVD4",
+    "youtubeProfile": "https://www.youtube.com/channel/UCnJCP07fWQ5BIFd7toUnxKg",
+    "officialImageSource": "https://www.instagram.com/datruthonduty/?hl=en",
+    "sourceRegistryVerified": true
+  },
+  "wordsplayed": {
+    "aliases": [
+      "Wordsplayed",
+      "Wordsplayed.",
+      "Wordsplayed?"
+    ],
+    "website": "https://wordsplayed.neocities.org/",
+    "instagramProfile": "https://www.instagram.com/wordsplayed/",
+    "spotifyProfile": "https://open.spotify.com/artist/0AKzJfX9rdEu8WOqeBLEaO",
+    "youtubeProfile": "https://music.youtube.com/@wordsplayedworldwide",
+    "officialImageSource": "https://wordsplayed.neocities.org/",
+    "sourceRegistryVerified": true
+  },
+  "forrest frank": {
+    "aliases": [
+      "Forrest Frank"
+    ],
+    "website": "https://forrestfrank.com/",
+    "instagramProfile": "https://www.instagram.com/hiforrest/",
+    "spotifyProfile": "https://open.spotify.com/artist/1scVfBymTr3CeZ4imMj1QJ",
+    "youtubeProfile": "https://www.youtube.com/@hiforrest",
+    "officialImageSource": "https://forrestfrank.com/",
+    "sourceRegistryVerified": true
+  }
+};
 const ARTIST_OVERRIDES = {
   "kb": {
     spotifyProfile: "https://open.spotify.com/artist/77IKXFvO7SpWrq8hflrUXc"
@@ -27,16 +781,14 @@ const ARTIST_OVERRIDES = {
     imagePosition: "50% 32%",
     officialProfile: "https://zauntee.com/",
     instagramProfile: "https://www.instagram.com/zauntee/",
-    youtubeProfile: "https://www.youtube.com/results?search_query=Zauntee+official"
+    youtubeProfile: "https://www.youtube.com/@zauntee"
   }
 };
-
 let EVENTS = [];
 let ARTISTS = [];
 
 const esc = value => String(value ?? "").replace(/[&<>'"]/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[ch]));
 const normalize = value => String(value || "").trim().toLocaleLowerCase();
-
 async function loadJson(primary, fallback) {
   try {
     const response = await fetch(primary, { cache: "no-store" });
@@ -49,7 +801,6 @@ async function loadJson(primary, fallback) {
     return await response.json();
   }
 }
-
 async function loadOptionalJson(url) {
   try {
     const response = await fetch(url, { cache: "no-store" });
@@ -63,13 +814,29 @@ async function loadOptionalJson(url) {
 }
 
 function applyArtistOverrides(artists) {
-  return artists.map(artist => ({ ...artist, ...(ARTIST_OVERRIDES[normalize(artist.name)] || {}) }));
+  const orderByName = new Map(ARTIST_ROSTER_ORDER.map((name, index) => [normalize(name), index + 1]));
+  return artists.map(artist => {
+    const key = normalize(artist.name);
+    const legacyOverride = ARTIST_OVERRIDES[key] || {};
+    const verifiedUpdate = VERIFIED_ARTIST_REGISTRY[key] || {};
+    const rosterOrder = orderByName.get(key);
+    const aliases = [...new Set([
+      ...(artist.aliases || []),
+      ...(legacyOverride.aliases || []),
+      ...(verifiedUpdate.aliases || [])
+    ])];
+    return {
+      ...artist,
+      ...legacyOverride,
+      ...verifiedUpdate,
+      ...(aliases.length ? { aliases } : {}),
+      ...(rosterOrder ? { rosterOrder } : {})
+    };
+  });
 }
-
 function eventArtistSet(event) {
   return new Set((event.artists || []).map(normalize));
 }
-
 function sameEvent(existing, incoming) {
   if (!existing || !incoming || existing.startDate !== incoming.startDate) return false;
   if (normalize(existing.city) !== normalize(incoming.city)) return false;
@@ -78,7 +845,6 @@ function sameEvent(existing, incoming) {
   const sharedArtist = [...eventArtistSet(incoming)].some(name => existingArtists.has(name));
   return sameVenue || sharedArtist;
 }
-
 function shouldUseIncomingImage(existing, incoming) {
   if (!incoming.image) return false;
   if (incoming.imageOverride) return true;
@@ -86,7 +852,6 @@ function shouldUseIncomingImage(existing, incoming) {
   const current = normalize(existing.image);
   return current === "assets/event-fallback.webp" || current.endsWith("/assets/event-fallback.webp") || existing.imageType === "fallback";
 }
-
 function mergeEventLists(primary, supplemental) {
   const merged = primary.map(event => ({ ...event, artists: [...(event.artists || [])] }));
   supplemental.forEach(incoming => {
@@ -105,7 +870,6 @@ function mergeEventLists(primary, supplemental) {
   });
   return merged;
 }
-
 function localAssetUrl(value) {
   if (!value) return "";
   if (/^https?:\/\//i.test(value)) return value.replace(/^http:\/\//i, "https://");
@@ -116,7 +880,6 @@ function artistConfig(name) {
   const target = normalize(name);
   return ARTISTS.find(artist => normalize(artist.name) === target || (artist.aliases || []).some(alias => normalize(alias) === target));
 }
-
 function eventImage(event) {
   const config = artistConfig(event.headliner || event.artists?.[0]);
   return localAssetUrl(event.image || config?.imageUrl) || FALLBACK_EVENT_IMAGE;
@@ -129,14 +892,12 @@ function imageClass(event) {
 function imagePosition(event) {
   return event.imagePosition || artistConfig(event.headliner)?.imagePosition || "center";
 }
-
 function parseLocalDate(value) {
   if (!value) return null;
   const [year, month, day] = value.split("-").map(Number);
   if (!year || !month || !day) return null;
   return new Date(year, month - 1, day, 12, 0, 0, 0);
 }
-
 function formatDate(event) {
   const date = parseLocalDate(event.startDate);
   if (!date) return "Date to be announced";
@@ -148,7 +909,6 @@ function formatDate(event) {
   }
   return text;
 }
-
 function sourceText(event) {
   return event.sourceName || event.sources?.[0]?.name || "Official source";
 }
@@ -164,7 +924,6 @@ function artistProfileUrl(name) {
 function artistLinks(event) {
   return (event.artists || []).map(name => `<a href="${artistProfileUrl(name)}">${esc(name)}</a>`).join(" - ");
 }
-
 function isNew(event) {
   if (!event.firstSeen) return false;
   const seen = new Date(event.firstSeen);
@@ -172,7 +931,6 @@ function isNew(event) {
   cutoff.setDate(cutoff.getDate() - 14);
   return seen >= cutoff;
 }
-
 function eventCard(event) {
   const search = [event.title, event.venue, event.city, event.state, event.sourceName, ...(event.artists || [])].join(" ").toLocaleLowerCase();
   const artists = (event.artists || []).map(normalize).join("|");
@@ -185,7 +943,6 @@ function eventCard(event) {
     <div class="event-content"><div class="event-main"><div class="event-badges"><span class="badge badge-gold">${esc(event.eventType === "festival" ? "Festival" : "Concert")}</span>${recent}</div><h3><a href="${eventDetailUrl(event)}">${esc(event.title)}</a></h3><p class="artist-line">${artistLinks(event)}</p><dl class="event-meta"><div><dt>Date</dt><dd>${esc(formatDate(event))}</dd></div><div><dt>Venue</dt><dd>${esc(event.venue || "Venue to be announced")}</dd></div><div><dt>Location</dt><dd>${esc(location)}</dd></div></dl>${price}</div><div class="event-footer"><a class="official-button" href="${esc(event.officialUrl || event.ticketUrl || "#")}" target="_blank" rel="noopener">Official details</a><p class="source-line">Source: ${esc(sourceText(event))}</p></div></div>
   </article>`;
 }
-
 function filterEvents(mode) {
   const today = new Date();
   if (mode === "festival") return EVENTS.filter(event => event.eventType === "festival");
@@ -193,7 +950,6 @@ function filterEvents(mode) {
   if (mode === "new") return EVENTS.filter(isNew);
   return EVENTS;
 }
-
 function fillSelect(select, values, labeler = value => value) {
   if (!select) return;
   const first = select.querySelector("option");
@@ -204,7 +960,6 @@ function fillSelect(select, values, labeler = value => value) {
 function startOfDay(value) {
   return new Date(value.getFullYear(), value.getMonth(), value.getDate());
 }
-
 function dateMatchesMode(startDate, endDate, mode) {
   if (!mode || mode === "all") return true;
   const today = startOfDay(new Date());
@@ -216,7 +971,6 @@ function dateMatchesMode(startDate, endDate, mode) {
   if (mode === "weekend") { const friday = new Date(today); friday.setDate(friday.getDate() + ((5 - today.getDay() + 7) % 7)); const sunday = new Date(friday); sunday.setDate(sunday.getDate() + 2); return end >= friday && start <= sunday; }
   return true;
 }
-
 function setupEventFilters(cards) {
   const form = document.querySelector("[data-event-filters]");
   if (!form) return;
@@ -232,7 +986,6 @@ function setupEventFilters(cards) {
   const params = new URLSearchParams(location.search);
   if (params.get("artist") && artist) artist.value = normalize(params.get("artist"));
   if (params.get("state") && state) state.value = params.get("state").toUpperCase();
-
   function apply() {
     const needle = normalize(search?.value);
     const artistValue = artist?.value || "";
@@ -248,7 +1001,6 @@ function setupEventFilters(cards) {
     if (count) count.textContent = `${visible} show${visible === 1 ? "" : "s"}`;
     if (empty) empty.hidden = visible !== 0;
   }
-
   [search, artist, state, type].forEach(control => control?.addEventListener(control === search ? "input" : "change", apply));
   chips.forEach(chip => chip.addEventListener("click", () => {
     if (chip.dataset.typeMode) { if (type) type.value = chip.dataset.typeMode; dateMode = "all"; }
@@ -260,7 +1012,6 @@ function setupEventFilters(cards) {
   reset?.addEventListener("click", () => { form.reset(); dateMode = "all"; chips.forEach(item => item.classList.toggle("active", item.dataset.dateMode === "all")); apply(); });
   apply();
 }
-
 function renderEventList() {
   const grid = document.querySelector("[data-event-grid]");
   if (!grid) return;
@@ -284,37 +1035,40 @@ function renderEventList() {
     document.querySelector("[data-month-festival-count]")?.replaceChildren(String(list.filter(event => event.eventType === "festival").length));
   }
 }
-
 function friendlyCategory(value) {
   return ({core:"Core CHH",reach:"Reach Records",crossover:"Crossover",group:"Group",legacy:"Legacy"})[value] || "CHH artist";
 }
-
 function spotifyInfo(artist) {
   const directProfile = artist.spotifyProfile || (artist.spotifyId ? `https://open.spotify.com/artist/${encodeURIComponent(artist.spotifyId)}` : "");
   if (directProfile) return { url: directProfile, exact: true, status: "Open verified Spotify profile" };
   return { url: "", exact: false, status: "Spotify link pending verification" };
 }
-
 function instagramInfo(artist) {
   return artist.instagramProfile ? { url: artist.instagramProfile, status: "Open verified Instagram profile" } : { url: "", status: "Instagram link pending verification" };
 }
-
 function youtubeInfo(artist) {
   const official = artist.youtubeProfile || (/youtu\.be|youtube\.com/i.test(artist.officialProfile || "") ? artist.officialProfile : "");
   return official ? { url: official, status: "Open verified YouTube profile" } : { url: "", status: "YouTube link pending verification" };
 }
-
 function websiteInfo(artist) {
   const candidate = artist.website || artist.officialWebsite || artist.officialProfile || "";
   const isPlatform = /instagram\.com|open\.spotify\.com|youtu\.be|youtube\.com|music\.apple\.com|bandsintown\.com/i.test(candidate);
   return candidate && !isPlatform ? { url: candidate, status: "Open official website" } : { url: "", status: "Website link pending verification" };
 }
-
+function artistImageInfo(artist) {
+  if (artist.sourceRegistryVerified !== true || !artist.imageUrl) return { url: "", position: "center" };
+  return { url: localAssetUrl(artist.imageUrl), position: artist.imagePosition || "center" };
+}
+function artistInitial(name) {
+  return String(name || "?").trim().charAt(0).toUpperCase() || "?";
+}
 function compactPlatformLink(label, info) {
   if (!info.url) return `<span class="artist-platform-link is-missing" title="${esc(info.status)}">${esc(label)}</span>`;
   return `<a class="artist-platform-link" href="${esc(info.url)}" target="_blank" rel="noopener" title="${esc(info.status)}">${esc(label)}</a>`;
 }
-
+function optionalCompactPlatformLink(label, info) {
+  return info.url ? compactPlatformLink(label, info) : "";
+}
 function renderArtistDirectory() {
   const grid = document.querySelector("[data-artist-grid]");
   if (!grid) return;
@@ -329,9 +1083,15 @@ function renderArtistDirectory() {
     const events = byArtist.get(normalize(artist.name)) || [];
     const instagram = instagramInfo(artist);
     const spotify = spotifyInfo(artist);
+    const youtube = youtubeInfo(artist);
+    const website = websiteInfo(artist);
+    const image = artistImageInfo(artist);
+    const visual = image.url
+      ? `<a class="artist-visual" href="${artistProfileUrl(artist.name)}" aria-label="View ${esc(artist.name)}"><img src="${esc(image.url)}" alt="${esc(artist.name)}" loading="lazy" style="object-position:${esc(image.position)}" onerror="this.onerror=null;this.parentElement.textContent='${esc(artistInitial(artist.name))}';"></a>`
+      : `<a class="artist-visual artist-visual-empty" href="${artistProfileUrl(artist.name)}" aria-label="View ${esc(artist.name)}"></a>`;
     return `<article class="artist-card artist-card-text" data-artist-card data-search="${esc(normalize([artist.name, ...(artist.aliases || []), artist.label].join(" ")))}" data-has-shows="${events.length > 0}">
-      <a class="artist-visual artist-visual-empty" href="${artistProfileUrl(artist.name)}" aria-label="View ${esc(artist.name)}"></a>
-      <div class="artist-card-body"><h2><a href="${artistProfileUrl(artist.name)}">${esc(artist.name)}</a></h2><p>${events.length} upcoming show${events.length === 1 ? "" : "s"}</p><div class="artist-card-links">${compactPlatformLink("Instagram", instagram)}${compactPlatformLink("Spotify", spotify)}</div><div class="artist-card-footer"><a class="text-link" href="${artistProfileUrl(artist.name)}">View artist</a></div></div>
+      ${visual}
+      <div class="artist-card-body"><h2><a href="${artistProfileUrl(artist.name)}">${esc(artist.name)}</a></h2><p>${events.length} upcoming show${events.length === 1 ? "" : "s"}</p><div class="artist-card-links">${compactPlatformLink("Instagram", instagram)}${compactPlatformLink("Spotify", spotify)}${optionalCompactPlatformLink("YouTube", youtube)}${optionalCompactPlatformLink("Website", website)}</div><div class="artist-card-footer"><a class="text-link" href="${artistProfileUrl(artist.name)}">View artist</a></div></div>
     </article>`;
   }).join("");
   document.querySelector("[data-artist-loading]")?.remove();
@@ -356,12 +1116,10 @@ function renderArtistDirectory() {
   show?.addEventListener("change", apply);
   apply();
 }
-
 function platformCard(label, info) {
   if (!info.url) return `<div class="profile-platform-card is-missing"><span class="profile-platform-label">${esc(label)}</span><span class="profile-platform-status">${esc(info.status)}</span></div>`;
   return `<a class="profile-platform-card" href="${esc(info.url)}" target="_blank" rel="noopener"><span class="profile-platform-label">${esc(label)}</span><span class="profile-platform-status">${esc(info.status)}</span></a>`;
 }
-
 function renderArtistProfile() {
   const root = document.querySelector("[data-artist-profile]");
   if (!root) return;
@@ -372,12 +1130,18 @@ function renderArtistProfile() {
     return;
   }
   const events = EVENTS.filter(event => (event.artists || []).some(item => normalize(item) === normalize(artist.name))).sort((a, b) => (a.startDate || "").localeCompare(b.startDate || ""));
-  root.innerHTML = `<section class="profile-hero profile-hero-no-image"><div><p class="eyebrow">Artist profile</p><h1>${esc(artist.name)}</h1><p class="profile-image-note">Artist image pending verification.</p><div class="profile-platforms">${platformCard("Instagram", instagramInfo(artist))}${platformCard("Spotify", spotifyInfo(artist))}${platformCard("YouTube", youtubeInfo(artist))}${platformCard("Website", websiteInfo(artist))}</div><p class="profile-count">${events.length} upcoming U.S. show${events.length === 1 ? "" : "s"} currently listed.</p></div></section><section class="calendar"><div class="calendar-heading"><div><p class="eyebrow">Verified listings</p><h2>Upcoming ${esc(artist.name)} Shows</h2></div><p class="results-count">${events.length} shows</p></div><div class="event-grid">${events.map(eventCard).join("") || '<div class="empty-panel">No upcoming U.S. shows are currently confirmed.</div>'}</div></section>`;
+  const image = artistImageInfo(artist);
+  const heroClass = image.url ? "profile-hero" : "profile-hero profile-hero-no-image";
+  const visual = image.url
+    ? `<div class="profile-visual"><img src="${esc(image.url)}" alt="${esc(artist.name)}" style="object-position:${esc(image.position)}" onerror="this.onerror=null;this.parentElement.textContent='${esc(artistInitial(artist.name))}';"></div>`
+    : "";
+  const imageNote = image.url ? "" : '<p class="profile-image-note">Artist image pending direct-file verification.</p>';
+  root.innerHTML = `<section class="${heroClass}">${visual}<div><p class="eyebrow">Artist profile</p><h1>${esc(artist.name)}</h1>${imageNote}<div class="profile-platforms">${platformCard("Instagram", instagramInfo(artist))}${platformCard("Spotify", spotifyInfo(artist))}${platformCard("YouTube", youtubeInfo(artist))}${platformCard("Website", websiteInfo(artist))}</div><p class="profile-count">${events.length} upcoming U.S.
+show${events.length === 1 ? "" : "s"} currently listed.</p></div></section><section class="calendar"><div class="calendar-heading"><div><p class="eyebrow">Verified listings</p><h2>Upcoming ${esc(artist.name)} Shows</h2></div><p class="results-count">${events.length} shows</p></div><div class="event-grid">${events.map(eventCard).join("") || '<div class="empty-panel">No upcoming U.S. shows are currently confirmed.</div>'}</div></section>`;
   document.title = `${artist.name} Shows | The Kingdom Circuit`;
   ensureCanonical(`${location.origin}${BASE}artists/profile/?name=${encodeURIComponent(artist.name)}`);
   setMetaDescription(`Find verified upcoming U.S. shows and official links for ${artist.name}.`);
 }
-
 function renderEventDetail() {
   const root = document.querySelector("[data-event-detail]");
   if (!root) return;
@@ -389,12 +1153,12 @@ function renderEventDetail() {
   }
   const img = eventImage(event);
   const locationText = [event.city, event.state].filter(Boolean).join(", ");
-  root.innerHTML = `<article class="event-detail"><div class="event-detail-media"><img class="${imageClass(event)}" src="${esc(img)}" alt="${esc(event.title)}" style="object-position:${esc(imagePosition(event))}" onerror="this.onerror=null;this.className='event-artwork';this.src='${FALLBACK_EVENT_IMAGE}';"></div><div class="event-detail-copy"><p class="eyebrow">${esc(event.eventType === "festival" ? "Festival" : "Concert")}</p><h1>${esc(event.title)}</h1><p class="artist-line">${artistLinks(event)}</p><dl class="detail-list"><div><dt>Date</dt><dd>${esc(formatDate(event))}</dd></div><div><dt>Venue</dt><dd>${esc(event.venue || "Venue to be announced")}</dd></div><div><dt>Location</dt><dd>${esc(locationText || "Location to be announced")}</dd></div>${event.price ? `<div><dt>Price</dt><dd>${esc(event.price)}</dd></div>` : ""}<div><dt>Source</dt><dd>${esc(sourceText(event))}</dd></div></dl><a class="primary-button" href="${esc(event.officialUrl || event.ticketUrl || "#")}" target="_blank" rel="noopener">Official details</a><p class="disclaimer">Event details, availability, pricing, and lineups may change. Confirm final information with the official organizer or ticket provider before purchasing or traveling.</p></div></article>`;
+  root.innerHTML = `<article class="event-detail"><div class="event-detail-media"><img class="${imageClass(event)}" src="${esc(img)}" alt="${esc(event.title)}" style="object-position:${esc(imagePosition(event))}" onerror="this.onerror=null;this.className='event-artwork';this.src='${FALLBACK_EVENT_IMAGE}';"></div><div class="event-detail-copy"><p class="eyebrow">${esc(event.eventType === "festival" ? "Festival" : "Concert")}</p><h1>${esc(event.title)}</h1><p class="artist-line">${artistLinks(event)}</p><dl class="detail-list"><div><dt>Date</dt><dd>${esc(formatDate(event))}</dd></div><div><dt>Venue</dt><dd>${esc(event.venue || "Venue to be announced")}</dd></div><div><dt>Location</dt><dd>${esc(locationText || "Location to be announced")}</dd></div>${event.price ? `<div><dt>Price</dt><dd>${esc(event.price)}</dd></div>` : ""}<div><dt>Source</dt><dd>${esc(sourceText(event))}</dd></div></dl><a class="primary-button" href="${esc(event.officialUrl || event.ticketUrl || "#")}" target="_blank" rel="noopener">Official details</a><p class="disclaimer">Event details, availability, pricing, and lineups may change.
+Confirm final information with the official organizer or ticket provider before purchasing or traveling.</p></div></article>`;
   document.title = `${event.title} | The Kingdom Circuit`;
   ensureCanonical(`${location.origin}${BASE}event/?id=${encodeURIComponent(event.id)}`);
   setMetaDescription(`${event.title} in ${locationText || "the United States"}. View verified event details and the official source.`);
 }
-
 
 function ensureCanonical(url) {
   let link = document.querySelector('link[rel="canonical"]');
@@ -415,7 +1179,6 @@ function setMetaDescription(text) {
   }
   meta.content = text;
 }
-
 async function renderCalendarStatus() {
   const root = document.querySelector("[data-calendar-status]");
   if (!root) return;
@@ -436,7 +1199,6 @@ async function renderCalendarStatus() {
     root.hidden = true;
   }
 }
-
 function setMenuOpen(open) {
   const toggle = document.querySelector(".menu-toggle");
   const drawer = document.querySelector(".menu-drawer");
@@ -448,12 +1210,10 @@ function setMenuOpen(open) {
   backdrop.hidden = !open;
   document.body.classList.toggle("menu-open", open);
 }
-
 document.querySelector(".menu-toggle")?.addEventListener("click", () => setMenuOpen(document.querySelector(".menu-toggle")?.getAttribute("aria-expanded") !== "true"));
 document.querySelector(".menu-close")?.addEventListener("click", () => setMenuOpen(false));
 document.querySelector(".menu-backdrop")?.addEventListener("click", () => setMenuOpen(false));
 document.addEventListener("keydown", event => { if (event.key === "Escape") setMenuOpen(false); });
-
 function setupSubmissionForm() {
   const form = document.querySelector("[data-submission-form]");
   if (!form) return;
@@ -489,7 +1249,6 @@ function setupSubmissionForm() {
     }
   });
 }
-
 async function boot() {
   try {
     const [liveEvents, liveArtists, supplemental] = await Promise.all([
@@ -511,5 +1270,4 @@ async function boot() {
   setupSubmissionForm();
   renderCalendarStatus();
 }
-
 boot();
