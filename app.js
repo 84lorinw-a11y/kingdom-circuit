@@ -4,10 +4,11 @@ console.info("Kingdom Circuit production multipage build loaded");
 const BASE = "/";
 const LIVE_EVENTS_URL = `${BASE}events.json`;
 const LIVE_ARTISTS_URL = `${BASE}config/artists.json`;
-const SITE_BUILD = "production-v1-verified-artist-registry";
+const SITE_BUILD = "production-v2-verified-artist-images-icons";
 const SUPPLEMENTAL_EVENTS_URL = `${BASE}supplemental-events.json?v=2`;
 const RUN_STATUS_URL = `${BASE}run-status.json`;
 const FALLBACK_EVENT_IMAGE = `${BASE}assets/event-fallback.webp`;
+const VERIFIED_ARTIST_IMAGE_ENDPOINT = "https://open.voidware.de/artist/";
 const STATE_NAMES = {AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",DE:"Delaware",DC:"District of Columbia",FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming"};
 // Artist source registry imported from Book4.xlsx. Only rows marked Verified are enriched.
 const ARTIST_ROSTER_ORDER = [
@@ -813,6 +814,19 @@ async function loadOptionalJson(url) {
   }
 }
 
+function spotifyArtistId(artist) {
+  const value = artist?.spotifyProfile || (artist?.spotifyId ? `https://open.spotify.com/artist/${artist.spotifyId}` : "");
+  const match = String(value).match(/open\.spotify\.com\/artist\/([A-Za-z0-9]+)/i);
+  return match?.[1] || "";
+}
+function spotifyArtistImageUrl(artist) {
+  if (artist?.sourceRegistryVerified !== true) return "";
+  const spotifyId = spotifyArtistId(artist);
+  return spotifyId ? `${VERIFIED_ARTIST_IMAGE_ENDPOINT}${encodeURIComponent(spotifyId)}` : "";
+}
+function verifiedArtistImageUrl(artist) {
+  return artist?.imageUrl || spotifyArtistImageUrl(artist);
+}
 function applyArtistOverrides(artists) {
   const orderByName = new Map(ARTIST_ROSTER_ORDER.map((name, index) => [normalize(name), index + 1]));
   return artists.map(artist => {
@@ -825,13 +839,17 @@ function applyArtistOverrides(artists) {
       ...(legacyOverride.aliases || []),
       ...(verifiedUpdate.aliases || [])
     ])];
-    return {
+    const merged = {
       ...artist,
       ...legacyOverride,
       ...verifiedUpdate,
       ...(aliases.length ? { aliases } : {}),
       ...(rosterOrder ? { rosterOrder } : {})
     };
+    const imageUrl = verifiedArtistImageUrl(merged);
+    return imageUrl && !merged.imageUrl
+      ? { ...merged, imageUrl, imageSource: "Verified Spotify artist profile" }
+      : merged;
   });
 }
 function eventArtistSet(event) {
@@ -1056,18 +1074,74 @@ function websiteInfo(artist) {
   return candidate && !isPlatform ? { url: candidate, status: "Open official website" } : { url: "", status: "Website link pending verification" };
 }
 function artistImageInfo(artist) {
-  if (artist.sourceRegistryVerified !== true || !artist.imageUrl) return { url: "", position: "center" };
-  return { url: localAssetUrl(artist.imageUrl), position: artist.imagePosition || "center" };
+  if (artist.sourceRegistryVerified !== true) return { url: "", fallbackUrl: "", position: "center" };
+  const primaryUrl = localAssetUrl(artist.imageUrl);
+  const spotifyFallback = localAssetUrl(spotifyArtistImageUrl(artist));
+  return {
+    url: primaryUrl || spotifyFallback,
+    fallbackUrl: primaryUrl && spotifyFallback && primaryUrl !== spotifyFallback ? spotifyFallback : "",
+    position: artist.imagePosition || "center"
+  };
+}
+function handleArtistImageError(image, initial) {
+  const fallback = image?.dataset?.fallbackSrc || "";
+  if (fallback && image.dataset.fallbackTried !== "true") {
+    image.dataset.fallbackTried = "true";
+    image.src = fallback;
+    return;
+  }
+  image.onerror = null;
+  if (image.parentElement) image.parentElement.textContent = initial;
 }
 function artistInitial(name) {
   return String(name || "?").trim().charAt(0).toUpperCase() || "?";
 }
-function compactPlatformLink(label, info) {
-  if (!info.url) return `<span class="artist-platform-link is-missing" title="${esc(info.status)}">${esc(label)}</span>`;
-  return `<a class="artist-platform-link" href="${esc(info.url)}" target="_blank" rel="noopener" title="${esc(info.status)}">${esc(label)}</a>`;
+function platformIcon(label, extraClass = "") {
+  const iconClass = ["platform-icon", extraClass].filter(Boolean).join(" ");
+  const common = `class="${iconClass}" viewBox="0 0 24 24" aria-hidden="true" focusable="false"`;
+  switch (normalize(label)) {
+    case "instagram":
+      return `<svg ${common}><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.25" fill="currentColor"/></svg>`;
+    case "spotify":
+      return `<svg ${common}><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M7.2 9.1c3.55-1.02 7.54-.7 10.72.98M8 12.1c2.93-.8 6.25-.54 8.85.73M8.8 15c2.27-.57 4.8-.37 6.83.56" fill="none" stroke="#080808" stroke-width="1.65" stroke-linecap="round"/></svg>`;
+    case "youtube":
+      return `<svg ${common}><path d="M21.45 7.15a2.95 2.95 0 0 0-2.08-2.09C17.54 4.55 12 4.55 12 4.55s-5.54 0-7.37.51a2.95 2.95 0 0 0-2.08 2.09A30.5 30.5 0 0 0 2.05 12c0 1.62.17 3.24.5 4.85a2.95 2.95 0 0 0 2.08 2.09c1.83.51 7.37.51 7.37.51s5.54 0 7.37-.51a2.95 2.95 0 0 0 2.08-2.09c.33-1.61.5-3.23.5-4.85s-.17-3.24-.5-4.85Z" fill="currentColor"/><path d="m10 15.35 5.2-3.35L10 8.65v6.7Z" fill="#080808"/></svg>`;
+    case "website":
+      return `<svg ${common}><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 12h17M12 3c2.35 2.45 3.55 5.45 3.55 9S14.35 18.55 12 21M12 3C9.65 5.45 8.45 8.45 8.45 12S9.65 18.55 12 21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>`;
+    default:
+      return `<svg ${common}><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/></svg>`;
+  }
 }
-function optionalCompactPlatformLink(label, info) {
-  return info.url ? compactPlatformLink(label, info) : "";
+function compactPlatformLink(label, info, artistName = "") {
+  const context = artistName ? ` for ${artistName}` : "";
+  const accessibleLabel = info.url ? `Open ${label}${context}` : `${label}${context}: link pending verification`;
+  const content = `${platformIcon(label)}<span class="kc-visually-hidden">${esc(accessibleLabel)}</span>`;
+  if (!info.url) return `<span class="artist-platform-link is-missing" role="img" aria-label="${esc(accessibleLabel)}" title="${esc(info.status)}">${content}</span>`;
+  return `<a class="artist-platform-link" href="${esc(info.url)}" target="_blank" rel="noopener" aria-label="${esc(accessibleLabel)}" title="${esc(info.status)}">${content}</a>`;
+}
+function optionalCompactPlatformLink(label, info, artistName = "") {
+  return info.url ? compactPlatformLink(label, info, artistName) : "";
+}
+function ensureArtistEnhancementStyles() {
+  if (document.getElementById("kc-artist-enhancement-styles")) return;
+  const style = document.createElement("style");
+  style.id = "kc-artist-enhancement-styles";
+  style.textContent = `
+    .kc-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+    .artist-card-links{gap:10px;align-items:center}
+    .artist-platform-link{position:relative;width:42px;height:42px;min-height:42px;padding:0;border-radius:50%;transition:border-color .18s ease,color .18s ease,background .18s ease,transform .18s ease}
+    .artist-platform-link .platform-icon{width:22px;height:22px;display:block;flex:0 0 auto}
+    .artist-platform-link:hover{transform:translateY(-1px);background:rgba(198,148,60,.08)}
+    .artist-platform-link:focus-visible{outline:2px solid var(--gold-light);outline-offset:3px}
+    .artist-platform-link.is-missing{opacity:.42;transform:none;background:transparent}
+    .profile-platform-card{gap:14px}
+    .profile-platform-heading{display:flex;align-items:center;gap:11px}
+    .profile-platform-icon{width:31px;height:31px;display:block;flex:0 0 auto;color:var(--cream)}
+    .profile-platform-card:hover .profile-platform-icon{color:var(--gold-light)}
+    .profile-platform-card.is-missing .profile-platform-icon{color:#777}
+    @media(max-width:600px){.artist-platform-link{width:40px;height:40px;min-height:40px}.artist-platform-link .platform-icon{width:21px;height:21px}}
+  `;
+  document.head.appendChild(style);
 }
 function renderArtistDirectory() {
   const grid = document.querySelector("[data-artist-grid]");
@@ -1087,11 +1161,11 @@ function renderArtistDirectory() {
     const website = websiteInfo(artist);
     const image = artistImageInfo(artist);
     const visual = image.url
-      ? `<a class="artist-visual" href="${artistProfileUrl(artist.name)}" aria-label="View ${esc(artist.name)}"><img src="${esc(image.url)}" alt="${esc(artist.name)}" loading="lazy" style="object-position:${esc(image.position)}" onerror="this.onerror=null;this.parentElement.textContent='${esc(artistInitial(artist.name))}';"></a>`
+      ? `<a class="artist-visual" href="${artistProfileUrl(artist.name)}" aria-label="View ${esc(artist.name)}"><img src="${esc(image.url)}" data-fallback-src="${esc(image.fallbackUrl)}" alt="${esc(artist.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer" style="object-position:${esc(image.position)}" onerror="handleArtistImageError(this,'${esc(artistInitial(artist.name))}')"></a>`
       : `<a class="artist-visual artist-visual-empty" href="${artistProfileUrl(artist.name)}" aria-label="View ${esc(artist.name)}"></a>`;
     return `<article class="artist-card artist-card-text" data-artist-card data-search="${esc(normalize([artist.name, ...(artist.aliases || []), artist.label].join(" ")))}" data-has-shows="${events.length > 0}">
       ${visual}
-      <div class="artist-card-body"><h2><a href="${artistProfileUrl(artist.name)}">${esc(artist.name)}</a></h2><p>${events.length} upcoming show${events.length === 1 ? "" : "s"}</p><div class="artist-card-links">${compactPlatformLink("Instagram", instagram)}${compactPlatformLink("Spotify", spotify)}${optionalCompactPlatformLink("YouTube", youtube)}${optionalCompactPlatformLink("Website", website)}</div><div class="artist-card-footer"><a class="text-link" href="${artistProfileUrl(artist.name)}">View artist</a></div></div>
+      <div class="artist-card-body"><h2><a href="${artistProfileUrl(artist.name)}">${esc(artist.name)}</a></h2><p>${events.length} upcoming show${events.length === 1 ? "" : "s"}</p><div class="artist-card-links">${compactPlatformLink("Instagram", instagram, artist.name)}${compactPlatformLink("Spotify", spotify, artist.name)}${optionalCompactPlatformLink("YouTube", youtube, artist.name)}${optionalCompactPlatformLink("Website", website, artist.name)}</div><div class="artist-card-footer"><a class="text-link" href="${artistProfileUrl(artist.name)}">View artist</a></div></div>
     </article>`;
   }).join("");
   document.querySelector("[data-artist-loading]")?.remove();
@@ -1116,9 +1190,10 @@ function renderArtistDirectory() {
   show?.addEventListener("change", apply);
   apply();
 }
-function platformCard(label, info) {
-  if (!info.url) return `<div class="profile-platform-card is-missing"><span class="profile-platform-label">${esc(label)}</span><span class="profile-platform-status">${esc(info.status)}</span></div>`;
-  return `<a class="profile-platform-card" href="${esc(info.url)}" target="_blank" rel="noopener"><span class="profile-platform-label">${esc(label)}</span><span class="profile-platform-status">${esc(info.status)}</span></a>`;
+function platformCard(label, info, artistName = "") {
+  const heading = `<span class="profile-platform-heading">${platformIcon(label, "profile-platform-icon")}<span class="profile-platform-label">${esc(label)}</span></span>`;
+  if (!info.url) return `<div class="profile-platform-card is-missing" aria-label="${esc(`${label}${artistName ? ` for ${artistName}` : ""}: link pending verification`)}">${heading}<span class="profile-platform-status">${esc(info.status)}</span></div>`;
+  return `<a class="profile-platform-card" href="${esc(info.url)}" target="_blank" rel="noopener" aria-label="${esc(`Open ${label}${artistName ? ` for ${artistName}` : ""}`)}">${heading}<span class="profile-platform-status">${esc(info.status)}</span></a>`;
 }
 function renderArtistProfile() {
   const root = document.querySelector("[data-artist-profile]");
@@ -1133,10 +1208,10 @@ function renderArtistProfile() {
   const image = artistImageInfo(artist);
   const heroClass = image.url ? "profile-hero" : "profile-hero profile-hero-no-image";
   const visual = image.url
-    ? `<div class="profile-visual"><img src="${esc(image.url)}" alt="${esc(artist.name)}" style="object-position:${esc(image.position)}" onerror="this.onerror=null;this.parentElement.textContent='${esc(artistInitial(artist.name))}';"></div>`
+    ? `<div class="profile-visual"><img src="${esc(image.url)}" data-fallback-src="${esc(image.fallbackUrl)}" alt="${esc(artist.name)}" decoding="async" referrerpolicy="no-referrer" style="object-position:${esc(image.position)}" onerror="handleArtistImageError(this,'${esc(artistInitial(artist.name))}')"></div>`
     : "";
   const imageNote = image.url ? "" : '<p class="profile-image-note">Artist image pending direct-file verification.</p>';
-  root.innerHTML = `<section class="${heroClass}">${visual}<div><p class="eyebrow">Artist profile</p><h1>${esc(artist.name)}</h1>${imageNote}<div class="profile-platforms">${platformCard("Instagram", instagramInfo(artist))}${platformCard("Spotify", spotifyInfo(artist))}${platformCard("YouTube", youtubeInfo(artist))}${platformCard("Website", websiteInfo(artist))}</div><p class="profile-count">${events.length} upcoming U.S.
+  root.innerHTML = `<section class="${heroClass}">${visual}<div><p class="eyebrow">Artist profile</p><h1>${esc(artist.name)}</h1>${imageNote}<div class="profile-platforms">${platformCard("Instagram", instagramInfo(artist), artist.name)}${platformCard("Spotify", spotifyInfo(artist), artist.name)}${platformCard("YouTube", youtubeInfo(artist), artist.name)}${platformCard("Website", websiteInfo(artist), artist.name)}</div><p class="profile-count">${events.length} upcoming U.S.
 show${events.length === 1 ? "" : "s"} currently listed.</p></div></section><section class="calendar"><div class="calendar-heading"><div><p class="eyebrow">Verified listings</p><h2>Upcoming ${esc(artist.name)} Shows</h2></div><p class="results-count">${events.length} shows</p></div><div class="event-grid">${events.map(eventCard).join("") || '<div class="empty-panel">No upcoming U.S. shows are currently confirmed.</div>'}</div></section>`;
   document.title = `${artist.name} Shows | The Kingdom Circuit`;
   ensureCanonical(`${location.origin}${BASE}artists/profile/?name=${encodeURIComponent(artist.name)}`);
@@ -1264,6 +1339,7 @@ async function boot() {
     return;
   }
   renderEventList();
+  ensureArtistEnhancementStyles();
   renderArtistDirectory();
   renderArtistProfile();
   renderEventDetail();
