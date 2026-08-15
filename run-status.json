@@ -1,10 +1,10 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-08-14T14:39:00Z",
-  "lastSuccessfulUpdate": "2026-08-14T14:39:00Z",
-  "eventsPublished": 91,
-  "candidatesCollected": 156,
+  "lastAttempt": "2026-08-15T11:53:29Z",
+  "lastSuccessfulUpdate": "2026-08-15T11:53:29Z",
+  "eventsPublished": 101,
+  "candidatesCollected": 202,
   "artistsConfigured": 299,
   "artistsByPriority": {
     "priority1": 100,
@@ -15,7 +15,7 @@
   "socialSearchArtistsEnabled": 99,
   "freeTextAliasesProtected": 97,
   "artistsMatchedOnTicketmaster": 70,
-  "officialEventsFound": 36,
+  "officialEventsFound": 82,
   "ticketmasterEventsFound": 74,
   "instagramArtistsConfigured": 99,
   "instagramQueriesRun": 101,
@@ -49,7 +49,7 @@
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 217,
+  "sourcesChecked": 228,
   "unmatchedArtists": [
     "Pregador Luo",
     "Sondae",
@@ -189,62 +189,62 @@
   "sourceResults": [
     {
       "name": "Reach Records consolidated calendar",
-      "status": "warning",
-      "eventsFound": 0
+      "status": "ok",
+      "eventsFound": 38
     },
     {
       "name": "Reach Records - 1K Phew",
-      "status": "warning",
-      "eventsFound": 0
+      "status": "ok",
+      "eventsFound": 3
     },
     {
       "name": "Reach Records - 2819 Worship",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
       "name": "Reach Records - Alexxander",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
       "name": "Reach Records - Anike",
-      "status": "warning",
-      "eventsFound": 0
+      "status": "ok",
+      "eventsFound": 2
     },
     {
       "name": "Reach Records - Hulvey",
-      "status": "warning",
-      "eventsFound": 0
+      "status": "ok",
+      "eventsFound": 4
     },
     {
       "name": "Reach Records - Jackie Hill Perry",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
       "name": "Reach Records - Lecrae",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
       "name": "Reach Records - Limoblaze",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
       "name": "Reach Records - Tedashii",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
       "name": "Reach Records - Trip Lee",
-      "status": "warning",
-      "eventsFound": 0
+      "status": "ok",
+      "eventsFound": 1
     },
     {
       "name": "Reach Records - WHATUPRG",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -254,8 +254,8 @@
     },
     {
       "name": "Space City Fest official organizer",
-      "status": "ok",
-      "eventsFound": 1
+      "status": "warning",
+      "eventsFound": 0
     },
     {
       "name": "Space City Fest venue listing",
@@ -285,7 +285,7 @@
     {
       "name": "TPR - Caleb Gordon Eden Experience",
       "status": "ok",
-      "eventsFound": 8
+      "eventsFound": 7
     },
     {
       "name": "TPR - Forrest Frank Jesus Generation Tour",
@@ -514,12 +514,12 @@
     },
     {
       "name": "TJ Carroll official site",
-      "status": "ok",
+      "status": "warning",
       "eventsFound": 0
     },
     {
       "name": "CJ Emulous official site",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -610,21 +610,10 @@
       "queriesRun": 101
     }
   ],
-  "warningCount": 37,
+  "warningCount": 26,
   "errorCount": 0,
   "warnings": [
-    "Reach Records consolidated calendar: Unable to retrieve https://www.reachrecords.com/events/: <urlopen error timed out>",
-    "Reach Records - 1K Phew: Unable to retrieve https://www.reachrecords.com/artists/1k-phew/: <urlopen error timed out>",
-    "Reach Records - 2819 Worship: Unable to retrieve https://www.reachrecords.com/artists/2819-worship/: <urlopen error timed out>",
-    "Reach Records - Alexxander: Unable to retrieve https://www.reachrecords.com/artists/alexxander/: <urlopen error timed out>",
-    "Reach Records - Anike: Unable to retrieve https://www.reachrecords.com/artists/wande/: <urlopen error timed out>",
-    "Reach Records - Hulvey: Unable to retrieve https://www.reachrecords.com/artists/hulvey/: <urlopen error timed out>",
-    "Reach Records - Jackie Hill Perry: Unable to retrieve https://www.reachrecords.com/artists/jackie-hill-perry/: <urlopen error timed out>",
-    "Reach Records - Lecrae: Unable to retrieve https://www.reachrecords.com/artists/lecrae/: <urlopen error timed out>",
-    "Reach Records - Limoblaze: Unable to retrieve https://www.reachrecords.com/artists/limoblaze/: <urlopen error timed out>",
-    "Reach Records - Tedashii: Unable to retrieve https://www.reachrecords.com/artists/tedashii/: <urlopen error timed out>",
-    "Reach Records - Trip Lee: Unable to retrieve https://www.reachrecords.com/artists/trip-lee/: <urlopen error timed out>",
-    "Reach Records - WHATUPRG: Unable to retrieve https://www.reachrecords.com/artists/whatuprg/: <urlopen error timed out>",
+    "Space City Fest official organizer: Unable to retrieve https://www.spacecitychurch.com/spacecityfest: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>",
     "Off The Charts official schedule: Unable to retrieve https://www.offthechartsnd.com/schedule: HTTP Error 429: Too Many Requests",
     "Zauntee official tour: Unable to retrieve https://www.zauntee.com/tour: HTTP Error 429: Too Many Requests",
     "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
@@ -637,12 +626,19 @@
     "Byron Juane Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14690526-byron-juane: HTTP Error 403: Forbidden",
     "Social Club Misfits Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/13345973-social-club-misfits: HTTP Error 403: Forbidden",
     "Mike Teezy official tour: Unable to retrieve https://www.miketeezymusic.com/tour: HTTP Error 429: Too Many Requests",
-    "CJ Emulous official site: Unable to retrieve https://www.cjemulous.com/: HTTP Error 429: Too Many Requests",
+    "TJ Carroll official site: Unable to retrieve https://www.tjcarrollmusic.com/: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>",
     "Manafest Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4465-manafest: HTTP Error 403: Forbidden",
     "GRITS Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/805-grits: HTTP Error 403: Forbidden",
     "Nic D Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11283620-nic-d: HTTP Error 403: Forbidden",
     "Pastor Mike Jr. Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15540358-pastor-mike-jr.: HTTP Error 403: Forbidden",
-    "Yung Kriss Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14481378-yung-kriss: HTTP Error 403: Forbidden"
+    "Yung Kriss Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14481378-yung-kriss: HTTP Error 403: Forbidden",
+    "Paul Russell Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/463417-paul-russell: HTTP Error 403: Forbidden",
+    "Funky Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4329-funky: HTTP Error 403: Forbidden",
+    "Redimi2 Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/371097-redimi2: HTTP Error 403: Forbidden",
+    "FLAME Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/16627-flame: HTTP Error 403: Forbidden",
+    "Alex Jean Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15570394-alex-jean: HTTP Error 403: Forbidden",
+    "KB Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/165768-kb: HTTP Error 403: Forbidden",
+    "Anike Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4673148-anike: HTTP Error 403: Forbidden"
   ],
   "errors": [],
   "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings."

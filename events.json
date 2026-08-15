@@ -1,88 +1,5 @@
 [
   {
-    "id": "official:60a881c47e7f9e670f14",
-    "title": "Caleb Gordon — The Eden Experience",
-    "startDate": "2026-08-14",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "Mountain Park Church",
-    "address": "",
-    "city": "Phoenix",
-    "state": "AZ",
-    "country": "US",
-    "artists": [
-      "Caleb Gordon"
-    ],
-    "headliner": "Caleb Gordon",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.ticketweb.com/event/caleb-gordon-the-eden-experience-mountain-park-church-tickets/14861023?pl=TPR",
-    "officialUrl": "https://tprlive.co/products/caleb-gordon-the-eden-experience-phoenix-az-august-14-2026",
-    "image": "assets/events/caleb-gordon-eden-experience.webp",
-    "price": "",
-    "sourceName": "TPR official Eden Experience tour",
-    "sources": [
-      {
-        "name": "TPR official Eden Experience tour",
-        "url": "https://tprlive.co/products/caleb-gordon-the-eden-experience-phoenix-az-august-14-2026",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      },
-      {
-        "name": "TPR - Caleb Gordon Eden Experience",
-        "url": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
-        "type": "tpr",
-        "authority": "promoter",
-        "priority": 90
-      }
-    ],
-    "lastVerified": "2026-08-14T14:39:00Z",
-    "confidence": "high",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "manual:egr-2026-08-14-san-bernardino-ca",
-    "title": "EGR Live — San Bernardino",
-    "startDate": "2026-08-14",
-    "startTime": "",
-    "timezone": "",
-    "venue": "Victory Outreach",
-    "address": "",
-    "city": "San Bernardino",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "EGR"
-    ],
-    "headliner": "EGR",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "assets/artists/egr.webp",
-    "price": "",
-    "sourceName": "EGR official Instagram schedule",
-    "sources": [
-      {
-        "name": "EGR official Instagram schedule",
-        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      }
-    ],
-    "lastVerified": "2026-08-14T14:39:00Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 38%",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
     "id": "official:bf31ae1cbb17e1c10f47",
     "title": "Off The Charts Music Festival 2026",
     "startDate": "2026-08-15",
@@ -120,7 +37,7 @@
         "priority": 46
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "endDate": "2026-08-16",
     "imageType": "artist",
@@ -129,7 +46,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "ticketmaster:Z7r9jZ1A7xF0E",
+    "id": "official:7d32697fdc037790b36e",
     "title": "Hulvey",
     "startDate": "2026-08-15",
     "startTime": "19:00",
@@ -157,14 +74,66 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records - Hulvey",
+        "url": "https://www.reachrecords.com/artists/hulvey/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:03697e2f5be4c66bb0ec",
+    "title": "Anike — Live at 3TEN Austin City Limits Live",
+    "startDate": "2026-08-15",
+    "startTime": "",
+    "timezone": "",
+    "venue": "3TEN Austin City Limits Live",
+    "address": "",
+    "city": "Austin",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Anike"
+    ],
+    "headliner": "Anike",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/1038580443?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.reachrecords.com/artists/wande/",
+    "image": "https://s1.ticketm.net/dam/a/ab5/019b80d9-ebcf-40a7-9233-a35e76204ab5_SOURCE",
+    "price": "",
+    "sourceName": "Reach Records - Anike",
+    "sources": [
+      {
+        "name": "Reach Records - Anike",
+        "url": "https://www.reachrecords.com/artists/wande/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      }
+    ],
+    "lastVerified": "2026-08-15T11:53:29Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-15T11:53:29Z"
   },
   {
     "id": "manual:egr-2026-08-15-tacoma-wa",
@@ -197,7 +166,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -235,7 +204,7 @@
         "priority": 90
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -273,7 +242,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -311,7 +280,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -335,7 +304,7 @@
     "headliner": "Caleb Gordon",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.ticketweb.com/event/caleb-gordon-the-eden-experience-mountain-park-church-tickets/14861023?pl=TPR",
+    "ticketUrl": "https://tprlive.co/collections",
     "officialUrl": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
     "image": "http://tprlive.co/cdn/shop/collections/CG_TEE_TourAdmat_General_1080x1080_1.webp?v=1784735114",
     "price": "",
@@ -349,7 +318,7 @@
         "priority": 90
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -387,7 +356,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -395,7 +364,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "ticketmaster:vvG1HZ_FCwrmR_",
+    "id": "official:323f208cc5f4164c87eb",
     "title": "Hulvey - \"Could Be Tonight\" Tour",
     "startDate": "2026-08-18",
     "startTime": "19:00",
@@ -423,9 +392,23 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records - Hulvey",
+        "url": "https://www.reachrecords.com/artists/hulvey/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -433,7 +416,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "ticketmaster:Z7r9jZ1A7xF0I",
+    "id": "official:0fce54c07a7a5a90c5b4",
     "title": "Hulvey",
     "startDate": "2026-08-19",
     "startTime": "19:00",
@@ -461,9 +444,23 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records - Hulvey",
+        "url": "https://www.reachrecords.com/artists/hulvey/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -508,7 +505,7 @@
         "priority": 74
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "endDate": "2026-08-21",
     "imageType": "artist",
@@ -517,7 +514,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "ticketmaster:G5vYZ_F2s_luY",
+    "id": "official:8d04803dbe2d06e77e53",
     "title": "Hulvey - \"Could Be Tonight\" Tour",
     "startDate": "2026-08-21",
     "startTime": "18:00",
@@ -547,9 +544,16 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -587,7 +591,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -632,7 +636,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "endDate": "2026-08-22",
     "imageType": "fallback",
@@ -641,7 +645,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "official:171eda05a0bbfc6440ae",
+    "id": "official:bf9682db62fcad0dae81",
     "title": "Konnect Concert Series",
     "startDate": "2026-08-22",
     "startTime": "18:00",
@@ -670,9 +674,23 @@
         "type": "jsonld",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records - 1K Phew",
+        "url": "https://www.reachrecords.com/artists/1k-phew/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "endDate": "2026-08-22",
     "imageType": "artist",
@@ -711,7 +729,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -719,7 +737,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "ticketmaster:Z7r9jZ1A7xF0t",
+    "id": "official:eada770d89dff5021618",
     "title": "Hulvey",
     "startDate": "2026-08-22",
     "startTime": "19:00",
@@ -747,12 +765,64 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:b4bc64ece2905dc0307c",
+    "title": "1K Phew — Live at Space City Church",
+    "startDate": "2026-08-22",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Space City Church",
+    "address": "",
+    "city": "South Houston",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "1K Phew"
+    ],
+    "headliner": "1K Phew",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/1038610678?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.reachrecords.com/artists/1k-phew/",
+    "image": "assets/artists/1k-phew.webp",
+    "price": "",
+    "sourceName": "Reach Records - 1K Phew",
+    "sources": [
+      {
+        "name": "Reach Records - 1K Phew",
+        "url": "https://www.reachrecords.com/artists/1k-phew/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
+      }
+    ],
+    "lastVerified": "2026-08-15T11:53:29Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 24%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
@@ -787,7 +857,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -795,7 +865,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "ticketmaster:vvG1iZ_6TfNJoT",
+    "id": "official:77d506ce8836430bd27b",
     "title": "Hulvey 'Could Be Tonight' Tour",
     "startDate": "2026-08-23",
     "startTime": "18:00",
@@ -825,9 +895,16 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -835,7 +912,52 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "ticketmaster:1Av0Z_6GkTK4az3",
+    "id": "official:d32bff5975314664b13b",
+    "title": "1K Phew — Live at Mt. Zion Baptist Church",
+    "startDate": "2026-08-23",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Mt. Zion Baptist Church",
+    "address": "",
+    "city": "Whites Creek",
+    "state": "TN",
+    "country": "US",
+    "artists": [
+      "1K Phew"
+    ],
+    "headliner": "1K Phew",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/1039604873?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.reachrecords.com/artists/1k-phew/",
+    "image": "assets/artists/1k-phew.webp",
+    "price": "",
+    "sourceName": "Reach Records - 1K Phew",
+    "sources": [
+      {
+        "name": "Reach Records - 1K Phew",
+        "url": "https://www.reachrecords.com/artists/1k-phew/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
+      }
+    ],
+    "lastVerified": "2026-08-15T11:53:29Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 24%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-15T11:53:29Z"
+  },
+  {
+    "id": "official:f547773c19fa5063e52d",
     "title": "Hulvey - \"Could Be Tonight\" Tour",
     "startDate": "2026-08-24",
     "startTime": "19:00",
@@ -865,9 +987,16 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -875,7 +1004,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "ticketmaster:G5dIZ_F6OU0KT",
+    "id": "official:e78007fa525d92d98fcf",
     "title": "Hulvey - \"Could Be Tonight\" Tour",
     "startDate": "2026-08-27",
     "startTime": "19:00",
@@ -905,9 +1034,16 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -945,7 +1081,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -991,7 +1127,7 @@
         "priority": 46
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "endDate": "2026-08-30",
     "imageType": "event_artwork",
@@ -1034,7 +1170,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1042,7 +1178,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "ticketmaster:Z7r9jZ1A70E8U",
+    "id": "official:184818bcc6f15a13a8fb",
     "title": "Hulvey (16 and Over with Parent or Legal Guardian)",
     "startDate": "2026-08-28",
     "startTime": "19:00",
@@ -1072,9 +1208,16 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1112,7 +1255,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -1120,7 +1263,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "ticketmaster:G5dIZ_F5de_6u",
+    "id": "official:bb35d81891e788938298",
     "title": "Hulvey - \"Could Be Tonight\" Tour",
     "startDate": "2026-08-29",
     "startTime": "18:00",
@@ -1150,9 +1293,16 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1190,7 +1340,7 @@
         "priority": 80
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -1228,7 +1378,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -1236,7 +1386,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "ticketmaster:Z7r9jZ1A7xdFN",
+    "id": "official:c01ea9ad6cc87969519c",
     "title": "Hulvey - \"Could Be Tonight\" Tour",
     "startDate": "2026-09-01",
     "startTime": "19:00",
@@ -1273,9 +1423,16 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1283,7 +1440,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "ticketmaster:Z7r9jZ1A7xar_",
+    "id": "official:1a292f8801d660a6f735",
     "title": "Hulvey",
     "startDate": "2026-09-03",
     "startTime": "18:00",
@@ -1311,14 +1468,59 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:38ea31bd392fcb1bdae4",
+    "title": "Hulvey — Live at Miami Beach Bandshell",
+    "startDate": "2026-09-04",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Miami Beach Bandshell",
+    "address": "",
+    "city": "Miami Beach",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Hulvey"
+    ],
+    "headliner": "Hulvey",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108188688?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.reachrecords.com/events/",
+    "image": "https://s1.ticketm.net/dam/a/d4e/a49ecab3-089d-46ff-baa5-7942c994ed4e_SOURCE",
+    "price": "",
+    "sourceName": "Reach Records consolidated calendar",
+    "sources": [
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
+      }
+    ],
+    "lastVerified": "2026-08-15T11:53:29Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-15T11:53:29Z"
   },
   {
     "id": "manual:egr-2026-09-05-nashville-tn",
@@ -1351,7 +1553,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -1359,7 +1561,90 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "ticketmaster:G5eVZ_F6ONWSY",
+    "id": "official:7efc905732ea90481b0a",
+    "title": "Hulvey — Live at FIVE",
+    "startDate": "2026-09-05",
+    "startTime": "",
+    "timezone": "",
+    "venue": "FIVE",
+    "address": "",
+    "city": "Jacksonville",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Hulvey"
+    ],
+    "headliner": "Hulvey",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108188682?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.reachrecords.com/events/",
+    "image": "https://s1.ticketm.net/dam/a/d4e/a49ecab3-089d-46ff-baa5-7942c994ed4e_SOURCE",
+    "price": "",
+    "sourceName": "Reach Records consolidated calendar",
+    "sources": [
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
+      }
+    ],
+    "lastVerified": "2026-08-15T11:53:29Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-15T11:53:29Z"
+  },
+  {
+    "id": "official:3f73792d066d2cf64319",
+    "title": "Trip Lee — Live at Rock The Pines 2026",
+    "startDate": "2026-09-05",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Rock The Pines 2026",
+    "address": "",
+    "city": "Mineola",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Trip Lee"
+    ],
+    "headliner": "Trip Lee",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108357296?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.reachrecords.com/artists/trip-lee/",
+    "image": "https://s1.ticketm.net/dam/a/bd0/a0490e26-f87c-4c90-a72a-c4d3218d5bd0_SOURCE",
+    "price": "",
+    "sourceName": "Reach Records - Trip Lee",
+    "sources": [
+      {
+        "name": "Reach Records - Trip Lee",
+        "url": "https://www.reachrecords.com/artists/trip-lee/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
+      }
+    ],
+    "lastVerified": "2026-08-15T11:53:29Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-15T11:53:29Z"
+  },
+  {
+    "id": "official:cdddc120971383318412",
     "title": "Hulvey - \"Could Be Tonight\" Tour",
     "startDate": "2026-09-06",
     "startTime": "19:00",
@@ -1389,9 +1674,16 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1429,7 +1721,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1469,12 +1761,50 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:7e41706d07f8abb46227",
+    "title": "Hulvey — Live at Fillmore Silver Spring",
+    "startDate": "2026-09-08",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Fillmore Silver Spring",
+    "address": "",
+    "city": "Spring Valley",
+    "state": "DC",
+    "country": "US",
+    "artists": [
+      "Hulvey"
+    ],
+    "headliner": "Hulvey",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108188679?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.reachrecords.com/events/",
+    "image": "https://s1.ticketm.net/dam/a/d4e/a49ecab3-089d-46ff-baa5-7942c994ed4e_SOURCE",
+    "price": "",
+    "sourceName": "Reach Records consolidated calendar",
+    "sources": [
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
+      }
+    ],
+    "lastVerified": "2026-08-15T11:53:29Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-15T11:53:29Z"
   },
   {
     "id": "ticketmaster:Z7r9jZ1A7PpAM",
@@ -1507,7 +1837,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1515,7 +1845,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "ticketmaster:Z7r9jZ1A7xa7p",
+    "id": "official:3e8f30d2486e734b42c1",
     "title": "Hulvey w/ Indie Tribe",
     "startDate": "2026-09-10",
     "startTime": "19:00",
@@ -1545,9 +1875,16 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1585,7 +1922,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1623,7 +1960,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1674,7 +2011,7 @@
         "priority": 46
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "endDate": "2026-09-12",
     "imageType": "artist",
@@ -1713,7 +2050,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1751,7 +2088,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -1789,7 +2126,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1797,7 +2134,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "ticketmaster:k7vGF_FCmMGEw",
+    "id": "official:61ca43b4035483fee6a8",
     "title": "Hulvey - \"Could Be Tonight\" Tour",
     "startDate": "2026-09-13",
     "startTime": "18:00",
@@ -1827,9 +2164,16 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1837,7 +2181,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "ticketmaster:vv177Z_6GkXzIfFy",
+    "id": "official:4e511bbf8fb6d5ae77fd",
     "title": "Hulvey - \"Could Be Tonight\" Tour",
     "startDate": "2026-09-15",
     "startTime": "19:00",
@@ -1867,9 +2211,16 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1907,7 +2258,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1915,7 +2266,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "ticketmaster:vv17OZ_6GkTPgQEh",
+    "id": "official:cfd29f658249c76cd8e2",
     "title": "Hulvey - \"Could Be Tonight\" Tour",
     "startDate": "2026-09-18",
     "startTime": "18:00",
@@ -1945,9 +2296,16 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1985,7 +2343,7 @@
         "priority": 90
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2023,7 +2381,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2061,7 +2419,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -2100,7 +2458,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2108,7 +2466,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "ticketmaster:vv1A7Zk3vGkew2ITl",
+    "id": "official:84309caf8e98c5a8336a",
     "title": "Hulvey - \"Could Be Tonight\" Tour",
     "startDate": "2026-09-19",
     "startTime": "18:00",
@@ -2138,9 +2496,16 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2178,7 +2543,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -2223,12 +2588,50 @@
         "priority": 90
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:8cf69c5c610dae61d590",
+    "title": "Hulvey — Live at First Ave",
+    "startDate": "2026-09-20",
+    "startTime": "",
+    "timezone": "",
+    "venue": "First Ave",
+    "address": "",
+    "city": "Minneapolis",
+    "state": "MN",
+    "country": "US",
+    "artists": [
+      "Hulvey"
+    ],
+    "headliner": "Hulvey",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108188690?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.reachrecords.com/events/",
+    "image": "https://s1.ticketm.net/dam/a/d4e/a49ecab3-089d-46ff-baa5-7942c994ed4e_SOURCE",
+    "price": "",
+    "sourceName": "Reach Records consolidated calendar",
+    "sources": [
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
+      }
+    ],
+    "lastVerified": "2026-08-15T11:53:29Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-15T11:53:29Z"
   },
   {
     "id": "official:120917fb9608dd188970",
@@ -2261,7 +2664,7 @@
         "priority": 90
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2299,7 +2702,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2337,7 +2740,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2375,12 +2778,50 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:098a68e0a836f7285d1c",
+    "title": "Hulvey — Live at Elevation",
+    "startDate": "2026-09-22",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Elevation",
+    "address": "",
+    "city": "Grand Rapids",
+    "state": "MI",
+    "country": "US",
+    "artists": [
+      "Hulvey"
+    ],
+    "headliner": "Hulvey",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108188697?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.reachrecords.com/events/",
+    "image": "https://s1.ticketm.net/dam/a/d4e/a49ecab3-089d-46ff-baa5-7942c994ed4e_SOURCE",
+    "price": "",
+    "sourceName": "Reach Records consolidated calendar",
+    "sources": [
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
+      }
+    ],
+    "lastVerified": "2026-08-15T11:53:29Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-15T11:53:29Z"
   },
   {
     "id": "ticketmaster:k7vGF_GxU4LVM",
@@ -2413,12 +2854,50 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:9f793162ae1bb3cab7f3",
+    "title": "Hulvey — Live at Hifi Annex",
+    "startDate": "2026-09-23",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Hifi Annex",
+    "address": "",
+    "city": "Indianapolis",
+    "state": "IN",
+    "country": "US",
+    "artists": [
+      "Hulvey"
+    ],
+    "headliner": "Hulvey",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108188668?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.reachrecords.com/events/",
+    "image": "https://s1.ticketm.net/dam/a/d4e/a49ecab3-089d-46ff-baa5-7942c994ed4e_SOURCE",
+    "price": "",
+    "sourceName": "Reach Records consolidated calendar",
+    "sources": [
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
+      }
+    ],
+    "lastVerified": "2026-08-15T11:53:29Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-15T11:53:29Z"
   },
   {
     "id": "official:436dedf4f197e9587ed4",
@@ -2451,7 +2930,7 @@
         "priority": 90
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2489,7 +2968,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2497,7 +2976,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "ticketmaster:Z7r9jZ1A7xa7_",
+    "id": "official:4f72402532a6edb7c4ba",
     "title": "Hulvey w/ Indie Tribe",
     "startDate": "2026-09-25",
     "startTime": "19:00",
@@ -2527,9 +3006,16 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2572,7 +3058,7 @@
         "priority": 80
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "endDate": "2026-09-26",
     "imageType": "event_artwork",
@@ -2581,7 +3067,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "ticketmaster:1ApZk3vGkdbpmk6",
+    "id": "official:cd29c71021ec3f5cda92",
     "title": "Hulvey - \"Could Be Tonight\" Tour",
     "startDate": "2026-09-26",
     "startTime": "18:00",
@@ -2611,9 +3097,16 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2658,7 +3151,7 @@
         "priority": 90
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2696,12 +3189,50 @@
         "priority": 80
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:ea0342f4771e9f9f1dfc",
+    "title": "1K Phew — Live at Fastivalle 2026",
+    "startDate": "2026-09-26",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Fastivalle 2026",
+    "address": "",
+    "city": "Indianapolis",
+    "state": "IN",
+    "country": "US",
+    "artists": [
+      "1K Phew"
+    ],
+    "headliner": "1K Phew",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108395515?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.reachrecords.com/events/",
+    "image": "assets/artists/1k-phew.webp",
+    "price": "",
+    "sourceName": "Reach Records consolidated calendar",
+    "sources": [
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
+      }
+    ],
+    "lastVerified": "2026-08-15T11:53:29Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 24%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-15T11:53:29Z"
   },
   {
     "id": "manual:egr-2026-09-26-whittier-ca",
@@ -2734,7 +3265,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -2742,7 +3273,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "ticketmaster:vvG1zZ_6TaQ2qb",
+    "id": "official:81e8026b7add1de20674",
     "title": "Hulvey - \"Could Be Tonight\" Tour",
     "startDate": "2026-09-27",
     "startTime": "19:00",
@@ -2772,9 +3303,16 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2812,7 +3350,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2852,12 +3390,50 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:cd8c382d5cc4126a49a4",
+    "title": "1K Phew — Live at Oceanside Pier Amphitheater",
+    "startDate": "2026-10-03",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Oceanside Pier Amphitheater",
+    "address": "",
+    "city": "Oceanside",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "1K Phew"
+    ],
+    "headliner": "1K Phew",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/1039603525?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.reachrecords.com/events/",
+    "image": "assets/artists/1k-phew.webp",
+    "price": "",
+    "sourceName": "Reach Records consolidated calendar",
+    "sources": [
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
+      }
+    ],
+    "lastVerified": "2026-08-15T11:53:29Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 24%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-15T11:53:29Z"
   },
   {
     "id": "manual:egr-2026-10-03-chandler-az",
@@ -2890,7 +3466,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -2928,7 +3504,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -2966,7 +3542,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -3004,7 +3580,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -3042,7 +3618,7 @@
         "priority": 80
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -3050,7 +3626,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "official:6ccf87bf0ba17cd0c74d",
+    "id": "official:f9c4d6cd89d9ba9eeb60",
     "title": "Space City Fest 2026",
     "startDate": "2026-10-25",
     "startTime": "16:00",
@@ -3075,9 +3651,9 @@
       {
         "name": "Space City Fest official organizer",
         "url": "https://www.spacecitychurch.com/spacecityfest",
-        "type": "space_city",
+        "type": "manual_verified",
         "authority": "official_festival",
-        "priority": 108
+        "priority": 112
       },
       {
         "name": "Space City Fest venue listing",
@@ -3087,7 +3663,7 @@
         "priority": 104
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3125,7 +3701,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -3164,7 +3740,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3203,7 +3779,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3242,7 +3818,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3280,7 +3856,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3318,7 +3894,7 @@
         "priority": 74
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "endDate": "2026-11-15",
     "imageType": "artist",
@@ -3358,7 +3934,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3396,7 +3972,7 @@
         "priority": 80
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -3434,7 +4010,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -3472,7 +4048,7 @@
         "priority": 80
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -3510,7 +4086,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -3548,7 +4124,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -3586,7 +4162,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-14T14:39:00Z",
+    "lastVerified": "2026-08-15T11:53:29Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
