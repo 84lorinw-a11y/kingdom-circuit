@@ -1,10 +1,10 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-08-15T21:23:22Z",
-  "lastSuccessfulUpdate": "2026-08-15T21:23:22Z",
-  "eventsPublished": 102,
-  "candidatesCollected": 201,
+  "lastAttempt": "2026-08-16T11:54:46Z",
+  "lastSuccessfulUpdate": "2026-08-16T11:54:46Z",
+  "eventsPublished": 101,
+  "candidatesCollected": 198,
   "artistsConfigured": 299,
   "artistsByPriority": {
     "priority1": 100,
@@ -15,8 +15,8 @@
   "socialSearchArtistsEnabled": 99,
   "freeTextAliasesProtected": 97,
   "artistsMatchedOnTicketmaster": 70,
-  "officialEventsFound": 81,
-  "ticketmasterEventsFound": 74,
+  "officialEventsFound": 79,
+  "ticketmasterEventsFound": 73,
   "instagramArtistsConfigured": 99,
   "instagramQueriesRun": 101,
   "instagramQueriesAttempted": 99,
@@ -49,7 +49,7 @@
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 230,
+  "sourcesChecked": 229,
   "unmatchedArtists": [
     "Pregador Luo",
     "Sondae",
@@ -190,7 +190,7 @@
     {
       "name": "Reach Records consolidated calendar",
       "status": "ok",
-      "eventsFound": 36
+      "eventsFound": 35
     },
     {
       "name": "Reach Records - 1K Phew",
@@ -210,7 +210,7 @@
     {
       "name": "Reach Records - Anike",
       "status": "ok",
-      "eventsFound": 2
+      "eventsFound": 3
     },
     {
       "name": "Reach Records - Hulvey",
@@ -420,12 +420,12 @@
     {
       "name": "ChristianHits consolidated show feed",
       "status": "ok",
-      "eventsFound": 5
+      "eventsFound": 4
     },
     {
       "name": "ChristianHits festival directory",
       "status": "ok",
-      "eventsFound": 5
+      "eventsFound": 4
     },
     {
       "name": "Konnect Concert Series - Space City Church",
@@ -594,7 +594,7 @@
     },
     {
       "name": "LifeLight Sioux Falls official lineup",
-      "status": "ok",
+      "status": "warning",
       "eventsFound": 0
     },
     {
@@ -610,7 +610,7 @@
       "queriesRun": 101
     }
   ],
-  "warningCount": 24,
+  "warningCount": 25,
   "errorCount": 0,
   "warnings": [
     "Off The Charts official schedule: Unable to retrieve https://www.offthechartsnd.com/schedule: HTTP Error 429: Too Many Requests",
@@ -636,7 +636,8 @@
     "FLAME Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/16627-flame: HTTP Error 403: Forbidden",
     "Alex Jean Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15570394-alex-jean: HTTP Error 403: Forbidden",
     "KB Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/165768-kb: HTTP Error 403: Forbidden",
-    "Anike Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4673148-anike: HTTP Error 403: Forbidden"
+    "Anike Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4673148-anike: HTTP Error 403: Forbidden",
+    "LifeLight Sioux Falls official lineup: Unable to retrieve https://lifelight.org/llsf-lineup/: <urlopen error timed out>"
   ],
   "errors": [],
   "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings."
