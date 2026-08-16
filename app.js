@@ -4,7 +4,7 @@ console.info("Kingdom Circuit production multipage build loaded");
 const BASE = "/";
 const LIVE_EVENTS_URL = `${BASE}events.json`;
 const LIVE_ARTISTS_URL = `${BASE}config/artists.json`;
-const SITE_BUILD = "production-v3-mobile-artist-circuit";
+const SITE_BUILD = "production-v4-indie-tribe-dedupe";
 const SUPPLEMENTAL_EVENTS_URL = `${BASE}supplemental-events.json?v=2`;
 const RUN_STATUS_URL = `${BASE}run-status.json`;
 const FALLBACK_EVENT_IMAGE = `${BASE}assets/event-fallback.webp`;
@@ -53,6 +53,7 @@ const ARTIST_ROSTER_ORDER = [
   "Da' T.R.U.T.H.",
   "Wordsplayed",
   "Forrest Frank",
+  "indie tribe.",
   "Alex Jean",
   "gio.",
   "Torey D'Shaun",
@@ -83,7 +84,6 @@ const ARTIST_ROSTER_ORDER = [
   "LaNell Grant",
   "Red Tips",
   "Dell Mac",
-  "indie tribe.",
   "DJ Mykael V",
   "Mogli the Iceburg",
   "Tommy Royale",
@@ -766,6 +766,19 @@ const VERIFIED_ARTIST_REGISTRY = {
     "youtubeProfile": "https://www.youtube.com/@hiforrest",
     "officialImageSource": "https://forrestfrank.com/",
     "sourceRegistryVerified": true
+  },
+  "indie tribe.": {
+    "aliases": [
+      "indie tribe.",
+      "indie tribe",
+      "Indie Tribe group"
+    ],
+    "website": "https://indietribe.us/",
+    "instagramProfile": "https://www.instagram.com/indiextribe/",
+    "spotifyProfile": "https://open.spotify.com/artist/1sPm31qmcbk9EFoRCS8eRl",
+    "youtubeProfile": "https://www.youtube.com/@indietribe",
+    "officialImageSource": "https://www.instagram.com/indiextribe/",
+    "sourceRegistryVerified": true
   }
 };
 const ARTIST_OVERRIDES = {
@@ -854,39 +867,227 @@ function applyArtistOverrides(artists) {
       : merged;
   });
 }
+const GENERIC_EVENT_VENUES = new Set([
+  "",
+  "tbd",
+  "location tbd",
+  "venue tbd",
+  "venue not provided",
+  "venue to be announced",
+  "location to be announced"
+]);
+const EVENT_TITLE_STOP_WORDS = new Set(["a", "an", "and", "at", "in", "of", "on", "the", "with"]);
+
+function normalizeEventText(value) {
+  return String(value || "")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLocaleLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[’']/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim()
+    .replace(/\s+/g, " ");
+}
+function normalizeEventCity(value) {
+  return normalizeEventText(String(value || "").replace(/\s*\([^)]*\)\s*/g, " "))
+    .replace(/\bst\b/g, "saint")
+    .replace(/\bft\b/g, "fort")
+    .replace(/\bmt\b/g, "mount")
+    .replace(/\s+(?:metro|area)$/g, "")
+    .trim();
+}
+function normalizeEventVenue(value) {
+  const venue = normalizeEventText(value);
+  return GENERIC_EVENT_VENUES.has(venue) ? "" : venue;
+}
+function eventTitleTokens(event) {
+  return new Set(normalizeEventText(event?.title)
+    .split(" ")
+    .filter(token => token.length > 1 && !EVENT_TITLE_STOP_WORDS.has(token)));
+}
+function tokenContainment(left, right) {
+  if (!left.size || !right.size) return 0;
+  let shared = 0;
+  left.forEach(token => { if (right.has(token)) shared += 1; });
+  return shared / Math.min(left.size, right.size);
+}
+function normalizedArtistName(name) {
+  const configured = artistConfig(name);
+  return normalize(configured?.name || name);
+}
 function eventArtistSet(event) {
-  return new Set((event.artists || []).map(normalize));
+  const artists = Array.isArray(event?.artists) ? event.artists : [];
+  return new Set(artists.map(normalizedArtistName).filter(Boolean));
+}
+function eventMinutes(value) {
+  const match = String(value || "").match(/^(\d{1,2}):(\d{2})/);
+  return match ? Number(match[1]) * 60 + Number(match[2]) : null;
+}
+function eventTimesCompatible(left, right) {
+  const leftMinutes = eventMinutes(left?.startTime);
+  const rightMinutes = eventMinutes(right?.startTime);
+  return leftMinutes === null || rightMinutes === null || Math.abs(leftMinutes - rightMinutes) <= 90;
+}
+function normalizedEventUrl(value) {
+  const raw = String(value || "").trim();
+  if (!raw) return "";
+  try {
+    const baseOrigin = globalThis.location?.origin || "https://kingdomcircuit.com";
+    const url = new URL(raw, baseOrigin);
+    if (!['http:', 'https:'].includes(url.protocol)) return "";
+    url.hash = "";
+    ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid", "gclid"].forEach(key => url.searchParams.delete(key));
+    return `${url.hostname.toLocaleLowerCase()}${url.pathname.replace(/\/+$/, "").toLocaleLowerCase()}${url.search}`;
+  } catch {
+    return "";
+  }
+}
+function eventUrlSet(event) {
+  const sources = Array.isArray(event?.sources) ? event.sources : [];
+  const values = [event?.ticketUrl, event?.officialUrl, ...sources.map(source => source?.url)];
+  return new Set(values.filter(specificEventUrl).map(normalizedEventUrl).filter(Boolean));
+}
+function sharedEventUrl(left, right) {
+  const leftUrls = eventUrlSet(left);
+  return [...eventUrlSet(right)].some(url => leftUrls.has(url));
 }
 function sameEvent(existing, incoming) {
-  if (!existing || !incoming || existing.startDate !== incoming.startDate) return false;
-  if (normalize(existing.city) !== normalize(incoming.city)) return false;
-  const sameVenue = normalize(existing.venue) && normalize(existing.venue) === normalize(incoming.venue);
-  const existingArtists = eventArtistSet(existing);
-  const sharedArtist = [...eventArtistSet(incoming)].some(name => existingArtists.has(name));
-  return sameVenue || sharedArtist;
+  if (!existing || !incoming || String(existing.startDate || "") !== String(incoming.startDate || "")) return false;
+
+  const leftState = normalize(existing.state);
+  const rightState = normalize(incoming.state);
+  if (leftState && rightState && leftState !== rightState) return false;
+
+  const leftAddress = normalizeEventText(existing.address);
+  const rightAddress = normalizeEventText(incoming.address);
+  const sameAddress = Boolean(leftAddress && rightAddress && leftAddress === rightAddress);
+  const leftCity = normalizeEventCity(existing.city);
+  const rightCity = normalizeEventCity(incoming.city);
+  if (!sameAddress && (!leftCity || !rightCity || leftCity !== rightCity)) return false;
+  if (!eventTimesCompatible(existing, incoming)) return false;
+
+  const leftArtists = eventArtistSet(existing);
+  const sharedArtist = [...eventArtistSet(incoming)].some(name => leftArtists.has(name));
+  const leftTitle = normalizeEventText(existing.title);
+  const rightTitle = normalizeEventText(incoming.title);
+  const titleScore = tokenContainment(eventTitleTokens(existing), eventTitleTokens(incoming));
+  const exactOrContainedTitle = Boolean(leftTitle && rightTitle && (leftTitle === rightTitle || leftTitle.includes(rightTitle) || rightTitle.includes(leftTitle)));
+  const relatedIdentity = sharedArtist || exactOrContainedTitle || titleScore >= 0.66;
+  const leftVenue = normalizeEventVenue(existing.venue);
+  const rightVenue = normalizeEventVenue(incoming.venue);
+  const venueScore = tokenContainment(new Set(leftVenue.split(" ").filter(Boolean)), new Set(rightVenue.split(" ").filter(Boolean)));
+  const sameVenue = Boolean(leftVenue && rightVenue && (leftVenue === rightVenue || venueScore >= 0.80));
+  const oneVenueUnknown = !leftVenue || !rightVenue;
+
+  if (sameAddress && (relatedIdentity || sharedEventUrl(existing, incoming))) return true;
+
+  // Two known, materially different venues usually mean two real performances.
+  // Do not collapse them merely because an artist, title, or broad tour URL matches.
+  if (leftVenue && rightVenue && !sameVenue) return false;
+
+  if (sharedEventUrl(existing, incoming) && relatedIdentity) return true;
+  if (sameVenue && relatedIdentity) return true;
+  if (oneVenueUnknown && sharedArtist && (exactOrContainedTitle || titleScore >= 0.55)) return true;
+  return false;
+}
+function eventSourcePriority(event) {
+  const direct = Number(event?.sourcePriority || 0);
+  const sources = Array.isArray(event?.sources) ? event.sources : [];
+  const sourcePriorities = sources.map(source => Number(source?.priority || 0));
+  return Math.max(direct, ...sourcePriorities, 0);
+}
+function specificEventUrl(value) {
+  const normalized = normalizedEventUrl(value);
+  if (!normalized) return false;
+  const collectionPage = /\/collections?(?:\/|$)/.test(normalized);
+  const bareListingPage = /\/(?:events?|shows?|tours?|calendar)\/?(?:\?|$)/.test(normalized);
+  return !collectionPage && !bareListingPage;
+}
+function eventRecordScore(event) {
+  let score = eventSourcePriority(event);
+  if (normalizeEventVenue(event?.venue)) score += 12;
+  if (normalizeEventText(event?.address)) score += 6;
+  if (event?.startTime) score += 2;
+  if (specificEventUrl(event?.officialUrl)) score += 6;
+  if (specificEventUrl(event?.ticketUrl)) score += 4;
+  if (/^(?:\/?assets\/)/i.test(String(event?.image || ""))) score += 5;
+  else if (event?.image) score += 1;
+  return score;
+}
+function uniqueEventSources(...groups) {
+  const result = [];
+  const seen = new Set();
+  groups.flat().forEach(source => {
+    if (!source || typeof source !== "object") return;
+    const key = normalizedEventUrl(source.url) || normalizeEventText(source.name);
+    if (!key || seen.has(key)) return;
+    seen.add(key);
+    result.push({ ...source });
+  });
+  return result.sort((a, b) => Number(b.priority || 0) - Number(a.priority || 0));
 }
 function shouldUseIncomingImage(existing, incoming) {
-  if (!incoming.image) return false;
+  if (!incoming?.image) return false;
   if (incoming.imageOverride) return true;
-  if (!existing.image) return true;
+  if (!existing?.image) return true;
   const current = normalize(existing.image);
   return current === "assets/event-fallback.webp" || current.endsWith("/assets/event-fallback.webp") || existing.imageType === "fallback";
 }
+function mergeEventRecords(existing, incoming) {
+  const preferIncoming = eventRecordScore(incoming) > eventRecordScore(existing);
+  const primary = preferIncoming ? incoming : existing;
+  const secondary = preferIncoming ? existing : incoming;
+  const merged = { ...secondary, ...primary };
+
+  // Prefer the stronger record, but never erase useful details with blanks.
+  Object.keys(secondary).forEach(key => {
+    const current = merged[key];
+    const emptyString = typeof current === "string" && !current.trim();
+    const emptyArray = Array.isArray(current) && current.length === 0;
+    if (current === null || current === undefined || emptyString || emptyArray) merged[key] = secondary[key];
+  });
+
+  merged.artists = [...new Set([...(primary.artists || []), ...(secondary.artists || [])])];
+  merged.mergedIds = [...new Set([
+    ...(primary.mergedIds || []),
+    primary.id,
+    ...(secondary.mergedIds || []),
+    secondary.id
+  ].filter(Boolean))];
+  merged.sources = uniqueEventSources(primary.sources || [], secondary.sources || []);
+  if (merged.sources.length) merged.sourceName = merged.sources[0].name || merged.sourceName;
+
+  const primaryOfficial = specificEventUrl(primary.officialUrl) ? primary.officialUrl : "";
+  const secondaryOfficial = specificEventUrl(secondary.officialUrl) ? secondary.officialUrl : "";
+  const primaryTicket = specificEventUrl(primary.ticketUrl) ? primary.ticketUrl : "";
+  const secondaryTicket = specificEventUrl(secondary.ticketUrl) ? secondary.ticketUrl : "";
+  merged.officialUrl = primaryOfficial || secondaryOfficial || primary.officialUrl || secondary.officialUrl || "";
+  merged.ticketUrl = primaryTicket || secondaryTicket || primary.ticketUrl || secondary.ticketUrl || merged.officialUrl || "";
+
+  if (shouldUseIncomingImage(primary, secondary)) {
+    merged.image = secondary.image;
+    merged.imageType = secondary.imageType || merged.imageType;
+    merged.imagePosition = secondary.imagePosition || merged.imagePosition;
+  }
+  const firstSeen = [existing.firstSeen, incoming.firstSeen].filter(Boolean).sort()[0];
+  if (firstSeen) merged.firstSeen = firstSeen;
+  const lastVerified = [existing.lastVerified, incoming.lastVerified].filter(Boolean).sort().at(-1);
+  if (lastVerified) merged.lastVerified = lastVerified;
+  return merged;
+}
 function mergeEventLists(primary, supplemental) {
-  const merged = primary.map(event => ({ ...event, artists: [...(event.artists || [])] }));
-  supplemental.forEach(incoming => {
-    const existing = merged.find(event => sameEvent(event, incoming));
-    if (!existing) {
-      merged.push(incoming);
-      return;
-    }
-    existing.artists = [...new Set([...(existing.artists || []), ...(incoming.artists || [])])];
-    if (shouldUseIncomingImage(existing, incoming)) {
-      existing.image = incoming.image;
-      existing.imageType = incoming.imageType || existing.imageType;
-      existing.imagePosition = incoming.imagePosition || existing.imagePosition;
-    }
-    if (!existing.firstSeen) existing.firstSeen = incoming.firstSeen;
+  const merged = [];
+  [...(Array.isArray(primary) ? primary : []), ...(Array.isArray(supplemental) ? supplemental : [])].forEach(raw => {
+    if (!raw || typeof raw !== "object") return;
+    const incoming = {
+      ...raw,
+      artists: Array.isArray(raw.artists) ? [...raw.artists] : [],
+      sources: Array.isArray(raw.sources) ? [...raw.sources] : []
+    };
+    const matchIndex = merged.findIndex(existing => sameEvent(existing, incoming));
+    if (matchIndex === -1) merged.push(incoming);
+    else merged[matchIndex] = mergeEventRecords(merged[matchIndex], incoming);
   });
   return merged;
 }
@@ -1294,7 +1495,7 @@ function renderArtistDirectory() {
   if (!grid) return;
   const byArtist = new Map();
   EVENTS.forEach(event => (event.artists || []).forEach(name => {
-    const key = normalize(name);
+    const key = normalizedArtistName(name);
     if (!byArtist.has(key)) byArtist.set(key, []);
     byArtist.get(key).push(event);
   }));
@@ -1383,7 +1584,8 @@ function renderArtistProfile() {
     root.innerHTML = `<section class="page-hero hero-compact"><h1>Artist not found.</h1><a class="primary-button" href="${BASE}artists/">Return to artists</a></section>`;
     return;
   }
-  const events = EVENTS.filter(event => (event.artists || []).some(item => normalize(item) === normalize(artist.name))).sort((a, b) => (a.startDate || "").localeCompare(b.startDate || ""));
+  const artistKey = normalizedArtistName(artist.name);
+  const events = EVENTS.filter(event => (event.artists || []).some(item => normalizedArtistName(item) === artistKey)).sort((a, b) => (a.startDate || "").localeCompare(b.startDate || ""));
   const image = artistImageInfo(artist);
   const heroClass = image.url ? "profile-hero" : "profile-hero profile-hero-no-image";
   const visual = image.url
@@ -1401,7 +1603,7 @@ function renderEventDetail() {
   const root = document.querySelector("[data-event-detail]");
   if (!root) return;
   const id = new URLSearchParams(location.search).get("id");
-  const event = EVENTS.find(item => item.id === id);
+  const event = EVENTS.find(item => item.id === id || (item.mergedIds || []).includes(id));
   if (!event) {
     root.innerHTML = `<section class="page-hero hero-compact"><h1>Event not found.</h1><a class="primary-button" href="${BASE}shows/">View all shows</a></section>`;
     return;
@@ -1446,7 +1648,7 @@ async function renderCalendarStatus() {
       ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit", timeZoneName: "short" }).format(new Date(updated))
       : "Update time unavailable";
     const warnings = Number(status.warningCount || 0);
-    const published = Number(status.eventsPublished || EVENTS.length || 0);
+    const published = Number(EVENTS.length || status.eventsPublished || 0);
     root.innerHTML = `<span><strong>Calendar updated:</strong> ${esc(updatedText)}</span><span>${published} automated listing${published === 1 ? "" : "s"}</span>${warnings ? `<span class="footer-source-warning">${warnings} source check${warnings === 1 ? "" : "s"} unavailable; published listings remain verified.</span>` : ""}`;
     root.hidden = false;
   } catch (error) {
