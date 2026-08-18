@@ -1,0 +1,164 @@
+name: Bootstrap Production SEO
+
+on:
+  push:
+    branches:
+      - seo-production-rollout-2026-08-18
+    paths:
+      - .github/workflows/bootstrap-production-seo.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout rollout branch
+        uses: actions/checkout@v6
+        with:
+          ref: seo-production-rollout-2026-08-18
+
+      - name: Install tested production SEO builder
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          import urllib.request
+
+          source_url = "https://raw.githubusercontent.com/84lorinw-a11y/kingdom-circuit-test/main/seo-test-fixed.yml"
+          css_url = "https://raw.githubusercontent.com/84lorinw-a11y/kingdom-circuit-test/main/patch-v6.css"
+
+          req = urllib.request.Request(source_url, headers={"User-Agent": "KingdomCircuit-SEO-Rollout/1.0"})
+          source = urllib.request.urlopen(req, timeout=30).read().decode("utf-8")
+          start_marker = "          cat > /tmp/build_kc_seo.py <<'PY'\n"
+          end_marker = "\n          PY\n          python /tmp/build_kc_seo.py"
+          start = source.index(start_marker) + len(start_marker)
+          end = source.index(end_marker, start)
+          block = source[start:end]
+          lines = [line[10:] if line.startswith("          ") else line for line in block.splitlines()]
+          script = "\n".join(lines) + "\n"
+
+          replacements = [
+              ('BASE_PATH = "/kingdom-circuit-test/"', 'BASE_PATH = "/"'),
+              ('SITE_ORIGIN = "https://84lorinw-a11y.github.io"', 'SITE_ORIGIN = "https://kingdomcircuit.com"'),
+              ('TEST_MODE = True', 'TEST_MODE = False'),
+              ('assets/artists/skema-boy-v6.webp', 'assets/artists/skema-boy.webp'),
+              ('patch-v6.css?v=seo1', 'seo.css?v=1'),
+              ('"mode": "test-noindex"', '"mode": "production-indexable"'),
+              ('"note": "Test build remains noindex. Assets/logo are copied unchanged from the test repository."', '"note": "Production SEO build. Assets/logo are copied unchanged from the production repository."'),
+          ]
+          for old, new in replacements:
+              if old not in script:
+                  raise SystemExit(f"Required production replacement target missing: {old}")
+              script = script.replace(old, new)
+
+          banner = '<div class="test-site-banner">TEST SITE - SEO architecture preview. <a href="{LIVE_SITE}">Open the live site</a></div>\n'
+          if banner not in script:
+              raise SystemExit("Test banner target not found")
+          script = script.replace(banner, "")
+
+          ga_old = '<script src="{BASE_PATH}seo-static.js?v=1" defer></script>\n<title>{esc(title)}</title>'
+          ga_new = '''<script src="{BASE_PATH}seo-static.js?v=1" defer></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N2KK9XF4TJ"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-N2KK9XF4TJ');</script>
+<title>{esc(title)}</title>'''
+          if ga_old not in script:
+              raise SystemExit("Generated-page analytics insertion target not found")
+          script = script.replace(ga_old, ga_new)
+
+          Path("scripts/build_seo_site.py").write_text(script, encoding="utf-8")
+
+          req = urllib.request.Request(css_url, headers={"User-Agent": "KingdomCircuit-SEO-Rollout/1.0"})
+          css = urllib.request.urlopen(req, timeout=30).read().decode("utf-8")
+          Path("seo.css").write_text(css, encoding="utf-8")
+
+          # Bust the production app.js cache because the deployed artifact receives clean SEO links.
+          for path in Path(".").rglob("*.html"):
+              if ".git" in path.parts or "_site" in path.parts:
+                  continue
+              text = path.read_text(encoding="utf-8", errors="ignore")
+              updated = re.sub(r'/app\.js\?v=[^"\']+', '/app.js?v=13.0-seo', text)
+              if updated != text:
+                  path.write_text(updated, encoding="utf-8")
+
+          workflow = Path(".github/workflows/update-and-deploy.yml")
+          text = workflow.read_text(encoding="utf-8")
+          marker = "      - name: Verify complete deployment artifact\n"
+          if "Build production SEO architecture" not in text:
+              if marker not in text:
+                  raise SystemExit("Deployment workflow insertion marker not found")
+              seo_steps = '''      - name: Build production SEO architecture
+        env:
+          SEO_OFFLINE: "1"
+        run: python scripts/build_seo_site.py
+
+      - name: Verify production SEO architecture
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PYSEO'
+          import json
+          from pathlib import Path
+
+          root = Path("_site")
+          manifest = json.loads((root / "seo-build-manifest.json").read_text(encoding="utf-8"))
+          assert manifest["mode"] == "production-indexable", manifest
+          assert manifest["artists"] >= 250, manifest
+          assert manifest["events"] >= 20, manifest
+          assert manifest["eventPages"] >= 20, manifest
+          assert manifest["artistPages"] >= 250, manifest
+
+          robots = (root / "robots.txt").read_text(encoding="utf-8")
+          assert "Allow: /" in robots
+          assert "Disallow: /" not in robots
+          assert "https://kingdomcircuit.com/sitemap.xml" in robots
+
+          sitemap = (root / "sitemap.xml").read_text(encoding="utf-8")
+          assert "https://kingdomcircuit.com/" in sitemap
+          assert "kingdom-circuit-test" not in sitemap
+
+          home = (root / "index.html").read_text(encoding="utf-8")
+          assert 'content="index,follow"' in home
+          assert 'rel="canonical" href="https://kingdomcircuit.com/"' in home
+
+          event = next((root / "event").glob("*/index.html"))
+          event_text = event.read_text(encoding="utf-8")
+          assert '"@type":"MusicEvent"' in event_text
+          assert 'content="index,follow"' in event_text
+          assert "https://kingdomcircuit.com/event/" in event_text
+          assert "G-N2KK9XF4TJ" in event_text
+          assert "TEST SITE" not in event_text
+
+          artist = next(p for p in (root / "artists").glob("*/index.html") if p.parent.name != "profile")
+          artist_text = artist.read_text(encoding="utf-8")
+          assert 'content="index,follow"' in artist_text
+          assert "https://kingdomcircuit.com/artists/" in artist_text
+          assert "G-N2KK9XF4TJ" in artist_text
+          assert "TEST SITE" not in artist_text
+
+          assert (root / "CNAME").read_text(encoding="utf-8").strip() == "kingdomcircuit.com"
+          print("Production SEO architecture verified:", manifest)
+          PYSEO
+
+'''
+              text = text.replace(marker, seo_steps + marker, 1)
+              workflow.write_text(text, encoding="utf-8")
+          PY
+
+      - name: Commit rollout files
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/build_seo_site.py seo.css .github/workflows/update-and-deploy.yml '*.html' shows festivals new-shows artists event submit || true
+          if git diff --cached --quiet; then
+            echo "SEO rollout files already installed."
+          else
+            git commit -m "feat: prepare production SEO architecture"
+            git push origin HEAD:seo-production-rollout-2026-08-18
+          fi
