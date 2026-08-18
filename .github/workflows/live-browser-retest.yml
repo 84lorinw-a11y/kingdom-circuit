@@ -1,0 +1,140 @@
+name: Live Browser Retest
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/live-browser-retest.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  browser-retest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Install Selenium
+        run: python -m pip install --quiet selenium
+
+      - name: Test desktop filters and mobile layout
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, time
+          from selenium import webdriver
+          from selenium.webdriver.common.by import By
+          from selenium.webdriver.support.ui import WebDriverWait
+
+          result={'runId':'${{ github.run_id }}','checks':[]}
+          def check(name, cond, detail=''):
+              result['checks'].append({'name':name,'status':'pass' if cond else 'fail','detail':detail})
+
+          def desktop_driver():
+              o=webdriver.ChromeOptions()
+              o.add_argument('--headless=new'); o.add_argument('--no-sandbox'); o.add_argument('--disable-dev-shm-usage'); o.add_argument('--window-size=1440,1000')
+              return webdriver.Chrome(options=o)
+
+          def mobile_driver():
+              o=webdriver.ChromeOptions()
+              o.add_argument('--headless=new'); o.add_argument('--no-sandbox'); o.add_argument('--disable-dev-shm-usage')
+              o.add_experimental_option('mobileEmulation', {'deviceMetrics': {'width':390,'height':844,'pixelRatio':1.0}, 'userAgent':'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1'})
+              return webdriver.Chrome(options=o)
+
+          d=None
+          try:
+              d=desktop_driver()
+              d.get('https://kingdomcircuit.com/?browser-retest=${{ github.run_id }}')
+              WebDriverWait(d,30).until(lambda x: len(x.find_elements(By.CSS_SELECTOR,'[data-event-card]')) >= 20)
+              cards=d.find_elements(By.CSS_SELECTOR,'[data-event-card]')
+              check('desktop events render',len(cards)>=20,f'cards={len(cards)}')
+
+              toggle=d.find_element(By.CSS_SELECTOR,'.menu-toggle')
+              d.execute_script('arguments[0].click()',toggle)
+              WebDriverWait(d,5).until(lambda x:'open' in x.find_element(By.CSS_SELECTOR,'.menu-drawer').get_attribute('class'))
+              check('desktop navigation opens',True)
+              close=d.find_element(By.CSS_SELECTOR,'.menu-close')
+              d.execute_script('arguments[0].click()',close)
+              WebDriverWait(d,5).until(lambda x:'open' not in x.find_element(By.CSS_SELECTOR,'.menu-drawer').get_attribute('class'))
+              WebDriverWait(d,5).until(lambda x:x.find_element(By.CSS_SELECTOR,'.menu-backdrop').get_attribute('hidden') is not None)
+              check('desktop navigation closes cleanly',True)
+
+              chips=d.find_elements(By.CSS_SELECTOR,'.filter-chip')
+              festival=next((c for c in chips if 'Festival' in c.text),None)
+              if festival is None:
+                  check('desktop festival filter available',False,'Festival chip missing')
+              else:
+                  d.execute_script('arguments[0].scrollIntoView({block:"center"})',festival)
+                  d.execute_script('arguments[0].click()',festival)
+                  WebDriverWait(d,10).until(lambda x:any(c.is_displayed() for c in x.find_elements(By.CSS_SELECTOR,'[data-event-card]')))
+                  visible=[c for c in d.find_elements(By.CSS_SELECTOR,'[data-event-card]') if c.is_displayed()]
+                  check('desktop festival filter works',len(visible)>0 and all(c.get_attribute('data-type')=='festival' for c in visible),f'visible={len(visible)}, types={sorted(set(c.get_attribute("data-type") for c in visible))}')
+              d.quit(); d=None
+          except Exception as e:
+              check('desktop browser sequence',False,repr(e))
+              if d:
+                  try:d.quit()
+                  except:pass
+
+          m=None
+          try:
+              m=mobile_driver()
+              m.get('https://kingdomcircuit.com/?mobile-retest=${{ github.run_id }}')
+              WebDriverWait(m,30).until(lambda x: len(x.find_elements(By.CSS_SELECTOR,'[data-event-card]')) >= 20)
+              metrics=m.execute_script('return {inner:window.innerWidth,body:document.body.scrollWidth,doc:document.documentElement.scrollWidth};')
+              check('mobile emulation uses 390px viewport',metrics['inner']==390,str(metrics))
+              check('mobile has no horizontal overflow',max(metrics['body'],metrics['doc'])<=metrics['inner']+2,str(metrics))
+              card=m.find_element(By.CSS_SELECTOR,'[data-event-card]')
+              rect=m.execute_script('const r=arguments[0].getBoundingClientRect();return {left:r.left,right:r.right,width:r.width};',card)
+              check('mobile event card fits viewport',rect['left']>=-2 and rect['right']<=metrics['inner']+2,str(rect))
+              toggle=m.find_element(By.CSS_SELECTOR,'.menu-toggle')
+              m.execute_script('arguments[0].click()',toggle)
+              WebDriverWait(m,5).until(lambda x:'open' in x.find_element(By.CSS_SELECTOR,'.menu-drawer').get_attribute('class'))
+              check('mobile navigation opens',True)
+              close=m.find_element(By.CSS_SELECTOR,'.menu-close')
+              m.execute_script('arguments[0].click()',close)
+              WebDriverWait(m,5).until(lambda x:'open' not in x.find_element(By.CSS_SELECTOR,'.menu-drawer').get_attribute('class'))
+              check('mobile navigation closes',True)
+              m.quit(); m=None
+          except Exception as e:
+              check('mobile browser sequence',False,repr(e))
+              if m:
+                  try:m.quit()
+                  except:pass
+
+          failed=[c for c in result['checks'] if c['status']=='fail']
+          result['passed']=len(result['checks'])-len(failed)
+          result['failed']=len(failed)
+          result['overall']='pass' if not failed else 'fail'
+          open('/tmp/live-browser-retest.json','w').write(json.dumps(result,indent=2)+'\n')
+          print(json.dumps(result,indent=2))
+          PY
+
+      - name: Save result to audit branch
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -s /tmp/live-browser-retest.json ]; then
+            printf '{"overall":"fail","runId":"%s","error":"browser retest produced no file"}\n' "$GITHUB_RUN_ID" > /tmp/live-browser-retest.json
+          fi
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B audit/live-browser-latest
+          cp /tmp/live-browser-retest.json live-browser-retest-result.json
+          git add live-browser-retest-result.json
+          git commit -m "Record live browser retest $GITHUB_RUN_ID" || true
+          git push --force origin HEAD:audit/live-browser-latest
+
+      - name: Enforce result
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('/tmp/live-browser-retest.json'))
+          if r.get('overall')!='pass': raise SystemExit('Live browser retest failed')
+          PY
