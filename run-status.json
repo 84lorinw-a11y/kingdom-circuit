@@ -1,8 +1,8 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-08-18T17:05:14Z",
-  "lastSuccessfulUpdate": "2026-08-18T17:05:14Z",
+  "lastAttempt": "2026-08-18T17:34:03Z",
+  "lastSuccessfulUpdate": "2026-08-18T17:34:03Z",
   "eventsPublished": 98,
   "candidatesCollected": 198,
   "artistsConfigured": 299,
@@ -20,9 +20,21 @@
   "instagramArtistsConfigured": 99,
   "instagramQueriesRun": 101,
   "instagramQueriesAttempted": 99,
-  "instagramResultsFound": 0,
+  "instagramResultsFound": 9,
   "instagramEventsFound": 0,
   "instagramCandidates": [
+    {
+      "url": "https://www.instagram.com/reel/DbrHCgUSqBk/",
+      "title": "Instagram",
+      "artists": [
+        "Zauntee"
+      ],
+      "date": "",
+      "city": "Denver",
+      "state": "CO",
+      "score": 4,
+      "reason": "official artist ownership was not clear; a future date was not explicit"
+    },
     {
       "url": "https://www.instagram.com/p/DboKM3GJM4A/",
       "title": "Official EGR 2026 schedule graphic supplied to The Kingdom Circuit and manually transcribed.",
@@ -46,10 +58,104 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
+    },
+    {
+      "url": "https://www.instagram.com/reel/Db8qD1CSLa5/",
+      "title": "Instagram",
+      "artists": [
+        "Zauntee"
+      ],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 2,
+      "reason": "official artist ownership was not clear; a future date was not explicit; a U.S. city/state was not explicit"
+    },
+    {
+      "url": "https://www.instagram.com/p/DIVzl4DgDjU/",
+      "title": "Instagram",
+      "artists": [],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
+    },
+    {
+      "url": "https://www.instagram.com/reel/Dbv5yKryiFX/",
+      "title": "Instagram",
+      "artists": [
+        "Zauntee"
+      ],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DbuM_gtuq00/",
+      "title": "Instagram",
+      "artists": [
+        "Zauntee"
+      ],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DaoRxlEuJkL/",
+      "title": "Instagram",
+      "artists": [
+        "Zauntee"
+      ],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
+    },
+    {
+      "url": "https://www.instagram.com/reel/Dbltl7wSqlm/",
+      "title": "Instagram",
+      "artists": [
+        "Zauntee"
+      ],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
+    },
+    {
+      "url": "https://www.instagram.com/p/DOPpCVyjuop/",
+      "title": "Instagram",
+      "artists": [
+        "Zauntee"
+      ],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
+    },
+    {
+      "url": "https://www.instagram.com/p/DPFlGGCDnzY/",
+      "title": "Instagram",
+      "artists": [
+        "Zauntee"
+      ],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 231,
+  "sourcesChecked": 233,
   "unmatchedArtists": [
     "Pregador Luo",
     "Sondae",
@@ -334,7 +440,7 @@
     },
     {
       "name": "Zauntee official tour",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -349,7 +455,7 @@
     },
     {
       "name": "Mike Malagies official events",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -610,11 +716,9 @@
       "queriesRun": 101
     }
   ],
-  "warningCount": 23,
+  "warningCount": 21,
   "errorCount": 0,
   "warnings": [
-    "Zauntee official tour: Unable to retrieve https://www.zauntee.com/tour: HTTP Error 429: Too Many Requests",
-    "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
     "Trendsetter Sense official events: Unable to retrieve https://www.trendsettersense.com/event-list: HTTP Error 429: Too Many Requests",
     "NF Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11969355-nf: HTTP Error 403: Forbidden",
     "Mike Malagies Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15593996-mike-malagies: HTTP Error 403: Forbidden",
