@@ -64,6 +64,7 @@ jobs:
           test -s supplemental-events.json
           test -s config/artists.json
           test -s scripts/verify_multipage_site.py
+          test -s scripts/build_seo_site.py
 
           test -s shows/index.html
           test -s shows/this-month/index.html
@@ -86,6 +87,60 @@ jobs:
           if [ -f CNAME ]; then
             cp CNAME _site/
           fi
+
+      - name: Build production SEO architecture
+        run: python scripts/build_seo_site.py
+
+      - name: Verify production SEO architecture
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path("_site")
+          manifest = json.loads((root / "seo-build-manifest.json").read_text(encoding="utf-8"))
+          assert manifest["mode"] == "production-indexable", manifest
+          assert manifest["artists"] >= 250, manifest
+          assert manifest["events"] >= 20, manifest
+          assert manifest["eventPages"] >= 20, manifest
+          assert manifest["artistPages"] >= 250, manifest
+          assert manifest["urls"] >= 400, manifest
+
+          robots = (root / "robots.txt").read_text(encoding="utf-8")
+          assert "Allow: /" in robots
+          assert "Disallow: /" not in robots
+          assert "https://kingdomcircuit.com/sitemap.xml" in robots
+
+          sitemap = (root / "sitemap.xml").read_text(encoding="utf-8")
+          assert "https://kingdomcircuit.com/" in sitemap
+          assert "kingdom-circuit-test" not in sitemap
+          assert "84lorinw-a11y.github.io" not in sitemap
+
+          home = (root / "index.html").read_text(encoding="utf-8")
+          assert 'content="index,follow"' in home
+          assert 'rel="canonical" href="https://kingdomcircuit.com/"' in home
+          assert "G-N2KK9XF4TJ" in home
+
+          event = next((root / "event").glob("*/index.html"))
+          event_text = event.read_text(encoding="utf-8")
+          assert '"@type":"MusicEvent"' in event_text
+          assert 'content="index,follow"' in event_text
+          assert "https://kingdomcircuit.com/event/" in event_text
+          assert "G-N2KK9XF4TJ" in event_text
+          assert "TEST SITE" not in event_text
+
+          artist = next(p for p in (root / "artists").glob("*/index.html") if p.parent.name != "profile")
+          artist_text = artist.read_text(encoding="utf-8")
+          assert 'content="index,follow"' in artist_text
+          assert "https://kingdomcircuit.com/artists/" in artist_text
+          assert "G-N2KK9XF4TJ" in artist_text
+          assert "TEST SITE" not in artist_text
+
+          assert (root / "CNAME").read_text(encoding="utf-8").strip() == "kingdomcircuit.com"
+          print("Production SEO architecture verified:", manifest)
+          PY
 
       - name: Verify complete deployment artifact
         run: |
@@ -126,6 +181,10 @@ jobs:
               "config/artists.json",
               "supplemental-events.json",
               "run-status.json",
+              "seo-build-manifest.json",
+              "seo-static.js",
+              "sitemap.xml",
+              "robots.txt",
           ]
           for relative in required:
               path = site / relative
@@ -167,6 +226,14 @@ jobs:
           curl -fsS http://127.0.0.1:8765/new-shows/ >/dev/null
           curl -fsS http://127.0.0.1:8765/artists/ >/dev/null
           curl -fsS http://127.0.0.1:8765/submit/ >/dev/null
+
+          SAMPLE_EVENT=$(find _site/event -mindepth 2 -maxdepth 2 -name index.html -print -quit | sed 's#_site/##;s#index.html##')
+          test -n "$SAMPLE_EVENT"
+          curl -fsS "http://127.0.0.1:8765/${SAMPLE_EVENT}" >/dev/null
+
+          SAMPLE_ARTIST=$(find _site/artists -mindepth 2 -maxdepth 2 -name index.html ! -path '*/profile/*' -print -quit | sed 's#_site/##;s#index.html##')
+          test -n "$SAMPLE_ARTIST"
+          curl -fsS "http://127.0.0.1:8765/${SAMPLE_ARTIST}" >/dev/null
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
