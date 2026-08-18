@@ -1,4 +1,4 @@
-name: Full 524 SEO Inventory
+name: SEO Gap Postprocess
 
 on:
   push:
@@ -10,139 +10,64 @@ permissions:
   contents: write
 
 jobs:
-  inventory:
+  analyze:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout audit branch
-        uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
-
-      - name: Crawl every URL in the live sitemap
+      - uses: actions/checkout@v6
+      - name: Analyze crawled 524-page inventory
         shell: bash
         run: |
           python - <<'PY'
-          from __future__ import annotations
-          import csv
-          import html
-          import json
-          import re
-          import urllib.parse
-          import urllib.request
-          import xml.etree.ElementTree as ET
+          import json, re, statistics
           from collections import Counter
-          from concurrent.futures import ThreadPoolExecutor, as_completed
           from pathlib import Path
-
-          BASE='https://kingdomcircuit.com'
-          UA='KingdomCircuit-Full-SEO-Inventory/1.0'
-          STATES={'alabama','alaska','arizona','arkansas','california','colorado','connecticut','delaware','district-of-columbia','florida','georgia','hawaii','idaho','illinois','indiana','iowa','kansas','kentucky','louisiana','maine','maryland','massachusetts','michigan','minnesota','mississippi','missouri','montana','nebraska','nevada','new-hampshire','new-jersey','new-mexico','new-york','north-carolina','north-dakota','ohio','oklahoma','oregon','pennsylvania','rhode-island','south-carolina','south-dakota','tennessee','texas','utah','vermont','virginia','washington','west-virginia','wisconsin','wyoming'}
-          MONTHS={'january','february','march','april','may','june','july','august','september','october','november','december'}
-
-          def get(url):
-              req=urllib.request.Request(url,headers={'User-Agent':UA,'Cache-Control':'no-cache','Pragma':'no-cache'})
-              with urllib.request.urlopen(req,timeout=30) as r:
-                  return r.status,r.geturl(),r.read().decode('utf-8','replace')
-
-          status, final, xml = get(BASE+'/sitemap.xml?full-audit=1')
-          root=ET.fromstring(xml)
-          ns={'sm':'http://www.sitemaps.org/schemas/sitemap/0.9'}
-          urls=[x.text.strip() for x in root.findall('sm:url/sm:loc',ns) if x.text]
-
-          def classify(url):
-              p=urllib.parse.urlsplit(url).path.strip('/')
-              if not p: return 'home'
-              parts=p.split('/')
-              if parts[0]=='event' and len(parts)>=2: return 'event'
-              if parts[0]=='artists' and len(parts)>=2 and parts[1] != 'profile': return 'artist'
-              if parts[0]=='shows' and len(parts)==2:
-                  slug=parts[1]
-                  if slug in STATES: return 'state'
-                  if re.fullmatch(r'('+'|'.join(MONTHS)+r')-20\d\d',slug): return 'month'
-                  if slug=='this-month': return 'core'
-                  return 'city'
-              return 'core'
-
-          def extract(url):
-              row={'url':url,'type':classify(url),'status':0,'final_url':'','title':'','description':'','canonical':'','robots':'','h1':'','word_count':0,'internal_links':0,'music_event':False,'breadcrumb':False,'error':''}
-              try:
-                  status,final,text=get(url+('?' if '?' not in url else '&')+'full-audit=1')
-                  row['status']=status; row['final_url']=final
-                  m=re.search(r'<title>(.*?)</title>',text,re.I|re.S)
-                  if m: row['title']=html.unescape(re.sub(r'<.*?>','',m.group(1))).strip()
-                  m=re.search(r'<meta\s+name=["\']description["\']\s+content=["\'](.*?)["\']',text,re.I|re.S)
-                  if m: row['description']=html.unescape(m.group(1)).strip()
-                  m=re.search(r'<link\s+rel=["\']canonical["\']\s+href=["\'](.*?)["\']',text,re.I|re.S)
-                  if m: row['canonical']=m.group(1).strip()
-                  m=re.search(r'<meta\s+name=["\']robots["\']\s+content=["\'](.*?)["\']',text,re.I|re.S)
-                  if m: row['robots']=m.group(1).strip()
-                  m=re.search(r'<h1[^>]*>(.*?)</h1>',text,re.I|re.S)
-                  if m: row['h1']=html.unescape(re.sub(r'<.*?>',' ',m.group(1))).strip()
-                  visible=re.sub(r'<script.*?</script>|<style.*?</style>',' ',text,flags=re.I|re.S)
-                  visible=re.sub(r'<[^>]+>',' ',visible)
-                  row['word_count']=len(re.findall(r'\b[\w\'-]+\b',html.unescape(visible)))
-                  hrefs=re.findall(r'href=["\']([^"\']+)',text,re.I)
-                  row['internal_links']=sum(1 for h in hrefs if h.startswith('/') or h.startswith(BASE))
-                  row['music_event']='"@type":"MusicEvent"' in text or '"@type": "MusicEvent"' in text
-                  row['breadcrumb']='"@type":"BreadcrumbList"' in text or '"@type": "BreadcrumbList"' in text
-              except Exception as e:
-                  row['error']=repr(e)
-              return row
-
-          rows=[]
-          with ThreadPoolExecutor(max_workers=16) as ex:
-              futures={ex.submit(extract,u):u for u in urls}
-              for i,f in enumerate(as_completed(futures),1):
-                  rows.append(f.result())
-                  if i%50==0: print('crawled',i,'/',len(urls))
-          rows.sort(key=lambda r:r['url'])
-
-          counts=Counter(r['type'] for r in rows)
-          state_slugs=[urllib.parse.urlsplit(r['url']).path.strip('/').split('/')[-1] for r in rows if r['type']=='state']
-          city_slugs=[urllib.parse.urlsplit(r['url']).path.strip('/').split('/')[-1] for r in rows if r['type']=='city']
-          month_slugs=[urllib.parse.urlsplit(r['url']).path.strip('/').split('/')[-1] for r in rows if r['type']=='month']
-          problems=[]
-          for r in rows:
-              if r['status']!=200: problems.append({'url':r['url'],'issue':'non-200','detail':str(r['status'])+' '+r['error']})
-              if not r['title']: problems.append({'url':r['url'],'issue':'missing title','detail':''})
-              if not r['description']: problems.append({'url':r['url'],'issue':'missing description','detail':''})
-              if r['canonical']!=r['url']: problems.append({'url':r['url'],'issue':'canonical mismatch','detail':r['canonical']})
-              if 'noindex' in r['robots'].lower(): problems.append({'url':r['url'],'issue':'noindex','detail':r['robots']})
-              if r['type']=='event' and not r['music_event']: problems.append({'url':r['url'],'issue':'missing MusicEvent schema','detail':''})
-              if r['type'] in {'artist','event','state','city','month'} and not r['breadcrumb']: problems.append({'url':r['url'],'issue':'missing breadcrumb schema','detail':''})
-
-          summary={
-              'sitemap_url_count':len(urls),
-              'unique_url_count':len(set(urls)),
-              'counts_by_type':dict(counts),
-              'states_present':sorted(state_slugs),
-              'states_present_count':len(state_slugs),
-              'states_missing':sorted(STATES-set(state_slugs)),
-              'states_missing_count':len(STATES-set(state_slugs)),
-              'cities_present_count':len(city_slugs),
-              'cities_present':sorted(city_slugs),
-              'months_present_count':len(month_slugs),
-              'months_present':sorted(month_slugs),
-              'http_200_count':sum(r['status']==200 for r in rows),
-              'canonical_exact_count':sum(r['canonical']==r['url'] for r in rows),
-              'indexable_count':sum('noindex' not in r['robots'].lower() for r in rows),
-              'problem_count':len(problems),
-              'problems':problems,
+          p=Path('audit-output/all-524-pages.json')
+          rows=json.loads(p.read_text())
+          by={}
+          for t in sorted(set(r['type'] for r in rows)):
+              rr=[r for r in rows if r['type']==t]
+              wc=[r['word_count'] for r in rr]
+              by[t]={
+                  'count':len(rr),
+                  'word_count_min':min(wc),
+                  'word_count_median':statistics.median(wc),
+                  'word_count_avg':round(statistics.mean(wc),1),
+                  'word_count_max':max(wc),
+              }
+          artists=[r for r in rows if r['type']=='artist']
+          events=[r for r in rows if r['type']=='event']
+          cities=[r for r in rows if r['type']=='city']
+          states=[r for r in rows if r['type']=='state']
+          months=[r for r in rows if r['type']=='month']
+          suspicious_city=[r for r in cities if '/shows/sponsor-' in r['url']]
+          parenthetical_like=[r for r in cities if any(x in r['url'] for x in ['fair-oaks-sacramento','leander-austin','richmond-houston','southlake-dallas'])]
+          dup_year=[r for r in events if re.search(r'-2026-2026-',r['url'])]
+          result={
+              'page_type_metrics':by,
+              'artist_pages_le_100_words':sum(r['word_count']<=100 for r in artists),
+              'artist_pages_le_125_words':sum(r['word_count']<=125 for r in artists),
+              'artist_pages_ge_200_words':sum(r['word_count']>=200 for r in artists),
+              'artist_titles_with_tickets':sum('ticket' in r['title'].lower() for r in artists),
+              'artist_titles_with_concerts':sum('concert' in r['title'].lower() for r in artists),
+              'artist_titles_with_tour_dates':sum('tour dates' in r['title'].lower() for r in artists),
+              'state_titles_with_year':sum(bool(re.search(r'20\d\d',r['title'])) for r in states),
+              'city_titles_with_year':sum(bool(re.search(r'20\d\d',r['title'])) for r in cities),
+              'month_titles_with_year':sum(bool(re.search(r'20\d\d',r['title'])) for r in months),
+              'suspicious_sponsor_city_pages_count':len(suspicious_city),
+              'suspicious_sponsor_city_pages':[r['url'] for r in suspicious_city],
+              'metro_parenthetical_city_pages_count':len(parenthetical_like),
+              'metro_parenthetical_city_pages':[r['url'] for r in parenthetical_like],
+              'event_urls_with_duplicate_2026_count':len(dup_year),
+              'event_urls_with_duplicate_2026':[r['url'] for r in dup_year],
+              'core_titles':{r['url']:r['title'] for r in rows if r['type'] in {'home','core'}},
           }
-          out=Path('audit-output'); out.mkdir(exist_ok=True)
-          (out/'all-524-summary.json').write_text(json.dumps(summary,indent=2)+'\n',encoding='utf-8')
-          (out/'all-524-pages.json').write_text(json.dumps(rows,indent=2)+'\n',encoding='utf-8')
-          with (out/'all-524-pages.csv').open('w',newline='',encoding='utf-8') as f:
-              w=csv.DictWriter(f,fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
-          print(json.dumps(summary,indent=2))
+          Path('audit-output/seo-gap-analysis.json').write_text(json.dumps(result,indent=2)+'\n')
+          print(json.dumps(result,indent=2))
           PY
-
-      - name: Save inventory to audit branch
-        shell: bash
+      - name: Save analysis
         run: |
-          set -euo pipefail
           git config user.name "kingdom-circuit-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add audit-output/
-          git commit -m "Record full 524-page SEO inventory [skip ci]" || true
+          git add audit-output/seo-gap-analysis.json
+          git commit -m "Record SEO gap analysis [skip ci]" || true
           git push origin HEAD:audit/all-524-pages-2026-08-18
