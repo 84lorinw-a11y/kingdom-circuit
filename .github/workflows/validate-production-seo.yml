@@ -1,0 +1,130 @@
+name: Validate Production SEO
+
+on:
+  push:
+    branches:
+      - seo-production-rollout-2026-08-18
+    paths:
+      - scripts/build_seo_site.py
+      - seo.css
+      - .github/workflows/update-and-deploy.yml
+      - .github/workflows/validate-production-seo.yml
+      - '*.html'
+      - 'shows/**'
+      - 'festivals/**'
+      - 'new-shows/**'
+      - 'artists/**'
+      - 'event/**'
+      - 'submit/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout rollout branch
+        uses: actions/checkout@v6
+        with:
+          ref: seo-production-rollout-2026-08-18
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run existing tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+
+      - name: Build production SEO artifact
+        env:
+          SEO_OFFLINE: "1"
+        run: python scripts/build_seo_site.py
+
+      - name: Verify production artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/verify_multipage_site.py _site
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path('_site')
+          manifest = json.loads((root / 'seo-build-manifest.json').read_text(encoding='utf-8'))
+          assert manifest['mode'] == 'production-indexable', manifest
+          assert manifest['artists'] >= 250, manifest
+          assert manifest['events'] >= 20, manifest
+          assert manifest['eventPages'] >= 20, manifest
+          assert manifest['artistPages'] >= 250, manifest
+
+          robots = (root / 'robots.txt').read_text(encoding='utf-8')
+          assert 'Allow: /' in robots
+          assert 'Disallow: /' not in robots
+          assert 'https://kingdomcircuit.com/sitemap.xml' in robots
+
+          sitemap = (root / 'sitemap.xml').read_text(encoding='utf-8')
+          assert sitemap.count('<url>') >= 400
+          assert 'kingdom-circuit-test' not in sitemap
+          assert '84lorinw-a11y.github.io' not in sitemap
+
+          home = (root / 'index.html').read_text(encoding='utf-8')
+          assert 'The Kingdom Circuit exists to connect people with CHH music' in home
+          assert 'content="index,follow"' in home
+          assert 'https://kingdomcircuit.com/' in home
+          assert 'G-N2KK9XF4TJ' in home
+
+          event = next((root / 'event').glob('*/index.html'))
+          event_text = event.read_text(encoding='utf-8')
+          assert '"@type":"MusicEvent"' in event_text
+          assert 'Official details' in event_text
+          assert 'content="index,follow"' in event_text
+          assert 'https://kingdomcircuit.com/event/' in event_text
+          assert 'G-N2KK9XF4TJ' in event_text
+          assert 'TEST SITE' not in event_text
+          assert 'kingdom-circuit-test' not in event_text
+
+          artist = next(p for p in (root / 'artists').glob('*/index.html') if p.parent.name != 'profile')
+          artist_text = artist.read_text(encoding='utf-8')
+          assert 'upcoming U.S. show' in artist_text
+          assert 'content="index,follow"' in artist_text
+          assert 'https://kingdomcircuit.com/artists/' in artist_text
+          assert 'G-N2KK9XF4TJ' in artist_text
+          assert 'TEST SITE' not in artist_text
+
+          assert (root / 'CNAME').read_text(encoding='utf-8').strip() == 'kingdomcircuit.com'
+          assert (root / 'assets/logo.png').exists()
+          print('Production validation passed:', manifest)
+          PY
+
+          python3 -m http.server 8765 --directory _site >/tmp/kc-prod-http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+          sleep 1
+          curl -fsS http://127.0.0.1:8765/ >/dev/null
+          curl -fsS http://127.0.0.1:8765/shows/ >/dev/null
+          curl -fsS http://127.0.0.1:8765/artists/ >/dev/null
+          SAMPLE_EVENT=$(find _site/event -mindepth 2 -maxdepth 2 -name index.html -print -quit | sed 's#_site/##;s#index.html##')
+          test -n "$SAMPLE_EVENT"
+          curl -fsS "http://127.0.0.1:8765/${SAMPLE_EVENT}" >/dev/null
+          SAMPLE_ARTIST=$(find _site/artists -mindepth 2 -maxdepth 2 -name index.html ! -path '*/profile/*' -print -quit | sed 's#_site/##;s#index.html##')
+          test -n "$SAMPLE_ARTIST"
+          curl -fsS "http://127.0.0.1:8765/${SAMPLE_ARTIST}" >/dev/null
+          kill $SERVER_PID
+          trap - EXIT
+
+      - name: Record validation result
+        if: always()
+        shell: bash
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          set -euo pipefail
+          printf '{"status":"%s","run_id":"%s","sha":"%s"}\n' "$JOB_STATUS" "$GITHUB_RUN_ID" "$GITHUB_SHA" > seo-production-validation.json
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add seo-production-validation.json
+          git commit -m "Record production SEO validation [skip ci]" || true
+          git push origin HEAD:seo-production-rollout-2026-08-18 || true
