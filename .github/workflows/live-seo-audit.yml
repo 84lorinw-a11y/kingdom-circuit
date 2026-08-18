@@ -1,0 +1,365 @@
+name: Live SEO Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/live-seo-audit.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kingdom-circuit-live-seo-audit
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Wait for SEO deployment to become live
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 30); do
+            BODY=$(curl -fsSL -H 'Cache-Control: no-cache' "https://kingdomcircuit.com/?audit=${GITHUB_RUN_ID}-${attempt}" || true)
+            if printf '%s' "$BODY" | grep -q 'data-event-card' && ! printf '%s' "$BODY" | grep -q 'Loading\.\.\.'; then
+              echo "SEO deployment is live."
+              exit 0
+            fi
+            echo "Waiting for live SEO deployment (${attempt}/30)..."
+            sleep 15
+          done
+          echo "Live site never exposed the expected pre-rendered SEO HTML."
+          exit 1
+
+      - name: Run static live-site and SEO audit
+        shell: bash
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+          import datetime as dt
+          import json
+          import re
+          import urllib.parse
+          import urllib.request
+          import xml.etree.ElementTree as ET
+
+          BASE = 'https://kingdomcircuit.com'
+          RUN = '${{ github.run_id }}'
+          results = []
+          samples = {}
+
+          def check(name, condition, detail=''):
+              ok = bool(condition)
+              results.append({'name': name, 'status': 'pass' if ok else 'fail', 'detail': detail})
+              return ok
+
+          def fetch(path, binary=False):
+              url = path if path.startswith('http') else BASE + path
+              sep = '&' if '?' in url else '?'
+              req = urllib.request.Request(url + sep + 'audit=' + RUN, headers={
+                  'User-Agent': 'KingdomCircuit-Live-Audit/1.0',
+                  'Cache-Control': 'no-cache',
+                  'Pragma': 'no-cache',
+              })
+              with urllib.request.urlopen(req, timeout=30) as r:
+                  data = r.read()
+                  return r.status, r.geturl(), data if binary else data.decode('utf-8', 'replace'), dict(r.headers)
+
+          core_pages = {
+              'home': '/',
+              'shows': '/shows/',
+              'this_month': '/shows/this-month/',
+              'festivals': '/festivals/',
+              'new_shows': '/new-shows/',
+              'artists': '/artists/',
+              'submit': '/submit/',
+          }
+          html_pages = {}
+          for label, path in core_pages.items():
+              try:
+                  status, final, text, headers = fetch(path)
+                  html_pages[label] = text
+                  check(f'{label}: HTTP 200', status == 200, final)
+                  check(f'{label}: HTTPS', final.startswith('https://'), final)
+                  check(f'{label}: no test-domain leakage', 'kingdom-circuit-test' not in text and '84lorinw-a11y.github.io' not in text)
+                  check(f'{label}: Google Analytics present', 'G-N2KK9XF4TJ' in text)
+              except Exception as e:
+                  check(f'{label}: reachable', False, repr(e))
+
+          home = html_pages.get('home', '')
+          check('homepage: exact mission preserved', 'The Kingdom Circuit exists to connect people with CHH music, concerts, festivals, and community so the music reaches farther and more people have the opportunity to hear the gospel.' in home)
+          check('homepage: index,follow', 'content="index,follow"' in home)
+          check('homepage: canonical correct', 'rel="canonical" href="https://kingdomcircuit.com/"' in home)
+          check('homepage: pre-rendered events', home.count('data-event-card') >= 20, f"event cards={home.count('data-event-card')}")
+          check('homepage: no loading placeholder', 'Loading...' not in home and 'Loading…' not in home)
+
+          shows = html_pages.get('shows', '')
+          check('shows: pre-rendered events', shows.count('data-event-card') >= 20, f"event cards={shows.count('data-event-card')}")
+          check('shows: static event links', bool(re.search(r'href="/event/[^"?]+/"', shows)))
+          check('shows: static artist links', bool(re.search(r'href="/artists/[^"?]+/"', shows)))
+
+          artists = html_pages.get('artists', '')
+          check('artists: pre-rendered directory', artists.count('data-artist-card') >= 250, f"artist cards={artists.count('data-artist-card')}")
+          check('artists: no loading placeholder', 'Loading...' not in artists and 'Loading…' not in artists)
+
+          submit = html_pages.get('submit', '')
+          check('submit: Formspree endpoint preserved', 'formspree.io/f/mljreawj' in submit)
+          check('submit: form exists', '<form' in submit.lower())
+
+          try:
+              status, final, robots, _ = fetch('/robots.txt')
+              check('robots.txt: HTTP 200', status == 200, final)
+              check('robots.txt: allows crawling', 'Allow: /' in robots and 'Disallow: /' not in robots)
+              check('robots.txt: sitemap declared', 'https://kingdomcircuit.com/sitemap.xml' in robots)
+          except Exception as e:
+              check('robots.txt: reachable', False, repr(e))
+              robots = ''
+
+          locs = []
+          try:
+              status, final, sitemap, _ = fetch('/sitemap.xml')
+              check('sitemap.xml: HTTP 200', status == 200, final)
+              root = ET.fromstring(sitemap)
+              ns = {'sm': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+              locs = [el.text.strip() for el in root.findall('sm:url/sm:loc', ns) if el.text]
+              check('sitemap: 400+ URLs', len(locs) >= 400, f'urls={len(locs)}')
+              check('sitemap: production domain only', all(u.startswith(BASE + '/') or u == BASE for u in locs))
+              check('sitemap: no test URLs', all('kingdom-circuit-test' not in u and '84lorinw-a11y.github.io' not in u for u in locs))
+              check('sitemap: unique URLs', len(locs) == len(set(locs)), f'{len(locs)} total / {len(set(locs))} unique')
+          except Exception as e:
+              check('sitemap.xml: valid XML', False, repr(e))
+
+          def canonical_ok(text, expected):
+              return f'rel="canonical" href="{expected}"' in text
+
+          # Artist page
+          artist_url = BASE + '/artists/kb/'
+          try:
+              status, final, text, _ = fetch('/artists/kb/')
+              samples['artist'] = artist_url
+              check('KB artist page: HTTP 200', status == 200, final)
+              check('KB artist page: index,follow', 'content="index,follow"' in text)
+              check('KB artist page: canonical', canonical_ok(text, artist_url))
+              check('KB artist page: relevant title', '<title>KB Concerts &amp; Tour Dates | The Kingdom Circuit</title>' in text or '<title>KB Concerts & Tour Dates | The Kingdom Circuit</title>' in text)
+              check('KB artist page: upcoming-shows content', 'Upcoming KB Shows' in text)
+              check('KB artist page: GA present', 'G-N2KK9XF4TJ' in text)
+          except Exception as e:
+              check('KB artist page: reachable', False, repr(e))
+
+          event_urls = [u for u in locs if '/event/' in u and not u.rstrip('/').endswith('/event')]
+          if event_urls:
+              event_url = event_urls[0]
+              samples['event'] = event_url
+              try:
+                  path = urllib.parse.urlsplit(event_url).path
+                  status, final, text, _ = fetch(path)
+                  check('event page: HTTP 200', status == 200, final)
+                  check('event page: index,follow', 'content="index,follow"' in text)
+                  check('event page: canonical self-reference', canonical_ok(text, event_url))
+                  check('event page: official details present', 'Official details' in text)
+                  check('event page: GA present', 'G-N2KK9XF4TJ' in text)
+                  scripts = re.findall(r'<script type="application/ld\+json">(.*?)</script>', text, re.S)
+                  parsed = []
+                  for raw in scripts:
+                      try: parsed.append(json.loads(raw.replace('<\\/', '</')))
+                      except Exception: pass
+                  music = [x for x in parsed if isinstance(x, dict) and x.get('@type') == 'MusicEvent']
+                  check('event structured data: MusicEvent parses', bool(music), f'jsonld blocks={len(parsed)}')
+                  if music:
+                      schema = music[0]
+                      check('event structured data: required fields', all(schema.get(k) for k in ['name','startDate','location','url']))
+                      check('event structured data: canonical URL', schema.get('url') == event_url, str(schema.get('url')))
+              except Exception as e:
+                  check('event page: reachable', False, repr(e))
+          else:
+              check('sitemap: event URLs present', False)
+
+          months = ('january','february','march','april','may','june','july','august','september','october','november','december')
+          month_urls = [u for u in locs if re.search(r'/shows/(' + '|'.join(months) + r')-20\d\d/$', u)]
+          if month_urls:
+              samples['month'] = month_urls[0]
+              try:
+                  p = urllib.parse.urlsplit(month_urls[0]).path
+                  status, final, text, _ = fetch(p)
+                  check('monthly SEO page: HTTP 200', status == 200, final)
+                  check('monthly SEO page: canonical', canonical_ok(text, month_urls[0]))
+                  check('monthly SEO page: index,follow', 'content="index,follow"' in text)
+              except Exception as e: check('monthly SEO page: reachable', False, repr(e))
+          else:
+              check('sitemap: monthly SEO URLs present', False)
+
+          state_slugs = {'alabama','alaska','arizona','arkansas','california','colorado','connecticut','delaware','district-of-columbia','florida','georgia','hawaii','idaho','illinois','indiana','iowa','kansas','kentucky','louisiana','maine','maryland','massachusetts','michigan','minnesota','mississippi','missouri','montana','nebraska','nevada','new-hampshire','new-jersey','new-mexico','new-york','north-carolina','north-dakota','ohio','oklahoma','oregon','pennsylvania','rhode-island','south-carolina','south-dakota','tennessee','texas','utah','vermont','virginia','washington','west-virginia','wisconsin','wyoming'}
+          state_urls = [u for u in locs if urllib.parse.urlsplit(u).path.strip('/').split('/')[-1] in state_slugs and '/shows/' in u]
+          if state_urls:
+              samples['state'] = state_urls[0]
+              try:
+                  p = urllib.parse.urlsplit(state_urls[0]).path
+                  status, final, text, _ = fetch(p)
+                  check('state SEO page: HTTP 200', status == 200, final)
+                  check('state SEO page: canonical', canonical_ok(text, state_urls[0]))
+                  check('state SEO page: index,follow', 'content="index,follow"' in text)
+              except Exception as e: check('state SEO page: reachable', False, repr(e))
+          else:
+              check('sitemap: state SEO URLs present', False)
+
+          city_urls = []
+          for u in locs:
+              path = urllib.parse.urlsplit(u).path.strip('/')
+              parts = path.split('/')
+              if len(parts) == 2 and parts[0] == 'shows':
+                  slug = parts[1]
+                  if slug not in state_slugs and slug != 'this-month' and not re.match(r'(' + '|'.join(months) + r')-20\d\d$', slug):
+                      city_urls.append(u)
+          if city_urls:
+              samples['city'] = city_urls[0]
+              try:
+                  p = urllib.parse.urlsplit(city_urls[0]).path
+                  status, final, text, _ = fetch(p)
+                  check('city SEO page: HTTP 200', status == 200, final)
+                  check('city SEO page: canonical', canonical_ok(text, city_urls[0]))
+                  check('city SEO page: index,follow', 'content="index,follow"' in text)
+              except Exception as e: check('city SEO page: reachable', False, repr(e))
+          else:
+              check('sitemap: city SEO URLs present', False)
+
+          try:
+              status, final, data, headers = fetch('/assets/logo.png', binary=True)
+              check('logo asset: HTTP 200', status == 200, final)
+              check('logo asset: non-empty', len(data) > 10000, f'bytes={len(data)}')
+          except Exception as e: check('logo asset: reachable', False, repr(e))
+
+          try:
+              req = urllib.request.Request('http://kingdomcircuit.com/', headers={'User-Agent':'KingdomCircuit-Live-Audit/1.0'})
+              with urllib.request.urlopen(req, timeout=30) as r:
+                  check('HTTP redirects to HTTPS', r.geturl().startswith('https://'), r.geturl())
+          except Exception as e: check('HTTP redirects to HTTPS', False, repr(e))
+
+          failed = [r for r in results if r['status'] == 'fail']
+          report = {
+              'generatedAt': dt.datetime.now(dt.timezone.utc).isoformat(),
+              'runId': RUN,
+              'staticAudit': 'pass' if not failed else 'fail',
+              'checksPassed': len(results) - len(failed),
+              'checksFailed': len(failed),
+              'samples': samples,
+              'results': results,
+          }
+          open('/tmp/live-seo-audit.json','w').write(json.dumps(report, indent=2) + '\n')
+          print(json.dumps(report, indent=2))
+          PY
+
+      - name: Install browser test dependency
+        run: python -m pip install --quiet selenium
+
+      - name: Run desktop and mobile browser checks
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, os, time
+          from selenium import webdriver
+          from selenium.webdriver.common.by import By
+          from selenium.webdriver.support.ui import WebDriverWait
+          from selenium.webdriver.support import expected_conditions as EC
+
+          path='/tmp/live-seo-audit.json'
+          report=json.load(open(path))
+          browser=[]
+          def check(name, cond, detail=''):
+              browser.append({'name':name,'status':'pass' if cond else 'fail','detail':detail})
+          def make_driver(width,height):
+              options=webdriver.ChromeOptions()
+              options.add_argument('--headless=new')
+              options.add_argument('--no-sandbox')
+              options.add_argument('--disable-dev-shm-usage')
+              options.add_argument(f'--window-size={width},{height}')
+              return webdriver.Chrome(options=options)
+
+          try:
+              d=make_driver(1440,1000)
+              d.get('https://kingdomcircuit.com/?browser-audit=${{ github.run_id }}')
+              WebDriverWait(d,30).until(lambda x: len(x.find_elements(By.CSS_SELECTOR,'[data-event-card]')) > 0)
+              cards=d.find_elements(By.CSS_SELECTOR,'[data-event-card]')
+              check('desktop: events render through JavaScript', len(cards) >= 20, f'cards={len(cards)}')
+              menu=d.find_element(By.CSS_SELECTOR,'.menu-toggle')
+              menu.click(); time.sleep(.3)
+              drawer=d.find_element(By.CSS_SELECTOR,'.menu-drawer')
+              check('desktop: navigation opens', 'open' in drawer.get_attribute('class'))
+              d.find_element(By.CSS_SELECTOR,'.menu-close').click(); time.sleep(.2)
+              chips=d.find_elements(By.CSS_SELECTOR,'.filter-chip')
+              festival=next((x for x in chips if 'Festival' in x.text),None)
+              if festival:
+                  festival.click(); time.sleep(.5)
+                  visible=[c for c in cards if c.is_displayed()]
+                  check('desktop: festival filter works', len(visible)>0 and all(c.get_attribute('data-type')=='festival' for c in visible), f'visible={len(visible)}')
+              else:
+                  check('desktop: festival filter works', False, 'festival chip missing')
+              d.quit()
+          except Exception as e:
+              check('desktop browser test completed', False, repr(e))
+              try: d.quit()
+              except Exception: pass
+
+          try:
+              m=make_driver(390,844)
+              m.get('https://kingdomcircuit.com/?mobile-audit=${{ github.run_id }}')
+              WebDriverWait(m,30).until(lambda x: len(x.find_elements(By.CSS_SELECTOR,'[data-event-card]')) > 0)
+              m.find_element(By.CSS_SELECTOR,'.menu-toggle').click(); time.sleep(.3)
+              drawer=m.find_element(By.CSS_SELECTOR,'.menu-drawer')
+              check('mobile: menu opens', 'open' in drawer.get_attribute('class'))
+              m.find_element(By.CSS_SELECTOR,'.menu-close').click(); time.sleep(.2)
+              metrics=m.execute_script('return {inner:window.innerWidth, body:document.body.scrollWidth, doc:document.documentElement.scrollWidth};')
+              check('mobile: no horizontal overflow', max(metrics['body'],metrics['doc']) <= metrics['inner'] + 2, str(metrics))
+              card=m.find_element(By.CSS_SELECTOR,'[data-event-card]')
+              rect=m.execute_script('const r=arguments[0].getBoundingClientRect(); return {left:r.left,right:r.right,width:r.width};',card)
+              check('mobile: event card fits viewport', rect['left'] >= -2 and rect['right'] <= metrics['inner'] + 2, str(rect))
+              m.quit()
+          except Exception as e:
+              check('mobile browser test completed', False, repr(e))
+              try: m.quit()
+              except Exception: pass
+
+          failed=[x for x in browser if x['status']=='fail']
+          report['browserAudit']='pass' if not failed else 'fail'
+          report['browserChecksPassed']=len(browser)-len(failed)
+          report['browserChecksFailed']=len(failed)
+          report['browserResults']=browser
+          report['overall']='pass' if report['staticAudit']=='pass' and report['browserAudit']=='pass' else 'fail'
+          open(path,'w').write(json.dumps(report,indent=2)+'\n')
+          print(json.dumps(report,indent=2))
+          PY
+
+      - name: Save audit result to audit branch
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -s /tmp/live-seo-audit.json ]; then
+            printf '{"overall":"fail","error":"audit did not produce a result","runId":"%s"}\n' "$GITHUB_RUN_ID" > /tmp/live-seo-audit.json
+          fi
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B audit/live-seo-latest
+          cp /tmp/live-seo-audit.json live-seo-audit-result.json
+          git add live-seo-audit-result.json
+          git commit -m "Record live SEO audit $GITHUB_RUN_ID" || true
+          git push --force origin HEAD:audit/live-seo-latest
+
+      - name: Enforce audit result
+        if: always()
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('/tmp/live-seo-audit.json'))
+          if r.get('overall') != 'pass':
+              raise SystemExit('Live SEO audit failed')
+          print('Live SEO audit passed')
+          PY
