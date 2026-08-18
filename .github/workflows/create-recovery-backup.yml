@@ -1,0 +1,46 @@
+name: Create Recovery Backup
+
+on:
+  push:
+    branches:
+      - backup/pre-seo-2026-08-18
+    paths:
+      - .github/workflows/create-recovery-backup.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact pre-SEO production commit
+        uses: actions/checkout@v6
+        with:
+          ref: 3aeffc1e7f0ed71fd7097f59efdf658c5e45d885
+          fetch-depth: 0
+
+      - name: Build exact recovery archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p recovery
+          git archive --format=zip --output=recovery/kingdom-circuit-live-pre-seo-2026-08-18.zip 3aeffc1e7f0ed71fd7097f59efdf658c5e45d885
+          cat > recovery/RECOVERY-METADATA.txt <<'EOF'
+          Repository: 84lorinw-a11y/kingdom-circuit
+          Production commit: 3aeffc1e7f0ed71fd7097f59efdf658c5e45d885
+          Backup branch: backup/pre-seo-2026-08-18
+          Purpose: Exact production source snapshot before full SEO rollout.
+          Main branch was not modified to create this archive.
+          EOF
+          sha256sum recovery/kingdom-circuit-live-pre-seo-2026-08-18.zip > recovery/SHA256SUMS.txt
+          unzip -t recovery/kingdom-circuit-live-pre-seo-2026-08-18.zip
+
+      - name: Upload recovery package
+        uses: actions/upload-artifact@v4
+        with:
+          name: kingdom-circuit-live-pre-seo-recovery
+          path: recovery/
+          if-no-files-found: error
+          retention-days: 90
