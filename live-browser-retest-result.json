@@ -1,0 +1,53 @@
+{
+  "runId": "32165980825",
+  "checks": [
+    {
+      "name": "desktop events render",
+      "status": "pass",
+      "detail": "cards=102"
+    },
+    {
+      "name": "desktop navigation opens",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "desktop navigation closes cleanly",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "desktop festival filter works",
+      "status": "pass",
+      "detail": "visible=6, types=['festival']"
+    },
+    {
+      "name": "mobile emulation uses 390px viewport",
+      "status": "pass",
+      "detail": "{'body': 390, 'doc': 390, 'inner': 390}"
+    },
+    {
+      "name": "mobile has no horizontal overflow",
+      "status": "pass",
+      "detail": "{'body': 390, 'doc': 390, 'inner': 390}"
+    },
+    {
+      "name": "mobile event card fits viewport",
+      "status": "pass",
+      "detail": "{'left': 16, 'right': 374, 'width': 358}"
+    },
+    {
+      "name": "mobile navigation opens",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "mobile navigation closes",
+      "status": "pass",
+      "detail": ""
+    }
+  ],
+  "passed": 9,
+  "failed": 0,
+  "overall": "pass"
+}
