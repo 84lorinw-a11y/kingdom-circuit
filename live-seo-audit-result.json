@@ -1,0 +1,422 @@
+{
+  "generatedAt": "2026-08-18T17:29:10.847909+00:00",
+  "runId": "32165833277",
+  "staticAudit": "pass",
+  "checksPassed": 74,
+  "checksFailed": 0,
+  "samples": {
+    "artist": "https://kingdomcircuit.com/artists/kb/",
+    "event": "https://kingdomcircuit.com/event/caleb-gordon-the-eden-experience-2026-08-18-fair-oaks-sacramento-a60791/",
+    "month": "https://kingdomcircuit.com/shows/august-2026/",
+    "state": "https://kingdomcircuit.com/shows/california/",
+    "city": "https://kingdomcircuit.com/shows/fair-oaks-sacramento-california/"
+  },
+  "results": [
+    {
+      "name": "home: HTTP 200",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/?audit=32165833277"
+    },
+    {
+      "name": "home: HTTPS",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/?audit=32165833277"
+    },
+    {
+      "name": "home: no test-domain leakage",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "home: Google Analytics present",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "shows: HTTP 200",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/shows/?audit=32165833277"
+    },
+    {
+      "name": "shows: HTTPS",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/shows/?audit=32165833277"
+    },
+    {
+      "name": "shows: no test-domain leakage",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "shows: Google Analytics present",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "this_month: HTTP 200",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/shows/this-month/?audit=32165833277"
+    },
+    {
+      "name": "this_month: HTTPS",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/shows/this-month/?audit=32165833277"
+    },
+    {
+      "name": "this_month: no test-domain leakage",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "this_month: Google Analytics present",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "festivals: HTTP 200",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/festivals/?audit=32165833277"
+    },
+    {
+      "name": "festivals: HTTPS",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/festivals/?audit=32165833277"
+    },
+    {
+      "name": "festivals: no test-domain leakage",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "festivals: Google Analytics present",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "new_shows: HTTP 200",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/new-shows/?audit=32165833277"
+    },
+    {
+      "name": "new_shows: HTTPS",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/new-shows/?audit=32165833277"
+    },
+    {
+      "name": "new_shows: no test-domain leakage",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "new_shows: Google Analytics present",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "artists: HTTP 200",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/artists/?audit=32165833277"
+    },
+    {
+      "name": "artists: HTTPS",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/artists/?audit=32165833277"
+    },
+    {
+      "name": "artists: no test-domain leakage",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "artists: Google Analytics present",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "submit: HTTP 200",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/submit/?audit=32165833277"
+    },
+    {
+      "name": "submit: HTTPS",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/submit/?audit=32165833277"
+    },
+    {
+      "name": "submit: no test-domain leakage",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "submit: Google Analytics present",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "homepage: exact mission preserved",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "homepage: index,follow",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "homepage: canonical correct",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "homepage: pre-rendered events",
+      "status": "pass",
+      "detail": "event cards=107"
+    },
+    {
+      "name": "homepage: no loading placeholder",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "shows: pre-rendered events",
+      "status": "pass",
+      "detail": "event cards=107"
+    },
+    {
+      "name": "shows: static event links",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "shows: static artist links",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "artists: pre-rendered directory",
+      "status": "pass",
+      "detail": "artist cards=299"
+    },
+    {
+      "name": "artists: no loading placeholder",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "submit: Formspree endpoint preserved",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "submit: form exists",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "robots.txt: HTTP 200",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/robots.txt?audit=32165833277"
+    },
+    {
+      "name": "robots.txt: allows crawling",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "robots.txt: sitemap declared",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "sitemap.xml: HTTP 200",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/sitemap.xml?audit=32165833277"
+    },
+    {
+      "name": "sitemap: 400+ URLs",
+      "status": "pass",
+      "detail": "urls=524"
+    },
+    {
+      "name": "sitemap: production domain only",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "sitemap: no test URLs",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "sitemap: unique URLs",
+      "status": "pass",
+      "detail": "524 total / 524 unique"
+    },
+    {
+      "name": "KB artist page: HTTP 200",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/artists/kb/?audit=32165833277"
+    },
+    {
+      "name": "KB artist page: index,follow",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "KB artist page: canonical",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "KB artist page: relevant title",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "KB artist page: upcoming-shows content",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "KB artist page: GA present",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "event page: HTTP 200",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/event/caleb-gordon-the-eden-experience-2026-08-18-fair-oaks-sacramento-a60791/?audit=32165833277"
+    },
+    {
+      "name": "event page: index,follow",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "event page: canonical self-reference",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "event page: official details present",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "event page: GA present",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "event structured data: MusicEvent parses",
+      "status": "pass",
+      "detail": "jsonld blocks=2"
+    },
+    {
+      "name": "event structured data: required fields",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "event structured data: canonical URL",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/event/caleb-gordon-the-eden-experience-2026-08-18-fair-oaks-sacramento-a60791/"
+    },
+    {
+      "name": "monthly SEO page: HTTP 200",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/shows/august-2026/?audit=32165833277"
+    },
+    {
+      "name": "monthly SEO page: canonical",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "monthly SEO page: index,follow",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "state SEO page: HTTP 200",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/shows/california/?audit=32165833277"
+    },
+    {
+      "name": "state SEO page: canonical",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "state SEO page: index,follow",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "city SEO page: HTTP 200",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/shows/fair-oaks-sacramento-california/?audit=32165833277"
+    },
+    {
+      "name": "city SEO page: canonical",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "city SEO page: index,follow",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "logo asset: HTTP 200",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/assets/logo.png?audit=32165833277"
+    },
+    {
+      "name": "logo asset: non-empty",
+      "status": "pass",
+      "detail": "bytes=378338"
+    },
+    {
+      "name": "HTTP redirects to HTTPS",
+      "status": "pass",
+      "detail": "https://kingdomcircuit.com/"
+    }
+  ],
+  "browserAudit": "fail",
+  "browserChecksPassed": 5,
+  "browserChecksFailed": 1,
+  "browserResults": [
+    {
+      "name": "desktop: events render through JavaScript",
+      "status": "pass",
+      "detail": "cards=102"
+    },
+    {
+      "name": "desktop: navigation opens",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "desktop browser test completed",
+      "status": "fail",
+      "detail": "ElementClickInterceptedException()"
+    },
+    {
+      "name": "mobile: menu opens",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "mobile: no horizontal overflow",
+      "status": "pass",
+      "detail": "{'body': 485, 'doc': 485, 'inner': 500}"
+    },
+    {
+      "name": "mobile: event card fits viewport",
+      "status": "pass",
+      "detail": "{'left': 16, 'right': 469, 'width': 453}"
+    }
+  ],
+  "overall": "fail"
+}
