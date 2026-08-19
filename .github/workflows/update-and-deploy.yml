@@ -299,11 +299,11 @@ jobs:
           curl -fsS http://127.0.0.1:8765/run-status.json >/dev/null
           curl -fsS http://127.0.0.1:8765/shows/ >/dev/null
           curl -fsS http://127.0.0.1:8765/shows/this-month/ >/dev/null
-          curl -fsS http://127.0.0.1:8765/shows/texas/ | grep -q "Christian Hip-Hop"
+          curl -fsS http://127.0.0.1:8765/shows/texas/ | grep "Christian Hip-Hop" >/dev/null
           curl -fsS http://127.0.0.1:8765/festivals/ >/dev/null
           curl -fsS http://127.0.0.1:8765/new-shows/ >/dev/null
-          curl -fsS http://127.0.0.1:8765/artists/ | grep -q "Christian Hip-Hop Artists"
-          curl -fsS http://127.0.0.1:8765/artists/kb/ | grep -q "KB Concerts"
+          curl -fsS http://127.0.0.1:8765/artists/ | grep "Christian Hip-Hop Artists" >/dev/null
+          curl -fsS http://127.0.0.1:8765/artists/kb/ | grep "KB Concerts" >/dev/null
           curl -fsS http://127.0.0.1:8765/seo-enhancements.js >/dev/null
           curl -fsS http://127.0.0.1:8765/submit/ >/dev/null
 
