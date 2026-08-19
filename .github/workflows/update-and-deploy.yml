@@ -14,7 +14,7 @@ permissions:
 
 concurrency:
   group: kingdom-circuit-pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 env:
   APPROVED_SEO_REPO: 84lorinw-a11y/kingdom-circuit-test
