@@ -16,6 +16,10 @@ concurrency:
   group: kingdom-circuit-pages
   cancel-in-progress: false
 
+env:
+  APPROVED_SEO_REPO: 84lorinw-a11y/kingdom-circuit-test
+  APPROVED_SEO_REF: af197d30b8ad4e3cb33e37cfc7a2de086335140d
+
 jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
@@ -24,8 +28,16 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Check out repository
+      - name: Check out production repository
         uses: actions/checkout@v4
+
+      - name: Check out pinned approved SEO source
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.APPROVED_SEO_REPO }}
+          ref: ${{ env.APPROVED_SEO_REF }}
+          path: _seo_source
+          fetch-depth: 1
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -53,6 +65,7 @@ jobs:
           fi
 
       - name: Prepare verified multi-page production site
+        shell: bash
         run: |
           set -euo pipefail
 
@@ -65,6 +78,10 @@ jobs:
           test -s config/artists.json
           test -s scripts/verify_multipage_site.py
           test -s scripts/build_seo_site.py
+          test -s scripts/apply_approved_seo.py
+          test -s _seo_source/scripts/apply_test_overlay.py
+          test -s _seo_source/scripts/finalize_test_seo.py
+          test -s _seo_source/scripts/align_artist_schema.py
 
           test -s shows/index.html
           test -s shows/this-month/index.html
@@ -80,7 +97,6 @@ jobs:
 
           cp index.html styles.css app.js events.json run-status.json \
              supplemental-events.json 404.html robots.txt sitemap.xml _site/
-
           cp config/artists.json _site/config/artists.json
           cp -R shows festivals new-shows artists event submit assets _site/
 
@@ -90,6 +106,17 @@ jobs:
 
       - name: Build production SEO architecture
         run: python scripts/build_seo_site.py
+
+      - name: Apply approved SEO experience
+        shell: bash
+        env:
+          KC_SEO_SOURCE: _seo_source/scripts
+        run: |
+          set -euo pipefail
+          python -m py_compile scripts/apply_approved_seo.py
+          python scripts/apply_approved_seo.py _site
+          node --check _site/app.js
+          node --check _site/seo-enhancements.js
 
       - name: Verify production SEO architecture
         shell: bash
@@ -108,6 +135,12 @@ jobs:
           assert manifest["artistPages"] >= 250, manifest
           assert manifest["urls"] >= 400, manifest
 
+          overlay = json.loads((root / "seo-overlay-manifest.json").read_text(encoding="utf-8"))
+          assert overlay["mode"] == "production-seo-overlay-v1", overlay
+          assert overlay["artistsEnhanced"] >= 250, overlay
+          assert overlay["eventsEnhanced"] >= 20, overlay
+          assert overlay["artistStatePages"] >= 1, overlay
+
           robots = (root / "robots.txt").read_text(encoding="utf-8")
           assert "Allow: /" in robots
           assert "Disallow: /" not in robots
@@ -122,6 +155,27 @@ jobs:
           assert 'content="index,follow"' in home
           assert 'rel="canonical" href="https://kingdomcircuit.com/"' in home
           assert "G-N2KK9XF4TJ" in home
+          assert '"@type":"Organization"' in home
+          assert "Christian Hip-Hop Concerts by Artist &amp; State" in home
+
+          kb = (root / "artists/kb/index.html").read_text(encoding="utf-8")
+          assert 'content="index,follow"' in kb
+          assert 'rel="canonical" href="https://kingdomcircuit.com/artists/kb/"' in kb
+          assert "KB Concerts &amp; Tour Dates" in kb
+          assert "data-artist-state-filter" in kb
+          assert "Upcoming KB Shows" in kb
+          assert "#1ed760" in kb
+          assert "#ff0033" in kb
+          assert '"@type":"MusicGroup"' in kb
+
+          directory = (root / "artists/index.html").read_text(encoding="utf-8")
+          assert "data-seo-enhanced-directory" in directory
+          assert "assets/artists/1k-phew.webp" in directory
+          assert '"@type":"ItemList"' in directory
+
+          texas = (root / "shows/texas/index.html").read_text(encoding="utf-8")
+          assert "Christian Hip-Hop &amp; Rap Concerts in Texas" in texas
+          assert "Artists With Upcoming Texas Shows" in texas
 
           event = next((root / "event").glob("*/index.html"))
           event_text = event.read_text(encoding="utf-8")
@@ -129,20 +183,21 @@ jobs:
           assert 'content="index,follow"' in event_text
           assert "https://kingdomcircuit.com/event/" in event_text
           assert "G-N2KK9XF4TJ" in event_text
-          assert "TEST SITE" not in event_text
 
-          artist = next(p for p in (root / "artists").glob("*/index.html") if p.parent.name != "profile")
-          artist_text = artist.read_text(encoding="utf-8")
-          assert 'content="index,follow"' in artist_text
-          assert "https://kingdomcircuit.com/artists/" in artist_text
-          assert "G-N2KK9XF4TJ" in artist_text
-          assert "TEST SITE" not in artist_text
+          for page in root.rglob("*.html"):
+              text = page.read_text(encoding="utf-8", errors="ignore")
+              assert 'content="index,follow"' in text, page
+              assert "kingdom-circuit-test" not in text, page
+              assert "G-TEST-DISABLED" not in text, page
+              assert "TEST SITE" not in text, page
 
           assert (root / "CNAME").read_text(encoding="utf-8").strip() == "kingdomcircuit.com"
           print("Production SEO architecture verified:", manifest)
+          print("Approved SEO overlay verified:", overlay)
           PY
 
       - name: Verify complete deployment artifact
+        shell: bash
         run: |
           set -euo pipefail
 
@@ -171,10 +226,12 @@ jobs:
               "index.html",
               "shows/index.html",
               "shows/this-month/index.html",
+              "shows/texas/index.html",
               "festivals/index.html",
               "new-shows/index.html",
               "artists/index.html",
               "artists/profile/index.html",
+              "artists/kb/index.html",
               "event/index.html",
               "submit/index.html",
               "events.json",
@@ -182,9 +239,12 @@ jobs:
               "supplemental-events.json",
               "run-status.json",
               "seo-build-manifest.json",
+              "seo-overlay-manifest.json",
               "seo-static.js",
+              "seo-enhancements.js",
               "sitemap.xml",
               "robots.txt",
+              "CNAME",
           ]
           for relative in required:
               path = site / relative
@@ -222,9 +282,12 @@ jobs:
           curl -fsS http://127.0.0.1:8765/run-status.json >/dev/null
           curl -fsS http://127.0.0.1:8765/shows/ >/dev/null
           curl -fsS http://127.0.0.1:8765/shows/this-month/ >/dev/null
+          curl -fsS http://127.0.0.1:8765/shows/texas/ | grep -q "Christian Hip-Hop"
           curl -fsS http://127.0.0.1:8765/festivals/ >/dev/null
           curl -fsS http://127.0.0.1:8765/new-shows/ >/dev/null
-          curl -fsS http://127.0.0.1:8765/artists/ >/dev/null
+          curl -fsS http://127.0.0.1:8765/artists/ | grep -q "Christian Hip-Hop Artists"
+          curl -fsS http://127.0.0.1:8765/artists/kb/ | grep -q "KB Concerts"
+          curl -fsS http://127.0.0.1:8765/seo-enhancements.js >/dev/null
           curl -fsS http://127.0.0.1:8765/submit/ >/dev/null
 
           SAMPLE_EVENT=$(find _site/event -mindepth 2 -maxdepth 2 -name index.html -print -quit | sed 's#_site/##;s#index.html##')
