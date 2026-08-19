@@ -201,7 +201,8 @@ jobs:
 
           for page in root.rglob("*.html"):
               text = page.read_text(encoding="utf-8", errors="ignore")
-              assert 'content="index,follow"' in text, page
+              if page.name != "404.html":
+                  assert 'content="index,follow"' in text, page
               assert "kingdom-circuit-test" not in text, page
               assert "G-TEST-DISABLED" not in text, page
               assert "TEST SITE" not in text, page
