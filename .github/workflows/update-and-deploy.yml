@@ -31,14 +31,6 @@ jobs:
       - name: Check out production repository
         uses: actions/checkout@v4
 
-      - name: Check out pinned approved SEO source
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ env.APPROVED_SEO_REPO }}
-          ref: ${{ env.APPROVED_SEO_REF }}
-          path: _seo_source
-          fetch-depth: 1
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -78,6 +70,14 @@ jobs:
               exit 1
             fi
           fi
+
+      - name: Check out pinned approved SEO source
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.APPROVED_SEO_REPO }}
+          ref: ${{ env.APPROVED_SEO_REF }}
+          path: _seo_source
+          fetch-depth: 1
 
       - name: Prepare verified multi-page production site
         shell: bash
