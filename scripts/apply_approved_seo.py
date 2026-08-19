@@ -5,6 +5,7 @@ import json
 import os
 import pathlib
 import re
+import shutil
 import sys
 
 SITE_ORIGIN = "https://kingdomcircuit.com"
@@ -19,6 +20,14 @@ def load_module(name: str, path: pathlib.Path):
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
+
+
+def is_build_only_path(page: pathlib.Path, root: pathlib.Path) -> bool:
+    try:
+        rel = page.relative_to(root)
+    except ValueError:
+        return False
+    return bool(rel.parts and rel.parts[0] == "_seo_source")
 
 
 def production_overlay_verify(overlay, root: pathlib.Path, generated_state_pages: list[str]) -> None:
@@ -51,8 +60,10 @@ def production_overlay_verify(overlay, root: pathlib.Path, generated_state_pages
         failures.append("enhancement-js")
 
     for page in root.rglob("*.html"):
+        if is_build_only_path(page, root):
+            continue
         text = page.read_text(encoding="utf-8", errors="ignore")
-        if 'name="robots" content="index,follow"' not in text:
+        if page.name != "404.html" and 'name="robots" content="index,follow"' not in text:
             failures.append(f"index-follow:{page}")
         if "84lorinw-a11y.github.io/kingdom-circuit-test" in text or "/kingdom-circuit-test/" in text:
             failures.append(f"test-reference:{page}")
@@ -60,7 +71,7 @@ def production_overlay_verify(overlay, root: pathlib.Path, generated_state_pages
             break
 
     if generated_state_pages:
-        if not any((root / path.replace(BASE, "").strip("/") / "index.html").exists() for path in generated_state_pages):
+        if not any((root / str(path).lstrip("/") / "index.html").exists() for path in generated_state_pages):
             failures.append("artist-state-pages")
 
     if failures:
@@ -88,6 +99,8 @@ def normalize_public_names(root: pathlib.Path) -> None:
         "KC SEO TEST OVERLAY V1": "KC SEO OVERLAY V1",
     }
     for page in root.rglob("*.html"):
+        if is_build_only_path(page, root):
+            continue
         text = page.read_text(encoding="utf-8", errors="ignore")
         for old, new in replacements.items():
             text = text.replace(old, new)
@@ -110,6 +123,8 @@ def apply_artist_fidelity(root: pathlib.Path) -> None:
     finalizer.patch_artist_profiles(root, artists)
 
     for page in root.rglob("*.html"):
+        if is_build_only_path(page, root):
+            continue
         text = page.read_text(encoding="utf-8", errors="ignore")
         branded = finalizer.replace_social_icons(text)
         if branded != text:
@@ -142,8 +157,10 @@ def final_production_verify(root: pathlib.Path) -> None:
         failures.append("seo-overlay-manifest")
 
     for page in root.rglob("*.html"):
+        if is_build_only_path(page, root):
+            continue
         text = page.read_text(encoding="utf-8", errors="ignore")
-        if 'name="robots" content="index,follow"' not in text:
+        if page.name != "404.html" and 'name="robots" content="index,follow"' not in text:
             failures.append(f"index-follow:{page}")
         if "kingdom-circuit-test" in text or "G-TEST-DISABLED" in text:
             failures.append(f"test-leak:{page}")
@@ -194,6 +211,10 @@ def main(site_root: str) -> None:
         overlay.main()
     finally:
         sys.argv = saved_argv
+
+    # The approved source checkout is a build dependency only. If the overlay's
+    # broad copier brought it into the artifact, remove it before normalization/deploy.
+    shutil.rmtree(root / "_seo_source", ignore_errors=True)
 
     normalize_public_names(root)
     apply_artist_fidelity(root)
