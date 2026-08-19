@@ -1,0 +1,53 @@
+name: Capture live deployment result
+
+on:
+  workflow_run:
+    workflows: ["Update and deploy show calendar"]
+    types: [completed]
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out latest main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Write deployment status
+        env:
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          RESULT: ${{ github.event.workflow_run.conclusion }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from datetime import datetime, timezone
+          payload = {
+              "run_id": int(os.environ["RUN_ID"]),
+              "conclusion": os.environ["RESULT"],
+              "head_sha": os.environ["HEAD_SHA"],
+              "html_url": os.environ["RUN_URL"],
+              "captured_at": datetime.now(timezone.utc).isoformat(),
+          }
+          with open("live-deploy-status.json", "w", encoding="utf-8") as fh:
+              json.dump(payload, fh, indent=2)
+              fh.write("\n")
+          print(payload)
+          PY
+
+      - name: Commit status receipt
+        run: |
+          git config user.name "kingdom-circuit-deploy-status"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add live-deploy-status.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Capture live deployment result [skip ci]"
+          git push origin HEAD:main
