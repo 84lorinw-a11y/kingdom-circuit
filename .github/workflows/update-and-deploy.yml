@@ -39,6 +39,10 @@ jobs:
       - name: Run all automated tests
         run: python -m unittest discover -s tests -p 'test_*.py' -v
 
+      - name: Add priority artist fallback calendars
+        if: github.event_name != 'push'
+        run: python scripts/apply_priority_source_fallbacks.py
+
       - name: Collect upcoming shows
         if: github.event_name != 'push'
         env:
@@ -47,6 +51,10 @@ jobs:
 
       - name: Apply curated catalog policy and coverage audit
         run: python scripts/apply_curated_catalog_policy.py
+
+      - name: Restore runtime-only source configuration
+        if: github.event_name != 'push'
+        run: git checkout -- config/official-sources.json
 
       - name: Save refreshed event data
         if: github.event_name != 'push'
@@ -101,6 +109,7 @@ jobs:
           test -s scripts/build_seo_site.py
           test -s scripts/apply_approved_seo.py
           test -s scripts/apply_curated_catalog_policy.py
+          test -s scripts/apply_priority_source_fallbacks.py
           test -s _seo_source/scripts/apply_test_overlay.py
           test -s _seo_source/scripts/finalize_test_seo.py
           test -s _seo_source/scripts/align_artist_schema.py
