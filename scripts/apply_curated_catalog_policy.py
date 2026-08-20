@@ -14,7 +14,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-POLICY_VERSION = 2
+POLICY_VERSION = 3
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 OFFICIAL_SOURCES_FILE = ROOT / "config" / "official-sources.json"
@@ -129,11 +129,13 @@ def is_ark_fragment(event: dict[str, Any]) -> bool:
     return same_site and bool(event_artists & ark_artists)
 
 
-def dedicated_source_artists(source: dict[str, Any]) -> set[str]:
-    names = {norm(source.get("artist"))}
-    names.update(norm(name) for name in source.get("artists", []) if name)
-    names.discard("")
-    return names
+def source_is_dedicated_artist_calendar(source: dict[str, Any], artist_key: str) -> bool:
+    """Return True only for sources dedicated to one artist, not festival appearances."""
+    if norm(source.get("artist")) == artist_key:
+        return True
+    configured = [norm(name) for name in source.get("artists", []) if norm(name)]
+    authority = norm(source.get("authority"))
+    return len(configured) == 1 and configured[0] == artist_key and authority in {"artist_calendar", "artist_label"}
 
 
 def build_coverage_report(
@@ -167,7 +169,7 @@ def build_coverage_report(
             source for source in sources
             if isinstance(source, dict)
             and source.get("enabled", True)
-            and key in dedicated_source_artists(source)
+            and source_is_dedicated_artist_calendar(source, key)
         ]
         failed_sources = [
             str(source.get("name") or source.get("url") or "Official source")
@@ -190,14 +192,14 @@ def build_coverage_report(
             "ticketmasterUnmatched": tm_unmatched,
             "ticketmasterFailed": tm_failed,
         }
-        if failed_sources and (tm_unmatched or tm_failed):
-            record["reason"] = "Dedicated artist source failed and Ticketmaster did not provide a reliable fallback."
+        if failed_sources and not healthy_sources and (tm_unmatched or tm_failed):
+            record["reason"] = "Every dedicated artist calendar failed and Ticketmaster did not provide a reliable fallback."
             high_risk.append(record)
         elif tm_unmatched and not healthy_sources:
             record["reason"] = "No Ticketmaster match and no healthy dedicated artist calendar was recorded in the latest run."
             medium_risk.append(record)
         elif failed_sources:
-            record["reason"] = "A dedicated artist source failed; another channel still appears available."
+            record["reason"] = "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
             medium_risk.append(record)
 
     return {
@@ -207,7 +209,8 @@ def build_coverage_report(
         "mediumRiskArtists": medium_risk,
         "incompleteConfirmedEvents": [NICKY_UNRESOLVED],
         "notes": [
-            "High risk means a priority-1 artist lost a dedicated source and also lacks a reliable Ticketmaster fallback.",
+            "High risk means every dedicated priority-artist calendar failed and Ticketmaster is also unavailable or unmatched.",
+            "Medium risk means coverage is degraded but at least one useful channel may remain, or no dedicated artist calendar is currently healthy.",
             "Incomplete confirmed events stay off the public calendar until a venue/city/state can be verified.",
         ],
     }
