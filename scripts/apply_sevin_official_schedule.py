@@ -5,6 +5,9 @@ The generic Sevin page parser can accidentally consume the nearby SPONSOR link
 as part of a city name. This post-collection guard makes HOG MOB's official
 Sevin concert page authoritative and keeps those malformed records from
 reappearing after scheduled refreshes.
+
+This production normalization step also invokes the small set of separately
+verified editorial corrections that must survive every collector refresh.
 """
 
 from __future__ import annotations
@@ -203,7 +206,17 @@ def main() -> int:
         if len(matches) != 1 or matches[0].get("city") != expected["city"]:
             raise SystemExit(f"Sevin canonicalization failed for {expected['startDate']}: {matches}")
 
-    print(f"Sevin schedule normalized from HOG MOB: removed {removed} malformed/duplicate collected record(s); ensured {len(SEVIN_EVENTS)} official upcoming dates.")
+    # Re-apply manually verified corrections after collector/curation output so
+    # artist portraits, event artwork, and confirmed support lineups cannot
+    # regress on a scheduled refresh.
+    from apply_verified_content_overrides import main as apply_verified_content_overrides
+
+    apply_verified_content_overrides()
+
+    print(
+        f"Sevin schedule normalized from HOG MOB: removed {removed} malformed/duplicate collected record(s); "
+        f"ensured {len(SEVIN_EVENTS)} official upcoming dates."
+    )
     return 0
 
 
