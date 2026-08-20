@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 from typing import Any
 
+POLICY_VERSION = 1
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 EVENTS_FILE = ROOT / "events.json"
@@ -150,7 +151,7 @@ def main() -> int:
         raise SystemExit("Mike Teezy HRVSTLAND event was not injected")
 
     print(
-        "Curated catalog policy applied: Madison Ryann Ward disabled; "
+        f"Curated catalog policy v{POLICY_VERSION} applied: Madison Ryann Ward disabled; "
         f"{removed_events} Madison-only event(s) removed; "
         "Mike Teezy HRVSTLAND Festival 2026 ensured."
     )
