@@ -1,22 +1,22 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-08-19T21:45:28Z",
-  "lastSuccessfulUpdate": "2026-08-19T21:45:28Z",
-  "eventsPublished": 97,
-  "candidatesCollected": 199,
-  "artistsConfigured": 299,
+  "lastAttempt": "2026-08-20T13:59:26Z",
+  "lastSuccessfulUpdate": "2026-08-20T13:59:26Z",
+  "eventsPublished": 90,
+  "candidatesCollected": 193,
+  "artistsConfigured": 298,
   "artistsByPriority": {
     "priority1": 100,
     "priority2": 100,
-    "priority3": 99
+    "priority3": 98
   },
-  "ticketmasterArtistsEnabled": 204,
+  "ticketmasterArtistsEnabled": 203,
   "socialSearchArtistsEnabled": 99,
   "freeTextAliasesProtected": 97,
-  "artistsMatchedOnTicketmaster": 70,
-  "officialEventsFound": 80,
-  "ticketmasterEventsFound": 73,
+  "artistsMatchedOnTicketmaster": 69,
+  "officialEventsFound": 82,
+  "ticketmasterEventsFound": 65,
   "instagramArtistsConfigured": 99,
   "instagramQueriesRun": 101,
   "instagramQueriesAttempted": 99,
@@ -49,7 +49,7 @@
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 232,
+  "sourcesChecked": 233,
   "unmatchedArtists": [
     "Pregador Luo",
     "Sondae",
@@ -190,7 +190,7 @@
     {
       "name": "Reach Records consolidated calendar",
       "status": "ok",
-      "eventsFound": 36
+      "eventsFound": 35
     },
     {
       "name": "Reach Records - 1K Phew",
@@ -334,7 +334,7 @@
     },
     {
       "name": "Zauntee official tour",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -349,7 +349,7 @@
     },
     {
       "name": "Mike Malagies official events",
-      "status": "ok",
+      "status": "warning",
       "eventsFound": 0
     },
     {
@@ -469,8 +469,8 @@
     },
     {
       "name": "Nicky Gracious official show calendar",
-      "status": "ok",
-      "eventsFound": 1
+      "status": "warning",
+      "eventsFound": 0
     },
     {
       "name": "Faith Jam 2026 official ticket page",
@@ -603,6 +603,21 @@
       "eventsFound": 0
     },
     {
+      "name": "Mike Teezy Apple Music concerts",
+      "status": "ok",
+      "eventsFound": 3
+    },
+    {
+      "name": "Parris Chariz Apple Music concerts",
+      "status": "ok",
+      "eventsFound": 1
+    },
+    {
+      "name": "Mike Malagies Apple Music concerts",
+      "status": "ok",
+      "eventsFound": 0
+    },
+    {
       "name": "Instagram public announcement scan",
       "status": "ok",
       "eventsFound": 0,
@@ -610,10 +625,10 @@
       "queriesRun": 101
     }
   ],
-  "warningCount": 22,
+  "warningCount": 23,
   "errorCount": 0,
   "warnings": [
-    "Zauntee official tour: Unable to retrieve https://www.zauntee.com/tour: HTTP Error 429: Too Many Requests",
+    "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
     "Trendsetter Sense official events: Unable to retrieve https://www.trendsettersense.com/event-list: HTTP Error 429: Too Many Requests",
     "NF Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11969355-nf: HTTP Error 403: Forbidden",
     "Mike Malagies Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15593996-mike-malagies: HTTP Error 403: Forbidden",
@@ -623,6 +638,7 @@
     "Byron Juane Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14690526-byron-juane: HTTP Error 403: Forbidden",
     "Social Club Misfits Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/13345973-social-club-misfits: HTTP Error 403: Forbidden",
     "Mike Teezy official tour: Unable to retrieve https://www.miketeezymusic.com/tour: HTTP Error 429: Too Many Requests",
+    "Nicky Gracious official show calendar: Unable to retrieve https://nickygraciousmusic.com/pages/shows: HTTP Error 503: Service Unavailable",
     "Manafest Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4465-manafest: HTTP Error 403: Forbidden",
     "GRITS Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/805-grits: HTTP Error 403: Forbidden",
     "Nic D Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11283620-nic-d: HTTP Error 403: Forbidden",

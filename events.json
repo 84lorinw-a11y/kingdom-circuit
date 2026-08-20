@@ -1,57 +1,5 @@
 [
   {
-    "id": "official:0fce54c07a7a5a90c5b4",
-    "title": "Hulvey",
-    "startDate": "2026-08-19",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "McMenamins Crystal Ballroom",
-    "address": "1332  West Burnside St",
-    "city": "Portland",
-    "state": "OR",
-    "country": "US",
-    "artists": [
-      "Hulvey"
-    ],
-    "headliner": "Hulvey",
-    "eventType": "concert",
-    "status": "onsale",
-    "ticketUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7xF0I",
-    "officialUrl": "https://www.ticketmaster.com/event/Z7r9jZ1A7xF0I",
-    "image": "https://s1.ticketm.net/dam/a/d4e/a49ecab3-089d-46ff-baa5-7942c994ed4e_SOURCE",
-    "price": "",
-    "sourceName": "Ticketmaster",
-    "sources": [
-      {
-        "name": "Ticketmaster",
-        "url": "https://www.ticketmaster.com/event/Z7r9jZ1A7xF0I",
-        "type": "ticketmaster",
-        "authority": "venue_ticket",
-        "priority": 94
-      },
-      {
-        "name": "Reach Records - Hulvey",
-        "url": "https://www.reachrecords.com/artists/hulvey/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 86
-      },
-      {
-        "name": "Reach Records consolidated calendar",
-        "url": "https://www.reachrecords.com/events/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 84
-      }
-    ],
-    "lastVerified": "2026-08-19T21:45:28Z",
-    "confidence": "high",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
     "id": "official:58dffffa88d6e3ceb312",
     "title": "Steven Malcolm at The Centre",
     "startDate": "2026-08-20",
@@ -89,7 +37,7 @@
         "priority": 74
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "endDate": "2026-08-21",
     "imageType": "artist",
@@ -144,7 +92,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -182,7 +130,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -227,7 +175,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "endDate": "2026-08-22",
     "imageType": "fallback",
@@ -281,7 +229,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "endDate": "2026-08-22",
     "imageType": "artist",
@@ -290,7 +238,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "manual:mike-teezy-stellar-popup-charlotte-2026",
+    "id": "official:2d2d5ca27a71f0745b30",
     "title": "Stellar: Mike Teezy Pop-Up Experience",
     "startDate": "2026-08-22",
     "startTime": "18:00",
@@ -318,10 +266,18 @@
         "type": "manual_verified",
         "authority": "official_event",
         "priority": 112
+      },
+      {
+        "name": "Mike Teezy Apple Music concerts",
+        "url": "https://music.apple.com/us/concerts/artist/517774271",
+        "type": "jsonld",
+        "authority": "artist_calendar",
+        "priority": 74
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
+    "endDate": "2026-08-23",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
@@ -372,7 +328,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -410,7 +366,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -464,7 +420,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -509,7 +465,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 24%",
@@ -549,6 +505,13 @@
         "priority": 94
       },
       {
+        "name": "Reach Records - Hulvey",
+        "url": "https://www.reachrecords.com/artists/hulvey/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      },
+      {
         "name": "Reach Records consolidated calendar",
         "url": "https://www.reachrecords.com/events/",
         "type": "reach_records",
@@ -556,7 +519,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -603,7 +566,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -641,7 +604,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -687,7 +650,7 @@
         "priority": 46
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "endDate": "2026-08-30",
     "imageType": "event_artwork",
@@ -730,7 +693,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -777,7 +740,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -815,7 +778,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -862,48 +825,10 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:68c3eddf271d937ead89",
-    "title": "Sevin Live Concert — Sponsor San Diego",
-    "startDate": "2026-08-29",
-    "startTime": "20:00",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Sponsor San Diego",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "Sevin"
-    ],
-    "headliner": "Sevin",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/1976534238113?aff=oddtdtcreator",
-    "officialUrl": "https://www.eventbrite.com/e/1976534238113?aff=oddtdtcreator",
-    "image": "assets/artists/sevin.webp",
-    "price": "Donate what you can",
-    "sourceName": "Sevin / HOG MOB official tour",
-    "sources": [
-      {
-        "name": "Sevin / HOG MOB official tour",
-        "url": "https://www.eventbrite.com/e/1976534238113?aff=oddtdtcreator",
-        "type": "sevin_tour",
-        "authority": "artist_calendar",
-        "priority": 80
-      }
-    ],
-    "lastVerified": "2026-08-19T21:45:28Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 30%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
@@ -938,7 +863,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 24%",
@@ -976,7 +901,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -1030,7 +955,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1068,7 +993,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1113,7 +1038,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1151,7 +1076,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -1189,7 +1114,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -1227,7 +1152,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -1272,7 +1197,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -1319,7 +1244,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1357,7 +1282,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1397,7 +1322,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1444,7 +1369,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1482,7 +1407,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1533,7 +1458,7 @@
         "priority": 46
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "endDate": "2026-09-12",
     "imageType": "artist",
@@ -1572,7 +1497,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -1610,7 +1535,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1657,7 +1582,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1704,7 +1629,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1751,7 +1676,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1789,7 +1714,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1827,7 +1752,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -1866,7 +1791,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1913,7 +1838,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1951,7 +1876,7 @@
         "priority": 86
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -1989,7 +1914,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -2034,7 +1959,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -2079,7 +2004,7 @@
         "priority": 90
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2117,7 +2042,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -2155,7 +2080,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2193,7 +2118,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2231,7 +2156,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -2269,7 +2194,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2316,7 +2241,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2349,17 +2274,17 @@
     "officialUrl": "https://www.eventbrite.com/e/faith-jam-2026-tickets-1985341605185",
     "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1189836155%2F1748612439673%2F1%2Foriginal.20260728-232523?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=7%2C0%2C1088%2C544&s=c7ed03c38adc1ba0cc0934af49d8067f",
     "price": "From $17.85",
-    "sourceName": "Nicky Gracious official show calendar",
+    "sourceName": "Faith Jam 2026 official ticket page",
     "sources": [
       {
-        "name": "Nicky Gracious official show calendar",
+        "name": "Faith Jam 2026 official ticket page",
         "url": "https://www.eventbrite.com/e/faith-jam-2026-tickets-1985341605185",
-        "type": "nicky_gracious",
-        "authority": "artist_calendar",
-        "priority": 80
+        "type": "jsonld",
+        "authority": "official_festival",
+        "priority": 104
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "endDate": "2026-09-26",
     "imageType": "event_artwork",
@@ -2407,7 +2332,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2452,48 +2377,10 @@
         "priority": 90
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:5519f66ef9eac3632648",
-    "title": "Sevin Live Concert — Sponsor Kansas City",
-    "startDate": "2026-09-26",
-    "startTime": "20:00",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Sponsor Kansas City",
-    "state": "MO",
-    "country": "US",
-    "artists": [
-      "Sevin"
-    ],
-    "headliner": "Sevin",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/1976535062579?aff=oddtdtcreator",
-    "officialUrl": "https://www.eventbrite.com/e/1976535062579?aff=oddtdtcreator",
-    "image": "assets/artists/sevin.webp",
-    "price": "Donate what you can",
-    "sourceName": "Sevin / HOG MOB official tour",
-    "sources": [
-      {
-        "name": "Sevin / HOG MOB official tour",
-        "url": "https://www.eventbrite.com/e/1976535062579?aff=oddtdtcreator",
-        "type": "sevin_tour",
-        "authority": "artist_calendar",
-        "priority": 80
-      }
-    ],
-    "lastVerified": "2026-08-19T21:45:28Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 30%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
@@ -2528,7 +2415,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 24%",
@@ -2566,7 +2453,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -2613,7 +2500,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2653,7 +2540,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -2691,7 +2578,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 24%",
@@ -2729,7 +2616,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -2767,7 +2654,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -2805,7 +2692,7 @@
         "priority": 86
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -2843,48 +2730,10 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:23a11c18ca9c9bbf0225",
-    "title": "Sevin Live Concert — Sponsor Nashville",
-    "startDate": "2026-10-24",
-    "startTime": "20:00",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Sponsor Nashville",
-    "state": "TN",
-    "country": "US",
-    "artists": [
-      "Sevin"
-    ],
-    "headliner": "Sevin",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/1976535113732?aff=oddtdtcreator",
-    "officialUrl": "https://www.eventbrite.com/e/1976535113732?aff=oddtdtcreator",
-    "image": "assets/artists/sevin.webp",
-    "price": "Donate what you can",
-    "sourceName": "Sevin / HOG MOB official tour",
-    "sources": [
-      {
-        "name": "Sevin / HOG MOB official tour",
-        "url": "https://www.eventbrite.com/e/1976535113732?aff=oddtdtcreator",
-        "type": "sevin_tour",
-        "authority": "artist_calendar",
-        "priority": 80
-      }
-    ],
-    "lastVerified": "2026-08-19T21:45:28Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 30%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
@@ -2926,7 +2775,7 @@
         "priority": 104
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2964,7 +2813,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -3003,7 +2852,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3042,7 +2891,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3081,12 +2930,51 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:4e2fc5c7c02ab1d34b9e",
+    "title": "Beyond the Walls",
+    "startDate": "2026-11-07",
+    "startTime": "23:00",
+    "timezone": "",
+    "venue": "House of Blues Cleveland",
+    "address": "308 Euclid Ave",
+    "city": "Cleveland",
+    "state": "OH",
+    "country": "US",
+    "artists": [
+      "Mike Teezy"
+    ],
+    "headliner": "Mike Teezy",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://music.apple.com/us/concerts/artist/517774271",
+    "officialUrl": "https://music.apple.com/us/concerts/artist/517774271",
+    "image": "https://www.even.biz/_next/image?q=75&url=https%3A%2F%2Fdt7m7kl3brv3f.cloudfront.net%2Fimages%2Fzlirs9n3bpjitnofexx4m095koo3&w=828",
+    "price": "",
+    "sourceName": "Mike Teezy Apple Music concerts",
+    "sources": [
+      {
+        "name": "Mike Teezy Apple Music concerts",
+        "url": "https://music.apple.com/us/concerts/artist/517774271",
+        "type": "jsonld",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "lastVerified": "2026-08-20T13:59:26Z",
+    "confidence": "high",
+    "endDate": "2026-11-08",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-20T13:59:26Z"
   },
   {
     "id": "ticketmaster:vvG1zZ_ClQMRrF",
@@ -3119,7 +3007,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3157,7 +3045,7 @@
         "priority": 74
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "endDate": "2026-11-15",
     "imageType": "artist",
@@ -3197,48 +3085,10 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:ca7bc597be1146d3ce55",
-    "title": "Sevin Live Concert — Sponsor Charlotte",
-    "startDate": "2026-11-21",
-    "startTime": "20:00",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Sponsor Charlotte",
-    "state": "NC",
-    "country": "US",
-    "artists": [
-      "Sevin"
-    ],
-    "headliner": "Sevin",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/1976534090672?aff=oddtdtcreator",
-    "officialUrl": "https://www.eventbrite.com/e/1976534090672?aff=oddtdtcreator",
-    "image": "assets/artists/sevin.webp",
-    "price": "Donate what you can",
-    "sourceName": "Sevin / HOG MOB official tour",
-    "sources": [
-      {
-        "name": "Sevin / HOG MOB official tour",
-        "url": "https://www.eventbrite.com/e/1976534090672?aff=oddtdtcreator",
-        "type": "sevin_tour",
-        "authority": "artist_calendar",
-        "priority": 80
-      }
-    ],
-    "lastVerified": "2026-08-19T21:45:28Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 30%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
@@ -3273,48 +3123,10 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:f24c58c930c59fea8521",
-    "title": "Sevin Live Concert — Sponsor Sacramento",
-    "startDate": "2026-12-05",
-    "startTime": "20:00",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Sponsor Sacramento",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "Sevin"
-    ],
-    "headliner": "Sevin",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/1976538907078?aff=oddtdtcreator",
-    "officialUrl": "https://www.eventbrite.com/e/1976538907078?aff=oddtdtcreator",
-    "image": "assets/artists/sevin.webp",
-    "price": "Donate what you can",
-    "sourceName": "Sevin / HOG MOB official tour",
-    "sources": [
-      {
-        "name": "Sevin / HOG MOB official tour",
-        "url": "https://www.eventbrite.com/e/1976538907078?aff=oddtdtcreator",
-        "type": "sevin_tour",
-        "authority": "artist_calendar",
-        "priority": 80
-      }
-    ],
-    "lastVerified": "2026-08-19T21:45:28Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 30%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
@@ -3349,7 +3161,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -3387,7 +3199,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -3425,7 +3237,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-19T21:45:28Z",
+    "lastVerified": "2026-08-20T13:59:26Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
