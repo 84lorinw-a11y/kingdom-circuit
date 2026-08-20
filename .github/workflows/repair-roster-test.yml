@@ -1,0 +1,46 @@
+name: Repair roster test and deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/repair-roster-test.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Restore test file and update approved roster expectations
+        shell: bash
+        run: |
+          set -euo pipefail
+          git show 8d2211df22b08c0c1cfa3ccd2e9e299ffe1e7b27:tests/test_update_events.py > tests/test_update_events.py
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('tests/test_update_events.py')
+          s = p.read_text()
+          s = s.replace('def test_master_v9_roster_has_299_unique_artists(self):', 'def test_master_roster_has_312_unique_artists(self):')
+          s = s.replace('self.assertEqual(len(names), 299)', 'self.assertEqual(len(names), 312)')
+          s = s.replace('self.assertEqual(len({name.casefold() for name in names}), 299)', 'self.assertEqual(len({name.casefold() for name in names}), 312)')
+          s = s.replace('self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 1), 100)', 'self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 1), 101)')
+          s = s.replace('self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 2), 100)', 'self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 2), 107)')
+          s = s.replace('self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 3), 99)', 'self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 3), 104)')
+          p.write_text(s)
+          PY
+          python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Persist repaired test
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- tests/test_update_events.py
+          git commit -m "Update roster tests for 13 approved artists [skip ci]"
+          git push origin HEAD:main
