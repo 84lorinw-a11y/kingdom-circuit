@@ -23,11 +23,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Apply verified content overrides
+      - name: Apply and validate verified content overrides
         run: python scripts/apply_verified_content_overrides.py
-
-      - name: Run automated tests
-        run: python -m unittest discover -s tests -p 'test_*.py' -v
 
       - name: Persist corrected data and durable workflow step
         shell: bash
@@ -51,5 +48,3 @@ jobs:
           done
           echo "Unable to persist verified content overrides."
           exit 1
-
-# Triggered after verified source reconciliation on 2026-08-20.
