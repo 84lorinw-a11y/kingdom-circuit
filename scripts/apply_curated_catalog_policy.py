@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Apply durable editorial decisions and coverage-gap monitoring.
+"""Apply durable editorial decisions, UI curation, and coverage-gap monitoring.
 
 This runs in CI after collection (or directly before a push build) so verified
 editorial decisions cannot be undone by an automated source refresh. It also
-records source-redundancy gaps so a priority artist is not silently dependent
-on a single fragile calendar.
+removes known duplicate source fragments and strips the misleading per-card
+"New to Kingdom Circuit" badge before the deployable site is built.
 """
 
 from __future__ import annotations
@@ -14,7 +14,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-POLICY_VERSION = 3
+POLICY_VERSION = 4
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 OFFICIAL_SOURCES_FILE = ROOT / "config" / "official-sources.json"
@@ -22,6 +22,7 @@ EVENTS_FILE = ROOT / "events.json"
 SUPPLEMENTAL_FILE = ROOT / "supplemental-events.json"
 RUN_STATUS_FILE = ROOT / "run-status.json"
 COVERAGE_GAPS_FILE = ROOT / "coverage-gaps.json"
+APP_JS_FILE = ROOT / "app.js"
 
 EXCLUDED_ARTISTS = {"madison ryann ward"}
 
@@ -81,6 +82,15 @@ NICKY_UNRESOLVED = {
     "reason": "Official artist page confirms the October 3, 2026 show but does not publish a venue, city, or state yet.",
 }
 
+KNOWN_DUPLICATE_IDS = {
+    "official:b4bc64ece2905dc0307c",
+    "official:7e41706d07f8abb46227",
+    "official:4077048ad6372bfbcafb",
+    "official:120917fb9608dd188970",
+    "official:098a68e0a836f7285d1c",
+    "official:436dedf4f197e9587ed4",
+}
+
 
 def load(path: Path, default: Any) -> Any:
     try:
@@ -98,6 +108,10 @@ def write(path: Path, value: Any) -> None:
 
 def norm(value: Any) -> str:
     return str(value or "").strip().casefold()
+
+
+def event_artists(event: dict[str, Any]) -> set[str]:
+    return {norm(name) for name in event.get("artists", []) if norm(name)}
 
 
 def curate_event(event: dict[str, Any]) -> dict[str, Any] | None:
@@ -124,9 +138,58 @@ def is_ark_fragment(event: dict[str, Any]) -> bool:
         return False
     location = f"{event.get('venue', '')} {event.get('address', '')}".casefold()
     same_site = "southwest trail riders" in location or "13711 almeda school" in location
-    event_artists = {norm(name) for name in event.get("artists", [])}
     ark_artists = {norm(name) for name in ARK_ARTISTS}
-    return same_site and bool(event_artists & ark_artists)
+    return same_site and bool(event_artists(event) & ark_artists)
+
+
+def is_known_duplicate_fragment(event: dict[str, Any]) -> bool:
+    """Drop weaker duplicate records while keeping the specific verified listing."""
+    if norm(event.get("id")) in KNOWN_DUPLICATE_IDS:
+        return True
+
+    event_date = str(event.get("startDate") or "")
+    source = norm(event.get("sourceName"))
+    venue = norm(event.get("venue"))
+    city = norm(event.get("city"))
+    artists = event_artists(event)
+
+    if event_date == "2026-08-22" and "1k phew" in artists:
+        if venue == "space city church" and source.startswith("reach records"):
+            return True
+
+    if event_date == "2026-09-08" and "hulvey" in artists:
+        if "fillmore silver spring" in venue and source.startswith("reach records"):
+            return True
+
+    if event_date == "2026-09-22" and "hulvey" in artists:
+        if "elevation" in venue and source == "reach records consolidated calendar":
+            return True
+
+    if "caleb gordon" in artists and source == "tpr - caleb gordon eden experience":
+        duplicate_collection_stops = {
+            ("2026-09-18", "southlake (dallas)"),
+            ("2026-09-22", "leander (austin)"),
+            ("2026-09-24", "richmond (houston)"),
+        }
+        if (event_date, city) in duplicate_collection_stops:
+            return True
+
+    return False
+
+
+def remove_new_badge_from_runtime() -> bool:
+    """Remove the per-card 'New to Kingdom Circuit' badge from deployed runtime JS."""
+    if not APP_JS_FILE.is_file():
+        return False
+    text = APP_JS_FILE.read_text(encoding="utf-8")
+    old = '  const recent = isNew(event) ? `<span class="badge">New to Kingdom Circuit</span>` : "";'
+    new = '  const recent = "";'
+    if old in text:
+        APP_JS_FILE.write_text(text.replace(old, new), encoding="utf-8")
+        return True
+    if "New to Kingdom Circuit</span>" in text:
+        raise SystemExit("New-to-Kingdom-Circuit badge markup changed; refusing to deploy an unreviewed variant")
+    return False
 
 
 def source_is_dedicated_artist_calendar(source: dict[str, Any], artist_key: str) -> bool:
@@ -248,6 +311,7 @@ def main() -> int:
     curated_events: list[dict[str, Any]] = []
     removed_madison_events = 0
     removed_ark_fragments = 0
+    removed_duplicate_fragments = 0
     for event in events:
         if not isinstance(event, dict):
             continue
@@ -257,6 +321,9 @@ def main() -> int:
             continue
         if is_ark_fragment(curated):
             removed_ark_fragments += 1
+            continue
+        if is_known_duplicate_fragment(curated):
+            removed_duplicate_fragments += 1
             continue
         curated_events.append(curated)
 
@@ -277,6 +344,7 @@ def main() -> int:
         key=lambda event: (str(event.get("startDate") or "9999-12-31"), norm(event.get("title")))
     )
 
+    badge_removed = remove_new_badge_from_runtime()
     coverage_report = build_coverage_report(artists, sources, run_status)
 
     write(ARTISTS_FILE, artists)
@@ -293,10 +361,14 @@ def main() -> int:
         raise SystemExit("Madison Ryann Ward is still enabled")
 
     all_published = [*curated_events, *curated_supplemental]
-    if any("madison ryann ward" in {norm(name) for name in event.get("artists", [])} for event in all_published):
+    if any("madison ryann ward" in event_artists(event) for event in all_published):
         raise SystemExit("Madison Ryann Ward still appears in published event data")
     if any(is_ark_fragment(event) for event in all_published):
         raise SystemExit("Ark of Worship still has split individual event fragments")
+    if any(is_known_duplicate_fragment(event) for event in curated_events):
+        raise SystemExit("Known duplicate show fragment survived curation")
+    if APP_JS_FILE.is_file() and "New to Kingdom Circuit</span>" in APP_JS_FILE.read_text(encoding="utf-8"):
+        raise SystemExit("New-to-Kingdom-Circuit event badge still exists in runtime app.js")
     if not any(norm(event.get("id")) == norm(ARK_OF_WORSHIP["id"]) for event in curated_supplemental):
         raise SystemExit("Ark of Worship canonical festival event was not injected")
     if not any(norm(event.get("id")) == norm(MIKE_TEEZY_HRVSTLAND["id"]) for event in curated_supplemental):
@@ -306,6 +378,8 @@ def main() -> int:
         f"Curated catalog policy v{POLICY_VERSION} applied: Madison disabled; "
         f"{removed_madison_events} Madison-only event(s) removed; "
         f"{removed_ark_fragments} Ark fragment(s) consolidated; "
+        f"{removed_duplicate_fragments} duplicate source fragment(s) removed; "
+        f"new-event badge removed={badge_removed}; "
         "Mike Teezy HRVSTLAND and Ark of Worship ensured."
     )
     print(
