@@ -10,7 +10,6 @@ ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 EVENTS_FILE = ROOT / "events.json"
 SUPPLEMENTAL_FILE = ROOT / "supplemental-events.json"
-WORKFLOW_FILE = ROOT / ".github" / "workflows" / "update-and-deploy.yml"
 
 CALEB_IMAGE = "https://tprlive.co/cdn/shop/files/ARTIST_HEADSHOT_36.jpg?v=1776887171&width=1797"
 CALEB_SOURCE = "https://tprlive.co/collections/caleb-gordon-the-eden-experience"
@@ -54,28 +53,6 @@ def add_source(event: dict[str, Any], name: str, url: str) -> None:
     event["sources"] = sources
 
 
-def patch_workflow() -> None:
-    text = WORKFLOW_FILE.read_text(encoding="utf-8")
-    step = (
-        "\n      - name: Apply verified artist and event corrections\n"
-        "        run: python scripts/apply_verified_content_overrides.py\n"
-    )
-    if "Apply verified artist and event corrections" not in text:
-        anchor = "      - name: Normalize Sevin schedule from HOG MOB\n        run: python scripts/apply_sevin_official_schedule.py\n"
-        if anchor not in text:
-            raise SystemExit("Could not locate Sevin normalization step in production workflow")
-        text = text.replace(anchor, anchor + step, 1)
-
-    dependency = "          test -s scripts/apply_verified_content_overrides.py\n"
-    if dependency not in text:
-        anchor = "          test -s scripts/apply_sevin_official_schedule.py\n"
-        if anchor not in text:
-            raise SystemExit("Could not locate Sevin dependency check in production workflow")
-        text = text.replace(anchor, anchor + dependency, 1)
-
-    WORKFLOW_FILE.write_text(text, encoding="utf-8")
-
-
 def main() -> int:
     artists = load(ARTISTS_FILE)
     events = load(EVENTS_FILE)
@@ -95,7 +72,7 @@ def main() -> int:
 
     all_events = [*events, *supplemental]
 
-    # Hope Fest: replace the KC-made placeholder art with the event-specific image published for this listing.
+    # Hope Fest: replace the KC-made placeholder art with the event-specific listing image.
     hope_matches = []
     for event in all_events:
         if (
@@ -147,7 +124,6 @@ def main() -> int:
     write(ARTISTS_FILE, artists)
     write(EVENTS_FILE, events)
     write(SUPPLEMENTAL_FILE, supplemental)
-    patch_workflow()
 
     # Final validation.
     assert caleb.get("imageUrl") == CALEB_IMAGE
