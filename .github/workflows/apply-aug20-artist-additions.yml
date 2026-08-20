@@ -1,0 +1,68 @@
+name: Apply approved CHH artist additions
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/apply_aug20_artist_additions.py
+      - .github/workflows/apply-aug20-artist-additions.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out production repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Apply approved artists and verified shows
+        run: python scripts/apply_aug20_artist_additions.py
+
+      - name: Validate additions
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          artists = json.loads(Path('config/artists.json').read_text())
+          supplemental = json.loads(Path('supplemental-events.json').read_text())
+          expected = {'Brenno','Shepherd','Kai Uriah','Hyper Fenton','Brea Miles','Issac Mansfield','Tylan1k','Jabari Heavens','Rhema Soul','Shonlock','Viktory','T-Bone','Bishop Freeze'}
+          names = {a.get('name') for a in artists}
+          assert expected <= names, expected - names
+          assert 'Bryson Gray' not in expected
+          assert 'Suzy Rock' not in expected
+          ids = {e.get('id') for e in supplemental}
+          assert 'supplemental:brenno-awake-conference-2026' in ids
+          assert 'supplemental:brenno-overflow-conference-2026' in ids
+          assert 'supplemental:issac-mansfield-saved-by-grace-2026' in ids
+          print(f'Validated {len(expected)} approved artists and verified future events.')
+          PY
+
+      - name: Save roster and verified events
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- config/artists.json supplemental-events.json events.json
+          if git diff --cached --quiet; then
+            echo "Approved additions are already persisted."
+          else
+            git commit -m "Add 13 approved CHH artists and verified shows [skip ci]"
+            git push origin HEAD:main
+          fi
+
+      - name: Run full production refresh and deploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run update-and-deploy.yml --ref main
