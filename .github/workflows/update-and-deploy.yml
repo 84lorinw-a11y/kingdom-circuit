@@ -52,6 +52,9 @@ jobs:
       - name: Apply curated catalog policy and coverage audit
         run: python scripts/apply_curated_catalog_policy.py
 
+      - name: Normalize Sevin schedule from HOG MOB
+        run: python scripts/apply_sevin_official_schedule.py
+
       - name: Restore runtime-only source configuration
         if: github.event_name != 'push'
         run: git checkout -- config/official-sources.json
@@ -110,6 +113,7 @@ jobs:
           test -s scripts/apply_approved_seo.py
           test -s scripts/apply_curated_catalog_policy.py
           test -s scripts/apply_priority_source_fallbacks.py
+          test -s scripts/apply_sevin_official_schedule.py
           test -s _seo_source/scripts/apply_test_overlay.py
           test -s _seo_source/scripts/finalize_test_seo.py
           test -s _seo_source/scripts/align_artist_schema.py
