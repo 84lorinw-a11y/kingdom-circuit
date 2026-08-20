@@ -45,6 +45,9 @@ jobs:
           TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
         run: python scripts/update_events.py
 
+      - name: Apply curated catalog policy and coverage audit
+        run: python scripts/apply_curated_catalog_policy.py
+
       - name: Save refreshed event data
         if: github.event_name != 'push'
         shell: bash
@@ -52,7 +55,8 @@ jobs:
           set -euo pipefail
           git config user.name "kingdom-circuit-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add events.json run-status.json cache/ticketmaster-attractions.json
+          git add -- events.json run-status.json cache/ticketmaster-attractions.json \
+            supplemental-events.json config/artists.json coverage-gaps.json
           if git diff --cached --quiet; then
             echo "No event-data changes to commit."
           else
@@ -96,6 +100,7 @@ jobs:
           test -s scripts/verify_multipage_site.py
           test -s scripts/build_seo_site.py
           test -s scripts/apply_approved_seo.py
+          test -s scripts/apply_curated_catalog_policy.py
           test -s _seo_source/scripts/apply_test_overlay.py
           test -s _seo_source/scripts/finalize_test_seo.py
           test -s _seo_source/scripts/align_artist_schema.py
