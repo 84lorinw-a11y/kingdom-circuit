@@ -3460,15 +3460,16 @@
     "aliases": [
       "Madison Ryann Ward"
     ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
+    "enabled": false,
+    "ticketmasterEnabled": false,
     "category": "crossover",
     "monitoringPriority": 3,
     "topStreamingPriority": false,
     "socialSearchEnabled": false,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": true,
-    "rosterOrder": 222
+    "activeStatus": "excluded_non_chh",
+    "textMatchEnabled": false,
+    "rosterOrder": 222,
+    "editorialNote": "Excluded from Kingdom Circuit: not Christian hip-hop."
   },
   {
     "name": "Odd Thomas",

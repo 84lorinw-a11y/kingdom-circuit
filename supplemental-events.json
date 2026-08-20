@@ -1,5 +1,82 @@
 [
   {
+    "id": "supplemental:image-override-hope-fest-daytona-2026",
+    "title": "Hope Fest 2026",
+    "startDate": "2026-08-22",
+    "startTime": "15:00",
+    "timezone": "",
+    "venue": "Riverfront Esplanade - Manatee Island",
+    "address": "355 North Beach Street",
+    "city": "Daytona Beach",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "ASAP Preach",
+      "Nicky Gracious",
+      "Brother Bo",
+      "Tommy Chapa",
+      "B. Cody Shields",
+      "Santana Rose",
+      "DJ Winn",
+      "BIG HOLY"
+    ],
+    "headliner": "ASAP Preach",
+    "eventType": "festival",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/hope-fest-tickets-1984166920672",
+    "officialUrl": "https://www.riverfrontesplanade.com/upcoming-events/hope-fest",
+    "image": "assets/events/hope-fest-2026.webp",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "price": "Free",
+    "sourceName": "Hope Fest official venue and ticket page",
+    "sources": [
+      {
+        "name": "Hope Fest official venue and ticket page",
+        "url": "https://www.riverfrontesplanade.com/upcoming-events/hope-fest",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 112
+      },
+      {
+        "name": "Hope Fest Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/hope-fest-tickets-1984166920672",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
+      }
+    ],
+    "lastVerified": "2026-08-12T00:00:00Z",
+    "confidence": "high",
+    "endDate": "2026-08-22",
+    "verifiedVersion": 10,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "mike-teezy-hrvstland-festival-2026",
+    "title": "HRVSTLAND Festival 2026",
+    "startDate": "2026-10-24",
+    "startTime": "",
+    "venue": "Steele Creek Church",
+    "address": "",
+    "city": "Charlotte",
+    "state": "NC",
+    "artists": [
+      "Mike Teezy"
+    ],
+    "headliner": "Mike Teezy",
+    "eventType": "festival",
+    "ticketUrl": "https://www.bandsintown.com/f/231374",
+    "officialUrl": "https://www.bandsintown.com/f/231374",
+    "image": "",
+    "price": "",
+    "status": "scheduled",
+    "lineupExplicit": true,
+    "authority": "artist_calendar",
+    "sourceName": "Mike Teezy verified Bandsintown / HRVSTLAND listing"
+  },
+  {
     "id": "supplemental:skema-boy-2026-10-27-chicago-il",
     "title": "Zauntee: God Remembers Tour - with Skema Boy",
     "startDate": "2026-10-27",
@@ -609,59 +686,5 @@
     "verifiedVersion": 10,
     "firstSeen": "2026-08-11T22:00:00Z",
     "imageOverride": true
-  },
-  {
-    "id": "supplemental:image-override-hope-fest-daytona-2026",
-    "title": "Hope Fest 2026",
-    "startDate": "2026-08-22",
-    "startTime": "15:00",
-    "timezone": "",
-    "venue": "Riverfront Esplanade - Manatee Island",
-    "address": "355 North Beach Street",
-    "city": "Daytona Beach",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "ASAP Preach",
-      "Nicky Gracious",
-      "Brother Bo",
-      "Tommy Chapa",
-      "B. Cody Shields",
-      "Santana Rose",
-      "DJ Winn",
-      "BIG HOLY"
-    ],
-    "headliner": "ASAP Preach",
-    "eventType": "festival",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/hope-fest-tickets-1984166920672",
-    "officialUrl": "https://www.riverfrontesplanade.com/upcoming-events/hope-fest",
-    "image": "assets/events/hope-fest-2026.webp",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "price": "Free",
-    "sourceName": "Hope Fest official venue and ticket page",
-    "sources": [
-      {
-        "name": "Hope Fest official venue and ticket page",
-        "url": "https://www.riverfrontesplanade.com/upcoming-events/hope-fest",
-        "type": "manual_verified",
-        "authority": "official_festival",
-        "priority": 112
-      },
-      {
-        "name": "Hope Fest Eventbrite listing",
-        "url": "https://www.eventbrite.com/e/hope-fest-tickets-1984166920672",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 100
-      }
-    ],
-    "lastVerified": "2026-08-12T00:00:00Z",
-    "confidence": "high",
-    "endDate": "2026-08-22",
-    "verifiedVersion": 10,
-    "firstSeen": "2026-08-09T00:00:00Z"
   }
 ]
