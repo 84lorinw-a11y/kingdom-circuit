@@ -54,8 +54,11 @@ if not all(e.get("image") == "assets/artists/zauntee.webp" for e in skema_events
 hope_fest = [e for e in supp if e.get("id") == "supplemental:image-override-hope-fest-daytona-2026"]
 if len(hope_fest) != 1:
     raise SystemExit("Hope Fest image override is missing or duplicated")
-if hope_fest[0].get("image") != "assets/events/hope-fest-2026.webp":
+expected_hope_fest_image = "https://images.sk-static.com/images/media/profile_images/events/43075130/huge_avatar?series_id=719039"
+if hope_fest[0].get("image") != expected_hope_fest_image:
     raise SystemExit("Hope Fest image override points to the wrong image")
+if hope_fest[0].get("imageType") != "event_artwork":
+    raise SystemExit("Hope Fest image override is not marked as event artwork")
 
 artists = json.loads((site / "config/artists.json").read_text(encoding="utf-8"))
 if len(artists) < 299:
