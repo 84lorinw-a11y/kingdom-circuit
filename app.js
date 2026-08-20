@@ -54,6 +54,19 @@ const ARTIST_ROSTER_ORDER = [
   "Wordsplayed",
   "Forrest Frank",
   "indie tribe.",
+  "Brenno",
+  "Shepherd",
+  "Kai Uriah",
+  "Hyper Fenton",
+  "Brea Miles",
+  "Issac Mansfield",
+  "Tylan1k",
+  "Jabari Heavens",
+  "Rhema Soul",
+  "Shonlock",
+  "Viktory",
+  "T-Bone",
+  "Bishop Freeze",
   "Alex Jean",
   "gio.",
   "Torey D'Shaun",
@@ -778,6 +791,152 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/1sPm31qmcbk9EFoRCS8eRl",
     "youtubeProfile": "https://www.youtube.com/@indietribe",
     "officialImageSource": "https://www.instagram.com/indiextribe/",
+    "sourceRegistryVerified": true
+  },
+  "brenno": {
+    "aliases": [
+      "Brenno"
+    ],
+    "website": "https://www.brennomusic.live/",
+    "instagramProfile": "https://www.instagram.com/brenno.music/",
+    "spotifyProfile": "https://open.spotify.com/artist/7lBcEp7abNiq3WyHT3RRqV",
+    "youtubeProfile": "https://www.youtube.com/@brenno.music1/videos",
+    "officialImageSource": "https://www.instagram.com/brenno.music/",
+    "sourceRegistryVerified": true
+  },
+  "shepherd": {
+    "aliases": [
+      "Shepherd",
+      "Shepherd."
+    ],
+    "website": "https://www.shepherd.live/",
+    "instagramProfile": "https://www.instagram.com/shepherd_music/",
+    "spotifyProfile": "https://open.spotify.com/artist/0YHuTR40zc9yqfoSSArQxU?si=uLy6lYIBTr6JOUAC3VCQRw&dl_branch=1&nd=1&dlsi=9e8b14d62f1848e4",
+    "youtubeProfile": "https://www.youtube.com/channel/UCc6gnoGyHriWXsAEX-OcueQ",
+    "officialImageSource": "https://www.instagram.com/shepherd_music/",
+    "sourceRegistryVerified": true
+  },
+  "kai uriah": {
+    "aliases": [
+      "Kai Uriah"
+    ],
+    "website": "https://linktr.ee/itskaiuriah",
+    "instagramProfile": "https://www.instagram.com/kaiuriah/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/6IdKInshEI8ywJ99v6gVKM",
+    "youtubeProfile": "https://www.youtube.com/@kaiuriah",
+    "officialImageSource": "https://www.instagram.com/kaiuriah/?hl=en",
+    "sourceRegistryVerified": true
+  },
+  "hyper fenton": {
+    "aliases": [
+      "Hyper Fenton",
+      "Seth Fenton"
+    ],
+    "website": "https://hyperfenton.com/?srsltid=AfmBOooF879r3FwdrhkdtvTJm7pVqTdkh89fyt-Dk4UoXInfWloW7xKh",
+    "instagramProfile": "https://www.instagram.com/hyperfenton/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/2q5QIs6iibW6xyHZZRSeh2",
+    "youtubeProfile": "https://music.youtube.com/playlist?list=OLAK5uy_mriMUrHlhyB3ejFMfLTlJohVxDbdscX5s",
+    "officialImageSource": "https://www.instagram.com/hyperfenton/?hl=en",
+    "sourceRegistryVerified": true
+  },
+  "brea miles": {
+    "aliases": [
+      "Brea Miles"
+    ],
+    "website": "https://www.alwaysbrea.com/",
+    "instagramProfile": "https://www.instagram.com/alwaysbrea",
+    "spotifyProfile": "https://open.spotify.com/artist/2S8dO0fwL0qup5Eo7OHs5i",
+    "youtubeProfile": "https://www.youtube.com/breamiles",
+    "officialImageSource": "https://www.instagram.com/alwaysbrea",
+    "sourceRegistryVerified": true
+  },
+  "issac mansfield": {
+    "aliases": [
+      "Issac Mansfield",
+      "Isaac Mansfield"
+    ],
+    "website": "https://www.issacmansfield.com/",
+    "instagramProfile": "https://www.instagram.com/issacmansfield/",
+    "spotifyProfile": "https://open.spotify.com/artist/1QgXbOPk6XpELZrJOzz33w",
+    "youtubeProfile": "https://www.youtube.com/@issac.mansfield/featured",
+    "officialImageSource": "https://www.issacmansfield.com/",
+    "sourceRegistryVerified": true
+  },
+  "tylan1k": {
+    "aliases": [
+      "Tylan1k",
+      "tylan1k"
+    ],
+    "instagramProfile": "https://www.instagram.com/tylanthechosen1/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/6PY88og97O47AlwuyFFRhr",
+    "youtubeProfile": "https://www.youtube.com/channel/UCeJ8yMp5bJjTxBp_COGNB6w",
+    "officialImageSource": "https://www.instagram.com/tylanthechosen1/?hl=en",
+    "sourceRegistryVerified": true
+  },
+  "jabari heavens": {
+    "aliases": [
+      "Jabari Heavens"
+    ],
+    "instagramProfile": "https://www.instagram.com/jabariheavens/",
+    "spotifyProfile": "https://open.spotify.com/artist/2ORjCgiRF9ZIK4gak1CsYP",
+    "youtubeProfile": "https://www.youtube.com/@JabariHeavens",
+    "officialImageSource": "https://www.instagram.com/jabariheavens/",
+    "sourceRegistryVerified": true
+  },
+  "rhema soul": {
+    "aliases": [
+      "Rhema Soul"
+    ],
+    "website": "http://rhemasoul.com/",
+    "instagramProfile": "https://www.instagram.com/rhemasoul/",
+    "spotifyProfile": "https://open.spotify.com/artist/6kqgFtlPJHyqqffmlDTTzd",
+    "youtubeProfile": "https://www.youtube.com/@RhemaSoul/featured",
+    "officialImageSource": "https://www.instagram.com/rhemasoul/",
+    "sourceRegistryVerified": true
+  },
+  "shonlock": {
+    "aliases": [
+      "Shonlock"
+    ],
+    "website": "http://www.shonlock.com/",
+    "instagramProfile": "https://www.instagram.com/shonlock/",
+    "spotifyProfile": "https://open.spotify.com/artist/0Fs18mA7TFMvYVRNX4dNTt",
+    "youtubeProfile": "https://music.youtube.com/@Shonlock",
+    "officialImageSource": "https://www.instagram.com/shonlock/",
+    "sourceRegistryVerified": true
+  },
+  "viktory": {
+    "aliases": [
+      "Viktory"
+    ],
+    "instagramProfile": "https://www.instagram.com/viktoryr4/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/7jKYoI3eKh85xfqK7TAlN5",
+    "youtubeProfile": "https://www.youtube.com/@ViktoriousMusic",
+    "officialImageSource": "https://www.instagram.com/viktoryr4/?hl=en",
+    "sourceRegistryVerified": true
+  },
+  "t-bone": {
+    "aliases": [
+      "T-Bone",
+      "T Bone",
+      "Rene Sotomayor"
+    ],
+    "website": "http://houseoftbone.com/",
+    "instagramProfile": "https://www.instagram.com/tboneoficial/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/6h2GxbU7emrTikSWxbMyxd",
+    "youtubeProfile": "https://www.youtube.com/channel/UCxQgnrqdZe_2qAR9jzyVmmg",
+    "officialImageSource": "https://www.instagram.com/tboneoficial/?hl=en",
+    "sourceRegistryVerified": true
+  },
+  "bishop freeze": {
+    "aliases": [
+      "Bishop Freeze"
+    ],
+    "website": "https://www.sozomissions.com/music/bishop-freeze",
+    "instagramProfile": "https://www.instagram.com/bishopfreeze_/",
+    "spotifyProfile": "https://open.spotify.com/artist/1epkzUW5gL4DHjW8rlPa3P",
+    "youtubeProfile": "https://www.youtube.com/@sozomissions",
+    "officialImageSource": "https://www.instagram.com/bishopfreeze_/",
     "sourceRegistryVerified": true
   }
 };
