@@ -21,9 +21,9 @@ WEBSITES_FILE = ROOT / "config" / "verified-artist-websites.json"
 APP_FILE = ROOT / "app.js"
 TEST_FILE = ROOT / "tests" / "test_update_events.py"
 
-# Backward-compatible direct calendar metadata used by the 808 BEEZY ingestion
-# regression test and the website collector. Keep this explicit even though the
-# generalized registry sync now handles the rest of the artist profile data.
+# Backward-compatible direct calendar metadata for 808 BEEZY. The generalized
+# sync still exposes this constant because the ingestion regression test and
+# collector rely on the known direct Bandsintown profile.
 ARTIST = {
     "name": "808 BEEZY",
     "bandsintownProfile": "https://www.bandsintown.com/a/792282-808-beezy",
@@ -78,6 +78,12 @@ def sync_config() -> tuple[list[dict], list[dict], int]:
 
     by_name = {norm(item.get("name")): item for item in artists if isinstance(item, dict) and item.get("name")}
     changed = 0
+
+    beezy = by_name.get(norm(ARTIST["name"]))
+    if beezy is not None and beezy.get("bandsintownProfile") != ARTIST["bandsintownProfile"]:
+        beezy["bandsintownProfile"] = ARTIST["bandsintownProfile"]
+        changed += 1
+
     synced_records: list[dict] = []
     for update in updates:
         name = str(update["name"]).strip()
@@ -117,8 +123,6 @@ def sync_config() -> tuple[list[dict], list[dict], int]:
             if target.get(field) != value:
                 target[field] = value
                 changed += 1
-        if name == ARTIST["name"]:
-            target["bandsintownProfile"] = ARTIST["bandsintownProfile"]
         synced_records.append(target)
 
     block_keys = {norm(name) for name in update_names}
@@ -204,10 +208,7 @@ def sync_app(artists: list[dict], updates: list[dict]) -> bool:
     if count != 1:
         raise SystemExit("ARTIST_ROSTER_ORDER was not found in app.js")
 
-    supplemental = {
-        norm(update["name"]): registry_payload(update)
-        for update in updates
-    }
+    supplemental = {norm(update["name"]): registry_payload(update) for update in updates}
     supplemental_js = (
         "const VERIFIED_ARTIST_REGISTRY_UPDATES = "
         + json.dumps(supplemental, indent=2, ensure_ascii=False)
@@ -215,7 +216,7 @@ def sync_app(artists: list[dict], updates: list[dict]) -> bool:
     )
     pattern = r"const VERIFIED_ARTIST_REGISTRY_UPDATES = \{.*?\n\};\n"
     if re.search(pattern, text, flags=re.S):
-        text = re.sub(pattern, supplemental_js, text, count=1, flags=re.S)
+        text = re.sub(pattern, lambda _match: supplemental_js, text, count=1, flags=re.S)
     else:
         marker = "const ARTIST_OVERRIDES = {"
         if marker not in text:
@@ -229,8 +230,9 @@ def sync_app(artists: list[dict], updates: list[dict]) -> bool:
     elif new_line not in text:
         raise SystemExit("Verified registry merge line was not found in app.js")
 
-    # The sheet may intentionally retain search URLs as research placeholders.
-    # Never present those placeholders as verified social/profile links publicly.
+    # The sheet can retain search URLs as research placeholders. Those values
+    # stay in the source registry, but the public directory only exposes direct
+    # artist/profile links and otherwise shows the platform as pending.
     spotify_pattern = r"function spotifyInfo\(artist\) \{.*?\n\}\nfunction instagramInfo"
     spotify_replacement = '''function spotifyInfo(artist) {
   const candidate = artist.spotifyProfile || (artist.spotifyId ? `https://open.spotify.com/artist/${encodeURIComponent(artist.spotifyId)}` : "");
@@ -239,7 +241,9 @@ def sync_app(artists: list[dict], updates: list[dict]) -> bool:
   return { url: "", exact: false, status: "Spotify link pending verification" };
 }
 function instagramInfo'''
-    text, spotify_count = re.subn(spotify_pattern, spotify_replacement, text, count=1, flags=re.S)
+    text, spotify_count = re.subn(
+        spotify_pattern, lambda _match: spotify_replacement, text, count=1, flags=re.S
+    )
     if spotify_count != 1:
         raise SystemExit("spotifyInfo function was not found in app.js")
 
@@ -250,7 +254,9 @@ function instagramInfo'''
   return official ? { url: official, status: "Open verified YouTube profile" } : { url: "", status: "YouTube link pending verification" };
 }
 function websiteInfo'''
-    text, youtube_count = re.subn(youtube_pattern, youtube_replacement, text, count=1, flags=re.S)
+    text, youtube_count = re.subn(
+        youtube_pattern, lambda _match: youtube_replacement, text, count=1, flags=re.S
+    )
     if youtube_count != 1:
         raise SystemExit("youtubeInfo function was not found in app.js")
 
@@ -261,7 +267,9 @@ function websiteInfo'''
   return candidate && !isPlatform ? { url: candidate, status: "Open official website" } : { url: "", status: "Website link pending verification" };
 }
 function artistImageInfo'''
-    text, website_count = re.subn(website_pattern, website_replacement, text, count=1, flags=re.S)
+    text, website_count = re.subn(
+        website_pattern, lambda _match: website_replacement, text, count=1, flags=re.S
+    )
     if website_count != 1:
         raise SystemExit("websiteInfo function was not found in app.js")
 
