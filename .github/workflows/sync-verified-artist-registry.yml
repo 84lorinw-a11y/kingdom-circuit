@@ -1,0 +1,61 @@
+name: Sync verified artist registry
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/sync_verified_artist_registry.py"
+      - ".github/workflows/sync-verified-artist-registry.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Sync verified artist registry
+        run: python scripts/sync_verified_artist_registry.py
+
+      - name: Validate synced files
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          artists = json.loads(Path('config/artists.json').read_text(encoding='utf-8'))
+          artist = next(a for a in artists if a.get('name') == '808 BEEZY')
+          assert artist['rosterOrder'] == 54
+          assert artist['website'] == 'https://www.808beezy.com/'
+          assert artist['instagramProfile'] == 'https://www.instagram.com/808beezy/?hl=en'
+          assert artist['spotifyProfile'] == 'https://open.spotify.com/artist/3CltJZLndpJKtpUyRVBB1k'
+          assert artist['youtubeProfile'] == 'https://www.youtube.com/@808_BEEZY'
+          assert artist['sourceRegistryVerified'] is True
+
+          app = Path('app.js').read_text(encoding='utf-8')
+          assert '"808 BEEZY"' in app
+          assert '"808 beezy": {' in app
+          print('808 BEEZY verified artist registry sync validated')
+          PY
+
+      - name: Save registry update
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add config/artists.json app.js
+          if git diff --cached --quiet; then
+            echo "Registry already current."
+          else
+            git commit -m "Add 808 BEEZY verified artist profile [skip ci]"
+            git push origin HEAD:main
+          fi
