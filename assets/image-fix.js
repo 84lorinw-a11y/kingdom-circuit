@@ -6,18 +6,21 @@
 const KC_ARTIST_IMAGE_OVERRIDES = {
   "808 beezy": "https://pbs.twimg.com/profile_images/1836827722309312512/e5kgorwv.jpg",
   "mike teezy": "https://real.fm/assets/Uploads/MikeTeezy__FocusFillWyItMC4xMSIsIi0wLjE2IiwxMjAwLDYyN10.jpg",
-  "porsha love": "https://i.scdn.co/image/ab6761610000e5eb15b2db654ea5c3a8a4521985",
-  "nicky gracious": "https://nickygraciousmusic.com/cdn/shop/files/IMG_2813.jpg?v=1745324661&width=660",
-  "asap preach": "https://asappreachmusic.com/360E72B4-4191-4401-825C-5B70DEB69D32_clipped_rev_1.png",
-  "kijan boone": "https://i.scdn.co/image/ab6761610000e5eb5f296d6cb411bfe1b6483223",
-  "don ready": "https://images.squarespace-cdn.com/content/v1/6612a573e958e36a4e444000/d1148cac-7562-484a-8ae4-f0702cf7e3bf/tempImage6NFtZX.jpg",
-  "y shadey": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/dc/3f/0e/dc3f0eb4-824f-df0f-4988-dddc37dcb42c/5063413912969_cover.jpg/3000x3000bb.jpg",
-  "dante' pride": "https://static.wixstatic.com/media/6ca267_4ad73a811cbe4e0d9e26ca102212d6c0~mv2.jpg/v1/fill/w_980%2Ch_1076%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/6ca267_4ad73a811cbe4e0d9e26ca102212d6c0~mv2.jpg",
-  "rare of breed": "https://fivetwentycollective.com/wp-content/uploads/2021/03/Rare-of-Breed.jpg",
-  "tommy chapa": "https://m.media-amazon.com/images/I/51PN0gSGzAL.jpg",
-  "santana rose": "https://static.qobuz.com/images/covers/he/16/qvvyovl4316he_600.jpg",
+  "porsha love": "https://unavatar.io/instagram/porshalove",
+  "nicky gracious": "https://unavatar.io/instagram/nickygracious",
+  "asap preach": "https://unavatar.io/instagram/asappreach",
+  "kijan boone": "https://unavatar.io/instagram/kijanboone",
+  "don ready": "https://unavatar.io/instagram/donready",
+  "y shadey": "https://unavatar.io/instagram/yshadey",
+  "dante' pride": "https://unavatar.io/instagram/dantepride",
+  "rare of breed": "https://unavatar.io/instagram/rareofbreed",
+  "brother bo": "https://unavatar.io/instagram/brotherbo",
+  "tommy chapa": "https://unavatar.io/instagram/tommychapa",
+  "b. cody shields": "https://unavatar.io/instagram/bcodyshields",
+  "santana rose": "https://unavatar.io/instagram/santanarose",
   "dj winn": "https://unavatar.io/instagram/djwinn",
   "big holy": "https://unavatar.io/instagram/bigholy",
+  "redeemed": "https://unavatar.io/instagram/redeemed",
   "rua young": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages221/v4/b5/c9/41/b5c941ba-b72a-0e77-ac56-a1599aa0a2e6/file_cropped.png/4653x4653bb.jpg",
   "kurtis hoppie": "https://i.scdn.co/image/ab6761610000e5eb26d1bb2607e2ef0ea4328051",
   "holy gabbana": "https://static.wixstatic.com/media/b944f9_2e07baa6dfe148559bac17e750f7c8dd~mv2.png/v1/fill/w_412%2Ch_880%2Cfp_0.50_0.38%2Cq_90%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/IMG_5036_HEIC.png",
@@ -107,6 +110,18 @@ function kcSetArtistVisual(card, url, artistName) {
   }
   if (img.src !== url) {
     img.dataset.kcImageRepair = "true";
+    img.onerror = () => {
+      img.onerror = null;
+      const fallback = img.dataset.fallbackSrc || "";
+      if (fallback && img.src !== fallback) {
+        img.src = fallback;
+        return;
+      }
+      if (visual) {
+        visual.classList.add("artist-visual-empty");
+        visual.textContent = String(artistName || "?").trim().charAt(0).toUpperCase() || "?";
+      }
+    };
     img.src = url;
   }
 }
