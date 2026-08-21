@@ -63,6 +63,10 @@ def main() -> int:
                 if isinstance(source, dict):
                     source["authority"] = "artist_calendar"
                     source["priority"] = 76
+            for evidence in event.get("artistEvidence", []):
+                if isinstance(evidence, dict):
+                    evidence["authority"] = "artist_calendar"
+                    evidence["priority"] = 76
             normalized_seed.append(event)
 
     candidates = merge_events(
