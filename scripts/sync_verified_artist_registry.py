@@ -6,7 +6,7 @@ import json
 import re
 from pathlib import Path
 
-SYNC_VERSION = 2
+SYNC_VERSION = 3
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 APP_FILE = ROOT / "app.js"
@@ -24,6 +24,7 @@ ARTIST = {
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": True,
     "website": "https://www.808beezy.com/",
+    "bandsintownProfile": "https://www.bandsintown.com/a/792282-808-beezy",
     "instagramProfile": "https://www.instagram.com/808beezy/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/3CltJZLndpJKtpUyRVBB1k",
     "youtubeProfile": "https://www.youtube.com/@808_BEEZY",
