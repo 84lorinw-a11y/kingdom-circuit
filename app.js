@@ -67,6 +67,7 @@ const ARTIST_ROSTER_ORDER = [
   "Viktory",
   "T-Bone",
   "Bishop Freeze",
+  "808 BEEZY",
   "Alex Jean",
   "gio.",
   "Torey D'Shaun",
@@ -328,6 +329,18 @@ const ARTIST_ROSTER_ORDER = [
   "Oba Reengy"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
+  "808 beezy": {
+    "aliases": [
+      "808 BEEZY",
+      "808 Beezy"
+    ],
+    "website": "https://www.808beezy.com/",
+    "instagramProfile": "https://www.instagram.com/808beezy/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/3CltJZLndpJKtpUyRVBB1k",
+    "youtubeProfile": "https://www.youtube.com/@808_BEEZY",
+    "officialImageSource": "https://www.808beezy.com/",
+    "sourceRegistryVerified": true
+  },
   "lecrae": {
     "aliases": [
       "Lecrae"
