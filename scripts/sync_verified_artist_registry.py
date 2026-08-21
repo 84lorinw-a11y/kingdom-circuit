@@ -6,10 +6,11 @@ import json
 import re
 from pathlib import Path
 
-SYNC_VERSION = 1
+SYNC_VERSION = 2
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 APP_FILE = ROOT / "app.js"
+TEST_FILE = ROOT / "tests" / "test_update_events.py"
 
 ARTIST = {
     "name": "808 BEEZY",
@@ -86,10 +87,39 @@ def sync_app() -> bool:
     return False
 
 
+def sync_roster_test() -> bool:
+    text = TEST_FILE.read_text(encoding="utf-8")
+    original = text
+    text = text.replace(
+        "def test_master_roster_has_312_unique_artists(self):",
+        "def test_master_roster_has_313_unique_artists(self):",
+        1,
+    )
+    text = text.replace("self.assertEqual(len(names), 312)", "self.assertEqual(len(names), 313)", 1)
+    text = text.replace(
+        "self.assertEqual(len({name.casefold() for name in names}), 312)",
+        "self.assertEqual(len({name.casefold() for name in names}), 313)",
+        1,
+    )
+    text = text.replace(
+        "self.assertEqual(sum(1 for item in artists if item.get(\"monitoringPriority\") == 2), 107)",
+        "self.assertEqual(sum(1 for item in artists if item.get(\"monitoringPriority\") == 2), 108)",
+        1,
+    )
+    if text != original:
+        TEST_FILE.write_text(text, encoding="utf-8")
+        return True
+    return False
+
+
 def main() -> int:
     config_changed = sync_config()
     app_changed = sync_app()
-    print(f"808 BEEZY synced: config_changed={config_changed}, app_changed={app_changed}")
+    test_changed = sync_roster_test()
+    print(
+        f"808 BEEZY synced: config_changed={config_changed}, "
+        f"app_changed={app_changed}, test_changed={test_changed}"
+    )
     return 0
 
 
