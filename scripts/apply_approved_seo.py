@@ -115,6 +115,40 @@ def normalize_public_names(root: pathlib.Path) -> None:
             path.write_text(text, encoding="utf-8")
 
 
+def link_next_show_cards(root: pathlib.Path) -> None:
+    card_pattern = re.compile(
+        r'(<div class="seo-next-show"><span>Next show</span><strong>)(.*?)(</strong></div>)',
+        re.S,
+    )
+    for page in (root / "artists").glob("*/index.html"):
+        if page.parent.name == "profile":
+            continue
+        text = page.read_text(encoding="utf-8", errors="ignore")
+        if 'class="seo-next-show"' not in text or 'data-artist-event-grid' not in text:
+            continue
+        event_match = re.search(
+            r'<div class="event-grid" data-artist-event-grid>.*?<a class="event-media" href="([^"]+)"',
+            text,
+            re.S,
+        )
+        if not event_match:
+            continue
+        href = event_match.group(1)
+        linked = card_pattern.sub(
+            lambda match: (
+                match.group(1)
+                + f'<a class="seo-next-show-link text-link" href="{href}" aria-label="Open next show">'
+                + match.group(2)
+                + "</a>"
+                + match.group(3)
+            ),
+            text,
+            count=1,
+        )
+        if linked != text:
+            page.write_text(linked, encoding="utf-8")
+
+
 def apply_artist_fidelity(root: pathlib.Path) -> None:
     finalizer = load_module("kc_approved_finalizer", SEO_SOURCE / "finalize_test_seo.py")
     finalizer.BASE = BASE
@@ -181,6 +215,8 @@ def final_production_verify(root: pathlib.Path) -> None:
     ]:
         if required not in kb:
             failures.append(f"kb:{required}")
+    if 'class="seo-next-show-link text-link" href="/event/' not in kb:
+        failures.append("kb:next-show-link")
 
     directory = (root / "artists/index.html").read_text(encoding="utf-8")
     if "assets/artists/1k-phew.webp" not in directory:
@@ -217,6 +253,7 @@ def main(site_root: str) -> None:
     shutil.rmtree(root / "_seo_source", ignore_errors=True)
 
     normalize_public_names(root)
+    link_next_show_cards(root)
     apply_artist_fidelity(root)
     align_artist_schema(root)
     final_production_verify(root)
