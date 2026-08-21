@@ -36,6 +36,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Sync verified artist registry
+        run: python scripts/sync_verified_artist_registry.py
+
       - name: Run all automated tests
         run: python -m unittest discover -s tests -p 'test_*.py' -v
 
@@ -67,7 +70,7 @@ jobs:
           git config user.name "kingdom-circuit-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -- events.json run-status.json cache/ticketmaster-attractions.json \
-            supplemental-events.json config/artists.json coverage-gaps.json
+            supplemental-events.json config/artists.json coverage-gaps.json app.js
           if git diff --cached --quiet; then
             echo "No event-data changes to commit."
           else
