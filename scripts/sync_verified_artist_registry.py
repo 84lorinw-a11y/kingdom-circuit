@@ -6,6 +6,7 @@ import json
 import re
 from pathlib import Path
 
+SYNC_VERSION = 1
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 APP_FILE = ROOT / "app.js"
