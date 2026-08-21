@@ -1,0 +1,186 @@
+"use strict";
+
+// Reliable direct image sources for artists whose registry image reference is a
+// profile/page URL rather than a directly embeddable image. These are only
+// presentation overrides; the canonical source URLs remain in the registry.
+const KC_ARTIST_IMAGE_OVERRIDES = {
+  "808 beezy": "https://pbs.twimg.com/profile_images/1836827722309312512/e5kgorwv.jpg",
+  "mike teezy": "https://real.fm/assets/Uploads/MikeTeezy__FocusFillWyItMC4xMSIsIi0wLjE2IiwxMjAwLDYyN10.jpg",
+  "porsha love": "https://i.scdn.co/image/ab6761610000e5eb15b2db654ea5c3a8a4521985",
+  "nicky gracious": "https://nickygraciousmusic.com/cdn/shop/files/IMG_2813.jpg?v=1745324661&width=660",
+  "asap preach": "https://asappreachmusic.com/360E72B4-4191-4401-825C-5B70DEB69D32_clipped_rev_1.png",
+  "kijan boone": "https://i.scdn.co/image/ab6761610000e5eb5f296d6cb411bfe1b6483223",
+  "don ready": "https://images.squarespace-cdn.com/content/v1/6612a573e958e36a4e444000/d1148cac-7562-484a-8ae4-f0702cf7e3bf/tempImage6NFtZX.jpg",
+  "y shadey": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/dc/3f/0e/dc3f0eb4-824f-df0f-4988-dddc37dcb42c/5063413912969_cover.jpg/3000x3000bb.jpg",
+  "dante' pride": "https://static.wixstatic.com/media/6ca267_4ad73a811cbe4e0d9e26ca102212d6c0~mv2.jpg/v1/fill/w_980%2Ch_1076%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/6ca267_4ad73a811cbe4e0d9e26ca102212d6c0~mv2.jpg",
+  "rare of breed": "https://fivetwentycollective.com/wp-content/uploads/2021/03/Rare-of-Breed.jpg",
+  "tommy chapa": "https://m.media-amazon.com/images/I/51PN0gSGzAL.jpg",
+  "santana rose": "https://static.qobuz.com/images/covers/he/16/qvvyovl4316he_600.jpg",
+  "dj winn": "https://unavatar.io/instagram/djwinn",
+  "big holy": "https://unavatar.io/instagram/bigholy",
+  "rua young": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages221/v4/b5/c9/41/b5c941ba-b72a-0e77-ac56-a1599aa0a2e6/file_cropped.png/4653x4653bb.jpg",
+  "kurtis hoppie": "https://i.scdn.co/image/ab6761610000e5eb26d1bb2607e2ef0ea4328051",
+  "holy gabbana": "https://static.wixstatic.com/media/b944f9_2e07baa6dfe148559bac17e750f7c8dd~mv2.png/v1/fill/w_412%2Ch_880%2Cfp_0.50_0.38%2Cq_90%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/IMG_5036_HEIC.png",
+  "christopher syncere": "https://i.scdn.co/image/ab6761610000e5eb58b2b20624119284dbf7e303"
+};
+
+// Direct Spotify identities verified independently for rows whose sheet value is
+// still a search URL. Used only to resolve a thumbnail, not to replace the
+// canonical registry field in this patch.
+const KC_SPOTIFY_PROFILE_OVERRIDES = {
+  "brother bo": "https://open.spotify.com/artist/3cmp77GMj0JNM3YHYquhMo",
+  "b. cody shields": "https://open.spotify.com/artist/4chyF3tNUYqQdgS0SQtOT6",
+  "redeemed": "https://open.spotify.com/artist/240g9DqmeKizlyyCZtL22Y"
+};
+
+const KC_EVENT_IMAGE_OVERRIDES = {
+  "supplemental:image-override-hope-fest-daytona-2026": "https://riverfrontshopsofdaytona.com/wp-content/uploads/2026/07/DDA_Events_HopeFest_2026.jpg",
+  "manual:hope-fest-daytona-2026": "https://riverfrontshopsofdaytona.com/wp-content/uploads/2026/07/DDA_Events_HopeFest_2026.jpg"
+};
+
+function kcImageKey(value) {
+  return String(value || "").trim().toLocaleLowerCase();
+}
+
+function kcDirectArtistImage(artist) {
+  return KC_ARTIST_IMAGE_OVERRIDES[kcImageKey(artist?.name)] || "";
+}
+
+// Override the synchronous render helpers before app.js finishes its async boot.
+if (typeof artistImageInfo === "function") {
+  const kcOriginalArtistImageInfo = artistImageInfo;
+  artistImageInfo = function(artist) {
+    const direct = kcDirectArtistImage(artist);
+    const original = kcOriginalArtistImageInfo(artist);
+    if (!direct) return original;
+    return {
+      url: direct,
+      fallbackUrl: original?.url && original.url !== direct ? original.url : (original?.fallbackUrl || ""),
+      position: artist?.imagePosition || original?.position || "center"
+    };
+  };
+}
+
+if (typeof eventImage === "function") {
+  const kcOriginalEventImage = eventImage;
+  eventImage = function(event) {
+    const eventOverride = KC_EVENT_IMAGE_OVERRIDES[String(event?.id || "")];
+    if (eventOverride) return eventOverride;
+    const artist = typeof artistConfig === "function" ? artistConfig(event?.headliner || event?.artists?.[0]) : null;
+    const artistOverride = kcDirectArtistImage(artist);
+    if (artistOverride && !event?.image) return artistOverride;
+    return kcOriginalEventImage(event);
+  };
+}
+
+// Spotify's oEmbed response can supply a direct thumbnail for verified direct
+// artist profiles. This fills remaining registry cards without treating search
+// URLs or generic page URLs as images.
+async function kcResolveSpotifyImage(artist) {
+  const key = kcImageKey(artist?.name);
+  const profile = KC_SPOTIFY_PROFILE_OVERRIDES[key] || String(artist?.spotifyProfile || "");
+  if (!/^https:\/\/open\.spotify\.com\/artist\/[A-Za-z0-9]+/i.test(profile)) return "";
+  try {
+    const response = await fetch(`https://open.spotify.com/oembed?url=${encodeURIComponent(profile)}`, { mode: "cors" });
+    if (!response.ok) return "";
+    const data = await response.json();
+    return /^https?:\/\//i.test(data?.thumbnail_url || "") ? data.thumbnail_url : "";
+  } catch {
+    return "";
+  }
+}
+
+function kcSetArtistVisual(card, url, artistName) {
+  if (!card || !url) return;
+  const visual = card.querySelector(".artist-visual");
+  if (!visual) return;
+  let img = visual.querySelector("img");
+  if (!img) {
+    visual.classList.remove("artist-visual-empty");
+    visual.textContent = "";
+    img = document.createElement("img");
+    img.alt = artistName || "Artist";
+    img.loading = "lazy";
+    img.decoding = "async";
+    img.referrerPolicy = "no-referrer";
+    visual.appendChild(img);
+  }
+  if (img.src !== url) {
+    img.dataset.kcImageRepair = "true";
+    img.src = url;
+  }
+}
+
+async function kcRepairArtistCards() {
+  if (typeof ARTISTS === "undefined" || !Array.isArray(ARTISTS)) return;
+  for (const artist of ARTISTS) {
+    const key = kcImageKey(artist?.name);
+    const card = [...document.querySelectorAll("[data-artist-card]")]
+      .find(node => kcImageKey(node.dataset.artistKey) === key);
+    if (!card) continue;
+    const existing = card.querySelector(".artist-visual img");
+    if (existing && existing.complete && existing.naturalWidth > 0) continue;
+    const direct = kcDirectArtistImage(artist) || await kcResolveSpotifyImage(artist);
+    if (direct) kcSetArtistVisual(card, direct, artist.name);
+  }
+}
+
+async function kcRepairArtistProfile() {
+  const root = document.querySelector("[data-artist-profile]");
+  if (!root || typeof artistConfig !== "function") return;
+  const name = new URLSearchParams(location.search).get("name") || "";
+  const artist = artistConfig(name);
+  if (!artist) return;
+  const current = root.querySelector(".profile-visual img");
+  if (current && current.complete && current.naturalWidth > 0) return;
+  const direct = kcDirectArtistImage(artist) || await kcResolveSpotifyImage(artist);
+  if (!direct) return;
+  const hero = root.querySelector(".profile-hero");
+  if (!hero) return;
+  let visual = hero.querySelector(".profile-visual");
+  if (!visual) {
+    visual = document.createElement("div");
+    visual.className = "profile-visual";
+    hero.prepend(visual);
+  }
+  let img = visual.querySelector("img");
+  if (!img) {
+    img = document.createElement("img");
+    img.alt = artist.name || "Artist";
+    img.decoding = "async";
+    img.referrerPolicy = "no-referrer";
+    visual.appendChild(img);
+  }
+  img.src = direct;
+  hero.classList.remove("profile-hero-no-image");
+  root.querySelector(".profile-image-note")?.remove();
+}
+
+function kcRepairEventCards() {
+  const hopeImage = KC_EVENT_IMAGE_OVERRIDES["manual:hope-fest-daytona-2026"];
+  document.querySelectorAll(".event-card, .event-detail").forEach(card => {
+    const text = (card.textContent || "").toLocaleLowerCase();
+    const img = card.querySelector("img");
+    if (!img) return;
+    if (text.includes("hope fest 2026")) {
+      if (img.src !== hopeImage) img.src = hopeImage;
+      return;
+    }
+    if (text.includes("808 beezy")) {
+      const beezy = KC_ARTIST_IMAGE_OVERRIDES["808 beezy"];
+      if (img.src !== beezy) img.src = beezy;
+    }
+  });
+}
+
+function kcRepairImages() {
+  kcRepairEventCards();
+  void kcRepairArtistCards();
+  void kcRepairArtistProfile();
+}
+
+const kcImageObserver = new MutationObserver(() => kcRepairImages());
+kcImageObserver.observe(document.documentElement, { childList: true, subtree: true });
+window.addEventListener("DOMContentLoaded", kcRepairImages, { once: true });
+window.setTimeout(kcRepairImages, 500);
+window.setTimeout(kcRepairImages, 1500);
