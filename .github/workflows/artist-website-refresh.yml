@@ -7,6 +7,8 @@ on:
       - "scripts/collect_artist_website_events.py"
       - "scripts/merge_artist_website_events.py"
       - "scripts/sync_verified_artist_registry.py"
+      - "scripts/sync_verified_artist_websites.py"
+      - "config/verified-artist-websites.json"
       - "config/artist-website-seed-events.json"
       - ".github/workflows/artist-website-refresh.yml"
   workflow_run:
@@ -43,9 +45,12 @@ jobs:
       - name: Sync verified artist registry
         run: python scripts/sync_verified_artist_registry.py
 
+      - name: Sync verified official websites
+        run: python scripts/sync_verified_artist_websites.py
+
       - name: Validate website collector
         run: |
-          python -m py_compile scripts/collect_artist_website_events.py scripts/merge_artist_website_events.py
+          python -m py_compile scripts/collect_artist_website_events.py scripts/merge_artist_website_events.py scripts/sync_verified_artist_websites.py
           python -m unittest tests.test_artist_website_ingestion -v
 
       - name: Scan every tracked official artist website
