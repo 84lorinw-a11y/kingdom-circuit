@@ -4,12 +4,14 @@ on:
   push:
     branches: [main]
     paths:
+      - "config/verified-artist-registry-updates.json"
+      - "config/verified-artist-websites.json"
       - "scripts/sync_verified_artist_registry.py"
       - ".github/workflows/sync-verified-artist-registry.yml"
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   sync:
@@ -26,37 +28,36 @@ jobs:
       - name: Sync verified artist registry
         run: python scripts/sync_verified_artist_registry.py
 
-      - name: Validate synced files
+      - name: Validate synced roster and socials
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
 
           artists = json.loads(Path('config/artists.json').read_text(encoding='utf-8'))
-          artist = next(a for a in artists if a.get('name') == '808 BEEZY')
-          assert artist['rosterOrder'] == 54
-          assert artist['website'] == 'https://www.808beezy.com/'
-          assert artist['instagramProfile'] == 'https://www.instagram.com/808beezy/?hl=en'
-          assert artist['spotifyProfile'] == 'https://open.spotify.com/artist/3CltJZLndpJKtpUyRVBB1k'
-          assert artist['youtubeProfile'] == 'https://www.youtube.com/@808_BEEZY'
-          assert artist['sourceRegistryVerified'] is True
-          assert len(artists) == 313
+          updates = json.loads(Path('config/verified-artist-registry-updates.json').read_text(encoding='utf-8'))
+          by_name = {artist['name'].casefold(): artist for artist in artists}
+
+          assert len(artists) == 321, len(artists)
+          assert len({artist['name'].casefold() for artist in artists}) == 321
+          assert [artist['rosterOrder'] for artist in artists] == list(range(1, 322))
+          assert [artist['name'] for artist in artists[54:78]] == [item['name'] for item in updates]
+          assert artists[53]['name'] == '808 BEEZY'
+          assert artists[78]['name'] == 'Alex Jean'
+
+          for update in updates:
+              artist = by_name[update['name'].casefold()]
+              assert artist['sourceRegistryVerified'] is True
+              for field in ('website', 'instagramProfile', 'spotifyProfile', 'youtubeProfile', 'officialImageSource'):
+                  if update.get(field):
+                      assert artist.get(field) == update[field], (update['name'], field)
 
           app = Path('app.js').read_text(encoding='utf-8')
-          assert '"808 BEEZY"' in app
-          assert '"808 beezy": {' in app
-          print('808 BEEZY verified artist registry sync validated')
+          for name in ('Mike Teezy', 'Rua Young', 'Kurtis Hoppie', 'Nu Tone', 'Holy Gabbana', 'Christopher Syncere', 'K-SEE', 'Gospel Gangstaz', 'Wuhsahbee'):
+              assert f'"{name}"' in app, name
+          assert 'VERIFIED_ARTIST_REGISTRY_UPDATES' in app
+          print('Verified artist rows 55-78 validated:', len(updates), 'rows; roster=', len(artists))
           PY
 
-      - name: Save registry update
-        run: |
-          set -euo pipefail
-          git config user.name "kingdom-circuit-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add config/artists.json app.js tests/test_update_events.py
-          if git diff --cached --quiet; then
-            echo "Registry already current."
-          else
-            git commit -m "Add 808 BEEZY verified artist profile [skip ci]"
-            git push origin HEAD:main
-          fi
+      - name: Run production tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
