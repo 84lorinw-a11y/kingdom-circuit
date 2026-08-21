@@ -1,86 +1,223 @@
 #!/usr/bin/env python3
-"""Sync verified artist records from the canonical Artist Source Registry."""
+"""Sync verified artist records from the canonical Artist Source Registry export.
+
+The checked-in JSON is a small, reviewable handoff from the Google Sheet. This
+script makes that handoff authoritative for public roster order and verified
+social/profile links while preserving existing collector metadata for artists
+that were already tracked.
+"""
 from __future__ import annotations
 
 import json
 import re
 from pathlib import Path
+from urllib.parse import urlparse
 
-SYNC_VERSION = 3
+SYNC_VERSION = 4
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
+UPDATES_FILE = ROOT / "config" / "verified-artist-registry-updates.json"
+WEBSITES_FILE = ROOT / "config" / "verified-artist-websites.json"
 APP_FILE = ROOT / "app.js"
 TEST_FILE = ROOT / "tests" / "test_update_events.py"
 
-ARTIST = {
-    "name": "808 BEEZY",
-    "aliases": ["808 BEEZY", "808 Beezy"],
-    "enabled": True,
-    "ticketmasterEnabled": True,
-    "category": "core",
-    "monitoringPriority": 2,
-    "topStreamingPriority": False,
-    "socialSearchEnabled": True,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": True,
-    "website": "https://www.808beezy.com/",
-    "bandsintownProfile": "https://www.bandsintown.com/a/792282-808-beezy",
-    "instagramProfile": "https://www.instagram.com/808beezy/?hl=en",
-    "spotifyProfile": "https://open.spotify.com/artist/3CltJZLndpJKtpUyRVBB1k",
-    "youtubeProfile": "https://www.youtube.com/@808_BEEZY",
-    "sourceRegistryVerified": True,
-    "officialImageSource": "https://www.808beezy.com/",
-    "rosterOrder": 54,
+SKIP_WEBSITE_HOSTS = {
+    "google.com", "www.google.com", "instagram.com", "www.instagram.com",
+    "spotify.com", "open.spotify.com", "youtube.com", "www.youtube.com",
+    "music.youtube.com", "facebook.com", "www.facebook.com", "x.com",
+    "twitter.com", "wikipedia.org", "en.wikipedia.org", "music.apple.com",
+    "apple.com", "www.apple.com",
 }
 
 
-def sync_config() -> bool:
-    artists = json.loads(ARTISTS_FILE.read_text(encoding="utf-8"))
-    changed = False
-    target = next((a for a in artists if str(a.get("name") or "").casefold() == "808 beezy"), None)
+def norm(value: object) -> str:
+    return str(value or "").strip().casefold()
 
-    if target is None:
-        for artist in artists:
-            order = artist.get("rosterOrder")
-            if isinstance(order, int) and order >= 54:
-                artist["rosterOrder"] = order + 1
-        artists.append(dict(ARTIST))
-        changed = True
-    else:
-        for key, value in ARTIST.items():
-            if target.get(key) != value:
-                target[key] = value
-                changed = True
 
-    artists.sort(key=lambda a: (a.get("rosterOrder") if isinstance(a.get("rosterOrder"), int) else 99999, str(a.get("name") or "").casefold()))
-    if changed:
-        ARTISTS_FILE.write_text(json.dumps(artists, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+def load_json(path: Path, fallback):
+    if not path.exists():
+        return fallback
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def real_official_website(value: object) -> str:
+    url = str(value or "").strip()
+    if not url.startswith(("http://", "https://")):
+        return ""
+    parsed = urlparse(url)
+    host = parsed.netloc.lower().split(":", 1)[0]
+    if not host or host in SKIP_WEBSITE_HOSTS or host.endswith(".wikipedia.org"):
+        return ""
+    if "google." in host:
+        return ""
+    return url
+
+
+def sync_config() -> tuple[list[dict], list[dict], int]:
+    artists = load_json(ARTISTS_FILE, [])
+    updates = load_json(UPDATES_FILE, [])
+    if not isinstance(artists, list) or not isinstance(updates, list) or not updates:
+        raise SystemExit("Verified registry sync expected non-empty artist/update arrays")
+
+    update_names = [str(item.get("name") or "").strip() for item in updates if isinstance(item, dict)]
+    if len(update_names) != len(updates) or len({norm(name) for name in update_names}) != len(update_names):
+        raise SystemExit("Verified registry updates contain a blank or duplicate artist name")
+
+    expected_orders = list(range(55, 55 + len(updates)))
+    actual_orders = [int(item.get("rosterOrder") or 0) for item in updates]
+    if actual_orders != expected_orders:
+        raise SystemExit(f"Verified registry block must be contiguous 55-{54 + len(updates)}: {actual_orders}")
+
+    by_name = {norm(item.get("name")): item for item in artists if isinstance(item, dict) and item.get("name")}
+    changed = 0
+    synced_records: list[dict] = []
+    for update in updates:
+        name = str(update["name"]).strip()
+        key = norm(name)
+        target = by_name.get(key)
+        if target is None:
+            target = {
+                "name": name,
+                "aliases": [name],
+                "enabled": True,
+                "ticketmasterEnabled": bool(update.get("ticketmasterEnabled", True)),
+                "category": str(update.get("category") or "core"),
+                "monitoringPriority": int(update.get("monitoringPriority") or 3),
+                "topStreamingPriority": False,
+                "socialSearchEnabled": True,
+                "activeStatus": "active_or_unknown",
+                "textMatchEnabled": bool(update.get("textMatchEnabled", True)),
+            }
+            artists.append(target)
+            by_name[key] = target
+            changed += 1
+
+        for field in (
+            "name", "aliases", "category", "monitoringPriority", "ticketmasterEnabled",
+            "textMatchEnabled", "website", "instagramProfile", "spotifyProfile",
+            "youtubeProfile", "officialImageSource",
+        ):
+            if field in update and target.get(field) != update[field]:
+                target[field] = update[field]
+                changed += 1
+        for field, value in {
+            "enabled": True,
+            "socialSearchEnabled": True,
+            "activeStatus": target.get("activeStatus") or "active_or_unknown",
+            "sourceRegistryVerified": True,
+        }.items():
+            if target.get(field) != value:
+                target[field] = value
+                changed += 1
+        synced_records.append(target)
+
+    block_keys = {norm(name) for name in update_names}
+    ordered = sorted(
+        [item for item in artists if isinstance(item, dict) and item.get("name")],
+        key=lambda item: (
+            item.get("rosterOrder") if isinstance(item.get("rosterOrder"), int) else 99999,
+            norm(item.get("name")),
+        ),
+    )
+    remainder = [item for item in ordered if norm(item.get("name")) not in block_keys]
+    anchor_index = next((i for i, item in enumerate(remainder) if norm(item.get("name")) == "808 beezy"), None)
+    if anchor_index is None:
+        raise SystemExit("808 BEEZY roster anchor is missing")
+    if anchor_index + 1 != 54:
+        raise SystemExit(f"808 BEEZY must remain roster #54, found #{anchor_index + 1}")
+
+    final_artists = remainder[: anchor_index + 1] + synced_records + remainder[anchor_index + 1 :]
+    for index, artist in enumerate(final_artists, 1):
+        if artist.get("rosterOrder") != index:
+            artist["rosterOrder"] = index
+            changed += 1
+
+    names = [str(item.get("name") or "") for item in final_artists]
+    if len(names) != len(set(map(norm, names))):
+        raise SystemExit("Roster sync produced duplicate artist names")
+    if names[54:78] != update_names:
+        raise SystemExit("Verified registry block did not land exactly at roster positions 55-78")
+
+    ARTISTS_FILE.write_text(
+        json.dumps(final_artists, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    return final_artists, updates, changed
+
+
+def sync_verified_websites(updates: list[dict]) -> int:
+    websites = load_json(WEBSITES_FILE, {})
+    if not isinstance(websites, dict):
+        raise SystemExit("Verified website registry is not a JSON object")
+    changed = 0
+    for update in updates:
+        website = real_official_website(update.get("website"))
+        if not website:
+            continue
+        name = str(update.get("name") or "").strip()
+        if websites.get(name) != website:
+            websites[name] = website
+            changed += 1
+    WEBSITES_FILE.write_text(
+        json.dumps(websites, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
     return changed
 
 
-def sync_app() -> bool:
+def registry_payload(update: dict) -> dict:
+    payload = {
+        "aliases": update.get("aliases") or [update["name"]],
+        "website": update.get("website") or "",
+        "instagramProfile": update.get("instagramProfile") or "",
+        "spotifyProfile": update.get("spotifyProfile") or "",
+        "youtubeProfile": update.get("youtubeProfile") or "",
+        "officialImageSource": update.get("officialImageSource") or "",
+        "sourceRegistryVerified": True,
+    }
+    return {key: value for key, value in payload.items() if value not in ("", None, []) or key == "sourceRegistryVerified"}
+
+
+def sync_app(artists: list[dict], updates: list[dict]) -> bool:
     text = APP_FILE.read_text(encoding="utf-8")
     original = text
 
-    roster_match = re.search(r"const ARTIST_ROSTER_ORDER = \[(.*?)\n\];", text, re.S)
-    if not roster_match:
+    roster_names = [str(item.get("name") or "") for item in artists]
+    roster_js = "const ARTIST_ROSTER_ORDER = " + json.dumps(roster_names, indent=2, ensure_ascii=False) + ";"
+    text, count = re.subn(
+        r"const ARTIST_ROSTER_ORDER = \[.*?\n\];",
+        roster_js,
+        text,
+        count=1,
+        flags=re.S,
+    )
+    if count != 1:
         raise SystemExit("ARTIST_ROSTER_ORDER was not found in app.js")
-    if '"808 BEEZY"' not in roster_match.group(1):
-        updated_roster = roster_match.group(0).replace(
-            '  "Bishop Freeze",\n  "Alex Jean",',
-            '  "Bishop Freeze",\n  "808 BEEZY",\n  "Alex Jean",',
-            1,
-        )
-        if updated_roster == roster_match.group(0):
-            raise SystemExit("Could not place 808 BEEZY after Bishop Freeze in ARTIST_ROSTER_ORDER")
-        text = text[:roster_match.start()] + updated_roster + text[roster_match.end():]
 
-    registry_marker = "const VERIFIED_ARTIST_REGISTRY = {\n"
-    if registry_marker not in text:
-        raise SystemExit("VERIFIED_ARTIST_REGISTRY was not found in app.js")
-    if '  "808 beezy": {' not in text:
-        registry_entry = '''  "808 beezy": {\n    "aliases": [\n      "808 BEEZY",\n      "808 Beezy"\n    ],\n    "website": "https://www.808beezy.com/",\n    "instagramProfile": "https://www.instagram.com/808beezy/?hl=en",\n    "spotifyProfile": "https://open.spotify.com/artist/3CltJZLndpJKtpUyRVBB1k",\n    "youtubeProfile": "https://www.youtube.com/@808_BEEZY",\n    "officialImageSource": "https://www.808beezy.com/",\n    "sourceRegistryVerified": true\n  },\n'''
-        text = text.replace(registry_marker, registry_marker + registry_entry, 1)
+    supplemental = {
+        norm(update["name"]): registry_payload(update)
+        for update in updates
+    }
+    supplemental_js = (
+        "const VERIFIED_ARTIST_REGISTRY_UPDATES = "
+        + json.dumps(supplemental, indent=2, ensure_ascii=False)
+        + ";\n"
+    )
+    pattern = r"const VERIFIED_ARTIST_REGISTRY_UPDATES = \{.*?\n\};\n"
+    if re.search(pattern, text, flags=re.S):
+        text = re.sub(pattern, supplemental_js, text, count=1, flags=re.S)
+    else:
+        marker = "const ARTIST_OVERRIDES = {"
+        if marker not in text:
+            raise SystemExit("ARTIST_OVERRIDES marker was not found in app.js")
+        text = text.replace(marker, supplemental_js + marker, 1)
+
+    old_line = "    const verifiedUpdate = VERIFIED_ARTIST_REGISTRY[key] || {};"
+    new_line = "    const verifiedUpdate = { ...(VERIFIED_ARTIST_REGISTRY[key] || {}), ...(VERIFIED_ARTIST_REGISTRY_UPDATES[key] || {}) };"
+    if old_line in text:
+        text = text.replace(old_line, new_line, 1)
+    elif new_line not in text:
+        raise SystemExit("Verified registry merge line was not found in app.js")
 
     if text != original:
         APP_FILE.write_text(text, encoding="utf-8")
@@ -88,25 +225,36 @@ def sync_app() -> bool:
     return False
 
 
-def sync_roster_test() -> bool:
+def sync_roster_test(artists: list[dict]) -> bool:
+    if not TEST_FILE.exists():
+        return False
     text = TEST_FILE.read_text(encoding="utf-8")
     original = text
-    text = text.replace(
-        "def test_master_roster_has_312_unique_artists(self):",
-        "def test_master_roster_has_313_unique_artists(self):",
-        1,
+    total = len(artists)
+    counts = {
+        priority: sum(1 for item in artists if int(item.get("monitoringPriority") or 3) == priority)
+        for priority in (1, 2, 3)
+    }
+    text = re.sub(
+        r"def test_master_roster_has_\d+_unique_artists\(self\):",
+        f"def test_master_roster_has_{total}_unique_artists(self):",
+        text,
+        count=1,
     )
-    text = text.replace("self.assertEqual(len(names), 312)", "self.assertEqual(len(names), 313)", 1)
-    text = text.replace(
-        "self.assertEqual(len({name.casefold() for name in names}), 312)",
-        "self.assertEqual(len({name.casefold() for name in names}), 313)",
-        1,
+    text = re.sub(r"self\.assertEqual\(len\(names\), \d+\)", f"self.assertEqual(len(names), {total})", text, count=1)
+    text = re.sub(
+        r"self\.assertEqual\(len\(\{name\.casefold\(\) for name in names\}\), \d+\)",
+        f"self.assertEqual(len({{name.casefold() for name in names}}), {total})",
+        text,
+        count=1,
     )
-    text = text.replace(
-        "self.assertEqual(sum(1 for item in artists if item.get(\"monitoringPriority\") == 2), 107)",
-        "self.assertEqual(sum(1 for item in artists if item.get(\"monitoringPriority\") == 2), 108)",
-        1,
-    )
+    for priority in (1, 2, 3):
+        text = re.sub(
+            rf"self\.assertEqual\(sum\(1 for item in artists if item\.get\(\"monitoringPriority\"\) == {priority}\), \d+\)",
+            f'self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == {priority}), {counts[priority]})',
+            text,
+            count=1,
+        )
     if text != original:
         TEST_FILE.write_text(text, encoding="utf-8")
         return True
@@ -114,12 +262,14 @@ def sync_roster_test() -> bool:
 
 
 def main() -> int:
-    config_changed = sync_config()
-    app_changed = sync_app()
-    test_changed = sync_roster_test()
+    artists, updates, config_changes = sync_config()
+    website_changes = sync_verified_websites(updates)
+    app_changed = sync_app(artists, updates)
+    test_changed = sync_roster_test(artists)
     print(
-        f"808 BEEZY synced: config_changed={config_changed}, "
-        f"app_changed={app_changed}, test_changed={test_changed}"
+        "Verified registry synced: "
+        f"rows={len(updates)}, artists={len(artists)}, config_changes={config_changes}, "
+        f"website_changes={website_changes}, app_changed={app_changed}, test_changed={test_changed}"
     )
     return 0
 
