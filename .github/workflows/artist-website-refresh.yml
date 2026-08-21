@@ -8,6 +8,7 @@ on:
       - "scripts/merge_artist_website_events.py"
       - "scripts/sync_verified_artist_registry.py"
       - "scripts/sync_verified_artist_websites.py"
+      - "config/verified-artist-registry-updates.json"
       - "config/verified-artist-websites.json"
       - "config/artist-website-seed-events.json"
       - ".github/workflows/artist-website-refresh.yml"
@@ -64,16 +65,17 @@ jobs:
       - name: Run production tests
         run: python -m unittest discover -s tests -p 'test_*.py' -v
 
-      - name: Save website-discovered shows
+      - name: Save website-discovered shows and synced registry
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "kingdom-circuit-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -- events.json run-status.json artist-website-events.json \
-            artist-website-status.json config/artists.json app.js
+            artist-website-status.json config/artists.json app.js \
+            config/verified-artist-websites.json tests/test_update_events.py
           if git diff --cached --quiet; then
-            echo "No artist-website event changes to save."
+            echo "No artist-website or registry changes to save."
             exit 0
           fi
 
