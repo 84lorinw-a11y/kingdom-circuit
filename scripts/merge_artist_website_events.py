@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Merge official-artist-website events into the production event catalog."""
+"""Add official-artist-website events without reprocessing the live catalog."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -12,7 +12,7 @@ from update_events import (
     apply_first_seen,
     artist_image_map,
     artist_image_positions,
-    event_is_future,
+    events_are_duplicates,
     finalize_events,
     iso_z,
     load_json,
@@ -56,7 +56,6 @@ def main() -> int:
     for raw in seed_events:
         event = normalize_manual_event(raw, checked_at)
         if event:
-            # These are official artist-calendar records, not editorial manual overrides.
             event["sourceAuthority"] = "artist_calendar"
             event["sourcePriority"] = 76
             for source in event.get("sources", []):
@@ -69,27 +68,49 @@ def main() -> int:
                     evidence["priority"] = 76
             normalized_seed.append(event)
 
-    candidates = merge_events(
-        event for event in [*existing, *website_events, *normalized_seed]
-        if isinstance(event, dict) and event_is_future(event, today)
-    )
-
+    # Existing events.json is already finalized for public use. Never feed it back
+    # through finalize_events(), because finalization intentionally strips internal
+    # evidence fields and a second finalization would reject valid live events.
+    new_candidates = merge_events([
+        *[event for event in website_events if isinstance(event, dict)],
+        *normalized_seed,
+    ])
     images = artist_image_map(artists, attraction_cache)
     positions = artist_image_positions(artists)
     prefer_artist = preferred_artist_images(artists)
-    merged = finalize_events(candidates, images, today, positions, prefer_artist)
-    merged = apply_first_seen(merged, existing, checked_at)
-    write_json(EVENTS_FILE, merged)
+    finalized_new = finalize_events(new_candidates, images, today, positions, prefer_artist)
+    finalized_new = apply_first_seen(finalized_new, existing, checked_at)
 
+    merged = [dict(event) for event in existing if isinstance(event, dict)]
+    added = 0
+    for event in finalized_new:
+        if any(events_are_duplicates(current, event) for current in merged):
+            continue
+        merged.append(event)
+        added += 1
+
+    merged.sort(key=lambda item: (
+        str(item.get("startDate") or "9999-12-31"),
+        str(item.get("startTime") or "23:59"),
+        str(item.get("title") or "").casefold(),
+    ))
+
+    if len(merged) < len(existing):
+        raise SystemExit(
+            f"Website merge is destructive: before={len(existing)} after={len(merged)}"
+        )
+
+    write_json(EVENTS_FILE, merged)
     status["artistWebsiteEventsFound"] = len(website_events)
     status["artistWebsiteSeedEvents"] = len(normalized_seed)
+    status["artistWebsiteEventsAdded"] = added
     status["eventsPublished"] = len(merged)
     status["artistWebsiteMergeAt"] = checked_at
     write_json(STATUS_FILE, status)
 
     print(
-        f"Merged official artist website events: dynamic={len(website_events)}, "
-        f"seed={len(normalized_seed)}, published={len(merged)}"
+        f"Added official artist website events: dynamic={len(website_events)}, "
+        f"seed={len(normalized_seed)}, added={added}, before={len(existing)}, after={len(merged)}"
     )
     return 0
 
