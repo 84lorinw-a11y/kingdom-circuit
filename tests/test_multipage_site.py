@@ -53,6 +53,16 @@ class MultiPageProductionTests(unittest.TestCase):
         self.assertIn("Spotify link pending verification", app)
         self.assertNotIn("open.spotify.com/search/", app)
 
+    def test_808_beezy_verified_registry(self):
+        artists = json.loads((ROOT / "config/artists.json").read_text(encoding="utf-8"))
+        artist = next(item for item in artists if item.get("name") == "808 BEEZY")
+        self.assertEqual(54, artist.get("rosterOrder"))
+        self.assertEqual("https://www.808beezy.com/", artist.get("website"))
+        self.assertEqual("https://www.instagram.com/808beezy/?hl=en", artist.get("instagramProfile"))
+        self.assertEqual("https://open.spotify.com/artist/3CltJZLndpJKtpUyRVBB1k", artist.get("spotifyProfile"))
+        self.assertEqual("https://www.youtube.com/@808_BEEZY", artist.get("youtubeProfile"))
+        self.assertTrue(artist.get("sourceRegistryVerified"))
+
     def test_event_images_have_fixed_frame(self):
         css = (ROOT / "styles.css").read_text(encoding="utf-8")
         self.assertIn("aspect-ratio: 4 / 3", css)
@@ -75,7 +85,10 @@ class MultiPageProductionTests(unittest.TestCase):
             if event.get("id") == "supplemental:image-override-hope-fest-daytona-2026"
         ]
         self.assertEqual(1, len(hope_fest))
-        self.assertEqual("assets/events/hope-fest-2026.webp", hope_fest[0].get("image"))
+        self.assertEqual(
+            "https://images.sk-static.com/images/media/profile_images/events/43075130/huge_avatar?series_id=719039",
+            hope_fest[0].get("image"),
+        )
 
 if __name__ == "__main__":
     unittest.main()
