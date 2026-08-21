@@ -11,6 +11,7 @@ import sys
 SITE_ORIGIN = "https://kingdomcircuit.com"
 BASE = "/"
 SEO_SOURCE = pathlib.Path(os.environ.get("KC_SEO_SOURCE", "_seo_source/scripts"))
+IMAGE_OVERRIDES_REL = pathlib.Path("config/verified-artist-image-overrides.json")
 
 
 def load_module(name: str, path: pathlib.Path):
@@ -28,6 +29,62 @@ def is_build_only_path(page: pathlib.Path, root: pathlib.Path) -> bool:
     except ValueError:
         return False
     return bool(rel.parts and rel.parts[0] == "_seo_source")
+
+
+def artist_slug(value: object) -> str:
+    text = str(value or "").strip().casefold().replace("&", " and ")
+    return re.sub(r"[^a-z0-9]+", "-", text).strip("-") or "artist"
+
+
+def load_verified_image_overrides(root: pathlib.Path) -> dict[str, str]:
+    path = root / IMAGE_OVERRIDES_REL
+    if not path.exists():
+        return {}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(data, dict):
+        raise SystemExit("Verified artist image overrides must be a JSON object")
+    cleaned: dict[str, str] = {}
+    for name, url in data.items():
+        artist_name = str(name or "").strip()
+        image_url = str(url or "").strip()
+        if not artist_name or not image_url.startswith(("https://", "assets/", "/assets/")):
+            raise SystemExit(f"Invalid verified artist image override: {name!r} -> {url!r}")
+        cleaned[artist_name] = image_url
+    return cleaned
+
+
+def apply_verified_artist_image_overrides(root: pathlib.Path) -> dict[str, str]:
+    overrides = load_verified_image_overrides(root)
+    if not overrides:
+        return {}
+
+    artists_path = root / "config/artists.json"
+    artists = json.loads(artists_path.read_text(encoding="utf-8"))
+    if not isinstance(artists, list):
+        raise SystemExit("config/artists.json must be an array")
+
+    by_name = {
+        str(item.get("name") or "").strip().casefold(): item
+        for item in artists
+        if isinstance(item, dict) and item.get("name")
+    }
+    missing: list[str] = []
+    changed = 0
+    for name, image_url in overrides.items():
+        artist = by_name.get(name.casefold())
+        if artist is None:
+            missing.append(name)
+            continue
+        if artist.get("imageUrl") != image_url:
+            artist["imageUrl"] = image_url
+            artist["imageSource"] = "Verified Kingdom Circuit artist image override"
+            changed += 1
+
+    if missing:
+        raise SystemExit("Verified image override artists missing from roster: " + ", ".join(missing))
+    if changed:
+        artists_path.write_text(json.dumps(artists, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return overrides
 
 
 def production_overlay_verify(overlay, root: pathlib.Path, generated_state_pages: list[str]) -> None:
@@ -224,6 +281,20 @@ def final_production_verify(root: pathlib.Path) -> None:
     if "Christian Hip-Hop Artists" not in directory:
         failures.append("directory-schema")
 
+    image_overrides = load_verified_image_overrides(root)
+    for artist_name, image_url in image_overrides.items():
+        page = root / "artists" / artist_slug(artist_name) / "index.html"
+        if not page.exists():
+            failures.append(f"artist-image-page-missing:{artist_name}")
+            continue
+        text = page.read_text(encoding="utf-8", errors="ignore")
+        if "seo-profile-image seo-profile-placeholder" in text:
+            failures.append(f"artist-image-placeholder:{artist_name}")
+        if image_url not in text:
+            failures.append(f"artist-image-url-missing:{artist_name}")
+        if image_url not in directory:
+            failures.append(f"directory-image-url-missing:{artist_name}")
+
     if failures:
         raise SystemExit("Final production SEO verification failed:\n" + "\n".join(failures[:100]))
 
@@ -254,6 +325,7 @@ def main(site_root: str) -> None:
 
     normalize_public_names(root)
     link_next_show_cards(root)
+    apply_verified_artist_image_overrides(root)
     apply_artist_fidelity(root)
     align_artist_schema(root)
     final_production_verify(root)
