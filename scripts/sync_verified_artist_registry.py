@@ -21,6 +21,14 @@ WEBSITES_FILE = ROOT / "config" / "verified-artist-websites.json"
 APP_FILE = ROOT / "app.js"
 TEST_FILE = ROOT / "tests" / "test_update_events.py"
 
+# Backward-compatible direct calendar metadata used by the 808 BEEZY ingestion
+# regression test and the website collector. Keep this explicit even though the
+# generalized registry sync now handles the rest of the artist profile data.
+ARTIST = {
+    "name": "808 BEEZY",
+    "bandsintownProfile": "https://www.bandsintown.com/a/792282-808-beezy",
+}
+
 SKIP_WEBSITE_HOSTS = {
     "google.com", "www.google.com", "instagram.com", "www.instagram.com",
     "spotify.com", "open.spotify.com", "youtube.com", "www.youtube.com",
@@ -109,6 +117,8 @@ def sync_config() -> tuple[list[dict], list[dict], int]:
             if target.get(field) != value:
                 target[field] = value
                 changed += 1
+        if name == ARTIST["name"]:
+            target["bandsintownProfile"] = ARTIST["bandsintownProfile"]
         synced_records.append(target)
 
     block_keys = {norm(name) for name in update_names}
@@ -218,6 +228,42 @@ def sync_app(artists: list[dict], updates: list[dict]) -> bool:
         text = text.replace(old_line, new_line, 1)
     elif new_line not in text:
         raise SystemExit("Verified registry merge line was not found in app.js")
+
+    # The sheet may intentionally retain search URLs as research placeholders.
+    # Never present those placeholders as verified social/profile links publicly.
+    spotify_pattern = r"function spotifyInfo\(artist\) \{.*?\n\}\nfunction instagramInfo"
+    spotify_replacement = '''function spotifyInfo(artist) {
+  const candidate = artist.spotifyProfile || (artist.spotifyId ? `https://open.spotify.com/artist/${encodeURIComponent(artist.spotifyId)}` : "");
+  const directProfile = /open\\.spotify\\.com\\/artist\\/[A-Za-z0-9]+/i.test(candidate) ? candidate : "";
+  if (directProfile) return { url: directProfile, exact: true, status: "Open verified Spotify profile" };
+  return { url: "", exact: false, status: "Spotify link pending verification" };
+}
+function instagramInfo'''
+    text, spotify_count = re.subn(spotify_pattern, spotify_replacement, text, count=1, flags=re.S)
+    if spotify_count != 1:
+        raise SystemExit("spotifyInfo function was not found in app.js")
+
+    youtube_pattern = r"function youtubeInfo\(artist\) \{.*?\n\}\nfunction websiteInfo"
+    youtube_replacement = '''function youtubeInfo(artist) {
+  const candidate = artist.youtubeProfile || (/youtu\\.be|youtube\\.com/i.test(artist.officialProfile || "") ? artist.officialProfile : "");
+  const official = candidate && !/youtube\\.com\\/results\\?|music\\.youtube\\.com\\/search/i.test(candidate) ? candidate : "";
+  return official ? { url: official, status: "Open verified YouTube profile" } : { url: "", status: "YouTube link pending verification" };
+}
+function websiteInfo'''
+    text, youtube_count = re.subn(youtube_pattern, youtube_replacement, text, count=1, flags=re.S)
+    if youtube_count != 1:
+        raise SystemExit("youtubeInfo function was not found in app.js")
+
+    website_pattern = r"function websiteInfo\(artist\) \{.*?\n\}\nfunction artistImageInfo"
+    website_replacement = '''function websiteInfo(artist) {
+  const candidate = artist.website || artist.officialWebsite || artist.officialProfile || "";
+  const isPlatform = /instagram\\.com|open\\.spotify\\.com|youtu\\.be|youtube\\.com|music\\.apple\\.com|bandsintown\\.com|google\\.com\\/search|wikipedia\\.org/i.test(candidate);
+  return candidate && !isPlatform ? { url: candidate, status: "Open official website" } : { url: "", status: "Website link pending verification" };
+}
+function artistImageInfo'''
+    text, website_count = re.subn(website_pattern, website_replacement, text, count=1, flags=re.S)
+    if website_count != 1:
+        raise SystemExit("websiteInfo function was not found in app.js")
 
     if text != original:
         APP_FILE.write_text(text, encoding="utf-8")
