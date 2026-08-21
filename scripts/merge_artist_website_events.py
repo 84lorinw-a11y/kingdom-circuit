@@ -71,19 +71,49 @@ def main() -> int:
     # Existing events.json is already finalized for public use. Never feed it back
     # through finalize_events(), because finalization intentionally strips internal
     # evidence fields and a second finalization would reject valid live events.
-    new_candidates = merge_events([
-        *[event for event in website_events if isinstance(event, dict)],
-        *normalized_seed,
+    #
+    # Curated seed rows are also intentionally NOT passed through merge_events().
+    # Each unique seed ID represents a separately verified performance. This matters
+    # for school/church tours that can have multiple performances on the same date,
+    # sometimes only an hour or two apart and linked from the same official tour page.
+    dynamic_candidates = merge_events([
+        event for event in website_events if isinstance(event, dict)
     ])
     images = artist_image_map(artists, attraction_cache)
     positions = artist_image_positions(artists)
     prefer_artist = preferred_artist_images(artists)
-    finalized_new = finalize_events(new_candidates, images, today, positions, prefer_artist)
-    finalized_new = apply_first_seen(finalized_new, existing, checked_at)
+
+    finalized_dynamic = finalize_events(
+        dynamic_candidates, images, today, positions, prefer_artist
+    )
+    finalized_seed = finalize_events(
+        normalized_seed, images, today, positions, prefer_artist
+    )
+    finalized_dynamic = apply_first_seen(finalized_dynamic, existing, checked_at)
+    finalized_seed = apply_first_seen(finalized_seed, existing, checked_at)
 
     merged = [dict(event) for event in existing if isinstance(event, dict)]
     added = 0
-    for event in finalized_new:
+
+    # Verified seed IDs are authoritative. Preserve every unique seed performance,
+    # but still allow one to collapse into a stronger non-seed listing when the
+    # normal duplicate logic proves they are the same event.
+    seed_ids = {str(event.get("id") or "") for event in finalized_seed if event.get("id")}
+    for event in finalized_seed:
+        event_id = str(event.get("id") or "")
+        if event_id and any(str(current.get("id") or "") == event_id for current in merged):
+            continue
+        non_seed_existing = [
+            current for current in merged
+            if str(current.get("id") or "") not in seed_ids
+        ]
+        if any(events_are_duplicates(current, event) for current in non_seed_existing):
+            continue
+        merged.append(event)
+        added += 1
+
+    # Dynamically discovered website events use the standard duplicate rules.
+    for event in finalized_dynamic:
         if any(events_are_duplicates(current, event) for current in merged):
             continue
         merged.append(event)
@@ -98,6 +128,13 @@ def main() -> int:
     if len(merged) < len(existing):
         raise SystemExit(
             f"Website merge is destructive: before={len(existing)} after={len(merged)}"
+        )
+
+    present_ids = {str(event.get("id") or "") for event in merged}
+    missing_seed_ids = sorted(seed_ids - present_ids)
+    if missing_seed_ids:
+        raise SystemExit(
+            f"Verified artist seed performances were lost during merge: {missing_seed_ids}"
         )
 
     write_json(EVENTS_FILE, merged)
