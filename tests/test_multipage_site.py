@@ -51,7 +51,10 @@ class MultiPageProductionTests(unittest.TestCase):
         self.assertIn("artist-visual-empty", app)
         self.assertIn("77IKXFvO7SpWrq8hflrUXc", app)
         self.assertIn("Spotify link pending verification", app)
-        self.assertNotIn("open.spotify.com/search/", app)
+        # Search URLs may remain in the registry as research placeholders, but
+        # the public link helper must require a direct Spotify artist profile.
+        self.assertIn(r"open\.spotify\.com\/artist\/", app)
+        self.assertIn("const directProfile", app)
 
     def test_808_beezy_verified_registry(self):
         artists = json.loads((ROOT / "config/artists.json").read_text(encoding="utf-8"))
