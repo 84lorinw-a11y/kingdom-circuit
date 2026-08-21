@@ -1,0 +1,89 @@
+name: Refresh official artist website shows
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/collect_artist_website_events.py"
+      - "scripts/merge_artist_website_events.py"
+      - "scripts/sync_verified_artist_registry.py"
+      - "config/artist-website-seed-events.json"
+      - ".github/workflows/artist-website-refresh.yml"
+  workflow_run:
+    workflows: ["Update and deploy show calendar"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kingdom-circuit-artist-websites
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    if: >-
+      github.event_name != 'workflow_run' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       (github.event.workflow_run.event == 'schedule' || github.event.workflow_run.event == 'workflow_dispatch'))
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out production repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Sync verified artist registry
+        run: python scripts/sync_verified_artist_registry.py
+
+      - name: Validate website collector
+        run: |
+          python -m py_compile scripts/collect_artist_website_events.py scripts/merge_artist_website_events.py
+          python -m unittest tests.test_artist_website_ingestion -v
+
+      - name: Scan every tracked official artist website
+        env:
+          ARTIST_WEBSITE_MIN_INTERVAL: "0.20"
+        run: python scripts/collect_artist_website_events.py
+
+      - name: Merge website shows into calendar
+        run: python scripts/merge_artist_website_events.py
+
+      - name: Run production tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+
+      - name: Save website-discovered shows
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- events.json run-status.json artist-website-events.json \
+            artist-website-status.json config/artists.json app.js
+          if git diff --cached --quiet; then
+            echo "No artist-website event changes to save."
+            exit 0
+          fi
+
+          git commit -m "chore: refresh official artist website shows"
+          PUSHED=0
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              PUSHED=1
+              break
+            fi
+            echo "Push raced with another automation commit; rebasing and retrying ($attempt/3)."
+            git fetch origin main
+            git rebase origin/main
+          done
+          if [ "$PUSHED" -ne 1 ]; then
+            echo "Unable to save artist website shows after retries."
+            exit 1
+          fi
