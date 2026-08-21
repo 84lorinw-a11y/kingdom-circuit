@@ -1,18 +1,7 @@
 {
   "policyVersion": 4,
-  "generatedAt": "2026-08-20T14:03:49Z",
-  "highRiskArtists": [
-    {
-      "artist": "Nicky Gracious",
-      "healthyDedicatedSources": [],
-      "failedDedicatedSources": [
-        "Nicky Gracious official show calendar"
-      ],
-      "ticketmasterUnmatched": true,
-      "ticketmasterFailed": false,
-      "reason": "Every dedicated artist calendar failed and Ticketmaster did not provide a reliable fallback."
-    }
-  ],
+  "generatedAt": "2026-08-21T12:08:36Z",
+  "highRiskArtists": [],
   "mediumRiskArtists": [
     {
       "artist": "KB",
@@ -23,6 +12,89 @@
         "KB Bandsintown public calendar"
       ],
       "ticketmasterUnmatched": false,
+      "ticketmasterFailed": false,
+      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
+    },
+    {
+      "artist": "FLAME",
+      "healthyDedicatedSources": [
+        "FLAME Plano official registration"
+      ],
+      "failedDedicatedSources": [
+        "FLAME Bandsintown public calendar"
+      ],
+      "ticketmasterUnmatched": false,
+      "ticketmasterFailed": false,
+      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
+    },
+    {
+      "artist": "Anike",
+      "healthyDedicatedSources": [
+        "Reach Records - Anike"
+      ],
+      "failedDedicatedSources": [
+        "Anike Bandsintown public calendar"
+      ],
+      "ticketmasterUnmatched": false,
+      "ticketmasterFailed": false,
+      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
+    },
+    {
+      "artist": "Social Club Misfits",
+      "healthyDedicatedSources": [
+        "Social Club Misfits official site"
+      ],
+      "failedDedicatedSources": [
+        "Social Club Misfits Bandsintown public calendar"
+      ],
+      "ticketmasterUnmatched": false,
+      "ticketmasterFailed": false,
+      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
+    },
+    {
+      "artist": "Mike Malagies",
+      "healthyDedicatedSources": [
+        "Mike Malagies Apple Music concerts"
+      ],
+      "failedDedicatedSources": [
+        "Mike Malagies official events",
+        "Mike Malagies Bandsintown public calendar"
+      ],
+      "ticketmasterUnmatched": true,
+      "ticketmasterFailed": false,
+      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
+    },
+    {
+      "artist": "Zauntee",
+      "healthyDedicatedSources": [],
+      "failedDedicatedSources": [
+        "Zauntee official tour"
+      ],
+      "ticketmasterUnmatched": false,
+      "ticketmasterFailed": false,
+      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
+    },
+    {
+      "artist": "Derek Minor",
+      "healthyDedicatedSources": [
+        "Derek Minor official site"
+      ],
+      "failedDedicatedSources": [
+        "Derek Minor Bandsintown public calendar"
+      ],
+      "ticketmasterUnmatched": false,
+      "ticketmasterFailed": false,
+      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
+    },
+    {
+      "artist": "Parris Chariz",
+      "healthyDedicatedSources": [
+        "Parris Chariz Apple Music concerts"
+      ],
+      "failedDedicatedSources": [
+        "Parris Chariz Bandsintown public calendar"
+      ],
+      "ticketmasterUnmatched": true,
       "ticketmasterFailed": false,
       "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
     },
@@ -137,42 +209,6 @@
       "reason": "No Ticketmaster match and no healthy dedicated artist calendar was recorded in the latest run."
     },
     {
-      "artist": "FLAME",
-      "healthyDedicatedSources": [
-        "FLAME Plano official registration"
-      ],
-      "failedDedicatedSources": [
-        "FLAME Bandsintown public calendar"
-      ],
-      "ticketmasterUnmatched": false,
-      "ticketmasterFailed": false,
-      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
-    },
-    {
-      "artist": "Anike",
-      "healthyDedicatedSources": [
-        "Reach Records - Anike"
-      ],
-      "failedDedicatedSources": [
-        "Anike Bandsintown public calendar"
-      ],
-      "ticketmasterUnmatched": false,
-      "ticketmasterFailed": false,
-      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
-    },
-    {
-      "artist": "Social Club Misfits",
-      "healthyDedicatedSources": [
-        "Social Club Misfits official site"
-      ],
-      "failedDedicatedSources": [
-        "Social Club Misfits Bandsintown public calendar"
-      ],
-      "ticketmasterUnmatched": false,
-      "ticketmasterFailed": false,
-      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
-    },
-    {
       "artist": "Kieran the Light",
       "healthyDedicatedSources": [],
       "failedDedicatedSources": [],
@@ -205,30 +241,6 @@
       "ticketmasterUnmatched": true,
       "ticketmasterFailed": false,
       "reason": "No Ticketmaster match and no healthy dedicated artist calendar was recorded in the latest run."
-    },
-    {
-      "artist": "Derek Minor",
-      "healthyDedicatedSources": [
-        "Derek Minor official site"
-      ],
-      "failedDedicatedSources": [
-        "Derek Minor Bandsintown public calendar"
-      ],
-      "ticketmasterUnmatched": false,
-      "ticketmasterFailed": false,
-      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
-    },
-    {
-      "artist": "Parris Chariz",
-      "healthyDedicatedSources": [
-        "Parris Chariz Apple Music concerts"
-      ],
-      "failedDedicatedSources": [
-        "Parris Chariz Bandsintown public calendar"
-      ],
-      "ticketmasterUnmatched": true,
-      "ticketmasterFailed": false,
-      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
     },
     {
       "artist": "EmanuelDaProphet",
@@ -305,19 +317,6 @@
       "ticketmasterUnmatched": true,
       "ticketmasterFailed": false,
       "reason": "No Ticketmaster match and no healthy dedicated artist calendar was recorded in the latest run."
-    },
-    {
-      "artist": "Mike Malagies",
-      "healthyDedicatedSources": [
-        "Mike Malagies Apple Music concerts"
-      ],
-      "failedDedicatedSources": [
-        "Mike Malagies official events",
-        "Mike Malagies Bandsintown public calendar"
-      ],
-      "ticketmasterUnmatched": true,
-      "ticketmasterFailed": false,
-      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
     },
     {
       "artist": "Eshon Burgundy",

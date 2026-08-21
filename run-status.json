@@ -1,26 +1,26 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-08-20T13:59:26Z",
-  "lastSuccessfulUpdate": "2026-08-20T13:59:26Z",
-  "eventsPublished": 90,
+  "lastAttempt": "2026-08-21T12:04:12Z",
+  "lastSuccessfulUpdate": "2026-08-21T12:04:12Z",
+  "eventsPublished": 87,
   "candidatesCollected": 193,
-  "artistsConfigured": 298,
+  "artistsConfigured": 311,
   "artistsByPriority": {
-    "priority1": 100,
-    "priority2": 100,
-    "priority3": 98
+    "priority1": 101,
+    "priority2": 107,
+    "priority3": 103
   },
-  "ticketmasterArtistsEnabled": 203,
-  "socialSearchArtistsEnabled": 99,
-  "freeTextAliasesProtected": 97,
-  "artistsMatchedOnTicketmaster": 69,
-  "officialEventsFound": 82,
-  "ticketmasterEventsFound": 65,
-  "instagramArtistsConfigured": 99,
-  "instagramQueriesRun": 101,
-  "instagramQueriesAttempted": 99,
-  "instagramResultsFound": 0,
+  "ticketmasterArtistsEnabled": 204,
+  "socialSearchArtistsEnabled": 107,
+  "freeTextAliasesProtected": 104,
+  "artistsMatchedOnTicketmaster": 70,
+  "officialEventsFound": 81,
+  "ticketmasterEventsFound": 66,
+  "instagramArtistsConfigured": 107,
+  "instagramQueriesRun": 109,
+  "instagramQueriesAttempted": 107,
+  "instagramResultsFound": 2,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,18 +46,40 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
+    },
+    {
+      "url": "https://www.instagram.com/p/DP5PDhbinro/",
+      "title": "Instagram",
+      "artists": [],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
+    },
+    {
+      "url": "https://www.instagram.com/p/DPtxQHADisJ/",
+      "title": "Instagram",
+      "artists": [],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 233,
+  "sourcesChecked": 242,
   "unmatchedArtists": [
+    "Scootie Wop",
+    "Mike Malagies",
+    "BrvndonP",
+    "Parris Chariz",
     "Pregador Luo",
     "Sondae",
-    "Scootie Wop",
     "Kieran the Light",
     "Childlike CiCi",
     "Eluzai",
-    "Parris Chariz",
     "EmanuelDaProphet",
     "Mike Teezy",
     "Red Tips",
@@ -69,7 +91,6 @@
     "Bryann T",
     "Nicky Gracious",
     "ASAP Preach",
-    "Mike Malagies",
     "Eshon Burgundy",
     "Sho Baraka",
     "DaeShawn Forrest",
@@ -149,7 +170,6 @@
     "Stephen the Levite",
     "Timothy Brindle",
     "Hazakim",
-    "BrvndonP",
     "Coby James",
     "Tommy Chapa",
     "Monster Tarver",
@@ -210,7 +230,7 @@
     {
       "name": "Reach Records - Anike",
       "status": "ok",
-      "eventsFound": 4
+      "eventsFound": 3
     },
     {
       "name": "Reach Records - Hulvey",
@@ -334,7 +354,7 @@
     },
     {
       "name": "Zauntee official tour",
-      "status": "ok",
+      "status": "warning",
       "eventsFound": 0
     },
     {
@@ -440,7 +460,7 @@
     {
       "name": "Steven Malcolm Apple Music concerts",
       "status": "ok",
-      "eventsFound": 1
+      "eventsFound": 0
     },
     {
       "name": "Scootie Wop official artist page",
@@ -469,8 +489,8 @@
     },
     {
       "name": "Nicky Gracious official show calendar",
-      "status": "warning",
-      "eventsFound": 0
+      "status": "ok",
+      "eventsFound": 1
     },
     {
       "name": "Faith Jam 2026 official ticket page",
@@ -621,13 +641,14 @@
       "name": "Instagram public announcement scan",
       "status": "ok",
       "eventsFound": 0,
-      "artistsChecked": 99,
-      "queriesRun": 101
+      "artistsChecked": 107,
+      "queriesRun": 109
     }
   ],
   "warningCount": 23,
   "errorCount": 0,
   "warnings": [
+    "Zauntee official tour: Unable to retrieve https://www.zauntee.com/tour: HTTP Error 429: Too Many Requests",
     "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
     "Trendsetter Sense official events: Unable to retrieve https://www.trendsettersense.com/event-list: HTTP Error 429: Too Many Requests",
     "NF Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11969355-nf: HTTP Error 403: Forbidden",
@@ -638,7 +659,6 @@
     "Byron Juane Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14690526-byron-juane: HTTP Error 403: Forbidden",
     "Social Club Misfits Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/13345973-social-club-misfits: HTTP Error 403: Forbidden",
     "Mike Teezy official tour: Unable to retrieve https://www.miketeezymusic.com/tour: HTTP Error 429: Too Many Requests",
-    "Nicky Gracious official show calendar: Unable to retrieve https://nickygraciousmusic.com/pages/shows: HTTP Error 503: Service Unavailable",
     "Manafest Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4465-manafest: HTTP Error 403: Forbidden",
     "GRITS Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/805-grits: HTTP Error 403: Forbidden",
     "Nic D Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11283620-nic-d: HTTP Error 403: Forbidden",

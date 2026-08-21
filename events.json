@@ -1,51 +1,5 @@
 [
   {
-    "id": "official:58dffffa88d6e3ceb312",
-    "title": "Steven Malcolm at The Centre",
-    "startDate": "2026-08-20",
-    "startTime": "19:30",
-    "timezone": "",
-    "venue": "The Centre Cafe",
-    "address": "1800 W Maumee St",
-    "city": "Adrian",
-    "state": "MI",
-    "country": "US",
-    "artists": [
-      "Steven Malcolm"
-    ],
-    "headliner": "Steven Malcolm",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://music.apple.com/us/concerts/ce.8211b80e-7b98-426e-8b33-0c157be143e2",
-    "officialUrl": "https://stevenmalcolm.com/",
-    "image": "https://bigchurchfestival.com/wp-content/uploads/steve-malcolmFULL-HEIGHT-TWO-COLUMN-1000x1313.jpg",
-    "price": "",
-    "sourceName": "Steven Malcolm official tour listing",
-    "sources": [
-      {
-        "name": "Steven Malcolm official tour listing",
-        "url": "https://stevenmalcolm.com/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      },
-      {
-        "name": "Steven Malcolm Apple Music concerts",
-        "url": "https://music.apple.com/us/concerts/artist/308036242",
-        "type": "jsonld",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "lastVerified": "2026-08-20T13:59:26Z",
-    "confidence": "high",
-    "endDate": "2026-08-21",
-    "imageType": "artist",
-    "imagePosition": "50% 30%",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
     "id": "official:8d04803dbe2d06e77e53",
     "title": "Hulvey - \"Could Be Tonight\" Tour",
     "startDate": "2026-08-21",
@@ -92,7 +46,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -130,7 +84,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -163,7 +117,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/hope-fest-tickets-1984166920672",
     "officialUrl": "https://www.riverfrontesplanade.com/upcoming-events/hope-fest",
-    "image": "assets/event-fallback.webp",
+    "image": "https://images.sk-static.com/images/media/profile_images/events/43075130/huge_avatar?series_id=719039",
     "price": "Free",
     "sourceName": "Hope Fest official venue and ticket page",
     "sources": [
@@ -175,13 +129,15 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "endDate": "2026-08-22",
-    "imageType": "fallback",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "imageOverride": true,
+    "imageSource": "https://www.songkick.com/festivals/719039-hope-fest/id/43075130-hope-fest-2026"
   },
   {
     "id": "official:bf9682db62fcad0dae81",
@@ -229,7 +185,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "endDate": "2026-08-22",
     "imageType": "artist",
@@ -275,7 +231,7 @@
         "priority": 74
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "endDate": "2026-08-23",
     "imageType": "event_artwork",
@@ -295,7 +251,9 @@
     "state": "CA",
     "country": "US",
     "artists": [
-      "Hulvey"
+      "Hulvey",
+      "indie tribe.",
+      "Kijan Boone"
     ],
     "headliner": "Hulvey",
     "eventType": "concert",
@@ -326,14 +284,22 @@
         "type": "reach_records",
         "authority": "artist_label",
         "priority": 84
+      },
+      {
+        "name": "The Novo official calendar",
+        "url": "https://www.thenovodtla.com/events",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "lineupExplicit": true
   },
   {
     "id": "manual:egr-2026-08-22-fresno-ca",
@@ -366,7 +332,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -420,7 +386,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -465,7 +431,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 24%",
@@ -519,7 +485,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -566,45 +532,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
-    "confidence": "high",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "ticketmaster:vvG10Z_CW8yqQz",
-    "title": "XXL Freshman Class 2026 LIVE",
-    "startDate": "2026-08-27",
-    "startTime": "19:00",
-    "timezone": "America/Los_Angeles",
-    "venue": "The Belasco",
-    "address": "1050 South Hill Street",
-    "city": "Los Angeles",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "Miles Minnick"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "onsale",
-    "ticketUrl": "https://www.ticketmaster.com/xxl-freshman-class-2026-live-los-angeles-california-08-27-2026/event/090064EF50E5D6B8",
-    "officialUrl": "https://www.ticketmaster.com/xxl-freshman-class-2026-live-los-angeles-california-08-27-2026/event/090064EF50E5D6B8",
-    "image": "https://s1.ticketm.net/dam/e/bf4/7ab26025-9667-45c8-b1de-a8228b63abf4_SOURCE",
-    "price": "",
-    "sourceName": "Ticketmaster",
-    "sources": [
-      {
-        "name": "Ticketmaster",
-        "url": "https://www.ticketmaster.com/xxl-freshman-class-2026-live-los-angeles-california-08-27-2026/event/090064EF50E5D6B8",
-        "type": "ticketmaster",
-        "authority": "venue_ticket",
-        "priority": 94
-      }
-    ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -650,7 +578,7 @@
         "priority": 46
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "endDate": "2026-08-30",
     "imageType": "event_artwork",
@@ -693,7 +621,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -740,7 +668,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -778,7 +706,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -825,7 +753,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -863,7 +791,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 24%",
@@ -901,7 +829,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -955,7 +883,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -993,7 +921,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1012,7 +940,9 @@
     "state": "FL",
     "country": "US",
     "artists": [
-      "Hulvey"
+      "Hulvey",
+      "indie tribe.",
+      "Kijan Boone"
     ],
     "headliner": "Hulvey",
     "eventType": "concert",
@@ -1036,14 +966,22 @@
         "type": "reach_records",
         "authority": "artist_label",
         "priority": 84
+      },
+      {
+        "name": "AXS",
+        "url": "https://www.axs.com/events/1398557/hulvey-tickets",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "lineupExplicit": true
   },
   {
     "id": "official:38ea31bd392fcb1bdae4",
@@ -1057,7 +995,9 @@
     "state": "FL",
     "country": "US",
     "artists": [
-      "Hulvey"
+      "Hulvey",
+      "indie tribe.",
+      "Kijan Boone"
     ],
     "headliner": "Hulvey",
     "eventType": "concert",
@@ -1074,14 +1014,22 @@
         "type": "reach_records",
         "authority": "artist_label",
         "priority": 84
+      },
+      {
+        "name": "AXS",
+        "url": "https://www.axs.com/events/1394626/hulvey-tickets",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-15T11:53:29Z"
+    "firstSeen": "2026-08-15T11:53:29Z",
+    "lineupExplicit": true
   },
   {
     "id": "manual:egr-2026-09-05-nashville-tn",
@@ -1114,7 +1062,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -1133,7 +1081,9 @@
     "state": "FL",
     "country": "US",
     "artists": [
-      "Hulvey"
+      "Hulvey",
+      "indie tribe.",
+      "Kijan Boone"
     ],
     "headliner": "Hulvey",
     "eventType": "concert",
@@ -1150,14 +1100,22 @@
         "type": "reach_records",
         "authority": "artist_label",
         "priority": 84
+      },
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/108188682-hulvey-at-five?came_from=287",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-15T11:53:29Z"
+    "firstSeen": "2026-08-15T11:53:29Z",
+    "lineupExplicit": true
   },
   {
     "id": "official:3f73792d066d2cf64319",
@@ -1197,7 +1155,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -1244,7 +1202,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1282,7 +1240,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1322,7 +1280,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1369,7 +1327,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1407,7 +1365,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1415,7 +1373,7 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "official:3d80f8a2666fd78fae0f",
+    "id": "official:2ea77190849064a97fbd",
     "title": "Uprise Festival 2026",
     "startDate": "2026-09-11",
     "startTime": "",
@@ -1451,6 +1409,20 @@
         "priority": 112
       },
       {
+        "name": "Reach Records - Anike",
+        "url": "https://www.reachrecords.com/artists/wande/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
+      },
+      {
         "name": "ChristianHits consolidated show feed",
         "url": "https://www.uprisefest.com/",
         "type": "christian_hits",
@@ -1458,7 +1430,7 @@
         "priority": 46
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "endDate": "2026-09-12",
     "imageType": "artist",
@@ -1497,7 +1469,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -1535,7 +1507,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1582,7 +1554,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1629,7 +1601,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1676,7 +1648,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1714,7 +1686,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1752,7 +1724,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -1791,7 +1763,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1838,7 +1810,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1862,7 +1834,7 @@
     "headliner": "Anike",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/1039205172?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "ticketUrl": "https://www.bandsintown.com/t/1039205172?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
     "officialUrl": "https://www.reachrecords.com/artists/wande/",
     "image": "https://s1.ticketm.net/dam/a/ab5/019b80d9-ebcf-40a7-9233-a35e76204ab5_SOURCE",
     "price": "",
@@ -1876,7 +1848,7 @@
         "priority": 86
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -1914,7 +1886,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -1959,7 +1931,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -2004,7 +1976,7 @@
         "priority": 90
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2023,7 +1995,9 @@
     "state": "MN",
     "country": "US",
     "artists": [
-      "Hulvey"
+      "Hulvey",
+      "indie tribe.",
+      "Kijan Boone"
     ],
     "headliner": "Hulvey",
     "eventType": "concert",
@@ -2040,14 +2014,22 @@
         "type": "reach_records",
         "authority": "artist_label",
         "priority": 84
+      },
+      {
+        "name": "First Avenue",
+        "url": "https://first-avenue.com/event/2026-09-hulvey/",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-15T11:53:29Z"
+    "firstSeen": "2026-08-15T11:53:29Z",
+    "lineupExplicit": true
   },
   {
     "id": "manual:caleb-gordon-eden-2026-09-22-leander",
@@ -2080,7 +2062,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2099,7 +2081,9 @@
     "state": "MI",
     "country": "US",
     "artists": [
-      "Hulvey"
+      "Hulvey",
+      "indie tribe.",
+      "Kijan Boone"
     ],
     "headliner": "Hulvey",
     "eventType": "concert",
@@ -2116,14 +2100,22 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "The Intersection",
+        "url": "https://sectionlive.com/events/",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "lineupExplicit": true
   },
   {
     "id": "official:9f793162ae1bb3cab7f3",
@@ -2137,7 +2129,9 @@
     "state": "IN",
     "country": "US",
     "artists": [
-      "Hulvey"
+      "Hulvey",
+      "indie tribe.",
+      "Kijan Boone"
     ],
     "headliner": "Hulvey",
     "eventType": "concert",
@@ -2154,14 +2148,22 @@
         "type": "reach_records",
         "authority": "artist_label",
         "priority": 84
+      },
+      {
+        "name": "HI-FI Indy",
+        "url": "https://hifiindy.com/event/hulvey-2026/",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-15T11:53:29Z"
+    "firstSeen": "2026-08-15T11:53:29Z",
+    "lineupExplicit": true
   },
   {
     "id": "manual:caleb-gordon-eden-2026-09-24-richmond",
@@ -2194,7 +2196,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2241,7 +2243,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2274,17 +2276,17 @@
     "officialUrl": "https://www.eventbrite.com/e/faith-jam-2026-tickets-1985341605185",
     "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1189836155%2F1748612439673%2F1%2Foriginal.20260728-232523?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=7%2C0%2C1088%2C544&s=c7ed03c38adc1ba0cc0934af49d8067f",
     "price": "From $17.85",
-    "sourceName": "Faith Jam 2026 official ticket page",
+    "sourceName": "Nicky Gracious official show calendar",
     "sources": [
       {
-        "name": "Faith Jam 2026 official ticket page",
+        "name": "Nicky Gracious official show calendar",
         "url": "https://www.eventbrite.com/e/faith-jam-2026-tickets-1985341605185",
-        "type": "jsonld",
-        "authority": "official_festival",
-        "priority": 104
+        "type": "nicky_gracious",
+        "authority": "artist_calendar",
+        "priority": 80
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "endDate": "2026-09-26",
     "imageType": "event_artwork",
@@ -2332,7 +2334,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2377,7 +2379,7 @@
         "priority": 90
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2415,7 +2417,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 24%",
@@ -2453,7 +2455,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -2500,7 +2502,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2540,7 +2542,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -2578,7 +2580,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 24%",
@@ -2616,7 +2618,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -2654,50 +2656,12 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:7c07397fa047689b0215",
-    "title": "Anike — Live at THE ALL STAR EXPERIENCE LIVE CONCERT",
-    "startDate": "2026-10-11",
-    "startTime": "",
-    "timezone": "",
-    "venue": "THE ALL STAR EXPERIENCE LIVE CONCERT",
-    "address": "",
-    "city": "Austin",
-    "state": "TX",
-    "country": "US",
-    "artists": [
-      "Anike"
-    ],
-    "headliner": "Anike",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108773288?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.reachrecords.com/artists/wande/",
-    "image": "https://s1.ticketm.net/dam/a/ab5/019b80d9-ebcf-40a7-9233-a35e76204ab5_SOURCE",
-    "price": "",
-    "sourceName": "Reach Records - Anike",
-    "sources": [
-      {
-        "name": "Reach Records - Anike",
-        "url": "https://www.reachrecords.com/artists/wande/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 86
-      }
-    ],
-    "lastVerified": "2026-08-20T13:59:26Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 30%",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-17T11:59:49Z"
   },
   {
     "id": "manual:egr-2026-10-16-fresno-ca",
@@ -2730,7 +2694,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -2775,7 +2739,7 @@
         "priority": 104
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2813,7 +2777,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -2852,7 +2816,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2891,7 +2855,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2931,12 +2895,51 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:4e2fc5c7c02ab1d34b9e",
+    "title": "Beyond the Walls",
+    "startDate": "2026-11-07",
+    "startTime": "23:00",
+    "timezone": "",
+    "venue": "House of Blues Cleveland",
+    "address": "308 Euclid Ave",
+    "city": "Cleveland",
+    "state": "OH",
+    "country": "US",
+    "artists": [
+      "Mike Teezy"
+    ],
+    "headliner": "Mike Teezy",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://music.apple.com/us/concerts/artist/517774271",
+    "officialUrl": "https://music.apple.com/us/concerts/artist/517774271",
+    "image": "https://www.even.biz/_next/image?q=75&url=https%3A%2F%2Fdt7m7kl3brv3f.cloudfront.net%2Fimages%2Fzlirs9n3bpjitnofexx4m095koo3&w=828",
+    "price": "",
+    "sourceName": "Mike Teezy Apple Music concerts",
+    "sources": [
+      {
+        "name": "Mike Teezy Apple Music concerts",
+        "url": "https://music.apple.com/us/concerts/artist/517774271",
+        "type": "jsonld",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "lastVerified": "2026-08-21T12:04:12Z",
+    "confidence": "high",
+    "endDate": "2026-11-08",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-21T12:04:12Z"
   },
   {
     "id": "ticketmaster:vvG1zZ_ClQMRrF",
@@ -2969,7 +2972,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3007,7 +3010,7 @@
         "priority": 74
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "endDate": "2026-11-15",
     "imageType": "artist",
@@ -3047,7 +3050,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3085,7 +3088,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -3123,7 +3126,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -3161,7 +3164,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -3199,7 +3202,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-20T13:59:26Z",
+    "lastVerified": "2026-08-21T12:04:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
