@@ -16,10 +16,21 @@ const KC_ARTIST_IMAGE_OVERRIDES = {
   "rare of breed": "https://fivetwentycollective.com/wp-content/uploads/2021/03/Rare-of-Breed.jpg",
   "tommy chapa": "https://m.media-amazon.com/images/I/51PN0gSGzAL.jpg",
   "santana rose": "https://static.qobuz.com/images/covers/he/16/qvvyovl4316he_600.jpg",
+  "dj winn": "https://unavatar.io/instagram/djwinn",
+  "big holy": "https://unavatar.io/instagram/bigholy",
   "rua young": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages221/v4/b5/c9/41/b5c941ba-b72a-0e77-ac56-a1599aa0a2e6/file_cropped.png/4653x4653bb.jpg",
   "kurtis hoppie": "https://i.scdn.co/image/ab6761610000e5eb26d1bb2607e2ef0ea4328051",
   "holy gabbana": "https://static.wixstatic.com/media/b944f9_2e07baa6dfe148559bac17e750f7c8dd~mv2.png/v1/fill/w_412%2Ch_880%2Cfp_0.50_0.38%2Cq_90%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/IMG_5036_HEIC.png",
   "christopher syncere": "https://i.scdn.co/image/ab6761610000e5eb58b2b20624119284dbf7e303"
+};
+
+// Direct Spotify identities verified independently for rows whose sheet value is
+// still a search URL. Used only to resolve a thumbnail, not to replace the
+// canonical registry field in this patch.
+const KC_SPOTIFY_PROFILE_OVERRIDES = {
+  "brother bo": "https://open.spotify.com/artist/3cmp77GMj0JNM3YHYquhMo",
+  "b. cody shields": "https://open.spotify.com/artist/4chyF3tNUYqQdgS0SQtOT6",
+  "redeemed": "https://open.spotify.com/artist/240g9DqmeKizlyyCZtL22Y"
 };
 
 const KC_EVENT_IMAGE_OVERRIDES = {
@@ -66,7 +77,8 @@ if (typeof eventImage === "function") {
 // artist profiles. This fills remaining registry cards without treating search
 // URLs or generic page URLs as images.
 async function kcResolveSpotifyImage(artist) {
-  const profile = String(artist?.spotifyProfile || "");
+  const key = kcImageKey(artist?.name);
+  const profile = KC_SPOTIFY_PROFILE_OVERRIDES[key] || String(artist?.spotifyProfile || "");
   if (!/^https:\/\/open\.spotify\.com\/artist\/[A-Za-z0-9]+/i.test(profile)) return "";
   try {
     const response = await fetch(`https://open.spotify.com/oembed?url=${encodeURIComponent(profile)}`, { mode: "cors" });
@@ -93,7 +105,7 @@ function kcSetArtistVisual(card, url, artistName) {
     img.referrerPolicy = "no-referrer";
     visual.appendChild(img);
   }
-  if (!img.src || img.dataset.kcImageRepair === "true") {
+  if (img.src !== url) {
     img.dataset.kcImageRepair = "true";
     img.src = url;
   }
@@ -111,6 +123,37 @@ async function kcRepairArtistCards() {
     const direct = kcDirectArtistImage(artist) || await kcResolveSpotifyImage(artist);
     if (direct) kcSetArtistVisual(card, direct, artist.name);
   }
+}
+
+async function kcRepairArtistProfile() {
+  const root = document.querySelector("[data-artist-profile]");
+  if (!root || typeof artistConfig !== "function") return;
+  const name = new URLSearchParams(location.search).get("name") || "";
+  const artist = artistConfig(name);
+  if (!artist) return;
+  const current = root.querySelector(".profile-visual img");
+  if (current && current.complete && current.naturalWidth > 0) return;
+  const direct = kcDirectArtistImage(artist) || await kcResolveSpotifyImage(artist);
+  if (!direct) return;
+  const hero = root.querySelector(".profile-hero");
+  if (!hero) return;
+  let visual = hero.querySelector(".profile-visual");
+  if (!visual) {
+    visual = document.createElement("div");
+    visual.className = "profile-visual";
+    hero.prepend(visual);
+  }
+  let img = visual.querySelector("img");
+  if (!img) {
+    img = document.createElement("img");
+    img.alt = artist.name || "Artist";
+    img.decoding = "async";
+    img.referrerPolicy = "no-referrer";
+    visual.appendChild(img);
+  }
+  img.src = direct;
+  hero.classList.remove("profile-hero-no-image");
+  root.querySelector(".profile-image-note")?.remove();
 }
 
 function kcRepairEventCards() {
@@ -133,6 +176,7 @@ function kcRepairEventCards() {
 function kcRepairImages() {
   kcRepairEventCards();
   void kcRepairArtistCards();
+  void kcRepairArtistProfile();
 }
 
 const kcImageObserver = new MutationObserver(() => kcRepairImages());
