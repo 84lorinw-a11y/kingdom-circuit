@@ -15,16 +15,30 @@
       @media (max-width: 600px) {
         .seo-card-socials {
           display: grid !important;
-          grid-template-columns: repeat(2, max-content) !important;
-          gap: 10px 12px !important;
+          grid-template-columns: repeat(4, 46px) !important;
+          column-gap: 6px !important;
+          row-gap: 0 !important;
           justify-content: center !important;
           align-items: center !important;
           width: 100% !important;
-          margin-left: 0 !important;
-          margin-right: 0 !important;
+          margin: 14px 0 8px !important;
         }
         .seo-card-socials .seo-social-link {
+          display: grid !important;
+          place-items: center !important;
+          width: 46px !important;
+          height: 46px !important;
+          min-width: 46px !important;
+          padding: 8px !important;
           margin: 0 !important;
+        }
+        .seo-card-socials .seo-brand-icon {
+          width: 28px !important;
+          height: 28px !important;
+          flex-basis: 28px !important;
+        }
+        .seo-artist-card .artist-card-footer {
+          margin-top: 14px !important;
         }
       }
     `;
