@@ -7,6 +7,28 @@
     return String(value || "").trim().toLowerCase();
   }
 
+  function installMobileSocialGridStyles() {
+    if (document.getElementById("kc-mobile-social-grid")) return;
+    const style = document.createElement("style");
+    style.id = "kc-mobile-social-grid";
+    style.textContent = `
+      @media (max-width: 600px) {
+        .seo-card-socials {
+          display: grid !important;
+          grid-template-columns: repeat(2, max-content) !important;
+          gap: 10px 12px !important;
+          justify-content: start !important;
+          align-items: center !important;
+          width: max-content;
+        }
+        .seo-card-socials .seo-social-link {
+          margin: 0 !important;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
   function isUpcoming(event) {
     const raw = String(event?.endDate || event?.startDate || "").slice(0, 10);
     if (!/^\d{4}-\d{2}-\d{2}$/.test(raw)) return true;
@@ -137,6 +159,8 @@
   }
 
   function install() {
+    installMobileSocialGridStyles();
+
     const checkbox = document.querySelector("[data-has-shows-filter]");
     const grid = document.querySelector("[data-artist-grid]");
     if (!checkbox || !grid) return;
