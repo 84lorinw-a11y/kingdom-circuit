@@ -19,9 +19,9 @@
           gap: 10px 12px !important;
           justify-content: center !important;
           align-items: center !important;
-          width: max-content;
-          margin-left: auto !important;
-          margin-right: auto !important;
+          width: 100% !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
         }
         .seo-card-socials .seo-social-link {
           margin: 0 !important;
