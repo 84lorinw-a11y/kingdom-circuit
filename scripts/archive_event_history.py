@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Maintain a durable history of every show ever observed on the calendar.
+"""Maintain a durable history of every real show ever observed on the calendar.
 
 The public events.json can remain future-focused while event-history.json keeps
 historical data for year-end recaps, artist show counts, geography, festivals,
@@ -59,6 +59,26 @@ def write_json(path: Path, value: Any) -> None:
 def normalize(value: Any) -> str:
     text = str(value or "").casefold().strip()
     return re.sub(r"\s+", " ", text)
+
+
+def is_test_event(event: dict[str, Any]) -> bool:
+    artists = event.get("artists") if isinstance(event.get("artists"), list) else []
+    text = " ".join(
+        [
+            str(event.get("title") or ""),
+            str(event.get("venue") or ""),
+            str(event.get("city") or ""),
+            str(event.get("headliner") or ""),
+            " ".join(str(artist) for artist in artists),
+        ]
+    ).casefold()
+    urls = " ".join(
+        str(event.get(field) or "")
+        for field in ("ticketUrl", "officialUrl", "image")
+    ).casefold()
+    if any(domain in urls for domain in ("example.com", "example.org", "example.net")):
+        return True
+    return bool(re.search(r"\btest\s+(artist|city|venue|event|show|concert)\b", text))
 
 
 def archive_key(event: dict[str, Any]) -> str:
@@ -136,7 +156,10 @@ def git_event_snapshots() -> list[tuple[str, list[dict[str, Any]]]]:
             continue
         if not isinstance(parsed, list):
             continue
-        events = [event for event in parsed if isinstance(event, dict)]
+        events = [
+            event for event in parsed
+            if isinstance(event, dict) and not is_test_event(event)
+        ]
         snapshots.append((committed_at, events))
     return snapshots
 
@@ -176,6 +199,8 @@ def upsert_snapshot(
 
     for raw_event in events:
         event = dict(raw_event)
+        if is_test_event(event):
+            continue
         key = archive_key(event)
         record = by_key.get(key)
         if record is None:
@@ -235,7 +260,10 @@ def main() -> None:
     current = load_json(EVENTS_FILE, [])
     if not isinstance(current, list):
         raise SystemExit("events.json must contain a JSON array")
-    current_events = [event for event in current if isinstance(event, dict)]
+    current_events = [
+        event for event in current
+        if isinstance(event, dict) and not is_test_event(event)
+    ]
 
     history = load_json(
         HISTORY_FILE,
@@ -243,16 +271,20 @@ def main() -> None:
     )
     if not isinstance(history, dict):
         raise SystemExit("event-history.json must contain a JSON object")
-    records = history.get("events", [])
-    if not isinstance(records, list):
+    raw_records = history.get("events", [])
+    if not isinstance(raw_records, list):
         raise SystemExit("event-history.json events must be a JSON array")
+    records = [
+        record for record in raw_records
+        if isinstance(record, dict)
+        and isinstance(record.get("event"), dict)
+        and not is_test_event(record["event"])
+    ]
 
     timestamp = now_iso()
     today = datetime.now(timezone.utc).date()
     by_key: dict[str, dict[str, Any]] = {}
     for record in records:
-        if not isinstance(record, dict):
-            continue
         key = str(record.get("archiveKey") or "")
         if key:
             by_key[key] = record
@@ -285,8 +317,6 @@ def main() -> None:
     reappeared = 0
     removed = 0
     for record in records:
-        if not isinstance(record, dict):
-            continue
         key = str(record.get("archiveKey") or "")
         event = record.get("event") if isinstance(record.get("event"), dict) else {}
         record["dateState"] = date_state(event, today)
