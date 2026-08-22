@@ -32,7 +32,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Archive current calendar state
+      - name: Archive current calendar state and git history
         run: python scripts/archive_event_history.py
 
       - name: Validate history file
@@ -43,9 +43,10 @@ jobs:
 
           path = Path("event-history.json")
           data = json.loads(path.read_text(encoding="utf-8"))
-          assert data.get("historyVersion") == 1
+          assert data.get("historyVersion") == 2
           assert isinstance(data.get("events"), list)
           assert data.get("summary", {}).get("totalArchived") == len(data["events"])
+          assert data.get("summary", {}).get("gitSnapshotsScanned", 0) >= 1
           print("Archived events:", len(data["events"]))
           PY
 
