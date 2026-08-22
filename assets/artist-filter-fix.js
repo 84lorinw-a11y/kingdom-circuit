@@ -17,9 +17,11 @@
           display: grid !important;
           grid-template-columns: repeat(2, max-content) !important;
           gap: 10px 12px !important;
-          justify-content: start !important;
+          justify-content: center !important;
           align-items: center !important;
           width: max-content;
+          margin-left: auto !important;
+          margin-right: auto !important;
         }
         .seo-card-socials .seo-social-link {
           margin: 0 !important;
