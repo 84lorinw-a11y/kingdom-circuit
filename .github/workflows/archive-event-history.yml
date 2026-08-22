@@ -1,0 +1,78 @@
+name: Archive event history
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "events.json"
+      - "scripts/archive_event_history.py"
+      - ".github/workflows/archive-event-history.yml"
+  schedule:
+    - cron: "15 11 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kingdom-circuit-event-history
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Archive current calendar state
+        run: python scripts/archive_event_history.py
+
+      - name: Validate history file
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("event-history.json")
+          data = json.loads(path.read_text(encoding="utf-8"))
+          assert data.get("historyVersion") == 1
+          assert isinstance(data.get("events"), list)
+          assert data.get("summary", {}).get("totalArchived") == len(data["events"])
+          print("Archived events:", len(data["events"]))
+          PY
+
+      - name: Save event history
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- event-history.json
+          if git diff --cached --quiet; then
+            echo "No event-history changes to commit."
+            exit 0
+          fi
+
+          git commit -m "chore: archive event history [skip ci]"
+          PUSHED=0
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              PUSHED=1
+              break
+            fi
+            echo "History push raced with another commit; rebasing and retrying ($attempt/3)."
+            git fetch origin main
+            git rebase origin/main
+          done
+          if [ "$PUSHED" -ne 1 ]; then
+            echo "Unable to save event history after retries."
+            exit 1
+          fi
