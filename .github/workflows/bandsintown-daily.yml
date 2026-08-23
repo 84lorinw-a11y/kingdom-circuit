@@ -1,0 +1,58 @@
+name: Daily Bandsintown discovery
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/collect_bandsintown_rest.py
+      - .github/workflows/bandsintown-daily.yml
+  schedule:
+    - cron: "55 10 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kingdom-circuit-bandsintown
+  cancel-in-progress: true
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out production repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Collect verified Bandsintown discoveries
+        run: |
+          python -m py_compile scripts/collect_bandsintown_rest.py
+          python scripts/collect_bandsintown_rest.py
+
+      - name: Save Bandsintown results
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add supplemental-events.json bandsintown-status.json bandsintown-candidates.json
+          if git diff --cached --quiet; then
+            echo "No Bandsintown data changes."
+            exit 0
+          fi
+          git commit -m "chore: refresh Bandsintown discoveries [skip ci]"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            git fetch origin main
+            git rebase origin/main
+          done
+          echo "Unable to save Bandsintown results after retries."
+          exit 1
