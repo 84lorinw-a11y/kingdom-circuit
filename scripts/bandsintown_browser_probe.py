@@ -7,6 +7,8 @@ circumvention. The goal is to determine whether browser execution alone is
 enough to read public Bandsintown pages from a GitHub runner.
 """
 
+# Probe trigger: 2026-08-23
+
 from __future__ import annotations
 
 import json
