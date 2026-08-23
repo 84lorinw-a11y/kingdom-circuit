@@ -235,7 +235,18 @@ def main() -> int:
 
     enabled = [a for a in artists if isinstance(a, dict) and a.get("enabled", True) is not False and a.get("name")]
     today = date.today().isoformat()
-    published = [e for e in [*events, *supplemental] if isinstance(e, dict)]
+
+    # Existing Bandsintown-generated rows are intentionally excluded from the
+    # dedupe baseline. This collector rebuilds those rows from the current
+    # Bandsintown response on every run. Including yesterday's Bandsintown rows
+    # here makes every current row look like a duplicate, then the replacement
+    # step below deletes them all.
+    non_bit = [
+        e for e in supplemental
+        if not (isinstance(e, dict) and str(e.get("id") or "").startswith("bandsintown:"))
+    ]
+    published = [e for e in [*events, *non_bit] if isinstance(e, dict)]
+
     candidates: list[dict[str, Any]] = []
     holds: list[dict[str, Any]] = []
     errors: list[dict[str, Any]] = []
@@ -288,10 +299,6 @@ def main() -> int:
 
     # Replace prior Bandsintown-generated supplemental records with the current
     # verified set so cancellations/changes do not linger forever.
-    non_bit = [
-        e for e in supplemental
-        if not (isinstance(e, dict) and str(e.get("id") or "").startswith("bandsintown:"))
-    ]
     merged = [*non_bit, *candidates]
     merged.sort(key=lambda e: (str(e.get("startDate") or "9999-12-31"), str(e.get("title") or "")))
     save(SUPPLEMENTAL_FILE, merged)
