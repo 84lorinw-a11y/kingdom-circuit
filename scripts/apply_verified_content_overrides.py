@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from datetime import date
 from pathlib import Path
 from typing import Any
 
@@ -60,7 +61,6 @@ def main() -> int:
     if not isinstance(artists, list) or not isinstance(events, list) or not isinstance(supplemental, list):
         raise SystemExit("Expected artist/event JSON arrays")
 
-    # Caleb Gordon: use a stable, official TPR portrait instead of the flaky external fallback.
     caleb = next((item for item in artists if norm(item.get("name")) == "caleb gordon"), None)
     if not caleb:
         raise SystemExit("Caleb Gordon missing from artist registry")
@@ -72,7 +72,6 @@ def main() -> int:
 
     all_events = [*events, *supplemental]
 
-    # Hope Fest: replace the KC-made placeholder art with the event-specific listing image.
     hope_matches = []
     for event in all_events:
         if (
@@ -86,10 +85,9 @@ def main() -> int:
             event["imageOverride"] = True
             event["imageSource"] = HOPE_FEST_IMAGE_SOURCE
             hope_matches.append(event)
-    if not hope_matches:
-        raise SystemExit("Hope Fest 2026 record not found")
+    # Historical event cleanup may remove Hope Fest after Aug 22; only require
+    # the override while the event is still present.
 
-    # Seven existing Hulvey dates were missing the verified tour support artists.
     found_stops: set[tuple[str, str]] = set()
     for event in all_events:
         key = (str(event.get("startDate") or ""), str(event.get("city") or ""))
@@ -110,11 +108,12 @@ def main() -> int:
         add_source(event, source_name, source_url)
         found_stops.add(key)
 
-    missing = sorted(set(INDIE_TOUR_STOPS) - found_stops)
+    today = date.today().isoformat()
+    required_stops = {key for key in INDIE_TOUR_STOPS if key[0] >= today}
+    missing = sorted(required_stops - found_stops)
     if missing:
         raise SystemExit(f"Verified indie tribe tour stops missing from dataset: {missing}")
 
-    # Guard against broad tour listings incorrectly tagging festival/special-event dates.
     for event in all_events:
         if str(event.get("startDate") or "") in {"2026-09-11", "2026-09-12"}:
             if norm(event.get("city")) in {"saratoga springs", "shippensburg"}:
@@ -125,10 +124,10 @@ def main() -> int:
     write(EVENTS_FILE, events)
     write(SUPPLEMENTAL_FILE, supplemental)
 
-    # Final validation.
     assert caleb.get("imageUrl") == CALEB_IMAGE
-    assert all(item.get("image") == HOPE_FEST_IMAGE for item in hope_matches)
-    for key in INDIE_TOUR_STOPS:
+    if hope_matches:
+        assert all(item.get("image") == HOPE_FEST_IMAGE for item in hope_matches)
+    for key in required_stops:
         matched = [
             e for e in all_events
             if (str(e.get("startDate") or ""), str(e.get("city") or "")) == key
@@ -139,8 +138,8 @@ def main() -> int:
         assert all("kijan boone" in {norm(a) for a in e.get("artists", [])} for e in matched), key
 
     print(
-        f"Verified content overrides applied: Caleb portrait fixed; Hope Fest artwork replaced; "
-        f"{len(found_stops)} indie tribe tour stops normalized."
+        f"Verified content overrides applied: Caleb portrait fixed; "
+        f"Hope Fest artwork matches={len(hope_matches)}; {len(found_stops)} indie tribe tour stops normalized."
     )
     return 0
 
