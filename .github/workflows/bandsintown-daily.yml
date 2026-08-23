@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - scripts/collect_bandsintown_rest.py
+      - scripts/run_bandsintown_refresh.py
       - .github/workflows/bandsintown-daily.yml
   schedule:
     - cron: "55 10 * * *"
@@ -32,8 +33,8 @@ jobs:
 
       - name: Collect verified Bandsintown discoveries
         run: |
-          python -m py_compile scripts/collect_bandsintown_rest.py
-          python scripts/collect_bandsintown_rest.py
+          python -m py_compile scripts/collect_bandsintown_rest.py scripts/run_bandsintown_refresh.py
+          python scripts/run_bandsintown_refresh.py
 
       - name: Save Bandsintown results and trigger production deploy
         shell: bash
