@@ -35,7 +35,7 @@ jobs:
           python -m py_compile scripts/collect_bandsintown_rest.py
           python scripts/collect_bandsintown_rest.py
 
-      - name: Save Bandsintown results
+      - name: Save Bandsintown results and trigger production deploy
         shell: bash
         run: |
           set -euo pipefail
@@ -46,7 +46,9 @@ jobs:
             echo "No Bandsintown data changes."
             exit 0
           fi
-          git commit -m "chore: refresh Bandsintown discoveries [skip ci]"
+          # Do not use [skip ci] here: this commit must trigger the main production
+          # workflow so newly discovered/removed shows are reflected on the live site.
+          git commit -m "chore: refresh Bandsintown discoveries"
           for attempt in 1 2 3; do
             if git push origin HEAD:main; then
               exit 0
