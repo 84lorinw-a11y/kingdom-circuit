@@ -1,0 +1,44 @@
+name: Bandsintown browser probe
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/bandsintown_browser_probe.py"
+      - ".github/workflows/bandsintown-browser-probe.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Playwright Chromium
+        run: |
+          python -m pip install --disable-pip-version-check playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Probe public Bandsintown pages with a real browser
+        run: python scripts/bandsintown_browser_probe.py
+
+      - name: Save probe result
+        run: |
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bandsintown-browser-probe.json
+          if git diff --cached --quiet; then
+            echo "No probe changes to save."
+          else
+            git commit -m "test: capture Bandsintown browser probe [skip ci]"
+            git push origin HEAD:main
+          fi
