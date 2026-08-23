@@ -1,0 +1,8 @@
+{
+  "enabled": true,
+  "enabledAt": "2026-08-23T17:38:00Z",
+  "source": "Bandsintown REST structured artist calendar",
+  "dailyWorkflow": ".github/workflows/bandsintown-daily.yml",
+  "collector": "scripts/collect_bandsintown_rest.py",
+  "policy": "exact identity, US only, dedupe existing/multiday, hold festivals"
+}
