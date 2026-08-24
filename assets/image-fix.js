@@ -49,6 +49,25 @@ function kcDirectArtistImage(artist) {
   return KC_ARTIST_IMAGE_OVERRIDES[kcImageKey(artist?.name)] || "";
 }
 
+function kcBestHeadlinerImage(event) {
+  const artist = typeof artistConfig === "function" ? artistConfig(event?.headliner || event?.artists?.[0]) : null;
+  if (!artist) return "";
+  const direct = kcDirectArtistImage(artist);
+  if (direct) return direct;
+  if (typeof artistImageInfo === "function") {
+    const info = artistImageInfo(artist);
+    if (info?.url) return info.url;
+    if (info?.fallbackUrl) return info.fallbackUrl;
+  }
+  return "";
+}
+
+function kcIsBandsintownEvent(event) {
+  if (String(event?.id || "").startsWith("bandsintown:")) return true;
+  if (kcImageKey(event?.sourceName) === "bandsintown") return true;
+  return Array.isArray(event?.sources) && event.sources.some(source => kcImageKey(source?.type) === "bandsintown_rest");
+}
+
 // Override the synchronous render helpers before app.js finishes its async boot.
 if (typeof artistImageInfo === "function") {
   const kcOriginalArtistImageInfo = artistImageInfo;
@@ -69,6 +88,15 @@ if (typeof eventImage === "function") {
   eventImage = function(event) {
     const eventOverride = KC_EVENT_IMAGE_OVERRIDES[String(event?.id || "")];
     if (eventOverride) return eventOverride;
+
+    // Bandsintown rows may contain a guessed local file path that does not exist.
+    // Ignore that guessed event path and use the best verified image we already
+    // have for the headliner. If no headliner image exists yet, fall back to the
+    // site's standard event artwork rather than rendering a broken image.
+    if (kcIsBandsintownEvent(event)) {
+      return kcBestHeadlinerImage(event) || (typeof FALLBACK_EVENT_IMAGE !== "undefined" ? FALLBACK_EVENT_IMAGE : "/assets/event-fallback.webp");
+    }
+
     const artist = typeof artistConfig === "function" ? artistConfig(event?.headliner || event?.artists?.[0]) : null;
     const artistOverride = kcDirectArtistImage(artist);
     if (artistOverride && !event?.image) return artistOverride;
