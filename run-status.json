@@ -1,26 +1,26 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-08-21T12:04:12Z",
-  "lastSuccessfulUpdate": "2026-08-21T12:04:12Z",
-  "eventsPublished": 91,
-  "candidatesCollected": 193,
-  "artistsConfigured": 311,
+  "lastAttempt": "2026-08-24T14:04:57Z",
+  "lastSuccessfulUpdate": "2026-08-24T14:04:57Z",
+  "eventsPublished": 79,
+  "candidatesCollected": 180,
+  "artistsConfigured": 320,
   "artistsByPriority": {
-    "priority1": 101,
-    "priority2": 107,
-    "priority3": 103
+    "priority1": 102,
+    "priority2": 113,
+    "priority3": 105
   },
-  "ticketmasterArtistsEnabled": 204,
-  "socialSearchArtistsEnabled": 107,
+  "ticketmasterArtistsEnabled": 211,
+  "socialSearchArtistsEnabled": 127,
   "freeTextAliasesProtected": 104,
   "artistsMatchedOnTicketmaster": 70,
-  "officialEventsFound": 81,
-  "ticketmasterEventsFound": 66,
-  "instagramArtistsConfigured": 107,
-  "instagramQueriesRun": 109,
-  "instagramQueriesAttempted": 107,
-  "instagramResultsFound": 2,
+  "officialEventsFound": 75,
+  "ticketmasterEventsFound": 59,
+  "instagramArtistsConfigured": 127,
+  "instagramQueriesRun": 129,
+  "instagramQueriesAttempted": 127,
+  "instagramResultsFound": 0,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,42 +46,34 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
-    },
-    {
-      "url": "https://www.instagram.com/p/DP5PDhbinro/",
-      "title": "Instagram",
-      "artists": [],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
-    },
-    {
-      "url": "https://www.instagram.com/p/DPtxQHADisJ/",
-      "title": "Instagram",
-      "artists": [],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 242,
+  "sourcesChecked": 261,
   "unmatchedArtists": [
     "Scootie Wop",
     "Mike Malagies",
     "BrvndonP",
     "Parris Chariz",
+    "808 BEEZY",
+    "Mike Teezy",
+    "Nicky Gracious",
+    "ASAP Preach",
+    "Y Shadey",
+    "Dante' Pride",
+    "Tommy Chapa",
+    "Rua Young",
+    "Kurtis Hoppie",
+    "Nu Tone",
+    "Holy Gabbana",
+    "Christopher Syncere",
+    "K-SEE",
     "Pregador Luo",
     "Sondae",
     "Kieran the Light",
     "Childlike CiCi",
     "Eluzai",
     "EmanuelDaProphet",
-    "Mike Teezy",
     "Red Tips",
     "Mogli the Iceburg",
     "Tommy Royale",
@@ -89,8 +81,6 @@
     "J. Monty",
     "Jered Sanders",
     "Bryann T",
-    "Nicky Gracious",
-    "ASAP Preach",
     "Eshon Burgundy",
     "Sho Baraka",
     "DaeShawn Forrest",
@@ -133,9 +123,7 @@
     "B. Cooper",
     "YP aka Young Paul",
     "Kvng Flvcko",
-    "Y Shadey",
     "MotionPlus",
-    "Dante' Pride",
     "Adriel Cruz",
     "Drea LP",
     "Solachi Voz",
@@ -171,7 +159,6 @@
     "Timothy Brindle",
     "Hazakim",
     "Coby James",
-    "Tommy Chapa",
     "Monster Tarver",
     "Taelor Gray",
     "IMRSQD",
@@ -210,7 +197,7 @@
     {
       "name": "Reach Records consolidated calendar",
       "status": "ok",
-      "eventsFound": 35
+      "eventsFound": 30
     },
     {
       "name": "Reach Records - 1K Phew",
@@ -614,7 +601,7 @@
     },
     {
       "name": "LifeLight Sioux Falls official lineup",
-      "status": "ok",
+      "status": "warning",
       "eventsFound": 0
     },
     {
@@ -625,7 +612,7 @@
     {
       "name": "Mike Teezy Apple Music concerts",
       "status": "ok",
-      "eventsFound": 3
+      "eventsFound": 2
     },
     {
       "name": "Parris Chariz Apple Music concerts",
@@ -641,11 +628,11 @@
       "name": "Instagram public announcement scan",
       "status": "ok",
       "eventsFound": 0,
-      "artistsChecked": 107,
-      "queriesRun": 109
+      "artistsChecked": 127,
+      "queriesRun": 129
     }
   ],
-  "warningCount": 23,
+  "warningCount": 24,
   "errorCount": 0,
   "warnings": [
     "Zauntee official tour: Unable to retrieve https://www.zauntee.com/tour: HTTP Error 429: Too Many Requests",
@@ -670,12 +657,9 @@
     "FLAME Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/16627-flame: HTTP Error 403: Forbidden",
     "Alex Jean Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15570394-alex-jean: HTTP Error 403: Forbidden",
     "KB Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/165768-kb: HTTP Error 403: Forbidden",
-    "Anike Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4673148-anike: HTTP Error 403: Forbidden"
+    "Anike Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4673148-anike: HTTP Error 403: Forbidden",
+    "LifeLight Sioux Falls official lineup: Unable to retrieve https://lifelight.org/llsf-lineup/: <urlopen error timed out>"
   ],
   "errors": [],
-  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings.",
-  "artistWebsiteEventsFound": 0,
-  "artistWebsiteSeedEvents": 17,
-  "artistWebsiteEventsAdded": 2,
-  "artistWebsiteMergeAt": "2026-08-21T18:23:26Z"
+  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings."
 }

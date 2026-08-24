@@ -68,6 +68,30 @@ const ARTIST_ROSTER_ORDER = [
   "T-Bone",
   "Bishop Freeze",
   "808 BEEZY",
+  "Mike Teezy",
+  "Porsha Love",
+  "Nicky Gracious",
+  "ASAP Preach",
+  "Kijan Boone",
+  "Don Ready",
+  "Y Shadey",
+  "Dante' Pride",
+  "Rare of Breed",
+  "Brother Bo",
+  "Tommy Chapa",
+  "B. Cody Shields",
+  "Santana Rose",
+  "DJ Winn",
+  "BIG HOLY",
+  "REDEEMED",
+  "Rua Young",
+  "Kurtis Hoppie",
+  "Nu Tone",
+  "Holy Gabbana",
+  "Christopher Syncere",
+  "K-SEE",
+  "Gospel Gangstaz",
+  "Wuhsahbee",
   "Alex Jean",
   "gio.",
   "Torey D'Shaun",
@@ -92,8 +116,6 @@ const ARTIST_ROSTER_ORDER = [
   "S.B.G.",
   "Aha Gazelle",
   "EmanuelDaProphet",
-  "Mike Teezy",
-  "Porsha Love",
   "Reece Lache'",
   "LaNell Grant",
   "Red Tips",
@@ -112,8 +134,6 @@ const ARTIST_ROSTER_ORDER = [
   "Bryann T",
   "Young Bro",
   "KJ-52",
-  "Nicky Gracious",
-  "ASAP Preach",
   "Eshon Burgundy",
   "Sho Baraka",
   "Propaganda",
@@ -128,7 +148,6 @@ const ARTIST_ROSTER_ORDER = [
   "Alexxander",
   "2819 Worship",
   "George.Rose",
-  "Kijan Boone",
   "Jude Barclay",
   "Kaleb Mitchell",
   "Xay Hill",
@@ -140,7 +159,6 @@ const ARTIST_ROSTER_ORDER = [
   "R-Swift",
   "No Malice",
   "DC3",
-  "Don Ready",
   "Not Klyde",
   "404 Chew",
   "Alphein",
@@ -188,9 +206,7 @@ const ARTIST_ROSTER_ORDER = [
   "DEON",
   "Jamil",
   "Kvng Flvcko",
-  "Y Shadey",
   "MotionPlus",
-  "Dante' Pride",
   "Adriel Cruz",
   "Drea LP",
   "Solachi Voz",
@@ -254,19 +270,12 @@ const ARTIST_ROSTER_ORDER = [
   "Kings Kaleidoscope",
   "Odd Thomas",
   "Q-Flo",
-  "Rare of Breed",
   "Ryan Trey",
   "Swaizy",
   "The Weathrman",
   "Toschii",
   "Trendsetter Sense",
-  "Brother Bo",
-  "Tommy Chapa",
-  "B. Cody Shields",
-  "Santana Rose",
-  "DJ Winn",
   "J.List",
-  "BIG HOLY",
   "D-Maub",
   "K-Drama",
   "Monster Tarver",
@@ -277,7 +286,6 @@ const ARTIST_ROSTER_ORDER = [
   "Coop",
   "CJ Emulous",
   "Lul DreDay",
-  "REDEEMED",
   "Pishko",
   "Paul Russell",
   "MC Jin",
@@ -953,6 +961,280 @@ const VERIFIED_ARTIST_REGISTRY = {
     "sourceRegistryVerified": true
   }
 };
+const VERIFIED_ARTIST_REGISTRY_UPDATES = {
+  "mike teezy": {
+    "aliases": [
+      "Mike Teezy"
+    ],
+    "website": "https://www.miketeezymusic.com/",
+    "instagramProfile": "https://www.instagram.com/officialmiketeezy/",
+    "spotifyProfile": "https://open.spotify.com/artist/6tO2zQcTIRfR2Xdsm9XnL7",
+    "youtubeProfile": "https://www.youtube.com/@MikeTeezy",
+    "officialImageSource": "https://www.miketeezymusic.com/",
+    "sourceRegistryVerified": true
+  },
+  "porsha love": {
+    "aliases": [
+      "Porsha Love"
+    ],
+    "website": "https://www.google.com/search?q=Porsha+Love+official+website",
+    "instagramProfile": "https://www.instagram.com/porshalove/",
+    "spotifyProfile": "https://open.spotify.com/search/Porsha%20Love",
+    "youtubeProfile": "https://www.youtube.com/results?search_query=Porsha+Love+official",
+    "officialImageSource": "https://www.instagram.com/porshalove/",
+    "sourceRegistryVerified": true
+  },
+  "nicky gracious": {
+    "aliases": [
+      "Nicky Gracious"
+    ],
+    "website": "https://nickygraciousmusic.com/",
+    "instagramProfile": "https://www.instagram.com/nickygracious/",
+    "spotifyProfile": "https://open.spotify.com/search/Nicky%20Gracious",
+    "youtubeProfile": "https://www.youtube.com/results?search_query=Nicky+Gracious+official",
+    "officialImageSource": "https://nickygraciousmusic.com/",
+    "sourceRegistryVerified": true
+  },
+  "asap preach": {
+    "aliases": [
+      "ASAP Preach",
+      "A.S.A.P. Preach"
+    ],
+    "website": "https://asappreachmusic.com/",
+    "instagramProfile": "https://www.instagram.com/asappreach/",
+    "spotifyProfile": "https://open.spotify.com/search/ASAP%20Preach",
+    "youtubeProfile": "https://www.youtube.com/results?search_query=ASAP+Preach+official",
+    "officialImageSource": "https://asappreachmusic.com/",
+    "sourceRegistryVerified": true
+  },
+  "kijan boone": {
+    "aliases": [
+      "Kijan Boone"
+    ],
+    "website": "https://www.google.com/search?q=Kijan+Boone+official+website",
+    "instagramProfile": "https://www.instagram.com/kijanboone/",
+    "spotifyProfile": "https://open.spotify.com/search/Kijan%20Boone",
+    "youtubeProfile": "https://www.youtube.com/results?search_query=Kijan+Boone+official",
+    "officialImageSource": "https://www.instagram.com/kijanboone/",
+    "sourceRegistryVerified": true
+  },
+  "don ready": {
+    "aliases": [
+      "Don Ready"
+    ],
+    "website": "https://www.google.com/search?q=Don+Ready+official+website",
+    "instagramProfile": "https://www.instagram.com/donready/",
+    "spotifyProfile": "https://open.spotify.com/search/Don%20Ready",
+    "youtubeProfile": "https://www.youtube.com/results?search_query=Don+Ready+official",
+    "officialImageSource": "https://www.instagram.com/donready/",
+    "sourceRegistryVerified": true
+  },
+  "y shadey": {
+    "aliases": [
+      "Y Shadey"
+    ],
+    "website": "https://www.google.com/search?q=Y+Shadey+official+website",
+    "instagramProfile": "https://www.instagram.com/yshadey/",
+    "spotifyProfile": "https://open.spotify.com/search/Y%20Shadey",
+    "youtubeProfile": "https://www.youtube.com/results?search_query=Y%20Shadey+official",
+    "officialImageSource": "https://www.instagram.com/yshadey/",
+    "sourceRegistryVerified": true
+  },
+  "dante' pride": {
+    "aliases": [
+      "Dante' Pride",
+      "Dante Pride"
+    ],
+    "website": "https://www.google.com/search?q=Dante%27+Pride+official+website",
+    "instagramProfile": "https://www.instagram.com/dantepride/",
+    "spotifyProfile": "https://open.spotify.com/search/Dante%27%20Pride",
+    "youtubeProfile": "https://www.youtube.com/results?search_query=Dante%27+Pride+official",
+    "officialImageSource": "https://www.instagram.com/dantepride/",
+    "sourceRegistryVerified": true
+  },
+  "rare of breed": {
+    "aliases": [
+      "Rare of Breed",
+      "RareofBreed"
+    ],
+    "website": "https://www.google.com/search?q=Rare+of+Breed+official+website",
+    "instagramProfile": "https://www.instagram.com/rareofbreed/",
+    "spotifyProfile": "https://open.spotify.com/search/Rare%20of%20Breed",
+    "youtubeProfile": "https://www.youtube.com/results?search_query=Rare%20of%20Breed+official",
+    "officialImageSource": "https://www.instagram.com/rareofbreed/",
+    "sourceRegistryVerified": true
+  },
+  "brother bo": {
+    "aliases": [
+      "Brother Bo"
+    ],
+    "website": "https://www.youtube.com/c/BrotherBoMusic",
+    "instagramProfile": "https://www.instagram.com/brotherbo/",
+    "spotifyProfile": "https://open.spotify.com/search/Brother%20Bo",
+    "youtubeProfile": "https://www.youtube.com/results?search_query=Brother+Bo+official",
+    "officialImageSource": "https://www.youtube.com/c/BrotherBoMusic",
+    "sourceRegistryVerified": true
+  },
+  "tommy chapa": {
+    "aliases": [
+      "Tommy Chapa"
+    ],
+    "website": "https://music.apple.com/us/artist/tommy-chapa/1508864414",
+    "instagramProfile": "https://www.instagram.com/tommychapa/",
+    "spotifyProfile": "https://open.spotify.com/search/Tommy%20Chapa",
+    "youtubeProfile": "https://www.youtube.com/results?search_query=Tommy+Chapa+official",
+    "officialImageSource": "https://music.apple.com/us/artist/tommy-chapa/1508864414",
+    "sourceRegistryVerified": true
+  },
+  "b. cody shields": {
+    "aliases": [
+      "B. Cody Shields",
+      "B Cody Shields"
+    ],
+    "website": "https://thisishismusic.com/pages/about",
+    "instagramProfile": "https://www.instagram.com/bcodyshields/",
+    "spotifyProfile": "https://open.spotify.com/search/B.%20Cody%20Shields",
+    "youtubeProfile": "https://www.youtube.com/results?search_query=B.+Cody+Shields+official",
+    "officialImageSource": "https://thisishismusic.com/pages/about",
+    "sourceRegistryVerified": true
+  },
+  "santana rose": {
+    "aliases": [
+      "Santana Rose"
+    ],
+    "website": "https://www.youtube.com/@SantanaRoseMusic",
+    "instagramProfile": "https://www.instagram.com/santanarose/",
+    "spotifyProfile": "https://open.spotify.com/search/Santana%20Rose",
+    "youtubeProfile": "https://www.youtube.com/results?search_query=Santana+Rose+official",
+    "officialImageSource": "https://www.youtube.com/@SantanaRoseMusic",
+    "sourceRegistryVerified": true
+  },
+  "dj winn": {
+    "aliases": [
+      "DJ Winn",
+      "DJ WINN"
+    ],
+    "website": "https://www.google.com/search?q=DJ+Winn+official+website",
+    "instagramProfile": "https://www.instagram.com/djwinn/",
+    "spotifyProfile": "https://open.spotify.com/search/DJ%20Winn",
+    "youtubeProfile": "https://www.youtube.com/results?search_query=DJ%20Winn+official",
+    "officialImageSource": "https://www.instagram.com/djwinn/",
+    "sourceRegistryVerified": true
+  },
+  "big holy": {
+    "aliases": [
+      "BIG HOLY",
+      "Big Holy"
+    ],
+    "website": "https://www.google.com/search?q=BIG+HOLY+official+website",
+    "instagramProfile": "https://www.instagram.com/bigholy/",
+    "spotifyProfile": "https://open.spotify.com/search/BIG%20HOLY",
+    "youtubeProfile": "https://www.youtube.com/results?search_query=BIG+HOLY+official",
+    "officialImageSource": "https://www.instagram.com/bigholy/",
+    "sourceRegistryVerified": true
+  },
+  "redeemed": {
+    "aliases": [
+      "REDEEMED",
+      "Redeemed Muzic"
+    ],
+    "website": "https://www.youtube.com/@redeemedmuzic",
+    "instagramProfile": "https://www.instagram.com/redeemed/",
+    "spotifyProfile": "https://open.spotify.com/search/REDEEMED",
+    "youtubeProfile": "https://www.youtube.com/results?search_query=REDEEMED+official",
+    "officialImageSource": "https://www.youtube.com/@redeemedmuzic",
+    "sourceRegistryVerified": true
+  },
+  "rua young": {
+    "aliases": [
+      "Rua Young",
+      "RUA YOUNG"
+    ],
+    "website": "https://www.ruayoung.com/",
+    "instagramProfile": "https://www.instagram.com/ruayoung",
+    "spotifyProfile": "https://open.spotify.com/artist/6i1jJEMjPbIki7mpvE0QQ1",
+    "youtubeProfile": "https://www.youtube.com/@RUAYOUNG",
+    "officialImageSource": "https://www.ruayoung.com/",
+    "sourceRegistryVerified": true
+  },
+  "kurtis hoppie": {
+    "aliases": [
+      "Kurtis Hoppie"
+    ],
+    "website": "https://www.thekurtishoppie.com/",
+    "instagramProfile": "https://www.instagram.com/thekurtishoppie/",
+    "spotifyProfile": "https://open.spotify.com/artist/2eR1Z2cyHOS4gFgA2GbRl8",
+    "youtubeProfile": "https://www.youtube.com/channel/UCIR10g1HVLaYF2vHuBa6u7A",
+    "officialImageSource": "https://www.thekurtishoppie.com/",
+    "sourceRegistryVerified": true
+  },
+  "nu tone": {
+    "aliases": [
+      "Nu Tone",
+      "NuTone"
+    ],
+    "website": "https://www.instagram.com/nutonemuzic/?hl=en",
+    "instagramProfile": "https://www.instagram.com/nutonemuzic/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/4FWnJfV0P82pAx3nD0ZarA",
+    "youtubeProfile": "https://www.youtube.com/@nutonevevo2074",
+    "officialImageSource": "https://www.instagram.com/nutonemuzic/?hl=en",
+    "sourceRegistryVerified": true
+  },
+  "holy gabbana": {
+    "aliases": [
+      "Holy Gabbana"
+    ],
+    "website": "https://holygabbana.com/",
+    "instagramProfile": "https://www.instagram.com/holygabbana/",
+    "spotifyProfile": "https://open.spotify.com/artist/0FTHAY097uQnnn3D2egtZZ",
+    "youtubeProfile": "https://www.youtube.com/channel/UCWC_nNYA2abh8744tp5JX1g",
+    "officialImageSource": "https://holygabbana.com/",
+    "sourceRegistryVerified": true
+  },
+  "christopher syncere": {
+    "aliases": [
+      "Christopher Syncere"
+    ],
+    "website": "https://www.instagram.com/christophersyncere/",
+    "instagramProfile": "https://www.instagram.com/christophersyncere/",
+    "spotifyProfile": "https://open.spotify.com/artist/6oTjD6G08PuR7EjE0AjL5u",
+    "youtubeProfile": "https://www.youtube.com/c/ChristopherSyncere",
+    "officialImageSource": "https://www.instagram.com/christophersyncere/",
+    "sourceRegistryVerified": true
+  },
+  "k-see": {
+    "aliases": [
+      "K-SEE",
+      "K SEE"
+    ],
+    "website": "https://www.instagram.com/kseemusic1/?hl=en",
+    "instagramProfile": "https://www.instagram.com/kseemusic1/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/3Pa1wXxunsWmALJOnjbfbQ",
+    "youtubeProfile": "https://www.youtube.com/@k-seemusic3177",
+    "officialImageSource": "https://www.instagram.com/kseemusic1/?hl=en",
+    "sourceRegistryVerified": true
+  },
+  "gospel gangstaz": {
+    "aliases": [
+      "Gospel Gangstaz"
+    ],
+    "website": "https://en.wikipedia.org/wiki/Gospel_Gangstaz",
+    "spotifyProfile": "https://open.spotify.com/artist/0XioBTfH5k3aCyS9AsbDbE",
+    "youtubeProfile": "https://www.youtube.com/channel/UCFzDxXG9164E1B13A582j5Q",
+    "sourceRegistryVerified": true
+  },
+  "wuhsahbee": {
+    "aliases": [
+      "Wuhsahbee"
+    ],
+    "website": "https://www.instagram.com/wuhsahbee/",
+    "instagramProfile": "https://www.instagram.com/wuhsahbee/",
+    "spotifyProfile": "https://open.spotify.com/artist/6Xg1qxN1cKliOVzRLA4lDK",
+    "youtubeProfile": "https://www.youtube.com/channel/UCxYy0QJZrz4JRq6Jn0MevBQ",
+    "officialImageSource": "https://www.instagram.com/wuhsahbee/",
+    "sourceRegistryVerified": true
+  }
+};
 const ARTIST_OVERRIDES = {
   "kb": {
     spotifyProfile: "https://open.spotify.com/artist/77IKXFvO7SpWrq8hflrUXc"
@@ -1019,7 +1301,7 @@ function applyArtistOverrides(artists) {
   return artists.map(artist => {
     const key = normalize(artist.name);
     const legacyOverride = ARTIST_OVERRIDES[key] || {};
-    const verifiedUpdate = VERIFIED_ARTIST_REGISTRY[key] || {};
+    const verifiedUpdate = { ...(VERIFIED_ARTIST_REGISTRY[key] || {}), ...(VERIFIED_ARTIST_REGISTRY_UPDATES[key] || {}) };
     const rosterOrder = orderByName.get(key);
     const aliases = [...new Set([
       ...(artist.aliases || []),
@@ -1330,7 +1612,7 @@ function eventCard(event) {
   const img = eventImage(event);
   const location = [event.city, event.state].filter(Boolean).join(", ") || "Location to be announced";
   const price = event.price ? `<p class="price-line">Listed price: ${esc(event.price)}</p>` : "";
-  const recent = isNew(event) ? `<span class="badge">New to Kingdom Circuit</span>` : "";
+  const recent = "";
   return `<article class="event-card" data-event-card data-search="${esc(search)}" data-artists="${esc(artists)}" data-state="${esc(event.state || "")}" data-type="${esc(event.eventType || "concert")}" data-date="${esc(event.startDate || "")}" data-end-date="${esc(event.endDate || event.startDate || "")}">
     <a class="event-media" href="${eventDetailUrl(event)}" aria-label="View ${esc(event.title)}"><img class="${imageClass(event)}" src="${esc(img)}" alt="${esc(event.title)} image" loading="lazy" style="object-position:${esc(imagePosition(event))}" onerror="this.onerror=null;this.className='event-artwork';this.src='${FALLBACK_EVENT_IMAGE}';"></a>
     <div class="event-content"><div class="event-main"><div class="event-badges"><span class="badge badge-gold">${esc(event.eventType === "festival" ? "Festival" : "Concert")}</span>${recent}</div><h3><a href="${eventDetailUrl(event)}">${esc(event.title)}</a></h3><p class="artist-line">${artistLinks(event)}</p><dl class="event-meta"><div><dt>Date</dt><dd>${esc(formatDate(event))}</dd></div><div><dt>Venue</dt><dd>${esc(event.venue || "Venue to be announced")}</dd></div><div><dt>Location</dt><dd>${esc(location)}</dd></div></dl>${price}</div><div class="event-footer"><a class="official-button" href="${esc(event.officialUrl || event.ticketUrl || "#")}" target="_blank" rel="noopener">Official details</a><p class="source-line">Source: ${esc(sourceText(event))}</p></div></div>
@@ -1432,7 +1714,8 @@ function friendlyCategory(value) {
   return ({core:"Core CHH",reach:"Reach Records",crossover:"Crossover",group:"Group",legacy:"Legacy"})[value] || "CHH artist";
 }
 function spotifyInfo(artist) {
-  const directProfile = artist.spotifyProfile || (artist.spotifyId ? `https://open.spotify.com/artist/${encodeURIComponent(artist.spotifyId)}` : "");
+  const candidate = artist.spotifyProfile || (artist.spotifyId ? `https://open.spotify.com/artist/${encodeURIComponent(artist.spotifyId)}` : "");
+  const directProfile = /open\.spotify\.com\/artist\/[A-Za-z0-9]+/i.test(candidate) ? candidate : "";
   if (directProfile) return { url: directProfile, exact: true, status: "Open verified Spotify profile" };
   return { url: "", exact: false, status: "Spotify link pending verification" };
 }
@@ -1440,12 +1723,13 @@ function instagramInfo(artist) {
   return artist.instagramProfile ? { url: artist.instagramProfile, status: "Open verified Instagram profile" } : { url: "", status: "Instagram link pending verification" };
 }
 function youtubeInfo(artist) {
-  const official = artist.youtubeProfile || (/youtu\.be|youtube\.com/i.test(artist.officialProfile || "") ? artist.officialProfile : "");
+  const candidate = artist.youtubeProfile || (/youtu\.be|youtube\.com/i.test(artist.officialProfile || "") ? artist.officialProfile : "");
+  const official = candidate && !/youtube\.com\/results\?|music\.youtube\.com\/search/i.test(candidate) ? candidate : "";
   return official ? { url: official, status: "Open verified YouTube profile" } : { url: "", status: "YouTube link pending verification" };
 }
 function websiteInfo(artist) {
   const candidate = artist.website || artist.officialWebsite || artist.officialProfile || "";
-  const isPlatform = /instagram\.com|open\.spotify\.com|youtu\.be|youtube\.com|music\.apple\.com|bandsintown\.com/i.test(candidate);
+  const isPlatform = /instagram\.com|open\.spotify\.com|youtu\.be|youtube\.com|music\.apple\.com|bandsintown\.com|google\.com\/search|wikipedia\.org/i.test(candidate);
   return candidate && !isPlatform ? { url: candidate, status: "Open official website" } : { url: "", status: "Website link pending verification" };
 }
 function artistImageInfo(artist) {

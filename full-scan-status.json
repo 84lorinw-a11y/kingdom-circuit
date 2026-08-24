@@ -1,0 +1,4693 @@
+{
+  "generatedAt": "2026-08-24T14:16:58Z",
+  "artistsChecked": 320,
+  "rawEventsFound": 0,
+  "newEventsPublished": 0,
+  "festivalCandidates": 0,
+  "bandsintown": {
+    "artistsAttempted": 320,
+    "resolved": 0,
+    "eventsFound": 0
+  },
+  "songkick": {
+    "artistsAttempted": 320,
+    "resolved": 0,
+    "blockedByRobots": 320,
+    "eventsFound": 0
+  },
+  "sourceStatusCounts": {
+    "failed": 323,
+    "blocked_by_robots": 328,
+    "no_events": 61
+  },
+  "newEvents": [],
+  "sourceResults": [
+    {
+      "artist": "Lecrae",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Lecrae: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Lecrae",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Hulvey",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Hulvey: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Hulvey",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "KB",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=KB: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "KB",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Caleb Gordon",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Caleb+Gordon: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Caleb Gordon",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Andy Mineo",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Andy+Mineo: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Andy Mineo",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "nobigdyl.",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=nobigdyl.: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "nobigdyl.",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "1K Phew",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=1K+Phew: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "1K Phew",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Miles Minnick",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Miles+Minnick: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Miles Minnick",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jon Keith",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Jon+Keith: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Jon Keith",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Tedashii",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Tedashii: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Tedashii",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Trip Lee",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Trip+Lee: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Trip Lee",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "FLAME",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=FLAME: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "FLAME",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Scootie Wop",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Scootie+Wop: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Scootie Wop",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Aaron Cole",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Aaron+Cole: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Aaron Cole",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "WHATUPRG",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=WHATUPRG: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "WHATUPRG",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Anike",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Anike: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Anike",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Limoblaze",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Limoblaze: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Limoblaze",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jackie Hill Perry",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Jackie+Hill+Perry: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Jackie Hill Perry",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Social Club Misfits",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Social+Club+Misfits: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Social Club Misfits",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Steven Malcolm",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Steven+Malcolm: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Steven Malcolm",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "GAWVI",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=GAWVI: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "GAWVI",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "GAWVI",
+      "source": "official profile",
+      "url": "https://www.gawvi.co/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "EGR",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=EGR: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "EGR",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Mike Malagies",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Mike+Malagies: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Mike Malagies",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Fern",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Fern: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Fern",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Marty",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Marty: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Marty",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "BrvndonP",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=BrvndonP: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "BrvndonP",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Skema Boy",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Skema+Boy: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Skema Boy",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Zauntee",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Zauntee: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Zauntee",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Bizzle",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Bizzle: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Bizzle",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Derek Minor",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Derek+Minor: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Derek Minor",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Canon",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Canon: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Canon",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Parris Chariz",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Parris+Chariz: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Parris Chariz",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Aklesso",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Aklesso: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Aklesso",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Tommy Zuko",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Tommy+Zuko: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Tommy Zuko",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Sevin",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Sevin: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Sevin",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Sevin",
+      "source": "official profile",
+      "url": "https://hogmob.com/sevin/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Da' T.R.U.T.H.",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Da%27+T.R.U.T.H.: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Da' T.R.U.T.H.",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Wordsplayed",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Wordsplayed: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Wordsplayed",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Forrest Frank",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Forrest+Frank: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Forrest Frank",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "indie tribe.",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=indie+tribe.: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "indie tribe.",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Brenno",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Brenno: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Brenno",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Brenno",
+      "source": "official website",
+      "url": "https://www.brennomusic.live/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Brenno",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/7lBcEp7abNiq3WyHT3RRqV",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Shepherd",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Shepherd: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Shepherd",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Shepherd",
+      "source": "official website",
+      "url": "https://www.shepherd.live/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Shepherd",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/0YHuTR40zc9yqfoSSArQxU?si=uLy6lYIBTr6JOUAC3VCQRw&dl_branch=1&nd=1&dlsi=9e8b14d62f1848e4",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kai Uriah",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Kai+Uriah: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Kai Uriah",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kai Uriah",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/6IdKInshEI8ywJ99v6gVKM",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Hyper Fenton",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Hyper+Fenton: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Hyper Fenton",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Hyper Fenton",
+      "source": "official website",
+      "url": "https://hyperfenton.com/?srsltid=AfmBOooF879r3FwdrhkdtvTJm7pVqTdkh89fyt-Dk4UoXInfWloW7xKh",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Hyper Fenton",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/2q5QIs6iibW6xyHZZRSeh2",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Brea Miles",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Brea+Miles: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Brea Miles",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Brea Miles",
+      "source": "official website",
+      "url": "https://www.alwaysbrea.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Brea Miles",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/2S8dO0fwL0qup5Eo7OHs5i",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Issac Mansfield",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Issac+Mansfield: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Issac Mansfield",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Issac Mansfield",
+      "source": "official website",
+      "url": "https://www.issacmansfield.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Issac Mansfield",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/1QgXbOPk6XpELZrJOzz33w",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Tylan1k",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Tylan1k: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Tylan1k",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Tylan1k",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/6PY88og97O47AlwuyFFRhr",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jabari Heavens",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Jabari+Heavens: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Jabari Heavens",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jabari Heavens",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/2ORjCgiRF9ZIK4gak1CsYP",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Rhema Soul",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Rhema+Soul: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Rhema Soul",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Rhema Soul",
+      "source": "official website",
+      "url": "http://rhemasoul.com/",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve http://rhemasoul.com/: HTTP Error 500: Internal Server Error"
+    },
+    {
+      "artist": "Rhema Soul",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/6kqgFtlPJHyqqffmlDTTzd",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Shonlock",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Shonlock: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Shonlock",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Shonlock",
+      "source": "official website",
+      "url": "http://www.shonlock.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Shonlock",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/0Fs18mA7TFMvYVRNX4dNTt",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Viktory",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Viktory: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Viktory",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Viktory",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/7jKYoI3eKh85xfqK7TAlN5",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "T-Bone",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=T-Bone: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "T-Bone",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "T-Bone",
+      "source": "official website",
+      "url": "http://houseoftbone.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "T-Bone",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/6h2GxbU7emrTikSWxbMyxd",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Bishop Freeze",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Bishop+Freeze: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Bishop Freeze",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Bishop Freeze",
+      "source": "official website",
+      "url": "https://www.sozomissions.com/music/bishop-freeze",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Bishop Freeze",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/1epkzUW5gL4DHjW8rlPa3P",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "808 BEEZY",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=808+BEEZY: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "808 BEEZY",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "808 BEEZY",
+      "source": "official website",
+      "url": "https://www.808beezy.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "808 BEEZY",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/3CltJZLndpJKtpUyRVBB1k",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Mike Teezy",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Mike+Teezy: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Mike Teezy",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Mike Teezy",
+      "source": "official website",
+      "url": "https://www.miketeezymusic.com/",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.miketeezymusic.com/: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "artist": "Mike Teezy",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/6tO2zQcTIRfR2Xdsm9XnL7",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Porsha Love",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Porsha+Love: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Porsha Love",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Porsha Love",
+      "source": "official website",
+      "url": "https://www.google.com/search?q=Porsha+Love+official+website",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Porsha Love",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/search/Porsha%20Love",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Nicky Gracious",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Nicky+Gracious: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Nicky Gracious",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Nicky Gracious",
+      "source": "official website",
+      "url": "https://nickygraciousmusic.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Nicky Gracious",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/search/Nicky%20Gracious",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "ASAP Preach",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=ASAP+Preach: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "ASAP Preach",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "ASAP Preach",
+      "source": "official website",
+      "url": "https://asappreachmusic.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "ASAP Preach",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/search/ASAP%20Preach",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kijan Boone",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Kijan+Boone: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Kijan Boone",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kijan Boone",
+      "source": "official website",
+      "url": "https://www.google.com/search?q=Kijan+Boone+official+website",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kijan Boone",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/search/Kijan%20Boone",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Don Ready",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Don+Ready: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Don Ready",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Don Ready",
+      "source": "official website",
+      "url": "https://www.google.com/search?q=Don+Ready+official+website",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Don Ready",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/search/Don%20Ready",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Y Shadey",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Y+Shadey: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Y Shadey",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Y Shadey",
+      "source": "official website",
+      "url": "https://www.google.com/search?q=Y+Shadey+official+website",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Y Shadey",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/search/Y%20Shadey",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Dante' Pride",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Dante%27+Pride: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Dante' Pride",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Dante' Pride",
+      "source": "official website",
+      "url": "https://www.google.com/search?q=Dante%27+Pride+official+website",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Dante' Pride",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/search/Dante%27%20Pride",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Rare of Breed",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Rare+of+Breed: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Rare of Breed",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Rare of Breed",
+      "source": "official website",
+      "url": "https://www.google.com/search?q=Rare+of+Breed+official+website",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Rare of Breed",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/search/Rare%20of%20Breed",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Brother Bo",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Brother+Bo: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Brother Bo",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Brother Bo",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/search/Brother%20Bo",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Tommy Chapa",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Tommy+Chapa: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Tommy Chapa",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Tommy Chapa",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/search/Tommy%20Chapa",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "B. Cody Shields",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=B.+Cody+Shields: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "B. Cody Shields",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "B. Cody Shields",
+      "source": "official website",
+      "url": "https://thisishismusic.com/pages/about",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "B. Cody Shields",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/search/B.%20Cody%20Shields",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Santana Rose",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Santana+Rose: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Santana Rose",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Santana Rose",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/search/Santana%20Rose",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "DJ Winn",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=DJ+Winn: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "DJ Winn",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "DJ Winn",
+      "source": "official website",
+      "url": "https://www.google.com/search?q=DJ+Winn+official+website",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "DJ Winn",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/search/DJ%20Winn",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "BIG HOLY",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=BIG+HOLY: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "BIG HOLY",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "BIG HOLY",
+      "source": "official website",
+      "url": "https://www.google.com/search?q=BIG+HOLY+official+website",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "BIG HOLY",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/search/BIG%20HOLY",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "REDEEMED",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=REDEEMED: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "REDEEMED",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "REDEEMED",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/search/REDEEMED",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Rua Young",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Rua+Young: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Rua Young",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Rua Young",
+      "source": "official website",
+      "url": "https://www.ruayoung.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Rua Young",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/6i1jJEMjPbIki7mpvE0QQ1",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kurtis Hoppie",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Kurtis+Hoppie: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Kurtis Hoppie",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kurtis Hoppie",
+      "source": "official website",
+      "url": "https://www.thekurtishoppie.com/",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.thekurtishoppie.com/: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "artist": "Kurtis Hoppie",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/2eR1Z2cyHOS4gFgA2GbRl8",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Nu Tone",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Nu+Tone: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Nu Tone",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Nu Tone",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/4FWnJfV0P82pAx3nD0ZarA",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Holy Gabbana",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Holy+Gabbana: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Holy Gabbana",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Holy Gabbana",
+      "source": "official website",
+      "url": "https://holygabbana.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Holy Gabbana",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/0FTHAY097uQnnn3D2egtZZ",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Christopher Syncere",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Christopher+Syncere: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Christopher Syncere",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Christopher Syncere",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/6oTjD6G08PuR7EjE0AjL5u",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "K-SEE",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=K-SEE: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "K-SEE",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "K-SEE",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/3Pa1wXxunsWmALJOnjbfbQ",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Gospel Gangstaz",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Gospel+Gangstaz: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Gospel Gangstaz",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Gospel Gangstaz",
+      "source": "official website",
+      "url": "https://en.wikipedia.org/wiki/Gospel_Gangstaz",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Gospel Gangstaz",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/0XioBTfH5k3aCyS9AsbDbE",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Wuhsahbee",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Wuhsahbee: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Wuhsahbee",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Wuhsahbee",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/6Xg1qxN1cKliOVzRLA4lDK",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Alex Jean",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Alex+Jean: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Alex Jean",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "gio.",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=gio.: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "gio.",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Torey D'Shaun",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Torey+D%27Shaun: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Torey D'Shaun",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Redimi2",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Redimi2: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Redimi2",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "GRITS",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=GRITS: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "GRITS",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Funky",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Funky: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Funky",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "NF",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=NF: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "NF",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Nic D",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Nic+D: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Nic D",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Manafest",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Manafest: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Manafest",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Pastor Mike Jr.",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Pastor+Mike+Jr.: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Pastor Mike Jr.",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Pregador Luo",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Pregador+Luo: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Pregador Luo",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Nesk Only",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Nesk+Only: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Nesk Only",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Futuristic",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Futuristic: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Futuristic",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Beacon Light",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Beacon+Light: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Beacon Light",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Sondae",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Sondae: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Sondae",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Dee-1",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Dee-1: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Dee-1",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kieran the Light",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Kieran+the+Light: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Kieran the Light",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Childlike CiCi",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Childlike+CiCi: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Childlike CiCi",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Yung Kriss",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Yung+Kriss: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Yung Kriss",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Eluzai",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Eluzai: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Eluzai",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "tylerhateslife",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=tylerhateslife: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "tylerhateslife",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "S.B.G.",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=S.B.G.: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "S.B.G.",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Aha Gazelle",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Aha+Gazelle: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Aha Gazelle",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "EmanuelDaProphet",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=EmanuelDaProphet: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "EmanuelDaProphet",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Reece Lache'",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Reece+Lache%27: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Reece Lache'",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "LaNell Grant",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=LaNell+Grant: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "LaNell Grant",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Red Tips",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Red+Tips: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Red Tips",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Dell Mac",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Dell+Mac: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Dell Mac",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "DJ Mykael V",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=DJ+Mykael+V: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "DJ Mykael V",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Mogli the Iceburg",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Mogli+the+Iceburg: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Mogli the Iceburg",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Tommy Royale",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Tommy+Royale: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Tommy Royale",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jay-Way",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Jay-Way: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Jay-Way",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Ty Brasel",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Ty+Brasel: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Ty Brasel",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "J. Monty",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=J.+Monty: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "J. Monty",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Datin",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Datin: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Datin",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jered Sanders",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Jered+Sanders: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Jered Sanders",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "A.I. The Anomaly",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=A.I.+The+Anomaly: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "A.I. The Anomaly",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Selah the Corner",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Selah+the+Corner: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Selah the Corner",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Bumps INF",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Bumps+INF: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Bumps INF",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Bryann T",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Bryann+T: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Bryann T",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Young Bro",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Young+Bro: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Young Bro",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "KJ-52",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=KJ-52: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "KJ-52",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "KJ-52",
+      "source": "official profile",
+      "url": "https://www.kj52.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Eshon Burgundy",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Eshon+Burgundy: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Eshon Burgundy",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Sho Baraka",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Sho+Baraka: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Sho Baraka",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Propaganda",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Propaganda: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Propaganda",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Shai Linne",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Shai+Linne: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Shai Linne",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Thi'sl",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Thi%27sl: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Thi'sl",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Swoope",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Swoope: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Swoope",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Ruslan",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Ruslan: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Ruslan",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Mission",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Mission: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Mission",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "DaeShawn Forrest",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=DaeShawn+Forrest: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "DaeShawn Forrest",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "BigBreeze",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=BigBreeze: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "BigBreeze",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "C4 Crotona",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=C4+Crotona: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "C4 Crotona",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Alexxander",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Alexxander: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Alexxander",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "2819 Worship",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=2819+Worship: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "2819 Worship",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "George.Rose",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=George.Rose: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "George.Rose",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jude Barclay",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Jude+Barclay: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Jude Barclay",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kaleb Mitchell",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Kaleb+Mitchell: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Kaleb Mitchell",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Xay Hill",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Xay+Hill: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Xay Hill",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "DKG Kie",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=DKG+Kie: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "DKG Kie",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "J. Crum",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=J.+Crum: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "J. Crum",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Nathan Davis Jr.",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Nathan+Davis+Jr.: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Nathan Davis Jr.",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Angie Rose",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Angie+Rose: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Angie Rose",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Aasha Marie",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Aasha+Marie: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Aasha Marie",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "R-Swift",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=R-Swift: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "R-Swift",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "No Malice",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=No+Malice: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "No Malice",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "DC3",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=DC3: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "DC3",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Not Klyde",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Not+Klyde: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Not Klyde",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "404 Chew",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=404+Chew: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "404 Chew",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Alphein",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Alphein: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Alphein",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Bill B.",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Bill+B.: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Bill B.",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "G3rm 43",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=G3rm+43: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "G3rm 43",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "GiNŌSKŌ",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=GiN%C5%8CSK%C5%8C: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "GiNŌSKŌ",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Glenn Ray",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Glenn+Ray: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Glenn Ray",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "I.A.N.",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=I.A.N.: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "I.A.N.",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "IDEGO",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=IDEGO: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "IDEGO",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Isreal Perez",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Isreal+Perez: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Isreal Perez",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "J J L",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=J+J+L: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "J J L",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jacob Beard",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Jacob+Beard: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Jacob Beard",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "JWoodz",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=JWoodz: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "JWoodz",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kaden Jordan",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Kaden+Jordan: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Kaden Jordan",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "MAYIA",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=MAYIA: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "MAYIA",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Megan Tossi",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Megan+Tossi: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Megan Tossi",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "mica",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=mica: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "mica",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Myles Maestro",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Myles+Maestro: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Myles Maestro",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Nat Lauren",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Nat+Lauren: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Nat Lauren",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Peair",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Peair: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Peair",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Razzie",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Razzie: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Razzie",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Saint Jones",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Saint+Jones: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Saint Jones",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Stixx aka Conejo",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Stixx+aka+Conejo: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Stixx aka Conejo",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Tay Stunna",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Tay+Stunna: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Tay Stunna",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "YakiTheKid",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=YakiTheKid: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "YakiTheKid",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "yumiya!",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=yumiya%21: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "yumiya!",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Vic Lucas",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Vic+Lucas: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Vic Lucas",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kevi Morse",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Kevi+Morse: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Kevi Morse",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Chris Caro",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Chris+Caro: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Chris Caro",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "EJ Swavv",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=EJ+Swavv: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "EJ Swavv",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kelo",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Kelo: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Kelo",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "J.Solo",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=J.Solo: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "J.Solo",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Tds Cam",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Tds+Cam: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Tds Cam",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kham",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Kham: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Kham",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "WHEREISDAVINCI",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=WHEREISDAVINCI: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "WHEREISDAVINCI",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Tukool Tiff",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Tukool+Tiff: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Tukool Tiff",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Tylynn",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Tylynn: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Tylynn",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "De'Aris",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=De%27Aris: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "De'Aris",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Will Kellum",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Will+Kellum: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Will Kellum",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jonah Daniel",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Jonah+Daniel: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Jonah Daniel",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "outr.cty",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=outr.cty: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "outr.cty",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "B. Cooper",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=B.+Cooper: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "B. Cooper",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "YP aka Young Paul",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=YP+aka+Young+Paul: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "YP aka Young Paul",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Untidld",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Untidld: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Untidld",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "DEON",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=DEON: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "DEON",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jamil",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Jamil: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Jamil",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kvng Flvcko",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Kvng+Flvcko: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Kvng Flvcko",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "MotionPlus",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=MotionPlus: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "MotionPlus",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Adriel Cruz",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Adriel+Cruz: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Adriel Cruz",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Drea LP",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Drea+LP: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Drea LP",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Solachi Voz",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Solachi+Voz: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Solachi Voz",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jeannie Ortega",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Jeannie+Ortega: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Jeannie Ortega",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "A Mose",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=A+Mose: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "A Mose",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Arielle Nichole",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Arielle+Nichole: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Arielle Nichole",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jekasole",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Jekasole: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Jekasole",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Heesun Lee",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Heesun+Lee: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Heesun Lee",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Mahogany Jones",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Mahogany+Jones: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Mahogany Jones",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Linga TheBoss",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Linga+TheBoss: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Linga TheBoss",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Latoria",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Latoria: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Latoria",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Shy Speaks",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Shy+Speaks: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Shy Speaks",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Serious Voice",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Serious+Voice: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Serious Voice",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Tarcea Renee",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Tarcea+Renee: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Tarcea Renee",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "4eva",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=4eva: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "4eva",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Ada Betsabé",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Ada+Betsab%C3%A9: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Ada Betsabé",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "BreeKay & Kasairi",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=BreeKay+%26+Kasairi: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "BreeKay & Kasairi",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Bri Smilez",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Bri+Smilez: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Bri Smilez",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Butta P",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Butta+P: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Butta P",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Carita Cole",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Carita+Cole: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Carita Cole",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Cass",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Cass: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Cass",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Dice Gamble",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Dice+Gamble: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Dice Gamble",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Keiana",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Keiana: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Keiana",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Licy Be",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Licy+Be: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Licy Be",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Pristavia",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Pristavia: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Pristavia",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Erica Mason",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Erica+Mason: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Erica Mason",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kay Sade",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Kay+Sade: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Kay Sade",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jackie Legere",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Jackie+Legere: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Jackie Legere",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Foure",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Foure: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Foure",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Chozenn",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Chozenn: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Chozenn",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "V. Rose",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=V.+Rose: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "V. Rose",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Mike REAL",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Mike+REAL: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Mike REAL",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Spec",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Spec: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Spec",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Christon Gray",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Christon+Gray: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Christon Gray",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Dre Murray",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Dre+Murray: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Dre Murray",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "S.O.",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=S.O.: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "S.O.",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Reconcile",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Reconcile: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Reconcile",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Corey Paul",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Corey+Paul: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Corey Paul",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Alex Faith",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Alex+Faith: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Alex Faith",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Tony Tillman",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Tony+Tillman: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Tony Tillman",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Chad Jones",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Chad+Jones: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Chad Jones",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Dillon Chase",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Dillon+Chase: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Dillon Chase",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Json",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Json: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Json",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "J.R.",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=J.R.: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "J.R.",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Stephen the Levite",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Stephen+the+Levite: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Stephen the Levite",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Timothy Brindle",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Timothy+Brindle: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Timothy Brindle",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Hazakim",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Hazakim: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Hazakim",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Evangel",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Evangel: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Evangel",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "God's Servant",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=God%27s+Servant: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "God's Servant",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Beautiful Eulogy",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Beautiful+Eulogy: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Beautiful Eulogy",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Braille",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Braille: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Braille",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "116",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=116: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "116",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "350",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=350: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "350",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Battz",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Battz: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Battz",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Byron Juane",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Byron+Juane: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Byron Juane",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Coby James",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Coby+James: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Coby James",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "De La Cruz",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=De+La+Cruz: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "De La Cruz",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Gavin the HotRod",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Gavin+the+HotRod: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Gavin the HotRod",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Hollyn",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Hollyn: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Hollyn",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "JGivens",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=JGivens: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "JGivens",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kings Kaleidoscope",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Kings+Kaleidoscope: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Kings Kaleidoscope",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Odd Thomas",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Odd+Thomas: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Odd Thomas",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Q-Flo",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Q-Flo: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Q-Flo",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Ryan Trey",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Ryan+Trey: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Ryan Trey",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Swaizy",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Swaizy: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Swaizy",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "The Weathrman",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=The+Weathrman: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "The Weathrman",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Toschii",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Toschii: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Toschii",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Trendsetter Sense",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Trendsetter+Sense: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Trendsetter Sense",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "J.List",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=J.List: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "J.List",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "D-Maub",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=D-Maub: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "D-Maub",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "K-Drama",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=K-Drama: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "K-Drama",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "K-Drama",
+      "source": "official profile",
+      "url": "https://k-dramatherapper.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Monster Tarver",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Monster+Tarver: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Monster Tarver",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Taelor Gray",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Taelor+Gray: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Taelor Gray",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Taelor Gray",
+      "source": "official profile",
+      "url": "https://www.taelorgray.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "ZEE",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=ZEE: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "ZEE",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "IMRSQD",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=IMRSQD: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "IMRSQD",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "IMRSQD",
+      "source": "official profile",
+      "url": "https://alienzalive.com/artist/imrsqd/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "TJ Carroll",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=TJ+Carroll: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "TJ Carroll",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "TJ Carroll",
+      "source": "official profile",
+      "url": "https://www.tjcarrollmusic.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Coop",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Coop: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Coop",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "CJ Emulous",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=CJ+Emulous: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "CJ Emulous",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "CJ Emulous",
+      "source": "official profile",
+      "url": "https://www.cjemulous.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Lul DreDay",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Lul+DreDay: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Lul DreDay",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Pishko",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Pishko: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Pishko",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Paul Russell",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Paul+Russell: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Paul Russell",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "MC Jin",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=MC+Jin: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "MC Jin",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Gemstones",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Gemstones: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Gemstones",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Mouthpi3ce",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Mouthpi3ce: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Mouthpi3ce",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "John Givez",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=John+Givez: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "John Givez",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Beleaf",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Beleaf: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Beleaf",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "J. Han",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=J.+Han: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "J. Han",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Sam Ock",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Sam+Ock: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Sam Ock",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Dream Junkies",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Dream+Junkies: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Dream Junkies",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jet Trouble",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Jet+Trouble: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Jet Trouble",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Skrip",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Skrip: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Skrip",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Deraj",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Deraj: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Deraj",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Surf Gvng",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Surf+Gvng: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Surf Gvng",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Ki'Shon Furlow",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Ki%27Shon+Furlow: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Ki'Shon Furlow",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Dru Bex",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Dru+Bex: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Dru Bex",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Brinson",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Brinson: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Brinson",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Canton Jones",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Canton+Jones: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Canton Jones",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Mr. Del",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Mr.+Del: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Mr. Del",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Pettidee",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Pettidee: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Pettidee",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Fresh IE",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Fresh+IE: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Fresh IE",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Applejaxx",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Applejaxx: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Applejaxx",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Fedel",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Fedel: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Fedel",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Antwoine Hill",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Antwoine+Hill: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Antwoine Hill",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Brandon Trejo",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Brandon+Trejo: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Brandon Trejo",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Monica Hill Trejo",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Monica+Hill+Trejo: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Monica Hill Trejo",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Moe Grant",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Moe+Grant: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Moe Grant",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Isaiah Robin",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Isaiah+Robin: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Isaiah Robin",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Guvna B",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Guvna+B: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Guvna B",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Faith Child",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Faith+Child: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Faith Child",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Still Shadey",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Still+Shadey: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Still Shadey",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Feed'Em",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Feed%27Em: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Feed'Em",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Reblah",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Reblah: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Reblah",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Triple O",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Triple+O: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Triple O",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "A Star",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=A+Star: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "A Star",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "J Vessel",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=J+Vessel: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "J Vessel",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Dwayne Tryumf",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Dwayne+Tryumf: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Dwayne Tryumf",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Manny Montes",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Manny+Montes: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Manny Montes",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Alex Zurdo",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Alex+Zurdo: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Alex Zurdo",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Musiko",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Musiko: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Musiko",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Indiomar",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Indiomar: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Indiomar",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Gabriel EMC",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Gabriel+EMC: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Gabriel EMC",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jay Kalyl",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Jay+Kalyl: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Jay Kalyl",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Niko Eme",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Niko+Eme: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Niko Eme",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Lizzy Parra",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Lizzy+Parra: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Lizzy Parra",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Rubinsky RBK",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Rubinsky+RBK: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Rubinsky RBK",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Madiel Lara",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Madiel+Lara: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Madiel Lara",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Ariel Kelly",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Ariel+Kelly: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Ariel Kelly",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Oba Reengy",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Oba+Reengy: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Oba Reengy",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    }
+  ]
+}

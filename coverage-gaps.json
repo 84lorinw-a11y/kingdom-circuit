@@ -1,6 +1,6 @@
 {
   "policyVersion": 4,
-  "generatedAt": "2026-08-21T12:08:36Z",
+  "generatedAt": "2026-08-24T14:16:58Z",
   "highRiskArtists": [],
   "mediumRiskArtists": [
     {
@@ -97,6 +97,26 @@
       "ticketmasterUnmatched": true,
       "ticketmasterFailed": false,
       "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
+    },
+    {
+      "artist": "Mike Teezy",
+      "healthyDedicatedSources": [
+        "Mike Teezy Apple Music concerts"
+      ],
+      "failedDedicatedSources": [
+        "Mike Teezy official tour"
+      ],
+      "ticketmasterUnmatched": true,
+      "ticketmasterFailed": false,
+      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
+    },
+    {
+      "artist": "Rua Young",
+      "healthyDedicatedSources": [],
+      "failedDedicatedSources": [],
+      "ticketmasterUnmatched": true,
+      "ticketmasterFailed": false,
+      "reason": "No Ticketmaster match and no healthy dedicated artist calendar was recorded in the latest run."
     },
     {
       "artist": "Alex Jean",
@@ -249,18 +269,6 @@
       "ticketmasterUnmatched": true,
       "ticketmasterFailed": false,
       "reason": "No Ticketmaster match and no healthy dedicated artist calendar was recorded in the latest run."
-    },
-    {
-      "artist": "Mike Teezy",
-      "healthyDedicatedSources": [
-        "Mike Teezy Apple Music concerts"
-      ],
-      "failedDedicatedSources": [
-        "Mike Teezy official tour"
-      ],
-      "ticketmasterUnmatched": true,
-      "ticketmasterFailed": false,
-      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
     },
     {
       "artist": "Red Tips",
