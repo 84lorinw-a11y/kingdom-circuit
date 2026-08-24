@@ -1,15 +1,23 @@
 {
-  "generatedAt": "2026-08-21T17:40:19Z",
-  "artistsConfigured": 312,
-  "officialWebsitesChecked": 11,
+  "generatedAt": "2026-08-24T14:17:35Z",
+  "artistsConfigured": 320,
+  "officialWebsitesChecked": 58,
   "artistsWithEvents": 0,
   "eventsFound": 0,
-  "warningCount": 4,
+  "warningCount": 12,
   "warnings": [
+    "Aaron Cole Bandsintown: Unable to retrieve https://www.bandsintown.com/a/2471775: HTTP Error 403: Forbidden",
+    "Aaron Cole Bandsintown: Unable to retrieve https://www.bandsintown.com/a/2471775: HTTP Error 403: Forbidden",
+    "Mike Malagies tour page: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
+    "Mike Malagies tour page: Unable to retrieve https://www.mikemalagiesofficial.com: HTTP Error 429: Too Many Requests",
+    "Zauntee: Unable to retrieve https://www.zauntee.com/: HTTP Error 429: Too Many Requests",
+    "Bizzle: Unable to retrieve https://bizzle.vip/: <urlopen error [Errno -2] Name or service not known>",
     "Kai Uriah: robots.txt blocked https://linktr.ee/itskaiuriah",
     "Rhema Soul: Unable to retrieve http://rhemasoul.com/: HTTP Error 500: Internal Server Error",
     "808 BEEZY Bandsintown: Unable to retrieve https://www.bandsintown.com/a/792282-808-beezy: HTTP Error 403: Forbidden",
-    "808 BEEZY Bandsintown: Unable to retrieve https://www.bandsintown.com/a/792282-808-beezy: HTTP Error 403: Forbidden"
+    "808 BEEZY Bandsintown: Unable to retrieve https://www.bandsintown.com/a/792282-808-beezy: HTTP Error 403: Forbidden",
+    "Mike Teezy: Unable to retrieve https://www.miketeezymusic.com/: HTTP Error 429: Too Many Requests",
+    "Kurtis Hoppie: Unable to retrieve https://www.thekurtishoppie.com/: HTTP Error 429: Too Many Requests"
   ],
   "mode": "all-tracked-artists-official-website-scan"
 }
