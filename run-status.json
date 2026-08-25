@@ -1,10 +1,10 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-08-24T14:04:57Z",
-  "lastSuccessfulUpdate": "2026-08-24T14:04:57Z",
-  "eventsPublished": 84,
-  "candidatesCollected": 180,
+  "lastAttempt": "2026-08-25T14:09:26Z",
+  "lastSuccessfulUpdate": "2026-08-25T14:09:26Z",
+  "eventsPublished": 78,
+  "candidatesCollected": 175,
   "artistsConfigured": 320,
   "artistsByPriority": {
     "priority1": 102,
@@ -15,8 +15,8 @@
   "socialSearchArtistsEnabled": 127,
   "freeTextAliasesProtected": 104,
   "artistsMatchedOnTicketmaster": 70,
-  "officialEventsFound": 75,
-  "ticketmasterEventsFound": 59,
+  "officialEventsFound": 73,
+  "ticketmasterEventsFound": 56,
   "instagramArtistsConfigured": 127,
   "instagramQueriesRun": 129,
   "instagramQueriesAttempted": 127,
@@ -49,7 +49,7 @@
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 261,
+  "sourcesChecked": 263,
   "unmatchedArtists": [
     "Scootie Wop",
     "Mike Malagies",
@@ -197,7 +197,7 @@
     {
       "name": "Reach Records consolidated calendar",
       "status": "ok",
-      "eventsFound": 30
+      "eventsFound": 29
     },
     {
       "name": "Reach Records - 1K Phew",
@@ -272,7 +272,7 @@
     {
       "name": "Rural Music Festival official event",
       "status": "ok",
-      "eventsFound": 1
+      "eventsFound": 0
     },
     {
       "name": "OneFest official schedule",
@@ -341,7 +341,7 @@
     },
     {
       "name": "Zauntee official tour",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -601,7 +601,7 @@
     },
     {
       "name": "LifeLight Sioux Falls official lineup",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -632,10 +632,9 @@
       "queriesRun": 129
     }
   ],
-  "warningCount": 24,
+  "warningCount": 22,
   "errorCount": 0,
   "warnings": [
-    "Zauntee official tour: Unable to retrieve https://www.zauntee.com/tour: HTTP Error 429: Too Many Requests",
     "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
     "Trendsetter Sense official events: Unable to retrieve https://www.trendsettersense.com/event-list: HTTP Error 429: Too Many Requests",
     "NF Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11969355-nf: HTTP Error 403: Forbidden",
@@ -657,13 +656,8 @@
     "FLAME Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/16627-flame: HTTP Error 403: Forbidden",
     "Alex Jean Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15570394-alex-jean: HTTP Error 403: Forbidden",
     "KB Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/165768-kb: HTTP Error 403: Forbidden",
-    "Anike Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4673148-anike: HTTP Error 403: Forbidden",
-    "LifeLight Sioux Falls official lineup: Unable to retrieve https://lifelight.org/llsf-lineup/: <urlopen error timed out>"
+    "Anike Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4673148-anike: HTTP Error 403: Forbidden"
   ],
   "errors": [],
-  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings.",
-  "artistWebsiteEventsFound": 0,
-  "artistWebsiteSeedEvents": 17,
-  "artistWebsiteEventsAdded": 17,
-  "artistWebsiteMergeAt": "2026-08-24T14:20:03Z"
+  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings."
 }

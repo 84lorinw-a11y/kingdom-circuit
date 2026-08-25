@@ -1,6 +1,6 @@
 {
   "policyVersion": 4,
-  "generatedAt": "2026-08-24T14:16:58Z",
+  "generatedAt": "2026-08-25T14:20:11Z",
   "highRiskArtists": [],
   "mediumRiskArtists": [
     {
@@ -61,16 +61,6 @@
         "Mike Malagies Bandsintown public calendar"
       ],
       "ticketmasterUnmatched": true,
-      "ticketmasterFailed": false,
-      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
-    },
-    {
-      "artist": "Zauntee",
-      "healthyDedicatedSources": [],
-      "failedDedicatedSources": [
-        "Zauntee official tour"
-      ],
-      "ticketmasterUnmatched": false,
       "ticketmasterFailed": false,
       "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
     },
