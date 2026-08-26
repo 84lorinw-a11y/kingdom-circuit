@@ -1,0 +1,60 @@
+name: Install live event image finalizer
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install finalizer into production artifact cleanup
+        shell: bash
+        run: |
+          set -euo pipefail
+          git pull --rebase origin main
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("scripts/apply_live_artist_overrides.py")
+          text = path.read_text(encoding="utf-8")
+          call = '    __import__("subprocess").run([__import__("sys").executable, str(pathlib.Path(__file__).with_name("finalize_live_event_images.py")), "--site", str(out_dir)], check=True)\n'
+          if call not in text:
+              needle = '    clean_sitemap(out_dir, removed_event_slugs)\n    verify_site(out_dir)\n'
+              if needle not in text:
+                  raise SystemExit("Could not find live artifact finalizer insertion point")
+              text = text.replace(
+                  needle,
+                  '    clean_sitemap(out_dir, removed_event_slugs)\n' + call + '    verify_site(out_dir)\n',
+                  1,
+              )
+              path.write_text(text, encoding="utf-8")
+          PY
+
+          if git diff --quiet -- scripts/apply_live_artist_overrides.py; then
+            echo "Finalizer already installed."
+            exit 0
+          fi
+
+          python -m py_compile scripts/apply_live_artist_overrides.py scripts/finalize_live_event_images.py
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/apply_live_artist_overrides.py
+          git commit -m "Run final event image audit on live deploy"
+
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            git fetch origin main
+            git rebase origin/main
+          done
+          exit 1
