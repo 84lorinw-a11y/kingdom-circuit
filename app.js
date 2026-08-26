@@ -82,7 +82,6 @@ const ARTIST_ROSTER_ORDER = [
   "B. Cody Shields",
   "Santana Rose",
   "DJ Winn",
-  "BIG HOLY",
   "REDEEMED",
   "Rua Young",
   "Kurtis Hoppie",
@@ -92,6 +91,13 @@ const ARTIST_ROSTER_ORDER = [
   "K-SEE",
   "Gospel Gangstaz",
   "Wuhsahbee",
+  "Kelo",
+  "DKG Kie",
+  "Braille",
+  "Canton Jones",
+  "Jay-Way",
+  "Stixx aka Conejo",
+  "Ruslan",
   "Alex Jean",
   "gio.",
   "Torey D'Shaun",
@@ -123,7 +129,6 @@ const ARTIST_ROSTER_ORDER = [
   "DJ Mykael V",
   "Mogli the Iceburg",
   "Tommy Royale",
-  "Jay-Way",
   "Ty Brasel",
   "J. Monty",
   "Datin",
@@ -140,7 +145,6 @@ const ARTIST_ROSTER_ORDER = [
   "Shai Linne",
   "Thi'sl",
   "Swoope",
-  "Ruslan",
   "Mission",
   "DaeShawn Forrest",
   "BigBreeze",
@@ -151,7 +155,6 @@ const ARTIST_ROSTER_ORDER = [
   "Jude Barclay",
   "Kaleb Mitchell",
   "Xay Hill",
-  "DKG Kie",
   "J. Crum",
   "Nathan Davis Jr.",
   "Angie Rose",
@@ -181,7 +184,6 @@ const ARTIST_ROSTER_ORDER = [
   "Peair",
   "Razzie",
   "Saint Jones",
-  "Stixx aka Conejo",
   "Tay Stunna",
   "YakiTheKid",
   "yumiya!",
@@ -189,7 +191,6 @@ const ARTIST_ROSTER_ORDER = [
   "Kevi Morse",
   "Chris Caro",
   "EJ Swavv",
-  "Kelo",
   "J.Solo",
   "Tds Cam",
   "Kham",
@@ -232,7 +233,6 @@ const ARTIST_ROSTER_ORDER = [
   "Keiana",
   "Licy Be",
   "Pristavia",
-  "Erica Mason",
   "Kay Sade",
   "Jackie Legere",
   "Foure",
@@ -247,7 +247,6 @@ const ARTIST_ROSTER_ORDER = [
   "Corey Paul",
   "Alex Faith",
   "Tony Tillman",
-  "Chad Jones",
   "Dillon Chase",
   "Json",
   "J.R.",
@@ -257,7 +256,6 @@ const ARTIST_ROSTER_ORDER = [
   "Evangel",
   "God's Servant",
   "Beautiful Eulogy",
-  "Braille",
   "116",
   "350",
   "Battz",
@@ -303,7 +301,6 @@ const ARTIST_ROSTER_ORDER = [
   "Ki'Shon Furlow",
   "Dru Bex",
   "Brinson",
-  "Canton Jones",
   "Mr. Del",
   "Pettidee",
   "Fresh IE",
@@ -1036,7 +1033,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "website": "https://www.google.com/search?q=Y+Shadey+official+website",
     "instagramProfile": "https://www.instagram.com/yshadey/",
     "spotifyProfile": "https://open.spotify.com/search/Y%20Shadey",
-    "youtubeProfile": "https://www.youtube.com/results?search_query=Y%20Shadey+official",
+    "youtubeProfile": "https://www.youtube.com/results?search_query=Y+Shadey+official",
     "officialImageSource": "https://www.instagram.com/yshadey/",
     "sourceRegistryVerified": true
   },
@@ -1060,7 +1057,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "website": "https://www.google.com/search?q=Rare+of+Breed+official+website",
     "instagramProfile": "https://www.instagram.com/rareofbreed/",
     "spotifyProfile": "https://open.spotify.com/search/Rare%20of%20Breed",
-    "youtubeProfile": "https://www.youtube.com/results?search_query=Rare%20of%20Breed+official",
+    "youtubeProfile": "https://www.youtube.com/results?search_query=Rare+of+Breed+official",
     "officialImageSource": "https://www.instagram.com/rareofbreed/",
     "sourceRegistryVerified": true
   },
@@ -1117,20 +1114,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "website": "https://www.google.com/search?q=DJ+Winn+official+website",
     "instagramProfile": "https://www.instagram.com/djwinn/",
     "spotifyProfile": "https://open.spotify.com/search/DJ%20Winn",
-    "youtubeProfile": "https://www.youtube.com/results?search_query=DJ%20Winn+official",
+    "youtubeProfile": "https://www.youtube.com/results?search_query=DJ+Winn+official",
     "officialImageSource": "https://www.instagram.com/djwinn/",
-    "sourceRegistryVerified": true
-  },
-  "big holy": {
-    "aliases": [
-      "BIG HOLY",
-      "Big Holy"
-    ],
-    "website": "https://www.google.com/search?q=BIG+HOLY+official+website",
-    "instagramProfile": "https://www.instagram.com/bigholy/",
-    "spotifyProfile": "https://open.spotify.com/search/BIG%20HOLY",
-    "youtubeProfile": "https://www.youtube.com/results?search_query=BIG+HOLY+official",
-    "officialImageSource": "https://www.instagram.com/bigholy/",
     "sourceRegistryVerified": true
   },
   "redeemed": {
@@ -1233,6 +1218,108 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "youtubeProfile": "https://www.youtube.com/channel/UCxYy0QJZrz4JRq6Jn0MevBQ",
     "officialImageSource": "https://www.instagram.com/wuhsahbee/",
     "sourceRegistryVerified": true
+  },
+  "kelo": {
+    "aliases": [
+      "Kelo"
+    ],
+    "website": "https://www.instagram.com/cutthecho/",
+    "instagramProfile": "https://www.instagram.com/cutthecho/",
+    "spotifyProfile": "https://open.spotify.com/artist/6j8t8rQzrAtRx5tYImodgd",
+    "youtubeProfile": "https://www.youtube.com/channel/UCAvlfmD2aiqXxxknr-9VSVg",
+    "officialImageSource": "https://www.instagram.com/cutthecho/",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 79
+  },
+  "dkg kie": {
+    "aliases": [
+      "DKG Kie"
+    ],
+    "website": "https://www.dkgkiemerch.com/",
+    "instagramProfile": "https://www.instagram.com/dkg.kie",
+    "spotifyProfile": "https://open.spotify.com/artist/1eeYg6dFkaRT5GA0lsCVHA",
+    "youtubeProfile": "https://www.youtube.com/@dkgkie",
+    "officialImageSource": "https://www.instagram.com/dkg.kie",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 80
+  },
+  "braille": {
+    "aliases": [
+      "Braille"
+    ],
+    "website": "https://www.humblebeast.com/music/braille",
+    "instagramProfile": "https://www.instagram.com/bryanbraille/",
+    "spotifyProfile": "https://open.spotify.com/artist/6RYTz1tFNDF2qP0mwqEwDO",
+    "youtubeProfile": "https://www.youtube.com/@bryanbraille",
+    "officialImageSource": "https://www.humblebeast.com/music/braille",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 81
+  },
+  "canton jones": {
+    "aliases": [
+      "Canton Jones"
+    ],
+    "website": "https://www.instagram.com/thecantonjones/?hl=en",
+    "instagramProfile": "https://www.instagram.com/thecantonjones/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/3nzEXHMRFWTw4zt3pVRv6V",
+    "youtubeProfile": "https://www.youtube.com/@CantonJones1",
+    "officialImageSource": "https://www.instagram.com/thecantonjones/?hl=en",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 82
+  },
+  "jay-way": {
+    "aliases": [
+      "Jay-Way",
+      "Jay Way"
+    ],
+    "website": "https://www.jaywaythealien.com/",
+    "instagramProfile": "https://www.instagram.com/JayWayTheAlien",
+    "spotifyProfile": "https://open.spotify.com/artist/1RDbE3dM2bNNSTh88R4MQ7",
+    "youtubeProfile": "https://www.youtube.com/@JayWayTheAlien",
+    "officialImageSource": "https://www.jaywaythealien.com/",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 83
+  },
+  "stixx aka conejo": {
+    "aliases": [
+      "Stixx aka Conejo",
+      "Stixx"
+    ],
+    "website": "https://linktr.ee/stixxwym",
+    "instagramProfile": "https://www.instagram.com/stixxwym",
+    "spotifyProfile": "https://open.spotify.com/artist/3khYLvZ6GmLlPMPlTfMTBr",
+    "youtubeProfile": "https://www.youtube.com/@stixxwym/videos",
+    "officialImageSource": "https://linktr.ee/stixxwym",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 84
+  },
+  "ruslan": {
+    "aliases": [
+      "Ruslan",
+      "Ruslan KD"
+    ],
+    "website": "https://www.instagram.com/ruslankd/?hl=en",
+    "instagramProfile": "https://www.instagram.com/ruslankd/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/2GEXrCflKZ5S5ZHBM4LNcV",
+    "youtubeProfile": "https://www.youtube.com/@RuslanKD/featured",
+    "officialImageSource": "https://www.instagram.com/ruslankd/?hl=en",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 85
+  },
+  "caleb gordon": {
+    "aliases": [
+      "Caleb Gordon"
+    ],
+    "website": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+    "instagramProfile": "https://www.instagram.com/calebfromeden/",
+    "spotifyProfile": "https://open.spotify.com/artist/6s3XaJkcT7464G4oII9V41",
+    "youtubeProfile": "https://www.youtube.com/@CalebGordon",
+    "officialImageSource": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+    "imageUrl": "https://tprlive.co/cdn/shop/files/ARTIST_HEADSHOT_36.jpg?v=1776887171&width=1797",
+    "imagePosition": "center",
+    "preferArtistImage": true,
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 4
   }
 };
 const ARTIST_OVERRIDES = {
@@ -2055,6 +2142,28 @@ show${events.length === 1 ? "" : "s"} currently listed.</p></div></section><sect
   setMetaDescription(`Find verified upcoming U.S. shows and official links for ${artist.name}.`);
   root.querySelectorAll("[data-artist-social]").forEach(link => link.addEventListener("click", () => trackArtistInteraction("artist_social_click", link.dataset.artistName || artist.name, link.dataset.artistSocial || "")));
 }
+
+function enhanceVerifiedArtistImages() {
+  document.querySelectorAll("[data-artist-card]").forEach(card => {
+    const name = card.querySelector("h2 a")?.textContent || "";
+    const artist = artistConfig(name);
+    const visual = card.querySelector(".artist-visual");
+    if (!visual || !artist?.imageUrl) return;
+    visual.classList.remove("artist-visual-empty");
+    visual.innerHTML = `<img src="${esc(localAssetUrl(artist.imageUrl))}" alt="${esc(artist.name)}" loading="lazy" onerror="this.onerror=null;this.src='${FALLBACK_EVENT_IMAGE}';">`;
+  });
+
+  const root = document.querySelector("[data-artist-profile]");
+  if (!root) return;
+  const name = new URLSearchParams(location.search).get("name") || "";
+  const artist = artistConfig(name);
+  const hero = root.querySelector(".profile-hero");
+  if (!hero || !artist?.imageUrl || hero.querySelector(".profile-visual")) return;
+  hero.classList.remove("profile-hero-no-image");
+  hero.insertAdjacentHTML("afterbegin", `<div class="profile-visual"><img src="${esc(localAssetUrl(artist.imageUrl))}" alt="${esc(artist.name)}" onerror="this.onerror=null;this.src='${FALLBACK_EVENT_IMAGE}';"></div>`);
+  hero.querySelector(".profile-image-note")?.remove();
+}
+
 function renderEventDetail() {
   const root = document.querySelector("[data-event-detail]");
   if (!root) return;
@@ -2180,6 +2289,7 @@ async function boot() {
   ensureArtistEnhancementStyles();
   renderArtistDirectory();
   renderArtistProfile();
+  enhanceVerifiedArtistImages();
   renderEventDetail();
   setupSubmissionForm();
   renderCalendarStatus();

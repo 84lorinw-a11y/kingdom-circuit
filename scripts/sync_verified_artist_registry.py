@@ -13,7 +13,7 @@ import re
 from pathlib import Path
 from urllib.parse import urlparse
 
-SYNC_VERSION = 4
+SYNC_VERSION = 5
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 UPDATES_FILE = ROOT / "config" / "verified-artist-registry-updates.json"
@@ -64,6 +64,8 @@ def real_official_website(value: object) -> str:
 def sync_config() -> tuple[list[dict], list[dict], int]:
     artists = load_json(ARTISTS_FILE, [])
     updates = load_json(UPDATES_FILE, [])
+    artists = [item for item in artists if isinstance(item, dict) and norm(item.get("name")) not in {"chad jones", "erica mason", "big holy"}]
+    updates = [item for item in updates if isinstance(item, dict) and norm(item.get("name")) not in {"chad jones", "erica mason", "big holy"}]
     if not isinstance(artists, list) or not isinstance(updates, list) or not updates:
         raise SystemExit("Verified registry sync expected non-empty artist/update arrays")
 
@@ -71,10 +73,9 @@ def sync_config() -> tuple[list[dict], list[dict], int]:
     if len(update_names) != len(updates) or len({norm(name) for name in update_names}) != len(update_names):
         raise SystemExit("Verified registry updates contain a blank or duplicate artist name")
 
-    expected_orders = list(range(55, 55 + len(updates)))
     actual_orders = [int(item.get("rosterOrder") or 0) for item in updates]
-    if actual_orders != expected_orders:
-        raise SystemExit(f"Verified registry block must be contiguous 55-{54 + len(updates)}: {actual_orders}")
+    if not actual_orders or actual_orders[0] != 55 or actual_orders != sorted(set(actual_orders)):
+        raise SystemExit(f"Verified registry source orders must be unique, increasing, and begin at 55: {actual_orders}")
 
     by_name = {norm(item.get("name")): item for item in artists if isinstance(item, dict) and item.get("name")}
     changed = 0
@@ -119,6 +120,7 @@ def sync_config() -> tuple[list[dict], list[dict], int]:
             "socialSearchEnabled": True,
             "activeStatus": target.get("activeStatus") or "active_or_unknown",
             "sourceRegistryVerified": True,
+            "sourceRegistryRosterOrder": int(update.get("rosterOrder") or 0),
         }.items():
             if target.get(field) != value:
                 target[field] = value
@@ -149,8 +151,8 @@ def sync_config() -> tuple[list[dict], list[dict], int]:
     names = [str(item.get("name") or "") for item in final_artists]
     if len(names) != len(set(map(norm, names))):
         raise SystemExit("Roster sync produced duplicate artist names")
-    if names[54:78] != update_names:
-        raise SystemExit("Verified registry block did not land exactly at roster positions 55-78")
+    if names[54:54 + len(update_names)] != update_names:
+        raise SystemExit(f"Verified registry block did not land exactly after roster position 54: {update_names}")
 
     ARTISTS_FILE.write_text(
         json.dumps(final_artists, indent=2, ensure_ascii=False) + "\n",
