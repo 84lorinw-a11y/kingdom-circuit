@@ -516,7 +516,7 @@ class KingdomCircuitV7Tests(unittest.TestCase):
         expected = {
             "EGR", "Sevin", "ASAP Preach", "Nicky Gracious", "Brother Bo",
             "Tommy Chapa", "B. Cody Shields", "Santana Rose", "DJ Winn",
-            "J.List", "BIG HOLY", "KJ-52", "Bryann T", "Young Bro",
+            "J.List", "KJ-52", "Bryann T", "Young Bro",
             "D-Maub", "K-Drama", "GAWVI", "Monster Tarver", "Taelor Gray",
             "ZEE", "IMRSQD", "TJ Carroll", "Coop", "CJ Emulous",
             "Lul DreDay", "REDEEMED", "Pishko",
