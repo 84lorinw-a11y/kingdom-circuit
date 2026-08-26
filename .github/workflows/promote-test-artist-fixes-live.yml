@@ -8,7 +8,6 @@ on:
 
 permissions:
   contents: write
-  actions: write
 
 jobs:
   promote:
@@ -24,11 +23,12 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install persistent live promotion pipeline
+      - name: Install source-side promotion safeguards
         run: |
           set -euo pipefail
           python -m py_compile scripts/apply_live_artist_overrides.py
           python scripts/apply_live_artist_overrides.py --install
+          git checkout -- .github/workflows/update-and-deploy.yml .github/workflows/sync-verified-artist-registry.yml
 
       - name: Sync canonical registry and apply verified source fixes
         run: |
@@ -36,6 +36,7 @@ jobs:
           python -m py_compile scripts/sync_verified_artist_registry.py
           python scripts/sync_verified_artist_registry.py
           python scripts/apply_live_artist_overrides.py --source .
+          rm -rf scripts/__pycache__
 
       - name: Verify promoted source state
         run: |
@@ -66,6 +67,8 @@ jobs:
           caleb = by_name["caleb gordon"]
           assert "ARTIST_HEADSHOT_36.jpg" in caleb["imageUrl"]
           assert caleb["instagramProfile"] == "https://www.instagram.com/calebfromeden/"
+          assert caleb["spotifyProfile"] == "https://open.spotify.com/artist/6s3XaJkcT7464G4oII9V41"
+          assert caleb["youtubeProfile"] == "https://www.youtube.com/@CalebGordon"
 
           updates = json.loads(Path("config/verified-artist-registry-updates.json").read_text(encoding="utf-8"))
           update_names = {str(x.get("name") or "").casefold() for x in updates}
@@ -87,16 +90,19 @@ jobs:
           print("Verified live source promotion:", len(artists), "artists")
           PY
 
-      - name: Commit promoted live state
+      - name: Commit promoted non-workflow source state
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "kingdom-circuit-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git rm .github/workflows/promote-test-artist-fixes-live.yml
-          git add -A
+          git add config/artists.json \
+                  config/verified-artist-registry-updates.json \
+                  config/verified-artist-websites.json \
+                  scripts/sync_verified_artist_registry.py \
+                  app.js events.json tests/test_update_events.py
           if git diff --cached --quiet; then
-            echo "No promotion changes to commit."
+            echo "No source promotion changes to commit."
           else
             git commit -m "Promote verified artist fixes to live"
             PUSHED=0
@@ -105,13 +111,9 @@ jobs:
                 PUSHED=1
                 break
               fi
+              echo "Push raced with another commit; rebasing and retrying ($attempt/3)."
               git fetch origin main
               git rebase origin/main
             done
             test "$PUSHED" -eq 1
           fi
-
-      - name: Deploy updated live site
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh workflow run update-and-deploy.yml --ref main
