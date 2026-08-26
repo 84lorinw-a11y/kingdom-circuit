@@ -5,6 +5,7 @@
 // presentation overrides; the canonical source URLs remain in the registry.
 const KC_ARTIST_IMAGE_OVERRIDES = {
   "808 beezy": "https://pbs.twimg.com/profile_images/1836827722309312512/e5kgorwv.jpg",
+  "parris chariz": "https://images.squarespace-cdn.com/content/v1/5dcb525470489e545ccc40e9/1712680680873-0035Z6FC03TADRGONB2Y/parris%2Bchariz.jpeg",
   "mike teezy": "https://real.fm/assets/Uploads/MikeTeezy__FocusFillWyItMC4xMSIsIi0wLjE2IiwxMjAwLDYyN10.jpg",
   "porsha love": "https://unavatar.io/instagram/porshalove",
   "nicky gracious": "https://unavatar.io/instagram/nickygracious",
@@ -99,7 +100,8 @@ if (typeof eventImage === "function") {
 
     const artist = typeof artistConfig === "function" ? artistConfig(event?.headliner || event?.artists?.[0]) : null;
     const artistOverride = kcDirectArtistImage(artist);
-    if (artistOverride && !event?.image) return artistOverride;
+    const currentImage = String(event?.image || "");
+    if (artistOverride && (!currentImage || currentImage.includes("event-fallback"))) return artistOverride;
     return kcOriginalEventImage(event);
   };
 }
@@ -209,9 +211,12 @@ function kcRepairEventCards() {
       if (img.src !== hopeImage) img.src = hopeImage;
       return;
     }
-    if (text.includes("808 beezy")) {
-      const beezy = KC_ARTIST_IMAGE_OVERRIDES["808 beezy"];
-      if (img.src !== beezy) img.src = beezy;
+    if (img.src.includes("/assets/event-fallback.webp")) {
+      for (const [artistName, url] of Object.entries(KC_ARTIST_IMAGE_OVERRIDES)) {
+        if (!text.includes(artistName)) continue;
+        if (img.src !== url) img.src = url;
+        return;
+      }
     }
   });
 }
