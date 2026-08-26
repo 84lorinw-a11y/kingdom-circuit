@@ -13,6 +13,7 @@ BASE = "/"
 SEO_SOURCE = pathlib.Path(os.environ.get("KC_SEO_SOURCE", "_seo_source/scripts"))
 IMAGE_OVERRIDES_REL = pathlib.Path("config/verified-artist-image-overrides.json")
 EXCLUDED_ARTISTS = {"chad jones", "erica mason", "big holy"}
+EXCLUDED_ARTIST_SLUGS = {"chad-jones", "erica-mason", "big-holy"}
 
 
 def load_module(name: str, path: pathlib.Path):
@@ -236,6 +237,25 @@ def align_artist_schema(root: pathlib.Path) -> None:
     aligner.align(root)
 
 
+def remove_retired_artist_links(root: pathlib.Path) -> None:
+    patterns = [
+        re.compile(
+            rf'<a\b[^>]*href="[^"]*/artists/{re.escape(slug)}/[^"]*"[^>]*>.*?</a>',
+            flags=re.I | re.S,
+        )
+        for slug in EXCLUDED_ARTIST_SLUGS
+    ]
+    for page in root.rglob("*.html"):
+        if is_build_only_path(page, root):
+            continue
+        text = page.read_text(encoding="utf-8", errors="ignore")
+        original = text
+        for pattern in patterns:
+            text = pattern.sub("", text)
+        if text != original:
+            page.write_text(text, encoding="utf-8")
+
+
 def final_production_verify(root: pathlib.Path) -> None:
     failures: list[str] = []
     robots = (root / "robots.txt").read_text(encoding="utf-8")
@@ -254,10 +274,14 @@ def final_production_verify(root: pathlib.Path) -> None:
         if is_build_only_path(page, root):
             continue
         text = page.read_text(encoding="utf-8", errors="ignore")
+        lowered = text.casefold()
         if page.name != "404.html" and 'name="robots" content="index,follow"' not in text:
             failures.append(f"index-follow:{page}")
         if "kingdom-circuit-test" in text or "G-TEST-DISABLED" in text:
             failures.append(f"test-leak:{page}")
+        for slug in EXCLUDED_ARTIST_SLUGS:
+            if f"/artists/{slug}/" in lowered:
+                failures.append(f"retired-artist-link:{page}:{slug}")
         canon = re.search(r'<link rel="canonical" href="([^"]+)">', text)
         if canon and not canon.group(1).startswith(SITE_ORIGIN + "/"):
             failures.append(f"canonical:{page}:{canon.group(1)}")
@@ -331,6 +355,7 @@ def main(site_root: str) -> None:
     apply_verified_artist_image_overrides(root)
     apply_artist_fidelity(root)
     align_artist_schema(root)
+    remove_retired_artist_links(root)
     final_production_verify(root)
     print("Approved SEO upgrade applied and production safety checks passed")
 
