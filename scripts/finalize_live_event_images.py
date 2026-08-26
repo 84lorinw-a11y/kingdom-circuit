@@ -10,6 +10,7 @@ import shutil
 
 FALLBACK = "/assets/event-fallback.webp"
 EXCLUDED_ARTISTS = {"chad jones", "erica mason", "big holy"}
+EXCLUDED_SLUGS = {"chad-jones", "erica-mason", "big-holy"}
 
 # Verified/known-good presentation images used only when an event otherwise has
 # generic artwork. Real event artwork is always preserved.
@@ -62,8 +63,7 @@ IMAGE_CANDIDATES = {
 
 
 def norm(value: object) -> str:
-    value = html.unescape(str(value or "")).casefold()
-    value = value.replace("’", "'")
+    value = html.unescape(str(value or "")).casefold().replace("’", "'")
     return re.sub(r"\s+", " ", value).strip()
 
 
@@ -82,21 +82,13 @@ def write_json(path: pathlib.Path, value: list) -> None:
     path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
-def excluded_event(event: dict) -> bool:
-    names = [event.get("headliner")] + list(event.get("artists") or [])
-    return any(norm(name) in EXCLUDED_ARTISTS for name in names if name)
-
-
 def artist_key_from_names(names: list[str]) -> str | None:
     normalized = [norm(name) for name in names if name]
     for name in normalized:
         if name in IMAGE_CANDIDATES:
             return name
     combined = " | ".join(normalized)
-    for key in IMAGE_CANDIDATES:
-        if key in combined:
-            return key
-    return None
+    return next((key for key in IMAGE_CANDIDATES if key in combined), None)
 
 
 def needs_repair(value: object) -> bool:
@@ -104,30 +96,62 @@ def needs_repair(value: object) -> bool:
     return (not image) or ("event-fallback.webp" in image) or ("open.voidware.de/artist/" in image)
 
 
-def patch_event_json(path: pathlib.Path) -> tuple[int, int]:
+def patch_event_json(path: pathlib.Path) -> tuple[int, int, int]:
     events = load_json(path)
     if not events:
-        return 0, 0
-    cleaned = []
-    removed = repaired = 0
+        return 0, 0, 0
+    cleaned: list[dict] = []
+    removed = repaired = retired_names_removed = 0
     for event in events:
         if not isinstance(event, dict):
             continue
-        if excluded_event(event):
+        original_artists = [str(name) for name in (event.get("artists") or []) if name]
+        remaining = [name for name in original_artists if norm(name) not in EXCLUDED_ARTISTS]
+        retired_names_removed += len(original_artists) - len(remaining)
+        headliner = str(event.get("headliner") or "").strip()
+        headliner_excluded = norm(headliner) in EXCLUDED_ARTISTS
+        title_excluded = any(name in norm(event.get("title")) for name in EXCLUDED_ARTISTS)
+
+        # Retire an event only when its actual billed identity is retired. Mixed
+        # festivals survive; the retired performer is simply removed from lineup.
+        if (headliner_excluded or title_excluded) and not remaining:
             removed += 1
             continue
+        if original_artists != remaining:
+            event["artists"] = remaining
+        if headliner_excluded:
+            if remaining:
+                event["headliner"] = remaining[0]
+            else:
+                event.pop("headliner", None)
+
         key = artist_key_from_names([event.get("headliner") or ""] + list(event.get("artists") or []))
         if key and needs_repair(event.get("image")):
             event["image"] = IMAGE_CANDIDATES[key][0]
             repaired += 1
         cleaned.append(event)
     write_json(path, cleaned)
-    return removed, repaired
+    return removed, repaired, retired_names_removed
+
+
+def structured_performers(text: str) -> list[str]:
+    # Generated event pages encode performers as MusicGroup objects in JSON-LD.
+    return [html.unescape(name) for name in re.findall(
+        r'"@type"\s*:\s*"MusicGroup"\s*,\s*"name"\s*:\s*"([^"]+)"',
+        text,
+        flags=re.I,
+    )]
 
 
 def event_page_should_be_removed(text: str) -> bool:
-    lowered = norm(strip_tags(text))
-    return any(name in lowered for name in EXCLUDED_ARTISTS)
+    performers = structured_performers(text)
+    if performers:
+        normalized = [norm(name) for name in performers]
+        return bool(normalized) and all(name in EXCLUDED_ARTISTS for name in normalized)
+    # Fallback for older generated pages without performer JSON-LD.
+    lowered = norm(text)
+    explicit = [name for name in EXCLUDED_ARTISTS if f"content=\"{name} live" in lowered]
+    return bool(explicit)
 
 
 def remove_excluded_event_pages(root: pathlib.Path) -> set[str]:
@@ -170,10 +194,7 @@ def key_from_html(block: str) -> str | None:
     if key:
         return key
     text = norm(strip_tags(block))
-    for candidate in IMAGE_CANDIDATES:
-        if candidate in text:
-            return candidate
-    return None
+    return next((candidate for candidate in IMAGE_CANDIDATES if candidate in text), None)
 
 
 def set_img_src(tag: str, src: str, key: str) -> str:
@@ -224,7 +245,8 @@ def patch_html_page(page: pathlib.Path, removed_slugs: set[str]) -> tuple[int, i
         if slug and slug in removed_slugs:
             removed_cards += 1
             return ""
-        if any(name in norm(strip_tags(block)) for name in EXCLUDED_ARTISTS):
+        names = [norm(name) for name in names_from_block(block)]
+        if names and all(name in EXCLUDED_ARTISTS for name in names):
             removed_cards += 1
             return ""
         updated, changed = repair_fallbacks_in_block(block)
@@ -269,41 +291,46 @@ def verify(root: pathlib.Path) -> dict:
     failures: list[str] = []
     fallback_cards = 0
     fallback_event_pages = 0
-    excluded_hits = 0
+    retired_event_pages = 0
+    retired_artist_links = 0
     for page in root.rglob("*.html"):
         text = page.read_text(encoding="utf-8", errors="ignore")
         for block in CARD_RE.findall(text):
             sources = re.findall(r'<img\b[^>]*?\ssrc=["\']([^"\']+)', block, flags=re.I)
             if any("event-fallback.webp" in norm(src) for src in sources):
                 fallback_cards += 1
-            if any(name in norm(strip_tags(block)) for name in EXCLUDED_ARTISTS):
-                excluded_hits += 1
+            for slug in EXCLUDED_SLUGS:
+                if f"/artists/{slug}/" in norm(block):
+                    retired_artist_links += 1
         if page.parent.parent == root / "event":
             sources = re.findall(r'<img\b[^>]*?\ssrc=["\']([^"\']+)', text, flags=re.I)
             if any("event-fallback.webp" in norm(src) for src in sources):
                 fallback_event_pages += 1
             if event_page_should_be_removed(text):
-                excluded_hits += 1
+                retired_event_pages += 1
     if fallback_cards:
         failures.append(f"generic-event-cards:{fallback_cards}")
     if fallback_event_pages:
         failures.append(f"generic-event-pages:{fallback_event_pages}")
-    if excluded_hits:
-        failures.append(f"excluded-event-content:{excluded_hits}")
+    if retired_event_pages:
+        failures.append(f"retired-event-pages:{retired_event_pages}")
+    if retired_artist_links:
+        failures.append(f"retired-artist-links:{retired_artist_links}")
     if failures:
         raise SystemExit("Live event-image audit failed: " + ", ".join(failures))
     return {
         "fallbackEventCards": fallback_cards,
         "fallbackEventPages": fallback_event_pages,
-        "excludedEventContent": excluded_hits,
+        "retiredEventPages": retired_event_pages,
+        "retiredArtistLinks": retired_artist_links,
     }
 
 
 def apply(root: pathlib.Path) -> None:
     if not root.is_dir():
         raise SystemExit(f"Missing site artifact: {root}")
-    removed_primary, repaired_primary = patch_event_json(root / "events.json")
-    removed_supp, repaired_supp = patch_event_json(root / "supplemental-events.json")
+    removed_primary, repaired_primary, retired_primary = patch_event_json(root / "events.json")
+    removed_supp, repaired_supp, retired_supp = patch_event_json(root / "supplemental-events.json")
     removed_slugs = remove_excluded_event_pages(root)
     removed_cards = repaired_html = 0
     for page in root.rglob("*.html"):
@@ -317,6 +344,7 @@ def apply(root: pathlib.Path) -> None:
         json.dumps({
             **audit,
             "removedJsonEvents": removed_primary + removed_supp,
+            "retiredLineupNamesRemoved": retired_primary + retired_supp,
             "removedEventPages": len(removed_slugs),
             "removedEventCards": removed_cards,
             "repairedJsonImages": repaired_primary + repaired_supp,
