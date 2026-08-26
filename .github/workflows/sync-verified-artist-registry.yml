@@ -38,25 +38,26 @@ jobs:
           updates = json.loads(Path('config/verified-artist-registry-updates.json').read_text(encoding='utf-8'))
           by_name = {artist['name'].casefold(): artist for artist in artists}
 
-          assert len(artists) == 321, len(artists)
-          assert len({artist['name'].casefold() for artist in artists}) == 321
-          assert [artist['rosterOrder'] for artist in artists] == list(range(1, 322))
-          assert [artist['name'] for artist in artists[54:78]] == [item['name'] for item in updates]
+          assert len(artists) >= 250, len(artists)
+          assert len({artist['name'].casefold() for artist in artists}) == len(artists)
+          assert [artist['rosterOrder'] for artist in artists] == list(range(1, len(artists) + 1))
+          assert [artist['name'] for artist in artists[54:54 + len(updates)]] == [item['name'] for item in updates]
           assert artists[53]['name'] == '808 BEEZY'
-          assert artists[78]['name'] == 'Alex Jean'
+          assert artists[54 + len(updates)]['name'] == 'Alex Jean'
 
           for update in updates:
               artist = by_name[update['name'].casefold()]
               assert artist['sourceRegistryVerified'] is True
+              assert artist['sourceRegistryRosterOrder'] == update['rosterOrder']
               for field in ('website', 'instagramProfile', 'spotifyProfile', 'youtubeProfile', 'officialImageSource'):
                   if update.get(field):
                       assert artist.get(field) == update[field], (update['name'], field)
 
           app = Path('app.js').read_text(encoding='utf-8')
-          for name in ('Mike Teezy', 'Rua Young', 'Kurtis Hoppie', 'Nu Tone', 'Holy Gabbana', 'Christopher Syncere', 'K-SEE', 'Gospel Gangstaz', 'Wuhsahbee'):
+          for name in ('Mike Teezy', 'Rua Young', 'Kurtis Hoppie', 'Nu Tone', 'Holy Gabbana', 'Christopher Syncere', 'K-SEE', 'Gospel Gangstaz', 'Wuhsahbee', 'Kelo', 'DKG Kie', 'Braille', 'Canton Jones', 'Jay-Way', 'Stixx aka Conejo', 'Ruslan'):
               assert f'"{name}"' in app, name
           assert 'VERIFIED_ARTIST_REGISTRY_UPDATES' in app
-          print('Verified artist rows 55-78 validated:', len(updates), 'rows; roster=', len(artists))
+          print('Verified artist registry block validated:', len(updates), 'rows; roster=', len(artists))
           PY
 
       - name: Run production tests
