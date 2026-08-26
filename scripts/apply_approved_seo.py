@@ -12,6 +12,7 @@ SITE_ORIGIN = "https://kingdomcircuit.com"
 BASE = "/"
 SEO_SOURCE = pathlib.Path(os.environ.get("KC_SEO_SOURCE", "_seo_source/scripts"))
 IMAGE_OVERRIDES_REL = pathlib.Path("config/verified-artist-image-overrides.json")
+EXCLUDED_ARTISTS = {"chad jones", "erica mason", "big holy"}
 
 
 def load_module(name: str, path: pathlib.Path):
@@ -47,6 +48,8 @@ def load_verified_image_overrides(root: pathlib.Path) -> dict[str, str]:
     for name, url in data.items():
         artist_name = str(name or "").strip()
         image_url = str(url or "").strip()
+        if artist_name.casefold() in EXCLUDED_ARTISTS:
+            continue
         if not artist_name or not image_url.startswith(("https://", "assets/", "/assets/")):
             raise SystemExit(f"Invalid verified artist image override: {name!r} -> {url!r}")
         cleaned[artist_name] = image_url
