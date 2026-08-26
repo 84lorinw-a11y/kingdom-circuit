@@ -350,6 +350,9 @@ jobs:
           test -n "$SAMPLE_ARTIST"
           curl -fsS "http://127.0.0.1:8765/${SAMPLE_ARTIST}" >/dev/null
 
+      - name: Finalize and audit live event images
+        run: python scripts/finalize_live_event_images.py --site _site
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
