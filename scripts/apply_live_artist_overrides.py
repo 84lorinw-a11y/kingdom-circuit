@@ -634,6 +634,7 @@ def apply_site(out_dir: pathlib.Path) -> None:
     clean_static_html(out_dir, removed_event_slugs)
     patch_static_artist_pages(out_dir, artists)
     clean_sitemap(out_dir, removed_event_slugs)
+    __import__("subprocess").run([__import__("sys").executable, str(pathlib.Path(__file__).with_name("finalize_live_event_images.py")), "--site", str(out_dir)], check=True)
     verify_site(out_dir)
     print(f"Live artifact artist cleanup verified: artists={len(artists)}, removed_event_pages={len(removed_event_slugs)}")
 
