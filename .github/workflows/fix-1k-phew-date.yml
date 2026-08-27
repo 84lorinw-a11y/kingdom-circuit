@@ -1,0 +1,57 @@
+name: Fix 1K Phew stale Space City date
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    if: github.event.head_commit.message == 'Install 1K Phew date correction'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Correct stale Space City listing and durable policy
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          policy = Path('scripts/apply_curated_catalog_policy.py')
+          text = policy.read_text(encoding='utf-8')
+          old = '''    if event_date == "2026-08-22" and "1k phew" in artists:\n        if venue == "space city church" and source.startswith("reach records"):\n            return True\n'''
+          new = '''    # Bandsintown event 1038610678 confirms Space City Church was Aug. 22.\n    # Reach later exposed a stale Aug. 29 variant that conflicts with the verified\n    # 1K Phew Field Day in Atlanta (3-6 PM ET). Never republish that stale variant.\n    if event_date == "2026-08-29" and "1k phew" in artists:\n        if venue == "space city church" and source.startswith("reach records"):\n            return True\n'''
+          if old not in text:
+              raise SystemExit('Expected 1K Phew Space City policy block not found')
+          policy.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          events_path = Path('events.json')
+          events = json.loads(events_path.read_text(encoding='utf-8'))
+          kept = []
+          removed = []
+          for event in events:
+              names = {str(x).strip().casefold() for x in event.get('artists', [])}
+              bad = (
+                  event.get('startDate') == '2026-08-29'
+                  and str(event.get('venue') or '').strip().casefold() == 'space city church'
+                  and '1k phew' in names
+              )
+              (removed if bad else kept).append(event)
+          if not removed:
+              raise SystemExit('Expected stale Aug. 29 Space City event was not found')
+          events_path.write_text(json.dumps(kept, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          print('Removed stale events:', [e.get('id') for e in removed])
+          PY
+
+          git config user.name 'kingdom-circuit-bot'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scripts/apply_curated_catalog_policy.py events.json
+          git commit -m 'Fix 1K Phew Space City stale date'
+          git push origin HEAD:main
