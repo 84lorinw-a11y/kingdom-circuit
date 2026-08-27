@@ -1,0 +1,252 @@
+from pathlib import Path
+
+path = Path('scripts/apply_live_artist_overrides.py')
+text = path.read_text(encoding='utf-8')
+
+old = 'import argparse\nimport html\n'
+new = 'import argparse\nimport datetime as dt\nimport html\n'
+if old not in text:
+    raise SystemExit('import marker not found')
+text = text.replace(old, new, 1)
+
+old = 'FALLBACK_IMAGE = "/assets/event-fallback.webp"\n\n'
+new = '''FALLBACK_IMAGE = "/assets/event-fallback.webp"
+
+# Multi-day festivals keep their full festival start/end dates, while artist
+# pages can show the verified day a specific artist actually performs.
+ARTIST_PERFORMANCE_DATE_OVERRIDES = {
+    ("rural music festival 2026", "2026-08-28", "isle", "mn"): {
+        "social club misfits": "2026-08-30",
+        "rare of breed": "2026-08-30",
+    },
+}
+
+'''
+if old not in text:
+    raise SystemExit('constant marker not found')
+text = text.replace(old, new, 1)
+
+old = '''        if removed_artist:
+            event["artists"] = remaining
+            if norm(event.get("headliner")) in EXCLUDED_ARTISTS:
+                if remaining:
+                    event["headliner"] = remaining[0]
+                else:
+                    event.pop("headliner", None)
+        cleaned.append(event)
+'''
+new = '''        if removed_artist:
+            event["artists"] = remaining
+            if norm(event.get("headliner")) in EXCLUDED_ARTISTS:
+                if remaining:
+                    event["headliner"] = remaining[0]
+                else:
+                    event.pop("headliner", None)
+
+        override_key = (
+            title,
+            str(event.get("startDate") or "")[:10],
+            norm(event.get("city")),
+            norm(event.get("state")),
+        )
+        performance_dates = ARTIST_PERFORMANCE_DATE_OVERRIDES.get(override_key, {})
+        if performance_dates:
+            mapped = {
+                name: performance_dates[norm(name)]
+                for name in remaining
+                if norm(name) in performance_dates
+            }
+            if mapped:
+                event["artistPerformanceDates"] = mapped
+        cleaned.append(event)
+'''
+if old not in text:
+    raise SystemExit('patch_events marker not found')
+text = text.replace(old, new, 1)
+
+marker = '\ndef clean_sitemap(out_dir: pathlib.Path, removed_event_slugs: set[str]) -> None:\n'
+insert = '''
+def _display_date(raw_date: str, raw_time: str = "") -> str:
+    try:
+        day = dt.date.fromisoformat(str(raw_date)[:10])
+        label = f"{day.strftime('%a, %b')} {day.day}, {day.year}"
+    except Exception:
+        label = str(raw_date or "Date to be announced")
+    if raw_time:
+        try:
+            hour, minute = map(int, str(raw_time).split(":")[:2])
+            label += f" - {hour % 12 or 12}:{minute:02d} {'AM' if hour < 12 else 'PM'}"
+        except Exception:
+            pass
+    return label
+
+
+def _artist_performance_date(event: dict, artist_name: str) -> str:
+    dates = event.get("artistPerformanceDates") or {}
+    if isinstance(dates, dict):
+        for key, value in dates.items():
+            if norm(key) == norm(artist_name) and value:
+                return str(value)[:10]
+    return str(event.get("startDate") or "")[:10]
+
+
+def patch_artist_performance_pages(out_dir: pathlib.Path) -> None:
+    """Use artist-specific festival performance days on artist-facing pages only."""
+    events = load_json(out_dir / "events.json", [])
+    if not isinstance(events, list):
+        return
+
+    override_artists: dict[str, str] = {}
+    for event in events:
+        if not isinstance(event, dict):
+            continue
+        dates = event.get("artistPerformanceDates") or {}
+        if not isinstance(dates, dict):
+            continue
+        for name in event.get("artists") or []:
+            if any(norm(key) == norm(name) for key in dates):
+                override_artists[norm(name)] = str(name)
+
+    if not override_artists:
+        return
+
+    by_artist: dict[str, list[dict]] = {key: [] for key in override_artists}
+    for event in events:
+        if not isinstance(event, dict):
+            continue
+        for name in event.get("artists") or []:
+            key = norm(name)
+            if key in by_artist:
+                by_artist[key].append(event)
+
+    next_event: dict[str, dict] = {}
+    for key, shows in by_artist.items():
+        if shows:
+            next_event[key] = min(
+                shows,
+                key=lambda event: (
+                    _artist_performance_date(event, override_artists[key]),
+                    str(event.get("startTime") or ""),
+                    norm(event.get("title")),
+                ),
+            )
+
+    directory = out_dir / "artists" / "index.html"
+    if directory.is_file():
+        text = directory.read_text(encoding="utf-8")
+        card_pattern = re.compile(
+            r'<article\\b(?=[^>]*\\bdata-artist-card\\b)[^>]*>.*?</article>',
+            flags=re.I | re.S,
+        )
+
+        def patch_directory_card(match: re.Match[str]) -> str:
+            block = match.group(0)
+            for key, display_name in override_artists.items():
+                artist_slug = slugify(display_name)
+                if f'/artists/{artist_slug}/' not in block.casefold():
+                    continue
+                event = next_event.get(key)
+                if not event:
+                    return block
+                effective = _artist_performance_date(event, display_name)
+                label = _display_date(effective)
+                location = ", ".join(
+                    str(value) for value in (event.get("city"), event.get("state")) if value
+                )
+                replacement = f'<p class="seo-card-next"><strong>Next:</strong> {html.escape(label)} · {html.escape(location)}</p>'
+                return re.sub(
+                    r'<p\\b[^>]*class="[^"]*\\bseo-card-next\\b[^"]*"[^>]*>.*?</p>',
+                    replacement,
+                    block,
+                    count=1,
+                    flags=re.I | re.S,
+                )
+            return block
+
+        patched = card_pattern.sub(patch_directory_card, text)
+        if patched != text:
+            directory.write_text(patched, encoding="utf-8")
+
+    for key, display_name in override_artists.items():
+        artist_root = out_dir / "artists" / slugify(display_name)
+        if not artist_root.is_dir():
+            continue
+        artist_next = next_event.get(key)
+        for page in artist_root.rglob("index.html"):
+            text = page.read_text(encoding="utf-8")
+            original = text
+            for event in by_artist.get(key, []):
+                performance_date = _artist_performance_date(event, display_name)
+                start_date = str(event.get("startDate") or "")[:10]
+                if not performance_date or performance_date == start_date:
+                    continue
+                old_label = _display_date(start_date, str(event.get("startTime") or ""))
+                new_label = _display_date(performance_date)
+                if artist_next is event:
+                    text = text.replace(old_label, new_label)
+
+                event_title = norm(event.get("title"))
+                card_pattern = re.compile(
+                    r'<article\\b(?=[^>]*\\bdata-event-card\\b)[^>]*>.*?</article>',
+                    flags=re.I | re.S,
+                )
+
+                def patch_event_card(match: re.Match[str]) -> str:
+                    block = match.group(0)
+                    if event_title not in normalize_html(block):
+                        return block
+                    block = block.replace(f'data-date="{start_date}"', f'data-date="{performance_date}"', 1)
+                    block = block.replace(old_label, new_label)
+                    return block
+
+                text = card_pattern.sub(patch_event_card, text)
+            if text != original:
+                page.write_text(text, encoding="utf-8")
+'''
+if marker not in text:
+    raise SystemExit('site patch insertion marker not found')
+text = text.replace(marker, insert + marker, 1)
+
+old = '''    clean_static_html(out_dir, removed_event_slugs)
+    patch_static_artist_pages(out_dir, artists)
+    clean_sitemap(out_dir, removed_event_slugs)
+'''
+new = '''    clean_static_html(out_dir, removed_event_slugs)
+    patch_static_artist_pages(out_dir, artists)
+    patch_artist_performance_pages(out_dir)
+    clean_sitemap(out_dir, removed_event_slugs)
+'''
+if old not in text:
+    raise SystemExit('apply_site marker not found')
+text = text.replace(old, new, 1)
+
+old = '''    caleb = out_dir / "artists" / "caleb-gordon" / "index.html"
+    if not caleb.is_file() or "ARTIST_HEADSHOT_36.jpg" not in caleb.read_text(encoding="utf-8", errors="ignore"):
+        failures.append("caleb-profile-image-missing")
+'''
+new = '''    caleb = out_dir / "artists" / "caleb-gordon" / "index.html"
+    if not caleb.is_file() or "ARTIST_HEADSHOT_36.jpg" not in caleb.read_text(encoding="utf-8", errors="ignore"):
+        failures.append("caleb-profile-image-missing")
+
+    social_directory = out_dir / "artists" / "index.html"
+    if social_directory.is_file():
+        directory_text = social_directory.read_text(encoding="utf-8", errors="ignore")
+        match = re.search(
+            r'<article\\b(?=[^>]*\\bdata-artist-card\\b)[^>]*>.*?/artists/social-club-misfits/.*?</article>',
+            directory_text,
+            flags=re.I | re.S,
+        )
+        if not match or "Sun, Aug 30, 2026" not in match.group(0) or "Fri, Aug 28, 2026 - 12:00 PM" in match.group(0):
+            failures.append("social-club-directory-performance-date-wrong")
+    else:
+        failures.append("artist-directory-missing")
+
+    social_page = out_dir / "artists" / "social-club-misfits" / "index.html"
+    if not social_page.is_file() or "Sun, Aug 30, 2026" not in social_page.read_text(encoding="utf-8", errors="ignore"):
+        failures.append("social-club-profile-performance-date-wrong")
+'''
+if old not in text:
+    raise SystemExit('verify_site marker not found')
+text = text.replace(old, new, 1)
+
+path.write_text(text, encoding='utf-8')
