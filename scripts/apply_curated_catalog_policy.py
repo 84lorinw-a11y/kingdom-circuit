@@ -153,7 +153,10 @@ def is_known_duplicate_fragment(event: dict[str, Any]) -> bool:
     city = norm(event.get("city"))
     artists = event_artists(event)
 
-    if event_date == "2026-08-22" and "1k phew" in artists:
+    # Bandsintown event 1038610678 confirms Space City Church was Aug. 22.
+    # Reach later exposed a stale Aug. 29 variant that conflicts with the verified
+    # 1K Phew Field Day in Atlanta (3-6 PM ET). Never republish that stale variant.
+    if event_date == "2026-08-29" and "1k phew" in artists:
         if venue == "space city church" and source.startswith("reach records"):
             return True
 
