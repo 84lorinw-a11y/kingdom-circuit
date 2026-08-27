@@ -26,3 +26,5 @@ jobs:
           git add scripts/apply_live_artist_overrides.py
           git commit -m 'Show artist-specific festival performance dates'
           git push origin HEAD:main
+
+# trigger after workflow registration
