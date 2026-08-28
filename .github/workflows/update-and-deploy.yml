@@ -132,6 +132,7 @@ jobs:
           test -s scripts/apply_priority_source_fallbacks.py
           test -s scripts/apply_sevin_official_schedule.py
           test -s scripts/scan_all_artist_sources.py
+          test -s scripts/finalize_seo_indexing.py
           test -s _seo_source/scripts/apply_test_overlay.py
           test -s _seo_source/scripts/finalize_test_seo.py
           test -s _seo_source/scripts/align_artist_schema.py
@@ -359,6 +360,9 @@ jobs:
 
       - name: Finalize and audit live event images
         run: python scripts/finalize_live_event_images.py --site _site
+
+      - name: Apply final SEO indexing policy
+        run: python scripts/finalize_seo_indexing.py --site _site
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
