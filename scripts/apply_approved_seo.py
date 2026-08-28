@@ -214,6 +214,18 @@ def apply_artist_fidelity(root: pathlib.Path) -> None:
     finalizer = load_module("kc_approved_finalizer", SEO_SOURCE / "finalize_test_seo.py")
     finalizer.BASE = BASE
     artists = finalizer.resolve_live_artists(root)
+
+    # Production-verified image overrides are authoritative over legacy image
+    # values merged by the pinned SEO renderer. Force them into the resolved
+    # artist model before rendering directory/profile images.
+    image_overrides = load_verified_image_overrides(root)
+    overrides_by_name = {str(name).strip().casefold(): url for name, url in image_overrides.items()}
+    for artist in artists:
+        override = overrides_by_name.get(str(artist.get("name") or "").strip().casefold())
+        if override:
+            artist["_resolvedImage"] = override if override.startswith("https://") else "/" + override.lstrip("/")
+            artist["_resolvedFallback"] = ""
+
     finalizer.patch_directory(root, artists)
     finalizer.patch_artist_profiles(root, artists)
 
