@@ -1,0 +1,95 @@
+name: Fix broken event images
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/fix-broken-event-images.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Patch verified image sources and fallback behavior
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          RARE_OLD = 'https://fivetwentycollective.com/wp-content/uploads/2021/03/Rare-of-Breed.jpg'
+          RARE_NEW = 'https://rareofbreed.com/cdn/shop/files/202511_RareOfBreed_TheWarehouse-32.jpg?v=1784663742&width=3840'
+          YUMIYA_OLD = 'https://i.scdn.co/image/ab6761610000e5ebe8717d1df4abebcd56989c30'
+          YUMIYA_NEW = 'https://ugc.production.linktr.ee/0f6ee994-7bd6-4821-bb79-593f035ae2c9_1F523223-FD9A-4E86-88BE-0A34120C8FAD.jpeg?io=true&size=avatar-v3_0'
+
+          def replace_once(path, old, new):
+              p = Path(path)
+              text = p.read_text(encoding='utf-8')
+              if old not in text:
+                  raise SystemExit(f'Expected text missing in {path}: {old[:100]}')
+              p.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          # Use Rare of Breed's current official-site image for artist/profile fallback.
+          replace_once('config/verified-artist-image-overrides.json', RARE_OLD, RARE_NEW)
+
+          p = Path('scripts/finalize_live_event_images.py')
+          text = p.read_text(encoding='utf-8')
+
+          old_yumiya = '''    "yumiya!": [\n        "https://i.scdn.co/image/ab6761610000e5ebe8717d1df4abebcd56989c30",\n        "https://open.voidware.de/artist/1s4YH0vODE4nW0bREPt4GG",\n    ],'''
+          new_yumiya = f'''    "yumiya!": [\n        "{YUMIYA_NEW}",\n        "{YUMIYA_OLD}",\n        "https://open.voidware.de/artist/1s4YH0vODE4nW0bREPt4GG",\n    ],\n    "rare of breed": [\n        "{RARE_NEW}",\n        "https://open.voidware.de/artist/3GdRdoJomMK2f8xGjEZbHH",\n    ],'''
+          if old_yumiya not in text:
+              raise SystemExit('yumiya IMAGE_CANDIDATES block not found')
+          text = text.replace(old_yumiya, new_yumiya, 1)
+
+          marker = 'EXCLUDED_SLUGS = {"chad-jones", "erica-mason", "big-holy"}\n'
+          stale = f'''EXCLUDED_SLUGS = {{"chad-jones", "erica-mason", "big-holy"}}\nSTALE_IMAGE_URLS = {{\n    "{RARE_OLD}",\n    "{YUMIYA_OLD}",\n}}\n'''
+          if marker not in text:
+              raise SystemExit('EXCLUDED_SLUGS marker not found')
+          text = text.replace(marker, stale, 1)
+
+          old_needs = '''def needs_repair(value: object) -> bool:\n    image = norm(value)\n    return (not image) or ("event-fallback.webp" in image) or ("open.voidware.de/artist/" in image)\n'''
+          new_needs = '''def needs_repair(value: object) -> bool:\n    raw = str(value or "").strip()\n    image = norm(raw)\n    return (\n        (not image)\n        or ("event-fallback.webp" in image)\n        or ("open.voidware.de/artist/" in image)\n        or raw in STALE_IMAGE_URLS\n    )\n'''
+          if old_needs not in text:
+              raise SystemExit('needs_repair block not found')
+          text = text.replace(old_needs, new_needs, 1)
+
+          old_repair = '''def repair_fallbacks_in_block(block: str) -> tuple[str, bool]:\n    if "event-fallback.webp" not in norm(block):\n        return block, False\n    key = key_from_html(block)\n    if not key:\n        return block, False\n    changed = False\n\n    def repl(match: re.Match[str]) -> str:\n        nonlocal changed\n        tag = match.group(0)\n        src_match = re.search(r'\\bsrc=["\\']([^"\\']*)["\\']', tag, flags=re.I)\n        if not src_match or "event-fallback.webp" not in norm(src_match.group(1)):\n            return tag\n        changed = True\n        return set_img_src(tag, IMAGE_CANDIDATES[key][0], key)\n\n    return re.sub(r'<img\\b[^>]*>', repl, block, flags=re.I), changed\n'''
+          new_repair = '''def repair_fallbacks_in_block(block: str) -> tuple[str, bool]:\n    key = key_from_html(block)\n    if not key:\n        return block, False\n    changed = False\n\n    def repl(match: re.Match[str]) -> str:\n        nonlocal changed\n        tag = match.group(0)\n        src_match = re.search(r'\\bsrc=["\\']([^"\\']*)["\\']', tag, flags=re.I)\n        if not src_match or not needs_repair(html.unescape(src_match.group(1))):\n            return tag\n        changed = True\n        return set_img_src(tag, IMAGE_CANDIDATES[key][0], key)\n\n    return re.sub(r'<img\\b[^>]*>', repl, block, flags=re.I), changed\n'''
+          if old_repair not in text:
+              raise SystemExit('repair_fallbacks_in_block block not found')
+          text = text.replace(old_repair, new_repair, 1)
+
+          old_detail = '''    if "/event/" in "/" + str(page).replace("\\\\", "/") + "/" and "event-fallback.webp" in norm(text):\n        key = key_from_html(text)\n        if key:\n            def detail_repl(match: re.Match[str]) -> str:\n                nonlocal repaired\n                tag = match.group(0)\n                src_match = re.search(r'\\bsrc=["\\']([^"\\']*)["\\']', tag, flags=re.I)\n                if not src_match or "event-fallback.webp" not in norm(src_match.group(1)):\n                    return tag\n                repaired += 1\n                return set_img_src(tag, IMAGE_CANDIDATES[key][0], key)\n            text = re.sub(r'<img\\b[^>]*>', detail_repl, text, flags=re.I)\n'''
+          new_detail = '''    if "/event/" in "/" + str(page).replace("\\\\", "/") + "/":\n        key = key_from_html(text)\n        if key:\n            def detail_repl(match: re.Match[str]) -> str:\n                nonlocal repaired\n                tag = match.group(0)\n                src_match = re.search(r'\\bsrc=["\\']([^"\\']*)["\\']', tag, flags=re.I)\n                if not src_match or not needs_repair(html.unescape(src_match.group(1))):\n                    return tag\n                repaired += 1\n                return set_img_src(tag, IMAGE_CANDIDATES[key][0], key)\n            text = re.sub(r'<img\\b[^>]*>', detail_repl, text, flags=re.I)\n'''
+          if old_detail not in text:
+              raise SystemExit('event detail repair block not found')
+          text = text.replace(old_detail, new_detail, 1)
+          p.write_text(text, encoding='utf-8')
+
+          js = f'''"use strict";\n\n(() => {{\n  const fallback = "/assets/event-fallback.webp";\n  const stale = new Set([\n    "{RARE_OLD}",\n    "{YUMIYA_OLD}"\n  ]);\n  const candidates = {{\n    "808 beezy": ["https://pbs.twimg.com/profile_images/1836827722309312512/e5kgorwv.jpg", "https://open.voidware.de/artist/3CltJZLndpJKtpUyRVBB1k"],\n    "hulvey": ["https://s1.ticketm.net/dam/a/d4e/a49ecab3-089d-46ff-baa5-7942c994ed4e_SOURCE", "https://open.voidware.de/artist/3zSrc5vUlUxyDdS0KrxFJO"],\n    "yumiya!": ["{YUMIYA_NEW}", "{YUMIYA_OLD}", "https://open.voidware.de/artist/1s4YH0vODE4nW0bREPt4GG"],\n    "rare of breed": ["{RARE_NEW}", "https://open.voidware.de/artist/3GdRdoJomMK2f8xGjEZbHH"],\n    "issac mansfield": ["https://i.scdn.co/image/ab6761610000e5eb6d97dd155baa40ea3c14b616", "https://open.voidware.de/artist/1QgXbOPk6XpELZrJOzz33w"],\n    "zauntee": ["/assets/artists/zauntee.webp", "https://open.voidware.de/artist/7jyr9Co4MKL1iWML1G7vch"],\n    "anike": ["https://resources.tidal.com/images/108dfb26/84ff/447e/b0b7/a3e208c409ed/750x750.jpg", "https://open.voidware.de/artist/0GdzQJqgRL5SHp7kXOKba0"],\n    "brenno": ["https://cdn.rapzilla.com/wp-content/uploads/2020/10/23100333/277A3516-e1603484188893.jpg", "https://open.voidware.de/artist/7lBcEp7abNiq3WyHT3RRqV"],\n    "parris chariz": ["https://www.invubu.com/images/artists/1200/parris_chariz.jpg", "https://open.voidware.de/artist/2Vt6gyhUH7Vj2cybfQWOqM"],\n    "nobigdyl.": ["https://resources.tidal.com/images/66d1df15/192b/4a8f/97c3/30a2b85a36f3/750x750.jpg", "https://open.voidware.de/artist/2d8NsBa8O4C6bgQatFP5V4"],\n    "jet trouble": ["https://55promotion.com/kbm24/wp-content/uploads/2025/06/Promo-Headshot-1024x1024.jpg", "https://open.voidware.de/artist/6W2lyFO79SNpk3ZpF0A2s9"],\n    "mike teezy": ["https://real.fm/assets/Uploads/MikeTeezy__FocusFillWyItMC4xMSIsIi0wLjE2IiwxMjAwLDYyNTA.jpg", "https://open.voidware.de/artist/6tO2zQcTIRfR2Xdsm9XnL7"]\n  }};\n\n  const normalize = value => String(value || "").toLowerCase().replace(/’/g, "'").replace(/\\s+/g, " ").trim();\n\n  function artistKey(img) {{\n    const explicit = normalize(img?.dataset?.kcEventArtist);\n    if (explicit && candidates[explicit]) return explicit;\n    const root = img?.closest?.(".event-card, .event-detail, main") || img?.parentElement;\n    const artistLine = normalize(root?.querySelector?.(".artist-line")?.textContent || "");\n    const text = artistLine || normalize(root?.textContent || "");\n    return Object.keys(candidates).find(key => text.includes(key)) || "";\n  }}\n\n  window.kcEventImageFallback = img => {{\n    if (!img) return;\n    const key = artistKey(img);\n    const options = candidates[key] || [];\n    const current = String(img.getAttribute("src") || "");\n    let index = Number.parseInt(img.dataset.kcImageIndex || "-1", 10) + 1;\n    if (index < options.length) {{\n      img.dataset.kcImageIndex = String(index);\n      img.src = options[index];\n      return;\n    }}\n    img.onerror = null;\n    if (!current.includes(fallback)) img.src = fallback;\n  }};\n\n  function repair(img) {{\n    const key = artistKey(img);\n    const src = String(img.getAttribute("src") || "");\n    if (!key) {{\n      img.onerror = () => {{ img.onerror = null; img.src = fallback; }};\n      return;\n    }}\n    const options = candidates[key];\n    let idx = options.indexOf(src);\n    img.dataset.kcEventArtist = key;\n    img.dataset.kcImageIndex = String(idx);\n    img.onerror = () => window.kcEventImageFallback(img);\n    if (!src || src.includes("event-fallback.webp") || stale.has(src)) {{\n      img.dataset.kcImageIndex = "0";\n      img.src = options[0];\n    }}\n  }}\n\n  const run = () => document.querySelectorAll(".event-card img, .event-detail img").forEach(repair);\n  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run, {{ once: true }});\n  else run();\n}})();\n'''
+          Path('assets/event-image-repair.js').write_text(js, encoding='utf-8')
+
+          # Validate the edited files before committing.
+          import py_compile
+          py_compile.compile('scripts/finalize_live_event_images.py', doraise=True)
+          assert RARE_NEW in Path('scripts/finalize_live_event_images.py').read_text(encoding='utf-8')
+          assert YUMIYA_NEW in Path('scripts/finalize_live_event_images.py').read_text(encoding='utf-8')
+          assert RARE_NEW in Path('config/verified-artist-image-overrides.json').read_text(encoding='utf-8')
+          PY
+          node --check assets/event-image-repair.js
+      - name: Commit durable image repair
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/finalize_live_event_images.py assets/event-image-repair.js config/verified-artist-image-overrides.json
+          git commit -m "Fix broken Rare of Breed and Genesis images"
+          git push origin HEAD:main
