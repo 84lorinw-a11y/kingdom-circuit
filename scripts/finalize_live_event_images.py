@@ -11,6 +11,10 @@ import shutil
 FALLBACK = "/assets/event-fallback.webp"
 EXCLUDED_ARTISTS = {"chad jones", "erica mason", "big holy"}
 EXCLUDED_SLUGS = {"chad-jones", "erica-mason", "big-holy"}
+STALE_IMAGE_URLS = {
+    "https://fivetwentycollective.com/wp-content/uploads/2021/03/Rare-of-Breed.jpg",
+    "https://i.scdn.co/image/ab6761610000e5ebe8717d1df4abebcd56989c30",
+}
 
 # Verified/known-good presentation images used only when an event otherwise has
 # generic artwork. Real event artwork is always preserved.
@@ -24,8 +28,13 @@ IMAGE_CANDIDATES = {
         "https://open.voidware.de/artist/3zSrc5vUlUxyDdS0KrxFJO",
     ],
     "yumiya!": [
+        "https://ugc.production.linktr.ee/0f6ee994-7bd6-4821-bb79-593f035ae2c9_1F523223-FD9A-4E86-88BE-0A34120C8FAD.jpeg?io=true&size=avatar-v3_0",
         "https://i.scdn.co/image/ab6761610000e5ebe8717d1df4abebcd56989c30",
         "https://open.voidware.de/artist/1s4YH0vODE4nW0bREPt4GG",
+    ],
+    "rare of breed": [
+        "https://rareofbreed.com/cdn/shop/files/202511_RareOfBreed_TheWarehouse-32.jpg?v=1784663742&width=3840",
+        "https://open.voidware.de/artist/3GdRdoJomMK2f8xGjEZbHH",
     ],
     "issac mansfield": [
         "https://i.scdn.co/image/ab6761610000e5eb6d97dd155baa40ea3c14b616",
@@ -92,8 +101,14 @@ def artist_key_from_names(names: list[str]) -> str | None:
 
 
 def needs_repair(value: object) -> bool:
-    image = norm(value)
-    return (not image) or ("event-fallback.webp" in image) or ("open.voidware.de/artist/" in image)
+    raw = str(value or "").strip()
+    image = norm(raw)
+    return (
+        (not image)
+        or ("event-fallback.webp" in image)
+        or ("open.voidware.de/artist/" in image)
+        or raw in STALE_IMAGE_URLS
+    )
 
 
 def patch_event_json(path: pathlib.Path) -> tuple[int, int, int]:
@@ -214,8 +229,6 @@ def set_img_src(tag: str, src: str, key: str) -> str:
 
 
 def repair_fallbacks_in_block(block: str) -> tuple[str, bool]:
-    if "event-fallback.webp" not in norm(block):
-        return block, False
     key = key_from_html(block)
     if not key:
         return block, False
@@ -225,7 +238,7 @@ def repair_fallbacks_in_block(block: str) -> tuple[str, bool]:
         nonlocal changed
         tag = match.group(0)
         src_match = re.search(r'\bsrc=["\']([^"\']*)["\']', tag, flags=re.I)
-        if not src_match or "event-fallback.webp" not in norm(src_match.group(1)):
+        if not src_match or not needs_repair(html.unescape(src_match.group(1))):
             return tag
         changed = True
         return set_img_src(tag, IMAGE_CANDIDATES[key][0], key)
@@ -255,14 +268,14 @@ def patch_html_page(page: pathlib.Path, removed_slugs: set[str]) -> tuple[int, i
 
     text = CARD_RE.sub(card_repl, text)
 
-    if "/event/" in "/" + str(page).replace("\\", "/") + "/" and "event-fallback.webp" in norm(text):
+    if "/event/" in "/" + str(page).replace("\\", "/") + "/":
         key = key_from_html(text)
         if key:
             def detail_repl(match: re.Match[str]) -> str:
                 nonlocal repaired
                 tag = match.group(0)
                 src_match = re.search(r'\bsrc=["\']([^"\']*)["\']', tag, flags=re.I)
-                if not src_match or "event-fallback.webp" not in norm(src_match.group(1)):
+                if not src_match or not needs_repair(html.unescape(src_match.group(1))):
                     return tag
                 repaired += 1
                 return set_img_src(tag, IMAGE_CANDIDATES[key][0], key)
