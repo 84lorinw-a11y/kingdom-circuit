@@ -144,20 +144,23 @@ supp, repaired_supp_images = repair_event_images("supplemental-events.json")
 if len({e["id"] for e in supp}) != len(supp):
     raise SystemExit("Duplicate supplemental event IDs")
 
+# These records are pruned as their tour dates pass, so verify the remaining
+# Skema Boy dates instead of requiring the historical full-tour count forever.
 skema_events = [e for e in supp if "Skema Boy" in e.get("artists", [])]
-if len(skema_events) != 13:
-    raise SystemExit(f"Expected 13 Skema Boy supplemental events, found {len(skema_events)}")
 if not all(e.get("headliner") == "Zauntee" for e in skema_events):
-    raise SystemExit("A Skema Boy tour event is missing Zauntee as headliner")
+    raise SystemExit("A remaining Skema Boy tour event is missing Zauntee as headliner")
 if not all(str(e.get("image") or "").endswith("assets/artists/zauntee.webp") for e in skema_events):
-    raise SystemExit("A Skema Boy tour event is missing the Zauntee image")
+    raise SystemExit("A remaining Skema Boy tour event is missing the Zauntee image")
 
+# Hope Fest is an historical regression check. Once its date has passed, the
+# permanent past-event pruner intentionally removes it from the live artifact.
 hope_fest = [e for e in supp if e.get("id") == "supplemental:image-override-hope-fest-daytona-2026"]
-if len(hope_fest) != 1:
-    raise SystemExit("Hope Fest image override is missing or duplicated")
-expected_hope_fest_image = "https://images.sk-static.com/images/media/profile_images/events/43075130/huge_avatar?series_id=719039"
-if hope_fest[0].get("image") != expected_hope_fest_image or hope_fest[0].get("imageType") != "event_artwork":
-    raise SystemExit("Hope Fest verified artwork regressed")
+if len(hope_fest) > 1:
+    raise SystemExit("Hope Fest image override is duplicated")
+if hope_fest:
+    expected_hope_fest_image = "https://images.sk-static.com/images/media/profile_images/events/43075130/huge_avatar?series_id=719039"
+    if hope_fest[0].get("image") != expected_hope_fest_image or hope_fest[0].get("imageType") != "event_artwork":
+        raise SystemExit("Hope Fest verified artwork regressed")
 
 anchor_re = re.compile(r'<a\b([^>]*?)href=(["\'])([^"\']+)\2([^>]*)>(.*?)</a>', re.I | re.S)
 img_re = re.compile(r'(<img\b[^>]*?\bsrc=)(["\'])([^"\']+)(\2)', re.I | re.S)
