@@ -1,59 +1,5 @@
 [
   {
-    "id": "official:e78007fa525d92d98fcf",
-    "title": "Hulvey - \"Could Be Tonight\" Tour",
-    "startDate": "2026-08-27",
-    "startTime": "19:00",
-    "timezone": "America/Chicago",
-    "venue": "Aztec Theatre",
-    "address": "104 North St. Mary's Street",
-    "city": "San Antonio",
-    "state": "TX",
-    "country": "US",
-    "artists": [
-      "Hulvey",
-      "indie tribe.",
-      "Kijan Boone"
-    ],
-    "headliner": "Hulvey",
-    "eventType": "concert",
-    "status": "onsale",
-    "ticketUrl": "https://www.ticketmaster.com/hulvey-could-be-tonight-tour-san-antonio-texas-08-27-2026/event/3A006481E0DA44FF",
-    "officialUrl": "https://www.ticketmaster.com/hulvey-could-be-tonight-tour-san-antonio-texas-08-27-2026/event/3A006481E0DA44FF",
-    "image": "https://s1.ticketm.net/dam/a/d4e/a49ecab3-089d-46ff-baa5-7942c994ed4e_SOURCE",
-    "price": "",
-    "sourceName": "Ticketmaster",
-    "sources": [
-      {
-        "name": "Ticketmaster",
-        "url": "https://www.ticketmaster.com/hulvey-could-be-tonight-tour-san-antonio-texas-08-27-2026/event/3A006481E0DA44FF",
-        "type": "ticketmaster",
-        "authority": "venue_ticket",
-        "priority": 94
-      },
-      {
-        "name": "Reach Records - Hulvey",
-        "url": "https://www.reachrecords.com/artists/hulvey/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 86
-      },
-      {
-        "name": "Reach Records consolidated calendar",
-        "url": "https://www.reachrecords.com/events/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 84
-      }
-    ],
-    "lastVerified": "2026-08-26T14:08:45Z",
-    "confidence": "high",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
     "id": "official:56c33d0af8a047ee6939",
     "title": "Rural Music Festival 2026",
     "startDate": "2026-08-28",
@@ -92,13 +38,17 @@
         "priority": 46
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "endDate": "2026-08-30",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "artistPerformanceDates": {
+      "Social Club Misfits": "2026-08-30",
+      "Rare of Breed": "2026-08-30"
+    }
   },
   {
     "id": "manual:turned-up-for-christ-corbin-2026",
@@ -135,7 +85,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -189,7 +139,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -227,7 +177,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -281,7 +231,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -326,7 +276,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 24%",
@@ -364,7 +314,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -425,7 +375,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -463,7 +413,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -503,6 +453,13 @@
         "priority": 94
       },
       {
+        "name": "Reach Records - Hulvey",
+        "url": "https://www.reachrecords.com/artists/hulvey/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      },
+      {
         "name": "Reach Records consolidated calendar",
         "url": "https://www.reachrecords.com/events/",
         "type": "reach_records",
@@ -517,7 +474,7 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -565,7 +522,7 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -604,7 +561,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -651,7 +608,7 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -697,7 +654,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -744,7 +701,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -782,88 +739,12 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "manual:808-beezy-rwg-oakland-me-2026-09-08",
-    "title": "RWG TOUR 2026",
-    "startDate": "2026-09-08",
-    "startTime": "08:30",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Oakland",
-    "state": "ME",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108771984-808-beezy-at-oakland-me?came_from=294",
-    "officialUrl": "https://www.bandsintown.com/e/108771984-808-beezy-at-oakland-me?came_from=294",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108771984-808-beezy-at-oakland-me?came_from=294",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-08-26T14:22:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-26T14:22:16Z"
-  },
-  {
-    "id": "manual:808-beezy-rwg-waldoboro-me-2026-09-08",
-    "title": "RWG TOUR 2026",
-    "startDate": "2026-09-08",
-    "startTime": "12:50",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Waldoboro",
-    "state": "ME",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108772016-808-beezy-at-waldoboro-me?came_from=294",
-    "officialUrl": "https://www.bandsintown.com/e/108772016-808-beezy-at-waldoboro-me?came_from=294",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108772016-808-beezy-at-waldoboro-me?came_from=294",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-08-26T14:22:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-26T14:22:16Z"
   },
   {
     "id": "ticketmaster:1AvfZ_6GkTNuWC-",
@@ -898,88 +779,12 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "manual:808-beezy-rwg-maine-morning-2026-09-09",
-    "title": "RWG TOUR 2026",
-    "startDate": "2026-09-09",
-    "startTime": "07:30",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Location TBD",
-    "state": "ME",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.808beezy.com/beezylive",
-    "officialUrl": "https://www.808beezy.com/beezylive",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour",
-        "url": "https://www.808beezy.com/beezylive",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-08-26T14:22:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-26T14:22:16Z"
-  },
-  {
-    "id": "manual:808-beezy-rwg-mechanic-falls-me-2026-09-09",
-    "title": "RWG TOUR 2026",
-    "startDate": "2026-09-09",
-    "startTime": "13:00",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Mechanic Falls",
-    "state": "ME",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108772067-808-beezy-at-mechanic-falls-me?came_from=242",
-    "officialUrl": "https://www.bandsintown.com/e/108772067-808-beezy-at-mechanic-falls-me?came_from=242",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108772067-808-beezy-at-mechanic-falls-me?came_from=242",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-08-26T14:22:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-26T14:22:16Z"
   },
   {
     "id": "official:3e8f30d2486e734b42c1",
@@ -1021,7 +826,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1059,7 +864,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1124,7 +929,7 @@
         "priority": 46
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "endDate": "2026-09-12",
     "imageType": "artist",
@@ -1163,7 +968,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -1201,7 +1006,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1248,7 +1053,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1295,164 +1100,12 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "manual:808-beezy-rwg-bunker-hill-il-2026-09-17",
-    "title": "RWG TOUR 2026",
-    "startDate": "2026-09-17",
-    "startTime": "08:15",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Bunker Hill",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108790395-808-beezy-at-bunker-hill-il?came_from=253",
-    "officialUrl": "https://www.bandsintown.com/e/108790395-808-beezy-at-bunker-hill-il?came_from=253",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108790395-808-beezy-at-bunker-hill-il?came_from=253",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-08-26T14:22:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-26T14:22:16Z"
-  },
-  {
-    "id": "manual:808-beezy-rwg-mulberry-grove-il-2026-09-17",
-    "title": "RWG TOUR 2026",
-    "startDate": "2026-09-17",
-    "startTime": "13:35",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Mulberry Grove",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.808beezy.com/beezylive",
-    "officialUrl": "https://www.808beezy.com/beezylive",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour",
-        "url": "https://www.808beezy.com/beezylive",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-08-26T14:22:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-26T14:22:16Z"
-  },
-  {
-    "id": "manual:808-beezy-rwg-ohio-0845-2026-09-18",
-    "title": "RWG TOUR 2026",
-    "startDate": "2026-09-18",
-    "startTime": "08:45",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Location TBD — 8:45 AM",
-    "state": "OH",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.808beezy.com/beezylive",
-    "officialUrl": "https://www.808beezy.com/beezylive",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour",
-        "url": "https://www.808beezy.com/beezylive",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-08-26T14:22:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-26T14:22:16Z"
-  },
-  {
-    "id": "manual:808-beezy-rwg-ohio-0945-2026-09-18",
-    "title": "RWG TOUR 2026",
-    "startDate": "2026-09-18",
-    "startTime": "09:45",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Location TBD — 9:45 AM",
-    "state": "OH",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.808beezy.com/beezylive",
-    "officialUrl": "https://www.808beezy.com/beezylive",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour",
-        "url": "https://www.808beezy.com/beezylive",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-08-26T14:22:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-26T14:22:16Z"
   },
   {
     "id": "official:cfd29f658249c76cd8e2",
@@ -1494,7 +1147,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1532,7 +1185,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1570,7 +1223,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -1609,7 +1262,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1656,7 +1309,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1694,7 +1347,7 @@
         "priority": 86
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -1732,7 +1385,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -1777,7 +1430,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -1822,7 +1475,7 @@
         "priority": 90
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1869,203 +1522,13 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-15T11:53:29Z",
     "lineupExplicit": true
-  },
-  {
-    "id": "manual:808-beezy-rwg-dunlap-il-2026-09-21",
-    "title": "RWG TOUR 2026",
-    "startDate": "2026-09-21",
-    "startTime": "09:35",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Dunlap",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108772449-808-beezy-at-dunlap-il?came_from=7",
-    "officialUrl": "https://www.bandsintown.com/e/108772449-808-beezy-at-dunlap-il?came_from=7",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108772449-808-beezy-at-dunlap-il?came_from=7",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-08-26T14:22:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-26T14:22:16Z"
-  },
-  {
-    "id": "manual:808-beezy-rwg-illinois-afternoon-2026-09-21",
-    "title": "RWG TOUR 2026",
-    "startDate": "2026-09-21",
-    "startTime": "14:00",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Location TBD",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.808beezy.com/beezylive",
-    "officialUrl": "https://www.808beezy.com/beezylive",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour",
-        "url": "https://www.808beezy.com/beezylive",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-08-26T14:22:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-26T14:22:16Z"
-  },
-  {
-    "id": "manual:808-beezy-rwg-illinois-0815-2026-09-22",
-    "title": "RWG TOUR 2026",
-    "startDate": "2026-09-22",
-    "startTime": "08:15",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Location TBD — 8:15 AM",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.808beezy.com/beezylive",
-    "officialUrl": "https://www.808beezy.com/beezylive",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour",
-        "url": "https://www.808beezy.com/beezylive",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-08-26T14:22:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-26T14:22:16Z"
-  },
-  {
-    "id": "manual:808-beezy-rwg-illinois-1020-2026-09-22",
-    "title": "RWG TOUR 2026",
-    "startDate": "2026-09-22",
-    "startTime": "10:20",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Location TBD — 10:20 AM",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.808beezy.com/beezylive",
-    "officialUrl": "https://www.808beezy.com/beezylive",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour",
-        "url": "https://www.808beezy.com/beezylive",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-08-26T14:22:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-26T14:22:16Z"
-  },
-  {
-    "id": "manual:808-beezy-rwg-princeton-il-2026-09-22",
-    "title": "RWG TOUR 2026",
-    "startDate": "2026-09-22",
-    "startTime": "17:00",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Princeton",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108772738-808-beezy-at-princeton-il?came_from=7",
-    "officialUrl": "https://www.bandsintown.com/e/108772738-808-beezy-at-princeton-il?came_from=7",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108772738-808-beezy-at-princeton-il?came_from=7",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-08-26T14:22:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-26T14:22:16Z"
   },
   {
     "id": "manual:caleb-gordon-eden-2026-09-22-leander",
@@ -2098,7 +1561,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2145,89 +1608,13 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
     "lineupExplicit": true
-  },
-  {
-    "id": "manual:808-beezy-rwg-elwood-il-2026-09-23",
-    "title": "RWG TOUR 2026",
-    "startDate": "2026-09-23",
-    "startTime": "09:00",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Elwood",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.808beezy.com/beezylive",
-    "officialUrl": "https://www.808beezy.com/beezylive",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour",
-        "url": "https://www.808beezy.com/beezylive",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-08-26T14:22:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-26T14:22:16Z"
-  },
-  {
-    "id": "manual:808-beezy-rwg-mokena-il-2026-09-23",
-    "title": "RWG TOUR 2026",
-    "startDate": "2026-09-23",
-    "startTime": "13:00",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Mokena",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108772638-808-beezy-at-mokena-il?came_from=274",
-    "officialUrl": "https://www.bandsintown.com/e/108772638-808-beezy-at-mokena-il?came_from=274",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108772638-808-beezy-at-mokena-il?came_from=274",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-08-26T14:22:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-26T14:22:16Z"
   },
   {
     "id": "official:9f793162ae1bb3cab7f3",
@@ -2269,51 +1656,13 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-15T11:53:29Z",
     "lineupExplicit": true
-  },
-  {
-    "id": "manual:808-beezy-rwg-hume-il-2026-09-24",
-    "title": "RWG TOUR 2026",
-    "startDate": "2026-09-24",
-    "startTime": "11:00",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Hume",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108772712-808-beezy-at-hume-il?came_from=226",
-    "officialUrl": "https://www.bandsintown.com/e/108772712-808-beezy-at-hume-il?came_from=226",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108772712-808-beezy-at-hume-il?came_from=226",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-08-26T14:22:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-26T14:22:16Z"
   },
   {
     "id": "manual:caleb-gordon-eden-2026-09-24-richmond",
@@ -2346,50 +1695,12 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "manual:808-beezy-rwg-wellington-mo-2026-09-25",
-    "title": "RWG TOUR 2026",
-    "startDate": "2026-09-25",
-    "startTime": "08:45",
-    "timezone": "",
-    "venue": "Venue to be announced",
-    "address": "",
-    "city": "Wellington",
-    "state": "MO",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108772751-808-beezy-at-wellington-mo?came_from=253",
-    "officialUrl": "https://www.bandsintown.com/e/108772751-808-beezy-at-wellington-mo?came_from=253",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108772751-808-beezy-at-wellington-mo?came_from=253",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-08-26T14:22:16Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-26T14:22:16Z"
   },
   {
     "id": "official:4f72402532a6edb7c4ba",
@@ -2431,7 +1742,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2474,7 +1785,7 @@
         "priority": 80
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "endDate": "2026-09-26",
     "imageType": "event_artwork",
@@ -2522,7 +1833,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2567,7 +1878,7 @@
         "priority": 90
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2605,7 +1916,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 24%",
@@ -2643,7 +1954,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -2690,7 +2001,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2730,7 +2041,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -2768,7 +2079,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 24%",
@@ -2806,7 +2117,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -2844,7 +2155,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -2882,7 +2193,7 @@
         "priority": 74
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "endDate": "2026-10-12",
     "imageType": "fallback",
@@ -2921,7 +2232,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -2966,7 +2277,7 @@
         "priority": 104
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3004,7 +2315,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -3043,7 +2354,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3082,7 +2393,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3122,7 +2433,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3160,7 +2471,7 @@
         "priority": 74
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "endDate": "2026-11-08",
     "imageType": "artist",
@@ -3199,7 +2510,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3237,7 +2548,7 @@
         "priority": 74
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "endDate": "2026-11-15",
     "imageType": "artist",
@@ -3277,7 +2588,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3315,7 +2626,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -3353,7 +2664,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -3391,7 +2702,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -3429,7 +2740,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-08-26T14:08:45Z",
+    "lastVerified": "2026-08-28T21:49:32Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",

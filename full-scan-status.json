@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-08-26T14:19:35Z",
-  "artistsChecked": 320,
+  "generatedAt": "2026-08-28T21:59:55Z",
+  "artistsChecked": 317,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
   "festivalCandidates": 0,
   "bandsintown": {
-    "artistsAttempted": 320,
+    "artistsAttempted": 317,
     "resolved": 0,
     "eventsFound": 0
   },
   "songkick": {
-    "artistsAttempted": 320,
+    "artistsAttempted": 317,
     "resolved": 0,
-    "blockedByRobots": 320,
+    "blockedByRobots": 317,
     "eventsFound": 0
   },
   "sourceStatusCounts": {
-    "failed": 325,
-    "blocked_by_robots": 328,
-    "no_events": 91
+    "failed": 322,
+    "blocked_by_robots": 324,
+    "no_events": 101
   },
   "newEvents": [],
   "sourceResults": [
@@ -98,7 +98,14 @@
     {
       "artist": "Caleb Gordon",
       "source": "official website",
-      "url": "https://tprlive.co/collections/caleb-gordon-the-eden-experience?srsltid=AfmBOopZ8_u8FLIHQ5yFrnTJVHrJfOAqo32_-Zgy_D3D76qo031L04Ge",
+      "url": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Caleb Gordon",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/6s3XaJkcT7464G4oII9V41",
       "status": "no_events",
       "eventsFound": 0
     },
@@ -1479,33 +1486,6 @@
       "eventsFound": 0
     },
     {
-      "artist": "BIG HOLY",
-      "source": "Bandsintown",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.bandsintown.com/search?q=BIG+HOLY: HTTP Error 403: Forbidden"
-    },
-    {
-      "artist": "BIG HOLY",
-      "source": "Songkick",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
-    },
-    {
-      "artist": "BIG HOLY",
-      "source": "official website",
-      "url": "https://www.google.com/search?q=BIG+HOLY+official+website",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
-    },
-    {
-      "artist": "BIG HOLY",
-      "source": "Spotify profile",
-      "url": "https://open.spotify.com/search/BIG%20HOLY",
-      "status": "no_events",
-      "eventsFound": 0
-    },
-    {
       "artist": "REDEEMED",
       "source": "Bandsintown",
       "status": "failed",
@@ -1711,6 +1691,167 @@
       "artist": "Wuhsahbee",
       "source": "Spotify profile",
       "url": "https://open.spotify.com/artist/6Xg1qxN1cKliOVzRLA4lDK",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kelo",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Kelo: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Kelo",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kelo",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/6j8t8rQzrAtRx5tYImodgd",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "DKG Kie",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=DKG+Kie: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "DKG Kie",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "DKG Kie",
+      "source": "official website",
+      "url": "https://www.dkgkiemerch.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "DKG Kie",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/1eeYg6dFkaRT5GA0lsCVHA",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Braille",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Braille: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Braille",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Braille",
+      "source": "official website",
+      "url": "https://www.humblebeast.com/music/braille",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Braille",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/6RYTz1tFNDF2qP0mwqEwDO",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Canton Jones",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Canton+Jones: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Canton Jones",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Canton Jones",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/3nzEXHMRFWTw4zt3pVRv6V",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jay-Way",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Jay-Way: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Jay-Way",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jay-Way",
+      "source": "official website",
+      "url": "https://www.jaywaythealien.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jay-Way",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/1RDbE3dM2bNNSTh88R4MQ7",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Stixx aka Conejo",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Stixx+aka+Conejo: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Stixx aka Conejo",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Stixx aka Conejo",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/3khYLvZ6GmLlPMPlTfMTBr",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Ruslan",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Ruslan: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Ruslan",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Ruslan",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/2GEXrCflKZ5S5ZHBM4LNcV",
       "status": "no_events",
       "eventsFound": 0
     },
@@ -2118,19 +2259,6 @@
       "eventsFound": 0
     },
     {
-      "artist": "Jay-Way",
-      "source": "Bandsintown",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Jay-Way: HTTP Error 403: Forbidden"
-    },
-    {
-      "artist": "Jay-Way",
-      "source": "Songkick",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
-    },
-    {
       "artist": "Ty Brasel",
       "source": "Bandsintown",
       "status": "failed",
@@ -2346,19 +2474,6 @@
       "eventsFound": 0
     },
     {
-      "artist": "Ruslan",
-      "source": "Bandsintown",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Ruslan: HTTP Error 403: Forbidden"
-    },
-    {
-      "artist": "Ruslan",
-      "source": "Songkick",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
-    },
-    {
       "artist": "Mission",
       "source": "Bandsintown",
       "status": "failed",
@@ -2484,19 +2599,6 @@
     },
     {
       "artist": "Xay Hill",
-      "source": "Songkick",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
-    },
-    {
-      "artist": "DKG Kie",
-      "source": "Bandsintown",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.bandsintown.com/search?q=DKG+Kie: HTTP Error 403: Forbidden"
-    },
-    {
-      "artist": "DKG Kie",
       "source": "Songkick",
       "status": "blocked_by_robots",
       "eventsFound": 0
@@ -2879,19 +2981,6 @@
       "eventsFound": 0
     },
     {
-      "artist": "Stixx aka Conejo",
-      "source": "Bandsintown",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Stixx+aka+Conejo: HTTP Error 403: Forbidden"
-    },
-    {
-      "artist": "Stixx aka Conejo",
-      "source": "Songkick",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
-    },
-    {
       "artist": "Tay Stunna",
       "source": "Bandsintown",
       "status": "failed",
@@ -2978,19 +3067,6 @@
     },
     {
       "artist": "EJ Swavv",
-      "source": "Songkick",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
-    },
-    {
-      "artist": "Kelo",
-      "source": "Bandsintown",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Kelo: HTTP Error 403: Forbidden"
-    },
-    {
-      "artist": "Kelo",
       "source": "Songkick",
       "status": "blocked_by_robots",
       "eventsFound": 0
@@ -3542,19 +3618,6 @@
       "eventsFound": 0
     },
     {
-      "artist": "Erica Mason",
-      "source": "Bandsintown",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Erica+Mason: HTTP Error 403: Forbidden"
-    },
-    {
-      "artist": "Erica Mason",
-      "source": "Songkick",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
-    },
-    {
       "artist": "Kay Sade",
       "source": "Bandsintown",
       "status": "failed",
@@ -3737,19 +3800,6 @@
       "eventsFound": 0
     },
     {
-      "artist": "Chad Jones",
-      "source": "Bandsintown",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Chad+Jones: HTTP Error 403: Forbidden"
-    },
-    {
-      "artist": "Chad Jones",
-      "source": "Songkick",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
-    },
-    {
       "artist": "Dillon Chase",
       "source": "Bandsintown",
       "status": "failed",
@@ -3862,19 +3912,6 @@
     },
     {
       "artist": "Beautiful Eulogy",
-      "source": "Songkick",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
-    },
-    {
-      "artist": "Braille",
-      "source": "Bandsintown",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Braille: HTTP Error 403: Forbidden"
-    },
-    {
-      "artist": "Braille",
       "source": "Songkick",
       "status": "blocked_by_robots",
       "eventsFound": 0
@@ -4495,19 +4532,6 @@
     },
     {
       "artist": "Brinson",
-      "source": "Songkick",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
-    },
-    {
-      "artist": "Canton Jones",
-      "source": "Bandsintown",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Canton+Jones: HTTP Error 403: Forbidden"
-    },
-    {
-      "artist": "Canton Jones",
       "source": "Songkick",
       "status": "blocked_by_robots",
       "eventsFound": 0
