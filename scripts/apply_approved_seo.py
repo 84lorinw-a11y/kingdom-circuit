@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import html
 import json
 import os
 import pathlib
@@ -327,11 +328,13 @@ def final_production_verify(root: pathlib.Path) -> None:
             failures.append(f"artist-image-page-missing:{artist_name}")
             continue
         text = page.read_text(encoding="utf-8", errors="ignore")
+        decoded_text = html.unescape(text)
+        decoded_directory = html.unescape(directory)
         if "seo-profile-image seo-profile-placeholder" in text:
             failures.append(f"artist-image-placeholder:{artist_name}")
-        if image_url not in text:
+        if image_url not in decoded_text:
             failures.append(f"artist-image-url-missing:{artist_name}")
-        if image_url not in directory:
+        if image_url not in decoded_directory:
             failures.append(f"directory-image-url-missing:{artist_name}")
 
     if failures:
