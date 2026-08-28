@@ -18,7 +18,7 @@
     "parris chariz": ["https://www.invubu.com/images/artists/1200/parris_chariz.jpg", "https://open.voidware.de/artist/2Vt6gyhUH7Vj2cybfQWOqM"],
     "nobigdyl.": ["https://resources.tidal.com/images/66d1df15/192b/4a8f/97c3/30a2b85a36f3/750x750.jpg", "https://open.voidware.de/artist/2d8NsBa8O4C6bgQatFP5V4"],
     "jet trouble": ["https://55promotion.com/kbm24/wp-content/uploads/2025/06/Promo-Headshot-1024x1024.jpg", "https://open.voidware.de/artist/6W2lyFO79SNpk3ZpF0A2s9"],
-    "mike teezy": ["https://real.fm/assets/Uploads/MikeTeezy__FocusFillWyItMC4xMSIsIi0wLjE2IiwxMjAwLDYyNTA.jpg", "https://open.voidware.de/artist/6tO2zQcTIRfR2Xdsm9XnL7"]
+    "mike teezy": ["https://real.fm/assets/Uploads/MikeTeezy__FocusFillWyItMC4xMSIsIi0wLjE2IiwxMjAwLDYyN10.jpg", "https://open.voidware.de/artist/6tO2zQcTIRfR2Xdsm9XnL7"]
   };
 
   const normalize = value => String(value || "").toLowerCase().replace(/’/g, "'").replace(/\s+/g, " ").trim();
