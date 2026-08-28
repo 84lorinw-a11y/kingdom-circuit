@@ -61,6 +61,9 @@ jobs:
       - name: Apply curated catalog policy and coverage audit
         run: python scripts/apply_curated_catalog_policy.py
 
+      - name: Remove completed shows from source data
+        run: python scripts/prune_past_events.py --source .
+
       - name: Normalize Sevin schedule from HOG MOB
         run: python scripts/apply_sevin_official_schedule.py
 
@@ -125,6 +128,7 @@ jobs:
           test -s scripts/build_seo_site.py
           test -s scripts/apply_approved_seo.py
           test -s scripts/apply_curated_catalog_policy.py
+          test -s scripts/prune_past_events.py
           test -s scripts/apply_priority_source_fallbacks.py
           test -s scripts/apply_sevin_official_schedule.py
           test -s scripts/scan_all_artist_sources.py
@@ -169,6 +173,9 @@ jobs:
 
       - name: Apply verified live artist artifact cleanup
         run: python scripts/apply_live_artist_overrides.py --site _site
+
+      - name: Remove completed shows from deployment artifact
+        run: python scripts/prune_past_events.py --site _site
 
       - name: Verify production SEO architecture
         shell: bash
