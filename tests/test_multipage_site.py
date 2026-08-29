@@ -83,15 +83,26 @@ class MultiPageProductionTests(unittest.TestCase):
             self.assertEqual("Zauntee", event.get("headliner"))
             self.assertEqual("assets/artists/zauntee.webp", event.get("image"))
 
-        hope_fest = [
+        # Completed shows are intentionally pruned from source data now, so the
+        # old Hope Fest fixture must not be required forever. Instead, protect
+        # the self-hosted images for current Rare of Breed and Genesis records.
+        rare_events = [event for event in events if "Rare of Breed" in event.get("artists", [])]
+        self.assertGreaterEqual(len(rare_events), 3)
+        for event in rare_events:
+            self.assertEqual("assets/artists/rare-of-breed.webp", event.get("image"))
+            self.assertEqual("artist", event.get("imageType"))
+
+        genesis = [
             event for event in events
-            if event.get("id") == "supplemental:image-override-hope-fest-daytona-2026"
+            if event.get("id") == "bandsintown:108758638"
+            or "the genesis show" in str(event.get("title") or "").casefold()
         ]
-        self.assertEqual(1, len(hope_fest))
-        self.assertEqual(
-            "https://images.sk-static.com/images/media/profile_images/events/43075130/huge_avatar?series_id=719039",
-            hope_fest[0].get("image"),
-        )
+        self.assertEqual(1, len(genesis))
+        self.assertEqual("assets/artists/yumiya.webp", genesis[0].get("image"))
+        self.assertEqual("artist", genesis[0].get("imageType"))
+
+        self.assertTrue((ROOT / "assets/artists/rare-of-breed.webp").is_file())
+        self.assertTrue((ROOT / "assets/artists/yumiya.webp").is_file())
 
 if __name__ == "__main__":
     unittest.main()
