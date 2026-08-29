@@ -30,12 +30,12 @@ IMAGE_CANDIDATES = {
         "https://open.voidware.de/artist/3zSrc5vUlUxyDdS0KrxFJO",
     ],
     "yumiya!": [
-        "/assets/artists/yumiya.webp",
+        "/assets/artists/yumiya-v2.webp",
         "https://ugc.production.linktr.ee/0f6ee994-7bd6-4821-bb79-593f035ae2c9_1F523223-FD9A-4E86-88BE-0A34120C8FAD.jpeg?io=true&size=avatar-v3_0",
         "https://i.scdn.co/image/ab6761610000e5ebe8717d1df4abebcd56989c30",
     ],
     "rare of breed": [
-        "/assets/artists/rare-of-breed.webp",
+        "/assets/artists/rare-of-breed-v2.webp",
         "https://rareofbreed.com/cdn/shop/files/202511_RareOfBreed_TheWarehouse-32.jpg?v=1784663742&width=3840",
     ],
     "issac mansfield": [
