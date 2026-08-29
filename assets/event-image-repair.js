@@ -4,13 +4,15 @@
   const fallback = "/assets/event-fallback.webp";
   const stale = new Set([
     "https://fivetwentycollective.com/wp-content/uploads/2021/03/Rare-of-Breed.jpg",
+    "https://rareofbreed.com/cdn/shop/files/202511_RareOfBreed_TheWarehouse-32.jpg?v=1784663742&width=3840",
+    "https://ugc.production.linktr.ee/0f6ee994-7bd6-4821-bb79-593f035ae2c9_1F523223-FD9A-4E86-88BE-0A34120C8FAD.jpeg?io=true&size=avatar-v3_0",
     "https://i.scdn.co/image/ab6761610000e5ebe8717d1df4abebcd56989c30"
   ]);
   const candidates = {
     "808 beezy": ["https://pbs.twimg.com/profile_images/1836827722309312512/e5kgorwv.jpg", "https://open.voidware.de/artist/3CltJZLndpJKtpUyRVBB1k"],
     "hulvey": ["https://s1.ticketm.net/dam/a/d4e/a49ecab3-089d-46ff-baa5-7942c994ed4e_SOURCE", "https://open.voidware.de/artist/3zSrc5vUlUxyDdS0KrxFJO"],
-    "yumiya!": ["https://ugc.production.linktr.ee/0f6ee994-7bd6-4821-bb79-593f035ae2c9_1F523223-FD9A-4E86-88BE-0A34120C8FAD.jpeg?io=true&size=avatar-v3_0", "https://i.scdn.co/image/ab6761610000e5ebe8717d1df4abebcd56989c30", "https://open.voidware.de/artist/1s4YH0vODE4nW0bREPt4GG"],
-    "rare of breed": ["https://rareofbreed.com/cdn/shop/files/202511_RareOfBreed_TheWarehouse-32.jpg?v=1784663742&width=3840", "https://open.voidware.de/artist/3GdRdoJomMK2f8xGjEZbHH"],
+    "yumiya!": ["/assets/artists/yumiya.webp", "https://ugc.production.linktr.ee/0f6ee994-7bd6-4821-bb79-593f035ae2c9_1F523223-FD9A-4E86-88BE-0A34120C8FAD.jpeg?io=true&size=avatar-v3_0", "https://i.scdn.co/image/ab6761610000e5ebe8717d1df4abebcd56989c30"],
+    "rare of breed": ["/assets/artists/rare-of-breed.webp", "https://rareofbreed.com/cdn/shop/files/202511_RareOfBreed_TheWarehouse-32.jpg?v=1784663742&width=3840"],
     "issac mansfield": ["https://i.scdn.co/image/ab6761610000e5eb6d97dd155baa40ea3c14b616", "https://open.voidware.de/artist/1QgXbOPk6XpELZrJOzz33w"],
     "zauntee": ["/assets/artists/zauntee.webp", "https://open.voidware.de/artist/7jyr9Co4MKL1iWML1G7vch"],
     "anike": ["https://resources.tidal.com/images/108dfb26/84ff/447e/b0b7/a3e208c409ed/750x750.jpg", "https://open.voidware.de/artist/0GdzQJqgRL5SHp7kXOKba0"],

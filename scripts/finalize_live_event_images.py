@@ -13,6 +13,8 @@ EXCLUDED_ARTISTS = {"chad jones", "erica mason", "big holy"}
 EXCLUDED_SLUGS = {"chad-jones", "erica-mason", "big-holy"}
 STALE_IMAGE_URLS = {
     "https://fivetwentycollective.com/wp-content/uploads/2021/03/Rare-of-Breed.jpg",
+    "https://rareofbreed.com/cdn/shop/files/202511_RareOfBreed_TheWarehouse-32.jpg?v=1784663742&width=3840",
+    "https://ugc.production.linktr.ee/0f6ee994-7bd6-4821-bb79-593f035ae2c9_1F523223-FD9A-4E86-88BE-0A34120C8FAD.jpeg?io=true&size=avatar-v3_0",
     "https://i.scdn.co/image/ab6761610000e5ebe8717d1df4abebcd56989c30",
 }
 
@@ -28,13 +30,13 @@ IMAGE_CANDIDATES = {
         "https://open.voidware.de/artist/3zSrc5vUlUxyDdS0KrxFJO",
     ],
     "yumiya!": [
+        "/assets/artists/yumiya.webp",
         "https://ugc.production.linktr.ee/0f6ee994-7bd6-4821-bb79-593f035ae2c9_1F523223-FD9A-4E86-88BE-0A34120C8FAD.jpeg?io=true&size=avatar-v3_0",
         "https://i.scdn.co/image/ab6761610000e5ebe8717d1df4abebcd56989c30",
-        "https://open.voidware.de/artist/1s4YH0vODE4nW0bREPt4GG",
     ],
     "rare of breed": [
+        "/assets/artists/rare-of-breed.webp",
         "https://rareofbreed.com/cdn/shop/files/202511_RareOfBreed_TheWarehouse-32.jpg?v=1784663742&width=3840",
-        "https://open.voidware.de/artist/3GdRdoJomMK2f8xGjEZbHH",
     ],
     "issac mansfield": [
         "https://i.scdn.co/image/ab6761610000e5eb6d97dd155baa40ea3c14b616",
