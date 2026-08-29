@@ -1,0 +1,192 @@
+name: Localize Rare and Genesis images
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-local-rare-genesis-images.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download verified artist images into Kingdom Circuit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --quiet pillow requests
+          python - <<'PY'
+          from __future__ import annotations
+          from io import BytesIO
+          from pathlib import Path
+          import html as htmlmod
+          import json
+          import re
+          import requests
+          from PIL import Image
+
+          ROOT = Path('.')
+          OUT = ROOT / 'assets' / 'artists'
+          OUT.mkdir(parents=True, exist_ok=True)
+          HEADERS = {
+              'User-Agent': 'Mozilla/5.0 (compatible; KingdomCircuitImageCache/1.0; +https://kingdomcircuit.com)',
+              'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+          }
+
+          def og_image(page_url: str) -> str:
+              try:
+                  r = requests.get(page_url, headers=HEADERS, timeout=25)
+                  r.raise_for_status()
+                  for pattern in (
+                      r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)',
+                      r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image["\']',
+                  ):
+                      m = re.search(pattern, r.text, flags=re.I)
+                      if m:
+                          return htmlmod.unescape(m.group(1))
+              except Exception as exc:
+                  print(f'OG lookup failed for {page_url}: {exc}')
+              return ''
+
+          def save_webp(name: str, urls: list[str]) -> Path:
+              errors = []
+              for url in [u for u in urls if u]:
+                  try:
+                      print(f'Trying {name}: {url}')
+                      r = requests.get(url, headers=HEADERS, timeout=35, allow_redirects=True)
+                      r.raise_for_status()
+                      if len(r.content) < 5000:
+                          raise ValueError(f'image response too small: {len(r.content)} bytes')
+                      im = Image.open(BytesIO(r.content))
+                      im.load()
+                      if im.width < 300 or im.height < 300:
+                          raise ValueError(f'image dimensions too small: {im.size}')
+                      if im.mode not in ('RGB', 'RGBA'):
+                          im = im.convert('RGB')
+                      elif im.mode == 'RGBA':
+                          bg = Image.new('RGB', im.size, 'white')
+                          bg.paste(im, mask=im.getchannel('A'))
+                          im = bg
+                      else:
+                          im = im.convert('RGB')
+                      im.thumbnail((1800, 1800), Image.Resampling.LANCZOS)
+                      out = OUT / name
+                      im.save(out, 'WEBP', quality=90, method=6)
+                      if out.stat().st_size < 10000:
+                          raise ValueError(f'encoded image too small: {out.stat().st_size} bytes')
+                      print(f'Saved {out} {im.size} {out.stat().st_size} bytes from {url}')
+                      return out
+                  except Exception as exc:
+                      errors.append(f'{url}: {exc}')
+              raise SystemExit(f'Could not cache {name}: ' + ' | '.join(errors))
+
+          rare_urls = [
+              'https://rareofbreed.com/cdn/shop/files/202511_RareOfBreed_TheWarehouse-32.jpg?v=1784663742&width=1800',
+              og_image('https://rareofbreed.com/pages/connect'),
+              'https://fivetwentycollective.com/wp-content/uploads/2021/03/Rare-of-Breed.jpg',
+              'https://i.scdn.co/image/ab67616d0000b2732623d16f9d941bdf3ebe1d86',
+          ]
+          yumiya_urls = [
+              'https://ugc.production.linktr.ee/0f6ee994-7bd6-4821-bb79-593f035ae2c9_1F523223-FD9A-4E86-88BE-0A34120C8FAD.jpeg?io=true&size=avatar-v3_0',
+              og_image('https://linktr.ee/yayayumiya'),
+              og_image('https://yumiya.bandcamp.com/'),
+              'https://i.scdn.co/image/ab6761610000e5ebe8717d1df4abebcd56989c30',
+          ]
+          save_webp('rare-of-breed.webp', rare_urls)
+          save_webp('yumiya.webp', yumiya_urls)
+
+          # Make the local files authoritative in artist metadata.
+          overrides_path = ROOT / 'config' / 'verified-artist-image-overrides.json'
+          overrides = json.loads(overrides_path.read_text(encoding='utf-8'))
+          overrides['Rare of Breed'] = 'assets/artists/rare-of-breed.webp'
+          overrides['yumiya!'] = 'assets/artists/yumiya.webp'
+          overrides_path.write_text(json.dumps(overrides, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          artists_path = ROOT / 'config' / 'artists.json'
+          artists = json.loads(artists_path.read_text(encoding='utf-8'))
+          for artist in artists:
+              key = str(artist.get('name') or '').strip().casefold()
+              if key == 'rare of breed':
+                  artist['imageUrl'] = 'assets/artists/rare-of-breed.webp'
+                  artist['imageSource'] = 'Kingdom Circuit local verified artist image'
+              elif key == 'yumiya!':
+                  artist['imageUrl'] = 'assets/artists/yumiya.webp'
+                  artist['imageSource'] = 'Kingdom Circuit local verified artist image'
+          artists_path.write_text(json.dumps(artists, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          # Correct the currently published source records too.
+          supplemental_path = ROOT / 'supplemental-events.json'
+          supplemental = json.loads(supplemental_path.read_text(encoding='utf-8'))
+          rare_count = genesis_count = 0
+          for event in supplemental:
+              names = [str(v).casefold() for v in event.get('artists') or []]
+              if 'rare of breed' in names:
+                  event['image'] = 'assets/artists/rare-of-breed.webp'
+                  event['imageType'] = 'artist'
+                  rare_count += 1
+              if event.get('id') == 'bandsintown:108758638' or 'the genesis show' in str(event.get('title') or '').casefold():
+                  event['image'] = 'assets/artists/yumiya.webp'
+                  event['imageType'] = 'artist'
+                  genesis_count += 1
+          supplemental_path.write_text(json.dumps(supplemental, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          if rare_count < 3 or genesis_count < 1:
+              raise SystemExit(f'Expected Rare/Genesis source records were not found: rare={rare_count}, genesis={genesis_count}')
+
+          # Force build-time image repair to local, self-hosted files.
+          py_path = ROOT / 'scripts' / 'finalize_live_event_images.py'
+          text = py_path.read_text(encoding='utf-8')
+          old_stale = '''STALE_IMAGE_URLS = {\n    "https://fivetwentycollective.com/wp-content/uploads/2021/03/Rare-of-Breed.jpg",\n    "https://i.scdn.co/image/ab6761610000e5ebe8717d1df4abebcd56989c30",\n}'''
+          new_stale = '''STALE_IMAGE_URLS = {\n    "https://fivetwentycollective.com/wp-content/uploads/2021/03/Rare-of-Breed.jpg",\n    "https://rareofbreed.com/cdn/shop/files/202511_RareOfBreed_TheWarehouse-32.jpg?v=1784663742&width=3840",\n    "https://ugc.production.linktr.ee/0f6ee994-7bd6-4821-bb79-593f035ae2c9_1F523223-FD9A-4E86-88BE-0A34120C8FAD.jpeg?io=true&size=avatar-v3_0",\n    "https://i.scdn.co/image/ab6761610000e5ebe8717d1df4abebcd56989c30",\n}'''
+          if old_stale not in text:
+              raise SystemExit('STALE_IMAGE_URLS block not found')
+          text = text.replace(old_stale, new_stale, 1)
+          old_yumiya = '''    "yumiya!": [\n        "https://ugc.production.linktr.ee/0f6ee994-7bd6-4821-bb79-593f035ae2c9_1F523223-FD9A-4E86-88BE-0A34120C8FAD.jpeg?io=true&size=avatar-v3_0",\n        "https://i.scdn.co/image/ab6761610000e5ebe8717d1df4abebcd56989c30",\n        "https://open.voidware.de/artist/1s4YH0vODE4nW0bREPt4GG",\n    ],'''
+          new_yumiya = '''    "yumiya!": [\n        "/assets/artists/yumiya.webp",\n        "https://ugc.production.linktr.ee/0f6ee994-7bd6-4821-bb79-593f035ae2c9_1F523223-FD9A-4E86-88BE-0A34120C8FAD.jpeg?io=true&size=avatar-v3_0",\n        "https://i.scdn.co/image/ab6761610000e5ebe8717d1df4abebcd56989c30",\n    ],'''
+          old_rare = '''    "rare of breed": [\n        "https://rareofbreed.com/cdn/shop/files/202511_RareOfBreed_TheWarehouse-32.jpg?v=1784663742&width=3840",\n        "https://open.voidware.de/artist/3GdRdoJomMK2f8xGjEZbHH",\n    ],'''
+          new_rare = '''    "rare of breed": [\n        "/assets/artists/rare-of-breed.webp",\n        "https://rareofbreed.com/cdn/shop/files/202511_RareOfBreed_TheWarehouse-32.jpg?v=1784663742&width=3840",\n    ],'''
+          if old_yumiya not in text or old_rare not in text:
+              raise SystemExit('Rare/yumiya candidate blocks not found')
+          text = text.replace(old_yumiya, new_yumiya, 1).replace(old_rare, new_rare, 1)
+          py_path.write_text(text, encoding='utf-8')
+
+          js_path = ROOT / 'assets' / 'event-image-repair.js'
+          js = js_path.read_text(encoding='utf-8')
+          js = js.replace(
+              '    "https://fivetwentycollective.com/wp-content/uploads/2021/03/Rare-of-Breed.jpg",\n    "https://i.scdn.co/image/ab6761610000e5ebe8717d1df4abebcd56989c30"',
+              '    "https://fivetwentycollective.com/wp-content/uploads/2021/03/Rare-of-Breed.jpg",\n    "https://rareofbreed.com/cdn/shop/files/202511_RareOfBreed_TheWarehouse-32.jpg?v=1784663742&width=3840",\n    "https://ugc.production.linktr.ee/0f6ee994-7bd6-4821-bb79-593f035ae2c9_1F523223-FD9A-4E86-88BE-0A34120C8FAD.jpeg?io=true&size=avatar-v3_0",\n    "https://i.scdn.co/image/ab6761610000e5ebe8717d1df4abebcd56989c30"',
+              1,
+          )
+          old_js_yumiya = '    "yumiya!": ["https://ugc.production.linktr.ee/0f6ee994-7bd6-4821-bb79-593f035ae2c9_1F523223-FD9A-4E86-88BE-0A34120C8FAD.jpeg?io=true&size=avatar-v3_0", "https://i.scdn.co/image/ab6761610000e5ebe8717d1df4abebcd56989c30", "https://open.voidware.de/artist/1s4YH0vODE4nW0bREPt4GG"],'
+          new_js_yumiya = '    "yumiya!": ["/assets/artists/yumiya.webp", "https://ugc.production.linktr.ee/0f6ee994-7bd6-4821-bb79-593f035ae2c9_1F523223-FD9A-4E86-88BE-0A34120C8FAD.jpeg?io=true&size=avatar-v3_0", "https://i.scdn.co/image/ab6761610000e5ebe8717d1df4abebcd56989c30"],'
+          old_js_rare = '    "rare of breed": ["https://rareofbreed.com/cdn/shop/files/202511_RareOfBreed_TheWarehouse-32.jpg?v=1784663742&width=3840", "https://open.voidware.de/artist/3GdRdoJomMK2f8xGjEZbHH"],'
+          new_js_rare = '    "rare of breed": ["/assets/artists/rare-of-breed.webp", "https://rareofbreed.com/cdn/shop/files/202511_RareOfBreed_TheWarehouse-32.jpg?v=1784663742&width=3840"],'
+          if old_js_yumiya not in js or old_js_rare not in js:
+              raise SystemExit('Runtime Rare/yumiya candidate blocks not found')
+          js = js.replace(old_js_yumiya, new_js_yumiya, 1).replace(old_js_rare, new_js_rare, 1)
+          js_path.write_text(js, encoding='utf-8')
+
+          print(f'Localized event images: Rare records={rare_count}, Genesis records={genesis_count}')
+          PY
+          python -m py_compile scripts/finalize_live_event_images.py
+          node --check assets/event-image-repair.js
+          test -s assets/artists/rare-of-breed.webp
+          test -s assets/artists/yumiya.webp
+      - name: Commit durable local image fix
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/artists/rare-of-breed.webp assets/artists/yumiya.webp \
+                  config/verified-artist-image-overrides.json config/artists.json \
+                  supplemental-events.json scripts/finalize_live_event_images.py \
+                  assets/event-image-repair.js
+          git commit -m "Self-host Rare of Breed and Genesis images"
+          git push origin HEAD:main
