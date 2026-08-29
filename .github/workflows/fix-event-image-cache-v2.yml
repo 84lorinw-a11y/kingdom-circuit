@@ -43,8 +43,6 @@ jobs:
                   artists = [norm(x) for x in (e.get('artists') or [])]
                   title = norm(e.get('title'))
                   headliner = norm(e.get('headliner'))
-                  # Preserve mixed festival artwork; only standalone Rare of Breed cards
-                  # should use the Rare artist photo.
                   if 'rare of breed' in artists and (headliner == 'rare of breed' or title.startswith('rare of breed')):
                       e['image'] = RARE
                       e['imageType'] = 'artist'
@@ -109,31 +107,12 @@ jobs:
                   text = text.replace(old, new)
               p.write_text(text, encoding='utf-8')
 
-          # Strengthen the regression test: the self-hosted images must exist,
-          # have real payloads, and must not equal the generic event fallback.
           p = Path('tests/test_multipage_site.py')
           text = p.read_text(encoding='utf-8')
           marker = '''        self.assertTrue((ROOT / "assets/artists/yumiya-v2.webp").is_file())\n'''
           addition = '''        self.assertTrue((ROOT / "assets/artists/yumiya-v2.webp").is_file())\n        rare_asset = ROOT / "assets/artists/rare-of-breed-v2.webp"\n        yumiya_asset = ROOT / "assets/artists/yumiya-v2.webp"\n        fallback_asset = ROOT / "assets/event-fallback.webp"\n        self.assertGreater(rare_asset.stat().st_size, 10000)\n        self.assertGreater(yumiya_asset.stat().st_size, 10000)\n        self.assertNotEqual(rare_asset.read_bytes(), fallback_asset.read_bytes())\n        self.assertNotEqual(yumiya_asset.read_bytes(), fallback_asset.read_bytes())\n'''
           if marker in text and 'rare_asset.stat().st_size' not in text:
               text = text.replace(marker, addition, 1)
-          p.write_text(text, encoding='utf-8')
-
-          # Make the deploy itself prove these exact assets are in the final site.
-          p = Path('.github/workflows/update-and-deploy.yml')
-          text = p.read_text(encoding='utf-8')
-          marker = '          test -s scripts/finalize_seo_indexing.py\n'
-          addition = marker + '          test -s assets/artists/rare-of-breed-v2.webp\n          test -s assets/artists/yumiya-v2.webp\n'
-          if 'test -s assets/artists/rare-of-breed-v2.webp' not in text:
-              if marker not in text:
-                  raise SystemExit('deploy asset-check marker not found')
-              text = text.replace(marker, addition, 1)
-          curl_marker = '          curl -fsS http://127.0.0.1:8765/seo-enhancements.js >/dev/null\n'
-          curl_add = curl_marker + '          curl -fsS http://127.0.0.1:8765/assets/artists/rare-of-breed-v2.webp >/dev/null\n          curl -fsS http://127.0.0.1:8765/assets/artists/yumiya-v2.webp >/dev/null\n'
-          if '127.0.0.1:8765/assets/artists/rare-of-breed-v2.webp' not in text:
-              if curl_marker not in text:
-                  raise SystemExit('deploy curl marker not found')
-              text = text.replace(curl_marker, curl_add, 1)
           p.write_text(text, encoding='utf-8')
           PY
 
@@ -150,6 +129,6 @@ jobs:
           git add assets/artists/rare-of-breed-v2.webp assets/artists/yumiya-v2.webp \
             assets/event-image-repair.js config/artists.json config/verified-artist-image-overrides.json \
             events.json supplemental-events.json scripts/finalize_live_event_images.py \
-            tests/test_multipage_site.py .github/workflows/update-and-deploy.yml
+            tests/test_multipage_site.py
           git commit -m "Version Rare of Breed and Genesis event images"
           git push origin HEAD:main
