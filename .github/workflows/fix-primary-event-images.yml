@@ -1,0 +1,200 @@
+name: Fix primary event images
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-primary-event-images.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Convert and enforce primary artist images
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check pillow
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          from PIL import Image
+
+          ROOT = Path('.')
+          RARE_OLD = 'assets/artists/rare-of-breed-v2.webp'
+          YUMIYA_OLD = 'assets/artists/yumiya-v2.webp'
+          RARE = 'assets/artists/rare-of-breed-primary.jpg'
+          YUMIYA = 'assets/artists/yumiya-primary.jpg'
+
+          def convert(src, dst):
+              with Image.open(src) as im:
+                  im = im.convert('RGB')
+                  im.save(dst, 'JPEG', quality=92, optimize=True, progressive=False)
+              data = Path(dst).read_bytes()
+              if not data.startswith(b'\xff\xd8') or not data.endswith(b'\xff\xd9'):
+                  raise SystemExit(f'Invalid JPEG output: {dst}')
+              if len(data) < 10000:
+                  raise SystemExit(f'JPEG unexpectedly small: {dst} ({len(data)} bytes)')
+              print(dst, len(data))
+
+          convert(RARE_OLD, RARE)
+          convert(YUMIYA_OLD, YUMIYA)
+
+          def norm(v):
+              return str(v or '').strip().casefold()
+
+          # Source event data: every standalone Rare of Breed show and the Genesis/yumiya show
+          # must use the same primary local artist image.
+          for filename in ['events.json', 'supplemental-events.json']:
+              p = ROOT / filename
+              data = json.loads(p.read_text(encoding='utf-8'))
+              rare = yumiya = 0
+              for e in data:
+                  artists = [norm(x) for x in (e.get('artists') or [])]
+                  title = norm(e.get('title'))
+                  headliner = norm(e.get('headliner'))
+                  if artists == ['rare of breed'] or (headliner == 'rare of breed' and all(a == 'rare of breed' for a in artists)):
+                      e['image'] = RARE
+                      e['imageType'] = 'artist'
+                      e['imagePosition'] = 'center'
+                      rare += 1
+                  if artists == ['yumiya!'] or e.get('id') == 'bandsintown:108758638' or 'the genesis show' in title:
+                      e['image'] = YUMIYA
+                      e['imageType'] = 'artist'
+                      e['imagePosition'] = 'center'
+                      yumiya += 1
+              p.write_text(json.dumps(data, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+              print(filename, 'rare=', rare, 'yumiya=', yumiya)
+
+          # Artist registry uses the same primary files.
+          p = ROOT / 'config/artists.json'
+          artists = json.loads(p.read_text(encoding='utf-8'))
+          found = set()
+          for a in artists:
+              if norm(a.get('name')) == 'rare of breed':
+                  a['imageUrl'] = RARE
+                  a['imageSource'] = 'Kingdom Circuit primary local artist image (JPEG)'
+                  found.add('rare')
+              elif norm(a.get('name')) == 'yumiya!':
+                  a['imageUrl'] = YUMIYA
+                  a['imageSource'] = 'Kingdom Circuit primary local artist image (JPEG)'
+                  found.add('yumiya')
+          if found != {'rare', 'yumiya'}:
+              raise SystemExit(f'Artist records missing: {found}')
+          p.write_text(json.dumps(artists, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          p = ROOT / 'config/verified-artist-image-overrides.json'
+          overrides = json.loads(p.read_text(encoding='utf-8'))
+          overrides['Rare of Breed'] = RARE
+          overrides['yumiya!'] = YUMIYA
+          p.write_text(json.dumps(overrides, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          # Replace every old configured target path in durable source code/tests.
+          replacements = {
+              '/assets/artists/rare-of-breed-v2.webp': '/assets/artists/rare-of-breed-primary.jpg',
+              'assets/artists/rare-of-breed-v2.webp': 'assets/artists/rare-of-breed-primary.jpg',
+              '/assets/artists/yumiya-v2.webp': '/assets/artists/yumiya-primary.jpg',
+              'assets/artists/yumiya-v2.webp': 'assets/artists/yumiya-primary.jpg',
+          }
+          for filename in [
+              'assets/event-image-repair.js',
+              'scripts/finalize_live_event_images.py',
+              'tests/test_multipage_site.py',
+          ]:
+              p = ROOT / filename
+              text = p.read_text(encoding='utf-8')
+              for old, new in replacements.items():
+                  text = text.replace(old, new)
+              p.write_text(text, encoding='utf-8')
+
+          # Runtime: these two artists are always forced to their primary image.
+          p = ROOT / 'assets/event-image-repair.js'
+          text = p.read_text(encoding='utf-8')
+          marker = '''    const options = candidates[key];\n    let idx = options.indexOf(src);\n'''
+          addition = '''    const options = candidates[key];\n    const forcePrimary = key === "rare of breed" || key === "yumiya!";\n    let idx = options.indexOf(src);\n'''
+          if marker not in text and 'const forcePrimary = key === "rare of breed"' not in text:
+              raise SystemExit('event-image-repair marker 1 not found')
+          if marker in text:
+              text = text.replace(marker, addition, 1)
+          marker2 = '''    img.onerror = () => window.kcEventImageFallback(img);\n    if (!src || src.includes("event-fallback.webp") || stale.has(src)) {\n'''
+          addition2 = '''    img.onerror = () => window.kcEventImageFallback(img);\n    if (forcePrimary && src !== options[0]) {\n      img.dataset.kcImageIndex = "0";\n      img.src = options[0];\n      return;\n    }\n    if (!src || src.includes("event-fallback.webp") || stale.has(src)) {\n'''
+          if marker2 not in text and 'if (forcePrimary && src !== options[0])' not in text:
+              raise SystemExit('event-image-repair marker 2 not found')
+          if marker2 in text:
+              text = text.replace(marker2, addition2, 1)
+          # For these two artists, do not bounce to another external host. The local JPEG is
+          # the source of truth; the generic fallback remains only a last-resort safety net.
+          import re
+          text = re.sub(
+              r'"yumiya!": \[[^\n]+\],',
+              '"yumiya!": ["/assets/artists/yumiya-primary.jpg"],',
+              text,
+              count=1,
+          )
+          text = re.sub(
+              r'"rare of breed": \[[^\n]+\],',
+              '"rare of breed": ["/assets/artists/rare-of-breed-primary.jpg"],',
+              text,
+              count=1,
+          )
+          p.write_text(text, encoding='utf-8')
+
+          # Final artifact pass: always enforce the primary image on standalone Rare/yumiya
+          # cards and event-detail images, even if an upstream SEO overlay supplied something else.
+          p = ROOT / 'scripts/finalize_live_event_images.py'
+          text = p.read_text(encoding='utf-8')
+          marker = '''def key_from_html(block: str) -> str | None:\n    key = artist_key_from_names(names_from_block(block))\n'''
+          helper = '''def forced_primary_key(block: str) -> str | None:\n    names = [norm(name) for name in names_from_block(block)]\n    if names and all(name == "rare of breed" for name in names):\n        return "rare of breed"\n    if names and all(name == "yumiya!" for name in names):\n        return "yumiya!"\n    return None\n\n\n'''
+          if 'def forced_primary_key(' not in text:
+              if marker not in text:
+                  raise SystemExit('finalizer helper marker not found')
+              text = text.replace(marker, helper + marker, 1)
+
+          marker = '''def repair_fallbacks_in_block(block: str) -> tuple[str, bool]:\n    key = key_from_html(block)\n    if not key:\n        return block, False\n    changed = False\n'''
+          replacement = '''def repair_fallbacks_in_block(block: str) -> tuple[str, bool]:\n    forced = forced_primary_key(block)\n    key = forced or key_from_html(block)\n    if not key:\n        return block, False\n    changed = False\n\n    if forced:\n        def force_repl(match: re.Match[str]) -> str:\n            nonlocal changed\n            changed = True\n            return set_img_src(match.group(0), IMAGE_CANDIDATES[forced][0], forced)\n        return re.sub(r'<img\\b[^>]*>', force_repl, block, count=1, flags=re.I), True\n'''
+          if marker in text:
+              text = text.replace(marker, replacement, 1)
+          elif 'forced = forced_primary_key(block)' not in text:
+              raise SystemExit('finalizer card marker not found')
+
+          # Event detail pages: force only the actual event media image, never the logo.
+          marker = '''    if "/event/" in "/" + str(page).replace("\\\\", "/") + "/":\n        key = key_from_html(text)\n        if key:\n            def detail_repl(match: re.Match[str]) -> str:\n                nonlocal repaired\n                tag = match.group(0)\n                src_match = re.search(r'\\bsrc=["\\\']([^"\\\']*)["\\\']', tag, flags=re.I)\n                if not src_match or not needs_repair(html.unescape(src_match.group(1))):\n                    return tag\n                repaired += 1\n                return set_img_src(tag, IMAGE_CANDIDATES[key][0], key)\n            text = re.sub(r'<img\\b[^>]*>', detail_repl, text, flags=re.I)\n'''
+          replacement = '''    if "/event/" in "/" + str(page).replace("\\\\", "/") + "/":\n        forced = forced_primary_key(text)\n        key = forced or key_from_html(text)\n        if key:\n            def detail_repl(match: re.Match[str]) -> str:\n                nonlocal repaired\n                tag = match.group(0)\n                is_event_media = bool(re.search(r'\\bclass=["\\\'][^"\\\']*(?:artist-photo|event-artwork)', tag, flags=re.I))\n                if forced and is_event_media:\n                    repaired += 1\n                    return set_img_src(tag, IMAGE_CANDIDATES[forced][0], forced)\n                src_match = re.search(r'\\bsrc=["\\\']([^"\\\']*)["\\\']', tag, flags=re.I)\n                if not src_match or not needs_repair(html.unescape(src_match.group(1))):\n                    return tag\n                repaired += 1\n                return set_img_src(tag, IMAGE_CANDIDATES[key][0], key)\n            text = re.sub(r'<img\\b[^>]*>', detail_repl, text, flags=re.I)\n'''
+          if marker in text:
+              text = text.replace(marker, replacement, 1)
+          elif 'is_event_media = bool(' not in text:
+              raise SystemExit('finalizer detail marker not found')
+          p.write_text(text, encoding='utf-8')
+
+          # Tests: verify extension and actual JPEG magic bytes, not just file existence.
+          p = ROOT / 'tests/test_multipage_site.py'
+          text = p.read_text(encoding='utf-8')
+          marker = '''        self.assertNotEqual(rare_asset.read_bytes(), fallback_asset.read_bytes())\n        self.assertNotEqual(yumiya_asset.read_bytes(), fallback_asset.read_bytes())\n'''
+          addition = marker + '''        self.assertEqual(b"\\xff\\xd8", rare_asset.read_bytes()[:2])\n        self.assertEqual(b"\\xff\\xd8", yumiya_asset.read_bytes()[:2])\n'''
+          if marker in text and 'rare_asset.read_bytes()[:2]' not in text:
+              text = text.replace(marker, addition, 1)
+          p.write_text(text, encoding='utf-8')
+          PY
+
+          python -m py_compile scripts/finalize_live_event_images.py tests/test_multipage_site.py
+          node --check assets/event-image-repair.js
+          python -m unittest discover -s tests -p 'test_*.py' -v
+
+      - name: Commit durable primary image fix
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/artists/rare-of-breed-primary.jpg assets/artists/yumiya-primary.jpg \
+            assets/event-image-repair.js config/artists.json config/verified-artist-image-overrides.json \
+            events.json supplemental-events.json scripts/finalize_live_event_images.py tests/test_multipage_site.py
+          git commit -m "Force primary Rare of Breed and yumiya event images"
+          git push origin HEAD:main
