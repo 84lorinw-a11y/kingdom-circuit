@@ -96,7 +96,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.bandsintown.com/bt/108665897?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
     "officialUrl": "https://www.bandsintown.com/e/108665897?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/rare-of-breed.webp",
+    "image": "assets/artists/rare-of-breed-primary.jpg",
     "price": "",
     "sourceName": "Bandsintown",
     "sources": [
@@ -114,45 +114,6 @@
     "bandsintownResolvedName": "Rare of Breed",
     "bandsintownIdentity": "exact_name_or_alias",
     "trackedArtist": "Rare of Breed",
-    "holdReason": "festival_requires_official_lineup_confirmation"
-  },
-  {
-    "id": "bandsintown:108607501",
-    "title": "Good Waves Festival 2026",
-    "startDate": "2026-08-29",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "Good Waves Festival 2026",
-    "address": "1357 N Elston Ave",
-    "city": "Chicago",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "Propaganda"
-    ],
-    "headliner": "Propaganda",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108607501?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/108607501?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/propaganda.webp",
-    "price": "",
-    "sourceName": "Bandsintown",
-    "sources": [
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/108607501?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "108607501",
-    "bandsintownArtistId": "72572",
-    "bandsintownResolvedName": "Propaganda",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Propaganda",
     "holdReason": "festival_requires_official_lineup_confirmation"
   }
 ]
