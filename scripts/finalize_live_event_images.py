@@ -9,6 +9,8 @@ import re
 import shutil
 
 FALLBACK = "/assets/event-fallback.webp"
+PRIMARY_CACHE_TOKEN = "kc-20260829-2050"
+RUNTIME_SCRIPT_URL = "/assets/event-image-repair-kc2050.js"
 EXCLUDED_ARTISTS = {"chad jones", "erica mason", "big holy"}
 EXCLUDED_SLUGS = {"chad-jones", "erica-mason", "big-holy"}
 STALE_IMAGE_URLS = {
@@ -224,6 +226,9 @@ def key_from_html(block: str) -> str | None:
 
 
 def set_img_src(tag: str, src: str, key: str) -> str:
+    if key in {"rare of breed", "yumiya!"} and src.startswith("/assets/artists/"):
+        separator = "&" if "?" in src else "?"
+        src = f"{src}{separator}v={PRIMARY_CACHE_TOKEN}"
     escaped = html.escape(src, quote=True)
     if re.search(r'\bsrc=["\'][^"\']*["\']', tag, flags=re.I):
         tag = re.sub(r'\bsrc=(["\'])[^"\']*\1', lambda m: f'src={m.group(1)}{escaped}{m.group(1)}', tag, count=1, flags=re.I)
@@ -232,8 +237,10 @@ def set_img_src(tag: str, src: str, key: str) -> str:
     tag = re.sub(r'\s+onerror=(["\']).*?\1', "", tag, flags=re.I | re.S)
     tag = re.sub(r'\s+data-kc-event-artist=(["\']).*?\1', "", tag, flags=re.I | re.S)
     tag = re.sub(r'\s+data-kc-image-index=(["\']).*?\1', "", tag, flags=re.I | re.S)
+    tag = re.sub(r'\s+data-kc-lock-primary=(["\']).*?\1', "", tag, flags=re.I | re.S)
+    lock_attr = ' data-kc-lock-primary="1"' if key in {"rare of breed", "yumiya!"} else ""
     return tag[:-1] + (
-        f' data-kc-event-artist="{html.escape(key, quote=True)}" data-kc-image-index="0" '
+        f' data-kc-event-artist="{html.escape(key, quote=True)}" data-kc-image-index="0"{lock_attr} '
         f'onerror="window.kcEventImageFallback ? window.kcEventImageFallback(this) : '
         f'(this.onerror=null,this.src=\'{FALLBACK}\');">'
     )
@@ -305,7 +312,13 @@ def patch_html_page(page: pathlib.Path, removed_slugs: set[str]) -> tuple[int, i
                 return set_img_src(tag, IMAGE_CANDIDATES[key][0], key)
             text = re.sub(r'<img\b[^>]*>', detail_repl, text, flags=re.I)
 
-    script_tag = '<script src="/assets/event-image-repair.js"></script>'
+    script_tag = f'<script src="{RUNTIME_SCRIPT_URL}"></script>'
+    text = re.sub(
+        r'<script\s+src="/assets/event-image-repair[^"]*\.js[^"]*"\s*></script>',
+        script_tag,
+        text,
+        flags=re.I,
+    )
     if script_tag not in text and "</head>" in text.lower():
         text = re.sub(r'</head>', script_tag + '</head>', text, count=1, flags=re.I)
 
@@ -330,8 +343,22 @@ def verify(root: pathlib.Path) -> dict:
     fallback_event_pages = 0
     retired_event_pages = 0
     retired_artist_links = 0
+    stale_runtime_script_refs = 0
+    unlocked_primary_images = 0
+    versioned_script_path = root / RUNTIME_SCRIPT_URL.lstrip("/")
+    if not versioned_script_path.is_file():
+        failures.append(f"missing-versioned-runtime-script:{RUNTIME_SCRIPT_URL}")
     for page in root.rglob("*.html"):
         text = page.read_text(encoding="utf-8", errors="ignore")
+        if '/assets/event-image-repair.js"' in text:
+            stale_runtime_script_refs += 1
+        for block in CARD_RE.findall(text):
+            if "rare-of-breed-primary.jpg" in block or "yumiya-primary.jpg" in block:
+                tags = re.findall(r'<img\b[^>]*>', block, flags=re.I)
+                for tag in tags:
+                    if "rare-of-breed-primary.jpg" in tag or "yumiya-primary.jpg" in tag:
+                        if f"?v={PRIMARY_CACHE_TOKEN}" not in html.unescape(tag) or 'data-kc-lock-primary="1"' not in tag:
+                            unlocked_primary_images += 1
         for block in CARD_RE.findall(text):
             sources = re.findall(r'<img\b[^>]*?\ssrc=["\']([^"\']+)', block, flags=re.I)
             if any("event-fallback.webp" in norm(src) for src in sources):
@@ -340,6 +367,10 @@ def verify(root: pathlib.Path) -> dict:
                 if f"/artists/{slug}/" in norm(block):
                     retired_artist_links += 1
         if page.parent.parent == root / "event":
+            if "rare-of-breed-primary.jpg" in text or "yumiya-primary.jpg" in text:
+                media = re.search(r'<div[^>]*class="[^"]*event-detail-media[^"]*"[^>]*>\s*(<img\b[^>]*>)', text, flags=re.I | re.S)
+                if not media or f"?v={PRIMARY_CACHE_TOKEN}" not in html.unescape(media.group(1)) or 'data-kc-lock-primary="1"' not in media.group(1):
+                    unlocked_primary_images += 1
             sources = re.findall(r'<img\b[^>]*?\ssrc=["\']([^"\']+)', text, flags=re.I)
             if any("event-fallback.webp" in norm(src) for src in sources):
                 fallback_event_pages += 1
@@ -353,6 +384,10 @@ def verify(root: pathlib.Path) -> dict:
         failures.append(f"retired-event-pages:{retired_event_pages}")
     if retired_artist_links:
         failures.append(f"retired-artist-links:{retired_artist_links}")
+    if stale_runtime_script_refs:
+        failures.append(f"stale-runtime-script-refs:{stale_runtime_script_refs}")
+    if unlocked_primary_images:
+        failures.append(f"unlocked-primary-images:{unlocked_primary_images}")
     if failures:
         raise SystemExit("Live event-image audit failed: " + ", ".join(failures))
     return {
@@ -360,6 +395,8 @@ def verify(root: pathlib.Path) -> dict:
         "fallbackEventPages": fallback_event_pages,
         "retiredEventPages": retired_event_pages,
         "retiredArtistLinks": retired_artist_links,
+        "staleRuntimeScriptRefs": stale_runtime_script_refs,
+        "unlockedPrimaryImages": unlocked_primary_images,
     }
 
 
