@@ -1,0 +1,128 @@
+name: Verify Safari event images
+
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-safari-event-images.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install WebKit
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm init -y >/dev/null 2>&1
+          npm install --silent playwright@1.58.0
+          npx playwright install --with-deps webkit
+      - name: Verify live site in WebKit with iPhone Safari profile
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p safari-audit
+          node <<'JS'
+          const { webkit } = require('playwright');
+          const fs = require('fs');
+
+          const BASE = 'https://kingdomcircuit.com';
+          const TOKEN = 'kc-20260829-2050';
+          const targets = [
+            ['rare-sep2', '/event/rare-of-breed-at-south-dakota-military-heritage-alliance-inc-2026-09-02-sioux-falls-3d5849/', 'rare-of-breed-primary.jpg'],
+            ['rare-sep4', '/event/rare-of-breed-at-mt-carmel-baptist-church-2026-09-04-lake-ozark-ab5b35/', 'rare-of-breed-primary.jpg'],
+            ['rare-sep5', '/event/rare-of-breed-at-clarksville-high-school-fine-arts-building-2026-09-05-clarksville-e30119/', 'rare-of-breed-primary.jpg'],
+            ['genesis', '/event/the-genesis-show-all-women-s-chh-event-2026-09-19-roswell-9d321d/', 'yumiya-primary.jpg'],
+          ];
+
+          async function waitForDeployment() {
+            const ua = 'Mozilla/5.0 (iPhone; CPU iPhone OS 26_5_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Mobile/15E148 Safari/604.1';
+            for (let i = 1; i <= 30; i++) {
+              try {
+                const r = await fetch(BASE + targets[0][1] + '?deploy-check=' + Date.now(), {headers: {'user-agent': ua, 'cache-control':'no-cache'}});
+                const text = await r.text();
+                if (text.includes('/assets/event-image-repair-kc2050.js') && text.includes('?v=' + TOKEN)) {
+                  console.log('Cache-safe deployment visible on attempt', i);
+                  return;
+                }
+              } catch (e) {
+                console.log('deployment check error', String(e));
+              }
+              await new Promise(r => setTimeout(r, 3000));
+            }
+            throw new Error('cache-safe deployment never became publicly visible');
+          }
+
+          (async () => {
+            await waitForDeployment();
+            const browser = await webkit.launch();
+            const context = await browser.newContext({
+              viewport: { width: 390, height: 844 },
+              deviceScaleFactor: 3,
+              isMobile: true,
+              hasTouch: true,
+              userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 26_5_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Mobile/15E148 Safari/604.1',
+              extraHTTPHeaders: {'Cache-Control': 'no-cache', 'Pragma': 'no-cache'},
+            });
+
+            const results = [];
+            for (const [name, path, expected] of targets) {
+              const page = await context.newPage();
+              const failures = [];
+              const responses = [];
+              page.on('requestfailed', req => failures.push({url:req.url(), error:req.failure()?.errorText || 'unknown'}));
+              page.on('response', res => {
+                const u = res.url();
+                if (u.includes('rare-of-breed-primary') || u.includes('yumiya-primary') || u.includes('event-image-repair') || u.includes('event-fallback')) {
+                  responses.push({url:u, status:res.status(), contentType:res.headers()['content-type'] || ''});
+                }
+              });
+
+              const url = BASE + path + '?safari-audit=' + Date.now();
+              await page.goto(url, {waitUntil:'networkidle', timeout:60000});
+              const img = page.locator('.event-detail-media img').first();
+              await img.waitFor({state:'visible', timeout:15000});
+              await page.waitForFunction(() => {
+                const el = document.querySelector('.event-detail-media img');
+                return !!el && el.complete;
+              }, null, {timeout:15000});
+              const state = await img.evaluate(el => ({
+                src: el.getAttribute('src'),
+                currentSrc: el.currentSrc,
+                naturalWidth: el.naturalWidth,
+                naturalHeight: el.naturalHeight,
+                complete: el.complete,
+                lock: el.getAttribute('data-kc-lock-primary'),
+                artist: el.getAttribute('data-kc-event-artist'),
+              }));
+              await img.screenshot({path:`safari-audit/${name}.png`});
+              await page.screenshot({path:`safari-audit/${name}-page.png`, fullPage:false});
+
+              console.log(name, JSON.stringify({state, responses, failures}, null, 2));
+              if (!String(state.src).includes(expected)) throw new Error(`${name}: wrong src ${state.src}`);
+              if (!String(state.src).includes('?v=' + TOKEN)) throw new Error(`${name}: missing cache token ${state.src}`);
+              if (state.lock !== '1') throw new Error(`${name}: primary image not runtime-locked`);
+              if (!state.complete || state.naturalWidth < 100 || state.naturalHeight < 100) throw new Error(`${name}: image did not decode in WebKit ${JSON.stringify(state)}`);
+              if (String(state.currentSrc).includes('event-fallback.webp') || String(state.src).includes('event-fallback.webp')) throw new Error(`${name}: fell back in WebKit`);
+              if (failures.some(x => x.url.includes(expected))) throw new Error(`${name}: primary image request failed ${JSON.stringify(failures)}`);
+              results.push({name, state, responses, failures});
+              await page.close();
+            }
+            fs.writeFileSync('safari-audit/results.json', JSON.stringify(results, null, 2));
+            await browser.close();
+            console.log('ALL WEBKIT IPHONE EVENT IMAGE CHECKS PASSED');
+          })().catch(err => { console.error(err); process.exit(1); });
+          JS
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: safari-event-image-audit
+          path: safari-audit/
+          retention-days: 1
