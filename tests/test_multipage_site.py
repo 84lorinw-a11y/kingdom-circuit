@@ -89,7 +89,7 @@ class MultiPageProductionTests(unittest.TestCase):
         rare_events = [event for event in events if "Rare of Breed" in event.get("artists", [])]
         self.assertGreaterEqual(len(rare_events), 3)
         for event in rare_events:
-            self.assertEqual("assets/artists/rare-of-breed-v2.webp", event.get("image"))
+            self.assertEqual("assets/artists/rare-of-breed-primary.jpg", event.get("image"))
             self.assertEqual("artist", event.get("imageType"))
 
         genesis = [
@@ -98,18 +98,20 @@ class MultiPageProductionTests(unittest.TestCase):
             or "the genesis show" in str(event.get("title") or "").casefold()
         ]
         self.assertEqual(1, len(genesis))
-        self.assertEqual("assets/artists/yumiya-v2.webp", genesis[0].get("image"))
+        self.assertEqual("assets/artists/yumiya-primary.jpg", genesis[0].get("image"))
         self.assertEqual("artist", genesis[0].get("imageType"))
 
-        self.assertTrue((ROOT / "assets/artists/rare-of-breed-v2.webp").is_file())
-        self.assertTrue((ROOT / "assets/artists/yumiya-v2.webp").is_file())
-        rare_asset = ROOT / "assets/artists/rare-of-breed-v2.webp"
-        yumiya_asset = ROOT / "assets/artists/yumiya-v2.webp"
+        self.assertTrue((ROOT / "assets/artists/rare-of-breed-primary.jpg").is_file())
+        self.assertTrue((ROOT / "assets/artists/yumiya-primary.jpg").is_file())
+        rare_asset = ROOT / "assets/artists/rare-of-breed-primary.jpg"
+        yumiya_asset = ROOT / "assets/artists/yumiya-primary.jpg"
         fallback_asset = ROOT / "assets/event-fallback.webp"
         self.assertGreater(rare_asset.stat().st_size, 10000)
         self.assertGreater(yumiya_asset.stat().st_size, 10000)
         self.assertNotEqual(rare_asset.read_bytes(), fallback_asset.read_bytes())
         self.assertNotEqual(yumiya_asset.read_bytes(), fallback_asset.read_bytes())
+        self.assertEqual(b"\xff\xd8", rare_asset.read_bytes()[:2])
+        self.assertEqual(b"\xff\xd8", yumiya_asset.read_bytes()[:2])
 
 if __name__ == "__main__":
     unittest.main()

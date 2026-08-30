@@ -30,12 +30,12 @@ IMAGE_CANDIDATES = {
         "https://open.voidware.de/artist/3zSrc5vUlUxyDdS0KrxFJO",
     ],
     "yumiya!": [
-        "/assets/artists/yumiya-v2.webp",
+        "/assets/artists/yumiya-primary.jpg",
         "https://ugc.production.linktr.ee/0f6ee994-7bd6-4821-bb79-593f035ae2c9_1F523223-FD9A-4E86-88BE-0A34120C8FAD.jpeg?io=true&size=avatar-v3_0",
         "https://i.scdn.co/image/ab6761610000e5ebe8717d1df4abebcd56989c30",
     ],
     "rare of breed": [
-        "/assets/artists/rare-of-breed-v2.webp",
+        "/assets/artists/rare-of-breed-primary.jpg",
         "https://rareofbreed.com/cdn/shop/files/202511_RareOfBreed_TheWarehouse-32.jpg?v=1784663742&width=3840",
     ],
     "issac mansfield": [
@@ -206,6 +206,15 @@ def names_from_block(block: str) -> list[str]:
     return [name for name in names if name]
 
 
+def forced_primary_key(block: str) -> str | None:
+    names = [norm(name) for name in names_from_block(block)]
+    if names and all(name == "rare of breed" for name in names):
+        return "rare of breed"
+    if names and all(name == "yumiya!" for name in names):
+        return "yumiya!"
+    return None
+
+
 def key_from_html(block: str) -> str | None:
     key = artist_key_from_names(names_from_block(block))
     if key:
@@ -231,10 +240,18 @@ def set_img_src(tag: str, src: str, key: str) -> str:
 
 
 def repair_fallbacks_in_block(block: str) -> tuple[str, bool]:
-    key = key_from_html(block)
+    forced = forced_primary_key(block)
+    key = forced or key_from_html(block)
     if not key:
         return block, False
     changed = False
+
+    if forced:
+        def force_repl(match: re.Match[str]) -> str:
+            nonlocal changed
+            changed = True
+            return set_img_src(match.group(0), IMAGE_CANDIDATES[forced][0], forced)
+        return re.sub(r'<img\b[^>]*>', force_repl, block, count=1, flags=re.I), True
 
     def repl(match: re.Match[str]) -> str:
         nonlocal changed
@@ -271,11 +288,16 @@ def patch_html_page(page: pathlib.Path, removed_slugs: set[str]) -> tuple[int, i
     text = CARD_RE.sub(card_repl, text)
 
     if "/event/" in "/" + str(page).replace("\\", "/") + "/":
-        key = key_from_html(text)
+        forced = forced_primary_key(text)
+        key = forced or key_from_html(text)
         if key:
             def detail_repl(match: re.Match[str]) -> str:
                 nonlocal repaired
                 tag = match.group(0)
+                is_event_media = bool(re.search(r'\bclass=["\'][^"\']*(?:artist-photo|event-artwork)', tag, flags=re.I))
+                if forced and is_event_media:
+                    repaired += 1
+                    return set_img_src(tag, IMAGE_CANDIDATES[forced][0], forced)
                 src_match = re.search(r'\bsrc=["\']([^"\']*)["\']', tag, flags=re.I)
                 if not src_match or not needs_repair(html.unescape(src_match.group(1))):
                     return tag
