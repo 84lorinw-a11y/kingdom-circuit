@@ -129,6 +129,9 @@ def curate_event(event: dict[str, Any]) -> dict[str, Any] | None:
     if "rare of breed" in {norm(name) for name in artists}:
         if updated.get("image") == "assets/artists/rare-of-breed-primary.jpg":
             updated["imageType"] = "artist"
+    if updated.get("id") == "bandsintown:108758638" or "the genesis show" in norm(updated.get("title")):
+        updated["image"] = "assets/artists/yumiya-primary.jpg"
+        updated["imageType"] = "artist"
     return updated
 
 
