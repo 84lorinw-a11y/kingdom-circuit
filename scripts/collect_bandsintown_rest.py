@@ -108,8 +108,11 @@ def configured_bit_id(artist: dict[str, Any]) -> str:
 
 def resolve_artist(artist: dict[str, Any]) -> tuple[str, str, str]:
     name = str(artist.get("name") or "").strip()
+    rejected_ids = {str(v).strip() for v in (artist.get("bandsintownRejectedArtistIds") or []) if str(v).strip()}
     configured_id = configured_bit_id(artist)
     if configured_id:
+        if configured_id in rejected_ids:
+            return "", "", "configured_id_rejected"
         status, profile = get_json(f"{BASE}/artists/id_{urllib.parse.quote(configured_id)}?app_id={APP_ID}")
         if status == 200 and isinstance(profile, dict):
             return configured_id, str(profile.get("name") or name), "configured_id"
@@ -129,6 +132,8 @@ def resolve_artist(artist: dict[str, Any]) -> tuple[str, str, str]:
         if norm(resolved_name) not in accepted:
             continue
         artist_id = str(profile.get("id") or "").strip()
+        if artist_id and artist_id in rejected_ids:
+            continue
         if artist_id:
             return artist_id, resolved_name, "exact_name_or_alias"
     return "", "", "not_resolved"
