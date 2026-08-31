@@ -126,6 +126,9 @@ def curate_event(event: dict[str, Any]) -> dict[str, Any] | None:
     updated["artists"] = artists
     if norm(updated.get("headliner")) in EXCLUDED_ARTISTS:
         updated["headliner"] = artists[0]
+    if "rare of breed" in {norm(name) for name in artists}:
+        if updated.get("image") == "assets/artists/rare-of-breed-primary.jpg":
+            updated["imageType"] = "artist"
     return updated
 
 
@@ -163,6 +166,12 @@ def is_known_duplicate_fragment(event: dict[str, Any]) -> bool:
     if event_date == "2026-09-08" and "hulvey" in artists:
         if "fillmore silver spring" in venue and source.startswith("reach records"):
             return True
+        # Bandsintown geocoded The Fillmore Silver Spring as Spring Valley, DC.
+        # Ticketmaster has the verified Silver Spring, MD event, so suppress the
+        # weaker provider fragment instead of showing the same stop twice.
+        if "fillmore silver spring" in venue and source == "bandsintown":
+            if city == "spring valley" or norm(event.get("state")) == "dc":
+                return True
 
     if event_date == "2026-09-22" and "hulvey" in artists:
         if "elevation" in venue and source == "reach records consolidated calendar":
@@ -337,6 +346,8 @@ def main() -> int:
             continue
         curated = curate_event(event)
         if curated is None or is_ark_fragment(curated):
+            continue
+        if is_known_duplicate_fragment(curated):
             continue
         if norm(curated.get("id")) in target_ids:
             continue
