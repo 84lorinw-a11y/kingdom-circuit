@@ -1,61 +1,14 @@
 name: Fix Genesis image metadata
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/fix-genesis-image-metadata.yml
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   repair:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Repair Genesis image metadata
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-
-          path = Path('supplemental-events.json')
-          events = json.loads(path.read_text(encoding='utf-8'))
-          found = 0
-          for event in events:
-              if event.get('id') == 'bandsintown:108758638' or 'the genesis show' in str(event.get('title') or '').casefold():
-                  event['image'] = 'assets/artists/yumiya-primary.jpg'
-                  event['imageType'] = 'artist'
-                  found += 1
-          if found != 1:
-              raise SystemExit(f'Expected exactly one Genesis event, found {found}')
-          path.write_text(json.dumps(events, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
-
-          policy = Path('scripts/apply_curated_catalog_policy.py')
-          text = policy.read_text(encoding='utf-8')
-          needle = '''    if "rare of breed" in {norm(name) for name in artists}:\n        if updated.get("image") == "assets/artists/rare-of-breed-primary.jpg":\n            updated["imageType"] = "artist"\n    return updated\n'''
-          replacement = '''    if "rare of breed" in {norm(name) for name in artists}:\n        if updated.get("image") == "assets/artists/rare-of-breed-primary.jpg":\n            updated["imageType"] = "artist"\n    if updated.get("id") == "bandsintown:108758638" or "the genesis show" in norm(updated.get("title")):\n        updated["image"] = "assets/artists/yumiya-primary.jpg"\n        updated["imageType"] = "artist"\n    return updated\n'''
-          if replacement not in text:
-              if needle not in text:
-                  raise SystemExit('curation policy target not found')
-              text = text.replace(needle, replacement, 1)
-              policy.write_text(text, encoding='utf-8')
-          PY
-      - name: Validate
-        run: |
-          python -m unittest tests.test_multipage_site.MultiPageProductionTests.test_supplemental_events_are_complete -v
-          python -m py_compile scripts/apply_curated_catalog_policy.py
-      - name: Commit repair
-        run: |
-          git config user.name "kingdom-circuit-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add supplemental-events.json scripts/apply_curated_catalog_policy.py
-          git commit -m "Fix Genesis artist image metadata [skip ci]"
-          git push origin HEAD:main
+      - name: One-time repair completed
+        run: echo "The Genesis image metadata repair is already committed."
