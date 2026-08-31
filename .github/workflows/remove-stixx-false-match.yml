@@ -1,0 +1,115 @@
+name: Remove false Stixx Miami match
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/remove-stixx-false-match.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Remove false Stixx event and block wrong Bandsintown identity
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          # Remove the confirmed false Miami listing.
+          supplemental_path = Path('supplemental-events.json')
+          supplemental = json.loads(supplemental_path.read_text(encoding='utf-8'))
+          before = len(supplemental)
+          supplemental = [
+              event for event in supplemental
+              if not (
+                  str(event.get('id') or '') == 'bandsintown:1040008273'
+                  or (
+                      str(event.get('bandsintownArtistId') or '') == '861812'
+                      and str(event.get('trackedArtist') or '').strip().casefold() == 'stixx aka conejo'
+                  )
+              )
+          ]
+          supplemental_path.write_text(json.dumps(supplemental, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          print(f'Removed {before - len(supplemental)} false Stixx event(s).')
+
+          # Persist the artist-confirmed rejection on the Stixx record.
+          artists_path = Path('config/artists.json')
+          artists = json.loads(artists_path.read_text(encoding='utf-8'))
+          stixx = next((a for a in artists if str(a.get('name') or '').casefold() == 'stixx aka conejo'), None)
+          if not stixx:
+              raise SystemExit('Stixx aka Conejo record not found')
+          rejected = [str(v) for v in (stixx.get('bandsintownRejectedArtistIds') or [])]
+          if '861812' not in rejected:
+              rejected.append('861812')
+          stixx['bandsintownRejectedArtistIds'] = sorted(set(rejected))
+          artists_path.write_text(json.dumps(artists, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          # Teach the collector to honor per-artist rejected Bandsintown IDs.
+          collector_path = Path('scripts/collect_bandsintown_rest.py')
+          text = collector_path.read_text(encoding='utf-8')
+
+          old = '''def resolve_artist(artist: dict[str, Any]) -> tuple[str, str, str]:\n    name = str(artist.get("name") or "").strip()\n    configured_id = configured_bit_id(artist)\n'''
+          new = '''def resolve_artist(artist: dict[str, Any]) -> tuple[str, str, str]:\n    name = str(artist.get("name") or "").strip()\n    rejected_ids = {str(v).strip() for v in (artist.get("bandsintownRejectedArtistIds") or []) if str(v).strip()}\n    configured_id = configured_bit_id(artist)\n'''
+          if new not in text:
+              if old not in text:
+                  raise SystemExit('Could not locate resolve_artist header')
+              text = text.replace(old, new, 1)
+
+          old = '''    if configured_id:\n        status, profile = get_json(f"{BASE}/artists/id_{urllib.parse.quote(configured_id)}?app_id={APP_ID}")\n'''
+          new = '''    if configured_id:\n        if configured_id in rejected_ids:\n            return "", "", "configured_id_rejected"\n        status, profile = get_json(f"{BASE}/artists/id_{urllib.parse.quote(configured_id)}?app_id={APP_ID}")\n'''
+          if new not in text:
+              if old not in text:
+                  raise SystemExit('Could not locate configured Bandsintown branch')
+              text = text.replace(old, new, 1)
+
+          old = '''        artist_id = str(profile.get("id") or "").strip()\n        if artist_id:\n            return artist_id, resolved_name, "exact_name_or_alias"\n'''
+          new = '''        artist_id = str(profile.get("id") or "").strip()\n        if artist_id and artist_id in rejected_ids:\n            continue\n        if artist_id:\n            return artist_id, resolved_name, "exact_name_or_alias"\n'''
+          if new not in text:
+              if old not in text:
+                  raise SystemExit('Could not locate exact-name Bandsintown return')
+              text = text.replace(old, new, 1)
+
+          collector_path.write_text(text, encoding='utf-8')
+          PY
+      - name: Validate repair
+        run: |
+          python -m py_compile scripts/collect_bandsintown_rest.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          events = json.loads(Path('supplemental-events.json').read_text(encoding='utf-8'))
+          assert not any(str(e.get('id') or '') == 'bandsintown:1040008273' for e in events)
+          artists = json.loads(Path('config/artists.json').read_text(encoding='utf-8'))
+          stixx = next(a for a in artists if str(a.get('name') or '').casefold() == 'stixx aka conejo')
+          assert '861812' in [str(v) for v in stixx.get('bandsintownRejectedArtistIds', [])]
+          source = Path('scripts/collect_bandsintown_rest.py').read_text(encoding='utf-8')
+          assert 'bandsintownRejectedArtistIds' in source
+          PY
+          python -m unittest discover -s tests -p 'test_*.py' -q
+      - name: Commit durable repair
+        run: |
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add supplemental-events.json config/artists.json scripts/collect_bandsintown_rest.py
+          if git diff --cached --quiet; then
+            echo "Repair already applied."
+          else
+            git commit -m "Remove false Stixx Miami listing [skip ci]"
+            git push origin HEAD:main
+          fi
+      - name: Refresh and deploy production
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run update-and-deploy.yml --ref main
