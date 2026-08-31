@@ -1,0 +1,107 @@
+name: Repair Hulvey supplemental duplicates
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/repair-hulvey-supplemental.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out production repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Repair persistent curation policy and current supplemental data
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          policy_path = Path('scripts/apply_curated_catalog_policy.py')
+          text = policy_path.read_text(encoding='utf-8')
+
+          old = '''    if event_date == "2026-09-08" and "hulvey" in artists:\n        if "fillmore silver spring" in venue and source.startswith("reach records"):\n            return True\n'''
+          new = '''    if event_date == "2026-09-08" and "hulvey" in artists:\n        if "fillmore silver spring" in venue and source.startswith("reach records"):\n            return True\n        # Bandsintown geocoded The Fillmore Silver Spring as Spring Valley, DC.\n        # Ticketmaster has the verified Silver Spring, MD event, so suppress the\n        # weaker provider fragment instead of showing the same stop twice.\n        if "fillmore silver spring" in venue and source == "bandsintown":\n            if city == "spring valley" or norm(event.get("state")) == "dc":\n                return True\n'''
+          if new not in text:
+              if old not in text:
+                  raise SystemExit('Hulvey policy target not found')
+              text = text.replace(old, new, 1)
+
+          old = '''    updated = dict(event)\n    updated["artists"] = artists\n    if norm(updated.get("headliner")) in EXCLUDED_ARTISTS:\n        updated["headliner"] = artists[0]\n    return updated\n'''
+          new = '''    updated = dict(event)\n    updated["artists"] = artists\n    if norm(updated.get("headliner")) in EXCLUDED_ARTISTS:\n        updated["headliner"] = artists[0]\n    if "rare of breed" in {norm(name) for name in artists}:\n        if updated.get("image") == "assets/artists/rare-of-breed-primary.jpg":\n            updated["imageType"] = "artist"\n    return updated\n'''
+          if new not in text:
+              if old not in text:
+                  raise SystemExit('curate_event target not found')
+              text = text.replace(old, new, 1)
+
+          old = '''        if curated is None or is_ark_fragment(curated):\n            continue\n        if norm(curated.get("id")) in target_ids:\n            continue\n        curated_supplemental.append(curated)\n'''
+          new = '''        if curated is None or is_ark_fragment(curated):\n            continue\n        if is_known_duplicate_fragment(curated):\n            continue\n        if norm(curated.get("id")) in target_ids:\n            continue\n        curated_supplemental.append(curated)\n'''
+          if new not in text:
+              if old not in text:
+                  raise SystemExit('supplemental curation target not found')
+              text = text.replace(old, new, 1)
+
+          policy_path.write_text(text, encoding='utf-8')
+
+          supplemental_path = Path('supplemental-events.json')
+          supplemental = json.loads(supplemental_path.read_text(encoding='utf-8'))
+          repaired = []
+          for event in supplemental:
+              artists = {str(name).strip().casefold() for name in event.get('artists', [])}
+              source = str(event.get('sourceName') or '').strip().casefold()
+              venue = str(event.get('venue') or '').strip().casefold()
+              city = str(event.get('city') or '').strip().casefold()
+              state = str(event.get('state') or '').strip().casefold()
+              is_bad_hulvey = (
+                  event.get('startDate') == '2026-09-08'
+                  and 'hulvey' in artists
+                  and 'fillmore silver spring' in venue
+                  and source == 'bandsintown'
+                  and (city == 'spring valley' or state == 'dc')
+              )
+              if is_bad_hulvey:
+                  continue
+              if 'rare of breed' in artists and event.get('image') == 'assets/artists/rare-of-breed-primary.jpg':
+                  event['imageType'] = 'artist'
+              repaired.append(event)
+
+          supplemental_path.write_text(json.dumps(repaired, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          PY
+
+      - name: Validate repair
+        shell: bash
+        run: |
+          python -m py_compile scripts/apply_curated_catalog_policy.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          supplemental = json.loads(Path('supplemental-events.json').read_text(encoding='utf-8'))
+          bad = [e for e in supplemental if e.get('startDate') == '2026-09-08' and 'Hulvey' in e.get('artists', []) and str(e.get('state') or '').upper() == 'DC']
+          assert not bad, bad
+          rare = [e for e in supplemental if 'Rare of Breed' in e.get('artists', [])]
+          assert rare and all(e.get('imageType') == 'artist' for e in rare), rare
+          print(f'Validated {len(rare)} Rare of Breed image records and removed stale Hulvey DC fragment.')
+          PY
+
+      - name: Commit repair
+        shell: bash
+        run: |
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/apply_curated_catalog_policy.py supplemental-events.json
+          git commit -m "Remove stale Hulvey duplicate and preserve artist image metadata [skip ci]"
+          git push origin HEAD:main
