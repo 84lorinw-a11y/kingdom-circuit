@@ -788,14 +788,33 @@ def verify_site(out_dir: pathlib.Path) -> None:
             directory_text,
             flags=re.I | re.S,
         )
-        if not match or "Sun, Aug 30, 2026" not in match.group(0) or "Fri, Aug 28, 2026 - 12:00 PM" in match.group(0):
+        # The RURAL performance was Aug. 30, 2026. Before/through that date,
+        # verify the artist-specific performance date. After it expires, pruning
+        # legitimately removes the event, so only reject the old festival-start
+        # date if it somehow survives on the artist card.
+        card = match.group(0) if match else ""
+        today = dt.date.today()
+        rural_performance = dt.date(2026, 8, 30)
+        if today <= rural_performance:
+            if not match or "Sun, Aug 30, 2026" not in card or "Fri, Aug 28, 2026 - 12:00 PM" in card:
+                failures.append("social-club-directory-performance-date-wrong")
+        elif "Fri, Aug 28, 2026 - 12:00 PM" in card:
             failures.append("social-club-directory-performance-date-wrong")
     else:
         failures.append("artist-directory-missing")
 
     social_page = out_dir / "artists" / "social-club-misfits" / "index.html"
-    if not social_page.is_file() or "Sun, Aug 30, 2026" not in social_page.read_text(encoding="utf-8", errors="ignore"):
-        failures.append("social-club-profile-performance-date-wrong")
+    if not social_page.is_file():
+        failures.append("social-club-profile-missing")
+    else:
+        social_text = social_page.read_text(encoding="utf-8", errors="ignore")
+        today = dt.date.today()
+        rural_performance = dt.date(2026, 8, 30)
+        if today <= rural_performance:
+            if "Sun, Aug 30, 2026" not in social_text:
+                failures.append("social-club-profile-performance-date-wrong")
+        elif "Fri, Aug 28, 2026 - 12:00 PM" in social_text:
+            failures.append("social-club-profile-performance-date-wrong")
     if failures:
         raise SystemExit("Live artifact artist verification failed:\n" + "\n".join(failures[:100]))
 
