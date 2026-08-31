@@ -221,9 +221,26 @@ def forced_primary_key(block: str) -> str | None:
 
 
 def key_from_html(block: str) -> str | None:
-    key = artist_key_from_names(names_from_block(block))
+    # Artist-line is the authoritative identity for generated event cards
+    # and event detail pages. If it exists but is not one of the special
+    # image-repair artists, do not scan unrelated page copy (such as the
+    # related-shows section) and accidentally borrow another artist's image.
+    names = names_from_block(block)
+    key = artist_key_from_names(names)
     if key:
         return key
+    if names:
+        return None
+
+    # Older generated markup can lack artist-line. Prefer structured
+    # performer data before falling back to broad text matching.
+    performers = structured_performers(block)
+    key = artist_key_from_names(performers)
+    if key:
+        return key
+    if performers:
+        return None
+
     text = norm(strip_tags(block))
     return next((candidate for candidate in IMAGE_CANDIDATES if candidate in text), None)
 
