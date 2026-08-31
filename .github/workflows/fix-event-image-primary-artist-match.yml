@@ -65,6 +65,30 @@ jobs:
               text = text.replace(old, new, 1)
               path.write_text(text, encoding='utf-8')
           PY
+      - name: Normalize protected artist image metadata
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('supplemental-events.json')
+          events = json.loads(path.read_text(encoding='utf-8'))
+          changed = 0
+          for event in events:
+              artists = [str(x) for x in (event.get('artists') or [])]
+              title = str(event.get('title') or '').casefold()
+              image = str(event.get('image') or '')
+              protected = (
+                  ('Rare of Breed' in artists and image == 'assets/artists/rare-of-breed-primary.jpg')
+                  or (('the genesis show' in title or event.get('id') == 'bandsintown:108758638') and image == 'assets/artists/yumiya-primary.jpg')
+              )
+              if protected and event.get('imageType') != 'artist':
+                  event['imageType'] = 'artist'
+                  changed += 1
+          if changed:
+              path.write_text(json.dumps(events, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          print(f'Normalized imageType on {changed} protected event(s).')
+          PY
       - name: Regression check
         run: |
           python - <<'PY'
@@ -89,7 +113,7 @@ jobs:
         run: |
           git config user.name "kingdom-circuit-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scripts/finalize_live_event_images.py
+          git add scripts/finalize_live_event_images.py supplemental-events.json
           if git diff --cached --quiet; then
             echo "Repair already applied."
           else
