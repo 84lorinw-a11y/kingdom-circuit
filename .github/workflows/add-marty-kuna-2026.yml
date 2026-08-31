@@ -1,0 +1,103 @@
+name: Add Marty Kuna 2026 event
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/add-marty-kuna-2026.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  add-event:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out production repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Add verified Marty event
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('supplemental-events.json')
+          events = json.loads(path.read_text())
+          event = {
+            "id": "supplemental:marty-project-nation-kuna-2026",
+            "title": "An Evening with Project Nation (ft. Marty from Social Club Misfits)",
+            "startDate": "2026-09-10",
+            "startTime": "",
+            "timezone": "America/Boise",
+            "venue": "Changed Life Church",
+            "address": "",
+            "city": "Kuna",
+            "state": "ID",
+            "country": "US",
+            "artists": ["Marty"],
+            "headliner": "Marty",
+            "eventType": "concert",
+            "status": "scheduled",
+            "ticketUrl": "",
+            "officialUrl": "https://myprojectnation.com/",
+            "price": "",
+            "sourceName": "Project Nation",
+            "authority": "official_promoter",
+            "confidence": "high",
+            "lineupExplicit": True,
+            "sources": [
+              {
+                "name": "Project Nation official event listing",
+                "url": "https://myprojectnation.com/",
+                "type": "manual_verified",
+                "authority": "official_promoter",
+                "priority": 98
+              }
+            ]
+          }
+
+          ids = {e.get('id') for e in events}
+          if event['id'] not in ids:
+              events.append(event)
+              events.sort(key=lambda e: (e.get('startDate',''), e.get('startTime',''), e.get('id','')))
+              path.write_text(json.dumps(events, indent=2, ensure_ascii=False) + '\n')
+              print('Added Marty Kuna event.')
+          else:
+              print('Marty Kuna event already present.')
+          PY
+
+      - name: Validate event
+        run: |
+          python - <<'PY'
+          import json
+          events = json.load(open('supplemental-events.json'))
+          event = next(e for e in events if e.get('id') == 'supplemental:marty-project-nation-kuna-2026')
+          assert event['artists'] == ['Marty']
+          assert event['startDate'] == '2026-09-10'
+          assert event['city'] == 'Kuna' and event['state'] == 'ID'
+          print('Validated Marty Kuna event.')
+          PY
+
+      - name: Save event
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- supplemental-events.json
+          if git diff --cached --quiet; then
+            echo "Event already persisted."
+          else
+            git commit -m "Add Marty Kuna Idaho show [skip ci]"
+            git push origin HEAD:main
+          fi
+
+      - name: Refresh and deploy production
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run update-and-deploy.yml --ref main
