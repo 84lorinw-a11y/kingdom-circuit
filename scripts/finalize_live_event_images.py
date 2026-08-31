@@ -23,6 +23,9 @@ STALE_IMAGE_URLS = {
 # Verified/known-good presentation images used only when an event otherwise has
 # generic artwork. Real event artwork is always preserved.
 IMAGE_CANDIDATES = {
+    "marty": [
+        "https://img1.wsimg.com/isteam/ip/6ed0aa91-488e-49ff-a53b-8d885654844e/DSC07306%20Edited.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,cg:true",
+    ],
     "808 beezy": [
         "https://pbs.twimg.com/profile_images/1836827722309312512/e5kgorwv.jpg",
         "https://open.voidware.de/artist/3CltJZLndpJKtpUyRVBB1k",
