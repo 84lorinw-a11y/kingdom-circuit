@@ -1,0 +1,102 @@
+name: Fix event image primary artist matching
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/fix-event-image-primary-artist-match.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Patch event image identity matching
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('scripts/finalize_live_event_images.py')
+          text = path.read_text(encoding='utf-8')
+          old = '''def key_from_html(block: str) -> str | None:
+              key = artist_key_from_names(names_from_block(block))
+              if key:
+                  return key
+              text = norm(strip_tags(block))
+              return next((candidate for candidate in IMAGE_CANDIDATES if candidate in text), None)
+          '''
+          new = '''def key_from_html(block: str) -> str | None:
+              # Artist-line is the authoritative identity for generated event cards
+              # and event detail pages. If it exists but is not one of the special
+              # image-repair artists, do not scan unrelated page copy (such as the
+              # related-shows section) and accidentally borrow another artist's image.
+              names = names_from_block(block)
+              key = artist_key_from_names(names)
+              if key:
+                  return key
+              if names:
+                  return None
+
+              # Older generated markup can lack artist-line. Prefer structured
+              # performer data before falling back to broad text matching.
+              performers = structured_performers(block)
+              key = artist_key_from_names(performers)
+              if key:
+                  return key
+              if performers:
+                  return None
+
+              text = norm(strip_tags(block))
+              return next((candidate for candidate in IMAGE_CANDIDATES if candidate in text), None)
+          '''
+          if new not in text:
+              if old not in text:
+                  raise SystemExit('event image identity target not found')
+              text = text.replace(old, new, 1)
+              path.write_text(text, encoding='utf-8')
+          PY
+      - name: Regression check
+        run: |
+          python - <<'PY'
+          from scripts.finalize_live_event_images import key_from_html
+
+          page = '''
+          <article class="event-detail">
+            <div class="event-detail-media"><img src="https://open.voidware.de/artist/1RDbE3dM2bNNSTh88R4MQ7"></div>
+            <p class="artist-line"><a href="/artists/jay-way/">Jay-Way</a></p>
+          </article>
+          <section class="seo-related-section">
+            <h3>Hulvey - Could Be Tonight Tour</h3>
+          </section>
+          '''
+          assert key_from_html(page) is None, 'Related Hulvey content must not override Jay-Way image identity'
+          PY
+      - name: Validate full test suite
+        run: |
+          python -m py_compile scripts/finalize_live_event_images.py
+          python -m unittest discover -s tests -p 'test_*.py' -q
+      - name: Commit durable repair
+        run: |
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/finalize_live_event_images.py
+          if git diff --cached --quiet; then
+            echo "Repair already applied."
+          else
+            git commit -m "Prevent related shows from hijacking event images [skip ci]"
+            git push origin HEAD:main
+          fi
+      - name: Refresh and deploy production
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run update-and-deploy.yml --ref main
