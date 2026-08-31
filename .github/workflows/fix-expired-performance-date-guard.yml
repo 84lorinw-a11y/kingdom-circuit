@@ -1,40 +1,14 @@
 name: Fix expired performance-date guard
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - scripts/fix_expired_performance_guard_once.py
-      - .github/workflows/fix-expired-performance-date-guard.yml
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   repair:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Apply repair
-        run: python scripts/fix_expired_performance_guard_once.py
-      - name: Validate
-        run: |
-          python -m py_compile scripts/apply_live_artist_overrides.py scripts/fix_expired_performance_guard_once.py
-          python -m unittest discover -s tests -p 'test_*.py' -q
-      - name: Commit repair
-        run: |
-          git config user.name "kingdom-circuit-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scripts/apply_live_artist_overrides.py
-          if git diff --cached --quiet; then
-            echo "Repair already applied."
-          else
-            git commit -m "Make performance-date guard past-event aware [skip ci]"
-            git push origin HEAD:main
-          fi
+      - name: One-time repair completed
+        run: echo "The performance-date guard repair is already committed."
