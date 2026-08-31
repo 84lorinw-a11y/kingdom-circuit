@@ -1,0 +1,182 @@
+name: Fix cross-location event dedupe
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/fix-cross-location-event-dedupe.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out production repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Patch persistent event dedupe
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          app = Path('app.js')
+          text = app.read_text(encoding='utf-8')
+          old = '''  const leftState = normalize(existing.state);
+  const rightState = normalize(incoming.state);
+  if (leftState && rightState && leftState !== rightState) return false;
+
+  const leftAddress = normalizeEventText(existing.address);
+  const rightAddress = normalizeEventText(incoming.address);
+  const sameAddress = Boolean(leftAddress && rightAddress && leftAddress === rightAddress);
+  const leftCity = normalizeEventCity(existing.city);
+  const rightCity = normalizeEventCity(incoming.city);
+  if (!sameAddress && (!leftCity || !rightCity || leftCity !== rightCity)) return false;
+  if (!eventTimesCompatible(existing, incoming)) return false;
+'''
+          new = '''  const leftState = normalize(existing.state);
+  const rightState = normalize(incoming.state);
+  const earlyLeftArtists = eventArtistSet(existing);
+  const earlySharedArtist = [...eventArtistSet(incoming)].some(name => earlyLeftArtists.has(name));
+  const earlyLeftVenue = normalizeEventVenue(existing.venue);
+  const earlyRightVenue = normalizeEventVenue(incoming.venue);
+  const earlyVenueTokens = Math.min(
+    earlyLeftVenue.split(" ").filter(Boolean).length,
+    earlyRightVenue.split(" ").filter(Boolean).length
+  );
+  const earlyVenueScore = tokenContainment(
+    new Set(earlyLeftVenue.split(" ").filter(Boolean)),
+    new Set(earlyRightVenue.split(" ").filter(Boolean))
+  );
+  const strongVenueIdentity = Boolean(
+    earlySharedArtist && earlyLeftVenue && earlyRightVenue &&
+    earlyVenueTokens >= 2 && earlyVenueScore >= 0.90 && eventTimesCompatible(existing, incoming)
+  );
+  const crossStateVenueIdentity = strongVenueIdentity && earlyVenueTokens >= 3;
+  if (leftState && rightState && leftState !== rightState && !crossStateVenueIdentity) return false;
+
+  const leftAddress = normalizeEventText(existing.address);
+  const rightAddress = normalizeEventText(incoming.address);
+  const sameAddress = Boolean(leftAddress && rightAddress && leftAddress === rightAddress);
+  const leftCity = normalizeEventCity(existing.city);
+  const rightCity = normalizeEventCity(incoming.city);
+  if (!sameAddress && (!leftCity || !rightCity || leftCity !== rightCity) && !strongVenueIdentity) return false;
+  if (!eventTimesCompatible(existing, incoming)) return false;
+'''
+          if old not in text:
+              raise SystemExit('app.js target block not found')
+          app.write_text(text.replace(old, new, 1), encoding='utf-8')
+
+          collector = Path('scripts/update_events.py')
+          text = collector.read_text(encoding='utf-8')
+          old = '''    if not same_date:
+        return False
+    if normalize_state(str(left.get("state") or "")) != normalize_state(str(right.get("state") or "")):
+        return False
+
+    left_address = normalize_address(left.get("address"))
+    right_address = normalize_address(right.get("address"))
+    same_address = bool(left_address and right_address and left_address == right_address)
+    city_match = cities_compatible(left, right)
+    if not city_match and not same_address:
+        return False
+
+    city = str(left.get("city") or right.get("city") or "")
+'''
+          new = '''    if not same_date:
+        return False
+
+    # Aggregators sometimes assign a nearby city/state to the exact same venue.
+    # A strong venue identity plus the same artist and compatible time is more
+    # trustworthy than that geocoding difference. Cross-state overrides require
+    # a distinctive venue name (3+ normalized tokens) to avoid false merges.
+    left_venue_identity = normalize_venue(str(left.get("venue") or ""), "")
+    right_venue_identity = normalize_venue(str(right.get("venue") or ""), "")
+    venue_identity_score = token_containment(left_venue_identity, right_venue_identity)
+    venue_identity_tokens = min(len(left_venue_identity.split()), len(right_venue_identity.split()))
+    early_overlap = artist_overlap(left, right)
+    strong_venue_identity = bool(
+        early_overlap
+        and left_venue_identity
+        and right_venue_identity
+        and venue_identity_tokens >= 2
+        and venue_identity_score >= 0.90
+        and times_compatible(left, right)
+    )
+    cross_state_venue_identity = strong_venue_identity and venue_identity_tokens >= 3
+    left_state = normalize_state(str(left.get("state") or ""))
+    right_state = normalize_state(str(right.get("state") or ""))
+    if left_state != right_state and not cross_state_venue_identity:
+        return False
+
+    left_address = normalize_address(left.get("address"))
+    right_address = normalize_address(right.get("address"))
+    same_address = bool(left_address and right_address and left_address == right_address)
+    city_match = cities_compatible(left, right)
+    if not city_match and not same_address and not strong_venue_identity:
+        return False
+
+    city = str(left.get("city") or right.get("city") or "")
+'''
+          if old not in text:
+              raise SystemExit('update_events.py target block not found')
+          collector.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+
+      - name: Validate syntax and dedupe current event data
+        shell: bash
+        run: |
+          python -m py_compile scripts/update_events.py
+          node --check app.js
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from scripts.update_events import merge_events
+
+          path = Path('events.json')
+          events = json.loads(path.read_text(encoding='utf-8'))
+          before = len(events)
+          events = merge_events(events)
+          after = len(events)
+          path.write_text(json.dumps(events, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          silver_spring = [
+              event for event in events
+              if event.get('startDate') == '2026-09-08'
+              and 'Hulvey' in (event.get('artists') or [])
+              and 'fillmore' in str(event.get('venue') or '').lower()
+          ]
+          assert len(silver_spring) == 1, silver_spring
+          assert silver_spring[0].get('state') == 'MD', silver_spring[0]
+          print(f'Deduped events: {before} -> {after}; Silver Spring Hulvey stop is one MD listing.')
+          PY
+
+      - name: Save dedupe repair
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- app.js scripts/update_events.py events.json
+          if git diff --cached --quiet; then
+            echo "Dedupe repair is already applied."
+          else
+            git commit -m "Fix event dedupe across provider location variants [skip ci]"
+            git push origin HEAD:main
+          fi
+
+      - name: Refresh and deploy production
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run update-and-deploy.yml --ref main
