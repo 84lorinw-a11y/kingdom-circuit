@@ -14,6 +14,7 @@ RUNTIME_SCRIPT_URL = "/assets/event-image-repair-kc2050.js"
 EXCLUDED_ARTISTS = {"chad jones", "erica mason", "big holy"}
 EXCLUDED_SLUGS = {"chad-jones", "erica-mason", "big-holy"}
 STALE_IMAGE_URLS = {
+    "https://s1.ticketm.net/dam/a/295/bf4a2e20-facf-46e6-904e-c19f998cb295_SOURCE",
     "https://fivetwentycollective.com/wp-content/uploads/2021/03/Rare-of-Breed.jpg",
     "https://rareofbreed.com/cdn/shop/files/202511_RareOfBreed_TheWarehouse-32.jpg?v=1784663742&width=3840",
     "https://ugc.production.linktr.ee/0f6ee994-7bd6-4821-bb79-593f035ae2c9_1F523223-FD9A-4E86-88BE-0A34120C8FAD.jpeg?io=true&size=avatar-v3_0",
@@ -70,6 +71,10 @@ IMAGE_CANDIDATES = {
     "jet trouble": [
         "https://55promotion.com/kbm24/wp-content/uploads/2025/06/Promo-Headshot-1024x1024.jpg",
         "https://open.voidware.de/artist/6W2lyFO79SNpk3ZpF0A2s9",
+    ],
+    "don ready": [
+        "https://ugc.production.linktr.ee/f87bf85e-d8ca-4d35-92f8-ac16dd0f03f3_Copy-of-Feb-2026---White-Press-Pic--elijah-sten-1.jpeg",
+        "https://open.voidware.de/artist/5kQnpfa9Qp5lNSOThWVnFl",
     ],
     "mike teezy": [
         "https://real.fm/assets/Uploads/MikeTeezy__FocusFillWyItMC4xMSIsIi0wLjE2IiwxMjAwLDYyN10.jpg",

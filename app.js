@@ -1019,11 +1019,11 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "aliases": [
       "Don Ready"
     ],
-    "website": "https://www.google.com/search?q=Don+Ready+official+website",
-    "instagramProfile": "https://www.instagram.com/donready/",
-    "spotifyProfile": "https://open.spotify.com/search/Don%20Ready",
-    "youtubeProfile": "https://www.youtube.com/results?search_query=Don+Ready+official",
-    "officialImageSource": "https://www.instagram.com/donready/",
+    "website": "https://www.donreadymusic.com/",
+    "instagramProfile": "https://www.instagram.com/donreadymusic/",
+    "spotifyProfile": "https://open.spotify.com/artist/5kQnpfa9Qp5lNSOThWVnFl",
+    "youtubeProfile": "https://www.youtube.com/@donreadymusic",
+    "officialImageSource": "https://www.instagram.com/donreadymusic/",
     "sourceRegistryVerified": true
   },
   "y shadey": {
@@ -1228,8 +1228,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6j8t8rQzrAtRx5tYImodgd",
     "youtubeProfile": "https://www.youtube.com/channel/UCAvlfmD2aiqXxxknr-9VSVg",
     "officialImageSource": "https://www.instagram.com/cutthecho/",
-    "sourceRegistryVerified": true,
-    "sourceRegistryRosterOrder": 79
+    "sourceRegistryVerified": true
   },
   "dkg kie": {
     "aliases": [
@@ -1240,8 +1239,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1eeYg6dFkaRT5GA0lsCVHA",
     "youtubeProfile": "https://www.youtube.com/@dkgkie",
     "officialImageSource": "https://www.instagram.com/dkg.kie",
-    "sourceRegistryVerified": true,
-    "sourceRegistryRosterOrder": 80
+    "sourceRegistryVerified": true
   },
   "braille": {
     "aliases": [
@@ -1252,8 +1250,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6RYTz1tFNDF2qP0mwqEwDO",
     "youtubeProfile": "https://www.youtube.com/@bryanbraille",
     "officialImageSource": "https://www.humblebeast.com/music/braille",
-    "sourceRegistryVerified": true,
-    "sourceRegistryRosterOrder": 81
+    "sourceRegistryVerified": true
   },
   "canton jones": {
     "aliases": [
@@ -1264,8 +1261,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3nzEXHMRFWTw4zt3pVRv6V",
     "youtubeProfile": "https://www.youtube.com/@CantonJones1",
     "officialImageSource": "https://www.instagram.com/thecantonjones/?hl=en",
-    "sourceRegistryVerified": true,
-    "sourceRegistryRosterOrder": 82
+    "sourceRegistryVerified": true
   },
   "jay-way": {
     "aliases": [
@@ -1277,8 +1273,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1RDbE3dM2bNNSTh88R4MQ7",
     "youtubeProfile": "https://www.youtube.com/@JayWayTheAlien",
     "officialImageSource": "https://www.jaywaythealien.com/",
-    "sourceRegistryVerified": true,
-    "sourceRegistryRosterOrder": 83
+    "sourceRegistryVerified": true
   },
   "stixx aka conejo": {
     "aliases": [
@@ -1290,8 +1285,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3khYLvZ6GmLlPMPlTfMTBr",
     "youtubeProfile": "https://www.youtube.com/@stixxwym/videos",
     "officialImageSource": "https://linktr.ee/stixxwym",
-    "sourceRegistryVerified": true,
-    "sourceRegistryRosterOrder": 84
+    "sourceRegistryVerified": true
   },
   "ruslan": {
     "aliases": [
@@ -1303,23 +1297,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/2GEXrCflKZ5S5ZHBM4LNcV",
     "youtubeProfile": "https://www.youtube.com/@RuslanKD/featured",
     "officialImageSource": "https://www.instagram.com/ruslankd/?hl=en",
-    "sourceRegistryVerified": true,
-    "sourceRegistryRosterOrder": 85
-  },
-  "caleb gordon": {
-    "aliases": [
-      "Caleb Gordon"
-    ],
-    "website": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
-    "instagramProfile": "https://www.instagram.com/calebfromeden/",
-    "spotifyProfile": "https://open.spotify.com/artist/6s3XaJkcT7464G4oII9V41",
-    "youtubeProfile": "https://www.youtube.com/@CalebGordon",
-    "officialImageSource": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
-    "imageUrl": "https://tprlive.co/cdn/shop/files/ARTIST_HEADSHOT_36.jpg?v=1776887171&width=1797",
-    "imagePosition": "center",
-    "preferArtistImage": true,
-    "sourceRegistryVerified": true,
-    "sourceRegistryRosterOrder": 4
+    "sourceRegistryVerified": true
   }
 };
 const ARTIST_OVERRIDES = {
