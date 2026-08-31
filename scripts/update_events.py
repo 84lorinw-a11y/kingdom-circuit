@@ -2497,14 +2497,35 @@ def events_are_duplicates(left: dict[str, Any], right: dict[str, Any]) -> bool:
         return True
     if not same_date:
         return False
-    if normalize_state(str(left.get("state") or "")) != normalize_state(str(right.get("state") or "")):
+
+    # Aggregators sometimes geocode an exact venue to a nearby city/state.
+    # When the artist, time, and distinctive venue identity agree, prefer that
+    # evidence over the provider's location label. Cross-state overrides require
+    # 3+ venue tokens to avoid merging generic venues in different states.
+    left_venue_identity = normalize_venue(str(left.get("venue") or ""), "")
+    right_venue_identity = normalize_venue(str(right.get("venue") or ""), "")
+    venue_identity_score = token_containment(left_venue_identity, right_venue_identity)
+    venue_identity_tokens = min(len(left_venue_identity.split()), len(right_venue_identity.split()))
+    early_overlap = artist_overlap(left, right)
+    strong_venue_identity = bool(
+        early_overlap
+        and left_venue_identity
+        and right_venue_identity
+        and venue_identity_tokens >= 2
+        and venue_identity_score >= 0.90
+        and times_compatible(left, right)
+    )
+    cross_state_venue_identity = strong_venue_identity and venue_identity_tokens >= 3
+    left_state = normalize_state(str(left.get("state") or ""))
+    right_state = normalize_state(str(right.get("state") or ""))
+    if left_state != right_state and not cross_state_venue_identity:
         return False
 
     left_address = normalize_address(left.get("address"))
     right_address = normalize_address(right.get("address"))
     same_address = bool(left_address and right_address and left_address == right_address)
     city_match = cities_compatible(left, right)
-    if not city_match and not same_address:
+    if not city_match and not same_address and not strong_venue_identity:
         return False
 
     city = str(left.get("city") or right.get("city") or "")

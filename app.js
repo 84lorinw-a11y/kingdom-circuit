@@ -1498,14 +1498,31 @@ function sameEvent(existing, incoming) {
 
   const leftState = normalize(existing.state);
   const rightState = normalize(incoming.state);
-  if (leftState && rightState && leftState !== rightState) return false;
+  const earlyLeftArtists = eventArtistSet(existing);
+  const earlySharedArtist = [...eventArtistSet(incoming)].some(name => earlyLeftArtists.has(name));
+  const earlyLeftVenue = normalizeEventVenue(existing.venue);
+  const earlyRightVenue = normalizeEventVenue(incoming.venue);
+  const earlyVenueTokens = Math.min(
+    earlyLeftVenue.split(" ").filter(Boolean).length,
+    earlyRightVenue.split(" ").filter(Boolean).length
+  );
+  const earlyVenueScore = tokenContainment(
+    new Set(earlyLeftVenue.split(" ").filter(Boolean)),
+    new Set(earlyRightVenue.split(" ").filter(Boolean))
+  );
+  const strongVenueIdentity = Boolean(
+    earlySharedArtist && earlyLeftVenue && earlyRightVenue &&
+    earlyVenueTokens >= 2 && earlyVenueScore >= 0.90 && eventTimesCompatible(existing, incoming)
+  );
+  const crossStateVenueIdentity = strongVenueIdentity && earlyVenueTokens >= 3;
+  if (leftState && rightState && leftState !== rightState && !crossStateVenueIdentity) return false;
 
   const leftAddress = normalizeEventText(existing.address);
   const rightAddress = normalizeEventText(incoming.address);
   const sameAddress = Boolean(leftAddress && rightAddress && leftAddress === rightAddress);
   const leftCity = normalizeEventCity(existing.city);
   const rightCity = normalizeEventCity(incoming.city);
-  if (!sameAddress && (!leftCity || !rightCity || leftCity !== rightCity)) return false;
+  if (!sameAddress && (!leftCity || !rightCity || leftCity !== rightCity) && !strongVenueIdentity) return false;
   if (!eventTimesCompatible(existing, incoming)) return false;
 
   const leftArtists = eventArtistSet(existing);
