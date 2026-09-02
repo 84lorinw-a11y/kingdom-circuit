@@ -103,6 +103,12 @@ class MultiPageProductionTests(unittest.TestCase):
 
         self.assertTrue((ROOT / "assets/artists/rare-of-breed-primary.jpg").is_file())
         self.assertTrue((ROOT / "assets/artists/yumiya-primary.jpg").is_file())
+
+    def test_marty_kuna_show_uses_solo_artist_image(self):
+        events = json.loads((ROOT / "supplemental-events.json").read_text(encoding="utf-8"))
+        event = next(event for event in events if event.get("id") == "supplemental:marty-project-nation-kuna-2026")
+        self.assertEqual("https://i.scdn.co/image/ab6761610000e5eb3d2d9f74de93906d1f5996f3", event.get("image"))
+        self.assertEqual("artist", event.get("imageType"))
         rare_asset = ROOT / "assets/artists/rare-of-breed-primary.jpg"
         yumiya_asset = ROOT / "assets/artists/yumiya-primary.jpg"
         fallback_asset = ROOT / "assets/event-fallback.webp"
