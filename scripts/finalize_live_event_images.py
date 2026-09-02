@@ -24,6 +24,9 @@ STALE_IMAGE_URLS = {
 # Verified/known-good presentation images used only when an event otherwise has
 # generic artwork. Real event artwork is always preserved.
 IMAGE_CANDIDATES = {
+    "indie tribe.": [
+        "https://i.scdn.co/image/ab6761610000e5eb3d6de4e8ecd60713745d2b77",
+    ],
     "marty": [
         "https://i.scdn.co/image/ab6761610000e5eb3d2d9f74de93906d1f5996f3",
     ],
@@ -43,9 +46,6 @@ IMAGE_CANDIDATES = {
     "rare of breed": [
         "/assets/artists/rare-of-breed-primary.jpg",
         "https://rareofbreed.com/cdn/shop/files/202511_RareOfBreed_TheWarehouse-32.jpg?v=1784663742&width=3840",
-    ],
-    "indie tribe.": [
-        "/assets/artists/indie-tribe.webp",
     ],
     "issac mansfield": [
         "https://i.scdn.co/image/ab6761610000e5eb6d97dd155baa40ea3c14b616",
