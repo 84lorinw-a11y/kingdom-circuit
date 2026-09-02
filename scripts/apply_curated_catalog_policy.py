@@ -48,6 +48,49 @@ MIKE_TEEZY_HRVSTLAND = {
     "sourceName": "Mike Teezy verified Bandsintown / HRVSTLAND listing",
 }
 
+HULVEY_SILVER_SPRING = {
+    "id": "manual:hulvey-could-be-tonight-silver-spring-2026",
+    "title": "Hulvey - Could Be Tonight Tour",
+    "startDate": "2026-09-08",
+    "startTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "The Fillmore Silver Spring",
+    "address": "8656 Colesville Rd",
+    "city": "Silver Spring",
+    "state": "MD",
+    "country": "US",
+    "artists": ["Hulvey", "indie tribe.", "Kijan Boone"],
+    "headliner": "Hulvey",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketmaster.com/hulvey-could-be-tonight-tour-silver-spring-maryland-09-08-2026/event/1500647FE337D3A1",
+    "officialUrl": "https://www.livenation.com/event/1AvfZ_6GkTNuWC-/hulvey-could-be-tonight-tour",
+    "image": "assets/artists/hulvey.webp",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "price": "",
+    "lineupExplicit": True,
+    "authority": "official_event",
+    "sourceName": "Live Nation official event",
+    "sources": [
+        {
+            "name": "Live Nation official event",
+            "url": "https://www.livenation.com/event/1AvfZ_6GkTNuWC-/hulvey-could-be-tonight-tour",
+            "type": "manual_verified",
+            "authority": "official_event",
+            "priority": 112,
+        },
+        {
+            "name": "Ticketmaster official ticketing",
+            "url": "https://www.ticketmaster.com/hulvey-could-be-tonight-tour-silver-spring-maryland-09-08-2026/event/1500647FE337D3A1",
+            "type": "venue_ticket",
+            "authority": "venue_ticket",
+            "priority": 94,
+        },
+    ],
+    "confidence": "high",
+}
+
 ARK_ARTISTS = ["Zauntee", "Scootie Wop", "Dante' Pride", "Anike", "Y Shadey"]
 ARK_OF_WORSHIP = {
     "id": "ark-of-worship-2026",
@@ -146,6 +189,16 @@ def is_ark_fragment(event: dict[str, Any]) -> bool:
     same_site = "southwest trail riders" in location or "13711 almeda school" in location
     ark_artists = {norm(name) for name in ARK_ARTISTS}
     return same_site and bool(event_artists(event) & ark_artists)
+
+
+def is_hulvey_silver_spring_fragment(event: dict[str, Any]) -> bool:
+    if str(event.get("startDate") or "") != "2026-09-08":
+        return False
+    location = f"{event.get('venue', '')} {event.get('address', '')}".casefold()
+    if "fillmore silver spring" not in location and "8656 colesville" not in location:
+        return False
+    tour_artists = {"hulvey", "indie tribe.", "indie tribe", "kijan boone"}
+    return bool(event_artists(event) & tour_artists)
 
 
 def is_known_duplicate_fragment(event: dict[str, Any]) -> bool:
@@ -337,6 +390,9 @@ def main() -> int:
         if is_ark_fragment(curated):
             removed_ark_fragments += 1
             continue
+        if is_hulvey_silver_spring_fragment(curated):
+            removed_duplicate_fragments += 1
+            continue
         if is_known_duplicate_fragment(curated):
             removed_duplicate_fragments += 1
             continue
@@ -350,13 +406,16 @@ def main() -> int:
         curated = curate_event(event)
         if curated is None or is_ark_fragment(curated):
             continue
+        if is_hulvey_silver_spring_fragment(curated):
+            removed_duplicate_fragments += 1
+            continue
         if is_known_duplicate_fragment(curated):
             continue
         if norm(curated.get("id")) in target_ids:
             continue
         curated_supplemental.append(curated)
 
-    curated_supplemental.extend([MIKE_TEEZY_HRVSTLAND, ARK_OF_WORSHIP])
+    curated_supplemental.extend([HULVEY_SILVER_SPRING, MIKE_TEEZY_HRVSTLAND, ARK_OF_WORSHIP])
     curated_supplemental.sort(
         key=lambda event: (str(event.get("startDate") or "9999-12-31"), norm(event.get("title")))
     )
@@ -378,6 +437,17 @@ def main() -> int:
         raise SystemExit("Madison Ryann Ward is still enabled")
 
     all_published = [*curated_events, *curated_supplemental]
+    silver_spring = [
+        event for event in all_published
+        if is_hulvey_silver_spring_fragment(event)
+    ]
+    if len(silver_spring) != 1:
+        raise SystemExit("Hulvey Silver Spring tour stop was not consolidated")
+    if (
+        silver_spring[0].get("headliner") != "Hulvey"
+        or set(silver_spring[0].get("artists", [])) != {"Hulvey", "indie tribe.", "Kijan Boone"}
+    ):
+        raise SystemExit("Hulvey Silver Spring lineup is incomplete")
     if any("madison ryann ward" in event_artists(event) for event in all_published):
         raise SystemExit("Madison Ryann Ward still appears in published event data")
     if any(is_ark_fragment(event) for event in all_published):
