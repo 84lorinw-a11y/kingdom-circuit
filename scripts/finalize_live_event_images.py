@@ -365,6 +365,7 @@ def clean_sitemap(root: pathlib.Path, removed_slugs: set[str]) -> None:
 def verify(root: pathlib.Path) -> dict:
     failures: list[str] = []
     fallback_cards = 0
+    fallback_card_examples: list[str] = []
     fallback_event_pages = 0
     retired_event_pages = 0
     retired_artist_links = 0
@@ -388,6 +389,9 @@ def verify(root: pathlib.Path) -> dict:
             sources = re.findall(r'<img\b[^>]*?\ssrc=["\']([^"\']+)', block, flags=re.I)
             if any("event-fallback.webp" in norm(src) for src in sources):
                 fallback_cards += 1
+                if len(fallback_card_examples) < 8:
+                    title = strip_tags(re.search(r'<h3\b[^>]*>(.*?)</h3>', block, flags=re.I | re.S).group(1)) if re.search(r'<h3\b[^>]*>(.*?)</h3>', block, flags=re.I | re.S) else "unknown"
+                    fallback_card_examples.append(f"{page.relative_to(root)}:{title}")
             for slug in EXCLUDED_SLUGS:
                 if f"/artists/{slug}/" in norm(block):
                     retired_artist_links += 1
@@ -402,7 +406,7 @@ def verify(root: pathlib.Path) -> dict:
             if event_page_should_be_removed(text):
                 retired_event_pages += 1
     if fallback_cards:
-        failures.append(f"generic-event-cards:{fallback_cards}")
+        failures.append(f"generic-event-cards:{fallback_cards}[{' | '.join(fallback_card_examples)}]")
     if fallback_event_pages:
         failures.append(f"generic-event-pages:{fallback_event_pages}")
     if retired_event_pages:
