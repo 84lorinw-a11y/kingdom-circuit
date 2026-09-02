@@ -60,7 +60,6 @@
     "ticketUrl": "https://www.bandsintown.com/bt/108527507?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
     "officialUrl": "https://www.bandsintown.com/e/108527507?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
     "image": "assets/artists/rare-of-breed-primary.jpg",
-    "imageType": "artist",
     "price": "",
     "sourceName": "Bandsintown",
     "sources": [
@@ -137,7 +136,6 @@
     "ticketUrl": "https://www.bandsintown.com/bt/108527515?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
     "officialUrl": "https://www.bandsintown.com/e/108527515?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
     "image": "assets/artists/rare-of-breed-primary.jpg",
-    "imageType": "artist",
     "price": "",
     "sourceName": "Bandsintown",
     "sources": [
@@ -176,7 +174,6 @@
     "ticketUrl": "https://www.bandsintown.com/bt/108619960?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
     "officialUrl": "https://www.bandsintown.com/e/108619960?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
     "image": "assets/artists/rare-of-breed-primary.jpg",
-    "imageType": "artist",
     "price": "",
     "sourceName": "Bandsintown",
     "sources": [
@@ -367,8 +364,6 @@
     "ticketUrl": "https://www.bandsintown.com/t/1038610819?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
     "officialUrl": "https://www.bandsintown.com/e/1038610819?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
     "image": "https://i.scdn.co/image/ab6761610000e5eb3d6de4e8ecd60713745d2b77",
-    "imageType": "artist",
-    "imagePosition": "center",
     "price": "",
     "sourceName": "Bandsintown",
     "sources": [
@@ -710,7 +705,6 @@
     "ticketUrl": "https://www.bandsintown.com/t/108758638?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
     "officialUrl": "https://www.bandsintown.com/e/108758638?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
     "image": "assets/artists/yumiya-primary.jpg",
-    "imageType": "artist",
     "price": "",
     "sourceName": "Bandsintown",
     "sources": [
@@ -1495,6 +1489,44 @@
     "imageOverride": true
   },
   {
+    "id": "bandsintown:108856031",
+    "title": "FCA Warrior Night",
+    "startDate": "2026-11-02",
+    "startTime": "20:00",
+    "timezone": "",
+    "venue": "FCA Warrior Night",
+    "address": "1600 E Washington Blvd",
+    "city": "Fort Wayne",
+    "state": "IN",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108856031?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.bandsintown.com/e/108856031?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/808-beezy.webp",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/108856031?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "108856031",
+    "bandsintownArtistId": "792282",
+    "bandsintownResolvedName": "808 BEEZY",
+    "bandsintownIdentity": "configured_id",
+    "trackedArtist": "808 BEEZY"
+  },
+  {
     "id": "supplemental:skema-boy-2026-11-04-charlotte-nc",
     "title": "Zauntee: God Remembers Tour - with Skema Boy",
     "startDate": "2026-11-04",
@@ -2080,5 +2112,81 @@
     "bandsintownResolvedName": "nobigdyl.",
     "bandsintownIdentity": "exact_name_or_alias",
     "trackedArtist": "nobigdyl."
+  },
+  {
+    "id": "bandsintown:108856562",
+    "title": "AMPLIFY",
+    "startDate": "2027-02-12",
+    "startTime": "19:30",
+    "timezone": "",
+    "venue": "AMPLIFY",
+    "address": "715 Whittier Ave NW",
+    "city": "North Canton",
+    "state": "OH",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108856562?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.bandsintown.com/e/108856562?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/808-beezy.webp",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/108856562?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "108856562",
+    "bandsintownArtistId": "792282",
+    "bandsintownResolvedName": "808 BEEZY",
+    "bandsintownIdentity": "configured_id",
+    "trackedArtist": "808 BEEZY"
+  },
+  {
+    "id": "bandsintown:108856576",
+    "title": "AMPLIFY",
+    "startDate": "2027-02-13",
+    "startTime": "19:30",
+    "timezone": "",
+    "venue": "AMPLIFY",
+    "address": "715 Whittier Ave NW",
+    "city": "North Canton",
+    "state": "OH",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108856576?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.bandsintown.com/e/108856576?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/808-beezy.webp",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/108856576?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "108856576",
+    "bandsintownArtistId": "792282",
+    "bandsintownResolvedName": "808 BEEZY",
+    "bandsintownIdentity": "configured_id",
+    "trackedArtist": "808 BEEZY"
   }
 ]
