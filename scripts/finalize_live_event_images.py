@@ -44,6 +44,9 @@ IMAGE_CANDIDATES = {
         "/assets/artists/rare-of-breed-primary.jpg",
         "https://rareofbreed.com/cdn/shop/files/202511_RareOfBreed_TheWarehouse-32.jpg?v=1784663742&width=3840",
     ],
+    "indie tribe.": [
+        "/assets/artists/indie-tribe.webp",
+    ],
     "issac mansfield": [
         "https://i.scdn.co/image/ab6761610000e5eb6d97dd155baa40ea3c14b616",
         "https://open.voidware.de/artist/1QgXbOPk6XpELZrJOzz33w",
