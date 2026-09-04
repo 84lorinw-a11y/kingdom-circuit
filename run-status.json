@@ -1,9 +1,9 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-09-04T11:46:01Z",
-  "lastSuccessfulUpdate": "2026-09-04T11:46:01Z",
-  "eventsPublished": 70,
+  "lastAttempt": "2026-09-04T14:59:18Z",
+  "lastSuccessfulUpdate": "2026-09-04T14:59:18Z",
+  "eventsPublished": 64,
   "candidatesCollected": 152,
   "artistsConfigured": 323,
   "artistsByPriority": {
@@ -49,7 +49,7 @@
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 273,
+  "sourcesChecked": 274,
   "unmatchedArtists": [
     "Scootie Wop",
     "Mike Malagies",
@@ -369,7 +369,7 @@
     },
     {
       "name": "Trendsetter Sense official events",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -630,11 +630,10 @@
       "queriesRun": 139
     }
   ],
-  "warningCount": 22,
+  "warningCount": 21,
   "errorCount": 0,
   "warnings": [
-    "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 404: Not Found",
-    "Trendsetter Sense official events: Unable to retrieve https://www.trendsettersense.com/event-list: HTTP Error 429: Too Many Requests",
+    "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
     "NF Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11969355-nf: HTTP Error 403: Forbidden",
     "Mike Malagies Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15593996-mike-malagies: HTTP Error 403: Forbidden",
     "Parris Chariz Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14726057-parris-chariz: HTTP Error 403: Forbidden",
@@ -657,9 +656,5 @@
     "Anike Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4673148-anike: HTTP Error 403: Forbidden"
   ],
   "errors": [],
-  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings.",
-  "artistWebsiteEventsFound": 0,
-  "artistWebsiteSeedEvents": 17,
-  "artistWebsiteEventsAdded": 17,
-  "artistWebsiteMergeAt": "2026-09-04T11:53:14Z"
+  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings."
 }

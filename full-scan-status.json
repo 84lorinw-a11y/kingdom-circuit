@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-08-31T21:08:39Z",
-  "artistsChecked": 317,
+  "generatedAt": "2026-09-04T15:09:41Z",
+  "artistsChecked": 323,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
   "festivalCandidates": 0,
   "bandsintown": {
-    "artistsAttempted": 317,
+    "artistsAttempted": 323,
     "resolved": 0,
     "eventsFound": 0
   },
   "songkick": {
-    "artistsAttempted": 317,
+    "artistsAttempted": 323,
     "resolved": 0,
-    "blockedByRobots": 317,
+    "blockedByRobots": 323,
     "eventsFound": 0
   },
   "sourceStatusCounts": {
-    "failed": 322,
-    "blocked_by_robots": 323,
-    "no_events": 102
+    "failed": 329,
+    "blocked_by_robots": 329,
+    "no_events": 112
   },
   "newEvents": [],
   "sourceResults": [
@@ -98,7 +98,7 @@
     {
       "artist": "Caleb Gordon",
       "source": "official website",
-      "url": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+      "url": "https://tprlive.co/collections/caleb-gordon-the-eden-experience?srsltid=AfmBOopZ8_u8FLIHQ5yFrnTJVHrJfOAqo32_-Zgy_D3D76qo031L04Ge",
       "status": "no_events",
       "eventsFound": 0
     },
@@ -507,6 +507,13 @@
       "artist": "Marty",
       "source": "Songkick",
       "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Marty",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/5BfKKSmpGmj2moMNlaWeJK",
+      "status": "no_events",
       "eventsFound": 0
     },
     {
@@ -1856,6 +1863,168 @@
       "eventsFound": 0
     },
     {
+      "artist": "J J L",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=J+J+L: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "J J L",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "J J L",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/5saP6cHfo2flMEQuAJITBS",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Priest Jones",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Priest+Jones: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Priest Jones",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Priest Jones",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/6GZw5pNbFDBOr6h8ha48BX",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Corincris",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Corincris: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Corincris",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Corincris",
+      "source": "official website",
+      "url": "https://www.cockybeliefproduction.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Corincris",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/3HPj0fTgMGByddrYrdNPLn",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "F’rael",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=F%E2%80%99rael: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "F’rael",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "F’rael",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/1bjGUP5zjge68RaUaBSPvW",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Sis N Lil Bro",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Sis+N+Lil+Bro: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Sis N Lil Bro",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Sis N Lil Bro",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/1Ep8bP4kvEagicoKdAVU9P",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kaboose",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Kaboose: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Kaboose",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kaboose",
+      "source": "official website",
+      "url": "https://syntaxrecords.com/artist/kaboose/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kaboose",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/2zD5NNTrgXT3o2RVrRBvv1",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "TRU-SERVA",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=TRU-SERVA: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "TRU-SERVA",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "TRU-SERVA",
+      "source": "official website",
+      "url": "https://www.iamtruserva.com/",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.iamtruserva.com/: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "artist": "TRU-SERVA",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/3LzTEdiDZnEA721VqMYpdV",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
       "artist": "Alex Jean",
       "source": "Bandsintown",
       "status": "failed",
@@ -2820,19 +2989,6 @@
     },
     {
       "artist": "Isreal Perez",
-      "source": "Songkick",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
-    },
-    {
-      "artist": "J J L",
-      "source": "Bandsintown",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.bandsintown.com/search?q=J+J+L: HTTP Error 403: Forbidden"
-    },
-    {
-      "artist": "J J L",
       "source": "Songkick",
       "status": "blocked_by_robots",
       "eventsFound": 0
