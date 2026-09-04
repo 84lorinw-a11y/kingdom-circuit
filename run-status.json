@@ -1,26 +1,26 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-08-31T20:58:28Z",
-  "lastSuccessfulUpdate": "2026-08-31T20:58:28Z",
-  "eventsPublished": 67,
-  "candidatesCollected": 160,
-  "artistsConfigured": 317,
+  "lastAttempt": "2026-09-04T11:46:01Z",
+  "lastSuccessfulUpdate": "2026-09-04T11:46:01Z",
+  "eventsPublished": 70,
+  "candidatesCollected": 152,
+  "artistsConfigured": 323,
   "artistsByPriority": {
     "priority1": 102,
-    "priority2": 111,
-    "priority3": 104
+    "priority2": 116,
+    "priority3": 105
   },
   "ticketmasterArtistsEnabled": 209,
-  "socialSearchArtistsEnabled": 130,
-  "freeTextAliasesProtected": 103,
+  "socialSearchArtistsEnabled": 137,
+  "freeTextAliasesProtected": 110,
   "artistsMatchedOnTicketmaster": 70,
-  "officialEventsFound": 68,
-  "ticketmasterEventsFound": 46,
-  "instagramArtistsConfigured": 130,
-  "instagramQueriesRun": 132,
-  "instagramQueriesAttempted": 130,
-  "instagramResultsFound": 8,
+  "officialEventsFound": 66,
+  "ticketmasterEventsFound": 39,
+  "instagramArtistsConfigured": 137,
+  "instagramQueriesRun": 139,
+  "instagramQueriesAttempted": 137,
+  "instagramResultsFound": 0,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,106 +46,10 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
-    },
-    {
-      "url": "https://www.instagram.com/reel/DckGCNwuAdJ/",
-      "title": "Instagram",
-      "artists": [
-        "Zauntee"
-      ],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 2,
-      "reason": "official artist ownership was not clear; a future date was not explicit; a U.S. city/state was not explicit"
-    },
-    {
-      "url": "https://www.instagram.com/reel/Db8qD1CSLa5/",
-      "title": "Instagram",
-      "artists": [
-        "Zauntee"
-      ],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 2,
-      "reason": "official artist ownership was not clear; a future date was not explicit; a U.S. city/state was not explicit"
-    },
-    {
-      "url": "https://www.instagram.com/reel/Dbv5yKryiFX/",
-      "title": "Zachariah | I wrote this song six years ago and never ... - Instagram",
-      "artists": [
-        "Zauntee"
-      ],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
-    },
-    {
-      "url": "https://www.instagram.com/reel/DaGfyp3yAXw/",
-      "title": "Zachariah | I LEFT ATLANTIC RECORDS, I GOT MARRIED, I ... - Instagram",
-      "artists": [
-        "Zauntee"
-      ],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
-    },
-    {
-      "url": "https://www.instagram.com/reel/Db4BqTmSlZb/",
-      "title": "Zachariah | This is my Why | Instagram",
-      "artists": [
-        "Zauntee"
-      ],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
-    },
-    {
-      "url": "https://www.instagram.com/p/DPFlGGCDnzY/",
-      "title": "Instagram",
-      "artists": [
-        "Zauntee"
-      ],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
-    },
-    {
-      "url": "https://www.instagram.com/reel/DPueIFUDg0V/",
-      "title": "Zachariah | JUST MARRIED!! Full Wedding Recap up on my YouTube ...",
-      "artists": [
-        "Zauntee"
-      ],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
-    },
-    {
-      "url": "https://www.instagram.com/p/DOPpCVyjuop/",
-      "title": "Instagram",
-      "artists": [
-        "Zauntee"
-      ],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 265,
+  "sourcesChecked": 273,
   "unmatchedArtists": [
     "Scootie Wop",
     "Mike Malagies",
@@ -291,7 +195,7 @@
     {
       "name": "Reach Records consolidated calendar",
       "status": "ok",
-      "eventsFound": 24
+      "eventsFound": 22
     },
     {
       "name": "Reach Records - 1K Phew",
@@ -695,7 +599,7 @@
     },
     {
       "name": "LifeLight Sioux Falls official lineup",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -722,14 +626,14 @@
       "name": "Instagram public announcement scan",
       "status": "ok",
       "eventsFound": 0,
-      "artistsChecked": 130,
-      "queriesRun": 132
+      "artistsChecked": 137,
+      "queriesRun": 139
     }
   ],
-  "warningCount": 23,
+  "warningCount": 22,
   "errorCount": 0,
   "warnings": [
-    "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
+    "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 404: Not Found",
     "Trendsetter Sense official events: Unable to retrieve https://www.trendsettersense.com/event-list: HTTP Error 429: Too Many Requests",
     "NF Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11969355-nf: HTTP Error 403: Forbidden",
     "Mike Malagies Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15593996-mike-malagies: HTTP Error 403: Forbidden",
@@ -750,9 +654,12 @@
     "FLAME Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/16627-flame: HTTP Error 403: Forbidden",
     "Alex Jean Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15570394-alex-jean: HTTP Error 403: Forbidden",
     "KB Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/165768-kb: HTTP Error 403: Forbidden",
-    "Anike Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4673148-anike: HTTP Error 403: Forbidden",
-    "LifeLight Sioux Falls official lineup: Unable to retrieve https://lifelight.org/llsf-lineup/: HTTP Error 404: Not Found"
+    "Anike Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4673148-anike: HTTP Error 403: Forbidden"
   ],
   "errors": [],
-  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings."
+  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings.",
+  "artistWebsiteEventsFound": 0,
+  "artistWebsiteSeedEvents": 17,
+  "artistWebsiteEventsAdded": 17,
+  "artistWebsiteMergeAt": "2026-09-04T11:53:14Z"
 }
