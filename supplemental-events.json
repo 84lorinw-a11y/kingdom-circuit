@@ -914,6 +914,54 @@
     "sourceName": "Ark of Worship official festival lineup"
   },
   {
+    "id": "bandsintown:1040011561",
+    "title": "TRU-SERVA at CupOJoy Cup2",
+    "startDate": "2026-10-09",
+    "startTime": "19:00",
+    "timezone": "America/Chicago",
+    "venue": "CupOJoy Cup2",
+    "address": "525 North Taylor",
+    "city": "Green Bay",
+    "state": "WI",
+    "country": "US",
+    "artists": [
+      "TRU-SERVA"
+    ],
+    "headliner": "TRU-SERVA",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/1040011561?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/1040011561?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebb5bd510760cb418516ded933",
+    "imageType": "artist_photo",
+    "imagePosition": "center",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/1040011561?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      },
+      {
+        "name": "Cup O' Joy official schedule",
+        "url": "https://cupojoy.com/flyers",
+        "type": "venue_calendar",
+        "authority": "venue_ticket",
+        "priority": 94
+      }
+    ],
+    "confidence": "high",
+    "lineupExplicit": true,
+    "bandsintownEventId": "1040011561",
+    "bandsintownArtistId": "1283580",
+    "bandsintownResolvedName": "TRU-SERVA",
+    "bandsintownIdentity": "configured_id",
+    "trackedArtist": "TRU-SERVA"
+  },
+  {
     "id": "supplemental:brenno-awake-conference-2026",
     "title": "Awake Conference",
     "startDate": "2026-10-10",
@@ -1196,6 +1244,43 @@
     "bandsintownResolvedName": "RUSLAN",
     "bandsintownIdentity": "exact_name_or_alias",
     "trackedArtist": "Ruslan"
+  },
+  {
+    "id": "supplemental:tru-serva-truth-tour-las-cruces-2026",
+    "title": "The Truth Tour — Las Cruces",
+    "startDate": "2026-10-25",
+    "startTime": "",
+    "timezone": "America/Denver",
+    "venue": "Real Life Church",
+    "address": "",
+    "city": "Las Cruces",
+    "state": "NM",
+    "country": "US",
+    "artists": [
+      "TRU-SERVA"
+    ],
+    "headliner": "TRU-SERVA",
+    "eventType": "concert",
+    "status": "onsale",
+    "ticketUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
+    "officialUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebb5bd510760cb418516ded933",
+    "imageType": "artist_photo",
+    "imagePosition": "center",
+    "price": "$10",
+    "sourceName": "Megan Woods official tour announcement",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Megan Woods official tour announcement",
+        "url": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ]
   },
   {
     "id": "supplemental:skema-boy-2026-10-27-chicago-il",

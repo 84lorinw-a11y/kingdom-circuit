@@ -98,6 +98,13 @@ const ARTIST_ROSTER_ORDER = [
   "Jay-Way",
   "Stixx aka Conejo",
   "Ruslan",
+  "J J L",
+  "Priest Jones",
+  "Corincris",
+  "F’rael",
+  "Sis N Lil Bro",
+  "Kaboose",
+  "TRU-SERVA",
   "Alex Jean",
   "gio.",
   "Torey D'Shaun",
@@ -172,7 +179,6 @@ const ARTIST_ROSTER_ORDER = [
   "I.A.N.",
   "IDEGO",
   "Isreal Perez",
-  "J J L",
   "Jacob Beard",
   "JWoodz",
   "Kaden Jordan",
@@ -1311,6 +1317,111 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/ruslankd/?hl=en",
     "sourceRegistryVerified": true,
     "sourceRegistryRosterOrder": 85
+  },
+  "j j l": {
+    "aliases": [
+      "J J L",
+      "JJL"
+    ],
+    "website": "https://open.spotify.com/artist/5saP6cHfo2flMEQuAJITBS",
+    "instagramProfile": "https://www.instagram.com/jjl_music/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/5saP6cHfo2flMEQuAJITBS",
+    "youtubeProfile": "https://music.youtube.com/channel/UC0vTVAlJijP9UvlEeezSmjw",
+    "officialImageSource": "https://open.spotify.com/artist/5saP6cHfo2flMEQuAJITBS",
+    "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb04e00b6b9c43eecf6f19ca78",
+    "imagePosition": "center",
+    "state": "MN",
+    "sourceRegistryVerified": true
+  },
+  "priest jones": {
+    "aliases": [
+      "Priest Jones"
+    ],
+    "website": "https://www.instagram.com/priestjonesmn/",
+    "instagramProfile": "https://www.instagram.com/priestjonesmn/",
+    "spotifyProfile": "https://open.spotify.com/artist/6GZw5pNbFDBOr6h8ha48BX",
+    "youtubeProfile": "https://www.youtube.com/channel/UCJ1QKIUrg93G-BJJ2cV-4fw",
+    "officialImageSource": "https://open.spotify.com/artist/6GZw5pNbFDBOr6h8ha48BX",
+    "imageUrl": "https://i.scdn.co/image/ab67616d0000b27365766fabd158615e000e0033",
+    "imagePosition": "center",
+    "state": "MN",
+    "sourceRegistryVerified": true
+  },
+  "corincris": {
+    "aliases": [
+      "Corincris"
+    ],
+    "website": "https://www.cockybeliefproduction.com/",
+    "instagramProfile": "https://www.instagram.com/corincris/",
+    "spotifyProfile": "https://open.spotify.com/artist/3HPj0fTgMGByddrYrdNPLn",
+    "youtubeProfile": "https://www.youtube.com/channel/UCF-g5-rykdXV5O5uEoz5ggA",
+    "officialImageSource": "https://www.cockybeliefproduction.com/",
+    "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb9c8a3893503dc3d2ec584a4c",
+    "imagePosition": "center",
+    "state": "MN",
+    "sourceRegistryVerified": true
+  },
+  "f’rael": {
+    "aliases": [
+      "F’rael",
+      "F'rael",
+      "Frael"
+    ],
+    "website": "https://www.instagram.com/fraelmusic/",
+    "instagramProfile": "https://www.instagram.com/fraelmusic/",
+    "spotifyProfile": "https://open.spotify.com/artist/1bjGUP5zjge68RaUaBSPvW",
+    "youtubeProfile": "https://www.youtube.com/channel/UCuvrJ4Mvi90DWdb9pg98rYw",
+    "officialImageSource": "https://www.instagram.com/fraelmusic/",
+    "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb13e6fe9f6409ac3fd1efb541",
+    "imagePosition": "center",
+    "state": "MN",
+    "sourceRegistryVerified": true
+  },
+  "sis n lil bro": {
+    "aliases": [
+      "Sis N Lil Bro",
+      "Sis N' Lil Bro",
+      "Sis N’ Lil Bro"
+    ],
+    "website": "https://www.instagram.com/wesisnlilbro/",
+    "instagramProfile": "https://www.instagram.com/wesisnlilbro/",
+    "spotifyProfile": "https://open.spotify.com/artist/1Ep8bP4kvEagicoKdAVU9P",
+    "youtubeProfile": "https://www.youtube.com/channel/UCw4Y1XT0kIff0f3kmrs8tSw",
+    "officialImageSource": "https://www.instagram.com/wesisnlilbro/",
+    "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebb41480e744d87b5682478744",
+    "imagePosition": "center",
+    "state": "MN",
+    "sourceRegistryVerified": true
+  },
+  "kaboose": {
+    "aliases": [
+      "Kaboose"
+    ],
+    "website": "https://syntaxrecords.com/artist/kaboose/",
+    "instagramProfile": "https://www.instagram.com/kaboose.hiphop/",
+    "spotifyProfile": "https://open.spotify.com/artist/2zD5NNTrgXT3o2RVrRBvv1",
+    "youtubeProfile": "https://music.youtube.com/channel/UCIWddYLDHGIGZJHQ_G46noQ",
+    "officialImageSource": "https://open.spotify.com/artist/2zD5NNTrgXT3o2RVrRBvv1",
+    "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb3c5bdcc093f62a89789c0f53",
+    "imagePosition": "center",
+    "state": "MN",
+    "sourceRegistryVerified": true
+  },
+  "tru-serva": {
+    "aliases": [
+      "TRU-SERVA",
+      "Tru-Serva",
+      "Tru Serva"
+    ],
+    "website": "https://www.iamtruserva.com/",
+    "instagramProfile": "https://www.instagram.com/truserva/",
+    "spotifyProfile": "https://open.spotify.com/artist/3LzTEdiDZnEA721VqMYpdV",
+    "youtubeProfile": "https://www.youtube.com/@truserva",
+    "officialImageSource": "https://www.iamtruserva.com/",
+    "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebb5bd510760cb418516ded933",
+    "imagePosition": "center",
+    "state": "MN",
+    "sourceRegistryVerified": true
   },
   "caleb gordon": {
     "aliases": [

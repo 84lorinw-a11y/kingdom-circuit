@@ -110,7 +110,8 @@ def sync_config() -> tuple[list[dict], list[dict], int]:
         for field in (
             "name", "aliases", "category", "monitoringPriority", "ticketmasterEnabled",
             "textMatchEnabled", "website", "instagramProfile", "spotifyProfile",
-            "youtubeProfile", "officialImageSource",
+            "youtubeProfile", "officialImageSource", "imageUrl", "imagePosition",
+            "state", "bandsintownProfile",
         ):
             if field in update and target.get(field) != update[field]:
                 target[field] = update[field]
@@ -189,6 +190,9 @@ def registry_payload(update: dict) -> dict:
         "spotifyProfile": update.get("spotifyProfile") or "",
         "youtubeProfile": update.get("youtubeProfile") or "",
         "officialImageSource": update.get("officialImageSource") or "",
+        "imageUrl": update.get("imageUrl") or "",
+        "imagePosition": update.get("imagePosition") or "",
+        "state": update.get("state") or "",
         "sourceRegistryVerified": True,
     }
     return {key: value for key, value in payload.items() if value not in ("", None, []) or key == "sourceRegistryVerified"}
