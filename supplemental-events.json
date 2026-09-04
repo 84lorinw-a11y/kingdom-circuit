@@ -114,7 +114,8 @@
     "bandsintownArtistId": "6425484",
     "bandsintownResolvedName": "Rare of Breed",
     "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Rare of Breed"
+    "trackedArtist": "Rare of Breed",
+    "imageType": "artist"
   },
   {
     "id": "bandsintown:108619960",
@@ -152,7 +153,8 @@
     "bandsintownArtistId": "6425484",
     "bandsintownResolvedName": "Rare of Breed",
     "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Rare of Breed"
+    "trackedArtist": "Rare of Breed",
+    "imageType": "artist"
   },
   {
     "id": "bandsintown:108357297",
@@ -193,80 +195,50 @@
     "trackedArtist": "Jet Trouble"
   },
   {
-    "id": "bandsintown:108188679",
-    "title": "Hulvey at Fillmore Silver Spring",
-    "startDate": "2026-09-08",
-    "startTime": "18:30",
-    "timezone": "",
-    "venue": "Fillmore Silver Spring",
-    "address": "8656 Colesville Rd",
-    "city": "Spring Valley",
-    "state": "DC",
-    "country": "US",
-    "artists": [
-      "Hulvey"
-    ],
-    "headliner": "Hulvey",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108188679?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/108188679?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/hulvey.webp",
-    "price": "",
-    "sourceName": "Bandsintown",
-    "sources": [
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/108188679?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "108188679",
-    "bandsintownArtistId": "15506918",
-    "bandsintownResolvedName": "Hulvey",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Hulvey"
-  },
-  {
-    "id": "bandsintown:1038610444",
-    "title": "Kijan Boone at The Fillmore Silver Spring",
+    "id": "manual:hulvey-could-be-tonight-silver-spring-2026",
+    "title": "Hulvey - Could Be Tonight Tour",
     "startDate": "2026-09-08",
     "startTime": "19:00",
-    "timezone": "",
+    "timezone": "America/New_York",
     "venue": "The Fillmore Silver Spring",
     "address": "8656 Colesville Rd",
     "city": "Silver Spring",
     "state": "MD",
     "country": "US",
     "artists": [
+      "Hulvey",
+      "indie tribe.",
       "Kijan Boone"
     ],
-    "headliner": "Kijan Boone",
+    "headliner": "Hulvey",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/1038610444?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/1038610444?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/kijan-boone.webp",
+    "ticketUrl": "https://www.ticketmaster.com/hulvey-could-be-tonight-tour-silver-spring-maryland-09-08-2026/event/1500647FE337D3A1",
+    "officialUrl": "https://www.livenation.com/event/1AvfZ_6GkTNuWC-/hulvey-could-be-tonight-tour",
+    "image": "assets/artists/hulvey.webp",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
     "price": "",
-    "sourceName": "Bandsintown",
+    "lineupExplicit": true,
+    "authority": "official_event",
+    "sourceName": "Live Nation official event",
     "sources": [
       {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/1038610444?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
+        "name": "Live Nation official event",
+        "url": "https://www.livenation.com/event/1AvfZ_6GkTNuWC-/hulvey-could-be-tonight-tour",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "Ticketmaster official ticketing",
+        "url": "https://www.ticketmaster.com/hulvey-could-be-tonight-tour-silver-spring-maryland-09-08-2026/event/1500647FE337D3A1",
+        "type": "venue_ticket",
+        "authority": "venue_ticket",
+        "priority": 94
       }
     ],
-    "confidence": "medium",
-    "bandsintownEventId": "1038610444",
-    "bandsintownArtistId": "15627934",
-    "bandsintownResolvedName": "kijan boone",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Kijan Boone"
+    "confidence": "high"
   },
   {
     "id": "bandsintown:108771984",
@@ -305,44 +277,6 @@
     "bandsintownResolvedName": "808 BEEZY",
     "bandsintownIdentity": "configured_id",
     "trackedArtist": "808 BEEZY"
-  },
-  {
-    "id": "bandsintown:1038610819",
-    "title": "indie tribe. at The Fillmore Silver Spring",
-    "startDate": "2026-09-08",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "The Fillmore Silver Spring",
-    "address": "8656 Colesville Rd",
-    "city": "Silver Spring",
-    "state": "MD",
-    "country": "US",
-    "artists": [
-      "indie tribe."
-    ],
-    "headliner": "indie tribe.",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/1038610819?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/1038610819?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "https://i.scdn.co/image/ab6761610000e5eb3d6de4e8ecd60713745d2b77",
-    "price": "",
-    "sourceName": "Bandsintown",
-    "sources": [
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/1038610819?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "1038610819",
-    "bandsintownArtistId": "12567515",
-    "bandsintownResolvedName": "Indie tribe.",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "indie tribe."
   },
   {
     "id": "bandsintown:108772055",
@@ -683,7 +617,8 @@
     "bandsintownArtistId": "15659763",
     "bandsintownResolvedName": "yumiya!",
     "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "yumiya!"
+    "trackedArtist": "yumiya!",
+    "imageType": "artist"
   },
   {
     "id": "bandsintown:108772449",
