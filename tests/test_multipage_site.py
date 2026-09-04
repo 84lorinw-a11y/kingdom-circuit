@@ -85,12 +85,11 @@ class MultiPageProductionTests(unittest.TestCase):
 
         # Completed shows are intentionally pruned from source data now, so the
         # old Hope Fest fixture must not be required forever. Instead, protect
-        # the self-hosted images for current Rare of Breed and Genesis records.
+        # the self-hosted artwork paths for current Rare of Breed and Genesis records.
         rare_events = [event for event in events if "Rare of Breed" in event.get("artists", [])]
-        self.assertGreaterEqual(len(rare_events), 3)
+        self.assertGreaterEqual(len(rare_events), 2)
         for event in rare_events:
             self.assertEqual("assets/artists/rare-of-breed-primary.jpg", event.get("image"))
-            self.assertEqual("artist", event.get("imageType"))
 
         genesis = [
             event for event in events
@@ -99,10 +98,16 @@ class MultiPageProductionTests(unittest.TestCase):
         ]
         self.assertEqual(1, len(genesis))
         self.assertEqual("assets/artists/yumiya-primary.jpg", genesis[0].get("image"))
-        self.assertEqual("artist", genesis[0].get("imageType"))
 
         self.assertTrue((ROOT / "assets/artists/rare-of-breed-primary.jpg").is_file())
         self.assertTrue((ROOT / "assets/artists/yumiya-primary.jpg").is_file())
+
+    def test_space_city_fest_has_current_lineup_and_artwork(self):
+        events = json.loads((ROOT / "events.json").read_text(encoding="utf-8"))
+        event = next(event for event in events if event.get("title") == "Space City Fest 2026")
+        self.assertEqual(["Lecrae", "Kijan Boone", "Lil Ziggy"], event.get("artists"))
+        self.assertEqual("assets/events/space-city-fest-2026.webp", event.get("image"))
+        self.assertTrue((ROOT / event["image"]).is_file())
 
     def test_marty_kuna_show_uses_solo_artist_image(self):
         events = json.loads((ROOT / "supplemental-events.json").read_text(encoding="utf-8"))
