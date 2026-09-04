@@ -3,7 +3,7 @@
   "collectorVersion": 8,
   "lastAttempt": "2026-09-04T14:59:18Z",
   "lastSuccessfulUpdate": "2026-09-04T14:59:18Z",
-  "eventsPublished": 64,
+  "eventsPublished": 70,
   "candidatesCollected": 152,
   "artistsConfigured": 323,
   "artistsByPriority": {
@@ -656,5 +656,9 @@
     "Anike Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4673148-anike: HTTP Error 403: Forbidden"
   ],
   "errors": [],
-  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings."
+  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings.",
+  "artistWebsiteEventsFound": 0,
+  "artistWebsiteSeedEvents": 17,
+  "artistWebsiteEventsAdded": 17,
+  "artistWebsiteMergeAt": "2026-09-04T15:12:22Z"
 }
