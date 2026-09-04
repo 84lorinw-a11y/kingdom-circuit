@@ -109,7 +109,7 @@ class MultiPageProductionTests(unittest.TestCase):
             ["Lecrae", "Lizzie Morgan", "Miles Minnick", "Lin D"],
             event.get("artists"),
         )
-        self.assertEqual("assets/events/space-city-fest-2026.webp", event.get("image"))
+        self.assertEqual("assets/events/space-city-fest-2026-lineup.webp", event.get("image"))
         self.assertTrue((ROOT / event["image"]).is_file())
 
     def test_marty_kuna_show_uses_solo_artist_image(self):
