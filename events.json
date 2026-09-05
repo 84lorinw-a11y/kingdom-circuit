@@ -93,6 +93,60 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
+    "id": "manual:immersion-music-festival-circleville-2026",
+    "title": "Immersion Music & Arts Festival 2026",
+    "startDate": "2026-09-05",
+    "startTime": "12:00",
+    "timezone": "America/New_York",
+    "venue": "Pickaway County Agriculture & Event Center",
+    "address": "415 Lancaster Pike",
+    "city": "Circleville",
+    "state": "OH",
+    "country": "US",
+    "artists": [
+      "1K Phew",
+      "WHATUPRG"
+    ],
+    "headliner": "1K Phew",
+    "eventType": "festival",
+    "status": "scheduled",
+    "ticketUrl": "https://pickaway.com/event/immersion-music-festival-2026/",
+    "officialUrl": "https://www.facebook.com/Immersionmusicfest/posts/122147897582994755/",
+    "image": "assets/artists/1k-phew.webp",
+    "price": "Free",
+    "sourceName": "Immersion Music Festival official organizer",
+    "sources": [
+      {
+        "name": "Immersion Music Festival official organizer",
+        "url": "https://www.facebook.com/Immersionmusicfest/posts/122147897582994755/",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 112
+      },
+      {
+        "name": "Pickaway County Visitors Bureau event listing",
+        "url": "https://pickaway.com/event/immersion-music-festival-2026/",
+        "type": "official_event",
+        "authority": "official_event",
+        "priority": 100
+      },
+      {
+        "name": "Bandsintown 1K Phew calendar",
+        "url": "https://www.bandsintown.com/e/108562200",
+        "type": "artist_calendar",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "lastVerified": "2026-09-05T19:25:53Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-09-05T19:25:53Z",
+    "lineupExplicit": true
+  },
+  {
     "id": "official:7efc905732ea90481b0a",
     "title": "Hulvey — Live at FIVE",
     "startDate": "2026-09-05",

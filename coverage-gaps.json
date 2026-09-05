@@ -1,7 +1,39 @@
 {
-  "policyVersion": 4,
-  "generatedAt": "2026-09-04T15:09:41Z",
-  "highRiskArtists": [],
+  "policyVersion": 5,
+  "generatedAt": "2026-09-05T19:30:18Z",
+  "highRiskArtists": [
+    {
+      "artist": "Mike Malagies",
+      "healthyDedicatedSources": [],
+      "failedDedicatedSources": [
+        "Mike Malagies official events",
+        "Mike Malagies Bandsintown public calendar"
+      ],
+      "ticketmasterUnmatched": true,
+      "ticketmasterFailed": false,
+      "reason": "Every dedicated artist calendar failed and Ticketmaster did not provide a reliable fallback."
+    },
+    {
+      "artist": "Parris Chariz",
+      "healthyDedicatedSources": [],
+      "failedDedicatedSources": [
+        "Parris Chariz Bandsintown public calendar"
+      ],
+      "ticketmasterUnmatched": true,
+      "ticketmasterFailed": false,
+      "reason": "Every dedicated artist calendar failed and Ticketmaster did not provide a reliable fallback."
+    },
+    {
+      "artist": "Mike Teezy",
+      "healthyDedicatedSources": [],
+      "failedDedicatedSources": [
+        "Mike Teezy official tour"
+      ],
+      "ticketmasterUnmatched": true,
+      "ticketmasterFailed": false,
+      "reason": "Every dedicated artist calendar failed and Ticketmaster did not provide a reliable fallback."
+    }
+  ],
   "mediumRiskArtists": [
     {
       "artist": "KB",
@@ -52,19 +84,6 @@
       "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
     },
     {
-      "artist": "Mike Malagies",
-      "healthyDedicatedSources": [
-        "Mike Malagies Apple Music concerts"
-      ],
-      "failedDedicatedSources": [
-        "Mike Malagies official events",
-        "Mike Malagies Bandsintown public calendar"
-      ],
-      "ticketmasterUnmatched": true,
-      "ticketmasterFailed": false,
-      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
-    },
-    {
       "artist": "Derek Minor",
       "healthyDedicatedSources": [
         "Derek Minor official site"
@@ -73,30 +92,6 @@
         "Derek Minor Bandsintown public calendar"
       ],
       "ticketmasterUnmatched": false,
-      "ticketmasterFailed": false,
-      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
-    },
-    {
-      "artist": "Parris Chariz",
-      "healthyDedicatedSources": [
-        "Parris Chariz Apple Music concerts"
-      ],
-      "failedDedicatedSources": [
-        "Parris Chariz Bandsintown public calendar"
-      ],
-      "ticketmasterUnmatched": true,
-      "ticketmasterFailed": false,
-      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
-    },
-    {
-      "artist": "Mike Teezy",
-      "healthyDedicatedSources": [
-        "Mike Teezy Apple Music concerts"
-      ],
-      "failedDedicatedSources": [
-        "Mike Teezy official tour"
-      ],
-      "ticketmasterUnmatched": true,
       "ticketmasterFailed": false,
       "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
     },
@@ -379,6 +374,35 @@
   "notes": [
     "High risk means every dedicated priority-artist calendar failed and Ticketmaster is also unavailable or unmatched.",
     "Medium risk means coverage is degraded but at least one useful channel may remain, or no dedicated artist calendar is currently healthy.",
-    "Incomplete confirmed events stay off the public calendar until a venue/city/state can be verified."
+    "Incomplete confirmed events stay off the public calendar until a venue/city/state can be verified.",
+    "Held festival candidates create workflow warnings until an official lineup is verified and published."
+  ],
+  "heldFestivalCandidates": [
+    {
+      "id": "bandsintown:108665897",
+      "title": "Fountain Fest 2026",
+      "startDate": "2026-09-18",
+      "city": "Martinsburg",
+      "state": "WV",
+      "artists": [
+        "Rare of Breed"
+      ],
+      "officialUrl": "https://www.bandsintown.com/e/108665897?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+      "status": "needs_official_lineup_review",
+      "reason": "A tracked artist calendar reports this festival, but no official-lineup record is published yet."
+    },
+    {
+      "id": "bandsintown:108353301",
+      "title": "Awake Fest 2026",
+      "startDate": "2026-11-14",
+      "city": "Eustis",
+      "state": "FL",
+      "artists": [
+        "Zauntee"
+      ],
+      "officialUrl": "https://www.bandsintown.com/e/108353301?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+      "status": "needs_official_lineup_review",
+      "reason": "A tracked artist calendar reports this festival, but no official-lineup record is published yet."
+    }
   ]
 }

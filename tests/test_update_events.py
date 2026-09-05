@@ -503,6 +503,23 @@ class KingdomCircuitV7Tests(unittest.TestCase):
         self.assertEqual(final[0]["headliner"], "indie tribe.")
         self.assertIn("HolySmoke26.jpg", final[0]["image"])
 
+    def test_manual_immersion_festival_survives_full_refresh(self):
+        manual = json.loads((ROOT / "config" / "manual-events.json").read_text())
+        raw = next(
+            item for item in manual
+            if item["id"] == "immersion-music-festival-circleville-2026"
+        )
+        event = MODULE.normalize_manual_event(raw, CHECKED)
+        final = MODULE.finalize_events(
+            MODULE.merge_events([event]),
+            {"1K Phew": "assets/artists/1k-phew.webp"},
+            date(2026, 9, 5),
+        )
+        self.assertEqual(1, len(final))
+        self.assertEqual(["1K Phew", "WHATUPRG"], final[0]["artists"])
+        self.assertEqual("Pickaway County Agriculture & Event Center", final[0]["venue"])
+        self.assertEqual("Free", final[0]["price"])
+
     def test_roster_contains_all_current_reach_names(self):
         artists = json.loads((ROOT / "config" / "artists.json").read_text())
         names = {item["name"] for item in artists}

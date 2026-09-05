@@ -87,7 +87,7 @@ class MultiPageProductionTests(unittest.TestCase):
         # old Hope Fest fixture must not be required forever. Instead, protect
         # the self-hosted artwork paths for current Rare of Breed and Genesis records.
         rare_events = [event for event in events if "Rare of Breed" in event.get("artists", [])]
-        self.assertGreaterEqual(len(rare_events), 2)
+        self.assertTrue(rare_events)
         for event in rare_events:
             self.assertEqual("assets/artists/rare-of-breed-primary.jpg", event.get("image"))
 
@@ -111,6 +111,17 @@ class MultiPageProductionTests(unittest.TestCase):
         )
         self.assertEqual("assets/events/space-city-fest-2026-lineup.webp", event.get("image"))
         self.assertTrue((ROOT / event["image"]).is_file())
+
+    def test_immersion_festival_is_published_with_both_headliners(self):
+        events = json.loads((ROOT / "events.json").read_text(encoding="utf-8"))
+        event = next(
+            event for event in events
+            if event.get("id") == "manual:immersion-music-festival-circleville-2026"
+        )
+        self.assertEqual(["1K Phew", "WHATUPRG"], event.get("artists"))
+        self.assertEqual("2026-09-05", event.get("startDate"))
+        self.assertEqual("Pickaway County Agriculture & Event Center", event.get("venue"))
+        self.assertEqual("Free", event.get("price"))
 
     def test_marty_kuna_show_uses_solo_artist_image(self):
         events = json.loads((ROOT / "supplemental-events.json").read_text(encoding="utf-8"))

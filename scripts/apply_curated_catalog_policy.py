@@ -14,7 +14,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-POLICY_VERSION = 4
+POLICY_VERSION = 5
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 OFFICIAL_SOURCES_FILE = ROOT / "config" / "official-sources.json"
@@ -22,6 +22,7 @@ EVENTS_FILE = ROOT / "events.json"
 SUPPLEMENTAL_FILE = ROOT / "supplemental-events.json"
 RUN_STATUS_FILE = ROOT / "run-status.json"
 COVERAGE_GAPS_FILE = ROOT / "coverage-gaps.json"
+BANDSINTOWN_CANDIDATES_FILE = ROOT / "bandsintown-candidates.json"
 APP_JS_FILE = ROOT / "app.js"
 
 EXCLUDED_ARTISTS = {"madison ryann ward"}
@@ -269,6 +270,90 @@ def source_is_dedicated_artist_calendar(source: dict[str, Any], artist_key: str)
     return len(configured) == 1 and configured[0] == artist_key and authority in {"artist_calendar", "artist_label"}
 
 
+def held_festival_candidates(
+    candidates: list[dict[str, Any]],
+    published_events: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Surface festival discoveries that still lack a verified published record.
+
+    Bandsintown festival rows are intentionally quarantined until an official
+    lineup confirms them. They must not disappear silently while awaiting that
+    review, especially when the tracked performer is a priority artist.
+    """
+    today = datetime.now(timezone.utc).date().isoformat()
+    unresolved: list[dict[str, Any]] = []
+
+    for candidate in candidates:
+        if not isinstance(candidate, dict):
+            continue
+        if candidate.get("holdReason") != "festival_requires_official_lineup_confirmation":
+            continue
+        event_date = str(candidate.get("startDate") or "")
+        if not event_date or event_date < today:
+            continue
+        candidate_artists = event_artists(candidate)
+        candidate_city = norm(candidate.get("city"))
+        candidate_state = norm(candidate.get("state"))
+        candidate_address = norm(candidate.get("address"))
+
+        resolved = False
+        for event in published_events:
+            if not isinstance(event, dict):
+                continue
+            start = str(event.get("startDate") or "")
+            end = str(event.get("endDate") or start)
+            if not start or not (start <= event_date <= end):
+                continue
+            exact_address = bool(
+                candidate_address
+                and candidate_address == norm(event.get("address"))
+            )
+            same_festival_city = bool(
+                norm(event.get("eventType")) == "festival"
+                and candidate_city
+                and candidate_state
+                and candidate_city == norm(event.get("city"))
+                and candidate_state == norm(event.get("state"))
+            )
+            if (exact_address or same_festival_city) and candidate_artists & event_artists(event):
+                resolved = True
+                break
+
+        if resolved:
+            continue
+        unresolved.append({
+            "id": str(candidate.get("id") or ""),
+            "title": str(candidate.get("title") or "Festival candidate"),
+            "startDate": event_date,
+            "city": str(candidate.get("city") or ""),
+            "state": str(candidate.get("state") or ""),
+            "artists": list(candidate.get("artists") or []),
+            "officialUrl": str(candidate.get("officialUrl") or ""),
+            "status": "needs_official_lineup_review",
+            "reason": "A tracked artist calendar reports this festival, but no official-lineup record is published yet.",
+        })
+
+    return sorted(
+        unresolved,
+        key=lambda item: (item["startDate"], norm(item["title"])),
+    )
+
+
+def emit_held_festival_warnings(candidates: list[dict[str, Any]]) -> None:
+    """Create visible GitHub Actions annotations for unresolved festival holds."""
+    for candidate in candidates:
+        message = (
+            f"{candidate['title']} on {candidate['startDate']} in "
+            f"{candidate['city']}, {candidate['state']} needs official-lineup review. "
+            f"{candidate['officialUrl']}"
+        )
+        safe_message = message.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+        print(
+            "::warning file=bandsintown-candidates.json,"
+            f"title=Festival candidate needs review::{safe_message}"
+        )
+
+
 def build_coverage_report(
     artists: list[dict[str, Any]],
     sources: list[dict[str, Any]],
@@ -353,6 +438,7 @@ def main() -> int:
     events = load(EVENTS_FILE, [])
     supplemental = load(SUPPLEMENTAL_FILE, [])
     run_status = load(RUN_STATUS_FILE, {})
+    festival_candidates = load(BANDSINTOWN_CANDIDATES_FILE, [])
 
     if not isinstance(artists, list) or not isinstance(events, list) or not isinstance(supplemental, list):
         raise SystemExit("Curated catalog policy expected JSON arrays")
@@ -360,6 +446,8 @@ def main() -> int:
         sources = []
     if not isinstance(run_status, dict):
         run_status = {}
+    if not isinstance(festival_candidates, list):
+        festival_candidates = []
 
     found_madison = False
     for artist in artists:
@@ -422,6 +510,15 @@ def main() -> int:
 
     badge_removed = remove_new_badge_from_runtime()
     coverage_report = build_coverage_report(artists, sources, run_status)
+    unresolved_festivals = held_festival_candidates(
+        festival_candidates,
+        [*curated_events, *curated_supplemental],
+    )
+    coverage_report["heldFestivalCandidates"] = unresolved_festivals
+    coverage_report["notes"].append(
+        "Held festival candidates create workflow warnings until an official lineup is verified and published."
+    )
+    emit_held_festival_warnings(unresolved_festivals)
 
     write(ARTISTS_FILE, artists)
     write(EVENTS_FILE, curated_events)
@@ -473,7 +570,8 @@ def main() -> int:
         "Coverage audit: "
         f"{len(coverage_report['highRiskArtists'])} high-risk priority artist(s), "
         f"{len(coverage_report['mediumRiskArtists'])} medium-risk priority artist(s), "
-        f"{len(coverage_report['incompleteConfirmedEvents'])} incomplete confirmed event(s)."
+        f"{len(coverage_report['incompleteConfirmedEvents'])} incomplete confirmed event(s), "
+        f"{len(coverage_report['heldFestivalCandidates'])} held festival candidate(s)."
     )
     return 0
 
