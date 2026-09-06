@@ -14,7 +14,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-POLICY_VERSION = 5
+POLICY_VERSION = 6
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 OFFICIAL_SOURCES_FILE = ROOT / "config" / "official-sources.json"
@@ -90,6 +90,59 @@ HULVEY_SILVER_SPRING = {
         },
     ],
     "confidence": "high",
+}
+
+GENESIS_SHOW = {
+    "title": "The Genesis Show – All Women's CHH Event",
+    "startDate": "2026-09-19",
+    "startTime": "16:30",
+    "timezone": "America/New_York",
+    "venue": "The Social House",
+    "address": "1098 Green St",
+    "city": "Roswell",
+    "state": "GA",
+    "country": "US",
+    "artists": [
+        "Afeni",
+        "Neisha Glow",
+        "Biancallove",
+        "Linga TheBoss",
+        "Alexus Snow",
+        "yumiya!",
+        "Amarah",
+        "Lyric The Geenyus",
+        "Queen Lee",
+        "G.E.S",
+    ],
+    "headliner": "yumiya!",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://gratedco.ticketspice.com/the-genesis-show-",
+    "officialUrl": "https://gratedco.ticketspice.com/the-genesis-show-",
+    "image": "assets/events/genesis-show-2026-official.webp",
+    "imageType": "event_artwork",
+    "price": "$35 GA / $55 VIP",
+    "lineupExplicit": True,
+    "authority": "official_event",
+    "sourceName": "G Rated Co official ticket page",
+    "sources": [
+        {
+            "name": "G Rated Co official ticket page",
+            "url": "https://gratedco.ticketspice.com/the-genesis-show-",
+            "type": "manual_verified",
+            "authority": "official_event",
+            "priority": 112,
+        },
+        {
+            "name": "Bandsintown",
+            "url": "https://www.bandsintown.com/e/108758638?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+            "type": "bandsintown_rest",
+            "authority": "artist_calendar",
+            "priority": 74,
+        },
+    ],
+    "confidence": "high",
+    "lastVerified": "2026-09-06T00:00:00Z",
 }
 
 ARK_ARTISTS = ["Zauntee", "Scootie Wop", "Dante' Pride", "Anike", "Y Shadey"]
@@ -174,8 +227,7 @@ def curate_event(event: dict[str, Any]) -> dict[str, Any] | None:
         if updated.get("image") == "assets/artists/rare-of-breed-primary.jpg":
             updated["imageType"] = "artist"
     if updated.get("id") == "bandsintown:108758638" or "the genesis show" in norm(updated.get("title")):
-        updated["image"] = "assets/artists/yumiya-primary.jpg"
-        updated["imageType"] = "artist"
+        updated.update(GENESIS_SHOW)
     return updated
 
 

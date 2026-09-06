@@ -3,6 +3,8 @@ import re
 import unittest
 from pathlib import Path
 
+from scripts.apply_curated_catalog_policy import curate_event
+
 ROOT = Path(__file__).resolve().parents[1]
 
 class MultiPageProductionTests(unittest.TestCase):
@@ -83,11 +85,10 @@ class MultiPageProductionTests(unittest.TestCase):
             self.assertEqual("Zauntee", event.get("headliner"))
             self.assertEqual("assets/artists/zauntee.webp", event.get("image"))
 
-        # Completed shows are intentionally pruned from source data now, so the
-        # old Hope Fest fixture must not be required forever. Instead, protect
-        # the self-hosted artwork paths for current Rare of Breed and Genesis records.
+        # Completed shows are intentionally pruned from source data now. Protect
+        # artwork for any current Rare of Breed records without requiring one to
+        # remain forever, and always protect the upcoming Genesis record.
         rare_events = [event for event in events if "Rare of Breed" in event.get("artists", [])]
-        self.assertTrue(rare_events)
         for event in rare_events:
             self.assertEqual("assets/artists/rare-of-breed-primary.jpg", event.get("image"))
 
@@ -97,10 +98,33 @@ class MultiPageProductionTests(unittest.TestCase):
             or "the genesis show" in str(event.get("title") or "").casefold()
         ]
         self.assertEqual(1, len(genesis))
-        self.assertEqual("assets/artists/yumiya-primary.jpg", genesis[0].get("image"))
+        self.assertEqual(
+            [
+                "Afeni",
+                "Neisha Glow",
+                "Biancallove",
+                "Linga TheBoss",
+                "Alexus Snow",
+                "yumiya!",
+                "Amarah",
+                "Lyric The Geenyus",
+                "Queen Lee",
+                "G.E.S",
+            ],
+            genesis[0].get("artists"),
+        )
+        self.assertEqual("The Social House", genesis[0].get("venue"))
+        self.assertEqual("https://gratedco.ticketspice.com/the-genesis-show-", genesis[0].get("officialUrl"))
+        self.assertEqual("$35 GA / $55 VIP", genesis[0].get("price"))
+        self.assertEqual("assets/events/genesis-show-2026-official.webp", genesis[0].get("image"))
+        self.assertEqual("event_artwork", genesis[0].get("imageType"))
 
         self.assertTrue((ROOT / "assets/artists/rare-of-breed-primary.jpg").is_file())
         self.assertTrue((ROOT / "assets/artists/yumiya-primary.jpg").is_file())
+        genesis_asset = ROOT / "assets/events/genesis-show-2026-official.webp"
+        self.assertTrue(genesis_asset.is_file())
+        self.assertGreater(genesis_asset.stat().st_size, 10000)
+        self.assertEqual(b"RIFF", genesis_asset.read_bytes()[:4])
 
     def test_space_city_fest_has_current_lineup_and_artwork(self):
         events = json.loads((ROOT / "events.json").read_text(encoding="utf-8"))
@@ -111,6 +135,22 @@ class MultiPageProductionTests(unittest.TestCase):
         )
         self.assertEqual("assets/events/space-city-fest-2026-lineup.webp", event.get("image"))
         self.assertTrue((ROOT / event["image"]).is_file())
+
+    def test_genesis_official_details_survive_provider_refreshes(self):
+        refreshed = curate_event({
+            "id": "bandsintown:108758638",
+            "title": "The Genesis Show – All Women's CHH Event",
+            "artists": ["yumiya!"],
+            "headliner": "yumiya!",
+            "image": "assets/artists/yumiya-primary.jpg",
+            "officialUrl": "https://www.bandsintown.com/e/108758638",
+        })
+        self.assertIsNotNone(refreshed)
+        self.assertEqual("The Social House", refreshed.get("venue"))
+        self.assertEqual("assets/events/genesis-show-2026-official.webp", refreshed.get("image"))
+        self.assertEqual("event_artwork", refreshed.get("imageType"))
+        self.assertEqual("https://gratedco.ticketspice.com/the-genesis-show-", refreshed.get("officialUrl"))
+        self.assertEqual(10, len(refreshed.get("artists", [])))
 
     def test_immersion_festival_is_published_with_both_headliners(self):
         events = json.loads((ROOT / "events.json").read_text(encoding="utf-8"))
