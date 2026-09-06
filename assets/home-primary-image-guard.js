@@ -18,7 +18,9 @@
   function enforceCard(card) {
     if (!(card instanceof Element)) return;
     const artistLine = normalize(card.querySelector(".artist-line")?.textContent || "");
-    const target = targets.find(item => artistLine.includes(item.artist));
+    // Only replace artwork for a true solo-artist card. Multi-artist shows
+    // must retain their purpose-built event flyer.
+    const target = targets.find(item => artistLine === item.artist);
     if (!target) return;
 
     const img = card.querySelector(".event-media img");

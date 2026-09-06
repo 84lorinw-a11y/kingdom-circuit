@@ -192,6 +192,13 @@ class MultiPageProductionTests(unittest.TestCase):
         self.assertIn('!src.includes("event-fallback.webp")', runtime)
         self.assertIn('?v=kc-20260829-2050', runtime)
 
+    def test_home_image_guard_preserves_multi_artist_event_artwork(self):
+        homepage = (ROOT / "index.html").read_text(encoding="utf-8")
+        guard = (ROOT / "assets/home-primary-image-guard.js").read_text(encoding="utf-8")
+        self.assertIn('home-primary-image-guard.js?v=20260906-home-2', homepage)
+        self.assertIn('artistLine === item.artist', guard)
+        self.assertNotIn('artistLine.includes(item.artist)', guard)
+
 
 if __name__ == "__main__":
     unittest.main()
