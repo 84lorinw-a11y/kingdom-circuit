@@ -10,7 +10,7 @@ import shutil
 
 FALLBACK = "/assets/event-fallback.webp"
 PRIMARY_CACHE_TOKEN = "kc-20260829-2050"
-RUNTIME_SCRIPT_URL = "/assets/event-image-repair-kc2050.js"
+RUNTIME_SCRIPT_URL = "/assets/event-image-repair-kc2100.js"
 EXCLUDED_ARTISTS = {"chad jones", "erica mason", "big holy"}
 EXCLUDED_SLUGS = {"chad-jones", "erica-mason", "big-holy"}
 STALE_IMAGE_URLS = {

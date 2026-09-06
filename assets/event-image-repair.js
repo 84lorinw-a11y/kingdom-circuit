@@ -53,9 +53,13 @@
     const key = artistKey(img);
     const src = String(img.getAttribute("src") || "");
     const lockedPrimary = img?.dataset?.kcLockPrimary === "1";
-    if (lockedPrimary) {
-      // The final artifact has already selected a verified, self-hosted primary image.
-      // Never let runtime repair logic replace it with an older cached candidate.
+    const explicitEventArtwork = img?.classList?.contains("event-artwork")
+      && src
+      && !src.includes("event-fallback.webp")
+      && !stale.has(src);
+    if (lockedPrimary || explicitEventArtwork) {
+      // Preserve verified primary images and purpose-built event artwork.
+      // Runtime artist repair must never replace a multi-artist event flyer.
       img.onerror = () => { img.onerror = null; img.src = fallback; };
       return;
     }

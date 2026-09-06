@@ -181,12 +181,15 @@ class MultiPageProductionTests(unittest.TestCase):
     def test_event_image_cache_busting_is_durable(self):
         finalizer = (ROOT / "scripts/finalize_live_event_images.py").read_text(encoding="utf-8")
         runtime = (ROOT / "assets/event-image-repair.js").read_text(encoding="utf-8")
-        versioned = ROOT / "assets/event-image-repair-kc2050.js"
+        versioned = ROOT / "assets/event-image-repair-kc2100.js"
         self.assertTrue(versioned.is_file())
+        self.assertEqual(runtime, versioned.read_text(encoding="utf-8"))
         self.assertIn('PRIMARY_CACHE_TOKEN = "kc-20260829-2050"', finalizer)
-        self.assertIn('RUNTIME_SCRIPT_URL = "/assets/event-image-repair-kc2050.js"', finalizer)
+        self.assertIn('RUNTIME_SCRIPT_URL = "/assets/event-image-repair-kc2100.js"', finalizer)
         self.assertIn('data-kc-lock-primary', finalizer)
         self.assertIn('kcLockPrimary', runtime)
+        self.assertIn('classList?.contains("event-artwork")', runtime)
+        self.assertIn('!src.includes("event-fallback.webp")', runtime)
         self.assertIn('?v=kc-20260829-2050', runtime)
 
 
