@@ -18,13 +18,18 @@
   function enforceCard(card) {
     if (!(card instanceof Element)) return;
     const artistLine = normalize(card.querySelector(".artist-line")?.textContent || "");
+    const img = card.querySelector(".event-media img");
+    if (!img) return;
+
+    const currentSrc = String(img.getAttribute("src") || "");
+    if (img.classList.contains("event-artwork") && currentSrc && !currentSrc.includes("event-fallback.webp")) {
+      return;
+    }
+
     // Only replace artwork for a true solo-artist card. Multi-artist shows
     // must retain their purpose-built event flyer.
     const target = targets.find(item => artistLine === item.artist);
     if (!target) return;
-
-    const img = card.querySelector(".event-media img");
-    if (!img) return;
 
     img.dataset.kcPrimaryLocked = "1";
     img.classList.remove("event-artwork");

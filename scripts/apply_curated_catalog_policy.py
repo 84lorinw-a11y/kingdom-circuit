@@ -119,7 +119,7 @@ GENESIS_SHOW = {
     "status": "scheduled",
     "ticketUrl": "https://gratedco.ticketspice.com/the-genesis-show-",
     "officialUrl": "https://gratedco.ticketspice.com/the-genesis-show-",
-    "image": "assets/events/genesis-show-2026-official.webp",
+    "image": "assets/events/genesis-show-2026-all-women-v2.webp",
     "imageType": "event_artwork",
     "price": "$35 GA / $55 VIP",
     "lineupExplicit": True,

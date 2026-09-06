@@ -116,12 +116,12 @@ class MultiPageProductionTests(unittest.TestCase):
         self.assertEqual("The Social House", genesis[0].get("venue"))
         self.assertEqual("https://gratedco.ticketspice.com/the-genesis-show-", genesis[0].get("officialUrl"))
         self.assertEqual("$35 GA / $55 VIP", genesis[0].get("price"))
-        self.assertEqual("assets/events/genesis-show-2026-official.webp", genesis[0].get("image"))
+        self.assertEqual("assets/events/genesis-show-2026-all-women-v2.webp", genesis[0].get("image"))
         self.assertEqual("event_artwork", genesis[0].get("imageType"))
 
         self.assertTrue((ROOT / "assets/artists/rare-of-breed-primary.jpg").is_file())
         self.assertTrue((ROOT / "assets/artists/yumiya-primary.jpg").is_file())
-        genesis_asset = ROOT / "assets/events/genesis-show-2026-official.webp"
+        genesis_asset = ROOT / "assets/events/genesis-show-2026-all-women-v2.webp"
         self.assertTrue(genesis_asset.is_file())
         self.assertGreater(genesis_asset.stat().st_size, 10000)
         self.assertEqual(b"RIFF", genesis_asset.read_bytes()[:4])
@@ -147,7 +147,7 @@ class MultiPageProductionTests(unittest.TestCase):
         })
         self.assertIsNotNone(refreshed)
         self.assertEqual("The Social House", refreshed.get("venue"))
-        self.assertEqual("assets/events/genesis-show-2026-official.webp", refreshed.get("image"))
+        self.assertEqual("assets/events/genesis-show-2026-all-women-v2.webp", refreshed.get("image"))
         self.assertEqual("event_artwork", refreshed.get("imageType"))
         self.assertEqual("https://gratedco.ticketspice.com/the-genesis-show-", refreshed.get("officialUrl"))
         self.assertEqual(10, len(refreshed.get("artists", [])))
@@ -195,8 +195,9 @@ class MultiPageProductionTests(unittest.TestCase):
     def test_home_image_guard_preserves_multi_artist_event_artwork(self):
         homepage = (ROOT / "index.html").read_text(encoding="utf-8")
         guard = (ROOT / "assets/home-primary-image-guard.js").read_text(encoding="utf-8")
-        self.assertIn('home-primary-image-guard.js?v=20260906-home-2', homepage)
+        self.assertIn('home-primary-image-guard.js?v=20260906-home-3', homepage)
         self.assertIn('artistLine === item.artist', guard)
+        self.assertIn('img.classList.contains("event-artwork")', guard)
         self.assertNotIn('artistLine.includes(item.artist)', guard)
 
 
