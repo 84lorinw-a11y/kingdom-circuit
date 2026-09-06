@@ -1256,7 +1256,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6j8t8rQzrAtRx5tYImodgd",
     "youtubeProfile": "https://www.youtube.com/channel/UCAvlfmD2aiqXxxknr-9VSVg",
     "officialImageSource": "https://www.instagram.com/cutthecho/",
-    "sourceRegistryVerified": true
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 79
   },
   "dkg kie": {
     "aliases": [
@@ -1267,7 +1268,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1eeYg6dFkaRT5GA0lsCVHA",
     "youtubeProfile": "https://www.youtube.com/@dkgkie",
     "officialImageSource": "https://www.instagram.com/dkg.kie",
-    "sourceRegistryVerified": true
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 80
   },
   "braille": {
     "aliases": [
@@ -1278,7 +1280,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6RYTz1tFNDF2qP0mwqEwDO",
     "youtubeProfile": "https://www.youtube.com/@bryanbraille",
     "officialImageSource": "https://www.humblebeast.com/music/braille",
-    "sourceRegistryVerified": true
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 81
   },
   "canton jones": {
     "aliases": [
@@ -1289,7 +1292,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3nzEXHMRFWTw4zt3pVRv6V",
     "youtubeProfile": "https://www.youtube.com/@CantonJones1",
     "officialImageSource": "https://www.instagram.com/thecantonjones/?hl=en",
-    "sourceRegistryVerified": true
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 82
   },
   "jay-way": {
     "aliases": [
@@ -1301,7 +1305,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1RDbE3dM2bNNSTh88R4MQ7",
     "youtubeProfile": "https://www.youtube.com/@JayWayTheAlien",
     "officialImageSource": "https://www.jaywaythealien.com/",
-    "sourceRegistryVerified": true
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 83
   },
   "stixx aka conejo": {
     "aliases": [
@@ -1313,7 +1318,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3khYLvZ6GmLlPMPlTfMTBr",
     "youtubeProfile": "https://www.youtube.com/@stixxwym/videos",
     "officialImageSource": "https://linktr.ee/stixxwym",
-    "sourceRegistryVerified": true
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 84
   },
   "ruslan": {
     "aliases": [
@@ -1325,7 +1331,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/2GEXrCflKZ5S5ZHBM4LNcV",
     "youtubeProfile": "https://www.youtube.com/@RuslanKD/featured",
     "officialImageSource": "https://www.instagram.com/ruslankd/?hl=en",
-    "sourceRegistryVerified": true
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 85
   },
   "j j l": {
     "aliases": [
@@ -1662,6 +1669,21 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/neishaglow/",
     "imagePosition": "center",
     "sourceRegistryVerified": true
+  },
+  "caleb gordon": {
+    "aliases": [
+      "Caleb Gordon"
+    ],
+    "website": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+    "instagramProfile": "https://www.instagram.com/calebfromeden/",
+    "spotifyProfile": "https://open.spotify.com/artist/6s3XaJkcT7464G4oII9V41",
+    "youtubeProfile": "https://www.youtube.com/@CalebGordon",
+    "officialImageSource": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+    "imageUrl": "https://tprlive.co/cdn/shop/files/ARTIST_HEADSHOT_36.jpg?v=1776887171&width=1797",
+    "imagePosition": "center",
+    "preferArtistImage": true,
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 4
   }
 };
 const ARTIST_OVERRIDES = {

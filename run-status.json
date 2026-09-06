@@ -1,25 +1,25 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-09-04T14:59:18Z",
-  "lastSuccessfulUpdate": "2026-09-04T14:59:18Z",
-  "eventsPublished": 70,
-  "candidatesCollected": 152,
-  "artistsConfigured": 323,
+  "lastAttempt": "2026-09-06T17:54:42Z",
+  "lastSuccessfulUpdate": "2026-09-06T17:54:42Z",
+  "eventsPublished": 60,
+  "candidatesCollected": 144,
+  "artistsConfigured": 339,
   "artistsByPriority": {
     "priority1": 102,
-    "priority2": 116,
+    "priority2": 132,
     "priority3": 105
   },
   "ticketmasterArtistsEnabled": 209,
-  "socialSearchArtistsEnabled": 137,
-  "freeTextAliasesProtected": 110,
+  "socialSearchArtistsEnabled": 155,
+  "freeTextAliasesProtected": 132,
   "artistsMatchedOnTicketmaster": 70,
-  "officialEventsFound": 66,
+  "officialEventsFound": 57,
   "ticketmasterEventsFound": 39,
-  "instagramArtistsConfigured": 137,
-  "instagramQueriesRun": 139,
-  "instagramQueriesAttempted": 137,
+  "instagramArtistsConfigured": 155,
+  "instagramQueriesRun": 157,
+  "instagramQueriesAttempted": 155,
   "instagramResultsFound": 0,
   "instagramEventsFound": 0,
   "instagramCandidates": [
@@ -49,7 +49,7 @@
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 274,
+  "sourcesChecked": 291,
   "unmatchedArtists": [
     "Scootie Wop",
     "Mike Malagies",
@@ -69,6 +69,8 @@
     "Christopher Syncere",
     "K-SEE",
     "Stixx aka Conejo",
+    "yumiya!",
+    "Linga TheBoss",
     "Pregador Luo",
     "Sondae",
     "Kieran the Light",
@@ -107,7 +109,6 @@
     "Saint Jones",
     "Tay Stunna",
     "YakiTheKid",
-    "yumiya!",
     "Vic Lucas",
     "Kevi Morse",
     "Chris Caro",
@@ -132,7 +133,6 @@
     "Arielle Nichole",
     "Jekasole",
     "Mahogany Jones",
-    "Linga TheBoss",
     "Shy Speaks",
     "Serious Voice",
     "Tarcea Renee",
@@ -195,7 +195,7 @@
     {
       "name": "Reach Records consolidated calendar",
       "status": "ok",
-      "eventsFound": 22
+      "eventsFound": 18
     },
     {
       "name": "Reach Records - 1K Phew",
@@ -220,7 +220,7 @@
     {
       "name": "Reach Records - Hulvey",
       "status": "ok",
-      "eventsFound": 4
+      "eventsFound": 3
     },
     {
       "name": "Reach Records - Jackie Hill Perry",
@@ -245,7 +245,7 @@
     {
       "name": "Reach Records - Trip Lee",
       "status": "ok",
-      "eventsFound": 1
+      "eventsFound": 0
     },
     {
       "name": "Reach Records - WHATUPRG",
@@ -369,7 +369,7 @@
     },
     {
       "name": "Trendsetter Sense official events",
-      "status": "ok",
+      "status": "warning",
       "eventsFound": 0
     },
     {
@@ -425,12 +425,12 @@
     {
       "name": "ChristianHits consolidated show feed",
       "status": "ok",
-      "eventsFound": 4
+      "eventsFound": 2
     },
     {
       "name": "ChristianHits festival directory",
       "status": "ok",
-      "eventsFound": 3
+      "eventsFound": 2
     },
     {
       "name": "Konnect Concert Series - Space City Church",
@@ -626,14 +626,15 @@
       "name": "Instagram public announcement scan",
       "status": "ok",
       "eventsFound": 0,
-      "artistsChecked": 137,
-      "queriesRun": 139
+      "artistsChecked": 155,
+      "queriesRun": 157
     }
   ],
-  "warningCount": 21,
+  "warningCount": 22,
   "errorCount": 0,
   "warnings": [
     "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
+    "Trendsetter Sense official events: Unable to retrieve https://www.trendsettersense.com/event-list: HTTP Error 429: Too Many Requests",
     "NF Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11969355-nf: HTTP Error 403: Forbidden",
     "Mike Malagies Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15593996-mike-malagies: HTTP Error 403: Forbidden",
     "Parris Chariz Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14726057-parris-chariz: HTTP Error 403: Forbidden",
@@ -656,9 +657,5 @@
     "Anike Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4673148-anike: HTTP Error 403: Forbidden"
   ],
   "errors": [],
-  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings.",
-  "artistWebsiteEventsFound": 0,
-  "artistWebsiteSeedEvents": 17,
-  "artistWebsiteEventsAdded": 17,
-  "artistWebsiteMergeAt": "2026-09-04T15:12:22Z"
+  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings."
 }
