@@ -186,6 +186,7 @@ class MultiPageProductionTests(unittest.TestCase):
         self.assertEqual(runtime, versioned.read_text(encoding="utf-8"))
         self.assertIn('PRIMARY_CACHE_TOKEN = "kc-20260829-2050"', finalizer)
         self.assertIn('RUNTIME_SCRIPT_URL = "/assets/event-image-repair-kc2100.js"', finalizer)
+        self.assertIn('IMAGE_FIX_SCRIPT_URL = "/assets/image-fix.js?v=20260906-2"', finalizer)
         self.assertIn('data-kc-lock-primary', finalizer)
         self.assertIn('kcLockPrimary', runtime)
         self.assertIn('classList?.contains("event-artwork")', runtime)

@@ -11,6 +11,7 @@ import shutil
 FALLBACK = "/assets/event-fallback.webp"
 PRIMARY_CACHE_TOKEN = "kc-20260829-2050"
 RUNTIME_SCRIPT_URL = "/assets/event-image-repair-kc2100.js"
+IMAGE_FIX_SCRIPT_URL = "/assets/image-fix.js?v=20260906-2"
 EXCLUDED_ARTISTS = {"chad jones", "erica mason", "big holy"}
 EXCLUDED_SLUGS = {"chad-jones", "erica-mason", "big-holy"}
 STALE_IMAGE_URLS = {
@@ -349,6 +350,14 @@ def patch_html_page(page: pathlib.Path, removed_slugs: set[str]) -> tuple[int, i
     )
     if script_tag not in text and "</head>" in text.lower():
         text = re.sub(r'</head>', script_tag + '</head>', text, count=1, flags=re.I)
+
+    image_fix_tag = f'<script src="{IMAGE_FIX_SCRIPT_URL}" defer></script>'
+    text = re.sub(
+        r'<script\b(?=[^>]*\bsrc=["\']/assets/image-fix\.js[^"\']*["\'])[^>]*></script>',
+        image_fix_tag,
+        text,
+        flags=re.I,
+    )
 
     if text != original:
         page.write_text(text, encoding="utf-8")
