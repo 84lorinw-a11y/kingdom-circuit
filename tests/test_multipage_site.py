@@ -116,15 +116,15 @@ class MultiPageProductionTests(unittest.TestCase):
         self.assertEqual("The Social House", genesis[0].get("venue"))
         self.assertEqual("https://gratedco.ticketspice.com/the-genesis-show-", genesis[0].get("officialUrl"))
         self.assertEqual("$35 GA / $55 VIP", genesis[0].get("price"))
-        self.assertEqual("assets/events/genesis-show-2026-all-women-v2.webp", genesis[0].get("image"))
+        self.assertEqual("assets/events/genesis-show-2026-all-women-v3.jpg", genesis[0].get("image"))
         self.assertEqual("event_artwork", genesis[0].get("imageType"))
 
         self.assertTrue((ROOT / "assets/artists/rare-of-breed-primary.jpg").is_file())
         self.assertTrue((ROOT / "assets/artists/yumiya-primary.jpg").is_file())
-        genesis_asset = ROOT / "assets/events/genesis-show-2026-all-women-v2.webp"
+        genesis_asset = ROOT / "assets/events/genesis-show-2026-all-women-v3.jpg"
         self.assertTrue(genesis_asset.is_file())
         self.assertGreater(genesis_asset.stat().st_size, 10000)
-        self.assertEqual(b"RIFF", genesis_asset.read_bytes()[:4])
+        self.assertEqual(b"\xff\xd8", genesis_asset.read_bytes()[:2])
 
     def test_space_city_fest_has_current_lineup_and_artwork(self):
         events = json.loads((ROOT / "events.json").read_text(encoding="utf-8"))
@@ -147,7 +147,7 @@ class MultiPageProductionTests(unittest.TestCase):
         })
         self.assertIsNotNone(refreshed)
         self.assertEqual("The Social House", refreshed.get("venue"))
-        self.assertEqual("assets/events/genesis-show-2026-all-women-v2.webp", refreshed.get("image"))
+        self.assertEqual("assets/events/genesis-show-2026-all-women-v3.jpg", refreshed.get("image"))
         self.assertEqual("event_artwork", refreshed.get("imageType"))
         self.assertEqual("https://gratedco.ticketspice.com/the-genesis-show-", refreshed.get("officialUrl"))
         self.assertEqual(10, len(refreshed.get("artists", [])))
