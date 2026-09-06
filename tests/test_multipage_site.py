@@ -100,16 +100,19 @@ class MultiPageProductionTests(unittest.TestCase):
         self.assertEqual(1, len(genesis))
         self.assertEqual(
             [
-                "Afeni",
-                "Neisha Glow",
-                "Biancallove",
-                "Linga TheBoss",
-                "Alexus Snow",
-                "yumiya!",
-                "Amarah",
-                "Lyric The Geenyus",
+                "Petrina DeLacey",
                 "Queen Lee",
-                "G.E.S",
+                "Biancallove",
+                "Joz",
+                "G.E.S.",
+                "yumiya!",
+                "Yasmine Jinelle",
+                "Amarah",
+                "Linga TheBoss",
+                "Lyric The Geenyus",
+                "Afeni",
+                "Alexus Snow",
+                "Neisha Glow",
             ],
             genesis[0].get("artists"),
         )
@@ -150,7 +153,7 @@ class MultiPageProductionTests(unittest.TestCase):
         self.assertEqual("assets/events/genesis-show-2026-all-women-v3.jpg", refreshed.get("image"))
         self.assertEqual("event_artwork", refreshed.get("imageType"))
         self.assertEqual("https://gratedco.ticketspice.com/the-genesis-show-", refreshed.get("officialUrl"))
-        self.assertEqual(10, len(refreshed.get("artists", [])))
+        self.assertEqual(13, len(refreshed.get("artists", [])))
 
     def test_immersion_festival_is_published_with_both_headliners(self):
         events = json.loads((ROOT / "events.json").read_text(encoding="utf-8"))

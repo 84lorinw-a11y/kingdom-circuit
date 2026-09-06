@@ -39,7 +39,8 @@ class ArtistDatabaseSeptember4Tests(unittest.TestCase):
 
     def test_new_registry_block_matches_sheet_order(self):
         source_names = [item["name"] for item in self.updates]
-        self.assertEqual(source_names[-7:], UPDATED_NAMES)
+        start = source_names.index(UPDATED_NAMES[0])
+        self.assertEqual(source_names[start:start + len(UPDATED_NAMES)], UPDATED_NAMES)
 
         roster_names = [item["name"] for item in self.artists]
         self.assertEqual(roster_names[54:54 + len(source_names)], source_names)

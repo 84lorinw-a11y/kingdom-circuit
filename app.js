@@ -105,6 +105,24 @@ const ARTIST_ROSTER_ORDER = [
   "Sis N Lil Bro",
   "Kaboose",
   "TRU-SERVA",
+  "VVS Big Rock",
+  "Sway GTTB",
+  "Kashh Kade",
+  "RÆL The Artist",
+  "JustChris",
+  "Stovetop",
+  "yumiya!",
+  "Linga TheBoss",
+  "Petrina DeLacey",
+  "Queen Lee",
+  "Biancallove",
+  "Joz",
+  "G.E.S.",
+  "Yasmine Jinelle",
+  "Lyric The Geenyus",
+  "Afeni",
+  "Alexus Snow",
+  "Neisha Glow",
   "Alex Jean",
   "gio.",
   "Torey D'Shaun",
@@ -192,7 +210,6 @@ const ARTIST_ROSTER_ORDER = [
   "Saint Jones",
   "Tay Stunna",
   "YakiTheKid",
-  "yumiya!",
   "Vic Lucas",
   "Kevi Morse",
   "Chris Caro",
@@ -223,7 +240,6 @@ const ARTIST_ROSTER_ORDER = [
   "Jekasole",
   "Heesun Lee",
   "Mahogany Jones",
-  "Linga TheBoss",
   "Latoria",
   "Shy Speaks",
   "Serious Voice",
@@ -1414,6 +1430,237 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebb5bd510760cb418516ded933",
     "imagePosition": "center",
     "state": "MN",
+    "sourceRegistryVerified": true
+  },
+  "vvs big rock": {
+    "aliases": [
+      "VVS Big Rock"
+    ],
+    "website": "https://www.instagram.com/vvs_bigrock/",
+    "instagramProfile": "https://www.instagram.com/vvs_bigrock/",
+    "spotifyProfile": "https://open.spotify.com/artist/6it0bpgV8V5yuk2rnraE9M",
+    "youtubeProfile": "https://www.youtube.com/channel/UCxhWF02oh4FyuAPVBt8GM7g",
+    "officialImageSource": "https://www.instagram.com/vvs_bigrock/",
+    "imagePosition": "center",
+    "state": "WI",
+    "sourceRegistryVerified": true
+  },
+  "sway gttb": {
+    "aliases": [
+      "Sway GTTB",
+      "Sway God Took The Burden"
+    ],
+    "website": "https://www.instagram.com/swaygodtooktheburden.wav/",
+    "instagramProfile": "https://www.instagram.com/swaygodtooktheburden.wav/",
+    "spotifyProfile": "https://open.spotify.com/artist/3b15IaMeDOJZggq75TNNo9",
+    "youtubeProfile": "https://www.youtube.com/@SwayGTTBmusic",
+    "officialImageSource": "https://www.instagram.com/swaygodtooktheburden.wav/",
+    "imagePosition": "center",
+    "state": "ND",
+    "sourceRegistryVerified": true
+  },
+  "kashh kade": {
+    "aliases": [
+      "Kashh Kade"
+    ],
+    "website": "https://www.instagram.com/kashhkade/",
+    "instagramProfile": "https://www.instagram.com/kashhkade/",
+    "spotifyProfile": "https://open.spotify.com/artist/029BjbYHANOxmuCPJM96dI",
+    "youtubeProfile": "https://music.youtube.com/channel/UCtWViuucqKR9F_orE7COgJg",
+    "officialImageSource": "https://open.spotify.com/artist/029BjbYHANOxmuCPJM96dI",
+    "imagePosition": "center",
+    "state": "WI",
+    "sourceRegistryVerified": true
+  },
+  "ræl the artist": {
+    "aliases": [
+      "RÆL The Artist",
+      "RAEL The Artist"
+    ],
+    "website": "https://www.instagram.com/raeltheartist/",
+    "instagramProfile": "https://www.instagram.com/raeltheartist/",
+    "spotifyProfile": "https://open.spotify.com/artist/72sxxRJ2zqNEvYeol2HnxG",
+    "youtubeProfile": "https://www.youtube.com/channel/UCD1fVGfBT6eL5HrglzXxv_g",
+    "officialImageSource": "https://www.instagram.com/raeltheartist/",
+    "imagePosition": "center",
+    "state": "WI",
+    "sourceRegistryVerified": true
+  },
+  "justchris": {
+    "aliases": [
+      "JustChris",
+      "Just Chris"
+    ],
+    "website": "https://justchristheartist.com/",
+    "instagramProfile": "https://www.instagram.com/theartist_just_chris/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/16LhY0I4oG7q889kRgNQrQ",
+    "youtubeProfile": "https://www.youtube.com/channel/UCyPYU39mHibFDcDloaAVSXQ",
+    "officialImageSource": "https://justchristheartist.com/",
+    "imagePosition": "center",
+    "state": "WI",
+    "sourceRegistryVerified": true
+  },
+  "stovetop": {
+    "aliases": [
+      "Stovetop"
+    ],
+    "website": "https://www.stovetop-music.com/",
+    "instagramProfile": "https://www.instagram.com/the_stovetop",
+    "spotifyProfile": "https://open.spotify.com/artist/77scLrsYfUOMsmq18ZtoCB",
+    "youtubeProfile": "https://www.youtube.com/channel/UC1DIn6CtH_V3cRE9zC6Ozcg",
+    "officialImageSource": "https://www.stovetop-music.com/",
+    "imagePosition": "center",
+    "state": "MN",
+    "sourceRegistryVerified": true
+  },
+  "yumiya!": {
+    "aliases": [
+      "yumiya!",
+      "yumiya"
+    ],
+    "website": "https://www.instagram.com/yayayumiya/?hl=en",
+    "instagramProfile": "https://www.instagram.com/yayayumiya/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/1s4YH0vODE4nW0bREPt4GG",
+    "youtubeProfile": "https://www.youtube.com/@yayayumiya",
+    "officialImageSource": "https://www.instagram.com/yayayumiya/?hl=en",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true
+  },
+  "linga theboss": {
+    "aliases": [
+      "Linga TheBoss",
+      "Linga The Boss"
+    ],
+    "website": "https://www.lingatheboss.com/",
+    "instagramProfile": "https://www.instagram.com/lingatheboss/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/5jCTpUeZQ61zaoSYgYV2cY",
+    "youtubeProfile": "https://www.youtube.com/channel/UCBXlPLlFhymj2JRsva5fpLg",
+    "officialImageSource": "https://www.lingatheboss.com/",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true
+  },
+  "petrina delacey": {
+    "aliases": [
+      "Petrina DeLacey"
+    ],
+    "website": "https://www.instagram.com/petrinadelacey/?hl=en",
+    "instagramProfile": "https://www.instagram.com/petrinadelacey/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/00iDXs6D2a9UZCtqnDMGnY",
+    "youtubeProfile": "https://www.youtube.com/channel/UCj6WadEE7fr76voQd3TBqKg",
+    "officialImageSource": "https://www.instagram.com/petrinadelacey/?hl=en",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true
+  },
+  "queen lee": {
+    "aliases": [
+      "Queen Lee"
+    ],
+    "website": "https://www.instagram.com/iamceoaaliyah/?hl=en",
+    "instagramProfile": "https://www.instagram.com/iamceoaaliyah/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/0ESxKUSobqG0GkLrxg77XS",
+    "youtubeProfile": "https://www.youtube.com/@IamQueenLee",
+    "officialImageSource": "https://www.instagram.com/iamceoaaliyah/?hl=en",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true
+  },
+  "biancallove": {
+    "aliases": [
+      "Biancallove",
+      "Bianca Love"
+    ],
+    "website": "https://biancallove.com/",
+    "instagramProfile": "https://www.instagram.com/biancallove/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/590hZkpFHGkCc4iBpDKXrY",
+    "youtubeProfile": "https://www.youtube.com/channel/UCnZnD0K3pRkpwhn-EY24WAg",
+    "officialImageSource": "https://biancallove.com/",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true
+  },
+  "joz": {
+    "aliases": [
+      "Joz",
+      "Southside Joz"
+    ],
+    "website": "https://www.instagram.com/southsidejoz/",
+    "instagramProfile": "https://www.instagram.com/southsidejoz/",
+    "spotifyProfile": "https://open.spotify.com/artist/298PjvlXBVauDcpCjrl257",
+    "youtubeProfile": "https://www.youtube.com/@SouthsideJoz",
+    "officialImageSource": "https://www.instagram.com/southsidejoz/",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true
+  },
+  "g.e.s.": {
+    "aliases": [
+      "G.E.S.",
+      "G.E.S",
+      "GES"
+    ],
+    "website": "https://www.instagram.com/gesmusicc/reels/",
+    "instagramProfile": "https://www.instagram.com/gesmusicc/reels/",
+    "spotifyProfile": "https://open.spotify.com/artist/1r0gAOldNSTyidXhWLDHTF",
+    "youtubeProfile": "https://www.youtube.com/@gesmusiccc",
+    "officialImageSource": "https://www.instagram.com/gesmusicc/reels/",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true
+  },
+  "yasmine jinelle": {
+    "aliases": [
+      "Yasmine Jinelle"
+    ],
+    "website": "https://www.instagram.com/yasminejinelle/",
+    "instagramProfile": "https://www.instagram.com/yasminejinelle/",
+    "spotifyProfile": "https://open.spotify.com/artist/3OCiWnwCNh7AzwVfKBai2i",
+    "youtubeProfile": "https://music.youtube.com/channel/UCw3I0TR2c2xpB2TifYZPY2w",
+    "officialImageSource": "https://www.instagram.com/yasminejinelle/",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true
+  },
+  "lyric the geenyus": {
+    "aliases": [
+      "Lyric The Geenyus"
+    ],
+    "website": "https://www.instagram.com/lyricthegeenyus/",
+    "instagramProfile": "https://www.instagram.com/lyricthegeenyus/",
+    "spotifyProfile": "https://open.spotify.com/artist/6Fo6hgETL8pUsJb4hoQhwv",
+    "youtubeProfile": "https://www.youtube.com/channel/UCVopgdRdnJRERs14HHBwb9w",
+    "officialImageSource": "https://www.instagram.com/lyricthegeenyus/",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true
+  },
+  "afeni": {
+    "aliases": [
+      "Afeni"
+    ],
+    "website": "https://www.instagram.com/afenifrl/",
+    "instagramProfile": "https://www.instagram.com/afenifrl/",
+    "spotifyProfile": "https://open.spotify.com/artist/3x6BDfLBgSZo72lry8q2CL",
+    "youtubeProfile": "https://www.youtube.com/channel/UC7ijuNEvB9WHgYsDcGtnGhw",
+    "officialImageSource": "https://www.instagram.com/afenifrl/",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true
+  },
+  "alexus snow": {
+    "aliases": [
+      "Alexus Snow"
+    ],
+    "website": "https://www.instagram.com/lifeofalexussnow/",
+    "instagramProfile": "https://www.instagram.com/lifeofalexussnow/",
+    "spotifyProfile": "https://open.spotify.com/artist/2XXLCJp5BnNxYmqxUA8gMV",
+    "youtubeProfile": "https://www.youtube.com/channel/UCXAoqYA_PGKl0qLifTmijeg",
+    "officialImageSource": "https://www.instagram.com/lifeofalexussnow/",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true
+  },
+  "neisha glow": {
+    "aliases": [
+      "Neisha Glow"
+    ],
+    "website": "https://www.instagram.com/neishaglow/",
+    "instagramProfile": "https://www.instagram.com/neishaglow/",
+    "spotifyProfile": "https://open.spotify.com/artist/4VwM177wgcyEEDgKuuAhDz",
+    "youtubeProfile": "https://www.youtube.com/@neishaglow/videos",
+    "officialImageSource": "https://www.instagram.com/neishaglow/",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   }
 };
