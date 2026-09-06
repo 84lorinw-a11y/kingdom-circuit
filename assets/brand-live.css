@@ -1,0 +1,41 @@
+/* Kingdom Circuit approved live brand system — shared across every public page. */
+:root{
+  --gold:#c84a32;
+  --gold-light:#df725c;
+}
+
+.site-header .brand img{
+  width:260px;
+  height:76px;
+  object-fit:contain;
+  object-position:left center;
+  display:block;
+}
+
+.page-hero:not(.home-hero){
+  background:radial-gradient(circle at 78% 12%,rgba(200,74,50,.10),transparent 38%);
+}
+
+.home-path-card{
+  background:linear-gradient(145deg,rgba(200,74,50,.08),rgba(17,17,17,.96) 55%);
+}
+.home-path-card:hover{
+  background:linear-gradient(145deg,rgba(200,74,50,.14),rgba(17,17,17,.98) 55%);
+}
+
+.artist-visual,
+.profile-visual,
+.event-detail-media,
+.artist-visual-empty{
+  background:linear-gradient(145deg,#1b100d,#080808);
+}
+.artist-visual-empty::after{
+  background:rgba(200,74,50,.32);
+}
+
+@media(max-width:600px){
+  .site-header .brand img{
+    width:205px;
+    height:62px;
+  }
+}
