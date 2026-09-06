@@ -195,10 +195,14 @@ class MultiPageProductionTests(unittest.TestCase):
     def test_home_image_guard_preserves_multi_artist_event_artwork(self):
         homepage = (ROOT / "index.html").read_text(encoding="utf-8")
         guard = (ROOT / "assets/home-primary-image-guard.js").read_text(encoding="utf-8")
+        image_fix = (ROOT / "assets/image-fix.js").read_text(encoding="utf-8")
+        self.assertIn('image-fix.js?v=20260906-2', homepage)
         self.assertIn('home-primary-image-guard.js?v=20260906-home-3', homepage)
         self.assertIn('artistLine === item.artist', guard)
         self.assertIn('img.classList.contains("event-artwork")', guard)
         self.assertNotIn('artistLine.includes(item.artist)', guard)
+        self.assertIn('event?.imageType === "event_artwork"', image_fix)
+        self.assertIn('return kcOriginalEventImage(event)', image_fix)
 
 
 if __name__ == "__main__":

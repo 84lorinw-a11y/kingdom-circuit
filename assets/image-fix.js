@@ -90,6 +90,11 @@ if (typeof eventImage === "function") {
     const eventOverride = KC_EVENT_IMAGE_OVERRIDES[String(event?.id || "")];
     if (eventOverride) return eventOverride;
 
+    const currentImage = String(event?.image || "");
+    if (event?.imageType === "event_artwork" && currentImage && !currentImage.includes("event-fallback")) {
+      return kcOriginalEventImage(event);
+    }
+
     // Bandsintown rows may contain a guessed local file path that does not exist.
     // Ignore that guessed event path and use the best verified image we already
     // have for the headliner. If no headliner image exists yet, fall back to the
@@ -100,7 +105,6 @@ if (typeof eventImage === "function") {
 
     const artist = typeof artistConfig === "function" ? artistConfig(event?.headliner || event?.artists?.[0]) : null;
     const artistOverride = kcDirectArtistImage(artist);
-    const currentImage = String(event?.image || "");
     if (artistOverride && (!currentImage || currentImage.includes("event-fallback"))) return artistOverride;
     return kcOriginalEventImage(event);
   };
