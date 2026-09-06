@@ -1,6 +1,7 @@
 import json
 import re
 import unittest
+from datetime import date
 from pathlib import Path
 
 from scripts.apply_curated_catalog_policy import curate_event
@@ -155,12 +156,16 @@ class MultiPageProductionTests(unittest.TestCase):
         self.assertEqual("https://gratedco.ticketspice.com/the-genesis-show-", refreshed.get("officialUrl"))
         self.assertEqual(13, len(refreshed.get("artists", [])))
 
-    def test_immersion_festival_is_published_with_both_headliners(self):
+    def test_immersion_festival_content_until_event_passes(self):
         events = json.loads((ROOT / "events.json").read_text(encoding="utf-8"))
-        event = next(
+        matches = [
             event for event in events
             if event.get("id") == "manual:immersion-music-festival-circleville-2026"
-        )
+        ]
+        if not matches:
+            self.assertGreater(date.today(), date(2026, 9, 5))
+            return
+        event = matches[0]
         self.assertEqual(["1K Phew", "WHATUPRG"], event.get("artists"))
         self.assertEqual("2026-09-05", event.get("startDate"))
         self.assertEqual("Pickaway County Agriculture & Event Center", event.get("venue"))
