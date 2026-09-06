@@ -9,6 +9,8 @@ from collections import Counter
 from xml.sax.saxutils import escape as xml_escape
 
 SITE_ORIGIN = "https://kingdomcircuit.com"
+BRAND_STYLESHEET = "/assets/brand-live.css?v=1"
+BRAND_LOGO = "/assets/logo-wordmark.svg?v=1"
 
 STATE_NAMES = {
     "AL":"Alabama","AK":"Alaska","AZ":"Arizona","AR":"Arkansas","CA":"California","CO":"Colorado","CT":"Connecticut","DE":"Delaware","DC":"District of Columbia","FL":"Florida","GA":"Georgia","HI":"Hawaii","ID":"Idaho","IL":"Illinois","IN":"Indiana","IA":"Iowa","KS":"Kansas","KY":"Kentucky","LA":"Louisiana","ME":"Maine","MD":"Maryland","MA":"Massachusetts","MI":"Michigan","MN":"Minnesota","MS":"Mississippi","MO":"Missouri","MT":"Montana","NE":"Nebraska","NV":"Nevada","NH":"New Hampshire","NJ":"New Jersey","NM":"New Mexico","NY":"New York","NC":"North Carolina","ND":"North Dakota","OH":"Ohio","OK":"Oklahoma","OR":"Oregon","PA":"Pennsylvania","RI":"Rhode Island","SC":"South Carolina","SD":"South Dakota","TN":"Tennessee","TX":"Texas","UT":"Utah","VT":"Vermont","VA":"Virginia","WA":"Washington","WV":"West Virginia","WI":"Wisconsin","WY":"Wyoming"
@@ -114,10 +116,49 @@ def classify(url: str, text: str) -> tuple[bool, str]:
     return True, "other-public"
 
 
+def apply_branding(root: pathlib.Path) -> int:
+    css_asset = root / "assets/brand-live.css"
+    logo_asset = root / "assets/logo-wordmark.svg"
+    if not css_asset.exists():
+        raise SystemExit("Approved brand stylesheet missing from deployment artifact")
+    if not logo_asset.exists():
+        raise SystemExit("Approved Kingdom Circuit wordmark missing from deployment artifact")
+
+    branded = 0
+    link_tag = f'<link rel="stylesheet" href="{BRAND_STYLESHEET}">'
+    for page in sorted(root.rglob("*.html")):
+        rel = page.relative_to(root)
+        if rel.parts[:1] == ("_seo_source",):
+            continue
+        text = page.read_text(encoding="utf-8", errors="ignore")
+        original = text
+
+        # Keep the same approved wordmark in every site header, including
+        # dynamically generated event, artist, state, city, and month pages.
+        text = text.replace('src="/assets/logo.png"', f'src="{BRAND_LOGO}"')
+        text = re.sub(
+            r'src="/assets/logo-wordmark\.svg(?:\?v=[^"]*)?"',
+            f'src="{BRAND_LOGO}"',
+            text,
+        )
+
+        # The shared stylesheet carries the orange-red accent system while
+        # preserving page-specific layout and content.
+        if BRAND_STYLESHEET not in text and "</head>" in text:
+            text = text.replace("</head>", f"  {link_tag}\n</head>", 1)
+
+        if text != original:
+            page.write_text(text, encoding="utf-8")
+            branded += 1
+
+    return branded
+
+
 def apply(root: pathlib.Path) -> dict:
     if not root.exists():
         raise SystemExit(f"Site root does not exist: {root}")
 
+    branded_pages = apply_branding(root)
     indexed: list[tuple[str, str]] = []
     noindexed: list[tuple[str, str]] = []
     reasons = Counter()
@@ -193,11 +234,25 @@ def apply(root: pathlib.Path) -> dict:
     if len(unique) < 350:
         raise SystemExit(f"Indexable sitemap unexpectedly small: {len(unique)} URLs")
 
+    # Branding is part of the deployment contract now. Any page with the shared
+    # header must use the wordmark and every public page must load the shared
+    # orange-red brand stylesheet.
+    for page in sorted(root.rglob("*.html")):
+        rel = page.relative_to(root)
+        if rel.parts[:1] == ("_seo_source",):
+            continue
+        text = page.read_text(encoding="utf-8", errors="ignore")
+        if BRAND_STYLESHEET not in text:
+            raise SystemExit(f"Brand stylesheet missing from public page: {rel}")
+        if 'class="brand"' in text and BRAND_LOGO not in text:
+            raise SystemExit(f"Approved wordmark missing from site header: {rel}")
+
     report = {
         "generatedAt": dt.datetime.now(dt.timezone.utc).isoformat(),
         "indexablePages": len(indexed),
         "noindexPages": len(noindexed),
         "sitemapUrls": len(unique),
+        "brandedPages": branded_pages,
         "reasons": dict(sorted(reasons.items())),
         "noindexExamples": [
             {"url": url, "reason": reason}
