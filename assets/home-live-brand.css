@@ -1,0 +1,34 @@
+/* Live homepage: approved Kingdom Circuit wordmark and orange-red brand accent. */
+body[data-page="home"]{
+  --gold:#c84a32;
+  --gold-light:#df725c;
+}
+body[data-page="home"] .page-hero{
+  background:
+    radial-gradient(circle at 92% 30%,rgba(200,74,50,.18) 0%,rgba(200,74,50,.10) 24%,rgba(200,74,50,.035) 45%,transparent 66%),
+    #080808;
+}
+body[data-page="home"] .home-path-card{
+  background:linear-gradient(145deg,rgba(200,74,50,.08),rgba(17,17,17,.96) 55%);
+}
+body[data-page="home"] .home-path-card:hover{
+  background:linear-gradient(145deg,rgba(200,74,50,.14),rgba(17,17,17,.98) 55%);
+}
+body[data-page="home"] .brand img{
+  width:260px;
+  height:76px;
+  object-fit:contain;
+  object-position:left center;
+  display:block;
+}
+@media(max-width:600px){
+  body[data-page="home"] .brand img{
+    width:205px;
+    height:62px;
+  }
+  body[data-page="home"] .page-hero{
+    background:
+      radial-gradient(circle at 100% 24%,rgba(200,74,50,.20) 0%,rgba(200,74,50,.11) 28%,rgba(200,74,50,.035) 46%,transparent 68%),
+      #080808;
+  }
+}
