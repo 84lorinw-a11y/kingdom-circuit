@@ -859,6 +859,8 @@ class KingdomCircuitV9Tests(unittest.TestCase):
         self.assertEqual(tribe_fest["city"], "Rialto")
         self.assertEqual(tribe_fest["state"], "CA")
         self.assertIn("eventbrite.com", tribe_fest["ticketUrl"])
+        self.assertIn("img.evbuc.com", tribe_fest["image"])
+        self.assertEqual(tribe_fest["imageType"], "event_artwork")
 
     def test_neutral_fallback_replaces_brand_logo(self):
         event = candidate(title="Unknown Image Show", artists=["KB"])
