@@ -31,6 +31,9 @@ IMAGE_CANDIDATES = {
     "marty": [
         "https://i.scdn.co/image/ab6761610000e5eb3d2d9f74de93906d1f5996f3",
     ],
+    "jon keith": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Video211/v4/71/0c/9c/710c9c39-3dc7-0be5-a593-ab0ffc2fa618/Jobd846f8ea-4135-4580-8d0d-ed8f3cbb1f2a-190112036-PreviewImage_Preview_Image_Intermediate_nonvideo_372260380_2119658910-Time1744403657806.png/1200x675mv.webp",
+    ],
     "808 beezy": [
         "https://pbs.twimg.com/profile_images/1836827722309312512/e5kgorwv.jpg",
         "https://open.voidware.de/artist/3CltJZLndpJKtpUyRVBB1k",

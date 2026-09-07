@@ -69,6 +69,19 @@ class MultiPageProductionTests(unittest.TestCase):
         self.assertEqual("https://www.youtube.com/@808_BEEZY", artist.get("youtubeProfile"))
         self.assertTrue(artist.get("sourceRegistryVerified"))
 
+    def test_jon_keith_uses_a_verified_existing_image(self):
+        artists = json.loads((ROOT / "config/artists.json").read_text(encoding="utf-8"))
+        artist = next(item for item in artists if item.get("name") == "Jon Keith")
+        self.assertEqual(
+            "https://music.apple.com/us/artist/jon-keith/1139914139",
+            artist.get("officialImageSource"),
+        )
+        self.assertIn("mzstatic.com", artist.get("imageUrl", ""))
+
+        events = json.loads((ROOT / "supplemental-events.json").read_text(encoding="utf-8"))
+        event = next(item for item in events if item.get("id") == "bandsintown:1040178082")
+        self.assertEqual(artist["imageUrl"], event.get("image"))
+
     def test_event_images_have_fixed_frame(self):
         css = (ROOT / "styles.css").read_text(encoding="utf-8")
         self.assertIn("aspect-ratio: 4 / 3", css)
