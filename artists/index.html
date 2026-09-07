@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="/styles.css?v=10.3">
   <script src="/app.js?v=12.0" defer></script>
   <script src="/assets/image-fix.js?v=2" defer></script>
-  <script src="/assets/artist-filter-fix.js?v=4" defer></script>
+  <script src="/assets/artist-filter-fix.js?v=5" defer></script>
   <title>Christian Hip-Hop Artist Directory | The Kingdom Circuit</title>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2KK9XF4TJ"></script>
@@ -34,6 +34,7 @@
           <label class="field"><span>Artist</span><select data-directory-artist-filter><option value="">All artists</option></select></label>
           <label class="field"><span>State</span><select data-directory-state-filter><option value="">All states</option></select></label>
           <label class="field"><span>Month</span><select data-directory-month-filter><option value="">All months</option></select></label>
+          <label class="check-field kc-upcoming-check"><input data-has-shows-filter type="checkbox"> Only artists with upcoming shows</label>
           <button class="reset-button" data-directory-reset-filters type="button">Clear filters</button>
         </form>
         <p class="results-count" data-artist-count>Loading...</p>

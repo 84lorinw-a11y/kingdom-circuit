@@ -58,20 +58,28 @@
     style.id = "kc-artist-directory-filter-styles";
     style.textContent = `
       .kc-directory-toolbar{display:block!important;margin-bottom:24px!important}
-      .kc-artist-filter-form{display:grid!important;grid-template-columns:minmax(190px,1.25fr) minmax(165px,.9fr) minmax(175px,.95fr) auto!important;align-items:end!important;gap:12px!important;width:100%!important}
+      .kc-artist-filter-form{display:grid!important;grid-template-columns:minmax(180px,1.2fr) minmax(150px,.9fr) minmax(165px,.95fr) minmax(220px,1.05fr) auto!important;align-items:end!important;gap:12px!important;width:100%!important}
       .kc-artist-filter-form .field{min-width:0!important}
       .kc-artist-filter-form select{width:100%!important;min-height:48px!important}
       .kc-artist-filter-form .reset-button{min-height:48px!important;white-space:nowrap!important}
+      .kc-upcoming-check{display:flex!important;align-items:center!important;gap:9px!important;min-height:48px!important;margin:0!important;padding:0 4px!important;white-space:nowrap!important}
+      .kc-upcoming-check input{width:18px!important;height:18px!important;flex:0 0 auto!important;margin:0!important;accent-color:var(--gold,#c84a32)}
       .kc-directory-toolbar .results-count{margin:12px 0 0!important;text-align:right!important}
       .kc-directory-dashboard .kc-artist-jump{display:none!important}
       .kc-directory-dashboard{grid-template-columns:minmax(170px,.75fr) minmax(260px,1.35fr)!important}
+      @media(max-width:1050px){
+        .kc-artist-filter-form{grid-template-columns:1fr 1fr 1fr!important}
+        .kc-upcoming-check{grid-column:1/3!important}
+        .kc-artist-filter-form .reset-button{width:100%!important}
+      }
       @media(max-width:820px){
         .kc-artist-filter-form{grid-template-columns:1fr 1fr!important}
-        .kc-artist-filter-form .reset-button{width:100%!important}
+        .kc-upcoming-check{grid-column:1/2!important}
         .kc-directory-dashboard{grid-template-columns:1fr 1fr!important}
       }
       @media(max-width:560px){
         .kc-artist-filter-form{grid-template-columns:1fr!important}
+        .kc-upcoming-check{grid-column:auto!important}
         .kc-directory-toolbar .results-count{text-align:left!important}
         .kc-directory-dashboard{grid-template-columns:1fr!important}
       }
@@ -208,9 +216,9 @@
       toolbar.className = "directory-toolbar kc-directory-toolbar";
       directory.prepend(toolbar);
     }
-    if (!toolbar.querySelector("[data-directory-artist-filter]")) {
+    if (!toolbar.querySelector("[data-directory-artist-filter]") || !toolbar.querySelector("[data-has-shows-filter]")) {
       toolbar.classList.add("kc-directory-toolbar");
-      toolbar.innerHTML = `<form class="filters kc-artist-filter-form" data-artist-directory-filters aria-label="Filter artists"><label class="field"><span>Artist</span><select data-directory-artist-filter><option value="">All artists</option></select></label><label class="field"><span>State</span><select data-directory-state-filter><option value="">All states</option></select></label><label class="field"><span>Month</span><select data-directory-month-filter><option value="">All months</option></select></label><button class="reset-button" data-directory-reset-filters type="button">Clear filters</button></form><p class="results-count" data-artist-count>Loading...</p>`;
+      toolbar.innerHTML = `<form class="filters kc-artist-filter-form" data-artist-directory-filters aria-label="Filter artists"><label class="field"><span>Artist</span><select data-directory-artist-filter><option value="">All artists</option></select></label><label class="field"><span>State</span><select data-directory-state-filter><option value="">All states</option></select></label><label class="field"><span>Month</span><select data-directory-month-filter><option value="">All months</option></select></label><label class="check-field kc-upcoming-check"><input data-has-shows-filter type="checkbox"> Only artists with upcoming shows</label><button class="reset-button" data-directory-reset-filters type="button">Clear filters</button></form><p class="results-count" data-artist-count>Loading...</p>`;
     }
     const empty = directory.querySelector("[data-artist-empty]");
     if (empty) empty.textContent = "No artists match those filters.";
@@ -223,10 +231,11 @@
     const artistSelect = document.querySelector("[data-directory-artist-filter]");
     const stateSelect = document.querySelector("[data-directory-state-filter]");
     const monthSelect = document.querySelector("[data-directory-month-filter]");
+    const upcomingOnly = document.querySelector("[data-has-shows-filter]");
     const reset = document.querySelector("[data-directory-reset-filters]");
     const count = document.querySelector("[data-artist-count]");
     const empty = document.querySelector("[data-artist-empty]");
-    if (!grid || !artistSelect || !stateSelect || !monthSelect || !reset) return;
+    if (!grid || !artistSelect || !stateSelect || !monthSelect || !upcomingOnly || !reset) return;
 
     let data;
     try {
@@ -269,21 +278,25 @@
         card.dataset.directoryArtist = canonical;
         card.dataset.directoryStates = statesForArtist.join("|");
         card.dataset.directoryMonths = monthsForArtist.join("|");
+        card.dataset.directoryHasShows = shows.length > 0 ? "true" : "false";
       });
 
       const selectedArtist = norm(artistSelect.value);
       const selectedState = String(stateSelect.value || "").toUpperCase();
       const selectedMonth = String(monthSelect.value || "");
+      const requireUpcoming = upcomingOnly.checked;
       let visible = 0;
 
       cards.forEach(card => {
         const cardArtist = card.dataset.directoryArtist || norm(cardArtistName(card));
         const cardStates = new Set((card.dataset.directoryStates || "").split("|").filter(Boolean));
         const cardMonths = new Set((card.dataset.directoryMonths || "").split("|").filter(Boolean));
+        const hasUpcoming = card.dataset.directoryHasShows === "true";
         const matches =
           (!selectedArtist || cardArtist === selectedArtist) &&
           (!selectedState || cardStates.has(selectedState)) &&
-          (!selectedMonth || cardMonths.has(selectedMonth));
+          (!selectedMonth || cardMonths.has(selectedMonth)) &&
+          (!requireUpcoming || hasUpcoming);
 
         card.hidden = !matches;
         if (matches) {
@@ -308,10 +321,12 @@
     artistSelect.addEventListener("change", enrichAndApply);
     stateSelect.addEventListener("change", enrichAndApply);
     monthSelect.addEventListener("change", enrichAndApply);
+    upcomingOnly.addEventListener("change", enrichAndApply);
     reset.addEventListener("click", () => {
       artistSelect.value = "";
       stateSelect.value = "";
       monthSelect.value = "";
+      upcomingOnly.checked = false;
       enrichAndApply();
     });
 
