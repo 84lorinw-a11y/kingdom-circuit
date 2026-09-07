@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="/styles.css?v=10.3">
   <script src="/app.js?v=12.0" defer></script>
   <script src="/assets/image-fix.js?v=2" defer></script>
-  <script src="/assets/artist-filter-fix.js?v=2" defer></script>
+  <script src="/assets/artist-filter-fix.js?v=3" defer></script>
   <title>Christian Hip-Hop Artist Directory | The Kingdom Circuit</title>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2KK9XF4TJ"></script>
@@ -29,10 +29,18 @@
   <main>
     <section class="page-hero hero-compact"><p class="eyebrow">Artist database</p><h1>Christian Hip-Hop Artist Directory</h1><p class="hero-text">Browse every artist and group currently monitored by Kingdom Circuit. Tap verified social, streaming, video, and official-site links directly; anything unconfirmed stays marked until it is verified.</p></section>
     <section class="directory-section" data-artist-directory>
-      <div class="directory-toolbar"><label class="field field-search"><span>Search artists</span><input data-artist-search type="search" placeholder="Search by artist name"></label><label class="check-field"><input data-has-shows-filter type="checkbox"> Only artists with upcoming shows</label><p class="results-count" data-artist-count>Loading...</p></div>
+      <div class="directory-toolbar kc-directory-toolbar">
+        <form class="filters kc-artist-filter-form" data-artist-directory-filters aria-label="Filter artists">
+          <label class="field"><span>Artist</span><select data-directory-artist-filter><option value="">All artists</option></select></label>
+          <label class="field"><span>State</span><select data-directory-state-filter><option value="">All states</option></select></label>
+          <label class="field"><span>Month</span><select data-directory-month-filter><option value="">All months</option></select></label>
+          <button class="reset-button" data-directory-reset-filters type="button">Clear filters</button>
+        </form>
+        <p class="results-count" data-artist-count>Loading...</p>
+      </div>
       <div class="loading-panel" data-artist-loading>Loading the monitored artist roster...</div>
       <div class="artist-grid" data-artist-grid></div>
-      <div class="empty-panel" data-artist-empty hidden>No artists match that search.</div>
+      <div class="empty-panel" data-artist-empty hidden>No artists match those filters.</div>
     </section>
   </main>
   <footer class="site-footer"><div><strong>The Kingdom Circuit</strong><p>Christian hip-hop, live and connected.</p></div><div class="footer-links"><a href="/shows/">All Shows</a><a href="/artists/">Artists</a><a href="/festivals/">Festivals</a><a href="/submit/">Submit a Show</a></div><p class="footer-note">Event details may change.
