@@ -199,7 +199,26 @@
     select?.closest(".kc-artist-jump")?.remove();
   }
 
+  function ensureFilterMarkup() {
+    const directory = document.querySelector("[data-artist-directory]");
+    if (!directory) return false;
+    let toolbar = directory.querySelector(".directory-toolbar");
+    if (!toolbar) {
+      toolbar = document.createElement("div");
+      toolbar.className = "directory-toolbar kc-directory-toolbar";
+      directory.prepend(toolbar);
+    }
+    if (!toolbar.querySelector("[data-directory-artist-filter]")) {
+      toolbar.classList.add("kc-directory-toolbar");
+      toolbar.innerHTML = `<form class="filters kc-artist-filter-form" data-artist-directory-filters aria-label="Filter artists"><label class="field"><span>Artist</span><select data-directory-artist-filter><option value="">All artists</option></select></label><label class="field"><span>State</span><select data-directory-state-filter><option value="">All states</option></select></label><label class="field"><span>Month</span><select data-directory-month-filter><option value="">All months</option></select></label><button class="reset-button" data-directory-reset-filters type="button">Clear filters</button></form><p class="results-count" data-artist-count>Loading...</p>`;
+    }
+    const empty = directory.querySelector("[data-artist-empty]");
+    if (empty) empty.textContent = "No artists match those filters.";
+    return true;
+  }
+
   async function installDirectoryFilters() {
+    if (!ensureFilterMarkup()) return;
     const grid = document.querySelector("[data-artist-grid]");
     const artistSelect = document.querySelector("[data-directory-artist-filter]");
     const stateSelect = document.querySelector("[data-directory-state-filter]");
