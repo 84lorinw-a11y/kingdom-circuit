@@ -86,14 +86,14 @@ def classify(url: str, text: str) -> tuple[bool, str]:
 
     if parts and parts[0] == "artists":
         # Main artist profiles remain strategically indexable even when a show
-        # is not currently listed. Artist/state pages need at least two future
-        # listings to justify a separate search result.
+        # is not currently listed. Artist/state pages become useful search
+        # landing pages as soon as they contain a verified upcoming listing.
         if len(parts) == 2:
             return True, "artist"
         if len(parts) == 3:
             count = event_card_count(text)
-            if count < 2:
-                return False, "thin-artist-state"
+            if count < 1:
+                return False, "empty-artist-state"
             return True, "artist-state"
 
     if parts and parts[0] == "shows":
@@ -104,12 +104,11 @@ def classify(url: str, text: str) -> tuple[bool, str]:
             return True, "show-discovery"
         if leaf.startswith("location-tbd"):
             return False, "location-tbd"
-        # City pages with a single event substantially duplicate the event page.
-        # Keep them useful for navigation, but keep them out of Google's index
-        # until there are at least two upcoming events in that city.
+        # A city page with any verified upcoming show has distinct local-search
+        # value, so keep it indexable. Only empty city pages stay out of Google.
         count = event_card_count(text)
-        if count < 2:
-            return False, "thin-city"
+        if count < 1:
+            return False, "empty-city"
         return True, "city"
 
     # Other real public pages remain indexable unless specifically classified.
