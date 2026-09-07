@@ -34,8 +34,15 @@ def norm(value) -> str:
     return " ".join(str(value or "").strip().casefold().split())
 
 
-def is_bit(event) -> bool:
-    return isinstance(event, dict) and str(event.get("id") or "").startswith("bandsintown:")
+def is_refreshable_bit(event) -> bool:
+    """Return whether Bandsintown still owns the canonical event record.
+
+    Some records retain a Bandsintown ID after official details replace the
+    provider payload. Those higher-authority records must survive refreshes.
+    """
+    if not isinstance(event, dict) or not str(event.get("id") or "").startswith("bandsintown:"):
+        return False
+    return norm(event.get("authority")) in {"", "artist_calendar"}
 
 
 def main() -> int:
@@ -43,8 +50,8 @@ def main() -> int:
     if not isinstance(original, list):
         raise SystemExit("supplemental-events.json must be an array")
 
-    prior_bit = [event for event in original if is_bit(event)]
-    non_bit = [event for event in original if not is_bit(event)]
+    prior_bit = [event for event in original if is_refreshable_bit(event)]
+    non_bit = [event for event in original if not is_refreshable_bit(event)]
 
     # Critical: the collector must not see its own previous Bandsintown rows while
     # deciding whether a fresh Bandsintown event duplicates the established catalog.
@@ -68,8 +75,8 @@ def main() -> int:
         save(SUPPLEMENTAL, original)
         raise SystemExit("Bandsintown refresh produced invalid output")
 
-    fresh_bit = [event for event in refreshed if is_bit(event)]
-    fresh_non_bit = [event for event in refreshed if not is_bit(event)]
+    fresh_bit = [event for event in refreshed if is_refreshable_bit(event)]
+    fresh_non_bit = [event for event in refreshed if not is_refreshable_bit(event)]
 
     # If a specific artist's request failed, keep that artist's last known rows for
     # this run rather than deleting valid shows because of a transient API problem.

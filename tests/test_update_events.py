@@ -846,6 +846,20 @@ class KingdomCircuitV9Tests(unittest.TestCase):
         self.assertEqual(sum(1 for event in events if str(event.get("id", "")).startswith("egr-")), 21)
         self.assertIn("let-the-church-sing-tour-dunedin-2026", ids)
 
+    def test_verified_tommy_zuko_and_yasmine_jinelle_shows_are_durable(self):
+        events = json.loads((ROOT / "config" / "manual-events.json").read_text())
+        uprise = next(event for event in events if event.get("id") == "uprise-festival-2026")
+        tribe_fest = next(event for event in events if event.get("id") == "tribe-fest-rialto-2026")
+
+        self.assertIn("Tommy Zuko", uprise["artists"])
+        self.assertEqual(tribe_fest["artists"], ["Yasmine Jinelle"])
+        self.assertEqual(tribe_fest["startDate"], "2026-09-25")
+        self.assertEqual(tribe_fest["startTime"], "19:00")
+        self.assertEqual(tribe_fest["address"], "625 N Eucalyptus Ave")
+        self.assertEqual(tribe_fest["city"], "Rialto")
+        self.assertEqual(tribe_fest["state"], "CA")
+        self.assertIn("eventbrite.com", tribe_fest["ticketUrl"])
+
     def test_neutral_fallback_replaces_brand_logo(self):
         event = candidate(title="Unknown Image Show", artists=["KB"])
         final = MODULE.finalize_events([event], {}, date(2098, 1, 1))

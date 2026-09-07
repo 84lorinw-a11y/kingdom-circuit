@@ -201,7 +201,8 @@
       "Miles Minnick",
       "1K Phew",
       "Anike",
-      "Kijan Boone"
+      "Kijan Boone",
+      "Tommy Zuko"
     ],
     "headliner": "KB",
     "eventType": "festival",
@@ -215,6 +216,13 @@
       {
         "name": "Uprise Festival official lineup",
         "url": "https://www.uprisefest.com/uprise-2026",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 112
+      },
+      {
+        "name": "Uprise Festival official Tommy Zuko announcement",
+        "url": "https://www.instagram.com/p/DWPoPrBjvJW/",
         "type": "manual_verified",
         "authority": "official_festival",
         "priority": 112
@@ -1053,6 +1061,51 @@
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:tribe-fest-rialto-2026",
+    "title": "Tribe Fest 2026",
+    "startDate": "2026-09-25",
+    "startTime": "19:00",
+    "timezone": "America/Los_Angeles",
+    "venue": "Faith Point Event Center",
+    "address": "625 N Eucalyptus Ave",
+    "city": "Rialto",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Yasmine Jinelle"
+    ],
+    "headliner": "Yasmine Jinelle",
+    "eventType": "festival",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/tribe-fest-2026-tickets-1990697171829",
+    "officialUrl": "https://www.eventbrite.com/e/tribe-fest-2026-tickets-1990697171829",
+    "image": "assets/event-fallback.webp",
+    "price": "",
+    "sourceName": "Tribe Fest official announcement / Eventbrite",
+    "sources": [
+      {
+        "name": "Tribe Fest official Instagram announcement",
+        "url": "https://www.instagram.com/reel/DcwTlx6vABf/",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 112
+      },
+      {
+        "name": "Official Eventbrite ticketing",
+        "url": "https://www.eventbrite.com/e/tribe-fest-2026-tickets-1990697171829",
+        "type": "venue_ticket",
+        "authority": "venue_ticket",
+        "priority": 94
+      }
+    ],
+    "lastVerified": "2026-09-07T16:11:58Z",
+    "confidence": "high",
+    "imageType": "fallback",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-09-07T16:11:58Z"
   },
   {
     "id": "official:95cc80c13713dfecaf6d",

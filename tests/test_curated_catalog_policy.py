@@ -14,6 +14,15 @@ assert SPEC.loader
 sys.modules[SPEC.name] = MODULE
 SPEC.loader.exec_module(MODULE)
 
+REFRESH_SPEC = importlib.util.spec_from_file_location(
+    "run_bandsintown_refresh",
+    ROOT / "scripts" / "run_bandsintown_refresh.py",
+)
+REFRESH_MODULE = importlib.util.module_from_spec(REFRESH_SPEC)
+assert REFRESH_SPEC.loader
+sys.modules[REFRESH_SPEC.name] = REFRESH_MODULE
+REFRESH_SPEC.loader.exec_module(REFRESH_MODULE)
+
 
 class CuratedCatalogPolicyTests(unittest.TestCase):
     def test_unresolved_festival_candidate_is_reported(self):
@@ -92,6 +101,18 @@ class CuratedCatalogPolicyTests(unittest.TestCase):
         )
         self.assertEqual("Silver Spring", event["city"])
         self.assertEqual("MD", event["state"])
+
+    def test_official_event_with_bandsintown_id_is_not_refreshable(self):
+        provider_record = {
+            "id": "bandsintown:108758638",
+            "authority": "artist_calendar",
+        }
+        official_record = {
+            "id": "bandsintown:108758638",
+            "authority": "official_event",
+        }
+        self.assertTrue(REFRESH_MODULE.is_refreshable_bit(provider_record))
+        self.assertFalse(REFRESH_MODULE.is_refreshable_bit(official_record))
 
 
 if __name__ == "__main__":

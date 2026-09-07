@@ -241,14 +241,17 @@ def main() -> int:
     enabled = [a for a in artists if isinstance(a, dict) and a.get("enabled", True) is not False and a.get("name")]
     today = date.today().isoformat()
 
-    # Existing Bandsintown-generated rows are intentionally excluded from the
-    # dedupe baseline. This collector rebuilds those rows from the current
-    # Bandsintown response on every run. Including yesterday's Bandsintown rows
-    # here makes every current row look like a duplicate, then the replacement
-    # step below deletes them all.
+    # Existing provider-owned Bandsintown rows are intentionally excluded from
+    # the dedupe baseline. A record can retain a Bandsintown ID after official
+    # details replace the provider payload, so higher-authority records remain
+    # protected and participate in duplicate detection.
     non_bit = [
         e for e in supplemental
-        if not (isinstance(e, dict) and str(e.get("id") or "").startswith("bandsintown:"))
+        if not (
+            isinstance(e, dict)
+            and str(e.get("id") or "").startswith("bandsintown:")
+            and norm(e.get("authority")) in {"", "artist_calendar"}
+        )
     ]
     published = [e for e in [*events, *non_bit] if isinstance(e, dict)]
 
