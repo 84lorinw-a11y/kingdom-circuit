@@ -87,6 +87,82 @@
     "confidence": "high"
   },
   {
+    "id": "bandsintown:108188679",
+    "title": "Hulvey at Fillmore Silver Spring",
+    "startDate": "2026-09-08",
+    "startTime": "18:30",
+    "timezone": "",
+    "venue": "Fillmore Silver Spring",
+    "address": "8656 Colesville Rd",
+    "city": "Spring Valley",
+    "state": "DC",
+    "country": "US",
+    "artists": [
+      "Hulvey"
+    ],
+    "headliner": "Hulvey",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108188679?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/108188679?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/hulvey.webp",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/108188679?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "108188679",
+    "bandsintownArtistId": "15506918",
+    "bandsintownResolvedName": "Hulvey",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Hulvey"
+  },
+  {
+    "id": "bandsintown:108771984",
+    "title": "RWG TOUR 2026",
+    "startDate": "2026-09-08",
+    "startTime": "08:30",
+    "timezone": "",
+    "venue": "RWG TOUR 2026",
+    "address": "",
+    "city": "Oakland",
+    "state": "ME",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108771984?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.bandsintown.com/e/108771984?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/808-beezy.webp",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/108771984?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "108771984",
+    "bandsintownArtistId": "792282",
+    "bandsintownResolvedName": "808 BEEZY",
+    "bandsintownIdentity": "configured_id",
+    "trackedArtist": "808 BEEZY"
+  },
+  {
     "id": "bandsintown:108772055",
     "title": "RWG TOUR 2026",
     "startDate": "2026-09-09",
@@ -276,6 +352,44 @@
     "trackedArtist": "Kurtis Hoppie"
   },
   {
+    "id": "bandsintown:108790395",
+    "title": "RWG TOUR 2026",
+    "startDate": "2026-09-17",
+    "startTime": "08:15",
+    "timezone": "",
+    "venue": "RWG TOUR 2026",
+    "address": "",
+    "city": "Bunker Hill",
+    "state": "IL",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108790395?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.bandsintown.com/e/108790395?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/808-beezy.webp",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/108790395?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "108790395",
+    "bandsintownArtistId": "792282",
+    "bandsintownResolvedName": "808 BEEZY",
+    "bandsintownIdentity": "configured_id",
+    "trackedArtist": "808 BEEZY"
+  },
+  {
     "id": "bandsintown:108772413",
     "title": "RWG TOUR 2026",
     "startDate": "2026-09-18",
@@ -356,46 +470,24 @@
     "title": "The Genesis Show – All Women's CHH Event",
     "startDate": "2026-09-19",
     "startTime": "16:30",
-    "timezone": "America/New_York",
-    "venue": "The Social House",
+    "timezone": "",
+    "venue": "The Genesis Show – All Women's CHH Event",
     "address": "1098 Green St",
     "city": "Roswell",
     "state": "GA",
     "country": "US",
     "artists": [
-      "Petrina DeLacey",
-      "Queen Lee",
-      "Biancallove",
-      "Joz",
-      "G.E.S.",
-      "yumiya!",
-      "Yasmine Jinelle",
-      "Amarah",
-      "Linga TheBoss",
-      "Lyric The Geenyus",
-      "Afeni",
-      "Alexus Snow",
-      "Neisha Glow"
+      "yumiya!"
     ],
     "headliner": "yumiya!",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://gratedco.ticketspice.com/the-genesis-show-",
-    "officialUrl": "https://gratedco.ticketspice.com/the-genesis-show-",
-    "image": "assets/events/genesis-show-2026-all-women-v3.jpg",
-    "imageType": "event_artwork",
-    "price": "$35 GA / $55 VIP",
-    "lineupExplicit": true,
-    "authority": "official_event",
-    "sourceName": "G Rated Co official ticket page",
+    "ticketUrl": "https://www.bandsintown.com/t/108758638?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/108758638?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/yumiya-primary.jpg",
+    "price": "",
+    "sourceName": "Bandsintown",
     "sources": [
-      {
-        "name": "G Rated Co official ticket page",
-        "url": "https://gratedco.ticketspice.com/the-genesis-show-",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      },
       {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/108758638?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
@@ -404,8 +496,7 @@
         "priority": 74
       }
     ],
-    "confidence": "high",
-    "lastVerified": "2026-09-06T00:00:00Z",
+    "confidence": "medium",
     "bandsintownEventId": "108758638",
     "bandsintownArtistId": "15659763",
     "bandsintownResolvedName": "yumiya!",
@@ -413,14 +504,14 @@
     "trackedArtist": "yumiya!"
   },
   {
-    "id": "bandsintown:108772465",
+    "id": "bandsintown:108772449",
     "title": "RWG TOUR 2026",
     "startDate": "2026-09-21",
-    "startTime": "14:00",
+    "startTime": "09:35",
     "timezone": "",
     "venue": "RWG TOUR 2026",
     "address": "",
-    "city": "Granville",
+    "city": "Dunlap",
     "state": "IL",
     "country": "US",
     "artists": [
@@ -429,22 +520,22 @@
     "headliner": "808 BEEZY",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108772465?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "officialUrl": "https://www.bandsintown.com/e/108772465?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "ticketUrl": "https://www.bandsintown.com/e/108772449?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.bandsintown.com/e/108772449?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
     "image": "assets/artists/808-beezy.webp",
     "price": "",
     "sourceName": "Bandsintown",
     "sources": [
       {
         "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/108772465?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "url": "https://www.bandsintown.com/e/108772449?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
         "type": "bandsintown_rest",
         "authority": "artist_calendar",
         "priority": 74
       }
     ],
     "confidence": "medium",
-    "bandsintownEventId": "108772465",
+    "bandsintownEventId": "108772449",
     "bandsintownArtistId": "792282",
     "bandsintownResolvedName": "808 BEEZY",
     "bandsintownIdentity": "configured_id",
@@ -489,14 +580,14 @@
     "trackedArtist": "808 BEEZY"
   },
   {
-    "id": "bandsintown:108790433",
+    "id": "bandsintown:108772620",
     "title": "RWG TOUR 2026",
-    "startDate": "2026-09-24",
-    "startTime": "14:00",
+    "startDate": "2026-09-23",
+    "startTime": "09:00",
     "timezone": "",
     "venue": "RWG TOUR 2026",
     "address": "",
-    "city": "Kansas",
+    "city": "Elwood",
     "state": "IL",
     "country": "US",
     "artists": [
@@ -505,22 +596,98 @@
     "headliner": "808 BEEZY",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108790433?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "officialUrl": "https://www.bandsintown.com/e/108790433?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "ticketUrl": "https://www.bandsintown.com/e/108772620?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.bandsintown.com/e/108772620?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
     "image": "assets/artists/808-beezy.webp",
     "price": "",
     "sourceName": "Bandsintown",
     "sources": [
       {
         "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/108790433?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "url": "https://www.bandsintown.com/e/108772620?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
         "type": "bandsintown_rest",
         "authority": "artist_calendar",
         "priority": 74
       }
     ],
     "confidence": "medium",
-    "bandsintownEventId": "108790433",
+    "bandsintownEventId": "108772620",
+    "bandsintownArtistId": "792282",
+    "bandsintownResolvedName": "808 BEEZY",
+    "bandsintownIdentity": "configured_id",
+    "trackedArtist": "808 BEEZY"
+  },
+  {
+    "id": "bandsintown:108772712",
+    "title": "RWG TOUR 2026",
+    "startDate": "2026-09-24",
+    "startTime": "11:00",
+    "timezone": "",
+    "venue": "RWG TOUR 2026",
+    "address": "",
+    "city": "Hume",
+    "state": "IL",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108772712?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.bandsintown.com/e/108772712?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/808-beezy.webp",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/108772712?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "108772712",
+    "bandsintownArtistId": "792282",
+    "bandsintownResolvedName": "808 BEEZY",
+    "bandsintownIdentity": "configured_id",
+    "trackedArtist": "808 BEEZY"
+  },
+  {
+    "id": "bandsintown:108772751",
+    "title": "RWG TOUR 2026",
+    "startDate": "2026-09-25",
+    "startTime": "08:45",
+    "timezone": "",
+    "venue": "RWG TOUR 2026",
+    "address": "",
+    "city": "Wellington",
+    "state": "MO",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108772751?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.bandsintown.com/e/108772751?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/808-beezy.webp",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/108772751?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "108772751",
     "bandsintownArtistId": "792282",
     "bandsintownResolvedName": "808 BEEZY",
     "bandsintownIdentity": "configured_id",
@@ -1128,6 +1295,44 @@
     "verifiedVersion": 10,
     "firstSeen": "2026-08-11T22:00:00Z",
     "imageOverride": true
+  },
+  {
+    "id": "bandsintown:1040178082",
+    "title": "Jon Keith at Word of Faith International Christian Center",
+    "startDate": "2026-10-30",
+    "startTime": "18:30",
+    "timezone": "",
+    "venue": "Word of Faith International Christian Center",
+    "address": "20000 W Nine Mile Rd",
+    "city": "Southfield",
+    "state": "MI",
+    "country": "US",
+    "artists": [
+      "Jon Keith"
+    ],
+    "headliner": "Jon Keith",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/1040178082?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.bandsintown.com/e/1040178082?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/jon-keith.webp",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/1040178082?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "1040178082",
+    "bandsintownArtistId": "12604065",
+    "bandsintownResolvedName": "Jon Keith",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Jon Keith"
   },
   {
     "id": "supplemental:skema-boy-2026-11-01-new-york-ny",
