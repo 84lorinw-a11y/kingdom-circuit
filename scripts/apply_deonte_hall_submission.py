@@ -5,6 +5,7 @@ Source-of-truth inputs:
 - Kingdom Circuit Artist Database verified row for Deonte Hall.
 - Artist-submitted Kingdom Circuit show form, with the organizer's Facebook post
   supplied as the official event-details URL.
+- Deonte Hall's official artist site for the public website and artist image.
 
 This guard runs on every production deployment so the verified artist record and
 submitted show survive collector refreshes and roster rebuilds.
@@ -24,6 +25,9 @@ SUPPLEMENTAL_FILE = ROOT / "supplemental-events.json"
 ARTIST_NAME = "Deonte Hall"
 SOURCE_ROSTER_ORDER = 111
 FACEBOOK_EVENT_URL = "https://www.facebook.com/share/p/18y8svvmDm/?mibextid=wwXIfr"
+OFFICIAL_WEBSITE = "https://deontehall.com/"
+OFFICIAL_IMAGE_SOURCE = "https://deontehall.com/index.php/about-deonte/"
+ARTIST_IMAGE = "https://deontehall.com/wp-content/uploads/2017/11/IMG_2799-1.jpg"
 
 ARTIST_RECORD: dict[str, Any] = {
     "name": ARTIST_NAME,
@@ -36,10 +40,14 @@ ARTIST_RECORD: dict[str, Any] = {
     "socialSearchEnabled": True,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": False,
+    "website": OFFICIAL_WEBSITE,
     "instagramProfile": "https://www.instagram.com/deontehall100/",
     "spotifyProfile": "https://open.spotify.com/artist/1o4z5bdBNIeJZGIHeseIhf",
     "youtubeProfile": "https://www.youtube.com/@deontehallofficial",
-    "officialImageSource": "https://www.instagram.com/deontehall100/",
+    "officialImageSource": OFFICIAL_IMAGE_SOURCE,
+    "imageUrl": ARTIST_IMAGE,
+    "imagePosition": "center",
+    "preferArtistImage": True,
     "sourceRegistryVerified": True,
     "sourceRegistryRosterOrder": SOURCE_ROSTER_ORDER,
 }
@@ -52,10 +60,14 @@ VERIFIED_UPDATE: dict[str, Any] = {
     "monitoringPriority": 2,
     "ticketmasterEnabled": False,
     "textMatchEnabled": False,
+    "website": OFFICIAL_WEBSITE,
     "instagramProfile": "https://www.instagram.com/deontehall100/",
     "spotifyProfile": "https://open.spotify.com/artist/1o4z5bdBNIeJZGIHeseIhf",
     "youtubeProfile": "https://www.youtube.com/@deontehallofficial",
-    "officialImageSource": "https://www.instagram.com/deontehall100/",
+    "officialImageSource": OFFICIAL_IMAGE_SOURCE,
+    "imageUrl": ARTIST_IMAGE,
+    "imagePosition": "center",
+    "preferArtistImage": True,
 }
 
 SUBMITTED_EVENT: dict[str, Any] = {
@@ -75,6 +87,9 @@ SUBMITTED_EVENT: dict[str, Any] = {
     "status": "scheduled",
     "ticketUrl": "",
     "officialUrl": FACEBOOK_EVENT_URL,
+    "image": ARTIST_IMAGE,
+    "imageType": "artist",
+    "imagePosition": "center",
     "price": "",
     "sourceName": "Artist-submitted Kingdom Circuit listing",
     "authority": "artist_submission",
@@ -160,7 +175,7 @@ def verify() -> None:
     artist = matches[0]
     if int(artist.get("rosterOrder") or 0) != SOURCE_ROSTER_ORDER:
         raise SystemExit(f"{ARTIST_NAME} roster order is wrong: {artist.get('rosterOrder')}")
-    for field in ("instagramProfile", "spotifyProfile", "youtubeProfile"):
+    for field in ("website", "instagramProfile", "spotifyProfile", "youtubeProfile", "imageUrl"):
         if artist.get(field) != ARTIST_RECORD[field]:
             raise SystemExit(f"{ARTIST_NAME} verified {field} did not persist")
 
@@ -175,6 +190,7 @@ def verify() -> None:
         "venue": "First Presbyterian Church",
         "city": "Battle Creek",
         "state": "MI",
+        "image": ARTIST_IMAGE,
     }
     for field, expected in required.items():
         if show.get(field) != expected:
