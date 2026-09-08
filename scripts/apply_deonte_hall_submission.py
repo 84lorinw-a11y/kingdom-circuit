@@ -6,6 +6,7 @@ Source-of-truth inputs:
 - Artist-submitted Kingdom Circuit show form, with the organizer's Facebook post
   supplied as the official event-details URL.
 - Deonte Hall's official artist site for the public website and artist image.
+- Deonte Hall's Facebook event photo for the submitted show's artwork.
 
 This guard runs on every production deployment so the verified artist record and
 submitted show survive collector refreshes and roster rebuilds.
@@ -20,11 +21,14 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 VERIFIED_UPDATES_FILE = ROOT / "config" / "verified-artist-registry-updates.json"
+EVENTS_FILE = ROOT / "events.json"
 SUPPLEMENTAL_FILE = ROOT / "supplemental-events.json"
 
 ARTIST_NAME = "Deonte Hall"
 SOURCE_ROSTER_ORDER = 111
 FACEBOOK_EVENT_URL = "https://www.facebook.com/share/p/18y8svvmDm/?mibextid=wwXIfr"
+FACEBOOK_ARTWORK_SOURCE = "https://www.facebook.com/deonte.hall.98832/photos/-battle-creek-michigan-im-coming-im-super-thankful-and-humbled-to-announce-that-/2995157700824677/"
+FACEBOOK_ARTWORK_URL = "https://www.facebook.com/photo/download/?fbid=2995157700824677"
 OFFICIAL_WEBSITE = "https://deontehall.com/"
 OFFICIAL_IMAGE_SOURCE = "https://deontehall.com/index.php/about-deonte/"
 ARTIST_IMAGE = "https://deontehall.com/wp-content/uploads/2017/11/IMG_2799-1.jpg"
@@ -87,9 +91,11 @@ SUBMITTED_EVENT: dict[str, Any] = {
     "status": "scheduled",
     "ticketUrl": "",
     "officialUrl": FACEBOOK_EVENT_URL,
-    "image": ARTIST_IMAGE,
-    "imageType": "artist",
+    "image": FACEBOOK_ARTWORK_URL,
+    "imageType": "event_artwork",
     "imagePosition": "center",
+    "imageOverride": True,
+    "imageSource": FACEBOOK_ARTWORK_SOURCE,
     "price": "",
     "sourceName": "Artist-submitted Kingdom Circuit listing",
     "authority": "artist_submission",
@@ -102,7 +108,14 @@ SUBMITTED_EVENT: dict[str, Any] = {
             "type": "artist_submission",
             "authority": "artist_submission",
             "priority": 100,
-        }
+        },
+        {
+            "name": "Deonte Hall Facebook event artwork",
+            "url": FACEBOOK_ARTWORK_SOURCE,
+            "type": "manual_verified",
+            "authority": "artist_submission",
+            "priority": 100,
+        },
     ],
 }
 
@@ -123,6 +136,18 @@ def load_array(path: Path) -> list[dict[str, Any]]:
 
 def save_array(path: Path, value: list[dict[str, Any]]) -> None:
     path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def is_submitted_show_collision(event: dict[str, Any]) -> bool:
+    if str(event.get("startDate") or "") != SUBMITTED_EVENT["startDate"]:
+        return False
+    if norm(event.get("city")) != "battle creek":
+        return False
+    event_artists = {norm(name) for name in event.get("artists", [])}
+    return (
+        norm(event.get("title")) == norm(SUBMITTED_EVENT["title"])
+        or norm(ARTIST_NAME) in event_artists
+    )
 
 
 def patch_verified_updates() -> None:
@@ -151,10 +176,18 @@ def patch_artists() -> None:
 
 
 def patch_submitted_event() -> None:
+    # Remove any collected/provider version of this same show. Otherwise the
+    # site's merge step can keep that record's generic/search URL instead of the
+    # artist-submitted Facebook source.
+    events = load_array(EVENTS_FILE)
+    events = [event for event in events if not is_submitted_show_collision(event)]
+    save_array(EVENTS_FILE, events)
+
     supplemental = load_array(SUPPLEMENTAL_FILE)
     supplemental = [
         event for event in supplemental
         if str(event.get("id") or "") != SUBMITTED_EVENT["id"]
+        and not is_submitted_show_collision(event)
     ]
     supplemental.append(dict(SUBMITTED_EVENT))
     supplemental.sort(
@@ -179,6 +212,11 @@ def verify() -> None:
         if artist.get(field) != ARTIST_RECORD[field]:
             raise SystemExit(f"{ARTIST_NAME} verified {field} did not persist")
 
+    events = load_array(EVENTS_FILE)
+    collisions = [event for event in events if is_submitted_show_collision(event)]
+    if collisions:
+        raise SystemExit(f"Collected duplicate Deonte Hall event still present: {collisions}")
+
     supplemental = load_array(SUPPLEMENTAL_FILE)
     shows = [event for event in supplemental if str(event.get("id") or "") == SUBMITTED_EVENT["id"]]
     if len(shows) != 1:
@@ -190,7 +228,10 @@ def verify() -> None:
         "venue": "First Presbyterian Church",
         "city": "Battle Creek",
         "state": "MI",
-        "image": ARTIST_IMAGE,
+        "officialUrl": FACEBOOK_EVENT_URL,
+        "image": FACEBOOK_ARTWORK_URL,
+        "imageType": "event_artwork",
+        "imageSource": FACEBOOK_ARTWORK_SOURCE,
     }
     for field, expected in required.items():
         if show.get(field) != expected:
@@ -202,7 +243,7 @@ def main() -> int:
     patch_artists()
     patch_submitted_event()
     verify()
-    print("Deonte Hall verified artist record and submitted Battle Creek show applied.")
+    print("Deonte Hall Facebook event link and artwork applied to submitted Battle Creek show.")
     return 0
 
 
