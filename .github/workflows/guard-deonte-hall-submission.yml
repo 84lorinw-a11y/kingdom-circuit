@@ -41,9 +41,8 @@ jobs:
           from pathlib import Path
 
           expected_id = "submitted:deonte-hall-truth-in-action-battle-creek-2026"
-          expected_post = "https://www.facebook.com/share/p/18y8svvmDm/?mibextid=wwXIfr"
-          expected_artwork = "https://www.facebook.com/photo/download/?fbid=2995157700824677"
-          expected_source = "https://www.facebook.com/deonte.hall.98832/photos/-battle-creek-michigan-im-coming-im-super-thankful-and-humbled-to-announce-that-/2995157700824677/"
+          expected_post = "https://www.facebook.com/deonte.hall.98832/photos/-battle-creek-michigan-im-coming-im-super-thankful-and-humbled-to-announce-that-/2995157700824677/"
+          expected_artwork = "assets/events/deonte-hall-truth-in-action-2026.webp"
 
           supplemental = json.loads(Path("supplemental-events.json").read_text(encoding="utf-8"))
           matches = [event for event in supplemental if event.get("id") == expected_id]
@@ -51,10 +50,12 @@ jobs:
           event = matches[0]
           assert event.get("officialUrl") == expected_post, event
           assert event.get("image") == expected_artwork, event
-          assert event.get("imageSource") == expected_source, event
+          assert event.get("imageSource") == expected_post, event
+          assert event.get("address") == "111 Capital Ave NE", event
           assert event.get("imageOverride") is True, event
           assert event.get("imageType") == "event_artwork", event
-          print("Deonte Hall official Facebook link and event artwork are protected.")
+          assert Path(expected_artwork).is_file(), expected_artwork
+          print("Deonte Hall direct Facebook details and supplied flyer are protected.")
           PY
 
       - name: Save corrected Deonte Hall data
