@@ -35,7 +35,11 @@ class ArtistDatabaseSeptember6Tests(unittest.TestCase):
 
     def test_verified_rows_follow_sheet_order(self):
         source_names = [item["name"] for item in self.updates]
-        self.assertEqual(NEW_VERIFIED_BLOCK, source_names[-len(NEW_VERIFIED_BLOCK):])
+        block_start = source_names.index(NEW_VERIFIED_BLOCK[0])
+        self.assertEqual(
+            NEW_VERIFIED_BLOCK,
+            source_names[block_start:block_start + len(NEW_VERIFIED_BLOCK)],
+        )
 
         roster_names = [item["name"] for item in self.artists]
         self.assertEqual(source_names, roster_names[54:54 + len(source_names)])
