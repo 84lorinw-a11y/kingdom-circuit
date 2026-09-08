@@ -1,16 +1,5 @@
 #!/usr/bin/env python3
-"""Keep Deonte Hall's verified artist record and submitted Battle Creek show live.
-
-Source-of-truth inputs:
-- Kingdom Circuit Artist Database verified row for Deonte Hall.
-- Artist-submitted Kingdom Circuit show form, with the organizer's Facebook post
-  supplied as the official event-details URL.
-- Deonte Hall's official artist site for the public website and artist image.
-- Deonte Hall's Facebook event photo for the submitted show's artwork.
-
-This guard runs on every production deployment so the verified artist record and
-submitted show survive collector refreshes and roster rebuilds.
-"""
+"""Keep Deonte Hall's verified artist record and submitted Battle Creek show live."""
 
 from __future__ import annotations
 
@@ -26,9 +15,9 @@ SUPPLEMENTAL_FILE = ROOT / "supplemental-events.json"
 
 ARTIST_NAME = "Deonte Hall"
 SOURCE_ROSTER_ORDER = 111
-FACEBOOK_EVENT_URL = "https://www.facebook.com/share/p/18y8svvmDm/?mibextid=wwXIfr"
-FACEBOOK_ARTWORK_SOURCE = "https://www.facebook.com/deonte.hall.98832/photos/-battle-creek-michigan-im-coming-im-super-thankful-and-humbled-to-announce-that-/2995157700824677/"
-FACEBOOK_ARTWORK_URL = "https://www.facebook.com/photo/download/?fbid=2995157700824677"
+FACEBOOK_EVENT_URL = "https://www.facebook.com/deonte.hall.98832/photos/-battle-creek-michigan-im-coming-im-super-thankful-and-humbled-to-announce-that-/2995157700824677/"
+FACEBOOK_ARTWORK_SOURCE = FACEBOOK_EVENT_URL
+FACEBOOK_ARTWORK_URL = "assets/events/deonte-hall-truth-in-action-2026.webp"
 OFFICIAL_WEBSITE = "https://deontehall.com/"
 OFFICIAL_IMAGE_SOURCE = "https://deontehall.com/index.php/about-deonte/"
 ARTIST_IMAGE = "https://deontehall.com/wp-content/uploads/2017/11/IMG_2799-1.jpg"
@@ -81,7 +70,7 @@ SUBMITTED_EVENT: dict[str, Any] = {
     "startTime": "18:00",
     "timezone": "America/Detroit",
     "venue": "First Presbyterian Church",
-    "address": "",
+    "address": "111 Capital Ave NE",
     "city": "Battle Creek",
     "state": "MI",
     "country": "US",
@@ -110,7 +99,7 @@ SUBMITTED_EVENT: dict[str, Any] = {
             "priority": 100,
         },
         {
-            "name": "Deonte Hall Facebook event artwork",
+            "name": "Deonte Hall supplied event artwork",
             "url": FACEBOOK_ARTWORK_SOURCE,
             "type": "manual_verified",
             "authority": "artist_submission",
@@ -153,12 +142,8 @@ def is_submitted_show_collision(event: dict[str, Any]) -> bool:
 def patch_verified_updates() -> None:
     updates = load_array(VERIFIED_UPDATES_FILE)
     updates = [item for item in updates if norm(item.get("name")) != norm(ARTIST_NAME)]
-
-    # Position 111 is intentionally between the verified Neisha Glow row and
-    # the existing Alex Jean roster entry in the Artist Database ordering.
     if any(int(item.get("rosterOrder") or 0) == SOURCE_ROSTER_ORDER for item in updates):
         raise SystemExit(f"Verified registry roster position {SOURCE_ROSTER_ORDER} is already occupied")
-
     updates.append(dict(VERIFIED_UPDATE))
     updates.sort(key=lambda item: (int(item.get("rosterOrder") or 99999), norm(item.get("name"))))
     save_array(VERIFIED_UPDATES_FILE, updates)
@@ -167,7 +152,6 @@ def patch_verified_updates() -> None:
 def patch_artists() -> None:
     artists = load_array(ARTISTS_FILE)
     artists = [item for item in artists if norm(item.get("name")) != norm(ARTIST_NAME)]
-
     insert_at = min(max(SOURCE_ROSTER_ORDER - 1, 0), len(artists))
     artists.insert(insert_at, dict(ARTIST_RECORD))
     for index, artist in enumerate(artists, 1):
@@ -176,9 +160,6 @@ def patch_artists() -> None:
 
 
 def patch_submitted_event() -> None:
-    # Remove any collected/provider version of this same show. Otherwise the
-    # site's merge step can keep that record's generic/search URL instead of the
-    # artist-submitted Facebook source.
     events = load_array(EVENTS_FILE)
     events = [event for event in events if not is_submitted_show_collision(event)]
     save_array(EVENTS_FILE, events)
@@ -226,6 +207,7 @@ def verify() -> None:
         "startDate": "2026-09-12",
         "startTime": "18:00",
         "venue": "First Presbyterian Church",
+        "address": "111 Capital Ave NE",
         "city": "Battle Creek",
         "state": "MI",
         "officialUrl": FACEBOOK_EVENT_URL,
@@ -243,7 +225,7 @@ def main() -> int:
     patch_artists()
     patch_submitted_event()
     verify()
-    print("Deonte Hall Facebook event link and artwork applied to submitted Battle Creek show.")
+    print("Deonte Hall direct Facebook details and supplied event flyer applied.")
     return 0
 
 
