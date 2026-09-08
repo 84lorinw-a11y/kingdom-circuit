@@ -70,6 +70,9 @@ jobs:
       - name: Apply verified live artist overrides
         run: python scripts/apply_live_artist_overrides.py --source .
 
+      - name: Restore Deonte Hall artist-submitted show
+        run: python scripts/apply_deonte_hall_submission.py
+
       - name: Restore runtime-only source configuration
         if: github.event_name != 'push' || contains(github.event.head_commit.message, '[full scan]')
         run: git checkout -- config/official-sources.json
@@ -131,6 +134,7 @@ jobs:
           test -s scripts/prune_past_events.py
           test -s scripts/apply_priority_source_fallbacks.py
           test -s scripts/apply_sevin_official_schedule.py
+          test -s scripts/apply_deonte_hall_submission.py
           test -s scripts/scan_all_artist_sources.py
           test -s scripts/finalize_seo_indexing.py
           test -s _seo_source/scripts/apply_test_overlay.py
@@ -281,6 +285,17 @@ jobs:
               raise SystemExit("supplemental-events.json is not a JSON array")
           if not isinstance(status, dict):
               raise SystemExit("run-status.json is not a JSON object")
+
+          deonte_id = "submitted:deonte-hall-truth-in-action-battle-creek-2026"
+          deonte_post = "https://www.facebook.com/share/p/18y8svvmDm/?mibextid=wwXIfr"
+          deonte_artwork = "https://www.facebook.com/photo/download/?fbid=2995157700824677"
+          deonte = [event for event in supplemental if event.get("id") == deonte_id]
+          if len(deonte) != 1:
+              raise SystemExit("Deonte Hall submitted show missing from deployment artifact")
+          if deonte[0].get("officialUrl") != deonte_post:
+              raise SystemExit("Deonte Hall official Facebook post is incorrect")
+          if deonte[0].get("image") != deonte_artwork or deonte[0].get("imageOverride") is not True:
+              raise SystemExit("Deonte Hall event artwork is incorrect")
 
           required = [
               "index.html",
