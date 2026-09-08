@@ -41,6 +41,44 @@
     ]
   },
   {
+    "id": "bandsintown:108771984",
+    "title": "RWG TOUR 2026",
+    "startDate": "2026-09-08",
+    "startTime": "08:30",
+    "timezone": "",
+    "venue": "RWG TOUR 2026",
+    "address": "",
+    "city": "Oakland",
+    "state": "ME",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108771984?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.bandsintown.com/e/108771984?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/808-beezy.webp",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/108771984?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "108771984",
+    "bandsintownArtistId": "792282",
+    "bandsintownResolvedName": "808 BEEZY",
+    "bandsintownIdentity": "configured_id",
+    "trackedArtist": "808 BEEZY"
+  },
+  {
     "id": "manual:hulvey-could-be-tonight-silver-spring-2026",
     "title": "Hulvey - Could Be Tonight Tour",
     "startDate": "2026-09-08",
@@ -85,44 +123,6 @@
       }
     ],
     "confidence": "high"
-  },
-  {
-    "id": "bandsintown:108771984",
-    "title": "RWG TOUR 2026",
-    "startDate": "2026-09-08",
-    "startTime": "08:30",
-    "timezone": "",
-    "venue": "RWG TOUR 2026",
-    "address": "",
-    "city": "Oakland",
-    "state": "ME",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108771984?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "officialUrl": "https://www.bandsintown.com/e/108771984?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/808-beezy.webp",
-    "price": "",
-    "sourceName": "Bandsintown",
-    "sources": [
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/108771984?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "108771984",
-    "bandsintownArtistId": "792282",
-    "bandsintownResolvedName": "808 BEEZY",
-    "bandsintownIdentity": "configured_id",
-    "trackedArtist": "808 BEEZY"
   },
   {
     "id": "bandsintown:108772055",
@@ -274,6 +274,52 @@
     "bandsintownResolvedName": "Issac Mansfield",
     "bandsintownIdentity": "exact_name_or_alias",
     "trackedArtist": "Issac Mansfield"
+  },
+  {
+    "id": "submitted:deonte-hall-truth-in-action-battle-creek-2026",
+    "title": "Truth in Action First Annual Gospel Music Concert",
+    "startDate": "2026-09-12",
+    "startTime": "18:00",
+    "timezone": "America/Detroit",
+    "venue": "First Presbyterian Church",
+    "address": "",
+    "city": "Battle Creek",
+    "state": "MI",
+    "country": "US",
+    "artists": [
+      "Deonte Hall"
+    ],
+    "headliner": "Deonte Hall",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "",
+    "officialUrl": "https://www.facebook.com/share/p/18y8svvmDm/?mibextid=wwXIfr",
+    "image": "https://www.facebook.com/photo/download/?fbid=2995157700824677",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "https://www.facebook.com/deonte.hall.98832/photos/-battle-creek-michigan-im-coming-im-super-thankful-and-humbled-to-announce-that-/2995157700824677/",
+    "price": "",
+    "sourceName": "Artist-submitted Kingdom Circuit listing",
+    "authority": "artist_submission",
+    "confidence": "high",
+    "lineupExplicit": false,
+    "sources": [
+      {
+        "name": "Deonte Hall submission to Kingdom Circuit",
+        "url": "https://www.facebook.com/share/p/18y8svvmDm/?mibextid=wwXIfr",
+        "type": "artist_submission",
+        "authority": "artist_submission",
+        "priority": 100
+      },
+      {
+        "name": "Deonte Hall Facebook event artwork",
+        "url": "https://www.facebook.com/deonte.hall.98832/photos/-battle-creek-michigan-im-coming-im-super-thankful-and-humbled-to-announce-that-/2995157700824677/",
+        "type": "manual_verified",
+        "authority": "artist_submission",
+        "priority": 100
+      }
+    ]
   },
   {
     "id": "bandsintown:108847077",
@@ -964,6 +1010,29 @@
     ]
   },
   {
+    "id": "mike-teezy-hrvstland-festival-2026",
+    "title": "HRVSTLAND Festival 2026",
+    "startDate": "2026-10-24",
+    "startTime": "",
+    "venue": "Steele Creek Church",
+    "address": "",
+    "city": "Charlotte",
+    "state": "NC",
+    "artists": [
+      "Mike Teezy"
+    ],
+    "headliner": "Mike Teezy",
+    "eventType": "festival",
+    "ticketUrl": "https://www.bandsintown.com/f/231374",
+    "officialUrl": "https://www.bandsintown.com/f/231374",
+    "image": "",
+    "price": "",
+    "status": "scheduled",
+    "lineupExplicit": true,
+    "authority": "artist_calendar",
+    "sourceName": "Mike Teezy verified Bandsintown / HRVSTLAND listing"
+  },
+  {
     "id": "bandsintown:108144023",
     "title": "GODLY AMBITION TOUR — HOUSTON, TX",
     "startDate": "2026-10-24",
@@ -1000,29 +1069,6 @@
     "bandsintownResolvedName": "RUSLAN",
     "bandsintownIdentity": "exact_name_or_alias",
     "trackedArtist": "Ruslan"
-  },
-  {
-    "id": "mike-teezy-hrvstland-festival-2026",
-    "title": "HRVSTLAND Festival 2026",
-    "startDate": "2026-10-24",
-    "startTime": "",
-    "venue": "Steele Creek Church",
-    "address": "",
-    "city": "Charlotte",
-    "state": "NC",
-    "artists": [
-      "Mike Teezy"
-    ],
-    "headliner": "Mike Teezy",
-    "eventType": "festival",
-    "ticketUrl": "https://www.bandsintown.com/f/231374",
-    "officialUrl": "https://www.bandsintown.com/f/231374",
-    "image": "",
-    "price": "",
-    "status": "scheduled",
-    "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "sourceName": "Mike Teezy verified Bandsintown / HRVSTLAND listing"
   },
   {
     "id": "sevin-live-nashville-2026-10-24",
@@ -1066,6 +1112,43 @@
     ]
   },
   {
+    "id": "supplemental:tru-serva-truth-tour-las-cruces-2026",
+    "title": "The Truth Tour — Las Cruces",
+    "startDate": "2026-10-25",
+    "startTime": "",
+    "timezone": "America/Denver",
+    "venue": "Real Life Church",
+    "address": "",
+    "city": "Las Cruces",
+    "state": "NM",
+    "country": "US",
+    "artists": [
+      "TRU-SERVA"
+    ],
+    "headliner": "TRU-SERVA",
+    "eventType": "concert",
+    "status": "onsale",
+    "ticketUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
+    "officialUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebb5bd510760cb418516ded933",
+    "imageType": "artist_photo",
+    "imagePosition": "center",
+    "price": "$10",
+    "sourceName": "Megan Woods official tour announcement",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Megan Woods official tour announcement",
+        "url": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ]
+  },
+  {
     "id": "bandsintown:108144061",
     "title": "GODLY AMBITION TOUR — DALLAS, TX",
     "startDate": "2026-10-25",
@@ -1102,43 +1185,6 @@
     "bandsintownResolvedName": "RUSLAN",
     "bandsintownIdentity": "exact_name_or_alias",
     "trackedArtist": "Ruslan"
-  },
-  {
-    "id": "supplemental:tru-serva-truth-tour-las-cruces-2026",
-    "title": "The Truth Tour — Las Cruces",
-    "startDate": "2026-10-25",
-    "startTime": "",
-    "timezone": "America/Denver",
-    "venue": "Real Life Church",
-    "address": "",
-    "city": "Las Cruces",
-    "state": "NM",
-    "country": "US",
-    "artists": [
-      "TRU-SERVA"
-    ],
-    "headliner": "TRU-SERVA",
-    "eventType": "concert",
-    "status": "onsale",
-    "ticketUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
-    "officialUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
-    "image": "https://i.scdn.co/image/ab6761610000e5ebb5bd510760cb418516ded933",
-    "imageType": "artist_photo",
-    "imagePosition": "center",
-    "price": "$10",
-    "sourceName": "Megan Woods official tour announcement",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Megan Woods official tour announcement",
-        "url": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ]
   },
   {
     "id": "supplemental:skema-boy-2026-10-27-chicago-il",
