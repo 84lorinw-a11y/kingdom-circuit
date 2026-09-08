@@ -35,27 +35,37 @@ jobs:
           from pathlib import Path
           import urllib.request
 
-          source = "https://www.facebook.com/photo/download/?fbid=2995157700824677"
+          sources = [
+              "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=2995157700824677",
+              "https://graph.facebook.com/2995157700824677/picture?type=large",
+              "https://www.facebook.com/photo/download/?fbid=2995157700824677",
+          ]
           target = Path("assets/events/deonte-hall-truth-in-action-2026.jpg")
-          request = urllib.request.Request(
-              source,
-              headers={
-                  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140 Safari/537.36",
-                  "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-              },
-          )
-          try:
-              with urllib.request.urlopen(request, timeout=30) as response:
-                  data = response.read()
-              valid = data.startswith(b"\xff\xd8\xff") or data.startswith(b"\x89PNG") or data.startswith(b"RIFF")
-              if not valid or len(data) < 5000:
-                  raise RuntimeError(f"Facebook returned non-image payload ({len(data)} bytes)")
-              target.write_bytes(data)
-              print(f"Saved official Facebook event artwork: {len(data)} bytes")
-          except Exception as exc:
+          last_error = None
+          for source in sources:
+              request = urllib.request.Request(
+                  source,
+                  headers={
+                      "User-Agent": "facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)",
+                      "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+                  },
+              )
+              try:
+                  with urllib.request.urlopen(request, timeout=30) as response:
+                      data = response.read()
+                  valid = data.startswith(b"\xff\xd8\xff") or data.startswith(b"\x89PNG") or data.startswith(b"RIFF")
+                  if not valid or len(data) < 5000:
+                      raise RuntimeError(f"non-image payload ({len(data)} bytes)")
+                  target.write_bytes(data)
+                  print(f"Saved official Facebook event artwork from {source}: {len(data)} bytes")
+                  break
+              except Exception as exc:
+                  last_error = exc
+                  print(f"Artwork candidate failed: {source}: {exc}")
+          else:
               if not target.exists() or target.stat().st_size < 5000:
-                  raise
-              print(f"Facebook image refresh unavailable; retaining verified local artwork: {exc}")
+                  raise RuntimeError(f"Unable to retrieve official Facebook artwork: {last_error}")
+              print(f"Facebook refresh unavailable; retaining verified local artwork ({target.stat().st_size} bytes)")
           PY
 
       - name: Make local artwork the permanent event image
