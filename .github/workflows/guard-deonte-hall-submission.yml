@@ -1,0 +1,110 @@
+name: Guard Deonte Hall submitted show
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deonte-hall-submission-guard
+  cancel-in-progress: true
+
+jobs:
+  enforce:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out production repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Persist Deonte Hall official event artwork locally
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/events
+          python - <<'PY'
+          from pathlib import Path
+          import urllib.request
+
+          source = "https://www.facebook.com/photo/download/?fbid=2995157700824677"
+          target = Path("assets/events/deonte-hall-truth-in-action-2026.jpg")
+          request = urllib.request.Request(
+              source,
+              headers={
+                  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140 Safari/537.36",
+                  "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+              },
+          )
+          try:
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  data = response.read()
+              valid = data.startswith(b"\xff\xd8\xff") or data.startswith(b"\x89PNG") or data.startswith(b"RIFF")
+              if not valid or len(data) < 5000:
+                  raise RuntimeError(f"Facebook returned non-image payload ({len(data)} bytes)")
+              target.write_bytes(data)
+              print(f"Saved official Facebook event artwork: {len(data)} bytes")
+          except Exception as exc:
+              if not target.exists() or target.stat().st_size < 5000:
+                  raise
+              print(f"Facebook image refresh unavailable; retaining verified local artwork: {exc}")
+          PY
+
+      - name: Make local artwork the permanent event image
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path("scripts/apply_deonte_hall_submission.py")
+          text = path.read_text(encoding="utf-8")
+          remote = 'FACEBOOK_ARTWORK_URL = "https://www.facebook.com/photo/download/?fbid=2995157700824677"'
+          local = 'FACEBOOK_ARTWORK_URL = "assets/events/deonte-hall-truth-in-action-2026.jpg"'
+          if remote in text:
+              text = text.replace(remote, local)
+              path.write_text(text, encoding="utf-8")
+          elif local not in text:
+              raise SystemExit("Deonte artwork constant not found")
+          PY
+
+      - name: Apply and verify Deonte Hall submission
+        run: |
+          python scripts/apply_deonte_hall_submission.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          expected_id = "submitted:deonte-hall-truth-in-action-battle-creek-2026"
+          expected_post = "https://www.facebook.com/share/p/18y8svvmDm/?mibextid=wwXIfr"
+          expected_image = "assets/events/deonte-hall-truth-in-action-2026.jpg"
+          events = json.loads(Path("supplemental-events.json").read_text(encoding="utf-8"))
+          matches = [e for e in events if e.get("id") == expected_id]
+          assert len(matches) == 1, matches
+          event = matches[0]
+          assert event.get("officialUrl") == expected_post, event
+          assert event.get("image") == expected_image, event
+          assert event.get("imageOverride") is True, event
+          assert Path(expected_image).is_file() and Path(expected_image).stat().st_size >= 5000
+          print("Verified Deonte Hall official Facebook post and local event artwork.")
+          PY
+
+      - name: Commit corrected source data
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- scripts/apply_deonte_hall_submission.py supplemental-events.json events.json config/artists.json config/verified-artist-registry-updates.json assets/events/deonte-hall-truth-in-action-2026.jpg
+          if git diff --cached --quiet; then
+            echo "Deonte Hall submission already correct."
+            exit 0
+          fi
+          git commit -m "fix: persist Deonte Hall Facebook details"
+          git pull --rebase origin main
+          git push origin HEAD:main
