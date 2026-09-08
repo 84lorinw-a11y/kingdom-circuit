@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-09-06T18:06:41Z",
-  "artistsChecked": 339,
+  "generatedAt": "2026-09-08T15:21:33Z",
+  "artistsChecked": 340,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
   "festivalCandidates": 0,
   "bandsintown": {
-    "artistsAttempted": 339,
+    "artistsAttempted": 340,
     "resolved": 0,
     "eventsFound": 0
   },
   "songkick": {
-    "artistsAttempted": 339,
+    "artistsAttempted": 340,
     "resolved": 0,
-    "blockedByRobots": 339,
+    "blockedByRobots": 340,
     "eventsFound": 0
   },
   "sourceStatusCounts": {
-    "failed": 346,
-    "blocked_by_robots": 345,
-    "no_events": 133
+    "failed": 347,
+    "blocked_by_robots": 346,
+    "no_events": 135
   },
   "newEvents": [],
   "sourceResults": [
@@ -98,7 +98,7 @@
     {
       "artist": "Caleb Gordon",
       "source": "official website",
-      "url": "https://tprlive.co/collections/caleb-gordon-the-eden-experience?srsltid=AfmBOopZ8_u8FLIHQ5yFrnTJVHrJfOAqo32_-Zgy_D3D76qo031L04Ge",
+      "url": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
       "status": "no_events",
       "eventsFound": 0
     },
@@ -2410,6 +2410,33 @@
       "artist": "Neisha Glow",
       "source": "Spotify profile",
       "url": "https://open.spotify.com/artist/4VwM177wgcyEEDgKuuAhDz",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Deonte Hall",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Deonte+Hall: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Deonte Hall",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Deonte Hall",
+      "source": "official website",
+      "url": "https://deontehall.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Deonte Hall",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/1o4z5bdBNIeJZGIHeseIhf",
       "status": "no_events",
       "eventsFound": 0
     },

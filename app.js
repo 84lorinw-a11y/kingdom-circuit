@@ -124,6 +124,7 @@ const ARTIST_ROSTER_ORDER = [
   "Alexus Snow",
   "Neisha Glow",
   "Alex Jean",
+  "Deonte Hall",
   "gio.",
   "Torey D'Shaun",
   "Redimi2",
@@ -1667,6 +1668,19 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/4VwM177wgcyEEDgKuuAhDz",
     "youtubeProfile": "https://www.youtube.com/@neishaglow/videos",
     "officialImageSource": "https://www.instagram.com/neishaglow/",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true
+  },
+  "deonte hall": {
+    "aliases": [
+      "Deonte Hall"
+    ],
+    "website": "https://deontehall.com/",
+    "instagramProfile": "https://www.instagram.com/deontehall100/",
+    "spotifyProfile": "https://open.spotify.com/artist/1o4z5bdBNIeJZGIHeseIhf",
+    "youtubeProfile": "https://www.youtube.com/@deontehallofficial",
+    "officialImageSource": "https://deontehall.com/index.php/about-deonte/",
+    "imageUrl": "https://deontehall.com/wp-content/uploads/2017/11/IMG_2799-1.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
