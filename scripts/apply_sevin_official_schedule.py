@@ -210,8 +210,10 @@ def main() -> int:
     # artist portraits, event artwork, and confirmed support lineups cannot
     # regress on a scheduled refresh.
     from apply_verified_content_overrides import main as apply_verified_content_overrides
+    from apply_deonte_hall_submission import main as apply_deonte_hall_submission
 
     apply_verified_content_overrides()
+    apply_deonte_hall_submission()
 
     print(
         f"Sevin schedule normalized from HOG MOB: removed {removed} malformed/duplicate collected record(s); "
