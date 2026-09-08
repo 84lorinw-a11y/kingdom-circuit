@@ -3,6 +3,9 @@ name: Guard Deonte Hall submitted show
 on:
   push:
     branches: [main]
+  workflow_run:
+    workflows: ["Update and deploy show calendar"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -14,11 +17,13 @@ concurrency:
 
 jobs:
   enforce:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: Check out production repository
         uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
 
       - name: Set up Python
@@ -26,174 +31,43 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Persist Deonte Hall official event artwork locally
-        shell: bash
+      - name: Restore Deonte Hall verified submission
+        run: python scripts/apply_deonte_hall_submission.py
+
+      - name: Verify official Facebook details
         run: |
-          set -euo pipefail
-          mkdir -p assets/events
-          python - <<'PY'
-          from pathlib import Path
-          from html.parser import HTMLParser
-          from urllib.parse import urlparse
-          import html
-          import re
-          import urllib.request
-
-          source_pages = [
-              "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=2995157700824677",
-              "https://www.facebook.com/deonte.hall.98832/photos/-battle-creek-michigan-im-coming-im-super-thankful-and-humbled-to-announce-that-/2995157700824677/",
-              "https://www.facebook.com/photo/download/?fbid=2995157700824677",
-          ]
-          target = Path("assets/events/deonte-hall-truth-in-action-2026.jpg")
-
-          def request_bytes(url, *, image=False):
-              headers = {
-                  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140 Safari/537.36",
-                  "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8" if image else "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-                  "Accept-Language": "en-US,en;q=0.9",
-              }
-              req = urllib.request.Request(url, headers=headers)
-              with urllib.request.urlopen(req, timeout=30) as response:
-                  return response.read(), response.geturl(), response.headers.get("Content-Type", "")
-
-          def is_image(data):
-              return (
-                  data.startswith(b"\xff\xd8\xff")
-                  or data.startswith(b"\x89PNG")
-                  or data.startswith(b"RIFF")
-                  or data.startswith(b"GIF8")
-              ) and len(data) >= 5000
-
-          class MetaImageParser(HTMLParser):
-              def __init__(self):
-                  super().__init__()
-                  self.urls = []
-              def handle_starttag(self, tag, attrs):
-                  if tag.lower() != "meta":
-                      return
-                  d = {str(k).lower(): v for k, v in attrs if k}
-                  key = (d.get("property") or d.get("name") or "").lower()
-                  if key in {"og:image", "og:image:url", "twitter:image", "twitter:image:src"} and d.get("content"):
-                      self.urls.append(d["content"])
-
-          def embedded_image_urls(data):
-              text = data.decode("utf-8", errors="ignore")
-              normalized = html.unescape(text).replace(r"\/", "/").replace(r"\u0026", "&").replace(r"\u003d", "=")
-              parser = MetaImageParser()
-              try:
-                  parser.feed(normalized)
-              except Exception:
-                  pass
-              raw_urls = list(parser.urls)
-              raw_urls += re.findall(r'https?://[^"\'<>\s]+', normalized)
-
-              seen = set()
-              ranked = []
-              for candidate in raw_urls:
-                  candidate = html.unescape(candidate).replace(r"\/", "/").replace(r"\u0026", "&")
-                  candidate = candidate.rstrip('\\,;)]}')
-                  if candidate in seen:
-                      continue
-                  seen.add(candidate)
-                  host = urlparse(candidate).netloc.lower()
-                  score = 0
-                  if candidate in parser.urls:
-                      score += 100
-                  if any(token in host for token in ("scontent", "fbcdn", "fbsbx")):
-                      score += 50
-                  if any(token in candidate.lower() for token in ("2995157700824677", "stp=dst-jpg", "dst-jpg", ".jpg", ".jpeg", ".webp", ".png")):
-                      score += 20
-                  if score:
-                      ranked.append((score, candidate))
-              ranked.sort(key=lambda item: item[0], reverse=True)
-              return [candidate for _, candidate in ranked]
-
-          errors = []
-          saved = False
-          for source in source_pages:
-              try:
-                  data, resolved, content_type = request_bytes(source)
-                  if is_image(data):
-                      target.write_bytes(data)
-                      print(f"Saved official event artwork directly from {resolved}: {len(data)} bytes")
-                      saved = True
-                      break
-
-                  candidates = embedded_image_urls(data)
-                  print(f"Found {len(candidates)} embedded Facebook image candidates from {source}")
-                  for candidate in candidates[:40]:
-                      try:
-                          image_data, resolved_image, image_type = request_bytes(candidate, image=True)
-                          if not is_image(image_data):
-                              continue
-                          target.write_bytes(image_data)
-                          print(f"Saved official event artwork from embedded Facebook image {resolved_image}: {len(image_data)} bytes ({image_type})")
-                          saved = True
-                          break
-                      except Exception as exc:
-                          errors.append(f"embedded {candidate[:120]}: {exc}")
-                  if saved:
-                      break
-              except Exception as exc:
-                  errors.append(f"source {source}: {exc}")
-
-          if not saved:
-              if target.exists() and target.stat().st_size >= 5000:
-                  print(f"Facebook refresh unavailable; retaining verified local artwork ({target.stat().st_size} bytes)")
-              else:
-                  print("Recent artwork retrieval errors:")
-                  for error in errors[-10:]:
-                      print(error)
-                  raise RuntimeError("Unable to retrieve official Deonte Hall Facebook artwork")
-          PY
-
-      - name: Make local artwork the permanent event image
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          path = Path("scripts/apply_deonte_hall_submission.py")
-          text = path.read_text(encoding="utf-8")
-          remote = 'FACEBOOK_ARTWORK_URL = "https://www.facebook.com/photo/download/?fbid=2995157700824677"'
-          local = 'FACEBOOK_ARTWORK_URL = "assets/events/deonte-hall-truth-in-action-2026.jpg"'
-          if remote in text:
-              text = text.replace(remote, local)
-              path.write_text(text, encoding="utf-8")
-          elif local not in text:
-              raise SystemExit("Deonte artwork constant not found")
-          PY
-
-      - name: Apply and verify Deonte Hall submission
-        run: |
-          python scripts/apply_deonte_hall_submission.py
           python - <<'PY'
           import json
           from pathlib import Path
 
           expected_id = "submitted:deonte-hall-truth-in-action-battle-creek-2026"
           expected_post = "https://www.facebook.com/share/p/18y8svvmDm/?mibextid=wwXIfr"
-          expected_image = "assets/events/deonte-hall-truth-in-action-2026.jpg"
-          events = json.loads(Path("supplemental-events.json").read_text(encoding="utf-8"))
-          matches = [e for e in events if e.get("id") == expected_id]
+          expected_artwork = "https://www.facebook.com/photo/download/?fbid=2995157700824677"
+          expected_source = "https://www.facebook.com/deonte.hall.98832/photos/-battle-creek-michigan-im-coming-im-super-thankful-and-humbled-to-announce-that-/2995157700824677/"
+
+          supplemental = json.loads(Path("supplemental-events.json").read_text(encoding="utf-8"))
+          matches = [event for event in supplemental if event.get("id") == expected_id]
           assert len(matches) == 1, matches
           event = matches[0]
           assert event.get("officialUrl") == expected_post, event
-          assert event.get("image") == expected_image, event
+          assert event.get("image") == expected_artwork, event
+          assert event.get("imageSource") == expected_source, event
           assert event.get("imageOverride") is True, event
-          assert Path(expected_image).is_file() and Path(expected_image).stat().st_size >= 5000
-          print("Verified Deonte Hall official Facebook post and local event artwork.")
+          assert event.get("imageType") == "event_artwork", event
+          print("Deonte Hall official Facebook link and event artwork are protected.")
           PY
 
-      - name: Commit corrected source data
+      - name: Save corrected Deonte Hall data
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "kingdom-circuit-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- scripts/apply_deonte_hall_submission.py supplemental-events.json events.json config/artists.json config/verified-artist-registry-updates.json assets/events/deonte-hall-truth-in-action-2026.jpg
+          git add -- supplemental-events.json events.json config/artists.json config/verified-artist-registry-updates.json
           if git diff --cached --quiet; then
-            echo "Deonte Hall submission already correct."
+            echo "Deonte Hall listing already correct."
             exit 0
           fi
-          git commit -m "fix: persist Deonte Hall Facebook details"
+          git commit -m "fix: restore Deonte Hall official show details"
           git pull --rebase origin main
           git push origin HEAD:main
