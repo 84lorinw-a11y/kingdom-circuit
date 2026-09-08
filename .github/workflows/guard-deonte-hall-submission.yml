@@ -33,39 +33,118 @@ jobs:
           mkdir -p assets/events
           python - <<'PY'
           from pathlib import Path
+          from html.parser import HTMLParser
+          from urllib.parse import urlparse
+          import html
+          import re
           import urllib.request
 
-          sources = [
+          source_pages = [
               "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=2995157700824677",
-              "https://graph.facebook.com/2995157700824677/picture?type=large",
+              "https://www.facebook.com/deonte.hall.98832/photos/-battle-creek-michigan-im-coming-im-super-thankful-and-humbled-to-announce-that-/2995157700824677/",
               "https://www.facebook.com/photo/download/?fbid=2995157700824677",
           ]
           target = Path("assets/events/deonte-hall-truth-in-action-2026.jpg")
-          last_error = None
-          for source in sources:
-              request = urllib.request.Request(
-                  source,
-                  headers={
-                      "User-Agent": "facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)",
-                      "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-                  },
-              )
+
+          def request_bytes(url, *, image=False):
+              headers = {
+                  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140 Safari/537.36",
+                  "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8" if image else "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+                  "Accept-Language": "en-US,en;q=0.9",
+              }
+              req = urllib.request.Request(url, headers=headers)
+              with urllib.request.urlopen(req, timeout=30) as response:
+                  return response.read(), response.geturl(), response.headers.get("Content-Type", "")
+
+          def is_image(data):
+              return (
+                  data.startswith(b"\xff\xd8\xff")
+                  or data.startswith(b"\x89PNG")
+                  or data.startswith(b"RIFF")
+                  or data.startswith(b"GIF8")
+              ) and len(data) >= 5000
+
+          class MetaImageParser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.urls = []
+              def handle_starttag(self, tag, attrs):
+                  if tag.lower() != "meta":
+                      return
+                  d = {str(k).lower(): v for k, v in attrs if k}
+                  key = (d.get("property") or d.get("name") or "").lower()
+                  if key in {"og:image", "og:image:url", "twitter:image", "twitter:image:src"} and d.get("content"):
+                      self.urls.append(d["content"])
+
+          def embedded_image_urls(data):
+              text = data.decode("utf-8", errors="ignore")
+              normalized = html.unescape(text).replace(r"\/", "/").replace(r"\u0026", "&").replace(r"\u003d", "=")
+              parser = MetaImageParser()
               try:
-                  with urllib.request.urlopen(request, timeout=30) as response:
-                      data = response.read()
-                  valid = data.startswith(b"\xff\xd8\xff") or data.startswith(b"\x89PNG") or data.startswith(b"RIFF")
-                  if not valid or len(data) < 5000:
-                      raise RuntimeError(f"non-image payload ({len(data)} bytes)")
-                  target.write_bytes(data)
-                  print(f"Saved official Facebook event artwork from {source}: {len(data)} bytes")
-                  break
+                  parser.feed(normalized)
+              except Exception:
+                  pass
+              raw_urls = list(parser.urls)
+              raw_urls += re.findall(r'https?://[^"\'<>\s]+', normalized)
+
+              seen = set()
+              ranked = []
+              for candidate in raw_urls:
+                  candidate = html.unescape(candidate).replace(r"\/", "/").replace(r"\u0026", "&")
+                  candidate = candidate.rstrip('\\,;)]}')
+                  if candidate in seen:
+                      continue
+                  seen.add(candidate)
+                  host = urlparse(candidate).netloc.lower()
+                  score = 0
+                  if candidate in parser.urls:
+                      score += 100
+                  if any(token in host for token in ("scontent", "fbcdn", "fbsbx")):
+                      score += 50
+                  if any(token in candidate.lower() for token in ("2995157700824677", "stp=dst-jpg", "dst-jpg", ".jpg", ".jpeg", ".webp", ".png")):
+                      score += 20
+                  if score:
+                      ranked.append((score, candidate))
+              ranked.sort(key=lambda item: item[0], reverse=True)
+              return [candidate for _, candidate in ranked]
+
+          errors = []
+          saved = False
+          for source in source_pages:
+              try:
+                  data, resolved, content_type = request_bytes(source)
+                  if is_image(data):
+                      target.write_bytes(data)
+                      print(f"Saved official event artwork directly from {resolved}: {len(data)} bytes")
+                      saved = True
+                      break
+
+                  candidates = embedded_image_urls(data)
+                  print(f"Found {len(candidates)} embedded Facebook image candidates from {source}")
+                  for candidate in candidates[:40]:
+                      try:
+                          image_data, resolved_image, image_type = request_bytes(candidate, image=True)
+                          if not is_image(image_data):
+                              continue
+                          target.write_bytes(image_data)
+                          print(f"Saved official event artwork from embedded Facebook image {resolved_image}: {len(image_data)} bytes ({image_type})")
+                          saved = True
+                          break
+                      except Exception as exc:
+                          errors.append(f"embedded {candidate[:120]}: {exc}")
+                  if saved:
+                      break
               except Exception as exc:
-                  last_error = exc
-                  print(f"Artwork candidate failed: {source}: {exc}")
-          else:
-              if not target.exists() or target.stat().st_size < 5000:
-                  raise RuntimeError(f"Unable to retrieve official Facebook artwork: {last_error}")
-              print(f"Facebook refresh unavailable; retaining verified local artwork ({target.stat().st_size} bytes)")
+                  errors.append(f"source {source}: {exc}")
+
+          if not saved:
+              if target.exists() and target.stat().st_size >= 5000:
+                  print(f"Facebook refresh unavailable; retaining verified local artwork ({target.stat().st_size} bytes)")
+              else:
+                  print("Recent artwork retrieval errors:")
+                  for error in errors[-10:]:
+                      print(error)
+                  raise RuntimeError("Unable to retrieve official Deonte Hall Facebook artwork")
           PY
 
       - name: Make local artwork the permanent event image
