@@ -88,6 +88,14 @@ class ArtistDatabaseSeptember9Tests(unittest.TestCase):
         self.assertFalse(artists["tylerhateslife"].get("socialSearchEnabled"))
         self.assertEqual(artists["tylerhateslife"].get("activeStatus"), "legacy")
 
+    def test_deonte_hall_remains_immediately_before_the_new_block(self):
+        artists = {item["name"].casefold(): item for item in self.artists}
+        updates = {item["name"].casefold(): item for item in self.updates}
+        self.assertEqual(artists["deonte hall"]["rosterOrder"], 110)
+        self.assertEqual(updates["deonte hall"]["rosterOrder"], 110)
+        submission_script = (ROOT / "scripts" / "apply_deonte_hall_submission.py").read_text()
+        self.assertIn("SOURCE_ROSTER_ORDER = 110", submission_script)
+
     def test_verified_calendar_coverage_is_configured(self):
         updates = {item["name"]: item for item in self.updates}
         with_bandsintown = {

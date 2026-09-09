@@ -14,7 +14,7 @@ EVENTS_FILE = ROOT / "events.json"
 SUPPLEMENTAL_FILE = ROOT / "supplemental-events.json"
 
 ARTIST_NAME = "Deonte Hall"
-SOURCE_ROSTER_ORDER = 111
+SOURCE_ROSTER_ORDER = 110
 FACEBOOK_EVENT_URL = "https://www.facebook.com/deonte.hall.98832/photos/-battle-creek-michigan-im-coming-im-super-thankful-and-humbled-to-announce-that-/2995157700824677/"
 FACEBOOK_ARTWORK_SOURCE = FACEBOOK_EVENT_URL
 FACEBOOK_ARTWORK_URL = "assets/events/deonte-hall-truth-in-action-2026.webp"

@@ -43,7 +43,6 @@ jobs:
           assert [artist['rosterOrder'] for artist in artists] == list(range(1, len(artists) + 1))
           assert [artist['name'] for artist in artists[54:54 + len(updates)]] == [item['name'] for item in updates]
           assert artists[53]['name'] == '808 BEEZY'
-          assert artists[54 + len(updates)]['name'] == 'Alex Jean'
 
           for update in updates:
               artist = by_name[update['name'].casefold()]

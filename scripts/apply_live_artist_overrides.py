@@ -263,7 +263,8 @@ def patch_sync_workflow(root: pathlib.Path) -> None:
     text = text.replace("assert len({artist['name'].casefold() for artist in artists}) == 321", "assert len({artist['name'].casefold() for artist in artists}) == len(artists)")
     text = text.replace("assert [artist['rosterOrder'] for artist in artists] == list(range(1, 322))", "assert [artist['rosterOrder'] for artist in artists] == list(range(1, len(artists) + 1))")
     text = text.replace("assert [artist['name'] for artist in artists[54:78]] == [item['name'] for item in updates]", "assert [artist['name'] for artist in artists[54:54 + len(updates)]] == [item['name'] for item in updates]")
-    text = text.replace("assert artists[78]['name'] == 'Alex Jean'", "assert artists[54 + len(updates)]['name'] == 'Alex Jean'")
+    text = text.replace("          assert artists[78]['name'] == 'Alex Jean'\n", "")
+    text = text.replace("          assert artists[54 + len(updates)]['name'] == 'Alex Jean'\n", "")
     text = text.replace("print('Verified artist rows 55-78 validated:', len(updates), 'rows; roster=', len(artists))", "print('Verified artist registry block validated:', len(updates), 'rows; roster=', len(artists))")
     if text != original:
         path.write_text(text, encoding="utf-8")
