@@ -30,6 +30,7 @@ class BuildSiteTests(unittest.TestCase):
                 "name": "KB",
                 "aliases": ["KB"],
                 "enabled": True,
+                "rosterOrder": 1,
                 "category": "core",
                 "label": "HGA Music",
                 "officialProfile": "https://www.whoiskb.com/",
@@ -39,6 +40,7 @@ class BuildSiteTests(unittest.TestCase):
                 "name": "Hulvey",
                 "aliases": ["Hulvey"],
                 "enabled": True,
+                "rosterOrder": 2,
                 "category": "reach",
             },
         ]
@@ -121,6 +123,12 @@ class BuildSiteTests(unittest.TestCase):
         self.assertTrue((output / "submit" / "index.html").exists())
         self.assertTrue((output / "states" / "south-dakota" / "index.html").exists())
         self.assertTrue(any((output / "shows").glob("*/index.html")))
+
+    def test_artist_directory_preserves_roster_order(self):
+        output = self.root / "_site"
+        MODULE.generate_site(output, today=date(2026, 8, 13))
+        directory = (output / "artists" / "index.html").read_text()
+        self.assertLess(directory.index("/artists/kb/"), directory.index("/artists/hulvey/"))
 
     def test_homepage_uses_exact_mission_and_no_start_here_label(self):
         output = self.root / "_site"

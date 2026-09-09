@@ -261,7 +261,18 @@ def build_artist_records(
                 }
             by_name[name]["events"].append(event)
 
-    records = sorted(by_name.values(), key=lambda item: item["name"].casefold())
+    # Keep the canonical spreadsheet roster order in both the server-rendered
+    # directory and the client-rendered directory. Event-only provisional
+    # performers follow the roster alphabetically.
+    records = sorted(
+        by_name.values(),
+        key=lambda item: (
+            item.get("rosterOrder")
+            if isinstance(item.get("rosterOrder"), int) and item["rosterOrder"] > 0
+            else 99999,
+            item["name"].casefold(),
+        ),
+    )
     return records
 
 

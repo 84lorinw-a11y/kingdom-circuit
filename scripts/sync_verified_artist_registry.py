@@ -13,7 +13,7 @@ import re
 from pathlib import Path
 from urllib.parse import urlparse
 
-SYNC_VERSION = 5
+SYNC_VERSION = 6
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 UPDATES_FILE = ROOT / "config" / "verified-artist-registry-updates.json"
@@ -111,14 +111,14 @@ def sync_config() -> tuple[list[dict], list[dict], int]:
             "name", "aliases", "category", "monitoringPriority", "ticketmasterEnabled",
             "textMatchEnabled", "website", "instagramProfile", "spotifyProfile",
             "youtubeProfile", "officialImageSource", "imageUrl", "imagePosition",
-            "state", "bandsintownProfile",
+            "state", "label", "bandsintownProfile", "socialSearchEnabled", "activeStatus",
         ):
             if field in update and target.get(field) != update[field]:
                 target[field] = update[field]
                 changed += 1
         for field, value in {
             "enabled": True,
-            "socialSearchEnabled": True,
+            "socialSearchEnabled": bool(update.get("socialSearchEnabled", True)),
             "activeStatus": target.get("activeStatus") or "active_or_unknown",
             "sourceRegistryVerified": True,
             "sourceRegistryRosterOrder": int(update.get("rosterOrder") or 0),
@@ -193,6 +193,7 @@ def registry_payload(update: dict) -> dict:
         "imageUrl": update.get("imageUrl") or "",
         "imagePosition": update.get("imagePosition") or "",
         "state": update.get("state") or "",
+        "label": update.get("label") or "",
         "sourceRegistryVerified": True,
     }
     return {key: value for key, value in payload.items() if value not in ("", None, []) or key == "sourceRegistryVerified"}
