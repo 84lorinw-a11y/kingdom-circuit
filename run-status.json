@@ -1,10 +1,10 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-09-08T15:10:00Z",
-  "lastSuccessfulUpdate": "2026-09-08T15:10:00Z",
-  "eventsPublished": 65,
-  "candidatesCollected": 141,
+  "lastAttempt": "2026-09-09T15:08:54Z",
+  "lastSuccessfulUpdate": "2026-09-09T15:08:54Z",
+  "eventsPublished": 58,
+  "candidatesCollected": 138,
   "artistsConfigured": 340,
   "artistsByPriority": {
     "priority1": 102,
@@ -16,7 +16,7 @@
   "freeTextAliasesProtected": 133,
   "artistsMatchedOnTicketmaster": 70,
   "officialEventsFound": 56,
-  "ticketmasterEventsFound": 36,
+  "ticketmasterEventsFound": 33,
   "instagramArtistsConfigured": 156,
   "instagramQueriesRun": 158,
   "instagramQueriesAttempted": 156,
@@ -195,7 +195,7 @@
     {
       "name": "Reach Records consolidated calendar",
       "status": "ok",
-      "eventsFound": 17
+      "eventsFound": 16
     },
     {
       "name": "Reach Records - 1K Phew",
@@ -220,7 +220,7 @@
     {
       "name": "Reach Records - Hulvey",
       "status": "ok",
-      "eventsFound": 3
+      "eventsFound": 2
     },
     {
       "name": "Reach Records - Jackie Hill Perry",
@@ -425,12 +425,12 @@
     {
       "name": "ChristianHits consolidated show feed",
       "status": "ok",
-      "eventsFound": 2
+      "eventsFound": 3
     },
     {
       "name": "ChristianHits festival directory",
       "status": "ok",
-      "eventsFound": 2
+      "eventsFound": 3
     },
     {
       "name": "Konnect Concert Series - Space City Church",
@@ -657,9 +657,5 @@
     "Anike Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4673148-anike: HTTP Error 403: Forbidden"
   ],
   "errors": [],
-  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings.",
-  "artistWebsiteEventsFound": 0,
-  "artistWebsiteSeedEvents": 17,
-  "artistWebsiteEventsAdded": 17,
-  "artistWebsiteMergeAt": "2026-09-08T15:24:55Z"
+  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings."
 }
