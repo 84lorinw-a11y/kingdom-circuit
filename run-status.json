@@ -1,10 +1,10 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-09-09T15:08:54Z",
-  "lastSuccessfulUpdate": "2026-09-09T15:08:54Z",
-  "eventsPublished": 63,
-  "candidatesCollected": 138,
+  "lastAttempt": "2026-09-10T00:36:35Z",
+  "lastSuccessfulUpdate": "2026-09-10T00:36:35Z",
+  "eventsPublished": 60,
+  "candidatesCollected": 141,
   "artistsConfigured": 340,
   "artistsByPriority": {
     "priority1": 102,
@@ -12,14 +12,14 @@
     "priority3": 105
   },
   "ticketmasterArtistsEnabled": 209,
-  "socialSearchArtistsEnabled": 156,
-  "freeTextAliasesProtected": 133,
+  "socialSearchArtistsEnabled": 157,
+  "freeTextAliasesProtected": 134,
   "artistsMatchedOnTicketmaster": 70,
   "officialEventsFound": 56,
   "ticketmasterEventsFound": 33,
-  "instagramArtistsConfigured": 156,
-  "instagramQueriesRun": 158,
-  "instagramQueriesAttempted": 156,
+  "instagramArtistsConfigured": 157,
+  "instagramQueriesRun": 159,
+  "instagramQueriesAttempted": 157,
   "instagramResultsFound": 0,
   "instagramEventsFound": 0,
   "instagramCandidates": [
@@ -49,7 +49,7 @@
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 292,
+  "sourcesChecked": 293,
   "unmatchedArtists": [
     "Scootie Wop",
     "Mike Malagies",
@@ -71,14 +71,14 @@
     "Stixx aka Conejo",
     "yumiya!",
     "Linga TheBoss",
-    "Pregador Luo",
     "Sondae",
     "Kieran the Light",
     "Childlike CiCi",
     "Eluzai",
-    "EmanuelDaProphet",
-    "Red Tips",
     "Mogli the Iceburg",
+    "EmanuelDaProphet",
+    "Pregador Luo",
+    "Red Tips",
     "Tommy Royale",
     "Ty Brasel",
     "J. Monty",
@@ -626,8 +626,8 @@
       "name": "Instagram public announcement scan",
       "status": "ok",
       "eventsFound": 0,
-      "artistsChecked": 156,
-      "queriesRun": 158
+      "artistsChecked": 157,
+      "queriesRun": 159
     }
   ],
   "warningCount": 22,
@@ -657,9 +657,5 @@
     "Anike Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4673148-anike: HTTP Error 403: Forbidden"
   ],
   "errors": [],
-  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings.",
-  "artistWebsiteEventsFound": 0,
-  "artistWebsiteSeedEvents": 17,
-  "artistWebsiteEventsAdded": 15,
-  "artistWebsiteMergeAt": "2026-09-09T15:23:31Z"
+  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings."
 }

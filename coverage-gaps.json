@@ -1,6 +1,6 @@
 {
   "policyVersion": 6,
-  "generatedAt": "2026-09-09T15:20:30Z",
+  "generatedAt": "2026-09-10T00:48:43Z",
   "highRiskArtists": [],
   "mediumRiskArtists": [
     {
@@ -129,30 +129,10 @@
       "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
     },
     {
-      "artist": "Redimi2",
-      "healthyDedicatedSources": [],
-      "failedDedicatedSources": [
-        "Redimi2 Bandsintown public calendar"
-      ],
-      "ticketmasterUnmatched": false,
-      "ticketmasterFailed": false,
-      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
-    },
-    {
       "artist": "GRITS",
       "healthyDedicatedSources": [],
       "failedDedicatedSources": [
         "GRITS Bandsintown public calendar"
-      ],
-      "ticketmasterUnmatched": false,
-      "ticketmasterFailed": false,
-      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
-    },
-    {
-      "artist": "Funky",
-      "healthyDedicatedSources": [],
-      "failedDedicatedSources": [
-        "Funky Bandsintown public calendar"
       ],
       "ticketmasterUnmatched": false,
       "ticketmasterFailed": false,
@@ -203,14 +183,6 @@
       "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
     },
     {
-      "artist": "Pregador Luo",
-      "healthyDedicatedSources": [],
-      "failedDedicatedSources": [],
-      "ticketmasterUnmatched": true,
-      "ticketmasterFailed": false,
-      "reason": "No Ticketmaster match and no healthy dedicated artist calendar was recorded in the latest run."
-    },
-    {
       "artist": "Sondae",
       "healthyDedicatedSources": [],
       "failedDedicatedSources": [],
@@ -253,6 +225,14 @@
       "reason": "No Ticketmaster match and no healthy dedicated artist calendar was recorded in the latest run."
     },
     {
+      "artist": "Mogli the Iceburg",
+      "healthyDedicatedSources": [],
+      "failedDedicatedSources": [],
+      "ticketmasterUnmatched": true,
+      "ticketmasterFailed": false,
+      "reason": "No Ticketmaster match and no healthy dedicated artist calendar was recorded in the latest run."
+    },
+    {
       "artist": "EmanuelDaProphet",
       "healthyDedicatedSources": [],
       "failedDedicatedSources": [],
@@ -261,7 +241,27 @@
       "reason": "No Ticketmaster match and no healthy dedicated artist calendar was recorded in the latest run."
     },
     {
-      "artist": "Red Tips",
+      "artist": "Redimi2",
+      "healthyDedicatedSources": [],
+      "failedDedicatedSources": [
+        "Redimi2 Bandsintown public calendar"
+      ],
+      "ticketmasterUnmatched": false,
+      "ticketmasterFailed": false,
+      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
+    },
+    {
+      "artist": "Funky",
+      "healthyDedicatedSources": [],
+      "failedDedicatedSources": [
+        "Funky Bandsintown public calendar"
+      ],
+      "ticketmasterUnmatched": false,
+      "ticketmasterFailed": false,
+      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
+    },
+    {
+      "artist": "Pregador Luo",
       "healthyDedicatedSources": [],
       "failedDedicatedSources": [],
       "ticketmasterUnmatched": true,
@@ -269,7 +269,7 @@
       "reason": "No Ticketmaster match and no healthy dedicated artist calendar was recorded in the latest run."
     },
     {
-      "artist": "Mogli the Iceburg",
+      "artist": "Red Tips",
       "healthyDedicatedSources": [],
       "failedDedicatedSources": [],
       "ticketmasterUnmatched": true,
