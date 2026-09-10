@@ -41,52 +41,6 @@
     ]
   },
   {
-    "id": "manual:hulvey-could-be-tonight-silver-spring-2026",
-    "title": "Hulvey - Could Be Tonight Tour",
-    "startDate": "2026-09-08",
-    "startTime": "19:00",
-    "timezone": "America/New_York",
-    "venue": "The Fillmore Silver Spring",
-    "address": "8656 Colesville Rd",
-    "city": "Silver Spring",
-    "state": "MD",
-    "country": "US",
-    "artists": [
-      "Hulvey",
-      "indie tribe.",
-      "Kijan Boone"
-    ],
-    "headliner": "Hulvey",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.ticketmaster.com/hulvey-could-be-tonight-tour-silver-spring-maryland-09-08-2026/event/1500647FE337D3A1",
-    "officialUrl": "https://www.livenation.com/event/1AvfZ_6GkTNuWC-/hulvey-could-be-tonight-tour",
-    "image": "assets/artists/hulvey.webp",
-    "imageType": "artist",
-    "imagePosition": "50% 30%",
-    "price": "",
-    "lineupExplicit": true,
-    "authority": "official_event",
-    "sourceName": "Live Nation official event",
-    "sources": [
-      {
-        "name": "Live Nation official event",
-        "url": "https://www.livenation.com/event/1AvfZ_6GkTNuWC-/hulvey-could-be-tonight-tour",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      },
-      {
-        "name": "Ticketmaster official ticketing",
-        "url": "https://www.ticketmaster.com/hulvey-could-be-tonight-tour-silver-spring-maryland-09-08-2026/event/1500647FE337D3A1",
-        "type": "venue_ticket",
-        "authority": "venue_ticket",
-        "priority": 94
-      }
-    ],
-    "confidence": "high"
-  },
-  {
     "id": "supplemental:marty-project-nation-kuna-2026",
     "title": "An Evening with Project Nation (ft. Marty from Social Club Misfits)",
     "startDate": "2026-09-10",
@@ -264,7 +218,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
     "officialUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
-    "image": "assets/artists/yung-kriss-event-card.svg",
+    "image": "",
     "price": "",
     "sourceName": "Official Eventbrite listing",
     "authority": "venue_ticket",
@@ -278,46 +232,7 @@
         "authority": "venue_ticket",
         "priority": 94
       }
-    ],
-    "imageType": "artist"
-  },
-  {
-    "id": "bandsintown:108847077",
-    "title": "Holy Nights Tour- Yucca Valley, CA",
-    "startDate": "2026-09-16",
-    "startTime": "18:30",
-    "timezone": "",
-    "venue": "Holy Nights Tour- Yucca Valley, CA",
-    "address": "57373 Joshua Ln",
-    "city": "Yucca Valley",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "Kurtis Hoppie"
-    ],
-    "headliner": "Kurtis Hoppie",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108847077?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/108847077?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/kurtis-hoppie.webp",
-    "price": "",
-    "sourceName": "Bandsintown",
-    "sources": [
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/108847077?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "108847077",
-    "bandsintownArtistId": "15395568",
-    "bandsintownResolvedName": "Kurtis Hoppie",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Kurtis Hoppie"
+    ]
   },
   {
     "id": "bandsintown:108879559",
@@ -356,6 +271,44 @@
     "bandsintownResolvedName": "808 BEEZY",
     "bandsintownIdentity": "configured_id",
     "trackedArtist": "808 BEEZY"
+  },
+  {
+    "id": "bandsintown:108847077",
+    "title": "Holy Nights Tour- Yucca Valley, CA",
+    "startDate": "2026-09-16",
+    "startTime": "18:30",
+    "timezone": "",
+    "venue": "Holy Nights Tour- Yucca Valley, CA",
+    "address": "57373 Joshua Ln",
+    "city": "Yucca Valley",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Kurtis Hoppie"
+    ],
+    "headliner": "Kurtis Hoppie",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108847077?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/108847077?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/kurtis-hoppie.webp",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/108847077?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "108847077",
+    "bandsintownArtistId": "15395568",
+    "bandsintownResolvedName": "Kurtis Hoppie",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Kurtis Hoppie"
   },
   {
     "id": "bandsintown:108790395",
@@ -434,42 +387,6 @@
     "trackedArtist": "808 BEEZY"
   },
   {
-    "id": "eventbrite:gracefest-lecrae-castaic-2026",
-    "title": "GRACEFEST 2026",
-    "startDate": "2026-09-19",
-    "startTime": "13:30",
-    "timezone": "America/Los_Angeles",
-    "venue": "Castaic Lake State Recreation Area",
-    "address": "Castaic Lake Drive",
-    "city": "Castaic",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "Lecrae"
-    ],
-    "headliner": "Lecrae",
-    "eventType": "festival",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-    "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-    "image": "assets/artists/lecrae-event-card.svg",
-    "price": "",
-    "sourceName": "Official Eventbrite listing",
-    "authority": "official_festival",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Official Eventbrite listing",
-        "url": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-        "type": "eventbrite",
-        "authority": "official_festival",
-        "priority": 104
-      }
-    ],
-    "imageType": "artist"
-  },
-  {
     "id": "eventbrite:hip-hop-in-the-park-cortland-2026",
     "title": "Hip Hop in the Park",
     "startDate": "2026-09-19",
@@ -490,7 +407,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
     "officialUrl": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
-    "image": "assets/artists/datin-event-card.svg",
+    "image": "",
     "price": "Free",
     "sourceName": "Official Eventbrite listing",
     "authority": "venue_ticket",
@@ -504,8 +421,42 @@
         "authority": "venue_ticket",
         "priority": 94
       }
+    ]
+  },
+  {
+    "id": "eventbrite:gracefest-lecrae-castaic-2026",
+    "title": "GRACEFEST 2026",
+    "startDate": "2026-09-19",
+    "startTime": "13:30",
+    "timezone": "America/Los_Angeles",
+    "venue": "Castaic Lake State Recreation Area",
+    "address": "Castaic Lake Drive",
+    "city": "Castaic",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Lecrae"
     ],
-    "imageType": "artist"
+    "headliner": "Lecrae",
+    "eventType": "festival",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+    "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+    "image": "",
+    "price": "",
+    "sourceName": "Official Eventbrite listing",
+    "authority": "official_festival",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+        "type": "eventbrite",
+        "authority": "official_festival",
+        "priority": 104
+      }
+    ]
   },
   {
     "id": "bandsintown:108847305",
@@ -990,7 +941,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
     "officialUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
-    "image": "assets/artists/aasha-marie-event-card.svg",
+    "image": "",
     "price": "",
     "sourceName": "Official Eventbrite listing",
     "authority": "venue_ticket",
@@ -1004,8 +955,7 @@
         "authority": "venue_ticket",
         "priority": 94
       }
-    ],
-    "imageType": "artist"
+    ]
   },
   {
     "id": "bandsintown:108773288",
@@ -1103,7 +1053,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
     "officialUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
-    "image": "assets/artists/rare-of-breed-event-card.svg",
+    "image": "assets/artists/rare-of-breed-primary.jpg",
+    "imageType": "artist",
     "price": "",
     "sourceName": "Official Eventbrite listing",
     "authority": "venue_ticket",
@@ -1117,8 +1068,7 @@
         "authority": "venue_ticket",
         "priority": 94
       }
-    ],
-    "imageType": "artist"
+    ]
   },
   {
     "id": "supplemental:brenno-overflow-conference-2026",
@@ -1153,6 +1103,29 @@
         "priority": 100
       }
     ]
+  },
+  {
+    "id": "mike-teezy-hrvstland-festival-2026",
+    "title": "HRVSTLAND Festival 2026",
+    "startDate": "2026-10-24",
+    "startTime": "",
+    "venue": "Steele Creek Church",
+    "address": "",
+    "city": "Charlotte",
+    "state": "NC",
+    "artists": [
+      "Mike Teezy"
+    ],
+    "headliner": "Mike Teezy",
+    "eventType": "festival",
+    "ticketUrl": "https://www.bandsintown.com/f/231374",
+    "officialUrl": "https://www.bandsintown.com/f/231374",
+    "image": "",
+    "price": "",
+    "status": "scheduled",
+    "lineupExplicit": true,
+    "authority": "artist_calendar",
+    "sourceName": "Mike Teezy verified Bandsintown / HRVSTLAND listing"
   },
   {
     "id": "bandsintown:108144023",
@@ -1191,29 +1164,6 @@
     "bandsintownResolvedName": "RUSLAN",
     "bandsintownIdentity": "exact_name_or_alias",
     "trackedArtist": "Ruslan"
-  },
-  {
-    "id": "mike-teezy-hrvstland-festival-2026",
-    "title": "HRVSTLAND Festival 2026",
-    "startDate": "2026-10-24",
-    "startTime": "",
-    "venue": "Steele Creek Church",
-    "address": "",
-    "city": "Charlotte",
-    "state": "NC",
-    "artists": [
-      "Mike Teezy"
-    ],
-    "headliner": "Mike Teezy",
-    "eventType": "festival",
-    "ticketUrl": "https://www.bandsintown.com/f/231374",
-    "officialUrl": "https://www.bandsintown.com/f/231374",
-    "image": "",
-    "price": "",
-    "status": "scheduled",
-    "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "sourceName": "Mike Teezy verified Bandsintown / HRVSTLAND listing"
   },
   {
     "id": "sevin-live-nashville-2026-10-24",
@@ -1257,6 +1207,43 @@
     ]
   },
   {
+    "id": "supplemental:tru-serva-truth-tour-las-cruces-2026",
+    "title": "The Truth Tour — Las Cruces",
+    "startDate": "2026-10-25",
+    "startTime": "",
+    "timezone": "America/Denver",
+    "venue": "Real Life Church",
+    "address": "",
+    "city": "Las Cruces",
+    "state": "NM",
+    "country": "US",
+    "artists": [
+      "TRU-SERVA"
+    ],
+    "headliner": "TRU-SERVA",
+    "eventType": "concert",
+    "status": "onsale",
+    "ticketUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
+    "officialUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebb5bd510760cb418516ded933",
+    "imageType": "artist_photo",
+    "imagePosition": "center",
+    "price": "$10",
+    "sourceName": "Megan Woods official tour announcement",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Megan Woods official tour announcement",
+        "url": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ]
+  },
+  {
     "id": "bandsintown:108144061",
     "title": "GODLY AMBITION TOUR — DALLAS, TX",
     "startDate": "2026-10-25",
@@ -1293,43 +1280,6 @@
     "bandsintownResolvedName": "RUSLAN",
     "bandsintownIdentity": "exact_name_or_alias",
     "trackedArtist": "Ruslan"
-  },
-  {
-    "id": "supplemental:tru-serva-truth-tour-las-cruces-2026",
-    "title": "The Truth Tour — Las Cruces",
-    "startDate": "2026-10-25",
-    "startTime": "",
-    "timezone": "America/Denver",
-    "venue": "Real Life Church",
-    "address": "",
-    "city": "Las Cruces",
-    "state": "NM",
-    "country": "US",
-    "artists": [
-      "TRU-SERVA"
-    ],
-    "headliner": "TRU-SERVA",
-    "eventType": "concert",
-    "status": "onsale",
-    "ticketUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
-    "officialUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
-    "image": "https://i.scdn.co/image/ab6761610000e5ebb5bd510760cb418516ded933",
-    "imageType": "artist_photo",
-    "imagePosition": "center",
-    "price": "$10",
-    "sourceName": "Megan Woods official tour announcement",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Megan Woods official tour announcement",
-        "url": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ]
   },
   {
     "id": "supplemental:skema-boy-2026-10-27-chicago-il",
