@@ -14,7 +14,11 @@ MANUAL = ROOT / "config" / "manual-events.json"
 GRACE_URL = "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803"
 HVO_IMAGE = "assets/events/hvo-fest-2026.jpg"
 TRUTHX_IMAGE = "assets/events/truthx-yung-kriss-2026.jpg"
+GRACE_IMAGE = "assets/artists/lecrae-event-card.svg"
+HIP_HOP_IMAGE = "assets/artists/datin-event-card.svg"
+REIGN_IMAGE = "assets/artists/aasha-marie-event-card.svg"
 RARE_IMAGE = "assets/artists/rare-of-breed-event-card.svg"
+FLAVOR_FRIDAY_IMAGE = "assets/artists/miles-minnick-event-card.svg"
 
 VERIFIED = [
     {
@@ -62,7 +66,8 @@ VERIFIED = [
         "status": "scheduled",
         "ticketUrl": GRACE_URL,
         "officialUrl": GRACE_URL,
-        "image": "",
+        "image": GRACE_IMAGE,
+        "imageType": "artist",
         "price": "",
         "sourceName": "Official Eventbrite listing",
         "authority": "official_festival",
@@ -87,7 +92,8 @@ VERIFIED = [
         "status": "scheduled",
         "ticketUrl": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
         "officialUrl": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
-        "image": "",
+        "image": HIP_HOP_IMAGE,
+        "imageType": "artist",
         "price": "Free",
         "sourceName": "Official Eventbrite listing",
         "authority": "venue_ticket",
@@ -112,7 +118,8 @@ VERIFIED = [
         "status": "scheduled",
         "ticketUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
         "officialUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
-        "image": "",
+        "image": REIGN_IMAGE,
+        "imageType": "artist",
         "price": "",
         "sourceName": "Official Eventbrite listing",
         "authority": "venue_ticket",
@@ -163,7 +170,8 @@ VERIFIED = [
         "status": "scheduled",
         "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
         "officialUrl": "https://www.flavorfest.org/schedule",
-        "image": "",
+        "image": FLAVOR_FRIDAY_IMAGE,
+        "imageType": "artist",
         "price": "",
         "sourceName": "Flavor Fest official 2026 schedule",
         "authority": "official_event",
@@ -240,7 +248,15 @@ def repair_live_events() -> None:
 
 
 def main() -> int:
-    for image in (TRUTHX_IMAGE, HVO_IMAGE):
+    for image in (
+        TRUTHX_IMAGE,
+        HVO_IMAGE,
+        GRACE_IMAGE,
+        HIP_HOP_IMAGE,
+        REIGN_IMAGE,
+        RARE_IMAGE,
+        FLAVOR_FRIDAY_IMAGE,
+    ):
         if not (ROOT / image).is_file():
             raise SystemExit(f"Required event artwork is missing: {image}")
     ensure_by_id(SUPPLEMENTAL, VERIFIED)
