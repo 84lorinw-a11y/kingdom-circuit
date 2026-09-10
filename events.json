@@ -557,6 +557,44 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
+    "id": "eventbrite:hip-hop-in-the-park-cortland-2026",
+    "title": "Hip Hop in the Park",
+    "startDate": "2026-09-19",
+    "startTime": "13:00",
+    "timezone": "America/New_York",
+    "venue": "Courthouse Park",
+    "address": "33 Church Street",
+    "city": "Cortland",
+    "state": "NY",
+    "country": "US",
+    "artists": [
+      "Datin",
+      "Heesun Lee",
+      "Brother Bo"
+    ],
+    "headliner": "Datin",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
+    "officialUrl": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
+    "image": "",
+    "price": "Free",
+    "sourceName": "Official Eventbrite listing",
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
+        "type": "eventbrite",
+        "authority": "venue_ticket",
+        "priority": 94
+      }
+    ],
+    "imageType": "artist"
+  },
+  {
     "id": "official:cc1595e90fb45c872c77",
     "title": "GRACEFEST 2026",
     "startDate": "2026-09-19",
@@ -609,44 +647,6 @@
     "firstSeen": "2026-08-19T12:01:10Z",
     "authority": "official_festival",
     "lineupExplicit": true
-  },
-  {
-    "id": "eventbrite:hip-hop-in-the-park-cortland-2026",
-    "title": "Hip Hop in the Park",
-    "startDate": "2026-09-19",
-    "startTime": "13:00",
-    "timezone": "America/New_York",
-    "venue": "Courthouse Park",
-    "address": "33 Church Street",
-    "city": "Cortland",
-    "state": "NY",
-    "country": "US",
-    "artists": [
-      "Datin",
-      "Heesun Lee",
-      "Brother Bo"
-    ],
-    "headliner": "Datin",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
-    "officialUrl": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
-    "image": "",
-    "price": "Free",
-    "sourceName": "Official Eventbrite listing",
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Official Eventbrite listing",
-        "url": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
-        "type": "eventbrite",
-        "authority": "venue_ticket",
-        "priority": 94
-      }
-    ],
-    "imageType": "artist"
   },
   {
     "id": "eventbrite:gracefest-lecrae-castaic-2026",
