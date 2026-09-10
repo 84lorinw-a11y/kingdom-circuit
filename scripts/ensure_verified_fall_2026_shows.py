@@ -89,14 +89,20 @@ def write(path: Path, data: list[dict]) -> None:
 
 
 def upsert(events: list[dict], event: dict, aliases: set[str] | None = None) -> None:
+    """Upsert one canonical event and remove any duplicate alias rows."""
     ids = {event["id"]}
     if aliases:
         ids |= aliases
-    for index, current in enumerate(events):
-        if current.get("id") in ids:
-            events[index] = deepcopy(event)
-            return
-    events.append(deepcopy(event))
+
+    matches = [index for index, current in enumerate(events) if current.get("id") in ids]
+    if not matches:
+        events.append(deepcopy(event))
+        return
+
+    first = matches[0]
+    events[first] = deepcopy(event)
+    for index in reversed(matches[1:]):
+        del events[index]
 
 
 def sort_events(events: list[dict]) -> None:
@@ -128,7 +134,11 @@ def main() -> None:
             item["imageOverride"] = True
         else:
             item.setdefault("imageType", "event_artwork" if item.get("image") else "artist")
-        upsert(events, item)
+
+        # The refresh pipeline can materialize manual registry records as
+        # manual:eventbrite:... while this guard also pins eventbrite:....
+        # Treat those IDs as the same show and keep exactly one canonical row.
+        upsert(events, item, aliases={f"manual:{event_id}"})
         upsert(supplemental, item)
         upsert(manual, item)
 
@@ -167,7 +177,13 @@ def main() -> None:
     if absent:
         raise SystemExit(f"Verified live events missing after upsert: {absent}")
 
-    print("Verified Eventbrite discoveries, Flavor Fest Friday, and HVO artwork are pinned in the live feed.")
+    for event_id in sorted(EVENTBRITE_IDS):
+        aliases = {event_id, f"manual:{event_id}"}
+        matches = [item for item in events if str(item.get("id")) in aliases]
+        if len(matches) != 1 or matches[0].get("id") != event_id:
+            raise SystemExit(f"Duplicate Eventbrite alias rows detected for {event_id}")
+
+    print("Verified Eventbrite discoveries, Flavor Fest Friday, HVO artwork, and duplicate guards are pinned in the live feed.")
 
 
 if __name__ == "__main__":
