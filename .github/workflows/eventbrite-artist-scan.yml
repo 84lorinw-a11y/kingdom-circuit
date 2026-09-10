@@ -1,0 +1,55 @@
+name: Scan Eventbrite for roster artists
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/scan_eventbrite_artists.py"
+      - ".github/workflows/eventbrite-artist-scan.yml"
+  schedule:
+    - cron: "7 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kingdom-circuit-eventbrite-scan
+  cancel-in-progress: true
+
+jobs:
+  scan-eventbrite:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Scan every enabled artist on Eventbrite
+        run: |
+          python -m py_compile scripts/scan_eventbrite_artists.py
+          python scripts/scan_eventbrite_artists.py
+
+      - name: Save Eventbrite audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s eventbrite-scan-status.json
+          test -s eventbrite-scan-candidates.json
+          git config user.name "kingdom-circuit-eventbrite"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add eventbrite-scan-status.json eventbrite-scan-candidates.json
+          if git diff --cached --quiet; then
+            echo "No Eventbrite audit changes."
+          else
+            git commit -m "chore: refresh Eventbrite artist audit [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
