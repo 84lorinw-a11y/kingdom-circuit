@@ -1,0 +1,47 @@
+name: Diagnose current tests
+
+on:
+  push:
+    paths:
+      - '.github/workflows/diagnose-current-tests.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run current tests and capture output
+        shell: bash
+        run: |
+          set +e
+          python scripts/sync_verified_artist_registry.py > /tmp/test-output.txt 2>&1
+          SYNC_STATUS=$?
+          if [ "$SYNC_STATUS" -eq 0 ]; then
+            python -m unittest discover -s tests -p 'test_*.py' -v >> /tmp/test-output.txt 2>&1
+            TEST_STATUS=$?
+          else
+            TEST_STATUS=$SYNC_STATUS
+          fi
+          mkdir -p audit
+          {
+            echo "exit_status=$TEST_STATUS"
+            cat /tmp/test-output.txt
+          } > audit/test-failure-current.txt
+          exit 0
+      - name: Save diagnostic
+        shell: bash
+        run: |
+          git config user.name "kingdom-circuit-diagnostics"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add audit/test-failure-current.txt
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Capture current test failure [skip ci]"
+          git push origin HEAD:main
