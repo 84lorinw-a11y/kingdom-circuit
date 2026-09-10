@@ -1,0 +1,79 @@
+name: Install durable verified show repairs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/install-durable-show-repairs.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install repair step in production deployment
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          for attempt in 1 2 3 4 5; do
+            python - <<'PY'
+          from pathlib import Path
+
+          path = Path('.github/workflows/update-and-deploy.yml')
+          text = path.read_text(encoding='utf-8')
+
+          marker = "      - name: Restore runtime-only source configuration\n"
+          repair = (
+              "      - name: Reapply reviewed show additions and HVO artwork\n"
+              "        run: python scripts/apply_verified_show_repairs.py\n\n"
+          )
+          if repair not in text:
+              if marker not in text:
+                  raise SystemExit('Could not find deployment insertion point')
+              text = text.replace(marker, repair + marker, 1)
+
+          old_add = "            supplemental-events.json config/artists.json coverage-gaps.json app.js \\\n"
+          new_add = "            supplemental-events.json config/manual-events.json config/artists.json coverage-gaps.json app.js \\\n"
+          if old_add in text:
+              text = text.replace(old_add, new_add, 1)
+
+          verify_marker = "          test -s scripts/apply_deonte_hall_submission.py\n"
+          verify_line = "          test -s scripts/apply_verified_show_repairs.py\n"
+          if verify_line not in text and verify_marker in text:
+              text = text.replace(verify_marker, verify_marker + verify_line, 1)
+
+          path.write_text(text, encoding='utf-8')
+          PY
+
+            git add .github/workflows/update-and-deploy.yml
+            if git diff --cached --quiet; then
+              echo "Production deployment already contains durable show repairs."
+              exit 0
+            fi
+
+            git commit -m "Run verified show repairs on every deployment"
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+
+            echo "Main changed during install; reloading and retrying ($attempt/5)."
+            git fetch origin main
+            git reset --hard origin/main
+          done
+
+          echo "Could not install durable show repairs after five retries."
+          exit 1
