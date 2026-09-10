@@ -95,6 +95,10 @@ def sort_events(events: list[dict]) -> None:
 
 
 def main() -> None:
+    for relative in [HVO_ART, *EVENTBRITE_IMAGE_OVERRIDES.values()]:
+        if not (ROOT / relative).is_file():
+            raise SystemExit(f"Required pinned artwork is missing: {relative}")
+
     events = load(EVENTS_FILE)
     supplemental = load(SUPPLEMENTAL_FILE)
     manual = load(MANUAL_FILE)
