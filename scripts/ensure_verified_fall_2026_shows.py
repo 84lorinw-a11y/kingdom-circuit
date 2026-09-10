@@ -25,6 +25,10 @@ EVENTBRITE_IDS = {
     "eventbrite:rare-of-breed-jacksonville-2026",
 }
 
+EVENTBRITE_IMAGE_OVERRIDES = {
+    "eventbrite:rare-of-breed-jacksonville-2026": "assets/artists/rare-of-breed-primary.jpg",
+}
+
 HVO_SOURCE_ID = "hvo-fest-2026-los-angeles"
 HVO_LIVE_ID = "manual:hvo-fest-2026-los-angeles"
 HVO_ART = "assets/events/hvo-fest-2026.jpg"
@@ -105,7 +109,11 @@ def main() -> None:
         item = deepcopy(manual_by_id[event_id])
         item.setdefault("country", "US")
         item.setdefault("confidence", "high")
-        item.setdefault("imageType", "event_artwork" if item.get("image") else "artist")
+        if event_id in EVENTBRITE_IMAGE_OVERRIDES:
+            item["image"] = EVENTBRITE_IMAGE_OVERRIDES[event_id]
+            item["imageType"] = "artist"
+        else:
+            item.setdefault("imageType", "event_artwork" if item.get("image") else "artist")
         upsert(events, item)
         upsert(supplemental, item)
 
