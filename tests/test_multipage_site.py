@@ -5,6 +5,7 @@ from datetime import date
 from pathlib import Path
 
 from scripts.apply_curated_catalog_policy import curate_event
+from scripts.apply_verified_show_repairs import PINNED_EVENT_IMAGES, VERIFIED
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -101,6 +102,15 @@ class MultiPageProductionTests(unittest.TestCase):
             self.assertGreater(asset.stat().st_size, 300_000)
             self.assertEqual(b"\xff\xd8", asset.read_bytes()[:2])
 
+    def test_reviewed_fall_shows_use_official_event_artwork(self):
+        verified = {event["title"]: event for event in VERIFIED}
+        self.assertEqual(5, len(PINNED_EVENT_IMAGES))
+        for title, image in PINNED_EVENT_IMAGES.items():
+            self.assertEqual(image, verified[title]["image"])
+            self.assertEqual("event_artwork", verified[title]["imageType"])
+            self.assertTrue(verified[title]["imageOverride"])
+            self.assertGreater((ROOT / image).stat().st_size, 100_000)
+
     def test_supplemental_events_are_complete(self):
         events = json.loads((ROOT / "supplemental-events.json").read_text(encoding="utf-8"))
         self.assertEqual(len(events), len({event["id"] for event in events}))
@@ -115,7 +125,7 @@ class MultiPageProductionTests(unittest.TestCase):
         rare_events = [event for event in events if "Rare of Breed" in event.get("artists", [])]
         for event in rare_events:
             if event.get("id") == "eventbrite:rare-of-breed-jacksonville-2026":
-                self.assertEqual("assets/artists/rare-of-breed-event-card.svg", event.get("image"))
+                self.assertEqual("assets/events/rare-of-breed-jacksonville-2026.jpg", event.get("image"))
             else:
                 self.assertTrue(event.get("image"))
 

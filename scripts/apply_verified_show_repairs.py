@@ -14,11 +14,19 @@ MANUAL = ROOT / "config" / "manual-events.json"
 GRACE_URL = "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803"
 HVO_IMAGE = "assets/events/hvo-fest-2026.jpg"
 TRUTHX_IMAGE = "assets/events/truthx-yung-kriss-2026.jpg"
-GRACE_IMAGE = "assets/artists/lecrae-event-card.svg"
-HIP_HOP_IMAGE = "assets/artists/datin-event-card.svg"
-REIGN_IMAGE = "assets/artists/aasha-marie-event-card.svg"
-RARE_IMAGE = "assets/artists/rare-of-breed-event-card.svg"
-FLAVOR_FRIDAY_IMAGE = "assets/artists/miles-minnick-event-card.svg"
+GRACE_IMAGE = "assets/events/gracefest-2026.png"
+HIP_HOP_IMAGE = "assets/events/hip-hop-in-the-park-2026.png"
+REIGN_IMAGE = "assets/events/reign-volume-one-2026.jpg"
+RARE_IMAGE = "assets/events/rare-of-breed-jacksonville-2026.jpg"
+FLAVOR_FRIDAY_IMAGE = "assets/events/flavor-fest-friday-2026.webp"
+
+PINNED_EVENT_IMAGES = {
+    "Hip Hop in the Park": HIP_HOP_IMAGE,
+    "GRACEFEST 2026": GRACE_IMAGE,
+    "REIGN volume one": REIGN_IMAGE,
+    "Rare of Breed": RARE_IMAGE,
+    "Flavor Fest 2026 — Friday Concerts": FLAVOR_FRIDAY_IMAGE,
+}
 
 VERIFIED = [
     {
@@ -67,7 +75,9 @@ VERIFIED = [
         "ticketUrl": GRACE_URL,
         "officialUrl": GRACE_URL,
         "image": GRACE_IMAGE,
-        "imageType": "artist",
+        "imageType": "event_artwork",
+        "imagePosition": "center",
+        "imageOverride": True,
         "price": "",
         "sourceName": "Official Eventbrite listing",
         "authority": "official_festival",
@@ -93,7 +103,9 @@ VERIFIED = [
         "ticketUrl": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
         "officialUrl": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
         "image": HIP_HOP_IMAGE,
-        "imageType": "artist",
+        "imageType": "event_artwork",
+        "imagePosition": "center",
+        "imageOverride": True,
         "price": "Free",
         "sourceName": "Official Eventbrite listing",
         "authority": "venue_ticket",
@@ -119,7 +131,9 @@ VERIFIED = [
         "ticketUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
         "officialUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
         "image": REIGN_IMAGE,
-        "imageType": "artist",
+        "imageType": "event_artwork",
+        "imagePosition": "center",
+        "imageOverride": True,
         "price": "",
         "sourceName": "Official Eventbrite listing",
         "authority": "venue_ticket",
@@ -145,7 +159,9 @@ VERIFIED = [
         "ticketUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
         "officialUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
         "image": RARE_IMAGE,
-        "imageType": "artist",
+        "imageType": "event_artwork",
+        "imagePosition": "center",
+        "imageOverride": True,
         "price": "",
         "sourceName": "Official Eventbrite listing",
         "authority": "venue_ticket",
@@ -171,7 +187,9 @@ VERIFIED = [
         "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
         "officialUrl": "https://www.flavorfest.org/schedule",
         "image": FLAVOR_FRIDAY_IMAGE,
-        "imageType": "artist",
+        "imageType": "event_artwork",
+        "imagePosition": "center",
+        "imageOverride": True,
         "price": "",
         "sourceName": "Flavor Fest official 2026 schedule",
         "authority": "official_event",
@@ -208,6 +226,11 @@ def repair_live_events() -> None:
     for event in rows:
         if not isinstance(event, dict):
             continue
+        if event.get("title") in PINNED_EVENT_IMAGES:
+            event["image"] = PINNED_EVENT_IMAGES[event["title"]]
+            event["imageType"] = "event_artwork"
+            event["imagePosition"] = "center"
+            event["imageOverride"] = True
         if event.get("id") in {
             "eventbrite:truthx-yung-kriss-brandon-2026",
             "manual:eventbrite:truthx-yung-kriss-brandon-2026",

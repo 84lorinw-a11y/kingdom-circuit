@@ -28,16 +28,16 @@ EVENTBRITE_IDS = {
 
 EVENTBRITE_IMAGE_OVERRIDES = {
     "eventbrite:truthx-yung-kriss-brandon-2026": "assets/events/truthx-yung-kriss-2026.jpg",
-    "eventbrite:gracefest-lecrae-castaic-2026": "assets/artists/lecrae-event-card.svg",
-    "eventbrite:hip-hop-in-the-park-cortland-2026": "assets/artists/datin-event-card.svg",
-    "eventbrite:reign-volume-one-aasha-marie-brooklyn-2026": "assets/artists/aasha-marie-event-card.svg",
-    "eventbrite:rare-of-breed-jacksonville-2026": "assets/artists/rare-of-breed-event-card.svg",
+    "eventbrite:gracefest-lecrae-castaic-2026": "assets/events/gracefest-2026.png",
+    "eventbrite:hip-hop-in-the-park-cortland-2026": "assets/events/hip-hop-in-the-park-2026.png",
+    "eventbrite:reign-volume-one-aasha-marie-brooklyn-2026": "assets/events/reign-volume-one-2026.jpg",
+    "eventbrite:rare-of-breed-jacksonville-2026": "assets/events/rare-of-breed-jacksonville-2026.jpg",
 }
 
 HVO_SOURCE_ID = "hvo-fest-2026-los-angeles"
 HVO_LIVE_ID = "manual:hvo-fest-2026-los-angeles"
 HVO_ART = "assets/events/hvo-fest-2026.jpg"
-FLAVOR_FRIDAY_ART = "assets/artists/miles-minnick-event-card.svg"
+FLAVOR_FRIDAY_ART = "assets/events/flavor-fest-friday-2026.webp"
 
 FLAVOR_FRIDAY = {
     "id": "flavor-fest-2026-friday-concerts",
@@ -56,7 +56,9 @@ FLAVOR_FRIDAY = {
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
     "image": FLAVOR_FRIDAY_ART,
-    "imageType": "artist",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": True,
     "price": "",
     "status": "scheduled",
     "lineupExplicit": True,
@@ -121,10 +123,9 @@ def main() -> None:
         item.setdefault("confidence", "high")
         if event_id in EVENTBRITE_IMAGE_OVERRIDES:
             item["image"] = EVENTBRITE_IMAGE_OVERRIDES[event_id]
-            item["imageType"] = "event_artwork" if event_id == "eventbrite:truthx-yung-kriss-brandon-2026" else "artist"
-            if event_id == "eventbrite:truthx-yung-kriss-brandon-2026":
-                item["imagePosition"] = "center"
-                item["imageOverride"] = True
+            item["imageType"] = "event_artwork"
+            item["imagePosition"] = "center"
+            item["imageOverride"] = True
         else:
             item.setdefault("imageType", "event_artwork" if item.get("image") else "artist")
         upsert(events, item)
