@@ -809,7 +809,9 @@
         "priority": 94
       }
     ],
-    "imageType": "artist"
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true
   },
   {
     "id": "eventbrite:gracefest-lecrae-castaic-2026",
@@ -845,7 +847,9 @@
         "priority": 104
       }
     ],
-    "imageType": "artist"
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true
   },
   {
     "id": "caleb-gordon-eden-2026-09-20-san-antonio",
@@ -1178,7 +1182,9 @@
         "priority": 94
       }
     ],
-    "imageType": "artist"
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true
   },
   {
     "id": "passion-fest-ii-2026-charlotte",
@@ -1262,7 +1268,9 @@
         "priority": 94
       }
     ],
-    "imageType": "artist"
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true
   },
   {
     "id": "space-city-fest-2026",
@@ -1334,7 +1342,9 @@
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
     "image": "assets/events/flavor-fest-friday-2026.webp",
-    "imageType": "artist",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
     "price": "",
     "status": "scheduled",
     "lineupExplicit": true,

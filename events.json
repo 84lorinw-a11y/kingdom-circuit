@@ -673,7 +673,9 @@
         "priority": 94
       }
     ],
-    "imageType": "artist"
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true
   },
   {
     "id": "official:cc1595e90fb45c872c77",
@@ -763,7 +765,9 @@
         "priority": 104
       }
     ],
-    "imageType": "artist"
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true
   },
   {
     "id": "ticketmaster:vv1AkZk3pGkdPlaZC",
@@ -1737,7 +1741,9 @@
         "priority": 94
       }
     ],
-    "imageType": "artist"
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true
   },
   {
     "id": "official:59d21fa71f6962a834a6",
@@ -1890,7 +1896,9 @@
         "priority": 94
       }
     ],
-    "imageType": "artist"
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true
   },
   {
     "id": "official:6ccf87bf0ba17cd0c74d",
@@ -2077,7 +2085,9 @@
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
     "image": "assets/events/flavor-fest-friday-2026.webp",
-    "imageType": "artist",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
     "price": "",
     "status": "scheduled",
     "lineupExplicit": true,
