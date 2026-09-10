@@ -13,6 +13,7 @@ MANUAL = ROOT / "config" / "manual-events.json"
 
 GRACE_URL = "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803"
 HVO_IMAGE = "assets/events/hvo-fest-2026.jpg"
+RARE_IMAGE = "assets/artists/rare-of-breed-primary.jpg"
 
 VERIFIED = [
     {
@@ -132,7 +133,8 @@ VERIFIED = [
         "status": "scheduled",
         "ticketUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
         "officialUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
-        "image": "",
+        "image": RARE_IMAGE,
+        "imageType": "artist",
         "price": "",
         "sourceName": "Official Eventbrite listing",
         "authority": "venue_ticket",
