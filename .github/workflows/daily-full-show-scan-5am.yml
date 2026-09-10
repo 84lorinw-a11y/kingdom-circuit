@@ -1,0 +1,36 @@
+name: Daily 5AM Full Show Scan
+
+on:
+  schedule:
+    - cron: "0 10 * * *"
+    - cron: "0 11 * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  dispatch-full-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Central time
+        id: local-time
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          elif [ "$(TZ=America/Chicago date +%H)" = "05" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Dispatch complete update and deployment
+        if: steps.local-time.outputs.run == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --method POST \
+            repos/${GITHUB_REPOSITORY}/actions/workflows/update-and-deploy.yml/dispatches \
+            -f ref=main
