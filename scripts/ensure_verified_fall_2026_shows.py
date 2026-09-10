@@ -27,12 +27,17 @@ EVENTBRITE_IDS = {
 }
 
 EVENTBRITE_IMAGE_OVERRIDES = {
+    "eventbrite:truthx-yung-kriss-brandon-2026": "assets/artists/yung-kriss-event-card.svg",
+    "eventbrite:gracefest-lecrae-castaic-2026": "assets/artists/lecrae-event-card.svg",
+    "eventbrite:hip-hop-in-the-park-cortland-2026": "assets/artists/datin-event-card.svg",
+    "eventbrite:reign-volume-one-aasha-marie-brooklyn-2026": "assets/artists/aasha-marie-event-card.svg",
     "eventbrite:rare-of-breed-jacksonville-2026": "assets/artists/rare-of-breed-primary.jpg",
 }
 
 HVO_SOURCE_ID = "hvo-fest-2026-los-angeles"
 HVO_LIVE_ID = "manual:hvo-fest-2026-los-angeles"
 HVO_ART = "assets/events/hvo-fest-2026.jpg"
+FLAVOR_FRIDAY_ART = "assets/artists/miles-minnick-event-card.svg"
 
 FLAVOR_FRIDAY = {
     "id": "flavor-fest-2026-friday-concerts",
@@ -50,7 +55,8 @@ FLAVOR_FRIDAY = {
     "eventType": "festival",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "",
+    "image": FLAVOR_FRIDAY_ART,
+    "imageType": "artist",
     "price": "",
     "status": "scheduled",
     "lineupExplicit": True,
@@ -96,7 +102,7 @@ def sort_events(events: list[dict]) -> None:
 
 
 def main() -> None:
-    for relative in [HVO_ART, *EVENTBRITE_IMAGE_OVERRIDES.values()]:
+    for relative in [HVO_ART, FLAVOR_FRIDAY_ART, *EVENTBRITE_IMAGE_OVERRIDES.values()]:
         if not (ROOT / relative).is_file():
             raise SystemExit(f"Required pinned artwork is missing: {relative}")
 
@@ -109,7 +115,8 @@ def main() -> None:
     if missing:
         raise SystemExit(f"Verified Eventbrite records missing from manual registry: {missing}")
 
-    # Promote the five verified Eventbrite discoveries into the primary live feed.
+    # Promote the five verified Eventbrite discoveries into the primary live feed
+    # and keep their presentation images in the manual source registry too.
     for event_id in sorted(EVENTBRITE_IDS):
         item = deepcopy(manual_by_id[event_id])
         item.setdefault("country", "US")
@@ -121,8 +128,8 @@ def main() -> None:
             item.setdefault("imageType", "event_artwork" if item.get("image") else "artist")
         upsert(events, item)
         upsert(supplemental, item)
+        upsert(manual, item)
 
-    # Pin HVO Fest to the actual uploaded flyer instead of unrelated Ticketmaster art.
     hvo = deepcopy(manual_by_id.get(HVO_SOURCE_ID) or {})
     if not hvo:
         raise SystemExit("HVO Fest manual source record is missing")
@@ -134,14 +141,12 @@ def main() -> None:
     hvo.setdefault("confidence", "high")
     upsert(events, hvo, aliases={HVO_SOURCE_ID})
 
-    # Keep the source registry itself aligned so future collectors inherit the art.
     hvo_manual = deepcopy(manual_by_id[HVO_SOURCE_ID])
     hvo_manual["image"] = HVO_ART
     hvo_manual["imageType"] = "event_artwork"
     hvo_manual["imageOverride"] = True
     upsert(manual, hvo_manual)
 
-    # Flavor Fest officially lists Miles Minnick, Gifted Hands and Datin Friday night.
     upsert(manual, FLAVOR_FRIDAY)
     live_flavor = deepcopy(FLAVOR_FRIDAY)
     live_flavor["id"] = "manual:flavor-fest-2026-friday-concerts"
