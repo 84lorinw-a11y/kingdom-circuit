@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Audit Eventbrite for upcoming U.S. events mentioning Kingdom Circuit artists.
 
-This is a discovery/audit pass only. It does not publish events automatically.
-Candidates are compared with the current event catalog and written to JSON for
-manual verification before publication.
+Discovery/audit only. Search every enabled roster artist directly on Eventbrite,
+compare matched upcoming events with the current catalog, and save candidates for
+manual verification. Search and detail requests are parallelized so the full
+roster finishes inside the workflow window.
 """
 
 from __future__ import annotations
@@ -11,8 +12,8 @@ from __future__ import annotations
 import html as html_lib
 import json
 import re
-import time
 import unicodedata
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
@@ -29,8 +30,10 @@ STATUS_FILE = ROOT / "eventbrite-scan-status.json"
 CANDIDATES_FILE = ROOT / "eventbrite-scan-candidates.json"
 
 USER_AGENT = "KingdomCircuitBot/1.0 (+https://kingdomcircuit.com/)"
-TIMEOUT = 22
-MIN_INTERVAL = 0.18
+TIMEOUT = 10
+MAX_WORKERS = 12
+MAX_EVENT_LINKS_PER_ARTIST = 25
+
 EVENT_URL_RE = re.compile(
     r"https?://(?:www\.)?eventbrite\.com/e/[A-Za-z0-9_%?=&+.,'()!~*:/-]*?(?:tickets-)?\d{8,}(?:[?&][^\"'<> ]*)?",
     re.I,
@@ -73,35 +76,22 @@ def canonical_eventbrite_url(url: str) -> str:
     return f"https://www.eventbrite.com{parsed.path.rstrip('/')}"
 
 
-class Client:
-    def __init__(self) -> None:
-        self.last = 0.0
-
-    def get(self, url: str) -> str:
-        remaining = MIN_INTERVAL - (time.monotonic() - self.last)
-        if remaining > 0:
-            time.sleep(remaining)
-        request = Request(url, headers={
+def get_url(url: str) -> str:
+    request = Request(
+        url,
+        headers={
             "User-Agent": USER_AGENT,
             "Accept": "text/html,application/xhtml+xml",
             "Accept-Language": "en-US,en;q=0.8",
-        })
-        last_error: Exception | None = None
-        for attempt in range(3):
-            try:
-                with urlopen(request, timeout=TIMEOUT) as response:
-                    self.last = time.monotonic()
-                    return response.read().decode("utf-8", errors="replace")
-            except HTTPError as exc:
-                self.last = time.monotonic()
-                last_error = exc
-                if exc.code not in {429, 500, 502, 503, 504}:
-                    break
-            except (URLError, TimeoutError, OSError) as exc:
-                self.last = time.monotonic()
-                last_error = exc
-            time.sleep(1.5 * (attempt + 1))
-        raise RuntimeError(f"{type(last_error).__name__}: {last_error}")
+        },
+    )
+    try:
+        with urlopen(request, timeout=TIMEOUT) as response:
+            return response.read().decode("utf-8", errors="replace")
+    except HTTPError as exc:
+        raise RuntimeError(f"HTTPError {exc.code}") from exc
+    except (URLError, TimeoutError, OSError) as exc:
+        raise RuntimeError(f"{type(exc).__name__}: {exc}") from exc
 
 
 def extract_event_urls(text: str) -> list[str]:
@@ -215,9 +205,6 @@ def event_candidate(url: str, page: str, artist: dict[str, Any], today: str) -> 
     if start_date and start_date < today:
         return None
 
-    # Strengthen identity matching by requiring the artist in the event's
-    # structured title/description when those fields exist. This prevents
-    # generic site chrome from creating candidates.
     structured_norm = normalize(" ".join([title, description]))
     if structured_norm and not any(exact_term_present(structured_norm, term) for term in terms):
         return None
@@ -252,8 +239,7 @@ def existing_keys() -> tuple[set[str], set[tuple[str, str, str]]]:
             if not isinstance(row, dict):
                 continue
             for key in ("ticketUrl", "officialUrl", "announcementUrl"):
-                value = str(row.get(key) or "")
-                canon = canonical_eventbrite_url(value)
+                canon = canonical_eventbrite_url(str(row.get(key) or ""))
                 if canon:
                     urls.add(canon)
             title = normalize(str(row.get("title") or ""))
@@ -264,6 +250,41 @@ def existing_keys() -> tuple[set[str], set[tuple[str, str, str]]]:
     return urls, fuzzy
 
 
+def search_artist(artist: dict[str, Any]) -> dict[str, Any]:
+    name = str(artist.get("name") or "").strip()
+    slug = slugify(name)
+    search_urls = [
+        f"https://www.eventbrite.com/d/united-states/{quote(slug)}/",
+        f"https://www.eventbrite.com/d/united-states/all-events/?q={quote(name)}",
+    ]
+    links: list[str] = []
+    errors: list[str] = []
+
+    for search_url in search_urls:
+        try:
+            page = get_url(search_url)
+            for url in extract_event_urls(page):
+                if url not in links:
+                    links.append(url)
+        except Exception as exc:
+            errors.append(str(exc)[:160])
+
+    return {
+        "artist": artist,
+        "name": name,
+        "links": links[:MAX_EVENT_LINKS_PER_ARTIST],
+        "error": " | ".join(errors)[:300],
+        "searchesAttempted": len(search_urls),
+    }
+
+
+def fetch_event_page(url: str) -> tuple[str, str, str]:
+    try:
+        return url, get_url(url), ""
+    except Exception as exc:
+        return url, "", str(exc)[:240]
+
+
 def main() -> int:
     started = datetime.now(timezone.utc)
     today = started.date().isoformat()
@@ -272,70 +293,65 @@ def main() -> int:
         raise SystemExit("config/artists.json must be an array")
     enabled = [a for a in artists if isinstance(a, dict) and a.get("enabled", True) and a.get("name")]
     known_urls, known_fuzzy = existing_keys()
-    client = Client()
+
+    search_results: list[dict[str, Any]] = []
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
+        futures = {pool.submit(search_artist, artist): artist for artist in enabled}
+        for index, future in enumerate(as_completed(futures), start=1):
+            result = future.result()
+            search_results.append(result)
+            print(
+                f"Eventbrite search {index}/{len(enabled)}: "
+                f"{result['name']} links={len(result['links'])}",
+                flush=True,
+            )
+
+    event_artists: dict[str, list[dict[str, Any]]] = {}
+    for result in search_results:
+        for url in result["links"]:
+            event_artists.setdefault(url, []).append(result["artist"])
+
+    event_pages: dict[str, str] = {}
+    detail_failures = 0
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
+        futures = {pool.submit(fetch_event_page, url): url for url in event_artists}
+        for index, future in enumerate(as_completed(futures), start=1):
+            url, page, error = future.result()
+            if page:
+                event_pages[url] = page
+            else:
+                detail_failures += 1
+            if index % 25 == 0 or index == len(futures):
+                print(f"Eventbrite details {index}/{len(futures)}", flush=True)
 
     candidates: list[dict[str, Any]] = []
-    artist_results: list[dict[str, Any]] = []
-    seen_candidate_urls: set[str] = set()
-    pages_checked = 0
-    search_failures = 0
-    detail_failures = 0
-    event_links_found = 0
+    per_artist: dict[str, dict[str, int]] = {
+        str(a.get("name") or ""): {"matched": 0, "new": 0} for a in enabled
+    }
 
-    for index, artist in enumerate(enabled, start=1):
-        name = str(artist.get("name") or "").strip()
-        slug = slugify(name)
-        search_urls = [
-            f"https://www.eventbrite.com/d/united-states/{quote(slug)}/",
-            f"https://www.eventbrite.com/d/united-states/all-events/?q={quote(name)}",
-        ]
-        links: list[str] = []
-        error = ""
-        for attempt_url in search_urls:
-            try:
-                search_html = client.get(attempt_url)
-                links = extract_event_urls(search_html)
-                if links:
-                    break
-            except Exception as exc:
-                error = str(exc)[:240]
-                continue
-        if error and not links:
-            search_failures += 1
-        event_links_found += len(links)
-        new_for_artist = 0
-        matched_for_artist = 0
-        for event_url in links[:18]:
-            if event_url in seen_candidate_urls:
-                continue
-            pages_checked += 1
-            try:
-                page = client.get(event_url)
-            except Exception:
-                detail_failures += 1
-                continue
-            candidate = event_candidate(event_url, page, artist, today)
+    for url, associated_artists in event_artists.items():
+        page = event_pages.get(url, "")
+        if not page:
+            continue
+        for artist in associated_artists:
+            candidate = event_candidate(url, page, artist, today)
             if not candidate:
                 continue
-            matched_for_artist += 1
-            key = (normalize(candidate["title"]), candidate["startDate"], normalize(candidate["city"]))
-            candidate["alreadyInCatalog"] = event_url in known_urls or (candidate["startDate"] and key in known_fuzzy)
-            if not candidate["alreadyInCatalog"]:
-                new_for_artist += 1
-            seen_candidate_urls.add(event_url)
+            key = (
+                normalize(candidate["title"]),
+                candidate["startDate"],
+                normalize(candidate["city"]),
+            )
+            candidate["alreadyInCatalog"] = (
+                url in known_urls
+                or bool(candidate["startDate"] and key in known_fuzzy)
+            )
             candidates.append(candidate)
-        artist_results.append({
-            "artist": name,
-            "searchLinksFound": len(links),
-            "matchedEvents": matched_for_artist,
-            "newCandidates": new_for_artist,
-            "status": "ok" if links or not error else "failed",
-            "error": error if error and not links else "",
-        })
-        print(f"Eventbrite {index}/{len(enabled)}: {name} links={len(links)} matched={matched_for_artist} new={new_for_artist}")
+            name = candidate["artist"]
+            per_artist[name]["matched"] += 1
+            if not candidate["alreadyInCatalog"]:
+                per_artist[name]["new"] += 1
 
-    # One Eventbrite event can mention multiple roster artists. Consolidate by URL
-    # while preserving all matched artists.
     consolidated: dict[str, dict[str, Any]] = {}
     for item in candidates:
         url = item["eventbriteUrl"]
@@ -345,14 +361,36 @@ def main() -> int:
             consolidated[url] = copy
         elif item["artist"] not in consolidated[url]["artists"]:
             consolidated[url]["artists"].append(item["artist"])
-    final = sorted(consolidated.values(), key=lambda x: (x.get("startDate") or "9999", x.get("title") or ""))
+        if not item.get("alreadyInCatalog"):
+            consolidated[url]["alreadyInCatalog"] = False
+
+    final = sorted(
+        consolidated.values(),
+        key=lambda x: (x.get("startDate") or "9999", x.get("title") or ""),
+    )
     new_final = [item for item in final if not item.get("alreadyInCatalog")]
+
+    search_failures = sum(1 for result in search_results if result["error"] and not result["links"])
+    artist_results = []
+    for result in sorted(search_results, key=lambda r: r["name"].casefold()):
+        stats = per_artist[result["name"]]
+        artist_results.append(
+            {
+                "artist": result["name"],
+                "searchLinksFound": len(result["links"]),
+                "matchedEvents": stats["matched"],
+                "newCandidates": stats["new"],
+                "status": "ok" if result["links"] or not result["error"] else "failed",
+                "error": result["error"] if result["error"] and not result["links"] else "",
+            }
+        )
 
     status = {
         "generatedAt": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
         "artistsChecked": len(enabled),
-        "eventLinksFoundAcrossSearches": event_links_found,
-        "eventPagesChecked": pages_checked,
+        "eventLinksFoundAcrossSearches": sum(len(r["links"]) for r in search_results),
+        "uniqueEventPagesDiscovered": len(event_artists),
+        "eventPagesChecked": len(event_pages),
         "matchedUpcomingEvents": len(final),
         "alreadyInCatalog": len(final) - len(new_final),
         "newCandidateEvents": len(new_final),
@@ -362,7 +400,7 @@ def main() -> int:
     }
     write_json(CANDIDATES_FILE, final)
     write_json(STATUS_FILE, status)
-    print(json.dumps({k: v for k, v in status.items() if k != "artistResults"}, indent=2))
+    print(json.dumps({k: v for k, v in status.items() if k != "artistResults"}, indent=2), flush=True)
     return 0
 
 
