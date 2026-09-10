@@ -1,0 +1,78 @@
+name: Keep HVO Fest official details on Eventbrite
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kingdom-circuit-hvo-link-fix
+  cancel-in-progress: true
+
+jobs:
+  fix-hvo-link:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Correct HVO Fest official details link
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          EVENTBRITE = "https://www.eventbrite.com/e/hvo-fest-tickets-1987360837764"
+          INSTAGRAM = "https://www.instagram.com/reel/DblfWwWu062/"
+          IDS = {"hvo-fest-2026-los-angeles", "manual:hvo-fest-2026-los-angeles"}
+
+          changed_files = []
+          for relative in ("config/manual-events.json", "events.json", "supplemental-events.json"):
+              path = Path(relative)
+              if not path.exists():
+                  continue
+              data = json.loads(path.read_text(encoding="utf-8"))
+              if not isinstance(data, list):
+                  continue
+              changed = False
+              for event in data:
+                  if not isinstance(event, dict):
+                      continue
+                  if event.get("id") not in IDS and event.get("title") != "HVO Fest 2026":
+                      continue
+                  if event.get("officialUrl") != EVENTBRITE:
+                      event["officialUrl"] = EVENTBRITE
+                      changed = True
+                  if event.get("ticketUrl") != EVENTBRITE:
+                      event["ticketUrl"] = EVENTBRITE
+                      changed = True
+                  if event.get("announcementUrl") != INSTAGRAM:
+                      event["announcementUrl"] = INSTAGRAM
+                      changed = True
+              if changed:
+                  path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+                  changed_files.append(relative)
+
+          print("Updated:", ", ".join(changed_files) if changed_files else "nothing")
+          PY
+
+      - name: Persist correction
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-link-fix"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add config/manual-events.json events.json supplemental-events.json
+          if git diff --cached --quiet; then
+            echo "HVO Fest link already correct."
+            exit 0
+          fi
+          git commit -m "Fix HVO Fest official details link [skip ci]"
+          git push origin HEAD:main
