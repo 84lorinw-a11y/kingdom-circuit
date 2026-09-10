@@ -1313,7 +1313,7 @@
     "startTime": "19:00",
     "timezone": "America/New_York",
     "venue": "Crossover Church",
-    "address": "1235 E Fowler Ave",
+    "address": "1235 Fowler Ave",
     "city": "Tampa",
     "state": "FL",
     "country": "US",
@@ -1324,14 +1324,15 @@
     ],
     "headliner": "Miles Minnick",
     "eventType": "festival",
+    "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
     "image": "",
     "price": "",
-    "status": "scheduled",
-    "lineupExplicit": true,
-    "authority": "official_event",
     "sourceName": "Flavor Fest official 2026 schedule",
+    "authority": "official_event",
+    "confidence": "high",
+    "lineupExplicit": true,
     "sources": [
       {
         "name": "Flavor Fest official 2026 schedule",
@@ -1340,8 +1341,7 @@
         "authority": "official_event",
         "priority": 112
       }
-    ],
-    "confidence": "high"
+    ]
   },
   {
     "id": "flavor-fest-2026-saturday-concerts",

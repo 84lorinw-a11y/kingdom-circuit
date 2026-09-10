@@ -560,10 +560,10 @@
     "id": "official:cc1595e90fb45c872c77",
     "title": "GRACEFEST 2026",
     "startDate": "2026-09-19",
-    "startTime": "",
-    "timezone": "",
+    "startTime": "13:30",
+    "timezone": "America/Los_Angeles",
     "venue": "Castaic Lake State Recreation Area",
-    "address": "",
+    "address": "Castaic Lake Drive",
     "city": "Castaic",
     "state": "CA",
     "country": "US",
@@ -571,13 +571,13 @@
       "Lecrae"
     ],
     "headliner": "Lecrae",
-    "eventType": "concert",
+    "eventType": "festival",
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
     "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
     "image": "https://s1.ticketm.net/dam/a/ebc/e5cbc136-0e98-4e15-a74d-700667f29ebc_SOURCE",
     "price": "",
-    "sourceName": "Reach Records - Lecrae",
+    "sourceName": "Official Eventbrite listing",
     "sources": [
       {
         "name": "Reach Records - Lecrae",
@@ -606,7 +606,9 @@
     "imageType": "artist",
     "imagePosition": "50% 30%",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-19T12:01:10Z"
+    "firstSeen": "2026-08-19T12:01:10Z",
+    "authority": "official_festival",
+    "lineupExplicit": true
   },
   {
     "id": "eventbrite:hip-hop-in-the-park-cortland-2026",
