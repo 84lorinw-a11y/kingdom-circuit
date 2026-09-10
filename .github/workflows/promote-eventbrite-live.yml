@@ -1,0 +1,119 @@
+name: Promote verified Eventbrite shows
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'config/.eventbrite-live-fix'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Promote Eventbrite discoveries and HVO artwork
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          wanted = {
+              'eventbrite:truthx-yung-kriss-brandon-2026',
+              'eventbrite:gracefest-lecrae-castaic-2026',
+              'eventbrite:hip-hop-in-the-park-cortland-2026',
+              'eventbrite:reign-volume-one-aasha-marie-brooklyn-2026',
+              'eventbrite:rare-of-breed-jacksonville-2026',
+          }
+          hvo_id = 'hvo-fest-2026-los-angeles'
+          hvo_image = 'assets/events/hvo-fest-2026.jpg'
+
+          def load(path):
+              return json.loads(Path(path).read_text())
+
+          def save(path, data):
+              Path(path).write_text(json.dumps(data, indent=2, ensure_ascii=False) + '\n')
+
+          def same_show(a, b):
+              if a.get('startDate') != b.get('startDate'):
+                  return False
+              if (a.get('city') or '').casefold() != (b.get('city') or '').casefold():
+                  return False
+              if (a.get('state') or '').casefold() != (b.get('state') or '').casefold():
+                  return False
+              aa = {str(x).casefold() for x in a.get('artists', [])}
+              bb = {str(x).casefold() for x in b.get('artists', [])}
+              return bool(aa & bb)
+
+          def merge_source(target, source):
+              # Keep one event card while making Eventbrite an authoritative details/ticket source.
+              target['title'] = source.get('title') or target.get('title')
+              if source.get('ticketUrl'):
+                  target['ticketUrl'] = source['ticketUrl']
+              if source.get('officialUrl'):
+                  target['officialUrl'] = source['officialUrl']
+              existing = target.get('sources') if isinstance(target.get('sources'), list) else []
+              seen = {s.get('url') for s in existing if isinstance(s, dict)}
+              for s in source.get('sources', []):
+                  if isinstance(s, dict) and s.get('url') not in seen:
+                      existing.append(s)
+                      seen.add(s.get('url'))
+              if existing:
+                  target['sources'] = existing
+              return target
+
+          supplemental = load('supplemental-events.json')
+          selected = [e for e in supplemental if e.get('id') in wanted]
+          found = {e.get('id') for e in selected}
+          missing = wanted - found
+          if missing:
+              raise SystemExit(f'Missing expected Eventbrite records: {sorted(missing)}')
+
+          for path in ['config/manual-events.json', 'events.json']:
+              data = load(path)
+              ids = {e.get('id') for e in data}
+              for source in selected:
+                  if source.get('id') in ids:
+                      continue
+                  dup = next((e for e in data if same_show(e, source)), None)
+                  if dup:
+                      merge_source(dup, source)
+                  else:
+                      data.append(source)
+                      ids.add(source.get('id'))
+              for e in data:
+                  if e.get('id') == hvo_id:
+                      e['image'] = hvo_image
+                      e['imageType'] = 'event_artwork'
+                      e['imagePosition'] = 'center'
+                      e['imageOverride'] = True
+              save(path, data)
+
+          # Also pin the HVO artwork in supplemental data if the event is ever mirrored there.
+          for e in supplemental:
+              if e.get('id') == hvo_id:
+                  e['image'] = hvo_image
+                  e['imageType'] = 'event_artwork'
+                  e['imagePosition'] = 'center'
+                  e['imageOverride'] = True
+          save('supplemental-events.json', supplemental)
+          PY
+
+      - name: Commit promoted catalog
+        run: |
+          if git diff --quiet -- config/manual-events.json events.json supplemental-events.json; then
+            echo 'Catalog already promoted.'
+            exit 0
+          fi
+          git config user.name 'kingdom-circuit-eventbrite-fix'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add config/manual-events.json events.json supplemental-events.json
+          git commit -m 'Promote verified Eventbrite shows and HVO artwork'
+          git pull --rebase origin main
+          git push origin HEAD:main
