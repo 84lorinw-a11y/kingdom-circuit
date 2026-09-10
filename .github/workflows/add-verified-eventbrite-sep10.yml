@@ -23,14 +23,14 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Add five verified Eventbrite shows
+      - name: Add verified shows and repair HVO artwork
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
 
-          path = Path('supplemental-events.json')
-          rows = json.loads(path.read_text(encoding='utf-8')) if path.exists() else []
+          supplemental_path = Path('supplemental-events.json')
+          rows = json.loads(supplemental_path.read_text(encoding='utf-8')) if supplemental_path.exists() else []
           by_id = {str(x.get('id')): x for x in rows if isinstance(x, dict) and x.get('id')}
 
           events = [
@@ -158,6 +158,31 @@ jobs:
               "confidence": "high",
               "lineupExplicit": True,
               "sources": [{"name":"Official Eventbrite listing","url":"https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586","type":"eventbrite","authority":"venue_ticket","priority":94}]
+            },
+            {
+              "id": "flavor-fest-2026-friday-concerts",
+              "title": "Flavor Fest 2026 — Friday Concerts",
+              "startDate": "2026-11-06",
+              "startTime": "19:00",
+              "timezone": "America/New_York",
+              "venue": "Crossover Church",
+              "address": "1235 Fowler Ave",
+              "city": "Tampa",
+              "state": "FL",
+              "country": "US",
+              "artists": ["Miles Minnick", "Gifted Hands", "Datin"],
+              "headliner": "Miles Minnick",
+              "eventType": "festival",
+              "status": "scheduled",
+              "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
+              "officialUrl": "https://www.flavorfest.org/schedule",
+              "image": "",
+              "price": "",
+              "sourceName": "Flavor Fest official 2026 schedule",
+              "authority": "official_event",
+              "confidence": "high",
+              "lineupExplicit": True,
+              "sources": [{"name":"Flavor Fest official 2026 schedule","url":"https://www.flavorfest.org/schedule","type":"manual_verified","authority":"official_event","priority":112}]
             }
           ]
 
@@ -165,17 +190,54 @@ jobs:
               by_id[event['id']] = event
           merged = list(by_id.values())
           merged.sort(key=lambda x: (str(x.get('startDate','9999')), str(x.get('startTime','')), str(x.get('title',''))))
-          path.write_text(json.dumps(merged, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
-          print('Verified Eventbrite events ensured:', len(events))
+          supplemental_path.write_text(json.dumps(merged, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          # Keep the real HVO flyer on the canonical live record. Also canonicalize
+          # the already-existing Castaic Lecrae row to GRACEFEST so the Eventbrite
+          # discovery is visible instead of being hidden by same-event deduplication.
+          live_path = Path('events.json')
+          live_events = json.loads(live_path.read_text(encoding='utf-8')) if live_path.exists() else []
+          grace_url = "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803"
+          for event in live_events:
+              if not isinstance(event, dict):
+                  continue
+              if event.get('id') == 'manual:hvo-fest-2026-los-angeles' or event.get('title') == 'HVO Fest 2026':
+                  event['image'] = 'assets/events/hvo-fest-2026.jpg'
+                  event['imageType'] = 'event_artwork'
+                  event['imagePosition'] = 'center'
+                  event['imageOverride'] = True
+              if (event.get('startDate') == '2026-09-19' and
+                  str(event.get('city','')).casefold() == 'castaic' and
+                  any(str(a).casefold() == 'lecrae' for a in event.get('artists', []))):
+                  event.update({
+                      'title': 'GRACEFEST 2026',
+                      'startTime': '13:30',
+                      'timezone': 'America/Los_Angeles',
+                      'venue': 'Castaic Lake State Recreation Area',
+                      'address': 'Castaic Lake Drive',
+                      'eventType': 'festival',
+                      'ticketUrl': grace_url,
+                      'officialUrl': grace_url,
+                      'sourceName': 'Official Eventbrite listing',
+                      'authority': 'official_festival',
+                      'confidence': 'high',
+                      'lineupExplicit': True,
+                  })
+                  sources = [s for s in event.get('sources', []) if isinstance(s, dict)]
+                  if not any(s.get('url') == grace_url for s in sources):
+                      sources.insert(0, {'name':'Official Eventbrite listing','url':grace_url,'type':'eventbrite','authority':'official_festival','priority':104})
+                  event['sources'] = sources
+          live_path.write_text(json.dumps(live_events, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          print('Verified shows ensured:', len(events))
           PY
 
-      - name: Commit show additions
+      - name: Commit show additions and artwork repair
         run: |
           git config user.name "kingdom-circuit-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add supplemental-events.json
+          git add supplemental-events.json events.json
           if ! git diff --cached --quiet; then
-            git commit -m "Add 5 verified Eventbrite shows [skip ci]"
+            git commit -m "Publish verified shows and HVO artwork [skip ci]"
             git pull --rebase origin main
             git push origin HEAD:main
           fi
@@ -186,4 +248,4 @@ jobs:
         run: |
           gh api --method POST repos/${GITHUB_REPOSITORY}/actions/workflows/update-and-deploy.yml/dispatches -f ref=main
 
-# retrigger 2026-09-10
+# retrigger 2026-09-10 flavor-friday-and-live-repair
