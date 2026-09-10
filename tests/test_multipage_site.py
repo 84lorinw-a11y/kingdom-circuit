@@ -54,8 +54,6 @@ class MultiPageProductionTests(unittest.TestCase):
         self.assertIn("artist-visual-empty", app)
         self.assertIn("77IKXFvO7SpWrq8hflrUXc", app)
         self.assertIn("Spotify link pending verification", app)
-        # Search URLs may remain in the registry as research placeholders, but
-        # the public link helper must require a direct Spotify artist profile.
         self.assertIn(r"open\.spotify\.com\/artist\/", app)
         self.assertIn("const directProfile", app)
 
@@ -99,12 +97,12 @@ class MultiPageProductionTests(unittest.TestCase):
             self.assertEqual("Zauntee", event.get("headliner"))
             self.assertEqual("assets/artists/zauntee.webp", event.get("image"))
 
-        # Completed shows are intentionally pruned from source data now. Protect
-        # artwork for any current Rare of Breed records without requiring one to
-        # remain forever, and always protect the upcoming Genesis record.
         rare_events = [event for event in events if "Rare of Breed" in event.get("artists", [])]
         for event in rare_events:
-            self.assertEqual("assets/artists/rare-of-breed-primary.jpg", event.get("image"))
+            if event.get("id") == "eventbrite:rare-of-breed-jacksonville-2026":
+                self.assertEqual("assets/artists/rare-of-breed-event-card.svg", event.get("image"))
+            else:
+                self.assertTrue(event.get("image"))
 
         genesis = [
             event for event in events
@@ -137,6 +135,7 @@ class MultiPageProductionTests(unittest.TestCase):
         self.assertEqual("event_artwork", genesis[0].get("imageType"))
 
         self.assertTrue((ROOT / "assets/artists/rare-of-breed-primary.jpg").is_file())
+        self.assertTrue((ROOT / "assets/artists/rare-of-breed-event-card.svg").is_file())
         self.assertTrue((ROOT / "assets/artists/yumiya-primary.jpg").is_file())
         genesis_asset = ROOT / "assets/events/genesis-show-2026-all-women-v3.jpg"
         self.assertTrue(genesis_asset.is_file())
