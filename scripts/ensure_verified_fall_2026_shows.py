@@ -3,8 +3,8 @@
 
 This is a narrow editorial guard for events that were verified from Eventbrite
 or the official Flavor Fest schedule but were being dropped by automated
-refresh/curation. It also pins the user-supplied HVO Fest artwork. Changes to
-this guard are production-critical because they protect the live catalog.
+refresh/curation. It also pins the user-supplied HVO Fest artwork. This guard
+is deployment-critical because it protects the live catalog.
 """
 
 from __future__ import annotations
