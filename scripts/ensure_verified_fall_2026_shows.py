@@ -31,7 +31,7 @@ EVENTBRITE_IMAGE_OVERRIDES = {
     "eventbrite:gracefest-lecrae-castaic-2026": "assets/artists/lecrae-event-card.svg",
     "eventbrite:hip-hop-in-the-park-cortland-2026": "assets/artists/datin-event-card.svg",
     "eventbrite:reign-volume-one-aasha-marie-brooklyn-2026": "assets/artists/aasha-marie-event-card.svg",
-    "eventbrite:rare-of-breed-jacksonville-2026": "assets/artists/rare-of-breed-primary.jpg",
+    "eventbrite:rare-of-breed-jacksonville-2026": "assets/artists/rare-of-breed-event-card.svg",
 }
 
 HVO_SOURCE_ID = "hvo-fest-2026-los-angeles"
@@ -115,8 +115,6 @@ def main() -> None:
     if missing:
         raise SystemExit(f"Verified Eventbrite records missing from manual registry: {missing}")
 
-    # Promote the five verified Eventbrite discoveries into the primary live feed
-    # and keep their presentation images in the manual source registry too.
     for event_id in sorted(EVENTBRITE_IDS):
         item = deepcopy(manual_by_id[event_id])
         item.setdefault("country", "US")
