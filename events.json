@@ -608,7 +608,7 @@
   },
   {
     "id": "official:cc1595e90fb45c872c77",
-    "title": "Lecrae — Live at Castaic Lake State Recreation Area",
+    "title": "GRACEFEST 2026",
     "startDate": "2026-09-19",
     "startTime": "",
     "timezone": "",
@@ -623,8 +623,8 @@
     "headliner": "Lecrae",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/1039926582?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.reachrecords.com/artists/lecrae/",
+    "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+    "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
     "image": "https://s1.ticketm.net/dam/a/ebc/e5cbc136-0e98-4e15-a74d-700667f29ebc_SOURCE",
     "price": "",
     "sourceName": "Reach Records - Lecrae",
@@ -642,6 +642,13 @@
         "type": "reach_records",
         "authority": "artist_label",
         "priority": 84
+      },
+      {
+        "name": "Official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+        "type": "eventbrite",
+        "authority": "official_festival",
+        "priority": 104
       }
     ],
     "lastVerified": "2026-09-10T00:36:35Z",
@@ -2101,5 +2108,148 @@
     "imagePosition": "50% 38%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "eventbrite:truthx-yung-kriss-brandon-2026",
+    "title": "TruthX Concert 2026",
+    "startDate": "2026-09-12",
+    "startTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "Brandon High School",
+    "address": "1101 Victoria Street",
+    "city": "Brandon",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Yung Kriss"
+    ],
+    "headliner": "Yung Kriss",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
+    "officialUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
+    "image": "",
+    "price": "",
+    "sourceName": "Official Eventbrite listing",
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
+        "type": "eventbrite",
+        "authority": "venue_ticket",
+        "priority": 94
+      }
+    ]
+  },
+  {
+    "id": "eventbrite:hip-hop-in-the-park-cortland-2026",
+    "title": "Hip Hop in the Park",
+    "startDate": "2026-09-19",
+    "startTime": "13:00",
+    "timezone": "America/New_York",
+    "venue": "Courthouse Park",
+    "address": "33 Church Street",
+    "city": "Cortland",
+    "state": "NY",
+    "country": "US",
+    "artists": [
+      "Datin",
+      "Heesun Lee",
+      "Brother Bo"
+    ],
+    "headliner": "Datin",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
+    "officialUrl": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
+    "image": "",
+    "price": "Free",
+    "sourceName": "Official Eventbrite listing",
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
+        "type": "eventbrite",
+        "authority": "venue_ticket",
+        "priority": 94
+      }
+    ]
+  },
+  {
+    "id": "eventbrite:reign-volume-one-aasha-marie-brooklyn-2026",
+    "title": "REIGN volume one",
+    "startDate": "2026-10-10",
+    "startTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "The Vino Theater",
+    "address": "274 Morgan Avenue, Suite 201",
+    "city": "Brooklyn",
+    "state": "NY",
+    "country": "US",
+    "artists": [
+      "Aasha Marie"
+    ],
+    "headliner": "Aasha Marie",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
+    "officialUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
+    "image": "",
+    "price": "",
+    "sourceName": "Official Eventbrite listing",
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
+        "type": "eventbrite",
+        "authority": "venue_ticket",
+        "priority": 94
+      }
+    ]
+  },
+  {
+    "id": "eventbrite:rare-of-breed-jacksonville-2026",
+    "title": "Rare of Breed",
+    "startDate": "2026-10-16",
+    "startTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "Murray Hill Theatre",
+    "address": "932 Edgewood Ave S",
+    "city": "Jacksonville",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Rare of Breed",
+      "DJ Winn"
+    ],
+    "headliner": "Rare of Breed",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
+    "officialUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
+    "image": "",
+    "price": "",
+    "sourceName": "Official Eventbrite listing",
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
+        "type": "eventbrite",
+        "authority": "venue_ticket",
+        "priority": 94
+      }
+    ]
   }
 ]
