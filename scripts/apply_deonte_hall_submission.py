@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import json
+import subprocess
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -12,6 +14,7 @@ ARTISTS_FILE = ROOT / "config" / "artists.json"
 VERIFIED_UPDATES_FILE = ROOT / "config" / "verified-artist-registry-updates.json"
 EVENTS_FILE = ROOT / "events.json"
 SUPPLEMENTAL_FILE = ROOT / "supplemental-events.json"
+VERIFIED_SHOW_REPAIRS = ROOT / "scripts" / "apply_verified_show_repairs.py"
 
 ARTIST_NAME = "Deonte Hall"
 SOURCE_ROSTER_ORDER = 110
@@ -220,12 +223,19 @@ def verify() -> None:
             raise SystemExit(f"Deonte Hall event {field} mismatch: {show.get(field)!r}")
 
 
+def run_verified_show_repairs() -> None:
+    if not VERIFIED_SHOW_REPAIRS.is_file():
+        raise SystemExit(f"Verified show repair script is missing: {VERIFIED_SHOW_REPAIRS}")
+    subprocess.run([sys.executable, str(VERIFIED_SHOW_REPAIRS)], cwd=ROOT, check=True)
+
+
 def main() -> int:
     patch_verified_updates()
     patch_artists()
     patch_submitted_event()
     verify()
-    print("Deonte Hall direct Facebook details and supplied event flyer applied.")
+    run_verified_show_repairs()
+    print("Deonte Hall submission and reviewed show repairs applied.")
     return 0
 
 
