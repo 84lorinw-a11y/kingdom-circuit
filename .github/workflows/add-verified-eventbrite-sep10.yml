@@ -1,0 +1,187 @@
+name: Add verified Eventbrite discoveries
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/add-verified-eventbrite-sep10.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  add-events:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Add five verified Eventbrite shows
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('supplemental-events.json')
+          rows = json.loads(path.read_text(encoding='utf-8')) if path.exists() else []
+          by_id = {str(x.get('id')): x for x in rows if isinstance(x, dict) and x.get('id')}
+
+          events = [
+            {
+              "id": "eventbrite:truthx-yung-kriss-brandon-2026",
+              "title": "TruthX Concert 2026",
+              "startDate": "2026-09-12",
+              "startTime": "19:00",
+              "timezone": "America/New_York",
+              "venue": "Brandon High School",
+              "address": "1101 Victoria Street",
+              "city": "Brandon",
+              "state": "FL",
+              "country": "US",
+              "artists": ["Yung Kriss"],
+              "headliner": "Yung Kriss",
+              "eventType": "concert",
+              "status": "scheduled",
+              "ticketUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
+              "officialUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
+              "image": "",
+              "price": "",
+              "sourceName": "Official Eventbrite listing",
+              "authority": "venue_ticket",
+              "confidence": "high",
+              "lineupExplicit": True,
+              "sources": [{"name":"Official Eventbrite listing","url":"https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948","type":"eventbrite","authority":"venue_ticket","priority":94}]
+            },
+            {
+              "id": "eventbrite:gracefest-lecrae-castaic-2026",
+              "title": "GRACEFEST 2026",
+              "startDate": "2026-09-19",
+              "startTime": "13:30",
+              "timezone": "America/Los_Angeles",
+              "venue": "Castaic Lake State Recreation Area",
+              "address": "Castaic Lake Drive",
+              "city": "Castaic",
+              "state": "CA",
+              "country": "US",
+              "artists": ["Lecrae"],
+              "headliner": "Lecrae",
+              "eventType": "festival",
+              "status": "scheduled",
+              "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+              "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+              "image": "",
+              "price": "",
+              "sourceName": "Official Eventbrite listing",
+              "authority": "official_festival",
+              "confidence": "high",
+              "lineupExplicit": True,
+              "sources": [{"name":"Official Eventbrite listing","url":"https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803","type":"eventbrite","authority":"official_festival","priority":104}]
+            },
+            {
+              "id": "eventbrite:hip-hop-in-the-park-cortland-2026",
+              "title": "Hip Hop in the Park",
+              "startDate": "2026-09-19",
+              "startTime": "13:00",
+              "timezone": "America/New_York",
+              "venue": "Courthouse Park",
+              "address": "33 Church Street",
+              "city": "Cortland",
+              "state": "NY",
+              "country": "US",
+              "artists": ["Datin", "Heesun Lee", "Brother Bo"],
+              "headliner": "Datin",
+              "eventType": "concert",
+              "status": "scheduled",
+              "ticketUrl": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
+              "officialUrl": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
+              "image": "",
+              "price": "Free",
+              "sourceName": "Official Eventbrite listing",
+              "authority": "venue_ticket",
+              "confidence": "high",
+              "lineupExplicit": True,
+              "sources": [{"name":"Official Eventbrite listing","url":"https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727","type":"eventbrite","authority":"venue_ticket","priority":94}]
+            },
+            {
+              "id": "eventbrite:reign-volume-one-aasha-marie-brooklyn-2026",
+              "title": "REIGN volume one",
+              "startDate": "2026-10-10",
+              "startTime": "19:00",
+              "timezone": "America/New_York",
+              "venue": "The Vino Theater",
+              "address": "274 Morgan Avenue, Suite 201",
+              "city": "Brooklyn",
+              "state": "NY",
+              "country": "US",
+              "artists": ["Aasha Marie"],
+              "headliner": "Aasha Marie",
+              "eventType": "concert",
+              "status": "scheduled",
+              "ticketUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
+              "officialUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
+              "image": "",
+              "price": "",
+              "sourceName": "Official Eventbrite listing",
+              "authority": "venue_ticket",
+              "confidence": "high",
+              "lineupExplicit": True,
+              "sources": [{"name":"Official Eventbrite listing","url":"https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241","type":"eventbrite","authority":"venue_ticket","priority":94}]
+            },
+            {
+              "id": "eventbrite:rare-of-breed-jacksonville-2026",
+              "title": "Rare of Breed",
+              "startDate": "2026-10-16",
+              "startTime": "19:00",
+              "timezone": "America/New_York",
+              "venue": "Murray Hill Theatre",
+              "address": "932 Edgewood Ave S",
+              "city": "Jacksonville",
+              "state": "FL",
+              "country": "US",
+              "artists": ["Rare of Breed", "DJ Winn"],
+              "headliner": "Rare of Breed",
+              "eventType": "concert",
+              "status": "scheduled",
+              "ticketUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
+              "officialUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
+              "image": "",
+              "price": "",
+              "sourceName": "Official Eventbrite listing",
+              "authority": "venue_ticket",
+              "confidence": "high",
+              "lineupExplicit": True,
+              "sources": [{"name":"Official Eventbrite listing","url":"https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586","type":"eventbrite","authority":"venue_ticket","priority":94}]
+            }
+          ]
+
+          for event in events:
+              by_id[event['id']] = event
+          merged = list(by_id.values())
+          merged.sort(key=lambda x: (str(x.get('startDate','9999')), str(x.get('startTime','')), str(x.get('title',''))))
+          path.write_text(json.dumps(merged, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          print('Verified Eventbrite events ensured:', len(events))
+          PY
+
+      - name: Commit show additions
+        run: |
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add supplemental-events.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Add 5 verified Eventbrite shows [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
+      - name: Deploy refreshed site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --method POST repos/${GITHUB_REPOSITORY}/actions/workflows/update-and-deploy.yml/dispatches -f ref=main
