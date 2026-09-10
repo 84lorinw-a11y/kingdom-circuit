@@ -1,0 +1,49 @@
+name: Ensure verified Fall shows
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ensure:
+    if: ${{ !contains(github.event.head_commit.message || '', '[verified fall sync]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Pin verified Eventbrite shows, Flavor Fest Friday, and HVO artwork
+        run: python scripts/ensure_verified_fall_2026_shows.py
+
+      - name: Save verified show corrections
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-verified-shows"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add events.json supplemental-events.json config/manual-events.json
+          if git diff --cached --quiet; then
+            echo "Verified show data already correct."
+            exit 0
+          fi
+          git commit -m "Ensure verified Fall 2026 shows [verified fall sync]"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            git fetch origin main
+            git rebase origin/main
+          done
+          echo "Unable to save verified show corrections after retries."
+          exit 1
