@@ -86,6 +86,21 @@ class MultiPageProductionTests(unittest.TestCase):
         self.assertRegex(css, r"event-media img\.event-artwork[^{]*\{[^}]*object-fit:\s*contain")
         self.assertRegex(css, r"event-media img\.artist-photo[^{]*\{[^}]*object-fit:\s*cover")
 
+    def test_yung_kriss_event_artwork_is_high_resolution_and_pinned(self):
+        events = json.loads((ROOT / "events.json").read_text(encoding="utf-8"))
+        expected = {
+            "TruthX Concert 2026": "assets/events/truthx-yung-kriss-2026.jpg",
+            "HVO Fest 2026": "assets/events/hvo-fest-2026.jpg",
+        }
+        for title, image in expected.items():
+            event = next(item for item in events if item.get("title") == title)
+            self.assertEqual(image, event.get("image"))
+            self.assertEqual("event_artwork", event.get("imageType"))
+            self.assertTrue(event.get("imageOverride"))
+            asset = ROOT / image
+            self.assertGreater(asset.stat().st_size, 300_000)
+            self.assertEqual(b"\xff\xd8", asset.read_bytes()[:2])
+
     def test_supplemental_events_are_complete(self):
         events = json.loads((ROOT / "supplemental-events.json").read_text(encoding="utf-8"))
         self.assertEqual(len(events), len({event["id"] for event in events}))

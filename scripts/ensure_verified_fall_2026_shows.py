@@ -27,7 +27,7 @@ EVENTBRITE_IDS = {
 }
 
 EVENTBRITE_IMAGE_OVERRIDES = {
-    "eventbrite:truthx-yung-kriss-brandon-2026": "assets/artists/yung-kriss-event-card.svg",
+    "eventbrite:truthx-yung-kriss-brandon-2026": "assets/events/truthx-yung-kriss-2026.jpg",
     "eventbrite:gracefest-lecrae-castaic-2026": "assets/artists/lecrae-event-card.svg",
     "eventbrite:hip-hop-in-the-park-cortland-2026": "assets/artists/datin-event-card.svg",
     "eventbrite:reign-volume-one-aasha-marie-brooklyn-2026": "assets/artists/aasha-marie-event-card.svg",
@@ -121,7 +121,10 @@ def main() -> None:
         item.setdefault("confidence", "high")
         if event_id in EVENTBRITE_IMAGE_OVERRIDES:
             item["image"] = EVENTBRITE_IMAGE_OVERRIDES[event_id]
-            item["imageType"] = "artist"
+            item["imageType"] = "event_artwork" if event_id == "eventbrite:truthx-yung-kriss-brandon-2026" else "artist"
+            if event_id == "eventbrite:truthx-yung-kriss-brandon-2026":
+                item["imagePosition"] = "center"
+                item["imageOverride"] = True
         else:
             item.setdefault("imageType", "event_artwork" if item.get("image") else "artist")
         upsert(events, item)

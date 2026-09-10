@@ -13,7 +13,8 @@ MANUAL = ROOT / "config" / "manual-events.json"
 
 GRACE_URL = "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803"
 HVO_IMAGE = "assets/events/hvo-fest-2026.jpg"
-RARE_IMAGE = "assets/artists/rare-of-breed-primary.jpg"
+TRUTHX_IMAGE = "assets/events/truthx-yung-kriss-2026.jpg"
+RARE_IMAGE = "assets/artists/rare-of-breed-event-card.svg"
 
 VERIFIED = [
     {
@@ -33,7 +34,10 @@ VERIFIED = [
         "status": "scheduled",
         "ticketUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
         "officialUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
-        "image": "",
+        "image": TRUTHX_IMAGE,
+        "imageType": "event_artwork",
+        "imagePosition": "center",
+        "imageOverride": True,
         "price": "",
         "sourceName": "Official Eventbrite listing",
         "authority": "venue_ticket",
@@ -196,6 +200,14 @@ def repair_live_events() -> None:
     for event in rows:
         if not isinstance(event, dict):
             continue
+        if event.get("id") in {
+            "eventbrite:truthx-yung-kriss-brandon-2026",
+            "manual:eventbrite:truthx-yung-kriss-brandon-2026",
+        } or event.get("title") == "TruthX Concert 2026":
+            event["image"] = TRUTHX_IMAGE
+            event["imageType"] = "event_artwork"
+            event["imagePosition"] = "center"
+            event["imageOverride"] = True
         if event.get("id") == "manual:hvo-fest-2026-los-angeles" or event.get("title") == "HVO Fest 2026":
             event["image"] = HVO_IMAGE
             event["imageType"] = "event_artwork"
@@ -228,6 +240,9 @@ def repair_live_events() -> None:
 
 
 def main() -> int:
+    for image in (TRUTHX_IMAGE, HVO_IMAGE):
+        if not (ROOT / image).is_file():
+            raise SystemExit(f"Required event artwork is missing: {image}")
     ensure_by_id(SUPPLEMENTAL, VERIFIED)
     ensure_by_id(MANUAL, VERIFIED)
     repair_live_events()

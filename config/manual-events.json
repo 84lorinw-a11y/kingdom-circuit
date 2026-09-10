@@ -685,7 +685,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
     "officialUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
-    "image": "assets/artists/yung-kriss-event-card.svg",
+    "image": "assets/events/truthx-yung-kriss-2026.jpg",
     "price": "",
     "sourceName": "Official Eventbrite listing",
     "authority": "venue_ticket",
@@ -700,7 +700,9 @@
         "priority": 94
       }
     ],
-    "imageType": "artist"
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true
   },
   {
     "id": "egr-2026-09-18-carson-ca",
