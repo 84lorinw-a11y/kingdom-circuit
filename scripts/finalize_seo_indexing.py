@@ -5,6 +5,7 @@ import sys
 
 from add_past_show_archives import apply_past_show_archives
 from finalize_seo_indexing_core import main as finalize_main
+from fix_seo_audit import apply_seo_audit_fixes
 
 
 def main() -> None:
@@ -16,6 +17,8 @@ def main() -> None:
 
     report = apply_past_show_archives(root)
     print("Past show archive:", report)
+    seo_report = apply_seo_audit_fixes(root)
+    print("SEO audit fixes:", seo_report)
     finalize_main()
 
 
