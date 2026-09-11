@@ -1099,6 +1099,20 @@
     "softFail": true
   },
   {
+    "name": "Kaden Jordan official tour / Songkick",
+    "url": "https://www.songkick.com/artists/10314485-kaden-jordan",
+    "parser": "jsonld",
+    "enabled": true,
+    "artist": "Kaden Jordan",
+    "headliner": "Kaden Jordan",
+    "authority": "artist_calendar",
+    "priority": 74,
+    "imagePolicy": "artist",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "softFail": true
+  },
+  {
     "name": "FLAME Plano official registration",
     "url": "https://onrealm.org/MessiahLutheran43217/PublicRegistrations/Event?linkString=YzkzNmFlZTktYzUwOS00OGU5LWE4OTQtYjQ2YzAwMmE3YjE1",
     "parser": "jsonld",

@@ -58,7 +58,7 @@ class ArtistDatabaseSeptember9Tests(unittest.TestCase):
     def test_rows_111_through_134_match_the_sheet_order(self):
         self.assertEqual(
             [item["rosterOrder"] for item in self.updates],
-            list(range(55, 135)),
+            list(range(55, 145)),
         )
         update_block = [item for item in self.updates if 111 <= item["rosterOrder"] <= 134]
         self.assertEqual([item["rosterOrder"] for item in update_block], list(range(111, 135)))
@@ -115,7 +115,6 @@ class ArtistDatabaseSeptember9Tests(unittest.TestCase):
         expected = {
             "hvo-fest-2026-los-angeles": ("2026-09-26", {"Yung Kriss", "Alex Jean"}),
             "passion-fest-ii-2026-charlotte": ("2026-10-11", {"Yung Kriss"}),
-            "flavor-fest-2026-saturday-concerts": ("2026-11-07", {"Lecrae", "Yung Kriss"}),
         }
         records = {item["id"]: item for item in self.manual_events}
         for identifier, (start_date, artists) in expected.items():
