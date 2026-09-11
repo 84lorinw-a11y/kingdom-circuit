@@ -1,0 +1,70 @@
+name: Enforce September 11 catalog audit
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sep11-catalog-audit-guard
+  cancel-in-progress: true
+
+jobs:
+  enforce:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out production repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Apply verified catalog audit
+        run: python scripts/apply_sep11_catalog_audit.py
+
+      - name: Regenerate artist registry after exclusions
+        run: python scripts/sync_verified_artist_registry.py
+
+      - name: Reapply audit after registry generation
+        run: |
+          python scripts/apply_sep11_catalog_audit.py
+          python scripts/apply_sep11_catalog_audit.py --check
+
+      - name: Run project tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+
+      - name: Save durable audit corrections
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-catalog-audit"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add events.json supplemental-events.json config/manual-events.json \
+            config/artists.json config/verified-artist-websites.json app.js \
+            tests/test_update_events.py
+          if git diff --cached --quiet; then
+            echo "Catalog audit already enforced."
+            exit 0
+          fi
+          git commit -m "Apply verified Sep 11 catalog audit [catalog audit]"
+          PUSHED=0
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              PUSHED=1
+              break
+            fi
+            echo "Push raced with another automation commit; rebasing and retrying ($attempt/3)."
+            git fetch origin main
+            git rebase origin/main
+          done
+          if [ "$PUSHED" -ne 1 ]; then
+            echo "Unable to save catalog audit corrections after retries."
+            exit 1
+          fi
