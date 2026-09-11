@@ -35,7 +35,7 @@ REGISTRY_UPDATES = {
         "spotifyProfile": "https://open.spotify.com/artist/6s3XaJkcT7464G4oII9V41",
         "youtubeProfile": "https://www.youtube.com/@CalebGordon",
         "officialImageSource": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
-        "imageUrl": "https://tprlive.co/cdn/shop/files/ARTIST_HEADSHOT_36.jpg?v=1776887171&width=1797",
+        "imageUrl": "assets/artists/caleb-gordon-primary.jpg",
         "imagePosition": "center",
         "preferArtistImage": True,
         "sourceRegistryVerified": True,
@@ -838,7 +838,7 @@ def verify_site(out_dir: pathlib.Path) -> None:
             if f"/artists/{slug}/" in lowered:
                 failures.append(f"excluded-artist-link:{page.relative_to(out_dir)}:{slug}")
     caleb = out_dir / "artists" / "caleb-gordon" / "index.html"
-    if not caleb.is_file() or "ARTIST_HEADSHOT_36.jpg" not in caleb.read_text(encoding="utf-8", errors="ignore"):
+    if not caleb.is_file() or "assets/artists/caleb-gordon-primary.jpg" not in caleb.read_text(encoding="utf-8", errors="ignore"):
         failures.append("caleb-profile-image-missing")
 
     social_directory = out_dir / "artists" / "index.html"

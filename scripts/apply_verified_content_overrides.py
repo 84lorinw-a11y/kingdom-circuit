@@ -12,7 +12,7 @@ ARTISTS_FILE = ROOT / "config" / "artists.json"
 EVENTS_FILE = ROOT / "events.json"
 SUPPLEMENTAL_FILE = ROOT / "supplemental-events.json"
 
-CALEB_IMAGE = "https://tprlive.co/cdn/shop/files/ARTIST_HEADSHOT_36.jpg?v=1776887171&width=1797"
+CALEB_IMAGE = "assets/artists/caleb-gordon-primary.jpg"
 CALEB_SOURCE = "https://tprlive.co/collections/caleb-gordon-the-eden-experience"
 
 HOPE_FEST_IMAGE = "https://images.sk-static.com/images/media/profile_images/events/43075130/huge_avatar?series_id=719039"

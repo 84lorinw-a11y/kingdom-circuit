@@ -69,6 +69,14 @@ class MultiPageProductionTests(unittest.TestCase):
         self.assertEqual("https://www.youtube.com/@808_BEEZY", artist.get("youtubeProfile"))
         self.assertTrue(artist.get("sourceRegistryVerified"))
 
+    def test_caleb_gordon_image_is_served_locally(self):
+        artists = json.loads((ROOT / "config/artists.json").read_text(encoding="utf-8"))
+        artist = next(item for item in artists if item.get("name") == "Caleb Gordon")
+        self.assertEqual("assets/artists/caleb-gordon-primary.jpg", artist.get("imageUrl"))
+        image = ROOT / artist["imageUrl"]
+        self.assertTrue(image.is_file())
+        self.assertGreater(image.stat().st_size, 100000)
+
     def test_jon_keith_uses_a_verified_existing_image(self):
         artists = json.loads((ROOT / "config/artists.json").read_text(encoding="utf-8"))
         artist = next(item for item in artists if item.get("name") == "Jon Keith")
