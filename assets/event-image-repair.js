@@ -11,6 +11,7 @@
   const candidates = {
     "808 beezy": ["https://pbs.twimg.com/profile_images/1836827722309312512/e5kgorwv.jpg", "https://open.voidware.de/artist/3CltJZLndpJKtpUyRVBB1k"],
     "hulvey": ["https://s1.ticketm.net/dam/a/d4e/a49ecab3-089d-46ff-baa5-7942c994ed4e_SOURCE", "https://open.voidware.de/artist/3zSrc5vUlUxyDdS0KrxFJO"],
+    "caleb gordon": ["/assets/artists/caleb-gordon-primary.jpg"],
     "yumiya!": ["/assets/artists/yumiya-primary.jpg?v=kc-20260829-2050"],
     "rare of breed": ["/assets/artists/rare-of-breed-primary.jpg?v=kc-20260829-2050"],
     "issac mansfield": ["https://i.scdn.co/image/ab6761610000e5eb6d97dd155baa40ea3c14b616", "https://open.voidware.de/artist/1QgXbOPk6XpELZrJOzz33w"],
@@ -53,13 +54,14 @@
     const key = artistKey(img);
     const src = String(img.getAttribute("src") || "");
     const lockedPrimary = img?.dataset?.kcLockPrimary === "1";
+    const forcePrimary = key === "rare of breed" || key === "yumiya!" || key === "caleb gordon";
     const explicitEventArtwork = img?.classList?.contains("event-artwork")
       && src
       && !src.includes("event-fallback.webp")
       && !stale.has(src);
-    if (lockedPrimary || explicitEventArtwork) {
-      // Preserve verified primary images and purpose-built event artwork.
-      // Runtime artist repair must never replace a multi-artist event flyer.
+    if (lockedPrimary || (explicitEventArtwork && !forcePrimary)) {
+      // Preserve verified primary images and purpose-built event artwork unless
+      // the artist has an explicit Kingdom Circuit primary-image override.
       img.onerror = () => { img.onerror = null; img.src = fallback; };
       return;
     }
@@ -68,7 +70,6 @@
       return;
     }
     const options = candidates[key];
-    const forcePrimary = key === "rare of breed" || key === "yumiya!";
     let idx = options.indexOf(src);
     img.dataset.kcEventArtist = key;
     img.dataset.kcImageIndex = String(idx);
