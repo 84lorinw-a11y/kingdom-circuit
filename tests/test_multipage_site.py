@@ -5,6 +5,7 @@ from datetime import date
 from pathlib import Path
 
 from scripts.apply_curated_catalog_policy import curate_event
+from scripts.apply_live_artist_overrides import dedupe_bandsintown_event_cards
 from scripts.apply_verified_show_repairs import PINNED_EVENT_IMAGES, VERIFIED
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -109,6 +110,12 @@ class MultiPageProductionTests(unittest.TestCase):
         app = (ROOT / "app.js").read_text(encoding="utf-8")
         self.assertRegex(page, r"data-has-shows-filter[^>]*\bchecked\b")
         self.assertIn("if (show) show.checked = true;", app)
+
+    def test_rendered_bandsintown_duplicates_are_removed(self):
+        card = '<article class="event-card"><a href="https://www.bandsintown.com/e/108879559">Show</a></article>'
+        other = '<article class="event-card"><a href="https://www.bandsintown.com/e/108879547">Show</a></article>'
+        cleaned = dedupe_bandsintown_event_cards(card + card + other)
+        self.assertEqual(2, cleaned.count('<article class="event-card">'))
 
     def test_reviewed_fall_shows_use_official_event_artwork(self):
         verified = {event["title"]: event for event in VERIFIED}

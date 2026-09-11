@@ -560,6 +560,28 @@ def add_event_image_fallbacks(text: str) -> str:
     return pattern.sub(repl, text)
 
 
+def dedupe_bandsintown_event_cards(text: str) -> str:
+    """Keep one rendered card for each official Bandsintown event ID."""
+    pattern = re.compile(
+        r'<article\b(?=[^>]*class="[^"]*\bevent-card\b[^"]*")[^>]*>.*?</article>',
+        flags=re.I | re.S,
+    )
+    seen: set[str] = set()
+
+    def repl(match: re.Match[str]) -> str:
+        block = match.group(0)
+        event_match = re.search(r'bandsintown\.com/e/(\d+)', block, flags=re.I)
+        if not event_match:
+            return block
+        event_id = event_match.group(1)
+        if event_id in seen:
+            return ""
+        seen.add(event_id)
+        return block
+
+    return pattern.sub(repl, text)
+
+
 def clean_static_html(out_dir: pathlib.Path, removed_event_slugs: set[str]) -> None:
     for page in out_dir.rglob("*.html"):
         text = page.read_text(encoding="utf-8")
@@ -569,11 +591,28 @@ def clean_static_html(out_dir: pathlib.Path, removed_event_slugs: set[str]) -> N
             text = remove_cards_for_slugs(text, "event-card", "event", removed_event_slugs)
         text = clean_artist_lines(text)
         text = add_event_image_fallbacks(text)
+        text = dedupe_bandsintown_event_cards(text)
         if page == out_dir / "artists" / "index.html":
             count = len(re.findall(r'<article\b[^>]*\bdata-artist-card\b', text, flags=re.I))
             text = re.sub(
                 r'(<p\b[^>]*data-artist-count[^>]*>)\s*\d+\s+artists\s*(</p>)',
                 rf'\g<1>{count} artists\g<2>', text, count=1, flags=re.I,
+            )
+        elif page.parent.parent == out_dir / "artists":
+            count = len(re.findall(r'<article\b[^>]*class="[^"]*\bevent-card\b', text, flags=re.I))
+            text = re.sub(
+                r'(<p\b[^>]*class="[^"]*\bprofile-count\b[^"]*"[^>]*>)\s*\d+\s+upcoming U\.S\. shows? currently listed\.(</p>)',
+                rf'\g<1>{count} upcoming U.S. show{"s" if count != 1 else ""} currently listed.\g<2>',
+                text,
+                count=1,
+                flags=re.I,
+            )
+            text = re.sub(
+                r'(<p\b[^>]*class="[^"]*\bresults-count\b[^"]*"[^>]*>)\s*\d+\s+shows?\s*(</p>)',
+                rf'\g<1>{count} show{"s" if count != 1 else ""}\g<2>',
+                text,
+                count=1,
+                flags=re.I,
             )
         if text != original:
             page.write_text(text, encoding="utf-8")
