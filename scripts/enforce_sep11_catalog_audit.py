@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 BLOCKED = "madison ryann ward"
 FALLBACK_ROSTER_ORDER = 28
+FOUNTAIN_RARE_IMAGE = "https://i0.wp.com/fountainfestwv.com/wp-content/uploads/2026/07/Rare-of-Breed-Promo-.webp?resize=720%2C900&ssl=1"
 
 
 def norm(value: object) -> str:
@@ -77,6 +78,24 @@ def restore_exclusion_tombstone(before: list[dict]) -> None:
     save_artists(artists)
 
 
+def repair_verified_event_images() -> None:
+    """Use source-owned imagery where the audit record otherwise has no image."""
+    ids = {"fountain-fest-wv-2026", "manual:fountain-fest-wv-2026"}
+    for path in (audit.EVENTS_FILE, audit.SUPPLEMENTAL_FILE, audit.MANUAL_FILE):
+        events = json.loads(path.read_text(encoding="utf-8"))
+        changed = False
+        for event in events:
+            if str(event.get("id") or "") not in ids:
+                continue
+            event["image"] = FOUNTAIN_RARE_IMAGE
+            event["imageType"] = "artist"
+            event["imagePosition"] = "center"
+            event["imageOverride"] = True
+            changed = True
+        if changed:
+            path.write_text(json.dumps(events, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
 def verify_exclusion() -> None:
     artists = load_artists()
     matches = [item for item in artists if norm(item.get("name")) == BLOCKED]
@@ -102,6 +121,7 @@ def main() -> int:
     result = audit.apply()
     audit.check()
     restore_exclusion_tombstone(before)
+    repair_verified_event_images()
     verify_exclusion()
     result["madisonActiveTracking"] = False
     result["madisonTombstonePreserved"] = True
