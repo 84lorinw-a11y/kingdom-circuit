@@ -9,7 +9,6 @@ on:
     types: [completed]
 
 permissions:
-  actions: write
   contents: write
 
 concurrency:
@@ -44,7 +43,6 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_*.py' -v
 
       - name: Save durable audit corrections
-        id: save
         shell: bash
         run: |
           set -euo pipefail
@@ -55,7 +53,6 @@ jobs:
             tests/test_update_events.py
           if git diff --cached --quiet; then
             echo "Catalog audit already enforced."
-            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git commit -m "Apply verified Sep 11 catalog audit [catalog audit]"
@@ -73,13 +70,3 @@ jobs:
             echo "Unable to save catalog audit corrections after retries."
             exit 1
           fi
-          echo "changed=true" >> "$GITHUB_OUTPUT"
-
-      - name: Redeploy corrected catalog
-        if: steps.save.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh api --method POST \
-            repos/${GITHUB_REPOSITORY}/actions/workflows/update-and-deploy.yml/dispatches \
-            -f ref=main
