@@ -5,7 +5,7 @@ from datetime import date
 from pathlib import Path
 
 from scripts.apply_curated_catalog_policy import curate_event
-from scripts.apply_live_artist_overrides import dedupe_bandsintown_event_cards
+from scripts.apply_live_artist_overrides import dedupe_bandsintown_event_cards, sync_artist_page_show_counts
 from scripts.apply_verified_show_repairs import PINNED_EVENT_IMAGES, VERIFIED
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -116,6 +116,16 @@ class MultiPageProductionTests(unittest.TestCase):
         other = '<article class="event-card"><a href="https://www.bandsintown.com/e/108879547">Show</a></article>'
         cleaned = dedupe_bandsintown_event_cards(card + card + other)
         self.assertEqual(2, cleaned.count('<article class="event-card">'))
+
+    def test_artist_summary_counts_match_rendered_cards(self):
+        cards = '<article class="event-card"></article>' * 19
+        summary = '<p class="seo-artist-summary">Kingdom Circuit currently lists 30 verified upcoming U.S. shows for 808 BEEZY.</p>'
+        stat = '<span>Upcoming shows</span><strong>30</strong>'
+        results = '<p class="results-count" data-artist-results-count>30 shows</p>'
+        cleaned = sync_artist_page_show_counts(summary + stat + results + cards)
+        self.assertIn('lists 19 verified upcoming U.S. shows', cleaned)
+        self.assertIn('<strong>19</strong>', cleaned)
+        self.assertIn('>19 shows</p>', cleaned)
 
     def test_reviewed_fall_shows_use_official_event_artwork(self):
         verified = {event["title"]: event for event in VERIFIED}

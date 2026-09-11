@@ -582,6 +582,41 @@ def dedupe_bandsintown_event_cards(text: str) -> str:
     return pattern.sub(repl, text)
 
 
+def sync_artist_page_show_counts(text: str) -> str:
+    """Make every artist-page summary reflect the rendered unique show cards."""
+    count = len(re.findall(r'<article\b[^>]*class="[^"]*\bevent-card\b', text, flags=re.I))
+    plural = "s" if count != 1 else ""
+    text = re.sub(
+        r'(<p\b[^>]*class="[^"]*\bprofile-count\b[^"]*"[^>]*>)\s*\d+\s+upcoming U\.S\. shows? currently listed\.(</p>)',
+        rf'\g<1>{count} upcoming U.S. show{plural} currently listed.\g<2>',
+        text,
+        count=1,
+        flags=re.I,
+    )
+    text = re.sub(
+        r'(<p\b[^>]*class="[^"]*\bresults-count\b[^"]*"[^>]*>)\s*\d+\s+shows?\s*(</p>)',
+        rf'\g<1>{count} show{plural}\g<2>',
+        text,
+        count=1,
+        flags=re.I,
+    )
+    text = re.sub(
+        r'(<p\b[^>]*class="[^"]*\bseo-artist-summary\b[^"]*"[^>]*>\s*Kingdom Circuit currently lists\s+)\d+(\s+verified upcoming U\.S\. shows?)',
+        rf'\g<1>{count}\g<2>',
+        text,
+        count=1,
+        flags=re.I,
+    )
+    text = re.sub(
+        r'(<span>\s*Upcoming shows\s*</span>\s*<strong>)\d+(</strong>)',
+        rf'\g<1>{count}\g<2>',
+        text,
+        count=1,
+        flags=re.I,
+    )
+    return text
+
+
 def clean_static_html(out_dir: pathlib.Path, removed_event_slugs: set[str]) -> None:
     for page in out_dir.rglob("*.html"):
         text = page.read_text(encoding="utf-8")
@@ -599,21 +634,7 @@ def clean_static_html(out_dir: pathlib.Path, removed_event_slugs: set[str]) -> N
                 rf'\g<1>{count} artists\g<2>', text, count=1, flags=re.I,
             )
         elif page.parent.parent == out_dir / "artists":
-            count = len(re.findall(r'<article\b[^>]*class="[^"]*\bevent-card\b', text, flags=re.I))
-            text = re.sub(
-                r'(<p\b[^>]*class="[^"]*\bprofile-count\b[^"]*"[^>]*>)\s*\d+\s+upcoming U\.S\. shows? currently listed\.(</p>)',
-                rf'\g<1>{count} upcoming U.S. show{"s" if count != 1 else ""} currently listed.\g<2>',
-                text,
-                count=1,
-                flags=re.I,
-            )
-            text = re.sub(
-                r'(<p\b[^>]*class="[^"]*\bresults-count\b[^"]*"[^>]*>)\s*\d+\s+shows?\s*(</p>)',
-                rf'\g<1>{count} show{"s" if count != 1 else ""}\g<2>',
-                text,
-                count=1,
-                flags=re.I,
-            )
+            text = sync_artist_page_show_counts(text)
         if text != original:
             page.write_text(text, encoding="utf-8")
 
