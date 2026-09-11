@@ -4,8 +4,12 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Update and deploy show calendar"]
+    types: [completed]
 
 permissions:
+  actions: write
   contents: write
 
 concurrency:
@@ -14,6 +18,7 @@ concurrency:
 
 jobs:
   enforce:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: Check out production repository
@@ -26,21 +31,20 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Apply verified catalog audit
-        run: python scripts/apply_sep11_catalog_audit.py
+      - name: Enforce verified catalog audit and artist exclusion
+        run: python scripts/enforce_sep11_catalog_audit.py
 
-      - name: Regenerate artist registry after exclusions
+      - name: Regenerate artist registry
         run: python scripts/sync_verified_artist_registry.py
 
-      - name: Reapply audit after registry generation
-        run: |
-          python scripts/apply_sep11_catalog_audit.py
-          python scripts/apply_sep11_catalog_audit.py --check
+      - name: Re-enforce after registry generation
+        run: python scripts/enforce_sep11_catalog_audit.py
 
       - name: Run project tests
         run: python -m unittest discover -s tests -p 'test_*.py' -v
 
       - name: Save durable audit corrections
+        id: save
         shell: bash
         run: |
           set -euo pipefail
@@ -51,6 +55,7 @@ jobs:
             tests/test_update_events.py
           if git diff --cached --quiet; then
             echo "Catalog audit already enforced."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git commit -m "Apply verified Sep 11 catalog audit [catalog audit]"
@@ -68,3 +73,13 @@ jobs:
             echo "Unable to save catalog audit corrections after retries."
             exit 1
           fi
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Redeploy corrected catalog
+        if: steps.save.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --method POST \
+            repos/${GITHUB_REPOSITORY}/actions/workflows/update-and-deploy.yml/dispatches \
+            -f ref=main
