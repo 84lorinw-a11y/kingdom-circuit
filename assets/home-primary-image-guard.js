@@ -10,6 +10,10 @@
     {
       artist: "yumiya!",
       src: "/assets/artists/yumiya-primary.jpg?v=20260830-home-1"
+    },
+    {
+      artist: "kaden jordan",
+      src: "https://open.voidware.de/artist/0mbpzxELAS9luV27PUDEZH"
     }
   ];
 
