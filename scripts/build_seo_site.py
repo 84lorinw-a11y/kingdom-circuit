@@ -53,6 +53,7 @@ def current(e):
 
 def same_event(a,b):
     if a.get("startDate") != b.get("startDate") or norm(a.get("city")) != norm(b.get("city")): return False
+    if a.get("startTime") and b.get("startTime") and a.get("startTime") != b.get("startTime"): return False
     same_venue = norm(a.get("venue")) and norm(a.get("venue")) == norm(b.get("venue"))
     shared = bool({norm(x) for x in a.get("artists",[])} & {norm(x) for x in b.get("artists",[])})
     return bool(same_venue or shared)

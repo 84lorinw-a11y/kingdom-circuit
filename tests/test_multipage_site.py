@@ -89,6 +89,8 @@ class MultiPageProductionTests(unittest.TestCase):
 
     def test_yung_kriss_event_artwork_is_high_resolution_and_pinned(self):
         events = json.loads((ROOT / "events.json").read_text(encoding="utf-8"))
+        truthx = [item for item in events if item.get("title") == "TruthX Concert 2026"]
+        self.assertEqual(1, len(truthx))
         expected = {
             "TruthX Concert 2026": "assets/events/truthx-yung-kriss-2026.jpg",
             "HVO Fest 2026": "assets/events/hvo-fest-2026.jpg",
@@ -101,6 +103,12 @@ class MultiPageProductionTests(unittest.TestCase):
             asset = ROOT / image
             self.assertGreater(asset.stat().st_size, 300_000)
             self.assertEqual(b"\xff\xd8", asset.read_bytes()[:2])
+
+    def test_artist_directory_defaults_to_upcoming_shows(self):
+        page = (ROOT / "artists/index.html").read_text(encoding="utf-8")
+        app = (ROOT / "app.js").read_text(encoding="utf-8")
+        self.assertRegex(page, r"data-has-shows-filter[^>]*\bchecked\b")
+        self.assertIn("if (show) show.checked = true;", app)
 
     def test_reviewed_fall_shows_use_official_event_artwork(self):
         verified = {event["title"]: event for event in VERIFIED}
@@ -210,7 +218,11 @@ class MultiPageProductionTests(unittest.TestCase):
 
     def test_marty_kuna_show_uses_solo_artist_image(self):
         events = json.loads((ROOT / "supplemental-events.json").read_text(encoding="utf-8"))
-        event = next(event for event in events if event.get("id") == "supplemental:marty-project-nation-kuna-2026")
+        matches = [event for event in events if event.get("id") == "supplemental:marty-project-nation-kuna-2026"]
+        if not matches:
+            self.assertGreater(date.today(), date(2026, 9, 10))
+            return
+        event = matches[0]
         self.assertEqual("https://i.scdn.co/image/ab6761610000e5eb3d2d9f74de93906d1f5996f3", event.get("image"))
         self.assertEqual("artist", event.get("imageType"))
         rare_asset = ROOT / "assets/artists/rare-of-breed-primary.jpg"

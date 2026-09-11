@@ -2766,6 +2766,7 @@ function renderArtistDirectory() {
   const cards = [...grid.querySelectorAll("[data-artist-card]")];
   const search = document.querySelector("[data-artist-search]");
   const show = document.querySelector("[data-has-shows-filter]");
+  if (show) show.checked = true;
   const count = document.querySelector("[data-artist-count]");
   const empty = document.querySelector("[data-artist-empty]");
   const dashboard = document.createElement("section");

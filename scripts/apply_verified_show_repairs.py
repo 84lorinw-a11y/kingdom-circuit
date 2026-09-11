@@ -223,9 +223,28 @@ def ensure_by_id(path: Path, additions: list[dict]) -> None:
 
 def repair_live_events() -> None:
     rows = load(EVENTS)
+    def verified_key(event: dict) -> tuple[str, str, str]:
+        return (
+            str(event.get("officialUrl") or event.get("ticketUrl") or "").strip(),
+            str(event.get("startDate") or "").strip(),
+            str(event.get("city") or "").strip().casefold(),
+        )
+
+    verified_keys = {
+        verified_key(event)
+        for event in VERIFIED
+        if verified_key(event)[0]
+    }
+    cleaned = []
+    seen_verified_keys = set()
     for event in rows:
         if not isinstance(event, dict):
             continue
+        event_key = verified_key(event)
+        if event_key in verified_keys:
+            if event_key in seen_verified_keys:
+                continue
+            seen_verified_keys.add(event_key)
         if event.get("title") in PINNED_EVENT_IMAGES:
             event["image"] = PINNED_EVENT_IMAGES[event["title"]]
             event["imageType"] = "event_artwork"
@@ -267,7 +286,8 @@ def repair_live_events() -> None:
             if not any(s.get("url") == GRACE_URL for s in sources):
                 sources.insert(0, {"name": "Official Eventbrite listing", "url": GRACE_URL, "type": "eventbrite", "authority": "official_festival", "priority": 104})
             event["sources"] = sources
-    write(EVENTS, rows)
+        cleaned.append(event)
+    write(EVENTS, cleaned)
 
 
 def main() -> int:

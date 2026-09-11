@@ -9,6 +9,7 @@ if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
 import collect_artist_website_events as collector
+import build_seo_site as seo_builder
 import sync_verified_artist_registry as registry_sync
 
 
@@ -39,8 +40,9 @@ class ArtistWebsiteIngestionTests(unittest.TestCase):
 
     def test_808_beezy_verified_seed_dates_exist(self):
         events = json.loads((ROOT / "config" / "artist-website-seed-events.json").read_text(encoding="utf-8"))
-        self.assertEqual(17, len(events))
-        self.assertEqual(17, len({event.get("id") for event in events}))
+        self.assertEqual(19, len(events))
+        self.assertEqual(19, len({event.get("id") for event in events}))
+        self.assertEqual(19, len({event.get("officialUrl") for event in events}))
         self.assertTrue(all(event.get("artists") == ["808 BEEZY"] for event in events))
         self.assertTrue(all(event.get("startDate") and event.get("startTime") for event in events))
         self.assertTrue(all(event.get("city") and event.get("state") for event in events))
@@ -51,6 +53,11 @@ class ArtistWebsiteIngestionTests(unittest.TestCase):
             ))
             for event in events
         ))
+
+    def test_same_city_same_day_performances_remain_separate(self):
+        morning = {"startDate": "2026-09-18", "startTime": "08:45", "city": "Dola", "venue": "RWG TOUR 2026", "artists": ["808 BEEZY"]}
+        later = {**morning, "startTime": "09:45"}
+        self.assertFalse(seo_builder.same_event(morning, later))
 
 
 if __name__ == "__main__":

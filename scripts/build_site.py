@@ -770,7 +770,7 @@ def artist_directory_page(artists, events, status, artist_map) -> str:
           <span>Search artists</span>
           <input type="search" data-artist-search placeholder="Search artists by name" autocomplete="off">
         </label>
-        <label class="check-field"><input type="checkbox" data-has-shows-filter> <span>Artists with upcoming shows</span></label>
+        <label class="check-field"><input type="checkbox" data-has-shows-filter checked> <span>Artists with upcoming shows</span></label>
         <p class="results-count" data-artist-count>{len(artists)} artists</p>
       </div>
       <div class="artist-grid" data-artist-grid>{''.join(cards)}</div>
