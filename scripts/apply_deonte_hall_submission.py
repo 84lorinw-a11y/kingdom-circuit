@@ -15,6 +15,7 @@ VERIFIED_UPDATES_FILE = ROOT / "config" / "verified-artist-registry-updates.json
 EVENTS_FILE = ROOT / "events.json"
 SUPPLEMENTAL_FILE = ROOT / "supplemental-events.json"
 VERIFIED_SHOW_REPAIRS = ROOT / "scripts" / "apply_verified_show_repairs.py"
+VERIFIED_EVENT_OVERRIDES = ROOT / "scripts" / "apply_verified_event_overrides.py"
 
 ARTIST_NAME = "Deonte Hall"
 SOURCE_ROSTER_ORDER = 110
@@ -229,13 +230,24 @@ def run_verified_show_repairs() -> None:
     subprocess.run([sys.executable, str(VERIFIED_SHOW_REPAIRS)], cwd=ROOT, check=True)
 
 
+def run_verified_event_overrides() -> None:
+    if not VERIFIED_EVENT_OVERRIDES.is_file():
+        raise SystemExit(f"Verified event override script is missing: {VERIFIED_EVENT_OVERRIDES}")
+    subprocess.run(
+        [sys.executable, str(VERIFIED_EVENT_OVERRIDES), "--source", str(ROOT)],
+        cwd=ROOT,
+        check=True,
+    )
+
+
 def main() -> int:
     patch_verified_updates()
     patch_artists()
     patch_submitted_event()
     verify()
     run_verified_show_repairs()
-    print("Deonte Hall submission and reviewed show repairs applied.")
+    run_verified_event_overrides()
+    print("Deonte Hall submission, reviewed show repairs, and verified event overrides applied.")
     return 0
 
 
