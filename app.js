@@ -2590,7 +2590,16 @@ function setupEventFilters(cards) {
     chip.classList.add("active");
     apply();
   }));
-  reset?.addEventListener("click", () => { form.reset(); dateMode = "all"; chips.forEach(item => item.classList.toggle("active", item.dataset.dateMode === "all")); apply(); });
+  reset?.addEventListener("click", () => {
+    form.reset();
+    if (search) search.value = "";
+    if (artist) artist.value = "";
+    if (state) state.value = "";
+    if (type) type.value = "";
+    dateMode = "all";
+    chips.forEach(item => item.classList.toggle("active", item.dataset.dateMode === "all"));
+    apply();
+  });
   apply();
 }
 function renderEventList() {

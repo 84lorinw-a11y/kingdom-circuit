@@ -1,10 +1,9 @@
 name: Live Browser Retest
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/live-browser-retest.yml
+  workflow_run:
+    workflows: ["Update and deploy show calendar"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -39,10 +38,10 @@ jobs:
               o.add_argument('--headless=new'); o.add_argument('--no-sandbox'); o.add_argument('--disable-dev-shm-usage'); o.add_argument('--window-size=1440,1000'); o.page_load_strategy='eager'
               return webdriver.Chrome(options=o)
 
-          def mobile_driver():
+          def mobile_driver(width=390, height=844):
               o=webdriver.ChromeOptions()
               o.add_argument('--headless=new'); o.add_argument('--no-sandbox'); o.add_argument('--disable-dev-shm-usage'); o.page_load_strategy='eager'
-              o.add_experimental_option('mobileEmulation', {'deviceMetrics': {'width':390,'height':844,'pixelRatio':1.0}, 'userAgent':'Mozilla/5.0 (Linux; Android 15; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36'})
+              o.add_experimental_option('mobileEmulation', {'deviceMetrics': {'width':width,'height':height,'pixelRatio':1.0}, 'userAgent':'Mozilla/5.0 (Linux; Android 15; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36'})
               return webdriver.Chrome(options=o)
 
           d=None
@@ -52,6 +51,16 @@ jobs:
               WebDriverWait(d,30).until(lambda x: len(x.find_elements(By.CSS_SELECTOR,'[data-event-card]')) >= 20)
               cards=d.find_elements(By.CSS_SELECTOR,'[data-event-card]')
               check('desktop events render',len(cards)>=20,f'cards={len(cards)}')
+
+              check('desktop artist dropdown populated',len(d.find_elements(By.CSS_SELECTOR,'[data-artist-filter] option'))>1)
+              check('desktop state dropdown populated',len(d.find_elements(By.CSS_SELECTOR,'[data-state-filter] option'))>1)
+              search=d.find_element(By.CSS_SELECTOR,'[data-search-filter]')
+              search.send_keys('Hulvey')
+              WebDriverWait(d,5).until(lambda x:any(c.is_displayed() for c in x.find_elements(By.CSS_SELECTOR,'[data-event-card]')))
+              check('desktop Hulvey search works',len([c for c in d.find_elements(By.CSS_SELECTOR,'[data-event-card]') if c.is_displayed()])>0)
+              d.find_element(By.CSS_SELECTOR,'[data-reset-filters]').click()
+              WebDriverWait(d,5).until(lambda x:len([c for c in x.find_elements(By.CSS_SELECTOR,'[data-event-card]') if c.is_displayed()])==len(cards))
+              check('desktop clear filters restores calendar',True)
 
               toggle=d.find_element(By.CSS_SELECTOR,'.menu-toggle')
               d.execute_script('arguments[0].click()',toggle)
@@ -121,6 +130,22 @@ jobs:
               if m:
                   try:m.quit()
                   except:pass
+
+          for width,height in ((360,800),(768,900)):
+              r=None
+              try:
+                  r=mobile_driver(width,height)
+                  r.get('https://kingdomcircuit.com/?responsive-retest=${{ github.run_id }}-'+str(width))
+                  WebDriverWait(r,30).until(lambda x:len(x.find_elements(By.CSS_SELECTOR,'[data-event-card]'))>=20)
+                  metrics=r.execute_script('return {inner:window.innerWidth,body:document.body.scrollWidth,doc:document.documentElement.scrollWidth};')
+                  check(f'{width}px viewport width applied',metrics['inner']==width,str(metrics))
+                  check(f'{width}px has no horizontal overflow',max(metrics['body'],metrics['doc'])<=metrics['inner']+2,str(metrics))
+                  r.quit(); r=None
+              except Exception as e:
+                  check(f'{width}px browser sequence',False,repr(e))
+                  if r:
+                      try:r.quit()
+                      except:pass
 
           failed=[c for c in result['checks'] if c['status']=='fail']
           result['passed']=len(result['checks'])-len(failed)

@@ -25,6 +25,11 @@ class September12LiveAuditRepairTests(unittest.TestCase):
         source = Path("app.js").read_text(encoding="utf-8")
         self.assertIn("day === 0 ? -2 : day === 6 ? -1", source)
 
+    def test_clear_filters_explicitly_clears_dynamic_selects(self):
+        source = Path("app.js").read_text(encoding="utf-8")
+        self.assertIn('if (artist) artist.value = "";', source)
+        self.assertIn('if (state) state.value = "";', source)
+
 
 if __name__ == "__main__":
     unittest.main()
