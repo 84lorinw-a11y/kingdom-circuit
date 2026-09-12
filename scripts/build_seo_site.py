@@ -144,7 +144,7 @@ def patch_meta(path,title,desc,canonical):
     text=re.sub(r'<meta name="robots" content="[^"]*">','<meta name="robots" content="index,follow">',text)
     text=re.sub(r'<link rel="canonical"[^>]*>\s*','',text)
     text=text.replace('</head>',f'  <link rel="canonical" href="{absolute(canonical)}">\n</head>')
-    text=re.sub(r'/app\.js\?v=[^"\']+','/app.js?v=13.0-seo',text)
+    text=re.sub(r'/app\.js\?v=[^"\']+','/app.js?v=14.0-p0-recovery',text)
     path.write_text(text,encoding="utf-8")
 
 def prerender_events(path,shows,artists):
