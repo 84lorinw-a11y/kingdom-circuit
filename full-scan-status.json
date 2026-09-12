@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-09-11T15:16:48Z",
-  "artistsChecked": 340,
+  "generatedAt": "2026-09-12T14:26:18Z",
+  "artistsChecked": 341,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
   "festivalCandidates": 0,
   "bandsintown": {
-    "artistsAttempted": 340,
+    "artistsAttempted": 341,
     "resolved": 0,
     "eventsFound": 0
   },
   "songkick": {
-    "artistsAttempted": 340,
+    "artistsAttempted": 341,
     "resolved": 0,
-    "blockedByRobots": 340,
+    "blockedByRobots": 341,
     "eventsFound": 0
   },
   "sourceStatusCounts": {
-    "failed": 348,
-    "blocked_by_robots": 346,
-    "no_events": 171
+    "failed": 350,
+    "blocked_by_robots": 347,
+    "no_events": 186
   },
   "newEvents": [],
   "sourceResults": [
@@ -2774,8 +2774,9 @@
       "artist": "Childlike CiCi",
       "source": "official website",
       "url": "https://www.childlikecici.com/",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.childlikecici.com/: <urlopen error [Errno -3] Temporary failure in name resolution>"
     },
     {
       "artist": "Childlike CiCi",
@@ -3013,6 +3014,248 @@
       "eventsFound": 0
     },
     {
+      "artist": "Datin",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Datin: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Datin",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Datin",
+      "source": "official website",
+      "url": "https://www.themenacemovement.com/datin/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Datin",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/2ZNeZlHauwGYZ9XADyjSL4",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Aasha Marie",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Aasha+Marie: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Aasha Marie",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Aasha Marie",
+      "source": "official website",
+      "url": "https://www.aashamarie.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Aasha Marie",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/2vJp4tlU8SMa4L8Rqc7bPv",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "DJ Mykael V",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=DJ+Mykael+V: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "DJ Mykael V",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "DJ Mykael V",
+      "source": "official website",
+      "url": "https://www.mykaelv.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "DJ Mykael V",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/2WLOBjz9WOZrJcbS2w93zt",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Heesun Lee",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Heesun+Lee: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Heesun Lee",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Heesun Lee",
+      "source": "official website",
+      "url": "https://www.heesunlee.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Heesun Lee",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/6T86uN02MAjAayagSHKIpA",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Ryan Trey",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Ryan+Trey: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Ryan Trey",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Ryan Trey",
+      "source": "official website",
+      "url": "https://www.ryantrey.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Ryan Trey",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/5YHM0i7v5TqqibZhS0YiuX",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jered Sanders",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Jered+Sanders: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Jered Sanders",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jered Sanders",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/4kjg5xFLFVfWJFus3mwV5e",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Toschii",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Toschii: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Toschii",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Toschii",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/6wSzNgiOUV0rPug9vMP3ze",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Eli Montanna",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Eli+Montanna: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Eli Montanna",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Eli Montanna",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/6ppWmncyPtRcMeuaX43GVJ",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "JWoodz",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=JWoodz: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "JWoodz",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "JWoodz",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/1euV2O9oyOrwbwOoakx45f",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kaden Jordan",
+      "source": "Bandsintown",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Kaden+Jordan: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Kaden Jordan",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kaden Jordan",
+      "source": "official website",
+      "url": "https://kadenjordan.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kaden Jordan",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/0mbpzxELAS9luV27PUDEZH",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
       "artist": "Redimi2",
       "source": "Bandsintown",
       "status": "failed",
@@ -3091,19 +3334,6 @@
       "eventsFound": 0
     },
     {
-      "artist": "DJ Mykael V",
-      "source": "Bandsintown",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.bandsintown.com/search?q=DJ+Mykael+V: HTTP Error 403: Forbidden"
-    },
-    {
-      "artist": "DJ Mykael V",
-      "source": "Songkick",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
-    },
-    {
       "artist": "Tommy Royale",
       "source": "Bandsintown",
       "status": "failed",
@@ -3138,32 +3368,6 @@
     },
     {
       "artist": "J. Monty",
-      "source": "Songkick",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
-    },
-    {
-      "artist": "Datin",
-      "source": "Bandsintown",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Datin: HTTP Error 403: Forbidden"
-    },
-    {
-      "artist": "Datin",
-      "source": "Songkick",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
-    },
-    {
-      "artist": "Jered Sanders",
-      "source": "Bandsintown",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Jered+Sanders: HTTP Error 403: Forbidden"
-    },
-    {
-      "artist": "Jered Sanders",
       "source": "Songkick",
       "status": "blocked_by_robots",
       "eventsFound": 0
@@ -3501,19 +3705,6 @@
       "eventsFound": 0
     },
     {
-      "artist": "Aasha Marie",
-      "source": "Bandsintown",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Aasha+Marie: HTTP Error 403: Forbidden"
-    },
-    {
-      "artist": "Aasha Marie",
-      "source": "Songkick",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
-    },
-    {
       "artist": "R-Swift",
       "source": "Bandsintown",
       "status": "failed",
@@ -3691,32 +3882,6 @@
     },
     {
       "artist": "Jacob Beard",
-      "source": "Songkick",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
-    },
-    {
-      "artist": "JWoodz",
-      "source": "Bandsintown",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.bandsintown.com/search?q=JWoodz: HTTP Error 403: Forbidden"
-    },
-    {
-      "artist": "JWoodz",
-      "source": "Songkick",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
-    },
-    {
-      "artist": "Kaden Jordan",
-      "source": "Bandsintown",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Kaden+Jordan: HTTP Error 403: Forbidden"
-    },
-    {
-      "artist": "Kaden Jordan",
       "source": "Songkick",
       "status": "blocked_by_robots",
       "eventsFound": 0
@@ -4211,19 +4376,6 @@
     },
     {
       "artist": "Jekasole",
-      "source": "Songkick",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
-    },
-    {
-      "artist": "Heesun Lee",
-      "source": "Bandsintown",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Heesun+Lee: HTTP Error 403: Forbidden"
-    },
-    {
-      "artist": "Heesun Lee",
       "source": "Songkick",
       "status": "blocked_by_robots",
       "eventsFound": 0
@@ -4879,19 +5031,6 @@
       "eventsFound": 0
     },
     {
-      "artist": "Ryan Trey",
-      "source": "Bandsintown",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Ryan+Trey: HTTP Error 403: Forbidden"
-    },
-    {
-      "artist": "Ryan Trey",
-      "source": "Songkick",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
-    },
-    {
       "artist": "Swaizy",
       "source": "Bandsintown",
       "status": "failed",
@@ -4913,19 +5052,6 @@
     },
     {
       "artist": "The Weathrman",
-      "source": "Songkick",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
-    },
-    {
-      "artist": "Toschii",
-      "source": "Bandsintown",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.bandsintown.com/search?q=Toschii: HTTP Error 403: Forbidden"
-    },
-    {
-      "artist": "Toschii",
       "source": "Songkick",
       "status": "blocked_by_robots",
       "eventsFound": 0

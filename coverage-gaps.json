@@ -1,6 +1,6 @@
 {
   "policyVersion": 6,
-  "generatedAt": "2026-09-11T15:16:48Z",
+  "generatedAt": "2026-09-12T14:26:18Z",
   "highRiskArtists": [],
   "mediumRiskArtists": [
     {
@@ -241,6 +241,14 @@
       "reason": "No Ticketmaster match and no healthy dedicated artist calendar was recorded in the latest run."
     },
     {
+      "artist": "Jered Sanders",
+      "healthyDedicatedSources": [],
+      "failedDedicatedSources": [],
+      "ticketmasterUnmatched": true,
+      "ticketmasterFailed": false,
+      "reason": "No Ticketmaster match and no healthy dedicated artist calendar was recorded in the latest run."
+    },
+    {
       "artist": "Redimi2",
       "healthyDedicatedSources": [],
       "failedDedicatedSources": [
@@ -294,14 +302,6 @@
     },
     {
       "artist": "J. Monty",
-      "healthyDedicatedSources": [],
-      "failedDedicatedSources": [],
-      "ticketmasterUnmatched": true,
-      "ticketmasterFailed": false,
-      "reason": "No Ticketmaster match and no healthy dedicated artist calendar was recorded in the latest run."
-    },
-    {
-      "artist": "Jered Sanders",
       "healthyDedicatedSources": [],
       "failedDedicatedSources": [],
       "ticketmasterUnmatched": true,
@@ -383,19 +383,6 @@
     "Held festival candidates create workflow warnings until an official lineup is verified and published."
   ],
   "heldFestivalCandidates": [
-    {
-      "id": "bandsintown:108665897",
-      "title": "Fountain Fest 2026",
-      "startDate": "2026-09-18",
-      "city": "Martinsburg",
-      "state": "WV",
-      "artists": [
-        "Rare of Breed"
-      ],
-      "officialUrl": "https://www.bandsintown.com/e/108665897?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-      "status": "needs_official_lineup_review",
-      "reason": "A tracked artist calendar reports this festival, but no official-lineup record is published yet."
-    },
     {
       "id": "bandsintown:108353301",
       "title": "Awake Fest 2026",

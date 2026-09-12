@@ -1,6 +1,6 @@
 [
   {
-    "id": "official:12ef07b891bbeeefbcb1",
+    "id": "official:0ac72030904117f28951",
     "title": "Uprise Festival 2026",
     "startDate": "2026-09-11",
     "startTime": "",
@@ -18,8 +18,7 @@
       "1K Phew",
       "Anike",
       "Kijan Boone",
-      "Tommy Zuko",
-      "CJ Emulous"
+      "Tommy Zuko"
     ],
     "headliner": "KB",
     "eventType": "festival",
@@ -38,71 +37,18 @@
         "priority": 112
       },
       {
-        "name": "Reach Records - Anike",
-        "url": "https://www.reachrecords.com/artists/wande/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 86
-      },
-      {
-        "name": "ChristianHits consolidated show feed",
+        "name": "ChristianHits festival directory",
         "url": "https://www.uprisefest.com/",
-        "type": "christian_hits",
+        "type": "christian_festivals",
         "authority": "aggregator",
-        "priority": 46
-      },
-      {
-        "name": "CJ Emulous official New Mainstream Tour calendar",
-        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-22",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
+        "priority": 44
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "endDate": "2026-09-12",
     "imageType": "artist",
     "imagePosition": "50% 30%",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z",
-    "auditVerified": "2026-09-11"
-  },
-  {
-    "id": "ticketmaster:k7vGF_FQWC_Sq",
-    "title": "Worship in the Pines - Brandon Lake & More!",
-    "startDate": "2026-09-11",
-    "startTime": "16:00",
-    "timezone": "America/New_York",
-    "venue": "Albany Med Health System at SPAC",
-    "address": "108 Avenue of the Pines",
-    "city": "Saratoga Springs",
-    "state": "NY",
-    "country": "US",
-    "artists": [
-      "Hulvey"
-    ],
-    "headliner": "Hulvey",
-    "eventType": "concert",
-    "status": "onsale",
-    "ticketUrl": "https://www.ticketmaster.com/worship-in-the-pines-brandon-lake-saratoga-springs-new-york-09-11-2026/event/00006486BD399CDD",
-    "officialUrl": "https://www.ticketmaster.com/worship-in-the-pines-brandon-lake-saratoga-springs-new-york-09-11-2026/event/00006486BD399CDD",
-    "image": "https://s1.ticketm.net/dam/e/8af/b4c60c12-46ce-4dfb-a30d-62c62393a8af_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-    "price": "",
-    "sourceName": "Ticketmaster",
-    "sources": [
-      {
-        "name": "Ticketmaster",
-        "url": "https://www.ticketmaster.com/worship-in-the-pines-brandon-lake-saratoga-springs-new-york-09-11-2026/event/00006486BD399CDD",
-        "type": "ticketmaster",
-        "authority": "venue_ticket",
-        "priority": 94
-      }
-    ],
-    "lastVerified": "2026-09-11T15:03:32Z",
-    "confidence": "high",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
@@ -137,7 +83,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -149,7 +95,7 @@
     "title": "TruthX Concert 2026",
     "startDate": "2026-09-12",
     "startTime": "19:00",
-    "timezone": "America/New_York",
+    "timezone": "",
     "venue": "Brandon High School",
     "address": "1101 Victoria Street",
     "city": "Brandon",
@@ -166,20 +112,21 @@
     "image": "assets/events/truthx-yung-kriss-2026.jpg",
     "price": "",
     "sourceName": "Official Eventbrite listing",
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "lineupExplicit": true,
     "sources": [
       {
         "name": "Official Eventbrite listing",
         "url": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
-        "type": "eventbrite",
+        "type": "manual_verified",
         "authority": "venue_ticket",
-        "priority": 94
+        "priority": 112
       }
     ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z",
     "imageOverride": true
   },
   {
@@ -194,9 +141,7 @@
     "state": "NY",
     "country": "US",
     "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
+      "Miles Minnick"
     ],
     "headliner": "Miles Minnick",
     "eventType": "concert",
@@ -213,22 +158,14 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
-      },
-      {
-        "name": "CJ Emulous official New Mainstream Tour calendar",
-        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-1-21",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z",
-    "auditVerified": "2026-09-11"
+    "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
     "id": "official:61ca43b4035483fee6a8",
@@ -277,7 +214,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -317,6 +254,13 @@
         "priority": 94
       },
       {
+        "name": "Reach Records - Hulvey",
+        "url": "https://www.reachrecords.com/artists/hulvey/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      },
+      {
         "name": "Reach Records consolidated calendar",
         "url": "https://www.reachrecords.com/events/",
         "type": "reach_records",
@@ -324,164 +268,12 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "manual:808-beezy-bandsintown-108879559",
-    "title": "808 BEEZY — Live at RWG TOUR 2026",
-    "startDate": "2026-09-16",
-    "startTime": "09:00",
-    "timezone": "",
-    "venue": "RWG TOUR 2026",
-    "address": "",
-    "city": "Desloge",
-    "state": "MO",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108879559",
-    "officialUrl": "https://www.bandsintown.com/e/108879559",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108879559",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-09-11T15:33:30Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-09-11T15:33:30Z"
-  },
-  {
-    "id": "manual:808-beezy-bandsintown-108879547",
-    "title": "808 BEEZY — Live at RWG TOUR 2026",
-    "startDate": "2026-09-16",
-    "startTime": "14:10",
-    "timezone": "",
-    "venue": "RWG TOUR 2026",
-    "address": "",
-    "city": "Bowling Green",
-    "state": "MO",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108879547",
-    "officialUrl": "https://www.bandsintown.com/e/108879547",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108879547",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-09-11T15:33:30Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-09-11T15:33:30Z"
-  },
-  {
-    "id": "manual:808-beezy-bandsintown-108790395",
-    "title": "808 BEEZY — Live at RWG TOUR 2026",
-    "startDate": "2026-09-17",
-    "startTime": "08:15",
-    "timezone": "",
-    "venue": "RWG TOUR 2026",
-    "address": "",
-    "city": "Bunker Hill",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108790395",
-    "officialUrl": "https://www.bandsintown.com/e/108790395",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108790395",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-09-11T15:33:30Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-09-11T15:33:30Z"
-  },
-  {
-    "id": "manual:808-beezy-bandsintown-108772401",
-    "title": "808 BEEZY — Live at RWG TOUR 2026",
-    "startDate": "2026-09-17",
-    "startTime": "13:35",
-    "timezone": "",
-    "venue": "RWG TOUR 2026",
-    "address": "",
-    "city": "Mulberry Grove",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108772401",
-    "officialUrl": "https://www.bandsintown.com/e/108772401",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108772401",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-09-11T15:33:30Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-09-11T15:33:30Z"
   },
   {
     "id": "manual:egr-2026-09-18-carson-ca",
@@ -514,88 +306,12 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "manual:808-beezy-bandsintown-108772413",
-    "title": "808 BEEZY — Live at RWG TOUR 2026",
-    "startDate": "2026-09-18",
-    "startTime": "08:45",
-    "timezone": "",
-    "venue": "RWG TOUR 2026",
-    "address": "",
-    "city": "Dola",
-    "state": "OH",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108772413",
-    "officialUrl": "https://www.bandsintown.com/e/108772413",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108772413",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-09-11T15:33:30Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-09-11T15:33:30Z"
-  },
-  {
-    "id": "manual:808-beezy-bandsintown-108772434",
-    "title": "808 BEEZY — Live at RWG TOUR 2026",
-    "startDate": "2026-09-18",
-    "startTime": "09:45",
-    "timezone": "",
-    "venue": "RWG TOUR 2026",
-    "address": "",
-    "city": "Dola",
-    "state": "OH",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108772434",
-    "officialUrl": "https://www.bandsintown.com/e/108772434",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108772434",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-09-11T15:33:30Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-09-11T15:33:30Z"
   },
   {
     "id": "official:cfd29f658249c76cd8e2",
@@ -637,7 +353,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -675,7 +391,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -683,10 +399,11 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
+    "id": "manual:fountain-fest-wv-2026",
     "title": "Fountain Fest WV 2026",
     "startDate": "2026-09-18",
     "startTime": "20:00",
-    "timezone": "America/New_York",
+    "timezone": "",
     "venue": "Orr's Farm Market",
     "address": "",
     "city": "Martinsburg",
@@ -703,9 +420,6 @@
     "image": "https://i0.wp.com/fountainfestwv.com/wp-content/uploads/2026/07/Rare-of-Breed-Promo-.webp?resize=720%2C900&ssl=1",
     "price": "",
     "sourceName": "Fountain Fest WV official lineup",
-    "authority": "official_festival",
-    "confidence": "high",
-    "lineupExplicit": true,
     "sources": [
       {
         "name": "Fountain Fest WV official lineup",
@@ -715,13 +429,51 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
     "endDate": "2026-09-19",
-    "notes": "Rare of Breed performs Friday September 18 at 8 PM; festival continues September 19.",
-    "id": "manual:fountain-fest-wv-2026",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:64bbcd477c3a36104df3",
+    "title": "Anike — Live at Queens Theatre",
+    "startDate": "2026-09-19",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Queens Theatre",
+    "address": "",
+    "city": "Corona",
+    "state": "NY",
+    "country": "US",
+    "artists": [
+      "Anike"
+    ],
+    "headliner": "Anike",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/1039205172?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.reachrecords.com/artists/wande/",
+    "image": "https://s1.ticketm.net/dam/a/ab5/019b80d9-ebcf-40a7-9233-a35e76204ab5_SOURCE",
+    "price": "",
+    "sourceName": "Reach Records - Anike",
+    "sources": [
+      {
+        "name": "Reach Records - Anike",
+        "url": "https://www.reachrecords.com/artists/wande/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-15T20:23:53Z"
   },
   {
     "id": "manual:egr-2026-09-19-manteca-ca",
@@ -754,7 +506,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -762,86 +514,11 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "official:64bbcd477c3a36104df3",
-    "title": "Kingdom Choice Awards 2026",
-    "startDate": "2026-09-19",
-    "startTime": "",
-    "timezone": "",
-    "venue": "Queens Theatre",
-    "address": "",
-    "city": "Corona",
-    "state": "NY",
-    "country": "US",
-    "artists": [
-      "Anike",
-      "Don Ready",
-      "Dante' Pride",
-      "Childlike CiCi",
-      "Yung Kriss",
-      "Datin",
-      "BigBreeze",
-      "C4 Crotona",
-      "MAYIA",
-      "Brinson"
-    ],
-    "headliner": "Anike",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/1039205172?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.reachrecords.com/artists/wande/",
-    "image": "https://images.zoogletools.com/s:bzglfiles/u/63036/e9f653372df147d18026413fbf37bc4eed9c7e01/original/2026-kca-flyer-final-master.jpg/!!/b:W1sicmVzaXplIiwxMDAwXSxbIm1heCJdLFsid2UiXV0=/meta:eyJzcmNCdWNrZXQiOiJiemdsZmlsZXMifQ==.jpg",
-    "price": "",
-    "sourceName": "Reach Records - Anike",
-    "sources": [
-      {
-        "name": "Reach Records - Anike",
-        "url": "https://www.reachrecords.com/artists/wande/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 86
-      },
-      {
-        "name": "Kingdom Choice Awards official 2026 poster",
-        "url": "https://kingdomchoiceawards.org/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 100
-      }
-    ],
-    "lastVerified": "2026-09-11T15:03:32Z",
-    "confidence": "high",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-15T20:23:53Z",
-    "imageOverride": true,
-    "officialBill": [
-      "Anike",
-      "Childlike CiCi",
-      "Yung Kriss",
-      "Don Ready",
-      "Big Breeze",
-      "Datin",
-      "Brinson & Godchaserz",
-      "Dante Pride",
-      "C4 Crotona",
-      "Range The Artist",
-      "Dwayne Fyah",
-      "MAYIA WARREN",
-      "Marcel Patillo",
-      "Craig Watson",
-      "Paito",
-      "MICA"
-    ],
-    "notes": "MICA remains an unlinked bill name pending confirmation that it is the tracked roster artist mica.",
-    "auditVerified": "2026-09-11"
-  },
-  {
     "id": "manual:eventbrite:hip-hop-in-the-park-cortland-2026",
     "title": "Hip Hop in the Park",
     "startDate": "2026-09-19",
     "startTime": "13:00",
-    "timezone": "America/New_York",
+    "timezone": "",
     "venue": "Courthouse Park",
     "address": "33 Church Street",
     "city": "Cortland",
@@ -860,24 +537,25 @@
     "image": "assets/events/hip-hop-in-the-park-2026.jpg",
     "price": "Free",
     "sourceName": "Official Eventbrite listing",
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "lineupExplicit": true,
     "sources": [
       {
         "name": "Official Eventbrite listing",
         "url": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
-        "type": "eventbrite",
+        "type": "manual_verified",
         "authority": "venue_ticket",
-        "priority": 94
+        "priority": 112
       }
     ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z",
     "imageOverride": true
   },
   {
-    "id": "manual:eventbrite:gracefest-lecrae-castaic-2026",
+    "id": "official:cc1595e90fb45c872c77",
     "title": "GRACEFEST 2026",
     "startDate": "2026-09-19",
     "startTime": "13:30",
@@ -898,21 +576,38 @@
     "image": "assets/events/gracefest-2026.png",
     "price": "",
     "sourceName": "Official Eventbrite listing",
-    "authority": "official_festival",
-    "confidence": "high",
-    "lineupExplicit": true,
     "sources": [
       {
         "name": "Official Eventbrite listing",
         "url": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-        "type": "eventbrite",
+        "type": "manual_verified",
         "authority": "official_festival",
-        "priority": 104
+        "priority": 112
+      },
+      {
+        "name": "Reach Records - Lecrae",
+        "url": "https://www.reachrecords.com/artists/lecrae/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
       }
     ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "imageOverride": true,
+    "authority": "official_festival",
+    "lineupExplicit": true
   },
   {
     "id": "ticketmaster:vv1AkZk3pGkdPlaZC",
@@ -946,7 +641,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -993,7 +688,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1040,7 +735,7 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -1086,202 +781,12 @@
         "priority": 90
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "manual:808-beezy-bandsintown-108772449",
-    "title": "808 BEEZY — Live at RWG TOUR 2026",
-    "startDate": "2026-09-21",
-    "startTime": "09:35",
-    "timezone": "",
-    "venue": "RWG TOUR 2026",
-    "address": "",
-    "city": "Dunlap",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108772449",
-    "officialUrl": "https://www.bandsintown.com/e/108772449",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108772449",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-09-11T15:33:30Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-09-11T15:33:30Z"
-  },
-  {
-    "id": "manual:808-beezy-bandsintown-108772465",
-    "title": "808 BEEZY — Live at RWG TOUR 2026",
-    "startDate": "2026-09-21",
-    "startTime": "14:00",
-    "timezone": "",
-    "venue": "RWG TOUR 2026",
-    "address": "",
-    "city": "Granville",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108772465",
-    "officialUrl": "https://www.bandsintown.com/e/108772465",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108772465",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-09-11T15:33:30Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-09-11T15:33:30Z"
-  },
-  {
-    "id": "manual:808-beezy-bandsintown-108772493",
-    "title": "808 BEEZY — Live at RWG TOUR 2026",
-    "startDate": "2026-09-22",
-    "startTime": "08:20",
-    "timezone": "",
-    "venue": "RWG TOUR 2026",
-    "address": "",
-    "city": "Ohio",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108772493",
-    "officialUrl": "https://www.bandsintown.com/e/108772493",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108772493",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-09-11T15:33:30Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-09-11T15:33:30Z"
-  },
-  {
-    "id": "manual:808-beezy-bandsintown-108772501",
-    "title": "808 BEEZY — Live at RWG TOUR 2026",
-    "startDate": "2026-09-22",
-    "startTime": "10:53",
-    "timezone": "",
-    "venue": "RWG TOUR 2026",
-    "address": "",
-    "city": "Ohio",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108772501",
-    "officialUrl": "https://www.bandsintown.com/e/108772501",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108772501",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-09-11T15:33:30Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-09-11T15:33:30Z"
-  },
-  {
-    "id": "manual:808-beezy-bandsintown-108772738",
-    "title": "808 BEEZY — Live at RWG TOUR 2026",
-    "startDate": "2026-09-22",
-    "startTime": "17:00",
-    "timezone": "",
-    "venue": "RWG TOUR 2026",
-    "address": "",
-    "city": "Princeton",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108772738",
-    "officialUrl": "https://www.bandsintown.com/e/108772738",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108772738",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-09-11T15:33:30Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-09-11T15:33:30Z"
   },
   {
     "id": "manual:caleb-gordon-eden-2026-09-22-leander",
@@ -1314,7 +819,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1361,7 +866,7 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1409,7 +914,7 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -1418,86 +923,55 @@
     "lineupExplicit": true
   },
   {
-    "id": "manual:808-beezy-bandsintown-108772620",
-    "title": "808 BEEZY — Live at RWG TOUR 2026",
+    "id": "manual:kaden-jordan-2026-09-23-orlando",
+    "title": "Kaden Jordan Live",
     "startDate": "2026-09-23",
-    "startTime": "09:00",
-    "timezone": "",
-    "venue": "RWG TOUR 2026",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "Church in the Son",
     "address": "",
-    "city": "Elwood",
-    "state": "IL",
+    "city": "Orlando",
+    "state": "FL",
     "country": "US",
     "artists": [
-      "808 BEEZY"
+      "Kaden Jordan"
     ],
-    "headliner": "808 BEEZY",
+    "headliner": "Kaden Jordan",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108772620",
-    "officialUrl": "https://www.bandsintown.com/e/108772620",
-    "image": "assets/event-fallback.webp",
+    "ticketUrl": "https://www.songkick.com/artists/10314485-kaden-jordan",
+    "officialUrl": "https://kadenjordan.com/pages/tour",
+    "image": "https://images.sk-static.com/images/media/profile_images/artists/10314485/large_avatar",
+    "imageType": "artist",
+    "imagePosition": "center",
     "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
+    "sourceName": "Kaden Jordan official tour page / Songkick",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
     "sources": [
       {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108772620",
+        "name": "Kaden Jordan official TOUR page",
+        "url": "https://kadenjordan.com/pages/tour",
         "type": "manual_verified",
         "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-09-11T15:33:30Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-09-11T15:33:30Z"
-  },
-  {
-    "id": "manual:808-beezy-bandsintown-108772638",
-    "title": "808 BEEZY — Live at RWG TOUR 2026",
-    "startDate": "2026-09-23",
-    "startTime": "13:00",
-    "timezone": "",
-    "venue": "RWG TOUR 2026",
-    "address": "",
-    "city": "Mokena",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108772638",
-    "officialUrl": "https://www.bandsintown.com/e/108772638",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
+        "priority": 100
+      },
       {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108772638",
+        "name": "Songkick calendar linked by Kaden Jordan official site",
+        "url": "https://www.songkick.com/artists/10314485-kaden-jordan",
         "type": "manual_verified",
         "authority": "artist_calendar",
-        "priority": 76
+        "priority": 90
       }
-    ],
-    "lastVerified": "2026-09-11T15:33:30Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-09-11T15:33:30Z"
+    ]
   },
   {
+    "id": "manual:cj-emulous-syatp-sierra-vista-2026",
     "title": "SYATP Concert",
     "startDate": "2026-09-23",
     "startTime": "19:00",
-    "timezone": "America/Phoenix",
+    "timezone": "",
     "venue": "Shiloh Christian Ministries",
     "address": "1519 S Ave Del Sol",
     "city": "Sierra Vista",
@@ -1514,9 +988,6 @@
     "image": "https://static.wixstatic.com/media/9c331a_e63115b208054353a76258a4897ad76c~mv2.jpeg/v1/fill/w_980%2Ch_653%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_auto/9c331a_e63115b208054353a76258a4897ad76c~mv2.jpeg",
     "price": "",
     "sourceName": "CJ Emulous official calendar",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
     "sources": [
       {
         "name": "CJ Emulous official calendar",
@@ -1526,87 +997,12 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true,
-    "id": "manual:cj-emulous-syatp-sierra-vista-2026"
-  },
-  {
-    "id": "manual:808-beezy-bandsintown-108772712",
-    "title": "808 BEEZY — Live at RWG TOUR 2026",
-    "startDate": "2026-09-24",
-    "startTime": "11:00",
-    "timezone": "",
-    "venue": "RWG TOUR 2026",
-    "address": "",
-    "city": "Hume",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108772712",
-    "officialUrl": "https://www.bandsintown.com/e/108772712",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108772712",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-09-11T15:33:30Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-09-11T15:33:30Z"
-  },
-  {
-    "id": "manual:808-beezy-bandsintown-108790433",
-    "title": "808 BEEZY — Live at RWG TOUR 2026",
-    "startDate": "2026-09-24",
-    "startTime": "14:00",
-    "timezone": "",
-    "venue": "RWG TOUR 2026",
-    "address": "",
-    "city": "Kansas",
-    "state": "IL",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108790433",
-    "officialUrl": "https://www.bandsintown.com/e/108790433",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108790433",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-09-11T15:33:30Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-09-11T15:33:30Z"
+    "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
     "id": "manual:caleb-gordon-eden-2026-09-24-richmond",
@@ -1639,50 +1035,12 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "manual:808-beezy-bandsintown-108772751",
-    "title": "808 BEEZY — Live at RWG TOUR 2026",
-    "startDate": "2026-09-25",
-    "startTime": "08:45",
-    "timezone": "",
-    "venue": "RWG TOUR 2026",
-    "address": "",
-    "city": "Wellington",
-    "state": "MO",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108772751",
-    "officialUrl": "https://www.bandsintown.com/e/108772751",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108772751",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-09-11T15:33:30Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-09-11T15:33:30Z"
   },
   {
     "id": "official:4f72402532a6edb7c4ba",
@@ -1724,7 +1082,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1762,7 +1120,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1807,7 +1165,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 24%",
@@ -1845,7 +1203,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -1888,7 +1246,7 @@
         "priority": 80
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "endDate": "2026-09-26",
     "imageType": "event_artwork",
@@ -1901,6 +1259,7 @@
     "title": "HVO Fest 2026",
     "startDate": "2026-09-26",
     "startTime": "15:00",
+    "timezone": "",
     "venue": "AVALON Hollywood & Bardot",
     "address": "",
     "city": "Los Angeles",
@@ -1919,19 +1278,28 @@
     ],
     "headliner": "Yung Kriss",
     "eventType": "festival",
+    "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/hvo-fest-tickets-1987360837764",
     "officialUrl": "https://www.eventbrite.com/e/hvo-fest-tickets-1987360837764",
     "image": "assets/events/hvo-fest-2026.jpg",
     "price": "",
-    "status": "scheduled",
-    "lineupExplicit": true,
-    "authority": "official_event",
     "sourceName": "Yung Kriss official announcement and Eventbrite",
-    "announcementUrl": "https://www.instagram.com/reel/DblfWwWu062/",
+    "sources": [
+      {
+        "name": "Yung Kriss official announcement and Eventbrite",
+        "url": "https://www.eventbrite.com/e/hvo-fest-tickets-1987360837764",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true,
-    "confidence": "high"
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "imageOverride": true
   },
   {
     "id": "official:cd29c71021ec3f5cda92",
@@ -1973,7 +1341,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2018,7 +1386,7 @@
         "priority": 90
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2065,7 +1433,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2105,7 +1473,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -2150,7 +1518,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 24%",
@@ -2188,7 +1556,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -2196,10 +1564,11 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
+    "id": "manual:jay-kalyl-desde-antes-rockville-centre-2026",
     "title": "Jay Kalyl — Desde Antes Tour",
     "startDate": "2026-10-03",
     "startTime": "",
-    "timezone": "America/New_York",
+    "timezone": "",
     "venue": "Word of Life Ministries",
     "address": "430 DeMott Ave",
     "city": "Rockville Centre",
@@ -2216,9 +1585,6 @@
     "image": "assets/events/jay-kalyl-desde-antes-2026.svg",
     "price": "",
     "sourceName": "Boletos Live official event",
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "lineupExplicit": true,
     "sources": [
       {
         "name": "Boletos Live official event",
@@ -2228,18 +1594,19 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
-    "notes": "Official page gives conflicting 4:00 PM and 7:30 PM start times; start time intentionally left unspecified.",
-    "id": "manual:jay-kalyl-desde-antes-rockville-centre-2026",
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
+    "id": "manual:future-legacy-hip-hop-showcase-nashville-2026",
     "title": "Future Legacy Hip-Hop Showcase",
     "startDate": "2026-10-04",
     "startTime": "18:30",
-    "timezone": "America/Chicago",
+    "timezone": "",
     "venue": "Cannery Hall — Row One Stage",
     "address": "1 Cannery Row",
     "city": "Nashville",
@@ -2257,48 +1624,31 @@
     "status": "scheduled",
     "ticketUrl": "https://www.axs.com/events/1580749/future-legacy-hip-hop-showcase-tickets",
     "officialUrl": "https://www.axs.com/events/1580749/future-legacy-hip-hop-showcase-tickets",
-    "image": "https://images.discovery-prod.axs.com/2026/08/uploadedimage_6a871ac3abd11.jpg",
+    "image": "assets/artists/1k-phew.webp",
     "price": "",
     "sourceName": "AXS / GMA official Future Legacy listing",
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "lineupExplicit": true,
     "sources": [
       {
-        "name": "AXS official event",
+        "name": "AXS / GMA official Future Legacy listing",
         "url": "https://www.axs.com/events/1580749/future-legacy-hip-hop-showcase-tickets",
         "type": "manual_verified",
         "authority": "venue_ticket",
-        "priority": 94
-      },
-      {
-        "name": "GMA Dove Week official schedule",
-        "url": "https://gospelmusic.org/news/dove-week-2026-see-the-schedule",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 100
+        "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "officialBill": [
-      "ADIA",
-      "Don Ready",
-      "DJ Trendsetter",
-      "LaNell Grant",
-      "Nathan Davis Jr.",
-      "1K Phew"
-    ],
-    "notes": "DJ Trendsetter is associated with roster artist Trendsetter Sense based on established professional naming as DJ Trendsetter Sense.",
-    "id": "manual:future-legacy-hip-hop-showcase-nashville-2026"
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 24%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
+    "id": "manual:cj-emulous-live-loud-chico-2026",
     "title": "Live Loud",
     "startDate": "2026-10-07",
     "startTime": "19:00",
-    "timezone": "America/Los_Angeles",
+    "timezone": "",
     "venue": "2801 Notre Dame Blvd",
     "address": "2801 Notre Dame Blvd",
     "city": "Chico",
@@ -2315,9 +1665,6 @@
     "image": "https://static.wixstatic.com/media/9c331a_394502e64a45489e872ee2b71bb1a0de~mv2.jpg/v1/fill/w_980%2Ch_543%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_auto/9c331a_394502e64a45489e872ee2b71bb1a0de~mv2.jpg",
     "price": "",
     "sourceName": "CJ Emulous official calendar",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
     "sources": [
       {
         "name": "CJ Emulous official calendar",
@@ -2327,11 +1674,12 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true,
-    "id": "manual:cj-emulous-live-loud-chico-2026"
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
     "id": "manual:egr-2026-10-10-visalia-ca",
@@ -2364,7 +1712,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -2372,10 +1720,11 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
+    "id": "manual:mayia-boxyard-saturdaze-2026",
     "title": "Boxyard Saturdaze",
     "startDate": "2026-10-10",
     "startTime": "12:30",
-    "timezone": "America/New_York",
+    "timezone": "",
     "venue": "Boxyard RTP — BeatBox Stage",
     "address": "",
     "city": "Durham",
@@ -2392,9 +1741,6 @@
     "image": "assets/events/mayia-boxyard-saturdaze-2026.svg",
     "price": "",
     "sourceName": "MAYIA official calendar",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
     "sources": [
       {
         "name": "MAYIA official calendar",
@@ -2404,22 +1750,19 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
-    "officialBill": [
-      "DJ Watty Tha Shepherd",
-      "MAYIA WARREN"
-    ],
-    "id": "manual:mayia-boxyard-saturdaze-2026",
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
     "id": "manual:eventbrite:reign-volume-one-aasha-marie-brooklyn-2026",
     "title": "REIGN volume one",
     "startDate": "2026-10-10",
     "startTime": "19:00",
-    "timezone": "America/New_York",
+    "timezone": "",
     "venue": "The Vino Theater",
     "address": "274 Morgan Avenue, Suite 201",
     "city": "Brooklyn",
@@ -2436,66 +1779,114 @@
     "image": "assets/events/reign-volume-one-2026.jpg",
     "price": "",
     "sourceName": "Official Eventbrite listing",
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "lineupExplicit": true,
     "sources": [
       {
         "name": "Official Eventbrite listing",
         "url": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
-        "type": "eventbrite",
+        "type": "manual_verified",
         "authority": "venue_ticket",
-        "priority": 94
+        "priority": 112
       }
     ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z",
     "imageOverride": true
   },
   {
-    "id": "official:59d21fa71f6962a834a6",
-    "title": "THE WORLD IS WATCHING LIVE",
-    "startDate": "2026-10-12",
-    "startTime": "00:30",
+    "id": "official:7c07397fa047689b0215",
+    "title": "Anike — Live at THE ALL STAR EXPERIENCE LIVE CONCERT",
+    "startDate": "2026-10-11",
+    "startTime": "",
     "timezone": "",
-    "venue": "AM/FM Backyard",
+    "venue": "THE ALL STAR EXPERIENCE LIVE CONCERT",
+    "address": "",
+    "city": "Austin",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Anike"
+    ],
+    "headliner": "Anike",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108773288?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.reachrecords.com/artists/wande/",
+    "image": "https://s1.ticketm.net/dam/a/ab5/019b80d9-ebcf-40a7-9233-a35e76204ab5_SOURCE",
+    "price": "",
+    "sourceName": "Reach Records - Anike",
+    "sources": [
+      {
+        "name": "Reach Records - Anike",
+        "url": "https://www.reachrecords.com/artists/wande/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-09-12T14:12:12Z"
+  },
+  {
+    "id": "manual:parris-chariz-dallas-2026-10-11",
+    "title": "Parris Chariz — THE WORLD IS WATCHING LIVE",
+    "startDate": "2026-10-11",
+    "startTime": "20:30",
+    "timezone": "America/Chicago",
+    "venue": "AM/FM - Lounge",
     "address": "1950 Market Center Blvd",
     "city": "Dallas",
     "state": "TX",
     "country": "US",
     "artists": [
-      "Parris Chariz"
+      "Parris Chariz",
+      "Toschii",
+      "Eli Montanna",
+      "JWoodz"
     ],
     "headliner": "Parris Chariz",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://music.apple.com/us/concerts/artist/772171124",
-    "officialUrl": "https://music.apple.com/us/concerts/artist/772171124",
-    "image": "assets/event-fallback.webp",
+    "ticketUrl": "https://www.eventim.us/event/parris-chariz/699959",
+    "officialUrl": "https://www.eventim.us/event/parris-chariz/699959",
+    "image": "assets/artists/parris-chariz.webp",
+    "imageType": "artist",
+    "imagePosition": "center",
     "price": "",
-    "sourceName": "Parris Chariz Apple Music concerts",
+    "sourceName": "Spune / Eventim official listing",
+    "authority": "official_event",
+    "confidence": "high",
+    "lineupExplicit": true,
     "sources": [
       {
-        "name": "Parris Chariz Apple Music concerts",
-        "url": "https://music.apple.com/us/concerts/artist/772171124",
-        "type": "jsonld",
-        "authority": "artist_calendar",
-        "priority": 74
+        "name": "Eventim official ticket listing",
+        "url": "https://www.eventim.us/event/parris-chariz/699959",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      },
+      {
+        "name": "Spune official show calendar",
+        "url": "https://spune.com/shows/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 100
       }
-    ],
-    "lastVerified": "2026-09-11T15:03:32Z",
-    "confidence": "high",
-    "endDate": "2026-10-12",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-24T14:04:57Z"
+    ]
   },
   {
+    "id": "manual:cj-emulous-turlock-back-to-school-2026",
     "title": "Teen Club Kickoff / Back to School Concert",
     "startDate": "2026-10-12",
     "startTime": "18:00",
-    "timezone": "America/Los_Angeles",
+    "timezone": "",
     "venue": "Westside Ministries",
     "address": "950 Columbia Ave",
     "city": "Turlock",
@@ -2513,9 +1904,6 @@
     "image": "https://static.wixstatic.com/media/9c331a_7832125534df4c06b583f033fe19273e~mv2.png",
     "price": "",
     "sourceName": "CJ Emulous official calendar and event flyer",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
     "sources": [
       {
         "name": "CJ Emulous official calendar and event flyer",
@@ -2525,16 +1913,12 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true,
-    "officialBill": [
-      "CJ Emulous",
-      "Lul DreDay",
-      "MikeySoChristian"
-    ],
-    "id": "manual:cj-emulous-turlock-back-to-school-2026"
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
     "id": "manual:egr-2026-10-16-fresno-ca",
@@ -2567,7 +1951,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -2579,7 +1963,7 @@
     "title": "Rare of Breed",
     "startDate": "2026-10-16",
     "startTime": "19:00",
-    "timezone": "America/New_York",
+    "timezone": "",
     "venue": "Murray Hill Theatre",
     "address": "932 Edgewood Ave S",
     "city": "Jacksonville",
@@ -2597,27 +1981,29 @@
     "image": "assets/events/rare-of-breed-jacksonville-2026.jpg",
     "price": "",
     "sourceName": "Official Eventbrite listing",
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "lineupExplicit": true,
     "sources": [
       {
         "name": "Official Eventbrite listing",
         "url": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
-        "type": "eventbrite",
+        "type": "manual_verified",
         "authority": "venue_ticket",
-        "priority": 94
+        "priority": 112
       }
     ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z",
     "imageOverride": true
   },
   {
+    "id": "manual:mayia-nc-state-fair-2026",
     "title": "MAYIA at the NC State Fair",
     "startDate": "2026-10-17",
     "startTime": "10:00",
-    "timezone": "America/New_York",
+    "timezone": "",
     "venue": "Heritage Circle Stage — NC State Fairgrounds",
     "address": "",
     "city": "Raleigh",
@@ -2634,9 +2020,6 @@
     "image": "assets/events/mayia-nc-state-fair-2026.svg",
     "price": "",
     "sourceName": "MAYIA official calendar",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
     "sources": [
       {
         "name": "MAYIA official calendar",
@@ -2646,18 +2029,19 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
-    "notes": "One event with two confirmed acoustic sets: 10–11 AM and 12–1 PM.",
-    "id": "manual:mayia-nc-state-fair-2026",
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
+    "id": "manual:mission-friends-sacramento-2026",
     "title": "Mission and Special Guests",
     "startDate": "2026-10-17",
     "startTime": "18:30",
-    "timezone": "America/Los_Angeles",
+    "timezone": "",
     "venue": "Victory Outreach South Sacramento",
     "address": "6831 Savings Pl",
     "city": "Sacramento",
@@ -2674,9 +2058,6 @@
     "image": "assets/events/mission-friends-sacramento-2026.svg",
     "price": "",
     "sourceName": "Mission official Bandsintown event",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
     "sources": [
       {
         "name": "Mission official Bandsintown event",
@@ -2686,50 +2067,56 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
-    "id": "manual:mission-friends-sacramento-2026",
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "title": "Alex Zurdo: Zona Zero",
-    "startDate": "2026-10-18",
-    "startTime": "18:00",
-    "timezone": "America/Puerto_Rico",
-    "venue": "Coliseo de Puerto Rico",
-    "address": "500 Arterial B",
-    "city": "San Juan",
-    "state": "PR",
+    "id": "manual:kaden-jordan-2026-10-23-new-port-richey",
+    "title": "Kaden Jordan Live",
+    "startDate": "2026-10-23",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "Trinity College",
+    "address": "",
+    "city": "New Port Richey",
+    "state": "FL",
     "country": "US",
     "artists": [
-      "Alex Zurdo"
+      "Kaden Jordan"
     ],
-    "headliner": "Alex Zurdo",
+    "headliner": "Kaden Jordan",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://choli.ticketera.com/event/alex-zurdo-zona-cero-6dn2x2",
-    "officialUrl": "https://www.coliseodepuertorico.com/alexzurdozonazero/",
-    "image": "assets/events/alex-zurdo-zona-zero-2026.svg",
+    "ticketUrl": "https://www.songkick.com/artists/10314485-kaden-jordan",
+    "officialUrl": "https://kadenjordan.com/pages/tour",
+    "image": "https://images.sk-static.com/images/media/profile_images/artists/10314485/large_avatar",
+    "imageType": "artist",
+    "imagePosition": "center",
     "price": "",
-    "sourceName": "Coliseo de Puerto Rico official event",
-    "authority": "venue_ticket",
+    "sourceName": "Kaden Jordan official tour page / Songkick",
+    "authority": "artist_calendar",
     "confidence": "high",
     "lineupExplicit": true,
     "sources": [
       {
-        "name": "Coliseo de Puerto Rico official event",
-        "url": "https://www.coliseodepuertorico.com/alexzurdozonazero/",
+        "name": "Kaden Jordan official TOUR page",
+        "url": "https://kadenjordan.com/pages/tour",
         "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
+        "authority": "artist_calendar",
+        "priority": 100
+      },
+      {
+        "name": "Songkick calendar linked by Kaden Jordan official site",
+        "url": "https://www.songkick.com/artists/10314485-kaden-jordan",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 90
       }
-    ],
-    "auditVerified": "2026-09-11",
-    "id": "manual:alex-zurdo-zona-zero-san-juan-2026",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true
+    ]
   },
   {
     "id": "official:6ccf87bf0ba17cd0c74d",
@@ -2772,7 +2159,7 @@
         "priority": 104
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2810,7 +2197,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -2849,50 +2236,12 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "manual:808-beezy-bandsintown-108856031",
-    "title": "808 BEEZY — Live at FCA Warrior Night",
-    "startDate": "2026-11-02",
-    "startTime": "20:00",
-    "timezone": "",
-    "venue": "FCA Warrior Night",
-    "address": "1600 E Washington Blvd",
-    "city": "Fort Wayne",
-    "state": "IN",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108856031",
-    "officialUrl": "https://www.bandsintown.com/e/108856031",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108856031",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-09-11T15:33:30Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-09-11T15:33:30Z"
   },
   {
     "id": "ticketmaster:G5eVZ_ClfLPQX",
@@ -2926,7 +2275,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2938,7 +2287,7 @@
     "title": "Flavor Fest 2026 — Friday Concerts",
     "startDate": "2026-11-06",
     "startTime": "19:00",
-    "timezone": "America/New_York",
+    "timezone": "",
     "venue": "Crossover Church",
     "address": "1235 E Fowler Ave",
     "city": "Tampa",
@@ -2951,16 +2300,11 @@
     ],
     "headliner": "Miles Minnick",
     "eventType": "festival",
+    "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
     "image": "assets/events/flavor-fest-friday-2026.webp",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
     "price": "",
-    "status": "scheduled",
-    "lineupExplicit": true,
-    "authority": "official_event",
     "sourceName": "Flavor Fest official 2026 schedule",
     "sources": [
       {
@@ -2971,13 +2315,20 @@
         "priority": 112
       }
     ],
-    "confidence": "high"
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "imageOverride": true
   },
   {
+    "id": "manual:flavor-fest-2026-saturday-concerts",
     "title": "Flavor Fest 2026 — Saturday Concerts",
     "startDate": "2026-11-07",
     "startTime": "19:00",
-    "timezone": "America/New_York",
+    "timezone": "",
     "venue": "Crossover Church",
     "address": "1235 Fowler Ave",
     "city": "Tampa",
@@ -2997,9 +2348,6 @@
     "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/989d4d2e-f454-4a1b-99df-cc78cf6e6749/FF26-Promo-Saturday-Night.jpg",
     "price": "",
     "sourceName": "Flavor Fest official Saturday poster",
-    "authority": "official_festival",
-    "confidence": "high",
-    "lineupExplicit": true,
     "sources": [
       {
         "name": "Flavor Fest official Saturday poster",
@@ -3009,19 +2357,12 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true,
-    "officialBill": [
-      "Lecrae",
-      "Biancallove",
-      "Gifted Hands",
-      "Monster Tarver",
-      "C4 Crotona"
-    ],
-    "notes": "Yung Kriss and Gifted Hands have conflicting poster/schedule day assignments and are not newly associated here pending resolution.",
-    "id": "manual:flavor-fest-2026-saturday-concerts"
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
     "id": "ticketmaster:vv1AAZk3FGkdmpCG1",
@@ -3056,7 +2397,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3094,7 +2435,7 @@
         "priority": 74
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "endDate": "2026-11-08",
     "imageType": "artist",
@@ -3133,12 +2474,56 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:kaden-jordan-2026-11-13-orlando",
+    "title": "Kaden Jordan Live",
+    "startDate": "2026-11-13",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "The Gathering Place",
+    "address": "",
+    "city": "Orlando",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Kaden Jordan"
+    ],
+    "headliner": "Kaden Jordan",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.songkick.com/artists/10314485-kaden-jordan",
+    "officialUrl": "https://kadenjordan.com/pages/tour",
+    "image": "https://images.sk-static.com/images/media/profile_images/artists/10314485/large_avatar",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "price": "",
+    "sourceName": "Kaden Jordan official tour page / Songkick",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Kaden Jordan official TOUR page",
+        "url": "https://kadenjordan.com/pages/tour",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      },
+      {
+        "name": "Songkick calendar linked by Kaden Jordan official site",
+        "url": "https://www.songkick.com/artists/10314485-kaden-jordan",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 90
+      }
+    ]
   },
   {
     "id": "official:0dd5f599b4db080206cf",
@@ -3171,7 +2556,7 @@
         "priority": 74
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "endDate": "2026-11-15",
     "imageType": "artist",
@@ -3180,10 +2565,11 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
+    "id": "manual:cj-emulous-kickback-grand-prairie-2026",
     "title": "The Kickback",
     "startDate": "2026-11-14",
     "startTime": "19:00",
-    "timezone": "America/Chicago",
+    "timezone": "",
     "venue": "2305 SE 14th St",
     "address": "2305 SE 14th St",
     "city": "Grand Prairie",
@@ -3200,9 +2586,6 @@
     "image": "assets/events/cj-emulous-kickback-2026.svg",
     "price": "",
     "sourceName": "CJ Emulous official calendar",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
     "sources": [
       {
         "name": "CJ Emulous official calendar",
@@ -3212,11 +2595,12 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
-    "id": "manual:cj-emulous-kickback-grand-prairie-2026",
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
     "id": "ticketmaster:vvG10Z_CMA3B0H",
@@ -3250,7 +2634,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3288,7 +2672,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -3326,7 +2710,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
@@ -3334,10 +2718,11 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
+    "id": "manual:miles-cj-zion-ultra-lounge-chandler-2026",
     "title": "Miles Minnick & CJ Emulous at Zion Ultra Lounge",
     "startDate": "2026-12-05",
     "startTime": "",
-    "timezone": "America/Phoenix",
+    "timezone": "",
     "venue": "Zion Ultra Lounge",
     "address": "2301 S Stearman Dr",
     "city": "Chandler",
@@ -3355,9 +2740,6 @@
     "image": "assets/events/miles-cj-zion-ultra-2026.svg",
     "price": "",
     "sourceName": "CJ Emulous official calendar",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
     "sources": [
       {
         "name": "CJ Emulous official calendar",
@@ -3367,11 +2749,12 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
-    "id": "manual:miles-cj-zion-ultra-lounge-chandler-2026",
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
     "id": "manual:egr-2026-12-11-fargo-nd",
@@ -3404,12 +2787,56 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:kaden-jordan-2026-12-11-ocala",
+    "title": "Kaden Jordan Live",
+    "startDate": "2026-12-11",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "NEXT CHURCH",
+    "address": "",
+    "city": "Ocala",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Kaden Jordan"
+    ],
+    "headliner": "Kaden Jordan",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.songkick.com/artists/10314485-kaden-jordan",
+    "officialUrl": "https://kadenjordan.com/pages/tour",
+    "image": "https://images.sk-static.com/images/media/profile_images/artists/10314485/large_avatar",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "price": "",
+    "sourceName": "Kaden Jordan official tour page / Songkick",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Kaden Jordan official TOUR page",
+        "url": "https://kadenjordan.com/pages/tour",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      },
+      {
+        "name": "Songkick calendar linked by Kaden Jordan official site",
+        "url": "https://www.songkick.com/artists/10314485-kaden-jordan",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 90
+      }
+    ]
   },
   {
     "id": "manual:egr-2026-12-12-jamestown-nd",
@@ -3442,87 +2869,11 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-09-11T15:03:32Z",
+    "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 38%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "manual:808-beezy-bandsintown-108856562",
-    "title": "808 BEEZY — Live at AMPLIFY",
-    "startDate": "2027-02-12",
-    "startTime": "19:30",
-    "timezone": "",
-    "venue": "AMPLIFY",
-    "address": "715 Whittier Ave NW",
-    "city": "North Canton",
-    "state": "OH",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108856562",
-    "officialUrl": "https://www.bandsintown.com/e/108856562",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108856562",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-09-11T15:33:30Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-09-11T15:33:30Z"
-  },
-  {
-    "id": "manual:808-beezy-bandsintown-108856576",
-    "title": "808 BEEZY — Live at AMPLIFY",
-    "startDate": "2027-02-13",
-    "startTime": "19:30",
-    "timezone": "",
-    "venue": "AMPLIFY",
-    "address": "715 Whittier Ave NW",
-    "city": "North Canton",
-    "state": "OH",
-    "country": "US",
-    "artists": [
-      "808 BEEZY"
-    ],
-    "headliner": "808 BEEZY",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108856576",
-    "officialUrl": "https://www.bandsintown.com/e/108856576",
-    "image": "assets/event-fallback.webp",
-    "price": "",
-    "sourceName": "808 BEEZY official tour / Bandsintown",
-    "sources": [
-      {
-        "name": "808 BEEZY official tour / Bandsintown",
-        "url": "https://www.bandsintown.com/e/108856576",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "lastVerified": "2026-09-11T15:33:30Z",
-    "confidence": "high",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-09-11T15:33:30Z"
   }
 ]

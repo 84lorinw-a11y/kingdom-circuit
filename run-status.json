@@ -1,25 +1,25 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-09-11T15:03:32Z",
-  "lastSuccessfulUpdate": "2026-09-11T15:03:32Z",
-  "eventsPublished": 73,
-  "candidatesCollected": 145,
-  "artistsConfigured": 340,
+  "lastAttempt": "2026-09-12T14:12:12Z",
+  "lastSuccessfulUpdate": "2026-09-12T14:12:12Z",
+  "eventsPublished": 80,
+  "candidatesCollected": 164,
+  "artistsConfigured": 341,
   "artistsByPriority": {
     "priority1": 102,
     "priority2": 133,
-    "priority3": 105
+    "priority3": 106
   },
   "ticketmasterArtistsEnabled": 209,
-  "socialSearchArtistsEnabled": 157,
-  "freeTextAliasesProtected": 134,
+  "socialSearchArtistsEnabled": 164,
+  "freeTextAliasesProtected": 135,
   "artistsMatchedOnTicketmaster": 70,
-  "officialEventsFound": 56,
-  "ticketmasterEventsFound": 31,
-  "instagramArtistsConfigured": 157,
-  "instagramQueriesRun": 159,
-  "instagramQueriesAttempted": 157,
+  "officialEventsFound": 60,
+  "ticketmasterEventsFound": 30,
+  "instagramArtistsConfigured": 164,
+  "instagramQueriesRun": 166,
+  "instagramQueriesAttempted": 164,
   "instagramResultsFound": 0,
   "instagramEventsFound": 0,
   "instagramCandidates": [
@@ -49,7 +49,7 @@
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 293,
+  "sourcesChecked": 302,
   "unmatchedArtists": [
     "Scootie Wop",
     "Mike Malagies",
@@ -77,12 +77,15 @@
     "Eluzai",
     "Mogli the Iceburg",
     "EmanuelDaProphet",
+    "Aasha Marie",
+    "Jered Sanders",
+    "JWoodz",
+    "Kaden Jordan",
     "Pregador Luo",
     "Red Tips",
     "Tommy Royale",
     "Ty Brasel",
     "J. Monty",
-    "Jered Sanders",
     "Bryann T",
     "Eshon Burgundy",
     "Sho Baraka",
@@ -94,15 +97,12 @@
     "Xay Hill",
     "Nathan Davis Jr.",
     "Angie Rose",
-    "Aasha Marie",
     "404 Chew",
     "Alphein",
     "G3rm 43",
     "GiNŌSKŌ",
     "IDEGO",
     "Isreal Perez",
-    "JWoodz",
-    "Kaden Jordan",
     "Megan Tossi",
     "Myles Maestro",
     "Nat Lauren",
@@ -195,7 +195,7 @@
     {
       "name": "Reach Records consolidated calendar",
       "status": "ok",
-      "eventsFound": 15
+      "eventsFound": 14
     },
     {
       "name": "Reach Records - 1K Phew",
@@ -215,7 +215,7 @@
     {
       "name": "Reach Records - Anike",
       "status": "ok",
-      "eventsFound": 3
+      "eventsFound": 4
     },
     {
       "name": "Reach Records - Hulvey",
@@ -369,7 +369,7 @@
     },
     {
       "name": "Trendsetter Sense official events",
-      "status": "warning",
+      "status": "ok",
       "eventsFound": 0
     },
     {
@@ -425,12 +425,12 @@
     {
       "name": "ChristianHits consolidated show feed",
       "status": "ok",
-      "eventsFound": 3
+      "eventsFound": 2
     },
     {
       "name": "ChristianHits festival directory",
       "status": "ok",
-      "eventsFound": 3
+      "eventsFound": 2
     },
     {
       "name": "Konnect Concert Series - Space City Church",
@@ -603,6 +603,11 @@
       "eventsFound": 0
     },
     {
+      "name": "Kaden Jordan official tour / Songkick",
+      "status": "ok",
+      "eventsFound": 6
+    },
+    {
       "name": "FLAME Plano official registration",
       "status": "ok",
       "eventsFound": 0
@@ -626,15 +631,14 @@
       "name": "Instagram public announcement scan",
       "status": "ok",
       "eventsFound": 0,
-      "artistsChecked": 157,
-      "queriesRun": 159
+      "artistsChecked": 164,
+      "queriesRun": 166
     }
   ],
-  "warningCount": 22,
+  "warningCount": 21,
   "errorCount": 0,
   "warnings": [
-    "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
-    "Trendsetter Sense official events: Unable to retrieve https://www.trendsettersense.com/event-list: HTTP Error 429: Too Many Requests",
+    "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 404: Not Found",
     "NF Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11969355-nf: HTTP Error 403: Forbidden",
     "Mike Malagies Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15593996-mike-malagies: HTTP Error 403: Forbidden",
     "Parris Chariz Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14726057-parris-chariz: HTTP Error 403: Forbidden",
@@ -657,9 +661,5 @@
     "Anike Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4673148-anike: HTTP Error 403: Forbidden"
   ],
   "errors": [],
-  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings.",
-  "artistWebsiteEventsFound": 0,
-  "artistWebsiteSeedEvents": 19,
-  "artistWebsiteEventsAdded": 0,
-  "artistWebsiteMergeAt": "2026-09-11T15:36:05Z"
+  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings."
 }
