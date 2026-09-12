@@ -36,12 +36,12 @@ jobs:
 
           def desktop_driver():
               o=webdriver.ChromeOptions()
-              o.add_argument('--headless=new'); o.add_argument('--no-sandbox'); o.add_argument('--disable-dev-shm-usage'); o.add_argument('--window-size=1440,1000')
+              o.add_argument('--headless=new'); o.add_argument('--no-sandbox'); o.add_argument('--disable-dev-shm-usage'); o.add_argument('--window-size=1440,1000'); o.page_load_strategy='eager'
               return webdriver.Chrome(options=o)
 
           def mobile_driver():
               o=webdriver.ChromeOptions()
-              o.add_argument('--headless=new'); o.add_argument('--no-sandbox'); o.add_argument('--disable-dev-shm-usage')
+              o.add_argument('--headless=new'); o.add_argument('--no-sandbox'); o.add_argument('--disable-dev-shm-usage'); o.page_load_strategy='eager'
               o.add_experimental_option('mobileEmulation', {'deviceMetrics': {'width':390,'height':844,'pixelRatio':1.0}, 'userAgent':'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1'})
               return webdriver.Chrome(options=o)
 
@@ -73,6 +73,14 @@ jobs:
                   WebDriverWait(d,10).until(lambda x:any(c.is_displayed() for c in x.find_elements(By.CSS_SELECTOR,'[data-event-card]')))
                   visible=[c for c in d.find_elements(By.CSS_SELECTOR,'[data-event-card]') if c.is_displayed()]
                   check('desktop festival filter works',len(visible)>0 and all(c.get_attribute('data-type')=='festival' for c in visible),f'visible={len(visible)}, types={sorted(set(c.get_attribute("data-type") for c in visible))}')
+              for label,url,selector,minimum in [
+                  ('desktop festivals','https://kingdomcircuit.com/festivals/','[data-event-card]',1),
+                  ('desktop artists','https://kingdomcircuit.com/artists/','[data-artist-card]',20),
+                  ('desktop artist profile','https://kingdomcircuit.com/artists/kb/','h1',1),
+              ]:
+                  d.get(url)
+                  WebDriverWait(d,20).until(lambda x: len(x.find_elements(By.CSS_SELECTOR,selector)) >= minimum)
+                  check(label+' renders',True)
               d.quit(); d=None
           except Exception as e:
               check('desktop browser sequence',False,repr(e))
@@ -99,6 +107,14 @@ jobs:
               m.execute_script('arguments[0].click()',close)
               WebDriverWait(m,5).until(lambda x:'open' not in x.find_element(By.CSS_SELECTOR,'.menu-drawer').get_attribute('class'))
               check('mobile navigation closes',True)
+              for label,url,selector,minimum in [
+                  ('mobile festivals','https://kingdomcircuit.com/festivals/','[data-event-card]',1),
+                  ('mobile artists','https://kingdomcircuit.com/artists/','[data-artist-card]',20),
+                  ('mobile artist profile','https://kingdomcircuit.com/artists/kb/','h1',1),
+              ]:
+                  m.get(url)
+                  WebDriverWait(m,20).until(lambda x: len(x.find_elements(By.CSS_SELECTOR,selector)) >= minimum)
+                  check(label+' renders',True)
               m.quit(); m=None
           except Exception as e:
               check('mobile browser sequence',False,repr(e))
