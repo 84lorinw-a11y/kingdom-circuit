@@ -21,6 +21,7 @@ LISTING_PAGES = (
 
 def apply_p0_mobile_listing_safety(root: pathlib.Path) -> dict[str, int]:
     removed_scripts = 0
+    inlined_pages = 0
     for relative in LISTING_PAGES:
         page = root / relative
         if not page.exists():
@@ -50,7 +51,7 @@ def apply_p0_mobile_listing_safety(root: pathlib.Path) -> dict[str, int]:
         if marker in js and "const staticCards =" not in js:
             app.write_text(js.replace(marker, replacement, 1), encoding="utf-8")
             patched_runtime = 1
-    return {"pages_cleaned": removed_scripts, "runtime_patched": patched_runtime}
+    return {"pages_cleaned": removed_scripts, "styles_inlined": inlined_pages, "runtime_patched": patched_runtime}
 
 
 def main() -> None:
