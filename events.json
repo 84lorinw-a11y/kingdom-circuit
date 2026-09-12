@@ -665,52 +665,6 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "official:64bbcd477c3a36104df3",
-    "title": "Kingdom Choice Awards 2026",
-    "startDate": "2026-09-19",
-    "startTime": "19:00",
-    "timezone": "America/New_York",
-    "venue": "The Claire Shulman Theater at Queens Theatre",
-    "address": "14 United Nations Avenue South",
-    "city": "Corona",
-    "state": "NY",
-    "country": "US",
-    "artists": [
-      "Anike"
-    ],
-    "headliner": "Anike",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.queenstheatre.org/events/kingdom-choice-awards-2026-dqr9",
-    "officialUrl": "https://www.queenstheatre.org/events/kingdom-choice-awards-2026-dqr9",
-    "image": "https://s1.ticketm.net/dam/a/ab5/019b80d9-ebcf-40a7-9233-a35e76204ab5_SOURCE",
-    "price": "",
-    "sourceName": "Queens Theatre event and tickets",
-    "sources": [
-      {
-        "name": "Reach Records - Anike",
-        "url": "https://www.reachrecords.com/artists/wande/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 86
-      },
-      {
-        "name": "Queens Theatre event and tickets",
-        "url": "https://www.queenstheatre.org/events/kingdom-choice-awards-2026-dqr9",
-        "type": "venue_ticket",
-        "authority": "official_venue",
-        "priority": 120
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 30%",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-15T20:23:53Z",
-    "auditVerified": "2026-09-12"
-  },
-  {
     "id": "manual:egr-2026-09-19-manteca-ca",
     "title": "EGR Live — Manteca",
     "startDate": "2026-09-19",
@@ -911,6 +865,52 @@
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:64bbcd477c3a36104df3",
+    "title": "Kingdom Choice Awards 2026",
+    "startDate": "2026-09-19",
+    "startTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "The Claire Shulman Theater at Queens Theatre",
+    "address": "14 United Nations Avenue South",
+    "city": "Corona",
+    "state": "NY",
+    "country": "US",
+    "artists": [
+      "Anike"
+    ],
+    "headliner": "Anike",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.queenstheatre.org/events/kingdom-choice-awards-2026-dqr9",
+    "officialUrl": "https://www.queenstheatre.org/events/kingdom-choice-awards-2026-dqr9",
+    "image": "https://s1.ticketm.net/dam/a/ab5/019b80d9-ebcf-40a7-9233-a35e76204ab5_SOURCE",
+    "price": "",
+    "sourceName": "Queens Theatre event and tickets",
+    "sources": [
+      {
+        "name": "Reach Records - Anike",
+        "url": "https://www.reachrecords.com/artists/wande/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      },
+      {
+        "name": "Queens Theatre event and tickets",
+        "url": "https://www.queenstheatre.org/events/kingdom-choice-awards-2026-dqr9",
+        "type": "venue_ticket",
+        "authority": "official_venue",
+        "priority": 120
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-15T20:23:53Z",
+    "auditVerified": "2026-09-12"
   },
   {
     "id": "official:8cf69c5c610dae61d590",
@@ -1725,60 +1725,6 @@
     "firstSeen": "2026-09-07T16:11:58Z"
   },
   {
-    "id": "official:ea0342f4771e9f9f1dfc",
-    "title": "1K Phew — Live at Fastivalle 2026",
-    "startDate": "2026-09-26",
-    "startTime": "19:00",
-    "timezone": "America/Indiana/Indianapolis",
-    "venue": "Camptown, Inc.",
-    "address": "1010 W 64th St",
-    "city": "Indianapolis",
-    "state": "IN",
-    "country": "US",
-    "artists": [
-      "1K Phew"
-    ],
-    "headliner": "1K Phew",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108395515?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://music.apple.com/us/concerts/ce.7570f0f7-b826-4400-a6f0-034778e98568",
-    "image": "assets/artists/1k-phew.webp",
-    "price": "",
-    "sourceName": "Exact Apple Music event page",
-    "sources": [
-      {
-        "name": "Reach Records - 1K Phew",
-        "url": "https://www.reachrecords.com/artists/1k-phew/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 86
-      },
-      {
-        "name": "Reach Records consolidated calendar",
-        "url": "https://www.reachrecords.com/events/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 84
-      },
-      {
-        "name": "Exact Apple Music event page",
-        "url": "https://music.apple.com/us/concerts/ce.7570f0f7-b826-4400-a6f0-034778e98568",
-        "type": "artist_calendar",
-        "authority": "artist_calendar",
-        "priority": 112
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 24%",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-15T11:53:29Z",
-    "notes": "Official listing publishes 7:00 PM but does not identify it as doors or performance time.",
-    "auditVerified": "2026-09-12"
-  },
-  {
     "id": "manual:egr-2026-09-26-whittier-ca",
     "title": "EGR Live — Whittier",
     "startDate": "2026-09-26",
@@ -1945,6 +1891,60 @@
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:ea0342f4771e9f9f1dfc",
+    "title": "1K Phew — Live at Fastivalle 2026",
+    "startDate": "2026-09-26",
+    "startTime": "19:00",
+    "timezone": "America/Indiana/Indianapolis",
+    "venue": "Camptown, Inc.",
+    "address": "1010 W 64th St",
+    "city": "Indianapolis",
+    "state": "IN",
+    "country": "US",
+    "artists": [
+      "1K Phew"
+    ],
+    "headliner": "1K Phew",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108395515?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://music.apple.com/us/concerts/ce.7570f0f7-b826-4400-a6f0-034778e98568",
+    "image": "assets/artists/1k-phew.webp",
+    "price": "",
+    "sourceName": "Exact Apple Music event page",
+    "sources": [
+      {
+        "name": "Reach Records - 1K Phew",
+        "url": "https://www.reachrecords.com/artists/1k-phew/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
+      },
+      {
+        "name": "Exact Apple Music event page",
+        "url": "https://music.apple.com/us/concerts/ce.7570f0f7-b826-4400-a6f0-034778e98568",
+        "type": "artist_calendar",
+        "authority": "artist_calendar",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 24%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-15T11:53:29Z",
+    "notes": "Official listing publishes 7:00 PM but does not identify it as doors or performance time.",
+    "auditVerified": "2026-09-12"
   },
   {
     "id": "official:cd85847561e539a411e8",
@@ -2979,6 +2979,53 @@
     "confidence": "high"
   },
   {
+    "id": "official:4e2fc5c7c02ab1d34b9e",
+    "title": "Beyond the Walls",
+    "startDate": "2026-11-07",
+    "startTime": "18:00",
+    "timezone": "America/New_York",
+    "venue": "House of Blues Cleveland",
+    "address": "308 Euclid Ave",
+    "city": "Cleveland",
+    "state": "OH",
+    "country": "US",
+    "artists": [
+      "Mike Teezy"
+    ],
+    "headliner": "Mike Teezy",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://music.apple.com/us/concerts/artist/517774271",
+    "officialUrl": "https://music.apple.com/us/concerts/ce.01a1c61a-49a9-4e19-b629-46bac43b4970",
+    "image": "https://www.even.biz/_next/image?q=75&url=https%3A%2F%2Fdt7m7kl3brv3f.cloudfront.net%2Fimages%2Fzlirs9n3bpjitnofexx4m095koo3&w=828",
+    "price": "",
+    "sourceName": "Exact Apple Music event page",
+    "sources": [
+      {
+        "name": "Mike Teezy Apple Music concerts",
+        "url": "https://music.apple.com/us/concerts/artist/517774271",
+        "type": "jsonld",
+        "authority": "artist_calendar",
+        "priority": 74
+      },
+      {
+        "name": "Exact Apple Music event page",
+        "url": "https://music.apple.com/us/concerts/ce.01a1c61a-49a9-4e19-b629-46bac43b4970",
+        "type": "artist_calendar",
+        "authority": "artist_calendar",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-21T12:04:12Z",
+    "notes": "Apple Music displays 6:00 PM on November 7. The former 11:00 PM value and November 8 end date resulted from preserving UTC as local time.",
+    "auditVerified": "2026-09-12"
+  },
+  {
     "id": "manual:flavor-fest-2026-saturday-concerts",
     "title": "Flavor Fest 2026 — Saturday Concerts",
     "startDate": "2026-11-07",
@@ -3058,53 +3105,6 @@
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:4e2fc5c7c02ab1d34b9e",
-    "title": "Beyond the Walls",
-    "startDate": "2026-11-07",
-    "startTime": "18:00",
-    "timezone": "America/New_York",
-    "venue": "House of Blues Cleveland",
-    "address": "308 Euclid Ave",
-    "city": "Cleveland",
-    "state": "OH",
-    "country": "US",
-    "artists": [
-      "Mike Teezy"
-    ],
-    "headliner": "Mike Teezy",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://music.apple.com/us/concerts/artist/517774271",
-    "officialUrl": "https://music.apple.com/us/concerts/ce.01a1c61a-49a9-4e19-b629-46bac43b4970",
-    "image": "https://www.even.biz/_next/image?q=75&url=https%3A%2F%2Fdt7m7kl3brv3f.cloudfront.net%2Fimages%2Fzlirs9n3bpjitnofexx4m095koo3&w=828",
-    "price": "",
-    "sourceName": "Exact Apple Music event page",
-    "sources": [
-      {
-        "name": "Mike Teezy Apple Music concerts",
-        "url": "https://music.apple.com/us/concerts/artist/517774271",
-        "type": "jsonld",
-        "authority": "artist_calendar",
-        "priority": 74
-      },
-      {
-        "name": "Exact Apple Music event page",
-        "url": "https://music.apple.com/us/concerts/ce.01a1c61a-49a9-4e19-b629-46bac43b4970",
-        "type": "artist_calendar",
-        "authority": "artist_calendar",
-        "priority": 112
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 30%",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-21T12:04:12Z",
-    "notes": "Apple Music displays 6:00 PM on November 7. The former 11:00 PM value and November 8 end date resulted from preserving UTC as local time.",
-    "auditVerified": "2026-09-12"
   },
   {
     "id": "ticketmaster:vvG1zZ_ClQMRrF",
