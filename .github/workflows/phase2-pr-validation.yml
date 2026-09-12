@@ -35,11 +35,13 @@ jobs:
           python scripts/apply_live_artist_overrides.py --source .
           python scripts/apply_deonte_hall_submission.py
 
-      - name: Build and finalize production artifact
+      - name: Build and verify base production artifact
         run: |
           python scripts/build_seo_site.py
-          python scripts/finalize_seo_indexing.py --site _site
           python scripts/verify_multipage_site.py _site
+
+      - name: Apply final production indexing policy
+        run: python scripts/finalize_seo_indexing.py --site _site
 
       - name: Verify phase-2 artifact invariants
         run: |
