@@ -1,6 +1,6 @@
 {
   "historyVersion": 2,
-  "updatedAt": "2026-09-12T14:06:43Z",
+  "updatedAt": "2026-09-12T18:42:31Z",
   "events": [
     {
       "archiveKey": "id:official:df86501a61bd2659126a",
@@ -6588,12 +6588,80 @@
       }
     },
     {
+      "archiveKey": "id:official:0ac72030904117f28951",
+      "firstArchivedAt": "2026-09-12T18:42:32Z",
+      "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
+      "calendarPresence": "present",
+      "removedFromCalendarAt": "",
+      "reappearedCount": 1,
+      "observedOnOrAfterEventDate": true,
+      "firstObservedOnOrAfterEventDate": "2026-09-12T14:26:19Z",
+      "dateState": "past",
+      "observedInGitHistory": true,
+      "firstGitObservedAt": "2026-09-12T14:26:19Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
+      "event": {
+        "id": "official:0ac72030904117f28951",
+        "title": "Uprise Festival 2026",
+        "startDate": "2026-09-11",
+        "startTime": "",
+        "timezone": "",
+        "venue": "Shippensburg Community Fairgrounds",
+        "address": "10131 Possum Hollow Rd",
+        "city": "Shippensburg",
+        "state": "PA",
+        "country": "US",
+        "artists": [
+          "KB",
+          "Hulvey",
+          "nobigdyl.",
+          "Miles Minnick",
+          "1K Phew",
+          "Anike",
+          "Kijan Boone",
+          "Tommy Zuko"
+        ],
+        "headliner": "KB",
+        "eventType": "festival",
+        "status": "scheduled",
+        "ticketUrl": "https://www.uprisefest.com/uprise-2026",
+        "officialUrl": "https://www.uprisefest.com/uprise-2026",
+        "image": "https://s1.ticketm.net/dam/a/1cb/834c7b9b-5176-4d5c-b69c-d8cda9cd91cb_1753211_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+        "price": "",
+        "sourceName": "Uprise Festival official lineup",
+        "sources": [
+          {
+            "name": "Uprise Festival official lineup",
+            "url": "https://www.uprisefest.com/uprise-2026",
+            "type": "manual_verified",
+            "authority": "official_festival",
+            "priority": 112
+          },
+          {
+            "name": "ChristianHits festival directory",
+            "url": "https://www.uprisefest.com/",
+            "type": "christian_festivals",
+            "authority": "aggregator",
+            "priority": 44
+          }
+        ],
+        "lastVerified": "2026-09-12T14:12:12Z",
+        "confidence": "high",
+        "endDate": "2026-09-12",
+        "imageType": "artist",
+        "imagePosition": "50% 30%",
+        "verifiedVersion": 9,
+        "firstSeen": "2026-08-09T00:00:00Z"
+      }
+    },
+    {
       "archiveKey": "id:official:12ef07b891bbeeefbcb1",
       "firstArchivedAt": "2026-09-01T15:28:05Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
       "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
-      "calendarPresence": "present",
-      "removedFromCalendarAt": "",
+      "calendarPresence": "absent",
+      "removedFromCalendarAt": "2026-09-12T18:42:31Z",
       "reappearedCount": 1,
       "observedOnOrAfterEventDate": true,
       "firstObservedOnOrAfterEventDate": "2026-09-11T15:01:11Z",
@@ -6972,8 +7040,8 @@
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T03:46:47Z",
       "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
-      "calendarPresence": "present",
-      "removedFromCalendarAt": "",
+      "calendarPresence": "absent",
+      "removedFromCalendarAt": "2026-09-12T18:42:31Z",
       "reappearedCount": 0,
       "observedOnOrAfterEventDate": true,
       "firstObservedOnOrAfterEventDate": "2026-09-11T15:01:11Z",
@@ -7024,7 +7092,7 @@
       "archiveKey": "id:manual:egr-2026-09-12-corpus-christi-tx",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -7062,7 +7130,7 @@
             "priority": 112
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "artist",
         "imagePosition": "50% 38%",
@@ -7071,7 +7139,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-08T12:50:27Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:eventbrite:truthx-yung-kriss-brandon-2026",
@@ -7130,7 +7198,7 @@
       "archiveKey": "id:manual:eventbrite:truthx-yung-kriss-brandon-2026",
       "firstArchivedAt": "2026-09-10T15:52:42Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 2,
@@ -7139,13 +7207,13 @@
       "dateState": "today",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-10T15:13:34Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:eventbrite:truthx-yung-kriss-brandon-2026",
         "title": "TruthX Concert 2026",
         "startDate": "2026-09-12",
         "startTime": "19:00",
-        "timezone": "America/New_York",
+        "timezone": "",
         "venue": "Brandon High School",
         "address": "1101 Victoria Street",
         "city": "Brandon",
@@ -7162,20 +7230,21 @@
         "image": "assets/events/truthx-yung-kriss-2026.jpg",
         "price": "",
         "sourceName": "Official Eventbrite listing",
-        "authority": "venue_ticket",
-        "confidence": "high",
-        "lineupExplicit": true,
         "sources": [
           {
             "name": "Official Eventbrite listing",
             "url": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
-            "type": "eventbrite",
+            "type": "manual_verified",
             "authority": "venue_ticket",
-            "priority": 94
+            "priority": 112
           }
         ],
+        "lastVerified": "2026-09-12T14:12:12Z",
+        "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
+        "verifiedVersion": 9,
+        "firstSeen": "2026-08-09T00:00:00Z",
         "imageOverride": true
       }
     },
@@ -7236,7 +7305,7 @@
       "archiveKey": "id:ticketmaster:k7vgf_dl6_hdp",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T03:46:47Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -7255,9 +7324,7 @@
         "state": "NY",
         "country": "US",
         "artists": [
-          "Miles Minnick",
-          "Tommy Zuko",
-          "CJ Emulous"
+          "Miles Minnick"
         ],
         "headliner": "Miles Minnick",
         "eventType": "concert",
@@ -7274,32 +7341,24 @@
             "type": "ticketmaster",
             "authority": "venue_ticket",
             "priority": 94
-          },
-          {
-            "name": "CJ Emulous official New Mainstream Tour calendar",
-            "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-1-21",
-            "type": "manual_verified",
-            "authority": "artist_calendar",
-            "priority": 100
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-08-09T00:00:00Z",
-        "auditVerified": "2026-09-11"
+        "firstSeen": "2026-08-09T00:00:00Z"
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T03:46:47Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:official:61ca43b4035483fee6a8",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T05:25:33Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -7353,7 +7412,7 @@
             "priority": 84
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -7362,7 +7421,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T05:25:33Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:ticketmaster:k7vgf_fcmmgew",
@@ -7423,7 +7482,7 @@
       "archiveKey": "id:official:4e511bbf8fb6d5ae77fd",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T05:25:33Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -7463,6 +7522,13 @@
             "priority": 94
           },
           {
+            "name": "Reach Records - Hulvey",
+            "url": "https://www.reachrecords.com/artists/hulvey/",
+            "type": "reach_records",
+            "authority": "artist_label",
+            "priority": 86
+          },
+          {
             "name": "Reach Records consolidated calendar",
             "url": "https://www.reachrecords.com/events/",
             "type": "reach_records",
@@ -7470,7 +7536,7 @@
             "priority": 84
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -7479,7 +7545,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T05:25:33Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:ticketmaster:vv177z_6gkxziffy",
@@ -7593,7 +7659,7 @@
       "archiveKey": "id:manual:808-beezy-bandsintown-108879559",
       "firstArchivedAt": "2026-09-11T15:36:07Z",
       "firstSeenOnCalendar": "2026-09-11T15:33:30Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -7602,7 +7668,7 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T10:35:48-05:00",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:808-beezy-bandsintown-108879559",
         "title": "808 BEEZY — Live at RWG TOUR 2026",
@@ -7634,19 +7700,19 @@
             "priority": 76
           }
         ],
-        "lastVerified": "2026-09-11T15:33:30Z",
+        "lastVerified": "2026-09-12T14:30:41Z",
         "confidence": "high",
         "imageType": "fallback",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-09-11T15:33:30Z"
+        "firstSeen": "2026-09-12T14:30:41Z"
       }
     },
     {
       "archiveKey": "id:manual:808-beezy-bandsintown-108879547",
       "firstArchivedAt": "2026-09-11T15:36:07Z",
       "firstSeenOnCalendar": "2026-09-11T15:33:30Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -7655,7 +7721,7 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T10:35:48-05:00",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:808-beezy-bandsintown-108879547",
         "title": "808 BEEZY — Live at RWG TOUR 2026",
@@ -7687,19 +7753,19 @@
             "priority": 76
           }
         ],
-        "lastVerified": "2026-09-11T15:33:30Z",
+        "lastVerified": "2026-09-12T14:30:41Z",
         "confidence": "high",
         "imageType": "fallback",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-09-11T15:33:30Z"
+        "firstSeen": "2026-09-12T14:30:41Z"
       }
     },
     {
       "archiveKey": "id:manual:808-beezy-bandsintown-108790395",
       "firstArchivedAt": "2026-09-11T15:36:07Z",
       "firstSeenOnCalendar": "2026-09-11T15:33:30Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -7708,7 +7774,7 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T10:35:48-05:00",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:808-beezy-bandsintown-108790395",
         "title": "808 BEEZY — Live at RWG TOUR 2026",
@@ -7740,12 +7806,12 @@
             "priority": 76
           }
         ],
-        "lastVerified": "2026-09-11T15:33:30Z",
+        "lastVerified": "2026-09-12T14:30:41Z",
         "confidence": "high",
         "imageType": "fallback",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-09-11T15:33:30Z"
+        "firstSeen": "2026-09-12T14:30:41Z"
       }
     },
     {
@@ -7805,7 +7871,7 @@
       "archiveKey": "id:manual:808-beezy-bandsintown-108772401",
       "firstArchivedAt": "2026-09-11T15:36:07Z",
       "firstSeenOnCalendar": "2026-09-11T15:33:30Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -7814,7 +7880,7 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T10:35:48-05:00",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:808-beezy-bandsintown-108772401",
         "title": "808 BEEZY — Live at RWG TOUR 2026",
@@ -7846,12 +7912,12 @@
             "priority": 76
           }
         ],
-        "lastVerified": "2026-09-11T15:33:30Z",
+        "lastVerified": "2026-09-12T14:30:41Z",
         "confidence": "high",
         "imageType": "fallback",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-09-11T15:33:30Z"
+        "firstSeen": "2026-09-12T14:30:41Z"
       }
     },
     {
@@ -7911,7 +7977,7 @@
       "archiveKey": "id:manual:egr-2026-09-18-carson-ca",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -7949,7 +8015,7 @@
             "priority": 112
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "artist",
         "imagePosition": "50% 38%",
@@ -7958,13 +8024,13 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-08T12:50:27Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:manual:808-beezy-bandsintown-108772413",
       "firstArchivedAt": "2026-09-11T15:36:07Z",
       "firstSeenOnCalendar": "2026-09-11T15:33:30Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -7973,7 +8039,7 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T10:35:48-05:00",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:808-beezy-bandsintown-108772413",
         "title": "808 BEEZY — Live at RWG TOUR 2026",
@@ -8005,12 +8071,12 @@
             "priority": 76
           }
         ],
-        "lastVerified": "2026-09-11T15:33:30Z",
+        "lastVerified": "2026-09-12T14:30:41Z",
         "confidence": "high",
         "imageType": "fallback",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-09-11T15:33:30Z"
+        "firstSeen": "2026-09-12T14:30:41Z"
       }
     },
     {
@@ -8070,7 +8136,7 @@
       "archiveKey": "id:manual:808-beezy-bandsintown-108772434",
       "firstArchivedAt": "2026-09-11T15:36:07Z",
       "firstSeenOnCalendar": "2026-09-11T15:33:30Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -8079,7 +8145,7 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T10:35:48-05:00",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:808-beezy-bandsintown-108772434",
         "title": "808 BEEZY — Live at RWG TOUR 2026",
@@ -8111,12 +8177,12 @@
             "priority": 76
           }
         ],
-        "lastVerified": "2026-09-11T15:33:30Z",
+        "lastVerified": "2026-09-12T14:30:41Z",
         "confidence": "high",
         "imageType": "fallback",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-09-11T15:33:30Z"
+        "firstSeen": "2026-09-12T14:30:41Z"
       }
     },
     {
@@ -8176,7 +8242,7 @@
       "archiveKey": "id:official:cfd29f658249c76cd8e2",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T05:25:33Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -8223,7 +8289,7 @@
             "priority": 84
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -8232,7 +8298,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T05:25:33Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:ticketmaster:vv17oz_6gktpgqeh",
@@ -8293,7 +8359,7 @@
       "archiveKey": "id:manual:caleb-gordon-eden-2026-09-18-southlake",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -8331,7 +8397,7 @@
             "priority": 112
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -8340,7 +8406,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-08T12:50:27Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:official:4077048ad6372bfbcafb",
@@ -8398,8 +8464,8 @@
     {
       "archiveKey": "id:manual:fountain-fest-wv-2026",
       "firstArchivedAt": "2026-09-12T14:06:44Z",
-      "firstSeenOnCalendar": "2026-09-11T20:52:43Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -8408,12 +8474,13 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T20:52:43Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
+        "id": "manual:fountain-fest-wv-2026",
         "title": "Fountain Fest WV 2026",
         "startDate": "2026-09-18",
         "startTime": "20:00",
-        "timezone": "America/New_York",
+        "timezone": "",
         "venue": "Orr's Farm Market",
         "address": "",
         "city": "Martinsburg",
@@ -8430,9 +8497,6 @@
         "image": "https://i0.wp.com/fountainfestwv.com/wp-content/uploads/2026/07/Rare-of-Breed-Promo-.webp?resize=720%2C900&ssl=1",
         "price": "",
         "sourceName": "Fountain Fest WV official lineup",
-        "authority": "official_festival",
-        "confidence": "high",
-        "lineupExplicit": true,
         "sources": [
           {
             "name": "Fountain Fest WV official lineup",
@@ -8442,20 +8506,20 @@
             "priority": 112
           }
         ],
-        "auditVerified": "2026-09-11",
+        "lastVerified": "2026-09-12T14:12:12Z",
+        "confidence": "high",
         "endDate": "2026-09-19",
-        "notes": "Rare of Breed performs Friday September 18 at 8 PM; festival continues September 19.",
-        "id": "manual:fountain-fest-wv-2026",
-        "imageType": "artist",
+        "imageType": "event_artwork",
         "imagePosition": "center",
-        "imageOverride": true
+        "verifiedVersion": 9,
+        "firstSeen": "2026-08-09T00:00:00Z"
       }
     },
     {
       "archiveKey": "id:manual:egr-2026-09-19-manteca-ca",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -8493,7 +8557,7 @@
             "priority": 112
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "artist",
         "imagePosition": "50% 38%",
@@ -8502,13 +8566,13 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-08T12:50:27Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:official:64bbcd477c3a36104df3",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -8517,7 +8581,7 @@
       "dateState": "upcoming",
       "event": {
         "id": "official:64bbcd477c3a36104df3",
-        "title": "Kingdom Choice Awards 2026",
+        "title": "Anike — Live at Queens Theatre",
         "startDate": "2026-09-19",
         "startTime": "",
         "timezone": "",
@@ -8527,23 +8591,14 @@
         "state": "NY",
         "country": "US",
         "artists": [
-          "Anike",
-          "Don Ready",
-          "Dante' Pride",
-          "Childlike CiCi",
-          "Yung Kriss",
-          "Datin",
-          "BigBreeze",
-          "C4 Crotona",
-          "MAYIA",
-          "Brinson"
+          "Anike"
         ],
         "headliner": "Anike",
         "eventType": "concert",
         "status": "scheduled",
         "ticketUrl": "https://www.bandsintown.com/t/1039205172?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
         "officialUrl": "https://www.reachrecords.com/artists/wande/",
-        "image": "https://images.zoogletools.com/s:bzglfiles/u/63036/e9f653372df147d18026413fbf37bc4eed9c7e01/original/2026-kca-flyer-final-master.jpg/!!/b:W1sicmVzaXplIiwxMDAwXSxbIm1heCJdLFsid2UiXV0=/meta:eyJzcmNCdWNrZXQiOiJiemdsZmlsZXMifQ==.jpg",
+        "image": "https://s1.ticketm.net/dam/a/ab5/019b80d9-ebcf-40a7-9233-a35e76204ab5_SOURCE",
         "price": "",
         "sourceName": "Reach Records - Anike",
         "sources": [
@@ -8553,46 +8608,18 @@
             "type": "reach_records",
             "authority": "artist_label",
             "priority": 86
-          },
-          {
-            "name": "Kingdom Choice Awards official 2026 poster",
-            "url": "https://kingdomchoiceawards.org/",
-            "type": "manual_verified",
-            "authority": "official_event",
-            "priority": 100
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
-        "imageType": "event_artwork",
-        "imagePosition": "center",
+        "imageType": "artist",
+        "imagePosition": "50% 30%",
         "verifiedVersion": 9,
-        "firstSeen": "2026-08-15T20:23:53Z",
-        "imageOverride": true,
-        "officialBill": [
-          "Anike",
-          "Childlike CiCi",
-          "Yung Kriss",
-          "Don Ready",
-          "Big Breeze",
-          "Datin",
-          "Brinson & Godchaserz",
-          "Dante Pride",
-          "C4 Crotona",
-          "Range The Artist",
-          "Dwayne Fyah",
-          "MAYIA WARREN",
-          "Marcel Patillo",
-          "Craig Watson",
-          "Paito",
-          "MICA"
-        ],
-        "notes": "MICA remains an unlinked bill name pending confirmation that it is the tracked roster artist mica.",
-        "auditVerified": "2026-09-11"
+        "firstSeen": "2026-08-15T20:23:53Z"
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-08T11:23:11Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:official:74df1b14f8b80e8fe1bd",
@@ -8766,7 +8793,7 @@
       "archiveKey": "id:manual:eventbrite:hip-hop-in-the-park-cortland-2026",
       "firstArchivedAt": "2026-09-10T15:52:42Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 2,
@@ -8775,13 +8802,13 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-10T15:13:34Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:eventbrite:hip-hop-in-the-park-cortland-2026",
         "title": "Hip Hop in the Park",
         "startDate": "2026-09-19",
         "startTime": "13:00",
-        "timezone": "America/New_York",
+        "timezone": "",
         "venue": "Courthouse Park",
         "address": "33 Church Street",
         "city": "Cortland",
@@ -8800,20 +8827,21 @@
         "image": "assets/events/hip-hop-in-the-park-2026.jpg",
         "price": "Free",
         "sourceName": "Official Eventbrite listing",
-        "authority": "venue_ticket",
-        "confidence": "high",
-        "lineupExplicit": true,
         "sources": [
           {
             "name": "Official Eventbrite listing",
             "url": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
-            "type": "eventbrite",
+            "type": "manual_verified",
             "authority": "venue_ticket",
-            "priority": 94
+            "priority": 112
           }
         ],
+        "lastVerified": "2026-09-12T14:12:12Z",
+        "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
+        "verifiedVersion": 9,
+        "firstSeen": "2026-08-09T00:00:00Z",
         "imageOverride": true
       }
     },
@@ -8875,8 +8903,8 @@
       "firstArchivedAt": "2026-09-12T14:06:44Z",
       "firstSeenOnCalendar": "2026-09-11T15:46:19Z",
       "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
-      "calendarPresence": "present",
-      "removedFromCalendarAt": "",
+      "calendarPresence": "absent",
+      "removedFromCalendarAt": "2026-09-12T18:42:31Z",
       "reappearedCount": 1,
       "observedOnOrAfterEventDate": false,
       "firstObservedOnOrAfterEventDate": "",
@@ -8926,11 +8954,11 @@
     {
       "archiveKey": "id:official:cc1595e90fb45c872c77",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
-      "firstSeenOnCalendar": "2026-08-19T12:01:10Z",
-      "lastSeenOnCalendar": "2026-09-11T15:36:06Z",
-      "calendarPresence": "absent",
-      "removedFromCalendarAt": "2026-09-12T14:06:43Z",
-      "reappearedCount": 0,
+      "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
+      "calendarPresence": "present",
+      "removedFromCalendarAt": "",
+      "reappearedCount": 1,
       "observedOnOrAfterEventDate": false,
       "firstObservedOnOrAfterEventDate": "",
       "dateState": "upcoming",
@@ -8979,25 +9007,25 @@
             "priority": 84
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-08-19T12:01:10Z",
+        "firstSeen": "2026-08-09T00:00:00Z",
         "imageOverride": true,
         "authority": "official_festival",
         "lineupExplicit": true
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-19T21:49:53Z",
-      "lastGitObservedAt": "2026-09-11T15:36:03Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:official:84309caf8e98c5a8336a",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T05:25:33Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -9044,7 +9072,7 @@
             "priority": 84
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -9053,7 +9081,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T05:25:33Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:ticketmaster:vv1a7zk3vgkew2itl",
@@ -9114,7 +9142,7 @@
       "archiveKey": "id:ticketmaster:vv1akzk3pgkdplazc",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T03:46:47Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -9153,7 +9181,7 @@
             "priority": 94
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -9162,7 +9190,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T03:46:47Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:official:8b02be8f51f36a439c02",
@@ -9221,7 +9249,7 @@
       "archiveKey": "id:official:8cf69c5c610dae61d590",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T05:25:33Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -9268,7 +9296,7 @@
             "priority": 100
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "artist",
         "imagePosition": "50% 30%",
@@ -9278,13 +9306,13 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T05:25:33Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:official:cfa71e64850aa1fa9f39",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T05:25:33Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -9329,7 +9357,7 @@
             "priority": 90
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -9338,13 +9366,13 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T05:25:33Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:manual:808-beezy-bandsintown-108772449",
       "firstArchivedAt": "2026-09-11T15:36:07Z",
       "firstSeenOnCalendar": "2026-09-11T15:33:30Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -9353,7 +9381,7 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T10:35:48-05:00",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:808-beezy-bandsintown-108772449",
         "title": "808 BEEZY — Live at RWG TOUR 2026",
@@ -9385,12 +9413,12 @@
             "priority": 76
           }
         ],
-        "lastVerified": "2026-09-11T15:33:30Z",
+        "lastVerified": "2026-09-12T14:30:41Z",
         "confidence": "high",
         "imageType": "fallback",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-09-11T15:33:30Z"
+        "firstSeen": "2026-09-12T14:30:41Z"
       }
     },
     {
@@ -9450,7 +9478,7 @@
       "archiveKey": "id:manual:808-beezy-bandsintown-108772465",
       "firstArchivedAt": "2026-09-11T15:36:07Z",
       "firstSeenOnCalendar": "2026-09-11T15:33:30Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -9459,7 +9487,7 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T10:35:48-05:00",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:808-beezy-bandsintown-108772465",
         "title": "808 BEEZY — Live at RWG TOUR 2026",
@@ -9491,12 +9519,12 @@
             "priority": 76
           }
         ],
-        "lastVerified": "2026-09-11T15:33:30Z",
+        "lastVerified": "2026-09-12T14:30:41Z",
         "confidence": "high",
         "imageType": "fallback",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-09-11T15:33:30Z"
+        "firstSeen": "2026-09-12T14:30:41Z"
       }
     },
     {
@@ -9662,7 +9690,7 @@
       "archiveKey": "id:manual:808-beezy-bandsintown-108772493",
       "firstArchivedAt": "2026-09-11T15:36:07Z",
       "firstSeenOnCalendar": "2026-09-11T15:33:30Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -9671,7 +9699,7 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T10:35:48-05:00",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:808-beezy-bandsintown-108772493",
         "title": "808 BEEZY — Live at RWG TOUR 2026",
@@ -9703,12 +9731,12 @@
             "priority": 76
           }
         ],
-        "lastVerified": "2026-09-11T15:33:30Z",
+        "lastVerified": "2026-09-12T14:30:41Z",
         "confidence": "high",
         "imageType": "fallback",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-09-11T15:33:30Z"
+        "firstSeen": "2026-09-12T14:30:41Z"
       }
     },
     {
@@ -9768,7 +9796,7 @@
       "archiveKey": "id:manual:808-beezy-bandsintown-108772501",
       "firstArchivedAt": "2026-09-11T15:36:07Z",
       "firstSeenOnCalendar": "2026-09-11T15:33:30Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -9777,7 +9805,7 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T10:35:48-05:00",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:808-beezy-bandsintown-108772501",
         "title": "808 BEEZY — Live at RWG TOUR 2026",
@@ -9809,19 +9837,19 @@
             "priority": 76
           }
         ],
-        "lastVerified": "2026-09-11T15:33:30Z",
+        "lastVerified": "2026-09-12T14:30:41Z",
         "confidence": "high",
         "imageType": "fallback",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-09-11T15:33:30Z"
+        "firstSeen": "2026-09-12T14:30:41Z"
       }
     },
     {
       "archiveKey": "id:manual:808-beezy-bandsintown-108772738",
       "firstArchivedAt": "2026-09-11T15:36:07Z",
       "firstSeenOnCalendar": "2026-09-11T15:33:30Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -9830,7 +9858,7 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T10:35:48-05:00",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:808-beezy-bandsintown-108772738",
         "title": "808 BEEZY — Live at RWG TOUR 2026",
@@ -9862,12 +9890,12 @@
             "priority": 76
           }
         ],
-        "lastVerified": "2026-09-11T15:33:30Z",
+        "lastVerified": "2026-09-12T14:30:41Z",
         "confidence": "high",
         "imageType": "fallback",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-09-11T15:33:30Z"
+        "firstSeen": "2026-09-12T14:30:41Z"
       }
     },
     {
@@ -9927,7 +9955,7 @@
       "archiveKey": "id:manual:caleb-gordon-eden-2026-09-22-leander",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -9965,7 +9993,7 @@
             "priority": 112
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -9974,7 +10002,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-08T12:50:27Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:official:120917fb9608dd188970",
@@ -10033,7 +10061,7 @@
       "archiveKey": "id:ticketmaster:z7r9jz1a7xaoz",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T03:46:47Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -10080,7 +10108,7 @@
             "priority": 100
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -10090,7 +10118,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T03:46:47Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:ticketmaster:k7vgf_gxcrcku",
@@ -10146,10 +10174,69 @@
       }
     },
     {
+      "archiveKey": "id:manual:kaden-jordan-2026-09-23-orlando",
+      "firstArchivedAt": "2026-09-12T18:42:32Z",
+      "firstSeenOnCalendar": "2026-09-12T14:26:19Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
+      "calendarPresence": "present",
+      "removedFromCalendarAt": "",
+      "reappearedCount": 1,
+      "observedOnOrAfterEventDate": false,
+      "firstObservedOnOrAfterEventDate": "",
+      "dateState": "upcoming",
+      "observedInGitHistory": true,
+      "firstGitObservedAt": "2026-09-12T14:26:19Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
+      "event": {
+        "id": "manual:kaden-jordan-2026-09-23-orlando",
+        "title": "Kaden Jordan Live",
+        "startDate": "2026-09-23",
+        "startTime": "",
+        "timezone": "America/New_York",
+        "venue": "Church in the Son",
+        "address": "",
+        "city": "Orlando",
+        "state": "FL",
+        "country": "US",
+        "artists": [
+          "Kaden Jordan"
+        ],
+        "headliner": "Kaden Jordan",
+        "eventType": "concert",
+        "status": "scheduled",
+        "ticketUrl": "https://www.songkick.com/artists/10314485-kaden-jordan",
+        "officialUrl": "https://kadenjordan.com/pages/tour",
+        "image": "https://images.sk-static.com/images/media/profile_images/artists/10314485/large_avatar",
+        "imageType": "artist",
+        "imagePosition": "center",
+        "price": "",
+        "sourceName": "Kaden Jordan official tour page / Songkick",
+        "authority": "artist_calendar",
+        "confidence": "high",
+        "lineupExplicit": true,
+        "sources": [
+          {
+            "name": "Kaden Jordan official TOUR page",
+            "url": "https://kadenjordan.com/pages/tour",
+            "type": "manual_verified",
+            "authority": "artist_calendar",
+            "priority": 100
+          },
+          {
+            "name": "Songkick calendar linked by Kaden Jordan official site",
+            "url": "https://www.songkick.com/artists/10314485-kaden-jordan",
+            "type": "manual_verified",
+            "authority": "artist_calendar",
+            "priority": 90
+          }
+        ]
+      }
+    },
+    {
       "archiveKey": "id:official:9f793162ae1bb3cab7f3",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T05:25:33Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -10196,7 +10283,7 @@
             "priority": 100
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "artist",
         "imagePosition": "50% 30%",
@@ -10206,13 +10293,13 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T05:25:33Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:manual:808-beezy-bandsintown-108772620",
       "firstArchivedAt": "2026-09-11T15:36:07Z",
       "firstSeenOnCalendar": "2026-09-11T15:33:30Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -10221,7 +10308,7 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T10:35:48-05:00",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:808-beezy-bandsintown-108772620",
         "title": "808 BEEZY — Live at RWG TOUR 2026",
@@ -10253,12 +10340,12 @@
             "priority": 76
           }
         ],
-        "lastVerified": "2026-09-11T15:33:30Z",
+        "lastVerified": "2026-09-12T14:30:41Z",
         "confidence": "high",
         "imageType": "fallback",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-09-11T15:33:30Z"
+        "firstSeen": "2026-09-12T14:30:41Z"
       }
     },
     {
@@ -10318,7 +10405,7 @@
       "archiveKey": "id:manual:808-beezy-bandsintown-108772638",
       "firstArchivedAt": "2026-09-11T15:36:07Z",
       "firstSeenOnCalendar": "2026-09-11T15:33:30Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -10327,7 +10414,7 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T10:35:48-05:00",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:808-beezy-bandsintown-108772638",
         "title": "808 BEEZY — Live at RWG TOUR 2026",
@@ -10359,12 +10446,12 @@
             "priority": 76
           }
         ],
-        "lastVerified": "2026-09-11T15:33:30Z",
+        "lastVerified": "2026-09-12T14:30:41Z",
         "confidence": "high",
         "imageType": "fallback",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-09-11T15:33:30Z"
+        "firstSeen": "2026-09-12T14:30:41Z"
       }
     },
     {
@@ -10423,8 +10510,8 @@
     {
       "archiveKey": "id:manual:cj-emulous-syatp-sierra-vista-2026",
       "firstArchivedAt": "2026-09-12T14:06:44Z",
-      "firstSeenOnCalendar": "2026-09-11T20:52:43Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -10433,12 +10520,13 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T20:52:43Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
+        "id": "manual:cj-emulous-syatp-sierra-vista-2026",
         "title": "SYATP Concert",
         "startDate": "2026-09-23",
         "startTime": "19:00",
-        "timezone": "America/Phoenix",
+        "timezone": "",
         "venue": "Shiloh Christian Ministries",
         "address": "1519 S Ave Del Sol",
         "city": "Sierra Vista",
@@ -10455,9 +10543,6 @@
         "image": "https://static.wixstatic.com/media/9c331a_e63115b208054353a76258a4897ad76c~mv2.jpeg/v1/fill/w_980%2Ch_653%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_auto/9c331a_e63115b208054353a76258a4897ad76c~mv2.jpeg",
         "price": "",
         "sourceName": "CJ Emulous official calendar",
-        "authority": "artist_calendar",
-        "confidence": "high",
-        "lineupExplicit": true,
         "sources": [
           {
             "name": "CJ Emulous official calendar",
@@ -10467,11 +10552,12 @@
             "priority": 112
           }
         ],
-        "auditVerified": "2026-09-11",
+        "lastVerified": "2026-09-12T14:12:12Z",
+        "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
-        "imageOverride": true,
-        "id": "manual:cj-emulous-syatp-sierra-vista-2026"
+        "verifiedVersion": 9,
+        "firstSeen": "2026-08-09T00:00:00Z"
       }
     },
     {
@@ -10531,7 +10617,7 @@
       "archiveKey": "id:manual:808-beezy-bandsintown-108772712",
       "firstArchivedAt": "2026-09-11T15:36:07Z",
       "firstSeenOnCalendar": "2026-09-11T15:33:30Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -10540,7 +10626,7 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T10:35:48-05:00",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:808-beezy-bandsintown-108772712",
         "title": "808 BEEZY — Live at RWG TOUR 2026",
@@ -10572,12 +10658,12 @@
             "priority": 76
           }
         ],
-        "lastVerified": "2026-09-11T15:33:30Z",
+        "lastVerified": "2026-09-12T14:30:41Z",
         "confidence": "high",
         "imageType": "fallback",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-09-11T15:33:30Z"
+        "firstSeen": "2026-09-12T14:30:41Z"
       }
     },
     {
@@ -10637,7 +10723,7 @@
       "archiveKey": "id:manual:808-beezy-bandsintown-108790433",
       "firstArchivedAt": "2026-09-11T15:36:07Z",
       "firstSeenOnCalendar": "2026-09-11T15:33:30Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -10646,7 +10732,7 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T10:35:48-05:00",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:808-beezy-bandsintown-108790433",
         "title": "808 BEEZY — Live at RWG TOUR 2026",
@@ -10678,19 +10764,19 @@
             "priority": 76
           }
         ],
-        "lastVerified": "2026-09-11T15:33:30Z",
+        "lastVerified": "2026-09-12T14:30:41Z",
         "confidence": "high",
         "imageType": "fallback",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-09-11T15:33:30Z"
+        "firstSeen": "2026-09-12T14:30:41Z"
       }
     },
     {
       "archiveKey": "id:manual:caleb-gordon-eden-2026-09-24-richmond",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -10728,7 +10814,7 @@
             "priority": 112
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -10737,7 +10823,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-08T12:50:27Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:official:436dedf4f197e9587ed4",
@@ -10796,7 +10882,7 @@
       "archiveKey": "id:manual:808-beezy-bandsintown-108772751",
       "firstArchivedAt": "2026-09-11T15:36:07Z",
       "firstSeenOnCalendar": "2026-09-11T15:33:30Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -10805,7 +10891,7 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T10:35:48-05:00",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:808-beezy-bandsintown-108772751",
         "title": "808 BEEZY — Live at RWG TOUR 2026",
@@ -10837,12 +10923,12 @@
             "priority": 76
           }
         ],
-        "lastVerified": "2026-09-11T15:33:30Z",
+        "lastVerified": "2026-09-12T14:30:41Z",
         "confidence": "high",
         "imageType": "fallback",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-09-11T15:33:30Z"
+        "firstSeen": "2026-09-12T14:30:41Z"
       }
     },
     {
@@ -10902,7 +10988,7 @@
       "archiveKey": "id:manual:tribe-fest-rialto-2026",
       "firstArchivedAt": "2026-09-07T16:49:19Z",
       "firstSeenOnCalendar": "2026-09-07T16:11:58Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -10911,7 +10997,7 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-07T11:49:02-05:00",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:tribe-fest-rialto-2026",
         "title": "Tribe Fest 2026",
@@ -10943,7 +11029,7 @@
             "priority": 112
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -10955,7 +11041,7 @@
       "archiveKey": "id:official:4f72402532a6edb7c4ba",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T05:25:33Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -11002,7 +11088,7 @@
             "priority": 84
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -11011,7 +11097,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T05:25:33Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:ticketmaster:z7r9jz1a7xa7_",
@@ -11072,7 +11158,7 @@
       "archiveKey": "id:manual:egr-2026-09-26-whittier-ca",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -11110,7 +11196,7 @@
             "priority": 112
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "artist",
         "imagePosition": "50% 38%",
@@ -11119,7 +11205,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-08T12:50:27Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:official:602a904866f1b9dc8249",
@@ -11176,7 +11262,7 @@
       "archiveKey": "id:official:ea0342f4771e9f9f1dfc",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T05:25:33Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -11221,7 +11307,7 @@
             "priority": 84
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "artist",
         "imagePosition": "50% 24%",
@@ -11230,13 +11316,13 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T05:25:33Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:official:95cc80c13713dfecaf6d",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -11249,7 +11335,7 @@
         "startDate": "2026-09-26",
         "startTime": "11:00",
         "timezone": "",
-        "venue": "565 Hale St",
+        "venue": "White County Fairgrounds",
         "address": "565 Hale Street",
         "city": "Sparta",
         "state": "TN",
@@ -11260,7 +11346,8 @@
           "ASAP Preach",
           "Nicky Gracious",
           "Steven Perez",
-          "B. Cody Shields"
+          "B. Cody Shields",
+          "Brother Bo"
         ],
         "headliner": "REDEEMED",
         "eventType": "festival",
@@ -11279,23 +11366,24 @@
             "priority": 80
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "endDate": "2026-09-26",
         "imageType": "event_artwork",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-08-09T00:00:00Z"
+        "firstSeen": "2026-08-09T00:00:00Z",
+        "auditVerified": "2026-09-12"
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-06T04:00:52Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:manual:hvo-fest-2026-los-angeles",
       "firstArchivedAt": "2026-09-10T14:59:02Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -11304,12 +11392,13 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-10T00:48:45Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:hvo-fest-2026-los-angeles",
         "title": "HVO Fest 2026",
         "startDate": "2026-09-26",
         "startTime": "15:00",
+        "timezone": "",
         "venue": "AVALON Hollywood & Bardot",
         "address": "",
         "city": "Los Angeles",
@@ -11328,26 +11417,35 @@
         ],
         "headliner": "Yung Kriss",
         "eventType": "festival",
+        "status": "scheduled",
         "ticketUrl": "https://www.eventbrite.com/e/hvo-fest-tickets-1987360837764",
         "officialUrl": "https://www.eventbrite.com/e/hvo-fest-tickets-1987360837764",
         "image": "assets/events/hvo-fest-2026.jpg",
         "price": "",
-        "status": "scheduled",
-        "lineupExplicit": true,
-        "authority": "official_event",
         "sourceName": "Yung Kriss official announcement and Eventbrite",
-        "announcementUrl": "https://www.instagram.com/reel/DblfWwWu062/",
+        "sources": [
+          {
+            "name": "Yung Kriss official announcement and Eventbrite",
+            "url": "https://www.eventbrite.com/e/hvo-fest-tickets-1987360837764",
+            "type": "manual_verified",
+            "authority": "official_event",
+            "priority": 112
+          }
+        ],
+        "lastVerified": "2026-09-12T14:12:12Z",
+        "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
-        "imageOverride": true,
-        "confidence": "high"
+        "verifiedVersion": 9,
+        "firstSeen": "2026-08-09T00:00:00Z",
+        "imageOverride": true
       }
     },
     {
       "archiveKey": "id:official:cd29c71021ec3f5cda92",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T05:25:33Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -11394,7 +11492,7 @@
             "priority": 84
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -11403,7 +11501,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T05:25:33Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:ticketmaster:1apzk3vgkdbpmk6",
@@ -11464,7 +11562,7 @@
       "archiveKey": "id:official:cd85847561e539a411e8",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T05:25:33Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -11509,7 +11607,7 @@
             "priority": 90
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -11518,7 +11616,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T05:25:33Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:official:5519f66ef9eac3632648",
@@ -11577,7 +11675,7 @@
       "archiveKey": "id:official:81e8026b7add1de20674",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T05:25:33Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -11624,7 +11722,7 @@
             "priority": 84
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -11633,7 +11731,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T05:25:33Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:ticketmaster:vvg1zz_6taq2qb",
@@ -11747,7 +11845,7 @@
       "archiveKey": "id:manual:let-the-church-sing-tour-dunedin-2026",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -11787,7 +11885,7 @@
             "priority": 112
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "artist",
         "imagePosition": "50% 30%",
@@ -11796,13 +11894,13 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-06T12:54:33Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:manual:egr-2026-10-03-chandler-az",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -11840,7 +11938,7 @@
             "priority": 112
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "artist",
         "imagePosition": "50% 38%",
@@ -11849,13 +11947,13 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-08T12:50:27Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:manual:jay-kalyl-desde-antes-rockville-centre-2026",
       "firstArchivedAt": "2026-09-12T14:06:44Z",
-      "firstSeenOnCalendar": "2026-09-11T20:52:43Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -11864,12 +11962,13 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T20:52:43Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
+        "id": "manual:jay-kalyl-desde-antes-rockville-centre-2026",
         "title": "Jay Kalyl — Desde Antes Tour",
         "startDate": "2026-10-03",
         "startTime": "",
-        "timezone": "America/New_York",
+        "timezone": "",
         "venue": "Word of Life Ministries",
         "address": "430 DeMott Ave",
         "city": "Rockville Centre",
@@ -11886,9 +11985,6 @@
         "image": "assets/events/jay-kalyl-desde-antes-2026.svg",
         "price": "",
         "sourceName": "Boletos Live official event",
-        "authority": "venue_ticket",
-        "confidence": "high",
-        "lineupExplicit": true,
         "sources": [
           {
             "name": "Boletos Live official event",
@@ -11898,19 +11994,19 @@
             "priority": 112
           }
         ],
-        "auditVerified": "2026-09-11",
-        "notes": "Official page gives conflicting 4:00 PM and 7:30 PM start times; start time intentionally left unspecified.",
-        "id": "manual:jay-kalyl-desde-antes-rockville-centre-2026",
+        "lastVerified": "2026-09-12T14:12:12Z",
+        "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
-        "imageOverride": true
+        "verifiedVersion": 9,
+        "firstSeen": "2026-08-09T00:00:00Z"
       }
     },
     {
       "archiveKey": "id:official:cd8c382d5cc4126a49a4",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T05:25:33Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -11955,7 +12051,7 @@
             "priority": 84
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "artist",
         "imagePosition": "50% 24%",
@@ -11964,13 +12060,13 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T05:25:33Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:manual:future-legacy-hip-hop-showcase-nashville-2026",
       "firstArchivedAt": "2026-09-12T14:06:44Z",
-      "firstSeenOnCalendar": "2026-09-11T20:52:43Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -11979,12 +12075,13 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T20:52:43Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
+        "id": "manual:future-legacy-hip-hop-showcase-nashville-2026",
         "title": "Future Legacy Hip-Hop Showcase",
         "startDate": "2026-10-04",
         "startTime": "18:30",
-        "timezone": "America/Chicago",
+        "timezone": "",
         "venue": "Cannery Hall — Row One Stage",
         "address": "1 Cannery Row",
         "city": "Nashville",
@@ -12002,49 +12099,31 @@
         "status": "scheduled",
         "ticketUrl": "https://www.axs.com/events/1580749/future-legacy-hip-hop-showcase-tickets",
         "officialUrl": "https://www.axs.com/events/1580749/future-legacy-hip-hop-showcase-tickets",
-        "image": "https://images.discovery-prod.axs.com/2026/08/uploadedimage_6a871ac3abd11.jpg",
+        "image": "assets/artists/1k-phew.webp",
         "price": "",
         "sourceName": "AXS / GMA official Future Legacy listing",
-        "authority": "venue_ticket",
-        "confidence": "high",
-        "lineupExplicit": true,
         "sources": [
           {
-            "name": "AXS official event",
+            "name": "AXS / GMA official Future Legacy listing",
             "url": "https://www.axs.com/events/1580749/future-legacy-hip-hop-showcase-tickets",
             "type": "manual_verified",
             "authority": "venue_ticket",
-            "priority": 94
-          },
-          {
-            "name": "GMA Dove Week official schedule",
-            "url": "https://gospelmusic.org/news/dove-week-2026-see-the-schedule",
-            "type": "manual_verified",
-            "authority": "official_event",
-            "priority": 100
+            "priority": 112
           }
         ],
-        "auditVerified": "2026-09-11",
-        "imageType": "event_artwork",
-        "imagePosition": "center",
-        "imageOverride": true,
-        "officialBill": [
-          "ADIA",
-          "Don Ready",
-          "DJ Trendsetter",
-          "LaNell Grant",
-          "Nathan Davis Jr.",
-          "1K Phew"
-        ],
-        "notes": "DJ Trendsetter is associated with roster artist Trendsetter Sense based on established professional naming as DJ Trendsetter Sense.",
-        "id": "manual:future-legacy-hip-hop-showcase-nashville-2026"
+        "lastVerified": "2026-09-12T14:12:12Z",
+        "confidence": "high",
+        "imageType": "artist",
+        "imagePosition": "50% 24%",
+        "verifiedVersion": 9,
+        "firstSeen": "2026-08-09T00:00:00Z"
       }
     },
     {
       "archiveKey": "id:manual:cj-emulous-live-loud-chico-2026",
       "firstArchivedAt": "2026-09-12T14:06:44Z",
-      "firstSeenOnCalendar": "2026-09-11T20:52:43Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -12053,12 +12132,13 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T20:52:43Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
+        "id": "manual:cj-emulous-live-loud-chico-2026",
         "title": "Live Loud",
         "startDate": "2026-10-07",
         "startTime": "19:00",
-        "timezone": "America/Los_Angeles",
+        "timezone": "",
         "venue": "2801 Notre Dame Blvd",
         "address": "2801 Notre Dame Blvd",
         "city": "Chico",
@@ -12075,9 +12155,6 @@
         "image": "https://static.wixstatic.com/media/9c331a_394502e64a45489e872ee2b71bb1a0de~mv2.jpg/v1/fill/w_980%2Ch_543%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_auto/9c331a_394502e64a45489e872ee2b71bb1a0de~mv2.jpg",
         "price": "",
         "sourceName": "CJ Emulous official calendar",
-        "authority": "artist_calendar",
-        "confidence": "high",
-        "lineupExplicit": true,
         "sources": [
           {
             "name": "CJ Emulous official calendar",
@@ -12087,11 +12164,12 @@
             "priority": 112
           }
         ],
-        "auditVerified": "2026-09-11",
+        "lastVerified": "2026-09-12T14:12:12Z",
+        "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
-        "imageOverride": true,
-        "id": "manual:cj-emulous-live-loud-chico-2026"
+        "verifiedVersion": 9,
+        "firstSeen": "2026-08-09T00:00:00Z"
       }
     },
     {
@@ -12211,7 +12289,7 @@
       "archiveKey": "id:manual:egr-2026-10-10-visalia-ca",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -12249,7 +12327,7 @@
             "priority": 112
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "artist",
         "imagePosition": "50% 38%",
@@ -12258,7 +12336,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-08T12:50:27Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:manual:scootie-wop-southwest-trail-riders-houston-2026",
@@ -12316,8 +12394,8 @@
     {
       "archiveKey": "id:manual:mayia-boxyard-saturdaze-2026",
       "firstArchivedAt": "2026-09-12T14:06:44Z",
-      "firstSeenOnCalendar": "2026-09-11T20:52:43Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -12326,12 +12404,13 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T20:52:43Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
+        "id": "manual:mayia-boxyard-saturdaze-2026",
         "title": "Boxyard Saturdaze",
         "startDate": "2026-10-10",
         "startTime": "12:30",
-        "timezone": "America/New_York",
+        "timezone": "",
         "venue": "Boxyard RTP — BeatBox Stage",
         "address": "",
         "city": "Durham",
@@ -12348,9 +12427,6 @@
         "image": "assets/events/mayia-boxyard-saturdaze-2026.svg",
         "price": "",
         "sourceName": "MAYIA official calendar",
-        "authority": "artist_calendar",
-        "confidence": "high",
-        "lineupExplicit": true,
         "sources": [
           {
             "name": "MAYIA official calendar",
@@ -12360,15 +12436,12 @@
             "priority": 112
           }
         ],
-        "auditVerified": "2026-09-11",
-        "officialBill": [
-          "DJ Watty Tha Shepherd",
-          "MAYIA WARREN"
-        ],
-        "id": "manual:mayia-boxyard-saturdaze-2026",
+        "lastVerified": "2026-09-12T14:12:12Z",
+        "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
-        "imageOverride": true
+        "verifiedVersion": 9,
+        "firstSeen": "2026-08-09T00:00:00Z"
       }
     },
     {
@@ -12428,7 +12501,7 @@
       "archiveKey": "id:manual:eventbrite:reign-volume-one-aasha-marie-brooklyn-2026",
       "firstArchivedAt": "2026-09-10T15:52:42Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 2,
@@ -12437,13 +12510,13 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-10T15:13:34Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:eventbrite:reign-volume-one-aasha-marie-brooklyn-2026",
         "title": "REIGN volume one",
         "startDate": "2026-10-10",
         "startTime": "19:00",
-        "timezone": "America/New_York",
+        "timezone": "",
         "venue": "The Vino Theater",
         "address": "274 Morgan Avenue, Suite 201",
         "city": "Brooklyn",
@@ -12460,20 +12533,21 @@
         "image": "assets/events/reign-volume-one-2026.jpg",
         "price": "",
         "sourceName": "Official Eventbrite listing",
-        "authority": "venue_ticket",
-        "confidence": "high",
-        "lineupExplicit": true,
         "sources": [
           {
             "name": "Official Eventbrite listing",
             "url": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
-            "type": "eventbrite",
+            "type": "manual_verified",
             "authority": "venue_ticket",
-            "priority": 94
+            "priority": 112
           }
         ],
+        "lastVerified": "2026-09-12T14:12:12Z",
+        "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
+        "verifiedVersion": 9,
+        "firstSeen": "2026-08-09T00:00:00Z",
         "imageOverride": true
       }
     },
@@ -12481,16 +12555,16 @@
       "archiveKey": "id:official:7c07397fa047689b0215",
       "firstArchivedAt": "2026-08-22T12:04:19Z",
       "firstSeenOnCalendar": "2026-08-17T11:59:49Z",
-      "lastSeenOnCalendar": "2026-08-20T16:54:08Z",
-      "calendarPresence": "absent",
-      "removedFromCalendarAt": "2026-08-22T12:04:18Z",
-      "reappearedCount": 0,
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
+      "calendarPresence": "present",
+      "removedFromCalendarAt": "",
+      "reappearedCount": 1,
       "observedOnOrAfterEventDate": false,
       "firstObservedOnOrAfterEventDate": "",
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-17T12:04:08Z",
-      "lastGitObservedAt": "2026-08-20T16:54:08Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "official:7c07397fa047689b0215",
         "title": "Anike — Live at THE ALL STAR EXPERIENCE LIVE CONCERT",
@@ -12522,12 +12596,74 @@
             "priority": 86
           }
         ],
-        "lastVerified": "2026-08-20T13:59:26Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "artist",
         "imagePosition": "50% 30%",
         "verifiedVersion": 9,
-        "firstSeen": "2026-08-17T11:59:49Z"
+        "firstSeen": "2026-09-12T14:12:12Z"
+      }
+    },
+    {
+      "archiveKey": "id:manual:parris-chariz-dallas-2026-10-11",
+      "firstArchivedAt": "2026-09-12T18:42:32Z",
+      "firstSeenOnCalendar": "2026-09-12T14:26:19Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
+      "calendarPresence": "present",
+      "removedFromCalendarAt": "",
+      "reappearedCount": 1,
+      "observedOnOrAfterEventDate": false,
+      "firstObservedOnOrAfterEventDate": "",
+      "dateState": "upcoming",
+      "observedInGitHistory": true,
+      "firstGitObservedAt": "2026-09-12T14:26:19Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
+      "event": {
+        "id": "manual:parris-chariz-dallas-2026-10-11",
+        "title": "Parris Chariz — THE WORLD IS WATCHING LIVE",
+        "startDate": "2026-10-11",
+        "startTime": "20:30",
+        "timezone": "America/Chicago",
+        "venue": "AM/FM - Lounge",
+        "address": "1950 Market Center Blvd",
+        "city": "Dallas",
+        "state": "TX",
+        "country": "US",
+        "artists": [
+          "Parris Chariz",
+          "Toschii",
+          "Eli Montanna",
+          "JWoodz"
+        ],
+        "headliner": "Parris Chariz",
+        "eventType": "concert",
+        "status": "scheduled",
+        "ticketUrl": "https://www.eventim.us/event/parris-chariz/699959",
+        "officialUrl": "https://www.eventim.us/event/parris-chariz/699959",
+        "image": "assets/artists/parris-chariz.webp",
+        "imageType": "artist",
+        "imagePosition": "center",
+        "price": "",
+        "sourceName": "Spune / Eventim official listing",
+        "authority": "official_event",
+        "confidence": "high",
+        "lineupExplicit": true,
+        "sources": [
+          {
+            "name": "Eventim official ticket listing",
+            "url": "https://www.eventim.us/event/parris-chariz/699959",
+            "type": "manual_verified",
+            "authority": "venue_ticket",
+            "priority": 112
+          },
+          {
+            "name": "Spune official show calendar",
+            "url": "https://spune.com/shows/",
+            "type": "manual_verified",
+            "authority": "official_event",
+            "priority": 100
+          }
+        ]
       }
     },
     {
@@ -12535,8 +12671,8 @@
       "firstArchivedAt": "2026-08-25T14:08:33Z",
       "firstSeenOnCalendar": "2026-08-24T14:04:57Z",
       "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
-      "calendarPresence": "present",
-      "removedFromCalendarAt": "",
+      "calendarPresence": "absent",
+      "removedFromCalendarAt": "2026-09-12T18:42:31Z",
       "reappearedCount": 1,
       "observedOnOrAfterEventDate": false,
       "firstObservedOnOrAfterEventDate": "",
@@ -12587,8 +12723,8 @@
     {
       "archiveKey": "id:manual:cj-emulous-turlock-back-to-school-2026",
       "firstArchivedAt": "2026-09-12T14:06:44Z",
-      "firstSeenOnCalendar": "2026-09-11T20:52:43Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -12597,12 +12733,13 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T20:52:43Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
+        "id": "manual:cj-emulous-turlock-back-to-school-2026",
         "title": "Teen Club Kickoff / Back to School Concert",
         "startDate": "2026-10-12",
         "startTime": "18:00",
-        "timezone": "America/Los_Angeles",
+        "timezone": "",
         "venue": "Westside Ministries",
         "address": "950 Columbia Ave",
         "city": "Turlock",
@@ -12620,9 +12757,6 @@
         "image": "https://static.wixstatic.com/media/9c331a_7832125534df4c06b583f033fe19273e~mv2.png",
         "price": "",
         "sourceName": "CJ Emulous official calendar and event flyer",
-        "authority": "artist_calendar",
-        "confidence": "high",
-        "lineupExplicit": true,
         "sources": [
           {
             "name": "CJ Emulous official calendar and event flyer",
@@ -12632,23 +12766,19 @@
             "priority": 112
           }
         ],
-        "auditVerified": "2026-09-11",
+        "lastVerified": "2026-09-12T14:12:12Z",
+        "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
-        "imageOverride": true,
-        "officialBill": [
-          "CJ Emulous",
-          "Lul DreDay",
-          "MikeySoChristian"
-        ],
-        "id": "manual:cj-emulous-turlock-back-to-school-2026"
+        "verifiedVersion": 9,
+        "firstSeen": "2026-08-09T00:00:00Z"
       }
     },
     {
       "archiveKey": "id:manual:egr-2026-10-16-fresno-ca",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -12686,7 +12816,7 @@
             "priority": 112
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "artist",
         "imagePosition": "50% 38%",
@@ -12695,7 +12825,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-08T12:50:27Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:eventbrite:rare-of-breed-jacksonville-2026",
@@ -12755,7 +12885,7 @@
       "archiveKey": "id:manual:eventbrite:rare-of-breed-jacksonville-2026",
       "firstArchivedAt": "2026-09-10T15:52:42Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 2,
@@ -12764,13 +12894,13 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-10T15:13:34Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:eventbrite:rare-of-breed-jacksonville-2026",
         "title": "Rare of Breed",
         "startDate": "2026-10-16",
         "startTime": "19:00",
-        "timezone": "America/New_York",
+        "timezone": "",
         "venue": "Murray Hill Theatre",
         "address": "932 Edgewood Ave S",
         "city": "Jacksonville",
@@ -12782,34 +12912,45 @@
         ],
         "headliner": "Rare of Breed",
         "eventType": "concert",
-        "status": "scheduled",
-        "ticketUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
-        "officialUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
+        "status": "cancelled",
+        "ticketUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
+        "officialUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
         "image": "assets/events/rare-of-breed-jacksonville-2026.jpg",
         "price": "",
-        "sourceName": "Official Eventbrite listing",
-        "authority": "venue_ticket",
-        "confidence": "high",
-        "lineupExplicit": true,
+        "sourceName": "Official Eventbrite cancellation notice",
         "sources": [
           {
             "name": "Official Eventbrite listing",
             "url": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
+            "type": "manual_verified",
+            "authority": "venue_ticket",
+            "priority": 112
+          },
+          {
+            "name": "Official Eventbrite cancellation notice",
+            "url": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
             "type": "eventbrite",
             "authority": "venue_ticket",
-            "priority": 94
+            "priority": 120
           }
         ],
+        "lastVerified": "2026-09-12T14:12:12Z",
+        "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
-        "imageOverride": true
+        "verifiedVersion": 9,
+        "firstSeen": "2026-08-09T00:00:00Z",
+        "imageOverride": true,
+        "cancellationConfirmed": true,
+        "cancellationConfirmedAt": "2026-09-12",
+        "notes": "Cancelled by the organizer. This page is retained as a cancellation notice."
       }
     },
     {
       "archiveKey": "id:manual:mayia-nc-state-fair-2026",
       "firstArchivedAt": "2026-09-12T14:06:44Z",
-      "firstSeenOnCalendar": "2026-09-11T20:52:43Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -12818,12 +12959,13 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T20:52:43Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
+        "id": "manual:mayia-nc-state-fair-2026",
         "title": "MAYIA at the NC State Fair",
         "startDate": "2026-10-17",
         "startTime": "10:00",
-        "timezone": "America/New_York",
+        "timezone": "",
         "venue": "Heritage Circle Stage — NC State Fairgrounds",
         "address": "",
         "city": "Raleigh",
@@ -12840,9 +12982,6 @@
         "image": "assets/events/mayia-nc-state-fair-2026.svg",
         "price": "",
         "sourceName": "MAYIA official calendar",
-        "authority": "artist_calendar",
-        "confidence": "high",
-        "lineupExplicit": true,
         "sources": [
           {
             "name": "MAYIA official calendar",
@@ -12852,19 +12991,19 @@
             "priority": 112
           }
         ],
-        "auditVerified": "2026-09-11",
-        "notes": "One event with two confirmed acoustic sets: 10–11 AM and 12–1 PM.",
-        "id": "manual:mayia-nc-state-fair-2026",
+        "lastVerified": "2026-09-12T14:12:12Z",
+        "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
-        "imageOverride": true
+        "verifiedVersion": 9,
+        "firstSeen": "2026-08-09T00:00:00Z"
       }
     },
     {
       "archiveKey": "id:manual:mission-friends-sacramento-2026",
       "firstArchivedAt": "2026-09-12T14:06:44Z",
-      "firstSeenOnCalendar": "2026-09-11T20:52:43Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -12873,12 +13012,13 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T20:52:43Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
+        "id": "manual:mission-friends-sacramento-2026",
         "title": "Mission and Special Guests",
         "startDate": "2026-10-17",
         "startTime": "18:30",
-        "timezone": "America/Los_Angeles",
+        "timezone": "",
         "venue": "Victory Outreach South Sacramento",
         "address": "6831 Savings Pl",
         "city": "Sacramento",
@@ -12895,9 +13035,6 @@
         "image": "assets/events/mission-friends-sacramento-2026.svg",
         "price": "",
         "sourceName": "Mission official Bandsintown event",
-        "authority": "artist_calendar",
-        "confidence": "high",
-        "lineupExplicit": true,
         "sources": [
           {
             "name": "Mission official Bandsintown event",
@@ -12907,11 +13044,12 @@
             "priority": 112
           }
         ],
-        "auditVerified": "2026-09-11",
-        "id": "manual:mission-friends-sacramento-2026",
+        "lastVerified": "2026-09-12T14:12:12Z",
+        "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
-        "imageOverride": true
+        "verifiedVersion": 9,
+        "firstSeen": "2026-08-09T00:00:00Z"
       }
     },
     {
@@ -12919,8 +13057,8 @@
       "firstArchivedAt": "2026-09-12T14:06:44Z",
       "firstSeenOnCalendar": "2026-09-11T20:52:43Z",
       "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
-      "calendarPresence": "present",
-      "removedFromCalendarAt": "",
+      "calendarPresence": "absent",
+      "removedFromCalendarAt": "2026-09-12T18:42:31Z",
       "reappearedCount": 1,
       "observedOnOrAfterEventDate": false,
       "firstObservedOnOrAfterEventDate": "",
@@ -12966,6 +13104,65 @@
         "imageType": "event_artwork",
         "imagePosition": "center",
         "imageOverride": true
+      }
+    },
+    {
+      "archiveKey": "id:manual:kaden-jordan-2026-10-23-new-port-richey",
+      "firstArchivedAt": "2026-09-12T18:42:32Z",
+      "firstSeenOnCalendar": "2026-09-12T14:26:19Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
+      "calendarPresence": "present",
+      "removedFromCalendarAt": "",
+      "reappearedCount": 1,
+      "observedOnOrAfterEventDate": false,
+      "firstObservedOnOrAfterEventDate": "",
+      "dateState": "upcoming",
+      "observedInGitHistory": true,
+      "firstGitObservedAt": "2026-09-12T14:26:19Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
+      "event": {
+        "id": "manual:kaden-jordan-2026-10-23-new-port-richey",
+        "title": "Kaden Jordan Live",
+        "startDate": "2026-10-23",
+        "startTime": "",
+        "timezone": "America/New_York",
+        "venue": "Trinity College",
+        "address": "",
+        "city": "New Port Richey",
+        "state": "FL",
+        "country": "US",
+        "artists": [
+          "Kaden Jordan"
+        ],
+        "headliner": "Kaden Jordan",
+        "eventType": "concert",
+        "status": "scheduled",
+        "ticketUrl": "https://www.songkick.com/artists/10314485-kaden-jordan",
+        "officialUrl": "https://kadenjordan.com/pages/tour",
+        "image": "https://images.sk-static.com/images/media/profile_images/artists/10314485/large_avatar",
+        "imageType": "artist",
+        "imagePosition": "center",
+        "price": "",
+        "sourceName": "Kaden Jordan official tour page / Songkick",
+        "authority": "artist_calendar",
+        "confidence": "high",
+        "lineupExplicit": true,
+        "sources": [
+          {
+            "name": "Kaden Jordan official TOUR page",
+            "url": "https://kadenjordan.com/pages/tour",
+            "type": "manual_verified",
+            "authority": "artist_calendar",
+            "priority": 100
+          },
+          {
+            "name": "Songkick calendar linked by Kaden Jordan official site",
+            "url": "https://www.songkick.com/artists/10314485-kaden-jordan",
+            "type": "manual_verified",
+            "authority": "artist_calendar",
+            "priority": 90
+          }
+        ]
       }
     },
     {
@@ -13077,7 +13274,7 @@
       "archiveKey": "id:official:6ccf87bf0ba17cd0c74d",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-31T08:57:18Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -13125,7 +13322,7 @@
             "priority": 104
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -13134,7 +13331,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-31T08:57:18Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:official:acbcb86164867f02fba7",
@@ -13252,7 +13449,7 @@
       "archiveKey": "id:manual:egr-2026-10-31-patterson-ca",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -13290,7 +13487,7 @@
             "priority": 112
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "artist",
         "imagePosition": "50% 38%",
@@ -13299,13 +13496,13 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-08T12:50:27Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:ticketmaster:k7vgf_cbswxt6",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T03:46:47Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -13344,7 +13541,7 @@
             "priority": 94
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -13353,13 +13550,13 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T03:46:47Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:manual:808-beezy-bandsintown-108856031",
       "firstArchivedAt": "2026-09-11T15:36:07Z",
       "firstSeenOnCalendar": "2026-09-11T15:33:30Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -13368,7 +13565,7 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T10:35:48-05:00",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:808-beezy-bandsintown-108856031",
         "title": "808 BEEZY — Live at FCA Warrior Night",
@@ -13400,19 +13597,19 @@
             "priority": 76
           }
         ],
-        "lastVerified": "2026-09-11T15:33:30Z",
+        "lastVerified": "2026-09-12T14:30:41Z",
         "confidence": "high",
         "imageType": "fallback",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-09-11T15:33:30Z"
+        "firstSeen": "2026-09-12T14:30:41Z"
       }
     },
     {
       "archiveKey": "id:ticketmaster:g5evz_clflpqx",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T03:46:47Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -13451,7 +13648,7 @@
             "priority": 94
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -13460,7 +13657,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T03:46:47Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:official:02f17008b86f17e7947c",
@@ -13519,7 +13716,7 @@
       "archiveKey": "id:manual:flavor-fest-2026-friday-concerts",
       "firstArchivedAt": "2026-09-10T14:59:02Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -13528,13 +13725,13 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-10T07:31:57Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:flavor-fest-2026-friday-concerts",
         "title": "Flavor Fest 2026 — Friday Concerts",
         "startDate": "2026-11-06",
         "startTime": "19:00",
-        "timezone": "America/New_York",
+        "timezone": "",
         "venue": "Crossover Church",
         "address": "1235 E Fowler Ave",
         "city": "Tampa",
@@ -13547,16 +13744,11 @@
         ],
         "headliner": "Miles Minnick",
         "eventType": "festival",
+        "status": "scheduled",
         "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
         "officialUrl": "https://www.flavorfest.org/schedule",
         "image": "assets/events/flavor-fest-friday-2026.webp",
-        "imageType": "event_artwork",
-        "imagePosition": "center",
-        "imageOverride": true,
         "price": "",
-        "status": "scheduled",
-        "lineupExplicit": true,
-        "authority": "official_event",
         "sourceName": "Flavor Fest official 2026 schedule",
         "sources": [
           {
@@ -13567,7 +13759,13 @@
             "priority": 112
           }
         ],
-        "confidence": "high"
+        "lastVerified": "2026-09-12T14:12:12Z",
+        "confidence": "high",
+        "imageType": "event_artwork",
+        "imagePosition": "center",
+        "verifiedVersion": 9,
+        "firstSeen": "2026-08-09T00:00:00Z",
+        "imageOverride": true
       }
     },
     {
@@ -13626,8 +13824,8 @@
     {
       "archiveKey": "id:manual:flavor-fest-2026-saturday-concerts",
       "firstArchivedAt": "2026-09-10T14:59:02Z",
-      "firstSeenOnCalendar": "2026-09-10T00:36:35Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -13636,12 +13834,13 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-10T00:48:45Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
+        "id": "manual:flavor-fest-2026-saturday-concerts",
         "title": "Flavor Fest 2026 — Saturday Concerts",
         "startDate": "2026-11-07",
         "startTime": "19:00",
-        "timezone": "America/New_York",
+        "timezone": "",
         "venue": "Crossover Church",
         "address": "1235 Fowler Ave",
         "city": "Tampa",
@@ -13661,9 +13860,6 @@
         "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/989d4d2e-f454-4a1b-99df-cc78cf6e6749/FF26-Promo-Saturday-Night.jpg",
         "price": "",
         "sourceName": "Flavor Fest official Saturday poster",
-        "authority": "official_festival",
-        "confidence": "high",
-        "lineupExplicit": true,
         "sources": [
           {
             "name": "Flavor Fest official Saturday poster",
@@ -13673,19 +13869,12 @@
             "priority": 112
           }
         ],
-        "auditVerified": "2026-09-11",
+        "lastVerified": "2026-09-12T14:12:12Z",
+        "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
-        "imageOverride": true,
-        "officialBill": [
-          "Lecrae",
-          "Biancallove",
-          "Gifted Hands",
-          "Monster Tarver",
-          "C4 Crotona"
-        ],
-        "notes": "Yung Kriss and Gifted Hands have conflicting poster/schedule day assignments and are not newly associated here pending resolution.",
-        "id": "manual:flavor-fest-2026-saturday-concerts"
+        "verifiedVersion": 9,
+        "firstSeen": "2026-08-09T00:00:00Z"
       }
     },
     {
@@ -13745,7 +13934,7 @@
       "archiveKey": "id:ticketmaster:vv1aazk3fgkdmpcg1",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T03:46:47Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -13785,7 +13974,7 @@
             "priority": 94
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -13794,13 +13983,13 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T03:46:47Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:official:4e2fc5c7c02ab1d34b9e",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-08-20T13:59:26Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -13838,7 +14027,7 @@
             "priority": 74
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "endDate": "2026-11-08",
         "imageType": "artist",
@@ -13848,7 +14037,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-20T14:03:50Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:official:5c2c4eb22f1d022dd167",
@@ -13907,7 +14096,7 @@
       "archiveKey": "id:ticketmaster:vvg1zz_clqmrrf",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T03:46:47Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -13945,7 +14134,7 @@
             "priority": 94
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -13954,7 +14143,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T03:46:47Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:official:2e8f93717218eab19e04",
@@ -14007,6 +14196,65 @@
         "imagePosition": "center",
         "verifiedVersion": 7,
         "firstSeen": "2026-08-09T00:00:00Z"
+      }
+    },
+    {
+      "archiveKey": "id:manual:kaden-jordan-2026-11-13-orlando",
+      "firstArchivedAt": "2026-09-12T18:42:32Z",
+      "firstSeenOnCalendar": "2026-09-12T14:26:19Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
+      "calendarPresence": "present",
+      "removedFromCalendarAt": "",
+      "reappearedCount": 1,
+      "observedOnOrAfterEventDate": false,
+      "firstObservedOnOrAfterEventDate": "",
+      "dateState": "upcoming",
+      "observedInGitHistory": true,
+      "firstGitObservedAt": "2026-09-12T14:26:19Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
+      "event": {
+        "id": "manual:kaden-jordan-2026-11-13-orlando",
+        "title": "Kaden Jordan Live",
+        "startDate": "2026-11-13",
+        "startTime": "",
+        "timezone": "America/New_York",
+        "venue": "The Gathering Place",
+        "address": "",
+        "city": "Orlando",
+        "state": "FL",
+        "country": "US",
+        "artists": [
+          "Kaden Jordan"
+        ],
+        "headliner": "Kaden Jordan",
+        "eventType": "concert",
+        "status": "scheduled",
+        "ticketUrl": "https://www.songkick.com/artists/10314485-kaden-jordan",
+        "officialUrl": "https://kadenjordan.com/pages/tour",
+        "image": "https://images.sk-static.com/images/media/profile_images/artists/10314485/large_avatar",
+        "imageType": "artist",
+        "imagePosition": "center",
+        "price": "",
+        "sourceName": "Kaden Jordan official tour page / Songkick",
+        "authority": "artist_calendar",
+        "confidence": "high",
+        "lineupExplicit": true,
+        "sources": [
+          {
+            "name": "Kaden Jordan official TOUR page",
+            "url": "https://kadenjordan.com/pages/tour",
+            "type": "manual_verified",
+            "authority": "artist_calendar",
+            "priority": 100
+          },
+          {
+            "name": "Songkick calendar linked by Kaden Jordan official site",
+            "url": "https://www.songkick.com/artists/10314485-kaden-jordan",
+            "type": "manual_verified",
+            "authority": "artist_calendar",
+            "priority": 90
+          }
+        ]
       }
     },
     {
@@ -14118,7 +14366,7 @@
       "archiveKey": "id:official:0dd5f599b4db080206cf",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-31T18:31:14Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -14156,7 +14404,7 @@
             "priority": 74
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "endDate": "2026-11-15",
         "imageType": "artist",
@@ -14166,13 +14414,13 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-31T18:31:14Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:manual:cj-emulous-kickback-grand-prairie-2026",
       "firstArchivedAt": "2026-09-12T14:06:44Z",
-      "firstSeenOnCalendar": "2026-09-11T20:52:43Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -14181,12 +14429,13 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T20:52:43Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
+        "id": "manual:cj-emulous-kickback-grand-prairie-2026",
         "title": "The Kickback",
         "startDate": "2026-11-14",
         "startTime": "19:00",
-        "timezone": "America/Chicago",
+        "timezone": "",
         "venue": "2305 SE 14th St",
         "address": "2305 SE 14th St",
         "city": "Grand Prairie",
@@ -14203,9 +14452,6 @@
         "image": "assets/events/cj-emulous-kickback-2026.svg",
         "price": "",
         "sourceName": "CJ Emulous official calendar",
-        "authority": "artist_calendar",
-        "confidence": "high",
-        "lineupExplicit": true,
         "sources": [
           {
             "name": "CJ Emulous official calendar",
@@ -14215,11 +14461,12 @@
             "priority": 112
           }
         ],
-        "auditVerified": "2026-09-11",
-        "id": "manual:cj-emulous-kickback-grand-prairie-2026",
+        "lastVerified": "2026-09-12T14:12:12Z",
+        "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
-        "imageOverride": true
+        "verifiedVersion": 9,
+        "firstSeen": "2026-08-09T00:00:00Z"
       }
     },
     {
@@ -14385,7 +14632,7 @@
       "archiveKey": "id:ticketmaster:vvg10z_cma3b0h",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-07-30T03:46:47Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -14424,7 +14671,7 @@
             "priority": 94
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -14433,7 +14680,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T03:46:47Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:official:f952012d025cd6cc5016",
@@ -14492,7 +14739,7 @@
       "archiveKey": "id:manual:egr-2026-11-21-bradley-ca",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -14530,7 +14777,7 @@
             "priority": 112
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "artist",
         "imagePosition": "50% 38%",
@@ -14539,7 +14786,7 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-08T12:50:27Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:official:9546c468d74228fcdfa2",
@@ -14704,7 +14951,7 @@
       "archiveKey": "id:manual:egr-2026-12-05-big-bear-lake-ca",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -14742,7 +14989,7 @@
             "priority": 112
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "artist",
         "imagePosition": "50% 38%",
@@ -14751,13 +14998,13 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-08T12:50:27Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:manual:miles-cj-zion-ultra-lounge-chandler-2026",
       "firstArchivedAt": "2026-09-12T14:06:44Z",
-      "firstSeenOnCalendar": "2026-09-11T20:52:43Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -14766,12 +15013,13 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T20:52:43Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
+        "id": "manual:miles-cj-zion-ultra-lounge-chandler-2026",
         "title": "Miles Minnick & CJ Emulous at Zion Ultra Lounge",
         "startDate": "2026-12-05",
         "startTime": "",
-        "timezone": "America/Phoenix",
+        "timezone": "",
         "venue": "Zion Ultra Lounge",
         "address": "2301 S Stearman Dr",
         "city": "Chandler",
@@ -14789,9 +15037,6 @@
         "image": "assets/events/miles-cj-zion-ultra-2026.svg",
         "price": "",
         "sourceName": "CJ Emulous official calendar",
-        "authority": "artist_calendar",
-        "confidence": "high",
-        "lineupExplicit": true,
         "sources": [
           {
             "name": "CJ Emulous official calendar",
@@ -14801,11 +15046,12 @@
             "priority": 112
           }
         ],
-        "auditVerified": "2026-09-11",
-        "id": "manual:miles-cj-zion-ultra-lounge-chandler-2026",
+        "lastVerified": "2026-09-12T14:12:12Z",
+        "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
-        "imageOverride": true
+        "verifiedVersion": 9,
+        "firstSeen": "2026-08-09T00:00:00Z"
       }
     },
     {
@@ -14865,7 +15111,7 @@
       "archiveKey": "id:manual:egr-2026-12-11-fargo-nd",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -14903,7 +15149,7 @@
             "priority": 112
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "artist",
         "imagePosition": "50% 38%",
@@ -14912,13 +15158,72 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-08T12:50:27Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
+    },
+    {
+      "archiveKey": "id:manual:kaden-jordan-2026-12-11-ocala",
+      "firstArchivedAt": "2026-09-12T18:42:32Z",
+      "firstSeenOnCalendar": "2026-09-12T14:26:19Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
+      "calendarPresence": "present",
+      "removedFromCalendarAt": "",
+      "reappearedCount": 1,
+      "observedOnOrAfterEventDate": false,
+      "firstObservedOnOrAfterEventDate": "",
+      "dateState": "upcoming",
+      "observedInGitHistory": true,
+      "firstGitObservedAt": "2026-09-12T14:26:19Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
+      "event": {
+        "id": "manual:kaden-jordan-2026-12-11-ocala",
+        "title": "Kaden Jordan Live",
+        "startDate": "2026-12-11",
+        "startTime": "",
+        "timezone": "America/New_York",
+        "venue": "NEXT CHURCH",
+        "address": "",
+        "city": "Ocala",
+        "state": "FL",
+        "country": "US",
+        "artists": [
+          "Kaden Jordan"
+        ],
+        "headliner": "Kaden Jordan",
+        "eventType": "concert",
+        "status": "scheduled",
+        "ticketUrl": "https://www.songkick.com/artists/10314485-kaden-jordan",
+        "officialUrl": "https://kadenjordan.com/pages/tour",
+        "image": "https://images.sk-static.com/images/media/profile_images/artists/10314485/large_avatar",
+        "imageType": "artist",
+        "imagePosition": "center",
+        "price": "",
+        "sourceName": "Kaden Jordan official tour page / Songkick",
+        "authority": "artist_calendar",
+        "confidence": "high",
+        "lineupExplicit": true,
+        "sources": [
+          {
+            "name": "Kaden Jordan official TOUR page",
+            "url": "https://kadenjordan.com/pages/tour",
+            "type": "manual_verified",
+            "authority": "artist_calendar",
+            "priority": 100
+          },
+          {
+            "name": "Songkick calendar linked by Kaden Jordan official site",
+            "url": "https://www.songkick.com/artists/10314485-kaden-jordan",
+            "type": "manual_verified",
+            "authority": "artist_calendar",
+            "priority": 90
+          }
+        ]
+      }
     },
     {
       "archiveKey": "id:manual:egr-2026-12-12-jamestown-nd",
       "firstArchivedAt": "2026-08-22T12:02:09Z",
       "firstSeenOnCalendar": "2026-08-09T00:00:00Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 0,
@@ -14956,7 +15261,7 @@
             "priority": 112
           }
         ],
-        "lastVerified": "2026-09-11T15:03:32Z",
+        "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "imageType": "artist",
         "imagePosition": "50% 38%",
@@ -14965,13 +15270,13 @@
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-08T12:50:27Z",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z"
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00"
     },
     {
       "archiveKey": "id:manual:808-beezy-bandsintown-108856562",
       "firstArchivedAt": "2026-09-11T15:36:07Z",
       "firstSeenOnCalendar": "2026-09-11T15:33:30Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -14980,7 +15285,7 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T10:35:48-05:00",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:808-beezy-bandsintown-108856562",
         "title": "808 BEEZY — Live at AMPLIFY",
@@ -15012,19 +15317,19 @@
             "priority": 76
           }
         ],
-        "lastVerified": "2026-09-11T15:33:30Z",
+        "lastVerified": "2026-09-12T14:30:41Z",
         "confidence": "high",
         "imageType": "fallback",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-09-11T15:33:30Z"
+        "firstSeen": "2026-09-12T14:30:41Z"
       }
     },
     {
       "archiveKey": "id:manual:808-beezy-bandsintown-108856576",
       "firstArchivedAt": "2026-09-11T15:36:07Z",
       "firstSeenOnCalendar": "2026-09-11T15:33:30Z",
-      "lastSeenOnCalendar": "2026-09-12T14:06:43Z",
+      "lastSeenOnCalendar": "2026-09-12T18:42:31Z",
       "calendarPresence": "present",
       "removedFromCalendarAt": "",
       "reappearedCount": 1,
@@ -15033,7 +15338,7 @@
       "dateState": "upcoming",
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-09-11T10:35:48-05:00",
-      "lastGitObservedAt": "2026-09-12T09:59:55Z",
+      "lastGitObservedAt": "2026-09-12T13:42:19-05:00",
       "event": {
         "id": "manual:808-beezy-bandsintown-108856576",
         "title": "808 BEEZY — Live at AMPLIFY",
@@ -15065,21 +15370,21 @@
             "priority": 76
           }
         ],
-        "lastVerified": "2026-09-11T15:33:30Z",
+        "lastVerified": "2026-09-12T14:30:41Z",
         "confidence": "high",
         "imageType": "fallback",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-09-11T15:33:30Z"
+        "firstSeen": "2026-09-12T14:30:41Z"
       }
     }
   ],
   "summary": {
-    "totalArchived": 267,
-    "currentlyPresent": 85,
-    "pastDated": 121,
-    "observedOnOrAfterEventDate": 70,
-    "gitSnapshotsScanned": 146,
-    "gitHistoryBackfilled": 267
+    "totalArchived": 273,
+    "currentlyPresent": 88,
+    "pastDated": 122,
+    "observedOnOrAfterEventDate": 71,
+    "gitSnapshotsScanned": 149,
+    "gitHistoryBackfilled": 273
   }
 }
