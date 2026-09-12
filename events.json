@@ -2947,13 +2947,17 @@
     "artists": [
       "Miles Minnick",
       "Gifted Hands",
-      "Datin"
+      "Datin",
+      "TRU-SERVA",
+      "VVS Big Rock",
+      "Lyric The Geenyus",
+      "MAYIA"
     ],
     "headliner": "Miles Minnick",
     "eventType": "festival",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "assets/events/flavor-fest-friday-2026.webp",
+    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/a2407af7-a012-4df1-8d42-d247ab82cd8b/FF26-Promo-Friday-Night%2B%281%29.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -2969,9 +2973,17 @@
         "type": "manual_verified",
         "authority": "official_event",
         "priority": 112
+      },
+      {
+        "name": "Flavor Fest official Friday poster",
+        "url": "https://www.flavorfest.org/",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 106
       }
     ],
-    "confidence": "high"
+    "confidence": "high",
+    "auditVerified": "2026-09-11"
   },
   {
     "title": "Flavor Fest 2026 — Saturday Concerts",
