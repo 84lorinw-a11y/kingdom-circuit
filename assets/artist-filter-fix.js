@@ -34,6 +34,10 @@
     return raw >= localToday;
   }
 
+  function isPublished(event) {
+    return !["cancelled", "canceled", "postponed", "merged"].includes(norm(event?.status));
+  }
+
   function eventKey(event) {
     if (event?.id) return `id:${event.id}`;
     return [
@@ -143,7 +147,7 @@
     const merged = [];
     const seen = new Set();
     [...primary, ...(Array.isArray(supplemental) ? supplemental : [])]
-      .filter(event => event && typeof event === "object" && isUpcoming(event))
+      .filter(event => event && typeof event === "object" && isUpcoming(event) && isPublished(event))
       .forEach(event => {
         const key = eventKey(event);
         if (seen.has(key)) return;
@@ -279,6 +283,7 @@
         card.dataset.directoryStates = statesForArtist.join("|");
         card.dataset.directoryMonths = monthsForArtist.join("|");
         card.dataset.directoryHasShows = shows.length > 0 ? "true" : "false";
+        card._kcUpcomingShows = shows;
       });
 
       const selectedArtist = norm(artistSelect.value);
@@ -289,13 +294,15 @@
 
       cards.forEach(card => {
         const cardArtist = card.dataset.directoryArtist || norm(cardArtistName(card));
-        const cardStates = new Set((card.dataset.directoryStates || "").split("|").filter(Boolean));
-        const cardMonths = new Set((card.dataset.directoryMonths || "").split("|").filter(Boolean));
+        const shows = Array.isArray(card._kcUpcomingShows) ? card._kcUpcomingShows : [];
+        const matchesEventPair = shows.some(event =>
+          (!selectedState || String(event?.state || "").trim().toUpperCase() === selectedState) &&
+          (!selectedMonth || monthKey(event?.startDate) === selectedMonth)
+        );
         const hasUpcoming = card.dataset.directoryHasShows === "true";
         const matches =
           (!selectedArtist || cardArtist === selectedArtist) &&
-          (!selectedState || cardStates.has(selectedState)) &&
-          (!selectedMonth || cardMonths.has(selectedMonth)) &&
+          ((!selectedState && !selectedMonth) || matchesEventPair) &&
           (!requireUpcoming || hasUpcoming);
 
         card.hidden = !matches;

@@ -52,7 +52,7 @@ def current(e):
     except Exception: return True
 
 def scheduled(e):
-    return norm(e.get("status") or "scheduled") not in {"cancelled", "canceled", "postponed"}
+    return norm(e.get("status") or "scheduled") not in {"cancelled", "canceled", "postponed", "merged"}
 
 def same_event(a,b):
     if a.get("startDate") != b.get("startDate") or norm(a.get("city")) != norm(b.get("city")): return False
@@ -64,6 +64,9 @@ def same_event(a,b):
 def merge_events(primary, supplemental):
     out = [dict(e, artists=list(e.get("artists",[]))) for e in primary]
     for inc in supplemental:
+        if norm(inc.get("status")) == "merged":
+            out.append(dict(inc, artists=list(inc.get("artists", []))))
+            continue
         found = next((e for e in out if same_event(e,inc)), None)
         if not found:
             out.append(dict(inc, artists=list(inc.get("artists",[]))))
@@ -77,7 +80,16 @@ def format_date(e):
     raw = e.get("startDate")
     if not raw: return "Date to be announced"
     try:
-        d = dt.date.fromisoformat(raw[:10]); text = d.strftime("%a, %b %-d, %Y")
+        start = dt.date.fromisoformat(raw[:10])
+        end = dt.date.fromisoformat(str(e.get("endDate") or raw)[:10])
+        if end == start:
+            text = start.strftime("%a, %b %-d, %Y")
+        elif start.year == end.year and start.month == end.month:
+            text = f"{start.strftime('%a, %b')} {start.day}–{end.day}, {start.year}"
+        elif start.year == end.year:
+            text = f"{start.strftime('%a, %b')} {start.day}–{end.strftime('%b')} {end.day}, {start.year}"
+        else:
+            text = f"{start.strftime('%a, %b %-d, %Y')}–{end.strftime('%b %-d, %Y')}"
     except Exception: text = raw
     if e.get("startTime"):
         try:
@@ -237,9 +249,17 @@ def main():
         if e.get("state"): crumbs.append((STATE_NAMES.get(e["state"],e["state"]),state_path(e["state"])))
         crumbs.append((e.get("title") or "Event",p))
         img=image_url(e.get("image")); cls="event-artwork" if e.get("imageType")=="event_artwork" else "artist-photo"; artist_links=" - ".join(f'<a href="{artist_path(n)}">{esc(n)}</a>' for n in e.get("artists",[])); official=e.get("officialUrl") or e.get("ticketUrl") or "#"
+        merged=norm(e.get("status")) == "merged"
+        if merged:
+            canonical=next((item for item in retained if item.get("id") == e.get("mergedIntoId")), None)
+            target=event_path(canonical) if canonical else "/shows/"
+            body=f'<section class="page-hero hero-compact"><p class="eyebrow">Merged listing</p><h1>This show has one canonical page</h1><p class="hero-text">This duplicate listing was consolidated with the confirmed venue event.</p><a class="primary-button" href="{target}">View the canonical event</a></section><script>location.replace({json.dumps(target)});</script>'
+            write_page(p,page("Merged event | The Kingdom Circuit","This duplicate show listing has moved to its canonical event page.",p,body))
+            continue
         cancelled=not scheduled(e)
         notice='<div class="empty-panel" role="status"><strong>Cancelled.</strong> The organizer’s official ticket page confirms this event is cancelled.</div>' if cancelled else ''
-        body=f'<section class="event-detail-section">{breadcrumbs(crumbs)}{notice}<article class="event-detail"><div class="event-detail-media"><img class="{cls}" src="{esc(img)}" alt="{esc(e.get("title"))}" width="1200" height="675"></div><div class="event-detail-copy"><p class="eyebrow">{esc("Cancelled event" if cancelled else ("Festival" if e.get("eventType")=="festival" else "Concert"))}</p><h1>{esc(e.get("title"))}</h1><p class="artist-line">{artist_links}</p><dl class="detail-list"><div><dt>Status</dt><dd>{"Cancelled" if cancelled else "Scheduled"}</dd></div><div><dt>Date</dt><dd>{esc(format_date(e))}</dd></div><div><dt>Venue</dt><dd>{esc(e.get("venue") or "Venue to be announced")}</dd></div><div><dt>Location</dt><dd>{esc(loc)}</dd></div><div><dt>Source</dt><dd>{esc(source_text(e))}</dd></div></dl><a class="primary-button" href="{esc(official)}" target="_blank" rel="noopener">Official details</a><p class="disclaimer">{"This URL is retained so visitors can confirm the cancellation with the organizer." if cancelled else "Event details may change. Confirm final information with the official organizer or ticket provider before purchasing or traveling."}</p></div></article></section>'
+        doors=f'<div><dt>Doors</dt><dd>{esc(format_date({"startDate": e.get("startDate"), "startTime": e.get("doorsTime")}).split(" - ")[-1])}</dd></div>' if e.get("doorsTime") else ''
+        body=f'<section class="event-detail-section">{breadcrumbs(crumbs)}{notice}<article class="event-detail"><div class="event-detail-media"><img class="{cls}" src="{esc(img)}" alt="{esc(e.get("title"))}" width="1200" height="675"></div><div class="event-detail-copy"><p class="eyebrow">{esc("Cancelled event" if cancelled else ("Festival" if e.get("eventType")=="festival" else "Concert"))}</p><h1>{esc(e.get("title"))}</h1><p class="artist-line">{artist_links}</p><dl class="detail-list"><div><dt>Status</dt><dd>{"Cancelled" if cancelled else "Scheduled"}</dd></div><div><dt>Date</dt><dd>{esc(format_date(e))}</dd></div>{doors}<div><dt>Venue</dt><dd>{esc(e.get("venue") or "Venue to be announced")}</dd></div><div><dt>Location</dt><dd>{esc(loc)}</dd></div><div><dt>Source</dt><dd>{esc(source_text(e))}</dd></div></dl><a class="primary-button" href="{esc(official)}" target="_blank" rel="noopener">Official details</a><p class="disclaimer">{"This URL is retained so visitors can confirm the cancellation with the organizer." if cancelled else "Event details may change. Confirm final information with the official organizer or ticket provider before purchasing or traveling."}</p></div></article></section>'
         write_page(p,page(f"{e.get('title')} - {loc} | The Kingdom Circuit",f"{names} live in {loc} on {format_date(e)}. Verified official show details.",p,body,[event_schema(e),breadcrumb_schema(crumbs)]))
 
     for a in (x for x in artists if x.get("enabled") is not False):

@@ -959,6 +959,7 @@ def event_page(event, all_events, status, event_map, artist_map) -> str:
         <p class="event-detail-lineup">{' · '.join(artist_links) if artist_links else 'Artist lineup not provided'}</p>
         <dl class="detail-list">
           <div><dt>Date</dt><dd>{escape(format_date_range(event))}{(' · ' + escape(format_time(event.get('startTime')))) if format_time(event.get('startTime')) else ''}</dd></div>
+          {f'<div><dt>Doors</dt><dd>{escape(format_time(event.get("doorsTime")))}</dd></div>' if event.get('doorsTime') else ''}
           <div><dt>Venue</dt><dd>{escape(str(event.get('venue') or 'Venue to be announced'))}</dd></div>
           <div><dt>Location</dt><dd>{escape(', '.join(part for part in [city, state] if part) or 'Location to be announced')}</dd></div>
           {f'<div><dt>Price</dt><dd>{escape(event.get("price"))}</dd></div>' if event.get('price') else ''}

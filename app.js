@@ -2426,7 +2426,7 @@ function mergeEventRecords(existing, incoming) {
 function mergeEventLists(primary, supplemental) {
   const merged = [];
   [...(Array.isArray(primary) ? primary : []), ...(Array.isArray(supplemental) ? supplemental : [])].forEach(raw => {
-    if (!raw || typeof raw !== "object") return;
+    if (!raw || typeof raw !== "object" || ["cancelled", "canceled", "postponed", "merged"].includes(normalize(raw.status))) return;
     const incoming = {
       ...raw,
       artists: Array.isArray(raw.artists) ? [...raw.artists] : [],
@@ -2467,9 +2467,18 @@ function parseLocalDate(value) {
   return new Date(year, month - 1, day, 0, 0, 0, 0);
 }
 function formatDate(event) {
-  const date = parseLocalDate(event.startDate);
-  if (!date) return "Date to be announced";
-  let text = new Intl.DateTimeFormat("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" }).format(date);
+  const start = parseLocalDate(event.startDate);
+  if (!start) return "Date to be announced";
+  const end = parseLocalDate(event.endDate) || start;
+  const full = new Intl.DateTimeFormat("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" });
+  let text = full.format(start);
+  if (end.getTime() !== start.getTime()) {
+    if (start.getFullYear() === end.getFullYear() && start.getMonth() === end.getMonth()) {
+      text = `${new Intl.DateTimeFormat("en-US", { weekday: "short", month: "short" }).format(start)} ${start.getDate()}–${end.getDate()}, ${start.getFullYear()}`;
+    } else {
+      text = `${full.format(start)}–${full.format(end)}`;
+    }
+  }
   if (event.startTime) {
     const [hour, minute] = event.startTime.split(":").map(Number);
     const time = new Date(2000, 0, 1, hour, minute || 0);
