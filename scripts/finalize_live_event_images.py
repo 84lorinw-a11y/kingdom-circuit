@@ -20,6 +20,7 @@ STALE_IMAGE_URLS = {
     "https://rareofbreed.com/cdn/shop/files/202511_RareOfBreed_TheWarehouse-32.jpg?v=1784663742&width=3840",
     "https://ugc.production.linktr.ee/0f6ee994-7bd6-4821-bb79-593f035ae2c9_1F523223-FD9A-4E86-88BE-0A34120C8FAD.jpeg?io=true&size=avatar-v3_0",
     "https://i.scdn.co/image/ab6761610000e5ebe8717d1df4abebcd56989c30",
+    "https://images.sk-static.com/images/media/profile_images/artists/10314485/large_avatar",
 }
 
 # Verified/known-good presentation images used only when an event otherwise has
@@ -54,7 +55,18 @@ IMAGE_CANDIDATES = {
     ],
     "808 beezy": [
         "https://pbs.twimg.com/profile_images/1836827722309312512/e5kgorwv.jpg",
-        "https://open.voidware.de/artist/3CltJZLndpJKtpUyRVBB1k",
+    ],
+    "kaden jordan": [
+        "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages211/v4/b4/50/48/b4504865-b294-ba19-3854-a83ff79084c4/35e5e9f1-1e53-4326-ae3b-47ec4206ce77_file_cropped.png/1200x630cw.png",
+    ],
+    "kurtis hoppie": [
+        "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages123/v4/a5/e0/03/a5e0030b-f81f-9fc2-d252-93cc2e2d3270/631dec26-26b9-45e9-a55b-44611325a46d_file_cropped.png/1200x630cw.png",
+    ],
+    "ruslan": [
+        "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages122/v4/6d/12/23/6d12233a-882e-6603-ee26-01989969fcf9/3a35e7fd-10e4-4710-aa37-75ee0c58c345_file_cropped.png/3442x3442bb.jpg",
+    ],
+    "christopher syncere": [
+        "https://i.scdn.co/image/ab6761610000e5eb58b2b20624119284dbf7e303",
     ],
     "hulvey": [
         "https://s1.ticketm.net/dam/a/d4e/a49ecab3-089d-46ff-baa5-7942c994ed4e_SOURCE",
