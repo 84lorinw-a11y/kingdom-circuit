@@ -64,7 +64,10 @@ jobs:
           set -euo pipefail
           git config user.name "kingdom-circuit-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- supplemental-events.json events.json config/artists.json config/verified-artist-registry-updates.json
+          # The repair script can touch verified registry/generated source files in
+          # addition to the primary event JSON. Commit the complete intended repair
+          # set before rebasing so git pull --rebase never sees a dirty worktree.
+          git add -A
           if git diff --cached --quiet; then
             echo "Deonte Hall listing already correct."
             exit 0
