@@ -369,6 +369,44 @@
     ]
   },
   {
+    "id": "eventbrite:gracefest-lecrae-castaic-2026",
+    "title": "GRACEFEST 2026",
+    "startDate": "2026-09-19",
+    "startTime": "13:30",
+    "timezone": "America/Los_Angeles",
+    "venue": "Castaic Lake State Recreation Area",
+    "address": "Castaic Lake Drive",
+    "city": "Castaic",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Lecrae"
+    ],
+    "headliner": "Lecrae",
+    "eventType": "festival",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+    "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+    "image": "assets/events/gracefest-2026.png",
+    "price": "",
+    "sourceName": "Official Eventbrite listing",
+    "authority": "official_festival",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+        "type": "eventbrite",
+        "authority": "official_festival",
+        "priority": 104
+      }
+    ],
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true
+  },
+  {
     "id": "bandsintown:108847305",
     "title": "Holy Nights Tour- Sanger, CA",
     "startDate": "2026-09-19",
@@ -1052,6 +1090,40 @@
     ]
   },
   {
+    "id": "supplemental:brenno-overflow-conference-2026",
+    "title": "Overflow Conference",
+    "startDate": "2026-10-17",
+    "startTime": "",
+    "venue": "Location TBD",
+    "address": "",
+    "city": "Buffalo",
+    "state": "NY",
+    "country": "US",
+    "artists": [
+      "Brenno"
+    ],
+    "headliner": "Brenno",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.tickettailor.com/events/ablazemovement",
+    "officialUrl": "https://www.brennomusic.live/",
+    "image": "",
+    "price": "",
+    "sourceName": "Brenno official upcoming shows",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Brenno official upcoming shows",
+        "url": "https://www.brennomusic.live/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ]
+  },
+  {
     "title": "MAYIA at the NC State Fair",
     "startDate": "2026-10-17",
     "startTime": "10:00",
@@ -1265,6 +1337,43 @@
     ],
     "ticketAvailability": "needs_confirmation",
     "notes": "HOG MOB confirms the show date; current ticket availability needs confirmation."
+  },
+  {
+    "id": "supplemental:tru-serva-truth-tour-las-cruces-2026",
+    "title": "The Truth Tour — Las Cruces",
+    "startDate": "2026-10-25",
+    "startTime": "",
+    "timezone": "America/Denver",
+    "venue": "Real Life Church",
+    "address": "",
+    "city": "Las Cruces",
+    "state": "NM",
+    "country": "US",
+    "artists": [
+      "TRU-SERVA"
+    ],
+    "headliner": "TRU-SERVA",
+    "eventType": "concert",
+    "status": "onsale",
+    "ticketUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
+    "officialUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebb5bd510760cb418516ded933",
+    "imageType": "artist_photo",
+    "imagePosition": "center",
+    "price": "$10",
+    "sourceName": "Megan Woods official tour announcement",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Megan Woods official tour announcement",
+        "url": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ]
   },
   {
     "id": "supplemental:tru-serva-truth-tour-las-cruces-2026",
