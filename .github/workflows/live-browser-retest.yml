@@ -138,3 +138,5 @@ jobs:
           r=json.load(open('/tmp/live-browser-retest.json'))
           if r.get('overall')!='pass': raise SystemExit('Live browser retest failed')
           PY
+
+# P0 mobile recovery retest: 2026-09-12
