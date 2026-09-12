@@ -61,6 +61,19 @@ KADEN_SHOWS = [
     ("2026-12-11", "NEXT CHURCH", "Ocala", "FL"),
 ]
 
+# These Sep. 11 audit events have verified performers but no source-owned event
+# artwork. Use real, verified artist portraits so the live site never falls back
+# to the generic Kingdom Circuit card.
+VERIFIED_EVENT_IMAGES = {
+    "jay-kalyl-desde-antes-rockville-centre-2026": "https://i.scdn.co/image/ab6761610000e5eb1269b80aed5d08c40aedfdc3",
+    "mayia-boxyard-saturdaze-2026": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
+    "mayia-nc-state-fair-2026": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
+    "mission-friends-sacramento-2026": "https://musiciansandmelody.com/wp-content/uploads/2017/04/mission-lhm.jpg",
+    "alex-zurdo-zona-zero-san-juan-2026": "https://i.scdn.co/image/ab6761610000e5eb2c81bb40c3b6962eacf9dc9c",
+    "cj-emulous-kickback-grand-prairie-2026": "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
+    "miles-cj-zion-ultra-lounge-chandler-2026": "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
+}
+
 
 def kaden_event(date: str, venue: str, city: str, state: str) -> dict:
     slug = f"{date}-{city.lower().replace(' ', '-')}"
@@ -159,6 +172,25 @@ def sort_events(events: list[dict]) -> None:
     ))
 
 
+def apply_verified_event_images(events: list[dict], supplemental: list[dict]) -> None:
+    found: set[str] = set()
+    for collection in (events, supplemental):
+        for event in collection:
+            event_id = str(event.get("id") or "")
+            image = VERIFIED_EVENT_IMAGES.get(event_id)
+            if not image:
+                continue
+            event["image"] = image
+            event["imageType"] = "artist"
+            event["imagePosition"] = "center"
+            event["imageOverride"] = True
+            found.add(event_id)
+
+    missing = set(VERIFIED_EVENT_IMAGES) - found
+    if missing:
+        raise SystemExit(f"Verified Sep 11 image targets are missing: {sorted(missing)}")
+
+
 def apply(root: Path) -> None:
     events_path = root / "events.json"
     supplemental_path = root / "supplemental-events.json"
@@ -174,6 +206,7 @@ def apply(root: Path) -> None:
 
     events.append(deepcopy(PARRIS_EVENT))
     events.extend(kaden_event(*show) for show in KADEN_SHOWS)
+    apply_verified_event_images(events, supplemental)
     sort_events(events)
     sort_events(supplemental)
     write(events_path, events)
@@ -191,7 +224,13 @@ def apply(root: Path) -> None:
         if len(matches) != 1 or matches[0].get("venue") != venue:
             raise SystemExit(f"Kaden Jordan show verification failed for {date} {city}: {matches}")
 
-    print("Verified Parris Chariz Dallas lineup/dedupe and four Kaden Jordan tour dates are pinned.")
+    image_targets = [event for event in combined if str(event.get("id") or "") in VERIFIED_EVENT_IMAGES]
+    if len({str(event.get("id")) for event in image_targets}) != len(VERIFIED_EVENT_IMAGES):
+        raise SystemExit("Verified Sep 11 event-image coverage is incomplete")
+    if any("event-fallback.webp" in str(event.get("image") or "") or not event.get("image") for event in image_targets):
+        raise SystemExit("A verified Sep 11 event still has generic image artwork")
+
+    print("Verified Parris Chariz Dallas lineup/dedupe, four Kaden Jordan tour dates, and Sep 11 event images are pinned.")
 
 
 def main() -> None:
