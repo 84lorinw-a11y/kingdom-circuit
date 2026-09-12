@@ -68,8 +68,10 @@ PUBLIC_RUNTIME = r'''"use strict";
     }
     if (mode === "month") return start.getFullYear() === today.getFullYear() && start.getMonth() === today.getMonth();
     if (mode === "weekend") {
+      const day = today.getDay();
+      const offset = day === 0 ? -2 : day === 6 ? -1 : (5 - day + 7) % 7;
       const friday = new Date(today);
-      friday.setDate(friday.getDate() + ((5 - today.getDay() + 7) % 7));
+      friday.setDate(friday.getDate() + offset);
       const sunday = new Date(friday);
       sunday.setDate(sunday.getDate() + 2);
       return end >= friday && start <= sunday;

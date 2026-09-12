@@ -1609,12 +1609,12 @@
     ],
     "headliner": "Rare of Breed",
     "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
-    "officialUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
+    "status": "cancelled",
+    "ticketUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
+    "officialUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
     "image": "assets/events/rare-of-breed-jacksonville-2026.jpg",
     "price": "",
-    "sourceName": "Official Eventbrite listing",
+    "sourceName": "Official Eventbrite cancellation notice",
     "authority": "venue_ticket",
     "confidence": "high",
     "lineupExplicit": true,
@@ -1625,11 +1625,21 @@
         "type": "eventbrite",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "Official Eventbrite cancellation notice",
+        "url": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
+        "type": "eventbrite",
+        "authority": "venue_ticket",
+        "priority": 120
       }
     ],
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true
+    "imageOverride": true,
+    "cancellationConfirmed": true,
+    "cancellationConfirmedAt": "2026-09-12",
+    "notes": "Cancelled by the organizer. This page is retained as a cancellation notice."
   },
   {
     "title": "MAYIA at the NC State Fair",

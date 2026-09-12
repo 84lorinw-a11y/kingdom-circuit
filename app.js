@@ -2464,7 +2464,7 @@ function parseLocalDate(value) {
   if (!value) return null;
   const [year, month, day] = value.split("-").map(Number);
   if (!year || !month || !day) return null;
-  return new Date(year, month - 1, day, 12, 0, 0, 0);
+  return new Date(year, month - 1, day, 0, 0, 0, 0);
 }
 function formatDate(event) {
   const date = parseLocalDate(event.startDate);
@@ -2514,7 +2514,13 @@ function eventCard(event) {
 function filterEvents(mode) {
   const today = new Date();
   if (mode === "festival") return EVENTS.filter(event => event.eventType === "festival");
-  if (mode === "month") return EVENTS.filter(event => { const date = parseLocalDate(event.startDate); return date && date.getFullYear() === today.getFullYear() && date.getMonth() === today.getMonth(); });
+  if (mode === "month") return EVENTS.filter(event => {
+    const monthStart = new Date(today.getFullYear(), today.getMonth(), 1);
+    const monthEnd = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+    const start = parseLocalDate(event.startDate);
+    const end = parseLocalDate(event.endDate) || start;
+    return start && end && end >= monthStart && start <= monthEnd;
+  });
   if (mode === "new") return EVENTS.filter(isNew);
   return EVENTS;
 }
@@ -2535,8 +2541,8 @@ function dateMatchesMode(startDate, endDate, mode) {
   const end = parseLocalDate(endDate) || start;
   if (!start || !end) return false;
   if (mode === "next30") { const last = new Date(today); last.setDate(last.getDate() + 30); return end >= today && start <= last; }
-  if (mode === "month") return start.getFullYear() === today.getFullYear() && start.getMonth() === today.getMonth();
-  if (mode === "weekend") { const friday = new Date(today); friday.setDate(friday.getDate() + ((5 - today.getDay() + 7) % 7)); const sunday = new Date(friday); sunday.setDate(sunday.getDate() + 2); return end >= friday && start <= sunday; }
+  if (mode === "month") { const first = new Date(today.getFullYear(), today.getMonth(), 1); const last = new Date(today.getFullYear(), today.getMonth() + 1, 0); return end >= first && start <= last; }
+  if (mode === "weekend") { const day = today.getDay(); const offset = day === 0 ? -2 : day === 6 ? -1 : (5 - day + 7) % 7; const friday = new Date(today); friday.setDate(friday.getDate() + offset); const sunday = new Date(friday); sunday.setDate(sunday.getDate() + 2); return end >= friday && start <= sunday; }
   return true;
 }
 function setupEventFilters(cards) {
@@ -2550,6 +2556,13 @@ function setupEventFilters(cards) {
   const count = document.querySelector("[data-results-count]");
   const empty = document.querySelector("[data-filtered-empty]");
   const chips = [...document.querySelectorAll(".filter-chip[data-date-mode],.filter-chip[data-type-mode]")];
+  const artistMap = new Map();
+  cards.forEach(card => card.querySelectorAll(".artist-line a").forEach(link => {
+    const display = String(link.textContent || "").trim();
+    if (display) artistMap.set(normalize(display), display);
+  }));
+  fillSelect(artist, [...artistMap.keys()].sort((a, b) => artistMap.get(a).localeCompare(artistMap.get(b))), value => artistMap.get(value));
+  fillSelect(state, [...new Set(cards.map(card => card.dataset.state).filter(Boolean))].sort(), value => STATE_NAMES[value] || value);
   let dateMode = "all";
   const params = new URLSearchParams(location.search);
   if (params.get("artist") && artist) artist.value = normalize(params.get("artist"));

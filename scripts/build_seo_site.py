@@ -51,6 +51,9 @@ def current(e):
     try: return dt.date.fromisoformat(str(raw)[:10]) >= TODAY
     except Exception: return True
 
+def scheduled(e):
+    return norm(e.get("status") or "scheduled") not in {"cancelled", "canceled", "postponed"}
+
 def same_event(a,b):
     if a.get("startDate") != b.get("startDate") or norm(a.get("city")) != norm(b.get("city")): return False
     if a.get("startTime") and b.get("startTime") and a.get("startTime") != b.get("startTime"): return False
@@ -117,10 +120,11 @@ def breadcrumb_schema(items):
 
 def event_schema(e):
     start=e.get("startDate","")+("T"+e["startTime"] if e.get("startTime") else "")
-    data={"@context":"https://schema.org","@type":"MusicEvent","name":e.get("title") or "Christian hip-hop event","startDate":start,"eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","url":absolute(event_path(e)),"image":[image_url(e.get("image"))],"location":{"@type":"Place","name":e.get("venue") or "Venue to be announced","address":{"@type":"PostalAddress","streetAddress":e.get("address") or "","addressLocality":e.get("city") or "","addressRegion":e.get("state") or "","addressCountry":"US"}},"performer":[{"@type":"MusicGroup","name":n} for n in e.get("artists",[])]}
+    status={"cancelled":"https://schema.org/EventCancelled","canceled":"https://schema.org/EventCancelled","postponed":"https://schema.org/EventPostponed","rescheduled":"https://schema.org/EventRescheduled"}.get(norm(e.get("status")),"https://schema.org/EventScheduled")
+    data={"@context":"https://schema.org","@type":"MusicEvent","name":e.get("title") or "Christian hip-hop event","startDate":start,"eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":status,"url":absolute(event_path(e)),"image":[image_url(e.get("image"))],"location":{"@type":"Place","name":e.get("venue") or "Venue to be announced","address":{"@type":"PostalAddress","streetAddress":e.get("address") or "","addressLocality":e.get("city") or "","addressRegion":e.get("state") or "","addressCountry":"US"}},"performer":[{"@type":"MusicGroup","name":n} for n in e.get("artists",[])]}
     if e.get("endDate"): data["endDate"]=e["endDate"]
     url=e.get("officialUrl") or e.get("ticketUrl")
-    if url: data["offers"]={"@type":"Offer","url":url,"availability":"https://schema.org/InStock"}
+    if url and status == "https://schema.org/EventScheduled": data["offers"]={"@type":"Offer","url":url}
     return data
 
 def event_card(e,artists):
@@ -130,7 +134,9 @@ def event_card(e,artists):
     location=", ".join(x for x in (e.get("city"),e.get("state")) if x) or "Location to be announced"
     artists_html=" - ".join(f'<a href="{artist_path(n)}">{esc(n)}</a>' for n in e.get("artists",[]))
     official=e.get("officialUrl") or e.get("ticketUrl") or "#"
-    return f'''<article class="event-card" data-event-card data-state="{esc(e.get('state'))}" data-type="{esc(e.get('eventType') or 'concert')}" data-date="{esc(e.get('startDate'))}" data-end-date="{esc(e.get('endDate') or e.get('startDate'))}"><a class="event-media" href="{event_path(e)}"><img class="{typ}" src="{esc(img)}" alt="{esc(e.get('title'))} image" loading="lazy" decoding="async" width="1200" height="675" style="object-position:{esc(pos)}"></a><div class="event-content"><div class="event-main"><div class="event-badges"><span class="badge badge-gold">{esc('Festival' if e.get('eventType')=='festival' else 'Concert')}</span></div><h3><a href="{event_path(e)}">{esc(e.get('title'))}</a></h3><p class="artist-line">{artists_html}</p><dl class="event-meta"><div><dt>Date</dt><dd>{esc(format_date(e))}</dd></div><div><dt>Venue</dt><dd>{esc(e.get('venue') or 'Venue to be announced')}</dd></div><div><dt>Location</dt><dd>{esc(location)}</dd></div></dl></div><div class="event-footer"><a class="official-button" href="{esc(official)}" target="_blank" rel="noopener">Official details</a><p class="source-line">Source: {esc(source_text(e))}</p></div></div></article>'''
+    search=norm(" ".join([str(e.get('title') or ''),str(e.get('venue') or ''),str(e.get('city') or ''),str(e.get('state') or ''),str(e.get('sourceName') or ''),*(str(n) for n in e.get('artists',[]))]))
+    artist_values="|".join(norm(n) for n in e.get('artists',[]))
+    return f'''<article class="event-card" data-event-card data-search="{esc(search)}" data-artists="{esc(artist_values)}" data-state="{esc(e.get('state'))}" data-type="{esc(e.get('eventType') or 'concert')}" data-date="{esc(e.get('startDate'))}" data-end-date="{esc(e.get('endDate') or e.get('startDate'))}"><a class="event-media" href="{event_path(e)}"><img class="{typ}" src="{esc(img)}" alt="{esc(e.get('title'))} image" loading="lazy" decoding="async" width="1200" height="675" style="object-position:{esc(pos)}"></a><div class="event-content"><div class="event-main"><div class="event-badges"><span class="badge badge-gold">{esc('Festival' if e.get('eventType')=='festival' else 'Concert')}</span></div><h3><a href="{event_path(e)}">{esc(e.get('title'))}</a></h3><p class="artist-line">{artists_html}</p><dl class="event-meta"><div><dt>Date</dt><dd>{esc(format_date(e))}</dd></div><div><dt>Venue</dt><dd>{esc(e.get('venue') or 'Venue to be announced')}</dd></div><div><dt>Location</dt><dd>{esc(location)}</dd></div></dl></div><div class="event-footer"><a class="official-button" href="{esc(official)}" target="_blank" rel="noopener">Official details</a><p class="source-line">Source: {esc(source_text(e))}</p></div></div></article>'''
 
 def write_page(path,content):
     target=OUT/path.strip("/")/"index.html" if path!="/" else OUT/"index.html"
@@ -185,7 +191,8 @@ def main():
     events=json.loads((REPO/"events.json").read_text(encoding="utf-8"))
     artists=json.loads((REPO/"config/artists.json").read_text(encoding="utf-8"))
     supplemental=json.loads((REPO/"supplemental-events.json").read_text(encoding="utf-8")) if (REPO/"supplemental-events.json").exists() else []
-    events=sorted([e for e in merge_events(events,supplemental) if current(e)],key=lambda e:(e.get("startDate",""),e.get("startTime",""),e.get("title","")))
+    retained=sorted([e for e in merge_events(events,supplemental) if current(e)],key=lambda e:(e.get("startDate",""),e.get("startTime",""),e.get("title","")))
+    events=[e for e in retained if scheduled(e)]
 
     if OUT.exists(): shutil.rmtree(OUT)
     OUT.mkdir()
@@ -203,7 +210,9 @@ def main():
     patch_meta(OUT/"artists/index.html","Christian Hip-Hop Artist Directory | The Kingdom Circuit","Browse Christian hip-hop artists and find verified upcoming concerts and official profiles.","/artists/")
 
     prerender_events(OUT/"index.html",events,artists); prerender_events(OUT/"shows/index.html",events,artists)
-    prerender_events(OUT/"shows/this-month/index.html",[e for e in events if e.get("startDate","").startswith(TODAY.strftime("%Y-%m"))],artists)
+    month_start=TODAY.replace(day=1)
+    month_end=(month_start.replace(day=28)+dt.timedelta(days=4)).replace(day=1)-dt.timedelta(days=1)
+    prerender_events(OUT/"shows/this-month/index.html",[e for e in events if dt.date.fromisoformat(str(e.get("startDate"))[:10]) <= month_end and dt.date.fromisoformat(str(e.get("endDate") or e.get("startDate"))[:10]) >= month_start],artists)
     prerender_events(OUT/"festivals/index.html",[e for e in events if e.get("eventType")=="festival"],artists)
     cutoff=TODAY-dt.timedelta(days=14)
     recent=[]
@@ -222,13 +231,15 @@ def main():
             d=dt.date.fromisoformat(e.get("startDate","")[:10]); by_month[(d.year,d.month)].append(e)
         except Exception: pass
 
-    for e in events:
+    for e in retained:
         p=event_path(e); urls.append(p); loc=", ".join(x for x in (e.get("city"),e.get("state")) if x); names=", ".join(e.get("artists",[])) or e.get("headliner") or "CHH artists"
         crumbs=[("Shows","/shows/")]
         if e.get("state"): crumbs.append((STATE_NAMES.get(e["state"],e["state"]),state_path(e["state"])))
         crumbs.append((e.get("title") or "Event",p))
         img=image_url(e.get("image")); cls="event-artwork" if e.get("imageType")=="event_artwork" else "artist-photo"; artist_links=" - ".join(f'<a href="{artist_path(n)}">{esc(n)}</a>' for n in e.get("artists",[])); official=e.get("officialUrl") or e.get("ticketUrl") or "#"
-        body=f'<section class="event-detail-section">{breadcrumbs(crumbs)}<article class="event-detail"><div class="event-detail-media"><img class="{cls}" src="{esc(img)}" alt="{esc(e.get("title"))}" width="1200" height="675"></div><div class="event-detail-copy"><p class="eyebrow">{esc("Festival" if e.get("eventType")=="festival" else "Concert")}</p><h1>{esc(e.get("title"))}</h1><p class="artist-line">{artist_links}</p><dl class="detail-list"><div><dt>Date</dt><dd>{esc(format_date(e))}</dd></div><div><dt>Venue</dt><dd>{esc(e.get("venue") or "Venue to be announced")}</dd></div><div><dt>Location</dt><dd>{esc(loc)}</dd></div><div><dt>Source</dt><dd>{esc(source_text(e))}</dd></div></dl><a class="primary-button" href="{esc(official)}" target="_blank" rel="noopener">Official details</a><p class="disclaimer">Event details may change. Confirm final information with the official organizer or ticket provider before purchasing or traveling.</p></div></article></section>'
+        cancelled=not scheduled(e)
+        notice='<div class="empty-panel" role="status"><strong>Cancelled.</strong> The organizer’s official ticket page confirms this event is cancelled.</div>' if cancelled else ''
+        body=f'<section class="event-detail-section">{breadcrumbs(crumbs)}{notice}<article class="event-detail"><div class="event-detail-media"><img class="{cls}" src="{esc(img)}" alt="{esc(e.get("title"))}" width="1200" height="675"></div><div class="event-detail-copy"><p class="eyebrow">{esc("Cancelled event" if cancelled else ("Festival" if e.get("eventType")=="festival" else "Concert"))}</p><h1>{esc(e.get("title"))}</h1><p class="artist-line">{artist_links}</p><dl class="detail-list"><div><dt>Status</dt><dd>{"Cancelled" if cancelled else "Scheduled"}</dd></div><div><dt>Date</dt><dd>{esc(format_date(e))}</dd></div><div><dt>Venue</dt><dd>{esc(e.get("venue") or "Venue to be announced")}</dd></div><div><dt>Location</dt><dd>{esc(loc)}</dd></div><div><dt>Source</dt><dd>{esc(source_text(e))}</dd></div></dl><a class="primary-button" href="{esc(official)}" target="_blank" rel="noopener">Official details</a><p class="disclaimer">{"This URL is retained so visitors can confirm the cancellation with the organizer." if cancelled else "Event details may change. Confirm final information with the official organizer or ticket provider before purchasing or traveling."}</p></div></article></section>'
         write_page(p,page(f"{e.get('title')} - {loc} | The Kingdom Circuit",f"{names} live in {loc} on {format_date(e)}. Verified official show details.",p,body,[event_schema(e),breadcrumb_schema(crumbs)]))
 
     for a in (x for x in artists if x.get("enabled") is not False):
@@ -248,7 +259,7 @@ def main():
 
     (OUT/"seo-static.js").write_text('''"use strict";function setMenuOpen(o){const t=document.querySelector(".menu-toggle"),d=document.querySelector(".menu-drawer"),b=document.querySelector(".menu-backdrop");if(!t||!d||!b)return;t.setAttribute("aria-expanded",String(o));d.setAttribute("aria-hidden",String(!o));d.classList.toggle("open",o);b.hidden=!o;document.body.classList.toggle("menu-open",o)}document.querySelector(".menu-toggle")?.addEventListener("click",()=>setMenuOpen(document.querySelector(".menu-toggle")?.getAttribute("aria-expanded")!=="true"));document.querySelector(".menu-close")?.addEventListener("click",()=>setMenuOpen(false));document.querySelector(".menu-backdrop")?.addEventListener("click",()=>setMenuOpen(false));''',encoding="utf-8")
     unique=list(dict.fromkeys(urls)); xml=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']+[f'<url><loc>{esc(absolute(u))}</loc><lastmod>{TODAY.isoformat()}</lastmod></url>' for u in unique]+['</urlset>']; (OUT/"sitemap.xml").write_text("\n".join(xml)+"\n",encoding="utf-8"); (OUT/"robots.txt").write_text("User-agent: *\nAllow: /\nSitemap: https://kingdomcircuit.com/sitemap.xml\n",encoding="utf-8")
-    manifest={"generatedAt":dt.datetime.now(dt.timezone.utc).isoformat(),"mode":"production-indexable","events":len(events),"artists":len([a for a in artists if a.get("enabled") is not False]),"urls":len(unique),"eventPages":len(events),"artistPages":len([a for a in artists if a.get("enabled") is not False])}; (OUT/"seo-build-manifest.json").write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
+    manifest={"generatedAt":dt.datetime.now(dt.timezone.utc).isoformat(),"mode":"production-indexable","events":len(events),"artists":len([a for a in artists if a.get("enabled") is not False]),"urls":len(unique),"eventPages":len(retained),"artistPages":len([a for a in artists if a.get("enabled") is not False])}; (OUT/"seo-build-manifest.json").write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
     assert manifest["artists"]>=250 and manifest["events"]>=20 and manifest["urls"]>=400
     assert (OUT/"CNAME").read_text().strip()=="kingdomcircuit.com"
     print(json.dumps(manifest,indent=2))

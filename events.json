@@ -1741,7 +1741,7 @@
     "startDate": "2026-09-26",
     "startTime": "11:00",
     "timezone": "",
-    "venue": "565 Hale St",
+    "venue": "White County Fairgrounds",
     "address": "565 Hale Street",
     "city": "Sparta",
     "state": "TN",
@@ -1752,7 +1752,8 @@
       "ASAP Preach",
       "Nicky Gracious",
       "Steven Perez",
-      "B. Cody Shields"
+      "B. Cody Shields",
+      "Brother Bo"
     ],
     "headliner": "REDEEMED",
     "eventType": "festival",
@@ -1777,7 +1778,8 @@
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "auditVerified": "2026-09-12"
   },
   {
     "id": "manual:hvo-fest-2026-los-angeles",
@@ -2545,12 +2547,12 @@
     ],
     "headliner": "Rare of Breed",
     "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
-    "officialUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
+    "status": "cancelled",
+    "ticketUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
+    "officialUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
     "image": "assets/events/rare-of-breed-jacksonville-2026.jpg",
     "price": "",
-    "sourceName": "Official Eventbrite listing",
+    "sourceName": "Official Eventbrite cancellation notice",
     "sources": [
       {
         "name": "Official Eventbrite listing",
@@ -2558,6 +2560,13 @@
         "type": "manual_verified",
         "authority": "venue_ticket",
         "priority": 112
+      },
+      {
+        "name": "Official Eventbrite cancellation notice",
+        "url": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
+        "type": "eventbrite",
+        "authority": "venue_ticket",
+        "priority": 120
       }
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
@@ -2566,7 +2575,10 @@
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
-    "imageOverride": true
+    "imageOverride": true,
+    "cancellationConfirmed": true,
+    "cancellationConfirmedAt": "2026-09-12",
+    "notes": "Cancelled by the organizer. This page is retained as a cancellation notice."
   },
   {
     "id": "manual:egr-2026-10-16-fresno-ca",
