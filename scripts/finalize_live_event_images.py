@@ -25,6 +25,24 @@ STALE_IMAGE_URLS = {
 # Verified/known-good presentation images used only when an event otherwise has
 # generic artwork. Real event artwork is always preserved.
 IMAGE_CANDIDATES = {
+    "jay kalyl": [
+        "https://i.scdn.co/image/ab6761610000e5eb1269b80aed5d08c40aedfdc3",
+    ],
+    "mayia": [
+        "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
+    ],
+    "mission": [
+        "https://musiciansandmelody.com/wp-content/uploads/2017/04/mission-lhm.jpg",
+    ],
+    "alex zurdo": [
+        "https://i.scdn.co/image/ab6761610000e5eb2c81bb40c3b6962eacf9dc9c",
+    ],
+    "cj emulous": [
+        "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
+    ],
+    "miles minnick": [
+        "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
+    ],
     "indie tribe.": [
         "https://i.scdn.co/image/ab6761610000e5eb3d6de4e8ecd60713745d2b77",
     ],
