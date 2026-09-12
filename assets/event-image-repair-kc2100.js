@@ -60,9 +60,9 @@
       && src
       && !src.includes("event-fallback.webp")
       && !stale.has(src);
-    if (lockedPrimary || (explicitEventArtwork && !forcePrimary)) {
-      // Preserve verified primary images and purpose-built event artwork unless
-      // the artist has an explicit Kingdom Circuit primary-image override.
+    if (lockedPrimary || explicitEventArtwork) {
+      // Purpose-built event artwork always wins. Artist-primary overrides are
+      // only fallbacks when a show does not already have verified show art.
       img.onerror = () => { img.onerror = null; img.src = fallback; };
       return;
     }
