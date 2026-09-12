@@ -126,7 +126,10 @@
     ],
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true
+    "imageOverride": true,
+    "soldOut": true,
+    "ticketAvailability": "sold_out",
+    "notes": "Official ticket provider lists this event as sold out. Sold out is not a cancellation."
   },
   {
     "id": "ticketmaster:k7vGF_dl6_HDp",
@@ -2859,7 +2862,9 @@
     "performanceTime": "18:30",
     "mergedIds": [
       "supplemental:skema-boy-2026-11-01-new-york-ny"
-    ]
+    ],
+    "ageRestriction": "18+",
+    "notes": "Official venue listing specifies an 18+ age restriction."
   },
   {
     "id": "manual:808-beezy-bandsintown-108856031",

@@ -686,6 +686,9 @@
     "ticketUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
     "officialUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
     "image": "assets/events/truthx-yung-kriss-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
     "price": "",
     "sourceName": "Official Eventbrite listing",
     "authority": "venue_ticket",
@@ -700,9 +703,9 @@
         "priority": 94
       }
     ],
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true
+    "soldOut": true,
+    "ticketAvailability": "sold_out",
+    "notes": "Official ticket provider lists this event as sold out. Sold out is not a cancellation."
   },
   {
     "id": "egr-2026-09-18-carson-ca",
@@ -836,6 +839,9 @@
     "ticketUrl": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
     "officialUrl": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
     "image": "assets/events/hip-hop-in-the-park-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
     "price": "Free",
     "sourceName": "Official Eventbrite listing",
     "authority": "venue_ticket",
@@ -849,10 +855,7 @@
         "authority": "venue_ticket",
         "priority": 94
       }
-    ],
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true
+    ]
   },
   {
     "id": "eventbrite:gracefest-lecrae-castaic-2026",
@@ -874,6 +877,9 @@
     "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
     "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
     "image": "assets/events/gracefest-2026.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
     "price": "",
     "sourceName": "Official Eventbrite listing",
     "authority": "official_festival",
@@ -887,10 +893,7 @@
         "authority": "official_festival",
         "priority": 104
       }
-    ],
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true
+    ]
   },
   {
     "id": "caleb-gordon-eden-2026-09-20-san-antonio",
@@ -1454,6 +1457,9 @@
     "ticketUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
     "officialUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
     "image": "assets/events/reign-volume-one-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
     "price": "",
     "sourceName": "Official Eventbrite listing",
     "authority": "venue_ticket",
@@ -1467,10 +1473,7 @@
         "authority": "venue_ticket",
         "priority": 94
       }
-    ],
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true
+    ]
   },
   {
     "id": "passion-fest-ii-2026-charlotte",
@@ -1609,12 +1612,15 @@
     ],
     "headliner": "Rare of Breed",
     "eventType": "concert",
-    "status": "cancelled",
-    "ticketUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
-    "officialUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
+    "officialUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
     "image": "assets/events/rare-of-breed-jacksonville-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
     "price": "",
-    "sourceName": "Official Eventbrite cancellation notice",
+    "sourceName": "Official Eventbrite listing",
     "authority": "venue_ticket",
     "confidence": "high",
     "lineupExplicit": true,
@@ -1625,21 +1631,8 @@
         "type": "eventbrite",
         "authority": "venue_ticket",
         "priority": 94
-      },
-      {
-        "name": "Official Eventbrite cancellation notice",
-        "url": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
-        "type": "eventbrite",
-        "authority": "venue_ticket",
-        "priority": 120
       }
-    ],
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "cancellationConfirmed": true,
-    "cancellationConfirmedAt": "2026-09-12",
-    "notes": "Cancelled by the organizer. This page is retained as a cancellation notice."
+    ]
   },
   {
     "title": "MAYIA at the NC State Fair",
@@ -1840,7 +1833,7 @@
     "startTime": "19:00",
     "timezone": "America/New_York",
     "venue": "Crossover Church",
-    "address": "1235 E Fowler Ave",
+    "address": "1235 Fowler Ave",
     "city": "Tampa",
     "state": "FL",
     "country": "US",
@@ -1851,6 +1844,7 @@
     ],
     "headliner": "Miles Minnick",
     "eventType": "festival",
+    "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
     "image": "assets/events/flavor-fest-friday-2026.webp",
@@ -1858,10 +1852,10 @@
     "imagePosition": "center",
     "imageOverride": true,
     "price": "",
-    "status": "scheduled",
-    "lineupExplicit": true,
-    "authority": "official_event",
     "sourceName": "Flavor Fest official 2026 schedule",
+    "authority": "official_event",
+    "confidence": "high",
+    "lineupExplicit": true,
     "sources": [
       {
         "name": "Flavor Fest official 2026 schedule",
@@ -1870,8 +1864,7 @@
         "authority": "official_event",
         "priority": 112
       }
-    ],
-    "confidence": "high"
+    ]
   },
   {
     "title": "Flavor Fest 2026 — Saturday Concerts",

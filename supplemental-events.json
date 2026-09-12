@@ -190,6 +190,9 @@
     "ticketUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
     "officialUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
     "image": "assets/events/truthx-yung-kriss-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
     "price": "",
     "sourceName": "Official Eventbrite listing",
     "authority": "venue_ticket",
@@ -204,9 +207,9 @@
         "priority": 94
       }
     ],
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true
+    "soldOut": true,
+    "ticketAvailability": "sold_out",
+    "notes": "Official ticket provider lists this event as sold out. Sold out is not a cancellation."
   },
   {
     "id": "bandsintown:108847077",
@@ -288,44 +291,6 @@
     "imageOverride": true
   },
   {
-    "id": "eventbrite:gracefest-lecrae-castaic-2026",
-    "title": "GRACEFEST 2026",
-    "startDate": "2026-09-19",
-    "startTime": "13:30",
-    "timezone": "America/Los_Angeles",
-    "venue": "Castaic Lake State Recreation Area",
-    "address": "Castaic Lake Drive",
-    "city": "Castaic",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "Lecrae"
-    ],
-    "headliner": "Lecrae",
-    "eventType": "festival",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-    "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-    "image": "assets/events/gracefest-2026.png",
-    "price": "",
-    "sourceName": "Official Eventbrite listing",
-    "authority": "official_festival",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Official Eventbrite listing",
-        "url": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-        "type": "eventbrite",
-        "authority": "official_festival",
-        "priority": 104
-      }
-    ],
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true
-  },
-  {
     "id": "eventbrite:hip-hop-in-the-park-cortland-2026",
     "title": "Hip Hop in the Park",
     "startDate": "2026-09-19",
@@ -347,6 +312,9 @@
     "ticketUrl": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
     "officialUrl": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
     "image": "assets/events/hip-hop-in-the-park-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
     "price": "Free",
     "sourceName": "Official Eventbrite listing",
     "authority": "venue_ticket",
@@ -360,10 +328,45 @@
         "authority": "venue_ticket",
         "priority": 94
       }
+    ]
+  },
+  {
+    "id": "eventbrite:gracefest-lecrae-castaic-2026",
+    "title": "GRACEFEST 2026",
+    "startDate": "2026-09-19",
+    "startTime": "13:30",
+    "timezone": "America/Los_Angeles",
+    "venue": "Castaic Lake State Recreation Area",
+    "address": "Castaic Lake Drive",
+    "city": "Castaic",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Lecrae"
     ],
+    "headliner": "Lecrae",
+    "eventType": "festival",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+    "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+    "image": "assets/events/gracefest-2026.png",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true
+    "imageOverride": true,
+    "price": "",
+    "sourceName": "Official Eventbrite listing",
+    "authority": "official_festival",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+        "type": "eventbrite",
+        "authority": "official_festival",
+        "priority": 104
+      }
+    ]
   },
   {
     "id": "bandsintown:108847305",
@@ -519,7 +522,7 @@
     "headliner": "Sevin",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/1976535062579?aff=oddtdtcreator",
+    "ticketUrl": "",
     "officialUrl": "https://hogmob.com/sevin-live-concert/",
     "image": "assets/artists/sevin.webp",
     "price": "Donate what you can; VIP $110",
@@ -534,15 +537,10 @@
         "type": "manual_verified",
         "authority": "artist_calendar",
         "priority": 100
-      },
-      {
-        "name": "Official ticket link from HOG MOB",
-        "url": "https://www.eventbrite.com/e/1976535062579?aff=oddtdtcreator",
-        "type": "venue_ticket",
-        "authority": "venue_ticket",
-        "priority": 94
       }
-    ]
+    ],
+    "ticketAvailability": "needs_confirmation",
+    "notes": "HOG MOB confirms the show date; current ticket availability needs confirmation."
   },
   {
     "title": "Jay Kalyl — Desde Antes Tour",
@@ -879,6 +877,9 @@
     "ticketUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
     "officialUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
     "image": "assets/events/reign-volume-one-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
     "price": "",
     "sourceName": "Official Eventbrite listing",
     "authority": "venue_ticket",
@@ -892,10 +893,7 @@
         "authority": "venue_ticket",
         "priority": 94
       }
-    ],
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true
+    ]
   },
   {
     "id": "bandsintown:108773288",
@@ -997,12 +995,15 @@
     ],
     "headliner": "Rare of Breed",
     "eventType": "concert",
-    "status": "cancelled",
-    "ticketUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
-    "officialUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
+    "officialUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
     "image": "assets/events/rare-of-breed-jacksonville-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
     "price": "",
-    "sourceName": "Official Eventbrite cancellation notice",
+    "sourceName": "Official Eventbrite listing",
     "authority": "venue_ticket",
     "confidence": "high",
     "lineupExplicit": true,
@@ -1013,21 +1014,42 @@
         "type": "eventbrite",
         "authority": "venue_ticket",
         "priority": 94
-      },
-      {
-        "name": "Official Eventbrite cancellation notice",
-        "url": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
-        "type": "eventbrite",
-        "authority": "venue_ticket",
-        "priority": 120
       }
+    ]
+  },
+  {
+    "id": "supplemental:brenno-overflow-conference-2026",
+    "title": "Overflow Conference",
+    "startDate": "2026-10-17",
+    "startTime": "",
+    "venue": "Location TBD",
+    "address": "",
+    "city": "Buffalo",
+    "state": "NY",
+    "country": "US",
+    "artists": [
+      "Brenno"
     ],
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "cancellationConfirmed": true,
-    "cancellationConfirmedAt": "2026-09-12",
-    "notes": "Cancelled by the organizer. This page is retained as a cancellation notice."
+    "headliner": "Brenno",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.tickettailor.com/events/ablazemovement",
+    "officialUrl": "https://www.brennomusic.live/",
+    "image": "",
+    "price": "",
+    "sourceName": "Brenno official upcoming shows",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Brenno official upcoming shows",
+        "url": "https://www.brennomusic.live/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ]
   },
   {
     "title": "MAYIA at the NC State Fair",
@@ -1109,40 +1131,6 @@
     "imageOverride": true
   },
   {
-    "id": "supplemental:brenno-overflow-conference-2026",
-    "title": "Overflow Conference",
-    "startDate": "2026-10-17",
-    "startTime": "",
-    "venue": "Location TBD",
-    "address": "",
-    "city": "Buffalo",
-    "state": "NY",
-    "country": "US",
-    "artists": [
-      "Brenno"
-    ],
-    "headliner": "Brenno",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.tickettailor.com/events/ablazemovement",
-    "officialUrl": "https://www.brennomusic.live/",
-    "image": "",
-    "price": "",
-    "sourceName": "Brenno official upcoming shows",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Brenno official upcoming shows",
-        "url": "https://www.brennomusic.live/",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ]
-  },
-  {
     "title": "Alex Zurdo: Zona Zero",
     "startDate": "2026-10-18",
     "startTime": "18:00",
@@ -1180,6 +1168,29 @@
     "imageType": "artist",
     "imagePosition": "center",
     "imageOverride": true
+  },
+  {
+    "id": "mike-teezy-hrvstland-festival-2026",
+    "title": "HRVSTLAND Festival 2026",
+    "startDate": "2026-10-24",
+    "startTime": "",
+    "venue": "Steele Creek Church",
+    "address": "",
+    "city": "Charlotte",
+    "state": "NC",
+    "artists": [
+      "Mike Teezy"
+    ],
+    "headliner": "Mike Teezy",
+    "eventType": "festival",
+    "ticketUrl": "https://www.bandsintown.com/f/231374",
+    "officialUrl": "https://www.bandsintown.com/f/231374",
+    "image": "",
+    "price": "",
+    "status": "scheduled",
+    "lineupExplicit": true,
+    "authority": "artist_calendar",
+    "sourceName": "Mike Teezy verified Bandsintown / HRVSTLAND listing"
   },
   {
     "id": "bandsintown:108144023",
@@ -1220,29 +1231,6 @@
     "trackedArtist": "Ruslan"
   },
   {
-    "id": "mike-teezy-hrvstland-festival-2026",
-    "title": "HRVSTLAND Festival 2026",
-    "startDate": "2026-10-24",
-    "startTime": "",
-    "venue": "Steele Creek Church",
-    "address": "",
-    "city": "Charlotte",
-    "state": "NC",
-    "artists": [
-      "Mike Teezy"
-    ],
-    "headliner": "Mike Teezy",
-    "eventType": "festival",
-    "ticketUrl": "https://www.bandsintown.com/f/231374",
-    "officialUrl": "https://www.bandsintown.com/f/231374",
-    "image": "",
-    "price": "",
-    "status": "scheduled",
-    "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "sourceName": "Mike Teezy verified Bandsintown / HRVSTLAND listing"
-  },
-  {
     "id": "sevin-live-nashville-2026-10-24",
     "title": "Sevin Live Concert",
     "startDate": "2026-10-24",
@@ -1258,7 +1246,7 @@
     "headliner": "Sevin",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/1976535113732?aff=oddtdtcreator",
+    "ticketUrl": "",
     "officialUrl": "https://hogmob.com/sevin-live-concert/",
     "image": "assets/artists/sevin.webp",
     "price": "Donate what you can; VIP $110",
@@ -1273,13 +1261,45 @@
         "type": "manual_verified",
         "authority": "artist_calendar",
         "priority": 100
-      },
+      }
+    ],
+    "ticketAvailability": "needs_confirmation",
+    "notes": "HOG MOB confirms the show date; current ticket availability needs confirmation."
+  },
+  {
+    "id": "supplemental:tru-serva-truth-tour-las-cruces-2026",
+    "title": "The Truth Tour — Las Cruces",
+    "startDate": "2026-10-25",
+    "startTime": "",
+    "timezone": "America/Denver",
+    "venue": "Real Life Church",
+    "address": "",
+    "city": "Las Cruces",
+    "state": "NM",
+    "country": "US",
+    "artists": [
+      "TRU-SERVA"
+    ],
+    "headliner": "TRU-SERVA",
+    "eventType": "concert",
+    "status": "onsale",
+    "ticketUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
+    "officialUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebb5bd510760cb418516ded933",
+    "imageType": "artist_photo",
+    "imagePosition": "center",
+    "price": "$10",
+    "sourceName": "Megan Woods official tour announcement",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
       {
-        "name": "Official ticket link from HOG MOB",
-        "url": "https://www.eventbrite.com/e/1976535113732?aff=oddtdtcreator",
-        "type": "venue_ticket",
-        "authority": "venue_ticket",
-        "priority": 94
+        "name": "Megan Woods official tour announcement",
+        "url": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
       }
     ]
   },
@@ -1320,43 +1340,6 @@
     "bandsintownResolvedName": "RUSLAN",
     "bandsintownIdentity": "exact_name_or_alias",
     "trackedArtist": "Ruslan"
-  },
-  {
-    "id": "supplemental:tru-serva-truth-tour-las-cruces-2026",
-    "title": "The Truth Tour — Las Cruces",
-    "startDate": "2026-10-25",
-    "startTime": "",
-    "timezone": "America/Denver",
-    "venue": "Real Life Church",
-    "address": "",
-    "city": "Las Cruces",
-    "state": "NM",
-    "country": "US",
-    "artists": [
-      "TRU-SERVA"
-    ],
-    "headliner": "TRU-SERVA",
-    "eventType": "concert",
-    "status": "onsale",
-    "ticketUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
-    "officialUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
-    "image": "https://i.scdn.co/image/ab6761610000e5ebb5bd510760cb418516ded933",
-    "imageType": "artist_photo",
-    "imagePosition": "center",
-    "price": "$10",
-    "sourceName": "Megan Woods official tour announcement",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Megan Woods official tour announcement",
-        "url": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ]
   },
   {
     "id": "supplemental:skema-boy-2026-10-27-chicago-il",
@@ -1759,50 +1742,6 @@
     "imageOverride": true
   },
   {
-    "id": "supplemental:beyond-the-walls-3-brenno-2026",
-    "title": "Beyond The Walls 3",
-    "startDate": "2026-11-07",
-    "startTime": "19:30",
-    "timezone": "America/New_York",
-    "venue": "The Cambridge Room at House of Blues Cleveland",
-    "address": "308 Euclid Ave",
-    "city": "Cleveland",
-    "state": "OH",
-    "country": "US",
-    "artists": [
-      "KB",
-      "Brenno",
-      "Porsha Love"
-    ],
-    "headliner": "KB",
-    "eventType": "concert",
-    "status": "onsale",
-    "ticketUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
-    "officialUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
-    "image": "",
-    "price": "",
-    "sourceName": "Ticketmaster / Brenno official upcoming shows",
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Ticketmaster",
-        "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 100
-      },
-      {
-        "name": "Brenno official upcoming shows",
-        "url": "https://www.brennomusic.live/",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ]
-  },
-  {
     "title": "Flavor Fest 2026 — Saturday Concerts",
     "startDate": "2026-11-07",
     "startTime": "19:00",
@@ -1851,6 +1790,50 @@
     ],
     "notes": "Yung Kriss and Gifted Hands have conflicting poster/schedule day assignments and are not newly associated here pending resolution.",
     "id": "flavor-fest-2026-saturday-concerts"
+  },
+  {
+    "id": "supplemental:beyond-the-walls-3-brenno-2026",
+    "title": "Beyond The Walls 3",
+    "startDate": "2026-11-07",
+    "startTime": "19:30",
+    "timezone": "America/New_York",
+    "venue": "The Cambridge Room at House of Blues Cleveland",
+    "address": "308 Euclid Ave",
+    "city": "Cleveland",
+    "state": "OH",
+    "country": "US",
+    "artists": [
+      "KB",
+      "Brenno",
+      "Porsha Love"
+    ],
+    "headliner": "KB",
+    "eventType": "concert",
+    "status": "onsale",
+    "ticketUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+    "officialUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+    "image": "",
+    "price": "",
+    "sourceName": "Ticketmaster / Brenno official upcoming shows",
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Ticketmaster",
+        "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
+      },
+      {
+        "name": "Brenno official upcoming shows",
+        "url": "https://www.brennomusic.live/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ]
   },
   {
     "id": "supplemental:skema-boy-2026-11-08-atlanta-ga",
@@ -2193,7 +2176,7 @@
     "headliner": "Sevin",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/1976534090672?aff=oddtdtcreator",
+    "ticketUrl": "",
     "officialUrl": "https://hogmob.com/sevin-live-concert/",
     "image": "assets/artists/sevin.webp",
     "price": "Donate what you can; VIP $110",
@@ -2208,15 +2191,10 @@
         "type": "manual_verified",
         "authority": "artist_calendar",
         "priority": 100
-      },
-      {
-        "name": "Official ticket link from HOG MOB",
-        "url": "https://www.eventbrite.com/e/1976534090672?aff=oddtdtcreator",
-        "type": "venue_ticket",
-        "authority": "venue_ticket",
-        "priority": 94
       }
-    ]
+    ],
+    "ticketAvailability": "needs_confirmation",
+    "notes": "HOG MOB confirms the show date; current ticket availability needs confirmation."
   },
   {
     "id": "supplemental:skema-boy-2026-11-21-denver-co",
@@ -2321,7 +2299,7 @@
     "headliner": "Sevin",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/1976538907078?aff=oddtdtcreator",
+    "ticketUrl": "",
     "officialUrl": "https://hogmob.com/sevin-live-concert/",
     "image": "assets/artists/sevin.webp",
     "price": "Donate what you can; VIP $110",
@@ -2336,15 +2314,10 @@
         "type": "manual_verified",
         "authority": "artist_calendar",
         "priority": 100
-      },
-      {
-        "name": "Official ticket link from HOG MOB",
-        "url": "https://www.eventbrite.com/e/1976538907078?aff=oddtdtcreator",
-        "type": "venue_ticket",
-        "authority": "venue_ticket",
-        "priority": 94
       }
-    ]
+    ],
+    "ticketAvailability": "needs_confirmation",
+    "notes": "HOG MOB confirms the show date; current ticket availability needs confirmation."
   },
   {
     "id": "bandsintown:1037809090",
