@@ -1,0 +1,123 @@
+{
+  "runId": "34713713829",
+  "checks": [
+    {
+      "name": "desktop events render",
+      "status": "pass",
+      "detail": "cards=118"
+    },
+    {
+      "name": "desktop artist dropdown populated",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "desktop state dropdown populated",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "desktop Hulvey search works",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "desktop clear filters restores calendar",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "desktop navigation opens",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "desktop navigation closes cleanly",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "desktop festival filter works",
+      "status": "pass",
+      "detail": "visible=11, types=['festival']"
+    },
+    {
+      "name": "desktop festivals renders",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "desktop artists renders",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "desktop artist profile renders",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Android emulation uses 390px viewport",
+      "status": "pass",
+      "detail": "{'body': 390, 'doc': 390, 'inner': 390}"
+    },
+    {
+      "name": "Android has no horizontal overflow",
+      "status": "pass",
+      "detail": "{'body': 390, 'doc': 390, 'inner': 390}"
+    },
+    {
+      "name": "Android event card fits viewport",
+      "status": "pass",
+      "detail": "{'left': 16, 'right': 374, 'width': 358}"
+    },
+    {
+      "name": "Android navigation opens",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Android navigation closes",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Android festivals renders",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Android artists renders",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "Android artist profile renders",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "360px viewport width applied",
+      "status": "pass",
+      "detail": "{'body': 360, 'doc': 360, 'inner': 360}"
+    },
+    {
+      "name": "360px has no horizontal overflow",
+      "status": "pass",
+      "detail": "{'body': 360, 'doc': 360, 'inner': 360}"
+    },
+    {
+      "name": "768px viewport width applied",
+      "status": "pass",
+      "detail": "{'body': 768, 'doc': 768, 'inner': 768}"
+    },
+    {
+      "name": "768px has no horizontal overflow",
+      "status": "pass",
+      "detail": "{'body': 768, 'doc': 768, 'inner': 768}"
+    }
+  ],
+  "passed": 23,
+  "failed": 0,
+  "overall": "pass"
+}
