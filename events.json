@@ -53,44 +53,6 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "manual:egr-2026-09-12-corpus-christi-tx",
-    "title": "EGR Live — Corpus Christi",
-    "startDate": "2026-09-12",
-    "startTime": "",
-    "timezone": "",
-    "venue": "Juvenile Detention Center",
-    "address": "",
-    "city": "Corpus Christi",
-    "state": "TX",
-    "country": "US",
-    "artists": [
-      "EGR"
-    ],
-    "headliner": "EGR",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "assets/artists/egr.webp",
-    "price": "",
-    "sourceName": "EGR official Instagram schedule",
-    "sources": [
-      {
-        "name": "EGR official Instagram schedule",
-        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 38%",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
     "id": "manual:eventbrite:truthx-yung-kriss-brandon-2026",
     "title": "TruthX Concert 2026",
     "startDate": "2026-09-12",
@@ -128,6 +90,44 @@
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
     "imageOverride": true
+  },
+  {
+    "id": "manual:egr-2026-09-12-corpus-christi-tx",
+    "title": "EGR Live — Corpus Christi",
+    "startDate": "2026-09-12",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Juvenile Detention Center",
+    "address": "",
+    "city": "Corpus Christi",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
     "id": "ticketmaster:k7vGF_dl6_HDp",
@@ -276,42 +276,232 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "manual:egr-2026-09-18-carson-ca",
-    "title": "EGR Live — Carson",
-    "startDate": "2026-09-18",
-    "startTime": "",
+    "id": "manual:808-beezy-bandsintown-108879559",
+    "title": "808 BEEZY — Live at RWG TOUR 2026",
+    "startDate": "2026-09-16",
+    "startTime": "09:00",
     "timezone": "",
-    "venue": "Victory Outreach",
+    "venue": "RWG TOUR 2026",
     "address": "",
-    "city": "Carson",
-    "state": "CA",
+    "city": "Desloge",
+    "state": "MO",
     "country": "US",
     "artists": [
-      "EGR"
+      "808 BEEZY"
     ],
-    "headliner": "EGR",
+    "headliner": "808 BEEZY",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "assets/artists/egr.webp",
+    "ticketUrl": "https://www.bandsintown.com/e/108879559",
+    "officialUrl": "https://www.bandsintown.com/e/108879559",
+    "image": "assets/event-fallback.webp",
     "price": "",
-    "sourceName": "EGR official Instagram schedule",
+    "sourceName": "808 BEEZY official tour / Bandsintown",
     "sources": [
       {
-        "name": "EGR official Instagram schedule",
-        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "name": "808 BEEZY official tour / Bandsintown",
+        "url": "https://www.bandsintown.com/e/108879559",
         "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
+        "authority": "artist_calendar",
+        "priority": 76
       }
     ],
-    "lastVerified": "2026-09-12T14:12:12Z",
+    "lastVerified": "2026-09-12T14:30:41Z",
     "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 38%",
+    "imageType": "fallback",
+    "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-09-12T14:30:41Z"
+  },
+  {
+    "id": "manual:808-beezy-bandsintown-108879547",
+    "title": "808 BEEZY — Live at RWG TOUR 2026",
+    "startDate": "2026-09-16",
+    "startTime": "14:10",
+    "timezone": "",
+    "venue": "RWG TOUR 2026",
+    "address": "",
+    "city": "Bowling Green",
+    "state": "MO",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108879547",
+    "officialUrl": "https://www.bandsintown.com/e/108879547",
+    "image": "assets/event-fallback.webp",
+    "price": "",
+    "sourceName": "808 BEEZY official tour / Bandsintown",
+    "sources": [
+      {
+        "name": "808 BEEZY official tour / Bandsintown",
+        "url": "https://www.bandsintown.com/e/108879547",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 76
+      }
+    ],
+    "lastVerified": "2026-09-12T14:30:41Z",
+    "confidence": "high",
+    "imageType": "fallback",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-09-12T14:30:41Z"
+  },
+  {
+    "id": "manual:808-beezy-bandsintown-108790395",
+    "title": "808 BEEZY — Live at RWG TOUR 2026",
+    "startDate": "2026-09-17",
+    "startTime": "08:15",
+    "timezone": "",
+    "venue": "RWG TOUR 2026",
+    "address": "",
+    "city": "Bunker Hill",
+    "state": "IL",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108790395",
+    "officialUrl": "https://www.bandsintown.com/e/108790395",
+    "image": "assets/event-fallback.webp",
+    "price": "",
+    "sourceName": "808 BEEZY official tour / Bandsintown",
+    "sources": [
+      {
+        "name": "808 BEEZY official tour / Bandsintown",
+        "url": "https://www.bandsintown.com/e/108790395",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 76
+      }
+    ],
+    "lastVerified": "2026-09-12T14:30:41Z",
+    "confidence": "high",
+    "imageType": "fallback",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-09-12T14:30:41Z"
+  },
+  {
+    "id": "manual:808-beezy-bandsintown-108772401",
+    "title": "808 BEEZY — Live at RWG TOUR 2026",
+    "startDate": "2026-09-17",
+    "startTime": "13:35",
+    "timezone": "",
+    "venue": "RWG TOUR 2026",
+    "address": "",
+    "city": "Mulberry Grove",
+    "state": "IL",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108772401",
+    "officialUrl": "https://www.bandsintown.com/e/108772401",
+    "image": "assets/event-fallback.webp",
+    "price": "",
+    "sourceName": "808 BEEZY official tour / Bandsintown",
+    "sources": [
+      {
+        "name": "808 BEEZY official tour / Bandsintown",
+        "url": "https://www.bandsintown.com/e/108772401",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 76
+      }
+    ],
+    "lastVerified": "2026-09-12T14:30:41Z",
+    "confidence": "high",
+    "imageType": "fallback",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-09-12T14:30:41Z"
+  },
+  {
+    "id": "manual:808-beezy-bandsintown-108772413",
+    "title": "808 BEEZY — Live at RWG TOUR 2026",
+    "startDate": "2026-09-18",
+    "startTime": "08:45",
+    "timezone": "",
+    "venue": "RWG TOUR 2026",
+    "address": "",
+    "city": "Dola",
+    "state": "OH",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108772413",
+    "officialUrl": "https://www.bandsintown.com/e/108772413",
+    "image": "assets/event-fallback.webp",
+    "price": "",
+    "sourceName": "808 BEEZY official tour / Bandsintown",
+    "sources": [
+      {
+        "name": "808 BEEZY official tour / Bandsintown",
+        "url": "https://www.bandsintown.com/e/108772413",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 76
+      }
+    ],
+    "lastVerified": "2026-09-12T14:30:41Z",
+    "confidence": "high",
+    "imageType": "fallback",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-09-12T14:30:41Z"
+  },
+  {
+    "id": "manual:808-beezy-bandsintown-108772434",
+    "title": "808 BEEZY — Live at RWG TOUR 2026",
+    "startDate": "2026-09-18",
+    "startTime": "09:45",
+    "timezone": "",
+    "venue": "RWG TOUR 2026",
+    "address": "",
+    "city": "Dola",
+    "state": "OH",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108772434",
+    "officialUrl": "https://www.bandsintown.com/e/108772434",
+    "image": "assets/event-fallback.webp",
+    "price": "",
+    "sourceName": "808 BEEZY official tour / Bandsintown",
+    "sources": [
+      {
+        "name": "808 BEEZY official tour / Bandsintown",
+        "url": "https://www.bandsintown.com/e/108772434",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 76
+      }
+    ],
+    "lastVerified": "2026-09-12T14:30:41Z",
+    "confidence": "high",
+    "imageType": "fallback",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-09-12T14:30:41Z"
   },
   {
     "id": "official:cfd29f658249c76cd8e2",
@@ -438,52 +628,14 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "official:64bbcd477c3a36104df3",
-    "title": "Anike — Live at Queens Theatre",
-    "startDate": "2026-09-19",
+    "id": "manual:egr-2026-09-18-carson-ca",
+    "title": "EGR Live — Carson",
+    "startDate": "2026-09-18",
     "startTime": "",
     "timezone": "",
-    "venue": "Queens Theatre",
+    "venue": "Victory Outreach",
     "address": "",
-    "city": "Corona",
-    "state": "NY",
-    "country": "US",
-    "artists": [
-      "Anike"
-    ],
-    "headliner": "Anike",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/1039205172?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.reachrecords.com/artists/wande/",
-    "image": "https://s1.ticketm.net/dam/a/ab5/019b80d9-ebcf-40a7-9233-a35e76204ab5_SOURCE",
-    "price": "",
-    "sourceName": "Reach Records - Anike",
-    "sources": [
-      {
-        "name": "Reach Records - Anike",
-        "url": "https://www.reachrecords.com/artists/wande/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 86
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 30%",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-15T20:23:53Z"
-  },
-  {
-    "id": "manual:egr-2026-09-19-manteca-ca",
-    "title": "EGR Live — Manteca",
-    "startDate": "2026-09-19",
-    "startTime": "",
-    "timezone": "",
-    "venue": "Show & Shine",
-    "address": "",
-    "city": "Manteca",
+    "city": "Carson",
     "state": "CA",
     "country": "US",
     "artists": [
@@ -696,6 +848,127 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
+    "id": "official:64bbcd477c3a36104df3",
+    "title": "Anike — Live at Queens Theatre",
+    "startDate": "2026-09-19",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Queens Theatre",
+    "address": "",
+    "city": "Corona",
+    "state": "NY",
+    "country": "US",
+    "artists": [
+      "Anike"
+    ],
+    "headliner": "Anike",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/1039205172?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.reachrecords.com/artists/wande/",
+    "image": "https://s1.ticketm.net/dam/a/ab5/019b80d9-ebcf-40a7-9233-a35e76204ab5_SOURCE",
+    "price": "",
+    "sourceName": "Reach Records - Anike",
+    "sources": [
+      {
+        "name": "Reach Records - Anike",
+        "url": "https://www.reachrecords.com/artists/wande/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-15T20:23:53Z"
+  },
+  {
+    "id": "manual:egr-2026-09-19-manteca-ca",
+    "title": "EGR Live — Manteca",
+    "startDate": "2026-09-19",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Show & Shine",
+    "address": "",
+    "city": "Manteca",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:cfa71e64850aa1fa9f39",
+    "title": "Caleb Gordon — The Eden Experience",
+    "startDate": "2026-09-20",
+    "startTime": "19:00",
+    "timezone": "",
+    "venue": "Cross Mountain Church",
+    "address": "",
+    "city": "San Antonio",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Caleb Gordon"
+    ],
+    "headliner": "Caleb Gordon",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketweb.com/event/caleb-gordon-the-eden-experience-cross-mountain-church-tickets/14866193?pl=TPR",
+    "officialUrl": "https://tprlive.co/products/caleb-gordon-the-eden-experience-san-antonio-tx-september-20-2026",
+    "image": "assets/events/caleb-gordon-eden-experience.webp",
+    "price": "",
+    "sourceName": "TPR official Eden Experience tour",
+    "sources": [
+      {
+        "name": "TPR official Eden Experience tour",
+        "url": "https://tprlive.co/products/caleb-gordon-the-eden-experience-san-antonio-tx-september-20-2026",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "TPR - Caleb Gordon Eden Experience",
+        "url": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+        "type": "tpr",
+        "authority": "promoter",
+        "priority": 90
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
     "id": "official:8cf69c5c610dae61d590",
     "title": "Hulvey — Live at First Ave",
     "startDate": "2026-09-20",
@@ -744,49 +1017,194 @@
     "lineupExplicit": true
   },
   {
-    "id": "official:cfa71e64850aa1fa9f39",
-    "title": "Caleb Gordon — The Eden Experience",
-    "startDate": "2026-09-20",
-    "startTime": "19:00",
+    "id": "manual:808-beezy-bandsintown-108772449",
+    "title": "808 BEEZY — Live at RWG TOUR 2026",
+    "startDate": "2026-09-21",
+    "startTime": "09:35",
     "timezone": "",
-    "venue": "Cross Mountain Church",
+    "venue": "RWG TOUR 2026",
     "address": "",
-    "city": "San Antonio",
-    "state": "TX",
+    "city": "Dunlap",
+    "state": "IL",
     "country": "US",
     "artists": [
-      "Caleb Gordon"
+      "808 BEEZY"
     ],
-    "headliner": "Caleb Gordon",
+    "headliner": "808 BEEZY",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.ticketweb.com/event/caleb-gordon-the-eden-experience-cross-mountain-church-tickets/14866193?pl=TPR",
-    "officialUrl": "https://tprlive.co/products/caleb-gordon-the-eden-experience-san-antonio-tx-september-20-2026",
-    "image": "assets/events/caleb-gordon-eden-experience.webp",
+    "ticketUrl": "https://www.bandsintown.com/e/108772449",
+    "officialUrl": "https://www.bandsintown.com/e/108772449",
+    "image": "assets/event-fallback.webp",
     "price": "",
-    "sourceName": "TPR official Eden Experience tour",
+    "sourceName": "808 BEEZY official tour / Bandsintown",
     "sources": [
       {
-        "name": "TPR official Eden Experience tour",
-        "url": "https://tprlive.co/products/caleb-gordon-the-eden-experience-san-antonio-tx-september-20-2026",
+        "name": "808 BEEZY official tour / Bandsintown",
+        "url": "https://www.bandsintown.com/e/108772449",
         "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      },
-      {
-        "name": "TPR - Caleb Gordon Eden Experience",
-        "url": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
-        "type": "tpr",
-        "authority": "promoter",
-        "priority": 90
+        "authority": "artist_calendar",
+        "priority": 76
       }
     ],
-    "lastVerified": "2026-09-12T14:12:12Z",
+    "lastVerified": "2026-09-12T14:30:41Z",
     "confidence": "high",
-    "imageType": "event_artwork",
+    "imageType": "fallback",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-09-12T14:30:41Z"
+  },
+  {
+    "id": "manual:808-beezy-bandsintown-108772465",
+    "title": "808 BEEZY — Live at RWG TOUR 2026",
+    "startDate": "2026-09-21",
+    "startTime": "14:00",
+    "timezone": "",
+    "venue": "RWG TOUR 2026",
+    "address": "",
+    "city": "Granville",
+    "state": "IL",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108772465",
+    "officialUrl": "https://www.bandsintown.com/e/108772465",
+    "image": "assets/event-fallback.webp",
+    "price": "",
+    "sourceName": "808 BEEZY official tour / Bandsintown",
+    "sources": [
+      {
+        "name": "808 BEEZY official tour / Bandsintown",
+        "url": "https://www.bandsintown.com/e/108772465",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 76
+      }
+    ],
+    "lastVerified": "2026-09-12T14:30:41Z",
+    "confidence": "high",
+    "imageType": "fallback",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-09-12T14:30:41Z"
+  },
+  {
+    "id": "manual:808-beezy-bandsintown-108772493",
+    "title": "808 BEEZY — Live at RWG TOUR 2026",
+    "startDate": "2026-09-22",
+    "startTime": "08:20",
+    "timezone": "",
+    "venue": "RWG TOUR 2026",
+    "address": "",
+    "city": "Ohio",
+    "state": "IL",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108772493",
+    "officialUrl": "https://www.bandsintown.com/e/108772493",
+    "image": "assets/event-fallback.webp",
+    "price": "",
+    "sourceName": "808 BEEZY official tour / Bandsintown",
+    "sources": [
+      {
+        "name": "808 BEEZY official tour / Bandsintown",
+        "url": "https://www.bandsintown.com/e/108772493",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 76
+      }
+    ],
+    "lastVerified": "2026-09-12T14:30:41Z",
+    "confidence": "high",
+    "imageType": "fallback",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-09-12T14:30:41Z"
+  },
+  {
+    "id": "manual:808-beezy-bandsintown-108772501",
+    "title": "808 BEEZY — Live at RWG TOUR 2026",
+    "startDate": "2026-09-22",
+    "startTime": "10:53",
+    "timezone": "",
+    "venue": "RWG TOUR 2026",
+    "address": "",
+    "city": "Ohio",
+    "state": "IL",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108772501",
+    "officialUrl": "https://www.bandsintown.com/e/108772501",
+    "image": "assets/event-fallback.webp",
+    "price": "",
+    "sourceName": "808 BEEZY official tour / Bandsintown",
+    "sources": [
+      {
+        "name": "808 BEEZY official tour / Bandsintown",
+        "url": "https://www.bandsintown.com/e/108772501",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 76
+      }
+    ],
+    "lastVerified": "2026-09-12T14:30:41Z",
+    "confidence": "high",
+    "imageType": "fallback",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-09-12T14:30:41Z"
+  },
+  {
+    "id": "manual:808-beezy-bandsintown-108772738",
+    "title": "808 BEEZY — Live at RWG TOUR 2026",
+    "startDate": "2026-09-22",
+    "startTime": "17:00",
+    "timezone": "",
+    "venue": "RWG TOUR 2026",
+    "address": "",
+    "city": "Princeton",
+    "state": "IL",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108772738",
+    "officialUrl": "https://www.bandsintown.com/e/108772738",
+    "image": "assets/event-fallback.webp",
+    "price": "",
+    "sourceName": "808 BEEZY official tour / Bandsintown",
+    "sources": [
+      {
+        "name": "808 BEEZY official tour / Bandsintown",
+        "url": "https://www.bandsintown.com/e/108772738",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 76
+      }
+    ],
+    "lastVerified": "2026-09-12T14:30:41Z",
+    "confidence": "high",
+    "imageType": "fallback",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-09-12T14:30:41Z"
   },
   {
     "id": "manual:caleb-gordon-eden-2026-09-22-leander",
@@ -873,6 +1291,120 @@
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
     "lineupExplicit": true
+  },
+  {
+    "id": "manual:808-beezy-bandsintown-108772620",
+    "title": "808 BEEZY — Live at RWG TOUR 2026",
+    "startDate": "2026-09-23",
+    "startTime": "09:00",
+    "timezone": "",
+    "venue": "RWG TOUR 2026",
+    "address": "",
+    "city": "Elwood",
+    "state": "IL",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108772620",
+    "officialUrl": "https://www.bandsintown.com/e/108772620",
+    "image": "assets/event-fallback.webp",
+    "price": "",
+    "sourceName": "808 BEEZY official tour / Bandsintown",
+    "sources": [
+      {
+        "name": "808 BEEZY official tour / Bandsintown",
+        "url": "https://www.bandsintown.com/e/108772620",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 76
+      }
+    ],
+    "lastVerified": "2026-09-12T14:30:41Z",
+    "confidence": "high",
+    "imageType": "fallback",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-09-12T14:30:41Z"
+  },
+  {
+    "id": "manual:808-beezy-bandsintown-108772638",
+    "title": "808 BEEZY — Live at RWG TOUR 2026",
+    "startDate": "2026-09-23",
+    "startTime": "13:00",
+    "timezone": "",
+    "venue": "RWG TOUR 2026",
+    "address": "",
+    "city": "Mokena",
+    "state": "IL",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108772638",
+    "officialUrl": "https://www.bandsintown.com/e/108772638",
+    "image": "assets/event-fallback.webp",
+    "price": "",
+    "sourceName": "808 BEEZY official tour / Bandsintown",
+    "sources": [
+      {
+        "name": "808 BEEZY official tour / Bandsintown",
+        "url": "https://www.bandsintown.com/e/108772638",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 76
+      }
+    ],
+    "lastVerified": "2026-09-12T14:30:41Z",
+    "confidence": "high",
+    "imageType": "fallback",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-09-12T14:30:41Z"
+  },
+  {
+    "id": "manual:cj-emulous-syatp-sierra-vista-2026",
+    "title": "SYATP Concert",
+    "startDate": "2026-09-23",
+    "startTime": "19:00",
+    "timezone": "",
+    "venue": "Shiloh Christian Ministries",
+    "address": "1519 S Ave Del Sol",
+    "city": "Sierra Vista",
+    "state": "AZ",
+    "country": "US",
+    "artists": [
+      "CJ Emulous"
+    ],
+    "headliner": "CJ Emulous",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.cjemulous.com/event-details/syatp-concert-w-cj-emulous",
+    "officialUrl": "https://www.cjemulous.com/event-details/syatp-concert-w-cj-emulous",
+    "image": "https://static.wixstatic.com/media/9c331a_e63115b208054353a76258a4897ad76c~mv2.jpeg/v1/fill/w_980%2Ch_653%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_auto/9c331a_e63115b208054353a76258a4897ad76c~mv2.jpeg",
+    "price": "",
+    "sourceName": "CJ Emulous official calendar",
+    "sources": [
+      {
+        "name": "CJ Emulous official calendar",
+        "url": "https://www.cjemulous.com/event-details/syatp-concert-w-cj-emulous",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
     "id": "official:9f793162ae1bb3cab7f3",
@@ -967,42 +1499,80 @@
     ]
   },
   {
-    "id": "manual:cj-emulous-syatp-sierra-vista-2026",
-    "title": "SYATP Concert",
-    "startDate": "2026-09-23",
-    "startTime": "19:00",
+    "id": "manual:808-beezy-bandsintown-108772712",
+    "title": "808 BEEZY — Live at RWG TOUR 2026",
+    "startDate": "2026-09-24",
+    "startTime": "11:00",
     "timezone": "",
-    "venue": "Shiloh Christian Ministries",
-    "address": "1519 S Ave Del Sol",
-    "city": "Sierra Vista",
-    "state": "AZ",
+    "venue": "RWG TOUR 2026",
+    "address": "",
+    "city": "Hume",
+    "state": "IL",
     "country": "US",
     "artists": [
-      "CJ Emulous"
+      "808 BEEZY"
     ],
-    "headliner": "CJ Emulous",
+    "headliner": "808 BEEZY",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.cjemulous.com/event-details/syatp-concert-w-cj-emulous",
-    "officialUrl": "https://www.cjemulous.com/event-details/syatp-concert-w-cj-emulous",
-    "image": "https://static.wixstatic.com/media/9c331a_e63115b208054353a76258a4897ad76c~mv2.jpeg/v1/fill/w_980%2Ch_653%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_auto/9c331a_e63115b208054353a76258a4897ad76c~mv2.jpeg",
+    "ticketUrl": "https://www.bandsintown.com/e/108772712",
+    "officialUrl": "https://www.bandsintown.com/e/108772712",
+    "image": "assets/event-fallback.webp",
     "price": "",
-    "sourceName": "CJ Emulous official calendar",
+    "sourceName": "808 BEEZY official tour / Bandsintown",
     "sources": [
       {
-        "name": "CJ Emulous official calendar",
-        "url": "https://www.cjemulous.com/event-details/syatp-concert-w-cj-emulous",
+        "name": "808 BEEZY official tour / Bandsintown",
+        "url": "https://www.bandsintown.com/e/108772712",
         "type": "manual_verified",
         "authority": "artist_calendar",
-        "priority": 112
+        "priority": 76
       }
     ],
-    "lastVerified": "2026-09-12T14:12:12Z",
+    "lastVerified": "2026-09-12T14:30:41Z",
     "confidence": "high",
-    "imageType": "event_artwork",
+    "imageType": "fallback",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-09-12T14:30:41Z"
+  },
+  {
+    "id": "manual:808-beezy-bandsintown-108790433",
+    "title": "808 BEEZY — Live at RWG TOUR 2026",
+    "startDate": "2026-09-24",
+    "startTime": "14:00",
+    "timezone": "",
+    "venue": "RWG TOUR 2026",
+    "address": "",
+    "city": "Kansas",
+    "state": "IL",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108790433",
+    "officialUrl": "https://www.bandsintown.com/e/108790433",
+    "image": "assets/event-fallback.webp",
+    "price": "",
+    "sourceName": "808 BEEZY official tour / Bandsintown",
+    "sources": [
+      {
+        "name": "808 BEEZY official tour / Bandsintown",
+        "url": "https://www.bandsintown.com/e/108790433",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 76
+      }
+    ],
+    "lastVerified": "2026-09-12T14:30:41Z",
+    "confidence": "high",
+    "imageType": "fallback",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-09-12T14:30:41Z"
   },
   {
     "id": "manual:caleb-gordon-eden-2026-09-24-richmond",
@@ -1041,6 +1611,44 @@
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:808-beezy-bandsintown-108772751",
+    "title": "808 BEEZY — Live at RWG TOUR 2026",
+    "startDate": "2026-09-25",
+    "startTime": "08:45",
+    "timezone": "",
+    "venue": "RWG TOUR 2026",
+    "address": "",
+    "city": "Wellington",
+    "state": "MO",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108772751",
+    "officialUrl": "https://www.bandsintown.com/e/108772751",
+    "image": "assets/event-fallback.webp",
+    "price": "",
+    "sourceName": "808 BEEZY official tour / Bandsintown",
+    "sources": [
+      {
+        "name": "808 BEEZY official tour / Bandsintown",
+        "url": "https://www.bandsintown.com/e/108772751",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 76
+      }
+    ],
+    "lastVerified": "2026-09-12T14:30:41Z",
+    "confidence": "high",
+    "imageType": "fallback",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-09-12T14:30:41Z"
   },
   {
     "id": "official:4f72402532a6edb7c4ba",
@@ -1126,89 +1734,6 @@
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-09-07T16:11:58Z"
-  },
-  {
-    "id": "official:ea0342f4771e9f9f1dfc",
-    "title": "1K Phew — Live at Fastivalle 2026",
-    "startDate": "2026-09-26",
-    "startTime": "",
-    "timezone": "",
-    "venue": "Fastivalle 2026",
-    "address": "",
-    "city": "Indianapolis",
-    "state": "IN",
-    "country": "US",
-    "artists": [
-      "1K Phew"
-    ],
-    "headliner": "1K Phew",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108395515?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.reachrecords.com/artists/1k-phew/",
-    "image": "assets/artists/1k-phew.webp",
-    "price": "",
-    "sourceName": "Reach Records - 1K Phew",
-    "sources": [
-      {
-        "name": "Reach Records - 1K Phew",
-        "url": "https://www.reachrecords.com/artists/1k-phew/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 86
-      },
-      {
-        "name": "Reach Records consolidated calendar",
-        "url": "https://www.reachrecords.com/events/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 84
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 24%",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-15T11:53:29Z"
-  },
-  {
-    "id": "manual:egr-2026-09-26-whittier-ca",
-    "title": "EGR Live — Whittier",
-    "startDate": "2026-09-26",
-    "startTime": "",
-    "timezone": "",
-    "venue": "Revolution Friends Church",
-    "address": "",
-    "city": "Whittier",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "EGR"
-    ],
-    "headliner": "EGR",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "assets/artists/egr.webp",
-    "price": "",
-    "sourceName": "EGR official Instagram schedule",
-    "sources": [
-      {
-        "name": "EGR official Instagram schedule",
-        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 38%",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
     "id": "official:95cc80c13713dfecaf6d",
@@ -1390,6 +1915,89 @@
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "official:ea0342f4771e9f9f1dfc",
+    "title": "1K Phew — Live at Fastivalle 2026",
+    "startDate": "2026-09-26",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Fastivalle 2026",
+    "address": "",
+    "city": "Indianapolis",
+    "state": "IN",
+    "country": "US",
+    "artists": [
+      "1K Phew"
+    ],
+    "headliner": "1K Phew",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108395515?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.reachrecords.com/artists/1k-phew/",
+    "image": "assets/artists/1k-phew.webp",
+    "price": "",
+    "sourceName": "Reach Records - 1K Phew",
+    "sources": [
+      {
+        "name": "Reach Records - 1K Phew",
+        "url": "https://www.reachrecords.com/artists/1k-phew/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 24%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-15T11:53:29Z"
+  },
+  {
+    "id": "manual:egr-2026-09-26-whittier-ca",
+    "title": "EGR Live — Whittier",
+    "startDate": "2026-09-26",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Revolution Friends Church",
+    "address": "",
+    "city": "Whittier",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
@@ -1682,44 +2290,6 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "manual:egr-2026-10-10-visalia-ca",
-    "title": "EGR Live — Visalia",
-    "startDate": "2026-10-10",
-    "startTime": "",
-    "timezone": "",
-    "venue": "Back to the Basics",
-    "address": "",
-    "city": "Visalia",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "EGR"
-    ],
-    "headliner": "EGR",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "assets/artists/egr.webp",
-    "price": "",
-    "sourceName": "EGR official Instagram schedule",
-    "sources": [
-      {
-        "name": "EGR official Instagram schedule",
-        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 38%",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
     "id": "manual:mayia-boxyard-saturdaze-2026",
     "title": "Boxyard Saturdaze",
     "startDate": "2026-10-10",
@@ -1797,42 +2367,42 @@
     "imageOverride": true
   },
   {
-    "id": "official:7c07397fa047689b0215",
-    "title": "Anike — Live at THE ALL STAR EXPERIENCE LIVE CONCERT",
-    "startDate": "2026-10-11",
+    "id": "manual:egr-2026-10-10-visalia-ca",
+    "title": "EGR Live — Visalia",
+    "startDate": "2026-10-10",
     "startTime": "",
     "timezone": "",
-    "venue": "THE ALL STAR EXPERIENCE LIVE CONCERT",
+    "venue": "Back to the Basics",
     "address": "",
-    "city": "Austin",
-    "state": "TX",
+    "city": "Visalia",
+    "state": "CA",
     "country": "US",
     "artists": [
-      "Anike"
+      "EGR"
     ],
-    "headliner": "Anike",
+    "headliner": "EGR",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108773288?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.reachrecords.com/artists/wande/",
-    "image": "https://s1.ticketm.net/dam/a/ab5/019b80d9-ebcf-40a7-9233-a35e76204ab5_SOURCE",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
     "price": "",
-    "sourceName": "Reach Records - Anike",
+    "sourceName": "EGR official Instagram schedule",
     "sources": [
       {
-        "name": "Reach Records - Anike",
-        "url": "https://www.reachrecords.com/artists/wande/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 86
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
       }
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "artist",
-    "imagePosition": "50% 30%",
+    "imagePosition": "50% 38%",
     "verifiedVersion": 9,
-    "firstSeen": "2026-09-12T14:12:12Z"
+    "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
     "id": "manual:parris-chariz-dallas-2026-10-11",
@@ -1882,6 +2452,44 @@
     ]
   },
   {
+    "id": "official:7c07397fa047689b0215",
+    "title": "Anike — Live at THE ALL STAR EXPERIENCE LIVE CONCERT",
+    "startDate": "2026-10-11",
+    "startTime": "",
+    "timezone": "",
+    "venue": "THE ALL STAR EXPERIENCE LIVE CONCERT",
+    "address": "",
+    "city": "Austin",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Anike"
+    ],
+    "headliner": "Anike",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108773288?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.reachrecords.com/artists/wande/",
+    "image": "https://s1.ticketm.net/dam/a/ab5/019b80d9-ebcf-40a7-9233-a35e76204ab5_SOURCE",
+    "price": "",
+    "sourceName": "Reach Records - Anike",
+    "sources": [
+      {
+        "name": "Reach Records - Anike",
+        "url": "https://www.reachrecords.com/artists/wande/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-09-12T14:12:12Z"
+  },
+  {
     "id": "manual:cj-emulous-turlock-back-to-school-2026",
     "title": "Teen Club Kickoff / Back to School Concert",
     "startDate": "2026-10-12",
@@ -1917,44 +2525,6 @@
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "manual:egr-2026-10-16-fresno-ca",
-    "title": "EGR Live — Fresno",
-    "startDate": "2026-10-16",
-    "startTime": "",
-    "timezone": "",
-    "venue": "Unshakable Youth Conference",
-    "address": "",
-    "city": "Fresno",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "EGR"
-    ],
-    "headliner": "EGR",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "assets/artists/egr.webp",
-    "price": "",
-    "sourceName": "EGR official Instagram schedule",
-    "sources": [
-      {
-        "name": "EGR official Instagram schedule",
-        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 38%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
@@ -1997,6 +2567,44 @@
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
     "imageOverride": true
+  },
+  {
+    "id": "manual:egr-2026-10-16-fresno-ca",
+    "title": "EGR Live — Fresno",
+    "startDate": "2026-10-16",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Unshakable Youth Conference",
+    "address": "",
+    "city": "Fresno",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
     "id": "manual:mayia-nc-state-fair-2026",
@@ -2242,6 +2850,44 @@
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:808-beezy-bandsintown-108856031",
+    "title": "808 BEEZY — Live at FCA Warrior Night",
+    "startDate": "2026-11-02",
+    "startTime": "20:00",
+    "timezone": "",
+    "venue": "FCA Warrior Night",
+    "address": "1600 E Washington Blvd",
+    "city": "Fort Wayne",
+    "state": "IN",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108856031",
+    "officialUrl": "https://www.bandsintown.com/e/108856031",
+    "image": "assets/event-fallback.webp",
+    "price": "",
+    "sourceName": "808 BEEZY official tour / Bandsintown",
+    "sources": [
+      {
+        "name": "808 BEEZY official tour / Bandsintown",
+        "url": "https://www.bandsintown.com/e/108856031",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 76
+      }
+    ],
+    "lastVerified": "2026-09-12T14:30:41Z",
+    "confidence": "high",
+    "imageType": "fallback",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-09-12T14:30:41Z"
   },
   {
     "id": "ticketmaster:G5eVZ_ClfLPQX",
@@ -2875,5 +3521,81 @@
     "imagePosition": "50% 38%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:808-beezy-bandsintown-108856562",
+    "title": "808 BEEZY — Live at AMPLIFY",
+    "startDate": "2027-02-12",
+    "startTime": "19:30",
+    "timezone": "",
+    "venue": "AMPLIFY",
+    "address": "715 Whittier Ave NW",
+    "city": "North Canton",
+    "state": "OH",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108856562",
+    "officialUrl": "https://www.bandsintown.com/e/108856562",
+    "image": "assets/event-fallback.webp",
+    "price": "",
+    "sourceName": "808 BEEZY official tour / Bandsintown",
+    "sources": [
+      {
+        "name": "808 BEEZY official tour / Bandsintown",
+        "url": "https://www.bandsintown.com/e/108856562",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 76
+      }
+    ],
+    "lastVerified": "2026-09-12T14:30:41Z",
+    "confidence": "high",
+    "imageType": "fallback",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-09-12T14:30:41Z"
+  },
+  {
+    "id": "manual:808-beezy-bandsintown-108856576",
+    "title": "808 BEEZY — Live at AMPLIFY",
+    "startDate": "2027-02-13",
+    "startTime": "19:30",
+    "timezone": "",
+    "venue": "AMPLIFY",
+    "address": "715 Whittier Ave NW",
+    "city": "North Canton",
+    "state": "OH",
+    "country": "US",
+    "artists": [
+      "808 BEEZY"
+    ],
+    "headliner": "808 BEEZY",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108856576",
+    "officialUrl": "https://www.bandsintown.com/e/108856576",
+    "image": "assets/event-fallback.webp",
+    "price": "",
+    "sourceName": "808 BEEZY official tour / Bandsintown",
+    "sources": [
+      {
+        "name": "808 BEEZY official tour / Bandsintown",
+        "url": "https://www.bandsintown.com/e/108856576",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 76
+      }
+    ],
+    "lastVerified": "2026-09-12T14:30:41Z",
+    "confidence": "high",
+    "imageType": "fallback",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-09-12T14:30:41Z"
   }
 ]
