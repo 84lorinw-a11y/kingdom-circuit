@@ -42,7 +42,7 @@ jobs:
           def mobile_driver():
               o=webdriver.ChromeOptions()
               o.add_argument('--headless=new'); o.add_argument('--no-sandbox'); o.add_argument('--disable-dev-shm-usage'); o.page_load_strategy='eager'
-              o.add_experimental_option('mobileEmulation', {'deviceMetrics': {'width':390,'height':844,'pixelRatio':1.0}, 'userAgent':'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1'})
+              o.add_experimental_option('mobileEmulation', {'deviceMetrics': {'width':390,'height':844,'pixelRatio':1.0}, 'userAgent':'Mozilla/5.0 (Linux; Android 15; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Mobile Safari/537.36'})
               return webdriver.Chrome(options=o)
 
           d=None
@@ -91,26 +91,26 @@ jobs:
           m=None
           try:
               m=mobile_driver()
-              m.get('https://kingdomcircuit.com/?mobile-retest=${{ github.run_id }}')
+              m.get('https://kingdomcircuit.com/?android-retest=${{ github.run_id }}')
               WebDriverWait(m,30).until(lambda x: len(x.find_elements(By.CSS_SELECTOR,'[data-event-card]')) >= 20)
               metrics=m.execute_script('return {inner:window.innerWidth,body:document.body.scrollWidth,doc:document.documentElement.scrollWidth};')
-              check('mobile emulation uses 390px viewport',metrics['inner']==390,str(metrics))
-              check('mobile has no horizontal overflow',max(metrics['body'],metrics['doc'])<=metrics['inner']+2,str(metrics))
+              check('Android emulation uses 390px viewport',metrics['inner']==390,str(metrics))
+              check('Android has no horizontal overflow',max(metrics['body'],metrics['doc'])<=metrics['inner']+2,str(metrics))
               card=m.find_element(By.CSS_SELECTOR,'[data-event-card]')
               rect=m.execute_script('const r=arguments[0].getBoundingClientRect();return {left:r.left,right:r.right,width:r.width};',card)
-              check('mobile event card fits viewport',rect['left']>=-2 and rect['right']<=metrics['inner']+2,str(rect))
+              check('Android event card fits viewport',rect['left']>=-2 and rect['right']<=metrics['inner']+2,str(rect))
               toggle=m.find_element(By.CSS_SELECTOR,'.menu-toggle')
               m.execute_script('arguments[0].click()',toggle)
               WebDriverWait(m,5).until(lambda x:'open' in x.find_element(By.CSS_SELECTOR,'.menu-drawer').get_attribute('class'))
-              check('mobile navigation opens',True)
+              check('Android navigation opens',True)
               close=m.find_element(By.CSS_SELECTOR,'.menu-close')
               m.execute_script('arguments[0].click()',close)
               WebDriverWait(m,5).until(lambda x:'open' not in x.find_element(By.CSS_SELECTOR,'.menu-drawer').get_attribute('class'))
-              check('mobile navigation closes',True)
+              check('Android navigation closes',True)
               for label,url,selector,minimum in [
-                  ('mobile festivals','https://kingdomcircuit.com/festivals/','[data-event-card]',1),
-                  ('mobile artists','https://kingdomcircuit.com/artists/','[data-artist-card]',20),
-                  ('mobile artist profile','https://kingdomcircuit.com/artists/kb/','h1',1),
+                  ('Android festivals','https://kingdomcircuit.com/festivals/','[data-event-card]',1),
+                  ('Android artists','https://kingdomcircuit.com/artists/','[data-artist-card]',20),
+                  ('Android artist profile','https://kingdomcircuit.com/artists/kb/','h1',1),
               ]:
                   m.get(url)
                   WebDriverWait(m,20).until(lambda x: len(x.find_elements(By.CSS_SELECTOR,selector)) >= minimum)
@@ -156,3 +156,5 @@ jobs:
           PY
 
 # P0 mobile recovery retest: 2026-09-12
+
+# Android Chrome retest: 2026-09-12
