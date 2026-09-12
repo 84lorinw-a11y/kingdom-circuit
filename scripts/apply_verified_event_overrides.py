@@ -8,6 +8,8 @@ import json
 from copy import deepcopy
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
+
 PARRIS_EVENT = {
     "id": "manual:parris-chariz-dallas-2026-10-11",
     "title": "Parris Chariz — THE WORLD IS WATCHING LIVE",
@@ -34,20 +36,8 @@ PARRIS_EVENT = {
     "confidence": "high",
     "lineupExplicit": True,
     "sources": [
-        {
-            "name": "Eventim official ticket listing",
-            "url": "https://www.eventim.us/event/parris-chariz/699959",
-            "type": "manual_verified",
-            "authority": "venue_ticket",
-            "priority": 112,
-        },
-        {
-            "name": "Spune official show calendar",
-            "url": "https://spune.com/shows/",
-            "type": "manual_verified",
-            "authority": "official_event",
-            "priority": 100,
-        },
+        {"name": "Eventim official ticket listing", "url": "https://www.eventim.us/event/parris-chariz/699959", "type": "manual_verified", "authority": "venue_ticket", "priority": 112},
+        {"name": "Spune official show calendar", "url": "https://spune.com/shows/", "type": "manual_verified", "authority": "official_event", "priority": 100},
     ],
 }
 
@@ -61,9 +51,6 @@ KADEN_SHOWS = [
     ("2026-12-11", "NEXT CHURCH", "Ocala", "FL"),
 ]
 
-# These Sep. 11 audit events have verified performers but no source-owned event
-# artwork. Use real, verified artist portraits so the live site never falls back
-# to the generic Kingdom Circuit card.
 VERIFIED_EVENT_IMAGES = {
     "jay-kalyl-desde-antes-rockville-centre-2026": "https://i.scdn.co/image/ab6761610000e5eb1269b80aed5d08c40aedfdc3",
     "mayia-boxyard-saturdaze-2026": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
@@ -103,20 +90,8 @@ def kaden_event(date: str, venue: str, city: str, state: str) -> dict:
         "confidence": "high",
         "lineupExplicit": True,
         "sources": [
-            {
-                "name": "Kaden Jordan official TOUR page",
-                "url": KADEN_TOUR_URL,
-                "type": "manual_verified",
-                "authority": "artist_calendar",
-                "priority": 100,
-            },
-            {
-                "name": "Songkick calendar linked by Kaden Jordan official site",
-                "url": KADEN_SONGKICK_URL,
-                "type": "manual_verified",
-                "authority": "artist_calendar",
-                "priority": 90,
-            },
+            {"name": "Kaden Jordan official TOUR page", "url": KADEN_TOUR_URL, "type": "manual_verified", "authority": "artist_calendar", "priority": 100},
+            {"name": "Songkick calendar linked by Kaden Jordan official site", "url": KADEN_SONGKICK_URL, "type": "manual_verified", "authority": "artist_calendar", "priority": 90},
         ],
     }
 
@@ -138,38 +113,22 @@ def write(path: Path, data: list[dict]) -> None:
 
 def is_parris_duplicate(event: dict) -> bool:
     date = str(event.get("startDate") or "")[:10]
-    if date not in {"2026-10-11", "2026-10-12"}:
-        return False
-    if norm(event.get("city")) != "dallas":
+    if date not in {"2026-10-11", "2026-10-12"} or norm(event.get("city")) != "dallas":
         return False
     names = {norm(name) for name in event.get("artists", [])}
-    parris = (
-        "parris chariz" in names
-        or norm(event.get("headliner")) == "parris chariz"
-        or "parris chariz" in norm(event.get("title"))
-    )
-    return parris and (
-        norm(event.get("address")) == "1950 market center blvd"
-        or "world is watching" in norm(event.get("title"))
-        or event.get("id") == "bandsintown:108802282"
-    )
+    parris = "parris chariz" in names or norm(event.get("headliner")) == "parris chariz" or "parris chariz" in norm(event.get("title"))
+    return parris and (norm(event.get("address")) == "1950 market center blvd" or "world is watching" in norm(event.get("title")) or event.get("id") == "bandsintown:108802282")
 
 
 def is_same_kaden_show(event: dict, date: str, city: str) -> bool:
-    if str(event.get("startDate") or "")[:10] != date:
-        return False
-    if norm(event.get("city")) != norm(city):
+    if str(event.get("startDate") or "")[:10] != date or norm(event.get("city")) != norm(city):
         return False
     names = {norm(name) for name in event.get("artists", [])}
     return "kaden jordan" in names or norm(event.get("headliner")) == "kaden jordan"
 
 
 def sort_events(events: list[dict]) -> None:
-    events.sort(key=lambda item: (
-        str(item.get("startDate") or "9999-99-99"),
-        str(item.get("startTime") or ""),
-        str(item.get("title") or ""),
-    ))
+    events.sort(key=lambda item: (str(item.get("startDate") or "9999-99-99"), str(item.get("startTime") or ""), str(item.get("title") or "")))
 
 
 def apply_verified_event_images(events: list[dict], supplemental: list[dict]) -> None:
@@ -185,13 +144,13 @@ def apply_verified_event_images(events: list[dict], supplemental: list[dict]) ->
             event["imagePosition"] = "center"
             event["imageOverride"] = True
             found.add(event_id)
-
     missing = set(VERIFIED_EVENT_IMAGES) - found
     if missing:
         raise SystemExit(f"Verified Sep 11 image targets are missing: {sorted(missing)}")
 
 
 def apply(root: Path) -> None:
+    root = root.resolve()
     events_path = root / "events.json"
     supplemental_path = root / "supplemental-events.json"
     events = load(events_path)
@@ -199,7 +158,6 @@ def apply(root: Path) -> None:
 
     events = [event for event in events if not is_parris_duplicate(event)]
     supplemental = [event for event in supplemental if not is_parris_duplicate(event)]
-
     for date, _venue, city, _state in KADEN_SHOWS:
         events = [event for event in events if not is_same_kaden_show(event, date, city)]
         supplemental = [event for event in supplemental if not is_same_kaden_show(event, date, city)]
@@ -229,6 +187,14 @@ def apply(root: Path) -> None:
         raise SystemExit("Verified Sep 11 event-image coverage is incomplete")
     if any("event-fallback.webp" in str(event.get("image") or "") or not event.get("image") for event in image_targets):
         raise SystemExit("A verified Sep 11 event still has generic image artwork")
+
+    # Source-level verified overrides run late in several production workflows.
+    # Re-apply Sep 12 phase-2 availability/age facts last so those facts cannot
+    # be lost when Parris/Kaden/Deonte durability repairs rewrite event arrays.
+    if root == ROOT:
+        from apply_sep12_phase2_repairs import apply as apply_phase2, check as check_phase2
+        apply_phase2()
+        check_phase2()
 
     print("Verified Parris Chariz Dallas lineup/dedupe, four Kaden Jordan tour dates, and Sep 11 event images are pinned.")
 

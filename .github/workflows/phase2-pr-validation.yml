@@ -1,0 +1,70 @@
+name: Validate Sep 12 phase-2 repairs
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/**'
+      - 'events.json'
+      - 'supplemental-events.json'
+      - 'config/**'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run full unit suite
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+
+      - name: Apply production source pipeline through phase 2
+        run: |
+          python scripts/apply_curated_catalog_policy.py
+          python scripts/apply_sep12_live_audit_repairs.py
+          python scripts/prune_past_events.py --source .
+          python scripts/apply_sevin_official_schedule.py
+          python scripts/apply_live_artist_overrides.py --source .
+          python scripts/apply_deonte_hall_submission.py
+
+      - name: Build and verify base production artifact
+        run: |
+          python scripts/build_seo_site.py
+          python scripts/verify_multipage_site.py _site
+
+      - name: Apply final production indexing policy
+        run: python scripts/finalize_seo_indexing.py --site _site
+
+      - name: Verify phase-2 artifact invariants
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          site = Path('_site')
+          assert not (site / 'artists' / 'madison-ryann-ward' / 'index.html').exists()
+          sitemap = (site / 'sitemap.xml').read_text(encoding='utf-8')
+          assert 'artists/madison-ryann-ward/' not in sitemap
+
+          all_html = '\n'.join(p.read_text(encoding='utf-8', errors='ignore') for p in site.rglob('*.html'))
+          assert 'https://schema.org/InStock' not in all_html
+          for broken in ('1976535062579', '1976535113732', '1976534090672', '1976538907078'):
+              assert f'eventbrite.com/e/{broken}' not in all_html
+
+          events = []
+          for rel in ('events.json', 'supplemental-events.json'):
+              events += json.loads((site / rel).read_text(encoding='utf-8'))
+          truthx = [e for e in events if '1989610293948' in json.dumps(e)]
+          if truthx:
+              assert all(e.get('soldOut') is True for e in truthx)
+              assert all(str(e.get('status','')).lower() not in {'cancelled','canceled'} for e in truthx)
+          print('Phase-2 artifact invariants verified')
+          PY
