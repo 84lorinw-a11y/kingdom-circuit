@@ -53,45 +53,6 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "manual:eventbrite:truthx-yung-kriss-brandon-2026",
-    "title": "TruthX Concert 2026",
-    "startDate": "2026-09-12",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "Brandon High School",
-    "address": "1101 Victoria Street",
-    "city": "Brandon",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Yung Kriss"
-    ],
-    "headliner": "Yung Kriss",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
-    "officialUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
-    "image": "assets/events/truthx-yung-kriss-2026.jpg",
-    "price": "",
-    "sourceName": "Official Eventbrite listing",
-    "sources": [
-      {
-        "name": "Official Eventbrite listing",
-        "url": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z",
-    "imageOverride": true
-  },
-  {
     "id": "manual:egr-2026-09-12-corpus-christi-tx",
     "title": "EGR Live — Corpus Christi",
     "startDate": "2026-09-12",
@@ -128,6 +89,44 @@
     "imagePosition": "50% 38%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:eventbrite:truthx-yung-kriss-brandon-2026",
+    "title": "TruthX Concert 2026",
+    "startDate": "2026-09-12",
+    "startTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "Brandon High School",
+    "address": "1101 Victoria Street",
+    "city": "Brandon",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Yung Kriss"
+    ],
+    "headliner": "Yung Kriss",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
+    "officialUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
+    "image": "assets/events/truthx-yung-kriss-2026.jpg",
+    "price": "",
+    "sourceName": "Official Eventbrite listing",
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
+        "type": "eventbrite",
+        "authority": "venue_ticket",
+        "priority": 94
+      }
+    ],
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true
   },
   {
     "id": "ticketmaster:k7vGF_dl6_HDp",
@@ -428,6 +427,44 @@
     "firstSeen": "2026-09-12T14:30:41Z"
   },
   {
+    "id": "manual:egr-2026-09-18-carson-ca",
+    "title": "EGR Live — Carson",
+    "startDate": "2026-09-18",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Victory Outreach",
+    "address": "",
+    "city": "Carson",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
     "id": "manual:808-beezy-bandsintown-108772413",
     "title": "808 BEEZY — Live at RWG TOUR 2026",
     "startDate": "2026-09-18",
@@ -628,14 +665,52 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "manual:egr-2026-09-18-carson-ca",
-    "title": "EGR Live — Carson",
-    "startDate": "2026-09-18",
+    "id": "official:64bbcd477c3a36104df3",
+    "title": "Anike — Live at Queens Theatre",
+    "startDate": "2026-09-19",
     "startTime": "",
     "timezone": "",
-    "venue": "Victory Outreach",
+    "venue": "Queens Theatre",
     "address": "",
-    "city": "Carson",
+    "city": "Corona",
+    "state": "NY",
+    "country": "US",
+    "artists": [
+      "Anike"
+    ],
+    "headliner": "Anike",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/1039205172?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.reachrecords.com/artists/wande/",
+    "image": "https://s1.ticketm.net/dam/a/ab5/019b80d9-ebcf-40a7-9233-a35e76204ab5_SOURCE",
+    "price": "",
+    "sourceName": "Reach Records - Anike",
+    "sources": [
+      {
+        "name": "Reach Records - Anike",
+        "url": "https://www.reachrecords.com/artists/wande/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-15T20:23:53Z"
+  },
+  {
+    "id": "manual:egr-2026-09-19-manteca-ca",
+    "title": "EGR Live — Manteca",
+    "startDate": "2026-09-19",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Show & Shine",
+    "address": "",
+    "city": "Manteca",
     "state": "CA",
     "country": "US",
     "artists": [
@@ -670,7 +745,7 @@
     "title": "Hip Hop in the Park",
     "startDate": "2026-09-19",
     "startTime": "13:00",
-    "timezone": "",
+    "timezone": "America/New_York",
     "venue": "Courthouse Park",
     "address": "33 Church Street",
     "city": "Cortland",
@@ -689,25 +764,24 @@
     "image": "assets/events/hip-hop-in-the-park-2026.jpg",
     "price": "Free",
     "sourceName": "Official Eventbrite listing",
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "lineupExplicit": true,
     "sources": [
       {
         "name": "Official Eventbrite listing",
         "url": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
-        "type": "manual_verified",
+        "type": "eventbrite",
         "authority": "venue_ticket",
-        "priority": 112
+        "priority": 94
       }
     ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z",
     "imageOverride": true
   },
   {
-    "id": "official:cc1595e90fb45c872c77",
+    "id": "manual:eventbrite:gracefest-lecrae-castaic-2026",
     "title": "GRACEFEST 2026",
     "startDate": "2026-09-19",
     "startTime": "13:30",
@@ -728,38 +802,21 @@
     "image": "assets/events/gracefest-2026.png",
     "price": "",
     "sourceName": "Official Eventbrite listing",
+    "authority": "official_festival",
+    "confidence": "high",
+    "lineupExplicit": true,
     "sources": [
       {
         "name": "Official Eventbrite listing",
         "url": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-        "type": "manual_verified",
+        "type": "eventbrite",
         "authority": "official_festival",
-        "priority": 112
-      },
-      {
-        "name": "Reach Records - Lecrae",
-        "url": "https://www.reachrecords.com/artists/lecrae/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 86
-      },
-      {
-        "name": "Reach Records consolidated calendar",
-        "url": "https://www.reachrecords.com/events/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 84
+        "priority": 104
       }
     ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z",
-    "imageOverride": true,
-    "authority": "official_festival",
-    "lineupExplicit": true
+    "imageOverride": true
   },
   {
     "id": "ticketmaster:vv1AkZk3pGkdPlaZC",
@@ -848,127 +905,6 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "official:64bbcd477c3a36104df3",
-    "title": "Anike — Live at Queens Theatre",
-    "startDate": "2026-09-19",
-    "startTime": "",
-    "timezone": "",
-    "venue": "Queens Theatre",
-    "address": "",
-    "city": "Corona",
-    "state": "NY",
-    "country": "US",
-    "artists": [
-      "Anike"
-    ],
-    "headliner": "Anike",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/1039205172?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.reachrecords.com/artists/wande/",
-    "image": "https://s1.ticketm.net/dam/a/ab5/019b80d9-ebcf-40a7-9233-a35e76204ab5_SOURCE",
-    "price": "",
-    "sourceName": "Reach Records - Anike",
-    "sources": [
-      {
-        "name": "Reach Records - Anike",
-        "url": "https://www.reachrecords.com/artists/wande/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 86
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 30%",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-15T20:23:53Z"
-  },
-  {
-    "id": "manual:egr-2026-09-19-manteca-ca",
-    "title": "EGR Live — Manteca",
-    "startDate": "2026-09-19",
-    "startTime": "",
-    "timezone": "",
-    "venue": "Show & Shine",
-    "address": "",
-    "city": "Manteca",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "EGR"
-    ],
-    "headliner": "EGR",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "assets/artists/egr.webp",
-    "price": "",
-    "sourceName": "EGR official Instagram schedule",
-    "sources": [
-      {
-        "name": "EGR official Instagram schedule",
-        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 38%",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:cfa71e64850aa1fa9f39",
-    "title": "Caleb Gordon — The Eden Experience",
-    "startDate": "2026-09-20",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "Cross Mountain Church",
-    "address": "",
-    "city": "San Antonio",
-    "state": "TX",
-    "country": "US",
-    "artists": [
-      "Caleb Gordon"
-    ],
-    "headliner": "Caleb Gordon",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.ticketweb.com/event/caleb-gordon-the-eden-experience-cross-mountain-church-tickets/14866193?pl=TPR",
-    "officialUrl": "https://tprlive.co/products/caleb-gordon-the-eden-experience-san-antonio-tx-september-20-2026",
-    "image": "assets/events/caleb-gordon-eden-experience.webp",
-    "price": "",
-    "sourceName": "TPR official Eden Experience tour",
-    "sources": [
-      {
-        "name": "TPR official Eden Experience tour",
-        "url": "https://tprlive.co/products/caleb-gordon-the-eden-experience-san-antonio-tx-september-20-2026",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      },
-      {
-        "name": "TPR - Caleb Gordon Eden Experience",
-        "url": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
-        "type": "tpr",
-        "authority": "promoter",
-        "priority": 90
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
     "id": "official:8cf69c5c610dae61d590",
     "title": "Hulvey — Live at First Ave",
     "startDate": "2026-09-20",
@@ -1015,6 +951,51 @@
     "verifiedVersion": 9,
     "firstSeen": "2026-08-15T11:53:29Z",
     "lineupExplicit": true
+  },
+  {
+    "id": "official:cfa71e64850aa1fa9f39",
+    "title": "Caleb Gordon — The Eden Experience",
+    "startDate": "2026-09-20",
+    "startTime": "19:00",
+    "timezone": "",
+    "venue": "Cross Mountain Church",
+    "address": "",
+    "city": "San Antonio",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Caleb Gordon"
+    ],
+    "headliner": "Caleb Gordon",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketweb.com/event/caleb-gordon-the-eden-experience-cross-mountain-church-tickets/14866193?pl=TPR",
+    "officialUrl": "https://tprlive.co/products/caleb-gordon-the-eden-experience-san-antonio-tx-september-20-2026",
+    "image": "assets/events/caleb-gordon-eden-experience.webp",
+    "price": "",
+    "sourceName": "TPR official Eden Experience tour",
+    "sources": [
+      {
+        "name": "TPR official Eden Experience tour",
+        "url": "https://tprlive.co/products/caleb-gordon-the-eden-experience-san-antonio-tx-september-20-2026",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "TPR - Caleb Gordon Eden Experience",
+        "url": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+        "type": "tpr",
+        "authority": "promoter",
+        "priority": 90
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
     "id": "manual:808-beezy-bandsintown-108772449",
@@ -1293,6 +1274,98 @@
     "lineupExplicit": true
   },
   {
+    "id": "official:9f793162ae1bb3cab7f3",
+    "title": "Hulvey — Live at Hifi Annex",
+    "startDate": "2026-09-23",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Hifi Annex",
+    "address": "",
+    "city": "Indianapolis",
+    "state": "IN",
+    "country": "US",
+    "artists": [
+      "Hulvey",
+      "indie tribe.",
+      "Kijan Boone"
+    ],
+    "headliner": "Hulvey",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108188668?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.reachrecords.com/events/",
+    "image": "https://s1.ticketm.net/dam/a/d4e/a49ecab3-089d-46ff-baa5-7942c994ed4e_SOURCE",
+    "price": "",
+    "sourceName": "Reach Records consolidated calendar",
+    "sources": [
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
+      },
+      {
+        "name": "HI-FI Indy",
+        "url": "https://hifiindy.com/event/hulvey-2026/",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-15T11:53:29Z",
+    "lineupExplicit": true
+  },
+  {
+    "id": "manual:kaden-jordan-2026-09-23-orlando",
+    "title": "Kaden Jordan Live",
+    "startDate": "2026-09-23",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "Church in the Son",
+    "address": "",
+    "city": "Orlando",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Kaden Jordan"
+    ],
+    "headliner": "Kaden Jordan",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.songkick.com/artists/10314485-kaden-jordan",
+    "officialUrl": "https://kadenjordan.com/pages/tour",
+    "image": "https://images.sk-static.com/images/media/profile_images/artists/10314485/large_avatar",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "price": "",
+    "sourceName": "Kaden Jordan official tour page / Songkick",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Kaden Jordan official TOUR page",
+        "url": "https://kadenjordan.com/pages/tour",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      },
+      {
+        "name": "Songkick calendar linked by Kaden Jordan official site",
+        "url": "https://www.songkick.com/artists/10314485-kaden-jordan",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 90
+      }
+    ]
+  },
+  {
     "id": "manual:808-beezy-bandsintown-108772620",
     "title": "808 BEEZY — Live at RWG TOUR 2026",
     "startDate": "2026-09-23",
@@ -1405,98 +1478,6 @@
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:9f793162ae1bb3cab7f3",
-    "title": "Hulvey — Live at Hifi Annex",
-    "startDate": "2026-09-23",
-    "startTime": "",
-    "timezone": "",
-    "venue": "Hifi Annex",
-    "address": "",
-    "city": "Indianapolis",
-    "state": "IN",
-    "country": "US",
-    "artists": [
-      "Hulvey",
-      "indie tribe.",
-      "Kijan Boone"
-    ],
-    "headliner": "Hulvey",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108188668?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.reachrecords.com/events/",
-    "image": "https://s1.ticketm.net/dam/a/d4e/a49ecab3-089d-46ff-baa5-7942c994ed4e_SOURCE",
-    "price": "",
-    "sourceName": "Reach Records consolidated calendar",
-    "sources": [
-      {
-        "name": "Reach Records consolidated calendar",
-        "url": "https://www.reachrecords.com/events/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 84
-      },
-      {
-        "name": "HI-FI Indy",
-        "url": "https://hifiindy.com/event/hulvey-2026/",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 100
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 30%",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-15T11:53:29Z",
-    "lineupExplicit": true
-  },
-  {
-    "id": "manual:kaden-jordan-2026-09-23-orlando",
-    "title": "Kaden Jordan Live",
-    "startDate": "2026-09-23",
-    "startTime": "",
-    "timezone": "America/New_York",
-    "venue": "Church in the Son",
-    "address": "",
-    "city": "Orlando",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Kaden Jordan"
-    ],
-    "headliner": "Kaden Jordan",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.songkick.com/artists/10314485-kaden-jordan",
-    "officialUrl": "https://kadenjordan.com/pages/tour",
-    "image": "https://images.sk-static.com/images/media/profile_images/artists/10314485/large_avatar",
-    "imageType": "artist",
-    "imagePosition": "center",
-    "price": "",
-    "sourceName": "Kaden Jordan official tour page / Songkick",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Kaden Jordan official TOUR page",
-        "url": "https://kadenjordan.com/pages/tour",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      },
-      {
-        "name": "Songkick calendar linked by Kaden Jordan official site",
-        "url": "https://www.songkick.com/artists/10314485-kaden-jordan",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 90
-      }
-    ]
   },
   {
     "id": "manual:808-beezy-bandsintown-108772712",
@@ -1736,6 +1717,89 @@
     "firstSeen": "2026-09-07T16:11:58Z"
   },
   {
+    "id": "official:ea0342f4771e9f9f1dfc",
+    "title": "1K Phew — Live at Fastivalle 2026",
+    "startDate": "2026-09-26",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Fastivalle 2026",
+    "address": "",
+    "city": "Indianapolis",
+    "state": "IN",
+    "country": "US",
+    "artists": [
+      "1K Phew"
+    ],
+    "headliner": "1K Phew",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108395515?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.reachrecords.com/artists/1k-phew/",
+    "image": "assets/artists/1k-phew.webp",
+    "price": "",
+    "sourceName": "Reach Records - 1K Phew",
+    "sources": [
+      {
+        "name": "Reach Records - 1K Phew",
+        "url": "https://www.reachrecords.com/artists/1k-phew/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 24%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-15T11:53:29Z"
+  },
+  {
+    "id": "manual:egr-2026-09-26-whittier-ca",
+    "title": "EGR Live — Whittier",
+    "startDate": "2026-09-26",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Revolution Friends Church",
+    "address": "",
+    "city": "Whittier",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
     "id": "official:95cc80c13713dfecaf6d",
     "title": "Faith Jam 2026",
     "startDate": "2026-09-26",
@@ -1786,7 +1850,6 @@
     "title": "HVO Fest 2026",
     "startDate": "2026-09-26",
     "startTime": "15:00",
-    "timezone": "",
     "venue": "AVALON Hollywood & Bardot",
     "address": "",
     "city": "Los Angeles",
@@ -1805,28 +1868,19 @@
     ],
     "headliner": "Yung Kriss",
     "eventType": "festival",
-    "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/hvo-fest-tickets-1987360837764",
     "officialUrl": "https://www.eventbrite.com/e/hvo-fest-tickets-1987360837764",
     "image": "assets/events/hvo-fest-2026.jpg",
     "price": "",
+    "status": "scheduled",
+    "lineupExplicit": true,
+    "authority": "official_event",
     "sourceName": "Yung Kriss official announcement and Eventbrite",
-    "sources": [
-      {
-        "name": "Yung Kriss official announcement and Eventbrite",
-        "url": "https://www.eventbrite.com/e/hvo-fest-tickets-1987360837764",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
+    "announcementUrl": "https://www.instagram.com/reel/DblfWwWu062/",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z",
-    "imageOverride": true
+    "imageOverride": true,
+    "confidence": "high"
   },
   {
     "id": "official:cd29c71021ec3f5cda92",
@@ -1917,89 +1971,6 @@
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "id": "official:ea0342f4771e9f9f1dfc",
-    "title": "1K Phew — Live at Fastivalle 2026",
-    "startDate": "2026-09-26",
-    "startTime": "",
-    "timezone": "",
-    "venue": "Fastivalle 2026",
-    "address": "",
-    "city": "Indianapolis",
-    "state": "IN",
-    "country": "US",
-    "artists": [
-      "1K Phew"
-    ],
-    "headliner": "1K Phew",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108395515?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.reachrecords.com/artists/1k-phew/",
-    "image": "assets/artists/1k-phew.webp",
-    "price": "",
-    "sourceName": "Reach Records - 1K Phew",
-    "sources": [
-      {
-        "name": "Reach Records - 1K Phew",
-        "url": "https://www.reachrecords.com/artists/1k-phew/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 86
-      },
-      {
-        "name": "Reach Records consolidated calendar",
-        "url": "https://www.reachrecords.com/events/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 84
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 24%",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-15T11:53:29Z"
-  },
-  {
-    "id": "manual:egr-2026-09-26-whittier-ca",
-    "title": "EGR Live — Whittier",
-    "startDate": "2026-09-26",
-    "startTime": "",
-    "timezone": "",
-    "venue": "Revolution Friends Church",
-    "address": "",
-    "city": "Whittier",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "EGR"
-    ],
-    "headliner": "EGR",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "assets/artists/egr.webp",
-    "price": "",
-    "sourceName": "EGR official Instagram schedule",
-    "sources": [
-      {
-        "name": "EGR official Instagram schedule",
-        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 38%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
   },
@@ -2292,6 +2263,44 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
+    "id": "manual:egr-2026-10-10-visalia-ca",
+    "title": "EGR Live — Visalia",
+    "startDate": "2026-10-10",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Back to the Basics",
+    "address": "",
+    "city": "Visalia",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "EGR"
+    ],
+    "headliner": "EGR",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "image": "assets/artists/egr.webp",
+    "price": "",
+    "sourceName": "EGR official Instagram schedule",
+    "sources": [
+      {
+        "name": "EGR official Instagram schedule",
+        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 38%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
     "id": "manual:mayia-boxyard-saturdaze-2026",
     "title": "Boxyard Saturdaze",
     "startDate": "2026-10-10",
@@ -2334,7 +2343,7 @@
     "title": "REIGN volume one",
     "startDate": "2026-10-10",
     "startTime": "19:00",
-    "timezone": "",
+    "timezone": "America/New_York",
     "venue": "The Vino Theater",
     "address": "274 Morgan Avenue, Suite 201",
     "city": "Brooklyn",
@@ -2351,60 +2360,59 @@
     "image": "assets/events/reign-volume-one-2026.jpg",
     "price": "",
     "sourceName": "Official Eventbrite listing",
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "lineupExplicit": true,
     "sources": [
       {
         "name": "Official Eventbrite listing",
         "url": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
-        "type": "manual_verified",
+        "type": "eventbrite",
         "authority": "venue_ticket",
-        "priority": 112
+        "priority": 94
       }
     ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z",
     "imageOverride": true
   },
   {
-    "id": "manual:egr-2026-10-10-visalia-ca",
-    "title": "EGR Live — Visalia",
-    "startDate": "2026-10-10",
+    "id": "official:7c07397fa047689b0215",
+    "title": "Anike — Live at THE ALL STAR EXPERIENCE LIVE CONCERT",
+    "startDate": "2026-10-11",
     "startTime": "",
     "timezone": "",
-    "venue": "Back to the Basics",
+    "venue": "THE ALL STAR EXPERIENCE LIVE CONCERT",
     "address": "",
-    "city": "Visalia",
-    "state": "CA",
+    "city": "Austin",
+    "state": "TX",
     "country": "US",
     "artists": [
-      "EGR"
+      "Anike"
     ],
-    "headliner": "EGR",
+    "headliner": "Anike",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "assets/artists/egr.webp",
+    "ticketUrl": "https://www.bandsintown.com/t/108773288?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.reachrecords.com/artists/wande/",
+    "image": "https://s1.ticketm.net/dam/a/ab5/019b80d9-ebcf-40a7-9233-a35e76204ab5_SOURCE",
     "price": "",
-    "sourceName": "EGR official Instagram schedule",
+    "sourceName": "Reach Records - Anike",
     "sources": [
       {
-        "name": "EGR official Instagram schedule",
-        "url": "https://www.instagram.com/p/DboKM3GJM4A/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
+        "name": "Reach Records - Anike",
+        "url": "https://www.reachrecords.com/artists/wande/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
       }
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "artist",
-    "imagePosition": "50% 38%",
+    "imagePosition": "50% 30%",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-09-12T14:12:12Z"
   },
   {
     "id": "manual:parris-chariz-dallas-2026-10-11",
@@ -2454,44 +2462,6 @@
     ]
   },
   {
-    "id": "official:7c07397fa047689b0215",
-    "title": "Anike — Live at THE ALL STAR EXPERIENCE LIVE CONCERT",
-    "startDate": "2026-10-11",
-    "startTime": "",
-    "timezone": "",
-    "venue": "THE ALL STAR EXPERIENCE LIVE CONCERT",
-    "address": "",
-    "city": "Austin",
-    "state": "TX",
-    "country": "US",
-    "artists": [
-      "Anike"
-    ],
-    "headliner": "Anike",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108773288?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.reachrecords.com/artists/wande/",
-    "image": "https://s1.ticketm.net/dam/a/ab5/019b80d9-ebcf-40a7-9233-a35e76204ab5_SOURCE",
-    "price": "",
-    "sourceName": "Reach Records - Anike",
-    "sources": [
-      {
-        "name": "Reach Records - Anike",
-        "url": "https://www.reachrecords.com/artists/wande/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 86
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 30%",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-09-12T14:12:12Z"
-  },
-  {
     "id": "manual:cj-emulous-turlock-back-to-school-2026",
     "title": "Teen Club Kickoff / Back to School Concert",
     "startDate": "2026-10-12",
@@ -2531,56 +2501,6 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "id": "manual:eventbrite:rare-of-breed-jacksonville-2026",
-    "title": "Rare of Breed",
-    "startDate": "2026-10-16",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "Murray Hill Theatre",
-    "address": "932 Edgewood Ave S",
-    "city": "Jacksonville",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Rare of Breed",
-      "DJ Winn"
-    ],
-    "headliner": "Rare of Breed",
-    "eventType": "concert",
-    "status": "cancelled",
-    "ticketUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
-    "officialUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
-    "image": "assets/events/rare-of-breed-jacksonville-2026.jpg",
-    "price": "",
-    "sourceName": "Official Eventbrite cancellation notice",
-    "sources": [
-      {
-        "name": "Official Eventbrite listing",
-        "url": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      },
-      {
-        "name": "Official Eventbrite cancellation notice",
-        "url": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
-        "type": "eventbrite",
-        "authority": "venue_ticket",
-        "priority": 120
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z",
-    "imageOverride": true,
-    "cancellationConfirmed": true,
-    "cancellationConfirmedAt": "2026-09-12",
-    "notes": "Cancelled by the organizer. This page is retained as a cancellation notice."
-  },
-  {
     "id": "manual:egr-2026-10-16-fresno-ca",
     "title": "EGR Live — Fresno",
     "startDate": "2026-10-16",
@@ -2617,6 +2537,55 @@
     "imagePosition": "50% 38%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:eventbrite:rare-of-breed-jacksonville-2026",
+    "title": "Rare of Breed",
+    "startDate": "2026-10-16",
+    "startTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "Murray Hill Theatre",
+    "address": "932 Edgewood Ave S",
+    "city": "Jacksonville",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Rare of Breed",
+      "DJ Winn"
+    ],
+    "headliner": "Rare of Breed",
+    "eventType": "concert",
+    "status": "cancelled",
+    "ticketUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
+    "officialUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
+    "image": "assets/events/rare-of-breed-jacksonville-2026.jpg",
+    "price": "",
+    "sourceName": "Official Eventbrite cancellation notice",
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
+        "type": "eventbrite",
+        "authority": "venue_ticket",
+        "priority": 94
+      },
+      {
+        "name": "Official Eventbrite cancellation notice",
+        "url": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
+        "type": "eventbrite",
+        "authority": "venue_ticket",
+        "priority": 120
+      }
+    ],
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "cancellationConfirmed": true,
+    "cancellationConfirmedAt": "2026-09-12",
+    "notes": "Cancelled by the organizer. This page is retained as a cancellation notice."
   },
   {
     "id": "manual:mayia-nc-state-fair-2026",
@@ -2945,7 +2914,7 @@
     "title": "Flavor Fest 2026 — Friday Concerts",
     "startDate": "2026-11-06",
     "startTime": "19:00",
-    "timezone": "",
+    "timezone": "America/New_York",
     "venue": "Crossover Church",
     "address": "1235 E Fowler Ave",
     "city": "Tampa",
@@ -2958,11 +2927,16 @@
     ],
     "headliner": "Miles Minnick",
     "eventType": "festival",
-    "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
     "image": "assets/events/flavor-fest-friday-2026.webp",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
     "price": "",
+    "status": "scheduled",
+    "lineupExplicit": true,
+    "authority": "official_event",
     "sourceName": "Flavor Fest official 2026 schedule",
     "sources": [
       {
@@ -2973,13 +2947,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z",
-    "imageOverride": true
+    "confidence": "high"
   },
   {
     "id": "manual:flavor-fest-2026-saturday-concerts",
