@@ -18,7 +18,20 @@ ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 BLOCKED = "madison ryann ward"
 FALLBACK_ROSTER_ORDER = 28
-FOUNTAIN_RARE_IMAGE = "https://i0.wp.com/fountainfestwv.com/wp-content/uploads/2026/07/Rare-of-Breed-Promo-.webp?resize=720%2C900&ssl=1"
+
+VERIFIED_EVENT_IMAGES = {
+    "fountain-fest-wv-2026": (
+        "https://i0.wp.com/fountainfestwv.com/wp-content/uploads/2026/07/Rare-of-Breed-Promo-.webp?resize=720%2C900&ssl=1",
+        "artist",
+    ),
+    "jay-kalyl-desde-antes-rockville-centre-2026": ("assets/events/jay-kalyl-desde-antes-2026.svg", "event_artwork"),
+    "mayia-boxyard-saturdaze-2026": ("assets/events/mayia-boxyard-saturdaze-2026.svg", "event_artwork"),
+    "mayia-nc-state-fair-2026": ("assets/events/mayia-nc-state-fair-2026.svg", "event_artwork"),
+    "mission-friends-sacramento-2026": ("assets/events/mission-friends-sacramento-2026.svg", "event_artwork"),
+    "alex-zurdo-zona-zero-san-juan-2026": ("assets/events/alex-zurdo-zona-zero-2026.svg", "event_artwork"),
+    "cj-emulous-kickback-grand-prairie-2026": ("assets/events/cj-emulous-kickback-2026.svg", "event_artwork"),
+    "miles-cj-zion-ultra-lounge-chandler-2026": ("assets/events/miles-cj-zion-ultra-2026.svg", "event_artwork"),
+}
 
 
 def norm(value: object) -> str:
@@ -79,16 +92,19 @@ def restore_exclusion_tombstone(before: list[dict]) -> None:
 
 
 def repair_verified_event_images() -> None:
-    """Use source-owned imagery where the audit record otherwise has no image."""
-    ids = {"fountain-fest-wv-2026", "manual:fountain-fest-wv-2026"}
+    """Use source-owned imagery or event-specific branded cards when no official art is available."""
     for path in (audit.EVENTS_FILE, audit.SUPPLEMENTAL_FILE, audit.MANUAL_FILE):
         events = json.loads(path.read_text(encoding="utf-8"))
         changed = False
         for event in events:
-            if str(event.get("id") or "") not in ids:
+            event_id = str(event.get("id") or "")
+            canonical_id = event_id.removeprefix("manual:")
+            override = VERIFIED_EVENT_IMAGES.get(canonical_id)
+            if not override:
                 continue
-            event["image"] = FOUNTAIN_RARE_IMAGE
-            event["imageType"] = "artist"
+            image, image_type = override
+            event["image"] = image
+            event["imageType"] = image_type
             event["imagePosition"] = "center"
             event["imageOverride"] = True
             changed = True
