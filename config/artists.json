@@ -523,7 +523,7 @@
     "monitoringPriority": 3,
     "topStreamingPriority": false,
     "socialSearchEnabled": false,
-    "activeStatus": "excluded",
+    "activeStatus": "excluded_non_chh",
     "textMatchEnabled": false,
     "rosterOrder": 28,
     "editorialNote": "Excluded from Kingdom Circuit: not Christian hip-hop.",
@@ -6447,5 +6447,31 @@
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
     "rosterOrder": 350
+  },
+  {
+    "name": "JIMMY ROCK",
+    "aliases": [
+      "JIMMY ROCK",
+      "Jimmy Rock"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 351,
+    "website": "https://www.jimmyrock.com/",
+    "websiteRegistryVerified": true,
+    "instagramProfile": "https://www.instagram.com/jimmyrock/",
+    "spotifyProfile": "https://open.spotify.com/artist/6YN7TGi4ZlsAy38fZVPvkN",
+    "youtubeProfile": "https://www.youtube.com/@JimmyRock",
+    "bandsintownProfile": "https://www.bandsintown.com/a/7118692-jimmy-rock",
+    "imageUrl": "https://images.squarespace-cdn.com/content/v1/56b7abd2f699bb04c395a379/03aa3873-98e9-4ccb-8eae-4d4f3826a4a8/Jimmy-in-the-field-refl.png",
+    "imagePosition": "50% 22%",
+    "preferArtistImage": true,
+    "officialImageSource": "https://www.jimmyrock.com/"
   }
 ]
