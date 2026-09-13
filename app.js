@@ -363,7 +363,8 @@ const ARTIST_ROSTER_ORDER = [
   "JJ Chosen",
   "Generation Recovery",
   "IFearGod",
-  "Hy Chu"
+  "Hy Chu",
+  "JIMMY ROCK"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
