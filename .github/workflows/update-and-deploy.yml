@@ -194,6 +194,7 @@ jobs:
           set -euo pipefail
           python - <<'PY'
           import json
+          from datetime import date
           from pathlib import Path
 
           root = Path("_site")
@@ -296,13 +297,14 @@ jobs:
           deonte_post = "https://www.facebook.com/deonte.hall.98832/photos/-battle-creek-michigan-im-coming-im-super-thankful-and-humbled-to-announce-that-/2995157700824677/"
           deonte_artwork = "assets/events/deonte-hall-truth-in-action-2026.webp"
           deonte = [event for event in supplemental if event.get("id") == deonte_id]
-          if len(deonte) != 1:
+          deonte_is_upcoming = date.today().isoformat() <= "2026-09-12"
+          if deonte_is_upcoming and len(deonte) != 1:
               raise SystemExit("Deonte Hall submitted show missing from deployment artifact")
-          if deonte[0].get("officialUrl") != deonte_post:
+          if deonte_is_upcoming and deonte[0].get("officialUrl") != deonte_post:
               raise SystemExit("Deonte Hall official Facebook post is incorrect")
-          if deonte[0].get("image") != deonte_artwork or deonte[0].get("imageOverride") is not True:
+          if deonte_is_upcoming and (deonte[0].get("image") != deonte_artwork or deonte[0].get("imageOverride") is not True):
               raise SystemExit("Deonte Hall event artwork is incorrect")
-          if deonte[0].get("address") != "111 Capital Ave NE":
+          if deonte_is_upcoming and deonte[0].get("address") != "111 Capital Ave NE":
               raise SystemExit("Deonte Hall venue address is incorrect")
           if not (site / deonte_artwork).is_file():
               raise SystemExit("Deonte Hall local event artwork file is missing")
