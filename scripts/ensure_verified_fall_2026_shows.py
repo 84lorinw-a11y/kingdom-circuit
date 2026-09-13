@@ -18,12 +18,15 @@ EVENTS_FILE = ROOT / "events.json"
 SUPPLEMENTAL_FILE = ROOT / "supplemental-events.json"
 MANUAL_FILE = ROOT / "config" / "manual-events.json"
 
+RARE_ID = "eventbrite:rare-of-breed-jacksonville-2026"
+RARE_CANCEL_URL = "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586"
+
 EVENTBRITE_IDS = {
     "eventbrite:truthx-yung-kriss-brandon-2026",
     "eventbrite:gracefest-lecrae-castaic-2026",
     "eventbrite:hip-hop-in-the-park-cortland-2026",
     "eventbrite:reign-volume-one-aasha-marie-brooklyn-2026",
-    "eventbrite:rare-of-breed-jacksonville-2026",
+    RARE_ID,
 }
 
 EVENTBRITE_IMAGE_OVERRIDES = {
@@ -31,7 +34,7 @@ EVENTBRITE_IMAGE_OVERRIDES = {
     "eventbrite:gracefest-lecrae-castaic-2026": "assets/events/gracefest-2026.png",
     "eventbrite:hip-hop-in-the-park-cortland-2026": "assets/events/hip-hop-in-the-park-2026.jpg",
     "eventbrite:reign-volume-one-aasha-marie-brooklyn-2026": "assets/events/reign-volume-one-2026.jpg",
-    "eventbrite:rare-of-breed-jacksonville-2026": "assets/events/rare-of-breed-jacksonville-2026.jpg",
+    RARE_ID: "assets/events/rare-of-breed-jacksonville-2026.jpg",
 }
 
 HVO_SOURCE_ID = "hvo-fest-2026-los-angeles"
@@ -88,6 +91,63 @@ def write(path: Path, data: list[dict]) -> None:
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
+def merge_sources(primary: list, secondary: list) -> list:
+    merged: list = []
+    seen: set[str] = set()
+    for source in [*primary, *secondary]:
+        if not isinstance(source, dict):
+            continue
+        key = str(source.get("url") or "").strip() or json.dumps(source, sort_keys=True)
+        if key in seen:
+            continue
+        seen.add(key)
+        merged.append(deepcopy(source))
+    return merged
+
+
+def preserve_confirmed_cancellation(incoming: dict, current: dict) -> dict:
+    """Never let a catalog-pinning guard downgrade confirmed cancellation evidence."""
+    if current.get("status") != "cancelled" and not current.get("cancellationConfirmed"):
+        return incoming
+    result = deepcopy(incoming)
+    result["status"] = "cancelled"
+    result["cancellationConfirmed"] = True
+    for key in (
+        "cancellationConfirmedAt",
+        "officialUrl",
+        "ticketUrl",
+        "sourceName",
+        "notes",
+        "ticketAvailability",
+    ):
+        if current.get(key) not in (None, ""):
+            result[key] = deepcopy(current[key])
+    result["sources"] = merge_sources(current.get("sources", []), result.get("sources", []))
+    return result
+
+
+def apply_known_durable_state(event_id: str, item: dict) -> dict:
+    """Apply confirmed editorial states that supersede an older source snapshot."""
+    result = deepcopy(item)
+    if event_id == RARE_ID:
+        result["status"] = "cancelled"
+        result["cancellationConfirmed"] = True
+        result["cancellationConfirmedAt"] = "2026-09-12"
+        result["officialUrl"] = RARE_CANCEL_URL
+        result["ticketUrl"] = RARE_CANCEL_URL
+        result["sourceName"] = "Official Eventbrite cancellation notice"
+        result["notes"] = "Cancelled by the organizer. This page is retained as a cancellation notice."
+        cancellation_source = {
+            "name": "Official Eventbrite cancellation notice",
+            "url": RARE_CANCEL_URL,
+            "type": "eventbrite",
+            "authority": "venue_ticket",
+            "priority": 120,
+        }
+        result["sources"] = merge_sources([cancellation_source], result.get("sources", []))
+    return result
+
+
 def upsert(events: list[dict], event: dict, aliases: set[str] | None = None) -> None:
     ids = {event["id"]}
     if aliases:
@@ -105,7 +165,7 @@ def upsert(events: list[dict], event: dict, aliases: set[str] | None = None) -> 
     if not matches:
         events.append(deepcopy(event))
         return
-    events[matches[0]] = deepcopy(event)
+    events[matches[0]] = preserve_confirmed_cancellation(deepcopy(event), events[matches[0]])
     for index in reversed(matches[1:]):
         del events[index]
 
@@ -139,6 +199,7 @@ def main() -> None:
             item["imageOverride"] = True
         else:
             item.setdefault("imageType", "event_artwork" if item.get("image") else "artist")
+        item = apply_known_durable_state(event_id, item)
         live_item = deepcopy(item)
         live_item["id"] = f"manual:{event_id}"
         upsert(events, live_item, aliases={event_id})
@@ -180,7 +241,11 @@ def main() -> None:
     if absent:
         raise SystemExit(f"Verified live events missing after upsert: {absent}")
 
-    print("Verified Eventbrite discoveries, Flavor Fest Friday, and HVO artwork are pinned in the live feed.")
+    rare_live = next((item for item in events if str(item.get("id")) == f"manual:{RARE_ID}"), None)
+    if not rare_live or rare_live.get("status") != "cancelled" or not rare_live.get("cancellationConfirmed"):
+        raise SystemExit("Confirmed Rare of Breed cancellation was not preserved")
+
+    print("Verified Eventbrite discoveries, Flavor Fest Friday, HVO artwork, and confirmed cancellations are pinned in the live feed.")
 
 
 if __name__ == "__main__":
