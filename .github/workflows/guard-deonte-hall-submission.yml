@@ -64,14 +64,27 @@ jobs:
           set -euo pipefail
           git config user.name "kingdom-circuit-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # The repair script can touch verified registry/generated source files in
-          # addition to the primary event JSON. Commit the complete intended repair
-          # set before rebasing so git pull --rebase never sees a dirty worktree.
-          git add -A
-          if git diff --cached --quiet; then
-            echo "Deonte Hall listing already correct."
-            exit 0
-          fi
-          git commit -m "fix: restore Deonte Hall official show details"
-          git pull --rebase origin main
-          git push origin HEAD:main
+
+          # Other catalog workflows can legitimately push while this guard runs.
+          # Recompute the repair on the newest main for every retry instead of
+          # rebasing an already-generated JSON commit and creating merge conflicts.
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/apply_deonte_hall_submission.py
+            git add -A
+
+            if git diff --cached --quiet; then
+              echo "Deonte Hall listing already correct on current main."
+              exit 0
+            fi
+
+            git commit -m "fix: restore Deonte Hall official show details"
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push raced with another workflow; recomputing from latest main ($attempt/3)."
+          done
+
+          echo "Unable to persist Deonte Hall repair after retries."
+          exit 1
