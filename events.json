@@ -110,6 +110,9 @@
     "ticketUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
     "officialUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
     "image": "assets/events/truthx-yung-kriss-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
     "price": "",
     "sourceName": "Official Eventbrite listing",
     "authority": "venue_ticket",
@@ -124,9 +127,6 @@
         "priority": 94
       }
     ],
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
     "soldOut": true,
     "ticketAvailability": "sold_out",
     "notes": "Official ticket provider lists this event as sold out. Sold out is not a cancellation."
@@ -727,6 +727,9 @@
     "ticketUrl": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
     "officialUrl": "https://www.eventbrite.com/e/hip-hop-in-the-park-tickets-1999463357727",
     "image": "assets/events/hip-hop-in-the-park-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
     "price": "Free",
     "sourceName": "Official Eventbrite listing",
     "authority": "venue_ticket",
@@ -740,10 +743,7 @@
         "authority": "venue_ticket",
         "priority": 94
       }
-    ],
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true
+    ]
   },
   {
     "id": "manual:eventbrite:gracefest-lecrae-castaic-2026",
@@ -765,6 +765,9 @@
     "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
     "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
     "image": "assets/events/gracefest-2026.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
     "price": "",
     "sourceName": "Official Eventbrite listing",
     "authority": "official_festival",
@@ -778,10 +781,7 @@
         "authority": "official_festival",
         "priority": 104
       }
-    ],
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true
+    ]
   },
   {
     "id": "ticketmaster:vv1AkZk3pGkdPlaZC",
@@ -2378,6 +2378,9 @@
     "ticketUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
     "officialUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
     "image": "assets/events/reign-volume-one-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
     "price": "",
     "sourceName": "Official Eventbrite listing",
     "authority": "venue_ticket",
@@ -2391,10 +2394,7 @@
         "authority": "venue_ticket",
         "priority": 94
       }
-    ],
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true
+    ]
   },
   {
     "id": "official:7c07397fa047689b0215",
@@ -2575,12 +2575,15 @@
     ],
     "headliner": "Rare of Breed",
     "eventType": "concert",
-    "status": "cancelled",
-    "ticketUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
-    "officialUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
+    "officialUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
     "image": "assets/events/rare-of-breed-jacksonville-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
     "price": "",
-    "sourceName": "Official Eventbrite cancellation notice",
+    "sourceName": "Official Eventbrite listing",
     "authority": "venue_ticket",
     "confidence": "high",
     "lineupExplicit": true,
@@ -2591,21 +2594,8 @@
         "type": "eventbrite",
         "authority": "venue_ticket",
         "priority": 94
-      },
-      {
-        "name": "Official Eventbrite cancellation notice",
-        "url": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
-        "type": "eventbrite",
-        "authority": "venue_ticket",
-        "priority": 120
       }
-    ],
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "cancellationConfirmed": true,
-    "cancellationConfirmedAt": "2026-09-12",
-    "notes": "Cancelled by the organizer. This page is retained as a cancellation notice."
+    ]
   },
   {
     "id": "manual:mayia-nc-state-fair-2026",
