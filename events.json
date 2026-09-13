@@ -143,7 +143,9 @@
     "state": "NY",
     "country": "US",
     "artists": [
-      "Miles Minnick"
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
     ],
     "headliner": "Miles Minnick",
     "eventType": "concert",
@@ -160,6 +162,13 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
+      },
+      {
+        "name": "CJ Emulous official New Mainstream Tour calendar",
+        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-1-21",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
       }
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
@@ -167,7 +176,8 @@
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "auditVerified": "2026-09-11"
   },
   {
     "id": "official:61ca43b4035483fee6a8",
@@ -633,7 +643,7 @@
     "title": "Fountain Fest WV 2026",
     "startDate": "2026-09-18",
     "startTime": "20:00",
-    "timezone": "",
+    "timezone": "America/New_York",
     "venue": "Orr's Farm Market",
     "address": "",
     "city": "Martinsburg",
@@ -662,10 +672,15 @@
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "endDate": "2026-09-19",
-    "imageType": "event_artwork",
+    "imageType": "artist",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "authority": "official_festival",
+    "lineupExplicit": true,
+    "auditVerified": "2026-09-11",
+    "notes": "Rare of Breed performs Friday September 18 at 8 PM; festival continues September 19.",
+    "imageOverride": true
   },
   {
     "id": "manual:egr-2026-09-19-manteca-ca",
@@ -881,14 +896,23 @@
     "state": "NY",
     "country": "US",
     "artists": [
-      "Anike"
+      "Anike",
+      "Don Ready",
+      "Dante' Pride",
+      "Childlike CiCi",
+      "Yung Kriss",
+      "Datin",
+      "BigBreeze",
+      "C4 Crotona",
+      "MAYIA",
+      "Brinson"
     ],
     "headliner": "Anike",
     "eventType": "concert",
     "status": "scheduled",
     "ticketUrl": "https://www.queenstheatre.org/events/kingdom-choice-awards-2026-dqr9",
     "officialUrl": "https://www.queenstheatre.org/events/kingdom-choice-awards-2026-dqr9",
-    "image": "https://s1.ticketm.net/dam/a/ab5/019b80d9-ebcf-40a7-9233-a35e76204ab5_SOURCE",
+    "image": "https://images.zoogletools.com/s:bzglfiles/u/63036/e9f653372df147d18026413fbf37bc4eed9c7e01/original/2026-kca-flyer-final-master.jpg/!!/b:W1sicmVzaXplIiwxMDAwXSxbIm1heCJdLFsid2UiXV0=/meta:eyJzcmNCdWNrZXQiOiJiemdsZmlsZXMifQ==.jpg",
     "price": "",
     "sourceName": "Queens Theatre event and tickets",
     "sources": [
@@ -905,15 +929,42 @@
         "type": "venue_ticket",
         "authority": "official_venue",
         "priority": 120
+      },
+      {
+        "name": "Kingdom Choice Awards official 2026 poster",
+        "url": "https://kingdomchoiceawards.org/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 100
       }
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 30%",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-15T20:23:53Z",
-    "auditVerified": "2026-09-12"
+    "auditVerified": "2026-09-11",
+    "imageOverride": true,
+    "officialBill": [
+      "Anike",
+      "Childlike CiCi",
+      "Yung Kriss",
+      "Don Ready",
+      "Big Breeze",
+      "Datin",
+      "Brinson & Godchaserz",
+      "Dante Pride",
+      "C4 Crotona",
+      "Range The Artist",
+      "Dwayne Fyah",
+      "MAYIA WARREN",
+      "Marcel Patillo",
+      "Craig Watson",
+      "Paito",
+      "MICA"
+    ],
+    "notes": "MICA remains an unlinked bill name pending confirmation that it is the tracked roster artist mica."
   },
   {
     "id": "official:8cf69c5c610dae61d590",
@@ -1457,7 +1508,7 @@
     "title": "SYATP Concert",
     "startDate": "2026-09-23",
     "startTime": "19:00",
-    "timezone": "",
+    "timezone": "America/Phoenix",
     "venue": "Shiloh Christian Ministries",
     "address": "1519 S Ave Del Sol",
     "city": "Sierra Vista",
@@ -1488,7 +1539,11 @@
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "authority": "artist_calendar",
+    "lineupExplicit": true,
+    "auditVerified": "2026-09-11",
+    "imageOverride": true
   },
   {
     "id": "manual:808-beezy-bandsintown-108772712",
@@ -2169,7 +2224,7 @@
     "title": "Jay Kalyl — Desde Antes Tour",
     "startDate": "2026-10-03",
     "startTime": "",
-    "timezone": "",
+    "timezone": "America/New_York",
     "venue": "Word of Life Ministries",
     "address": "430 DeMott Ave",
     "city": "Rockville Centre",
@@ -2200,14 +2255,19 @@
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "authority": "venue_ticket",
+    "lineupExplicit": true,
+    "auditVerified": "2026-09-11",
+    "notes": "Official page gives conflicting 4:00 PM and 7:30 PM start times; start time intentionally left unspecified.",
+    "imageOverride": true
   },
   {
     "id": "manual:future-legacy-hip-hop-showcase-nashville-2026",
     "title": "Future Legacy Hip-Hop Showcase",
     "startDate": "2026-10-04",
     "startTime": "18:30",
-    "timezone": "",
+    "timezone": "America/Chicago",
     "venue": "Cannery Hall — Row One Stage",
     "address": "1 Cannery Row",
     "city": "Nashville",
@@ -2225,31 +2285,51 @@
     "status": "scheduled",
     "ticketUrl": "https://www.axs.com/events/1580749/future-legacy-hip-hop-showcase-tickets",
     "officialUrl": "https://www.axs.com/events/1580749/future-legacy-hip-hop-showcase-tickets",
-    "image": "assets/artists/1k-phew.webp",
+    "image": "https://images.discovery-prod.axs.com/2026/08/uploadedimage_6a871ac3abd11.jpg",
     "price": "",
     "sourceName": "AXS / GMA official Future Legacy listing",
     "sources": [
       {
-        "name": "AXS / GMA official Future Legacy listing",
+        "name": "AXS official event",
         "url": "https://www.axs.com/events/1580749/future-legacy-hip-hop-showcase-tickets",
         "type": "manual_verified",
         "authority": "venue_ticket",
-        "priority": 112
+        "priority": 94
+      },
+      {
+        "name": "GMA Dove Week official schedule",
+        "url": "https://gospelmusic.org/news/dove-week-2026-see-the-schedule",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 100
       }
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 24%",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "authority": "venue_ticket",
+    "lineupExplicit": true,
+    "auditVerified": "2026-09-11",
+    "imageOverride": true,
+    "officialBill": [
+      "ADIA",
+      "Don Ready",
+      "DJ Trendsetter",
+      "LaNell Grant",
+      "Nathan Davis Jr.",
+      "1K Phew"
+    ],
+    "notes": "DJ Trendsetter is associated with roster artist Trendsetter Sense based on established professional naming as DJ Trendsetter Sense."
   },
   {
     "id": "manual:cj-emulous-live-loud-chico-2026",
     "title": "Live Loud",
     "startDate": "2026-10-07",
     "startTime": "19:00",
-    "timezone": "",
+    "timezone": "America/Los_Angeles",
     "venue": "2801 Notre Dame Blvd",
     "address": "2801 Notre Dame Blvd",
     "city": "Chico",
@@ -2280,7 +2360,11 @@
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "authority": "artist_calendar",
+    "lineupExplicit": true,
+    "auditVerified": "2026-09-11",
+    "imageOverride": true
   },
   {
     "id": "manual:egr-2026-10-10-visalia-ca",
@@ -2325,7 +2409,7 @@
     "title": "Boxyard Saturdaze",
     "startDate": "2026-10-10",
     "startTime": "12:30",
-    "timezone": "",
+    "timezone": "America/New_York",
     "venue": "Boxyard RTP — BeatBox Stage",
     "address": "",
     "city": "Durham",
@@ -2356,7 +2440,15 @@
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "authority": "artist_calendar",
+    "lineupExplicit": true,
+    "auditVerified": "2026-09-11",
+    "officialBill": [
+      "DJ Watty Tha Shepherd",
+      "MAYIA WARREN"
+    ],
+    "imageOverride": true
   },
   {
     "id": "manual:eventbrite:reign-volume-one-aasha-marie-brooklyn-2026",
@@ -2486,7 +2578,7 @@
     "title": "Teen Club Kickoff / Back to School Concert",
     "startDate": "2026-10-12",
     "startTime": "18:00",
-    "timezone": "",
+    "timezone": "America/Los_Angeles",
     "venue": "Westside Ministries",
     "address": "950 Columbia Ave",
     "city": "Turlock",
@@ -2518,7 +2610,16 @@
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "authority": "artist_calendar",
+    "lineupExplicit": true,
+    "auditVerified": "2026-09-11",
+    "imageOverride": true,
+    "officialBill": [
+      "CJ Emulous",
+      "Lul DreDay",
+      "MikeySoChristian"
+    ]
   },
   {
     "id": "manual:egr-2026-10-16-fresno-ca",
@@ -2612,7 +2713,7 @@
     "title": "MAYIA at the NC State Fair",
     "startDate": "2026-10-17",
     "startTime": "10:00",
-    "timezone": "",
+    "timezone": "America/New_York",
     "venue": "Heritage Circle Stage — NC State Fairgrounds",
     "address": "",
     "city": "Raleigh",
@@ -2643,14 +2744,19 @@
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "authority": "artist_calendar",
+    "lineupExplicit": true,
+    "auditVerified": "2026-09-11",
+    "notes": "One event with two confirmed acoustic sets: 10–11 AM and 12–1 PM.",
+    "imageOverride": true
   },
   {
     "id": "manual:mission-friends-sacramento-2026",
     "title": "Mission and Special Guests",
     "startDate": "2026-10-17",
     "startTime": "18:30",
-    "timezone": "",
+    "timezone": "America/Los_Angeles",
     "venue": "Victory Outreach South Sacramento",
     "address": "6831 Savings Pl",
     "city": "Sacramento",
@@ -2681,7 +2787,11 @@
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "authority": "artist_calendar",
+    "lineupExplicit": true,
+    "auditVerified": "2026-09-11",
+    "imageOverride": true
   },
   {
     "id": "manual:kaden-jordan-2026-10-23-new-port-richey",
@@ -2957,13 +3067,17 @@
     "artists": [
       "Miles Minnick",
       "Gifted Hands",
-      "Datin"
+      "Datin",
+      "TRU-SERVA",
+      "VVS Big Rock",
+      "Lyric The Geenyus",
+      "MAYIA"
     ],
     "headliner": "Miles Minnick",
     "eventType": "festival",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "assets/events/flavor-fest-friday-2026.webp",
+    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/a2407af7-a012-4df1-8d42-d247ab82cd8b/FF26-Promo-Friday-Night%2B%281%29.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -2979,9 +3093,17 @@
         "type": "manual_verified",
         "authority": "official_event",
         "priority": 112
+      },
+      {
+        "name": "Flavor Fest official Friday poster",
+        "url": "https://www.flavorfest.org/",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 106
       }
     ],
-    "confidence": "high"
+    "confidence": "high",
+    "auditVerified": "2026-09-11"
   },
   {
     "id": "official:4e2fc5c7c02ab1d34b9e",
@@ -3035,7 +3157,7 @@
     "title": "Flavor Fest 2026 — Saturday Concerts",
     "startDate": "2026-11-07",
     "startTime": "19:00",
-    "timezone": "",
+    "timezone": "America/New_York",
     "venue": "Crossover Church",
     "address": "1235 Fowler Ave",
     "city": "Tampa",
@@ -3069,7 +3191,19 @@
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "authority": "official_festival",
+    "lineupExplicit": true,
+    "auditVerified": "2026-09-11",
+    "imageOverride": true,
+    "officialBill": [
+      "Lecrae",
+      "Biancallove",
+      "Gifted Hands",
+      "Monster Tarver",
+      "C4 Crotona"
+    ],
+    "notes": "Yung Kriss and Gifted Hands have conflicting poster/schedule day assignments and are not newly associated here pending resolution."
   },
   {
     "id": "ticketmaster:vv1AAZk3FGkdmpCG1",
@@ -3250,7 +3384,7 @@
     "title": "The Kickback",
     "startDate": "2026-11-14",
     "startTime": "19:00",
-    "timezone": "",
+    "timezone": "America/Chicago",
     "venue": "2305 SE 14th St",
     "address": "2305 SE 14th St",
     "city": "Grand Prairie",
@@ -3281,7 +3415,11 @@
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "authority": "artist_calendar",
+    "lineupExplicit": true,
+    "auditVerified": "2026-09-11",
+    "imageOverride": true
   },
   {
     "id": "ticketmaster:vvG10Z_CMA3B0H",
@@ -3415,7 +3553,7 @@
     "title": "Miles Minnick & CJ Emulous at Zion Ultra Lounge",
     "startDate": "2026-12-05",
     "startTime": "",
-    "timezone": "",
+    "timezone": "America/Phoenix",
     "venue": "Zion Ultra Lounge",
     "address": "2301 S Stearman Dr",
     "city": "Chandler",
@@ -3447,7 +3585,11 @@
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "authority": "artist_calendar",
+    "lineupExplicit": true,
+    "auditVerified": "2026-09-11",
+    "imageOverride": true
   },
   {
     "id": "manual:egr-2026-12-11-fargo-nd",
@@ -3644,5 +3786,44 @@
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-09-12T14:30:41Z"
+  },
+  {
+    "title": "Alex Zurdo: Zona Zero",
+    "startDate": "2026-10-18",
+    "startTime": "18:00",
+    "timezone": "America/Puerto_Rico",
+    "venue": "Coliseo de Puerto Rico",
+    "address": "500 Arterial B",
+    "city": "San Juan",
+    "state": "PR",
+    "country": "US",
+    "artists": [
+      "Alex Zurdo"
+    ],
+    "headliner": "Alex Zurdo",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://choli.ticketera.com/event/alex-zurdo-zona-cero-6dn2x2",
+    "officialUrl": "https://www.coliseodepuertorico.com/alexzurdozonazero/",
+    "image": "assets/events/alex-zurdo-zona-zero-2026.svg",
+    "price": "",
+    "sourceName": "Coliseo de Puerto Rico official event",
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Coliseo de Puerto Rico official event",
+        "url": "https://www.coliseodepuertorico.com/alexzurdozonazero/",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      }
+    ],
+    "auditVerified": "2026-09-11",
+    "id": "manual:alex-zurdo-zona-zero-san-juan-2026",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true
   }
 ]
