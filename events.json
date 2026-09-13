@@ -1,5 +1,46 @@
 [
   {
+    "id": "manual:eventbrite:truthx-yung-kriss-brandon-2026",
+    "title": "TruthX Concert 2026",
+    "startDate": "2026-09-12",
+    "startTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "Brandon High School",
+    "address": "1101 Victoria Street",
+    "city": "Brandon",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Yung Kriss"
+    ],
+    "headliner": "Yung Kriss",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
+    "officialUrl": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
+    "image": "assets/events/truthx-yung-kriss-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "price": "",
+    "sourceName": "Official Eventbrite listing",
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/truthx-concert-2026-tickets-1989610293948",
+        "type": "eventbrite",
+        "authority": "venue_ticket",
+        "priority": 94
+      }
+    ],
+    "soldOut": true,
+    "ticketAvailability": "sold_out",
+    "notes": "Official ticket provider lists this event as sold out. Sold out is not a cancellation."
+  },
+  {
     "id": "ticketmaster:k7vGF_dl6_HDp",
     "title": "Miles Minnick - New Mainstream Tour",
     "startDate": "2026-09-13",
@@ -3049,11 +3090,7 @@
     "artists": [
       "Miles Minnick",
       "Gifted Hands",
-      "Datin",
-      "TRU-SERVA",
-      "VVS Big Rock",
-      "Lyric The Geenyus",
-      "MAYIA"
+      "Datin"
     ],
     "headliner": "Miles Minnick",
     "eventType": "festival",
@@ -3075,17 +3112,9 @@
         "type": "manual_verified",
         "authority": "official_event",
         "priority": 112
-      },
-      {
-        "name": "Flavor Fest official Friday poster",
-        "url": "https://www.flavorfest.org/",
-        "type": "manual_verified",
-        "authority": "official_festival",
-        "priority": 106
       }
     ],
-    "confidence": "high",
-    "auditVerified": "2026-09-11"
+    "confidence": "high"
   },
   {
     "id": "official:4e2fc5c7c02ab1d34b9e",
