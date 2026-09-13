@@ -163,7 +163,10 @@ def _repair_new_mainstream(rows: list[dict], manual: bool) -> None:
 
 
 def apply_requested_image_hotfix() -> None:
-    for rel in ("config/manual-events.json", "supplemental-events.json", "events.json"):
+    # Sep. 13 requested additions are durable only in config/manual-events.json.
+    # events.json is the generated/runtime copy. supplemental-events.json must not
+    # be repopulated here or the same event exists in two durable inputs.
+    for rel in ("config/manual-events.json", "events.json"):
         path = ROOT / rel
         rows = json.loads(path.read_text(encoding="utf-8"))
         manual = rel == "config/manual-events.json"
