@@ -32,11 +32,11 @@ jobs:
           python -m py_compile scripts/apply_curated_catalog_policy.py
           python scripts/apply_curated_catalog_policy.py
 
-      - name: Reapply verified Sep 13 requested events
+      - name: Reapply verified Sep 13 content repairs
         run: |
           set -euo pipefail
-          python -m py_compile scripts/apply_sep13_requested_events.py
-          python scripts/apply_sep13_requested_events.py
+          python -m py_compile scripts/apply_sep13_content_repairs.py
+          python scripts/apply_sep13_content_repairs.py
 
       - name: Persist curated catalog changes
         shell: bash
@@ -45,7 +45,7 @@ jobs:
           git config user.name "kingdom-circuit-curation"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # The policy and verified-event repair can update auxiliary tracked
+          # The policy and verified-event repairs can update auxiliary tracked
           # files too. Commit their complete output so subsequent collection
           # and audit pushes cannot erase manually verified Sep 13 records.
           git add -A
