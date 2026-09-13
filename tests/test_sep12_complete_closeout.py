@@ -11,6 +11,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import finalize_sep12_complete_closeout as closeout
 
+APPROVED_CURRENT_LOGO = "/assets/logo-wordmark.svg?v=1"
 MIKE_MALAGIES_APPROVED_IMAGE = "https://static.wixstatic.com/media/61a78b_7545031064f049a6843e4c7d0666886f~mv2.jpg/v1/fill/w_327%2Ch_491%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/61a78b_7545031064f049a6843e4c7d0666886f~mv2.jpg"
 
 
@@ -76,8 +77,8 @@ class September12CompleteCloseoutTests(unittest.TestCase):
 
     def test_user_approved_brand_and_mike_malagies_image_are_preserved(self):
         home = (ROOT / "index.html").read_text(encoding="utf-8")
-        self.assertIn('/assets/logo.png', home)
-        self.assertNotIn("logo.png", closeout.ARTWORK_REPLACEMENTS)
+        self.assertIn(APPROVED_CURRENT_LOGO, home)
+        self.assertNotIn("logo-wordmark", json.dumps(closeout.ARTWORK_REPLACEMENTS))
 
         artists = json.loads((ROOT / "config" / "artists.json").read_text(encoding="utf-8"))
         mike = next(item for item in artists if item.get("name") == "Mike Malagies")
