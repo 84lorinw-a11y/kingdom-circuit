@@ -2115,26 +2115,19 @@
     ],
     "headliner": "Rare of Breed",
     "eventType": "concert",
-    "status": "cancelled",
-    "ticketUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
-    "officialUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
+    "officialUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
     "image": "assets/events/rare-of-breed-jacksonville-2026.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "price": "",
-    "sourceName": "Official Eventbrite cancellation notice",
+    "sourceName": "Official Eventbrite listing",
     "authority": "venue_ticket",
     "confidence": "high",
     "lineupExplicit": true,
     "sources": [
-      {
-        "name": "Official Eventbrite cancellation notice",
-        "url": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
-        "type": "eventbrite",
-        "authority": "venue_ticket",
-        "priority": 120
-      },
       {
         "name": "Official Eventbrite listing",
         "url": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
@@ -2142,10 +2135,7 @@
         "authority": "venue_ticket",
         "priority": 94
       }
-    ],
-    "cancellationConfirmed": true,
-    "cancellationConfirmedAt": "2026-09-12",
-    "notes": "Cancelled by the organizer. This page is retained as a cancellation notice."
+    ]
   },
   {
     "title": "The Sac Town Give Back",
@@ -2441,7 +2431,7 @@
     "startTime": "19:00",
     "timezone": "America/New_York",
     "venue": "Crossover Church",
-    "address": "1235 E Fowler Ave",
+    "address": "1235 Fowler Ave",
     "city": "Tampa",
     "state": "FL",
     "country": "US",
@@ -2452,6 +2442,7 @@
     ],
     "headliner": "Miles Minnick",
     "eventType": "festival",
+    "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
     "image": "assets/events/flavor-fest-friday-2026.webp",
@@ -2459,10 +2450,10 @@
     "imagePosition": "center",
     "imageOverride": true,
     "price": "",
-    "status": "scheduled",
-    "lineupExplicit": true,
-    "authority": "official_event",
     "sourceName": "Flavor Fest official 2026 schedule",
+    "authority": "official_event",
+    "confidence": "high",
+    "lineupExplicit": true,
     "sources": [
       {
         "name": "Flavor Fest official 2026 schedule",
@@ -2471,8 +2462,7 @@
         "authority": "official_event",
         "priority": 112
       }
-    ],
-    "confidence": "high"
+    ]
   },
   {
     "title": "Flavor Fest 2026 — Saturday Concerts",
@@ -2723,6 +2713,71 @@
     "lineupExplicit": true,
     "authority": "official_event",
     "sourceName": "EGR official Instagram schedule"
+  },
+  {
+    "title": "State Youth Conference with CJ Emulous",
+    "startDate": "2026-11-27",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "Venue not provided",
+    "address": "",
+    "city": "Cocoa",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "CJ Emulous"
+    ],
+    "headliner": "CJ Emulous",
+    "eventType": "conference",
+    "status": "scheduled",
+    "ticketUrl": "",
+    "officialUrl": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous",
+    "image": "",
+    "imageType": "fallback",
+    "imagePosition": "center",
+    "imageOverride": false,
+    "price": "",
+    "lineupExplicit": true,
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "sourceName": "CJ Emulous official calendar",
+    "sources": [
+      {
+        "name": "CJ Emulous official calendar",
+        "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      },
+      {
+        "name": "CJ Emulous official calendar — Nov 28 session",
+        "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      },
+      {
+        "name": "CJ Emulous official calendar — Nov 29 session",
+        "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous-2",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ],
+    "auditVerified": "2026-09-13",
+    "endDate": "2026-11-29",
+    "notes": "One conference record covers all three official CJ Emulous appearances. Main time is blank pending independent local-time confirmation.",
+    "sessionDates": [
+      "2026-11-27",
+      "2026-11-28",
+      "2026-11-29"
+    ],
+    "publishedSessionTimes": {
+      "2026-11-27": "19:00",
+      "2026-11-28": "10:00",
+      "2026-11-29": "09:00"
+    },
+    "id": "cj-emulous-state-youth-conference-cocoa-2026"
   },
   {
     "title": "Christlike Christmas — CJ Emulous & Miles Minnick",
@@ -3106,70 +3161,5 @@
     "auditVerified": "2026-09-13",
     "notes": "Venue, additional lineup and independently confirmed local performance time remain unpublished.",
     "id": "cj-emulous-rize-az-music-festival-2027"
-  },
-  {
-    "title": "State Youth Conference with CJ Emulous",
-    "startDate": "2026-11-27",
-    "startTime": "",
-    "timezone": "America/New_York",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "Cocoa",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "CJ Emulous"
-    ],
-    "headliner": "CJ Emulous",
-    "eventType": "conference",
-    "status": "scheduled",
-    "ticketUrl": "",
-    "officialUrl": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous",
-    "image": "",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "imageOverride": false,
-    "price": "",
-    "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "sourceName": "CJ Emulous official calendar",
-    "sources": [
-      {
-        "name": "CJ Emulous official calendar",
-        "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      },
-      {
-        "name": "CJ Emulous official calendar — Nov 28 session",
-        "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      },
-      {
-        "name": "CJ Emulous official calendar — Nov 29 session",
-        "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous-2",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "endDate": "2026-11-29",
-    "notes": "One conference record covers all three official CJ Emulous appearances. Main time is blank pending independent local-time confirmation.",
-    "sessionDates": [
-      "2026-11-27",
-      "2026-11-28",
-      "2026-11-29"
-    ],
-    "publishedSessionTimes": {
-      "2026-11-27": "19:00",
-      "2026-11-28": "10:00",
-      "2026-11-29": "09:00"
-    },
-    "id": "cj-emulous-state-youth-conference-cocoa-2026"
   }
 ]
