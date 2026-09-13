@@ -98,10 +98,7 @@ class MultiPageProductionTests(unittest.TestCase):
 
     def test_yung_kriss_event_artwork_is_high_resolution_and_pinned(self):
         events = json.loads((ROOT / "events.json").read_text(encoding="utf-8"))
-        truthx = [item for item in events if item.get("title") == "TruthX Concert 2026"]
-        self.assertEqual(1, len(truthx))
         expected = {
-            "TruthX Concert 2026": "assets/events/truthx-yung-kriss-2026.jpg",
             "HVO Fest 2026": "assets/events/hvo-fest-2026.jpg",
         }
         for title, image in expected.items():

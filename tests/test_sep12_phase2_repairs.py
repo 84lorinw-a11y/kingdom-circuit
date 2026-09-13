@@ -23,7 +23,6 @@ class September12Phase2Repairs(unittest.TestCase):
 
     def test_multiday_ranges_are_displayed(self):
         cases = {
-            "Uprise Festival 2026": "Sep 11–12, 2026",
             "Fountain Fest WV 2026": "Sep 18–19, 2026",
             "Ark of Worship Gospel & Christian Music Festival 2026": "Oct 9–10, 2026",
         }

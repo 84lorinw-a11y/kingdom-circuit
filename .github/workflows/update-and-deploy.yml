@@ -76,6 +76,9 @@ jobs:
       - name: Restore Deonte Hall artist-submitted show
         run: python scripts/apply_deonte_hall_submission.py
 
+      - name: Apply durable September 13 content repairs
+        run: python scripts/apply_sep13_content_repairs.py
+
       - name: Restore runtime-only source configuration
         if: github.event_name != 'push' || contains(github.event.head_commit.message, '[full scan]')
         run: git checkout -- config/official-sources.json

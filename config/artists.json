@@ -71,7 +71,7 @@
     "preferArtistImage": true,
     "sourceRegistryVerified": true,
     "officialImageSource": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
-    "website": "https://tprlive.co/collections/caleb-gordon-the-eden-experience?srsltid=AfmBOopZ8_u8FLIHQ5yFrnTJVHrJfOAqo32_-Zgy_D3D76qo031L04Ge",
+    "website": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
     "websiteRegistryVerified": true,
     "instagramProfile": "https://www.instagram.com/calebfromeden/",
     "spotifyProfile": "https://open.spotify.com/artist/6s3XaJkcT7464G4oII9V41",
@@ -523,7 +523,7 @@
     "monitoringPriority": 3,
     "topStreamingPriority": false,
     "socialSearchEnabled": false,
-    "activeStatus": "excluded",
+    "activeStatus": "excluded_non_chh",
     "textMatchEnabled": false,
     "rosterOrder": 28,
     "editorialNote": "Excluded from Kingdom Circuit: not Christian hip-hop.",
@@ -1464,7 +1464,10 @@
     "sourceRegistryVerified": true,
     "rosterOrder": 71,
     "websiteRegistryVerified": true,
-    "sourceRegistryRosterOrder": 71
+    "sourceRegistryRosterOrder": 71,
+    "imageUrl": "https://static.wixstatic.com/media/1bf289_6c5a4a94f9aa45f48aa78949e6c65f8f~mv2.jpg/v1/fill/w_1200,h_1600,al_c,q_90,enc_auto/JCV09520.jpg",
+    "imagePosition": "50% 22%",
+    "preferArtistImage": true
   },
   {
     "name": "Nu Tone",
@@ -1621,7 +1624,7 @@
     "youtubeProfile": "https://www.youtube.com/channel/UCAvlfmD2aiqXxxknr-9VSVg",
     "officialImageSource": "https://www.instagram.com/cutthecho/",
     "sourceRegistryVerified": true,
-    "sourceRegistryRosterOrder": 78
+    "sourceRegistryRosterOrder": 79
   },
   {
     "name": "DKG Kie",
@@ -1643,7 +1646,7 @@
     "youtubeProfile": "https://www.youtube.com/@dkgkie",
     "officialImageSource": "https://www.instagram.com/dkg.kie",
     "sourceRegistryVerified": true,
-    "sourceRegistryRosterOrder": 79,
+    "sourceRegistryRosterOrder": 80,
     "websiteRegistryVerified": true
   },
   {
@@ -1666,7 +1669,7 @@
     "youtubeProfile": "https://www.youtube.com/@bryanbraille",
     "officialImageSource": "https://www.humblebeast.com/music/braille",
     "sourceRegistryVerified": true,
-    "sourceRegistryRosterOrder": 80,
+    "sourceRegistryRosterOrder": 81,
     "websiteRegistryVerified": true
   },
   {
@@ -1689,7 +1692,7 @@
     "youtubeProfile": "https://www.youtube.com/@CantonJones1",
     "officialImageSource": "https://www.instagram.com/thecantonjones/?hl=en",
     "sourceRegistryVerified": true,
-    "sourceRegistryRosterOrder": 81
+    "sourceRegistryRosterOrder": 82
   },
   {
     "name": "Jay-Way",
@@ -1712,7 +1715,7 @@
     "youtubeProfile": "https://www.youtube.com/@JayWayTheAlien",
     "officialImageSource": "https://www.jaywaythealien.com/",
     "sourceRegistryVerified": true,
-    "sourceRegistryRosterOrder": 82,
+    "sourceRegistryRosterOrder": 83,
     "websiteRegistryVerified": true
   },
   {
@@ -1736,7 +1739,7 @@
     "youtubeProfile": "https://www.youtube.com/@stixxwym/videos",
     "officialImageSource": "https://linktr.ee/stixxwym",
     "sourceRegistryVerified": true,
-    "sourceRegistryRosterOrder": 83,
+    "sourceRegistryRosterOrder": 84,
     "bandsintownRejectedArtistIds": [
       "861812"
     ],
@@ -1764,7 +1767,7 @@
     "youtubeProfile": "https://www.youtube.com/@RuslanKD/featured",
     "officialImageSource": "https://www.instagram.com/ruslankd/?hl=en",
     "sourceRegistryVerified": true,
-    "sourceRegistryRosterOrder": 84
+    "sourceRegistryRosterOrder": 85
   },
   {
     "name": "J J L",
@@ -6324,5 +6327,125 @@
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
     "rosterOrder": 342
+  },
+  {
+    "name": "Key'ijah",
+    "aliases": [
+      "Key'ijah"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 343
+  },
+  {
+    "name": "Tha inspiration",
+    "aliases": [
+      "Tha inspiration"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 344
+  },
+  {
+    "name": "NISSI SHALOM",
+    "aliases": [
+      "NISSI SHALOM"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 345
+  },
+  {
+    "name": "SteveUnordinary",
+    "aliases": [
+      "SteveUnordinary"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 346
+  },
+  {
+    "name": "JJ Chosen",
+    "aliases": [
+      "JJ Chosen"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 347
+  },
+  {
+    "name": "Generation Recovery",
+    "aliases": [
+      "Generation Recovery"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 348
+  },
+  {
+    "name": "IFearGod",
+    "aliases": [
+      "IFearGod"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 349
+  },
+  {
+    "name": "Hy Chu",
+    "aliases": [
+      "Hy Chu"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 350
   }
 ]

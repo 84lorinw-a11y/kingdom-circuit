@@ -66,11 +66,11 @@ ARTWORK_REPLACEMENTS = {
         "classification": 3,
     },
     ("Mission and Special Guests", "2026-10-17"): {
-        "image": "assets/event-fallback.webp",
-        "imageType": "fallback",
-        "source": "No suitable verified source image located",
-        "sourceUrl": "https://www.rmgamplify.com/",
-        "classification": 4,
+        "image": "https://i.ytimg.com/vi/tXeOrsQliwQ/maxresdefault.jpg",
+        "imageType": "artist",
+        "source": "Mission official YouTube channel",
+        "sourceUrl": "https://www.youtube.com/watch?v=tXeOrsQliwQ",
+        "classification": 3,
     },
 }
 

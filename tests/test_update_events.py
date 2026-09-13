@@ -596,14 +596,14 @@ class KingdomCircuitV7Tests(unittest.TestCase):
         }
         self.assertTrue(expected.issubset(identifiers))
 
-    def test_master_roster_has_342_unique_artists(self):
+    def test_master_roster_has_350_unique_artists(self):
         artists = json.loads((ROOT / "config" / "artists.json").read_text())
         names = [item["name"] for item in artists]
-        self.assertEqual(len(names), 342)
-        self.assertEqual(len({name.casefold() for name in names}), 342)
+        self.assertEqual(len(names), 350)
+        self.assertEqual(len({name.casefold() for name in names}), 350)
         self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 1), 102)
         self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 2), 133)
-        self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 3), 107)
+        self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 3), 115)
 
     def test_top_streaming_priority_artists_are_present(self):
         artists = json.loads((ROOT / "config" / "artists.json").read_text())
@@ -852,7 +852,10 @@ class KingdomCircuitV9Tests(unittest.TestCase):
         tribe_fest = next(event for event in events if event.get("id") == "tribe-fest-rialto-2026")
 
         self.assertIn("Tommy Zuko", uprise["artists"])
-        self.assertEqual(tribe_fest["artists"], ["Yasmine Jinelle"])
+        self.assertEqual(
+            tribe_fest["artists"],
+            ["Key'ijah", "Tha inspiration", "NISSI SHALOM", "SteveUnordinary", "Yasmine Jinelle", "JJ Chosen", "Generation Recovery", "IFearGod", "Hy Chu"],
+        )
         self.assertEqual(tribe_fest["startDate"], "2026-09-25")
         self.assertEqual(tribe_fest["startTime"], "19:00")
         self.assertEqual(tribe_fest["address"], "625 N Eucalyptus Ave")

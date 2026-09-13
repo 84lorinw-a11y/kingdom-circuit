@@ -55,7 +55,7 @@ VERIFIED_EVENT_IMAGES = {
     "jay-kalyl-desde-antes-rockville-centre-2026": "https://i.scdn.co/image/ab6761610000e5eb1269b80aed5d08c40aedfdc3",
     "mayia-boxyard-saturdaze-2026": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
     "mayia-nc-state-fair-2026": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
-    "mission-friends-sacramento-2026": "https://musiciansandmelody.com/wp-content/uploads/2017/04/mission-lhm.jpg",
+    "mission-friends-sacramento-2026": "https://i.ytimg.com/vi/tXeOrsQliwQ/maxresdefault.jpg",
     "alex-zurdo-zona-zero-san-juan-2026": "https://i.scdn.co/image/ab6761610000e5eb2c81bb40c3b6962eacf9dc9c",
     "cj-emulous-kickback-grand-prairie-2026": "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
     "miles-cj-zion-ultra-lounge-chandler-2026": "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
