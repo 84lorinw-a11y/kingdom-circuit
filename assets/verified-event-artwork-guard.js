@@ -37,18 +37,23 @@
     const src = pins[slug];
     if (!src) return;
 
-    const isFallback = src === fallback;
-    img.classList.remove("artist-photo");
-    img.classList.add(isFallback ? "event-artwork" : "event-artwork");
+    if (img.classList.contains("artist-photo")) img.classList.remove("artist-photo");
+    if (!img.classList.contains("event-artwork")) img.classList.add("event-artwork");
     delete img.dataset.kcEventArtist;
     delete img.dataset.kcImageIndex;
     delete img.dataset.kcLockPrimary;
     delete img.dataset.kcPrimaryLocked;
     img.onerror = function () {
       this.onerror = null;
-      this.src = fallback;
+      if (this.getAttribute("src") !== fallback) this.src = fallback;
     };
     if (img.getAttribute("src") !== src) img.setAttribute("src", src);
+  }
+
+  function enforceNode(node) {
+    if (!(node instanceof Element)) return;
+    if (node instanceof HTMLImageElement) enforce(node);
+    node.querySelectorAll?.(".event-card img, .event-detail-media img").forEach(enforce);
   }
 
   function run() {
@@ -58,14 +63,24 @@
   function start() {
     run();
     if (!document.body) return;
-    // Attribute observation is intentionally retained: other legacy image scripts can
-    // rewrite src after load. enforce() is idempotent, so its own src mutation can
-    // produce at most one follow-up callback rather than a self-triggering loop.
-    new MutationObserver(run).observe(document.body, {
+
+    // Watch only new DOM nodes and actual src rewrites. Class observation caused
+    // unnecessary full-page rescans on the newly pinned events and could amplify
+    // other image repair scripts. Process only the changed image/subtree instead.
+    const observer = new MutationObserver(mutations => {
+      for (const mutation of mutations) {
+        if (mutation.type === "attributes") {
+          enforce(mutation.target);
+          continue;
+        }
+        mutation.addedNodes.forEach(enforceNode);
+      }
+    });
+    observer.observe(document.body, {
       subtree: true,
       childList: true,
       attributes: true,
-      attributeFilter: ["src", "class"]
+      attributeFilter: ["src"]
     });
   }
 
