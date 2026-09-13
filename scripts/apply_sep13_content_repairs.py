@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 
 from apply_sep13_requested_events import apply_requested_repairs
+from apply_sep13_requested_image_hotfix import apply_requested_image_hotfix
 
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT_DATE = "2026-09-13"
@@ -124,6 +125,7 @@ def main() -> None:
     patch_event_file(ROOT / "supplemental-events.json", False)
     patch_event_file(ROOT / "events.json", False)
     apply_requested_repairs()
+    apply_requested_image_hotfix()
 
 
 if __name__ == "__main__":
