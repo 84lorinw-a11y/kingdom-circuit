@@ -32,11 +32,14 @@ jobs:
           python -m py_compile scripts/apply_curated_catalog_policy.py
           python scripts/apply_curated_catalog_policy.py
 
-      - name: Reapply verified Sep 13 requested events
+      - name: Reapply verified Sep 13 content repairs
         run: |
           set -euo pipefail
-          python -m py_compile scripts/apply_sep13_requested_events.py
-          python scripts/apply_sep13_requested_events.py
+          # Run the complete durable repair layer, not the raw importer. The
+          # complete layer keeps requested additions in config/manual-events.json
+          # and removes generated manual:* copies from supplemental-events.json.
+          python -m py_compile scripts/apply_sep13_content_repairs.py
+          python scripts/apply_sep13_content_repairs.py
 
       - name: Persist curated catalog changes
         shell: bash

@@ -95,10 +95,16 @@ class September12Phase2PublishTests(unittest.TestCase):
             self.assertNotIn("madison-ryann-ward", sitemap.read_text(encoding="utf-8"))
             self.assertGreaterEqual(result["profiles_removed"], 1)
 
-    def test_deonte_guard_commits_complete_repair_set_before_rebase(self):
+    def test_deonte_guard_recomputes_complete_repair_set_after_raced_push(self):
         workflow = (ROOT / ".github" / "workflows" / "guard-deonte-hall-submission.yml").read_text(encoding="utf-8")
         self.assertIn("git add -A", workflow)
-        self.assertLess(workflow.index("git add -A"), workflow.index("git pull --rebase origin main"))
+        self.assertIn("for attempt in 1 2 3", workflow)
+        self.assertIn("git fetch origin main", workflow)
+        self.assertIn("git reset --hard origin/main", workflow)
+        self.assertNotIn("git pull --rebase origin main", workflow)
+        self.assertLess(workflow.index("git fetch origin main"), workflow.index("git reset --hard origin/main"))
+        self.assertLess(workflow.index("git reset --hard origin/main"), workflow.rindex("python scripts/apply_deonte_hall_submission.py"))
+        self.assertLess(workflow.rindex("python scripts/apply_deonte_hall_submission.py"), workflow.index("git add -A"))
 
 
 if __name__ == "__main__":
