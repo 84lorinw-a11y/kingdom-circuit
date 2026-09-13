@@ -42,6 +42,11 @@ const KC_EVENT_IMAGE_OVERRIDES = {
   "manual:hope-fest-daytona-2026": "https://riverfrontshopsofdaytona.com/wp-content/uploads/2026/07/DDA_Events_HopeFest_2026.jpg"
 };
 
+const KC_SPOTIFY_IMAGE_CACHE = new Map();
+const KC_SPOTIFY_IMAGE_INFLIGHT = new Map();
+let kcRepairScheduled = false;
+let kcProfileRepairInFlight = null;
+
 function kcImageKey(value) {
   return String(value || "").trim().toLocaleLowerCase();
 }
@@ -95,10 +100,6 @@ if (typeof eventImage === "function") {
       return kcOriginalEventImage(event);
     }
 
-    // Bandsintown rows may contain a guessed local file path that does not exist.
-    // Ignore that guessed event path and use the best verified image we already
-    // have for the headliner. If no headliner image exists yet, fall back to the
-    // site's standard event artwork rather than rendering a broken image.
     if (kcIsBandsintownEvent(event)) {
       return kcBestHeadlinerImage(event) || (typeof FALLBACK_EVENT_IMAGE !== "undefined" ? FALLBACK_EVENT_IMAGE : "/assets/event-fallback.webp");
     }
@@ -110,21 +111,43 @@ if (typeof eventImage === "function") {
   };
 }
 
-// Spotify's oEmbed response can supply a direct thumbnail for verified direct
-// artist profiles. This fills remaining registry cards without treating search
-// URLs or generic page URLs as images.
+// Profile-only Spotify fallback. Cache both completed and in-flight lookups so a
+// DOM mutation cannot start duplicate requests for the same artist.
 async function kcResolveSpotifyImage(artist) {
   const key = kcImageKey(artist?.name);
+  if (!key) return "";
+  if (KC_SPOTIFY_IMAGE_CACHE.has(key)) return KC_SPOTIFY_IMAGE_CACHE.get(key);
+  if (KC_SPOTIFY_IMAGE_INFLIGHT.has(key)) return KC_SPOTIFY_IMAGE_INFLIGHT.get(key);
+
   const profile = KC_SPOTIFY_PROFILE_OVERRIDES[key] || String(artist?.spotifyProfile || "");
-  if (!/^https:\/\/open\.spotify\.com\/artist\/[A-Za-z0-9]+/i.test(profile)) return "";
-  try {
-    const response = await fetch(`https://open.spotify.com/oembed?url=${encodeURIComponent(profile)}`, { mode: "cors" });
-    if (!response.ok) return "";
-    const data = await response.json();
-    return /^https?:\/\//i.test(data?.thumbnail_url || "") ? data.thumbnail_url : "";
-  } catch {
+  if (!/^https:\/\/open\.spotify\.com\/artist\/[A-Za-z0-9]+/i.test(profile)) {
+    KC_SPOTIFY_IMAGE_CACHE.set(key, "");
     return "";
   }
+
+  const request = (async () => {
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => controller.abort(), 3500);
+    try {
+      const response = await fetch(`https://open.spotify.com/oembed?url=${encodeURIComponent(profile)}`, {
+        mode: "cors",
+        signal: controller.signal
+      });
+      if (!response.ok) return "";
+      const data = await response.json();
+      return /^https?:\/\//i.test(data?.thumbnail_url || "") ? data.thumbnail_url : "";
+    } catch {
+      return "";
+    } finally {
+      window.clearTimeout(timer);
+    }
+  })();
+
+  KC_SPOTIFY_IMAGE_INFLIGHT.set(key, request);
+  const resolved = await request;
+  KC_SPOTIFY_IMAGE_INFLIGHT.delete(key);
+  KC_SPOTIFY_IMAGE_CACHE.set(key, resolved);
+  return resolved;
 }
 
 function kcSetArtistVisual(card, url, artistName) {
@@ -142,67 +165,80 @@ function kcSetArtistVisual(card, url, artistName) {
     img.referrerPolicy = "no-referrer";
     visual.appendChild(img);
   }
-  if (img.src !== url) {
+  if (img.getAttribute("src") !== url) {
     img.dataset.kcImageRepair = "true";
     img.onerror = () => {
       img.onerror = null;
       const fallback = img.dataset.fallbackSrc || "";
-      if (fallback && img.src !== fallback) {
+      if (fallback && img.getAttribute("src") !== fallback) {
         img.src = fallback;
         return;
       }
-      if (visual) {
-        visual.classList.add("artist-visual-empty");
-        visual.textContent = String(artistName || "?").trim().charAt(0).toUpperCase() || "?";
-      }
+      visual.classList.add("artist-visual-empty");
+      visual.textContent = String(artistName || "?").trim().charAt(0).toUpperCase() || "?";
     };
     img.src = url;
   }
 }
 
-async function kcRepairArtistCards() {
+// Never fan out Spotify oEmbed requests across the full artist directory. The
+// previous implementation could start overlapping full-directory repair passes
+// whenever a missing image inserted a child node, which became expensive as the
+// roster grew. Directory repair is now synchronous and limited to known direct
+// overrides; ordinary registry images/fallbacks remain handled by app.js.
+function kcRepairArtistCards() {
   if (typeof ARTISTS === "undefined" || !Array.isArray(ARTISTS)) return;
-  for (const artist of ARTISTS) {
-    const key = kcImageKey(artist?.name);
-    const card = [...document.querySelectorAll("[data-artist-card]")]
-      .find(node => kcImageKey(node.dataset.artistKey) === key);
-    if (!card) continue;
+  const artistsByKey = new Map(ARTISTS.map(artist => [kcImageKey(artist?.name), artist]));
+  document.querySelectorAll("[data-artist-card]").forEach(card => {
+    const key = kcImageKey(card.dataset.artistKey);
+    const artist = artistsByKey.get(key);
+    if (!artist) return;
     const existing = card.querySelector(".artist-visual img");
-    if (existing && existing.complete && existing.naturalWidth > 0) continue;
-    const direct = kcDirectArtistImage(artist) || await kcResolveSpotifyImage(artist);
+    if (existing && existing.complete && existing.naturalWidth > 0) return;
+    const direct = kcDirectArtistImage(artist);
     if (direct) kcSetArtistVisual(card, direct, artist.name);
-  }
+  });
 }
 
 async function kcRepairArtistProfile() {
   const root = document.querySelector("[data-artist-profile]");
   if (!root || typeof artistConfig !== "function") return;
-  const name = new URLSearchParams(location.search).get("name") || "";
-  const artist = artistConfig(name);
-  if (!artist) return;
-  const current = root.querySelector(".profile-visual img");
-  if (current && current.complete && current.naturalWidth > 0) return;
-  const direct = kcDirectArtistImage(artist) || await kcResolveSpotifyImage(artist);
-  if (!direct) return;
-  const hero = root.querySelector(".profile-hero");
-  if (!hero) return;
-  let visual = hero.querySelector(".profile-visual");
-  if (!visual) {
-    visual = document.createElement("div");
-    visual.className = "profile-visual";
-    hero.prepend(visual);
+  if (kcProfileRepairInFlight) return kcProfileRepairInFlight;
+
+  kcProfileRepairInFlight = (async () => {
+    const name = new URLSearchParams(location.search).get("name") || "";
+    const artist = artistConfig(name);
+    if (!artist) return;
+    const current = root.querySelector(".profile-visual img");
+    if (current && current.complete && current.naturalWidth > 0) return;
+    const direct = kcDirectArtistImage(artist) || await kcResolveSpotifyImage(artist);
+    if (!direct) return;
+    const hero = root.querySelector(".profile-hero");
+    if (!hero) return;
+    let visual = hero.querySelector(".profile-visual");
+    if (!visual) {
+      visual = document.createElement("div");
+      visual.className = "profile-visual";
+      hero.prepend(visual);
+    }
+    let img = visual.querySelector("img");
+    if (!img) {
+      img = document.createElement("img");
+      img.alt = artist.name || "Artist";
+      img.decoding = "async";
+      img.referrerPolicy = "no-referrer";
+      visual.appendChild(img);
+    }
+    if (img.getAttribute("src") !== direct) img.src = direct;
+    hero.classList.remove("profile-hero-no-image");
+    root.querySelector(".profile-image-note")?.remove();
+  })();
+
+  try {
+    await kcProfileRepairInFlight;
+  } finally {
+    kcProfileRepairInFlight = null;
   }
-  let img = visual.querySelector("img");
-  if (!img) {
-    img = document.createElement("img");
-    img.alt = artist.name || "Artist";
-    img.decoding = "async";
-    img.referrerPolicy = "no-referrer";
-    visual.appendChild(img);
-  }
-  img.src = direct;
-  hero.classList.remove("profile-hero-no-image");
-  root.querySelector(".profile-image-note")?.remove();
 }
 
 function kcRepairEventCards() {
@@ -212,13 +248,13 @@ function kcRepairEventCards() {
     const img = card.querySelector("img");
     if (!img) return;
     if (text.includes("hope fest 2026")) {
-      if (img.src !== hopeImage) img.src = hopeImage;
+      if (img.getAttribute("src") !== hopeImage) img.src = hopeImage;
       return;
     }
-    if (img.src.includes("/assets/event-fallback.webp")) {
+    if (String(img.getAttribute("src") || "").includes("/assets/event-fallback.webp")) {
       for (const [artistName, url] of Object.entries(KC_ARTIST_IMAGE_OVERRIDES)) {
         if (!text.includes(artistName)) continue;
-        if (img.src !== url) img.src = url;
+        if (img.getAttribute("src") !== url) img.src = url;
         return;
       }
     }
@@ -227,12 +263,39 @@ function kcRepairEventCards() {
 
 function kcRepairImages() {
   kcRepairEventCards();
-  void kcRepairArtistCards();
+  kcRepairArtistCards();
   void kcRepairArtistProfile();
 }
 
-const kcImageObserver = new MutationObserver(() => kcRepairImages());
-kcImageObserver.observe(document.documentElement, { childList: true, subtree: true });
-window.addEventListener("DOMContentLoaded", kcRepairImages, { once: true });
-window.setTimeout(kcRepairImages, 500);
-window.setTimeout(kcRepairImages, 1500);
+function kcScheduleRepair() {
+  if (kcRepairScheduled) return;
+  kcRepairScheduled = true;
+  window.requestAnimationFrame(() => {
+    kcRepairScheduled = false;
+    kcRepairImages();
+  });
+}
+
+function kcStartImageRepair() {
+  kcScheduleRepair();
+  const roots = [
+    document.querySelector("[data-event-grid]"),
+    document.querySelector("[data-event-detail]"),
+    document.querySelector("[data-artist-grid]"),
+    document.querySelector("[data-artist-profile]")
+  ].filter(Boolean);
+
+  if (roots.length) {
+    const observer = new MutationObserver(kcScheduleRepair);
+    roots.forEach(root => observer.observe(root, { childList: true, subtree: true }));
+  }
+
+  window.setTimeout(kcScheduleRepair, 500);
+  window.setTimeout(kcScheduleRepair, 1500);
+}
+
+if (document.readyState === "loading") {
+  window.addEventListener("DOMContentLoaded", kcStartImageRepair, { once: true });
+} else {
+  kcStartImageRepair();
+}
