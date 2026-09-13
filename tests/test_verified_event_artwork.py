@@ -11,16 +11,22 @@ from pin_verified_event_artwork import VERIFIED_ARTWORK  # noqa: E402
 
 
 class VerifiedEventArtworkTests(unittest.TestCase):
-    def test_genesis_and_sep11_events_have_pinned_show_artwork(self):
-        self.assertEqual(len(VERIFIED_ARTWORK), 14)
+    def test_pinned_artwork_uses_source_authorized_media(self):
+        self.assertEqual(len(VERIFIED_ARTWORK), 13)
         self.assertEqual(
             VERIFIED_ARTWORK["The Genesis Show – All Women's CHH Event"][1],
             "assets/events/genesis-show-2026-all-women-v3.jpg",
         )
-        self.assertEqual(
-            VERIFIED_ARTWORK["Fountain Fest WV 2026"][1],
-            "assets/events/fountain-fest-wv-2026.svg",
-        )
+        self.assertIn("fountainfestwv.com", VERIFIED_ARTWORK["Fountain Fest WV 2026"][1])
+        for _title, (_date, image) in VERIFIED_ARTWORK.items():
+            self.assertNotIn("fountain-fest-wv-2026.svg", image)
+            self.assertNotIn("mission-friends-sacramento-2026.svg", image)
+            self.assertNotIn("mayia-boxyard-saturdaze-2026.svg", image)
+            self.assertNotIn("mayia-nc-state-fair-2026.svg", image)
+            self.assertNotIn("cj-emulous-kickback-2026.svg", image)
+            self.assertNotIn("alex-zurdo-zona-zero-2026.svg", image)
+            self.assertNotIn("jay-kalyl-desde-antes-2026.svg", image)
+            self.assertNotIn("miles-cj-zion-ultra-2026.svg", image)
 
     def test_all_local_pinned_artwork_exists(self):
         missing = []
@@ -37,31 +43,27 @@ class VerifiedEventArtworkTests(unittest.TestCase):
             self.assertIn("if (lockedPrimary || explicitEventArtwork)", text)
             self.assertNotIn("explicitEventArtwork && !forcePrimary", text)
 
-    def test_client_guard_covers_every_pinned_event(self):
+    def test_client_guard_has_no_fabricated_flyers_and_is_idempotent(self):
         text = (ROOT / "assets/verified-event-artwork-guard.js").read_text(encoding="utf-8")
-        expected_slugs = [
-            "the-genesis-show-all-women-s-chh-event-2026-09-19-roswell-9d321d",
-            "flavor-fest-2026-saturday-concerts-2026-11-07-tampa-cf7fac",
-            "future-legacy-hip-hop-showcase-2026-10-04-nashville-4bd33c",
-            "miles-minnick-and-cj-emulous-at-zion-ultra-lounge-2026-12-05-chandler-bfff69",
-            "fountain-fest-wv-2026-2026-09-18-martinsburg-1cd64d",
-            "mission-and-special-guests-2026-10-17-sacramento-15909d",
-            "boxyard-saturdaze-2026-10-10-durham-7853b4",
-            "mayia-at-the-nc-state-fair-2026-10-17-raleigh-1c07ad",
-            "syatp-concert-2026-09-23-sierra-vista-121b78",
-            "live-loud-2026-10-07-chico-1b6570",
-            "teen-club-kickoff-back-to-school-concert-2026-10-12-turlock-c869fd",
-            "the-kickback-2026-11-14-grand-prairie-ce6c40",
-            "alex-zurdo-zona-zero-2026-10-18-san-juan-6d6263",
-            "jay-kalyl-desde-antes-tour-2026-10-03-rockville-centre-8ea3e4",
-        ]
-        for slug in expected_slugs:
-            self.assertIn(slug, text)
+        self.assertIn("if (img.getAttribute(\"src\") !== src)", text)
+        self.assertIn("idempotent", text)
+        for asset in (
+            "miles-cj-zion-ultra-2026.svg",
+            "fountain-fest-wv-2026.svg",
+            "mission-friends-sacramento-2026.svg",
+            "mayia-boxyard-saturdaze-2026.svg",
+            "mayia-nc-state-fair-2026.svg",
+            "cj-emulous-kickback-2026.svg",
+            "alex-zurdo-zona-zero-2026.svg",
+            "jay-kalyl-desde-antes-2026.svg",
+        ):
+            self.assertNotIn(asset, text)
 
-    def test_final_seo_stage_reapplies_verified_artwork(self):
+    def test_final_seo_stage_runs_complete_closeout_after_pins(self):
         text = (ROOT / "scripts/finalize_seo_indexing.py").read_text(encoding="utf-8")
         self.assertIn("from pin_verified_event_artwork import pin_site", text)
-        self.assertIn("pin_site(root)", text)
+        self.assertIn("from finalize_sep12_complete_closeout import apply_closeout", text)
+        self.assertLess(text.index("pin_site(root)"), text.index("apply_closeout(root, events)"))
 
 
 if __name__ == "__main__":
