@@ -12,6 +12,7 @@ from finalize_seo_indexing_core import main as finalize_main
 from finalize_sep12_complete_closeout import apply_closeout
 from fix_seo_audit import apply_seo_audit_fixes
 from pin_verified_event_artwork import pin_site
+from replace_fabricated_artwork_refs import replace_fabricated_artwork_refs
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE_URL = "https://kingdomcircuit.com"
@@ -296,6 +297,8 @@ def main() -> None:
     print("Structured event metadata repair:", schema_report)
     state_report = patch_verified_event_states(root, events)
     print("Verified event state display:", state_report)
+    legacy_artwork_report = replace_fabricated_artwork_refs(root)
+    print("Legacy fabricated artwork reference cleanup:", legacy_artwork_report)
     closeout_report = apply_closeout(root, events)
     print("September 12 complete closeout:", closeout_report)
 
