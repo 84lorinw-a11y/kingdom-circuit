@@ -7,9 +7,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT_DATE = "2026-09-13"
-KURTIS_IMAGE = "https://static.wixstatic.com/media/1bf289_6c5a4a94f9aa45f48aa78949e6c65f8f~mv2.jpg/v1/fill/w_1200,h_1600,al_c,q_90,enc_auto/JCV09520.jpg"
-MISSION_IMAGE = "https://i.ytimg.com/vi/tXeOrsQliwQ/maxresdefault.jpg"
-UNIVERSAL_IMAGE = "https://www.universalorlando.com/contentdata/uor/en/us/files/Images/gds/usf-rock-the-universe-concert-crowd-praise4-b2.jpg"
+KURTIS_IMAGE = "assets/artists/kurtis-hoppie-primary.jpg"
+MISSION_IMAGE = "assets/artists/mission-primary.jpg"
+UNIVERSAL_IMAGE = "assets/events/rock-the-universe-2027.jpg"
 
 
 def load(path: Path):
@@ -76,7 +76,7 @@ def patch_event(item: dict) -> None:
     if identity == "mission-friends-sacramento-2026":
         item.update({"image": MISSION_IMAGE, "imageType": "artist", "imagePosition": "center 30%",
                      "imageOverride": True, "imageSource": "Mission official YouTube channel",
-                     "imageSourceUrl": "https://www.youtube.com/watch?v=tXeOrsQliwQ", "auditVerified": AUDIT_DATE})
+                     "imageSourceUrl": "https://www.youtube.com/channel/UCBaU_Xh4fyokc-ckyCeYv3w", "auditVerified": AUDIT_DATE})
     artists = {str(x).casefold() for x in item.get("artists") or []}
     if "kurtis hoppie" in artists:
         item.update({"image": KURTIS_IMAGE, "imageType": "artist", "imagePosition": "50% 22%",

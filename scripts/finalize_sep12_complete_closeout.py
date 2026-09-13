@@ -66,10 +66,10 @@ ARTWORK_REPLACEMENTS = {
         "classification": 3,
     },
     ("Mission and Special Guests", "2026-10-17"): {
-        "image": "https://i.ytimg.com/vi/tXeOrsQliwQ/maxresdefault.jpg",
+        "image": "assets/artists/mission-primary.jpg",
         "imageType": "artist",
         "source": "Mission official YouTube channel",
-        "sourceUrl": "https://www.youtube.com/watch?v=tXeOrsQliwQ",
+        "sourceUrl": "https://www.youtube.com/channel/UCBaU_Xh4fyokc-ckyCeYv3w",
         "classification": 3,
     },
 }

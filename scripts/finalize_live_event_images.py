@@ -33,7 +33,7 @@ IMAGE_CANDIDATES = {
         "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
     ],
     "mission": [
-        "https://i.ytimg.com/vi/tXeOrsQliwQ/maxresdefault.jpg",
+        "/assets/artists/mission-primary.jpg",
     ],
     "alex zurdo": [
         "https://i.scdn.co/image/ab6761610000e5eb2c81bb40c3b6962eacf9dc9c",
@@ -60,7 +60,7 @@ IMAGE_CANDIDATES = {
         "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages211/v4/b4/50/48/b4504865-b294-ba19-3854-a83ff79084c4/35e5e9f1-1e53-4326-ae3b-47ec4206ce77_file_cropped.png/1200x630cw.png",
     ],
     "kurtis hoppie": [
-        "https://static.wixstatic.com/media/1bf289_6c5a4a94f9aa45f48aa78949e6c65f8f~mv2.jpg/v1/fill/w_1200,h_1600,al_c,q_90,enc_auto/JCV09520.jpg",
+        "/assets/artists/kurtis-hoppie-primary.jpg",
     ],
     "ruslan": [
         "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages122/v4/6d/12/23/6d12233a-882e-6603-ee26-01989969fcf9/3a35e7fd-10e4-4710-aa37-75ee0c58c345_file_cropped.png/3442x3442bb.jpg",

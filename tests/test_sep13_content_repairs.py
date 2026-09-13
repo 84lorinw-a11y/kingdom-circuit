@@ -17,7 +17,7 @@ class September13ContentRepairTests(unittest.TestCase):
         return next(item for item in self.events if str(item.get("id", "")).removeprefix("manual:") == suffix)
 
     def test_kurtis_uses_verified_official_portrait_everywhere(self):
-        image = "https://static.wixstatic.com/media/1bf289_6c5a4a94f9aa45f48aa78949e6c65f8f~mv2.jpg/v1/fill/w_1200,h_1600,al_c,q_90,enc_auto/JCV09520.jpg"
+        image = "assets/artists/kurtis-hoppie-primary.jpg"
         artist = next(item for item in self.artists if item.get("name") == "Kurtis Hoppie")
         self.assertEqual(image, artist["imageUrl"])
         kurtis_events = [item for item in self.events + self.supplemental if "Kurtis Hoppie" in (item.get("artists") or [])]
@@ -37,7 +37,8 @@ class September13ContentRepairTests(unittest.TestCase):
         self.assertIn("Yasmine Jinelle", tribe["artists"])
         mission = self.event("mission-friends-sacramento-2026")
         self.assertEqual("artist", mission["imageType"])
-        self.assertIn("i.ytimg.com", mission["image"])
+        self.assertEqual("assets/artists/mission-primary.jpg", mission["image"])
+        self.assertTrue((ROOT / mission["image"]).is_file())
 
 
 if __name__ == "__main__":

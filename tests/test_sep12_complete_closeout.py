@@ -29,7 +29,7 @@ class September12CompleteCloseoutTests(unittest.TestCase):
             self.assertNotIn(closeout.public_src(replacement["image"]), closeout.FAKE_ASSETS, key)
         mission = closeout.ARTWORK_REPLACEMENTS[("Mission and Special Guests", "2026-10-17")]
         self.assertEqual("artist", mission["imageType"])
-        self.assertEqual("https://i.ytimg.com/vi/tXeOrsQliwQ/maxresdefault.jpg", mission["image"])
+        self.assertEqual("assets/artists/mission-primary.jpg", mission["image"])
         self.assertEqual(3, mission["classification"])
 
     def test_image_markup_has_responsive_and_exhaustion_safe_fallback(self):

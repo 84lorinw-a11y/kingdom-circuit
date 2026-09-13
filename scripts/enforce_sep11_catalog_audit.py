@@ -22,7 +22,7 @@ VERIFIED_EVENT_IMAGES = {
     "jay-kalyl-desde-antes-rockville-centre-2026": ("assets/events/jay-kalyl-desde-antes-2026.svg", "event_artwork"),
     "mayia-boxyard-saturdaze-2026": ("assets/events/mayia-boxyard-saturdaze-2026.svg", "event_artwork"),
     "mayia-nc-state-fair-2026": ("assets/events/mayia-nc-state-fair-2026.svg", "event_artwork"),
-    "mission-friends-sacramento-2026": ("https://i.ytimg.com/vi/tXeOrsQliwQ/maxresdefault.jpg", "artist"),
+    "mission-friends-sacramento-2026": ("assets/artists/mission-primary.jpg", "artist"),
     "alex-zurdo-zona-zero-san-juan-2026": ("assets/events/alex-zurdo-zona-zero-2026.svg", "event_artwork"),
     "cj-emulous-kickback-grand-prairie-2026": ("assets/events/cj-emulous-kickback-2026.svg", "event_artwork"),
     "miles-cj-zion-ultra-lounge-chandler-2026": ("assets/events/miles-cj-zion-ultra-2026.svg", "event_artwork"),
