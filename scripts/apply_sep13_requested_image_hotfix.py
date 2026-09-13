@@ -42,7 +42,7 @@ NEW_MAINSTREAM = {
         "headliner": "Miles Minnick",
         "eventType": "concert",
         "status": "scheduled",
-        "ticketUrl": "https://milesminnick.com/tour",
+        "ticketUrl": "",
         "officialUrl": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-23",
         "image": "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
         "imageType": "artist",
@@ -68,7 +68,7 @@ NEW_MAINSTREAM = {
                 "priority": 94,
             },
         ],
-        "notes": "Official artist calendar confirms the date and Miami, but no venue. Time is left blank pending local venue/ticket confirmation.",
+        "notes": "Official artist calendar confirms the date and Miami, but no venue or direct ticket page. Time is left blank pending local venue/ticket confirmation.",
         "auditVerified": AUDIT,
     },
     "cj-emulous-new-mainstream-jacksonville-2026-11-08": {
@@ -85,7 +85,7 @@ NEW_MAINSTREAM = {
         "headliner": "Miles Minnick",
         "eventType": "concert",
         "status": "scheduled",
-        "ticketUrl": "https://milesminnick.com/tour",
+        "ticketUrl": "",
         "officialUrl": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-26",
         "image": "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
         "imageType": "artist",
@@ -111,7 +111,7 @@ NEW_MAINSTREAM = {
                 "priority": 94,
             },
         ],
-        "notes": "Official artist calendar confirms the date and Jacksonville, but no venue. Time is left blank pending local venue/ticket confirmation.",
+        "notes": "Official artist calendar confirms the date and Jacksonville, but no venue or direct ticket page. Time is left blank pending local venue/ticket confirmation.",
         "auditVerified": AUDIT,
     },
 }
@@ -160,6 +160,8 @@ def _repair_new_mainstream(rows: list[dict], manual: bool) -> None:
         raise SystemExit(f"New Mainstream Florida records merged or mislocated: {sorted(slots)}")
     if len({row.get("officialUrl") for row in repaired}) != 2:
         raise SystemExit("New Mainstream Florida records lost their distinct official event URLs")
+    if any(row.get("ticketUrl") for row in repaired):
+        raise SystemExit("New Mainstream Florida records must not expose a generic tour page as a direct ticket URL")
 
 
 def apply_requested_image_hotfix() -> None:
