@@ -146,7 +146,43 @@ def cleanup_duplicate_durable_inputs() -> None:
         raise SystemExit(f"Sep 13 additions duplicated across durable inputs: {sorted(overlap)}")
 
 
+def patch_static_event_type_renderer() -> None:
+    """Keep pre-rendered cards/details faithful to church, retreat, conference, and appearance records."""
+    path = ROOT / "scripts" / "build_seo_site.py"
+    text = path.read_text(encoding="utf-8")
+
+    source_anchor = 'def source_text(e): return e.get("sourceName") or ((e.get("sources") or [{}])[0].get("name")) or "Official source"\n'
+    helper = '''def event_type_label(e):
+    value = norm(e.get("eventType") or "concert")
+    return {"festival":"Festival","retreat":"Retreat","conference":"Conference","church":"Church appearance","party_bus":"Party-bus event","appearance":"Appearance","concert":"Concert"}.get(value,"Event")
+'''
+    if "def event_type_label(e):" not in text:
+        if source_anchor not in text:
+            raise SystemExit("Could not locate build_seo_site source_text anchor")
+        text = text.replace(source_anchor, source_anchor + "\n" + helper + "\n", 1)
+
+    old_card = "{esc('Festival' if e.get('eventType')=='festival' else 'Concert')}"
+    if old_card in text:
+        text = text.replace(old_card, "{esc(event_type_label(e))}", 1)
+
+    old_detail = '{esc("Cancelled event" if cancelled else ("Festival" if e.get("eventType")=="festival" else "Concert"))}'
+    if old_detail in text:
+        text = text.replace(old_detail, '{esc("Cancelled event" if cancelled else event_type_label(e))}', 1)
+
+    old_schema = 'data={"@context":"https://schema.org","@type":"MusicEvent","name":e.get("title") or "Christian hip-hop event"'
+    new_schema = 'data={"@context":"https://schema.org","@type":("MusicEvent" if norm(e.get("eventType")) in {"concert","festival"} else "Event"),"name":e.get("title") or "Christian hip-hop event"'
+    if old_schema in text:
+        text = text.replace(old_schema, new_schema, 1)
+
+    if old_card in text or old_detail in text or old_schema in text:
+        raise SystemExit("Static event-type renderer patch did not fully apply")
+    if "def event_type_label(e):" not in text:
+        raise SystemExit("Static event-type label helper missing after patch")
+    path.write_text(text, encoding="utf-8")
+
+
 def main() -> None:
+    patch_static_event_type_renderer()
     patch_artists()
     patch_event_file(ROOT / "config" / "manual-events.json", True)
     patch_event_file(ROOT / "supplemental-events.json", False)
