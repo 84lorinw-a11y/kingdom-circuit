@@ -78,7 +78,7 @@ class September12CompleteCloseoutTests(unittest.TestCase):
     def test_user_approved_brand_and_mike_malagies_image_are_preserved(self):
         home = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertIn(APPROVED_CURRENT_LOGO, home)
-        self.assertNotIn("logo-wordmark", json.dumps(closeout.ARTWORK_REPLACEMENTS))
+        self.assertNotIn("logo-wordmark", str(closeout.ARTWORK_REPLACEMENTS))
 
         artists = json.loads((ROOT / "config" / "artists.json").read_text(encoding="utf-8"))
         mike = next(item for item in artists if item.get("name") == "Mike Malagies")
