@@ -1,9 +1,13 @@
 import json
+import sys
 import unittest
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+SCRIPTS = ROOT / "scripts"
+if str(SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS))
 
 
 class September13ContentRepairTests(unittest.TestCase):
@@ -39,6 +43,21 @@ class September13ContentRepairTests(unittest.TestCase):
         self.assertEqual("artist", mission["imageType"])
         self.assertEqual("assets/artists/mission-primary.jpg", mission["image"])
         self.assertTrue((ROOT / mission["image"]).is_file())
+
+    def test_cj_new_mainstream_identity_uses_distinct_direct_event_urls(self):
+        import apply_sep13_content_repairs as repairs
+
+        repairs.sanitize_requested_event_identity()
+        miami = repairs.REQUESTED_UPSERTS["cj-emulous-new-mainstream-miami-2026-11-05"]
+        jacksonville = repairs.REQUESTED_UPSERTS["cj-emulous-new-mainstream-jacksonville-2026-11-08"]
+        self.assertNotEqual(miami["officialUrl"], jacksonville["officialUrl"])
+        self.assertEqual("", miami.get("ticketUrl"))
+        self.assertEqual("", jacksonville.get("ticketUrl"))
+        for event in (miami, jacksonville):
+            self.assertNotIn(
+                "https://milesminnick.com/tour",
+                {str(source.get("url") or "") for source in event.get("sources") or []},
+            )
 
 
 if __name__ == "__main__":
