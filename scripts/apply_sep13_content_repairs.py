@@ -5,6 +5,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from apply_sep13_requested_events import apply_requested_repairs
+
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT_DATE = "2026-09-13"
 KURTIS_IMAGE = "assets/artists/kurtis-hoppie-primary.jpg"
@@ -121,6 +123,7 @@ def main() -> None:
     patch_event_file(ROOT / "config" / "manual-events.json", True)
     patch_event_file(ROOT / "supplemental-events.json", False)
     patch_event_file(ROOT / "events.json", False)
+    apply_requested_repairs()
 
 
 if __name__ == "__main__":
