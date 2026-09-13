@@ -11,6 +11,8 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import finalize_sep12_complete_closeout as closeout
 
+MIKE_MALAGIES_APPROVED_IMAGE = "https://static.wixstatic.com/media/61a78b_7545031064f049a6843e4c7d0666886f~mv2.jpg/v1/fill/w_327%2Ch_491%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/61a78b_7545031064f049a6843e4c7d0666886f~mv2.jpg"
+
 
 class September12CompleteCloseoutTests(unittest.TestCase):
     def test_unconfirmed_public_access_is_not_published_as_ordinary_concert(self):
@@ -72,8 +74,15 @@ class September12CompleteCloseoutTests(unittest.TestCase):
             self.assertIn('property="og:image" content="https://kingdomcircuit.com/assets/x.jpg"', text)
             self.assertGreaterEqual(report["duplicateBreadcrumbsRemoved"], 1)
 
-    def test_branding_is_preserved_when_exact_approved_asset_is_unavailable(self):
-        self.assertIn("Exact approved monochrome stage-and-speakers", "Exact approved monochrome stage-and-speakers source asset is not present")
+    def test_user_approved_brand_and_mike_malagies_image_are_preserved(self):
+        home = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn('/assets/logo.png', home)
+        self.assertNotIn("logo.png", closeout.ARTWORK_REPLACEMENTS)
+
+        artists = json.loads((ROOT / "config" / "artists.json").read_text(encoding="utf-8"))
+        mike = next(item for item in artists if item.get("name") == "Mike Malagies")
+        self.assertEqual(MIKE_MALAGIES_APPROVED_IMAGE, mike.get("imageUrl"))
+        self.assertNotIn("mike malagies", {closeout.norm(key[0]) for key in closeout.ARTWORK_REPLACEMENTS})
 
 
 if __name__ == "__main__":
