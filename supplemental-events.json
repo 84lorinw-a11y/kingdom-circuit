@@ -209,67 +209,13 @@
     "bandsintownArtistId": "15395568",
     "bandsintownResolvedName": "Kurtis Hoppie",
     "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Kurtis Hoppie"
-  },
-  {
-    "title": "JIMMY ROCK'S Rave & Worship — The Worship Wawa",
-    "startDate": "2026-09-18",
-    "startTime": "17:00",
-    "timezone": "America/New_York",
-    "venue": "The Worship Wawa — Margaret Pace Park pickup",
-    "address": "1745 N Bayshore Dr",
-    "city": "Miami",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "JIMMY ROCK"
-    ],
-    "headliner": "JIMMY ROCK",
-    "eventType": "party_bus",
-    "status": "scheduled",
-    "ticketUrl": "https://fareharbor.com/embeds/book/theworshipwawa/?full-items=yes",
-    "officialUrl": "https://www.theworshipwawa.com/jimmyrock-rave-worship",
-    "image": "https://images.squarespace-cdn.com/content/v1/56b7abd2f699bb04c395a379/03aa3873-98e9-4ccb-8eae-4d4f3826a4a8/Jimmy-in-the-field-refl.png",
+    "trackedArtist": "Kurtis Hoppie",
     "imageType": "artist",
     "imagePosition": "50% 22%",
-    "imageOverride": false,
-    "price": "",
-    "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "sourceName": "The Worship Wawa official event",
-    "sources": [
-      {
-        "name": "The Worship Wawa official event",
-        "url": "https://www.theworshipwawa.com/jimmyrock-rave-worship",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      },
-      {
-        "name": "Official ticket / RSVP",
-        "url": "https://fareharbor.com/embeds/book/theworshipwawa/?full-items=yes",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 94
-      },
-      {
-        "name": "JIMMY ROCK Bandsintown",
-        "url": "https://www.bandsintown.com/e/108769357",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "notes": "In-person party-bus event. Four one-hour rides depart at 5:00, 6:15, 7:30 and 8:45 PM. Arrive 15 minutes early; Bandsintown's 4:30 PM header aligns with earliest check-in, not an online event.",
-    "rideTimes": [
-      "17:00",
-      "18:15",
-      "19:30",
-      "20:45"
-    ],
-    "id": "manual:jimmy-rock-worship-wawa-miami-2026"
+    "imageOverride": true,
+    "imageSource": "Kurtis Hoppie official website",
+    "imageSourceUrl": "https://www.thekurtishoppie.com/",
+    "auditVerified": "2026-09-13"
   },
   {
     "title": "Fountain Fest WV 2026",
@@ -313,6 +259,44 @@
     "imageOverride": true
   },
   {
+    "id": "eventbrite:gracefest-lecrae-castaic-2026",
+    "title": "GRACEFEST 2026",
+    "startDate": "2026-09-19",
+    "startTime": "13:30",
+    "timezone": "America/Los_Angeles",
+    "venue": "Castaic Lake State Recreation Area",
+    "address": "Castaic Lake Drive",
+    "city": "Castaic",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Lecrae"
+    ],
+    "headliner": "Lecrae",
+    "eventType": "festival",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+    "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+    "image": "assets/events/gracefest-2026.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "price": "",
+    "sourceName": "Official Eventbrite listing",
+    "authority": "official_festival",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+        "type": "eventbrite",
+        "authority": "official_festival",
+        "priority": 104
+      }
+    ]
+  },
+  {
     "id": "eventbrite:hip-hop-in-the-park-cortland-2026",
     "title": "Hip Hop in the Park",
     "startDate": "2026-09-19",
@@ -353,44 +337,6 @@
     ]
   },
   {
-    "id": "eventbrite:gracefest-lecrae-castaic-2026",
-    "title": "GRACEFEST 2026",
-    "startDate": "2026-09-19",
-    "startTime": "13:30",
-    "timezone": "America/Los_Angeles",
-    "venue": "Castaic Lake State Recreation Area",
-    "address": "Castaic Lake Drive",
-    "city": "Castaic",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "Lecrae"
-    ],
-    "headliner": "Lecrae",
-    "eventType": "festival",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-    "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-    "image": "assets/events/gracefest-2026.png",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "price": "",
-    "sourceName": "Official Eventbrite listing",
-    "authority": "official_festival",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Official Eventbrite listing",
-        "url": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-        "type": "eventbrite",
-        "authority": "official_festival",
-        "priority": 104
-      }
-    ]
-  },
-  {
     "id": "bandsintown:108847305",
     "title": "Holy Nights Tour- Sanger, CA",
     "startDate": "2026-09-19",
@@ -426,7 +372,13 @@
     "bandsintownArtistId": "15395568",
     "bandsintownResolvedName": "Kurtis Hoppie",
     "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Kurtis Hoppie"
+    "trackedArtist": "Kurtis Hoppie",
+    "imageType": "artist",
+    "imagePosition": "50% 22%",
+    "imageOverride": true,
+    "imageSource": "Kurtis Hoppie official website",
+    "imageSourceUrl": "https://www.thekurtishoppie.com/",
+    "auditVerified": "2026-09-13"
   },
   {
     "id": "bandsintown:108758638",
@@ -490,46 +442,6 @@
     "trackedArtist": "yumiya!"
   },
   {
-    "title": "Shiloh Church with CJ Emulous",
-    "startDate": "2026-09-20",
-    "startTime": "",
-    "timezone": "America/Phoenix",
-    "venue": "Shiloh Christian Ministries",
-    "address": "1519 S Ave Del Sol",
-    "city": "Sierra Vista",
-    "state": "AZ",
-    "country": "US",
-    "artists": [
-      "CJ Emulous"
-    ],
-    "headliner": "CJ Emulous",
-    "eventType": "church",
-    "status": "scheduled",
-    "ticketUrl": "",
-    "officialUrl": "https://www.cjemulous.com/event-details/shiloh-church-w-cj-emulous",
-    "image": "",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "imageOverride": false,
-    "price": "",
-    "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "sourceName": "CJ Emulous official calendar",
-    "sources": [
-      {
-        "name": "CJ Emulous official calendar",
-        "url": "https://www.cjemulous.com/event-details/shiloh-church-w-cj-emulous",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "notes": "Church appearance. Artist calendar publishes 7:00 PM, but the main time is left blank pending independent local-time confirmation.",
-    "id": "manual:cj-emulous-shiloh-church-sierra-vista-2026"
-  },
-  {
     "title": "SYATP Concert",
     "startDate": "2026-09-23",
     "startTime": "19:00",
@@ -562,253 +474,11 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "id": "cj-emulous-syatp-sierra-vista-2026"
-  },
-  {
-    "title": "Access Granted Marriage Retreat with Psalm Bird & CJ Emulous",
-    "startDate": "2026-09-25",
-    "startTime": "",
-    "timezone": "America/Los_Angeles",
-    "venue": "Hotel Winters",
-    "address": "12 Abbey St",
-    "city": "Winters",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "CJ Emulous"
-    ],
-    "headliner": "CJ Emulous",
-    "eventType": "retreat",
-    "status": "scheduled",
-    "ticketUrl": "",
-    "officialUrl": "https://www.cjemulous.com/event-details/access-granted-marriage-retreat-w-psalm-bird-cj-emulous",
-    "image": "",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "imageOverride": false,
-    "price": "",
-    "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "sourceName": "CJ Emulous official calendar",
-    "sources": [
-      {
-        "name": "CJ Emulous official calendar",
-        "url": "https://www.cjemulous.com/event-details/access-granted-marriage-retreat-w-psalm-bird-cj-emulous",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "notes": "Retreat appearance, not categorized as a public concert. Published artist-calendar time is left blank pending independent local-time confirmation.",
-    "advertisedBilling": [
-      "Psalm Bird",
-      "CJ Emulous"
-    ],
-    "admissionNotes": "Marriage retreat; RSVP/registration applies. The public artist listing does not state broader public-admission eligibility; confirm eligibility with the organizer.",
-    "id": "manual:cj-emulous-access-granted-retreat-winters-2026"
-  },
-  {
-    "title": "JIMMY ROCK — Rave & Worship Denver 2026",
-    "startDate": "2026-09-25",
-    "startTime": "18:00",
-    "timezone": "America/Denver",
-    "venue": "Encounter Church Denver",
-    "address": "6825 S Galena St",
-    "city": "Centennial",
-    "state": "CO",
-    "country": "US",
-    "artists": [
-      "JIMMY ROCK"
-    ],
-    "headliner": "JIMMY ROCK",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/jimmy-rock-rave-worship-denver-2026-tickets-1998020581344",
-    "officialUrl": "https://www.eventbrite.com/e/jimmy-rock-rave-worship-denver-2026-tickets-1998020581344",
-    "image": "https://images.squarespace-cdn.com/content/v1/56b7abd2f699bb04c395a379/03aa3873-98e9-4ccb-8eae-4d4f3826a4a8/Jimmy-in-the-field-refl.png",
-    "imageType": "artist",
-    "imagePosition": "50% 22%",
-    "imageOverride": false,
-    "price": "",
-    "lineupExplicit": true,
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "sourceName": "Official Eventbrite listing",
-    "sources": [
-      {
-        "name": "Official Eventbrite listing",
-        "url": "https://www.eventbrite.com/e/jimmy-rock-rave-worship-denver-2026-tickets-1998020581344",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 100
-      },
-      {
-        "name": "JIMMY ROCK Bandsintown",
-        "url": "https://www.bandsintown.com/e/108778379",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "endTime": "22:00",
-    "doorsTime": "17:30",
-    "notes": "Eventbrite lists 6:00–10:00 PM with 5:30 PM doors; Bandsintown's 5:30 PM header corresponds to doors.",
-    "advertisedBilling": [
-      "JIMMY ROCK",
-      "Ralov",
-      "trtle",
-      "Transform DJs"
-    ],
-    "id": "manual:jimmy-rock-rave-worship-centennial-2026"
-  },
-  {
-    "title": "Grand Opening | The Whosoevers | Boise Invasion",
-    "startDate": "2026-09-26",
-    "startTime": "17:30",
-    "timezone": "America/Boise",
-    "venue": "The Whosoevers HQ",
-    "address": "20 S Auto Dr",
-    "city": "Boise",
-    "state": "ID",
-    "country": "US",
-    "artists": [
-      "Kurtis Hoppie",
-      "JIMMY ROCK"
-    ],
-    "headliner": "Kurtis Hoppie",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.tickettailor.com/events/thewhosoevers/2302169",
-    "officialUrl": "https://www.tickettailor.com/events/thewhosoevers/2302169",
-    "image": "assets/artists/kurtis-hoppie-primary.jpg",
-    "imageType": "artist",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "price": "Outdoor pre-show/overflow free; indoor event sold out",
-    "lineupExplicit": true,
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "sourceName": "Official Ticket Tailor listing",
-    "sources": [
-      {
-        "name": "Official Ticket Tailor listing",
-        "url": "https://www.tickettailor.com/events/thewhosoevers/2302169",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 100
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "doorsTime": "17:30",
-    "notes": "Free outdoor pre-show block party and main-event overflow begins at 5:00 PM. Indoor doors open at 5:30 PM and the indoor ticket listing is sold out. JIMMY ROCK is billed for the after party.",
-    "advertisedBilling": [
-      "P.O.D.",
-      "Lacey Sturm",
-      "Ryan Ries",
-      "Kurtis Hoppie",
-      "JIMMY ROCK"
-    ],
-    "soldOut": true,
-    "ticketAvailability": "sold_out",
-    "preShowTime": "17:00",
-    "id": "manual:boise-invasion-2026"
-  },
-  {
-    "title": "Open Skies — Bethel Music with Jenn Johnson + KB",
-    "startDate": "2026-09-26",
-    "startTime": "18:00",
-    "timezone": "America/Chicago",
-    "venue": "Evergy Plaza",
-    "address": "630 S Kansas Ave",
-    "city": "Topeka",
-    "state": "KS",
-    "country": "US",
-    "artists": [
-      "KB"
-    ],
-    "headliner": "KB",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://evergyplaza.com/event/open-skies/",
-    "officialUrl": "https://evergyplaza.com/event/open-skies/",
-    "image": "https://evergyplaza.com/wp-content/uploads/2026/08/open-skies-1.jpg",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "price": "Free",
-    "lineupExplicit": true,
-    "authority": "official_event",
-    "confidence": "high",
-    "sourceName": "Evergy Plaza official event",
-    "sources": [
-      {
-        "name": "Evergy Plaza official event",
-        "url": "https://evergyplaza.com/event/open-skies/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "endTime": "21:00",
-    "advertisedBilling": [
-      "Bethel Music",
-      "Jenn Johnson",
-      "KB"
-    ],
-    "id": "manual:open-skies-topeka-2026"
-  },
-  {
-    "title": "Oasis Ministry — QBELV Tour 2026",
-    "startDate": "2026-09-26",
-    "startTime": "20:00",
-    "timezone": "America/New_York",
-    "venue": "United Palace",
-    "address": "4140 Broadway",
-    "city": "New York",
-    "state": "NY",
-    "country": "US",
-    "artists": [
-      "Alex Zurdo"
-    ],
-    "headliner": "Alex Zurdo",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://unitedpalace.boletosexpress.com/oasis-ministry-s/88341/",
-    "officialUrl": "https://unitedpalace.boletosexpress.com/oasis-ministry-s/88341/",
-    "image": "",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "imageOverride": false,
-    "price": "",
-    "lineupExplicit": true,
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "sourceName": "United Palace / Boletos Express official listing",
-    "sources": [
-      {
-        "name": "United Palace / Boletos Express official listing",
-        "url": "https://unitedpalace.boletosexpress.com/oasis-ministry-s/88341/",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 100
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "doorsTime": "18:30",
-    "advertisedBilling": [
-      "Oasis Ministry",
-      "Lisney De Font",
-      "Alex Zurdo"
-    ],
-    "id": "manual:oasis-ministry-qbelv-new-york-2026"
   },
   {
     "id": "sevin-live-kansas-city-2026-09-26",
@@ -845,45 +515,6 @@
     ],
     "ticketAvailability": "needs_confirmation",
     "notes": "HOG MOB confirms the show date; current ticket availability needs confirmation."
-  },
-  {
-    "title": "Jay Kalyl — Desde Antes Tour",
-    "startDate": "2026-10-02",
-    "startTime": "19:00",
-    "timezone": "America/New_York",
-    "venue": "Iglesia Torre Fuerte",
-    "address": "30 3rd St",
-    "city": "Elizabeth",
-    "state": "NJ",
-    "country": "US",
-    "artists": [
-      "Jay Kalyl"
-    ],
-    "headliner": "Jay Kalyl",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://boletoslive.com/desde-antes-tour-jay-kalyl/",
-    "officialUrl": "https://boletoslive.com/desde-antes-tour-jay-kalyl/",
-    "image": "https://boletoslive.com/wp-content/uploads/2026/08/JAY-K-NJ.png",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "price": "",
-    "lineupExplicit": true,
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "sourceName": "BoletosLive official event",
-    "sources": [
-      {
-        "name": "BoletosLive official event",
-        "url": "https://boletoslive.com/desde-antes-tour-jay-kalyl/",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 100
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "id": "manual:jay-kalyl-desde-antes-elizabeth-2026"
   },
   {
     "title": "Jay Kalyl — Desde Antes Tour",
@@ -1051,7 +682,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -1156,55 +787,6 @@
         "priority": 100
       }
     ]
-  },
-  {
-    "title": "ONE DAY Fall Festival 2026",
-    "startDate": "2026-10-10",
-    "startTime": "09:00",
-    "timezone": "America/Denver",
-    "venue": "Colorado UpLift Community Campus",
-    "address": "1500 S Dayton St",
-    "city": "Aurora",
-    "state": "CO",
-    "country": "US",
-    "artists": [
-      "Petrina DeLacey"
-    ],
-    "headliner": "Petrina DeLacey",
-    "eventType": "festival",
-    "status": "scheduled",
-    "ticketUrl": "https://partiful.com/e/SK3SE7vXIs9rYlPcW0hZ",
-    "officialUrl": "https://onedaydenver.org/",
-    "image": "",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "imageOverride": false,
-    "price": "Free",
-    "lineupExplicit": true,
-    "authority": "official_festival",
-    "confidence": "high",
-    "sourceName": "ONE DAY official festival site",
-    "sources": [
-      {
-        "name": "ONE DAY official festival site",
-        "url": "https://onedaydenver.org/",
-        "type": "manual_verified",
-        "authority": "official_festival",
-        "priority": 112
-      },
-      {
-        "name": "Official ticket / RSVP",
-        "url": "https://partiful.com/e/SK3SE7vXIs9rYlPcW0hZ",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 94
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "endTime": "20:00",
-    "notes": "Festival runs 9:00 AM–8:00 PM. The sanctuary concert featuring Petrina DeLacey runs 4:30–8:00 PM. Free admission; RSVP requested.",
-    "performanceWindow": "16:30-20:00",
-    "id": "manual:one-day-fall-festival-aurora-2026"
   },
   {
     "title": "Boxyard Saturdaze",
@@ -1321,7 +903,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -1331,52 +913,6 @@
       "MikeySoChristian"
     ],
     "id": "cj-emulous-turlock-back-to-school-2026"
-  },
-  {
-    "title": "Mike Malagies Florida Takeover (Miami)",
-    "startDate": "2026-10-16",
-    "startTime": "18:30",
-    "doorsTime": "18:00",
-    "timezone": "America/New_York",
-    "venue": "Black Box Media Miami",
-    "address": "12355 NE 13th Ave Unit #403-404",
-    "city": "North Miami",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Mike Malagies"
-    ],
-    "headliner": "Mike Malagies",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-florida-takeover-miami/e-vgxqxl",
-    "officialUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-florida-takeover-miami/e-vgxqxl",
-    "image": "https://static.wixstatic.com/media/61a78b_7545031064f049a6843e4c7d0666886f~mv2.jpg/v1/fill/w_327%2Ch_491%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/61a78b_7545031064f049a6843e4c7d0666886f~mv2.jpg",
-    "imageType": "artist",
-    "imagePosition": "50% 25%",
-    "imageOverride": true,
-    "lineupExplicit": true,
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "sourceName": "TicketSource exact event listing",
-    "sources": [
-      {
-        "name": "TicketSource exact event listing",
-        "url": "https://www.ticketsource.com/the-sound-system/mike-malagies-florida-takeover-miami/e-vgxqxl",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      },
-      {
-        "name": "Black Box Media Miami official venue",
-        "url": "https://www.blackboxstudiosmiami.com/event-list",
-        "type": "manual_verified",
-        "authority": "venue",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "id": "manual:mike-malagies-florida-takeover-miami-2026"
   },
   {
     "id": "eventbrite:rare-of-breed-jacksonville-2026",
@@ -1416,80 +952,6 @@
         "priority": 94
       }
     ]
-  },
-  {
-    "id": "supplemental:brenno-overflow-conference-2026",
-    "title": "Overflow Conference",
-    "startDate": "2026-10-17",
-    "startTime": "",
-    "venue": "Location TBD",
-    "address": "",
-    "city": "Buffalo",
-    "state": "NY",
-    "country": "US",
-    "artists": [
-      "Brenno"
-    ],
-    "headliner": "Brenno",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.tickettailor.com/events/ablazemovement",
-    "officialUrl": "https://www.brennomusic.live/",
-    "image": "",
-    "price": "",
-    "sourceName": "Brenno official upcoming shows",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Brenno official upcoming shows",
-        "url": "https://www.brennomusic.live/",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ]
-  },
-  {
-    "title": "The Sac Town Give Back",
-    "startDate": "2026-10-17",
-    "startTime": "",
-    "timezone": "America/Los_Angeles",
-    "venue": "985 Riverfront St",
-    "address": "985 Riverfront St",
-    "city": "West Sacramento",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "CJ Emulous"
-    ],
-    "headliner": "CJ Emulous",
-    "eventType": "appearance",
-    "status": "scheduled",
-    "ticketUrl": "",
-    "officialUrl": "https://www.cjemulous.com/event-details/the-sac-town-give-back",
-    "image": "",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "imageOverride": false,
-    "price": "",
-    "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "sourceName": "CJ Emulous official calendar",
-    "sources": [
-      {
-        "name": "CJ Emulous official calendar",
-        "url": "https://www.cjemulous.com/event-details/the-sac-town-give-back",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "notes": "Artist appearance at a community give-back event. The official title does not establish a standalone rap concert; time is left blank pending a local source.",
-    "id": "manual:cj-emulous-sac-town-give-back-west-sacramento-2026"
   },
   {
     "title": "MAYIA at the NC State Fair",
@@ -1564,13 +1026,47 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "id": "mission-friends-sacramento-2026",
     "imageType": "artist",
-    "imagePosition": "center",
+    "imagePosition": "center 30%",
     "imageOverride": true,
     "imageSource": "Mission official YouTube channel",
     "imageSourceUrl": "https://www.youtube.com/channel/UCBaU_Xh4fyokc-ckyCeYv3w"
+  },
+  {
+    "id": "supplemental:brenno-overflow-conference-2026",
+    "title": "Overflow Conference",
+    "startDate": "2026-10-17",
+    "startTime": "",
+    "venue": "Location TBD",
+    "address": "",
+    "city": "Buffalo",
+    "state": "NY",
+    "country": "US",
+    "artists": [
+      "Brenno"
+    ],
+    "headliner": "Brenno",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.tickettailor.com/events/ablazemovement",
+    "officialUrl": "https://www.brennomusic.live/",
+    "image": "",
+    "price": "",
+    "sourceName": "Brenno official upcoming shows",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Brenno official upcoming shows",
+        "url": "https://www.brennomusic.live/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ]
   },
   {
     "title": "Alex Zurdo: Zona Zero",
@@ -1612,82 +1108,6 @@
     "imageOverride": true
   },
   {
-    "title": "JIMMY ROCK — Rave & Worship Dallas",
-    "startDate": "2026-10-18",
-    "startTime": "19:00",
-    "timezone": "America/Chicago",
-    "venue": "AM/FM Dallas — Backyard",
-    "address": "1950 Market Center Blvd",
-    "city": "Dallas",
-    "state": "TX",
-    "country": "US",
-    "artists": [
-      "JIMMY ROCK"
-    ],
-    "headliner": "JIMMY ROCK",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventim.com/event/jimmy-rock-am-fm-22038857/",
-    "officialUrl": "https://www.eventim.com/event/jimmy-rock-am-fm-22038857/",
-    "image": "https://images.squarespace-cdn.com/content/v1/56b7abd2f699bb04c395a379/03aa3873-98e9-4ccb-8eae-4d4f3826a4a8/Jimmy-in-the-field-refl.png",
-    "imageType": "artist",
-    "imagePosition": "50% 22%",
-    "imageOverride": false,
-    "price": "",
-    "lineupExplicit": true,
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "sourceName": "Eventim official ticket listing",
-    "sources": [
-      {
-        "name": "Eventim official ticket listing",
-        "url": "https://www.eventim.com/event/jimmy-rock-am-fm-22038857/",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 100
-      },
-      {
-        "name": "JIMMY ROCK Bandsintown",
-        "url": "https://www.bandsintown.com/e/108805378",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "doorsTime": "18:00",
-    "notes": "Doors 6:00 PM; show 7:00 PM; all ages. J. Horton is billed. Artists mentioned only in performer biographies are not associated.",
-    "advertisedBilling": [
-      "JIMMY ROCK",
-      "J. Horton"
-    ],
-    "ageRestriction": "All ages",
-    "id": "manual:jimmy-rock-rave-worship-dallas-2026"
-  },
-  {
-    "id": "mike-teezy-hrvstland-festival-2026",
-    "title": "HRVSTLAND Festival 2026",
-    "startDate": "2026-10-24",
-    "startTime": "",
-    "venue": "Steele Creek Church",
-    "address": "",
-    "city": "Charlotte",
-    "state": "NC",
-    "artists": [
-      "Mike Teezy"
-    ],
-    "headliner": "Mike Teezy",
-    "eventType": "festival",
-    "ticketUrl": "https://www.bandsintown.com/f/231374",
-    "officialUrl": "https://www.bandsintown.com/f/231374",
-    "image": "",
-    "price": "",
-    "status": "scheduled",
-    "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "sourceName": "Mike Teezy verified Bandsintown / HRVSTLAND listing"
-  },
-  {
     "id": "bandsintown:108144023",
     "title": "GODLY AMBITION TOUR — HOUSTON, TX",
     "startDate": "2026-10-24",
@@ -1726,6 +1146,29 @@
     "trackedArtist": "Ruslan"
   },
   {
+    "id": "mike-teezy-hrvstland-festival-2026",
+    "title": "HRVSTLAND Festival 2026",
+    "startDate": "2026-10-24",
+    "startTime": "",
+    "venue": "Steele Creek Church",
+    "address": "",
+    "city": "Charlotte",
+    "state": "NC",
+    "artists": [
+      "Mike Teezy"
+    ],
+    "headliner": "Mike Teezy",
+    "eventType": "festival",
+    "ticketUrl": "https://www.bandsintown.com/f/231374",
+    "officialUrl": "https://www.bandsintown.com/f/231374",
+    "image": "",
+    "price": "",
+    "status": "scheduled",
+    "lineupExplicit": true,
+    "authority": "artist_calendar",
+    "sourceName": "Mike Teezy verified Bandsintown / HRVSTLAND listing"
+  },
+  {
     "id": "sevin-live-nashville-2026-10-24",
     "title": "Sevin Live Concert",
     "startDate": "2026-10-24",
@@ -1760,43 +1203,6 @@
     ],
     "ticketAvailability": "needs_confirmation",
     "notes": "HOG MOB confirms the show date; current ticket availability needs confirmation."
-  },
-  {
-    "id": "supplemental:tru-serva-truth-tour-las-cruces-2026",
-    "title": "The Truth Tour — Las Cruces",
-    "startDate": "2026-10-25",
-    "startTime": "",
-    "timezone": "America/Denver",
-    "venue": "Real Life Church",
-    "address": "",
-    "city": "Las Cruces",
-    "state": "NM",
-    "country": "US",
-    "artists": [
-      "TRU-SERVA"
-    ],
-    "headliner": "TRU-SERVA",
-    "eventType": "concert",
-    "status": "onsale",
-    "ticketUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
-    "officialUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
-    "image": "https://i.scdn.co/image/ab6761610000e5ebb5bd510760cb418516ded933",
-    "imageType": "artist_photo",
-    "imagePosition": "center",
-    "price": "$10",
-    "sourceName": "Megan Woods official tour announcement",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Megan Woods official tour announcement",
-        "url": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ]
   },
   {
     "id": "bandsintown:108144061",
@@ -1835,6 +1241,43 @@
     "bandsintownResolvedName": "RUSLAN",
     "bandsintownIdentity": "exact_name_or_alias",
     "trackedArtist": "Ruslan"
+  },
+  {
+    "id": "supplemental:tru-serva-truth-tour-las-cruces-2026",
+    "title": "The Truth Tour — Las Cruces",
+    "startDate": "2026-10-25",
+    "startTime": "",
+    "timezone": "America/Denver",
+    "venue": "Real Life Church",
+    "address": "",
+    "city": "Las Cruces",
+    "state": "NM",
+    "country": "US",
+    "artists": [
+      "TRU-SERVA"
+    ],
+    "headliner": "TRU-SERVA",
+    "eventType": "concert",
+    "status": "onsale",
+    "ticketUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
+    "officialUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebb5bd510760cb418516ded933",
+    "imageType": "artist_photo",
+    "imagePosition": "center",
+    "price": "$10",
+    "sourceName": "Megan Woods official tour announcement",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Megan Woods official tour announcement",
+        "url": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ]
   },
   {
     "id": "supplemental:skema-boy-2026-10-27-chicago-il",
@@ -2249,6 +1692,50 @@
     "imageOverride": true
   },
   {
+    "id": "supplemental:beyond-the-walls-3-brenno-2026",
+    "title": "Beyond The Walls 3",
+    "startDate": "2026-11-07",
+    "startTime": "19:30",
+    "timezone": "America/New_York",
+    "venue": "The Cambridge Room at House of Blues Cleveland",
+    "address": "308 Euclid Ave",
+    "city": "Cleveland",
+    "state": "OH",
+    "country": "US",
+    "artists": [
+      "KB",
+      "Brenno",
+      "Porsha Love"
+    ],
+    "headliner": "KB",
+    "eventType": "concert",
+    "status": "onsale",
+    "ticketUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+    "officialUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+    "image": "",
+    "price": "",
+    "sourceName": "Ticketmaster / Brenno official upcoming shows",
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Ticketmaster",
+        "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
+      },
+      {
+        "name": "Brenno official upcoming shows",
+        "url": "https://www.brennomusic.live/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ]
+  },
+  {
     "title": "Flavor Fest 2026 — Saturday Concerts",
     "startDate": "2026-11-07",
     "startTime": "19:00",
@@ -2297,99 +1784,6 @@
     ],
     "notes": "Yung Kriss and Gifted Hands have conflicting poster/schedule day assignments and are not newly associated here pending resolution.",
     "id": "flavor-fest-2026-saturday-concerts"
-  },
-  {
-    "id": "supplemental:beyond-the-walls-3-brenno-2026",
-    "title": "Beyond The Walls 3",
-    "startDate": "2026-11-07",
-    "startTime": "19:30",
-    "timezone": "America/New_York",
-    "venue": "The Cambridge Room at House of Blues Cleveland",
-    "address": "308 Euclid Ave",
-    "city": "Cleveland",
-    "state": "OH",
-    "country": "US",
-    "artists": [
-      "KB",
-      "Brenno",
-      "Porsha Love"
-    ],
-    "headliner": "KB",
-    "eventType": "concert",
-    "status": "onsale",
-    "ticketUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
-    "officialUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
-    "image": "",
-    "price": "",
-    "sourceName": "Ticketmaster / Brenno official upcoming shows",
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Ticketmaster",
-        "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 100
-      },
-      {
-        "name": "Brenno official upcoming shows",
-        "url": "https://www.brennomusic.live/",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ]
-  },
-  {
-    "title": "New Mainstream Tour — Miles Minnick, Tommy Zuko & CJ Emulous",
-    "startDate": "2026-11-08",
-    "startTime": "",
-    "timezone": "America/New_York",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "Jacksonville",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://milesminnick.com/tour",
-    "officialUrl": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-23",
-    "image": "",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "imageOverride": false,
-    "price": "",
-    "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "sourceName": "CJ Emulous official New Mainstream Tour calendar",
-    "sources": [
-      {
-        "name": "CJ Emulous official New Mainstream Tour calendar",
-        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-26",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      },
-      {
-        "name": "Official ticket / RSVP",
-        "url": "https://milesminnick.com/tour",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 94
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "notes": "Official artist calendar confirms the date and Jacksonville, but no venue. Time is left blank pending local venue/ticket confirmation.",
-    "id": "manual:cj-emulous-new-mainstream-miami-2026-11-05"
   },
   {
     "id": "supplemental:skema-boy-2026-11-08-atlanta-ga",
@@ -2567,51 +1961,11 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "id": "cj-emulous-kickback-grand-prairie-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true
-  },
-  {
-    "title": "GLO Concert",
-    "startDate": "2026-11-15",
-    "startTime": "",
-    "timezone": "America/Los_Angeles",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "Los Angeles",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "CJ Emulous"
-    ],
-    "headliner": "CJ Emulous",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "",
-    "officialUrl": "https://www.cjemulous.com/event-details/gloconcert",
-    "image": "",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "imageOverride": false,
-    "price": "",
-    "lineupExplicit": false,
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "sourceName": "CJ Emulous official calendar",
-    "sources": [
-      {
-        "name": "CJ Emulous official calendar",
-        "url": "https://www.cjemulous.com/event-details/gloconcert",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "notes": "CJ Emulous is confirmed by his official calendar. Venue and additional artists remain unconfirmed; time is left blank pending a local source.",
-    "id": "manual:cj-emulous-glo-concert-los-angeles-2026"
   },
   {
     "id": "supplemental:skema-boy-2026-11-16-dallas-tx",
@@ -2840,153 +2194,6 @@
     "imageOverride": true
   },
   {
-    "title": "State Youth Conference with CJ Emulous",
-    "startDate": "2026-11-27",
-    "startTime": "",
-    "timezone": "America/New_York",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "Cocoa",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "CJ Emulous"
-    ],
-    "headliner": "CJ Emulous",
-    "eventType": "conference",
-    "status": "scheduled",
-    "ticketUrl": "",
-    "officialUrl": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous",
-    "image": "",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "imageOverride": false,
-    "price": "",
-    "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "sourceName": "CJ Emulous official calendar",
-    "sources": [
-      {
-        "name": "CJ Emulous official calendar",
-        "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      },
-      {
-        "name": "CJ Emulous official calendar — Nov 28 session",
-        "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      },
-      {
-        "name": "CJ Emulous official calendar — Nov 29 session",
-        "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous-2",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "endDate": "2026-11-29",
-    "notes": "One conference record covers all three official CJ Emulous appearances. Main time is blank pending independent local-time confirmation.",
-    "sessionDates": [
-      "2026-11-27",
-      "2026-11-28",
-      "2026-11-29"
-    ],
-    "publishedSessionTimes": {
-      "2026-11-27": "19:00",
-      "2026-11-28": "10:00",
-      "2026-11-29": "09:00"
-    },
-    "id": "manual:cj-emulous-state-youth-conference-cocoa-2026"
-  },
-  {
-    "title": "Christlike Christmas — CJ Emulous & Miles Minnick",
-    "startDate": "2026-12-02",
-    "startTime": "",
-    "timezone": "America/Los_Angeles",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "Berkeley",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "CJ Emulous",
-      "Miles Minnick"
-    ],
-    "headliner": "CJ Emulous",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "",
-    "officialUrl": "https://www.cjemulous.com/event-details/christlike-christmas-w-cj-emulous-miles-minnick",
-    "image": "",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "imageOverride": false,
-    "price": "",
-    "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "sourceName": "CJ Emulous official calendar",
-    "sources": [
-      {
-        "name": "CJ Emulous official calendar",
-        "url": "https://www.cjemulous.com/event-details/christlike-christmas-w-cj-emulous-miles-minnick",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "notes": "Venue and independently confirmed local time are unpublished.",
-    "id": "manual:cj-emulous-christlike-christmas-berkeley-2026"
-  },
-  {
-    "title": "Christlike Christmas — CJ Emulous & Miles Minnick",
-    "startDate": "2026-12-04",
-    "startTime": "",
-    "timezone": "America/Los_Angeles",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "Felton",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "CJ Emulous",
-      "Miles Minnick"
-    ],
-    "headliner": "CJ Emulous",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "",
-    "officialUrl": "https://www.cjemulous.com/event-details/christlike-christmas-w-cj-emulous-miles-minnick-2",
-    "image": "",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "imageOverride": false,
-    "price": "",
-    "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "sourceName": "CJ Emulous official calendar",
-    "sources": [
-      {
-        "name": "CJ Emulous official calendar",
-        "url": "https://www.cjemulous.com/event-details/christlike-christmas-w-cj-emulous-miles-minnick-2",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "notes": "Venue and independently confirmed local time are unpublished.",
-    "id": "manual:cj-emulous-christlike-christmas-felton-2026"
-  },
-  {
     "title": "Miles Minnick & CJ Emulous at Zion Ultra Lounge",
     "startDate": "2026-12-05",
     "startTime": "",
@@ -3020,7 +2227,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "id": "miles-cj-zion-ultra-lounge-chandler-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3063,133 +2270,6 @@
     "notes": "HOG MOB confirms the show date; current ticket availability needs confirmation."
   },
   {
-    "title": "Kelo Cho Presents: The Worship After Christmas",
-    "startDate": "2026-12-26",
-    "startTime": "19:00",
-    "timezone": "America/New_York",
-    "venue": "Murray Hill Theatre",
-    "address": "932 Edgewood Ave S",
-    "city": "Jacksonville",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Kelo"
-    ],
-    "headliner": "Kelo",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/kelo-cho-presents-the-worship-after-christmas-tickets-1992972194483",
-    "officialUrl": "https://murrayhilltheatre.com/event/kelo-cho-presents-the-worship-after-christmas/",
-    "image": "",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "imageOverride": false,
-    "price": "$15",
-    "lineupExplicit": true,
-    "authority": "official_event",
-    "confidence": "high",
-    "sourceName": "Murray Hill Theatre official event",
-    "sources": [
-      {
-        "name": "Murray Hill Theatre official event",
-        "url": "https://murrayhilltheatre.com/event/kelo-cho-presents-the-worship-after-christmas/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      },
-      {
-        "name": "Official ticket / RSVP",
-        "url": "https://www.eventbrite.com/e/kelo-cho-presents-the-worship-after-christmas-tickets-1992972194483",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 94
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "doorsTime": "18:00",
-    "advertisedBilling": [
-      "Kelo Cho"
-    ],
-    "id": "manual:kelo-worship-after-christmas-jacksonville-2026"
-  },
-  {
-    "title": "Rock the Universe 2027",
-    "startDate": "2027-01-22",
-    "endDate": "2027-01-23",
-    "startTime": "",
-    "timezone": "America/New_York",
-    "venue": "Universal Studios Florida",
-    "address": "",
-    "city": "Orlando",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "1K Phew",
-      "gio.",
-      "Torey D'Shaun"
-    ],
-    "headliner": "1K Phew",
-    "eventType": "festival",
-    "status": "scheduled",
-    "ticketUrl": "https://www.universalorlando.com/web/en/us/things-to-do/events/rock-the-universe",
-    "officialUrl": "https://www.universalorlando.com/web/en/us/things-to-do/events/rock-the-universe",
-    "image": "assets/events/rock-the-universe-2027.jpg",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "lineupExplicit": true,
-    "authority": "official_festival",
-    "confidence": "high",
-    "sourceName": "Universal Orlando official Rock the Universe page",
-    "performerDays": {
-      "2027-01-22": [
-        "1K Phew"
-      ],
-      "2027-01-23": [
-        "gio.",
-        "Torey D'Shaun"
-      ]
-    },
-    "fullLineup": [
-      "Elevation Worship",
-      "Jamie MacDonald",
-      "Rave Jesus",
-      "Benjamin William Hastings",
-      "Strings & Heart",
-      "1K Phew",
-      "Joseph O'Brien",
-      "Maddi Jane",
-      "John Allan",
-      "Josiah Queen",
-      "Katy Nichole",
-      "Franni Cash",
-      "CAIN",
-      "Megan Woods",
-      "gio.",
-      "Peter Burton",
-      "Sam Wesley",
-      "Torey D'Shaun"
-    ],
-    "sources": [
-      {
-        "name": "Universal Orlando official Rock the Universe page",
-        "url": "https://www.universalorlando.com/web/en/us/things-to-do/events/rock-the-universe",
-        "type": "manual_verified",
-        "authority": "official_festival",
-        "priority": 112
-      },
-      {
-        "name": "FOX 35 lineup report citing Universal Orlando",
-        "url": "https://www.fox35orlando.com/news/universal-orlando-reveals-rock-universe-2027-concert-lineup",
-        "type": "manual_verified",
-        "authority": "supporting_press",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "id": "manual:rock-the-universe-orlando-2027"
-  },
-  {
     "id": "bandsintown:1037809090",
     "title": "nobigdyl. at Cannery Hall",
     "startDate": "2027-01-22",
@@ -3226,45 +2306,5 @@
     "bandsintownResolvedName": "nobigdyl.",
     "bandsintownIdentity": "exact_name_or_alias",
     "trackedArtist": "nobigdyl."
-  },
-  {
-    "title": "Rize AZ Music Festival",
-    "startDate": "2027-04-17",
-    "startTime": "",
-    "timezone": "America/Phoenix",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "Sierra Vista",
-    "state": "AZ",
-    "country": "US",
-    "artists": [
-      "CJ Emulous"
-    ],
-    "headliner": "CJ Emulous",
-    "eventType": "festival",
-    "status": "scheduled",
-    "ticketUrl": "",
-    "officialUrl": "https://www.cjemulous.com/event-details/rize-az-music-festival",
-    "image": "",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "imageOverride": false,
-    "price": "",
-    "lineupExplicit": false,
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "sourceName": "CJ Emulous official calendar",
-    "sources": [
-      {
-        "name": "CJ Emulous official calendar",
-        "url": "https://www.cjemulous.com/event-details/rize-az-music-festival",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "notes": "Venue, additional lineup and independently confirmed local performance time remain unpublished.",
-    "id": "manual:cj-emulous-rize-az-music-festival-2027"
   }
 ]

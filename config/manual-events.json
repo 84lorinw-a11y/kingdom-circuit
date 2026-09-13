@@ -1099,7 +1099,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -1416,7 +1416,9 @@
     "soldOut": true,
     "ticketAvailability": "sold_out",
     "preShowTime": "17:00",
-    "id": "boise-invasion-2026"
+    "id": "boise-invasion-2026",
+    "imageSource": "Kurtis Hoppie official website",
+    "imageSourceUrl": "https://www.thekurtishoppie.com/"
   },
   {
     "title": "Open Skies — Bethel Music with Jenn Johnson + KB",
@@ -1750,7 +1752,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -1797,10 +1799,10 @@
     "status": "scheduled",
     "ticketUrl": "https://partiful.com/e/SK3SE7vXIs9rYlPcW0hZ",
     "officialUrl": "https://onedaydenver.org/",
-    "image": "",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "imageOverride": false,
+    "image": "https://onedaydenver.org/assets/img/artist-petrina.jpg?v=9dd8a283",
+    "imageType": "artist",
+    "imagePosition": "50% 28%",
+    "imageOverride": true,
     "price": "Free",
     "lineupExplicit": true,
     "authority": "official_festival",
@@ -1826,7 +1828,9 @@
     "endTime": "20:00",
     "notes": "Festival runs 9:00 AM–8:00 PM. The sanctuary concert featuring Petrina DeLacey runs 4:30–8:00 PM. Free admission; RSVP requested.",
     "performanceWindow": "16:30-20:00",
-    "id": "one-day-fall-festival-aurora-2026"
+    "id": "one-day-fall-festival-aurora-2026",
+    "imageSource": "ONE DAY official festival site — Petrina DeLacey lineup image",
+    "imageSourceUrl": "https://onedaydenver.org/"
   },
   {
     "id": "scootie-wop-southwest-trail-riders-houston-2026",
@@ -2018,7 +2022,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -2250,10 +2254,10 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "id": "mission-friends-sacramento-2026",
     "imageType": "artist",
-    "imagePosition": "center",
+    "imagePosition": "center 30%",
     "imageOverride": true,
     "imageSource": "Mission official YouTube channel",
     "imageSourceUrl": "https://www.youtube.com/channel/UCBaU_Xh4fyokc-ckyCeYv3w"
@@ -2527,55 +2531,6 @@
     "id": "flavor-fest-2026-saturday-concerts"
   },
   {
-    "title": "New Mainstream Tour — Miles Minnick, Tommy Zuko & CJ Emulous",
-    "startDate": "2026-11-08",
-    "startTime": "",
-    "timezone": "America/New_York",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "Jacksonville",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://milesminnick.com/tour",
-    "officialUrl": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-23",
-    "image": "",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "imageOverride": false,
-    "price": "",
-    "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "sourceName": "CJ Emulous official New Mainstream Tour calendar",
-    "sources": [
-      {
-        "name": "CJ Emulous official New Mainstream Tour calendar",
-        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-26",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      },
-      {
-        "name": "Official ticket / RSVP",
-        "url": "https://milesminnick.com/tour",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 94
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "notes": "Official artist calendar confirms the date and Jacksonville, but no venue. Time is left blank pending local venue/ticket confirmation.",
-    "id": "cj-emulous-new-mainstream-miami-2026-11-05"
-  },
-  {
     "id": "kaden-jordan-babytooth-orlando-november-2026",
     "title": "The Babytooth Experience",
     "startDate": "2026-11-13",
@@ -2657,7 +2612,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "id": "cj-emulous-kickback-grand-prairie-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2725,71 +2680,6 @@
     "lineupExplicit": true,
     "authority": "official_event",
     "sourceName": "EGR official Instagram schedule"
-  },
-  {
-    "title": "State Youth Conference with CJ Emulous",
-    "startDate": "2026-11-27",
-    "startTime": "",
-    "timezone": "America/New_York",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "Cocoa",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "CJ Emulous"
-    ],
-    "headliner": "CJ Emulous",
-    "eventType": "conference",
-    "status": "scheduled",
-    "ticketUrl": "",
-    "officialUrl": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous",
-    "image": "",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "imageOverride": false,
-    "price": "",
-    "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "sourceName": "CJ Emulous official calendar",
-    "sources": [
-      {
-        "name": "CJ Emulous official calendar",
-        "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      },
-      {
-        "name": "CJ Emulous official calendar — Nov 28 session",
-        "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      },
-      {
-        "name": "CJ Emulous official calendar — Nov 29 session",
-        "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous-2",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "endDate": "2026-11-29",
-    "notes": "One conference record covers all three official CJ Emulous appearances. Main time is blank pending independent local-time confirmation.",
-    "sessionDates": [
-      "2026-11-27",
-      "2026-11-28",
-      "2026-11-29"
-    ],
-    "publishedSessionTimes": {
-      "2026-11-27": "19:00",
-      "2026-11-28": "10:00",
-      "2026-11-29": "09:00"
-    },
-    "id": "cj-emulous-state-youth-conference-cocoa-2026"
   },
   {
     "title": "Christlike Christmas — CJ Emulous & Miles Minnick",
@@ -2930,7 +2820,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "id": "miles-cj-zion-ultra-lounge-chandler-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3025,10 +2915,10 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/kelo-cho-presents-the-worship-after-christmas-tickets-1992972194483",
     "officialUrl": "https://murrayhilltheatre.com/event/kelo-cho-presents-the-worship-after-christmas/",
-    "image": "",
-    "imageType": "fallback",
+    "image": "https://murrayhilltheatre.com/wp-content/uploads/2026/07/https-cdn.evbuc_.com-images-1188053564-306363782001-1-original.20260702-021736-1130x650.jpeg",
+    "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": false,
+    "imageOverride": true,
     "price": "$15",
     "lineupExplicit": true,
     "authority": "official_event",
@@ -3055,7 +2945,9 @@
     "advertisedBilling": [
       "Kelo Cho"
     ],
-    "id": "kelo-worship-after-christmas-jacksonville-2026"
+    "id": "kelo-worship-after-christmas-jacksonville-2026",
+    "imageSource": "Murray Hill Theatre official event page",
+    "imageSourceUrl": "https://murrayhilltheatre.com/event/kelo-cho-presents-the-worship-after-christmas/"
   },
   {
     "title": "Rock the Universe 2027",
@@ -3173,5 +3065,166 @@
     "auditVerified": "2026-09-13",
     "notes": "Venue, additional lineup and independently confirmed local performance time remain unpublished.",
     "id": "cj-emulous-rize-az-music-festival-2027"
+  },
+  {
+    "title": "State Youth Conference with CJ Emulous",
+    "startDate": "2026-11-27",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "Venue not provided",
+    "address": "",
+    "city": "Cocoa",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "CJ Emulous"
+    ],
+    "headliner": "CJ Emulous",
+    "eventType": "conference",
+    "status": "scheduled",
+    "ticketUrl": "",
+    "officialUrl": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous",
+    "image": "",
+    "imageType": "fallback",
+    "imagePosition": "center",
+    "imageOverride": false,
+    "price": "",
+    "lineupExplicit": true,
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "sourceName": "CJ Emulous official calendar",
+    "sources": [
+      {
+        "name": "CJ Emulous official calendar",
+        "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      },
+      {
+        "name": "CJ Emulous official calendar — Nov 28 session",
+        "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      },
+      {
+        "name": "CJ Emulous official calendar — Nov 29 session",
+        "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous-2",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ],
+    "auditVerified": "2026-09-13",
+    "endDate": "2026-11-29",
+    "notes": "One conference record covers all three official CJ Emulous appearances. Main time is blank pending independent local-time confirmation.",
+    "sessionDates": [
+      "2026-11-27",
+      "2026-11-28",
+      "2026-11-29"
+    ],
+    "publishedSessionTimes": {
+      "2026-11-27": "19:00",
+      "2026-11-28": "10:00",
+      "2026-11-29": "09:00"
+    },
+    "id": "cj-emulous-state-youth-conference-cocoa-2026"
+  },
+  {
+    "title": "New Mainstream Tour — Miles Minnick, Tommy Zuko & CJ Emulous",
+    "startDate": "2026-11-05",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "Venue not provided",
+    "address": "",
+    "city": "Miami",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "",
+    "officialUrl": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-23",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": false,
+    "lineupExplicit": true,
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "sourceName": "CJ Emulous official New Mainstream Tour calendar",
+    "sources": [
+      {
+        "name": "CJ Emulous official New Mainstream Tour calendar",
+        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-23",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      },
+      {
+        "name": "Miles Minnick official tour page",
+        "url": "https://milesminnick.com/tour",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 94
+      }
+    ],
+    "notes": "Official artist calendar confirms the date and Miami, but no venue or direct ticket page. Time is left blank pending local venue/ticket confirmation.",
+    "auditVerified": "2026-09-13",
+    "id": "cj-emulous-new-mainstream-miami-2026-11-05"
+  },
+  {
+    "title": "New Mainstream Tour — Miles Minnick, Tommy Zuko & CJ Emulous",
+    "startDate": "2026-11-08",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "Venue not provided",
+    "address": "",
+    "city": "Jacksonville",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "",
+    "officialUrl": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-26",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": false,
+    "lineupExplicit": true,
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "sourceName": "CJ Emulous official New Mainstream Tour calendar",
+    "sources": [
+      {
+        "name": "CJ Emulous official New Mainstream Tour calendar",
+        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-26",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      },
+      {
+        "name": "Miles Minnick official tour page",
+        "url": "https://milesminnick.com/tour",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 94
+      }
+    ],
+    "notes": "Official artist calendar confirms the date and Jacksonville, but no venue or direct ticket page. Time is left blank pending local venue/ticket confirmation.",
+    "auditVerified": "2026-09-13",
+    "id": "cj-emulous-new-mainstream-jacksonville-2026-11-08"
   }
 ]
