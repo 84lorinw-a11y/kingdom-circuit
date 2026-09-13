@@ -14,6 +14,7 @@ EVENT_FILES = (
 )
 RARE_EVENTBRITE_ID = "1986268845586"
 RARE_CANCEL_URL = "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586"
+RARE_CANONICAL_ID = "eventbrite:rare-of-breed-jacksonville-2026"
 FAITH_JAM_ID = "official:95cc80c13713dfecaf6d"
 FAITH_JAM_URL = "https://www.eventbrite.com/e/faith-jam-2026-tickets-1985341605185"
 MIKE_TEEZY_ID = "official:4e2fc5c7c02ab1d34b9e"
@@ -46,8 +47,71 @@ def append_source(event: dict, source: dict) -> None:
         sources.append(source)
 
 
+def _is_rare(event: dict) -> bool:
+    return RARE_EVENTBRITE_ID in json.dumps(event, ensure_ascii=False)
+
+
+def _normalized_id(event: dict) -> str:
+    return str(event.get("id") or "").removeprefix("manual:")
+
+
+def consolidate_rare(rows: list[dict]) -> tuple[dict | None, int]:
+    """Collapse collector/source duplicates to one canonical Rare cancellation record.
+
+    Full collection can rediscover the cancelled Jacksonville listing through more than
+    one input. Keep the established manual/eventbrite identity when available, merge
+    useful artist/source evidence, and remove duplicate rows before applying the
+    cancellation state. This prevents the verified cancellation from failing a full
+    refresh merely because the collector found the same event twice.
+    """
+    matches = [event for event in rows if _is_rare(event)]
+    if not matches:
+        return None, 0
+
+    canonical = next(
+        (event for event in matches if _normalized_id(event) == RARE_CANONICAL_ID),
+        matches[0],
+    )
+
+    artists = list(canonical.get("artists") or [])
+    seen_artists = {str(name).casefold() for name in artists}
+    merged_ids = list(canonical.get("mergedIds") or [])
+    for duplicate in matches:
+        if duplicate is canonical:
+            continue
+        duplicate_id = duplicate.get("id")
+        if duplicate_id and duplicate_id not in merged_ids:
+            merged_ids.append(duplicate_id)
+        for artist in duplicate.get("artists") or []:
+            key = str(artist).casefold()
+            if key not in seen_artists:
+                artists.append(artist)
+                seen_artists.add(key)
+        for source in duplicate.get("sources") or []:
+            if isinstance(source, dict) and source.get("url"):
+                append_source(canonical, source)
+        for key in ("image", "imageType", "imagePosition", "imageOverride", "venue", "address", "startTime", "timezone"):
+            if not canonical.get(key) and duplicate.get(key):
+                canonical[key] = duplicate[key]
+
+    canonical["artists"] = artists
+    if merged_ids:
+        canonical["mergedIds"] = merged_ids
+    rows[:] = [event for event in rows if event is canonical or not _is_rare(event)]
+    return canonical, len(matches) - 1
+
+
 def apply() -> dict[str, int]:
-    report = {"cancelledRecords": 0, "faithJamRecords": 0, "mikeTeezyRecords": 0, "fastivalleRecords": 0, "kingdomChoiceRecords": 0, "zaunteeCanonicalRecords": 0, "zaunteeRetiredRecords": 0}
+    report = {
+        "cancelledRecords": 0,
+        "rareDuplicatesCollapsed": 0,
+        "faithJamRecords": 0,
+        "mikeTeezyRecords": 0,
+        "fastivalleRecords": 0,
+        "kingdomChoiceRecords": 0,
+        "zaunteeCanonicalRecords": 0,
+        "zaunteeRetiredRecords": 0,
+    }
     cancellation_source = {
         "name": "Official Eventbrite cancellation notice",
         "url": RARE_CANCEL_URL,
@@ -65,22 +129,24 @@ def apply() -> dict[str, int]:
 
     for path in EVENT_FILES:
         rows = load(path)
-        by_id = {event.get("id"): event for event in rows}
-        changed = False
-        for event in rows:
-            urls = " ".join(str(event.get(key) or "") for key in ("officialUrl", "ticketUrl"))
-            if RARE_EVENTBRITE_ID in urls:
-                event["status"] = "cancelled"
-                event["cancellationConfirmed"] = True
-                event["cancellationConfirmedAt"] = "2026-09-12"
-                event["officialUrl"] = RARE_CANCEL_URL
-                event["ticketUrl"] = RARE_CANCEL_URL
-                event["sourceName"] = "Official Eventbrite cancellation notice"
-                event["notes"] = "Cancelled by the organizer. This page is retained as a cancellation notice."
-                append_source(event, cancellation_source)
-                report["cancelledRecords"] += 1
-                changed = True
+        rare, collapsed = consolidate_rare(rows)
+        changed = collapsed > 0
+        report["rareDuplicatesCollapsed"] += collapsed
 
+        if rare:
+            rare["status"] = "cancelled"
+            rare["cancellationConfirmed"] = True
+            rare["cancellationConfirmedAt"] = "2026-09-12"
+            rare["officialUrl"] = RARE_CANCEL_URL
+            rare["ticketUrl"] = RARE_CANCEL_URL
+            rare["sourceName"] = "Official Eventbrite cancellation notice"
+            rare["notes"] = "Cancelled by the organizer. This page is retained as a cancellation notice."
+            append_source(rare, cancellation_source)
+            report["cancelledRecords"] += 1
+            changed = True
+
+        by_id = {event.get("id"): event for event in rows}
+        for event in rows:
             if event.get("id") == FAITH_JAM_ID:
                 artists = event.setdefault("artists", [])
                 if "Brother Bo" not in artists:
@@ -165,7 +231,7 @@ def apply() -> dict[str, int]:
 def check() -> None:
     for path in EVENT_FILES:
         rows = load(path)
-        rare = [event for event in rows if RARE_EVENTBRITE_ID in json.dumps(event)]
+        rare = [event for event in rows if _is_rare(event)]
         if len(rare) != 1 or rare[0].get("status") != "cancelled" or not rare[0].get("cancellationConfirmed"):
             raise SystemExit(f"Rare of Breed cancellation is not durable in {path}")
         faith = [event for event in rows if event.get("id") == FAITH_JAM_ID]
