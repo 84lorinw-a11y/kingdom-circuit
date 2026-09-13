@@ -291,44 +291,6 @@
     "imageOverride": true
   },
   {
-    "id": "eventbrite:gracefest-lecrae-castaic-2026",
-    "title": "GRACEFEST 2026",
-    "startDate": "2026-09-19",
-    "startTime": "13:30",
-    "timezone": "America/Los_Angeles",
-    "venue": "Castaic Lake State Recreation Area",
-    "address": "Castaic Lake Drive",
-    "city": "Castaic",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "Lecrae"
-    ],
-    "headliner": "Lecrae",
-    "eventType": "festival",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-    "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-    "image": "assets/events/gracefest-2026.png",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "price": "",
-    "sourceName": "Official Eventbrite listing",
-    "authority": "official_festival",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Official Eventbrite listing",
-        "url": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-        "type": "eventbrite",
-        "authority": "official_festival",
-        "priority": 104
-      }
-    ]
-  },
-  {
     "id": "eventbrite:hip-hop-in-the-park-cortland-2026",
     "title": "Hip Hop in the Park",
     "startDate": "2026-09-19",
@@ -365,6 +327,44 @@
         "type": "eventbrite",
         "authority": "venue_ticket",
         "priority": 94
+      }
+    ]
+  },
+  {
+    "id": "eventbrite:gracefest-lecrae-castaic-2026",
+    "title": "GRACEFEST 2026",
+    "startDate": "2026-09-19",
+    "startTime": "13:30",
+    "timezone": "America/Los_Angeles",
+    "venue": "Castaic Lake State Recreation Area",
+    "address": "Castaic Lake Drive",
+    "city": "Castaic",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Lecrae"
+    ],
+    "headliner": "Lecrae",
+    "eventType": "festival",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+    "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+    "image": "assets/events/gracefest-2026.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "price": "",
+    "sourceName": "Official Eventbrite listing",
+    "authority": "official_festival",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+        "type": "eventbrite",
+        "authority": "official_festival",
+        "priority": 104
       }
     ]
   },
@@ -560,7 +560,7 @@
     "status": "scheduled",
     "ticketUrl": "https://boletoslive.com/jay-kalyl/",
     "officialUrl": "https://boletoslive.com/jay-kalyl/",
-    "image": "assets/events/jay-kalyl-desde-antes-2026.svg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb1269b80aed5d08c40aedfdc3",
     "price": "",
     "sourceName": "Boletos Live official event",
     "authority": "venue_ticket",
@@ -578,7 +578,7 @@
     "auditVerified": "2026-09-11",
     "notes": "Official page gives conflicting 4:00 PM and 7:30 PM start times; start time intentionally left unspecified.",
     "id": "jay-kalyl-desde-antes-rockville-centre-2026",
-    "imageType": "event_artwork",
+    "imageType": "artist",
     "imagePosition": "center",
     "imageOverride": true
   },
@@ -832,7 +832,7 @@
     "status": "scheduled",
     "ticketUrl": "https://mayiawarren.org/go/bandsintown/21578/event/108885203",
     "officialUrl": "https://mayiawarren.org/go/bandsintown/21578/event/108885203",
-    "image": "assets/events/mayia-boxyard-saturdaze-2026.svg",
+    "image": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
     "price": "",
     "sourceName": "MAYIA official calendar",
     "authority": "artist_calendar",
@@ -853,7 +853,7 @@
       "MAYIA WARREN"
     ],
     "id": "mayia-boxyard-saturdaze-2026",
-    "imageType": "event_artwork",
+    "imageType": "artist",
     "imagePosition": "center",
     "imageOverride": true
   },
@@ -995,26 +995,19 @@
     ],
     "headliner": "Rare of Breed",
     "eventType": "concert",
-    "status": "cancelled",
-    "ticketUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
-    "officialUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
+    "officialUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
     "image": "assets/events/rare-of-breed-jacksonville-2026.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "price": "",
-    "sourceName": "Official Eventbrite cancellation notice",
+    "sourceName": "Official Eventbrite listing",
     "authority": "venue_ticket",
     "confidence": "high",
     "lineupExplicit": true,
     "sources": [
-      {
-        "name": "Official Eventbrite cancellation notice",
-        "url": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
-        "type": "eventbrite",
-        "authority": "venue_ticket",
-        "priority": 120
-      },
       {
         "name": "Official Eventbrite listing",
         "url": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
@@ -1022,89 +1015,7 @@
         "authority": "venue_ticket",
         "priority": 94
       }
-    ],
-    "cancellationConfirmed": true,
-    "cancellationConfirmedAt": "2026-09-12",
-    "notes": "Cancelled by the organizer. This page is retained as a cancellation notice."
-  },
-  {
-    "title": "MAYIA at the NC State Fair",
-    "startDate": "2026-10-17",
-    "startTime": "10:00",
-    "timezone": "America/New_York",
-    "venue": "Heritage Circle Stage — NC State Fairgrounds",
-    "address": "",
-    "city": "Raleigh",
-    "state": "NC",
-    "country": "US",
-    "artists": [
-      "MAYIA"
-    ],
-    "headliner": "MAYIA",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://mayiawarren.org/go/bandsintown/21578/event/108885151",
-    "officialUrl": "https://mayiawarren.org/go/bandsintown/21578/event/108885151",
-    "image": "assets/events/mayia-nc-state-fair-2026.svg",
-    "price": "",
-    "sourceName": "MAYIA official calendar",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "MAYIA official calendar",
-        "url": "https://mayiawarren.org/go/bandsintown/21578/event/108885151",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-11",
-    "notes": "One event with two confirmed acoustic sets: 10–11 AM and 12–1 PM.",
-    "id": "mayia-nc-state-fair-2026",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true
-  },
-  {
-    "title": "Mission and Special Guests",
-    "startDate": "2026-10-17",
-    "startTime": "18:30",
-    "timezone": "America/Los_Angeles",
-    "venue": "Victory Outreach South Sacramento",
-    "address": "6831 Savings Pl",
-    "city": "Sacramento",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "Mission"
-    ],
-    "headliner": "Mission",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
-    "officialUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
-    "image": "assets/events/mission-friends-sacramento-2026.svg",
-    "price": "",
-    "sourceName": "Mission official Bandsintown event",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Mission official Bandsintown event",
-        "url": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-11",
-    "id": "mission-friends-sacramento-2026",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true
+    ]
   },
   {
     "id": "supplemental:brenno-overflow-conference-2026",
@@ -1141,6 +1052,85 @@
     ]
   },
   {
+    "title": "MAYIA at the NC State Fair",
+    "startDate": "2026-10-17",
+    "startTime": "10:00",
+    "timezone": "America/New_York",
+    "venue": "Heritage Circle Stage — NC State Fairgrounds",
+    "address": "",
+    "city": "Raleigh",
+    "state": "NC",
+    "country": "US",
+    "artists": [
+      "MAYIA"
+    ],
+    "headliner": "MAYIA",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://mayiawarren.org/go/bandsintown/21578/event/108885151",
+    "officialUrl": "https://mayiawarren.org/go/bandsintown/21578/event/108885151",
+    "image": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
+    "price": "",
+    "sourceName": "MAYIA official calendar",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "MAYIA official calendar",
+        "url": "https://mayiawarren.org/go/bandsintown/21578/event/108885151",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 112
+      }
+    ],
+    "auditVerified": "2026-09-11",
+    "notes": "One event with two confirmed acoustic sets: 10–11 AM and 12–1 PM.",
+    "id": "mayia-nc-state-fair-2026",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": true
+  },
+  {
+    "title": "Mission and Special Guests",
+    "startDate": "2026-10-17",
+    "startTime": "18:30",
+    "timezone": "America/Los_Angeles",
+    "venue": "Victory Outreach South Sacramento",
+    "address": "6831 Savings Pl",
+    "city": "Sacramento",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Mission"
+    ],
+    "headliner": "Mission",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
+    "officialUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
+    "image": "https://musiciansandmelody.com/wp-content/uploads/2017/04/mission-lhm.jpg",
+    "price": "",
+    "sourceName": "Mission official Bandsintown event",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Mission official Bandsintown event",
+        "url": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 112
+      }
+    ],
+    "auditVerified": "2026-09-11",
+    "id": "mission-friends-sacramento-2026",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": true
+  },
+  {
     "title": "Alex Zurdo: Zona Zero",
     "startDate": "2026-10-18",
     "startTime": "18:00",
@@ -1158,7 +1148,7 @@
     "status": "scheduled",
     "ticketUrl": "https://choli.ticketera.com/event/alex-zurdo-zona-cero-6dn2x2",
     "officialUrl": "https://www.coliseodepuertorico.com/alexzurdozonazero/",
-    "image": "assets/events/alex-zurdo-zona-zero-2026.svg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb2c81bb40c3b6962eacf9dc9c",
     "price": "",
     "sourceName": "Coliseo de Puerto Rico official event",
     "authority": "venue_ticket",
@@ -1175,9 +1165,32 @@
     ],
     "auditVerified": "2026-09-11",
     "id": "alex-zurdo-zona-zero-san-juan-2026",
-    "imageType": "event_artwork",
+    "imageType": "artist",
     "imagePosition": "center",
     "imageOverride": true
+  },
+  {
+    "id": "mike-teezy-hrvstland-festival-2026",
+    "title": "HRVSTLAND Festival 2026",
+    "startDate": "2026-10-24",
+    "startTime": "",
+    "venue": "Steele Creek Church",
+    "address": "",
+    "city": "Charlotte",
+    "state": "NC",
+    "artists": [
+      "Mike Teezy"
+    ],
+    "headliner": "Mike Teezy",
+    "eventType": "festival",
+    "ticketUrl": "https://www.bandsintown.com/f/231374",
+    "officialUrl": "https://www.bandsintown.com/f/231374",
+    "image": "",
+    "price": "",
+    "status": "scheduled",
+    "lineupExplicit": true,
+    "authority": "artist_calendar",
+    "sourceName": "Mike Teezy verified Bandsintown / HRVSTLAND listing"
   },
   {
     "id": "bandsintown:108144023",
@@ -1218,29 +1231,6 @@
     "trackedArtist": "Ruslan"
   },
   {
-    "id": "mike-teezy-hrvstland-festival-2026",
-    "title": "HRVSTLAND Festival 2026",
-    "startDate": "2026-10-24",
-    "startTime": "",
-    "venue": "Steele Creek Church",
-    "address": "",
-    "city": "Charlotte",
-    "state": "NC",
-    "artists": [
-      "Mike Teezy"
-    ],
-    "headliner": "Mike Teezy",
-    "eventType": "festival",
-    "ticketUrl": "https://www.bandsintown.com/f/231374",
-    "officialUrl": "https://www.bandsintown.com/f/231374",
-    "image": "",
-    "price": "",
-    "status": "scheduled",
-    "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "sourceName": "Mike Teezy verified Bandsintown / HRVSTLAND listing"
-  },
-  {
     "id": "sevin-live-nashville-2026-10-24",
     "title": "Sevin Live Concert",
     "startDate": "2026-10-24",
@@ -1275,6 +1265,43 @@
     ],
     "ticketAvailability": "needs_confirmation",
     "notes": "HOG MOB confirms the show date; current ticket availability needs confirmation."
+  },
+  {
+    "id": "supplemental:tru-serva-truth-tour-las-cruces-2026",
+    "title": "The Truth Tour — Las Cruces",
+    "startDate": "2026-10-25",
+    "startTime": "",
+    "timezone": "America/Denver",
+    "venue": "Real Life Church",
+    "address": "",
+    "city": "Las Cruces",
+    "state": "NM",
+    "country": "US",
+    "artists": [
+      "TRU-SERVA"
+    ],
+    "headliner": "TRU-SERVA",
+    "eventType": "concert",
+    "status": "onsale",
+    "ticketUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
+    "officialUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebb5bd510760cb418516ded933",
+    "imageType": "artist_photo",
+    "imagePosition": "center",
+    "price": "$10",
+    "sourceName": "Megan Woods official tour announcement",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Megan Woods official tour announcement",
+        "url": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ]
   },
   {
     "id": "bandsintown:108144061",
@@ -1313,43 +1340,6 @@
     "bandsintownResolvedName": "RUSLAN",
     "bandsintownIdentity": "exact_name_or_alias",
     "trackedArtist": "Ruslan"
-  },
-  {
-    "id": "supplemental:tru-serva-truth-tour-las-cruces-2026",
-    "title": "The Truth Tour — Las Cruces",
-    "startDate": "2026-10-25",
-    "startTime": "",
-    "timezone": "America/Denver",
-    "venue": "Real Life Church",
-    "address": "",
-    "city": "Las Cruces",
-    "state": "NM",
-    "country": "US",
-    "artists": [
-      "TRU-SERVA"
-    ],
-    "headliner": "TRU-SERVA",
-    "eventType": "concert",
-    "status": "onsale",
-    "ticketUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
-    "officialUrl": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
-    "image": "https://i.scdn.co/image/ab6761610000e5ebb5bd510760cb418516ded933",
-    "imageType": "artist_photo",
-    "imagePosition": "center",
-    "price": "$10",
-    "sourceName": "Megan Woods official tour announcement",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Megan Woods official tour announcement",
-        "url": "https://www.facebook.com/meganwoodsmusic/posts/las-cruces-tickets-are-on-sale-now-to-see-megan-woods-live-on-sunday-october-25-/1632997938411616/",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ]
   },
   {
     "id": "supplemental:skema-boy-2026-10-27-chicago-il",
@@ -1640,18 +1630,14 @@
     "artists": [
       "Miles Minnick",
       "Gifted Hands",
-      "Datin",
-      "TRU-SERVA",
-      "VVS Big Rock",
-      "Lyric The Geenyus",
-      "MAYIA"
+      "Datin"
     ],
     "headliner": "Miles Minnick",
     "eventType": "festival",
     "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/a2407af7-a012-4df1-8d42-d247ab82cd8b/FF26-Promo-Friday-Night%2B%281%29.jpg",
+    "image": "assets/events/flavor-fest-friday-2026.webp",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -1667,16 +1653,8 @@
         "type": "manual_verified",
         "authority": "official_event",
         "priority": 112
-      },
-      {
-        "name": "Flavor Fest official Friday poster",
-        "url": "https://www.flavorfest.org/",
-        "type": "manual_verified",
-        "authority": "official_festival",
-        "priority": 106
       }
-    ],
-    "auditVerified": "2026-09-11"
+    ]
   },
   {
     "id": "bandsintown:108881783",
@@ -1764,50 +1742,6 @@
     "imageOverride": true
   },
   {
-    "id": "supplemental:beyond-the-walls-3-brenno-2026",
-    "title": "Beyond The Walls 3",
-    "startDate": "2026-11-07",
-    "startTime": "19:30",
-    "timezone": "America/New_York",
-    "venue": "The Cambridge Room at House of Blues Cleveland",
-    "address": "308 Euclid Ave",
-    "city": "Cleveland",
-    "state": "OH",
-    "country": "US",
-    "artists": [
-      "KB",
-      "Brenno",
-      "Porsha Love"
-    ],
-    "headliner": "KB",
-    "eventType": "concert",
-    "status": "onsale",
-    "ticketUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
-    "officialUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
-    "image": "",
-    "price": "",
-    "sourceName": "Ticketmaster / Brenno official upcoming shows",
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Ticketmaster",
-        "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 100
-      },
-      {
-        "name": "Brenno official upcoming shows",
-        "url": "https://www.brennomusic.live/",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ]
-  },
-  {
     "title": "Flavor Fest 2026 — Saturday Concerts",
     "startDate": "2026-11-07",
     "startTime": "19:00",
@@ -1856,6 +1790,50 @@
     ],
     "notes": "Yung Kriss and Gifted Hands have conflicting poster/schedule day assignments and are not newly associated here pending resolution.",
     "id": "flavor-fest-2026-saturday-concerts"
+  },
+  {
+    "id": "supplemental:beyond-the-walls-3-brenno-2026",
+    "title": "Beyond The Walls 3",
+    "startDate": "2026-11-07",
+    "startTime": "19:30",
+    "timezone": "America/New_York",
+    "venue": "The Cambridge Room at House of Blues Cleveland",
+    "address": "308 Euclid Ave",
+    "city": "Cleveland",
+    "state": "OH",
+    "country": "US",
+    "artists": [
+      "KB",
+      "Brenno",
+      "Porsha Love"
+    ],
+    "headliner": "KB",
+    "eventType": "concert",
+    "status": "onsale",
+    "ticketUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+    "officialUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+    "image": "",
+    "price": "",
+    "sourceName": "Ticketmaster / Brenno official upcoming shows",
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Ticketmaster",
+        "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
+      },
+      {
+        "name": "Brenno official upcoming shows",
+        "url": "https://www.brennomusic.live/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ]
   },
   {
     "id": "supplemental:skema-boy-2026-11-08-atlanta-ga",
@@ -2018,7 +1996,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
     "officialUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-    "image": "assets/events/cj-emulous-kickback-2026.svg",
+    "image": "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
     "price": "",
     "sourceName": "CJ Emulous official calendar",
     "authority": "artist_calendar",
@@ -2035,7 +2013,7 @@
     ],
     "auditVerified": "2026-09-11",
     "id": "cj-emulous-kickback-grand-prairie-2026",
-    "imageType": "event_artwork",
+    "imageType": "artist",
     "imagePosition": "center",
     "imageOverride": true
   },
@@ -2284,7 +2262,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.cjemulous.com/event-details/zion-ultra-lounge-w-miles-minnick-cj-emulous",
     "officialUrl": "https://www.cjemulous.com/event-details/zion-ultra-lounge-w-miles-minnick-cj-emulous",
-    "image": "assets/events/miles-cj-zion-ultra-2026.svg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
     "price": "",
     "sourceName": "CJ Emulous official calendar",
     "authority": "artist_calendar",
@@ -2301,7 +2279,7 @@
     ],
     "auditVerified": "2026-09-11",
     "id": "miles-cj-zion-ultra-lounge-chandler-2026",
-    "imageType": "event_artwork",
+    "imageType": "artist",
     "imagePosition": "center",
     "imageOverride": true
   },

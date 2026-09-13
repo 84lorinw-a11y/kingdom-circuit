@@ -2794,6 +2794,45 @@
     "imageOverride": true
   },
   {
+    "title": "Alex Zurdo: Zona Zero",
+    "startDate": "2026-10-18",
+    "startTime": "18:00",
+    "timezone": "America/Puerto_Rico",
+    "venue": "Coliseo de Puerto Rico",
+    "address": "500 Arterial B",
+    "city": "San Juan",
+    "state": "PR",
+    "country": "US",
+    "artists": [
+      "Alex Zurdo"
+    ],
+    "headliner": "Alex Zurdo",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://choli.ticketera.com/event/alex-zurdo-zona-cero-6dn2x2",
+    "officialUrl": "https://www.coliseodepuertorico.com/alexzurdozonazero/",
+    "image": "assets/events/alex-zurdo-zona-zero-2026.svg",
+    "price": "",
+    "sourceName": "Coliseo de Puerto Rico official event",
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Coliseo de Puerto Rico official event",
+        "url": "https://www.coliseodepuertorico.com/alexzurdozonazero/",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      }
+    ],
+    "auditVerified": "2026-09-11",
+    "id": "manual:alex-zurdo-zona-zero-san-juan-2026",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true
+  },
+  {
     "id": "manual:kaden-jordan-2026-10-23-new-port-richey",
     "title": "Kaden Jordan Live",
     "startDate": "2026-10-23",
@@ -3077,7 +3116,7 @@
     "eventType": "festival",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/a2407af7-a012-4df1-8d42-d247ab82cd8b/FF26-Promo-Friday-Night%2B%281%29.jpg",
+    "image": "assets/events/flavor-fest-friday-2026.webp",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -3786,44 +3825,5 @@
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-09-12T14:30:41Z"
-  },
-  {
-    "title": "Alex Zurdo: Zona Zero",
-    "startDate": "2026-10-18",
-    "startTime": "18:00",
-    "timezone": "America/Puerto_Rico",
-    "venue": "Coliseo de Puerto Rico",
-    "address": "500 Arterial B",
-    "city": "San Juan",
-    "state": "PR",
-    "country": "US",
-    "artists": [
-      "Alex Zurdo"
-    ],
-    "headliner": "Alex Zurdo",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://choli.ticketera.com/event/alex-zurdo-zona-cero-6dn2x2",
-    "officialUrl": "https://www.coliseodepuertorico.com/alexzurdozonazero/",
-    "image": "assets/events/alex-zurdo-zona-zero-2026.svg",
-    "price": "",
-    "sourceName": "Coliseo de Puerto Rico official event",
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Coliseo de Puerto Rico official event",
-        "url": "https://www.coliseodepuertorico.com/alexzurdozonazero/",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-11",
-    "id": "manual:alex-zurdo-zona-zero-san-juan-2026",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true
   }
 ]
