@@ -66,7 +66,8 @@
 
     // Watch only new DOM nodes and actual src rewrites. Class observation caused
     // unnecessary full-page rescans on the newly pinned events and could amplify
-    // other image repair scripts. Process only the changed image/subtree instead.
+    // other image repair scripts. Targeted enforcement remains idempotent: only
+    // the changed image/subtree is revisited and unchanged src values are ignored.
     const observer = new MutationObserver(mutations => {
       for (const mutation of mutations) {
         if (mutation.type === "attributes") {
