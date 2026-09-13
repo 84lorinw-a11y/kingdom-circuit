@@ -1,0 +1,131 @@
+name: Finalize Sep 13 verified refresh once
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/sep13-finalize-once.yml
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    if: contains(github.event.head_commit.message, '[sep13 finalize]')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out production repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Let existing push automations settle, then sync main
+        shell: bash
+        run: |
+          set -euo pipefail
+          sleep 120
+          git fetch origin main
+          git reset --hard origin/main
+
+      - name: Permanently repair refresh staging and Kelo ticket timing
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          workflow = Path('.github/workflows/update-and-deploy.yml')
+          text = workflow.read_text(encoding='utf-8')
+          old = '''          git add -- events.json run-status.json cache/ticketmaster-attractions.json \\
+            supplemental-events.json config/artists.json coverage-gaps.json app.js \\
+            full-scan-status.json full-scan-candidates.json'''
+          new = '''          # Repairs and collector policy can update additional tracked source/audit files.
+          # Stage the complete refresh set before any raced rebase so the worktree is clean.
+          git add -A'''
+          if old in text:
+              text = text.replace(old, new, 1)
+          elif '          git add -A' not in text:
+              raise SystemExit('Could not locate refresh staging block')
+          workflow.write_text(text, encoding='utf-8')
+
+          hotfix = Path('scripts/apply_sep13_requested_image_hotfix.py')
+          text = hotfix.read_text(encoding='utf-8')
+          needle = '        "imageSourceUrl": "https://murrayhilltheatre.com/event/kelo-cho-presents-the-worship-after-christmas/",\n'
+          if '"doorsTime": "18:30"' not in text:
+              if needle not in text:
+                  raise SystemExit('Could not locate Kelo image pin')
+              text = text.replace(
+                  needle,
+                  needle + '        "doorsTime": "18:30",\n        "endTime": "22:00",\n',
+                  1,
+              )
+          hotfix.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Run tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+
+      - name: Run full collector refresh
+        env:
+          TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/apply_priority_source_fallbacks.py
+          python scripts/update_events.py
+          python -m py_compile scripts/scan_all_artist_sources.py
+          python scripts/scan_all_artist_sources.py
+          python scripts/apply_curated_catalog_policy.py
+          python scripts/apply_sep12_live_audit_repairs.py
+          python scripts/prune_past_events.py --source .
+          python scripts/apply_sevin_official_schedule.py
+          python scripts/apply_live_artist_overrides.py --source .
+          python scripts/apply_deonte_hall_submission.py
+          python scripts/apply_sep13_content_repairs.py
+          git checkout -- config/official-sources.json
+
+      - name: Save complete refresh safely
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-finalize"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No refresh changes to save."
+          else
+            git commit -m "Finalize Sep 13 verified refresh [skip ci]"
+            PUSHED=0
+            for attempt in 1 2 3; do
+              if git push origin HEAD:main; then
+                PUSHED=1
+                break
+              fi
+              git fetch origin main
+              if git rebase origin/main; then
+                continue
+              fi
+              git rebase --abort || true
+              echo "Refresh rebase conflicted; refusing to guess."
+              exit 1
+            done
+            test "$PUSHED" -eq 1
+          fi
+
+      - name: Trigger standard production deploy from refreshed main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git reset --hard origin/main
+          git config user.name "kingdom-circuit-finalize"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          printf '%s\n' "Sep 13 verified refresh ready for production" > .sep13-deploy-trigger
+          git add .sep13-deploy-trigger
+          git commit -m "Deploy Sep 13 verified event refresh"
+          git push origin HEAD:main
