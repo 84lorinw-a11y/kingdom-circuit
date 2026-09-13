@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Pin verified event artwork across every generated Kingdom Circuit page.
+"""Pin source-authorized event artwork or verified artist imagery.
 
-This runs after the general image finalizer so purpose-built event artwork wins
-over artist-photo fallbacks everywhere the event is rendered.
+This runs after the general image finalizer. The mapping must never contain a
+Kingdom Circuit-created flyer presented as though it came from an organizer.
 """
 from __future__ import annotations
 
@@ -12,9 +12,10 @@ import pathlib
 import re
 
 FALLBACK = "/assets/event-fallback.webp"
-GUARD_SCRIPT = "/assets/verified-event-artwork-guard.js?v=20260911-1"
+GUARD_SCRIPT = "/assets/verified-event-artwork-guard.js?v=20260912-2"
 
-# title -> (date, image)
+# title -> (date, image). Every non-local value is tied to an organizer,
+# official artist account, or verified artist streaming profile.
 VERIFIED_ARTWORK: dict[str, tuple[str, str]] = {
     "The Genesis Show – All Women's CHH Event": (
         "2026-09-19",
@@ -30,23 +31,19 @@ VERIFIED_ARTWORK: dict[str, tuple[str, str]] = {
     ),
     "Miles Minnick & CJ Emulous at Zion Ultra Lounge": (
         "2026-12-05",
-        "assets/events/miles-cj-zion-ultra-2026.svg",
+        "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
     ),
     "Fountain Fest WV 2026": (
         "2026-09-18",
-        "assets/events/fountain-fest-wv-2026.svg",
-    ),
-    "Mission and Special Guests": (
-        "2026-10-17",
-        "assets/events/mission-friends-sacramento-2026.svg",
+        "https://i0.wp.com/fountainfestwv.com/wp-content/uploads/2026/07/Rare-of-Breed-Promo-.webp?resize=720%2C900&ssl=1",
     ),
     "Boxyard Saturdaze": (
         "2026-10-10",
-        "assets/events/mayia-boxyard-saturdaze-2026.svg",
+        "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
     ),
     "MAYIA at the NC State Fair": (
         "2026-10-17",
-        "assets/events/mayia-nc-state-fair-2026.svg",
+        "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
     ),
     "SYATP Concert": (
         "2026-09-23",
@@ -62,15 +59,15 @@ VERIFIED_ARTWORK: dict[str, tuple[str, str]] = {
     ),
     "The Kickback": (
         "2026-11-14",
-        "assets/events/cj-emulous-kickback-2026.svg",
+        "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
     ),
     "Alex Zurdo: Zona Zero": (
         "2026-10-18",
-        "assets/events/alex-zurdo-zona-zero-2026.svg",
+        "https://i.scdn.co/image/ab6761610000e5eb2c81bb40c3b6962eacf9dc9c",
     ),
     "Jay Kalyl — Desde Antes Tour": (
         "2026-10-03",
-        "assets/events/jay-kalyl-desde-antes-2026.svg",
+        "https://i.scdn.co/image/ab6761610000e5eb1269b80aed5d08c40aedfdc3",
     ),
 }
 

@@ -1,4 +1,4 @@
-name: Validate Sep 12 phase-2 repairs
+name: Validate Sep 12 complete repairs
 
 on:
   pull_request:
@@ -6,6 +6,7 @@ on:
     paths:
       - 'scripts/**'
       - 'tests/**'
+      - 'assets/**'
       - '.github/workflows/**'
       - 'events.json'
       - 'supplemental-events.json'
@@ -26,7 +27,7 @@ jobs:
       - name: Run full unit suite
         run: python -m unittest discover -s tests -p 'test_*.py' -v
 
-      - name: Apply production source pipeline through phase 2
+      - name: Apply production source pipeline
         run: |
           python scripts/apply_curated_catalog_policy.py
           python scripts/apply_sep12_live_audit_repairs.py
@@ -40,10 +41,10 @@ jobs:
           python scripts/build_seo_site.py
           python scripts/verify_multipage_site.py _site
 
-      - name: Apply final production indexing policy
+      - name: Apply final production indexing and closeout policy
         run: python scripts/finalize_seo_indexing.py --site _site
 
-      - name: Verify phase-2 artifact invariants
+      - name: Verify complete artifact invariants
         run: |
           python - <<'PY'
           import json
@@ -56,8 +57,14 @@ jobs:
 
           all_html = '\n'.join(p.read_text(encoding='utf-8', errors='ignore') for p in site.rglob('*.html'))
           assert 'https://schema.org/InStock' not in all_html
+          assert 'https://schema.org/EventCompleted' not in all_html
           for broken in ('1976535062579', '1976535113732', '1976534090672', '1976538907078'):
               assert f'eventbrite.com/e/{broken}' not in all_html
+          for fake in (
+              'miles-cj-zion-ultra-2026.svg','fountain-fest-wv-2026.svg','mission-friends-sacramento-2026.svg',
+              'mayia-boxyard-saturdaze-2026.svg','mayia-nc-state-fair-2026.svg','cj-emulous-kickback-2026.svg',
+              'alex-zurdo-zona-zero-2026.svg','jay-kalyl-desde-antes-2026.svg'):
+              assert fake not in all_html, fake
 
           events = []
           for rel in ('events.json', 'supplemental-events.json'):
@@ -66,5 +73,105 @@ jobs:
           if truthx:
               assert all(e.get('soldOut') is True for e in truthx)
               assert all(str(e.get('status','')).lower() not in {'cancelled','canceled'} for e in truthx)
-          print('Phase-2 artifact invariants verified')
+          assert not any(e.get('id') == 'manual:egr-2026-09-12-corpus-christi-tx' for e in events)
+          assert not any('808 BEEZY' in (e.get('artists') or []) and 'RWG TOUR 2026' in str(e.get('title') or '') and str(e.get('startTime') or '')[:2].isdigit() and int(str(e.get('startTime'))[:2]) < 16 for e in events)
+
+          audit = json.loads((site / 'artwork-audit.json').read_text(encoding='utf-8'))
+          assert audit
+          assert all(row.get('classification') in {1,2,3,4,5} for row in audit)
+          assert (site / 'sep12-closeout-report.json').exists()
+          print(f'Complete artifact invariants verified; artwork rows={len(audit)}')
+          PY
+
+      - name: Install Selenium
+        run: python -m pip install --quiet selenium
+
+      - name: Real-browser responsive, keyboard, filter, and image-failure tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m http.server 8765 --directory _site >/tmp/kc-http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          sleep 2
+          python - <<'PY'
+          from selenium import webdriver
+          from selenium.webdriver.common.by import By
+          from selenium.webdriver.common.keys import Keys
+          from selenium.webdriver.support.ui import WebDriverWait
+          from urllib.parse import urljoin
+
+          BASE='http://127.0.0.1:8765/'
+          def driver(width, height, mobile=False):
+              o=webdriver.ChromeOptions(); o.add_argument('--headless=new'); o.add_argument('--no-sandbox'); o.add_argument('--disable-dev-shm-usage')
+              if mobile:
+                  o.add_experimental_option('mobileEmulation', {'deviceMetrics': {'width':width,'height':height,'pixelRatio':1.0}, 'userAgent':'Mozilla/5.0 (Linux; Android 15; Pixel 8) AppleWebKit/537.36 Chrome/140 Mobile Safari/537.36'})
+              else:
+                  o.add_argument(f'--window-size={width},{height}')
+              return webdriver.Chrome(options=o)
+
+          def wait_cards(d): WebDriverWait(d,20).until(lambda x:len(x.find_elements(By.CSS_SELECTOR,'[data-event-card]'))>=10)
+
+          # Full interaction suite at desktop.
+          d=driver(1440,1000)
+          d.get(BASE); wait_cards(d)
+          cards=d.find_elements(By.CSS_SELECTOR,'[data-event-card]')
+          assert len(cards)>=10
+          assert len(d.find_elements(By.CSS_SELECTOR,'[data-artist-filter] option'))>1
+          assert len(d.find_elements(By.CSS_SELECTOR,'[data-state-filter] option'))>1
+
+          toggle=d.find_element(By.CSS_SELECTOR,'.menu-toggle')
+          toggle.click(); WebDriverWait(d,5).until(lambda x:'open' in x.find_element(By.CSS_SELECTOR,'.menu-drawer').get_attribute('class'))
+          WebDriverWait(d,5).until(lambda x:x.switch_to.active_element.get_attribute('class') and 'menu-close' in x.switch_to.active_element.get_attribute('class'))
+          drawer=d.find_element(By.CSS_SELECTOR,'.menu-drawer')
+          assert not d.execute_script('return arguments[0].inert', drawer)
+          d.find_element(By.TAG_NAME,'body').send_keys(Keys.ESCAPE)
+          WebDriverWait(d,5).until(lambda x:'open' not in x.find_element(By.CSS_SELECTOR,'.menu-drawer').get_attribute('class'))
+          assert d.execute_script('return arguments[0].inert', drawer)
+          assert 'menu-toggle' in d.switch_to.active_element.get_attribute('class')
+
+          count=d.find_element(By.CSS_SELECTOR,'.results-count')
+          assert count.get_attribute('aria-live')=='polite'
+          festival=next((c for c in d.find_elements(By.CSS_SELECTOR,'.filter-chip') if 'Festival' in c.text),None)
+          assert festival is not None
+          d.execute_script('arguments[0].click()',festival)
+          WebDriverWait(d,5).until(lambda x:festival.get_attribute('aria-pressed')=='true')
+          visible=[c for c in d.find_elements(By.CSS_SELECTOR,'[data-event-card]') if c.is_displayed()]
+          assert visible and all(c.get_attribute('data-type')=='festival' for c in visible)
+          assert d.switch_to.active_element == festival
+          d.find_element(By.CSS_SELECTOR,'[data-reset-filters]').click()
+
+          search=d.find_element(By.CSS_SELECTOR,'[data-search-filter]')
+          search.send_keys('__no_such_kingdom_circuit_show__')
+          WebDriverWait(d,5).until(lambda x:not any(c.is_displayed() for c in x.find_elements(By.CSS_SELECTOR,'[data-event-card]')))
+          d.find_element(By.CSS_SELECTOR,'[data-reset-filters]').click()
+          WebDriverWait(d,5).until(lambda x:any(c.is_displayed() for c in x.find_elements(By.CSS_SELECTOR,'[data-event-card]')))
+
+          img=d.find_element(By.CSS_SELECTOR,'[data-event-card] img')
+          d.execute_script("arguments[0].removeAttribute('srcset'); arguments[0].src='/assets/__kc_missing_image_test__.jpg';",img)
+          WebDriverWait(d,8).until(lambda x:'/assets/event-fallback.webp' in img.get_attribute('src'))
+          assert img.get_attribute('data-kc-fallback-used')=='1'
+
+          first_link=d.find_element(By.CSS_SELECTOR,'[data-event-card] a[href*="/event/"]').get_attribute('href')
+          d.get(first_link); WebDriverWait(d,10).until(lambda x:len(x.find_elements(By.CSS_SELECTOR,'.event-detail'))==1)
+          assert d.find_elements(By.LINK_TEXT,'Suggest a correction')
+          d.get(BASE+'submit/?type=correction&event=Browser%20Test&url=https%3A%2F%2Fkingdomcircuit.com%2Fevent%2Ftest%2F&event_id=test')
+          WebDriverWait(d,10).until(lambda x:len(x.find_elements(By.CSS_SELECTOR,'[data-submission-form]'))==1)
+          assert d.find_element(By.NAME,'event_name').get_attribute('readonly')
+          assert d.find_element(By.NAME,'details').get_attribute('required')
+          d.get(BASE+'artists/'); WebDriverWait(d,10).until(lambda x:len(x.find_elements(By.CSS_SELECTOR,'[data-artist-card]'))>=20)
+          assert d.find_elements(By.LINK_TEXT,'Put Us On')
+          d.quit()
+
+          # Requested viewport matrix and page coverage.
+          for width,height,mobile in ((360,800,True),(390,844,True),(768,900,True),(1440,1000,False)):
+              r=driver(width,height,mobile)
+              r.get(BASE); wait_cards(r)
+              metrics=r.execute_script('return {inner:innerWidth,body:document.body.scrollWidth,doc:document.documentElement.scrollWidth};')
+              assert metrics['inner']==width, (width,metrics)
+              assert max(metrics['body'],metrics['doc'])<=width+2, (width,metrics)
+              for path,selector in (('festivals/','[data-event-card]'),('artists/','[data-artist-card]'),('submit/','[data-submission-form]')):
+                  r.get(BASE+path); WebDriverWait(r,10).until(lambda x:len(x.find_elements(By.CSS_SELECTOR,selector))>=1)
+              r.quit()
+          print('Real-browser closeout checks passed at 360, 390, 768 and 1440px')
           PY

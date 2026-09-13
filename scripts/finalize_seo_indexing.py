@@ -9,8 +9,11 @@ from urllib.parse import urlparse
 
 from add_past_show_archives import apply_past_show_archives
 from finalize_seo_indexing_core import main as finalize_main
+from finalize_sep12_complete_closeout import apply_closeout
 from fix_seo_audit import apply_seo_audit_fixes
+from inject_menu_accessibility_sync import inject_menu_accessibility_sync
 from pin_verified_event_artwork import pin_site
+from replace_fabricated_artwork_refs import replace_fabricated_artwork_refs
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE_URL = "https://kingdomcircuit.com"
@@ -244,8 +247,6 @@ def remove_disabled_artist_outputs(root: pathlib.Path) -> dict[str, int]:
 
 
 def patch_verified_event_states(root: pathlib.Path, events: list[dict]) -> dict[str, int]:
-    # Import the canonical path function used by the production builder so the
-    # visible page and structured data stay tied to the same source record.
     from build_seo_site import event_path
 
     sold_out = 0
@@ -297,6 +298,12 @@ def main() -> None:
     print("Structured event metadata repair:", schema_report)
     state_report = patch_verified_event_states(root, events)
     print("Verified event state display:", state_report)
+    legacy_artwork_report = replace_fabricated_artwork_refs(root)
+    print("Legacy fabricated artwork reference cleanup:", legacy_artwork_report)
+    closeout_report = apply_closeout(root, events)
+    print("September 12 complete closeout:", closeout_report)
+    menu_report = inject_menu_accessibility_sync(root)
+    print("Menu accessibility state synchronization:", menu_report)
 
 
 if __name__ == "__main__":
