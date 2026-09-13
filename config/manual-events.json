@@ -1612,19 +1612,26 @@
     ],
     "headliner": "Rare of Breed",
     "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
-    "officialUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
+    "status": "cancelled",
+    "ticketUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
+    "officialUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
     "image": "assets/events/rare-of-breed-jacksonville-2026.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "price": "",
-    "sourceName": "Official Eventbrite listing",
+    "sourceName": "Official Eventbrite cancellation notice",
     "authority": "venue_ticket",
     "confidence": "high",
     "lineupExplicit": true,
     "sources": [
+      {
+        "name": "Official Eventbrite cancellation notice",
+        "url": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
+        "type": "eventbrite",
+        "authority": "venue_ticket",
+        "priority": 120
+      },
       {
         "name": "Official Eventbrite listing",
         "url": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
@@ -1632,7 +1639,10 @@
         "authority": "venue_ticket",
         "priority": 94
       }
-    ]
+    ],
+    "cancellationConfirmed": true,
+    "cancellationConfirmedAt": "2026-09-12",
+    "notes": "Cancelled by the organizer. This page is retained as a cancellation notice."
   },
   {
     "title": "MAYIA at the NC State Fair",
@@ -1833,33 +1843,28 @@
     "startTime": "19:00",
     "timezone": "America/New_York",
     "venue": "Crossover Church",
-    "address": "1235 Fowler Ave",
+    "address": "1235 E Fowler Ave",
     "city": "Tampa",
     "state": "FL",
     "country": "US",
     "artists": [
       "Miles Minnick",
       "Gifted Hands",
-      "Datin",
-      "TRU-SERVA",
-      "VVS Big Rock",
-      "Lyric The Geenyus",
-      "MAYIA"
+      "Datin"
     ],
     "headliner": "Miles Minnick",
     "eventType": "festival",
-    "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/a2407af7-a012-4df1-8d42-d247ab82cd8b/FF26-Promo-Friday-Night%2B%281%29.jpg",
+    "image": "assets/events/flavor-fest-friday-2026.webp",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "price": "",
-    "sourceName": "Flavor Fest official 2026 schedule",
-    "authority": "official_event",
-    "confidence": "high",
+    "status": "scheduled",
     "lineupExplicit": true,
+    "authority": "official_event",
+    "sourceName": "Flavor Fest official 2026 schedule",
     "sources": [
       {
         "name": "Flavor Fest official 2026 schedule",
@@ -1867,16 +1872,9 @@
         "type": "manual_verified",
         "authority": "official_event",
         "priority": 112
-      },
-      {
-        "name": "Flavor Fest official Friday poster",
-        "url": "https://www.flavorfest.org/",
-        "type": "manual_verified",
-        "authority": "official_festival",
-        "priority": 106
       }
     ],
-    "auditVerified": "2026-09-11"
+    "confidence": "high"
   },
   {
     "title": "Flavor Fest 2026 — Saturday Concerts",
