@@ -2314,44 +2314,6 @@
     "notes": "HOG MOB confirms the show date; current ticket availability needs confirmation."
   },
   {
-    "id": "bandsintown:1037809090",
-    "title": "nobigdyl. at Cannery Hall",
-    "startDate": "2027-01-22",
-    "startTime": "20:00",
-    "timezone": "",
-    "venue": "Cannery Hall",
-    "address": "1 Cannery Row",
-    "city": "Nashville",
-    "state": "TN",
-    "country": "US",
-    "artists": [
-      "nobigdyl."
-    ],
-    "headliner": "nobigdyl.",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/1037809090?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/1037809090?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/nobigdyl.webp",
-    "price": "",
-    "sourceName": "Bandsintown",
-    "sources": [
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/1037809090?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "1037809090",
-    "bandsintownArtistId": "9617017",
-    "bandsintownResolvedName": "nobigdyl.",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "nobigdyl."
-  },
-  {
     "title": "Rock the Universe 2027",
     "startDate": "2027-01-22",
     "endDate": "2027-01-23",
@@ -2427,5 +2389,43 @@
     ],
     "auditVerified": "2026-09-13",
     "id": "manual:rock-the-universe-orlando-2027"
+  },
+  {
+    "id": "bandsintown:1037809090",
+    "title": "nobigdyl. at Cannery Hall",
+    "startDate": "2027-01-22",
+    "startTime": "20:00",
+    "timezone": "",
+    "venue": "Cannery Hall",
+    "address": "1 Cannery Row",
+    "city": "Nashville",
+    "state": "TN",
+    "country": "US",
+    "artists": [
+      "nobigdyl."
+    ],
+    "headliner": "nobigdyl.",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/1037809090?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/1037809090?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/nobigdyl.webp",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/1037809090?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "1037809090",
+    "bandsintownArtistId": "9617017",
+    "bandsintownResolvedName": "nobigdyl.",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "nobigdyl."
   }
 ]
