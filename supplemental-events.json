@@ -965,19 +965,26 @@
     ],
     "headliner": "Rare of Breed",
     "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
-    "officialUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
+    "status": "cancelled",
+    "ticketUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
+    "officialUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
     "image": "assets/events/rare-of-breed-jacksonville-2026.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "price": "",
-    "sourceName": "Official Eventbrite listing",
+    "sourceName": "Official Eventbrite cancellation notice",
     "authority": "venue_ticket",
     "confidence": "high",
     "lineupExplicit": true,
     "sources": [
+      {
+        "name": "Official Eventbrite cancellation notice",
+        "url": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
+        "type": "eventbrite",
+        "authority": "venue_ticket",
+        "priority": 120
+      },
       {
         "name": "Official Eventbrite listing",
         "url": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
@@ -985,7 +992,10 @@
         "authority": "venue_ticket",
         "priority": 94
       }
-    ]
+    ],
+    "cancellationConfirmed": true,
+    "cancellationConfirmedAt": "2026-09-12",
+    "notes": "Cancelled by the organizer. This page is retained as a cancellation notice."
   },
   {
     "id": "supplemental:brenno-overflow-conference-2026",
@@ -2292,44 +2302,6 @@
     "notes": "HOG MOB confirms the show date; current ticket availability needs confirmation."
   },
   {
-    "id": "bandsintown:1037809090",
-    "title": "nobigdyl. at Cannery Hall",
-    "startDate": "2027-01-22",
-    "startTime": "20:00",
-    "timezone": "",
-    "venue": "Cannery Hall",
-    "address": "1 Cannery Row",
-    "city": "Nashville",
-    "state": "TN",
-    "country": "US",
-    "artists": [
-      "nobigdyl."
-    ],
-    "headliner": "nobigdyl.",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/1037809090?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/1037809090?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/nobigdyl.webp",
-    "price": "",
-    "sourceName": "Bandsintown",
-    "sources": [
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/1037809090?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "1037809090",
-    "bandsintownArtistId": "9617017",
-    "bandsintownResolvedName": "nobigdyl.",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "nobigdyl."
-  },
-  {
     "title": "Rock the Universe 2027",
     "startDate": "2027-01-22",
     "endDate": "2027-01-23",
@@ -2405,5 +2377,43 @@
     ],
     "auditVerified": "2026-09-13",
     "id": "manual:rock-the-universe-orlando-2027"
+  },
+  {
+    "id": "bandsintown:1037809090",
+    "title": "nobigdyl. at Cannery Hall",
+    "startDate": "2027-01-22",
+    "startTime": "20:00",
+    "timezone": "",
+    "venue": "Cannery Hall",
+    "address": "1 Cannery Row",
+    "city": "Nashville",
+    "state": "TN",
+    "country": "US",
+    "artists": [
+      "nobigdyl."
+    ],
+    "headliner": "nobigdyl.",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/1037809090?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/1037809090?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/nobigdyl.webp",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/1037809090?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "1037809090",
+    "bandsintownArtistId": "9617017",
+    "bandsintownResolvedName": "nobigdyl.",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "nobigdyl."
   }
 ]
