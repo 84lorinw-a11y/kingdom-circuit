@@ -19,6 +19,8 @@ jobs:
   enforce:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
     steps:
       - name: Check out production repository
         uses: actions/checkout@v4
@@ -49,9 +51,20 @@ jobs:
           git config user.name "kingdom-circuit-catalog-audit"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Both audit scripts above can update generated registry/source files.
-          # Commit the complete intended repair set so a push race never leaves
-          # unstaged changes that make `git rebase origin/main` fail.
+          clean_runtime_artifacts() {
+            find . -type d -name __pycache__ -prune -exec rm -rf {} + || true
+            find . -type f -name '*.pyc' -delete || true
+          }
+
+          recompute_audit() {
+            python scripts/enforce_sep11_catalog_audit.py
+            python scripts/sync_verified_artist_registry.py
+            python scripts/enforce_sep11_catalog_audit.py
+            python -m unittest discover -s tests -p 'test_*.py' -v
+            clean_runtime_artifacts
+          }
+
+          clean_runtime_artifacts
           git add -A
           if git diff --cached --quiet; then
             echo "Catalog audit already enforced."
@@ -65,10 +78,23 @@ jobs:
               PUSHED=1
               break
             fi
-            echo "Push raced with another safe automation commit; rebasing and retrying ($attempt/3)."
+
+            echo "Push raced with another safe automation commit; recomputing from latest main ($attempt/3)."
             git fetch origin main
-            git rebase origin/main
+            git reset --hard origin/main
+            git clean -fd
+            recompute_audit
+            git add -A
+
+            if git diff --cached --quiet; then
+              echo "Latest main already satisfies the catalog audit."
+              PUSHED=1
+              break
+            fi
+
+            git commit -m "Apply verified Sep 11 catalog audit [catalog audit]"
           done
+
           if [ "$PUSHED" -ne 1 ]; then
             echo "Unable to save catalog audit corrections after retries."
             exit 1
