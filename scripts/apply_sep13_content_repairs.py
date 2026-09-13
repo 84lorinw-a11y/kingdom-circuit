@@ -146,6 +146,26 @@ def cleanup_duplicate_durable_inputs() -> None:
         raise SystemExit(f"Sep 13 additions duplicated across durable inputs: {sorted(overlap)}")
 
 
+def sanitize_requested_event_identity() -> None:
+    """Do not let a shared generic tour landing page merge distinct CJ tour dates."""
+    generic_tour_url = "https://milesminnick.com/tour"
+    direct_ids = (
+        "cj-emulous-new-mainstream-miami-2026-11-05",
+        "cj-emulous-new-mainstream-jacksonville-2026-11-08",
+    )
+    for event_id in direct_ids:
+        event = REQUESTED_UPSERTS[event_id]
+        event["ticketUrl"] = ""
+        event["sources"] = [
+            item for item in (event.get("sources") or [])
+            if str(item.get("url") or "") != generic_tour_url
+        ]
+        if not str(event.get("officialUrl") or "").startswith("https://www.cjemulous.com/event-details/"):
+            raise SystemExit(f"{event_id} lost its direct CJ Emulous event URL")
+    if REQUESTED_UPSERTS[direct_ids[0]]["officialUrl"] == REQUESTED_UPSERTS[direct_ids[1]]["officialUrl"]:
+        raise SystemExit("Distinct CJ New Mainstream dates unexpectedly share a direct event URL")
+
+
 def patch_static_event_type_renderer() -> None:
     """Keep pre-rendered cards/details faithful to church, retreat, conference, and appearance records."""
     path = ROOT / "scripts" / "build_seo_site.py"
@@ -182,6 +202,7 @@ def patch_static_event_type_renderer() -> None:
 
 
 def main() -> None:
+    sanitize_requested_event_identity()
     patch_static_event_type_renderer()
     patch_artists()
     patch_event_file(ROOT / "config" / "manual-events.json", True)
