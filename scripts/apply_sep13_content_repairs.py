@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from apply_sep13_requested_events import apply_requested_repairs
+from apply_sep13_requested_events import UPSERTS as REQUESTED_UPSERTS, apply_requested_repairs
 from apply_sep13_requested_image_hotfix import apply_requested_image_hotfix
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -119,12 +119,40 @@ def patch_artists() -> None:
     save(path, rows)
 
 
+def cleanup_duplicate_durable_inputs() -> None:
+    """Keep Sep 13 additions in manual-events only; supplemental may only retain pre-existing curated IDs."""
+    manual_path = ROOT / "config" / "manual-events.json"
+    supplemental_path = ROOT / "supplemental-events.json"
+    manual_rows = load(manual_path)
+    supplemental_rows = load(supplemental_path)
+    manual_ids = {str(row.get("id") or "").removeprefix("manual:") for row in manual_rows}
+    managed_ids = set(REQUESTED_UPSERTS) | set(NEW_EVENTS)
+    duplicate_ids = managed_ids & manual_ids
+    supplemental_rows = [
+        row for row in supplemental_rows
+        if not (
+            str(row.get("id") or "").startswith("manual:")
+            and str(row.get("id") or "").removeprefix("manual:") in duplicate_ids
+        )
+    ]
+    save(supplemental_path, supplemental_rows)
+    remaining = {
+        str(row.get("id") or "").removeprefix("manual:")
+        for row in supplemental_rows
+        if str(row.get("id") or "").startswith("manual:")
+    }
+    overlap = duplicate_ids & remaining
+    if overlap:
+        raise SystemExit(f"Sep 13 additions duplicated across durable inputs: {sorted(overlap)}")
+
+
 def main() -> None:
     patch_artists()
     patch_event_file(ROOT / "config" / "manual-events.json", True)
     patch_event_file(ROOT / "supplemental-events.json", False)
     patch_event_file(ROOT / "events.json", False)
     apply_requested_repairs()
+    cleanup_duplicate_durable_inputs()
     apply_requested_image_hotfix()
 
 
