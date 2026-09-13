@@ -38,7 +38,11 @@ jobs:
           set -euo pipefail
           git config user.name "kingdom-circuit-curation"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add config/artists.json events.json supplemental-events.json
+
+          # The policy can update auxiliary tracked audit files as well as the
+          # three catalog files. Commit the complete policy output so a raced
+          # push never leaves an unstaged working tree that blocks rebase.
+          git add -A
 
           if git diff --cached --quiet; then
             echo "Catalog already matches editorial policy."
