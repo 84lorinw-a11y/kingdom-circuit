@@ -562,7 +562,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-13",
+    "auditVerified": "2026-09-11",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -903,7 +903,7 @@
     "status": "scheduled",
     "ticketUrl": "https://boletoslive.com/jay-kalyl/",
     "officialUrl": "https://boletoslive.com/jay-kalyl/",
-    "image": "https://i.scdn.co/image/ab6761610000e5eb1269b80aed5d08c40aedfdc3",
+    "image": "assets/events/jay-kalyl-desde-antes-2026.svg",
     "price": "",
     "sourceName": "Boletos Live official event",
     "authority": "venue_ticket",
@@ -921,7 +921,7 @@
     "auditVerified": "2026-09-11",
     "notes": "Official page gives conflicting 4:00 PM and 7:30 PM start times; start time intentionally left unspecified.",
     "id": "jay-kalyl-desde-antes-rockville-centre-2026",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true
   },
@@ -1051,7 +1051,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-13",
+    "auditVerified": "2026-09-11",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -1224,7 +1224,7 @@
     "status": "scheduled",
     "ticketUrl": "https://mayiawarren.org/go/bandsintown/21578/event/108885203",
     "officialUrl": "https://mayiawarren.org/go/bandsintown/21578/event/108885203",
-    "image": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
+    "image": "assets/events/mayia-boxyard-saturdaze-2026.svg",
     "price": "",
     "sourceName": "MAYIA official calendar",
     "authority": "artist_calendar",
@@ -1245,7 +1245,7 @@
       "MAYIA WARREN"
     ],
     "id": "mayia-boxyard-saturdaze-2026",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true
   },
@@ -1321,7 +1321,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-13",
+    "auditVerified": "2026-09-11",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -1509,7 +1509,7 @@
     "status": "scheduled",
     "ticketUrl": "https://mayiawarren.org/go/bandsintown/21578/event/108885151",
     "officialUrl": "https://mayiawarren.org/go/bandsintown/21578/event/108885151",
-    "image": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
+    "image": "assets/events/mayia-nc-state-fair-2026.svg",
     "price": "",
     "sourceName": "MAYIA official calendar",
     "authority": "artist_calendar",
@@ -1527,7 +1527,7 @@
     "auditVerified": "2026-09-11",
     "notes": "One event with two confirmed acoustic sets: 10–11 AM and 12–1 PM.",
     "id": "mayia-nc-state-fair-2026",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true
   },
@@ -1590,7 +1590,7 @@
     "status": "scheduled",
     "ticketUrl": "https://choli.ticketera.com/event/alex-zurdo-zona-cero-6dn2x2",
     "officialUrl": "https://www.coliseodepuertorico.com/alexzurdozonazero/",
-    "image": "https://i.scdn.co/image/ab6761610000e5eb2c81bb40c3b6962eacf9dc9c",
+    "image": "assets/events/alex-zurdo-zona-zero-2026.svg",
     "price": "",
     "sourceName": "Coliseo de Puerto Rico official event",
     "authority": "venue_ticket",
@@ -1607,7 +1607,7 @@
     ],
     "auditVerified": "2026-09-11",
     "id": "alex-zurdo-zona-zero-san-juan-2026",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true
   },
@@ -2125,14 +2125,18 @@
     "artists": [
       "Miles Minnick",
       "Gifted Hands",
-      "Datin"
+      "Datin",
+      "TRU-SERVA",
+      "VVS Big Rock",
+      "Lyric The Geenyus",
+      "MAYIA"
     ],
     "headliner": "Miles Minnick",
     "eventType": "festival",
     "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "assets/events/flavor-fest-friday-2026.webp",
+    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/a2407af7-a012-4df1-8d42-d247ab82cd8b/FF26-Promo-Friday-Night%2B%281%29.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -2148,8 +2152,16 @@
         "type": "manual_verified",
         "authority": "official_event",
         "priority": 112
+      },
+      {
+        "name": "Flavor Fest official Friday poster",
+        "url": "https://www.flavorfest.org/",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 106
       }
-    ]
+    ],
+    "auditVerified": "2026-09-11"
   },
   {
     "id": "bandsintown:108881783",
@@ -2540,7 +2552,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
     "officialUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-    "image": "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
+    "image": "assets/events/cj-emulous-kickback-2026.svg",
     "price": "",
     "sourceName": "CJ Emulous official calendar",
     "authority": "artist_calendar",
@@ -2555,9 +2567,9 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-13",
+    "auditVerified": "2026-09-11",
     "id": "cj-emulous-kickback-grand-prairie-2026",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true
   },
@@ -2993,7 +3005,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.cjemulous.com/event-details/zion-ultra-lounge-w-miles-minnick-cj-emulous",
     "officialUrl": "https://www.cjemulous.com/event-details/zion-ultra-lounge-w-miles-minnick-cj-emulous",
-    "image": "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
+    "image": "assets/events/miles-cj-zion-ultra-2026.svg",
     "price": "",
     "sourceName": "CJ Emulous official calendar",
     "authority": "artist_calendar",
@@ -3008,9 +3020,9 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-13",
+    "auditVerified": "2026-09-11",
     "id": "miles-cj-zion-ultra-lounge-chandler-2026",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true
   },
