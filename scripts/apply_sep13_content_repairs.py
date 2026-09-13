@@ -13,6 +13,11 @@ AUDIT_DATE = "2026-09-13"
 KURTIS_IMAGE = "assets/artists/kurtis-hoppie-primary.jpg"
 MISSION_IMAGE = "assets/artists/mission-primary.jpg"
 UNIVERSAL_IMAGE = "assets/events/rock-the-universe-2027.jpg"
+SHARED_MILES_TOUR_URL = "https://milesminnick.com/tour"
+CJ_TBA_TOUR_IDS = {
+    "cj-emulous-new-mainstream-miami-2026-11-05",
+    "cj-emulous-new-mainstream-jacksonville-2026-11-08",
+}
 
 
 def load(path: Path):
@@ -119,6 +124,42 @@ def patch_artists() -> None:
     save(path, rows)
 
 
+def normalize_requested_event_links() -> None:
+    """Do not use one generic tour URL as identity/ticket evidence for two different city dates."""
+    for event_id in CJ_TBA_TOUR_IDS:
+        event = REQUESTED_UPSERTS[event_id]
+        if event.get("ticketUrl") == SHARED_MILES_TOUR_URL:
+            event["ticketUrl"] = ""
+        event["sources"] = [
+            item for item in event.get("sources") or []
+            if not (isinstance(item, dict) and item.get("url") == SHARED_MILES_TOUR_URL)
+        ]
+
+    for relative in ("config/manual-events.json", "supplemental-events.json", "events.json"):
+        path = ROOT / relative
+        rows = load(path)
+        changed = False
+        for row in rows:
+            identity = str(row.get("id") or "").removeprefix("manual:")
+            official = str(row.get("officialUrl") or "")
+            target = identity in CJ_TBA_TOUR_IDS or official in {
+                REQUESTED_UPSERTS[event_id].get("officialUrl", "") for event_id in CJ_TBA_TOUR_IDS
+            }
+            if not target:
+                continue
+            if row.get("ticketUrl") == SHARED_MILES_TOUR_URL:
+                row["ticketUrl"] = ""
+                changed = True
+            before = list(row.get("sources") or [])
+            row["sources"] = [
+                item for item in before
+                if not (isinstance(item, dict) and item.get("url") == SHARED_MILES_TOUR_URL)
+            ]
+            changed = changed or row["sources"] != before
+        if changed:
+            save(path, rows)
+
+
 def cleanup_duplicate_durable_inputs() -> None:
     """Keep Sep 13 additions in manual-events only; supplemental may only retain pre-existing curated IDs."""
     manual_path = ROOT / "config" / "manual-events.json"
@@ -182,6 +223,7 @@ def patch_static_event_type_renderer() -> None:
 
 
 def main() -> None:
+    normalize_requested_event_links()
     patch_static_event_type_renderer()
     patch_artists()
     patch_event_file(ROOT / "config" / "manual-events.json", True)
