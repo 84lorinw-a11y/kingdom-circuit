@@ -1,7 +1,39 @@
 {
   "policyVersion": 6,
-  "generatedAt": "2026-09-12T14:26:18Z",
-  "highRiskArtists": [],
+  "generatedAt": "2026-09-13T00:41:43Z",
+  "highRiskArtists": [
+    {
+      "artist": "Mike Malagies",
+      "healthyDedicatedSources": [],
+      "failedDedicatedSources": [
+        "Mike Malagies official events",
+        "Mike Malagies Bandsintown public calendar"
+      ],
+      "ticketmasterUnmatched": true,
+      "ticketmasterFailed": false,
+      "reason": "Every dedicated artist calendar failed and Ticketmaster did not provide a reliable fallback."
+    },
+    {
+      "artist": "Parris Chariz",
+      "healthyDedicatedSources": [],
+      "failedDedicatedSources": [
+        "Parris Chariz Bandsintown public calendar"
+      ],
+      "ticketmasterUnmatched": true,
+      "ticketmasterFailed": false,
+      "reason": "Every dedicated artist calendar failed and Ticketmaster did not provide a reliable fallback."
+    },
+    {
+      "artist": "Mike Teezy",
+      "healthyDedicatedSources": [],
+      "failedDedicatedSources": [
+        "Mike Teezy official tour"
+      ],
+      "ticketmasterUnmatched": true,
+      "ticketmasterFailed": false,
+      "reason": "Every dedicated artist calendar failed and Ticketmaster did not provide a reliable fallback."
+    }
+  ],
   "mediumRiskArtists": [
     {
       "artist": "KB",
@@ -52,19 +84,6 @@
       "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
     },
     {
-      "artist": "Mike Malagies",
-      "healthyDedicatedSources": [
-        "Mike Malagies Apple Music concerts"
-      ],
-      "failedDedicatedSources": [
-        "Mike Malagies official events",
-        "Mike Malagies Bandsintown public calendar"
-      ],
-      "ticketmasterUnmatched": true,
-      "ticketmasterFailed": false,
-      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
-    },
-    {
       "artist": "Derek Minor",
       "healthyDedicatedSources": [
         "Derek Minor official site"
@@ -73,30 +92,6 @@
         "Derek Minor Bandsintown public calendar"
       ],
       "ticketmasterUnmatched": false,
-      "ticketmasterFailed": false,
-      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
-    },
-    {
-      "artist": "Parris Chariz",
-      "healthyDedicatedSources": [
-        "Parris Chariz Apple Music concerts"
-      ],
-      "failedDedicatedSources": [
-        "Parris Chariz Bandsintown public calendar"
-      ],
-      "ticketmasterUnmatched": true,
-      "ticketmasterFailed": false,
-      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
-    },
-    {
-      "artist": "Mike Teezy",
-      "healthyDedicatedSources": [
-        "Mike Teezy Apple Music concerts"
-      ],
-      "failedDedicatedSources": [
-        "Mike Teezy official tour"
-      ],
-      "ticketmasterUnmatched": true,
       "ticketmasterFailed": false,
       "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
     },
