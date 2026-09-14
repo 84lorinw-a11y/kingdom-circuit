@@ -103,6 +103,12 @@ body .seo-card-socials .seo-social-link {
 }
 
 @media (max-width: 640px) {
+  body [data-artist-directory] [data-artist-grid],
+  body [data-artist-directory] .artist-grid,
+  body [data-artist-directory] .seo-artist-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
   .artist-platform-link,
   .seo-social-link,
   .seo-social-link-compact,

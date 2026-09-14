@@ -42,8 +42,8 @@ class PublicExperiencePipelineTests(unittest.TestCase):
                 self.assertEqual(2, output.count("data-artist-card"))
                 self.assertEqual({"activeArtists": 1, "totalArtists": 2}, stats)
 
-        self.assertNotIn(
-            "body [data-artist-directory] [data-artist-grid]",
+        self.assertIn(
+            "grid-template-columns: repeat(2, minmax(0, 1fr)) !important;",
             ux_repairs.OVERLAY_CSS,
         )
 

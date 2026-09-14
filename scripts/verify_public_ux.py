@@ -167,6 +167,7 @@ def verify_assets(out_dir: pathlib.Path, failures: list[str]) -> None:
         "reduced-motion": "prefers-reduced-motion: reduce",
         "contrast": "#b8b4ac",
         "touch-size": "min-height: 44px",
+        "two-column-mobile-artists": "grid-template-columns: repeat(2, minmax(0, 1fr)) !important;",
     }
     js_checks = {
         "modal-role": 'setAttribute("role", "dialog")',
