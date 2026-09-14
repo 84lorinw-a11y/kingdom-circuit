@@ -50,6 +50,7 @@ class PublicExperiencePipelineTests(unittest.TestCase):
         self.assertIn("aspect-ratio: 1 / 1 !important;", ux_repairs.OVERLAY_CSS)
         self.assertIn("margin-top: auto !important;", ux_repairs.OVERLAY_CSS)
         self.assertIn("overflow-wrap: anywhere !important;", ux_repairs.OVERLAY_CSS)
+        self.assertIn("display: grid !important;", ux_repairs.OVERLAY_CSS)
         self.assertIn("grid-template-columns: repeat(2, 44px) !important;", ux_repairs.OVERLAY_CSS)
 
         simplified = '''<html><head><script src="/assets/artist-filter-fix.js?v=5"></script></head>

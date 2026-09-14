@@ -10,8 +10,8 @@ import sys
 PUBLIC_BASE = "/"
 CSS_NAME = "site-ux-repairs.css"
 JS_NAME = "site-ux-repairs.js"
-CSS_HREF = f"{PUBLIC_BASE}assets/{CSS_NAME}?v=3"
-JS_SRC = f"{PUBLIC_BASE}assets/{JS_NAME}?v=3"
+CSS_HREF = f"{PUBLIC_BASE}assets/{CSS_NAME}?v=4"
+JS_SRC = f"{PUBLIC_BASE}assets/{JS_NAME}?v=4"
 
 
 def plain_text(fragment: str) -> str:
@@ -172,7 +172,7 @@ def verify_assets(out_dir: pathlib.Path, failures: list[str]) -> None:
         "square-mobile-portraits": "aspect-ratio: 1 / 1 !important;",
         "anchored-mobile-card-footer": "margin-top: auto !important;",
         "wrapped-mobile-card-copy": "overflow-wrap: anywhere !important;",
-        "contained-mobile-socials": "grid-template-columns: repeat(2, 44px) !important;",
+        "contained-mobile-socials": "display: grid !important;\n    grid-template-columns: repeat(2, 44px) !important;",
     }
     js_checks = {
         "modal-role": 'setAttribute("role", "dialog")',
