@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-13T16:06:57Z",
-  "artistsChecked": 349,
+  "generatedAt": "2026-09-14T18:01:45Z",
+  "artistsChecked": 350,
   "eventLinksFoundAcrossSearches": 0,
   "uniqueEventPagesDiscovered": 0,
   "eventPagesChecked": 0,
   "matchedUpcomingEvents": 0,
   "alreadyInCatalog": 0,
   "newCandidateEvents": 0,
-  "searchFailures": 349,
+  "searchFailures": 350,
   "detailFailures": 0,
   "artistResults": [
     {
@@ -1324,6 +1324,14 @@
     },
     {
       "artist": "JGivens",
+      "searchLinksFound": 0,
+      "matchedEvents": 0,
+      "newCandidates": 0,
+      "status": "failed",
+      "error": "HTTPError 405 | HTTPError 405"
+    },
+    {
+      "artist": "JIMMY ROCK",
       "searchLinksFound": 0,
       "matchedEvents": 0,
       "newCandidates": 0,
