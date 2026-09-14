@@ -211,7 +211,7 @@
     "bandsintownIdentity": "exact_name_or_alias",
     "trackedArtist": "Kurtis Hoppie",
     "imageType": "artist",
-    "imagePosition": "50% 22%",
+    "imagePosition": "50% 4%",
     "imageOverride": true,
     "imageSource": "Kurtis Hoppie official website",
     "imageSourceUrl": "https://www.thekurtishoppie.com/",
@@ -374,7 +374,7 @@
     "bandsintownIdentity": "exact_name_or_alias",
     "trackedArtist": "Kurtis Hoppie",
     "imageType": "artist",
-    "imagePosition": "50% 22%",
+    "imagePosition": "50% 4%",
     "imageOverride": true,
     "imageSource": "Kurtis Hoppie official website",
     "imageSourceUrl": "https://www.thekurtishoppie.com/",
@@ -804,15 +804,22 @@
     "headliner": "MAYIA",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://mayiawarren.org/go/bandsintown/21578/event/108885203",
-    "officialUrl": "https://mayiawarren.org/go/bandsintown/21578/event/108885203",
+    "ticketUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+    "officialUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
     "image": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
     "price": "",
-    "sourceName": "MAYIA official calendar",
-    "authority": "artist_calendar",
+    "sourceName": "Boxyard RTP official event",
+    "authority": "official_event",
     "confidence": "high",
     "lineupExplicit": true,
     "sources": [
+      {
+        "name": "Boxyard RTP official event",
+        "url": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
       {
         "name": "MAYIA official calendar",
         "url": "https://mayiawarren.org/go/bandsintown/21578/event/108885203",
@@ -821,7 +828,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "officialBill": [
       "DJ Watty Tha Shepherd",
       "MAYIA WARREN"
@@ -850,7 +857,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
     "officialUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
-    "image": "assets/events/reign-volume-one-2026.jpg",
+    "image": "assets/events/reign-volume-one-single-2026.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -867,7 +874,10 @@
         "authority": "venue_ticket",
         "priority": 94
       }
-    ]
+    ],
+    "imageSource": "Official Eventbrite event artwork",
+    "imageSourceUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
+    "auditVerified": "2026-09-13"
   },
   {
     "title": "Teen Club Kickoff / Back to School Concert",
@@ -931,27 +941,39 @@
     ],
     "headliner": "Rare of Breed",
     "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
-    "officialUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
+    "status": "cancelled",
+    "ticketUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
+    "officialUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
     "image": "assets/events/rare-of-breed-jacksonville-2026.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "price": "",
-    "sourceName": "Official Eventbrite listing",
+    "sourceName": "Official Eventbrite cancellation notice",
     "authority": "venue_ticket",
     "confidence": "high",
     "lineupExplicit": true,
     "sources": [
       {
-        "name": "Official Eventbrite listing",
+        "name": "Official Eventbrite cancellation notice",
+        "url": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
+        "type": "eventbrite",
+        "authority": "venue_ticket",
+        "priority": 120
+      },
+      {
+        "name": "Original Eventbrite listing",
         "url": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
         "type": "eventbrite",
         "authority": "venue_ticket",
         "priority": 94
       }
-    ]
+    ],
+    "cancellationConfirmed": true,
+    "cancellationConfirmedAt": "2026-09-12",
+    "ticketAvailability": "cancelled",
+    "notes": "Cancelled by the organizer. This page is retained as a cancellation notice.",
+    "auditVerified": "2026-09-13"
   },
   {
     "id": "supplemental:brenno-overflow-conference-2026",
@@ -1003,15 +1025,22 @@
     "headliner": "MAYIA",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://mayiawarren.org/go/bandsintown/21578/event/108885151",
-    "officialUrl": "https://mayiawarren.org/go/bandsintown/21578/event/108885151",
+    "ticketUrl": "https://www.ncagr.gov/divisions/ncstatefair/buy-tickets-now",
+    "officialUrl": "https://www.ncagr.gov/divisions/ncstatefair",
     "image": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
     "price": "",
-    "sourceName": "MAYIA official calendar",
-    "authority": "artist_calendar",
+    "sourceName": "North Carolina State Fair official site",
+    "authority": "official_event",
     "confidence": "high",
     "lineupExplicit": true,
     "sources": [
+      {
+        "name": "North Carolina State Fair official site",
+        "url": "https://www.ncagr.gov/divisions/ncstatefair",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
       {
         "name": "MAYIA official calendar",
         "url": "https://mayiawarren.org/go/bandsintown/21578/event/108885151",
@@ -1020,7 +1049,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "notes": "One event with two confirmed acoustic sets: 10–11 AM and 12–1 PM.",
     "id": "mayia-nc-state-fair-2026",
     "imageType": "artist",

@@ -26,6 +26,23 @@ def load_module(name: str, path: pathlib.Path):
     return module
 
 
+def merge_production_events(production_builder, overlay, primary, supplemental):
+    """Give the approved overlay the same event set as the production builder."""
+    merged = production_builder.merge_events(primary, supplemental)
+    return sorted(
+        (
+            event
+            for event in merged
+            if production_builder.scheduled(event) and overlay.future(event)
+        ),
+        key=lambda event: (
+            event.get("startDate", ""),
+            event.get("startTime", ""),
+            event.get("title", ""),
+        ),
+    )
+
+
 def is_build_only_path(page: pathlib.Path, root: pathlib.Path) -> bool:
     try:
         rel = page.relative_to(root)
@@ -353,6 +370,20 @@ def main(site_root: str) -> None:
     overlay.JS_MARKER = "/* KC SEO DIRECTORY GUARD */"
     overlay.SCHEMA_MARKER = "<!-- KC SEO SCHEMA -->"
     overlay.verify = lambda site, pages: production_overlay_verify(overlay, pathlib.Path(site), pages)
+
+    # The pinned overlay historically deduplicated by exact ID and did not
+    # filter cancelled/merged records. Reuse the production builder's identity
+    # and status rules so overlay cards always correspond to generated pages.
+    production_builder = load_module(
+        "kc_production_builder",
+        pathlib.Path(__file__).with_name("build_seo_site.py"),
+    )
+    overlay.merge_events = lambda primary, supplemental: merge_production_events(
+        production_builder,
+        overlay,
+        primary,
+        supplemental,
+    )
 
     saved_argv = sys.argv[:]
     try:

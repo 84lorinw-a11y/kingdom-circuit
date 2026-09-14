@@ -175,6 +175,12 @@ for page in site.rglob("*.html"):
         href = match.group(3)
         target = local_target(href, page)
         if target is not None and not target.exists():
+            # Event-card links must always resolve to a generated detail page.
+            # Preserve a broken event link so the full audit below fails the
+            # build; unwrapping it would leave a bare, unbounded card image.
+            path = parsed_url(href).path.rstrip("/")
+            if path == "/event" or path.startswith("/event/"):
+                return match.group(0)
             repaired_links += 1
             return match.group(5)
         return match.group(0)

@@ -748,10 +748,10 @@
     "status": "scheduled",
     "ticketUrl": "https://fareharbor.com/embeds/book/theworshipwawa/?full-items=yes",
     "officialUrl": "https://www.theworshipwawa.com/jimmyrock-rave-worship",
-    "image": "https://images.squarespace-cdn.com/content/v1/56b7abd2f699bb04c395a379/03aa3873-98e9-4ccb-8eae-4d4f3826a4a8/Jimmy-in-the-field-refl.png",
-    "imageType": "artist",
-    "imagePosition": "50% 22%",
-    "imageOverride": false,
+    "image": "assets/events/jimmy-rock-worship-wawa-miami-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
     "price": "",
     "lineupExplicit": true,
     "authority": "artist_calendar",
@@ -788,7 +788,9 @@
       "19:30",
       "20:45"
     ],
-    "id": "jimmy-rock-worship-wawa-miami-2026"
+    "id": "jimmy-rock-worship-wawa-miami-2026",
+    "imageSource": "The Worship Wawa official event poster",
+    "imageSourceUrl": "https://www.theworshipwawa.com/jimmyrock-rave-worship"
   },
   {
     "id": "caleb-gordon-eden-2026-09-18-southlake",
@@ -1191,10 +1193,10 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/jimmy-rock-rave-worship-denver-2026-tickets-1998020581344",
     "officialUrl": "https://www.eventbrite.com/e/jimmy-rock-rave-worship-denver-2026-tickets-1998020581344",
-    "image": "https://images.squarespace-cdn.com/content/v1/56b7abd2f699bb04c395a379/03aa3873-98e9-4ccb-8eae-4d4f3826a4a8/Jimmy-in-the-field-refl.png",
-    "imageType": "artist",
-    "imagePosition": "50% 22%",
-    "imageOverride": false,
+    "image": "assets/events/jimmy-rock-rave-worship-denver-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
     "price": "",
     "lineupExplicit": true,
     "authority": "venue_ticket",
@@ -1226,7 +1228,9 @@
       "trtle",
       "Transform DJs"
     ],
-    "id": "jimmy-rock-rave-worship-centennial-2026"
+    "id": "jimmy-rock-rave-worship-centennial-2026",
+    "imageSource": "Official Eventbrite event artwork",
+    "imageSourceUrl": "https://www.eventbrite.com/e/jimmy-rock-rave-worship-denver-2026-tickets-1998020581344"
   },
   {
     "id": "tribe-fest-rialto-2026",
@@ -1385,8 +1389,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.tickettailor.com/events/thewhosoevers/2302169",
     "officialUrl": "https://www.tickettailor.com/events/thewhosoevers/2302169",
-    "image": "assets/artists/kurtis-hoppie-primary.jpg",
-    "imageType": "artist",
+    "image": "assets/events/boise-invasion-2026.jpg",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "price": "Outdoor pre-show/overflow free; indoor event sold out",
@@ -1417,8 +1421,8 @@
     "ticketAvailability": "sold_out",
     "preShowTime": "17:00",
     "id": "boise-invasion-2026",
-    "imageSource": "Kurtis Hoppie official website",
-    "imageSourceUrl": "https://www.thekurtishoppie.com/"
+    "imageSource": "The Whosoevers official Ticket Tailor listing",
+    "imageSourceUrl": "https://www.tickettailor.com/events/thewhosoevers/2302169"
   },
   {
     "title": "Open Skies — Bethel Music with Jenn Johnson + KB",
@@ -1799,9 +1803,9 @@
     "status": "scheduled",
     "ticketUrl": "https://partiful.com/e/SK3SE7vXIs9rYlPcW0hZ",
     "officialUrl": "https://onedaydenver.org/",
-    "image": "https://onedaydenver.org/assets/img/artist-petrina.jpg?v=9dd8a283",
+    "image": "assets/events/petrina-delacey-one-day-2026.jpg",
     "imageType": "artist",
-    "imagePosition": "50% 28%",
+    "imagePosition": "center",
     "imageOverride": true,
     "price": "Free",
     "lineupExplicit": true,
@@ -1829,7 +1833,7 @@
     "notes": "Festival runs 9:00 AM–8:00 PM. The sanctuary concert featuring Petrina DeLacey runs 4:30–8:00 PM. Free admission; RSVP requested.",
     "performanceWindow": "16:30-20:00",
     "id": "one-day-fall-festival-aurora-2026",
-    "imageSource": "ONE DAY official festival site — Petrina DeLacey lineup image",
+    "imageSource": "ONE DAY official festival site — Petrina DeLacey performance image",
     "imageSourceUrl": "https://onedaydenver.org/"
   },
   {
@@ -1871,15 +1875,22 @@
     "headliner": "MAYIA",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://mayiawarren.org/go/bandsintown/21578/event/108885203",
-    "officialUrl": "https://mayiawarren.org/go/bandsintown/21578/event/108885203",
+    "ticketUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+    "officialUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
     "image": "assets/events/mayia-boxyard-saturdaze-2026.svg",
     "price": "",
-    "sourceName": "MAYIA official calendar",
-    "authority": "artist_calendar",
+    "sourceName": "Boxyard RTP official event",
+    "authority": "official_event",
     "confidence": "high",
     "lineupExplicit": true,
     "sources": [
+      {
+        "name": "Boxyard RTP official event",
+        "url": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
       {
         "name": "MAYIA official calendar",
         "url": "https://mayiawarren.org/go/bandsintown/21578/event/108885203",
@@ -1888,7 +1899,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "officialBill": [
       "DJ Watty Tha Shepherd",
       "MAYIA WARREN"
@@ -1917,7 +1928,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
     "officialUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
-    "image": "assets/events/reign-volume-one-2026.jpg",
+    "image": "assets/events/reign-volume-one-single-2026.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -1934,7 +1945,10 @@
         "authority": "venue_ticket",
         "priority": 94
       }
-    ]
+    ],
+    "imageSource": "Official Eventbrite event artwork",
+    "imageSourceUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
+    "auditVerified": "2026-09-13"
   },
   {
     "id": "passion-fest-ii-2026-charlotte",
@@ -2119,27 +2133,39 @@
     ],
     "headliner": "Rare of Breed",
     "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
-    "officialUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
+    "status": "cancelled",
+    "ticketUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
+    "officialUrl": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
     "image": "assets/events/rare-of-breed-jacksonville-2026.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "price": "",
-    "sourceName": "Official Eventbrite listing",
+    "sourceName": "Official Eventbrite cancellation notice",
     "authority": "venue_ticket",
     "confidence": "high",
     "lineupExplicit": true,
     "sources": [
       {
-        "name": "Official Eventbrite listing",
+        "name": "Official Eventbrite cancellation notice",
+        "url": "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586",
+        "type": "eventbrite",
+        "authority": "venue_ticket",
+        "priority": 120
+      },
+      {
+        "name": "Original Eventbrite listing",
         "url": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
         "type": "eventbrite",
         "authority": "venue_ticket",
         "priority": 94
       }
-    ]
+    ],
+    "cancellationConfirmed": true,
+    "cancellationConfirmedAt": "2026-09-12",
+    "ticketAvailability": "cancelled",
+    "notes": "Cancelled by the organizer. This page is retained as a cancellation notice.",
+    "auditVerified": "2026-09-13"
   },
   {
     "title": "The Sac Town Give Back",
@@ -2197,15 +2223,22 @@
     "headliner": "MAYIA",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://mayiawarren.org/go/bandsintown/21578/event/108885151",
-    "officialUrl": "https://mayiawarren.org/go/bandsintown/21578/event/108885151",
+    "ticketUrl": "https://www.ncagr.gov/divisions/ncstatefair/buy-tickets-now",
+    "officialUrl": "https://www.ncagr.gov/divisions/ncstatefair",
     "image": "assets/events/mayia-nc-state-fair-2026.svg",
     "price": "",
-    "sourceName": "MAYIA official calendar",
-    "authority": "artist_calendar",
+    "sourceName": "North Carolina State Fair official site",
+    "authority": "official_event",
     "confidence": "high",
     "lineupExplicit": true,
     "sources": [
+      {
+        "name": "North Carolina State Fair official site",
+        "url": "https://www.ncagr.gov/divisions/ncstatefair",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
       {
         "name": "MAYIA official calendar",
         "url": "https://mayiawarren.org/go/bandsintown/21578/event/108885151",
@@ -2214,7 +2247,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "notes": "One event with two confirmed acoustic sets: 10–11 AM and 12–1 PM.",
     "id": "mayia-nc-state-fair-2026",
     "imageType": "event_artwork",
@@ -2319,10 +2352,10 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventim.com/event/jimmy-rock-am-fm-22038857/",
     "officialUrl": "https://www.eventim.com/event/jimmy-rock-am-fm-22038857/",
-    "image": "https://images.squarespace-cdn.com/content/v1/56b7abd2f699bb04c395a379/03aa3873-98e9-4ccb-8eae-4d4f3826a4a8/Jimmy-in-the-field-refl.png",
-    "imageType": "artist",
-    "imagePosition": "50% 22%",
-    "imageOverride": false,
+    "image": "assets/events/jimmy-rock-rave-worship-dallas-2026.webp",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
     "price": "",
     "lineupExplicit": true,
     "authority": "venue_ticket",
@@ -2352,7 +2385,9 @@
       "J. Horton"
     ],
     "ageRestriction": "All ages",
-    "id": "jimmy-rock-rave-worship-dallas-2026"
+    "id": "jimmy-rock-rave-worship-dallas-2026",
+    "imageSource": "Official Dallas ticket artwork",
+    "imageSourceUrl": "https://www.eventim.com/event/jimmy-rock-am-fm-22038857/"
   },
   {
     "id": "kaden-jordan-babytooth-new-port-richey-2026",

@@ -7,6 +7,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = "2026-09-13"
 JIMMY_IMAGE = "https://images.squarespace-cdn.com/content/v1/56b7abd2f699bb04c395a379/03aa3873-98e9-4ccb-8eae-4d4f3826a4a8/Jimmy-in-the-field-refl.png"
+JIMMY_MIAMI_EVENT_IMAGE = "assets/events/jimmy-rock-worship-wawa-miami-2026.jpg"
+JIMMY_DENVER_EVENT_IMAGE = "assets/events/jimmy-rock-rave-worship-denver-2026.jpg"
+JIMMY_DALLAS_EVENT_IMAGE = "assets/events/jimmy-rock-rave-worship-dallas-2026.webp"
+BOISE_EVENT_IMAGE = "assets/events/boise-invasion-2026.jpg"
 
 
 def load(p): return json.loads(Path(p).read_text(encoding="utf-8"))
@@ -48,7 +52,9 @@ UPSERTS = {
         "https://www.tickettailor.com/events/thewhosoevers/2302169", "Official Ticket Tailor listing",
         venue="The Whosoevers HQ", address="20 S Auto Dr", time="17:30", doors="17:30", tz="America/Boise",
         ticket="https://www.tickettailor.com/events/thewhosoevers/2302169", price="Outdoor pre-show/overflow free; indoor event sold out",
-        authority="venue_ticket", image="assets/artists/kurtis-hoppie-primary.jpg", image_type="artist", image_override=True,
+        authority="venue_ticket", image=BOISE_EVENT_IMAGE, image_type="event_artwork", image_override=True,
+        imageSource="The Whosoevers official Ticket Tailor listing",
+        imageSourceUrl="https://www.tickettailor.com/events/thewhosoevers/2302169",
         advertised=["P.O.D.", "Lacey Sturm", "Ryan Ries", "Kurtis Hoppie", "JIMMY ROCK"], soldOut=True,
         ticketAvailability="sold_out", preShowTime="17:00",
         notes="Free outdoor pre-show block party and main-event overflow begins at 5:00 PM. Indoor doors open at 5:30 PM and the indoor ticket listing is sold out. JIMMY ROCK is billed for the after party."
@@ -156,8 +162,11 @@ UPSERTS = {
         "JIMMY ROCK'S Rave & Worship — The Worship Wawa", "2026-09-18", "Miami", "FL", ["JIMMY ROCK"],
         "https://www.theworshipwawa.com/jimmyrock-rave-worship", "The Worship Wawa official event",
         venue="The Worship Wawa — Margaret Pace Park pickup", address="1745 N Bayshore Dr", event_type="party_bus", time="17:00",
-        tz="America/New_York", ticket="https://fareharbor.com/embeds/book/theworshipwawa/?full-items=yes", image=JIMMY_IMAGE,
-        image_type="artist", imagePosition="50% 22%", rideTimes=["17:00", "18:15", "19:30", "20:45"],
+        tz="America/New_York", ticket="https://fareharbor.com/embeds/book/theworshipwawa/?full-items=yes",
+        image=JIMMY_MIAMI_EVENT_IMAGE, image_type="event_artwork", image_override=True,
+        imageSource="The Worship Wawa official event poster",
+        imageSourceUrl="https://www.theworshipwawa.com/jimmyrock-rave-worship",
+        rideTimes=["17:00", "18:15", "19:30", "20:45"],
         notes="In-person party-bus event. Four one-hour rides depart at 5:00, 6:15, 7:30 and 8:45 PM. Arrive 15 minutes early; Bandsintown's 4:30 PM header aligns with earliest check-in, not an online event.",
         extra=[src("JIMMY ROCK Bandsintown", "https://www.bandsintown.com/e/108769357", "artist_calendar", 74)]
     ),
@@ -166,7 +175,10 @@ UPSERTS = {
         "https://www.eventbrite.com/e/jimmy-rock-rave-worship-denver-2026-tickets-1998020581344", "Official Eventbrite listing",
         venue="Encounter Church Denver", address="6825 S Galena St", time="18:00", end_time="22:00", doors="17:30", tz="America/Denver",
         ticket="https://www.eventbrite.com/e/jimmy-rock-rave-worship-denver-2026-tickets-1998020581344", authority="venue_ticket",
-        image=JIMMY_IMAGE, image_type="artist", imagePosition="50% 22%", advertised=["JIMMY ROCK", "Ralov", "trtle", "Transform DJs"],
+        image=JIMMY_DENVER_EVENT_IMAGE, image_type="event_artwork", image_override=True,
+        imageSource="Official Eventbrite event artwork",
+        imageSourceUrl="https://www.eventbrite.com/e/jimmy-rock-rave-worship-denver-2026-tickets-1998020581344",
+        advertised=["JIMMY ROCK", "Ralov", "trtle", "Transform DJs"],
         notes="Eventbrite lists 6:00–10:00 PM with 5:30 PM doors; Bandsintown's 5:30 PM header corresponds to doors.",
         extra=[src("JIMMY ROCK Bandsintown", "https://www.bandsintown.com/e/108778379", "artist_calendar", 74)]
     ),
@@ -174,8 +186,11 @@ UPSERTS = {
         "JIMMY ROCK — Rave & Worship Dallas", "2026-10-18", "Dallas", "TX", ["JIMMY ROCK"],
         "https://www.eventim.com/event/jimmy-rock-am-fm-22038857/", "Eventim official ticket listing", venue="AM/FM Dallas — Backyard",
         address="1950 Market Center Blvd", time="19:00", doors="18:00", tz="America/Chicago",
-        ticket="https://www.eventim.com/event/jimmy-rock-am-fm-22038857/", authority="venue_ticket", image=JIMMY_IMAGE,
-        image_type="artist", imagePosition="50% 22%", advertised=["JIMMY ROCK", "J. Horton"], ageRestriction="All ages",
+        ticket="https://www.eventim.com/event/jimmy-rock-am-fm-22038857/", authority="venue_ticket",
+        image=JIMMY_DALLAS_EVENT_IMAGE, image_type="event_artwork", image_override=True,
+        imageSource="Official Dallas ticket artwork",
+        imageSourceUrl="https://www.eventim.com/event/jimmy-rock-am-fm-22038857/",
+        advertised=["JIMMY ROCK", "J. Horton"], ageRestriction="All ages",
         notes="Doors 6:00 PM; show 7:00 PM; all ages. J. Horton is billed. Artists mentioned only in performer biographies are not associated.",
         extra=[src("JIMMY ROCK Bandsintown", "https://www.bandsintown.com/e/108805378", "artist_calendar", 74)]
     ),

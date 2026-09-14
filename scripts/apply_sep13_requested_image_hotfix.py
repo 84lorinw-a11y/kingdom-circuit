@@ -10,11 +10,11 @@ AUDIT = "2026-09-13"
 
 PINS = {
     "one-day-fall-festival-aurora-2026": {
-        "image": "https://onedaydenver.org/assets/img/artist-petrina.jpg?v=9dd8a283",
+        "image": "assets/events/petrina-delacey-one-day-2026.jpg",
         "imageType": "artist",
-        "imagePosition": "50% 28%",
+        "imagePosition": "center",
         "imageOverride": True,
-        "imageSource": "ONE DAY official festival site — Petrina DeLacey lineup image",
+        "imageSource": "ONE DAY official festival site — Petrina DeLacey performance image",
         "imageSourceUrl": "https://onedaydenver.org/",
     },
     "kelo-worship-after-christmas-jacksonville-2026": {

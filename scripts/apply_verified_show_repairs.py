@@ -16,8 +16,9 @@ HVO_IMAGE = "assets/events/hvo-fest-2026.jpg"
 TRUTHX_IMAGE = "assets/events/truthx-yung-kriss-2026.jpg"
 GRACE_IMAGE = "assets/events/gracefest-2026.png"
 HIP_HOP_IMAGE = "assets/events/hip-hop-in-the-park-2026.jpg"
-REIGN_IMAGE = "assets/events/reign-volume-one-2026.jpg"
+REIGN_IMAGE = "assets/events/reign-volume-one-single-2026.jpg"
 RARE_IMAGE = "assets/events/rare-of-breed-jacksonville-2026.jpg"
+RARE_CANCEL_URL = "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586"
 FLAVOR_FRIDAY_IMAGE = "assets/events/flavor-fest-friday-2026.webp"
 
 PINNED_EVENT_IMAGES = {
@@ -155,19 +156,26 @@ VERIFIED = [
         "artists": ["Rare of Breed", "DJ Winn"],
         "headliner": "Rare of Breed",
         "eventType": "concert",
-        "status": "scheduled",
-        "ticketUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
-        "officialUrl": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586",
+        "status": "cancelled",
+        "ticketUrl": RARE_CANCEL_URL,
+        "officialUrl": RARE_CANCEL_URL,
         "image": RARE_IMAGE,
         "imageType": "event_artwork",
         "imagePosition": "center",
         "imageOverride": True,
         "price": "",
-        "sourceName": "Official Eventbrite listing",
+        "sourceName": "Official Eventbrite cancellation notice",
         "authority": "venue_ticket",
         "confidence": "high",
         "lineupExplicit": True,
-        "sources": [{"name": "Official Eventbrite listing", "url": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586", "type": "eventbrite", "authority": "venue_ticket", "priority": 94}],
+        "sources": [
+            {"name": "Official Eventbrite cancellation notice", "url": RARE_CANCEL_URL, "type": "eventbrite", "authority": "venue_ticket", "priority": 120},
+            {"name": "Original Eventbrite listing", "url": "https://www.eventbrite.com/e/rare-of-breed-tickets-1986268845586", "type": "eventbrite", "authority": "venue_ticket", "priority": 94},
+        ],
+        "cancellationConfirmed": True,
+        "cancellationConfirmedAt": "2026-09-12",
+        "ticketAvailability": "cancelled",
+        "notes": "Cancelled by the organizer. This page is retained as a cancellation notice.",
     },
     {
         "id": "flavor-fest-2026-friday-concerts",

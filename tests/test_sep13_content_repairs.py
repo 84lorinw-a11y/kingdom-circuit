@@ -20,13 +20,20 @@ class September13ContentRepairTests(unittest.TestCase):
     def event(self, suffix):
         return next(item for item in self.events if str(item.get("id", "")).removeprefix("manual:") == suffix)
 
-    def test_kurtis_uses_verified_official_portrait_everywhere(self):
+    def test_kurtis_profile_and_event_crops_are_intentional(self):
         image = "assets/artists/kurtis-hoppie-primary.jpg"
         artist = next(item for item in self.artists if item.get("name") == "Kurtis Hoppie")
         self.assertEqual(image, artist["imageUrl"])
+        self.assertEqual("50% 22%", artist["imagePosition"])
         kurtis_events = [item for item in self.events + self.supplemental if "Kurtis Hoppie" in (item.get("artists") or [])]
         self.assertTrue(kurtis_events)
-        self.assertTrue(all(item.get("image") == image for item in kurtis_events))
+        boise = [item for item in kurtis_events if str(item.get("id", "")).removeprefix("manual:") == "boise-invasion-2026"]
+        self.assertTrue(boise)
+        self.assertTrue(all(item.get("image") == "assets/events/boise-invasion-2026.jpg" for item in boise))
+        portraits = [item for item in kurtis_events if item not in boise]
+        self.assertTrue(portraits)
+        self.assertTrue(all(item.get("image") == image for item in portraits))
+        self.assertTrue(all(item.get("imagePosition") == "50% 4%" for item in portraits))
 
     def test_requested_events_are_published(self):
         mike = self.event("mike-malagies-florida-takeover-miami-2026")

@@ -33,7 +33,7 @@ EVENTBRITE_IMAGE_OVERRIDES = {
     "eventbrite:truthx-yung-kriss-brandon-2026": "assets/events/truthx-yung-kriss-2026.jpg",
     "eventbrite:gracefest-lecrae-castaic-2026": "assets/events/gracefest-2026.png",
     "eventbrite:hip-hop-in-the-park-cortland-2026": "assets/events/hip-hop-in-the-park-2026.jpg",
-    "eventbrite:reign-volume-one-aasha-marie-brooklyn-2026": "assets/events/reign-volume-one-2026.jpg",
+    "eventbrite:reign-volume-one-aasha-marie-brooklyn-2026": "assets/events/reign-volume-one-single-2026.jpg",
     RARE_ID: "assets/events/rare-of-breed-jacksonville-2026.jpg",
 }
 

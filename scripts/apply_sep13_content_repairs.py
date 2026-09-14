@@ -13,6 +13,22 @@ AUDIT_DATE = "2026-09-13"
 KURTIS_IMAGE = "assets/artists/kurtis-hoppie-primary.jpg"
 MISSION_IMAGE = "assets/artists/mission-primary.jpg"
 UNIVERSAL_IMAGE = "assets/events/rock-the-universe-2027.jpg"
+REIGN_IMAGE = "assets/events/reign-volume-one-single-2026.jpg"
+RARE_CANCEL_URL = "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586"
+MAYIA_LINKS = {
+    "mayia-boxyard-saturdaze-2026": {
+        "officialUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+        "ticketUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+        "sourceName": "Boxyard RTP official event",
+        "authority": "official_event",
+    },
+    "mayia-nc-state-fair-2026": {
+        "officialUrl": "https://www.ncagr.gov/divisions/ncstatefair",
+        "ticketUrl": "https://www.ncagr.gov/divisions/ncstatefair/buy-tickets-now",
+        "sourceName": "North Carolina State Fair official site",
+        "authority": "official_event",
+    },
+}
 
 
 def load(path: Path):
@@ -25,6 +41,15 @@ def save(path: Path, value) -> None:
 
 def source(name: str, url: str, authority: str) -> dict:
     return {"name": name, "url": url, "type": "manual_verified", "authority": authority, "priority": 112}
+
+
+def prepend_source(item: dict, value: dict) -> None:
+    url = str(value.get("url") or "")
+    existing = [
+        current for current in item.get("sources") or []
+        if isinstance(current, dict) and str(current.get("url") or "") != url
+    ]
+    item["sources"] = [value, *existing]
 
 
 TRIBE_ARTISTS = [
@@ -73,6 +98,26 @@ NEW_EVENTS = {
 
 def patch_event(item: dict) -> None:
     identity = str(item.get("id") or "").removeprefix("manual:")
+    if identity in MAYIA_LINKS:
+        links = MAYIA_LINKS[identity]
+        item.update({**links, "auditVerified": AUDIT_DATE})
+        prepend_source(item, source(links["sourceName"], links["officialUrl"], links["authority"]))
+    if identity == "eventbrite:reign-volume-one-aasha-marie-brooklyn-2026":
+        item.update({"image": REIGN_IMAGE, "imageType": "event_artwork", "imagePosition": "center",
+                     "imageOverride": True, "imageSource": "Official Eventbrite event artwork",
+                     "imageSourceUrl": item.get("officialUrl") or item.get("ticketUrl"),
+                     "auditVerified": AUDIT_DATE})
+    if identity == "eventbrite:rare-of-breed-jacksonville-2026":
+        item.update({"status": "cancelled", "cancellationConfirmed": True,
+                     "cancellationConfirmedAt": "2026-09-12", "ticketAvailability": "cancelled",
+                     "officialUrl": RARE_CANCEL_URL, "ticketUrl": RARE_CANCEL_URL,
+                     "sourceName": "Official Eventbrite cancellation notice",
+                     "notes": "Cancelled by the organizer. This page is retained as a cancellation notice.",
+                     "auditVerified": AUDIT_DATE})
+        cancellation = source("Official Eventbrite cancellation notice", RARE_CANCEL_URL, "venue_ticket")
+        cancellation["priority"] = 120
+        cancellation["type"] = "eventbrite"
+        prepend_source(item, cancellation)
     if identity == "tribe-fest-rialto-2026":
         item.update({"artists": TRIBE_ARTISTS, "headliner": "Key'ijah", "headliners": TRIBE_ARTISTS[:5],
                      "officialBill": TRIBE_ARTISTS, "auditVerified": AUDIT_DATE})
@@ -82,7 +127,11 @@ def patch_event(item: dict) -> None:
                      "imageSourceUrl": "https://www.youtube.com/channel/UCBaU_Xh4fyokc-ckyCeYv3w", "auditVerified": AUDIT_DATE})
     artists = {str(x).casefold() for x in item.get("artists") or []}
     if "kurtis hoppie" in artists:
-        item.update({"image": KURTIS_IMAGE, "imageType": "artist", "imagePosition": "50% 22%",
+        if identity == "boise-invasion-2026":
+            # This multi-artist show has verified event artwork pinned by the
+            # requested-events repair; do not replace it with a portrait.
+            return
+        item.update({"image": KURTIS_IMAGE, "imageType": "artist", "imagePosition": "50% 4%",
                      "imageOverride": True, "imageSource": "Kurtis Hoppie official website",
                      "imageSourceUrl": "https://www.thekurtishoppie.com/", "auditVerified": AUDIT_DATE})
 
