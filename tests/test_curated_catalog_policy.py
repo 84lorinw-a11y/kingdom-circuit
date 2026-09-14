@@ -114,6 +114,30 @@ class CuratedCatalogPolicyTests(unittest.TestCase):
         self.assertTrue(REFRESH_MODULE.is_refreshable_bit(provider_record))
         self.assertFalse(REFRESH_MODULE.is_refreshable_bit(official_record))
 
+    def test_bandsintown_refresh_preserves_curated_image_crop(self):
+        prior = [{
+            "id": "bandsintown:108847077",
+            "image": "assets/artists/kurtis-hoppie-primary.jpg",
+            "imageType": "artist",
+            "imagePosition": "50% 4%",
+            "imageOverride": True,
+            "imageSource": "Kurtis Hoppie official website",
+            "imageSourceUrl": "https://www.thekurtishoppie.com/",
+            "auditVerified": "2026-09-13",
+        }]
+        fresh = [{
+            "id": "bandsintown:108847077",
+            "image": "assets/artists/kurtis-hoppie-primary.jpg",
+            "trackedArtist": "Kurtis Hoppie",
+        }]
+
+        changed = REFRESH_MODULE.preserve_curated_image_overrides(fresh, prior)
+
+        self.assertEqual(1, changed)
+        self.assertEqual("50% 4%", fresh[0]["imagePosition"])
+        self.assertTrue(fresh[0]["imageOverride"])
+        self.assertEqual("Kurtis Hoppie official website", fresh[0]["imageSource"])
+
 
 if __name__ == "__main__":
     unittest.main()

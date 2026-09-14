@@ -17,6 +17,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SUPPLEMENTAL = ROOT / "supplemental-events.json"
 STATUS = ROOT / "bandsintown-status.json"
+CURATED_IMAGE_FIELDS = (
+    "image",
+    "imageType",
+    "imagePosition",
+    "imageOverride",
+    "imageSource",
+    "imageSourceUrl",
+    "auditVerified",
+)
 
 
 def load(path: Path, default):
@@ -43,6 +52,29 @@ def is_refreshable_bit(event) -> bool:
     if not isinstance(event, dict) or not str(event.get("id") or "").startswith("bandsintown:"):
         return False
     return norm(event.get("authority")) in {"", "artist_calendar"}
+
+
+def preserve_curated_image_overrides(
+    fresh_events: list[dict], prior_events: list[dict]
+) -> int:
+    """Carry intentional artwork/crop overrides across provider refreshes."""
+    prior_by_id = {
+        str(event.get("id") or ""): event
+        for event in prior_events
+        if isinstance(event, dict) and event.get("id")
+    }
+    preserved = 0
+    for event in fresh_events:
+        prior = prior_by_id.get(str(event.get("id") or ""))
+        if not prior or prior.get("imageOverride") is not True:
+            continue
+        changed = False
+        for field in CURATED_IMAGE_FIELDS:
+            if field in prior and event.get(field) != prior[field]:
+                event[field] = prior[field]
+                changed = True
+        preserved += int(changed)
+    return preserved
 
 
 def main() -> int:
@@ -77,6 +109,7 @@ def main() -> int:
 
     fresh_bit = [event for event in refreshed if is_refreshable_bit(event)]
     fresh_non_bit = [event for event in refreshed if not is_refreshable_bit(event)]
+    curated_images_preserved = preserve_curated_image_overrides(fresh_bit, prior_bit)
 
     # If a specific artist's request failed, keep that artist's last known rows for
     # this run rather than deleting valid shows because of a transient API problem.
@@ -99,11 +132,13 @@ def main() -> int:
     status["activeNonFestivalBandsintownShows"] = len(fresh_bit) + len(preserved)
     status["priorBandsintownShows"] = len(prior_bit)
     status["preservedDueToRequestErrors"] = len(preserved)
+    status["curatedImageOverridesPreserved"] = curated_images_preserved
     save(STATUS, status)
 
     print(
         "Bandsintown refresh safeguard: "
-        f"prior={len(prior_bit)}, fresh={len(fresh_bit)}, preserved_on_error={len(preserved)}"
+        f"prior={len(prior_bit)}, fresh={len(fresh_bit)}, "
+        f"preserved_on_error={len(preserved)}, curated_images={curated_images_preserved}"
     )
     return 0
 

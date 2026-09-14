@@ -10,6 +10,10 @@ from urllib.parse import urlparse
 from add_past_show_archives import apply_past_show_archives
 from finalize_seo_indexing_core import main as finalize_main
 from finalize_sep12_complete_closeout import apply_closeout
+from finalize_public_experience import (
+    finalize_public_experience,
+    should_finalize_public_experience,
+)
 from fix_seo_audit import apply_seo_audit_fixes
 from inject_menu_accessibility_sync import inject_menu_accessibility_sync
 from pin_verified_event_artwork import pin_site
@@ -304,6 +308,11 @@ def main() -> None:
     print("September 12 complete closeout:", closeout_report)
     menu_report = inject_menu_accessibility_sync(root)
     print("Menu accessibility state synchronization:", menu_report)
+    if should_finalize_public_experience():
+        public_report = finalize_public_experience(root)
+        print("Production public experience:", json.dumps(public_report, sort_keys=True))
+    else:
+        print("Production public experience: skipped outside the Pages release job")
 
 
 if __name__ == "__main__":
