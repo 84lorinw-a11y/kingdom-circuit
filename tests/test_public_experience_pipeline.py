@@ -46,6 +46,11 @@ class PublicExperiencePipelineTests(unittest.TestCase):
             "grid-template-columns: repeat(2, minmax(0, 1fr)) !important;",
             ux_repairs.OVERLAY_CSS,
         )
+        self.assertIn("grid-auto-rows: 1fr !important;", ux_repairs.OVERLAY_CSS)
+        self.assertIn("aspect-ratio: 1 / 1 !important;", ux_repairs.OVERLAY_CSS)
+        self.assertIn("margin-top: auto !important;", ux_repairs.OVERLAY_CSS)
+        self.assertIn("overflow-wrap: anywhere !important;", ux_repairs.OVERLAY_CSS)
+        self.assertIn("grid-template-columns: repeat(2, 44px) !important;", ux_repairs.OVERLAY_CSS)
 
         simplified = '''<html><head><script src="/assets/artist-filter-fix.js?v=5"></script></head>
         <body><main><section data-artist-directory><div class="directory-toolbar">
@@ -67,6 +72,18 @@ class PublicExperiencePipelineTests(unittest.TestCase):
             self.assertIn("data-directory-reset-filters", output)
             self.assertIn("data-has-shows-filter type=\"checkbox\" checked", output)
             self.assertIn(">2 artists</p>", output)
+
+    def test_public_ux_refreshes_cached_overlay_assets(self):
+        sample = '''<html><head>
+        <link rel="stylesheet" href="/assets/site-ux-repairs.css?v=1" data-kc-public-ux-overlay>
+        </head><body><main></main>
+        <script src="/assets/site-ux-repairs.js?v=1" defer data-kc-public-ux-overlay></script>
+        </body></html>'''
+        refreshed = ux_repairs.ensure_page_shell(sample)
+        self.assertIn(ux_repairs.CSS_HREF, refreshed)
+        self.assertIn(ux_repairs.JS_SRC, refreshed)
+        self.assertNotIn("site-ux-repairs.css?v=1", refreshed)
+        self.assertNotIn("site-ux-repairs.js?v=1", refreshed)
 
     def test_pipeline_uses_only_the_production_identity(self):
         self.assertEqual("https://kingdomcircuit.com", public_pipeline.PUBLIC_ORIGIN)

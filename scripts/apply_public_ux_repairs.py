@@ -10,8 +10,8 @@ import sys
 PUBLIC_BASE = "/"
 CSS_NAME = "site-ux-repairs.css"
 JS_NAME = "site-ux-repairs.js"
-CSS_HREF = f"{PUBLIC_BASE}assets/{CSS_NAME}?v=2"
-JS_SRC = f"{PUBLIC_BASE}assets/{JS_NAME}?v=2"
+CSS_HREF = f"{PUBLIC_BASE}assets/{CSS_NAME}?v=3"
+JS_SRC = f"{PUBLIC_BASE}assets/{JS_NAME}?v=3"
 
 
 OVERLAY_CSS = r'''/* Kingdom Circuit production UX repairs. */
@@ -107,7 +107,61 @@ body .seo-card-socials .seo-social-link {
   body [data-artist-directory] .artist-grid,
   body [data-artist-directory] .seo-artist-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-rows: 1fr !important;
+    align-items: stretch !important;
     gap: 10px !important;
+  }
+  body [data-artist-directory] [data-artist-card] {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+  body [data-artist-directory] .artist-visual {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 1 / 1 !important;
+    flex: 0 0 auto !important;
+    overflow: hidden !important;
+  }
+  body [data-artist-directory] .artist-visual img,
+  body [data-artist-directory] img.artist-photo {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+  }
+  body [data-artist-directory] .artist-card-body {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    flex-direction: column !important;
+    min-height: 0 !important;
+  }
+  body [data-artist-directory] .artist-card-footer {
+    margin-top: auto !important;
+  }
+  body [data-artist-directory] [data-artist-card] h2,
+  body [data-artist-directory] [data-artist-card] h2 a,
+  body [data-artist-directory] [data-artist-card] .artist-card-footer a {
+    min-width: 0 !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+  }
+  body [data-artist-directory] .kc-artist-filter-form,
+  body [data-artist-directory] .kc-upcoming-check,
+  body [data-artist-directory] .check-field {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+  body [data-artist-directory] .kc-upcoming-check,
+  body [data-artist-directory] .check-field {
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
   }
   .artist-platform-link,
   .seo-social-link,
@@ -119,11 +173,13 @@ body .seo-card-socials .seo-social-link {
     min-width: 44px !important;
     min-height: 44px !important;
   }
-  .artist-card-links,
-  .seo-card-socials { gap: 8px !important; }
-  .seo-card-socials {
-    grid-template-columns: repeat(4, 44px) !important;
-    column-gap: 8px !important;
+  body [data-artist-directory] .artist-card-links,
+  body [data-artist-directory] .seo-card-socials {
+    grid-template-columns: repeat(2, 44px) !important;
+    grid-auto-rows: 44px !important;
+    min-height: 96px !important;
+    gap: 8px !important;
+    align-content: start !important;
   }
   .kc-public-directory-toolbar { grid-template-columns: 1fr !important; }
   .kc-show-all-artists { width: 100%; }
@@ -840,6 +896,18 @@ def ensure_page_shell(text: str) -> str:
         if body:
             skip = '<a class="kc-skip-link" href="#kc-main-content">Skip to main content</a>'
             text = text[:body.end()] + skip + text[body.end():]
+    text = re.sub(
+        rf'{re.escape(PUBLIC_BASE)}assets/{re.escape(CSS_NAME)}(?:\?v=[^"\']*)?',
+        CSS_HREF,
+        text,
+        flags=re.I,
+    )
+    text = re.sub(
+        rf'{re.escape(PUBLIC_BASE)}assets/{re.escape(JS_NAME)}(?:\?v=[^"\']*)?',
+        JS_SRC,
+        text,
+        flags=re.I,
+    )
     if CSS_HREF not in text:
         text = re.sub(
             r"</head>",
