@@ -674,10 +674,39 @@ def artist_link_html(artist: dict) -> str:
 
 def patch_static_artist_pages(out_dir: pathlib.Path, artists: list[dict]) -> None:
     by_name = {norm(a.get("name")): a for a in artists}
+    directory_page = out_dir / "artists" / "index.html"
+    directory_text = directory_page.read_text(encoding="utf-8") if directory_page.is_file() else ""
+    directory_original = directory_text
     for key in REGISTRY_UPDATES:
         artist = by_name.get(key)
         if not artist:
             continue
+        image_url = artist.get("imageUrl")
+        image_src = str(image_url or "")
+        if image_src and not image_src.startswith(("http://", "https://", "/")):
+            image_src = "/" + image_src
+        position = str(artist.get("imagePosition") or "center")
+        if image_src and directory_text:
+            artist_href = f'/artists/{slugify(artist["name"])}/'
+
+            def patch_card(match):
+                card = match.group(0)
+                if f'href="{artist_href}"' not in card or "artist-visual-empty" not in card:
+                    return card
+                card = card.replace("artist-visual artist-visual-empty", "artist-visual", 1)
+                image_markup = (
+                    f'<img src="{html.escape(image_src, quote=True)}" alt="{html.escape(artist["name"], quote=True)}" '
+                    f'loading="lazy" decoding="async" style="object-position:{html.escape(position, quote=True)}" '
+                    f'onerror="this.onerror=null;this.src=\'{FALLBACK_IMAGE}\';">'
+                )
+                return card.replace("</a>", image_markup + "</a>", 1)
+
+            directory_text = re.sub(
+                r'<article\b[^>]*\bdata-artist-card\b[^>]*>.*?</article>',
+                patch_card,
+                directory_text,
+                flags=re.I | re.S,
+            )
         page = out_dir / "artists" / slugify(artist["name"]) / "index.html"
         if not page.is_file():
             continue
@@ -685,13 +714,28 @@ def patch_static_artist_pages(out_dir: pathlib.Path, artists: list[dict]) -> Non
         original = text
         links = artist_link_html(artist)
         text = re.sub(r'<div class="profile-links">.*?</div>', f'<div class="profile-links">{links}</div>', text, count=1, flags=re.S)
-        image_url = artist.get("imageUrl")
-        if image_url and "profile-visual" not in text:
+        if image_src and "seo-profile-image seo-profile-placeholder" in text:
+            image_markup = (
+                f'<div class="seo-profile-image"><img src="{html.escape(image_src, quote=True)}" '
+                f'alt="{html.escape(artist["name"], quote=True)}" loading="eager" decoding="async" '
+                f'style="object-position:{html.escape(position, quote=True)}" '
+                f'onerror="this.onerror=null;this.src=\'{FALLBACK_IMAGE}\';"></div>'
+            )
+            text = re.sub(
+                r'<div\b[^>]*class="[^"]*\bseo-profile-image\s+seo-profile-placeholder\b[^"]*"[^>]*>\s*</div>',
+                image_markup,
+                text,
+                count=1,
+                flags=re.I,
+            )
+        elif image_src and "profile-visual" not in text:
             hero_pattern = r'(<section\b[^>]*class="[^"]*\bprofile-hero\b[^"]*"[^>]*>)'
-            image_markup = f'<div class="profile-visual"><img src="{html.escape(str(image_url), quote=True)}" alt="{html.escape(artist["name"], quote=True)}" onerror="this.onerror=null;this.src=\'{FALLBACK_IMAGE}\';"></div>'
+            image_markup = f'<div class="profile-visual"><img src="{html.escape(image_src, quote=True)}" alt="{html.escape(artist["name"], quote=True)}" style="object-position:{html.escape(position, quote=True)}" onerror="this.onerror=null;this.src=\'{FALLBACK_IMAGE}\';"></div>'
             text = re.sub(hero_pattern, lambda m: m.group(1).replace(" profile-hero-no-image", "") + image_markup, text, count=1, flags=re.I)
         if text != original:
             page.write_text(text, encoding="utf-8")
+    if directory_text != directory_original:
+        directory_page.write_text(directory_text, encoding="utf-8")
 
 
 def _display_date(raw_date: str, raw_time: str = "") -> str:

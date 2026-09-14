@@ -1,5 +1,6 @@
 import json
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -61,6 +62,32 @@ class September13LiveSiteFixTests(unittest.TestCase):
         portrait = ROOT / artist["imageUrl"]
         self.assertTrue(portrait.is_file(), portrait)
         self.assertGreater(portrait.stat().st_size, 10_000)
+
+    def test_jimmy_rock_portrait_replaces_seo_placeholders(self):
+        import apply_live_artist_overrides as overrides
+
+        artist = next(a for a in load(ROOT / "config" / "artists.json") if a.get("name") == "JIMMY ROCK")
+        with tempfile.TemporaryDirectory() as temporary:
+            site = Path(temporary)
+            directory = site / "artists" / "index.html"
+            profile = site / "artists" / "jimmy-rock" / "index.html"
+            directory.parent.mkdir(parents=True)
+            profile.parent.mkdir(parents=True)
+            directory.write_text(
+                '<article class="artist-card" data-artist-card><a class="artist-visual artist-visual-empty" '
+                'href="/artists/jimmy-rock/"></a><h2><a href="/artists/jimmy-rock/">JIMMY ROCK</a></h2></article>',
+                encoding="utf-8",
+            )
+            profile.write_text(
+                '<section class="seo-artist-hero"><div class="seo-profile-image seo-profile-placeholder" '
+                'aria-hidden="true"></div><div class="profile-links"></div></section>',
+                encoding="utf-8",
+            )
+            overrides.patch_static_artist_pages(site, [artist])
+            self.assertIn('/assets/artists/jimmy-rock-primary.webp', directory.read_text(encoding="utf-8"))
+            profile_html = profile.read_text(encoding="utf-8")
+            self.assertIn('/assets/artists/jimmy-rock-primary.webp', profile_html)
+            self.assertNotIn("seo-profile-placeholder", profile_html)
 
     def test_petrina_and_reign_use_the_replacement_images(self):
         petrina = self.live_event("one-day-fall-festival-aurora-2026")
