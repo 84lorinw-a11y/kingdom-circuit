@@ -103,10 +103,6 @@ body .seo-card-socials .seo-social-link {
 }
 
 @media (max-width: 640px) {
-  body [data-artist-directory] [data-artist-grid],
-  body [data-artist-directory] .artist-grid,
-  body [data-artist-directory] .seo-artist-grid { grid-template-columns: 1fr !important; }
-  body [data-artist-directory] .artist-card-body { min-height: 0 !important; }
   .artist-platform-link,
   .seo-social-link,
   .seo-social-link-compact,
@@ -336,6 +332,10 @@ OVERLAY_JS = r'''"use strict";
   function setupArtistDirectory() {
     const directory = one("[data-artist-directory]");
     if (!directory) return;
+    // The established directory controller owns the Artist, State, Month,
+    // upcoming-show, and mobile-grid behavior.  Do not replace it with the
+    // simplified search/show-all controller when those controls are present.
+    if (one("[data-directory-artist-filter]", directory)) return;
     const grid = one("[data-artist-grid]", directory);
     let cards = grid ? all("[data-artist-card]", grid) : [];
     const deferredCards = one("[data-kc-inactive-artists]", directory);
@@ -739,6 +739,37 @@ def patch_artist_directory(text: str) -> tuple[str, int, int]:
     return text, active, total
 
 
+def restore_artist_directory_toolbar(text: str, active: int) -> str:
+    """Restore the full directory controls after the SEO overlay simplifies them."""
+    if "data-directory-artist-filter" in text:
+        return text
+    toolbar = re.search(
+        r'<div\b[^>]*class=["\'][^"\']*\bdirectory-toolbar\b[^"\']*["\'][^>]*>.*?</div>',
+        text,
+        re.I | re.S,
+    )
+    if not toolbar:
+        raise SystemExit("Artist directory is missing its filter toolbar")
+    markup = (
+        '<div class="directory-toolbar kc-directory-toolbar">'
+        '<form class="filters kc-artist-filter-form" data-artist-directory-filters '
+        'aria-label="Filter artists">'
+        '<label class="field"><span>Artist</span><select data-directory-artist-filter>'
+        '<option value="">All artists</option></select></label>'
+        '<label class="field"><span>State</span><select data-directory-state-filter>'
+        '<option value="">All states</option></select></label>'
+        '<label class="field"><span>Month</span><select data-directory-month-filter>'
+        '<option value="">All months</option></select></label>'
+        '<label class="check-field kc-upcoming-check"><input data-has-shows-filter '
+        'type="checkbox" checked> Only artists with upcoming shows</label>'
+        '<button class="reset-button" data-directory-reset-filters type="button">'
+        'Clear filters</button></form>'
+        f'<p class="results-count" data-artist-count role="status" aria-live="polite" '
+        f'aria-atomic="true">{active} artists with upcoming shows</p></div>'
+    )
+    return text[:toolbar.start()] + markup + text[toolbar.end():]
+
+
 def patch_input(text: str, name: str, **attributes: str) -> str:
     pattern = re.compile(rf'<(?:input|textarea)\b(?=[^>]*\bname=["\']{re.escape(name)}["\'])[^>]*>', re.I)
 
@@ -835,8 +866,18 @@ def patch_html(path: pathlib.Path, out_dir: pathlib.Path) -> tuple[bool, dict[st
         text = patch_artist_profile_socials(text)
     stats = {"activeArtists": 0, "totalArtists": 0}
     if relative == "artists/index.html":
-        text = remove_redundant_artist_loader(text)
-        text, stats["activeArtists"], stats["totalArtists"] = patch_artist_directory(text)
+        # Preserve the resilient directory controller and the complete static
+        # artist grid.  It supplies Artist/State/Month filters and the intended
+        # two-column mobile layout; deferring cards here broke those features.
+        cards = re.findall(r'<article\b(?=[^>]*\bdata-artist-card\b)', text, re.I)
+        active = re.findall(
+            r'<article\b(?=[^>]*\bdata-artist-card\b)(?=[^>]*\bdata-has-shows=["\']true["\'])',
+            text,
+            re.I,
+        )
+        stats["activeArtists"] = len(active)
+        stats["totalArtists"] = len(cards)
+        text = restore_artist_directory_toolbar(text, stats["activeArtists"])
     if relative == "submit/index.html":
         text = patch_submission_form(text)
     text = ensure_page_shell(text)

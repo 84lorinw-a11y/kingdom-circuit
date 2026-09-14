@@ -92,15 +92,17 @@ def verify_directory(out_dir: pathlib.Path, failures: list[str], totals: dict[st
         failures.append("missing:artists/index.html")
         return
     text = page.read_text(encoding="utf-8")
-    if "artist-filter-fix.js" in text:
-        failures.append("redundant-artist-json-loader-present")
-    if "seo-enhancements.js" in text:
-        failures.append("competing-artist-directory-filter-present")
-    if "data-kc-show-all" not in text or "Show all " not in text:
-        failures.append("artist-show-all-control-missing")
-    button = re.search(r'<button\b(?=[^>]*\bdata-kc-show-all\b)[^>]*>', text, re.I)
-    if not button or not has_attr(button.group(0), "hidden"):
-        failures.append("artist-show-all-not-failure-safe")
+    if "artist-filter-fix.js" not in text:
+        failures.append("artist-directory-controller-missing")
+    for control in (
+        "data-directory-artist-filter",
+        "data-directory-state-filter",
+        "data-directory-month-filter",
+        "data-has-shows-filter",
+        "data-directory-reset-filters",
+    ):
+        if control not in text:
+            failures.append(f"artist-directory-control-missing:{control}")
     checkbox = re.search(r'<input\b(?=[^>]*\bdata-has-shows-filter\b)[^>]*>', text, re.I)
     if not checkbox or not has_attr(checkbox.group(0), "checked"):
         failures.append("artist-upcoming-filter-not-defaulted")
@@ -108,38 +110,14 @@ def verify_directory(out_dir: pathlib.Path, failures: list[str], totals: dict[st
     cards = re.findall(r'<article\b(?=[^>]*\bdata-artist-card\b)[^>]*>', text, re.I)
     active = sum(attr_value(card, "data-has-shows").casefold() == "true" for card in cards)
     inactive = [card for card in cards if attr_value(card, "data-has-shows").casefold() != "true"]
-    payload_match = re.search(
-        r'<script\b(?=[^>]*\bdata-kc-inactive-artists\b)[^>]*>(.*?)</script>',
-        text,
-        re.I | re.S,
-    )
-    deferred_markup = ""
-    if payload_match:
-        try:
-            parsed = json.loads(payload_match.group(1))
-            deferred_markup = parsed if isinstance(parsed, str) else ""
-        except json.JSONDecodeError:
-            failures.append("artist-deferred-payload-invalid")
-    deferred_cards = re.findall(
-        r'<article\b(?=[^>]*\bdata-artist-card\b)[^>]*>', deferred_markup, re.I
-    )
-    deferred_inactive = [
-        card for card in deferred_cards
-        if attr_value(card, "data-has-shows").casefold() != "true"
-    ]
-    totals["directoryArtists"] = len(cards) + len(deferred_cards)
+    totals["directoryArtists"] = len(cards)
     totals["directoryActiveArtists"] = active
     if not cards or not active:
         failures.append("artist-directory-empty")
-    if inactive:
-        failures.append("inactive-artists-left-in-live-dom")
-    if not deferred_cards or len(deferred_inactive) != len(deferred_cards):
-        failures.append("inactive-artists-not-deferred")
-    if len(cards) > 120:
-        failures.append("artist-directory-initial-dom-too-large")
-    count = re.search(r'<p\b[^>]*\bdata-artist-count\b[^>]*>(.*?)</p>', text, re.I | re.S)
-    if not count or str(active) not in plain_text(count.group(1)):
-        failures.append("artist-active-count-mismatch")
+    if not inactive:
+        failures.append("artist-directory-complete-roster-missing")
+    if "data-kc-inactive-artists" in text:
+        failures.append("artist-directory-cards-still-deferred")
 
 
 def verify_submission(out_dir: pathlib.Path, failures: list[str]) -> None:
@@ -189,7 +167,6 @@ def verify_assets(out_dir: pathlib.Path, failures: list[str]) -> None:
         "reduced-motion": "prefers-reduced-motion: reduce",
         "contrast": "#b8b4ac",
         "touch-size": "min-height: 44px",
-        "single-column-mobile": "body [data-artist-directory] [data-artist-grid]",
     }
     js_checks = {
         "modal-role": 'setAttribute("role", "dialog")',
@@ -197,8 +174,7 @@ def verify_assets(out_dir: pathlib.Path, failures: list[str]) -> None:
         "background-inert": "makeBackgroundInert",
         "focus-containment": 'event.key !== "Tab"',
         "focus-restore": "returnFocus",
-        "artist-default": "setupArtistDirectory",
-        "artist-deferred-loader": "loadDeferredCards",
+        "artist-controller-preserved": 'if (one("[data-directory-artist-filter]", directory)) return;',
         "correction-button": "setupCorrectionMode",
         "correction-hidden-fields-disabled": "field.disabled = correction",
         "correction-link-copy": "Include a supporting link.",
