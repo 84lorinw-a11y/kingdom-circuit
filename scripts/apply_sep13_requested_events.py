@@ -6,7 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = "2026-09-13"
-JIMMY_IMAGE = "https://images.squarespace-cdn.com/content/v1/56b7abd2f699bb04c395a379/03aa3873-98e9-4ccb-8eae-4d4f3826a4a8/Jimmy-in-the-field-refl.png"
+JIMMY_IMAGE = "assets/artists/jimmy-rock-primary.webp"
 JIMMY_MIAMI_EVENT_IMAGE = "assets/events/jimmy-rock-worship-wawa-miami-2026.jpg"
 JIMMY_DENVER_EVENT_IMAGE = "assets/events/jimmy-rock-rave-worship-denver-2026.jpg"
 JIMMY_DALLAS_EVENT_IMAGE = "assets/events/jimmy-rock-rave-worship-dallas-2026.webp"
@@ -284,7 +284,7 @@ def patch_artist():
               "spotifyProfile": "https://open.spotify.com/artist/6YN7TGi4ZlsAy38fZVPvkN",
               "youtubeProfile": "https://www.youtube.com/@JimmyRock",
               "bandsintownProfile": "https://www.bandsintown.com/a/7118692-jimmy-rock",
-              "imageUrl": JIMMY_IMAGE, "imagePosition": "50% 22%", "preferArtistImage": True,
+              "imageUrl": JIMMY_IMAGE, "imagePosition": "center", "preferArtistImage": True,
               "officialImageSource": "https://www.jimmyrock.com/"})
     save(p, rows)
 

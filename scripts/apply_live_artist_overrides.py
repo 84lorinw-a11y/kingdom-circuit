@@ -23,6 +23,22 @@ ARTIST_PERFORMANCE_DATE_OVERRIDES = {
 }
 
 REGISTRY_UPDATES = {
+    "jimmy rock": {
+        "name": "JIMMY ROCK",
+        "aliases": ["JIMMY ROCK", "Jimmy Rock"],
+        "category": "core",
+        "monitoringPriority": 2,
+        "ticketmasterEnabled": False,
+        "textMatchEnabled": True,
+        "website": "https://www.jimmyrock.com/",
+        "instagramProfile": "https://www.instagram.com/jimmyrock/",
+        "spotifyProfile": "https://open.spotify.com/artist/6YN7TGi4ZlsAy38fZVPvkN",
+        "youtubeProfile": "https://www.youtube.com/@JimmyRock",
+        "officialImageSource": "https://www.jimmyrock.com/",
+        "imageUrl": "assets/artists/jimmy-rock-primary.webp",
+        "imagePosition": "center",
+        "preferArtistImage": True,
+    },
     "caleb gordon": {
         "name": "Caleb Gordon",
         "aliases": ["Caleb Gordon"],

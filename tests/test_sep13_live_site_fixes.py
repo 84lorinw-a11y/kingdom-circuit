@@ -54,6 +54,14 @@ class September13LiveSiteFixTests(unittest.TestCase):
             with self.subTest(event_id=event_id):
                 self.assert_local_artwork(event_id, artwork)
 
+    def test_jimmy_rock_profile_uses_local_official_portrait(self):
+        artist = next(a for a in load(ROOT / "config" / "artists.json") if a.get("name") == "JIMMY ROCK")
+        self.assertEqual("assets/artists/jimmy-rock-primary.webp", artist.get("imageUrl"))
+        self.assertEqual("center", artist.get("imagePosition"))
+        portrait = ROOT / artist["imageUrl"]
+        self.assertTrue(portrait.is_file(), portrait)
+        self.assertGreater(portrait.stat().st_size, 10_000)
+
     def test_petrina_and_reign_use_the_replacement_images(self):
         petrina = self.live_event("one-day-fall-festival-aurora-2026")
         self.assertEqual("assets/events/petrina-delacey-one-day-2026.jpg", petrina.get("image"))
