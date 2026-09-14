@@ -739,7 +739,7 @@ def patch_artist_directory(text: str) -> tuple[str, int, int]:
     return text, active, total
 
 
-def restore_artist_directory_toolbar(text: str, active: int) -> str:
+def restore_artist_directory_toolbar(text: str, total: int) -> str:
     """Restore the full directory controls after the SEO overlay simplifies them."""
     if "data-directory-artist-filter" in text:
         return text
@@ -765,7 +765,7 @@ def restore_artist_directory_toolbar(text: str, active: int) -> str:
         '<button class="reset-button" data-directory-reset-filters type="button">'
         'Clear filters</button></form>'
         f'<p class="results-count" data-artist-count role="status" aria-live="polite" '
-        f'aria-atomic="true">{active} artists with upcoming shows</p></div>'
+        f'aria-atomic="true">{total} artists</p></div>'
     )
     return text[:toolbar.start()] + markup + text[toolbar.end():]
 
@@ -877,7 +877,10 @@ def patch_html(path: pathlib.Path, out_dir: pathlib.Path) -> tuple[bool, dict[st
         )
         stats["activeArtists"] = len(active)
         stats["totalArtists"] = len(cards)
-        text = restore_artist_directory_toolbar(text, stats["activeArtists"])
+        text = restore_artist_directory_toolbar(
+            text,
+            stats["totalArtists"],
+        )
     if relative == "submit/index.html":
         text = patch_submission_form(text)
     text = ensure_page_shell(text)

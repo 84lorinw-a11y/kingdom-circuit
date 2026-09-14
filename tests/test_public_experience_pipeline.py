@@ -66,6 +66,7 @@ class PublicExperiencePipelineTests(unittest.TestCase):
             self.assertIn("data-directory-month-filter", output)
             self.assertIn("data-directory-reset-filters", output)
             self.assertIn("data-has-shows-filter type=\"checkbox\" checked", output)
+            self.assertIn(">2 artists</p>", output)
 
     def test_pipeline_uses_only_the_production_identity(self):
         self.assertEqual("https://kingdomcircuit.com", public_pipeline.PUBLIC_ORIGIN)
