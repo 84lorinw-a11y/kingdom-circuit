@@ -89,11 +89,10 @@ jobs:
                   break
 
           if not art_url:
-              patterns = (
+              for pattern in (
                   r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)',
                   r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image["\']',
-              )
-              for pattern in patterns:
+              ):
                   match = re.search(pattern, page, flags=re.I)
                   if match:
                       art_url = html_lib.unescape(match.group(1)).replace("\\u002F", "/").replace("\\/", "/")
@@ -103,11 +102,8 @@ jobs:
               raise SystemExit("Could not resolve official Eventbrite artwork URL")
 
           image_bytes, content_type = get(art_url, "image/avif,image/webp,image/apng,image/*,*/*;q=0.8")
-          if len(image_bytes) < 5000:
-              raise SystemExit(f"Official artwork unexpectedly small: {len(image_bytes)} bytes")
-          if "image" not in content_type.lower():
-              raise SystemExit(f"Official artwork response was not an image: {content_type}")
-
+          if len(image_bytes) < 5000 or "image" not in content_type.lower():
+              raise SystemExit("Official Eventbrite artwork response was invalid")
           Path("/tmp/light-in-the-darkness-2026.webp").write_bytes(image_bytes)
           print(f"Downloaded official Eventbrite artwork ({len(image_bytes)} bytes)")
           PY
@@ -126,50 +122,7 @@ jobs:
             mkdir -p assets/events
             rm -f assets/events/light-in-the-darkness-2026.jpg assets/events/light-in-the-darkness-2026.jpeg assets/events/light-in-the-darkness-2026.png assets/events/light-in-the-darkness-2026.avif
             cp /tmp/light-in-the-darkness-2026.webp assets/events/light-in-the-darkness-2026.webp
-
-            python3 - <<'PY'
-            import json
-            from pathlib import Path
-
-            event_id = "1997479295343"
-            event_url = "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343"
-            image = "assets/events/light-in-the-darkness-2026.webp"
-            matched = 0
-
-            for path in (Path("events.json"), Path("supplemental-events.json"), Path("config/manual-events.json")):
-                if not path.exists():
-                    continue
-                try:
-                    rows = json.loads(path.read_text(encoding="utf-8"))
-                except Exception:
-                    continue
-                if not isinstance(rows, list):
-                    continue
-                changed = False
-                for row in rows:
-                    if not isinstance(row, dict):
-                        continue
-                    urls = " ".join(str(row.get(k) or "") for k in ("ticketUrl", "officialUrl", "announcementUrl"))
-                    title = str(row.get("title") or "").strip().casefold()
-                    target = event_id in urls or (title == "light in the darkness" and str(row.get("startDate") or "") == "2026-10-31")
-                    if not target:
-                        continue
-                    row["image"] = image
-                    row["imageType"] = "event_artwork"
-                    row["imagePosition"] = "center"
-                    row["imageOverride"] = True
-                    row["imageSource"] = "Official Eventbrite event artwork"
-                    row["imageSourceUrl"] = event_url
-                    matched += 1
-                    changed = True
-                if changed:
-                    path.write_text(json.dumps(rows, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-
-            if matched == 0:
-                raise SystemExit("Light in the Darkness event record was not found")
-            print(f"Pinned official Eventbrite artwork on {matched} event record(s)")
-            PY
-
+            python3 scripts/pin_light_in_darkness_art.py
             git add assets/events/light-in-the-darkness-2026.webp events.json supplemental-events.json config/manual-events.json
             if git diff --cached --quiet; then
               echo "Official Eventbrite artwork is already deployed."
