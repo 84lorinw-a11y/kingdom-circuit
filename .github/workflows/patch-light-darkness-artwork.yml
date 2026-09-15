@@ -1,0 +1,88 @@
+name: Patch Light in the Darkness artwork
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/patch-light-darkness-artwork.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Pull official Eventbrite artwork and update event
+        shell: python
+        run: |
+          import html
+          import json
+          import re
+          import urllib.request
+          from pathlib import Path
+
+          event_url = "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343"
+          req = urllib.request.Request(event_url, headers={"User-Agent": "Mozilla/5.0", "Accept-Language": "en-US,en;q=0.9"})
+          with urllib.request.urlopen(req, timeout=30) as response:
+              page = response.read().decode("utf-8", "replace")
+
+          patterns = [
+              r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)',
+              r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image["\']',
+              r'<meta[^>]+name=["\']twitter:image["\'][^>]+content=["\']([^"\']+)',
+          ]
+          image_url = None
+          for pattern in patterns:
+              match = re.search(pattern, page, flags=re.I)
+              if match:
+                  image_url = html.unescape(match.group(1))
+                  break
+          if not image_url:
+              raise RuntimeError("Could not find official Eventbrite artwork URL")
+
+          img_req = urllib.request.Request(image_url, headers={"User-Agent": "Mozilla/5.0"})
+          with urllib.request.urlopen(img_req, timeout=30) as response:
+              image_bytes = response.read()
+              content_type = (response.headers.get("Content-Type") or "").lower()
+
+          ext = ".png" if "png" in content_type else ".webp" if "webp" in content_type else ".jpg"
+          out = Path("assets/events/light-in-the-darkness-2026" + ext)
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_bytes(image_bytes)
+
+          updated = 0
+          for filename in ("events.json", "supplemental-events.json"):
+              path = Path(filename)
+              if not path.exists():
+                  continue
+              data = json.loads(path.read_text(encoding="utf-8"))
+              changed = False
+              for event in data:
+                  urls = f"{event.get('ticketUrl','')} {event.get('officialUrl','')}"
+                  if "1997479295343" in urls or event.get("title") == "Light in the Darkness":
+                      event["image"] = out.as_posix()
+                      event["imageType"] = "event_artwork"
+                      event["imagePosition"] = "center"
+                      event["imageOverride"] = True
+                      event["imageSource"] = "Official Eventbrite event artwork"
+                      event["imageSourceUrl"] = event_url
+                      changed = True
+                      updated += 1
+              if changed:
+                  path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+          if not updated:
+              raise RuntimeError("Light in the Darkness event record was not found")
+          print(f"Updated {updated} event record(s) using {out}")
+
+      - name: Commit artwork update
+        run: |
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add events.json supplemental-events.json assets/events/light-in-the-darkness-2026.*
+          git commit -m "fix: use Eventbrite artwork for Light in the Darkness"
+          git push
