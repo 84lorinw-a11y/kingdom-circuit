@@ -67,12 +67,12 @@ UPSERTS = {
         advertised=["Oasis Ministry", "Lisney De Font", "Alex Zurdo"]
     ),
     "open-skies-topeka-2026": E(
-        "Open Skies — Bethel Music with Jenn Johnson + KB", "2026-09-26", "Topeka", "KS", ["KB"],
+        "Open Skies — Bethel Music with KB", "2026-09-26", "Topeka", "KS", ["KB"],
         "https://evergyplaza.com/event/open-skies/", "Evergy Plaza official event", venue="Evergy Plaza",
         address="630 S Kansas Ave", time="18:00", end_time="21:00", tz="America/Chicago",
         ticket="https://evergyplaza.com/event/open-skies/", price="Free", authority="official_event",
         image="https://evergyplaza.com/wp-content/uploads/2026/08/open-skies-1.jpg", image_type="event_artwork", image_override=True,
-        advertised=["Bethel Music", "Jenn Johnson", "KB"]
+        advertised=["Bethel Music", "KB"]
     ),
     "jay-kalyl-desde-antes-elizabeth-2026": E(
         "Jay Kalyl — Desde Antes Tour", "2026-10-02", "Elizabeth", "NJ", ["Jay Kalyl"],
