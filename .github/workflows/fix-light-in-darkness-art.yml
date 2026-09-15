@@ -1,0 +1,195 @@
+name: Fix Light in the Darkness artwork
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/fix-light-in-darkness-art.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix-artwork:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out production repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Pull official Eventbrite artwork and pin it
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import html as html_lib
+          import json
+          import re
+          from pathlib import Path
+          from urllib.parse import urlparse
+          from urllib.request import Request, urlopen
+
+          EVENT_URL = "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343"
+          EVENT_ID = "1997479295343"
+          ROOT = Path(".")
+
+          def get(url, accept):
+              req = Request(url, headers={
+                  "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/140 Safari/537.36",
+                  "Accept": accept,
+                  "Accept-Language": "en-US,en;q=0.9",
+                  "Referer": EVENT_URL,
+              })
+              with urlopen(req, timeout=30) as response:
+                  return response.read(), response.headers.get("Content-Type", "")
+
+          page_bytes, _ = get(EVENT_URL, "text/html,application/xhtml+xml")
+          page = page_bytes.decode("utf-8", errors="replace")
+
+          def iter_objects(value):
+              if isinstance(value, dict):
+                  yield value
+                  graph = value.get("@graph")
+                  if isinstance(graph, list):
+                      for item in graph:
+                          yield from iter_objects(item)
+              elif isinstance(value, list):
+                  for item in value:
+                      yield from iter_objects(item)
+
+          def image_url(value):
+              if isinstance(value, str) and value.startswith(("http://", "https://")):
+                  return value
+              if isinstance(value, dict):
+                  for key in ("url", "contentUrl", "thumbnailUrl"):
+                      found = image_url(value.get(key))
+                      if found:
+                          return found
+              if isinstance(value, list):
+                  for item in value:
+                      found = image_url(item)
+                      if found:
+                          return found
+              return ""
+
+          art_url = ""
+          scripts = re.findall(
+              r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+              page,
+              flags=re.I | re.S,
+          )
+          for raw in scripts:
+              try:
+                  value = json.loads(html_lib.unescape(raw).strip())
+              except Exception:
+                  continue
+              for obj in iter_objects(value):
+                  typ = obj.get("@type")
+                  types = typ if isinstance(typ, list) else [typ]
+                  if any(str(t).casefold() in {"event", "musicevent"} for t in types if t):
+                      art_url = image_url(obj.get("image"))
+                      if art_url:
+                          break
+              if art_url:
+                  break
+
+          if not art_url:
+              for pattern in (
+                  r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)',
+                  r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image["\']',
+                  r'<meta[^>]+name=["\']twitter:image["\'][^>]+content=["\']([^"\']+)',
+                  r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+name=["\']twitter:image["\']',
+              ):
+                  match = re.search(pattern, page, flags=re.I)
+                  if match:
+                      art_url = html_lib.unescape(match.group(1)).replace("\\u002F", "/").replace("\\/", "/")
+                      break
+
+          if not art_url.startswith(("http://", "https://")):
+              raise SystemExit("Could not resolve official Eventbrite artwork URL")
+
+          image_bytes, content_type = get(art_url, "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8")
+          if len(image_bytes) < 5000:
+              raise SystemExit(f"Resolved artwork is unexpectedly small: {len(image_bytes)} bytes")
+
+          ctype = content_type.split(";", 1)[0].strip().lower()
+          suffix = {
+              "image/jpeg": ".jpg",
+              "image/jpg": ".jpg",
+              "image/png": ".png",
+              "image/webp": ".webp",
+              "image/avif": ".avif",
+          }.get(ctype)
+          if not suffix:
+              suffix = Path(urlparse(art_url).path).suffix.lower()
+              if suffix not in {".jpg", ".jpeg", ".png", ".webp", ".avif"}:
+                  suffix = ".jpg"
+
+          output_dir = ROOT / "assets" / "events"
+          output_dir.mkdir(parents=True, exist_ok=True)
+          for stale in output_dir.glob("light-in-the-darkness-2026.*"):
+              stale.unlink()
+          output_path = output_dir / f"light-in-the-darkness-2026{suffix}"
+          output_path.write_bytes(image_bytes)
+          relative = output_path.as_posix()
+
+          matched = 0
+          for json_path in (ROOT / "events.json", ROOT / "supplemental-events.json", ROOT / "config" / "manual-events.json"):
+              if not json_path.exists():
+                  continue
+              try:
+                  rows = json.loads(json_path.read_text(encoding="utf-8"))
+              except Exception:
+                  continue
+              if not isinstance(rows, list):
+                  continue
+              changed = False
+              for row in rows:
+                  if not isinstance(row, dict):
+                      continue
+                  urls = " ".join(str(row.get(key) or "") for key in ("ticketUrl", "officialUrl", "announcementUrl"))
+                  title = str(row.get("title") or "").strip().casefold()
+                  is_target = EVENT_ID in urls or (title == "light in the darkness" and str(row.get("startDate") or "") == "2026-10-31")
+                  if not is_target:
+                      continue
+                  row["image"] = relative
+                  row["imageType"] = "event_artwork"
+                  row["imagePosition"] = "center"
+                  row["imageOverride"] = True
+                  row["imageSource"] = "Official Eventbrite event artwork"
+                  row["imageSourceUrl"] = EVENT_URL
+                  matched += 1
+                  changed = True
+              if changed:
+                  json_path.write_text(json.dumps(rows, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+          if matched == 0:
+              raise SystemExit("Light in the Darkness event record was not found")
+
+          print(f"Pinned official Eventbrite artwork: {relative}")
+          print(f"Updated {matched} matching event record(s)")
+          PY
+
+      - name: Commit and deploy change
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/events/light-in-the-darkness-2026.* events.json supplemental-events.json config/manual-events.json
+          if git diff --cached --quiet; then
+            echo "Artwork was already pinned; nothing to commit."
+            exit 0
+          fi
+          git commit -m "fix: use official Eventbrite art for Light in the Darkness"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            git fetch origin main
+            git rebase origin/main
+          done
+          echo "Unable to push artwork update after retries."
+          exit 1
