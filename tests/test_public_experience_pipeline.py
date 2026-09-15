@@ -51,8 +51,23 @@ class PublicExperiencePipelineTests(unittest.TestCase):
         self.assertIn("aspect-ratio: 1 / 1 !important;", ux_repairs.OVERLAY_CSS)
         self.assertIn("margin-top: auto !important;", ux_repairs.OVERLAY_CSS)
         self.assertIn("overflow-wrap: anywhere !important;", ux_repairs.OVERLAY_CSS)
-        self.assertIn("display: grid !important;", ux_repairs.OVERLAY_CSS)
-        self.assertIn("grid-template-columns: repeat(2, 44px) !important;", ux_repairs.OVERLAY_CSS)
+        self.assertIn(
+            "body [data-artist-directory] .artist-card-links,\n"
+            "  body [data-artist-directory] .seo-card-socials {\n"
+            "    display: flex !important;\n"
+            "    flex-wrap: nowrap !important;",
+            ux_repairs.OVERLAY_CSS,
+        )
+        self.assertIn("flex: 1 1 36px !important;", ux_repairs.OVERLAY_CSS)
+        self.assertIn("max-width: 36px !important;", ux_repairs.OVERLAY_CSS)
+        self.assertIn("width: min(22px, 100%) !important;", ux_repairs.OVERLAY_CSS)
+        self.assertIn("margin: auto 0 4px !important;", ux_repairs.OVERLAY_CSS)
+        self.assertIn(
+            "body [data-artist-directory] .artist-card-footer {\n"
+            "    margin-top: 8px !important;",
+            ux_repairs.OVERLAY_CSS,
+        )
+        self.assertNotIn("grid-template-columns: repeat(2, 44px) !important;", ux_repairs.OVERLAY_CSS)
         self.assertIn("body .seo-artist-hero .seo-social-links", ux_repairs.OVERLAY_CSS)
         self.assertIn("width: auto !important;", ux_repairs.OVERLAY_CSS)
         self.assertNotIn(

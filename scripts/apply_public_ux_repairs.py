@@ -10,8 +10,8 @@ import sys
 PUBLIC_BASE = "/"
 CSS_NAME = "site-ux-repairs.css"
 JS_NAME = "site-ux-repairs.js"
-CSS_HREF = f"{PUBLIC_BASE}assets/{CSS_NAME}?v=5"
-JS_SRC = f"{PUBLIC_BASE}assets/{JS_NAME}?v=5"
+CSS_HREF = f"{PUBLIC_BASE}assets/{CSS_NAME}?v=6"
+JS_SRC = f"{PUBLIC_BASE}assets/{JS_NAME}?v=6"
 
 
 OVERLAY_CSS = r'''/* Kingdom Circuit production UX repairs. */
@@ -185,12 +185,40 @@ body .seo-card-socials .seo-social-link {
   }
   body [data-artist-directory] .artist-card-links,
   body [data-artist-directory] .seo-card-socials {
-    display: grid !important;
-    grid-template-columns: repeat(2, 44px) !important;
-    grid-auto-rows: 44px !important;
-    min-height: 96px !important;
-    gap: 8px !important;
-    align-content: start !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    min-height: 0 !important;
+    width: 100% !important;
+    gap: 2px !important;
+    margin: auto 0 4px !important;
+    padding-top: 12px !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  body [data-artist-directory] .artist-card-links .artist-platform-link,
+  body [data-artist-directory] .seo-card-socials .seo-social-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 1 1 36px !important;
+    width: auto !important;
+    max-width: 36px !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    aspect-ratio: 1 / 1 !important;
+    padding: 2px !important;
+    margin: 0 !important;
+  }
+  body [data-artist-directory] .artist-card-links .platform-icon,
+  body [data-artist-directory] .seo-card-socials .seo-brand-icon {
+    width: min(22px, 100%) !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    flex-basis: auto !important;
+  }
+  body [data-artist-directory] .artist-card-footer {
+    margin-top: 8px !important;
   }
   .kc-public-directory-toolbar { grid-template-columns: 1fr !important; }
   .kc-show-all-artists { width: 100%; }
