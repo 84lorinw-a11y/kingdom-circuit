@@ -17,7 +17,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Pin Eventbrite artwork in source and generated event data
+      - name: Pin artwork and install durable production guard
         shell: python
         run: |
           import json
@@ -26,29 +26,45 @@ jobs:
           event_id = "1997479295343"
           image = "assets/events/light-in-the-darkness-2026.webp"
           source_url = "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343"
-          files = [Path("config/manual-events.json"), Path("events.json"), Path("supplemental-events.json")]
+
           total = 0
-          for path in files:
+          for path in [Path("config/manual-events.json"), Path("events.json"), Path("supplemental-events.json")]:
               if not path.exists():
                   continue
               data = json.loads(path.read_text(encoding="utf-8"))
               changed = 0
               for event in data:
                   urls = f"{event.get('ticketUrl','')} {event.get('officialUrl','')}"
-                  if event_id in urls or event.get("title") == "Light in the Darkness":
-                      event["image"] = image
-                      event["imageType"] = "event_artwork"
-                      event["imagePosition"] = "center"
-                      event["imageOverride"] = True
-                      event["imageSource"] = "Official Eventbrite event artwork"
-                      event["imageSourceUrl"] = source_url
-                      changed += 1
+                  if event_id in urls or (event.get("title") == "Light in the Darkness" and event.get("startDate") == "2026-10-31"):
+                      desired = {
+                          "image": image,
+                          "imageType": "event_artwork",
+                          "imagePosition": "center",
+                          "imageOverride": True,
+                          "imageSource": "Official Eventbrite event artwork",
+                          "imageSourceUrl": source_url,
+                      }
+                      if any(event.get(k) != v for k, v in desired.items()):
+                          event.update(desired)
+                          changed += 1
               if changed:
                   path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
                   print(f"Updated {changed} record(s) in {path}")
                   total += changed
+
+          workflow = Path(".github/workflows/update-and-deploy.yml")
+          text = workflow.read_text(encoding="utf-8")
+          guard_name = "Pin Light in the Darkness Eventbrite artwork"
+          if guard_name not in text:
+              anchor = "      - name: Apply durable September 13 content repairs\n        run: python scripts/apply_sep13_content_repairs.py\n"
+              guard = anchor + "\n      - name: Pin Light in the Darkness Eventbrite artwork\n        run: python scripts/pin_light_in_darkness_art.py\n"
+              if anchor not in text:
+                  raise SystemExit("Could not locate production workflow repair anchor")
+              workflow.write_text(text.replace(anchor, guard, 1), encoding="utf-8")
+              print("Installed durable production artwork guard")
+
           if total == 0:
-              raise SystemExit("Light in the Darkness event not found")
+              print("Event data already pinned correctly")
 
       - name: Commit and push safely
         shell: bash
@@ -56,12 +72,12 @@ jobs:
           set -e
           git config user.name "kingdom-circuit-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add config/manual-events.json events.json supplemental-events.json
+          git add config/manual-events.json events.json supplemental-events.json .github/workflows/update-and-deploy.yml
           if git diff --cached --quiet; then
             echo "No changes needed"
             exit 0
           fi
-          git commit -m "fix: pin Light in the Darkness Eventbrite artwork at source"
+          git commit -m "fix: permanently pin Light in the Darkness Eventbrite artwork"
           for attempt in 1 2 3 4 5; do
             git fetch origin main
             git rebase origin/main || { git rebase --abort; sleep 3; continue; }
