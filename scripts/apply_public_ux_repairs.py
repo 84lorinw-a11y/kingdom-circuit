@@ -10,8 +10,8 @@ import sys
 PUBLIC_BASE = "/"
 CSS_NAME = "site-ux-repairs.css"
 JS_NAME = "site-ux-repairs.js"
-CSS_HREF = f"{PUBLIC_BASE}assets/{CSS_NAME}?v=4"
-JS_SRC = f"{PUBLIC_BASE}assets/{JS_NAME}?v=4"
+CSS_HREF = f"{PUBLIC_BASE}assets/{CSS_NAME}?v=5"
+JS_SRC = f"{PUBLIC_BASE}assets/{JS_NAME}?v=5"
 
 
 OVERLAY_CSS = r'''/* Kingdom Circuit production UX repairs. */
@@ -164,7 +164,6 @@ body .seo-card-socials .seo-social-link {
     overflow-wrap: anywhere !important;
   }
   .artist-platform-link,
-  .seo-social-link,
   .seo-social-link-compact,
   body .artist-card .artist-platform-link,
   body .seo-card-socials .seo-social-link {
@@ -172,6 +171,17 @@ body .seo-card-socials .seo-social-link {
     height: 44px !important;
     min-width: 44px !important;
     min-height: 44px !important;
+  }
+  body .seo-artist-hero .seo-social-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+  body .seo-artist-hero .seo-social-link {
+    width: auto !important;
+    height: auto !important;
+    max-width: 100% !important;
+    padding: 10px 12px !important;
   }
   body [data-artist-directory] .artist-card-links,
   body [data-artist-directory] .seo-card-socials {

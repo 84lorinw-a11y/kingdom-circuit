@@ -45,7 +45,6 @@ def apply_p0_mobile_listing_safety(root: pathlib.Path) -> dict[str, int]:
         html = page.read_text(encoding="utf-8")
         original = html
         html = re.sub(r'\s*<script[^>]+src="/assets/(?:image-fix|home-primary-image-guard|home-kaden-image-fix|event-image-repair-kc2100|verified-event-artwork-guard)[^"]*"[^>]*></script>', "", html)
-        html = re.sub(r'\s*<script async src="https://www\.googletagmanager\.com/gtag/js\?id=G-N2KK9XF4TJ"></script>\s*<script>.*?</script>', "", html, flags=re.S)
         if html != original:
             page.write_text(html, encoding="utf-8")
             removed_scripts += 1

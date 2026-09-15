@@ -14,7 +14,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-POLICY_VERSION = 6
+POLICY_VERSION = 7
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 OFFICIAL_SOURCES_FILE = ROOT / "config" / "official-sources.json"
@@ -31,22 +31,71 @@ MIKE_TEEZY_HRVSTLAND = {
     "id": "mike-teezy-hrvstland-festival-2026",
     "title": "HRVSTLAND Festival 2026",
     "startDate": "2026-10-24",
-    "startTime": "",
-    "venue": "Steele Creek Church",
-    "address": "",
+    "startTime": "14:00",
+    "endTime": "20:00",
+    "doorsTime": "15:30",
+    "timezone": "America/New_York",
+    "venue": "Unity Charlotte International",
+    "address": "5323 E Independence Blvd",
     "city": "Charlotte",
     "state": "NC",
-    "artists": ["Mike Teezy"],
+    "country": "US",
+    "artists": ["Mike Teezy", "Anike", "Dante' Pride", "Don Ready", "ADIA"],
     "headliner": "Mike Teezy",
     "eventType": "festival",
-    "ticketUrl": "https://www.bandsintown.com/f/231374",
-    "officialUrl": "https://www.bandsintown.com/f/231374",
-    "image": "",
+    "ticketUrl": "https://www.miketeezymusic.com/event-details/hlfest",
+    "officialUrl": "https://www.miketeezymusic.com/event-details/hlfest",
+    "image": "assets/events/hrvstland-festival-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": True,
+    "imageSource": "HRVSTLAND official event page",
+    "imageSourceUrl": "https://www.miketeezymusic.com/event-details/hlfest",
     "price": "",
     "status": "scheduled",
     "lineupExplicit": True,
-    "authority": "artist_calendar",
-    "sourceName": "Mike Teezy verified Bandsintown / HRVSTLAND listing",
+    "authority": "official_festival",
+    "sourceName": "HRVSTLAND official event page",
+    "officialBill": ["Mike Teezy", "Anike", "Dante' Pride", "Don Ready", "ADIA"],
+    "sources": [
+        {
+            "name": "HRVSTLAND official event page",
+            "url": "https://www.miketeezymusic.com/event-details/hlfest",
+            "type": "manual_verified",
+            "authority": "official_festival",
+            "priority": 112,
+        },
+        {
+            "name": "HRVSTLAND official Anike announcement",
+            "url": "https://www.instagram.com/hrvstlandfest/p/DdJf5AwRqUS/",
+            "type": "manual_verified",
+            "authority": "official_festival",
+            "priority": 108,
+        },
+        {
+            "name": "HRVSTLAND official Dante Pride announcement",
+            "url": "https://www.instagram.com/hrvstlandfest/p/DdML-roReO-/",
+            "type": "manual_verified",
+            "authority": "official_festival",
+            "priority": 108,
+        },
+        {
+            "name": "HRVSTLAND official Don Ready announcement",
+            "url": "https://www.instagram.com/hrvstlandfest/p/DdQJbYFMvVX/",
+            "type": "manual_verified",
+            "authority": "official_festival",
+            "priority": 108,
+        },
+        {
+            "name": "HRVSTLAND official ADIA announcement",
+            "url": "https://www.instagram.com/hrvstlandfest/p/DdMs5MsyAAj/",
+            "type": "manual_verified",
+            "authority": "official_festival",
+            "priority": 108,
+        },
+    ],
+    "notes": "Festival and VIP entry begin at 2:00 PM; general-admission doors open at 3:30 PM and the show begins at 4:00 PM.",
+    "auditVerified": "2026-09-14",
 }
 
 HULVEY_SILVER_SPRING = {

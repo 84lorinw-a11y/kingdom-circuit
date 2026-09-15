@@ -12,6 +12,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import apply_public_audit_repairs as audit_repairs  # noqa: E402
 import apply_public_ux_repairs as ux_repairs  # noqa: E402
 import finalize_public_experience as public_pipeline  # noqa: E402
+import finalize_seo_indexing as seo_finalizer  # noqa: E402
 import verify_public_performance as performance_verifier  # noqa: E402
 import verify_public_ux as ux_verifier  # noqa: E402
 
@@ -52,6 +53,12 @@ class PublicExperiencePipelineTests(unittest.TestCase):
         self.assertIn("overflow-wrap: anywhere !important;", ux_repairs.OVERLAY_CSS)
         self.assertIn("display: grid !important;", ux_repairs.OVERLAY_CSS)
         self.assertIn("grid-template-columns: repeat(2, 44px) !important;", ux_repairs.OVERLAY_CSS)
+        self.assertIn("body .seo-artist-hero .seo-social-links", ux_repairs.OVERLAY_CSS)
+        self.assertIn("width: auto !important;", ux_repairs.OVERLAY_CSS)
+        self.assertNotIn(
+            ".artist-platform-link,\n  .seo-social-link,\n  .seo-social-link-compact,",
+            ux_repairs.OVERLAY_CSS,
+        )
 
         simplified = '''<html><head><script src="/assets/artist-filter-fix.js?v=5"></script></head>
         <body><main><section data-artist-directory><div class="directory-toolbar">
@@ -85,6 +92,8 @@ class PublicExperiencePipelineTests(unittest.TestCase):
         self.assertIn(ux_repairs.JS_SRC, refreshed)
         self.assertNotIn("site-ux-repairs.css?v=1", refreshed)
         self.assertNotIn("site-ux-repairs.js?v=1", refreshed)
+        self.assertEqual(ux_repairs.CSS_HREF, ux_verifier.CSS_HREF)
+        self.assertEqual(ux_repairs.JS_SRC, ux_verifier.JS_SRC)
 
     def test_pipeline_uses_only_the_production_identity(self):
         self.assertEqual("https://kingdomcircuit.com", public_pipeline.PUBLIC_ORIGIN)
@@ -103,6 +112,24 @@ class PublicExperiencePipelineTests(unittest.TestCase):
         self.assertIn("https://*.analytics.google.com", audit_repairs.CSP)
         self.assertIn("object-src 'none'", audit_repairs.CSP)
         self.assertIn("upgrade-insecure-requests", audit_repairs.CSP)
+
+    def test_mobile_listing_cleanup_preserves_analytics(self):
+        sample = '''<html><head>
+        <script src="/assets/image-fix.js"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2KK9XF4TJ"></script>
+        <script>window.dataLayer=window.dataLayer||[];gtag('config','G-N2KK9XF4TJ');</script>
+        </head><body></body></html>'''
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            page = root / "index.html"
+            page.write_text(sample, encoding="utf-8")
+            result = seo_finalizer.apply_p0_mobile_listing_safety(root)
+            output = page.read_text(encoding="utf-8")
+            self.assertNotIn("/assets/image-fix.js", output)
+            self.assertIn("https://www.googletagmanager.com/gtag/js?id=G-N2KK9XF4TJ", output)
+            self.assertIn("gtag('config','G-N2KK9XF4TJ')", output)
+            self.assertEqual(1, result["pages_cleaned"])
 
     def test_release_stage_is_limited_to_the_pages_workflow_or_explicit_opt_in(self):
         with patch.dict("os.environ", {}, clear=True):

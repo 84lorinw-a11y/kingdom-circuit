@@ -10,8 +10,8 @@ import sys
 PUBLIC_BASE = "/"
 CSS_NAME = "site-ux-repairs.css"
 JS_NAME = "site-ux-repairs.js"
-CSS_HREF = f"{PUBLIC_BASE}assets/{CSS_NAME}?v=4"
-JS_SRC = f"{PUBLIC_BASE}assets/{JS_NAME}?v=4"
+CSS_HREF = f"{PUBLIC_BASE}assets/{CSS_NAME}?v=5"
+JS_SRC = f"{PUBLIC_BASE}assets/{JS_NAME}?v=5"
 
 
 def plain_text(fragment: str) -> str:

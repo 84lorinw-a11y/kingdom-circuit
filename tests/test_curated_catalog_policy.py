@@ -102,6 +102,23 @@ class CuratedCatalogPolicyTests(unittest.TestCase):
         self.assertEqual("Silver Spring", event["city"])
         self.assertEqual("MD", event["state"])
 
+    def test_hrvstland_official_details_and_lineup_are_complete(self):
+        event = MODULE.MIKE_TEEZY_HRVSTLAND
+        self.assertEqual("https://www.miketeezymusic.com/event-details/hlfest", event["officialUrl"])
+        self.assertEqual("14:00", event["startTime"])
+        self.assertEqual("20:00", event["endTime"])
+        self.assertEqual("Unity Charlotte International", event["venue"])
+        self.assertEqual("5323 E Independence Blvd", event["address"])
+        self.assertEqual(
+            {"Mike Teezy", "Anike", "Dante' Pride", "Don Ready", "ADIA"},
+            set(event["artists"]),
+        )
+        self.assertEqual(event["artists"], event["officialBill"])
+        self.assertEqual("assets/events/hrvstland-festival-2026.jpg", event["image"])
+        self.assertTrue((ROOT / event["image"]).is_file())
+        self.assertEqual("event_artwork", event["imageType"])
+        self.assertTrue(event["imageOverride"])
+
     def test_official_event_with_bandsintown_id_is_not_refreshable(self):
         provider_record = {
             "id": "bandsintown:108758638",
