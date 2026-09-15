@@ -17,9 +17,19 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Permanently pin Light in the Darkness artwork
-        shell: python
+      - name: Apply and push durable artwork repair
+        shell: bash
         run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          for attempt in 1 2 3 4 5 6 7 8; do
+            echo "Attempt $attempt"
+            git fetch origin main
+            git reset --hard origin/main
+
+            python <<'PY'
           import json
           from pathlib import Path
 
@@ -50,42 +60,32 @@ jobs:
           if found == 0:
               raise SystemExit("Light in the Darkness source event was not found")
           manual_path.write_text(json.dumps(rows, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-          print(f"Pinned source artwork on {found} manual event record(s)")
 
           durable = root / "scripts" / "apply_sep13_content_repairs.py"
           text = durable.read_text(encoding="utf-8")
           marker = '    artists = {str(x).casefold() for x in item.get("artists") or []}\n'
           guard = '''    urls = f"{item.get('ticketUrl','')} {item.get('officialUrl','')}"\n    if "1997479295343" in urls or (item.get("title") == "Light in the Darkness" and item.get("startDate") == "2026-10-31"):\n        item.update({"image": "assets/events/light-in-the-darkness-2026.webp",\n                     "imageType": "event_artwork", "imagePosition": "center",\n                     "imageOverride": True, "imageSource": "Official Eventbrite event artwork",\n                     "imageSourceUrl": "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343",\n                     "auditVerified": "2026-09-14"})\n'''
-          if event_id not in text:
+          if 'assets/events/light-in-the-darkness-2026.webp' not in text:
               if marker not in text:
                   raise SystemExit("Could not locate durable patch insertion point")
               durable.write_text(text.replace(marker, guard + marker, 1), encoding="utf-8")
-              print("Installed durable production artwork guard")
-          else:
-              print("Durable production artwork guard already present")
+          PY
 
-      - name: Commit and push safely
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name "kingdom-circuit-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add config/manual-events.json scripts/apply_sep13_content_repairs.py
-          if git diff --cached --quiet; then
-            echo "No changes needed"
-            exit 0
-          fi
-          git commit -m "fix: permanently pin Light in the Darkness event artwork"
-          for attempt in 1 2 3 4 5; do
-            git fetch origin main
-            if git rebase origin/main; then
-              if git push origin HEAD:main; then
-                exit 0
-              fi
-            else
-              git rebase --abort || true
+            git add config/manual-events.json scripts/apply_sep13_content_repairs.py
+            if git diff --cached --quiet; then
+              echo "Repair already present on latest main"
+              exit 0
             fi
-            sleep 3
+
+            git commit -m "fix: permanently pin Light in the Darkness event artwork"
+            if git push origin HEAD:main; then
+              echo "Durable artwork repair pushed successfully"
+              exit 0
+            fi
+
+            echo "Main moved during push; retrying from latest main"
+            sleep 2
           done
+
           echo "Failed to push durable artwork repair after retries" >&2
           exit 1
