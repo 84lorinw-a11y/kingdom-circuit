@@ -1,0 +1,74 @@
+name: Fix Light in the Darkness source artwork
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/fix-light-darkness-source.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Pin Eventbrite artwork in source and generated event data
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+
+          event_id = "1997479295343"
+          image = "assets/events/light-in-the-darkness-2026.webp"
+          source_url = "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343"
+          files = [Path("config/manual-events.json"), Path("events.json"), Path("supplemental-events.json")]
+          total = 0
+          for path in files:
+              if not path.exists():
+                  continue
+              data = json.loads(path.read_text(encoding="utf-8"))
+              changed = 0
+              for event in data:
+                  urls = f"{event.get('ticketUrl','')} {event.get('officialUrl','')}"
+                  if event_id in urls or event.get("title") == "Light in the Darkness":
+                      event["image"] = image
+                      event["imageType"] = "event_artwork"
+                      event["imagePosition"] = "center"
+                      event["imageOverride"] = True
+                      event["imageSource"] = "Official Eventbrite event artwork"
+                      event["imageSourceUrl"] = source_url
+                      changed += 1
+              if changed:
+                  path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+                  print(f"Updated {changed} record(s) in {path}")
+                  total += changed
+          if total == 0:
+              raise SystemExit("Light in the Darkness event not found")
+
+      - name: Commit and push safely
+        shell: bash
+        run: |
+          set -e
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add config/manual-events.json events.json supplemental-events.json
+          if git diff --cached --quiet; then
+            echo "No changes needed"
+            exit 0
+          fi
+          git commit -m "fix: pin Light in the Darkness Eventbrite artwork at source"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; sleep 3; continue; }
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep 3
+          done
+          echo "Failed to push after retries" >&2
+          exit 1
