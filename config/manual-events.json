@@ -2386,29 +2386,80 @@
     "imageSourceUrl": "https://www.eventim.com/event/jimmy-rock-am-fm-22038857/"
   },
   {
-    "id": "kaden-jordan-babytooth-new-port-richey-2026",
-    "title": "The Babytooth Experience",
+    "id": "revival-night-trinity-2026",
+    "title": "Revival Night",
     "startDate": "2026-10-23",
-    "startTime": "",
+    "startTime": "19:00",
+    "endTime": "23:15",
+    "doorsTime": "18:30",
+    "performanceTime": "19:15",
     "timezone": "America/New_York",
-    "venue": "Trinity College",
-    "address": "2430 Welbilt Blvd",
-    "city": "New Port Richey",
+    "venue": "Trinity College of Florida",
+    "address": "2430 Welbilt Boulevard",
+    "postalCode": "34655",
+    "city": "Trinity",
     "state": "FL",
     "country": "US",
     "artists": [
+      "Issac Mansfield",
+      "Vennisay",
+      "Kaden Jordan",
+      "Scarlito Jr.",
+      "J Reborn",
+      "Dre Skywalker",
+      "Gabriel Katon"
+    ],
+    "headliner": "Issac Mansfield",
+    "headliners": [
+      "Issac Mansfield",
+      "Vennisay",
       "Kaden Jordan"
     ],
-    "headliner": "Kaden Jordan",
+    "supportActs": [
+      "Scarlito Jr.",
+      "J Reborn",
+      "Dre Skywalker",
+      "Gabriel Katon"
+    ],
     "eventType": "concert",
-    "ticketUrl": "https://www.songkick.com/concerts/43409336-kaden-jordan-at-trinity-college",
-    "officialUrl": "https://kadenjordan.com/pages/tour",
-    "image": "",
-    "price": "",
     "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/revival-night-tickets-1990009565179",
+    "officialUrl": "https://www.eventbrite.com/e/revival-night-tickets-1990009565179",
+    "image": "assets/events/revival-night-trinity-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "price": "Donation / pay what you want",
+    "admissionNotes": "General admission with no reserved seating; no refunds.",
     "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "sourceName": "Kaden Jordan official tour calendar"
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "sourceName": "Trinity College of Florida official Eventbrite listing",
+    "sources": [
+      {
+        "name": "Trinity College of Florida official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/revival-night-tickets-1990009565179",
+        "type": "eventbrite",
+        "authority": "venue_ticket",
+        "priority": 112
+      }
+    ],
+    "advertisedBilling": [
+      "Issac Mansfield",
+      "Vennisay",
+      "Kaden Jordan",
+      "Scarlito Jr.",
+      "J Reborn",
+      "Dre Skywalker",
+      "Gabriel Katon"
+    ],
+    "organizer": "Trinity College of Florida",
+    "imageSource": "Official Eventbrite event artwork",
+    "imageSourceUrl": "https://www.eventbrite.com/e/revival-night-tickets-1990009565179",
+    "auditVerified": "2026-09-15",
+    "firstSeen": "2026-09-15T10:53:04Z",
+    "lastVerified": "2026-09-15T10:53:04Z",
+    "notes": "Eventbrite lists 7:00 PM–11:15 PM. The event description lists 6:30 PM doors and a 7:15 PM concert start. Admission is donation/pay what you want."
   },
   {
     "id": "space-city-fest-2026",

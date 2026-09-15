@@ -364,7 +364,12 @@ const ARTIST_ROSTER_ORDER = [
   "Generation Recovery",
   "IFearGod",
   "Hy Chu",
-  "JIMMY ROCK"
+  "JIMMY ROCK",
+  "Vennisay",
+  "Scarlito Jr.",
+  "J Reborn",
+  "Dre Skywalker",
+  "Gabriel Katon"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {

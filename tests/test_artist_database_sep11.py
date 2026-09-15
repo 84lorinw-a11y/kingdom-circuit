@@ -70,7 +70,7 @@ class ArtistDatabaseSeptember11Tests(unittest.TestCase):
     def test_kaden_jordan_official_tour_dates_are_durable(self):
         expected = {
             ("2026-09-23", "Orlando"),
-            ("2026-10-23", "New Port Richey"),
+            ("2026-10-23", "Trinity"),
             ("2026-11-13", "Orlando"),
             ("2026-12-11", "Ocala"),
         }

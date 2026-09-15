@@ -46,10 +46,71 @@ KADEN_TOUR_URL = "https://kadenjordan.com/pages/tour"
 KADEN_SONGKICK_URL = "https://www.songkick.com/artists/10314485-kaden-jordan"
 KADEN_SHOWS = [
     ("2026-09-23", "Church in the Son", "Orlando", "FL"),
-    ("2026-10-23", "Trinity College", "New Port Richey", "FL"),
     ("2026-11-13", "The Gathering Place", "Orlando", "FL"),
     ("2026-12-11", "NEXT CHURCH", "Ocala", "FL"),
 ]
+
+REVIVAL_NIGHT_URL = "https://www.eventbrite.com/e/revival-night-tickets-1990009565179"
+REVIVAL_NIGHT_ARTISTS = [
+    "Issac Mansfield",
+    "Vennisay",
+    "Kaden Jordan",
+    "Scarlito Jr.",
+    "J Reborn",
+    "Dre Skywalker",
+    "Gabriel Katon",
+]
+REVIVAL_NIGHT_EVENT = {
+    "id": "manual:revival-night-trinity-2026",
+    "title": "Revival Night",
+    "startDate": "2026-10-23",
+    "startTime": "19:00",
+    "endTime": "23:15",
+    "doorsTime": "18:30",
+    "performanceTime": "19:15",
+    "timezone": "America/New_York",
+    "venue": "Trinity College of Florida",
+    "address": "2430 Welbilt Boulevard",
+    "postalCode": "34655",
+    "city": "Trinity",
+    "state": "FL",
+    "country": "US",
+    "artists": REVIVAL_NIGHT_ARTISTS,
+    "headliner": "Issac Mansfield",
+    "headliners": ["Issac Mansfield", "Vennisay", "Kaden Jordan"],
+    "supportActs": ["Scarlito Jr.", "J Reborn", "Dre Skywalker", "Gabriel Katon"],
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": REVIVAL_NIGHT_URL,
+    "officialUrl": REVIVAL_NIGHT_URL,
+    "image": "assets/events/revival-night-trinity-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": True,
+    "price": "Donation / pay what you want",
+    "admissionNotes": "General admission with no reserved seating; no refunds.",
+    "sourceName": "Trinity College of Florida official Eventbrite listing",
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "lineupExplicit": True,
+    "advertisedBilling": REVIVAL_NIGHT_ARTISTS,
+    "organizer": "Trinity College of Florida",
+    "imageSource": "Official Eventbrite event artwork",
+    "imageSourceUrl": REVIVAL_NIGHT_URL,
+    "auditVerified": "2026-09-15",
+    "firstSeen": "2026-09-15T10:53:04Z",
+    "lastVerified": "2026-09-15T10:53:04Z",
+    "notes": "Eventbrite lists 7:00 PM–11:15 PM. The event description lists 6:30 PM doors and a 7:15 PM concert start. Admission is donation/pay what you want.",
+    "sources": [
+        {
+            "name": "Trinity College of Florida official Eventbrite listing",
+            "url": REVIVAL_NIGHT_URL,
+            "type": "eventbrite",
+            "authority": "venue_ticket",
+            "priority": 112,
+        }
+    ],
+}
 
 VERIFIED_EVENT_IMAGES = {
     "jay-kalyl-desde-antes-rockville-centre-2026": "https://i.scdn.co/image/ab6761610000e5eb1269b80aed5d08c40aedfdc3",
@@ -127,6 +188,40 @@ def is_same_kaden_show(event: dict, date: str, city: str) -> bool:
     return "kaden jordan" in names or norm(event.get("headliner")) == "kaden jordan"
 
 
+def is_revival_night_duplicate(event: dict) -> bool:
+    if str(event.get("startDate") or "")[:10] != REVIVAL_NIGHT_EVENT["startDate"]:
+        return False
+    event_id = norm(event.get("id"))
+    links = " ".join(
+        str(value or "")
+        for value in (event.get("officialUrl"), event.get("ticketUrl"))
+    ).casefold()
+    if (
+        event_id in {
+            "manual:revival-night-trinity-2026",
+            "revival-night-trinity-2026",
+            "manual:kaden-jordan-2026-10-23-new-port-richey",
+            "kaden-jordan-babytooth-new-port-richey-2026",
+            "bandsintown:108906647",
+        }
+        or "1990009565179" in links
+        or "108906647" in links
+    ):
+        return True
+    names = {norm(name) for name in event.get("artists", [])}
+    relevant_artist = bool({"issac mansfield", "isaac mansfield", "kaden jordan"} & names)
+    relevant_artist = relevant_artist or norm(event.get("headliner")) in {
+        "issac mansfield",
+        "isaac mansfield",
+        "kaden jordan",
+    }
+    return (
+        relevant_artist
+        and "trinity college" in norm(event.get("venue"))
+        and norm(event.get("city")) in {"trinity", "new port richey"}
+    )
+
+
 def sort_events(events: list[dict]) -> None:
     events.sort(key=lambda item: (str(item.get("startDate") or "9999-99-99"), str(item.get("startTime") or ""), str(item.get("title") or "")))
 
@@ -161,9 +256,12 @@ def apply(root: Path) -> None:
     for date, _venue, city, _state in KADEN_SHOWS:
         events = [event for event in events if not is_same_kaden_show(event, date, city)]
         supplemental = [event for event in supplemental if not is_same_kaden_show(event, date, city)]
+    events = [event for event in events if not is_revival_night_duplicate(event)]
+    supplemental = [event for event in supplemental if not is_revival_night_duplicate(event)]
 
     events.append(deepcopy(PARRIS_EVENT))
     events.extend(kaden_event(*show) for show in KADEN_SHOWS)
+    events.append(deepcopy(REVIVAL_NIGHT_EVENT))
     apply_verified_event_images(events, supplemental)
     sort_events(events)
     sort_events(supplemental)
@@ -182,6 +280,13 @@ def apply(root: Path) -> None:
         if len(matches) != 1 or matches[0].get("venue") != venue:
             raise SystemExit(f"Kaden Jordan show verification failed for {date} {city}: {matches}")
 
+    revival = [event for event in combined if is_revival_night_duplicate(event)]
+    if len(revival) != 1 or revival[0].get("id") != REVIVAL_NIGHT_EVENT["id"]:
+        raise SystemExit(f"Revival Night dedupe failed: {[event.get('id') for event in revival]}")
+    for field in ("artists", "startTime", "endTime", "doorsTime", "venue", "address", "city", "ticketUrl", "image"):
+        if revival[0].get(field) != REVIVAL_NIGHT_EVENT[field]:
+            raise SystemExit(f"Revival Night verified {field} regressed")
+
     image_targets = [event for event in combined if str(event.get("id") or "") in VERIFIED_EVENT_IMAGES]
     if len({str(event.get("id")) for event in image_targets}) != len(VERIFIED_EVENT_IMAGES):
         raise SystemExit("Verified Sep 11 event-image coverage is incomplete")
@@ -196,7 +301,7 @@ def apply(root: Path) -> None:
         apply_phase2()
         check_phase2()
 
-    print("Verified Parris Chariz Dallas lineup/dedupe, four Kaden Jordan tour dates, and Sep 11 event images are pinned.")
+    print("Verified Parris Chariz Dallas lineup/dedupe, Revival Night, four Kaden Jordan tour dates, and Sep 11 event images are pinned.")
 
 
 def main() -> None:
