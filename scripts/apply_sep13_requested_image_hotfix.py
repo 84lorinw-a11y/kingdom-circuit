@@ -116,6 +116,64 @@ NEW_MAINSTREAM = {
     },
 }
 
+USER_EVENTS = {
+    "light-in-the-darkness-phoenix-2026": {
+        "title": "Light in the Darkness",
+        "startDate": "2026-10-31",
+        "startTime": "16:00",
+        "endTime": "21:30",
+        "doorsTime": "15:00",
+        "timezone": "America/Phoenix",
+        "venue": "South Mountain Activity Complex",
+        "address": "10401 S Central Ave",
+        "city": "Phoenix",
+        "state": "AZ",
+        "country": "US",
+        "artists": ["Jon Keith"],
+        "headliner": "Jon Keith",
+        "eventType": "concert",
+        "status": "scheduled",
+        "ticketUrl": "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343",
+        "officialUrl": "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343",
+        "image": "https://is1-ssl.mzstatic.com/image/thumb/Video211/v4/71/0c/9c/710c9c39-3dc7-0be5-a593-ab0ffc2fa618/Jobd846f8ea-4135-4580-8d0d-ed8f3cbb1f2a-190112036-PreviewImage_Preview_Image_Intermediate_nonvideo_372260380_2119658910-Time1744403657806.png/1200x675mv.webp",
+        "imageType": "artist",
+        "imagePosition": "center",
+        "imageOverride": False,
+        "price": "Free",
+        "lineupExplicit": True,
+        "advertisedBilling": ["Jon Keith", "Grace Graber", "trtle", "HLYVRS31", "CHVNCELLOR", "CHVRCHS62", "Adam Verdi"],
+        "authority": "venue_ticket",
+        "confidence": "high",
+        "sourceName": "Official Eventbrite listing",
+        "sources": [
+            {
+                "name": "Official Eventbrite listing",
+                "url": "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343",
+                "type": "eventbrite",
+                "authority": "venue_ticket",
+                "priority": 112,
+            },
+            {
+                "name": "City of Phoenix venue listing",
+                "url": "https://www.phoenix.gov/calendar/parks-events/south-mountain-grand-opening-.html",
+                "type": "manual_verified",
+                "authority": "venue",
+                "priority": 86,
+            },
+            {
+                "name": "Bandsintown event listing",
+                "url": "https://www.bandsintown.com/e/108849019-trtle-at-south-mountain-activity-complex",
+                "type": "manual_verified",
+                "authority": "artist_calendar",
+                "priority": 76,
+            },
+        ],
+        "ageRestriction": "Under 18 with parent or legal guardian",
+        "notes": "Free public event. Official ticket page lists doors at 3:00 PM and event hours 4:00–9:30 PM. User-provided organizer flyer confirms Jon Keith as the featured headliner.",
+        "auditVerified": "2026-09-14",
+    },
+}
+
 
 def _source_urls(row: dict) -> set[str]:
     values = {str(row.get("officialUrl") or "")}
@@ -164,6 +222,31 @@ def _repair_new_mainstream(rows: list[dict], manual: bool) -> None:
         raise SystemExit("New Mainstream Florida records must not expose a generic tour page as a direct ticket URL")
 
 
+def _repair_user_events(rows: list[dict], manual: bool) -> None:
+    for event_id, event in USER_EVENTS.items():
+        official = str(event.get("officialUrl") or "")
+        date = event.get("startDate")
+        city = str(event.get("city") or "").casefold()
+        title = str(event.get("title") or "").casefold()
+
+        def is_target(row: dict) -> bool:
+            key = str(row.get("id") or "").removeprefix("manual:")
+            if key == event_id:
+                return True
+            if official and official in _source_urls(row):
+                return True
+            return (
+                row.get("startDate") == date
+                and str(row.get("city") or "").casefold() == city
+                and str(row.get("title") or "").casefold() == title
+            )
+
+        rows[:] = [row for row in rows if not is_target(row)]
+        value = dict(event)
+        value["id"] = event_id if manual else f"manual:{event_id}"
+        rows.append(value)
+
+
 def apply_requested_image_hotfix() -> None:
     # Sep. 13 requested additions are durable only in config/manual-events.json.
     # events.json is the generated/runtime copy. supplemental-events.json must not
@@ -173,6 +256,7 @@ def apply_requested_image_hotfix() -> None:
         rows = json.loads(path.read_text(encoding="utf-8"))
         manual = rel == "config/manual-events.json"
         _repair_new_mainstream(rows, manual)
+        _repair_user_events(rows, manual)
 
         changed = 0
         for row in rows:
