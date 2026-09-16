@@ -1,0 +1,111 @@
+name: Add Echo Nights 26 once
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/add-echo-nights-26-once.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  add-event:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Add verified Echo Nights 26 event
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          root = Path('.')
+          events_path = root / 'events.json'
+          supplemental_path = root / 'supplemental-events.json'
+
+          events = json.loads(events_path.read_text(encoding='utf-8'))
+          supplemental = json.loads(supplemental_path.read_text(encoding='utf-8'))
+
+          verified_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z')
+          kijan_image = ''
+          kijan_position = 'center'
+          for existing in events:
+              if 'Kijan Boone' in existing.get('artists', []) and existing.get('image'):
+                  kijan_image = existing.get('image', '')
+                  kijan_position = existing.get('imagePosition', 'center')
+                  break
+
+          event = {
+              'id': 'manual:ticketspice:echo-nights-26-brookfield-2026',
+              'title': 'ECHO Nights 26',
+              'startDate': '2026-10-02',
+              'startTime': '18:30',
+              'timezone': 'America/Chicago',
+              'venue': 'Elmbrook Church',
+              'address': '777 S Barker Rd',
+              'city': 'Brookfield',
+              'state': 'WI',
+              'country': 'US',
+              'artists': ['Kijan Boone', 'Austin Joyce', 'VVS Big Rock', 'Kaymilinn', 'DJ Bryce G'],
+              'headliner': 'Kijan Boone',
+              'eventType': 'concert',
+              'status': 'scheduled',
+              'ticketUrl': 'https://atkministry.ticketspice.com/echo-nights-26',
+              'officialUrl': 'https://atkministry.ticketspice.com/echo-nights-26',
+              'image': kijan_image,
+              'imageType': 'artist' if kijan_image else 'fallback',
+              'imagePosition': kijan_position,
+              'price': '',
+              'sourceName': 'ATK Ministry official TicketSpice listing',
+              'authority': 'official_event',
+              'confidence': 'high',
+              'lineupExplicit': True,
+              'lastVerified': verified_at,
+              'firstSeen': verified_at,
+              'sources': [
+                  {
+                      'name': 'ATK Ministry official TicketSpice listing',
+                      'url': 'https://atkministry.ticketspice.com/echo-nights-26',
+                      'type': 'manual_verified',
+                      'authority': 'official_event',
+                      'priority': 112
+                  }
+              ]
+          }
+
+          def same_event(item):
+              if item.get('id') == event['id']:
+                  return True
+              return (
+                  item.get('startDate') == event['startDate'] and
+                  str(item.get('city', '')).strip().lower() == 'brookfield' and
+                  str(item.get('title', '')).strip().lower() in {'echo nights', 'echo nights 26', "echo nights '26", 'echo nights ’26'}
+              )
+
+          supplemental = [item for item in supplemental if not same_event(item)]
+          events = [item for item in events if not same_event(item)]
+          supplemental.append(event)
+          events.append(event)
+
+          supplemental.sort(key=lambda x: (x.get('startDate', ''), x.get('startTime', ''), x.get('title', '')))
+          events.sort(key=lambda x: (x.get('startDate', ''), x.get('startTime', ''), x.get('title', '')))
+
+          supplemental_path.write_text(json.dumps(supplemental, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          events_path.write_text(json.dumps(events, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          PY
+
+      - name: Commit event and remove one-time workflow
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/add-echo-nights-26-once.yml
+          git add events.json supplemental-events.json
+          git commit -m "feat: add ECHO Nights 26"
+          git push origin HEAD:main
