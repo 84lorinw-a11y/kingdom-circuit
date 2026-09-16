@@ -27,11 +27,21 @@ FASTIVALLE_ID = "official:ea0342f4771e9f9f1dfc"
 FASTIVALLE_URL = "https://music.apple.com/us/concerts/ce.7570f0f7-b826-4400-a6f0-034778e98568"
 KINGDOM_CHOICE_ID = "official:64bbcd477c3a36104df3"
 KINGDOM_CHOICE_URL = "https://www.queenstheatre.org/events/kingdom-choice-awards-2026-dqr9"
+ZAUNTEE_TOUR_IMAGE = "assets/artists/zauntee.webp"
+ZAUNTEE_TOUR_IMAGE_SOURCE = "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE"
 ZAUNTEE_MERGES = {
     "supplemental:skema-boy-2026-11-01-new-york-ny": ("ticketmaster:k7vGF_CBswXt6", "17:00", "18:30", "https://mercuryeastpresents.com/tm-event/zauntee-god-remembers-tour/"),
     "supplemental:skema-boy-2026-11-08-atlanta-ga": ("ticketmaster:vvG1zZ_ClQMRrF", "19:00", "20:00", "https://www.masqueradeatlanta.com/events/zauntee/"),
     "supplemental:skema-boy-2026-11-19-los-angeles-ca": ("ticketmaster:vvG10Z_CMA3B0H", "21:30", "22:00", "https://themoroccan.com/tm-event/zauntee-god-remembers-tour/"),
 }
+
+
+def _is_zauntee_tour(event: dict) -> bool:
+    artists = {str(name).casefold() for name in event.get("artists", [])}
+    return (
+        "god remembers tour" in str(event.get("title") or "").casefold()
+        and {"zauntee", "skema boy"}.issubset(artists)
+    )
 
 
 def load(path: Path) -> list[dict]:
@@ -175,6 +185,7 @@ def apply() -> dict[str, int]:
         "kingdomChoiceRecords": 0,
         "zaunteeCanonicalRecords": 0,
         "zaunteeRetiredRecords": 0,
+        "zaunteeTourImages": 0,
     }
     cancellation_source = {
         "name": "Official Eventbrite cancellation notice",
@@ -225,6 +236,16 @@ def apply() -> dict[str, int]:
 
         by_id = {event.get("id"): event for event in rows}
         for event in rows:
+            if _is_zauntee_tour(event):
+                event["image"] = ZAUNTEE_TOUR_IMAGE
+                event["imageType"] = "artist"
+                event["imagePosition"] = "center"
+                event["imageOverride"] = True
+                event["imageSource"] = "Official Ticketmaster God Remembers Tour portrait"
+                event["imageSourceUrl"] = ZAUNTEE_TOUR_IMAGE_SOURCE
+                report["zaunteeTourImages"] += 1
+                changed = True
+
             if event.get("id") == FAITH_JAM_ID:
                 artists = event.setdefault("artists", [])
                 if "Brother Bo" not in artists:
@@ -335,6 +356,16 @@ def check() -> None:
                 raise SystemExit(f"Zauntee canonical merge is incomplete in {path}: {canonical_id}")
             if retired and (retired.get("status") != "merged" or retired.get("mergedIntoId") != canonical_id):
                 raise SystemExit(f"Zauntee duplicate is not retired in {path}: {retired_id}")
+        zauntee_tour = [event for event in rows if _is_zauntee_tour(event)]
+        if zauntee_tour and not all(
+            event.get("image") == ZAUNTEE_TOUR_IMAGE
+            and event.get("imageType") == "artist"
+            and event.get("imagePosition") == "center"
+            and event.get("imageOverride") is True
+            and event.get("imageSourceUrl") == ZAUNTEE_TOUR_IMAGE_SOURCE
+            for event in zauntee_tour
+        ):
+            raise SystemExit(f"Zauntee tour image is not durable in {path}")
 
 
 def main() -> int:

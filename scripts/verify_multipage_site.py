@@ -146,11 +146,19 @@ if len({e["id"] for e in supp}) != len(supp):
 
 # These records are pruned as their tour dates pass, so verify the remaining
 # Skema Boy dates instead of requiring the historical full-tour count forever.
-skema_events = [e for e in supp if "Skema Boy" in e.get("artists", [])]
+skema_events = [
+    e for e in [*events, *supp]
+    if "god remembers tour" in str(e.get("title") or "").casefold()
+    and {"zauntee", "skema boy"}.issubset(
+        {str(name).casefold() for name in e.get("artists", [])}
+    )
+]
 if not all(e.get("headliner") == "Zauntee" for e in skema_events):
     raise SystemExit("A remaining Skema Boy tour event is missing Zauntee as headliner")
 if not all(str(e.get("image") or "").endswith("assets/artists/zauntee.webp") for e in skema_events):
     raise SystemExit("A remaining Skema Boy tour event is missing the Zauntee image")
+if not all(e.get("imageType") == "artist" and e.get("imagePosition") == "center" for e in skema_events):
+    raise SystemExit("A remaining Zauntee tour event has inconsistent image presentation")
 
 # Hope Fest is an historical regression check. Once its date has passed, the
 # permanent past-event pruner intentionally removes it from the live artifact.

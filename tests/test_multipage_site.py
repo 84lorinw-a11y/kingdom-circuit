@@ -108,6 +108,29 @@ class MultiPageProductionTests(unittest.TestCase):
             hashlib.sha256(payload).hexdigest(),
         )
 
+    def test_every_zauntee_god_remembers_record_uses_one_safe_image(self):
+        records = []
+        for filename in ("events.json", "supplemental-events.json"):
+            records.extend(json.loads((ROOT / filename).read_text(encoding="utf-8")))
+        tour = [
+            event for event in records
+            if "god remembers tour" in event.get("title", "").casefold()
+            and {"zauntee", "skema boy"}.issubset(
+                {str(name).casefold() for name in event.get("artists", [])}
+            )
+        ]
+
+        self.assertGreaterEqual(len(tour), 17)
+        for event in tour:
+            self.assertEqual("assets/artists/zauntee.webp", event.get("image"))
+            self.assertEqual("artist", event.get("imageType"))
+            self.assertEqual("center", event.get("imagePosition"))
+            self.assertIs(event.get("imageOverride"), True)
+            self.assertEqual(
+                "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE",
+                event.get("imageSourceUrl"),
+            )
+
     def test_yung_kriss_event_artwork_is_high_resolution_and_pinned(self):
         events = json.loads((ROOT / "events.json").read_text(encoding="utf-8"))
         expected = {

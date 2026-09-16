@@ -3660,7 +3660,7 @@
     "status": "onsale",
     "ticketUrl": "https://www.ticketmaster.com/zauntee-god-remembers-tour-new-york-new-york-11-01-2026/event/000064EEB1CBEA47",
     "officialUrl": "https://mercuryeastpresents.com/tm-event/zauntee-god-remembers-tour/",
-    "image": "https://s1.ticketm.net/dam/a/b43/5480ca83-aa5c-4c4d-a0dd-861df5909b43_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+    "image": "assets/artists/zauntee.webp",
     "price": "",
     "sourceName": "Official venue event page",
     "sources": [
@@ -3681,7 +3681,7 @@
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
-    "imageType": "event_artwork",
+    "imageType": "artist",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
@@ -3691,7 +3691,10 @@
       "supplemental:skema-boy-2026-11-01-new-york-ny"
     ],
     "ageRestriction": "18+",
-    "notes": "Official venue listing specifies an 18+ age restriction."
+    "notes": "Official venue listing specifies an 18+ age restriction.",
+    "imageOverride": true,
+    "imageSource": "Official Ticketmaster God Remembers Tour portrait",
+    "imageSourceUrl": "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE"
   },
   {
     "id": "manual:808-beezy-bandsintown-108856031",
@@ -3751,7 +3754,7 @@
     "status": "onsale",
     "ticketUrl": "https://www.ticketmaster.com/zauntee-god-remembers-tour-charlotte-north-carolina-11-04-2026/event/2D0064EAD47E56BE",
     "officialUrl": "https://www.ticketmaster.com/zauntee-god-remembers-tour-charlotte-north-carolina-11-04-2026/event/2D0064EAD47E56BE",
-    "image": "https://s1.ticketm.net/dam/e/469/2bdeed77-2e07-4508-b784-a2c850c22469_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+    "image": "assets/artists/zauntee.webp",
     "price": "",
     "sourceName": "Ticketmaster",
     "sources": [
@@ -3765,10 +3768,13 @@
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
-    "imageType": "event_artwork",
+    "imageType": "artist",
     "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "imageOverride": true,
+    "imageSource": "Official Ticketmaster God Remembers Tour portrait",
+    "imageSourceUrl": "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE"
   },
   {
     "title": "New Mainstream Tour — Miles Minnick, Tommy Zuko & CJ Emulous",
@@ -4078,7 +4084,7 @@
     "status": "onsale",
     "ticketUrl": "https://www.ticketmaster.com/zauntee-god-remembers-tour-atlanta-georgia-11-08-2026/event/0E0064EADADEF788",
     "officialUrl": "https://www.masqueradeatlanta.com/events/zauntee/",
-    "image": "https://s1.ticketm.net/dam/a/b43/5480ca83-aa5c-4c4d-a0dd-861df5909b43_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+    "image": "assets/artists/zauntee.webp",
     "price": "",
     "sourceName": "Official venue event page",
     "sources": [
@@ -4099,7 +4105,7 @@
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
-    "imageType": "event_artwork",
+    "imageType": "artist",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
@@ -4107,7 +4113,10 @@
     "performanceTime": "20:00",
     "mergedIds": [
       "supplemental:skema-boy-2026-11-08-atlanta-ga"
-    ]
+    ],
+    "imageOverride": true,
+    "imageSource": "Official Ticketmaster God Remembers Tour portrait",
+    "imageSourceUrl": "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE"
   },
   {
     "id": "manual:kaden-jordan-2026-11-13-orlando",
@@ -4294,7 +4303,7 @@
     "status": "onsale",
     "ticketUrl": "https://www.ticketmaster.com/zauntee-god-remembers-tour-los-angeles-california-11-19-2026/event/090064EDC54BA93C",
     "officialUrl": "https://themoroccan.com/tm-event/zauntee-god-remembers-tour/",
-    "image": "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE",
+    "image": "assets/artists/zauntee.webp",
     "price": "",
     "sourceName": "Official venue event page",
     "sources": [
@@ -4315,7 +4324,7 @@
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
-    "imageType": "event_artwork",
+    "imageType": "artist",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
@@ -4323,7 +4332,10 @@
     "performanceTime": "22:00",
     "mergedIds": [
       "supplemental:skema-boy-2026-11-19-los-angeles-ca"
-    ]
+    ],
+    "imageOverride": true,
+    "imageSource": "Official Ticketmaster God Remembers Tour portrait",
+    "imageSourceUrl": "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE"
   },
   {
     "id": "manual:egr-2026-11-21-bradley-ca",
