@@ -10,12 +10,24 @@ from pathlib import Path
 
 EVENT_ID = "manual:ticketspice:echo-nights-26-brookfield-2026"
 TITLE = "ECHO Nights 26"
-IMAGE = "assets/events/echo-nights-26.jpg"
+IMAGE = "assets/events/echo-nights-26-poster.png"
 PUBLIC_IMAGE = "/" + IMAGE
 ABSOLUTE_IMAGE = "https://kingdomcircuit.com/" + IMAGE
-IMAGE_SHA256 = "39932408e919ac878f1be5c35205f563302aec26648a9570398d80b3ae66e2ab"
+IMAGE_SHA256 = "f5c33b0bc686decdd307d8f7b0af34822944bcecbc880acca4e91612caca79b1"
 TICKET_URL = "https://atkministry.ticketspice.com/echo-nights-26"
+IMAGE_SOURCE_URL = (
+    "https://cdn.uploads.webconnex.com/147702/"
+    "echo%20nights%20promo%20poster%203%20%281%29.png"
+)
 SOURCE_FILES = ("events.json", "supplemental-events.json")
+PRIVATE_FIELDS = (
+    "imageSource",
+    "imageSourceUrl",
+    "sourceName",
+    "authority",
+    "confidence",
+    "notes",
+)
 CARD_RE = re.compile(
     r'<article\b(?=[^>]*class=["\'][^"\']*\bevent-card\b[^"\']*["\'])[^>]*>.*?</article>',
     re.I | re.S,
@@ -43,8 +55,8 @@ def pin_img(tag: str) -> str:
     tag = set_attr(tag, "src", PUBLIC_IMAGE)
     tag = remove_attr(tag, "srcset")
     tag = remove_attr(tag, "sizes")
-    tag = set_attr(tag, "width", "640")
-    tag = set_attr(tag, "height", "906")
+    tag = set_attr(tag, "width", "1054")
+    tag = set_attr(tag, "height", "1492")
     tag = set_attr(tag, "style", "object-position:center top")
     classes = re.search(r'\bclass=(["\'])([^"\']*)\1', tag, re.I)
     if classes:
@@ -157,6 +169,7 @@ def patch_html(root: Path) -> int:
 def enforce_json(root: Path) -> int:
     repaired = 0
     found = 0
+    public_artifact = root.name == "_site" or (root / "seo-build-manifest.json").is_file()
     for filename in SOURCE_FILES:
         path = root / filename
         if not path.is_file():
@@ -170,7 +183,7 @@ def enforce_json(root: Path) -> int:
 
         found += 1
         event = matches[0]
-        event.update({
+        updates = {
             "title": TITLE,
             "startDate": "2026-10-02",
             "startTime": "19:00",
@@ -190,14 +203,21 @@ def enforce_json(root: Path) -> int:
             "imageType": "event_artwork",
             "imagePosition": "center top",
             "imageOverride": True,
-            "imageSource": "Official ATK Ministry ECHO Nights 26 collage artwork",
-            "imageSourceUrl": TICKET_URL,
-            "sourceName": "Official TicketSpice listing",
-            "authority": "venue_ticket",
-            "confidence": "high",
             "lineupExplicit": True,
-            "notes": "Doors 6 PM; show 7 PM; all ages welcome. Official ATK Ministry collage artwork locked for this listing.",
-        })
+        }
+        if public_artifact:
+            for field in PRIVATE_FIELDS:
+                event.pop(field, None)
+        else:
+            updates.update({
+                "imageSource": "Official ATK Ministry TicketSpice gallery poster",
+                "imageSourceUrl": IMAGE_SOURCE_URL,
+                "sourceName": "Official TicketSpice listing",
+                "authority": "venue_ticket",
+                "confidence": "high",
+                "notes": "Doors 6 PM; show 7 PM; all ages welcome. Official ATK Ministry portrait event poster locked for this listing.",
+            })
+        event.update(updates)
         path.write_text(json.dumps(events, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         repaired += 1
         print(f"ECHO Nights 26 repaired in {filename} with official artwork: {IMAGE}")
