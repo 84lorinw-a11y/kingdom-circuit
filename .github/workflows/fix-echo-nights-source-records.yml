@@ -1,0 +1,79 @@
+name: Fix Echo Nights 26 source records
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/echo-nights-source-records-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  fix-echo-source-records:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Pin official Echo Nights artwork in all event sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s assets/events/echo-nights-26.png
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          EVENT_ID = 'manual:ticketspice:echo-nights-26-brookfield-2026'
+          OFFICIAL = 'https://atkministry.ticketspice.com/echo-nights-26'
+          ART = 'assets/events/echo-nights-26.png'
+          required = ['events.json', 'supplemental-events.json']
+
+          for filename in required:
+              path = Path(filename)
+              rows = json.loads(path.read_text(encoding='utf-8'))
+              matches = [row for row in rows if row.get('id') == EVENT_ID]
+              if len(matches) != 1:
+                  raise SystemExit(f'{filename}: expected one Echo Nights record, found {len(matches)}')
+              event = matches[0]
+              event['image'] = ART
+              event['imageType'] = 'event_artwork'
+              event['imagePosition'] = 'center top'
+              event['imageOverride'] = True
+              event['imageSource'] = 'ATK Ministry official TicketSpice artwork'
+              event['imageSourceUrl'] = OFFICIAL
+              event['ticketUrl'] = OFFICIAL
+              event['officialUrl'] = OFFICIAL
+              path.write_text(json.dumps(rows, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+              print(f'Pinned Echo Nights official artwork in {filename}')
+          PY
+
+      - name: Commit corrected source records
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'kingdom-circuit-bot'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add events.json supplemental-events.json assets/events/echo-nights-26.png
+          if git diff --cached --quiet; then
+            echo 'Echo Nights source records already correct.'
+            exit 0
+          fi
+          git commit -m 'fix: pin official Echo Nights artwork in all sources'
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            git fetch origin main
+            git rebase origin/main
+          done
+          exit 1
