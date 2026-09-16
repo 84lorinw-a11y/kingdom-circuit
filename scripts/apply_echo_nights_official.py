@@ -21,6 +21,10 @@ CARD_RE = re.compile(
     re.I | re.S,
 )
 IMG_RE = re.compile(r"<img\b[^>]*>", re.I | re.S)
+MEDIA_RE = re.compile(
+    r'(<div\b[^>]*class=["\'][^"\']*\bevent-detail-media\b[^"\']*["\'][^>]*>)(.*?)(</div>)',
+    re.I | re.S,
+)
 
 
 def set_attr(tag: str, name: str, value: str) -> str:
@@ -53,6 +57,25 @@ def pin_img(tag: str) -> str:
     return tag
 
 
+def patch_media_block(text: str, page: Path) -> tuple[str, bool]:
+    media = MEDIA_RE.search(text)
+    if not media:
+        raise SystemExit(f"ECHO Nights event detail media missing: {page}")
+    inner, count = IMG_RE.subn(lambda image_match: pin_img(image_match.group(0)), media.group(2), count=1)
+    if not count:
+        raise SystemExit(f"ECHO Nights event detail image missing: {page}")
+    # Keep the full-size click target on the same official poster source.
+    inner = re.sub(
+        r'(<a\b(?=[^>]*class=["\'][^"\']*\bevent-image-enlarge\b[^"\']*["\'])[^>]*\bhref=)(["\']).*?\2',
+        lambda match: match.group(1) + '"' + PUBLIC_IMAGE + '"',
+        inner,
+        count=1,
+        flags=re.I | re.S,
+    )
+    replacement = media.group(1) + inner + media.group(3)
+    return text[:media.start()] + replacement + text[media.end():], True
+
+
 def patch_html(root: Path) -> int:
     changed_pages = 0
     verified_occurrences = 0
@@ -81,16 +104,7 @@ def patch_html(root: Path) -> int:
             if h1 else ""
         )
         if detail_title == TITLE:
-            media = re.search(
-                r'(<div\b[^>]*class=["\'][^"\']*\bevent-detail-media\b[^"\']*["\'][^>]*>\s*)(<img\b[^>]*>)',
-                text,
-                re.I | re.S,
-            )
-            if not media:
-                raise SystemExit(f"ECHO Nights event detail image missing: {page}")
-            replacement = media.group(1) + pin_img(media.group(2))
-            text = text[:media.start()] + replacement + text[media.end():]
-            event_detail_seen = True
+            text, event_detail_seen = patch_media_block(text, page)
             verified_occurrences += 1
 
             script_re = re.compile(r'(<script[^>]+type=["\']application/ld\+json["\'][^>]*>)(.*?)(</script>)', re.I | re.S)
@@ -127,8 +141,12 @@ def patch_html(root: Path) -> int:
                 if TITLE in html.unescape(block) and PUBLIC_IMAGE not in html.unescape(block):
                     stale.append(str(page.relative_to(root)))
             if page.parent.parent == root / "event" and re.search(rf"<h1\b[^>]*>\s*{re.escape(TITLE)}\s*</h1>", html.unescape(text), re.I):
-                media = re.search(r'<div\b[^>]*class=["\'][^"\']*\bevent-detail-media\b[^"\']*["\'][^>]*>\s*(<img\b[^>]*>)', text, re.I | re.S)
-                if not media or PUBLIC_IMAGE not in html.unescape(media.group(1)):
+                media = MEDIA_RE.search(text)
+                if not media:
+                    stale.append(str(page.relative_to(root)))
+                    continue
+                image = IMG_RE.search(media.group(2))
+                if not image or PUBLIC_IMAGE not in html.unescape(image.group(0)):
                     stale.append(str(page.relative_to(root)))
         if stale:
             raise SystemExit("ECHO Nights official artwork did not survive final HTML pin: " + ", ".join(stale[:12]))
