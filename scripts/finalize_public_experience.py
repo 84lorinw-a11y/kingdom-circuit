@@ -12,6 +12,7 @@ import subprocess
 import sys
 from typing import Any
 
+import apply_echo_nights_official
 import apply_public_audit_repairs
 import apply_public_ux_repairs
 import optimize_public_images
@@ -124,6 +125,11 @@ def finalize_public_experience(site: Path) -> dict[str, Any]:
 
     audit_repairs = apply_public_audit_repairs.apply_repairs(site)
 
+    # This is the final authoritative event-artwork write before responsive
+    # image generation. Any earlier generic repair can run, but the optimizer
+    # must receive the verified ATK poster as the ECHO Nights source image.
+    echo_nights = apply_echo_nights_official.apply(site)
+
     image_backend = ensure_image_backend()
     remote_images = is_production_workflow() or env_enabled("KC_PUBLIC_IMAGE_REMOTE")
     if env_enabled("KC_PUBLIC_IMAGE_OFFLINE"):
@@ -175,6 +181,7 @@ def finalize_public_experience(site: Path) -> dict[str, Any]:
         "imageBackendReady": image_backend,
         "auditChecks": audit.checks,
         "auditRepairs": audit_repairs.get("repairs", {}),
+        "echoNightsOfficialPin": echo_nights,
         "ux": ux_repairs,
         "uxVerification": ux_totals,
         "javascriptChecked": javascript,
