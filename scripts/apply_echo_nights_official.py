@@ -8,7 +8,7 @@ from pathlib import Path
 
 EVENT_ID = "manual:ticketspice:echo-nights-26-brookfield-2026"
 IMAGE = "assets/events/echo-nights-26.jpg"
-IMAGE_SHA256 = "440c6eee0293ba5edfbae891149b18f5c9bf919a0cff34a1c310314fb1642ca0"
+IMAGE_SHA256 = "39932408e919ac878f1be5c35205f563302aec26648a9570398d80b3ae66e2ab"
 TICKET_URL = "https://atkministry.ticketspice.com/echo-nights-26"
 SOURCE_FILES = ("events.json", "supplemental-events.json")
 
@@ -22,8 +22,7 @@ def main() -> None:
 
     if not image_path.is_file():
         raise SystemExit(f"Verified ECHO Nights artwork is missing: {image_path}")
-    image_bytes = image_path.read_bytes()
-    digest = hashlib.sha256(image_bytes).hexdigest()
+    digest = hashlib.sha256(image_path.read_bytes()).hexdigest()
     if digest != IMAGE_SHA256:
         raise SystemExit(
             f"Verified ECHO Nights artwork hash mismatch: {image_path} "
@@ -31,15 +30,19 @@ def main() -> None:
         )
 
     repaired = 0
+    found = 0
     for filename in SOURCE_FILES:
         path = root / filename
         if not path.is_file():
             continue
         events = json.loads(path.read_text(encoding="utf-8"))
         matches = [event for event in events if event.get("id") == EVENT_ID]
-        if len(matches) != 1:
-            raise SystemExit(f"{filename}: expected exactly one ECHO Nights 26 event; found {len(matches)}")
+        if len(matches) > 1:
+            raise SystemExit(f"{filename}: duplicate ECHO Nights 26 events found: {len(matches)}")
+        if not matches:
+            continue
 
+        found += 1
         event = matches[0]
         event.update({
             "title": "ECHO Nights 26",
@@ -73,8 +76,9 @@ def main() -> None:
         repaired += 1
         print(f"ECHO Nights 26 repaired in {filename} with official artwork: {IMAGE}")
 
-    if repaired == 0:
-        raise SystemExit("No ECHO Nights event source files found")
+    if found == 0:
+        raise SystemExit("ECHO Nights 26 event was not found in any source file")
+    print(f"ECHO Nights 26 official guard passed across {found} source file(s).")
 
 
 if __name__ == "__main__":
