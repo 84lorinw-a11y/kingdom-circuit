@@ -93,8 +93,8 @@ def patch_html(root: Path) -> int:
             event_detail_seen = True
             verified_occurrences += 1
 
-            # Keep structured event metadata on the same authoritative poster.
             script_re = re.compile(r'(<script[^>]+type=["\']application/ld\+json["\'][^>]*>)(.*?)(</script>)', re.I | re.S)
+
             def schema_repl(match: re.Match[str]) -> str:
                 try:
                     payload = json.loads(match.group(2))
@@ -105,6 +105,7 @@ def patch_html(root: Path) -> int:
                     encoded = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
                     return match.group(1) + encoded + match.group(3)
                 return match.group(0)
+
             text = script_re.sub(schema_repl, text)
 
         if text != original:
@@ -188,13 +189,9 @@ def enforce_json(root: Path) -> int:
     return repaired
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--site", default=".", help="Repository/site root to repair")
-    args = parser.parse_args()
-    root = Path(args.site).resolve()
+def apply(root: Path) -> dict[str, int]:
+    root = root.resolve()
     image_path = root / IMAGE
-
     if not image_path.is_file():
         raise SystemExit(f"Verified ECHO Nights artwork is missing: {image_path}")
     digest = hashlib.sha256(image_path.read_bytes()).hexdigest()
@@ -206,7 +203,19 @@ def main() -> None:
 
     repaired = enforce_json(root)
     html_pages = patch_html(root)
-    print(f"ECHO Nights 26 official guard passed: {repaired} JSON source file(s), {html_pages} HTML page(s) pinned.")
+    return {"jsonFilesPinned": repaired, "htmlPagesPinned": html_pages}
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--site", default=".", help="Repository/site root to repair")
+    args = parser.parse_args()
+    report = apply(Path(args.site))
+    print(
+        "ECHO Nights 26 official guard passed: "
+        f"{report['jsonFilesPinned']} JSON source file(s), "
+        f"{report['htmlPagesPinned']} HTML page(s) pinned."
+    )
 
 
 if __name__ == "__main__":
