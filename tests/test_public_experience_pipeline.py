@@ -10,9 +10,12 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import apply_public_audit_repairs as audit_repairs  # noqa: E402
+import apply_public_image_repairs as image_repairs  # noqa: E402
 import apply_public_ux_repairs as ux_repairs  # noqa: E402
 import finalize_public_experience as public_pipeline  # noqa: E402
 import finalize_seo_indexing as seo_finalizer  # noqa: E402
+import optimize_public_images as image_optimizer  # noqa: E402
+import verify_public_image_repairs as image_verifier  # noqa: E402
 import verify_public_performance as performance_verifier  # noqa: E402
 import verify_public_ux as ux_verifier  # noqa: E402
 
@@ -74,6 +77,11 @@ class PublicExperiencePipelineTests(unittest.TestCase):
             ".artist-platform-link,\n  .seo-social-link,\n  .seo-social-link-compact,",
             ux_repairs.OVERLAY_CSS,
         )
+        self.assertIn("aspect-ratio: 4 / 3 !important;", ux_repairs.OVERLAY_CSS)
+        self.assertIn(".event-card .event-media img.artist-photo", ux_repairs.OVERLAY_CSS)
+        self.assertIn("object-fit: cover !important;", ux_repairs.OVERLAY_CSS)
+        self.assertIn(".event-card .event-media img.event-artwork", ux_repairs.OVERLAY_CSS)
+        self.assertIn("object-fit: contain !important;", ux_repairs.OVERLAY_CSS)
 
         simplified = '''<html><head><script src="/assets/artist-filter-fix.js?v=5"></script></head>
         <body><main><section data-artist-directory><div class="directory-toolbar">
@@ -117,9 +125,25 @@ class PublicExperiencePipelineTests(unittest.TestCase):
         self.assertEqual(public_pipeline.PUBLIC_BASE, audit_repairs.PUBLIC_BASE)
         self.assertEqual(public_pipeline.PUBLIC_BASE, ux_repairs.PUBLIC_BASE)
         self.assertEqual(public_pipeline.PUBLIC_BASE, ux_verifier.PUBLIC_BASE)
+        self.assertEqual(public_pipeline.PUBLIC_BASE, image_repairs.PUBLIC_BASE)
         self.assertEqual(public_pipeline.PUBLIC_ORIGIN, performance_verifier.DEFAULT_ORIGIN)
         self.assertEqual(public_pipeline.PUBLIC_BASE, performance_verifier.DEFAULT_BASE)
         self.assertEqual("Pillow==12.3.0", public_pipeline.PINNED_PILLOW)
+
+    def test_image_pipeline_preserves_focal_metadata_before_optimization(self):
+        source = (ROOT / "scripts" / "finalize_public_experience.py").read_text(
+            encoding="utf-8"
+        )
+        focal = "apply_public_image_repairs.apply(site, focal_only=True)"
+        optimize = "optimize_public_images.main(optimizer_args)"
+        presentation = "apply_public_image_repairs.apply(site)"
+        verify = "verify_public_image_repairs.verify(site)"
+        self.assertLess(source.index(focal), source.index(optimize))
+        self.assertLess(source.index(optimize), source.index(presentation))
+        self.assertLess(source.index(presentation), source.index(verify))
+        self.assertEqual((320, 640, 960, 1280), image_optimizer.DEFAULT_WIDTHS)
+        self.assertEqual(image_repairs.CARD_SIZES, image_optimizer.CARD_SIZES)
+        self.assertIsNotNone(image_verifier.verify)
 
     def test_production_security_policy_preserves_analytics(self):
         self.assertIn("https://www.googletagmanager.com", audit_repairs.CSP)

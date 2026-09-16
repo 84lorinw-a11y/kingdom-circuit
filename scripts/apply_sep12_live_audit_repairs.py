@@ -2,15 +2,19 @@
 """Durable, source-backed repairs confirmed by the September 12, 2026 audit."""
 from __future__ import annotations
 
+from copy import deepcopy
 import json
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+EVENTS_FILE = ROOT / "events.json"
+SUPPLEMENTAL_EVENTS_FILE = ROOT / "supplemental-events.json"
+MANUAL_EVENTS_FILE = ROOT / "config" / "manual-events.json"
 EVENT_FILES = (
-    ROOT / "events.json",
-    ROOT / "supplemental-events.json",
-    ROOT / "config" / "manual-events.json",
+    EVENTS_FILE,
+    SUPPLEMENTAL_EVENTS_FILE,
+    MANUAL_EVENTS_FILE,
 )
 RARE_EVENTBRITE_ID = "1986268845586"
 RARE_CANCEL_URL = "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586"
@@ -48,11 +52,70 @@ def append_source(event: dict, source: dict) -> None:
 
 
 def _is_rare(event: dict) -> bool:
-    return RARE_EVENTBRITE_ID in json.dumps(event, ensure_ascii=False)
+    return (
+        _normalized_id(event) == RARE_CANONICAL_ID
+        or RARE_EVENTBRITE_ID in json.dumps(event, ensure_ascii=False)
+    )
 
 
 def _normalized_id(event: dict) -> str:
     return str(event.get("id") or "").removeprefix("manual:")
+
+
+def authoritative_rare(rows: list[dict]) -> dict:
+    """Return the single source-backed cancellation record or fail closed."""
+    matches = [event for event in rows if _is_rare(event)]
+    if len(matches) != 1:
+        raise SystemExit(
+            f"Expected exactly one authoritative Rare of Breed cancellation in {MANUAL_EVENTS_FILE}"
+        )
+
+    event = matches[0]
+    valid_cancellation_source = any(
+        isinstance(source, dict) and source.get("url") == RARE_CANCEL_URL
+        for source in event.get("sources", [])
+    )
+    if (
+        _normalized_id(event) != RARE_CANONICAL_ID
+        or event.get("status") != "cancelled"
+        or event.get("cancellationConfirmed") is not True
+        or event.get("officialUrl") != RARE_CANCEL_URL
+        or event.get("ticketUrl") != RARE_CANCEL_URL
+        or not valid_cancellation_source
+    ):
+        raise SystemExit(
+            f"Authoritative Rare of Breed cancellation is incomplete in {MANUAL_EVENTS_FILE}"
+        )
+    return event
+
+
+def restore_generated_rare(rows: list[dict], source: dict) -> dict | None:
+    """Restore the cancellation page record removed by the public-event collector."""
+    if any(_is_rare(event) for event in rows):
+        return None
+
+    restored = deepcopy(source)
+    restored["id"] = f"manual:{RARE_CANONICAL_ID}"
+    restored_key = (
+        str(restored.get("startDate") or "9999-12-31"),
+        str(restored.get("startTime") or "23:59"),
+        str(restored.get("title") or "").casefold(),
+    )
+    insert_at = next(
+        (
+            index
+            for index, event in enumerate(rows)
+            if (
+                str(event.get("startDate") or "9999-12-31"),
+                str(event.get("startTime") or "23:59"),
+                str(event.get("title") or "").casefold(),
+            )
+            > restored_key
+        ),
+        len(rows),
+    )
+    rows.insert(insert_at, restored)
+    return restored
 
 
 def consolidate_rare(rows: list[dict]) -> tuple[dict | None, int]:
@@ -105,6 +168,7 @@ def apply() -> dict[str, int]:
     report = {
         "cancelledRecords": 0,
         "rareDuplicatesCollapsed": 0,
+        "rareRecordsRestored": 0,
         "faithJamRecords": 0,
         "mikeTeezyRecords": 0,
         "fastivalleRecords": 0,
@@ -127,16 +191,30 @@ def apply() -> dict[str, int]:
         "priority": 112,
     }
 
+    authoritative = authoritative_rare(load(MANUAL_EVENTS_FILE))
+
     for path in EVENT_FILES:
         rows = load(path)
         rare, collapsed = consolidate_rare(rows)
         changed = collapsed > 0
         report["rareDuplicatesCollapsed"] += collapsed
 
+        if path == EVENTS_FILE and rare is None:
+            rare = restore_generated_rare(rows, authoritative)
+            if rare is not None:
+                report["rareRecordsRestored"] += 1
+                changed = True
+
         if rare:
+            expected_id = f"manual:{RARE_CANONICAL_ID}" if path == EVENTS_FILE else RARE_CANONICAL_ID
+            previous_id = rare.get("id")
+            if previous_id and previous_id != expected_id:
+                rare["mergedIds"] = list(dict.fromkeys([*rare.get("mergedIds", []), previous_id]))
+            rare["id"] = expected_id
             rare["status"] = "cancelled"
             rare["cancellationConfirmed"] = True
             rare["cancellationConfirmedAt"] = "2026-09-12"
+            rare["ticketAvailability"] = "cancelled"
             rare["officialUrl"] = RARE_CANCEL_URL
             rare["ticketUrl"] = RARE_CANCEL_URL
             rare["sourceName"] = "Official Eventbrite cancellation notice"

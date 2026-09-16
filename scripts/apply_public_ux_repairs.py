@@ -10,7 +10,7 @@ import sys
 PUBLIC_BASE = "/"
 CSS_NAME = "site-ux-repairs.css"
 JS_NAME = "site-ux-repairs.js"
-CSS_HREF = f"{PUBLIC_BASE}assets/{CSS_NAME}?v=6"
+CSS_HREF = f"{PUBLIC_BASE}assets/{CSS_NAME}?v=7"
 JS_SRC = f"{PUBLIC_BASE}assets/{JS_NAME}?v=6"
 
 
@@ -97,6 +97,38 @@ body .seo-card-socials .seo-social-link {
   border: 0 !important;
 }
 .kc-correction-note { margin: 0 0 18px; color: #b8b4ac; }
+
+.event-card .event-media {
+  position: relative !important;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  align-self: start;
+  overflow: hidden;
+  background: #090909;
+}
+
+.event-card .event-media img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  background: #090909;
+}
+
+.event-card .event-media img.artist-photo {
+  object-fit: cover !important;
+  padding: 0 !important;
+}
+
+.event-card .event-media img.event-artwork {
+  object-fit: contain !important;
+  padding: 10px !important;
+}
 
 @media (max-width: 900px) {
   .kc-public-directory-toolbar { grid-template-columns: 1fr 1fr !important; }

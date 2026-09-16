@@ -40,7 +40,23 @@ import xml.etree.ElementTree as ET
 
 DEFAULT_BASE = "/"
 DEFAULT_ORIGIN = "https://kingdomcircuit.com"
-DEFAULT_WIDTHS = (320, 640, 960)
+DEFAULT_WIDTHS = (320, 640, 960, 1280)
+CARD_SIZES = (
+    "(max-width: 600px) calc(100vw - 32px), "
+    "(max-width: 900px) calc(100vw - 48px), "
+    "(max-width: 1180px) 40vw, 453px"
+)
+HERO_SIZES = (
+    "(max-width: 600px) calc(100vw - 32px), "
+    "(max-width: 648px) calc(100vw - 48px), "
+    "(max-width: 900px) 600px, "
+    "(max-width: 1180px) 42vw, 475px"
+)
+ARTIST_CARD_SIZES = (
+    "(max-width: 600px) calc(50vw - 21px), "
+    "(max-width: 900px) calc(50vw - 33px), "
+    "(max-width: 1180px) calc(25vw - 25.5px), 270px"
+)
 PUBLIC_JSON_FILES = (
     "events.json",
     "supplemental-events.json",
@@ -767,10 +783,13 @@ def rewrite_html_page(
                     "src": largest.url,
                     "srcset": result.srcset,
                     "sizes": (
-                        "(max-width: 900px) 100vw, 42vw"
+                        HERO_SIZES
                         if occurrence.hero
-                        else occurrence.attr_map.get("sizes")
-                        or "(max-width: 900px) 100vw, 320px"
+                        else CARD_SIZES
+                        if "event-media" in occurrence.context_classes
+                        else ARTIST_CARD_SIZES
+                        if "artist-visual" in occurrence.context_classes
+                        else occurrence.attr_map.get("sizes") or "100vw"
                     ),
                     "width": str(largest.width),
                     "height": str(largest.height),

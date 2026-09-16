@@ -14,9 +14,11 @@ from typing import Any
 
 import apply_echo_nights_official
 import apply_public_audit_repairs
+import apply_public_image_repairs
 import apply_public_ux_repairs
 import optimize_public_images
 import verify_public_audit
+import verify_public_image_repairs
 import verify_public_performance
 import verify_public_ux
 
@@ -130,6 +132,11 @@ def finalize_public_experience(site: Path) -> dict[str, Any]:
     # must receive the verified ATK poster as the ECHO Nights source image.
     echo_nights = apply_echo_nights_official.apply(site)
 
+    # Record focal intent while the original external image URLs are still
+    # available. The optimizer preserves these attributes when it rewrites
+    # sources to opaque local filenames.
+    focal_preparation = apply_public_image_repairs.apply(site, focal_only=True)
+
     image_backend = ensure_image_backend()
     remote_images = is_production_workflow() or env_enabled("KC_PUBLIC_IMAGE_REMOTE")
     if env_enabled("KC_PUBLIC_IMAGE_OFFLINE"):
@@ -149,6 +156,14 @@ def finalize_public_experience(site: Path) -> dict[str, Any]:
         raise RuntimeError(f"Production image optimization failed with status {optimizer_status}")
 
     ux_repairs = apply_public_ux_repairs.apply(site)
+    image_repairs = apply_public_image_repairs.apply(site)
+
+    image_failures, image_totals = verify_public_image_repairs.verify(site)
+    if image_failures:
+        raise RuntimeError(
+            f"Production image verification failed ({len(image_failures)} failures): "
+            + "; ".join(image_failures[:20])
+        )
 
     audit = verify_public_audit.verify_site(site)
     if audit.failures:
@@ -182,6 +197,9 @@ def finalize_public_experience(site: Path) -> dict[str, Any]:
         "auditChecks": audit.checks,
         "auditRepairs": audit_repairs.get("repairs", {}),
         "echoNightsOfficialPin": echo_nights,
+        "imageFocalPreparation": focal_preparation,
+        "imageRepairs": image_repairs,
+        "imageVerification": image_totals,
         "ux": ux_repairs,
         "uxVerification": ux_totals,
         "javascriptChecked": javascript,

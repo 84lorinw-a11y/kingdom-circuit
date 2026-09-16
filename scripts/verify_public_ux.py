@@ -10,7 +10,7 @@ import sys
 PUBLIC_BASE = "/"
 CSS_NAME = "site-ux-repairs.css"
 JS_NAME = "site-ux-repairs.js"
-CSS_HREF = f"{PUBLIC_BASE}assets/{CSS_NAME}?v=6"
+CSS_HREF = f"{PUBLIC_BASE}assets/{CSS_NAME}?v=7"
 JS_SRC = f"{PUBLIC_BASE}assets/{JS_NAME}?v=6"
 
 
