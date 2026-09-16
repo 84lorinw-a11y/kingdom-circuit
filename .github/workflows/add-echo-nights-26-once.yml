@@ -109,3 +109,5 @@ jobs:
           git add events.json supplemental-events.json
           git commit -m "feat: add ECHO Nights 26"
           git push origin HEAD:main
+
+# trigger retry after workflow registration
