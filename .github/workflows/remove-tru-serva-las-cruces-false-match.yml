@@ -5,6 +5,11 @@ on:
     branches: [main]
     paths:
       - .github/workflows/remove-tru-serva-las-cruces-false-match.yml
+  workflow_run:
+    workflows:
+      - Refresh Supplemental Events
+      - Update and deploy show calendar
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -22,18 +27,22 @@ jobs:
         with:
           python-version: "3.12"
       - name: Remove false TRU-SERVA Las Cruces listing
+        id: repair
         run: |
           python - <<'PY'
           import json
+          import os
           from pathlib import Path
 
           FALSE_ID = 'supplemental:tru-serva-truth-tour-las-cruces-2026'
+          changed = False
 
           for file_name in ('supplemental-events.json', 'events.json', 'config/manual-events.json'):
               path = Path(file_name)
               if not path.exists():
                   continue
-              rows = json.loads(path.read_text(encoding='utf-8'))
+              original = path.read_text(encoding='utf-8')
+              rows = json.loads(original)
               before = len(rows)
               rows = [
                   e for e in rows
@@ -49,9 +58,9 @@ jobs:
               if len(rows) != before:
                   path.write_text(json.dumps(rows, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
                   print(f'{file_name}: removed {before - len(rows)} false listing(s)')
+                  changed = True
 
-          # This Las Cruces event is Megan Woods' The Truth Tour, not a TRU-SERVA date.
-          # Keep a durable rejection marker so future audits know why it was removed.
+          # Official sources identify this as Megan Woods' Truth Tour, not a TRU-SERVA date.
           guard = Path('data/verified-false-matches.json')
           guard.parent.mkdir(parents=True, exist_ok=True)
           existing = []
@@ -66,13 +75,20 @@ jobs:
               'date': '2026-10-25',
               'city': 'Las Cruces',
               'state': 'NM',
-              'reason': "False artist match: Real Life Church and Live Nation list Megan Woods' The Truth Tour; TRU-SERVA is not on the official lineup.",
+              'reason': "False artist match: Real Life Church, Megan Woods, Ticketmaster, and Live Nation identify this as Megan Woods' The Truth Tour; TRU-SERVA is not on the official lineup.",
               'officialEventUrl': 'https://www.livenation.com/event/rZ7HnEZ1AfFpGV/megan-woods-the-truth-tour-las-cruces-nm',
               'verified': '2026-09-15'
           }
           existing = [x for x in existing if x.get('key') != marker['key']]
           existing.append(marker)
-          guard.write_text(json.dumps(existing, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          guard_text = json.dumps(existing, indent=2, ensure_ascii=False) + '\n'
+          old_guard = guard.read_text(encoding='utf-8') if guard.exists() else ''
+          if old_guard != guard_text:
+              guard.write_text(guard_text, encoding='utf-8')
+              changed = True
+
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as out:
+              out.write(f'changed={str(changed).lower()}\n')
           PY
       - name: Validate repair
         run: |
@@ -88,17 +104,40 @@ jobs:
               assert not bad, f'{file_name} still contains false TRU-SERVA Las Cruces listing'
           PY
       - name: Commit durable repair
+        if: steps.repair.outputs.changed == 'true'
         run: |
           git config user.name "kingdom-circuit-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add supplemental-events.json events.json config/manual-events.json data/verified-false-matches.json 2>/dev/null || true
-          if git diff --cached --quiet; then
-            echo "Repair already applied."
-          else
+          for attempt in 1 2 3 4 5; do
+            git add supplemental-events.json events.json config/manual-events.json data/verified-false-matches.json 2>/dev/null || true
+            if git diff --cached --quiet; then
+              echo "Repair already applied."
+              exit 0
+            fi
             git commit -m "Remove false TRU-SERVA Las Cruces listing [skip ci]"
-            git push origin HEAD:main
-          fi
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Main moved; retrying repair on latest main (attempt $attempt)."
+            git fetch origin main
+            git reset --hard origin/main
+            python - <<'PY'
+          import json
+          from pathlib import Path
+          FALSE_ID = 'supplemental:tru-serva-truth-tour-las-cruces-2026'
+          for file_name in ('supplemental-events.json', 'events.json', 'config/manual-events.json'):
+              path = Path(file_name)
+              if not path.exists():
+                  continue
+              rows = json.loads(path.read_text(encoding='utf-8'))
+              rows = [e for e in rows if not (str(e.get('id') or '') == FALSE_ID or (str(e.get('title') or '').strip() == 'The Truth Tour — Las Cruces' and str(e.get('startDate') or '') == '2026-10-25' and any(str(a).strip().casefold() == 'tru-serva' for a in (e.get('artists') or []))))]
+              path.write_text(json.dumps(rows, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          PY
+          done
+          echo "Could not push durable repair after retries."
+          exit 1
       - name: Refresh and deploy production
+        if: steps.repair.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run update-and-deploy.yml --ref main
