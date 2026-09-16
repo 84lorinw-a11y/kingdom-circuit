@@ -46,18 +46,15 @@ class ArtistDatabaseSeptember4Tests(unittest.TestCase):
         self.assertEqual(roster_names[54:54 + len(source_names)], source_names)
 
     def test_tru_serva_verified_future_shows_are_present(self):
-        if date.today() > date(2026, 10, 25):
-            self.skipTest("The verified TRU-SERVA dates have passed and may be pruned")
+        if date.today() > date(2026, 10, 9):
+            self.skipTest("The verified TRU-SERVA date has passed and may be pruned")
         shows = {
             event["id"]: event
             for event in self.events
             if "TRU-SERVA" in (event.get("artists") or [])
         }
         self.assertEqual(shows["bandsintown:1040011561"]["startDate"], "2026-10-09")
-        self.assertEqual(
-            shows["supplemental:tru-serva-truth-tour-las-cruces-2026"]["startDate"],
-            "2026-10-25",
-        )
+        self.assertNotIn("supplemental:tru-serva-truth-tour-las-cruces-2026", shows)
 
 
 if __name__ == "__main__":
