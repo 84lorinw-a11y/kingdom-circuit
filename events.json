@@ -2402,9 +2402,9 @@
     "status": "scheduled",
     "ticketUrl": "https://atkministry.ticketspice.com/echo-nights-26",
     "officialUrl": "https://atkministry.ticketspice.com/echo-nights-26",
-    "image": "https://s1.ticketm.net/dam/a/d4e/a49ecab3-089d-46ff-baa5-7942c994ed4e_SOURCE",
-    "imageType": "artist",
-    "imagePosition": "center",
+    "image": "assets/events/echo-nights-26.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center top",
     "price": "",
     "sourceName": "ATK Ministry official TicketSpice listing",
     "authority": "official_event",
@@ -2420,7 +2420,10 @@
         "authority": "official_event",
         "priority": 112
       }
-    ]
+    ],
+    "imageOverride": true,
+    "imageSource": "ATK Ministry official TicketSpice artwork",
+    "imageSourceUrl": "https://atkministry.ticketspice.com/echo-nights-26"
   },
   {
     "id": "manual:let-the-church-sing-tour-dunedin-2026",
