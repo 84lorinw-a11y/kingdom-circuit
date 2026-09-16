@@ -1,0 +1,63 @@
+name: Guard ECHO Nights official artwork
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: echo-nights-official-artwork
+  cancel-in-progress: true
+
+jobs:
+  enforce:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out production repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Enforce ECHO Nights listing and official artwork
+        run: python scripts/apply_echo_nights_official.py
+
+      - name: Save repair when needed
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- supplemental-events.json; then
+            echo "ECHO Nights 26 is already correct."
+            exit 0
+          fi
+          git config user.name "kingdom-circuit-echo-guard"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add supplemental-events.json
+          git commit -m "fix: enforce ECHO Nights 26 official artwork"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push raced with another automation; rebasing and retrying ($attempt/3)."
+            git fetch origin main
+            if ! git rebase origin/main; then
+              git rebase --abort || true
+              git reset --hard origin/main
+              python scripts/apply_echo_nights_official.py
+              git add supplemental-events.json
+              if git diff --cached --quiet; then
+                echo "Another run already applied the repair."
+                exit 0
+              fi
+              git commit -m "fix: enforce ECHO Nights 26 official artwork"
+            fi
+          done
+          echo "Unable to save ECHO Nights repair after retries."
+          exit 1
