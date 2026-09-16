@@ -1,3 +1,4 @@
+import hashlib
 import json
 import re
 import unittest
@@ -95,6 +96,17 @@ class MultiPageProductionTests(unittest.TestCase):
         self.assertIn("aspect-ratio: 4 / 3", css)
         self.assertRegex(css, r"event-media img\.event-artwork[^{]*\{[^}]*object-fit:\s*contain")
         self.assertRegex(css, r"event-media img\.artist-photo[^{]*\{[^}]*object-fit:\s*cover")
+
+    def test_zauntee_fallback_is_the_approved_full_head_tour_portrait(self):
+        image = ROOT / "assets/artists/zauntee.webp"
+        payload = image.read_bytes()
+
+        self.assertEqual(b"RIFF", payload[:4])
+        self.assertEqual(b"WEBP", payload[8:12])
+        self.assertEqual(
+            "dbc81cb719b1463baa717d7db15b380c4c7e940dc28e4e65a040aae12c7df0b1",
+            hashlib.sha256(payload).hexdigest(),
+        )
 
     def test_yung_kriss_event_artwork_is_high_resolution_and_pinned(self):
         events = json.loads((ROOT / "events.json").read_text(encoding="utf-8"))
