@@ -1,0 +1,104 @@
+name: Remove false TRU-SERVA Las Cruces match
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/remove-tru-serva-las-cruces-false-match.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Remove false TRU-SERVA Las Cruces listing
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          FALSE_ID = 'supplemental:tru-serva-truth-tour-las-cruces-2026'
+
+          for file_name in ('supplemental-events.json', 'events.json', 'config/manual-events.json'):
+              path = Path(file_name)
+              if not path.exists():
+                  continue
+              rows = json.loads(path.read_text(encoding='utf-8'))
+              before = len(rows)
+              rows = [
+                  e for e in rows
+                  if not (
+                      str(e.get('id') or '') == FALSE_ID
+                      or (
+                          str(e.get('title') or '').strip() == 'The Truth Tour — Las Cruces'
+                          and str(e.get('startDate') or '') == '2026-10-25'
+                          and any(str(a).strip().casefold() == 'tru-serva' for a in (e.get('artists') or []))
+                      )
+                  )
+              ]
+              if len(rows) != before:
+                  path.write_text(json.dumps(rows, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+                  print(f'{file_name}: removed {before - len(rows)} false listing(s)')
+
+          # This Las Cruces event is Megan Woods' The Truth Tour, not a TRU-SERVA date.
+          # Keep a durable rejection marker so future audits know why it was removed.
+          guard = Path('data/verified-false-matches.json')
+          guard.parent.mkdir(parents=True, exist_ok=True)
+          existing = []
+          if guard.exists():
+              try:
+                  existing = json.loads(guard.read_text(encoding='utf-8'))
+              except Exception:
+                  existing = []
+          marker = {
+              'key': 'tru-serva|2026-10-25|las-cruces-nm',
+              'artist': 'TRU-SERVA',
+              'date': '2026-10-25',
+              'city': 'Las Cruces',
+              'state': 'NM',
+              'reason': "False artist match: Real Life Church and Live Nation list Megan Woods' The Truth Tour; TRU-SERVA is not on the official lineup.",
+              'officialEventUrl': 'https://www.livenation.com/event/rZ7HnEZ1AfFpGV/megan-woods-the-truth-tour-las-cruces-nm',
+              'verified': '2026-09-15'
+          }
+          existing = [x for x in existing if x.get('key') != marker['key']]
+          existing.append(marker)
+          guard.write_text(json.dumps(existing, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          PY
+      - name: Validate repair
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for file_name in ('supplemental-events.json', 'events.json', 'config/manual-events.json'):
+              path = Path(file_name)
+              if not path.exists():
+                  continue
+              rows = json.loads(path.read_text(encoding='utf-8'))
+              bad = [e for e in rows if str(e.get('title') or '').strip() == 'The Truth Tour — Las Cruces' and any(str(a).strip().casefold() == 'tru-serva' for a in (e.get('artists') or []))]
+              assert not bad, f'{file_name} still contains false TRU-SERVA Las Cruces listing'
+          PY
+      - name: Commit durable repair
+        run: |
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add supplemental-events.json events.json config/manual-events.json data/verified-false-matches.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Repair already applied."
+          else
+            git commit -m "Remove false TRU-SERVA Las Cruces listing [skip ci]"
+            git push origin HEAD:main
+          fi
+      - name: Refresh and deploy production
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run update-and-deploy.yml --ref main
