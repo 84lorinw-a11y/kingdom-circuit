@@ -2,11 +2,13 @@
 """Keep the verified ECHO Nights 26 listing and supplied official ATK artwork durable."""
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 
 EVENT_ID = "manual:ticketspice:echo-nights-26-brookfield-2026"
-IMAGE = "assets/events/echo-nights-26.png"
+IMAGE = "assets/events/echo-nights-26.jpg"
+IMAGE_SHA256 = "440c6eee0293ba5edfbae891149b18f5c9bf919a0cff34a1c310314fb1642ca0"
 TICKET_URL = "https://atkministry.ticketspice.com/echo-nights-26"
 SOURCE_FILES = ("events.json", "supplemental-events.json")
 
@@ -18,8 +20,15 @@ def main() -> None:
     root = Path(args.site)
     image_path = root / IMAGE
 
-    if not image_path.is_file() or image_path.stat().st_size < 300_000:
-        raise SystemExit(f"Verified ECHO Nights artwork missing or unexpectedly small: {image_path}")
+    if not image_path.is_file():
+        raise SystemExit(f"Verified ECHO Nights artwork is missing: {image_path}")
+    image_bytes = image_path.read_bytes()
+    digest = hashlib.sha256(image_bytes).hexdigest()
+    if digest != IMAGE_SHA256:
+        raise SystemExit(
+            f"Verified ECHO Nights artwork hash mismatch: {image_path} "
+            f"expected {IMAGE_SHA256}, got {digest}"
+        )
 
     repaired = 0
     for filename in SOURCE_FILES:
@@ -52,10 +61,10 @@ def main() -> None:
             "imageType": "event_artwork",
             "imagePosition": "center top",
             "imageOverride": True,
-            "imageSource": "ATK Ministry official TicketSpice artwork",
+            "imageSource": "Official ATK Ministry ECHO Nights 26 collage artwork",
             "imageSourceUrl": TICKET_URL,
-            "sourceName": "ATK Ministry official TicketSpice listing",
-            "authority": "official_event",
+            "sourceName": "Official TicketSpice listing",
+            "authority": "venue_ticket",
             "confidence": "high",
             "lineupExplicit": True,
             "notes": "Doors 6 PM; show 7 PM; all ages welcome. Official ATK Ministry collage artwork locked for this listing.",
