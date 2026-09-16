@@ -1,0 +1,36 @@
+name: Diagnose supplemental duplicate
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/diagnose-supplemental-duplicate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Print duplicate supplemental IDs
+        run: |
+          python - <<'PY'
+          import json
+          from collections import defaultdict
+          rows=json.load(open('supplemental-events.json', encoding='utf-8'))
+          by=defaultdict(list)
+          for i,row in enumerate(rows):
+              by[row.get('id')].append((i,row))
+          dups={k:v for k,v in by.items() if k and len(v)>1}
+          print('COUNT', len(rows), 'UNIQUE', len(by), 'DUP_IDS', len(dups))
+          for k,vals in dups.items():
+              print('DUPLICATE_ID', k)
+              for i,row in vals:
+                  print('INDEX', i)
+                  print(json.dumps(row, sort_keys=True))
+          if not dups:
+              raise SystemExit('No duplicate IDs found')
+          PY
