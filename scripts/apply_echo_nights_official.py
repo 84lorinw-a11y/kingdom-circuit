@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 
 EVENT_ID = "manual:ticketspice:echo-nights-26-brookfield-2026"
-IMAGE = "assets/events/echo-nights-26.jpg"
+IMAGE = "assets/events/echo-nights-26.png"
 TICKET_URL = "https://atkministry.ticketspice.com/echo-nights-26"
 SOURCE_FILES = ("events.json", "supplemental-events.json")
 
@@ -18,7 +18,7 @@ def main() -> None:
     root = Path(args.site)
     image_path = root / IMAGE
 
-    if not image_path.is_file() or image_path.stat().st_size < 100_000:
+    if not image_path.is_file() or image_path.stat().st_size < 300_000:
         raise SystemExit(f"Verified ECHO Nights artwork missing or unexpectedly small: {image_path}")
 
     repaired = 0
@@ -52,10 +52,10 @@ def main() -> None:
             "imageType": "event_artwork",
             "imagePosition": "center top",
             "imageOverride": True,
-            "imageSource": "Official ATK Ministry ECHO Nights 26 collage artwork",
+            "imageSource": "ATK Ministry official TicketSpice artwork",
             "imageSourceUrl": TICKET_URL,
-            "sourceName": "Official TicketSpice listing",
-            "authority": "venue_ticket",
+            "sourceName": "ATK Ministry official TicketSpice listing",
+            "authority": "official_event",
             "confidence": "high",
             "lineupExplicit": True,
             "notes": "Doors 6 PM; show 7 PM; all ages welcome. Official ATK Ministry collage artwork locked for this listing.",
