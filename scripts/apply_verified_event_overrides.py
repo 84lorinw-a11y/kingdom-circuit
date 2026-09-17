@@ -112,6 +112,76 @@ REVIVAL_NIGHT_EVENT = {
     ],
 }
 
+KB_DIAMONDBACK_EVENT_ID = "kb-skema-boy-diamondback-belleville-2026"
+KB_DIAMONDBACK_VENUE_URL = "https://www.diamondbackmusichall.com/tm-event/kb/"
+KB_DIAMONDBACK_TICKET_URL = (
+    "https://www.ticketweb.com/event/kb-diamondback-music-hall-tickets/14328014"
+)
+KB_DIAMONDBACK_BANDSINTOWN_URL = "https://www.bandsintown.com/e/108921018"
+KB_DIAMONDBACK_IMAGE = "assets/events/kb-skema-boy-diamondback-2026.webp"
+KB_DIAMONDBACK_EVENT = {
+    "id": f"manual:{KB_DIAMONDBACK_EVENT_ID}",
+    "title": "KB at Diamondback Music Hall — with Skema Boy",
+    "startDate": "2026-12-04",
+    "startTime": "19:30",
+    "doorsTime": "19:00",
+    "timezone": "America/Detroit",
+    "venue": "Diamondback Music Hall",
+    "address": "49345 S Interstate 94 Service Dr",
+    "postalCode": "48111",
+    "city": "Belleville",
+    "state": "MI",
+    "country": "US",
+    "artists": ["KB", "Skema Boy"],
+    "headliner": "KB",
+    "supportActs": ["Skema Boy"],
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": KB_DIAMONDBACK_TICKET_URL,
+    "officialUrl": KB_DIAMONDBACK_VENUE_URL,
+    "image": KB_DIAMONDBACK_IMAGE,
+    "imageType": "artist",
+    "imagePosition": "50% 8%",
+    "imageOverride": True,
+    "price": "$40.63–$53.50",
+    "ageRestriction": "All ages",
+    "sourceName": "Diamondback Music Hall official event",
+    "authority": "official_event",
+    "confidence": "high",
+    "lineupExplicit": True,
+    "advertisedBilling": ["KB", "Skema Boy"],
+    "organizer": "Pinnacle Events Group and Diamondback Music Hall",
+    "imageSource": "Diamondback Music Hall / TicketWeb official event image",
+    "imageSourceUrl": "https://i.ticketweb.com/i/00/13/04/42/94_Original.jpg?v=3",
+    "auditVerified": "2026-09-17",
+    "firstSeen": "2026-09-17T20:52:42Z",
+    "lastVerified": "2026-09-17T20:52:42Z",
+    "notes": "Tickets go on sale Monday, September 21, 2026 at 10:00 AM ET.",
+    "sources": [
+        {
+            "name": "Diamondback Music Hall official event",
+            "url": KB_DIAMONDBACK_VENUE_URL,
+            "type": "manual_verified",
+            "authority": "official_event",
+            "priority": 112,
+        },
+        {
+            "name": "TicketWeb official ticket listing",
+            "url": KB_DIAMONDBACK_TICKET_URL,
+            "type": "manual_verified",
+            "authority": "venue_ticket",
+            "priority": 108,
+        },
+        {
+            "name": "Skema Boy official Bandsintown event",
+            "url": KB_DIAMONDBACK_BANDSINTOWN_URL,
+            "type": "bandsintown",
+            "authority": "artist_calendar",
+            "priority": 100,
+        },
+    ],
+}
+
 VERIFIED_EVENT_IMAGES = {
     "jay-kalyl-desde-antes-rockville-centre-2026": "https://i.scdn.co/image/ab6761610000e5eb1269b80aed5d08c40aedfdc3",
     "mayia-boxyard-saturdaze-2026": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
@@ -222,6 +292,31 @@ def is_revival_night_duplicate(event: dict) -> bool:
     )
 
 
+def is_kb_diamondback_duplicate(event: dict) -> bool:
+    event_id = norm(event.get("id"))
+    links = " ".join(
+        str(value or "")
+        for value in (event.get("officialUrl"), event.get("ticketUrl"))
+    ).casefold()
+    if (
+        event_id in {
+            KB_DIAMONDBACK_EVENT_ID,
+            f"manual:{KB_DIAMONDBACK_EVENT_ID}",
+            "bandsintown:108921018",
+        }
+        or "14328014" in links
+        or "108921018" in links
+        or "diamondbackmusichall.com/tm-event/kb" in links
+    ):
+        return True
+    if str(event.get("startDate") or "")[:10] != KB_DIAMONDBACK_EVENT["startDate"]:
+        return False
+    names = {norm(name) for name in event.get("artists", [])}
+    relevant_artist = bool({"kb", "skema boy"} & names)
+    relevant_artist = relevant_artist or norm(event.get("headliner")) in {"kb", "skema boy"}
+    return relevant_artist and "diamondback" in norm(event.get("venue"))
+
+
 def sort_events(events: list[dict]) -> None:
     events.sort(key=lambda item: (str(item.get("startDate") or "9999-99-99"), str(item.get("startTime") or ""), str(item.get("title") or "")))
 
@@ -258,10 +353,13 @@ def apply(root: Path) -> None:
         supplemental = [event for event in supplemental if not is_same_kaden_show(event, date, city)]
     events = [event for event in events if not is_revival_night_duplicate(event)]
     supplemental = [event for event in supplemental if not is_revival_night_duplicate(event)]
+    events = [event for event in events if not is_kb_diamondback_duplicate(event)]
+    supplemental = [event for event in supplemental if not is_kb_diamondback_duplicate(event)]
 
     events.append(deepcopy(PARRIS_EVENT))
     events.extend(kaden_event(*show) for show in KADEN_SHOWS)
     events.append(deepcopy(REVIVAL_NIGHT_EVENT))
+    events.append(deepcopy(KB_DIAMONDBACK_EVENT))
     apply_verified_event_images(events, supplemental)
     sort_events(events)
     sort_events(supplemental)
@@ -287,6 +385,19 @@ def apply(root: Path) -> None:
         if revival[0].get(field) != REVIVAL_NIGHT_EVENT[field]:
             raise SystemExit(f"Revival Night verified {field} regressed")
 
+    kb_diamondback = [event for event in combined if is_kb_diamondback_duplicate(event)]
+    if len(kb_diamondback) != 1 or kb_diamondback[0].get("id") != KB_DIAMONDBACK_EVENT["id"]:
+        raise SystemExit(
+            "KB Diamondback dedupe failed: "
+            f"{[event.get('id') for event in kb_diamondback]}"
+        )
+    for field in (
+        "artists", "startDate", "startTime", "doorsTime", "venue",
+        "address", "city", "ticketUrl", "officialUrl", "image", "imagePosition",
+    ):
+        if kb_diamondback[0].get(field) != KB_DIAMONDBACK_EVENT[field]:
+            raise SystemExit(f"KB Diamondback verified {field} regressed")
+
     image_targets = [event for event in combined if str(event.get("id") or "") in VERIFIED_EVENT_IMAGES]
     if len({str(event.get("id")) for event in image_targets}) != len(VERIFIED_EVENT_IMAGES):
         raise SystemExit("Verified Sep 11 event-image coverage is incomplete")
@@ -301,7 +412,7 @@ def apply(root: Path) -> None:
         apply_phase2()
         check_phase2()
 
-    print("Verified Parris Chariz Dallas lineup/dedupe, Revival Night, four Kaden Jordan tour dates, and Sep 11 event images are pinned.")
+    print("Verified Parris Chariz Dallas lineup/dedupe, Revival Night, KB at Diamondback, four Kaden Jordan tour dates, and Sep 11 event images are pinned.")
 
 
 def main() -> None:
