@@ -55,6 +55,42 @@ class September13LiveSiteFixTests(unittest.TestCase):
             with self.subTest(event_id=event_id):
                 self.assert_local_artwork(event_id, artwork)
 
+    def test_jimmy_rock_miami_weather_reschedule_is_durable(self):
+        import apply_sep13_requested_events as requested
+        import build_seo_site as builder
+
+        instagram = "https://www.instagram.com/p/DdXLDe-BpRK/"
+        old_path = (
+            "/event/jimmy-rock-s-rave-and-worship-the-worship-wawa-"
+            "2026-09-18-miami-17834a/"
+        )
+        for path in (ROOT / "config" / "manual-events.json", ROOT / "events.json"):
+            matches = [
+                event for event in load(path)
+                if identity(event) == "jimmy-rock-worship-wawa-miami-2026"
+            ]
+            self.assertEqual(1, len(matches), path)
+            event = matches[0]
+            self.assertEqual("2026-12-18", event.get("startDate"))
+            self.assertEqual("2026-09-18", event.get("previousStartDate"))
+            self.assertEqual("rescheduled", event.get("status"))
+            self.assertEqual("Weather", event.get("rescheduleReason"))
+            self.assertEqual(instagram, event.get("officialUrl"))
+            self.assertIn(old_path, event.get("legacyEventPaths") or [])
+            self.assertIn(
+                instagram,
+                {source.get("url") for source in event.get("sources") or []},
+            )
+            self.assertIn("postponed due to weather", event.get("notes", ""))
+
+        wanted = requested.UPSERTS["jimmy-rock-worship-wawa-miami-2026"]
+        self.assertEqual("2026-12-18", wanted["startDate"])
+        self.assertEqual("Rescheduled", builder.event_status_label(wanted))
+        self.assertIn("due to weather", builder.rescheduled_notice(wanted))
+        schema = builder.event_schema(dict(wanted, id="manual:jimmy-rock-worship-wawa-miami-2026"))
+        self.assertEqual("https://schema.org/EventRescheduled", schema["eventStatus"])
+        self.assertEqual("2026-09-18", schema["previousStartDate"])
+
     def test_jimmy_rock_profile_uses_local_official_portrait(self):
         artist = next(a for a in load(ROOT / "config" / "artists.json") if a.get("name") == "JIMMY ROCK")
         self.assertEqual("assets/artists/jimmy-rock-primary.webp", artist.get("imageUrl"))

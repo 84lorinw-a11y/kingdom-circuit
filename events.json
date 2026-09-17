@@ -464,7 +464,7 @@
   },
   {
     "title": "JIMMY ROCK'S Rave & Worship — The Worship Wawa",
-    "startDate": "2026-09-18",
+    "startDate": "2026-12-18",
     "startTime": "17:00",
     "timezone": "America/New_York",
     "venue": "The Worship Wawa — Margaret Pace Park pickup",
@@ -477,21 +477,28 @@
     ],
     "headliner": "JIMMY ROCK",
     "eventType": "party_bus",
-    "status": "scheduled",
+    "status": "rescheduled",
     "ticketUrl": "https://fareharbor.com/embeds/book/theworshipwawa/?full-items=yes",
-    "officialUrl": "https://www.theworshipwawa.com/jimmyrock-rave-worship",
+    "officialUrl": "https://www.instagram.com/p/DdXLDe-BpRK/",
     "image": "assets/events/jimmy-rock-worship-wawa-miami-2026.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "price": "",
     "lineupExplicit": true,
-    "authority": "artist_calendar",
+    "authority": "official_event",
     "confidence": "high",
-    "sourceName": "The Worship Wawa official event",
+    "sourceName": "Official Instagram postponement announcement",
     "sources": [
       {
-        "name": "The Worship Wawa official event",
+        "name": "Official Instagram postponement announcement",
+        "url": "https://www.instagram.com/p/DdXLDe-BpRK/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "The Worship Wawa official event page",
         "url": "https://www.theworshipwawa.com/jimmyrock-rave-worship",
         "type": "manual_verified",
         "authority": "artist_calendar",
@@ -512,8 +519,13 @@
         "priority": 74
       }
     ],
-    "auditVerified": "2026-09-13",
-    "notes": "In-person party-bus event. Four one-hour rides depart at 5:00, 6:15, 7:30 and 8:45 PM. Arrive 15 minutes early; Bandsintown's 4:30 PM header aligns with earliest check-in, not an online event.",
+    "auditVerified": "2026-09-17",
+    "previousStartDate": "2026-09-18",
+    "rescheduleReason": "Weather",
+    "legacyEventPaths": [
+      "/event/jimmy-rock-s-rave-and-worship-the-worship-wawa-2026-09-18-miami-17834a/"
+    ],
+    "notes": "Originally scheduled for September 18, 2026; postponed due to weather and rescheduled for December 18, 2026 per the official Instagram announcement. In-person party-bus event. Four one-hour rides depart at 5:00, 6:15, 7:30 and 8:45 PM. Arrive 15 minutes early; Bandsintown's 4:30 PM header aligns with earliest check-in, not an online event.",
     "rideTimes": [
       "17:00",
       "18:15",

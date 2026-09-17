@@ -103,6 +103,17 @@ def event_type_label(e):
     value = norm(e.get("eventType") or "concert")
     return {"festival":"Festival","retreat":"Retreat","conference":"Conference","church":"Church appearance","party_bus":"Party-bus event","appearance":"Appearance","concert":"Concert"}.get(value,"Event")
 
+def event_status_label(e):
+    value = norm(e.get("status") or "scheduled")
+    return {"cancelled":"Cancelled","canceled":"Cancelled","postponed":"Postponed","rescheduled":"Rescheduled"}.get(value,"Scheduled")
+
+def rescheduled_notice(e):
+    if norm(e.get("status")) != "rescheduled": return ""
+    previous = e.get("previousStartDate")
+    prior_text = f" from {format_date({'startDate': previous})}" if previous else ""
+    reason = " due to weather" if norm(e.get("rescheduleReason")) == "weather" else ""
+    return f'<div class="empty-panel" role="status"><strong>Rescheduled.</strong> This event moved{prior_text} to {format_date(e)}{reason}.</div>'
+
 
 def artist_cfg(artists,name):
     t=norm(name)
@@ -140,6 +151,7 @@ def event_schema(e):
     status={"cancelled":"https://schema.org/EventCancelled","canceled":"https://schema.org/EventCancelled","postponed":"https://schema.org/EventPostponed","rescheduled":"https://schema.org/EventRescheduled"}.get(norm(e.get("status")),"https://schema.org/EventScheduled")
     data={"@context":"https://schema.org","@type":("MusicEvent" if norm(e.get("eventType")) in {"concert","festival"} else "Event"),"name":e.get("title") or "Christian hip-hop event","startDate":start,"eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":status,"url":absolute(event_path(e)),"image":[image_url(e.get("image"))],"location":{"@type":"Place","name":e.get("venue") or "Venue to be announced","address":{"@type":"PostalAddress","streetAddress":e.get("address") or "","addressLocality":e.get("city") or "","addressRegion":e.get("state") or "","addressCountry":"US"}},"performer":[{"@type":"MusicGroup","name":n} for n in e.get("artists",[])]}
     if e.get("endDate"): data["endDate"]=e["endDate"]
+    if e.get("previousStartDate") and status == "https://schema.org/EventRescheduled": data["previousStartDate"]=e["previousStartDate"]
     url=e.get("officialUrl") or e.get("ticketUrl")
     if url and status == "https://schema.org/EventScheduled": data["offers"]={"@type":"Offer","url":url}
     return data
@@ -262,10 +274,17 @@ def main():
             write_page(p,page("Merged event | The Kingdom Circuit","This duplicate show listing has moved to its canonical event page.",p,body))
             continue
         cancelled=not scheduled(e)
-        notice='<div class="empty-panel" role="status"><strong>Cancelled.</strong> The organizer’s official ticket page confirms this event is cancelled.</div>' if cancelled else ''
+        notice='<div class="empty-panel" role="status"><strong>Cancelled.</strong> The organizer’s official ticket page confirms this event is cancelled.</div>' if cancelled else rescheduled_notice(e)
+        status_label=event_status_label(e)
         doors=f'<div><dt>Doors</dt><dd>{esc(format_date({"startDate": e.get("startDate"), "startTime": e.get("doorsTime")}).split(" - ")[-1])}</dd></div>' if e.get("doorsTime") else ''
-        body=f'<section class="event-detail-section">{breadcrumbs(crumbs)}{notice}<article class="event-detail"><div class="event-detail-media"><img class="{cls}" src="{esc(img)}" alt="{esc(e.get("title"))}" width="1200" height="675"></div><div class="event-detail-copy"><p class="eyebrow">{esc("Cancelled event" if cancelled else event_type_label(e))}</p><h1>{esc(e.get("title"))}</h1><p class="artist-line">{artist_links}</p><dl class="detail-list"><div><dt>Status</dt><dd>{"Cancelled" if cancelled else "Scheduled"}</dd></div><div><dt>Date</dt><dd>{esc(format_date(e))}</dd></div>{doors}<div><dt>Venue</dt><dd>{esc(e.get("venue") or "Venue to be announced")}</dd></div><div><dt>Location</dt><dd>{esc(loc)}</dd></div><div><dt>Source</dt><dd>{esc(source_text(e))}</dd></div></dl><a class="primary-button" href="{esc(official)}" target="_blank" rel="noopener">Official details</a><p class="disclaimer">{"This URL is retained so visitors can confirm the cancellation with the organizer." if cancelled else "Event details may change. Confirm final information with the official organizer or ticket provider before purchasing or traveling."}</p></div></article></section>'
+        body=f'<section class="event-detail-section">{breadcrumbs(crumbs)}{notice}<article class="event-detail"><div class="event-detail-media"><img class="{cls}" src="{esc(img)}" alt="{esc(e.get("title"))}" width="1200" height="675"></div><div class="event-detail-copy"><p class="eyebrow">{esc("Cancelled event" if cancelled else event_type_label(e))}</p><h1>{esc(e.get("title"))}</h1><p class="artist-line">{artist_links}</p><dl class="detail-list"><div><dt>Status</dt><dd>{esc(status_label)}</dd></div><div><dt>Date</dt><dd>{esc(format_date(e))}</dd></div>{doors}<div><dt>Venue</dt><dd>{esc(e.get("venue") or "Venue to be announced")}</dd></div><div><dt>Location</dt><dd>{esc(loc)}</dd></div><div><dt>Source</dt><dd>{esc(source_text(e))}</dd></div></dl><a class="primary-button" href="{esc(official)}" target="_blank" rel="noopener">Official details</a><p class="disclaimer">{"This URL is retained so visitors can confirm the cancellation with the organizer." if cancelled else "Event details may change. Confirm final information with the official organizer or ticket provider before purchasing or traveling."}</p></div></article></section>'
         write_page(p,page(f"{e.get('title')} - {loc} | The Kingdom Circuit",f"{names} live in {loc} on {format_date(e)}. Verified official show details.",p,body,[event_schema(e),breadcrumb_schema(crumbs)]))
+        for legacy in e.get("legacyEventPaths") or []:
+            if not re.fullmatch(r"/event/[a-z0-9-]+/", str(legacy)):
+                raise RuntimeError(f"Unsafe legacy event path: {legacy}")
+            if legacy == p: continue
+            redirect_body=f'<section class="page-hero hero-compact"><p class="eyebrow">Rescheduled event</p><h1>This event has a new date</h1><p class="hero-text">The listing moved to its December 18 date.</p><a class="primary-button" href="{p}">View the updated event</a></section><script>location.replace({json.dumps(p)});</script>'
+            write_page(legacy,page("Rescheduled event | The Kingdom Circuit","This event listing moved to its rescheduled date.",p,redirect_body))
 
     for a in (x for x in artists if x.get("enabled") is not False):
         n=a.get("name") or "Artist"; p=artist_path(n); urls.append(p); shows=[e for e in events if norm(n) in {norm(x) for x in e.get("artists",[])}]; crumbs=[("Artists","/artists/"),(n,p)]

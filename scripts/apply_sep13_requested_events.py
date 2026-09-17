@@ -11,6 +11,12 @@ JIMMY_MIAMI_EVENT_IMAGE = "assets/events/jimmy-rock-worship-wawa-miami-2026.jpg"
 JIMMY_DENVER_EVENT_IMAGE = "assets/events/jimmy-rock-rave-worship-denver-2026.jpg"
 JIMMY_DALLAS_EVENT_IMAGE = "assets/events/jimmy-rock-rave-worship-dallas-2026.webp"
 BOISE_EVENT_IMAGE = "assets/events/boise-invasion-2026.jpg"
+JIMMY_MIAMI_RESCHEDULE_POST = "https://www.instagram.com/p/DdXLDe-BpRK/"
+JIMMY_MIAMI_OLD_PATH = (
+    "/event/jimmy-rock-s-rave-and-worship-the-worship-wawa-"
+    "2026-09-18-miami-17834a/"
+)
+FORCE_OFFICIAL_URL_IDS = {"jimmy-rock-worship-wawa-miami-2026"}
 
 
 def load(p): return json.loads(Path(p).read_text(encoding="utf-8"))
@@ -159,16 +165,22 @@ UPSERTS = {
         tz="America/Phoenix", lineupExplicit=False, notes="Venue, additional lineup and independently confirmed local performance time remain unpublished."
     ),
     "jimmy-rock-worship-wawa-miami-2026": E(
-        "JIMMY ROCK'S Rave & Worship — The Worship Wawa", "2026-09-18", "Miami", "FL", ["JIMMY ROCK"],
-        "https://www.theworshipwawa.com/jimmyrock-rave-worship", "The Worship Wawa official event",
+        "JIMMY ROCK'S Rave & Worship — The Worship Wawa", "2026-12-18", "Miami", "FL", ["JIMMY ROCK"],
+        JIMMY_MIAMI_RESCHEDULE_POST, "Official Instagram postponement announcement",
         venue="The Worship Wawa — Margaret Pace Park pickup", address="1745 N Bayshore Dr", event_type="party_bus", time="17:00",
         tz="America/New_York", ticket="https://fareharbor.com/embeds/book/theworshipwawa/?full-items=yes",
+        authority="official_event", status="rescheduled", previousStartDate="2026-09-18",
+        rescheduleReason="Weather", auditVerified="2026-09-17",
+        legacyEventPaths=[JIMMY_MIAMI_OLD_PATH],
         image=JIMMY_MIAMI_EVENT_IMAGE, image_type="event_artwork", image_override=True,
         imageSource="The Worship Wawa official event poster",
         imageSourceUrl="https://www.theworshipwawa.com/jimmyrock-rave-worship",
         rideTimes=["17:00", "18:15", "19:30", "20:45"],
-        notes="In-person party-bus event. Four one-hour rides depart at 5:00, 6:15, 7:30 and 8:45 PM. Arrive 15 minutes early; Bandsintown's 4:30 PM header aligns with earliest check-in, not an online event.",
-        extra=[src("JIMMY ROCK Bandsintown", "https://www.bandsintown.com/e/108769357", "artist_calendar", 74)]
+        notes="Originally scheduled for September 18, 2026; postponed due to weather and rescheduled for December 18, 2026 per the official Instagram announcement. In-person party-bus event. Four one-hour rides depart at 5:00, 6:15, 7:30 and 8:45 PM. Arrive 15 minutes early; Bandsintown's 4:30 PM header aligns with earliest check-in, not an online event.",
+        extra=[
+            src("The Worship Wawa official event page", "https://www.theworshipwawa.com/jimmyrock-rave-worship", "artist_calendar", 100),
+            src("JIMMY ROCK Bandsintown", "https://www.bandsintown.com/e/108769357", "artist_calendar", 74),
+        ]
     ),
     "jimmy-rock-rave-worship-centennial-2026": E(
         "JIMMY ROCK — Rave & Worship Denver 2026", "2026-09-25", "Centennial", "CO", ["JIMMY ROCK"],
@@ -267,6 +279,8 @@ def patch_rows(path, manual):
             value = dict(wanted); value["id"] = event_id if manual else "manual:" + event_id; rows.append(value)
         else:
             merge(row, wanted)
+            if event_id in FORCE_OFFICIAL_URL_IDS:
+                row["officialUrl"] = wanted["officialUrl"]
     save(path, rows)
 
 
