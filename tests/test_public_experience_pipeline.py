@@ -12,6 +12,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import apply_public_audit_repairs as audit_repairs  # noqa: E402
 import apply_public_image_repairs as image_repairs  # noqa: E402
 import apply_public_ux_repairs as ux_repairs  # noqa: E402
+import apply_social_preview as social_preview  # noqa: E402
 import finalize_public_experience as public_pipeline  # noqa: E402
 import finalize_seo_indexing as seo_finalizer  # noqa: E402
 import optimize_public_images as image_optimizer  # noqa: E402
@@ -128,6 +129,7 @@ class PublicExperiencePipelineTests(unittest.TestCase):
         self.assertEqual(public_pipeline.PUBLIC_BASE, image_repairs.PUBLIC_BASE)
         self.assertEqual(public_pipeline.PUBLIC_ORIGIN, performance_verifier.DEFAULT_ORIGIN)
         self.assertEqual(public_pipeline.PUBLIC_BASE, performance_verifier.DEFAULT_BASE)
+        self.assertTrue(social_preview.SOCIAL_PREVIEW_URL.startswith(public_pipeline.PUBLIC_ORIGIN))
         self.assertEqual("Pillow==12.3.0", public_pipeline.PINNED_PILLOW)
 
     def test_image_pipeline_preserves_focal_metadata_before_optimization(self):
@@ -190,6 +192,10 @@ class PublicExperiencePipelineTests(unittest.TestCase):
         self.assertLess(
             source.index("inject_menu_accessibility_sync(root)"),
             source.index("finalize_public_experience(root)"),
+        )
+        self.assertLess(
+            source.index("finalize_public_experience(root)"),
+            source.index("apply_social_preview(root)"),
         )
 
 

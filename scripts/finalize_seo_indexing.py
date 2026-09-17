@@ -7,6 +7,7 @@ import shutil
 import sys
 from urllib.parse import urlparse
 
+from apply_social_preview import apply as apply_social_preview
 from add_past_show_archives import apply_past_show_archives
 from finalize_seo_indexing_core import main as finalize_main
 from finalize_sep12_complete_closeout import apply_closeout
@@ -310,6 +311,8 @@ def main() -> None:
     if should_finalize_public_experience():
         public_report = finalize_public_experience(root)
         print("Production public experience:", json.dumps(public_report, sort_keys=True))
+        social_report = apply_social_preview(root)
+        print("Production social preview:", json.dumps(social_report, sort_keys=True))
     else:
         print("Production public experience: skipped outside the Pages release job")
 
