@@ -193,7 +193,7 @@ def enforce_json(root: Path) -> int:
             "city": "Brookfield",
             "state": "WI",
             "country": "US",
-            "artists": ["Kijan Boone", "Austin Joyce", "VVS Big Rock", "Kaymilinn", "DJ Bryce G"],
+            "artists": ["Kijan Boone", "Austin Joyce", "VVS Big Rock", "Kaymilinn", "DJ Bryce G", "180MINDSET"],
             "headliner": "Kijan Boone",
             "eventType": "concert",
             "status": "scheduled",

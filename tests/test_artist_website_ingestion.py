@@ -38,6 +38,20 @@ class ArtistWebsiteIngestionTests(unittest.TestCase):
             registry_sync.ARTIST.get("bandsintownProfile"),
         )
 
+    def test_kijan_boone_uses_verified_direct_profiles(self):
+        artists = json.loads((ROOT / "config" / "artists.json").read_text(encoding="utf-8"))
+        kijan = next(item for item in artists if item.get("name") == "Kijan Boone")
+        self.assertEqual("https://kijanboone.com/", kijan.get("website"))
+        self.assertEqual(
+            "https://open.spotify.com/artist/3dAXZ2iCLGeHz5IMhAi12V",
+            kijan.get("spotifyProfile"),
+        )
+        self.assertEqual(
+            "https://www.youtube.com/channel/UCWiKxOKQso-t3q5wA_cNKKQ",
+            kijan.get("youtubeProfile"),
+        )
+        self.assertTrue(kijan.get("websiteRegistryVerified"))
+
     def test_808_beezy_verified_seed_dates_exist(self):
         events = json.loads((ROOT / "config" / "artist-website-seed-events.json").read_text(encoding="utf-8"))
         self.assertEqual(19, len(events))

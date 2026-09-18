@@ -36,6 +36,20 @@ class EchoNightsOfficialArtworkTests(unittest.TestCase):
             self.assertEqual("event_artwork", event.get("imageType"), filename)
             self.assertTrue(event.get("imageOverride"), filename)
             self.assertEqual(echo_nights.IMAGE_SOURCE_URL, event.get("imageSourceUrl"), filename)
+            self.assertEqual(
+                ["Kijan Boone", "Austin Joyce", "VVS Big Rock", "Kaymilinn", "DJ Bryce G", "180MINDSET"],
+                event.get("artists"),
+                filename,
+            )
+
+    def test_newly_billed_artist_has_a_real_profile(self):
+        artists = json.loads((ROOT / "config" / "artists.json").read_text(encoding="utf-8"))
+        profile = next(item for item in artists if item.get("name") == "180MINDSET")
+        self.assertEqual("https://linktr.ee/180mindsetmusic", profile.get("website"))
+        self.assertEqual(
+            "https://open.spotify.com/artist/5TXulgcmXEBOWsKfTgkHIK",
+            profile.get("spotifyProfile"),
+        )
 
     def test_calendar_card_and_event_detail_are_pinned_to_same_poster(self):
         card = f'''<article class="event-card"><img class="artist-photo" src="/wrong.jpg"><h3>{echo_nights.TITLE}</h3></article>'''

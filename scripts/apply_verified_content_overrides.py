@@ -28,6 +28,19 @@ INDIE_TOUR_STOPS = {
     ("2026-09-23", "Indianapolis"): ("HI-FI Indy", "https://hifiindy.com/event/hulvey-2026/"),
 }
 
+INDIE_TOUR_DETAILS = {
+    ("2026-09-20", "Minneapolis"): {
+        "startTime": "18:30",
+        "timezone": "America/Chicago",
+        "venue": "First Avenue",
+    },
+    ("2026-09-23", "Indianapolis"): {
+        "startTime": "19:00",
+        "timezone": "America/Indiana/Indianapolis",
+        "venue": "HI-FI Annex",
+    },
+}
+
 
 def norm(value: Any) -> str:
     return str(value or "").strip().casefold()
@@ -104,6 +117,8 @@ def main() -> int:
             names.append("Kijan Boone")
         event["artists"] = names
         event["lineupExplicit"] = True
+        if key in INDIE_TOUR_DETAILS:
+            event.update(INDIE_TOUR_DETAILS[key])
         source_name, source_url = INDIE_TOUR_STOPS[key]
         add_source(event, source_name, source_url)
         found_stops.add(key)
@@ -136,6 +151,9 @@ def main() -> int:
         assert matched, key
         assert all("indie tribe." in {norm(a) for a in e.get("artists", [])} for e in matched), key
         assert all("kijan boone" in {norm(a) for a in e.get("artists", [])} for e in matched), key
+        if key in INDIE_TOUR_DETAILS:
+            for field, expected in INDIE_TOUR_DETAILS[key].items():
+                assert all(e.get(field) == expected for e in matched), (key, field)
 
     print(
         f"Verified content overrides applied: Caleb portrait fixed; "

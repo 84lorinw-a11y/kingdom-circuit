@@ -369,7 +369,8 @@ const ARTIST_ROSTER_ORDER = [
   "Scarlito Jr.",
   "J Reborn",
   "Dre Skywalker",
-  "Gabriel Katon"
+  "Gabriel Katon",
+  "180MINDSET"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -1052,10 +1053,10 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "aliases": [
       "Kijan Boone"
     ],
-    "website": "https://www.google.com/search?q=Kijan+Boone+official+website",
+    "website": "https://kijanboone.com/",
     "instagramProfile": "https://www.instagram.com/kijanboone/",
-    "spotifyProfile": "https://open.spotify.com/search/Kijan%20Boone",
-    "youtubeProfile": "https://www.youtube.com/results?search_query=Kijan+Boone+official",
+    "spotifyProfile": "https://open.spotify.com/artist/3dAXZ2iCLGeHz5IMhAi12V",
+    "youtubeProfile": "https://www.youtube.com/channel/UCWiKxOKQso-t3q5wA_cNKKQ",
     "officialImageSource": "https://www.instagram.com/kijanboone/",
     "sourceRegistryVerified": true
   },
