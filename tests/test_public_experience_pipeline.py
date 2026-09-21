@@ -22,6 +22,18 @@ import verify_public_ux as ux_verifier  # noqa: E402
 
 
 class PublicExperiencePipelineTests(unittest.TestCase):
+    def test_card_dedupe_preserves_distinct_same_day_performance_times(self):
+        def card(start_time: str, href: str) -> str:
+            return f'''<article data-event-card data-date="2026-09-22" data-start-time="{start_time}">
+            <h3><a href="{href}">808 BEEZY Live at RWG Tour 2026</a></h3>
+            <p class="artist-line">808 BEEZY</p><dl>
+            <div><dt>Date</dt><dd>Sep 22, 2026</dd></div>
+            <div><dt>Location</dt><dd>Ohio, IL</dd></div></dl></article>'''
+
+        morning = card("10:53", "/event/morning/")
+        evening = card("19:00", "/event/evening/")
+        self.assertNotEqual(audit_repairs.card_key(morning), audit_repairs.card_key(evening))
+
     def test_public_ux_preserves_full_artist_directory_controls(self):
         sample = '''<html><head><script src="/assets/artist-filter-fix.js?v=5" defer></script></head>
         <body><main><section data-artist-directory><div class="directory-toolbar">

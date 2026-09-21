@@ -327,6 +327,7 @@ def card_details(card: str) -> Dict[str, str]:
         "artists_html": artist_line.group(1) if artist_line else "",
         "artists": plain_text(artist_line.group(1)) if artist_line else "",
         "date": meta.get("Date", get_attr(attrs, "data-date") or ""),
+        "time": get_attr(attrs, "data-start-time") or "",
         "venue": meta.get("Venue", ""),
         "location": meta.get("Location", ""),
         "state": (get_attr(attrs, "data-state") or "").upper(),
@@ -351,12 +352,13 @@ def clean_data_search(card: str) -> str:
     return new_opening + card[opening.end():]
 
 
-def card_key(card: str) -> Tuple[str, str, str]:
+def card_key(card: str) -> Tuple[str, str, str, str]:
     details = card_details(card)
     return (
         re.sub(r"\W+", "", details["title"].casefold()),
         details["date"].split(" - ", 1)[0].casefold(),
         re.sub(r"\s+", " ", details["location"].casefold()).strip(),
+        details["time"].casefold(),
     )
 
 
@@ -371,10 +373,10 @@ def repair_cards(text: str, site: Path, rel: Path, report: Dict[str, int]) -> st
             report["brokenEventCardsRemoved"] += 1
             return ""
         key = card_key(card)
-        if all(key) and key in seen:
+        if all(key[:3]) and key in seen:
             report["duplicateEventCardsRemoved"] += 1
             return ""
-        if all(key):
+        if all(key[:3]):
             seen.add(key)
         return clean_data_search(card)
 

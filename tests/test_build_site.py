@@ -103,10 +103,10 @@ class BuildSiteTests(unittest.TestCase):
     def test_slugify_is_url_safe(self):
         self.assertEqual(MODULE.slugify("Torey D'Shaun — Live!"), "torey-d-shaun-live")
 
-    def test_recent_window_is_fourteen_days(self):
+    def test_recent_window_is_seven_days(self):
         event = {"firstSeen": "2026-08-12T00:00:00Z"}
-        self.assertTrue(MODULE.is_recent(event, date(2026, 8, 25)))
-        self.assertFalse(MODULE.is_recent(event, date(2026, 8, 26)))
+        self.assertTrue(MODULE.is_recent(event, date(2026, 8, 18)))
+        self.assertFalse(MODULE.is_recent(event, date(2026, 8, 19)))
 
     def test_generates_real_multi_page_site(self):
         output = self.root / "_site"

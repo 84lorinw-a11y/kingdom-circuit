@@ -74,7 +74,8 @@ jobs:
               assert all(e.get('soldOut') is True for e in truthx)
               assert all(str(e.get('status','')).lower() not in {'cancelled','canceled'} for e in truthx)
           assert not any(e.get('id') == 'manual:egr-2026-09-12-corpus-christi-tx' for e in events)
-          assert not any('808 BEEZY' in (e.get('artists') or []) and 'RWG TOUR 2026' in str(e.get('title') or '') and str(e.get('startTime') or '')[:2].isdigit() and int(str(e.get('startTime'))[:2]) < 16 for e in events)
+          assert any(e.get('id') == 'manual:808-beezy-bandsintown-108908768' for e in events)
+          assert any(e.get('id') == 'manual:808-beezy-bandsintown-108932700' for e in events)
 
           audit = json.loads((site / 'artwork-audit.json').read_text(encoding='utf-8'))
           assert audit

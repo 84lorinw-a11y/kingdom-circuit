@@ -19,6 +19,8 @@ concurrency:
 env:
   APPROVED_SEO_REPO: 84lorinw-a11y/kingdom-circuit-test
   APPROVED_SEO_REF: af197d30b8ad4e3cb33e37cfc7a2de086335140d
+  APPROVED_REDESIGN_REPO: 84lorinw-a11y/kingdom-circuit-test
+  APPROVED_REDESIGN_REF: ab3166710790582db71dc01296239a11bdb79f3c
 
 jobs:
   update-and-deploy:
@@ -121,6 +123,14 @@ jobs:
           path: _seo_source
           fetch-depth: 1
 
+      - name: Check out pinned approved redesign source
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.APPROVED_REDESIGN_REPO }}
+          ref: ${{ env.APPROVED_REDESIGN_REF }}
+          path: _redesign_source
+          fetch-depth: 1
+
       - name: Prepare verified multi-page production site
         shell: bash
         run: |
@@ -132,6 +142,7 @@ jobs:
           test -s events.json
           test -s run-status.json
           test -s supplemental-events.json
+          test -s event-history.json
           test -s config/artists.json
           test -s scripts/verify_multipage_site.py
           test -s scripts/build_seo_site.py
@@ -146,6 +157,10 @@ jobs:
           test -s _seo_source/scripts/apply_test_overlay.py
           test -s _seo_source/scripts/finalize_test_seo.py
           test -s _seo_source/scripts/align_artist_schema.py
+          test -s _redesign_source/scripts/apply_test_redesign.py
+          test -s _redesign_source/test-overrides/kc-redesign-v1.css
+          test -s _redesign_source/test-overrides/kc-redesign-v1.js
+          test -s scripts/verify_live_redesign.py
 
           test -s shows/index.html
           test -s shows/this-month/index.html
@@ -390,6 +405,23 @@ jobs:
 
       - name: Apply final SEO indexing policy
         run: python scripts/finalize_seo_indexing.py --site _site
+
+      - name: Apply approved mobile-first live redesign
+        run: |
+          python _redesign_source/scripts/apply_test_redesign.py _site \
+            --production \
+            --source-events events.json \
+            --source-events supplemental-events.json \
+            --source-history event-history.json
+
+      - name: Refresh final production indexing after redesign
+        run: python scripts/finalize_seo_indexing_core.py --site _site
+
+      - name: Verify approved live redesign and production identity
+        run: |
+          python scripts/verify_live_redesign.py _site
+          node --check _site/app.js
+          node --check _site/assets/kc-redesign-v1.js
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

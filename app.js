@@ -2520,7 +2520,7 @@ function isNew(event) {
   if (!event.firstSeen) return false;
   const seen = new Date(event.firstSeen);
   const cutoff = new Date();
-  cutoff.setDate(cutoff.getDate() - 14);
+  cutoff.setDate(cutoff.getDate() - 7);
   return seen >= cutoff;
 }
 function eventTypeLabel(event) {

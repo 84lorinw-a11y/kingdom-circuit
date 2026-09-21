@@ -25,7 +25,7 @@ DEFAULT_OUTPUT = ROOT / "_site"
 BASE_URL = "https://kingdomcircuit.com"
 GA_ID = "G-N2KK9XF4TJ"
 FORMSPREE_ENDPOINT = "https://formspree.io/f/mljreawj"
-NEW_WINDOW_DAYS = 14
+NEW_WINDOW_DAYS = 7
 NEW_SHOWS_ACTIVATION_DATE = date(2026, 8, 12)
 
 STATE_NAMES = {
@@ -1142,23 +1142,23 @@ def generate_site(output_dir: Path, today: date | None = None) -> dict[str, int]
 
     recent_events = [event for event in events if is_recent(event, today)]
     recent_summary = summary_stats([
-        (str(len(recent_events)), "Added in 14 days"),
+        (str(len(recent_events)), "Added in 7 days"),
         (str(len({event.get('state') for event in recent_events if event.get('state')})), "States"),
         (str(len({name for event in recent_events for name in event.get('artists') or []})), "Artists"),
     ])
     write_text(output_dir / "new-shows" / "index.html", list_page(
         "new",
         "New to Kingdom Circuit | Recently Added CHH Shows",
-        "Browse Christian hip-hop shows added to The Kingdom Circuit within the last 14 days.",
+        "Browse Christian hip-hop shows added to The Kingdom Circuit within the last 7 days.",
         "/new-shows/",
         "Recently added",
-        "These shows were added to Kingdom Circuit within the last 14 days. A listing may have been announced earlier; new means it was recently added to our calendar.",
+        "These shows were added to Kingdom Circuit within the last 7 days. A listing may have been announced earlier; new means it was recently added to our calendar.",
         recent_events, events, status, event_map, artist_map,
         summary_html=recent_summary,
         recent_context=True,
         quick=False,
         section_heading="Recently Added Shows",
-        section_intro="These listings automatically leave this page after 14 days but remain on the full calendar.",
+        section_intro="These listings automatically leave this page after 7 days but remain on the full calendar.",
     ))
 
     write_text(output_dir / "artists" / "index.html", artist_directory_page(artists, events, status, artist_map))

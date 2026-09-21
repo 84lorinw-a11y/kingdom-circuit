@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "events.json"
+      - "supplemental-events.json"
       - "scripts/archive_event_history.py"
       - ".github/workflows/archive-event-history.yml"
   schedule:

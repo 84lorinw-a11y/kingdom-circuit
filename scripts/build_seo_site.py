@@ -7,11 +7,13 @@ import pathlib
 import re
 import shutil
 from collections import defaultdict
+from zoneinfo import ZoneInfo
 
 REPO = pathlib.Path.cwd()
 OUT = REPO / "_site"
 SITE = "https://kingdomcircuit.com"
-TODAY = dt.date.today()
+TODAY = dt.datetime.now(ZoneInfo("America/Los_Angeles")).date()
+VISIBILITY_CUTOFF = TODAY - dt.timedelta(days=1)
 GA_ID = "G-N2KK9XF4TJ"
 STATE_NAMES = {
     "AL":"Alabama","AK":"Alaska","AZ":"Arizona","AR":"Arkansas","CA":"California","CO":"Colorado","CT":"Connecticut","DE":"Delaware","DC":"District of Columbia","FL":"Florida","GA":"Georgia","HI":"Hawaii","ID":"Idaho","IL":"Illinois","IN":"Indiana","IA":"Iowa","KS":"Kansas","KY":"Kentucky","LA":"Louisiana","ME":"Maine","MD":"Maryland","MA":"Massachusetts","MI":"Michigan","MN":"Minnesota","MS":"Mississippi","MO":"Missouri","MT":"Montana","NE":"Nebraska","NV":"Nevada","NH":"New Hampshire","NJ":"New Jersey","NM":"New Mexico","NY":"New York","NC":"North Carolina","ND":"North Dakota","OH":"Ohio","OK":"Oklahoma","OR":"Oregon","PA":"Pennsylvania","RI":"Rhode Island","SC":"South Carolina","SD":"South Dakota","TN":"Tennessee","TX":"Texas","UT":"Utah","VT":"Vermont","VA":"Virginia","WA":"Washington","WV":"West Virginia","WI":"Wisconsin","WY":"Wyoming"
@@ -48,7 +50,7 @@ def image_url(value):
 
 def current(e):
     raw = e.get("endDate") or e.get("startDate")
-    try: return dt.date.fromisoformat(str(raw)[:10]) >= TODAY
+    try: return dt.date.fromisoformat(str(raw)[:10]) >= VISIBILITY_CUTOFF
     except Exception: return True
 
 def scheduled(e):
@@ -226,7 +228,17 @@ def main():
     if OUT.exists(): shutil.rmtree(OUT)
     OUT.mkdir()
     for item in REPO.iterdir():
-        if item.name in {".git",".github","_site","tests","scripts","cache"}: continue
+        if item.name in {
+            ".git",
+            ".github",
+            "_site",
+            "tests",
+            "scripts",
+            "cache",
+            "_seo_source",
+            "_redesign_source",
+        }:
+            continue
         dest=OUT/item.name
         shutil.copytree(item,dest) if item.is_dir() else shutil.copy2(item,dest)
 
@@ -243,7 +255,7 @@ def main():
     month_end=(month_start.replace(day=28)+dt.timedelta(days=4)).replace(day=1)-dt.timedelta(days=1)
     prerender_events(OUT/"shows/this-month/index.html",[e for e in events if dt.date.fromisoformat(str(e.get("startDate"))[:10]) <= month_end and dt.date.fromisoformat(str(e.get("endDate") or e.get("startDate"))[:10]) >= month_start],artists)
     prerender_events(OUT/"festivals/index.html",[e for e in events if e.get("eventType")=="festival"],artists)
-    cutoff=TODAY-dt.timedelta(days=14)
+    cutoff=TODAY-dt.timedelta(days=6)
     recent=[]
     for e in events:
         try:

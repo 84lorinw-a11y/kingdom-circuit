@@ -21,7 +21,7 @@ class September12CompleteCloseoutTests(unittest.TestCase):
         daytime = {"id": "day", "title": "808 BEEZY — Live at RWG TOUR 2026", "artists": ["808 BEEZY"], "startTime": "14:10"}
         evening = {"id": "night", "title": "808 BEEZY — Live at RWG TOUR 2026", "artists": ["808 BEEZY"], "startTime": "19:00"}
         self.assertTrue(closeout.should_hide_public(egr))
-        self.assertTrue(closeout.should_hide_public(daytime))
+        self.assertFalse(closeout.should_hide_public(daytime))
         self.assertFalse(closeout.should_hide_public(evening))
 
     def test_fabricated_flyers_are_replaced_or_reported_as_honest_fallback(self):

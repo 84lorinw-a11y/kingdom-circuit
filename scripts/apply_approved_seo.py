@@ -371,6 +371,19 @@ def main(site_root: str) -> None:
     overlay.SCHEMA_MARKER = "<!-- KC SEO SCHEMA -->"
     overlay.verify = lambda site, pages: production_overlay_verify(overlay, pathlib.Path(site), pages)
 
+    approved_event_card = overlay.event_card
+
+    def production_event_card(event, meta_by_name):
+        card = approved_event_card(event, meta_by_name)
+        start_time = html.escape(str(event.get("startTime") or ""), quote=True)
+        return card.replace(
+            " data-end-date=",
+            f' data-start-time="{start_time}" data-end-date=',
+            1,
+        )
+
+    overlay.event_card = production_event_card
+
     # The pinned overlay historically deduplicated by exact ID and did not
     # filter cancelled/merged records. Reuse the production builder's identity
     # and status rules so overlay cards always correspond to generated pages.
@@ -378,6 +391,7 @@ def main(site_root: str) -> None:
         "kc_production_builder",
         pathlib.Path(__file__).with_name("build_seo_site.py"),
     )
+    overlay.future = production_builder.current
     overlay.merge_events = lambda primary, supplemental: merge_production_events(
         production_builder,
         overlay,

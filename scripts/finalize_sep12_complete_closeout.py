@@ -105,17 +105,8 @@ def event_key(event: dict) -> tuple[str, str]:
     return str(event.get("title") or ""), str(event.get("startDate") or "")[:10]
 
 
-def is_daytime_808_unconfirmed(event: dict) -> bool:
-    artists = [norm(x) for x in event.get("artists") or []]
-    if "808 beezy" not in artists or "rwg tour 2026" not in norm(event.get("title")):
-        return False
-    time = str(event.get("startTime") or "")
-    match = re.match(r"^(\d{1,2}):(\d{2})", time)
-    return bool(match and int(match.group(1)) < 16)
-
-
 def should_hide_public(event: dict) -> bool:
-    return str(event.get("id") or "") in PRIVATE_OR_UNCONFIRMED_IDS or is_daytime_808_unconfirmed(event)
+    return str(event.get("id") or "") in PRIVATE_OR_UNCONFIRMED_IDS
 
 
 def public_src(value: object) -> str:

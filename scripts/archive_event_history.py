@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Maintain a durable history of every real show ever observed on the calendar.
 
-The public events.json can remain future-focused while event-history.json keeps
+The public event feeds can remain future-focused while event-history.json keeps
 historical data for year-end recaps, artist show counts, geography, festivals,
 and other analysis. Each run also backfills every recoverable historical version
-of events.json from git so older calendar entries are not lost.
+of both public event feeds from git so older calendar entries are not lost.
 """
 
 from __future__ import annotations
@@ -18,7 +18,7 @@ from pathlib import Path
 from typing import Any, Iterable
 
 ROOT = Path(__file__).resolve().parents[1]
-EVENTS_FILE = ROOT / "events.json"
+EVENT_FILES = (ROOT / "events.json", ROOT / "supplemental-events.json")
 HISTORY_FILE = ROOT / "event-history.json"
 HISTORY_VERSION = 2
 
@@ -59,6 +59,33 @@ def write_json(path: Path, value: Any) -> None:
 def normalize(value: Any) -> str:
     text = str(value or "").casefold().strip()
     return re.sub(r"\s+", " ", text)
+
+
+def canonicalize_known_event_identity(event: dict[str, Any]) -> dict[str, Any]:
+    """Repair stable provider identity mistakes before they enter show history."""
+    repaired = dict(event)
+    urls = " ".join(
+        str(repaired.get(field) or "")
+        for field in ("ticketUrl", "officialUrl")
+    )
+    if (
+        str(repaired.get("bandsintownEventId") or "") == "108188679"
+        or "108188679" in urls
+    ):
+        repaired.update(
+            {
+                "title": "Hulvey - Could Be Tonight Tour",
+                "startTime": "19:00",
+                "timezone": "America/New_York",
+                "venue": "The Fillmore Silver Spring",
+                "address": "8656 Colesville Rd",
+                "city": "Silver Spring",
+                "state": "MD",
+                "artists": ["Hulvey", "indie tribe.", "Kijan Boone"],
+                "headliner": "Hulvey",
+            }
+        )
+    return repaired
 
 
 def is_test_event(event: dict[str, Any]) -> bool:
@@ -122,46 +149,45 @@ def date_state(event: dict[str, Any], today: date) -> str:
 
 
 def git_event_snapshots() -> list[tuple[str, list[dict[str, Any]]]]:
-    """Return recoverable events.json snapshots in chronological commit order."""
-    try:
-        log = subprocess.run(
-            ["git", "log", "--format=%H%x09%cI", "--", "events.json"],
-            cwd=ROOT,
-            check=True,
-            capture_output=True,
-            text=True,
-        ).stdout
-    except (OSError, subprocess.CalledProcessError):
-        return []
-
-    commits: list[tuple[str, str]] = []
-    for line in log.splitlines():
-        if "\t" not in line:
-            continue
-        sha, committed_at = line.split("\t", 1)
-        commits.append((sha.strip(), committed_at.strip()))
-
+    """Return recoverable event-feed snapshots in chronological commit order."""
     snapshots: list[tuple[str, list[dict[str, Any]]]] = []
-    for sha, committed_at in reversed(commits):
+    for source in EVENT_FILES:
         try:
-            raw = subprocess.run(
-                ["git", "show", f"{sha}:events.json"],
+            log = subprocess.run(
+                ["git", "log", "--format=%H%x09%cI", "--", source.name],
                 cwd=ROOT,
                 check=True,
                 capture_output=True,
                 text=True,
             ).stdout
-            parsed = json.loads(raw)
-        except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
+        except (OSError, subprocess.CalledProcessError):
             continue
-        if not isinstance(parsed, list):
-            continue
-        events = [
-            event for event in parsed
-            if isinstance(event, dict) and not is_test_event(event)
-        ]
-        snapshots.append((committed_at, events))
-    return snapshots
+        commits: list[tuple[str, str]] = []
+        for line in log.splitlines():
+            if "\t" not in line:
+                continue
+            sha, committed_at = line.split("\t", 1)
+            commits.append((sha.strip(), committed_at.strip()))
+        for sha, committed_at in reversed(commits):
+            try:
+                raw = subprocess.run(
+                    ["git", "show", f"{sha}:{source.name}"],
+                    cwd=ROOT,
+                    check=True,
+                    capture_output=True,
+                    text=True,
+                ).stdout
+                parsed = json.loads(raw)
+            except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
+                continue
+            if not isinstance(parsed, list):
+                continue
+            events = [
+                event for event in parsed
+                if isinstance(event, dict) and not is_test_event(event)
+            ]
+            snapshots.append((committed_at, events))
+    return sorted(snapshots, key=lambda item: item[0])
 
 
 def earlier_iso(current: str, candidate: str) -> str:
@@ -198,7 +224,7 @@ def upsert_snapshot(
     observed_date = observed_dt.date() if observed_dt else today
 
     for raw_event in events:
-        event = dict(raw_event)
+        event = canonicalize_known_event_identity(raw_event)
         if is_test_event(event):
             continue
         key = archive_key(event)
@@ -257,9 +283,12 @@ def upsert_snapshot(
 
 
 def main() -> None:
-    current = load_json(EVENTS_FILE, [])
-    if not isinstance(current, list):
-        raise SystemExit("events.json must contain a JSON array")
+    current: list[Any] = []
+    for path in EVENT_FILES:
+        payload = load_json(path, [])
+        if not isinstance(payload, list):
+            raise SystemExit(f"{path.name} must contain a JSON array")
+        current.extend(payload)
     current_events = [
         event for event in current
         if isinstance(event, dict) and not is_test_event(event)
@@ -280,6 +309,8 @@ def main() -> None:
         and isinstance(record.get("event"), dict)
         and not is_test_event(record["event"])
     ]
+    for record in records:
+        record["event"] = canonicalize_known_event_identity(record["event"])
 
     timestamp = now_iso()
     today = datetime.now(timezone.utc).date()
@@ -330,8 +361,16 @@ def main() -> None:
                 str(record.get("lastSeenOnCalendar") or ""), timestamp
             )
         else:
-            if record.get("calendarPresence") == "present":
+            was_present = record.get("calendarPresence") == "present"
+            if was_present:
                 removed += 1
+                event_date = parse_event_date(event)
+                if event_date is not None and event_date <= today:
+                    record["observedOnOrAfterEventDate"] = True
+                    record["firstObservedOnOrAfterEventDate"] = earlier_iso(
+                        str(record.get("firstObservedOnOrAfterEventDate") or ""),
+                        timestamp,
+                    )
             record["calendarPresence"] = "absent"
             if not record.get("removedFromCalendarAt"):
                 record["removedFromCalendarAt"] = timestamp

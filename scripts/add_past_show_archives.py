@@ -5,12 +5,15 @@ import html
 import json
 import pathlib
 import re
+from zoneinfo import ZoneInfo
 
 SITE_ORIGIN = "https://kingdomcircuit.com"
 BRAND_LOGO = "/assets/logo-wordmark.svg?v=1"
 GA_ID = "G-N2KK9XF4TJ"
 ARCHIVE_DAYS = 550
 ARCHIVE_LIMIT = 12
+PAST_GRACE_DAYS = 1
+PACIFIC = ZoneInfo("America/Los_Angeles")
 
 STATE_NAMES = {
     "AL":"Alabama","AK":"Alaska","AZ":"Arizona","AR":"Arkansas","CA":"California","CO":"Colorado","CT":"Connecticut","DE":"Delaware","DC":"District of Columbia","FL":"Florida","GA":"Georgia","HI":"Hawaii","ID":"Idaho","IL":"Illinois","IN":"Indiana","IA":"Iowa","KS":"Kansas","KY":"Kentucky","LA":"Louisiana","ME":"Maine","MD":"Maryland","MA":"Massachusetts","MI":"Michigan","MN":"Minnesota","MS":"Mississippi","MO":"Missouri","MT":"Montana","NE":"Nebraska","NV":"Nevada","NH":"New Hampshire","NJ":"New Jersey","NM":"New Mexico","NY":"New York","NC":"North Carolina","ND":"North Dakota","OH":"Ohio","OK":"Oklahoma","OR":"Oregon","PA":"Pennsylvania","RI":"Rhode Island","SC":"South Carolina","SD":"South Dakota","TN":"Tennessee","TX":"Texas","UT":"Utah","VT":"Vermont","VA":"Virginia","WA":"Washington","WV":"West Virginia","WI":"Wisconsin","WY":"Wyoming"
@@ -148,7 +151,9 @@ def load_events(root: pathlib.Path) -> tuple[list[dict], dict[str, str]]:
         history = json.loads(path.read_text(encoding="utf-8"))
     except json.JSONDecodeError:
         return [], by_slug
-    today = dt.date.today(); oldest = today - dt.timedelta(days=ARCHIVE_DAYS)
+    today = dt.datetime.now(PACIFIC).date()
+    cutoff = today - dt.timedelta(days=PAST_GRACE_DAYS)
+    oldest = today - dt.timedelta(days=ARCHIVE_DAYS)
     selected: dict[str, dict] = {}
     for record in history.get("events", []) if isinstance(history, dict) else []:
         if not isinstance(record, dict) or not record.get("observedOnOrAfterEventDate"):
@@ -157,7 +162,7 @@ def load_events(root: pathlib.Path) -> tuple[list[dict], dict[str, str]]:
         if not isinstance(event, dict) or is_test(event) or not trusted(event):
             continue
         when = event_date(event)
-        if when is None or when >= today or when < oldest:
+        if when is None or when >= cutoff or when < oldest:
             continue
         if str(event.get("country") or "US").upper() not in {"", "US", "USA"}:
             continue
@@ -220,10 +225,31 @@ def past_page(root: pathlib.Path, event: dict, known_slugs: set[str]) -> str:
     if city_file.is_file(): nav.append(f'<a class="secondary-button" href="{city_path(city,state)}">Upcoming {esc(city)} shows</a>')
     elif state_file.is_file(): nav.append(f'<a class="secondary-button" href="{state_path(state)}">Upcoming {esc(STATE_NAMES.get(state,state))} shows</a>')
     source = f'<p><a class="text-link" href="{esc(original)}" target="_blank" rel="noopener">Original event source</a></p>' if original and "example." not in original.casefold() else ""
+    image = str(event.get("image") or "assets/event-fallback.webp").strip()
+    if image.startswith("http://"):
+        image = "https://" + image.removeprefix("http://")
+    if not image.startswith(("https://", "http://")):
+        local_image = root / image.lstrip("/")
+        if not local_image.is_file():
+            image = "assets/event-fallback.webp"
+    if not image.startswith(("https://", "http://", "/")):
+        image = "/" + image.lstrip("/")
+    image_class = (
+        "event-artwork"
+        if event.get("imageType") == "event_artwork" and image != "/assets/event-fallback.webp"
+        else "artist-photo"
+    )
+    image_position = str(event.get("imagePosition") or "center").strip()
+    media = (
+        '<div class="event-detail-media">'
+        f'<img class="{image_class}" src="{esc(image)}" alt="{esc(title)}" '
+        f'style="object-position:{esc(image_position)}" loading="eager" decoding="async" '
+        'width="1200" height="675"></div>'
+    )
     schema = {"@context":"https://schema.org","@type":"MusicEvent","name":title,"startDate":str(event.get("startDate") or ""),"eventStatus":"https://schema.org/EventCompleted","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","url":canonical,"location":{"@type":"Place","name":venue,"address":{"@type":"PostalAddress","addressLocality":city,"addressRegion":state,"addressCountry":"US"}},"performer":[{"@type":"MusicGroup","name":n} for n in names]}
     schema_json = json.dumps(schema, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     desc = f"Past Christian hip-hop show: {title} in {city}, {state} on {date_label(event)}. Browse current Kingdom Circuit show listings."
-    return f'''<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="index,follow"><meta name="description" content="{esc(desc)}"><link rel="canonical" href="{esc(canonical)}"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css?v=10.3"><meta property="og:type" content="website"><meta property="og:title" content="{esc(title)} - Past Show | Kingdom Circuit"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{esc(canonical)}"><script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','{GA_ID}');</script><script type="application/ld+json">{schema_json}</script><title>{esc(title)} - Past Show | Kingdom Circuit</title>{STYLE}</head><body><header class="site-header"><div class="header-inner"><a class="brand" href="/" aria-label="The Kingdom Circuit home"><img src="{BRAND_LOGO}" alt="The Kingdom Circuit - Christian hip-hop, live and connected"></a></div></header><main><section class="event-detail-section"><p class="eyebrow"><a class="text-link" href="/shows/">Shows</a> / Past show</p><article class="event-detail"><div class="event-detail-copy"><p class="eyebrow">Past show</p><h1>{esc(title)}</h1><p class="artist-line">{artists}</p><div class="past-event-notice"><strong>This event has passed.</strong><p>Kingdom Circuit keeps verified past listings available as concert history. Use the links below for current shows.</p></div><dl class="detail-list"><div><dt>Date</dt><dd>{esc(date_label(event))}</dd></div><div><dt>Venue</dt><dd>{esc(venue)}</dd></div><div><dt>Location</dt><dd>{esc(city)}, {esc(state)}</dd></div></dl><div class="profile-links">{''.join(nav)}</div>{source}</div></article></section></main><footer class="site-footer"><div><strong>The Kingdom Circuit</strong><p>Christian hip-hop, live and connected.</p></div><div class="footer-links"><a href="/shows/">All Shows</a><a href="/artists/">Artists</a><a href="/festivals/">Festivals</a><a href="/submit/">Submit a Show</a></div><p class="footer-note">Past event details are preserved for historical reference.</p></footer></body></html>'''
+    return f'''<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="index,follow"><meta name="description" content="{esc(desc)}"><link rel="canonical" href="{esc(canonical)}"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css?v=10.3"><meta property="og:type" content="website"><meta property="og:title" content="{esc(title)} - Past Show | Kingdom Circuit"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{esc(canonical)}"><script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','{GA_ID}');</script><script type="application/ld+json">{schema_json}</script><title>{esc(title)} - Past Show | Kingdom Circuit</title>{STYLE}</head><body><header class="site-header"><div class="header-inner"><a class="brand" href="/" aria-label="The Kingdom Circuit home"><img src="{BRAND_LOGO}" alt="The Kingdom Circuit - Christian hip-hop, live and connected"></a></div></header><main><section class="event-detail-section"><p class="eyebrow"><a class="text-link" href="/shows/">Shows</a> / Past show</p><article class="event-detail">{media}<div class="event-detail-copy"><p class="eyebrow">Past show</p><h1>{esc(title)}</h1><p class="artist-line">{artists}</p><div class="past-event-notice"><strong>This event has passed.</strong><p>Kingdom Circuit keeps verified past listings available as concert history. Use the links below for current shows.</p></div><dl class="detail-list"><div><dt>Date</dt><dd>{esc(date_label(event))}</dd></div><div><dt>Venue</dt><dd>{esc(venue)}</dd></div><div><dt>Location</dt><dd>{esc(city)}, {esc(state)}</dd></div></dl><div class="profile-links">{''.join(nav)}</div>{source}</div></article></section></main><footer class="site-footer"><div><strong>The Kingdom Circuit</strong><p>Christian hip-hop, live and connected.</p></div><div class="footer-links"><a href="/shows/">All Shows</a><a href="/artists/">Artists</a><a href="/festivals/">Festivals</a><a href="/submit/">Submit a Show</a></div><p class="footer-note">Past event details are preserved for historical reference.</p></footer></body></html>'''
 
 
 def apply_past_show_archives(root: pathlib.Path) -> dict:

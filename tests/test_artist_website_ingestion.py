@@ -54,9 +54,9 @@ class ArtistWebsiteIngestionTests(unittest.TestCase):
 
     def test_808_beezy_verified_seed_dates_exist(self):
         events = json.loads((ROOT / "config" / "artist-website-seed-events.json").read_text(encoding="utf-8"))
-        self.assertEqual(19, len(events))
-        self.assertEqual(19, len({event.get("id") for event in events}))
-        self.assertEqual(19, len({event.get("officialUrl") for event in events}))
+        self.assertEqual(22, len(events))
+        self.assertEqual(22, len({event.get("id") for event in events}))
+        self.assertEqual(22, len({event.get("officialUrl") for event in events}))
         self.assertTrue(all(event.get("artists") == ["808 BEEZY"] for event in events))
         self.assertTrue(all(event.get("startDate") and event.get("startTime") for event in events))
         self.assertTrue(all(event.get("city") and event.get("state") for event in events))
