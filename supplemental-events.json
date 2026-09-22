@@ -753,6 +753,59 @@
     "sourceName": "Ark of Worship official festival lineup"
   },
   {
+    "id": "tru-serva-cupojoy-green-bay-2026",
+    "title": "TRU-SERVA at CupOJoy Cup2",
+    "startDate": "2026-10-09",
+    "startTime": "19:00",
+    "timezone": "America/Chicago",
+    "venue": "CupOJoy Cup2",
+    "address": "525 North Taylor",
+    "city": "Green Bay",
+    "state": "WI",
+    "country": "US",
+    "artists": [
+      "TRU-SERVA"
+    ],
+    "headliner": "TRU-SERVA",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.itickets.com/events/487141",
+    "officialUrl": "https://www.itickets.com/events/487141",
+    "image": "https://i.scdn.co/image/ab6761610000e5ebb5bd510760cb418516ded933",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "price": "$11.90+",
+    "lineupExplicit": true,
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "sourceName": "Official CupOJoy ticket listing",
+    "sources": [
+      {
+        "name": "Official CupOJoy ticket listing",
+        "url": "https://www.itickets.com/events/487141",
+        "type": "venue_ticket",
+        "authority": "venue_ticket",
+        "priority": 112
+      },
+      {
+        "name": "CupOJoy official events calendar",
+        "url": "https://cupojoy.com/events",
+        "type": "venue_calendar",
+        "authority": "venue",
+        "priority": 106
+      },
+      {
+        "name": "TRU-SERVA Bandsintown event",
+        "url": "https://www.bandsintown.com/e/1040011561-tru-serva-at-cupojoy-cup2",
+        "type": "bandsintown",
+        "authority": "artist_calendar",
+        "priority": 84
+      }
+    ],
+    "notes": "CupOJoy and its official ticket provider confirm TRU-SERVA at 7:00 PM; doors open at 6:30 PM.",
+    "auditVerified": "2026-09-22"
+  },
+  {
     "id": "supplemental:brenno-awake-conference-2026",
     "title": "Awake Conference",
     "startDate": "2026-10-10",

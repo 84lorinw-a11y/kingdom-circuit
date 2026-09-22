@@ -53,7 +53,10 @@ class ArtistDatabaseSeptember4Tests(unittest.TestCase):
             for event in self.events
             if "TRU-SERVA" in (event.get("artists") or [])
         }
-        self.assertEqual(shows["bandsintown:1040011561"]["startDate"], "2026-10-09")
+        show = shows["tru-serva-cupojoy-green-bay-2026"]
+        self.assertEqual(show["startDate"], "2026-10-09")
+        self.assertEqual(show["officialUrl"], "https://www.itickets.com/events/487141")
+        self.assertEqual(show["authority"], "venue_ticket")
         self.assertNotIn("supplemental:tru-serva-truth-tour-las-cruces-2026", shows)
 
 
