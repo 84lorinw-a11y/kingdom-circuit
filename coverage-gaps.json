@@ -1,6 +1,6 @@
 {
   "policyVersion": 7,
-  "generatedAt": "2026-09-22T15:39:36Z",
+  "generatedAt": "2026-09-22T19:02:38Z",
   "highRiskArtists": [
     {
       "artist": "Mike Malagies",
@@ -244,34 +244,6 @@
       "reason": "No Ticketmaster match and no healthy dedicated artist calendar was recorded in the latest run."
     },
     {
-      "artist": "Redimi2",
-      "healthyDedicatedSources": [],
-      "failedDedicatedSources": [
-        "Redimi2 Bandsintown public calendar"
-      ],
-      "ticketmasterUnmatched": false,
-      "ticketmasterFailed": false,
-      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
-    },
-    {
-      "artist": "Funky",
-      "healthyDedicatedSources": [],
-      "failedDedicatedSources": [
-        "Funky Bandsintown public calendar"
-      ],
-      "ticketmasterUnmatched": false,
-      "ticketmasterFailed": false,
-      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
-    },
-    {
-      "artist": "Pregador Luo",
-      "healthyDedicatedSources": [],
-      "failedDedicatedSources": [],
-      "ticketmasterUnmatched": true,
-      "ticketmasterFailed": false,
-      "reason": "No Ticketmaster match and no healthy dedicated artist calendar was recorded in the latest run."
-    },
-    {
       "artist": "Red Tips",
       "healthyDedicatedSources": [],
       "failedDedicatedSources": [],
@@ -297,6 +269,34 @@
     },
     {
       "artist": "J. Monty",
+      "healthyDedicatedSources": [],
+      "failedDedicatedSources": [],
+      "ticketmasterUnmatched": true,
+      "ticketmasterFailed": false,
+      "reason": "No Ticketmaster match and no healthy dedicated artist calendar was recorded in the latest run."
+    },
+    {
+      "artist": "Redimi2",
+      "healthyDedicatedSources": [],
+      "failedDedicatedSources": [
+        "Redimi2 Bandsintown public calendar"
+      ],
+      "ticketmasterUnmatched": false,
+      "ticketmasterFailed": false,
+      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
+    },
+    {
+      "artist": "Funky",
+      "healthyDedicatedSources": [],
+      "failedDedicatedSources": [
+        "Funky Bandsintown public calendar"
+      ],
+      "ticketmasterUnmatched": false,
+      "ticketmasterFailed": false,
+      "reason": "At least one dedicated artist source failed, but another artist calendar or Ticketmaster channel remains available."
+    },
+    {
+      "artist": "Pregador Luo",
       "healthyDedicatedSources": [],
       "failedDedicatedSources": [],
       "ticketmasterUnmatched": true,
@@ -388,19 +388,6 @@
         "Zauntee"
       ],
       "officialUrl": "https://www.bandsintown.com/e/108938482?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-      "status": "needs_official_lineup_review",
-      "reason": "A tracked artist calendar reports this festival, but no official-lineup record is published yet."
-    },
-    {
-      "id": "bandsintown:108912956",
-      "title": "OUTLANDISH FEST 2026",
-      "startDate": "2026-11-14",
-      "city": "Fort Worth",
-      "state": "TX",
-      "artists": [
-        "Ty Brasel"
-      ],
-      "officialUrl": "https://www.bandsintown.com/e/108912956?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
       "status": "needs_official_lineup_review",
       "reason": "A tracked artist calendar reports this festival, but no official-lineup record is published yet."
     }
