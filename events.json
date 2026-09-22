@@ -1453,7 +1453,7 @@
     "firstSeen": "2026-08-09T00:00:00Z",
     "authority": "artist_calendar",
     "lineupExplicit": true,
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "imageOverride": true
   },
   {
@@ -2671,7 +2671,7 @@
     "firstSeen": "2026-08-09T00:00:00Z",
     "authority": "artist_calendar",
     "lineupExplicit": true,
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "imageOverride": true
   },
   {
@@ -2999,7 +2999,7 @@
     "firstSeen": "2026-08-09T00:00:00Z",
     "authority": "official_event",
     "lineupExplicit": true,
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "officialBill": [
       "DJ Watty Tha Shepherd",
       "MAYIA WARREN"
@@ -3169,7 +3169,7 @@
     "firstSeen": "2026-08-09T00:00:00Z",
     "authority": "artist_calendar",
     "lineupExplicit": true,
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "imageOverride": true,
     "officialBill": [
       "CJ Emulous",
@@ -3549,7 +3549,7 @@
     "firstSeen": "2026-08-09T00:00:00Z",
     "authority": "official_event",
     "lineupExplicit": true,
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "notes": "One event with two confirmed acoustic sets: 10–11 AM and 12–1 PM.",
     "imageOverride": true
   },
@@ -3587,12 +3587,12 @@
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
     "imageType": "artist",
-    "imagePosition": "center",
+    "imagePosition": "center 30%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
     "authority": "artist_calendar",
     "lineupExplicit": true,
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "imageOverride": true,
     "imageSource": "Mission official YouTube channel",
     "imageSourceUrl": "https://www.youtube.com/channel/UCBaU_Xh4fyokc-ckyCeYv3w"
@@ -3854,74 +3854,6 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "title": "Light in the Darkness",
-    "startDate": "2026-10-31",
-    "startTime": "16:00",
-    "endTime": "21:30",
-    "doorsTime": "15:00",
-    "timezone": "America/Phoenix",
-    "venue": "South Mountain Activity Complex",
-    "address": "10401 S Central Ave",
-    "city": "Phoenix",
-    "state": "AZ",
-    "country": "US",
-    "artists": [
-      "Jon Keith"
-    ],
-    "headliner": "Jon Keith",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343",
-    "officialUrl": "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343",
-    "image": "assets/events/light-in-the-darkness-2026.webp",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Official Eventbrite event artwork",
-    "imageSourceUrl": "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343",
-    "price": "Free",
-    "lineupExplicit": true,
-    "advertisedBilling": [
-      "Jon Keith",
-      "Grace Graber",
-      "trtle",
-      "HLYVRS31",
-      "CHVNCELLOR",
-      "CHVRCHS62",
-      "Adam Verdi"
-    ],
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "sourceName": "Official Eventbrite listing",
-    "sources": [
-      {
-        "name": "Official Eventbrite listing",
-        "url": "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343",
-        "type": "eventbrite",
-        "authority": "venue_ticket",
-        "priority": 112
-      },
-      {
-        "name": "City of Phoenix venue listing",
-        "url": "https://www.phoenix.gov/calendar/parks-events/south-mountain-grand-opening-.html",
-        "type": "manual_verified",
-        "authority": "venue",
-        "priority": 86
-      },
-      {
-        "name": "Bandsintown event listing",
-        "url": "https://www.bandsintown.com/e/108849019-trtle-at-south-mountain-activity-complex",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 76
-      }
-    ],
-    "ageRestriction": "Under 18 with parent or legal guardian",
-    "notes": "Free public event. Official ticket page lists doors at 3:00 PM and event hours 4:00–9:30 PM. User-provided organizer flyer confirms Jon Keith as the featured headliner.",
-    "auditVerified": "2026-09-14",
-    "id": "manual:light-in-the-darkness-phoenix-2026"
-  },
-  {
     "id": "ticketmaster:k7vGF_CBswXt6",
     "title": "ZAUNTEE: God Remembers Tour",
     "startDate": "2026-11-01",
@@ -4056,54 +3988,6 @@
     "imageOverride": true,
     "imageSource": "Official Ticketmaster God Remembers Tour portrait",
     "imageSourceUrl": "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE"
-  },
-  {
-    "title": "New Mainstream Tour — Miles Minnick, Tommy Zuko & CJ Emulous",
-    "startDate": "2026-11-05",
-    "startTime": "",
-    "timezone": "America/New_York",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "Miami",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "",
-    "officialUrl": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-23",
-    "image": "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
-    "imageType": "artist",
-    "imagePosition": "center",
-    "imageOverride": false,
-    "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "sourceName": "CJ Emulous official New Mainstream Tour calendar",
-    "sources": [
-      {
-        "name": "CJ Emulous official New Mainstream Tour calendar",
-        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-23",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      },
-      {
-        "name": "Miles Minnick official tour page",
-        "url": "https://milesminnick.com/tour",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 94
-      }
-    ],
-    "notes": "Official artist calendar confirms the date and Miami, but no venue or direct ticket page. Time is left blank pending local venue/ticket confirmation.",
-    "auditVerified": "2026-09-13",
-    "id": "manual:cj-emulous-new-mainstream-miami-2026-11-05"
   },
   {
     "id": "manual:flavor-fest-2026-friday-concerts",
@@ -4286,54 +4170,6 @@
     "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
-    "title": "New Mainstream Tour — Miles Minnick, Tommy Zuko & CJ Emulous",
-    "startDate": "2026-11-08",
-    "startTime": "",
-    "timezone": "America/New_York",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "Jacksonville",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "",
-    "officialUrl": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-26",
-    "image": "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
-    "imageType": "artist",
-    "imagePosition": "center",
-    "imageOverride": false,
-    "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "sourceName": "CJ Emulous official New Mainstream Tour calendar",
-    "sources": [
-      {
-        "name": "CJ Emulous official New Mainstream Tour calendar",
-        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-26",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      },
-      {
-        "name": "Miles Minnick official tour page",
-        "url": "https://milesminnick.com/tour",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 94
-      }
-    ],
-    "notes": "Official artist calendar confirms the date and Jacksonville, but no venue or direct ticket page. Time is left blank pending local venue/ticket confirmation.",
-    "auditVerified": "2026-09-13",
-    "id": "manual:cj-emulous-new-mainstream-jacksonville-2026-11-08"
-  },
-  {
     "id": "ticketmaster:vvG1zZ_ClQMRrF",
     "title": "ZAUNTEE: God Remembers Tour",
     "startDate": "2026-11-08",
@@ -4509,7 +4345,7 @@
     "firstSeen": "2026-08-09T00:00:00Z",
     "authority": "artist_calendar",
     "lineupExplicit": true,
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "imageOverride": true
   },
   {
@@ -4643,71 +4479,6 @@
     "imagePosition": "50% 38%",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
-  },
-  {
-    "title": "State Youth Conference with CJ Emulous",
-    "startDate": "2026-11-27",
-    "startTime": "",
-    "timezone": "America/New_York",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "Cocoa",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "CJ Emulous"
-    ],
-    "headliner": "CJ Emulous",
-    "eventType": "conference",
-    "status": "scheduled",
-    "ticketUrl": "",
-    "officialUrl": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous",
-    "image": "",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "imageOverride": false,
-    "price": "",
-    "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "sourceName": "CJ Emulous official calendar",
-    "sources": [
-      {
-        "name": "CJ Emulous official calendar",
-        "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      },
-      {
-        "name": "CJ Emulous official calendar — Nov 28 session",
-        "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      },
-      {
-        "name": "CJ Emulous official calendar — Nov 29 session",
-        "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous-2",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ],
-    "auditVerified": "2026-09-13",
-    "endDate": "2026-11-29",
-    "notes": "One conference record covers all three official CJ Emulous appearances. Main time is blank pending independent local-time confirmation.",
-    "sessionDates": [
-      "2026-11-27",
-      "2026-11-28",
-      "2026-11-29"
-    ],
-    "publishedSessionTimes": {
-      "2026-11-27": "19:00",
-      "2026-11-28": "10:00",
-      "2026-11-29": "09:00"
-    },
-    "id": "manual:cj-emulous-state-youth-conference-cocoa-2026"
   },
   {
     "title": "Christlike Christmas — CJ Emulous & Miles Minnick",
@@ -4939,7 +4710,7 @@
     "firstSeen": "2026-08-09T00:00:00Z",
     "authority": "artist_calendar",
     "lineupExplicit": true,
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "imageOverride": true
   },
   {
@@ -5380,5 +5151,234 @@
     "auditVerified": "2026-09-13",
     "notes": "Venue, additional lineup and independently confirmed local performance time remain unpublished.",
     "id": "manual:cj-emulous-rize-az-music-festival-2027"
+  },
+  {
+    "title": "State Youth Conference with CJ Emulous",
+    "startDate": "2026-11-27",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "Venue not provided",
+    "address": "",
+    "city": "Cocoa",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "CJ Emulous"
+    ],
+    "headliner": "CJ Emulous",
+    "eventType": "conference",
+    "status": "scheduled",
+    "ticketUrl": "",
+    "officialUrl": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous",
+    "image": "",
+    "imageType": "fallback",
+    "imagePosition": "center",
+    "imageOverride": false,
+    "price": "",
+    "lineupExplicit": true,
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "sourceName": "CJ Emulous official calendar",
+    "sources": [
+      {
+        "name": "CJ Emulous official calendar",
+        "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      },
+      {
+        "name": "CJ Emulous official calendar — Nov 28 session",
+        "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      },
+      {
+        "name": "CJ Emulous official calendar — Nov 29 session",
+        "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous-2",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ],
+    "auditVerified": "2026-09-13",
+    "endDate": "2026-11-29",
+    "notes": "One conference record covers all three official CJ Emulous appearances. Main time is blank pending independent local-time confirmation.",
+    "sessionDates": [
+      "2026-11-27",
+      "2026-11-28",
+      "2026-11-29"
+    ],
+    "publishedSessionTimes": {
+      "2026-11-27": "19:00",
+      "2026-11-28": "10:00",
+      "2026-11-29": "09:00"
+    },
+    "id": "manual:cj-emulous-state-youth-conference-cocoa-2026"
+  },
+  {
+    "title": "New Mainstream Tour — Miles Minnick, Tommy Zuko & CJ Emulous",
+    "startDate": "2026-11-05",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "Venue not provided",
+    "address": "",
+    "city": "Miami",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "",
+    "officialUrl": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-23",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": false,
+    "lineupExplicit": true,
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "sourceName": "CJ Emulous official New Mainstream Tour calendar",
+    "sources": [
+      {
+        "name": "CJ Emulous official New Mainstream Tour calendar",
+        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-23",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      },
+      {
+        "name": "Miles Minnick official tour page",
+        "url": "https://milesminnick.com/tour",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 94
+      }
+    ],
+    "notes": "Official artist calendar confirms the date and Miami, but no venue or direct ticket page. Time is left blank pending local venue/ticket confirmation.",
+    "auditVerified": "2026-09-13",
+    "id": "manual:cj-emulous-new-mainstream-miami-2026-11-05"
+  },
+  {
+    "title": "New Mainstream Tour — Miles Minnick, Tommy Zuko & CJ Emulous",
+    "startDate": "2026-11-08",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "Venue not provided",
+    "address": "",
+    "city": "Jacksonville",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "",
+    "officialUrl": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-26",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": false,
+    "lineupExplicit": true,
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "sourceName": "CJ Emulous official New Mainstream Tour calendar",
+    "sources": [
+      {
+        "name": "CJ Emulous official New Mainstream Tour calendar",
+        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-26",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      },
+      {
+        "name": "Miles Minnick official tour page",
+        "url": "https://milesminnick.com/tour",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 94
+      }
+    ],
+    "notes": "Official artist calendar confirms the date and Jacksonville, but no venue or direct ticket page. Time is left blank pending local venue/ticket confirmation.",
+    "auditVerified": "2026-09-13",
+    "id": "manual:cj-emulous-new-mainstream-jacksonville-2026-11-08"
+  },
+  {
+    "title": "Light in the Darkness",
+    "startDate": "2026-10-31",
+    "startTime": "16:00",
+    "endTime": "21:30",
+    "doorsTime": "15:00",
+    "timezone": "America/Phoenix",
+    "venue": "South Mountain Activity Complex",
+    "address": "10401 S Central Ave",
+    "city": "Phoenix",
+    "state": "AZ",
+    "country": "US",
+    "artists": [
+      "Jon Keith"
+    ],
+    "headliner": "Jon Keith",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343",
+    "officialUrl": "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343",
+    "image": "assets/events/light-in-the-darkness-2026.webp",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Official Eventbrite event artwork",
+    "imageSourceUrl": "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343",
+    "price": "Free",
+    "lineupExplicit": true,
+    "advertisedBilling": [
+      "Jon Keith",
+      "Grace Graber",
+      "trtle",
+      "HLYVRS31",
+      "CHVNCELLOR",
+      "CHVRCHS62",
+      "Adam Verdi"
+    ],
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "sourceName": "Official Eventbrite listing",
+    "sources": [
+      {
+        "name": "Official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343",
+        "type": "eventbrite",
+        "authority": "venue_ticket",
+        "priority": 112
+      },
+      {
+        "name": "City of Phoenix venue listing",
+        "url": "https://www.phoenix.gov/calendar/parks-events/south-mountain-grand-opening-.html",
+        "type": "manual_verified",
+        "authority": "venue",
+        "priority": 86
+      },
+      {
+        "name": "Bandsintown event listing",
+        "url": "https://www.bandsintown.com/e/108849019-trtle-at-south-mountain-activity-complex",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 76
+      }
+    ],
+    "ageRestriction": "Under 18 with parent or legal guardian",
+    "notes": "Free public event. Official ticket page lists doors at 3:00 PM and event hours 4:00–9:30 PM. User-provided organizer flyer confirms Jon Keith as the featured headliner.",
+    "auditVerified": "2026-09-14",
+    "id": "manual:light-in-the-darkness-phoenix-2026"
   }
 ]
