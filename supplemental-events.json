@@ -1223,6 +1223,53 @@
     "imageOverride": true
   },
   {
+    "id": "mayia-songs-that-speak-conference-pleasant-garden-2026",
+    "title": "MAYIA at Songs That Speak Conference",
+    "startDate": "2026-10-23",
+    "startTime": "16:00",
+    "timezone": "America/New_York",
+    "venue": "New Covenant Church",
+    "address": "4708 Alliance Church Rd",
+    "city": "Pleasant Garden",
+    "state": "NC",
+    "country": "US",
+    "artists": [
+      "MAYIA"
+    ],
+    "headliner": "MAYIA",
+    "eventType": "appearance",
+    "status": "scheduled",
+    "ticketUrl": "",
+    "officialUrl": "https://mayiawarren.org/home",
+    "image": "",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": false,
+    "price": "",
+    "sourceName": "MAYIA official calendar",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "MAYIA official calendar",
+        "url": "https://mayiawarren.org/home",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      },
+      {
+        "name": "New Covenant Church official site",
+        "url": "https://newcovenantnc.net/",
+        "type": "manual_verified",
+        "authority": "venue",
+        "priority": 90
+      }
+    ],
+    "auditVerified": "2026-09-22",
+    "notes": "MAYIA's official calendar confirms her 4:00 PM appearance at the Songs That Speak Conference."
+  },
+  {
     "id": "mike-teezy-hrvstland-festival-2026",
     "title": "HRVSTLAND Festival 2026",
     "startDate": "2026-10-24",
@@ -2110,6 +2157,54 @@
     "trackedArtist": "Pastor Mike Jr."
   },
   {
+    "id": "ty-brasel-outlandish-fest-fort-worth-2026",
+    "title": "Outlandish Fest 2026",
+    "startDate": "2026-11-14",
+    "startTime": "18:00",
+    "endTime": "23:00",
+    "timezone": "America/Chicago",
+    "venue": "The Rail",
+    "address": "3101 Joyce Dr",
+    "city": "Fort Worth",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Ty Brasel"
+    ],
+    "headliner": "Ty Brasel",
+    "eventType": "festival",
+    "status": "scheduled",
+    "ticketUrl": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
+    "officialUrl": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
+    "image": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb32042962fc801509158784db",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "price": "",
+    "sourceName": "Outlandish Fest official ticket page and Ty Brasel artist calendar",
+    "authority": "official_festival",
+    "confidence": "high",
+    "lineupExplicit": false,
+    "sources": [
+      {
+        "name": "Outlandish Fest official ticket page",
+        "url": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 112
+      },
+      {
+        "name": "Ty Brasel official artist calendar",
+        "url": "https://www.bandsintown.com/e/108912956-ty-brasel-at-the-rail",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ],
+    "auditVerified": "2026-09-22",
+    "notes": "The official festival ticket page confirms the 6:00–11:00 PM event window. Additional lineup names remain image-only and are not inferred."
+  },
+  {
     "title": "The Kickback",
     "startDate": "2026-11-14",
     "startTime": "19:00",
@@ -2467,54 +2562,6 @@
     "imageOverride": true
   },
   {
-    "id": "ty-brasel-outlandish-fest-fort-worth-2026",
-    "title": "Outlandish Fest 2026",
-    "startDate": "2026-11-14",
-    "startTime": "18:00",
-    "endTime": "23:00",
-    "timezone": "America/Chicago",
-    "venue": "The Rail",
-    "address": "3101 Joyce Dr",
-    "city": "Fort Worth",
-    "state": "TX",
-    "country": "US",
-    "artists": [
-      "Ty Brasel"
-    ],
-    "headliner": "Ty Brasel",
-    "eventType": "festival",
-    "status": "scheduled",
-    "ticketUrl": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
-    "officialUrl": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
-    "image": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb32042962fc801509158784db",
-    "imageType": "artist",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "price": "",
-    "sourceName": "Outlandish Fest official ticket page and Ty Brasel artist calendar",
-    "authority": "official_festival",
-    "confidence": "high",
-    "lineupExplicit": false,
-    "sources": [
-      {
-        "name": "Outlandish Fest official ticket page",
-        "url": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
-        "type": "manual_verified",
-        "authority": "official_festival",
-        "priority": 112
-      },
-      {
-        "name": "Ty Brasel official artist calendar",
-        "url": "https://www.bandsintown.com/e/108912956-ty-brasel-at-the-rail",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ],
-    "auditVerified": "2026-09-22",
-    "notes": "The official festival ticket page confirms the 6:00–11:00 PM event window. Additional lineup names remain image-only and are not inferred."
-  },
-  {
     "id": "sevin-live-sacramento-2026-12-05",
     "title": "Sevin Live Concert",
     "startDate": "2026-12-05",
@@ -2549,53 +2596,6 @@
     ],
     "ticketAvailability": "needs_confirmation",
     "notes": "HOG MOB confirms the show date; current ticket availability needs confirmation."
-  },
-  {
-    "id": "mayia-songs-that-speak-conference-pleasant-garden-2026",
-    "title": "MAYIA at Songs That Speak Conference",
-    "startDate": "2026-10-23",
-    "startTime": "16:00",
-    "timezone": "America/New_York",
-    "venue": "New Covenant Church",
-    "address": "4708 Alliance Church Rd",
-    "city": "Pleasant Garden",
-    "state": "NC",
-    "country": "US",
-    "artists": [
-      "MAYIA"
-    ],
-    "headliner": "MAYIA",
-    "eventType": "appearance",
-    "status": "scheduled",
-    "ticketUrl": "",
-    "officialUrl": "https://mayiawarren.org/home",
-    "image": "",
-    "imageType": "artist",
-    "imagePosition": "center",
-    "imageOverride": false,
-    "price": "",
-    "sourceName": "MAYIA official calendar",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "MAYIA official calendar",
-        "url": "https://mayiawarren.org/home",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      },
-      {
-        "name": "New Covenant Church official site",
-        "url": "https://newcovenantnc.net/",
-        "type": "manual_verified",
-        "authority": "venue",
-        "priority": 90
-      }
-    ],
-    "auditVerified": "2026-09-22",
-    "notes": "MAYIA's official calendar confirms her 4:00 PM appearance at the Songs That Speak Conference."
   },
   {
     "id": "bandsintown:1037809090",
