@@ -182,6 +182,84 @@ KB_DIAMONDBACK_EVENT = {
     ],
 }
 
+ASAP_PREACH_REVIVAL_EVENT_ID = "revival-nights-asap-preach-hilliard-2026"
+ASAP_PREACH_REVIVAL_URL = (
+    "https://www.eventbrite.com/e/revival-nights-tickets-2000057247066"
+)
+ASAP_PREACH_REVIVAL_IMAGE = (
+    "https://cdn.rapzilla.com/wp-content/uploads/2019/01/23121044/"
+    "FB_IMG_1547351853226.jpg"
+)
+ASAP_PREACH_REVIVAL_EVENT = {
+    "id": f"manual:{ASAP_PREACH_REVIVAL_EVENT_ID}",
+    "title": "Revival Nights — ASAP Preach & Dray Day Ministries",
+    "startDate": "2026-11-21",
+    "endDate": "2026-11-21",
+    "startTime": "18:00",
+    "endTime": "22:00",
+    "timezone": "America/New_York",
+    "venue": "Franklin County Fairgrounds — Edwards Building",
+    "address": "5035 Northwest Parkway",
+    "postalCode": "43026",
+    "city": "Hilliard",
+    "state": "OH",
+    "country": "US",
+    # Dray Day Ministries is preserved in the advertised billing and title,
+    # but is not linked as an artist until a verified roster profile exists.
+    "artists": ["ASAP Preach"],
+    "headliner": "ASAP Preach",
+    "supportActs": ["Dray Day Ministries"],
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": ASAP_PREACH_REVIVAL_URL,
+    "officialUrl": ASAP_PREACH_REVIVAL_URL,
+    "image": ASAP_PREACH_REVIVAL_IMAGE,
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": True,
+    "price": "Free",
+    "ageRestriction": "All ages",
+    "sourceName": "Revival Ignited Ministries official Eventbrite listing",
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "lineupExplicit": True,
+    "advertisedBilling": ["ASAP Preach", "Dray Day Ministries"],
+    "organizer": "Revival Ignited Ministries",
+    "imageSource": "Verified ASAP Preach artist photo",
+    "imageSourceUrl": ASAP_PREACH_REVIVAL_IMAGE,
+    "auditVerified": "2026-09-22",
+    "firstSeen": "2026-09-22T22:10:30Z",
+    "lastVerified": "2026-09-22T22:10:30Z",
+    "notes": (
+        "Free, all-ages revival event with music by ASAP Preach and Dray Day "
+        "Ministries, testimonies by Janessa Stewart and Brett Wilder, free "
+        "parking, and water baptisms available on site."
+    ),
+    "sources": [
+        {
+            "name": "Revival Ignited Ministries official Eventbrite listing",
+            "url": ASAP_PREACH_REVIVAL_URL,
+            "type": "eventbrite",
+            "authority": "venue_ticket",
+            "priority": 112,
+        },
+        {
+            "name": "Revival Ignited Ministries official site",
+            "url": "https://revivalignited.net/",
+            "type": "manual_verified",
+            "authority": "official_event",
+            "priority": 100,
+        },
+        {
+            "name": "Franklin County Fairgrounds official venue page",
+            "url": "https://www.fcfair.org/fairgrounds",
+            "type": "manual_verified",
+            "authority": "official_venue",
+            "priority": 95,
+        },
+    ],
+}
+
 VERIFIED_EVENT_IMAGES = {
     "jay-kalyl-desde-antes-rockville-centre-2026": "https://i.scdn.co/image/ab6761610000e5eb1269b80aed5d08c40aedfdc3",
     "mayia-boxyard-saturdaze-2026": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
@@ -317,6 +395,32 @@ def is_kb_diamondback_duplicate(event: dict) -> bool:
     return relevant_artist and "diamondback" in norm(event.get("venue"))
 
 
+def is_asap_preach_revival_duplicate(event: dict) -> bool:
+    event_id = norm(event.get("id"))
+    links = " ".join(
+        str(value or "")
+        for value in (event.get("officialUrl"), event.get("ticketUrl"))
+    ).casefold()
+    if (
+        event_id in {
+            ASAP_PREACH_REVIVAL_EVENT_ID,
+            f"manual:{ASAP_PREACH_REVIVAL_EVENT_ID}",
+        }
+        or "2000057247066" in links
+    ):
+        return True
+    if str(event.get("startDate") or "")[:10] != ASAP_PREACH_REVIVAL_EVENT["startDate"]:
+        return False
+    names = {norm(name) for name in event.get("artists", [])}
+    relevant_artist = "asap preach" in names
+    relevant_artist = relevant_artist or norm(event.get("headliner")) == "asap preach"
+    return (
+        relevant_artist
+        and norm(event.get("city")) == "hilliard"
+        and "franklin county fairgrounds" in norm(event.get("venue"))
+    )
+
+
 def sort_events(events: list[dict]) -> None:
     events.sort(key=lambda item: (str(item.get("startDate") or "9999-99-99"), str(item.get("startTime") or ""), str(item.get("title") or "")))
 
@@ -355,11 +459,14 @@ def apply(root: Path) -> None:
     supplemental = [event for event in supplemental if not is_revival_night_duplicate(event)]
     events = [event for event in events if not is_kb_diamondback_duplicate(event)]
     supplemental = [event for event in supplemental if not is_kb_diamondback_duplicate(event)]
+    events = [event for event in events if not is_asap_preach_revival_duplicate(event)]
+    supplemental = [event for event in supplemental if not is_asap_preach_revival_duplicate(event)]
 
     events.append(deepcopy(PARRIS_EVENT))
     events.extend(kaden_event(*show) for show in KADEN_SHOWS)
     events.append(deepcopy(REVIVAL_NIGHT_EVENT))
     events.append(deepcopy(KB_DIAMONDBACK_EVENT))
+    events.append(deepcopy(ASAP_PREACH_REVIVAL_EVENT))
     apply_verified_event_images(events, supplemental)
     sort_events(events)
     sort_events(supplemental)
@@ -398,6 +505,23 @@ def apply(root: Path) -> None:
         if kb_diamondback[0].get(field) != KB_DIAMONDBACK_EVENT[field]:
             raise SystemExit(f"KB Diamondback verified {field} regressed")
 
+    asap_revival = [event for event in combined if is_asap_preach_revival_duplicate(event)]
+    if (
+        len(asap_revival) != 1
+        or asap_revival[0].get("id") != ASAP_PREACH_REVIVAL_EVENT["id"]
+    ):
+        raise SystemExit(
+            "ASAP Preach Revival Nights dedupe failed: "
+            f"{[event.get('id') for event in asap_revival]}"
+        )
+    for field in (
+        "artists", "advertisedBilling", "startDate", "startTime", "endTime",
+        "venue", "address", "postalCode", "city", "ticketUrl", "officialUrl",
+        "image",
+    ):
+        if asap_revival[0].get(field) != ASAP_PREACH_REVIVAL_EVENT[field]:
+            raise SystemExit(f"ASAP Preach Revival Nights verified {field} regressed")
+
     image_targets = [event for event in combined if str(event.get("id") or "") in VERIFIED_EVENT_IMAGES]
     if len({str(event.get("id")) for event in image_targets}) != len(VERIFIED_EVENT_IMAGES):
         raise SystemExit("Verified Sep 11 event-image coverage is incomplete")
@@ -412,7 +536,7 @@ def apply(root: Path) -> None:
         apply_phase2()
         check_phase2()
 
-    print("Verified Parris Chariz Dallas lineup/dedupe, Revival Night, KB at Diamondback, four Kaden Jordan tour dates, and Sep 11 event images are pinned.")
+    print("Verified Parris Chariz Dallas lineup/dedupe, Revival Night, KB at Diamondback, ASAP Preach Revival Nights, four Kaden Jordan tour dates, and Sep 11 event images are pinned.")
 
 
 def main() -> None:
