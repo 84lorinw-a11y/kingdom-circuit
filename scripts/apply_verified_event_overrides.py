@@ -260,6 +260,23 @@ ASAP_PREACH_REVIVAL_EVENT = {
     ],
 }
 
+# These verified 808 BEEZY dates were already present in the calendar before
+# the September 21 source refresh. Keep their original catalog age so a source
+# re-merge cannot incorrectly place them on the seven-day New Shows page.
+KNOWN_808_BEEZY_FIRST_SEEN = "2026-09-12T14:30:41Z"
+KNOWN_808_BEEZY_EVENT_IDS = {
+    "manual:808-beezy-bandsintown-108908768",
+    "manual:808-beezy-bandsintown-108932270",
+    "manual:808-beezy-bandsintown-108932291",
+    "manual:808-beezy-bandsintown-108932311",
+    "manual:808-beezy-bandsintown-108932382",
+    "manual:808-beezy-bandsintown-108932436",
+    "manual:808-beezy-bandsintown-108932664",
+    "manual:808-beezy-bandsintown-108932672",
+    "manual:808-beezy-bandsintown-108932686",
+    "manual:808-beezy-bandsintown-108932700",
+}
+
 VERIFIED_EVENT_IMAGES = {
     "jay-kalyl-desde-antes-rockville-centre-2026": "https://i.scdn.co/image/ab6761610000e5eb1269b80aed5d08c40aedfdc3",
     "mayia-boxyard-saturdaze-2026": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
@@ -443,6 +460,15 @@ def apply_verified_event_images(events: list[dict], supplemental: list[dict]) ->
         raise SystemExit(f"Verified Sep 11 image targets are missing: {sorted(missing)}")
 
 
+def apply_historical_discovery_dates(
+    events: list[dict], supplemental: list[dict]
+) -> None:
+    for collection in (events, supplemental):
+        for event in collection:
+            if str(event.get("id") or "") in KNOWN_808_BEEZY_EVENT_IDS:
+                event["firstSeen"] = KNOWN_808_BEEZY_FIRST_SEEN
+
+
 def apply(root: Path) -> None:
     root = root.resolve()
     events_path = root / "events.json"
@@ -468,6 +494,7 @@ def apply(root: Path) -> None:
     events.append(deepcopy(KB_DIAMONDBACK_EVENT))
     events.append(deepcopy(ASAP_PREACH_REVIVAL_EVENT))
     apply_verified_event_images(events, supplemental)
+    apply_historical_discovery_dates(events, supplemental)
     sort_events(events)
     sort_events(supplemental)
     write(events_path, events)
@@ -522,6 +549,17 @@ def apply(root: Path) -> None:
         if asap_revival[0].get(field) != ASAP_PREACH_REVIVAL_EVENT[field]:
             raise SystemExit(f"ASAP Preach Revival Nights verified {field} regressed")
 
+    incorrectly_new_808 = [
+        event for event in combined
+        if str(event.get("id") or "") in KNOWN_808_BEEZY_EVENT_IDS
+        and event.get("firstSeen") != KNOWN_808_BEEZY_FIRST_SEEN
+    ]
+    if incorrectly_new_808:
+        raise SystemExit(
+            "Known 808 BEEZY shows were incorrectly marked new: "
+            f"{[event.get('id') for event in incorrectly_new_808]}"
+        )
+
     image_targets = [event for event in combined if str(event.get("id") or "") in VERIFIED_EVENT_IMAGES]
     if len({str(event.get("id")) for event in image_targets}) != len(VERIFIED_EVENT_IMAGES):
         raise SystemExit("Verified Sep 11 event-image coverage is incomplete")
@@ -536,7 +574,7 @@ def apply(root: Path) -> None:
         apply_phase2()
         check_phase2()
 
-    print("Verified Parris Chariz Dallas lineup/dedupe, Revival Night, KB at Diamondback, ASAP Preach Revival Nights, four Kaden Jordan tour dates, and Sep 11 event images are pinned.")
+    print("Verified Parris Chariz Dallas lineup/dedupe, Revival Night, KB at Diamondback, ASAP Preach Revival Nights, known 808 BEEZY discovery dates, four Kaden Jordan tour dates, and Sep 11 event images are pinned.")
 
 
 def main() -> None:
