@@ -58,7 +58,7 @@ class ArtistDatabaseSeptember9Tests(unittest.TestCase):
     def test_rows_111_through_134_match_the_sheet_order(self):
         self.assertEqual(
             [item["rosterOrder"] for item in self.updates],
-            list(range(55, 150)),
+            list(range(55, 177)),
         )
         update_block = [item for item in self.updates if 111 <= item["rosterOrder"] <= 134]
         self.assertEqual([item["rosterOrder"] for item in update_block], list(range(111, 135)))

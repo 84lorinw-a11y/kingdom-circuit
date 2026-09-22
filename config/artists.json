@@ -2416,7 +2416,8 @@
     "preferArtistImage": true,
     "sourceRegistryVerified": true,
     "sourceRegistryRosterOrder": 110,
-    "rosterOrder": 110
+    "rosterOrder": 110,
+    "websiteRegistryVerified": true
   },
   {
     "name": "Alex Jean",
@@ -3312,7 +3313,8 @@
     "imagePosition": "50% 24%",
     "sourceRegistryVerified": true,
     "sourceRegistryRosterOrder": 146,
-    "rosterOrder": 146
+    "rosterOrder": 146,
+    "websiteRegistryVerified": true
   },
   {
     "name": "CHVRCH562",
@@ -3385,70 +3387,548 @@
     "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb3bec4aaaca84d070b7383e2a",
     "imagePosition": "center",
     "sourceRegistryVerified": true,
-    "sourceRegistryRosterOrder": 149
+    "sourceRegistryRosterOrder": 149,
+    "websiteRegistryVerified": true
   },
   {
-    "name": "Redimi2",
+    "name": "C4 Crotona",
     "aliases": [
-      "Redimi2"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "international",
-    "monitoringPriority": 1,
-    "topStreamingPriority": true,
-    "socialSearchEnabled": true,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": true,
-    "instagramProfile": "https://www.instagram.com/redimi2/",
-    "rosterOrder": 150
-  },
-  {
-    "name": "Funky",
-    "aliases": [
-      "Funky"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "international",
-    "monitoringPriority": 1,
-    "topStreamingPriority": true,
-    "socialSearchEnabled": true,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": false,
-    "instagramProfile": "https://www.instagram.com/funkypr/",
-    "rosterOrder": 151
-  },
-  {
-    "name": "Pregador Luo",
-    "aliases": [
-      "Pregador Luo"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "international",
-    "monitoringPriority": 1,
-    "topStreamingPriority": true,
-    "socialSearchEnabled": true,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": true,
-    "rosterOrder": 152
-  },
-  {
-    "name": "Beacon Light",
-    "aliases": [
-      "Beacon Light"
+      "C4 Crotona"
     ],
     "enabled": true,
     "ticketmasterEnabled": false,
     "category": "core",
-    "ticketmasterNote": "Disabled until an exact Ticketmaster attraction ID is verified; name is ambiguous.",
     "monitoringPriority": 1,
-    "topStreamingPriority": true,
+    "topStreamingPriority": false,
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 153
+    "rosterOrder": 150,
+    "website": "https://www.themenacemovement.com/c4-crotona/",
+    "instagramProfile": "https://www.instagram.com/c4crotona_/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/1WlJORCWCG2F0TBI4sReri",
+    "youtubeProfile": "https://www.youtube.com/@C4Crotona",
+    "officialImageSource": "https://www.themenacemovement.com/c4-crotona/",
+    "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000e5ebf1a7e4abb6ee247fd2c04de5",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 150,
+    "websiteRegistryVerified": true
+  },
+  {
+    "name": "Nathan Davis Jr.",
+    "aliases": [
+      "Nathan Davis Jr.",
+      "Nathan Davis Jr"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "crossover",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 151,
+    "website": "https://www.iamndj.com/",
+    "instagramProfile": "https://www.instagram.com/nathandavisjrndj",
+    "spotifyProfile": "https://open.spotify.com/artist/24p0hSTqoxNsy89rKNrSDj?si=Gw6GMCHPQp2riZWZ3ErKQQ&nd=1&dlsi=c8939b2c8e474086",
+    "youtubeProfile": "https://www.youtube.com/c/NathanDavisJr",
+    "officialImageSource": "https://www.iamndj.com/",
+    "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000e5eb9fa4da984eb788edaa3839ad",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 151,
+    "websiteRegistryVerified": true
+  },
+  {
+    "name": "MAYIA",
+    "aliases": [
+      "MAYIA",
+      "Mayia"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 2,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 152,
+    "website": "https://www.instagram.com/mayiawarren/?hl=en",
+    "instagramProfile": "https://www.instagram.com/mayiawarren/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/6jwSYdglftKLb8vhvAfNag",
+    "youtubeProfile": "https://www.youtube.com/@OFFICIALMAYIAWARREN",
+    "officialImageSource": "https://www.instagram.com/mayiawarren/?hl=en",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5ebb554962c100087e71d7b4104",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 152
+  },
+  {
+    "name": "Trendsetter Sense",
+    "aliases": [
+      "Trendsetter Sense"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "rmg",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 153,
+    "website": "https://www.instagram.com/trendsettersense/?hl=en",
+    "instagramProfile": "https://www.instagram.com/trendsettersense/",
+    "spotifyProfile": "https://open.spotify.com/artist/2zcu7rparMOCBU7ZaBMb4N",
+    "youtubeProfile": "https://www.youtube.com/@TrendsetterSense/about",
+    "officialImageSource": "https://www.instagram.com/trendsettersense/?hl=en",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb087c4b1a01232a29fb75de1e",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 153
+  },
+  {
+    "name": "Monster Tarver",
+    "aliases": [
+      "Monster Tarver",
+      "Tyrone Evans"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 154,
+    "website": "https://www.themenacemovement.com/monster-tarver/",
+    "instagramProfile": "https://www.instagram.com/monstertarver/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/2jsFUZcvMqEU9ay3BWHgAg",
+    "youtubeProfile": "https://www.youtube.com/channel/UC8sHqu7bM_zfOK1dazpcOBw",
+    "officialImageSource": "https://www.themenacemovement.com/monster-tarver/",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb04309a0ad05ff113a5b80231",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 154,
+    "websiteRegistryVerified": true
+  },
+  {
+    "name": "Lul DreDay",
+    "aliases": [
+      "Lul DreDay",
+      "Lul Dreday"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "collective": "GLO",
+    "officialProfile": "https://www.youtube.com/@LulDreDay",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 155,
+    "website": "https://www.instagram.com/luldreday/?hl=en",
+    "instagramProfile": "https://www.instagram.com/luldreday/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/3iJk6wDUly0uF53bdlBfvT",
+    "youtubeProfile": "https://www.youtube.com/channel/UC8Oiej_PXzv88c_M33KjBJg",
+    "officialImageSource": "https://www.instagram.com/luldreday/?hl=en",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb0550a8d0f743c40ac59162f3",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 155
+  },
+  {
+    "name": "Brinson",
+    "aliases": [
+      "Brinson"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 156,
+    "website": "https://godchaserz.com/",
+    "instagramProfile": "https://www.instagram.com/godchaserz/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/2KuGCEmfjdATgtfBlmFMxS",
+    "youtubeProfile": "https://www.youtube.com/user/BrinsonVEVO",
+    "officialImageSource": "https://godchaserz.com/",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5ebe1c7145787a2c2cd997de7c4",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 156,
+    "websiteRegistryVerified": true
+  },
+  {
+    "name": "Alex Zurdo",
+    "aliases": [
+      "Alex Zurdo"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 157,
+    "website": "https://www.alexzurdomusic.com/site/",
+    "instagramProfile": "https://www.instagram.com/alexzurdomusic/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/0WI8OfWCRvK4nGHmKfFQmd",
+    "youtubeProfile": "https://www.youtube.com/user/ALEXZURDOMUSIC",
+    "officialImageSource": "https://www.alexzurdomusic.com/site/",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb2c81bb40c3b6962eacf9dc9c",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 157,
+    "websiteRegistryVerified": true
+  },
+  {
+    "name": "Jay Kalyl",
+    "aliases": [
+      "Jay Kalyl"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 158,
+    "website": "https://www.instagram.com/jaykalylmusic/?hl=en",
+    "instagramProfile": "https://www.instagram.com/jaykalyl/",
+    "spotifyProfile": "https://open.spotify.com/artist/0sHeKC0Zcxpz4wOHHE5oJ7",
+    "youtubeProfile": "https://www.youtube.com/channel/UCFfyV-7bdXPRDZfItdZdpQg",
+    "officialImageSource": "https://www.instagram.com/jaykalylmusic/?hl=en",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb603501102ca962a0b333228f",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 158
+  },
+  {
+    "name": "Key'ijah",
+    "aliases": [
+      "Key'ijah"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 159,
+    "website": "https://www.instagram.com/iamkeyijah/?hl=en",
+    "instagramProfile": "https://www.instagram.com/iamkeyijah/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/5bLqm0pB0l0J5hRMXajA0S",
+    "youtubeProfile": "https://www.youtube.com/@Official_Keyijah",
+    "officialImageSource": "https://www.instagram.com/iamkeyijah/?hl=en",
+    "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000e5eb5ba06e67f0abf5349a782d45",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 159
+  },
+  {
+    "name": "Tha inspiration",
+    "aliases": [
+      "Tha inspiration"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 160,
+    "website": "https://www.instagram.com/tha.inspirati0n/",
+    "instagramProfile": "https://www.instagram.com/tha.inspirati0n/",
+    "spotifyProfile": "https://open.spotify.com/artist/1Jrih9sEoE7aI00lQ6dciO?si=GAfPvGZVT-62BeXIkjjQgg&nd=1&dlsi=31e4ddb35f6446cf",
+    "youtubeProfile": "https://www.youtube.com/@Thainspiration",
+    "officialImageSource": "https://www.instagram.com/tha.inspirati0n/",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5ebc50cebd2c2f5d86260e69e9f",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 160
+  },
+  {
+    "name": "NISSI SHALOM",
+    "aliases": [
+      "NISSI SHALOM"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 161,
+    "website": "https://www.instagram.com/itsnissishalom/",
+    "instagramProfile": "https://www.instagram.com/itsnissishalom/",
+    "spotifyProfile": "https://open.spotify.com/artist/4WGlZzRh7PszMcCdPV80tj",
+    "youtubeProfile": "https://www.youtube.com/@RighteousTM633",
+    "officialImageSource": "https://www.instagram.com/itsnissishalom/",
+    "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000e5eb91fd7ecda2a257e8f0b5168f",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 161
+  },
+  {
+    "name": "SteveUnordinary",
+    "aliases": [
+      "SteveUnordinary"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 162,
+    "website": "https://www.instagram.com/steveunordinary/?hl=en",
+    "instagramProfile": "https://www.instagram.com/steveunordinary/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/3EcMKVigl7YMEeDmWGcezy",
+    "youtubeProfile": "https://www.youtube.com/c/SteveOrdinary/videos",
+    "officialImageSource": "https://www.instagram.com/steveunordinary/?hl=en",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb16f2f80d2e01df2baa0c479b",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 162
+  },
+  {
+    "name": "JJ Chosen",
+    "aliases": [
+      "JJ Chosen"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 163,
+    "website": "https://www.instagram.com/jjchosenofficial/",
+    "instagramProfile": "https://www.instagram.com/jjchosenofficial/",
+    "spotifyProfile": "https://open.spotify.com/artist/62xS59NTx0ruEKAvlQshqB",
+    "youtubeProfile": "https://www.youtube.com/channel/UCqTS2tmNKlvu8YNbX_7vGuQ",
+    "officialImageSource": "https://www.instagram.com/jjchosenofficial/",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb57c526b89fa2185fc665f825",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 163
+  },
+  {
+    "name": "Generation Recovery",
+    "aliases": [
+      "Generation Recovery"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 164,
+    "website": "https://www.instagram.com/generationrecoverymusic/?hl=en",
+    "instagramProfile": "https://www.instagram.com/generationrecoverymusic/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/3S5xX5qyLz6rHm9iobW1jS",
+    "youtubeProfile": "",
+    "officialImageSource": "https://www.instagram.com/generationrecoverymusic/?hl=en",
+    "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000e5eb46667ac884ef90dd59b54434",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 164
+  },
+  {
+    "name": "IFearGod",
+    "aliases": [
+      "IFearGod"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 165,
+    "website": "https://www.instagram.com/ifeargod3/",
+    "instagramProfile": "https://www.instagram.com/ifeargod3/",
+    "spotifyProfile": "https://open.spotify.com/artist/2UVyRB0Sb8BJQeuK3lmziU",
+    "youtubeProfile": "https://www.youtube.com/channel/UC0WGs4a9ylf2cIlefObDZKw",
+    "officialImageSource": "https://www.instagram.com/ifeargod3/",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb45dfa91b2fbe804937ed457d",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 165
+  },
+  {
+    "name": "Hy Chu",
+    "aliases": [
+      "Hy Chu"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 166,
+    "website": "https://www.instagram.com/therealhychu/",
+    "instagramProfile": "https://www.instagram.com/therealhychu/",
+    "spotifyProfile": "https://open.spotify.com/artist/0dwtjZ8Egrjgf2Nf9DlaZk",
+    "youtubeProfile": "https://www.youtube.com/channel/UC0GMYFL2ubouuGSxnmBTg8Q",
+    "officialImageSource": "https://www.instagram.com/therealhychu/",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb40930244e031d23a5badecda",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 166
+  },
+  {
+    "name": "Vennisay",
+    "aliases": [
+      "Vennisay"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 167,
+    "spotifyProfile": "https://open.spotify.com/artist/47fuPz0K0cyruPcpXiBo2W",
+    "sourceRegistryVerified": true,
+    "officialImageSource": "https://www.instagram.com/vennisay/?hl=en",
+    "website": "https://www.instagram.com/vennisay/?hl=en",
+    "instagramProfile": "https://www.instagram.com/vennisay/?hl=en",
+    "youtubeProfile": "https://www.youtube.com/channel/UCRi6WTcaC__0ZWq_d2xJ_qw",
+    "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000e5eb257bcb7b1666859c95bdcb04",
+    "imagePosition": "center",
+    "sourceRegistryRosterOrder": 167
+  },
+  {
+    "name": "Scarlito Jr.",
+    "aliases": [
+      "Scarlito Jr.",
+      "Scarlito Jr"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 168,
+    "spotifyProfile": "https://open.spotify.com/artist/46UmMAKrHKTvwKAV5mrNsi",
+    "sourceRegistryVerified": true,
+    "officialImageSource": "https://www.instagram.com/scarlitojr/",
+    "website": "https://www.instagram.com/scarlitojr/",
+    "instagramProfile": "https://www.instagram.com/scarlitojr/",
+    "youtubeProfile": "https://music.youtube.com/channel/UCSt6mc5-My-19YkXmMKhgFw",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb4478ed7a506218d9637c7764",
+    "imagePosition": "center",
+    "sourceRegistryRosterOrder": 168
+  },
+  {
+    "name": "J Reborn",
+    "aliases": [
+      "J Reborn"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 169,
+    "spotifyProfile": "https://open.spotify.com/artist/6qDQ0Rnp9bj86ZcsI4UkEX",
+    "sourceRegistryVerified": true,
+    "officialImageSource": "https://www.instagram.com/jreborn_official/",
+    "website": "https://www.instagram.com/jreborn_official/",
+    "instagramProfile": "https://www.instagram.com/jreborn_official/",
+    "youtubeProfile": "https://www.youtube.com/channel/UCa2iewWs6MlV092uo0zulfQ",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb1d1cb63cad9990a767c54748",
+    "imagePosition": "center",
+    "sourceRegistryRosterOrder": 169
+  },
+  {
+    "name": "Dre Skywalker",
+    "aliases": [
+      "Dre Skywalker"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 170,
+    "spotifyProfile": "https://open.spotify.com/artist/6qE9NgK1b0kDnGUnGVh4zS",
+    "sourceRegistryVerified": true,
+    "officialImageSource": "https://www.instagram.com/dreskywalkerofficial/",
+    "website": "https://www.instagram.com/dreskywalkerofficial/",
+    "instagramProfile": "https://www.instagram.com/dreskywalkerofficial/",
+    "youtubeProfile": "https://www.youtube.com/@Dre.Skywalker",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5ebc2a6e932ece80c11a69d6faf",
+    "imagePosition": "center",
+    "sourceRegistryRosterOrder": 170
+  },
+  {
+    "name": "Gabriel Katon",
+    "aliases": [
+      "Gabriel Katon"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "monitoringPriority": 3,
+    "topStreamingPriority": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 171,
+    "spotifyProfile": "https://open.spotify.com/artist/5G1xrscxyvpYHX72E108iW",
+    "sourceRegistryVerified": true,
+    "officialImageSource": "https://www.instagram.com/gabriel.katon/",
+    "website": "https://www.instagram.com/gabriel.katon/",
+    "instagramProfile": "https://www.instagram.com/gabriel.katon/",
+    "youtubeProfile": "https://www.youtube.com/channel/UCytJ0RS91XUJf4wYrmt3prQ",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb43049c6b48d193bfb558ca53",
+    "imagePosition": "center",
+    "sourceRegistryRosterOrder": 171
   },
   {
     "name": "Red Tips",
@@ -3463,7 +3943,17 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 154
+    "rosterOrder": 172,
+    "website": "https://redtips.world/",
+    "instagramProfile": "https://www.instagram.com/redtips.music/",
+    "spotifyProfile": "https://open.spotify.com/artist/0e6JPJ634Hw3I95aKMEaD7",
+    "youtubeProfile": "https://www.youtube.com/channel/UC1q_9w95T3eprZwAFTXyrUg",
+    "officialImageSource": "https://www.instagram.com/redtips.music/",
+    "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000e5eb37fd42025d87f65426aa45b0",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 172,
+    "websiteRegistryVerified": true
   },
   {
     "name": "Dell Mac",
@@ -3478,7 +3968,16 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 155
+    "rosterOrder": 173,
+    "website": "https://www.instagram.com/dellmac301/?hl=en",
+    "instagramProfile": "https://www.instagram.com/dellmac301/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/1EswPCHgI3tydeJlDVMEFl",
+    "youtubeProfile": "https://www.youtube.com/channel/UClRb8RvKMxpM7rFlsd6P8RQ",
+    "officialImageSource": "https://www.instagram.com/dellmac301/?hl=en",
+    "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000e5eb5895eca28adaccc304472663",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 173
   },
   {
     "name": "Tommy Royale",
@@ -3493,7 +3992,16 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 156
+    "rosterOrder": 174,
+    "website": "https://www.instagram.com/iamtommyroyale/?hl=en",
+    "instagramProfile": "https://www.instagram.com/iamtommyroyale/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/0gqbW7Uf6BAWiAh5C6jlPs?go=1&sp_cid=67e19d32c5200acbd7c434127ccd2bbe&utm_source=embed_player_p&utm_medium=desktop&nd=1&dlsi=c07c159350f64ba1",
+    "youtubeProfile": "https://music.youtube.com/channel/UC3CXVdZvDlK4HZtyuav26LQ",
+    "officialImageSource": "https://www.instagram.com/iamtommyroyale/?hl=en",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5ebed75a5a3ab0bd75a23bffb16",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 174
   },
   {
     "name": "Ty Brasel",
@@ -3508,7 +4016,17 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 157
+    "rosterOrder": 175,
+    "website": "https://youngtyman.com/",
+    "instagramProfile": "https://www.instagram.com/Ty_Brasel",
+    "spotifyProfile": "https://open.spotify.com/artist/419NjKezGEJOVPtiymCp2p",
+    "youtubeProfile": "https://www.youtube.com/c/TyBrasel/about",
+    "officialImageSource": "https://www.instagram.com/Ty_Brasel",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb32042962fc801509158784db",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 175,
+    "websiteRegistryVerified": true
   },
   {
     "name": "J. Monty",
@@ -3524,7 +4042,79 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 158
+    "rosterOrder": 176,
+    "website": "https://www.instagram.com/jmontystudios/?hl=en",
+    "instagramProfile": "https://www.instagram.com/jmontystudios/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/65qv2AiHO3xVWAs4SCKx4O",
+    "youtubeProfile": "https://www.youtube.com/@JMontystudios",
+    "officialImageSource": "https://www.instagram.com/jmontystudios/?hl=en",
+    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb1c3e7f011b0fb755fd707492",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 176
+  },
+  {
+    "name": "Redimi2",
+    "aliases": [
+      "Redimi2"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "international",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "instagramProfile": "https://www.instagram.com/redimi2/",
+    "rosterOrder": 177
+  },
+  {
+    "name": "Funky",
+    "aliases": [
+      "Funky"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "international",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "instagramProfile": "https://www.instagram.com/funkypr/",
+    "rosterOrder": 178
+  },
+  {
+    "name": "Pregador Luo",
+    "aliases": [
+      "Pregador Luo"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": true,
+    "category": "international",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": true,
+    "rosterOrder": 179
+  },
+  {
+    "name": "Beacon Light",
+    "aliases": [
+      "Beacon Light"
+    ],
+    "enabled": true,
+    "ticketmasterEnabled": false,
+    "category": "core",
+    "ticketmasterNote": "Disabled until an exact Ticketmaster attraction ID is verified; name is ambiguous.",
+    "monitoringPriority": 1,
+    "topStreamingPriority": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "textMatchEnabled": false,
+    "rosterOrder": 180
   },
   {
     "name": "A.I. The Anomaly",
@@ -3540,7 +4130,7 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 159
+    "rosterOrder": 181
   },
   {
     "name": "Selah the Corner",
@@ -3555,7 +4145,7 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 160
+    "rosterOrder": 182
   },
   {
     "name": "Bumps INF",
@@ -3571,7 +4161,7 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 161
+    "rosterOrder": 183
   },
   {
     "name": "Bryann T",
@@ -3589,7 +4179,7 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 162
+    "rosterOrder": 184
   },
   {
     "name": "Young Bro",
@@ -3606,7 +4196,7 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 163
+    "rosterOrder": 185
   },
   {
     "name": "KJ-52",
@@ -3624,7 +4214,7 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 164,
+    "rosterOrder": 186,
     "website": "https://www.kj52.com/",
     "websiteRegistryVerified": true
   },
@@ -3641,7 +4231,7 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 165
+    "rosterOrder": 187
   },
   {
     "name": "Sho Baraka",
@@ -3656,7 +4246,7 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 166
+    "rosterOrder": 188
   },
   {
     "name": "Propaganda",
@@ -3671,7 +4261,7 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 167
+    "rosterOrder": 189
   },
   {
     "name": "Shai Linne",
@@ -3686,7 +4276,7 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 168
+    "rosterOrder": 190
   },
   {
     "name": "Thi'sl",
@@ -3702,7 +4292,7 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 169
+    "rosterOrder": 191
   },
   {
     "name": "Swoope",
@@ -3717,7 +4307,7 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 170
+    "rosterOrder": 192
   },
   {
     "name": "DaeShawn Forrest",
@@ -3733,22 +4323,7 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 171
-  },
-  {
-    "name": "C4 Crotona",
-    "aliases": [
-      "C4 Crotona"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core",
-    "monitoringPriority": 1,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": true,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": false,
-    "rosterOrder": 172
+    "rosterOrder": 193
   },
   {
     "name": "Alexxander",
@@ -3764,7 +4339,7 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 173
+    "rosterOrder": 194
   },
   {
     "name": "2819 Worship",
@@ -3780,7 +4355,7 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 174
+    "rosterOrder": 195
   },
   {
     "name": "George.Rose",
@@ -3796,7 +4371,7 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 175
+    "rosterOrder": 196
   },
   {
     "name": "Jude Barclay",
@@ -3811,7 +4386,7 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 176
+    "rosterOrder": 197
   },
   {
     "name": "Kaleb Mitchell",
@@ -3826,7 +4401,7 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 177
+    "rosterOrder": 198
   },
   {
     "name": "Xay Hill",
@@ -3841,7 +4416,7 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 178
+    "rosterOrder": 199
   },
   {
     "name": "J. Crum",
@@ -3857,23 +4432,7 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 179
-  },
-  {
-    "name": "Nathan Davis Jr.",
-    "aliases": [
-      "Nathan Davis Jr.",
-      "Nathan Davis Jr"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "crossover",
-    "monitoringPriority": 2,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": false,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": true,
-    "rosterOrder": 180
+    "rosterOrder": 200
   },
   {
     "name": "Angie Rose",
@@ -3888,7 +4447,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 181
+    "rosterOrder": 201
   },
   {
     "name": "R-Swift",
@@ -3904,7 +4463,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 182
+    "rosterOrder": 202
   },
   {
     "name": "No Malice",
@@ -3919,7 +4478,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 183
+    "rosterOrder": 203
   },
   {
     "name": "DC3",
@@ -3934,7 +4493,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 184
+    "rosterOrder": 204
   },
   {
     "name": "Not Klyde",
@@ -3949,7 +4508,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 185
+    "rosterOrder": 205
   },
   {
     "name": "404 Chew",
@@ -3964,7 +4523,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 186
+    "rosterOrder": 206
   },
   {
     "name": "Alphein",
@@ -3979,7 +4538,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 187
+    "rosterOrder": 207
   },
   {
     "name": "Bill B.",
@@ -3994,7 +4553,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 188
+    "rosterOrder": 208
   },
   {
     "name": "G3rm 43",
@@ -4010,7 +4569,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 189
+    "rosterOrder": 209
   },
   {
     "name": "GiNŌSKŌ",
@@ -4026,7 +4585,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 190
+    "rosterOrder": 210
   },
   {
     "name": "Glenn Ray",
@@ -4041,7 +4600,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 191
+    "rosterOrder": 211
   },
   {
     "name": "I.A.N.",
@@ -4057,7 +4616,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 192
+    "rosterOrder": 212
   },
   {
     "name": "IDEGO",
@@ -4072,7 +4631,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 193
+    "rosterOrder": 213
   },
   {
     "name": "Isreal Perez",
@@ -4087,7 +4646,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 194
+    "rosterOrder": 214
   },
   {
     "name": "Jacob Beard",
@@ -4102,23 +4661,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 195
-  },
-  {
-    "name": "MAYIA",
-    "aliases": [
-      "MAYIA",
-      "Mayia"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core",
-    "monitoringPriority": 2,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": false,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": false,
-    "rosterOrder": 196
+    "rosterOrder": 215
   },
   {
     "name": "Megan Tossi",
@@ -4133,7 +4676,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 197
+    "rosterOrder": 216
   },
   {
     "name": "mica",
@@ -4149,7 +4692,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 198
+    "rosterOrder": 217
   },
   {
     "name": "Myles Maestro",
@@ -4164,7 +4707,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 199
+    "rosterOrder": 218
   },
   {
     "name": "Nat Lauren",
@@ -4179,7 +4722,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 200
+    "rosterOrder": 219
   },
   {
     "name": "Peair",
@@ -4194,7 +4737,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 201
+    "rosterOrder": 220
   },
   {
     "name": "Razzie",
@@ -4209,7 +4752,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 202
+    "rosterOrder": 221
   },
   {
     "name": "Saint Jones",
@@ -4224,7 +4767,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 203
+    "rosterOrder": 222
   },
   {
     "name": "Tay Stunna",
@@ -4239,7 +4782,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 204
+    "rosterOrder": 223
   },
   {
     "name": "YakiTheKid",
@@ -4255,7 +4798,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 205
+    "rosterOrder": 224
   },
   {
     "name": "Vic Lucas",
@@ -4270,7 +4813,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 206
+    "rosterOrder": 225
   },
   {
     "name": "Kevi Morse",
@@ -4285,7 +4828,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 207
+    "rosterOrder": 226
   },
   {
     "name": "Chris Caro",
@@ -4300,7 +4843,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 208
+    "rosterOrder": 227
   },
   {
     "name": "EJ Swavv",
@@ -4315,7 +4858,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 209
+    "rosterOrder": 228
   },
   {
     "name": "J.Solo",
@@ -4331,7 +4874,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 210
+    "rosterOrder": 229
   },
   {
     "name": "Tds Cam",
@@ -4347,7 +4890,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 211
+    "rosterOrder": 230
   },
   {
     "name": "Kham",
@@ -4362,7 +4905,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 212
+    "rosterOrder": 231
   },
   {
     "name": "WHEREISDAVINCI",
@@ -4378,7 +4921,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 213
+    "rosterOrder": 232
   },
   {
     "name": "Tukool Tiff",
@@ -4393,7 +4936,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 214
+    "rosterOrder": 233
   },
   {
     "name": "Tylynn",
@@ -4408,7 +4951,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 215
+    "rosterOrder": 234
   },
   {
     "name": "De'Aris",
@@ -4424,7 +4967,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 216
+    "rosterOrder": 235
   },
   {
     "name": "Will Kellum",
@@ -4439,7 +4982,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 217
+    "rosterOrder": 236
   },
   {
     "name": "Jonah Daniel",
@@ -4454,7 +4997,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 218
+    "rosterOrder": 237
   },
   {
     "name": "outr.cty",
@@ -4470,7 +5013,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 219
+    "rosterOrder": 238
   },
   {
     "name": "B. Cooper",
@@ -4486,7 +5029,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 220
+    "rosterOrder": 239
   },
   {
     "name": "YP aka Young Paul",
@@ -4503,7 +5046,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 221
+    "rosterOrder": 240
   },
   {
     "name": "Untidld",
@@ -4518,7 +5061,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 222
+    "rosterOrder": 241
   },
   {
     "name": "DEON",
@@ -4533,7 +5076,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 223
+    "rosterOrder": 242
   },
   {
     "name": "Jamil",
@@ -4548,7 +5091,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 224
+    "rosterOrder": 243
   },
   {
     "name": "Kvng Flvcko",
@@ -4563,7 +5106,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 225
+    "rosterOrder": 244
   },
   {
     "name": "MotionPlus",
@@ -4578,7 +5121,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 226
+    "rosterOrder": 245
   },
   {
     "name": "Adriel Cruz",
@@ -4593,7 +5136,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 227
+    "rosterOrder": 246
   },
   {
     "name": "Drea LP",
@@ -4608,7 +5151,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 228
+    "rosterOrder": 247
   },
   {
     "name": "Solachi Voz",
@@ -4623,7 +5166,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 229
+    "rosterOrder": 248
   },
   {
     "name": "Jeannie Ortega",
@@ -4638,7 +5181,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 230
+    "rosterOrder": 249
   },
   {
     "name": "A Mose",
@@ -4654,7 +5197,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 231
+    "rosterOrder": 250
   },
   {
     "name": "Arielle Nichole",
@@ -4669,7 +5212,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 232
+    "rosterOrder": 251
   },
   {
     "name": "Jekasole",
@@ -4684,7 +5227,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 233
+    "rosterOrder": 252
   },
   {
     "name": "Mahogany Jones",
@@ -4699,7 +5242,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 234
+    "rosterOrder": 253
   },
   {
     "name": "Latoria",
@@ -4714,7 +5257,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 235
+    "rosterOrder": 254
   },
   {
     "name": "Shy Speaks",
@@ -4729,7 +5272,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 236
+    "rosterOrder": 255
   },
   {
     "name": "Serious Voice",
@@ -4744,7 +5287,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 237
+    "rosterOrder": 256
   },
   {
     "name": "Tarcea Renee",
@@ -4759,7 +5302,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 238
+    "rosterOrder": 257
   },
   {
     "name": "4eva",
@@ -4774,7 +5317,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 239
+    "rosterOrder": 258
   },
   {
     "name": "Ada Betsabé",
@@ -4789,7 +5332,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 240
+    "rosterOrder": 259
   },
   {
     "name": "BreeKay & Kasairi",
@@ -4805,7 +5348,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 241
+    "rosterOrder": 260
   },
   {
     "name": "Bri Smilez",
@@ -4820,7 +5363,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 242
+    "rosterOrder": 261
   },
   {
     "name": "Butta P",
@@ -4835,7 +5378,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 243
+    "rosterOrder": 262
   },
   {
     "name": "Carita Cole",
@@ -4850,7 +5393,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 244
+    "rosterOrder": 263
   },
   {
     "name": "Cass",
@@ -4865,7 +5408,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 245
+    "rosterOrder": 264
   },
   {
     "name": "Dice Gamble",
@@ -4880,7 +5423,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 246
+    "rosterOrder": 265
   },
   {
     "name": "Keiana",
@@ -4895,7 +5438,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 247
+    "rosterOrder": 266
   },
   {
     "name": "Licy Be",
@@ -4910,7 +5453,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 248
+    "rosterOrder": 267
   },
   {
     "name": "Pristavia",
@@ -4925,7 +5468,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 249
+    "rosterOrder": 268
   },
   {
     "name": "Kay Sade",
@@ -4940,7 +5483,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 250
+    "rosterOrder": 269
   },
   {
     "name": "Jackie Legere",
@@ -4955,7 +5498,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 251
+    "rosterOrder": 270
   },
   {
     "name": "Foure",
@@ -4970,7 +5513,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 252
+    "rosterOrder": 271
   },
   {
     "name": "Chozenn",
@@ -4985,7 +5528,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 253
+    "rosterOrder": 272
   },
   {
     "name": "V. Rose",
@@ -5001,7 +5544,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 254
+    "rosterOrder": 273
   },
   {
     "name": "Mike REAL",
@@ -5017,7 +5560,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 255
+    "rosterOrder": 274
   },
   {
     "name": "Spec",
@@ -5032,7 +5575,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 256
+    "rosterOrder": 275
   },
   {
     "name": "Christon Gray",
@@ -5047,7 +5590,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 257
+    "rosterOrder": 276
   },
   {
     "name": "Dre Murray",
@@ -5062,7 +5605,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 258
+    "rosterOrder": 277
   },
   {
     "name": "S.O.",
@@ -5078,7 +5621,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 259
+    "rosterOrder": 278
   },
   {
     "name": "Reconcile",
@@ -5093,7 +5636,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 260
+    "rosterOrder": 279
   },
   {
     "name": "Corey Paul",
@@ -5108,7 +5651,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 261
+    "rosterOrder": 280
   },
   {
     "name": "Alex Faith",
@@ -5123,7 +5666,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 262
+    "rosterOrder": 281
   },
   {
     "name": "Tony Tillman",
@@ -5138,7 +5681,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 263
+    "rosterOrder": 282
   },
   {
     "name": "Dillon Chase",
@@ -5153,7 +5696,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 264
+    "rosterOrder": 283
   },
   {
     "name": "Json",
@@ -5168,7 +5711,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 265
+    "rosterOrder": 284
   },
   {
     "name": "J.R.",
@@ -5184,7 +5727,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 266
+    "rosterOrder": 285
   },
   {
     "name": "Stephen the Levite",
@@ -5199,7 +5742,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 267
+    "rosterOrder": 286
   },
   {
     "name": "Timothy Brindle",
@@ -5214,7 +5757,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 268
+    "rosterOrder": 287
   },
   {
     "name": "Hazakim",
@@ -5229,7 +5772,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 269
+    "rosterOrder": 288
   },
   {
     "name": "Evangel",
@@ -5244,7 +5787,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 270
+    "rosterOrder": 289
   },
   {
     "name": "God's Servant",
@@ -5260,7 +5803,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 271
+    "rosterOrder": 290
   },
   {
     "name": "Beautiful Eulogy",
@@ -5275,7 +5818,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 272
+    "rosterOrder": 291
   },
   {
     "name": "116",
@@ -5291,7 +5834,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 273
+    "rosterOrder": 292
   },
   {
     "name": "350",
@@ -5306,7 +5849,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 274
+    "rosterOrder": 293
   },
   {
     "name": "Battz",
@@ -5321,7 +5864,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 275
+    "rosterOrder": 294
   },
   {
     "name": "Byron Juane",
@@ -5336,7 +5879,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 276
+    "rosterOrder": 295
   },
   {
     "name": "Coby James",
@@ -5351,7 +5894,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 277
+    "rosterOrder": 296
   },
   {
     "name": "De La Cruz",
@@ -5366,7 +5909,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 278
+    "rosterOrder": 297
   },
   {
     "name": "Hollyn",
@@ -5381,7 +5924,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 279
+    "rosterOrder": 298
   },
   {
     "name": "JGivens",
@@ -5397,7 +5940,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 280
+    "rosterOrder": 299
   },
   {
     "name": "Kings Kaleidoscope",
@@ -5412,7 +5955,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 281
+    "rosterOrder": 300
   },
   {
     "name": "Odd Thomas",
@@ -5427,7 +5970,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 282
+    "rosterOrder": 301
   },
   {
     "name": "Q-Flo",
@@ -5443,7 +5986,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 283
+    "rosterOrder": 302
   },
   {
     "name": "Swaizy",
@@ -5458,7 +6001,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 284
+    "rosterOrder": 303
   },
   {
     "name": "The Weathrman",
@@ -5474,22 +6017,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 285
-  },
-  {
-    "name": "Trendsetter Sense",
-    "aliases": [
-      "Trendsetter Sense"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "rmg",
-    "monitoringPriority": 3,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": false,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": true,
-    "rosterOrder": 286
+    "rosterOrder": 304
   },
   {
     "name": "J.List",
@@ -5507,7 +6035,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 287
+    "rosterOrder": 305
   },
   {
     "name": "D-Maub",
@@ -5524,7 +6052,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 288
+    "rosterOrder": 306
   },
   {
     "name": "K-Drama",
@@ -5542,25 +6070,9 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 289,
+    "rosterOrder": 307,
     "website": "https://k-dramatherapper.com/",
     "websiteRegistryVerified": true
-  },
-  {
-    "name": "Monster Tarver",
-    "aliases": [
-      "Monster Tarver",
-      "Tyrone Evans"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "core",
-    "monitoringPriority": 3,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": false,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": true,
-    "rosterOrder": 290
   },
   {
     "name": "Taelor Gray",
@@ -5576,7 +6088,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 291,
+    "rosterOrder": 308,
     "website": "https://www.taelorgray.com/",
     "websiteRegistryVerified": true
   },
@@ -5598,7 +6110,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 292
+    "rosterOrder": 309
   },
   {
     "name": "IMRSQD",
@@ -5615,7 +6127,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 293,
+    "rosterOrder": 310,
     "website": "https://alienzalive.com/artist/imrsqd/",
     "websiteRegistryVerified": true
   },
@@ -5635,7 +6147,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 294,
+    "rosterOrder": 311,
     "website": "https://www.tjcarrollmusic.com/",
     "websiteRegistryVerified": true
   },
@@ -5654,25 +6166,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 295
-  },
-  {
-    "name": "Lul DreDay",
-    "aliases": [
-      "Lul DreDay",
-      "Lul Dreday"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core",
-    "collective": "GLO",
-    "officialProfile": "https://www.youtube.com/@LulDreDay",
-    "monitoringPriority": 3,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": false,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": true,
-    "rosterOrder": 296
+    "rosterOrder": 312
   },
   {
     "name": "Pishko",
@@ -5689,7 +6183,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 297
+    "rosterOrder": 313
   },
   {
     "name": "Paul Russell",
@@ -5705,7 +6199,7 @@
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
     "ticketmasterAttractionId": "3031627",
-    "rosterOrder": 298
+    "rosterOrder": 314
   },
   {
     "name": "MC Jin",
@@ -5721,7 +6215,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 299
+    "rosterOrder": 315
   },
   {
     "name": "Gemstones",
@@ -5736,7 +6230,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 300
+    "rosterOrder": 316
   },
   {
     "name": "Mouthpi3ce",
@@ -5751,7 +6245,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 301
+    "rosterOrder": 317
   },
   {
     "name": "John Givez",
@@ -5766,7 +6260,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 302
+    "rosterOrder": 318
   },
   {
     "name": "Beleaf",
@@ -5781,7 +6275,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 303
+    "rosterOrder": 319
   },
   {
     "name": "J. Han",
@@ -5797,7 +6291,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 304
+    "rosterOrder": 320
   },
   {
     "name": "Sam Ock",
@@ -5812,7 +6306,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 305
+    "rosterOrder": 321
   },
   {
     "name": "Dream Junkies",
@@ -5827,7 +6321,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 306
+    "rosterOrder": 322
   },
   {
     "name": "Jet Trouble",
@@ -5842,7 +6336,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 307
+    "rosterOrder": 323
   },
   {
     "name": "Skrip",
@@ -5857,7 +6351,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 308
+    "rosterOrder": 324
   },
   {
     "name": "Deraj",
@@ -5872,7 +6366,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 309
+    "rosterOrder": 325
   },
   {
     "name": "Surf Gvng",
@@ -5887,7 +6381,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 310
+    "rosterOrder": 326
   },
   {
     "name": "Ki'Shon Furlow",
@@ -5903,7 +6397,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 311
+    "rosterOrder": 327
   },
   {
     "name": "Dru Bex",
@@ -5918,22 +6412,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 312
-  },
-  {
-    "name": "Brinson",
-    "aliases": [
-      "Brinson"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "legacy",
-    "monitoringPriority": 3,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": false,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": true,
-    "rosterOrder": 313
+    "rosterOrder": 328
   },
   {
     "name": "Mr. Del",
@@ -5948,7 +6427,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 314
+    "rosterOrder": 329
   },
   {
     "name": "Pettidee",
@@ -5963,7 +6442,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 315
+    "rosterOrder": 330
   },
   {
     "name": "Fresh IE",
@@ -5979,7 +6458,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 316
+    "rosterOrder": 331
   },
   {
     "name": "Applejaxx",
@@ -5994,7 +6473,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 317
+    "rosterOrder": 332
   },
   {
     "name": "Fedel",
@@ -6009,7 +6488,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 318
+    "rosterOrder": 333
   },
   {
     "name": "Antwoine Hill",
@@ -6024,7 +6503,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 319
+    "rosterOrder": 334
   },
   {
     "name": "Brandon Trejo",
@@ -6039,7 +6518,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 320
+    "rosterOrder": 335
   },
   {
     "name": "Monica Hill Trejo",
@@ -6054,7 +6533,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 321
+    "rosterOrder": 336
   },
   {
     "name": "Moe Grant",
@@ -6069,7 +6548,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 322
+    "rosterOrder": 337
   },
   {
     "name": "Isaiah Robin",
@@ -6084,7 +6563,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 323
+    "rosterOrder": 338
   },
   {
     "name": "Guvna B",
@@ -6099,7 +6578,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 324
+    "rosterOrder": 339
   },
   {
     "name": "Faith Child",
@@ -6114,7 +6593,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 325
+    "rosterOrder": 340
   },
   {
     "name": "Still Shadey",
@@ -6129,7 +6608,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 326
+    "rosterOrder": 341
   },
   {
     "name": "Feed'Em",
@@ -6145,7 +6624,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 327
+    "rosterOrder": 342
   },
   {
     "name": "Reblah",
@@ -6160,7 +6639,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 328
+    "rosterOrder": 343
   },
   {
     "name": "Triple O",
@@ -6175,7 +6654,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 329
+    "rosterOrder": 344
   },
   {
     "name": "A Star",
@@ -6190,7 +6669,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": false,
-    "rosterOrder": 330
+    "rosterOrder": 345
   },
   {
     "name": "J Vessel",
@@ -6206,7 +6685,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 331
+    "rosterOrder": 346
   },
   {
     "name": "Dwayne Tryumf",
@@ -6221,7 +6700,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 332
+    "rosterOrder": 347
   },
   {
     "name": "Manny Montes",
@@ -6236,22 +6715,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 333
-  },
-  {
-    "name": "Alex Zurdo",
-    "aliases": [
-      "Alex Zurdo"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "international",
-    "monitoringPriority": 3,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": false,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": true,
-    "rosterOrder": 334
+    "rosterOrder": 348
   },
   {
     "name": "Musiko",
@@ -6266,7 +6730,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 335
+    "rosterOrder": 349
   },
   {
     "name": "Indiomar",
@@ -6281,7 +6745,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 336
+    "rosterOrder": 350
   },
   {
     "name": "Gabriel EMC",
@@ -6296,22 +6760,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 337
-  },
-  {
-    "name": "Jay Kalyl",
-    "aliases": [
-      "Jay Kalyl"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": true,
-    "category": "international",
-    "monitoringPriority": 3,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": false,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": true,
-    "rosterOrder": 338
+    "rosterOrder": 351
   },
   {
     "name": "Niko Eme",
@@ -6326,7 +6775,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 339
+    "rosterOrder": 352
   },
   {
     "name": "Lizzy Parra",
@@ -6341,7 +6790,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 340
+    "rosterOrder": 353
   },
   {
     "name": "Rubinsky RBK",
@@ -6356,7 +6805,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 341
+    "rosterOrder": 354
   },
   {
     "name": "Madiel Lara",
@@ -6371,7 +6820,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 342
+    "rosterOrder": 355
   },
   {
     "name": "Ariel Kelly",
@@ -6386,7 +6835,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 343
+    "rosterOrder": 356
   },
   {
     "name": "Oba Reengy",
@@ -6401,127 +6850,7 @@
     "socialSearchEnabled": false,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 344
-  },
-  {
-    "name": "Key'ijah",
-    "aliases": [
-      "Key'ijah"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core",
-    "monitoringPriority": 3,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": true,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": false,
-    "rosterOrder": 345
-  },
-  {
-    "name": "Tha inspiration",
-    "aliases": [
-      "Tha inspiration"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core",
-    "monitoringPriority": 3,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": true,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": false,
-    "rosterOrder": 346
-  },
-  {
-    "name": "NISSI SHALOM",
-    "aliases": [
-      "NISSI SHALOM"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core",
-    "monitoringPriority": 3,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": true,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": false,
-    "rosterOrder": 347
-  },
-  {
-    "name": "SteveUnordinary",
-    "aliases": [
-      "SteveUnordinary"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core",
-    "monitoringPriority": 3,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": true,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": false,
-    "rosterOrder": 348
-  },
-  {
-    "name": "JJ Chosen",
-    "aliases": [
-      "JJ Chosen"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core",
-    "monitoringPriority": 3,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": true,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": false,
-    "rosterOrder": 349
-  },
-  {
-    "name": "Generation Recovery",
-    "aliases": [
-      "Generation Recovery"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core",
-    "monitoringPriority": 3,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": true,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": false,
-    "rosterOrder": 350
-  },
-  {
-    "name": "IFearGod",
-    "aliases": [
-      "IFearGod"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core",
-    "monitoringPriority": 3,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": true,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": false,
-    "rosterOrder": 351
-  },
-  {
-    "name": "Hy Chu",
-    "aliases": [
-      "Hy Chu"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core",
-    "monitoringPriority": 3,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": true,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": false,
-    "rosterOrder": 352
+    "rosterOrder": 357
   },
   {
     "name": "JIMMY ROCK",
@@ -6537,7 +6866,7 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": true,
-    "rosterOrder": 353,
+    "rosterOrder": 358,
     "website": "https://www.jimmyrock.com/",
     "websiteRegistryVerified": true,
     "instagramProfile": "https://www.instagram.com/jimmyrock/",
@@ -6548,97 +6877,6 @@
     "imagePosition": "center",
     "preferArtistImage": true,
     "officialImageSource": "https://www.jimmyrock.com/"
-  },
-  {
-    "name": "Vennisay",
-    "aliases": [
-      "Vennisay"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core",
-    "monitoringPriority": 3,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": false,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": false,
-    "rosterOrder": 354,
-    "spotifyProfile": "https://open.spotify.com/artist/47fuPz0K0cyruPcpXiBo2W",
-    "sourceRegistryVerified": true,
-    "officialImageSource": "https://open.spotify.com/artist/47fuPz0K0cyruPcpXiBo2W"
-  },
-  {
-    "name": "Scarlito Jr.",
-    "aliases": [
-      "Scarlito Jr.",
-      "Scarlito Jr"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core",
-    "monitoringPriority": 3,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": false,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": false,
-    "rosterOrder": 355,
-    "spotifyProfile": "https://open.spotify.com/artist/46UmMAKrHKTvwKAV5mrNsi",
-    "sourceRegistryVerified": true,
-    "officialImageSource": "https://open.spotify.com/artist/46UmMAKrHKTvwKAV5mrNsi"
-  },
-  {
-    "name": "J Reborn",
-    "aliases": [
-      "J Reborn"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core",
-    "monitoringPriority": 3,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": false,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": false,
-    "rosterOrder": 356,
-    "spotifyProfile": "https://open.spotify.com/artist/6qDQ0Rnp9bj86ZcsI4UkEX",
-    "sourceRegistryVerified": true,
-    "officialImageSource": "https://open.spotify.com/artist/6qDQ0Rnp9bj86ZcsI4UkEX"
-  },
-  {
-    "name": "Dre Skywalker",
-    "aliases": [
-      "Dre Skywalker"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core",
-    "monitoringPriority": 3,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": false,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": false,
-    "rosterOrder": 357,
-    "spotifyProfile": "https://open.spotify.com/artist/6qE9NgK1b0kDnGUnGVh4zS",
-    "sourceRegistryVerified": true,
-    "officialImageSource": "https://open.spotify.com/artist/6qE9NgK1b0kDnGUnGVh4zS"
-  },
-  {
-    "name": "Gabriel Katon",
-    "aliases": [
-      "Gabriel Katon"
-    ],
-    "enabled": true,
-    "ticketmasterEnabled": false,
-    "category": "core",
-    "monitoringPriority": 3,
-    "topStreamingPriority": false,
-    "socialSearchEnabled": false,
-    "activeStatus": "active_or_unknown",
-    "textMatchEnabled": false,
-    "rosterOrder": 358,
-    "spotifyProfile": "https://open.spotify.com/artist/5G1xrscxyvpYHX72E108iW",
-    "sourceRegistryVerified": true,
-    "officialImageSource": "https://open.spotify.com/artist/5G1xrscxyvpYHX72E108iW"
   },
   {
     "name": "180MINDSET",
