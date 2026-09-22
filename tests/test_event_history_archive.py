@@ -44,10 +44,10 @@ class EventHistoryArchiveTests(unittest.TestCase):
         self.assertEqual("19:00", repaired["startTime"])
         self.assertEqual(["Hulvey", "indie tribe.", "Kijan Boone"], repaired["artists"])
 
-    def test_past_archive_respects_the_one_day_visibility_grace(self) -> None:
+    def test_past_archive_adds_yesterday_on_the_next_day(self) -> None:
         today = dt.datetime.now(past_archives.PACIFIC).date()
         events = []
-        for days_ago in (1, 2):
+        for days_ago in (0, 1):
             event_date = today - dt.timedelta(days=days_ago)
             events.append(
                 {
@@ -73,7 +73,7 @@ class EventHistoryArchiveTests(unittest.TestCase):
                 json.dumps({"events": events}), encoding="utf-8"
             )
             selected, _ = past_archives.load_events(root)
-        self.assertEqual(["show-2"], [event["id"] for event in selected])
+        self.assertEqual(["show-1"], [event["id"] for event in selected])
 
 
 if __name__ == "__main__":

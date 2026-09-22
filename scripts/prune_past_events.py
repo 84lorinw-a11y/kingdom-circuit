@@ -6,7 +6,7 @@ import json
 import pathlib
 import re
 import shutil
-from datetime import datetime, timedelta
+from datetime import datetime
 from zoneinfo import ZoneInfo
 
 # Use Pacific time for the rollover so a show dated "today" is never removed
@@ -16,10 +16,9 @@ EVENT_JSON_FILES = ("events.json", "supplemental-events.json")
 
 
 def today_cutoff() -> str:
-    # Keep yesterday's listings visible for one final day. This matches the
-    # public calendar promise that a show disappears only once it is more than
-    # one day past, while still using Pacific time for U.S. rollover safety.
-    return (datetime.now(SITE_ROLLOVER_TZ).date() - timedelta(days=1)).isoformat()
+    # Keep each listing active through its event date, then archive it on the
+    # next calendar day. Pacific time keeps the rollover safe across the U.S.
+    return datetime.now(SITE_ROLLOVER_TZ).date().isoformat()
 
 
 def load_json(path: pathlib.Path) -> list:

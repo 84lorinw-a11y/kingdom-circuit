@@ -22,10 +22,17 @@ class LiveRedesignPromotionTests(unittest.TestCase):
         self.assertIn("--source-history event-history.json", workflow)
         self.assertIn("scripts/verify_live_redesign.py _site", workflow)
 
-    def test_approved_seo_uses_the_production_grace_cutoff(self) -> None:
+    def test_approved_seo_uses_the_production_visibility_cutoff(self) -> None:
         source = (ROOT / "scripts/apply_approved_seo.py").read_text(encoding="utf-8")
         self.assertIn("overlay.future = production_builder.current", source)
         self.assertIn('data-start-time="{start_time}"', source)
+
+        builder = (ROOT / "scripts/build_seo_site.py").read_text(encoding="utf-8")
+        self.assertIn("VISIBILITY_CUTOFF = TODAY", builder)
+        self.assertNotIn("VISIBILITY_CUTOFF = TODAY -", builder)
+
+        archive = (ROOT / "scripts/add_past_show_archives.py").read_text(encoding="utf-8")
+        self.assertIn("PAST_GRACE_DAYS = 0", archive)
 
     def test_verifier_enforces_live_identity(self) -> None:
         source = (ROOT / "scripts/verify_live_redesign.py").read_text(encoding="utf-8")

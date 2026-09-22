@@ -34,7 +34,7 @@ def event_last_date(event: dict) -> dt.date | None:
 
 
 def current_808_count(site: pathlib.Path) -> int:
-    cutoff = dt.datetime.now(ZoneInfo("America/Los_Angeles")).date() - dt.timedelta(days=1)
+    cutoff = dt.datetime.now(ZoneInfo("America/Los_Angeles")).date()
     rows: list[dict] = []
     for relative in ("events.json", "supplemental-events.json"):
         payload = json.loads(read(site / relative))
@@ -104,7 +104,7 @@ def verify(site: pathlib.Path) -> dict[str, int]:
         "deploymentEnvironment": "production",
         "productionChanged": True,
         "newWindowDays": 7,
-        "pastGraceDays": 1,
+        "pastGraceDays": 0,
     }.items():
         if manifest.get(key) != expected:
             failures.append(f"manifest:{key}:{manifest.get(key)!r}")

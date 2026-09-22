@@ -12,7 +12,7 @@ BRAND_LOGO = "/assets/logo-wordmark.svg?v=1"
 GA_ID = "G-N2KK9XF4TJ"
 ARCHIVE_DAYS = 550
 ARCHIVE_LIMIT = 12
-PAST_GRACE_DAYS = 1
+PAST_GRACE_DAYS = 0
 PACIFIC = ZoneInfo("America/Los_Angeles")
 
 STATE_NAMES = {
