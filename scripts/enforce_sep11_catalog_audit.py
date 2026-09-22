@@ -13,6 +13,8 @@ ARTISTS_FILE = ROOT / "config" / "artists.json"
 BLOCKED = "madison ryann ward"
 FALLBACK_ROSTER_ORDER = 28
 PRUNED_PAST_EVENT_ID = "official:12ef07b891bbeeefbcb1"
+TURLOCK_EVENT_ID = "cj-emulous-turlock-back-to-school-2026"
+TURLOCK_VERIFIED_ARTIST = "MikeySoChristian"
 
 VERIFIED_EVENT_IMAGES = {
     "fountain-fest-wv-2026": (
@@ -103,6 +105,30 @@ def repair_verified_event_images() -> None:
             path.write_text(json.dumps(events, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
+def restore_turlock_verified_lineup() -> None:
+    """Keep the Sep. 22 flyer-confirmed performer after the legacy audit runs."""
+    for path in (audit.EVENTS_FILE, audit.SUPPLEMENTAL_FILE, audit.MANUAL_FILE):
+        events = json.loads(path.read_text(encoding="utf-8"))
+        changed = False
+        for event in events:
+            event_id = str(event.get("id") or "").removeprefix("manual:")
+            if event_id != TURLOCK_EVENT_ID:
+                continue
+            for field in ("artists", "officialBill"):
+                values = event.get(field)
+                if not isinstance(values, list):
+                    values = []
+                    event[field] = values
+                if not any(norm(value) == norm(TURLOCK_VERIFIED_ARTIST) for value in values):
+                    values.append(TURLOCK_VERIFIED_ARTIST)
+                    changed = True
+            if event.get("auditVerified") != "2026-09-22":
+                event["auditVerified"] = "2026-09-22"
+                changed = True
+        if changed:
+            path.write_text(json.dumps(events, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
 def verify_exclusion() -> None:
     artists = load_artists()
     matches = [item for item in artists if norm(item.get("name")) == BLOCKED]
@@ -151,6 +177,7 @@ def main() -> int:
     before = load_artists()
     result = audit.apply()
     verify_current_catalog()
+    restore_turlock_verified_lineup()
     restore_exclusion_tombstone(before)
     repair_verified_event_images()
     verify_exclusion()
