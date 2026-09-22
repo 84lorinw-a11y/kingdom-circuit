@@ -158,6 +158,11 @@ const ARTIST_ROSTER_ORDER = [
   "Eli Montanna",
   "JWoodz",
   "Kaden Jordan",
+  "CJ Emulous",
+  "NXTMIKE",
+  "CHVRCH562",
+  "Mission",
+  "BigBreeze",
   "Redimi2",
   "Funky",
   "Pregador Luo",
@@ -179,9 +184,7 @@ const ARTIST_ROSTER_ORDER = [
   "Shai Linne",
   "Thi'sl",
   "Swoope",
-  "Mission",
   "DaeShawn Forrest",
-  "BigBreeze",
   "C4 Crotona",
   "Alexxander",
   "2819 Worship",
@@ -306,7 +309,6 @@ const ARTIST_ROSTER_ORDER = [
   "IMRSQD",
   "TJ Carroll",
   "Coop",
-  "CJ Emulous",
   "Lul DreDay",
   "Pishko",
   "Paul Russell",
@@ -2122,6 +2124,73 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/0mbpzxELAS9luV27PUDEZH",
     "youtubeProfile": "https://www.youtube.com/channel/UCHhuDxHS1hkCnWh2izXYkfg",
     "officialImageSource": "https://kadenjordan.com/",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true
+  },
+  "cj emulous": {
+    "aliases": [
+      "CJ Emulous",
+      "C.J. Emulous"
+    ],
+    "website": "https://www.cjemulous.com/",
+    "instagramProfile": "https://www.instagram.com/cjemulous",
+    "spotifyProfile": "https://open.spotify.com/artist/5Jgv9sRXt4V3TwSU1H41eQ",
+    "youtubeProfile": "https://www.youtube.com/user/HisImageM",
+    "officialImageSource": "https://www.cjemulous.com/",
+    "imageUrl": "https://static.wixstatic.com/media/9c331a_5c82923764b24c52bb151559692af340~mv2.jpeg",
+    "imagePosition": "50% 24%",
+    "sourceRegistryVerified": true
+  },
+  "nxtmike": {
+    "aliases": [
+      "NXTMIKE"
+    ],
+    "website": "https://www.nxtmike.com/",
+    "instagramProfile": "https://www.instagram.com/NXTMIKE_",
+    "spotifyProfile": "https://open.spotify.com/artist/2yMOYu5UEVMeoZmBczRR5g",
+    "youtubeProfile": "https://www.youtube.com/NXTMIKE",
+    "officialImageSource": "https://www.nxtmike.com/",
+    "imageUrl": "https://images.squarespace-cdn.com/content/v1/6003aea016cd050c913c5549/1618423643863-7SFKRAEQNVYLINRNLL5B/IMG-8256.jpg?format=1500w",
+    "imagePosition": "50% 24%",
+    "sourceRegistryVerified": true
+  },
+  "chvrch562": {
+    "aliases": [
+      "CHVRCH562"
+    ],
+    "website": "https://www.instagram.com/chvrch562/",
+    "instagramProfile": "https://www.instagram.com/chvrch562/",
+    "spotifyProfile": "https://open.spotify.com/artist/5kQpwGLE4RmDMsIPqJ4Y5i",
+    "youtubeProfile": "https://www.youtube.com/channel/UCpOq5kyjcag3fOkfOjG8qxw",
+    "officialImageSource": "https://www.instagram.com/chvrch562/",
+    "imageUrl": "https://open.voidware.de/artist/5kQpwGLE4RmDMsIPqJ4Y5i",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true
+  },
+  "mission": {
+    "aliases": [
+      "Mission"
+    ],
+    "website": "https://www.instagram.com/missionismusic/?hl=en",
+    "instagramProfile": "https://www.instagram.com/missionismusic/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/02gxa3HE5O0zBKRjeDh6Ba",
+    "youtubeProfile": "https://www.youtube.com/channel/UCBaU_Xh4fyokc-ckyCeYv3w",
+    "officialImageSource": "https://www.instagram.com/missionismusic/?hl=en",
+    "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebe70afe5f418013a0c86ddbb6",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true
+  },
+  "bigbreeze": {
+    "aliases": [
+      "BigBreeze",
+      "Big Breeze"
+    ],
+    "website": "https://mokbpresents.com/artist/bigbreeze/",
+    "instagramProfile": "https://www.instagram.com/_markelofficial/",
+    "spotifyProfile": "https://open.spotify.com/artist/7wrWSJHfACjw7s7gYXOXTt",
+    "youtubeProfile": "https://www.youtube.com/@TheOfficialMarkel",
+    "officialImageSource": "https://open.spotify.com/artist/7wrWSJHfACjw7s7gYXOXTt",
+    "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb3bec4aaaca84d070b7383e2a",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   }
