@@ -17,7 +17,16 @@ class LiveRedesignPromotionTests(unittest.TestCase):
             encoding="utf-8"
         )
         self.assertIn("APPROVED_REDESIGN_REF:", workflow)
+        self.assertIn("66751f756158fae6c2682e34f7da12306bd133ab", workflow)
         self.assertIn("_redesign_source/scripts/apply_test_redesign.py", workflow)
+        self.assertIn(
+            "_redesign_source/test-overrides/assets/favicon-kc-stacked-v2-48.png",
+            workflow,
+        )
+        self.assertIn(
+            "_redesign_source/test-overrides/assets/favicon-kc-stacked-v2-maskable-512.png",
+            workflow,
+        )
         self.assertIn("--production", workflow)
         self.assertIn("--source-history event-history.json", workflow)
         self.assertIn("scripts/verify_live_redesign.py _site", workflow)
@@ -43,6 +52,8 @@ class LiveRedesignPromotionTests(unittest.TestCase):
             "production",
             "current_808_count",
             "public-source-label",
+            "favicon-kc-stacked-v2-48.png",
+            "manifest.webmanifest",
         ):
             self.assertIn(token, source)
 

@@ -27,6 +27,11 @@ GA_ID = "G-N2KK9XF4TJ"
 FORMSPREE_ENDPOINT = "https://formspree.io/f/mljreawj"
 NEW_WINDOW_DAYS = 7
 NEW_SHOWS_ACTIVATION_DATE = date(2026, 8, 12)
+FAVICON_HTML = """<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-kc-stacked-v2-48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-kc-stacked-v2-96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-kc-stacked-v2-180.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="apple-mobile-web-app-title" content="Kingdom Circuit">"""
 
 STATE_NAMES = {
     "AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas",
@@ -371,7 +376,7 @@ def page_head(
   <meta property="og:image" content="{escape(resolved_image)}">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="{escape(canonical)}">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  {FAVICON_HTML}
   <link rel="stylesheet" href="/styles.css">
   <script src="/app.js" defer></script>
   <title>{escape(title)}</title>

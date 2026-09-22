@@ -20,7 +20,7 @@ env:
   APPROVED_SEO_REPO: 84lorinw-a11y/kingdom-circuit-test
   APPROVED_SEO_REF: af197d30b8ad4e3cb33e37cfc7a2de086335140d
   APPROVED_REDESIGN_REPO: 84lorinw-a11y/kingdom-circuit-test
-  APPROVED_REDESIGN_REF: 25687b5e748b24d84656028382910243a9b8f8f7
+  APPROVED_REDESIGN_REF: 66751f756158fae6c2682e34f7da12306bd133ab
 
 jobs:
   update-and-deploy:
@@ -160,6 +160,12 @@ jobs:
           test -s _redesign_source/scripts/apply_test_redesign.py
           test -s _redesign_source/test-overrides/kc-redesign-v1.css
           test -s _redesign_source/test-overrides/kc-redesign-v1.js
+          test -s _redesign_source/test-overrides/assets/favicon-kc-stacked-v2-48.png
+          test -s _redesign_source/test-overrides/assets/favicon-kc-stacked-v2-96.png
+          test -s _redesign_source/test-overrides/assets/favicon-kc-stacked-v2-180.png
+          test -s _redesign_source/test-overrides/assets/favicon-kc-stacked-v2-192.png
+          test -s _redesign_source/test-overrides/assets/favicon-kc-stacked-v2-512.png
+          test -s _redesign_source/test-overrides/assets/favicon-kc-stacked-v2-maskable-512.png
           test -s scripts/verify_live_redesign.py
 
           test -s shows/index.html

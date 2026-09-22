@@ -7,6 +7,7 @@ import datetime as dt
 import json
 import pathlib
 import re
+import struct
 from urllib.parse import unquote, urlsplit
 from zoneinfo import ZoneInfo
 
@@ -19,10 +20,33 @@ TEST_MARKERS = (
     "G-TEST-DISABLED",
     'name="environment" value="test"',
 )
+FAVICON_SIZES = {
+    "assets/favicon-kc-stacked-v2-48.png": 48,
+    "assets/favicon-kc-stacked-v2-96.png": 96,
+    "assets/favicon-kc-stacked-v2-180.png": 180,
+    "assets/favicon-kc-stacked-v2-192.png": 192,
+    "assets/favicon-kc-stacked-v2-512.png": 512,
+    "assets/favicon-kc-stacked-v2-maskable-512.png": 512,
+}
+FAVICON_TAGS = (
+    '<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-kc-stacked-v2-48.png">',
+    '<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-kc-stacked-v2-96.png">',
+    '<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-kc-stacked-v2-180.png">',
+    '<link rel="manifest" href="/manifest.webmanifest">',
+    '<meta name="apple-mobile-web-app-title" content="Kingdom Circuit">',
+)
 
 
 def read(path: pathlib.Path) -> str:
     return path.read_text(encoding="utf-8", errors="ignore")
+
+
+def png_ihdr(path: pathlib.Path) -> tuple[int, int, int, int]:
+    data = path.read_bytes()[:33]
+    if len(data) != 33 or data[:8] != b"\x89PNG\r\n\x1a\n" or data[12:16] != b"IHDR":
+        raise ValueError(f"invalid PNG header: {path}")
+    width, height, bit_depth, color_type = struct.unpack(">IIBB", data[16:26])
+    return width, height, bit_depth, color_type
 
 
 def event_last_date(event: dict) -> dt.date | None:
@@ -77,6 +101,13 @@ def verify(site: pathlib.Path) -> dict[str, int]:
         "assets/kc-redesign-v1.css",
         "assets/kc-redesign-v1.js",
         "assets/live-redesign-manifest.json",
+        "assets/favicon-kc-stacked-v2-48.png",
+        "assets/favicon-kc-stacked-v2-96.png",
+        "assets/favicon-kc-stacked-v2-180.png",
+        "assets/favicon-kc-stacked-v2-192.png",
+        "assets/favicon-kc-stacked-v2-512.png",
+        "assets/favicon-kc-stacked-v2-maskable-512.png",
+        "manifest.webmanifest",
         "events.json",
         "supplemental-events.json",
         "CNAME",
@@ -90,6 +121,17 @@ def verify(site: pathlib.Path) -> dict[str, int]:
 
     if failures:
         raise SystemExit("Live redesign verification failed:\n" + "\n".join(failures))
+
+    for relative, size in FAVICON_SIZES.items():
+        try:
+            width, height, bit_depth, color_type = png_ihdr(site / relative)
+        except ValueError as error:
+            failures.append(str(error))
+            continue
+        if (width, height, bit_depth, color_type) != (size, size, 8, 6):
+            failures.append(
+                f"favicon-format:{relative}:{width}x{height}:depth-{bit_depth}:type-{color_type}"
+            )
 
     if read(site / "CNAME").strip() != "kingdomcircuit.com":
         failures.append("identity:CNAME")
@@ -108,6 +150,31 @@ def verify(site: pathlib.Path) -> dict[str, int]:
     }.items():
         if manifest.get(key) != expected:
             failures.append(f"manifest:{key}:{manifest.get(key)!r}")
+
+    web_manifest = json.loads(read(site / "manifest.webmanifest"))
+    for key, expected in {
+        "name": "Kingdom Circuit",
+        "short_name": "Kingdom Circuit",
+        "id": "/",
+        "start_url": "/",
+        "scope": "/",
+        "background_color": "#080808",
+        "theme_color": "#080808",
+    }.items():
+        if web_manifest.get(key) != expected:
+            failures.append(f"web-manifest:{key}:{web_manifest.get(key)!r}")
+    manifest_icons = {
+        str(icon.get("src") or "")
+        for icon in web_manifest.get("icons", [])
+        if isinstance(icon, dict)
+    }
+    for expected in (
+        "/assets/favicon-kc-stacked-v2-192.png",
+        "/assets/favicon-kc-stacked-v2-512.png",
+        "/assets/favicon-kc-stacked-v2-maskable-512.png",
+    ):
+        if expected not in manifest_icons:
+            failures.append(f"web-manifest:icon:{expected}")
 
     pages = sorted(site.rglob("*.html"))
     profile_pages = [
@@ -131,6 +198,13 @@ def verify(site: pathlib.Path) -> dict[str, int]:
             failures.append(f"css:{relative}")
         if "/assets/kc-redesign-v1.js" not in text:
             failures.append(f"js:{relative}")
+        for tag in FAVICON_TAGS:
+            if tag not in text:
+                failures.append(f"favicon:{relative}:{tag}")
+        if "/assets/favicon.svg" in text:
+            failures.append(f"legacy-favicon:{relative}")
+        if "favicon-kc-stacked-v1" in text:
+            failures.append(f"stale-favicon:{relative}")
 
     home = read(site / "index.html")
     for phrase in ("Find Christian", "Hip Hop Shows", "Near You!", "Shows Listed", "Artists Tracked"):
