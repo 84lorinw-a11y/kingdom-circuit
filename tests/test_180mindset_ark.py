@@ -14,8 +14,8 @@ class MindsetArkTests(unittest.TestCase):
 
     def test_180mindset_has_verified_profile_image(self):
         artist = next(row for row in self.artists if row.get("name") == "180MINDSET")
-        self.assertEqual("https://www.instagram.com/180mindset_/", artist["officialImageSource"])
-        self.assertEqual("https://unavatar.io/instagram/180mindset_", artist["imageUrl"])
+        self.assertEqual("https://open.spotify.com/artist/5TXulgcmXEBOWsKfTgkHIK", artist["officialImageSource"])
+        self.assertEqual("https://open.voidware.de/artist/5TXulgcmXEBOWsKfTgkHIK", artist["imageUrl"])
         self.assertTrue(artist["sourceRegistryVerified"])
         self.assertEqual(177, artist["sourceRegistryRosterOrder"])
         self.assertTrue(artist["preferArtistImage"])
