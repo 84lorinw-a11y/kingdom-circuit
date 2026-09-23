@@ -43,6 +43,11 @@ class MilesCjFall2026RepairTests(unittest.TestCase):
             row = next(item for item in self.supplemental if item.get("id") == event_id)
             self.assertEqual(["Miles Minnick", "Tommy Zuko", "CJ Emulous"], row["artists"])
 
+    def test_retired_manual_placeholders_are_not_supplemental_events(self):
+        supplemental_ids = {row.get("id") for row in self.supplemental}
+        self.assertNotIn("manual:cj-emulous-new-mainstream-miami-2026-11-05", supplemental_ids)
+        self.assertNotIn("manual:cj-emulous-new-mainstream-jacksonville-2026-11-08", supplemental_ids)
+
     def test_confirmed_times_and_cj_alias_are_present(self):
         expected = {
             "manual:cj-emulous-glo-concert-los-angeles-2026": "18:00",

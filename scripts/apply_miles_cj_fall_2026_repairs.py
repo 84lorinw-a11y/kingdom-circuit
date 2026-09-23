@@ -265,6 +265,8 @@ def apply_runtime_events() -> None:
 def apply_supplemental_support() -> None:
     path = ROOT / "supplemental-events.json"
     rows = read(path)
+    retired_ids = {f"manual:{event_id}" for event_id in OLD_MANUAL_IDS}
+    rows = [row for row in rows if str(row.get("id") or "") not in retired_ids]
     for row in rows:
         event_id = str(row.get("id") or "")
         if event_id in BANDSINTOWN_REDIRECTS:
