@@ -317,12 +317,22 @@ def patch_labels():
 def verify():
     events = load(ROOT / "events.json"); artists = load(ROOT / "config" / "artists.json")
     for event_id, wanted in UPSERTS.items():
-        matches = []
-        for r in events:
-            same_id = str(r.get("id") or "").removeprefix("manual:") == event_id
-            same_url = bool(urls(r) & urls(wanted))
-            same_slot = r.get("startDate") == wanted.get("startDate") and norm(r.get("city")) == norm(wanted.get("city")) and norm(r.get("title")) == norm(wanted.get("title"))
-            if same_id or same_url or same_slot: matches.append(r)
+        # Prefer the durable event ID when it exists. A newer canonical record
+        # may legitimately retain the same supporting source URL while the old
+        # ID is kept as a redirect, which is not a duplicate of that ID.
+        exact_matches = [
+            r for r in events
+            if str(r.get("id") or "").removeprefix("manual:") == event_id
+        ]
+        matches = exact_matches or [
+            r for r in events
+            if bool(urls(r) & urls(wanted))
+            or (
+                r.get("startDate") == wanted.get("startDate")
+                and norm(r.get("city")) == norm(wanted.get("city"))
+                and norm(r.get("title")) == norm(wanted.get("title"))
+            )
+        ]
         if len(matches) != 1: raise SystemExit(f"Expected one {event_id}; found {len(matches)}")
     if len([a for a in artists if norm(a.get("name")) == "jimmy rock"]) != 1: raise SystemExit("JIMMY ROCK profile missing/duplicated")
     if any(TAMPA_CONFLICTS & urls(r) for r in events): raise SystemExit("Unresolved CJ Tampa/Flavor conflict was published")
