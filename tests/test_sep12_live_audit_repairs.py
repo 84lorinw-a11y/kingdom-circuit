@@ -96,6 +96,20 @@ class September12LiveAuditRepairTests(unittest.TestCase):
         self.assertIn('if (artist) artist.value = "";', source)
         self.assertIn('if (state) state.value = "";', source)
 
+    def test_fastivalle_uses_eventbrite_organizer_details(self):
+        rows = json.loads(Path("events.json").read_text(encoding="utf-8"))
+        event = next(event for event in rows if event.get("id") == repairs.FASTIVALLE_ID)
+
+        self.assertEqual("14:00", event["startTime"])
+        self.assertEqual("16:30", event["endTime"])
+        self.assertEqual("Newfields", event["venue"])
+        self.assertEqual("4000 North Michigan Road", event["address"])
+        self.assertEqual("46208", event["postalCode"])
+        self.assertEqual(repairs.FASTIVALLE_URL, event["ticketUrl"])
+        self.assertEqual(repairs.FASTIVALLE_URL, event["officialUrl"])
+        self.assertEqual("Eventbrite organizer listing", event["sourceName"])
+        self.assertNotIn(repairs.FASTIVALLE_STALE_APPLE_URL, json.dumps(event))
+
 
 if __name__ == "__main__":
     unittest.main()

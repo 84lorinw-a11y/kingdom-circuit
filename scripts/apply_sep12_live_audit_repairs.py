@@ -24,7 +24,8 @@ FAITH_JAM_URL = "https://www.eventbrite.com/e/faith-jam-2026-tickets-19853416051
 MIKE_TEEZY_ID = "official:4e2fc5c7c02ab1d34b9e"
 MIKE_TEEZY_URL = "https://music.apple.com/us/concerts/ce.01a1c61a-49a9-4e19-b629-46bac43b4970"
 FASTIVALLE_ID = "official:ea0342f4771e9f9f1dfc"
-FASTIVALLE_URL = "https://music.apple.com/us/concerts/ce.7570f0f7-b826-4400-a6f0-034778e98568"
+FASTIVALLE_URL = "https://www.eventbrite.com/e/fastivalletm-feat-1k-phew-tickets-1998265853961"
+FASTIVALLE_STALE_APPLE_URL = "https://music.apple.com/us/concerts/ce.7570f0f7-b826-4400-a6f0-034778e98568"
 KINGDOM_CHOICE_ID = "official:64bbcd477c3a36104df3"
 KINGDOM_CHOICE_URL = "https://www.queenstheatre.org/events/kingdom-choice-awards-2026-dqr9"
 ZAUNTEE_TOUR_IMAGE = "assets/artists/zauntee.webp"
@@ -270,15 +271,25 @@ def apply() -> dict[str, int]:
                 changed = True
 
             if event.get("id") == FASTIVALLE_ID:
-                event["venue"] = "Camptown, Inc."
-                event["address"] = "1010 W 64th St"
-                event["startTime"] = "19:00"
+                event["venue"] = "Newfields"
+                event["address"] = "4000 North Michigan Road"
+                event["postalCode"] = "46208"
+                event["startTime"] = "14:00"
+                event["endTime"] = "16:30"
                 event["timezone"] = "America/Indiana/Indianapolis"
+                event["ticketUrl"] = FASTIVALLE_URL
                 event["officialUrl"] = FASTIVALLE_URL
-                event["sourceName"] = "Exact Apple Music event page"
-                append_source(event, {"name": "Exact Apple Music event page", "url": FASTIVALLE_URL, "type": "artist_calendar", "authority": "artist_calendar", "priority": 112})
-                event["notes"] = "Official listing publishes 7:00 PM but does not identify it as doors or performance time."
-                event["auditVerified"] = "2026-09-12"
+                event["sourceName"] = "Eventbrite organizer listing"
+                event["organizer"] = "fastivalle™ corp."
+                event["sources"] = [
+                    source for source in event.get("sources", [])
+                    if source.get("url") != FASTIVALLE_STALE_APPLE_URL
+                ]
+                append_source(event, {"name": "Eventbrite organizer listing", "url": FASTIVALLE_URL, "type": "eventbrite", "authority": "venue_ticket", "priority": 120})
+                event["notes"] = "The Eventbrite organizer listing publishes 2:00–4:30 PM at Newfields and supersedes the conflicting 7:00 PM Camptown listing distributed by Bandsintown/Apple Music."
+                event["lastVerified"] = "2026-09-23T16:24:14Z"
+                event["verifiedVersion"] = max(int(event.get("verifiedVersion") or 0), 10)
+                event["auditVerified"] = "2026-09-23"
                 report["fastivalleRecords"] += 1
                 changed = True
 
@@ -344,8 +355,19 @@ def check() -> None:
         if mike and (mike[0].get("startTime") != "18:00" or mike[0].get("endDate")):
             raise SystemExit(f"Mike Teezy time correction is not durable in {path}")
         fastivalle = [event for event in rows if event.get("id") == FASTIVALLE_ID]
-        if fastivalle and (fastivalle[0].get("venue") != "Camptown, Inc." or fastivalle[0].get("address") != "1010 W 64th St" or fastivalle[0].get("startTime") != "19:00"):
-            raise SystemExit(f"Fastivalle details are not durable in {path}")
+        if fastivalle:
+            event = fastivalle[0]
+            if (
+                event.get("venue") != "Newfields"
+                or event.get("address") != "4000 North Michigan Road"
+                or event.get("postalCode") != "46208"
+                or event.get("startTime") != "14:00"
+                or event.get("endTime") != "16:30"
+                or event.get("ticketUrl") != FASTIVALLE_URL
+                or event.get("officialUrl") != FASTIVALLE_URL
+                or event.get("sourceName") != "Eventbrite organizer listing"
+            ):
+                raise SystemExit(f"Fastivalle Eventbrite details are not durable in {path}")
         kingdom_choice = [event for event in rows if event.get("id") == KINGDOM_CHOICE_ID]
         if kingdom_choice and kingdom_choice[0].get("officialUrl") != KINGDOM_CHOICE_URL:
             raise SystemExit(f"Kingdom Choice ticket destination is not durable in {path}")
