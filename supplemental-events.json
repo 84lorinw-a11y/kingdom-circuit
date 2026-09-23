@@ -932,10 +932,7 @@
         "authority": "venue_ticket",
         "priority": 94
       }
-    ],
-    "imageSource": "Official Eventbrite event artwork",
-    "imageSourceUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
-    "auditVerified": "2026-09-13"
+    ]
   },
   {
     "title": "Teen Club Kickoff / Back to School Concert",
@@ -1031,8 +1028,41 @@
     "cancellationConfirmed": true,
     "cancellationConfirmedAt": "2026-09-12",
     "ticketAvailability": "cancelled",
-    "notes": "Cancelled by the organizer. This page is retained as a cancellation notice.",
-    "auditVerified": "2026-09-13"
+    "notes": "Cancelled by the organizer. This page is retained as a cancellation notice."
+  },
+  {
+    "id": "supplemental:brenno-overflow-conference-2026",
+    "title": "Overflow Conference",
+    "startDate": "2026-10-17",
+    "startTime": "",
+    "venue": "Location TBD",
+    "address": "",
+    "city": "Buffalo",
+    "state": "NY",
+    "country": "US",
+    "artists": [
+      "Brenno"
+    ],
+    "headliner": "Brenno",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.tickettailor.com/events/ablazemovement",
+    "officialUrl": "https://www.brennomusic.live/",
+    "image": "",
+    "price": "",
+    "sourceName": "Brenno official upcoming shows",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Brenno official upcoming shows",
+        "url": "https://www.brennomusic.live/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ]
   },
   {
     "id": "supplemental:brenno-overflow-conference-2026",
@@ -1151,7 +1181,7 @@
     "auditVerified": "2026-09-13",
     "id": "mission-friends-sacramento-2026",
     "imageType": "artist",
-    "imagePosition": "center 30%",
+    "imagePosition": "center",
     "imageOverride": true,
     "imageSource": "Mission official YouTube channel",
     "imageSourceUrl": "https://www.youtube.com/channel/UCBaU_Xh4fyokc-ckyCeYv3w"
