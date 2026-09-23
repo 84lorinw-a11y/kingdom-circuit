@@ -25,7 +25,7 @@ jobs:
           import urllib.request
 
           artist_url = "https://open.spotify.com/artist/5TXulgcmXEBOWsKfTgkHIK"
-          endpoint = "https://embed-cdn.spotifycdn.com/oembed?" + urllib.parse.urlencode({"url": artist_url})
+          endpoint = "https://open.spotify.com/oembed?" + urllib.parse.urlencode({"url": artist_url})
           request = urllib.request.Request(endpoint, headers={"User-Agent": "KingdomCircuit/1.0"})
           with urllib.request.urlopen(request, timeout=30) as response:
               metadata = json.load(response)
