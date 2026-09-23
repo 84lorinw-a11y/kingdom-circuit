@@ -28,6 +28,9 @@ FASTIVALLE_URL = "https://www.eventbrite.com/e/fastivalletm-feat-1k-phew-tickets
 FASTIVALLE_STALE_APPLE_URL = "https://music.apple.com/us/concerts/ce.7570f0f7-b826-4400-a6f0-034778e98568"
 KINGDOM_CHOICE_ID = "official:64bbcd477c3a36104df3"
 KINGDOM_CHOICE_URL = "https://www.queenstheatre.org/events/kingdom-choice-awards-2026-dqr9"
+ANIKE_ALL_STAR_ID = "official:7c07397fa047689b0215"
+ANIKE_ALL_STAR_IMAGE = "https://images.squarespace-cdn.com/content/v1/64162751e77cf06d37b970d3/961f3d17-4b0a-44ed-92b9-8b1a53e8ed43/ANIKE+LIVE+SHOW+FLYER.jpg"
+ANIKE_ALL_STAR_IMAGE_SOURCE = "Official Anike Live Show flyer"
 ZAUNTEE_TOUR_IMAGE = "assets/artists/zauntee.webp"
 ZAUNTEE_TOUR_IMAGE_SOURCE = "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE"
 ZAUNTEE_MERGES = {
@@ -42,6 +45,18 @@ def _is_zauntee_tour(event: dict) -> bool:
     return (
         "god remembers tour" in str(event.get("title") or "").casefold()
         and {"zauntee", "skema boy"}.issubset(artists)
+    )
+
+
+def _is_anike_all_star(event: dict) -> bool:
+    if event.get("id") == ANIKE_ALL_STAR_ID:
+        return True
+    artists = {str(name).casefold() for name in event.get("artists", [])}
+    return (
+        event.get("startDate") == "2026-10-11"
+        and str(event.get("city") or "").casefold() == "austin"
+        and "all star experience" in str(event.get("title") or "").casefold()
+        and ("anike" in artists or str(event.get("headliner") or "").casefold() == "anike")
     )
 
 
@@ -184,6 +199,7 @@ def apply() -> dict[str, int]:
         "mikeTeezyRecords": 0,
         "fastivalleRecords": 0,
         "kingdomChoiceRecords": 0,
+        "anikeAllStarArtwork": 0,
         "zaunteeCanonicalRecords": 0,
         "zaunteeRetiredRecords": 0,
         "zaunteeTourImages": 0,
@@ -308,6 +324,17 @@ def apply() -> dict[str, int]:
                 report["kingdomChoiceRecords"] += 1
                 changed = True
 
+            if _is_anike_all_star(event):
+                event["image"] = ANIKE_ALL_STAR_IMAGE
+                event["imageType"] = "event_artwork"
+                event["imagePosition"] = "center"
+                event["imageOverride"] = True
+                event["imageSource"] = ANIKE_ALL_STAR_IMAGE_SOURCE
+                event["imageSourceUrl"] = ANIKE_ALL_STAR_IMAGE
+                event["auditVerified"] = "2026-09-23"
+                report["anikeAllStarArtwork"] += 1
+                changed = True
+
         for retired_id, (canonical_id, doors, performance, venue_url) in ZAUNTEE_MERGES.items():
             canonical = by_id.get(canonical_id)
             retired = by_id.get(retired_id)
@@ -371,6 +398,16 @@ def check() -> None:
         kingdom_choice = [event for event in rows if event.get("id") == KINGDOM_CHOICE_ID]
         if kingdom_choice and kingdom_choice[0].get("officialUrl") != KINGDOM_CHOICE_URL:
             raise SystemExit(f"Kingdom Choice ticket destination is not durable in {path}")
+        anike_all_star = [event for event in rows if _is_anike_all_star(event)]
+        if anike_all_star and not all(
+            event.get("image") == ANIKE_ALL_STAR_IMAGE
+            and event.get("imageType") == "event_artwork"
+            and event.get("imagePosition") == "center"
+            and event.get("imageOverride") is True
+            and event.get("imageSourceUrl") == ANIKE_ALL_STAR_IMAGE
+            for event in anike_all_star
+        ):
+            raise SystemExit(f"Anike All Star Experience artwork is not durable in {path}")
         by_id = {event.get("id"): event for event in rows}
         for retired_id, (canonical_id, doors, performance, venue_url) in ZAUNTEE_MERGES.items():
             canonical, retired = by_id.get(canonical_id), by_id.get(retired_id)

@@ -110,6 +110,54 @@ class September12LiveAuditRepairTests(unittest.TestCase):
         self.assertEqual("Eventbrite organizer listing", event["sourceName"])
         self.assertNotIn(repairs.FASTIVALLE_STALE_APPLE_URL, json.dumps(event))
 
+    def test_anike_all_star_uses_official_event_artwork(self):
+        rows = json.loads(Path("events.json").read_text(encoding="utf-8"))
+        event = next(event for event in rows if event.get("id") == repairs.ANIKE_ALL_STAR_ID)
+
+        self.assertEqual(repairs.ANIKE_ALL_STAR_IMAGE, event["image"])
+        self.assertEqual("event_artwork", event["imageType"])
+        self.assertEqual("center", event["imagePosition"])
+        self.assertTrue(event["imageOverride"])
+        self.assertEqual(repairs.ANIKE_ALL_STAR_IMAGE, event["imageSourceUrl"])
+
+    def test_refresh_repins_anike_artwork_even_if_provider_id_changes(self):
+        authoritative = self._authoritative_rare()
+        stale = {
+            "id": "official:regenerated-anike-all-star",
+            "title": "Anike — Live at THE ALL STAR EXPERIENCE LIVE CONCERT",
+            "startDate": "2026-10-11",
+            "city": "Austin",
+            "artists": ["Anike"],
+            "headliner": "Anike",
+            "image": "https://example.com/artist-fallback.jpg",
+            "imageType": "artist",
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            events = root / "events.json"
+            supplemental = root / "supplemental-events.json"
+            manual = root / "config" / "manual-events.json"
+            self._write(events, [dict(authoritative), stale])
+            self._write(supplemental, [dict(authoritative)])
+            self._write(manual, [dict(authoritative)])
+
+            with (
+                patch.object(repairs, "EVENTS_FILE", events),
+                patch.object(repairs, "SUPPLEMENTAL_EVENTS_FILE", supplemental),
+                patch.object(repairs, "MANUAL_EVENTS_FILE", manual),
+                patch.object(repairs, "EVENT_FILES", (events, supplemental, manual)),
+            ):
+                report = repairs.apply()
+                repairs.check()
+
+            rows = json.loads(events.read_text(encoding="utf-8"))
+            event = next(item for item in rows if repairs._is_anike_all_star(item))
+            self.assertEqual(1, report["anikeAllStarArtwork"])
+            self.assertEqual(repairs.ANIKE_ALL_STAR_IMAGE, event["image"])
+            self.assertEqual("event_artwork", event["imageType"])
+            self.assertEqual("center", event["imagePosition"])
+            self.assertTrue(event["imageOverride"])
+
 
 if __name__ == "__main__":
     unittest.main()
