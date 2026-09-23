@@ -34,10 +34,12 @@ REGISTRY_UPDATES = {
         "instagramProfile": "https://www.instagram.com/180mindset_/",
         "spotifyProfile": "https://open.spotify.com/artist/5TXulgcmXEBOWsKfTgkHIK",
         "youtubeProfile": "https://www.youtube.com/channel/UC4lBjJla_Acc-DFbKLXLvDQ",
-        "officialImageSource": "https://wcrx.colum.edu/sessions/2023/5/29/180mindset",
-        "imageUrl": "https://images.squarespace-cdn.com/content/v1/5a9ec0255417fc5100d91a01/1684958608491-VZU7J9JPDOUBC7PVIRZM/180MINDSET.png",
-        "imagePosition": "center 20%",
+        "officialImageSource": "https://www.instagram.com/180mindset_/",
+        "imageUrl": "https://unavatar.io/instagram/180mindset_",
+        "imagePosition": "center",
         "preferArtistImage": True,
+        "sourceRegistryVerified": True,
+        "sourceRegistryRosterOrder": 177,
     },
     "jimmy rock": {
         "name": "JIMMY ROCK",
@@ -86,7 +88,7 @@ REGISTRY_UPDATES = {
         "youtubeProfile": "https://www.youtube.com/channel/UCAvlfmD2aiqXxxknr-9VSVg",
         "officialImageSource": "https://www.instagram.com/cutthecho/",
         "sourceRegistryVerified": True,
-        "sourceRegistryRosterOrder": 79,
+        "sourceRegistryRosterOrder": 78,
     },
     "dkg kie": {
         "name": "DKG Kie",
@@ -101,7 +103,7 @@ REGISTRY_UPDATES = {
         "youtubeProfile": "https://www.youtube.com/@dkgkie",
         "officialImageSource": "https://www.instagram.com/dkg.kie",
         "sourceRegistryVerified": True,
-        "sourceRegistryRosterOrder": 80,
+        "sourceRegistryRosterOrder": 79,
     },
     "braille": {
         "name": "Braille",
@@ -116,7 +118,7 @@ REGISTRY_UPDATES = {
         "youtubeProfile": "https://www.youtube.com/@bryanbraille",
         "officialImageSource": "https://www.humblebeast.com/music/braille",
         "sourceRegistryVerified": True,
-        "sourceRegistryRosterOrder": 81,
+        "sourceRegistryRosterOrder": 80,
     },
     "canton jones": {
         "name": "Canton Jones",
@@ -131,7 +133,7 @@ REGISTRY_UPDATES = {
         "youtubeProfile": "https://www.youtube.com/@CantonJones1",
         "officialImageSource": "https://www.instagram.com/thecantonjones/?hl=en",
         "sourceRegistryVerified": True,
-        "sourceRegistryRosterOrder": 82,
+        "sourceRegistryRosterOrder": 81,
     },
     "jay-way": {
         "name": "Jay-Way",
@@ -146,7 +148,7 @@ REGISTRY_UPDATES = {
         "youtubeProfile": "https://www.youtube.com/@JayWayTheAlien",
         "officialImageSource": "https://www.jaywaythealien.com/",
         "sourceRegistryVerified": True,
-        "sourceRegistryRosterOrder": 83,
+        "sourceRegistryRosterOrder": 82,
     },
     "stixx aka conejo": {
         "name": "Stixx aka Conejo",
@@ -161,7 +163,7 @@ REGISTRY_UPDATES = {
         "youtubeProfile": "https://www.youtube.com/@stixxwym/videos",
         "officialImageSource": "https://linktr.ee/stixxwym",
         "sourceRegistryVerified": True,
-        "sourceRegistryRosterOrder": 84,
+        "sourceRegistryRosterOrder": 83,
     },
     "ruslan": {
         "name": "Ruslan",
@@ -176,11 +178,11 @@ REGISTRY_UPDATES = {
         "youtubeProfile": "https://www.youtube.com/@RuslanKD/featured",
         "officialImageSource": "https://www.instagram.com/ruslankd/?hl=en",
         "sourceRegistryVerified": True,
-        "sourceRegistryRosterOrder": 85,
+        "sourceRegistryRosterOrder": 84,
     },
 }
 
-CANONICAL_KEYS = ["kelo", "dkg kie", "braille", "canton jones", "jay-way", "stixx aka conejo", "ruslan"]
+CANONICAL_KEYS = ["kelo", "dkg kie", "braille", "canton jones", "jay-way", "stixx aka conejo", "ruslan", "180mindset"]
 
 
 def norm(value: object) -> str:
@@ -206,7 +208,7 @@ def canonical_record(update: dict) -> dict:
     keys = (
         "name", "aliases", "category", "monitoringPriority", "ticketmasterEnabled",
         "textMatchEnabled", "website", "instagramProfile", "spotifyProfile",
-        "youtubeProfile", "officialImageSource",
+        "youtubeProfile", "officialImageSource", "imageUrl", "imagePosition",
     )
     record = {"rosterOrder": int(update["sourceRegistryRosterOrder"])}
     record.update({key: update[key] for key in keys if key in update})
