@@ -1,0 +1,57 @@
+name: Pin 180MINDSET official image
+
+on:
+  push:
+    paths:
+      - .github/workflows/fetch-180mindset-image.yml
+
+permissions:
+  contents: write
+
+jobs:
+  pin-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download verified Spotify artist image
+        run: |
+          python3 - <<'PY'
+          import json
+          import pathlib
+          import urllib.parse
+          import urllib.request
+
+          artist_url = "https://open.spotify.com/artist/5TXulgcmXEBOWsKfTgkHIK"
+          endpoint = "https://embed-cdn.spotifycdn.com/oembed?" + urllib.parse.urlencode({"url": artist_url})
+          request = urllib.request.Request(endpoint, headers={"User-Agent": "KingdomCircuit/1.0"})
+          with urllib.request.urlopen(request, timeout=30) as response:
+              metadata = json.load(response)
+
+          image_url = metadata.get("thumbnail_url", "")
+          if not image_url.startswith("https://i.scdn.co/image/"):
+              raise SystemExit(f"Unexpected Spotify image URL: {image_url!r}")
+
+          image_request = urllib.request.Request(image_url, headers={"User-Agent": "KingdomCircuit/1.0"})
+          with urllib.request.urlopen(image_request, timeout=30) as response:
+              image = response.read()
+
+          if len(image) < 10_000 or not image.startswith(b"\xff\xd8\xff"):
+              raise SystemExit("Spotify did not return a valid JPEG artist image")
+
+          output = pathlib.Path("assets/artists/180mindset-primary.jpg")
+          output.parent.mkdir(parents=True, exist_ok=True)
+          output.write_bytes(image)
+          print(f"Pinned {len(image):,} bytes from {image_url}")
+          PY
+
+      - name: Commit pinned image and remove one-time workflow
+        run: |
+          rm .github/workflows/fetch-180mindset-image.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/artists/180mindset-primary.jpg .github/workflows/fetch-180mindset-image.yml
+          git commit -m "Pin official 180MINDSET artist image [skip ci]"
+          git push
