@@ -26,6 +26,9 @@ jobs:
       - name: Pin verified Eventbrite shows, Flavor Fest Friday, and HVO artwork
         run: python scripts/ensure_verified_fall_2026_shows.py
 
+      - name: Preserve verified Miles Minnick and CJ Emulous corrections
+        run: python scripts/apply_miles_cj_fall_2026_repairs.py
+
       - name: Save verified show corrections
         shell: bash
         run: |

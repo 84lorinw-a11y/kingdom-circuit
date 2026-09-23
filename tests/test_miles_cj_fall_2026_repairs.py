@@ -58,6 +58,16 @@ class MilesCjFall2026RepairTests(unittest.TestCase):
         registry_cj = next(row for row in registry if row.get("name") == "CJ Emulous")
         self.assertIn("CJ Emulous GLO.", registry_cj["aliases"])
 
+    def test_automation_reapplies_repairs_before_committing(self):
+        for relative_path in (
+            ".github/workflows/catalog-curation.yml",
+            ".github/workflows/ensure-verified-fall-shows.yml",
+        ):
+            workflow = (ROOT / relative_path).read_text(encoding="utf-8")
+            repair = workflow.index("python scripts/apply_miles_cj_fall_2026_repairs.py")
+            commit = workflow.index("git add")
+            self.assertLess(repair, commit, relative_path)
+
 
 if __name__ == "__main__":
     unittest.main()
