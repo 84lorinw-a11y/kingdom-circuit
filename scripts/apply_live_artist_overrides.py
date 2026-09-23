@@ -23,6 +23,22 @@ ARTIST_PERFORMANCE_DATE_OVERRIDES = {
 }
 
 REGISTRY_UPDATES = {
+    "180mindset": {
+        "name": "180MINDSET",
+        "aliases": ["180MINDSET", "180Mindset", "180 Mindset"],
+        "category": "core",
+        "monitoringPriority": 3,
+        "ticketmasterEnabled": False,
+        "textMatchEnabled": True,
+        "website": "https://linktr.ee/180mindsetmusic",
+        "instagramProfile": "https://www.instagram.com/180mindset_/",
+        "spotifyProfile": "https://open.spotify.com/artist/5TXulgcmXEBOWsKfTgkHIK",
+        "youtubeProfile": "https://www.youtube.com/channel/UC4lBjJla_Acc-DFbKLXLvDQ",
+        "officialImageSource": "https://wcrx.colum.edu/sessions/2023/5/29/180mindset",
+        "imageUrl": "https://images.squarespace-cdn.com/content/v1/5a9ec0255417fc5100d91a01/1684958608491-VZU7J9JPDOUBC7PVIRZM/180MINDSET.png",
+        "imagePosition": "center 20%",
+        "preferArtistImage": True,
+    },
     "jimmy rock": {
         "name": "JIMMY ROCK",
         "aliases": ["JIMMY ROCK", "Jimmy Rock"],

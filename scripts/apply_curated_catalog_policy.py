@@ -197,7 +197,7 @@ GENESIS_SHOW = {
     "lastVerified": "2026-09-06T00:00:00Z",
 }
 
-ARK_ARTISTS = ["Zauntee", "Scootie Wop", "Dante' Pride", "Anike", "Y Shadey"]
+ARK_ARTISTS = ["Zauntee", "Scootie Wop", "Dante' Pride", "Anike", "Y Shadey", "180MINDSET"]
 ARK_OF_WORSHIP = {
     "id": "ark-of-worship-2026",
     "title": "Ark of Worship Gospel & Christian Music Festival 2026",
