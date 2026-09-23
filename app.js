@@ -2570,7 +2570,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/5TXulgcmXEBOWsKfTgkHIK",
     "youtubeProfile": "https://www.youtube.com/channel/UC4lBjJla_Acc-DFbKLXLvDQ",
     "officialImageSource": "https://open.spotify.com/artist/5TXulgcmXEBOWsKfTgkHIK",
-    "imageUrl": "https://open.voidware.de/artist/5TXulgcmXEBOWsKfTgkHIK",
+    "imageUrl": "assets/artists/180mindset-primary.jpg",
     "imagePosition": "center",
     "preferArtistImage": true,
     "sourceRegistryVerified": true,
