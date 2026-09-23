@@ -119,6 +119,14 @@ class CuratedCatalogPolicyTests(unittest.TestCase):
         self.assertEqual("event_artwork", event["imageType"])
         self.assertTrue(event["imageOverride"])
 
+    def test_ark_of_worship_uses_pinned_event_artwork(self):
+        event = MODULE.ARK_OF_WORSHIP
+        self.assertEqual("assets/events/ark-of-worship-2026.png", event["image"])
+        self.assertTrue((ROOT / event["image"]).is_file())
+        self.assertEqual("event_artwork", event["imageType"])
+        self.assertEqual("center", event["imagePosition"])
+        self.assertTrue(event["imageOverride"])
+
     def test_official_event_with_bandsintown_id_is_not_refreshable(self):
         provider_record = {
             "id": "bandsintown:108758638",
