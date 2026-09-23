@@ -281,12 +281,15 @@ def apply_supplemental_support() -> None:
 
 
 def apply_artist_alias() -> None:
-    path = ROOT / "config" / "artists.json"
-    rows = read(path)
-    artist = next(row for row in rows if str(row.get("name") or "").casefold() == "cj emulous")
-    aliases = list(dict.fromkeys([*(artist.get("aliases") or []), "CJ Emulous GLO.", "CJ Emulous GLO"]))
-    artist["aliases"] = aliases
-    write(path, rows)
+    for path in (
+        ROOT / "config" / "artists.json",
+        ROOT / "config" / "verified-artist-registry-updates.json",
+    ):
+        rows = read(path)
+        artist = next(row for row in rows if str(row.get("name") or "").casefold() == "cj emulous")
+        aliases = list(dict.fromkeys([*(artist.get("aliases") or []), "CJ Emulous GLO.", "CJ Emulous GLO"]))
+        artist["aliases"] = aliases
+        write(path, rows)
 
 
 def verify() -> None:
@@ -313,6 +316,13 @@ def verify() -> None:
     cj = next(row for row in read(ROOT / "config" / "artists.json") if row.get("name") == "CJ Emulous")
     if "CJ Emulous GLO." not in (cj.get("aliases") or []):
         raise SystemExit("CJ Emulous GLO. alias missing")
+    registry_cj = next(
+        row
+        for row in read(ROOT / "config" / "verified-artist-registry-updates.json")
+        if row.get("name") == "CJ Emulous"
+    )
+    if "CJ Emulous GLO." not in (registry_cj.get("aliases") or []):
+        raise SystemExit("CJ Emulous GLO. canonical registry alias missing")
 
 
 def main() -> None:

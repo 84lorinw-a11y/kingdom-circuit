@@ -54,6 +54,9 @@ class MilesCjFall2026RepairTests(unittest.TestCase):
             self.assertEqual(start_time, self.event(event_id)["startTime"])
         cj = next(row for row in self.artists if row.get("name") == "CJ Emulous")
         self.assertIn("CJ Emulous GLO.", cj["aliases"])
+        registry = json.loads((ROOT / "config" / "verified-artist-registry-updates.json").read_text(encoding="utf-8"))
+        registry_cj = next(row for row in registry if row.get("name") == "CJ Emulous")
+        self.assertIn("CJ Emulous GLO.", registry_cj["aliases"])
 
 
 if __name__ == "__main__":
