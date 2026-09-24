@@ -34,7 +34,7 @@ class September24RegressionTests(unittest.TestCase):
             rock.apply(root)
             self.assertEqual(once, (root / "events.json").read_text())
             event = json.loads(once)[0]
-            self.assertEqual(["LJ THE MESSENGER", "DEON"], event["artists"])
+            self.assertEqual(["Lj the Messenger", "DEON"], event["artists"])
             self.assertEqual("2027-04-24", event["startDate"])
             self.assertFalse(event.get("startTime"))
             self.assertFalse(event.get("price"))

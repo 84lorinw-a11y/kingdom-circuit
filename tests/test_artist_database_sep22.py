@@ -21,9 +21,9 @@ EXPECTED = {
         "instagramProfile": "https://www.instagram.com/NXTMIKE_",
         "spotifyProfile": "https://open.spotify.com/artist/2yMOYu5UEVMeoZmBczRR5g",
         "youtubeProfile": "https://www.youtube.com/NXTMIKE",
-        # September 24: replace the coffee-cup image with the verified Spotify portrait.
-        "officialImageSource": "https://open.spotify.com/artist/2yMOYu5UEVMeoZmBczRR5g",
-        "imageUrl": "assets/artists/nxtmike-spotify.jpg",
+        # September 24 follow-up: use the owner-selected official About-page portrait.
+        "officialImageSource": "https://www.nxtmike.com/about",
+        "imageUrl": "assets/artists/nxtmike-about.webp",
     },
     "CHVRCH562": {
         "rosterOrder": 147,

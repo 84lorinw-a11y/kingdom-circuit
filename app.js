@@ -194,6 +194,8 @@ const ARTIST_ROSTER_ORDER = [
   "N!X",
   "D Riddick",
   "Howard Langford",
+  "Lj the Messenger",
+  "DEON",
   "Redimi2",
   "Funky",
   "Pregador Luo",
@@ -259,7 +261,6 @@ const ARTIST_ROSTER_ORDER = [
   "B. Cooper",
   "YP aka Young Paul",
   "Untidld",
-  "DEON",
   "Jamil",
   "Kvng Flvcko",
   "MotionPlus",
@@ -2154,9 +2155,9 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/NXTMIKE_",
     "spotifyProfile": "https://open.spotify.com/artist/2yMOYu5UEVMeoZmBczRR5g",
     "youtubeProfile": "https://www.youtube.com/NXTMIKE",
-    "officialImageSource": "https://open.spotify.com/artist/2yMOYu5UEVMeoZmBczRR5g",
-    "imageUrl": "assets/artists/nxtmike-spotify.jpg",
-    "imagePosition": "50% 30%",
+    "officialImageSource": "https://www.nxtmike.com/about",
+    "imageUrl": "assets/artists/nxtmike-about.webp",
+    "imagePosition": "50% 15%",
     "sourceRegistryVerified": true
   },
   "chvrch562": {
@@ -2607,6 +2608,32 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "youtubeProfile": "https://www.youtube.com/@howardlangfordmusic",
     "officialImageSource": "https://open.spotify.com/artist/6mpv6UPxnAAOGbp5JmMHbY",
     "imageUrl": "assets/artists/howard-langford-spotify.jpg",
+    "imagePosition": "50% 25%",
+    "sourceRegistryVerified": true
+  },
+  "lj the messenger": {
+    "aliases": [
+      "Lj the Messenger"
+    ],
+    "website": "https://www.instagram.com/ljthemessenger/",
+    "instagramProfile": "https://www.instagram.com/ljthemessenger/",
+    "spotifyProfile": "https://open.spotify.com/artist/1wxZ1Mv6pAQbaqh30Nq6hB",
+    "youtubeProfile": "https://www.youtube.com/@ljthemessenger",
+    "officialImageSource": "https://open.spotify.com/artist/1wxZ1Mv6pAQbaqh30Nq6hB",
+    "imageUrl": "assets/artists/lj-the-messenger-spotify.jpg",
+    "imagePosition": "50% 25%",
+    "sourceRegistryVerified": true
+  },
+  "deon": {
+    "aliases": [
+      "DEON"
+    ],
+    "website": "https://www.instagram.com/wayofdeon/?hl=en",
+    "instagramProfile": "https://www.instagram.com/wayofdeon/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/4kt0dkHxgthY7GMdG4G5dh",
+    "youtubeProfile": "https://www.youtube.com/channel/UC7syo-HdRcOJ-2EdT0HMKVg",
+    "officialImageSource": "https://open.spotify.com/artist/4kt0dkHxgthY7GMdG4G5dh",
+    "imageUrl": "assets/artists/deon-spotify.jpg",
     "imagePosition": "50% 25%",
     "sourceRegistryVerified": true
   }

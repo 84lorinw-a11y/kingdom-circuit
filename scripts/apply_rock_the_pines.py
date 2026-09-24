@@ -17,7 +17,7 @@ EVENT = {
     "venue": "The Park of East Texas",
     "address": "204 Patton Lane",
     "city": "Tyler", "state": "TX", "country": "US",
-    "artists": ["LJ THE MESSENGER", "DEON"],
+    "artists": ["Lj the Messenger", "DEON"],
     "advertisedBilling": ["Skillet", "Stephen Stanley", "Disciple", "LJ THE MESSENGER", "The Protest", "DEON"],
     "officialBill": ["Skillet", "Stephen Stanley", "Disciple", "LJ THE MESSENGER", "The Protest", "DEON"],
     "headliner": "Skillet",

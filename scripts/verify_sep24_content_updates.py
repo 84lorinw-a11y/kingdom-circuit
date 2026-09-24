@@ -15,7 +15,7 @@ import build_seo_site as builder
 def verify(site: Path) -> None:
     artists = json.loads((site / "config/artists.json").read_text())
     reviewed = json.loads((Path(__file__).resolve().parents[1] / "config/verified-artist-registry-updates.json").read_text())
-    for name in trnscnd.PROFILED_ARTISTS:
+    for name in [*trnscnd.PROFILED_ARTISTS, "Lj the Messenger", "DEON"]:
         artist = next(a for a in artists if a["name"] == name)
         expected = next(a for a in reviewed if a["name"] == name)
         text = html.unescape((site / builder.artist_path(name).strip("/") / "index.html").read_text())
@@ -39,8 +39,12 @@ def verify(site: Path) -> None:
             cards = re.findall(r'<article\b[^>]*data-event-card[^>]*>.*?</article>', text, re.S)
             card = next(card for card in cards if href in card)
             assert all(name in html.unescape(card) for name in source["advertisedBilling"]), (page, href)
-        assert "/artists/leah-dates/" not in detail and "/artists/lj-the-messenger/" not in detail
-    print("Final content verified: complete billing, landscape flyers, four artist portraits and verified social links")
+        roster = {builder.norm(a["name"]): a["name"] for a in artists if a.get("enabled") is not False}
+        for name in source["advertisedBilling"]:
+            canonical = roster.get(builder.norm(name))
+            href = builder.artist_path(canonical or name)
+            assert (f'href="{href}"' in line) == bool(canonical), (name, "profile link mismatch")
+    print("Final content verified: complete billing, landscape flyers, six artist portraits and verified social links")
 
 
 if __name__ == "__main__":
