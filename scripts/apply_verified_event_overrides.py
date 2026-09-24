@@ -187,8 +187,7 @@ ASAP_PREACH_REVIVAL_URL = (
     "https://www.eventbrite.com/e/revival-nights-tickets-2000057247066"
 )
 ASAP_PREACH_REVIVAL_IMAGE = (
-    "https://cdn.rapzilla.com/wp-content/uploads/2019/01/23121044/"
-    "FB_IMG_1547351853226.jpg"
+    "assets/events/asap-preach-revival-nights-2026-11-21.jpg"
 )
 ASAP_PREACH_REVIVAL_EVENT = {
     "id": f"manual:{ASAP_PREACH_REVIVAL_EVENT_ID}",
@@ -214,7 +213,8 @@ ASAP_PREACH_REVIVAL_EVENT = {
     "ticketUrl": ASAP_PREACH_REVIVAL_URL,
     "officialUrl": ASAP_PREACH_REVIVAL_URL,
     "image": ASAP_PREACH_REVIVAL_IMAGE,
-    "imageType": "artist",
+    "imageType": "event_artwork",
+    "detailImageLayout": "landscape",
     "imagePosition": "center",
     "imageOverride": True,
     "price": "Free",
@@ -225,8 +225,8 @@ ASAP_PREACH_REVIVAL_EVENT = {
     "lineupExplicit": True,
     "advertisedBilling": ["ASAP Preach", "Dray Day Ministries"],
     "organizer": "Revival Ignited Ministries",
-    "imageSource": "Verified ASAP Preach artist photo",
-    "imageSourceUrl": ASAP_PREACH_REVIVAL_IMAGE,
+    "imageSource": "Revival Nights official Eventbrite artwork",
+    "imageSourceUrl": ASAP_PREACH_REVIVAL_URL,
     "auditVerified": "2026-09-22",
     "firstSeen": "2026-09-22T22:10:30Z",
     "lastVerified": "2026-09-22T22:10:30Z",
