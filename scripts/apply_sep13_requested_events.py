@@ -293,10 +293,10 @@ def patch_artist():
              "activeStatus": "active_or_unknown", "textMatchEnabled": True, "rosterOrder": len(rows) + 1}
         rows.append(a)
     else: a = found[0]
-    a.update({"website": "https://www.jimmyrock.com/", "websiteRegistryVerified": True,
+    a.update({"website": "https://www.instagram.com/jimmyrock/", "websiteRegistryVerified": True,
               "instagramProfile": "https://www.instagram.com/jimmyrock/",
               "spotifyProfile": "https://open.spotify.com/artist/6YN7TGi4ZlsAy38fZVPvkN",
-              "youtubeProfile": "https://www.youtube.com/@JimmyRock",
+              "youtubeProfile": "https://www.youtube.com/channel/UCCLbaoGsC-0wnAvr0Q3OMdg",
               "bandsintownProfile": "https://www.bandsintown.com/a/7118692-jimmy-rock",
               "imageUrl": JIMMY_IMAGE, "imagePosition": "center", "preferArtistImage": True,
               "officialImageSource": "https://www.jimmyrock.com/"})

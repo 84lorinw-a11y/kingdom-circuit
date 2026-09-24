@@ -22,7 +22,7 @@ SOURCE_ROSTER_ORDER = 110
 FACEBOOK_EVENT_URL = "https://www.facebook.com/deonte.hall.98832/photos/-battle-creek-michigan-im-coming-im-super-thankful-and-humbled-to-announce-that-/2995157700824677/"
 FACEBOOK_ARTWORK_SOURCE = FACEBOOK_EVENT_URL
 FACEBOOK_ARTWORK_URL = "assets/events/deonte-hall-truth-in-action-2026.webp"
-OFFICIAL_WEBSITE = "https://deontehall.com/"
+OFFICIAL_WEBSITE = "https://www.instagram.com/deontehall100"
 OFFICIAL_IMAGE_SOURCE = "https://deontehall.com/index.php/about-deonte/"
 ARTIST_IMAGE = "https://deontehall.com/wp-content/uploads/2017/11/IMG_2799-1.jpg"
 
@@ -38,7 +38,7 @@ ARTIST_RECORD: dict[str, Any] = {
     "activeStatus": "active_or_unknown",
     "textMatchEnabled": False,
     "website": OFFICIAL_WEBSITE,
-    "instagramProfile": "https://www.instagram.com/deontehall100/",
+    "instagramProfile": "https://www.instagram.com/deontehall100",
     "spotifyProfile": "https://open.spotify.com/artist/1o4z5bdBNIeJZGIHeseIhf",
     "youtubeProfile": "https://www.youtube.com/@deontehallofficial",
     "officialImageSource": OFFICIAL_IMAGE_SOURCE,
@@ -58,7 +58,7 @@ VERIFIED_UPDATE: dict[str, Any] = {
     "ticketmasterEnabled": False,
     "textMatchEnabled": False,
     "website": OFFICIAL_WEBSITE,
-    "instagramProfile": "https://www.instagram.com/deontehall100/",
+    "instagramProfile": "https://www.instagram.com/deontehall100",
     "spotifyProfile": "https://open.spotify.com/artist/1o4z5bdBNIeJZGIHeseIhf",
     "youtubeProfile": "https://www.youtube.com/@deontehallofficial",
     "officialImageSource": OFFICIAL_IMAGE_SOURCE,

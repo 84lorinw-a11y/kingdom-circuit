@@ -80,7 +80,7 @@ class ArtistDatabaseSeptember9Tests(unittest.TestCase):
             artist = artists[name.casefold()]
             self.assertTrue(artist.get("sourceRegistryVerified"), name)
             self.assertTrue(artist.get("officialImageSource"), name)
-            self.assertRegex(artist.get("instagramProfile", ""), r"^https://www\.instagram\.com/[^/?#]+/?$")
+            self.assertRegex(artist.get("instagramProfile", ""), r"^https://www\.instagram\.com/[^/?#]+/?(?:\?hl=en)?$")
             self.assertRegex(artist.get("spotifyProfile", ""), r"^https://open\.spotify\.com/artist/[A-Za-z0-9]+$")
             self.assertRegex(artist.get("youtubeProfile", ""), r"^https://(?:www\.|music\.)?youtube\.com/(?:@|channel/|user/)[^?#]+$")
 
@@ -88,7 +88,7 @@ class ArtistDatabaseSeptember9Tests(unittest.TestCase):
             artists["yung kriss"]["spotifyProfile"],
             "https://open.spotify.com/artist/3JCk8XWIBcpA10QeM5tkbP",
         )
-        self.assertEqual(artists["nic d"]["instagramProfile"], "https://www.instagram.com/iamnicd/")
+        self.assertEqual(artists["nic d"]["instagramProfile"], "https://www.instagram.com/iamnicd/?hl=en")
         self.assertFalse(artists["tylerhateslife"].get("socialSearchEnabled"))
         self.assertEqual(artists["tylerhateslife"].get("activeStatus"), "legacy")
 

@@ -51,7 +51,7 @@ class ArtistDatabaseSeptember11Tests(unittest.TestCase):
         for name in VERIFIED_BLOCK:
             artist = artists[name.casefold()]
             self.assertTrue(artist.get("sourceRegistryVerified"), name)
-            self.assertRegex(artist.get("instagramProfile", ""), r"^https://www\.instagram\.com/[^/?#]+/?$")
+            self.assertRegex(artist.get("instagramProfile", ""), r"^https://www\.instagram\.com/[^/?#]+/?(?:\?hl=en)?$")
             self.assertRegex(artist.get("spotifyProfile", ""), r"^https://open\.spotify\.com/artist/[A-Za-z0-9]+$")
             self.assertRegex(artist.get("youtubeProfile", ""), r"^https://(?:www\.|music\.)?youtube\.com/(?:@|channel/|user/)[^?#]+$")
 

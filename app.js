@@ -476,7 +476,7 @@ const VERIFIED_ARTIST_REGISTRY = {
       "Miles Minnick"
     ],
     "website": "https://milesminnick.com/",
-    "instagramProfile": "https://www.instagram.com/miles.minnick/",
+    "instagramProfile": "https://www.instagram.com/miles.minnick/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/1VEtrxO5KlDXfYGKBI6Ldr",
     "youtubeProfile": "https://www.youtube.com/@MilesMinnick",
     "officialImageSource": "https://milesminnick.com/",
@@ -543,7 +543,7 @@ const VERIFIED_ARTIST_REGISTRY = {
       "Aaron Cole"
     ],
     "website": "https://www.iamaaroncole.com/",
-    "instagramProfile": "https://www.instagram.com/iamaaroncole/",
+    "instagramProfile": "https://www.instagram.com/iamaaroncole/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/0OQ8y7heASb1vEX5WXvjCr",
     "youtubeProfile": "https://www.youtube.com/channel/UCFV59kjh9BTGJGYwfrQ247Q",
     "officialImageSource": "https://www.iamaaroncole.com/",
@@ -661,7 +661,7 @@ const VERIFIED_ARTIST_REGISTRY = {
       "Fern of Social Club Misfits"
     ],
     "website": "https://fernofficial.com/",
-    "instagramProfile": "https://www.instagram.com/fernie_sc/",
+    "instagramProfile": "https://www.instagram.com/fernie_sc/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/0aDl6JJeQf1eZ35ymzirwp",
     "youtubeProfile": "https://www.youtube.com/channel/UCjB6amZ5v-e6H8lK2HerjmQ",
     "officialImageSource": "https://fernofficial.com/",
@@ -674,7 +674,7 @@ const VERIFIED_ARTIST_REGISTRY = {
       "Marty Mar"
     ],
     "website": "https://www.instagram.com/deathbymartymar/?hl=en",
-    "instagramProfile": "https://www.instagram.com/deathbymartymar/",
+    "instagramProfile": "https://www.instagram.com/deathbymartymar/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/5BfKKSmpGmj2moMNlaWeJK",
     "youtubeProfile": "https://www.youtube.com/@deathbymartymar",
     "officialImageSource": "https://open.spotify.com/artist/5BfKKSmpGmj2moMNlaWeJK",
@@ -689,7 +689,7 @@ const VERIFIED_ARTIST_REGISTRY = {
       "Brvndon P"
     ],
     "website": "https://iambrvndonp.com/",
-    "instagramProfile": "https://www.instagram.com/iambrvndonp/",
+    "instagramProfile": "https://www.instagram.com/iambrvndonp/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/0hO40pJ3oZNnq7joT2xQGy",
     "youtubeProfile": "https://www.youtube.com/@BRVNDONP",
     "officialImageSource": "https://iambrvndonp.com/",
@@ -744,7 +744,7 @@ const VERIFIED_ARTIST_REGISTRY = {
       "Derek Minor"
     ],
     "website": "https://derekminor.com/",
-    "instagramProfile": "https://www.instagram.com/thederekminor/",
+    "instagramProfile": "https://www.instagram.com/thederekminor/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/3fn8lZLy7Q61AXCWWPYC4B",
     "youtubeProfile": "https://www.youtube.com/@derekminor",
     "officialImageSource": "https://derekminor.com/",
@@ -755,7 +755,7 @@ const VERIFIED_ARTIST_REGISTRY = {
       "Canon"
     ],
     "website": "https://www.getthecanon.com/",
-    "instagramProfile": "https://www.instagram.com/getthecanon/",
+    "instagramProfile": "https://www.instagram.com/getthecanon/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/1dIjbaW9JTTQQ7ufrQnGsq",
     "youtubeProfile": "https://www.youtube.com/@getthecanon",
     "officialImageSource": "https://www.getthecanon.com/",
@@ -803,7 +803,7 @@ const VERIFIED_ARTIST_REGISTRY = {
       "HOG MOB"
     ],
     "website": "https://hogmob.com/sevin/",
-    "instagramProfile": "https://www.instagram.com/sevinhogmob/",
+    "instagramProfile": "https://www.instagram.com/sevinhogmob/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/1I402d4s0Xe8EntQI3u96l",
     "youtubeProfile": "https://www.youtube.com/@HOGMOBSEVIN",
     "officialImageSource": "https://hogmob.com/sevin/",
@@ -816,7 +816,7 @@ const VERIFIED_ARTIST_REGISTRY = {
       "Da T.R.U.T.H."
     ],
     "website": "https://www.instagram.com/datruthonduty/?hl=en",
-    "instagramProfile": "https://www.instagram.com/datruthonduty/",
+    "instagramProfile": "https://www.instagram.com/datruthonduty/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/2ISIE0MEDMdAF2LDMLrVD4",
     "youtubeProfile": "https://www.youtube.com/channel/UCnJCP07fWQ5BIFd7toUnxKg",
     "officialImageSource": "https://www.instagram.com/datruthonduty/?hl=en",
@@ -840,7 +840,7 @@ const VERIFIED_ARTIST_REGISTRY = {
       "Forrest Frank"
     ],
     "website": "https://forrestfrank.com/",
-    "instagramProfile": "https://www.instagram.com/hiforrest/",
+    "instagramProfile": "https://www.instagram.com/hiforrest/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/1scVfBymTr3CeZ4imMj1QJ",
     "youtubeProfile": "https://www.youtube.com/@hiforrest",
     "officialImageSource": "https://forrestfrank.com/",
@@ -880,7 +880,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     ],
     "website": "https://www.shepherd.live/",
     "instagramProfile": "https://www.instagram.com/shepherd_music/",
-    "spotifyProfile": "https://open.spotify.com/artist/0YHuTR40zc9yqfoSSArQxU?si=uLy6lYIBTr6JOUAC3VCQRw&dl_branch=1&nd=1&dlsi=9e8b14d62f1848e4",
+    "spotifyProfile": "https://open.spotify.com/artist/0YHuTR40zc9yqfoSSArQxU?dl_branch=1",
     "youtubeProfile": "https://www.youtube.com/channel/UCc6gnoGyHriWXsAEX-OcueQ",
     "officialImageSource": "https://www.instagram.com/shepherd_music/",
     "sourceRegistryVerified": true
@@ -889,7 +889,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "aliases": [
       "Kai Uriah"
     ],
-    "website": "https://linktr.ee/itskaiuriah",
+    "website": "https://www.instagram.com/kaiuriah/?hl=en",
     "instagramProfile": "https://www.instagram.com/kaiuriah/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/6IdKInshEI8ywJ99v6gVKM",
     "youtubeProfile": "https://www.youtube.com/@kaiuriah",
@@ -901,7 +901,7 @@ const VERIFIED_ARTIST_REGISTRY = {
       "Hyper Fenton",
       "Seth Fenton"
     ],
-    "website": "https://hyperfenton.com/?srsltid=AfmBOooF879r3FwdrhkdtvTJm7pVqTdkh89fyt-Dk4UoXInfWloW7xKh",
+    "website": "https://hyperfenton.com/",
     "instagramProfile": "https://www.instagram.com/hyperfenton/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/2q5QIs6iibW6xyHZZRSeh2",
     "youtubeProfile": "https://music.youtube.com/playlist?list=OLAK5uy_mriMUrHlhyB3ejFMfLTlJohVxDbdscX5s",
@@ -940,7 +940,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/6PY88og97O47AlwuyFFRhr",
     "youtubeProfile": "https://www.youtube.com/channel/UCeJ8yMp5bJjTxBp_COGNB6w",
     "officialImageSource": "https://www.instagram.com/tylanthechosen1/?hl=en",
-    "sourceRegistryVerified": true
+    "sourceRegistryVerified": true,
+    "website": "https://www.instagram.com/tylanthechosen1/?hl=en"
   },
   "jabari heavens": {
     "aliases": [
@@ -950,13 +951,14 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/2ORjCgiRF9ZIK4gak1CsYP",
     "youtubeProfile": "https://www.youtube.com/@JabariHeavens",
     "officialImageSource": "https://www.instagram.com/jabariheavens/",
-    "sourceRegistryVerified": true
+    "sourceRegistryVerified": true,
+    "website": "https://www.instagram.com/jabariheavens/"
   },
   "rhema soul": {
     "aliases": [
       "Rhema Soul"
     ],
-    "website": "http://rhemasoul.com/",
+    "website": "https://en.wikipedia.org/wiki/Rhema_Soul",
     "instagramProfile": "https://www.instagram.com/rhemasoul/",
     "spotifyProfile": "https://open.spotify.com/artist/6kqgFtlPJHyqqffmlDTTzd",
     "youtubeProfile": "https://www.youtube.com/@RhemaSoul/featured",
@@ -967,7 +969,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "aliases": [
       "Shonlock"
     ],
-    "website": "http://www.shonlock.com/",
+    "website": "https://www.shonlock.com/",
     "instagramProfile": "https://www.instagram.com/shonlock/",
     "spotifyProfile": "https://open.spotify.com/artist/0Fs18mA7TFMvYVRNX4dNTt",
     "youtubeProfile": "https://music.youtube.com/@Shonlock",
@@ -982,7 +984,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/7jKYoI3eKh85xfqK7TAlN5",
     "youtubeProfile": "https://www.youtube.com/@ViktoriousMusic",
     "officialImageSource": "https://www.instagram.com/viktoryr4/?hl=en",
-    "sourceRegistryVerified": true
+    "sourceRegistryVerified": true,
+    "website": "https://en.wikipedia.org/wiki/Viktory"
   },
   "t-bone": {
     "aliases": [
@@ -990,7 +993,7 @@ const VERIFIED_ARTIST_REGISTRY = {
       "T Bone",
       "Rene Sotomayor"
     ],
-    "website": "http://houseoftbone.com/",
+    "website": "https://houseoftbone.com/",
     "instagramProfile": "https://www.instagram.com/tboneoficial/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/6h2GxbU7emrTikSWxbMyxd",
     "youtubeProfile": "https://www.youtube.com/channel/UCxQgnrqdZe_2qAR9jzyVmmg",
@@ -1025,10 +1028,10 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "aliases": [
       "Porsha Love"
     ],
-    "website": "https://www.google.com/search?q=Porsha+Love+official+website",
+    "website": "https://linktr.ee/iamporshalove",
     "instagramProfile": "https://www.instagram.com/porshalove/",
-    "spotifyProfile": "https://open.spotify.com/search/Porsha%20Love",
-    "youtubeProfile": "https://www.youtube.com/results?search_query=Porsha+Love+official",
+    "spotifyProfile": "https://open.spotify.com/artist/09TMRjnEN1r9vDFa4XmbbG",
+    "youtubeProfile": "https://www.youtube.com/@iamporshalove",
     "officialImageSource": "https://www.instagram.com/porshalove/",
     "sourceRegistryVerified": true
   },
@@ -1038,8 +1041,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     ],
     "website": "https://nickygraciousmusic.com/",
     "instagramProfile": "https://www.instagram.com/nickygracious/",
-    "spotifyProfile": "https://open.spotify.com/search/Nicky%20Gracious",
-    "youtubeProfile": "https://www.youtube.com/results?search_query=Nicky+Gracious+official",
+    "spotifyProfile": "https://open.spotify.com/artist/1cqd5cMI5u75NOH7SSfde2",
+    "youtubeProfile": "https://www.youtube.com/@NickyGraciousMusic",
     "officialImageSource": "https://nickygraciousmusic.com/",
     "sourceRegistryVerified": true
   },
@@ -1050,8 +1053,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     ],
     "website": "https://asappreachmusic.com/",
     "instagramProfile": "https://www.instagram.com/asappreach/",
-    "spotifyProfile": "https://open.spotify.com/search/ASAP%20Preach",
-    "youtubeProfile": "https://www.youtube.com/results?search_query=ASAP+Preach+official",
+    "spotifyProfile": "https://open.spotify.com/artist/32Sk85U3n2U9ji9PxvGAUC",
+    "youtubeProfile": "https://www.youtube.com/@OfficialASAPPreach",
     "officialImageSource": "https://asappreachmusic.com/",
     "sourceRegistryVerified": true
   },
@@ -1059,10 +1062,10 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "aliases": [
       "Kijan Boone"
     ],
-    "website": "https://kijanboone.com/",
+    "website": "https://linktr.ee/kijanboone",
     "instagramProfile": "https://www.instagram.com/kijanboone/",
     "spotifyProfile": "https://open.spotify.com/artist/3dAXZ2iCLGeHz5IMhAi12V",
-    "youtubeProfile": "https://www.youtube.com/channel/UCWiKxOKQso-t3q5wA_cNKKQ",
+    "youtubeProfile": "https://www.youtube.com/@kijanboone1",
     "officialImageSource": "https://www.instagram.com/kijanboone/",
     "sourceRegistryVerified": true
   },
@@ -1071,7 +1074,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "Don Ready"
     ],
     "website": "https://www.donreadymusic.com/",
-    "instagramProfile": "https://www.instagram.com/donreadymusic/",
+    "instagramProfile": "https://www.instagram.com/donreadymusic",
     "spotifyProfile": "https://open.spotify.com/artist/5kQnpfa9Qp5lNSOThWVnFl",
     "youtubeProfile": "https://www.youtube.com/@donreadymusic",
     "officialImageSource": "https://www.instagram.com/donreadymusic/",
@@ -1081,10 +1084,10 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "aliases": [
       "Y Shadey"
     ],
-    "website": "https://www.google.com/search?q=Y+Shadey+official+website",
-    "instagramProfile": "https://www.instagram.com/yshadey/",
-    "spotifyProfile": "https://open.spotify.com/search/Y%20Shadey",
-    "youtubeProfile": "https://www.youtube.com/results?search_query=Y+Shadey+official",
+    "website": "https://www.instagram.com/y.shadey/?hl=en",
+    "instagramProfile": "https://www.instagram.com/y.shadey/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/2NSMsMCNZzqNA1jlVO9M9t",
+    "youtubeProfile": "https://www.youtube.com/@YShadey",
     "officialImageSource": "https://www.instagram.com/yshadey/",
     "sourceRegistryVerified": true
   },
@@ -1093,10 +1096,10 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "Dante' Pride",
       "Dante Pride"
     ],
-    "website": "https://www.google.com/search?q=Dante%27+Pride+official+website",
+    "website": "https://www.dantepride.com/",
     "instagramProfile": "https://www.instagram.com/dantepride/",
-    "spotifyProfile": "https://open.spotify.com/search/Dante%27%20Pride",
-    "youtubeProfile": "https://www.youtube.com/results?search_query=Dante%27+Pride+official",
+    "spotifyProfile": "https://open.spotify.com/artist/3KF3FfIlybRWFHZNhLKi4G",
+    "youtubeProfile": "https://www.youtube.com/@DantePride",
     "officialImageSource": "https://www.instagram.com/dantepride/",
     "sourceRegistryVerified": true
   },
@@ -1105,10 +1108,10 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "Rare of Breed",
       "RareofBreed"
     ],
-    "website": "https://www.google.com/search?q=Rare+of+Breed+official+website",
+    "website": "https://rareofbreed.com/",
     "instagramProfile": "https://www.instagram.com/rareofbreed/",
-    "spotifyProfile": "https://open.spotify.com/search/Rare%20of%20Breed",
-    "youtubeProfile": "https://www.youtube.com/results?search_query=Rare+of+Breed+official",
+    "spotifyProfile": "https://open.spotify.com/artist/3GdRdoJomMK2f8xGjEZbHH",
+    "youtubeProfile": "https://www.youtube.com/@rareofbreed",
     "officialImageSource": "https://www.instagram.com/rareofbreed/",
     "sourceRegistryVerified": true
   },
@@ -1118,8 +1121,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     ],
     "website": "https://www.youtube.com/c/BrotherBoMusic",
     "instagramProfile": "https://www.instagram.com/brotherbo/",
-    "spotifyProfile": "https://open.spotify.com/search/Brother%20Bo",
-    "youtubeProfile": "https://www.youtube.com/results?search_query=Brother+Bo+official",
+    "spotifyProfile": "https://open.spotify.com/artist/3cmp77GMj0JNM3YHYquhMo",
+    "youtubeProfile": "https://www.youtube.com/@BrotherBoMusic",
     "officialImageSource": "https://www.youtube.com/c/BrotherBoMusic",
     "sourceRegistryVerified": true
   },
@@ -1129,8 +1132,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     ],
     "website": "https://music.apple.com/us/artist/tommy-chapa/1508864414",
     "instagramProfile": "https://www.instagram.com/tommychapa/",
-    "spotifyProfile": "https://open.spotify.com/search/Tommy%20Chapa",
-    "youtubeProfile": "https://www.youtube.com/results?search_query=Tommy+Chapa+official",
+    "spotifyProfile": "https://open.spotify.com/artist/2ROy7S3IGOr7Slnm2Ua2n2",
+    "youtubeProfile": "https://www.youtube.com/@tommychapa5419",
     "officialImageSource": "https://music.apple.com/us/artist/tommy-chapa/1508864414",
     "sourceRegistryVerified": true
   },
@@ -1141,8 +1144,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     ],
     "website": "https://thisishismusic.com/pages/about",
     "instagramProfile": "https://www.instagram.com/bcodyshields/",
-    "spotifyProfile": "https://open.spotify.com/search/B.%20Cody%20Shields",
-    "youtubeProfile": "https://www.youtube.com/results?search_query=B.+Cody+Shields+official",
+    "spotifyProfile": "https://open.spotify.com/artist/4chyF3tNUYqQdgS0SQtOT6",
+    "youtubeProfile": "https://www.youtube.com/@b.codyshields",
     "officialImageSource": "https://thisishismusic.com/pages/about",
     "sourceRegistryVerified": true
   },
@@ -1152,8 +1155,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     ],
     "website": "https://www.youtube.com/@SantanaRoseMusic",
     "instagramProfile": "https://www.instagram.com/santanarose/",
-    "spotifyProfile": "https://open.spotify.com/search/Santana%20Rose",
-    "youtubeProfile": "https://www.youtube.com/results?search_query=Santana+Rose+official",
+    "spotifyProfile": "https://open.spotify.com/artist/0gV7fgKsqj3KAk1gF2HIbH",
+    "youtubeProfile": "https://www.youtube.com/@SantanaRoseMusic",
     "officialImageSource": "https://www.youtube.com/@SantanaRoseMusic",
     "sourceRegistryVerified": true
   },
@@ -1162,10 +1165,10 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "DJ Winn",
       "DJ WINN"
     ],
-    "website": "https://www.google.com/search?q=DJ+Winn+official+website",
+    "website": "https://poplme.co/djwinn/share",
     "instagramProfile": "https://www.instagram.com/djwinn/",
-    "spotifyProfile": "https://open.spotify.com/search/DJ%20Winn",
-    "youtubeProfile": "https://www.youtube.com/results?search_query=DJ+Winn+official",
+    "spotifyProfile": "https://open.spotify.com/artist/5lo8uBARuLLVmRDXYDx7eQ",
+    "youtubeProfile": "https://www.youtube.com/@DJWINN",
     "officialImageSource": "https://www.instagram.com/djwinn/",
     "sourceRegistryVerified": true
   },
@@ -1176,8 +1179,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     ],
     "website": "https://www.youtube.com/@redeemedmuzic",
     "instagramProfile": "https://www.instagram.com/redeemed/",
-    "spotifyProfile": "https://open.spotify.com/search/REDEEMED",
-    "youtubeProfile": "https://www.youtube.com/results?search_query=REDEEMED+official",
+    "spotifyProfile": "https://open.spotify.com/artist/240g9DqmeKizlyyCZtL22Y",
+    "youtubeProfile": "https://www.youtube.com/@redeemedmuzic",
     "officialImageSource": "https://www.youtube.com/@redeemedmuzic",
     "sourceRegistryVerified": true
   },
@@ -1386,7 +1389,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "website": "https://www.cockybeliefproduction.com/",
     "instagramProfile": "https://www.instagram.com/corincris/",
     "spotifyProfile": "https://open.spotify.com/artist/3HPj0fTgMGByddrYrdNPLn",
-    "youtubeProfile": "https://www.youtube.com/channel/UCF-g5-rykdXV5O5uEoz5ggA",
+    "youtubeProfile": "https://www.youtube.com/@corincris",
     "officialImageSource": "https://www.cockybeliefproduction.com/",
     "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb9c8a3893503dc3d2ec584a4c",
     "imagePosition": "center",
@@ -1690,8 +1693,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "aliases": [
       "Deonte Hall"
     ],
-    "website": "https://deontehall.com/",
-    "instagramProfile": "https://www.instagram.com/deontehall100/",
+    "website": "https://www.instagram.com/deontehall100",
+    "instagramProfile": "https://www.instagram.com/deontehall100",
     "spotifyProfile": "https://open.spotify.com/artist/1o4z5bdBNIeJZGIHeseIhf",
     "youtubeProfile": "https://www.youtube.com/@deontehallofficial",
     "officialImageSource": "https://deontehall.com/index.php/about-deonte/",
@@ -1757,7 +1760,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "NF Real Music"
     ],
     "website": "https://www.nfrealmusic.com/",
-    "instagramProfile": "https://www.instagram.com/nfrealmusic/",
+    "instagramProfile": "https://www.instagram.com/nfrealmusic",
     "spotifyProfile": "https://open.spotify.com/artist/6fOMl44jA4Sp5b9PpYCkzz",
     "youtubeProfile": "https://www.youtube.com/channel/UCoRR6OLuIZ2-5VxtnQIaN2w",
     "officialImageSource": "https://www.nfrealmusic.com/",
@@ -1769,8 +1772,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "Nic D",
       "NicD"
     ],
-    "website": "https://www.instagram.com/iamnicd/",
-    "instagramProfile": "https://www.instagram.com/iamnicd/",
+    "website": "https://www.instagram.com/iamnicd/?hl=en",
+    "instagramProfile": "https://www.instagram.com/iamnicd/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/1XlLhtgJjC4ROQZilBZAvw",
     "youtubeProfile": "https://www.youtube.com/@iamnicd",
     "officialImageSource": "https://www.instagram.com/iamnicd/",
@@ -1796,7 +1799,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "PMJ"
     ],
     "website": "https://pastormikejr.com/",
-    "instagramProfile": "https://www.instagram.com/pastormikejr/",
+    "instagramProfile": "https://www.instagram.com/pastormikejr",
     "spotifyProfile": "https://open.spotify.com/artist/1aNtFg4D7HdF8jOppyKpUS",
     "youtubeProfile": "https://www.youtube.com/channel/UCFS_59ybiLbrsZQ4tmghriQ",
     "officialImageSource": "https://pastormikejr.com/",
@@ -1808,8 +1811,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "Nesk Only",
       "NESK ONLY"
     ],
-    "website": "https://www.instagram.com/neskonly/",
-    "instagramProfile": "https://www.instagram.com/neskonly/",
+    "website": "https://www.instagram.com/neskonly/?hl=en",
+    "instagramProfile": "https://www.instagram.com/neskonly/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/4cR4F4mNehTHO2ut89kN00",
     "youtubeProfile": "https://www.youtube.com/@neskonly",
     "officialImageSource": "https://www.instagram.com/neskonly/",
@@ -1821,7 +1824,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "Futuristic"
     ],
     "website": "https://futuristic.set.bio/",
-    "instagramProfile": "https://www.instagram.com/onlyfuturistic/",
+    "instagramProfile": "https://www.instagram.com/onlyfuturistic",
     "spotifyProfile": "https://open.spotify.com/artist/5Z5jUyiNvFaqp0EVyLNf0p",
     "youtubeProfile": "https://www.youtube.com/channel/UCsHn-BXIByTjQaIf5CnZItw",
     "officialImageSource": "https://futuristic.set.bio/",
@@ -1832,8 +1835,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "aliases": [
       "Sondae"
     ],
-    "website": "https://www.instagram.com/thesondae/",
-    "instagramProfile": "https://www.instagram.com/thesondae/",
+    "website": "https://www.instagram.com/thesondae/?hl=en",
+    "instagramProfile": "https://www.instagram.com/thesondae/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/2PCl4hx9Qds8sjcnoWUdqp",
     "youtubeProfile": "https://www.youtube.com/@Sondae",
     "officialImageSource": "https://www.instagram.com/thesondae/",
@@ -1846,7 +1849,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "Dee 1"
     ],
     "website": "https://www.dee1music.com/",
-    "instagramProfile": "https://www.instagram.com/dee1music/",
+    "instagramProfile": "https://www.instagram.com/dee1music/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/5qEZVKHzNjB8k5tAT41Iox",
     "youtubeProfile": "https://www.youtube.com/user/dee1music",
     "officialImageSource": "https://www.dee1music.com/",
@@ -1857,8 +1860,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "aliases": [
       "Kieran the Light"
     ],
-    "website": "https://www.instagram.com/kieranthelight/",
-    "instagramProfile": "https://www.instagram.com/kieranthelight/",
+    "website": "https://www.instagram.com/kieranthelight/?hl=en",
+    "instagramProfile": "https://www.instagram.com/kieranthelight/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/7pDD4BBx6S42ZX513NQdp1",
     "youtubeProfile": "https://www.youtube.com/@KieranTheLightOfficial",
     "officialImageSource": "https://www.instagram.com/kieranthelight/",
@@ -1871,7 +1874,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "Childlike Cici"
     ],
     "website": "https://www.childlikecici.com/",
-    "instagramProfile": "https://www.instagram.com/childlikecici/",
+    "instagramProfile": "https://www.instagram.com/childlikecici",
     "spotifyProfile": "https://open.spotify.com/artist/1cgfDToH1viXSfFzd5WOz1",
     "youtubeProfile": "https://www.youtube.com/@childlikecici",
     "officialImageSource": "https://www.childlikecici.com/",
@@ -1883,7 +1886,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "Yung Kriss"
     ],
     "website": "https://www.yungkriss.com/",
-    "instagramProfile": "https://www.instagram.com/yungkriss/",
+    "instagramProfile": "https://www.instagram.com/yungkriss",
     "spotifyProfile": "https://open.spotify.com/artist/3JCk8XWIBcpA10QeM5tkbP",
     "youtubeProfile": "https://www.youtube.com/@YungKriss",
     "officialImageSource": "https://www.yungkriss.com/",
@@ -1894,8 +1897,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "aliases": [
       "Eluzai"
     ],
-    "website": "https://www.instagram.com/the_eluzai/",
-    "instagramProfile": "https://www.instagram.com/the_eluzai/",
+    "website": "https://www.instagram.com/the_eluzai/?hl=en",
+    "instagramProfile": "https://www.instagram.com/the_eluzai/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/2N0c1H0QXGAfZQHASg7ir4",
     "youtubeProfile": "https://www.youtube.com/@eluzai",
     "officialImageSource": "https://www.instagram.com/the_eluzai/",
@@ -1907,8 +1910,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "tylerhateslife",
       "Tyler Hates Life"
     ],
-    "website": "https://www.instagram.com/tylerhateslife/",
-    "instagramProfile": "https://www.instagram.com/tylerhateslife/",
+    "website": "https://www.instagram.com/tylerhateslife/?hl=en",
+    "instagramProfile": "https://www.instagram.com/tylerhateslife/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/4z85Glof8wylJsLi93ukHm",
     "youtubeProfile": "https://www.youtube.com/@tylerhateslife1225",
     "officialImageSource": "https://www.instagram.com/tylerhateslife/",
@@ -1946,7 +1949,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "Aha Gazelle"
     ],
     "website": "https://www.itsahaman.com/",
-    "instagramProfile": "https://www.instagram.com/ahagazelle/",
+    "instagramProfile": "https://www.instagram.com/ahagazelle",
     "spotifyProfile": "https://open.spotify.com/artist/7suLW93RkuQKWb4WTI5F14",
     "youtubeProfile": "https://www.youtube.com/channel/UCyfn6btWx4tB2RZy2nh27hw",
     "officialImageSource": "https://www.itsahaman.com/",
@@ -1971,8 +1974,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "Mogli the Iceburg",
       "Mogli The Iceburg"
     ],
-    "website": "https://www.instagram.com/moglitheiceburg/",
-    "instagramProfile": "https://www.instagram.com/moglitheiceburg/",
+    "website": "https://www.instagram.com/moglitheiceburg/?hl=en",
+    "instagramProfile": "https://www.instagram.com/moglitheiceburg/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/1SZikSUx9fZ2cUFjrmM6Sy",
     "youtubeProfile": "https://www.youtube.com/@moglitheiceburgYT",
     "officialImageSource": "https://www.instagram.com/moglitheiceburg/",
@@ -1984,8 +1987,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "EmanuelDaProphet",
       "Emanuel Da Prophet"
     ],
-    "website": "https://www.instagram.com/emanueldaprophet/",
-    "instagramProfile": "https://www.instagram.com/emanueldaprophet/",
+    "website": "https://www.instagram.com/emanueldaprophet/?hl=en",
+    "instagramProfile": "https://www.instagram.com/emanueldaprophet/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/5P0vV6Fw0YTdumAPZSkkuC",
     "youtubeProfile": "https://www.youtube.com/@Emanueldaprophet",
     "officialImageSource": "https://www.instagram.com/emanueldaprophet/",
@@ -2036,7 +2039,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "DJ Mykael V Super Set"
     ],
     "website": "https://www.mykaelv.com/",
-    "instagramProfile": "https://www.instagram.com/djmykaelv/",
+    "instagramProfile": "https://www.instagram.com/djmykaelv",
     "spotifyProfile": "https://open.spotify.com/artist/2WLOBjz9WOZrJcbS2w93zt",
     "youtubeProfile": "https://www.youtube.com/channel/UCMyVefu0Bw781NptODKb1hg",
     "officialImageSource": "https://www.mykaelv.com/",
@@ -2059,8 +2062,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "aliases": [
       "Ryan Trey"
     ],
-    "website": "https://www.ryantrey.com/",
-    "instagramProfile": "https://www.instagram.com/ryantrey/",
+    "website": "https://www.ryantrey.com/#/",
+    "instagramProfile": "https://www.instagram.com/ryantrey/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/5YHM0i7v5TqqibZhS0YiuX",
     "youtubeProfile": "https://www.youtube.com/channel/UCRn4v23xA7Z9MVSY1ToU_DA",
     "officialImageSource": "https://www.instagram.com/ryantrey/",
@@ -2071,8 +2074,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "aliases": [
       "Jered Sanders"
     ],
-    "website": "https://www.instagram.com/jeredsanders/",
-    "instagramProfile": "https://www.instagram.com/jeredsanders/",
+    "website": "https://www.instagram.com/jeredsanders/?hl=en",
+    "instagramProfile": "https://www.instagram.com/jeredsanders/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/4kjg5xFLFVfWJFus3mwV5e",
     "youtubeProfile": "https://www.youtube.com/user/jeredsandersmusic",
     "officialImageSource": "https://www.instagram.com/jeredsanders/",
@@ -2083,8 +2086,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "aliases": [
       "Toschii"
     ],
-    "website": "https://www.instagram.com/toschiiofficial/",
-    "instagramProfile": "https://www.instagram.com/toschiiofficial/",
+    "website": "https://www.instagram.com/toschiiofficial/?hl=en",
+    "instagramProfile": "https://www.instagram.com/toschiiofficial/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/6wSzNgiOUV0rPug9vMP3ze",
     "youtubeProfile": "https://music.youtube.com/@ToschiiMusic",
     "officialImageSource": "https://www.instagram.com/toschiiofficial/",
@@ -2123,8 +2126,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "aliases": [
       "Kaden Jordan"
     ],
-    "website": "https://kadenjordan.com/",
-    "instagramProfile": "https://www.instagram.com/kadenjordann/",
+    "website": "https://kadenjordan.com/en-usd",
+    "instagramProfile": "https://www.instagram.com/kadenjordann",
     "spotifyProfile": "https://open.spotify.com/artist/0mbpzxELAS9luV27PUDEZH",
     "youtubeProfile": "https://www.youtube.com/channel/UCHhuDxHS1hkCnWh2izXYkfg",
     "officialImageSource": "https://kadenjordan.com/",
@@ -2220,7 +2223,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     ],
     "website": "https://www.iamndj.com/",
     "instagramProfile": "https://www.instagram.com/nathandavisjrndj",
-    "spotifyProfile": "https://open.spotify.com/artist/24p0hSTqoxNsy89rKNrSDj?si=Gw6GMCHPQp2riZWZ3ErKQQ&nd=1&dlsi=c8939b2c8e474086",
+    "spotifyProfile": "https://open.spotify.com/artist/24p0hSTqoxNsy89rKNrSDj",
     "youtubeProfile": "https://www.youtube.com/c/NathanDavisJr",
     "officialImageSource": "https://www.iamndj.com/",
     "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000e5eb9fa4da984eb788edaa3839ad",
@@ -2340,7 +2343,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     ],
     "website": "https://www.instagram.com/tha.inspirati0n/",
     "instagramProfile": "https://www.instagram.com/tha.inspirati0n/",
-    "spotifyProfile": "https://open.spotify.com/artist/1Jrih9sEoE7aI00lQ6dciO?si=GAfPvGZVT-62BeXIkjjQgg&nd=1&dlsi=31e4ddb35f6446cf",
+    "spotifyProfile": "https://open.spotify.com/artist/1Jrih9sEoE7aI00lQ6dciO",
     "youtubeProfile": "https://www.youtube.com/@Thainspiration",
     "officialImageSource": "https://www.instagram.com/tha.inspirati0n/",
     "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5ebc50cebd2c2f5d86260e69e9f",
@@ -2522,7 +2525,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     ],
     "website": "https://www.instagram.com/iamtommyroyale/?hl=en",
     "instagramProfile": "https://www.instagram.com/iamtommyroyale/?hl=en",
-    "spotifyProfile": "https://open.spotify.com/artist/0gqbW7Uf6BAWiAh5C6jlPs?go=1&sp_cid=67e19d32c5200acbd7c434127ccd2bbe&utm_source=embed_player_p&utm_medium=desktop&nd=1&dlsi=c07c159350f64ba1",
+    "spotifyProfile": "https://open.spotify.com/artist/0gqbW7Uf6BAWiAh5C6jlPs?go=1&sp_cid=67e19d32c5200acbd7c434127ccd2bbe",
     "youtubeProfile": "https://music.youtube.com/channel/UC3CXVdZvDlK4HZtyuav26LQ",
     "officialImageSource": "https://www.instagram.com/iamtommyroyale/?hl=en",
     "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5ebed75a5a3ab0bd75a23bffb16",

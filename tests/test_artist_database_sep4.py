@@ -34,7 +34,7 @@ class ArtistDatabaseSeptember4Tests(unittest.TestCase):
 
         self.assertEqual(
             artists["corincris"]["youtubeProfile"],
-            "https://www.youtube.com/channel/UCF-g5-rykdXV5O5uEoz5ggA",
+            "https://www.youtube.com/@corincris",
         )
 
     def test_new_registry_block_matches_sheet_order(self):
