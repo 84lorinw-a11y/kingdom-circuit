@@ -18,6 +18,9 @@ from zoneinfo import ZoneInfo
 YEAR_STYLE = '''<style data-kc-artist-schedule-years>
 body .kc-rd-show-date { display: grid; grid-template-columns: max-content max-content; row-gap: 4px; }
 body .kc-rd-show-year { grid-column: 1 / -1; font-size: .72em; font-weight: 600; letter-spacing: .06em; }
+@media (max-width: 720px) {
+  body .kc-rd-show-row { grid-template-columns: 76px minmax(0, 1fr) 44px; }
+}
 </style>'''
 YEAR_STYLE_RE = re.compile(r'<style data-kc-artist-schedule-years>.*?</style>\s*', re.S)
 ROW_RE = re.compile(r'<a class="kc-rd-show-row"[^>]*>.*?</a>', re.S)

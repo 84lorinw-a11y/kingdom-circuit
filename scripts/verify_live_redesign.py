@@ -288,7 +288,7 @@ def verify(site: pathlib.Path) -> dict[str, int]:
         "htmlPages": len(pages),
         "artistProfiles": len(profile_pages),
         "expected808Shows": expected_808,
-        "profileRows": sum(read(page).count("kc-rd-show-row") for page in profile_pages),
+        "profileRows": sum(read(page).count('class="kc-rd-show-row"') for page in profile_pages),
     }
     print(json.dumps(report, indent=2))
     return report
