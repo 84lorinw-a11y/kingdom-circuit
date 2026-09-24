@@ -152,7 +152,8 @@ def breadcrumb_schema(items):
 def event_schema(e):
     start=e.get("startDate","")+("T"+e["startTime"] if e.get("startTime") else "")
     status={"cancelled":"https://schema.org/EventCancelled","canceled":"https://schema.org/EventCancelled","postponed":"https://schema.org/EventPostponed","rescheduled":"https://schema.org/EventRescheduled"}.get(norm(e.get("status")),"https://schema.org/EventScheduled")
-    data={"@context":"https://schema.org","@type":("MusicEvent" if norm(e.get("eventType")) in {"concert","festival"} else "Event"),"name":e.get("title") or "Christian hip-hop event","startDate":start,"eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":status,"url":absolute(event_path(e)),"image":[image_url(e.get("image"))],"location":{"@type":"Place","name":e.get("venue") or "Venue to be announced","address":{"@type":"PostalAddress","streetAddress":e.get("address") or "","addressLocality":e.get("city") or "","addressRegion":e.get("state") or "","addressCountry":"US"}},"performer":[{"@type":"MusicGroup","name":n} for n in e.get("artists",[])]}
+    billing=e.get("advertisedBilling") or e.get("artists",[])
+    data={"@context":"https://schema.org","@type":("MusicEvent" if norm(e.get("eventType")) in {"concert","festival"} else "Event"),"name":e.get("title") or "Christian hip-hop event","startDate":start,"eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":status,"url":absolute(event_path(e)),"image":[image_url(e.get("image"))],"location":{"@type":"Place","name":e.get("venue") or "Venue to be announced","address":{"@type":"PostalAddress","streetAddress":e.get("address") or "","addressLocality":e.get("city") or "","addressRegion":e.get("state") or "","postalCode":e.get("postalCode") or "","addressCountry":"US"}},"performer":[{"@type":"MusicGroup","name":n} for n in billing]}
     if e.get("endDate"): data["endDate"]=e["endDate"]
     if e.get("previousStartDate") and status == "https://schema.org/EventRescheduled": data["previousStartDate"]=e["previousStartDate"]
     url=e.get("officialUrl") or e.get("ticketUrl")
@@ -164,7 +165,9 @@ def event_card(e,artists):
     img=image_url(e.get("image") or cfg.get("imageUrl")); pos=e.get("imagePosition") or cfg.get("imagePosition") or "center"
     typ="event-artwork" if e.get("imageType")=="event_artwork" else "artist-photo"
     location=", ".join(x for x in (e.get("city"),e.get("state")) if x) or "Location to be announced"
-    artists_html=" - ".join(f'<a href="{artist_path(n)}">{esc(n)}</a>' for n in e.get("artists",[]))
+    roster={norm(a.get("name")):a.get("name") for a in artists if a.get("enabled") is not False and a.get("name")}
+    billing=e.get("advertisedBilling") or e.get("artists",[])
+    artists_html=" - ".join(f'<a href="{artist_path(roster[norm(n)])}">{esc(n)}</a>' if norm(n) in roster else f'<span>{esc(n)}</span>' for n in billing)
     official=e.get("officialUrl") or e.get("ticketUrl") or "#"
     search=norm(" ".join([str(e.get('title') or ''),str(e.get('venue') or ''),str(e.get('city') or ''),str(e.get('state') or ''),str(e.get('sourceName') or ''),*(str(n) for n in e.get('artists',[]))]))
     artist_values="|".join(norm(n) for n in e.get('artists',[]))
@@ -278,7 +281,7 @@ def main():
         crumbs=[("Shows","/shows/")]
         if e.get("state"): crumbs.append((STATE_NAMES.get(e["state"],e["state"]),state_path(e["state"])))
         crumbs.append((e.get("title") or "Event",p))
-        img=image_url(e.get("image")); cls="event-artwork" if e.get("imageType")=="event_artwork" else "artist-photo"; artist_links=" - ".join(f'<a href="{artist_path(n)}">{esc(n)}</a>' for n in e.get("artists",[])); official=e.get("officialUrl") or e.get("ticketUrl") or "#"
+        img=image_url(e.get("image")); cls="event-artwork" if e.get("imageType")=="event_artwork" else "artist-photo"; roster={norm(a.get("name")):a.get("name") for a in artists if a.get("enabled") is not False and a.get("name")}; billing=e.get("advertisedBilling") or e.get("artists",[]); artist_links=" - ".join(f'<a href="{artist_path(roster[norm(n)])}">{esc(n)}</a>' if norm(n) in roster else f'<span>{esc(n)}</span>' for n in billing); official=e.get("officialUrl") or e.get("ticketUrl") or "#"
         merged=norm(e.get("status")) == "merged"
         if merged:
             canonical=next((item for item in retained if item.get("id") == e.get("mergedIntoId")), None)

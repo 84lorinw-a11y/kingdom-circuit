@@ -44,6 +44,12 @@ jobs:
           python -m py_compile scripts/apply_miles_cj_fall_2026_repairs.py
           python scripts/apply_miles_cj_fall_2026_repairs.py
 
+      - name: Reapply promoter-submitted TRNSCND VA 2026 show
+        run: |
+          set -euo pipefail
+          python -m py_compile scripts/apply_trnscnd_submission.py
+          python scripts/apply_trnscnd_submission.py
+
       - name: Persist curated catalog changes
         shell: bash
         run: |

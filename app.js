@@ -191,6 +191,9 @@ const ARTIST_ROSTER_ORDER = [
   "Ty Brasel",
   "J. Monty",
   "180MINDSET",
+  "N!X",
+  "D Riddick",
+  "Howard Langford",
   "Redimi2",
   "Funky",
   "Pregador Luo",
@@ -2566,6 +2569,30 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/180mindset-primary.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
+  },
+  "n!x": {
+    "aliases": [
+      "N!X"
+    ],
+    "imagePosition": "center",
+    "sourceRegistryVerified": true
+  },
+  "d riddick": {
+    "aliases": [
+      "D Riddick",
+      "D. Riddick"
+    ],
+    "website": "https://unitedmasters.com/a/d-riddick",
+    "officialImageSource": "https://unitedmasters.com/a/d-riddick",
+    "imagePosition": "center",
+    "sourceRegistryVerified": true
+  },
+  "howard langford": {
+    "aliases": [
+      "Howard Langford"
+    ],
+    "imagePosition": "center",
+    "sourceRegistryVerified": true
   }
 };
 const ARTIST_OVERRIDES = {
@@ -2955,8 +2982,19 @@ function artistProfileUrl(name) {
   return `${BASE}artists/profile/?name=${encodeURIComponent(name)}`;
 }
 
+function eventBilling(event) {
+  return Array.isArray(event.advertisedBilling) && event.advertisedBilling.length
+    ? event.advertisedBilling
+    : (event.artists || []);
+}
+
 function artistLinks(event) {
-  return (event.artists || []).map(name => `<a href="${artistProfileUrl(name)}">${esc(name)}</a>`).join(" - ");
+  return eventBilling(event).map(name => {
+    const profile = artistConfig(name);
+    return profile
+      ? `<a href="${artistProfileUrl(profile.name)}">${esc(name)}</a>`
+      : `<span>${esc(name)}</span>`;
+  }).join(" - ");
 }
 function isNew(event) {
   if (!event.firstSeen) return false;

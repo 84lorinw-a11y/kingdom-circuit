@@ -84,6 +84,9 @@ jobs:
       - name: Apply verified Miles Minnick and CJ Emulous fall 2026 repairs
         run: python scripts/apply_miles_cj_fall_2026_repairs.py
 
+      - name: Restore promoter-submitted TRNSCND VA 2026 show
+        run: python scripts/apply_trnscnd_submission.py
+
       - name: Restore runtime-only source configuration
         if: github.event_name != 'push' || contains(github.event.head_commit.message, '[full scan]')
         run: git checkout -- config/official-sources.json
