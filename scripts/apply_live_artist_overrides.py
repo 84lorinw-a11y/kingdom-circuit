@@ -575,10 +575,23 @@ def clean_artist_lines(text: str) -> str:
     anchor_pattern = re.compile(r'<a\b[^>]*href="[^"]*/artists/([^/]+)/[^"]*"[^>]*>.*?</a>', flags=re.I | re.S)
     def repl(match: re.Match[str]) -> str:
         inner = match.group(2)
-        anchors = [anchor.group(0) for anchor in anchor_pattern.finditer(inner) if anchor.group(1).casefold() not in EXCLUDED_SLUGS]
-        if anchors:
-            return match.group(1) + " - ".join(anchors) + match.group(3)
-        if any(f"/artists/{slug}/" in inner.casefold() for slug in EXCLUDED_SLUGS):
+        contained_excluded = any(
+            anchor.group(1).casefold() in EXCLUDED_SLUGS
+            for anchor in anchor_pattern.finditer(inner)
+        )
+        cleaned = anchor_pattern.sub(
+            lambda anchor: ""
+            if anchor.group(1).casefold() in EXCLUDED_SLUGS
+            else anchor.group(0),
+            inner,
+        )
+        # Keep unlinked billing names. Some verified promoter submissions include
+        # performers who should be visible on the show card even though they do
+        # not yet have a complete Kingdom Circuit artist profile.
+        parts = [part.strip() for part in re.split(r"\s+-\s+", cleaned) if part.strip()]
+        if parts:
+            return match.group(1) + " - ".join(parts) + match.group(3)
+        if contained_excluded:
             return ""
         return match.group(0)
     return pattern.sub(repl, text)

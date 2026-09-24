@@ -10,6 +10,7 @@ if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
 import apply_trnscnd_submission as trnscnd
+import apply_live_artist_overrides
 import build_seo_site
 
 
@@ -94,6 +95,11 @@ class TrnscndSubmissionProductionTests(unittest.TestCase):
             self.assertIn(build_seo_site.artist_path(name), card)
         for name in ("Leah Dates", "Rolanda Carter", "DJ Smalls"):
             self.assertNotIn(build_seo_site.artist_path(name), card)
+
+        production_card = apply_live_artist_overrides.clean_artist_lines(card)
+        for name in trnscnd.FULL_LINEUP:
+            with self.subTest(production_name=name):
+                self.assertIn(name, production_card)
 
         schema = build_seo_site.event_schema(event)
         self.assertEqual(
