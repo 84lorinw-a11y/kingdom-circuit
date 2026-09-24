@@ -2621,65 +2621,13 @@
     "id": "light-in-the-darkness-phoenix-2026"
   },
   {
-    "title": "Miles Minnick at Black Box Media Miami",
-    "startDate": "2026-11-05",
-    "startTime": "18:30",
-    "timezone": "America/New_York",
-    "venue": "Black Box Media Miami",
-    "address": "12355 NE 13th Ave Unit #403-404",
-    "city": "North Miami",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108940329",
-    "officialUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
-    "image": "assets/artists/miles-minnick.webp",
-    "imageType": "artist",
-    "imagePosition": "center",
-    "lineupExplicit": true,
-    "advertisedBilling": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "sourceName": "Bandsintown verified event listing",
-    "sources": [
-      {
-        "name": "Bandsintown verified event listing",
-        "url": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 94
-      },
-      {
-        "name": "CJ Emulous official tour calendar",
-        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-23",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 88
-      }
-    ],
-    "notes": "The venue-specific listing supersedes the older generic Miami placeholder. The published event time is 6:30 PM; CJ's earlier calendar entry displayed 6:00 PM without a venue.",
-    "auditVerified": "2026-09-23",
-    "id": "miles-minnick-black-box-north-miami-2026-11-05"
-  },
-  {
     "id": "flavor-fest-2026-friday-concerts",
     "title": "Flavor Fest 2026 — Friday Concerts",
     "startDate": "2026-11-06",
     "startTime": "19:00",
     "timezone": "America/New_York",
     "venue": "Crossover Church",
-    "address": "1235 Fowler Ave",
+    "address": "1235 E Fowler Ave",
     "city": "Tampa",
     "state": "FL",
     "country": "US",
@@ -2690,7 +2638,6 @@
     ],
     "headliner": "Miles Minnick",
     "eventType": "festival",
-    "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
     "image": "assets/events/flavor-fest-friday-2026.webp",
@@ -2698,10 +2645,10 @@
     "imagePosition": "center",
     "imageOverride": true,
     "price": "",
-    "sourceName": "Flavor Fest official 2026 schedule",
-    "authority": "official_event",
-    "confidence": "high",
+    "status": "scheduled",
     "lineupExplicit": true,
+    "authority": "official_event",
+    "sourceName": "Flavor Fest official 2026 schedule",
     "sources": [
       {
         "name": "Flavor Fest official 2026 schedule",
@@ -2710,7 +2657,8 @@
         "authority": "official_event",
         "priority": 112
       }
-    ]
+    ],
+    "confidence": "high"
   },
   {
     "title": "Flavor Fest 2026 — Saturday Concerts",
@@ -2761,130 +2709,6 @@
     ],
     "notes": "Yung Kriss and Gifted Hands have conflicting poster/schedule day assignments and are not newly associated here pending resolution.",
     "id": "flavor-fest-2026-saturday-concerts"
-  },
-  {
-    "title": "Miles Minnick – Christlike University – Florida Campus Tour in Jacksonville",
-    "startDate": "2026-11-07",
-    "startTime": "19:00",
-    "timezone": "America/New_York",
-    "venue": "The Albatross",
-    "venueAliases": [
-      "Underbelly"
-    ],
-    "address": "113 E Bay St",
-    "city": "Jacksonville",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
-    "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
-    "image": "assets/artists/miles-minnick.webp",
-    "imageType": "artist",
-    "imagePosition": "center",
-    "lineupExplicit": true,
-    "advertisedBilling": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "sourceName": "Live Nation official event listing",
-    "sources": [
-      {
-        "name": "Live Nation official event listing",
-        "url": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      },
-      {
-        "name": "Bandsintown verified lineup",
-        "url": "https://www.bandsintown.com/e/108940352-miles-minnick-at-the-albatross",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 94
-      }
-    ],
-    "supersededSources": [
-      {
-        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-25",
-        "publishedDate": "2026-11-07",
-        "publishedCity": "Tampa",
-        "reason": "Conflicts with the venue-specific Jacksonville ticket listing and is not supported by the official Flavor Fest concert schedule."
-      }
-    ],
-    "notes": "The venue-specific Jacksonville ticket listing supersedes CJ's older November 7 Tampa calendar entry. Miles may also appear on the 11:45 AM Flavor Fest artist panel in Tampa; that daytime panel is not this concert.",
-    "auditVerified": "2026-09-23",
-    "id": "miles-minnick-christlike-university-jacksonville-2026-11-07"
-  },
-  {
-    "title": "Miles Minnick – Christlike University – Florida Campus Tour in Orlando",
-    "startDate": "2026-11-08",
-    "startTime": "19:00",
-    "timezone": "America/New_York",
-    "venue": "Conduit",
-    "address": "6700 Aloma Ave",
-    "city": "Winter Park",
-    "advertisedCity": "Orlando",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
-    "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
-    "image": "assets/artists/miles-minnick.webp",
-    "imageType": "artist",
-    "imagePosition": "center",
-    "lineupExplicit": true,
-    "advertisedBilling": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "sourceName": "Live Nation official event listing",
-    "sources": [
-      {
-        "name": "Live Nation official event listing",
-        "url": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      },
-      {
-        "name": "Bandsintown verified lineup",
-        "url": "https://www.bandsintown.com/e/108940372-miles-minnick-at-conduit",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 94
-      }
-    ],
-    "supersededSources": [
-      {
-        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-26",
-        "publishedDate": "2026-11-08",
-        "publishedCity": "Jacksonville",
-        "reason": "Conflicts with the venue-specific Conduit ticket listing in Winter Park."
-      }
-    ],
-    "notes": "The ticket listing advertises Orlando, but Conduit's physical address is in Winter Park. This supersedes CJ's older generic November 8 Jacksonville entry.",
-    "auditVerified": "2026-09-23",
-    "id": "miles-minnick-christlike-university-orlando-2026-11-08"
   },
   {
     "id": "kaden-jordan-babytooth-orlando-november-2026",
@@ -3873,5 +3697,181 @@
         "priority": 112
       }
     ]
+  },
+  {
+    "title": "Miles Minnick at Black Box Media Miami",
+    "startDate": "2026-11-05",
+    "startTime": "18:30",
+    "timezone": "America/New_York",
+    "venue": "Black Box Media Miami",
+    "address": "12355 NE 13th Ave Unit #403-404",
+    "city": "North Miami",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108940329",
+    "officialUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
+    "image": "assets/artists/miles-minnick.webp",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "lineupExplicit": true,
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "sourceName": "Bandsintown verified event listing",
+    "sources": [
+      {
+        "name": "Bandsintown verified event listing",
+        "url": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 94
+      },
+      {
+        "name": "CJ Emulous official tour calendar",
+        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-23",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 88
+      }
+    ],
+    "notes": "The venue-specific listing supersedes the older generic Miami placeholder. The published event time is 6:30 PM; CJ's earlier calendar entry displayed 6:00 PM without a venue.",
+    "auditVerified": "2026-09-23",
+    "id": "miles-minnick-black-box-north-miami-2026-11-05"
+  },
+  {
+    "title": "Miles Minnick – Christlike University – Florida Campus Tour in Jacksonville",
+    "startDate": "2026-11-07",
+    "startTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "The Albatross",
+    "venueAliases": [
+      "Underbelly"
+    ],
+    "address": "113 E Bay St",
+    "city": "Jacksonville",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
+    "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
+    "image": "assets/artists/miles-minnick.webp",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "lineupExplicit": true,
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "sourceName": "Live Nation official event listing",
+    "sources": [
+      {
+        "name": "Live Nation official event listing",
+        "url": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      },
+      {
+        "name": "Bandsintown verified lineup",
+        "url": "https://www.bandsintown.com/e/108940352-miles-minnick-at-the-albatross",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 94
+      }
+    ],
+    "supersededSources": [
+      {
+        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-25",
+        "publishedDate": "2026-11-07",
+        "publishedCity": "Tampa",
+        "reason": "Conflicts with the venue-specific Jacksonville ticket listing and is not supported by the official Flavor Fest concert schedule."
+      }
+    ],
+    "notes": "The venue-specific Jacksonville ticket listing supersedes CJ's older November 7 Tampa calendar entry. Miles may also appear on the 11:45 AM Flavor Fest artist panel in Tampa; that daytime panel is not this concert.",
+    "auditVerified": "2026-09-23",
+    "id": "miles-minnick-christlike-university-jacksonville-2026-11-07"
+  },
+  {
+    "title": "Miles Minnick – Christlike University – Florida Campus Tour in Orlando",
+    "startDate": "2026-11-08",
+    "startTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "Conduit",
+    "address": "6700 Aloma Ave",
+    "city": "Winter Park",
+    "advertisedCity": "Orlando",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
+    "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
+    "image": "assets/artists/miles-minnick.webp",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "lineupExplicit": true,
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "sourceName": "Live Nation official event listing",
+    "sources": [
+      {
+        "name": "Live Nation official event listing",
+        "url": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      },
+      {
+        "name": "Bandsintown verified lineup",
+        "url": "https://www.bandsintown.com/e/108940372-miles-minnick-at-conduit",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 94
+      }
+    ],
+    "supersededSources": [
+      {
+        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-26",
+        "publishedDate": "2026-11-08",
+        "publishedCity": "Jacksonville",
+        "reason": "Conflicts with the venue-specific Conduit ticket listing in Winter Park."
+      }
+    ],
+    "notes": "The ticket listing advertises Orlando, but Conduit's physical address is in Winter Park. This supersedes CJ's older generic November 8 Jacksonville entry.",
+    "auditVerified": "2026-09-23",
+    "id": "miles-minnick-christlike-university-orlando-2026-11-08"
   }
 ]
