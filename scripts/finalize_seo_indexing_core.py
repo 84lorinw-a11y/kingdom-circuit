@@ -8,6 +8,8 @@ import re
 from collections import Counter
 from xml.sax.saxutils import escape as xml_escape
 
+from finalize_artist_schedule_years import apply as finalize_artist_schedule_years
+
 SITE_ORIGIN = "https://kingdomcircuit.com"
 BRAND_STYLESHEET = "/assets/brand-live.css?v=1"
 BRAND_LOGO = "/assets/logo-wordmark.svg?v=1"
@@ -157,6 +159,7 @@ def apply(root: pathlib.Path) -> dict:
     if not root.exists():
         raise SystemExit(f"Site root does not exist: {root}")
 
+    artist_schedule_pages = finalize_artist_schedule_years(root)
     branded_pages = apply_branding(root)
     indexed: list[tuple[str, str]] = []
     noindexed: list[tuple[str, str]] = []
@@ -252,6 +255,7 @@ def apply(root: pathlib.Path) -> dict:
         "noindexPages": len(noindexed),
         "sitemapUrls": len(unique),
         "brandedPages": branded_pages,
+        "artistSchedulePages": artist_schedule_pages,
         "reasons": dict(sorted(reasons.items())),
         "noindexExamples": [
             {"url": url, "reason": reason}

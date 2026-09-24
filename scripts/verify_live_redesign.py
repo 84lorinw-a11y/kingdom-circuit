@@ -11,6 +11,8 @@ import struct
 from urllib.parse import unquote, urlsplit
 from zoneinfo import ZoneInfo
 
+from finalize_artist_schedule_years import apply as verify_artist_schedule_years
+
 
 INACTIVE = {"cancelled", "canceled", "postponed", "merged"}
 TEST_MARKERS = (
@@ -272,6 +274,10 @@ def verify(site: pathlib.Path) -> dict[str, int]:
 
     if len(profile_pages) < 300:
         failures.append(f"profiles:{len(profile_pages)}")
+    try:
+        verify_artist_schedule_years(site, check_only=True)
+    except (ValueError, OSError) as exc:
+        failures.append(f"artist-schedule-years:{exc}")
     if len(pages) < 800:
         failures.append(f"html-pages:{len(pages)}")
     if failures:
