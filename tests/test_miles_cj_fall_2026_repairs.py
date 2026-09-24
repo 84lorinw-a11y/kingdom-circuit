@@ -40,8 +40,12 @@ class MilesCjFall2026RepairTests(unittest.TestCase):
 
     def test_imported_lineups_are_linked_to_all_three_artists(self):
         for event_id in ("bandsintown:108940329", "bandsintown:108940352", "bandsintown:108940372"):
-            row = next(item for item in self.supplemental if item.get("id") == event_id)
+            # These imported records are now retained as merged runtime redirects
+            # to their corrected canonical listings rather than as duplicate
+            # supplemental shows.
+            row = self.event(event_id)
             self.assertEqual(["Miles Minnick", "Tommy Zuko", "CJ Emulous"], row["artists"])
+            self.assertEqual("merged", row["status"])
 
     def test_retired_manual_placeholders_are_not_supplemental_events(self):
         supplemental_ids = {row.get("id") for row in self.supplemental}
