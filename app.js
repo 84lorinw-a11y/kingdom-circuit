@@ -2154,9 +2154,9 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/NXTMIKE_",
     "spotifyProfile": "https://open.spotify.com/artist/2yMOYu5UEVMeoZmBczRR5g",
     "youtubeProfile": "https://www.youtube.com/NXTMIKE",
-    "officialImageSource": "https://www.nxtmike.com/",
-    "imageUrl": "https://images.squarespace-cdn.com/content/v1/6003aea016cd050c913c5549/1618423643863-7SFKRAEQNVYLINRNLL5B/IMG-8256.jpg?format=1500w",
-    "imagePosition": "50% 24%",
+    "officialImageSource": "https://open.spotify.com/artist/2yMOYu5UEVMeoZmBczRR5g",
+    "imageUrl": "assets/artists/nxtmike-spotify.jpg",
+    "imagePosition": "50% 30%",
     "sourceRegistryVerified": true
   },
   "chvrch562": {
@@ -2574,7 +2574,13 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "aliases": [
       "N!X"
     ],
-    "imagePosition": "center",
+    "website": "https://www.instagram.com/nixfromthe301/?hl=en",
+    "instagramProfile": "https://www.instagram.com/nixfromthe301/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/5Lm6f1hGukpsGFbS2K5hKn",
+    "youtubeProfile": "https://www.youtube.com/@Nixfromthe301",
+    "officialImageSource": "https://open.spotify.com/artist/5Lm6f1hGukpsGFbS2K5hKn",
+    "imageUrl": "assets/artists/n-x-spotify.jpg",
+    "imagePosition": "50% 25%",
     "sourceRegistryVerified": true
   },
   "d riddick": {
@@ -2582,16 +2588,26 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "D Riddick",
       "D. Riddick"
     ],
-    "website": "https://unitedmasters.com/a/d-riddick",
-    "officialImageSource": "https://unitedmasters.com/a/d-riddick",
-    "imagePosition": "center",
+    "website": "https://www.instagram.com/driddickmusic/",
+    "instagramProfile": "https://www.instagram.com/driddickmusic/",
+    "spotifyProfile": "https://open.spotify.com/artist/0Q6VFs5LFRjY42zvUmYRVx",
+    "youtubeProfile": "https://www.youtube.com/channel/UCGp2WyPotoQRT0L58cM-j1A",
+    "officialImageSource": "https://open.spotify.com/artist/0Q6VFs5LFRjY42zvUmYRVx",
+    "imageUrl": "assets/artists/d-riddick-spotify.jpg",
+    "imagePosition": "50% 25%",
     "sourceRegistryVerified": true
   },
   "howard langford": {
     "aliases": [
       "Howard Langford"
     ],
-    "imagePosition": "center",
+    "website": "https://www.instagram.com/howard_langfordiii/",
+    "instagramProfile": "https://www.instagram.com/howard_langfordiii/",
+    "spotifyProfile": "https://open.spotify.com/artist/6mpv6UPxnAAOGbp5JmMHbY",
+    "youtubeProfile": "https://www.youtube.com/@howardlangfordmusic",
+    "officialImageSource": "https://open.spotify.com/artist/6mpv6UPxnAAOGbp5JmMHbY",
+    "imageUrl": "assets/artists/howard-langford-spotify.jpg",
+    "imagePosition": "50% 25%",
     "sourceRegistryVerified": true
   }
 };

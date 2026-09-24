@@ -375,6 +375,16 @@ def main(site_root: str) -> None:
 
     def production_event_card(event, meta_by_name):
         card = approved_event_card(event, meta_by_name)
+        # The pinned renderer predates complete billing. Keep guests without
+        # curated profiles visible without generating nonexistent profile links.
+        billing = event.get("advertisedBilling") or event.get("artists", [])
+        artist_links = " - ".join(
+            f'<a href="{overlay.artist_href(meta_by_name[overlay.norm(name)].get("name") or name)}">{html.escape(name)}</a>'
+            if overlay.norm(name) in meta_by_name else f'<span>{html.escape(name)}</span>'
+            for name in billing
+        )
+        card = re.sub(r'<p class="artist-line">.*?</p>',
+                      lambda _: f'<p class="artist-line">{artist_links}</p>', card, count=1, flags=re.S)
         start_time = html.escape(str(event.get("startTime") or ""), quote=True)
         return card.replace(
             " data-end-date=",

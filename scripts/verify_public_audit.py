@@ -15,6 +15,8 @@ from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 from urllib.parse import urlsplit
 
 import apply_public_audit_repairs as repair
+import apply_sep13_requested_events as requested_events
+import build_seo_site as builder
 
 
 class Audit:
@@ -405,6 +407,30 @@ def verify_canonicals_and_sitemap(site: Path, pages: Dict[Path, str], audit: Aud
             audit.expect(len(manifest.get("mergedRedirectPages", [])) == merged_count, "manifest merged redirect count is stale")
 
 
+def verify_jimmy_artwork(jimmy: str, audit: Audit) -> None:
+    """Require posters for the four reviewed shows, allow other real portraits."""
+    cards = repair.CARD_RE.findall(jimmy)
+    for event_id in (
+        "jimmy-rock-worship-wawa-miami-2026",
+        "jimmy-rock-rave-worship-centennial-2026",
+        "boise-invasion-2026",
+        "jimmy-rock-rave-worship-dallas-2026",
+    ):
+        event = dict(requested_events.UPSERTS[event_id], id="manual:" + event_id)
+        href = builder.event_path(event)
+        matches = [card for card in cards if href in card]
+        if builder.current(event):
+            audit.expect(bool(matches), f"Jimmy Rock repaired listing missing: {event_id}")
+        for card in matches:
+            image = re.search(r"<img\b[^>]*>", card, re.I | re.S)
+            tag = image.group(0) if image else ""
+            audit.expect("event-artwork" in tag, f"Jimmy Rock verified poster missing: {event_id}")
+    for card in cards:
+        image = re.search(r"<img\b[^>]*>", card, re.I | re.S)
+        tag = image.group(0) if image else ""
+        audit.expect("/assets/optimized/" in tag, "a Jimmy Rock show image is not optimized locally")
+
+
 def verify_requested_live_repairs(pages: Dict[Path, str], audit: Audit) -> None:
     home = pages.get(Path("index.html"), "")
     kurtis_portraits = []
@@ -419,13 +445,7 @@ def verify_requested_live_repairs(pages: Dict[Path, str], audit: Audit) -> None:
         audit.expect("object-position:50% 4%" in image, "homepage Kurtis Hoppie portrait crop regressed")
 
     jimmy = pages.get(Path("artists/jimmy-rock/index.html"), "")
-    jimmy_cards = repair.CARD_RE.findall(jimmy)
-    audit.expect(len(jimmy_cards) >= 4, "Jimmy Rock profile is missing repaired show listings")
-    for card in jimmy_cards:
-        image = re.search(r"<img\b[^>]*>", card, re.I | re.S)
-        tag = image.group(0) if image else ""
-        audit.expect("event-artwork" in tag, "a Jimmy Rock show is not using event artwork")
-        audit.expect("/assets/optimized/" in tag, "a Jimmy Rock show image is not optimized locally")
+    verify_jimmy_artwork(jimmy, audit)
 
     expected_assets = {
         Path("event/one-day-fall-festival-2026-2026-10-10-aurora-587532/index.html"):

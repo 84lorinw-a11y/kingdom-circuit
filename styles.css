@@ -359,3 +359,30 @@
 @media (max-width: 600px) {
   .footer-status { display: grid; gap: 6px; }
 }
+
+/* Opt-in landscape artwork on event detail pages; listing cards retain 4:3. */
+body .event-detail.event-detail--landscape {
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 36px;
+}
+body .event-detail--landscape .event-detail-media {
+  display: block;
+  aspect-ratio: auto;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  background: transparent;
+}
+body .event-detail--landscape .event-detail-media a { display: block; height: auto; }
+body .event-detail--landscape .event-detail-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  padding: 0;
+}
+@media (max-width: 900px) {
+  body .event-detail.event-detail--landscape { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+}

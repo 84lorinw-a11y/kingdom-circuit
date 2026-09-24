@@ -25,10 +25,7 @@ ARTWORK_SOURCE_URL = (
     "https://drive.google.com/file/d/"
     "1dB8NPwMCpGh7I9RYOQ6j0lzz1qTsYKB7/view?usp=drivesdk"
 )
-ARTWORK_URL = (
-    "https://drive.google.com/thumbnail?"
-    "id=1dB8NPwMCpGh7I9RYOQ6j0lzz1qTsYKB7&sz=w1600"
-)
+ARTWORK_URL = "assets/events/trnscnd-va-2026.png"
 
 PROFILED_ARTISTS = ["N!X", "NXTMIKE", "D Riddick", "Howard Langford"]
 FULL_LINEUP = [
@@ -41,9 +38,8 @@ FULL_LINEUP = [
     "DJ Smalls",
 ]
 
-# NXTMIKE is already the verified registry's row 146. These three are the next
-# rows supplied by the site owner from the canonical artist database. Links are
-# deliberately left pending rather than guessed from ambiguous search results.
+# Social identities were checked against the owner's Verified Sheet rows on
+# September 24. Portraits come from those exact Spotify artist profiles.
 NEW_ARTISTS = [
     {
         "rosterOrder": 178,
@@ -53,7 +49,13 @@ NEW_ARTISTS = [
         "monitoringPriority": 3,
         "ticketmasterEnabled": False,
         "textMatchEnabled": False,
-        "imagePosition": "center",
+        "website": "https://www.instagram.com/nixfromthe301/?hl=en",
+        "instagramProfile": "https://www.instagram.com/nixfromthe301/?hl=en",
+        "spotifyProfile": "https://open.spotify.com/artist/5Lm6f1hGukpsGFbS2K5hKn",
+        "youtubeProfile": "https://www.youtube.com/@Nixfromthe301",
+        "officialImageSource": "https://open.spotify.com/artist/5Lm6f1hGukpsGFbS2K5hKn",
+        "imageUrl": "assets/artists/n-x-spotify.jpg",
+        "imagePosition": "50% 25%",
     },
     {
         "rosterOrder": 179,
@@ -63,9 +65,13 @@ NEW_ARTISTS = [
         "monitoringPriority": 3,
         "ticketmasterEnabled": False,
         "textMatchEnabled": True,
-        "website": "https://unitedmasters.com/a/d-riddick",
-        "officialImageSource": "https://unitedmasters.com/a/d-riddick",
-        "imagePosition": "center",
+        "website": "https://www.instagram.com/driddickmusic/",
+        "instagramProfile": "https://www.instagram.com/driddickmusic/",
+        "spotifyProfile": "https://open.spotify.com/artist/0Q6VFs5LFRjY42zvUmYRVx",
+        "youtubeProfile": "https://www.youtube.com/channel/UCGp2WyPotoQRT0L58cM-j1A",
+        "officialImageSource": "https://open.spotify.com/artist/0Q6VFs5LFRjY42zvUmYRVx",
+        "imageUrl": "assets/artists/d-riddick-spotify.jpg",
+        "imagePosition": "50% 25%",
     },
     {
         "rosterOrder": 180,
@@ -75,7 +81,13 @@ NEW_ARTISTS = [
         "monitoringPriority": 3,
         "ticketmasterEnabled": False,
         "textMatchEnabled": True,
-        "imagePosition": "center",
+        "website": "https://www.instagram.com/howard_langfordiii/",
+        "instagramProfile": "https://www.instagram.com/howard_langfordiii/",
+        "spotifyProfile": "https://open.spotify.com/artist/6mpv6UPxnAAOGbp5JmMHbY",
+        "youtubeProfile": "https://www.youtube.com/@howardlangfordmusic",
+        "officialImageSource": "https://open.spotify.com/artist/6mpv6UPxnAAOGbp5JmMHbY",
+        "imageUrl": "assets/artists/howard-langford-spotify.jpg",
+        "imagePosition": "50% 25%",
     },
 ]
 
@@ -108,6 +120,7 @@ EVENT = {
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": True,
+    "detailImageLayout": "landscape",
     "imageSource": "Promoter-supplied official [TRNSCND] VA 2026 artwork",
     "imageSourceUrl": ARTWORK_SOURCE_URL,
     "price": "$15 concert pass / $20 full-day pass",
@@ -180,6 +193,7 @@ def event_collision(event: dict) -> bool:
 
 def patch_artist_registry() -> None:
     updates = load_array(UPDATES_FILE)
+    reviewed = {norm(row.get("name")): row for row in updates}
     new_names = {norm(row["name"]) for row in NEW_ARTISTS}
     updates = [row for row in updates if norm(row.get("name")) not in new_names]
     occupied = {
@@ -192,7 +206,9 @@ def patch_artist_registry() -> None:
             raise SystemExit(
                 f"Artist database row {order} is already occupied by {occupied[order]}"
             )
-        updates.append(deepcopy(row))
+        # This submission supplies defaults, never erases later reviewed Sheet
+        # updates during the daily refresh.
+        updates.append(deepcopy({**row, **reviewed.get(norm(row["name"]), {})}))
     updates.sort(key=lambda row: int(row.get("rosterOrder") or 99999))
     write_array(UPDATES_FILE, updates)
     subprocess.run([sys.executable, str(SYNC_ARTISTS)], cwd=ROOT, check=True)

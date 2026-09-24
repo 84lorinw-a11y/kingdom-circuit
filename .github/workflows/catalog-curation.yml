@@ -50,6 +50,9 @@ jobs:
           python -m py_compile scripts/apply_trnscnd_submission.py
           python scripts/apply_trnscnd_submission.py
 
+      - name: Preserve official Rock the Pines 2027 announcement
+        run: python scripts/apply_rock_the_pines.py
+
       - name: Persist curated catalog changes
         shell: bash
         run: |
