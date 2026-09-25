@@ -84,15 +84,16 @@ class SubmittedShowTests(unittest.TestCase):
         shows.apply(self.root, "2026-09-25")
         self.assertEqual([saturday], self.read("supplemental-events.json"))
 
-    def test_assumed_artist_session_stays_explicit_and_is_not_schema_confirmed(self):
+    def test_artist_session_note_is_internal_and_is_not_schema_confirmed(self):
         from finalize_seo_indexing import repair_event_schema
         spin = shows.EVENTS[3]
         artists = [{"name": "Bobby Real Montgomery"}]
         line = builder.billing_links(spin, artists)
-        self.assertIn('<a href="/artists/bobby-real-montgomery/">Bobby Real Montgomery</a> <span>(session unconfirmed)</span>', line)
+        self.assertEqual('<a href="/artists/bobby-real-montgomery/">Bobby Real Montgomery</a>', line)
         schema = builder.event_schema(spin)
         self.assertNotIn("performer", schema)
-        self.assertIn("unconfirmed", schema["description"])
+        self.assertEqual(spin["publicDescription"], schema["description"])
+        self.assertNotIn("unconfirmed", schema["description"])
         self.assertEqual("2026-10-23T19:30:00-04:00", schema["startDate"])
         self.assertEqual("The Lawrence Hotel", schema["location"]["name"])
         stale = {"performer": [{"name": "Bobby Real Montgomery"}, {"name": "Confirmed guest"}]}

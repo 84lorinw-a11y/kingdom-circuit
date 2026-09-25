@@ -82,14 +82,14 @@ EVENTS = (
         "artists": ["Bobby Real Montgomery"], "advertisedBilling": ["Bobby Real Montgomery"],
         "unconfirmedArtists": ["Bobby Real Montgomery"], "officialBill": [], "lineupExplicit": False,
         "host": "Destiny Kingcannon", "confidence": "medium",
-        "publicDescription": "Spin Awards Pre-Ceremony: Oct. 23, 2026, 7:30 PM, The Lawrence Hotel, Lawrenceville, GA. Bobby Real Montgomery's session is unconfirmed.",
+        "publicDescription": "Spin Awards Pre-Ceremony: Oct. 23, 2026, 7:30 PM, The Lawrence Hotel, Lawrenceville, GA.",
         "officialUrl": "https://www.thespinawards.com/spinitin/", "ticketUrl": "",
         "image": "assets/events/spin-awards-pre-ceremony-lawrenceville-2026-10-23.jpg",
         "imageSource": "The Spin Awards official October 23 pre-ceremony host flyer",
         "imageSourceUrl": "https://www.instagram.com/thespinawards/p/DdmNMTtJE5z/",
         "organizer": "The Spin Awards", "firstSeen": "2026-09-25T21:08:55Z",
         "lastVerified": "2026-09-25T21:08:55Z",
-        "notes": "Official itinerary confirms Friday October 23, 7:30–9:30 PM Eastern at The Lawrence Hotel, 120 E Crogan St. Official September 22 Instagram flyer confirms the pre-ceremony date/time and host Destiny Kingcannon. Owner relayed Bobby's direct confirmation of performing at the Spin Awards weekend, then requested assuming this Friday session. His exact session remains unconfirmed and is labeled publicly; do not treat Bobby as organizer-confirmed billing or an exact 7:30 PM set. Owner requested the short venue name and start time only in visible details. Host is not a confirmed musical performer.",
+        "notes": "Official itinerary confirms Friday October 23, 7:30–9:30 PM Eastern at The Lawrence Hotel, 120 E Crogan St. Official September 22 Instagram flyer confirms the pre-ceremony date/time and host Destiny Kingcannon. Owner relayed Bobby's direct confirmation of performing at the Spin Awards weekend, then requested assuming this Friday session. His exact session remains unconfirmed internally; do not treat Bobby as organizer-confirmed billing or an exact 7:30 PM set. Owner explicitly requested removing the public session-unconfirmed wording and using the short venue name and start time in visible details. Host is not a confirmed musical performer.",
     },
 )
 for event in EVENTS:

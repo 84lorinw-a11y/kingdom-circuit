@@ -3068,13 +3068,12 @@ function eventBilling(event) {
 }
 
 function artistLinks(event) {
-  const unconfirmed = new Set((event.unconfirmedArtists || []).map(normalize));
   return eventBilling(event).map(name => {
     const profile = artistConfig(name);
     const link = profile
       ? `<a href="${artistProfileUrl(profile.name)}">${esc(name)}</a>`
       : `<span>${esc(name)}</span>`;
-    return unconfirmed.has(normalize(name)) ? `${link} <span>(session unconfirmed)</span>` : link;
+    return link;
   }).join(" - ");
 }
 function isNew(event) {

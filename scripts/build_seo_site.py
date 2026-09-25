@@ -137,13 +137,10 @@ def billing_links(event, artists):
         if alias and alias not in roster and len(names) == 1:
             roster[alias] = next(iter(names))
     billing = event.get("advertisedBilling") or event.get("artists", [])
-    unconfirmed = {norm(name) for name in event.get("unconfirmedArtists", [])}
     parts = []
     for name in billing:
         link = (f'<a href="{artist_path(roster[norm(name)])}">{esc(name)}</a>'
                 if norm(name) in roster else f'<span>{esc(name)}</span>')
-        if norm(name) in unconfirmed:
-            link += ' <span>(session unconfirmed)</span>'
         parts.append(link)
     return " - ".join(parts)
 
