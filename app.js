@@ -196,6 +196,8 @@ const ARTIST_ROSTER_ORDER = [
   "Howard Langford",
   "Lj the Messenger",
   "DEON",
+  "Man Of FAITH",
+  "Bobby Real Montgomery",
   "Redimi2",
   "Funky",
   "Pregador Luo",
@@ -2638,6 +2640,32 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/4kt0dkHxgthY7GMdG4G5dh",
     "imageUrl": "assets/artists/deon-spotify.jpg",
     "imagePosition": "50% 25%",
+    "sourceRegistryVerified": true
+  },
+  "man of faith": {
+    "aliases": [
+      "Man Of FAITH"
+    ],
+    "website": "https://www.manoffaithmusic.com/home",
+    "instagramProfile": "https://www.instagram.com/realmanoffaith",
+    "spotifyProfile": "https://open.spotify.com/artist/1N0uKYpKssjI5qrebCKMPo",
+    "youtubeProfile": "https://www.youtube.com/channel/UChxkZuakN_vF7zTuo7BN2Uw",
+    "officialImageSource": "https://open.spotify.com/artist/1N0uKYpKssjI5qrebCKMPo",
+    "imageUrl": "assets/artists/man-of-faith-primary.jpg",
+    "imagePosition": "50% 0%",
+    "sourceRegistryVerified": true
+  },
+  "bobby real montgomery": {
+    "aliases": [
+      "Bobby Real Montgomery"
+    ],
+    "website": "https://www.n1m.com/bobbyrealmontgomery",
+    "instagramProfile": "https://www.instagram.com/bobbyrealmontgomery/",
+    "spotifyProfile": "https://open.spotify.com/artist/35u7n4Uh12dckKc6CbDYzR",
+    "youtubeProfile": "https://www.youtube.com/@bobbyrealmontgomery",
+    "officialImageSource": "https://www.n1m.com/bobbyrealmontgomery",
+    "imageUrl": "assets/artists/bobby-real-montgomery-primary.jpg",
+    "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   }
 };
