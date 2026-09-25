@@ -53,13 +53,16 @@ class SubmittedShowTests(unittest.TestCase):
         self.assertEqual([], self.read("events.json"))
         self.assertEqual(3, len(self.read("config/manual-events.json")))
 
-    def test_source_utc_time_is_previous_local_day_and_unknown_time_stays_unknown(self):
+    def test_source_utc_time_is_previous_local_day_and_confirmed_start_keeps_unknown_end(self):
         ghost = shows.EVENTS[1]
         utc = dt.datetime.fromisoformat("2026-10-18T00:00:00+00:00")
         self.assertEqual(utc.astimezone(ZoneInfo("America/Los_Angeles")).isoformat(), ghost["startDateTime"])
         self.assertEqual("2026-10-17T17:00:00-07:00", builder.event_schema(ghost)["startDate"])
-        self.assertEqual("2026-10-10", builder.event_schema(shows.EVENTS[0])["startDate"])
-        self.assertFalse(shows.EVENTS[0]["venue"])
+        sacramento = shows.EVENTS[0]
+        self.assertEqual("2026-10-10T17:00:00-07:00", builder.event_schema(sacramento)["startDate"])
+        self.assertEqual("Nu Wave Church", sacramento["venue"])
+        self.assertEqual("9529 Folsom Blvd, Suite D", sacramento["address"])
+        self.assertFalse(sacramento["endTime"])
 
     def test_advertised_alias_links_to_existing_profile_without_linking_unknown_guests(self):
         artists = [{"name": "Joz", "aliases": ["Southside Joz", "Shared alias"]},

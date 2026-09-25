@@ -23,7 +23,7 @@ def verify(site: Path) -> None:
         matches = [r for r in events if submission.matches(r, source)]
         assert len(matches) == 1, (source["id"], "missing or duplicate", len(matches))
         event = matches[0]
-        for key in ("title", "artists", "advertisedBilling", "startDate", "startTime", "timezone", "venue", "address", "officialUrl", "imageType"):
+        for key in ("title", "artists", "headliner", "advertisedBilling", "startDate", "startTime", "timezone", "venue", "address", "officialUrl", "imageType"):
             assert event[key] == source[key], (source["id"], key)
         href = builder.event_path(event)
         detail = (site / href.strip("/") / "index.html").read_text()
