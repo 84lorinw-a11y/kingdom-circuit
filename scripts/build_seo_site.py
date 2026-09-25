@@ -125,6 +125,21 @@ def artist_cfg(artists,name):
     t=norm(name)
     return next((a for a in artists if norm(a.get("name"))==t or t in {norm(x) for x in a.get("aliases",[])}),{})
 
+def billing_links(event, artists):
+    """Keep advertised names while linking unambiguous curated aliases."""
+    enabled = [a for a in artists if a.get("enabled") is not False and a.get("name")]
+    roster = {norm(a["name"]): a["name"] for a in enabled}
+    aliases = defaultdict(set)
+    for artist in enabled:
+        for alias in artist.get("aliases", []):
+            aliases[norm(alias)].add(artist["name"])
+    for alias, names in aliases.items():
+        if alias and alias not in roster and len(names) == 1:
+            roster[alias] = next(iter(names))
+    billing = event.get("advertisedBilling") or event.get("artists", [])
+    return " - ".join(f'<a href="{artist_path(roster[norm(name)])}">{esc(name)}</a>'
+                      if norm(name) in roster else f'<span>{esc(name)}</span>' for name in billing)
+
 def spotify(a): return a.get("spotifyProfile") or (f"https://open.spotify.com/artist/{a['spotifyId']}" if a.get("spotifyId") else "")
 def instagram(a): return a.get("instagramProfile","")
 def youtube(a): return a.get("youtubeProfile","")
@@ -168,9 +183,7 @@ def event_card(e,artists):
     img=image_url(e.get("image") or cfg.get("imageUrl")); pos=e.get("imagePosition") or cfg.get("imagePosition") or "center"
     typ="event-artwork" if e.get("imageType")=="event_artwork" else "artist-photo"
     location=", ".join(x for x in (e.get("city"),e.get("state")) if x) or "Location to be announced"
-    roster={norm(a.get("name")):a.get("name") for a in artists if a.get("enabled") is not False and a.get("name")}
-    billing=e.get("advertisedBilling") or e.get("artists",[])
-    artists_html=" - ".join(f'<a href="{artist_path(roster[norm(n)])}">{esc(n)}</a>' if norm(n) in roster else f'<span>{esc(n)}</span>' for n in billing)
+    artists_html=billing_links(e, artists)
     official=e.get("officialUrl") or e.get("ticketUrl") or "#"
     search=norm(" ".join([str(e.get('title') or ''),str(e.get('venue') or ''),str(e.get('city') or ''),str(e.get('state') or ''),str(e.get('sourceName') or ''),*(str(n) for n in e.get('artists',[]))]))
     artist_values="|".join(norm(n) for n in e.get('artists',[]))
@@ -284,7 +297,7 @@ def main():
         crumbs=[("Shows","/shows/")]
         if e.get("state"): crumbs.append((STATE_NAMES.get(e["state"],e["state"]),state_path(e["state"])))
         crumbs.append((e.get("title") or "Event",p))
-        img=image_url(e.get("image")); cls="event-artwork" if e.get("imageType")=="event_artwork" else "artist-photo"; roster={norm(a.get("name")):a.get("name") for a in artists if a.get("enabled") is not False and a.get("name")}; billing=e.get("advertisedBilling") or e.get("artists",[]); artist_links=" - ".join(f'<a href="{artist_path(roster[norm(n)])}">{esc(n)}</a>' if norm(n) in roster else f'<span>{esc(n)}</span>' for n in billing); official=e.get("officialUrl") or e.get("ticketUrl") or "#"
+        img=image_url(e.get("image")); cls="event-artwork" if e.get("imageType")=="event_artwork" else "artist-photo"; artist_links=billing_links(e, artists); official=e.get("officialUrl") or e.get("ticketUrl") or "#"
         merged=norm(e.get("status")) == "merged"
         if merged:
             canonical=next((item for item in retained if item.get("id") == e.get("mergedIntoId")), None)

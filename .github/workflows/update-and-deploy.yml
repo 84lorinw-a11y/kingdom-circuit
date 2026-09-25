@@ -93,6 +93,9 @@ jobs:
       - name: Preserve verified EGR and Bizzle event details and artwork
         run: python scripts/apply_egr_bizzle_updates.py
 
+      - name: Preserve submitted Man Of FAITH and Southside Joz shows
+        run: python scripts/apply_man_of_faith_joz_shows.py
+
       - name: Restore runtime-only source configuration
         if: github.event_name != 'push' || contains(github.event.head_commit.message, '[full scan]')
         run: git checkout -- config/official-sources.json
@@ -442,6 +445,7 @@ jobs:
           node --check _site/assets/kc-redesign-v1.js
           python scripts/verify_sep24_content_updates.py _site
           python scripts/verify_egr_bizzle_updates.py _site
+          python scripts/verify_man_of_faith_joz_shows.py _site
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

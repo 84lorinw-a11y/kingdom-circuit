@@ -1,0 +1,134 @@
+#!/usr/bin/env python3
+"""Preserve the three reviewed September 25 artist-submitted October shows."""
+from __future__ import annotations
+
+import copy
+import datetime as dt
+import json
+from pathlib import Path
+import re
+from urllib.parse import urlsplit
+from zoneinfo import ZoneInfo
+
+ROOT = Path(__file__).resolve().parents[1]
+VERIFIED_AT = "2026-09-25T18:55:43Z"
+EVENTS = (
+    {
+        "id": "nu-wave-anointing-sacramento-2026-10-10",
+        "title": "A Nu Wave of Anointing — Artist Showcase",
+        "startDate": "2026-10-10", "endDate": "2026-10-10",
+        "startTime": "", "endTime": "", "timezone": "America/Los_Angeles",
+        "venue": "", "address": "", "city": "Sacramento", "state": "CA",
+        "artists": ["Man Of FAITH"], "advertisedBilling": ["Man Of FAITH"],
+        "lineupExplicit": False,
+        "officialUrl": "https://www.wearenuwaveent.com/",
+        "ticketUrl": "https://www.wearenuwaveent.com/",
+        "image": "assets/events/nu-wave-anointing-sacramento-2026-10-10.jpg",
+        "imageSource": "Nu Wave Entertainment official showcase artwork",
+        "imageSourceUrl": "https://www.wearenuwaveent.com/",
+        "detailImageLayout": "landscape", "organizer": "Nu Wave Entertainment",
+        "notes": "Organizer announces October 10 in Sacramento and free admission. User confirms Man Of FAITH for this upcoming 2026 show. Venue, start time and complete performer names are not published; do not infer the entire label roster from the collage.",
+    },
+    {
+        "id": "ghost-ride-the-gospel-2-berkeley-2026-10-17",
+        "title": "Ghost Ride the Gospel 2",
+        "startDate": "2026-10-17", "endDate": "2026-10-17",
+        "startTime": "17:00", "endTime": "21:00", "timezone": "America/Los_Angeles",
+        "startDateTime": "2026-10-17T17:00:00-07:00", "endDateTime": "2026-10-17T21:00:00-07:00",
+        "venue": "The Way Christian Center", "address": "1305 University Avenue",
+        "city": "Berkeley", "state": "CA", "postalCode": "94702",
+        "artists": ["Man Of FAITH"],
+        "advertisedBilling": ["Pastor Chris", "@godsdogvlu", "@jm3fromthep", "@jaysmoov3", "@schwartzen.precil", "@shelbaelatorre", "@zaylowly_music", "Man Of FAITH", "@nutce.iv", "@litaniemendiolaofficial"],
+        "lineupExplicit": True, "ageRestriction": "All ages",
+        "officialUrl": "https://partiful.com/e/bYodVpvtr2jYKyoANwlR",
+        "ticketUrl": "https://www.eventbrite.com/e/ghost-ride-the-gospel-2-tickets-2000667257624",
+        "image": "assets/events/ghost-ride-the-gospel-2-berkeley-2026-10-17.jpg",
+        "imageSource": "Official Ghost Ride the Gospel 2 Partiful flyer",
+        "imageSourceUrl": "https://partiful.imgix.net/external/user/42YhAuBM1wVqSbLr6krHWCrxT733/3h6R2W0xMY3ZyRHKMxP3b?w=1000&h=1500&fit=clip",
+        "organizer": "Ghost Ride the Gospel",
+        "notes": "Partiful UTC start October 18 00:00 is October 17 at 5 PM Pacific; flyer and organizer Eventbrite confirm 5–9 PM. Full flyer billing uses the published handles where stage names are unavailable. Man Of FAITH is @realmanoffaith. No individual set times are inferred.",
+    },
+    {
+        "id": "good-vibez-jesus-miami-gardens-2026-10-30",
+        "title": "GOOD VIBEZ & JESUS: Glow in the Dark Party",
+        "startDate": "2026-10-30", "endDate": "2026-10-30",
+        "startTime": "20:00", "endTime": "23:59", "timezone": "America/New_York",
+        "startDateTime": "2026-10-30T20:00:00-04:00", "endDateTime": "2026-10-30T23:59:00-04:00",
+        "venue": "3918 NW 167th St", "address": "3918 Northwest 167th Street",
+        "city": "Miami Gardens", "state": "FL", "postalCode": "33054",
+        "artists": ["Joz"], "advertisedBilling": ["Southside Joz", "DJ Mr. E"],
+        "lineupExplicit": True, "ageRestriction": "18+", "host": "Sean Olivera",
+        "officialUrl": "https://www.eventbrite.com/e/good-vibez-jesus-glow-in-the-dark-party-tickets-1997092475354",
+        "ticketUrl": "https://www.eventbrite.com/e/good-vibez-jesus-glow-in-the-dark-party-tickets-1997092475354",
+        "image": "assets/events/good-vibez-jesus-miami-gardens-2026-10-30.png",
+        "imageSource": "Official GOOD VIBEZ & JESUS Eventbrite flyer",
+        "imageSourceUrl": "https://cdn.evbuc.com/images/1191027196/2999300952530/1/original.20260814-002945",
+        "detailImageLayout": "landscape", "organizer": "GOOD VIBEZ & JESUS",
+        "notes": "Official Eventbrite and flyer confirm Southside Joz as special guest, DJ Mr. E providing music, Sean Olivera hosting, 8 PM and ages 18+. End time 11:59 PM comes from the Eventbrite structured event data. Southside Joz is the existing curated artist Joz; preserve that profile identity.",
+    },
+)
+for event in EVENTS:
+    event.update({
+        "country": "US", "eventType": "concert", "status": "scheduled", "headliner": "",
+        "officialBill": list(event["advertisedBilling"]),
+        "imageType": "event_artwork", "imageOverride": True, "imagePosition": "center",
+        "sourceName": "Official organizer event listing", "authority": "official_event", "confidence": "high",
+        "firstSeen": VERIFIED_AT, "lastVerified": VERIFIED_AT,
+        "sources": [{"name": "Official organizer event listing", "url": url,
+                     "type": "official_event", "authority": "official_event", "priority": 112}
+                    for url in dict.fromkeys((event["officialUrl"], event["ticketUrl"]))],
+    })
+
+
+def source_key(url: str) -> str:
+    parts = urlsplit(str(url or ""))
+    host = parts.netloc.casefold().removeprefix("www.")
+    if host == "eventbrite.com":
+        match = re.search(r"-(\d+)$", parts.path.rstrip("/"))
+        if match:
+            return "eventbrite:" + match[1]
+    return host + parts.path.rstrip("/")
+
+
+def matches(row: dict, event: dict) -> bool:
+    if str(row.get("id", "")).removeprefix("manual:") == event["id"]:
+        return True
+    urls = {source_key(event[field]) for field in ("officialUrl", "ticketUrl")}
+    if not any(source_key(row.get(field, "")) in urls for field in ("officialUrl", "ticketUrl")):
+        return False
+    # A general organizer homepage is not a unique event identity.
+    if event["city"] == "Sacramento":
+        return row.get("startDate") == event["startDate"] and str(row.get("city", "")).casefold() == "sacramento"
+    return True
+
+
+def apply(root: Path = ROOT, today: str | None = None) -> None:
+    today = today or dt.datetime.now(ZoneInfo("America/Los_Angeles")).date().isoformat()
+    names = ("config/manual-events.json", "events.json", "supplemental-events.json")
+    feeds = {name: json.loads((root / name).read_text(encoding="utf-8")) for name in names}
+    for event in EVENTS:
+        previous = [r for rows in feeds.values() for r in rows if matches(r, event)]
+        canonical = {}
+        for row in reversed(previous):
+            if str(row.get("id", "")).removeprefix("manual:") == event["id"]:
+                canonical.update(copy.deepcopy(row))
+        canonical.update(copy.deepcopy(event))
+        canonical["firstSeen"] = min([event["firstSeen"]] + [r["firstSeen"] for r in previous if r.get("firstSeen")])
+        for row in previous:
+            for source in row.get("sources", []):
+                if source not in canonical["sources"]:
+                    canonical["sources"].append(source)
+        for name, rows in feeds.items():
+            rows[:] = [r for r in rows if not matches(r, event)]
+            if name == "config/manual-events.json" or (name == "events.json" and event["endDate"] >= today):
+                record = copy.deepcopy(canonical)
+                record["id"] = event["id"] if name.startswith("config/") else "manual:" + event["id"]
+                rows.append(record)
+    for name, rows in feeds.items():
+        rows.sort(key=lambda r: (r.get("startDate", ""), r.get("startTime", ""), r.get("title", "")))
+        (root / name).write_text(json.dumps(rows, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+if __name__ == "__main__":
+    apply()
+    print("Man Of FAITH Sacramento/Berkeley and Southside Joz Miami Gardens shows preserved")

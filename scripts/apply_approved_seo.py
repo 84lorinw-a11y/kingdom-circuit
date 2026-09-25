@@ -377,12 +377,7 @@ def main(site_root: str) -> None:
         card = approved_event_card(event, meta_by_name)
         # The pinned renderer predates complete billing. Keep guests without
         # curated profiles visible without generating nonexistent profile links.
-        billing = event.get("advertisedBilling") or event.get("artists", [])
-        artist_links = " - ".join(
-            f'<a href="{overlay.artist_href(meta_by_name[overlay.norm(name)].get("name") or name)}">{html.escape(name)}</a>'
-            if overlay.norm(name) in meta_by_name else f'<span>{html.escape(name)}</span>'
-            for name in billing
-        )
+        artist_links = production_builder.billing_links(event, billing_artists)
         card = re.sub(r'<p class="artist-line">.*?</p>',
                       lambda _: f'<p class="artist-line">{artist_links}</p>', card, count=1, flags=re.S)
         start_time = html.escape(str(event.get("startTime") or ""), quote=True)
@@ -401,6 +396,7 @@ def main(site_root: str) -> None:
         "kc_production_builder",
         pathlib.Path(__file__).with_name("build_seo_site.py"),
     )
+    billing_artists = json.loads((root / "config/artists.json").read_text(encoding="utf-8"))
     overlay.future = production_builder.current
     overlay.merge_events = lambda primary, supplemental: merge_production_events(
         production_builder,

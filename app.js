@@ -1617,8 +1617,9 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/southsidejoz/",
     "spotifyProfile": "https://open.spotify.com/artist/298PjvlXBVauDcpCjrl257",
     "youtubeProfile": "https://www.youtube.com/@SouthsideJoz",
-    "officialImageSource": "https://www.instagram.com/southsidejoz/",
-    "imagePosition": "center",
+    "officialImageSource": "https://open.spotify.com/artist/298PjvlXBVauDcpCjrl257",
+    "imageUrl": "assets/artists/joz-spotify-primary.jpg",
+    "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   },
   "g.e.s.": {

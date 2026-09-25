@@ -370,6 +370,18 @@ body .kc-rd-next.kc-rd-next--empty {
   .footer-status { display: grid; gap: 6px; }
 }
 
+/* Keep linked portrait flyers inside the detail frame instead of their intrinsic height. */
+body .event-detail:not(.event-detail--landscape) .event-detail-media {
+  position: relative;
+}
+body .event-detail:not(.event-detail--landscape) .event-detail-media > .event-image-enlarge {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
 /* Opt-in landscape artwork on event detail pages; listing cards retain 4:3. */
 body .event-detail.event-detail--landscape {
   grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);

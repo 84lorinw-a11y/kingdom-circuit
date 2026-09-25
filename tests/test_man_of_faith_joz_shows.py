@@ -1,0 +1,77 @@
+import datetime as dt
+import json
+from pathlib import Path
+import sys
+import tempfile
+import unittest
+from zoneinfo import ZoneInfo
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+import apply_man_of_faith_joz_shows as shows
+import build_seo_site as builder
+
+
+class SubmittedShowTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        (self.root / "config").mkdir()
+        for name in ("config/manual-events.json", "events.json", "supplemental-events.json"):
+            self.save(name, [])
+
+    def save(self, name, rows):
+        (self.root / name).write_text(json.dumps(rows))
+
+    def read(self, name):
+        return json.loads((self.root / name).read_text())
+
+    def test_refresh_deduplicates_both_ticket_sources_without_changing_other_shows(self):
+        ghost = shows.EVENTS[1]
+        original = {"id": "collector:ghost", "officialUrl": ghost["officialUrl"] + "?fbclid=tracking",
+                    "firstSeen": "2026-09-24T14:00:00Z", "sources": [{"url": ghost["officialUrl"], "name": "First discovery"}]}
+        duplicate = {"id": "eventbrite:2000667257624", "ticketUrl": "https://eventbrite.com/e/another-slug-tickets-2000667257624?aff=tracking"}
+        other = {"id": "nu-wave-next-show", "officialUrl": shows.EVENTS[0]["officialUrl"], "startDate": "2026-11-10", "city": "Sacramento"}
+        self.save("events.json", [original])
+        self.save("supplemental-events.json", [duplicate, other])
+        shows.apply(self.root, "2026-09-25")
+        self.assertEqual([other], self.read("supplemental-events.json"))
+        event = next(r for r in self.read("events.json") if r["city"] == "Berkeley")
+        self.assertEqual("2026-09-24T14:00:00Z", event["firstSeen"])
+        self.assertIn(original["sources"][0], event["sources"])
+        before = {p: p.read_bytes() for p in self.root.rglob("*.json")}
+        shows.apply(self.root, "2026-09-25")
+        self.assertEqual(before, {p: p.read_bytes() for p in self.root.rglob("*.json")})
+        self.save("supplemental-events.json", [duplicate, other])
+        shows.apply(self.root, "2026-09-25")
+        self.assertEqual(3, len(self.read("events.json")))
+
+    def test_completed_shows_are_not_restored_and_event_day_stays_visible(self):
+        shows.apply(self.root, "2026-10-30")
+        self.assertEqual(["Miami Gardens"], [r["city"] for r in self.read("events.json")])
+        shows.apply(self.root, "2026-10-31")
+        self.assertEqual([], self.read("events.json"))
+        self.assertEqual(3, len(self.read("config/manual-events.json")))
+
+    def test_source_utc_time_is_previous_local_day_and_unknown_time_stays_unknown(self):
+        ghost = shows.EVENTS[1]
+        utc = dt.datetime.fromisoformat("2026-10-18T00:00:00+00:00")
+        self.assertEqual(utc.astimezone(ZoneInfo("America/Los_Angeles")).isoformat(), ghost["startDateTime"])
+        self.assertEqual("2026-10-17T17:00:00-07:00", builder.event_schema(ghost)["startDate"])
+        self.assertEqual("2026-10-10", builder.event_schema(shows.EVENTS[0])["startDate"])
+        self.assertFalse(shows.EVENTS[0]["venue"])
+
+    def test_advertised_alias_links_to_existing_profile_without_linking_unknown_guests(self):
+        artists = [{"name": "Joz", "aliases": ["Southside Joz", "Shared alias"]},
+                   {"name": "Other", "aliases": ["Shared alias"]},
+                   {"name": "Disabled", "aliases": ["DJ Mr. E"], "enabled": False}]
+        card = builder.event_card(shows.EVENTS[2], artists)
+        self.assertIn('<a href="/artists/joz/">Southside Joz</a>', card)
+        self.assertIn('<span>DJ Mr. E</span>', card)
+        self.assertNotIn('/artists/southside-joz/', card)
+        self.assertEqual('<span>Shared alias</span>', builder.billing_links({"artists": ["Shared alias"]}, artists))
+        self.assertIn('&lt;Guest&gt;', builder.billing_links({"artists": ["<Guest>"]}, artists))
+
+
+if __name__ == "__main__":
+    unittest.main()
