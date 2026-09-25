@@ -106,6 +106,14 @@ SEVIN_EVENTS = [
         "2026-08-09T00:00:00Z",
     ),
 ]
+SEVIN_EVENTS[1].update({
+    "image": "assets/events/sevin-live-millville-2026-09-26.png",
+    "imageType": "event_artwork",
+    "imageOverride": True,
+    "imagePosition": "center",
+    "imageSource": "Owner-supplied official HOG MOB Millville concert flyer",
+    "imageSourceUrl": "https://hogmob.com/wp-content/uploads/2026/08/Sevin-live-NJ.jpg",
+})
 SEVIN_EVENTS[-1]["legacyEventPaths"] = [
     "/event/sevin-live-concert-2026-10-24-nashville-76d537/",
 ]
