@@ -26,6 +26,8 @@ def verify(site: Path) -> None:
     profile = (site / "artists/egr/index.html").read_text()
     assert uses_image(profile, site, repair.PORTRAIT), "EGR profile still uses old image"
     assert repair.OLD_PORTRAIT not in profile
+    bizzle_profile = (site / "artists/bizzle/index.html").read_text()
+    assert uses_image(bizzle_profile, site, repair.BIZZLE_PORTRAIT), "Bizzle profile still uses broken image proxy"
     for source in repair.EVENTS:
         if not builder.current(source):
             continue

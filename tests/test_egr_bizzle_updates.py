@@ -26,7 +26,8 @@ class EgrBizzleRefreshTests(unittest.TestCase):
                           "sources": [{"name": "Bandsintown", "url": "https://www.bandsintown.com/e/108954639"}]}
         self.egr = {"name": "EGR", "rosterOrder": 22, "spotifyProfile": repair.PORTRAIT_SOURCE,
                     "instagramProfile": "https://www.instagram.com/egrxofficial/", "imageUrl": repair.OLD_PORTRAIT}
-        self.bizzle = {"name": "Bizzle", "rosterOrder": 30, "imageUrl": "bizzle-photo.jpg"}
+        self.bizzle = {"name": "Bizzle", "rosterOrder": 30, "imageUrl": "bizzle-photo.jpg",
+                       "instagramProfile": "https://www.instagram.com/bizzle/"}
         self.save("config/artists.json", [self.egr, self.bizzle])
         self.save("config/manual-events.json", [dict(self.original, id="egr-2026-10-03-chandler-az")])
         self.save("events.json", [self.original])
@@ -93,7 +94,11 @@ class EgrBizzleRefreshTests(unittest.TestCase):
         for key, value in self.egr.items():
             if key != "imageUrl":
                 self.assertEqual(value, updated[key])
-        self.assertEqual(self.bizzle, bizzle)
+        for key, value in self.bizzle.items():
+            if key != "imageUrl":
+                self.assertEqual(value, bizzle[key])
+        self.assertEqual(repair.BIZZLE_PORTRAIT, bizzle["imageUrl"])
+        self.assertEqual("50% 0%", bizzle["imagePosition"])
         history = self.read("event-history.json")
         self.assertEqual({"total": 1}, history["summary"])
         self.assertEqual("2026-03-01", history["events"][0]["startDate"])

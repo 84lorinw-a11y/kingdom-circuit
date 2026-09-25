@@ -740,7 +740,9 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/bizzle/",
     "spotifyProfile": "https://open.spotify.com/artist/0P8V2XSw1mIo8739T1qjzr",
     "youtubeProfile": "https://www.youtube.com/user/playbizzle21",
-    "officialImageSource": "https://bizzle.vip/",
+    "imageUrl": "assets/artists/bizzle.webp",
+    "imagePosition": "50% 0%",
+    "officialImageSource": "https://open.spotify.com/artist/0P8V2XSw1mIo8739T1qjzr",
     "sourceRegistryVerified": true
   },
   "derek minor": {

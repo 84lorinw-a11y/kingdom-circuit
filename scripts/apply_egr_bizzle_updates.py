@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Keep the reviewed EGR portrait and official Whittier/Chandler listings on refresh."""
+"""Keep reviewed EGR/Bizzle portraits and official Whittier/Chandler listings on refresh."""
 from __future__ import annotations
 
 import copy
@@ -11,6 +11,8 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1]
 PORTRAIT = "assets/artists/egr-spotify-primary.jpg"
 PORTRAIT_SOURCE = "https://open.spotify.com/artist/4EJIkbig1thbV3C3B68c56"
+BIZZLE_PORTRAIT = "assets/artists/bizzle.webp"
+BIZZLE_PORTRAIT_SOURCE = "https://open.spotify.com/artist/0P8V2XSw1mIo8739T1qjzr"
 OLD_PORTRAIT = "assets/artists/egr.webp"
 VERIFIED_AT = "2026-09-25T18:17:56Z"
 EVENTS = (
@@ -150,6 +152,8 @@ def apply(root: Path = ROOT, today: str | None = None) -> None:
     for artist in artists:
         if artist.get("name") == "EGR":
             artist.update(imageUrl=PORTRAIT, imagePosition="50% 0%", officialImageSource=PORTRAIT_SOURCE)
+        elif artist.get("name") == "Bizzle":
+            artist.update(imageUrl=BIZZLE_PORTRAIT, imagePosition="50% 0%", officialImageSource=BIZZLE_PORTRAIT_SOURCE)
     write(artists_path, artists)
 
 
