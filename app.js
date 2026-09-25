@@ -2316,7 +2316,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "Jay Kalyl"
     ],
     "website": "https://www.instagram.com/jaykalylmusic/?hl=en",
-    "instagramProfile": "https://www.instagram.com/jaykalyl/",
+    "instagramProfile": "https://www.instagram.com/jaykalylmusic/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/0sHeKC0Zcxpz4wOHHE5oJ7",
     "youtubeProfile": "https://www.youtube.com/channel/UCFfyV-7bdXPRDZfItdZdpQg",
     "officialImageSource": "https://www.instagram.com/jaykalylmusic/?hl=en",
