@@ -43,7 +43,7 @@ EVENTS = (
         "venue": "The Way Christian Center", "address": "1305 University Avenue",
         "city": "Berkeley", "state": "CA", "postalCode": "94702",
         "artists": ["Man Of FAITH"],
-        "advertisedBilling": ["Pastor Chris", "@godsdogvlu", "@jm3fromthep", "@jaysmoov3", "@schwartzen.precil", "@shelbaelatorre", "@zaylowly_music", "Man Of FAITH", "@nutce.iv", "@litaniemendiolaofficial"],
+        "advertisedBilling": ["Man Of FAITH", "Pastor Chris", "@godsdogvlu", "@jm3fromthep", "@jaysmoov3", "@schwartzen.precil", "@shelbaelatorre", "@zaylowly_music", "@nutce.iv", "@litaniemendiolaofficial"],
         "lineupExplicit": True, "ageRestriction": "All ages",
         "officialUrl": "https://partiful.com/e/bYodVpvtr2jYKyoANwlR",
         "ticketUrl": "https://www.eventbrite.com/e/ghost-ride-the-gospel-2-tickets-2000667257624",
