@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check all three new shows in the final production artifact, after overlays."""
+"""Check submitted October shows in the final production artifact, after overlays."""
 import datetime as dt
 import html
 import json
@@ -39,6 +39,13 @@ def verify(site: Path) -> None:
             assert source["ageRestriction"] in detail
         line = re.search(r'<p class="artist-line">(.*?)</p>', detail, re.S)[1]
         assert all(name in html.unescape(line) for name in source["advertisedBilling"])
+        if source.get("unconfirmedArtists"):
+            assert event.get("unconfirmedArtists") == source["unconfirmedArtists"]
+            assert '(session unconfirmed)' in line
+            assert not any(p.get("name") in source["unconfirmedArtists"] for p in schema.get("performer", []))
+            assert schema.get("description") == source["publicDescription"]
+            description = re.search(r'<meta name="description" content="([^"]+)"', detail)[1]
+            assert 'unconfirmed' in description, "SEO description hides session uncertainty"
         for name in source["artists"]:
             artist_href = builder.artist_path(name)
             assert f'href="{artist_href}"' in line, (href, "artist link missing")
@@ -56,10 +63,12 @@ def verify(site: Path) -> None:
             assert card, (path, "event absent", href)
             assert uses_image(card, site, source["image"]), (path, "wrong flyer")
             assert all(name in html.unescape(card) for name in source["advertisedBilling"])
+            if source.get("unconfirmedArtists"):
+                assert '(session unconfirmed)' in card, (path, "assumed session presented as confirmed")
             if source["artists"] == ["Joz"]:
                 assert '<a href="/artists/joz/">Southside Joz</a>' in card
         assert builder.absolute(href) in (site / "sitemap.xml").read_text()
-    print("Final Man Of FAITH / Southside Joz shows verified: official artwork, local dates, billing, artist links and listings")
+    print("Submitted shows verified: artwork, local dates, billing, artist links, listings and session uncertainty")
 
 
 if __name__ == "__main__":

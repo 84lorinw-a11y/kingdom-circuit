@@ -137,8 +137,15 @@ def billing_links(event, artists):
         if alias and alias not in roster and len(names) == 1:
             roster[alias] = next(iter(names))
     billing = event.get("advertisedBilling") or event.get("artists", [])
-    return " - ".join(f'<a href="{artist_path(roster[norm(name)])}">{esc(name)}</a>'
-                      if norm(name) in roster else f'<span>{esc(name)}</span>' for name in billing)
+    unconfirmed = {norm(name) for name in event.get("unconfirmedArtists", [])}
+    parts = []
+    for name in billing:
+        link = (f'<a href="{artist_path(roster[norm(name)])}">{esc(name)}</a>'
+                if norm(name) in roster else f'<span>{esc(name)}</span>')
+        if norm(name) in unconfirmed:
+            link += ' <span>(session unconfirmed)</span>'
+        parts.append(link)
+    return " - ".join(parts)
 
 def spotify(a): return a.get("spotifyProfile") or (f"https://open.spotify.com/artist/{a['spotifyId']}" if a.get("spotifyId") else "")
 def instagram(a): return a.get("instagramProfile","")
@@ -172,6 +179,13 @@ def event_schema(e):
     status={"cancelled":"https://schema.org/EventCancelled","canceled":"https://schema.org/EventCancelled","postponed":"https://schema.org/EventPostponed","rescheduled":"https://schema.org/EventRescheduled"}.get(norm(e.get("status")),"https://schema.org/EventScheduled")
     billing=e.get("advertisedBilling") or e.get("artists",[])
     data={"@context":"https://schema.org","@type":("MusicEvent" if norm(e.get("eventType")) in {"concert","festival"} else "Event"),"name":e.get("title") or "Christian hip-hop event","startDate":start,"eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":status,"url":absolute(event_path(e)),"image":[image_url(e.get("image"))],"location":{"@type":"Place","name":e.get("venue") or "Venue to be announced","address":{"@type":"PostalAddress","streetAddress":e.get("address") or "","addressLocality":e.get("city") or "","addressRegion":e.get("state") or "","postalCode":e.get("postalCode") or "","addressCountry":"US"}},"performer":[{"@type":"MusicGroup","name":n} for n in billing]}
+    if e.get("unconfirmedArtists"):
+        unconfirmed = {norm(name) for name in e["unconfirmedArtists"]}
+        data["performer"] = [p for p in data["performer"] if norm(p["name"]) not in unconfirmed]
+        if not data["performer"]:
+            data.pop("performer")
+    if e.get("publicDescription"):
+        data["description"] = e["publicDescription"]
     if e.get("endDateTime") or e.get("endDate"): data["endDate"]=e.get("endDateTime") or e["endDate"]
     if e.get("previousStartDate") and status == "https://schema.org/EventRescheduled": data["previousStartDate"]=e["previousStartDate"]
     url=e.get("officialUrl") or e.get("ticketUrl")
@@ -311,7 +325,8 @@ def main():
         doors=f'<div><dt>Doors</dt><dd>{esc(format_date({"startDate": e.get("startDate"), "startTime": e.get("doorsTime")}).split(" - ")[-1])}</dd></div>' if e.get("doorsTime") else ''
         detail_class = "event-detail event-detail--landscape" if e.get("detailImageLayout") == "landscape" else "event-detail"
         body=f'<section class="event-detail-section">{breadcrumbs(crumbs)}{notice}<article class="{detail_class}"><div class="event-detail-media"><img class="{cls}" src="{esc(img)}" alt="{esc(e.get("title"))}" width="1200" height="675"></div><div class="event-detail-copy"><p class="eyebrow">{esc("Cancelled event" if cancelled else event_type_label(e))}</p><h1>{esc(e.get("title"))}</h1><p class="artist-line">{artist_links}</p><dl class="detail-list"><div><dt>Status</dt><dd>{esc(status_label)}</dd></div><div><dt>Date</dt><dd>{esc(format_date(e))}</dd></div>{doors}<div><dt>Venue</dt><dd>{esc(e.get("venue") or "Venue to be announced")}</dd></div><div><dt>Location</dt><dd>{esc(loc)}</dd></div><div><dt>Source</dt><dd>{esc(source_text(e))}</dd></div></dl><a class="primary-button" href="{esc(official)}" target="_blank" rel="noopener">Official details</a><p class="disclaimer">{"This URL is retained so visitors can confirm the cancellation with the organizer." if cancelled else "Event details may change. Confirm final information with the official organizer or ticket provider before purchasing or traveling."}</p></div></article></section>'
-        write_page(p,page(f"{e.get('title')} - {loc} | The Kingdom Circuit",f"{names} live in {loc} on {format_date(e)}. Verified official show details.",p,body,[event_schema(e),breadcrumb_schema(crumbs)]))
+        description = e.get("publicDescription") or f"{names} live in {loc} on {format_date(e)}. Verified official show details."
+        write_page(p,page(f"{e.get('title')} - {loc} | The Kingdom Circuit",description,p,body,[event_schema(e),breadcrumb_schema(crumbs)]))
         for legacy in e.get("legacyEventPaths") or []:
             if not re.fullmatch(r"/event/[a-z0-9-]+/", str(legacy)):
                 raise RuntimeError(f"Unsafe legacy event path: {legacy}")

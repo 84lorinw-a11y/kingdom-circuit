@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Preserve the three reviewed September 25 artist-submitted October shows."""
+"""Preserve the reviewed September 25 artist-submitted October shows."""
 from __future__ import annotations
 
 import copy
@@ -71,17 +71,37 @@ EVENTS = (
         "detailImageLayout": "landscape", "organizer": "GOOD VIBEZ & JESUS",
         "notes": "Official Eventbrite and flyer confirm Southside Joz as special guest, DJ Mr. E providing music, Sean Olivera hosting, 8 PM and ages 18+. End time 11:59 PM comes from the Eventbrite structured event data. Southside Joz is the existing curated artist Joz; preserve that profile identity.",
     },
+    {
+        "id": "spin-awards-pre-ceremony-lawrenceville-2026-10-23",
+        "title": "The Spin Awards Pre-Ceremony",
+        "startDate": "2026-10-23", "endDate": "2026-10-23",
+        "startTime": "19:30", "endTime": "21:30", "timezone": "America/New_York",
+        "startDateTime": "2026-10-23T19:30:00-04:00", "endDateTime": "2026-10-23T21:30:00-04:00",
+        "venue": "The Lawrence Hotel", "address": "120 E Crogan St",
+        "city": "Lawrenceville", "state": "GA", "postalCode": "30046",
+        "artists": ["Bobby Real Montgomery"], "advertisedBilling": ["Bobby Real Montgomery"],
+        "unconfirmedArtists": ["Bobby Real Montgomery"], "officialBill": [], "lineupExplicit": False,
+        "host": "Destiny Kingcannon", "confidence": "medium",
+        "publicDescription": "Spin Awards Pre-Ceremony: Oct. 23, 2026, 7:30 PM, The Lawrence Hotel, Lawrenceville, GA. Bobby Real Montgomery's session is unconfirmed.",
+        "officialUrl": "https://www.thespinawards.com/spinitin/", "ticketUrl": "",
+        "image": "assets/events/spin-awards-pre-ceremony-lawrenceville-2026-10-23.jpg",
+        "imageSource": "The Spin Awards official October 23 pre-ceremony host flyer",
+        "imageSourceUrl": "https://www.instagram.com/thespinawards/p/DdmNMTtJE5z/",
+        "organizer": "The Spin Awards", "firstSeen": "2026-09-25T21:08:55Z",
+        "lastVerified": "2026-09-25T21:08:55Z",
+        "notes": "Official itinerary confirms Friday October 23, 7:30–9:30 PM Eastern at The Lawrence Hotel, 120 E Crogan St. Official September 22 Instagram flyer confirms the pre-ceremony date/time and host Destiny Kingcannon. Owner relayed Bobby's direct confirmation of performing at the Spin Awards weekend, then requested assuming this Friday session. His exact session remains unconfirmed and is labeled publicly; do not treat Bobby as organizer-confirmed billing or an exact 7:30 PM set. Owner requested the short venue name and start time only in visible details. Host is not a confirmed musical performer.",
+    },
 )
 for event in EVENTS:
     event.update({
         "country": "US", "eventType": "concert", "status": "scheduled", "headliner": event.get("headliner", ""),
-        "officialBill": list(event["advertisedBilling"]),
+        "officialBill": list(event.get("officialBill", event["advertisedBilling"])),
         "imageType": "event_artwork", "imageOverride": True, "imagePosition": "center",
-        "sourceName": "Official organizer event listing", "authority": "official_event", "confidence": "high",
-        "firstSeen": VERIFIED_AT, "lastVerified": event.get("lastVerified", VERIFIED_AT),
+        "sourceName": "Official organizer event listing", "authority": "official_event", "confidence": event.get("confidence", "high"),
+        "firstSeen": event.get("firstSeen", VERIFIED_AT), "lastVerified": event.get("lastVerified", VERIFIED_AT),
         "sources": [{"name": "Official organizer event listing", "url": url,
                      "type": "official_event", "authority": "official_event", "priority": 112}
-                    for url in dict.fromkeys((event["officialUrl"], event["ticketUrl"]))],
+                    for url in dict.fromkeys((event["officialUrl"], event["ticketUrl"])) if url],
     })
 
 EVENTS[0]["sources"].extend([
@@ -91,6 +111,10 @@ EVENTS[0]["sources"].extend([
      "url": "https://www.instagram.com/realmanoffaith/p/DdeodjYT7Mf/",
      "type": "official_artist", "authority": "official_artist", "priority": 112},
 ])
+EVENTS[3]["sources"].append({
+    "name": "Official Spin Awards pre-ceremony host announcement",
+    "url": EVENTS[3]["imageSourceUrl"], "type": "official_event", "authority": "official_event", "priority": 112,
+})
 
 
 def source_key(url: str) -> str:
@@ -106,12 +130,14 @@ def source_key(url: str) -> str:
 def matches(row: dict, event: dict) -> bool:
     if str(row.get("id", "")).removeprefix("manual:") == event["id"]:
         return True
-    urls = {source_key(event[field]) for field in ("officialUrl", "ticketUrl")}
+    urls = {source_key(event[field]) for field in ("officialUrl", "ticketUrl") if event.get(field)}
     if not any(source_key(row.get(field, "")) in urls for field in ("officialUrl", "ticketUrl")):
         return False
     # A general organizer homepage is not a unique event identity.
     if event["city"] == "Sacramento":
         return row.get("startDate") == event["startDate"] and str(row.get("city", "")).casefold() == "sacramento"
+    if event["id"] == "spin-awards-pre-ceremony-lawrenceville-2026-10-23":
+        return row.get("startDate") == event["startDate"] and str(row.get("city", "")).casefold() == "lawrenceville"
     return True
 
 
@@ -144,4 +170,4 @@ def apply(root: Path = ROOT, today: str | None = None) -> None:
 
 if __name__ == "__main__":
     apply()
-    print("Man Of FAITH Sacramento/Berkeley and Southside Joz Miami Gardens shows preserved")
+    print("Submitted Man Of FAITH, Southside Joz and Bobby Real Montgomery shows preserved")

@@ -44,14 +44,14 @@ class SubmittedShowTests(unittest.TestCase):
         self.assertEqual(before, {p: p.read_bytes() for p in self.root.rglob("*.json")})
         self.save("supplemental-events.json", [duplicate, other])
         shows.apply(self.root, "2026-09-25")
-        self.assertEqual(3, len(self.read("events.json")))
+        self.assertEqual(len(shows.EVENTS), len(self.read("events.json")))
 
     def test_completed_shows_are_not_restored_and_event_day_stays_visible(self):
         shows.apply(self.root, "2026-10-30")
         self.assertEqual(["Miami Gardens"], [r["city"] for r in self.read("events.json")])
         shows.apply(self.root, "2026-10-31")
         self.assertEqual([], self.read("events.json"))
-        self.assertEqual(3, len(self.read("config/manual-events.json")))
+        self.assertEqual(len(shows.EVENTS), len(self.read("config/manual-events.json")))
 
     def test_source_utc_time_is_previous_local_day_and_confirmed_start_keeps_unknown_end(self):
         ghost = shows.EVENTS[1]
@@ -74,6 +74,32 @@ class SubmittedShowTests(unittest.TestCase):
         self.assertNotIn('/artists/southside-joz/', card)
         self.assertEqual('<span>Shared alias</span>', builder.billing_links({"artists": ["Shared alias"]}, artists))
         self.assertIn('&lt;Guest&gt;', builder.billing_links({"artists": ["<Guest>"]}, artists))
+
+    def test_weekend_itinerary_does_not_merge_different_sessions_or_blank_urls(self):
+        spin = shows.EVENTS[3]
+        saturday = dict(spin, id="saturday-ceremony", startDate="2026-10-24")
+        self.assertFalse(shows.matches(saturday, spin))
+        self.assertFalse(shows.matches({"id": "unrelated", "startDate": spin["startDate"], "city": spin["city"]}, spin))
+        self.save("supplemental-events.json", [saturday])
+        shows.apply(self.root, "2026-09-25")
+        self.assertEqual([saturday], self.read("supplemental-events.json"))
+
+    def test_assumed_artist_session_stays_explicit_and_is_not_schema_confirmed(self):
+        from finalize_seo_indexing import repair_event_schema
+        spin = shows.EVENTS[3]
+        artists = [{"name": "Bobby Real Montgomery"}]
+        line = builder.billing_links(spin, artists)
+        self.assertIn('<a href="/artists/bobby-real-montgomery/">Bobby Real Montgomery</a> <span>(session unconfirmed)</span>', line)
+        schema = builder.event_schema(spin)
+        self.assertNotIn("performer", schema)
+        self.assertIn("unconfirmed", schema["description"])
+        self.assertEqual("2026-10-23T19:30:00-04:00", schema["startDate"])
+        self.assertEqual("The Lawrence Hotel", schema["location"]["name"])
+        stale = {"performer": [{"name": "Bobby Real Montgomery"}, {"name": "Confirmed guest"}]}
+        self.assertTrue(repair_event_schema(stale, spin))
+        self.assertEqual([{"name": "Confirmed guest"}], stale["performer"])
+        self.assertFalse(repair_event_schema(stale, spin))
+        self.assertNotIn('(session unconfirmed)', builder.billing_links(shows.EVENTS[0], artists))
 
 
 if __name__ == "__main__":

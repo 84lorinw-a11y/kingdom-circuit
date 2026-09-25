@@ -56,7 +56,7 @@ jobs:
       - name: Preserve verified EGR and Bizzle event details and artwork
         run: python scripts/apply_egr_bizzle_updates.py
 
-      - name: Preserve submitted Man Of FAITH and Southside Joz shows
+      - name: Preserve submitted Man Of FAITH, Southside Joz and Bobby Real Montgomery shows
         run: python scripts/apply_man_of_faith_joz_shows.py
 
       - name: Persist curated catalog changes
