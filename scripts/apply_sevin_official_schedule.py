@@ -96,7 +96,9 @@ SEVIN_EVENTS = [
         "Dwelling Place Church", "125 N 2nd St", "08332", "America/New_York",
         "https://hogmob.com/millville/",
         "https://hogmob.com/wp-content/uploads/2026/08/Sevin-live-NJ.jpg",
-        "2026-09-25T00:00:00Z",
+        # Owner classifies this as a correction to the existing September 26
+        # listing. Retain its discovery age (archive official:5519f66ef9eac3632648).
+        "2026-08-09T00:00:00Z",
     ),
     confirmed_event(
         "sevin-live-nashville-2026-10-24", "2026-10-24", "Old Hickory", "TN",
