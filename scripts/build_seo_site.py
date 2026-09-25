@@ -300,8 +300,11 @@ def main():
             if not re.fullmatch(r"/event/[a-z0-9-]+/", str(legacy)):
                 raise RuntimeError(f"Unsafe legacy event path: {legacy}")
             if legacy == p: continue
-            redirect_body=f'<section class="page-hero hero-compact"><p class="eyebrow">Rescheduled event</p><h1>This event has a new date</h1><p class="hero-text">The listing moved to its December 18 date.</p><a class="primary-button" href="{p}">View the updated event</a></section><script>location.replace({json.dumps(p)});</script>'
-            write_page(legacy,page("Rescheduled event | The Kingdom Circuit","This event listing moved to its rescheduled date.",p,redirect_body))
+            notice=e.get("legacyEventNotice") or "The listing moved to its December 18 date."
+            heading="Updated event listing" if e.get("legacyEventNotice") else "This event has a new date"
+            label="Updated event" if e.get("legacyEventNotice") else "Rescheduled event"
+            redirect_body=f'<section class="page-hero hero-compact"><p class="eyebrow">{esc(label)}</p><h1>{esc(heading)}</h1><p class="hero-text">{esc(notice)}</p><a class="primary-button" href="{p}">View the updated event</a></section><script>location.replace({json.dumps(p)});</script>'
+            write_page(legacy,page(f"{label} | The Kingdom Circuit",notice,p,redirect_body))
 
     for a in (x for x in artists if x.get("enabled") is not False):
         n=a.get("name") or "Artist"; p=artist_path(n); urls.append(p); shows=[e for e in events if norm(n) in {norm(x) for x in e.get("artists",[])}]; crumbs=[("Artists","/artists/"),(n,p)]

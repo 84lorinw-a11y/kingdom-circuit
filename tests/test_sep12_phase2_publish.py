@@ -15,11 +15,11 @@ import finalize_seo_indexing as finalizer
 class September12Phase2PublishTests(unittest.TestCase):
     def test_future_sevin_records_do_not_publish_broken_ticket_offers(self):
         future = [event for event in sevin.SEVIN_EVENTS if event["startDate"] > "2026-09-12"]
-        self.assertEqual(4, len(future))
+        self.assertEqual({"2026-09-26", "2026-10-24"}, {event["startDate"] for event in future})
         for event in future:
             self.assertEqual("", event.get("ticketUrl"))
             self.assertEqual("needs_confirmation", event.get("ticketAvailability"))
-            self.assertEqual(sevin.HOGMOB_URL, event.get("officialUrl"))
+            self.assertIn(event.get("officialUrl"), {"https://hogmob.com/millville/", "https://hogmob.com/nashville/"})
 
     def test_phase2_repairs_truthx_sevin_and_mercury_without_cancellation(self):
         with tempfile.TemporaryDirectory() as tmp:

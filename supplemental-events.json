@@ -393,14 +393,14 @@
     "id": "cj-emulous-syatp-sierra-vista-2026"
   },
   {
-    "id": "sevin-live-kansas-city-2026-09-26",
+    "id": "sevin-live-millville-2026-09-26",
     "title": "Sevin Live Concert",
     "startDate": "2026-09-26",
-    "startTime": "20:00",
-    "venue": "Location TBD",
-    "address": "",
-    "city": "Kansas City",
-    "state": "MO",
+    "startTime": "19:00",
+    "venue": "Dwelling Place Church",
+    "address": "125 N 2nd St",
+    "city": "Millville",
+    "state": "NJ",
     "country": "US",
     "artists": [
       "Sevin"
@@ -409,24 +409,46 @@
     "eventType": "concert",
     "status": "scheduled",
     "ticketUrl": "",
-    "officialUrl": "https://hogmob.com/sevin-live-concert/",
+    "officialUrl": "https://hogmob.com/millville/",
     "image": "assets/artists/sevin.webp",
-    "price": "Donate what you can; VIP $110",
+    "price": "Free concert; see official details for VIP options",
     "sourceName": "HOG MOB official Sevin tour",
     "authority": "artist_calendar",
     "confidence": "high",
     "lineupExplicit": true,
     "sources": [
       {
-        "name": "HOG MOB official Sevin tour",
-        "url": "https://hogmob.com/sevin-live-concert/",
+        "name": "HOG MOB official city schedule",
+        "url": "https://hogmob.com/millville/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      },
+      {
+        "name": "HOG MOB official concert flyer",
+        "url": "https://hogmob.com/wp-content/uploads/2026/08/Sevin-live-NJ.jpg",
         "type": "manual_verified",
         "authority": "artist_calendar",
         "priority": 100
       }
     ],
     "ticketAvailability": "needs_confirmation",
-    "notes": "HOG MOB confirms the show date; current ticket availability needs confirmation."
+    "notes": "Official city concert flyer confirms a 7 PM concert and a separate 6 PM VIP meet-and-greet.",
+    "timezone": "America/New_York",
+    "postalCode": "08332",
+    "advertisedBilling": [
+      "Sevin",
+      "HOG MOB Dontae"
+    ],
+    "officialBill": [
+      "Sevin",
+      "HOG MOB Dontae"
+    ],
+    "supportActs": [
+      "HOG MOB Dontae"
+    ],
+    "firstSeen": "2026-09-25T00:00:00Z",
+    "auditVerified": "2026-09-25"
   },
   {
     "id": "manual:ticketspice:echo-nights-26-brookfield-2026",
@@ -1400,10 +1422,10 @@
     "id": "sevin-live-nashville-2026-10-24",
     "title": "Sevin Live Concert",
     "startDate": "2026-10-24",
-    "startTime": "20:00",
-    "venue": "Location TBD",
-    "address": "",
-    "city": "Nashville",
+    "startTime": "19:00",
+    "venue": "We Are Church Nashville",
+    "address": "1501 Hadley Ave",
+    "city": "Old Hickory",
     "state": "TN",
     "country": "US",
     "artists": [
@@ -1413,24 +1435,50 @@
     "eventType": "concert",
     "status": "scheduled",
     "ticketUrl": "",
-    "officialUrl": "https://hogmob.com/sevin-live-concert/",
+    "officialUrl": "https://hogmob.com/nashville/",
     "image": "assets/artists/sevin.webp",
-    "price": "Donate what you can; VIP $110",
+    "price": "Free concert; see official details for VIP options",
     "sourceName": "HOG MOB official Sevin tour",
     "authority": "artist_calendar",
     "confidence": "high",
     "lineupExplicit": true,
     "sources": [
       {
-        "name": "HOG MOB official Sevin tour",
-        "url": "https://hogmob.com/sevin-live-concert/",
+        "name": "HOG MOB official city schedule",
+        "url": "https://hogmob.com/nashville/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      },
+      {
+        "name": "HOG MOB official concert flyer",
+        "url": "https://hogmob.com/wp-content/uploads/2026/08/Sevin-live-TN.jpg",
         "type": "manual_verified",
         "authority": "artist_calendar",
         "priority": 100
       }
     ],
     "ticketAvailability": "needs_confirmation",
-    "notes": "HOG MOB confirms the show date; current ticket availability needs confirmation."
+    "notes": "Official city concert flyer confirms a 7 PM concert and a separate 6 PM VIP meet-and-greet.",
+    "timezone": "America/Chicago",
+    "postalCode": "37138",
+    "advertisedBilling": [
+      "Sevin",
+      "HOG MOB Dontae"
+    ],
+    "officialBill": [
+      "Sevin",
+      "HOG MOB Dontae"
+    ],
+    "supportActs": [
+      "HOG MOB Dontae"
+    ],
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "auditVerified": "2026-09-25",
+    "legacyEventPaths": [
+      "/event/sevin-live-concert-2026-10-24-nashville-76d537/"
+    ],
+    "legacyEventNotice": "The venue location has been updated to Old Hickory in the Nashville area. The concert date is unchanged."
   },
   {
     "id": "bandsintown:108144061",
@@ -2494,42 +2542,6 @@
     "auditVerified": "2026-09-13"
   },
   {
-    "id": "sevin-live-charlotte-2026-11-21",
-    "title": "Sevin Live Concert",
-    "startDate": "2026-11-21",
-    "startTime": "20:00",
-    "venue": "Location TBD",
-    "address": "",
-    "city": "Charlotte",
-    "state": "NC",
-    "country": "US",
-    "artists": [
-      "Sevin"
-    ],
-    "headliner": "Sevin",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "",
-    "officialUrl": "https://hogmob.com/sevin-live-concert/",
-    "image": "assets/artists/sevin.webp",
-    "price": "Donate what you can; VIP $110",
-    "sourceName": "HOG MOB official Sevin tour",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "HOG MOB official Sevin tour",
-        "url": "https://hogmob.com/sevin-live-concert/",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ],
-    "ticketAvailability": "needs_confirmation",
-    "notes": "HOG MOB confirms the show date; current ticket availability needs confirmation."
-  },
-  {
     "id": "supplemental:skema-boy-2026-11-21-denver-co",
     "title": "Zauntee: God Remembers Tour - with Skema Boy",
     "startDate": "2026-11-21",
@@ -2618,42 +2630,6 @@
     "imagePosition": "center",
     "imageOverride": true,
     "notes": "CJ Emulous's official calendar confirms Miles Minnick and CJ Emulous at Zion Ultra Lounge on December 5, 2026 at 7:00 PM."
-  },
-  {
-    "id": "sevin-live-sacramento-2026-12-05",
-    "title": "Sevin Live Concert",
-    "startDate": "2026-12-05",
-    "startTime": "20:00",
-    "venue": "Location TBD",
-    "address": "",
-    "city": "Sacramento",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "Sevin"
-    ],
-    "headliner": "Sevin",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "",
-    "officialUrl": "https://hogmob.com/sevin-live-concert/",
-    "image": "assets/artists/sevin.webp",
-    "price": "Donate what you can; VIP $110",
-    "sourceName": "HOG MOB official Sevin tour",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "HOG MOB official Sevin tour",
-        "url": "https://hogmob.com/sevin-live-concert/",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ],
-    "ticketAvailability": "needs_confirmation",
-    "notes": "HOG MOB confirms the show date; current ticket availability needs confirmation."
   },
   {
     "id": "bandsintown:1037809090",
