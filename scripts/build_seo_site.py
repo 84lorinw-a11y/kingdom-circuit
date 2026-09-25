@@ -85,6 +85,9 @@ def format_date(e):
     try:
         start = dt.date.fromisoformat(raw[:10])
         end = dt.date.fromisoformat(str(e.get("endDate") or raw)[:10])
+        # A timed evening ending at midnight is one concert, not two days.
+        if e.get("startTime") and e.get("endTime") == "00:00" and end == start + dt.timedelta(days=1):
+            end = start
         if end == start:
             text = start.strftime("%a, %b %-d, %Y")
         elif start.year == end.year and start.month == end.month:
@@ -150,11 +153,11 @@ def breadcrumb_schema(items):
     return {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":i+1,"name":n,"item":absolute(p)} for i,(n,p) in enumerate(items)]}
 
 def event_schema(e):
-    start=e.get("startDate","")+("T"+e["startTime"] if e.get("startTime") else "")
+    start=e.get("startDateTime") or (e.get("startDate","")+("T"+e["startTime"] if e.get("startTime") else ""))
     status={"cancelled":"https://schema.org/EventCancelled","canceled":"https://schema.org/EventCancelled","postponed":"https://schema.org/EventPostponed","rescheduled":"https://schema.org/EventRescheduled"}.get(norm(e.get("status")),"https://schema.org/EventScheduled")
     billing=e.get("advertisedBilling") or e.get("artists",[])
     data={"@context":"https://schema.org","@type":("MusicEvent" if norm(e.get("eventType")) in {"concert","festival"} else "Event"),"name":e.get("title") or "Christian hip-hop event","startDate":start,"eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":status,"url":absolute(event_path(e)),"image":[image_url(e.get("image"))],"location":{"@type":"Place","name":e.get("venue") or "Venue to be announced","address":{"@type":"PostalAddress","streetAddress":e.get("address") or "","addressLocality":e.get("city") or "","addressRegion":e.get("state") or "","postalCode":e.get("postalCode") or "","addressCountry":"US"}},"performer":[{"@type":"MusicGroup","name":n} for n in billing]}
-    if e.get("endDate"): data["endDate"]=e["endDate"]
+    if e.get("endDateTime") or e.get("endDate"): data["endDate"]=e.get("endDateTime") or e["endDate"]
     if e.get("previousStartDate") and status == "https://schema.org/EventRescheduled": data["previousStartDate"]=e["previousStartDate"]
     url=e.get("officialUrl") or e.get("ticketUrl")
     if url and status == "https://schema.org/EventScheduled": data["offers"]={"@type":"Offer","url":url}

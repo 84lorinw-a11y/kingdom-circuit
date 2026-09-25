@@ -643,7 +643,9 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/egrxofficial/",
     "spotifyProfile": "https://open.spotify.com/artist/4EJIkbig1thbV3C3B68c56",
     "youtubeProfile": "https://www.youtube.com/@EGRxOFFICIAL",
-    "officialImageSource": "https://www.youtube.com/@EGRxOFFICIAL",
+    "imageUrl": "assets/artists/egr-spotify-primary.jpg",
+    "imagePosition": "50% 0%",
+    "officialImageSource": "https://open.spotify.com/artist/4EJIkbig1thbV3C3B68c56",
     "sourceRegistryVerified": true
   },
   "mike malagies": {
