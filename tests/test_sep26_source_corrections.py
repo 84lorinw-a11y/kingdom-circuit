@@ -42,7 +42,7 @@ class SourceCorrectionTests(unittest.TestCase):
         cleveland = [row for row in events if repair.identity(row) == repair.CLEVELAND_ID]
         self.assertEqual(1, len(cleveland))
         self.assertEqual("19:30", cleveland[0]["startTime"])
-        self.assertEqual(["KB", "Brenno", "Mike Teezy", "Porsha Love", "Taylor Wells", "Renzoe", "Eli Williams (DJ)"], cleveland[0]["advertisedBilling"])
+        self.assertEqual(["KB", "Brenno", "Mike Teezy", "Porsha Love", "Taylor Wells", "Renzoe", "DJ Eli Williams"], cleveland[0]["advertisedBilling"])
         self.assertIn("Mike Teezy", cleveland[0]["artists"])
         self.assertNotIn("Renzoe", cleveland[0]["artists"])
         self.assertEqual("assets/events/beyond-the-walls-cleveland-2026-11-07.jpg", cleveland[0]["image"])
