@@ -59,21 +59,27 @@ TRIBE_ARTISTS = [
 
 NEW_EVENTS = {
     "mike-malagies-florida-takeover-miami-2026": {
-        "title": "Mike Malagies Florida Takeover (Miami)", "startDate": "2026-10-16",
-        "startTime": "18:30", "doorsTime": "18:00", "timezone": "America/New_York",
+        "title": "Mike Malagies — It’s A God Night (Miami)", "startDate": "2026-10-16",
+        "startTime": "19:00", "doorsTime": "18:30", "timezone": "America/New_York",
+        "startDateTime": "2026-10-16T19:00:00-04:00",
+        "advertisedBilling": ["Mike Malagies", "DJ JBEZ"],
+        "firstSeen": "2026-09-13T14:21:37Z",
+        "legacyEventPaths": ["/event/mike-malagies-florida-takeover-miami-2026-10-16-north-miami-6a5e6f/"],
+        "legacyEventNotice": "This concert is now listed as Mike Malagies — It’s A God Night (Miami), starting at 7:00 PM on October 16.",
+        "notes": "TicketSource describes VIP 6:00–6:30 PM, doors 6:30 PM, concert starting at 7:00 PM with DJ JBEZ, and Mike Malagies 7:30–9:00 PM. The listing header's 6:30 PM is doors.",
         "venue": "Black Box Media Miami", "address": "12355 NE 13th Ave Unit #403-404",
         "city": "North Miami", "state": "FL", "country": "US", "artists": ["Mike Malagies"],
         "headliner": "Mike Malagies", "eventType": "concert", "status": "scheduled",
-        "ticketUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-florida-takeover-miami/e-vgxqxl",
-        "officialUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-florida-takeover-miami/e-vgxqxl",
+        "ticketUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
+        "officialUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
         "image": "https://static.wixstatic.com/media/61a78b_7545031064f049a6843e4c7d0666886f~mv2.jpg/v1/fill/w_327%2Ch_491%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/61a78b_7545031064f049a6843e4c7d0666886f~mv2.jpg",
         "imageType": "artist", "imagePosition": "50% 25%", "imageOverride": True,
         "lineupExplicit": True, "authority": "venue_ticket", "confidence": "high",
         "sourceName": "TicketSource exact event listing",
         "sources": [
-            source("TicketSource exact event listing", "https://www.ticketsource.com/the-sound-system/mike-malagies-florida-takeover-miami/e-vgxqxl", "venue_ticket"),
+            source("TicketSource exact event listing", "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl", "venue_ticket"),
             source("Black Box Media Miami official venue", "https://www.blackboxstudiosmiami.com/event-list", "venue"),
-        ], "auditVerified": AUDIT_DATE,
+        ], "auditVerified": "2026-09-26",
     },
     "rock-the-universe-orlando-2027": {
         "title": "Rock the Universe 2027", "startDate": "2027-01-22", "endDate": "2027-01-23",

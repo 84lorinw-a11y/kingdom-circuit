@@ -28,9 +28,9 @@ SOCIALS: dict[str, dict[str, str]] = {
 }
 
 BEYOND_THE_WALLS = {
-    "id":"supplemental:beyond-the-walls-3-brenno-2026","title":"Beyond The Walls 3","startDate":"2026-11-07","startTime":"19:30","timezone":"America/New_York",
+    "id":"supplemental:beyond-the-walls-3-brenno-2026","title":"Beyond The Walls 3","startDate":"2026-11-07","startTime":"20:00","doorsTime":"19:30","timezone":"America/New_York",
     "venue":"The Cambridge Room at House of Blues Cleveland","address":"308 Euclid Ave","city":"Cleveland","state":"OH","country":"US",
-    "artists":["KB","Brenno","Porsha Love"],"headliner":"KB","eventType":"concert","status":"onsale",
+    "artists":["KB","Brenno","Porsha Love"],"advertisedBilling":["KB","Brenno","Taylor Wells","Porsha Love"],"headliner":"KB","eventType":"concert","status":"onsale",
     "ticketUrl":"https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
     "officialUrl":"https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A","image":"","price":"",
     "sourceName":"Ticketmaster / Brenno official upcoming shows","authority":"venue_ticket","confidence":"high","lineupExplicit":True,

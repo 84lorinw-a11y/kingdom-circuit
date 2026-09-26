@@ -59,6 +59,9 @@ jobs:
       - name: Preserve submitted Man Of FAITH, Southside Joz and Bobby Real Montgomery shows
         run: python scripts/apply_man_of_faith_joz_shows.py
 
+      - name: Preserve verified September 26 concert source corrections
+        run: python scripts/apply_sep26_source_corrections.py
+
       - name: Persist curated catalog changes
         shell: bash
         run: |

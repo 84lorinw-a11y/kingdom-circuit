@@ -16,7 +16,7 @@ JIMMY_MIAMI_OLD_PATH = (
     "/event/jimmy-rock-s-rave-and-worship-the-worship-wawa-"
     "2026-09-18-miami-17834a/"
 )
-FORCE_OFFICIAL_URL_IDS = {"jimmy-rock-worship-wawa-miami-2026"}
+FORCE_OFFICIAL_URL_IDS = {"jimmy-rock-worship-wawa-miami-2026", "oasis-ministry-qbelv-new-york-2026"}
 
 
 def load(p): return json.loads(Path(p).read_text(encoding="utf-8"))
@@ -66,11 +66,19 @@ UPSERTS = {
         notes="Free outdoor pre-show block party and main-event overflow begins at 5:00 PM. Indoor doors open at 5:30 PM and the indoor ticket listing is sold out. JIMMY ROCK is billed for the after party."
     ),
     "oasis-ministry-qbelv-new-york-2026": E(
-        "Oasis Ministry — QBELV Tour 2026", "2026-09-26", "New York", "NY", ["Alex Zurdo"],
-        "https://unitedpalace.boletosexpress.com/oasis-ministry-s/88341/", "United Palace / Boletos Express official listing",
-        venue="United Palace", address="4140 Broadway", time="20:00", doors="18:30", tz="America/New_York",
-        ticket="https://unitedpalace.boletosexpress.com/oasis-ministry-s/88341/", authority="venue_ticket",
-        advertised=["Oasis Ministry", "Lisney De Font", "Alex Zurdo"]
+        "Oasis Ministry — QBELV Tour 2026", "2026-09-27", "New York", "NY", ["Alex Zurdo"],
+        "https://www.boletosexpress.com/oasis-ministry-s/88341/", "United Palace / Boletos Express official listing",
+        venue="United Palace", address="4140 Broadway", time="19:00", doors="17:30", tz="America/New_York",
+        ticket="https://www.boletosexpress.com/oasis-ministry-s/88341/", authority="venue_ticket",
+        advertised=["Oasis Ministry", "Lisney De Font", "Alex Zurdo"],
+        image="assets/events/oasis-ministry-qbelv-new-york-2026-09-27.jpg", image_type="event_artwork", image_override=True,
+        imageSource="Boletos Express updated official event poster",
+        imageSourceUrl="https://www.boletosexpress.com/events/883/88341.jpg?v=1790378696",
+        status="rescheduled", previousStartDate="2026-09-26", startDateTime="2026-09-27T19:00:00-04:00",
+        firstSeen="2026-09-13T18:39:20Z", auditVerified="2026-09-26", postalCode="10033",
+        legacyEventPaths=["/event/oasis-ministry-qbelv-tour-2026-2026-09-26-new-york-d3b318/"],
+        legacyEventNotice="This concert has moved to Sunday, September 27, 2026 at 7:00 PM at United Palace.",
+        notes="The current NEW DATE/TIME header and revised September 27 poster confirm September 27 at 7:00 PM. Older text lower on the ticket page still describes the superseded schedule."
     ),
     "open-skies-topeka-2026": E(
         "Open Skies — Bethel Music with KB", "2026-09-26", "Topeka", "KS", ["KB"],

@@ -31,12 +31,14 @@ class September12Phase2Repairs(unittest.TestCase):
             event = next(item for item in all_events if item.get("title") == title)
             self.assertIn(expected, self.seo.format_date(event))
 
-    def test_mike_teezy_uses_exact_apple_time_without_utc_rollover(self):
-        event = next(item for item in self.events if item.get("id") == "official:4e2fc5c7c02ab1d34b9e")
-        self.assertEqual("18:00", event.get("startTime"))
+    def test_cleveland_uses_current_venue_time_without_utc_rollover(self):
+        # September 26 venue review supersedes the earlier Apple Music entry.
+        self.assertFalse(any(item.get("id") == "official:4e2fc5c7c02ab1d34b9e" for item in self.events))
+        event = next(item for item in self.events if item.get("id") == "ticketmaster:vv1AAZk3FGkdmpCG1")
+        self.assertEqual("20:00", event.get("startTime"))
         self.assertEqual("America/New_York", event.get("timezone"))
         self.assertNotIn("endDate", event)
-        self.assertIn("ce.01a1c61a-49a9-4e19-b629-46bac43b4970", event.get("officialUrl", ""))
+        self.assertIn("05006488EE58E30A", event.get("officialUrl", ""))
 
     def test_confirmed_zauntee_duplicates_are_retired(self):
         merged = {item.get("id"): item for item in self.supplemental if item.get("status") == "merged"}

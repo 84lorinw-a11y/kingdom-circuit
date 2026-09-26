@@ -69,6 +69,12 @@ def canonical_from(text: str, url: str) -> str:
     return SITE_ORIGIN.rstrip("/") + "/" + url.lstrip("/")
 
 
+def concert_start_only(text: str) -> str:
+    """Keep the public Date/start row; omit doors rows from older overlays."""
+    return re.sub(r'<div\b[^>]*>\s*<dt>Doors(?: open)?</dt>\s*<dd>.*?</dd>\s*</div>',
+                  '', text, flags=re.I | re.S)
+
+
 def event_card_count(text: str) -> int:
     return len(re.findall(r"\bdata-event-card\b", text, flags=re.I))
 
@@ -174,7 +180,7 @@ def apply(root: pathlib.Path) -> dict:
         should_index, reason = classify(url, text)
         reasons[reason] += 1
         directive = "index,follow" if should_index else "noindex,follow"
-        patched = set_robots(text, directive)
+        patched = concert_start_only(set_robots(text, directive))
         if patched != text:
             page.write_text(patched, encoding="utf-8")
             text = patched

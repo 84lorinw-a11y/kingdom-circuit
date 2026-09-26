@@ -37,7 +37,7 @@ class September13ContentRepairTests(unittest.TestCase):
 
     def test_requested_events_are_published(self):
         mike = self.event("mike-malagies-florida-takeover-miami-2026")
-        self.assertEqual((mike["startDate"], mike["startTime"], mike["city"]), ("2026-10-16", "18:30", "North Miami"))
+        self.assertEqual((mike["startDate"], mike["startTime"], mike["city"]), ("2026-10-16", "19:00", "North Miami"))
         universal = self.event("rock-the-universe-orlando-2027")
         self.assertEqual((universal["startDate"], universal["endDate"]), ("2027-01-22", "2027-01-23"))
         self.assertEqual(universal["performerDays"]["2027-01-23"], ["gio.", "Torey D'Shaun"])
