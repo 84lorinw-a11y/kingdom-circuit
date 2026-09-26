@@ -1,0 +1,78 @@
+{
+  "runId": "36262654890",
+  "checks": [
+    {
+      "name": "desktop events render",
+      "status": "pass",
+      "detail": "cards=113"
+    },
+    {
+      "name": "desktop artist dropdown populated",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "desktop state dropdown populated",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "desktop Hulvey search works",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "desktop clear filters restores calendar",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "name": "desktop browser sequence",
+      "status": "fail",
+      "detail": "NoSuchElementException()"
+    },
+    {
+      "name": "Android emulation uses 390px viewport",
+      "status": "pass",
+      "detail": "{'body': 390, 'doc': 390, 'inner': 390}"
+    },
+    {
+      "name": "Android has no horizontal overflow",
+      "status": "pass",
+      "detail": "{'body': 390, 'doc': 390, 'inner': 390}"
+    },
+    {
+      "name": "Android event card fits viewport",
+      "status": "pass",
+      "detail": "{'left': 16, 'right': 374, 'width': 358}"
+    },
+    {
+      "name": "mobile browser sequence",
+      "status": "fail",
+      "detail": "NoSuchElementException()"
+    },
+    {
+      "name": "360px viewport width applied",
+      "status": "pass",
+      "detail": "{'body': 360, 'doc': 360, 'inner': 360}"
+    },
+    {
+      "name": "360px has no horizontal overflow",
+      "status": "pass",
+      "detail": "{'body': 360, 'doc': 360, 'inner': 360}"
+    },
+    {
+      "name": "768px viewport width applied",
+      "status": "pass",
+      "detail": "{'body': 768, 'doc': 768, 'inner': 768}"
+    },
+    {
+      "name": "768px has no horizontal overflow",
+      "status": "pass",
+      "detail": "{'body': 768, 'doc': 768, 'inner': 768}"
+    }
+  ],
+  "passed": 12,
+  "failed": 2,
+  "overall": "fail"
+}
