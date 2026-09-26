@@ -23,6 +23,7 @@ OASIS_ID = "oasis-ministry-qbelv-new-york-2026"
 MIAMI_ID = "mike-malagies-florida-takeover-miami-2026"
 CLEVELAND_ID = "ticketmaster:vv1AAZk3FGkdmpCG1"
 CLEVELAND_URL = "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A"
+CLEVELAND_POST = "https://www.instagram.com/p/DbwTgsNRsyI/"
 RETIRED_IDS = {"official:4e2fc5c7c02ab1d34b9e", "supplemental:beyond-the-walls-3-brenno-2026", "bandsintown:108631622"}
 RETIRED_URLS = {
     "https://music.apple.com/us/concerts/ce.01a1c61a-49a9-4e19-b629-46bac43b4970",
@@ -34,23 +35,28 @@ CLEVELAND = {
     "startDateTime": "2026-11-07T20:00:00-05:00", "timezone": "America/New_York",
     "venue": "The Cambridge Room at House of Blues Cleveland", "address": "308 Euclid Ave",
     "city": "Cleveland", "state": "OH", "country": "US",
-    "artists": ["KB", "Brenno", "Porsha Love"], "headliner": "KB",
-    "advertisedBilling": ["KB", "Brenno", "Taylor Wells", "Porsha Love"],
-    "officialBill": ["KB", "Brenno", "Taylor Wells", "Porsha Love"],
+    "artists": ["KB", "Brenno", "Mike Teezy", "Porsha Love"], "headliner": "KB",
+    "advertisedBilling": ["KB", "Brenno", "Mike Teezy", "Porsha Love", "Taylor Wells", "Renzoe"],
+    "officialBill": ["KB", "Brenno", "Mike Teezy", "Porsha Love", "Taylor Wells", "Renzoe"],
     "eventType": "concert", "status": "scheduled", "lineupExplicit": True,
     "officialUrl": CLEVELAND_URL, "ticketUrl": CLEVELAND_URL,
-    "image": "https://s1.ticketm.net/dam/a/1cb/834c7b9b-5176-4d5c-b69c-d8cda9cd91cb_1753211_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-    "imageType": "artist", "imagePosition": "center",
+    "image": "assets/events/beyond-the-walls-cleveland-2026-11-07.jpg",
+    "imageType": "event_artwork", "imagePosition": "center", "imageOverride": True,
+    "imageSource": "Promoter's official Beyond The Walls Cleveland flyer",
+    "imageSourceUrl": CLEVELAND_POST,
     "firstSeen": "2026-07-30T03:46:47Z", "auditVerified": "2026-09-26",
     "confidence": "high", "authority": "venue_ticket", "sourceName": "Ticketmaster / House of Blues Cleveland",
     "sources": [{"name": "Ticketmaster / House of Blues Cleveland", "url": CLEVELAND_URL,
-                 "type": "manual_verified", "authority": "venue_ticket", "priority": 112}],
+                 "type": "manual_verified", "authority": "venue_ticket", "priority": 112},
+                {"name": "Beyond The Walls promoter's official flyer", "url": CLEVELAND_POST,
+                 "type": "manual_verified", "authority": "organizer", "priority": 115}],
     "legacyEventPaths": ["/event/beyond-the-walls-2026-11-07-cleveland-91b8a7/"],
     "legacyEventNotice": "The Cleveland listings have been combined using the venue’s current concert details. Music starts at 8:00 PM on November 7.",
     "mergedFromIds": sorted(RETIRED_IDS),
-    "notes": "Ticketmaster More Info confirms doors 7:30 PM and music 8:00 PM. Its four-name lineup is KB, Brenno, Taylor Wells and Porsha Love. Mike Teezy's Apple Music/Bandsintown entry appears to describe this same event but is not corroborated by the current venue bill; participation remains unresolved, not canceled.",
+    "notes": "Promoter submission and the official Eric Stephens / Beyond The Walls Instagram flyer confirm KB, Brenno, Mike Teezy, Porsha Love, Taylor Wells and Renzoe. This resolves the earlier incomplete Ticketmaster bill. Flyer explicitly dates November 7, 2026 and labels 6 PM VIP entry / 7:30 PM GA doors; Ticketmaster confirms music at 8 PM. Retain its official title Beyond The Walls 3 rather than the submission's conflicting 2027 title. Taylor Wells and Renzoe remain visible unlinked billing because they are outside the curated roster.",
     "sourceConflicts": [{"url": url, "reportedArtist": "Mike Teezy", "reportedStartTime": "18:00",
-                         "resolution": "Hold separate listing and artist association pending confirmation from the venue or organizer."}
+                         "resolution": "Promoter submission and official flyer confirm Mike Teezy on the canonical event. Keep the duplicate merged; 6 PM is VIP entry on the flyer, and Ticketmaster confirms the 8 PM concert start.",
+                         "resolvedBy": CLEVELAND_POST, "resolvedDate": "2026-09-26"}
                         for url in sorted(RETIRED_URLS)],
 }
 
@@ -122,7 +128,7 @@ def apply(root: Path = ROOT, today: str | None = None) -> None:
                 for field in ("endDate", "endTime", "endDateTime"):
                     row.pop(field, None)
             else:
-                row.update(status="merged", mergedIntoId=canonical["id"], mergeReason="Consolidated with current venue listing; conflicting artist association remains unresolved.")
+                row.update(status="merged", mergedIntoId=canonical["id"], mergeReason="Consolidated with the canonical Beyond The Walls 3 listing; full lineup confirmed by promoter.")
 
     # Keep this event-specific artwork through the artist calendar refresh.
     # Hulvey's other shows continue to use their existing images.

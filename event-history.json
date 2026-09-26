@@ -20980,7 +20980,7 @@
         ],
         "headliner": "Mike Teezy",
         "eventType": "concert",
-        "status": "scheduled",
+        "status": "merged",
         "ticketUrl": "https://www.bandsintown.com/t/108631622?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
         "officialUrl": "https://www.bandsintown.com/e/108631622?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
         "image": "https://www.even.biz/_next/image?q=75&url=https%3A%2F%2Fdt7m7kl3brv3f.cloudfront.net%2Fimages%2Fzlirs9n3bpjitnofexx4m095koo3&w=828",
@@ -21000,7 +21000,9 @@
         "bandsintownArtistId": "4131763",
         "bandsintownResolvedName": "Mike Teezy",
         "bandsintownIdentity": "exact_name_or_alias",
-        "trackedArtist": "Mike Teezy"
+        "trackedArtist": "Mike Teezy",
+        "mergedIntoId": "ticketmaster:vv1AAZk3FGkdmpCG1",
+        "mergeReason": "Consolidated with the canonical Beyond The Walls 3 listing; full lineup confirmed by promoter."
       }
     },
     {
@@ -21030,7 +21032,7 @@
         ],
         "headliner": "Mike Teezy",
         "eventType": "concert",
-        "status": "scheduled",
+        "status": "merged",
         "ticketUrl": "https://music.apple.com/us/concerts/artist/517774271",
         "officialUrl": "https://music.apple.com/us/concerts/ce.01a1c61a-49a9-4e19-b629-46bac43b4970",
         "image": "https://www.even.biz/_next/image?q=75&url=https%3A%2F%2Fdt7m7kl3brv3f.cloudfront.net%2Fimages%2Fzlirs9n3bpjitnofexx4m095koo3&w=828",
@@ -21059,7 +21061,9 @@
         "verifiedVersion": 9,
         "firstSeen": "2026-08-21T12:04:12Z",
         "notes": "Apple Music displays 6:00 PM on November 7. The former 11:00 PM value and November 8 end date resulted from preserving UTC as local time.",
-        "auditVerified": "2026-09-12"
+        "auditVerified": "2026-09-12",
+        "mergedIntoId": "ticketmaster:vv1AAZk3FGkdmpCG1",
+        "mergeReason": "Consolidated with the canonical Beyond The Walls 3 listing; full lineup confirmed by promoter."
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-20T14:03:50Z",
@@ -21361,7 +21365,7 @@
         ],
         "headliner": "KB",
         "eventType": "concert",
-        "status": "onsale",
+        "status": "merged",
         "ticketUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
         "officialUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
         "image": "",
@@ -21385,7 +21389,9 @@
             "authority": "artist_calendar",
             "priority": 100
           }
-        ]
+        ],
+        "mergedIntoId": "ticketmaster:vv1AAZk3FGkdmpCG1",
+        "mergeReason": "Consolidated with the canonical Beyond The Walls 3 listing; full lineup confirmed by promoter."
       }
     },
     {
@@ -21413,6 +21419,7 @@
         "artists": [
           "KB",
           "Brenno",
+          "Mike Teezy",
           "Porsha Love"
         ],
         "headliner": "KB",
@@ -21420,7 +21427,7 @@
         "status": "scheduled",
         "ticketUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
         "officialUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
-        "image": "https://s1.ticketm.net/dam/a/1cb/834c7b9b-5176-4d5c-b69c-d8cda9cd91cb_1753211_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+        "image": "assets/events/beyond-the-walls-cleveland-2026-11-07.jpg",
         "price": "",
         "sourceName": "Ticketmaster / House of Blues Cleveland",
         "sources": [
@@ -21432,6 +21439,13 @@
             "priority": 112
           },
           {
+            "name": "Beyond The Walls promoter's official flyer",
+            "url": "https://www.instagram.com/p/DbwTgsNRsyI/",
+            "type": "manual_verified",
+            "authority": "organizer",
+            "priority": 115
+          },
+          {
             "name": "Ticketmaster",
             "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
             "type": "ticketmaster",
@@ -21441,7 +21455,7 @@
         ],
         "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
-        "imageType": "artist",
+        "imageType": "event_artwork",
         "imagePosition": "center",
         "verifiedVersion": 9,
         "firstSeen": "2026-07-30T03:46:47Z",
@@ -21450,14 +21464,18 @@
         "advertisedBilling": [
           "KB",
           "Brenno",
+          "Mike Teezy",
+          "Porsha Love",
           "Taylor Wells",
-          "Porsha Love"
+          "Renzoe"
         ],
         "officialBill": [
           "KB",
           "Brenno",
+          "Mike Teezy",
+          "Porsha Love",
           "Taylor Wells",
-          "Porsha Love"
+          "Renzoe"
         ],
         "lineupExplicit": true,
         "auditVerified": "2026-09-26",
@@ -21471,21 +21489,28 @@
           "official:4e2fc5c7c02ab1d34b9e",
           "supplemental:beyond-the-walls-3-brenno-2026"
         ],
-        "notes": "Ticketmaster More Info confirms doors 7:30 PM and music 8:00 PM. Its four-name lineup is KB, Brenno, Taylor Wells and Porsha Love. Mike Teezy's Apple Music/Bandsintown entry appears to describe this same event but is not corroborated by the current venue bill; participation remains unresolved, not canceled.",
+        "notes": "Promoter submission and the official Eric Stephens / Beyond The Walls Instagram flyer confirm KB, Brenno, Mike Teezy, Porsha Love, Taylor Wells and Renzoe. This resolves the earlier incomplete Ticketmaster bill. Flyer explicitly dates November 7, 2026 and labels 6 PM VIP entry / 7:30 PM GA doors; Ticketmaster confirms music at 8 PM. Retain its official title Beyond The Walls 3 rather than the submission's conflicting 2027 title. Taylor Wells and Renzoe remain visible unlinked billing because they are outside the curated roster.",
         "sourceConflicts": [
           {
             "url": "https://music.apple.com/us/concerts/ce.01a1c61a-49a9-4e19-b629-46bac43b4970",
             "reportedArtist": "Mike Teezy",
             "reportedStartTime": "18:00",
-            "resolution": "Hold separate listing and artist association pending confirmation from the venue or organizer."
+            "resolution": "Promoter submission and official flyer confirm Mike Teezy on the canonical event. Keep the duplicate merged; 6 PM is VIP entry on the flyer, and Ticketmaster confirms the 8 PM concert start.",
+            "resolvedBy": "https://www.instagram.com/p/DbwTgsNRsyI/",
+            "resolvedDate": "2026-09-26"
           },
           {
             "url": "https://www.bandsintown.com/e/108631622",
             "reportedArtist": "Mike Teezy",
             "reportedStartTime": "18:00",
-            "resolution": "Hold separate listing and artist association pending confirmation from the venue or organizer."
+            "resolution": "Promoter submission and official flyer confirm Mike Teezy on the canonical event. Keep the duplicate merged; 6 PM is VIP entry on the flyer, and Ticketmaster confirms the 8 PM concert start.",
+            "resolvedBy": "https://www.instagram.com/p/DbwTgsNRsyI/",
+            "resolvedDate": "2026-09-26"
           }
-        ]
+        ],
+        "imageOverride": true,
+        "imageSource": "Promoter's official Beyond The Walls Cleveland flyer",
+        "imageSourceUrl": "https://www.instagram.com/p/DbwTgsNRsyI/"
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-30T03:46:47Z",

@@ -19,7 +19,10 @@ class SourceCorrectionTests(unittest.TestCase):
         self.other = {"id": "other-mike-teezy", "artists": ["Mike Teezy"], "startDate": "2026-11-07", "venue": "Another venue"}
         self.old = {"id": "official:4e2fc5c7c02ab1d34b9e", "artists": ["Mike Teezy"], "startTime": "18:00"}
         self.oasis = {"id": "manual:" + repair.OASIS_ID, "startDate": "2026-09-26", "startTime": "20:00", "endDate": "2026-09-26", "firstSeen": "2026-09-01T00:00:00Z"}
-        self.save("events.json", [self.other, self.old, self.oasis, dict(repair.CLEVELAND, startTime="19:30")])
+        self.save("events.json", [self.other, self.old, self.oasis, dict(
+            repair.CLEVELAND, startTime="19:30", artists=["KB", "Brenno", "Porsha Love"],
+            advertisedBilling=["KB", "Brenno", "Taylor Wells", "Porsha Love"],
+            image="assets/artists/kb.webp", imageType="artist", imageOverride=False)])
         self.save("supplemental-events.json", [{"id": "supplemental:beyond-the-walls-3-brenno-2026"}])
         self.save("config/manual-events.json", [])
         self.save("event-history.json", {"summary": {"total": 2}, "events": [
@@ -39,8 +42,14 @@ class SourceCorrectionTests(unittest.TestCase):
         cleveland = [row for row in events if repair.identity(row) == repair.CLEVELAND_ID]
         self.assertEqual(1, len(cleveland))
         self.assertEqual("20:00", cleveland[0]["startTime"])
-        self.assertEqual(["KB", "Brenno", "Taylor Wells", "Porsha Love"], cleveland[0]["advertisedBilling"])
-        self.assertNotIn("Mike Teezy", cleveland[0]["artists"])
+        self.assertEqual(["KB", "Brenno", "Mike Teezy", "Porsha Love", "Taylor Wells", "Renzoe"], cleveland[0]["advertisedBilling"])
+        self.assertIn("Mike Teezy", cleveland[0]["artists"])
+        self.assertNotIn("Renzoe", cleveland[0]["artists"])
+        self.assertEqual("assets/events/beyond-the-walls-cleveland-2026-11-07.jpg", cleveland[0]["image"])
+        self.assertEqual("event_artwork", cleveland[0]["imageType"])
+        self.assertTrue(cleveland[0]["imageOverride"])
+        self.assertEqual("2026-07-30T03:46:47Z", cleveland[0]["firstSeen"])
+        self.assertTrue(all(conflict.get("resolvedBy") for conflict in cleveland[0]["sourceConflicts"]))
         self.assertEqual([], self.read("supplemental-events.json"))
         history = self.read("event-history.json")
         self.assertEqual("merged", history["events"][0]["event"]["status"])

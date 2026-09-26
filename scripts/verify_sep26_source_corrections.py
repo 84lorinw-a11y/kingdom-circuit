@@ -39,8 +39,12 @@ def verify(site: Path) -> None:
             assert schema["eventStatus"].endswith("EventRescheduled")
             assert schema["previousStartDate"].startswith("2026-09-26")
         if identity == repair.CLEVELAND_ID:
-            assert "Mike Teezy" not in billing
-            assert href not in (site / "artists/mike-teezy/index.html").read_text()
+            assert uses_image(detail, site, wanted["image"]) and 'event-artwork' in detail
+            assert 'href="/artists/mike-teezy/"' in billing
+            assert href in (site / "artists/mike-teezy/index.html").read_text()
+            assert all(name in json.dumps(schema.get("performer", [])) for name in wanted["advertisedBilling"])
+            for name in ("taylor-wells", "renzoe"):
+                assert f'href="/artists/{name}/"' not in billing
         assert href not in (site / "new-shows/index.html").read_text(), (identity, "correction listed as new")
     for page in site.rglob("*.html"):
         assert not re.search(r'<dt>Doors(?: open)?</dt>', page.read_text(), re.I), page
