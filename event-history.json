@@ -14567,7 +14567,7 @@
         "status": "scheduled",
         "ticketUrl": "https://brushfire.com/jakeragermusic/letthechurchsingtour/629466/details",
         "officialUrl": "https://brushfire.com/jakeragermusic/letthechurchsingtour/629466/details",
-        "image": "https://static.wixstatic.com/media/61a78b_7545031064f049a6843e4c7d0666886f~mv2.jpg/v1/fill/w_327%2Ch_491%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/61a78b_7545031064f049a6843e4c7d0666886f~mv2.jpg",
+        "image": "assets/events/let-the-church-sing-dunedin-2026-10-02.jpg",
         "price": "",
         "sourceName": "Official Brushfire ticket listing",
         "sources": [
@@ -14581,10 +14581,14 @@
         ],
         "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
-        "imageType": "artist",
-        "imagePosition": "50% 30%",
+        "imageType": "event_artwork",
+        "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-08-09T00:00:00Z"
+        "firstSeen": "2026-08-09T00:00:00Z",
+        "imageOverride": true,
+        "imageSourceUrl": "https://brushfire.com/jakeragermusic/letthechurchsingtour/629466/details",
+        "imageSource": "Official Brushfire Dunedin concert flyer",
+        "auditVerified": "2026-09-26"
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-06T12:54:33Z",
@@ -15303,7 +15307,7 @@
       "lastGitObservedAt": "2026-09-26T18:23:39Z",
       "event": {
         "id": "bandsintown:1040305060",
-        "title": "Hulvey at Bridgestone Arena",
+        "title": "57th Annual GMA Dove Awards — featuring Hulvey",
         "startDate": "2026-10-06",
         "startTime": "18:30",
         "timezone": "",
@@ -15342,7 +15346,11 @@
         "imagePosition": "center",
         "imageOverride": true,
         "imageSource": "Bridgestone Arena official 57th Annual GMA Dove Awards artwork",
-        "imageSourceUrl": "https://www.bridgestonearena.com/events/detail/57th-annual-gma-dove-awards"
+        "imageSourceUrl": "https://www.bridgestonearena.com/events/detail/57th-annual-gma-dove-awards",
+        "legacyEventPaths": [
+          "/event/hulvey-at-bridgestone-arena-2026-10-06-nashville-090597/"
+        ],
+        "auditVerified": "2026-09-26"
       }
     },
     {
@@ -15755,7 +15763,8 @@
           "Dante' Pride",
           "Anike",
           "Y Shadey",
-          "180MINDSET"
+          "180MINDSET",
+          "Kijan Boone"
         ],
         "headliner": "Zauntee",
         "eventType": "festival",
@@ -15767,12 +15776,65 @@
         "imageOverride": true,
         "imageSource": "User-provided official Ark of Worship festival flyer",
         "imageSourceUrl": "https://www.arkofworship.com/",
-        "auditVerified": "2026-09-23",
+        "auditVerified": "2026-09-26",
         "price": "$59+ single-day / $99+ 2-day",
         "status": "scheduled",
         "lineupExplicit": true,
         "authority": "official_festival",
-        "sourceName": "Ark of Worship official festival lineup"
+        "sourceName": "Ark of Worship official festival lineup",
+        "advertisedBilling": [
+          "Jekalyn Carr",
+          "Kierra Sheard",
+          "Travis Greene",
+          "Charles Weems",
+          "Kijan Boone",
+          "Zauntee",
+          "Scootie Wop",
+          "Dante' Pride",
+          "Anike",
+          "Ahjah",
+          "Y Shadey",
+          "Kefia Rollerson",
+          "DJ PARTYwithParks",
+          "180MINDSET"
+        ],
+        "officialBill": [
+          "Jekalyn Carr",
+          "Kierra Sheard",
+          "Travis Greene",
+          "Charles Weems",
+          "Kijan Boone",
+          "Zauntee",
+          "Scootie Wop",
+          "Dante' Pride",
+          "Anike",
+          "Ahjah",
+          "Y Shadey",
+          "Kefia Rollerson",
+          "DJ PARTYwithParks",
+          "180MINDSET"
+        ],
+        "performerDays": {
+          "2026-10-09": [
+            "Kijan Boone",
+            "Ahjah",
+            "Anike",
+            "Y Shadey",
+            "180MINDSET",
+            "DJ PARTYwithParks"
+          ],
+          "2026-10-10": [
+            "Jekalyn Carr",
+            "Kierra Sheard",
+            "Travis Greene",
+            "Charles Weems",
+            "Zauntee",
+            "Scootie Wop",
+            "Dante' Pride",
+            "Kefia Rollerson",
+            "DJ PARTYwithParks"
+          ]
+        }
       }
     },
     {
@@ -16190,8 +16252,8 @@
         "status": "scheduled",
         "ticketUrl": "https://www.itickets.com/events/487141",
         "officialUrl": "https://www.itickets.com/events/487141",
-        "image": "https://i.scdn.co/image/ab6761610000e5ebb5bd510760cb418516ded933",
-        "imageType": "artist",
+        "image": "assets/events/tru-serva-cupojoy-2026-10-09.jpg",
+        "imageType": "event_artwork",
         "imagePosition": "center",
         "price": "$11.90+",
         "lineupExplicit": true,
@@ -16222,7 +16284,10 @@
           }
         ],
         "notes": "CupOJoy and its official ticket provider confirm TRU-SERVA at 7:00 PM; doors open at 6:30 PM.",
-        "auditVerified": "2026-09-22"
+        "auditVerified": "2026-09-26",
+        "imageOverride": true,
+        "imageSourceUrl": "https://www.itickets.com/events/487141",
+        "imageSource": "Official iTickets TRU-SERVA event graphic"
       }
     },
     {
@@ -16346,7 +16411,7 @@
       "event": {
         "title": "ONE DAY Fall Festival 2026",
         "startDate": "2026-10-10",
-        "startTime": "09:00",
+        "startTime": "16:30",
         "timezone": "America/Denver",
         "venue": "Colorado UpLift Community Campus",
         "address": "1500 S Dayton St",
@@ -16361,8 +16426,8 @@
         "status": "scheduled",
         "ticketUrl": "https://partiful.com/e/SK3SE7vXIs9rYlPcW0hZ",
         "officialUrl": "https://onedaydenver.org/",
-        "image": "assets/events/petrina-delacey-one-day-2026.jpg",
-        "imageType": "artist",
+        "image": "assets/events/one-day-festival-2026-10-10.jpg",
+        "imageType": "event_artwork",
         "imagePosition": "center",
         "imageOverride": true,
         "price": "Free",
@@ -16386,13 +16451,22 @@
             "priority": 94
           }
         ],
-        "auditVerified": "2026-09-13",
+        "auditVerified": "2026-09-26",
         "endTime": "20:00",
-        "notes": "Festival runs 9:00 AM–8:00 PM. The sanctuary concert featuring Petrina DeLacey runs 4:30–8:00 PM. Free admission; RSVP requested.",
+        "notes": "The full festival runs 9 AM–8 PM; Kingdom Circuit lists the evening concert start, 4:30 PM. The organizer confirms Petrina DeLacey and JBthePreacher in the evening concert. Selected billing follows the owner's CHH focus; the official RSVP contains the wider festival lineup.",
         "performanceWindow": "16:30-20:00",
         "id": "manual:one-day-fall-festival-aurora-2026",
-        "imageSource": "ONE DAY official festival site — Petrina DeLacey performance image",
-        "imageSourceUrl": "https://onedaydenver.org/"
+        "imageSource": "Official ONE DAY festival RSVP artwork",
+        "imageSourceUrl": "https://partiful.com/e/SK3SE7vXIs9rYlPcW0hZ",
+        "startDateTime": "2026-10-10T16:30:00-06:00",
+        "advertisedBilling": [
+          "Petrina DeLacey",
+          "JBthePreacher"
+        ],
+        "officialBill": [
+          "Petrina DeLacey",
+          "JBthePreacher"
+        ]
       }
     },
     {
@@ -16466,7 +16540,7 @@
         "id": "manual:mayia-boxyard-saturdaze-2026",
         "title": "Boxyard Saturdaze",
         "startDate": "2026-10-10",
-        "startTime": "12:30",
+        "startTime": "11:30",
         "timezone": "America/New_York",
         "venue": "Boxyard RTP — BeatBox Stage",
         "address": "",
@@ -16481,7 +16555,7 @@
         "status": "scheduled",
         "ticketUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
         "officialUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
-        "image": "assets/events/mayia-boxyard-saturdaze-2026.svg",
+        "image": "assets/events/mayia-boxyard-2026-10-10.png",
         "price": "",
         "sourceName": "Boxyard RTP official event",
         "sources": [
@@ -16508,12 +16582,16 @@
         "firstSeen": "2026-08-09T00:00:00Z",
         "authority": "official_event",
         "lineupExplicit": true,
-        "auditVerified": "2026-09-11",
+        "auditVerified": "2026-09-26",
         "officialBill": [
           "DJ Watty Tha Shepherd",
           "MAYIA WARREN"
         ],
-        "imageOverride": true
+        "imageOverride": true,
+        "imageSourceUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+        "imageSource": "Boxyard RTP official DJ Watty and MAYIA event poster",
+        "startDateTime": "2026-10-10T11:30:00-04:00",
+        "endTime": "14:30"
       }
     },
     {
@@ -16533,7 +16611,7 @@
       "event": {
         "title": "Boxyard Saturdaze",
         "startDate": "2026-10-10",
-        "startTime": "12:30",
+        "startTime": "11:30",
         "timezone": "America/New_York",
         "venue": "Boxyard RTP — BeatBox Stage",
         "address": "",
@@ -16548,7 +16626,7 @@
         "status": "scheduled",
         "ticketUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
         "officialUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
-        "image": "assets/events/mayia-boxyard-saturdaze-2026.svg",
+        "image": "assets/events/mayia-boxyard-2026-10-10.png",
         "price": "",
         "sourceName": "Boxyard RTP official event",
         "authority": "official_event",
@@ -16570,7 +16648,7 @@
             "priority": 100
           }
         ],
-        "auditVerified": "2026-09-11",
+        "auditVerified": "2026-09-26",
         "officialBill": [
           "DJ Watty Tha Shepherd",
           "MAYIA WARREN"
@@ -16578,7 +16656,11 @@
         "id": "mayia-boxyard-saturdaze-2026",
         "imageType": "event_artwork",
         "imagePosition": "center",
-        "imageOverride": true
+        "imageOverride": true,
+        "imageSourceUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+        "imageSource": "Boxyard RTP official DJ Watty and MAYIA event poster",
+        "startDateTime": "2026-10-10T11:30:00-04:00",
+        "endTime": "14:30"
       }
     },
     {
@@ -16741,7 +16823,20 @@
             "authority": "venue_ticket",
             "priority": 94
           }
-        ]
+        ],
+        "advertisedBilling": [
+          "Aasha Marie",
+          "Justin Martyr",
+          "Conquest",
+          "Crystal B."
+        ],
+        "officialBill": [
+          "Aasha Marie",
+          "Justin Martyr",
+          "Conquest",
+          "Crystal B."
+        ],
+        "auditVerified": "2026-09-26"
       }
     },
     {
@@ -16794,7 +16889,20 @@
             "authority": "venue_ticket",
             "priority": 94
           }
-        ]
+        ],
+        "advertisedBilling": [
+          "Aasha Marie",
+          "Justin Martyr",
+          "Conquest",
+          "Crystal B."
+        ],
+        "officialBill": [
+          "Aasha Marie",
+          "Justin Martyr",
+          "Conquest",
+          "Crystal B."
+        ],
+        "auditVerified": "2026-09-26"
       }
     },
     {
@@ -16815,10 +16923,10 @@
         "id": "official:7c07397fa047689b0215",
         "title": "Anike — Live at THE ALL STAR EXPERIENCE LIVE CONCERT",
         "startDate": "2026-10-11",
-        "startTime": "",
-        "timezone": "",
-        "venue": "THE ALL STAR EXPERIENCE LIVE CONCERT",
-        "address": "",
+        "startTime": "19:30",
+        "timezone": "America/Chicago",
+        "venue": "RCCG Cornerstone Church Austin",
+        "address": "9309 Cameron Road",
         "city": "Austin",
         "state": "TX",
         "country": "US",
@@ -16828,12 +16936,19 @@
         "headliner": "Anike",
         "eventType": "concert",
         "status": "scheduled",
-        "ticketUrl": "https://www.bandsintown.com/t/108773288?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-        "officialUrl": "https://www.reachrecords.com/artists/wande/",
+        "ticketUrl": "https://www.eventbrite.com/e/anike-live-the-all-star-concert-tickets-1997805844059",
+        "officialUrl": "https://www.eventbrite.com/e/anike-live-the-all-star-concert-tickets-1997805844059",
         "image": "https://images.squarespace-cdn.com/content/v1/64162751e77cf06d37b970d3/961f3d17-4b0a-44ed-92b9-8b1a53e8ed43/ANIKE+LIVE+SHOW+FLYER.jpg",
         "price": "",
         "sourceName": "Reach Records - Anike",
         "sources": [
+          {
+            "name": "Official organizer event details",
+            "url": "https://www.eventbrite.com/e/anike-live-the-all-star-concert-tickets-1997805844059",
+            "type": "manual_verified",
+            "authority": "venue_ticket",
+            "priority": 115
+          },
           {
             "name": "Reach Records - Anike",
             "url": "https://www.reachrecords.com/artists/wande/",
@@ -16849,9 +16964,10 @@
         "imageOverride": true,
         "imageSource": "Official Anike Live Show flyer",
         "imageSourceUrl": "https://images.squarespace-cdn.com/content/v1/64162751e77cf06d37b970d3/961f3d17-4b0a-44ed-92b9-8b1a53e8ed43/ANIKE+LIVE+SHOW+FLYER.jpg",
-        "auditVerified": "2026-09-23",
+        "auditVerified": "2026-09-26",
         "verifiedVersion": 9,
-        "firstSeen": "2026-09-12T14:12:12Z"
+        "firstSeen": "2026-09-12T14:12:12Z",
+        "startDateTime": "2026-10-11T19:30:00-05:00"
       }
     },
     {
@@ -17904,9 +18020,9 @@
         "status": "scheduled",
         "ticketUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
         "officialUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
-        "image": "https://static.wixstatic.com/media/61a78b_7545031064f049a6843e4c7d0666886f~mv2.jpg/v1/fill/w_327%2Ch_491%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/61a78b_7545031064f049a6843e4c7d0666886f~mv2.jpg",
-        "imageType": "artist",
-        "imagePosition": "50% 25%",
+        "image": "assets/events/mike-malagies-miami-2026-10-16.png",
+        "imageType": "event_artwork",
+        "imagePosition": "center",
         "imageOverride": true,
         "lineupExplicit": true,
         "authority": "venue_ticket",
@@ -17947,7 +18063,11 @@
           "/event/mike-malagies-florida-takeover-miami-2026-10-16-north-miami-6a5e6f/"
         ],
         "legacyEventNotice": "This concert is now listed as Mike Malagies — It’s A God Night (Miami), starting at 7:00 PM on October 16.",
-        "notes": "TicketSource describes VIP 6:00–6:30 PM, doors 6:30 PM, concert starting at 7:00 PM with DJ JBEZ, and Mike Malagies 7:30–9:00 PM. The listing header's 6:30 PM is doors."
+        "notes": "TicketSource describes VIP 6:00–6:30 PM, doors 6:30 PM, concert starting at 7:00 PM with DJ JBEZ, and Mike Malagies 7:30–9:00 PM. The listing header's 6:30 PM is doors.",
+        "imageSourceUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
+        "imageSource": "Official TicketSource It's A God Night Miami flyer",
+        "soldOut": true,
+        "ticketAvailability": "sold_out"
       }
     },
     {
@@ -18023,9 +18143,9 @@
         "id": "supplemental:brenno-overflow-conference-2026",
         "title": "Overflow Conference",
         "startDate": "2026-10-17",
-        "startTime": "",
-        "venue": "Location TBD",
-        "address": "",
+        "startTime": "15:30",
+        "venue": "Sword of The Spirit Ministries",
+        "address": "300 Kensington Ave",
         "city": "Buffalo",
         "state": "NY",
         "country": "US",
@@ -18035,8 +18155,8 @@
         "headliner": "Brenno",
         "eventType": "concert",
         "status": "scheduled",
-        "ticketUrl": "https://www.tickettailor.com/events/ablazemovement",
-        "officialUrl": "https://www.brennomusic.live/",
+        "ticketUrl": "https://www.tickettailor.com/events/ablazemovement/2047830",
+        "officialUrl": "https://www.overflowconf.com/schedule",
         "image": "",
         "price": "",
         "sourceName": "Brenno official upcoming shows",
@@ -18045,13 +18165,24 @@
         "lineupExplicit": true,
         "sources": [
           {
+            "name": "Official organizer event details",
+            "url": "https://www.overflowconf.com/schedule",
+            "type": "manual_verified",
+            "authority": "venue_ticket",
+            "priority": 115
+          },
+          {
             "name": "Brenno official upcoming shows",
             "url": "https://www.brennomusic.live/",
             "type": "manual_verified",
             "authority": "artist_calendar",
             "priority": 100
           }
-        ]
+        ],
+        "startDateTime": "2026-10-17T15:30:00-04:00",
+        "timezone": "America/New_York",
+        "notes": "The Ticket Tailor listing covers the entire October 16–17 conference, opening Friday at 7 PM. The organizer's Saturday schedule explicitly lists Concert featuring Brenno at 3:30 PM on October 17. Kingdom Circuit lists that music performance, not the Friday conference opening.",
+        "auditVerified": "2026-09-26"
       }
     },
     {
@@ -18298,7 +18429,7 @@
         "timezone": "",
         "venue": "The Sazon Experience",
         "address": "1329 E Main St",
-        "city": "Lakeland Estates Mobile Home Community",
+        "city": "Lakeland",
         "state": "FL",
         "country": "US",
         "artists": [
@@ -18309,7 +18440,7 @@
         "status": "scheduled",
         "ticketUrl": "https://www.bandsintown.com/t/108902772?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
         "officialUrl": "https://www.bandsintown.com/e/108902772?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "image": "assets/artists/issac-mansfield.webp",
+        "image": "assets/events/issac-mansfield-sazon-2026-10-17.jpg",
         "price": "",
         "sourceName": "Bandsintown",
         "sources": [
@@ -18326,7 +18457,16 @@
         "bandsintownArtistId": "15588396",
         "bandsintownResolvedName": "Issac Mansfield",
         "bandsintownIdentity": "exact_name_or_alias",
-        "trackedArtist": "Issac Mansfield"
+        "trackedArtist": "Issac Mansfield",
+        "imageType": "event_artwork",
+        "imagePosition": "center",
+        "imageOverride": true,
+        "imageSourceUrl": "https://www.bandsintown.com/e/108902772",
+        "imageSource": "Issac Mansfield official Bandsintown Sazon Experience event poster",
+        "legacyEventPaths": [
+          "/event/the-sazon-experience-2026-10-17-lakeland-estates-mobile-home-community-e9a5d0/"
+        ],
+        "auditVerified": "2026-09-26"
       }
     },
     {
@@ -18476,7 +18616,7 @@
         "status": "scheduled",
         "ticketUrl": "https://choli.ticketera.com/event/alex-zurdo-zona-cero-6dn2x2",
         "officialUrl": "https://www.coliseodepuertorico.com/alexzurdozonazero/",
-        "image": "assets/events/alex-zurdo-zona-zero-2026.svg",
+        "image": "assets/events/alex-zurdo-zona-zero-2026-10-18.jpg",
         "price": "",
         "sourceName": "Coliseo de Puerto Rico official event",
         "authority": "venue_ticket",
@@ -18491,11 +18631,13 @@
             "priority": 112
           }
         ],
-        "auditVerified": "2026-09-11",
+        "auditVerified": "2026-09-26",
         "id": "alex-zurdo-zona-zero-san-juan-2026",
         "imageType": "event_artwork",
         "imagePosition": "center",
-        "imageOverride": true
+        "imageOverride": true,
+        "imageSourceUrl": "https://choli.ticketera.com/event/alex-zurdo-zona-cero-6dn2x2",
+        "imageSource": "Official Ticketera Zona Zero concert artwork"
       }
     },
     {
@@ -18530,7 +18672,7 @@
         "status": "scheduled",
         "ticketUrl": "https://choli.ticketera.com/event/alex-zurdo-zona-cero-6dn2x2",
         "officialUrl": "https://www.coliseodepuertorico.com/alexzurdozonazero/",
-        "image": "assets/events/alex-zurdo-zona-zero-2026.svg",
+        "image": "assets/events/alex-zurdo-zona-zero-2026-10-18.jpg",
         "price": "",
         "sourceName": "Coliseo de Puerto Rico official event",
         "authority": "venue_ticket",
@@ -18545,11 +18687,13 @@
             "priority": 112
           }
         ],
-        "auditVerified": "2026-09-11",
+        "auditVerified": "2026-09-26",
         "id": "manual:alex-zurdo-zona-zero-san-juan-2026",
         "imageType": "event_artwork",
         "imagePosition": "center",
-        "imageOverride": true
+        "imageOverride": true,
+        "imageSourceUrl": "https://choli.ticketera.com/event/alex-zurdo-zona-cero-6dn2x2",
+        "imageSource": "Official Ticketera Zona Zero concert artwork"
       }
     },
     {
@@ -21028,7 +21172,7 @@
         ],
         "headliner": "Mike Teezy",
         "eventType": "concert",
-        "status": "scheduled",
+        "status": "merged",
         "ticketUrl": "https://music.apple.com/us/concerts/artist/517774271",
         "officialUrl": "https://music.apple.com/us/concerts/ce.01a1c61a-49a9-4e19-b629-46bac43b4970",
         "image": "https://www.even.biz/_next/image?q=75&url=https%3A%2F%2Fdt7m7kl3brv3f.cloudfront.net%2Fimages%2Fzlirs9n3bpjitnofexx4m095koo3&w=828",
@@ -21057,7 +21201,9 @@
         "verifiedVersion": 9,
         "firstSeen": "2026-08-21T12:04:12Z",
         "notes": "Apple Music displays 6:00 PM on November 7. The former 11:00 PM value and November 8 end date resulted from preserving UTC as local time.",
-        "auditVerified": "2026-09-12"
+        "auditVerified": "2026-09-12",
+        "mergedIntoId": "ticketmaster:vv1AAZk3FGkdmpCG1",
+        "mergeReason": "Consolidated with the canonical Beyond The Walls 3 listing; full lineup confirmed by promoter."
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-20T14:03:50Z",
@@ -21359,7 +21505,7 @@
         ],
         "headliner": "KB",
         "eventType": "concert",
-        "status": "onsale",
+        "status": "merged",
         "ticketUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
         "officialUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
         "image": "",
@@ -21383,7 +21529,9 @@
             "authority": "artist_calendar",
             "priority": 100
           }
-        ]
+        ],
+        "mergedIntoId": "ticketmaster:vv1AAZk3FGkdmpCG1",
+        "mergeReason": "Consolidated with the canonical Beyond The Walls 3 listing; full lineup confirmed by promoter."
       }
     },
     {

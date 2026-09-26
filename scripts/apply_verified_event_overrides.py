@@ -279,10 +279,10 @@ KNOWN_808_BEEZY_EVENT_IDS = {
 
 VERIFIED_EVENT_IMAGES = {
     "jay-kalyl-desde-antes-rockville-centre-2026": "https://i.scdn.co/image/ab6761610000e5eb1269b80aed5d08c40aedfdc3",
-    "mayia-boxyard-saturdaze-2026": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
+    "mayia-boxyard-saturdaze-2026": "assets/events/mayia-boxyard-2026-10-10.png",
     "mayia-nc-state-fair-2026": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
     "mission-friends-sacramento-2026": "assets/artists/mission-primary.jpg",
-    "alex-zurdo-zona-zero-san-juan-2026": "https://i.scdn.co/image/ab6761610000e5eb2c81bb40c3b6962eacf9dc9c",
+    "alex-zurdo-zona-zero-san-juan-2026": "assets/events/alex-zurdo-zona-zero-2026-10-18.jpg",
     "cj-emulous-kickback-grand-prairie-2026": "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
     "miles-cj-zion-ultra-lounge-chandler-2026": "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
 }
@@ -451,7 +451,7 @@ def apply_verified_event_images(events: list[dict], supplemental: list[dict]) ->
             if not image:
                 continue
             event["image"] = image
-            event["imageType"] = "artist"
+            event["imageType"] = "event_artwork" if image.startswith("assets/events/") else "artist"
             event["imagePosition"] = "center"
             event["imageOverride"] = True
             found.add(event_id)

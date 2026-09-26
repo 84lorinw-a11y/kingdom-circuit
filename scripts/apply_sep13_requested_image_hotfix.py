@@ -10,12 +10,12 @@ AUDIT = "2026-09-13"
 
 PINS = {
     "one-day-fall-festival-aurora-2026": {
-        "image": "assets/events/petrina-delacey-one-day-2026.jpg",
-        "imageType": "artist",
+        "image": "assets/events/one-day-festival-2026-10-10.jpg",
+        "imageType": "event_artwork",
         "imagePosition": "center",
         "imageOverride": True,
-        "imageSource": "ONE DAY official festival site — Petrina DeLacey performance image",
-        "imageSourceUrl": "https://onedaydenver.org/",
+        "imageSource": "Official ONE DAY festival RSVP artwork",
+        "imageSourceUrl": "https://partiful.com/e/SK3SE7vXIs9rYlPcW0hZ",
     },
     "kelo-worship-after-christmas-jacksonville-2026": {
         "image": "https://murrayhilltheatre.com/wp-content/uploads/2026/07/https-cdn.evbuc_.com-images-1188053564-306363782001-1-original.20260702-021736-1130x650.jpeg",

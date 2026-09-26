@@ -1556,12 +1556,18 @@
     "eventType": "concert",
     "ticketUrl": "https://brushfire.com/jakeragermusic/letthechurchsingtour/629466/details",
     "officialUrl": "https://brushfire.com/jakeragermusic/letthechurchsingtour/629466/details",
-    "image": "",
+    "image": "assets/events/let-the-church-sing-dunedin-2026-10-02.jpg",
     "price": "",
     "status": "scheduled",
     "lineupExplicit": true,
     "authority": "venue_ticket",
-    "sourceName": "Official Brushfire ticket listing"
+    "sourceName": "Official Brushfire ticket listing",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSourceUrl": "https://brushfire.com/jakeragermusic/letthechurchsingtour/629466/details",
+    "imageSource": "Official Brushfire Dunedin concert flyer",
+    "auditVerified": "2026-09-26"
   },
   {
     "title": "Jay Kalyl — Desde Antes Tour",
@@ -1845,8 +1851,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.itickets.com/events/487141",
     "officialUrl": "https://www.itickets.com/events/487141",
-    "image": "https://i.scdn.co/image/ab6761610000e5ebb5bd510760cb418516ded933",
-    "imageType": "artist",
+    "image": "assets/events/tru-serva-cupojoy-2026-10-09.jpg",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "price": "$11.90+",
     "lineupExplicit": true,
@@ -1877,7 +1883,10 @@
       }
     ],
     "notes": "CupOJoy and its official ticket provider confirm TRU-SERVA at 7:00 PM; doors open at 6:30 PM.",
-    "auditVerified": "2026-09-22"
+    "auditVerified": "2026-09-26",
+    "imageOverride": true,
+    "imageSourceUrl": "https://www.itickets.com/events/487141",
+    "imageSource": "Official iTickets TRU-SERVA event graphic"
   },
   {
     "id": "egr-2026-10-10-visalia-ca",
@@ -1905,7 +1914,7 @@
   {
     "title": "ONE DAY Fall Festival 2026",
     "startDate": "2026-10-10",
-    "startTime": "09:00",
+    "startTime": "16:30",
     "timezone": "America/Denver",
     "venue": "Colorado UpLift Community Campus",
     "address": "1500 S Dayton St",
@@ -1920,8 +1929,8 @@
     "status": "scheduled",
     "ticketUrl": "https://partiful.com/e/SK3SE7vXIs9rYlPcW0hZ",
     "officialUrl": "https://onedaydenver.org/",
-    "image": "assets/events/petrina-delacey-one-day-2026.jpg",
-    "imageType": "artist",
+    "image": "assets/events/one-day-festival-2026-10-10.jpg",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "price": "Free",
@@ -1945,13 +1954,22 @@
         "priority": 94
       }
     ],
-    "auditVerified": "2026-09-13",
+    "auditVerified": "2026-09-26",
     "endTime": "20:00",
-    "notes": "Festival runs 9:00 AM–8:00 PM. The sanctuary concert featuring Petrina DeLacey runs 4:30–8:00 PM. Free admission; RSVP requested.",
+    "notes": "The full festival runs 9 AM–8 PM; Kingdom Circuit lists the evening concert start, 4:30 PM. The organizer confirms Petrina DeLacey and JBthePreacher in the evening concert. Selected billing follows the owner's CHH focus; the official RSVP contains the wider festival lineup.",
     "performanceWindow": "16:30-20:00",
     "id": "one-day-fall-festival-aurora-2026",
-    "imageSource": "ONE DAY official festival site — Petrina DeLacey performance image",
-    "imageSourceUrl": "https://onedaydenver.org/"
+    "imageSource": "Official ONE DAY festival RSVP artwork",
+    "imageSourceUrl": "https://partiful.com/e/SK3SE7vXIs9rYlPcW0hZ",
+    "startDateTime": "2026-10-10T16:30:00-06:00",
+    "advertisedBilling": [
+      "Petrina DeLacey",
+      "JBthePreacher"
+    ],
+    "officialBill": [
+      "Petrina DeLacey",
+      "JBthePreacher"
+    ]
   },
   {
     "id": "scootie-wop-southwest-trail-riders-houston-2026",
@@ -1979,7 +1997,7 @@
   {
     "title": "Boxyard Saturdaze",
     "startDate": "2026-10-10",
-    "startTime": "12:30",
+    "startTime": "11:30",
     "timezone": "America/New_York",
     "venue": "Boxyard RTP — BeatBox Stage",
     "address": "",
@@ -1994,7 +2012,7 @@
     "status": "scheduled",
     "ticketUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
     "officialUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
-    "image": "assets/events/mayia-boxyard-saturdaze-2026.svg",
+    "image": "assets/events/mayia-boxyard-2026-10-10.png",
     "price": "",
     "sourceName": "Boxyard RTP official event",
     "authority": "official_event",
@@ -2016,7 +2034,7 @@
         "priority": 100
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-26",
     "officialBill": [
       "DJ Watty Tha Shepherd",
       "MAYIA WARREN"
@@ -2024,7 +2042,11 @@
     "id": "mayia-boxyard-saturdaze-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true
+    "imageOverride": true,
+    "imageSourceUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+    "imageSource": "Boxyard RTP official DJ Watty and MAYIA event poster",
+    "startDateTime": "2026-10-10T11:30:00-04:00",
+    "endTime": "14:30"
   },
   {
     "id": "nu-wave-anointing-sacramento-2026-10-10",
@@ -2157,7 +2179,20 @@
         "authority": "venue_ticket",
         "priority": 94
       }
-    ]
+    ],
+    "advertisedBilling": [
+      "Aasha Marie",
+      "Justin Martyr",
+      "Conquest",
+      "Crystal B."
+    ],
+    "officialBill": [
+      "Aasha Marie",
+      "Justin Martyr",
+      "Conquest",
+      "Crystal B."
+    ],
+    "auditVerified": "2026-09-26"
   },
   {
     "id": "passion-fest-ii-2026-charlotte",
@@ -2299,9 +2334,9 @@
     "status": "scheduled",
     "ticketUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
     "officialUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
-    "image": "https://static.wixstatic.com/media/61a78b_7545031064f049a6843e4c7d0666886f~mv2.jpg/v1/fill/w_327%2Ch_491%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/61a78b_7545031064f049a6843e4c7d0666886f~mv2.jpg",
-    "imageType": "artist",
-    "imagePosition": "50% 25%",
+    "image": "assets/events/mike-malagies-miami-2026-10-16.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
     "imageOverride": true,
     "lineupExplicit": true,
     "authority": "venue_ticket",
@@ -2342,7 +2377,11 @@
       "/event/mike-malagies-florida-takeover-miami-2026-10-16-north-miami-6a5e6f/"
     ],
     "legacyEventNotice": "This concert is now listed as Mike Malagies — It’s A God Night (Miami), starting at 7:00 PM on October 16.",
-    "notes": "TicketSource describes VIP 6:00–6:30 PM, doors 6:30 PM, concert starting at 7:00 PM with DJ JBEZ, and Mike Malagies 7:30–9:00 PM. The listing header's 6:30 PM is doors."
+    "notes": "TicketSource describes VIP 6:00–6:30 PM, doors 6:30 PM, concert starting at 7:00 PM with DJ JBEZ, and Mike Malagies 7:30–9:00 PM. The listing header's 6:30 PM is doors.",
+    "imageSourceUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
+    "imageSource": "Official TicketSource It's A God Night Miami flyer",
+    "soldOut": true,
+    "ticketAvailability": "sold_out"
   },
   {
     "id": "eventbrite:rare-of-breed-jacksonville-2026",
@@ -2620,7 +2659,7 @@
     "status": "scheduled",
     "ticketUrl": "https://choli.ticketera.com/event/alex-zurdo-zona-cero-6dn2x2",
     "officialUrl": "https://www.coliseodepuertorico.com/alexzurdozonazero/",
-    "image": "assets/events/alex-zurdo-zona-zero-2026.svg",
+    "image": "assets/events/alex-zurdo-zona-zero-2026-10-18.jpg",
     "price": "",
     "sourceName": "Coliseo de Puerto Rico official event",
     "authority": "venue_ticket",
@@ -2635,11 +2674,13 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-26",
     "id": "alex-zurdo-zona-zero-san-juan-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true
+    "imageOverride": true,
+    "imageSourceUrl": "https://choli.ticketera.com/event/alex-zurdo-zona-cero-6dn2x2",
+    "imageSource": "Official Ticketera Zona Zero concert artwork"
   },
   {
     "title": "JIMMY ROCK — Rave & Worship Dallas",

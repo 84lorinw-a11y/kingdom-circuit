@@ -676,7 +676,7 @@
   },
   {
     "id": "bandsintown:1040305060",
-    "title": "Hulvey at Bridgestone Arena",
+    "title": "57th Annual GMA Dove Awards — featuring Hulvey",
     "startDate": "2026-10-06",
     "startTime": "18:30",
     "timezone": "",
@@ -715,7 +715,11 @@
     "imagePosition": "center",
     "imageOverride": true,
     "imageSource": "Bridgestone Arena official 57th Annual GMA Dove Awards artwork",
-    "imageSourceUrl": "https://www.bridgestonearena.com/events/detail/57th-annual-gma-dove-awards"
+    "imageSourceUrl": "https://www.bridgestonearena.com/events/detail/57th-annual-gma-dove-awards",
+    "legacyEventPaths": [
+      "/event/hulvey-at-bridgestone-arena-2026-10-06-nashville-090597/"
+    ],
+    "auditVerified": "2026-09-26"
   },
   {
     "title": "Live Loud",
@@ -772,7 +776,8 @@
       "Dante' Pride",
       "Anike",
       "Y Shadey",
-      "180MINDSET"
+      "180MINDSET",
+      "Kijan Boone"
     ],
     "headliner": "Zauntee",
     "eventType": "festival",
@@ -784,12 +789,65 @@
     "imageOverride": true,
     "imageSource": "User-provided official Ark of Worship festival flyer",
     "imageSourceUrl": "https://www.arkofworship.com/",
-    "auditVerified": "2026-09-23",
+    "auditVerified": "2026-09-26",
     "price": "$59+ single-day / $99+ 2-day",
     "status": "scheduled",
     "lineupExplicit": true,
     "authority": "official_festival",
-    "sourceName": "Ark of Worship official festival lineup"
+    "sourceName": "Ark of Worship official festival lineup",
+    "advertisedBilling": [
+      "Jekalyn Carr",
+      "Kierra Sheard",
+      "Travis Greene",
+      "Charles Weems",
+      "Kijan Boone",
+      "Zauntee",
+      "Scootie Wop",
+      "Dante' Pride",
+      "Anike",
+      "Ahjah",
+      "Y Shadey",
+      "Kefia Rollerson",
+      "DJ PARTYwithParks",
+      "180MINDSET"
+    ],
+    "officialBill": [
+      "Jekalyn Carr",
+      "Kierra Sheard",
+      "Travis Greene",
+      "Charles Weems",
+      "Kijan Boone",
+      "Zauntee",
+      "Scootie Wop",
+      "Dante' Pride",
+      "Anike",
+      "Ahjah",
+      "Y Shadey",
+      "Kefia Rollerson",
+      "DJ PARTYwithParks",
+      "180MINDSET"
+    ],
+    "performerDays": {
+      "2026-10-09": [
+        "Kijan Boone",
+        "Ahjah",
+        "Anike",
+        "Y Shadey",
+        "180MINDSET",
+        "DJ PARTYwithParks"
+      ],
+      "2026-10-10": [
+        "Jekalyn Carr",
+        "Kierra Sheard",
+        "Travis Greene",
+        "Charles Weems",
+        "Zauntee",
+        "Scootie Wop",
+        "Dante' Pride",
+        "Kefia Rollerson",
+        "DJ PARTYwithParks"
+      ]
+    }
   },
   {
     "id": "tru-serva-cupojoy-green-bay-2026",
@@ -810,8 +868,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.itickets.com/events/487141",
     "officialUrl": "https://www.itickets.com/events/487141",
-    "image": "https://i.scdn.co/image/ab6761610000e5ebb5bd510760cb418516ded933",
-    "imageType": "artist",
+    "image": "assets/events/tru-serva-cupojoy-2026-10-09.jpg",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "price": "$11.90+",
     "lineupExplicit": true,
@@ -842,7 +900,10 @@
       }
     ],
     "notes": "CupOJoy and its official ticket provider confirm TRU-SERVA at 7:00 PM; doors open at 6:30 PM.",
-    "auditVerified": "2026-09-22"
+    "auditVerified": "2026-09-26",
+    "imageOverride": true,
+    "imageSourceUrl": "https://www.itickets.com/events/487141",
+    "imageSource": "Official iTickets TRU-SERVA event graphic"
   },
   {
     "id": "supplemental:brenno-awake-conference-2026",
@@ -881,7 +942,7 @@
   {
     "title": "Boxyard Saturdaze",
     "startDate": "2026-10-10",
-    "startTime": "12:30",
+    "startTime": "11:30",
     "timezone": "America/New_York",
     "venue": "Boxyard RTP — BeatBox Stage",
     "address": "",
@@ -896,7 +957,7 @@
     "status": "scheduled",
     "ticketUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
     "officialUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
-    "image": "assets/events/mayia-boxyard-saturdaze-2026.svg",
+    "image": "assets/events/mayia-boxyard-2026-10-10.png",
     "price": "",
     "sourceName": "Boxyard RTP official event",
     "authority": "official_event",
@@ -918,7 +979,7 @@
         "priority": 100
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-26",
     "officialBill": [
       "DJ Watty Tha Shepherd",
       "MAYIA WARREN"
@@ -926,7 +987,11 @@
     "id": "mayia-boxyard-saturdaze-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true
+    "imageOverride": true,
+    "imageSourceUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+    "imageSource": "Boxyard RTP official DJ Watty and MAYIA event poster",
+    "startDateTime": "2026-10-10T11:30:00-04:00",
+    "endTime": "14:30"
   },
   {
     "id": "eventbrite:reign-volume-one-aasha-marie-brooklyn-2026",
@@ -964,7 +1029,20 @@
         "authority": "venue_ticket",
         "priority": 94
       }
-    ]
+    ],
+    "advertisedBilling": [
+      "Aasha Marie",
+      "Justin Martyr",
+      "Conquest",
+      "Crystal B."
+    ],
+    "officialBill": [
+      "Aasha Marie",
+      "Justin Martyr",
+      "Conquest",
+      "Crystal B."
+    ],
+    "auditVerified": "2026-09-26"
   },
   {
     "title": "Teen Club Kickoff / Back to School Concert",
@@ -1066,9 +1144,9 @@
     "id": "supplemental:brenno-overflow-conference-2026",
     "title": "Overflow Conference",
     "startDate": "2026-10-17",
-    "startTime": "",
-    "venue": "Location TBD",
-    "address": "",
+    "startTime": "15:30",
+    "venue": "Sword of The Spirit Ministries",
+    "address": "300 Kensington Ave",
     "city": "Buffalo",
     "state": "NY",
     "country": "US",
@@ -1078,8 +1156,8 @@
     "headliner": "Brenno",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.tickettailor.com/events/ablazemovement",
-    "officialUrl": "https://www.brennomusic.live/",
+    "ticketUrl": "https://www.tickettailor.com/events/ablazemovement/2047830",
+    "officialUrl": "https://www.overflowconf.com/schedule",
     "image": "",
     "price": "",
     "sourceName": "Brenno official upcoming shows",
@@ -1088,13 +1166,24 @@
     "lineupExplicit": true,
     "sources": [
       {
+        "name": "Official organizer event details",
+        "url": "https://www.overflowconf.com/schedule",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 115
+      },
+      {
         "name": "Brenno official upcoming shows",
         "url": "https://www.brennomusic.live/",
         "type": "manual_verified",
         "authority": "artist_calendar",
         "priority": 100
       }
-    ]
+    ],
+    "startDateTime": "2026-10-17T15:30:00-04:00",
+    "timezone": "America/New_York",
+    "notes": "The Ticket Tailor listing covers the entire October 16–17 conference, opening Friday at 7 PM. The organizer's Saturday schedule explicitly lists Concert featuring Brenno at 3:30 PM on October 17. Kingdom Circuit lists that music performance, not the Friday conference opening.",
+    "auditVerified": "2026-09-26"
   },
   {
     "title": "MAYIA at the NC State Fair",
@@ -1192,7 +1281,7 @@
     "timezone": "",
     "venue": "The Sazon Experience",
     "address": "1329 E Main St",
-    "city": "Lakeland Estates Mobile Home Community",
+    "city": "Lakeland",
     "state": "FL",
     "country": "US",
     "artists": [
@@ -1203,7 +1292,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.bandsintown.com/t/108902772?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
     "officialUrl": "https://www.bandsintown.com/e/108902772?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/issac-mansfield.webp",
+    "image": "assets/events/issac-mansfield-sazon-2026-10-17.jpg",
     "price": "",
     "sourceName": "Bandsintown",
     "sources": [
@@ -1220,7 +1309,16 @@
     "bandsintownArtistId": "15588396",
     "bandsintownResolvedName": "Issac Mansfield",
     "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Issac Mansfield"
+    "trackedArtist": "Issac Mansfield",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSourceUrl": "https://www.bandsintown.com/e/108902772",
+    "imageSource": "Issac Mansfield official Bandsintown Sazon Experience event poster",
+    "legacyEventPaths": [
+      "/event/the-sazon-experience-2026-10-17-lakeland-estates-mobile-home-community-e9a5d0/"
+    ],
+    "auditVerified": "2026-09-26"
   },
   {
     "title": "Alex Zurdo: Zona Zero",
@@ -1240,7 +1338,7 @@
     "status": "scheduled",
     "ticketUrl": "https://choli.ticketera.com/event/alex-zurdo-zona-cero-6dn2x2",
     "officialUrl": "https://www.coliseodepuertorico.com/alexzurdozonazero/",
-    "image": "assets/events/alex-zurdo-zona-zero-2026.svg",
+    "image": "assets/events/alex-zurdo-zona-zero-2026-10-18.jpg",
     "price": "",
     "sourceName": "Coliseo de Puerto Rico official event",
     "authority": "venue_ticket",
@@ -1255,11 +1353,13 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-26",
     "id": "alex-zurdo-zona-zero-san-juan-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true
+    "imageOverride": true,
+    "imageSourceUrl": "https://choli.ticketera.com/event/alex-zurdo-zona-cero-6dn2x2",
+    "imageSource": "Official Ticketera Zona Zero concert artwork"
   },
   {
     "id": "mayia-songs-that-speak-conference-pleasant-garden-2026",

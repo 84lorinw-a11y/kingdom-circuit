@@ -31,11 +31,11 @@ ARTWORK_REPLACEMENTS = {
         "classification": 3,
     },
     ("Boxyard Saturdaze", "2026-10-10"): {
-        "image": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
-        "imageType": "artist",
-        "source": "MAYIA official Linktree",
-        "sourceUrl": "https://linktr.ee/mayiawarren",
-        "classification": 3,
+        "image": "assets/events/mayia-boxyard-2026-10-10.png",
+        "imageType": "event_artwork",
+        "source": "Boxyard RTP official event poster",
+        "sourceUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+        "classification": 1,
     },
     ("MAYIA at the NC State Fair", "2026-10-17"): {
         "image": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
@@ -45,11 +45,11 @@ ARTWORK_REPLACEMENTS = {
         "classification": 3,
     },
     ("Alex Zurdo: Zona Zero", "2026-10-18"): {
-        "image": "https://i.scdn.co/image/ab6761610000e5eb2c81bb40c3b6962eacf9dc9c",
-        "imageType": "artist",
-        "source": "Alex Zurdo verified Spotify artist profile",
-        "sourceUrl": "https://open.spotify.com/",
-        "classification": 3,
+        "image": "assets/events/alex-zurdo-zona-zero-2026-10-18.jpg",
+        "imageType": "event_artwork",
+        "source": "Official Ticketera Zona Zero artwork",
+        "sourceUrl": "https://choli.ticketera.com/event/alex-zurdo-zona-cero-6dn2x2",
+        "classification": 1,
     },
     ("The Kickback", "2026-11-14"): {
         "image": "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",

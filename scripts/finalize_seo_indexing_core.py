@@ -9,6 +9,7 @@ from collections import Counter
 from xml.sax.saxutils import escape as xml_escape
 
 from finalize_artist_schedule_years import apply as finalize_artist_schedule_years
+from apply_sep26_approved_audit import finalize_availability
 
 SITE_ORIGIN = "https://kingdomcircuit.com"
 BRAND_STYLESHEET = "/assets/brand-live.css?v=1"
@@ -166,6 +167,7 @@ def apply(root: pathlib.Path) -> dict:
         raise SystemExit(f"Site root does not exist: {root}")
 
     artist_schedule_pages = finalize_artist_schedule_years(root)
+    finalize_availability(root)
     branded_pages = apply_branding(root)
     indexed: list[tuple[str, str]] = []
     noindexed: list[tuple[str, str]] = []

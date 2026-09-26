@@ -10,6 +10,7 @@ from zoneinfo import ZoneInfo
 
 from apply_sep13_content_repairs import NEW_EVENTS
 from apply_sep13_requested_events import UPSERTS
+from apply_sep26_approved_audit import patch_event as patch_approved_audit
 
 ROOT = Path(__file__).resolve().parents[1]
 DOVE_EVENT_ID = "bandsintown:1040305060"
@@ -135,6 +136,7 @@ def apply(root: Path = ROOT, today: str | None = None) -> None:
     for row in [row for rows in feeds.values() for row in rows] + historical:
         if row.get("id") == DOVE_EVENT_ID:
             row.update(DOVE_ARTWORK)
+        patch_approved_audit(row)
 
     for name, rows in feeds.items():
         (root / name).write_text(json.dumps(rows, indent=2, ensure_ascii=False) + "\n")
