@@ -521,7 +521,7 @@
     "status": "scheduled",
     "ticketUrl": "https://boletoslive.com/jay-kalyl/",
     "officialUrl": "https://boletoslive.com/jay-kalyl/",
-    "image": "https://i.scdn.co/image/ab6761610000e5eb1269b80aed5d08c40aedfdc3",
+    "image": "assets/events/jay-kalyl-desde-antes-tour-2026.png",
     "price": "",
     "sourceName": "Boletos Live official event",
     "authority": "venue_ticket",
@@ -539,9 +539,11 @@
     "auditVerified": "2026-09-11",
     "notes": "Official page gives conflicting 4:00 PM and 7:30 PM start times; start time intentionally left unspecified.",
     "id": "jay-kalyl-desde-antes-rockville-centre-2026",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true
+    "imageOverride": true,
+    "imageSource": "BoletosLive official Desde Antes Tour 2026 graphic; city-neutral artwork",
+    "imageSourceUrl": "https://boletoslive.com/"
   },
   {
     "id": "supplemental:issac-mansfield-saved-by-grace-2026",
@@ -561,7 +563,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.bandsintown.com/e/108746397-issac-mansfield-at-2842-s-alafaya-trail-ste-150-orlando-fl-32828?came_from=274",
     "officialUrl": "https://www.bandsintown.com/e/108746397-issac-mansfield-at-2842-s-alafaya-trail-ste-150-orlando-fl-32828?came_from=274",
-    "image": "",
+    "image": "assets/events/issac-mansfield-saved-by-grace-2026-10-03.jpg",
     "price": "Free; optional VIP tiers",
     "sourceName": "Issac Mansfield verified Bandsintown event",
     "authority": "artist_calendar",
@@ -575,6 +577,25 @@
         "authority": "artist_calendar",
         "priority": 100
       }
+    ],
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Issac Mansfield official SAVED BY GRACE flyer",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108746397-issac-mansfield-at-2842-s-alafaya-trail-ste-150-orlando-fl-32828?came_from=274",
+    "advertisedBilling": [
+      "Issac Mansfield",
+      "Josh Morgan",
+      "DJ Cam",
+      "Lev Nova",
+      "Junado"
+    ],
+    "officialBill": [
+      "Issac Mansfield",
+      "Josh Morgan",
+      "DJ Cam",
+      "Lev Nova",
+      "Junado"
     ]
   },
   {
@@ -596,7 +617,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.bandsintown.com/e/1040329648?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
     "officialUrl": "https://www.bandsintown.com/e/1040329648?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/1k-phew.webp",
+    "image": "assets/events/1k-phew-huntsville-2026-10-04.jpg",
     "price": "",
     "sourceName": "Bandsintown",
     "sources": [
@@ -613,7 +634,12 @@
     "bandsintownArtistId": "12546964",
     "bandsintownResolvedName": "1K Phew",
     "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "1K Phew"
+    "trackedArtist": "1K Phew",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Official Bandsintown event source photo, selected by the owner",
+    "imageSourceUrl": "https://www.bandsintown.com/e/1040329648"
   },
   {
     "title": "Future Legacy Hip-Hop Showcase",
@@ -1145,7 +1171,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.ncagr.gov/divisions/ncstatefair/buy-tickets-now",
     "officialUrl": "https://www.ncagr.gov/divisions/ncstatefair",
-    "image": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
+    "image": "assets/events/nc-state-fair-2026.png",
     "price": "",
     "sourceName": "North Carolina State Fair official site",
     "authority": "official_event",
@@ -1170,9 +1196,11 @@
     "auditVerified": "2026-09-11",
     "notes": "One event with two confirmed acoustic sets: 10–11 AM and 12–1 PM.",
     "id": "mayia-nc-state-fair-2026",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true
+    "imageOverride": true,
+    "imageSource": "Official 2026 North Carolina State Fair graphic",
+    "imageSourceUrl": "https://www.ncagr.gov/divisions/ncstatefair"
   },
   {
     "id": "supplemental:brenno-overflow-conference-2026",
@@ -1192,7 +1220,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.tickettailor.com/events/ablazemovement/2047830",
     "officialUrl": "https://www.overflowconf.com/schedule",
-    "image": "",
+    "image": "assets/events/overflow-conference-buffalo-2026.jpg",
     "price": "",
     "sourceName": "Brenno official upcoming shows",
     "authority": "artist_calendar",
@@ -1217,7 +1245,12 @@
     "startDateTime": "2026-10-17T15:30:00-04:00",
     "timezone": "America/New_York",
     "notes": "The Ticket Tailor listing covers the entire October 16–17 conference, opening Friday at 7 PM. The organizer's Saturday schedule explicitly lists Concert featuring Brenno at 3:30 PM on October 17. Kingdom Circuit lists that music performance, not the Friday conference opening.",
-    "auditVerified": "2026-09-26"
+    "auditVerified": "2026-09-26",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Official Ticket Tailor Overflow conference graphic",
+    "imageSourceUrl": "https://www.tickettailor.com/events/ablazemovement/2047830"
   },
   {
     "title": "Mission and Special Guests",
@@ -1237,7 +1270,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
     "officialUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
-    "image": "assets/artists/mission-primary.jpg",
+    "image": "assets/events/mission-sacramento-2026-10-17.jpg",
     "price": "",
     "sourceName": "Mission official Bandsintown event",
     "authority": "artist_calendar",
@@ -1254,11 +1287,11 @@
     ],
     "auditVerified": "2026-09-11",
     "id": "mission-friends-sacramento-2026",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
-    "imageSource": "Mission official YouTube channel",
-    "imageSourceUrl": "https://www.youtube.com/channel/UCBaU_Xh4fyokc-ckyCeYv3w"
+    "imageSource": "Mission official October 17 concert flyer",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento"
   },
   {
     "id": "bandsintown:108902772",
@@ -1533,7 +1566,7 @@
     "status": "scheduled",
     "ticketUrl": "",
     "officialUrl": "https://hogmob.com/nashville/",
-    "image": "assets/artists/sevin.webp",
+    "image": "assets/events/sevin-nashville-2026-10-24.jpg",
     "price": "Free concert; see official details for VIP options",
     "sourceName": "HOG MOB official Sevin tour",
     "authority": "artist_calendar",
@@ -1575,7 +1608,12 @@
     "legacyEventPaths": [
       "/event/sevin-live-concert-2026-10-24-nashville-76d537/"
     ],
-    "legacyEventNotice": "The venue location has been updated to Old Hickory in the Nashville area. The concert date is unchanged."
+    "legacyEventNotice": "The venue location has been updated to Old Hickory in the Nashville area. The concert date is unchanged.",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Official HOG MOB Nashville concert flyer",
+    "imageSourceUrl": "https://hogmob.com/nashville/"
   },
   {
     "id": "bandsintown:108144061",
@@ -1635,7 +1673,7 @@
     "status": "onsale",
     "ticketUrl": "https://www.bandsintown.com/e/108659684-skema-boy-at-subterranean",
     "officialUrl": "https://www.bandsintown.com/e/108659684-skema-boy-at-subterranean",
-    "image": "assets/artists/zauntee.webp",
+    "image": "assets/events/zauntee-god-remembers-tour-2026.jpg",
     "price": "",
     "sourceName": "Skema Boy official tour page",
     "sources": [
@@ -1656,13 +1694,13 @@
     ],
     "lastVerified": "2026-08-11T22:00:00Z",
     "confidence": "high",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 10,
     "firstSeen": "2026-08-11T22:00:00Z",
     "imageOverride": true,
-    "imageSource": "Official Ticketmaster God Remembers Tour portrait",
-    "imageSourceUrl": "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE"
+    "imageSource": "Official God Remembers Tour graphic with Skema Boy; no city-specific date printed",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108659684-skema-boy-at-subterranean"
   },
   {
     "id": "supplemental:skema-boy-2026-10-28-columbus-oh",
@@ -1684,7 +1722,7 @@
     "status": "onsale",
     "ticketUrl": "https://www.ticketweb.com/event/zauntee-god-remembers-tour-skullys-music-diner-tickets/14260644",
     "officialUrl": "https://www.ticketweb.com/event/zauntee-god-remembers-tour-skullys-music-diner-tickets/14260644",
-    "image": "assets/artists/zauntee.webp",
+    "image": "assets/events/zauntee-god-remembers-columbus-2026.png",
     "price": "",
     "sourceName": "Skema Boy official tour page",
     "sources": [
@@ -1705,13 +1743,13 @@
     ],
     "lastVerified": "2026-08-11T22:00:00Z",
     "confidence": "high",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 10,
     "firstSeen": "2026-08-11T22:00:00Z",
     "imageOverride": true,
-    "imageSource": "Official Ticketmaster God Remembers Tour portrait",
-    "imageSourceUrl": "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE"
+    "imageSource": "Official TicketWeb city-specific concert poster",
+    "imageSourceUrl": "https://www.ticketweb.com/event/zauntee-god-remembers-tour-skullys-music-diner-tickets/14260644"
   },
   {
     "id": "supplemental:skema-boy-2026-10-29-ferndale-mi",
@@ -1733,7 +1771,7 @@
     "status": "onsale",
     "ticketUrl": "https://www.ticketweb.com/event/kickstand-productions-presents-zauntee-god-the-loving-touch-tickets/14259604?pl=lovingtouch",
     "officialUrl": "https://www.ticketweb.com/event/kickstand-productions-presents-zauntee-god-the-loving-touch-tickets/14259604?pl=lovingtouch",
-    "image": "assets/artists/zauntee.webp",
+    "image": "assets/events/zauntee-god-remembers-ferndale-2026.png",
     "price": "",
     "sourceName": "Skema Boy official tour page",
     "sources": [
@@ -1754,13 +1792,13 @@
     ],
     "lastVerified": "2026-08-11T22:00:00Z",
     "confidence": "high",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 10,
     "firstSeen": "2026-08-11T22:00:00Z",
     "imageOverride": true,
-    "imageSource": "Official Ticketmaster God Remembers Tour portrait",
-    "imageSourceUrl": "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE"
+    "imageSource": "Official TicketWeb city-specific concert poster",
+    "imageSourceUrl": "https://www.ticketweb.com/event/kickstand-productions-presents-zauntee-god-the-loving-touch-tickets/14259604?pl=lovingtouch"
   },
   {
     "id": "bandsintown:1040178082",
@@ -1959,7 +1997,7 @@
     "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "assets/events/flavor-fest-friday-2026.webp",
+    "image": "assets/events/flavor-fest-friday-2026.png",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -1976,7 +2014,9 @@
         "authority": "official_event",
         "priority": 112
       }
-    ]
+    ],
+    "imageSource": "Official Flavor Fest Friday concert poster",
+    "imageSourceUrl": "https://www.flavorfest.org/schedule"
   },
   {
     "id": "bandsintown:108881783",
@@ -2036,7 +2076,7 @@
     "status": "onsale",
     "ticketUrl": "https://www.bandsintown.com/e/108660004-skema-boy-at-cannery-hall",
     "officialUrl": "https://www.bandsintown.com/e/108660004-skema-boy-at-cannery-hall",
-    "image": "assets/artists/zauntee.webp",
+    "image": "assets/events/zauntee-god-remembers-tour-2026.jpg",
     "price": "",
     "sourceName": "Skema Boy official tour page",
     "sources": [
@@ -2057,13 +2097,13 @@
     ],
     "lastVerified": "2026-08-11T22:00:00Z",
     "confidence": "high",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 10,
     "firstSeen": "2026-08-11T22:00:00Z",
     "imageOverride": true,
-    "imageSource": "Official Ticketmaster God Remembers Tour portrait",
-    "imageSourceUrl": "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE"
+    "imageSource": "Official God Remembers Tour graphic with Skema Boy; no city-specific date printed",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108659684-skema-boy-at-subterranean"
   },
   {
     "title": "Flavor Fest 2026 — Saturday Concerts",
@@ -2086,7 +2126,7 @@
     "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/",
-    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/989d4d2e-f454-4a1b-99df-cc78cf6e6749/FF26-Promo-Saturday-Night.jpg",
+    "image": "assets/events/flavor-fest-saturday-2026.jpg",
     "price": "",
     "sourceName": "Flavor Fest official Saturday poster",
     "authority": "official_festival",
@@ -2113,7 +2153,9 @@
       "C4 Crotona"
     ],
     "notes": "Yung Kriss and Gifted Hands have conflicting poster/schedule day assignments and are not newly associated here pending resolution.",
-    "id": "flavor-fest-2026-saturday-concerts"
+    "id": "flavor-fest-2026-saturday-concerts",
+    "imageSource": "Official Flavor Fest Saturday concert poster",
+    "imageSourceUrl": "https://www.flavorfest.org/"
   },
   {
     "id": "supplemental:skema-boy-2026-11-08-atlanta-ga",
@@ -2186,7 +2228,7 @@
     "status": "onsale",
     "ticketUrl": "https://www.bandsintown.com/e/108653118",
     "officialUrl": "https://www.bandsintown.com/e/108653118",
-    "image": "assets/artists/zauntee.webp",
+    "image": "assets/events/zauntee-god-remembers-tour-2026.jpg",
     "price": "",
     "sourceName": "Skema Boy official tour page",
     "sources": [
@@ -2207,13 +2249,13 @@
     ],
     "lastVerified": "2026-08-11T22:00:00Z",
     "confidence": "high",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 10,
     "firstSeen": "2026-08-11T22:00:00Z",
     "imageOverride": true,
-    "imageSource": "Official Ticketmaster God Remembers Tour portrait",
-    "imageSourceUrl": "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE"
+    "imageSource": "Official God Remembers Tour graphic with Skema Boy; no city-specific date printed",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108659684-skema-boy-at-subterranean"
   },
   {
     "id": "supplemental:skema-boy-2026-11-11-tampa-fl",
@@ -2235,7 +2277,7 @@
     "status": "onsale",
     "ticketUrl": "https://www.bandsintown.com/e/108653123",
     "officialUrl": "https://www.bandsintown.com/e/108653123",
-    "image": "assets/artists/zauntee.webp",
+    "image": "assets/events/zauntee-god-remembers-tour-2026.jpg",
     "price": "",
     "sourceName": "Skema Boy official tour page",
     "sources": [
@@ -2256,13 +2298,13 @@
     ],
     "lastVerified": "2026-08-11T22:00:00Z",
     "confidence": "high",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 10,
     "firstSeen": "2026-08-11T22:00:00Z",
     "imageOverride": true,
-    "imageSource": "Official Ticketmaster God Remembers Tour portrait",
-    "imageSourceUrl": "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE"
+    "imageSource": "Official God Remembers Tour graphic with Skema Boy; no city-specific date printed",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108659684-skema-boy-at-subterranean"
   },
   {
     "id": "bandsintown:1040314202",
@@ -2322,8 +2364,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
     "officialUrl": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
-    "image": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb32042962fc801509158784db",
-    "imageType": "artist",
+    "image": "assets/events/outlandish-fest-2026-lineup.png",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "price": "",
@@ -2348,7 +2390,9 @@
       }
     ],
     "auditVerified": "2026-09-22",
-    "notes": "The official festival ticket page confirms the 6:00–11:00 PM event window. Additional lineup names remain image-only and are not inferred."
+    "notes": "The official festival ticket page confirms the 6:00–11:00 PM event window. Additional lineup names remain image-only and are not inferred.",
+    "imageSource": "Official Outlandish Fest November 14 lineup poster",
+    "imageSourceUrl": "https://www.outlandishlive.org/lineup"
   },
   {
     "id": "bandsintown:1040378722",
@@ -2447,7 +2491,7 @@
     "status": "onsale",
     "ticketUrl": "https://www.bandsintown.com/e/108660132-zauntee-at-sons-of-hermann-hall",
     "officialUrl": "https://www.bandsintown.com/e/108660132-zauntee-at-sons-of-hermann-hall",
-    "image": "assets/artists/zauntee.webp",
+    "image": "assets/events/zauntee-god-remembers-tour-2026.jpg",
     "price": "",
     "sourceName": "Skema Boy official tour page",
     "sources": [
@@ -2468,13 +2512,13 @@
     ],
     "lastVerified": "2026-08-11T22:00:00Z",
     "confidence": "high",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 10,
     "firstSeen": "2026-08-11T22:00:00Z",
     "imageOverride": true,
-    "imageSource": "Official Ticketmaster God Remembers Tour portrait",
-    "imageSourceUrl": "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE"
+    "imageSource": "Official God Remembers Tour graphic with Skema Boy; no city-specific date printed",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108659684-skema-boy-at-subterranean"
   },
   {
     "id": "supplemental:skema-boy-2026-11-18-phoenix-az",
@@ -2496,7 +2540,7 @@
     "status": "onsale",
     "ticketUrl": "https://www.ticketweb.com/event/zauntee-god-remembers-tour-valley-bar-tickets/14252734",
     "officialUrl": "https://www.ticketweb.com/event/zauntee-god-remembers-tour-valley-bar-tickets/14252734",
-    "image": "assets/artists/zauntee.webp",
+    "image": "assets/events/zauntee-god-remembers-phoenix-2026.png",
     "price": "",
     "sourceName": "Skema Boy official tour page",
     "sources": [
@@ -2517,13 +2561,13 @@
     ],
     "lastVerified": "2026-08-11T22:00:00Z",
     "confidence": "high",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 10,
     "firstSeen": "2026-08-11T22:00:00Z",
     "imageOverride": true,
-    "imageSource": "Official Ticketmaster God Remembers Tour portrait",
-    "imageSourceUrl": "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE"
+    "imageSource": "Official TicketWeb city-specific concert poster",
+    "imageSourceUrl": "https://www.ticketweb.com/event/zauntee-god-remembers-tour-valley-bar-tickets/14252734"
   },
   {
     "id": "supplemental:skema-boy-2026-11-19-los-angeles-ca",
@@ -2595,7 +2639,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.bandsintown.com/t/108923215?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
     "officialUrl": "https://www.bandsintown.com/e/108923215?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/kurtis-hoppie-primary.jpg",
+    "image": "assets/events/the-promised-vi-2026-11-20.jpg",
     "price": "",
     "sourceName": "Bandsintown",
     "sources": [
@@ -2613,11 +2657,11 @@
     "bandsintownResolvedName": "Kurtis Hoppie",
     "bandsintownIdentity": "exact_name_or_alias",
     "trackedArtist": "Kurtis Hoppie",
-    "imageType": "artist",
-    "imagePosition": "50% 4%",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
     "imageOverride": true,
-    "imageSource": "Kurtis Hoppie official website",
-    "imageSourceUrl": "https://www.thekurtishoppie.com/",
+    "imageSource": "Official The Promised VI event flyer",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108923215",
     "auditVerified": "2026-09-13"
   },
   {
@@ -2640,7 +2684,7 @@
     "status": "onsale",
     "ticketUrl": "https://lost-lake.com/event/zauntee-w-skema-boy/lost-lake/denver-colorado/",
     "officialUrl": "https://lost-lake.com/event/zauntee-w-skema-boy/lost-lake/denver-colorado/",
-    "image": "assets/artists/zauntee.webp",
+    "image": "assets/events/zauntee-god-remembers-tour-2026.jpg",
     "price": "",
     "sourceName": "Skema Boy official tour page",
     "sources": [
@@ -2661,13 +2705,13 @@
     ],
     "lastVerified": "2026-08-11T22:00:00Z",
     "confidence": "high",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 10,
     "firstSeen": "2026-08-11T22:00:00Z",
     "imageOverride": true,
-    "imageSource": "Official Ticketmaster God Remembers Tour portrait",
-    "imageSourceUrl": "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE"
+    "imageSource": "Official God Remembers Tour graphic with Skema Boy; no city-specific date printed",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108659684-skema-boy-at-subterranean"
   },
   {
     "title": "Miles Minnick & CJ Emulous at Zion Ultra Lounge",

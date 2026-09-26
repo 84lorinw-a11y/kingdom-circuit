@@ -155,10 +155,14 @@ skema_events = [
 ]
 if not all(e.get("headliner") == "Zauntee" for e in skema_events):
     raise SystemExit("A remaining Skema Boy tour event is missing Zauntee as headliner")
-if not all(str(e.get("image") or "").endswith("assets/artists/zauntee.webp") for e in skema_events):
-    raise SystemExit("A remaining Skema Boy tour event is missing the Zauntee image")
-if not all(e.get("imageType") == "artist" and e.get("imagePosition") == "center" for e in skema_events):
-    raise SystemExit("A remaining Zauntee tour event has inconsistent image presentation")
+from apply_verified_show_artwork import BY_ID as VERIFIED_ARTWORK
+for event in skema_events:
+    pin = VERIFIED_ARTWORK.get(str(event["id"]).removeprefix("manual:"), {})
+    expected = pin.get("image", "assets/artists/zauntee.webp")
+    if str(event.get("image") or "").lstrip("/") != expected:
+        raise SystemExit(f"Skema Boy tour event is missing its verified artwork: {event['id']}")
+    if event.get("imageType") != pin.get("imageType", "artist") or event.get("imagePosition") != "center":
+        raise SystemExit(f"Zauntee tour event has inconsistent image presentation: {event['id']}")
 
 # Hope Fest is an historical regression check. Once its date has passed, the
 # permanent past-event pruner intentionally removes it from the live artifact.

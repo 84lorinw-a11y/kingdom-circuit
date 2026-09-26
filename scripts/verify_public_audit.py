@@ -434,13 +434,15 @@ def verify_jimmy_artwork(jimmy: str, audit: Audit) -> None:
 def verify_requested_live_repairs(pages: Dict[Path, str], audit: Audit) -> None:
     home = pages.get(Path("index.html"), "")
     kurtis_portraits = []
+    kurtis_cards = []
     for card in repair.CARD_RE.findall(home):
         if "Kurtis Hoppie" not in card:
             continue
+        kurtis_cards.append(card)
         image = re.search(r'<img\b[^>]*class=["\'][^"\']*\bartist-photo\b[^"\']*["\'][^>]*>', card, re.I | re.S)
         if image:
             kurtis_portraits.append(image.group(0))
-    audit.expect(bool(kurtis_portraits), "homepage has no Kurtis Hoppie portrait card")
+    audit.expect(bool(kurtis_cards), "homepage has no Kurtis Hoppie show card")
     for image in kurtis_portraits:
         audit.expect("object-position:50% 4%" in image, "homepage Kurtis Hoppie portrait crop regressed")
 

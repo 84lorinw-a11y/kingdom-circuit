@@ -108,7 +108,7 @@ class MultiPageProductionTests(unittest.TestCase):
             hashlib.sha256(payload).hexdigest(),
         )
 
-    def test_every_zauntee_god_remembers_record_uses_one_safe_image(self):
+    def test_every_zauntee_god_remembers_record_uses_verified_artwork_or_safe_fallback(self):
         records = []
         for filename in ("events.json", "supplemental-events.json"):
             records.extend(json.loads((ROOT / filename).read_text(encoding="utf-8")))
@@ -122,12 +122,14 @@ class MultiPageProductionTests(unittest.TestCase):
 
         self.assertGreaterEqual(len(tour), 17)
         for event in tour:
-            self.assertEqual("assets/artists/zauntee.webp", event.get("image"))
-            self.assertEqual("artist", event.get("imageType"))
+            from apply_verified_show_artwork import BY_ID
+            pin = BY_ID.get(str(event["id"]).removeprefix("manual:"), {})
+            self.assertEqual(pin.get("image", "assets/artists/zauntee.webp"), event.get("image"))
+            self.assertEqual(pin.get("imageType", "artist"), event.get("imageType"))
             self.assertEqual("center", event.get("imagePosition"))
             self.assertIs(event.get("imageOverride"), True)
             self.assertEqual(
-                "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE",
+                pin.get("imageSourceUrl", "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE"),
                 event.get("imageSourceUrl"),
             )
 
@@ -185,7 +187,9 @@ class MultiPageProductionTests(unittest.TestCase):
         for event in skema_events:
             self.assertTrue(event["officialUrl"].startswith("https://"))
             self.assertEqual("Zauntee", event.get("headliner"))
-            self.assertEqual("assets/artists/zauntee.webp", event.get("image"))
+            from apply_verified_show_artwork import BY_ID
+            pin = BY_ID.get(str(event["id"]).removeprefix("manual:"), {})
+            self.assertEqual(pin.get("image", "assets/artists/zauntee.webp"), event.get("image"))
 
         rare_events = [event for event in events if "Rare of Breed" in event.get("artists", [])]
         for event in rare_events:

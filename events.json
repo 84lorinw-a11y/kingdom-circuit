@@ -1931,7 +1931,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/fastivalletm-feat-1k-phew-tickets-1998265853961",
     "officialUrl": "https://www.eventbrite.com/e/fastivalletm-feat-1k-phew-tickets-1998265853961",
-    "image": "assets/artists/1k-phew.webp",
+    "image": "assets/events/fastivalle-2026.jpg",
     "price": "",
     "sourceName": "Eventbrite organizer listing",
     "sources": [
@@ -1959,13 +1959,16 @@
     ],
     "lastVerified": "2026-09-23T16:24:14Z",
     "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 24%",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
     "verifiedVersion": 10,
     "firstSeen": "2026-08-15T11:53:29Z",
     "notes": "The Eventbrite organizer listing publishes 2:00–4:30 PM at Newfields and supersedes the conflicting 7:00 PM Camptown listing distributed by Bandsintown/Apple Music.",
     "auditVerified": "2026-09-23",
-    "organizer": "fastivalle™ corp."
+    "organizer": "fastivalle™ corp.",
+    "imageOverride": true,
+    "imageSource": "Official Fastivalle event branding",
+    "imageSourceUrl": "https://www.eventbrite.com/e/fastivalletm-feat-1k-phew-tickets-1998265853961"
   },
   {
     "id": "manual:hvo-fest-2026-los-angeles",
@@ -2523,7 +2526,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.bandsintown.com/e/1039603525?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
     "officialUrl": "https://www.reachrecords.com/artists/1k-phew/",
-    "image": "assets/artists/1k-phew.webp",
+    "image": "assets/events/worship-night-oceanside-2026-10-03.jpg",
     "price": "",
     "sourceName": "Reach Records - 1K Phew",
     "sources": [
@@ -2544,10 +2547,13 @@
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 24%",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
     "verifiedVersion": 9,
-    "firstSeen": "2026-08-15T11:53:29Z"
+    "firstSeen": "2026-08-15T11:53:29Z",
+    "imageOverride": true,
+    "imageSource": "Oceanside SDA Church official Worship Night flyer",
+    "imageSourceUrl": "https://www.eventbrite.com/e/worship-night-tickets-1993499580910"
   },
   {
     "id": "manual:jay-kalyl-desde-antes-rockville-centre-2026",
@@ -2568,7 +2574,7 @@
     "status": "scheduled",
     "ticketUrl": "https://boletoslive.com/jay-kalyl/",
     "officialUrl": "https://boletoslive.com/jay-kalyl/",
-    "image": "assets/events/jay-kalyl-desde-antes-2026.svg",
+    "image": "assets/events/jay-kalyl-desde-antes-tour-2026.png",
     "price": "",
     "sourceName": "Boletos Live official event",
     "sources": [
@@ -2590,7 +2596,9 @@
     "lineupExplicit": true,
     "auditVerified": "2026-09-11",
     "notes": "Official page gives conflicting 4:00 PM and 7:30 PM start times; start time intentionally left unspecified.",
-    "imageOverride": true
+    "imageOverride": true,
+    "imageSource": "BoletosLive official Desde Antes Tour 2026 graphic; city-neutral artwork",
+    "imageSourceUrl": "https://boletoslive.com/"
   },
   {
     "id": "manual:egr-2026-10-03-chandler-az",
@@ -2991,7 +2999,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
     "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "assets/artists/egr-spotify-primary.jpg",
+    "image": "assets/events/egr-fall-2026-tour.jpg",
     "price": "",
     "sourceName": "EGR official Instagram schedule",
     "sources": [
@@ -3005,12 +3013,13 @@
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 0%",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
-    "imageSource": "EGR official Spotify portrait",
-    "imageSourceUrl": "https://open.spotify.com/artist/4EJIkbig1thbV3C3B68c56"
+    "imageSource": "EGR official fall 2026 schedule flyer; this date appears on the published poster",
+    "imageSourceUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "imageOverride": true
   },
   {
     "id": "manual:mayia-boxyard-saturdaze-2026",
@@ -3554,7 +3563,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
     "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "assets/artists/egr-spotify-primary.jpg",
+    "image": "assets/events/egr-fall-2026-tour.jpg",
     "price": "",
     "sourceName": "EGR official Instagram schedule",
     "sources": [
@@ -3568,12 +3577,13 @@
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 0%",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
-    "imageSource": "EGR official Spotify portrait",
-    "imageSourceUrl": "https://open.spotify.com/artist/4EJIkbig1thbV3C3B68c56"
+    "imageSource": "EGR official fall 2026 schedule flyer; this date appears on the published poster",
+    "imageSourceUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "imageOverride": true
   },
   {
     "id": "manual:808-beezy-bandsintown-108932700",
@@ -3790,7 +3800,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.ncagr.gov/divisions/ncstatefair/buy-tickets-now",
     "officialUrl": "https://www.ncagr.gov/divisions/ncstatefair",
-    "image": "assets/events/mayia-nc-state-fair-2026.svg",
+    "image": "assets/events/nc-state-fair-2026.png",
     "price": "",
     "sourceName": "North Carolina State Fair official site",
     "sources": [
@@ -3819,7 +3829,9 @@
     "lineupExplicit": true,
     "auditVerified": "2026-09-11",
     "notes": "One event with two confirmed acoustic sets: 10–11 AM and 12–1 PM.",
-    "imageOverride": true
+    "imageOverride": true,
+    "imageSource": "Official 2026 North Carolina State Fair graphic",
+    "imageSourceUrl": "https://www.ncagr.gov/divisions/ncstatefair"
   },
   {
     "id": "manual:ghost-ride-the-gospel-2-berkeley-2026-10-17",
@@ -3920,7 +3932,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
     "officialUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
-    "image": "assets/artists/mission-primary.jpg",
+    "image": "assets/events/mission-sacramento-2026-10-17.jpg",
     "price": "",
     "sourceName": "Mission official Bandsintown event",
     "sources": [
@@ -3934,7 +3946,7 @@
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
@@ -3942,8 +3954,8 @@
     "lineupExplicit": true,
     "auditVerified": "2026-09-11",
     "imageOverride": true,
-    "imageSource": "Mission official YouTube channel",
-    "imageSourceUrl": "https://www.youtube.com/channel/UCBaU_Xh4fyokc-ckyCeYv3w"
+    "imageSource": "Mission official October 17 concert flyer",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento"
   },
   {
     "title": "Alex Zurdo: Zona Zero",
@@ -4307,7 +4319,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
     "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "assets/artists/egr-spotify-primary.jpg",
+    "image": "assets/events/egr-fall-2026-tour.jpg",
     "price": "",
     "sourceName": "EGR official Instagram schedule",
     "sources": [
@@ -4321,12 +4333,13 @@
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 0%",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
-    "imageSource": "EGR official Spotify portrait",
-    "imageSourceUrl": "https://open.spotify.com/artist/4EJIkbig1thbV3C3B68c56"
+    "imageSource": "EGR official fall 2026 schedule flyer; this date appears on the published poster",
+    "imageSourceUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "imageOverride": true
   },
   {
     "title": "Light in the Darkness",
@@ -4416,7 +4429,7 @@
     "status": "onsale",
     "ticketUrl": "https://www.ticketmaster.com/zauntee-god-remembers-tour-new-york-new-york-11-01-2026/event/000064EEB1CBEA47",
     "officialUrl": "https://mercuryeastpresents.com/tm-event/zauntee-god-remembers-tour/",
-    "image": "assets/artists/zauntee.webp",
+    "image": "assets/events/zauntee-god-remembers-tour-2026.jpg",
     "price": "",
     "sourceName": "Official venue event page",
     "sources": [
@@ -4437,7 +4450,7 @@
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
@@ -4449,8 +4462,8 @@
     "ageRestriction": "18+",
     "notes": "Official venue listing specifies an 18+ age restriction.",
     "imageOverride": true,
-    "imageSource": "Official Ticketmaster God Remembers Tour portrait",
-    "imageSourceUrl": "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE"
+    "imageSource": "Official God Remembers Tour graphic with Skema Boy; no city-specific date printed",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108659684-skema-boy-at-subterranean"
   },
   {
     "id": "manual:808-beezy-bandsintown-108856031",
@@ -4510,7 +4523,7 @@
     "status": "onsale",
     "ticketUrl": "https://www.ticketmaster.com/zauntee-god-remembers-tour-charlotte-north-carolina-11-04-2026/event/2D0064EAD47E56BE",
     "officialUrl": "https://www.ticketmaster.com/zauntee-god-remembers-tour-charlotte-north-carolina-11-04-2026/event/2D0064EAD47E56BE",
-    "image": "assets/artists/zauntee.webp",
+    "image": "assets/events/zauntee-god-remembers-tour-2026.jpg",
     "price": "",
     "sourceName": "Ticketmaster",
     "sources": [
@@ -4524,13 +4537,13 @@
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
     "imageOverride": true,
-    "imageSource": "Official Ticketmaster God Remembers Tour portrait",
-    "imageSourceUrl": "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE"
+    "imageSource": "Official God Remembers Tour graphic with Skema Boy; no city-specific date printed",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108659684-skema-boy-at-subterranean"
   },
   {
     "id": "bandsintown:108940329",
@@ -4604,8 +4617,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.bandsintown.com/t/108940329",
     "officialUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
-    "image": "assets/artists/miles-minnick.webp",
-    "imageType": "artist",
+    "image": "assets/events/miles-minnick-florida-campus-tour-2026.jpg",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "lineupExplicit": true,
     "advertisedBilling": [
@@ -4634,7 +4647,10 @@
     ],
     "notes": "The venue-specific listing supersedes the older generic Miami placeholder. The published event time is 6:30 PM; CJ's earlier calendar entry displayed 6:00 PM without a venue.",
     "auditVerified": "2026-09-23",
-    "id": "manual:miles-minnick-black-box-north-miami-2026-11-05"
+    "id": "manual:miles-minnick-black-box-north-miami-2026-11-05",
+    "imageOverride": true,
+    "imageSource": "Official Christlike University Florida tour flyer listing Miami, Jacksonville and Orlando dates",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
   },
   {
     "id": "manual:flavor-fest-2026-friday-concerts",
@@ -4660,7 +4676,7 @@
     "eventType": "festival",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "assets/events/flavor-fest-friday-2026.webp",
+    "image": "assets/events/flavor-fest-friday-2026.png",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -4686,7 +4702,9 @@
       }
     ],
     "confidence": "high",
-    "auditVerified": "2026-09-11"
+    "auditVerified": "2026-09-11",
+    "imageSource": "Official Flavor Fest Friday concert poster",
+    "imageSourceUrl": "https://www.flavorfest.org/schedule"
   },
   {
     "id": "bandsintown:108940352",
@@ -4736,7 +4754,7 @@
     "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/",
-    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/989d4d2e-f454-4a1b-99df-cc78cf6e6749/FF26-Promo-Saturday-Night.jpg",
+    "image": "assets/events/flavor-fest-saturday-2026.jpg",
     "price": "",
     "sourceName": "Flavor Fest official Saturday poster",
     "sources": [
@@ -4765,7 +4783,9 @@
       "Monster Tarver",
       "C4 Crotona"
     ],
-    "notes": "Yung Kriss and Gifted Hands have conflicting poster/schedule day assignments and are not newly associated here pending resolution."
+    "notes": "Yung Kriss and Gifted Hands have conflicting poster/schedule day assignments and are not newly associated here pending resolution.",
+    "imageSource": "Official Flavor Fest Saturday concert poster",
+    "imageSourceUrl": "https://www.flavorfest.org/"
   },
   {
     "title": "Miles Minnick – Christlike University – Florida Campus Tour in Jacksonville",
@@ -4790,8 +4810,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
     "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
-    "image": "assets/artists/miles-minnick.webp",
-    "imageType": "artist",
+    "image": "assets/events/miles-minnick-florida-campus-tour-2026.jpg",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "lineupExplicit": true,
     "advertisedBilling": [
@@ -4828,7 +4848,10 @@
     ],
     "notes": "The venue-specific Jacksonville ticket listing supersedes CJ's older November 7 Tampa calendar entry. Miles may also appear on the 11:45 AM Flavor Fest artist panel in Tampa; that daytime panel is not this concert.",
     "auditVerified": "2026-09-23",
-    "id": "manual:miles-minnick-christlike-university-jacksonville-2026-11-07"
+    "id": "manual:miles-minnick-christlike-university-jacksonville-2026-11-07",
+    "imageOverride": true,
+    "imageSource": "Official Christlike University Florida tour flyer listing Miami, Jacksonville and Orlando dates",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
   },
   {
     "id": "ticketmaster:vv1AAZk3FGkdmpCG1",
@@ -5012,8 +5035,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
     "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
-    "image": "assets/artists/miles-minnick.webp",
-    "imageType": "artist",
+    "image": "assets/events/miles-minnick-florida-campus-tour-2026.jpg",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "lineupExplicit": true,
     "advertisedBilling": [
@@ -5050,7 +5073,10 @@
     ],
     "notes": "The ticket listing advertises Orlando, but Conduit's physical address is in Winter Park. This supersedes CJ's older generic November 8 Jacksonville entry.",
     "auditVerified": "2026-09-23",
-    "id": "manual:miles-minnick-christlike-university-orlando-2026-11-08"
+    "id": "manual:miles-minnick-christlike-university-orlando-2026-11-08",
+    "imageOverride": true,
+    "imageSource": "Official Christlike University Florida tour flyer listing Miami, Jacksonville and Orlando dates",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
   },
   {
     "id": "ticketmaster:vvG1zZ_ClQMRrF",
@@ -5072,7 +5098,7 @@
     "status": "onsale",
     "ticketUrl": "https://www.ticketmaster.com/zauntee-god-remembers-tour-atlanta-georgia-11-08-2026/event/0E0064EADADEF788",
     "officialUrl": "https://www.masqueradeatlanta.com/events/zauntee/",
-    "image": "assets/artists/zauntee.webp",
+    "image": "assets/events/zauntee-god-remembers-tour-2026.jpg",
     "price": "",
     "sourceName": "Official venue event page",
     "sources": [
@@ -5093,7 +5119,7 @@
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
@@ -5103,8 +5129,8 @@
       "supplemental:skema-boy-2026-11-08-atlanta-ga"
     ],
     "imageOverride": true,
-    "imageSource": "Official Ticketmaster God Remembers Tour portrait",
-    "imageSourceUrl": "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE"
+    "imageSource": "Official God Remembers Tour graphic with Skema Boy; no city-specific date printed",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108659684-skema-boy-at-subterranean"
   },
   {
     "id": "manual:kaden-jordan-2026-11-13-orlando",
@@ -5383,7 +5409,7 @@
     "status": "onsale",
     "ticketUrl": "https://www.ticketmaster.com/zauntee-god-remembers-tour-los-angeles-california-11-19-2026/event/090064EDC54BA93C",
     "officialUrl": "https://themoroccan.com/tm-event/zauntee-god-remembers-tour/",
-    "image": "assets/artists/zauntee.webp",
+    "image": "assets/events/zauntee-god-remembers-tour-2026.jpg",
     "price": "",
     "sourceName": "Official venue event page",
     "sources": [
@@ -5404,7 +5430,7 @@
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
@@ -5414,8 +5440,8 @@
       "supplemental:skema-boy-2026-11-19-los-angeles-ca"
     ],
     "imageOverride": true,
-    "imageSource": "Official Ticketmaster God Remembers Tour portrait",
-    "imageSourceUrl": "https://s1.ticketm.net/dam/e/54d/bad44a34-52c7-4dcd-b30b-d4906678154d_SOURCE"
+    "imageSource": "Official God Remembers Tour graphic with Skema Boy; no city-specific date printed",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108659684-skema-boy-at-subterranean"
   },
   {
     "id": "manual:egr-2026-11-21-bradley-ca",
@@ -5436,7 +5462,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
     "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "assets/artists/egr-spotify-primary.jpg",
+    "image": "assets/events/egr-fall-2026-tour.jpg",
     "price": "",
     "sourceName": "EGR official Instagram schedule",
     "sources": [
@@ -5450,12 +5476,13 @@
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 0%",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
-    "imageSource": "EGR official Spotify portrait",
-    "imageSourceUrl": "https://open.spotify.com/artist/4EJIkbig1thbV3C3B68c56"
+    "imageSource": "EGR official fall 2026 schedule flyer; this date appears on the published poster",
+    "imageSourceUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "imageOverride": true
   },
   {
     "id": "manual:revival-nights-asap-preach-hilliard-2026",
@@ -5546,10 +5573,10 @@
     "status": "scheduled",
     "ticketUrl": "",
     "officialUrl": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous",
-    "image": "",
-    "imageType": "fallback",
+    "image": "assets/events/cj-emulous-state-youth-conference-2026.jpg",
+    "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": false,
+    "imageOverride": true,
     "price": "",
     "lineupExplicit": true,
     "authority": "artist_calendar",
@@ -5591,7 +5618,9 @@
       "2026-11-28": "10:00",
       "2026-11-29": "09:00"
     },
-    "id": "manual:cj-emulous-state-youth-conference-cocoa-2026"
+    "id": "manual:cj-emulous-state-youth-conference-cocoa-2026",
+    "imageSource": "Official conference-branded CJ Emulous graphic",
+    "imageSourceUrl": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous"
   },
   {
     "title": "Christlike Christmas — CJ Emulous & Miles Minnick",
@@ -5764,7 +5793,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
     "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "assets/artists/egr-spotify-primary.jpg",
+    "image": "assets/events/egr-fall-2026-tour.jpg",
     "price": "",
     "sourceName": "EGR official Instagram schedule",
     "sources": [
@@ -5778,12 +5807,13 @@
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 0%",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
-    "imageSource": "EGR official Spotify portrait",
-    "imageSourceUrl": "https://open.spotify.com/artist/4EJIkbig1thbV3C3B68c56"
+    "imageSource": "EGR official fall 2026 schedule flyer; this date appears on the published poster",
+    "imageSourceUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "imageOverride": true
   },
   {
     "id": "manual:miles-cj-zion-ultra-lounge-chandler-2026",
@@ -5848,7 +5878,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
     "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "assets/artists/egr-spotify-primary.jpg",
+    "image": "assets/events/egr-fall-2026-tour.jpg",
     "price": "",
     "sourceName": "EGR official Instagram schedule",
     "sources": [
@@ -5862,12 +5892,13 @@
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 0%",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
-    "imageSource": "EGR official Spotify portrait",
-    "imageSourceUrl": "https://open.spotify.com/artist/4EJIkbig1thbV3C3B68c56"
+    "imageSource": "EGR official fall 2026 schedule flyer; this date appears on the published poster",
+    "imageSourceUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "imageOverride": true
   },
   {
     "id": "manual:kaden-jordan-2026-12-11-ocala",
@@ -5888,8 +5919,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.songkick.com/artists/10314485-kaden-jordan",
     "officialUrl": "https://kadenjordan.com/pages/tour",
-    "image": "https://images.sk-static.com/images/media/profile_images/artists/10314485/large_avatar",
-    "imageType": "artist",
+    "image": "assets/events/unfltrd-2026.png",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "price": "",
     "sourceName": "Kaden Jordan official tour page / Songkick",
@@ -5911,7 +5942,10 @@
         "authority": "artist_calendar",
         "priority": 90
       }
-    ]
+    ],
+    "imageOverride": true,
+    "imageSource": "NEXT CHURCH official UNFLTRD event graphic",
+    "imageSourceUrl": "https://www.ournextchurch.com/unfltrd"
   },
   {
     "id": "manual:egr-2026-12-12-jamestown-nd",
@@ -5932,7 +5966,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
     "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "assets/artists/egr-spotify-primary.jpg",
+    "image": "assets/events/egr-fall-2026-tour.jpg",
     "price": "",
     "sourceName": "EGR official Instagram schedule",
     "sources": [
@@ -5946,12 +5980,13 @@
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
     "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "50% 0%",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
-    "imageSource": "EGR official Spotify portrait",
-    "imageSourceUrl": "https://open.spotify.com/artist/4EJIkbig1thbV3C3B68c56"
+    "imageSource": "EGR official fall 2026 schedule flyer; this date appears on the published poster",
+    "imageSourceUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
+    "imageOverride": true
   },
   {
     "title": "JIMMY ROCK'S Rave & Worship — The Worship Wawa",
@@ -5971,7 +6006,7 @@
     "status": "rescheduled",
     "ticketUrl": "https://fareharbor.com/embeds/book/theworshipwawa/?full-items=yes",
     "officialUrl": "https://www.instagram.com/p/DdXLDe-BpRK/",
-    "image": "assets/events/jimmy-rock-worship-wawa-miami-2026.jpg",
+    "image": "assets/events/jimmy-rock-wawa-december-2026.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -6024,8 +6059,8 @@
       "20:45"
     ],
     "id": "manual:jimmy-rock-worship-wawa-miami-2026",
-    "imageSource": "The Worship Wawa official event poster",
-    "imageSourceUrl": "https://www.theworshipwawa.com/jimmyrock-rave-worship"
+    "imageSource": "Official Worship Wawa announcement showing the December 18 new date",
+    "imageSourceUrl": "https://www.instagram.com/p/DdXLDe-BpRK/"
   },
   {
     "title": "Kelo Cho Presents: The Worship After Christmas",

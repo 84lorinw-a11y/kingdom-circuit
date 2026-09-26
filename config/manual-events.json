@@ -1626,7 +1626,7 @@
     "status": "scheduled",
     "ticketUrl": "https://boletoslive.com/jay-kalyl/",
     "officialUrl": "https://boletoslive.com/jay-kalyl/",
-    "image": "assets/events/jay-kalyl-desde-antes-2026.svg",
+    "image": "assets/events/jay-kalyl-desde-antes-tour-2026.png",
     "price": "",
     "sourceName": "Boletos Live official event",
     "authority": "venue_ticket",
@@ -1646,7 +1646,9 @@
     "id": "jay-kalyl-desde-antes-rockville-centre-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true
+    "imageOverride": true,
+    "imageSource": "BoletosLive official Desde Antes Tour 2026 graphic; city-neutral artwork",
+    "imageSourceUrl": "https://boletoslive.com/"
   },
   {
     "id": "egr-2026-10-03-chandler-az",
@@ -1904,12 +1906,17 @@
     "eventType": "concert",
     "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
     "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "",
+    "image": "assets/events/egr-fall-2026-tour.jpg",
     "price": "",
     "status": "scheduled",
     "lineupExplicit": true,
     "authority": "official_event",
-    "sourceName": "EGR official Instagram schedule"
+    "sourceName": "EGR official Instagram schedule",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "EGR official fall 2026 schedule flyer; this date appears on the published poster",
+    "imageSourceUrl": "https://www.instagram.com/p/DboKM3GJM4A/"
   },
   {
     "id": "scootie-wop-southwest-trail-riders-houston-2026",
@@ -2295,12 +2302,17 @@
     "eventType": "concert",
     "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
     "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "",
+    "image": "assets/events/egr-fall-2026-tour.jpg",
     "price": "",
     "status": "scheduled",
     "lineupExplicit": true,
     "authority": "official_event",
-    "sourceName": "EGR official Instagram schedule"
+    "sourceName": "EGR official Instagram schedule",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "EGR official fall 2026 schedule flyer; this date appears on the published poster",
+    "imageSourceUrl": "https://www.instagram.com/p/DboKM3GJM4A/"
   },
   {
     "title": "Mike Malagies — It’s A God Night (Miami)",
@@ -2478,7 +2490,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.ncagr.gov/divisions/ncstatefair/buy-tickets-now",
     "officialUrl": "https://www.ncagr.gov/divisions/ncstatefair",
-    "image": "assets/events/mayia-nc-state-fair-2026.svg",
+    "image": "assets/events/nc-state-fair-2026.png",
     "price": "",
     "sourceName": "North Carolina State Fair official site",
     "authority": "official_event",
@@ -2505,7 +2517,9 @@
     "id": "mayia-nc-state-fair-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true
+    "imageOverride": true,
+    "imageSource": "Official 2026 North Carolina State Fair graphic",
+    "imageSourceUrl": "https://www.ncagr.gov/divisions/ncstatefair"
   },
   {
     "id": "ghost-ride-the-gospel-2-berkeley-2026-10-17",
@@ -2605,7 +2619,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
     "officialUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
-    "image": "assets/artists/mission-primary.jpg",
+    "image": "assets/events/mission-sacramento-2026-10-17.jpg",
     "price": "",
     "sourceName": "Mission official Bandsintown event",
     "authority": "artist_calendar",
@@ -2622,11 +2636,11 @@
     ],
     "auditVerified": "2026-09-11",
     "id": "mission-friends-sacramento-2026",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
-    "imageSource": "Mission official YouTube channel",
-    "imageSourceUrl": "https://www.youtube.com/channel/UCBaU_Xh4fyokc-ckyCeYv3w"
+    "imageSource": "Mission official October 17 concert flyer",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento"
   },
   {
     "title": "Alex Zurdo: Zona Zero",
@@ -3012,12 +3026,17 @@
     "eventType": "concert",
     "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
     "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "",
+    "image": "assets/events/egr-fall-2026-tour.jpg",
     "price": "",
     "status": "scheduled",
     "lineupExplicit": true,
     "authority": "official_event",
-    "sourceName": "EGR official Instagram schedule"
+    "sourceName": "EGR official Instagram schedule",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "EGR official fall 2026 schedule flyer; this date appears on the published poster",
+    "imageSourceUrl": "https://www.instagram.com/p/DboKM3GJM4A/"
   },
   {
     "title": "Light in the Darkness",
@@ -3107,8 +3126,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.bandsintown.com/t/108940329",
     "officialUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
-    "image": "assets/artists/miles-minnick.webp",
-    "imageType": "artist",
+    "image": "assets/events/miles-minnick-florida-campus-tour-2026.jpg",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "lineupExplicit": true,
     "advertisedBilling": [
@@ -3137,7 +3156,10 @@
     ],
     "notes": "The venue-specific listing supersedes the older generic Miami placeholder. The published event time is 6:30 PM; CJ's earlier calendar entry displayed 6:00 PM without a venue.",
     "auditVerified": "2026-09-23",
-    "id": "miles-minnick-black-box-north-miami-2026-11-05"
+    "id": "miles-minnick-black-box-north-miami-2026-11-05",
+    "imageOverride": true,
+    "imageSource": "Official Christlike University Florida tour flyer listing Miami, Jacksonville and Orlando dates",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
   },
   {
     "id": "flavor-fest-2026-friday-concerts",
@@ -3160,7 +3182,7 @@
     "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "assets/events/flavor-fest-friday-2026.webp",
+    "image": "assets/events/flavor-fest-friday-2026.png",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -3177,7 +3199,9 @@
         "authority": "official_event",
         "priority": 112
       }
-    ]
+    ],
+    "imageSource": "Official Flavor Fest Friday concert poster",
+    "imageSourceUrl": "https://www.flavorfest.org/schedule"
   },
   {
     "title": "Flavor Fest 2026 — Saturday Concerts",
@@ -3200,7 +3224,7 @@
     "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/",
-    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/989d4d2e-f454-4a1b-99df-cc78cf6e6749/FF26-Promo-Saturday-Night.jpg",
+    "image": "assets/events/flavor-fest-saturday-2026.jpg",
     "price": "",
     "sourceName": "Flavor Fest official Saturday poster",
     "authority": "official_festival",
@@ -3227,7 +3251,9 @@
       "C4 Crotona"
     ],
     "notes": "Yung Kriss and Gifted Hands have conflicting poster/schedule day assignments and are not newly associated here pending resolution.",
-    "id": "flavor-fest-2026-saturday-concerts"
+    "id": "flavor-fest-2026-saturday-concerts",
+    "imageSource": "Official Flavor Fest Saturday concert poster",
+    "imageSourceUrl": "https://www.flavorfest.org/"
   },
   {
     "title": "Miles Minnick – Christlike University – Florida Campus Tour in Jacksonville",
@@ -3252,8 +3278,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
     "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
-    "image": "assets/artists/miles-minnick.webp",
-    "imageType": "artist",
+    "image": "assets/events/miles-minnick-florida-campus-tour-2026.jpg",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "lineupExplicit": true,
     "advertisedBilling": [
@@ -3290,7 +3316,10 @@
     ],
     "notes": "The venue-specific Jacksonville ticket listing supersedes CJ's older November 7 Tampa calendar entry. Miles may also appear on the 11:45 AM Flavor Fest artist panel in Tampa; that daytime panel is not this concert.",
     "auditVerified": "2026-09-23",
-    "id": "miles-minnick-christlike-university-jacksonville-2026-11-07"
+    "id": "miles-minnick-christlike-university-jacksonville-2026-11-07",
+    "imageOverride": true,
+    "imageSource": "Official Christlike University Florida tour flyer listing Miami, Jacksonville and Orlando dates",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
   },
   {
     "title": "Miles Minnick – Christlike University – Florida Campus Tour in Orlando",
@@ -3313,8 +3342,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
     "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
-    "image": "assets/artists/miles-minnick.webp",
-    "imageType": "artist",
+    "image": "assets/events/miles-minnick-florida-campus-tour-2026.jpg",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "lineupExplicit": true,
     "advertisedBilling": [
@@ -3351,7 +3380,10 @@
     ],
     "notes": "The ticket listing advertises Orlando, but Conduit's physical address is in Winter Park. This supersedes CJ's older generic November 8 Jacksonville entry.",
     "auditVerified": "2026-09-23",
-    "id": "miles-minnick-christlike-university-orlando-2026-11-08"
+    "id": "miles-minnick-christlike-university-orlando-2026-11-08",
+    "imageOverride": true,
+    "imageSource": "Official Christlike University Florida tour flyer listing Miami, Jacksonville and Orlando dates",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
   },
   {
     "id": "kaden-jordan-babytooth-orlando-november-2026",
@@ -3491,8 +3523,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
     "officialUrl": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
-    "image": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb32042962fc801509158784db",
-    "imageType": "artist",
+    "image": "assets/events/outlandish-fest-2026-lineup.png",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "price": "",
@@ -3517,7 +3549,9 @@
       }
     ],
     "auditVerified": "2026-09-22",
-    "notes": "The official festival ticket page confirms the 6:00–11:00 PM event window. Additional lineup names remain image-only and are not inferred."
+    "notes": "The official festival ticket page confirms the 6:00–11:00 PM event window. Additional lineup names remain image-only and are not inferred.",
+    "imageSource": "Official Outlandish Fest November 14 lineup poster",
+    "imageSourceUrl": "https://www.outlandishlive.org/lineup"
   },
   {
     "id": "scootie-wop-match-houston-2026",
@@ -3637,12 +3671,17 @@
     "eventType": "concert",
     "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
     "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "",
+    "image": "assets/events/egr-fall-2026-tour.jpg",
     "price": "",
     "status": "scheduled",
     "lineupExplicit": true,
     "authority": "official_event",
-    "sourceName": "EGR official Instagram schedule"
+    "sourceName": "EGR official Instagram schedule",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "EGR official fall 2026 schedule flyer; this date appears on the published poster",
+    "imageSourceUrl": "https://www.instagram.com/p/DboKM3GJM4A/"
   },
   {
     "id": "revival-nights-asap-preach-hilliard-2026",
@@ -3706,10 +3745,10 @@
     "status": "scheduled",
     "ticketUrl": "",
     "officialUrl": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous",
-    "image": "",
-    "imageType": "fallback",
+    "image": "assets/events/cj-emulous-state-youth-conference-2026.jpg",
+    "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": false,
+    "imageOverride": true,
     "price": "",
     "lineupExplicit": true,
     "authority": "artist_calendar",
@@ -3751,7 +3790,9 @@
       "2026-11-28": "10:00",
       "2026-11-29": "09:00"
     },
-    "id": "cj-emulous-state-youth-conference-cocoa-2026"
+    "id": "cj-emulous-state-youth-conference-cocoa-2026",
+    "imageSource": "Official conference-branded CJ Emulous graphic",
+    "imageSourceUrl": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous"
   },
   {
     "title": "Christlike Christmas — CJ Emulous & Miles Minnick",
@@ -3921,12 +3962,17 @@
     "eventType": "concert",
     "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
     "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "",
+    "image": "assets/events/egr-fall-2026-tour.jpg",
     "price": "",
     "status": "scheduled",
     "lineupExplicit": true,
     "authority": "official_event",
-    "sourceName": "EGR official Instagram schedule"
+    "sourceName": "EGR official Instagram schedule",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "EGR official fall 2026 schedule flyer; this date appears on the published poster",
+    "imageSourceUrl": "https://www.instagram.com/p/DboKM3GJM4A/"
   },
   {
     "title": "Miles Minnick & CJ Emulous at Zion Ultra Lounge",
@@ -3985,12 +4031,17 @@
     "eventType": "concert",
     "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
     "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "",
+    "image": "assets/events/egr-fall-2026-tour.jpg",
     "price": "",
     "status": "scheduled",
     "lineupExplicit": true,
     "authority": "official_event",
-    "sourceName": "EGR official Instagram schedule"
+    "sourceName": "EGR official Instagram schedule",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "EGR official fall 2026 schedule flyer; this date appears on the published poster",
+    "imageSourceUrl": "https://www.instagram.com/p/DboKM3GJM4A/"
   },
   {
     "id": "kaden-jordan-babytooth-ocala-2026",
@@ -4033,12 +4084,17 @@
     "eventType": "concert",
     "ticketUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
     "officialUrl": "https://www.instagram.com/p/DboKM3GJM4A/",
-    "image": "",
+    "image": "assets/events/egr-fall-2026-tour.jpg",
     "price": "",
     "status": "scheduled",
     "lineupExplicit": true,
     "authority": "official_event",
-    "sourceName": "EGR official Instagram schedule"
+    "sourceName": "EGR official Instagram schedule",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "EGR official fall 2026 schedule flyer; this date appears on the published poster",
+    "imageSourceUrl": "https://www.instagram.com/p/DboKM3GJM4A/"
   },
   {
     "title": "JIMMY ROCK'S Rave & Worship — The Worship Wawa",
@@ -4058,7 +4114,7 @@
     "status": "rescheduled",
     "ticketUrl": "https://fareharbor.com/embeds/book/theworshipwawa/?full-items=yes",
     "officialUrl": "https://www.instagram.com/p/DdXLDe-BpRK/",
-    "image": "assets/events/jimmy-rock-worship-wawa-miami-2026.jpg",
+    "image": "assets/events/jimmy-rock-wawa-december-2026.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -4111,8 +4167,8 @@
       "20:45"
     ],
     "id": "jimmy-rock-worship-wawa-miami-2026",
-    "imageSource": "The Worship Wawa official event poster",
-    "imageSourceUrl": "https://www.theworshipwawa.com/jimmyrock-rave-worship"
+    "imageSource": "Official Worship Wawa announcement showing the December 18 new date",
+    "imageSourceUrl": "https://www.instagram.com/p/DdXLDe-BpRK/"
   },
   {
     "title": "Kelo Cho Presents: The Worship After Christmas",

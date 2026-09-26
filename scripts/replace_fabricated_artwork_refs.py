@@ -13,12 +13,12 @@ BASE_URL = "https://kingdomcircuit.com"
 REPLACEMENTS = {
     "/assets/events/miles-cj-zion-ultra-2026.svg": "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
     "/assets/events/fountain-fest-wv-2026.svg": "https://i0.wp.com/fountainfestwv.com/wp-content/uploads/2026/07/Rare-of-Breed-Promo-.webp?resize=720%2C900&ssl=1",
-    "/assets/events/mission-friends-sacramento-2026.svg": "/assets/event-fallback.webp",
+    "/assets/events/mission-friends-sacramento-2026.svg": "/assets/events/mission-sacramento-2026-10-17.jpg",
     "/assets/events/mayia-boxyard-saturdaze-2026.svg": "/assets/events/mayia-boxyard-2026-10-10.png",
-    "/assets/events/mayia-nc-state-fair-2026.svg": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
+    "/assets/events/mayia-nc-state-fair-2026.svg": "/assets/events/nc-state-fair-2026.png",
     "/assets/events/cj-emulous-kickback-2026.svg": "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
     "/assets/events/alex-zurdo-zona-zero-2026.svg": "/assets/events/alex-zurdo-zona-zero-2026-10-18.jpg",
-    "/assets/events/jay-kalyl-desde-antes-2026.svg": "https://i.scdn.co/image/ab6761610000e5eb1269b80aed5d08c40aedfdc3",
+    "/assets/events/jay-kalyl-desde-antes-2026.svg": "/assets/events/jay-kalyl-desde-antes-tour-2026.png",
 }
 
 

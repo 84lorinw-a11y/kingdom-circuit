@@ -10,6 +10,7 @@ import apply_sep26_source_corrections as repair
 import build_seo_site as builder
 from verify_sep26_approved_audit import verify as verify_approved_audit
 from verify_egr_bizzle_updates import uses_image
+from verify_show_artwork import verify as verify_show_artwork
 
 
 def verify(site: Path) -> None:
@@ -51,6 +52,7 @@ def verify(site: Path) -> None:
         assert not re.search(r'<dt>Doors(?: open)?</dt>', page.read_text(), re.I), page
     print("Final source corrections verified: starts, full billing, reschedule, flyer, discovery age and redirects")
     verify_approved_audit(site)
+    verify_show_artwork(site)
 
 
 if __name__ == "__main__":

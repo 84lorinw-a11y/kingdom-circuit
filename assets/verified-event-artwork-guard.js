@@ -6,7 +6,7 @@
   // Do not add Kingdom Circuit-created replacement flyers as source artwork.
   const pins = {
     "the-genesis-show-all-women-s-chh-event-2026-09-19-roswell-9d321d": "/assets/events/genesis-show-2026-all-women-v3.jpg",
-    "flavor-fest-2026-saturday-concerts-2026-11-07-tampa-cf7fac": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/989d4d2e-f454-4a1b-99df-cc78cf6e6749/FF26-Promo-Saturday-Night.jpg",
+    "flavor-fest-2026-saturday-concerts-2026-11-07-tampa-cf7fac": "/assets/events/flavor-fest-saturday-2026.jpg",
     "future-legacy-hip-hop-showcase-2026-10-04-nashville-4bd33c": "https://images.discovery-prod.axs.com/2026/08/uploadedimage_6a871ac3abd11.jpg",
     "miles-minnick-and-cj-emulous-at-zion-ultra-lounge-2026-12-05-chandler-bfff69": "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
     "fountain-fest-wv-2026-2026-09-18-martinsburg-1cd64d": "https://i0.wp.com/fountainfestwv.com/wp-content/uploads/2026/07/Rare-of-Breed-Promo-.webp?resize=720%2C900&ssl=1",

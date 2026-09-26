@@ -30,8 +30,11 @@ class September13ContentRepairTests(unittest.TestCase):
         boise = [item for item in kurtis_events if str(item.get("id", "")).removeprefix("manual:") == "boise-invasion-2026"]
         self.assertTrue(boise)
         self.assertTrue(all(item.get("image") == "assets/events/boise-invasion-2026.jpg" for item in boise))
-        portraits = [item for item in kurtis_events if item not in boise]
-        self.assertTrue(portraits)
+        promised = [item for item in kurtis_events if item.get("id") == "bandsintown:108923215"]
+        self.assertTrue(promised)
+        self.assertTrue(all(item.get("image") == "assets/events/the-promised-vi-2026-11-20.jpg" for item in promised))
+        self.assertTrue(all(item.get("imageType") == "event_artwork" for item in promised))
+        portraits = [item for item in kurtis_events if item not in boise + promised]
         self.assertTrue(all(item.get("image") == image for item in portraits))
         self.assertTrue(all(item.get("imagePosition") == "50% 4%" for item in portraits))
 
@@ -47,8 +50,8 @@ class September13ContentRepairTests(unittest.TestCase):
         self.assertEqual(9, len(tribe["artists"]))
         self.assertIn("Yasmine Jinelle", tribe["artists"])
         mission = self.event("mission-friends-sacramento-2026")
-        self.assertEqual("artist", mission["imageType"])
-        self.assertEqual("assets/artists/mission-primary.jpg", mission["image"])
+        self.assertEqual("event_artwork", mission["imageType"])
+        self.assertEqual("assets/events/mission-sacramento-2026-10-17.jpg", mission["image"])
         self.assertTrue((ROOT / mission["image"]).is_file())
 
     def test_cj_new_mainstream_identity_uses_distinct_direct_event_urls(self):

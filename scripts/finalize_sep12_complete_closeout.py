@@ -24,11 +24,11 @@ ARTWORK_REPLACEMENTS = {
         "classification": 1,
     },
     ("Jay Kalyl — Desde Antes Tour", "2026-10-03"): {
-        "image": "https://i.scdn.co/image/ab6761610000e5eb1269b80aed5d08c40aedfdc3",
-        "imageType": "artist",
-        "source": "Jay Kalyl verified Spotify artist profile",
-        "sourceUrl": "https://open.spotify.com/",
-        "classification": 3,
+        "image": "assets/events/jay-kalyl-desde-antes-tour-2026.png",
+        "imageType": "event_artwork",
+        "source": "BoletosLive official Desde Antes Tour 2026 graphic; city-neutral artwork",
+        "sourceUrl": "https://boletoslive.com/",
+        "classification": 2
     },
     ("Boxyard Saturdaze", "2026-10-10"): {
         "image": "assets/events/mayia-boxyard-2026-10-10.png",
@@ -38,11 +38,11 @@ ARTWORK_REPLACEMENTS = {
         "classification": 1,
     },
     ("MAYIA at the NC State Fair", "2026-10-17"): {
-        "image": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
-        "imageType": "artist",
-        "source": "MAYIA official Linktree",
-        "sourceUrl": "https://linktr.ee/mayiawarren",
-        "classification": 3,
+        "image": "assets/events/nc-state-fair-2026.png",
+        "imageType": "event_artwork",
+        "source": "Official 2026 North Carolina State Fair graphic",
+        "sourceUrl": "https://www.ncagr.gov/divisions/ncstatefair",
+        "classification": 1
     },
     ("Alex Zurdo: Zona Zero", "2026-10-18"): {
         "image": "assets/events/alex-zurdo-zona-zero-2026-10-18.jpg",
@@ -66,11 +66,11 @@ ARTWORK_REPLACEMENTS = {
         "classification": 3,
     },
     ("Mission and Special Guests", "2026-10-17"): {
-        "image": "assets/artists/mission-primary.jpg",
-        "imageType": "artist",
-        "source": "Mission official YouTube channel",
-        "sourceUrl": "https://www.youtube.com/channel/UCBaU_Xh4fyokc-ckyCeYv3w",
-        "classification": 3,
+        "image": "assets/events/mission-sacramento-2026-10-17.jpg",
+        "imageType": "event_artwork",
+        "source": "Mission official October 17 concert flyer",
+        "sourceUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
+        "classification": 1
     },
 }
 
@@ -259,6 +259,14 @@ def apply_artwork_replacements(root: pathlib.Path, source_events: list[dict]) ->
         if changed:
             write_json(path, rows)
 
+    # Tour stops can share a title. Match the detail URL to its dated record,
+    # otherwise the October 3 Jay Kalyl pin also replaces October 2's flyer.
+    detail_replacements = {
+        event_path(event): ARTWORK_REPLACEMENTS[event_key(event)]
+        for name in ("events.json", "supplemental-events.json")
+        for event in load_json(root / name)
+        if event_key(event) in ARTWORK_REPLACEMENTS
+    }
     card_re = re.compile(r'<article\b(?=[^>]*class="[^"]*\bevent-card\b[^"]*")[^>]*>.*?</article>', re.I | re.S)
     html_replacements = 0
     for page in root.rglob("*.html"):
@@ -291,7 +299,7 @@ def apply_artwork_replacements(root: pathlib.Path, source_events: list[dict]) ->
             h1 = re.search(r"<h1\b[^>]*>(.*?)</h1>", text, re.I | re.S)
             if h1:
                 title = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html.unescape(h1.group(1)))).strip()
-                rep = next((r for (t, _d), r in ARTWORK_REPLACEMENTS.items() if norm(t) == norm(title)), None)
+                rep = detail_replacements.get(page.parent.relative_to(root).as_posix())
                 if rep:
                     media = re.search(r'(<div\b[^>]*class="[^"]*\bevent-detail-media\b[^"]*"[^>]*>\s*)(?:<a\b[^>]*>\s*)?(<img\b[^>]*>)(?:\s*</a>)?', text, re.I | re.S)
                     if media:

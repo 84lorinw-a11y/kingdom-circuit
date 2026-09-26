@@ -23,7 +23,7 @@ VERIFIED_ARTWORK: dict[str, tuple[str, str]] = {
     ),
     "Flavor Fest 2026 — Saturday Concerts": (
         "2026-11-07",
-        "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/989d4d2e-f454-4a1b-99df-cc78cf6e6749/FF26-Promo-Saturday-Night.jpg",
+        "assets/events/flavor-fest-saturday-2026.jpg",
     ),
     "Future Legacy Hip-Hop Showcase": (
         "2026-10-04",
@@ -154,12 +154,15 @@ def patch_card(block: str) -> tuple[str, bool]:
     return updated, bool(count)
 
 
-def patch_event_detail(text: str) -> tuple[str, bool]:
+def patch_event_detail(text: str, date: str = "") -> tuple[str, bool]:
+    # A shared tour title is not enough to identify the stop whose poster is pinned.
+    if not date:
+        return text, False
     h1 = re.search(r"<h1\b[^>]*>(.*?)</h1>", text, flags=re.I | re.S)
     if not h1:
         return text, False
     title = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html.unescape(h1.group(1)))).strip()
-    image = artwork_for(title)
+    image = artwork_for(title, date)
     if not image:
         return text, False
 
@@ -234,6 +237,14 @@ def pin_site(root: pathlib.Path) -> dict[str, int]:
         for relative in ("events.json", "supplemental-events.json")
     )
 
+    from build_seo_site import event_path
+    detail_dates = {}
+    for relative in ("events.json", "supplemental-events.json"):
+        path = root / relative
+        if path.is_file():
+            for event in json.loads(path.read_text(encoding="utf-8")):
+                detail_dates[event_path(event).strip("/")] = event.get("startDate", "")
+
     cards = details = pages = 0
     for page in root.rglob("*.html"):
         text = page.read_text(encoding="utf-8", errors="ignore")
@@ -247,7 +258,8 @@ def pin_site(root: pathlib.Path) -> dict[str, int]:
 
         text = CARD_RE.sub(card_repl, text)
         if page.parent.parent == root / "event":
-            text, changed = patch_event_detail(text)
+            date = detail_dates.get(page.parent.relative_to(root).as_posix(), "")
+            text, changed = patch_event_detail(text, date)
             details += int(changed)
 
         text = inject_guard(text)

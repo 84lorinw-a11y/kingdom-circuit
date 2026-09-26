@@ -104,7 +104,7 @@ class ArtistDatabaseSeptember22BatchTwoTests(unittest.TestCase):
             self.assertEqual("Fort Worth", ty_brasel["city"])
             self.assertEqual(["Ty Brasel"], ty_brasel["artists"])
             self.assertEqual(
-                self.expected["Ty Brasel"]["imageUrl"], ty_brasel["image"]
+                "assets/events/outlandish-fest-2026-lineup.png", ty_brasel["image"]
             )
             self.assertTrue(ty_brasel["imageOverride"])
             self.assertEqual(

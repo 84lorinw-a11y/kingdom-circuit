@@ -46,7 +46,7 @@ class September13LiveSiteFixTests(unittest.TestCase):
 
     def test_jimmy_rock_shows_use_official_show_artwork(self):
         expected = {
-            "jimmy-rock-worship-wawa-miami-2026": "assets/events/jimmy-rock-worship-wawa-miami-2026.jpg",
+            "jimmy-rock-worship-wawa-miami-2026": "assets/events/jimmy-rock-wawa-december-2026.jpg",
             "jimmy-rock-rave-worship-centennial-2026": "assets/events/jimmy-rock-rave-worship-denver-2026.jpg",
             "boise-invasion-2026": "assets/events/boise-invasion-2026.jpg",
             "jimmy-rock-rave-worship-dallas-2026": "assets/events/jimmy-rock-rave-worship-dallas-2026.webp",
@@ -158,8 +158,12 @@ class September13LiveSiteFixTests(unittest.TestCase):
             if "Kurtis Hoppie" in (event.get("artists") or [])
             and event.get("image") == "assets/artists/kurtis-hoppie-primary.jpg"
         ]
-        self.assertTrue(kurtis)
         self.assertTrue(all(event.get("imagePosition") == "50% 4%" for event in kurtis))
+        promised = [event for event in self.events + self.by_file[ROOT / "supplemental-events.json"]
+                    if event.get("id") == "bandsintown:108923215"]
+        self.assertTrue(promised)
+        self.assertTrue(all(event["image"] == "assets/events/the-promised-vi-2026-11-20.jpg" for event in promised))
+        self.assertTrue(all(event["imageType"] == "event_artwork" for event in promised))
 
     def test_cancelled_rare_of_breed_show_cannot_return_as_a_duplicate(self):
         matches = [
