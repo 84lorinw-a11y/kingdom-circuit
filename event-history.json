@@ -15320,7 +15320,7 @@
         "status": "scheduled",
         "ticketUrl": "https://www.bandsintown.com/t/1040305060?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
         "officialUrl": "https://www.bandsintown.com/e/1040305060?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "image": "assets/artists/hulvey.webp",
+        "image": "assets/events/dove-awards-2026-10-06.jpg",
         "price": "",
         "sourceName": "Bandsintown",
         "sources": [
@@ -15337,7 +15337,12 @@
         "bandsintownArtistId": "15506918",
         "bandsintownResolvedName": "Hulvey",
         "bandsintownIdentity": "exact_name_or_alias",
-        "trackedArtist": "Hulvey"
+        "trackedArtist": "Hulvey",
+        "imageType": "event_artwork",
+        "imagePosition": "center",
+        "imageOverride": true,
+        "imageSource": "Bridgestone Arena official 57th Annual GMA Dove Awards artwork",
+        "imageSourceUrl": "https://www.bridgestonearena.com/events/detail/57th-annual-gma-dove-awards"
       }
     },
     {
@@ -20968,7 +20973,7 @@
         ],
         "headliner": "Mike Teezy",
         "eventType": "concert",
-        "status": "scheduled",
+        "status": "merged",
         "ticketUrl": "https://music.apple.com/us/concerts/artist/517774271",
         "officialUrl": "https://music.apple.com/us/concerts/ce.01a1c61a-49a9-4e19-b629-46bac43b4970",
         "image": "https://www.even.biz/_next/image?q=75&url=https%3A%2F%2Fdt7m7kl3brv3f.cloudfront.net%2Fimages%2Fzlirs9n3bpjitnofexx4m095koo3&w=828",
@@ -20997,7 +21002,9 @@
         "verifiedVersion": 9,
         "firstSeen": "2026-08-21T12:04:12Z",
         "notes": "Apple Music displays 6:00 PM on November 7. The former 11:00 PM value and November 8 end date resulted from preserving UTC as local time.",
-        "auditVerified": "2026-09-12"
+        "auditVerified": "2026-09-12",
+        "mergedIntoId": "ticketmaster:vv1AAZk3FGkdmpCG1",
+        "mergeReason": "Consolidated with current venue listing; conflicting artist association remains unresolved."
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-08-20T14:03:50Z",
@@ -21299,7 +21306,7 @@
         ],
         "headliner": "KB",
         "eventType": "concert",
-        "status": "onsale",
+        "status": "merged",
         "ticketUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
         "officialUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
         "image": "",
@@ -21323,7 +21330,9 @@
             "authority": "artist_calendar",
             "priority": 100
           }
-        ]
+        ],
+        "mergedIntoId": "ticketmaster:vv1AAZk3FGkdmpCG1",
+        "mergeReason": "Consolidated with current venue listing; conflicting artist association remains unresolved."
       }
     },
     {
