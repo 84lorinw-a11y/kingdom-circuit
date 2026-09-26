@@ -12,6 +12,13 @@ from apply_sep13_content_repairs import NEW_EVENTS
 from apply_sep13_requested_events import UPSERTS
 
 ROOT = Path(__file__).resolve().parents[1]
+DOVE_EVENT_ID = "bandsintown:1040305060"
+DOVE_ARTWORK = {
+    "image": "assets/events/dove-awards-2026-10-06.jpg",
+    "imageType": "event_artwork", "imagePosition": "center", "imageOverride": True,
+    "imageSource": "Bridgestone Arena official 57th Annual GMA Dove Awards artwork",
+    "imageSourceUrl": "https://www.bridgestonearena.com/events/detail/57th-annual-gma-dove-awards",
+}
 OASIS_ID = "oasis-ministry-qbelv-new-york-2026"
 MIAMI_ID = "mike-malagies-florida-takeover-miami-2026"
 CLEVELAND_ID = "ticketmaster:vv1AAZk3FGkdmpCG1"
@@ -116,6 +123,12 @@ def apply(root: Path = ROOT, today: str | None = None) -> None:
                     row.pop(field, None)
             else:
                 row.update(status="merged", mergedIntoId=canonical["id"], mergeReason="Consolidated with current venue listing; conflicting artist association remains unresolved.")
+
+    # Keep this event-specific artwork through the artist calendar refresh.
+    # Hulvey's other shows continue to use their existing images.
+    for row in [row for rows in feeds.values() for row in rows] + historical:
+        if row.get("id") == DOVE_EVENT_ID:
+            row.update(DOVE_ARTWORK)
 
     for name, rows in feeds.items():
         (root / name).write_text(json.dumps(rows, indent=2, ensure_ascii=False) + "\n")
