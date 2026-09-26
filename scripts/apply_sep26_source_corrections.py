@@ -31,13 +31,13 @@ RETIRED_URLS = {
 }
 CLEVELAND = {
     "id": CLEVELAND_ID, "title": "Beyond The Walls 3",
-    "startDate": "2026-11-07", "startTime": "20:00", "doorsTime": "19:30",
-    "startDateTime": "2026-11-07T20:00:00-05:00", "timezone": "America/New_York",
+    "startDate": "2026-11-07", "startTime": "19:30", "doorsTime": "19:30",
+    "startDateTime": "2026-11-07T19:30:00-05:00", "timezone": "America/New_York",
     "venue": "The Cambridge Room at House of Blues Cleveland", "address": "308 Euclid Ave",
     "city": "Cleveland", "state": "OH", "country": "US",
     "artists": ["KB", "Brenno", "Mike Teezy", "Porsha Love"], "headliner": "KB",
-    "advertisedBilling": ["KB", "Brenno", "Mike Teezy", "Porsha Love", "Taylor Wells", "Renzoe"],
-    "officialBill": ["KB", "Brenno", "Mike Teezy", "Porsha Love", "Taylor Wells", "Renzoe"],
+    "advertisedBilling": ["KB", "Brenno", "Mike Teezy", "Porsha Love", "Taylor Wells", "Renzoe", "Eli Williams (DJ)"],
+    "officialBill": ["KB", "Brenno", "Mike Teezy", "Porsha Love", "Taylor Wells", "Renzoe", "Eli Williams (DJ)"],
     "eventType": "concert", "status": "scheduled", "lineupExplicit": True,
     "officialUrl": CLEVELAND_URL, "ticketUrl": CLEVELAND_URL,
     "image": "assets/events/beyond-the-walls-cleveland-2026-11-07.jpg",
@@ -51,11 +51,11 @@ CLEVELAND = {
                 {"name": "Beyond The Walls promoter's official flyer", "url": CLEVELAND_POST,
                  "type": "manual_verified", "authority": "organizer", "priority": 115}],
     "legacyEventPaths": ["/event/beyond-the-walls-2026-11-07-cleveland-91b8a7/"],
-    "legacyEventNotice": "The Cleveland listings have been combined using the venue’s current concert details. Music starts at 8:00 PM on November 7.",
+    "legacyEventNotice": "Beyond The Walls 3 takes place November 7 at 7:30 PM.",
     "mergedFromIds": sorted(RETIRED_IDS),
-    "notes": "Promoter submission and the official Eric Stephens / Beyond The Walls Instagram flyer confirm KB, Brenno, Mike Teezy, Porsha Love, Taylor Wells and Renzoe. This resolves the earlier incomplete Ticketmaster bill. Flyer explicitly dates November 7, 2026 and labels 6 PM VIP entry / 7:30 PM GA doors; Ticketmaster confirms music at 8 PM. Retain its official title Beyond The Walls 3 rather than the submission's conflicting 2027 title. Taylor Wells and Renzoe remain visible unlinked billing because they are outside the curated roster.",
+    "notes": "Promoter submission and the official Eric Stephens / Beyond The Walls Instagram flyer confirm KB, Brenno, Mike Teezy, Porsha Love, Taylor Wells and Renzoe. This resolves the earlier incomplete Ticketmaster bill. Flyer explicitly dates November 7, 2026 and labels 6 PM VIP entry / 7:30 PM GA doors; Ticketmaster confirms music at 8 PM; the owner explicitly requested that Kingdom Circuit display 7:30 PM for this show on September 26, superseding the earlier 8 PM display. Retain its official title Beyond The Walls 3 rather than the submission's conflicting 2027 title. The owner also requested Eli Williams as DJ; his name appears on the same flyer and his official profile https://www.instagram.com/eliwilliamssss/ confirms his DJ role. Taylor Wells, Renzoe and Eli Williams remain visible unlinked billing because they are outside the curated roster.",
     "sourceConflicts": [{"url": url, "reportedArtist": "Mike Teezy", "reportedStartTime": "18:00",
-                         "resolution": "Promoter submission and official flyer confirm Mike Teezy on the canonical event. Keep the duplicate merged; 6 PM is VIP entry on the flyer, and Ticketmaster confirms the 8 PM concert start.",
+                         "resolution": "Promoter submission and official flyer confirm Mike Teezy on the canonical event. Keep the duplicate merged; 6 PM is VIP entry on the flyer. Ticketmaster labels 7:30 PM doors and 8 PM music; the owner explicitly chose the 7:30 PM listing time for Kingdom Circuit.",
                          "resolvedBy": CLEVELAND_POST, "resolvedDate": "2026-09-26"}
                         for url in sorted(RETIRED_URLS)],
 }
