@@ -1,3 +1,4 @@
+import hashlib
 import json
 import sys
 import tempfile
@@ -78,10 +79,12 @@ class KBDiamondbackProductionTests(unittest.TestCase):
         self.assertGreater(artwork.stat().st_size, 100_000)
         payload = artwork.read_bytes()
         self.assertEqual(b"\xff\xd8\xff", payload[:3])
-        from PIL import Image
-        with Image.open(artwork) as image:
-            self.assertEqual((1683, 2100), image.size)
-            image.verify()
+        # Pin the reviewed, full-resolution 1683x2100 source bytes. The CI
+        # test stage intentionally runs before optional image dependencies.
+        self.assertEqual(
+            "9138302b4c90d894b5acce139452e9249a57a5ab7413febc721d4df0b71bbd24",
+            hashlib.sha256(payload).hexdigest(),
+        )
 
     def test_manual_seed_normalizes_and_static_merge_keeps_one_event(self):
         manual = next(event for event in self.manual if event.get("id") == EVENT_ID)
