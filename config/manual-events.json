@@ -3551,8 +3551,15 @@
     "sourceName": "Outlandish Fest official ticket page and Ty Brasel artist calendar",
     "authority": "official_festival",
     "confidence": "high",
-    "lineupExplicit": false,
+    "lineupExplicit": true,
     "sources": [
+      {
+        "name": "Outlandish Fest official full-lineup poster",
+        "url": "https://www.outlandishlive.org/lineup",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 115
+      },
       {
         "name": "Outlandish Fest official ticket page",
         "url": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
@@ -3568,10 +3575,40 @@
         "priority": 100
       }
     ],
-    "auditVerified": "2026-09-22",
-    "notes": "The official festival ticket page confirms the 6:00–11:00 PM event window. Additional lineup names remain image-only and are not inferred.",
+    "auditVerified": "2026-09-27",
+    "notes": "Owner requested the full advertised bill on September 27. Official flyer names DJ Bryce G from The Joyful Noize, Ty Brasel, Starringo, Adrion Butler, Garko, A3, YOF, The Curb Experience, Dason*, Tuvi, Epho and Jxdy, with sounds by J. Horton. All are visible; Ty Brasel is the existing curated artist association. Retain the confirmed November 14 6–11 PM event window, venue, identity and discovery age.",
     "imageSource": "Official Outlandish Fest November 14 lineup poster",
-    "imageSourceUrl": "https://www.outlandishlive.org/lineup"
+    "imageSourceUrl": "https://www.outlandishlive.org/lineup",
+    "advertisedBilling": [
+      "DJ Bryce G (The Joyful Noize)",
+      "Ty Brasel",
+      "Starringo",
+      "Adrion Butler",
+      "Garko",
+      "A3",
+      "YOF",
+      "The Curb Experience",
+      "Dason*",
+      "Tuvi",
+      "Epho",
+      "Jxdy",
+      "J. Horton (sounds)"
+    ],
+    "officialBill": [
+      "DJ Bryce G (The Joyful Noize)",
+      "Ty Brasel",
+      "Starringo",
+      "Adrion Butler",
+      "Garko",
+      "A3",
+      "YOF",
+      "The Curb Experience",
+      "Dason*",
+      "Tuvi",
+      "Epho",
+      "Jxdy",
+      "J. Horton (sounds)"
+    ]
   },
   {
     "id": "scootie-wop-match-houston-2026",
@@ -3921,9 +3958,9 @@
     "status": "scheduled",
     "ticketUrl": "https://www.ticketweb.com/event/kb-diamondback-music-hall-tickets/14328014",
     "officialUrl": "https://www.diamondbackmusichall.com/tm-event/kb/",
-    "image": "assets/events/kb-skema-boy-diamondback-2026.webp",
-    "imageType": "artist",
-    "imagePosition": "50% 8%",
+    "image": "assets/events/kb-diamondback-2026-12-04.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
     "imageOverride": true,
     "price": "$40.63–$53.50",
     "ageRestriction": "All ages",
@@ -3936,8 +3973,8 @@
       "Skema Boy"
     ],
     "organizer": "Pinnacle Events Group and Diamondback Music Hall",
-    "imageSource": "Diamondback Music Hall / TicketWeb official event image",
-    "imageSourceUrl": "https://i.ticketweb.com/i/00/13/04/42/94_Original.jpg?v=3",
+    "imageSource": "Diamondback Music Hall official December 4 KB and Skema Boy poster selected by owner",
+    "imageSourceUrl": "https://www.instagram.com/p/DdZMBh1q2hV/",
     "auditVerified": "2026-09-17",
     "firstSeen": "2026-09-17T20:52:42Z",
     "lastVerified": "2026-09-17T20:52:42Z",

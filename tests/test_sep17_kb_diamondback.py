@@ -77,8 +77,11 @@ class KBDiamondbackProductionTests(unittest.TestCase):
         self.assertTrue(artwork.is_file(), artwork)
         self.assertGreater(artwork.stat().st_size, 100_000)
         payload = artwork.read_bytes()
-        self.assertEqual(b"RIFF", payload[:4])
-        self.assertEqual(b"WEBP", payload[8:12])
+        self.assertEqual(b"\xff\xd8\xff", payload[:3])
+        from PIL import Image
+        with Image.open(artwork) as image:
+            self.assertEqual((1683, 2100), image.size)
+            image.verify()
 
     def test_manual_seed_normalizes_and_static_merge_keeps_one_event(self):
         manual = next(event for event in self.manual if event.get("id") == EVENT_ID)

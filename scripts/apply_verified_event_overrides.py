@@ -118,7 +118,7 @@ KB_DIAMONDBACK_TICKET_URL = (
     "https://www.ticketweb.com/event/kb-diamondback-music-hall-tickets/14328014"
 )
 KB_DIAMONDBACK_BANDSINTOWN_URL = "https://www.bandsintown.com/e/108921018"
-KB_DIAMONDBACK_IMAGE = "assets/events/kb-skema-boy-diamondback-2026.webp"
+KB_DIAMONDBACK_IMAGE = "assets/events/kb-diamondback-2026-12-04.jpg"
 KB_DIAMONDBACK_EVENT = {
     "id": f"manual:{KB_DIAMONDBACK_EVENT_ID}",
     "title": "KB at Diamondback Music Hall — with Skema Boy",
@@ -140,8 +140,8 @@ KB_DIAMONDBACK_EVENT = {
     "ticketUrl": KB_DIAMONDBACK_TICKET_URL,
     "officialUrl": KB_DIAMONDBACK_VENUE_URL,
     "image": KB_DIAMONDBACK_IMAGE,
-    "imageType": "artist",
-    "imagePosition": "50% 8%",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
     "imageOverride": True,
     "price": "$40.63–$53.50",
     "ageRestriction": "All ages",
@@ -151,8 +151,8 @@ KB_DIAMONDBACK_EVENT = {
     "lineupExplicit": True,
     "advertisedBilling": ["KB", "Skema Boy"],
     "organizer": "Pinnacle Events Group and Diamondback Music Hall",
-    "imageSource": "Diamondback Music Hall / TicketWeb official event image",
-    "imageSourceUrl": "https://i.ticketweb.com/i/00/13/04/42/94_Original.jpg?v=3",
+    "imageSource": "Diamondback Music Hall official December 4 KB and Skema Boy poster selected by owner",
+    "imageSourceUrl": "https://www.instagram.com/p/DdZMBh1q2hV/",
     "auditVerified": "2026-09-17",
     "firstSeen": "2026-09-17T20:52:42Z",
     "lastVerified": "2026-09-17T20:52:42Z",

@@ -1250,7 +1250,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.tickettailor.com/events/ablazemovement/2047830",
     "officialUrl": "https://www.overflowconf.com/schedule",
-    "image": "assets/artists/brenno-restored-show-photo.webp",
+    "image": "assets/events/brenno-overflow-2026-10-17.jpg",
     "price": "",
     "sourceName": "Brenno official upcoming shows",
     "authority": "artist_calendar",
@@ -1276,11 +1276,11 @@
     "timezone": "America/New_York",
     "notes": "The Ticket Tailor listing covers the entire October 16–17 conference, opening Friday at 7 PM. The organizer's Saturday schedule explicitly lists Concert featuring Brenno at 3:30 PM on October 17. Kingdom Circuit lists that music performance, not the Friday conference opening.",
     "auditVerified": "2026-09-26",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
-    "imageSource": "Previously published Brenno photo",
-    "imageSourceUrl": "https://www.brennomusic.live/"
+    "imageSource": "Ablaze Movement / Overflow Conference official poster selected by owner",
+    "imageSourceUrl": "https://www.instagram.com/p/DdY_W7gOtg8/"
   },
   {
     "title": "Mission and Special Guests",
@@ -2433,7 +2433,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
     "officialUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
-    "image": "assets/artists/pastor-mike-jr.webp",
+    "image": "assets/events/pastor-mike-monroe-2026-11-14.jpg",
     "price": "",
     "sourceName": "Ticketmaster / W L Jack Howard Theatre",
     "sources": [
@@ -2459,7 +2459,12 @@
     "bandsintownIdentity": "configured_id",
     "trackedArtist": "Pastor Mike Jr.",
     "authority": "venue_ticket",
-    "auditVerified": "2026-09-26"
+    "auditVerified": "2026-09-26",
+    "imageType": "artist",
+    "imageSource": "Ticketmaster Pastor Mike Jr. promotional photo selected by owner",
+    "imageSourceUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
+    "imagePosition": "center",
+    "imageOverride": true
   },
   {
     "id": "ty-brasel-outlandish-fest-fort-worth-2026",
@@ -2489,8 +2494,15 @@
     "sourceName": "Outlandish Fest official ticket page and Ty Brasel artist calendar",
     "authority": "official_festival",
     "confidence": "high",
-    "lineupExplicit": false,
+    "lineupExplicit": true,
     "sources": [
+      {
+        "name": "Outlandish Fest official full-lineup poster",
+        "url": "https://www.outlandishlive.org/lineup",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 115
+      },
       {
         "name": "Outlandish Fest official ticket page",
         "url": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
@@ -2506,10 +2518,40 @@
         "priority": 100
       }
     ],
-    "auditVerified": "2026-09-22",
-    "notes": "The official festival ticket page confirms the 6:00–11:00 PM event window. Additional lineup names remain image-only and are not inferred.",
+    "auditVerified": "2026-09-27",
+    "notes": "Owner requested the full advertised bill on September 27. Official flyer names DJ Bryce G from The Joyful Noize, Ty Brasel, Starringo, Adrion Butler, Garko, A3, YOF, The Curb Experience, Dason*, Tuvi, Epho and Jxdy, with sounds by J. Horton. All are visible; Ty Brasel is the existing curated artist association. Retain the confirmed November 14 6–11 PM event window, venue, identity and discovery age.",
     "imageSource": "Official Outlandish Fest November 14 lineup poster",
-    "imageSourceUrl": "https://www.outlandishlive.org/lineup"
+    "imageSourceUrl": "https://www.outlandishlive.org/lineup",
+    "advertisedBilling": [
+      "DJ Bryce G (The Joyful Noize)",
+      "Ty Brasel",
+      "Starringo",
+      "Adrion Butler",
+      "Garko",
+      "A3",
+      "YOF",
+      "The Curb Experience",
+      "Dason*",
+      "Tuvi",
+      "Epho",
+      "Jxdy",
+      "J. Horton (sounds)"
+    ],
+    "officialBill": [
+      "DJ Bryce G (The Joyful Noize)",
+      "Ty Brasel",
+      "Starringo",
+      "Adrion Butler",
+      "Garko",
+      "A3",
+      "YOF",
+      "The Curb Experience",
+      "Dason*",
+      "Tuvi",
+      "Epho",
+      "Jxdy",
+      "J. Horton (sounds)"
+    ]
   },
   {
     "title": "The Kickback",
