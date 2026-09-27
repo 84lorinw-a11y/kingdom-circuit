@@ -386,7 +386,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -780,7 +780,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -998,7 +998,7 @@
   {
     "title": "Boxyard Saturdaze",
     "startDate": "2026-10-10",
-    "startTime": "12:30",
+    "startTime": "11:30",
     "timezone": "America/New_York",
     "venue": "Boxyard RTP — BeatBox Stage",
     "address": "",
@@ -1035,7 +1035,7 @@
         "priority": 100
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-26",
     "officialBill": [
       "DJ Watty Tha Shepherd",
       "MAYIA WARREN"
@@ -1085,6 +1085,21 @@
         "authority": "venue_ticket",
         "priority": 94
       }
+    ],
+    "imageSource": "Official Eventbrite event artwork",
+    "imageSourceUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
+    "auditVerified": "2026-09-26",
+    "advertisedBilling": [
+      "Aasha Marie",
+      "Justin Martyr",
+      "Conquest",
+      "Crystal B."
+    ],
+    "officialBill": [
+      "Aasha Marie",
+      "Justin Martyr",
+      "Conquest",
+      "Crystal B."
     ]
   },
   {
@@ -1122,7 +1137,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-22",
+    "auditVerified": "2026-09-13",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -1181,7 +1196,8 @@
     "cancellationConfirmed": true,
     "cancellationConfirmedAt": "2026-09-12",
     "ticketAvailability": "cancelled",
-    "notes": "Cancelled by the organizer. This page is retained as a cancellation notice."
+    "notes": "Cancelled by the organizer. This page is retained as a cancellation notice.",
+    "auditVerified": "2026-09-13"
   },
   {
     "title": "MAYIA at the NC State Fair",
@@ -1223,7 +1239,7 @@
         "priority": 100
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "notes": "One event with two confirmed acoustic sets: 10–11 AM and 12–1 PM.",
     "id": "mayia-nc-state-fair-2026",
     "imageType": "artist",
@@ -1315,7 +1331,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "id": "mission-friends-sacramento-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1403,7 +1419,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-26",
     "id": "alex-zurdo-zona-zero-san-juan-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2077,15 +2093,20 @@
     "country": "US",
     "artists": [
       "Miles Minnick",
-      "Gifted Hands",
-      "Datin"
+      "Yung Kriss",
+      "Datin",
+      "Lyric The Geenyus",
+      "TRU-SERVA",
+      "MAYIA",
+      "Dre Skywalker",
+      "VVS Big Rock"
     ],
     "headliner": "Miles Minnick",
     "eventType": "festival",
     "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "assets/events/flavor-fest-friday-2026.webp",
+    "image": "assets/events/flavor-fest-friday-2026.png",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -2096,13 +2117,82 @@
     "lineupExplicit": true,
     "sources": [
       {
+        "name": "Flavor Fest current Friday concert poster",
+        "url": "https://www.flavorfest.org/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
         "name": "Flavor Fest official 2026 schedule",
         "url": "https://www.flavorfest.org/schedule",
         "type": "manual_verified",
         "authority": "official_event",
         "priority": 112
       }
-    ]
+    ],
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Yung Kriss",
+      "TH3 Saga",
+      "Datin",
+      "Lyric The Geenyus",
+      "Princess Tayy",
+      "4KL",
+      "Truth Soldier",
+      "Zeke",
+      "TRU-SERVA",
+      "Joshua Penn",
+      "Leon",
+      "Tyler Errae",
+      "Yvonne Sigars",
+      "Songbird SB",
+      "Louis Self",
+      "MAYIA",
+      "Adji Merveille",
+      "Way",
+      "King Jamezzz",
+      "Dre Skywalker",
+      "Jaybez",
+      "B.E.R.I.D.O.X",
+      "DiE$eL-E",
+      "TVNK",
+      "VVS Big Rock",
+      "Jailynn"
+    ],
+    "officialBill": [
+      "Miles Minnick",
+      "Yung Kriss",
+      "TH3 Saga",
+      "Datin",
+      "Lyric The Geenyus",
+      "Princess Tayy",
+      "4KL",
+      "Truth Soldier",
+      "Zeke",
+      "TRU-SERVA",
+      "Joshua Penn",
+      "Leon",
+      "Tyler Errae",
+      "Yvonne Sigars",
+      "Songbird SB",
+      "Louis Self",
+      "MAYIA",
+      "Adji Merveille",
+      "Way",
+      "King Jamezzz",
+      "Dre Skywalker",
+      "Jaybez",
+      "B.E.R.I.D.O.X",
+      "DiE$eL-E",
+      "TVNK",
+      "VVS Big Rock",
+      "Jailynn"
+    ],
+    "auditVerified": "2026-09-26",
+    "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown.",
+    "imageSource": "Official Flavor Fest Friday concert poster",
+    "imageSourceUrl": "https://www.flavorfest.org/schedule"
   },
   {
     "id": "bandsintown:108881783",
@@ -2204,15 +2294,15 @@
     "artists": [
       "Lecrae",
       "Biancallove",
-      "C4 Crotona",
-      "Monster Tarver"
+      "Monster Tarver",
+      "C4 Crotona"
     ],
     "headliner": "Lecrae",
     "eventType": "festival",
     "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/",
-    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/989d4d2e-f454-4a1b-99df-cc78cf6e6749/FF26-Promo-Saturday-Night.jpg",
+    "image": "assets/events/flavor-fest-saturday-2026.jpg",
     "price": "",
     "sourceName": "Flavor Fest official Saturday poster",
     "authority": "official_festival",
@@ -2220,25 +2310,40 @@
     "lineupExplicit": true,
     "sources": [
       {
-        "name": "Flavor Fest official Saturday poster",
+        "name": "Flavor Fest current Saturday concert poster",
         "url": "https://www.flavorfest.org/",
         "type": "manual_verified",
-        "authority": "official_festival",
-        "priority": 112
+        "authority": "official_event",
+        "priority": 115
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-26",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "officialBill": [
       "Lecrae",
+      "Urban D.",
+      "Geech",
       "Biancallove",
       "Gifted Hands",
+      "Toyalove",
+      "A. Ward",
+      "Loso",
+      "Je’hil",
+      "Press NJ",
+      "Nigel Lee",
+      "Craig Watson",
+      "Sir James",
+      "Keenen",
+      "Big Lek",
+      "Chawa Music",
+      "Hova-Flow",
+      "Elizer O.R.",
       "Monster Tarver",
       "C4 Crotona"
     ],
-    "notes": "Yung Kriss and Gifted Hands have conflicting poster/schedule day assignments and are not newly associated here pending resolution.",
+    "notes": "All 20 named performers on the official Saturday poster are included, including A. Ward and Loso in the compliment battle and named Holy Culture showcase/Gritty stage artists. Gifted Hands is Saturday according to both the current schedule and poster. Beat battles and breakdancing descriptions without named performers are not invented artists.",
     "id": "flavor-fest-2026-saturday-concerts",
     "imageSource": "Official Flavor Fest Saturday concert poster",
     "imageSourceUrl": "https://www.flavorfest.org/",
@@ -2586,7 +2691,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "id": "cj-emulous-kickback-grand-prairie-2026",
     "imageType": "artist",
     "imagePosition": "center",
@@ -2953,7 +3058,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-23",
     "id": "miles-cj-zion-ultra-lounge-chandler-2026",
     "imageType": "artist",
     "imagePosition": "center",
