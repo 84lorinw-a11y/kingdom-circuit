@@ -1171,7 +1171,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.ncagr.gov/divisions/ncstatefair/buy-tickets-now",
     "officialUrl": "https://www.ncagr.gov/divisions/ncstatefair",
-    "image": "assets/events/nc-state-fair-2026.png",
+    "image": "assets/artists/mayia-restored-show-photo.webp",
     "price": "",
     "sourceName": "North Carolina State Fair official site",
     "authority": "official_event",
@@ -1196,11 +1196,11 @@
     "auditVerified": "2026-09-11",
     "notes": "One event with two confirmed acoustic sets: 10–11 AM and 12–1 PM.",
     "id": "mayia-nc-state-fair-2026",
-    "imageType": "event_artwork",
+    "imageType": "artist",
     "imagePosition": "center",
     "imageOverride": true,
-    "imageSource": "Official 2026 North Carolina State Fair graphic",
-    "imageSourceUrl": "https://www.ncagr.gov/divisions/ncstatefair"
+    "imageSource": "Previously approved MAYIA photo",
+    "imageSourceUrl": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg"
   },
   {
     "id": "supplemental:brenno-overflow-conference-2026",
@@ -1220,7 +1220,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.tickettailor.com/events/ablazemovement/2047830",
     "officialUrl": "https://www.overflowconf.com/schedule",
-    "image": "assets/events/overflow-conference-buffalo-2026.jpg",
+    "image": "assets/artists/brenno-restored-show-photo.webp",
     "price": "",
     "sourceName": "Brenno official upcoming shows",
     "authority": "artist_calendar",
@@ -1246,11 +1246,11 @@
     "timezone": "America/New_York",
     "notes": "The Ticket Tailor listing covers the entire October 16–17 conference, opening Friday at 7 PM. The organizer's Saturday schedule explicitly lists Concert featuring Brenno at 3:30 PM on October 17. Kingdom Circuit lists that music performance, not the Friday conference opening.",
     "auditVerified": "2026-09-26",
-    "imageType": "event_artwork",
+    "imageType": "artist",
     "imagePosition": "center",
     "imageOverride": true,
-    "imageSource": "Official Ticket Tailor Overflow conference graphic",
-    "imageSourceUrl": "https://www.tickettailor.com/events/ablazemovement/2047830"
+    "imageSource": "Previously published Brenno photo",
+    "imageSourceUrl": "https://www.brennomusic.live/"
   },
   {
     "title": "Mission and Special Guests",
@@ -1527,12 +1527,19 @@
     "headliner": "Ruslan",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108144023?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/108144023?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/ruslan.webp",
+    "ticketUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
+    "officialUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
+    "image": "assets/events/ruslan-ticketmaster-2026.jpg",
     "price": "",
-    "sourceName": "Bandsintown",
+    "sourceName": "Ticketmaster",
     "sources": [
+      {
+        "name": "Ticketmaster",
+        "url": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
+      },
       {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/108144023?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
@@ -1546,7 +1553,13 @@
     "bandsintownArtistId": "602133",
     "bandsintownResolvedName": "RUSLAN",
     "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Ruslan"
+    "trackedArtist": "Ruslan",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Ticketmaster official Ruslan photo",
+    "imageSourceUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
+    "authority": "venue_ticket"
   },
   {
     "id": "sevin-live-nashville-2026-10-24",
@@ -1632,12 +1645,19 @@
     "headliner": "Ruslan",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108144061?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/108144061?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/ruslan.webp",
+    "ticketUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-dallas-texas-10-25-2026/event/0C00636EDD9DABAC",
+    "officialUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-dallas-texas-10-25-2026/event/0C00636EDD9DABAC",
+    "image": "assets/events/ruslan-ticketmaster-2026.jpg",
     "price": "",
-    "sourceName": "Bandsintown",
+    "sourceName": "Ticketmaster",
     "sources": [
+      {
+        "name": "Ticketmaster",
+        "url": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-dallas-texas-10-25-2026/event/0C00636EDD9DABAC",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
+      },
       {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/108144061?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
@@ -1651,7 +1671,13 @@
     "bandsintownArtistId": "602133",
     "bandsintownResolvedName": "RUSLAN",
     "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Ruslan"
+    "trackedArtist": "Ruslan",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Ticketmaster official Ruslan photo",
+    "imageSourceUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-dallas-texas-10-25-2026/event/0C00636EDD9DABAC",
+    "authority": "venue_ticket"
   },
   {
     "id": "supplemental:skema-boy-2026-10-27-chicago-il",
@@ -1855,12 +1881,19 @@
     "headliner": "JIMMY ROCK",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108945796?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/108945796?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/jimmy-rock-primary.webp",
+    "ticketUrl": "https://www.eventbrite.com/e/the-cathedral-presents-jimmy-rock-tickets-2002084741356",
+    "officialUrl": "https://www.eventbrite.com/e/the-cathedral-presents-jimmy-rock-tickets-2002084741356",
+    "image": "assets/events/jimmy-rock-cathedral-pomona-2026-10-30.jpg",
     "price": "",
-    "sourceName": "Bandsintown",
+    "sourceName": "Eventbrite",
     "sources": [
+      {
+        "name": "Eventbrite",
+        "url": "https://www.eventbrite.com/e/the-cathedral-presents-jimmy-rock-tickets-2002084741356",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
+      },
       {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/108945796?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
@@ -1874,7 +1907,14 @@
     "bandsintownArtistId": "7118692",
     "bandsintownResolvedName": "JIMMY ROCK",
     "bandsintownIdentity": "configured_id",
-    "trackedArtist": "JIMMY ROCK"
+    "trackedArtist": "JIMMY ROCK",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "The Cathedral official Eventbrite flyer",
+    "imageSourceUrl": "https://www.eventbrite.com/e/the-cathedral-presents-jimmy-rock-tickets-2002084741356",
+    "authority": "venue_ticket",
+    "detailImageLayout": "landscape"
   },
   {
     "id": "supplemental:skema-boy-2026-11-01-new-york-ny",
@@ -1997,7 +2037,7 @@
     "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "assets/events/flavor-fest-friday-2026.webp",
+    "image": "assets/events/flavor-fest-friday-2026.png",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -2014,7 +2054,9 @@
         "authority": "official_event",
         "priority": 112
       }
-    ]
+    ],
+    "imageSource": "Official Flavor Fest Friday concert poster",
+    "imageSourceUrl": "https://www.flavorfest.org/schedule"
   },
   {
     "id": "bandsintown:108881783",
@@ -2124,7 +2166,7 @@
     "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/",
-    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/989d4d2e-f454-4a1b-99df-cc78cf6e6749/FF26-Promo-Saturday-Night.jpg",
+    "image": "assets/events/flavor-fest-saturday-2026.jpg",
     "price": "",
     "sourceName": "Flavor Fest official Saturday poster",
     "authority": "official_festival",

@@ -4,7 +4,7 @@ from pathlib import Path
 
 EVENT_ID = "1997479295343"
 EVENT_URL = "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343"
-IMAGE = "assets/events/light-in-the-darkness-2026.webp"
+IMAGE = "assets/events/light-in-the-darkness-full-lineup-2026.jpg"
 
 matched = 0
 for path in (Path("events.json"), Path("supplemental-events.json"), Path("config/manual-events.json")):
@@ -29,8 +29,8 @@ for path in (Path("events.json"), Path("supplemental-events.json"), Path("config
         row["imageType"] = "event_artwork"
         row["imagePosition"] = "center"
         row["imageOverride"] = True
-        row["imageSource"] = "Official Eventbrite event artwork"
-        row["imageSourceUrl"] = EVENT_URL
+        row["imageSource"] = "Official Light in the Darkness Instagram full lineup flyer"
+        row["imageSourceUrl"] = "https://www.instagram.com/lightinthedarknesssouthmtn/p/DdKPGXUyJrt/"
         matched += 1
         changed = True
     if changed:
@@ -38,4 +38,4 @@ for path in (Path("events.json"), Path("supplemental-events.json"), Path("config
 
 if matched == 0:
     raise SystemExit("Light in the Darkness event record was not found")
-print(f"Pinned official Eventbrite artwork on {matched} event record(s)")
+print(f"Pinned official Instagram artwork on {matched} event record(s)")

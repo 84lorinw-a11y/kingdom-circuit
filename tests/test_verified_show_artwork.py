@@ -34,6 +34,23 @@ class VerifiedShowArtworkTests(unittest.TestCase):
             self.assertFalse(artwork.patch_event(event))
             self.assertEqual(event, before)
 
+    def test_ticket_sources_survive_refresh_without_losing_calendar_evidence(self):
+        for event_id, provider in (("bandsintown:108945796", "eventbrite.com"),
+                                   ("bandsintown:108144023", "ticketmaster.com"),
+                                   ("bandsintown:108144061", "ticketmaster.com")):
+            pin = artwork.BY_ID[event_id]
+            old_source = {"name": "Bandsintown", "url": "https://www.bandsintown.com/e/original"}
+            event = {"id": event_id, "startDate": pin["startDate"], "sources": [old_source],
+                     "officialUrl": old_source["url"], "ticketUrl": old_source["url"],
+                     "firstSeen": "2026-08-01"}
+            artwork.patch_event(event)
+            artwork.patch_event(event)
+            self.assertIn(provider, event["officialUrl"])
+            self.assertEqual(event["ticketUrl"], event["officialUrl"])
+            self.assertEqual(event["sources"], [event["sources"][0], old_source])
+            self.assertEqual(event["sources"][0]["url"], pin["officialUrl"])
+            self.assertEqual(event["firstSeen"], "2026-08-01")
+
     def test_saved_by_grace_lists_all_five_without_creating_artist_profiles(self):
         pin = artwork.BY_ID["supplemental:issac-mansfield-saved-by-grace-2026"]
         self.assertEqual(pin["advertisedBilling"],

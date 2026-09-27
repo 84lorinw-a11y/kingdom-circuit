@@ -46,7 +46,6 @@ class September13LiveSiteFixTests(unittest.TestCase):
 
     def test_jimmy_rock_shows_use_official_show_artwork(self):
         expected = {
-            "jimmy-rock-worship-wawa-miami-2026": "assets/events/jimmy-rock-wawa-december-2026.jpg",
             "jimmy-rock-rave-worship-centennial-2026": "assets/events/jimmy-rock-rave-worship-denver-2026.jpg",
             "boise-invasion-2026": "assets/events/boise-invasion-2026.jpg",
             "jimmy-rock-rave-worship-dallas-2026": "assets/events/jimmy-rock-rave-worship-dallas-2026.webp",
@@ -54,6 +53,12 @@ class September13LiveSiteFixTests(unittest.TestCase):
         for event_id, artwork in expected.items():
             with self.subTest(event_id=event_id):
                 self.assert_local_artwork(event_id, artwork)
+
+    def test_jimmy_rock_reschedule_does_not_display_the_old_date_on_its_image(self):
+        event = self.live_event("jimmy-rock-worship-wawa-miami-2026")
+        self.assertEqual("2026-12-18", event["startDate"])
+        self.assertEqual("assets/artists/jimmy-rock-primary.webp", event["image"])
+        self.assertEqual("artist", event["imageType"])
 
     def test_jimmy_rock_miami_weather_reschedule_is_durable(self):
         import apply_sep13_requested_events as requested

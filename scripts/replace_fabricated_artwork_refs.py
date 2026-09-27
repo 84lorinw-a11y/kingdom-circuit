@@ -15,7 +15,7 @@ REPLACEMENTS = {
     "/assets/events/fountain-fest-wv-2026.svg": "https://i0.wp.com/fountainfestwv.com/wp-content/uploads/2026/07/Rare-of-Breed-Promo-.webp?resize=720%2C900&ssl=1",
     "/assets/events/mission-friends-sacramento-2026.svg": "/assets/events/mission-sacramento-2026-10-17.jpg",
     "/assets/events/mayia-boxyard-saturdaze-2026.svg": "/assets/events/mayia-boxyard-2026-10-10.png",
-    "/assets/events/mayia-nc-state-fair-2026.svg": "/assets/events/nc-state-fair-2026.png",
+    "/assets/events/mayia-nc-state-fair-2026.svg": "/assets/artists/mayia-restored-show-photo.webp",
     "/assets/events/cj-emulous-kickback-2026.svg": "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
     "/assets/events/alex-zurdo-zona-zero-2026.svg": "/assets/events/alex-zurdo-zona-zero-2026-10-18.jpg",
     "/assets/events/jay-kalyl-desde-antes-2026.svg": "/assets/events/jay-kalyl-desde-antes-tour-2026.png",

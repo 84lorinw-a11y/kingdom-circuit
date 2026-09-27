@@ -38,11 +38,11 @@ ARTWORK_REPLACEMENTS = {
         "classification": 1,
     },
     ("MAYIA at the NC State Fair", "2026-10-17"): {
-        "image": "assets/events/nc-state-fair-2026.png",
-        "imageType": "event_artwork",
-        "source": "Official 2026 North Carolina State Fair graphic",
-        "sourceUrl": "https://www.ncagr.gov/divisions/ncstatefair",
-        "classification": 1
+        "image": "assets/artists/mayia-restored-show-photo.webp",
+        "imageType": "artist",
+        "source": "Previously approved MAYIA photo",
+        "sourceUrl": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
+        "classification": 3
     },
     ("Alex Zurdo: Zona Zero", "2026-10-18"): {
         "image": "assets/events/alex-zurdo-zona-zero-2026-10-18.jpg",

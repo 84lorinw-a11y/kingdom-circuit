@@ -408,7 +408,7 @@ def verify_canonicals_and_sitemap(site: Path, pages: Dict[Path, str], audit: Aud
 
 
 def verify_jimmy_artwork(jimmy: str, audit: Audit) -> None:
-    """Require posters for the four reviewed shows, allow other real portraits."""
+    """Require the reviewed framing, including Wawa's corrected portrait."""
     cards = repair.CARD_RE.findall(jimmy)
     for event_id in (
         "jimmy-rock-worship-wawa-miami-2026",
@@ -424,7 +424,8 @@ def verify_jimmy_artwork(jimmy: str, audit: Audit) -> None:
         for card in matches:
             image = re.search(r"<img\b[^>]*>", card, re.I | re.S)
             tag = image.group(0) if image else ""
-            audit.expect("event-artwork" in tag, f"Jimmy Rock verified poster missing: {event_id}")
+            expected_class = "artist-photo" if event_id == "jimmy-rock-worship-wawa-miami-2026" else "event-artwork"
+            audit.expect(expected_class in tag, f"Jimmy Rock reviewed image framing missing: {event_id}")
     for card in cards:
         image = re.search(r"<img\b[^>]*>", card, re.I | re.S)
         tag = image.group(0) if image else ""

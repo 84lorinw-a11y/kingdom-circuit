@@ -11,6 +11,7 @@ import apply_trnscnd_submission as trnscnd
 import apply_rock_the_pines as rock
 import build_seo_site as builder
 import verify_public_audit as audit_module
+from apply_verified_show_artwork import patch_event as patch_reviewed_artwork
 
 
 class September24RegressionTests(unittest.TestCase):
@@ -47,6 +48,7 @@ class September24RegressionTests(unittest.TestCase):
         cards = []
         for key in ("jimmy-rock-worship-wawa-miami-2026", "jimmy-rock-rave-worship-centennial-2026", "boise-invasion-2026", "jimmy-rock-rave-worship-dallas-2026"):
             event = dict(audit_module.requested_events.UPSERTS[key], id="manual:" + key)
+            patch_reviewed_artwork(event)
             cards.append(builder.event_card(dict(event, image="assets/optimized/poster.webp"), []))
         return "".join(cards)
 
@@ -59,7 +61,7 @@ class September24RegressionTests(unittest.TestCase):
     def test_reviewed_jimmy_posters_still_cannot_regress_to_portraits(self):
         result = audit_module.Audit()
         audit_module.verify_jimmy_artwork(self.jimmy_cards().replace('class="event-artwork"', 'class="artist-photo"', 1), result)
-        self.assertTrue(any("verified poster missing" in failure for failure in result.failures))
+        self.assertTrue(any("reviewed image framing missing" in failure for failure in result.failures))
 
 
 if __name__ == "__main__":

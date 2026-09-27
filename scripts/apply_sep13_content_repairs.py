@@ -133,10 +133,10 @@ def patch_event(item: dict) -> None:
                      "imageSourceUrl": "https://www.youtube.com/channel/UCBaU_Xh4fyokc-ckyCeYv3w", "auditVerified": AUDIT_DATE})
     urls = f"{item.get('ticketUrl','')} {item.get('officialUrl','')}"
     if "1997479295343" in urls or (item.get("title") == "Light in the Darkness" and item.get("startDate") == "2026-10-31"):
-        item.update({"image": "assets/events/light-in-the-darkness-2026.webp",
+        item.update({"image": "assets/events/light-in-the-darkness-full-lineup-2026.jpg",
                      "imageType": "event_artwork", "imagePosition": "center",
-                     "imageOverride": True, "imageSource": "Official Eventbrite event artwork",
-                     "imageSourceUrl": "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343",
+                     "imageOverride": True, "imageSource": "Official Light in the Darkness Instagram full lineup flyer",
+                     "imageSourceUrl": "https://www.instagram.com/lightinthedarknesssouthmtn/p/DdKPGXUyJrt/",
                      "auditVerified": "2026-09-14"})
     artists = {str(x).casefold() for x in item.get("artists") or []}
     if "kurtis hoppie" in artists:

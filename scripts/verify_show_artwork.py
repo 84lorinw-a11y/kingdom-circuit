@@ -30,6 +30,10 @@ def verify(site: Path):
         href = builder.event_path(event)
         targets[href] = pin
         text = (site / href.strip("/") / "index.html").read_text()
+        if pin.get("officialUrl"):
+            assert event["officialUrl"] == pin["officialUrl"], (pin["id"], "primary source")
+            assert event["ticketUrl"] == pin["ticketUrl"], (pin["id"], "ticket destination")
+            assert html.escape(pin["officialUrl"], quote=True) in text, (pin["id"], "source link")
         media = re.search(r'<div\b[^>]*class="[^"]*event-detail-media[^>]*>.*?</div>', text, re.S)
         assert media and uses_image(media[0], site, pin["image"]), (pin["id"], "detail artwork")
         css = "event-artwork" if pin["imageType"] == "event_artwork" else "artist-photo"

@@ -23,7 +23,7 @@ VERIFIED_EVENT_IMAGES = {
     ),
     "jay-kalyl-desde-antes-rockville-centre-2026": ("assets/events/jay-kalyl-desde-antes-tour-2026.png", "event_artwork"),
     "mayia-boxyard-saturdaze-2026": ("assets/events/mayia-boxyard-2026-10-10.png", "event_artwork"),
-    "mayia-nc-state-fair-2026": ("assets/events/nc-state-fair-2026.png", "event_artwork"),
+    "mayia-nc-state-fair-2026": ("assets/artists/mayia-restored-show-photo.webp", "artist"),
     "mission-friends-sacramento-2026": ("assets/events/mission-sacramento-2026-10-17.jpg", "event_artwork"),
     "alex-zurdo-zona-zero-san-juan-2026": ("assets/events/alex-zurdo-zona-zero-2026-10-18.jpg", "event_artwork"),
     "cj-emulous-kickback-grand-prairie-2026": ("assets/events/cj-emulous-kickback-2026.svg", "event_artwork"),

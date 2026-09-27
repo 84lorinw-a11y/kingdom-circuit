@@ -1,4 +1,4 @@
-"""Preserve owner-requested official show artwork across calendar refreshes.
+"""Preserve reviewed show images and primary ticket sources across refreshes.
 
 Pins are scoped to an existing event identity and date. They never create an
 event, reset discovery age, change schedules, or expand the curated roster.
@@ -19,6 +19,14 @@ def patch_event(event):
         return False
     event.update(copy.deepcopy({key: value for key, value in pin.items()
                                 if key not in {"id", "startDate"}}))
+    if pin.get("officialUrl"):
+        # Keep the original calendar evidence, but prioritize the exact ticket
+        # page the owner selected. Repeated refreshes must not duplicate it.
+        sources = [source for source in event.get("sources", [])
+                   if source.get("url") != pin["officialUrl"]]
+        event["sources"] = [{"name": pin["sourceName"], "url": pin["officialUrl"],
+                             "type": "manual_verified", "authority": "venue_ticket",
+                             "priority": 100}] + sources
     return True
 
 
