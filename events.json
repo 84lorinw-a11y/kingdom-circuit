@@ -3343,8 +3343,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventim.us/event/parris-chariz/699959",
     "officialUrl": "https://www.eventim.us/event/parris-chariz/699959",
-    "image": "assets/artists/parris-chariz.webp",
-    "imageType": "artist",
+    "image": "assets/events/parris-chariz-dallas-2026-10-11.jpg",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "price": "",
     "sourceName": "Spune / Eventim official listing",
@@ -3366,7 +3366,10 @@
         "authority": "official_event",
         "priority": 100
       }
-    ]
+    ],
+    "imageOverride": true,
+    "imageSource": "Eventim official Parris Chariz Dallas event flyer",
+    "imageSourceUrl": "https://www.eventim.us/event/parris-chariz/699959"
   },
   {
     "id": "manual:cj-emulous-turlock-back-to-school-2026",
@@ -4649,12 +4652,13 @@
     "country": "US",
     "artists": [
       "Miles Minnick",
-      "Gifted Hands",
+      "Yung Kriss",
       "Datin",
-      "TRU-SERVA",
-      "VVS Big Rock",
       "Lyric The Geenyus",
-      "MAYIA"
+      "TRU-SERVA",
+      "MAYIA",
+      "Dre Skywalker",
+      "VVS Big Rock"
     ],
     "headliner": "Miles Minnick",
     "eventType": "festival",
@@ -4671,22 +4675,81 @@
     "sourceName": "Flavor Fest official 2026 schedule",
     "sources": [
       {
+        "name": "Flavor Fest current Friday concert poster",
+        "url": "https://www.flavorfest.org/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
         "name": "Flavor Fest official 2026 schedule",
         "url": "https://www.flavorfest.org/schedule",
         "type": "manual_verified",
         "authority": "official_event",
         "priority": 112
-      },
-      {
-        "name": "Flavor Fest official Friday poster",
-        "url": "https://www.flavorfest.org/",
-        "type": "manual_verified",
-        "authority": "official_festival",
-        "priority": 106
       }
     ],
     "confidence": "high",
-    "auditVerified": "2026-09-11"
+    "auditVerified": "2026-09-26",
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Yung Kriss",
+      "TH3 Saga",
+      "Datin",
+      "Lyric The Geenyus",
+      "Princess Tayy",
+      "4KL",
+      "Truth Soldier",
+      "Zeke",
+      "TRU-SERVA",
+      "Joshua Penn",
+      "Leon",
+      "Tyler Errae",
+      "Yvonne Sigars",
+      "Songbird SB",
+      "Louis Self",
+      "MAYIA",
+      "Adji Merveille",
+      "Way",
+      "King Jamezzz",
+      "Dre Skywalker",
+      "Jaybez",
+      "B.E.R.I.D.O.X",
+      "DiE$eL-E",
+      "TVNK",
+      "VVS Big Rock",
+      "Jailynn"
+    ],
+    "officialBill": [
+      "Miles Minnick",
+      "Yung Kriss",
+      "TH3 Saga",
+      "Datin",
+      "Lyric The Geenyus",
+      "Princess Tayy",
+      "4KL",
+      "Truth Soldier",
+      "Zeke",
+      "TRU-SERVA",
+      "Joshua Penn",
+      "Leon",
+      "Tyler Errae",
+      "Yvonne Sigars",
+      "Songbird SB",
+      "Louis Self",
+      "MAYIA",
+      "Adji Merveille",
+      "Way",
+      "King Jamezzz",
+      "Dre Skywalker",
+      "Jaybez",
+      "B.E.R.I.D.O.X",
+      "DiE$eL-E",
+      "TVNK",
+      "VVS Big Rock",
+      "Jailynn"
+    ],
+    "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown."
   },
   {
     "id": "bandsintown:108940352",
@@ -4728,8 +4791,8 @@
     "artists": [
       "Lecrae",
       "Biancallove",
-      "C4 Crotona",
-      "Monster Tarver"
+      "Monster Tarver",
+      "C4 Crotona"
     ],
     "headliner": "Lecrae",
     "eventType": "festival",
@@ -4741,11 +4804,11 @@
     "sourceName": "Flavor Fest official Saturday poster",
     "sources": [
       {
-        "name": "Flavor Fest official Saturday poster",
+        "name": "Flavor Fest current Saturday concert poster",
         "url": "https://www.flavorfest.org/",
         "type": "manual_verified",
-        "authority": "official_festival",
-        "priority": 112
+        "authority": "official_event",
+        "priority": 115
       }
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
@@ -4756,18 +4819,55 @@
     "firstSeen": "2026-08-09T00:00:00Z",
     "authority": "official_festival",
     "lineupExplicit": true,
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-26",
     "imageOverride": true,
     "officialBill": [
       "Lecrae",
+      "Urban D.",
+      "Geech",
       "Biancallove",
       "Gifted Hands",
+      "Toyalove",
+      "A. Ward",
+      "Loso",
+      "Je’hil",
+      "Press NJ",
+      "Nigel Lee",
+      "Craig Watson",
+      "Sir James",
+      "Keenen",
+      "Big Lek",
+      "Chawa Music",
+      "Hova-Flow",
+      "Elizer O.R.",
       "Monster Tarver",
       "C4 Crotona"
     ],
-    "notes": "Yung Kriss and Gifted Hands have conflicting poster/schedule day assignments and are not newly associated here pending resolution.",
+    "notes": "All 20 named performers on the official Saturday poster are included, including A. Ward and Loso in the compliment battle and named Holy Culture showcase/Gritty stage artists. Gifted Hands is Saturday according to both the current schedule and poster. Beat battles and breakdancing descriptions without named performers are not invented artists.",
     "imageSource": "Official Flavor Fest Saturday concert poster",
-    "imageSourceUrl": "https://www.flavorfest.org/"
+    "imageSourceUrl": "https://www.flavorfest.org/",
+    "advertisedBilling": [
+      "Lecrae",
+      "Urban D.",
+      "Geech",
+      "Biancallove",
+      "Gifted Hands",
+      "Toyalove",
+      "A. Ward",
+      "Loso",
+      "Je’hil",
+      "Press NJ",
+      "Nigel Lee",
+      "Craig Watson",
+      "Sir James",
+      "Keenen",
+      "Big Lek",
+      "Chawa Music",
+      "Hova-Flow",
+      "Elizer O.R.",
+      "Monster Tarver",
+      "C4 Crotona"
+    ]
   },
   {
     "title": "Miles Minnick – Christlike University – Florida Campus Tour in Jacksonville",

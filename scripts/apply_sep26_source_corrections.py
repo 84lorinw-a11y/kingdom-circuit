@@ -12,6 +12,7 @@ from apply_sep13_content_repairs import NEW_EVENTS
 from apply_sep13_requested_events import UPSERTS
 from apply_sep26_approved_audit import patch_event as patch_approved_audit
 from apply_verified_show_artwork import patch_event as patch_show_artwork
+from apply_sep26_requested_lineups import patch_event as patch_requested_lineups
 
 ROOT = Path(__file__).resolve().parents[1]
 DOVE_EVENT_ID = "bandsintown:1040305060"
@@ -138,6 +139,7 @@ def apply(root: Path = ROOT, today: str | None = None) -> None:
         if row.get("id") == DOVE_EVENT_ID:
             row.update(DOVE_ARTWORK)
         patch_approved_audit(row)
+        patch_requested_lineups(row)
         patch_show_artwork(row)
 
     for name, rows in feeds.items():

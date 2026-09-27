@@ -936,7 +936,7 @@
     "title": "Awake Conference",
     "startDate": "2026-10-10",
     "startTime": "",
-    "venue": "Location TBD",
+    "venue": "Firm Foundation Ministries",
     "address": "",
     "city": "Centreville",
     "state": "MI",
@@ -948,14 +948,21 @@
     "eventType": "concert",
     "status": "scheduled",
     "ticketUrl": "https://www.facebook.com/people/AWAKE-Youth-Conference/100084206085878/",
-    "officialUrl": "https://www.brennomusic.live/",
-    "image": "",
+    "officialUrl": "https://www.facebook.com/people/AWAKE-Youth-Conference/100084206085878/",
+    "image": "assets/events/awake-conference-2026-10-10.png",
     "price": "",
-    "sourceName": "Brenno official upcoming shows",
-    "authority": "artist_calendar",
+    "sourceName": "AWAKE Youth Conference official flyer",
+    "authority": "official_event",
     "confidence": "high",
     "lineupExplicit": true,
     "sources": [
+      {
+        "name": "AWAKE organizer flyer supplied by owner",
+        "url": "https://www.facebook.com/people/AWAKE-Youth-Conference/100084206085878/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
       {
         "name": "Brenno official upcoming shows",
         "url": "https://www.brennomusic.live/",
@@ -963,7 +970,30 @@
         "authority": "artist_calendar",
         "priority": 100
       }
-    ]
+    ],
+    "advertisedBilling": [
+      "Brenno",
+      "Taylor Wells",
+      "DJ Eli Williams",
+      "Pastor Don Smith",
+      "Alex Seidler",
+      "Jon Rush"
+    ],
+    "officialBill": [
+      "Brenno",
+      "Taylor Wells",
+      "DJ Eli Williams",
+      "Pastor Don Smith",
+      "Alex Seidler",
+      "Jon Rush"
+    ],
+    "auditVerified": "2026-09-26",
+    "notes": "Owner supplied the AWAKE October 10, 2026 flyer naming Firm Foundation Ministries in Centreville and all six advertised participants. Includes conference speakers as well as music guests; only Brenno has a curated artist profile. No start time or street address is printed on this flyer.",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Owner-supplied official AWAKE 2026 conference flyer",
+    "imageSourceUrl": "https://www.facebook.com/people/AWAKE-Youth-Conference/100084206085878/"
   },
   {
     "title": "Boxyard Saturdaze",
@@ -1432,7 +1462,7 @@
     "id": "mike-teezy-hrvstland-festival-2026",
     "title": "HRVSTLAND Festival 2026",
     "startDate": "2026-10-24",
-    "startTime": "14:00",
+    "startTime": "16:00",
     "endTime": "20:00",
     "doorsTime": "15:30",
     "timezone": "America/New_York",
@@ -1446,7 +1476,9 @@
       "Anike",
       "Dante' Pride",
       "Don Ready",
-      "ADIA"
+      "ADIA",
+      "Jamil",
+      "Queen Lee"
     ],
     "headliner": "Mike Teezy",
     "eventType": "festival",
@@ -1467,16 +1499,20 @@
       "Mike Teezy",
       "Anike",
       "Dante' Pride",
+      "ADIA",
       "Don Ready",
-      "ADIA"
+      "Jamil",
+      "Joshuaa*",
+      "Queen Lee",
+      "DJ PARTYwithParks"
     ],
     "sources": [
       {
         "name": "HRVSTLAND official event page",
         "url": "https://www.miketeezymusic.com/event-details/hlfest",
         "type": "manual_verified",
-        "authority": "official_festival",
-        "priority": 112
+        "authority": "official_event",
+        "priority": 115
       },
       {
         "name": "HRVSTLAND official Anike announcement",
@@ -1507,8 +1543,20 @@
         "priority": 108
       }
     ],
-    "notes": "Festival and VIP entry begin at 2:00 PM; general-admission doors open at 3:30 PM and the show begins at 4:00 PM.",
-    "auditVerified": "2026-09-14"
+    "notes": "Official page names Mike Teezy, Anike, Dante Pride, Adia, Don Ready, Jamil, Joshuaa*, Queen Lee, plus a DJ party with Parks. The published schedule is marketplace 1:30–4 PM, VIP 2–3:30 PM, general-admission doors/DJ party 3:30 PM, concert 4 PM. Kingdom Circuit lists the concert start.",
+    "auditVerified": "2026-09-26",
+    "advertisedBilling": [
+      "Mike Teezy",
+      "Anike",
+      "Dante' Pride",
+      "ADIA",
+      "Don Ready",
+      "Jamil",
+      "Joshuaa*",
+      "Queen Lee",
+      "DJ PARTYwithParks"
+    ],
+    "startDateTime": "2026-10-24T16:00:00-04:00"
   },
   {
     "id": "bandsintown:108144023",
@@ -2029,12 +2077,13 @@
     "country": "US",
     "artists": [
       "Miles Minnick",
-      "Gifted Hands",
+      "Yung Kriss",
       "Datin",
-      "TRU-SERVA",
-      "VVS Big Rock",
       "Lyric The Geenyus",
-      "MAYIA"
+      "TRU-SERVA",
+      "MAYIA",
+      "Dre Skywalker",
+      "VVS Big Rock"
     ],
     "headliner": "Miles Minnick",
     "eventType": "festival",
@@ -2052,21 +2101,80 @@
     "lineupExplicit": true,
     "sources": [
       {
+        "name": "Flavor Fest current Friday concert poster",
+        "url": "https://www.flavorfest.org/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
         "name": "Flavor Fest official 2026 schedule",
         "url": "https://www.flavorfest.org/schedule",
         "type": "manual_verified",
         "authority": "official_event",
         "priority": 112
-      },
-      {
-        "name": "Flavor Fest official Friday poster",
-        "url": "https://www.flavorfest.org/",
-        "type": "manual_verified",
-        "authority": "official_festival",
-        "priority": 106
       }
     ],
-    "auditVerified": "2026-09-11"
+    "auditVerified": "2026-09-26",
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Yung Kriss",
+      "TH3 Saga",
+      "Datin",
+      "Lyric The Geenyus",
+      "Princess Tayy",
+      "4KL",
+      "Truth Soldier",
+      "Zeke",
+      "TRU-SERVA",
+      "Joshua Penn",
+      "Leon",
+      "Tyler Errae",
+      "Yvonne Sigars",
+      "Songbird SB",
+      "Louis Self",
+      "MAYIA",
+      "Adji Merveille",
+      "Way",
+      "King Jamezzz",
+      "Dre Skywalker",
+      "Jaybez",
+      "B.E.R.I.D.O.X",
+      "DiE$eL-E",
+      "TVNK",
+      "VVS Big Rock",
+      "Jailynn"
+    ],
+    "officialBill": [
+      "Miles Minnick",
+      "Yung Kriss",
+      "TH3 Saga",
+      "Datin",
+      "Lyric The Geenyus",
+      "Princess Tayy",
+      "4KL",
+      "Truth Soldier",
+      "Zeke",
+      "TRU-SERVA",
+      "Joshua Penn",
+      "Leon",
+      "Tyler Errae",
+      "Yvonne Sigars",
+      "Songbird SB",
+      "Louis Self",
+      "MAYIA",
+      "Adji Merveille",
+      "Way",
+      "King Jamezzz",
+      "Dre Skywalker",
+      "Jaybez",
+      "B.E.R.I.D.O.X",
+      "DiE$eL-E",
+      "TVNK",
+      "VVS Big Rock",
+      "Jailynn"
+    ],
+    "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown."
   },
   {
     "id": "bandsintown:108881783",
@@ -2168,8 +2276,8 @@
     "artists": [
       "Lecrae",
       "Biancallove",
-      "C4 Crotona",
-      "Monster Tarver"
+      "Monster Tarver",
+      "C4 Crotona"
     ],
     "headliner": "Lecrae",
     "eventType": "festival",
@@ -2184,28 +2292,65 @@
     "lineupExplicit": true,
     "sources": [
       {
-        "name": "Flavor Fest official Saturday poster",
+        "name": "Flavor Fest current Saturday concert poster",
         "url": "https://www.flavorfest.org/",
         "type": "manual_verified",
-        "authority": "official_festival",
-        "priority": 112
+        "authority": "official_event",
+        "priority": 115
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-26",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "officialBill": [
       "Lecrae",
+      "Urban D.",
+      "Geech",
       "Biancallove",
       "Gifted Hands",
+      "Toyalove",
+      "A. Ward",
+      "Loso",
+      "Je’hil",
+      "Press NJ",
+      "Nigel Lee",
+      "Craig Watson",
+      "Sir James",
+      "Keenen",
+      "Big Lek",
+      "Chawa Music",
+      "Hova-Flow",
+      "Elizer O.R.",
       "Monster Tarver",
       "C4 Crotona"
     ],
-    "notes": "Yung Kriss and Gifted Hands have conflicting poster/schedule day assignments and are not newly associated here pending resolution.",
+    "notes": "All 20 named performers on the official Saturday poster are included, including A. Ward and Loso in the compliment battle and named Holy Culture showcase/Gritty stage artists. Gifted Hands is Saturday according to both the current schedule and poster. Beat battles and breakdancing descriptions without named performers are not invented artists.",
     "id": "flavor-fest-2026-saturday-concerts",
     "imageSource": "Official Flavor Fest Saturday concert poster",
-    "imageSourceUrl": "https://www.flavorfest.org/"
+    "imageSourceUrl": "https://www.flavorfest.org/",
+    "advertisedBilling": [
+      "Lecrae",
+      "Urban D.",
+      "Geech",
+      "Biancallove",
+      "Gifted Hands",
+      "Toyalove",
+      "A. Ward",
+      "Loso",
+      "Je’hil",
+      "Press NJ",
+      "Nigel Lee",
+      "Craig Watson",
+      "Sir James",
+      "Keenen",
+      "Big Lek",
+      "Chawa Music",
+      "Hova-Flow",
+      "Elizer O.R.",
+      "Monster Tarver",
+      "C4 Crotona"
+    ]
   },
   {
     "id": "supplemental:skema-boy-2026-11-08-atlanta-ga",
@@ -2373,12 +2518,19 @@
     "headliner": "Pastor Mike Jr.",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/1040314202?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/1040314202?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "ticketUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
+    "officialUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
     "image": "assets/artists/pastor-mike-jr.webp",
     "price": "",
-    "sourceName": "Bandsintown",
+    "sourceName": "Ticketmaster / W L Jack Howard Theatre",
     "sources": [
+      {
+        "name": "Ticketmaster / W L Jack Howard Theatre",
+        "url": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 115
+      },
       {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/1040314202?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
@@ -2392,7 +2544,9 @@
     "bandsintownArtistId": "15540358",
     "bandsintownResolvedName": "Pastor Mike Jr.",
     "bandsintownIdentity": "configured_id",
-    "trackedArtist": "Pastor Mike Jr."
+    "trackedArtist": "Pastor Mike Jr.",
+    "authority": "venue_ticket",
+    "auditVerified": "2026-09-26"
   },
   {
     "id": "ty-brasel-outlandish-fest-fort-worth-2026",
@@ -2446,27 +2600,44 @@
   },
   {
     "id": "bandsintown:1040378722",
-    "title": "Miles Minnick at Below at The Belasco",
+    "title": "Miles Minnick — GLOVEMBER",
     "startDate": "2026-11-14",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "Below at The Belasco",
+    "startTime": "20:00",
+    "timezone": "America/Los_Angeles",
+    "venue": "The Belasco",
     "address": "1050 S Hill St",
     "city": "Los Angeles",
     "state": "CA",
     "country": "US",
     "artists": [
-      "Miles Minnick"
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Lul DreDay"
     ],
     "headliner": "Miles Minnick",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/1040378722?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "officialUrl": "https://www.bandsintown.com/e/1040378722?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/miles-minnick.webp",
+    "ticketUrl": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
+    "officialUrl": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
+    "image": "assets/events/miles-minnick-glovember-2026-11-14.jpg",
     "price": "",
-    "sourceName": "Bandsintown",
+    "sourceName": "Ticketmaster / The Belasco",
     "sources": [
+      {
+        "name": "Ticketmaster / The Belasco",
+        "url": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 115
+      },
+      {
+        "name": "Miles Minnick and CJ Emulous official GLOVEMBER flyer",
+        "url": "https://www.instagram.com/p/Ddo8xGgoQhN/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
       {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/1040378722?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
@@ -2480,7 +2651,37 @@
     "bandsintownArtistId": "15395466",
     "bandsintownResolvedName": "Miles Minnick",
     "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Miles Minnick"
+    "trackedArtist": "Miles Minnick",
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Mikeyso",
+      "Lul DreDay",
+      "DJ Malski"
+    ],
+    "officialBill": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Mikeyso",
+      "Lul DreDay",
+      "DJ Malski"
+    ],
+    "lineupExplicit": true,
+    "auditVerified": "2026-09-26",
+    "doorsTime": "19:00",
+    "startDateTime": "2026-11-14T20:00:00-08:00",
+    "authority": "venue_ticket",
+    "notes": "September 23 official co-posted flyer explicitly bills Miles Minnick, Tommy Zuko, CJ Emulous, Mikeyso and Lul DreDay, hosted by DJ Malski. Ticketmaster More Info confirms The Belasco, 6 PM early-entry lounge, 7 PM doors and 8 PM show. CJ’s older official calendar still lists a November 15 Los Angeles GLOConcert and November 14 Grand Prairie Kickback; those separate entries require organizer clarification and have not been merged or cancelled by inference.",
+    "legacyEventPaths": [
+      "/event/miles-minnick-at-below-at-the-belasco-2026-11-14-los-angeles-5d10ab/"
+    ],
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Miles Minnick and CJ Emulous official GLOVEMBER Instagram flyer",
+    "imageSourceUrl": "https://www.instagram.com/p/Ddo8xGgoQhN/"
   },
   {
     "title": "The Kickback",
@@ -2821,12 +3022,19 @@
     "headliner": "nobigdyl.",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/1037809090?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/1037809090?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/nobigdyl.webp",
+    "ticketUrl": "https://www.axs.com/events/1304795/nobigdyl-unplugged-tickets",
+    "officialUrl": "https://www.axs.com/events/1304795/nobigdyl-unplugged-tickets",
+    "image": "assets/events/nobigdyl-unplugged-2027-01-22.jpg",
     "price": "",
-    "sourceName": "Bandsintown",
+    "sourceName": "AXS / Cannery Hall",
     "sources": [
+      {
+        "name": "AXS / Cannery Hall",
+        "url": "https://www.axs.com/events/1304795/nobigdyl-unplugged-tickets",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 115
+      },
       {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/1037809090?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
@@ -2840,6 +3048,13 @@
     "bandsintownArtistId": "9617017",
     "bandsintownResolvedName": "nobigdyl.",
     "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "nobigdyl."
+    "trackedArtist": "nobigdyl.",
+    "authority": "venue_ticket",
+    "auditVerified": "2026-09-26",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "AXS official nobigdyl. UNPLUGGED event image",
+    "imageSourceUrl": "https://www.axs.com/events/1304795/nobigdyl-unplugged-tickets"
   }
 ]
