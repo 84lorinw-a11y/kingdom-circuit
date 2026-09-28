@@ -171,7 +171,6 @@ const ARTIST_ROSTER_ORDER = [
   "Lul DreDay",
   "Brinson",
   "Alex Zurdo",
-  "Jay Kalyl",
   "Key'ijah",
   "Tha inspiration",
   "NISSI SHALOM",
@@ -2253,7 +2252,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
   },
   "trendsetter sense": {
     "aliases": [
-      "Trendsetter Sense"
+      "Trendsetter Sense",
+      "DJ Trendsetter Sense"
     ],
     "website": "https://www.instagram.com/trendsettersense/?hl=en",
     "instagramProfile": "https://www.instagram.com/trendsettersense/",
@@ -2315,19 +2315,6 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "youtubeProfile": "https://www.youtube.com/user/ALEXZURDOMUSIC",
     "officialImageSource": "https://www.alexzurdomusic.com/site/",
     "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb2c81bb40c3b6962eacf9dc9c",
-    "imagePosition": "center",
-    "sourceRegistryVerified": true
-  },
-  "jay kalyl": {
-    "aliases": [
-      "Jay Kalyl"
-    ],
-    "website": "https://www.instagram.com/jaykalylmusic/?hl=en",
-    "instagramProfile": "https://www.instagram.com/jaykalylmusic/?hl=en",
-    "spotifyProfile": "https://open.spotify.com/artist/0sHeKC0Zcxpz4wOHHE5oJ7",
-    "youtubeProfile": "https://www.youtube.com/channel/UCFfyV-7bdXPRDZfItdZdpQg",
-    "officialImageSource": "https://www.instagram.com/jaykalylmusic/?hl=en",
-    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb603501102ca962a0b333228f",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -3076,6 +3063,9 @@ function artistLinks(event) {
     return link;
   }).join(" - ");
 }
+function hostsLine(event) {
+  return event.hosts?.length ? `<p class="host-line">Hosted by ${esc(event.hosts.join(" and "))}</p>` : "";
+}
 function isNew(event) {
   if (!event.firstSeen) return false;
   const seen = new Date(event.firstSeen);
@@ -3096,7 +3086,7 @@ function eventCard(event) {
   const recent = "";
   return `<article class="event-card" data-event-card data-search="${esc(search)}" data-artists="${esc(artists)}" data-state="${esc(event.state || "")}" data-type="${esc(event.eventType || "concert")}" data-date="${esc(event.startDate || "")}" data-end-date="${esc(event.endDate || event.startDate || "")}">
     <a class="event-media" href="${eventDetailUrl(event)}" aria-label="View ${esc(event.title)}"><img class="${imageClass(event)}" src="${esc(img)}" alt="${esc(event.title)} image" loading="lazy" style="object-position:${esc(imagePosition(event))}" onerror="this.onerror=null;this.className='event-artwork';this.src='${FALLBACK_EVENT_IMAGE}';"></a>
-    <div class="event-content"><div class="event-main"><div class="event-badges"><span class="badge badge-gold">${esc(eventTypeLabel(event))}</span>${recent}</div><h3><a href="${eventDetailUrl(event)}">${esc(event.title)}</a></h3><p class="artist-line">${artistLinks(event)}</p><dl class="event-meta"><div><dt>Date</dt><dd>${esc(formatDate(event))}</dd></div><div><dt>Venue</dt><dd>${esc(event.venue || "Venue to be announced")}</dd></div><div><dt>Location</dt><dd>${esc(location)}</dd></div></dl>${price}</div><div class="event-footer"><a class="official-button" href="${esc(event.officialUrl || event.ticketUrl || "#")}" target="_blank" rel="noopener">Official details</a><p class="source-line">Source: ${esc(sourceText(event))}</p></div></div>
+    <div class="event-content"><div class="event-main"><div class="event-badges"><span class="badge badge-gold">${esc(eventTypeLabel(event))}</span>${recent}</div><h3><a href="${eventDetailUrl(event)}">${esc(event.title)}</a></h3><p class="artist-line">${artistLinks(event)}</p>${hostsLine(event)}<dl class="event-meta"><div><dt>Date</dt><dd>${esc(formatDate(event))}</dd></div><div><dt>Venue</dt><dd>${esc(event.venue || "Venue to be announced")}</dd></div><div><dt>Location</dt><dd>${esc(location)}</dd></div></dl>${price}</div><div class="event-footer"><a class="official-button" href="${esc(event.officialUrl || event.ticketUrl || "#")}" target="_blank" rel="noopener">Official details</a><p class="source-line">Source: ${esc(sourceText(event))}</p></div></div>
   </article>`;
 }
 function filterEvents(mode) {
@@ -3592,7 +3582,7 @@ function renderEventDetail() {
   }
   const img = eventImage(event);
   const locationText = [event.city, event.state].filter(Boolean).join(", ");
-  root.innerHTML = `<article class="event-detail"><div class="event-detail-media"><img class="${imageClass(event)}" src="${esc(img)}" alt="${esc(event.title)}" style="object-position:${esc(imagePosition(event))}" onerror="this.onerror=null;this.className='event-artwork';this.src='${FALLBACK_EVENT_IMAGE}';"></div><div class="event-detail-copy"><p class="eyebrow">${esc(eventTypeLabel(event))}</p><h1>${esc(event.title)}</h1><p class="artist-line">${artistLinks(event)}</p><dl class="detail-list"><div><dt>Date</dt><dd>${esc(formatDate(event))}</dd></div><div><dt>Venue</dt><dd>${esc(event.venue || "Venue to be announced")}</dd></div><div><dt>Location</dt><dd>${esc(locationText || "Location to be announced")}</dd></div>${event.price ? `<div><dt>Price</dt><dd>${esc(event.price)}</dd></div>` : ""}<div><dt>Source</dt><dd>${esc(sourceText(event))}</dd></div></dl><a class="primary-button" href="${esc(event.officialUrl || event.ticketUrl || "#")}" target="_blank" rel="noopener">Official details</a><p class="disclaimer">Event details, availability, pricing, and lineups may change.
+  root.innerHTML = `<article class="event-detail"><div class="event-detail-media"><img class="${imageClass(event)}" src="${esc(img)}" alt="${esc(event.title)}" style="object-position:${esc(imagePosition(event))}" onerror="this.onerror=null;this.className='event-artwork';this.src='${FALLBACK_EVENT_IMAGE}';"></div><div class="event-detail-copy"><p class="eyebrow">${esc(eventTypeLabel(event))}</p><h1>${esc(event.title)}</h1><p class="artist-line">${artistLinks(event)}</p>${hostsLine(event)}<dl class="detail-list"><div><dt>Date</dt><dd>${esc(formatDate(event))}</dd></div><div><dt>Venue</dt><dd>${esc(event.venue || "Venue to be announced")}</dd></div><div><dt>Location</dt><dd>${esc(locationText || "Location to be announced")}</dd></div>${event.price ? `<div><dt>Price</dt><dd>${esc(event.price)}</dd></div>` : ""}<div><dt>Source</dt><dd>${esc(sourceText(event))}</dd></div></dl><a class="primary-button" href="${esc(event.officialUrl || event.ticketUrl || "#")}" target="_blank" rel="noopener">Official details</a><p class="disclaimer">Event details, availability, pricing, and lineups may change.
 Confirm final information with the official organizer or ticket provider before purchasing or traveling.</p></div></article>`;
   document.title = `${event.title} | The Kingdom Circuit`;
   ensureCanonical(`${location.origin}${BASE}event/?id=${encodeURIComponent(event.id)}`);

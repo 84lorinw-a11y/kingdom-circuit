@@ -23,13 +23,6 @@ ARTWORK_REPLACEMENTS = {
         "sourceUrl": "https://fountainfestwv.com/",
         "classification": 1,
     },
-    ("Jay Kalyl — Desde Antes Tour", "2026-10-03"): {
-        "image": "assets/events/jay-kalyl-desde-antes-tour-2026.png",
-        "imageType": "event_artwork",
-        "source": "BoletosLive official Desde Antes Tour 2026 graphic; city-neutral artwork",
-        "sourceUrl": "https://boletoslive.com/",
-        "classification": 2
-    },
     ("Boxyard Saturdaze", "2026-10-10"): {
         "image": "assets/events/mayia-boxyard-2026-10-10.png",
         "imageType": "event_artwork",

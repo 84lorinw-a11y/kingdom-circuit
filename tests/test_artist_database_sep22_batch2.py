@@ -46,9 +46,9 @@ class ArtistDatabaseSeptember22BatchTwoTests(unittest.TestCase):
             )
         )
 
-    def test_sheet_rows_150_through_176_are_exact_and_contiguous(self):
+    def test_sheet_rows_preserve_source_order_except_owner_removed_jay_kalyl(self):
         batch = [row for row in self.updates if 150 <= int(row["rosterOrder"]) <= 176]
-        self.assertEqual([row["rosterOrder"] for row in batch], list(range(150, 177)))
+        self.assertEqual([row["rosterOrder"] for row in batch], [n for n in range(150, 177) if n != 158])
         self.assertEqual([row["name"] for row in batch], [row["name"] for row in ROWS])
         for row in batch:
             expected = self.expected[row["name"]]
@@ -62,7 +62,10 @@ class ArtistDatabaseSeptember22BatchTwoTests(unittest.TestCase):
             with self.subTest(name=name):
                 artist = artists[name]
                 self.assertTrue(artist.get("sourceRegistryVerified"))
-                self.assertEqual(expected["rosterOrder"], artist["rosterOrder"])
+                # Public positions close the gap left by the removed artist;
+                # sourceRegistryRosterOrder retains the reviewed source number.
+                position = expected["rosterOrder"] - (expected["rosterOrder"] > 158)
+                self.assertEqual(position, artist["rosterOrder"])
                 self.assertEqual(
                     expected["rosterOrder"], artist["sourceRegistryRosterOrder"]
                 )

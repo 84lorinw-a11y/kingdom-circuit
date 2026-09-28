@@ -278,7 +278,6 @@ KNOWN_808_BEEZY_EVENT_IDS = {
 }
 
 VERIFIED_EVENT_IMAGES = {
-    "jay-kalyl-desde-antes-rockville-centre-2026": "assets/events/jay-kalyl-desde-antes-tour-2026.png",
     "mayia-boxyard-saturdaze-2026": "assets/events/mayia-boxyard-2026-10-10.png",
     "mayia-nc-state-fair-2026": "assets/artists/mayia-restored-show-photo.webp",
     "mission-friends-sacramento-2026": "assets/events/mission-sacramento-2026-10-17.jpg",

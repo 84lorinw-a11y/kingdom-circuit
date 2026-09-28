@@ -88,12 +88,6 @@ UPSERTS = {
         image="https://evergyplaza.com/wp-content/uploads/2026/08/open-skies-1.jpg", image_type="event_artwork", image_override=True,
         advertised=["Bethel Music", "KB"]
     ),
-    "jay-kalyl-desde-antes-elizabeth-2026": E(
-        "Jay Kalyl — Desde Antes Tour", "2026-10-02", "Elizabeth", "NJ", ["Jay Kalyl"],
-        "https://boletoslive.com/desde-antes-tour-jay-kalyl/", "BoletosLive official event", venue="Iglesia Torre Fuerte",
-        address="30 3rd St", time="19:00", tz="America/New_York", ticket="https://boletoslive.com/desde-antes-tour-jay-kalyl/",
-        authority="venue_ticket", image="https://boletoslive.com/wp-content/uploads/2026/08/JAY-K-NJ.png", image_type="event_artwork", image_override=True
-    ),
     "one-day-fall-festival-aurora-2026": E(
         "ONE DAY Fall Festival 2026", "2026-10-10", "Aurora", "CO", ["Petrina DeLacey"], "https://onedaydenver.org/",
         "ONE DAY official festival site", venue="Colorado UpLift Community Campus", address="1500 S Dayton St", event_type="festival",

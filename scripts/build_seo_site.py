@@ -8,6 +8,7 @@ import re
 import shutil
 from collections import defaultdict
 from zoneinfo import ZoneInfo
+from catalog_removals import removed_event
 
 REPO = pathlib.Path.cwd()
 OUT = REPO / "_site"
@@ -65,6 +66,8 @@ def same_event(a,b):
     return bool(same_venue or shared)
 
 def merge_events(primary, supplemental):
+    primary = [event for event in primary if not removed_event(event)]
+    supplemental = [event for event in supplemental if not removed_event(event)]
     out = [dict(e, artists=list(e.get("artists",[]))) for e in primary]
     for inc in supplemental:
         if norm(inc.get("status")) == "merged":
@@ -144,6 +147,11 @@ def billing_links(event, artists):
         parts.append(link)
     return " - ".join(parts)
 
+
+def hosts_line(event):
+    hosts = event.get("hosts") or []
+    return f'<p class="host-line">Hosted by {esc(" and ".join(hosts))}</p>' if hosts else ""
+
 def spotify(a): return a.get("spotifyProfile") or (f"https://open.spotify.com/artist/{a['spotifyId']}" if a.get("spotifyId") else "")
 def instagram(a): return a.get("instagramProfile","")
 def youtube(a): return a.get("youtubeProfile","")
@@ -198,7 +206,7 @@ def event_card(e,artists):
     official=e.get("officialUrl") or e.get("ticketUrl") or "#"
     search=norm(" ".join([str(e.get('title') or ''),str(e.get('venue') or ''),str(e.get('city') or ''),str(e.get('state') or ''),str(e.get('sourceName') or ''),*(str(n) for n in e.get('artists',[]))]))
     artist_values="|".join(norm(n) for n in e.get('artists',[]))
-    return f'''<article class="event-card" data-event-card data-search="{esc(search)}" data-artists="{esc(artist_values)}" data-state="{esc(e.get('state'))}" data-type="{esc(e.get('eventType') or 'concert')}" data-date="{esc(e.get('startDate'))}" data-end-date="{esc(e.get('endDate') or e.get('startDate'))}"><a class="event-media" href="{event_path(e)}"><img class="{typ}" src="{esc(img)}" alt="{esc(e.get('title'))} image" loading="lazy" decoding="async" width="1200" height="675" style="object-position:{esc(pos)}"></a><div class="event-content"><div class="event-main"><div class="event-badges"><span class="badge badge-gold">{esc(event_type_label(e))}</span></div><h3><a href="{event_path(e)}">{esc(e.get('title'))}</a></h3><p class="artist-line">{artists_html}</p><dl class="event-meta"><div><dt>Date</dt><dd>{esc(format_date(e))}</dd></div><div><dt>Venue</dt><dd>{esc(e.get('venue') or 'Venue to be announced')}</dd></div><div><dt>Location</dt><dd>{esc(location)}</dd></div></dl></div><div class="event-footer"><a class="official-button" href="{esc(official)}" target="_blank" rel="noopener">Official details</a><p class="source-line">Source: {esc(source_text(e))}</p></div></div></article>'''
+    return f'''<article class="event-card" data-event-card data-search="{esc(search)}" data-artists="{esc(artist_values)}" data-state="{esc(e.get('state'))}" data-type="{esc(e.get('eventType') or 'concert')}" data-date="{esc(e.get('startDate'))}" data-end-date="{esc(e.get('endDate') or e.get('startDate'))}"><a class="event-media" href="{event_path(e)}"><img class="{typ}" src="{esc(img)}" alt="{esc(e.get('title'))} image" loading="lazy" decoding="async" width="1200" height="675" style="object-position:{esc(pos)}"></a><div class="event-content"><div class="event-main"><div class="event-badges"><span class="badge badge-gold">{esc(event_type_label(e))}</span></div><h3><a href="{event_path(e)}">{esc(e.get('title'))}</a></h3><p class="artist-line">{artists_html}</p>{hosts_line(e)}<dl class="event-meta"><div><dt>Date</dt><dd>{esc(format_date(e))}</dd></div><div><dt>Venue</dt><dd>{esc(e.get('venue') or 'Venue to be announced')}</dd></div><div><dt>Location</dt><dd>{esc(location)}</dd></div></dl></div><div class="event-footer"><a class="official-button" href="{esc(official)}" target="_blank" rel="noopener">Official details</a><p class="source-line">Source: {esc(source_text(e))}</p></div></div></article>'''
 
 def write_page(path,content):
     target=OUT/path.strip("/")/"index.html" if path!="/" else OUT/"index.html"
@@ -320,7 +328,7 @@ def main():
         notice='<div class="empty-panel" role="status"><strong>Cancelled.</strong> The organizer’s official ticket page confirms this event is cancelled.</div>' if cancelled else rescheduled_notice(e)
         status_label=event_status_label(e)
         detail_class = "event-detail event-detail--landscape" if e.get("detailImageLayout") == "landscape" else "event-detail"
-        body=f'<section class="event-detail-section">{breadcrumbs(crumbs)}{notice}<article class="{detail_class}"><div class="event-detail-media"><img class="{cls}" src="{esc(img)}" alt="{esc(e.get("title"))}" width="1200" height="675"></div><div class="event-detail-copy"><p class="eyebrow">{esc("Cancelled event" if cancelled else event_type_label(e))}</p><h1>{esc(e.get("title"))}</h1><p class="artist-line">{artist_links}</p><dl class="detail-list"><div><dt>Status</dt><dd>{esc(status_label)}</dd></div><div><dt>Date</dt><dd>{esc(format_date(e))}</dd></div><div><dt>Venue</dt><dd>{esc(e.get("venue") or "Venue to be announced")}</dd></div><div><dt>Location</dt><dd>{esc(loc)}</dd></div><div><dt>Source</dt><dd>{esc(source_text(e))}</dd></div></dl><a class="primary-button" href="{esc(official)}" target="_blank" rel="noopener">Official details</a><p class="disclaimer">{"This URL is retained so visitors can confirm the cancellation with the organizer." if cancelled else "Event details may change. Confirm final information with the official organizer or ticket provider before purchasing or traveling."}</p></div></article></section>'
+        body=f'<section class="event-detail-section">{breadcrumbs(crumbs)}{notice}<article class="{detail_class}"><div class="event-detail-media"><img class="{cls}" src="{esc(img)}" alt="{esc(e.get("title"))}" width="1200" height="675"></div><div class="event-detail-copy"><p class="eyebrow">{esc("Cancelled event" if cancelled else event_type_label(e))}</p><h1>{esc(e.get("title"))}</h1><p class="artist-line">{artist_links}</p>{hosts_line(e)}<dl class="detail-list"><div><dt>Status</dt><dd>{esc(status_label)}</dd></div><div><dt>Date</dt><dd>{esc(format_date(e))}</dd></div><div><dt>Venue</dt><dd>{esc(e.get("venue") or "Venue to be announced")}</dd></div><div><dt>Location</dt><dd>{esc(loc)}</dd></div><div><dt>Source</dt><dd>{esc(source_text(e))}</dd></div></dl><a class="primary-button" href="{esc(official)}" target="_blank" rel="noopener">Official details</a><p class="disclaimer">{"This URL is retained so visitors can confirm the cancellation with the organizer." if cancelled else "Event details may change. Confirm final information with the official organizer or ticket provider before purchasing or traveling."}</p></div></article></section>'
         description = e.get("publicDescription") or f"{names} live in {loc} on {format_date(e)}. Verified official show details."
         write_page(p,page(f"{e.get('title')} - {loc} | The Kingdom Circuit",description,p,body,[event_schema(e),breadcrumb_schema(crumbs)]))
         for legacy in e.get("legacyEventPaths") or []:

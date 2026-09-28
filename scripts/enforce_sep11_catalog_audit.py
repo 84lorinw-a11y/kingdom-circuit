@@ -21,7 +21,6 @@ VERIFIED_EVENT_IMAGES = {
         "https://i0.wp.com/fountainfestwv.com/wp-content/uploads/2026/07/Rare-of-Breed-Promo-.webp?resize=720%2C900&ssl=1",
         "artist",
     ),
-    "jay-kalyl-desde-antes-rockville-centre-2026": ("assets/events/jay-kalyl-desde-antes-tour-2026.png", "event_artwork"),
     "mayia-boxyard-saturdaze-2026": ("assets/events/mayia-boxyard-2026-10-10.png", "event_artwork"),
     "mayia-nc-state-fair-2026": ("assets/artists/mayia-restored-show-photo.webp", "artist"),
     "mission-friends-sacramento-2026": ("assets/events/mission-sacramento-2026-10-17.jpg", "event_artwork"),

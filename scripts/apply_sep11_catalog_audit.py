@@ -226,17 +226,6 @@ NEW_EVENTS = [
         sourceName="Coliseo de Puerto Rico official event",
         authority="venue_ticket",
     )),
-    ("jay-kalyl-desde-antes-rockville-centre-2026", base_event(
-        title="Jay Kalyl — Desde Antes Tour",
-        startDate="2026-10-03", startTime="", timezone="America/New_York",
-        venue="Word of Life Ministries", address="430 DeMott Ave", city="Rockville Centre", state="NY",
-        artists=["Jay Kalyl"], headliner="Jay Kalyl",
-        officialUrl="https://boletoslive.com/jay-kalyl/",
-        ticketUrl="https://boletoslive.com/jay-kalyl/",
-        sourceName="Boletos Live official event",
-        authority="venue_ticket",
-        notes="Official page gives conflicting 4:00 PM and 7:30 PM start times; start time intentionally left unspecified.",
-    )),
 ]
 
 EXISTING_PATCHES = {

@@ -3,6 +3,7 @@ import json
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
@@ -61,11 +62,16 @@ class VerifiedShowArtworkTests(unittest.TestCase):
     def test_same_title_tour_stops_keep_their_own_artwork(self):
         from finalize_sep12_complete_closeout import apply_artwork_replacements, event_path
         from pin_verified_event_artwork import patch_event_detail
-        rows = [dict(id="manual:jay-kalyl-desde-antes-elizabeth-2026", title="Jay Kalyl — Desde Antes Tour",
+        rows = [dict(id="manual:shared-tour-elizabeth-2026", title="Shared Tour",
                      startDate="2026-10-02", city="Elizabeth", image="/october-2.jpg"),
-                dict(id="manual:jay-kalyl-desde-antes-rockville-centre-2026", title="Jay Kalyl — Desde Antes Tour",
+                dict(id="manual:shared-tour-rockville-centre-2026", title="Shared Tour",
                      startDate="2026-10-03", city="Rockville Centre", image="/old-photo.jpg")]
-        with tempfile.TemporaryDirectory() as tmp:
+        replacement = {"image": "/october-3.jpg", "imageType": "event_artwork",
+                       "source": "Organizer", "sourceUrl": "https://example.com", "classification": 1}
+        with tempfile.TemporaryDirectory() as tmp, patch.dict(
+            "finalize_sep12_complete_closeout.ARTWORK_REPLACEMENTS",
+            {("Shared Tour", "2026-10-03"): replacement}
+        ):
             root = Path(tmp)
             (root / "events.json").write_text(json.dumps(rows))
             (root / "supplemental-events.json").write_text("[]")
@@ -78,7 +84,7 @@ class VerifiedShowArtworkTests(unittest.TestCase):
             earlier = (root / event_path(rows[0]) / "index.html").read_text()
             later = (root / event_path(rows[1]) / "index.html").read_text()
             self.assertIn("/october-2.jpg", earlier)
-            self.assertIn("jay-kalyl-desde-antes-tour-2026.png", later)
+            self.assertIn("/october-3.jpg", later)
 
 
 if __name__ == "__main__":

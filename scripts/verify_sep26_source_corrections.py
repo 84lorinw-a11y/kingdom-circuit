@@ -55,6 +55,11 @@ def verify(site: Path) -> None:
     verify_approved_audit(site)
     verify_show_artwork(site)
     verify_requested_lineups(site)
+    for path in site.rglob("*"):
+        assert not re.search(r"jay[ -]?kalyl", str(path.relative_to(site)), re.I), (path, "retired artist asset/page")
+        if path.suffix in {".html", ".json", ".js", ".xml"}:
+            assert not re.search(r"jay[ -]?kalyl", path.read_text(), re.I), (path, "retired artist public reference")
+    print("Owner-requested Jay Kalyl removal verified across public pages, feeds, runtime, assets and sitemap")
 
 
 if __name__ == "__main__":

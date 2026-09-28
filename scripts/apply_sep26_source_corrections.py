@@ -13,6 +13,7 @@ from apply_sep13_requested_events import UPSERTS
 from apply_sep26_approved_audit import patch_event as patch_approved_audit
 from apply_verified_show_artwork import patch_event as patch_show_artwork
 from apply_sep26_requested_lineups import patch_event as patch_requested_lineups
+from catalog_removals import apply as apply_catalog_removals
 
 ROOT = Path(__file__).resolve().parents[1]
 DOVE_EVENT_ID = "bandsintown:1040305060"
@@ -94,6 +95,7 @@ def unique(values: list) -> list:
 
 
 def apply(root: Path = ROOT, today: str | None = None) -> None:
+    apply_catalog_removals(root)
     today = today or dt.datetime.now(ZoneInfo("America/Los_Angeles")).date().isoformat()
     names = ("events.json", "supplemental-events.json", "config/manual-events.json")
     feeds = {name: json.loads((root / name).read_text()) for name in names}

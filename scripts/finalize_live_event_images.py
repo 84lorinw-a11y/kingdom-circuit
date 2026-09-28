@@ -12,8 +12,8 @@ FALLBACK = "/assets/event-fallback.webp"
 PRIMARY_CACHE_TOKEN = "kc-20260829-2050"
 RUNTIME_SCRIPT_URL = "/assets/event-image-repair-kc2100.js"
 IMAGE_FIX_SCRIPT_URL = "/assets/image-fix.js?v=20260906-2"
-EXCLUDED_ARTISTS = {"chad jones", "erica mason", "big holy"}
-EXCLUDED_SLUGS = {"chad-jones", "erica-mason", "big-holy"}
+EXCLUDED_ARTISTS = {"chad jones", "erica mason", "big holy", "jay kalyl"}
+EXCLUDED_SLUGS = {"chad-jones", "erica-mason", "big-holy", "jay-kalyl"}
 STALE_IMAGE_URLS = {
     "https://s1.ticketm.net/dam/a/295/bf4a2e20-facf-46e6-904e-c19f998cb295_SOURCE",
     "https://fivetwentycollective.com/wp-content/uploads/2021/03/Rare-of-Breed.jpg",
@@ -26,9 +26,6 @@ STALE_IMAGE_URLS = {
 # Verified/known-good presentation images used only when an event otherwise has
 # generic artwork. Real event artwork is always preserved.
 IMAGE_CANDIDATES = {
-    "jay kalyl": [
-        "https://i.scdn.co/image/ab6761610000e5eb1269b80aed5d08c40aedfdc3",
-    ],
     "mayia": [
         "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg",
     ],

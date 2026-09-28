@@ -62,7 +62,7 @@ class ArtistDatabaseSeptember9Tests(unittest.TestCase):
                 for item in self.updates
                 if item["rosterOrder"] <= 177
             ],
-            list(range(55, 178)),
+            [n for n in range(55, 178) if n != 158],  # Owner removed Jay Kalyl on September 28.
         )
         update_block = [item for item in self.updates if 111 <= item["rosterOrder"] <= 134]
         self.assertEqual([item["rosterOrder"] for item in update_block], list(range(111, 135)))

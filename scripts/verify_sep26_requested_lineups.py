@@ -20,7 +20,7 @@ def verify(site: Path):
         if not builder.current(wanted):
             continue
         event = by_id[event_id]
-        for key in ("startDate", "startTime", "title", "venue", "artists", "advertisedBilling", "officialUrl", "ticketUrl"):
+        for key in ("startDate", "startTime", "title", "venue", "artists", "advertisedBilling", "hosts", "officialUrl", "ticketUrl"):
             if key in wanted:
                 assert event.get(key) == wanted[key], (event_id, key, event.get(key))
         href = builder.event_path(event)
@@ -35,10 +35,15 @@ def verify(site: Path):
                 if name in curated:
                     profile = site / builder.artist_path(name).strip("/") / "index.html"
                     assert href in profile.read_text(), (event_id, name, "missing artist schedule")
+        if wanted.get("hosts"):
+            expected_hosts = "Hosted by " + " and ".join(wanted["hosts"])
+            assert expected_hosts in html.unescape(detail) and expected_hosts in html.unescape(card), event_id
         schemas = [json.loads(s) for s in re.findall(r'<script type="application/ld\+json">(.*?)</script>', detail, re.S)]
         schema = next(s for s in schemas if s.get("@type") == "MusicEvent")
         if wanted.get("startDateTime"):
             assert schema["startDate"] == wanted["startDateTime"]
+        for host in wanted.get("hosts", []):
+            assert host not in json.dumps(schema["performer"]), (event_id, "host listed as performer")
         for name in wanted.get("advertisedBilling", []):
             assert name in json.dumps(schema["performer"], ensure_ascii=False), (event_id, name, "schema")
         for old in wanted.get("legacyEventPaths", []):

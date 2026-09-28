@@ -65,10 +65,6 @@ VERIFIED_ARTWORK: dict[str, tuple[str, str]] = {
         "2026-10-18",
         "https://i.scdn.co/image/ab6761610000e5eb2c81bb40c3b6962eacf9dc9c",
     ),
-    "Jay Kalyl — Desde Antes Tour": (
-        "2026-10-03",
-        "https://i.scdn.co/image/ab6761610000e5eb1269b80aed5d08c40aedfdc3",
-    ),
 }
 
 CARD_RE = re.compile(

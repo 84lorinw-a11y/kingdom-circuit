@@ -18,7 +18,6 @@ REPLACEMENTS = {
     "/assets/events/mayia-nc-state-fair-2026.svg": "/assets/artists/mayia-restored-show-photo.webp",
     "/assets/events/cj-emulous-kickback-2026.svg": "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
     "/assets/events/alex-zurdo-zona-zero-2026.svg": "/assets/events/alex-zurdo-zona-zero-2026-10-18.jpg",
-    "/assets/events/jay-kalyl-desde-antes-2026.svg": "/assets/events/jay-kalyl-desde-antes-tour-2026.png",
 }
 
 

@@ -64,8 +64,8 @@ def real_official_website(value: object) -> str:
 def sync_config() -> tuple[list[dict], list[dict], int]:
     artists = load_json(ARTISTS_FILE, [])
     updates = load_json(UPDATES_FILE, [])
-    artists = [item for item in artists if isinstance(item, dict) and norm(item.get("name")) not in {"chad jones", "erica mason", "big holy"}]
-    updates = [item for item in updates if isinstance(item, dict) and norm(item.get("name")) not in {"chad jones", "erica mason", "big holy"}]
+    artists = [item for item in artists if isinstance(item, dict) and norm(item.get("name")) not in {"chad jones", "erica mason", "big holy", "jay kalyl"}]
+    updates = [item for item in updates if isinstance(item, dict) and norm(item.get("name")) not in {"chad jones", "erica mason", "big holy", "jay kalyl"}]
     if not isinstance(artists, list) or not isinstance(updates, list) or not updates:
         raise SystemExit("Verified registry sync expected non-empty artist/update arrays")
 

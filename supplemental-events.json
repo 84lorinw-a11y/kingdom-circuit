@@ -504,48 +504,6 @@
     "notes": "Doors 6 PM; show 7 PM; all ages welcome. Official ATK Ministry portrait event poster locked for this listing."
   },
   {
-    "title": "Jay Kalyl — Desde Antes Tour",
-    "startDate": "2026-10-03",
-    "startTime": "",
-    "timezone": "America/New_York",
-    "venue": "Word of Life Ministries",
-    "address": "430 DeMott Ave",
-    "city": "Rockville Centre",
-    "state": "NY",
-    "country": "US",
-    "artists": [
-      "Jay Kalyl"
-    ],
-    "headliner": "Jay Kalyl",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://boletoslive.com/jay-kalyl/",
-    "officialUrl": "https://boletoslive.com/jay-kalyl/",
-    "image": "assets/events/jay-kalyl-desde-antes-tour-2026.png",
-    "price": "",
-    "sourceName": "Boletos Live official event",
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Boletos Live official event",
-        "url": "https://boletoslive.com/jay-kalyl/",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-11",
-    "notes": "Official page gives conflicting 4:00 PM and 7:30 PM start times; start time intentionally left unspecified.",
-    "id": "jay-kalyl-desde-antes-rockville-centre-2026",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "BoletosLive official Desde Antes Tour 2026 graphic; city-neutral artwork",
-    "imageSourceUrl": "https://boletoslive.com/"
-  },
-  {
     "id": "supplemental:issac-mansfield-saved-by-grace-2026",
     "title": "SAVED BY GRACE",
     "startDate": "2026-10-03",
@@ -656,7 +614,8 @@
       "Don Ready",
       "LaNell Grant",
       "Nathan Davis Jr.",
-      "Trendsetter Sense"
+      "Trendsetter Sense",
+      "Parris Chariz"
     ],
     "headliner": "1K Phew",
     "eventType": "concert",
@@ -671,34 +630,50 @@
     "lineupExplicit": true,
     "sources": [
       {
+        "name": "GMA Dove Week official schedule",
+        "url": "https://gospelmusic.org/news/dove-week-2026-see-the-schedule",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
         "name": "AXS official event",
         "url": "https://www.axs.com/events/1580749/future-legacy-hip-hop-showcase-tickets",
         "type": "manual_verified",
         "authority": "venue_ticket",
         "priority": 94
-      },
-      {
-        "name": "GMA Dove Week official schedule",
-        "url": "https://gospelmusic.org/news/dove-week-2026-see-the-schedule",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 100
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-28",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "officialBill": [
-      "ADIA",
+      "1K Phew",
       "Don Ready",
-      "DJ Trendsetter",
       "LaNell Grant",
       "Nathan Davis Jr.",
-      "1K Phew"
+      "DJ Trendsetter Sense",
+      "Parris Chariz",
+      "ADIA",
+      "JustCordell"
     ],
-    "notes": "DJ Trendsetter is associated with roster artist Trendsetter Sense based on established professional naming as DJ Trendsetter Sense.",
-    "id": "future-legacy-hip-hop-showcase-nashville-2026"
+    "notes": "Official GMA Dove Week schedule verified September 28 confirms ADIA, JustCordell and DJ Trendsetter Sense alongside the previously listed artists, hosted by DJ Focus and Keal K. Owner confirmed Parris Chariz announced his participation on September 27. ADIA and JustCordell are visible billing without new curated profiles; hosts are listed separately. Preserve discovery age and approved artwork.",
+    "id": "future-legacy-hip-hop-showcase-nashville-2026",
+    "advertisedBilling": [
+      "1K Phew",
+      "Don Ready",
+      "LaNell Grant",
+      "Nathan Davis Jr.",
+      "DJ Trendsetter Sense",
+      "Parris Chariz",
+      "ADIA",
+      "JustCordell"
+    ],
+    "hosts": [
+      "DJ Focus",
+      "Keal K"
+    ]
   },
   {
     "id": "bandsintown:1040305060",

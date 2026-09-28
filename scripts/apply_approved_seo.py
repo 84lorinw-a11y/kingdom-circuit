@@ -13,8 +13,8 @@ SITE_ORIGIN = "https://kingdomcircuit.com"
 BASE = "/"
 SEO_SOURCE = pathlib.Path(os.environ.get("KC_SEO_SOURCE", "_seo_source/scripts"))
 IMAGE_OVERRIDES_REL = pathlib.Path("config/verified-artist-image-overrides.json")
-EXCLUDED_ARTISTS = {"chad jones", "erica mason", "big holy"}
-EXCLUDED_ARTIST_SLUGS = {"chad-jones", "erica-mason", "big-holy"}
+EXCLUDED_ARTISTS = {"chad jones", "erica mason", "big holy", "jay kalyl"}
+EXCLUDED_ARTIST_SLUGS = {"chad-jones", "erica-mason", "big-holy", "jay-kalyl"}
 
 
 def load_module(name: str, path: pathlib.Path):
@@ -379,7 +379,7 @@ def main(site_root: str) -> None:
         # curated profiles visible without generating nonexistent profile links.
         artist_links = production_builder.billing_links(event, billing_artists)
         card = re.sub(r'<p class="artist-line">.*?</p>',
-                      lambda _: f'<p class="artist-line">{artist_links}</p>', card, count=1, flags=re.S)
+                      lambda _: f'<p class="artist-line">{artist_links}</p>' + production_builder.hosts_line(event), card, count=1, flags=re.S)
         start_time = html.escape(str(event.get("startTime") or ""), quote=True)
         return card.replace(
             " data-end-date=",

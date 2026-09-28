@@ -12,7 +12,7 @@ from pin_verified_event_artwork import VERIFIED_ARTWORK  # noqa: E402
 
 class VerifiedEventArtworkTests(unittest.TestCase):
     def test_pinned_artwork_uses_source_authorized_media(self):
-        self.assertEqual(len(VERIFIED_ARTWORK), 13)
+        self.assertEqual(len(VERIFIED_ARTWORK), 12)
         self.assertEqual(
             VERIFIED_ARTWORK["The Genesis Show – All Women's CHH Event"][1],
             "assets/events/genesis-show-2026-all-women-v3.jpg",
