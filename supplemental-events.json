@@ -215,44 +215,6 @@
     "imageOverride": true
   },
   {
-    "id": "eventbrite:gracefest-lecrae-castaic-2026",
-    "title": "GRACEFEST 2026",
-    "startDate": "2026-09-19",
-    "startTime": "13:30",
-    "timezone": "America/Los_Angeles",
-    "venue": "Castaic Lake State Recreation Area",
-    "address": "Castaic Lake Drive",
-    "city": "Castaic",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "Lecrae"
-    ],
-    "headliner": "Lecrae",
-    "eventType": "festival",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-    "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-    "image": "assets/events/gracefest-2026.png",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "price": "",
-    "sourceName": "Official Eventbrite listing",
-    "authority": "official_festival",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Official Eventbrite listing",
-        "url": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-        "type": "eventbrite",
-        "authority": "official_festival",
-        "priority": 104
-      }
-    ]
-  },
-  {
     "id": "eventbrite:hip-hop-in-the-park-cortland-2026",
     "title": "Hip Hop in the Park",
     "startDate": "2026-09-19",
@@ -289,6 +251,44 @@
         "type": "eventbrite",
         "authority": "venue_ticket",
         "priority": 94
+      }
+    ]
+  },
+  {
+    "id": "eventbrite:gracefest-lecrae-castaic-2026",
+    "title": "GRACEFEST 2026",
+    "startDate": "2026-09-19",
+    "startTime": "13:30",
+    "timezone": "America/Los_Angeles",
+    "venue": "Castaic Lake State Recreation Area",
+    "address": "Castaic Lake Drive",
+    "city": "Castaic",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Lecrae"
+    ],
+    "headliner": "Lecrae",
+    "eventType": "festival",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+    "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+    "image": "assets/events/gracefest-2026.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "price": "",
+    "sourceName": "Official Eventbrite listing",
+    "authority": "official_festival",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+        "type": "eventbrite",
+        "authority": "official_festival",
+        "priority": 104
       }
     ]
   },
@@ -1203,47 +1203,6 @@
     "imageSourceUrl": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg"
   },
   {
-    "title": "Mission and Special Guests",
-    "startDate": "2026-10-17",
-    "startTime": "18:30",
-    "timezone": "America/Los_Angeles",
-    "venue": "Victory Outreach South Sacramento",
-    "address": "6831 Savings Pl",
-    "city": "Sacramento",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "Mission"
-    ],
-    "headliner": "Mission",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
-    "officialUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
-    "image": "assets/events/mission-sacramento-2026-10-17.jpg",
-    "price": "",
-    "sourceName": "Mission official Bandsintown event",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Mission official Bandsintown event",
-        "url": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-11",
-    "id": "mission-friends-sacramento-2026",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Mission official October 17 concert flyer",
-    "imageSourceUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento"
-  },
-  {
     "id": "supplemental:brenno-overflow-conference-2026",
     "title": "Overflow Conference",
     "startDate": "2026-10-17",
@@ -1292,6 +1251,47 @@
     "imageOverride": true,
     "imageSource": "Ablaze Movement / Overflow Conference official poster selected by owner",
     "imageSourceUrl": "https://www.instagram.com/p/DdY_W7gOtg8/"
+  },
+  {
+    "title": "Mission and Special Guests",
+    "startDate": "2026-10-17",
+    "startTime": "18:30",
+    "timezone": "America/Los_Angeles",
+    "venue": "Victory Outreach South Sacramento",
+    "address": "6831 Savings Pl",
+    "city": "Sacramento",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Mission"
+    ],
+    "headliner": "Mission",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
+    "officialUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
+    "image": "assets/events/mission-sacramento-2026-10-17.jpg",
+    "price": "",
+    "sourceName": "Mission official Bandsintown event",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Mission official Bandsintown event",
+        "url": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 112
+      }
+    ],
+    "auditVerified": "2026-09-11",
+    "id": "mission-friends-sacramento-2026",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Mission official October 17 concert flyer",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento"
   },
   {
     "id": "bandsintown:108902772",
@@ -1426,57 +1426,6 @@
     "notes": "MAYIA's official calendar confirms her 4:00 PM appearance at the Songs That Speak Conference."
   },
   {
-    "id": "bandsintown:108144023",
-    "title": "GODLY AMBITION TOUR — HOUSTON, TX",
-    "startDate": "2026-10-24",
-    "startTime": "18:00",
-    "timezone": "",
-    "venue": "GODLY AMBITION TOUR — HOUSTON, TX",
-    "address": "1204 Caroline St",
-    "city": "Houston",
-    "state": "TX",
-    "country": "US",
-    "artists": [
-      "Ruslan"
-    ],
-    "headliner": "Ruslan",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
-    "officialUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
-    "image": "assets/events/ruslan-ticketmaster-2026.jpg",
-    "price": "",
-    "sourceName": "Ticketmaster",
-    "sources": [
-      {
-        "name": "Ticketmaster",
-        "url": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 100
-      },
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/108144023?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "108144023",
-    "bandsintownArtistId": "602133",
-    "bandsintownResolvedName": "RUSLAN",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Ruslan",
-    "imageType": "artist",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Ticketmaster official Ruslan photo",
-    "imageSourceUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
-    "authority": "venue_ticket"
-  },
-  {
     "id": "mike-teezy-hrvstland-festival-2026",
     "title": "HRVSTLAND Festival 2026",
     "startDate": "2026-10-24",
@@ -1575,6 +1524,57 @@
       "DJ PARTYwithParks"
     ],
     "startDateTime": "2026-10-24T16:00:00-04:00"
+  },
+  {
+    "id": "bandsintown:108144023",
+    "title": "GODLY AMBITION TOUR — HOUSTON, TX",
+    "startDate": "2026-10-24",
+    "startTime": "18:00",
+    "timezone": "",
+    "venue": "GODLY AMBITION TOUR — HOUSTON, TX",
+    "address": "1204 Caroline St",
+    "city": "Houston",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Ruslan"
+    ],
+    "headliner": "Ruslan",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
+    "officialUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
+    "image": "assets/events/ruslan-ticketmaster-2026.jpg",
+    "price": "",
+    "sourceName": "Ticketmaster",
+    "sources": [
+      {
+        "name": "Ticketmaster",
+        "url": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
+      },
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/108144023?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "108144023",
+    "bandsintownArtistId": "602133",
+    "bandsintownResolvedName": "RUSLAN",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Ruslan",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Ticketmaster official Ruslan photo",
+    "imageSourceUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
+    "authority": "venue_ticket"
   },
   {
     "id": "sevin-live-nashville-2026-10-24",
@@ -1842,6 +1842,44 @@
     "imageSourceUrl": "https://www.ticketweb.com/event/kickstand-productions-presents-zauntee-god-the-loving-touch-tickets/14259604?pl=lovingtouch"
   },
   {
+    "id": "bandsintown:1040178082",
+    "title": "Jon Keith at Word of Faith International Christian Center",
+    "startDate": "2026-10-30",
+    "startTime": "18:30",
+    "timezone": "",
+    "venue": "Word of Faith International Christian Center",
+    "address": "20000 W Nine Mile Rd",
+    "city": "Southfield",
+    "state": "MI",
+    "country": "US",
+    "artists": [
+      "Jon Keith"
+    ],
+    "headliner": "Jon Keith",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/1040178082?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.bandsintown.com/e/1040178082?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "https://is1-ssl.mzstatic.com/image/thumb/Video211/v4/71/0c/9c/710c9c39-3dc7-0be5-a593-ab0ffc2fa618/Jobd846f8ea-4135-4580-8d0d-ed8f3cbb1f2a-190112036-PreviewImage_Preview_Image_Intermediate_nonvideo_372260380_2119658910-Time1744403657806.png/1200x675mv.webp",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/1040178082?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "1040178082",
+    "bandsintownArtistId": "12604065",
+    "bandsintownResolvedName": "Jon Keith",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Jon Keith"
+  },
+  {
     "id": "bandsintown:108945796",
     "title": "JIMMY ROCK at The Cathedral",
     "startDate": "2026-10-30",
@@ -1892,44 +1930,6 @@
     "imageSourceUrl": "https://www.eventbrite.com/e/the-cathedral-presents-jimmy-rock-tickets-2002084741356",
     "authority": "venue_ticket",
     "detailImageLayout": "landscape"
-  },
-  {
-    "id": "bandsintown:1040178082",
-    "title": "Jon Keith at Word of Faith International Christian Center",
-    "startDate": "2026-10-30",
-    "startTime": "18:30",
-    "timezone": "",
-    "venue": "Word of Faith International Christian Center",
-    "address": "20000 W Nine Mile Rd",
-    "city": "Southfield",
-    "state": "MI",
-    "country": "US",
-    "artists": [
-      "Jon Keith"
-    ],
-    "headliner": "Jon Keith",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/1040178082?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "officialUrl": "https://www.bandsintown.com/e/1040178082?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "https://is1-ssl.mzstatic.com/image/thumb/Video211/v4/71/0c/9c/710c9c39-3dc7-0be5-a593-ab0ffc2fa618/Jobd846f8ea-4135-4580-8d0d-ed8f3cbb1f2a-190112036-PreviewImage_Preview_Image_Intermediate_nonvideo_372260380_2119658910-Time1744403657806.png/1200x675mv.webp",
-    "price": "",
-    "sourceName": "Bandsintown",
-    "sources": [
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/1040178082?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "1040178082",
-    "bandsintownArtistId": "12604065",
-    "bandsintownResolvedName": "Jon Keith",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Jon Keith"
   },
   {
     "id": "supplemental:skema-boy-2026-11-01-new-york-ny",
@@ -2045,18 +2045,14 @@
     "artists": [
       "Miles Minnick",
       "Gifted Hands",
-      "Datin",
-      "TRU-SERVA",
-      "VVS Big Rock",
-      "Lyric The Geenyus",
-      "MAYIA"
+      "Datin"
     ],
     "headliner": "Miles Minnick",
     "eventType": "festival",
     "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/a2407af7-a012-4df1-8d42-d247ab82cd8b/FF26-Promo-Friday-Night%2B%281%29.jpg",
+    "image": "assets/events/flavor-fest-friday-2026.webp",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -2072,16 +2068,8 @@
         "type": "manual_verified",
         "authority": "official_event",
         "priority": 112
-      },
-      {
-        "name": "Flavor Fest official Friday poster",
-        "url": "https://www.flavorfest.org/",
-        "type": "manual_verified",
-        "authority": "official_festival",
-        "priority": 106
       }
-    ],
-    "auditVerified": "2026-09-11"
+    ]
   },
   {
     "id": "bandsintown:108881783",
@@ -2394,89 +2382,56 @@
     "imageSourceUrl": "https://www.bandsintown.com/e/108659684-skema-boy-at-subterranean"
   },
   {
-    "id": "bandsintown:1040378722",
-    "title": "Miles Minnick — GLOVEMBER",
+    "id": "bandsintown:1040314202",
+    "title": "Pastor Mike Jr. at WL Jack Howard Theatre",
     "startDate": "2026-11-14",
-    "startTime": "20:00",
-    "timezone": "America/Los_Angeles",
-    "venue": "The Belasco",
-    "address": "1050 S Hill St",
-    "city": "Los Angeles",
-    "state": "CA",
+    "startTime": "15:00",
+    "timezone": "",
+    "venue": "WL Jack Howard Theatre",
+    "address": "401 Lea Joyner Memorial Expressway",
+    "city": "Monroe",
+    "state": "LA",
     "country": "US",
     "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Lul DreDay"
+      "Pastor Mike Jr."
     ],
-    "headliner": "Miles Minnick",
+    "headliner": "Pastor Mike Jr.",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
-    "officialUrl": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
-    "image": "assets/events/miles-minnick-glovember-2026-11-14.jpg",
+    "ticketUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
+    "officialUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
+    "image": "assets/events/pastor-mike-monroe-2026-11-14.jpg",
     "price": "",
-    "sourceName": "Ticketmaster / The Belasco",
+    "sourceName": "Ticketmaster / W L Jack Howard Theatre",
     "sources": [
       {
-        "name": "Ticketmaster / The Belasco",
-        "url": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
+        "name": "Ticketmaster / W L Jack Howard Theatre",
+        "url": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
         "type": "manual_verified",
         "authority": "venue_ticket",
         "priority": 115
       },
       {
-        "name": "Miles Minnick and CJ Emulous official GLOVEMBER flyer",
-        "url": "https://www.instagram.com/p/Ddo8xGgoQhN/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
         "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/1040378722?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "url": "https://www.bandsintown.com/e/1040314202?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
         "type": "bandsintown_rest",
         "authority": "artist_calendar",
         "priority": 74
       }
     ],
     "confidence": "medium",
-    "bandsintownEventId": "1040378722",
-    "bandsintownArtistId": "15395466",
-    "bandsintownResolvedName": "Miles Minnick",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Miles Minnick",
-    "advertisedBilling": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Mikeyso",
-      "Lul DreDay",
-      "DJ Malski"
-    ],
-    "officialBill": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Mikeyso",
-      "Lul DreDay",
-      "DJ Malski"
-    ],
-    "lineupExplicit": true,
-    "auditVerified": "2026-09-26",
-    "doorsTime": "19:00",
-    "startDateTime": "2026-11-14T20:00:00-08:00",
+    "bandsintownEventId": "1040314202",
+    "bandsintownArtistId": "15540358",
+    "bandsintownResolvedName": "Pastor Mike Jr.",
+    "bandsintownIdentity": "configured_id",
+    "trackedArtist": "Pastor Mike Jr.",
     "authority": "venue_ticket",
-    "notes": "September 23 official co-posted flyer explicitly bills Miles Minnick, Tommy Zuko, CJ Emulous, Mikeyso and Lul DreDay, hosted by DJ Malski. Ticketmaster More Info confirms The Belasco, 6 PM early-entry lounge, 7 PM doors and 8 PM show. CJ’s older official calendar still lists a November 15 Los Angeles GLOConcert and November 14 Grand Prairie Kickback; those separate entries require organizer clarification and have not been merged or cancelled by inference.",
-    "legacyEventPaths": [
-      "/event/miles-minnick-at-below-at-the-belasco-2026-11-14-los-angeles-5d10ab/"
-    ],
-    "imageType": "event_artwork",
+    "auditVerified": "2026-09-26",
+    "imageType": "artist",
+    "imageSource": "Ticketmaster Pastor Mike Jr. promotional photo selected by owner",
+    "imageSourceUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
     "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Miles Minnick and CJ Emulous official GLOVEMBER Instagram flyer",
-    "imageSourceUrl": "https://www.instagram.com/p/Ddo8xGgoQhN/"
+    "imageOverride": true
   },
   {
     "id": "ty-brasel-outlandish-fest-fort-worth-2026",
@@ -2564,58 +2519,6 @@
     ]
   },
   {
-    "id": "bandsintown:1040314202",
-    "title": "Pastor Mike Jr. at WL Jack Howard Theatre",
-    "startDate": "2026-11-14",
-    "startTime": "15:00",
-    "timezone": "",
-    "venue": "WL Jack Howard Theatre",
-    "address": "401 Lea Joyner Memorial Expressway",
-    "city": "Monroe",
-    "state": "LA",
-    "country": "US",
-    "artists": [
-      "Pastor Mike Jr."
-    ],
-    "headliner": "Pastor Mike Jr.",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
-    "officialUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
-    "image": "assets/events/pastor-mike-monroe-2026-11-14.jpg",
-    "price": "",
-    "sourceName": "Ticketmaster / W L Jack Howard Theatre",
-    "sources": [
-      {
-        "name": "Ticketmaster / W L Jack Howard Theatre",
-        "url": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 115
-      },
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/1040314202?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "1040314202",
-    "bandsintownArtistId": "15540358",
-    "bandsintownResolvedName": "Pastor Mike Jr.",
-    "bandsintownIdentity": "configured_id",
-    "trackedArtist": "Pastor Mike Jr.",
-    "authority": "venue_ticket",
-    "auditVerified": "2026-09-26",
-    "imageType": "artist",
-    "imageSource": "Ticketmaster Pastor Mike Jr. promotional photo selected by owner",
-    "imageSourceUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
-    "imagePosition": "center",
-    "imageOverride": true
-  },
-  {
     "title": "The Kickback",
     "startDate": "2026-11-14",
     "startTime": "19:00",
@@ -2633,7 +2536,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
     "officialUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-    "image": "assets/events/cj-emulous-kickback-2026.svg",
+    "image": "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
     "price": "",
     "sourceName": "CJ Emulous official calendar",
     "authority": "artist_calendar",
@@ -2650,9 +2553,94 @@
     ],
     "auditVerified": "2026-09-11",
     "id": "cj-emulous-kickback-grand-prairie-2026",
-    "imageType": "event_artwork",
+    "imageType": "artist",
     "imagePosition": "center",
     "imageOverride": true
+  },
+  {
+    "id": "bandsintown:1040378722",
+    "title": "Miles Minnick — GLOVEMBER",
+    "startDate": "2026-11-14",
+    "startTime": "20:00",
+    "timezone": "America/Los_Angeles",
+    "venue": "The Belasco",
+    "address": "1050 S Hill St",
+    "city": "Los Angeles",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Lul DreDay"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
+    "officialUrl": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
+    "image": "assets/events/miles-minnick-glovember-2026-11-14.jpg",
+    "price": "",
+    "sourceName": "Ticketmaster / The Belasco",
+    "sources": [
+      {
+        "name": "Ticketmaster / The Belasco",
+        "url": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 115
+      },
+      {
+        "name": "Miles Minnick and CJ Emulous official GLOVEMBER flyer",
+        "url": "https://www.instagram.com/p/Ddo8xGgoQhN/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/1040378722?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "1040378722",
+    "bandsintownArtistId": "15395466",
+    "bandsintownResolvedName": "Miles Minnick",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Miles Minnick",
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Mikeyso",
+      "Lul DreDay",
+      "DJ Malski"
+    ],
+    "officialBill": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Mikeyso",
+      "Lul DreDay",
+      "DJ Malski"
+    ],
+    "lineupExplicit": true,
+    "auditVerified": "2026-09-26",
+    "doorsTime": "19:00",
+    "startDateTime": "2026-11-14T20:00:00-08:00",
+    "authority": "venue_ticket",
+    "notes": "September 23 official co-posted flyer explicitly bills Miles Minnick, Tommy Zuko, CJ Emulous, Mikeyso and Lul DreDay, hosted by DJ Malski. Ticketmaster More Info confirms The Belasco, 6 PM early-entry lounge, 7 PM doors and 8 PM show. CJ’s older official calendar still lists a November 15 Los Angeles GLOConcert and November 14 Grand Prairie Kickback; those separate entries require organizer clarification and have not been merged or cancelled by inference.",
+    "legacyEventPaths": [
+      "/event/miles-minnick-at-below-at-the-belasco-2026-11-14-los-angeles-5d10ab/"
+    ],
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Miles Minnick and CJ Emulous official GLOVEMBER Instagram flyer",
+    "imageSourceUrl": "https://www.instagram.com/p/Ddo8xGgoQhN/"
   },
   {
     "id": "supplemental:skema-boy-2026-11-16-dallas-tx",
@@ -2915,7 +2903,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.cjemulous.com/event-details/zion-ultra-lounge-w-miles-minnick-cj-emulous",
     "officialUrl": "https://www.cjemulous.com/event-details/zion-ultra-lounge-w-miles-minnick-cj-emulous",
-    "image": "assets/events/miles-cj-zion-ultra-2026.svg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
     "price": "",
     "sourceName": "CJ Emulous official calendar",
     "authority": "artist_calendar",
@@ -2932,7 +2920,7 @@
     ],
     "auditVerified": "2026-09-11",
     "id": "miles-cj-zion-ultra-lounge-chandler-2026",
-    "imageType": "event_artwork",
+    "imageType": "artist",
     "imagePosition": "center",
     "imageOverride": true,
     "notes": "CJ Emulous's official calendar confirms Miles Minnick and CJ Emulous at Zion Ultra Lounge on December 5, 2026 at 7:00 PM."
