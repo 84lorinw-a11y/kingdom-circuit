@@ -162,11 +162,30 @@ def apply_branding(root: pathlib.Path) -> int:
     return branded
 
 
+def finalize_artist_name_layout(root: pathlib.Path) -> None:
+    """Keep the owner's requested JIMMY ROCK heading on one line after redesign."""
+    page = root / "artists/jimmy-rock/index.html"
+    if not page.exists():
+        return
+    document = page.read_text(encoding="utf-8")
+    if 'id="kc-rd-artist-name"' not in document:
+        return
+    style = '''<style data-kc-jimmy-name-layout>
+body #kc-rd-artist-name { white-space: nowrap; overflow-wrap: normal; }
+@media (max-width: 720px) {
+  body #kc-rd-artist-name { font-size: clamp(2rem, 14vw, 6.2rem); line-height: .9; }
+}
+</style>'''
+    document = re.sub(r'<style data-kc-jimmy-name-layout>.*?</style>\s*', '', document, flags=re.S)
+    page.write_text(document.replace('</head>', style + '\n</head>', 1), encoding="utf-8")
+
+
 def apply(root: pathlib.Path) -> dict:
     if not root.exists():
         raise SystemExit(f"Site root does not exist: {root}")
 
     artist_schedule_pages = finalize_artist_schedule_years(root)
+    finalize_artist_name_layout(root)
     finalize_availability(root)
     branded_pages = apply_branding(root)
     indexed: list[tuple[str, str]] = []
