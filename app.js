@@ -197,6 +197,9 @@ const ARTIST_ROSTER_ORDER = [
   "DEON",
   "Man Of FAITH",
   "Bobby Real Montgomery",
+  "DJ Promote",
+  "DJ Maj",
+  "DJ Eli Williams",
   "Redimi2",
   "Funky",
   "Pregador Luo",
@@ -2658,6 +2661,46 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "assets/artists/bobby-real-montgomery-artist-supplied.png",
     "imageUrl": "assets/artists/bobby-real-montgomery-artist-supplied.png",
     "imagePosition": "50% 0%",
+    "sourceRegistryVerified": true
+  },
+  "dj promote": {
+    "aliases": [
+      "DJ Promote"
+    ],
+    "website": "https://www.instagram.com/djpromote/",
+    "instagramProfile": "https://www.instagram.com/djpromote/",
+    "spotifyProfile": "https://open.spotify.com/artist/1Uj1FslyKX0hOI9jM4ITDJ",
+    "youtubeProfile": "https://www.youtube.com/djpromote",
+    "officialImageSource": "https://www.instagram.com/djpromote/p/Caqy1SesDBK/",
+    "imageUrl": "assets/artists/dj-promote-primary.jpg",
+    "imagePosition": "50% 35%",
+    "sourceRegistryVerified": true
+  },
+  "dj maj": {
+    "aliases": [
+      "DJ Maj"
+    ],
+    "website": "https://djmaj.com/",
+    "instagramProfile": "https://www.instagram.com/playmajmusic",
+    "spotifyProfile": "https://open.spotify.com/artist/2nGBL8r0XgN7RkKD7HYjpc",
+    "youtubeProfile": "https://www.youtube.com/@djmajtv",
+    "officialImageSource": "https://djmaj.com/press-photos/",
+    "imageUrl": "assets/artists/dj-maj-primary.jpg",
+    "imagePosition": "50% 25%",
+    "sourceRegistryVerified": true
+  },
+  "dj eli williams": {
+    "aliases": [
+      "DJ Eli Williams",
+      "Eli Williams"
+    ],
+    "website": "https://www.instagram.com/eliwilliamssss/",
+    "instagramProfile": "https://www.instagram.com/eliwilliamssss/",
+    "spotifyProfile": "https://open.spotify.com/artist/6cpRgzScOKkKse4SlMd97y",
+    "youtubeProfile": "https://www.youtube.com/channel/UCfJc87Y4aHptUDMGrwxZNkg",
+    "officialImageSource": "https://www.instagram.com/eliwilliamssss/p/Ddj51oflvyO/",
+    "imageUrl": "assets/artists/dj-eli-williams-primary.jpg",
+    "imagePosition": "50% 20%",
     "sourceRegistryVerified": true
   }
 };
