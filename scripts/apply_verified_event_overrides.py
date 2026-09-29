@@ -287,6 +287,51 @@ VERIFIED_EVENT_IMAGES = {
 }
 
 
+PASSION_FEST_EVENT = {
+    "id": "manual:passion-fest-ii-2026-charlotte",
+    "title": "Passion Fest II",
+    "startDate": "2026-10-11",
+    "endDate": "2026-10-11",
+    "startTime": "17:00",
+    "timezone": "America/New_York",
+    "startDateTime": "2026-10-11T17:00:00-04:00",
+    "venue": "Event Masterz",
+    "address": "316 Remount Rd",
+    "postalCode": "28203",
+    "city": "Charlotte",
+    "state": "NC",
+    "country": "US",
+    "artists": ["Queen Lee", "BigBreeze"],
+    "advertisedBilling": ["XEEM", "Queen Lee", "Markel (formerly BigBreeze)"],
+    "officialBill": ["XEEM", "Queen Lee", "Markel (formerly BigBreeze)"],
+    "headliner": "",
+    "eventType": "festival",
+    "status": "scheduled",
+    "lineupExplicit": True,
+    "officialUrl": "https://givebutter.com/passionfest2",
+    "ticketUrl": "https://givebutter.com/passionfest2",
+    "image": "assets/events/passion-fest-ii-charlotte-2026-10-11.jpg",
+    "imageType": "event_artwork",
+    "imageOverride": True,
+    "imagePosition": "center",
+    "detailImageLayout": "landscape",
+    "imageSource": "Passion Fest official Givebutter event flyer",
+    "imageSourceUrl": "https://givebutter.s3.amazonaws.com/media/66EVLgGnfueAfTP34WJm8ePqTwFxXIjEUam2gay7.jpg",
+    "organizer": "Passion Fest",
+    "publicDescription": "Passion Fest II brings Christian rap to Charlotte with XEEM, Queen Lee, and Markel (formerly BigBreeze).",
+    "sourceName": "Passion Fest official event page and flyer",
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-09-29T15:14:40Z",
+    "lastVerified": "2026-09-29T15:14:40Z",
+    "notes": "Official Givebutter flyer confirms October 11, 2026, Event Masterz, 316 Remount Rd, Charlotte, 5 PM, and XEEM, Queen Lee, and Markel FKA Big Breeze. BigBreeze is the existing artist-registry identity. The older unpublished Yung Kriss association is not on the current official flyer and is not carried forward. The flyer and written event description agree on 5 PM local; the Givebutter calendar widget's conflicting 6 PM UTC is not used. Unnamed 'and more' performers and individual set times are not inferred.",
+    "sources": [
+        {"name": "Passion Fest official event page and flyer", "url": "https://givebutter.com/passionfest2", "type": "manual_verified", "authority": "official_event", "priority": 112},
+        {"name": "Passion Fest official website", "url": "https://passionfest.org/", "type": "official_event", "authority": "official_event", "priority": 112},
+    ],
+}
+
+
 def kaden_event(date: str, venue: str, city: str, state: str) -> dict:
     slug = f"{date}-{city.lower().replace(' ', '-')}"
     return {
@@ -437,6 +482,34 @@ def is_asap_preach_revival_duplicate(event: dict) -> bool:
     )
 
 
+def is_passion_fest_duplicate(event: dict) -> bool:
+    if str(event.get("id", "")).removeprefix("manual:") == "passion-fest-ii-2026-charlotte":
+        return True
+    return (
+        event.get("startDate") == "2026-10-11"
+        and norm(event.get("city")) == "charlotte"
+        and any(
+            str(event.get(field, "")).split("?")[0].rstrip("/") in {
+                "https://givebutter.com/passionfest2",
+                "https://passionfest.org",
+                "https://www.eventbrite.com/e/christian-rap-festival-tickets-1999006359834",
+            }
+            for field in ("officialUrl", "ticketUrl")
+        )
+    )
+
+
+def preserve_passion_fest(events: list[dict], supplemental: list[dict]) -> None:
+    # Restore the verified billing after a refresh normalizes manual events.
+    # Keep later cancellation/postponement evidence authoritative.
+    existing = [row for row in events + supplemental if is_passion_fest_duplicate(row)]
+    if any(row.get("status") in {"cancelled", "canceled", "postponed"} for row in existing):
+        return
+    events[:] = [row for row in events if not is_passion_fest_duplicate(row)]
+    supplemental[:] = [row for row in supplemental if not is_passion_fest_duplicate(row)]
+    events.append(deepcopy(PASSION_FEST_EVENT))
+
+
 def sort_events(events: list[dict]) -> None:
     events.sort(key=lambda item: (str(item.get("startDate") or "9999-99-99"), str(item.get("startTime") or ""), str(item.get("title") or "")))
 
@@ -492,6 +565,7 @@ def apply(root: Path) -> None:
     events.append(deepcopy(REVIVAL_NIGHT_EVENT))
     events.append(deepcopy(KB_DIAMONDBACK_EVENT))
     events.append(deepcopy(ASAP_PREACH_REVIVAL_EVENT))
+    preserve_passion_fest(events, supplemental)
     apply_verified_event_images(events, supplemental)
     apply_historical_discovery_dates(events, supplemental)
     sort_events(events)

@@ -118,7 +118,8 @@ class ArtistDatabaseSeptember9Tests(unittest.TestCase):
     def test_three_verified_future_show_records_normalize(self):
         expected = {
             "hvo-fest-2026-los-angeles": ("2026-09-26", {"Yung Kriss", "Alex Jean"}),
-            "passion-fest-ii-2026-charlotte": ("2026-10-11", {"Yung Kriss"}),
+            # The September 29 official flyer replaces the earlier Yung Kriss association.
+            "passion-fest-ii-2026-charlotte": ("2026-10-11", {"Queen Lee", "BigBreeze"}),
         }
         records = {item["id"]: item for item in self.manual_events}
         for identifier, (start_date, artists) in expected.items():

@@ -2274,25 +2274,67 @@
     "id": "passion-fest-ii-2026-charlotte",
     "title": "Passion Fest II",
     "startDate": "2026-10-11",
+    "endDate": "2026-10-11",
     "startTime": "17:00",
+    "timezone": "America/New_York",
+    "startDateTime": "2026-10-11T17:00:00-04:00",
     "venue": "Event Masterz",
     "address": "316 Remount Rd",
+    "postalCode": "28203",
     "city": "Charlotte",
     "state": "NC",
     "country": "US",
     "artists": [
-      "Yung Kriss"
+      "Queen Lee",
+      "BigBreeze"
     ],
-    "headliner": "Yung Kriss",
+    "advertisedBilling": [
+      "XEEM",
+      "Queen Lee",
+      "Markel (formerly BigBreeze)"
+    ],
+    "officialBill": [
+      "XEEM",
+      "Queen Lee",
+      "Markel (formerly BigBreeze)"
+    ],
+    "headliner": "",
     "eventType": "festival",
-    "ticketUrl": "https://givebutter.com/passionfest2",
-    "officialUrl": "https://passionfest.org/",
-    "image": "",
-    "price": "",
     "status": "scheduled",
-    "lineupExplicit": false,
+    "lineupExplicit": true,
+    "officialUrl": "https://givebutter.com/passionfest2",
+    "ticketUrl": "https://givebutter.com/passionfest2",
+    "image": "assets/events/passion-fest-ii-charlotte-2026-10-11.jpg",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "detailImageLayout": "landscape",
+    "imageSource": "Passion Fest official Givebutter event flyer",
+    "imageSourceUrl": "https://givebutter.s3.amazonaws.com/media/66EVLgGnfueAfTP34WJm8ePqTwFxXIjEUam2gay7.jpg",
+    "organizer": "Passion Fest",
+    "publicDescription": "Passion Fest II brings Christian rap to Charlotte with XEEM, Queen Lee, and Markel (formerly BigBreeze).",
+    "sourceName": "Passion Fest official event page and flyer",
     "authority": "official_event",
-    "sourceName": "Passion Fest official ticket page and Yung Kriss official announcement"
+    "confidence": "high",
+    "firstSeen": "2026-09-29T15:14:40Z",
+    "lastVerified": "2026-09-29T15:14:40Z",
+    "notes": "Official Givebutter flyer confirms October 11, 2026, Event Masterz, 316 Remount Rd, Charlotte, 5 PM, and XEEM, Queen Lee, and Markel FKA Big Breeze. BigBreeze is the existing artist-registry identity. The older unpublished Yung Kriss association is not on the current official flyer and is not carried forward. The flyer and written event description agree on 5 PM local; the Givebutter calendar widget's conflicting 6 PM UTC is not used. Unnamed 'and more' performers and individual set times are not inferred.",
+    "sources": [
+      {
+        "name": "Passion Fest official event page and flyer",
+        "url": "https://givebutter.com/passionfest2",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "Passion Fest official website",
+        "url": "https://passionfest.org/",
+        "type": "official_event",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ]
   },
   {
     "id": "parris-chariz-world-is-watching-dallas-2026",
