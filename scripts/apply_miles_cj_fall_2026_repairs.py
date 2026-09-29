@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from apply_sep26_requested_lineups import patch_event as apply_reviewed_lineup
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -135,6 +136,14 @@ CANONICAL_EVENTS = {
         "auditVerified": AUDIT_DATE,
     },
 }
+
+
+# Later artist-confirmed billing must survive this older background writer.
+for _event_id, _event in CANONICAL_EVENTS.items():
+    _reviewed = {**_event, "id": _event_id}
+    apply_reviewed_lineup(_reviewed)
+    _reviewed.pop("id")
+    _event.update(_reviewed)
 
 
 OLD_MANUAL_IDS = {

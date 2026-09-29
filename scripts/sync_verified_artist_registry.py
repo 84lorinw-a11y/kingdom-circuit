@@ -13,13 +13,16 @@ import re
 from pathlib import Path
 from urllib.parse import urlparse
 
-SYNC_VERSION = 7
+SYNC_VERSION = 8
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 UPDATES_FILE = ROOT / "config" / "verified-artist-registry-updates.json"
 WEBSITES_FILE = ROOT / "config" / "verified-artist-websites.json"
 APP_FILE = ROOT / "app.js"
 TEST_FILE = ROOT / "tests" / "test_update_events.py"
+
+# Owner-requested roster exclusions override stale registry exports.
+EXCLUDED_ARTISTS = {"chad jones", "erica mason", "big holy", "jay kalyl", "dj maj"}
 
 # Backward-compatible direct calendar metadata for 808 BEEZY. The generalized
 # sync still exposes this constant because the ingestion regression test and
@@ -64,8 +67,8 @@ def real_official_website(value: object) -> str:
 def sync_config() -> tuple[list[dict], list[dict], int]:
     artists = load_json(ARTISTS_FILE, [])
     updates = load_json(UPDATES_FILE, [])
-    artists = [item for item in artists if isinstance(item, dict) and norm(item.get("name")) not in {"chad jones", "erica mason", "big holy", "jay kalyl"}]
-    updates = [item for item in updates if isinstance(item, dict) and norm(item.get("name")) not in {"chad jones", "erica mason", "big holy", "jay kalyl"}]
+    artists = [item for item in artists if isinstance(item, dict) and norm(item.get("name")) not in EXCLUDED_ARTISTS]
+    updates = [item for item in updates if isinstance(item, dict) and norm(item.get("name")) not in EXCLUDED_ARTISTS]
     if not isinstance(artists, list) or not isinstance(updates, list) or not updates:
         raise SystemExit("Verified registry sync expected non-empty artist/update arrays")
 
@@ -173,8 +176,13 @@ def sync_verified_websites(updates: list[dict]) -> int:
     websites = load_json(WEBSITES_FILE, {})
     if not isinstance(websites, dict):
         raise SystemExit("Verified website registry is not a JSON object")
-    changed = 0
+    excluded = [name for name in websites if norm(name) in EXCLUDED_ARTISTS]
+    for name in excluded:
+        del websites[name]
+    changed = len(excluded)
     for update in updates:
+        if norm(update.get("name")) in EXCLUDED_ARTISTS:
+            continue
         website = real_official_website(update.get("website"))
         if not website:
             continue

@@ -12,6 +12,7 @@ from __future__ import annotations
 import json
 from copy import deepcopy
 from pathlib import Path
+from apply_sep26_requested_lineups import patch_event as apply_reviewed_lineup
 
 ROOT = Path(__file__).resolve().parents[1]
 EVENTS_FILE = ROOT / "events.json"
@@ -78,6 +79,10 @@ FLAVOR_FRIDAY = {
     ],
     "confidence": "high",
 }
+
+
+# Preserve the owner's latest full Friday bill, including Eli Williams.
+apply_reviewed_lineup(FLAVOR_FRIDAY)
 
 
 def load(path: Path) -> list[dict]:

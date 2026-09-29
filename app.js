@@ -198,7 +198,6 @@ const ARTIST_ROSTER_ORDER = [
   "Man Of FAITH",
   "Bobby Real Montgomery",
   "DJ Promote",
-  "DJ Maj",
   "Eli Williams",
   "Redimi2",
   "Funky",
@@ -2674,19 +2673,6 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/djpromote/p/Caqy1SesDBK/",
     "imageUrl": "assets/artists/dj-promote-primary.jpg",
     "imagePosition": "50% 35%",
-    "sourceRegistryVerified": true
-  },
-  "dj maj": {
-    "aliases": [
-      "DJ Maj"
-    ],
-    "website": "https://djmaj.com/",
-    "instagramProfile": "https://www.instagram.com/playmajmusic",
-    "spotifyProfile": "https://open.spotify.com/artist/2nGBL8r0XgN7RkKD7HYjpc",
-    "youtubeProfile": "https://www.youtube.com/@djmajtv",
-    "officialImageSource": "https://djmaj.com/press-photos/",
-    "imageUrl": "assets/artists/dj-maj-primary.jpg",
-    "imagePosition": "50% 25%",
     "sourceRegistryVerified": true
   },
   "eli williams": {
