@@ -2001,6 +2001,29 @@
     "imageSourceUrl": "https://open.spotify.com/artist/4EJIkbig1thbV3C3B68c56"
   },
   {
+    "id": "scootie-wop-southwest-trail-riders-houston-2026",
+    "title": "Scootie Wop at Southwest Trail Riders Association",
+    "startDate": "2026-10-10",
+    "startTime": "11:45",
+    "venue": "Southwest Trail Riders Association",
+    "address": "13711 Almeda School Rd",
+    "city": "Houston",
+    "state": "TX",
+    "artists": [
+      "Scootie Wop"
+    ],
+    "headliner": "Scootie Wop",
+    "eventType": "concert",
+    "ticketUrl": "https://www.bandsintown.com/e/1037938651-scootie-wop-at-southwest-trail-riders-association-property",
+    "officialUrl": "https://www.shazam.com/event/ce2b719d-ff35-4b3c-b637-5578e5cf8cbb",
+    "image": "",
+    "price": "",
+    "status": "scheduled",
+    "lineupExplicit": true,
+    "authority": "artist_calendar",
+    "sourceName": "Scootie Wop artist concert listing"
+  },
+  {
     "title": "Boxyard Saturdaze",
     "startDate": "2026-10-10",
     "startTime": "12:30",
@@ -2053,29 +2076,6 @@
     "imageSource": "Boxyard RTP official DJ Watty and MAYIA event poster",
     "startDateTime": "2026-10-10T11:30:00-04:00",
     "endTime": "14:30"
-  },
-  {
-    "id": "scootie-wop-southwest-trail-riders-houston-2026",
-    "title": "Scootie Wop at Southwest Trail Riders Association",
-    "startDate": "2026-10-10",
-    "startTime": "11:45",
-    "venue": "Southwest Trail Riders Association",
-    "address": "13711 Almeda School Rd",
-    "city": "Houston",
-    "state": "TX",
-    "artists": [
-      "Scootie Wop"
-    ],
-    "headliner": "Scootie Wop",
-    "eventType": "concert",
-    "ticketUrl": "https://www.bandsintown.com/e/1037938651-scootie-wop-at-southwest-trail-riders-association-property",
-    "officialUrl": "https://www.shazam.com/event/ce2b719d-ff35-4b3c-b637-5578e5cf8cbb",
-    "image": "",
-    "price": "",
-    "status": "scheduled",
-    "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "sourceName": "Scootie Wop artist concert listing"
   },
   {
     "title": "ONE DAY Fall Festival 2026",
@@ -3299,18 +3299,14 @@
     "artists": [
       "Miles Minnick",
       "Gifted Hands",
-      "Datin",
-      "TRU-SERVA",
-      "VVS Big Rock",
-      "Lyric The Geenyus",
-      "MAYIA"
+      "Datin"
     ],
     "headliner": "Miles Minnick",
     "eventType": "festival",
     "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/a2407af7-a012-4df1-8d42-d247ab82cd8b/FF26-Promo-Friday-Night%2B%281%29.jpg",
+    "image": "assets/events/flavor-fest-friday-2026.webp",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -3326,16 +3322,8 @@
         "type": "manual_verified",
         "authority": "official_event",
         "priority": 112
-      },
-      {
-        "name": "Flavor Fest official Friday poster",
-        "url": "https://www.flavorfest.org/",
-        "type": "manual_verified",
-        "authority": "official_festival",
-        "priority": 106
       }
-    ],
-    "auditVerified": "2026-09-11"
+    ]
   },
   {
     "title": "Flavor Fest 2026 — Saturday Concerts",
