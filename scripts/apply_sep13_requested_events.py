@@ -300,8 +300,8 @@ def patch_artist():
               "spotifyProfile": "https://open.spotify.com/artist/6YN7TGi4ZlsAy38fZVPvkN",
               "youtubeProfile": "https://www.youtube.com/channel/UCCLbaoGsC-0wnAvr0Q3OMdg",
               "bandsintownProfile": "https://www.bandsintown.com/a/7118692-jimmy-rock",
-              "imageUrl": JIMMY_IMAGE, "imagePosition": "center", "preferArtistImage": True,
-              "officialImageSource": "https://www.jimmyrock.com/"})
+              "imageUrl": "assets/artists/jimmy-rock-instagram-profile.jpg", "imagePosition": "50% 25%", "preferArtistImage": True,
+              "officialImageSource": "https://www.instagram.com/jimmyrock/"})
     save(p, rows)
 
 

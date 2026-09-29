@@ -29,7 +29,7 @@ class RequestedLineupTests(unittest.TestCase):
     def test_flavor_days_follow_current_posters_without_duplicate_performers(self):
         friday = PATCHES["flavor-fest-2026-friday-concerts"]["advertisedBilling"]
         saturday = PATCHES["flavor-fest-2026-saturday-concerts"]["advertisedBilling"]
-        self.assertEqual((len(friday), len(saturday)), (27, 20))
+        self.assertEqual((len(friday), len(saturday)), (28, 20))
         self.assertEqual(len(friday), len(set(friday)))
         self.assertIn("Yung Kriss", friday)
         self.assertNotIn("Gifted Hands", friday)
@@ -48,7 +48,7 @@ class RequestedLineupTests(unittest.TestCase):
         self.assertNotIn("cj-emulous-glo-concert-los-angeles-2026", PATCHES)
         awake = PATCHES["supplemental:brenno-awake-conference-2026"]
         self.assertEqual(len(awake["advertisedBilling"]), 6)
-        self.assertIn("DJ Eli Williams", awake["advertisedBilling"])
+        self.assertIn("Eli Williams", awake["advertisedBilling"])
         self.assertNotIn("startTime", awake)
 
 

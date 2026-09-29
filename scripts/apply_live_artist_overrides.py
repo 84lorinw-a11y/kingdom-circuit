@@ -52,9 +52,9 @@ REGISTRY_UPDATES = {
         "instagramProfile": "https://www.instagram.com/jimmyrock/",
         "spotifyProfile": "https://open.spotify.com/artist/6YN7TGi4ZlsAy38fZVPvkN",
         "youtubeProfile": "https://www.youtube.com/channel/UCCLbaoGsC-0wnAvr0Q3OMdg",
-        "officialImageSource": "https://www.jimmyrock.com/",
-        "imageUrl": "assets/artists/jimmy-rock-primary.webp",
-        "imagePosition": "center",
+        "officialImageSource": "https://www.instagram.com/jimmyrock/",
+        "imageUrl": "assets/artists/jimmy-rock-instagram-profile.jpg",
+        "imagePosition": "50% 25%",
         "preferArtistImage": True,
     },
     "caleb gordon": {

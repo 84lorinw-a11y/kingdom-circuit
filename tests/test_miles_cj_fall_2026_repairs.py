@@ -26,7 +26,10 @@ class MilesCjFall2026RepairTests(unittest.TestCase):
         for event_id, values in expected.items():
             row = self.event(event_id)
             self.assertEqual(values, (row["startDate"], row["startTime"], row["venue"], row["city"]))
-            self.assertEqual(["Miles Minnick", "Tommy Zuko", "CJ Emulous"], row["artists"])
+            lineup = ["Miles Minnick", "Tommy Zuko", "CJ Emulous"]
+            if row["startDate"] in {"2026-11-05", "2026-11-08"}:
+                lineup.append("Eli Williams")
+            self.assertEqual(lineup, row["artists"])
             self.assertEqual("scheduled", row["status"])
 
     def test_stale_manual_listings_are_redirect_only(self):

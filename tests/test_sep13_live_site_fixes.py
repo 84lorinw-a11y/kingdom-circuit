@@ -98,8 +98,8 @@ class September13LiveSiteFixTests(unittest.TestCase):
 
     def test_jimmy_rock_profile_uses_local_official_portrait(self):
         artist = next(a for a in load(ROOT / "config" / "artists.json") if a.get("name") == "JIMMY ROCK")
-        self.assertEqual("assets/artists/jimmy-rock-primary.webp", artist.get("imageUrl"))
-        self.assertEqual("center", artist.get("imagePosition"))
+        self.assertEqual("assets/artists/jimmy-rock-instagram-profile.jpg", artist.get("imageUrl"))
+        self.assertEqual("50% 25%", artist.get("imagePosition"))
         portrait = ROOT / artist["imageUrl"]
         self.assertTrue(portrait.is_file(), portrait)
         self.assertGreater(portrait.stat().st_size, 10_000)
@@ -125,9 +125,9 @@ class September13LiveSiteFixTests(unittest.TestCase):
                 encoding="utf-8",
             )
             overrides.patch_static_artist_pages(site, [artist])
-            self.assertIn('/assets/artists/jimmy-rock-primary.webp', directory.read_text(encoding="utf-8"))
+            self.assertIn('/assets/artists/jimmy-rock-instagram-profile.jpg', directory.read_text(encoding="utf-8"))
             profile_html = profile.read_text(encoding="utf-8")
-            self.assertIn('/assets/artists/jimmy-rock-primary.webp', profile_html)
+            self.assertIn('/assets/artists/jimmy-rock-instagram-profile.jpg', profile_html)
             self.assertNotIn("seo-profile-placeholder", profile_html)
 
     def test_petrina_and_reign_use_the_replacement_images(self):

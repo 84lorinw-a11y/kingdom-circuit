@@ -199,7 +199,7 @@ const ARTIST_ROSTER_ORDER = [
   "Bobby Real Montgomery",
   "DJ Promote",
   "DJ Maj",
-  "DJ Eli Williams",
+  "Eli Williams",
   "Redimi2",
   "Funky",
   "Pregador Luo",
@@ -2689,10 +2689,10 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imagePosition": "50% 25%",
     "sourceRegistryVerified": true
   },
-  "dj eli williams": {
+  "eli williams": {
     "aliases": [
-      "DJ Eli Williams",
-      "Eli Williams"
+      "Eli Williams",
+      "DJ Eli Williams"
     ],
     "website": "https://www.instagram.com/eliwilliamssss/",
     "instagramProfile": "https://www.instagram.com/eliwilliamssss/",

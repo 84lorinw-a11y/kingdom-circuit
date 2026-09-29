@@ -13,7 +13,7 @@ import re
 from pathlib import Path
 from urllib.parse import urlparse
 
-SYNC_VERSION = 6
+SYNC_VERSION = 7
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 UPDATES_FILE = ROOT / "config" / "verified-artist-registry-updates.json"
@@ -80,6 +80,13 @@ def sync_config() -> tuple[list[dict], list[dict], int]:
     by_name = {norm(item.get("name")): item for item in artists if isinstance(item, dict) and item.get("name")}
     changed = 0
 
+    # Preserve the existing record and roster position after the owner's rename.
+    if "dj eli williams" in by_name and "eli williams" not in by_name:
+        target = by_name.pop("dj eli williams")
+        target["name"] = "Eli Williams"
+        by_name["eli williams"] = target
+        changed += 1
+
     beezy = by_name.get(norm(ARTIST["name"]))
     if beezy is not None and beezy.get("bandsintownProfile") != ARTIST["bandsintownProfile"]:
         beezy["bandsintownProfile"] = ARTIST["bandsintownProfile"]
@@ -111,7 +118,7 @@ def sync_config() -> tuple[list[dict], list[dict], int]:
             "name", "aliases", "category", "monitoringPriority", "ticketmasterEnabled",
             "textMatchEnabled", "website", "instagramProfile", "spotifyProfile",
             "youtubeProfile", "officialImageSource", "imageUrl", "imagePosition",
-            "state", "label", "bandsintownProfile", "socialSearchEnabled", "activeStatus",
+            "state", "label", "bandsintownProfile", "socialSearchEnabled", "activeStatus", "legacyArtistPaths",
         ):
             if field in update and target.get(field) != update[field]:
                 target[field] = update[field]

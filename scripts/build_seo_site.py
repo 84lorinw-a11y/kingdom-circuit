@@ -348,6 +348,12 @@ def main():
             if url: links.append(f'<a class="secondary-button" href="{esc(url)}" target="_blank" rel="noopener">{label}</a>')
         body=f'<section class="profile-section">{breadcrumbs(crumbs)}<section class="profile-hero profile-hero-no-image"><div><p class="eyebrow">Artist profile</p><h1>{esc(n)}</h1><div class="profile-links">{"".join(links)}</div><p class="profile-count">{len(shows)} upcoming U.S. show{"s" if len(shows)!=1 else ""} currently listed.</p></div></section><section class="calendar"><div class="calendar-heading"><div><p class="eyebrow">Verified listings</p><h2>Upcoming {esc(n)} Shows</h2></div><p class="results-count">{len(shows)} shows</p></div><div class="event-grid">{"".join(event_card(e,artists) for e in shows) if shows else "<div class=\"empty-panel\">No upcoming U.S. shows are currently confirmed.</div>"}</div></section></section>'
         write_page(p,page(f"{n} Concerts & Tour Dates | The Kingdom Circuit",f"Find upcoming {n} Christian hip-hop concerts, tour dates, festivals, and verified official show links.",p,body,[breadcrumb_schema(crumbs)]))
+        for legacy in a.get("legacyArtistPaths") or []:
+            if not re.fullmatch(r"/artists/[a-z0-9-]+/", str(legacy)):
+                raise RuntimeError(f"Unsafe legacy artist path: {legacy}")
+            if legacy == p: continue
+            redirect_body=f'<section class="page-hero hero-compact"><h1>{esc(n)}</h1><a class="primary-button" href="{p}">View artist profile</a></section><script>location.replace({json.dumps(p)});</script>'
+            write_page(legacy,page(f"{n} | The Kingdom Circuit",f"View the current {n} artist profile.",p,redirect_body))
 
     for code,shows in by_state.items():
         name=STATE_NAMES.get(code,code); p=state_path(code); urls.append(p); crumbs=[("Shows","/shows/"),(name,p)]; body=f'<section class="page-hero hero-compact">{breadcrumbs(crumbs)}<p class="eyebrow">{esc(name)}</p><h1>Christian Hip-Hop Shows in {esc(name)}</h1><p class="hero-text">Browse upcoming verified CHH concerts, Christian rap shows, and festivals in {esc(name)}.</p></section><section class="calendar"><div class="event-grid">{"".join(event_card(e,artists) for e in shows)}</div></section>'; write_page(p,page(f"Christian Hip-Hop Shows in {name} | The Kingdom Circuit",f"Find upcoming Christian hip-hop concerts and festivals in {name}.",p,body,[breadcrumb_schema(crumbs)]))
