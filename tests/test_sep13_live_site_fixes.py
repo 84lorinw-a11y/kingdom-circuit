@@ -132,7 +132,7 @@ class September13LiveSiteFixTests(unittest.TestCase):
 
     def test_petrina_and_reign_use_the_replacement_images(self):
         petrina = self.live_event("one-day-fall-festival-aurora-2026")
-        self.assertEqual("assets/events/one-day-festival-2026-10-10.jpg", petrina.get("image"))
+        self.assertEqual("assets/events/one-day-festival-2026-10-10-lineup-crop.png", petrina.get("image"))
         self.assertEqual("event_artwork", petrina.get("imageType"))
         self.assertEqual("center", petrina.get("imagePosition"))
         self.assertGreater((ROOT / petrina["image"]).stat().st_size, 10_000)
@@ -204,7 +204,7 @@ class September13LiveSiteFixTests(unittest.TestCase):
             requested.UPSERTS["boise-invasion-2026"]["image"],
         )
         self.assertEqual(
-            "assets/events/one-day-festival-2026-10-10.jpg",
+            "assets/events/one-day-festival-2026-10-10-lineup-crop.png",
             image_hotfix.PINS["one-day-fall-festival-aurora-2026"]["image"],
         )
         self.assertEqual("assets/events/reign-volume-one-single-2026.jpg", verified.REIGN_IMAGE)

@@ -48,8 +48,8 @@ PATCHES = {
         "tru-serva-cupojoy-2026-10-09.jpg", "https://www.itickets.com/events/487141",
         "Official iTickets TRU-SERVA event graphic"),
     "one-day-fall-festival-aurora-2026": {
-        **artwork("one-day-festival-2026-10-10.jpg", "https://partiful.com/e/SK3SE7vXIs9rYlPcW0hZ",
-                  "Official ONE DAY festival RSVP artwork"),
+        **artwork("one-day-festival-2026-10-10-lineup-crop.png", "https://www.instagram.com/runwchristden/p/Dd4WmfHEdta/?img_index=2",
+                  "Owner-approved upper-section edit of RWC Denver official ONE DAY lineup flyer"),
         "startTime": "16:30", "startDateTime": "2026-10-10T16:30:00-06:00",
         "timezone": "America/Denver", "endTime": "20:00",
         "artists": ONE_DAY_BILL, "advertisedBilling": ONE_DAY_BILL, "officialBill": ONE_DAY_BILL,
