@@ -568,6 +568,8 @@ def apply(root: Path) -> None:
     preserve_passion_fest(events, supplemental)
     apply_verified_event_images(events, supplemental)
     apply_historical_discovery_dates(events, supplemental)
+    from preserve_reviewed_discoveries import apply as preserve_discoveries
+    preserve_discoveries(root, events, supplemental)
     sort_events(events)
     sort_events(supplemental)
     write(events_path, events)

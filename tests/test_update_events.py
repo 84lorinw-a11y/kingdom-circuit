@@ -843,7 +843,9 @@ class KingdomCircuitV9Tests(unittest.TestCase):
         self.assertIn("flame-live-plano-2026", ids)
         self.assertIn("lifelight-sioux-falls-2026", ids)
         self.assertEqual(sum(1 for event in events if str(event.get("id", "")).startswith("caleb-gordon-eden-")), 8)
-        self.assertEqual(sum(1 for event in events if str(event.get("id", "")).startswith("egr-")), 21)
+        # Preserve the original 21-date EGR schedule while allowing separately
+        # verified festival/conference appearances to be added later.
+        self.assertEqual(sum(1 for event in events if str(event.get("id", "")).startswith("egr-2026-")), 21)
         self.assertIn("let-the-church-sing-tour-dunedin-2026", ids)
 
     def test_verified_tommy_zuko_and_yasmine_jinelle_shows_are_durable(self):
