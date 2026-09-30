@@ -199,6 +199,7 @@ const ARTIST_ROSTER_ORDER = [
   "Bobby Real Montgomery",
   "DJ Promote",
   "Eli Williams",
+  "JBthaPreacher",
   "Redimi2",
   "Funky",
   "Pregador Luo",
@@ -2686,6 +2687,22 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "youtubeProfile": "https://www.youtube.com/channel/UCfJc87Y4aHptUDMGrwxZNkg",
     "officialImageSource": "https://www.instagram.com/eliwilliamssss/p/Ddj51oflvyO/",
     "imageUrl": "assets/artists/dj-eli-williams-primary.jpg",
+    "imagePosition": "50% 20%",
+    "sourceRegistryVerified": true
+  },
+  "jbthapreacher": {
+    "aliases": [
+      "JBthaPreacher",
+      "JBthePreacher",
+      "JB Tha Preacher",
+      "JB the Preacher"
+    ],
+    "website": "https://www.instagram.com/jbthapreacher/?hl=en",
+    "instagramProfile": "https://www.instagram.com/jbthapreacher/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/6ShMmu8ZCu6MUoJfui5YK6",
+    "youtubeProfile": "https://music.youtube.com/channel/UCgA6yMDyea-g30NpEgB_tkg",
+    "officialImageSource": "https://open.spotify.com/artist/6ShMmu8ZCu6MUoJfui5YK6",
+    "imageUrl": "assets/artists/jbthapreacher-primary.jpg",
     "imagePosition": "50% 20%",
     "sourceRegistryVerified": true
   }

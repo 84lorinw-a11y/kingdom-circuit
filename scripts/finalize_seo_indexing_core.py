@@ -164,21 +164,26 @@ def apply_branding(root: pathlib.Path) -> int:
 
 
 def finalize_artist_name_layout(root: pathlib.Path) -> None:
-    """Keep the owner's requested JIMMY ROCK heading on one line after redesign."""
-    page = root / "artists/jimmy-rock/index.html"
-    if not page.exists():
-        return
-    document = page.read_text(encoding="utf-8")
-    if 'id="kc-rd-artist-name"' not in document:
-        return
-    style = '''<style data-kc-jimmy-name-layout>
-body #kc-rd-artist-name { white-space: nowrap; overflow-wrap: normal; }
-@media (max-width: 720px) {
-  body #kc-rd-artist-name { font-size: clamp(2rem, 14vw, 6.2rem); line-height: .9; }
-}
+    """Keep reviewed artist headings intact on phones after the pinned redesign."""
+    layouts = (
+        ("jimmy-rock", "jimmy", "clamp(2rem, 14vw, 6.2rem)"),
+        ("jbthapreacher", "jbthapreacher", "clamp(1.75rem, 10vw, 3rem)"),
+    )
+    for slug, marker, font_size in layouts:
+        page = root / f"artists/{slug}/index.html"
+        if not page.exists():
+            continue
+        document = page.read_text(encoding="utf-8")
+        if 'id="kc-rd-artist-name"' not in document:
+            continue
+        style = f'''<style data-kc-{marker}-name-layout>
+body #kc-rd-artist-name {{ white-space: nowrap; overflow-wrap: normal; }}
+@media (max-width: 720px) {{
+  body #kc-rd-artist-name {{ font-size: {font_size}; line-height: .9; }}
+}}
 </style>'''
-    document = re.sub(r'<style data-kc-jimmy-name-layout>.*?</style>\s*', '', document, flags=re.S)
-    page.write_text(document.replace('</head>', style + '\n</head>', 1), encoding="utf-8")
+        document = re.sub(rf'<style data-kc-{marker}-name-layout>.*?</style>\s*', '', document, flags=re.S)
+        page.write_text(document.replace('</head>', style + '\n</head>', 1), encoding="utf-8")
 
 
 def apply(root: pathlib.Path) -> dict:

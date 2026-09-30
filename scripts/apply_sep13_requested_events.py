@@ -89,7 +89,7 @@ UPSERTS = {
         advertised=["Bethel Music", "KB"]
     ),
     "one-day-fall-festival-aurora-2026": E(
-        "ONE DAY Fall Festival 2026", "2026-10-10", "Aurora", "CO", ["Petrina DeLacey"], "https://onedaydenver.org/",
+        "ONE DAY Fall Festival 2026", "2026-10-10", "Aurora", "CO", ["Petrina DeLacey", "JBthaPreacher"], "https://onedaydenver.org/",
         "ONE DAY official festival site", venue="Colorado UpLift Community Campus", address="1500 S Dayton St", event_type="festival",
         time="09:00", end_time="20:00", tz="America/Denver", ticket="https://partiful.com/e/SK3SE7vXIs9rYlPcW0hZ", price="Free",
         authority="official_festival", performanceWindow="16:30-20:00",
