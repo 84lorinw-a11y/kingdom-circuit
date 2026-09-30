@@ -5,6 +5,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
 SPEC = importlib.util.spec_from_file_location(
     "apply_curated_catalog_policy",
     ROOT / "scripts" / "apply_curated_catalog_policy.py",
@@ -105,15 +106,20 @@ class CuratedCatalogPolicyTests(unittest.TestCase):
     def test_hrvstland_official_details_and_lineup_are_complete(self):
         event = MODULE.MIKE_TEEZY_HRVSTLAND
         self.assertEqual("https://www.miketeezymusic.com/event-details/hlfest", event["officialUrl"])
-        self.assertEqual("14:00", event["startTime"])
+        self.assertEqual("16:00", event["startTime"])
         self.assertEqual("20:00", event["endTime"])
         self.assertEqual("Unity Charlotte International", event["venue"])
         self.assertEqual("5323 E Independence Blvd", event["address"])
         self.assertEqual(
-            {"Mike Teezy", "Anike", "Dante' Pride", "Don Ready", "ADIA"},
+            {"Mike Teezy", "Anike", "Alex Jean", "Dante' Pride", "Don Ready", "ADIA", "Jamil", "Queen Lee"},
             set(event["artists"]),
         )
-        self.assertEqual(event["artists"], event["officialBill"])
+        self.assertEqual(
+            ["Mike Teezy", "Anike", "Alex Jean", "Dante' Pride", "ADIA", "Don Ready",
+             "Franchesca", "Jamil", "Joshuaa*", "Queen Lee", "DJ PARTYwithParks"],
+            event["officialBill"],
+        )
+        self.assertEqual(event["officialBill"], event["advertisedBilling"])
         self.assertEqual("assets/events/hrvstland-festival-2026.jpg", event["image"])
         self.assertTrue((ROOT / event["image"]).is_file())
         self.assertEqual("event_artwork", event["imageType"])

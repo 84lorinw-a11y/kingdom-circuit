@@ -93,6 +93,8 @@ UPSERTS = {
         "ONE DAY official festival site", venue="Colorado UpLift Community Campus", address="1500 S Dayton St", event_type="festival",
         time="09:00", end_time="20:00", tz="America/Denver", ticket="https://partiful.com/e/SK3SE7vXIs9rYlPcW0hZ", price="Free",
         authority="official_festival", performanceWindow="16:30-20:00",
+        advertised=["Petrina DeLacey", "JBthaPreacher", "Cyfë II", "Grace Runkle", "Serin Oh"],
+        officialBill=["Petrina DeLacey", "JBthaPreacher", "Cyfë II", "Grace Runkle", "Serin Oh"],
         notes="Festival runs 9:00 AM–8:00 PM. The sanctuary concert featuring Petrina DeLacey runs 4:30–8:00 PM. Free admission; RSVP requested."
     ),
     "kelo-worship-after-christmas-jacksonville-2026": E(

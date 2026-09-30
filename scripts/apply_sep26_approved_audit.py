@@ -22,7 +22,7 @@ ARK_BILL = [
     "Y Shadey", "Kefia Rollerson", "DJ PARTYwithParks", "180MINDSET",
 ]
 REIGN_BILL = ["Aasha Marie", "Justin Martyr", "Conquest", "Crystal B."]
-ONE_DAY_BILL = ["Petrina DeLacey", "JBthaPreacher"]
+ONE_DAY_BILL = ["Petrina DeLacey", "JBthaPreacher", "Cyfë II", "Grace Runkle", "Serin Oh"]
 ANIKE_URL = "https://www.eventbrite.com/e/anike-live-the-all-star-concert-tickets-1997805844059"
 OVERFLOW_URL = "https://www.overflowconf.com/schedule"
 MIAMI_URL = "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl"
@@ -52,8 +52,8 @@ PATCHES = {
                   "Owner-approved upper-section edit of RWC Denver official ONE DAY lineup flyer"),
         "startTime": "16:30", "startDateTime": "2026-10-10T16:30:00-06:00",
         "timezone": "America/Denver", "endTime": "20:00",
-        "artists": ONE_DAY_BILL, "advertisedBilling": ONE_DAY_BILL, "officialBill": ONE_DAY_BILL,
-        "notes": "The full festival runs 9 AM–8 PM; Kingdom Circuit lists the evening concert start, 4:30 PM. The organizer confirms Petrina DeLacey and JBthePreacher in the evening concert. Selected billing follows the owner's CHH focus; the official RSVP contains the wider festival lineup.",
+        "artists": ["Petrina DeLacey", "JBthaPreacher"], "advertisedBilling": ONE_DAY_BILL, "officialBill": ONE_DAY_BILL,
+        "notes": "The full festival runs 9 AM–8 PM; Kingdom Circuit lists the evening concert start, 4:30 PM. The official RWC Denver lineup flyer confirms Petrina DeLacey, JBthaPreacher, Cyfë II, Grace Runkle and Serin Oh. Billing follows the owner's requested order, with Petrina and JB first, then Cyfë II.",
     },
     "mayia-boxyard-saturdaze-2026": {
         **artwork("mayia-boxyard-2026-10-10.png",

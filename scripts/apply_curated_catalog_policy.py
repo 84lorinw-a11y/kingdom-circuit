@@ -14,6 +14,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from apply_sep26_requested_lineups import patch_event as apply_reviewed_lineup
+
 POLICY_VERSION = 7
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
@@ -97,6 +99,9 @@ MIKE_TEEZY_HRVSTLAND = {
     "notes": "Festival and VIP entry begin at 2:00 PM; general-admission doors open at 3:30 PM and the show begins at 4:00 PM.",
     "auditVerified": "2026-09-14",
 }
+
+# Background catalog refreshes must preserve the latest reviewed festival bill.
+apply_reviewed_lineup(MIKE_TEEZY_HRVSTLAND)
 
 HULVEY_SILVER_SPRING = {
     "id": "manual:hulvey-could-be-tonight-silver-spring-2026",
