@@ -6,6 +6,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 BATCH = "2026-09-29-expanded-source-search"
+APPROVED_BATCHES = {BATCH, "2026-09-30-whatuprg-announced"}
 
 
 def held_dallas_candidate(event):
@@ -40,7 +41,7 @@ def apply(root: Path, events: list, supplemental: list, today=None):
         return
     today = today or datetime.now(ZoneInfo("America/Los_Angeles")).date().isoformat()
     for approved in json.loads(path.read_text()):
-        if approved.get("editorialBatch") != BATCH:
+        if approved.get("editorialBatch") not in APPROVED_BATCHES:
             continue
         if str(approved.get("endDate") or approved["startDate"]) < today:
             continue
