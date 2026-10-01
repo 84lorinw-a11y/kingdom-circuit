@@ -2718,9 +2718,9 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/itsheiressirami/",
     "spotifyProfile": "https://open.spotify.com/artist/5kq0WAm6kDMOKtF499g0eg",
     "youtubeProfile": "https://www.youtube.com/@ItsHeiressirami",
-    "officialImageSource": "https://ugc.production.linktr.ee/4203992c-3c8c-49f4-9089-9031736c29c6_IMG-4576.png",
-    "imageUrl": "assets/artists/heiressirami-primary.png",
-    "imagePosition": "50% 40%",
+    "officialImageSource": "assets/artists/heiressirami-owner-supplied.png",
+    "imageUrl": "assets/artists/heiressirami-owner-supplied.png",
+    "imagePosition": "50% 35%",
     "sourceRegistryVerified": true
   },
   "giovani": {
@@ -2745,9 +2745,9 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/aftrthght/",
     "spotifyProfile": "https://open.spotify.com/artist/0m4Lfr9tvsHyYOUWhsbSKY",
     "youtubeProfile": "https://www.youtube.com/channel/UC-DgRUfLZdZKE24F0bMDgog",
-    "officialImageSource": "https://i.scdn.co/image/ab6761610000e5eb44858fbd357d2a8a779c8b74",
-    "imageUrl": "assets/artists/aftrthght-primary.jpg",
-    "imagePosition": "50% 35%",
+    "officialImageSource": "https://www.instagram.com/aftrthght/p/DbWrsRYuOqd/",
+    "imageUrl": "assets/artists/aftrthght-instagram-portrait.jpg",
+    "imagePosition": "50% 55%",
     "sourceRegistryVerified": true
   }
 };
