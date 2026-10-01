@@ -615,7 +615,9 @@
       "Don Ready",
       "LaNell Grant",
       "Nathan Davis Jr.",
-      "Trendsetter Sense"
+      "Trendsetter Sense",
+      "Parris Chariz",
+      "Tommy Zuko"
     ],
     "headliner": "1K Phew",
     "eventType": "concert",
@@ -630,33 +632,51 @@
     "lineupExplicit": true,
     "sources": [
       {
+        "name": "GMA Dove Week official schedule",
+        "url": "https://gospelmusic.org/news/dove-week-2026-see-the-schedule",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "GMA Museum official Future Legacy calendar",
+        "url": "https://www.cgmmuseum.org/event/future-legacy-hip-hop-showcase-sponsored-by-vyb/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 120
+      },
+      {
+        "name": "Rapzilla September 30 full-lineup announcement",
+        "url": "https://rapzilla.com/2026-09-future-legacy-hip-hop-showcase-nashville-dove-awards-week/",
+        "type": "manual_verified",
+        "authority": "editorial",
+        "priority": 100
+      },
+      {
         "name": "AXS official event",
         "url": "https://www.axs.com/events/1580749/future-legacy-hip-hop-showcase-tickets",
         "type": "manual_verified",
         "authority": "venue_ticket",
         "priority": 94
-      },
-      {
-        "name": "GMA Dove Week official schedule",
-        "url": "https://gospelmusic.org/news/dove-week-2026-see-the-schedule",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 100
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-10-01",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "officialBill": [
-      "ADIA",
+      "1K Phew",
       "Don Ready",
-      "DJ Trendsetter",
       "LaNell Grant",
       "Nathan Davis Jr.",
-      "1K Phew"
+      "DJ Trendsetter Sense",
+      "Parris Chariz",
+      "ADIA",
+      "JustCordell",
+      "Tommy Zuko",
+      "CeJae"
     ],
-    "notes": "DJ Trendsetter is associated with roster artist Trendsetter Sense based on established professional naming as DJ Trendsetter Sense.",
+    "notes": "October 1 review: the GMA museum official calendar confirms Tommy Zuko and CeJae; September 30 Rapzilla announcement confirms the complete ten-name performer bill, with DJ Focus and Keal K as hosts. Preserve approved artwork, venue, concert time, event identity and discovery age. CeJae, ADIA and JustCordell remain unlinked billing without new curated profiles.",
     "id": "future-legacy-hip-hop-showcase-nashville-2026",
     "advertisedBilling": [
       "1K Phew",
@@ -666,7 +686,9 @@
       "DJ Trendsetter Sense",
       "Parris Chariz",
       "ADIA",
-      "JustCordell"
+      "JustCordell",
+      "Tommy Zuko",
+      "CeJae"
     ],
     "hosts": [
       "DJ Focus",
@@ -1299,27 +1321,49 @@
   },
   {
     "id": "bandsintown:108902772",
-    "title": "The Sazon Experience",
+    "title": "The Sazón Experience",
     "startDate": "2026-10-17",
-    "startTime": "18:30",
-    "timezone": "",
-    "venue": "The Sazon Experience",
+    "startTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "Worth & Purpose",
     "address": "1329 E Main St",
     "city": "Lakeland",
     "state": "FL",
     "country": "US",
     "artists": [
+      "GIOVANI",
       "Issac Mansfield"
     ],
-    "headliner": "Issac Mansfield",
+    "headliner": "GIOVANI",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108902772?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/108902772?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "ticketUrl": "https://www.eventbrite.com/e/the-sazon-experience-registration-1993733985019",
+    "officialUrl": "https://www.eventbrite.com/e/the-sazon-experience-registration-1993733985019",
     "image": "assets/events/issac-mansfield-sazon-2026-10-17.jpg",
     "price": "",
-    "sourceName": "Bandsintown",
+    "sourceName": "Eventbrite — GIOVANI",
     "sources": [
+      {
+        "name": "GIOVANI official Eventbrite event and agenda",
+        "url": "https://www.eventbrite.com/e/the-sazon-experience-registration-1993733985019",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 120
+      },
+      {
+        "name": "GIOVANI official openers, DJs and host announcement",
+        "url": "https://www.instagram.com/giovani.music/p/Dc3qJSjjhBS/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 115
+      },
+      {
+        "name": "GIOVANI official Bandsintown event (time superseded by Eventbrite agenda)",
+        "url": "https://www.bandsintown.com/e/108646722-giovani-at-worth-and-purpose",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 74
+      },
       {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/108902772?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
@@ -1328,7 +1372,7 @@
         "priority": 74
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "bandsintownEventId": "108902772",
     "bandsintownArtistId": "15588396",
     "bandsintownResolvedName": "Issac Mansfield",
@@ -1339,10 +1383,32 @@
     "imageOverride": true,
     "imageSource": "Issac Mansfield official Bandsintown Sazon Experience event poster",
     "imageSourceUrl": "https://www.bandsintown.com/e/108902772",
-    "auditVerified": "2026-09-26",
+    "auditVerified": "2026-10-01",
     "legacyEventPaths": [
       "/event/the-sazon-experience-2026-10-17-lakeland-estates-mobile-home-community-e9a5d0/"
-    ]
+    ],
+    "startDateTime": "2026-10-17T19:00:00-04:00",
+    "postalCode": "33801",
+    "advertisedBilling": [
+      "GIOVANI",
+      "Issac Mansfield",
+      "Mendo",
+      "DJ Xavi",
+      "Bryce G"
+    ],
+    "officialBill": [
+      "GIOVANI",
+      "Issac Mansfield",
+      "Mendo",
+      "DJ Xavi",
+      "Bryce G"
+    ],
+    "hosts": [
+      "Branden The Speaker"
+    ],
+    "lineupExplicit": true,
+    "notes": "October 1 source review: GIOVANI is the Eventbrite headliner. His September 4 official carousel confirms Issac Mansfield, Mendo, DJ Xavi and Bryce G as musical guests, with Branden The Speaker as host. Eventbrite agenda explicitly distinguishes 6 PM meet-and-greet, 6:30 PM doors and 7 PM show. Official flyer names Worth & Purpose, 1329 E Main St, Lakeland FL33801. Preserve original Issac event identity/discovery age and approved event artwork. Giovani Bandsintown 108646722 is the same concert; its 6 AM is superseded.",
+    "authority": "official_event"
   },
   {
     "title": "Alex Zurdo: Zona Zero",

@@ -2761,7 +2761,9 @@
       "Don Ready",
       "LaNell Grant",
       "Nathan Davis Jr.",
-      "Trendsetter Sense"
+      "Trendsetter Sense",
+      "Parris Chariz",
+      "Tommy Zuko"
     ],
     "headliner": "1K Phew",
     "eventType": "concert",
@@ -2773,18 +2775,32 @@
     "sourceName": "AXS / GMA official Future Legacy listing",
     "sources": [
       {
+        "name": "GMA Dove Week official schedule",
+        "url": "https://gospelmusic.org/news/dove-week-2026-see-the-schedule",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "GMA Museum official Future Legacy calendar",
+        "url": "https://www.cgmmuseum.org/event/future-legacy-hip-hop-showcase-sponsored-by-vyb/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 120
+      },
+      {
+        "name": "Rapzilla September 30 full-lineup announcement",
+        "url": "https://rapzilla.com/2026-09-future-legacy-hip-hop-showcase-nashville-dove-awards-week/",
+        "type": "manual_verified",
+        "authority": "editorial",
+        "priority": 100
+      },
+      {
         "name": "AXS official event",
         "url": "https://www.axs.com/events/1580749/future-legacy-hip-hop-showcase-tickets",
         "type": "manual_verified",
         "authority": "venue_ticket",
         "priority": 94
-      },
-      {
-        "name": "GMA Dove Week official schedule",
-        "url": "https://gospelmusic.org/news/dove-week-2026-see-the-schedule",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 100
       }
     ],
     "lastVerified": "2026-09-12T14:12:12Z",
@@ -2795,17 +2811,21 @@
     "firstSeen": "2026-08-09T00:00:00Z",
     "authority": "venue_ticket",
     "lineupExplicit": true,
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-10-01",
     "imageOverride": true,
     "officialBill": [
-      "ADIA",
+      "1K Phew",
       "Don Ready",
-      "DJ Trendsetter",
       "LaNell Grant",
       "Nathan Davis Jr.",
-      "1K Phew"
+      "DJ Trendsetter Sense",
+      "Parris Chariz",
+      "ADIA",
+      "JustCordell",
+      "Tommy Zuko",
+      "CeJae"
     ],
-    "notes": "DJ Trendsetter is associated with roster artist Trendsetter Sense based on established professional naming as DJ Trendsetter Sense.",
+    "notes": "October 1 review: the GMA museum official calendar confirms Tommy Zuko and CeJae; September 30 Rapzilla announcement confirms the complete ten-name performer bill, with DJ Focus and Keal K as hosts. Preserve approved artwork, venue, concert time, event identity and discovery age. CeJae, ADIA and JustCordell remain unlinked billing without new curated profiles.",
     "advertisedBilling": [
       "1K Phew",
       "Don Ready",
@@ -2814,7 +2834,9 @@
       "DJ Trendsetter Sense",
       "Parris Chariz",
       "ADIA",
-      "JustCordell"
+      "JustCordell",
+      "Tommy Zuko",
+      "CeJae"
     ],
     "hosts": [
       "DJ Focus",
@@ -5919,13 +5941,16 @@
     "state": "TX",
     "country": "US",
     "artists": [
-      "WHATUPRG"
+      "WHATUPRG",
+      "aftrthght"
     ],
     "advertisedBilling": [
-      "WHATUPRG"
+      "WHATUPRG",
+      "aftrthght"
     ],
     "officialBill": [
-      "WHATUPRG"
+      "WHATUPRG",
+      "aftrthght"
     ],
     "headliner": "WHATUPRG",
     "eventType": "concert",
@@ -5941,14 +5966,14 @@
     "imagePosition": "center",
     "imageSource": "WHATUPRG official Texas announcement",
     "imageSourceUrl": "https://www.instagram.com/whatuprg/p/Dd15_j0PYey/",
-    "publicDescription": "WHATUPRG has announced a headline show in Houston on November 19, 2026. Venue, concert start time, and ticket details are pending. Visit his official website for updates.",
+    "publicDescription": "WHATUPRG with special guest aftrthght has announced a show in Houston on November 19, 2026. Venue, concert start time, and ticket details are pending. Visit his official website for updates.",
     "sourceName": "WHATUPRG official announcement",
     "authority": "artist_calendar",
     "confidence": "high",
     "firstSeen": "2026-09-30T03:02:53.929665Z",
-    "lastVerified": "2026-09-30T12:38:08.891852Z",
+    "lastVerified": "2026-10-01T16:30:00Z",
     "editorialBatch": "2026-09-30-whatuprg-announced",
-    "notes": "Owner approved publication with pending details. Official Sep 28 flyer confirms city/date. Presale Oct 1; general admission and VIP on sale Oct 2; no sale clock announced. Official website currently offers city-specific RSVP. Do not infer venue, performance time, price, address, or support lineup.",
+    "notes": "Owner and artist confirmed aftrthght supports WHATUPRG on all three Texas dates. September 30 joint Instagram announcement calls it New Saint Holy tour; presale October 1 at 10 AM and general admission October 2 at 10 AM (sale timezone unspecified). Official website still offers city RSVP on October 1. Venue, concert time, ticket URL and price remain pending; do not invent them.",
     "sources": [
       {
         "name": "WHATUPRG official Instagram announcement",
@@ -5963,6 +5988,13 @@
         "type": "artist_calendar",
         "authority": "artist_calendar",
         "priority": 110
+      },
+      {
+        "name": "aftrthght and WHATUPRG official support announcement",
+        "url": "https://www.instagram.com/aftrthght/reel/Dd7JEkyvzEh/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 120
       }
     ]
   },
@@ -6033,13 +6065,16 @@
     "state": "TX",
     "country": "US",
     "artists": [
-      "WHATUPRG"
+      "WHATUPRG",
+      "aftrthght"
     ],
     "advertisedBilling": [
-      "WHATUPRG"
+      "WHATUPRG",
+      "aftrthght"
     ],
     "officialBill": [
-      "WHATUPRG"
+      "WHATUPRG",
+      "aftrthght"
     ],
     "headliner": "WHATUPRG",
     "eventType": "concert",
@@ -6055,14 +6090,14 @@
     "imagePosition": "center",
     "imageSource": "WHATUPRG official Texas announcement",
     "imageSourceUrl": "https://www.instagram.com/whatuprg/p/Dd15_j0PYey/",
-    "publicDescription": "WHATUPRG has announced a headline show in Dallas on November 20, 2026. Venue, concert start time, and ticket details are pending. Visit his official website for updates.",
+    "publicDescription": "WHATUPRG with special guest aftrthght has announced a show in Dallas on November 20, 2026. Venue, concert start time, and ticket details are pending. Visit his official website for updates.",
     "sourceName": "WHATUPRG official announcement",
     "authority": "artist_calendar",
     "confidence": "high",
     "firstSeen": "2026-09-30T03:02:53.929665Z",
-    "lastVerified": "2026-09-30T12:38:08.892091Z",
+    "lastVerified": "2026-10-01T16:30:00Z",
     "editorialBatch": "2026-09-30-whatuprg-announced",
-    "notes": "Owner approved publication with pending details. Official Sep 28 flyer confirms city/date. Presale Oct 1; general admission and VIP on sale Oct 2; no sale clock announced. Official website currently offers city-specific RSVP. Do not infer venue, performance time, price, address, or support lineup.",
+    "notes": "Owner and artist confirmed aftrthght supports WHATUPRG on all three Texas dates. September 30 joint Instagram announcement calls it New Saint Holy tour; presale October 1 at 10 AM and general admission October 2 at 10 AM (sale timezone unspecified). Official website still offers city RSVP on October 1. Venue, concert time, ticket URL and price remain pending; do not invent them.",
     "sources": [
       {
         "name": "WHATUPRG official Instagram announcement",
@@ -6077,6 +6112,13 @@
         "type": "artist_calendar",
         "authority": "artist_calendar",
         "priority": 110
+      },
+      {
+        "name": "aftrthght and WHATUPRG official support announcement",
+        "url": "https://www.instagram.com/aftrthght/reel/Dd7JEkyvzEh/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 120
       }
     ]
   },
@@ -6268,13 +6310,16 @@
     "state": "TX",
     "country": "US",
     "artists": [
-      "WHATUPRG"
+      "WHATUPRG",
+      "aftrthght"
     ],
     "advertisedBilling": [
-      "WHATUPRG"
+      "WHATUPRG",
+      "aftrthght"
     ],
     "officialBill": [
-      "WHATUPRG"
+      "WHATUPRG",
+      "aftrthght"
     ],
     "headliner": "WHATUPRG",
     "eventType": "concert",
@@ -6290,14 +6335,14 @@
     "imagePosition": "center",
     "imageSource": "WHATUPRG official Texas announcement",
     "imageSourceUrl": "https://www.instagram.com/whatuprg/p/Dd15_j0PYey/",
-    "publicDescription": "WHATUPRG has announced a headline show in San Antonio on November 22, 2026. Venue, concert start time, and ticket details are pending. Visit his official website for updates.",
+    "publicDescription": "WHATUPRG with special guest aftrthght has announced a show in San Antonio on November 22, 2026. Venue, concert start time, and ticket details are pending. Visit his official website for updates.",
     "sourceName": "WHATUPRG official announcement",
     "authority": "artist_calendar",
     "confidence": "high",
     "firstSeen": "2026-09-30T03:02:53.929665Z",
-    "lastVerified": "2026-09-30T12:38:08.892094Z",
+    "lastVerified": "2026-10-01T16:30:00Z",
     "editorialBatch": "2026-09-30-whatuprg-announced",
-    "notes": "Owner approved publication with pending details. Official Sep 28 flyer confirms city/date. Presale Oct 1; general admission and VIP on sale Oct 2; no sale clock announced. Official website currently offers city-specific RSVP. Do not infer venue, performance time, price, address, or support lineup.",
+    "notes": "Owner and artist confirmed aftrthght supports WHATUPRG on all three Texas dates. September 30 joint Instagram announcement calls it New Saint Holy tour; presale October 1 at 10 AM and general admission October 2 at 10 AM (sale timezone unspecified). Official website still offers city RSVP on October 1. Venue, concert time, ticket URL and price remain pending; do not invent them.",
     "sources": [
       {
         "name": "WHATUPRG official Instagram announcement",
@@ -6312,6 +6357,13 @@
         "type": "artist_calendar",
         "authority": "artist_calendar",
         "priority": 110
+      },
+      {
+        "name": "aftrthght and WHATUPRG official support announcement",
+        "url": "https://www.instagram.com/aftrthght/reel/Dd7JEkyvzEh/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 120
       }
     ]
   },

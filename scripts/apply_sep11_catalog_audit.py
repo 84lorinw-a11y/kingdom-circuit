@@ -12,6 +12,8 @@ import json
 from copy import deepcopy
 from pathlib import Path
 
+from apply_sep26_requested_lineups import patch_event as apply_reviewed_lineup
+
 ROOT = Path(__file__).resolve().parents[1]
 EVENTS_FILE = ROOT / "events.json"
 SUPPLEMENTAL_FILE = ROOT / "supplemental-events.json"
@@ -227,6 +229,13 @@ NEW_EVENTS = [
         authority="venue_ticket",
     )),
 ]
+
+# Replay individually reviewed billing before this older audit writes its seeds.
+for _event_id, _event in NEW_EVENTS:
+    _reviewed = dict(_event, id=_event_id)
+    apply_reviewed_lineup(_reviewed)
+    _reviewed.pop("id", None)
+    _event.update(_reviewed)
 
 EXISTING_PATCHES = {
     "ticketmaster:k7vGF_dl6_HDp": {

@@ -200,6 +200,9 @@ const ARTIST_ROSTER_ORDER = [
   "DJ Promote",
   "Eli Williams",
   "JBthaPreacher",
+  "HeiressIrami",
+  "GIOVANI",
+  "aftrthght",
   "Redimi2",
   "Funky",
   "Pregador Luo",
@@ -2704,6 +2707,47 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/6ShMmu8ZCu6MUoJfui5YK6",
     "imageUrl": "assets/artists/jbthapreacher-primary.jpg",
     "imagePosition": "50% 20%",
+    "sourceRegistryVerified": true
+  },
+  "heiressirami": {
+    "aliases": [
+      "HeiressIrami",
+      "Heiress Irami"
+    ],
+    "website": "https://linktr.ee/heiressirami?utm_source=linktree_profile_share&ltsid=99850e3d-fa84-43c4-96fc-d4db3d4e3f45&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAafvwwot-2NdeaDKqMytlSVYHuJU6f97MkP9_-jd1P4pS4haCMg9Z4RBQ1_4mQ_aem_qE6RgGgjiTu1X0FE9nc4RQ",
+    "instagramProfile": "https://www.instagram.com/itsheiressirami/",
+    "spotifyProfile": "https://open.spotify.com/artist/5kq0WAm6kDMOKtF499g0eg",
+    "youtubeProfile": "https://www.youtube.com/@ItsHeiressirami",
+    "officialImageSource": "https://ugc.production.linktr.ee/4203992c-3c8c-49f4-9089-9031736c29c6_IMG-4576.png",
+    "imageUrl": "assets/artists/heiressirami-primary.png",
+    "imagePosition": "50% 40%",
+    "sourceRegistryVerified": true
+  },
+  "giovani": {
+    "aliases": [
+      "GIOVANI",
+      "Giovani Santiago"
+    ],
+    "website": "https://www.instagram.com/giovani.music/",
+    "instagramProfile": "https://www.instagram.com/giovani.music/",
+    "spotifyProfile": "https://open.spotify.com/artist/24ChasRK4LlBoGdhRvSCRG",
+    "youtubeProfile": "https://www.youtube.com/@giovanimusic",
+    "officialImageSource": "https://i.scdn.co/image/ab6761670000ecd462ecb68de69b8e7cd581bf91",
+    "imageUrl": "assets/artists/giovani-primary.jpg",
+    "imagePosition": "45% 40%",
+    "sourceRegistryVerified": true
+  },
+  "aftrthght": {
+    "aliases": [
+      "aftrthght"
+    ],
+    "website": "https://www.instagram.com/aftrthght/",
+    "instagramProfile": "https://www.instagram.com/aftrthght/",
+    "spotifyProfile": "https://open.spotify.com/artist/0m4Lfr9tvsHyYOUWhsbSKY",
+    "youtubeProfile": "https://www.youtube.com/channel/UC-DgRUfLZdZKE24F0bMDgog",
+    "officialImageSource": "https://i.scdn.co/image/ab6761610000e5eb44858fbd357d2a8a779c8b74",
+    "imageUrl": "assets/artists/aftrthght-primary.jpg",
+    "imagePosition": "50% 35%",
     "sourceRegistryVerified": true
   }
 };
