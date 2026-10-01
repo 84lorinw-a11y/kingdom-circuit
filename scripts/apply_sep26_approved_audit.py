@@ -83,8 +83,10 @@ PATCHES = {
         "notes": "The Ticket Tailor listing covers the entire October 16–17 conference, opening Friday at 7 PM. The organizer's Saturday schedule explicitly lists Concert featuring Brenno at 3:30 PM on October 17. Kingdom Circuit lists that music performance, not the Friday conference opening.",
     },
     "bandsintown:108902772": {
-        **artwork("issac-mansfield-sazon-2026-10-17.jpg", "https://www.bandsintown.com/e/108902772",
-                  "Issac Mansfield official Bandsintown Sazon Experience event poster"),
+        **artwork("sazon-experience-giovani-2026-10-17.jpg",
+                  "https://www.eventbrite.com/e/the-sazon-experience-registration-1993733985019",
+                  "GIOVANI official Eventbrite Sazon Experience headline flyer"),
+        "detailImageLayout": "landscape",
         "city": "Lakeland",
         "legacyEventPaths": ["/event/the-sazon-experience-2026-10-17-lakeland-estates-mobile-home-community-e9a5d0/"],
     },
