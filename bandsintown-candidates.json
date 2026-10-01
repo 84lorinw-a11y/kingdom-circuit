@@ -37,5 +37,44 @@
     "bandsintownIdentity": "exact_name_or_alias",
     "trackedArtist": "Zauntee",
     "holdReason": "festival_requires_official_lineup_confirmation"
+  },
+  {
+    "id": "bandsintown:108978117",
+    "title": "The Happiness Of Pursuit Festival 2026",
+    "startDate": "2026-10-03",
+    "startTime": "12:00",
+    "timezone": "",
+    "venue": "The Happiness Of Pursuit Festival 2026",
+    "address": "8463 Sierra Ave.",
+    "city": "Fontana",
+    "state": "California",
+    "country": "US",
+    "artists": [
+      "Propaganda"
+    ],
+    "headliner": "Propaganda",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108978117?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/108978117?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/propaganda.webp",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/108978117?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "108978117",
+    "bandsintownArtistId": "72572",
+    "bandsintownResolvedName": "Propaganda",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Propaganda",
+    "holdReason": "festival_requires_official_lineup_confirmation"
   }
 ]
