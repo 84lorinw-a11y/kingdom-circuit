@@ -3192,6 +3192,63 @@
     "imageOverride": true
   },
   {
+    "id": "manual:mayia-boxyard-saturdaze-2026",
+    "title": "Boxyard Saturdaze",
+    "startDate": "2026-10-10",
+    "startTime": "12:30",
+    "timezone": "America/New_York",
+    "venue": "Boxyard RTP — BeatBox Stage",
+    "address": "",
+    "city": "Durham",
+    "state": "NC",
+    "country": "US",
+    "artists": [
+      "MAYIA"
+    ],
+    "headliner": "MAYIA",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+    "officialUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+    "image": "assets/events/mayia-boxyard-2026-10-10.png",
+    "price": "",
+    "sourceName": "Boxyard RTP official event",
+    "sources": [
+      {
+        "name": "Boxyard RTP official event",
+        "url": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "MAYIA official calendar",
+        "url": "https://mayiawarren.org/go/bandsintown/21578/event/108885203",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "authority": "official_event",
+    "lineupExplicit": true,
+    "auditVerified": "2026-09-11",
+    "officialBill": [
+      "DJ Watty Tha Shepherd",
+      "MAYIA WARREN"
+    ],
+    "imageOverride": true,
+    "imageSourceUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+    "imageSource": "Boxyard RTP official DJ Watty and MAYIA event poster",
+    "startDateTime": "2026-10-10T11:30:00-04:00",
+    "endTime": "14:30"
+  },
+  {
     "title": "ONE DAY Fall Festival 2026",
     "startDate": "2026-10-10",
     "startTime": "16:30",
@@ -3258,63 +3315,6 @@
       "Serin Oh"
     ],
     "detailImageLayout": "landscape"
-  },
-  {
-    "id": "manual:mayia-boxyard-saturdaze-2026",
-    "title": "Boxyard Saturdaze",
-    "startDate": "2026-10-10",
-    "startTime": "12:30",
-    "timezone": "America/New_York",
-    "venue": "Boxyard RTP — BeatBox Stage",
-    "address": "",
-    "city": "Durham",
-    "state": "NC",
-    "country": "US",
-    "artists": [
-      "MAYIA"
-    ],
-    "headliner": "MAYIA",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
-    "officialUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
-    "image": "assets/events/mayia-boxyard-2026-10-10.png",
-    "price": "",
-    "sourceName": "Boxyard RTP official event",
-    "sources": [
-      {
-        "name": "Boxyard RTP official event",
-        "url": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      },
-      {
-        "name": "MAYIA official calendar",
-        "url": "https://mayiawarren.org/go/bandsintown/21578/event/108885203",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z",
-    "authority": "official_event",
-    "lineupExplicit": true,
-    "auditVerified": "2026-09-11",
-    "officialBill": [
-      "DJ Watty Tha Shepherd",
-      "MAYIA WARREN"
-    ],
-    "imageOverride": true,
-    "imageSourceUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
-    "imageSource": "Boxyard RTP official DJ Watty and MAYIA event poster",
-    "startDateTime": "2026-10-10T11:30:00-04:00",
-    "endTime": "14:30"
   },
   {
     "id": "manual:nu-wave-anointing-sacramento-2026-10-10",
@@ -3717,8 +3717,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventim.us/event/parris-chariz/699959",
     "officialUrl": "https://www.eventim.us/event/parris-chariz/699959",
-    "image": "assets/events/parris-chariz-dallas-2026-10-11.jpg",
-    "imageType": "event_artwork",
+    "image": "assets/artists/parris-chariz.webp",
+    "imageType": "artist",
     "imagePosition": "center",
     "price": "",
     "sourceName": "Spune / Eventim official listing",
@@ -3740,10 +3740,7 @@
         "authority": "official_event",
         "priority": 100
       }
-    ],
-    "imageOverride": true,
-    "imageSource": "Eventim official Parris Chariz Dallas event flyer",
-    "imageSourceUrl": "https://www.eventim.us/event/parris-chariz/699959"
+    ]
   },
   {
     "id": "manual:cj-emulous-turlock-back-to-school-2026",
@@ -3986,6 +3983,74 @@
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-09-12T14:30:41Z"
+  },
+  {
+    "title": "Mike Malagies — It’s A God Night (Miami)",
+    "startDate": "2026-10-16",
+    "startTime": "19:00",
+    "doorsTime": "18:30",
+    "timezone": "America/New_York",
+    "venue": "Black Box Media Miami",
+    "address": "12355 NE 13th Ave Unit #403-404",
+    "city": "North Miami",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Mike Malagies"
+    ],
+    "headliner": "Mike Malagies",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
+    "officialUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
+    "image": "assets/events/mike-malagies-miami-2026-10-16.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "lineupExplicit": true,
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "sourceName": "TicketSource exact event listing",
+    "sources": [
+      {
+        "name": "TicketSource exact event listing",
+        "url": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      },
+      {
+        "name": "Black Box Media Miami official venue",
+        "url": "https://www.blackboxstudiosmiami.com/event-list",
+        "type": "manual_verified",
+        "authority": "venue",
+        "priority": 112
+      },
+      {
+        "name": "TicketSource exact event listing",
+        "url": "https://www.ticketsource.com/the-sound-system/mike-malagies-florida-takeover-miami/e-vgxqxl",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      }
+    ],
+    "auditVerified": "2026-09-26",
+    "id": "manual:mike-malagies-florida-takeover-miami-2026",
+    "startDateTime": "2026-10-16T19:00:00-04:00",
+    "advertisedBilling": [
+      "Mike Malagies",
+      "DJ JBEZ"
+    ],
+    "firstSeen": "2026-09-13T14:21:37Z",
+    "legacyEventPaths": [
+      "/event/mike-malagies-florida-takeover-miami-2026-10-16-north-miami-6a5e6f/"
+    ],
+    "legacyEventNotice": "This concert is now listed as Mike Malagies — It’s A God Night (Miami), starting at 7:00 PM on October 16.",
+    "notes": "TicketSource describes VIP 6:00–6:30 PM, doors 6:30 PM, concert starting at 7:00 PM with DJ JBEZ, and Mike Malagies 7:30–9:00 PM. The listing header's 6:30 PM is doors.",
+    "imageSourceUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
+    "imageSource": "Official TicketSource It's A God Night Miami flyer",
+    "soldOut": true,
+    "ticketAvailability": "sold_out"
   },
   {
     "id": "manual:eventbrite:rare-of-breed-jacksonville-2026",
@@ -5043,7 +5108,7 @@
     "eventType": "festival",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/a2407af7-a012-4df1-8d42-d247ab82cd8b/FF26-Promo-Friday-Night%2B%281%29.jpg",
+    "image": "assets/events/flavor-fest-friday-2026.webp",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -5324,6 +5389,117 @@
     "imageOverride": true,
     "imageSource": "Official Christlike University Florida tour flyer listing Miami, Jacksonville and Orlando dates",
     "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
+  },
+  {
+    "id": "ticketmaster:vv1AAZk3FGkdmpCG1",
+    "title": "Beyond The Walls 2026",
+    "startDate": "2026-11-07",
+    "startTime": "19:30",
+    "timezone": "America/New_York",
+    "venue": "The Cambridge Room at House of Blues Cleveland",
+    "address": "308 Euclid Ave",
+    "city": "Cleveland",
+    "state": "OH",
+    "country": "US",
+    "artists": [
+      "KB",
+      "Brenno",
+      "Mike Teezy",
+      "Porsha Love",
+      "Eli Williams"
+    ],
+    "headliner": "KB",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+    "officialUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+    "image": "assets/events/beyond-the-walls-cleveland-2026-11-07.jpg",
+    "price": "",
+    "sourceName": "Ticketmaster / House of Blues Cleveland",
+    "sources": [
+      {
+        "name": "Ticketmaster / House of Blues Cleveland",
+        "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      },
+      {
+        "name": "Beyond The Walls promoter's official flyer",
+        "url": "https://www.instagram.com/p/DbwTgsNRsyI/",
+        "type": "manual_verified",
+        "authority": "organizer",
+        "priority": 115
+      },
+      {
+        "name": "Ticketmaster",
+        "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+        "type": "ticketmaster",
+        "authority": "venue_ticket",
+        "priority": 94
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-07-30T03:46:47Z",
+    "doorsTime": "19:30",
+    "startDateTime": "2026-11-07T19:30:00-05:00",
+    "advertisedBilling": [
+      "KB",
+      "Brenno",
+      "Mike Teezy",
+      "Porsha Love",
+      "Taylor Wells",
+      "Renzoe",
+      "Eli Williams"
+    ],
+    "officialBill": [
+      "KB",
+      "Brenno",
+      "Mike Teezy",
+      "Porsha Love",
+      "Taylor Wells",
+      "Renzoe",
+      "Eli Williams"
+    ],
+    "lineupExplicit": true,
+    "auditVerified": "2026-09-26",
+    "authority": "venue_ticket",
+    "legacyEventPaths": [
+      "/event/beyond-the-walls-2026-11-07-cleveland-91b8a7/",
+      "/event/beyond-the-walls-3-2026-11-07-cleveland-3fa023/"
+    ],
+    "legacyEventNotice": "Beyond The Walls 2026 takes place November 7 at 7:30 PM.",
+    "mergedFromIds": [
+      "bandsintown:108631622",
+      "official:4e2fc5c7c02ab1d34b9e",
+      "supplemental:beyond-the-walls-3-brenno-2026"
+    ],
+    "notes": "Promoter submission and the official Eric Stephens / Beyond The Walls Instagram flyer confirm KB, Brenno, Mike Teezy, Porsha Love, Taylor Wells and Renzoe. This resolves the earlier incomplete Ticketmaster bill. Flyer explicitly dates November 7, 2026 and labels 6 PM VIP entry / 7:30 PM GA doors; Ticketmaster confirms music at 8 PM; the owner explicitly requested that Kingdom Circuit display 7:30 PM for this show on September 26, superseding the earlier 8 PM display. The owner requested the public title Beyond The Walls 2026 on September 28, superseding Beyond The Walls 3 and the submission's conflicting 2027 title. The owner also requested Eli Williams as DJ; his name appears on the same flyer and his official profile https://www.instagram.com/eliwilliamssss/ confirms his DJ role. Taylor Wells and Renzoe remain visible unlinked billing because they are outside the curated roster. Eli Williams was added to the owner-verified roster on September 29 and is now linked to his artist profile.",
+    "sourceConflicts": [
+      {
+        "url": "https://music.apple.com/us/concerts/ce.01a1c61a-49a9-4e19-b629-46bac43b4970",
+        "reportedArtist": "Mike Teezy",
+        "reportedStartTime": "18:00",
+        "resolution": "Promoter submission and official flyer confirm Mike Teezy on the canonical event. Keep the duplicate merged; 6 PM is VIP entry on the flyer. Ticketmaster labels 7:30 PM doors and 8 PM music; the owner explicitly chose the 7:30 PM listing time for Kingdom Circuit.",
+        "resolvedBy": "https://www.instagram.com/p/DbwTgsNRsyI/",
+        "resolvedDate": "2026-09-26"
+      },
+      {
+        "url": "https://www.bandsintown.com/e/108631622",
+        "reportedArtist": "Mike Teezy",
+        "reportedStartTime": "18:00",
+        "resolution": "Promoter submission and official flyer confirm Mike Teezy on the canonical event. Keep the duplicate merged; 6 PM is VIP entry on the flyer. Ticketmaster labels 7:30 PM doors and 8 PM music; the owner explicitly chose the 7:30 PM listing time for Kingdom Circuit.",
+        "resolvedBy": "https://www.instagram.com/p/DbwTgsNRsyI/",
+        "resolvedDate": "2026-09-26"
+      }
+    ],
+    "imageOverride": true,
+    "imageSource": "Promoter's official Beyond The Walls Cleveland flyer",
+    "imageSourceUrl": "https://www.instagram.com/p/DbwTgsNRsyI/"
   },
   {
     "id": "bandsintown:108940372",
@@ -6681,7 +6857,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.songkick.com/artists/10314485-kaden-jordan",
     "officialUrl": "https://kadenjordan.com/pages/tour",
-    "image": "assets/artists/kaden-jordan-show-photo.jpg",
+    "image": "https://images.sk-static.com/images/media/profile_images/artists/10314485/large_avatar",
     "imageType": "artist",
     "imagePosition": "center",
     "price": "",
@@ -6704,10 +6880,7 @@
         "authority": "artist_calendar",
         "priority": 90
       }
-    ],
-    "imageOverride": true,
-    "imageSource": "Artist-linked Songkick photo",
-    "imageSourceUrl": "https://images.sk-static.com/images/media/img/col6/20260125-085329-919918.jpg"
+    ]
   },
   {
     "id": "manual:egr-2026-12-12-jamestown-nd",
@@ -7129,184 +7302,5 @@
         "priority": 112
       }
     ]
-  },
-  {
-    "title": "Mike Malagies — It’s A God Night (Miami)",
-    "startDate": "2026-10-16",
-    "startTime": "19:00",
-    "doorsTime": "18:30",
-    "timezone": "America/New_York",
-    "venue": "Black Box Media Miami",
-    "address": "12355 NE 13th Ave Unit #403-404",
-    "city": "North Miami",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Mike Malagies"
-    ],
-    "headliner": "Mike Malagies",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
-    "officialUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
-    "image": "assets/events/mike-malagies-miami-2026-10-16.png",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "lineupExplicit": true,
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "sourceName": "TicketSource exact event listing",
-    "sources": [
-      {
-        "name": "TicketSource exact event listing",
-        "url": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      },
-      {
-        "name": "Black Box Media Miami official venue",
-        "url": "https://www.blackboxstudiosmiami.com/event-list",
-        "type": "manual_verified",
-        "authority": "venue",
-        "priority": 112
-      },
-      {
-        "name": "TicketSource exact event listing",
-        "url": "https://www.ticketsource.com/the-sound-system/mike-malagies-florida-takeover-miami/e-vgxqxl",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-26",
-    "id": "manual:mike-malagies-florida-takeover-miami-2026",
-    "startDateTime": "2026-10-16T19:00:00-04:00",
-    "advertisedBilling": [
-      "Mike Malagies",
-      "DJ JBEZ"
-    ],
-    "firstSeen": "2026-09-13T14:21:37Z",
-    "legacyEventPaths": [
-      "/event/mike-malagies-florida-takeover-miami-2026-10-16-north-miami-6a5e6f/"
-    ],
-    "legacyEventNotice": "This concert is now listed as Mike Malagies — It’s A God Night (Miami), starting at 7:00 PM on October 16.",
-    "notes": "TicketSource describes VIP 6:00–6:30 PM, doors 6:30 PM, concert starting at 7:00 PM with DJ JBEZ, and Mike Malagies 7:30–9:00 PM. The listing header's 6:30 PM is doors.",
-    "imageSourceUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
-    "imageSource": "Official TicketSource It's A God Night Miami flyer",
-    "soldOut": true,
-    "ticketAvailability": "sold_out"
-  },
-  {
-    "id": "ticketmaster:vv1AAZk3FGkdmpCG1",
-    "title": "Beyond The Walls 2026",
-    "startDate": "2026-11-07",
-    "startTime": "19:30",
-    "timezone": "America/New_York",
-    "venue": "The Cambridge Room at House of Blues Cleveland",
-    "address": "308 Euclid Ave",
-    "city": "Cleveland",
-    "state": "OH",
-    "country": "US",
-    "artists": [
-      "KB",
-      "Brenno",
-      "Mike Teezy",
-      "Porsha Love",
-      "Eli Williams"
-    ],
-    "headliner": "KB",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
-    "officialUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
-    "image": "assets/events/beyond-the-walls-cleveland-2026-11-07.jpg",
-    "price": "",
-    "sourceName": "Ticketmaster / House of Blues Cleveland",
-    "sources": [
-      {
-        "name": "Ticketmaster / House of Blues Cleveland",
-        "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      },
-      {
-        "name": "Beyond The Walls promoter's official flyer",
-        "url": "https://www.instagram.com/p/DbwTgsNRsyI/",
-        "type": "manual_verified",
-        "authority": "organizer",
-        "priority": 115
-      },
-      {
-        "name": "Ticketmaster",
-        "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
-        "type": "ticketmaster",
-        "authority": "venue_ticket",
-        "priority": 94
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-07-30T03:46:47Z",
-    "doorsTime": "19:30",
-    "startDateTime": "2026-11-07T19:30:00-05:00",
-    "advertisedBilling": [
-      "KB",
-      "Brenno",
-      "Mike Teezy",
-      "Porsha Love",
-      "Taylor Wells",
-      "Renzoe",
-      "Eli Williams"
-    ],
-    "officialBill": [
-      "KB",
-      "Brenno",
-      "Mike Teezy",
-      "Porsha Love",
-      "Taylor Wells",
-      "Renzoe",
-      "Eli Williams"
-    ],
-    "lineupExplicit": true,
-    "auditVerified": "2026-09-26",
-    "authority": "venue_ticket",
-    "legacyEventPaths": [
-      "/event/beyond-the-walls-2026-11-07-cleveland-91b8a7/",
-      "/event/beyond-the-walls-3-2026-11-07-cleveland-3fa023/"
-    ],
-    "legacyEventNotice": "Beyond The Walls 2026 takes place November 7 at 7:30 PM.",
-    "mergedFromIds": [
-      "bandsintown:108631622",
-      "official:4e2fc5c7c02ab1d34b9e",
-      "supplemental:beyond-the-walls-3-brenno-2026"
-    ],
-    "notes": "Promoter submission and the official Eric Stephens / Beyond The Walls Instagram flyer confirm KB, Brenno, Mike Teezy, Porsha Love, Taylor Wells and Renzoe. This resolves the earlier incomplete Ticketmaster bill. Flyer explicitly dates November 7, 2026 and labels 6 PM VIP entry / 7:30 PM GA doors; Ticketmaster confirms music at 8 PM; the owner explicitly requested that Kingdom Circuit display 7:30 PM for this show on September 26, superseding the earlier 8 PM display. The owner requested the public title Beyond The Walls 2026 on September 28, superseding Beyond The Walls 3 and the submission's conflicting 2027 title. The owner also requested Eli Williams as DJ; his name appears on the same flyer and his official profile https://www.instagram.com/eliwilliamssss/ confirms his DJ role. Taylor Wells and Renzoe remain visible unlinked billing because they are outside the curated roster. Eli Williams was added to the owner-verified roster on September 29 and is now linked to his artist profile.",
-    "sourceConflicts": [
-      {
-        "url": "https://music.apple.com/us/concerts/ce.01a1c61a-49a9-4e19-b629-46bac43b4970",
-        "reportedArtist": "Mike Teezy",
-        "reportedStartTime": "18:00",
-        "resolution": "Promoter submission and official flyer confirm Mike Teezy on the canonical event. Keep the duplicate merged; 6 PM is VIP entry on the flyer. Ticketmaster labels 7:30 PM doors and 8 PM music; the owner explicitly chose the 7:30 PM listing time for Kingdom Circuit.",
-        "resolvedBy": "https://www.instagram.com/p/DbwTgsNRsyI/",
-        "resolvedDate": "2026-09-26"
-      },
-      {
-        "url": "https://www.bandsintown.com/e/108631622",
-        "reportedArtist": "Mike Teezy",
-        "reportedStartTime": "18:00",
-        "resolution": "Promoter submission and official flyer confirm Mike Teezy on the canonical event. Keep the duplicate merged; 6 PM is VIP entry on the flyer. Ticketmaster labels 7:30 PM doors and 8 PM music; the owner explicitly chose the 7:30 PM listing time for Kingdom Circuit.",
-        "resolvedBy": "https://www.instagram.com/p/DbwTgsNRsyI/",
-        "resolvedDate": "2026-09-26"
-      }
-    ],
-    "imageOverride": true,
-    "imageSource": "Promoter's official Beyond The Walls Cleveland flyer",
-    "imageSourceUrl": "https://www.instagram.com/p/DbwTgsNRsyI/"
   }
 ]
