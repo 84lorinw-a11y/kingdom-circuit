@@ -1,6 +1,6 @@
 {
   "policyVersion": 7,
-  "generatedAt": "2026-10-01T16:47:56Z",
+  "generatedAt": "2026-10-01T18:03:34Z",
   "highRiskArtists": [
     {
       "artist": "Mike Malagies",
@@ -378,6 +378,19 @@
     "Held festival candidates create workflow warnings until an official lineup is verified and published."
   ],
   "heldFestivalCandidates": [
+    {
+      "id": "bandsintown:108978117",
+      "title": "The Happiness Of Pursuit Festival 2026",
+      "startDate": "2026-10-03",
+      "city": "Fontana",
+      "state": "California",
+      "artists": [
+        "Propaganda"
+      ],
+      "officialUrl": "https://www.bandsintown.com/e/108978117?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+      "status": "needs_official_lineup_review",
+      "reason": "A tracked artist calendar reports this festival, but no official-lineup record is published yet."
+    },
     {
       "id": "bandsintown:108938482",
       "title": "Awake-Fest 2026",
