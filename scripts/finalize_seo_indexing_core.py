@@ -168,6 +168,7 @@ def finalize_artist_name_layout(root: pathlib.Path) -> None:
     layouts = (
         ("jimmy-rock", "jimmy", "clamp(2rem, 14vw, 6.2rem)"),
         ("jbthapreacher", "jbthapreacher", "clamp(1.75rem, 10vw, 3rem)"),
+        ("heiressirami", "heiressirami", "clamp(1.75rem, 10vw, 3rem)"),
     )
     for slug, marker, font_size in layouts:
         page = root / f"artists/{slug}/index.html"
