@@ -55,11 +55,14 @@ class OctoberIntakeTests(unittest.TestCase):
         self.assertTrue(removed_event({'officialBill': ['Propaganda']}))
         self.assertFalse(removed_event({'artists': ['DJ Promote'], 'hosts': ['Propaganda'], 'title': 'Real Ones Day Party'}))
 
-    def test_every_verified_intake_artist_has_a_saved_decodable_portrait(self):
+    def test_every_verified_intake_artist_has_a_saved_registered_portrait(self):
         roster = json.loads((ROOT / 'config/verified-artist-registry-updates.json').read_text())
         intake = [r for r in roster if 190 <= int(r.get('sheetRosterOrder') or 0) <= 213]
         self.assertEqual(len(intake), 24)
-        photos = load_portraits(ROOT, decode=True)
+        # This unit suite runs before the image backend is installed. Check the
+        # saved files, digests and registry here; verify_oct2_verified_intake
+        # mandatorily decodes originals and responsive variants after the build.
+        photos = load_portraits(ROOT)
         active = {r['name']: r for r in json.loads((ROOT / 'config/artists.json').read_text())}
         for row in intake:
             self.assertIn(row['name'], photos)
