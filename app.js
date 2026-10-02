@@ -3003,7 +3003,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "youtubeProfile": "https://www.youtube.com/channel/UCHqUPmNbIMp_CKMWnZPWmwQ",
     "officialImageSource": "https://www.instagram.com/wiff.p/",
     "imageUrl": "assets/artists/wiff-p-approved-oct2.jpg",
-    "imagePosition": "50% 30%",
+    "imagePosition": "50% 25%",
     "label": "Crownless Kingz",
     "sourceRegistryVerified": true
   },
@@ -3183,7 +3183,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "youtubeProfile": "https://www.youtube.com/channel/UCEh_A-AMAN6CJLfdfYl5zhA",
     "officialImageSource": "https://www.instagram.com/b.wade_sbg_music/",
     "imageUrl": "assets/artists/b-wade-sbg-approved-oct2.jpg",
-    "imagePosition": "50% 20%",
+    "imagePosition": "50% 0%",
     "label": "Resurrection Records",
     "sourceRegistryVerified": true
   },
@@ -4027,7 +4027,7 @@ const STATIC_ARTIST_PORTRAITS = {
   },
   "wiff.p": {
     "imageUrl": "assets/artists/wiff-p-approved-oct2.jpg",
-    "imagePosition": "50% 30%"
+    "imagePosition": "50% 25%"
   },
   "dondrae": {
     "imageUrl": "assets/artists/dondrae-approved-oct2.jpg",
@@ -4071,7 +4071,7 @@ const STATIC_ARTIST_PORTRAITS = {
   },
   "b-wade sbg": {
     "imageUrl": "assets/artists/b-wade-sbg-approved-oct2.jpg",
-    "imagePosition": "50% 20%"
+    "imagePosition": "50% 0%"
   },
   "da young disciples": {
     "imageUrl": "assets/artists/da-young-disciples-approved-oct2.jpg",
