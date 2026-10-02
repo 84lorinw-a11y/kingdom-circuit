@@ -12,6 +12,7 @@ from urllib.parse import unquote, urlsplit
 from zoneinfo import ZoneInfo
 
 from finalize_artist_schedule_years import apply as verify_artist_schedule_years
+from artist_portraits import verify_site as verify_artist_portraits
 
 
 INACTIVE = {"cancelled", "canceled", "postponed", "merged"}
@@ -92,6 +93,8 @@ def local_target(site: pathlib.Path, href: str) -> pathlib.Path | None:
 
 
 def verify(site: pathlib.Path) -> dict[str, int]:
+    # Run after all late redesign passes, immediately before Pages upload.
+    portrait_report = verify_artist_portraits(site)
     failures: list[str] = []
     required = (
         "index.html",
@@ -285,6 +288,7 @@ def verify(site: pathlib.Path) -> dict[str, int]:
             "Live redesign verification failed:\n" + "\n".join(failures[:100])
         )
     report = {
+        "savedArtistPortraits": portrait_report["savedPortraits"],
         "htmlPages": len(pages),
         "artistProfiles": len(profile_pages),
         "expected808Shows": expected_808,

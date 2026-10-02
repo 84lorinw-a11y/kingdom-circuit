@@ -253,6 +253,27 @@ class PublicImageRepairsTests(unittest.TestCase):
             with self.assertRaises(SystemExit):
                 repairs.apply(site)
 
+    def test_saved_profile_can_replace_legacy_json_photo_without_losing_focal_checks(self) -> None:
+        from artist_portraits import load_portraits
+        saved = load_portraits()["Hulvey"]
+        with tempfile.TemporaryDirectory() as raw:
+            site = self.build_site(Path(raw))
+            # The old event portrait remains in historical HTML, while active
+            # events have flyers and the profile has its separately saved photo.
+            for relative in ("events.json", "supplemental-events.json"):
+                path = site / relative
+                path.write_text(path.read_text().replace(HULVEY, "https://example.com/flyer.jpg"))
+            artist = {"name": "Hulvey", "imageUrl": saved["asset"], "imagePosition": saved["position"]}
+            config = site / "config/artists.json"
+            config.write_text(json.dumps([artist]))
+            repairs.apply(site)
+            failures, _ = verifier.verify(site)
+            self.assertNotIn("focal-json-missing:hulvey", failures)
+            artist["imageUrl"] = "/assets/wrong-photo.jpg"
+            config.write_text(json.dumps([artist]))
+            failures, _ = verifier.verify(site)
+            self.assertIn("focal-json-missing:hulvey", failures)
+
 
 if __name__ == "__main__":
     unittest.main()

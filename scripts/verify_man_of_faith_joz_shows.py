@@ -56,7 +56,9 @@ def verify(site: Path) -> None:
             assert "Venue to be announced" in detail
         listing_paths = ["shows/index.html", f"{builder.state_path(source['state']).strip('/')}/index.html"]
         # Public feeds remove firstSeen, so test New Shows against the reviewed discovery time.
-        if (dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(source["firstSeen"].replace("Z", "+00:00"))).total_seconds() < 7 * 86400:
+        # Match the published seven-calendar-day window (today plus six days),
+        # not a rolling 168 hours that still demands expired cards on day seven.
+        if dt.datetime.fromisoformat(source["firstSeen"].replace("Z", "+00:00")).date() >= builder.TODAY - dt.timedelta(days=6):
             listing_paths.append("new-shows/index.html")
         for path in listing_paths:
             cards = re.findall(r'<article\b[^>]*data-event-card[^>]*>.*?</article>', (site / path).read_text(), re.S)

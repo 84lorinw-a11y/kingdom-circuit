@@ -13,6 +13,8 @@ import re
 from pathlib import Path
 from urllib.parse import urlparse
 
+from artist_portraits import apply_to_records, load_portraits
+
 SYNC_VERSION = 8
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
@@ -165,6 +167,12 @@ def sync_config() -> tuple[list[dict], list[dict], int]:
     if names[54:54 + len(update_names)] != update_names:
         raise SystemExit(f"Verified registry block did not land exactly after roster position 54: {update_names}")
 
+    # Portraits are editorial assets, not daily refresh data. Apply the saved
+    # copy after the Sheet handoff, including the runtime app payload.
+    portraits = load_portraits(ROOT)
+    changed += apply_to_records(final_artists, portraits)
+    apply_to_records(updates, portraits)
+
     ARTISTS_FILE.write_text(
         json.dumps(final_artists, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
@@ -217,6 +225,15 @@ def registry_payload(update: dict) -> dict:
 def sync_app(artists: list[dict], updates: list[dict]) -> bool:
     text = APP_FILE.read_text(encoding="utf-8")
     original = text
+
+    portraits = load_portraits(ROOT)
+    static_payload = {norm(name): {"imageUrl": p["asset"], "imagePosition": p.get("position", "center")}
+                      for name, p in portraits.items()}
+    static_js = "const STATIC_ARTIST_PORTRAITS = " + json.dumps(static_payload, indent=2, ensure_ascii=False) + ";"
+    if "const STATIC_ARTIST_PORTRAITS = " in text:
+        text = re.sub(r"const STATIC_ARTIST_PORTRAITS = \{.*?\n\};", lambda _: static_js, text, count=1, flags=re.S)
+    else:
+        text = text.replace("const ARTIST_OVERRIDES = {", static_js + "\n\nconst ARTIST_OVERRIDES = {", 1)
 
     roster_names = [str(item.get("name") or "") for item in artists]
     roster_js = "const ARTIST_ROSTER_ORDER = " + json.dumps(roster_names, indent=2, ensure_ascii=False) + ";"

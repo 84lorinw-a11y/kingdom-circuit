@@ -468,13 +468,16 @@ ROWS = [
 
 
 def main() -> int:
+    from artist_portraits import apply_to_records, load_portraits
+    rows = [dict(row) for row in ROWS]
+    apply_to_records(rows, load_portraits(ROOT))
     updates = json.loads(UPDATES_FILE.read_text(encoding="utf-8"))
     replacement_names = {row["name"].casefold() for row in ROWS}
     updates = [
         row for row in updates
         if str(row.get("name") or "").casefold() not in replacement_names
     ]
-    updates.extend(ROWS)
+    updates.extend(rows)
     updates.sort(key=lambda row: int(row["rosterOrder"]))
     UPDATES_FILE.write_text(
         json.dumps(updates, indent=2, ensure_ascii=False) + "\n",
@@ -482,7 +485,7 @@ def main() -> int:
     )
 
     image_overrides = json.loads(IMAGE_OVERRIDES_FILE.read_text(encoding="utf-8"))
-    image_overrides.update({row["name"]: row["imageUrl"] for row in ROWS})
+    image_overrides.update({row["name"]: row["imageUrl"] for row in rows})
     IMAGE_OVERRIDES_FILE.write_text(
         json.dumps(image_overrides, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",

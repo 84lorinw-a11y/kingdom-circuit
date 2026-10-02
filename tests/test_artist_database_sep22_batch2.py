@@ -31,7 +31,11 @@ VERIFIED_WEBSITE_ARTISTS = {
 class ArtistDatabaseSeptember22BatchTwoTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.expected = {row["name"]: row for row in ROWS}
+        # Preserve the exact approved source identity while serving its saved
+        # local copy. Socials and source roster positions remain unchanged.
+        cls.portraits = json.loads((ROOT / "config/artist-portraits.json").read_text())
+        cls.expected = {row["name"]: dict(row, imageUrl=cls.portraits[row["name"]]["asset"])
+                        for row in ROWS}
         cls.updates = json.loads(
             (ROOT / "config" / "verified-artist-registry-updates.json").read_text(
                 encoding="utf-8"
@@ -73,10 +77,11 @@ class ArtistDatabaseSeptember22BatchTwoTests(unittest.TestCase):
                     self.assertEqual(expected[field], artist.get(field), field)
                 self.assertEqual(expected["imageUrl"], self.image_overrides[name])
                 self.assertRegex(
-                    expected["imageUrl"],
+                    self.portraits[name]["previousSource"],
                     r"^https://image-cdn-(?:ak|fa)\.spotifycdn\.com/image/",
                 )
-                self.assertIn("ab6761610000e5eb", expected["imageUrl"])
+                self.assertIn("ab6761610000e5eb", self.portraits[name]["previousSource"])
+                self.assertTrue((ROOT / expected["imageUrl"]).is_file())
                 if name in VERIFIED_WEBSITE_ARTISTS:
                     self.assertTrue(artist.get("websiteRegistryVerified"))
 

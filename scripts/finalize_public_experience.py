@@ -17,6 +17,7 @@ import apply_public_audit_repairs
 import apply_public_image_repairs
 import apply_public_ux_repairs
 import optimize_public_images
+import artist_portraits
 import verify_public_audit
 import verify_public_image_repairs
 import verify_public_performance
@@ -138,6 +139,9 @@ def finalize_public_experience(site: Path) -> dict[str, Any]:
     focal_preparation = apply_public_image_repairs.apply(site, focal_only=True)
 
     image_backend = ensure_image_backend()
+    # Fail before optimization can hide an external dependency behind a
+    # successful one-off download. Portraits must already be saved locally.
+    portrait_sources = artist_portraits.verify_site(site, optimized=False)
     remote_images = is_production_workflow() or env_enabled("KC_PUBLIC_IMAGE_REMOTE")
     if env_enabled("KC_PUBLIC_IMAGE_OFFLINE"):
         remote_images = False
@@ -154,6 +158,8 @@ def finalize_public_experience(site: Path) -> dict[str, Any]:
     optimizer_status = optimize_public_images.main(optimizer_args)
     if optimizer_status:
         raise RuntimeError(f"Production image optimization failed with status {optimizer_status}")
+
+    print("Static artist portraits verified:", portrait_sources)
 
     ux_repairs = apply_public_ux_repairs.apply(site)
     image_repairs = apply_public_image_repairs.apply(site)

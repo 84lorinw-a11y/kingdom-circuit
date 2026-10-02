@@ -205,7 +205,24 @@ def verify(site: Path) -> tuple[list[str], dict[str, object]]:
             failures.append(f"focal-html-missing:{marker}")
     for marker, json_count in json_counts.items():
         if json_count == 0:
-            failures.append(f"focal-json-missing:{marker}")
+            # The legacy event portrait may now occur only in archived HTML.
+            # A deliberately saved, different profile portrait does not need
+            # the old image's focal rule. Require that exact registered file
+            # in the current artist JSON before accepting this transition.
+            from artist_portraits import ROOT, load_portraits
+            saved = load_portraits(ROOT)
+            replacement = next((p for name, p in saved.items()
+                                if name.casefold().replace(" ", "-") == marker), None)
+            artist_rows = json.loads((site / "config/artists.json").read_text())
+            replacement_present = replacement and any(
+                str(row.get("name", "")).casefold().replace(" ", "-") == marker
+                and (str(row.get("imageUrl", "")).lstrip("/") == replacement["asset"]
+                     or image_basename(row.get("imageUrl", "")).startswith(replacement["sha256"][:24] + "-w"))
+                and row.get("imagePosition") == replacement.get("position", "center")
+                for row in artist_rows
+            )
+            if not replacement_present:
+                failures.append(f"focal-json-missing:{marker}")
 
     manifest_path = site / OPTIMIZED_MANIFEST
     requested_widths: list[int] = []

@@ -85,11 +85,14 @@ class MultiPageProductionTests(unittest.TestCase):
             "https://music.apple.com/us/artist/jon-keith/1139914139",
             artist.get("officialImageSource"),
         )
-        self.assertIn("mzstatic.com", artist.get("imageUrl", ""))
+        portrait = json.loads((ROOT / "config/artist-portraits.json").read_text())["Jon Keith"]
+        self.assertEqual(portrait["asset"], artist["imageUrl"])
+        self.assertTrue((ROOT / artist["imageUrl"]).is_file())
+        self.assertIn("mzstatic.com", portrait["previousSource"])
 
         events = json.loads((ROOT / "supplemental-events.json").read_text(encoding="utf-8"))
         event = next(item for item in events if item.get("id") == "bandsintown:1040178082")
-        self.assertEqual(artist["imageUrl"], event.get("image"))
+        self.assertEqual(portrait["previousSource"], event.get("image"))
 
     def test_event_images_have_fixed_frame(self):
         css = (ROOT / "styles.css").read_text(encoding="utf-8")

@@ -1006,7 +1006,8 @@ def arguments(argv: Optional[list[str]] = None) -> argparse.Namespace:
     parser.add_argument("--workers", type=int, default=6)
     parser.add_argument("--timeout", type=float, default=12.0, help="Per-download timeout in seconds")
     parser.add_argument("--wall-time", type=float, default=180.0, help="Total soft deadline in seconds")
-    parser.add_argument("--max-images", type=int, default=256)
+    parser.add_argument("--max-images", type=int, default=0,
+                        help="Optional inventory ceiling; 0 processes all sources within the byte/time budgets")
     parser.add_argument("--max-image-bytes", type=int, default=12 * 1024 * 1024)
     parser.add_argument("--max-total-bytes", type=int, default=192 * 1024 * 1024)
     parser.add_argument("--offline", action="store_true", help="Skip remote downloads and preserve their URLs")
@@ -1019,8 +1020,8 @@ def arguments(argv: Optional[list[str]] = None) -> argparse.Namespace:
         parser.error("--timeout must be greater than 0 and at most 60 seconds")
     if args.wall_time <= 0 or args.wall_time > 900:
         parser.error("--wall-time must be greater than 0 and at most 900 seconds")
-    if args.max_images < 1 or args.max_images > 1000:
-        parser.error("--max-images must be between 1 and 1000")
+    if args.max_images < 0 or args.max_images > 1000:
+        parser.error("--max-images must be between 0 and 1000")
     if args.max_image_bytes < 64 * 1024 or args.max_image_bytes > 64 * 1024 * 1024:
         parser.error("--max-image-bytes must be between 64 KiB and 64 MiB")
     if args.max_total_bytes < args.max_image_bytes or args.max_total_bytes > 1024 * 1024 * 1024:
@@ -1063,18 +1064,16 @@ def main(argv: Optional[list[str]] = None) -> int:
     local_source_count = sum(
         1 for _, source in optimizable_ranked if source.local_path is not None
     )
-    if local_source_count > args.max_images:
+    if args.max_images and len(optimizable_ranked) > args.max_images:
         print(
-            "error: --max-images is lower than the eligible local source count "
-            f"({args.max_images} < {local_source_count})",
+            "error: --max-images is lower than the eligible source count; "
+            "refusing to silently drop images "
+            f"({args.max_images} < {len(optimizable_ranked)})",
             file=sys.stderr,
         )
         return 2
-    selected = [source for _, source in optimizable_ranked[: args.max_images]]
-    failures: dict[str, str] = {
-        source.key: "candidate-limit"
-        for _, source in optimizable_ranked[args.max_images :]
-    }
+    selected = [source for _, source in optimizable_ranked]
+    failures: dict[str, str] = {}
     if args.offline:
         for source in selected:
             if source.remote_url:

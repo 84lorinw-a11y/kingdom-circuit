@@ -1033,6 +1033,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6tO2zQcTIRfR2Xdsm9XnL7",
     "youtubeProfile": "https://www.youtube.com/@MikeTeezy",
     "officialImageSource": "https://www.miketeezymusic.com/",
+    "imageUrl": "assets/artists/mike-teezy-saved.png",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "porsha love": {
@@ -1044,6 +1046,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/09TMRjnEN1r9vDFa4XmbbG",
     "youtubeProfile": "https://www.youtube.com/@iamporshalove",
     "officialImageSource": "https://www.instagram.com/porshalove/",
+    "imageUrl": "assets/artists/porsha-love-saved.webp",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "nicky gracious": {
@@ -1055,6 +1059,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1cqd5cMI5u75NOH7SSfde2",
     "youtubeProfile": "https://www.youtube.com/@NickyGraciousMusic",
     "officialImageSource": "https://nickygraciousmusic.com/",
+    "imageUrl": "assets/artists/nicky-gracious-saved.webp",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "asap preach": {
@@ -1067,6 +1073,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/32Sk85U3n2U9ji9PxvGAUC",
     "youtubeProfile": "https://www.youtube.com/@OfficialASAPPreach",
     "officialImageSource": "https://asappreachmusic.com/",
+    "imageUrl": "assets/artists/asap-preach-saved.webp",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "kijan boone": {
@@ -1078,6 +1086,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3dAXZ2iCLGeHz5IMhAi12V",
     "youtubeProfile": "https://www.youtube.com/@kijanboone1",
     "officialImageSource": "https://www.instagram.com/kijanboone/",
+    "imageUrl": "assets/artists/kijan-boone-saved.webp",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "don ready": {
@@ -1089,6 +1099,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/5kQnpfa9Qp5lNSOThWVnFl",
     "youtubeProfile": "https://www.youtube.com/@donreadymusic",
     "officialImageSource": "https://www.instagram.com/donreadymusic/",
+    "imageUrl": "assets/artists/don-ready-saved.webp",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "y shadey": {
@@ -1100,6 +1112,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/2NSMsMCNZzqNA1jlVO9M9t",
     "youtubeProfile": "https://www.youtube.com/@YShadey",
     "officialImageSource": "https://www.instagram.com/yshadey/",
+    "imageUrl": "assets/artists/y-shadey-saved.jpg",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "dante' pride": {
@@ -1112,6 +1126,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3KF3FfIlybRWFHZNhLKi4G",
     "youtubeProfile": "https://www.youtube.com/@DantePride",
     "officialImageSource": "https://www.instagram.com/dantepride/",
+    "imageUrl": "assets/artists/dante-pride-saved.jpg",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "rare of breed": {
@@ -1124,6 +1140,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3GdRdoJomMK2f8xGjEZbHH",
     "youtubeProfile": "https://www.youtube.com/@rareofbreed",
     "officialImageSource": "https://www.instagram.com/rareofbreed/",
+    "imageUrl": "assets/artists/rare-of-breed-primary.jpg",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "brother bo": {
@@ -1135,6 +1153,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3cmp77GMj0JNM3YHYquhMo",
     "youtubeProfile": "https://www.youtube.com/@BrotherBoMusic",
     "officialImageSource": "https://www.youtube.com/c/BrotherBoMusic",
+    "imageUrl": "assets/artists/brother-bo-saved.webp",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "tommy chapa": {
@@ -1146,6 +1166,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/2ROy7S3IGOr7Slnm2Ua2n2",
     "youtubeProfile": "https://www.youtube.com/@tommychapa5419",
     "officialImageSource": "https://music.apple.com/us/artist/tommy-chapa/1508864414",
+    "imageUrl": "assets/artists/tommy-chapa-saved.webp",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "b. cody shields": {
@@ -1158,6 +1180,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/4chyF3tNUYqQdgS0SQtOT6",
     "youtubeProfile": "https://www.youtube.com/@b.codyshields",
     "officialImageSource": "https://thisishismusic.com/pages/about",
+    "imageUrl": "assets/artists/b-cody-shields-saved.jpg",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "santana rose": {
@@ -1169,6 +1193,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/0gV7fgKsqj3KAk1gF2HIbH",
     "youtubeProfile": "https://www.youtube.com/@SantanaRoseMusic",
     "officialImageSource": "https://www.youtube.com/@SantanaRoseMusic",
+    "imageUrl": "assets/artists/santana-rose-saved.jpg",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "dj winn": {
@@ -1181,6 +1207,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/5lo8uBARuLLVmRDXYDx7eQ",
     "youtubeProfile": "https://www.youtube.com/@DJWINN",
     "officialImageSource": "https://www.instagram.com/djwinn/",
+    "imageUrl": "assets/artists/dj-winn-saved.webp",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "redeemed": {
@@ -1193,6 +1221,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/240g9DqmeKizlyyCZtL22Y",
     "youtubeProfile": "https://www.youtube.com/@redeemedmuzic",
     "officialImageSource": "https://www.youtube.com/@redeemedmuzic",
+    "imageUrl": "assets/artists/redeemed-saved.webp",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "rua young": {
@@ -1205,6 +1235,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6i1jJEMjPbIki7mpvE0QQ1",
     "youtubeProfile": "https://www.youtube.com/@RUAYOUNG",
     "officialImageSource": "https://www.ruayoung.com/",
+    "imageUrl": "assets/artists/rua-young-saved.jpg",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "kurtis hoppie": {
@@ -1216,6 +1248,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/2eR1Z2cyHOS4gFgA2GbRl8",
     "youtubeProfile": "https://www.youtube.com/channel/UCIR10g1HVLaYF2vHuBa6u7A",
     "officialImageSource": "https://www.thekurtishoppie.com/",
+    "imageUrl": "assets/artists/kurtis-hoppie-primary.jpg",
+    "imagePosition": "50% 22%",
     "sourceRegistryVerified": true
   },
   "nu tone": {
@@ -1228,6 +1262,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/4FWnJfV0P82pAx3nD0ZarA",
     "youtubeProfile": "https://www.youtube.com/@nutonevevo2074",
     "officialImageSource": "https://www.instagram.com/nutonemuzic/?hl=en",
+    "imageUrl": "assets/artists/nu-tone-saved.webp",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "holy gabbana": {
@@ -1239,6 +1275,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/0FTHAY097uQnnn3D2egtZZ",
     "youtubeProfile": "https://www.youtube.com/channel/UCWC_nNYA2abh8744tp5JX1g",
     "officialImageSource": "https://holygabbana.com/",
+    "imageUrl": "assets/artists/holy-gabbana-saved.webp",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "christopher syncere": {
@@ -1250,6 +1288,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6oTjD6G08PuR7EjE0AjL5u",
     "youtubeProfile": "https://www.youtube.com/c/ChristopherSyncere",
     "officialImageSource": "https://www.instagram.com/christophersyncere/",
+    "imageUrl": "assets/artists/christopher-syncere-saved.webp",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "k-see": {
@@ -1262,6 +1302,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3Pa1wXxunsWmALJOnjbfbQ",
     "youtubeProfile": "https://www.youtube.com/@k-seemusic3177",
     "officialImageSource": "https://www.instagram.com/kseemusic1/?hl=en",
+    "imageUrl": "assets/artists/k-see-saved.webp",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "gospel gangstaz": {
@@ -1271,6 +1313,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "website": "https://en.wikipedia.org/wiki/Gospel_Gangstaz",
     "spotifyProfile": "https://open.spotify.com/artist/0XioBTfH5k3aCyS9AsbDbE",
     "youtubeProfile": "https://www.youtube.com/channel/UCFzDxXG9164E1B13A582j5Q",
+    "imageUrl": "assets/artists/gospel-gangstaz-saved.webp",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "wuhsahbee": {
@@ -1282,6 +1326,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6Xg1qxN1cKliOVzRLA4lDK",
     "youtubeProfile": "https://www.youtube.com/channel/UCxYy0QJZrz4JRq6Jn0MevBQ",
     "officialImageSource": "https://www.instagram.com/wuhsahbee/",
+    "imageUrl": "assets/artists/wuhsahbee-saved.jpg",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "kelo": {
@@ -1293,6 +1339,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6j8t8rQzrAtRx5tYImodgd",
     "youtubeProfile": "https://www.youtube.com/channel/UCAvlfmD2aiqXxxknr-9VSVg",
     "officialImageSource": "https://www.instagram.com/cutthecho/",
+    "imageUrl": "assets/artists/kelo-saved.jpg",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "dkg kie": {
@@ -1304,6 +1352,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1eeYg6dFkaRT5GA0lsCVHA",
     "youtubeProfile": "https://www.youtube.com/@dkgkie",
     "officialImageSource": "https://www.instagram.com/dkg.kie",
+    "imageUrl": "assets/artists/dkg-kie-saved.webp",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "braille": {
@@ -1315,6 +1365,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6RYTz1tFNDF2qP0mwqEwDO",
     "youtubeProfile": "https://www.youtube.com/@bryanbraille",
     "officialImageSource": "https://www.humblebeast.com/music/braille",
+    "imageUrl": "assets/artists/braille-saved.jpg",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "canton jones": {
@@ -1326,6 +1378,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3nzEXHMRFWTw4zt3pVRv6V",
     "youtubeProfile": "https://www.youtube.com/@CantonJones1",
     "officialImageSource": "https://www.instagram.com/thecantonjones/?hl=en",
+    "imageUrl": "assets/artists/canton-jones-saved.webp",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "jay-way": {
@@ -1338,6 +1392,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1RDbE3dM2bNNSTh88R4MQ7",
     "youtubeProfile": "https://www.youtube.com/@JayWayTheAlien",
     "officialImageSource": "https://www.jaywaythealien.com/",
+    "imageUrl": "assets/artists/jay-way-saved.webp",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "stixx aka conejo": {
@@ -1350,6 +1406,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3khYLvZ6GmLlPMPlTfMTBr",
     "youtubeProfile": "https://www.youtube.com/@stixxwym/videos",
     "officialImageSource": "https://linktr.ee/stixxwym",
+    "imageUrl": "assets/artists/stixx-aka-conejo-saved.webp",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "ruslan": {
@@ -1362,6 +1420,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/2GEXrCflKZ5S5ZHBM4LNcV",
     "youtubeProfile": "https://www.youtube.com/@RuslanKD/featured",
     "officialImageSource": "https://www.instagram.com/ruslankd/?hl=en",
+    "imageUrl": "assets/artists/ruslan-saved.webp",
+    "imagePosition": "center",
     "sourceRegistryVerified": true
   },
   "j j l": {
@@ -1374,7 +1434,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/5saP6cHfo2flMEQuAJITBS",
     "youtubeProfile": "https://music.youtube.com/channel/UC0vTVAlJijP9UvlEeezSmjw",
     "officialImageSource": "https://open.spotify.com/artist/5saP6cHfo2flMEQuAJITBS",
-    "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb04e00b6b9c43eecf6f19ca78",
+    "imageUrl": "assets/artists/j-j-l-saved.webp",
     "imagePosition": "center",
     "state": "MN",
     "sourceRegistryVerified": true
@@ -1388,7 +1448,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6GZw5pNbFDBOr6h8ha48BX",
     "youtubeProfile": "https://www.youtube.com/channel/UCJ1QKIUrg93G-BJJ2cV-4fw",
     "officialImageSource": "https://open.spotify.com/artist/6GZw5pNbFDBOr6h8ha48BX",
-    "imageUrl": "https://i.scdn.co/image/ab67616d0000b27365766fabd158615e000e0033",
+    "imageUrl": "assets/artists/priest-jones-saved.webp",
     "imagePosition": "center",
     "state": "MN",
     "sourceRegistryVerified": true
@@ -1402,7 +1462,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3HPj0fTgMGByddrYrdNPLn",
     "youtubeProfile": "https://www.youtube.com/@corincris",
     "officialImageSource": "https://www.cockybeliefproduction.com/",
-    "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb9c8a3893503dc3d2ec584a4c",
+    "imageUrl": "assets/artists/corincris-saved.webp",
     "imagePosition": "center",
     "state": "MN",
     "sourceRegistryVerified": true
@@ -1418,7 +1478,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1bjGUP5zjge68RaUaBSPvW",
     "youtubeProfile": "https://www.youtube.com/channel/UCuvrJ4Mvi90DWdb9pg98rYw",
     "officialImageSource": "https://www.instagram.com/fraelmusic/",
-    "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb13e6fe9f6409ac3fd1efb541",
+    "imageUrl": "assets/artists/f-rael-saved.webp",
     "imagePosition": "center",
     "state": "MN",
     "sourceRegistryVerified": true
@@ -1434,7 +1494,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1Ep8bP4kvEagicoKdAVU9P",
     "youtubeProfile": "https://www.youtube.com/channel/UCw4Y1XT0kIff0f3kmrs8tSw",
     "officialImageSource": "https://www.instagram.com/wesisnlilbro/",
-    "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebb41480e744d87b5682478744",
+    "imageUrl": "assets/artists/sis-n-lil-bro-saved.webp",
     "imagePosition": "center",
     "state": "MN",
     "sourceRegistryVerified": true
@@ -1448,7 +1508,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/2zD5NNTrgXT3o2RVrRBvv1",
     "youtubeProfile": "https://music.youtube.com/channel/UCIWddYLDHGIGZJHQ_G46noQ",
     "officialImageSource": "https://open.spotify.com/artist/2zD5NNTrgXT3o2RVrRBvv1",
-    "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb3c5bdcc093f62a89789c0f53",
+    "imageUrl": "assets/artists/kaboose-saved.webp",
     "imagePosition": "center",
     "state": "MN",
     "sourceRegistryVerified": true
@@ -1464,7 +1524,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3LzTEdiDZnEA721VqMYpdV",
     "youtubeProfile": "https://www.youtube.com/@truserva",
     "officialImageSource": "https://www.iamtruserva.com/",
-    "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebb5bd510760cb418516ded933",
+    "imageUrl": "assets/artists/tru-serva-saved.webp",
     "imagePosition": "center",
     "state": "MN",
     "sourceRegistryVerified": true
@@ -1478,6 +1538,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6it0bpgV8V5yuk2rnraE9M",
     "youtubeProfile": "https://www.youtube.com/channel/UCxhWF02oh4FyuAPVBt8GM7g",
     "officialImageSource": "https://www.instagram.com/vvs_bigrock/",
+    "imageUrl": "assets/artists/vvs-big-rock-saved.jpg",
     "imagePosition": "center",
     "state": "WI",
     "sourceRegistryVerified": true
@@ -1492,6 +1553,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3b15IaMeDOJZggq75TNNo9",
     "youtubeProfile": "https://www.youtube.com/@SwayGTTBmusic",
     "officialImageSource": "https://www.instagram.com/swaygodtooktheburden.wav/",
+    "imageUrl": "assets/artists/sway-gttb-saved.webp",
     "imagePosition": "center",
     "state": "ND",
     "sourceRegistryVerified": true
@@ -1505,6 +1567,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/029BjbYHANOxmuCPJM96dI",
     "youtubeProfile": "https://music.youtube.com/channel/UCtWViuucqKR9F_orE7COgJg",
     "officialImageSource": "https://open.spotify.com/artist/029BjbYHANOxmuCPJM96dI",
+    "imageUrl": "assets/artists/kashh-kade-saved.webp",
     "imagePosition": "center",
     "state": "WI",
     "sourceRegistryVerified": true
@@ -1519,6 +1582,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/72sxxRJ2zqNEvYeol2HnxG",
     "youtubeProfile": "https://www.youtube.com/channel/UCD1fVGfBT6eL5HrglzXxv_g",
     "officialImageSource": "https://www.instagram.com/raeltheartist/",
+    "imageUrl": "assets/artists/r-l-the-artist-saved.jpg",
     "imagePosition": "center",
     "state": "WI",
     "sourceRegistryVerified": true
@@ -1533,6 +1597,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/16LhY0I4oG7q889kRgNQrQ",
     "youtubeProfile": "https://www.youtube.com/channel/UCyPYU39mHibFDcDloaAVSXQ",
     "officialImageSource": "https://justchristheartist.com/",
+    "imageUrl": "assets/artists/justchris-saved.webp",
     "imagePosition": "center",
     "state": "WI",
     "sourceRegistryVerified": true
@@ -1546,6 +1611,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/77scLrsYfUOMsmq18ZtoCB",
     "youtubeProfile": "https://www.youtube.com/channel/UC1DIn6CtH_V3cRE9zC6Ozcg",
     "officialImageSource": "https://www.stovetop-music.com/",
+    "imageUrl": "assets/artists/stovetop-saved.jpg",
     "imagePosition": "center",
     "state": "MN",
     "sourceRegistryVerified": true
@@ -1560,6 +1626,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1s4YH0vODE4nW0bREPt4GG",
     "youtubeProfile": "https://www.youtube.com/@yayayumiya",
     "officialImageSource": "https://www.instagram.com/yayayumiya/?hl=en",
+    "imageUrl": "assets/artists/yumiya-primary.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1573,6 +1640,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/5jCTpUeZQ61zaoSYgYV2cY",
     "youtubeProfile": "https://www.youtube.com/channel/UCBXlPLlFhymj2JRsva5fpLg",
     "officialImageSource": "https://www.lingatheboss.com/",
+    "imageUrl": "assets/artists/linga-theboss-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1585,6 +1653,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/00iDXs6D2a9UZCtqnDMGnY",
     "youtubeProfile": "https://www.youtube.com/channel/UCj6WadEE7fr76voQd3TBqKg",
     "officialImageSource": "https://www.instagram.com/petrinadelacey/?hl=en",
+    "imageUrl": "assets/artists/petrina-delacey-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1597,6 +1666,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/0ESxKUSobqG0GkLrxg77XS",
     "youtubeProfile": "https://www.youtube.com/@IamQueenLee",
     "officialImageSource": "https://www.instagram.com/iamceoaaliyah/?hl=en",
+    "imageUrl": "assets/artists/queen-lee-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1610,6 +1680,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/590hZkpFHGkCc4iBpDKXrY",
     "youtubeProfile": "https://www.youtube.com/channel/UCnZnD0K3pRkpwhn-EY24WAg",
     "officialImageSource": "https://biancallove.com/",
+    "imageUrl": "assets/artists/biancallove-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1638,6 +1709,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1r0gAOldNSTyidXhWLDHTF",
     "youtubeProfile": "https://www.youtube.com/@gesmusiccc",
     "officialImageSource": "https://www.instagram.com/gesmusicc/reels/",
+    "imageUrl": "assets/artists/g-e-s-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1650,6 +1722,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3OCiWnwCNh7AzwVfKBai2i",
     "youtubeProfile": "https://music.youtube.com/channel/UCw3I0TR2c2xpB2TifYZPY2w",
     "officialImageSource": "https://www.instagram.com/yasminejinelle/",
+    "imageUrl": "assets/artists/yasmine-jinelle-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1662,6 +1735,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6Fo6hgETL8pUsJb4hoQhwv",
     "youtubeProfile": "https://www.youtube.com/channel/UCVopgdRdnJRERs14HHBwb9w",
     "officialImageSource": "https://www.instagram.com/lyricthegeenyus/",
+    "imageUrl": "assets/artists/lyric-the-geenyus-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1674,6 +1748,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3x6BDfLBgSZo72lry8q2CL",
     "youtubeProfile": "https://www.youtube.com/channel/UC7ijuNEvB9WHgYsDcGtnGhw",
     "officialImageSource": "https://www.instagram.com/afenifrl/",
+    "imageUrl": "assets/artists/afeni-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1686,6 +1761,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/2XXLCJp5BnNxYmqxUA8gMV",
     "youtubeProfile": "https://www.youtube.com/channel/UCXAoqYA_PGKl0qLifTmijeg",
     "officialImageSource": "https://www.instagram.com/lifeofalexussnow/",
+    "imageUrl": "assets/artists/alexus-snow-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1698,6 +1774,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/4VwM177wgcyEEDgKuuAhDz",
     "youtubeProfile": "https://www.youtube.com/@neishaglow/videos",
     "officialImageSource": "https://www.instagram.com/neishaglow/",
+    "imageUrl": "assets/artists/neisha-glow-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1710,7 +1787,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1o4z5bdBNIeJZGIHeseIhf",
     "youtubeProfile": "https://www.youtube.com/@deontehallofficial",
     "officialImageSource": "https://deontehall.com/index.php/about-deonte/",
-    "imageUrl": "https://deontehall.com/wp-content/uploads/2017/11/IMG_2799-1.jpg",
+    "imageUrl": "assets/artists/deonte-hall-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1723,6 +1800,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/5qSM9F3Ei58tG08tXrJjSi",
     "youtubeProfile": "https://www.youtube.com/@Meaningalex",
     "officialImageSource": "https://alienzalive.com/artist/alex-jean/",
+    "imageUrl": "assets/artists/alex-jean-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1736,6 +1814,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/5GevjOibFX6uwZ1mTYfhbn",
     "youtubeProfile": "https://www.youtube.com/channel/UCQm0f2MItHBDSLJ0GL4OaqA",
     "officialImageSource": "https://www.wassupgio.com/",
+    "imageUrl": "assets/artists/gio-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1749,6 +1828,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/78DvQP3rczGqfgEiLfFnCD",
     "youtubeProfile": "https://www.youtube.com/@toreydshaun",
     "officialImageSource": "https://toreydshaun.com/",
+    "imageUrl": "assets/artists/torey-d-shaun-saved.jpg",
     "imagePosition": "center",
     "label": "Reflection Music Group",
     "sourceRegistryVerified": true
@@ -1763,6 +1843,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6aUgzC0cMh0StjV7LyFEDr",
     "youtubeProfile": "https://music.youtube.com/@OfficialGRITS7",
     "officialImageSource": "https://www.instagram.com/officialgrits/",
+    "imageUrl": "assets/artists/grits-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1776,6 +1857,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6fOMl44jA4Sp5b9PpYCkzz",
     "youtubeProfile": "https://www.youtube.com/channel/UCoRR6OLuIZ2-5VxtnQIaN2w",
     "officialImageSource": "https://www.nfrealmusic.com/",
+    "imageUrl": "assets/artists/nf-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1789,6 +1871,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1XlLhtgJjC4ROQZilBZAvw",
     "youtubeProfile": "https://www.youtube.com/@iamnicd",
     "officialImageSource": "https://www.instagram.com/iamnicd/",
+    "imageUrl": "assets/artists/nic-d-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1801,6 +1884,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/4uOFEWy9mIcvQbr03IbPcL",
     "youtubeProfile": "https://www.youtube.com/@Manafest",
     "officialImageSource": "https://www.manafest.com/go",
+    "imageUrl": "assets/artists/manafest-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1815,6 +1899,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1aNtFg4D7HdF8jOppyKpUS",
     "youtubeProfile": "https://www.youtube.com/channel/UCFS_59ybiLbrsZQ4tmghriQ",
     "officialImageSource": "https://pastormikejr.com/",
+    "imageUrl": "assets/artists/pastor-mike-jr-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1828,6 +1913,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/4cR4F4mNehTHO2ut89kN00",
     "youtubeProfile": "https://www.youtube.com/@neskonly",
     "officialImageSource": "https://www.instagram.com/neskonly/",
+    "imageUrl": "assets/artists/nesk-only-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1840,6 +1926,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/5Z5jUyiNvFaqp0EVyLNf0p",
     "youtubeProfile": "https://www.youtube.com/channel/UCsHn-BXIByTjQaIf5CnZItw",
     "officialImageSource": "https://futuristic.set.bio/",
+    "imageUrl": "assets/artists/futuristic-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1852,6 +1939,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/2PCl4hx9Qds8sjcnoWUdqp",
     "youtubeProfile": "https://www.youtube.com/@Sondae",
     "officialImageSource": "https://www.instagram.com/thesondae/",
+    "imageUrl": "assets/artists/sondae-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1865,6 +1953,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/5qEZVKHzNjB8k5tAT41Iox",
     "youtubeProfile": "https://www.youtube.com/user/dee1music",
     "officialImageSource": "https://www.dee1music.com/",
+    "imageUrl": "assets/artists/dee-1-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1877,6 +1966,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/7pDD4BBx6S42ZX513NQdp1",
     "youtubeProfile": "https://www.youtube.com/@KieranTheLightOfficial",
     "officialImageSource": "https://www.instagram.com/kieranthelight/",
+    "imageUrl": "assets/artists/kieran-the-light-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1890,6 +1980,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1cgfDToH1viXSfFzd5WOz1",
     "youtubeProfile": "https://www.youtube.com/@childlikecici",
     "officialImageSource": "https://www.childlikecici.com/",
+    "imageUrl": "assets/artists/childlike-cici-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1902,6 +1993,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3JCk8XWIBcpA10QeM5tkbP",
     "youtubeProfile": "https://www.youtube.com/@YungKriss",
     "officialImageSource": "https://www.yungkriss.com/",
+    "imageUrl": "assets/artists/yung-kriss-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1914,6 +2006,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/2N0c1H0QXGAfZQHASg7ir4",
     "youtubeProfile": "https://www.youtube.com/@eluzai",
     "officialImageSource": "https://www.instagram.com/the_eluzai/",
+    "imageUrl": "assets/artists/eluzai-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1927,6 +2020,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/4z85Glof8wylJsLi93ukHm",
     "youtubeProfile": "https://www.youtube.com/@tylerhateslife1225",
     "officialImageSource": "https://www.instagram.com/tylerhateslife/",
+    "imageUrl": "assets/artists/tylerhateslife-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1940,6 +2034,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/4PRtvcfM2vKDdLFAyGUMP7",
     "youtubeProfile": "https://www.youtube.com/channel/UC1RVgR716WN7mlx_1nXfZIA",
     "officialImageSource": "https://www.instagram.com/gavinthehotrod/",
+    "imageUrl": "assets/artists/gavin-the-hotrod-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1953,6 +2048,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6pK1mujh4dbxSysAJGVRzU",
     "youtubeProfile": "https://www.youtube.com/@official_s.b.g",
     "officialImageSource": "https://www.instagram.com/official_s.b.g/",
+    "imageUrl": "assets/artists/s-b-g-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1965,6 +2061,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/7suLW93RkuQKWb4WTI5F14",
     "youtubeProfile": "https://www.youtube.com/channel/UCyfn6btWx4tB2RZy2nh27hw",
     "officialImageSource": "https://www.itsahaman.com/",
+    "imageUrl": "assets/artists/aha-gazelle-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1978,6 +2075,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/5HEhEhQL9w4ofcJ9kURFNQ",
     "youtubeProfile": "https://www.youtube.com/channel/UCo2499xJPW6P5_DTIJOSGzQ",
     "officialImageSource": "https://www.instagram.com/lanellgrant/",
+    "imageUrl": "assets/artists/lanell-grant-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -1991,6 +2089,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1SZikSUx9fZ2cUFjrmM6Sy",
     "youtubeProfile": "https://www.youtube.com/@moglitheiceburgYT",
     "officialImageSource": "https://www.instagram.com/moglitheiceburg/",
+    "imageUrl": "assets/artists/mogli-the-iceburg-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2004,6 +2103,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/5P0vV6Fw0YTdumAPZSkkuC",
     "youtubeProfile": "https://www.youtube.com/@Emanueldaprophet",
     "officialImageSource": "https://www.instagram.com/emanueldaprophet/",
+    "imageUrl": "assets/artists/emanueldaprophet-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2017,6 +2117,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/4JM7nxReyQzeaaafLkhQYe",
     "youtubeProfile": "https://www.youtube.com/@reecelache",
     "officialImageSource": "https://reecelache.com/",
+    "imageUrl": "assets/artists/reece-lache-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2029,6 +2130,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/2ZNeZlHauwGYZ9XADyjSL4",
     "youtubeProfile": "https://www.youtube.com/@MenaceMovement",
     "officialImageSource": "https://www.instagram.com/datin_tripled/",
+    "imageUrl": "assets/artists/datin-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2041,6 +2143,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/2vJp4tlU8SMa4L8Rqc7bPv",
     "youtubeProfile": "https://www.youtube.com/channel/UCVhvyWAwPMLLJO013XmxR0Q",
     "officialImageSource": "https://www.aashamarie.com/",
+    "imageUrl": "assets/artists/aasha-marie-saved.webp",
     "imagePosition": "center",
     "label": "Reflection Music Group",
     "sourceRegistryVerified": true
@@ -2055,6 +2158,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/2WLOBjz9WOZrJcbS2w93zt",
     "youtubeProfile": "https://www.youtube.com/channel/UCMyVefu0Bw781NptODKb1hg",
     "officialImageSource": "https://www.mykaelv.com/",
+    "imageUrl": "assets/artists/dj-mykael-v-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2067,6 +2171,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6T86uN02MAjAayagSHKIpA",
     "youtubeProfile": "https://www.youtube.com/@heesunleemusic",
     "officialImageSource": "https://www.heesunlee.com/",
+    "imageUrl": "assets/artists/heesun-lee-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2079,6 +2184,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/5YHM0i7v5TqqibZhS0YiuX",
     "youtubeProfile": "https://www.youtube.com/channel/UCRn4v23xA7Z9MVSY1ToU_DA",
     "officialImageSource": "https://www.instagram.com/ryantrey/",
+    "imageUrl": "assets/artists/ryan-trey-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2091,6 +2197,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/4kjg5xFLFVfWJFus3mwV5e",
     "youtubeProfile": "https://www.youtube.com/user/jeredsandersmusic",
     "officialImageSource": "https://www.instagram.com/jeredsanders/",
+    "imageUrl": "assets/artists/jered-sanders-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2103,6 +2210,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6wSzNgiOUV0rPug9vMP3ze",
     "youtubeProfile": "https://music.youtube.com/@ToschiiMusic",
     "officialImageSource": "https://www.instagram.com/toschiiofficial/",
+    "imageUrl": "assets/artists/toschii-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2116,6 +2224,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6ppWmncyPtRcMeuaX43GVJ",
     "youtubeProfile": "https://www.youtube.com/channel/UCx056Cz75a8ro65Uun3dhFQ",
     "officialImageSource": "https://www.instagram.com/elimontanna/",
+    "imageUrl": "assets/artists/eli-montanna-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2131,6 +2240,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1euV2O9oyOrwbwOoakx45f",
     "youtubeProfile": "https://www.youtube.com/channel/UC05qM50ZPmHvEjr8Sae3t7A",
     "officialImageSource": "https://www.instagram.com/jwoodzmuzic/",
+    "imageUrl": "assets/artists/jwoodz-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2143,6 +2253,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/0mbpzxELAS9luV27PUDEZH",
     "youtubeProfile": "https://www.youtube.com/channel/UCHhuDxHS1hkCnWh2izXYkfg",
     "officialImageSource": "https://kadenjordan.com/",
+    "imageUrl": "assets/artists/kaden-jordan-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2158,7 +2269,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/5Jgv9sRXt4V3TwSU1H41eQ",
     "youtubeProfile": "https://www.youtube.com/user/HisImageM",
     "officialImageSource": "https://www.cjemulous.com/",
-    "imageUrl": "https://static.wixstatic.com/media/9c331a_5c82923764b24c52bb151559692af340~mv2.jpeg",
+    "imageUrl": "assets/artists/cj-emulous-saved.webp",
     "imagePosition": "50% 24%",
     "sourceRegistryVerified": true
   },
@@ -2184,7 +2295,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/5kQpwGLE4RmDMsIPqJ4Y5i",
     "youtubeProfile": "https://www.youtube.com/channel/UCpOq5kyjcag3fOkfOjG8qxw",
     "officialImageSource": "https://www.instagram.com/chvrch562/",
-    "imageUrl": "https://open.voidware.de/artist/5kQpwGLE4RmDMsIPqJ4Y5i",
+    "imageUrl": "assets/artists/chvrch562-saved.jpg",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2197,7 +2308,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/02gxa3HE5O0zBKRjeDh6Ba",
     "youtubeProfile": "https://www.youtube.com/channel/UCBaU_Xh4fyokc-ckyCeYv3w",
     "officialImageSource": "https://www.instagram.com/missionismusic/?hl=en",
-    "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebe70afe5f418013a0c86ddbb6",
+    "imageUrl": "assets/artists/mission-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2211,7 +2322,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/7wrWSJHfACjw7s7gYXOXTt",
     "youtubeProfile": "https://www.youtube.com/@TheOfficialMarkel",
     "officialImageSource": "https://open.spotify.com/artist/7wrWSJHfACjw7s7gYXOXTt",
-    "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb3bec4aaaca84d070b7383e2a",
+    "imageUrl": "assets/artists/bigbreeze-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2224,7 +2335,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1WlJORCWCG2F0TBI4sReri",
     "youtubeProfile": "https://www.youtube.com/@C4Crotona",
     "officialImageSource": "https://www.themenacemovement.com/c4-crotona/",
-    "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000e5ebf1a7e4abb6ee247fd2c04de5",
+    "imageUrl": "assets/artists/c4-crotona-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2238,7 +2349,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/24p0hSTqoxNsy89rKNrSDj",
     "youtubeProfile": "https://www.youtube.com/c/NathanDavisJr",
     "officialImageSource": "https://www.iamndj.com/",
-    "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000e5eb9fa4da984eb788edaa3839ad",
+    "imageUrl": "assets/artists/nathan-davis-jr-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2252,7 +2363,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6jwSYdglftKLb8vhvAfNag",
     "youtubeProfile": "https://www.youtube.com/@OFFICIALMAYIAWARREN",
     "officialImageSource": "https://www.instagram.com/mayiawarren/?hl=en",
-    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5ebb554962c100087e71d7b4104",
+    "imageUrl": "assets/artists/mayia-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2266,7 +2377,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/2zcu7rparMOCBU7ZaBMb4N",
     "youtubeProfile": "https://www.youtube.com/@TrendsetterSense/about",
     "officialImageSource": "https://www.instagram.com/trendsettersense/?hl=en",
-    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb087c4b1a01232a29fb75de1e",
+    "imageUrl": "assets/artists/trendsetter-sense-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2280,7 +2391,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/2jsFUZcvMqEU9ay3BWHgAg",
     "youtubeProfile": "https://www.youtube.com/channel/UC8sHqu7bM_zfOK1dazpcOBw",
     "officialImageSource": "https://www.themenacemovement.com/monster-tarver/",
-    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb04309a0ad05ff113a5b80231",
+    "imageUrl": "assets/artists/monster-tarver-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2294,7 +2405,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3iJk6wDUly0uF53bdlBfvT",
     "youtubeProfile": "https://www.youtube.com/channel/UC8Oiej_PXzv88c_M33KjBJg",
     "officialImageSource": "https://www.instagram.com/luldreday/?hl=en",
-    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb0550a8d0f743c40ac59162f3",
+    "imageUrl": "assets/artists/lul-dreday-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2307,7 +2418,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/2KuGCEmfjdATgtfBlmFMxS",
     "youtubeProfile": "https://www.youtube.com/user/BrinsonVEVO",
     "officialImageSource": "https://godchaserz.com/",
-    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5ebe1c7145787a2c2cd997de7c4",
+    "imageUrl": "assets/artists/brinson-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2320,7 +2431,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/0WI8OfWCRvK4nGHmKfFQmd",
     "youtubeProfile": "https://www.youtube.com/user/ALEXZURDOMUSIC",
     "officialImageSource": "https://www.alexzurdomusic.com/site/",
-    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb2c81bb40c3b6962eacf9dc9c",
+    "imageUrl": "assets/artists/alex-zurdo-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2333,7 +2444,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/5bLqm0pB0l0J5hRMXajA0S",
     "youtubeProfile": "https://www.youtube.com/@Official_Keyijah",
     "officialImageSource": "https://www.instagram.com/iamkeyijah/?hl=en",
-    "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000e5eb5ba06e67f0abf5349a782d45",
+    "imageUrl": "assets/artists/key-ijah-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2346,7 +2457,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1Jrih9sEoE7aI00lQ6dciO",
     "youtubeProfile": "https://www.youtube.com/@Thainspiration",
     "officialImageSource": "https://www.instagram.com/tha.inspirati0n/",
-    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5ebc50cebd2c2f5d86260e69e9f",
+    "imageUrl": "assets/artists/tha-inspiration-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2359,7 +2470,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/4WGlZzRh7PszMcCdPV80tj",
     "youtubeProfile": "https://www.youtube.com/@RighteousTM633",
     "officialImageSource": "https://www.instagram.com/itsnissishalom/",
-    "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000e5eb91fd7ecda2a257e8f0b5168f",
+    "imageUrl": "assets/artists/nissi-shalom-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2372,7 +2483,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3EcMKVigl7YMEeDmWGcezy",
     "youtubeProfile": "https://www.youtube.com/c/SteveOrdinary/videos",
     "officialImageSource": "https://www.instagram.com/steveunordinary/?hl=en",
-    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb16f2f80d2e01df2baa0c479b",
+    "imageUrl": "assets/artists/steveunordinary-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2385,7 +2496,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/62xS59NTx0ruEKAvlQshqB",
     "youtubeProfile": "https://www.youtube.com/channel/UCqTS2tmNKlvu8YNbX_7vGuQ",
     "officialImageSource": "https://www.instagram.com/jjchosenofficial/",
-    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb57c526b89fa2185fc665f825",
+    "imageUrl": "assets/artists/jj-chosen-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2397,7 +2508,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/generationrecoverymusic/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/3S5xX5qyLz6rHm9iobW1jS",
     "officialImageSource": "https://www.instagram.com/generationrecoverymusic/?hl=en",
-    "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000e5eb46667ac884ef90dd59b54434",
+    "imageUrl": "assets/artists/generation-recovery-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2410,7 +2521,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/2UVyRB0Sb8BJQeuK3lmziU",
     "youtubeProfile": "https://www.youtube.com/channel/UC0WGs4a9ylf2cIlefObDZKw",
     "officialImageSource": "https://www.instagram.com/ifeargod3/",
-    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb45dfa91b2fbe804937ed457d",
+    "imageUrl": "assets/artists/ifeargod-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2423,7 +2534,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/0dwtjZ8Egrjgf2Nf9DlaZk",
     "youtubeProfile": "https://www.youtube.com/channel/UC0GMYFL2ubouuGSxnmBTg8Q",
     "officialImageSource": "https://www.instagram.com/therealhychu/",
-    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb40930244e031d23a5badecda",
+    "imageUrl": "assets/artists/hy-chu-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2436,7 +2547,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/47fuPz0K0cyruPcpXiBo2W",
     "youtubeProfile": "https://www.youtube.com/channel/UCRi6WTcaC__0ZWq_d2xJ_qw",
     "officialImageSource": "https://www.instagram.com/vennisay/?hl=en",
-    "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000e5eb257bcb7b1666859c95bdcb04",
+    "imageUrl": "assets/artists/vennisay-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2450,7 +2561,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/46UmMAKrHKTvwKAV5mrNsi",
     "youtubeProfile": "https://music.youtube.com/channel/UCSt6mc5-My-19YkXmMKhgFw",
     "officialImageSource": "https://www.instagram.com/scarlitojr/",
-    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb4478ed7a506218d9637c7764",
+    "imageUrl": "assets/artists/scarlito-jr-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2463,7 +2574,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6qDQ0Rnp9bj86ZcsI4UkEX",
     "youtubeProfile": "https://www.youtube.com/channel/UCa2iewWs6MlV092uo0zulfQ",
     "officialImageSource": "https://www.instagram.com/jreborn_official/",
-    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb1d1cb63cad9990a767c54748",
+    "imageUrl": "assets/artists/j-reborn-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2476,7 +2587,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6qE9NgK1b0kDnGUnGVh4zS",
     "youtubeProfile": "https://www.youtube.com/@Dre.Skywalker",
     "officialImageSource": "https://www.instagram.com/dreskywalkerofficial/",
-    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5ebc2a6e932ece80c11a69d6faf",
+    "imageUrl": "assets/artists/dre-skywalker-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2489,7 +2600,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/5G1xrscxyvpYHX72E108iW",
     "youtubeProfile": "https://www.youtube.com/channel/UCytJ0RS91XUJf4wYrmt3prQ",
     "officialImageSource": "https://www.instagram.com/gabriel.katon/",
-    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb43049c6b48d193bfb558ca53",
+    "imageUrl": "assets/artists/gabriel-katon-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2502,7 +2613,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/0e6JPJ634Hw3I95aKMEaD7",
     "youtubeProfile": "https://www.youtube.com/channel/UC1q_9w95T3eprZwAFTXyrUg",
     "officialImageSource": "https://www.instagram.com/redtips.music/",
-    "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000e5eb37fd42025d87f65426aa45b0",
+    "imageUrl": "assets/artists/red-tips-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2515,7 +2626,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1EswPCHgI3tydeJlDVMEFl",
     "youtubeProfile": "https://www.youtube.com/channel/UClRb8RvKMxpM7rFlsd6P8RQ",
     "officialImageSource": "https://www.instagram.com/dellmac301/?hl=en",
-    "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000e5eb5895eca28adaccc304472663",
+    "imageUrl": "assets/artists/dell-mac-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2528,7 +2639,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/0gqbW7Uf6BAWiAh5C6jlPs?go=1&sp_cid=67e19d32c5200acbd7c434127ccd2bbe",
     "youtubeProfile": "https://music.youtube.com/channel/UC3CXVdZvDlK4HZtyuav26LQ",
     "officialImageSource": "https://www.instagram.com/iamtommyroyale/?hl=en",
-    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5ebed75a5a3ab0bd75a23bffb16",
+    "imageUrl": "assets/artists/tommy-royale-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2541,7 +2652,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/419NjKezGEJOVPtiymCp2p",
     "youtubeProfile": "https://www.youtube.com/c/TyBrasel/about",
     "officialImageSource": "https://www.instagram.com/Ty_Brasel",
-    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb32042962fc801509158784db",
+    "imageUrl": "assets/artists/ty-brasel-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2555,7 +2666,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/65qv2AiHO3xVWAs4SCKx4O",
     "youtubeProfile": "https://www.youtube.com/@JMontystudios",
     "officialImageSource": "https://www.instagram.com/jmontystudios/?hl=en",
-    "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000e5eb1c3e7f011b0fb755fd707492",
+    "imageUrl": "assets/artists/j-monty-saved.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -2751,6 +2862,769 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "sourceRegistryVerified": true
   }
 };
+const STATIC_ARTIST_PORTRAITS = {
+  "lecrae": {
+    "imageUrl": "assets/artists/lecrae-saved.webp",
+    "imagePosition": "center"
+  },
+  "hulvey": {
+    "imageUrl": "assets/artists/hulvey-saved.webp",
+    "imagePosition": "center"
+  },
+  "kb": {
+    "imageUrl": "assets/artists/kb-saved.jpg",
+    "imagePosition": "center"
+  },
+  "caleb gordon": {
+    "imageUrl": "assets/artists/caleb-gordon-primary.jpg",
+    "imagePosition": "center"
+  },
+  "andy mineo": {
+    "imageUrl": "assets/artists/andy-mineo-saved.webp",
+    "imagePosition": "center"
+  },
+  "nobigdyl.": {
+    "imageUrl": "assets/artists/nobigdyl-saved.webp",
+    "imagePosition": "center"
+  },
+  "1k phew": {
+    "imageUrl": "assets/artists/1k-phew.webp",
+    "imagePosition": "50% 24%"
+  },
+  "miles minnick": {
+    "imageUrl": "assets/artists/miles-minnick-saved.webp",
+    "imagePosition": "center"
+  },
+  "jon keith": {
+    "imageUrl": "assets/artists/jon-keith-saved.webp",
+    "imagePosition": "center"
+  },
+  "tedashii": {
+    "imageUrl": "assets/artists/tedashii-saved.jpg",
+    "imagePosition": "center"
+  },
+  "trip lee": {
+    "imageUrl": "assets/artists/trip-lee-saved.webp",
+    "imagePosition": "center"
+  },
+  "flame": {
+    "imageUrl": "assets/artists/flame-saved.webp",
+    "imagePosition": "center"
+  },
+  "scootie wop": {
+    "imageUrl": "assets/artists/scootie-wop-saved.webp",
+    "imagePosition": "center"
+  },
+  "aaron cole": {
+    "imageUrl": "assets/artists/aaron-cole-saved.webp",
+    "imagePosition": "center"
+  },
+  "whatuprg": {
+    "imageUrl": "assets/artists/whatuprg-saved.jpg",
+    "imagePosition": "center"
+  },
+  "anike": {
+    "imageUrl": "assets/artists/anike-saved.webp",
+    "imagePosition": "center"
+  },
+  "limoblaze": {
+    "imageUrl": "assets/artists/limoblaze-saved.webp",
+    "imagePosition": "center"
+  },
+  "jackie hill perry": {
+    "imageUrl": "assets/artists/jackie-hill-perry-saved.webp",
+    "imagePosition": "center"
+  },
+  "social club misfits": {
+    "imageUrl": "assets/artists/social-club-misfits-saved.webp",
+    "imagePosition": "center"
+  },
+  "steven malcolm": {
+    "imageUrl": "assets/artists/steven-malcolm-saved.webp",
+    "imagePosition": "center"
+  },
+  "gawvi": {
+    "imageUrl": "assets/artists/gawvi-saved.webp",
+    "imagePosition": "center"
+  },
+  "egr": {
+    "imageUrl": "assets/artists/egr-spotify-primary.jpg",
+    "imagePosition": "50% 0%"
+  },
+  "mike malagies": {
+    "imageUrl": "assets/artists/mike-malagies-saved.jpg",
+    "imagePosition": "center"
+  },
+  "fern": {
+    "imageUrl": "assets/artists/fern-saved.webp",
+    "imagePosition": "center"
+  },
+  "marty": {
+    "imageUrl": "assets/artists/marty-saved.webp",
+    "imagePosition": "center"
+  },
+  "brvndonp": {
+    "imageUrl": "assets/artists/brvndonp-saved.webp",
+    "imagePosition": "center"
+  },
+  "skema boy": {
+    "imageUrl": "assets/artists/skema-boy.webp",
+    "imagePosition": "center"
+  },
+  "zauntee": {
+    "imageUrl": "assets/artists/zauntee.webp",
+    "imagePosition": "50% 32%"
+  },
+  "bizzle": {
+    "imageUrl": "assets/artists/bizzle.webp",
+    "imagePosition": "50% 0%"
+  },
+  "derek minor": {
+    "imageUrl": "assets/artists/derek-minor-saved.webp",
+    "imagePosition": "center"
+  },
+  "canon": {
+    "imageUrl": "assets/artists/canon-saved.webp",
+    "imagePosition": "center"
+  },
+  "parris chariz": {
+    "imageUrl": "assets/artists/parris-chariz-saved.jpg",
+    "imagePosition": "center"
+  },
+  "aklesso": {
+    "imageUrl": "assets/artists/aklesso-saved.jpg",
+    "imagePosition": "center"
+  },
+  "tommy zuko": {
+    "imageUrl": "assets/artists/tommy-zuko-saved.jpg",
+    "imagePosition": "center"
+  },
+  "sevin": {
+    "imageUrl": "assets/artists/sevin.webp",
+    "imagePosition": "50% 30%"
+  },
+  "da' t.r.u.t.h.": {
+    "imageUrl": "assets/artists/da-t-r-u-t-h-saved.webp",
+    "imagePosition": "center"
+  },
+  "wordsplayed": {
+    "imageUrl": "assets/artists/wordsplayed-saved.webp",
+    "imagePosition": "center"
+  },
+  "forrest frank": {
+    "imageUrl": "assets/artists/forrest-frank-saved.webp",
+    "imagePosition": "center"
+  },
+  "indie tribe.": {
+    "imageUrl": "assets/artists/indie-tribe-saved.webp",
+    "imagePosition": "center"
+  },
+  "brenno": {
+    "imageUrl": "assets/artists/brenno-saved.jpg",
+    "imagePosition": "center"
+  },
+  "shepherd": {
+    "imageUrl": "assets/artists/shepherd-saved.webp",
+    "imagePosition": "center"
+  },
+  "kai uriah": {
+    "imageUrl": "assets/artists/kai-uriah-saved.jpg",
+    "imagePosition": "center"
+  },
+  "hyper fenton": {
+    "imageUrl": "assets/artists/hyper-fenton-saved.webp",
+    "imagePosition": "center"
+  },
+  "brea miles": {
+    "imageUrl": "assets/artists/brea-miles-saved.webp",
+    "imagePosition": "center"
+  },
+  "issac mansfield": {
+    "imageUrl": "assets/artists/issac-mansfield-saved.webp",
+    "imagePosition": "center"
+  },
+  "tylan1k": {
+    "imageUrl": "assets/artists/tylan1k-saved.jpg",
+    "imagePosition": "center"
+  },
+  "jabari heavens": {
+    "imageUrl": "assets/artists/jabari-heavens-saved.webp",
+    "imagePosition": "center"
+  },
+  "rhema soul": {
+    "imageUrl": "assets/artists/rhema-soul-saved.jpg",
+    "imagePosition": "center"
+  },
+  "shonlock": {
+    "imageUrl": "assets/artists/shonlock-saved.webp",
+    "imagePosition": "center"
+  },
+  "viktory": {
+    "imageUrl": "assets/artists/viktory-saved.jpg",
+    "imagePosition": "center"
+  },
+  "t-bone": {
+    "imageUrl": "assets/artists/t-bone-saved.jpg",
+    "imagePosition": "center"
+  },
+  "bishop freeze": {
+    "imageUrl": "assets/artists/bishop-freeze-saved.webp",
+    "imagePosition": "center"
+  },
+  "808 beezy": {
+    "imageUrl": "assets/artists/808-beezy-saved.webp",
+    "imagePosition": "center"
+  },
+  "mike teezy": {
+    "imageUrl": "assets/artists/mike-teezy-saved.png",
+    "imagePosition": "center"
+  },
+  "porsha love": {
+    "imageUrl": "assets/artists/porsha-love-saved.webp",
+    "imagePosition": "center"
+  },
+  "nicky gracious": {
+    "imageUrl": "assets/artists/nicky-gracious-saved.webp",
+    "imagePosition": "center"
+  },
+  "asap preach": {
+    "imageUrl": "assets/artists/asap-preach-saved.webp",
+    "imagePosition": "center"
+  },
+  "kijan boone": {
+    "imageUrl": "assets/artists/kijan-boone-saved.webp",
+    "imagePosition": "center"
+  },
+  "don ready": {
+    "imageUrl": "assets/artists/don-ready-saved.webp",
+    "imagePosition": "center"
+  },
+  "y shadey": {
+    "imageUrl": "assets/artists/y-shadey-saved.jpg",
+    "imagePosition": "center"
+  },
+  "dante' pride": {
+    "imageUrl": "assets/artists/dante-pride-saved.jpg",
+    "imagePosition": "center"
+  },
+  "rare of breed": {
+    "imageUrl": "assets/artists/rare-of-breed-primary.jpg",
+    "imagePosition": "center"
+  },
+  "brother bo": {
+    "imageUrl": "assets/artists/brother-bo-saved.webp",
+    "imagePosition": "center"
+  },
+  "tommy chapa": {
+    "imageUrl": "assets/artists/tommy-chapa-saved.webp",
+    "imagePosition": "center"
+  },
+  "b. cody shields": {
+    "imageUrl": "assets/artists/b-cody-shields-saved.jpg",
+    "imagePosition": "center"
+  },
+  "santana rose": {
+    "imageUrl": "assets/artists/santana-rose-saved.jpg",
+    "imagePosition": "center"
+  },
+  "dj winn": {
+    "imageUrl": "assets/artists/dj-winn-saved.webp",
+    "imagePosition": "center"
+  },
+  "redeemed": {
+    "imageUrl": "assets/artists/redeemed-saved.webp",
+    "imagePosition": "center"
+  },
+  "rua young": {
+    "imageUrl": "assets/artists/rua-young-saved.jpg",
+    "imagePosition": "center"
+  },
+  "kurtis hoppie": {
+    "imageUrl": "assets/artists/kurtis-hoppie-primary.jpg",
+    "imagePosition": "50% 22%"
+  },
+  "nu tone": {
+    "imageUrl": "assets/artists/nu-tone-saved.webp",
+    "imagePosition": "center"
+  },
+  "holy gabbana": {
+    "imageUrl": "assets/artists/holy-gabbana-saved.webp",
+    "imagePosition": "center"
+  },
+  "christopher syncere": {
+    "imageUrl": "assets/artists/christopher-syncere-saved.webp",
+    "imagePosition": "center"
+  },
+  "k-see": {
+    "imageUrl": "assets/artists/k-see-saved.webp",
+    "imagePosition": "center"
+  },
+  "gospel gangstaz": {
+    "imageUrl": "assets/artists/gospel-gangstaz-saved.webp",
+    "imagePosition": "center"
+  },
+  "wuhsahbee": {
+    "imageUrl": "assets/artists/wuhsahbee-saved.jpg",
+    "imagePosition": "center"
+  },
+  "kelo": {
+    "imageUrl": "assets/artists/kelo-saved.jpg",
+    "imagePosition": "center"
+  },
+  "dkg kie": {
+    "imageUrl": "assets/artists/dkg-kie-saved.webp",
+    "imagePosition": "center"
+  },
+  "braille": {
+    "imageUrl": "assets/artists/braille-saved.jpg",
+    "imagePosition": "center"
+  },
+  "canton jones": {
+    "imageUrl": "assets/artists/canton-jones-saved.webp",
+    "imagePosition": "center"
+  },
+  "jay-way": {
+    "imageUrl": "assets/artists/jay-way-saved.webp",
+    "imagePosition": "center"
+  },
+  "stixx aka conejo": {
+    "imageUrl": "assets/artists/stixx-aka-conejo-saved.webp",
+    "imagePosition": "center"
+  },
+  "ruslan": {
+    "imageUrl": "assets/artists/ruslan-saved.webp",
+    "imagePosition": "center"
+  },
+  "j j l": {
+    "imageUrl": "assets/artists/j-j-l-saved.webp",
+    "imagePosition": "center"
+  },
+  "priest jones": {
+    "imageUrl": "assets/artists/priest-jones-saved.webp",
+    "imagePosition": "center"
+  },
+  "corincris": {
+    "imageUrl": "assets/artists/corincris-saved.webp",
+    "imagePosition": "center"
+  },
+  "f’rael": {
+    "imageUrl": "assets/artists/f-rael-saved.webp",
+    "imagePosition": "center"
+  },
+  "sis n lil bro": {
+    "imageUrl": "assets/artists/sis-n-lil-bro-saved.webp",
+    "imagePosition": "center"
+  },
+  "kaboose": {
+    "imageUrl": "assets/artists/kaboose-saved.webp",
+    "imagePosition": "center"
+  },
+  "tru-serva": {
+    "imageUrl": "assets/artists/tru-serva-saved.webp",
+    "imagePosition": "center"
+  },
+  "vvs big rock": {
+    "imageUrl": "assets/artists/vvs-big-rock-saved.jpg",
+    "imagePosition": "center"
+  },
+  "sway gttb": {
+    "imageUrl": "assets/artists/sway-gttb-saved.webp",
+    "imagePosition": "center"
+  },
+  "kashh kade": {
+    "imageUrl": "assets/artists/kashh-kade-saved.webp",
+    "imagePosition": "center"
+  },
+  "ræl the artist": {
+    "imageUrl": "assets/artists/r-l-the-artist-saved.jpg",
+    "imagePosition": "center"
+  },
+  "justchris": {
+    "imageUrl": "assets/artists/justchris-saved.webp",
+    "imagePosition": "center"
+  },
+  "stovetop": {
+    "imageUrl": "assets/artists/stovetop-saved.jpg",
+    "imagePosition": "center"
+  },
+  "yumiya!": {
+    "imageUrl": "assets/artists/yumiya-primary.jpg",
+    "imagePosition": "center"
+  },
+  "linga theboss": {
+    "imageUrl": "assets/artists/linga-theboss-saved.jpg",
+    "imagePosition": "center"
+  },
+  "petrina delacey": {
+    "imageUrl": "assets/artists/petrina-delacey-saved.webp",
+    "imagePosition": "center"
+  },
+  "queen lee": {
+    "imageUrl": "assets/artists/queen-lee-saved.webp",
+    "imagePosition": "center"
+  },
+  "biancallove": {
+    "imageUrl": "assets/artists/biancallove-saved.jpg",
+    "imagePosition": "center"
+  },
+  "joz": {
+    "imageUrl": "assets/artists/joz-spotify-primary.jpg",
+    "imagePosition": "50% 0%"
+  },
+  "g.e.s.": {
+    "imageUrl": "assets/artists/g-e-s-saved.webp",
+    "imagePosition": "center"
+  },
+  "yasmine jinelle": {
+    "imageUrl": "assets/artists/yasmine-jinelle-saved.webp",
+    "imagePosition": "center"
+  },
+  "lyric the geenyus": {
+    "imageUrl": "assets/artists/lyric-the-geenyus-saved.jpg",
+    "imagePosition": "center"
+  },
+  "afeni": {
+    "imageUrl": "assets/artists/afeni-saved.webp",
+    "imagePosition": "center"
+  },
+  "alexus snow": {
+    "imageUrl": "assets/artists/alexus-snow-saved.webp",
+    "imagePosition": "center"
+  },
+  "neisha glow": {
+    "imageUrl": "assets/artists/neisha-glow-saved.webp",
+    "imagePosition": "center"
+  },
+  "deonte hall": {
+    "imageUrl": "assets/artists/deonte-hall-saved.webp",
+    "imagePosition": "center"
+  },
+  "alex jean": {
+    "imageUrl": "assets/artists/alex-jean-saved.webp",
+    "imagePosition": "center"
+  },
+  "gio.": {
+    "imageUrl": "assets/artists/gio-saved.jpg",
+    "imagePosition": "center"
+  },
+  "torey d'shaun": {
+    "imageUrl": "assets/artists/torey-d-shaun-saved.jpg",
+    "imagePosition": "center"
+  },
+  "grits": {
+    "imageUrl": "assets/artists/grits-saved.jpg",
+    "imagePosition": "center"
+  },
+  "nf": {
+    "imageUrl": "assets/artists/nf-saved.jpg",
+    "imagePosition": "center"
+  },
+  "nic d": {
+    "imageUrl": "assets/artists/nic-d-saved.webp",
+    "imagePosition": "center"
+  },
+  "manafest": {
+    "imageUrl": "assets/artists/manafest-saved.jpg",
+    "imagePosition": "center"
+  },
+  "pastor mike jr.": {
+    "imageUrl": "assets/artists/pastor-mike-jr-saved.webp",
+    "imagePosition": "center"
+  },
+  "nesk only": {
+    "imageUrl": "assets/artists/nesk-only-saved.jpg",
+    "imagePosition": "center"
+  },
+  "futuristic": {
+    "imageUrl": "assets/artists/futuristic-saved.jpg",
+    "imagePosition": "center"
+  },
+  "sondae": {
+    "imageUrl": "assets/artists/sondae-saved.webp",
+    "imagePosition": "center"
+  },
+  "dee-1": {
+    "imageUrl": "assets/artists/dee-1-saved.jpg",
+    "imagePosition": "center"
+  },
+  "kieran the light": {
+    "imageUrl": "assets/artists/kieran-the-light-saved.jpg",
+    "imagePosition": "center"
+  },
+  "childlike cici": {
+    "imageUrl": "assets/artists/childlike-cici-saved.webp",
+    "imagePosition": "center"
+  },
+  "yung kriss": {
+    "imageUrl": "assets/artists/yung-kriss-saved.webp",
+    "imagePosition": "center"
+  },
+  "eluzai": {
+    "imageUrl": "assets/artists/eluzai-saved.webp",
+    "imagePosition": "center"
+  },
+  "tylerhateslife": {
+    "imageUrl": "assets/artists/tylerhateslife-saved.jpg",
+    "imagePosition": "center"
+  },
+  "gavin the hotrod": {
+    "imageUrl": "assets/artists/gavin-the-hotrod-saved.jpg",
+    "imagePosition": "center"
+  },
+  "s.b.g.": {
+    "imageUrl": "assets/artists/s-b-g-saved.jpg",
+    "imagePosition": "center"
+  },
+  "aha gazelle": {
+    "imageUrl": "assets/artists/aha-gazelle-saved.jpg",
+    "imagePosition": "center"
+  },
+  "lanell grant": {
+    "imageUrl": "assets/artists/lanell-grant-saved.jpg",
+    "imagePosition": "center"
+  },
+  "mogli the iceburg": {
+    "imageUrl": "assets/artists/mogli-the-iceburg-saved.webp",
+    "imagePosition": "center"
+  },
+  "emanueldaprophet": {
+    "imageUrl": "assets/artists/emanueldaprophet-saved.jpg",
+    "imagePosition": "center"
+  },
+  "reece lache'": {
+    "imageUrl": "assets/artists/reece-lache-saved.webp",
+    "imagePosition": "center"
+  },
+  "datin": {
+    "imageUrl": "assets/artists/datin-saved.webp",
+    "imagePosition": "center"
+  },
+  "aasha marie": {
+    "imageUrl": "assets/artists/aasha-marie-saved.webp",
+    "imagePosition": "center"
+  },
+  "dj mykael v": {
+    "imageUrl": "assets/artists/dj-mykael-v-saved.webp",
+    "imagePosition": "center"
+  },
+  "heesun lee": {
+    "imageUrl": "assets/artists/heesun-lee-saved.jpg",
+    "imagePosition": "center"
+  },
+  "ryan trey": {
+    "imageUrl": "assets/artists/ryan-trey-saved.jpg",
+    "imagePosition": "center"
+  },
+  "jered sanders": {
+    "imageUrl": "assets/artists/jered-sanders-saved.jpg",
+    "imagePosition": "center"
+  },
+  "toschii": {
+    "imageUrl": "assets/artists/toschii-saved.jpg",
+    "imagePosition": "center"
+  },
+  "eli montanna": {
+    "imageUrl": "assets/artists/eli-montanna-saved.jpg",
+    "imagePosition": "center"
+  },
+  "jwoodz": {
+    "imageUrl": "assets/artists/jwoodz-saved.webp",
+    "imagePosition": "center"
+  },
+  "kaden jordan": {
+    "imageUrl": "assets/artists/kaden-jordan-saved.webp",
+    "imagePosition": "center"
+  },
+  "cj emulous": {
+    "imageUrl": "assets/artists/cj-emulous-saved.webp",
+    "imagePosition": "50% 24%"
+  },
+  "nxtmike": {
+    "imageUrl": "assets/artists/nxtmike-about.webp",
+    "imagePosition": "50% 15%"
+  },
+  "chvrch562": {
+    "imageUrl": "assets/artists/chvrch562-saved.jpg",
+    "imagePosition": "center"
+  },
+  "mission": {
+    "imageUrl": "assets/artists/mission-saved.webp",
+    "imagePosition": "center"
+  },
+  "bigbreeze": {
+    "imageUrl": "assets/artists/bigbreeze-saved.webp",
+    "imagePosition": "center"
+  },
+  "c4 crotona": {
+    "imageUrl": "assets/artists/c4-crotona-saved.webp",
+    "imagePosition": "center"
+  },
+  "nathan davis jr.": {
+    "imageUrl": "assets/artists/nathan-davis-jr-saved.webp",
+    "imagePosition": "center"
+  },
+  "mayia": {
+    "imageUrl": "assets/artists/mayia-saved.webp",
+    "imagePosition": "center"
+  },
+  "trendsetter sense": {
+    "imageUrl": "assets/artists/trendsetter-sense-saved.webp",
+    "imagePosition": "center"
+  },
+  "monster tarver": {
+    "imageUrl": "assets/artists/monster-tarver-saved.webp",
+    "imagePosition": "center"
+  },
+  "lul dreday": {
+    "imageUrl": "assets/artists/lul-dreday-saved.webp",
+    "imagePosition": "center"
+  },
+  "brinson": {
+    "imageUrl": "assets/artists/brinson-saved.webp",
+    "imagePosition": "center"
+  },
+  "alex zurdo": {
+    "imageUrl": "assets/artists/alex-zurdo-saved.webp",
+    "imagePosition": "center"
+  },
+  "key'ijah": {
+    "imageUrl": "assets/artists/key-ijah-saved.webp",
+    "imagePosition": "center"
+  },
+  "tha inspiration": {
+    "imageUrl": "assets/artists/tha-inspiration-saved.webp",
+    "imagePosition": "center"
+  },
+  "nissi shalom": {
+    "imageUrl": "assets/artists/nissi-shalom-saved.webp",
+    "imagePosition": "center"
+  },
+  "steveunordinary": {
+    "imageUrl": "assets/artists/steveunordinary-saved.webp",
+    "imagePosition": "center"
+  },
+  "jj chosen": {
+    "imageUrl": "assets/artists/jj-chosen-saved.webp",
+    "imagePosition": "center"
+  },
+  "generation recovery": {
+    "imageUrl": "assets/artists/generation-recovery-saved.webp",
+    "imagePosition": "center"
+  },
+  "ifeargod": {
+    "imageUrl": "assets/artists/ifeargod-saved.webp",
+    "imagePosition": "center"
+  },
+  "hy chu": {
+    "imageUrl": "assets/artists/hy-chu-saved.webp",
+    "imagePosition": "center"
+  },
+  "vennisay": {
+    "imageUrl": "assets/artists/vennisay-saved.webp",
+    "imagePosition": "center"
+  },
+  "scarlito jr.": {
+    "imageUrl": "assets/artists/scarlito-jr-saved.webp",
+    "imagePosition": "center"
+  },
+  "j reborn": {
+    "imageUrl": "assets/artists/j-reborn-saved.webp",
+    "imagePosition": "center"
+  },
+  "dre skywalker": {
+    "imageUrl": "assets/artists/dre-skywalker-saved.webp",
+    "imagePosition": "center"
+  },
+  "gabriel katon": {
+    "imageUrl": "assets/artists/gabriel-katon-saved.webp",
+    "imagePosition": "center"
+  },
+  "red tips": {
+    "imageUrl": "assets/artists/red-tips-saved.webp",
+    "imagePosition": "center"
+  },
+  "dell mac": {
+    "imageUrl": "assets/artists/dell-mac-saved.webp",
+    "imagePosition": "center"
+  },
+  "tommy royale": {
+    "imageUrl": "assets/artists/tommy-royale-saved.webp",
+    "imagePosition": "center"
+  },
+  "ty brasel": {
+    "imageUrl": "assets/artists/ty-brasel-saved.webp",
+    "imagePosition": "center"
+  },
+  "j. monty": {
+    "imageUrl": "assets/artists/j-monty-saved.webp",
+    "imagePosition": "center"
+  },
+  "180mindset": {
+    "imageUrl": "assets/artists/180mindset-primary.jpg",
+    "imagePosition": "center"
+  },
+  "n!x": {
+    "imageUrl": "assets/artists/n-x-spotify.jpg",
+    "imagePosition": "50% 25%"
+  },
+  "d riddick": {
+    "imageUrl": "assets/artists/d-riddick-spotify.jpg",
+    "imagePosition": "50% 25%"
+  },
+  "howard langford": {
+    "imageUrl": "assets/artists/howard-langford-spotify.jpg",
+    "imagePosition": "50% 25%"
+  },
+  "lj the messenger": {
+    "imageUrl": "assets/artists/lj-the-messenger-spotify.jpg",
+    "imagePosition": "50% 25%"
+  },
+  "deon": {
+    "imageUrl": "assets/artists/deon-spotify.jpg",
+    "imagePosition": "50% 25%"
+  },
+  "man of faith": {
+    "imageUrl": "assets/artists/man-of-faith-primary.jpg",
+    "imagePosition": "50% 0%"
+  },
+  "bobby real montgomery": {
+    "imageUrl": "assets/artists/bobby-real-montgomery-artist-supplied.png",
+    "imagePosition": "50% 0%"
+  },
+  "dj promote": {
+    "imageUrl": "assets/artists/dj-promote-primary.jpg",
+    "imagePosition": "50% 35%"
+  },
+  "eli williams": {
+    "imageUrl": "assets/artists/dj-eli-williams-primary.jpg",
+    "imagePosition": "50% 20%"
+  },
+  "jbthapreacher": {
+    "imageUrl": "assets/artists/jbthapreacher-primary.jpg",
+    "imagePosition": "50% 20%"
+  },
+  "heiressirami": {
+    "imageUrl": "assets/artists/heiressirami-owner-supplied.png",
+    "imagePosition": "50% 35%"
+  },
+  "giovani": {
+    "imageUrl": "assets/artists/giovani-primary.jpg",
+    "imagePosition": "45% 40%"
+  },
+  "aftrthght": {
+    "imageUrl": "assets/artists/aftrthght-instagram-portrait.jpg",
+    "imagePosition": "50% 55%"
+  },
+  "kaleb mitchell": {
+    "imageUrl": "assets/artists/kaleb-mitchell-saved.webp",
+    "imagePosition": "center"
+  },
+  "jimmy rock": {
+    "imageUrl": "assets/artists/jimmy-rock-instagram-profile.jpg",
+    "imagePosition": "50% 25%"
+  }
+};
+
 const ARTIST_OVERRIDES = {
   "kb": {
     spotifyProfile: "https://open.spotify.com/artist/77IKXFvO7SpWrq8hflrUXc"
@@ -2805,12 +3679,12 @@ function spotifyArtistId(artist) {
   return match?.[1] || "";
 }
 function spotifyArtistImageUrl(artist) {
-  if (artist?.sourceRegistryVerified !== true) return "";
-  const spotifyId = spotifyArtistId(artist);
-  return spotifyId ? `${VERIFIED_ARTIST_IMAGE_ENDPOINT}${encodeURIComponent(spotifyId)}` : "";
+  // Portraits are explicitly saved editorial assets, never live Spotify lookups.
+  return "";
 }
 function verifiedArtistImageUrl(artist) {
-  return artist?.imageUrl || spotifyArtistImageUrl(artist);
+  const image = artist?.imageUrl || "";
+  return /^(\/?assets\/)/.test(image) ? image : "";
 }
 function applyArtistOverrides(artists) {
   const orderByName = new Map(ARTIST_ROSTER_ORDER.map((name, index) => [normalize(name), index + 1]));
@@ -2828,6 +3702,7 @@ function applyArtistOverrides(artists) {
       ...artist,
       ...legacyOverride,
       ...verifiedUpdate,
+      ...(STATIC_ARTIST_PORTRAITS[key] || {}),
       ...(aliases.length ? { aliases } : {}),
       ...(rosterOrder ? { rosterOrder } : {})
     };
@@ -3317,11 +4192,10 @@ function websiteInfo(artist) {
 }
 function artistImageInfo(artist) {
   if (artist.sourceRegistryVerified !== true) return { url: "", fallbackUrl: "", position: "center" };
-  const primaryUrl = localAssetUrl(artist.imageUrl);
-  const spotifyFallback = localAssetUrl(spotifyArtistImageUrl(artist));
+  const primaryUrl = localAssetUrl(verifiedArtistImageUrl(artist));
   return {
-    url: primaryUrl || spotifyFallback,
-    fallbackUrl: primaryUrl && spotifyFallback && primaryUrl !== spotifyFallback ? spotifyFallback : "",
+    url: primaryUrl,
+    fallbackUrl: "",
     position: artist.imagePosition || "center"
   };
 }

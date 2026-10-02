@@ -83,7 +83,10 @@ class September12CompleteCloseoutTests(unittest.TestCase):
 
         artists = json.loads((ROOT / "config" / "artists.json").read_text(encoding="utf-8"))
         mike = next(item for item in artists if item.get("name") == "Mike Malagies")
-        self.assertEqual(MIKE_MALAGIES_APPROVED_IMAGE, mike.get("imageUrl"))
+        portrait = json.loads((ROOT / "config/artist-portraits.json").read_text())["Mike Malagies"]
+        self.assertEqual(MIKE_MALAGIES_APPROVED_IMAGE, portrait["sourceUrl"])
+        self.assertEqual(portrait["asset"], mike.get("imageUrl"))
+        self.assertTrue((ROOT / portrait["asset"]).is_file())
         self.assertNotIn("mike malagies", {closeout.norm(key[0]) for key in closeout.ARTWORK_REPLACEMENTS})
 
 

@@ -13,7 +13,7 @@ EXPECTED = {
         "spotifyProfile": "https://open.spotify.com/artist/5Jgv9sRXt4V3TwSU1H41eQ",
         "youtubeProfile": "https://www.youtube.com/user/HisImageM",
         "officialImageSource": "https://www.cjemulous.com/",
-        "imageUrl": "https://static.wixstatic.com/media/9c331a_5c82923764b24c52bb151559692af340~mv2.jpeg",
+        "imageUrl": "assets/artists/cj-emulous-saved.webp",
     },
     "NXTMIKE": {
         "rosterOrder": 146,
@@ -32,7 +32,7 @@ EXPECTED = {
         "spotifyProfile": "https://open.spotify.com/artist/5kQpwGLE4RmDMsIPqJ4Y5i",
         "youtubeProfile": "https://www.youtube.com/channel/UCpOq5kyjcag3fOkfOjG8qxw",
         "officialImageSource": "https://www.instagram.com/chvrch562/",
-        "imageUrl": "https://open.voidware.de/artist/5kQpwGLE4RmDMsIPqJ4Y5i",
+        "imageUrl": "assets/artists/chvrch562-saved.jpg",
     },
     "Mission": {
         "rosterOrder": 148,
@@ -41,7 +41,7 @@ EXPECTED = {
         "spotifyProfile": "https://open.spotify.com/artist/02gxa3HE5O0zBKRjeDh6Ba",
         "youtubeProfile": "https://www.youtube.com/channel/UCBaU_Xh4fyokc-ckyCeYv3w",
         "officialImageSource": "https://www.instagram.com/missionismusic/?hl=en",
-        "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebe70afe5f418013a0c86ddbb6",
+        "imageUrl": "assets/artists/mission-saved.webp",
     },
     "BigBreeze": {
         "rosterOrder": 149,
@@ -50,7 +50,7 @@ EXPECTED = {
         "spotifyProfile": "https://open.spotify.com/artist/7wrWSJHfACjw7s7gYXOXTt",
         "youtubeProfile": "https://www.youtube.com/@TheOfficialMarkel",
         "officialImageSource": "https://open.spotify.com/artist/7wrWSJHfACjw7s7gYXOXTt",
-        "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb3bec4aaaca84d070b7383e2a",
+        "imageUrl": "assets/artists/bigbreeze-saved.webp",
     },
 }
 
