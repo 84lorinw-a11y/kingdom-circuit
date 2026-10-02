@@ -24254,7 +24254,7 @@
         "status": "scheduled",
         "ticketUrl": "https://www.bandsintown.com/e/1039613019-scootie-wop-at-match-midtown-arts-and-theater-center-houston",
         "officialUrl": "https://music.apple.com/us/concerts/ce.b01ccaf9-dcf3-44a6-afbf-4bd6d2fc60ae",
-        "image": "https://www.even.biz/_next/image?q=75&url=https%3A%2F%2Fdt7m7kl3brv3f.cloudfront.net%2Fimages%2F4fovkhwb35e2t8zi4p9ajnxa22a5&w=828",
+        "image": "assets/events/scootie-wop-chh-matters-houston-2026-11-14.jpg",
         "price": "",
         "sourceName": "Scootie Wop artist concert listing",
         "sources": [
@@ -24268,9 +24268,12 @@
         ],
         "lastVerified": "2026-07-31T00:00:00Z",
         "confidence": "high",
-        "imageType": "artist",
+        "imageType": "event_artwork",
         "verifiedVersion": 7,
-        "imagePosition": "50% 30%"
+        "imagePosition": "center",
+        "imageOverride": true,
+        "imageSource": "Owner-approved CHH Matters red-hat flyer from Christ XXL / Aptitude official announcement",
+        "imageSourceUrl": "https://www.instagram.com/p/DeAQ2A1mZbL/?img_index=2"
       }
     },
     {
@@ -24303,7 +24306,7 @@
         "status": "scheduled",
         "ticketUrl": "https://www.bandsintown.com/e/1039613019-scootie-wop-at-match-midtown-arts-and-theater-center-houston",
         "officialUrl": "https://music.apple.com/us/concerts/ce.b01ccaf9-dcf3-44a6-afbf-4bd6d2fc60ae",
-        "image": "https://www.even.biz/_next/image?q=75&url=https%3A%2F%2Fdt7m7kl3brv3f.cloudfront.net%2Fimages%2F4fovkhwb35e2t8zi4p9ajnxa22a5&w=828",
+        "image": "assets/events/scootie-wop-chh-matters-houston-2026-11-14.jpg",
         "price": "",
         "sourceName": "Scootie Wop Apple Music concert",
         "sources": [
@@ -24318,10 +24321,13 @@
         "lastVerified": "2026-09-12T14:12:12Z",
         "confidence": "high",
         "endDate": "2026-11-15",
-        "imageType": "artist",
-        "imagePosition": "50% 30%",
+        "imageType": "event_artwork",
+        "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-08-09T00:00:00Z"
+        "firstSeen": "2026-08-09T00:00:00Z",
+        "imageOverride": true,
+        "imageSource": "Owner-approved CHH Matters red-hat flyer from Christ XXL / Aptitude official announcement",
+        "imageSourceUrl": "https://www.instagram.com/p/DeAQ2A1mZbL/?img_index=2"
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-31T18:31:14Z",
@@ -27379,7 +27385,7 @@
         "status": "scheduled",
         "ticketUrl": "https://www.eventbrite.com/e/kelo-cho-presents-the-worship-after-christmas-tickets-1992972194483",
         "officialUrl": "https://murrayhilltheatre.com/event/kelo-cho-presents-the-worship-after-christmas/",
-        "image": "https://murrayhilltheatre.com/wp-content/uploads/2026/07/https-cdn.evbuc_.com-images-1188053564-306363782001-1-original.20260702-021736-1130x650.jpeg",
+        "image": "assets/events/kelo-worship-after-christmas-2026-12-26.jpg",
         "imageType": "event_artwork",
         "imagePosition": "center",
         "imageOverride": true,
@@ -27410,8 +27416,9 @@
           "Kelo Cho"
         ],
         "id": "manual:kelo-worship-after-christmas-jacksonville-2026",
-        "imageSource": "Murray Hill Theatre official event page",
-        "imageSourceUrl": "https://murrayhilltheatre.com/event/kelo-cho-presents-the-worship-after-christmas/"
+        "imageSource": "Murray Hill Theatre official Eventbrite flyer",
+        "imageSourceUrl": "https://www.eventbrite.com/e/kelo-cho-presents-the-worship-after-christmas-tickets-1992972194483",
+        "detailImageLayout": "landscape"
       }
     },
     {

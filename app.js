@@ -3001,9 +3001,9 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/wiff.p/",
     "spotifyProfile": "https://open.spotify.com/artist/1YgeYoQhwplwgLQj0gpogs",
     "youtubeProfile": "https://www.youtube.com/channel/UCHqUPmNbIMp_CKMWnZPWmwQ",
-    "officialImageSource": "https://www.instagram.com/wiff.p/",
-    "imageUrl": "assets/artists/wiff-p-approved-oct2.jpg",
-    "imagePosition": "50% 25%",
+    "officialImageSource": "https://www.instagram.com/crownless_kingz/p/CnvVQOzMIej/",
+    "imageUrl": "assets/artists/wiff-p-live-performance.webp",
+    "imagePosition": "50% 0%",
     "label": "Crownless Kingz",
     "sourceRegistryVerified": true
   },
@@ -4026,8 +4026,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 20%"
   },
   "wiff.p": {
-    "imageUrl": "assets/artists/wiff-p-approved-oct2.jpg",
-    "imagePosition": "50% 25%"
+    "imageUrl": "assets/artists/wiff-p-live-performance.webp",
+    "imagePosition": "50% 0%"
   },
   "dondrae": {
     "imageUrl": "assets/artists/dondrae-approved-oct2.jpg",
