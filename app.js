@@ -203,6 +203,30 @@ const ARTIST_ROSTER_ORDER = [
   "HeiressIrami",
   "GIOVANI",
   "aftrthght",
+  "Rio 24k",
+  "christrebel",
+  "DaeShawn Forrest",
+  "Kevi Morse",
+  "Jamil",
+  "Zenwi",
+  "JAYLXN",
+  "Nehemiah",
+  "Wiff.P",
+  "Dondrae",
+  "H.U.R.T.",
+  "Kenny Jenkins",
+  "Xerogangg",
+  "Dontae",
+  "MikeySoChristian",
+  "Arize",
+  "Drew Ava",
+  "Mike Servin",
+  "KG Santiago",
+  "Da Young Disciples",
+  "B-Wade SBG",
+  "Big Rev.",
+  "L.O.G.",
+  "KT Money",
   "Redimi2",
   "Funky",
   "Pregador Luo",
@@ -215,11 +239,9 @@ const ARTIST_ROSTER_ORDER = [
   "KJ-52",
   "Eshon Burgundy",
   "Sho Baraka",
-  "Propaganda",
   "Shai Linne",
   "Thi'sl",
   "Swoope",
-  "DaeShawn Forrest",
   "Alexxander",
   "2819 Worship",
   "George.Rose",
@@ -252,7 +274,6 @@ const ARTIST_ROSTER_ORDER = [
   "Tay Stunna",
   "YakiTheKid",
   "Vic Lucas",
-  "Kevi Morse",
   "Chris Caro",
   "EJ Swavv",
   "J.Solo",
@@ -268,7 +289,6 @@ const ARTIST_ROSTER_ORDER = [
   "B. Cooper",
   "YP aka Young Paul",
   "Untidld",
-  "Jamil",
   "Kvng Flvcko",
   "MotionPlus",
   "Adriel Cruz",
@@ -2860,6 +2880,356 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/aftrthght-instagram-portrait.jpg",
     "imagePosition": "50% 55%",
     "sourceRegistryVerified": true
+  },
+  "rio 24k": {
+    "aliases": [
+      "Rio 24k"
+    ],
+    "website": "https://www.instagram.com/rio_24k/",
+    "instagramProfile": "https://www.instagram.com/rio_24k/",
+    "spotifyProfile": "https://open.spotify.com/artist/6VLGDCGey64ClZ2qsWusGv",
+    "youtubeProfile": "https://www.youtube.com/channel/UCy-zFguTOr3gYc5-6gywM2A",
+    "officialImageSource": "https://www.instagram.com/rio_24k/",
+    "imageUrl": "assets/artists/rio-24k-approved-oct2.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "christrebel": {
+    "aliases": [
+      "christrebel"
+    ],
+    "website": "https://www.instagram.com/christrebel/",
+    "instagramProfile": "https://www.instagram.com/christrebel/",
+    "spotifyProfile": "https://open.spotify.com/artist/3DRD5UjpSvCHkYvNj8PYuS",
+    "youtubeProfile": "https://www.youtube.com/@christrebel",
+    "officialImageSource": "https://www.instagram.com/christrebel/",
+    "imageUrl": "assets/artists/christrebel-approved-oct2.png",
+    "imagePosition": "50% 0%",
+    "sourceRegistryVerified": true
+  },
+  "daeshawn forrest": {
+    "aliases": [
+      "DaeShawn Forrest",
+      "Daeshawn Forrest"
+    ],
+    "website": "https://www.instagram.com/daeshawnforrest/",
+    "instagramProfile": "https://www.instagram.com/daeshawnforrest/",
+    "spotifyProfile": "https://open.spotify.com/artist/2XdyspU05FgF3PTKuJ7UBK",
+    "youtubeProfile": "https://www.youtube.com/@DaeShawnForrest",
+    "officialImageSource": "https://www.instagram.com/daeshawnforrest/",
+    "imageUrl": "assets/artists/daeshawn-forrest-approved-oct2.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "kevi morse": {
+    "aliases": [
+      "Kevi Morse"
+    ],
+    "website": "https://www.instagram.com/iamkevimorse/",
+    "instagramProfile": "https://www.instagram.com/iamkevimorse/",
+    "spotifyProfile": "https://open.spotify.com/artist/5SdVvihy2l8X53RTh3uW0l",
+    "youtubeProfile": "https://www.youtube.com/@KeviMorse",
+    "officialImageSource": "https://www.instagram.com/iamkevimorse/",
+    "imageUrl": "assets/artists/kevi-morse-approved-oct2.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "jamil": {
+    "aliases": [
+      "Jamil"
+    ],
+    "website": "https://linktr.ee/jamilofficial?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0DMTAwAHBkb2YCc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnSSIuTJzcuDcu0gUrgT7bkRrUTydrhDQKWu9ZkizlPim2puv6P3Q1QG8C-MU_aem_h3k6MBUaAPf4j1LhwVrhRw",
+    "instagramProfile": "https://www.instagram.com/jamilofficial/reels/",
+    "spotifyProfile": "https://open.spotify.com/artist/4JDmvmyrWfrOVik0WkuoSu",
+    "youtubeProfile": "https://www.youtube.com/@jamilofficialmusic",
+    "officialImageSource": "https://linktr.ee/jamilofficial?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0DMTAwAHBkb2YCc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnSSIuTJzcuDcu0gUrgT7bkRrUTydrhDQKWu9ZkizlPim2puv6P3Q1QG8C-MU_aem_h3k6MBUaAPf4j1LhwVrhRw",
+    "imageUrl": "assets/artists/jamil-approved-oct2.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "zenwi": {
+    "aliases": [
+      "Zenwi"
+    ],
+    "website": "https://www.instagram.com/zenwiofficial/",
+    "instagramProfile": "https://www.instagram.com/zenwiofficial/",
+    "spotifyProfile": "https://open.spotify.com/artist/4Kna9Cbz08tcCg6wPU0umo",
+    "youtubeProfile": "https://www.youtube.com/@Zenwiofficial",
+    "officialImageSource": "https://www.instagram.com/zenwiofficial/",
+    "imageUrl": "assets/artists/zenwi-approved-oct2.jpg",
+    "imagePosition": "50% 25%",
+    "state": "FL",
+    "label": "Zyatid Records",
+    "sourceRegistryVerified": true
+  },
+  "jaylxn": {
+    "aliases": [
+      "JAYLXN",
+      "Jaylxn"
+    ],
+    "website": "https://linktr.ee/jaylxn7",
+    "instagramProfile": "https://www.instagram.com/jaylxn.7/",
+    "spotifyProfile": "https://open.spotify.com/artist/3KtSyUubWkv2gpAHQhrrig",
+    "youtubeProfile": "https://www.youtube.com/channel/UCRUlW4aTIVlV_BK4R7UDNCw",
+    "officialImageSource": "https://www.instagram.com/jaylxn.7/",
+    "imageUrl": "assets/artists/jaylxn-approved-oct2.jpg",
+    "imagePosition": "50% 30%",
+    "state": "FL",
+    "sourceRegistryVerified": true
+  },
+  "nehemiah": {
+    "aliases": [
+      "Nehemiah",
+      "its_nehe02"
+    ],
+    "website": "https://linktr.ee/nehemiah02",
+    "instagramProfile": "https://www.instagram.com/its_nehe02/",
+    "spotifyProfile": "https://open.spotify.com/artist/7fdG0HcxQczr1nxVlX4BYj",
+    "youtubeProfile": "https://music.youtube.com/channel/UCHnQofOxuVcQuq-gyhzO3Tw",
+    "officialImageSource": "https://www.instagram.com/its_nehe02/",
+    "imageUrl": "assets/artists/nehemiah-approved-oct2.jpg",
+    "imagePosition": "50% 20%",
+    "state": "FL",
+    "sourceRegistryVerified": true
+  },
+  "wiff.p": {
+    "aliases": [
+      "Wiff.P",
+      "Wiff Paul"
+    ],
+    "website": "https://www.instagram.com/wiff.p/",
+    "instagramProfile": "https://www.instagram.com/wiff.p/",
+    "spotifyProfile": "https://open.spotify.com/artist/1YgeYoQhwplwgLQj0gpogs",
+    "youtubeProfile": "https://www.youtube.com/channel/UCHqUPmNbIMp_CKMWnZPWmwQ",
+    "officialImageSource": "https://www.instagram.com/wiff.p/",
+    "imageUrl": "assets/artists/wiff-p-approved-oct2.jpg",
+    "imagePosition": "50% 30%",
+    "label": "Crownless Kingz",
+    "sourceRegistryVerified": true
+  },
+  "dondrae": {
+    "aliases": [
+      "Dondrae",
+      "HypeGodDrae"
+    ],
+    "website": "https://hyperfollow.com/dondrae",
+    "instagramProfile": "https://www.instagram.com/iamdondrae/",
+    "spotifyProfile": "https://open.spotify.com/artist/2AVqUkF20rb8UuA4J6jEaz",
+    "youtubeProfile": "https://www.youtube.com/@dondrae7791",
+    "officialImageSource": "https://www.instagram.com/iamdondrae/",
+    "imageUrl": "assets/artists/dondrae-approved-oct2.jpg",
+    "imagePosition": "50% 25%",
+    "state": "FL",
+    "sourceRegistryVerified": true
+  },
+  "h.u.r.t.": {
+    "aliases": [
+      "H.U.R.T.",
+      "HURT",
+      "HURT RPH"
+    ],
+    "website": "https://linktr.ee/hurt_rph",
+    "instagramProfile": "https://www.instagram.com/hurt_rph/",
+    "spotifyProfile": "https://open.spotify.com/artist/1mOPjLn8di3tMig4uO4Fgq",
+    "youtubeProfile": "https://www.youtube.com/c/RPHEXPERIENCE",
+    "officialImageSource": "https://www.instagram.com/hurt_rph/",
+    "imageUrl": "assets/artists/h-u-r-t-approved-oct2.jpg",
+    "imagePosition": "50% 30%",
+    "label": "RPH",
+    "sourceRegistryVerified": true
+  },
+  "kenny jenkins": {
+    "aliases": [
+      "Kenny Jenkins",
+      "Malaki The Messenger",
+      "Jesus Junki3"
+    ],
+    "website": "http://www.jesusjunki3movement.org/",
+    "instagramProfile": "https://www.instagram.com/jesusjunki3_mtm/",
+    "spotifyProfile": "https://open.spotify.com/artist/0jsCVNpeQcIkpAZjDIFhOC",
+    "youtubeProfile": "https://www.youtube.com/@Kenny_Jenkins/playlists",
+    "officialImageSource": "https://www.instagram.com/jesusjunki3_mtm/",
+    "imageUrl": "assets/artists/kenny-jenkins-approved-oct2.jpg",
+    "imagePosition": "50% 20%",
+    "label": "Jesus Junki3 Movement",
+    "sourceRegistryVerified": true
+  },
+  "xerogangg": {
+    "aliases": [
+      "Xerogangg",
+      "XeroGangg"
+    ],
+    "website": "https://www.xerogangg.com/",
+    "instagramProfile": "https://www.instagram.com/xerogangg/",
+    "spotifyProfile": "https://open.spotify.com/artist/1sq5xsce5ii8YhcTdaWWRw",
+    "youtubeProfile": "https://www.youtube.com/channel/UCt80G2WMW5iNgU_ID8So05g",
+    "officialImageSource": "https://www.instagram.com/xerogangg/",
+    "imageUrl": "assets/artists/xerogangg-approved-oct2.jpg",
+    "imagePosition": "50% 15%",
+    "sourceRegistryVerified": true
+  },
+  "dontae": {
+    "aliases": [
+      "Dontae",
+      "HogMob Dontae",
+      "Dontae Ralston"
+    ],
+    "website": "https://linktr.ee/hogmob_dontae",
+    "instagramProfile": "https://www.instagram.com/hogmob_dontae/",
+    "spotifyProfile": "https://open.spotify.com/artist/70AObzxCT4x5E2JotLVZKF",
+    "youtubeProfile": "https://www.youtube.com/playlist?list=PLM2fwrC5RrszW42dkY6tUOi6AKMSor3UZ",
+    "officialImageSource": "https://www.instagram.com/hogmob_dontae/",
+    "imageUrl": "assets/artists/dontae-approved-oct2.jpg",
+    "imagePosition": "50% 30%",
+    "state": "CA",
+    "label": "HOGMOB Ministries",
+    "sourceRegistryVerified": true
+  },
+  "mikeysochristian": {
+    "aliases": [
+      "MikeySoChristian",
+      "Mikey So Christian"
+    ],
+    "website": "https://linktr.ee/mikeysochristian",
+    "instagramProfile": "https://www.instagram.com/mikeysochristian/",
+    "spotifyProfile": "https://open.spotify.com/artist/006WEcVc11G2pFBmuNAjLU",
+    "youtubeProfile": "https://www.youtube.com/@MikeySoChristian",
+    "officialImageSource": "https://www.instagram.com/mikeysochristian/",
+    "imageUrl": "assets/artists/mikeysochristian-approved-oct2.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "arize": {
+    "aliases": [
+      "Arize",
+      "Arize209",
+      "Alex Lisea"
+    ],
+    "website": "https://linktr.ee/arize209",
+    "instagramProfile": "https://www.instagram.com/arize209/",
+    "spotifyProfile": "https://open.spotify.com/artist/3HAB7efekWyjbapGBloqg9",
+    "youtubeProfile": "https://www.youtube.com/user/RizeNShineRecords",
+    "officialImageSource": "https://www.instagram.com/arize209/",
+    "imageUrl": "assets/artists/arize-approved-oct2.jpg",
+    "imagePosition": "50% 30%",
+    "state": "CA",
+    "label": "Rize N Shine",
+    "sourceRegistryVerified": true
+  },
+  "drew ava": {
+    "aliases": [
+      "Drew Ava",
+      "DrewAva"
+    ],
+    "website": "https://linktr.ee/Drewava",
+    "instagramProfile": "https://www.instagram.com/officialdrewava/",
+    "spotifyProfile": "https://open.spotify.com/artist/1kuocA53e2MltklnSFSiGR",
+    "youtubeProfile": "https://www.youtube.com/c/DrewAva",
+    "officialImageSource": "https://www.instagram.com/officialdrewava/",
+    "imageUrl": "assets/artists/drew-ava-approved-oct2.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "mike servin": {
+    "aliases": [
+      "Mike Servin"
+    ],
+    "website": "https://mikeservin.com/",
+    "instagramProfile": "https://www.instagram.com/servinmike20/",
+    "spotifyProfile": "https://open.spotify.com/artist/11pxA7iRT74yfvdJPbUym8",
+    "youtubeProfile": "https://www.youtube.com/@ServinMike20",
+    "officialImageSource": "https://www.instagram.com/servinmike20/",
+    "imageUrl": "assets/artists/mike-servin-approved-oct2.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "kg santiago": {
+    "aliases": [
+      "KG Santiago",
+      "K.G. Santiago"
+    ],
+    "website": "https://open.spotify.com/artist/1lHtwwAfyruKIskYFkIZ0T",
+    "spotifyProfile": "https://open.spotify.com/artist/1lHtwwAfyruKIskYFkIZ0T",
+    "youtubeProfile": "https://www.youtube.com/channel/UCQH15gaajVwKtOSxq1EEKMQ",
+    "officialImageSource": "https://open.spotify.com/artist/1lHtwwAfyruKIskYFkIZ0T",
+    "imageUrl": "assets/artists/kg-santiago-approved-oct2.png",
+    "imagePosition": "100% 45%",
+    "label": "KMF / God First Muzic",
+    "sourceRegistryVerified": true
+  },
+  "da young disciples": {
+    "aliases": [
+      "Da Young Disciples",
+      "DaYoungDisciples"
+    ],
+    "website": "https://linktr.ee/dayoungdisciples",
+    "instagramProfile": "https://www.instagram.com/da_young_disciples/",
+    "spotifyProfile": "https://open.spotify.com/artist/4YoQDM4ZScfTxngKQUS7SV",
+    "youtubeProfile": "https://www.youtube.com/@dayoungdisciples",
+    "officialImageSource": "https://www.instagram.com/da_young_disciples/",
+    "imageUrl": "assets/artists/da-young-disciples-approved-oct2.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "b-wade sbg": {
+    "aliases": [
+      "B-Wade SBG",
+      "B Wade SBG",
+      "Bobby Wade Sr."
+    ],
+    "website": "https://www.instagram.com/b.wade_sbg_music/",
+    "instagramProfile": "https://www.instagram.com/b.wade_sbg_music/",
+    "spotifyProfile": "https://open.spotify.com/artist/7dCWCRBrs0KKv90NHuo1n9",
+    "youtubeProfile": "https://www.youtube.com/channel/UCEh_A-AMAN6CJLfdfYl5zhA",
+    "officialImageSource": "https://www.instagram.com/b.wade_sbg_music/",
+    "imageUrl": "assets/artists/b-wade-sbg-approved-oct2.jpg",
+    "imagePosition": "50% 20%",
+    "label": "Resurrection Records",
+    "sourceRegistryVerified": true
+  },
+  "big rev.": {
+    "aliases": [
+      "Big Rev.",
+      "Big Rev",
+      "John Michael Blount"
+    ],
+    "website": "https://niyacrims21.wixsite.com/bigrevnsonministry",
+    "instagramProfile": "https://www.instagram.com/bigrev0723/",
+    "spotifyProfile": "https://open.spotify.com/artist/0TxHiR55tyx1SDAk9x5PKu",
+    "youtubeProfile": "https://www.youtube.com/@bigrev.1464",
+    "officialImageSource": "https://www.instagram.com/bigrev0723/",
+    "imageUrl": "assets/artists/big-rev-approved-oct2.jpg",
+    "imagePosition": "50% 30%",
+    "label": "Resurrection Records",
+    "sourceRegistryVerified": true
+  },
+  "l.o.g.": {
+    "aliases": [
+      "L.O.G.",
+      "LOG918",
+      "Logan Scott"
+    ],
+    "website": "https://www.instagram.com/l.o.g.918/",
+    "instagramProfile": "https://www.instagram.com/l.o.g.918/",
+    "youtubeProfile": "https://www.youtube.com/@LOG918",
+    "officialImageSource": "https://www.instagram.com/l.o.g.918/",
+    "imageUrl": "assets/artists/l-o-g-approved-oct2.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "kt money": {
+    "aliases": [
+      "KT Money",
+      "KTMoney"
+    ],
+    "website": "https://linktr.ee/ktmoneyofficial",
+    "instagramProfile": "https://www.instagram.com/ktmoneyofficial/",
+    "spotifyProfile": "https://open.spotify.com/artist/6o1yNU7w2XTwdBnmpqZYlF",
+    "youtubeProfile": "https://www.youtube.com/@ktmoneyofficial",
+    "officialImageSource": "https://www.instagram.com/ktmoneyofficial/",
+    "imageUrl": "assets/artists/kt-money-approved-oct2.jpg",
+    "imagePosition": "50% 20%",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -3622,6 +3992,102 @@ const STATIC_ARTIST_PORTRAITS = {
   "jimmy rock": {
     "imageUrl": "assets/artists/jimmy-rock-instagram-profile.jpg",
     "imagePosition": "50% 25%"
+  },
+  "christrebel": {
+    "imageUrl": "assets/artists/christrebel-approved-oct2.png",
+    "imagePosition": "50% 0%"
+  },
+  "jaylxn": {
+    "imageUrl": "assets/artists/jaylxn-approved-oct2.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "kevi morse": {
+    "imageUrl": "assets/artists/kevi-morse-approved-oct2.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "zenwi": {
+    "imageUrl": "assets/artists/zenwi-approved-oct2.jpg",
+    "imagePosition": "50% 25%"
+  },
+  "jamil": {
+    "imageUrl": "assets/artists/jamil-approved-oct2.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "rio 24k": {
+    "imageUrl": "assets/artists/rio-24k-approved-oct2.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "daeshawn forrest": {
+    "imageUrl": "assets/artists/daeshawn-forrest-approved-oct2.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "nehemiah": {
+    "imageUrl": "assets/artists/nehemiah-approved-oct2.jpg",
+    "imagePosition": "50% 20%"
+  },
+  "wiff.p": {
+    "imageUrl": "assets/artists/wiff-p-approved-oct2.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "dondrae": {
+    "imageUrl": "assets/artists/dondrae-approved-oct2.jpg",
+    "imagePosition": "50% 25%"
+  },
+  "h.u.r.t.": {
+    "imageUrl": "assets/artists/h-u-r-t-approved-oct2.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "xerogangg": {
+    "imageUrl": "assets/artists/xerogangg-approved-oct2.jpg",
+    "imagePosition": "50% 15%"
+  },
+  "kenny jenkins": {
+    "imageUrl": "assets/artists/kenny-jenkins-approved-oct2.jpg",
+    "imagePosition": "50% 20%"
+  },
+  "arize": {
+    "imageUrl": "assets/artists/arize-approved-oct2.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "drew ava": {
+    "imageUrl": "assets/artists/drew-ava-approved-oct2.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "dontae": {
+    "imageUrl": "assets/artists/dontae-approved-oct2.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "mikeysochristian": {
+    "imageUrl": "assets/artists/mikeysochristian-approved-oct2.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "mike servin": {
+    "imageUrl": "assets/artists/mike-servin-approved-oct2.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "kg santiago": {
+    "imageUrl": "assets/artists/kg-santiago-approved-oct2.png",
+    "imagePosition": "100% 45%"
+  },
+  "b-wade sbg": {
+    "imageUrl": "assets/artists/b-wade-sbg-approved-oct2.jpg",
+    "imagePosition": "50% 20%"
+  },
+  "da young disciples": {
+    "imageUrl": "assets/artists/da-young-disciples-approved-oct2.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "big rev.": {
+    "imageUrl": "assets/artists/big-rev-approved-oct2.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "kt money": {
+    "imageUrl": "assets/artists/kt-money-approved-oct2.jpg",
+    "imagePosition": "50% 20%"
+  },
+  "l.o.g.": {
+    "imageUrl": "assets/artists/l-o-g-approved-oct2.jpg",
+    "imagePosition": "50% 30%"
   }
 };
 

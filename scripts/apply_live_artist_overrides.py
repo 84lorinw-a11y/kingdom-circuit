@@ -9,8 +9,8 @@ import pathlib
 import re
 import shutil
 
-EXCLUDED_ARTISTS = {"chad jones", "erica mason", "big holy", "jay kalyl", "dj maj"}
-EXCLUDED_SLUGS = {"chad-jones", "erica-mason", "big-holy", "jay-kalyl", "dj-maj"}
+EXCLUDED_ARTISTS = {"chad jones", "erica mason", "big holy", "jay kalyl", "dj maj", "propaganda"}
+EXCLUDED_SLUGS = {"chad-jones", "erica-mason", "big-holy", "jay-kalyl", "dj-maj", "propaganda"}
 FALLBACK_IMAGE = "/assets/event-fallback.webp"
 
 # Multi-day festivals keep their full festival start/end dates, while artist

@@ -14,7 +14,10 @@ def patch_event(event):
         return False
     sources = event.get("sources", [])
     legacy = event.get("legacyEventPaths", [])
+    first_seen = event.get("firstSeen")
     event.update(copy.deepcopy(wanted))
+    if first_seen:
+        event["firstSeen"] = min(first_seen, event.get("firstSeen") or first_seen)
     event["sources"] = copy.deepcopy(wanted.get("sources", [])) + [
         s for s in sources if s.get("url") not in {x["url"] for x in wanted.get("sources", [])}]
     if wanted.get("legacyEventPaths"):

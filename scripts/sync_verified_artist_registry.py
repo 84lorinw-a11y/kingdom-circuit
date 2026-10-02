@@ -24,7 +24,7 @@ APP_FILE = ROOT / "app.js"
 TEST_FILE = ROOT / "tests" / "test_update_events.py"
 
 # Owner-requested roster exclusions override stale registry exports.
-EXCLUDED_ARTISTS = {"chad jones", "erica mason", "big holy", "jay kalyl", "dj maj"}
+EXCLUDED_ARTISTS = {"chad jones", "erica mason", "big holy", "jay kalyl", "dj maj", "propaganda"}
 
 # Backward-compatible direct calendar metadata for 808 BEEZY. The generalized
 # sync still exposes this constant because the ingestion regression test and

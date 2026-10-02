@@ -5,7 +5,10 @@ from pathlib import Path
 
 # September 28: the owner removed Jay Kalyl from the curated database and
 # explicitly requested removal of his profile and every show from the site.
-REMOVED_ARTISTS = {"jay kalyl"}
+# October 2: remove Propaganda's artist entry and performances, including
+# archived/collector records. Host-only billing at another artist's event is
+# not a separately confirmed performance by the removed artist.
+REMOVED_ARTISTS = {"jay kalyl", "propaganda"}
 
 
 def removed_artist(name):
@@ -18,7 +21,7 @@ def removed_event(event):
     if any(removed_artist(name) for name in names):
         return True
     # Retain the removal even if a stale feed omits the artist association.
-    return bool(re.search(r"\bjay[\s_-]*kalyl\b", " ".join(
+    return bool(re.search(r"\b(?:jay[\s_-]*kalyl|propaganda)\b", " ".join(
         str(event.get(key) or "") for key in ("id", "title")), re.I))
 
 
