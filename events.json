@@ -3151,6 +3151,63 @@
     "firstSeen": "2026-09-12T14:30:41Z"
   },
   {
+    "id": "manual:mayia-boxyard-saturdaze-2026",
+    "title": "Boxyard Saturdaze",
+    "startDate": "2026-10-10",
+    "startTime": "11:30",
+    "timezone": "America/New_York",
+    "venue": "Boxyard RTP — BeatBox Stage",
+    "address": "",
+    "city": "Durham",
+    "state": "NC",
+    "country": "US",
+    "artists": [
+      "MAYIA"
+    ],
+    "headliner": "MAYIA",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+    "officialUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+    "image": "assets/events/mayia-boxyard-2026-10-10.png",
+    "price": "",
+    "sourceName": "Boxyard RTP official event",
+    "sources": [
+      {
+        "name": "Boxyard RTP official event",
+        "url": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "MAYIA official calendar",
+        "url": "https://mayiawarren.org/go/bandsintown/21578/event/108885203",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "authority": "official_event",
+    "lineupExplicit": true,
+    "auditVerified": "2026-09-26",
+    "officialBill": [
+      "DJ Watty Tha Shepherd",
+      "MAYIA WARREN"
+    ],
+    "imageOverride": true,
+    "imageSourceUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+    "imageSource": "Boxyard RTP official DJ Watty and MAYIA event poster",
+    "startDateTime": "2026-10-10T11:30:00-04:00",
+    "endTime": "14:30"
+  },
+  {
     "id": "manual:egr-2026-10-10-visalia-ca",
     "title": "Back to the Basics",
     "startDate": "2026-10-10",
@@ -3249,63 +3306,6 @@
     ],
     "legacyEventNotice": "This existing EGR listing now includes the complete Back to the Basics flyer, lineup and venue.",
     "notes": "Correction of the existing EGR Visalia event, not a new discovery. Official October 1 Sevin flyer confirms all 11 performers plus Antwoine Hill as host. Noon–4 PM at Mooney Grove Park. Preserve earliest discovery August 9."
-  },
-  {
-    "id": "manual:mayia-boxyard-saturdaze-2026",
-    "title": "Boxyard Saturdaze",
-    "startDate": "2026-10-10",
-    "startTime": "11:30",
-    "timezone": "America/New_York",
-    "venue": "Boxyard RTP — BeatBox Stage",
-    "address": "",
-    "city": "Durham",
-    "state": "NC",
-    "country": "US",
-    "artists": [
-      "MAYIA"
-    ],
-    "headliner": "MAYIA",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
-    "officialUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
-    "image": "assets/events/mayia-boxyard-2026-10-10.png",
-    "price": "",
-    "sourceName": "Boxyard RTP official event",
-    "sources": [
-      {
-        "name": "Boxyard RTP official event",
-        "url": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      },
-      {
-        "name": "MAYIA official calendar",
-        "url": "https://mayiawarren.org/go/bandsintown/21578/event/108885203",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z",
-    "authority": "official_event",
-    "lineupExplicit": true,
-    "auditVerified": "2026-09-26",
-    "officialBill": [
-      "DJ Watty Tha Shepherd",
-      "MAYIA WARREN"
-    ],
-    "imageOverride": true,
-    "imageSourceUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
-    "imageSource": "Boxyard RTP official DJ Watty and MAYIA event poster",
-    "startDateTime": "2026-10-10T11:30:00-04:00",
-    "endTime": "14:30"
   },
   {
     "title": "ONE DAY Fall Festival 2026",
@@ -3564,9 +3564,6 @@
         "priority": 94
       }
     ],
-    "imageSource": "Official Eventbrite event artwork",
-    "imageSourceUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
-    "auditVerified": "2026-09-26",
     "advertisedBilling": [
       "Aasha Marie",
       "Justin Martyr",
@@ -3578,7 +3575,8 @@
       "Justin Martyr",
       "Conquest",
       "Crystal B."
-    ]
+    ],
+    "auditVerified": "2026-09-26"
   },
   {
     "id": "manual:passion-fest-ii-2026-charlotte",
@@ -4047,6 +4045,74 @@
     "firstSeen": "2026-09-12T14:30:41Z"
   },
   {
+    "title": "Mike Malagies — It’s A God Night (Miami)",
+    "startDate": "2026-10-16",
+    "startTime": "19:00",
+    "doorsTime": "18:30",
+    "timezone": "America/New_York",
+    "venue": "Black Box Media Miami",
+    "address": "12355 NE 13th Ave Unit #403-404",
+    "city": "North Miami",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Mike Malagies"
+    ],
+    "headliner": "Mike Malagies",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
+    "officialUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
+    "image": "assets/events/mike-malagies-miami-2026-10-16.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "lineupExplicit": true,
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "sourceName": "TicketSource exact event listing",
+    "sources": [
+      {
+        "name": "TicketSource exact event listing",
+        "url": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      },
+      {
+        "name": "Black Box Media Miami official venue",
+        "url": "https://www.blackboxstudiosmiami.com/event-list",
+        "type": "manual_verified",
+        "authority": "venue",
+        "priority": 112
+      },
+      {
+        "name": "TicketSource exact event listing",
+        "url": "https://www.ticketsource.com/the-sound-system/mike-malagies-florida-takeover-miami/e-vgxqxl",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      }
+    ],
+    "auditVerified": "2026-09-26",
+    "id": "manual:mike-malagies-florida-takeover-miami-2026",
+    "startDateTime": "2026-10-16T19:00:00-04:00",
+    "advertisedBilling": [
+      "Mike Malagies",
+      "DJ JBEZ"
+    ],
+    "firstSeen": "2026-09-13T14:21:37Z",
+    "legacyEventPaths": [
+      "/event/mike-malagies-florida-takeover-miami-2026-10-16-north-miami-6a5e6f/"
+    ],
+    "legacyEventNotice": "This concert is now listed as Mike Malagies — It’s A God Night (Miami), starting at 7:00 PM on October 16.",
+    "notes": "TicketSource describes VIP 6:00–6:30 PM, doors 6:30 PM, concert starting at 7:00 PM with DJ JBEZ, and Mike Malagies 7:30–9:00 PM. The listing header's 6:30 PM is doors.",
+    "imageSourceUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
+    "imageSource": "Official TicketSource It's A God Night Miami flyer",
+    "soldOut": true,
+    "ticketAvailability": "sold_out"
+  },
+  {
     "id": "manual:eventbrite:rare-of-breed-jacksonville-2026",
     "title": "Rare of Breed",
     "startDate": "2026-10-16",
@@ -4094,8 +4160,7 @@
     "cancellationConfirmed": true,
     "cancellationConfirmedAt": "2026-09-12",
     "ticketAvailability": "cancelled",
-    "notes": "Cancelled by the organizer. This page is retained as a cancellation notice.",
-    "auditVerified": "2026-09-13"
+    "notes": "Cancelled by the organizer. This page is retained as a cancellation notice."
   },
   {
     "title": "The Sac Town Give Back",
@@ -4268,6 +4333,76 @@
         "priority": 112
       }
     ]
+  },
+  {
+    "id": "manual:adrenaline-valrico-2026-10-17",
+    "title": "Adrenaline — Tampa Christian Music Concert",
+    "startDate": "2026-10-17",
+    "startTime": "18:00",
+    "timezone": "America/New_York",
+    "startDateTime": "2026-10-17T18:00:00-04:00",
+    "venue": "Bethel Of Brandon",
+    "address": "2106 Lithia Pinecrest Rd",
+    "city": "Valrico",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Zenwi",
+      "JAYLXN",
+      "Nehemiah",
+      "Wiff.P",
+      "Dondrae"
+    ],
+    "headliner": "Zenwi",
+    "advertisedBilling": [
+      "Monae",
+      "JAYLXN",
+      "Nehemiah",
+      "Zenwi",
+      "Wiff.P",
+      "Dondrae",
+      "Jayde Eliyah"
+    ],
+    "officialBill": [
+      "Monae",
+      "JAYLXN",
+      "Nehemiah",
+      "Zenwi",
+      "Wiff.P",
+      "Dondrae",
+      "Jayde Eliyah"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "eventType": "concert",
+    "status": "scheduled",
+    "officialUrl": "https://www.eventbrite.com/e/adrenaline-tampa-christian-music-concert-tickets-2002457149238",
+    "ticketUrl": "https://www.eventbrite.com/e/adrenaline-tampa-christian-music-concert-tickets-2002457149238",
+    "image": "assets/events/adrenaline-valrico-2026-10-17.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Official artist or organizer flyer",
+    "imageSourceUrl": "https://www.eventbrite.com/e/adrenaline-tampa-christian-music-concert-tickets-2002457149238",
+    "confidence": "high",
+    "authority": "official_event",
+    "sourceName": "Official artist or organizer announcement",
+    "sources": [
+      {
+        "name": "Official artist or organizer announcement",
+        "url": "https://www.eventbrite.com/e/adrenaline-tampa-christian-music-concert-tickets-2002457149238",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      }
+    ],
+    "firstSeen": "2026-10-01T18:00:00Z",
+    "lastVerified": "2026-10-02T18:00:00Z",
+    "auditVerified": "2026-10-02",
+    "editorialBatch": "2026-10-02-verified-artists",
+    "postalCode": "33596",
+    "doorsTime": "17:00",
+    "notes": "Current Eventbrite listing explicitly gives 5 PM doors and 6 PM music. Full flyer billing preserved; Monae and Jayde Eliyah do not have curated artist profiles."
   },
   {
     "id": "manual:mission-friends-sacramento-2026",
@@ -4603,6 +4738,60 @@
     ]
   },
   {
+    "id": "manual:priest-jones-serv-willmar-2026-10-24",
+    "title": "Priest Jones featuring SERV",
+    "startDate": "2026-10-24",
+    "startTime": "17:30",
+    "timezone": "America/Chicago",
+    "startDateTime": "2026-10-24T17:30:00-05:00",
+    "venue": "First Street Warehouse",
+    "address": "",
+    "city": "Willmar",
+    "state": "MN",
+    "country": "US",
+    "artists": [
+      "Priest Jones"
+    ],
+    "headliner": "Priest Jones",
+    "advertisedBilling": [
+      "Priest Jones",
+      "SERV"
+    ],
+    "officialBill": [
+      "Priest Jones",
+      "SERV"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "eventType": "concert",
+    "status": "scheduled",
+    "officialUrl": "https://www.instagram.com/citylifewillmar/p/Dd99t06MUS6/",
+    "ticketUrl": "https://www.instagram.com/citylifewillmar/p/Dd99t06MUS6/",
+    "image": "assets/events/priest-jones-serv-willmar-2026-10-24.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Official artist or organizer flyer",
+    "imageSourceUrl": "https://www.instagram.com/citylifewillmar/p/Dd99t06MUS6/",
+    "confidence": "high",
+    "authority": "official_event",
+    "sourceName": "Official artist or organizer announcement",
+    "sources": [
+      {
+        "name": "Official artist or organizer announcement",
+        "url": "https://www.instagram.com/citylifewillmar/p/Dd99t06MUS6/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      }
+    ],
+    "firstSeen": "2026-10-01T18:00:00Z",
+    "lastVerified": "2026-10-02T18:00:00Z",
+    "auditVerified": "2026-10-02",
+    "editorialBatch": "2026-10-02-verified-artists",
+    "notes": "Official City Life Willmar flyer confirms October 24 at 5:30 PM and First Street Warehouse. SERV remains visible without an invented artist profile. Street address is omitted because the flyer does not supply it."
+  },
+  {
     "id": "official:6ccf87bf0ba17cd0c74d",
     "title": "Space City Fest 2026",
     "startDate": "2026-10-25",
@@ -4649,6 +4838,73 @@
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z"
+  },
+  {
+    "id": "manual:chh-takeover-huntington-2026-10-25",
+    "title": "CHH Takeover Night",
+    "startDate": "2026-10-25",
+    "startTime": "17:30",
+    "timezone": "America/Chicago",
+    "startDateTime": "2026-10-25T17:30:00-05:00",
+    "venue": "The Good Fight Venue",
+    "address": "201 W Broadway Street",
+    "city": "Huntington",
+    "state": "AR",
+    "country": "US",
+    "artists": [
+      "Big Rev.",
+      "B-Wade SBG",
+      "L.O.G.",
+      "KT Money"
+    ],
+    "headliner": "Big Rev.",
+    "advertisedBilling": [
+      "Big Rev.",
+      "B-Wade SBG",
+      "L.O.G.",
+      "KT Money",
+      "Michael Powers",
+      "Upon This Rock"
+    ],
+    "officialBill": [
+      "Big Rev.",
+      "B-Wade SBG",
+      "L.O.G.",
+      "KT Money",
+      "Michael Powers",
+      "Upon This Rock"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "eventType": "concert",
+    "status": "scheduled",
+    "officialUrl": "https://www.instagram.com/b.wade_sbg_music/p/Dd7nozDsoaM/",
+    "ticketUrl": "https://www.instagram.com/b.wade_sbg_music/p/Dd7nozDsoaM/",
+    "image": "assets/events/chh-takeover-huntington-2026-10-25.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Official artist or organizer flyer",
+    "imageSourceUrl": "https://www.instagram.com/b.wade_sbg_music/p/Dd7nozDsoaM/",
+    "confidence": "high",
+    "authority": "official_event",
+    "sourceName": "Official artist or organizer announcement",
+    "sources": [
+      {
+        "name": "Official artist or organizer announcement",
+        "url": "https://www.instagram.com/b.wade_sbg_music/p/Dd7nozDsoaM/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      }
+    ],
+    "firstSeen": "2026-10-01T18:00:00Z",
+    "lastVerified": "2026-10-02T18:00:00Z",
+    "auditVerified": "2026-10-02",
+    "editorialBatch": "2026-10-02-verified-artists",
+    "doorsTime": "17:00",
+    "publicDescription": "CHH Takeover Night features Big Rev., B-Wade SBG, L.O.G. and KT Money, with worship by Michael Powers and Upon This Rock.",
+    "notes": "The artist co-post and event flyer confirm all four CHH artists, worship participants, venue and 5:30 PM show start. Doors are 5 PM."
   },
   {
     "id": "manual:good-vibez-jesus-miami-gardens-2026-10-30",
@@ -4819,6 +5075,70 @@
     "id": "manual:light-in-the-darkness-phoenix-2026"
   },
   {
+    "id": "manual:the-comeback-2-gainesville-2026-11-01",
+    "title": "The Comeback 2",
+    "startDate": "2026-11-01",
+    "startTime": "16:00",
+    "timezone": "America/New_York",
+    "startDateTime": "2026-11-01T16:00:00-05:00",
+    "venue": "2343 Riverside Drive",
+    "address": "2343 Riverside Drive",
+    "city": "Gainesville",
+    "state": "GA",
+    "country": "US",
+    "artists": [
+      "DJ Winn",
+      "H.U.R.T.",
+      "Kenny Jenkins"
+    ],
+    "headliner": "DJ Winn",
+    "advertisedBilling": [
+      "DJ Winn",
+      "H.U.R.T.",
+      "Kenny Jenkins",
+      "Steve Da Christian",
+      "Reeves"
+    ],
+    "officialBill": [
+      "DJ Winn",
+      "H.U.R.T.",
+      "Kenny Jenkins",
+      "Steve Da Christian",
+      "Reeves"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "eventType": "concert",
+    "status": "scheduled",
+    "officialUrl": "https://www.instagram.com/djwinn/p/Dd9lo3-JtBW/",
+    "ticketUrl": "https://www.instagram.com/djwinn/p/Dd9lo3-JtBW/",
+    "image": "assets/events/the-comeback-2-gainesville-2026-11-01.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Official artist or organizer flyer",
+    "imageSourceUrl": "https://www.instagram.com/djwinn/p/Dd9lo3-JtBW/",
+    "confidence": "high",
+    "authority": "official_event",
+    "sourceName": "Official artist or organizer announcement",
+    "sources": [
+      {
+        "name": "Official artist or organizer announcement",
+        "url": "https://www.instagram.com/djwinn/p/Dd9lo3-JtBW/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      }
+    ],
+    "firstSeen": "2026-10-01T18:00:00Z",
+    "lastVerified": "2026-10-02T18:00:00Z",
+    "auditVerified": "2026-10-02",
+    "editorialBatch": "2026-10-02-verified-artists",
+    "endTime": "19:00",
+    "publicDescription": "GOD MOB and Lighthouse present a hip-hop community event with DJ Winn, H.U.R.T., Kenny Jenkins, Steve Da Christian and Reeves, plus guest speaker Trell “Donk” Webb.",
+    "notes": "DJ Winn official November 1 flyer gives 4–7 PM and the address but no formal venue name. The address is used without inventing one. Trell Donk Webb is a speaker, not a musical performer; uncurated performers remain unlinked."
+  },
+  {
     "id": "ticketmaster:k7vGF_CBswXt6",
     "title": "ZAUNTEE: God Remembers Tour",
     "startDate": "2026-11-01",
@@ -4955,128 +5275,6 @@
     "imageSourceUrl": "https://www.bandsintown.com/e/108659684-skema-boy-at-subterranean"
   },
   {
-    "id": "bandsintown:108940329",
-    "title": "Miles Minnick at Black Box Media Miami",
-    "startDate": "2026-11-05",
-    "startTime": "",
-    "timezone": "America/New_York",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "North Miami",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "merged",
-    "mergedIntoId": "manual:miles-minnick-black-box-north-miami-2026-11-05",
-    "officialUrl": "",
-    "ticketUrl": "",
-    "sourceName": "Superseded listing",
-    "notes": "This older listing is retained only to redirect visitors to the corrected canonical event.",
-    "auditVerified": "2026-09-23"
-  },
-  {
-    "id": "manual:cj-emulous-new-mainstream-miami-2026-11-05",
-    "title": "New Mainstream Tour — Miles Minnick, Tommy Zuko & CJ Emulous",
-    "startDate": "2026-11-05",
-    "startTime": "",
-    "timezone": "America/New_York",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "Miami",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "merged",
-    "mergedIntoId": "manual:miles-minnick-black-box-north-miami-2026-11-05",
-    "officialUrl": "",
-    "ticketUrl": "",
-    "sourceName": "Superseded listing",
-    "notes": "This older listing is retained only to redirect visitors to the corrected canonical event.",
-    "auditVerified": "2026-09-23"
-  },
-  {
-    "title": "Miles Minnick at Black Box Media Miami",
-    "startDate": "2026-11-05",
-    "startTime": "18:30",
-    "timezone": "America/New_York",
-    "venue": "Black Box Media Miami",
-    "address": "12355 NE 13th Ave Unit #403-404",
-    "city": "North Miami",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108940329",
-    "officialUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
-    "image": "assets/events/miles-minnick-florida-campus-tour-2026.jpg",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "lineupExplicit": true,
-    "advertisedBilling": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "sourceName": "Bandsintown verified event listing",
-    "sources": [
-      {
-        "name": "Eli Williams official performance announcement",
-        "url": "https://www.instagram.com/eliwilliamssss/p/DdmMA0JOH4q/",
-        "type": "manual_verified",
-        "authority": "artist",
-        "priority": 115
-      },
-      {
-        "name": "Bandsintown verified event listing",
-        "url": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 94
-      },
-      {
-        "name": "CJ Emulous official tour calendar",
-        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-23",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 88
-      }
-    ],
-    "notes": " Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates.",
-    "auditVerified": "2026-09-23",
-    "officialBill": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "id": "manual:miles-minnick-black-box-north-miami-2026-11-05",
-    "imageOverride": true,
-    "imageSource": "Official Christlike University Florida tour flyer listing Miami, Jacksonville and Orlando dates",
-    "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
-  },
-  {
     "id": "manual:flavor-fest-2026-friday-concerts",
     "title": "Flavor Fest 2026 — Friday Concerts",
     "startDate": "2026-11-06",
@@ -5102,7 +5300,7 @@
     "eventType": "festival",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "assets/events/flavor-fest-friday-2026.png",
+    "image": "assets/events/flavor-fest-friday-2026.webp",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -5196,35 +5394,7 @@
       "Eli Williams"
     ],
     "auditVerified": "2026-09-26",
-    "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown. Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates.",
-    "imageSource": "Official Flavor Fest Friday concert poster",
-    "imageSourceUrl": "https://www.flavorfest.org/schedule"
-  },
-  {
-    "id": "bandsintown:108940352",
-    "title": "Miles Minnick at The Albatross",
-    "startDate": "2026-11-07",
-    "startTime": "",
-    "timezone": "America/New_York",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "Jacksonville",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "merged",
-    "mergedIntoId": "manual:miles-minnick-christlike-university-jacksonville-2026-11-07",
-    "officialUrl": "",
-    "ticketUrl": "",
-    "sourceName": "Superseded listing",
-    "notes": "This older listing is retained only to redirect visitors to the corrected canonical event.",
-    "auditVerified": "2026-09-23"
+    "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown. Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates."
   },
   {
     "id": "manual:flavor-fest-2026-saturday-concerts",
@@ -5319,201 +5489,115 @@
     ]
   },
   {
-    "title": "Miles Minnick – Christlike University – Florida Campus Tour in Jacksonville",
+    "id": "ticketmaster:vv1AAZk3FGkdmpCG1",
+    "title": "Beyond The Walls 2026",
     "startDate": "2026-11-07",
-    "startTime": "19:00",
+    "startTime": "19:30",
     "timezone": "America/New_York",
-    "venue": "The Albatross",
-    "venueAliases": [
-      "Underbelly"
-    ],
-    "address": "113 E Bay St",
-    "city": "Jacksonville",
-    "state": "FL",
+    "venue": "The Cambridge Room at House of Blues Cleveland",
+    "address": "308 Euclid Ave",
+    "city": "Cleveland",
+    "state": "OH",
     "country": "US",
     "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
+      "KB",
+      "Brenno",
+      "Mike Teezy",
+      "Porsha Love",
+      "Eli Williams"
     ],
-    "headliner": "Miles Minnick",
+    "headliner": "KB",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
-    "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
-    "image": "assets/events/miles-minnick-florida-campus-tour-2026.jpg",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "lineupExplicit": true,
-    "advertisedBilling": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "sourceName": "Live Nation official event listing",
+    "ticketUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+    "officialUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+    "image": "assets/events/beyond-the-walls-cleveland-2026-11-07.jpg",
+    "price": "",
+    "sourceName": "Ticketmaster / House of Blues Cleveland",
     "sources": [
       {
-        "name": "Live Nation official event listing",
-        "url": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
+        "name": "Ticketmaster / House of Blues Cleveland",
+        "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
         "type": "manual_verified",
         "authority": "venue_ticket",
         "priority": 112
       },
       {
-        "name": "Bandsintown verified lineup",
-        "url": "https://www.bandsintown.com/e/108940352-miles-minnick-at-the-albatross",
+        "name": "Beyond The Walls promoter's official flyer",
+        "url": "https://www.instagram.com/p/DbwTgsNRsyI/",
         "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 94
-      }
-    ],
-    "supersededSources": [
-      {
-        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-25",
-        "publishedDate": "2026-11-07",
-        "publishedCity": "Tampa",
-        "reason": "Conflicts with the venue-specific Jacksonville ticket listing and is not supported by the official Flavor Fest concert schedule."
-      }
-    ],
-    "notes": "The venue-specific Jacksonville ticket listing supersedes CJ's older November 7 Tampa calendar entry. Miles may also appear on the 11:45 AM Flavor Fest artist panel in Tampa; that daytime panel is not this concert.",
-    "auditVerified": "2026-09-23",
-    "id": "manual:miles-minnick-christlike-university-jacksonville-2026-11-07",
-    "imageOverride": true,
-    "imageSource": "Official Christlike University Florida tour flyer listing Miami, Jacksonville and Orlando dates",
-    "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
-  },
-  {
-    "id": "bandsintown:108940372",
-    "title": "Miles Minnick at Conduit",
-    "startDate": "2026-11-08",
-    "startTime": "",
-    "timezone": "America/New_York",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "Winter Park",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "merged",
-    "mergedIntoId": "manual:miles-minnick-christlike-university-orlando-2026-11-08",
-    "officialUrl": "",
-    "ticketUrl": "",
-    "sourceName": "Superseded listing",
-    "notes": "This older listing is retained only to redirect visitors to the corrected canonical event.",
-    "auditVerified": "2026-09-23"
-  },
-  {
-    "id": "manual:cj-emulous-new-mainstream-jacksonville-2026-11-08",
-    "title": "New Mainstream Tour — Miles Minnick, Tommy Zuko & CJ Emulous",
-    "startDate": "2026-11-08",
-    "startTime": "",
-    "timezone": "America/New_York",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "Jacksonville",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "merged",
-    "mergedIntoId": "manual:miles-minnick-christlike-university-orlando-2026-11-08",
-    "officialUrl": "",
-    "ticketUrl": "",
-    "sourceName": "Superseded listing",
-    "notes": "This older listing is retained only to redirect visitors to the corrected canonical event.",
-    "auditVerified": "2026-09-23"
-  },
-  {
-    "title": "Miles Minnick – Christlike University – Florida Campus Tour in Orlando",
-    "startDate": "2026-11-08",
-    "startTime": "19:00",
-    "timezone": "America/New_York",
-    "venue": "Conduit",
-    "address": "6700 Aloma Ave",
-    "city": "Winter Park",
-    "advertisedCity": "Orlando",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
-    "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
-    "image": "assets/events/miles-minnick-florida-campus-tour-2026.jpg",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "lineupExplicit": true,
-    "advertisedBilling": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "sourceName": "Live Nation official event listing",
-    "sources": [
-      {
-        "name": "Eli Williams official performance announcement",
-        "url": "https://www.instagram.com/eliwilliamssss/p/DdmMA0JOH4q/",
-        "type": "manual_verified",
-        "authority": "artist",
+        "authority": "organizer",
         "priority": 115
       },
       {
-        "name": "Live Nation official event listing",
-        "url": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
-        "type": "manual_verified",
+        "name": "Ticketmaster",
+        "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+        "type": "ticketmaster",
         "authority": "venue_ticket",
-        "priority": 112
-      },
-      {
-        "name": "Bandsintown verified lineup",
-        "url": "https://www.bandsintown.com/e/108940372-miles-minnick-at-conduit",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
         "priority": 94
       }
     ],
-    "supersededSources": [
-      {
-        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-26",
-        "publishedDate": "2026-11-08",
-        "publishedCity": "Jacksonville",
-        "reason": "Conflicts with the venue-specific Conduit ticket listing in Winter Park."
-      }
-    ],
-    "notes": " Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates.",
-    "auditVerified": "2026-09-23",
-    "officialBill": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-07-30T03:46:47Z",
+    "doorsTime": "19:30",
+    "startDateTime": "2026-11-07T19:30:00-05:00",
+    "advertisedBilling": [
+      "KB",
+      "Brenno",
+      "Mike Teezy",
+      "Porsha Love",
+      "Taylor Wells",
+      "Renzoe",
       "Eli Williams"
     ],
-    "id": "manual:miles-minnick-christlike-university-orlando-2026-11-08",
+    "officialBill": [
+      "KB",
+      "Brenno",
+      "Mike Teezy",
+      "Porsha Love",
+      "Taylor Wells",
+      "Renzoe",
+      "Eli Williams"
+    ],
+    "lineupExplicit": true,
+    "auditVerified": "2026-09-26",
+    "authority": "venue_ticket",
+    "legacyEventPaths": [
+      "/event/beyond-the-walls-2026-11-07-cleveland-91b8a7/",
+      "/event/beyond-the-walls-3-2026-11-07-cleveland-3fa023/"
+    ],
+    "legacyEventNotice": "Beyond The Walls 2026 takes place November 7 at 7:30 PM.",
+    "mergedFromIds": [
+      "bandsintown:108631622",
+      "official:4e2fc5c7c02ab1d34b9e",
+      "supplemental:beyond-the-walls-3-brenno-2026"
+    ],
+    "notes": "Promoter submission and the official Eric Stephens / Beyond The Walls Instagram flyer confirm KB, Brenno, Mike Teezy, Porsha Love, Taylor Wells and Renzoe. This resolves the earlier incomplete Ticketmaster bill. Flyer explicitly dates November 7, 2026 and labels 6 PM VIP entry / 7:30 PM GA doors; Ticketmaster confirms music at 8 PM; the owner explicitly requested that Kingdom Circuit display 7:30 PM for this show on September 26, superseding the earlier 8 PM display. The owner requested the public title Beyond The Walls 2026 on September 28, superseding Beyond The Walls 3 and the submission's conflicting 2027 title. The owner also requested Eli Williams as DJ; his name appears on the same flyer and his official profile https://www.instagram.com/eliwilliamssss/ confirms his DJ role. Taylor Wells and Renzoe remain visible unlinked billing because they are outside the curated roster. Eli Williams was added to the owner-verified roster on September 29 and is now linked to his artist profile.",
+    "sourceConflicts": [
+      {
+        "url": "https://music.apple.com/us/concerts/ce.01a1c61a-49a9-4e19-b629-46bac43b4970",
+        "reportedArtist": "Mike Teezy",
+        "reportedStartTime": "18:00",
+        "resolution": "Promoter submission and official flyer confirm Mike Teezy on the canonical event. Keep the duplicate merged; 6 PM is VIP entry on the flyer. Ticketmaster labels 7:30 PM doors and 8 PM music; the owner explicitly chose the 7:30 PM listing time for Kingdom Circuit.",
+        "resolvedBy": "https://www.instagram.com/p/DbwTgsNRsyI/",
+        "resolvedDate": "2026-09-26"
+      },
+      {
+        "url": "https://www.bandsintown.com/e/108631622",
+        "reportedArtist": "Mike Teezy",
+        "reportedStartTime": "18:00",
+        "resolution": "Promoter submission and official flyer confirm Mike Teezy on the canonical event. Keep the duplicate merged; 6 PM is VIP entry on the flyer. Ticketmaster labels 7:30 PM doors and 8 PM music; the owner explicitly chose the 7:30 PM listing time for Kingdom Circuit.",
+        "resolvedBy": "https://www.instagram.com/p/DbwTgsNRsyI/",
+        "resolvedDate": "2026-09-26"
+      }
+    ],
     "imageOverride": true,
-    "imageSource": "Official Christlike University Florida tour flyer listing Miami, Jacksonville and Orlando dates",
-    "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
+    "imageSource": "Promoter's official Beyond The Walls Cleveland flyer",
+    "imageSourceUrl": "https://www.instagram.com/p/DbwTgsNRsyI/"
   },
   {
     "id": "ticketmaster:vvG1zZ_ClQMRrF",
@@ -5895,6 +5979,75 @@
         "priority": 120
       }
     ]
+  },
+  {
+    "id": "manual:alex-jean-dallas-2026-11-19",
+    "title": "Alex Jean — The Welcome Home Tour",
+    "startDate": "2026-11-19",
+    "startTime": "20:00",
+    "timezone": "America/Chicago",
+    "startDateTime": "2026-11-19T20:00:00-06:00",
+    "venue": "The Studio at The Bomb Factory",
+    "address": "2727 Canton Street",
+    "city": "Dallas",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Alex Jean"
+    ],
+    "headliner": "Alex Jean",
+    "advertisedBilling": [
+      "Alex Jean"
+    ],
+    "officialBill": [
+      "Alex Jean"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "eventType": "concert",
+    "status": "scheduled",
+    "officialUrl": "https://www.axs.com/events/1626463/alex-jean-tickets",
+    "ticketUrl": "https://www.axs.com/events/1626463/alex-jean-tickets",
+    "image": "assets/events/alex-jean-welcome-home-tour-2026.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Official artist or organizer flyer",
+    "imageSourceUrl": "https://alexjeantour.com/",
+    "confidence": "high",
+    "authority": "official_event",
+    "sourceName": "Official artist or organizer announcement",
+    "sources": [
+      {
+        "name": "Official artist or organizer announcement",
+        "url": "https://www.axs.com/events/1626463/alex-jean-tickets",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Alex Jean official tour calendar",
+        "url": "https://alexjeantour.com/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Alex Jean October 2 tour announcement",
+        "url": "https://www.instagram.com/meaningalex/p/Dd_duSRxzAf/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      }
+    ],
+    "firstSeen": "2026-09-29T18:00:00Z",
+    "lastVerified": "2026-10-02T18:00:00Z",
+    "auditVerified": "2026-10-02",
+    "editorialBatch": "2026-10-02-verified-artists",
+    "postalCode": "75226",
+    "doorsTime": "19:00",
+    "ageRestriction": "All ages",
+    "notes": "Previously held Dallas candidate is now explicitly on Alex Jean official tour site and the AXS venue calendar. AXS confirms 8 PM music and 7 PM doors. Official tour announcement October 2 confirms tickets on sale. Do not mark as cancelled based on earlier unavailable checkout."
   },
   {
     "id": "ticketmaster:vvG10Z_CMA3B0H",
@@ -6684,7 +6837,7 @@
     "firstSeen": "2026-08-09T00:00:00Z",
     "authority": "artist_calendar",
     "lineupExplicit": true,
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-23",
     "imageOverride": true,
     "notes": "CJ Emulous's official calendar confirms Miles Minnick and CJ Emulous at Zion Ultra Lounge on December 5, 2026 at 7:00 PM."
   },
@@ -7198,10 +7351,9 @@
     ]
   },
   {
-    "title": "Mike Malagies — It’s A God Night (Miami)",
-    "startDate": "2026-10-16",
-    "startTime": "19:00",
-    "doorsTime": "18:30",
+    "title": "Miles Minnick at Black Box Media Miami",
+    "startDate": "2026-11-05",
+    "startTime": "18:30",
     "timezone": "America/New_York",
     "venue": "Black Box Media Miami",
     "address": "12355 NE 13th Ave Unit #403-404",
@@ -7209,495 +7361,329 @@
     "state": "FL",
     "country": "US",
     "artists": [
-      "Mike Malagies"
-    ],
-    "headliner": "Mike Malagies",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
-    "officialUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
-    "image": "assets/events/mike-malagies-miami-2026-10-16.png",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "lineupExplicit": true,
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "sourceName": "TicketSource exact event listing",
-    "sources": [
-      {
-        "name": "TicketSource exact event listing",
-        "url": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      },
-      {
-        "name": "Black Box Media Miami official venue",
-        "url": "https://www.blackboxstudiosmiami.com/event-list",
-        "type": "manual_verified",
-        "authority": "venue",
-        "priority": 112
-      },
-      {
-        "name": "TicketSource exact event listing",
-        "url": "https://www.ticketsource.com/the-sound-system/mike-malagies-florida-takeover-miami/e-vgxqxl",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-26",
-    "id": "manual:mike-malagies-florida-takeover-miami-2026",
-    "startDateTime": "2026-10-16T19:00:00-04:00",
-    "advertisedBilling": [
-      "Mike Malagies",
-      "DJ JBEZ"
-    ],
-    "firstSeen": "2026-09-13T14:21:37Z",
-    "legacyEventPaths": [
-      "/event/mike-malagies-florida-takeover-miami-2026-10-16-north-miami-6a5e6f/"
-    ],
-    "legacyEventNotice": "This concert is now listed as Mike Malagies — It’s A God Night (Miami), starting at 7:00 PM on October 16.",
-    "notes": "TicketSource describes VIP 6:00–6:30 PM, doors 6:30 PM, concert starting at 7:00 PM with DJ JBEZ, and Mike Malagies 7:30–9:00 PM. The listing header's 6:30 PM is doors.",
-    "imageSourceUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
-    "imageSource": "Official TicketSource It's A God Night Miami flyer",
-    "soldOut": true,
-    "ticketAvailability": "sold_out"
-  },
-  {
-    "id": "ticketmaster:vv1AAZk3FGkdmpCG1",
-    "title": "Beyond The Walls 2026",
-    "startDate": "2026-11-07",
-    "startTime": "19:30",
-    "timezone": "America/New_York",
-    "venue": "The Cambridge Room at House of Blues Cleveland",
-    "address": "308 Euclid Ave",
-    "city": "Cleveland",
-    "state": "OH",
-    "country": "US",
-    "artists": [
-      "KB",
-      "Brenno",
-      "Mike Teezy",
-      "Porsha Love",
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
       "Eli Williams"
     ],
-    "headliner": "KB",
+    "headliner": "Miles Minnick",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
-    "officialUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
-    "image": "assets/events/beyond-the-walls-cleveland-2026-11-07.jpg",
-    "price": "",
-    "sourceName": "Ticketmaster / House of Blues Cleveland",
+    "ticketUrl": "https://www.bandsintown.com/t/108940329",
+    "officialUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
+    "image": "assets/artists/miles-minnick.webp",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "lineupExplicit": true,
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
+    ],
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "sourceName": "Bandsintown verified event listing",
     "sources": [
       {
-        "name": "Ticketmaster / House of Blues Cleveland",
-        "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+        "name": "Eli Williams official performance announcement",
+        "url": "https://www.instagram.com/eliwilliamssss/p/DdmMA0JOH4q/",
         "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      },
-      {
-        "name": "Beyond The Walls promoter's official flyer",
-        "url": "https://www.instagram.com/p/DbwTgsNRsyI/",
-        "type": "manual_verified",
-        "authority": "organizer",
+        "authority": "artist",
         "priority": 115
       },
       {
-        "name": "Ticketmaster",
-        "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
-        "type": "ticketmaster",
-        "authority": "venue_ticket",
+        "name": "Bandsintown verified event listing",
+        "url": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
         "priority": 94
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-07-30T03:46:47Z",
-    "doorsTime": "19:30",
-    "startDateTime": "2026-11-07T19:30:00-05:00",
-    "advertisedBilling": [
-      "KB",
-      "Brenno",
-      "Mike Teezy",
-      "Porsha Love",
-      "Taylor Wells",
-      "Renzoe",
-      "Eli Williams"
-    ],
-    "officialBill": [
-      "KB",
-      "Brenno",
-      "Mike Teezy",
-      "Porsha Love",
-      "Taylor Wells",
-      "Renzoe",
-      "Eli Williams"
-    ],
-    "lineupExplicit": true,
-    "auditVerified": "2026-09-26",
-    "authority": "venue_ticket",
-    "legacyEventPaths": [
-      "/event/beyond-the-walls-2026-11-07-cleveland-91b8a7/",
-      "/event/beyond-the-walls-3-2026-11-07-cleveland-3fa023/"
-    ],
-    "legacyEventNotice": "Beyond The Walls 2026 takes place November 7 at 7:30 PM.",
-    "mergedFromIds": [
-      "bandsintown:108631622",
-      "official:4e2fc5c7c02ab1d34b9e",
-      "supplemental:beyond-the-walls-3-brenno-2026"
-    ],
-    "notes": "Promoter submission and the official Eric Stephens / Beyond The Walls Instagram flyer confirm KB, Brenno, Mike Teezy, Porsha Love, Taylor Wells and Renzoe. This resolves the earlier incomplete Ticketmaster bill. Flyer explicitly dates November 7, 2026 and labels 6 PM VIP entry / 7:30 PM GA doors; Ticketmaster confirms music at 8 PM; the owner explicitly requested that Kingdom Circuit display 7:30 PM for this show on September 26, superseding the earlier 8 PM display. The owner requested the public title Beyond The Walls 2026 on September 28, superseding Beyond The Walls 3 and the submission's conflicting 2027 title. The owner also requested Eli Williams as DJ; his name appears on the same flyer and his official profile https://www.instagram.com/eliwilliamssss/ confirms his DJ role. Taylor Wells and Renzoe remain visible unlinked billing because they are outside the curated roster. Eli Williams was added to the owner-verified roster on September 29 and is now linked to his artist profile.",
-    "sourceConflicts": [
-      {
-        "url": "https://music.apple.com/us/concerts/ce.01a1c61a-49a9-4e19-b629-46bac43b4970",
-        "reportedArtist": "Mike Teezy",
-        "reportedStartTime": "18:00",
-        "resolution": "Promoter submission and official flyer confirm Mike Teezy on the canonical event. Keep the duplicate merged; 6 PM is VIP entry on the flyer. Ticketmaster labels 7:30 PM doors and 8 PM music; the owner explicitly chose the 7:30 PM listing time for Kingdom Circuit.",
-        "resolvedBy": "https://www.instagram.com/p/DbwTgsNRsyI/",
-        "resolvedDate": "2026-09-26"
       },
       {
-        "url": "https://www.bandsintown.com/e/108631622",
-        "reportedArtist": "Mike Teezy",
-        "reportedStartTime": "18:00",
-        "resolution": "Promoter submission and official flyer confirm Mike Teezy on the canonical event. Keep the duplicate merged; 6 PM is VIP entry on the flyer. Ticketmaster labels 7:30 PM doors and 8 PM music; the owner explicitly chose the 7:30 PM listing time for Kingdom Circuit.",
-        "resolvedBy": "https://www.instagram.com/p/DbwTgsNRsyI/",
-        "resolvedDate": "2026-09-26"
+        "name": "CJ Emulous official tour calendar",
+        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-23",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 88
       }
     ],
-    "imageOverride": true,
-    "imageSource": "Promoter's official Beyond The Walls Cleveland flyer",
-    "imageSourceUrl": "https://www.instagram.com/p/DbwTgsNRsyI/"
+    "notes": " Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates.",
+    "auditVerified": "2026-09-23",
+    "officialBill": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
+    ],
+    "id": "manual:miles-minnick-black-box-north-miami-2026-11-05"
   },
   {
-    "id": "manual:adrenaline-valrico-2026-10-17",
-    "title": "Adrenaline — Tampa Christian Music Concert",
-    "startDate": "2026-10-17",
-    "startTime": "18:00",
+    "title": "Miles Minnick – Christlike University – Florida Campus Tour in Jacksonville",
+    "startDate": "2026-11-07",
+    "startTime": "19:00",
     "timezone": "America/New_York",
-    "startDateTime": "2026-10-17T18:00:00-04:00",
-    "venue": "Bethel Of Brandon",
-    "address": "2106 Lithia Pinecrest Rd",
-    "city": "Valrico",
+    "venue": "The Albatross",
+    "venueAliases": [
+      "Underbelly"
+    ],
+    "address": "113 E Bay St",
+    "city": "Jacksonville",
     "state": "FL",
     "country": "US",
     "artists": [
-      "Zenwi",
-      "JAYLXN",
-      "Nehemiah",
-      "Wiff.P",
-      "Dondrae"
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
     ],
-    "headliner": "Zenwi",
-    "advertisedBilling": [
-      "Monae",
-      "JAYLXN",
-      "Nehemiah",
-      "Zenwi",
-      "Wiff.P",
-      "Dondrae",
-      "Jayde Eliyah"
-    ],
-    "officialBill": [
-      "Monae",
-      "JAYLXN",
-      "Nehemiah",
-      "Zenwi",
-      "Wiff.P",
-      "Dondrae",
-      "Jayde Eliyah"
-    ],
-    "lineupExplicit": true,
-    "musicConfirmed": true,
+    "headliner": "Miles Minnick",
     "eventType": "concert",
     "status": "scheduled",
-    "officialUrl": "https://www.eventbrite.com/e/adrenaline-tampa-christian-music-concert-tickets-2002457149238",
-    "ticketUrl": "https://www.eventbrite.com/e/adrenaline-tampa-christian-music-concert-tickets-2002457149238",
-    "image": "assets/events/adrenaline-valrico-2026-10-17.jpg",
-    "imageType": "event_artwork",
+    "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
+    "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
+    "image": "assets/artists/miles-minnick.webp",
+    "imageType": "artist",
     "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Official artist or organizer flyer",
-    "imageSourceUrl": "https://www.eventbrite.com/e/adrenaline-tampa-christian-music-concert-tickets-2002457149238",
-    "confidence": "high",
-    "authority": "official_event",
-    "sourceName": "Official artist or organizer announcement",
-    "sources": [
-      {
-        "name": "Official artist or organizer announcement",
-        "url": "https://www.eventbrite.com/e/adrenaline-tampa-christian-music-concert-tickets-2002457149238",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      }
-    ],
-    "firstSeen": "2026-10-01T18:00:00Z",
-    "lastVerified": "2026-10-02T18:00:00Z",
-    "auditVerified": "2026-10-02",
-    "editorialBatch": "2026-10-02-verified-artists",
-    "postalCode": "33596",
-    "doorsTime": "17:00",
-    "notes": "Current Eventbrite listing explicitly gives 5 PM doors and 6 PM music. Full flyer billing preserved; Monae and Jayde Eliyah do not have curated artist profiles."
-  },
-  {
-    "id": "manual:priest-jones-serv-willmar-2026-10-24",
-    "title": "Priest Jones featuring SERV",
-    "startDate": "2026-10-24",
-    "startTime": "17:30",
-    "timezone": "America/Chicago",
-    "startDateTime": "2026-10-24T17:30:00-05:00",
-    "venue": "First Street Warehouse",
-    "address": "",
-    "city": "Willmar",
-    "state": "MN",
-    "country": "US",
-    "artists": [
-      "Priest Jones"
-    ],
-    "headliner": "Priest Jones",
-    "advertisedBilling": [
-      "Priest Jones",
-      "SERV"
-    ],
-    "officialBill": [
-      "Priest Jones",
-      "SERV"
-    ],
     "lineupExplicit": true,
-    "musicConfirmed": true,
-    "eventType": "concert",
-    "status": "scheduled",
-    "officialUrl": "https://www.instagram.com/citylifewillmar/p/Dd99t06MUS6/",
-    "ticketUrl": "https://www.instagram.com/citylifewillmar/p/Dd99t06MUS6/",
-    "image": "assets/events/priest-jones-serv-willmar-2026-10-24.jpg",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Official artist or organizer flyer",
-    "imageSourceUrl": "https://www.instagram.com/citylifewillmar/p/Dd99t06MUS6/",
-    "confidence": "high",
-    "authority": "official_event",
-    "sourceName": "Official artist or organizer announcement",
-    "sources": [
-      {
-        "name": "Official artist or organizer announcement",
-        "url": "https://www.instagram.com/citylifewillmar/p/Dd99t06MUS6/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      }
-    ],
-    "firstSeen": "2026-10-01T18:00:00Z",
-    "lastVerified": "2026-10-02T18:00:00Z",
-    "auditVerified": "2026-10-02",
-    "editorialBatch": "2026-10-02-verified-artists",
-    "notes": "Official City Life Willmar flyer confirms October 24 at 5:30 PM and First Street Warehouse. SERV remains visible without an invented artist profile. Street address is omitted because the flyer does not supply it."
-  },
-  {
-    "id": "manual:chh-takeover-huntington-2026-10-25",
-    "title": "CHH Takeover Night",
-    "startDate": "2026-10-25",
-    "startTime": "17:30",
-    "timezone": "America/Chicago",
-    "startDateTime": "2026-10-25T17:30:00-05:00",
-    "venue": "The Good Fight Venue",
-    "address": "201 W Broadway Street",
-    "city": "Huntington",
-    "state": "AR",
-    "country": "US",
-    "artists": [
-      "Big Rev.",
-      "B-Wade SBG",
-      "L.O.G.",
-      "KT Money"
-    ],
-    "headliner": "Big Rev.",
     "advertisedBilling": [
-      "Big Rev.",
-      "B-Wade SBG",
-      "L.O.G.",
-      "KT Money",
-      "Michael Powers",
-      "Upon This Rock"
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
     ],
-    "officialBill": [
-      "Big Rev.",
-      "B-Wade SBG",
-      "L.O.G.",
-      "KT Money",
-      "Michael Powers",
-      "Upon This Rock"
-    ],
-    "lineupExplicit": true,
-    "musicConfirmed": true,
-    "eventType": "concert",
-    "status": "scheduled",
-    "officialUrl": "https://www.instagram.com/b.wade_sbg_music/p/Dd7nozDsoaM/",
-    "ticketUrl": "https://www.instagram.com/b.wade_sbg_music/p/Dd7nozDsoaM/",
-    "image": "assets/events/chh-takeover-huntington-2026-10-25.jpg",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Official artist or organizer flyer",
-    "imageSourceUrl": "https://www.instagram.com/b.wade_sbg_music/p/Dd7nozDsoaM/",
+    "authority": "venue_ticket",
     "confidence": "high",
-    "authority": "official_event",
-    "sourceName": "Official artist or organizer announcement",
+    "sourceName": "Live Nation official event listing",
     "sources": [
       {
-        "name": "Official artist or organizer announcement",
-        "url": "https://www.instagram.com/b.wade_sbg_music/p/Dd7nozDsoaM/",
+        "name": "Live Nation official event listing",
+        "url": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
         "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
+        "authority": "venue_ticket",
+        "priority": 112
+      },
+      {
+        "name": "Bandsintown verified lineup",
+        "url": "https://www.bandsintown.com/e/108940352-miles-minnick-at-the-albatross",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 94
       }
     ],
-    "firstSeen": "2026-10-01T18:00:00Z",
-    "lastVerified": "2026-10-02T18:00:00Z",
-    "auditVerified": "2026-10-02",
-    "editorialBatch": "2026-10-02-verified-artists",
-    "doorsTime": "17:00",
-    "publicDescription": "CHH Takeover Night features Big Rev., B-Wade SBG, L.O.G. and KT Money, with worship by Michael Powers and Upon This Rock.",
-    "notes": "The artist co-post and event flyer confirm all four CHH artists, worship participants, venue and 5:30 PM show start. Doors are 5 PM."
+    "supersededSources": [
+      {
+        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-25",
+        "publishedDate": "2026-11-07",
+        "publishedCity": "Tampa",
+        "reason": "Conflicts with the venue-specific Jacksonville ticket listing and is not supported by the official Flavor Fest concert schedule."
+      }
+    ],
+    "notes": "The venue-specific Jacksonville ticket listing supersedes CJ's older November 7 Tampa calendar entry. Miles may also appear on the 11:45 AM Flavor Fest artist panel in Tampa; that daytime panel is not this concert.",
+    "auditVerified": "2026-09-23",
+    "id": "manual:miles-minnick-christlike-university-jacksonville-2026-11-07"
   },
   {
-    "id": "manual:the-comeback-2-gainesville-2026-11-01",
-    "title": "The Comeback 2",
-    "startDate": "2026-11-01",
-    "startTime": "16:00",
+    "title": "Miles Minnick – Christlike University – Florida Campus Tour in Orlando",
+    "startDate": "2026-11-08",
+    "startTime": "19:00",
     "timezone": "America/New_York",
-    "startDateTime": "2026-11-01T16:00:00-05:00",
-    "venue": "2343 Riverside Drive",
-    "address": "2343 Riverside Drive",
-    "city": "Gainesville",
-    "state": "GA",
+    "venue": "Conduit",
+    "address": "6700 Aloma Ave",
+    "city": "Winter Park",
+    "advertisedCity": "Orlando",
+    "state": "FL",
     "country": "US",
     "artists": [
-      "DJ Winn",
-      "H.U.R.T.",
-      "Kenny Jenkins"
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
     ],
-    "headliner": "DJ Winn",
-    "advertisedBilling": [
-      "DJ Winn",
-      "H.U.R.T.",
-      "Kenny Jenkins",
-      "Steve Da Christian",
-      "Reeves"
-    ],
-    "officialBill": [
-      "DJ Winn",
-      "H.U.R.T.",
-      "Kenny Jenkins",
-      "Steve Da Christian",
-      "Reeves"
-    ],
-    "lineupExplicit": true,
-    "musicConfirmed": true,
+    "headliner": "Miles Minnick",
     "eventType": "concert",
     "status": "scheduled",
-    "officialUrl": "https://www.instagram.com/djwinn/p/Dd9lo3-JtBW/",
-    "ticketUrl": "https://www.instagram.com/djwinn/p/Dd9lo3-JtBW/",
-    "image": "assets/events/the-comeback-2-gainesville-2026-11-01.jpg",
-    "imageType": "event_artwork",
+    "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
+    "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
+    "image": "assets/artists/miles-minnick.webp",
+    "imageType": "artist",
     "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Official artist or organizer flyer",
-    "imageSourceUrl": "https://www.instagram.com/djwinn/p/Dd9lo3-JtBW/",
+    "lineupExplicit": true,
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
+    ],
+    "authority": "venue_ticket",
     "confidence": "high",
-    "authority": "official_event",
-    "sourceName": "Official artist or organizer announcement",
+    "sourceName": "Live Nation official event listing",
     "sources": [
       {
-        "name": "Official artist or organizer announcement",
-        "url": "https://www.instagram.com/djwinn/p/Dd9lo3-JtBW/",
+        "name": "Eli Williams official performance announcement",
+        "url": "https://www.instagram.com/eliwilliamssss/p/DdmMA0JOH4q/",
         "type": "manual_verified",
-        "authority": "official_event",
+        "authority": "artist",
         "priority": 115
+      },
+      {
+        "name": "Live Nation official event listing",
+        "url": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      },
+      {
+        "name": "Bandsintown verified lineup",
+        "url": "https://www.bandsintown.com/e/108940372-miles-minnick-at-conduit",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 94
       }
     ],
-    "firstSeen": "2026-10-01T18:00:00Z",
-    "lastVerified": "2026-10-02T18:00:00Z",
-    "auditVerified": "2026-10-02",
-    "editorialBatch": "2026-10-02-verified-artists",
-    "endTime": "19:00",
-    "publicDescription": "GOD MOB and Lighthouse present a hip-hop community event with DJ Winn, H.U.R.T., Kenny Jenkins, Steve Da Christian and Reeves, plus guest speaker Trell “Donk” Webb.",
-    "notes": "DJ Winn official November 1 flyer gives 4–7 PM and the address but no formal venue name. The address is used without inventing one. Trell Donk Webb is a speaker, not a musical performer; uncurated performers remain unlinked."
+    "supersededSources": [
+      {
+        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-26",
+        "publishedDate": "2026-11-08",
+        "publishedCity": "Jacksonville",
+        "reason": "Conflicts with the venue-specific Conduit ticket listing in Winter Park."
+      }
+    ],
+    "notes": " Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates.",
+    "auditVerified": "2026-09-23",
+    "officialBill": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
+    ],
+    "id": "manual:miles-minnick-christlike-university-orlando-2026-11-08"
   },
   {
-    "id": "manual:alex-jean-dallas-2026-11-19",
-    "title": "Alex Jean — The Welcome Home Tour",
-    "startDate": "2026-11-19",
-    "startTime": "20:00",
-    "timezone": "America/Chicago",
-    "startDateTime": "2026-11-19T20:00:00-06:00",
-    "venue": "The Studio at The Bomb Factory",
-    "address": "2727 Canton Street",
-    "city": "Dallas",
-    "state": "TX",
+    "id": "manual:cj-emulous-new-mainstream-miami-2026-11-05",
+    "title": "New Mainstream Tour — Miles Minnick, Tommy Zuko & CJ Emulous",
+    "startDate": "2026-11-05",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "Venue not provided",
+    "address": "",
+    "city": "Miami",
+    "state": "FL",
     "country": "US",
     "artists": [
-      "Alex Jean"
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
     ],
-    "headliner": "Alex Jean",
-    "advertisedBilling": [
-      "Alex Jean"
-    ],
-    "officialBill": [
-      "Alex Jean"
-    ],
-    "lineupExplicit": true,
-    "musicConfirmed": true,
+    "headliner": "Miles Minnick",
     "eventType": "concert",
-    "status": "scheduled",
-    "officialUrl": "https://www.axs.com/events/1626463/alex-jean-tickets",
-    "ticketUrl": "https://www.axs.com/events/1626463/alex-jean-tickets",
-    "image": "assets/events/alex-jean-welcome-home-tour-2026.png",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Official artist or organizer flyer",
-    "imageSourceUrl": "https://alexjeantour.com/",
-    "confidence": "high",
-    "authority": "official_event",
-    "sourceName": "Official artist or organizer announcement",
-    "sources": [
-      {
-        "name": "Official artist or organizer announcement",
-        "url": "https://www.axs.com/events/1626463/alex-jean-tickets",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Alex Jean official tour calendar",
-        "url": "https://alexjeantour.com/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Alex Jean October 2 tour announcement",
-        "url": "https://www.instagram.com/meaningalex/p/Dd_duSRxzAf/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      }
+    "status": "merged",
+    "mergedIntoId": "manual:miles-minnick-black-box-north-miami-2026-11-05",
+    "officialUrl": "",
+    "ticketUrl": "",
+    "sourceName": "Superseded listing",
+    "notes": "This older listing is retained only to redirect visitors to the corrected canonical event.",
+    "auditVerified": "2026-09-23"
+  },
+  {
+    "id": "manual:cj-emulous-new-mainstream-jacksonville-2026-11-08",
+    "title": "New Mainstream Tour — Miles Minnick, Tommy Zuko & CJ Emulous",
+    "startDate": "2026-11-08",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "Venue not provided",
+    "address": "",
+    "city": "Jacksonville",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
     ],
-    "firstSeen": "2026-09-29T18:00:00Z",
-    "lastVerified": "2026-10-02T18:00:00Z",
-    "auditVerified": "2026-10-02",
-    "editorialBatch": "2026-10-02-verified-artists",
-    "postalCode": "75226",
-    "doorsTime": "19:00",
-    "ageRestriction": "All ages",
-    "notes": "Previously held Dallas candidate is now explicitly on Alex Jean official tour site and the AXS venue calendar. AXS confirms 8 PM music and 7 PM doors. Official tour announcement October 2 confirms tickets on sale. Do not mark as cancelled based on earlier unavailable checkout."
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "merged",
+    "mergedIntoId": "manual:miles-minnick-christlike-university-orlando-2026-11-08",
+    "officialUrl": "",
+    "ticketUrl": "",
+    "sourceName": "Superseded listing",
+    "notes": "This older listing is retained only to redirect visitors to the corrected canonical event.",
+    "auditVerified": "2026-09-23"
+  },
+  {
+    "id": "bandsintown:108940329",
+    "title": "Miles Minnick at Black Box Media Miami",
+    "startDate": "2026-11-05",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "Venue not provided",
+    "address": "",
+    "city": "North Miami",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "merged",
+    "mergedIntoId": "manual:miles-minnick-black-box-north-miami-2026-11-05",
+    "officialUrl": "",
+    "ticketUrl": "",
+    "sourceName": "Superseded listing",
+    "notes": "This older listing is retained only to redirect visitors to the corrected canonical event.",
+    "auditVerified": "2026-09-23"
+  },
+  {
+    "id": "bandsintown:108940352",
+    "title": "Miles Minnick at The Albatross",
+    "startDate": "2026-11-07",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "Venue not provided",
+    "address": "",
+    "city": "Jacksonville",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "merged",
+    "mergedIntoId": "manual:miles-minnick-christlike-university-jacksonville-2026-11-07",
+    "officialUrl": "",
+    "ticketUrl": "",
+    "sourceName": "Superseded listing",
+    "notes": "This older listing is retained only to redirect visitors to the corrected canonical event.",
+    "auditVerified": "2026-09-23"
+  },
+  {
+    "id": "bandsintown:108940372",
+    "title": "Miles Minnick at Conduit",
+    "startDate": "2026-11-08",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "Venue not provided",
+    "address": "",
+    "city": "Winter Park",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "merged",
+    "mergedIntoId": "manual:miles-minnick-christlike-university-orlando-2026-11-08",
+    "officialUrl": "",
+    "ticketUrl": "",
+    "sourceName": "Superseded listing",
+    "notes": "This older listing is retained only to redirect visitors to the corrected canonical event.",
+    "auditVerified": "2026-09-23"
   }
 ]
