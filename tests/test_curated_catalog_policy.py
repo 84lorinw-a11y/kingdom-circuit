@@ -115,12 +115,13 @@ class CuratedCatalogPolicyTests(unittest.TestCase):
             set(event["artists"]),
         )
         self.assertEqual(
-            ["Mike Teezy", "Anike", "Alex Jean", "Dante' Pride", "ADIA", "Don Ready",
-             "Franchesca", "Jamil", "Joshuaa*", "Queen Lee", "DJ PARTYwithParks"],
+            ["Mike Teezy", "Alex Jean", "Anike", "ADIA", "Dante' Pride", "Don Ready",
+             "Franchesca", "Queen Lee", "Jamil", "Joshuaa*", "Allen B.", "2P",
+             "Kennis Clark", "DJ PARTYwithParks"],
             event["officialBill"],
         )
         self.assertEqual(event["officialBill"], event["advertisedBilling"])
-        self.assertEqual("assets/events/hrvstland-festival-2026.jpg", event["image"])
+        self.assertEqual("assets/events/hrvstland-festival-2026-oct1-lineup.jpg", event["image"])
         self.assertTrue((ROOT / event["image"]).is_file())
         self.assertEqual("event_artwork", event["imageType"])
         self.assertTrue(event["imageOverride"])
