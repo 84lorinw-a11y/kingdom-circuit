@@ -41,8 +41,9 @@ jobs:
           assert len(artists) >= 250, len(artists)
           assert len({artist['name'].casefold() for artist in artists}) == len(artists)
           assert [artist['rosterOrder'] for artist in artists] == list(range(1, len(artists) + 1))
-          assert [artist['name'] for artist in artists[54:54 + len(updates)]] == [item['name'] for item in updates]
-          assert artists[53]['name'] == '808 BEEZY'
+          snapshot = json.loads(Path('config/owner-reviewed-roster.json').read_text())['artists']
+          assert [a['name'] for a in artists] == [a['name'] for a in snapshot]
+          assert [a['name'] for a in updates] == [a['name'] for a in snapshot if a['verified']]
 
           for update in updates:
               artist = by_name[update['name'].casefold()]

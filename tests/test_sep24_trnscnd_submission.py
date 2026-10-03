@@ -78,7 +78,7 @@ class TrnscndSubmissionProductionTests(unittest.TestCase):
         updates = {row["name"]: row for row in self.updates}
         self.assertEqual(146, updates["NXTMIKE"]["rosterOrder"])
         self.assertEqual(
-            [178, 179, 180],
+            [177, 178, 179],
             [updates[name]["rosterOrder"] for name in ("N!X", "D Riddick", "Howard Langford")],
         )
 

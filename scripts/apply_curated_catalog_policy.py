@@ -583,8 +583,8 @@ def main() -> int:
         artist["activeStatus"] = "excluded_non_chh"
         artist["editorialNote"] = "Excluded from Kingdom Circuit: not Christian hip-hop."
 
-    if not found_madison:
-        raise SystemExit("Madison Ryann Ward roster entry was not found")
+    # An owner removal is stronger than the historical disabled placeholder.
+    # Do not require or resurrect the removed roster entry.
 
     curated_events: list[dict[str, Any]] = []
     removed_madison_events = 0

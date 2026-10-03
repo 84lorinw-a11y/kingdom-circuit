@@ -63,7 +63,7 @@ class MultiPageProductionTests(unittest.TestCase):
     def test_808_beezy_verified_registry(self):
         artists = json.loads((ROOT / "config/artists.json").read_text(encoding="utf-8"))
         artist = next(item for item in artists if item.get("name") == "808 BEEZY")
-        self.assertEqual(54, artist.get("rosterOrder"))
+        self.assertEqual(53, artist.get("rosterOrder"))
         self.assertEqual("https://www.808beezy.com/", artist.get("website"))
         self.assertEqual("https://www.instagram.com/808beezy/?hl=en", artist.get("instagramProfile"))
         self.assertEqual("https://open.spotify.com/artist/3CltJZLndpJKtpUyRVBB1k", artist.get("spotifyProfile"))

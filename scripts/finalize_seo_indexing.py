@@ -19,6 +19,7 @@ from fix_seo_audit import apply_seo_audit_fixes
 from inject_menu_accessibility_sync import inject_menu_accessibility_sync
 from pin_verified_event_artwork import pin_site
 from replace_fabricated_artwork_refs import replace_fabricated_artwork_refs
+from owner_roster import removed_names
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE_URL = "https://kingdomcircuit.com"
@@ -244,6 +245,7 @@ def remove_disabled_artist_outputs(root: pathlib.Path) -> dict[str, int]:
         return {"profiles_removed": 0, "sitemap_entries_removed": 0}
 
     disabled = [str(item.get("name") or "").strip() for item in artists if isinstance(item, dict) and item.get("enabled") is False]
+    disabled = list(dict.fromkeys(disabled + removed_names()))
     removed = 0
     removed_urls: list[str] = []
     for name in disabled:

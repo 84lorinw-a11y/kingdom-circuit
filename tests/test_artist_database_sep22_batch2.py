@@ -36,6 +36,10 @@ class ArtistDatabaseSeptember22BatchTwoTests(unittest.TestCase):
         cls.portraits = json.loads((ROOT / "config/artist-portraits.json").read_text())
         cls.expected = {row["name"]: dict(row, imageUrl=cls.portraits[row["name"]]["asset"])
                         for row in ROWS}
+        order = {r['name']: i for i, r in enumerate(json.loads((ROOT / 'config/owner-reviewed-roster.json').read_text())['artists'], 1)}
+        for name, row in cls.expected.items():
+            row['rosterOrder'] = order[name]
+            row['spotifyProfile'] = row['spotifyProfile'].split('?')[0]
         cls.updates = json.loads(
             (ROOT / "config" / "verified-artist-registry-updates.json").read_text(
                 encoding="utf-8"
@@ -51,8 +55,8 @@ class ArtistDatabaseSeptember22BatchTwoTests(unittest.TestCase):
         )
 
     def test_sheet_rows_preserve_source_order_except_owner_removed_jay_kalyl(self):
-        batch = [row for row in self.updates if 150 <= int(row["rosterOrder"]) <= 176]
-        self.assertEqual([row["rosterOrder"] for row in batch], [n for n in range(150, 177) if n != 158])
+        batch = [row for row in self.updates if row["name"] in self.expected]
+        self.assertEqual([row["rosterOrder"] for row in batch], [self.expected[row["name"]]["rosterOrder"] for row in ROWS])
         self.assertEqual([row["name"] for row in batch], [row["name"] for row in ROWS])
         for row in batch:
             expected = self.expected[row["name"]]
@@ -68,7 +72,7 @@ class ArtistDatabaseSeptember22BatchTwoTests(unittest.TestCase):
                 self.assertTrue(artist.get("sourceRegistryVerified"))
                 # Public positions close the gap left by the removed artist;
                 # sourceRegistryRosterOrder retains the reviewed source number.
-                position = expected["rosterOrder"] - (expected["rosterOrder"] > 158)
+                position = expected["rosterOrder"]
                 self.assertEqual(position, artist["rosterOrder"])
                 self.assertEqual(
                     expected["rosterOrder"], artist["sourceRegistryRosterOrder"]

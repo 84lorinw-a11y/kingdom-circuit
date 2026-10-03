@@ -14,8 +14,9 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 from artist_portraits import apply_to_records, load_portraits
+from owner_roster import order_records, snapshot, verify_records, apply as apply_owner_roster
 
-SYNC_VERSION = 8
+SYNC_VERSION = 9
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 UPDATES_FILE = ROOT / "config" / "verified-artist-registry-updates.json"
@@ -67,7 +68,7 @@ def real_official_website(value: object) -> str:
 
 
 def sync_config() -> tuple[list[dict], list[dict], int]:
-    artists = load_json(ARTISTS_FILE, [])
+    artists = order_records(load_json(ARTISTS_FILE, []))
     updates = load_json(UPDATES_FILE, [])
     artists = [item for item in artists if isinstance(item, dict) and norm(item.get("name")) not in EXCLUDED_ARTISTS]
     updates = [item for item in updates if isinstance(item, dict) and norm(item.get("name")) not in EXCLUDED_ARTISTS]
@@ -79,8 +80,9 @@ def sync_config() -> tuple[list[dict], list[dict], int]:
         raise SystemExit("Verified registry updates contain a blank or duplicate artist name")
 
     actual_orders = [int(item.get("rosterOrder") or 0) for item in updates]
-    if not actual_orders or actual_orders[0] != 55 or actual_orders != sorted(set(actual_orders)):
-        raise SystemExit(f"Verified registry source orders must be unique, increasing, and begin at 55: {actual_orders}")
+    expected_verified = [row["name"] for row in snapshot() if row["verified"]]
+    if update_names != expected_verified or actual_orders != sorted(set(actual_orders)):
+        raise SystemExit("Verified handoff must match the owner's reviewed Sheet rows and order")
 
     by_name = {norm(item.get("name")): item for item in artists if isinstance(item, dict) and item.get("name")}
     changed = 0
@@ -138,24 +140,11 @@ def sync_config() -> tuple[list[dict], list[dict], int]:
             if target.get(field) != value:
                 target[field] = value
                 changed += 1
+        if "spotifyProfile" in update and not update["spotifyProfile"]:
+            target.pop("spotifyId", None)
         synced_records.append(target)
 
-    block_keys = {norm(name) for name in update_names}
-    ordered = sorted(
-        [item for item in artists if isinstance(item, dict) and item.get("name")],
-        key=lambda item: (
-            item.get("rosterOrder") if isinstance(item.get("rosterOrder"), int) else 99999,
-            norm(item.get("name")),
-        ),
-    )
-    remainder = [item for item in ordered if norm(item.get("name")) not in block_keys]
-    anchor_index = next((i for i, item in enumerate(remainder) if norm(item.get("name")) == "808 beezy"), None)
-    if anchor_index is None:
-        raise SystemExit("808 BEEZY roster anchor is missing")
-    if anchor_index + 1 != 54:
-        raise SystemExit(f"808 BEEZY must remain roster #54, found #{anchor_index + 1}")
-
-    final_artists = remainder[: anchor_index + 1] + synced_records + remainder[anchor_index + 1 :]
+    final_artists = order_records(artists)
     for index, artist in enumerate(final_artists, 1):
         if artist.get("rosterOrder") != index:
             artist["rosterOrder"] = index
@@ -164,8 +153,7 @@ def sync_config() -> tuple[list[dict], list[dict], int]:
     names = [str(item.get("name") or "") for item in final_artists]
     if len(names) != len(set(map(norm, names))):
         raise SystemExit("Roster sync produced duplicate artist names")
-    if names[54:54 + len(update_names)] != update_names:
-        raise SystemExit(f"Verified registry block did not land exactly after roster position 54: {update_names}")
+    verify_records(final_artists)
 
     # Portraits are editorial assets, not daily refresh data. Apply the saved
     # copy after the Sheet handoff, including the runtime app payload.
@@ -177,6 +165,7 @@ def sync_config() -> tuple[list[dict], list[dict], int]:
         json.dumps(final_artists, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
+    apply_owner_roster(ROOT)
     return final_artists, updates, changed
 
 
@@ -184,7 +173,8 @@ def sync_verified_websites(updates: list[dict]) -> int:
     websites = load_json(WEBSITES_FILE, {})
     if not isinstance(websites, dict):
         raise SystemExit("Verified website registry is not a JSON object")
-    excluded = [name for name in websites if norm(name) in EXCLUDED_ARTISTS]
+    allowed = {norm(row["name"]) for row in snapshot()}
+    excluded = [name for name in websites if norm(name) not in allowed or norm(name) in EXCLUDED_ARTISTS]
     for name in excluded:
         del websites[name]
     changed = len(excluded)
@@ -193,6 +183,7 @@ def sync_verified_websites(updates: list[dict]) -> int:
             continue
         website = real_official_website(update.get("website"))
         if not website:
+            websites.pop(str(update.get("name") or "").strip(), None)
             continue
         name = str(update.get("name") or "").strip()
         if websites.get(name) != website:
@@ -219,12 +210,26 @@ def registry_payload(update: dict) -> dict:
         "label": update.get("label") or "",
         "sourceRegistryVerified": True,
     }
-    return {key: value for key, value in payload.items() if value not in ("", None, []) or key == "sourceRegistryVerified"}
+    # Empty reviewed socials must also override stale hard-coded links.
+    profile_fields = {"website", "instagramProfile", "spotifyProfile", "youtubeProfile", "officialImageSource"}
+    return {key: value for key, value in payload.items()
+            if value not in ("", None, []) or key in profile_fields or key == "sourceRegistryVerified"}
 
 
 def sync_app(artists: list[dict], updates: list[dict]) -> bool:
     text = APP_FILE.read_text(encoding="utf-8")
     original = text
+    allowed = {norm(row["name"]) for row in artists}
+    legacy_pattern = r"const VERIFIED_ARTIST_REGISTRY = (\{.*?\n\});"
+    legacy = re.search(legacy_pattern, text, flags=re.S)
+    if legacy:
+        records = json.loads(legacy.group(1))
+        records = {name: row for name, row in records.items() if norm(name) in allowed}
+        # The pinned SEO renderer still reads this older constant directly.
+        # Publish the same reviewed values to both supported runtime formats.
+        records.update({norm(row["name"]): registry_payload(row) for row in updates})
+        replacement = "const VERIFIED_ARTIST_REGISTRY = " + json.dumps(records, indent=2, ensure_ascii=False) + ";"
+        text = re.sub(legacy_pattern, lambda _: replacement, text, count=1, flags=re.S)
 
     portraits = load_portraits(ROOT)
     static_payload = {norm(name): {"imageUrl": p["asset"], "imagePosition": p.get("position", "center")}

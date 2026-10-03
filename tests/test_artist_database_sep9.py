@@ -55,24 +55,10 @@ class ArtistDatabaseSeptember9Tests(unittest.TestCase):
         sys.modules[spec.name] = cls.update_events
         spec.loader.exec_module(cls.update_events)
 
-    def test_rows_111_through_134_match_the_sheet_order(self):
-        self.assertEqual(
-            [
-                item["rosterOrder"]
-                for item in self.updates
-                if item["rosterOrder"] <= 177
-            ],
-            [n for n in range(55, 178) if n != 158],  # Owner removed Jay Kalyl on September 28.
-        )
-        update_block = [item for item in self.updates if 111 <= item["rosterOrder"] <= 134]
-        self.assertEqual([item["rosterOrder"] for item in update_block], list(range(111, 135)))
-        self.assertEqual([item["name"] for item in update_block], NEW_VERIFIED_BLOCK)
-
-        roster_block = sorted(
-            (item for item in self.artists if 111 <= item["rosterOrder"] <= 134),
-            key=lambda item: item["rosterOrder"],
-        )
-        self.assertEqual([item["name"] for item in roster_block], NEW_VERIFIED_BLOCK)
+    def test_verified_block_preserves_its_relative_sheet_order(self):
+        expected = set(NEW_VERIFIED_BLOCK)
+        self.assertEqual([r['name'] for r in self.updates if r['name'] in expected], NEW_VERIFIED_BLOCK)
+        self.assertEqual([r['name'] for r in self.artists if r['name'] in expected], NEW_VERIFIED_BLOCK)
 
     def test_all_24_profiles_are_verified_and_direct(self):
         artists = {item["name"].casefold(): item for item in self.artists}
@@ -95,8 +81,8 @@ class ArtistDatabaseSeptember9Tests(unittest.TestCase):
     def test_deonte_hall_remains_immediately_before_the_new_block(self):
         artists = {item["name"].casefold(): item for item in self.artists}
         updates = {item["name"].casefold(): item for item in self.updates}
-        self.assertEqual(artists["deonte hall"]["rosterOrder"], 110)
-        self.assertEqual(updates["deonte hall"]["rosterOrder"], 110)
+        self.assertEqual(artists["deonte hall"]["rosterOrder"] + 1, artists[NEW_VERIFIED_BLOCK[0].casefold()]["rosterOrder"])
+        self.assertEqual(updates["deonte hall"]["rosterOrder"], artists["deonte hall"]["rosterOrder"])
         submission_script = (ROOT / "scripts" / "apply_deonte_hall_submission.py").read_text()
         self.assertIn("SOURCE_ROSTER_ORDER = 110", submission_script)
 

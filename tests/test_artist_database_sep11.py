@@ -40,11 +40,11 @@ class ArtistDatabaseSeptember11Tests(unittest.TestCase):
 
     def test_rows_135_through_144_match_the_sheet_order(self):
         block = sorted(
-            (item for item in self.artists if 135 <= item["rosterOrder"] <= 144),
+            (item for item in self.artists if item["name"] in VERIFIED_BLOCK),
             key=lambda item: item["rosterOrder"],
         )
         self.assertEqual([item["name"] for item in block], VERIFIED_BLOCK)
-        self.assertEqual([item["rosterOrder"] for item in block], list(range(135, 145)))
+        self.assertEqual([item["rosterOrder"] for item in block], list(range(block[0]["rosterOrder"], block[0]["rosterOrder"] + len(VERIFIED_BLOCK))))
 
     def test_verified_socials_are_direct_artist_profiles(self):
         artists = {item["name"].casefold(): item for item in self.artists}

@@ -8,6 +8,7 @@ import json
 import pathlib
 import re
 import shutil
+from owner_roster import order_records, verify_records
 
 EXCLUDED_ARTISTS = {"chad jones", "erica mason", "big holy", "jay kalyl", "dj maj", "propaganda"}
 EXCLUDED_SLUGS = {"chad-jones", "erica-mason", "big-holy", "jay-kalyl", "dj-maj", "propaganda"}
@@ -182,7 +183,16 @@ REGISTRY_UPDATES = {
     },
 }
 
-CANONICAL_KEYS = ["kelo", "dkg kie", "braille", "canton jones", "jay-way", "stixx aka conejo", "ruslan", "180mindset"]
+# The latest owner-reviewed handoff supersedes historical hard-coded socials.
+REGISTRY_UPDATES = {
+    row["name"].casefold(): {
+        **row, "sourceRegistryVerified": True,
+        "sourceRegistryRosterOrder": row["rosterOrder"],
+    }
+    for row in json.loads((pathlib.Path(__file__).resolve().parents[1] /
+                           "config/verified-artist-registry-updates.json").read_text())
+}
+CANONICAL_KEYS = list(REGISTRY_UPDATES)
 
 
 def norm(value: object) -> str:
@@ -361,7 +371,8 @@ def patch_artists(path: pathlib.Path) -> list[dict]:
         artist.update(update)
         artist["enabled"] = True
 
-    artists.sort(key=lambda item: (int(item.get("rosterOrder") or 99999), norm(item.get("name"))))
+    artists = order_records(artists)
+    verify_records(artists)
     for index, artist in enumerate(artists, 1):
         artist["rosterOrder"] = index
     write_json(path, artists)
@@ -429,7 +440,8 @@ def registry_payload(update: dict) -> dict:
         "sourceRegistryVerified": True,
         "sourceRegistryRosterOrder": int(update.get("sourceRegistryRosterOrder") or 0),
     }
-    return {key: value for key, value in payload.items() if value not in ("", None, False, 0, []) or key == "sourceRegistryVerified"}
+    profile_fields = {"website", "instagramProfile", "spotifyProfile", "youtubeProfile", "officialImageSource"}
+    return {key: value for key, value in payload.items() if value not in ("", None, False, 0, []) or key in profile_fields or key == "sourceRegistryVerified"}
 
 
 def patch_app(path: pathlib.Path, artists: list[dict]) -> None:

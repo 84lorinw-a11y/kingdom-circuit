@@ -1,6 +1,1257 @@
 [
   {
-    "rosterOrder": 55,
+    "name": "Lecrae",
+    "aliases": [
+      "Lecrae"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://lecrae.com",
+    "instagramProfile": "https://www.instagram.com/lecrae/",
+    "spotifyProfile": "https://open.spotify.com/artist/1CFCsEqKrCyvAFKOATQHiW",
+    "youtubeProfile": "https://www.youtube.com/@lecraeofficial",
+    "imageUrl": "assets/artists/lecrae-saved.webp",
+    "imagePosition": "center",
+    "label": "Reach Records",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 1,
+    "sheetRosterOrder": 1,
+    "state": "",
+    "officialImageSource": "https://lecrae.com"
+  },
+  {
+    "name": "Hulvey",
+    "aliases": [
+      "Hulvey"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://hulvey.com",
+    "instagramProfile": "https://www.instagram.com/hulvey/",
+    "spotifyProfile": "https://open.spotify.com/artist/3zSrc5vUlUxyDdS0KrxFJO",
+    "youtubeProfile": "https://www.youtube.com/@hulvey",
+    "imageUrl": "assets/artists/hulvey-saved.webp",
+    "imagePosition": "center",
+    "label": "Reach Records",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 2,
+    "sheetRosterOrder": 2,
+    "state": "",
+    "officialImageSource": "https://hulvey.com"
+  },
+  {
+    "name": "KB",
+    "aliases": [
+      "KB"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://www.whoiskb.com",
+    "instagramProfile": "https://www.instagram.com/kb_hga/",
+    "spotifyProfile": "https://open.spotify.com/artist/77IKXFvO7SpWrq8hflrUXc",
+    "youtubeProfile": "https://www.youtube.com/@KB_HGA",
+    "imageUrl": "assets/artists/kb-saved.jpg",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 3,
+    "sheetRosterOrder": 3,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://www.whoiskb.com"
+  },
+  {
+    "name": "Caleb Gordon",
+    "aliases": [
+      "Caleb Gordon"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+    "instagramProfile": "https://www.instagram.com/calebfromeden",
+    "spotifyProfile": "https://open.spotify.com/artist/6s3XaJkcT7464G4oII9V41",
+    "youtubeProfile": "https://www.youtube.com/@CalebGordon",
+    "officialImageSource": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
+    "imageUrl": "assets/artists/caleb-gordon-primary.jpg",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 4,
+    "sheetRosterOrder": 4,
+    "state": "",
+    "label": ""
+  },
+  {
+    "name": "Andy Mineo",
+    "aliases": [
+      "Andy Mineo"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://andymineo.com",
+    "instagramProfile": "https://www.instagram.com/andymineo/",
+    "spotifyProfile": "https://open.spotify.com/artist/1TMrnxBwZfmfRxsGzkNIHw",
+    "youtubeProfile": "https://www.youtube.com/@AndyMineo",
+    "imageUrl": "assets/artists/andy-mineo-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 5,
+    "sheetRosterOrder": 5,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://andymineo.com"
+  },
+  {
+    "name": "nobigdyl.",
+    "aliases": [
+      "nobigdyl.",
+      "nobigdyl"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://www.dyllie.com/",
+    "instagramProfile": "https://www.instagram.com/nobigdyl/",
+    "spotifyProfile": "https://open.spotify.com/artist/2d8NsBa8O4C6bgQatFP5V4",
+    "youtubeProfile": "https://www.youtube.com/@nobigdyl.official",
+    "imageUrl": "assets/artists/nobigdyl-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 6,
+    "sheetRosterOrder": 6,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://www.instagram.com/nobigdyl/"
+  },
+  {
+    "name": "1K Phew",
+    "aliases": [
+      "1K Phew",
+      "1K PHEW",
+      "1KPhew"
+    ],
+    "category": "reach",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://www.1kphew.com/",
+    "instagramProfile": "https://www.instagram.com/1kphew/",
+    "spotifyProfile": "https://open.spotify.com/artist/6CQGrt3AJ2gx5oMSR0mwbl",
+    "youtubeProfile": "https://www.youtube.com/@Phewskii",
+    "imageUrl": "assets/artists/1k-phew.webp",
+    "imagePosition": "50% 24%",
+    "label": "Reach Records",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 7,
+    "sheetRosterOrder": 7,
+    "state": "",
+    "officialImageSource": "https://www.1kphew.com/bio"
+  },
+  {
+    "name": "Miles Minnick",
+    "aliases": [
+      "Miles Minnick"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://milesminnick.com/",
+    "instagramProfile": "https://www.instagram.com/miles.minnick/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/1VEtrxO5KlDXfYGKBI6Ldr",
+    "youtubeProfile": "https://www.youtube.com/@MilesMinnick",
+    "imageUrl": "assets/artists/miles-minnick-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 8,
+    "sheetRosterOrder": 8,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://milesminnick.com/"
+  },
+  {
+    "name": "Jon Keith",
+    "aliases": [
+      "Jon Keith"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://alienzalive.com/artist/jon-keith/",
+    "instagramProfile": "https://www.instagram.com/jonkeith/",
+    "spotifyProfile": "https://open.spotify.com/artist/0PUc1lwaZpPJaMr0v4Gdvo",
+    "youtubeProfile": "https://www.youtube.com/@JonKeith",
+    "officialImageSource": "https://music.apple.com/us/artist/jon-keith/1139914139",
+    "imageUrl": "assets/artists/jon-keith-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 9,
+    "sheetRosterOrder": 9,
+    "state": "",
+    "label": ""
+  },
+  {
+    "name": "Tedashii",
+    "aliases": [
+      "Tedashii"
+    ],
+    "category": "reach",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://www.reachrecords.com/artists/tedashii/",
+    "instagramProfile": "https://www.instagram.com/tedashii/",
+    "spotifyProfile": "https://open.spotify.com/artist/4c6lhwoOrmgNWvl0GxHlW1",
+    "youtubeProfile": "https://www.youtube.com/@tedashii_116",
+    "imageUrl": "assets/artists/tedashii-saved.jpg",
+    "imagePosition": "center",
+    "label": "Reach Records",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 10,
+    "sheetRosterOrder": 10,
+    "state": "",
+    "officialImageSource": "https://www.reachrecords.com/artists/tedashii/"
+  },
+  {
+    "name": "Trip Lee",
+    "aliases": [
+      "Trip Lee"
+    ],
+    "category": "reach",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://builttobrag.com/",
+    "instagramProfile": "https://www.instagram.com/triplee/",
+    "spotifyProfile": "https://open.spotify.com/artist/12H1Dmi64fAmmARrsyVFzy",
+    "youtubeProfile": "https://www.youtube.com/@triplee_116",
+    "imageUrl": "assets/artists/trip-lee-saved.webp",
+    "imagePosition": "center",
+    "label": "Reach Records",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 11,
+    "sheetRosterOrder": 11,
+    "state": "",
+    "officialImageSource": "https://builttobrag.com/"
+  },
+  {
+    "name": "FLAME",
+    "aliases": [
+      "FLAME",
+      "Flame"
+    ],
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": false,
+    "website": "https://www.instagram.com/flame314/",
+    "instagramProfile": "https://www.instagram.com/flame314/",
+    "spotifyProfile": "https://open.spotify.com/artist/2s6kyMmJZFgPCHXU0QxJLp",
+    "youtubeProfile": "https://www.youtube.com/@ClearSightMusic",
+    "imageUrl": "assets/artists/flame-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 12,
+    "sheetRosterOrder": 12,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://www.instagram.com/flame314/"
+  },
+  {
+    "name": "Scootie Wop",
+    "aliases": [
+      "Scootie Wop"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://starrbaby.com/",
+    "instagramProfile": "https://www.instagram.com/scootiewop/",
+    "spotifyProfile": "https://open.spotify.com/artist/1JAoqu34UmPWUUAjLMXt5I",
+    "youtubeProfile": "https://www.youtube.com/channel/UCxiuNRFW37J9uXL6SGCW0MQ",
+    "imageUrl": "assets/artists/scootie-wop-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 13,
+    "sheetRosterOrder": 13,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://starrbaby.com/"
+  },
+  {
+    "name": "Aaron Cole",
+    "aliases": [
+      "Aaron Cole"
+    ],
+    "category": "crossover",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://www.iamaaroncole.com/",
+    "instagramProfile": "https://www.instagram.com/iamaaroncole/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/0OQ8y7heASb1vEX5WXvjCr",
+    "youtubeProfile": "https://www.youtube.com/channel/UCFV59kjh9BTGJGYwfrQ247Q",
+    "imageUrl": "assets/artists/aaron-cole-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 14,
+    "sheetRosterOrder": 14,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://www.iamaaroncole.com/"
+  },
+  {
+    "name": "WHATUPRG",
+    "aliases": [
+      "WHATUPRG",
+      "WHATUPRG?"
+    ],
+    "category": "reach",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://www.reachrecords.com/artists/whatuprg/",
+    "instagramProfile": "https://www.instagram.com/whatuprg/",
+    "spotifyProfile": "https://open.spotify.com/artist/6YgYm3f9ifsz4OwQt8jql7",
+    "youtubeProfile": "https://www.youtube.com/@WHATUPRG",
+    "imageUrl": "assets/artists/whatuprg-saved.jpg",
+    "imagePosition": "center",
+    "label": "Reach Records",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 15,
+    "sheetRosterOrder": 15,
+    "state": "",
+    "officialImageSource": "https://www.reachrecords.com/artists/whatuprg/"
+  },
+  {
+    "name": "Anike",
+    "aliases": [
+      "Anike",
+      "Wande"
+    ],
+    "category": "reach",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": false,
+    "website": "https://anike.net/",
+    "instagramProfile": "https://www.instagram.com/anike/",
+    "spotifyProfile": "https://open.spotify.com/artist/0GdzQJqgRL5SHp7kXOKba0",
+    "youtubeProfile": "https://www.youtube.com/c/wandeisola",
+    "imageUrl": "assets/artists/anike-saved.webp",
+    "imagePosition": "center",
+    "label": "Reach Records",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 16,
+    "sheetRosterOrder": 16,
+    "state": "",
+    "officialImageSource": "https://anike.net/"
+  },
+  {
+    "name": "Limoblaze",
+    "aliases": [
+      "Limoblaze"
+    ],
+    "category": "reach",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://www.limoblaze.com/",
+    "instagramProfile": "https://www.instagram.com/limoblaze_/",
+    "spotifyProfile": "https://open.spotify.com/artist/0liXA3xwx6pncxYQA30ahT",
+    "youtubeProfile": "https://www.youtube.com/@limoblaze",
+    "imageUrl": "assets/artists/limoblaze-saved.webp",
+    "imagePosition": "center",
+    "label": "Reach Records",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 17,
+    "sheetRosterOrder": 17,
+    "state": "",
+    "officialImageSource": "https://www.limoblaze.com/"
+  },
+  {
+    "name": "Jackie Hill Perry",
+    "aliases": [
+      "Jackie Hill Perry",
+      "Jackie Hill-Perry"
+    ],
+    "category": "reach",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://www.jackiehillperry.com/",
+    "instagramProfile": "https://www.instagram.com/jackiehillperry/",
+    "spotifyProfile": "https://open.spotify.com/artist/0Lf9qKpKwy6fJtfM7UWLV0",
+    "youtubeProfile": "https://www.youtube.com/@jackiehillperrychannel",
+    "imageUrl": "assets/artists/jackie-hill-perry-saved.webp",
+    "imagePosition": "center",
+    "label": "Reach Records",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 18,
+    "sheetRosterOrder": 18,
+    "state": "",
+    "officialImageSource": "https://www.jackiehillperry.com/"
+  },
+  {
+    "name": "Social Club Misfits",
+    "aliases": [
+      "Social Club Misfits",
+      "Social Club"
+    ],
+    "category": "group",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://socialclubmisfits.com/",
+    "instagramProfile": "https://www.instagram.com/socialclubmisfits/",
+    "spotifyProfile": "https://open.spotify.com/artist/0wnsM0ziqToBwQeEbH0akL",
+    "youtubeProfile": "https://www.youtube.com/@socialclubmisfits",
+    "imageUrl": "assets/artists/social-club-misfits-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 19,
+    "sheetRosterOrder": 19,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://socialclubmisfits.com/"
+  },
+  {
+    "name": "Steven Malcolm",
+    "aliases": [
+      "Steven Malcolm"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://stevenmalcolm.com/",
+    "instagramProfile": "https://www.instagram.com/stevenmalcolmmusic/",
+    "spotifyProfile": "https://open.spotify.com/artist/5yqWHaDl8ZrYgeKANLyIv8",
+    "youtubeProfile": "https://www.youtube.com/c/StevenMalcolm",
+    "imageUrl": "assets/artists/steven-malcolm-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 20,
+    "sheetRosterOrder": 20,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://stevenmalcolm.com/"
+  },
+  {
+    "name": "GAWVI",
+    "aliases": [
+      "GAWVI",
+      "Gawvi"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://www.gawvi.co/",
+    "instagramProfile": "https://www.instagram.com/gawvi/",
+    "spotifyProfile": "https://open.spotify.com/artist/0oPd8f0W82Tgrazx2PYNab",
+    "youtubeProfile": "https://www.youtube.com/@GAWVI",
+    "imageUrl": "assets/artists/gawvi-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 21,
+    "sheetRosterOrder": 21,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://www.gawvi.co/"
+  },
+  {
+    "name": "EGR",
+    "aliases": [
+      "EGR",
+      "EGR MUZIK",
+      "EGRxOFFICIAL"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": false,
+    "website": "https://www.youtube.com/@EGRxOFFICIAL",
+    "instagramProfile": "https://www.instagram.com/egrxofficial/",
+    "spotifyProfile": "https://open.spotify.com/artist/4EJIkbig1thbV3C3B68c56",
+    "youtubeProfile": "https://www.youtube.com/@EGRxOFFICIAL",
+    "officialImageSource": "https://open.spotify.com/artist/4EJIkbig1thbV3C3B68c56",
+    "imageUrl": "assets/artists/egr-spotify-primary.jpg",
+    "imagePosition": "50% 0%",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 22,
+    "sheetRosterOrder": 22,
+    "state": "",
+    "label": ""
+  },
+  {
+    "name": "Mike Malagies",
+    "aliases": [
+      "Mike Malagies"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://www.mikemalagiesofficial.com/",
+    "instagramProfile": "https://www.instagram.com/mikemalagies/",
+    "spotifyProfile": "https://open.spotify.com/artist/6Ms95MzjHZvqs79Nw3hXrx",
+    "youtubeProfile": "https://www.youtube.com/channel/UCLbkU1IRos-VlB7fwACr_YQ",
+    "imageUrl": "assets/artists/mike-malagies-saved.jpg",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 23,
+    "sheetRosterOrder": 23,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://www.mikemalagiesofficial.com/"
+  },
+  {
+    "name": "Fern",
+    "aliases": [
+      "Fern",
+      "Fern of Social Club Misfits"
+    ],
+    "category": "solo",
+    "monitoringPriority": 2,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": false,
+    "website": "https://fernofficial.com/",
+    "instagramProfile": "https://www.instagram.com/fernie_sc/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/0aDl6JJeQf1eZ35ymzirwp",
+    "youtubeProfile": "https://www.youtube.com/channel/UCjB6amZ5v-e6H8lK2HerjmQ",
+    "imageUrl": "assets/artists/fern-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 24,
+    "sheetRosterOrder": 24,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://fernofficial.com/"
+  },
+  {
+    "name": "Marty",
+    "aliases": [
+      "Marty",
+      "Marty of Social Club Misfits",
+      "Marty Mar"
+    ],
+    "category": "solo",
+    "monitoringPriority": 2,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": false,
+    "website": "https://www.instagram.com/deathbymartymar/?hl=en",
+    "instagramProfile": "https://www.instagram.com/deathbymartymar/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/5BfKKSmpGmj2moMNlaWeJK",
+    "youtubeProfile": "https://www.youtube.com/@deathbymartymar",
+    "officialImageSource": "https://open.spotify.com/artist/5BfKKSmpGmj2moMNlaWeJK",
+    "imageUrl": "assets/artists/marty-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 25,
+    "sheetRosterOrder": 25,
+    "state": "",
+    "label": ""
+  },
+  {
+    "name": "BrvndonP",
+    "aliases": [
+      "BrvndonP",
+      "Brvndon P"
+    ],
+    "category": "core",
+    "monitoringPriority": 3,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://iambrvndonp.com/",
+    "instagramProfile": "https://www.instagram.com/iambrvndonp/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/0hO40pJ3oZNnq7joT2xQGy",
+    "youtubeProfile": "https://www.youtube.com/@BRVNDONP",
+    "imageUrl": "assets/artists/brvndonp-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 26,
+    "sheetRosterOrder": 26,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://iambrvndonp.com/"
+  },
+  {
+    "name": "Skema Boy",
+    "aliases": [
+      "Skema Boy"
+    ],
+    "category": "core",
+    "monitoringPriority": 3,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": true,
+    "website": "https://rixonentertainment.com/skema-boy",
+    "instagramProfile": "https://www.instagram.com/skema.boy/",
+    "spotifyProfile": "https://open.spotify.com/artist/1KTljUXZGt7HkAFFEnDBn1",
+    "youtubeProfile": "https://www.youtube.com/@skemaboy",
+    "imageUrl": "assets/artists/skema-boy.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 27,
+    "sheetRosterOrder": 27,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://rixonentertainment.com/skema-boy"
+  },
+  {
+    "name": "Zauntee",
+    "aliases": [
+      "Zauntee"
+    ],
+    "category": "crossover",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://www.zauntee.com/",
+    "instagramProfile": "https://www.instagram.com/zauntee/",
+    "spotifyProfile": "https://open.spotify.com/artist/7jyr9Co4MKL1iWML1G7vch",
+    "youtubeProfile": "https://www.youtube.com/@zauntee",
+    "imageUrl": "assets/artists/zauntee.webp",
+    "imagePosition": "50% 32%",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 28,
+    "sheetRosterOrder": 28,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://www.zauntee.com/"
+  },
+  {
+    "name": "Bizzle",
+    "aliases": [
+      "Bizzle"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://bizzle.vip/",
+    "instagramProfile": "https://www.instagram.com/bizzle/",
+    "spotifyProfile": "https://open.spotify.com/artist/0P8V2XSw1mIo8739T1qjzr",
+    "youtubeProfile": "https://www.youtube.com/user/playbizzle21",
+    "officialImageSource": "https://open.spotify.com/artist/0P8V2XSw1mIo8739T1qjzr",
+    "imageUrl": "assets/artists/bizzle.webp",
+    "imagePosition": "50% 0%",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 29,
+    "sheetRosterOrder": 29,
+    "state": "",
+    "label": ""
+  },
+  {
+    "name": "Derek Minor",
+    "aliases": [
+      "Derek Minor"
+    ],
+    "category": "rmg",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://derekminor.com/",
+    "instagramProfile": "https://www.instagram.com/thederekminor/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/3fn8lZLy7Q61AXCWWPYC4B",
+    "youtubeProfile": "https://www.youtube.com/@derekminor",
+    "imageUrl": "assets/artists/derek-minor-saved.webp",
+    "imagePosition": "center",
+    "label": "Reflection Music Group",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 30,
+    "sheetRosterOrder": 30,
+    "state": "",
+    "officialImageSource": "https://derekminor.com/"
+  },
+  {
+    "name": "Canon",
+    "aliases": [
+      "Canon"
+    ],
+    "category": "rmg",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": false,
+    "website": "https://www.getthecanon.com/",
+    "instagramProfile": "https://www.instagram.com/getthecanon/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/1dIjbaW9JTTQQ7ufrQnGsq",
+    "youtubeProfile": "https://www.youtube.com/@getthecanon",
+    "imageUrl": "assets/artists/canon-saved.webp",
+    "imagePosition": "center",
+    "label": "Reflection Music Group",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 31,
+    "sheetRosterOrder": 31,
+    "state": "",
+    "officialImageSource": "https://www.getthecanon.com/"
+  },
+  {
+    "name": "Parris Chariz",
+    "aliases": [
+      "Parris Chariz"
+    ],
+    "category": "rmg",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://www.instagram.com/parrischariz/?hl=en",
+    "instagramProfile": "https://www.instagram.com/parrischariz/",
+    "spotifyProfile": "https://open.spotify.com/artist/2Vt6gyhUH7Vj2cybfQWOqM",
+    "youtubeProfile": "https://www.youtube.com/@parrischariz",
+    "imageUrl": "assets/artists/parris-chariz-saved.jpg",
+    "imagePosition": "center",
+    "label": "Reflection Music Group",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 32,
+    "sheetRosterOrder": 32,
+    "state": "",
+    "officialImageSource": "https://www.instagram.com/parrischariz/?hl=en"
+  },
+  {
+    "name": "Aklesso",
+    "aliases": [
+      "Aklesso"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://www.aklesso.com/",
+    "instagramProfile": "https://www.instagram.com/aklesso/",
+    "spotifyProfile": "https://open.spotify.com/artist/7r3HxO330lmabOprT2MMFK",
+    "youtubeProfile": "https://www.youtube.com/@aklesso",
+    "imageUrl": "assets/artists/aklesso-saved.jpg",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 33,
+    "sheetRosterOrder": 33,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://www.aklesso.com/"
+  },
+  {
+    "name": "Tommy Zuko",
+    "aliases": [
+      "Tommy Zuko"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://www.tommyzuko.com/",
+    "instagramProfile": "https://www.instagram.com/tommyzuko/",
+    "spotifyProfile": "https://open.spotify.com/artist/6GEZnFo9mFSItpAWzswBpT",
+    "youtubeProfile": "https://www.youtube.com/@TommyZuko",
+    "imageUrl": "assets/artists/tommy-zuko-saved.jpg",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 34,
+    "sheetRosterOrder": 34,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://www.tommyzuko.com/"
+  },
+  {
+    "name": "Sevin",
+    "aliases": [
+      "Sevin",
+      "Sevin Duce",
+      "Sevin HOG MOB",
+      "HOG MOB Ministries",
+      "HOG MOB"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": true,
+    "website": "https://hogmob.com/sevin/",
+    "instagramProfile": "https://www.instagram.com/sevinhogmob/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/1I402d4s0Xe8EntQI3u96l",
+    "youtubeProfile": "https://www.youtube.com/@HOGMOBSEVIN",
+    "imageUrl": "assets/artists/sevin.webp",
+    "imagePosition": "50% 30%",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 35,
+    "sheetRosterOrder": 35,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://hogmob.com/sevin/"
+  },
+  {
+    "name": "Da' T.R.U.T.H.",
+    "aliases": [
+      "Da' T.R.U.T.H.",
+      "Da Truth",
+      "Da T.R.U.T.H."
+    ],
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": true,
+    "website": "https://www.instagram.com/datruthonduty/?hl=en",
+    "instagramProfile": "https://www.instagram.com/datruthonduty/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/2ISIE0MEDMdAF2LDMLrVD4",
+    "youtubeProfile": "https://www.youtube.com/channel/UCnJCP07fWQ5BIFd7toUnxKg",
+    "imageUrl": "assets/artists/da-t-r-u-t-h-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 36,
+    "sheetRosterOrder": 36,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://www.instagram.com/datruthonduty/?hl=en"
+  },
+  {
+    "name": "Wordsplayed",
+    "aliases": [
+      "Wordsplayed",
+      "Wordsplayed.",
+      "Wordsplayed?"
+    ],
+    "category": "core",
+    "monitoringPriority": 3,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": false,
+    "website": "https://wordsplayed.neocities.org/",
+    "instagramProfile": "https://www.instagram.com/wordsplayed/",
+    "spotifyProfile": "https://open.spotify.com/artist/0AKzJfX9rdEu8WOqeBLEaO",
+    "youtubeProfile": "https://music.youtube.com/@wordsplayedworldwide",
+    "imageUrl": "assets/artists/wordsplayed-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 37,
+    "sheetRosterOrder": 37,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://wordsplayed.neocities.org/"
+  },
+  {
+    "name": "Forrest Frank",
+    "aliases": [
+      "Forrest Frank"
+    ],
+    "category": "crossover",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://forrestfrank.com/",
+    "instagramProfile": "https://www.instagram.com/hiforrest/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/1scVfBymTr3CeZ4imMj1QJ",
+    "youtubeProfile": "https://www.youtube.com/@hiforrest",
+    "imageUrl": "assets/artists/forrest-frank-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 38,
+    "sheetRosterOrder": 38,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://forrestfrank.com/"
+  },
+  {
+    "name": "indie tribe.",
+    "aliases": [
+      "indie tribe.",
+      "indie tribe",
+      "Indie Tribe"
+    ],
+    "category": "group",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://indietribe.us/",
+    "instagramProfile": "https://www.instagram.com/indiextribe/",
+    "spotifyProfile": "https://open.spotify.com/artist/1sPm31qmcbk9EFoRCS8eRl",
+    "youtubeProfile": "https://www.youtube.com/@indietribe",
+    "imageUrl": "assets/artists/indie-tribe-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 39,
+    "sheetRosterOrder": 39,
+    "state": "",
+    "label": "",
+    "officialImageSource": "https://www.instagram.com/indiextribe/"
+  },
+  {
+    "name": "Brenno",
+    "aliases": [
+      "Brenno"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://www.brennomusic.live/",
+    "instagramProfile": "https://www.instagram.com/brenno.music/",
+    "spotifyProfile": "https://open.spotify.com/artist/7lBcEp7abNiq3WyHT3RRqV",
+    "youtubeProfile": "https://www.youtube.com/@brenno.music1/videos",
+    "officialImageSource": "https://www.instagram.com/brenno.music/",
+    "imageUrl": "assets/artists/brenno-saved.jpg",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 40,
+    "sheetRosterOrder": 40,
+    "state": "",
+    "label": ""
+  },
+  {
+    "name": "Shepherd",
+    "aliases": [
+      "Shepherd",
+      "Shepherd."
+    ],
+    "category": "core",
+    "monitoringPriority": 2,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": false,
+    "website": "https://www.shepherd.live/",
+    "instagramProfile": "https://www.instagram.com/shepherd_music/",
+    "spotifyProfile": "https://open.spotify.com/artist/0YHuTR40zc9yqfoSSArQxU",
+    "youtubeProfile": "https://www.youtube.com/channel/UCc6gnoGyHriWXsAEX-OcueQ",
+    "officialImageSource": "https://www.instagram.com/shepherd_music/",
+    "imageUrl": "assets/artists/shepherd-saved.webp",
+    "imagePosition": "center",
+    "label": "Familia Forever",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 41,
+    "sheetRosterOrder": 41,
+    "state": ""
+  },
+  {
+    "name": "Kai Uriah",
+    "aliases": [
+      "Kai Uriah"
+    ],
+    "category": "core",
+    "monitoringPriority": 2,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": true,
+    "website": "https://www.instagram.com/kaiuriah/?hl=en",
+    "instagramProfile": "https://www.instagram.com/kaiuriah/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/6IdKInshEI8ywJ99v6gVKM",
+    "youtubeProfile": "https://www.youtube.com/@kaiuriah",
+    "officialImageSource": "https://www.instagram.com/kaiuriah/?hl=en",
+    "imageUrl": "assets/artists/kai-uriah-saved.jpg",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 42,
+    "sheetRosterOrder": 42,
+    "state": "",
+    "label": ""
+  },
+  {
+    "name": "Hyper Fenton",
+    "aliases": [
+      "Hyper Fenton",
+      "Seth Fenton"
+    ],
+    "category": "core",
+    "monitoringPriority": 2,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": true,
+    "website": "https://hyperfenton.com/",
+    "instagramProfile": "https://www.instagram.com/hyperfenton/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/2q5QIs6iibW6xyHZZRSeh2",
+    "youtubeProfile": "https://music.youtube.com/playlist?list=OLAK5uy_mriMUrHlhyB3ejFMfLTlJohVxDbdscX5s",
+    "officialImageSource": "https://www.instagram.com/hyperfenton/?hl=en",
+    "imageUrl": "assets/artists/hyper-fenton-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 43,
+    "sheetRosterOrder": 43,
+    "state": "",
+    "label": ""
+  },
+  {
+    "name": "Brea Miles",
+    "aliases": [
+      "Brea Miles"
+    ],
+    "category": "core",
+    "monitoringPriority": 2,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": true,
+    "website": "https://www.alwaysbrea.com/",
+    "instagramProfile": "https://www.instagram.com/alwaysbrea",
+    "spotifyProfile": "https://open.spotify.com/artist/2S8dO0fwL0qup5Eo7OHs5i",
+    "youtubeProfile": "https://www.youtube.com/breamiles",
+    "officialImageSource": "https://www.instagram.com/alwaysbrea",
+    "imageUrl": "assets/artists/brea-miles-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 44,
+    "sheetRosterOrder": 44,
+    "state": "",
+    "label": ""
+  },
+  {
+    "name": "Issac Mansfield",
+    "aliases": [
+      "Issac Mansfield",
+      "Isaac Mansfield"
+    ],
+    "category": "core",
+    "monitoringPriority": 2,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": true,
+    "website": "https://www.issacmansfield.com/",
+    "instagramProfile": "https://www.instagram.com/issacmansfield/",
+    "spotifyProfile": "https://open.spotify.com/artist/1QgXbOPk6XpELZrJOzz33w",
+    "youtubeProfile": "https://www.youtube.com/@issac.mansfield/featured",
+    "officialImageSource": "https://www.issacmansfield.com/",
+    "imageUrl": "assets/artists/issac-mansfield-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 45,
+    "sheetRosterOrder": 45,
+    "state": "",
+    "label": ""
+  },
+  {
+    "name": "Tylan1k",
+    "aliases": [
+      "Tylan1k",
+      "tylan1k"
+    ],
+    "category": "core",
+    "monitoringPriority": 2,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": true,
+    "website": "https://www.instagram.com/tylanthechosen1/?hl=en",
+    "instagramProfile": "https://www.instagram.com/tylanthechosen1/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/6PY88og97O47AlwuyFFRhr",
+    "youtubeProfile": "https://www.youtube.com/channel/UCeJ8yMp5bJjTxBp_COGNB6w",
+    "officialImageSource": "https://www.instagram.com/tylanthechosen1/?hl=en",
+    "imageUrl": "assets/artists/tylan1k-saved.jpg",
+    "imagePosition": "center",
+    "label": "RMG Amplify",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 46,
+    "sheetRosterOrder": 46,
+    "state": ""
+  },
+  {
+    "name": "Jabari Heavens",
+    "aliases": [
+      "Jabari Heavens"
+    ],
+    "category": "core",
+    "monitoringPriority": 2,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": true,
+    "website": "https://www.instagram.com/jabariheavens/",
+    "instagramProfile": "https://www.instagram.com/jabariheavens/",
+    "spotifyProfile": "https://open.spotify.com/artist/2ORjCgiRF9ZIK4gak1CsYP",
+    "youtubeProfile": "https://www.youtube.com/@JabariHeavens",
+    "officialImageSource": "https://www.instagram.com/jabariheavens/",
+    "imageUrl": "assets/artists/jabari-heavens-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 47,
+    "sheetRosterOrder": 47,
+    "state": "",
+    "label": ""
+  },
+  {
+    "name": "Rhema Soul",
+    "aliases": [
+      "Rhema Soul"
+    ],
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": false,
+    "website": "https://en.wikipedia.org/wiki/Rhema_Soul",
+    "instagramProfile": "https://www.instagram.com/rhemasoul/",
+    "spotifyProfile": "https://open.spotify.com/artist/6kqgFtlPJHyqqffmlDTTzd",
+    "youtubeProfile": "https://www.youtube.com/@RhemaSoul/featured",
+    "officialImageSource": "https://www.instagram.com/rhemasoul/",
+    "imageUrl": "assets/artists/rhema-soul-saved.jpg",
+    "imagePosition": "center",
+    "label": "Good City Music",
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 48,
+    "sheetRosterOrder": 48,
+    "state": ""
+  },
+  {
+    "name": "Shonlock",
+    "aliases": [
+      "Shonlock"
+    ],
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": false,
+    "website": "http://www.shonlock.com/",
+    "instagramProfile": "https://www.instagram.com/shonlock/",
+    "spotifyProfile": "https://open.spotify.com/artist/0Fs18mA7TFMvYVRNX4dNTt",
+    "youtubeProfile": "https://music.youtube.com/@Shonlock",
+    "officialImageSource": "https://www.instagram.com/shonlock/",
+    "imageUrl": "assets/artists/shonlock-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 49,
+    "sheetRosterOrder": 49,
+    "state": "",
+    "label": ""
+  },
+  {
+    "name": "Viktory",
+    "aliases": [
+      "Viktory"
+    ],
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": false,
+    "website": "https://en.wikipedia.org/wiki/Viktory",
+    "instagramProfile": "https://www.instagram.com/viktoryr4/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/7jKYoI3eKh85xfqK7TAlN5",
+    "youtubeProfile": "https://www.youtube.com/@ViktoriousMusic",
+    "officialImageSource": "https://www.instagram.com/viktoryr4/?hl=en",
+    "imageUrl": "assets/artists/viktory-saved.jpg",
+    "imagePosition": "center",
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 50,
+    "sheetRosterOrder": 50,
+    "state": "",
+    "label": ""
+  },
+  {
+    "name": "T-Bone",
+    "aliases": [
+      "T-Bone",
+      "T Bone",
+      "Rene Sotomayor"
+    ],
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": false,
+    "website": "http://houseoftbone.com/",
+    "instagramProfile": "https://www.instagram.com/tboneoficial/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/6h2GxbU7emrTikSWxbMyxd",
+    "youtubeProfile": "https://www.youtube.com/channel/UCxQgnrqdZe_2qAR9jzyVmmg",
+    "officialImageSource": "https://www.instagram.com/tboneoficial/?hl=en",
+    "imageUrl": "assets/artists/t-bone-saved.jpg",
+    "imagePosition": "center",
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 51,
+    "sheetRosterOrder": 51,
+    "state": "",
+    "label": ""
+  },
+  {
+    "name": "Bishop Freeze",
+    "aliases": [
+      "Bishop Freeze"
+    ],
+    "category": "legacy",
+    "monitoringPriority": 3,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": false,
+    "website": "https://www.sozomissions.com/music/bishop-freeze",
+    "instagramProfile": "https://www.instagram.com/bishopfreeze_/",
+    "spotifyProfile": "https://open.spotify.com/artist/1epkzUW5gL4DHjW8rlPa3P",
+    "youtubeProfile": "https://www.youtube.com/@sozomissions",
+    "officialImageSource": "https://www.instagram.com/bishopfreeze_/",
+    "imageUrl": "assets/artists/bishop-freeze-saved.webp",
+    "imagePosition": "center",
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 52,
+    "sheetRosterOrder": 52,
+    "state": "",
+    "label": ""
+  },
+  {
+    "name": "808 BEEZY",
+    "aliases": [
+      "808 BEEZY",
+      "808 Beezy"
+    ],
+    "category": "core",
+    "monitoringPriority": 2,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://www.808beezy.com/",
+    "instagramProfile": "https://www.instagram.com/808beezy/?hl=en",
+    "spotifyProfile": "https://open.spotify.com/artist/3CltJZLndpJKtpUyRVBB1k",
+    "youtubeProfile": "https://www.youtube.com/@808_BEEZY",
+    "officialImageSource": "https://www.808beezy.com/",
+    "imageUrl": "assets/artists/808-beezy-saved.webp",
+    "imagePosition": "center",
+    "bandsintownProfile": "https://www.bandsintown.com/a/792282-808-beezy",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 53,
+    "sheetRosterOrder": 53,
+    "state": "",
+    "label": ""
+  },
+  {
     "name": "Mike Teezy",
     "aliases": [
       "Mike Teezy"
@@ -15,10 +1266,15 @@
     "youtubeProfile": "https://www.youtube.com/@MikeTeezy",
     "officialImageSource": "https://www.miketeezymusic.com/",
     "imageUrl": "assets/artists/mike-teezy-saved.png",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 54,
+    "sheetRosterOrder": 54,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 56,
     "name": "Porsha Love",
     "aliases": [
       "Porsha Love"
@@ -33,10 +1289,15 @@
     "youtubeProfile": "https://www.youtube.com/@iamporshalove",
     "officialImageSource": "https://www.instagram.com/porshalove/",
     "imageUrl": "assets/artists/porsha-love-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 55,
+    "sheetRosterOrder": 55,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 57,
     "name": "Nicky Gracious",
     "aliases": [
       "Nicky Gracious"
@@ -51,10 +1312,15 @@
     "youtubeProfile": "https://www.youtube.com/@NickyGraciousMusic",
     "officialImageSource": "https://nickygraciousmusic.com/",
     "imageUrl": "assets/artists/nicky-gracious-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 56,
+    "sheetRosterOrder": 56,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 58,
     "name": "ASAP Preach",
     "aliases": [
       "ASAP Preach",
@@ -70,10 +1336,15 @@
     "youtubeProfile": "https://www.youtube.com/@OfficialASAPPreach",
     "officialImageSource": "https://asappreachmusic.com/",
     "imageUrl": "assets/artists/asap-preach-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 57,
+    "sheetRosterOrder": 57,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 59,
     "name": "Kijan Boone",
     "aliases": [
       "Kijan Boone"
@@ -88,10 +1359,15 @@
     "youtubeProfile": "https://www.youtube.com/@kijanboone1",
     "officialImageSource": "https://www.instagram.com/kijanboone/",
     "imageUrl": "assets/artists/kijan-boone-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 58,
+    "sheetRosterOrder": 58,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 60,
     "name": "Don Ready",
     "aliases": [
       "Don Ready"
@@ -106,10 +1382,16 @@
     "youtubeProfile": "https://www.youtube.com/@donreadymusic",
     "officialImageSource": "https://www.instagram.com/donreadymusic/",
     "imageUrl": "assets/artists/don-ready-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "bandsintownProfile": "https://www.bandsintown.com/a/11718080-don-ready",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 59,
+    "sheetRosterOrder": 59,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 61,
     "name": "Y Shadey",
     "aliases": [
       "Y Shadey"
@@ -124,10 +1406,15 @@
     "youtubeProfile": "https://www.youtube.com/@YShadey",
     "officialImageSource": "https://www.instagram.com/yshadey/",
     "imageUrl": "assets/artists/y-shadey-saved.jpg",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 60,
+    "sheetRosterOrder": 60,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 62,
     "name": "Dante' Pride",
     "aliases": [
       "Dante' Pride",
@@ -143,10 +1430,15 @@
     "youtubeProfile": "https://www.youtube.com/@DantePride",
     "officialImageSource": "https://www.instagram.com/dantepride/",
     "imageUrl": "assets/artists/dante-pride-saved.jpg",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 61,
+    "sheetRosterOrder": 61,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 63,
     "name": "Rare of Breed",
     "aliases": [
       "Rare of Breed",
@@ -162,10 +1454,15 @@
     "youtubeProfile": "https://www.youtube.com/@rareofbreed",
     "officialImageSource": "https://www.instagram.com/rareofbreed/",
     "imageUrl": "assets/artists/rare-of-breed-primary.jpg",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 62,
+    "sheetRosterOrder": 62,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 64,
     "name": "Brother Bo",
     "aliases": [
       "Brother Bo"
@@ -180,10 +1477,15 @@
     "youtubeProfile": "https://www.youtube.com/@BrotherBoMusic",
     "officialImageSource": "https://www.youtube.com/c/BrotherBoMusic",
     "imageUrl": "assets/artists/brother-bo-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 63,
+    "sheetRosterOrder": 63,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 65,
     "name": "Tommy Chapa",
     "aliases": [
       "Tommy Chapa"
@@ -198,10 +1500,15 @@
     "youtubeProfile": "https://www.youtube.com/@tommychapa5419",
     "officialImageSource": "https://music.apple.com/us/artist/tommy-chapa/1508864414",
     "imageUrl": "assets/artists/tommy-chapa-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 64,
+    "sheetRosterOrder": 64,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 66,
     "name": "B. Cody Shields",
     "aliases": [
       "B. Cody Shields",
@@ -217,10 +1524,15 @@
     "youtubeProfile": "https://www.youtube.com/@b.codyshields",
     "officialImageSource": "https://thisishismusic.com/pages/about",
     "imageUrl": "assets/artists/b-cody-shields-saved.jpg",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 65,
+    "sheetRosterOrder": 65,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 67,
     "name": "Santana Rose",
     "aliases": [
       "Santana Rose"
@@ -235,10 +1547,15 @@
     "youtubeProfile": "https://www.youtube.com/@SantanaRoseMusic",
     "officialImageSource": "https://www.youtube.com/@SantanaRoseMusic",
     "imageUrl": "assets/artists/santana-rose-saved.jpg",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 66,
+    "sheetRosterOrder": 66,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 68,
     "name": "DJ Winn",
     "aliases": [
       "DJ Winn",
@@ -254,10 +1571,15 @@
     "youtubeProfile": "https://www.youtube.com/@DJWINN",
     "officialImageSource": "https://www.instagram.com/djwinn/",
     "imageUrl": "assets/artists/dj-winn-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 67,
+    "sheetRosterOrder": 67,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 69,
     "name": "REDEEMED",
     "aliases": [
       "REDEEMED",
@@ -273,10 +1595,15 @@
     "youtubeProfile": "https://www.youtube.com/@redeemedmuzic",
     "officialImageSource": "https://www.youtube.com/@redeemedmuzic",
     "imageUrl": "assets/artists/redeemed-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 68,
+    "sheetRosterOrder": 68,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 70,
     "name": "Rua Young",
     "aliases": [
       "Rua Young",
@@ -292,10 +1619,15 @@
     "youtubeProfile": "https://www.youtube.com/@RUAYOUNG",
     "officialImageSource": "https://www.ruayoung.com/",
     "imageUrl": "assets/artists/rua-young-saved.jpg",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 69,
+    "sheetRosterOrder": 69,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 71,
     "name": "Kurtis Hoppie",
     "aliases": [
       "Kurtis Hoppie"
@@ -310,10 +1642,15 @@
     "youtubeProfile": "https://www.youtube.com/channel/UCIR10g1HVLaYF2vHuBa6u7A",
     "officialImageSource": "https://www.thekurtishoppie.com/",
     "imageUrl": "assets/artists/kurtis-hoppie-primary.jpg",
-    "imagePosition": "50% 22%"
+    "imagePosition": "50% 22%",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 70,
+    "sheetRosterOrder": 70,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 72,
     "name": "Nu Tone",
     "aliases": [
       "Nu Tone",
@@ -329,10 +1666,15 @@
     "youtubeProfile": "https://www.youtube.com/@nutonevevo2074",
     "officialImageSource": "https://www.instagram.com/nutonemuzic/?hl=en",
     "imageUrl": "assets/artists/nu-tone-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 71,
+    "sheetRosterOrder": 71,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 73,
     "name": "Holy Gabbana",
     "aliases": [
       "Holy Gabbana"
@@ -347,10 +1689,15 @@
     "youtubeProfile": "https://www.youtube.com/channel/UCWC_nNYA2abh8744tp5JX1g",
     "officialImageSource": "https://holygabbana.com/",
     "imageUrl": "assets/artists/holy-gabbana-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 72,
+    "sheetRosterOrder": 72,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 74,
     "name": "Christopher Syncere",
     "aliases": [
       "Christopher Syncere"
@@ -365,10 +1712,15 @@
     "youtubeProfile": "https://www.youtube.com/c/ChristopherSyncere",
     "officialImageSource": "https://www.instagram.com/christophersyncere/",
     "imageUrl": "assets/artists/christopher-syncere-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 73,
+    "sheetRosterOrder": 73,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 75,
     "name": "K-SEE",
     "aliases": [
       "K-SEE",
@@ -384,10 +1736,15 @@
     "youtubeProfile": "https://www.youtube.com/@k-seemusic3177",
     "officialImageSource": "https://www.instagram.com/kseemusic1/?hl=en",
     "imageUrl": "assets/artists/k-see-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 74,
+    "sheetRosterOrder": 74,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 76,
     "name": "Gospel Gangstaz",
     "aliases": [
       "Gospel Gangstaz"
@@ -400,12 +1757,17 @@
     "instagramProfile": "",
     "spotifyProfile": "https://open.spotify.com/artist/0XioBTfH5k3aCyS9AsbDbE",
     "youtubeProfile": "https://www.youtube.com/channel/UCFzDxXG9164E1B13A582j5Q",
-    "officialImageSource": "",
+    "officialImageSource": "https://open.spotify.com/artist/0XioBTfH5k3aCyS9AsbDbE",
     "imageUrl": "assets/artists/gospel-gangstaz-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 75,
+    "sheetRosterOrder": 75,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 77,
     "name": "Wuhsahbee",
     "aliases": [
       "Wuhsahbee"
@@ -420,10 +1782,15 @@
     "youtubeProfile": "https://www.youtube.com/channel/UCxYy0QJZrz4JRq6Jn0MevBQ",
     "officialImageSource": "https://www.instagram.com/wuhsahbee/",
     "imageUrl": "assets/artists/wuhsahbee-saved.jpg",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 76,
+    "sheetRosterOrder": 76,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 78,
     "name": "Kelo",
     "aliases": [
       "Kelo"
@@ -438,10 +1805,15 @@
     "youtubeProfile": "https://www.youtube.com/channel/UCAvlfmD2aiqXxxknr-9VSVg",
     "officialImageSource": "https://www.instagram.com/cutthecho/",
     "imageUrl": "assets/artists/kelo-saved.jpg",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 77,
+    "sheetRosterOrder": 77,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 79,
     "name": "DKG Kie",
     "aliases": [
       "DKG Kie"
@@ -456,10 +1828,15 @@
     "youtubeProfile": "https://www.youtube.com/@dkgkie",
     "officialImageSource": "https://www.instagram.com/dkg.kie",
     "imageUrl": "assets/artists/dkg-kie-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 78,
+    "sheetRosterOrder": 78,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 80,
     "name": "Braille",
     "aliases": [
       "Braille"
@@ -474,10 +1851,15 @@
     "youtubeProfile": "https://www.youtube.com/@bryanbraille",
     "officialImageSource": "https://www.humblebeast.com/music/braille",
     "imageUrl": "assets/artists/braille-saved.jpg",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 79,
+    "sheetRosterOrder": 79,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 81,
     "name": "Canton Jones",
     "aliases": [
       "Canton Jones"
@@ -492,10 +1874,15 @@
     "youtubeProfile": "https://www.youtube.com/@CantonJones1",
     "officialImageSource": "https://www.instagram.com/thecantonjones/?hl=en",
     "imageUrl": "assets/artists/canton-jones-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 80,
+    "sheetRosterOrder": 80,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 82,
     "name": "Jay-Way",
     "aliases": [
       "Jay-Way",
@@ -511,10 +1898,15 @@
     "youtubeProfile": "https://www.youtube.com/@JayWayTheAlien",
     "officialImageSource": "https://www.jaywaythealien.com/",
     "imageUrl": "assets/artists/jay-way-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 81,
+    "sheetRosterOrder": 81,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 83,
     "name": "Stixx aka Conejo",
     "aliases": [
       "Stixx aka Conejo",
@@ -530,10 +1922,15 @@
     "youtubeProfile": "https://www.youtube.com/@stixxwym/videos",
     "officialImageSource": "https://linktr.ee/stixxwym",
     "imageUrl": "assets/artists/stixx-aka-conejo-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 82,
+    "sheetRosterOrder": 82,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 84,
     "name": "Ruslan",
     "aliases": [
       "Ruslan",
@@ -549,17 +1946,21 @@
     "youtubeProfile": "https://www.youtube.com/@RuslanKD/featured",
     "officialImageSource": "https://www.instagram.com/ruslankd/?hl=en",
     "imageUrl": "assets/artists/ruslan-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 83,
+    "sheetRosterOrder": 83,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 85,
     "name": "J J L",
     "aliases": [
       "J J L",
       "JJL"
     ],
     "category": "core",
-    "state": "MN",
     "monitoringPriority": 2,
     "ticketmasterEnabled": false,
     "textMatchEnabled": false,
@@ -569,16 +1970,20 @@
     "youtubeProfile": "https://music.youtube.com/channel/UC0vTVAlJijP9UvlEeezSmjw",
     "officialImageSource": "https://open.spotify.com/artist/5saP6cHfo2flMEQuAJITBS",
     "imageUrl": "assets/artists/j-j-l-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "state": "MN",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 84,
+    "sheetRosterOrder": 84,
+    "label": ""
   },
   {
-    "rosterOrder": 86,
     "name": "Priest Jones",
     "aliases": [
       "Priest Jones"
     ],
     "category": "core",
-    "state": "MN",
     "monitoringPriority": 2,
     "ticketmasterEnabled": false,
     "textMatchEnabled": false,
@@ -588,16 +1993,20 @@
     "youtubeProfile": "https://www.youtube.com/channel/UCJ1QKIUrg93G-BJJ2cV-4fw",
     "officialImageSource": "https://open.spotify.com/artist/6GZw5pNbFDBOr6h8ha48BX",
     "imageUrl": "assets/artists/priest-jones-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "state": "MN",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 85,
+    "sheetRosterOrder": 85,
+    "label": ""
   },
   {
-    "rosterOrder": 87,
     "name": "Corincris",
     "aliases": [
       "Corincris"
     ],
     "category": "core",
-    "state": "MN",
     "monitoringPriority": 2,
     "ticketmasterEnabled": false,
     "textMatchEnabled": false,
@@ -607,10 +2016,15 @@
     "youtubeProfile": "https://www.youtube.com/@corincris",
     "officialImageSource": "https://www.cockybeliefproduction.com/",
     "imageUrl": "assets/artists/corincris-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "state": "MN",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 86,
+    "sheetRosterOrder": 86,
+    "label": ""
   },
   {
-    "rosterOrder": 88,
     "name": "F’rael",
     "aliases": [
       "F’rael",
@@ -618,7 +2032,6 @@
       "Frael"
     ],
     "category": "core",
-    "state": "MN",
     "monitoringPriority": 2,
     "ticketmasterEnabled": false,
     "textMatchEnabled": false,
@@ -628,10 +2041,15 @@
     "youtubeProfile": "https://www.youtube.com/channel/UCuvrJ4Mvi90DWdb9pg98rYw",
     "officialImageSource": "https://www.instagram.com/fraelmusic/",
     "imageUrl": "assets/artists/f-rael-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "state": "MN",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 87,
+    "sheetRosterOrder": 87,
+    "label": ""
   },
   {
-    "rosterOrder": 89,
     "name": "Sis N Lil Bro",
     "aliases": [
       "Sis N Lil Bro",
@@ -639,7 +2057,6 @@
       "Sis N’ Lil Bro"
     ],
     "category": "core",
-    "state": "MN",
     "monitoringPriority": 2,
     "ticketmasterEnabled": false,
     "textMatchEnabled": false,
@@ -650,16 +2067,20 @@
     "officialImageSource": "https://www.instagram.com/wesisnlilbro/",
     "imageUrl": "assets/artists/sis-n-lil-bro-saved.webp",
     "imagePosition": "center",
-    "bandsintownProfile": "https://www.bandsintown.com/a/15634546-sis-n-lil-bro"
+    "state": "MN",
+    "bandsintownProfile": "https://www.bandsintown.com/a/15634546-sis-n-lil-bro",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 88,
+    "sheetRosterOrder": 88,
+    "label": ""
   },
   {
-    "rosterOrder": 90,
     "name": "Kaboose",
     "aliases": [
       "Kaboose"
     ],
     "category": "legacy",
-    "state": "MN",
     "monitoringPriority": 3,
     "ticketmasterEnabled": false,
     "textMatchEnabled": false,
@@ -670,10 +2091,15 @@
     "officialImageSource": "https://open.spotify.com/artist/2zD5NNTrgXT3o2RVrRBvv1",
     "imageUrl": "assets/artists/kaboose-saved.webp",
     "imagePosition": "center",
-    "bandsintownProfile": "https://www.bandsintown.com/a/66122-kaboose"
+    "state": "MN",
+    "bandsintownProfile": "https://www.bandsintown.com/a/66122-kaboose",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 89,
+    "sheetRosterOrder": 89,
+    "label": ""
   },
   {
-    "rosterOrder": 91,
     "name": "TRU-SERVA",
     "aliases": [
       "TRU-SERVA",
@@ -681,7 +2107,6 @@
       "Tru Serva"
     ],
     "category": "legacy",
-    "state": "MN",
     "monitoringPriority": 2,
     "ticketmasterEnabled": false,
     "textMatchEnabled": false,
@@ -692,16 +2117,20 @@
     "officialImageSource": "https://www.iamtruserva.com/",
     "imageUrl": "assets/artists/tru-serva-saved.webp",
     "imagePosition": "center",
-    "bandsintownProfile": "https://www.bandsintown.com/a/1283580-tru-serva"
+    "state": "MN",
+    "bandsintownProfile": "https://www.bandsintown.com/a/1283580-tru-serva",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 90,
+    "sheetRosterOrder": 90,
+    "label": ""
   },
   {
-    "rosterOrder": 92,
     "name": "VVS Big Rock",
     "aliases": [
       "VVS Big Rock"
     ],
     "category": "core",
-    "state": "WI",
     "monitoringPriority": 2,
     "ticketmasterEnabled": false,
     "textMatchEnabled": false,
@@ -710,18 +2139,22 @@
     "spotifyProfile": "https://open.spotify.com/artist/6it0bpgV8V5yuk2rnraE9M",
     "youtubeProfile": "https://www.youtube.com/channel/UCxhWF02oh4FyuAPVBt8GM7g",
     "officialImageSource": "https://www.instagram.com/vvs_bigrock/",
+    "imageUrl": "assets/artists/vvs-big-rock-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/vvs-big-rock-saved.jpg"
+    "state": "WI",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 91,
+    "sheetRosterOrder": 91,
+    "label": ""
   },
   {
-    "rosterOrder": 93,
     "name": "Sway GTTB",
     "aliases": [
       "Sway GTTB",
       "Sway God Took The Burden"
     ],
     "category": "core",
-    "state": "ND",
     "monitoringPriority": 2,
     "ticketmasterEnabled": false,
     "textMatchEnabled": false,
@@ -730,17 +2163,21 @@
     "spotifyProfile": "https://open.spotify.com/artist/3b15IaMeDOJZggq75TNNo9",
     "youtubeProfile": "https://www.youtube.com/@SwayGTTBmusic",
     "officialImageSource": "https://www.instagram.com/swaygodtooktheburden.wav/",
+    "imageUrl": "assets/artists/sway-gttb-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/sway-gttb-saved.webp"
+    "state": "ND",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 92,
+    "sheetRosterOrder": 92,
+    "label": ""
   },
   {
-    "rosterOrder": 94,
     "name": "Kashh Kade",
     "aliases": [
       "Kashh Kade"
     ],
     "category": "core",
-    "state": "WI",
     "monitoringPriority": 2,
     "ticketmasterEnabled": false,
     "textMatchEnabled": false,
@@ -749,18 +2186,22 @@
     "spotifyProfile": "https://open.spotify.com/artist/029BjbYHANOxmuCPJM96dI",
     "youtubeProfile": "https://music.youtube.com/channel/UCtWViuucqKR9F_orE7COgJg",
     "officialImageSource": "https://open.spotify.com/artist/029BjbYHANOxmuCPJM96dI",
+    "imageUrl": "assets/artists/kashh-kade-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/kashh-kade-saved.webp"
+    "state": "WI",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 93,
+    "sheetRosterOrder": 93,
+    "label": ""
   },
   {
-    "rosterOrder": 95,
     "name": "RÆL The Artist",
     "aliases": [
       "RÆL The Artist",
       "RAEL The Artist"
     ],
     "category": "core",
-    "state": "WI",
     "monitoringPriority": 2,
     "ticketmasterEnabled": false,
     "textMatchEnabled": false,
@@ -769,18 +2210,22 @@
     "spotifyProfile": "https://open.spotify.com/artist/72sxxRJ2zqNEvYeol2HnxG",
     "youtubeProfile": "https://www.youtube.com/channel/UCD1fVGfBT6eL5HrglzXxv_g",
     "officialImageSource": "https://www.instagram.com/raeltheartist/",
+    "imageUrl": "assets/artists/r-l-the-artist-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/r-l-the-artist-saved.jpg"
+    "state": "WI",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 94,
+    "sheetRosterOrder": 94,
+    "label": ""
   },
   {
-    "rosterOrder": 96,
     "name": "JustChris",
     "aliases": [
       "JustChris",
       "Just Chris"
     ],
     "category": "core",
-    "state": "WI",
     "monitoringPriority": 2,
     "ticketmasterEnabled": false,
     "textMatchEnabled": false,
@@ -789,17 +2234,21 @@
     "spotifyProfile": "https://open.spotify.com/artist/16LhY0I4oG7q889kRgNQrQ",
     "youtubeProfile": "https://www.youtube.com/channel/UCyPYU39mHibFDcDloaAVSXQ",
     "officialImageSource": "https://justchristheartist.com/",
+    "imageUrl": "assets/artists/justchris-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/justchris-saved.webp"
+    "state": "WI",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 95,
+    "sheetRosterOrder": 95,
+    "label": ""
   },
   {
-    "rosterOrder": 97,
     "name": "Stovetop",
     "aliases": [
       "Stovetop"
     ],
     "category": "core",
-    "state": "MN",
     "monitoringPriority": 2,
     "ticketmasterEnabled": false,
     "textMatchEnabled": false,
@@ -808,11 +2257,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/77scLrsYfUOMsmq18ZtoCB",
     "youtubeProfile": "https://www.youtube.com/channel/UC1DIn6CtH_V3cRE9zC6Ozcg",
     "officialImageSource": "https://www.stovetop-music.com/",
+    "imageUrl": "assets/artists/stovetop-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/stovetop-saved.jpg"
+    "state": "MN",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 96,
+    "sheetRosterOrder": 96,
+    "label": ""
   },
   {
-    "rosterOrder": 98,
     "name": "yumiya!",
     "aliases": [
       "yumiya!",
@@ -827,11 +2281,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/1s4YH0vODE4nW0bREPt4GG",
     "youtubeProfile": "https://www.youtube.com/@yayayumiya",
     "officialImageSource": "https://www.instagram.com/yayayumiya/?hl=en",
+    "imageUrl": "assets/artists/yumiya-primary.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/yumiya-primary.jpg"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 97,
+    "sheetRosterOrder": 97,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 99,
     "name": "Linga TheBoss",
     "aliases": [
       "Linga TheBoss",
@@ -846,11 +2305,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/5jCTpUeZQ61zaoSYgYV2cY",
     "youtubeProfile": "https://www.youtube.com/channel/UCBXlPLlFhymj2JRsva5fpLg",
     "officialImageSource": "https://www.lingatheboss.com/",
+    "imageUrl": "assets/artists/linga-theboss-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/linga-theboss-saved.jpg"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 98,
+    "sheetRosterOrder": 98,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 100,
     "name": "Petrina DeLacey",
     "aliases": [
       "Petrina DeLacey"
@@ -864,11 +2328,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/00iDXs6D2a9UZCtqnDMGnY",
     "youtubeProfile": "https://www.youtube.com/channel/UCj6WadEE7fr76voQd3TBqKg",
     "officialImageSource": "https://www.instagram.com/petrinadelacey/?hl=en",
+    "imageUrl": "assets/artists/petrina-delacey-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/petrina-delacey-saved.webp"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 99,
+    "sheetRosterOrder": 99,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 101,
     "name": "Queen Lee",
     "aliases": [
       "Queen Lee"
@@ -882,11 +2351,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/0ESxKUSobqG0GkLrxg77XS",
     "youtubeProfile": "https://www.youtube.com/@IamQueenLee",
     "officialImageSource": "https://www.instagram.com/iamceoaaliyah/?hl=en",
+    "imageUrl": "assets/artists/queen-lee-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/queen-lee-saved.webp"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 100,
+    "sheetRosterOrder": 100,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 102,
     "name": "Biancallove",
     "aliases": [
       "Biancallove",
@@ -901,11 +2375,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/590hZkpFHGkCc4iBpDKXrY",
     "youtubeProfile": "https://www.youtube.com/channel/UCnZnD0K3pRkpwhn-EY24WAg",
     "officialImageSource": "https://biancallove.com/",
+    "imageUrl": "assets/artists/biancallove-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/biancallove-saved.jpg"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 101,
+    "sheetRosterOrder": 101,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 103,
     "name": "Joz",
     "aliases": [
       "Joz",
@@ -920,11 +2399,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/298PjvlXBVauDcpCjrl257",
     "youtubeProfile": "https://www.youtube.com/@SouthsideJoz",
     "officialImageSource": "https://open.spotify.com/artist/298PjvlXBVauDcpCjrl257",
+    "imageUrl": "assets/artists/joz-spotify-primary.jpg",
     "imagePosition": "50% 0%",
-    "imageUrl": "assets/artists/joz-spotify-primary.jpg"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 102,
+    "sheetRosterOrder": 102,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 104,
     "name": "G.E.S.",
     "aliases": [
       "G.E.S.",
@@ -940,11 +2424,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/1r0gAOldNSTyidXhWLDHTF",
     "youtubeProfile": "https://www.youtube.com/@gesmusiccc",
     "officialImageSource": "https://www.instagram.com/gesmusicc/reels/",
+    "imageUrl": "assets/artists/g-e-s-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/g-e-s-saved.webp"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 103,
+    "sheetRosterOrder": 103,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 105,
     "name": "Yasmine Jinelle",
     "aliases": [
       "Yasmine Jinelle"
@@ -958,11 +2447,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/3OCiWnwCNh7AzwVfKBai2i",
     "youtubeProfile": "https://music.youtube.com/channel/UCw3I0TR2c2xpB2TifYZPY2w",
     "officialImageSource": "https://www.instagram.com/yasminejinelle/",
+    "imageUrl": "assets/artists/yasmine-jinelle-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/yasmine-jinelle-saved.webp"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 104,
+    "sheetRosterOrder": 104,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 106,
     "name": "Lyric The Geenyus",
     "aliases": [
       "Lyric The Geenyus"
@@ -976,11 +2470,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/6Fo6hgETL8pUsJb4hoQhwv",
     "youtubeProfile": "https://www.youtube.com/channel/UCVopgdRdnJRERs14HHBwb9w",
     "officialImageSource": "https://www.instagram.com/lyricthegeenyus/",
+    "imageUrl": "assets/artists/lyric-the-geenyus-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/lyric-the-geenyus-saved.jpg"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 105,
+    "sheetRosterOrder": 105,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 107,
     "name": "Afeni",
     "aliases": [
       "Afeni"
@@ -994,11 +2493,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/3x6BDfLBgSZo72lry8q2CL",
     "youtubeProfile": "https://www.youtube.com/channel/UC7ijuNEvB9WHgYsDcGtnGhw",
     "officialImageSource": "https://www.instagram.com/afenifrl/",
+    "imageUrl": "assets/artists/afeni-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/afeni-saved.webp"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 106,
+    "sheetRosterOrder": 106,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 108,
     "name": "Alexus Snow",
     "aliases": [
       "Alexus Snow"
@@ -1012,11 +2516,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/2XXLCJp5BnNxYmqxUA8gMV",
     "youtubeProfile": "https://www.youtube.com/channel/UCXAoqYA_PGKl0qLifTmijeg",
     "officialImageSource": "https://www.instagram.com/lifeofalexussnow/",
+    "imageUrl": "assets/artists/alexus-snow-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/alexus-snow-saved.webp"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 107,
+    "sheetRosterOrder": 107,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 109,
     "name": "Neisha Glow",
     "aliases": [
       "Neisha Glow"
@@ -1030,11 +2539,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/4VwM177wgcyEEDgKuuAhDz",
     "youtubeProfile": "https://www.youtube.com/@neishaglow/videos",
     "officialImageSource": "https://www.instagram.com/neishaglow/",
+    "imageUrl": "assets/artists/neisha-glow-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/neisha-glow-saved.webp"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 108,
+    "sheetRosterOrder": 108,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 110,
     "name": "Deonte Hall",
     "aliases": [
       "Deonte Hall"
@@ -1046,14 +2560,18 @@
     "website": "https://www.instagram.com/deontehall100",
     "instagramProfile": "https://www.instagram.com/deontehall100",
     "spotifyProfile": "https://open.spotify.com/artist/1o4z5bdBNIeJZGIHeseIhf",
-    "youtubeProfile": "https://www.youtube.com/@deontehallofficial",
+    "youtubeProfile": "http://www.youtube.com/@deontehallofficial",
     "officialImageSource": "https://deontehall.com/index.php/about-deonte/",
     "imageUrl": "https://deontehall.com/wp-content/uploads/2017/11/IMG_2799-1.jpg",
     "imagePosition": "center",
-    "preferArtistImage": true
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 109,
+    "sheetRosterOrder": 109,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 111,
     "name": "Alex Jean",
     "aliases": [
       "Alex Jean"
@@ -1067,12 +2585,17 @@
     "spotifyProfile": "https://open.spotify.com/artist/5qSM9F3Ei58tG08tXrJjSi",
     "youtubeProfile": "https://www.youtube.com/@Meaningalex",
     "officialImageSource": "https://alienzalive.com/artist/alex-jean/",
-    "bandsintownProfile": "https://www.bandsintown.com/a/15570394",
+    "imageUrl": "assets/artists/alex-jean-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/alex-jean-saved.webp"
+    "bandsintownProfile": "https://www.bandsintown.com/a/15570394",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 110,
+    "sheetRosterOrder": 110,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 112,
     "name": "gio.",
     "aliases": [
       "gio.",
@@ -1087,19 +2610,23 @@
     "spotifyProfile": "https://open.spotify.com/artist/5GevjOibFX6uwZ1mTYfhbn",
     "youtubeProfile": "https://www.youtube.com/channel/UCQm0f2MItHBDSLJ0GL4OaqA",
     "officialImageSource": "https://www.wassupgio.com/",
-    "bandsintownProfile": "https://www.bandsintown.com/a/12832025",
+    "imageUrl": "assets/artists/gio-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/gio-saved.jpg"
+    "bandsintownProfile": "https://www.bandsintown.com/a/12832025",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 111,
+    "sheetRosterOrder": 111,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 113,
     "name": "Torey D'Shaun",
     "aliases": [
       "Torey D'Shaun",
       "Torey D'Shawn"
     ],
     "category": "rmg",
-    "label": "Reflection Music Group",
     "monitoringPriority": 1,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
@@ -1108,12 +2635,17 @@
     "spotifyProfile": "https://open.spotify.com/artist/78DvQP3rczGqfgEiLfFnCD",
     "youtubeProfile": "https://www.youtube.com/@toreydshaun",
     "officialImageSource": "https://toreydshaun.com/",
-    "bandsintownProfile": "https://www.bandsintown.com/a/14363770",
+    "imageUrl": "assets/artists/torey-d-shaun-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/torey-d-shaun-saved.jpg"
+    "label": "Reflection Music Group",
+    "bandsintownProfile": "https://www.bandsintown.com/a/14363770",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 112,
+    "sheetRosterOrder": 112,
+    "state": ""
   },
   {
-    "rosterOrder": 114,
     "name": "GRITS",
     "aliases": [
       "GRITS",
@@ -1128,12 +2660,17 @@
     "spotifyProfile": "https://open.spotify.com/artist/6aUgzC0cMh0StjV7LyFEDr",
     "youtubeProfile": "https://music.youtube.com/@OfficialGRITS7",
     "officialImageSource": "https://www.instagram.com/officialgrits/",
-    "bandsintownProfile": "https://www.bandsintown.com/a/805",
+    "imageUrl": "assets/artists/grits-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/grits-saved.jpg"
+    "bandsintownProfile": "https://www.bandsintown.com/a/805",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 113,
+    "sheetRosterOrder": 113,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 115,
     "name": "NF",
     "aliases": [
       "NF",
@@ -1148,12 +2685,17 @@
     "spotifyProfile": "https://open.spotify.com/artist/6fOMl44jA4Sp5b9PpYCkzz",
     "youtubeProfile": "https://www.youtube.com/channel/UCoRR6OLuIZ2-5VxtnQIaN2w",
     "officialImageSource": "https://www.nfrealmusic.com/",
-    "bandsintownProfile": "https://www.bandsintown.com/a/11969355",
+    "imageUrl": "assets/artists/nf-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/nf-saved.jpg"
+    "bandsintownProfile": "https://www.bandsintown.com/a/11969355",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 114,
+    "sheetRosterOrder": 114,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 116,
     "name": "Nic D",
     "aliases": [
       "Nic D",
@@ -1168,12 +2710,17 @@
     "spotifyProfile": "https://open.spotify.com/artist/1XlLhtgJjC4ROQZilBZAvw",
     "youtubeProfile": "https://www.youtube.com/@iamnicd",
     "officialImageSource": "https://www.instagram.com/iamnicd/",
-    "bandsintownProfile": "https://www.bandsintown.com/a/11283620",
+    "imageUrl": "assets/artists/nic-d-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/nic-d-saved.webp"
+    "bandsintownProfile": "https://www.bandsintown.com/a/11283620",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 115,
+    "sheetRosterOrder": 115,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 117,
     "name": "Manafest",
     "aliases": [
       "Manafest"
@@ -1187,12 +2734,17 @@
     "spotifyProfile": "https://open.spotify.com/artist/4uOFEWy9mIcvQbr03IbPcL",
     "youtubeProfile": "https://www.youtube.com/@Manafest",
     "officialImageSource": "https://www.manafest.com/go",
-    "bandsintownProfile": "https://www.bandsintown.com/a/4465",
+    "imageUrl": "assets/artists/manafest-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/manafest-saved.jpg"
+    "bandsintownProfile": "https://www.bandsintown.com/a/4465",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 116,
+    "sheetRosterOrder": 116,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 118,
     "name": "Pastor Mike Jr.",
     "aliases": [
       "Pastor Mike Jr.",
@@ -1208,12 +2760,17 @@
     "spotifyProfile": "https://open.spotify.com/artist/1aNtFg4D7HdF8jOppyKpUS",
     "youtubeProfile": "https://www.youtube.com/channel/UCFS_59ybiLbrsZQ4tmghriQ",
     "officialImageSource": "https://pastormikejr.com/",
-    "bandsintownProfile": "https://www.bandsintown.com/a/15540358",
+    "imageUrl": "assets/artists/pastor-mike-jr-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/pastor-mike-jr-saved.webp"
+    "bandsintownProfile": "https://www.bandsintown.com/a/15540358",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 117,
+    "sheetRosterOrder": 117,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 119,
     "name": "Nesk Only",
     "aliases": [
       "Nesk Only",
@@ -1228,11 +2785,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/4cR4F4mNehTHO2ut89kN00",
     "youtubeProfile": "https://www.youtube.com/@neskonly",
     "officialImageSource": "https://www.instagram.com/neskonly/",
+    "imageUrl": "assets/artists/nesk-only-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/nesk-only-saved.jpg"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 118,
+    "sheetRosterOrder": 118,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 120,
     "name": "Futuristic",
     "aliases": [
       "Futuristic"
@@ -1246,12 +2808,17 @@
     "spotifyProfile": "https://open.spotify.com/artist/5Z5jUyiNvFaqp0EVyLNf0p",
     "youtubeProfile": "https://www.youtube.com/channel/UCsHn-BXIByTjQaIf5CnZItw",
     "officialImageSource": "https://futuristic.set.bio/",
-    "bandsintownProfile": "https://www.bandsintown.com/a/11843336",
+    "imageUrl": "assets/artists/futuristic-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/futuristic-saved.jpg"
+    "bandsintownProfile": "https://www.bandsintown.com/a/11843336",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 119,
+    "sheetRosterOrder": 119,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 121,
     "name": "Sondae",
     "aliases": [
       "Sondae"
@@ -1265,12 +2832,17 @@
     "spotifyProfile": "https://open.spotify.com/artist/2PCl4hx9Qds8sjcnoWUdqp",
     "youtubeProfile": "https://www.youtube.com/@Sondae",
     "officialImageSource": "https://www.instagram.com/thesondae/",
-    "bandsintownProfile": "https://www.bandsintown.com/a/15586746",
+    "imageUrl": "assets/artists/sondae-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/sondae-saved.webp"
+    "bandsintownProfile": "https://www.bandsintown.com/a/15586746",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 120,
+    "sheetRosterOrder": 120,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 122,
     "name": "Dee-1",
     "aliases": [
       "Dee-1",
@@ -1285,12 +2857,17 @@
     "spotifyProfile": "https://open.spotify.com/artist/5qEZVKHzNjB8k5tAT41Iox",
     "youtubeProfile": "https://www.youtube.com/user/dee1music",
     "officialImageSource": "https://www.dee1music.com/",
-    "bandsintownProfile": "https://www.bandsintown.com/a/211218",
+    "imageUrl": "assets/artists/dee-1-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/dee-1-saved.jpg"
+    "bandsintownProfile": "https://www.bandsintown.com/a/211218",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 121,
+    "sheetRosterOrder": 121,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 123,
     "name": "Kieran the Light",
     "aliases": [
       "Kieran the Light"
@@ -1304,11 +2881,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/7pDD4BBx6S42ZX513NQdp1",
     "youtubeProfile": "https://www.youtube.com/@KieranTheLightOfficial",
     "officialImageSource": "https://www.instagram.com/kieranthelight/",
+    "imageUrl": "assets/artists/kieran-the-light-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/kieran-the-light-saved.jpg"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 122,
+    "sheetRosterOrder": 122,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 124,
     "name": "Childlike CiCi",
     "aliases": [
       "Childlike CiCi",
@@ -1323,12 +2905,17 @@
     "spotifyProfile": "https://open.spotify.com/artist/1cgfDToH1viXSfFzd5WOz1",
     "youtubeProfile": "https://www.youtube.com/@childlikecici",
     "officialImageSource": "https://www.childlikecici.com/",
-    "bandsintownProfile": "https://www.bandsintown.com/a/15543552",
+    "imageUrl": "assets/artists/childlike-cici-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/childlike-cici-saved.webp"
+    "bandsintownProfile": "https://www.bandsintown.com/a/15543552",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 123,
+    "sheetRosterOrder": 123,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 125,
     "name": "Yung Kriss",
     "aliases": [
       "Yung Kriss"
@@ -1342,12 +2929,17 @@
     "spotifyProfile": "https://open.spotify.com/artist/3JCk8XWIBcpA10QeM5tkbP",
     "youtubeProfile": "https://www.youtube.com/@YungKriss",
     "officialImageSource": "https://www.yungkriss.com/",
-    "bandsintownProfile": "https://www.bandsintown.com/a/14481378",
+    "imageUrl": "assets/artists/yung-kriss-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/yung-kriss-saved.webp"
+    "bandsintownProfile": "https://www.bandsintown.com/a/14481378",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 124,
+    "sheetRosterOrder": 124,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 126,
     "name": "Eluzai",
     "aliases": [
       "Eluzai"
@@ -1361,12 +2953,17 @@
     "spotifyProfile": "https://open.spotify.com/artist/2N0c1H0QXGAfZQHASg7ir4",
     "youtubeProfile": "https://www.youtube.com/@eluzai",
     "officialImageSource": "https://www.instagram.com/the_eluzai/",
-    "bandsintownProfile": "https://www.bandsintown.com/a/3654404",
+    "imageUrl": "assets/artists/eluzai-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/eluzai-saved.webp"
+    "bandsintownProfile": "https://www.bandsintown.com/a/3654404",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 125,
+    "sheetRosterOrder": 125,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 127,
     "name": "tylerhateslife",
     "aliases": [
       "tylerhateslife",
@@ -1376,18 +2973,21 @@
     "monitoringPriority": 1,
     "ticketmasterEnabled": false,
     "textMatchEnabled": false,
-    "socialSearchEnabled": false,
-    "activeStatus": "legacy",
     "website": "https://www.instagram.com/tylerhateslife/?hl=en",
     "instagramProfile": "https://www.instagram.com/tylerhateslife/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/4z85Glof8wylJsLi93ukHm",
     "youtubeProfile": "https://www.youtube.com/@tylerhateslife1225",
     "officialImageSource": "https://www.instagram.com/tylerhateslife/",
+    "imageUrl": "assets/artists/tylerhateslife-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/tylerhateslife-saved.jpg"
+    "socialSearchEnabled": false,
+    "activeStatus": "legacy",
+    "rosterOrder": 126,
+    "sheetRosterOrder": 126,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 128,
     "name": "Gavin the HotRod",
     "aliases": [
       "Gavin the HotRod",
@@ -1402,11 +3002,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/4PRtvcfM2vKDdLFAyGUMP7",
     "youtubeProfile": "https://www.youtube.com/channel/UC1RVgR716WN7mlx_1nXfZIA",
     "officialImageSource": "https://www.instagram.com/gavinthehotrod/",
+    "imageUrl": "assets/artists/gavin-the-hotrod-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/gavin-the-hotrod-saved.jpg"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 127,
+    "sheetRosterOrder": 127,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 129,
     "name": "S.B.G.",
     "aliases": [
       "S.B.G.",
@@ -1421,11 +3026,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/6pK1mujh4dbxSysAJGVRzU",
     "youtubeProfile": "https://www.youtube.com/@official_s.b.g",
     "officialImageSource": "https://www.instagram.com/official_s.b.g/",
+    "imageUrl": "assets/artists/s-b-g-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/s-b-g-saved.jpg"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 128,
+    "sheetRosterOrder": 128,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 130,
     "name": "Aha Gazelle",
     "aliases": [
       "Aha Gazelle"
@@ -1439,12 +3049,17 @@
     "spotifyProfile": "https://open.spotify.com/artist/7suLW93RkuQKWb4WTI5F14",
     "youtubeProfile": "https://www.youtube.com/channel/UCyfn6btWx4tB2RZy2nh27hw",
     "officialImageSource": "https://www.itsahaman.com/",
-    "bandsintownProfile": "https://www.bandsintown.com/a/13909568",
+    "imageUrl": "assets/artists/aha-gazelle-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/aha-gazelle-saved.jpg"
+    "bandsintownProfile": "https://www.bandsintown.com/a/13909568",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 129,
+    "sheetRosterOrder": 129,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 131,
     "name": "LaNell Grant",
     "aliases": [
       "LaNell Grant",
@@ -1459,12 +3074,17 @@
     "spotifyProfile": "https://open.spotify.com/artist/5HEhEhQL9w4ofcJ9kURFNQ",
     "youtubeProfile": "https://www.youtube.com/channel/UCo2499xJPW6P5_DTIJOSGzQ",
     "officialImageSource": "https://www.instagram.com/lanellgrant/",
-    "bandsintownProfile": "https://www.bandsintown.com/a/15579474",
+    "imageUrl": "assets/artists/lanell-grant-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/lanell-grant-saved.jpg"
+    "bandsintownProfile": "https://www.bandsintown.com/a/15579474",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 130,
+    "sheetRosterOrder": 130,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 132,
     "name": "Mogli the Iceburg",
     "aliases": [
       "Mogli the Iceburg",
@@ -1479,12 +3099,17 @@
     "spotifyProfile": "https://open.spotify.com/artist/1SZikSUx9fZ2cUFjrmM6Sy",
     "youtubeProfile": "https://www.youtube.com/@moglitheiceburgYT",
     "officialImageSource": "https://www.instagram.com/moglitheiceburg/",
-    "bandsintownProfile": "https://www.bandsintown.com/a/1935939",
+    "imageUrl": "assets/artists/mogli-the-iceburg-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/mogli-the-iceburg-saved.webp"
+    "bandsintownProfile": "https://www.bandsintown.com/a/1935939",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 131,
+    "sheetRosterOrder": 131,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 133,
     "name": "EmanuelDaProphet",
     "aliases": [
       "EmanuelDaProphet",
@@ -1499,11 +3124,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/5P0vV6Fw0YTdumAPZSkkuC",
     "youtubeProfile": "https://www.youtube.com/@Emanueldaprophet",
     "officialImageSource": "https://www.instagram.com/emanueldaprophet/",
+    "imageUrl": "assets/artists/emanueldaprophet-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/emanueldaprophet-saved.jpg"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 132,
+    "sheetRosterOrder": 132,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 134,
     "name": "Reece Lache'",
     "aliases": [
       "Reece Lache'",
@@ -1518,11 +3148,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/4JM7nxReyQzeaaafLkhQYe",
     "youtubeProfile": "https://www.youtube.com/@reecelache",
     "officialImageSource": "https://reecelache.com/",
+    "imageUrl": "assets/artists/reece-lache-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/reece-lache-saved.webp"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 133,
+    "sheetRosterOrder": 133,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 135,
     "name": "Datin",
     "aliases": [
       "Datin"
@@ -1536,17 +3171,21 @@
     "spotifyProfile": "https://open.spotify.com/artist/2ZNeZlHauwGYZ9XADyjSL4",
     "youtubeProfile": "https://www.youtube.com/@MenaceMovement",
     "officialImageSource": "https://www.instagram.com/datin_tripled/",
+    "imageUrl": "assets/artists/datin-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/datin-saved.webp"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 134,
+    "sheetRosterOrder": 134,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 136,
     "name": "Aasha Marie",
     "aliases": [
       "Aasha Marie"
     ],
     "category": "rmg",
-    "label": "Reflection Music Group",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
@@ -1555,11 +3194,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/2vJp4tlU8SMa4L8Rqc7bPv",
     "youtubeProfile": "https://www.youtube.com/channel/UCVhvyWAwPMLLJO013XmxR0Q",
     "officialImageSource": "https://www.aashamarie.com/",
+    "imageUrl": "assets/artists/aasha-marie-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/aasha-marie-saved.webp"
+    "label": "Reflection Music Group",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 135,
+    "sheetRosterOrder": 135,
+    "state": ""
   },
   {
-    "rosterOrder": 137,
     "name": "DJ Mykael V",
     "aliases": [
       "DJ Mykael V",
@@ -1574,11 +3218,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/2WLOBjz9WOZrJcbS2w93zt",
     "youtubeProfile": "https://www.youtube.com/channel/UCMyVefu0Bw781NptODKb1hg",
     "officialImageSource": "https://www.mykaelv.com/",
+    "imageUrl": "assets/artists/dj-mykael-v-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/dj-mykael-v-saved.webp"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 136,
+    "sheetRosterOrder": 136,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 138,
     "name": "Heesun Lee",
     "aliases": [
       "Heesun Lee"
@@ -1592,11 +3241,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/6T86uN02MAjAayagSHKIpA",
     "youtubeProfile": "https://www.youtube.com/@heesunleemusic",
     "officialImageSource": "https://www.heesunlee.com/",
+    "imageUrl": "assets/artists/heesun-lee-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/heesun-lee-saved.jpg"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 137,
+    "sheetRosterOrder": 137,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 139,
     "name": "Ryan Trey",
     "aliases": [
       "Ryan Trey"
@@ -1605,16 +3259,21 @@
     "monitoringPriority": 3,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "website": "https://www.ryantrey.com/#/",
+    "website": "https://www.ryantrey.com/",
     "instagramProfile": "https://www.instagram.com/ryantrey/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/5YHM0i7v5TqqibZhS0YiuX",
     "youtubeProfile": "https://www.youtube.com/channel/UCRn4v23xA7Z9MVSY1ToU_DA",
     "officialImageSource": "https://www.instagram.com/ryantrey/",
+    "imageUrl": "assets/artists/ryan-trey-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/ryan-trey-saved.jpg"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 138,
+    "sheetRosterOrder": 138,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 140,
     "name": "Jered Sanders",
     "aliases": [
       "Jered Sanders"
@@ -1628,11 +3287,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/4kjg5xFLFVfWJFus3mwV5e",
     "youtubeProfile": "https://www.youtube.com/user/jeredsandersmusic",
     "officialImageSource": "https://www.instagram.com/jeredsanders/",
+    "imageUrl": "assets/artists/jered-sanders-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/jered-sanders-saved.jpg"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 139,
+    "sheetRosterOrder": 139,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 141,
     "name": "Toschii",
     "aliases": [
       "Toschii"
@@ -1646,11 +3310,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/6wSzNgiOUV0rPug9vMP3ze",
     "youtubeProfile": "https://music.youtube.com/@ToschiiMusic",
     "officialImageSource": "https://www.instagram.com/toschiiofficial/",
+    "imageUrl": "assets/artists/toschii-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/toschii-saved.jpg"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 140,
+    "sheetRosterOrder": 140,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 142,
     "name": "Eli Montanna",
     "aliases": [
       "Eli Montanna",
@@ -1665,11 +3334,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/6ppWmncyPtRcMeuaX43GVJ",
     "youtubeProfile": "https://www.youtube.com/channel/UCx056Cz75a8ro65Uun3dhFQ",
     "officialImageSource": "https://www.instagram.com/elimontanna/",
+    "imageUrl": "assets/artists/eli-montanna-saved.jpg",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/eli-montanna-saved.jpg"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 141,
+    "sheetRosterOrder": 141,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 143,
     "name": "JWoodz",
     "aliases": [
       "JWoodz",
@@ -1686,11 +3360,16 @@
     "spotifyProfile": "https://open.spotify.com/artist/1euV2O9oyOrwbwOoakx45f",
     "youtubeProfile": "https://www.youtube.com/channel/UC05qM50ZPmHvEjr8Sae3t7A",
     "officialImageSource": "https://www.instagram.com/jwoodzmuzic/",
+    "imageUrl": "assets/artists/jwoodz-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/jwoodz-saved.webp"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 142,
+    "sheetRosterOrder": 142,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 144,
     "name": "Kaden Jordan",
     "aliases": [
       "Kaden Jordan"
@@ -1704,11 +3383,41 @@
     "spotifyProfile": "https://open.spotify.com/artist/0mbpzxELAS9luV27PUDEZH",
     "youtubeProfile": "https://www.youtube.com/channel/UCHhuDxHS1hkCnWh2izXYkfg",
     "officialImageSource": "https://kadenjordan.com/",
+    "imageUrl": "assets/artists/kaden-jordan-saved.webp",
     "imagePosition": "center",
-    "imageUrl": "assets/artists/kaden-jordan-saved.webp"
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 143,
+    "sheetRosterOrder": 143,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 145,
+    "name": "JIMMY ROCK",
+    "aliases": [
+      "JIMMY ROCK",
+      "Jimmy Rock"
+    ],
+    "category": "core",
+    "monitoringPriority": 2,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": true,
+    "website": "https://www.instagram.com/jimmyrock/",
+    "instagramProfile": "https://www.instagram.com/jimmyrock/",
+    "spotifyProfile": "https://open.spotify.com/artist/6YN7TGi4ZlsAy38fZVPvkN",
+    "youtubeProfile": "https://www.youtube.com/channel/UCCLbaoGsC-0wnAvr0Q3OMdg",
+    "officialImageSource": "https://www.instagram.com/jimmyrock/",
+    "imageUrl": "assets/artists/jimmy-rock-instagram-profile.jpg",
+    "imagePosition": "50% 25%",
+    "bandsintownProfile": "https://www.bandsintown.com/a/7118692-jimmy-rock",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 144,
+    "sheetRosterOrder": 144,
+    "state": "",
+    "label": ""
+  },
+  {
     "name": "CJ Emulous",
     "aliases": [
       "CJ Emulous",
@@ -1726,10 +3435,15 @@
     "youtubeProfile": "https://www.youtube.com/user/HisImageM",
     "officialImageSource": "https://www.cjemulous.com/",
     "imageUrl": "assets/artists/cj-emulous-saved.webp",
-    "imagePosition": "50% 24%"
+    "imagePosition": "50% 24%",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 145,
+    "sheetRosterOrder": 145,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 146,
     "name": "NXTMIKE",
     "aliases": [
       "NXTMIKE"
@@ -1744,10 +3458,15 @@
     "youtubeProfile": "https://www.youtube.com/NXTMIKE",
     "officialImageSource": "https://www.nxtmike.com/about",
     "imageUrl": "assets/artists/nxtmike-about.webp",
-    "imagePosition": "50% 15%"
+    "imagePosition": "50% 15%",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 146,
+    "sheetRosterOrder": 146,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 147,
     "name": "CHVRCH562",
     "aliases": [
       "CHVRCH562"
@@ -1762,10 +3481,15 @@
     "youtubeProfile": "https://www.youtube.com/channel/UCpOq5kyjcag3fOkfOjG8qxw",
     "officialImageSource": "https://www.instagram.com/chvrch562/",
     "imageUrl": "assets/artists/chvrch562-saved.jpg",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 147,
+    "sheetRosterOrder": 147,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 148,
     "name": "Mission",
     "aliases": [
       "Mission"
@@ -1780,10 +3504,15 @@
     "youtubeProfile": "https://www.youtube.com/channel/UCBaU_Xh4fyokc-ckyCeYv3w",
     "officialImageSource": "https://www.instagram.com/missionismusic/?hl=en",
     "imageUrl": "assets/artists/mission-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 148,
+    "sheetRosterOrder": 148,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 149,
     "name": "BigBreeze",
     "aliases": [
       "BigBreeze",
@@ -1799,10 +3528,15 @@
     "youtubeProfile": "https://www.youtube.com/@TheOfficialMarkel",
     "officialImageSource": "https://open.spotify.com/artist/7wrWSJHfACjw7s7gYXOXTt",
     "imageUrl": "assets/artists/bigbreeze-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 149,
+    "sheetRosterOrder": 149,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 150,
     "name": "C4 Crotona",
     "aliases": [
       "C4 Crotona"
@@ -1817,10 +3551,15 @@
     "youtubeProfile": "https://www.youtube.com/@C4Crotona",
     "officialImageSource": "https://www.themenacemovement.com/c4-crotona/",
     "imageUrl": "assets/artists/c4-crotona-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 150,
+    "sheetRosterOrder": 150,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 151,
     "name": "Nathan Davis Jr.",
     "aliases": [
       "Nathan Davis Jr.",
@@ -1836,10 +3575,15 @@
     "youtubeProfile": "https://www.youtube.com/c/NathanDavisJr",
     "officialImageSource": "https://www.iamndj.com/",
     "imageUrl": "assets/artists/nathan-davis-jr-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 151,
+    "sheetRosterOrder": 151,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 152,
     "name": "MAYIA",
     "aliases": [
       "MAYIA",
@@ -1855,10 +3599,15 @@
     "youtubeProfile": "https://www.youtube.com/@OFFICIALMAYIAWARREN",
     "officialImageSource": "https://www.instagram.com/mayiawarren/?hl=en",
     "imageUrl": "assets/artists/mayia-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 152,
+    "sheetRosterOrder": 152,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 153,
     "name": "Trendsetter Sense",
     "aliases": [
       "Trendsetter Sense",
@@ -1874,10 +3623,15 @@
     "youtubeProfile": "https://www.youtube.com/@TrendsetterSense/about",
     "officialImageSource": "https://www.instagram.com/trendsettersense/?hl=en",
     "imageUrl": "assets/artists/trendsetter-sense-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 153,
+    "sheetRosterOrder": 153,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 154,
     "name": "Monster Tarver",
     "aliases": [
       "Monster Tarver",
@@ -1893,10 +3647,15 @@
     "youtubeProfile": "https://www.youtube.com/channel/UC8sHqu7bM_zfOK1dazpcOBw",
     "officialImageSource": "https://www.themenacemovement.com/monster-tarver/",
     "imageUrl": "assets/artists/monster-tarver-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 154,
+    "sheetRosterOrder": 154,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 155,
     "name": "Lul DreDay",
     "aliases": [
       "Lul DreDay",
@@ -1912,10 +3671,15 @@
     "youtubeProfile": "https://www.youtube.com/channel/UC8Oiej_PXzv88c_M33KjBJg",
     "officialImageSource": "https://www.instagram.com/luldreday/?hl=en",
     "imageUrl": "assets/artists/lul-dreday-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 155,
+    "sheetRosterOrder": 155,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 156,
     "name": "Brinson",
     "aliases": [
       "Brinson"
@@ -1930,10 +3694,15 @@
     "youtubeProfile": "https://www.youtube.com/user/BrinsonVEVO",
     "officialImageSource": "https://godchaserz.com/",
     "imageUrl": "assets/artists/brinson-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 156,
+    "sheetRosterOrder": 156,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 157,
     "name": "Alex Zurdo",
     "aliases": [
       "Alex Zurdo"
@@ -1948,10 +3717,15 @@
     "youtubeProfile": "https://www.youtube.com/user/ALEXZURDOMUSIC",
     "officialImageSource": "https://www.alexzurdomusic.com/site/",
     "imageUrl": "assets/artists/alex-zurdo-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 157,
+    "sheetRosterOrder": 157,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 159,
     "name": "Key'ijah",
     "aliases": [
       "Key'ijah"
@@ -1966,10 +3740,15 @@
     "youtubeProfile": "https://www.youtube.com/@Official_Keyijah",
     "officialImageSource": "https://www.instagram.com/iamkeyijah/?hl=en",
     "imageUrl": "assets/artists/key-ijah-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 158,
+    "sheetRosterOrder": 158,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 160,
     "name": "Tha inspiration",
     "aliases": [
       "Tha inspiration"
@@ -1984,10 +3763,15 @@
     "youtubeProfile": "https://www.youtube.com/@Thainspiration",
     "officialImageSource": "https://www.instagram.com/tha.inspirati0n/",
     "imageUrl": "assets/artists/tha-inspiration-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 159,
+    "sheetRosterOrder": 159,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 161,
     "name": "NISSI SHALOM",
     "aliases": [
       "NISSI SHALOM"
@@ -2002,10 +3786,15 @@
     "youtubeProfile": "https://www.youtube.com/@RighteousTM633",
     "officialImageSource": "https://www.instagram.com/itsnissishalom/",
     "imageUrl": "assets/artists/nissi-shalom-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 160,
+    "sheetRosterOrder": 160,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 162,
     "name": "SteveUnordinary",
     "aliases": [
       "SteveUnordinary"
@@ -2020,10 +3809,15 @@
     "youtubeProfile": "https://www.youtube.com/c/SteveOrdinary/videos",
     "officialImageSource": "https://www.instagram.com/steveunordinary/?hl=en",
     "imageUrl": "assets/artists/steveunordinary-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 161,
+    "sheetRosterOrder": 161,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 163,
     "name": "JJ Chosen",
     "aliases": [
       "JJ Chosen"
@@ -2038,10 +3832,15 @@
     "youtubeProfile": "https://www.youtube.com/channel/UCqTS2tmNKlvu8YNbX_7vGuQ",
     "officialImageSource": "https://www.instagram.com/jjchosenofficial/",
     "imageUrl": "assets/artists/jj-chosen-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 162,
+    "sheetRosterOrder": 162,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 164,
     "name": "Generation Recovery",
     "aliases": [
       "Generation Recovery"
@@ -2056,10 +3855,15 @@
     "youtubeProfile": "",
     "officialImageSource": "https://www.instagram.com/generationrecoverymusic/?hl=en",
     "imageUrl": "assets/artists/generation-recovery-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 163,
+    "sheetRosterOrder": 163,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 165,
     "name": "IFearGod",
     "aliases": [
       "IFearGod"
@@ -2074,10 +3878,15 @@
     "youtubeProfile": "https://www.youtube.com/channel/UC0WGs4a9ylf2cIlefObDZKw",
     "officialImageSource": "https://www.instagram.com/ifeargod3/",
     "imageUrl": "assets/artists/ifeargod-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 164,
+    "sheetRosterOrder": 164,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 166,
     "name": "Hy Chu",
     "aliases": [
       "Hy Chu"
@@ -2092,10 +3901,15 @@
     "youtubeProfile": "https://www.youtube.com/channel/UC0GMYFL2ubouuGSxnmBTg8Q",
     "officialImageSource": "https://www.instagram.com/therealhychu/",
     "imageUrl": "assets/artists/hy-chu-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 165,
+    "sheetRosterOrder": 165,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 167,
     "name": "Vennisay",
     "aliases": [
       "Vennisay"
@@ -2110,10 +3924,15 @@
     "youtubeProfile": "https://www.youtube.com/channel/UCRi6WTcaC__0ZWq_d2xJ_qw",
     "officialImageSource": "https://www.instagram.com/vennisay/?hl=en",
     "imageUrl": "assets/artists/vennisay-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 166,
+    "sheetRosterOrder": 166,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 168,
     "name": "Scarlito Jr.",
     "aliases": [
       "Scarlito Jr.",
@@ -2129,10 +3948,15 @@
     "youtubeProfile": "https://music.youtube.com/channel/UCSt6mc5-My-19YkXmMKhgFw",
     "officialImageSource": "https://www.instagram.com/scarlitojr/",
     "imageUrl": "assets/artists/scarlito-jr-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 167,
+    "sheetRosterOrder": 167,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 169,
     "name": "J Reborn",
     "aliases": [
       "J Reborn"
@@ -2147,10 +3971,15 @@
     "youtubeProfile": "https://www.youtube.com/channel/UCa2iewWs6MlV092uo0zulfQ",
     "officialImageSource": "https://www.instagram.com/jreborn_official/",
     "imageUrl": "assets/artists/j-reborn-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 168,
+    "sheetRosterOrder": 168,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 170,
     "name": "Dre Skywalker",
     "aliases": [
       "Dre Skywalker"
@@ -2165,10 +3994,15 @@
     "youtubeProfile": "https://www.youtube.com/@Dre.Skywalker",
     "officialImageSource": "https://www.instagram.com/dreskywalkerofficial/",
     "imageUrl": "assets/artists/dre-skywalker-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 169,
+    "sheetRosterOrder": 169,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 171,
     "name": "Gabriel Katon",
     "aliases": [
       "Gabriel Katon"
@@ -2183,10 +4017,15 @@
     "youtubeProfile": "https://www.youtube.com/channel/UCytJ0RS91XUJf4wYrmt3prQ",
     "officialImageSource": "https://www.instagram.com/gabriel.katon/",
     "imageUrl": "assets/artists/gabriel-katon-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 170,
+    "sheetRosterOrder": 170,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 172,
     "name": "Red Tips",
     "aliases": [
       "Red Tips"
@@ -2201,10 +4040,15 @@
     "youtubeProfile": "https://www.youtube.com/channel/UC1q_9w95T3eprZwAFTXyrUg",
     "officialImageSource": "https://www.instagram.com/redtips.music/",
     "imageUrl": "assets/artists/red-tips-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 171,
+    "sheetRosterOrder": 171,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 173,
     "name": "Dell Mac",
     "aliases": [
       "Dell Mac"
@@ -2219,10 +4063,15 @@
     "youtubeProfile": "https://www.youtube.com/channel/UClRb8RvKMxpM7rFlsd6P8RQ",
     "officialImageSource": "https://www.instagram.com/dellmac301/?hl=en",
     "imageUrl": "assets/artists/dell-mac-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 172,
+    "sheetRosterOrder": 172,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 174,
     "name": "Tommy Royale",
     "aliases": [
       "Tommy Royale"
@@ -2233,14 +4082,19 @@
     "textMatchEnabled": true,
     "website": "https://www.instagram.com/iamtommyroyale/?hl=en",
     "instagramProfile": "https://www.instagram.com/iamtommyroyale/?hl=en",
-    "spotifyProfile": "https://open.spotify.com/artist/0gqbW7Uf6BAWiAh5C6jlPs?go=1&sp_cid=67e19d32c5200acbd7c434127ccd2bbe",
+    "spotifyProfile": "https://open.spotify.com/artist/0gqbW7Uf6BAWiAh5C6jlPs",
     "youtubeProfile": "https://music.youtube.com/channel/UC3CXVdZvDlK4HZtyuav26LQ",
     "officialImageSource": "https://www.instagram.com/iamtommyroyale/?hl=en",
     "imageUrl": "assets/artists/tommy-royale-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 173,
+    "sheetRosterOrder": 173,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 175,
     "name": "Ty Brasel",
     "aliases": [
       "Ty Brasel"
@@ -2255,10 +4109,15 @@
     "youtubeProfile": "https://www.youtube.com/c/TyBrasel/about",
     "officialImageSource": "https://www.instagram.com/Ty_Brasel",
     "imageUrl": "assets/artists/ty-brasel-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 174,
+    "sheetRosterOrder": 174,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 176,
     "name": "J. Monty",
     "aliases": [
       "J. Monty",
@@ -2274,10 +4133,15 @@
     "youtubeProfile": "https://www.youtube.com/@JMontystudios",
     "officialImageSource": "https://www.instagram.com/jmontystudios/?hl=en",
     "imageUrl": "assets/artists/j-monty-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 175,
+    "sheetRosterOrder": 175,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 177,
     "name": "180MINDSET",
     "aliases": [
       "180MINDSET",
@@ -2291,13 +4155,18 @@
     "website": "https://linktr.ee/180mindsetmusic",
     "instagramProfile": "https://www.instagram.com/180mindset_/",
     "spotifyProfile": "https://open.spotify.com/artist/5TXulgcmXEBOWsKfTgkHIK",
-    "youtubeProfile": "https://www.youtube.com/channel/UC4lBjJla_Acc-DFbKLXLvDQ",
+    "youtubeProfile": "https://www.youtube.com/channel/UC4lBjJla_Acc-DFbKLXLvDQ?app=desktop",
     "officialImageSource": "https://open.spotify.com/artist/5TXulgcmXEBOWsKfTgkHIK",
     "imageUrl": "assets/artists/180mindset-primary.jpg",
-    "imagePosition": "center"
+    "imagePosition": "center",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 176,
+    "sheetRosterOrder": 176,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 178,
     "name": "N!X",
     "aliases": [
       "N!X"
@@ -2312,10 +4181,15 @@
     "youtubeProfile": "https://www.youtube.com/@Nixfromthe301",
     "officialImageSource": "https://open.spotify.com/artist/5Lm6f1hGukpsGFbS2K5hKn",
     "imageUrl": "assets/artists/n-x-spotify.jpg",
-    "imagePosition": "50% 25%"
+    "imagePosition": "50% 25%",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 177,
+    "sheetRosterOrder": 177,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 179,
     "name": "D Riddick",
     "aliases": [
       "D Riddick",
@@ -2331,10 +4205,15 @@
     "youtubeProfile": "https://www.youtube.com/channel/UCGp2WyPotoQRT0L58cM-j1A",
     "officialImageSource": "https://open.spotify.com/artist/0Q6VFs5LFRjY42zvUmYRVx",
     "imageUrl": "assets/artists/d-riddick-spotify.jpg",
-    "imagePosition": "50% 25%"
+    "imagePosition": "50% 25%",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 178,
+    "sheetRosterOrder": 178,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 180,
     "name": "Howard Langford",
     "aliases": [
       "Howard Langford"
@@ -2349,10 +4228,15 @@
     "youtubeProfile": "https://www.youtube.com/@howardlangfordmusic",
     "officialImageSource": "https://open.spotify.com/artist/6mpv6UPxnAAOGbp5JmMHbY",
     "imageUrl": "assets/artists/howard-langford-spotify.jpg",
-    "imagePosition": "50% 25%"
+    "imagePosition": "50% 25%",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 179,
+    "sheetRosterOrder": 179,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 181,
     "name": "Lj the Messenger",
     "aliases": [
       "Lj the Messenger"
@@ -2367,10 +4251,15 @@
     "youtubeProfile": "https://www.youtube.com/@ljthemessenger",
     "officialImageSource": "https://open.spotify.com/artist/1wxZ1Mv6pAQbaqh30Nq6hB",
     "imageUrl": "assets/artists/lj-the-messenger-spotify.jpg",
-    "imagePosition": "50% 25%"
+    "imagePosition": "50% 25%",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 180,
+    "sheetRosterOrder": 180,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 182,
     "name": "DEON",
     "aliases": [
       "DEON"
@@ -2385,10 +4274,15 @@
     "youtubeProfile": "https://www.youtube.com/channel/UC7syo-HdRcOJ-2EdT0HMKVg",
     "officialImageSource": "https://open.spotify.com/artist/4kt0dkHxgthY7GMdG4G5dh",
     "imageUrl": "assets/artists/deon-spotify.jpg",
-    "imagePosition": "50% 25%"
+    "imagePosition": "50% 25%",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 181,
+    "sheetRosterOrder": 181,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 183,
     "name": "Man Of FAITH",
     "aliases": [
       "Man Of FAITH"
@@ -2403,10 +4297,15 @@
     "youtubeProfile": "https://www.youtube.com/channel/UChxkZuakN_vF7zTuo7BN2Uw",
     "officialImageSource": "https://open.spotify.com/artist/1N0uKYpKssjI5qrebCKMPo",
     "imageUrl": "assets/artists/man-of-faith-primary.jpg",
-    "imagePosition": "50% 0%"
+    "imagePosition": "50% 0%",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 182,
+    "sheetRosterOrder": 182,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 184,
     "name": "Bobby Real Montgomery",
     "aliases": [
       "Bobby Real Montgomery"
@@ -2421,10 +4320,15 @@
     "youtubeProfile": "https://www.youtube.com/@bobbyrealmontgomery",
     "officialImageSource": "assets/artists/bobby-real-montgomery-artist-supplied.png",
     "imageUrl": "assets/artists/bobby-real-montgomery-artist-supplied.png",
-    "imagePosition": "50% 0%"
+    "imagePosition": "50% 0%",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 183,
+    "sheetRosterOrder": 183,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 185,
     "name": "DJ Promote",
     "aliases": [
       "DJ Promote"
@@ -2439,10 +4343,15 @@
     "youtubeProfile": "https://www.youtube.com/djpromote",
     "officialImageSource": "https://www.instagram.com/djpromote/p/Caqy1SesDBK/",
     "imageUrl": "assets/artists/dj-promote-primary.jpg",
-    "imagePosition": "50% 35%"
+    "imagePosition": "50% 35%",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 184,
+    "sheetRosterOrder": 184,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 187,
     "name": "Eli Williams",
     "aliases": [
       "Eli Williams",
@@ -2459,12 +4368,17 @@
     "officialImageSource": "https://www.instagram.com/eliwilliamssss/p/Ddj51oflvyO/",
     "imageUrl": "assets/artists/dj-eli-williams-primary.jpg",
     "imagePosition": "50% 20%",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
     "legacyArtistPaths": [
       "/artists/dj-eli-williams/"
-    ]
+    ],
+    "rosterOrder": 185,
+    "sheetRosterOrder": 185,
+    "state": "",
+    "label": ""
   },
   {
-    "rosterOrder": 188,
     "name": "JBthaPreacher",
     "aliases": [
       "JBthaPreacher",
@@ -2482,16 +4396,16 @@
     "youtubeProfile": "https://music.youtube.com/channel/UCgA6yMDyea-g30NpEgB_tkg",
     "officialImageSource": "https://open.spotify.com/artist/6ShMmu8ZCu6MUoJfui5YK6",
     "imageUrl": "assets/artists/jbthapreacher-primary.jpg",
-    "imagePosition": "50% 20%"
+    "imagePosition": "50% 20%",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 186,
+    "sheetRosterOrder": 186,
+    "state": "",
+    "label": ""
   },
   {
     "name": "HeiressIrami",
-    "sheetRosterOrder": 187,
-    "website": "https://linktr.ee/heiressirami?utm_source=linktree_profile_share&ltsid=99850e3d-fa84-43c4-96fc-d4db3d4e3f45&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAafvwwot-2NdeaDKqMytlSVYHuJU6f97MkP9_-jd1P4pS4haCMg9Z4RBQ1_4mQ_aem_qE6RgGgjiTu1X0FE9nc4RQ",
-    "instagramProfile": "https://www.instagram.com/itsheiressirami/",
-    "spotifyProfile": "https://open.spotify.com/artist/5kq0WAm6kDMOKtF499g0eg",
-    "youtubeProfile": "https://www.youtube.com/@ItsHeiressirami",
-    "rosterOrder": 189,
     "aliases": [
       "HeiressIrami",
       "Heiress Irami"
@@ -2500,19 +4414,22 @@
     "monitoringPriority": 3,
     "ticketmasterEnabled": false,
     "textMatchEnabled": true,
+    "website": "https://linktr.ee/heiressirami?ltsid=99850e3d-fa84-43c4-96fc-d4db3d4e3f45",
+    "instagramProfile": "https://www.instagram.com/itsheiressirami/",
+    "spotifyProfile": "https://open.spotify.com/artist/5kq0WAm6kDMOKtF499g0eg",
+    "youtubeProfile": "https://www.youtube.com/@ItsHeiressirami",
     "officialImageSource": "assets/artists/heiressirami-owner-supplied.png",
     "imageUrl": "assets/artists/heiressirami-owner-supplied.png",
-    "imagePosition": "50% 35%"
+    "imagePosition": "50% 35%",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 187,
+    "sheetRosterOrder": 187,
+    "state": "",
+    "label": ""
   },
   {
     "name": "GIOVANI",
-    "sheetRosterOrder": 188,
-    "website": "https://www.instagram.com/giovani.music/",
-    "instagramProfile": "https://www.instagram.com/giovani.music/",
-    "spotifyProfile": "https://open.spotify.com/artist/24ChasRK4LlBoGdhRvSCRG",
-    "youtubeProfile": "https://www.youtube.com/@giovanimusic",
-    "bandsintownProfile": "https://www.bandsintown.com/a/15656198-giovani",
-    "rosterOrder": 190,
     "aliases": [
       "GIOVANI",
       "Giovani Santiago"
@@ -2521,19 +4438,23 @@
     "monitoringPriority": 3,
     "ticketmasterEnabled": false,
     "textMatchEnabled": true,
+    "website": "https://www.instagram.com/giovani.music/",
+    "instagramProfile": "https://www.instagram.com/giovani.music/",
+    "spotifyProfile": "https://open.spotify.com/artist/24ChasRK4LlBoGdhRvSCRG",
+    "youtubeProfile": "https://www.youtube.com/@giovanimusic",
     "officialImageSource": "https://i.scdn.co/image/ab6761670000ecd462ecb68de69b8e7cd581bf91",
     "imageUrl": "assets/artists/giovani-primary.jpg",
-    "imagePosition": "45% 40%"
+    "imagePosition": "45% 40%",
+    "bandsintownProfile": "https://www.bandsintown.com/a/15656198-giovani",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 188,
+    "sheetRosterOrder": 188,
+    "state": "",
+    "label": ""
   },
   {
     "name": "aftrthght",
-    "sheetRosterOrder": 189,
-    "website": "https://www.instagram.com/aftrthght/",
-    "instagramProfile": "https://www.instagram.com/aftrthght/",
-    "spotifyProfile": "https://open.spotify.com/artist/0m4Lfr9tvsHyYOUWhsbSKY",
-    "youtubeProfile": "https://www.youtube.com/channel/UC-DgRUfLZdZKE24F0bMDgog",
-    "bandsintownProfile": "https://www.bandsintown.com/a/15553348-aftrthght",
-    "rosterOrder": 191,
     "aliases": [
       "aftrthght"
     ],
@@ -2541,561 +4462,920 @@
     "monitoringPriority": 3,
     "ticketmasterEnabled": false,
     "textMatchEnabled": true,
+    "website": "https://www.instagram.com/aftrthght/",
+    "instagramProfile": "https://www.instagram.com/aftrthght/",
+    "spotifyProfile": "https://open.spotify.com/artist/0m4Lfr9tvsHyYOUWhsbSKY",
+    "youtubeProfile": "https://www.youtube.com/channel/UC-DgRUfLZdZKE24F0bMDgog",
     "officialImageSource": "https://www.instagram.com/aftrthght/p/DbWrsRYuOqd/",
     "imageUrl": "assets/artists/aftrthght-instagram-portrait.jpg",
-    "imagePosition": "50% 55%"
+    "imagePosition": "50% 55%",
+    "bandsintownProfile": "https://www.bandsintown.com/a/15553348-aftrthght",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 189,
+    "sheetRosterOrder": 189,
+    "state": "",
+    "label": ""
   },
   {
     "name": "Rio 24k",
-    "sheetRosterOrder": 190,
-    "rosterOrder": 192,
     "aliases": [
       "Rio 24k"
     ],
     "category": "core",
-    "state": "",
-    "label": "",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://www.instagram.com/rio_24k/",
     "instagramProfile": "https://www.instagram.com/rio_24k/",
     "spotifyProfile": "https://open.spotify.com/artist/6VLGDCGey64ClZ2qsWusGv",
     "youtubeProfile": "https://www.youtube.com/channel/UCy-zFguTOr3gYc5-6gywM2A",
     "officialImageSource": "https://www.instagram.com/rio_24k/",
     "imageUrl": "assets/artists/rio-24k-approved-oct2.jpg",
-    "imagePosition": "50% 30%"
+    "imagePosition": "50% 30%",
+    "state": "",
+    "label": "",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 190,
+    "sheetRosterOrder": 190
   },
   {
     "name": "christrebel",
-    "sheetRosterOrder": 191,
-    "rosterOrder": 193,
     "aliases": [
       "christrebel"
     ],
     "category": "core",
-    "state": "",
-    "label": "",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://www.instagram.com/christrebel/",
     "instagramProfile": "https://www.instagram.com/christrebel/",
     "spotifyProfile": "https://open.spotify.com/artist/3DRD5UjpSvCHkYvNj8PYuS",
     "youtubeProfile": "https://www.youtube.com/@christrebel",
     "officialImageSource": "https://www.instagram.com/christrebel/",
     "imageUrl": "assets/artists/christrebel-approved-oct2.png",
-    "imagePosition": "50% 0%"
+    "imagePosition": "50% 0%",
+    "state": "",
+    "label": "",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 191,
+    "sheetRosterOrder": 191
   },
   {
     "name": "DaeShawn Forrest",
-    "sheetRosterOrder": 192,
-    "rosterOrder": 194,
     "aliases": [
       "DaeShawn Forrest",
       "Daeshawn Forrest"
     ],
     "category": "core",
-    "state": "",
-    "label": "",
     "monitoringPriority": 1,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://www.instagram.com/daeshawnforrest/",
     "instagramProfile": "https://www.instagram.com/daeshawnforrest/",
     "spotifyProfile": "https://open.spotify.com/artist/2XdyspU05FgF3PTKuJ7UBK",
     "youtubeProfile": "https://www.youtube.com/@DaeShawnForrest",
     "officialImageSource": "https://www.instagram.com/daeshawnforrest/",
     "imageUrl": "assets/artists/daeshawn-forrest-approved-oct2.jpg",
-    "imagePosition": "50% 30%"
+    "imagePosition": "50% 30%",
+    "state": "",
+    "label": "",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 192,
+    "sheetRosterOrder": 192
   },
   {
     "name": "Kevi Morse",
-    "sheetRosterOrder": 193,
-    "rosterOrder": 195,
     "aliases": [
       "Kevi Morse"
     ],
     "category": "core",
-    "state": "",
-    "label": "",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://www.instagram.com/iamkevimorse/",
     "instagramProfile": "https://www.instagram.com/iamkevimorse/",
     "spotifyProfile": "https://open.spotify.com/artist/5SdVvihy2l8X53RTh3uW0l",
     "youtubeProfile": "https://www.youtube.com/@KeviMorse",
     "officialImageSource": "https://www.instagram.com/iamkevimorse/",
     "imageUrl": "assets/artists/kevi-morse-approved-oct2.jpg",
-    "imagePosition": "50% 30%"
+    "imagePosition": "50% 30%",
+    "state": "",
+    "label": "",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 193,
+    "sheetRosterOrder": 193
   },
   {
     "name": "Jamil",
-    "sheetRosterOrder": 194,
-    "rosterOrder": 196,
     "aliases": [
       "Jamil"
     ],
     "category": "core",
-    "state": "",
-    "label": "",
     "monitoringPriority": 2,
     "ticketmasterEnabled": false,
     "textMatchEnabled": false,
-    "socialSearchEnabled": true,
-    "website": "https://linktr.ee/jamilofficial?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0DMTAwAHBkb2YCc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnSSIuTJzcuDcu0gUrgT7bkRrUTydrhDQKWu9ZkizlPim2puv6P3Q1QG8C-MU_aem_h3k6MBUaAPf4j1LhwVrhRw",
+    "website": "https://linktr.ee/jamilofficial",
     "instagramProfile": "https://www.instagram.com/jamilofficial/reels/",
     "spotifyProfile": "https://open.spotify.com/artist/4JDmvmyrWfrOVik0WkuoSu",
     "youtubeProfile": "https://www.youtube.com/@jamilofficialmusic",
     "officialImageSource": "https://linktr.ee/jamilofficial?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0DMTAwAHBkb2YCc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnSSIuTJzcuDcu0gUrgT7bkRrUTydrhDQKWu9ZkizlPim2puv6P3Q1QG8C-MU_aem_h3k6MBUaAPf4j1LhwVrhRw",
     "imageUrl": "assets/artists/jamil-approved-oct2.jpg",
-    "imagePosition": "50% 30%"
+    "imagePosition": "50% 30%",
+    "state": "",
+    "label": "",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 194,
+    "sheetRosterOrder": 194
   },
   {
     "name": "Zenwi",
-    "sheetRosterOrder": 195,
-    "rosterOrder": 197,
     "aliases": [
       "Zenwi"
     ],
     "category": "core",
-    "state": "FL",
-    "label": "Zyatid Records",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://www.instagram.com/zenwiofficial/",
     "instagramProfile": "https://www.instagram.com/zenwiofficial/",
     "spotifyProfile": "https://open.spotify.com/artist/4Kna9Cbz08tcCg6wPU0umo",
     "youtubeProfile": "https://www.youtube.com/@Zenwiofficial",
     "officialImageSource": "https://www.instagram.com/zenwiofficial/",
     "imageUrl": "assets/artists/zenwi-approved-oct2.jpg",
-    "imagePosition": "50% 25%"
+    "imagePosition": "50% 25%",
+    "state": "FL",
+    "label": "Zyatid Records",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 195,
+    "sheetRosterOrder": 195
   },
   {
     "name": "JAYLXN",
-    "sheetRosterOrder": 196,
-    "rosterOrder": 198,
     "aliases": [
       "JAYLXN",
-      "Jaylxn"
+      "Jaylxn",
+      "Jaylxn; JAYLXN"
     ],
     "category": "core",
-    "state": "FL",
-    "label": "",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://linktr.ee/jaylxn7",
     "instagramProfile": "https://www.instagram.com/jaylxn.7/",
     "spotifyProfile": "https://open.spotify.com/artist/3KtSyUubWkv2gpAHQhrrig",
     "youtubeProfile": "https://www.youtube.com/channel/UCRUlW4aTIVlV_BK4R7UDNCw",
     "officialImageSource": "https://www.instagram.com/jaylxn.7/",
     "imageUrl": "assets/artists/jaylxn-approved-oct2.jpg",
-    "imagePosition": "50% 30%"
+    "imagePosition": "50% 30%",
+    "state": "FL",
+    "label": "",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 196,
+    "sheetRosterOrder": 196
   },
   {
     "name": "Nehemiah",
-    "sheetRosterOrder": 197,
-    "rosterOrder": 199,
     "aliases": [
       "Nehemiah",
-      "its_nehe02"
+      "its_nehe02",
+      "Nehemiah; its_nehe02"
     ],
     "category": "core",
-    "state": "FL",
-    "label": "",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://linktr.ee/nehemiah02",
     "instagramProfile": "https://www.instagram.com/its_nehe02/",
     "spotifyProfile": "https://open.spotify.com/artist/7fdG0HcxQczr1nxVlX4BYj",
     "youtubeProfile": "https://music.youtube.com/channel/UCHnQofOxuVcQuq-gyhzO3Tw",
     "officialImageSource": "https://www.instagram.com/its_nehe02/",
     "imageUrl": "assets/artists/nehemiah-approved-oct2.jpg",
-    "imagePosition": "50% 20%"
+    "imagePosition": "50% 20%",
+    "state": "FL",
+    "label": "",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 197,
+    "sheetRosterOrder": 197
   },
   {
     "name": "Wiff.P",
-    "sheetRosterOrder": 198,
-    "rosterOrder": 200,
     "aliases": [
       "Wiff.P",
-      "Wiff Paul"
+      "Wiff Paul",
+      "Wiff.P; Wiff Paul"
     ],
     "category": "core",
-    "state": "",
-    "label": "Crownless Kingz",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://www.instagram.com/wiff.p/",
     "instagramProfile": "https://www.instagram.com/wiff.p/",
     "spotifyProfile": "https://open.spotify.com/artist/1YgeYoQhwplwgLQj0gpogs",
     "youtubeProfile": "https://www.youtube.com/channel/UCHqUPmNbIMp_CKMWnZPWmwQ",
     "officialImageSource": "https://www.instagram.com/crownless_kingz/p/CnvVQOzMIej/",
     "imageUrl": "assets/artists/wiff-p-live-performance.webp",
-    "imagePosition": "50% 0%"
+    "imagePosition": "50% 0%",
+    "state": "",
+    "label": "Crownless Kingz",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 198,
+    "sheetRosterOrder": 198
   },
   {
     "name": "Dondrae",
-    "sheetRosterOrder": 199,
-    "rosterOrder": 201,
     "aliases": [
       "Dondrae",
-      "HypeGodDrae"
+      "HypeGodDrae",
+      "Dondrae; HypeGodDrae"
     ],
     "category": "core",
-    "state": "FL",
-    "label": "",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://hyperfollow.com/dondrae",
     "instagramProfile": "https://www.instagram.com/iamdondrae/",
     "spotifyProfile": "https://open.spotify.com/artist/2AVqUkF20rb8UuA4J6jEaz",
     "youtubeProfile": "https://www.youtube.com/@dondrae7791",
     "officialImageSource": "https://www.instagram.com/iamdondrae/",
     "imageUrl": "assets/artists/dondrae-approved-oct2.jpg",
-    "imagePosition": "50% 25%"
+    "imagePosition": "50% 25%",
+    "state": "FL",
+    "label": "",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 199,
+    "sheetRosterOrder": 199
   },
   {
     "name": "H.U.R.T.",
-    "sheetRosterOrder": 200,
-    "rosterOrder": 202,
     "aliases": [
       "H.U.R.T.",
       "HURT",
-      "HURT RPH"
+      "HURT RPH",
+      "H.U.R.T.; HURT; HURT RPH"
     ],
     "category": "core",
-    "state": "",
-    "label": "RPH",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://linktr.ee/hurt_rph",
     "instagramProfile": "https://www.instagram.com/hurt_rph/",
     "spotifyProfile": "https://open.spotify.com/artist/1mOPjLn8di3tMig4uO4Fgq",
     "youtubeProfile": "https://www.youtube.com/c/RPHEXPERIENCE",
     "officialImageSource": "https://www.instagram.com/hurt_rph/",
     "imageUrl": "assets/artists/h-u-r-t-approved-oct2.jpg",
-    "imagePosition": "50% 30%"
+    "imagePosition": "50% 30%",
+    "state": "",
+    "label": "RPH",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 200,
+    "sheetRosterOrder": 200
   },
   {
     "name": "Kenny Jenkins",
-    "sheetRosterOrder": 201,
-    "rosterOrder": 203,
     "aliases": [
       "Kenny Jenkins",
       "Malaki The Messenger",
-      "Jesus Junki3"
+      "Jesus Junki3",
+      "Kenny Jenkins; Malaki The Messenger; Jesus Junki3"
     ],
     "category": "core",
-    "state": "",
-    "label": "Jesus Junki3 Movement",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "http://www.jesusjunki3movement.org/",
     "instagramProfile": "https://www.instagram.com/jesusjunki3_mtm/",
     "spotifyProfile": "https://open.spotify.com/artist/0jsCVNpeQcIkpAZjDIFhOC",
     "youtubeProfile": "https://www.youtube.com/@Kenny_Jenkins/playlists",
     "officialImageSource": "https://www.instagram.com/jesusjunki3_mtm/",
     "imageUrl": "assets/artists/kenny-jenkins-approved-oct2.jpg",
-    "imagePosition": "50% 20%"
+    "imagePosition": "50% 20%",
+    "state": "",
+    "label": "Jesus Junki3 Movement",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 201,
+    "sheetRosterOrder": 201
   },
   {
     "name": "Xerogangg",
-    "sheetRosterOrder": 202,
-    "rosterOrder": 204,
     "aliases": [
       "Xerogangg",
-      "XeroGangg"
+      "XeroGangg",
+      "Xerogangg; XeroGangg"
     ],
     "category": "core",
-    "state": "",
-    "label": "",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://www.xerogangg.com/",
     "instagramProfile": "https://www.instagram.com/xerogangg/",
     "spotifyProfile": "https://open.spotify.com/artist/1sq5xsce5ii8YhcTdaWWRw",
     "youtubeProfile": "https://www.youtube.com/channel/UCt80G2WMW5iNgU_ID8So05g",
     "officialImageSource": "https://www.instagram.com/xerogangg/",
     "imageUrl": "assets/artists/xerogangg-approved-oct2.jpg",
-    "imagePosition": "50% 15%"
+    "imagePosition": "50% 15%",
+    "state": "",
+    "label": "",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 202,
+    "sheetRosterOrder": 202
   },
   {
     "name": "Dontae",
-    "sheetRosterOrder": 203,
-    "rosterOrder": 205,
     "aliases": [
       "Dontae",
       "HogMob Dontae",
-      "Dontae Ralston"
+      "Dontae Ralston",
+      "Dontae; HogMob Dontae; Dontae Ralston"
     ],
     "category": "core",
-    "state": "CA",
-    "label": "HOGMOB Ministries",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://linktr.ee/hogmob_dontae",
     "instagramProfile": "https://www.instagram.com/hogmob_dontae/",
     "spotifyProfile": "https://open.spotify.com/artist/70AObzxCT4x5E2JotLVZKF",
     "youtubeProfile": "https://www.youtube.com/playlist?list=PLM2fwrC5RrszW42dkY6tUOi6AKMSor3UZ",
     "officialImageSource": "https://www.instagram.com/hogmob_dontae/",
     "imageUrl": "assets/artists/dontae-approved-oct2.jpg",
-    "imagePosition": "50% 30%"
+    "imagePosition": "50% 30%",
+    "state": "CA",
+    "label": "HOGMOB Ministries",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 203,
+    "sheetRosterOrder": 203
   },
   {
     "name": "MikeySoChristian",
-    "sheetRosterOrder": 204,
-    "rosterOrder": 206,
     "aliases": [
       "MikeySoChristian",
-      "Mikey So Christian"
+      "Mikey So Christian",
+      "MikeySoChristian; Mikey So Christian"
     ],
     "category": "core",
-    "state": "",
-    "label": "",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://linktr.ee/mikeysochristian",
     "instagramProfile": "https://www.instagram.com/mikeysochristian/",
     "spotifyProfile": "https://open.spotify.com/artist/006WEcVc11G2pFBmuNAjLU",
     "youtubeProfile": "https://www.youtube.com/@MikeySoChristian",
     "officialImageSource": "https://www.instagram.com/mikeysochristian/",
     "imageUrl": "assets/artists/mikeysochristian-approved-oct2.jpg",
-    "imagePosition": "50% 30%"
+    "imagePosition": "50% 30%",
+    "state": "",
+    "label": "",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 204,
+    "sheetRosterOrder": 204
   },
   {
     "name": "Arize",
-    "sheetRosterOrder": 205,
-    "rosterOrder": 207,
     "aliases": [
       "Arize",
       "Arize209",
-      "Alex Lisea"
+      "Alex Lisea",
+      "Arize; Arize209; Alex Lisea"
     ],
     "category": "core",
-    "state": "CA",
-    "label": "Rize N Shine",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://linktr.ee/arize209",
     "instagramProfile": "https://www.instagram.com/arize209/",
     "spotifyProfile": "https://open.spotify.com/artist/3HAB7efekWyjbapGBloqg9",
     "youtubeProfile": "https://www.youtube.com/user/RizeNShineRecords",
     "officialImageSource": "https://www.instagram.com/arize209/",
     "imageUrl": "assets/artists/arize-approved-oct2.jpg",
-    "imagePosition": "50% 30%"
+    "imagePosition": "50% 30%",
+    "state": "CA",
+    "label": "Rize N Shine",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 205,
+    "sheetRosterOrder": 205
   },
   {
     "name": "Drew Ava",
-    "sheetRosterOrder": 206,
-    "rosterOrder": 208,
     "aliases": [
       "Drew Ava",
-      "DrewAva"
+      "DrewAva",
+      "Drew Ava; DrewAva"
     ],
     "category": "adjacent",
-    "state": "",
-    "label": "",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://linktr.ee/Drewava",
     "instagramProfile": "https://www.instagram.com/officialdrewava/",
     "spotifyProfile": "https://open.spotify.com/artist/1kuocA53e2MltklnSFSiGR",
     "youtubeProfile": "https://www.youtube.com/c/DrewAva",
     "officialImageSource": "https://www.instagram.com/officialdrewava/",
     "imageUrl": "assets/artists/drew-ava-approved-oct2.jpg",
-    "imagePosition": "50% 30%"
+    "imagePosition": "50% 30%",
+    "state": "",
+    "label": "",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 206,
+    "sheetRosterOrder": 206
   },
   {
     "name": "Mike Servin",
-    "sheetRosterOrder": 207,
-    "rosterOrder": 209,
     "aliases": [
       "Mike Servin"
     ],
     "category": "core",
-    "state": "",
-    "label": "",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://mikeservin.com/",
     "instagramProfile": "https://www.instagram.com/servinmike20/",
     "spotifyProfile": "https://open.spotify.com/artist/11pxA7iRT74yfvdJPbUym8",
     "youtubeProfile": "https://www.youtube.com/@ServinMike20",
     "officialImageSource": "https://www.instagram.com/servinmike20/",
     "imageUrl": "assets/artists/mike-servin-approved-oct2.jpg",
-    "imagePosition": "50% 30%"
+    "imagePosition": "50% 30%",
+    "state": "",
+    "label": "",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 207,
+    "sheetRosterOrder": 207
   },
   {
     "name": "KG Santiago",
-    "sheetRosterOrder": 208,
-    "rosterOrder": 210,
     "aliases": [
       "KG Santiago",
-      "K.G. Santiago"
+      "K.G. Santiago",
+      "KG Santiago; K.G. Santiago"
     ],
     "category": "core",
-    "state": "",
-    "label": "KMF / God First Muzic",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://open.spotify.com/artist/1lHtwwAfyruKIskYFkIZ0T",
     "instagramProfile": "",
     "spotifyProfile": "https://open.spotify.com/artist/1lHtwwAfyruKIskYFkIZ0T",
     "youtubeProfile": "https://www.youtube.com/channel/UCQH15gaajVwKtOSxq1EEKMQ",
     "officialImageSource": "https://open.spotify.com/artist/1lHtwwAfyruKIskYFkIZ0T",
     "imageUrl": "assets/artists/kg-santiago-approved-oct2.png",
-    "imagePosition": "100% 45%"
+    "imagePosition": "100% 45%",
+    "state": "",
+    "label": "KMF / God First Muzic",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 208,
+    "sheetRosterOrder": 208
   },
   {
     "name": "Da Young Disciples",
-    "sheetRosterOrder": 209,
-    "rosterOrder": 211,
     "aliases": [
       "Da Young Disciples",
-      "DaYoungDisciples"
+      "DaYoungDisciples",
+      "Da Young Disciples; DaYoungDisciples"
     ],
     "category": "core",
-    "state": "",
-    "label": "",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://linktr.ee/dayoungdisciples",
     "instagramProfile": "https://www.instagram.com/da_young_disciples/",
     "spotifyProfile": "https://open.spotify.com/artist/4YoQDM4ZScfTxngKQUS7SV",
     "youtubeProfile": "https://www.youtube.com/@dayoungdisciples",
     "officialImageSource": "https://www.instagram.com/da_young_disciples/",
     "imageUrl": "assets/artists/da-young-disciples-approved-oct2.jpg",
-    "imagePosition": "50% 30%"
+    "imagePosition": "50% 30%",
+    "state": "",
+    "label": "",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 209,
+    "sheetRosterOrder": 209
   },
   {
     "name": "B-Wade SBG",
-    "sheetRosterOrder": 210,
-    "rosterOrder": 212,
     "aliases": [
       "B-Wade SBG",
       "B Wade SBG",
-      "Bobby Wade Sr."
+      "Bobby Wade Sr.",
+      "B-Wade SBG; B Wade SBG; Bobby Wade Sr."
     ],
     "category": "core",
-    "state": "",
-    "label": "Resurrection Records",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://www.instagram.com/b.wade_sbg_music/",
     "instagramProfile": "https://www.instagram.com/b.wade_sbg_music/",
     "spotifyProfile": "https://open.spotify.com/artist/7dCWCRBrs0KKv90NHuo1n9",
     "youtubeProfile": "https://www.youtube.com/channel/UCEh_A-AMAN6CJLfdfYl5zhA",
     "officialImageSource": "https://www.instagram.com/b.wade_sbg_music/",
     "imageUrl": "assets/artists/b-wade-sbg-approved-oct2.jpg",
-    "imagePosition": "50% 0%"
+    "imagePosition": "50% 0%",
+    "state": "",
+    "label": "Resurrection Records",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 210,
+    "sheetRosterOrder": 210
   },
   {
     "name": "Big Rev.",
-    "sheetRosterOrder": 211,
-    "rosterOrder": 213,
     "aliases": [
       "Big Rev.",
       "Big Rev",
-      "John Michael Blount"
+      "John Michael Blount",
+      "Big Rev.; Big Rev; John Michael Blount"
     ],
     "category": "core",
-    "state": "",
-    "label": "Resurrection Records",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://niyacrims21.wixsite.com/bigrevnsonministry",
     "instagramProfile": "https://www.instagram.com/bigrev0723/",
     "spotifyProfile": "https://open.spotify.com/artist/0TxHiR55tyx1SDAk9x5PKu",
     "youtubeProfile": "https://www.youtube.com/@bigrev.1464",
     "officialImageSource": "https://www.instagram.com/bigrev0723/",
     "imageUrl": "assets/artists/big-rev-approved-oct2.jpg",
-    "imagePosition": "50% 30%"
+    "imagePosition": "50% 30%",
+    "state": "",
+    "label": "Resurrection Records",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 211,
+    "sheetRosterOrder": 211
   },
   {
     "name": "L.O.G.",
-    "sheetRosterOrder": 212,
-    "rosterOrder": 214,
     "aliases": [
       "L.O.G.",
       "LOG918",
-      "Logan Scott"
+      "Logan Scott",
+      "L.O.G.; LOG918; Logan Scott"
     ],
     "category": "adjacent",
-    "state": "",
-    "label": "",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://www.instagram.com/l.o.g.918/",
     "instagramProfile": "https://www.instagram.com/l.o.g.918/",
     "spotifyProfile": "",
     "youtubeProfile": "https://www.youtube.com/@LOG918",
     "officialImageSource": "https://www.instagram.com/l.o.g.918/",
     "imageUrl": "assets/artists/l-o-g-approved-oct2.jpg",
-    "imagePosition": "50% 30%"
+    "imagePosition": "50% 30%",
+    "state": "",
+    "label": "",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 212,
+    "sheetRosterOrder": 212
   },
   {
     "name": "KT Money",
-    "sheetRosterOrder": 213,
-    "rosterOrder": 215,
     "aliases": [
       "KT Money",
-      "KTMoney"
+      "KTMoney",
+      "KT Money; KTMoney"
     ],
     "category": "core",
-    "state": "",
-    "label": "",
     "monitoringPriority": 2,
     "ticketmasterEnabled": true,
     "textMatchEnabled": true,
-    "socialSearchEnabled": true,
     "website": "https://linktr.ee/ktmoneyofficial",
     "instagramProfile": "https://www.instagram.com/ktmoneyofficial/",
     "spotifyProfile": "https://open.spotify.com/artist/6o1yNU7w2XTwdBnmpqZYlF",
     "youtubeProfile": "https://www.youtube.com/@ktmoneyofficial",
     "officialImageSource": "https://www.instagram.com/ktmoneyofficial/",
     "imageUrl": "assets/artists/kt-money-approved-oct2.jpg",
-    "imagePosition": "50% 20%"
+    "imagePosition": "50% 20%",
+    "state": "",
+    "label": "",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 213,
+    "sheetRosterOrder": 213
+  },
+  {
+    "name": "A.I. The Anomaly",
+    "aliases": [
+      "A.I. The Anomaly",
+      "AI The Anomaly"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 214,
+    "sheetRosterOrder": 214,
+    "state": "",
+    "label": "",
+    "website": "https://www.aitheanomaly.com/",
+    "instagramProfile": "https://www.instagram.com/aitheanomaly/",
+    "spotifyProfile": "https://open.spotify.com/artist/6HvphSwjzZrs93AEtL2ZIm",
+    "youtubeProfile": "https://www.youtube.com/channel/UCoRopeFhNhRbocpiXV0hqyw",
+    "officialImageSource": "https://www.instagram.com/aitheanomaly/",
+    "imageUrl": "assets/artists/a-i-the-anomaly-verified-oct3.webp",
+    "imagePosition": "0% center"
+  },
+  {
+    "name": "Selah the Corner",
+    "aliases": [
+      "Selah the Corner"
+    ],
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 215,
+    "sheetRosterOrder": 215,
+    "state": "",
+    "label": "",
+    "website": "https://www.instagram.com/iamthacorner/",
+    "instagramProfile": "https://www.instagram.com/iamthacorner/",
+    "spotifyProfile": "https://open.spotify.com/artist/5RGpSLDa24rgCKsKIiGuwn",
+    "youtubeProfile": "",
+    "officialImageSource": "https://www.instagram.com/iamthacorner/",
+    "imageUrl": "assets/artists/selah-the-corner-verified-oct3.jpg",
+    "imagePosition": "center"
+  },
+  {
+    "name": "Bumps INF",
+    "aliases": [
+      "Bumps INF",
+      "Bumps Inf"
+    ],
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 216,
+    "sheetRosterOrder": 216,
+    "state": "",
+    "label": "",
+    "website": "https://linktr.ee/Bumpsinf",
+    "instagramProfile": "https://www.instagram.com/bumpsinf/",
+    "spotifyProfile": "https://open.spotify.com/artist/0kbnFIVENMVtl0VBSwdysP",
+    "youtubeProfile": "https://youtube.com/user/MsBumpsinf",
+    "officialImageSource": "https://www.instagram.com/bumpsinf/",
+    "imageUrl": "assets/artists/bumps-inf-verified-oct3.jpg",
+    "imagePosition": "50% 28%"
+  },
+  {
+    "name": "Young Bro",
+    "aliases": [
+      "Young Bro",
+      "Young Bro 356"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 217,
+    "sheetRosterOrder": 218,
+    "state": "",
+    "label": "",
+    "website": "https://linktr.ee/youngbro",
+    "instagramProfile": "https://www.instagram.com/youngbro356/",
+    "spotifyProfile": "https://open.spotify.com/artist/1fZhopeuReQRdzwwJ8leIQ",
+    "youtubeProfile": "https://www.youtube.com/youngbro",
+    "officialImageSource": "https://www.instagram.com/youngbro356/",
+    "imageUrl": "assets/artists/young-bro-verified-oct3.jpg",
+    "imagePosition": "50% 18%"
+  },
+  {
+    "name": "KJ-52",
+    "aliases": [
+      "KJ-52",
+      "KJ52",
+      "KJ 52"
+    ],
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "website": "https://www.kj52.com",
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 218,
+    "sheetRosterOrder": 219,
+    "state": "",
+    "label": "",
+    "instagramProfile": "https://www.instagram.com/kj52instagram/",
+    "spotifyProfile": "https://open.spotify.com/artist/0kSHocNBxQeP9pr25l1scP",
+    "youtubeProfile": "https://www.youtube.com/channel/UC2IaDmgY_Jfq_JYTzHLQZlQ",
+    "officialImageSource": "https://www.instagram.com/kj52instagram/",
+    "imageUrl": "assets/artists/kj-52-verified-oct3.jpg",
+    "imagePosition": "70% center"
+  },
+  {
+    "name": "Eshon Burgundy",
+    "aliases": [
+      "Eshon Burgundy"
+    ],
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 219,
+    "sheetRosterOrder": 220,
+    "state": "",
+    "label": "",
+    "website": "https://linktr.ee/eshonbombay",
+    "instagramProfile": "https://www.instagram.com/eshonburgundy/",
+    "spotifyProfile": "https://open.spotify.com/artist/25VsRrXJg8wvvMSSVwmp8E",
+    "youtubeProfile": "https://www.youtube.com/channel/UCAN1_L-yvQTLl-DAcxrZCPA",
+    "officialImageSource": "https://www.instagram.com/eshonburgundy/",
+    "imageUrl": "assets/artists/eshon-burgundy-verified-oct3.jpg",
+    "imagePosition": "center"
+  },
+  {
+    "name": "Sho Baraka",
+    "aliases": [
+      "Sho Baraka"
+    ],
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 220,
+    "sheetRosterOrder": 221,
+    "state": "",
+    "label": "",
+    "website": "https://www.shobaraka.com",
+    "instagramProfile": "https://www.instagram.com/amishobaraka/",
+    "spotifyProfile": "https://open.spotify.com/artist/3dpswct31rsudWf8ZASWZe",
+    "youtubeProfile": "https://www.youtube.com/shobarakashow",
+    "officialImageSource": "https://www.instagram.com/amishobaraka/",
+    "imageUrl": "assets/artists/sho-baraka-verified-oct3.jpg",
+    "imagePosition": "center"
+  },
+  {
+    "name": "Shai Linne",
+    "aliases": [
+      "Shai Linne"
+    ],
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 221,
+    "sheetRosterOrder": 222,
+    "state": "",
+    "label": "",
+    "website": "https://linktr.ee/shailinne",
+    "instagramProfile": "https://www.instagram.com/shailinne/",
+    "spotifyProfile": "https://open.spotify.com/artist/5IOZCSuYRrid1baINgoKIQ",
+    "youtubeProfile": "https://www.youtube.com/channel/UC2nhpzxan_LZWRAJ9KSjbNw",
+    "officialImageSource": "https://www.instagram.com/shailinne/",
+    "imageUrl": "assets/artists/shai-linne-verified-oct3.jpg",
+    "imagePosition": "center"
+  },
+  {
+    "name": "Thi'sl",
+    "aliases": [
+      "Thi'sl",
+      "Thizl"
+    ],
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 222,
+    "sheetRosterOrder": 223,
+    "state": "",
+    "label": "",
+    "website": "https://www.instagram.com/thisl/",
+    "instagramProfile": "https://www.instagram.com/thisl/",
+    "spotifyProfile": "https://open.spotify.com/artist/1Q45nhioxaxZTDjR0iaMWp",
+    "youtubeProfile": "https://www.youtube.com/channel/UChqRQXhfwRHcv2YrGdiSxfw",
+    "officialImageSource": "https://www.instagram.com/thisl/",
+    "imageUrl": "assets/artists/thi-sl-verified-oct3.jpg",
+    "imagePosition": "center"
+  },
+  {
+    "name": "Swoope",
+    "aliases": [
+      "Swoope"
+    ],
+    "category": "legacy",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 223,
+    "sheetRosterOrder": 224,
+    "state": "",
+    "label": "",
+    "website": "https://www.instagram.com/mrswoope/",
+    "instagramProfile": "https://www.instagram.com/mrswoope/",
+    "spotifyProfile": "https://open.spotify.com/artist/78ZdtwvDD5zTElro6EGkcU",
+    "youtubeProfile": "https://www.youtube.com/mrswoope",
+    "officialImageSource": "https://www.instagram.com/mrswoope/",
+    "imageUrl": "assets/artists/swoope-verified-oct3.jpg",
+    "imagePosition": "center"
+  },
+  {
+    "name": "George.Rose",
+    "aliases": [
+      "George.Rose",
+      "George Rose"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 224,
+    "sheetRosterOrder": 227,
+    "state": "",
+    "label": "",
+    "website": "https://linktr.ee/george.rose.music",
+    "instagramProfile": "https://www.instagram.com/george.rose.music/",
+    "spotifyProfile": "https://open.spotify.com/artist/7AJE27ja4FObVGxuaC5mLr",
+    "youtubeProfile": "https://www.youtube.com/@George.Rose.Music.",
+    "officialImageSource": "https://www.instagram.com/george.rose.music/",
+    "imageUrl": "assets/artists/george-rose-verified-oct3.jpg",
+    "imagePosition": "center"
+  },
+  {
+    "name": "Xay Hill",
+    "aliases": [
+      "Xay Hill"
+    ],
+    "category": "core",
+    "monitoringPriority": 1,
+    "ticketmasterEnabled": true,
+    "textMatchEnabled": true,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 225,
+    "sheetRosterOrder": 230,
+    "state": "",
+    "label": "",
+    "website": "https://linktr.ee/Xayhill",
+    "instagramProfile": "https://www.instagram.com/_xayhill/",
+    "spotifyProfile": "https://open.spotify.com/artist/6e7kIHb5oTfOJY5IzLyzR6",
+    "youtubeProfile": "https://youtube.com/channel/UCH-Wq1UCu81QmF7QiXr0wOw",
+    "officialImageSource": "https://www.instagram.com/_xayhill/",
+    "imageUrl": "assets/artists/xay-hill-verified-oct3.jpg",
+    "imagePosition": "center"
+  },
+  {
+    "name": "R-Swift",
+    "aliases": [
+      "R-Swift",
+      "R Swift"
+    ],
+    "category": "legacy",
+    "monitoringPriority": 2,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": true,
+    "socialSearchEnabled": false,
+    "activeStatus": "active_or_unknown",
+    "rosterOrder": 226,
+    "sheetRosterOrder": 233,
+    "state": "",
+    "label": "",
+    "website": "https://linktr.ee/officialrswift",
+    "instagramProfile": "https://www.instagram.com/officialrswift/",
+    "spotifyProfile": "https://open.spotify.com/artist/7gZ8kNeMcOD0Fm4b9xyOLX",
+    "youtubeProfile": "https://music.youtube.com/channel/UCcjWPJgS54QtkFzGcoSlvdA",
+    "officialImageSource": "https://www.instagram.com/officialrswift/",
+    "imageUrl": "assets/artists/r-swift-verified-oct3.jpg",
+    "imagePosition": "center"
   }
 ]

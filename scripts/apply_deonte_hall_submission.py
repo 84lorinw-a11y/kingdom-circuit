@@ -67,6 +67,16 @@ VERIFIED_UPDATE: dict[str, Any] = {
     "preferArtistImage": True,
 }
 
+# Later owner review takes precedence over the original submission's row,
+# socials and remote portrait. Keep the event repair independent of those edits.
+_reviewed = next((row for row in json.loads(VERIFIED_UPDATES_FILE.read_text())
+                  if row.get("name", "").casefold() == ARTIST_NAME.casefold()), None)
+if _reviewed:
+    VERIFIED_UPDATE = dict(_reviewed)
+    SOURCE_ROSTER_ORDER = int(_reviewed["rosterOrder"])
+    ARTIST_RECORD.update(_reviewed)
+    ARTIST_RECORD["sourceRegistryRosterOrder"] = SOURCE_ROSTER_ORDER
+
 SUBMITTED_EVENT: dict[str, Any] = {
     "id": "submitted:deonte-hall-truth-in-action-battle-creek-2026",
     "title": "Truth in Action First Annual Gospel Music Concert",

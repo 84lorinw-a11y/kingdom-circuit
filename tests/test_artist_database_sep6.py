@@ -42,7 +42,7 @@ class ArtistDatabaseSeptember6Tests(unittest.TestCase):
         )
 
         roster_names = [item["name"] for item in self.artists]
-        self.assertEqual(source_names, roster_names[54:54 + len(source_names)])
+        self.assertEqual(source_names, [name for name in roster_names if name in set(source_names)])
 
     def test_verified_profiles_are_complete(self):
         artists = {artist["name"].casefold(): artist for artist in self.artists}

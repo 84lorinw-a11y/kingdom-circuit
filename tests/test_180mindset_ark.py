@@ -17,7 +17,7 @@ class MindsetArkTests(unittest.TestCase):
         self.assertEqual("https://open.spotify.com/artist/5TXulgcmXEBOWsKfTgkHIK", artist["officialImageSource"])
         self.assertEqual("assets/artists/180mindset-primary.jpg", artist["imageUrl"])
         self.assertTrue(artist["sourceRegistryVerified"])
-        self.assertEqual(177, artist["sourceRegistryRosterOrder"])
+        self.assertEqual(176, artist["sourceRegistryRosterOrder"])
         self.assertTrue(artist["preferArtistImage"])
 
     def test_180mindset_is_on_ark_of_worship(self):

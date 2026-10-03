@@ -23,30 +23,6 @@
     "softFail": true
   },
   {
-    "name": "Reach Records - 2819 Worship",
-    "url": "https://www.reachrecords.com/artists/2819-worship/",
-    "parser": "reach_records",
-    "enabled": true,
-    "artist": "2819 Worship",
-    "authority": "artist_label",
-    "priority": 86,
-    "imagePolicy": "ignore",
-    "musicConfirmed": true,
-    "softFail": true
-  },
-  {
-    "name": "Reach Records - Alexxander",
-    "url": "https://www.reachrecords.com/artists/alexxander/",
-    "parser": "reach_records",
-    "enabled": true,
-    "artist": "Alexxander",
-    "authority": "artist_label",
-    "priority": 86,
-    "imagePolicy": "ignore",
-    "musicConfirmed": true,
-    "softFail": true
-  },
-  {
     "name": "Reach Records - Anike",
     "url": "https://www.reachrecords.com/artists/wande/",
     "parser": "reach_records",
@@ -599,18 +575,6 @@
     "softFail": true
   },
   {
-    "name": "Byron Juane Bandsintown public calendar",
-    "url": "https://www.bandsintown.com/a/14690526-byron-juane",
-    "parser": "bandsintown_public",
-    "enabled": true,
-    "artist": "Byron Juane",
-    "authority": "artist_calendar",
-    "priority": 74,
-    "imagePolicy": "event_artwork",
-    "musicConfirmed": true,
-    "softFail": true
-  },
-  {
     "name": "Social Club Misfits Bandsintown public calendar",
     "url": "https://www.bandsintown.com/a/13345973-social-club-misfits",
     "parser": "bandsintown_public",
@@ -992,42 +956,6 @@
     "parser": "bandsintown_public",
     "enabled": true,
     "artist": "Yung Kriss",
-    "authority": "artist_calendar",
-    "priority": 72,
-    "imagePolicy": "artist",
-    "musicConfirmed": true,
-    "softFail": true
-  },
-  {
-    "name": "Paul Russell Bandsintown public calendar",
-    "url": "https://www.bandsintown.com/a/463417-paul-russell",
-    "parser": "bandsintown_public",
-    "enabled": true,
-    "artist": "Paul Russell",
-    "authority": "artist_calendar",
-    "priority": 72,
-    "imagePolicy": "artist",
-    "musicConfirmed": true,
-    "softFail": true
-  },
-  {
-    "name": "Funky Bandsintown public calendar",
-    "url": "https://www.bandsintown.com/a/4329-funky",
-    "parser": "bandsintown_public",
-    "enabled": true,
-    "artist": "Funky",
-    "authority": "artist_calendar",
-    "priority": 72,
-    "imagePolicy": "artist",
-    "musicConfirmed": true,
-    "softFail": true
-  },
-  {
-    "name": "Redimi2 Bandsintown public calendar",
-    "url": "https://www.bandsintown.com/a/371097-redimi2",
-    "parser": "bandsintown_public",
-    "enabled": true,
-    "artist": "Redimi2",
     "authority": "artist_calendar",
     "priority": 72,
     "imagePolicy": "artist",

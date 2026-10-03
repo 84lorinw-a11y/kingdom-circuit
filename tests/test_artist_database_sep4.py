@@ -43,7 +43,7 @@ class ArtistDatabaseSeptember4Tests(unittest.TestCase):
         self.assertEqual(source_names[start:start + len(UPDATED_NAMES)], UPDATED_NAMES)
 
         roster_names = [item["name"] for item in self.artists]
-        self.assertEqual(roster_names[54:54 + len(source_names)], source_names)
+        self.assertEqual([name for name in roster_names if name in set(source_names)], source_names)
 
     def test_tru_serva_verified_future_shows_are_present(self):
         if date.today() > date(2026, 10, 9):

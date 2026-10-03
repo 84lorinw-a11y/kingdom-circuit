@@ -201,6 +201,7 @@ def patch_artist_registry() -> None:
         for row in updates
     }
     for row in NEW_ARTISTS:
+        row = {**row, **reviewed.get(norm(row["name"]), {})}
         order = int(row["rosterOrder"])
         if order in occupied:
             raise SystemExit(

@@ -7,6 +7,7 @@ from copy import deepcopy
 from pathlib import Path
 
 import apply_sep11_catalog_audit as audit
+from owner_roster import approved, order_records
 
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
@@ -63,6 +64,9 @@ def excluded_tombstone(template: dict | None, roster_order: int) -> dict:
 
 
 def restore_exclusion_tombstone(before: list[dict]) -> None:
+    if not approved(BLOCKED):
+        save_artists(order_records(load_artists()))
+        return
     template = next((item for item in before if norm(item.get("name")) == BLOCKED), None)
     roster_order = int((template or {}).get("rosterOrder") or FALLBACK_ROSTER_ORDER)
     original_orders = {
@@ -131,12 +135,15 @@ def restore_turlock_verified_lineup() -> None:
 def verify_exclusion() -> None:
     artists = load_artists()
     matches = [item for item in artists if norm(item.get("name")) == BLOCKED]
-    if len(matches) != 1:
+    if not approved(BLOCKED):
+        if matches:
+            raise SystemExit("Owner-removed Madison profile was restored")
+    elif len(matches) != 1:
         raise SystemExit(f"Expected one Madison exclusion tombstone, found {len(matches)}")
-    item = matches[0]
+    item = matches[0] if matches else {}
     if item.get("enabled") or item.get("ticketmasterEnabled") or item.get("textMatchEnabled") or item.get("socialSearchEnabled"):
         raise SystemExit("Madison Ryann Ward is still enabled for automated tracking")
-    if not item.get("monitoringExcluded") or item.get("activeStatus") != "excluded":
+    if matches and (not item.get("monitoringExcluded") or item.get("activeStatus") != "excluded"):
         raise SystemExit("Madison Ryann Ward exclusion metadata is incomplete")
 
     for path in (audit.EVENTS_FILE, audit.SUPPLEMENTAL_FILE, audit.MANUAL_FILE):
@@ -181,7 +188,7 @@ def main() -> int:
     repair_verified_event_images()
     verify_exclusion()
     result["madisonActiveTracking"] = False
-    result["madisonTombstonePreserved"] = True
+    result["madisonTombstonePreserved"] = approved(BLOCKED)
     result["prunedPastGuardUpdated"] = PRUNED_PAST_EVENT_ID
     print(json.dumps(result, indent=2))
     print("September 11 catalog audit enforced with stable roster ordering")
