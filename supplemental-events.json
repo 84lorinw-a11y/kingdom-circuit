@@ -215,6 +215,44 @@
     "imageOverride": true
   },
   {
+    "id": "eventbrite:gracefest-lecrae-castaic-2026",
+    "title": "GRACEFEST 2026",
+    "startDate": "2026-09-19",
+    "startTime": "13:30",
+    "timezone": "America/Los_Angeles",
+    "venue": "Castaic Lake State Recreation Area",
+    "address": "Castaic Lake Drive",
+    "city": "Castaic",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Lecrae"
+    ],
+    "headliner": "Lecrae",
+    "eventType": "festival",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+    "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+    "image": "assets/events/gracefest-2026.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "price": "",
+    "sourceName": "Official Eventbrite listing",
+    "authority": "official_festival",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+        "type": "eventbrite",
+        "authority": "official_festival",
+        "priority": 104
+      }
+    ]
+  },
+  {
     "id": "eventbrite:hip-hop-in-the-park-cortland-2026",
     "title": "Hip Hop in the Park",
     "startDate": "2026-09-19",
@@ -251,44 +289,6 @@
         "type": "eventbrite",
         "authority": "venue_ticket",
         "priority": 94
-      }
-    ]
-  },
-  {
-    "id": "eventbrite:gracefest-lecrae-castaic-2026",
-    "title": "GRACEFEST 2026",
-    "startDate": "2026-09-19",
-    "startTime": "13:30",
-    "timezone": "America/Los_Angeles",
-    "venue": "Castaic Lake State Recreation Area",
-    "address": "Castaic Lake Drive",
-    "city": "Castaic",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "Lecrae"
-    ],
-    "headliner": "Lecrae",
-    "eventType": "festival",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-    "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-    "image": "assets/events/gracefest-2026.png",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "price": "",
-    "sourceName": "Official Eventbrite listing",
-    "authority": "official_festival",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Official Eventbrite listing",
-        "url": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-        "type": "eventbrite",
-        "authority": "official_festival",
-        "priority": 104
       }
     ]
   },
@@ -597,8 +597,7 @@
     "imagePosition": "center",
     "imageOverride": true,
     "imageSource": "Owner-supplied GMAF26 Good Music & Arts Festival flyer featuring 1K Phew",
-    "imageSourceUrl": "https://www.instagram.com/p/DdwKo8HTkZw/",
-    "detailImageLayout": "landscape"
+    "imageSourceUrl": "https://www.instagram.com/p/DdwKo8HTkZw/"
   },
   {
     "title": "Future Legacy Hip-Hop Showcase",
@@ -697,7 +696,7 @@
   },
   {
     "id": "bandsintown:1040305060",
-    "title": "57th Annual GMA Dove Awards — featuring Hulvey",
+    "title": "Hulvey at Bridgestone Arena",
     "startDate": "2026-10-06",
     "startTime": "18:30",
     "timezone": "",
@@ -737,10 +736,7 @@
     "imageOverride": true,
     "imageSource": "Bridgestone Arena official 57th Annual GMA Dove Awards artwork",
     "imageSourceUrl": "https://www.bridgestonearena.com/events/detail/57th-annual-gma-dove-awards",
-    "auditVerified": "2026-09-26",
-    "legacyEventPaths": [
-      "/event/hulvey-at-bridgestone-arena-2026-10-06-nashville-090597/"
-    ]
+    "auditVerified": "2026-09-26"
   },
   {
     "title": "Live Loud",
@@ -1046,6 +1042,44 @@
     "endTime": "14:30"
   },
   {
+    "id": "bandsintown:1039415097",
+    "title": "Nehemiah at Underground Music Venue",
+    "startDate": "2026-10-10",
+    "startTime": "11:00",
+    "timezone": "",
+    "venue": "Underground Music Venue",
+    "address": "408 3rd Ave N",
+    "city": "Minneapolis",
+    "state": "MN",
+    "country": "US",
+    "artists": [
+      "Nehemiah"
+    ],
+    "headliner": "Nehemiah",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/1039415097?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/1039415097?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/nehemiah-approved-oct2.jpg",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/1039415097?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "1039415097",
+    "bandsintownArtistId": "15347266",
+    "bandsintownResolvedName": "Nehemiah",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Nehemiah"
+  },
+  {
     "id": "eventbrite:reign-volume-one-aasha-marie-brooklyn-2026",
     "title": "REIGN volume one",
     "startDate": "2026-10-10",
@@ -1229,6 +1263,85 @@
     "imageSourceUrl": "https://ugc.production.linktr.ee/1c7876eb-77d1-4a43-a2db-def6b24563ac_1000010882.jpeg"
   },
   {
+    "title": "Mission and Special Guests",
+    "startDate": "2026-10-17",
+    "startTime": "18:30",
+    "timezone": "America/Los_Angeles",
+    "venue": "Victory Outreach South Sacramento",
+    "address": "6831 Savings Pl",
+    "city": "Sacramento",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Mission"
+    ],
+    "headliner": "Mission",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
+    "officialUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
+    "image": "assets/events/mission-sacramento-2026-10-17.jpg",
+    "price": "",
+    "sourceName": "Mission official Bandsintown event",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Mission official Bandsintown event",
+        "url": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 112
+      }
+    ],
+    "auditVerified": "2026-09-11",
+    "id": "mission-friends-sacramento-2026",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Mission official October 17 concert flyer",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento"
+  },
+  {
+    "id": "bandsintown:1040469553",
+    "title": "Nehemiah at 2106 Lithia Pinecrest Rd",
+    "startDate": "2026-10-17",
+    "startTime": "18:00",
+    "timezone": "",
+    "venue": "2106 Lithia Pinecrest Rd",
+    "address": "2106 Lithia Pinecrest Road",
+    "city": "Valrico Manor",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Nehemiah"
+    ],
+    "headliner": "Nehemiah",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/1040469553?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/1040469553?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/nehemiah-approved-oct2.jpg",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/1040469553?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "1040469553",
+    "bandsintownArtistId": "15347266",
+    "bandsintownResolvedName": "Nehemiah",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Nehemiah"
+  },
+  {
     "id": "supplemental:brenno-overflow-conference-2026",
     "title": "Overflow Conference",
     "startDate": "2026-10-17",
@@ -1277,47 +1390,6 @@
     "imageOverride": true,
     "imageSource": "Ablaze Movement / Overflow Conference official poster selected by owner",
     "imageSourceUrl": "https://www.instagram.com/p/DdY_W7gOtg8/"
-  },
-  {
-    "title": "Mission and Special Guests",
-    "startDate": "2026-10-17",
-    "startTime": "18:30",
-    "timezone": "America/Los_Angeles",
-    "venue": "Victory Outreach South Sacramento",
-    "address": "6831 Savings Pl",
-    "city": "Sacramento",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "Mission"
-    ],
-    "headliner": "Mission",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
-    "officialUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
-    "image": "assets/events/mission-sacramento-2026-10-17.jpg",
-    "price": "",
-    "sourceName": "Mission official Bandsintown event",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Mission official Bandsintown event",
-        "url": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-11",
-    "id": "mission-friends-sacramento-2026",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Mission official October 17 concert flyer",
-    "imageSourceUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento"
   },
   {
     "id": "bandsintown:108902772",
@@ -1500,6 +1572,57 @@
     "notes": "MAYIA's official calendar confirms her 4:00 PM appearance at the Songs That Speak Conference."
   },
   {
+    "id": "bandsintown:108144023",
+    "title": "GODLY AMBITION TOUR — HOUSTON, TX",
+    "startDate": "2026-10-24",
+    "startTime": "18:00",
+    "timezone": "",
+    "venue": "GODLY AMBITION TOUR — HOUSTON, TX",
+    "address": "1204 Caroline St",
+    "city": "Houston",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Ruslan"
+    ],
+    "headliner": "Ruslan",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
+    "officialUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
+    "image": "assets/events/ruslan-ticketmaster-2026.jpg",
+    "price": "",
+    "sourceName": "Ticketmaster",
+    "sources": [
+      {
+        "name": "Ticketmaster",
+        "url": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
+      },
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/108144023?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "108144023",
+    "bandsintownArtistId": "602133",
+    "bandsintownResolvedName": "RUSLAN",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Ruslan",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Ticketmaster official Ruslan photo",
+    "imageSourceUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
+    "authority": "venue_ticket"
+  },
+  {
     "id": "mike-teezy-hrvstland-festival-2026",
     "title": "HRVSTLAND Festival 2026",
     "startDate": "2026-10-24",
@@ -1630,57 +1753,6 @@
       "DJ PARTYwithParks"
     ],
     "startDateTime": "2026-10-24T16:00:00-04:00"
-  },
-  {
-    "id": "bandsintown:108144023",
-    "title": "GODLY AMBITION TOUR — HOUSTON, TX",
-    "startDate": "2026-10-24",
-    "startTime": "18:00",
-    "timezone": "",
-    "venue": "GODLY AMBITION TOUR — HOUSTON, TX",
-    "address": "1204 Caroline St",
-    "city": "Houston",
-    "state": "TX",
-    "country": "US",
-    "artists": [
-      "Ruslan"
-    ],
-    "headliner": "Ruslan",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
-    "officialUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
-    "image": "assets/events/ruslan-ticketmaster-2026.jpg",
-    "price": "",
-    "sourceName": "Ticketmaster",
-    "sources": [
-      {
-        "name": "Ticketmaster",
-        "url": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 100
-      },
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/108144023?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "108144023",
-    "bandsintownArtistId": "602133",
-    "bandsintownResolvedName": "RUSLAN",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Ruslan",
-    "imageType": "artist",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Ticketmaster official Ruslan photo",
-    "imageSourceUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
-    "authority": "venue_ticket"
   },
   {
     "id": "sevin-live-nashville-2026-10-24",
@@ -1949,44 +2021,6 @@
     "imageSourceUrl": "https://www.ticketweb.com/event/kickstand-productions-presents-zauntee-god-the-loving-touch-tickets/14259604?pl=lovingtouch"
   },
   {
-    "id": "bandsintown:1040178082",
-    "title": "Jon Keith at Word of Faith International Christian Center",
-    "startDate": "2026-10-30",
-    "startTime": "18:30",
-    "timezone": "",
-    "venue": "Word of Faith International Christian Center",
-    "address": "20000 W Nine Mile Rd",
-    "city": "Southfield",
-    "state": "MI",
-    "country": "US",
-    "artists": [
-      "Jon Keith"
-    ],
-    "headliner": "Jon Keith",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/1040178082?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "officialUrl": "https://www.bandsintown.com/e/1040178082?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "https://is1-ssl.mzstatic.com/image/thumb/Video211/v4/71/0c/9c/710c9c39-3dc7-0be5-a593-ab0ffc2fa618/Jobd846f8ea-4135-4580-8d0d-ed8f3cbb1f2a-190112036-PreviewImage_Preview_Image_Intermediate_nonvideo_372260380_2119658910-Time1744403657806.png/1200x675mv.webp",
-    "price": "",
-    "sourceName": "Bandsintown",
-    "sources": [
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/1040178082?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "1040178082",
-    "bandsintownArtistId": "12604065",
-    "bandsintownResolvedName": "Jon Keith",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Jon Keith"
-  },
-  {
     "id": "bandsintown:108945796",
     "title": "JIMMY ROCK at The Cathedral",
     "startDate": "2026-10-30",
@@ -2037,6 +2071,82 @@
     "imageSourceUrl": "https://www.eventbrite.com/e/the-cathedral-presents-jimmy-rock-tickets-2002084741356",
     "authority": "venue_ticket",
     "detailImageLayout": "landscape"
+  },
+  {
+    "id": "bandsintown:1040178082",
+    "title": "Jon Keith at Word of Faith International Christian Center",
+    "startDate": "2026-10-30",
+    "startTime": "18:30",
+    "timezone": "",
+    "venue": "Word of Faith International Christian Center",
+    "address": "20000 W Nine Mile Rd",
+    "city": "Southfield",
+    "state": "MI",
+    "country": "US",
+    "artists": [
+      "Jon Keith"
+    ],
+    "headliner": "Jon Keith",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/1040178082?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.bandsintown.com/e/1040178082?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/jon-keith-saved.webp",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/1040178082?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "1040178082",
+    "bandsintownArtistId": "12604065",
+    "bandsintownResolvedName": "Jon Keith",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Jon Keith"
+  },
+  {
+    "id": "bandsintown:1039685355",
+    "title": "Nehemiah at The WC Social Club",
+    "startDate": "2026-10-31",
+    "startTime": "16:00",
+    "timezone": "",
+    "venue": "The WC Social Club",
+    "address": "920 Roosevelt Rd",
+    "city": "West Chicago",
+    "state": "IL",
+    "country": "US",
+    "artists": [
+      "Nehemiah"
+    ],
+    "headliner": "Nehemiah",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/1039685355?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/1039685355?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/nehemiah-approved-oct2.jpg",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/1039685355?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "1039685355",
+    "bandsintownArtistId": "15347266",
+    "bandsintownResolvedName": "Nehemiah",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Nehemiah"
   },
   {
     "id": "supplemental:skema-boy-2026-11-01-new-york-ny",
@@ -2197,7 +2307,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.bandsintown.com/t/108881783?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
     "officialUrl": "https://www.bandsintown.com/e/108881783?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/hulvey.webp",
+    "image": "assets/artists/hulvey-saved.webp",
     "price": "",
     "sourceName": "Bandsintown",
     "sources": [
@@ -2504,182 +2614,6 @@
     "imageSourceUrl": "https://www.bandsintown.com/e/108659684-skema-boy-at-subterranean"
   },
   {
-    "id": "bandsintown:1040314202",
-    "title": "Pastor Mike Jr. at WL Jack Howard Theatre",
-    "startDate": "2026-11-14",
-    "startTime": "15:00",
-    "timezone": "",
-    "venue": "WL Jack Howard Theatre",
-    "address": "401 Lea Joyner Memorial Expressway",
-    "city": "Monroe",
-    "state": "LA",
-    "country": "US",
-    "artists": [
-      "Pastor Mike Jr."
-    ],
-    "headliner": "Pastor Mike Jr.",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
-    "officialUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
-    "image": "assets/events/pastor-mike-monroe-2026-11-14.jpg",
-    "price": "",
-    "sourceName": "Ticketmaster / W L Jack Howard Theatre",
-    "sources": [
-      {
-        "name": "Ticketmaster / W L Jack Howard Theatre",
-        "url": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 115
-      },
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/1040314202?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "1040314202",
-    "bandsintownArtistId": "15540358",
-    "bandsintownResolvedName": "Pastor Mike Jr.",
-    "bandsintownIdentity": "configured_id",
-    "trackedArtist": "Pastor Mike Jr.",
-    "authority": "venue_ticket",
-    "auditVerified": "2026-09-26",
-    "imageType": "artist",
-    "imageSource": "Ticketmaster Pastor Mike Jr. promotional photo selected by owner",
-    "imageSourceUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
-    "imagePosition": "center",
-    "imageOverride": true
-  },
-  {
-    "id": "ty-brasel-outlandish-fest-fort-worth-2026",
-    "title": "Outlandish Fest 2026",
-    "startDate": "2026-11-14",
-    "startTime": "18:00",
-    "endTime": "23:00",
-    "timezone": "America/Chicago",
-    "venue": "The Rail",
-    "address": "3101 Joyce Dr",
-    "city": "Fort Worth",
-    "state": "TX",
-    "country": "US",
-    "artists": [
-      "Ty Brasel"
-    ],
-    "headliner": "Ty Brasel",
-    "eventType": "festival",
-    "status": "scheduled",
-    "ticketUrl": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
-    "officialUrl": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
-    "image": "assets/events/outlandish-fest-2026-lineup.png",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "price": "",
-    "sourceName": "Outlandish Fest official ticket page and Ty Brasel artist calendar",
-    "authority": "official_festival",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Outlandish Fest official full-lineup poster",
-        "url": "https://www.outlandishlive.org/lineup",
-        "type": "manual_verified",
-        "authority": "official_festival",
-        "priority": 115
-      },
-      {
-        "name": "Outlandish Fest official ticket page",
-        "url": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
-        "type": "manual_verified",
-        "authority": "official_festival",
-        "priority": 112
-      },
-      {
-        "name": "Ty Brasel official artist calendar",
-        "url": "https://www.bandsintown.com/e/108912956-ty-brasel-at-the-rail",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ],
-    "auditVerified": "2026-09-27",
-    "notes": "Owner selected this twelve-name public lineup on September 27: DJ Bryce G (The Joyful Noize), Ty Brasel, Starringo, Adrion Butler, Garko, A3, YOF, The Curb Experience, Dason*, Tuvi, Epho and Jxdy. Ty Brasel retains the existing curated artist association. Preserve the approved flyer, November 14 6–11 PM event window, venue, identity and discovery age.",
-    "imageSource": "Official Outlandish Fest November 14 lineup poster",
-    "imageSourceUrl": "https://www.outlandishlive.org/lineup",
-    "advertisedBilling": [
-      "DJ Bryce G (The Joyful Noize)",
-      "Ty Brasel",
-      "Starringo",
-      "Adrion Butler",
-      "Garko",
-      "A3",
-      "YOF",
-      "The Curb Experience",
-      "Dason*",
-      "Tuvi",
-      "Epho",
-      "Jxdy"
-    ],
-    "officialBill": [
-      "DJ Bryce G (The Joyful Noize)",
-      "Ty Brasel",
-      "Starringo",
-      "Adrion Butler",
-      "Garko",
-      "A3",
-      "YOF",
-      "The Curb Experience",
-      "Dason*",
-      "Tuvi",
-      "Epho",
-      "Jxdy"
-    ]
-  },
-  {
-    "title": "The Kickback",
-    "startDate": "2026-11-14",
-    "startTime": "19:00",
-    "timezone": "America/Chicago",
-    "venue": "2305 SE 14th St",
-    "address": "2305 SE 14th St",
-    "city": "Grand Prairie",
-    "state": "TX",
-    "country": "US",
-    "artists": [
-      "CJ Emulous"
-    ],
-    "headliner": "CJ Emulous",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-    "officialUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-    "image": "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
-    "price": "",
-    "sourceName": "CJ Emulous official calendar",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "CJ Emulous official calendar",
-        "url": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-11",
-    "id": "cj-emulous-kickback-grand-prairie-2026",
-    "imageType": "artist",
-    "imagePosition": "center",
-    "imageOverride": true
-  },
-  {
     "id": "bandsintown:1040378722",
     "title": "Miles Minnick — GLOVEMBER",
     "startDate": "2026-11-14",
@@ -2774,6 +2708,182 @@
     "imageOverride": true,
     "imageSource": "Miles Minnick and CJ Emulous official GLOVEMBER Instagram flyer",
     "imageSourceUrl": "https://www.instagram.com/p/Ddo8xGgoQhN/"
+  },
+  {
+    "id": "ty-brasel-outlandish-fest-fort-worth-2026",
+    "title": "Outlandish Fest 2026",
+    "startDate": "2026-11-14",
+    "startTime": "18:00",
+    "endTime": "23:00",
+    "timezone": "America/Chicago",
+    "venue": "The Rail",
+    "address": "3101 Joyce Dr",
+    "city": "Fort Worth",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Ty Brasel"
+    ],
+    "headliner": "Ty Brasel",
+    "eventType": "festival",
+    "status": "scheduled",
+    "ticketUrl": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
+    "officialUrl": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
+    "image": "assets/events/outlandish-fest-2026-lineup.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "price": "",
+    "sourceName": "Outlandish Fest official ticket page and Ty Brasel artist calendar",
+    "authority": "official_festival",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Outlandish Fest official full-lineup poster",
+        "url": "https://www.outlandishlive.org/lineup",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 115
+      },
+      {
+        "name": "Outlandish Fest official ticket page",
+        "url": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 112
+      },
+      {
+        "name": "Ty Brasel official artist calendar",
+        "url": "https://www.bandsintown.com/e/108912956-ty-brasel-at-the-rail",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ],
+    "auditVerified": "2026-09-27",
+    "notes": "Owner selected this twelve-name public lineup on September 27: DJ Bryce G (The Joyful Noize), Ty Brasel, Starringo, Adrion Butler, Garko, A3, YOF, The Curb Experience, Dason*, Tuvi, Epho and Jxdy. Ty Brasel retains the existing curated artist association. Preserve the approved flyer, November 14 6–11 PM event window, venue, identity and discovery age.",
+    "imageSource": "Official Outlandish Fest November 14 lineup poster",
+    "imageSourceUrl": "https://www.outlandishlive.org/lineup",
+    "advertisedBilling": [
+      "DJ Bryce G (The Joyful Noize)",
+      "Ty Brasel",
+      "Starringo",
+      "Adrion Butler",
+      "Garko",
+      "A3",
+      "YOF",
+      "The Curb Experience",
+      "Dason*",
+      "Tuvi",
+      "Epho",
+      "Jxdy"
+    ],
+    "officialBill": [
+      "DJ Bryce G (The Joyful Noize)",
+      "Ty Brasel",
+      "Starringo",
+      "Adrion Butler",
+      "Garko",
+      "A3",
+      "YOF",
+      "The Curb Experience",
+      "Dason*",
+      "Tuvi",
+      "Epho",
+      "Jxdy"
+    ]
+  },
+  {
+    "id": "bandsintown:1040314202",
+    "title": "Pastor Mike Jr. at WL Jack Howard Theatre",
+    "startDate": "2026-11-14",
+    "startTime": "15:00",
+    "timezone": "",
+    "venue": "WL Jack Howard Theatre",
+    "address": "401 Lea Joyner Memorial Expressway",
+    "city": "Monroe",
+    "state": "LA",
+    "country": "US",
+    "artists": [
+      "Pastor Mike Jr."
+    ],
+    "headliner": "Pastor Mike Jr.",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
+    "officialUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
+    "image": "assets/events/pastor-mike-monroe-2026-11-14.jpg",
+    "price": "",
+    "sourceName": "Ticketmaster / W L Jack Howard Theatre",
+    "sources": [
+      {
+        "name": "Ticketmaster / W L Jack Howard Theatre",
+        "url": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 115
+      },
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/1040314202?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "1040314202",
+    "bandsintownArtistId": "15540358",
+    "bandsintownResolvedName": "Pastor Mike Jr.",
+    "bandsintownIdentity": "configured_id",
+    "trackedArtist": "Pastor Mike Jr.",
+    "authority": "venue_ticket",
+    "auditVerified": "2026-09-26",
+    "imageType": "artist",
+    "imageSource": "Ticketmaster Pastor Mike Jr. promotional photo selected by owner",
+    "imageSourceUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
+    "imagePosition": "center",
+    "imageOverride": true
+  },
+  {
+    "title": "The Kickback",
+    "startDate": "2026-11-14",
+    "startTime": "19:00",
+    "timezone": "America/Chicago",
+    "venue": "2305 SE 14th St",
+    "address": "2305 SE 14th St",
+    "city": "Grand Prairie",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "CJ Emulous"
+    ],
+    "headliner": "CJ Emulous",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
+    "officialUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
+    "image": "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
+    "price": "",
+    "sourceName": "CJ Emulous official calendar",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "CJ Emulous official calendar",
+        "url": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 112
+      }
+    ],
+    "auditVerified": "2026-09-11",
+    "id": "cj-emulous-kickback-grand-prairie-2026",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": true
   },
   {
     "id": "supplemental:skema-boy-2026-11-16-dallas-tx",
@@ -2872,6 +2982,44 @@
     "imageOverride": true,
     "imageSource": "Official TicketWeb city-specific concert poster",
     "imageSourceUrl": "https://www.ticketweb.com/event/zauntee-god-remembers-tour-valley-bar-tickets/14252734"
+  },
+  {
+    "id": "bandsintown:1040423543",
+    "title": "Alex Jean at The Studio at the Factory",
+    "startDate": "2026-11-19",
+    "startTime": "20:00",
+    "timezone": "",
+    "venue": "The Studio at the Factory",
+    "address": "2727 Canton St",
+    "city": "Dallas",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Alex Jean"
+    ],
+    "headliner": "Alex Jean",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/1040423543?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/1040423543?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/alex-jean-saved.webp",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/1040423543?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "1040423543",
+    "bandsintownArtistId": "15570394",
+    "bandsintownResolvedName": "Alex Jean",
+    "bandsintownIdentity": "configured_id",
+    "trackedArtist": "Alex Jean"
   },
   {
     "id": "bandsintown:1040462022",
@@ -3059,9 +3207,9 @@
     "id": "bandsintown:108975912",
     "title": "The Welcome Home Tour - Atlanta",
     "startDate": "2026-11-29",
-    "startTime": "19:00",
-    "timezone": "America/New_York",
-    "venue": "Variety Playhouse",
+    "startTime": "18:00",
+    "timezone": "",
+    "venue": "The Welcome Home Tour - Atlanta",
     "address": "1099 Euclid Ave NE",
     "city": "Atlanta",
     "state": "GA",
@@ -3072,26 +3220,12 @@
     "headliner": "Alex Jean",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.axs.com/events/1634213/alex-jean-tickets",
-    "officialUrl": "https://www.axs.com/events/1634213/alex-jean-tickets",
+    "ticketUrl": "https://www.bandsintown.com/t/108975912?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/108975912?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
     "image": "assets/events/alex-jean-welcome-home-tour-2026.png",
     "price": "",
     "sourceName": "Bandsintown",
     "sources": [
-      {
-        "name": "AXS / Variety Playhouse",
-        "url": "https://www.axs.com/events/1634213/alex-jean-tickets",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Alex Jean official tour calendar",
-        "url": "https://alexjeantour.com/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
       {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/108975912?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
@@ -3111,17 +3245,14 @@
     "imageOverride": true,
     "imageSource": "Alex Jean official Welcome Home Tour Leg 1 flyer",
     "imageSourceUrl": "https://alexjeantour.com/",
-    "auditVerified": "2026-10-02",
-    "startDateTime": "2026-11-29T19:00:00-05:00",
-    "doorsTime": "18:00",
-    "notes": "AXS confirms Variety Playhouse, 7 PM concert and 6 PM doors; replaces the generic tour-name venue and incorrect 6 PM start."
+    "auditVerified": "2026-10-02"
   },
   {
     "id": "bandsintown:108976155",
     "title": "Alex Jean at The Pyrle",
     "startDate": "2026-12-01",
     "startTime": "20:00",
-    "timezone": "America/New_York",
+    "timezone": "",
     "venue": "The Pyrle",
     "address": "232 S Elm St",
     "city": "Greensboro",
@@ -3133,26 +3264,12 @@
     "headliner": "Alex Jean",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.tixr.com/groups/thepyrle/events/alex-jean-209045",
-    "officialUrl": "https://www.tixr.com/groups/thepyrle/events/alex-jean-209045",
+    "ticketUrl": "https://www.bandsintown.com/t/108976155?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/108976155?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
     "image": "assets/events/alex-jean-welcome-home-tour-2026.png",
     "price": "",
     "sourceName": "Bandsintown",
     "sources": [
-      {
-        "name": "The Pyrle official tickets",
-        "url": "https://www.tixr.com/groups/thepyrle/events/alex-jean-209045",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Alex Jean official tour calendar",
-        "url": "https://alexjeantour.com/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
       {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/108976155?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
@@ -3172,9 +3289,7 @@
     "imageOverride": true,
     "imageSource": "Alex Jean official Welcome Home Tour Leg 1 flyer",
     "imageSourceUrl": "https://alexjeantour.com/",
-    "auditVerified": "2026-10-02",
-    "startDateTime": "2026-12-01T20:00:00-05:00",
-    "doorsTime": "19:00"
+    "auditVerified": "2026-10-02"
   },
   {
     "title": "Miles Minnick & CJ Emulous at Zion Ultra Lounge",
@@ -3216,6 +3331,196 @@
     "imagePosition": "center",
     "imageOverride": true,
     "notes": "CJ Emulous's official calendar confirms Miles Minnick and CJ Emulous at Zion Ultra Lounge on December 5, 2026 at 7:00 PM."
+  },
+  {
+    "id": "bandsintown:108952483",
+    "title": "Nehemiah at Empire Underground",
+    "startDate": "2026-12-09",
+    "startTime": "18:30",
+    "timezone": "",
+    "venue": "Empire Underground",
+    "address": "Suite 2 93 N Pearl St",
+    "city": "Albany",
+    "state": "NY",
+    "country": "US",
+    "artists": [
+      "Nehemiah"
+    ],
+    "headliner": "Nehemiah",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108952483?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/108952483?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/nehemiah-approved-oct2.jpg",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/108952483?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "108952483",
+    "bandsintownArtistId": "15347266",
+    "bandsintownResolvedName": "Nehemiah",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Nehemiah"
+  },
+  {
+    "id": "bandsintown:108952489",
+    "title": "Nehemiah at Palladium",
+    "startDate": "2026-12-10",
+    "startTime": "18:00",
+    "timezone": "",
+    "venue": "Palladium",
+    "address": "261 Main St",
+    "city": "Worcester",
+    "state": "MA",
+    "country": "US",
+    "artists": [
+      "Nehemiah"
+    ],
+    "headliner": "Nehemiah",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108952489?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/108952489?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/nehemiah-approved-oct2.jpg",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/108952489?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "108952489",
+    "bandsintownArtistId": "15347266",
+    "bandsintownResolvedName": "Nehemiah",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Nehemiah"
+  },
+  {
+    "id": "bandsintown:1040377145",
+    "title": "Nehemiah at Saint Vitus",
+    "startDate": "2026-12-11",
+    "startTime": "18:00",
+    "timezone": "",
+    "venue": "Saint Vitus",
+    "address": "428 Troutman Street",
+    "city": "Brooklyn",
+    "state": "NY",
+    "country": "US",
+    "artists": [
+      "Nehemiah"
+    ],
+    "headliner": "Nehemiah",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/1040377145?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/1040377145?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/nehemiah-approved-oct2.jpg",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/1040377145?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "1040377145",
+    "bandsintownArtistId": "15347266",
+    "bandsintownResolvedName": "Nehemiah",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Nehemiah"
+  },
+  {
+    "id": "bandsintown:108952495",
+    "title": "Nehemiah at Phantom Power",
+    "startDate": "2026-12-12",
+    "startTime": "18:00",
+    "timezone": "",
+    "venue": "Phantom Power",
+    "address": "121 W Frederick St",
+    "city": "Millersville",
+    "state": "PA",
+    "country": "US",
+    "artists": [
+      "Nehemiah"
+    ],
+    "headliner": "Nehemiah",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108952495?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/108952495?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/nehemiah-approved-oct2.jpg",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/108952495?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "108952495",
+    "bandsintownArtistId": "15347266",
+    "bandsintownResolvedName": "Nehemiah",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Nehemiah"
+  },
+  {
+    "id": "bandsintown:108952501",
+    "title": "Nehemiah at The Atlantis",
+    "startDate": "2026-12-13",
+    "startTime": "18:00",
+    "timezone": "",
+    "venue": "The Atlantis",
+    "address": "2047 9th St NW",
+    "city": "Washington",
+    "state": "DC",
+    "country": "US",
+    "artists": [
+      "Nehemiah"
+    ],
+    "headliner": "Nehemiah",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108952501?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.bandsintown.com/e/108952501?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/nehemiah-approved-oct2.jpg",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/108952501?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "108952501",
+    "bandsintownArtistId": "15347266",
+    "bandsintownResolvedName": "Nehemiah",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Nehemiah"
   },
   {
     "id": "bandsintown:1037809090",
