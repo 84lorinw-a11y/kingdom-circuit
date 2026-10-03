@@ -3934,40 +3934,48 @@
     "notes": "DJ Winn official November 1 flyer gives 4–7 PM and the address but no formal venue name. The address is used without inventing one. Trell Donk Webb is a speaker, not a musical performer; uncurated performers remain unlinked."
   },
   {
-    "title": "Miles Minnick at Black Box Media Miami",
-    "startDate": "2026-11-05",
-    "startTime": "18:30",
+    "id": "flavor-fest-2026-friday-concerts",
+    "title": "Flavor Fest 2026 — Friday Concerts",
+    "startDate": "2026-11-06",
+    "startTime": "19:00",
     "timezone": "America/New_York",
-    "venue": "Black Box Media Miami",
-    "address": "12355 NE 13th Ave Unit #403-404",
-    "city": "North Miami",
+    "venue": "Crossover Church",
+    "address": "1235 E Fowler Ave",
+    "city": "Tampa",
     "state": "FL",
     "country": "US",
     "artists": [
       "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
+      "Yung Kriss",
+      "Datin",
+      "Lyric The Geenyus",
+      "TRU-SERVA",
+      "MAYIA",
+      "Dre Skywalker",
+      "VVS Big Rock",
       "Eli Williams"
     ],
     "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108940329",
-    "officialUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
-    "image": "assets/artists/miles-minnick.webp",
-    "imageType": "artist",
+    "eventType": "festival",
+    "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
+    "officialUrl": "https://www.flavorfest.org/schedule",
+    "image": "assets/events/flavor-fest-friday-2026.webp",
+    "imageType": "event_artwork",
     "imagePosition": "center",
+    "imageOverride": true,
+    "price": "",
+    "status": "scheduled",
     "lineupExplicit": true,
-    "advertisedBilling": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "sourceName": "Bandsintown verified event listing",
+    "authority": "official_event",
+    "sourceName": "Flavor Fest official 2026 schedule",
     "sources": [
+      {
+        "name": "Flavor Fest current Friday concert poster",
+        "url": "https://www.flavorfest.org/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
       {
         "name": "Eli Williams official performance announcement",
         "url": "https://www.instagram.com/eliwilliamssss/p/DdmMA0JOH4q/",
@@ -3976,81 +3984,76 @@
         "priority": 115
       },
       {
-        "name": "Bandsintown verified event listing",
-        "url": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 94
-      },
-      {
-        "name": "CJ Emulous official tour calendar",
-        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-23",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 88
-      }
-    ],
-    "notes": " Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates.",
-    "auditVerified": "2026-09-23",
-    "officialBill": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "id": "miles-minnick-black-box-north-miami-2026-11-05"
-  },
-  {
-    "id": "flavor-fest-2026-friday-concerts",
-    "title": "Flavor Fest 2026 — Friday Concerts",
-    "startDate": "2026-11-06",
-    "startTime": "19:00",
-    "timezone": "America/New_York",
-    "venue": "Crossover Church",
-    "address": "1235 Fowler Ave",
-    "city": "Tampa",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Gifted Hands",
-      "Datin",
-      "TRU-SERVA",
-      "VVS Big Rock",
-      "Lyric The Geenyus",
-      "MAYIA"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "festival",
-    "status": "scheduled",
-    "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
-    "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/a2407af7-a012-4df1-8d42-d247ab82cd8b/FF26-Promo-Friday-Night%2B%281%29.jpg",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "price": "",
-    "sourceName": "Flavor Fest official 2026 schedule",
-    "authority": "official_event",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
         "name": "Flavor Fest official 2026 schedule",
         "url": "https://www.flavorfest.org/schedule",
         "type": "manual_verified",
         "authority": "official_event",
         "priority": 112
-      },
-      {
-        "name": "Flavor Fest official Friday poster",
-        "url": "https://www.flavorfest.org/",
-        "type": "manual_verified",
-        "authority": "official_festival",
-        "priority": 106
       }
     ],
-    "auditVerified": "2026-09-11"
+    "confidence": "high",
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Yung Kriss",
+      "TH3 Saga",
+      "Datin",
+      "Lyric The Geenyus",
+      "Princess Tayy",
+      "4KL",
+      "Truth Soldier",
+      "Zeke",
+      "TRU-SERVA",
+      "Joshua Penn",
+      "Leon",
+      "Tyler Errae",
+      "Yvonne Sigars",
+      "Songbird SB",
+      "Louis Self",
+      "MAYIA",
+      "Adji Merveille",
+      "Way",
+      "King Jamezzz",
+      "Dre Skywalker",
+      "Jaybez",
+      "B.E.R.I.D.O.X",
+      "DiE$eL-E",
+      "TVNK",
+      "VVS Big Rock",
+      "Jailynn",
+      "Eli Williams"
+    ],
+    "officialBill": [
+      "Miles Minnick",
+      "Yung Kriss",
+      "TH3 Saga",
+      "Datin",
+      "Lyric The Geenyus",
+      "Princess Tayy",
+      "4KL",
+      "Truth Soldier",
+      "Zeke",
+      "TRU-SERVA",
+      "Joshua Penn",
+      "Leon",
+      "Tyler Errae",
+      "Yvonne Sigars",
+      "Songbird SB",
+      "Louis Self",
+      "MAYIA",
+      "Adji Merveille",
+      "Way",
+      "King Jamezzz",
+      "Dre Skywalker",
+      "Jaybez",
+      "B.E.R.I.D.O.X",
+      "DiE$eL-E",
+      "TVNK",
+      "VVS Big Rock",
+      "Jailynn",
+      "Eli Williams"
+    ],
+    "auditVerified": "2026-09-26",
+    "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown. Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates."
   },
   {
     "title": "Flavor Fest 2026 — Saturday Concerts",
@@ -4140,145 +4143,6 @@
       "Monster Tarver",
       "C4 Crotona"
     ]
-  },
-  {
-    "title": "Miles Minnick – Christlike University – Florida Campus Tour in Jacksonville",
-    "startDate": "2026-11-07",
-    "startTime": "19:00",
-    "timezone": "America/New_York",
-    "venue": "The Albatross",
-    "venueAliases": [
-      "Underbelly"
-    ],
-    "address": "113 E Bay St",
-    "city": "Jacksonville",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
-    "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
-    "image": "assets/artists/miles-minnick.webp",
-    "imageType": "artist",
-    "imagePosition": "center",
-    "lineupExplicit": true,
-    "advertisedBilling": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "sourceName": "Live Nation official event listing",
-    "sources": [
-      {
-        "name": "Live Nation official event listing",
-        "url": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      },
-      {
-        "name": "Bandsintown verified lineup",
-        "url": "https://www.bandsintown.com/e/108940352-miles-minnick-at-the-albatross",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 94
-      }
-    ],
-    "supersededSources": [
-      {
-        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-25",
-        "publishedDate": "2026-11-07",
-        "publishedCity": "Tampa",
-        "reason": "Conflicts with the venue-specific Jacksonville ticket listing and is not supported by the official Flavor Fest concert schedule."
-      }
-    ],
-    "notes": "The venue-specific Jacksonville ticket listing supersedes CJ's older November 7 Tampa calendar entry. Miles may also appear on the 11:45 AM Flavor Fest artist panel in Tampa; that daytime panel is not this concert.",
-    "auditVerified": "2026-09-23",
-    "id": "miles-minnick-christlike-university-jacksonville-2026-11-07"
-  },
-  {
-    "title": "Miles Minnick – Christlike University – Florida Campus Tour in Orlando",
-    "startDate": "2026-11-08",
-    "startTime": "19:00",
-    "timezone": "America/New_York",
-    "venue": "Conduit",
-    "address": "6700 Aloma Ave",
-    "city": "Winter Park",
-    "advertisedCity": "Orlando",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
-    "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
-    "image": "assets/artists/miles-minnick.webp",
-    "imageType": "artist",
-    "imagePosition": "center",
-    "lineupExplicit": true,
-    "advertisedBilling": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "sourceName": "Live Nation official event listing",
-    "sources": [
-      {
-        "name": "Eli Williams official performance announcement",
-        "url": "https://www.instagram.com/eliwilliamssss/p/DdmMA0JOH4q/",
-        "type": "manual_verified",
-        "authority": "artist",
-        "priority": 115
-      },
-      {
-        "name": "Live Nation official event listing",
-        "url": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      },
-      {
-        "name": "Bandsintown verified lineup",
-        "url": "https://www.bandsintown.com/e/108940372-miles-minnick-at-conduit",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 94
-      }
-    ],
-    "supersededSources": [
-      {
-        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-26",
-        "publishedDate": "2026-11-08",
-        "publishedCity": "Jacksonville",
-        "reason": "Conflicts with the venue-specific Conduit ticket listing in Winter Park."
-      }
-    ],
-    "notes": " Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates.",
-    "auditVerified": "2026-09-23",
-    "officialBill": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "id": "miles-minnick-christlike-university-orlando-2026-11-08"
   },
   {
     "id": "kaden-jordan-babytooth-orlando-november-2026",
@@ -5483,7 +5347,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-23",
     "id": "miles-cj-zion-ultra-lounge-chandler-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -5875,5 +5739,211 @@
         "priority": 112
       }
     ]
+  },
+  {
+    "title": "Miles Minnick at Black Box Media Miami",
+    "startDate": "2026-11-05",
+    "startTime": "18:30",
+    "timezone": "America/New_York",
+    "venue": "Black Box Media Miami",
+    "address": "12355 NE 13th Ave Unit #403-404",
+    "city": "North Miami",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108940329",
+    "officialUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
+    "image": "assets/artists/miles-minnick.webp",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "lineupExplicit": true,
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
+    ],
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "sourceName": "Bandsintown verified event listing",
+    "sources": [
+      {
+        "name": "Eli Williams official performance announcement",
+        "url": "https://www.instagram.com/eliwilliamssss/p/DdmMA0JOH4q/",
+        "type": "manual_verified",
+        "authority": "artist",
+        "priority": 115
+      },
+      {
+        "name": "Bandsintown verified event listing",
+        "url": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 94
+      },
+      {
+        "name": "CJ Emulous official tour calendar",
+        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-23",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 88
+      }
+    ],
+    "notes": " Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates.",
+    "auditVerified": "2026-09-23",
+    "officialBill": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
+    ],
+    "id": "miles-minnick-black-box-north-miami-2026-11-05"
+  },
+  {
+    "title": "Miles Minnick – Christlike University – Florida Campus Tour in Jacksonville",
+    "startDate": "2026-11-07",
+    "startTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "The Albatross",
+    "venueAliases": [
+      "Underbelly"
+    ],
+    "address": "113 E Bay St",
+    "city": "Jacksonville",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
+    "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
+    "image": "assets/artists/miles-minnick.webp",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "lineupExplicit": true,
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "sourceName": "Live Nation official event listing",
+    "sources": [
+      {
+        "name": "Live Nation official event listing",
+        "url": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      },
+      {
+        "name": "Bandsintown verified lineup",
+        "url": "https://www.bandsintown.com/e/108940352-miles-minnick-at-the-albatross",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 94
+      }
+    ],
+    "supersededSources": [
+      {
+        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-25",
+        "publishedDate": "2026-11-07",
+        "publishedCity": "Tampa",
+        "reason": "Conflicts with the venue-specific Jacksonville ticket listing and is not supported by the official Flavor Fest concert schedule."
+      }
+    ],
+    "notes": "The venue-specific Jacksonville ticket listing supersedes CJ's older November 7 Tampa calendar entry. Miles may also appear on the 11:45 AM Flavor Fest artist panel in Tampa; that daytime panel is not this concert.",
+    "auditVerified": "2026-09-23",
+    "id": "miles-minnick-christlike-university-jacksonville-2026-11-07"
+  },
+  {
+    "title": "Miles Minnick – Christlike University – Florida Campus Tour in Orlando",
+    "startDate": "2026-11-08",
+    "startTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "Conduit",
+    "address": "6700 Aloma Ave",
+    "city": "Winter Park",
+    "advertisedCity": "Orlando",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
+    "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
+    "image": "assets/artists/miles-minnick.webp",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "lineupExplicit": true,
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
+    ],
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "sourceName": "Live Nation official event listing",
+    "sources": [
+      {
+        "name": "Eli Williams official performance announcement",
+        "url": "https://www.instagram.com/eliwilliamssss/p/DdmMA0JOH4q/",
+        "type": "manual_verified",
+        "authority": "artist",
+        "priority": 115
+      },
+      {
+        "name": "Live Nation official event listing",
+        "url": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      },
+      {
+        "name": "Bandsintown verified lineup",
+        "url": "https://www.bandsintown.com/e/108940372-miles-minnick-at-conduit",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 94
+      }
+    ],
+    "supersededSources": [
+      {
+        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-26",
+        "publishedDate": "2026-11-08",
+        "publishedCity": "Jacksonville",
+        "reason": "Conflicts with the venue-specific Conduit ticket listing in Winter Park."
+      }
+    ],
+    "notes": " Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates.",
+    "auditVerified": "2026-09-23",
+    "officialBill": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
+    ],
+    "id": "miles-minnick-christlike-university-orlando-2026-11-08"
   }
 ]
