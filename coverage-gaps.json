@@ -1,6 +1,6 @@
 {
   "policyVersion": 7,
-  "generatedAt": "2026-10-02T17:24:11Z",
+  "generatedAt": "2026-10-03T10:58:11Z",
   "highRiskArtists": [
     {
       "artist": "Mike Malagies",
@@ -276,6 +276,14 @@
       "reason": "No Ticketmaster match and no healthy dedicated artist calendar was recorded in the latest run."
     },
     {
+      "artist": "DaeShawn Forrest",
+      "healthyDedicatedSources": [],
+      "failedDedicatedSources": [],
+      "ticketmasterUnmatched": true,
+      "ticketmasterFailed": false,
+      "reason": "No Ticketmaster match and no healthy dedicated artist calendar was recorded in the latest run."
+    },
+    {
       "artist": "Redimi2",
       "healthyDedicatedSources": [],
       "failedDedicatedSources": [
@@ -321,14 +329,6 @@
     },
     {
       "artist": "Sho Baraka",
-      "healthyDedicatedSources": [],
-      "failedDedicatedSources": [],
-      "ticketmasterUnmatched": true,
-      "ticketmasterFailed": false,
-      "reason": "No Ticketmaster match and no healthy dedicated artist calendar was recorded in the latest run."
-    },
-    {
-      "artist": "DaeShawn Forrest",
       "healthyDedicatedSources": [],
       "failedDedicatedSources": [],
       "ticketmasterUnmatched": true,
