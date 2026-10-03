@@ -76,7 +76,6 @@ def patch_media_block(text: str, page: Path) -> tuple[str, bool]:
     inner, count = IMG_RE.subn(lambda image_match: pin_img(image_match.group(0)), media.group(2), count=1)
     if not count:
         raise SystemExit(f"ECHO Nights event detail image missing: {page}")
-    # Keep the full-size click target on the same official poster source.
     inner = re.sub(
         r'(<a\b(?=[^>]*class=["\'][^"\']*\bevent-image-enlarge\b[^"\']*["\'])[^>]*\bhref=)(["\']).*?\2',
         lambda match: match.group(1) + '"' + PUBLIC_IMAGE + '"',
@@ -231,10 +230,16 @@ def apply(root: Path) -> dict[str, int]:
     root = root.resolve()
     public_artifact = root.name == "_site" or (root / "seo-build-manifest.json").is_file()
 
-    # Completed events are intentionally removed from the deploy artifact.
-    # Once ECHO Nights has been pruned, its historical artwork guard must not
-    # turn that expected absence into a release failure. If a historical HTML
-    # page is still present, keep pinning that page before returning.
+    image_path = root / IMAGE
+    if not image_path.is_file():
+        raise SystemExit(f"Verified ECHO Nights artwork is missing: {image_path}")
+    digest = hashlib.sha256(image_path.read_bytes()).hexdigest()
+    if digest != IMAGE_SHA256:
+        raise SystemExit(
+            f"Verified ECHO Nights artwork hash mismatch: {image_path} "
+            f"expected {IMAGE_SHA256}, got {digest}"
+        )
+
     if public_artifact:
         current_event_present = False
         for filename in SOURCE_FILES:
@@ -255,16 +260,8 @@ def apply(root: Path) -> dict[str, int]:
             )
             if not historical_html_present:
                 return {"jsonFilesPinned": 0, "htmlPagesPinned": 0, "expiredEventAbsent": 1}
-
-    image_path = root / IMAGE
-    if not image_path.is_file():
-        raise SystemExit(f"Verified ECHO Nights artwork is missing: {image_path}")
-    digest = hashlib.sha256(image_path.read_bytes()).hexdigest()
-    if digest != IMAGE_SHA256:
-        raise SystemExit(
-            f"Verified ECHO Nights artwork hash mismatch: {image_path} "
-            f"expected {IMAGE_SHA256}, got {digest}"
-        )
+            html_pages = patch_html(root)
+            return {"jsonFilesPinned": 0, "htmlPagesPinned": html_pages, "expiredEventAbsent": 1}
 
     repaired = enforce_json(root)
     html_pages = patch_html(root)
