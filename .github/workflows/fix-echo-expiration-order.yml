@@ -1,0 +1,57 @@
+name: Fix ECHO expiration gate ordering
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/fix-echo-expiration-order.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Move expiration gate before artwork requirement
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('scripts/apply_echo_nights_official.py')
+          text = path.read_text(encoding='utf-8')
+          old = '''    image_path = root / IMAGE\n    if not image_path.is_file():\n        raise SystemExit(f"Verified ECHO Nights artwork is missing: {image_path}")\n    digest = hashlib.sha256(image_path.read_bytes()).hexdigest()\n    if digest != IMAGE_SHA256:\n        raise SystemExit(\n            f"Verified ECHO Nights artwork hash mismatch: {image_path} "\n            f"expected {IMAGE_SHA256}, got {digest}"\n        )\n\n    if public_artifact:\n'''
+          new = '''    if public_artifact:\n'''
+          if old not in text:
+              raise SystemExit('Expected artwork-before-expiration block not found')
+          text = text.replace(old, new, 1)
+          anchor = '''            html_pages = patch_html(root)\n            return {"jsonFilesPinned": 0, "htmlPagesPinned": html_pages, "expiredEventAbsent": 1}\n\n    repaired = enforce_json(root)\n'''
+          replacement = '''            html_pages = patch_html(root)\n            return {"jsonFilesPinned": 0, "htmlPagesPinned": html_pages, "expiredEventAbsent": 1}\n\n    image_path = root / IMAGE\n    if not image_path.is_file():\n        raise SystemExit(f"Verified ECHO Nights artwork is missing: {image_path}")\n    digest = hashlib.sha256(image_path.read_bytes()).hexdigest()\n    if digest != IMAGE_SHA256:\n        raise SystemExit(\n            f"Verified ECHO Nights artwork hash mismatch: {image_path} "\n            f"expected {IMAGE_SHA256}, got {digest}"\n        )\n\n    repaired = enforce_json(root)\n'''
+          if anchor not in text:
+              raise SystemExit('Expected expiration-return anchor not found')
+          path.write_text(text.replace(anchor, replacement, 1), encoding='utf-8')
+          PY
+          python -m unittest tests.test_echo_nights_official -v
+      - name: Commit correction
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/apply_echo_nights_official.py
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "fix: gate expired ECHO before artwork validation"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main
+          done
+          exit 1
