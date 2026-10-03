@@ -1,0 +1,63 @@
+name: Enforce Alex Jean Dallas owner hold
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/apply-alex-dallas-owner-hold.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Wire owner hold into production curation
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          policy = Path('scripts/apply_curated_catalog_policy.py')
+          text = policy.read_text(encoding='utf-8')
+          needle = '''    return False\n\n\ndef remove_new_badge_from_runtime'''
+          block = '''    # Owner hold: Alex Jean's Nov. 19 Dallas show is verified externally but\n    # must remain unpublished until the owner explicitly lifts the hold.\n    if event_date == "2026-11-19" and "alex jean" in artists:\n        urls = " ".join(str(event.get(k) or "") for k in ("officialUrl", "ticketUrl"))\n        if city == "dallas" or "1626463" in urls:\n            return True\n\n    return False\n\n\ndef remove_new_badge_from_runtime'''
+          if 'Owner hold: Alex Jean' not in text:
+              if text.count(needle) != 1:
+                  raise SystemExit('Could not uniquely locate curation insertion point')
+              policy.write_text(text.replace(needle, block, 1), encoding='utf-8')
+
+          test = Path('tests/test_curated_catalog_policy.py')
+          text = test.read_text(encoding='utf-8')
+          marker = '''    def test_ark_of_worship_uses_pinned_event_artwork(self):\n'''
+          addition = '''    def test_alex_jean_dallas_owner_hold_is_enforced(self):\n        held = {\n            "id": "axs:1626463",\n            "startDate": "2026-11-19",\n            "city": "Dallas",\n            "state": "TX",\n            "artists": ["Alex Jean"],\n            "officialUrl": "https://www.axs.com/events/1626463/alex-jean-tickets",\n        }\n        orlando = {\n            "id": "alex-jean-orlando",\n            "startDate": "2026-11-27",\n            "city": "Orlando",\n            "state": "FL",\n            "artists": ["Alex Jean"],\n            "officialUrl": "https://example.com/orlando",\n        }\n        self.assertTrue(MODULE.is_known_duplicate_fragment(held))\n        self.assertFalse(MODULE.is_known_duplicate_fragment(orlando))\n\n'''
+          if 'test_alex_jean_dallas_owner_hold_is_enforced' not in text:
+              if marker not in text:
+                  raise SystemExit('Could not locate test insertion point')
+              test.write_text(text.replace(marker, addition + marker, 1), encoding='utf-8')
+          PY
+          python -m unittest tests.test_curated_catalog_policy -v
+      - name: Commit policy and regression test
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/apply_curated_catalog_policy.py tests/test_curated_catalog_policy.py
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "fix: enforce Alex Jean Dallas owner hold"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main
+          done
+          exit 1
