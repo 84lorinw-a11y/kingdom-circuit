@@ -21,10 +21,12 @@ if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
 import run_bandsintown_refresh  # type: ignore
-import scan_all_artist_sources as expanded  # type: ignore
+import scan_all_artist_sources_legacy as expanded  # type: ignore
 
 FULL_STATUS = ROOT / "full-scan-status.json"
 BIT_STATUS = ROOT / "bandsintown-status.json"
+BIT_CANDIDATES = ROOT / "bandsintown-candidates.json"
+FULL_CANDIDATES = ROOT / "full-scan-candidates.json"
 
 
 def load_json(path: Path, default: Any) -> Any:
@@ -46,6 +48,39 @@ def delegated_bandsintown(artist, _client, _alias_lookup, _checked_at):
         "status": "delegated_to_structured_rest",
         "eventsFound": 0,
     }
+
+
+def candidate_key(item: dict[str, Any]) -> tuple[str, str, str, str]:
+    return (
+        str(item.get("title") or "").strip().casefold(),
+        str(item.get("startDate") or "")[:10],
+        str(item.get("city") or "").strip().casefold(),
+        str(item.get("venue") or "").strip().casefold(),
+    )
+
+
+def merge_candidates() -> int:
+    full = load_json(FULL_CANDIDATES, [])
+    bit = load_json(BIT_CANDIDATES, [])
+    if not isinstance(full, list):
+        full = []
+    if not isinstance(bit, list):
+        bit = []
+    merged: list[dict[str, Any]] = []
+    seen: set[tuple[str, str, str, str]] = set()
+    for raw in [*full, *bit]:
+        if not isinstance(raw, dict):
+            continue
+        item = dict(raw)
+        if raw in bit and not item.get("reason"):
+            item["reason"] = str(item.get("holdReason") or "festival_needs_official_lineup_confirmation")
+        key = candidate_key(item)
+        if key in seen:
+            continue
+        seen.add(key)
+        merged.append(item)
+    save_json(FULL_CANDIDATES, merged)
+    return len(merged)
 
 
 def merge_bandsintown_status(full_status: dict[str, Any], bit_status: dict[str, Any], error: str = "") -> dict[str, Any]:
@@ -89,6 +124,7 @@ def main() -> int:
     # transient failure; the prior Bandsintown rows have already been restored.
     expanded.collect_bandsintown_for_artist = delegated_bandsintown
     expanded_result = int(expanded.main())
+    candidate_count = merge_candidates()
 
     full_status = load_json(FULL_STATUS, {})
     if not isinstance(full_status, dict):
@@ -96,7 +132,9 @@ def main() -> int:
     bit_status = load_json(BIT_STATUS, {})
     if not isinstance(bit_status, dict):
         bit_status = {}
-    save_json(FULL_STATUS, merge_bandsintown_status(full_status, bit_status, bit_error))
+    full_status = merge_bandsintown_status(full_status, bit_status, bit_error)
+    full_status["festivalCandidates"] = candidate_count
+    save_json(FULL_STATUS, full_status)
     return expanded_result
 
 
