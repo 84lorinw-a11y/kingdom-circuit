@@ -160,6 +160,12 @@ def sync_config() -> tuple[list[dict], list[dict], int]:
     portraits = load_portraits(ROOT)
     changed += apply_to_records(final_artists, portraits)
     apply_to_records(updates, portraits)
+    # Later build passes reload the handoff from disk. Persist the saved-photo
+    # choice there too, so they cannot reintroduce a retired remote portrait.
+    UPDATES_FILE.write_text(
+        json.dumps(updates, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
 
     ARTISTS_FILE.write_text(
         json.dumps(final_artists, indent=2, ensure_ascii=False) + "\n",

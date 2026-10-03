@@ -104,6 +104,30 @@ def verify_site(site: Path, root: Path = ROOT, *, optimized: bool = True) -> dic
     seen: dict[Path, set[str]] = {}
     checked: set[Path] = set()
     images = 0
+
+    def check_source(name: str, source: str) -> None:
+        record = by_name[name]
+        path = local_asset(site, source)
+        relative = path.relative_to(site.resolve()).as_posix()
+        expected = record["asset"].lstrip("/")
+        variant = re.fullmatch(
+            rf"assets/optimized/{record['sha256'][:24]}-w\d+\.webp", relative
+        )
+        if relative != expected and not (optimized and variant):
+            raise ValueError(f"Wrong or placeholder portrait for {name}: {source}")
+        if path not in checked:
+            decode_image(path)
+            if relative == expected and hashlib.sha256(path.read_bytes()).hexdigest() != record['sha256']:
+                raise ValueError(f"Published portrait differs from saved original: {name}")
+            checked.add(path)
+
+    # The runtime can also read the public catalog. Correct static HTML must
+    # not conceal a stale or externally hosted portrait in that payload.
+    for artist in json.loads((site / "config/artists.json").read_text()):
+        name = norm(artist.get("name"))
+        if name in by_name:
+            check_source(name, str(artist.get("imageUrl") or ""))
+
     for page in [directory, *(site / "artists").glob("*/index.html")]:
         parser = ImageParser(page)
         parser.feed(page.read_text(encoding="utf-8"))
@@ -124,19 +148,7 @@ def verify_site(site: Path, root: Path = ROOT, *, optimized: bool = True) -> dic
             if fallback:
                 sources.append(str(fallback))
             for source in sources:
-                path = local_asset(site, source)
-                relative = path.relative_to(site.resolve()).as_posix()
-                expected = record["asset"].lstrip("/")
-                variant = re.fullmatch(
-                    rf"assets/optimized/{record['sha256'][:24]}-w\d+\.webp", relative
-                )
-                if relative != expected and not (optimized and variant):
-                    raise ValueError(f"Wrong or placeholder portrait for {name}: {source}")
-                if path not in checked:
-                    decode_image(path)
-                    if relative == expected and hashlib.sha256(path.read_bytes()).hexdigest() != record['sha256']:
-                        raise ValueError(f"Published portrait differs from saved original: {name}")
-                    checked.add(path)
+                check_source(name, source)
             images += 1
     for name in records:
         key = norm(name)

@@ -12,6 +12,7 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import artist_portraits as portraits
 import optimize_public_images as optimizer
+import sync_verified_artist_registry as sync
 
 
 class ArtistPortraitTests(unittest.TestCase):
@@ -23,7 +24,7 @@ class ArtistPortraitTests(unittest.TestCase):
         (root / 'assets/artists/kb.jpg').write_bytes(data)
         records = {'KB': {'asset': 'assets/artists/kb.jpg', 'sha256': hashlib.sha256(data).hexdigest(),
                           'width': 640, 'height': 640, 'position': 'center'}}
-        for path, value in [('config/artists.json', [{'name': 'KB'}]),
+        for path, value in [('config/artists.json', [{'name': 'KB', 'imageUrl': 'assets/artists/kb.jpg'}]),
                             (str(portraits.PORTRAITS), records),
                             (str(portraits.OVERRIDES), {'KB': 'assets/artists/kb.jpg'})]:
             (root / path).write_text(json.dumps(value))
@@ -55,6 +56,33 @@ class ArtistPortraitTests(unittest.TestCase):
             asset.unlink()
             with self.assertRaisesRegex(ValueError, 'missing'):
                 portraits.load_portraits(root)
+
+    def test_saved_portrait_persists_in_handoff_for_later_build_passes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            records = self.fixture(root)
+            updates = root / 'config/verified-artist-registry-updates.json'
+            updates.write_text(json.dumps([{'name': 'KB', 'rosterOrder': 1,
+                                           'imageUrl': 'https://old.example/kb.jpg'}]))
+            with (patch.object(sync, 'ROOT', root),
+                  patch.object(sync, 'ARTISTS_FILE', root / 'config/artists.json'),
+                  patch.object(sync, 'UPDATES_FILE', updates),
+                  patch.object(sync, 'snapshot', return_value=[{'name': 'KB', 'verified': True}]),
+                  patch.object(sync, 'order_records', side_effect=lambda rows: rows),
+                  patch.object(sync, 'verify_records'),
+                  patch.object(sync, 'apply_owner_roster'),
+                  patch.object(sync, 'load_portraits', return_value=records)):
+                sync.sync_config()
+            self.assertEqual(json.loads(updates.read_text())[0]['imageUrl'], records['KB']['asset'])
+
+    def test_catalog_remote_portrait_blocks_release_even_when_html_is_correct(self):
+        with tempfile.TemporaryDirectory() as tmp, patch.object(portraits, 'decode_image', return_value=(640, 640)):
+            root = Path(tmp)
+            self.fixture(root)
+            (root / 'config/artists.json').write_text(json.dumps([
+                {'name': 'KB', 'imageUrl': 'https://old.example/kb.jpg'}]))
+            with self.assertRaisesRegex(ValueError, 'saved locally'):
+                portraits.verify_site(root, root)
 
     def test_directory_placeholder_and_profile_regressions_block_release(self):
         with tempfile.TemporaryDirectory() as tmp, patch.object(portraits, 'decode_image', return_value=(640, 640)):
