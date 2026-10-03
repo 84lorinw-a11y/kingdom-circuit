@@ -233,13 +233,14 @@ def apply(root: pathlib.Path) -> dict:
         unique.append(canonical)
     unique.sort()
 
-    today = dt.date.today().isoformat()
+    # Build time is not the last meaningful change to each page. Omit the
+    # optional lastmod until we have reliable per-URL modification history.
     xml = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
     xml.extend(
-        f"<url><loc>{xml_escape(url)}</loc><lastmod>{today}</lastmod></url>"
+        f"<url><loc>{xml_escape(url)}</loc></url>"
         for url in unique
     )
     xml.append("</urlset>")

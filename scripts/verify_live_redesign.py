@@ -8,6 +8,7 @@ import json
 import pathlib
 import re
 import struct
+import xml.etree.ElementTree as ET
 from urllib.parse import unquote, urlsplit
 from zoneinfo import ZoneInfo
 
@@ -42,6 +43,13 @@ FAVICON_TAGS = (
 
 def read(path: pathlib.Path) -> str:
     return path.read_text(encoding="utf-8", errors="ignore")
+
+
+def verify_sitemap_dates(site: pathlib.Path) -> None:
+    """Do not publish freshness claims without per-page modification history."""
+    sitemap = ET.fromstring(read(site / "sitemap.xml"))
+    if any(node.tag.rsplit("}", 1)[-1] == "lastmod" for node in sitemap.iter()):
+        raise ValueError("Sitemap lastmod must be omitted until per-page dates are reliable")
 
 
 def png_ihdr(path: pathlib.Path) -> tuple[int, int, int, int]:
@@ -126,6 +134,8 @@ def verify(site: pathlib.Path) -> dict[str, int]:
 
     if failures:
         raise SystemExit("Live redesign verification failed:\n" + "\n".join(failures))
+
+    verify_sitemap_dates(site)
 
     for relative, size in FAVICON_SIZES.items():
         try:

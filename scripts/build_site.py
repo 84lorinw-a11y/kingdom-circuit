@@ -1189,9 +1189,9 @@ def generate_site(output_dir: Path, today: date | None = None) -> dict[str, int]
     urls.extend(f"/shows/{slug}/" for slug in event_map.values())
     urls.extend(f"/artists/{slug}/" for slug in artist_map.values())
     urls.extend(f"/states/{slugify(STATE_NAMES.get(code, code))}/" for code in by_state)
-    lastmod = today.isoformat()
+    # Build time does not establish when each page's content last changed.
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(
-        f"  <url><loc>{escape(BASE_URL + path)}</loc><lastmod>{lastmod}</lastmod></url>\n" for path in sorted(set(urls))
+        f"  <url><loc>{escape(BASE_URL + path)}</loc></url>\n" for path in sorted(set(urls))
     ) + "</urlset>\n"
     write_text(output_dir / "sitemap.xml", sitemap)
     write_text(output_dir / "robots.txt", f"User-agent: *\nAllow: /\nSitemap: {BASE_URL}/sitemap.xml\n")
