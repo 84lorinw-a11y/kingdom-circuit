@@ -126,6 +126,26 @@ class CuratedCatalogPolicyTests(unittest.TestCase):
         self.assertEqual("event_artwork", event["imageType"])
         self.assertTrue(event["imageOverride"])
 
+    def test_alex_jean_dallas_owner_hold_is_enforced(self):
+        held = {
+            "id": "axs:1626463",
+            "startDate": "2026-11-19",
+            "city": "Dallas",
+            "state": "TX",
+            "artists": ["Alex Jean"],
+            "officialUrl": "https://www.axs.com/events/1626463/alex-jean-tickets",
+        }
+        orlando = {
+            "id": "alex-jean-orlando",
+            "startDate": "2026-11-27",
+            "city": "Orlando",
+            "state": "FL",
+            "artists": ["Alex Jean"],
+            "officialUrl": "https://example.com/orlando",
+        }
+        self.assertTrue(MODULE.is_known_duplicate_fragment(held))
+        self.assertFalse(MODULE.is_known_duplicate_fragment(orlando))
+
     def test_ark_of_worship_uses_pinned_event_artwork(self):
         event = MODULE.ARK_OF_WORSHIP
         self.assertEqual("assets/events/ark-of-worship-2026.png", event["image"])
