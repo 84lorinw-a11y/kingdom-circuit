@@ -229,6 +229,33 @@ def enforce_json(root: Path) -> int:
 
 def apply(root: Path) -> dict[str, int]:
     root = root.resolve()
+    public_artifact = root.name == "_site" or (root / "seo-build-manifest.json").is_file()
+
+    # Completed events are intentionally removed from the deploy artifact.
+    # Once ECHO Nights has been pruned, its historical artwork guard must not
+    # turn that expected absence into a release failure. If a historical HTML
+    # page is still present, keep pinning that page before returning.
+    if public_artifact:
+        current_event_present = False
+        for filename in SOURCE_FILES:
+            source_path = root / filename
+            if not source_path.is_file():
+                continue
+            try:
+                rows = json.loads(source_path.read_text(encoding="utf-8"))
+            except (OSError, json.JSONDecodeError):
+                continue
+            if any(isinstance(row, dict) and row.get("id") == EVENT_ID for row in rows):
+                current_event_present = True
+                break
+        if not current_event_present:
+            historical_html_present = any(
+                TITLE in html.unescape(page.read_text(encoding="utf-8", errors="ignore"))
+                for page in root.rglob("*.html")
+            )
+            if not historical_html_present:
+                return {"jsonFilesPinned": 0, "htmlPagesPinned": 0, "expiredEventAbsent": 1}
+
     image_path = root / IMAGE
     if not image_path.is_file():
         raise SystemExit(f"Verified ECHO Nights artwork is missing: {image_path}")

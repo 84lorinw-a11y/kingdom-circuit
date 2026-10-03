@@ -75,6 +75,19 @@ class EchoNightsOfficialArtworkTests(unittest.TestCase):
             self.assertIn(f'href="{echo_nights.PUBLIC_IMAGE}"', detail_output)
             self.assertIn(echo_nights.ABSOLUTE_IMAGE, detail_output)
 
+    def test_completed_event_absence_does_not_block_public_release(self):
+        with tempfile.TemporaryDirectory() as temp:
+            site = Path(temp) / "_site"
+            site.mkdir()
+            (site / "seo-build-manifest.json").write_text("{}", encoding="utf-8")
+            for filename in echo_nights.SOURCE_FILES:
+                (site / filename).write_text("[]", encoding="utf-8")
+
+            self.assertEqual(
+                {"jsonFilesPinned": 0, "htmlPagesPinned": 0, "expiredEventAbsent": 1},
+                echo_nights.apply(site),
+            )
+
     def test_public_artifact_pin_does_not_restore_private_source_fields(self):
         private_values = {field: "private" for field in echo_nights.PRIVATE_FIELDS}
         event = {"id": echo_nights.EVENT_ID, **private_values}
