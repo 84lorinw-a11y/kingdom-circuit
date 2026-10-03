@@ -33,6 +33,17 @@ RETIRED_URLS = {
     "https://music.apple.com/us/concerts/ce.01a1c61a-49a9-4e19-b629-46bac43b4970",
     "https://www.bandsintown.com/e/108631622",
 }
+WHATUPRG_PUBLIC_DESCRIPTIONS = {
+    "whatuprg-houston-2026-11-19": (
+        "WHATUPRG’s NEW SAINT HOLY TOUR stops at Rockefellers in Houston on November 19, 2026 at 7:30 PM with aftrthght and De La Cruz. Official event details and ticketing are linked."
+    ),
+    "whatuprg-dallas-2026-11-20": (
+        "WHATUPRG’s NEW SAINT HOLY TOUR stops at Ridglea Room in Fort Worth on November 20, 2026 at 7:30 PM with aftrthght and De La Cruz. The tour markets this stop as Dallas–Fort Worth."
+    ),
+    "whatuprg-san-antonio-2026-11-22": (
+        "WHATUPRG’s NEW SAINT HOLY TOUR stops at Paper Tiger in San Antonio on November 22, 2026 at 7:30 PM with aftrthght and De La Cruz. Official event details are linked."
+    ),
+}
 CLEVELAND = {
     "id": CLEVELAND_ID, "title": "Beyond The Walls 2026",
     "startDate": "2026-11-07", "startTime": "19:30", "doorsTime": "19:30",
@@ -141,6 +152,10 @@ def apply(root: Path = ROOT, today: str | None = None) -> None:
     for row in [row for rows in feeds.values() for row in rows] + historical:
         if row.get("id") == DOVE_EVENT_ID:
             row.update(DOVE_ARTWORK)
+        base_id = str(row.get("id") or "").removeprefix("manual:")
+        if base_id in WHATUPRG_PUBLIC_DESCRIPTIONS:
+            row["publicDescription"] = WHATUPRG_PUBLIC_DESCRIPTIONS[base_id]
+            row["detailsPending"] = False
         patch_approved_audit(row)
         patch_requested_lineups(row)
         patch_show_artwork(row)
@@ -153,4 +168,4 @@ def apply(root: Path = ROOT, today: str | None = None) -> None:
 
 if __name__ == "__main__":
     apply()
-    print("September 26 source corrections applied: concert starts, Oasis reschedule/artwork and Cleveland consolidation")
+    print("September 26 source corrections applied: concert starts, Oasis reschedule/artwork, Cleveland consolidation and WHATUPRG public details")
