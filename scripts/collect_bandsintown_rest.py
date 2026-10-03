@@ -33,7 +33,7 @@ BASE = "https://rest.bandsintown.com"
 APP_ID = "js_kingdomcircuit.com"
 
 FESTIVAL_TERMS = re.compile(r"\b(festival|fest|conference|convention|summit)\b", re.I)
-RISKY_NAMES = {"116", "350", "kb", "nf", "so", "jr"}
+RISKY_NAMES = {"116", "350", "kb", "nf", "so", "jr", "nehemiah"}
 
 
 def load(path: Path, default: Any) -> Any:

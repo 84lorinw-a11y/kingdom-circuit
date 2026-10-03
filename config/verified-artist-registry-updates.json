@@ -4650,8 +4650,8 @@
     ],
     "category": "core",
     "monitoringPriority": 2,
-    "ticketmasterEnabled": true,
-    "textMatchEnabled": true,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": false,
     "website": "https://linktr.ee/nehemiah02",
     "instagramProfile": "https://www.instagram.com/its_nehe02/",
     "spotifyProfile": "https://open.spotify.com/artist/7fdG0HcxQczr1nxVlX4BYj",
@@ -4664,7 +4664,11 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "rosterOrder": 197,
-    "sheetRosterOrder": 197
+    "sheetRosterOrder": 197,
+    "bandsintownRejectedArtistIds": [
+      "15347266"
+    ],
+    "sourceIdentityNotes": "CHH artist @its_nehe02. Bandsintown artist 15347266 is the unrelated Minneapolis metal band. Generic name matching is held until a provider identity is independently verified; official/social/manual discovery remains enabled."
   },
   {
     "name": "Wiff.P",

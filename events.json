@@ -4386,7 +4386,13 @@
     "editorialBatch": "2026-10-02-verified-artists",
     "postalCode": "33596",
     "doorsTime": "17:00",
-    "notes": "Current Eventbrite listing explicitly gives 5 PM doors and 6 PM music. Full flyer billing preserved; Monae and Jayde Eliyah do not have curated artist profiles."
+    "notes": "Current Eventbrite listing explicitly gives 5 PM doors and 6 PM music. Full flyer billing preserved; Monae and Jayde Eliyah do not have curated artist profiles.",
+    "mergedFromIds": [
+      "bandsintown:1040469553"
+    ],
+    "legacyEventPaths": [
+      "/event/nehemiah-at-2106-lithia-pinecrest-rd-2026-10-17-valrico-manor-c47e17/"
+    ]
   },
   {
     "id": "manual:mission-friends-sacramento-2026",
@@ -4585,7 +4591,7 @@
     "id": "manual:revival-night-trinity-2026",
     "title": "Revival Night",
     "startDate": "2026-10-23",
-    "startTime": "19:00",
+    "startTime": "19:15",
     "endTime": "23:15",
     "doorsTime": "18:30",
     "performanceTime": "19:15",
@@ -4612,16 +4618,22 @@
       "Kaden Jordan"
     ],
     "supportActs": [
+      "John Gar",
       "Scarlito Jr.",
+      "G Musik",
       "J Reborn",
+      "Tyler Eraee",
+      "George Jones",
+      "Jaiden Gray",
       "Dre Skywalker",
+      "Jahzzy Gonzalez",
       "Gabriel Katon"
     ],
     "eventType": "concert",
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/revival-night-tickets-1990009565179",
     "officialUrl": "https://www.eventbrite.com/e/revival-night-tickets-1990009565179",
-    "image": "assets/events/revival-night-trinity-2026.jpg",
+    "image": "assets/events/revival-night-trinity-2026-full-lineup.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -4635,19 +4647,32 @@
       "Issac Mansfield",
       "Vennisay",
       "Kaden Jordan",
+      "John Gar",
       "Scarlito Jr.",
+      "G Musik",
       "J Reborn",
+      "Tyler Eraee",
+      "George Jones",
+      "Jaiden Gray",
       "Dre Skywalker",
+      "Jahzzy Gonzalez",
       "Gabriel Katon"
     ],
     "organizer": "Trinity College of Florida",
-    "imageSource": "Official Eventbrite event artwork",
-    "imageSourceUrl": "https://www.eventbrite.com/e/revival-night-tickets-1990009565179",
-    "auditVerified": "2026-09-15",
+    "imageSource": "Trinity College of Florida official full Revival Night lineup flyer",
+    "imageSourceUrl": "https://www.instagram.com/trinitycollegefl/p/DdSWs7IFCmK/",
+    "auditVerified": "2026-10-03",
     "firstSeen": "2026-09-15T10:53:04Z",
-    "lastVerified": "2026-09-15T10:53:04Z",
-    "notes": "Eventbrite lists 7:00 PM–11:15 PM. The event description lists 6:30 PM doors and a 7:15 PM concert start. Admission is donation/pay what you want.",
+    "lastVerified": "2026-10-03T18:10:13Z",
+    "notes": "Organizer's collaborative Instagram full-bill poster and edited caption checked October 3 confirm 6:30 PM doors and 7:15 PM concert start. Display the concert start, consistent with owner policy. Use the full-bill poster; its second carousel slide retains an outdated 6 PM doors label. Preserve all thirteen named performers as billing, with seven existing curated artist associations. Vendors are not performers. Poster misspells George Jones as Geroge Jones; organizer tags his official @realgeorgejones account. Admission is donation/pay what you want.",
     "sources": [
+      {
+        "name": "Trinity College official updated lineup and concert-start announcement",
+        "url": "https://www.instagram.com/trinitycollegefl/p/DdSWs7IFCmK/",
+        "type": "manual_verified",
+        "authority": "organizer",
+        "priority": 115
+      },
       {
         "name": "Trinity College of Florida official Eventbrite listing",
         "url": "https://www.eventbrite.com/e/revival-night-tickets-1990009565179",
@@ -4655,6 +4680,22 @@
         "authority": "venue_ticket",
         "priority": 112
       }
+    ],
+    "startDateTime": "2026-10-23T19:15:00-04:00",
+    "officialBill": [
+      "Issac Mansfield",
+      "Vennisay",
+      "Kaden Jordan",
+      "John Gar",
+      "Scarlito Jr.",
+      "G Musik",
+      "J Reborn",
+      "Tyler Eraee",
+      "George Jones",
+      "Jaiden Gray",
+      "Dre Skywalker",
+      "Jahzzy Gonzalez",
+      "Gabriel Katon"
     ]
   },
   {
@@ -6268,12 +6309,12 @@
     "musicConfirmed": true,
     "officialUrl": "https://www.reachrecords.com/events/",
     "ticketUrl": "https://events.extrachill.com/events/whatuprg-w-aftrthght-de-la-cruz",
-    "image": "assets/events/whatuprg-texas-november-2026.jpg",
+    "image": "assets/events/whatuprg-new-saint-holy-texas-2026-oct2.jpg",
     "imageType": "event_artwork",
     "imageOverride": true,
     "imagePosition": "center",
-    "imageSource": "WHATUPRG official Texas announcement",
-    "imageSourceUrl": "https://www.instagram.com/whatuprg/p/Dd15_j0PYey/",
+    "imageSource": "WHATUPRG official October 2 NEW SAINT HOLY tour flyer with aftrthght and De La Cruz",
+    "imageSourceUrl": "https://www.instagram.com/whatuprg/p/DeAgf9Wjzmv/",
     "publicDescription": "WHATUPRG’s NEW SAINT HOLY TOUR stops at Rockefellers in Houston on November 19, 2026 at 7:30 PM with aftrthght and De La Cruz. Official event details and ticketing are linked.",
     "sourceName": "Reach Records WHATUPRG tour calendar",
     "authority": "artist_calendar",
@@ -6481,12 +6522,12 @@
     "musicConfirmed": true,
     "officialUrl": "https://www.bandsintown.com/e/108946386-whatuprg-at-ridglea-room",
     "ticketUrl": "",
-    "image": "assets/events/whatuprg-texas-november-2026.jpg",
+    "image": "assets/events/whatuprg-new-saint-holy-texas-2026-oct2.jpg",
     "imageType": "event_artwork",
     "imageOverride": true,
     "imagePosition": "center",
-    "imageSource": "WHATUPRG official Texas announcement",
-    "imageSourceUrl": "https://www.instagram.com/whatuprg/p/Dd15_j0PYey/",
+    "imageSource": "WHATUPRG official October 2 NEW SAINT HOLY tour flyer with aftrthght and De La Cruz",
+    "imageSourceUrl": "https://www.instagram.com/whatuprg/p/DeAgf9Wjzmv/",
     "publicDescription": "WHATUPRG’s NEW SAINT HOLY TOUR stops at Ridglea Room in Fort Worth on November 20, 2026 at 7:30 PM with aftrthght and De La Cruz. The tour markets this stop as Dallas–Fort Worth.",
     "sourceName": "Reach Records WHATUPRG tour calendar",
     "authority": "artist_calendar",
@@ -6690,12 +6731,12 @@
     "musicConfirmed": true,
     "officialUrl": "https://www.bandsintown.com/e/1040474736-aftrthght-at-paper-tiger",
     "ticketUrl": "",
-    "image": "assets/events/whatuprg-texas-november-2026.jpg",
+    "image": "assets/events/whatuprg-new-saint-holy-texas-2026-oct2.jpg",
     "imageType": "event_artwork",
     "imageOverride": true,
     "imagePosition": "center",
-    "imageSource": "WHATUPRG official Texas announcement",
-    "imageSourceUrl": "https://www.instagram.com/whatuprg/p/Dd15_j0PYey/",
+    "imageSource": "WHATUPRG official October 2 NEW SAINT HOLY tour flyer with aftrthght and De La Cruz",
+    "imageSourceUrl": "https://www.instagram.com/whatuprg/p/DeAgf9Wjzmv/",
     "publicDescription": "WHATUPRG’s NEW SAINT HOLY TOUR stops at Paper Tiger in San Antonio on November 22, 2026 at 7:30 PM with aftrthght and De La Cruz. Official event details are linked.",
     "sourceName": "Reach Records WHATUPRG tour calendar",
     "authority": "artist_calendar",
@@ -7680,5 +7721,58 @@
         "priority": 112
       }
     ]
+  },
+  {
+    "id": "manual:toschii-space-city-lift-off-houston-2026-10-24",
+    "title": "Space City Lift Off",
+    "startDate": "2026-10-24",
+    "startTime": "19:00",
+    "startDateTime": "2026-10-24T19:00:00-05:00",
+    "timezone": "America/Chicago",
+    "venue": "Space City Church",
+    "address": "7746 Almeda Genoa Road",
+    "postalCode": "77075",
+    "city": "Houston",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Toschii"
+    ],
+    "headliner": "Toschii",
+    "advertisedBilling": [
+      "Toschii"
+    ],
+    "officialBill": [
+      "Toschii"
+    ],
+    "lineupExplicit": true,
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "",
+    "officialUrl": "https://www.instagram.com/p/DdUK4O3NNU5/",
+    "image": "assets/events/toschii-space-city-lift-off-2026-10-24.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Toschii and Space City Church official Space City Lift Off flyer",
+    "imageSourceUrl": "https://www.instagram.com/p/DdUK4O3NNU5/",
+    "price": "Free",
+    "description": "Toschii performs at Space City Lift Off, the Space City Fest kickoff presented by Space City Young Adults. Free admission at Space City Church in Houston on October 24 at 7 PM.",
+    "sourceName": "Toschii / Space City Church official announcement",
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-10-03T18:10:13Z",
+    "lastVerified": "2026-10-03T18:10:13Z",
+    "auditVerified": "2026-10-03",
+    "sources": [
+      {
+        "name": "Toschii / Space City Church collaborative announcement",
+        "url": "https://www.instagram.com/p/DdUK4O3NNU5/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      }
+    ],
+    "notes": "Official September 15 collaborative artist/church post and flyer checked October 3. Saturday October 24, 7 PM, 7746 Almeda Genoa Road, Houston TX 77075. Caption explicitly says FREE. Separate from Space City Fest on October 25 at Discovery Green."
   }
 ]

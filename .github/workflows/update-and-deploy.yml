@@ -102,6 +102,9 @@ jobs:
       - name: Preserve October 2 verified artist intake concerts
         run: python scripts/apply_oct2_verified_shows.py
 
+      - name: Preserve October 3 concert corrections and artist identity
+        run: python scripts/apply_oct3_concert_corrections.py
+
       - name: Restore runtime-only source configuration
         if: github.event_name != 'push' || contains(github.event.head_commit.message, '[full scan]')
         run: git checkout -- config/official-sources.json
@@ -454,6 +457,7 @@ jobs:
           python scripts/verify_man_of_faith_joz_shows.py _site
           python scripts/verify_sep26_source_corrections.py _site
           python scripts/verify_oct2_verified_intake.py _site
+          python scripts/verify_oct3_concert_corrections.py _site
           python scripts/verify_owner_roster.py _site
 
       - name: Configure GitHub Pages
