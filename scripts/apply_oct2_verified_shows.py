@@ -8,6 +8,9 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
+OWNER_HELD_IDS = {
+    "alex-jean-dallas-2026-11-19",
+}
 
 
 def key(event):
@@ -22,8 +25,16 @@ def apply(root: Path = ROOT, today: str | None = None):
     history_path = root / "event-history.json"
     history = json.loads(history_path.read_text())
     historical = [entry.get("event", entry) for entry in history.get("events", [])]
+
+    # Owner/editorial holds must win over older verified-intake snapshots.
+    # Remove held records from every live feed and never restore them here.
+    for rows in feeds.values():
+        rows[:] = [row for row in rows if key(row) not in OWNER_HELD_IDS]
+
     for approved in wanted:
         event_id = approved["id"]
+        if event_id in OWNER_HELD_IDS:
+            continue
         previous = [row for rows in feeds.values() for row in rows if key(row) == event_id]
         previous += [row for row in historical if key(row) == event_id]
         canonical = copy.deepcopy(approved)
@@ -45,4 +56,4 @@ def apply(root: Path = ROOT, today: str | None = None):
 
 if __name__ == "__main__":
     apply()
-    print("October 2 verified concerts restored with complete billing and saved flyers")
+    print("October 2 verified concerts restored with complete billing and saved flyers; owner holds preserved")
