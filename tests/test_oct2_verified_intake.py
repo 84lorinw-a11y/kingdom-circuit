@@ -35,7 +35,26 @@ class OctoberIntakeTests(unittest.TestCase):
             self.assertTrue(row['image'].startswith('assets/events/'))
             apply(root, today='2027-01-01')
             self.assertEqual(json.loads((root / 'events.json').read_text()), [])
-            self.assertEqual(len(json.loads((root / 'config/manual-events.json').read_text())), 5)
+            manual = json.loads((root / 'config/manual-events.json').read_text())
+            self.assertEqual(len(manual), 4)
+            self.assertFalse(any(str(row.get('id')) == 'alex-jean-dallas-2026-11-19' for row in manual))
+
+    def test_owner_hold_removes_alex_dallas_from_every_live_feed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'config').mkdir()
+            wanted = json.loads((ROOT / 'config/oct2-verified-shows.json').read_text())
+            (root / 'config/oct2-verified-shows.json').write_text(json.dumps(wanted))
+            held = next(row for row in wanted if row['id'] == 'alex-jean-dallas-2026-11-19')
+            for name in ['events.json', 'supplemental-events.json', 'config/manual-events.json']:
+                row = copy.deepcopy(held)
+                row['id'] = ('manual:' if name != 'config/manual-events.json' else '') + held['id']
+                (root / name).write_text(json.dumps([row]))
+            (root / 'event-history.json').write_text(json.dumps({'events': []}))
+            apply(root, today='2026-10-03')
+            for name in ['events.json', 'supplemental-events.json', 'config/manual-events.json']:
+                rows = json.loads((root / name).read_text())
+                self.assertFalse(any('alex-jean-dallas-2026-11-19' in str(row.get('id')) for row in rows))
 
     def test_visalia_keeps_its_identity_and_host_separate_from_performers(self):
         row = {'id': 'manual:egr-2026-10-10-visalia-ca', 'startDate': '2026-10-10',
