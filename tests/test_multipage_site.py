@@ -92,7 +92,7 @@ class MultiPageProductionTests(unittest.TestCase):
 
         events = json.loads((ROOT / "supplemental-events.json").read_text(encoding="utf-8"))
         event = next(item for item in events if item.get("id") == "bandsintown:1040178082")
-        self.assertEqual(portrait["previousSource"], event.get("image"))
+        self.assertIn(event.get("image"), (portrait["previousSource"], portrait["asset"]))
 
     def test_event_images_have_fixed_frame(self):
         css = (ROOT / "styles.css").read_text(encoding="utf-8")

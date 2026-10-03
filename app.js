@@ -1032,7 +1032,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "aliases": [
       "Shonlock"
     ],
-    "website": "http://www.shonlock.com/",
+    "website": "https://www.shonlock.com/",
     "instagramProfile": "https://www.instagram.com/shonlock/",
     "spotifyProfile": "https://open.spotify.com/artist/0Fs18mA7TFMvYVRNX4dNTt",
     "youtubeProfile": "https://music.youtube.com/@Shonlock",
@@ -1060,7 +1060,7 @@ const VERIFIED_ARTIST_REGISTRY = {
       "T Bone",
       "Rene Sotomayor"
     ],
-    "website": "http://houseoftbone.com/",
+    "website": "https://houseoftbone.com/",
     "instagramProfile": "https://www.instagram.com/tboneoficial/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/6h2GxbU7emrTikSWxbMyxd",
     "youtubeProfile": "https://www.youtube.com/channel/UCxQgnrqdZe_2qAR9jzyVmmg",
@@ -1845,7 +1845,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "website": "https://www.instagram.com/deontehall100",
     "instagramProfile": "https://www.instagram.com/deontehall100",
     "spotifyProfile": "https://open.spotify.com/artist/1o4z5bdBNIeJZGIHeseIhf",
-    "youtubeProfile": "http://www.youtube.com/@deontehallofficial",
+    "youtubeProfile": "https://www.youtube.com/@deontehallofficial",
     "officialImageSource": "https://deontehall.com/index.php/about-deonte/",
     "imageUrl": "assets/artists/deonte-hall-saved.webp",
     "imagePosition": "center",
@@ -3105,7 +3105,7 @@ const VERIFIED_ARTIST_REGISTRY = {
       "Jesus Junki3",
       "Kenny Jenkins; Malaki The Messenger; Jesus Junki3"
     ],
-    "website": "http://www.jesusjunki3movement.org/",
+    "website": "https://www.jesusjunki3movement.org/",
     "instagramProfile": "https://www.instagram.com/jesusjunki3_mtm/",
     "spotifyProfile": "https://open.spotify.com/artist/0jsCVNpeQcIkpAZjDIFhOC",
     "youtubeProfile": "https://www.youtube.com/@Kenny_Jenkins/playlists",
@@ -3315,8 +3315,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/6HvphSwjzZrs93AEtL2ZIm",
     "youtubeProfile": "https://www.youtube.com/channel/UCoRopeFhNhRbocpiXV0hqyw",
     "officialImageSource": "https://www.instagram.com/aitheanomaly/",
-    "imageUrl": "assets/artists/a-i-the-anomaly-verified-oct3.webp",
-    "imagePosition": "0% center",
+    "imageUrl": "assets/artists/a-i-the-anomaly-verified-oct3.jpg",
+    "imagePosition": "50% 80%",
     "sourceRegistryVerified": true
   },
   "selah the corner": {
@@ -4156,7 +4156,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "aliases": [
       "Shonlock"
     ],
-    "website": "http://www.shonlock.com/",
+    "website": "https://www.shonlock.com/",
     "instagramProfile": "https://www.instagram.com/shonlock/",
     "spotifyProfile": "https://open.spotify.com/artist/0Fs18mA7TFMvYVRNX4dNTt",
     "youtubeProfile": "https://music.youtube.com/@Shonlock",
@@ -4184,7 +4184,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "T Bone",
       "Rene Sotomayor"
     ],
-    "website": "http://houseoftbone.com/",
+    "website": "https://houseoftbone.com/",
     "instagramProfile": "https://www.instagram.com/tboneoficial/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/6h2GxbU7emrTikSWxbMyxd",
     "youtubeProfile": "https://www.youtube.com/channel/UCxQgnrqdZe_2qAR9jzyVmmg",
@@ -4983,7 +4983,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "website": "https://www.instagram.com/deontehall100",
     "instagramProfile": "https://www.instagram.com/deontehall100",
     "spotifyProfile": "https://open.spotify.com/artist/1o4z5bdBNIeJZGIHeseIhf",
-    "youtubeProfile": "http://www.youtube.com/@deontehallofficial",
+    "youtubeProfile": "https://www.youtube.com/@deontehallofficial",
     "officialImageSource": "https://deontehall.com/index.php/about-deonte/",
     "imageUrl": "assets/artists/deonte-hall-saved.webp",
     "imagePosition": "center",
@@ -6243,7 +6243,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "Jesus Junki3",
       "Kenny Jenkins; Malaki The Messenger; Jesus Junki3"
     ],
-    "website": "http://www.jesusjunki3movement.org/",
+    "website": "https://www.jesusjunki3movement.org/",
     "instagramProfile": "https://www.instagram.com/jesusjunki3_mtm/",
     "spotifyProfile": "https://open.spotify.com/artist/0jsCVNpeQcIkpAZjDIFhOC",
     "youtubeProfile": "https://www.youtube.com/@Kenny_Jenkins/playlists",
@@ -6453,8 +6453,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6HvphSwjzZrs93AEtL2ZIm",
     "youtubeProfile": "https://www.youtube.com/channel/UCoRopeFhNhRbocpiXV0hqyw",
     "officialImageSource": "https://www.instagram.com/aitheanomaly/",
-    "imageUrl": "assets/artists/a-i-the-anomaly-verified-oct3.webp",
-    "imagePosition": "0% center",
+    "imageUrl": "assets/artists/a-i-the-anomaly-verified-oct3.jpg",
+    "imagePosition": "50% 80%",
     "sourceRegistryVerified": true
   },
   "selah the corner": {
@@ -7475,8 +7475,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 30%"
   },
   "a.i. the anomaly": {
-    "imageUrl": "assets/artists/a-i-the-anomaly-verified-oct3.webp",
-    "imagePosition": "0% center"
+    "imageUrl": "assets/artists/a-i-the-anomaly-verified-oct3.jpg",
+    "imagePosition": "50% 80%"
   },
   "young bro": {
     "imageUrl": "assets/artists/young-bro-verified-oct3.jpg",
