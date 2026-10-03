@@ -1,0 +1,57 @@
+name: Diagnostic full show discovery snapshot
+
+on:
+  push:
+    paths:
+      - ".github/workflows/full-show-audit-diagnostic.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out production repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Sync verified artist registry
+        run: python scripts/sync_verified_artist_registry.py
+
+      - name: Add priority artist fallback calendars
+        run: python scripts/apply_priority_source_fallbacks.py
+
+      - name: Collect upcoming shows
+        env:
+          TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
+        run: python scripts/update_events.py
+
+      - name: Run expanded all-artist source scan
+        run: |
+          python -m py_compile scripts/scan_all_artist_sources.py
+          python scripts/scan_all_artist_sources.py
+
+      - name: Apply curated catalog policy and coverage audit
+        run: python scripts/apply_curated_catalog_policy.py
+
+      - name: Capture discovery snapshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: full-show-discovery-snapshot
+          if-no-files-found: warn
+          retention-days: 3
+          path: |
+            events.json
+            supplemental-events.json
+            run-status.json
+            full-scan-status.json
+            full-scan-candidates.json
+            coverage-gaps.json
+            config/artists.json
