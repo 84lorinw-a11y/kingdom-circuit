@@ -230,16 +230,6 @@ def apply(root: Path) -> dict[str, int]:
     root = root.resolve()
     public_artifact = root.name == "_site" or (root / "seo-build-manifest.json").is_file()
 
-    image_path = root / IMAGE
-    if not image_path.is_file():
-        raise SystemExit(f"Verified ECHO Nights artwork is missing: {image_path}")
-    digest = hashlib.sha256(image_path.read_bytes()).hexdigest()
-    if digest != IMAGE_SHA256:
-        raise SystemExit(
-            f"Verified ECHO Nights artwork hash mismatch: {image_path} "
-            f"expected {IMAGE_SHA256}, got {digest}"
-        )
-
     if public_artifact:
         current_event_present = False
         for filename in SOURCE_FILES:
@@ -262,6 +252,16 @@ def apply(root: Path) -> dict[str, int]:
                 return {"jsonFilesPinned": 0, "htmlPagesPinned": 0, "expiredEventAbsent": 1}
             html_pages = patch_html(root)
             return {"jsonFilesPinned": 0, "htmlPagesPinned": html_pages, "expiredEventAbsent": 1}
+
+    image_path = root / IMAGE
+    if not image_path.is_file():
+        raise SystemExit(f"Verified ECHO Nights artwork is missing: {image_path}")
+    digest = hashlib.sha256(image_path.read_bytes()).hexdigest()
+    if digest != IMAGE_SHA256:
+        raise SystemExit(
+            f"Verified ECHO Nights artwork hash mismatch: {image_path} "
+            f"expected {IMAGE_SHA256}, got {digest}"
+        )
 
     repaired = enforce_json(root)
     html_pages = patch_html(root)
