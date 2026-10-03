@@ -1,0 +1,184 @@
+name: Apply verified WHATUPRG Texas tour details
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/apply-whatuprg-tour-details.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Apply verified tour details without changing event identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          ROOT = Path('.')
+          FILES = [ROOT/'config/manual-events.json', ROOT/'events.json', ROOT/'supplemental-events.json']
+          COMMON = {
+              'title': 'WHATUPRG — NEW SAINT HOLY TOUR',
+              'startTime': '19:30',
+              'timezone': 'America/Chicago',
+              'artists': ['WHATUPRG', 'aftrthght', 'De La Cruz'],
+              'headliner': 'WHATUPRG',
+              'eventType': 'concert',
+              'status': 'scheduled',
+              'lineupExplicit': True,
+              'advertisedBilling': ['WHATUPRG', 'aftrthght', 'De La Cruz'],
+              'officialBill': ['WHATUPRG', 'aftrthght', 'De La Cruz'],
+              'confidence': 'high',
+              'detailsPending': False,
+              'auditVerified': '2026-10-03',
+          }
+          DETAILS = {
+              'whatuprg-houston-2026-11-19': {
+                  'venue': 'Rockefellers',
+                  'address': '3620 Washington Ave',
+                  'postalCode': '77007',
+                  'city': 'Houston',
+                  'state': 'TX',
+                  'country': 'US',
+                  'officialUrl': 'https://www.reachrecords.com/events/',
+                  'ticketUrl': 'https://events.extrachill.com/events/whatuprg-w-aftrthght-de-la-cruz',
+                  'sourceName': 'Reach Records WHATUPRG tour calendar',
+                  'notes': 'Reach Records confirms the November 19 Houston stop. Artist calendars confirm WHATUPRG with aftrthght and De La Cruz at 7:30 PM. Rockefellers official venue site confirms 3620 Washington Ave, Houston, TX 77007.',
+                  'sourcesToAdd': [
+                      {'name':'Reach Records WHATUPRG tour calendar','url':'https://www.reachrecords.com/events/','type':'manual_verified','authority':'artist_label','priority':115},
+                      {'name':'Rockefellers official venue site','url':'https://www.rockefellershouston.com/','type':'manual_verified','authority':'venue','priority':112},
+                      {'name':'Published tour event details','url':'https://events.extrachill.com/events/whatuprg-w-aftrthght-de-la-cruz','type':'manual_verified','authority':'event_listing','priority':90},
+                  ],
+              },
+              'whatuprg-dallas-2026-11-20': {
+                  'venue': 'Ridglea Room',
+                  'address': '6025 Camp Bowie Blvd',
+                  'postalCode': '76116',
+                  'city': 'Fort Worth',
+                  'advertisedCity': 'Dallas–Fort Worth',
+                  'state': 'TX',
+                  'country': 'US',
+                  'officialUrl': 'https://www.bandsintown.com/e/108946386-whatuprg-at-ridglea-room',
+                  'ticketUrl': '',
+                  'sourceName': 'Reach Records WHATUPRG tour calendar',
+                  'notes': 'Reach Records and artist calendars confirm the November 20 Dallas–Fort Worth stop is physically at Ridglea Room in Fort Worth at 7:30 PM. The Ridglea official site gives the canonical venue address as 6025 Camp Bowie Blvd; an artist-calendar address variant is not used.',
+                  'sourcesToAdd': [
+                      {'name':'Reach Records WHATUPRG tour calendar','url':'https://www.reachrecords.com/events/','type':'manual_verified','authority':'artist_label','priority':115},
+                      {'name':'Ridglea Room official venue page','url':'https://theridglea.com/ridglea-room/','type':'manual_verified','authority':'venue','priority':112},
+                      {'name':'WHATUPRG artist calendar event','url':'https://www.bandsintown.com/e/108946386-whatuprg-at-ridglea-room','type':'manual_verified','authority':'artist_calendar','priority':100},
+                  ],
+              },
+              'whatuprg-san-antonio-2026-11-22': {
+                  'venue': 'Paper Tiger',
+                  'address': "2410 N St Mary's St",
+                  'postalCode': '78212',
+                  'city': 'San Antonio',
+                  'state': 'TX',
+                  'country': 'US',
+                  'officialUrl': 'https://www.bandsintown.com/e/1040474736-aftrthght-at-paper-tiger',
+                  'ticketUrl': '',
+                  'sourceName': 'Reach Records WHATUPRG tour calendar',
+                  'notes': 'Reach Records confirms the November 22 San Antonio stop. Multiple billed-artist calendars corroborate Paper Tiger, 2410 N St Mary’s St, at 7:30 PM with WHATUPRG, aftrthght and De La Cruz. No unsupported direct ticket URL is published.',
+                  'sourcesToAdd': [
+                      {'name':'Reach Records WHATUPRG tour calendar','url':'https://www.reachrecords.com/events/','type':'manual_verified','authority':'artist_label','priority':115},
+                      {'name':'aftrthght artist calendar event','url':'https://www.bandsintown.com/e/1040474736-aftrthght-at-paper-tiger','type':'manual_verified','authority':'artist_calendar','priority':100},
+                      {'name':'De La Cruz artist calendar event','url':'https://www.bandsintown.com/e/1040474915-de-la-cruz-at-paper-tiger','type':'manual_verified','authority':'artist_calendar','priority':100},
+                  ],
+              },
+          }
+
+          seen_manual = {key: 0 for key in DETAILS}
+          total_updates = 0
+          for path in FILES:
+              data = json.loads(path.read_text(encoding='utf-8'))
+              changed = False
+              for event in data:
+                  raw_id = str(event.get('id') or '')
+                  base_id = raw_id.removeprefix('manual:')
+                  if base_id not in DETAILS:
+                      continue
+                  if path.name == 'manual-events.json':
+                      seen_manual[base_id] += 1
+                  preserved_first_seen = event.get('firstSeen')
+                  preserved_image = event.get('image')
+                  event.update(COMMON)
+                  detail = dict(DETAILS[base_id])
+                  sources_to_add = detail.pop('sourcesToAdd')
+                  event.update(detail)
+                  if preserved_first_seen is not None:
+                      event['firstSeen'] = preserved_first_seen
+                  if preserved_image is not None:
+                      event['image'] = preserved_image
+                  existing_sources = event.get('sources') if isinstance(event.get('sources'), list) else []
+                  by_url = {str(s.get('url') or ''): s for s in existing_sources if isinstance(s, dict) and s.get('url')}
+                  for source in sources_to_add:
+                      by_url[source['url']] = source
+                  event['sources'] = list(by_url.values())
+                  changed = True
+                  total_updates += 1
+              if changed:
+                  path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          missing = [key for key, count in seen_manual.items() if count != 1]
+          if missing:
+              raise SystemExit(f'Expected exactly one durable manual record for each WHATUPRG stop; bad: {missing}')
+          print(f'Updated {total_updates} WHATUPRG records while preserving IDs, firstSeen and artwork.')
+          PY
+
+      - name: Validate JSON and targeted facts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m json.tool config/manual-events.json >/dev/null
+          python -m json.tool events.json >/dev/null
+          python -m json.tool supplemental-events.json >/dev/null
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          items=json.loads(Path('config/manual-events.json').read_text())
+          by_id={str(x.get('id')):x for x in items}
+          checks={
+            'whatuprg-houston-2026-11-19':('Houston','Rockefellers','3620 Washington Ave','19:30'),
+            'whatuprg-dallas-2026-11-20':('Fort Worth','Ridglea Room','6025 Camp Bowie Blvd','19:30'),
+            'whatuprg-san-antonio-2026-11-22':('San Antonio','Paper Tiger',"2410 N St Mary's St",'19:30'),
+          }
+          for key,(city,venue,address,time) in checks.items():
+            e=by_id[key]
+            assert (e['city'],e['venue'],e['address'],e['startTime'])==(city,venue,address,time)
+            assert e['artists']==['WHATUPRG','aftrthght','De La Cruz']
+            assert e.get('detailsPending') is False
+          print('WHATUPRG targeted verification passed')
+          PY
+
+      - name: Commit durable source and public-feed corrections
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "kingdom-circuit-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add config/manual-events.json events.json supplemental-events.json
+          if git diff --cached --quiet; then
+            echo "WHATUPRG records already correct."
+            exit 0
+          fi
+          git commit -m "fix: verify WHATUPRG Texas tour venues and lineup"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch origin main
+            git rebase origin/main
+          done
+          exit 1
