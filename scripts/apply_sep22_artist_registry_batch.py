@@ -62,7 +62,7 @@ ROWS = [
         "youtubeProfile": "https://www.youtube.com/@C4Crotona",
         "officialImageSource": "https://www.themenacemovement.com/c4-crotona/",
         "imageUrl": spotify_image("1WlJORCWCG2F0TBI4sReri"),
-        "imagePosition": "center",
+        "imagePosition": "50% 0%",
     },
     {
         "rosterOrder": 151,
