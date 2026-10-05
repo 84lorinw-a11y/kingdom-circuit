@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+from html import escape as html_escape
 import json
 import pathlib
 import re
@@ -75,6 +76,39 @@ def concert_start_only(text: str) -> str:
     """Keep the public Date/start row; omit doors rows from older overlays."""
     return re.sub(r'<div\b[^>]*>\s*<dt>Doors(?: open)?</dt>\s*<dd>.*?</dd>\s*</div>',
                   '', text, flags=re.I | re.S)
+
+
+def finalize_requested_event_address(text: str, url: str) -> str:
+    """Show the owner-approved address on this event page only, after overlays."""
+    if url != "/event/new-kids-on-the-block-concert-and-conference-2026-10-16-orlando-5bdaf8/":
+        return text
+
+    # Use the page's current verified event address so later venue corrections
+    # stay in sync; listing cards and every other event retain city/state only.
+    address = None
+    for raw in re.findall(r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', text, re.S | re.I):
+        payload = json.loads(raw)
+        if isinstance(payload, dict) and payload.get("@type") in {"MusicEvent", "Event"}:
+            address = payload.get("location", {}).get("address")
+            break
+    if not isinstance(address, dict) or not all(address.get(key) for key in (
+        "streetAddress", "addressLocality", "addressRegion", "postalCode"
+    )):
+        raise ValueError("New Kids on the Block is missing its verified full address")
+
+    street = html_escape(str(address["streetAddress"]))
+    locality = html_escape(f'{address["addressLocality"]}, {address["addressRegion"]} {address["postalCode"]}')
+    detail = re.search(r'<dl\b[^>]*class="detail-list"[^>]*>.*?</dl>', text, re.S)
+    if not detail:
+        raise ValueError("New Kids on the Block event details were not found")
+    updated, count = re.subn(
+        r'(<dt>Location</dt>\s*)<dd\b[^>]*>.*?</dd>',
+        lambda match: match.group(1) + f'<dd data-kc-full-address="true">{street}<br>{locality}</dd>',
+        detail.group(0), count=1, flags=re.S,
+    )
+    if count != 1:
+        raise ValueError("New Kids on the Block location row was not found")
+    return text[:detail.start()] + updated + text[detail.end():]
 
 
 def event_card_count(text: str) -> int:
@@ -187,7 +221,7 @@ body #kc-rd-artist-name {{ white-space: nowrap; overflow-wrap: normal; }}
         page.write_text(document.replace('</head>', style + '\n</head>', 1), encoding="utf-8")
 
 
-def apply(root: pathlib.Path) -> dict:
+def apply(root: pathlib.Path, *, include_requested_addresses: bool = False) -> dict:
     if not root.exists():
         raise SystemExit(f"Site root does not exist: {root}")
 
@@ -210,6 +244,8 @@ def apply(root: pathlib.Path) -> dict:
         reasons[reason] += 1
         directive = "index,follow" if should_index else "noindex,follow"
         patched = concert_start_only(set_robots(text, directive))
+        if include_requested_addresses:
+            patched = finalize_requested_event_address(patched, url)
         if patched != text:
             page.write_text(patched, encoding="utf-8")
             text = patched
@@ -308,8 +344,9 @@ def apply(root: pathlib.Path) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--site", required=True)
+    parser.add_argument("--show-requested-event-address", action="store_true")
     args = parser.parse_args()
-    apply(pathlib.Path(args.site).resolve())
+    apply(pathlib.Path(args.site).resolve(), include_requested_addresses=args.show_requested_event_address)
 
 
 if __name__ == "__main__":

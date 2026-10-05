@@ -445,7 +445,7 @@ jobs:
             --source-history event-history.json
 
       - name: Refresh final production indexing after redesign
-        run: python scripts/finalize_seo_indexing_core.py --site _site
+        run: python scripts/finalize_seo_indexing_core.py --site _site --show-requested-event-address
 
       - name: Verify approved live redesign and production identity
         run: |
