@@ -6,7 +6,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 BATCH = "2026-09-29-expanded-source-search"
-APPROVED_BATCHES = {BATCH, "2026-09-30-whatuprg-announced"}
+APPROVED_BATCHES = {BATCH, "2026-09-30-whatuprg-announced", "2026-10-05-submitted-shows"}
 
 
 def held_dallas_candidate(event):

@@ -2772,7 +2772,7 @@ const VERIFIED_ARTIST_REGISTRY = {
       "D Riddick",
       "D. Riddick"
     ],
-    "website": "https://www.instagram.com/driddickmusic/",
+    "website": "https://linktr.ee/DRIDDICK",
     "instagramProfile": "https://www.instagram.com/driddickmusic/",
     "spotifyProfile": "https://open.spotify.com/artist/0Q6VFs5LFRjY42zvUmYRVx",
     "youtubeProfile": "https://www.youtube.com/channel/UCGp2WyPotoQRT0L58cM-j1A",
@@ -6299,7 +6299,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "D Riddick",
       "D. Riddick"
     ],
-    "website": "https://www.instagram.com/driddickmusic/",
+    "website": "https://linktr.ee/DRIDDICK",
     "instagramProfile": "https://www.instagram.com/driddickmusic/",
     "spotifyProfile": "https://open.spotify.com/artist/0Q6VFs5LFRjY42zvUmYRVx",
     "youtubeProfile": "https://www.youtube.com/channel/UCGp2WyPotoQRT0L58cM-j1A",
