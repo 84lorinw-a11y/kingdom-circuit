@@ -30,6 +30,7 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
 from urllib.request import Request, urlopen
 from urllib.robotparser import RobotFileParser
+from zoneinfo import ZoneInfo
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 if str(SCRIPT_DIR) not in sys.path:
@@ -382,9 +383,20 @@ def safe_image_reference(value: Any) -> str:
     return ""
 
 
-def parse_date_prefix(value: Any) -> tuple[str, str]:
+def parse_date_prefix(value: Any, timezone_name: str = "") -> tuple[str, str]:
     if not isinstance(value, str):
         return "", ""
+    # JSON-LD may use UTC even when the visible ticket page uses venue time.
+    # Convert only with an explicitly configured venue timezone; never guess
+    # one from a state, since several states span multiple timezones.
+    if timezone_name:
+        try:
+            instant = datetime.fromisoformat(value.strip().replace("Z", "+00:00"))
+        except ValueError:
+            instant = None
+        if instant is not None and instant.tzinfo is not None:
+            local = instant.astimezone(ZoneInfo(timezone_name))
+            return local.date().isoformat(), local.strftime("%H:%M")
     match = re.match(r"^(\d{4}-\d{2}-\d{2})(?:[T ](\d{2}:\d{2}))?", value.strip())
     if not match:
         return "", ""
@@ -951,8 +963,9 @@ def collect_jsonld_source_from_html(
             music_confirmed = schema_is_music_event(raw_event) or bool(source.get("musicConfirmed", False))
             if not music_confirmed:
                 continue
-            start_date, start_time = parse_date_prefix(raw_event.get("startDate"))
-            end_date, _ = parse_date_prefix(raw_event.get("endDate"))
+            venue_timezone = str(source.get("timezone") or "")
+            start_date, start_time = parse_date_prefix(raw_event.get("startDate"), venue_timezone)
+            end_date, end_time = parse_date_prefix(raw_event.get("endDate"), venue_timezone)
             if not start_date:
                 continue
             venue, street, city, state, country = extract_address(raw_event.get("location"))
@@ -1001,6 +1014,20 @@ def collect_jsonld_source_from_html(
                 music_confirmed=True,
                 priority=source_priority(source, 90),
             ))
+            if venue_timezone:
+                event = events[-1]
+                event["timezone"] = venue_timezone
+                if end_time:
+                    event["endTime"] = end_time
+                for field in ("startDate", "endDate"):
+                    raw = raw_event.get(field)
+                    if isinstance(raw, str) and "T" in raw:
+                        try:
+                            instant = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+                        except ValueError:
+                            continue
+                        if instant.tzinfo is not None:
+                            event[field + "Time"] = instant.astimezone(ZoneInfo(venue_timezone)).isoformat()
     return events
 
 def collect_reach_records_source(
