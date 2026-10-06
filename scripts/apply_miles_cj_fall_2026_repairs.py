@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 from apply_sep26_requested_lineups import patch_event as apply_reviewed_lineup
+from apply_oct6_show_audit import apply as apply_oct6_audit
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -173,14 +174,12 @@ BANDSINTOWN_REDIRECTS = {
 }
 
 TIME_REPAIRS = {
-    "cj-emulous-glo-concert-los-angeles-2026": "18:00",
     "cj-emulous-christlike-christmas-berkeley-2026": "18:00",
     "cj-emulous-christlike-christmas-felton-2026": "19:00",
     "miles-cj-zion-ultra-lounge-chandler-2026": "19:00",
 }
 
 TIME_NOTES = {
-    "cj-emulous-glo-concert-los-angeles-2026": "CJ Emulous's official calendar confirms Los Angeles on November 15, 2026 at 6:00 PM. Venue and additional artists remain unconfirmed.",
     "cj-emulous-christlike-christmas-berkeley-2026": "CJ Emulous's official calendar confirms Berkeley on December 2, 2026 at 6:00 PM. Venue remains unpublished.",
     "cj-emulous-christlike-christmas-felton-2026": "CJ Emulous's official calendar confirms Felton on December 4, 2026 at 7:00 PM. Venue remains unpublished.",
     "miles-cj-zion-ultra-lounge-chandler-2026": "CJ Emulous's official calendar confirms Miles Minnick and CJ Emulous at Zion Ultra Lounge on December 5, 2026 at 7:00 PM.",
@@ -341,6 +340,7 @@ def main() -> None:
     apply_runtime_events()
     apply_supplemental_support()
     apply_artist_alias()
+    apply_oct6_audit(ROOT)
     verify()
     print("Verified Miles Minnick and CJ Emulous fall 2026 repairs applied.")
 

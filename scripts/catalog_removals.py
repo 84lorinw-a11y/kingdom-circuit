@@ -15,7 +15,23 @@ def removed_artist(name):
     return re.sub(r"[\s_-]+", " ", str(name or "").casefold()).strip() in REMOVED_ARTISTS
 
 
+def withheld_event(event):
+    # Owner authorized withholding this conflicting booking on October 6.
+    # It is not a cancellation and not the separate October 10 JWoodz event.
+    # A later rescheduled date is eligible for a new review rather than blocked.
+    if event.get("startDate") == "2026-11-14" and (
+        str(event.get("id") or "").removeprefix("manual:") == "cj-emulous-kickback-grand-prairie-2026"
+        or any(str(event.get(field) or "").split("?")[0].rstrip("/") ==
+               "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous"
+               for field in ("officialUrl", "ticketUrl"))
+    ):
+        return True
+    return False
+
+
 def removed_event(event):
+    if withheld_event(event):
+        return True
     names = [event.get("headliner"), *event.get("artists", []),
              *event.get("advertisedBilling", []), *event.get("officialBill", [])]
     if any(removed_artist(name) for name in names):

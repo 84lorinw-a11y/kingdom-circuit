@@ -22,7 +22,7 @@ ARK_BILL = [
     "Y Shadey", "Kefia Rollerson", "DJ PARTYwithParks", "180MINDSET",
 ]
 REIGN_BILL = ["Aasha Marie", "Justin Martyr", "Conquest", "Crystal B."]
-ONE_DAY_BILL = ["Petrina DeLacey", "JBthaPreacher", "Cyfë II", "Grace Runkle", "Serin Oh"]
+ONE_DAY_BILL = ["Petrina DeLacey", "JBthaPreacher", "Cyfë II", "Grace Runkle", "Way?"]
 ANIKE_URL = "https://www.eventbrite.com/e/anike-live-the-all-star-concert-tickets-1997805844059"
 OVERFLOW_URL = "https://www.overflowconf.com/schedule"
 MIAMI_URL = "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl"
@@ -48,12 +48,18 @@ PATCHES = {
         "tru-serva-cupojoy-2026-10-09.jpg", "https://www.itickets.com/events/487141",
         "Official iTickets TRU-SERVA event graphic"),
     "one-day-fall-festival-aurora-2026": {
+        "title": "ONE DAY Fall Festival 2026 — Evening Concert",
         **artwork("one-day-festival-2026-10-10-lineup-crop.png", "https://www.instagram.com/runwchristden/p/Dd4WmfHEdta/?img_index=2",
                   "Owner-approved upper-section edit of RWC Denver official ONE DAY lineup flyer"),
         "startTime": "16:30", "startDateTime": "2026-10-10T16:30:00-06:00",
-        "timezone": "America/Denver", "endTime": "20:00",
+        "timezone": "America/Denver", "endTime": "20:05",
+        "endDateTime": "2026-10-10T20:05:00-06:00", "performanceWindow": "16:30-20:05",
         "artists": ["Petrina DeLacey", "JBthaPreacher"], "advertisedBilling": ONE_DAY_BILL, "officialBill": ONE_DAY_BILL,
-        "notes": "The full festival runs 9 AM–8 PM; Kingdom Circuit lists the evening concert start, 4:30 PM. The official RWC Denver lineup flyer confirms Petrina DeLacey, JBthaPreacher, Cyfë II, Grace Runkle and Serin Oh. Billing follows the owner's requested order, with Petrina and JB first, then Cyfë II.",
+        "hosts": ["DJ Zay", "Terrance Mack"],
+        "publicDescription": "The evening concert at ONE DAY features Petrina DeLacey, JBthaPreacher, Cyfë II, Grace Runkle and Way?, hosted by DJ Zay and Terrance Mack. The organizer lists the evening program from 4:30–8:05 PM in the Large Sanctuary, with doors opening at 4:30 PM. JBthaPreacher performs the closeout set. Individual set times are not published.",
+        "legacyEventPaths": ["/event/one-day-fall-festival-2026-2026-10-10-aurora-587532/"],
+        "legacyEventNotice": "This listing now focuses on ONE DAY's evening concert featuring Petrina DeLacey and JBthaPreacher.",
+        "notes": "October 6 owner-approved review: focus on Petrina and JB's evening concert and keep them first, then Cyfë II. Official schedule lists the evening program 4:30–8:05 PM with Way?, Cyfë II, Petrina, Grace and JB, hosted by DJ Zay and Terrance Mack. Serin Oh is in the separate 12:30–1:30 PM outdoor block and is not billed in this evening listing. Keep the owner's approved flyer crop. Source: https://onedaydenver.org/schedule/",
     },
     "mayia-boxyard-saturdaze-2026": {
         **artwork("mayia-boxyard-2026-10-10.png",
@@ -105,7 +111,7 @@ def patch_event(row):
     row.update(copy.deepcopy(wanted))
     if "legacyEventPaths" in wanted:
         row["legacyEventPaths"] = list(dict.fromkeys(wanted["legacyEventPaths"] + legacy))
-    row["auditVerified"] = "2026-09-26"
+    row["auditVerified"] = "2026-10-06" if event_id == "one-day-fall-festival-aurora-2026" else "2026-09-26"
     if event_id in {"official:7c07397fa047689b0215", "supplemental:brenno-overflow-conference-2026"}:
         source = {"name": "Official organizer event details", "url": wanted["officialUrl"],
                   "type": "manual_verified", "authority": "venue_ticket", "priority": 115}

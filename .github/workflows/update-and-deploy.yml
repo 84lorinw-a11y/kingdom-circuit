@@ -458,6 +458,7 @@ jobs:
           python scripts/verify_sep26_source_corrections.py _site
           python scripts/verify_oct2_verified_intake.py _site
           python scripts/verify_oct3_concert_corrections.py _site
+          python scripts/verify_oct6_show_audit.py _site
           python scripts/verify_owner_roster.py _site
 
       - name: Configure GitHub Pages

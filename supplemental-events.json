@@ -1589,8 +1589,8 @@
     "title": "GODLY AMBITION TOUR — HOUSTON, TX",
     "startDate": "2026-10-24",
     "startTime": "18:00",
-    "timezone": "",
-    "venue": "GODLY AMBITION TOUR — HOUSTON, TX",
+    "timezone": "America/Chicago",
+    "venue": "The Bronze Peacock at House of Blues Houston",
     "address": "1204 Caroline St",
     "city": "Houston",
     "state": "TX",
@@ -1633,7 +1633,8 @@
     "imageOverride": true,
     "imageSource": "Ticketmaster official Ruslan photo",
     "imageSourceUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
-    "authority": "venue_ticket"
+    "authority": "venue_ticket",
+    "auditVerified": "2026-10-06"
   },
   {
     "id": "sevin-live-nashville-2026-10-24",
@@ -1708,8 +1709,8 @@
     "title": "GODLY AMBITION TOUR — DALLAS, TX",
     "startDate": "2026-10-25",
     "startTime": "18:00",
-    "timezone": "",
-    "venue": "GODLY AMBITION TOUR — DALLAS, TX",
+    "timezone": "America/Chicago",
+    "venue": "The Echo Lounge & Music Hall",
     "address": "1323 N Stemmons Fwy",
     "city": "Dallas",
     "state": "TX",
@@ -1752,7 +1753,8 @@
     "imageOverride": true,
     "imageSource": "Ticketmaster official Ruslan photo",
     "imageSourceUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-dallas-texas-10-25-2026/event/0C00636EDD9DABAC",
-    "authority": "venue_ticket"
+    "authority": "venue_ticket",
+    "auditVerified": "2026-10-06"
   },
   {
     "id": "supplemental:skema-boy-2026-10-27-chicago-il",
@@ -2616,45 +2618,6 @@
     ]
   },
   {
-    "title": "The Kickback",
-    "startDate": "2026-11-14",
-    "startTime": "19:00",
-    "timezone": "America/Chicago",
-    "venue": "2305 SE 14th St",
-    "address": "2305 SE 14th St",
-    "city": "Grand Prairie",
-    "state": "TX",
-    "country": "US",
-    "artists": [
-      "CJ Emulous"
-    ],
-    "headliner": "CJ Emulous",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-    "officialUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-    "image": "assets/events/cj-emulous-kickback-2026.svg",
-    "price": "",
-    "sourceName": "CJ Emulous official calendar",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "CJ Emulous official calendar",
-        "url": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-11",
-    "id": "cj-emulous-kickback-grand-prairie-2026",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true
-  },
-  {
     "id": "bandsintown:1040378722",
     "title": "Miles Minnick — GLOVEMBER",
     "startDate": "2026-11-14",
@@ -2736,19 +2699,24 @@
       "Eli Williams"
     ],
     "lineupExplicit": true,
-    "auditVerified": "2026-09-26",
+    "auditVerified": "2026-10-06",
     "doorsTime": "19:00",
     "startDateTime": "2026-11-14T20:00:00-08:00",
     "authority": "venue_ticket",
-    "notes": "September 23 official co-posted flyer explicitly bills Miles Minnick, Tommy Zuko, CJ Emulous, Mikeyso and Lul DreDay, hosted by DJ Malski. Ticketmaster More Info confirms The Belasco, 6 PM early-entry lounge, 7 PM doors and 8 PM show. CJ’s older official calendar still lists a November 15 Los Angeles GLOConcert and November 14 Grand Prairie Kickback; those separate entries require organizer clarification and have not been merged or cancelled by inference. Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates.",
+    "notes": "Official co-posted flyer bills Miles Minnick, Tommy Zuko, CJ Emulous, Mikeyso and Lul DreDay, hosted by DJ Malski; Eli Williams' dated announcement confirms his participation. Ticketmaster confirms November 14, The Belasco, 6 PM early entry, 7 PM doors, 8 PM show. October 6 review: CJ's GLOvember source links this exact Ticketmaster event, so its November 15 duplicate is merged here. Owner authorized withholding the conflicting November 14 Grand Prairie listing pending confirmation; no cancellation is claimed. Preserve the full reviewed bill and approved artwork.",
     "legacyEventPaths": [
-      "/event/miles-minnick-at-below-at-the-belasco-2026-11-14-los-angeles-5d10ab/"
+      "/event/miles-minnick-at-below-at-the-belasco-2026-11-14-los-angeles-5d10ab/",
+      "/event/glo-concert-2026-11-15-los-angeles-1f2b48/"
     ],
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "imageSource": "Miles Minnick and CJ Emulous official GLOVEMBER Instagram flyer",
-    "imageSourceUrl": "https://www.instagram.com/p/Ddo8xGgoQhN/"
+    "imageSourceUrl": "https://www.instagram.com/p/Ddo8xGgoQhN/",
+    "legacyEventNotice": "GLOVEMBER takes place November 14, 2026 at 8 PM at The Belasco. This duplicate listing has been combined with the main event.",
+    "mergedFromIds": [
+      "manual:cj-emulous-glo-concert-los-angeles-2026"
+    ]
   },
   {
     "id": "supplemental:skema-boy-2026-11-16-dallas-tx",

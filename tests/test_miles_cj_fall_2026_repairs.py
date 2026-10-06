@@ -57,7 +57,6 @@ class MilesCjFall2026RepairTests(unittest.TestCase):
 
     def test_confirmed_times_and_cj_alias_are_present(self):
         expected = {
-            "manual:cj-emulous-glo-concert-los-angeles-2026": "18:00",
             "manual:cj-emulous-christlike-christmas-berkeley-2026": "18:00",
             "manual:cj-emulous-christlike-christmas-felton-2026": "19:00",
             "manual:miles-cj-zion-ultra-lounge-chandler-2026": "19:00",

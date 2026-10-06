@@ -15,6 +15,7 @@ from apply_verified_show_artwork import patch_event as patch_show_artwork
 from apply_sep26_requested_lineups import patch_event as patch_requested_lineups
 from catalog_removals import apply as apply_catalog_removals
 from apply_verified_date_corrections import patch_event as patch_verified_dates
+from apply_oct6_show_audit import apply as apply_oct6_audit
 
 ROOT = Path(__file__).resolve().parents[1]
 DOVE_EVENT_ID = "bandsintown:1040305060"
@@ -166,6 +167,7 @@ def apply(root: Path = ROOT, today: str | None = None) -> None:
         (root / name).write_text(json.dumps(rows, indent=2, ensure_ascii=False) + "\n")
     if history is not None:
         history_path.write_text(json.dumps(history, indent=2, ensure_ascii=False) + "\n")
+    apply_oct6_audit(root)
 
 
 if __name__ == "__main__":

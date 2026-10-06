@@ -89,13 +89,13 @@ UPSERTS = {
         advertised=["Bethel Music", "KB"]
     ),
     "one-day-fall-festival-aurora-2026": E(
-        "ONE DAY Fall Festival 2026", "2026-10-10", "Aurora", "CO", ["Petrina DeLacey", "JBthaPreacher"], "https://onedaydenver.org/",
+        "ONE DAY Fall Festival 2026 — Evening Concert", "2026-10-10", "Aurora", "CO", ["Petrina DeLacey", "JBthaPreacher"], "https://onedaydenver.org/",
         "ONE DAY official festival site", venue="Colorado UpLift Community Campus", address="1500 S Dayton St", event_type="festival",
-        time="09:00", end_time="20:00", tz="America/Denver", ticket="https://partiful.com/e/SK3SE7vXIs9rYlPcW0hZ", price="Free",
-        authority="official_festival", performanceWindow="16:30-20:00",
-        advertised=["Petrina DeLacey", "JBthaPreacher", "Cyfë II", "Grace Runkle", "Serin Oh"],
-        officialBill=["Petrina DeLacey", "JBthaPreacher", "Cyfë II", "Grace Runkle", "Serin Oh"],
-        notes="Festival runs 9:00 AM–8:00 PM. The sanctuary concert featuring Petrina DeLacey runs 4:30–8:00 PM. Free admission; RSVP requested."
+        time="16:30", end_time="20:05", tz="America/Denver", ticket="https://partiful.com/e/SK3SE7vXIs9rYlPcW0hZ", price="Free",
+        authority="official_festival", performanceWindow="16:30-20:05",
+        advertised=["Petrina DeLacey", "JBthaPreacher", "Cyfë II", "Grace Runkle", "Way?"],
+        officialBill=["Petrina DeLacey", "JBthaPreacher", "Cyfë II", "Grace Runkle", "Way?"],
+        notes="Owner requested an evening-concert listing focused on Petrina DeLacey and JBthaPreacher. The organizer's current program runs 4:30–8:05 PM, with 4:30 PM doors. Serin Oh performs in a separate afternoon block."
     ),
     "kelo-worship-after-christmas-jacksonville-2026": E(
         "Kelo Cho Presents: The Worship After Christmas", "2026-12-26", "Jacksonville", "FL", ["Kelo"],
@@ -140,7 +140,8 @@ UPSERTS = {
     "cj-emulous-glo-concert-los-angeles-2026": E(
         "GLO Concert", "2026-11-15", "Los Angeles", "CA", ["CJ Emulous"], "https://www.cjemulous.com/event-details/gloconcert",
         "CJ Emulous official calendar", tz="America/Los_Angeles", lineupExplicit=False,
-        notes="CJ Emulous is confirmed by his official calendar. Venue and additional artists remain unconfirmed; time is left blank pending a local source."
+        status="merged", mergedIntoId="bandsintown:1040378722",
+        notes="October 6 review: CJ's source links the same Ticketmaster GLOVEMBER event as November 14 at The Belasco. This old November 15 identity is a redirect only."
     ),
     "cj-emulous-state-youth-conference-cocoa-2026": E(
         "State Youth Conference with CJ Emulous", "2026-11-27", "Cocoa", "FL", ["CJ Emulous"],

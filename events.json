@@ -3407,7 +3407,7 @@
     "endTime": "14:30"
   },
   {
-    "title": "ONE DAY Fall Festival 2026",
+    "title": "ONE DAY Fall Festival 2026 — Evening Concert",
     "startDate": "2026-10-10",
     "startTime": "16:30",
     "timezone": "America/Denver",
@@ -3450,10 +3450,10 @@
         "priority": 94
       }
     ],
-    "auditVerified": "2026-09-26",
-    "endTime": "20:00",
-    "notes": "The full festival runs 9 AM–8 PM; Kingdom Circuit lists the evening concert start, 4:30 PM. The official RWC Denver lineup flyer confirms Petrina DeLacey, JBthaPreacher, Cyfë II, Grace Runkle and Serin Oh. Billing follows the owner's requested order, with Petrina and JB first, then Cyfë II.",
-    "performanceWindow": "16:30-20:00",
+    "auditVerified": "2026-10-06",
+    "endTime": "20:05",
+    "notes": "October 6 owner-approved review: focus on Petrina and JB's evening concert and keep them first, then Cyfë II. Official schedule lists the evening program 4:30–8:05 PM with Way?, Cyfë II, Petrina, Grace and JB, hosted by DJ Zay and Terrance Mack. Serin Oh is in the separate 12:30–1:30 PM outdoor block and is not billed in this evening listing. Keep the owner's approved flyer crop. Source: https://onedaydenver.org/schedule/",
+    "performanceWindow": "16:30-20:05",
     "id": "manual:one-day-fall-festival-aurora-2026",
     "imageSource": "Owner-approved upper-section edit of RWC Denver official ONE DAY lineup flyer",
     "imageSourceUrl": "https://www.instagram.com/runwchristden/p/Dd4WmfHEdta/?img_index=2",
@@ -3463,16 +3463,26 @@
       "JBthaPreacher",
       "Cyfë II",
       "Grace Runkle",
-      "Serin Oh"
+      "Way?"
     ],
     "officialBill": [
       "Petrina DeLacey",
       "JBthaPreacher",
       "Cyfë II",
       "Grace Runkle",
-      "Serin Oh"
+      "Way?"
     ],
-    "detailImageLayout": "landscape"
+    "detailImageLayout": "landscape",
+    "endDateTime": "2026-10-10T20:05:00-06:00",
+    "hosts": [
+      "DJ Zay",
+      "Terrance Mack"
+    ],
+    "publicDescription": "The evening concert at ONE DAY features Petrina DeLacey, JBthaPreacher, Cyfë II, Grace Runkle and Way?, hosted by DJ Zay and Terrance Mack. The organizer lists the evening program from 4:30–8:05 PM in the Large Sanctuary, with doors opening at 4:30 PM. JBthaPreacher performs the closeout set. Individual set times are not published.",
+    "legacyEventPaths": [
+      "/event/one-day-fall-festival-2026-2026-10-10-aurora-587532/"
+    ],
+    "legacyEventNotice": "This listing now focuses on ONE DAY's evening concert featuring Petrina DeLacey and JBthaPreacher."
   },
   {
     "id": "manual:nu-wave-anointing-sacramento-2026-10-10",
@@ -5465,7 +5475,7 @@
       "L.O.G.",
       "KTMoney",
       "Michael Powers",
-      "Upon This Rock"
+      "On This Rock"
     ],
     "officialBill": [
       "Big Rev.",
@@ -5473,7 +5483,7 @@
       "L.O.G.",
       "KTMoney",
       "Michael Powers",
-      "Upon This Rock"
+      "On This Rock"
     ],
     "lineupExplicit": true,
     "musicConfirmed": true,
@@ -5497,14 +5507,21 @@
         "type": "manual_verified",
         "authority": "official_event",
         "priority": 115
+      },
+      {
+        "name": "B-Wade SBG current event announcement",
+        "url": "https://www.instagram.com/b.wade_sbg_music/p/DeHWNT_xdLx/",
+        "type": "manual_verified",
+        "authority": "artist",
+        "priority": 115
       }
     ],
     "firstSeen": "2026-10-01T18:00:00Z",
     "lastVerified": "2026-10-02T18:00:00Z",
-    "auditVerified": "2026-10-02",
+    "auditVerified": "2026-10-06",
     "editorialBatch": "2026-10-02-verified-artists",
     "doorsTime": "17:00",
-    "publicDescription": "CHH Takeover Night features Big Rev., B-Wade SBG, L.O.G. and KTMoney, with worship by Michael Powers and Upon This Rock.",
+    "publicDescription": "CHH Takeover Night features Big Rev., B-Wade SBG, L.O.G. and KTMoney, with worship by Michael Powers and On This Rock.",
     "notes": "The artist co-post and event flyer confirm all four CHH artists, worship participants, venue and 5:30 PM show start. Doors are 5 PM."
   },
   {
@@ -6969,48 +6986,6 @@
     "endDateTime": "2026-11-14T22:00:00-06:00"
   },
   {
-    "id": "manual:cj-emulous-kickback-grand-prairie-2026",
-    "title": "The Kickback",
-    "startDate": "2026-11-14",
-    "startTime": "19:00",
-    "timezone": "America/Chicago",
-    "venue": "2305 SE 14th St",
-    "address": "2305 SE 14th St",
-    "city": "Grand Prairie",
-    "state": "TX",
-    "country": "US",
-    "artists": [
-      "CJ Emulous"
-    ],
-    "headliner": "CJ Emulous",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-    "officialUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-    "image": "assets/events/cj-emulous-kickback-2026.svg",
-    "price": "",
-    "sourceName": "CJ Emulous official calendar",
-    "sources": [
-      {
-        "name": "CJ Emulous official calendar",
-        "url": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 112
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z",
-    "authority": "artist_calendar",
-    "lineupExplicit": true,
-    "auditVerified": "2026-09-11",
-    "imageOverride": true
-  },
-  {
     "title": "GLO Concert",
     "startDate": "2026-11-15",
     "startTime": "18:00",
@@ -7025,7 +7000,7 @@
     ],
     "headliner": "CJ Emulous",
     "eventType": "concert",
-    "status": "scheduled",
+    "status": "merged",
     "ticketUrl": "",
     "officialUrl": "https://www.cjemulous.com/event-details/gloconcert",
     "image": "",
@@ -7046,9 +7021,11 @@
         "priority": 100
       }
     ],
-    "auditVerified": "2026-09-23",
-    "notes": "CJ Emulous's official calendar confirms Los Angeles on November 15, 2026 at 6:00 PM. Venue and additional artists remain unconfirmed.",
-    "id": "manual:cj-emulous-glo-concert-los-angeles-2026"
+    "auditVerified": "2026-10-06",
+    "notes": "October 6 source review: CJ's GLOvember page links the same Ticketmaster event 09006537CF500ECC as the November 14 Belasco show. Retain this old identity only as a redirect, not a November 15 performance.",
+    "id": "manual:cj-emulous-glo-concert-los-angeles-2026",
+    "mergedIntoId": "bandsintown:1040378722",
+    "mergeReason": "GLOVEMBER takes place November 14, 2026 at 8 PM at The Belasco. This duplicate listing has been combined with the main event."
   },
   {
     "id": "manual:whatuprg-houston-2026-11-19",
