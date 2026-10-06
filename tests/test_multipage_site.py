@@ -246,7 +246,7 @@ class MultiPageProductionTests(unittest.TestCase):
             ["Lecrae", "Lizzie Morgan", "Miles Minnick", "Lin D"],
             event.get("artists"),
         )
-        self.assertEqual("assets/events/space-city-fest-2026-lineup.webp", event.get("image"))
+        self.assertEqual("assets/events/space-city-fest-2026-oct6-flyer.jpg", event.get("image"))
         self.assertTrue((ROOT / event["image"]).is_file())
 
     def test_genesis_official_details_survive_provider_refreshes(self):
