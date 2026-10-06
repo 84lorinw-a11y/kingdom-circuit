@@ -8271,5 +8271,87 @@
         "priority": 112
       }
     ]
+  },
+  {
+    "id": "manual:knock-out-breast-cancer-riverdale-2026-10-24",
+    "title": "Knock Out Breast Cancer — Boxing & Live Music",
+    "startDate": "2026-10-24",
+    "endDate": "2026-10-24",
+    "startTime": "12:00",
+    "endTime": "17:00",
+    "startDateTime": "2026-10-24T12:00:00-04:00",
+    "endDateTime": "2026-10-24T17:00:00-04:00",
+    "timezone": "America/New_York",
+    "venue": "Different Breed Boxing",
+    "address": "640 SR-138",
+    "postalCode": "30274",
+    "city": "Riverdale",
+    "state": "GA",
+    "country": "US",
+    "artists": [
+      "Joz"
+    ],
+    "headliner": "",
+    "advertisedBilling": [
+      "Southside Joz"
+    ],
+    "officialBill": [
+      "Southside Joz"
+    ],
+    "eventType": "event",
+    "status": "scheduled",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "officialUrl": "https://www.instagram.com/p/Dc11g1wJU1Z/",
+    "ticketUrl": "https://givebutter.com/different-breed-fight-like-a-girl-boxing-event-81enhu",
+    "description": "Different Breed Boxing presents Knock Out Breast Cancer, a community boxing event with music, food, and vendors in Riverdale, Georgia. Southside Joz has confirmed a live performance. The event runs October 24, 2026, from noon to 5 PM Eastern; her individual performance time has not been announced. See the organizer for the performance schedule and admission details.",
+    "publicDescription": "Different Breed Boxing presents Knock Out Breast Cancer, a community boxing event with music, food, and vendors in Riverdale, Georgia. Southside Joz has confirmed a live performance. The event runs October 24, 2026, from noon to 5 PM Eastern; her individual performance time has not been announced. See the organizer for the performance schedule and admission details.",
+    "image": "assets/events/knock-out-breast-cancer-riverdale-2026-10-24.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Different Breed Boxing official Knock Out Breast Cancer flyer",
+    "imageSourceUrl": "https://www.instagram.com/p/Dc11g1wJU1Z/",
+    "sourceName": "Different Breed Boxing / artist-confirmed performance",
+    "authority": "official_event",
+    "confidence": "high",
+    "organizer": "Different Breed Boxing",
+    "firstSeen": "2026-10-06T19:01:35Z",
+    "lastVerified": "2026-10-06T19:01:35Z",
+    "auditVerified": "2026-10-06",
+    "editorialBatch": "2026-10-06-submitted-events",
+    "notes": "Owner relayed directly on October 6 that Joz said she would be performing at this event. The flyer advertises music but does not name performers; Joz billing is supported by that artist confirmation, not inferred from a like or fundraiser-team membership. Existing curated identity is Joz, alias Southside Joz. Only confirmed music performer listed; no headliner designation. This is a boxing/community event with a confirmed CHH performance, publicly labeled Event. Organizer flyer and USA Boxing sanctioned event 927915 independently agree on October 24, 2026, noon–5 PM local Eastern; 11:30 AM is doors, not start. Individual Joz set time unknown. Givebutter linked by organizer bio confirms the event/address but renders 10 AM UTC, conflicting with the exact organizer flyer and sanctioned schedule; use the agreeing noon local sources. Official Details therefore points to the clear organizer flyer, with Givebutter preserved as the ticket link. Postal code30274 follows the flyer and current organizer profile, not USA Boxing generic venue30349. Admission price not inferred.",
+    "sources": [
+      {
+        "name": "Different Breed Boxing official event flyer",
+        "url": "https://www.instagram.com/p/Dc11g1wJU1Z/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "USA Boxing official sanctioned event",
+        "url": "https://usaboxing.webpoint.us/wp15/Events2/ViewEvt-wp.php?EventID=927915",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 110
+      },
+      {
+        "name": "Organizer-linked Givebutter tickets",
+        "url": "https://givebutter.com/different-breed-fight-like-a-girl-boxing-event-81enhu",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 105
+      }
+    ],
+    "sourceConflicts": [
+      {
+        "url": "https://givebutter.com/different-breed-fight-like-a-girl-boxing-event-81enhu",
+        "reportedStartTime": "10 AM UTC",
+        "resolution": "Use noon Eastern confirmed by the organizer flyer and USA Boxing sanctioned event. Joz individual set time is unannounced.",
+        "resolvedBy": "https://www.instagram.com/p/Dc11g1wJU1Z/",
+        "resolvedDate": "2026-10-06"
+      }
+    ]
   }
 ]
