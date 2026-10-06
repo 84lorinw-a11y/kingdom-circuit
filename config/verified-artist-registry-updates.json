@@ -5051,11 +5051,10 @@
     "sheetRosterOrder": 212
   },
   {
-    "name": "KT Money",
+    "name": "KTMoney",
     "aliases": [
-      "KT Money",
       "KTMoney",
-      "KT Money; KTMoney"
+      "KT Money"
     ],
     "category": "core",
     "monitoringPriority": 2,
@@ -5073,7 +5072,10 @@
     "socialSearchEnabled": true,
     "activeStatus": "active_or_unknown",
     "rosterOrder": 213,
-    "sheetRosterOrder": 213
+    "sheetRosterOrder": 213,
+    "legacyArtistPaths": [
+      "/artists/kt-money/"
+    ]
   },
   {
     "name": "A.I. The Anomaly",

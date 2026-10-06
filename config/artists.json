@@ -5818,11 +5818,10 @@
     "imagePosition": "50% 30%"
   },
   {
-    "name": "KT Money",
+    "name": "KTMoney",
     "aliases": [
-      "KT Money",
       "KTMoney",
-      "KT Money; KTMoney"
+      "KT Money"
     ],
     "enabled": true,
     "ticketmasterEnabled": true,
@@ -5843,7 +5842,10 @@
     "sourceRegistryRosterOrder": 213,
     "rosterOrder": 213,
     "imageUrl": "assets/artists/kt-money-approved-oct2.jpg",
-    "imagePosition": "50% 20%"
+    "imagePosition": "50% 20%",
+    "legacyArtistPaths": [
+      "/artists/kt-money/"
+    ]
   },
   {
     "name": "A.I. The Anomaly",

@@ -226,7 +226,7 @@ const ARTIST_ROSTER_ORDER = [
   "B-Wade SBG",
   "Big Rev.",
   "L.O.G.",
-  "KT Money",
+  "KTMoney",
   "A.I. The Anomaly",
   "Selah the Corner",
   "Bumps INF",
@@ -3282,21 +3282,6 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imagePosition": "50% 30%",
     "sourceRegistryVerified": true
   },
-  "kt money": {
-    "aliases": [
-      "KT Money",
-      "KTMoney",
-      "KT Money; KTMoney"
-    ],
-    "website": "https://linktr.ee/ktmoneyofficial",
-    "instagramProfile": "https://www.instagram.com/ktmoneyofficial/",
-    "spotifyProfile": "https://open.spotify.com/artist/6o1yNU7w2XTwdBnmpqZYlF",
-    "youtubeProfile": "https://www.youtube.com/@ktmoneyofficial",
-    "officialImageSource": "https://www.instagram.com/ktmoneyofficial/",
-    "imageUrl": "assets/artists/kt-money-approved-oct2.jpg",
-    "imagePosition": "50% 20%",
-    "sourceRegistryVerified": true
-  },
   "a.i. the anomaly": {
     "aliases": [
       "A.I. The Anomaly",
@@ -4162,6 +4147,20 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imagePosition": "48% 0%",
     "state": "TX",
     "label": "Grown And Saved",
+    "sourceRegistryVerified": true
+  },
+  "ktmoney": {
+    "aliases": [
+      "KTMoney",
+      "KT Money"
+    ],
+    "website": "https://linktr.ee/ktmoneyofficial",
+    "instagramProfile": "https://www.instagram.com/ktmoneyofficial/",
+    "spotifyProfile": "https://open.spotify.com/artist/6o1yNU7w2XTwdBnmpqZYlF",
+    "youtubeProfile": "https://www.youtube.com/@ktmoneyofficial",
+    "officialImageSource": "https://www.instagram.com/ktmoneyofficial/",
+    "imageUrl": "assets/artists/kt-money-approved-oct2.jpg",
+    "imagePosition": "50% 20%",
     "sourceRegistryVerified": true
   }
 };
@@ -7110,11 +7109,10 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imagePosition": "50% 30%",
     "sourceRegistryVerified": true
   },
-  "kt money": {
+  "ktmoney": {
     "aliases": [
-      "KT Money",
       "KTMoney",
-      "KT Money; KTMoney"
+      "KT Money"
     ],
     "website": "https://linktr.ee/ktmoneyofficial",
     "instagramProfile": "https://www.instagram.com/ktmoneyofficial/",
@@ -8838,7 +8836,7 @@ const STATIC_ARTIST_PORTRAITS = {
     "imageUrl": "assets/artists/big-rev-approved-oct2.jpg",
     "imagePosition": "50% 30%"
   },
-  "kt money": {
+  "ktmoney": {
     "imageUrl": "assets/artists/kt-money-approved-oct2.jpg",
     "imagePosition": "50% 20%"
   },
