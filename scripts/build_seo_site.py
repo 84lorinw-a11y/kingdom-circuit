@@ -145,7 +145,8 @@ def billing_links(event, artists):
         link = (f'<a href="{artist_path(roster[norm(name)])}">{esc(name)}</a>'
                 if norm(name) in roster else f'<span>{esc(name)}</span>')
         parts.append(link)
-    return " - ".join(parts)
+    label = "<strong>Judges:</strong> " if event.get("billingRole") == "judges" else ""
+    return label + " - ".join(parts)
 
 
 def hosts_line(event):
@@ -191,6 +192,9 @@ def event_schema(e):
             data.pop("performer")
     if e.get("publicDescription"):
         data["description"] = e["publicDescription"]
+    if e.get("billingRole") == "judges":
+        data["@type"] = "Event"
+        data.pop("performer", None)
     if e.get("endDateTime") or e.get("endDate"): data["endDate"]=e.get("endDateTime") or e["endDate"]
     if e.get("previousStartDate") and status == "https://schema.org/EventRescheduled": data["previousStartDate"]=e["previousStartDate"]
     url=e.get("officialUrl") or e.get("ticketUrl")

@@ -9349,7 +9349,8 @@ function eventBilling(event) {
 }
 
 function artistLinks(event) {
-  return eventBilling(event).map(name => {
+  const label = event.billingRole === "judges" ? "<strong>Judges:</strong> " : "";
+  return label + eventBilling(event).map(name => {
     const profile = artistConfig(name);
     const link = profile
       ? `<a href="${artistProfileUrl(profile.name)}">${esc(name)}</a>`

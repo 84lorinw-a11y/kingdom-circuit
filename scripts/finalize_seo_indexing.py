@@ -167,6 +167,15 @@ def repair_event_schema(schema: dict, source: dict | None) -> bool:
     if age and schema.get("typicalAgeRange") != age:
         schema["typicalAgeRange"] = age
         changed = True
+    if source.get("billingRole") == "judges":
+        if schema.get("@type") != "Event" or "performer" in schema:
+            schema["@type"] = "Event"
+            schema.pop("performer", None)
+            changed = True
+        description = source.get("publicDescription")
+        if description and schema.get("description") != description:
+            schema["description"] = description
+            changed = True
     if source.get("unconfirmedArtists"):
         unconfirmed = {str(name).strip().casefold() for name in source["unconfirmedArtists"]}
         performers = schema.get("performer", [])
