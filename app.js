@@ -1757,8 +1757,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/1r0gAOldNSTyidXhWLDHTF",
     "youtubeProfile": "https://www.youtube.com/@gesmusiccc",
     "officialImageSource": "https://www.instagram.com/gesmusicc/reels/",
-    "imageUrl": "assets/artists/g-e-s-saved.webp",
-    "imagePosition": "center",
+    "imageUrl": "assets/artists/g-e-s-voyagela-portrait.jpg",
+    "imagePosition": "55% 25%",
     "sourceRegistryVerified": true
   },
   "yasmine jinelle": {
@@ -5520,8 +5520,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1r0gAOldNSTyidXhWLDHTF",
     "youtubeProfile": "https://www.youtube.com/@gesmusiccc",
     "officialImageSource": "https://www.instagram.com/gesmusicc/reels/",
-    "imageUrl": "assets/artists/g-e-s-saved.webp",
-    "imagePosition": "center",
+    "imageUrl": "assets/artists/g-e-s-voyagela-portrait.jpg",
+    "imagePosition": "55% 25%",
     "sourceRegistryVerified": true
   },
   "yasmine jinelle": {
@@ -8269,8 +8269,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 0%"
   },
   "g.e.s.": {
-    "imageUrl": "assets/artists/g-e-s-saved.webp",
-    "imagePosition": "center"
+    "imageUrl": "assets/artists/g-e-s-voyagela-portrait.jpg",
+    "imagePosition": "55% 25%"
   },
   "yasmine jinelle": {
     "imageUrl": "assets/artists/yasmine-jinelle-saved.webp",
