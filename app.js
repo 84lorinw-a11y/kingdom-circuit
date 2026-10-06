@@ -331,7 +331,11 @@ const ARTIST_ROSTER_ORDER = [
   "Manny Montes",
   "Lizzy Parra",
   "Rubinsky RBK",
-  "Ariel Kelly"
+  "Ariel Kelly",
+  "Von Won",
+  "Lil Ziggy",
+  "Young Jayden",
+  "Dougie D"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -4093,6 +4097,71 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.youtube.com/channel/UC0g5Ms9PQgHFob1rVm3kxLw",
     "imageUrl": "assets/artists/corey-paul-approved-oct5.jpg",
     "imagePosition": "50% 15%",
+    "sourceRegistryVerified": true
+  },
+  "von won": {
+    "aliases": [
+      "Von Won",
+      "Vaughaligan Walwyn"
+    ],
+    "website": "https://www.grownandsaved.com/vonwon",
+    "instagramProfile": "https://www.instagram.com/vonwon/",
+    "spotifyProfile": "https://open.spotify.com/artist/1EC0mp5R5buOgwRqIzsBhP",
+    "youtubeProfile": "https://www.youtube.com/@vonwontv",
+    "officialImageSource": "https://www.grownandsaved.com/vonwon",
+    "imageUrl": "assets/artists/von-won-approved-oct6.webp",
+    "imagePosition": "38% 0%",
+    "state": "TX",
+    "label": "Grown And Saved",
+    "sourceRegistryVerified": true
+  },
+  "lil ziggy": {
+    "aliases": [
+      "Lil Ziggy",
+      "IAmLilZiggy"
+    ],
+    "website": "https://www.grownandsaved.com/lilziggy",
+    "instagramProfile": "https://www.instagram.com/iamlilziggy/",
+    "spotifyProfile": "https://open.spotify.com/artist/6FVO4hAwXNMd5Vw2kez3AK",
+    "youtubeProfile": "https://www.youtube.com/@IAmLilZiggy",
+    "officialImageSource": "https://www.grownandsaved.com/lilziggy",
+    "imageUrl": "assets/artists/lil-ziggy-approved-oct6.webp",
+    "imagePosition": "50% 0%",
+    "state": "TX",
+    "label": "Grown And Saved",
+    "sourceRegistryVerified": true
+  },
+  "young jayden": {
+    "aliases": [
+      "Young Jayden",
+      "YoungJayden",
+      "Jayden Taylor"
+    ],
+    "website": "https://www.grownandsaved.com/youngjayden",
+    "instagramProfile": "https://www.instagram.com/youngjaydenofficial/",
+    "spotifyProfile": "https://open.spotify.com/artist/71psHOFpUnBhrv1ExhHwXH",
+    "youtubeProfile": "https://www.youtube.com/@Youngjayden-777",
+    "officialImageSource": "https://www.grownandsaved.com/youngjayden",
+    "imageUrl": "assets/artists/young-jayden-approved-oct6.webp",
+    "imagePosition": "58% 0%",
+    "state": "TX",
+    "label": "Grown And Saved / God Wave",
+    "sourceRegistryVerified": true
+  },
+  "dougie d": {
+    "aliases": [
+      "Dougie D",
+      "Douglas Hordge"
+    ],
+    "website": "https://www.grownandsaved.com/dougied",
+    "instagramProfile": "https://www.instagram.com/tharealdougied/",
+    "spotifyProfile": "https://open.spotify.com/artist/4tJS4icDFUodDyEgo77pdF",
+    "youtubeProfile": "https://www.youtube.com/channel/UC0fs28BHXP78G1kNYIEwYVQ",
+    "officialImageSource": "https://www.grownandsaved.com/dougied",
+    "imageUrl": "assets/artists/dougie-d-approved-oct6.webp",
+    "imagePosition": "48% 0%",
+    "state": "TX",
+    "label": "Grown And Saved",
     "sourceRegistryVerified": true
   }
 };
@@ -7857,6 +7926,71 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/corey-paul-approved-oct5.jpg",
     "imagePosition": "50% 15%",
     "sourceRegistryVerified": true
+  },
+  "von won": {
+    "aliases": [
+      "Von Won",
+      "Vaughaligan Walwyn"
+    ],
+    "website": "https://www.grownandsaved.com/vonwon",
+    "instagramProfile": "https://www.instagram.com/vonwon/",
+    "spotifyProfile": "https://open.spotify.com/artist/1EC0mp5R5buOgwRqIzsBhP",
+    "youtubeProfile": "https://www.youtube.com/@vonwontv",
+    "officialImageSource": "https://www.grownandsaved.com/vonwon",
+    "imageUrl": "assets/artists/von-won-approved-oct6.webp",
+    "imagePosition": "38% 0%",
+    "state": "TX",
+    "label": "Grown And Saved",
+    "sourceRegistryVerified": true
+  },
+  "lil ziggy": {
+    "aliases": [
+      "Lil Ziggy",
+      "IAmLilZiggy"
+    ],
+    "website": "https://www.grownandsaved.com/lilziggy",
+    "instagramProfile": "https://www.instagram.com/iamlilziggy/",
+    "spotifyProfile": "https://open.spotify.com/artist/6FVO4hAwXNMd5Vw2kez3AK",
+    "youtubeProfile": "https://www.youtube.com/@IAmLilZiggy",
+    "officialImageSource": "https://www.grownandsaved.com/lilziggy",
+    "imageUrl": "assets/artists/lil-ziggy-approved-oct6.webp",
+    "imagePosition": "50% 0%",
+    "state": "TX",
+    "label": "Grown And Saved",
+    "sourceRegistryVerified": true
+  },
+  "young jayden": {
+    "aliases": [
+      "Young Jayden",
+      "YoungJayden",
+      "Jayden Taylor"
+    ],
+    "website": "https://www.grownandsaved.com/youngjayden",
+    "instagramProfile": "https://www.instagram.com/youngjaydenofficial/",
+    "spotifyProfile": "https://open.spotify.com/artist/71psHOFpUnBhrv1ExhHwXH",
+    "youtubeProfile": "https://www.youtube.com/@Youngjayden-777",
+    "officialImageSource": "https://www.grownandsaved.com/youngjayden",
+    "imageUrl": "assets/artists/young-jayden-approved-oct6.webp",
+    "imagePosition": "58% 0%",
+    "state": "TX",
+    "label": "Grown And Saved / God Wave",
+    "sourceRegistryVerified": true
+  },
+  "dougie d": {
+    "aliases": [
+      "Dougie D",
+      "Douglas Hordge"
+    ],
+    "website": "https://www.grownandsaved.com/dougied",
+    "instagramProfile": "https://www.instagram.com/tharealdougied/",
+    "spotifyProfile": "https://open.spotify.com/artist/4tJS4icDFUodDyEgo77pdF",
+    "youtubeProfile": "https://www.youtube.com/channel/UC0fs28BHXP78G1kNYIEwYVQ",
+    "officialImageSource": "https://www.grownandsaved.com/dougied",
+    "imageUrl": "assets/artists/dougie-d-approved-oct6.webp",
+    "imagePosition": "48% 0%",
+    "state": "TX",
+    "label": "Grown And Saved",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -8951,6 +9085,22 @@ const STATIC_ARTIST_PORTRAITS = {
   "corey paul": {
     "imageUrl": "assets/artists/corey-paul-approved-oct5.jpg",
     "imagePosition": "50% 15%"
+  },
+  "von won": {
+    "imageUrl": "assets/artists/von-won-approved-oct6.webp",
+    "imagePosition": "38% 0%"
+  },
+  "lil ziggy": {
+    "imageUrl": "assets/artists/lil-ziggy-approved-oct6.webp",
+    "imagePosition": "50% 0%"
+  },
+  "young jayden": {
+    "imageUrl": "assets/artists/young-jayden-approved-oct6.webp",
+    "imagePosition": "58% 0%"
+  },
+  "dougie d": {
+    "imageUrl": "assets/artists/dougie-d-approved-oct6.webp",
+    "imagePosition": "48% 0%"
   }
 };
 
