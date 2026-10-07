@@ -287,6 +287,7 @@ const ARTIST_ROSTER_ORDER = [
   "S.O.",
   "Reconcile",
   "Corey Paul",
+  "Cutright",
   "Alex Faith",
   "Tony Tillman",
   "Dillon Chase",
@@ -3869,9 +3870,9 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/adrielcruznow/",
     "spotifyProfile": "https://open.spotify.com/artist/1aBDTgXnbKTDCUubYLbtoa",
     "youtubeProfile": "https://www.youtube.com/user/Skripmusic",
-    "officialImageSource": "https://open.spotify.com/artist/1aBDTgXnbKTDCUubYLbtoa",
-    "imageUrl": "assets/artists/adriel-cruz-approved-oct5.webp",
-    "imagePosition": "50% 60%",
+    "officialImageSource": "https://www.instagram.com/p/DOfP-G-kXaG/",
+    "imageUrl": "assets/artists/adriel-cruz-instagram-performance-oct7.jpg",
+    "imagePosition": "50% 12%",
     "sourceRegistryVerified": true
   },
   "drea lp": {
@@ -4160,6 +4161,20 @@ const VERIFIED_ARTIST_REGISTRY = {
     "youtubeProfile": "https://www.youtube.com/@ktmoneyofficial",
     "officialImageSource": "https://www.instagram.com/ktmoneyofficial/",
     "imageUrl": "assets/artists/kt-money-approved-oct2.jpg",
+    "imagePosition": "50% 20%",
+    "sourceRegistryVerified": true
+  },
+  "cutright": {
+    "aliases": [
+      "Cutright",
+      "Mister Cutright"
+    ],
+    "website": "https://www.instagram.com/mistercutright/",
+    "instagramProfile": "https://www.instagram.com/mistercutright/",
+    "spotifyProfile": "https://open.spotify.com/artist/0Dt2s4Xri6vm6DfilZyjvQ",
+    "youtubeProfile": "https://www.youtube.com/@mistercutright",
+    "officialImageSource": "https://open.spotify.com/artist/0Dt2s4Xri6vm6DfilZyjvQ",
+    "imageUrl": "assets/artists/cutright-spotify-portrait-oct7.jpg",
     "imagePosition": "50% 20%",
     "sourceRegistryVerified": true
   }
@@ -7710,9 +7725,9 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/adrielcruznow/",
     "spotifyProfile": "https://open.spotify.com/artist/1aBDTgXnbKTDCUubYLbtoa",
     "youtubeProfile": "https://www.youtube.com/user/Skripmusic",
-    "officialImageSource": "https://open.spotify.com/artist/1aBDTgXnbKTDCUubYLbtoa",
-    "imageUrl": "assets/artists/adriel-cruz-approved-oct5.webp",
-    "imagePosition": "50% 60%",
+    "officialImageSource": "https://www.instagram.com/p/DOfP-G-kXaG/",
+    "imageUrl": "assets/artists/adriel-cruz-instagram-performance-oct7.jpg",
+    "imagePosition": "50% 12%",
     "sourceRegistryVerified": true
   },
   "drea lp": {
@@ -7923,6 +7938,20 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.youtube.com/channel/UC0g5Ms9PQgHFob1rVm3kxLw",
     "imageUrl": "assets/artists/corey-paul-approved-oct5.jpg",
     "imagePosition": "50% 15%",
+    "sourceRegistryVerified": true
+  },
+  "cutright": {
+    "aliases": [
+      "Cutright",
+      "Mister Cutright"
+    ],
+    "website": "https://www.instagram.com/mistercutright/",
+    "instagramProfile": "https://www.instagram.com/mistercutright/",
+    "spotifyProfile": "https://open.spotify.com/artist/0Dt2s4Xri6vm6DfilZyjvQ",
+    "youtubeProfile": "https://www.youtube.com/@mistercutright",
+    "officialImageSource": "https://open.spotify.com/artist/0Dt2s4Xri6vm6DfilZyjvQ",
+    "imageUrl": "assets/artists/cutright-spotify-portrait-oct7.jpg",
+    "imagePosition": "50% 20%",
     "sourceRegistryVerified": true
   },
   "von won": {
@@ -9017,8 +9046,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 15%"
   },
   "adriel cruz": {
-    "imageUrl": "assets/artists/adriel-cruz-approved-oct5.webp",
-    "imagePosition": "50% 60%"
+    "imageUrl": "assets/artists/adriel-cruz-instagram-performance-oct7.jpg",
+    "imagePosition": "50% 12%"
   },
   "drea lp": {
     "imageUrl": "assets/artists/drea-lp-approved-oct5.webp",
@@ -9099,6 +9128,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "dougie d": {
     "imageUrl": "assets/artists/dougie-d-approved-oct6.webp",
     "imagePosition": "48% 0%"
+  },
+  "cutright": {
+    "imageUrl": "assets/artists/cutright-spotify-portrait-oct7.jpg",
+    "imagePosition": "50% 20%"
   }
 };
 
