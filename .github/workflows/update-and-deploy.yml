@@ -447,6 +447,9 @@ jobs:
       - name: Refresh final production indexing after redesign
         run: python scripts/finalize_seo_indexing_core.py --site _site --show-requested-event-address
 
+      - name: Restore approved artist schedule details after redesign
+        run: python scripts/finalize_artist_details.py _site
+
       - name: Verify approved live redesign and production identity
         run: |
           python scripts/verify_live_redesign.py _site
@@ -460,6 +463,9 @@ jobs:
           python scripts/verify_oct3_concert_corrections.py _site
           python scripts/verify_oct6_show_audit.py _site
           python scripts/verify_owner_roster.py _site
+
+      - name: Verify artist details in the final production artifact
+        run: python scripts/finalize_artist_details.py _site --check
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
