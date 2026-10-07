@@ -21161,35 +21161,55 @@
         "state": "TX",
         "country": "US",
         "artists": [
-          "Toschii"
+          "Toschii",
+          "MikeySoChristian",
+          "B4L Lil Don"
         ],
         "headliner": "Toschii",
         "advertisedBilling": [
-          "Toschii"
+          "Toschii",
+          "MikeySoChristian",
+          "B4L Lil Don"
         ],
         "officialBill": [
-          "Toschii"
+          "Toschii",
+          "MikeySoChristian",
+          "B4L Lil Don"
         ],
         "lineupExplicit": true,
         "eventType": "concert",
         "status": "scheduled",
         "ticketUrl": "",
-        "officialUrl": "https://www.instagram.com/p/DdUK4O3NNU5/",
-        "image": "assets/events/toschii-space-city-lift-off-2026-10-24.jpg",
+        "officialUrl": "https://www.instagram.com/spacecityyoungadults/reel/Dc7iR_Zsq0R/",
+        "image": "assets/events/space-city-lift-off-2026-10-24-full-lineup.jpg",
         "imageType": "event_artwork",
         "imagePosition": "center",
         "imageOverride": true,
-        "imageSource": "Toschii and Space City Church official Space City Lift Off flyer",
-        "imageSourceUrl": "https://www.instagram.com/p/DdUK4O3NNU5/",
+        "imageSource": "Space City Young Adults official group flyer shared by B4L Lil Don",
+        "imageSourceUrl": "https://www.instagram.com/p/Dc1RkftxtUZ/",
         "price": "Free",
-        "description": "Toschii performs at Space City Lift Off, the Space City Fest kickoff presented by Space City Young Adults. Free admission at Space City Church in Houston on October 24 at 7 PM.",
-        "sourceName": "Toschii / Space City Church official announcement",
+        "description": "Toschii, MikeySoChristian, and B4L Lil Don perform at Space City Lift Off, the Space City Fest kickoff presented by Space City Young Adults. Free admission at Space City Church in Houston on October 24 at 7 PM.",
+        "sourceName": "Space City Young Adults / Space City Church official announcement",
         "authority": "official_event",
         "confidence": "high",
         "firstSeen": "2026-10-03T18:10:13Z",
-        "lastVerified": "2026-10-03T18:10:13Z",
-        "auditVerified": "2026-10-03",
+        "lastVerified": "2026-10-07T00:32:22Z",
+        "auditVerified": "2026-10-06",
         "sources": [
+          {
+            "name": "Space City Young Adults official lineup announcement",
+            "url": "https://www.instagram.com/spacecityyoungadults/reel/Dc7iR_Zsq0R/",
+            "type": "manual_verified",
+            "authority": "official_event",
+            "priority": 115
+          },
+          {
+            "name": "B4L Lil Don official kickoff flyer and appearance confirmation",
+            "url": "https://www.instagram.com/p/Dc1RkftxtUZ/",
+            "type": "manual_verified",
+            "authority": "official_artist",
+            "priority": 110
+          },
           {
             "name": "Toschii / Space City Church collaborative announcement",
             "url": "https://www.instagram.com/p/DdUK4O3NNU5/",
@@ -21198,7 +21218,7 @@
             "priority": 115
           }
         ],
-        "notes": "Official September 15 collaborative artist/church post and flyer checked October 3. Saturday October 24, 7 PM, 7746 Almeda Genoa Road, Houston TX 77075. Caption explicitly says FREE. Separate from Space City Fest on October 25 at Discovery Green."
+        "notes": "Official organizer announcement and B4L Lil Don September 3 flyer checked October 6 confirm Toschii, MikeySoChristian, and B4L Lil Don. Full 1350x1688 group flyer saved from artist post; the organizer reel also names all three. Unnamed \"and more\" is not treated as confirmed billing. Saturday October 24, 7 PM, 7746 Almeda Genoa Road, Houston TX 77075. Toschii/church September 15 caption explicitly says FREE. Separate from Space City Fest on October 25 at Discovery Green. Original firstSeen and canonical event identity preserved."
       }
     },
     {
