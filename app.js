@@ -289,7 +289,7 @@ const ARTIST_ROSTER_ORDER = [
   "Corey Paul",
   "Cutright",
   "J-Phish",
-  "b4l.lildon",
+  "B4L Lil Don",
   "Alex Faith",
   "Tony Tillman",
   "Dillon Chase",
@@ -4194,10 +4194,10 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imagePosition": "45% 20%",
     "sourceRegistryVerified": true
   },
-  "b4l.lildon": {
+  "b4l lil don": {
     "aliases": [
-      "b4l.lildon",
       "B4L Lil Don",
+      "b4l.lildon",
       "B4L LilDon"
     ],
     "website": "https://www.instagram.com/b4l.lildon/",
@@ -7999,10 +7999,10 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imagePosition": "45% 20%",
     "sourceRegistryVerified": true
   },
-  "b4l.lildon": {
+  "b4l lil don": {
     "aliases": [
-      "b4l.lildon",
       "B4L Lil Don",
+      "b4l.lildon",
       "B4L LilDon"
     ],
     "website": "https://www.instagram.com/b4l.lildon/",
@@ -9197,7 +9197,7 @@ const STATIC_ARTIST_PORTRAITS = {
     "imageUrl": "assets/artists/j-phish-official-spotify-portrait-oct7.jpg",
     "imagePosition": "45% 20%"
   },
-  "b4l.lildon": {
+  "b4l lil don": {
     "imageUrl": "assets/artists/b4l-lildon-official-instagram-portrait-oct7.jpg",
     "imagePosition": "50% 18%"
   }
