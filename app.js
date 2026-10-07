@@ -288,6 +288,7 @@ const ARTIST_ROSTER_ORDER = [
   "Reconcile",
   "Corey Paul",
   "Cutright",
+  "J-Phish",
   "Alex Faith",
   "Tony Tillman",
   "Dillon Chase",
@@ -4177,6 +4178,20 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/cutright-spotify-portrait-oct7.jpg",
     "imagePosition": "50% 20%",
     "sourceRegistryVerified": true
+  },
+  "j-phish": {
+    "aliases": [
+      "J-Phish",
+      "J Phish"
+    ],
+    "website": "https://www.instagram.com/dudeitsphilcook/",
+    "instagramProfile": "https://www.instagram.com/dudeitsphilcook/",
+    "spotifyProfile": "https://open.spotify.com/artist/2ywgji4PasTLKpHKNHJxSN",
+    "youtubeProfile": "https://www.youtube.com/@JPhish",
+    "officialImageSource": "https://open.spotify.com/artist/2ywgji4PasTLKpHKNHJxSN",
+    "imageUrl": "assets/artists/j-phish-official-spotify-portrait-oct7.jpg",
+    "imagePosition": "45% 20%",
+    "sourceRegistryVerified": true
   }
 };
 const VERIFIED_ARTIST_REGISTRY_UPDATES = {
@@ -7954,6 +7969,20 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imagePosition": "50% 20%",
     "sourceRegistryVerified": true
   },
+  "j-phish": {
+    "aliases": [
+      "J-Phish",
+      "J Phish"
+    ],
+    "website": "https://www.instagram.com/dudeitsphilcook/",
+    "instagramProfile": "https://www.instagram.com/dudeitsphilcook/",
+    "spotifyProfile": "https://open.spotify.com/artist/2ywgji4PasTLKpHKNHJxSN",
+    "youtubeProfile": "https://www.youtube.com/@JPhish",
+    "officialImageSource": "https://open.spotify.com/artist/2ywgji4PasTLKpHKNHJxSN",
+    "imageUrl": "assets/artists/j-phish-official-spotify-portrait-oct7.jpg",
+    "imagePosition": "45% 20%",
+    "sourceRegistryVerified": true
+  },
   "von won": {
     "aliases": [
       "Von Won",
@@ -9132,6 +9161,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "cutright": {
     "imageUrl": "assets/artists/cutright-spotify-portrait-oct7.jpg",
     "imagePosition": "50% 20%"
+  },
+  "j-phish": {
+    "imageUrl": "assets/artists/j-phish-official-spotify-portrait-oct7.jpg",
+    "imagePosition": "45% 20%"
   }
 };
 
