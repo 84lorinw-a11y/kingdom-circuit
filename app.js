@@ -260,7 +260,7 @@ const ARTIST_ROSTER_ORDER = [
   "J.Solo",
   "Tds Cam",
   "Kham",
-  "Tukool Tiff",
+  "TuKool Tiff",
   "Tylynn",
   "De'Aris",
   "Will Kellum",
@@ -3731,7 +3731,7 @@ const VERIFIED_ARTIST_REGISTRY = {
   },
   "tukool tiff": {
     "aliases": [
-      "Tukool Tiff"
+      "TuKool Tiff"
     ],
     "website": "https://beacons.ai/tukooltiff",
     "instagramProfile": "https://www.instagram.com/tukooltiff/",
@@ -7615,7 +7615,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
   },
   "tukool tiff": {
     "aliases": [
-      "Tukool Tiff"
+      "TuKool Tiff"
     ],
     "website": "https://beacons.ai/tukooltiff",
     "instagramProfile": "https://www.instagram.com/tukooltiff/",
