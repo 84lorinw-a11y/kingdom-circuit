@@ -386,7 +386,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -653,7 +653,7 @@
   },
   {
     "id": "bandsintown:1040305060",
-    "title": "Hulvey at Bridgestone Arena",
+    "title": "57th Annual GMA Dove Awards — featuring Hulvey",
     "startDate": "2026-10-06",
     "startTime": "18:30",
     "timezone": "",
@@ -693,7 +693,10 @@
     "imageOverride": true,
     "imageSource": "Bridgestone Arena official 57th Annual GMA Dove Awards artwork",
     "imageSourceUrl": "https://www.bridgestonearena.com/events/detail/57th-annual-gma-dove-awards",
-    "auditVerified": "2026-09-26"
+    "auditVerified": "2026-09-26",
+    "legacyEventPaths": [
+      "/event/hulvey-at-bridgestone-arena-2026-10-06-nashville-090597/"
+    ]
   },
   {
     "title": "Live Loud",
@@ -728,7 +731,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -947,7 +950,7 @@
   {
     "title": "Boxyard Saturdaze",
     "startDate": "2026-10-10",
-    "startTime": "12:30",
+    "startTime": "11:30",
     "timezone": "America/New_York",
     "venue": "Boxyard RTP — BeatBox Stage",
     "address": "",
@@ -984,7 +987,7 @@
         "priority": 100
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-26",
     "officialBill": [
       "DJ Watty Tha Shepherd",
       "MAYIA WARREN"
@@ -1034,6 +1037,21 @@
         "authority": "venue_ticket",
         "priority": 94
       }
+    ],
+    "imageSource": "Official Eventbrite event artwork",
+    "imageSourceUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
+    "auditVerified": "2026-09-26",
+    "advertisedBilling": [
+      "Aasha Marie",
+      "Justin Martyr",
+      "Conquest",
+      "Crystal B."
+    ],
+    "officialBill": [
+      "Aasha Marie",
+      "Justin Martyr",
+      "Conquest",
+      "Crystal B."
     ]
   },
   {
@@ -1071,7 +1089,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-22",
+    "auditVerified": "2026-09-13",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -1130,7 +1148,8 @@
     "cancellationConfirmed": true,
     "cancellationConfirmedAt": "2026-09-12",
     "ticketAvailability": "cancelled",
-    "notes": "Cancelled by the organizer. This page is retained as a cancellation notice."
+    "notes": "Cancelled by the organizer. This page is retained as a cancellation notice.",
+    "auditVerified": "2026-09-13"
   },
   {
     "title": "MAYIA at the NC State Fair",
@@ -1172,7 +1191,7 @@
         "priority": 100
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "notes": "One event with two confirmed acoustic sets: 10–11 AM and 12–1 PM.",
     "id": "mayia-nc-state-fair-2026",
     "imageType": "artist",
@@ -1264,7 +1283,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "id": "mission-friends-sacramento-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1397,7 +1416,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-26",
     "id": "alex-zurdo-zona-zero-san-juan-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2106,15 +2125,21 @@
     "country": "US",
     "artists": [
       "Miles Minnick",
-      "Gifted Hands",
-      "Datin"
+      "Yung Kriss",
+      "Datin",
+      "Lyric The Geenyus",
+      "TRU-SERVA",
+      "MAYIA",
+      "Dre Skywalker",
+      "VVS Big Rock",
+      "Eli Williams"
     ],
     "headliner": "Miles Minnick",
     "eventType": "festival",
     "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "assets/events/flavor-fest-friday-2026.webp",
+    "image": "assets/events/flavor-fest-friday-2026.png",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -2125,13 +2150,91 @@
     "lineupExplicit": true,
     "sources": [
       {
+        "name": "Flavor Fest current Friday concert poster",
+        "url": "https://www.flavorfest.org/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Eli Williams official performance announcement",
+        "url": "https://www.instagram.com/eliwilliamssss/p/DdmMA0JOH4q/",
+        "type": "manual_verified",
+        "authority": "artist",
+        "priority": 115
+      },
+      {
         "name": "Flavor Fest official 2026 schedule",
         "url": "https://www.flavorfest.org/schedule",
         "type": "manual_verified",
         "authority": "official_event",
         "priority": 112
       }
-    ]
+    ],
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Yung Kriss",
+      "TH3 Saga",
+      "Datin",
+      "Lyric The Geenyus",
+      "Princess Tayy",
+      "4KL",
+      "Truth Soldier",
+      "Zeke",
+      "TRU-SERVA",
+      "Joshua Penn",
+      "Leon",
+      "Tyler Errae",
+      "Yvonne Sigars",
+      "Songbird SB",
+      "Louis Self",
+      "MAYIA",
+      "Adji Merveille",
+      "Way",
+      "King Jamezzz",
+      "Dre Skywalker",
+      "Jaybez",
+      "B.E.R.I.D.O.X",
+      "DiE$eL-E",
+      "TVNK",
+      "VVS Big Rock",
+      "Jailynn",
+      "Eli Williams"
+    ],
+    "officialBill": [
+      "Miles Minnick",
+      "Yung Kriss",
+      "TH3 Saga",
+      "Datin",
+      "Lyric The Geenyus",
+      "Princess Tayy",
+      "4KL",
+      "Truth Soldier",
+      "Zeke",
+      "TRU-SERVA",
+      "Joshua Penn",
+      "Leon",
+      "Tyler Errae",
+      "Yvonne Sigars",
+      "Songbird SB",
+      "Louis Self",
+      "MAYIA",
+      "Adji Merveille",
+      "Way",
+      "King Jamezzz",
+      "Dre Skywalker",
+      "Jaybez",
+      "B.E.R.I.D.O.X",
+      "DiE$eL-E",
+      "TVNK",
+      "VVS Big Rock",
+      "Jailynn",
+      "Eli Williams"
+    ],
+    "auditVerified": "2026-09-26",
+    "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown. Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates.",
+    "imageSource": "Official Flavor Fest Friday concert poster",
+    "imageSourceUrl": "https://www.flavorfest.org/schedule"
   },
   {
     "id": "bandsintown:108881783",
@@ -2241,7 +2344,7 @@
     "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/",
-    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/989d4d2e-f454-4a1b-99df-cc78cf6e6749/FF26-Promo-Saturday-Night.jpg",
+    "image": "assets/events/flavor-fest-saturday-2026.jpg",
     "price": "",
     "sourceName": "Flavor Fest official Saturday poster",
     "authority": "official_festival",
@@ -2606,45 +2709,6 @@
     ]
   },
   {
-    "title": "The Kickback",
-    "startDate": "2026-11-14",
-    "startTime": "19:00",
-    "timezone": "America/Chicago",
-    "venue": "2305 SE 14th St",
-    "address": "2305 SE 14th St",
-    "city": "Grand Prairie",
-    "state": "TX",
-    "country": "US",
-    "artists": [
-      "CJ Emulous"
-    ],
-    "headliner": "CJ Emulous",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-    "officialUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-    "image": "assets/events/cj-emulous-kickback-2026.svg",
-    "price": "",
-    "sourceName": "CJ Emulous official calendar",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "CJ Emulous official calendar",
-        "url": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-11",
-    "id": "cj-emulous-kickback-grand-prairie-2026",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true
-  },
-  {
     "id": "bandsintown:1040378722",
     "title": "Miles Minnick — GLOVEMBER",
     "startDate": "2026-11-14",
@@ -2991,9 +3055,9 @@
     "id": "bandsintown:108975912",
     "title": "The Welcome Home Tour - Atlanta",
     "startDate": "2026-11-29",
-    "startTime": "18:00",
-    "timezone": "",
-    "venue": "The Welcome Home Tour - Atlanta",
+    "startTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "Variety Playhouse",
     "address": "1099 Euclid Ave NE",
     "city": "Atlanta",
     "state": "GA",
@@ -3004,12 +3068,26 @@
     "headliner": "Alex Jean",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108975912?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/108975912?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "ticketUrl": "https://www.axs.com/events/1634213/alex-jean-tickets",
+    "officialUrl": "https://www.axs.com/events/1634213/alex-jean-tickets",
     "image": "assets/events/alex-jean-welcome-home-tour-2026.png",
     "price": "",
     "sourceName": "Bandsintown",
     "sources": [
+      {
+        "name": "AXS / Variety Playhouse",
+        "url": "https://www.axs.com/events/1634213/alex-jean-tickets",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Alex Jean official tour calendar",
+        "url": "https://alexjeantour.com/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
       {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/108975912?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
@@ -3029,14 +3107,17 @@
     "imageOverride": true,
     "imageSource": "Alex Jean official Welcome Home Tour Leg 1 flyer",
     "imageSourceUrl": "https://alexjeantour.com/",
-    "auditVerified": "2026-10-02"
+    "auditVerified": "2026-10-02",
+    "startDateTime": "2026-11-29T19:00:00-05:00",
+    "doorsTime": "18:00",
+    "notes": "AXS confirms Variety Playhouse, 7 PM concert and 6 PM doors; replaces the generic tour-name venue and incorrect 6 PM start."
   },
   {
     "id": "bandsintown:108976155",
     "title": "Alex Jean at The Pyrle",
     "startDate": "2026-12-01",
     "startTime": "20:00",
-    "timezone": "",
+    "timezone": "America/New_York",
     "venue": "The Pyrle",
     "address": "232 S Elm St",
     "city": "Greensboro",
@@ -3048,12 +3129,26 @@
     "headliner": "Alex Jean",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108976155?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/108976155?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "ticketUrl": "https://www.tixr.com/groups/thepyrle/events/alex-jean-209045",
+    "officialUrl": "https://www.tixr.com/groups/thepyrle/events/alex-jean-209045",
     "image": "assets/events/alex-jean-welcome-home-tour-2026.png",
     "price": "",
     "sourceName": "Bandsintown",
     "sources": [
+      {
+        "name": "The Pyrle official tickets",
+        "url": "https://www.tixr.com/groups/thepyrle/events/alex-jean-209045",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Alex Jean official tour calendar",
+        "url": "https://alexjeantour.com/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
       {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/108976155?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
@@ -3073,7 +3168,9 @@
     "imageOverride": true,
     "imageSource": "Alex Jean official Welcome Home Tour Leg 1 flyer",
     "imageSourceUrl": "https://alexjeantour.com/",
-    "auditVerified": "2026-10-02"
+    "auditVerified": "2026-10-02",
+    "startDateTime": "2026-12-01T20:00:00-05:00",
+    "doorsTime": "19:00"
   },
   {
     "title": "Miles Minnick & CJ Emulous at Zion Ultra Lounge",
@@ -3109,7 +3206,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-23",
     "id": "miles-cj-zion-ultra-lounge-chandler-2026",
     "imageType": "artist",
     "imagePosition": "center",
