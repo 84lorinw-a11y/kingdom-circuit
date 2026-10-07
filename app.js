@@ -3468,9 +3468,9 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/notklyde/",
     "spotifyProfile": "https://open.spotify.com/artist/052Mwr5vCyfzG81pUr19Kw",
     "youtubeProfile": "https://www.youtube.com/channel/UCh0k4s0fHQ5reL4kcJrqNNQ",
-    "officialImageSource": "https://www.instagram.com/notklyde/p/Dd99lVBATbi/",
-    "imageUrl": "assets/artists/not-klyde-approved-oct3.jpg",
-    "imagePosition": "50% 20%",
+    "officialImageSource": "https://www.instagram.com/notklyde/reel/DduULqLySN-/",
+    "imageUrl": "assets/artists/not-klyde-red-hair-instagram-oct7.jpg",
+    "imagePosition": "50% 32%",
     "sourceRegistryVerified": true
   },
   "404 chew": {
@@ -7323,9 +7323,9 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/notklyde/",
     "spotifyProfile": "https://open.spotify.com/artist/052Mwr5vCyfzG81pUr19Kw",
     "youtubeProfile": "https://www.youtube.com/channel/UCh0k4s0fHQ5reL4kcJrqNNQ",
-    "officialImageSource": "https://www.instagram.com/notklyde/p/Dd99lVBATbi/",
-    "imageUrl": "assets/artists/not-klyde-approved-oct3.jpg",
-    "imagePosition": "50% 20%",
+    "officialImageSource": "https://www.instagram.com/notklyde/reel/DduULqLySN-/",
+    "imageUrl": "assets/artists/not-klyde-red-hair-instagram-oct7.jpg",
+    "imagePosition": "50% 32%",
     "sourceRegistryVerified": true
   },
   "404 chew": {
@@ -8926,8 +8926,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "center"
   },
   "not klyde": {
-    "imageUrl": "assets/artists/not-klyde-approved-oct3.jpg",
-    "imagePosition": "50% 20%"
+    "imageUrl": "assets/artists/not-klyde-red-hair-instagram-oct7.jpg",
+    "imagePosition": "50% 32%"
   },
   "404 chew": {
     "imageUrl": "assets/artists/404-chew-approved-oct3.jpg",
