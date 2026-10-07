@@ -289,6 +289,7 @@ const ARTIST_ROSTER_ORDER = [
   "Corey Paul",
   "Cutright",
   "J-Phish",
+  "b4l.lildon",
   "Alex Faith",
   "Tony Tillman",
   "Dillon Chase",
@@ -4192,6 +4193,21 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/j-phish-official-spotify-portrait-oct7.jpg",
     "imagePosition": "45% 20%",
     "sourceRegistryVerified": true
+  },
+  "b4l.lildon": {
+    "aliases": [
+      "b4l.lildon",
+      "B4L Lil Don",
+      "B4L LilDon"
+    ],
+    "website": "https://www.instagram.com/b4l.lildon/",
+    "instagramProfile": "https://www.instagram.com/b4l.lildon/",
+    "spotifyProfile": "https://open.spotify.com/artist/7h6DXdckG9luuTbush9wGe",
+    "youtubeProfile": "https://www.youtube.com/@b4llildon123",
+    "officialImageSource": "https://www.instagram.com/p/DbE12VnEV_N/",
+    "imageUrl": "assets/artists/b4l-lildon-official-instagram-portrait-oct7.jpg",
+    "imagePosition": "50% 18%",
+    "sourceRegistryVerified": true
   }
 };
 const VERIFIED_ARTIST_REGISTRY_UPDATES = {
@@ -7983,6 +7999,21 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imagePosition": "45% 20%",
     "sourceRegistryVerified": true
   },
+  "b4l.lildon": {
+    "aliases": [
+      "b4l.lildon",
+      "B4L Lil Don",
+      "B4L LilDon"
+    ],
+    "website": "https://www.instagram.com/b4l.lildon/",
+    "instagramProfile": "https://www.instagram.com/b4l.lildon/",
+    "spotifyProfile": "https://open.spotify.com/artist/7h6DXdckG9luuTbush9wGe",
+    "youtubeProfile": "https://www.youtube.com/@b4llildon123",
+    "officialImageSource": "https://www.instagram.com/p/DbE12VnEV_N/",
+    "imageUrl": "assets/artists/b4l-lildon-official-instagram-portrait-oct7.jpg",
+    "imagePosition": "50% 18%",
+    "sourceRegistryVerified": true
+  },
   "von won": {
     "aliases": [
       "Von Won",
@@ -9165,6 +9196,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "j-phish": {
     "imageUrl": "assets/artists/j-phish-official-spotify-portrait-oct7.jpg",
     "imagePosition": "45% 20%"
+  },
+  "b4l.lildon": {
+    "imageUrl": "assets/artists/b4l-lildon-official-instagram-portrait-oct7.jpg",
+    "imagePosition": "50% 18%"
   }
 };
 
