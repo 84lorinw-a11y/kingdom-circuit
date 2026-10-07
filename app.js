@@ -290,6 +290,7 @@ const ARTIST_ROSTER_ORDER = [
   "Cutright",
   "J-Phish",
   "B4L Lil Don",
+  "T Log",
   "Alex Faith",
   "Tony Tillman",
   "Dillon Chase",
@@ -4208,6 +4209,21 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/b4l-lildon-official-instagram-portrait-oct7.jpg",
     "imagePosition": "50% 18%",
     "sourceRegistryVerified": true
+  },
+  "t log": {
+    "aliases": [
+      "T Log",
+      "TLOG",
+      "Tyler Logsdon"
+    ],
+    "website": "https://linktr.ee/tlog.music",
+    "instagramProfile": "https://www.instagram.com/tlog.music/",
+    "spotifyProfile": "https://open.spotify.com/artist/1VtGpszcOQXXo2zB74t9l2",
+    "youtubeProfile": "https://www.youtube.com/channel/UCF_O-Sq39HpGVjRekbRXLPg",
+    "officialImageSource": "https://open.spotify.com/artist/1VtGpszcOQXXo2zB74t9l2",
+    "imageUrl": "assets/artists/t-log-official-spotify-portrait-oct7.jpg",
+    "imagePosition": "53% 15%",
+    "sourceRegistryVerified": true
   }
 };
 const VERIFIED_ARTIST_REGISTRY_UPDATES = {
@@ -8014,6 +8030,21 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imagePosition": "50% 18%",
     "sourceRegistryVerified": true
   },
+  "t log": {
+    "aliases": [
+      "T Log",
+      "TLOG",
+      "Tyler Logsdon"
+    ],
+    "website": "https://linktr.ee/tlog.music",
+    "instagramProfile": "https://www.instagram.com/tlog.music/",
+    "spotifyProfile": "https://open.spotify.com/artist/1VtGpszcOQXXo2zB74t9l2",
+    "youtubeProfile": "https://www.youtube.com/channel/UCF_O-Sq39HpGVjRekbRXLPg",
+    "officialImageSource": "https://open.spotify.com/artist/1VtGpszcOQXXo2zB74t9l2",
+    "imageUrl": "assets/artists/t-log-official-spotify-portrait-oct7.jpg",
+    "imagePosition": "53% 15%",
+    "sourceRegistryVerified": true
+  },
   "von won": {
     "aliases": [
       "Von Won",
@@ -9200,6 +9231,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "b4l lil don": {
     "imageUrl": "assets/artists/b4l-lildon-official-instagram-portrait-oct7.jpg",
     "imagePosition": "50% 18%"
+  },
+  "t log": {
+    "imageUrl": "assets/artists/t-log-official-spotify-portrait-oct7.jpg",
+    "imagePosition": "53% 15%"
   }
 };
 
