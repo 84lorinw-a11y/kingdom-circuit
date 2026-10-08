@@ -1,6 +1,6 @@
 {
   "policyVersion": 7,
-  "generatedAt": "2026-10-07T18:15:06Z",
+  "generatedAt": "2026-10-08T15:48:19Z",
   "highRiskArtists": [
     {
       "artist": "Mike Malagies",
@@ -325,19 +325,5 @@
     "Incomplete confirmed events stay off the public calendar until a venue/city/state can be verified.",
     "Held festival candidates create workflow warnings until an official lineup is verified and published."
   ],
-  "heldFestivalCandidates": [
-    {
-      "id": "bandsintown:108938482",
-      "title": "Awake-Fest 2026",
-      "startDate": "2026-11-14",
-      "city": "Eustis",
-      "state": "FL",
-      "artists": [
-        "Zauntee"
-      ],
-      "officialUrl": "https://www.bandsintown.com/e/108938482?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-      "status": "needs_official_lineup_review",
-      "reason": "A tracked artist calendar reports this festival, but no official-lineup record is published yet."
-    }
-  ]
+  "heldFestivalCandidates": []
 }
