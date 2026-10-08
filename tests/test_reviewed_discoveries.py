@@ -69,7 +69,7 @@ class ReviewedDiscoveriesTests(unittest.TestCase):
                       for e in approved if e.get("sourceEventIds")]
         events = []
         reviewed.apply(self.root, events, candidates, today="2026-10-07")
-        self.assertEqual(len(events), 7)
+        self.assertEqual(len(events), 8)
         self.assertEqual(candidates, [])
         brightpoint = next(e for e in events if e["city"] == "Markleville")
         self.assertEqual(brightpoint["startTime"], "19:00")
