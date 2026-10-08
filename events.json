@@ -9037,5 +9037,84 @@
         "priority": 112
       }
     ]
+  },
+  {
+    "id": "manual:revolt-mr-del-canton-jones-jackson-2026-10-10",
+    "title": "REVOLT — Mr. Del & Canton Jones",
+    "startDate": "2026-10-10",
+    "endDate": "2026-10-10",
+    "startTime": "19:00",
+    "endTime": "21:00",
+    "timezone": "America/Chicago",
+    "startDateTime": "2026-10-10T19:00:00-05:00",
+    "endDateTime": "2026-10-10T21:00:00-05:00",
+    "venue": "Ayers Auditorium — Jackson State Community College",
+    "address": "2046 North Parkway, Building 12, Parking Lot K",
+    "city": "Jackson",
+    "state": "TN",
+    "country": "US",
+    "artists": [
+      "Mr. Del",
+      "Canton Jones"
+    ],
+    "headliner": "Mr. Del",
+    "advertisedBilling": [
+      "Mr. Del",
+      "Canton Jones",
+      "Romona Estell",
+      "SOG Minion",
+      "Stylin",
+      "Yust",
+      "EJ Shelton",
+      "DJ Pat"
+    ],
+    "officialBill": [
+      "Mr. Del",
+      "Canton Jones",
+      "Romona Estell",
+      "SOG Minion",
+      "Stylin",
+      "Yust",
+      "EJ Shelton",
+      "DJ Pat"
+    ],
+    "officialUrl": "https://mrdel.net/event/6715562/778010635/revolt-mr-del-canton-jones",
+    "ticketUrl": "https://mrdel.net/event/6715562/778010635/revolt-mr-del-canton-jones",
+    "image": "assets/events/revolt-mr-del-canton-jones-jackson-2026-10-10.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Original concert flyer from Mr. Del official event page",
+    "imageSourceUrl": "https://mrdel.net/event/6715562/778010635/revolt-mr-del-canton-jones",
+    "eventType": "concert",
+    "status": "scheduled",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "confidence": "high",
+    "authority": "artist_calendar",
+    "sourceName": "Mr. Del official concert calendar",
+    "sources": [
+      {
+        "name": "Mr. Del official concert calendar",
+        "url": "https://mrdel.net/event/6715562/778010635/revolt-mr-del-canton-jones",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 112
+      },
+      {
+        "name": "Canton Jones official Instagram announcement",
+        "url": "https://www.instagram.com/thecantonjones/reel/DeNqA4yNksL/",
+        "type": "manual_verified",
+        "authority": "artist_social",
+        "priority": 112
+      }
+    ],
+    "firstSeen": "2026-10-08T01:47:25Z",
+    "lastVerified": "2026-10-08T01:47:25Z",
+    "auditVerified": "2026-10-07",
+    "editorialBatch": "2026-10-07-reviewed-discoveries",
+    "price": "Free with registration",
+    "organizer": "City of Refuge",
+    "notes": "Owner flagged Canton Jones October 7 Instagram announcement. Official Mr. Del event page and full original flyer confirm October 10, 2026 at 7 PM, Jackson State Community College Ayers Auditorium, Jackson TN; free with registration through that page. Canton post gives 7–9 PM and adds opening artist EJ Shelton plus DJ Pat. Official flyer also names Romona Estell, SOG Minion, Stylin and Yust; preserve their advertised names as unlinked billing, without creating profiles. Original 1121x1444 source flyer saved unchanged. The source HTML start_time meta incorrectly labels local 7 PM with Z; visible calendar, flyer and date-only local schema agree on 7 PM in Jackson, so use America/Chicago."
   }
 ]
