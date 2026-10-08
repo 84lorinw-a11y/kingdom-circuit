@@ -3,8 +3,8 @@
     "id": "toschii-space-city-lift-off-houston-2026-10-24",
     "title": "Space City Lift Off",
     "startDate": "2026-10-24",
-    "startTime": "19:00",
-    "startDateTime": "2026-10-24T19:00:00-05:00",
+    "startTime": "18:00",
+    "startDateTime": "2026-10-24T18:00:00-05:00",
     "timezone": "America/Chicago",
     "venue": "Space City Church",
     "address": "7746 Almeda Genoa Road",
@@ -13,41 +13,51 @@
     "state": "TX",
     "country": "US",
     "artists": [
+      "Mike Malagies",
       "Toschii",
-      "MikeySoChristian",
-      "B4L Lil Don"
+      "B4L Lil Don",
+      "MikeySoChristian"
     ],
-    "headliner": "Toschii",
+    "headliner": "Mike Malagies",
     "advertisedBilling": [
+      "Mike Malagies",
       "Toschii",
-      "MikeySoChristian",
-      "B4L Lil Don"
+      "B4L Lil Don",
+      "MikeySoChristian"
     ],
     "officialBill": [
+      "Mike Malagies",
       "Toschii",
-      "MikeySoChristian",
-      "B4L Lil Don"
+      "B4L Lil Don",
+      "MikeySoChristian"
     ],
     "lineupExplicit": true,
     "eventType": "concert",
     "status": "scheduled",
     "ticketUrl": "",
-    "officialUrl": "https://www.instagram.com/spacecityyoungadults/reel/Dc7iR_Zsq0R/",
-    "image": "assets/events/space-city-lift-off-2026-10-24-full-lineup.jpg",
+    "officialUrl": "https://www.instagram.com/spacecitychurch/p/DePsJdnlTNg/",
+    "image": "assets/events/space-city-lift-off-2026-10-24-oct8-lineup.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
-    "imageSource": "Space City Young Adults official group flyer shared by B4L Lil Don",
-    "imageSourceUrl": "https://www.instagram.com/p/Dc1RkftxtUZ/",
+    "imageSource": "Space City Church official October 8 updated group flyer",
+    "imageSourceUrl": "https://www.instagram.com/spacecitychurch/p/DePsJdnlTNg/",
     "price": "Free",
-    "description": "Toschii, MikeySoChristian, and B4L Lil Don perform at Space City Lift Off, the Space City Fest kickoff presented by Space City Young Adults. Free admission at Space City Church in Houston on October 24 at 7 PM.",
-    "sourceName": "Space City Young Adults / Space City Church official announcement",
+    "description": "Mike Malagies, Toschii, B4L Lil Don, and MikeySoChristian perform at Space City Lift Off, the Space City Fest kickoff. Free admission at Space City Church in Houston on October 24, 6–9 PM.",
+    "sourceName": "Space City Church official October 8 announcement",
     "authority": "official_event",
     "confidence": "high",
     "firstSeen": "2026-10-03T18:10:13Z",
-    "lastVerified": "2026-10-07T00:32:22Z",
-    "auditVerified": "2026-10-06",
+    "lastVerified": "2026-10-08T21:13:29Z",
+    "auditVerified": "2026-10-08",
     "sources": [
+      {
+        "name": "Space City Church updated lineup, artwork and event time",
+        "url": "https://www.instagram.com/spacecitychurch/p/DePsJdnlTNg/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 120
+      },
       {
         "name": "Space City Young Adults official lineup announcement",
         "url": "https://www.instagram.com/spacecityyoungadults/reel/Dc7iR_Zsq0R/",
@@ -70,6 +80,9 @@
         "priority": 115
       }
     ],
-    "notes": "Official organizer announcement and B4L Lil Don September 3 flyer checked October 6 confirm Toschii, MikeySoChristian, and B4L Lil Don. Full 1350x1688 group flyer saved from artist post; the organizer reel also names all three. Unnamed \"and more\" is not treated as confirmed billing. Saturday October 24, 7 PM, 7746 Almeda Genoa Road, Houston TX 77075. Toschii/church September 15 caption explicitly says FREE. Separate from Space City Fest on October 25 at Discovery Green. Original firstSeen and canonical event identity preserved."
+    "notes": "Official Space City Church October 8 announcement and new flyer explicitly add Mike Malagies and list the bill in this order: Mike Malagies, Toschii, B4L Lil Don, Mikey So Christian. Both flyer and caption now say October 24, 6–9 PM; this supersedes the older 7 PM start. Venue remains Space City Church, 7746 Almeda Genoa Road, Houston TX 77075. Free admission retained from prior explicit organizer/artist announcement; new post does not contradict it. Exact downloaded organizer flyer saved locally. Separate from Space City Fest October 25 at Discovery Green. Original firstSeen and canonical event identity preserved; this is a correction, not a new discovery.",
+    "endTime": "21:00",
+    "endDateTime": "2026-10-24T21:00:00-05:00",
+    "endDate": "2026-10-24"
   }
 ]
