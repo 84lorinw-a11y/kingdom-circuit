@@ -4262,7 +4262,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "youtubeProfile": "https://www.youtube.com/@Starringo",
     "officialImageSource": "https://open.spotify.com/artist/3az3UoKXQwxW9oI2Awbodj",
     "imageUrl": "assets/artists/starringo-official-portrait-oct8.jpg",
-    "imagePosition": "50% 75%",
+    "imagePosition": "50% 50%",
     "state": "LA",
     "label": "RMG",
     "sourceRegistryVerified": true
@@ -4279,7 +4279,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "youtubeProfile": "https://www.youtube.com/@imadrion",
     "officialImageSource": "https://open.spotify.com/artist/4IgUUuQrZ1zLIYzsuU0sT5",
     "imageUrl": "assets/artists/adrion-butler-official-portrait-oct8.jpg",
-    "imagePosition": "50% 75%",
+    "imagePosition": "50% 35%",
     "state": "TX",
     "label": "God Made Muzic",
     "sourceRegistryVerified": true
@@ -4377,7 +4377,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "youtubeProfile": "https://www.youtube.com/@JxdyMusic",
     "officialImageSource": "https://open.spotify.com/artist/6nOzDwWM8IFHIFyhQ2HObr",
     "imageUrl": "assets/artists/jxdy-official-portrait-oct8.jpg",
-    "imagePosition": "50% 85%",
+    "imagePosition": "50% 50%",
     "state": "TX",
     "sourceRegistryVerified": true
   }
@@ -8294,7 +8294,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "youtubeProfile": "https://www.youtube.com/@Starringo",
     "officialImageSource": "https://open.spotify.com/artist/3az3UoKXQwxW9oI2Awbodj",
     "imageUrl": "assets/artists/starringo-official-portrait-oct8.jpg",
-    "imagePosition": "50% 75%",
+    "imagePosition": "50% 50%",
     "state": "LA",
     "label": "RMG",
     "sourceRegistryVerified": true
@@ -8311,7 +8311,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "youtubeProfile": "https://www.youtube.com/@imadrion",
     "officialImageSource": "https://open.spotify.com/artist/4IgUUuQrZ1zLIYzsuU0sT5",
     "imageUrl": "assets/artists/adrion-butler-official-portrait-oct8.jpg",
-    "imagePosition": "50% 75%",
+    "imagePosition": "50% 35%",
     "state": "TX",
     "label": "God Made Muzic",
     "sourceRegistryVerified": true
@@ -8409,7 +8409,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "youtubeProfile": "https://www.youtube.com/@JxdyMusic",
     "officialImageSource": "https://open.spotify.com/artist/6nOzDwWM8IFHIFyhQ2HObr",
     "imageUrl": "assets/artists/jxdy-official-portrait-oct8.jpg",
-    "imagePosition": "50% 85%",
+    "imagePosition": "50% 50%",
     "state": "TX",
     "sourceRegistryVerified": true
   }
@@ -9545,11 +9545,11 @@ const STATIC_ARTIST_PORTRAITS = {
   },
   "starringo": {
     "imageUrl": "assets/artists/starringo-official-portrait-oct8.jpg",
-    "imagePosition": "50% 75%"
+    "imagePosition": "50% 50%"
   },
   "adrion butler": {
     "imageUrl": "assets/artists/adrion-butler-official-portrait-oct8.jpg",
-    "imagePosition": "50% 75%"
+    "imagePosition": "50% 35%"
   },
   "garko": {
     "imageUrl": "assets/artists/garko-official-portrait-oct8.jpg",
@@ -9573,7 +9573,7 @@ const STATIC_ARTIST_PORTRAITS = {
   },
   "jxdy": {
     "imageUrl": "assets/artists/jxdy-official-portrait-oct8.jpg",
-    "imagePosition": "50% 85%"
+    "imagePosition": "50% 50%"
   }
 };
 
