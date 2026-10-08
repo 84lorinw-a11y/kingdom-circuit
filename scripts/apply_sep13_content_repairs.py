@@ -7,6 +7,7 @@ from pathlib import Path
 
 from apply_sep13_requested_events import UPSERTS as REQUESTED_UPSERTS, apply_requested_repairs
 from apply_sep13_requested_image_hotfix import apply_requested_image_hotfix
+from apply_sep26_requested_lineups import PATCHES as REVIEWED_LINEUPS
 
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT_DATE = "2026-09-13"
@@ -100,6 +101,10 @@ NEW_EVENTS = {
         ], "auditVerified": AUDIT_DATE,
     },
 }
+
+
+# Keep the old festival seed aligned with the later artist-confirmed billing.
+NEW_EVENTS["rock-the-universe-orlando-2027"].update(REVIEWED_LINEUPS["rock-the-universe-orlando-2027"])
 
 
 def patch_event(item: dict) -> None:

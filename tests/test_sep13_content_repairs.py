@@ -43,7 +43,8 @@ class September13ContentRepairTests(unittest.TestCase):
         self.assertEqual((mike["startDate"], mike["startTime"], mike["city"]), ("2026-10-16", "19:00", "North Miami"))
         universal = self.event("rock-the-universe-orlando-2027")
         self.assertEqual((universal["startDate"], universal["endDate"]), ("2027-01-22", "2027-01-23"))
-        self.assertEqual(universal["performerDays"]["2027-01-23"], ["gio.", "Torey D'Shaun"])
+        self.assertEqual(universal["performerDays"]["2027-01-22"], ["1K Phew", "DJ Bryce G"])
+        self.assertEqual(universal["performerDays"]["2027-01-23"], ["gio.", "Torey D'Shaun", "DJ Bryce G"])
 
     def test_tribe_lineup_and_mission_image_are_durable(self):
         tribe = self.event("tribe-fest-rialto-2026")
