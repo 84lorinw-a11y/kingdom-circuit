@@ -60,6 +60,38 @@ class ReviewedDiscoveriesTests(unittest.TestCase):
         self.assertIn(other_day, events)
         self.assertTrue(any(e["artists"] == ["Alex Jean"] and e["city"] == "Orlando" for e in events))
 
+    def test_oct7_discoveries_replace_provider_fragments_without_resetting_age(self):
+        approved = [e for e in json.loads((ROOT / "config/manual-events.json").read_text())
+                    if e.get("editorialBatch") == "2026-10-07-reviewed-discoveries"]
+        (self.root / "config/manual-events.json").write_text(json.dumps(approved))
+        candidates = [dict(e, id=e["sourceEventIds"][0], startTime="18:00",
+                           firstSeen="2026-10-07T20:00:00Z")
+                      for e in approved if e.get("sourceEventIds")]
+        events = []
+        reviewed.apply(self.root, events, candidates, today="2026-10-07")
+        self.assertEqual(len(events), 6)
+        self.assertEqual(candidates, [])
+        brightpoint = next(e for e in events if e["city"] == "Markleville")
+        self.assertEqual(brightpoint["startTime"], "19:00")
+        self.assertEqual(brightpoint["artists"], ["Zauntee"])
+        self.assertEqual(brightpoint["firstSeen"], "2026-10-07T20:00:00Z")
+        kaden = next(e for e in events if e["city"] == "Huntington Beach")
+        self.assertEqual(kaden["startTime"], "")
+        self.assertEqual(kaden["doorsTime"], "18:30")
+        snapshot = copy.deepcopy(events)
+        reviewed.apply(self.root, events, candidates, today="2026-10-07")
+        self.assertEqual(events, snapshot)
+
+    def test_after_doves_calendar_day_preserves_actual_midnight_end(self):
+        event = next(e for e in json.loads((ROOT / "config/manual-events.json").read_text())
+                     if e["id"] == "after-doves-at-the-cg-nashville-2026-10-06")
+        self.assertEqual(event["endDate"], "2026-10-06")
+        self.assertEqual(event["endDateTime"], "2026-10-07T00:00:00-05:00")
+        self.assertEqual(event["firstSeen"], "2026-09-28T22:09:27Z")
+        patch = json.loads((ROOT / "config/sep26-requested-lineups.json").read_text())[event["id"]]
+        self.assertEqual(patch["endDate"], event["endDate"])
+        self.assertEqual(patch["endDateTime"], event["endDateTime"])
+
 
 if __name__ == "__main__":
     unittest.main()

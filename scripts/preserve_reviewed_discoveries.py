@@ -6,7 +6,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 BATCH = "2026-09-29-expanded-source-search"
-APPROVED_BATCHES = {BATCH, "2026-09-30-whatuprg-announced", "2026-10-05-submitted-shows", "2026-10-06-submitted-events", "2026-10-07-submitted-events"}
+APPROVED_BATCHES = {BATCH, "2026-09-30-whatuprg-announced", "2026-10-05-submitted-shows", "2026-10-06-submitted-events", "2026-10-07-submitted-events", "2026-10-07-reviewed-discoveries"}
 
 
 def held_dallas_candidate(event):
@@ -25,6 +25,10 @@ def matches(event, approved):
         return True
     if event.get("startDate") != approved["startDate"]:
         return False
+    if str(event.get("id", "")) in approved.get("sourceEventIds", []):
+        return True
+    if approved.get("bandsintownEventId") and str(event.get("bandsintownEventId", "")) == str(approved["bandsintownEventId"]):
+        return True
     urls = {str(approved.get(k, "")).split("?")[0].rstrip("/")
             for k in ("officialUrl", "ticketUrl")} - {""}
     return any(str(event.get(k, "")).split("?")[0].rstrip("/") in urls
