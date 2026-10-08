@@ -17,7 +17,7 @@ class PassionFestPublicationTests(unittest.TestCase):
         candidate = update_events.normalize_manual_event(row, "2026-09-29T15:14:40Z")
         published = update_events.finalize_event(candidate, {})
         self.assertIsNotNone(published)
-        self.assertEqual(published["artists"], ["Queen Lee", "BigBreeze", "Bo Fisher"])
+        self.assertEqual(published["artists"], ["Queen Lee", "BigBreeze", "Mission", "Lyric The Geenyus", "Bo Fisher"])
 
     def test_refresh_preserves_billing_and_deduplicates_without_changing_other_shows(self):
         other = {"id": "other-show", "title": "Unrelated show"}
@@ -28,7 +28,7 @@ class PassionFestPublicationTests(unittest.TestCase):
         self.assertEqual(events[0], other)
         self.assertEqual(len(events), 2)
         self.assertEqual(supplemental, [])
-        self.assertEqual(events[1]["advertisedBilling"], ["XEEM", "Queen Lee", "Markel (formerly BigBreeze)", "Bo Fisher"])
+        self.assertEqual(events[1]["advertisedBilling"], ["Queen Lee", "Big Breeze", "XEEM", "Mission", "Princess Tayy SGL", "Altar Ego", "BRUH", "KAPPAA!", "Lyric The Geenyus", "SOC Driz", "Big Lek", "Lauryn Nicole", "Mr Griffin", "Zoe Junior", "DJ Byrd"])
         self.assertTrue((ROOT / events[1]["image"]).is_file())
 
     def test_verified_poster_does_not_override_later_cancellation(self):
