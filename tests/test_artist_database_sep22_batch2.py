@@ -114,7 +114,7 @@ class ArtistDatabaseSeptember22BatchTwoTests(unittest.TestCase):
             self.assertEqual("18:00", ty_brasel["startTime"])
             self.assertEqual("The Rail", ty_brasel["venue"])
             self.assertEqual("Fort Worth", ty_brasel["city"])
-            self.assertEqual(["Ty Brasel", "JWoodz"], ty_brasel["artists"])
+            self.assertEqual(['Ty Brasel', 'JWoodz', 'DJ Bryce G', 'Starringo', 'Adrion Butler', 'Garko', 'A3', 'DASON*', 'TUVÍ', 'Epho', 'Jxdy'], ty_brasel["artists"])
             self.assertEqual(
                 "assets/events/outlandish-fest-2026-lineup.png", ty_brasel["image"]
             )

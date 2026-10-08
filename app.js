@@ -339,7 +339,16 @@ const ARTIST_ROSTER_ORDER = [
   "Von Won",
   "Lil Ziggy",
   "Young Jayden",
-  "Dougie D"
+  "Dougie D",
+  "DJ Bryce G",
+  "Starringo",
+  "Adrion Butler",
+  "Garko",
+  "A3",
+  "DASON*",
+  "TUVÍ",
+  "Epho",
+  "Jxdy"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -4223,6 +4232,153 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/1VtGpszcOQXXo2zB74t9l2",
     "imageUrl": "assets/artists/t-log-official-spotify-portrait-oct7.jpg",
     "imagePosition": "53% 15%",
+    "sourceRegistryVerified": true
+  },
+  "dj bryce g": {
+    "aliases": [
+      "DJ Bryce G",
+      "Bryce G",
+      "The Joyful Noize",
+      "DJ Bryce G (The Joyful Noize)"
+    ],
+    "website": "https://www.thejoyfulnoize.shop/",
+    "instagramProfile": "https://www.instagram.com/bryceg.707/",
+    "spotifyProfile": "https://open.spotify.com/artist/0zmM94Y4z1atIij6dcJAEw",
+    "youtubeProfile": "https://www.youtube.com/@JoyfulNoize",
+    "officialImageSource": "https://open.spotify.com/artist/0zmM94Y4z1atIij6dcJAEw",
+    "imageUrl": "assets/artists/dj-bryce-g-official-portrait-oct8.jpg",
+    "imagePosition": "50% 0%",
+    "state": "FL",
+    "label": "The Joyful Noize",
+    "sourceRegistryVerified": true
+  },
+  "starringo": {
+    "aliases": [
+      "Starringo"
+    ],
+    "website": "https://www.starringo.com/",
+    "instagramProfile": "https://www.instagram.com/iamstarringo/",
+    "spotifyProfile": "https://open.spotify.com/artist/3az3UoKXQwxW9oI2Awbodj",
+    "youtubeProfile": "https://www.youtube.com/@Starringo",
+    "officialImageSource": "https://open.spotify.com/artist/3az3UoKXQwxW9oI2Awbodj",
+    "imageUrl": "assets/artists/starringo-official-portrait-oct8.jpg",
+    "imagePosition": "50% 75%",
+    "state": "LA",
+    "label": "RMG",
+    "sourceRegistryVerified": true
+  },
+  "adrion butler": {
+    "aliases": [
+      "Adrion Butler",
+      "im.adrion",
+      "ABfromTX"
+    ],
+    "website": "https://www.adrionbutler.com/",
+    "instagramProfile": "https://www.instagram.com/abfromtx/",
+    "spotifyProfile": "https://open.spotify.com/artist/4IgUUuQrZ1zLIYzsuU0sT5",
+    "youtubeProfile": "https://www.youtube.com/@imadrion",
+    "officialImageSource": "https://open.spotify.com/artist/4IgUUuQrZ1zLIYzsuU0sT5",
+    "imageUrl": "assets/artists/adrion-butler-official-portrait-oct8.jpg",
+    "imagePosition": "50% 75%",
+    "state": "TX",
+    "label": "God Made Muzic",
+    "sourceRegistryVerified": true
+  },
+  "garko": {
+    "aliases": [
+      "Garko",
+      "garkogarko"
+    ],
+    "website": "https://linktr.ee/garkogarko",
+    "instagramProfile": "https://www.instagram.com/garkogarko/",
+    "spotifyProfile": "https://open.spotify.com/artist/12SyHl2a5s7Rrk4Hq2yxC4",
+    "youtubeProfile": "https://www.youtube.com/@garkogarko",
+    "officialImageSource": "https://open.spotify.com/artist/12SyHl2a5s7Rrk4Hq2yxC4",
+    "imageUrl": "assets/artists/garko-official-portrait-oct8.jpg",
+    "imagePosition": "50% 25%",
+    "sourceRegistryVerified": true
+  },
+  "a3": {
+    "aliases": [
+      "A3",
+      "whereisa3"
+    ],
+    "website": "https://www.fvr.fan/a3",
+    "instagramProfile": "https://www.instagram.com/whereisa3/",
+    "spotifyProfile": "https://open.spotify.com/artist/5hQa99PDLWHdKY7xc90hcq",
+    "youtubeProfile": "https://www.youtube.com/channel/UCss8r4E2berwBjcXBkoe03Q",
+    "officialImageSource": "https://open.spotify.com/artist/5hQa99PDLWHdKY7xc90hcq",
+    "imageUrl": "assets/artists/a3-official-portrait-oct8.jpg",
+    "imagePosition": "50% 35%",
+    "state": "GA",
+    "label": "RMG",
+    "sourceRegistryVerified": true
+  },
+  "dason*": {
+    "aliases": [
+      "DASON*",
+      "dasonnnnn",
+      "heydason",
+      "Dason",
+      "dasonnnnnn"
+    ],
+    "website": "https://fvr.fan/dason",
+    "instagramProfile": "https://www.instagram.com/dasonnnnnn/",
+    "spotifyProfile": "https://open.spotify.com/artist/64btSZ47kaZiCcma0IYeDA",
+    "youtubeProfile": "https://www.youtube.com/@heydason",
+    "officialImageSource": "https://www.instagram.com/p/DU147xmjAFq/",
+    "imageUrl": "assets/artists/dason-official-portrait-oct8.jpg",
+    "imagePosition": "50% 45%",
+    "state": "TX",
+    "label": "Outlandish Live",
+    "sourceRegistryVerified": true
+  },
+  "tuví": {
+    "aliases": [
+      "TUVÍ",
+      "Tuvi",
+      "tuuuuvi"
+    ],
+    "website": "https://tuvi.set.bio/",
+    "instagramProfile": "https://www.instagram.com/tuuuuvi/",
+    "spotifyProfile": "https://open.spotify.com/artist/3mlijGStey9vcFCj2n2kJK",
+    "youtubeProfile": "https://www.youtube.com/@tuvibb",
+    "officialImageSource": "https://open.spotify.com/artist/3mlijGStey9vcFCj2n2kJK",
+    "imageUrl": "assets/artists/tuvi-official-portrait-oct8.jpg",
+    "imagePosition": "50% 20%",
+    "sourceRegistryVerified": true
+  },
+  "epho": {
+    "aliases": [
+      "Epho",
+      "God Made Epho",
+      "godmadeepho"
+    ],
+    "website": "https://linktr.ee/Epho",
+    "instagramProfile": "https://www.instagram.com/godmadeepho/",
+    "spotifyProfile": "https://open.spotify.com/artist/6E1k9FStKYBjQfzrANVUpe",
+    "youtubeProfile": "https://www.youtube.com/channel/UCQRhW_JGk5UuNgYmX-e-XKQ",
+    "officialImageSource": "https://www.instagram.com/p/Dc336Txjamn/",
+    "imageUrl": "assets/artists/epho-official-portrait-oct8.jpg",
+    "imagePosition": "50% 20%",
+    "state": "TX",
+    "label": "BLDCRWN",
+    "sourceRegistryVerified": true
+  },
+  "jxdy": {
+    "aliases": [
+      "Jxdy",
+      "jxdyyyy",
+      "JxdyMusic"
+    ],
+    "website": "https://linktr.ee/jxdymusic_14",
+    "instagramProfile": "https://www.instagram.com/jxdyyyy/",
+    "spotifyProfile": "https://open.spotify.com/artist/6nOzDwWM8IFHIFyhQ2HObr",
+    "youtubeProfile": "https://www.youtube.com/@JxdyMusic",
+    "officialImageSource": "https://open.spotify.com/artist/6nOzDwWM8IFHIFyhQ2HObr",
+    "imageUrl": "assets/artists/jxdy-official-portrait-oct8.jpg",
+    "imagePosition": "50% 85%",
+    "state": "TX",
     "sourceRegistryVerified": true
   }
 };
@@ -8109,6 +8265,153 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "state": "TX",
     "label": "Grown And Saved",
     "sourceRegistryVerified": true
+  },
+  "dj bryce g": {
+    "aliases": [
+      "DJ Bryce G",
+      "Bryce G",
+      "The Joyful Noize",
+      "DJ Bryce G (The Joyful Noize)"
+    ],
+    "website": "https://www.thejoyfulnoize.shop/",
+    "instagramProfile": "https://www.instagram.com/bryceg.707/",
+    "spotifyProfile": "https://open.spotify.com/artist/0zmM94Y4z1atIij6dcJAEw",
+    "youtubeProfile": "https://www.youtube.com/@JoyfulNoize",
+    "officialImageSource": "https://open.spotify.com/artist/0zmM94Y4z1atIij6dcJAEw",
+    "imageUrl": "assets/artists/dj-bryce-g-official-portrait-oct8.jpg",
+    "imagePosition": "50% 0%",
+    "state": "FL",
+    "label": "The Joyful Noize",
+    "sourceRegistryVerified": true
+  },
+  "starringo": {
+    "aliases": [
+      "Starringo"
+    ],
+    "website": "https://www.starringo.com/",
+    "instagramProfile": "https://www.instagram.com/iamstarringo/",
+    "spotifyProfile": "https://open.spotify.com/artist/3az3UoKXQwxW9oI2Awbodj",
+    "youtubeProfile": "https://www.youtube.com/@Starringo",
+    "officialImageSource": "https://open.spotify.com/artist/3az3UoKXQwxW9oI2Awbodj",
+    "imageUrl": "assets/artists/starringo-official-portrait-oct8.jpg",
+    "imagePosition": "50% 75%",
+    "state": "LA",
+    "label": "RMG",
+    "sourceRegistryVerified": true
+  },
+  "adrion butler": {
+    "aliases": [
+      "Adrion Butler",
+      "im.adrion",
+      "ABfromTX"
+    ],
+    "website": "https://www.adrionbutler.com/",
+    "instagramProfile": "https://www.instagram.com/abfromtx/",
+    "spotifyProfile": "https://open.spotify.com/artist/4IgUUuQrZ1zLIYzsuU0sT5",
+    "youtubeProfile": "https://www.youtube.com/@imadrion",
+    "officialImageSource": "https://open.spotify.com/artist/4IgUUuQrZ1zLIYzsuU0sT5",
+    "imageUrl": "assets/artists/adrion-butler-official-portrait-oct8.jpg",
+    "imagePosition": "50% 75%",
+    "state": "TX",
+    "label": "God Made Muzic",
+    "sourceRegistryVerified": true
+  },
+  "garko": {
+    "aliases": [
+      "Garko",
+      "garkogarko"
+    ],
+    "website": "https://linktr.ee/garkogarko",
+    "instagramProfile": "https://www.instagram.com/garkogarko/",
+    "spotifyProfile": "https://open.spotify.com/artist/12SyHl2a5s7Rrk4Hq2yxC4",
+    "youtubeProfile": "https://www.youtube.com/@garkogarko",
+    "officialImageSource": "https://open.spotify.com/artist/12SyHl2a5s7Rrk4Hq2yxC4",
+    "imageUrl": "assets/artists/garko-official-portrait-oct8.jpg",
+    "imagePosition": "50% 25%",
+    "sourceRegistryVerified": true
+  },
+  "a3": {
+    "aliases": [
+      "A3",
+      "whereisa3"
+    ],
+    "website": "https://www.fvr.fan/a3",
+    "instagramProfile": "https://www.instagram.com/whereisa3/",
+    "spotifyProfile": "https://open.spotify.com/artist/5hQa99PDLWHdKY7xc90hcq",
+    "youtubeProfile": "https://www.youtube.com/channel/UCss8r4E2berwBjcXBkoe03Q",
+    "officialImageSource": "https://open.spotify.com/artist/5hQa99PDLWHdKY7xc90hcq",
+    "imageUrl": "assets/artists/a3-official-portrait-oct8.jpg",
+    "imagePosition": "50% 35%",
+    "state": "GA",
+    "label": "RMG",
+    "sourceRegistryVerified": true
+  },
+  "dason*": {
+    "aliases": [
+      "DASON*",
+      "dasonnnnn",
+      "heydason",
+      "Dason",
+      "dasonnnnnn"
+    ],
+    "website": "https://fvr.fan/dason",
+    "instagramProfile": "https://www.instagram.com/dasonnnnnn/",
+    "spotifyProfile": "https://open.spotify.com/artist/64btSZ47kaZiCcma0IYeDA",
+    "youtubeProfile": "https://www.youtube.com/@heydason",
+    "officialImageSource": "https://www.instagram.com/p/DU147xmjAFq/",
+    "imageUrl": "assets/artists/dason-official-portrait-oct8.jpg",
+    "imagePosition": "50% 45%",
+    "state": "TX",
+    "label": "Outlandish Live",
+    "sourceRegistryVerified": true
+  },
+  "tuví": {
+    "aliases": [
+      "TUVÍ",
+      "Tuvi",
+      "tuuuuvi"
+    ],
+    "website": "https://tuvi.set.bio/",
+    "instagramProfile": "https://www.instagram.com/tuuuuvi/",
+    "spotifyProfile": "https://open.spotify.com/artist/3mlijGStey9vcFCj2n2kJK",
+    "youtubeProfile": "https://www.youtube.com/@tuvibb",
+    "officialImageSource": "https://open.spotify.com/artist/3mlijGStey9vcFCj2n2kJK",
+    "imageUrl": "assets/artists/tuvi-official-portrait-oct8.jpg",
+    "imagePosition": "50% 20%",
+    "sourceRegistryVerified": true
+  },
+  "epho": {
+    "aliases": [
+      "Epho",
+      "God Made Epho",
+      "godmadeepho"
+    ],
+    "website": "https://linktr.ee/Epho",
+    "instagramProfile": "https://www.instagram.com/godmadeepho/",
+    "spotifyProfile": "https://open.spotify.com/artist/6E1k9FStKYBjQfzrANVUpe",
+    "youtubeProfile": "https://www.youtube.com/channel/UCQRhW_JGk5UuNgYmX-e-XKQ",
+    "officialImageSource": "https://www.instagram.com/p/Dc336Txjamn/",
+    "imageUrl": "assets/artists/epho-official-portrait-oct8.jpg",
+    "imagePosition": "50% 20%",
+    "state": "TX",
+    "label": "BLDCRWN",
+    "sourceRegistryVerified": true
+  },
+  "jxdy": {
+    "aliases": [
+      "Jxdy",
+      "jxdyyyy",
+      "JxdyMusic"
+    ],
+    "website": "https://linktr.ee/jxdymusic_14",
+    "instagramProfile": "https://www.instagram.com/jxdyyyy/",
+    "spotifyProfile": "https://open.spotify.com/artist/6nOzDwWM8IFHIFyhQ2HObr",
+    "youtubeProfile": "https://www.youtube.com/@JxdyMusic",
+    "officialImageSource": "https://open.spotify.com/artist/6nOzDwWM8IFHIFyhQ2HObr",
+    "imageUrl": "assets/artists/jxdy-official-portrait-oct8.jpg",
+    "imagePosition": "50% 85%",
+    "state": "TX",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -9235,6 +9538,42 @@ const STATIC_ARTIST_PORTRAITS = {
   "t log": {
     "imageUrl": "assets/artists/t-log-official-spotify-portrait-oct7.jpg",
     "imagePosition": "53% 15%"
+  },
+  "dj bryce g": {
+    "imageUrl": "assets/artists/dj-bryce-g-official-portrait-oct8.jpg",
+    "imagePosition": "50% 0%"
+  },
+  "starringo": {
+    "imageUrl": "assets/artists/starringo-official-portrait-oct8.jpg",
+    "imagePosition": "50% 75%"
+  },
+  "adrion butler": {
+    "imageUrl": "assets/artists/adrion-butler-official-portrait-oct8.jpg",
+    "imagePosition": "50% 75%"
+  },
+  "garko": {
+    "imageUrl": "assets/artists/garko-official-portrait-oct8.jpg",
+    "imagePosition": "50% 25%"
+  },
+  "a3": {
+    "imageUrl": "assets/artists/a3-official-portrait-oct8.jpg",
+    "imagePosition": "50% 35%"
+  },
+  "dason*": {
+    "imageUrl": "assets/artists/dason-official-portrait-oct8.jpg",
+    "imagePosition": "50% 45%"
+  },
+  "tuví": {
+    "imageUrl": "assets/artists/tuvi-official-portrait-oct8.jpg",
+    "imagePosition": "50% 20%"
+  },
+  "epho": {
+    "imageUrl": "assets/artists/epho-official-portrait-oct8.jpg",
+    "imagePosition": "50% 20%"
+  },
+  "jxdy": {
+    "imageUrl": "assets/artists/jxdy-official-portrait-oct8.jpg",
+    "imagePosition": "50% 85%"
   }
 };
 
