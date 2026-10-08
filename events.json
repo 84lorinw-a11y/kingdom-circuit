@@ -3809,17 +3809,20 @@
     "country": "US",
     "artists": [
       "Queen Lee",
-      "BigBreeze"
+      "BigBreeze",
+      "Bo Fisher"
     ],
     "advertisedBilling": [
       "XEEM",
       "Queen Lee",
-      "Markel (formerly BigBreeze)"
+      "Markel (formerly BigBreeze)",
+      "Bo Fisher"
     ],
     "officialBill": [
       "XEEM",
       "Queen Lee",
-      "Markel (formerly BigBreeze)"
+      "Markel (formerly BigBreeze)",
+      "Bo Fisher"
     ],
     "headliner": "",
     "eventType": "festival",
@@ -3835,13 +3838,13 @@
     "imageSource": "Passion Fest official Givebutter event flyer",
     "imageSourceUrl": "https://givebutter.s3.amazonaws.com/media/66EVLgGnfueAfTP34WJm8ePqTwFxXIjEUam2gay7.jpg",
     "organizer": "Passion Fest",
-    "publicDescription": "Passion Fest II brings Christian rap to Charlotte with XEEM, Queen Lee, and Markel (formerly BigBreeze).",
+    "publicDescription": "Passion Fest II brings Christian rap to Charlotte with XEEM, Queen Lee, Markel (formerly BigBreeze), and Bo Fisher.",
     "sourceName": "Passion Fest official event page and flyer",
     "authority": "official_event",
     "confidence": "high",
     "firstSeen": "2026-09-29T15:14:40Z",
     "lastVerified": "2026-09-29T15:14:40Z",
-    "notes": "Official Givebutter flyer confirms October 11, 2026, Event Masterz, 316 Remount Rd, Charlotte, 5 PM, and XEEM, Queen Lee, and Markel FKA Big Breeze. BigBreeze is the existing artist-registry identity. The older unpublished Yung Kriss association is not on the current official flyer and is not carried forward. The flyer and written event description agree on 5 PM local; the Givebutter calendar widget's conflicting 6 PM UTC is not used. Unnamed 'and more' performers and individual set times are not inferred.",
+    "notes": "Official Givebutter flyer confirms October 11, 2026, Event Masterz, 316 Remount Rd, Charlotte, 5 PM, and XEEM, Queen Lee, and Markel FKA Big Breeze. BigBreeze is the existing artist-registry identity. The older unpublished Yung Kriss association is not on the current official flyer and is not carried forward. The flyer and written event description agree on 5 PM local; the Givebutter calendar widget's conflicting 6 PM UTC is not used. Unnamed 'and more' performers and individual set times are not inferred. October 8: Bo Fisher confirms his October 11 Passion Fest performance in Charlotte in his official announcement. Add him to the bill and artist schedule; retain the established date, 5 PM concert start, venue, artwork, and original discovery timestamp.",
     "sources": [
       {
         "name": "Passion Fest official event page and flyer",
@@ -3856,8 +3859,16 @@
         "type": "official_event",
         "authority": "official_event",
         "priority": 112
+      },
+      {
+        "name": "Bo Fisher official Passion Fest announcement",
+        "url": "https://www.instagram.com/bo_fisher_/reel/DeHCihVxAik/",
+        "type": "official_artist",
+        "authority": "artist_announcement",
+        "priority": 112
       }
-    ]
+    ],
+    "auditVerified": "2026-10-08"
   },
   {
     "id": "manual:aamu-gospel-explosion-huntsville-2026-10-11",
@@ -6525,7 +6536,8 @@
       "MAYIA",
       "Dre Skywalker",
       "VVS Big Rock",
-      "Eli Williams"
+      "Eli Williams",
+      "TVNK"
     ],
     "headliner": "Miles Minnick",
     "eventType": "festival",
@@ -6554,6 +6566,13 @@
         "type": "manual_verified",
         "authority": "artist",
         "priority": 115
+      },
+      {
+        "name": "TVNK and Flavor Fest official collaborative announcement",
+        "url": "https://www.instagram.com/iamtvnk/p/Dduir12qiAF/",
+        "type": "official_artist",
+        "authority": "artist_announcement",
+        "priority": 112
       },
       {
         "name": "Flavor Fest official 2026 schedule",
@@ -6624,8 +6643,8 @@
       "Jailynn",
       "Eli Williams"
     ],
-    "auditVerified": "2026-09-11",
-    "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown. Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates."
+    "auditVerified": "2026-10-08",
+    "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown. Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates. October 8: owner verified TVNK in the artist Sheet. His September 25 collaborative announcement with Flavor Fest explicitly confirms November 6 at Crossover Church. Connect the existing TVNK billing to his curated artist profile."
   },
   {
     "id": "manual:don-ready-club-217-los-angeles-2026-11-06",
@@ -9205,6 +9224,81 @@
         "type": "official_festival",
         "authority": "official_festival",
         "priority": 112
+      }
+    ]
+  },
+  {
+    "id": "manual:celebrate-recovery-14-year-anniversary-thomasville-2026-10-13",
+    "title": "Celebrate Recovery — 14 Year Anniversary",
+    "startDate": "2026-10-13",
+    "endDate": "2026-10-13",
+    "startTime": "18:30",
+    "timezone": "America/New_York",
+    "startDateTime": "2026-10-13T18:30:00-04:00",
+    "venue": "Victory Fellowship Church — Worship Center",
+    "address": "19150 US Hwy 19 N",
+    "postalCode": "31757",
+    "city": "Thomasville",
+    "state": "GA",
+    "country": "US",
+    "artists": [
+      "ASAP Preach",
+      "Bo Fisher"
+    ],
+    "advertisedBilling": [
+      "ASAP Preach",
+      "Bo Fisher",
+      "Justo"
+    ],
+    "officialBill": [
+      "ASAP Preach",
+      "Bo Fisher",
+      "Justo"
+    ],
+    "headliner": "ASAP Preach",
+    "eventType": "concert",
+    "status": "scheduled",
+    "lineupExplicit": true,
+    "officialUrl": "https://www.facebook.com/events/1779465513276063",
+    "ticketUrl": "https://www.facebook.com/events/1779465513276063",
+    "image": "assets/events/celebrate-recovery-thomasville-2026-10-13.jpg",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "detailImageLayout": "landscape",
+    "imageSource": "Celebrate Recovery Thomasville official anniversary flyer",
+    "imageSourceUrl": "https://www.facebook.com/photo/?fbid=1491433553015052&set=gm.1799980027891278",
+    "price": "Free",
+    "organizer": "Celebrate Recovery Thomasville",
+    "publicDescription": "Celebrate Recovery Thomasville celebrates 14 years with a free concert featuring ASAP Preach, Bo Fisher, and Justo at Victory Fellowship Church. The concert starts at 6:30 PM.",
+    "sourceName": "Celebrate Recovery Thomasville official event and flyer",
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-10-08T22:05:13Z",
+    "lastVerified": "2026-10-08T22:05:13Z",
+    "auditVerified": "2026-10-08",
+    "notes": "October 8 review: organizer Facebook event confirms Tuesday October 13, 2026; official flyer gives Worship Center, 6:30 PM, free admission, and all three performers. Facebook displays times in the viewer timezone; use the explicitly printed 6:30 PM local Eastern time. Justo is retained as billed without assuming an unverified registry identity. The event is a publicly advertised Christian hip-hop concert, not a routine recovery meeting.",
+    "sources": [
+      {
+        "name": "Celebrate Recovery Thomasville official event",
+        "url": "https://www.facebook.com/events/1779465513276063",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "Celebrate Recovery Thomasville official flyer",
+        "url": "https://www.facebook.com/photo/?fbid=1491433553015052&set=gm.1799980027891278",
+        "type": "official_event",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "Thomasville community event listing",
+        "url": "https://events.yodel.today/thomasville-ga/event/Celebrate-Recovery-Thomasville/14-Year-Anniversary-Celebration/6aa6e0dac8515b0ee93f1a0f",
+        "type": "discovery",
+        "authority": "community_calendar",
+        "priority": 40
       }
     ]
   }

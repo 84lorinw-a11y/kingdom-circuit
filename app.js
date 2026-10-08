@@ -349,7 +349,10 @@ const ARTIST_ROSTER_ORDER = [
   "TUVÍ",
   "Epho",
   "Jxdy",
-  "DJ Geech"
+  "DJ Geech",
+  "Stellar Flo",
+  "Bo Fisher",
+  "TVNK"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -4400,6 +4403,53 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imagePosition": "50% 20%",
     "state": "FL",
     "label": "Flavor Fest / Crossover Church",
+    "sourceRegistryVerified": true
+  },
+  "stellar flo": {
+    "aliases": [
+      "Stellar Flo",
+      "officialstellarflo"
+    ],
+    "website": "https://www.instagram.com/officialstellarflo/",
+    "instagramProfile": "https://www.instagram.com/officialstellarflo/",
+    "spotifyProfile": "https://open.spotify.com/artist/7rVi7KBUIuCwjKs3jzbrZH",
+    "youtubeProfile": "https://www.youtube.com/channel/UC0t8nJdiAyFnt2h2i7essTA",
+    "officialImageSource": "https://www.instagram.com/officialstellarflo/p/DYV7YPlDWxX/",
+    "imageUrl": "assets/artists/stellar-flo-official-instagram-oct8.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "bo fisher": {
+    "aliases": [
+      "Bo Fisher",
+      "bo_fisher_"
+    ],
+    "website": "https://linktr.ee/bofisherministries?utm_source=linktree_profile_share&ltsid=2dd3d851-bd43-443e-a57d-7f19728247c2",
+    "instagramProfile": "https://www.instagram.com/bo_fisher_/",
+    "spotifyProfile": "https://open.spotify.com/artist/19pSUbl8awZf5LIVGHzaXd",
+    "youtubeProfile": "https://www.youtube.com/@Bo_Fisher_",
+    "officialImageSource": "https://linktr.ee/bofisherministries",
+    "imageUrl": "assets/artists/bo-fisher-official-linktree-oct8.webp",
+    "imagePosition": "50% 35%",
+    "state": "SC",
+    "label": "Altar Ego Records",
+    "sourceRegistryVerified": true
+  },
+  "tvnk": {
+    "aliases": [
+      "TVNK",
+      "Tvnk",
+      "iamtvnk"
+    ],
+    "website": "https://whoistvnk.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAacaPOwGyYdXv9_0fnDD8vLSOw2y0K3x7MdprXQbufknPGgOnIcmzxfR_kmQuQ_aem_kemyinVqiKY0R9O5_3zkBw",
+    "instagramProfile": "https://www.instagram.com/iamtvnk/",
+    "spotifyProfile": "https://open.spotify.com/artist/0KQ50V6yg5z8QZ5HevzYlq",
+    "youtubeProfile": "https://www.youtube.com/@iamtvnk",
+    "officialImageSource": "https://open.spotify.com/artist/0KQ50V6yg5z8QZ5HevzYlq",
+    "imageUrl": "assets/artists/tvnk-official-spotify-oct8.jpg",
+    "imagePosition": "50% 25%",
+    "state": "MI",
+    "label": "Raydar University / Trenches Collective",
     "sourceRegistryVerified": true
   }
 };
@@ -8453,6 +8503,53 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "state": "FL",
     "label": "Flavor Fest / Crossover Church",
     "sourceRegistryVerified": true
+  },
+  "stellar flo": {
+    "aliases": [
+      "Stellar Flo",
+      "officialstellarflo"
+    ],
+    "website": "https://www.instagram.com/officialstellarflo/",
+    "instagramProfile": "https://www.instagram.com/officialstellarflo/",
+    "spotifyProfile": "https://open.spotify.com/artist/7rVi7KBUIuCwjKs3jzbrZH",
+    "youtubeProfile": "https://www.youtube.com/channel/UC0t8nJdiAyFnt2h2i7essTA",
+    "officialImageSource": "https://www.instagram.com/officialstellarflo/p/DYV7YPlDWxX/",
+    "imageUrl": "assets/artists/stellar-flo-official-instagram-oct8.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "bo fisher": {
+    "aliases": [
+      "Bo Fisher",
+      "bo_fisher_"
+    ],
+    "website": "https://linktr.ee/bofisherministries?utm_source=linktree_profile_share&ltsid=2dd3d851-bd43-443e-a57d-7f19728247c2",
+    "instagramProfile": "https://www.instagram.com/bo_fisher_/",
+    "spotifyProfile": "https://open.spotify.com/artist/19pSUbl8awZf5LIVGHzaXd",
+    "youtubeProfile": "https://www.youtube.com/@Bo_Fisher_",
+    "officialImageSource": "https://linktr.ee/bofisherministries",
+    "imageUrl": "assets/artists/bo-fisher-official-linktree-oct8.webp",
+    "imagePosition": "50% 35%",
+    "state": "SC",
+    "label": "Altar Ego Records",
+    "sourceRegistryVerified": true
+  },
+  "tvnk": {
+    "aliases": [
+      "TVNK",
+      "Tvnk",
+      "iamtvnk"
+    ],
+    "website": "https://whoistvnk.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAacaPOwGyYdXv9_0fnDD8vLSOw2y0K3x7MdprXQbufknPGgOnIcmzxfR_kmQuQ_aem_kemyinVqiKY0R9O5_3zkBw",
+    "instagramProfile": "https://www.instagram.com/iamtvnk/",
+    "spotifyProfile": "https://open.spotify.com/artist/0KQ50V6yg5z8QZ5HevzYlq",
+    "youtubeProfile": "https://www.youtube.com/@iamtvnk",
+    "officialImageSource": "https://open.spotify.com/artist/0KQ50V6yg5z8QZ5HevzYlq",
+    "imageUrl": "assets/artists/tvnk-official-spotify-oct8.jpg",
+    "imagePosition": "50% 25%",
+    "state": "MI",
+    "label": "Raydar University / Trenches Collective",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -9619,6 +9716,18 @@ const STATIC_ARTIST_PORTRAITS = {
   "dj geech": {
     "imageUrl": "assets/artists/dj-geech-flavorfest-official-oct8.webp",
     "imagePosition": "50% 20%"
+  },
+  "stellar flo": {
+    "imageUrl": "assets/artists/stellar-flo-official-instagram-oct8.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "bo fisher": {
+    "imageUrl": "assets/artists/bo-fisher-official-linktree-oct8.webp",
+    "imagePosition": "50% 35%"
+  },
+  "tvnk": {
+    "imageUrl": "assets/artists/tvnk-official-spotify-oct8.jpg",
+    "imagePosition": "50% 25%"
   }
 };
 

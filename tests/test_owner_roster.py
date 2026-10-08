@@ -13,7 +13,7 @@ from sync_verified_artist_registry import registry_payload
 
 class OwnerRosterTests(unittest.TestCase):
     def test_reviewed_roster_socials_and_portraits_are_complete(self):
-        self.assertEqual(verify(), {"artists": 336, "verified": 291, "removed": 72})
+        self.assertEqual(verify(), {"artists": 339, "verified": 294, "removed": 72})
 
     def test_stale_writer_cannot_restore_deleted_artists(self):
         artists = json.loads((ROOT / "config/artists.json").read_text())
