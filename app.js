@@ -4326,9 +4326,9 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/dasonnnnnn/",
     "spotifyProfile": "https://open.spotify.com/artist/64btSZ47kaZiCcma0IYeDA",
     "youtubeProfile": "https://www.youtube.com/@heydason",
-    "officialImageSource": "https://www.instagram.com/p/DU147xmjAFq/",
-    "imageUrl": "assets/artists/dason-official-portrait-oct8.jpg",
-    "imagePosition": "50% 45%",
+    "officialImageSource": "owner-supplied:codex-clipboard-5ec5eb49-3cc6-4eed-8988-58b113d354bf.png",
+    "imageUrl": "assets/artists/dason-artist-supplied-oct8.png",
+    "imagePosition": "50% 25%",
     "state": "TX",
     "label": "Outlandish Live",
     "sourceRegistryVerified": true
@@ -8358,9 +8358,9 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/dasonnnnnn/",
     "spotifyProfile": "https://open.spotify.com/artist/64btSZ47kaZiCcma0IYeDA",
     "youtubeProfile": "https://www.youtube.com/@heydason",
-    "officialImageSource": "https://www.instagram.com/p/DU147xmjAFq/",
-    "imageUrl": "assets/artists/dason-official-portrait-oct8.jpg",
-    "imagePosition": "50% 45%",
+    "officialImageSource": "owner-supplied:codex-clipboard-5ec5eb49-3cc6-4eed-8988-58b113d354bf.png",
+    "imageUrl": "assets/artists/dason-artist-supplied-oct8.png",
+    "imagePosition": "50% 25%",
     "state": "TX",
     "label": "Outlandish Live",
     "sourceRegistryVerified": true
@@ -9560,8 +9560,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 35%"
   },
   "dason*": {
-    "imageUrl": "assets/artists/dason-official-portrait-oct8.jpg",
-    "imagePosition": "50% 45%"
+    "imageUrl": "assets/artists/dason-artist-supplied-oct8.png",
+    "imagePosition": "50% 25%"
   },
   "tuví": {
     "imageUrl": "assets/artists/tuvi-official-portrait-oct8.jpg",
