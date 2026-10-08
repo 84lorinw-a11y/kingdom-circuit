@@ -1288,5 +1288,69 @@
         "priority": 40
       }
     ]
+  },
+  "flowfest-greenwood-2026-12-31": {
+    "title": "FlowFest",
+    "startDate": "2026-12-31",
+    "endDate": "2026-12-31",
+    "startTime": "18:00",
+    "timezone": "America/New_York",
+    "startDateTime": "2026-12-31T18:00:00-05:00",
+    "venue": "Real Life Church",
+    "address": "2352 Highway 72/221 East",
+    "postalCode": "29649",
+    "city": "Greenwood",
+    "state": "SC",
+    "country": "US",
+    "artists": [
+      "Bo Fisher"
+    ],
+    "advertisedBilling": [
+      "Justo Chalaire",
+      "Bo Fisher"
+    ],
+    "officialBill": [
+      "Justo Chalaire",
+      "Bo Fisher"
+    ],
+    "headliner": "Justo Chalaire",
+    "eventType": "festival",
+    "status": "scheduled",
+    "lineupExplicit": true,
+    "officialUrl": "https://events.humanitix.com/flowfest",
+    "ticketUrl": "https://events.humanitix.com/flowfest",
+    "image": "assets/events/flowfest-greenwood-2026-12-31.avif",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "detailImageLayout": "landscape",
+    "imageSource": "FlowFest official Humanitix event artwork",
+    "imageSourceUrl": "https://events.humanitix.com/flowfest",
+    "organizer": "Altar Ego",
+    "price": "",
+    "publicDescription": "FlowFest brings Christian hip-hop, live music, faith and family activities to Real Life Church in Greenwood. Hosted by Altar Ego, with performances by Justo Chalaire and Bo Fisher. The event runs from 6 PM to 10 PM.",
+    "sourceName": "FlowFest official Humanitix listing",
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-10-08T22:49:31Z",
+    "lastVerified": "2026-10-08T22:49:31Z",
+    "auditVerified": "2026-10-08",
+    "notes": "October 8: Bo Fisher directly confirmed December 31 in Greenwood to the site owner. Live Humanitix page and its rendered time datetime attribute confirm December 31, 2026 at 6 PM EST, ending 10 PM the same day. Current description names Justo Chalaire and Bo Fisher, with an unnamed surprise guest. Older search snippets naming REDEEMED and Steven Perez are superseded by the current page; do not add unnamed guests. Altar Ego official Instagram bio confirms Justo Chalaire and Bo Fisher as members. Preserve individual billing on this event and associate only verified Bo Fisher profile; no automatic group alias.",
+    "sources": [
+      {
+        "name": "FlowFest official event",
+        "url": "https://events.humanitix.com/flowfest",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "Altar Ego official Instagram profile",
+        "url": "https://www.instagram.com/altaregorecords/",
+        "type": "artist_calendar",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ]
   }
 }
