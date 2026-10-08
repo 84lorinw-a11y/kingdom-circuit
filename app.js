@@ -348,7 +348,8 @@ const ARTIST_ROSTER_ORDER = [
   "DASON*",
   "TUVÍ",
   "Epho",
-  "Jxdy"
+  "Jxdy",
+  "DJ Geech"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -4379,6 +4380,26 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/jxdy-official-portrait-oct8.jpg",
     "imagePosition": "50% 50%",
     "state": "TX",
+    "sourceRegistryVerified": true
+  },
+  "dj geech": {
+    "aliases": [
+      "DJ Geech",
+      "Dj Geech",
+      "Geech",
+      "Maleek Taylor",
+      "Maleek “Geech” Taylor",
+      "dj.geech"
+    ],
+    "website": "https://www.instagram.com/dj.geech/",
+    "instagramProfile": "https://www.instagram.com/dj.geech/",
+    "spotifyProfile": "https://open.spotify.com/artist/1V9M84k1Nj8NdTBwD8LE6v",
+    "youtubeProfile": "https://www.youtube.com/channel/UCiapubSpR1yAoxF4sN2zelQ",
+    "officialImageSource": "https://www.flavorfest.org/ourteam",
+    "imageUrl": "assets/artists/dj-geech-flavorfest-official-oct8.webp",
+    "imagePosition": "50% 20%",
+    "state": "FL",
+    "label": "Flavor Fest / Crossover Church",
     "sourceRegistryVerified": true
   }
 };
@@ -8412,6 +8433,26 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imagePosition": "50% 50%",
     "state": "TX",
     "sourceRegistryVerified": true
+  },
+  "dj geech": {
+    "aliases": [
+      "DJ Geech",
+      "Dj Geech",
+      "Geech",
+      "Maleek Taylor",
+      "Maleek “Geech” Taylor",
+      "dj.geech"
+    ],
+    "website": "https://www.instagram.com/dj.geech/",
+    "instagramProfile": "https://www.instagram.com/dj.geech/",
+    "spotifyProfile": "https://open.spotify.com/artist/1V9M84k1Nj8NdTBwD8LE6v",
+    "youtubeProfile": "https://www.youtube.com/channel/UCiapubSpR1yAoxF4sN2zelQ",
+    "officialImageSource": "https://www.flavorfest.org/ourteam",
+    "imageUrl": "assets/artists/dj-geech-flavorfest-official-oct8.webp",
+    "imagePosition": "50% 20%",
+    "state": "FL",
+    "label": "Flavor Fest / Crossover Church",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -9574,6 +9615,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "jxdy": {
     "imageUrl": "assets/artists/jxdy-official-portrait-oct8.jpg",
     "imagePosition": "50% 50%"
+  },
+  "dj geech": {
+    "imageUrl": "assets/artists/dj-geech-flavorfest-official-oct8.webp",
+    "imagePosition": "50% 20%"
   }
 };
 
