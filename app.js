@@ -353,7 +353,8 @@ const ARTIST_ROSTER_ORDER = [
   "Stellar Flo",
   "Bo Fisher",
   "TVNK",
-  "EliiSetApart"
+  "EliiSetApart",
+  "K'nek"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -4466,6 +4467,23 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/eliisetapart-official-performance-oct9.jpg",
     "imagePosition": "50% 0%",
     "state": "MN",
+    "sourceRegistryVerified": true
+  },
+  "k'nek": {
+    "aliases": [
+      "K'nek",
+      "K’nek",
+      "Knek",
+      "WesTheTech"
+    ],
+    "website": "https://www.westhetechproductions.com/links",
+    "instagramProfile": "https://www.instagram.com/westhetech/",
+    "spotifyProfile": "https://open.spotify.com/artist/0Yp83JsO8NJOSNlVqzW9Ij",
+    "youtubeProfile": "https://www.youtube.com/channel/UCZBtTYhMA6Zl-luA0V1pmsQ",
+    "officialImageSource": "https://www.westhetechproductions.com/knek",
+    "imageUrl": "assets/artists/knek-official-portrait-oct9.jpg",
+    "imagePosition": "50% 20%",
+    "state": "FL",
     "sourceRegistryVerified": true
   }
 };
@@ -8581,6 +8599,23 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imagePosition": "50% 0%",
     "state": "MN",
     "sourceRegistryVerified": true
+  },
+  "k'nek": {
+    "aliases": [
+      "K'nek",
+      "K’nek",
+      "Knek",
+      "WesTheTech"
+    ],
+    "website": "https://www.westhetechproductions.com/links",
+    "instagramProfile": "https://www.instagram.com/westhetech/",
+    "spotifyProfile": "https://open.spotify.com/artist/0Yp83JsO8NJOSNlVqzW9Ij",
+    "youtubeProfile": "https://www.youtube.com/channel/UCZBtTYhMA6Zl-luA0V1pmsQ",
+    "officialImageSource": "https://www.westhetechproductions.com/knek",
+    "imageUrl": "assets/artists/knek-official-portrait-oct9.jpg",
+    "imagePosition": "50% 20%",
+    "state": "FL",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -9763,6 +9798,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "eliisetapart": {
     "imageUrl": "assets/artists/eliisetapart-official-performance-oct9.jpg",
     "imagePosition": "50% 0%"
+  },
+  "k'nek": {
+    "imageUrl": "assets/artists/knek-official-portrait-oct9.jpg",
+    "imagePosition": "50% 20%"
   }
 };
 
