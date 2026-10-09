@@ -6,7 +6,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 BATCH = "2026-09-29-expanded-source-search"
-APPROVED_BATCHES = {BATCH, "2026-09-30-whatuprg-announced", "2026-10-05-submitted-shows", "2026-10-06-submitted-events", "2026-10-07-submitted-events", "2026-10-07-reviewed-discoveries", "2026-10-08-reviewed-discoveries"}
+APPROVED_BATCHES = {BATCH, "2026-09-30-whatuprg-announced", "2026-10-05-submitted-shows", "2026-10-06-submitted-events", "2026-10-07-submitted-events", "2026-10-07-reviewed-discoveries", "2026-10-08-reviewed-discoveries", "2026-10-09-reviewed-discoveries"}
 
 
 def matches(event, approved):
@@ -39,8 +39,12 @@ def apply(root: Path, events: list, supplemental: list, today=None):
             continue
         existing = [e for e in events + supplemental if matches(e, approved)]
         # Never turn newer cancellation/postponement evidence back into a show.
-        if any(e.get("status") in {"cancelled", "canceled", "postponed"}
-               for e in existing + [approved]):
+        # An editorially confirmed cancellation must also overwrite a stale
+        # provider listing. Only withhold a scheduled restoration when newer
+        # inactive evidence exists in the feeds.
+        inactive = {"cancelled", "canceled", "postponed"}
+        if approved.get("status") not in inactive and any(
+                e.get("status") in inactive for e in existing):
             continue
         restored = deepcopy(approved)
         restored["id"] = "manual:" + approved["id"]

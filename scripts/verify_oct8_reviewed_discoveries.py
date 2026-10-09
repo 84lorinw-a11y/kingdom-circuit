@@ -23,8 +23,14 @@ def verify(site):
         if not builder.current(wanted):
             continue
         matches = [e for e in raw if str(e["id"]).removeprefix("manual:") == wanted["id"]]
-        assert len(matches) == 1, (wanted["id"], "missing or duplicated across feeds")
-        event = matches[0]
+        if not builder.scheduled(wanted):
+            # Final public feeds intentionally contain upcoming shows only;
+            # the existing event URL remains as the cancellation notice.
+            assert not any(builder.scheduled(e) for e in matches), (wanted["id"], "reactivated")
+            event = dict(wanted, id="manual:" + wanted["id"])
+        else:
+            assert len(matches) == 1, (wanted["id"], "missing or duplicated across feeds")
+            event = matches[0]
         for field in ("title", "startDate", "startTime", "venue", "city", "state",
                       "artists", "advertisedBilling", "officialUrl", "ticketUrl"):
             assert event.get(field) == wanted.get(field), (wanted["id"], field)
@@ -33,6 +39,15 @@ def verify(site):
         assert uses_image(detail, site, wanted["image"]), (wanted["id"], "approved image")
         for name in wanted["advertisedBilling"]:
             assert name in html.unescape(detail), (wanted["id"], name)
+        if not builder.scheduled(wanted):
+            assert event.get("status") == wanted["status"], (wanted["id"], "status")
+            assert "EventCancelled" in detail, (wanted["id"], "cancellation schema")
+            assert href not in (site / "shows/index.html").read_text(), (wanted["id"], "cancelled show listed")
+            for name in wanted["artists"]:
+                profile = site / builder.artist_path(name).strip("/") / "index.html"
+                assert href not in profile.read_text(), (wanted["id"], "cancelled artist schedule")
+            checked += 1
+            continue
         assert href in (site / "shows/index.html").read_text(), (wanted["id"], "show list")
         for name in wanted["artists"]:
             profile = site / builder.artist_path(name).strip("/") / "index.html"
