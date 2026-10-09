@@ -357,7 +357,8 @@ const ARTIST_ROSTER_ORDER = [
   "K'nek",
   "Darius Mullin",
   "tonyxtrotter",
-  "Milla"
+  "Milla",
+  "Prodigal"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -4532,6 +4533,21 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/milla-official-portrait-oct9.jpg",
     "imagePosition": "50% 30%",
     "state": "NJ",
+    "sourceRegistryVerified": true
+  },
+  "prodigal": {
+    "aliases": [
+      "Prodigal",
+      "prodigalmusic__",
+      "Prodigalmusic"
+    ],
+    "website": "https://linktr.ee/Prodigalmusic",
+    "instagramProfile": "https://www.instagram.com/prodigalmusic__/",
+    "spotifyProfile": "https://open.spotify.com/artist/3kS91WMoaKCpETVQsiNdrb",
+    "youtubeProfile": "",
+    "officialImageSource": "owner-supplied:codex-clipboard-ea4bc351-dce7-489e-9d43-e96809fbbce9.png",
+    "imageUrl": "assets/artists/prodigal-owner-supplied-oct9.png",
+    "imagePosition": "50% 45%",
     "sourceRegistryVerified": true
   }
 };
@@ -8709,6 +8725,21 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imagePosition": "50% 30%",
     "state": "NJ",
     "sourceRegistryVerified": true
+  },
+  "prodigal": {
+    "aliases": [
+      "Prodigal",
+      "prodigalmusic__",
+      "Prodigalmusic"
+    ],
+    "website": "https://linktr.ee/Prodigalmusic",
+    "instagramProfile": "https://www.instagram.com/prodigalmusic__/",
+    "spotifyProfile": "https://open.spotify.com/artist/3kS91WMoaKCpETVQsiNdrb",
+    "youtubeProfile": "",
+    "officialImageSource": "owner-supplied:codex-clipboard-ea4bc351-dce7-489e-9d43-e96809fbbce9.png",
+    "imageUrl": "assets/artists/prodigal-owner-supplied-oct9.png",
+    "imagePosition": "50% 45%",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -9907,6 +9938,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "milla": {
     "imageUrl": "assets/artists/milla-official-portrait-oct9.jpg",
     "imagePosition": "50% 30%"
+  },
+  "prodigal": {
+    "imageUrl": "assets/artists/prodigal-owner-supplied-oct9.png",
+    "imagePosition": "50% 45%"
   }
 };
 
