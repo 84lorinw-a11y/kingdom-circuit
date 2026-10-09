@@ -354,7 +354,8 @@ const ARTIST_ROSTER_ORDER = [
   "Bo Fisher",
   "TVNK",
   "EliiSetApart",
-  "K'nek"
+  "K'nek",
+  "Darius Mullin"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -4484,6 +4485,20 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/knek-official-portrait-oct9.jpg",
     "imagePosition": "50% 20%",
     "state": "FL",
+    "sourceRegistryVerified": true
+  },
+  "darius mullin": {
+    "aliases": [
+      "Darius Mullin"
+    ],
+    "website": "https://www.instagram.com/dariusmullin/",
+    "instagramProfile": "https://www.instagram.com/dariusmullin/",
+    "spotifyProfile": "https://open.spotify.com/artist/4qsFWi68olxczVZv6xQXQP",
+    "youtubeProfile": "https://www.youtube.com/@dariusmullin",
+    "officialImageSource": "https://open.spotify.com/artist/4qsFWi68olxczVZv6xQXQP",
+    "imageUrl": "assets/artists/darius-mullin-spotify-portrait-oct9.jpg",
+    "imagePosition": "50% 20%",
+    "state": "TN",
     "sourceRegistryVerified": true
   }
 };
@@ -8616,6 +8631,20 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imagePosition": "50% 20%",
     "state": "FL",
     "sourceRegistryVerified": true
+  },
+  "darius mullin": {
+    "aliases": [
+      "Darius Mullin"
+    ],
+    "website": "https://www.instagram.com/dariusmullin/",
+    "instagramProfile": "https://www.instagram.com/dariusmullin/",
+    "spotifyProfile": "https://open.spotify.com/artist/4qsFWi68olxczVZv6xQXQP",
+    "youtubeProfile": "https://www.youtube.com/@dariusmullin",
+    "officialImageSource": "https://open.spotify.com/artist/4qsFWi68olxczVZv6xQXQP",
+    "imageUrl": "assets/artists/darius-mullin-spotify-portrait-oct9.jpg",
+    "imagePosition": "50% 20%",
+    "state": "TN",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -9801,6 +9830,10 @@ const STATIC_ARTIST_PORTRAITS = {
   },
   "k'nek": {
     "imageUrl": "assets/artists/knek-official-portrait-oct9.jpg",
+    "imagePosition": "50% 20%"
+  },
+  "darius mullin": {
+    "imageUrl": "assets/artists/darius-mullin-spotify-portrait-oct9.jpg",
     "imagePosition": "50% 20%"
   }
 };
