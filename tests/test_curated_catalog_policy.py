@@ -121,7 +121,7 @@ class CuratedCatalogPolicyTests(unittest.TestCase):
             event["officialBill"],
         )
         self.assertEqual(event["officialBill"], event["advertisedBilling"])
-        self.assertEqual("assets/events/hrvstland-festival-2026-oct1-lineup.jpg", event["image"])
+        self.assertEqual("assets/events/hrvstland-festival-2026-oct9-lineup.jpg", event["image"])
         self.assertTrue((ROOT / event["image"]).is_file())
         self.assertEqual("event_artwork", event["imageType"])
         self.assertTrue(event["imageOverride"])
