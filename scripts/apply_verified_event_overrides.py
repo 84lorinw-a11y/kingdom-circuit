@@ -349,7 +349,7 @@ PASSION_FEST_EVENT = {
 
 def kaden_event(date: str, venue: str, city: str, state: str) -> dict:
     slug = f"{date}-{city.lower().replace(' ', '-')}"
-    return {
+    event = {
         "id": f"manual:kaden-jordan-{slug}",
         "title": "Kaden Jordan Live",
         "startDate": date,
@@ -379,6 +379,28 @@ def kaden_event(date: str, venue: str, city: str, state: str) -> dict:
             {"name": "Songkick calendar linked by Kaden Jordan official site", "url": KADEN_SONGKICK_URL, "type": "manual_verified", "authority": "artist_calendar", "priority": 90},
         ],
     }
+    if date == "2026-11-13" and city == "Orlando":
+        event.update({
+            "title": "Kaden Jordan — The Babytooth Experience",
+            "legacyEventPaths": ["/event/kaden-jordan-live-2026-11-13-orlando-8aaa06/"],
+            "artists": ["Kaden Jordan", "Christopher Syncere"],
+            "advertisedBilling": ["Kaden Jordan", "Christopher Syncere"],
+            "officialBill": ["Kaden Jordan", "Christopher Syncere"],
+            "supportActs": ["Christopher Syncere"],
+            "address": "8287 Curry Ford Rd",
+            "postalCode": "32822",
+            "ticketUrl": "https://www.songkick.com/concerts/43409379-kaden-jordan-at-gathering-place",
+            "officialUrl": "https://www.songkick.com/concerts/43409379-kaden-jordan-at-gathering-place",
+            "auditVerified": "2026-10-08",
+            "publicDescription": "Kaden Jordan brings The Babytooth Experience to The Gathering Place in Orlando with Christopher Syncere. Visit the official listing for the latest event details.",
+            "notes": "October 8: event-specific Songkick listing, linked from Kaden Jordan's official Tour page, confirms Christopher Syncere and The Babytooth Experience title. Concert time is not published; keep it blank.",
+        })
+        event["sources"].append({
+            "name": "Artist-linked Songkick event listing and support lineup",
+            "url": event["officialUrl"], "type": "manual_verified",
+            "authority": "artist_calendar", "priority": 115,
+        })
+    return event
 
 
 def norm(value: object) -> str:

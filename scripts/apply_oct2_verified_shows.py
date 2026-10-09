@@ -8,9 +8,8 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
-OWNER_HELD_IDS = {
-    "alex-jean-dallas-2026-11-19",
-}
+# October 8: owner approved restoring Alex Jean Dallas after venue confirmation.
+OWNER_HELD_IDS: set[str] = set()
 
 
 def key(event):

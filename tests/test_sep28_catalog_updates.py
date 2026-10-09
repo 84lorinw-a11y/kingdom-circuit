@@ -12,6 +12,14 @@ from build_seo_site import billing_links, event_schema, hosts_line, merge_events
 
 
 class September28CatalogTests(unittest.TestCase):
+    def test_owner_rejected_808_event_stays_out_without_removing_other_shows(self):
+        rejected = dict(title="808's For His Glory", startDate="2026-10-24", artists=[],
+                        officialUrl="https://www.kingdomtix.org/events/ec10348c-3f78-4c97-95d6-587a5f5fb380?ref=calendar")
+        other = dict(rejected, officialUrl="https://www.kingdomtix.org/events/another-show")
+        self.assertTrue(removed_event(rejected))
+        self.assertFalse(removed_event(other))
+        self.assertEqual(merge_events([rejected, other], []), [other])
+
     def test_removal_covers_feeds_archive_and_old_unassociated_ids(self):
         retired = [dict(id="old", artists=["Jay Kalyl", "Other artist"]),
                    dict(id="manual:jay-kalyl-desde-antes-elizabeth-2026"),

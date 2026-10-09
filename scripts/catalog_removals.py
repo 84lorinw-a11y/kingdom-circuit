@@ -16,6 +16,12 @@ def removed_artist(name):
 
 
 def withheld_event(event):
+    # October 8: owner rejected this specific event because the artist match
+    # is not reliable. Keep future source refreshes from publishing it.
+    rejected_url = "https://www.kingdomtix.org/events/ec10348c-3f78-4c97-95d6-587a5f5fb380"
+    if any(str(event.get(field) or "").split("?")[0].rstrip("/") == rejected_url
+           for field in ("officialUrl", "ticketUrl")):
+        return True
     # Owner authorized withholding this conflicting booking on October 6.
     # It is not a cancellation and not the separate October 10 JWoodz event.
     # A later rescheduled date is eligible for a new review rather than blocked.

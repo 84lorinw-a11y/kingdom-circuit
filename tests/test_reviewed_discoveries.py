@@ -49,16 +49,31 @@ class ReviewedDiscoveriesTests(unittest.TestCase):
         reviewed.apply(self.root, expired, [], today="2026-12-06")
         self.assertEqual(expired, [])
 
-    def test_dallas_hold_is_scoped_and_preserves_orlando(self):
+    def test_oct8_release_dedupes_dallas_and_preserves_other_dates(self):
         dallas = dict(id="bandsintown:candidate", startDate="2026-11-19",
                       artists=["Alex Jean"], city="Dallas")
         other_day = dict(dallas, id="another-day", startDate="2026-11-20")
         events = [dallas, other_day]
         supplemental = [dict(dallas, id="axs:1626463")]
-        reviewed.apply(self.root, events, supplemental, today="2026-09-29")
-        self.assertFalse(any(reviewed.held_dallas_candidate(e) for e in events + supplemental))
+        approved = [e for e in json.loads((ROOT / "config/manual-events.json").read_text())
+                    if e.get("editorialBatch") == "2026-10-08-reviewed-discoveries"]
+        (self.root / "config/manual-events.json").write_text(json.dumps(approved))
+        # Provider candidates use the same explicit AXS source identity.
+        dallas['officialUrl'] = 'https://www.axs.com/events/1626463/alex-jean-tickets'
+        supplemental[0]['officialUrl'] = dallas['officialUrl']
+        reviewed.apply(self.root, events, supplemental, today="2026-10-08")
+        self.assertEqual(len([e for e in events if e.get('city') == 'Dallas']), 2)
+        self.assertEqual(supplemental, [])
         self.assertIn(other_day, events)
-        self.assertTrue(any(e["artists"] == ["Alex Jean"] and e["city"] == "Orlando" for e in events))
+        restored = next(e for e in events if e.get('id') == 'manual:alex-jean-dallas-2026-11-19')
+        self.assertEqual(restored['startTime'], '20:00')
+        recover = next(e for e in events if e.get('city') == 'Decatur')
+        self.assertEqual(recover['startTime'], '')
+        self.assertNotIn('startDateTime', recover)
+        self.assertFalse(any('808' in e.get('title','') for e in events))
+        snapshot = copy.deepcopy(events)
+        reviewed.apply(self.root, events, supplemental, today="2026-10-08")
+        self.assertEqual(events, snapshot)
 
     def test_oct7_discoveries_replace_provider_fragments_without_resetting_age(self):
         approved = [e for e in json.loads((ROOT / "config/manual-events.json").read_text())

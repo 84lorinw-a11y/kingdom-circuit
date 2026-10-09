@@ -9,7 +9,7 @@ from build_seo_site import event_path
 from catalog_removals import removed_event
 
 ROOT = Path(__file__).resolve().parents[1]
-OWNER_HELD_IDS = {"alex-jean-dallas-2026-11-19"}
+from apply_oct2_verified_shows import OWNER_HELD_IDS
 
 
 def verify(site):

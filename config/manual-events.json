@@ -6644,75 +6644,6 @@
     "postalCode": "77007"
   },
   {
-    "id": "alex-jean-dallas-2026-11-19",
-    "title": "Alex Jean — The Welcome Home Tour",
-    "startDate": "2026-11-19",
-    "startTime": "20:00",
-    "timezone": "America/Chicago",
-    "startDateTime": "2026-11-19T20:00:00-06:00",
-    "venue": "The Studio at The Bomb Factory",
-    "address": "2727 Canton Street",
-    "city": "Dallas",
-    "state": "TX",
-    "country": "US",
-    "artists": [
-      "Alex Jean"
-    ],
-    "headliner": "Alex Jean",
-    "advertisedBilling": [
-      "Alex Jean"
-    ],
-    "officialBill": [
-      "Alex Jean"
-    ],
-    "lineupExplicit": true,
-    "musicConfirmed": true,
-    "eventType": "concert",
-    "status": "scheduled",
-    "officialUrl": "https://www.axs.com/events/1626463/alex-jean-tickets",
-    "ticketUrl": "https://www.axs.com/events/1626463/alex-jean-tickets",
-    "image": "assets/events/alex-jean-welcome-home-tour-2026.png",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Official artist or organizer flyer",
-    "imageSourceUrl": "https://alexjeantour.com/",
-    "confidence": "high",
-    "authority": "official_event",
-    "sourceName": "Official artist or organizer announcement",
-    "sources": [
-      {
-        "name": "Official artist or organizer announcement",
-        "url": "https://www.axs.com/events/1626463/alex-jean-tickets",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Alex Jean official tour calendar",
-        "url": "https://alexjeantour.com/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Alex Jean October 2 tour announcement",
-        "url": "https://www.instagram.com/meaningalex/p/Dd_duSRxzAf/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      }
-    ],
-    "firstSeen": "2026-09-29T18:00:00Z",
-    "lastVerified": "2026-10-02T18:00:00Z",
-    "auditVerified": "2026-10-02",
-    "editorialBatch": "2026-10-02-verified-artists",
-    "postalCode": "75226",
-    "doorsTime": "19:00",
-    "ageRestriction": "All ages",
-    "notes": "Previously held Dallas candidate is now explicitly on Alex Jean official tour site and the AXS venue calendar. AXS confirms 8 PM music and 7 PM doors. Official tour announcement October 2 confirms tickets on sale. Do not mark as cancelled based on earlier unavailable checkout."
-  },
-  {
     "id": "mayia-night-of-hope-apex-2026-11-20",
     "title": "Night of Hope featuring MAYIA",
     "startDate": "2026-11-20",
@@ -7981,5 +7912,397 @@
         "priority": 112
       }
     ]
+  },
+  {
+    "id": "redeemed-awaken-the-spirit-2-morristown-2026-10-10",
+    "title": "Awaken The Spirit 2",
+    "startDate": "2026-10-10",
+    "startTime": "09:00",
+    "timezone": "America/New_York",
+    "venue": "Cherokee Park",
+    "address": "3075 Floyd Hall Dr",
+    "city": "Morristown",
+    "state": "TN",
+    "country": "US",
+    "artists": [
+      "REDEEMED"
+    ],
+    "advertisedBilling": [
+      "REDEEMED"
+    ],
+    "officialBill": [
+      "REDEEMED"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "eventType": "event",
+    "status": "scheduled",
+    "officialUrl": "https://www.bandsintown.com/e/108514610-redeemed-at-cherokee-park",
+    "ticketUrl": "https://www.bandsintown.com/e/108514610-redeemed-at-cherokee-park",
+    "sourceName": "REDEEMED official Bandsintown calendar",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "bandsintownEventId": "108514610",
+    "sourceEventIds": [
+      "bandsintown:108514610"
+    ],
+    "image": "assets/artists/redeemed-saved.webp",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Saved approved REDEEMED artist photo; current event flyer not verified",
+    "imageSourceUrl": "https://www.bandsintown.com/a/15645685-redeemed",
+    "firstSeen": "2026-10-09T02:00:40Z",
+    "lastVerified": "2026-10-09T02:00:40Z",
+    "auditVerified": "2026-10-08",
+    "editorialBatch": "2026-10-08-reviewed-discoveries",
+    "publicDescription": "Warpath Ministries event with music, testimonies and baptisms. Featuring REDEEMED. See the official event listing for details.",
+    "notes": "Owner approved publication October 8, 2026 after full-roster source research. Current artist event page verified in browser; linked Spotify and YouTube match roster. Timing: 9:00 AM EDT on artist calendar; exact music start not established Event flyer not yet verified.",
+    "sources": [
+      {
+        "name": "REDEEMED artist event calendar",
+        "url": "https://www.bandsintown.com/e/108514610-redeemed-at-cherokee-park",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 110
+      }
+    ],
+    "startDateTime": "2026-10-10T09:00:00-04:00"
+  },
+  {
+    "id": "we-do-recover-decatur-2026-10-24",
+    "title": "7th Annual We Do Recover",
+    "startDate": "2026-10-24",
+    "startTime": "",
+    "timezone": "America/Indiana/Indianapolis",
+    "venue": "The Mirage Event Center",
+    "address": "1640 Winchester St",
+    "city": "Decatur",
+    "state": "IN",
+    "country": "US",
+    "artists": [
+      "Nicky Gracious",
+      "REDEEMED"
+    ],
+    "advertisedBilling": [
+      "Nicky Gracious",
+      "REDEEMED",
+      "#Hero",
+      "JTruth",
+      "Zico"
+    ],
+    "officialBill": [
+      "Nicky Gracious",
+      "REDEEMED",
+      "#Hero",
+      "JTruth",
+      "Zico"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "eventType": "event",
+    "status": "scheduled",
+    "officialUrl": "https://www.wedorecoverevent.com/",
+    "ticketUrl": "https://www.wedorecoverevent.com/",
+    "sourceName": "Organizer event listing and verified REDEEMED calendar",
+    "authority": "organizer",
+    "confidence": "high",
+    "bandsintownEventId": "108514617",
+    "sourceEventIds": [
+      "bandsintown:108514617"
+    ],
+    "image": "assets/artists/redeemed-saved.webp",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Saved approved REDEEMED artist photo; current event flyer not verified",
+    "imageSourceUrl": "https://www.bandsintown.com/a/15645685-redeemed",
+    "firstSeen": "2026-10-09T02:00:40Z",
+    "lastVerified": "2026-10-09T02:00:40Z",
+    "auditVerified": "2026-10-08",
+    "editorialBatch": "2026-10-08-reviewed-discoveries",
+    "publicDescription": "A recovery celebration with Nicky Gracious, REDEEMED, #Hero, JTruth and Zico. The organizer advertises a noon–10 PM event; the concert start has not been confirmed. Visit the official event page for the schedule.",
+    "notes": "Owner approved publication October 8, 2026 after full-roster source research. Organizer homepage and REDEEMED event page verified in current browser. Dedicated performer subpage still says coming soon. Timing: Organizer: noon–10 PM. REDEEMED calendar: 6 PM EDT. Concert start / set time not resolved. 2026 event flyer not yet verified; do not use old edition photos.",
+    "sources": [
+      {
+        "name": "Official event organizer",
+        "url": "https://www.wedorecoverevent.com/",
+        "type": "manual_verified",
+        "authority": "organizer",
+        "priority": 115
+      },
+      {
+        "name": "REDEEMED artist event calendar",
+        "url": "https://www.bandsintown.com/e/108514617-redeemed-at-mirage-banquet-hall",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 110
+      }
+    ],
+    "eventStartTime": "12:00",
+    "eventEndTime": "22:00",
+    "timePending": true
+  },
+  {
+    "id": "crushing-addiction-rally-clanton-2026-11-07",
+    "title": "Crushing Addiction Rally 2026",
+    "startDate": "2026-11-07",
+    "startTime": "11:00",
+    "timezone": "America/Chicago",
+    "venue": "Goose Pond Park",
+    "address": "906 7th St N",
+    "city": "Clanton",
+    "state": "AL",
+    "country": "US",
+    "artists": [
+      "REDEEMED"
+    ],
+    "advertisedBilling": [
+      "REDEEMED",
+      "JTruth",
+      "Joshua Sergent",
+      "Patrick Stanley",
+      "Chris Lawley",
+      "Justin Smith",
+      "TJ Boyd",
+      "Justin Taylor",
+      "Garrett Cannell",
+      "Tammy Castleberry",
+      "Matt Littlejohn"
+    ],
+    "officialBill": [
+      "REDEEMED",
+      "JTruth",
+      "Joshua Sergent",
+      "Patrick Stanley",
+      "Chris Lawley",
+      "Justin Smith",
+      "TJ Boyd",
+      "Justin Taylor",
+      "Garrett Cannell",
+      "Tammy Castleberry",
+      "Matt Littlejohn"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "eventType": "event",
+    "status": "scheduled",
+    "officialUrl": "https://www.surrenderedministries.net/event-details/crushing-addiction-rally",
+    "ticketUrl": "https://www.surrenderedministries.net/event-details/crushing-addiction-rally",
+    "sourceName": "Organizer event listing and verified REDEEMED calendar",
+    "authority": "organizer",
+    "confidence": "high",
+    "bandsintownEventId": "108514655",
+    "sourceEventIds": [
+      "bandsintown:108514655"
+    ],
+    "image": "assets/events/crushing-addiction-rally-2026-11-07.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Surrendered Ministries official November 7, 2026 rally flyer",
+    "imageSourceUrl": "https://www.surrenderedministries.net/events",
+    "firstSeen": "2026-10-09T02:00:40Z",
+    "lastVerified": "2026-10-09T02:00:40Z",
+    "auditVerified": "2026-10-08",
+    "editorialBatch": "2026-10-08-reviewed-discoveries",
+    "publicDescription": "Surrendered Ministries presents a recovery rally with music and speaking, featuring REDEEMED, JTruth and the participants shown on the official flyer. The event runs 11 AM–5 PM at Goose Pond Park; individual music set times are not published.",
+    "notes": "Owner approved publication October 8, 2026 after full-roster source research. Organizer event calendar corroborates date, venue and start. REDEEMED participation verified on current artist event page. Timing: 11 AM–5 PM CST event window on organizer site; exact music start not established. Organizer has a rally image; full image/lineup still needs inspection before publication. Official full-bill flyer checked visually; advertisedBilling includes both music and speaking participants without inventing individual roles. Only roster artist REDEEMED receives a linked artist association.",
+    "sources": [
+      {
+        "name": "Official event organizer",
+        "url": "https://www.surrenderedministries.net/events",
+        "type": "manual_verified",
+        "authority": "organizer",
+        "priority": 115
+      },
+      {
+        "name": "REDEEMED artist event calendar",
+        "url": "https://www.bandsintown.com/e/108514655-redeemed-at-goose-pond-park",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 110
+      }
+    ],
+    "startDateTime": "2026-11-07T11:00:00-06:00",
+    "endTime": "17:00"
+  },
+  {
+    "id": "breaking-the-silence-dalton-2026-11-14",
+    "title": "Breaking the Silence",
+    "startDate": "2026-11-14",
+    "startTime": "11:00",
+    "timezone": "America/New_York",
+    "venue": "North Georgia Ag Fairgrounds",
+    "address": "500 Legion Dr",
+    "city": "Dalton",
+    "state": "GA",
+    "country": "US",
+    "artists": [
+      "REDEEMED"
+    ],
+    "advertisedBilling": [
+      "REDEEMED"
+    ],
+    "officialBill": [
+      "REDEEMED"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "eventType": "event",
+    "status": "scheduled",
+    "officialUrl": "https://www.bandsintown.com/e/108514673-redeemed-at-north-georgia-ag-fairgrounds",
+    "ticketUrl": "https://www.bandsintown.com/e/108514673-redeemed-at-north-georgia-ag-fairgrounds",
+    "sourceName": "REDEEMED official Bandsintown calendar",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "bandsintownEventId": "108514673",
+    "sourceEventIds": [
+      "bandsintown:108514673"
+    ],
+    "image": "assets/artists/redeemed-saved.webp",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Saved approved REDEEMED artist photo; current event flyer not verified",
+    "imageSourceUrl": "https://www.bandsintown.com/a/15645685-redeemed",
+    "firstSeen": "2026-10-09T02:00:40Z",
+    "lastVerified": "2026-10-09T02:00:40Z",
+    "auditVerified": "2026-10-08",
+    "editorialBatch": "2026-10-08-reviewed-discoveries",
+    "publicDescription": "First responder support and addiction/suicide awareness event. Featuring REDEEMED. See the official event listing for details.",
+    "notes": "Owner approved publication October 8, 2026 after full-roster source research. Current artist event page verified in browser; additional organizer lineup not yet found. Timing: 11 AM EST on artist calendar; exact music start not established. Event flyer not yet verified.",
+    "sources": [
+      {
+        "name": "REDEEMED artist event calendar",
+        "url": "https://www.bandsintown.com/e/108514673-redeemed-at-north-georgia-ag-fairgrounds",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 110
+      }
+    ],
+    "startDateTime": "2026-11-14T11:00:00-05:00"
+  },
+  {
+    "id": "chain-breaker-kingsport-2026-11-21",
+    "title": "Chain Breaker / From Chains to Change",
+    "startDate": "2026-11-21",
+    "startTime": "16:00",
+    "timezone": "America/New_York",
+    "venue": "The LampLight Theatre",
+    "address": "140 Broad St",
+    "city": "Kingsport",
+    "state": "TN",
+    "country": "US",
+    "artists": [
+      "REDEEMED"
+    ],
+    "advertisedBilling": [
+      "REDEEMED"
+    ],
+    "officialBill": [
+      "REDEEMED"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "eventType": "event",
+    "status": "scheduled",
+    "officialUrl": "https://www.bandsintown.com/e/108514680-redeemed-at-the-lamplight-theatre",
+    "ticketUrl": "https://www.bandsintown.com/e/108514680-redeemed-at-the-lamplight-theatre",
+    "sourceName": "REDEEMED official Bandsintown calendar",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "bandsintownEventId": "108514680",
+    "sourceEventIds": [
+      "bandsintown:108514680"
+    ],
+    "image": "assets/artists/redeemed-saved.webp",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Saved approved REDEEMED artist photo; current event flyer not verified",
+    "imageSourceUrl": "https://www.bandsintown.com/a/15645685-redeemed",
+    "firstSeen": "2026-10-09T02:00:40Z",
+    "lastVerified": "2026-10-09T02:00:40Z",
+    "auditVerified": "2026-10-08",
+    "editorialBatch": "2026-10-08-reviewed-discoveries",
+    "publicDescription": "Christian music/ministry event. Featuring REDEEMED. See the official event listing for details.",
+    "notes": "Owner approved publication October 8, 2026 after full-roster source research. Current REDEEMED event page verified in browser. HappeningNext city index also lists the same event/date; detail fetch failed. Timing: 4 PM EST on artist calendar. Event flyer not yet verified.",
+    "sources": [
+      {
+        "name": "REDEEMED artist event calendar",
+        "url": "https://www.bandsintown.com/e/108514680-redeemed-at-the-lamplight-theatre",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 110
+      }
+    ],
+    "startDateTime": "2026-11-21T16:00:00-05:00"
+  },
+  {
+    "id": "alex-jean-dallas-2026-11-19",
+    "title": "Alex Jean — The Welcome Home Tour",
+    "startDate": "2026-11-19",
+    "startTime": "20:00",
+    "timezone": "America/Chicago",
+    "startDateTime": "2026-11-19T20:00:00-06:00",
+    "venue": "The Studio at The Bomb Factory",
+    "address": "2727 Canton Street",
+    "city": "Dallas",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Alex Jean"
+    ],
+    "headliner": "Alex Jean",
+    "advertisedBilling": [
+      "Alex Jean"
+    ],
+    "officialBill": [
+      "Alex Jean"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "eventType": "concert",
+    "status": "scheduled",
+    "officialUrl": "https://www.thebombfactory.com/events/detail/alex-jean-1626463",
+    "ticketUrl": "https://www.axs.com/events/1626463/alex-jean-tickets",
+    "image": "assets/events/alex-jean-welcome-home-tour-2026.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Official artist or organizer flyer",
+    "imageSourceUrl": "https://alexjeantour.com/",
+    "confidence": "high",
+    "authority": "venue_ticket",
+    "sourceName": "The Bomb Factory / AXS official event",
+    "sources": [
+      {
+        "name": "The Bomb Factory official event",
+        "url": "https://www.thebombfactory.com/events/detail/alex-jean-1626463",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 120
+      },
+      {
+        "name": "AXS official event details",
+        "url": "https://www.axs.com/events/1626463/alex-jean-tickets",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 115
+      }
+    ],
+    "firstSeen": "2026-09-29T18:00:00Z",
+    "lastVerified": "2026-10-09T02:00:40Z",
+    "auditVerified": "2026-10-08",
+    "editorialBatch": "2026-10-08-reviewed-discoveries",
+    "postalCode": "75226",
+    "doorsTime": "19:00",
+    "ageRestriction": "All ages",
+    "notes": "October 8, 2026: owner approved restoring the previously held date after venue corroboration. The Bomb Factory explicitly lists November 19, 8 PM show and 7 PM doors, On Sale Now, and its AXS event link. Current AXS detail listing matches; checkout was not tested. Preserve approved Welcome Home Tour artwork and original event identity/discovery date.",
+    "sourceEventIds": [
+      "axs:1626463"
+    ],
+    "publicDescription": "Alex Jean performs at The Studio at The Bomb Factory in Dallas on November 19, 2026. Show starts at 8 PM. See the official venue listing for event details and tickets."
   }
 ]

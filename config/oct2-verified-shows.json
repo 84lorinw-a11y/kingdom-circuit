@@ -293,7 +293,7 @@
     "musicConfirmed": true,
     "eventType": "concert",
     "status": "scheduled",
-    "officialUrl": "https://www.axs.com/events/1626463/alex-jean-tickets",
+    "officialUrl": "https://www.thebombfactory.com/events/detail/alex-jean-1626463",
     "ticketUrl": "https://www.axs.com/events/1626463/alex-jean-tickets",
     "image": "assets/events/alex-jean-welcome-home-tour-2026.png",
     "imageType": "event_artwork",
@@ -302,38 +302,35 @@
     "imageSource": "Official artist or organizer flyer",
     "imageSourceUrl": "https://alexjeantour.com/",
     "confidence": "high",
-    "authority": "official_event",
-    "sourceName": "Official artist or organizer announcement",
+    "authority": "venue_ticket",
+    "sourceName": "The Bomb Factory / AXS official event",
     "sources": [
       {
-        "name": "Official artist or organizer announcement",
+        "name": "The Bomb Factory official event",
+        "url": "https://www.thebombfactory.com/events/detail/alex-jean-1626463",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 120
+      },
+      {
+        "name": "AXS official event details",
         "url": "https://www.axs.com/events/1626463/alex-jean-tickets",
         "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Alex Jean official tour calendar",
-        "url": "https://alexjeantour.com/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Alex Jean October 2 tour announcement",
-        "url": "https://www.instagram.com/meaningalex/p/Dd_duSRxzAf/",
-        "type": "manual_verified",
-        "authority": "official_event",
+        "authority": "venue_ticket",
         "priority": 115
       }
     ],
     "firstSeen": "2026-09-29T18:00:00Z",
-    "lastVerified": "2026-10-02T18:00:00Z",
-    "auditVerified": "2026-10-02",
-    "editorialBatch": "2026-10-02-verified-artists",
+    "lastVerified": "2026-10-09T02:00:40Z",
+    "auditVerified": "2026-10-08",
+    "editorialBatch": "2026-10-08-reviewed-discoveries",
     "postalCode": "75226",
     "doorsTime": "19:00",
     "ageRestriction": "All ages",
-    "notes": "Previously held Dallas candidate is now explicitly on Alex Jean official tour site and the AXS venue calendar. AXS confirms 8 PM music and 7 PM doors. Official tour announcement October 2 confirms tickets on sale. Do not mark as cancelled based on earlier unavailable checkout."
+    "notes": "October 8, 2026: owner approved restoring the previously held date after venue corroboration. The Bomb Factory explicitly lists November 19, 8 PM show and 7 PM doors, On Sale Now, and its AXS event link. Current AXS detail listing matches; checkout was not tested. Preserve approved Welcome Home Tour artwork and original event identity/discovery date.",
+    "sourceEventIds": [
+      "axs:1626463"
+    ],
+    "publicDescription": "Alex Jean performs at The Studio at The Bomb Factory in Dallas on November 19, 2026. Show starts at 8 PM. See the official venue listing for event details and tickets."
   }
 ]

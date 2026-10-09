@@ -1284,7 +1284,7 @@ const VERIFIED_ARTIST_REGISTRY = {
       "Redeemed Muzic"
     ],
     "website": "https://www.youtube.com/@redeemedmuzic",
-    "instagramProfile": "https://www.instagram.com/redeemed/",
+    "instagramProfile": "https://www.instagram.com/redeemedmuzic33/",
     "spotifyProfile": "https://open.spotify.com/artist/240g9DqmeKizlyyCZtL22Y",
     "youtubeProfile": "https://www.youtube.com/@redeemedmuzic",
     "officialImageSource": "https://www.youtube.com/@redeemedmuzic",
@@ -5383,7 +5383,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "Redeemed Muzic"
     ],
     "website": "https://www.youtube.com/@redeemedmuzic",
-    "instagramProfile": "https://www.instagram.com/redeemed/",
+    "instagramProfile": "https://www.instagram.com/redeemedmuzic33/",
     "spotifyProfile": "https://open.spotify.com/artist/240g9DqmeKizlyyCZtL22Y",
     "youtubeProfile": "https://www.youtube.com/@redeemedmuzic",
     "officialImageSource": "https://www.youtube.com/@redeemedmuzic",

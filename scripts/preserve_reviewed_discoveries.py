@@ -1,4 +1,4 @@
-"""Keep owner-approved discoveries and a specific unresolved Dallas hold durable."""
+"""Keep owner-approved discoveries durable across provider refreshes."""
 from copy import deepcopy
 from datetime import datetime
 import json
@@ -6,17 +6,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 BATCH = "2026-09-29-expanded-source-search"
-APPROVED_BATCHES = {BATCH, "2026-09-30-whatuprg-announced", "2026-10-05-submitted-shows", "2026-10-06-submitted-events", "2026-10-07-submitted-events", "2026-10-07-reviewed-discoveries"}
-
-
-def held_dallas_candidate(event):
-    if str(event.get("startDate", ""))[:10] != "2026-11-19":
-        return False
-    urls = " ".join(str(event.get(k, "")) for k in ("officialUrl", "ticketUrl"))
-    names = {str(n).casefold() for n in event.get("artists", [])}
-    return "1626463" in urls or (
-        "alex jean" in names and str(event.get("city", "")).casefold() == "dallas"
-    )
+APPROVED_BATCHES = {BATCH, "2026-09-30-whatuprg-announced", "2026-10-05-submitted-shows", "2026-10-06-submitted-events", "2026-10-07-submitted-events", "2026-10-07-reviewed-discoveries", "2026-10-08-reviewed-discoveries"}
 
 
 def matches(event, approved):
@@ -36,10 +26,8 @@ def matches(event, approved):
 
 
 def apply(root: Path, events: list, supplemental: list, today=None):
-    # Dallas is explicitly held by the owner pending an accessible official
-    # ticket listing and venue corroboration. Do not let a collector publish it.
-    events[:] = [e for e in events if not held_dallas_candidate(e)]
-    supplemental[:] = [e for e in supplemental if not held_dallas_candidate(e)]
+    # The owner released the Alex Jean Dallas hold on October 8 after the
+    # venue corroborated the AXS listing. Its approved record now dedupes here.
     path = root / "config/manual-events.json"
     if not path.exists():
         return

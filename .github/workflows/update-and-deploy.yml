@@ -463,6 +463,7 @@ jobs:
           python scripts/verify_oct3_concert_corrections.py _site
           python scripts/verify_oct6_show_audit.py _site
           python scripts/verify_oct7_discoveries.py _site
+          python scripts/verify_oct8_reviewed_discoveries.py _site
           python scripts/verify_owner_roster.py _site
 
       - name: Verify artist details in the final production artifact

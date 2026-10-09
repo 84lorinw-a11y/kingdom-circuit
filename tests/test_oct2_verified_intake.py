@@ -36,10 +36,10 @@ class OctoberIntakeTests(unittest.TestCase):
             apply(root, today='2027-01-01')
             self.assertEqual(json.loads((root / 'events.json').read_text()), [])
             manual = json.loads((root / 'config/manual-events.json').read_text())
-            self.assertEqual(len(manual), 4)
-            self.assertFalse(any(str(row.get('id')) == 'alex-jean-dallas-2026-11-19' for row in manual))
+            self.assertEqual(len(manual), len(wanted))
+            self.assertTrue(any(str(row.get('id')) == 'alex-jean-dallas-2026-11-19' for row in manual))
 
-    def test_owner_hold_removes_alex_dallas_from_every_live_feed(self):
+    def test_released_alex_dallas_is_restored_once_with_venue_source(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             (root / 'config').mkdir()
@@ -54,7 +54,11 @@ class OctoberIntakeTests(unittest.TestCase):
             apply(root, today='2026-10-03')
             for name in ['events.json', 'supplemental-events.json', 'config/manual-events.json']:
                 rows = json.loads((root / name).read_text())
-                self.assertFalse(any('alex-jean-dallas-2026-11-19' in str(row.get('id')) for row in rows))
+                matches = [row for row in rows if 'alex-jean-dallas-2026-11-19' in str(row.get('id'))]
+                self.assertEqual(len(matches), 0 if name == 'supplemental-events.json' else 1)
+                if matches:
+                    self.assertEqual(matches[0]['officialUrl'], 'https://www.thebombfactory.com/events/detail/alex-jean-1626463')
+                    self.assertEqual(matches[0]['startTime'], '20:00')
 
     def test_visalia_keeps_its_identity_and_host_separate_from_performers(self):
         row = {'id': 'manual:egr-2026-10-10-visalia-ca', 'startDate': '2026-10-10',
