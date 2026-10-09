@@ -31,7 +31,8 @@ def verify(site: Path) -> None:
         event = dict(source, id="manual:" + source["id"])
         href = builder.event_path(event)
         detail = (site / href.strip("/") / "index.html").read_text()
-        assert "event-detail--landscape" in detail, href
+        expected_landscape = source.get("detailImageLayout") == "landscape"
+        assert ("event-detail--landscape" in detail) == expected_landscape, href
         line = re.search(r'<p class="artist-line">(.*?)</p>', detail, re.S)[1]
         assert all(name in html.unescape(line) for name in source["advertisedBilling"]), href
         for page in ("index.html", "shows/index.html"):
@@ -44,7 +45,7 @@ def verify(site: Path) -> None:
             canonical = roster.get(builder.norm(name))
             href = builder.artist_path(canonical or name)
             assert (f'href="{href}"' in line) == bool(canonical), (name, "profile link mismatch")
-    print("Final content verified: complete billing, landscape flyers, six artist portraits and verified social links")
+    print("Final content verified: complete billing, selected flyer layouts, six artist portraits and verified social links")
 
 
 if __name__ == "__main__":

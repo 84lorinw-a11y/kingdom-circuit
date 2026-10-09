@@ -21,11 +21,8 @@ SYNC_ARTISTS = ROOT / "scripts" / "sync_verified_artist_registry.py"
 EVENT_ID = "trnscnd-va-fredericksburg-2026"
 RUNTIME_EVENT_ID = f"manual:{EVENT_ID}"
 OFFICIAL_URL = "https://othrwrldly.com/trnscnd"
-ARTWORK_SOURCE_URL = (
-    "https://drive.google.com/file/d/"
-    "1dB8NPwMCpGh7I9RYOQ6j0lzz1qTsYKB7/view?usp=drivesdk"
-)
-ARTWORK_URL = "assets/events/trnscnd-va-2026.png"
+ARTWORK_SOURCE_URL = "https://kingdomcircuit.com/assets/events/trnscnd-va-2026-owner-oct9.png"
+ARTWORK_URL = "assets/events/trnscnd-va-2026-owner-oct9.png"
 
 PROFILED_ARTISTS = ["N!X", "NXTMIKE", "D Riddick", "Howard Langford"]
 FULL_LINEUP = [
@@ -120,8 +117,8 @@ EVENT = {
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": True,
-    "detailImageLayout": "landscape",
-    "imageSource": "Promoter-supplied official [TRNSCND] VA 2026 artwork",
+    "detailImageLayout": "portrait",
+    "imageSource": "Owner-supplied [TRNSCND] 2026 flyer, October 9, 2026",
     "imageSourceUrl": ARTWORK_SOURCE_URL,
     "price": "$15 concert pass / $20 full-day pass",
     "organizer": "OTHRWRLDLY.",
@@ -153,10 +150,10 @@ EVENT = {
             "priority": 110,
         },
         {
-            "name": "Promoter-supplied official event artwork",
+            "name": "Owner-supplied event artwork, October 9, 2026",
             "url": ARTWORK_SOURCE_URL,
-            "type": "promoter_submission",
-            "authority": "promoter_submission",
+            "type": "manual_verified",
+            "authority": "owner_confirmation",
             "priority": 110,
         },
     ],
