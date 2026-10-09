@@ -6777,7 +6777,7 @@
     "eventType": "festival",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/a2407af7-a012-4df1-8d42-d247ab82cd8b/FF26-Promo-Friday-Night%2B%281%29.jpg",
+    "image": "assets/events/flavor-fest-friday-2026.webp",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -9921,6 +9921,67 @@
     "notes": "October 8 official-source review: DJ Bryce G / The Joyful Noize announced both January 22 and 23, 2027 on the Fan Stage in the September 27 collaborative artist post. Preserve existing festival identity, artwork and other confirmed day-specific billing. Exact individual set time not announced; do not substitute the 4 PM park-entry time."
   },
   {
+    "id": "manual:lovesick-fest-irvine-2027-02-05",
+    "title": "LOVESICK FEST 2027",
+    "startDate": "2027-02-05",
+    "endDate": "2027-02-05",
+    "startTime": "17:30",
+    "startDateTime": "2027-02-05T17:30:00-08:00",
+    "timezone": "America/Los_Angeles",
+    "venue": "Oceans Church",
+    "address": "9800 Muirlands Blvd",
+    "postalCode": "92618",
+    "city": "Irvine",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Jon Keith"
+    ],
+    "advertisedBilling": [
+      "BODIE",
+      "Stephen Stanley",
+      "DWLLRS",
+      "Jon Keith",
+      "Hopeful.",
+      "Tenroc",
+      "Espy",
+      "Sleeping with Socks On"
+    ],
+    "headliner": "BODIE",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "eventType": "festival",
+    "status": "scheduled",
+    "officialUrl": "https://www.ticketweb.com/event/lovesick-fest-irvine-oceans-church-tickets/14344534",
+    "ticketUrl": "https://www.ticketweb.com/event/lovesick-fest-irvine-oceans-church-tickets/14344534",
+    "sourceName": "Official TicketWeb event listing",
+    "authority": "official_ticket",
+    "confidence": "high",
+    "image": "assets/events/lovesick-fest-2027-02-05.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Official TicketWeb LOVESICK FEST 2027 artwork",
+    "imageSourceUrl": "https://www.ticketweb.com/event/lovesick-fest-irvine-oceans-church-tickets/14344534",
+    "firstSeen": "2026-10-09T22:27:06.784799+00:00",
+    "lastVerified": "2026-10-09T22:27:06.784799+00:00",
+    "auditVerified": "2026-10-09",
+    "editorialBatch": "2026-10-09-reviewed-discoveries",
+    "ageRestriction": "All ages",
+    "doorsTime": "17:00",
+    "publicDescription": "An all-ages Christian alternative music festival featuring BODIE, Stephen Stanley, DWLLRS, Jon Keith, Hopeful., Tenroc, Espy and Sleeping with Socks On. The show starts at 5:30 PM.",
+    "notes": "Owner requested addition October 9. TicketWeb current event page and Line Up panel verified: February 5, 2027, 5:30 PM PST at Oceans Church, Irvine. GA doors 5 PM; early/VIP entry 4:45 PM. Ticket page currently requests an access code; no price inferred. Preserve local February 5 date rather than UTC February 6 seen on aggregators.",
+    "sources": [
+      {
+        "name": "Official TicketWeb event and lineup",
+        "url": "https://www.ticketweb.com/event/lovesick-fest-irvine-oceans-church-tickets/14344534",
+        "type": "manual_verified",
+        "authority": "official_ticket",
+        "priority": 120
+      }
+    ]
+  },
+  {
     "id": "manual:808-beezy-bandsintown-108856562",
     "title": "808 BEEZY — Live at AMPLIFY",
     "startDate": "2027-02-12",
@@ -10094,67 +10155,6 @@
         "type": "official_festival",
         "authority": "official_festival",
         "priority": 112
-      }
-    ]
-  },
-  {
-    "id": "manual:lovesick-fest-irvine-2027-02-05",
-    "title": "LOVESICK FEST 2027",
-    "startDate": "2027-02-05",
-    "endDate": "2027-02-05",
-    "startTime": "17:30",
-    "startDateTime": "2027-02-05T17:30:00-08:00",
-    "timezone": "America/Los_Angeles",
-    "venue": "Oceans Church",
-    "address": "9800 Muirlands Blvd",
-    "postalCode": "92618",
-    "city": "Irvine",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "Jon Keith"
-    ],
-    "advertisedBilling": [
-      "BODIE",
-      "Stephen Stanley",
-      "DWLLRS",
-      "Jon Keith",
-      "Hopeful.",
-      "Tenroc",
-      "Espy",
-      "Sleeping with Socks On"
-    ],
-    "headliner": "BODIE",
-    "lineupExplicit": true,
-    "musicConfirmed": true,
-    "eventType": "festival",
-    "status": "scheduled",
-    "officialUrl": "https://www.ticketweb.com/event/lovesick-fest-irvine-oceans-church-tickets/14344534",
-    "ticketUrl": "https://www.ticketweb.com/event/lovesick-fest-irvine-oceans-church-tickets/14344534",
-    "sourceName": "Official TicketWeb event listing",
-    "authority": "official_ticket",
-    "confidence": "high",
-    "image": "assets/events/lovesick-fest-2027-02-05.png",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Official TicketWeb LOVESICK FEST 2027 artwork",
-    "imageSourceUrl": "https://www.ticketweb.com/event/lovesick-fest-irvine-oceans-church-tickets/14344534",
-    "firstSeen": "2026-10-09T22:27:06.784799+00:00",
-    "lastVerified": "2026-10-09T22:27:06.784799+00:00",
-    "auditVerified": "2026-10-09",
-    "editorialBatch": "2026-10-09-reviewed-discoveries",
-    "ageRestriction": "All ages",
-    "doorsTime": "17:00",
-    "publicDescription": "An all-ages Christian alternative music festival featuring BODIE, Stephen Stanley, DWLLRS, Jon Keith, Hopeful., Tenroc, Espy and Sleeping with Socks On. The show starts at 5:30 PM.",
-    "notes": "Owner requested addition October 9. TicketWeb current event page and Line Up panel verified: February 5, 2027, 5:30 PM PST at Oceans Church, Irvine. GA doors 5 PM; early/VIP entry 4:45 PM. Ticket page currently requests an access code; no price inferred. Preserve local February 5 date rather than UTC February 6 seen on aggregators.",
-    "sources": [
-      {
-        "name": "Official TicketWeb event and lineup",
-        "url": "https://www.ticketweb.com/event/lovesick-fest-irvine-oceans-church-tickets/14344534",
-        "type": "manual_verified",
-        "authority": "official_ticket",
-        "priority": 120
       }
     ]
   }
