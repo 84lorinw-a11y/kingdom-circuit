@@ -356,7 +356,8 @@ const ARTIST_ROSTER_ORDER = [
   "EliiSetApart",
   "K'nek",
   "Darius Mullin",
-  "tonyxtrotter"
+  "tonyxtrotter",
+  "Milla"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -4515,6 +4516,22 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/tonyxtrotter-official-performance-oct9.jpg",
     "imagePosition": "50% 25%",
     "label": "Apollo Records",
+    "sourceRegistryVerified": true
+  },
+  "milla": {
+    "aliases": [
+      "Milla",
+      "jesussavedmilla",
+      "millabw"
+    ],
+    "website": "https://linktr.ee/millabw",
+    "instagramProfile": "https://www.instagram.com/jesussavedmilla/",
+    "spotifyProfile": "https://open.spotify.com/artist/6VXFwgtoq8VKhTxJYTCegc",
+    "youtubeProfile": "https://www.youtube.com/channel/UCZTFosPspTkLiabBGuGWcCQ/videos",
+    "officialImageSource": "https://www.instagram.com/p/DbHoYY7EVJh/",
+    "imageUrl": "assets/artists/milla-official-portrait-oct9.jpg",
+    "imagePosition": "50% 30%",
+    "state": "NJ",
     "sourceRegistryVerified": true
   }
 };
@@ -8676,6 +8693,22 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imagePosition": "50% 25%",
     "label": "Apollo Records",
     "sourceRegistryVerified": true
+  },
+  "milla": {
+    "aliases": [
+      "Milla",
+      "jesussavedmilla",
+      "millabw"
+    ],
+    "website": "https://linktr.ee/millabw",
+    "instagramProfile": "https://www.instagram.com/jesussavedmilla/",
+    "spotifyProfile": "https://open.spotify.com/artist/6VXFwgtoq8VKhTxJYTCegc",
+    "youtubeProfile": "https://www.youtube.com/channel/UCZTFosPspTkLiabBGuGWcCQ/videos",
+    "officialImageSource": "https://www.instagram.com/p/DbHoYY7EVJh/",
+    "imageUrl": "assets/artists/milla-official-portrait-oct9.jpg",
+    "imagePosition": "50% 30%",
+    "state": "NJ",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -9870,6 +9903,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "tonyxtrotter": {
     "imageUrl": "assets/artists/tonyxtrotter-official-performance-oct9.jpg",
     "imagePosition": "50% 25%"
+  },
+  "milla": {
+    "imageUrl": "assets/artists/milla-official-portrait-oct9.jpg",
+    "imagePosition": "50% 30%"
   }
 };
 
