@@ -64,7 +64,7 @@ class ArtistDatabaseSeptember11Tests(unittest.TestCase):
         self.assertEqual(event["venue"], "AM/FM Backyard")
         self.assertEqual(
             event["artists"],
-            ["Parris Chariz", "Toschii", "Eli Montanna", "JWoodz", "Epho"],
+            ["Parris Chariz", "Toschii", "Eli Montanna", "JWoodz", "Epho", "Starringo"],
         )
 
     def test_kaden_jordan_official_tour_dates_are_durable(self):
