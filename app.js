@@ -355,7 +355,8 @@ const ARTIST_ROSTER_ORDER = [
   "TVNK",
   "EliiSetApart",
   "K'nek",
-  "Darius Mullin"
+  "Darius Mullin",
+  "tonyxtrotter"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -4499,6 +4500,21 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/darius-mullin-spotify-portrait-oct9.jpg",
     "imagePosition": "50% 20%",
     "state": "TN",
+    "sourceRegistryVerified": true
+  },
+  "tonyxtrotter": {
+    "aliases": [
+      "tonyxtrotter",
+      "Tony Trotter"
+    ],
+    "website": "https://www.instagram.com/tonyxtrotter/",
+    "instagramProfile": "https://www.instagram.com/tonyxtrotter/",
+    "spotifyProfile": "https://open.spotify.com/artist/20eJqy3YU65fubCicAHHvM",
+    "youtubeProfile": "https://www.youtube.com/@tonyxtrotter",
+    "officialImageSource": "https://open.spotify.com/artist/20eJqy3YU65fubCicAHHvM",
+    "imageUrl": "assets/artists/tonyxtrotter-official-performance-oct9.jpg",
+    "imagePosition": "50% 25%",
+    "label": "Apollo Records",
     "sourceRegistryVerified": true
   }
 };
@@ -8645,6 +8661,21 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imagePosition": "50% 20%",
     "state": "TN",
     "sourceRegistryVerified": true
+  },
+  "tonyxtrotter": {
+    "aliases": [
+      "tonyxtrotter",
+      "Tony Trotter"
+    ],
+    "website": "https://www.instagram.com/tonyxtrotter/",
+    "instagramProfile": "https://www.instagram.com/tonyxtrotter/",
+    "spotifyProfile": "https://open.spotify.com/artist/20eJqy3YU65fubCicAHHvM",
+    "youtubeProfile": "https://www.youtube.com/@tonyxtrotter",
+    "officialImageSource": "https://open.spotify.com/artist/20eJqy3YU65fubCicAHHvM",
+    "imageUrl": "assets/artists/tonyxtrotter-official-performance-oct9.jpg",
+    "imagePosition": "50% 25%",
+    "label": "Apollo Records",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -9835,6 +9866,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "darius mullin": {
     "imageUrl": "assets/artists/darius-mullin-spotify-portrait-oct9.jpg",
     "imagePosition": "50% 20%"
+  },
+  "tonyxtrotter": {
+    "imageUrl": "assets/artists/tonyxtrotter-official-performance-oct9.jpg",
+    "imagePosition": "50% 25%"
   }
 };
 
