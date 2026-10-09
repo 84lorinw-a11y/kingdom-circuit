@@ -596,14 +596,14 @@ class KingdomCircuitV7Tests(unittest.TestCase):
         }
         self.assertTrue(expected.issubset(identifiers))
 
-    def test_master_roster_has_339_unique_artists(self):
+    def test_master_roster_has_340_unique_artists(self):
         artists = json.loads((ROOT / "config" / "artists.json").read_text())
         names = [item["name"] for item in artists]
-        self.assertEqual(len(names), 339)
-        self.assertEqual(len({name.casefold() for name in names}), 339)
+        self.assertEqual(len(names), 340)
+        self.assertEqual(len({name.casefold() for name in names}), 340)
         self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 1), 91)
         self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 2), 143)
-        self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 3), 105)
+        self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 3), 106)
 
     def test_top_streaming_priority_artists_are_present(self):
         artists = json.loads((ROOT / "config" / "artists.json").read_text())

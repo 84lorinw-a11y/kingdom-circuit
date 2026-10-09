@@ -352,7 +352,8 @@ const ARTIST_ROSTER_ORDER = [
   "DJ Geech",
   "Stellar Flo",
   "Bo Fisher",
-  "TVNK"
+  "TVNK",
+  "EliiSetApart"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -4450,6 +4451,21 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imagePosition": "50% 25%",
     "state": "MI",
     "label": "Raydar University / Trenches Collective",
+    "sourceRegistryVerified": true
+  },
+  "eliisetapart": {
+    "aliases": [
+      "EliiSetApart",
+      "eliisetapart"
+    ],
+    "website": "https://linktr.ee/eliisetapart",
+    "instagramProfile": "https://www.instagram.com/eliisetapart/",
+    "spotifyProfile": "https://open.spotify.com/artist/5CsIo8RUyvgNGs6wvOyO3W",
+    "youtubeProfile": "https://www.youtube.com/channel/UCRBRWOLif3iee8lpW9pIR8g",
+    "officialImageSource": "https://www.instagram.com/shotbywinter/p/DOXLuMKDfHF/?img_index=2",
+    "imageUrl": "assets/artists/eliisetapart-official-performance-oct9.jpg",
+    "imagePosition": "50% 0%",
+    "state": "MN",
     "sourceRegistryVerified": true
   }
 };
@@ -8550,6 +8566,21 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "state": "MI",
     "label": "Raydar University / Trenches Collective",
     "sourceRegistryVerified": true
+  },
+  "eliisetapart": {
+    "aliases": [
+      "EliiSetApart",
+      "eliisetapart"
+    ],
+    "website": "https://linktr.ee/eliisetapart",
+    "instagramProfile": "https://www.instagram.com/eliisetapart/",
+    "spotifyProfile": "https://open.spotify.com/artist/5CsIo8RUyvgNGs6wvOyO3W",
+    "youtubeProfile": "https://www.youtube.com/channel/UCRBRWOLif3iee8lpW9pIR8g",
+    "officialImageSource": "https://www.instagram.com/shotbywinter/p/DOXLuMKDfHF/?img_index=2",
+    "imageUrl": "assets/artists/eliisetapart-official-performance-oct9.jpg",
+    "imagePosition": "50% 0%",
+    "state": "MN",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -9728,6 +9759,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "tvnk": {
     "imageUrl": "assets/artists/tvnk-official-spotify-oct8.jpg",
     "imagePosition": "50% 25%"
+  },
+  "eliisetapart": {
+    "imageUrl": "assets/artists/eliisetapart-official-performance-oct9.jpg",
+    "imagePosition": "50% 0%"
   }
 };
 
