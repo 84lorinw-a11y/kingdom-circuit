@@ -454,7 +454,7 @@ def verify_requested_live_repairs(pages: Dict[Path, str], audit: Audit) -> None:
         Path("event/one-day-fall-festival-2026-evening-concert-2026-10-10-aurora-587532/index.html"):
             "/assets/events/one-day-festival-2026-10-10-lineup-crop.png",
         Path("event/reign-volume-one-2026-10-10-brooklyn-fe93fe/index.html"):
-            "/assets/events/reign-volume-one-single-2026.jpg",
+            "/assets/events/reign-volume-one-2026-10-10-portrait.jpg",
     }
     for rel, asset in expected_assets.items():
         text = pages.get(rel, "")

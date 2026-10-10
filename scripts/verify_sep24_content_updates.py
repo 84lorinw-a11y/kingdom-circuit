@@ -10,6 +10,7 @@ from urllib.parse import urlsplit
 import apply_rock_the_pines as rock
 import apply_trnscnd_submission as trnscnd
 import build_seo_site as builder
+from apply_verified_show_artwork import patch_event as patch_show_artwork
 
 
 def verify(site: Path) -> None:
@@ -29,9 +30,10 @@ def verify(site: Path) -> None:
         if not builder.current(source):
             continue
         event = dict(source, id="manual:" + source["id"])
+        patch_show_artwork(event)
         href = builder.event_path(event)
         detail = (site / href.strip("/") / "index.html").read_text()
-        expected_landscape = source.get("detailImageLayout") == "landscape"
+        expected_landscape = event.get("detailImageLayout") == "landscape"
         assert ("event-detail--landscape" in detail) == expected_landscape, href
         line = re.search(r'<p class="artist-line">(.*?)</p>', detail, re.S)[1]
         assert all(name in html.unescape(line) for name in source["advertisedBilling"]), href

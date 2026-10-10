@@ -138,7 +138,7 @@ class September13LiveSiteFixTests(unittest.TestCase):
         self.assertGreater((ROOT / petrina["image"]).stat().st_size, 10_000)
         self.assert_local_artwork(
             "eventbrite:reign-volume-one-aasha-marie-brooklyn-2026",
-            "assets/events/reign-volume-one-single-2026.jpg",
+            "assets/events/reign-volume-one-2026-10-10-portrait.jpg",
         )
 
     def test_mayia_buttons_use_organizer_and_fair_sites(self):

@@ -169,6 +169,11 @@ def focal_rule_for_source(value: str) -> Optional[FocalRule]:
     parsed = urlsplit(source)
     lowered_path = parsed.path.casefold()
     if (
+        (parsed.hostname or "").casefold() in {"", "kingdomcircuit.com", "www.kingdomcircuit.com"}
+        and lowered_path.lstrip("/") == "assets/events/cj-emulous-approved-show-portrait.webp"
+    ):
+        return CJ_RULE
+    if (
         (parsed.hostname or "").casefold() == "s1.ticketm.net"
         and "a49ecab3" in lowered_path
         and "_source" in lowered_path

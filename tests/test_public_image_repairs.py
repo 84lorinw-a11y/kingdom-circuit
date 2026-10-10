@@ -126,6 +126,16 @@ class PublicImageRepairsTests(unittest.TestCase):
                 report["focalJsonRecords"],
             )
 
+    def test_saved_cj_show_portrait_preserves_focal_intent(self) -> None:
+        asset = "assets/events/cj-emulous-approved-show-portrait.webp"
+        for source in (asset, "/" + asset, "https://kingdomcircuit.com/" + asset):
+            with self.subTest(source=source):
+                output, _, count = repairs.patch_html(f'<img src="{source}">', focal_only=True)
+                self.assertEqual(1, count)
+                self.assertIn('data-kc-image-focal="cj-emulous"', output)
+                self.assertIn("object-position:center top", output)
+        self.assertIsNone(repairs.focal_rule_for_source("https://unrelated.example/" + asset))
+
     def test_focal_only_prepares_metadata_before_optimization(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             site = self.build_site(Path(raw))

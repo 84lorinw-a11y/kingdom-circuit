@@ -24,10 +24,10 @@ ARTWORK_REPLACEMENTS = {
         "classification": 1,
     },
     ("Boxyard Saturdaze", "2026-10-10"): {
-        "image": "assets/events/mayia-boxyard-2026-10-10.png",
+        "image": "assets/events/mayia-boxyard-2026-10-10-portrait.jpg",
         "imageType": "event_artwork",
-        "source": "Boxyard RTP official event poster",
-        "sourceUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+        "source": "MAYIA official Boxyard appearance flyer",
+        "sourceUrl": "https://www.instagram.com/mayiawarren/p/DePWm4fRd7h/",
         "classification": 1,
     },
     ("MAYIA at the NC State Fair", "2026-10-17"): {

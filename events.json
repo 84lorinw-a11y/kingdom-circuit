@@ -3338,7 +3338,7 @@
     "status": "scheduled",
     "ticketUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
     "officialUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
-    "image": "assets/events/mayia-boxyard-2026-10-10.png",
+    "image": "assets/events/mayia-boxyard-2026-10-10-portrait.jpg",
     "price": "",
     "sourceName": "Boxyard RTP official event",
     "sources": [
@@ -3371,10 +3371,11 @@
       "MAYIA WARREN"
     ],
     "imageOverride": true,
-    "imageSourceUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
-    "imageSource": "Boxyard RTP official DJ Watty and MAYIA event poster",
+    "imageSourceUrl": "https://www.instagram.com/mayiawarren/p/DePWm4fRd7h/",
+    "imageSource": "MAYIA official Boxyard appearance flyer",
     "startDateTime": "2026-10-10T11:30:00-04:00",
-    "endTime": "14:30"
+    "endTime": "14:30",
+    "detailImageLayout": "portrait"
   },
   {
     "title": "ONE DAY Fall Festival 2026 — Evening Concert",
@@ -3680,7 +3681,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
     "officialUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
-    "image": "assets/events/reign-volume-one-single-2026.jpg",
+    "image": "assets/events/reign-volume-one-2026-10-10-portrait.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -3697,7 +3698,10 @@
         "authority": "venue_ticket",
         "priority": 94
       }
-    ]
+    ],
+    "imageSource": "Aasha Marie official REIGN concert flyer",
+    "imageSourceUrl": "https://www.instagram.com/aasha.marie/p/DeUK0j2thKl/",
+    "detailImageLayout": "portrait"
   },
   {
     "id": "manual:revolt-mr-del-canton-jones-jackson-2026-10-10",
@@ -4759,10 +4763,10 @@
     "status": "scheduled",
     "ticketUrl": "",
     "officialUrl": "https://www.cjemulous.com/event-details/the-sac-town-give-back",
-    "image": "",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "imageOverride": false,
+    "image": "assets/events/cj-emulous-approved-show-portrait.webp",
+    "imageType": "artist",
+    "imagePosition": "center top",
+    "imageOverride": true,
     "price": "",
     "lineupExplicit": true,
     "authority": "artist_calendar",
@@ -4779,7 +4783,10 @@
     ],
     "auditVerified": "2026-09-13",
     "notes": "Artist appearance at a community give-back event. The official title does not establish a standalone rap concert; time is left blank pending a local source.",
-    "id": "manual:cj-emulous-sac-town-give-back-west-sacramento-2026"
+    "id": "manual:cj-emulous-sac-town-give-back-west-sacramento-2026",
+    "imageSource": "Existing owner-approved CJ Emulous show-card portrait; aligned event detail image",
+    "imageSourceUrl": "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
+    "detailImageLayout": "portrait"
   },
   {
     "id": "manual:mayia-nc-state-fair-2026",
@@ -5023,12 +5030,12 @@
     "status": "scheduled",
     "officialUrl": "https://www.eventbrite.com/e/adrenaline-tampa-christian-music-concert-tickets-2002457149238",
     "ticketUrl": "https://www.eventbrite.com/e/adrenaline-tampa-christian-music-concert-tickets-2002457149238",
-    "image": "assets/events/adrenaline-valrico-2026-10-17.jpg",
+    "image": "assets/events/adrenaline-2026-10-17-portrait.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
-    "imageSource": "Official artist or organizer flyer",
-    "imageSourceUrl": "https://www.eventbrite.com/e/adrenaline-tampa-christian-music-concert-tickets-2002457149238",
+    "imageSource": "Zenwi official Adrenaline full-lineup flyer",
+    "imageSourceUrl": "https://www.instagram.com/zenwiofficial/p/Dd9SZI2xgWg/",
     "confidence": "high",
     "authority": "official_event",
     "sourceName": "Official artist or organizer announcement",
@@ -5053,7 +5060,8 @@
     ],
     "legacyEventPaths": [
       "/event/nehemiah-at-2106-lithia-pinecrest-rd-2026-10-17-valrico-manor-c47e17/"
-    ]
+    ],
+    "detailImageLayout": "portrait"
   },
   {
     "id": "manual:mission-friends-sacramento-2026",
@@ -6515,7 +6523,7 @@
     "status": "onsale",
     "ticketUrl": "https://www.ticketmaster.com/zauntee-god-remembers-tour-new-york-new-york-11-01-2026/event/000064EEB1CBEA47",
     "officialUrl": "https://mercuryeastpresents.com/tm-event/zauntee-god-remembers-tour/",
-    "image": "assets/events/zauntee-god-remembers-tour-2026.jpg",
+    "image": "assets/events/zauntee-god-remembers-tour-2026-portrait.jpg",
     "price": "",
     "sourceName": "Official venue event page",
     "sources": [
@@ -6548,8 +6556,9 @@
     "ageRestriction": "18+",
     "notes": "Official venue listing specifies an 18+ age restriction.",
     "imageOverride": true,
-    "imageSource": "Official God Remembers Tour graphic with Skema Boy; no city-specific date printed",
-    "imageSourceUrl": "https://www.bandsintown.com/e/108659684-skema-boy-at-subterranean"
+    "imageSource": "Zauntee official God Remembers Tour 2026 full itinerary poster",
+    "imageSourceUrl": "https://www.instagram.com/zauntee/p/Da0mxSfyRwu/",
+    "detailImageLayout": "portrait"
   },
   {
     "id": "manual:808-beezy-bandsintown-108856031",
@@ -6609,7 +6618,7 @@
     "status": "onsale",
     "ticketUrl": "https://www.ticketmaster.com/zauntee-god-remembers-tour-charlotte-north-carolina-11-04-2026/event/2D0064EAD47E56BE",
     "officialUrl": "https://www.ticketmaster.com/zauntee-god-remembers-tour-charlotte-north-carolina-11-04-2026/event/2D0064EAD47E56BE",
-    "image": "assets/events/zauntee-god-remembers-tour-2026.jpg",
+    "image": "assets/events/zauntee-god-remembers-tour-2026-portrait.jpg",
     "price": "",
     "sourceName": "Ticketmaster",
     "sources": [
@@ -6628,8 +6637,9 @@
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
     "imageOverride": true,
-    "imageSource": "Official God Remembers Tour graphic with Skema Boy; no city-specific date printed",
-    "imageSourceUrl": "https://www.bandsintown.com/e/108659684-skema-boy-at-subterranean"
+    "imageSource": "Zauntee official God Remembers Tour 2026 full itinerary poster",
+    "imageSourceUrl": "https://www.instagram.com/zauntee/p/Da0mxSfyRwu/",
+    "detailImageLayout": "portrait"
   },
   {
     "id": "bandsintown:108940329",
@@ -7534,7 +7544,7 @@
     "status": "onsale",
     "ticketUrl": "https://www.ticketmaster.com/zauntee-god-remembers-tour-atlanta-georgia-11-08-2026/event/0E0064EADADEF788",
     "officialUrl": "https://www.masqueradeatlanta.com/events/zauntee/",
-    "image": "assets/events/zauntee-god-remembers-tour-2026.jpg",
+    "image": "assets/events/zauntee-god-remembers-tour-2026-portrait.jpg",
     "price": "",
     "sourceName": "Official venue event page",
     "sources": [
@@ -7565,8 +7575,9 @@
       "supplemental:skema-boy-2026-11-08-atlanta-ga"
     ],
     "imageOverride": true,
-    "imageSource": "Official God Remembers Tour graphic with Skema Boy; no city-specific date printed",
-    "imageSourceUrl": "https://www.bandsintown.com/e/108659684-skema-boy-at-subterranean"
+    "imageSource": "Zauntee official God Remembers Tour 2026 full itinerary poster",
+    "imageSourceUrl": "https://www.instagram.com/zauntee/p/Da0mxSfyRwu/",
+    "detailImageLayout": "portrait"
   },
   {
     "id": "manual:botzy-mike-summers-jwoodz-live-band-los-angeles-2026-11-10",
@@ -8502,12 +8513,12 @@
     "status": "scheduled",
     "officialUrl": "https://www.thebombfactory.com/events/detail/alex-jean-1626463",
     "ticketUrl": "https://www.axs.com/events/1626463/alex-jean-tickets",
-    "image": "assets/events/alex-jean-welcome-home-tour-2026.png",
+    "image": "assets/events/alex-jean-welcome-home-tour-2026-portrait.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
-    "imageSource": "Official artist or organizer flyer",
-    "imageSourceUrl": "https://alexjeantour.com/",
+    "imageSource": "Alex Jean official Welcome Home Tour 2026 poster",
+    "imageSourceUrl": "https://www.instagram.com/meaningalex/p/Dd_duSRxzAf/",
     "confidence": "high",
     "authority": "venue_ticket",
     "sourceName": "The Bomb Factory / AXS official event",
@@ -8538,7 +8549,8 @@
     "sourceEventIds": [
       "axs:1626463"
     ],
-    "publicDescription": "Alex Jean performs at The Studio at The Bomb Factory in Dallas on November 19, 2026. Show starts at 8 PM. See the official venue listing for event details and tickets."
+    "publicDescription": "Alex Jean performs at The Studio at The Bomb Factory in Dallas on November 19, 2026. Show starts at 8 PM. See the official venue listing for event details and tickets.",
+    "detailImageLayout": "portrait"
   },
   {
     "id": "ticketmaster:vvG10Z_CMA3B0H",
@@ -8560,7 +8572,7 @@
     "status": "onsale",
     "ticketUrl": "https://www.ticketmaster.com/zauntee-god-remembers-tour-los-angeles-california-11-19-2026/event/090064EDC54BA93C",
     "officialUrl": "https://themoroccan.com/tm-event/zauntee-god-remembers-tour/",
-    "image": "assets/events/zauntee-god-remembers-tour-2026.jpg",
+    "image": "assets/events/zauntee-god-remembers-tour-2026-portrait.jpg",
     "price": "",
     "sourceName": "Official venue event page",
     "sources": [
@@ -8591,8 +8603,9 @@
       "supplemental:skema-boy-2026-11-19-los-angeles-ca"
     ],
     "imageOverride": true,
-    "imageSource": "Official God Remembers Tour graphic with Skema Boy; no city-specific date printed",
-    "imageSourceUrl": "https://www.bandsintown.com/e/108659684-skema-boy-at-subterranean"
+    "imageSource": "Zauntee official God Remembers Tour 2026 full itinerary poster",
+    "imageSourceUrl": "https://www.instagram.com/zauntee/p/Da0mxSfyRwu/",
+    "detailImageLayout": "portrait"
   },
   {
     "id": "manual:mayia-night-of-hope-apex-2026-11-20",
@@ -9173,12 +9186,12 @@
     "musicConfirmed": true,
     "officialUrl": "https://www.plazaliveorlando.org/shows/alex-jean-27-nov",
     "ticketUrl": "https://www.axs.com/events/1632882/alex-jean-tickets",
-    "image": "assets/events/alex-jean-welcome-home-tour-2026.png",
+    "image": "assets/events/alex-jean-welcome-home-tour-2026-portrait.jpg",
     "imageType": "event_artwork",
     "imageOverride": true,
     "imagePosition": "center",
-    "imageSource": "Alex Jean official Welcome Home Tour Leg 1 flyer",
-    "imageSourceUrl": "https://alexjeantour.com/",
+    "imageSource": "Alex Jean official Welcome Home Tour 2026 poster",
+    "imageSourceUrl": "https://www.instagram.com/meaningalex/p/Dd_duSRxzAf/",
     "publicDescription": "Alex Jean performs at The Plaza Live in Orlando. This is an all-ages concert.",
     "sourceName": "The Plaza Live official event page",
     "authority": "official_event",
@@ -9207,7 +9220,8 @@
         "priority": 115
       }
     ],
-    "auditVerified": "2026-10-02"
+    "auditVerified": "2026-10-02",
+    "detailImageLayout": "portrait"
   },
   {
     "title": "Christlike Christmas — CJ Emulous & Miles Minnick",
@@ -9228,10 +9242,10 @@
     "status": "scheduled",
     "ticketUrl": "",
     "officialUrl": "https://www.cjemulous.com/event-details/christlike-christmas-w-cj-emulous-miles-minnick",
-    "image": "",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "imageOverride": false,
+    "image": "assets/events/cj-emulous-approved-show-portrait.webp",
+    "imageType": "artist",
+    "imagePosition": "center top",
+    "imageOverride": true,
     "price": "",
     "lineupExplicit": true,
     "authority": "artist_calendar",
@@ -9248,7 +9262,10 @@
     ],
     "auditVerified": "2026-09-23",
     "notes": "CJ Emulous's official calendar confirms Berkeley on December 2, 2026 at 6:00 PM. Venue remains unpublished.",
-    "id": "manual:cj-emulous-christlike-christmas-berkeley-2026"
+    "id": "manual:cj-emulous-christlike-christmas-berkeley-2026",
+    "imageSource": "Existing owner-approved CJ Emulous show-card portrait; aligned event detail image",
+    "imageSourceUrl": "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
+    "detailImageLayout": "portrait"
   },
   {
     "title": "Christlike Christmas — CJ Emulous & Miles Minnick",
@@ -9269,10 +9286,10 @@
     "status": "scheduled",
     "ticketUrl": "",
     "officialUrl": "https://www.cjemulous.com/event-details/christlike-christmas-w-cj-emulous-miles-minnick-2",
-    "image": "",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "imageOverride": false,
+    "image": "assets/events/cj-emulous-approved-show-portrait.webp",
+    "imageType": "artist",
+    "imagePosition": "center top",
+    "imageOverride": true,
     "price": "",
     "lineupExplicit": true,
     "authority": "artist_calendar",
@@ -9289,7 +9306,10 @@
     ],
     "auditVerified": "2026-09-23",
     "notes": "CJ Emulous's official calendar confirms Felton on December 4, 2026 at 7:00 PM. Venue remains unpublished.",
-    "id": "manual:cj-emulous-christlike-christmas-felton-2026"
+    "id": "manual:cj-emulous-christlike-christmas-felton-2026",
+    "imageSource": "Existing owner-approved CJ Emulous show-card portrait; aligned event detail image",
+    "imageSourceUrl": "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
+    "detailImageLayout": "portrait"
   },
   {
     "id": "manual:kb-skema-boy-diamondback-belleville-2026",
@@ -9785,12 +9805,12 @@
     "lineupExplicit": true,
     "officialUrl": "https://events.humanitix.com/flowfest",
     "ticketUrl": "https://events.humanitix.com/flowfest",
-    "image": "assets/events/flowfest-greenwood-2026-12-31.avif",
+    "image": "assets/events/flowfest-greenwood-2026-12-31-portrait.webp",
     "imageType": "event_artwork",
     "imageOverride": true,
     "imagePosition": "center",
-    "detailImageLayout": "landscape",
-    "imageSource": "FlowFest official Humanitix event artwork",
+    "detailImageLayout": "portrait",
+    "imageSource": "FlowFest official Humanitix portrait flyer",
     "imageSourceUrl": "https://events.humanitix.com/flowfest",
     "organizer": "Altar Ego",
     "price": "",
@@ -10075,10 +10095,10 @@
     "status": "scheduled",
     "ticketUrl": "",
     "officialUrl": "https://www.cjemulous.com/event-details/rize-az-music-festival",
-    "image": "",
-    "imageType": "fallback",
-    "imagePosition": "center",
-    "imageOverride": false,
+    "image": "assets/events/cj-emulous-approved-show-portrait.webp",
+    "imageType": "artist",
+    "imagePosition": "center top",
+    "imageOverride": true,
     "price": "",
     "lineupExplicit": false,
     "authority": "artist_calendar",
@@ -10095,7 +10115,10 @@
     ],
     "auditVerified": "2026-09-13",
     "notes": "Venue, additional lineup and independently confirmed local performance time remain unpublished.",
-    "id": "manual:cj-emulous-rize-az-music-festival-2027"
+    "id": "manual:cj-emulous-rize-az-music-festival-2027",
+    "imageSource": "Existing owner-approved CJ Emulous show-card portrait; aligned event detail image",
+    "imageSourceUrl": "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
+    "detailImageLayout": "portrait"
   },
   {
     "id": "manual:rock-the-pines-tyler-2027",
@@ -10133,13 +10156,13 @@
     "status": "scheduled",
     "officialUrl": "https://rockthepines.org/",
     "ticketUrl": "https://rockthepines26.ticketspice.com/rock-the-pines-2027",
-    "image": "assets/events/rock-the-pines-ticket-art-2027.png",
+    "image": "assets/events/rock-the-pines-2027-portrait.jpg",
     "imageType": "event_artwork",
     "imageOverride": true,
     "imagePosition": "center",
-    "detailImageLayout": "landscape",
-    "imageSource": "Official Rock the Pines 2027 ticket artwork",
-    "imageSourceUrl": "https://rockthepines26.ticketspice.com/rock-the-pines-2027",
+    "detailImageLayout": "portrait",
+    "imageSource": "Rock The Pines official 2027 festival poster",
+    "imageSourceUrl": "https://www.instagram.com/rockthepines/p/Dc7gMDAALrN/",
     "organizer": "Rock The Pines / KVNE",
     "sourceName": "Rock The Pines official 2027 announcement",
     "authority": "official_festival",

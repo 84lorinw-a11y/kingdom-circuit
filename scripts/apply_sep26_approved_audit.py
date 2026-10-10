@@ -62,9 +62,9 @@ PATCHES = {
         "notes": "October 6 owner-approved review: focus on Petrina and JB's evening concert and keep them first, then Cyfë II. Official schedule lists the evening program 4:30–8:05 PM with Way?, Cyfë II, Petrina, Grace and JB, hosted by DJ Zay and Terrance Mack. Serin Oh is in the separate 12:30–1:30 PM outdoor block and is not billed in this evening listing. Keep the owner's approved flyer crop. Source: https://onedaydenver.org/schedule/",
     },
     "mayia-boxyard-saturdaze-2026": {
-        **artwork("mayia-boxyard-2026-10-10.png",
-                  "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
-                  "Boxyard RTP official DJ Watty and MAYIA event poster"),
+        **artwork("mayia-boxyard-2026-10-10-portrait.jpg",
+                  "https://www.instagram.com/mayiawarren/p/DePWm4fRd7h/",
+                  "MAYIA official Boxyard appearance flyer"),
         "startTime": "11:30", "startDateTime": "2026-10-10T11:30:00-04:00",
         "timezone": "America/New_York", "endTime": "14:30",
     },
