@@ -31,6 +31,7 @@ CJ_EMULOUS_SOURCE = (
     "https://ugc.production.linktr.ee/"
     "e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg"
 )
+CJ_REPLACEMENT = "/assets/artists/cj-emulous-official-performance-oct10.jpeg"
 
 # These are the only sanitized JSON files retained in the production artifact.
 # Deliberately do not add source-only files such as config/manual-events.json.
@@ -60,7 +61,7 @@ class FocalRule:
     position: str
 
 
-CJ_RULE = FocalRule("cj-emulous", "center top")
+CJ_RULE = FocalRule("cj-emulous", "50% 30%")
 HULVEY_RULE = FocalRule("hulvey", "50% 30%")
 FOCAL_RULES = {
     CJ_RULE.marker: CJ_RULE,
@@ -170,8 +171,15 @@ def focal_rule_for_source(value: str) -> Optional[FocalRule]:
     lowered_path = parsed.path.casefold()
     if (
         (parsed.hostname or "").casefold() in {"", "kingdomcircuit.com", "www.kingdomcircuit.com"}
-        and lowered_path.lstrip("/") == "assets/events/cj-emulous-approved-show-portrait.webp"
+        and lowered_path.lstrip("/") in {
+            "assets/events/cj-emulous-approved-show-portrait.webp",
+            "assets/artists/cj-emulous-saved.webp",
+            CJ_REPLACEMENT.lstrip("/"),
+        }
     ):
+        return CJ_RULE
+    if ((parsed.hostname or "").casefold() == "static.wixstatic.com"
+            and lowered_path.startswith("/media/9c331a_5c82923764b24c52bb151559692af340~mv2.jpeg")):
         return CJ_RULE
     if (
         (parsed.hostname or "").casefold() == "s1.ticketm.net"
@@ -258,6 +266,14 @@ def patch_html(text: str, *, focal_only: bool = False) -> tuple[str, int, int]:
             card_images += 1
         rule = focal_rule_for_image(attrs)
         if rule is not None:
+            # Earlier overlays and archived cards can still supply the retired
+            # ceiling-heavy photograph. Replace only its known source URLs;
+            # preserve already-optimized variants of the approved replacement.
+            if rule == CJ_RULE and focal_rule_for_source(str(attrs.get("src") or "")) == CJ_RULE:
+                updates.update({"src": CJ_REPLACEMENT, "srcset": None,
+                                "width": "2773", "height": "4160"})
+                if attrs.get("data-fallback-src"):
+                    updates["data-fallback-src"] = CJ_REPLACEMENT
             updates.update(
                 {
                     "class": artist_class(attrs.get("class")),
@@ -283,6 +299,8 @@ def patch_json(value: object, counts: dict[str, int]) -> None:
                 rule = focal_rule_for_source(child)
                 if rule is not None:
                     matched = rule
+                    if rule == CJ_RULE:
+                        value[key] = CJ_REPLACEMENT
                     break
         if matched is not None:
             value["imageType"] = "artist"

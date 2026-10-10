@@ -59,7 +59,7 @@ VERIFIED_ARTWORK: dict[str, tuple[str, str]] = {
     ),
     "The Kickback": (
         "2026-11-14",
-        "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
+        "assets/artists/cj-emulous-official-performance-oct10.jpeg",
     ),
     "Alex Zurdo: Zona Zero": (
         "2026-10-18",

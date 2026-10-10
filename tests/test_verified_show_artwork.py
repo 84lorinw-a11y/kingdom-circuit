@@ -38,7 +38,8 @@ class VerifiedShowArtworkTests(unittest.TestCase):
     def test_ticket_sources_survive_refresh_without_losing_calendar_evidence(self):
         for event_id, provider in (("bandsintown:108945796", "eventbrite.com"),
                                    ("bandsintown:108144023", "ticketmaster.com"),
-                                   ("bandsintown:108144061", "ticketmaster.com")):
+                                   ("bandsintown:108144061", "ticketmaster.com"),
+                                   ("bandsintown:108881783", "liberty.edu")):
             pin = artwork.BY_ID[event_id]
             old_source = {"name": "Bandsintown", "url": "https://www.bandsintown.com/e/original"}
             event = {"id": event_id, "startDate": pin["startDate"], "sources": [old_source],

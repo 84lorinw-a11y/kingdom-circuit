@@ -16,7 +16,7 @@ REPLACEMENTS = {
     "/assets/events/mission-friends-sacramento-2026.svg": "/assets/events/mission-sacramento-2026-10-17.jpg",
     "/assets/events/mayia-boxyard-saturdaze-2026.svg": "/assets/events/mayia-boxyard-2026-10-10.png",
     "/assets/events/mayia-nc-state-fair-2026.svg": "/assets/artists/mayia-restored-show-photo.webp",
-    "/assets/events/cj-emulous-kickback-2026.svg": "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
+    "/assets/events/cj-emulous-kickback-2026.svg": "/assets/artists/cj-emulous-official-performance-oct10.jpeg",
     "/assets/events/alex-zurdo-zona-zero-2026.svg": "/assets/events/alex-zurdo-zona-zero-2026-10-18.jpg",
 }
 

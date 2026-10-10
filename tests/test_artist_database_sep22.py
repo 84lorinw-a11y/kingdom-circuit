@@ -13,7 +13,7 @@ EXPECTED = {
         "spotifyProfile": "https://open.spotify.com/artist/5Jgv9sRXt4V3TwSU1H41eQ",
         "youtubeProfile": "https://www.youtube.com/user/HisImageM",
         "officialImageSource": "https://www.cjemulous.com/",
-        "imageUrl": "assets/artists/cj-emulous-saved.webp",
+        "imageUrl": "assets/artists/cj-emulous-official-performance-oct10.jpeg",
     },
     "NXTMIKE": {
         "rosterOrder": 146,

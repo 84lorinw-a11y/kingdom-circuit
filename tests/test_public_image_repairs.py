@@ -103,13 +103,13 @@ class PublicImageRepairsTests(unittest.TestCase):
             self.assertIn(f'sizes="{repairs.CARD_SIZES}"', first_html)
             self.assertIn('class="extra artist-photo"', first_html)
             self.assertIn('data-kc-image-focal="cj-emulous"', first_html)
-            self.assertIn("object-position:center top", first_html)
+            self.assertIn("object-position:50% 30%", first_html)
             self.assertIn('data-kc-image-focal="hulvey"', first_html)
             self.assertIn("object-position:50% 30%", first_html)
 
             values = json.loads(first_events)
             self.assertEqual("artist", values[0]["imageType"])
-            self.assertEqual("center top", values[0]["imagePosition"])
+            self.assertEqual("50% 30%", values[0]["imagePosition"])
             self.assertEqual("artist", values[1]["imageType"])
             self.assertEqual("50% 30%", values[1]["imagePosition"])
             self.assertNotIn("sourceName", values[0])
@@ -133,8 +133,19 @@ class PublicImageRepairsTests(unittest.TestCase):
                 output, _, count = repairs.patch_html(f'<img src="{source}">', focal_only=True)
                 self.assertEqual(1, count)
                 self.assertIn('data-kc-image-focal="cj-emulous"', output)
-                self.assertIn("object-position:center top", output)
+                self.assertIn("object-position:50% 30%", output)
+                self.assertIn(f'src="{repairs.CJ_REPLACEMENT}"', output)
         self.assertIsNone(repairs.focal_rule_for_source("https://unrelated.example/" + asset))
+
+    def test_retired_cj_photo_cannot_survive_in_responsive_candidates(self) -> None:
+        markup = f'<img src="{CJ}" srcset="{CJ} 1280w" data-fallback-src="{CJ}" style="object-position:center top">'
+        output, _, _ = repairs.patch_html(markup, focal_only=True)
+        self.assertNotIn(CJ, output)
+        self.assertNotIn("srcset=", output)
+        self.assertIn(f'src="{repairs.CJ_REPLACEMENT}"', output)
+        self.assertIn('width="2773" height="4160"', output)
+        self.assertIn("object-position:50% 30%", output)
+        self.assertEqual(output, repairs.patch_html(output, focal_only=True)[0])
 
     def test_focal_only_prepares_metadata_before_optimization(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
@@ -180,7 +191,7 @@ class PublicImageRepairsTests(unittest.TestCase):
             site = self.build_site(Path(raw))
             repairs.apply(site, focal_only=True)
             replacements = {
-                CJ: "/assets/optimized/cj-focal-w1280.webp",
+                repairs.CJ_REPLACEMENT: "/assets/optimized/cj-focal-w1280.webp",
                 HULVEY: "/assets/optimized/hulvey-focal-w1280.webp",
             }
             for path in (

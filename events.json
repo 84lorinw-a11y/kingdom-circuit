@@ -3681,7 +3681,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
     "officialUrl": "https://www.eventbrite.com/e/reign-volume-one-tickets-1996068040241",
-    "image": "assets/events/reign-volume-one-single-2026.jpg",
+    "image": "assets/events/reign-volume-one-2026-10-10-portrait.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -4079,8 +4079,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventim.us/event/parris-chariz/699959",
     "officialUrl": "https://www.eventim.us/event/parris-chariz/699959",
-    "image": "assets/artists/parris-chariz.webp",
-    "imageType": "artist",
+    "image": "assets/events/parris-chariz-dallas-2026-10-11.jpg",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "price": "",
     "sourceName": "Spune / Eventim official listing",
@@ -4102,7 +4102,10 @@
         "authority": "official_event",
         "priority": 100
       }
-    ]
+    ],
+    "imageOverride": true,
+    "imageSource": "Eventim official Parris Chariz Dallas event flyer",
+    "imageSourceUrl": "https://www.eventim.us/event/parris-chariz/699959"
   },
   {
     "id": "manual:cj-emulous-turlock-back-to-school-2026",
@@ -4763,9 +4766,9 @@
     "status": "scheduled",
     "ticketUrl": "",
     "officialUrl": "https://www.cjemulous.com/event-details/the-sac-town-give-back",
-    "image": "assets/events/cj-emulous-approved-show-portrait.webp",
+    "image": "assets/artists/cj-emulous-official-performance-oct10.jpeg",
     "imageType": "artist",
-    "imagePosition": "center top",
+    "imagePosition": "50% 30%",
     "imageOverride": true,
     "price": "",
     "lineupExplicit": true,
@@ -4784,8 +4787,8 @@
     "auditVerified": "2026-09-13",
     "notes": "Artist appearance at a community give-back event. The official title does not establish a standalone rap concert; time is left blank pending a local source.",
     "id": "manual:cj-emulous-sac-town-give-back-west-sacramento-2026",
-    "imageSource": "Existing owner-approved CJ Emulous show-card portrait; aligned event detail image",
-    "imageSourceUrl": "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
+    "imageSource": "CJ Emulous official performance gallery",
+    "imageSourceUrl": "https://static.wixstatic.com/media/9c331a_f37c062fb676436db0bd59dab1fa8acb~mv2.jpeg",
     "detailImageLayout": "portrait"
   },
   {
@@ -6668,7 +6671,7 @@
     "eventType": "festival",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "assets/events/flavor-fest-friday-2026.webp",
+    "image": "assets/events/flavor-fest-friday-2026.png",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -6769,7 +6772,9 @@
       "Eli Williams"
     ],
     "auditVerified": "2026-10-08",
-    "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown. Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates. October 8: owner verified TVNK in the artist Sheet. His September 25 collaborative announcement with Flavor Fest explicitly confirms November 6 at Crossover Church. Connect the existing TVNK billing to his curated artist profile."
+    "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown. Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates. October 8: owner verified TVNK in the artist Sheet. His September 25 collaborative announcement with Flavor Fest explicitly confirms November 6 at Crossover Church. Connect the existing TVNK billing to his curated artist profile.",
+    "imageSource": "Official Flavor Fest Friday concert poster",
+    "imageSourceUrl": "https://www.flavorfest.org/schedule"
   },
   {
     "id": "manual:don-ready-club-217-los-angeles-2026-11-06",
@@ -7007,7 +7012,7 @@
     "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/",
-    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/989d4d2e-f454-4a1b-99df-cc78cf6e6749/FF26-Promo-Saturday-Night.jpg",
+    "image": "assets/events/flavor-fest-saturday-2026.jpg",
     "price": "",
     "sourceName": "Flavor Fest official Saturday poster",
     "sources": [
@@ -8867,9 +8872,9 @@
     "status": "scheduled",
     "ticketUrl": "",
     "officialUrl": "https://www.cjemulous.com/event-details/christlike-christmas-w-cj-emulous-miles-minnick",
-    "image": "assets/events/cj-emulous-approved-show-portrait.webp",
+    "image": "assets/artists/cj-emulous-official-performance-oct10.jpeg",
     "imageType": "artist",
-    "imagePosition": "center top",
+    "imagePosition": "50% 30%",
     "imageOverride": true,
     "price": "",
     "lineupExplicit": true,
@@ -8888,8 +8893,8 @@
     "auditVerified": "2026-09-23",
     "notes": "CJ Emulous's official calendar confirms Berkeley on December 2, 2026 at 6:00 PM. Venue remains unpublished.",
     "id": "manual:cj-emulous-christlike-christmas-berkeley-2026",
-    "imageSource": "Existing owner-approved CJ Emulous show-card portrait; aligned event detail image",
-    "imageSourceUrl": "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
+    "imageSource": "CJ Emulous official performance gallery",
+    "imageSourceUrl": "https://static.wixstatic.com/media/9c331a_f37c062fb676436db0bd59dab1fa8acb~mv2.jpeg",
     "detailImageLayout": "portrait"
   },
   {
@@ -8911,9 +8916,9 @@
     "status": "scheduled",
     "ticketUrl": "",
     "officialUrl": "https://www.cjemulous.com/event-details/christlike-christmas-w-cj-emulous-miles-minnick-2",
-    "image": "assets/events/cj-emulous-approved-show-portrait.webp",
+    "image": "assets/artists/cj-emulous-official-performance-oct10.jpeg",
     "imageType": "artist",
-    "imagePosition": "center top",
+    "imagePosition": "50% 30%",
     "imageOverride": true,
     "price": "",
     "lineupExplicit": true,
@@ -8932,8 +8937,8 @@
     "auditVerified": "2026-09-23",
     "notes": "CJ Emulous's official calendar confirms Felton on December 4, 2026 at 7:00 PM. Venue remains unpublished.",
     "id": "manual:cj-emulous-christlike-christmas-felton-2026",
-    "imageSource": "Existing owner-approved CJ Emulous show-card portrait; aligned event detail image",
-    "imageSourceUrl": "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
+    "imageSource": "CJ Emulous official performance gallery",
+    "imageSourceUrl": "https://static.wixstatic.com/media/9c331a_f37c062fb676436db0bd59dab1fa8acb~mv2.jpeg",
     "detailImageLayout": "portrait"
   },
   {
@@ -9206,7 +9211,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.songkick.com/artists/10314485-kaden-jordan",
     "officialUrl": "https://kadenjordan.com/pages/tour",
-    "image": "https://images.sk-static.com/images/media/profile_images/artists/10314485/large_avatar",
+    "image": "assets/artists/kaden-jordan-show-photo.jpg",
     "imageType": "artist",
     "imagePosition": "center",
     "price": "",
@@ -9229,7 +9234,10 @@
         "authority": "artist_calendar",
         "priority": 90
       }
-    ]
+    ],
+    "imageOverride": true,
+    "imageSource": "Artist-linked Songkick photo",
+    "imageSourceUrl": "https://images.sk-static.com/images/media/img/col6/20260125-085329-919918.jpg"
   },
   {
     "id": "manual:egr-2026-12-12-jamestown-nd",
@@ -9720,9 +9728,9 @@
     "status": "scheduled",
     "ticketUrl": "",
     "officialUrl": "https://www.cjemulous.com/event-details/rize-az-music-festival",
-    "image": "assets/events/cj-emulous-approved-show-portrait.webp",
+    "image": "assets/artists/cj-emulous-official-performance-oct10.jpeg",
     "imageType": "artist",
-    "imagePosition": "center top",
+    "imagePosition": "50% 30%",
     "imageOverride": true,
     "price": "",
     "lineupExplicit": false,
@@ -9741,8 +9749,8 @@
     "auditVerified": "2026-09-13",
     "notes": "Venue, additional lineup and independently confirmed local performance time remain unpublished.",
     "id": "manual:cj-emulous-rize-az-music-festival-2027",
-    "imageSource": "Existing owner-approved CJ Emulous show-card portrait; aligned event detail image",
-    "imageSourceUrl": "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
+    "imageSource": "CJ Emulous official performance gallery",
+    "imageSourceUrl": "https://static.wixstatic.com/media/9c331a_f37c062fb676436db0bd59dab1fa8acb~mv2.jpeg",
     "detailImageLayout": "portrait"
   },
   {
@@ -9827,8 +9835,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.bandsintown.com/t/108940329",
     "officialUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
-    "image": "assets/artists/miles-minnick.webp",
-    "imageType": "artist",
+    "image": "assets/events/miles-minnick-florida-campus-tour-2026.jpg",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "lineupExplicit": true,
     "advertisedBilling": [
@@ -9871,7 +9879,10 @@
       "CJ Emulous",
       "Eli Williams"
     ],
-    "id": "manual:miles-minnick-black-box-north-miami-2026-11-05"
+    "id": "manual:miles-minnick-black-box-north-miami-2026-11-05",
+    "imageOverride": true,
+    "imageSource": "Official Christlike University Florida tour flyer listing Miami, Jacksonville and Orlando dates",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
   },
   {
     "title": "Miles Minnick – Christlike University – Florida Campus Tour in Jacksonville",
@@ -9896,8 +9907,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
     "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
-    "image": "assets/artists/miles-minnick.webp",
-    "imageType": "artist",
+    "image": "assets/events/miles-minnick-florida-campus-tour-2026.jpg",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "lineupExplicit": true,
     "advertisedBilling": [
@@ -9934,7 +9945,10 @@
     ],
     "notes": "The venue-specific Jacksonville ticket listing supersedes CJ's older November 7 Tampa calendar entry. Miles may also appear on the 11:45 AM Flavor Fest artist panel in Tampa; that daytime panel is not this concert.",
     "auditVerified": "2026-09-23",
-    "id": "manual:miles-minnick-christlike-university-jacksonville-2026-11-07"
+    "id": "manual:miles-minnick-christlike-university-jacksonville-2026-11-07",
+    "imageOverride": true,
+    "imageSource": "Official Christlike University Florida tour flyer listing Miami, Jacksonville and Orlando dates",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
   },
   {
     "title": "Miles Minnick – Christlike University – Florida Campus Tour in Orlando",
@@ -9958,8 +9972,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
     "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
-    "image": "assets/artists/miles-minnick.webp",
-    "imageType": "artist",
+    "image": "assets/events/miles-minnick-florida-campus-tour-2026.jpg",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "lineupExplicit": true,
     "advertisedBilling": [
@@ -10010,7 +10024,10 @@
       "CJ Emulous",
       "Eli Williams"
     ],
-    "id": "manual:miles-minnick-christlike-university-orlando-2026-11-08"
+    "id": "manual:miles-minnick-christlike-university-orlando-2026-11-08",
+    "imageOverride": true,
+    "imageSource": "Official Christlike University Florida tour flyer listing Miami, Jacksonville and Orlando dates",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
   },
   {
     "id": "manual:cj-emulous-new-mainstream-miami-2026-11-05",

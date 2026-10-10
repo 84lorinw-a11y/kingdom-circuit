@@ -36,7 +36,7 @@ IMAGE_CANDIDATES = {
         "https://i.scdn.co/image/ab6761610000e5eb2c81bb40c3b6962eacf9dc9c",
     ],
     "cj emulous": [
-        "https://ugc.production.linktr.ee/e2e0b25c-780f-4b6f-9a4d-48461885e719_DSC01908.jpeg",
+        "/assets/artists/cj-emulous-official-performance-oct10.jpeg",
     ],
     "miles minnick": [
         "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
