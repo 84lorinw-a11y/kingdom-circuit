@@ -1764,7 +1764,7 @@ const VERIFIED_ARTIST_REGISTRY = {
       "Joz",
       "Southside Joz"
     ],
-    "website": "https://www.instagram.com/southsidejoz/",
+    "website": "https://linktr.ee/southsideJoz",
     "instagramProfile": "https://www.instagram.com/southsidejoz/",
     "spotifyProfile": "https://open.spotify.com/artist/298PjvlXBVauDcpCjrl257",
     "youtubeProfile": "https://www.youtube.com/@SouthsideJoz",
@@ -5955,7 +5955,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "Joz",
       "Southside Joz"
     ],
-    "website": "https://www.instagram.com/southsidejoz/",
+    "website": "https://linktr.ee/southsideJoz",
     "instagramProfile": "https://www.instagram.com/southsidejoz/",
     "spotifyProfile": "https://open.spotify.com/artist/298PjvlXBVauDcpCjrl257",
     "youtubeProfile": "https://www.youtube.com/@SouthsideJoz",
