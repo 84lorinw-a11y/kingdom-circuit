@@ -42,7 +42,9 @@ jobs:
         run: python scripts/sync_verified_artist_registry.py
 
       - name: Run all automated tests
-        run: python -m unittest discover -s tests -p 'test_*.py' -v
+        run: |
+          python -m unittest discover -s tests -p 'test_*.py' -v
+          node --test tests/artist-intake-submit.test.cjs
 
       - name: Add priority artist fallback calendars
         if: github.event_name != 'push' || contains(github.event.head_commit.message, '[full scan]')
@@ -450,9 +452,14 @@ jobs:
       - name: Restore approved artist schedule details after redesign
         run: python scripts/finalize_artist_details.py _site
 
+      - name: Apply approved live artist submission form
+        run: python scripts/apply_artist_intake.py _site
+
       - name: Verify approved live redesign and production identity
         run: |
           python scripts/verify_live_redesign.py _site
+          python scripts/apply_artist_intake.py _site --check
+          node --check _site/assets/artist-intake.js
           node --check _site/app.js
           node --check _site/assets/kc-redesign-v1.js
           python scripts/verify_sep24_content_updates.py _site

@@ -1,0 +1,45 @@
+<main id="kc-main-content" class="artist-intake">
+  <div class="ai-layout">
+    <header class="ai-intro">
+      <p class="ai-eyebrow">JOIN THE ARTIST DIRECTORY</p>
+      <h1>Your music.<br>Your next connection.</h1>
+      <p>Make it easier for CHH fans to find you. Share your official profiles and your profile picture.</p>
+      <div class="ai-intro-note"><span aria-hidden="true">✦</span><p>We review every artist before adding them to Kingdom Circuit.</p></div>
+    </header>
+    <form id="artist-intake-form" class="ai-form" action="https://formspree.io/f/mljreawj" method="post">
+      <input type="hidden" name="submission_type" value="CHH artist submission">
+      <input type="hidden" name="subject" value="Kingdom Circuit artist profile">
+      <input type="hidden" name="environment" value="production">
+      <input type="hidden" name="page_url" value="https://kingdomcircuit.com/submit/artist/">
+      <section class="ai-section" aria-labelledby="ai-about-title">
+        <div class="ai-section-heading"><span class="ai-step" aria-hidden="true">01</span><h2 id="ai-about-title">Introduce yourself</h2></div>
+        <label class="ai-field">Artist or group name<input id="ai-name" name="artistName" autocomplete="organization" placeholder="Your artist name"></label>
+        <div class="ai-fields ai-contact-fields">
+          <label class="ai-field">Your name<input id="ai-submitter-name" name="submitter_name" autocomplete="name" placeholder="Your name" required></label>
+          <label class="ai-field">Your email<input id="ai-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required><small>For follow-up only. This won’t appear on your profile.</small></label>
+        </div>
+      </section>
+      <section class="ai-section" aria-labelledby="ai-photo-title">
+        <div class="ai-section-heading"><span class="ai-step" aria-hidden="true">02</span><h2 id="ai-photo-title">Your profile picture</h2></div>
+        <label class="ai-field" for="ai-photo-link">Photo link<input id="ai-photo-link" name="photoUrl" type="text" inputmode="url" autocapitalize="none" spellcheck="false" placeholder="Paste a link to your photo"></label>
+      </section>
+      <section class="ai-section" aria-labelledby="ai-links-title">
+        <div class="ai-section-heading"><span class="ai-step" aria-hidden="true">03</span><h2 id="ai-links-title">Where can we find you?</h2></div>
+        <div class="ai-fields">
+          <label class="ai-field" for="ai-website">Website or Linktree<input id="ai-website" name="website" type="text" inputmode="url" autocapitalize="none" spellcheck="false" placeholder="yourwebsite.com or linktr.ee/you"></label>
+          <label class="ai-field" for="ai-instagram"><span><i class="ai-social-dot ai-instagram" aria-hidden="true"></i>Instagram</span><input id="ai-instagram" name="instagram" type="text" autocapitalize="none" spellcheck="false" placeholder="@yourhandle or profile link"></label>
+          <label class="ai-field" for="ai-spotify"><span><i class="ai-social-dot ai-spotify" aria-hidden="true"></i>Spotify<input id="ai-spotify" name="spotify" type="text" inputmode="url" autocapitalize="none" spellcheck="false" placeholder="open.spotify.com/artist/…"></span></label>
+          <label class="ai-field" for="ai-youtube"><span><i class="ai-social-dot ai-youtube" aria-hidden="true"></i>YouTube</span><input id="ai-youtube" name="youtube" type="text" inputmode="url" autocapitalize="none" spellcheck="false" placeholder="youtube.com/@yourchannel"></label>
+        </div>
+      </section>
+      <div class="ai-section ai-last-section">
+        <button class="ai-submit" id="ai-submit" type="submit">Submit Profile <span aria-hidden="true">↗</span></button>
+        <p id="ai-submit-status" class="ai-submit-status" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+    <section id="ai-success" class="ai-success" tabindex="-1" hidden aria-labelledby="ai-success-title">
+      <h2 id="ai-success-title">Profile submitted!</h2>
+      <p>Thanks! We’ll review your profile for Kingdom Circuit.</p>
+    </section>
+  </div>
+</main>
