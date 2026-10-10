@@ -59,11 +59,14 @@ def verify(site):
     assert not {'novalidate', 'data-kc-artist-submit-form', 'data-submission-form'} & forms[0].keys()
     fields = {a.get('name'): a for t, a in parser.tags if t in ('input', 'textarea')}
     public = {'artistName', 'submitter_name', 'email', 'photoUrl', 'website', 'instagram', 'spotify', 'youtube'}
-    assert set(fields) == public | {'submission_type', 'subject', 'environment', 'page_url'}
+    assert set(fields) == public | {'submission_type', 'subject', 'environment', 'page_url', '_gotcha'}
     for name, attrs in fields.items():
         assert ('required' in attrs) == (name in {'submitter_name', 'email'})
         assert not {'pattern', 'maxlength'} & attrs.keys()
-        assert attrs.get('type', 'text') == ('email' if name == 'email' else 'text' if name in public else 'hidden')
+        assert attrs.get('type', 'text') == ('email' if name == 'email' else 'text' if name in public | {'_gotcha'} else 'hidden')
+    assert fields['_gotcha'].get('tabindex') == '-1' and fields['_gotcha'].get('autocomplete') == 'off'
+    assert not fields['_gotcha'].get('value'), 'Honeypot must start empty'
+    assert '<div hidden aria-hidden="true"><label>Leave this field empty<input name="_gotcha"' in page
     assert fields['environment']['value'] == 'production'
     assert fields['page_url']['value'] == URL
     assert fields['submission_type']['value'] == 'CHH artist submission'

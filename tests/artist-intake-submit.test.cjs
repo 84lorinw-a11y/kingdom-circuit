@@ -6,7 +6,7 @@ const vm = require('node:vm');
 const script = fs.readFileSync(path.join(__dirname, '../assets/artist-intake.js'), 'utf8');
 
 function harness(fetcher, values = {}) {
-  const fields = Object.entries({artistName: '', submitter_name: 'Test submitter', email: 'test@example.com', website: '', instagram: '', spotify: '', youtube: '', photoUrl: '', environment: 'production', submission_type: 'CHH artist submission', subject: 'Kingdom Circuit artist profile', page_url: '', ...values}).map(([name, value]) => ({name, value, disabled: false}));
+  const fields = Object.entries({artistName: '', submitter_name: 'Test submitter', email: 'test@example.com', website: '', instagram: '', spotify: '', youtube: '', photoUrl: '', environment: 'production', submission_type: 'CHH artist submission', subject: 'Kingdom Circuit artist profile', page_url: '', _gotcha: '', ...values}).map(([name, value]) => ({name, value, disabled: false}));
   const button = {disabled: false, textContent: 'Submit Profile'};
   const status = {textContent: '', classList: {add() {}, remove() {}}};
   const success = {hidden: true, focused: false, focus() {this.focused = true;}};
@@ -43,6 +43,7 @@ test('required contact fields and flexible profiles submit to the approved endpo
   assert.equal(request.body.get('submitter_name'), 'Test submitter');
   assert.equal(request.body.get('email'), 'test@example.com');
   assert.equal(request.body.get('photoUrl'), '');
+  assert.equal(request.body.get('_gotcha'), '');
   assert.equal(request.body.get('environment'), 'production');
   assert.equal(request.body.get('page_url'), 'https://kingdomcircuit.com/submit/artist/');
   assert.equal(request.body.has('contactEmail'), false);
