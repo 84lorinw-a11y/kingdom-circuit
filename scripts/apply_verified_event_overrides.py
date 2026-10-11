@@ -551,6 +551,17 @@ def sort_events(events: list[dict]) -> None:
     events.sort(key=lambda item: (str(item.get("startDate") or "9999-99-99"), str(item.get("startTime") or ""), str(item.get("title") or "")))
 
 
+def required_event_image_ids(cutoff: str | None = None) -> set[str]:
+    """Require current shows, while allowing completed shows to be archived."""
+    from apply_sep11_catalog_audit import NEW_EVENTS
+    from prune_past_events import is_past_event, today_cutoff
+
+    cutoff = cutoff or today_cutoff()
+    seeds = dict(NEW_EVENTS)
+    return {event_id for event_id in VERIFIED_EVENT_IMAGES
+            if not is_past_event(seeds.get(event_id, {}), cutoff)}
+
+
 def apply_verified_event_images(events: list[dict], supplemental: list[dict]) -> None:
     found: set[str] = set()
     for collection in (events, supplemental):
@@ -564,7 +575,7 @@ def apply_verified_event_images(events: list[dict], supplemental: list[dict]) ->
             event["imagePosition"] = "center"
             event["imageOverride"] = True
             found.add(event_id)
-    missing = set(VERIFIED_EVENT_IMAGES) - found
+    missing = required_event_image_ids() - found
     if missing:
         raise SystemExit(f"Verified Sep 11 image targets are missing: {sorted(missing)}")
 
@@ -673,7 +684,7 @@ def apply(root: Path) -> None:
         )
 
     image_targets = [event for event in combined if str(event.get("id") or "") in VERIFIED_EVENT_IMAGES]
-    if len({str(event.get("id")) for event in image_targets}) != len(VERIFIED_EVENT_IMAGES):
+    if required_event_image_ids() - {str(event.get("id")) for event in image_targets}:
         raise SystemExit("Verified Sep 11 event-image coverage is incomplete")
     if any("event-fallback.webp" in str(event.get("image") or "") or not event.get("image") for event in image_targets):
         raise SystemExit("A verified Sep 11 event still has generic image artwork")
