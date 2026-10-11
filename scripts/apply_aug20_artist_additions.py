@@ -53,7 +53,7 @@ VERIFIED_EVENTS = [
         "id":"supplemental:issac-mansfield-saved-by-grace-2026",
         "title":"SAVED BY GRACE",
         "startDate":"2026-10-03","startTime":"18:00","venue":"2842 S Alafaya Trail Ste 150","address":"2842 S Alafaya Trail Ste 150","city":"Orlando","state":"FL","country":"US",
-        "artists":["Issac Mansfield"],"headliner":"Issac Mansfield","eventType":"concert","status":"scheduled",
+        "artists":["Issac Mansfield","DJ Cam"],"headliner":"Issac Mansfield","eventType":"concert","status":"scheduled",
         "ticketUrl":"https://www.bandsintown.com/e/108746397-issac-mansfield-at-2842-s-alafaya-trail-ste-150-orlando-fl-32828?came_from=274","officialUrl":"https://www.bandsintown.com/e/108746397-issac-mansfield-at-2842-s-alafaya-trail-ste-150-orlando-fl-32828?came_from=274","image":"","price":"Free; optional VIP tiers",
         "sourceName":"Issac Mansfield verified Bandsintown event","authority":"artist_calendar","confidence":"high","lineupExplicit":True,
         "sources":[{"name":"Issac Mansfield Bandsintown","url":"https://www.bandsintown.com/e/108746397-issac-mansfield-at-2842-s-alafaya-trail-ste-150-orlando-fl-32828?came_from=274","type":"manual_verified","authority":"artist_calendar","priority":100}]

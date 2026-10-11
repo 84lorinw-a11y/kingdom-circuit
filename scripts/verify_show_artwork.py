@@ -11,6 +11,9 @@ from verify_egr_bizzle_updates import uses_image
 
 
 def verify(site: Path):
+    roster = json.loads((site / "config/artists.json").read_text())
+    curated = {builder.norm(artist["name"]): artist["name"]
+               for artist in roster if artist.get("enabled") is not False}
     rows = builder.merge_events(json.loads((site / "events.json").read_text()),
                                 json.loads((site / "supplemental-events.json").read_text()))
     by_id = {str(row["id"]).removeprefix("manual:"): row for row in rows}
@@ -42,11 +45,17 @@ def verify(site: Path):
             billing = html.unescape(re.search(r'<p class="artist-line">(.*?)</p>', text, re.S)[1])
             assert event["advertisedBilling"] == pin["advertisedBilling"]
             assert all(name in billing for name in pin["advertisedBilling"]), (pin["id"], "missing flyer performer")
-            assert 'href="/artists/issac-mansfield/"' in billing
-            for slug in ("josh-morgan", "dj-cam", "lev-nova", "junado"):
-                assert f'/artists/{slug}/' not in billing, (slug, "invented curated profile")
+            # A formerly unlinked performer can later join the reviewed roster.
+            # Validate the current roster instead of a historical five-person bill.
+            for name in pin["advertisedBilling"]:
+                canonical = curated.get(builder.norm(name))
+                path = builder.artist_path(canonical or name)
+                linked = f'href="{path}"' in billing
+                assert linked == bool(canonical), (pin["id"], name, "curated profile link")
+                if canonical:
+                    assert (site / path.strip("/") / "index.html").is_file(), (name, "missing artist page")
             schemas = [json.loads(raw) for raw in re.findall(r'<script type="application/ld\+json">(.*?)</script>', text, re.S)]
-            schema = next(s for s in schemas if s.get("@type") == "MusicEvent")
+            schema = next(s for s in schemas if s.get("@type") in {"MusicEvent", "Event", "Festival"})
             assert all(name in json.dumps(schema["performer"]) for name in pin["advertisedBilling"])
     checked_cards = 0
     for page in site.rglob("*.html"):

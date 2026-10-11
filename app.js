@@ -346,7 +346,8 @@ const ARTIST_ROSTER_ORDER = [
   "Darius Mullin",
   "tonyxtrotter",
   "Milla",
-  "Prodigal"
+  "Prodigal",
+  "DJ Cam"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -4979,6 +4980,24 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/4BYn8aKDAf0keMvw8k28Kb",
     "imageUrl": "assets/artists/ariel-kelly-verified-oct10.jpg",
     "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "dj cam": {
+    "aliases": [
+      "DJ Cam",
+      "DJ CAM",
+      "djcam.bpm",
+      "DJCam.BPM1",
+      "onlyonedjcam"
+    ],
+    "website": "https://links.fans/djcamofficial",
+    "instagramProfile": "https://www.instagram.com/djcam.bpm/",
+    "spotifyProfile": "https://open.spotify.com/artist/4CUorWy2zFBDiQuqMWTkxd",
+    "youtubeProfile": "https://music.youtube.com/@DJCam.BPM1",
+    "officialImageSource": "https://www.instagram.com/djcam.bpm/p/DeNFljrlrI0/",
+    "imageUrl": "assets/artists/dj-cam-official-oct11.jpg",
+    "imagePosition": "50% 20%",
+    "state": "FL",
     "sourceRegistryVerified": true
   }
 };
@@ -9614,6 +9633,24 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/prodigal-owner-supplied-oct9.png",
     "imagePosition": "50% 45%",
     "sourceRegistryVerified": true
+  },
+  "dj cam": {
+    "aliases": [
+      "DJ Cam",
+      "DJ CAM",
+      "djcam.bpm",
+      "DJCam.BPM1",
+      "onlyonedjcam"
+    ],
+    "website": "https://links.fans/djcamofficial",
+    "instagramProfile": "https://www.instagram.com/djcam.bpm/",
+    "spotifyProfile": "https://open.spotify.com/artist/4CUorWy2zFBDiQuqMWTkxd",
+    "youtubeProfile": "https://music.youtube.com/@DJCam.BPM1",
+    "officialImageSource": "https://www.instagram.com/djcam.bpm/p/DeNFljrlrI0/",
+    "imageUrl": "assets/artists/dj-cam-official-oct11.jpg",
+    "imagePosition": "50% 20%",
+    "state": "FL",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -10948,6 +10985,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "ariel kelly": {
     "imageUrl": "assets/artists/ariel-kelly-verified-oct10.jpg",
     "imagePosition": "50% 30%"
+  },
+  "dj cam": {
+    "imageUrl": "assets/artists/dj-cam-official-oct11.jpg",
+    "imagePosition": "50% 20%"
   }
 };
 
