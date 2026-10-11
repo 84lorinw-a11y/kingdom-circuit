@@ -5,7 +5,7 @@ from pathlib import Path
 import sys
 
 from artist_portraits import verify_site
-from build_seo_site import event_path
+from build_seo_site import current, event_path
 from catalog_removals import removed_event
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -45,7 +45,7 @@ def verify(site):
         approved.append(dict(patches[event_id], id=event_id))
     checked = 0
     for wanted in approved:
-        if wanted['id'] in OWNER_HELD_IDS:
+        if wanted['id'] in OWNER_HELD_IDS or not current(wanted):
             continue
         matches = [e for e in events if str(e.get('id')).removeprefix('manual:') == wanted['id']]
         # The primary and supplemental feeds can overlap, but they must agree.
