@@ -203,7 +203,7 @@ ASAP_PREACH_REVIVAL_URL = (
     "https://www.eventbrite.com/e/revival-nights-tickets-2000057247066"
 )
 ASAP_PREACH_REVIVAL_IMAGE = (
-    "assets/events/asap-preach-revival-nights-2026-11-21.jpg"
+    "assets/events/asap-preach-revival-nights-2026-11-21-portrait.jpg"
 )
 ASAP_PREACH_REVIVAL_EVENT = {
     "id": f"manual:{ASAP_PREACH_REVIVAL_EVENT_ID}",
@@ -297,7 +297,7 @@ VERIFIED_EVENT_IMAGES = {
     "mayia-boxyard-saturdaze-2026": "assets/events/mayia-boxyard-2026-10-10.png",
     "mayia-nc-state-fair-2026": "assets/artists/mayia-restored-show-photo.webp",
     "mission-friends-sacramento-2026": "assets/events/mission-sacramento-2026-10-17.jpg",
-    "alex-zurdo-zona-zero-san-juan-2026": "assets/events/alex-zurdo-zona-zero-2026-10-18.jpg",
+    "alex-zurdo-zona-zero-san-juan-2026": "assets/events/alex-zurdo-zona-zero-instagram-oct10.jpg",
     "miles-cj-zion-ultra-lounge-chandler-2026": "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
 }
 

@@ -17,7 +17,7 @@ REPLACEMENTS = {
     "/assets/events/mayia-boxyard-saturdaze-2026.svg": "/assets/events/mayia-boxyard-2026-10-10.png",
     "/assets/events/mayia-nc-state-fair-2026.svg": "/assets/artists/mayia-restored-show-photo.webp",
     "/assets/events/cj-emulous-kickback-2026.svg": "/assets/artists/cj-emulous-official-performance-oct10.jpeg",
-    "/assets/events/alex-zurdo-zona-zero-2026.svg": "/assets/events/alex-zurdo-zona-zero-2026-10-18.jpg",
+    "/assets/events/alex-zurdo-zona-zero-2026.svg": "/assets/events/alex-zurdo-zona-zero-instagram-oct10.jpg",
 }
 
 

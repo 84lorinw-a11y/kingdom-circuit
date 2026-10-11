@@ -38,10 +38,10 @@ ARTWORK_REPLACEMENTS = {
         "classification": 3
     },
     ("Alex Zurdo: Zona Zero", "2026-10-18"): {
-        "image": "assets/events/alex-zurdo-zona-zero-2026-10-18.jpg",
+        "image": "assets/events/alex-zurdo-zona-zero-instagram-oct10.jpg",
         "imageType": "event_artwork",
-        "source": "Official Ticketera Zona Zero artwork",
-        "sourceUrl": "https://choli.ticketera.com/event/alex-zurdo-zona-cero-6dn2x2",
+        "source": "Owner-selected Zona Zero Instagram artwork",
+        "sourceUrl": "https://www.instagram.com/p/Dd1MUzUxo3G/",
         "classification": 1,
     },
     ("The Kickback", "2026-11-14"): {

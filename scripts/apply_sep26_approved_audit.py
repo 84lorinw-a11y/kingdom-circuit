@@ -89,16 +89,16 @@ PATCHES = {
         "notes": "The Ticket Tailor listing covers the entire October 16–17 conference, opening Friday at 7 PM. The organizer's Saturday schedule explicitly lists Concert featuring Brenno at 3:30 PM on October 17. Kingdom Circuit lists that music performance, not the Friday conference opening.",
     },
     "bandsintown:108902772": {
-        **artwork("sazon-experience-giovani-2026-10-17.jpg",
-                  "https://www.eventbrite.com/e/the-sazon-experience-registration-1993733985019",
-                  "GIOVANI official Eventbrite Sazon Experience headline flyer"),
-        "detailImageLayout": "landscape",
+        **artwork("sazon-experience-giovani-instagram-oct10.jpg",
+                  "https://www.instagram.com/p/Dc3qJSjjhBS/",
+                  "Owner-selected GIOVANI official Instagram Sazon Experience flyer"),
+        "detailImageLayout": "portrait",
         "city": "Lakeland",
         "legacyEventPaths": ["/event/the-sazon-experience-2026-10-17-lakeland-estates-mobile-home-community-e9a5d0/"],
     },
     "alex-zurdo-zona-zero-san-juan-2026": artwork(
-        "alex-zurdo-zona-zero-2026-10-18.jpg", "https://choli.ticketera.com/event/alex-zurdo-zona-cero-6dn2x2",
-        "Official Ticketera Zona Zero concert artwork"),
+        "alex-zurdo-zona-zero-instagram-oct10.jpg", "https://www.instagram.com/p/Dd1MUzUxo3G/",
+        "Owner-selected Zona Zero Instagram concert artwork"),
 }
 
 

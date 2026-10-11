@@ -207,7 +207,7 @@ class September13LiveSiteFixTests(unittest.TestCase):
             "assets/events/one-day-festival-2026-10-10-lineup-crop.png",
             image_hotfix.PINS["one-day-fall-festival-aurora-2026"]["image"],
         )
-        self.assertEqual("assets/events/reign-volume-one-single-2026.jpg", verified.REIGN_IMAGE)
+        self.assertEqual("assets/events/reign-volume-one-2026-10-10-portrait.jpg", verified.REIGN_IMAGE)
         rare = next(event for event in verified.VERIFIED if event["id"] == "eventbrite:rare-of-breed-jacksonville-2026")
         self.assertEqual("cancelled", rare["status"])
         self.assertTrue(rare["cancellationConfirmed"])

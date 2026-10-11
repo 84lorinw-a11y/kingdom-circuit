@@ -14,7 +14,7 @@ AUDIT_DATE = "2026-09-13"
 KURTIS_IMAGE = "assets/artists/kurtis-hoppie-primary.jpg"
 MISSION_IMAGE = "assets/artists/mission-primary.jpg"
 UNIVERSAL_IMAGE = "assets/events/rock-the-universe-2027.jpg"
-REIGN_IMAGE = "assets/events/reign-volume-one-single-2026.jpg"
+REIGN_IMAGE = "assets/events/reign-volume-one-2026-10-10-portrait.jpg"
 RARE_CANCEL_URL = "https://www.eventbrite.com/e/cancelled-rare-of-breed-tickets-1986268845586"
 MAYIA_LINKS = {
     "mayia-boxyard-saturdaze-2026": {

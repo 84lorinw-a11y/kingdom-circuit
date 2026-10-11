@@ -18,13 +18,13 @@ PINS = {
         "imageSourceUrl": "https://www.instagram.com/runwchristden/p/Dd4WmfHEdta/?img_index=2",
     },
     "kelo-worship-after-christmas-jacksonville-2026": {
-        "image": "assets/events/kelo-worship-after-christmas-2026-12-26.jpg",
+        "image": "assets/events/kelo-worship-after-christmas-2026-12-26-portrait.jpg",
         "imageType": "event_artwork",
         "imagePosition": "center",
         "imageOverride": True,
-        "detailImageLayout": "landscape",
-        "imageSource": "Murray Hill Theatre official Eventbrite flyer",
-        "imageSourceUrl": "https://www.eventbrite.com/e/kelo-cho-presents-the-worship-after-christmas-tickets-1992972194483",
+        "detailImageLayout": "portrait",
+        "imageSource": "Owner-selected Kelo Cho official Instagram flyer",
+        "imageSourceUrl": "https://www.instagram.com/p/Dc6YJAmu9aj/",
     },
 }
 
