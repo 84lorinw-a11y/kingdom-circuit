@@ -2358,8 +2358,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/5Jgv9sRXt4V3TwSU1H41eQ",
     "youtubeProfile": "https://www.youtube.com/user/HisImageM",
     "officialImageSource": "https://www.cjemulous.com/",
-    "imageUrl": "assets/artists/cj-emulous-saved.webp",
-    "imagePosition": "50% 24%",
+    "imageUrl": "assets/artists/cj-emulous-official-performance-oct10.jpeg",
+    "imagePosition": "50% 30%",
     "sourceRegistryVerified": true
   },
   "nxtmike": {
@@ -6549,8 +6549,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/5Jgv9sRXt4V3TwSU1H41eQ",
     "youtubeProfile": "https://www.youtube.com/user/HisImageM",
     "officialImageSource": "https://www.cjemulous.com/",
-    "imageUrl": "assets/artists/cj-emulous-saved.webp",
-    "imagePosition": "50% 24%",
+    "imageUrl": "assets/artists/cj-emulous-official-performance-oct10.jpeg",
+    "imagePosition": "50% 30%",
     "sourceRegistryVerified": true
   },
   "nxtmike": {
@@ -9316,8 +9316,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "center"
   },
   "cj emulous": {
-    "imageUrl": "assets/artists/cj-emulous-saved.webp",
-    "imagePosition": "50% 24%"
+    "imageUrl": "assets/artists/cj-emulous-official-performance-oct10.jpeg",
+    "imagePosition": "50% 30%"
   },
   "nxtmike": {
     "imageUrl": "assets/artists/nxtmike-about.webp",
