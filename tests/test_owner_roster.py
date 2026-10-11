@@ -6,18 +6,23 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from owner_roster import order_records, filter_events, filter_source_records, verify_records
+from owner_roster import order_records, filter_events, filter_source_records, verify_records, snapshot, removed_names
 from verify_owner_roster import verify
 from sync_verified_artist_registry import registry_payload
 
 
 class OwnerRosterTests(unittest.TestCase):
     def test_reviewed_roster_socials_and_portraits_are_complete(self):
-        self.assertEqual(verify(), {"artists": 345, "verified": 300, "removed": 72})
+        reviewed = snapshot()
+        self.assertEqual(verify(), {
+            "artists": len(reviewed),
+            "verified": sum(row["verified"] for row in reviewed),
+            "removed": len(removed_names()),
+        })
 
     def test_stale_writer_cannot_restore_deleted_artists(self):
         artists = json.loads((ROOT / "config/artists.json").read_text())
-        stale = copy.deepcopy(artists) + [{"name": "Madison Ryann Ward"}, {"name": "Kaleb Mitchell"}]
+        stale = copy.deepcopy(artists) + [{"name": name} for name in removed_names()]
         self.assertEqual(order_records(stale), artists)
         with self.assertRaises(ValueError):
             verify_records(stale)

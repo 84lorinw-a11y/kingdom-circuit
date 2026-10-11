@@ -843,18 +843,6 @@
     "softFail": true
   },
   {
-    "name": "IMRSQD official Alienz Alive profile",
-    "url": "https://alienzalive.com/artist/imrsqd/",
-    "parser": "jsonld",
-    "enabled": true,
-    "artist": "IMRSQD",
-    "authority": "artist_label",
-    "priority": 82,
-    "imagePolicy": "event_artwork",
-    "musicConfirmed": true,
-    "softFail": true
-  },
-  {
     "name": "TJ Carroll official site",
     "url": "https://www.tjcarrollmusic.com/",
     "parser": "jsonld",

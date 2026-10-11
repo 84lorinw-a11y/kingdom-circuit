@@ -535,7 +535,7 @@ class KingdomCircuitV7Tests(unittest.TestCase):
             "Tommy Chapa", "B. Cody Shields", "Santana Rose", "DJ Winn",
             "J.List", "KJ-52", "Young Bro",
             "D-Maub", "K-Drama", "GAWVI", "Monster Tarver", "Taelor Gray",
-            "ZEE", "IMRSQD", "TJ Carroll", "CJ Emulous",
+            "ZEE", "TJ Carroll", "CJ Emulous",
             "Lul DreDay", "REDEEMED", "Pishko",
         }
         self.assertTrue(expected.issubset(names))
@@ -596,14 +596,14 @@ class KingdomCircuitV7Tests(unittest.TestCase):
         }
         self.assertTrue(expected.issubset(identifiers))
 
-    def test_master_roster_has_345_unique_artists(self):
+    def test_master_roster_has_333_unique_artists(self):
         artists = json.loads((ROOT / "config" / "artists.json").read_text())
         names = [item["name"] for item in artists]
-        self.assertEqual(len(names), 345)
-        self.assertEqual(len({name.casefold() for name in names}), 345)
+        self.assertEqual(len(names), 333)
+        self.assertEqual(len({name.casefold() for name in names}), 333)
         self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 1), 91)
-        self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 2), 143)
-        self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 3), 111)
+        self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 2), 142)
+        self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 3), 100)
 
     def test_top_streaming_priority_artists_are_present(self):
         artists = json.loads((ROOT / "config" / "artists.json").read_text())

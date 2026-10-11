@@ -291,14 +291,10 @@ const ARTIST_ROSTER_ORDER = [
   "J-Phish",
   "B4L Lil Don",
   "T Log",
-  "Alex Faith",
   "Tony Tillman",
   "Dillon Chase",
   "Json",
   "Stephen the Levite",
-  "Timothy Brindle",
-  "Hazakim",
-  "God's Servant",
   "350",
   "Battz",
   "De La Cruz",
@@ -309,31 +305,23 @@ const ARTIST_ROSTER_ORDER = [
   "K-Drama",
   "Taelor Gray",
   "ZEE",
-  "IMRSQD",
   "TJ Carroll",
   "Pishko",
-  "Gemstones",
   "Mouthpi3ce",
   "Deraj",
-  "Surf Gvng",
-  "Dru Bex",
   "Mr. Del",
-  "Pettidee",
   "Fresh IE",
   "Applejaxx",
   "Fedel",
-  "Antwoine Hill",
   "Brandon Trejo",
   "Isaiah Robin",
   "Guvna B",
-  "Faith Child",
   "Still Shadey",
   "Feed'Em",
   "Reblah",
   "Triple O",
   "Dwayne Tryumf",
   "Manny Montes",
-  "Lizzy Parra",
   "Rubinsky RBK",
   "Ariel Kelly",
   "Von Won",
@@ -4549,6 +4537,449 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/prodigal-owner-supplied-oct9.png",
     "imagePosition": "50% 45%",
     "sourceRegistryVerified": true
+  },
+  "tony tillman": {
+    "aliases": [
+      "Tony Tillman"
+    ],
+    "website": "https://www.instagram.com/thetonytillman/",
+    "instagramProfile": "https://www.instagram.com/thetonytillman/",
+    "spotifyProfile": "https://open.spotify.com/artist/3ykPxobhwzrQ2a15hEFWAo",
+    "youtubeProfile": "https://www.youtube.com/channel/UCpKEjkY0gbeK_Hd7GprQLKQ",
+    "officialImageSource": "https://tidal.com/artist/4940095",
+    "imageUrl": "assets/artists/tony-tillman-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "dillon chase": {
+    "aliases": [
+      "Dillon Chase"
+    ],
+    "website": "https://www.dillonchasemusic.com/",
+    "instagramProfile": "https://www.instagram.com/DILLONCHASEOK/",
+    "spotifyProfile": "https://open.spotify.com/artist/3cj7pwtC0GuRFHayrbazV8",
+    "youtubeProfile": "https://youtube.com/user/DILLONDARNELL",
+    "officialImageSource": "https://open.spotify.com/artist/3cj7pwtC0GuRFHayrbazV8",
+    "imageUrl": "assets/artists/dillon-chase-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "json": {
+    "aliases": [
+      "Json"
+    ],
+    "website": "https://www.instagram.com/json314/",
+    "instagramProfile": "https://www.instagram.com/json314/",
+    "spotifyProfile": "https://open.spotify.com/artist/5eAZLsVlw4VKkwtQS9cfrX",
+    "youtubeProfile": "",
+    "officialImageSource": "https://open.spotify.com/artist/5eAZLsVlw4VKkwtQS9cfrX",
+    "imageUrl": "assets/artists/json-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "stephen the levite": {
+    "aliases": [
+      "Stephen the Levite"
+    ],
+    "website": "https://linktr.ee/dawhistleblower",
+    "instagramProfile": "https://www.instagram.com/dawhistleblower/",
+    "spotifyProfile": "https://open.spotify.com/artist/7z4TYm4hfoTTndoQ4ChmJC",
+    "youtubeProfile": "https://youtube.com/c/DarrellBellJr",
+    "officialImageSource": "https://open.spotify.com/artist/7z4TYm4hfoTTndoQ4ChmJC",
+    "imageUrl": "assets/artists/stephen-the-levite-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "350": {
+    "aliases": [
+      "350"
+    ],
+    "website": "https://www.fvr.fan/350",
+    "instagramProfile": "https://www.instagram.com/350music/",
+    "spotifyProfile": "https://open.spotify.com/artist/7tLS8BRv5KP3jPwm3KdsPl",
+    "youtubeProfile": "https://youtube.com/channel/UCgwiLuJDlN3T5OrP5tJKT4Q",
+    "officialImageSource": "https://open.spotify.com/artist/7tLS8BRv5KP3jPwm3KdsPl",
+    "imageUrl": "assets/artists/350-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "battz": {
+    "aliases": [
+      "Battz"
+    ],
+    "website": "https://hoo.be/battz",
+    "instagramProfile": "https://www.instagram.com/battz_/",
+    "spotifyProfile": "https://open.spotify.com/artist/1l528yNr0Jpv2dqg4r06kI",
+    "youtubeProfile": "https://www.youtube.com/channel/UCC1PTPoHDukKuqZhozVMDwQ",
+    "officialImageSource": "https://open.spotify.com/artist/1l528yNr0Jpv2dqg4r06kI",
+    "imageUrl": "assets/artists/battz-verified-oct10.jpg",
+    "imagePosition": "50% 25%",
+    "sourceRegistryVerified": true
+  },
+  "de la cruz": {
+    "aliases": [
+      "De La Cruz"
+    ],
+    "website": "https://linktr.ee/DeLaCruz14",
+    "instagramProfile": "https://www.instagram.com/crossboydelacruz/",
+    "spotifyProfile": "https://open.spotify.com/artist/6U4TcvAHuizFqLcWXiMkRD",
+    "youtubeProfile": "https://youtube.com/channel/UCa0kYI8qLDA1yrguMIHwiTA",
+    "officialImageSource": "https://open.spotify.com/artist/6U4TcvAHuizFqLcWXiMkRD",
+    "imageUrl": "assets/artists/de-la-cruz-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "q-flo": {
+    "aliases": [
+      "Q-Flo",
+      "Q Flo"
+    ],
+    "website": "https://www.fvr.fan/q-flomusic",
+    "instagramProfile": "https://www.instagram.com/qflomusic_215/",
+    "spotifyProfile": "https://open.spotify.com/artist/0z2ZQQqy9K2IhXbIvcjNWv",
+    "youtubeProfile": "https://youtube.com/channel/UCmYspOrao6OzrpahMcqj78A",
+    "officialImageSource": "https://open.spotify.com/artist/0z2ZQQqy9K2IhXbIvcjNWv",
+    "imageUrl": "assets/artists/q-flo-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "swaizy": {
+    "aliases": [
+      "Swaizy"
+    ],
+    "website": "https://linktr.ee/swaizyofficial",
+    "instagramProfile": "https://www.instagram.com/swaizyofficial/",
+    "spotifyProfile": "https://open.spotify.com/artist/2dMkqn8YOKg6IwN85zo7gL",
+    "youtubeProfile": "https://youtube.com/@swaizy",
+    "officialImageSource": "https://open.spotify.com/artist/2dMkqn8YOKg6IwN85zo7gL",
+    "imageUrl": "assets/artists/swaizy-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "j.list": {
+    "aliases": [
+      "J.List",
+      "J List",
+      "JLIST"
+    ],
+    "website": "https://www.instagram.com/jlist116/",
+    "instagramProfile": "https://www.instagram.com/jlist116/",
+    "spotifyProfile": "https://open.spotify.com/artist/20EEpx9CknyDVqgFPgYpsp",
+    "youtubeProfile": "https://www.youtube.com/channel/UCiD1s4webgfk3I2ZZjzSDEg",
+    "officialImageSource": "https://www.youtube.com/channel/UCiD1s4webgfk3I2ZZjzSDEg",
+    "imageUrl": "assets/artists/j-list-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "d-maub": {
+    "aliases": [
+      "D-Maub",
+      "D Maub",
+      "Dmaub"
+    ],
+    "website": "https://www.instagram.com/official.dmaub/",
+    "instagramProfile": "https://www.instagram.com/official.dmaub/",
+    "spotifyProfile": "https://open.spotify.com/artist/0jH13o70Ipbsz7pC4nnHOm",
+    "youtubeProfile": "https://www.youtube.com/channel/UCRI9wqxUpV6IBSbFTPIAyhw",
+    "officialImageSource": "https://poplme.co/hash/WrbIGSqF/3/s",
+    "imageUrl": "assets/artists/d-maub-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "k-drama": {
+    "aliases": [
+      "K-Drama",
+      "K Drama",
+      "K-Drama the Rapper"
+    ],
+    "website": "https://www.instagram.com/kdrama513/",
+    "instagramProfile": "https://www.instagram.com/kdrama513/",
+    "spotifyProfile": "https://open.spotify.com/artist/1PXBwNCd6LaX8iJTDwdC30",
+    "youtubeProfile": "https://www.youtube.com/kdrama513",
+    "officialImageSource": "https://open.spotify.com/artist/1PXBwNCd6LaX8iJTDwdC30",
+    "imageUrl": "assets/artists/k-drama-verified-oct10.jpg",
+    "imagePosition": "50% 20%",
+    "sourceRegistryVerified": true
+  },
+  "taelor gray": {
+    "aliases": [
+      "Taelor Gray"
+    ],
+    "website": "https://linktr.ee/taelor_gray",
+    "instagramProfile": "https://www.instagram.com/taelor_gray/",
+    "spotifyProfile": "https://open.spotify.com/artist/581tKXVRFKxu6aSyhYMqan",
+    "youtubeProfile": "https://www.youtube.com/channel/UCXGLc4lYkVELXyvUSy4oxcQ",
+    "officialImageSource": "https://www.youtube.com/channel/UCXGLc4lYkVELXyvUSy4oxcQ",
+    "imageUrl": "assets/artists/taelor-gray-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "zee": {
+    "aliases": [
+      "ZEE",
+      "408Zee",
+      "408 ZEE"
+    ],
+    "website": "https://www.instagram.com/408zee/",
+    "instagramProfile": "https://www.instagram.com/408zee/",
+    "spotifyProfile": "https://open.spotify.com/artist/0d2diExytbLBj7Ff3FLX9p",
+    "youtubeProfile": "https://www.youtube.com/channel/UCSBBlaJJ-tk9zg_1VTh0ndw",
+    "officialImageSource": "https://www.youtube.com/channel/UCSBBlaJJ-tk9zg_1VTh0ndw",
+    "imageUrl": "assets/artists/zee-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "tj carroll": {
+    "aliases": [
+      "TJ Carroll",
+      "T.J. Carroll"
+    ],
+    "website": "https://www.instagram.com/tjcarroll_/",
+    "instagramProfile": "https://www.instagram.com/tjcarroll_/",
+    "spotifyProfile": "https://open.spotify.com/artist/1lklT6lHzwo3ZOJpDVoLyH",
+    "youtubeProfile": "https://www.youtube.com/@tjcarroll_",
+    "officialImageSource": "https://open.spotify.com/artist/1lklT6lHzwo3ZOJpDVoLyH",
+    "imageUrl": "assets/artists/tj-carroll-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "label": "Alienz Alive",
+    "sourceRegistryVerified": true
+  },
+  "pishko": {
+    "aliases": [
+      "Pishko",
+      "PISHKO"
+    ],
+    "website": "https://linktr.ee/PISHKO",
+    "instagramProfile": "https://www.instagram.com/pishkomusic/",
+    "spotifyProfile": "https://open.spotify.com/artist/16dnHAXP1cxzQJkiPqp6eS",
+    "youtubeProfile": "https://www.youtube.com/channel/UCPyPeuJBS0UdmLf0TRDoI6A",
+    "officialImageSource": "https://linktr.ee/PISHKO",
+    "imageUrl": "assets/artists/pishko-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "mouthpi3ce": {
+    "aliases": [
+      "Mouthpi3ce"
+    ],
+    "website": "https://linktr.ee/Mouthpi3ce",
+    "instagramProfile": "https://www.instagram.com/mouthpi3ce/",
+    "spotifyProfile": "https://open.spotify.com/artist/5ccLg9PXtgNpXdkIzw7Pvw",
+    "youtubeProfile": "https://www.youtube.com/channel/UCUlFE53PLW07PNqlTvpjoMg",
+    "officialImageSource": "https://open.spotify.com/artist/5ccLg9PXtgNpXdkIzw7Pvw",
+    "imageUrl": "assets/artists/mouthpi3ce-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "deraj": {
+    "aliases": [
+      "Deraj"
+    ],
+    "website": "https://bio.site/justderaj",
+    "instagramProfile": "https://www.instagram.com/justderaj/",
+    "spotifyProfile": "https://open.spotify.com/artist/1iYLxzjCinlEJENGThVxjD",
+    "youtubeProfile": "https://www.youtube.com/justderaj",
+    "officialImageSource": "https://bio.site/justderaj",
+    "imageUrl": "assets/artists/deraj-verified-oct10.png",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "mr. del": {
+    "aliases": [
+      "Mr. Del"
+    ],
+    "website": "https://mrdelmusic.com",
+    "instagramProfile": "https://www.instagram.com/mrdelmusic/",
+    "spotifyProfile": "https://open.spotify.com/artist/72OoayCtuiXdffq3pECRFF",
+    "youtubeProfile": "https://www.youtube.com/@MrDel",
+    "officialImageSource": "https://mrdel.net/",
+    "imageUrl": "assets/artists/mr-del-verified-oct10.jpg",
+    "imagePosition": "50% 10%",
+    "sourceRegistryVerified": true
+  },
+  "fresh ie": {
+    "aliases": [
+      "Fresh IE",
+      "Fresh I.E."
+    ],
+    "website": "https://freshmusic.ca/",
+    "instagramProfile": "https://www.instagram.com/fresh_kmf/",
+    "spotifyProfile": "https://open.spotify.com/artist/1zAgmjKrBKZYNvfCp0uW52",
+    "youtubeProfile": "https://www.youtube.com/user/freshneturnity/featured",
+    "officialImageSource": "https://www.youtube.com/user/freshneturnity/featured",
+    "imageUrl": "assets/artists/fresh-ie-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "applejaxx": {
+    "aliases": [
+      "Applejaxx"
+    ],
+    "website": "https://www.instagram.com/itsapplejaxx/",
+    "instagramProfile": "https://www.instagram.com/itsapplejaxx/",
+    "spotifyProfile": "https://open.spotify.com/artist/1UbaPYO2HTw3ZkjnmantUJ",
+    "youtubeProfile": "https://www.youtube.com/user/fadacy",
+    "officialImageSource": "https://open.spotify.com/artist/1UbaPYO2HTw3ZkjnmantUJ",
+    "imageUrl": "assets/artists/applejaxx-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "fedel": {
+    "aliases": [
+      "Fedel"
+    ],
+    "website": "https://www.instagram.com/fedelmusic/",
+    "instagramProfile": "https://www.instagram.com/fedelmusic/",
+    "spotifyProfile": "https://open.spotify.com/artist/7EWlStyJsdfPvz0xeGBgTy",
+    "youtubeProfile": "https://www.youtube.com/@fedelity7/videos",
+    "officialImageSource": "https://www.youtube.com/@fedelity7/videos",
+    "imageUrl": "assets/artists/fedel-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "brandon trejo": {
+    "aliases": [
+      "Brandon Trejo"
+    ],
+    "website": "https://www.instagram.com/brandon_trejo423/",
+    "instagramProfile": "https://www.instagram.com/brandon_trejo423/",
+    "spotifyProfile": "https://open.spotify.com/artist/4o4k2cDgTsobe3Vwgj4M5Y",
+    "youtubeProfile": "https://www.youtube.com/@brandontrejokmf",
+    "officialImageSource": "https://www.youtube.com/@brandontrejokmf",
+    "imageUrl": "assets/artists/brandon-trejo-verified-oct10.jpg",
+    "imagePosition": "50% 25%",
+    "sourceRegistryVerified": true
+  },
+  "isaiah robin": {
+    "aliases": [
+      "Isaiah Robin"
+    ],
+    "website": "https://www.instagram.com/isaiahrobinofficial/",
+    "instagramProfile": "https://www.instagram.com/isaiahrobinofficial/",
+    "spotifyProfile": "https://open.spotify.com/artist/230c9mWkHDDHfHf0v24RG2",
+    "youtubeProfile": "https://www.youtube.com/channel/UCryx4S2DSusuSJarbVrA8jQ",
+    "officialImageSource": "https://open.spotify.com/artist/230c9mWkHDDHfHf0v24RG2",
+    "imageUrl": "assets/artists/isaiah-robin-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "guvna b": {
+    "aliases": [
+      "Guvna B"
+    ],
+    "website": "https://www.guvnab.com/",
+    "instagramProfile": "https://www.instagram.com/guvnab/",
+    "spotifyProfile": "https://open.spotify.com/artist/3XgNFNKLstByGKqplDht0H",
+    "youtubeProfile": "https://www.youtube.com/channel/UCD082TgM1c-cAeJ_D2x_DqA",
+    "officialImageSource": "https://open.spotify.com/artist/3XgNFNKLstByGKqplDht0H",
+    "imageUrl": "assets/artists/guvna-b-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "still shadey": {
+    "aliases": [
+      "Still Shadey"
+    ],
+    "website": "https://www.stillshadey.com/",
+    "instagramProfile": "https://www.instagram.com/stillshadey/",
+    "spotifyProfile": "https://open.spotify.com/artist/7r4NtPJ0mYRidQYQtxq8sV",
+    "youtubeProfile": "https://www.youtube.com/stillshadey",
+    "officialImageSource": "https://open.spotify.com/artist/7r4NtPJ0mYRidQYQtxq8sV",
+    "imageUrl": "assets/artists/still-shadey-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "feed'em": {
+    "aliases": [
+      "Feed'Em",
+      "Feed Em"
+    ],
+    "website": "https://www.feedemartist.com/",
+    "instagramProfile": "https://www.instagram.com/feedemartist/",
+    "spotifyProfile": "https://open.spotify.com/artist/66Hu6kzjWXGUdTdCCIzmW4",
+    "youtubeProfile": "https://www.youtube.com/feedemartist",
+    "officialImageSource": "https://open.spotify.com/artist/66Hu6kzjWXGUdTdCCIzmW4",
+    "imageUrl": "assets/artists/feed-em-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "reblah": {
+    "aliases": [
+      "Reblah"
+    ],
+    "website": "https://linktr.ee/Reblah",
+    "instagramProfile": "https://www.instagram.com/reblahofficial/",
+    "spotifyProfile": "https://open.spotify.com/artist/7EHtFdWeBK26GJ5lKt02SV",
+    "youtubeProfile": "https://www.youtube.com/@reblah",
+    "officialImageSource": "https://open.spotify.com/artist/7EHtFdWeBK26GJ5lKt02SV",
+    "imageUrl": "assets/artists/reblah-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "triple o": {
+    "aliases": [
+      "Triple O"
+    ],
+    "website": "https://linktr.ee/Tripleomusic",
+    "instagramProfile": "https://www.instagram.com/tripleomusic/",
+    "spotifyProfile": "https://open.spotify.com/artist/5XcUqQbaEWVFP2PU6HAnDT",
+    "youtubeProfile": "https://www.youtube.com/@tripleomusic",
+    "officialImageSource": "https://open.spotify.com/artist/5XcUqQbaEWVFP2PU6HAnDT",
+    "imageUrl": "assets/artists/triple-o-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "dwayne tryumf": {
+    "aliases": [
+      "Dwayne Tryumf"
+    ],
+    "website": "https://tryumfant.com/",
+    "instagramProfile": "https://www.instagram.com/dwaynetryumf/",
+    "spotifyProfile": "https://open.spotify.com/artist/75sReJhZ3hjZctu6vtoGj6",
+    "youtubeProfile": "https://youtube.com/@tryumf",
+    "officialImageSource": "https://open.spotify.com/artist/75sReJhZ3hjZctu6vtoGj6",
+    "imageUrl": "assets/artists/dwayne-tryumf-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "manny montes": {
+    "aliases": [
+      "Manny Montes"
+    ],
+    "website": "https://www.instagram.com/mannymontes7/",
+    "instagramProfile": "https://www.instagram.com/mannymontes7/",
+    "spotifyProfile": "https://open.spotify.com/artist/41A1tLHviwiCao1vXl1cgd",
+    "youtubeProfile": "https://www.youtube.com/MannyMontesTV",
+    "officialImageSource": "https://www.youtube.com/MannyMontesTV",
+    "imageUrl": "assets/artists/manny-montes-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "rubinsky rbk": {
+    "aliases": [
+      "Rubinsky RBK"
+    ],
+    "website": "https://www.instagram.com/rubinskyrbk/",
+    "instagramProfile": "https://www.instagram.com/rubinskyrbk/",
+    "spotifyProfile": "https://open.spotify.com/artist/5K6MRaKDEJ1bLuHQQFaUFH",
+    "youtubeProfile": "https://www.youtube.com/channel/UCpBXVjiK3PLdQTPa877mNwQ",
+    "officialImageSource": "https://www.youtube.com/channel/UCpBXVjiK3PLdQTPa877mNwQ",
+    "imageUrl": "assets/artists/rubinsky-rbk-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "ariel kelly": {
+    "aliases": [
+      "Ariel Kelly"
+    ],
+    "website": "https://www.instagram.com/arielkelly47/",
+    "instagramProfile": "https://www.instagram.com/arielkelly47/",
+    "spotifyProfile": "https://open.spotify.com/artist/4BYn8aKDAf0keMvw8k28Kb",
+    "youtubeProfile": "https://www.youtube.com/@arielkellyoficial",
+    "officialImageSource": "https://open.spotify.com/artist/4BYn8aKDAf0keMvw8k28Kb",
+    "imageUrl": "assets/artists/ariel-kelly-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
   }
 };
 const VERIFIED_ARTIST_REGISTRY_UPDATES = {
@@ -8370,6 +8801,449 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imagePosition": "53% 15%",
     "sourceRegistryVerified": true
   },
+  "tony tillman": {
+    "aliases": [
+      "Tony Tillman"
+    ],
+    "website": "https://www.instagram.com/thetonytillman/",
+    "instagramProfile": "https://www.instagram.com/thetonytillman/",
+    "spotifyProfile": "https://open.spotify.com/artist/3ykPxobhwzrQ2a15hEFWAo",
+    "youtubeProfile": "https://www.youtube.com/channel/UCpKEjkY0gbeK_Hd7GprQLKQ",
+    "officialImageSource": "https://tidal.com/artist/4940095",
+    "imageUrl": "assets/artists/tony-tillman-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "dillon chase": {
+    "aliases": [
+      "Dillon Chase"
+    ],
+    "website": "https://www.dillonchasemusic.com/",
+    "instagramProfile": "https://www.instagram.com/DILLONCHASEOK/",
+    "spotifyProfile": "https://open.spotify.com/artist/3cj7pwtC0GuRFHayrbazV8",
+    "youtubeProfile": "https://youtube.com/user/DILLONDARNELL",
+    "officialImageSource": "https://open.spotify.com/artist/3cj7pwtC0GuRFHayrbazV8",
+    "imageUrl": "assets/artists/dillon-chase-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "json": {
+    "aliases": [
+      "Json"
+    ],
+    "website": "https://www.instagram.com/json314/",
+    "instagramProfile": "https://www.instagram.com/json314/",
+    "spotifyProfile": "https://open.spotify.com/artist/5eAZLsVlw4VKkwtQS9cfrX",
+    "youtubeProfile": "",
+    "officialImageSource": "https://open.spotify.com/artist/5eAZLsVlw4VKkwtQS9cfrX",
+    "imageUrl": "assets/artists/json-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "stephen the levite": {
+    "aliases": [
+      "Stephen the Levite"
+    ],
+    "website": "https://linktr.ee/dawhistleblower",
+    "instagramProfile": "https://www.instagram.com/dawhistleblower/",
+    "spotifyProfile": "https://open.spotify.com/artist/7z4TYm4hfoTTndoQ4ChmJC",
+    "youtubeProfile": "https://youtube.com/c/DarrellBellJr",
+    "officialImageSource": "https://open.spotify.com/artist/7z4TYm4hfoTTndoQ4ChmJC",
+    "imageUrl": "assets/artists/stephen-the-levite-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "350": {
+    "aliases": [
+      "350"
+    ],
+    "website": "https://www.fvr.fan/350",
+    "instagramProfile": "https://www.instagram.com/350music/",
+    "spotifyProfile": "https://open.spotify.com/artist/7tLS8BRv5KP3jPwm3KdsPl",
+    "youtubeProfile": "https://youtube.com/channel/UCgwiLuJDlN3T5OrP5tJKT4Q",
+    "officialImageSource": "https://open.spotify.com/artist/7tLS8BRv5KP3jPwm3KdsPl",
+    "imageUrl": "assets/artists/350-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "battz": {
+    "aliases": [
+      "Battz"
+    ],
+    "website": "https://hoo.be/battz",
+    "instagramProfile": "https://www.instagram.com/battz_/",
+    "spotifyProfile": "https://open.spotify.com/artist/1l528yNr0Jpv2dqg4r06kI",
+    "youtubeProfile": "https://www.youtube.com/channel/UCC1PTPoHDukKuqZhozVMDwQ",
+    "officialImageSource": "https://open.spotify.com/artist/1l528yNr0Jpv2dqg4r06kI",
+    "imageUrl": "assets/artists/battz-verified-oct10.jpg",
+    "imagePosition": "50% 25%",
+    "sourceRegistryVerified": true
+  },
+  "de la cruz": {
+    "aliases": [
+      "De La Cruz"
+    ],
+    "website": "https://linktr.ee/DeLaCruz14",
+    "instagramProfile": "https://www.instagram.com/crossboydelacruz/",
+    "spotifyProfile": "https://open.spotify.com/artist/6U4TcvAHuizFqLcWXiMkRD",
+    "youtubeProfile": "https://youtube.com/channel/UCa0kYI8qLDA1yrguMIHwiTA",
+    "officialImageSource": "https://open.spotify.com/artist/6U4TcvAHuizFqLcWXiMkRD",
+    "imageUrl": "assets/artists/de-la-cruz-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "q-flo": {
+    "aliases": [
+      "Q-Flo",
+      "Q Flo"
+    ],
+    "website": "https://www.fvr.fan/q-flomusic",
+    "instagramProfile": "https://www.instagram.com/qflomusic_215/",
+    "spotifyProfile": "https://open.spotify.com/artist/0z2ZQQqy9K2IhXbIvcjNWv",
+    "youtubeProfile": "https://youtube.com/channel/UCmYspOrao6OzrpahMcqj78A",
+    "officialImageSource": "https://open.spotify.com/artist/0z2ZQQqy9K2IhXbIvcjNWv",
+    "imageUrl": "assets/artists/q-flo-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "swaizy": {
+    "aliases": [
+      "Swaizy"
+    ],
+    "website": "https://linktr.ee/swaizyofficial",
+    "instagramProfile": "https://www.instagram.com/swaizyofficial/",
+    "spotifyProfile": "https://open.spotify.com/artist/2dMkqn8YOKg6IwN85zo7gL",
+    "youtubeProfile": "https://youtube.com/@swaizy",
+    "officialImageSource": "https://open.spotify.com/artist/2dMkqn8YOKg6IwN85zo7gL",
+    "imageUrl": "assets/artists/swaizy-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "j.list": {
+    "aliases": [
+      "J.List",
+      "J List",
+      "JLIST"
+    ],
+    "website": "https://www.instagram.com/jlist116/",
+    "instagramProfile": "https://www.instagram.com/jlist116/",
+    "spotifyProfile": "https://open.spotify.com/artist/20EEpx9CknyDVqgFPgYpsp",
+    "youtubeProfile": "https://www.youtube.com/channel/UCiD1s4webgfk3I2ZZjzSDEg",
+    "officialImageSource": "https://www.youtube.com/channel/UCiD1s4webgfk3I2ZZjzSDEg",
+    "imageUrl": "assets/artists/j-list-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "d-maub": {
+    "aliases": [
+      "D-Maub",
+      "D Maub",
+      "Dmaub"
+    ],
+    "website": "https://www.instagram.com/official.dmaub/",
+    "instagramProfile": "https://www.instagram.com/official.dmaub/",
+    "spotifyProfile": "https://open.spotify.com/artist/0jH13o70Ipbsz7pC4nnHOm",
+    "youtubeProfile": "https://www.youtube.com/channel/UCRI9wqxUpV6IBSbFTPIAyhw",
+    "officialImageSource": "https://poplme.co/hash/WrbIGSqF/3/s",
+    "imageUrl": "assets/artists/d-maub-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "k-drama": {
+    "aliases": [
+      "K-Drama",
+      "K Drama",
+      "K-Drama the Rapper"
+    ],
+    "website": "https://www.instagram.com/kdrama513/",
+    "instagramProfile": "https://www.instagram.com/kdrama513/",
+    "spotifyProfile": "https://open.spotify.com/artist/1PXBwNCd6LaX8iJTDwdC30",
+    "youtubeProfile": "https://www.youtube.com/kdrama513",
+    "officialImageSource": "https://open.spotify.com/artist/1PXBwNCd6LaX8iJTDwdC30",
+    "imageUrl": "assets/artists/k-drama-verified-oct10.jpg",
+    "imagePosition": "50% 20%",
+    "sourceRegistryVerified": true
+  },
+  "taelor gray": {
+    "aliases": [
+      "Taelor Gray"
+    ],
+    "website": "https://linktr.ee/taelor_gray",
+    "instagramProfile": "https://www.instagram.com/taelor_gray/",
+    "spotifyProfile": "https://open.spotify.com/artist/581tKXVRFKxu6aSyhYMqan",
+    "youtubeProfile": "https://www.youtube.com/channel/UCXGLc4lYkVELXyvUSy4oxcQ",
+    "officialImageSource": "https://www.youtube.com/channel/UCXGLc4lYkVELXyvUSy4oxcQ",
+    "imageUrl": "assets/artists/taelor-gray-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "zee": {
+    "aliases": [
+      "ZEE",
+      "408Zee",
+      "408 ZEE"
+    ],
+    "website": "https://www.instagram.com/408zee/",
+    "instagramProfile": "https://www.instagram.com/408zee/",
+    "spotifyProfile": "https://open.spotify.com/artist/0d2diExytbLBj7Ff3FLX9p",
+    "youtubeProfile": "https://www.youtube.com/channel/UCSBBlaJJ-tk9zg_1VTh0ndw",
+    "officialImageSource": "https://www.youtube.com/channel/UCSBBlaJJ-tk9zg_1VTh0ndw",
+    "imageUrl": "assets/artists/zee-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "tj carroll": {
+    "aliases": [
+      "TJ Carroll",
+      "T.J. Carroll"
+    ],
+    "website": "https://www.instagram.com/tjcarroll_/",
+    "instagramProfile": "https://www.instagram.com/tjcarroll_/",
+    "spotifyProfile": "https://open.spotify.com/artist/1lklT6lHzwo3ZOJpDVoLyH",
+    "youtubeProfile": "https://www.youtube.com/@tjcarroll_",
+    "officialImageSource": "https://open.spotify.com/artist/1lklT6lHzwo3ZOJpDVoLyH",
+    "imageUrl": "assets/artists/tj-carroll-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "label": "Alienz Alive",
+    "sourceRegistryVerified": true
+  },
+  "pishko": {
+    "aliases": [
+      "Pishko",
+      "PISHKO"
+    ],
+    "website": "https://linktr.ee/PISHKO",
+    "instagramProfile": "https://www.instagram.com/pishkomusic/",
+    "spotifyProfile": "https://open.spotify.com/artist/16dnHAXP1cxzQJkiPqp6eS",
+    "youtubeProfile": "https://www.youtube.com/channel/UCPyPeuJBS0UdmLf0TRDoI6A",
+    "officialImageSource": "https://linktr.ee/PISHKO",
+    "imageUrl": "assets/artists/pishko-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "mouthpi3ce": {
+    "aliases": [
+      "Mouthpi3ce"
+    ],
+    "website": "https://linktr.ee/Mouthpi3ce",
+    "instagramProfile": "https://www.instagram.com/mouthpi3ce/",
+    "spotifyProfile": "https://open.spotify.com/artist/5ccLg9PXtgNpXdkIzw7Pvw",
+    "youtubeProfile": "https://www.youtube.com/channel/UCUlFE53PLW07PNqlTvpjoMg",
+    "officialImageSource": "https://open.spotify.com/artist/5ccLg9PXtgNpXdkIzw7Pvw",
+    "imageUrl": "assets/artists/mouthpi3ce-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "deraj": {
+    "aliases": [
+      "Deraj"
+    ],
+    "website": "https://bio.site/justderaj",
+    "instagramProfile": "https://www.instagram.com/justderaj/",
+    "spotifyProfile": "https://open.spotify.com/artist/1iYLxzjCinlEJENGThVxjD",
+    "youtubeProfile": "https://www.youtube.com/justderaj",
+    "officialImageSource": "https://bio.site/justderaj",
+    "imageUrl": "assets/artists/deraj-verified-oct10.png",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "mr. del": {
+    "aliases": [
+      "Mr. Del"
+    ],
+    "website": "https://mrdelmusic.com",
+    "instagramProfile": "https://www.instagram.com/mrdelmusic/",
+    "spotifyProfile": "https://open.spotify.com/artist/72OoayCtuiXdffq3pECRFF",
+    "youtubeProfile": "https://www.youtube.com/@MrDel",
+    "officialImageSource": "https://mrdel.net/",
+    "imageUrl": "assets/artists/mr-del-verified-oct10.jpg",
+    "imagePosition": "50% 10%",
+    "sourceRegistryVerified": true
+  },
+  "fresh ie": {
+    "aliases": [
+      "Fresh IE",
+      "Fresh I.E."
+    ],
+    "website": "https://freshmusic.ca/",
+    "instagramProfile": "https://www.instagram.com/fresh_kmf/",
+    "spotifyProfile": "https://open.spotify.com/artist/1zAgmjKrBKZYNvfCp0uW52",
+    "youtubeProfile": "https://www.youtube.com/user/freshneturnity/featured",
+    "officialImageSource": "https://www.youtube.com/user/freshneturnity/featured",
+    "imageUrl": "assets/artists/fresh-ie-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "applejaxx": {
+    "aliases": [
+      "Applejaxx"
+    ],
+    "website": "https://www.instagram.com/itsapplejaxx/",
+    "instagramProfile": "https://www.instagram.com/itsapplejaxx/",
+    "spotifyProfile": "https://open.spotify.com/artist/1UbaPYO2HTw3ZkjnmantUJ",
+    "youtubeProfile": "https://www.youtube.com/user/fadacy",
+    "officialImageSource": "https://open.spotify.com/artist/1UbaPYO2HTw3ZkjnmantUJ",
+    "imageUrl": "assets/artists/applejaxx-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "fedel": {
+    "aliases": [
+      "Fedel"
+    ],
+    "website": "https://www.instagram.com/fedelmusic/",
+    "instagramProfile": "https://www.instagram.com/fedelmusic/",
+    "spotifyProfile": "https://open.spotify.com/artist/7EWlStyJsdfPvz0xeGBgTy",
+    "youtubeProfile": "https://www.youtube.com/@fedelity7/videos",
+    "officialImageSource": "https://www.youtube.com/@fedelity7/videos",
+    "imageUrl": "assets/artists/fedel-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "brandon trejo": {
+    "aliases": [
+      "Brandon Trejo"
+    ],
+    "website": "https://www.instagram.com/brandon_trejo423/",
+    "instagramProfile": "https://www.instagram.com/brandon_trejo423/",
+    "spotifyProfile": "https://open.spotify.com/artist/4o4k2cDgTsobe3Vwgj4M5Y",
+    "youtubeProfile": "https://www.youtube.com/@brandontrejokmf",
+    "officialImageSource": "https://www.youtube.com/@brandontrejokmf",
+    "imageUrl": "assets/artists/brandon-trejo-verified-oct10.jpg",
+    "imagePosition": "50% 25%",
+    "sourceRegistryVerified": true
+  },
+  "isaiah robin": {
+    "aliases": [
+      "Isaiah Robin"
+    ],
+    "website": "https://www.instagram.com/isaiahrobinofficial/",
+    "instagramProfile": "https://www.instagram.com/isaiahrobinofficial/",
+    "spotifyProfile": "https://open.spotify.com/artist/230c9mWkHDDHfHf0v24RG2",
+    "youtubeProfile": "https://www.youtube.com/channel/UCryx4S2DSusuSJarbVrA8jQ",
+    "officialImageSource": "https://open.spotify.com/artist/230c9mWkHDDHfHf0v24RG2",
+    "imageUrl": "assets/artists/isaiah-robin-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "guvna b": {
+    "aliases": [
+      "Guvna B"
+    ],
+    "website": "https://www.guvnab.com/",
+    "instagramProfile": "https://www.instagram.com/guvnab/",
+    "spotifyProfile": "https://open.spotify.com/artist/3XgNFNKLstByGKqplDht0H",
+    "youtubeProfile": "https://www.youtube.com/channel/UCD082TgM1c-cAeJ_D2x_DqA",
+    "officialImageSource": "https://open.spotify.com/artist/3XgNFNKLstByGKqplDht0H",
+    "imageUrl": "assets/artists/guvna-b-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "still shadey": {
+    "aliases": [
+      "Still Shadey"
+    ],
+    "website": "https://www.stillshadey.com/",
+    "instagramProfile": "https://www.instagram.com/stillshadey/",
+    "spotifyProfile": "https://open.spotify.com/artist/7r4NtPJ0mYRidQYQtxq8sV",
+    "youtubeProfile": "https://www.youtube.com/stillshadey",
+    "officialImageSource": "https://open.spotify.com/artist/7r4NtPJ0mYRidQYQtxq8sV",
+    "imageUrl": "assets/artists/still-shadey-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "feed'em": {
+    "aliases": [
+      "Feed'Em",
+      "Feed Em"
+    ],
+    "website": "https://www.feedemartist.com/",
+    "instagramProfile": "https://www.instagram.com/feedemartist/",
+    "spotifyProfile": "https://open.spotify.com/artist/66Hu6kzjWXGUdTdCCIzmW4",
+    "youtubeProfile": "https://www.youtube.com/feedemartist",
+    "officialImageSource": "https://open.spotify.com/artist/66Hu6kzjWXGUdTdCCIzmW4",
+    "imageUrl": "assets/artists/feed-em-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "reblah": {
+    "aliases": [
+      "Reblah"
+    ],
+    "website": "https://linktr.ee/Reblah",
+    "instagramProfile": "https://www.instagram.com/reblahofficial/",
+    "spotifyProfile": "https://open.spotify.com/artist/7EHtFdWeBK26GJ5lKt02SV",
+    "youtubeProfile": "https://www.youtube.com/@reblah",
+    "officialImageSource": "https://open.spotify.com/artist/7EHtFdWeBK26GJ5lKt02SV",
+    "imageUrl": "assets/artists/reblah-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "triple o": {
+    "aliases": [
+      "Triple O"
+    ],
+    "website": "https://linktr.ee/Tripleomusic",
+    "instagramProfile": "https://www.instagram.com/tripleomusic/",
+    "spotifyProfile": "https://open.spotify.com/artist/5XcUqQbaEWVFP2PU6HAnDT",
+    "youtubeProfile": "https://www.youtube.com/@tripleomusic",
+    "officialImageSource": "https://open.spotify.com/artist/5XcUqQbaEWVFP2PU6HAnDT",
+    "imageUrl": "assets/artists/triple-o-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "dwayne tryumf": {
+    "aliases": [
+      "Dwayne Tryumf"
+    ],
+    "website": "https://tryumfant.com/",
+    "instagramProfile": "https://www.instagram.com/dwaynetryumf/",
+    "spotifyProfile": "https://open.spotify.com/artist/75sReJhZ3hjZctu6vtoGj6",
+    "youtubeProfile": "https://youtube.com/@tryumf",
+    "officialImageSource": "https://open.spotify.com/artist/75sReJhZ3hjZctu6vtoGj6",
+    "imageUrl": "assets/artists/dwayne-tryumf-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "manny montes": {
+    "aliases": [
+      "Manny Montes"
+    ],
+    "website": "https://www.instagram.com/mannymontes7/",
+    "instagramProfile": "https://www.instagram.com/mannymontes7/",
+    "spotifyProfile": "https://open.spotify.com/artist/41A1tLHviwiCao1vXl1cgd",
+    "youtubeProfile": "https://www.youtube.com/MannyMontesTV",
+    "officialImageSource": "https://www.youtube.com/MannyMontesTV",
+    "imageUrl": "assets/artists/manny-montes-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "rubinsky rbk": {
+    "aliases": [
+      "Rubinsky RBK"
+    ],
+    "website": "https://www.instagram.com/rubinskyrbk/",
+    "instagramProfile": "https://www.instagram.com/rubinskyrbk/",
+    "spotifyProfile": "https://open.spotify.com/artist/5K6MRaKDEJ1bLuHQQFaUFH",
+    "youtubeProfile": "https://www.youtube.com/channel/UCpBXVjiK3PLdQTPa877mNwQ",
+    "officialImageSource": "https://www.youtube.com/channel/UCpBXVjiK3PLdQTPa877mNwQ",
+    "imageUrl": "assets/artists/rubinsky-rbk-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
+  "ariel kelly": {
+    "aliases": [
+      "Ariel Kelly"
+    ],
+    "website": "https://www.instagram.com/arielkelly47/",
+    "instagramProfile": "https://www.instagram.com/arielkelly47/",
+    "spotifyProfile": "https://open.spotify.com/artist/4BYn8aKDAf0keMvw8k28Kb",
+    "youtubeProfile": "https://www.youtube.com/@arielkellyoficial",
+    "officialImageSource": "https://open.spotify.com/artist/4BYn8aKDAf0keMvw8k28Kb",
+    "imageUrl": "assets/artists/ariel-kelly-verified-oct10.jpg",
+    "imagePosition": "50% 30%",
+    "sourceRegistryVerified": true
+  },
   "von won": {
     "aliases": [
       "Von Won",
@@ -9942,6 +10816,138 @@ const STATIC_ARTIST_PORTRAITS = {
   "prodigal": {
     "imageUrl": "assets/artists/prodigal-owner-supplied-oct9.png",
     "imagePosition": "50% 45%"
+  },
+  "tony tillman": {
+    "imageUrl": "assets/artists/tony-tillman-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "dillon chase": {
+    "imageUrl": "assets/artists/dillon-chase-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "json": {
+    "imageUrl": "assets/artists/json-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "stephen the levite": {
+    "imageUrl": "assets/artists/stephen-the-levite-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "350": {
+    "imageUrl": "assets/artists/350-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "battz": {
+    "imageUrl": "assets/artists/battz-verified-oct10.jpg",
+    "imagePosition": "50% 25%"
+  },
+  "de la cruz": {
+    "imageUrl": "assets/artists/de-la-cruz-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "q-flo": {
+    "imageUrl": "assets/artists/q-flo-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "swaizy": {
+    "imageUrl": "assets/artists/swaizy-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "j.list": {
+    "imageUrl": "assets/artists/j-list-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "d-maub": {
+    "imageUrl": "assets/artists/d-maub-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "k-drama": {
+    "imageUrl": "assets/artists/k-drama-verified-oct10.jpg",
+    "imagePosition": "50% 20%"
+  },
+  "taelor gray": {
+    "imageUrl": "assets/artists/taelor-gray-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "zee": {
+    "imageUrl": "assets/artists/zee-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "tj carroll": {
+    "imageUrl": "assets/artists/tj-carroll-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "pishko": {
+    "imageUrl": "assets/artists/pishko-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "mouthpi3ce": {
+    "imageUrl": "assets/artists/mouthpi3ce-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "deraj": {
+    "imageUrl": "assets/artists/deraj-verified-oct10.png",
+    "imagePosition": "50% 30%"
+  },
+  "mr. del": {
+    "imageUrl": "assets/artists/mr-del-verified-oct10.jpg",
+    "imagePosition": "50% 10%"
+  },
+  "fresh ie": {
+    "imageUrl": "assets/artists/fresh-ie-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "applejaxx": {
+    "imageUrl": "assets/artists/applejaxx-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "fedel": {
+    "imageUrl": "assets/artists/fedel-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "brandon trejo": {
+    "imageUrl": "assets/artists/brandon-trejo-verified-oct10.jpg",
+    "imagePosition": "50% 25%"
+  },
+  "isaiah robin": {
+    "imageUrl": "assets/artists/isaiah-robin-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "guvna b": {
+    "imageUrl": "assets/artists/guvna-b-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "still shadey": {
+    "imageUrl": "assets/artists/still-shadey-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "feed'em": {
+    "imageUrl": "assets/artists/feed-em-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "reblah": {
+    "imageUrl": "assets/artists/reblah-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "triple o": {
+    "imageUrl": "assets/artists/triple-o-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "dwayne tryumf": {
+    "imageUrl": "assets/artists/dwayne-tryumf-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "manny montes": {
+    "imageUrl": "assets/artists/manny-montes-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "rubinsky rbk": {
+    "imageUrl": "assets/artists/rubinsky-rbk-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
+  },
+  "ariel kelly": {
+    "imageUrl": "assets/artists/ariel-kelly-verified-oct10.jpg",
+    "imagePosition": "50% 30%"
   }
 };
 
