@@ -5323,9 +5323,9 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/socdriz/",
     "spotifyProfile": "",
     "youtubeProfile": "https://www.youtube.com/channel/UCuTIBg6X7OsBLRpvumtFdlw",
-    "officialImageSource": "https://www.instagram.com/socdriz/",
-    "imageUrl": "assets/artists/soc-driz-official-oct12.jpg",
-    "imagePosition": "50% 50%",
+    "officialImageSource": "https://www.instagram.com/socdriz/p/DMrC6cYtMgM/",
+    "imageUrl": "assets/artists/soc-driz-official-portrait-oct12.jpg",
+    "imagePosition": "50% 25%",
     "sourceRegistryVerified": true
   },
   "justo chalaire": {
@@ -10294,9 +10294,9 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/socdriz/",
     "spotifyProfile": "",
     "youtubeProfile": "https://www.youtube.com/channel/UCuTIBg6X7OsBLRpvumtFdlw",
-    "officialImageSource": "https://www.instagram.com/socdriz/",
-    "imageUrl": "assets/artists/soc-driz-official-oct12.jpg",
-    "imagePosition": "50% 50%",
+    "officialImageSource": "https://www.instagram.com/socdriz/p/DMrC6cYtMgM/",
+    "imageUrl": "assets/artists/soc-driz-official-portrait-oct12.jpg",
+    "imagePosition": "50% 25%",
     "sourceRegistryVerified": true
   },
   "justo chalaire": {
@@ -11736,8 +11736,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 30%"
   },
   "soc driz": {
-    "imageUrl": "assets/artists/soc-driz-official-oct12.jpg",
-    "imagePosition": "50% 50%"
+    "imageUrl": "assets/artists/soc-driz-official-portrait-oct12.jpg",
+    "imagePosition": "50% 25%"
   },
   "justo chalaire": {
     "imageUrl": "assets/artists/justo-chalaire-official-performance-oct12.jpg",
