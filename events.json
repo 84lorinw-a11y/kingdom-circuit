@@ -6211,18 +6211,19 @@
     "state": "CA",
     "country": "US",
     "artists": [
+      "626authentic",
       "JBthaPreacher",
       "IFearGod"
     ],
-    "headliner": "626 Authentic",
+    "headliner": "626authentic",
     "advertisedBilling": [
-      "626 Authentic",
+      "626authentic",
       "JBthaPreacher",
       "IFearGod",
       "Nicko Ostby"
     ],
     "officialBill": [
-      "626 Authentic",
+      "626authentic",
       "JBthaPreacher",
       "IFearGod",
       "Nicko Ostby"
@@ -6247,10 +6248,10 @@
     "confidence": "high",
     "organizer": "Victory Outreach Santa Monica",
     "firstSeen": "2026-10-06T21:10:10Z",
-    "lastVerified": "2026-10-06T21:10:10Z",
-    "auditVerified": "2026-10-06",
+    "lastVerified": "2026-10-12T20:59:06.826202+00:00",
+    "auditVerified": "2026-10-12",
     "editorialBatch": "2026-10-06-submitted-events",
-    "notes": "Original October 6 artist post and its flyer confirm Sunday October 25 at 6 PM, free admission, venue address and all four performers. October 25 is Sunday in 2026, consistent with the current announcement. Flyer styles JB as JB DaPreacher, but the post explicitly tags the existing curated @jbthapreacher account, confirming JBthaPreacher identity. IFearGod is the posting artist @ifeargod3. 626 Authentic and Nicko Ostby remain visible unlinked billing; neither has a curated profile. The post also tags church leaders; those tags are not additional performers. Church official website independently confirms 606 Venice Blvd, Venice CA90291. No end time or separate doors time announced. Original full flyer downloaded at1179x2096 without alteration.",
+    "notes": "Original October 6 artist post and its flyer confirm Sunday October 25 at 6 PM, free admission, venue address and all four performers. October 25 is Sunday in 2026, consistent with the current announcement. Flyer styles JB as JB DaPreacher, but the post explicitly tags the existing curated @jbthapreacher account, confirming JBthaPreacher identity. IFearGod is the posting artist @ifeargod3. October 12 owner/artist confirmation: 626 Authentic is the now-published 626authentic profile and is linked. Nicko Ostby remains visible unlinked billing. The post also tags church leaders; those tags are not additional performers. Church official website independently confirms 606 Venice Blvd, Venice CA90291. No end time or separate doors time announced. Original full flyer downloaded at1179x2096 without alteration.",
     "sources": [
       {
         "name": "IFearGod official event flyer and tagged lineup",
@@ -10942,6 +10943,64 @@
         "type": "official_festival",
         "authority": "official_festival",
         "priority": 112
+      }
+    ]
+  },
+  {
+    "id": "manual:harvest-fest-crestline-2026-10-31",
+    "title": "Harvest Fest — The Harvest Is Plentiful",
+    "startDate": "2026-10-31",
+    "endDate": "2026-10-31",
+    "startTime": "14:00",
+    "endTime": "17:00",
+    "startDateTime": "2026-10-31T14:00:00-07:00",
+    "endDateTime": "2026-10-31T17:00:00-07:00",
+    "timezone": "America/Los_Angeles",
+    "venue": "Crestline Outreach",
+    "address": "24118 Lake Drive",
+    "postalCode": "92325",
+    "city": "Crestline",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "626authentic"
+    ],
+    "advertisedBilling": [
+      "626authentic"
+    ],
+    "officialBill": [
+      "626authentic"
+    ],
+    "headliner": "626authentic",
+    "eventType": "event",
+    "status": "scheduled",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "organizer": "Calvary Chapel Lake Arrowhead",
+    "officialUrl": "https://www.instagram.com/626authentic/",
+    "ticketUrl": "https://www.instagram.com/626authentic/",
+    "image": "assets/events/626authentic-harvest-fest-crestline-2026-10-31-artist-supplied.png",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "detailImageLayout": "portrait",
+    "imageSource": "Artist-supplied official Harvest Fest flyer",
+    "imageSourceUrl": "https://www.instagram.com/626authentic/",
+    "sourceName": "Artist-confirmed flyer provided by the site owner",
+    "authority": "official_artist",
+    "confidence": "high",
+    "firstSeen": "2026-10-12T20:59:06.826202+00:00",
+    "lastVerified": "2026-10-12T20:59:06.826202+00:00",
+    "auditVerified": "2026-10-12",
+    "publicDescription": "Calvary Chapel Lake Arrowhead presents Harvest Fest — The Harvest Is Plentiful at Crestline Outreach. The event runs 2–5 PM, with 626authentic scheduled to perform at 3:30 PM.",
+    "notes": "Owner supplied the artist-sent flyer on October 12 and explicitly confirmed this is one of two separate October 31 performances. Flyer confirms October 31, 2–5 PM, 626 special guest at 3:30 PM, 24118 Lake Dr, Crestline CA92325. Year 2026 follows the owner-confirmed current October schedule. Preserve separately from the existing Ontario Harvest Fest; Ontario doors remain 5 PM with concert start unspecified. No price or additional performers inferred. Official Details points to the verified artist account because no event-specific public permalink was supplied. Original uploaded flyer retained unchanged.",
+    "sources": [
+      {
+        "name": "626authentic direct confirmation and supplied event flyer (via site owner, October 12, 2026)",
+        "url": "https://www.instagram.com/626authentic/",
+        "type": "artist_submission",
+        "authority": "official_artist",
+        "priority": 115
       }
     ]
   }

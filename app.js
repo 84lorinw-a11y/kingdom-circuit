@@ -5110,7 +5110,9 @@ const VERIFIED_ARTIST_REGISTRY = {
   },
   "626authentic": {
     "aliases": [
-      "626authentic"
+      "626authentic",
+      "626 Authentic",
+      "626Authentic"
     ],
     "website": "https://linktr.ee/626authentic",
     "instagramProfile": "https://www.instagram.com/626authentic/",
@@ -10079,7 +10081,9 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
   },
   "626authentic": {
     "aliases": [
-      "626authentic"
+      "626authentic",
+      "626 Authentic",
+      "626Authentic"
     ],
     "website": "https://linktr.ee/626authentic",
     "instagramProfile": "https://www.instagram.com/626authentic/",
