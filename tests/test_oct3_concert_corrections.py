@@ -40,6 +40,7 @@ class OctoberConcertCorrectionTests(unittest.TestCase):
             saved=dict(approved[0],id='manual:'+approved[0]['id'],firstSeen='2026-10-02T12:00:00Z',status='cancelled')
             keep={'id':'adrenaline-valrico-2026-10-17','artists':['Nehemiah'],'firstSeen':'2026-10-01T00:00:00Z'}
             bad=[{'id':e,'artists':['Nehemiah']} for e in WRONG_NEHEMIAH_IDS | {ADRENALINE_DUPLICATE}]
+            bad.append({'id':'manual:rap-go-round-west-palm-beach-2026-11-20','artists':['Naldo','DJ Eternitrock']})
             paths=['events.json','supplemental-events.json','config/manual-events.json']
             for name in paths:(root/name).write_text(json.dumps([copy.deepcopy(saved),copy.deepcopy(keep),*bad]))
             (root/'event-history.json').write_text(json.dumps({'events':[{'event':e} for e in [saved,keep,*bad]]}))

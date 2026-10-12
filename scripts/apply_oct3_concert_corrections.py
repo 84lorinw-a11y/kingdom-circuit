@@ -14,6 +14,7 @@ WRONG_NEHEMIAH_IDS = {
     "bandsintown:108952501",
 }
 ADRENALINE_DUPLICATE = "bandsintown:1040469553"
+OWNER_REMOVED_EVENT_IDS = {"rap-go-round-west-palm-beach-2026-11-20"}
 
 
 def key(event):
@@ -21,7 +22,7 @@ def key(event):
 
 
 def rejected(event):
-    if key(event) in WRONG_NEHEMIAH_IDS | {ADRENALINE_DUPLICATE}:
+    if key(event) in WRONG_NEHEMIAH_IDS | {ADRENALINE_DUPLICATE} | OWNER_REMOVED_EVENT_IDS:
         return True
     # Keep independently verified CHH shows. Only this provider's known metal
     # band identity is rejected, never all events matching the name Nehemiah.

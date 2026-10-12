@@ -367,7 +367,6 @@ const ARTIST_ROSTER_ORDER = [
   "Mic Esco",
   "Sir James",
   "Big Lek",
-  "Naldo",
   "TruthSoldier",
   "SOC Driz",
   "Justo Chalaire"
@@ -5284,20 +5283,6 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "owner-supplied:codex-clipboard-3632dbaf-ede3-47db-8517-371697a4d91f.png",
     "imageUrl": "assets/artists/big-lek-owner-supplied-oct12.png",
     "imagePosition": "50% 0%",
-    "sourceRegistryVerified": true
-  },
-  "naldo": {
-    "aliases": [
-      "Naldo",
-      "Naldeezy"
-    ],
-    "website": "https://www.instagram.com/naldo_aka_naldeezy/",
-    "instagramProfile": "https://www.instagram.com/naldo_aka_naldeezy/",
-    "spotifyProfile": "",
-    "youtubeProfile": "https://www.youtube.com/channel/UCSvkjNdirkKyLlGbypr53rA",
-    "officialImageSource": "https://www.instagram.com/naldo_aka_naldeezy/p/DJVvnMitCvT/",
-    "imageUrl": "assets/artists/naldo-official-portrait-oct12.webp",
-    "imagePosition": "45% 0%",
     "sourceRegistryVerified": true
   },
   "truthsoldier": {
@@ -10257,20 +10242,6 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   },
-  "naldo": {
-    "aliases": [
-      "Naldo",
-      "Naldeezy"
-    ],
-    "website": "https://www.instagram.com/naldo_aka_naldeezy/",
-    "instagramProfile": "https://www.instagram.com/naldo_aka_naldeezy/",
-    "spotifyProfile": "",
-    "youtubeProfile": "https://www.youtube.com/channel/UCSvkjNdirkKyLlGbypr53rA",
-    "officialImageSource": "https://www.instagram.com/naldo_aka_naldeezy/p/DJVvnMitCvT/",
-    "imageUrl": "assets/artists/naldo-official-portrait-oct12.webp",
-    "imagePosition": "45% 0%",
-    "sourceRegistryVerified": true
-  },
   "truthsoldier": {
     "aliases": [
       "TruthSoldier",
@@ -11726,10 +11697,6 @@ const STATIC_ARTIST_PORTRAITS = {
   "big lek": {
     "imageUrl": "assets/artists/big-lek-owner-supplied-oct12.png",
     "imagePosition": "50% 0%"
-  },
-  "naldo": {
-    "imageUrl": "assets/artists/naldo-official-portrait-oct12.webp",
-    "imagePosition": "45% 0%"
   },
   "truthsoldier": {
     "imageUrl": "assets/artists/truthsoldier-official-oct12.jpg",
