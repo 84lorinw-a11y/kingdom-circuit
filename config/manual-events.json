@@ -2997,7 +2997,12 @@
       "BigBreeze",
       "Mission",
       "Lyric The Geenyus",
-      "Bo Fisher"
+      "Bo Fisher",
+      "Xeem",
+      "Bruh",
+      "SOC Driz",
+      "Big Lek",
+      "TBlessing"
     ],
     "advertisedBilling": [
       "Queen Lee",
@@ -3014,7 +3019,8 @@
       "Lauryn Nicole",
       "Mr Griffin",
       "Zoe Junior",
-      "DJ Byrd"
+      "DJ Byrd",
+      "TBlessing"
     ],
     "officialBill": [
       "Queen Lee",
@@ -3031,7 +3037,8 @@
       "Lauryn Nicole",
       "Mr Griffin",
       "Zoe Junior",
-      "DJ Byrd"
+      "DJ Byrd",
+      "TBlessing"
     ],
     "headliner": "",
     "eventType": "festival",
@@ -3047,13 +3054,13 @@
     "imageSource": "Passion Fest official Givebutter event flyer",
     "imageSourceUrl": "https://givebutter.s3.amazonaws.com/media/66EVLgGnfueAfTP34WJm8ePqTwFxXIjEUam2gay7.jpg",
     "organizer": "Passion Fest",
-    "publicDescription": "Passion Fest II brings Christian rap to Charlotte with Queen Lee, Big Breeze, XEEM, Mission, Princess Tayy SGL, Altar Ego, BRUH, KAPPAA!, Lyric The Geenyus, SOC Driz, Big Lek, Lauryn Nicole, Mr Griffin, Zoe Junior, and DJ Byrd.",
+    "publicDescription": "Passion Fest II brings Christian rap to Charlotte with Queen Lee, Big Breeze, XEEM, Mission, Princess Tayy SGL, Altar Ego, BRUH, KAPPAA!, Lyric The Geenyus, SOC Driz, Big Lek, Lauryn Nicole, Mr Griffin, Zoe Junior, and DJ Byrd. Also featuring TBlessing.",
     "sourceName": "Passion Fest official event page and flyer",
     "authority": "official_event",
     "confidence": "high",
     "firstSeen": "2026-09-29T15:14:40Z",
     "lastVerified": "2026-09-29T15:14:40Z",
-    "notes": "October 8 owner-provided lineup flyer confirms Queen Lee, Big Breeze, XEEM, Mission, Princess Tayy SGL, Altar Ego, BRUH, KAPPAA!, Lyric The Geenyus, SOC Driz, Big Lek, Lauryn Nicole, Mr Griffin, and Zoe Junior. The organizer separately confirms DJ Byrd in its October 7 Instagram announcement. Bill all 15 acts, including those without curated profiles. Big Breeze links to the existing BigBreeze profile through its verified alias; do not create a second identity for Markel. The owner confirms Bo Fisher performs under Altar Ego; retain Bo Fisher as a curated schedule association rather than a separate solo billing. Mission and Lyric The Geenyus are already curated and gain schedule associations. The earlier Bo Fisher promotional caption alone was not explicit performance confirmation. Do not infer extra Altar Ego members on this particular date or make the group a global alias for Bo. Preserve the October 11 date, 5 PM start confirmed again in the organizer October 8 post, venue, original artwork, canonical page, and earliest discovery timestamp.",
+    "notes": "October 8 owner-provided lineup flyer confirms Queen Lee, Big Breeze, XEEM, Mission, Princess Tayy SGL, Altar Ego, BRUH, KAPPAA!, Lyric The Geenyus, SOC Driz, Big Lek, Lauryn Nicole, Mr Griffin, and Zoe Junior. The organizer separately confirms DJ Byrd in its October 7 Instagram announcement. Bill all 15 acts, including those without curated profiles. Big Breeze links to the existing BigBreeze profile through its verified alias; do not create a second identity for Markel. The owner confirms Bo Fisher performs under Altar Ego; retain Bo Fisher as a curated schedule association rather than a separate solo billing. Mission and Lyric The Geenyus are already curated and gain schedule associations. The earlier Bo Fisher promotional caption alone was not explicit performance confirmation. Do not infer extra Altar Ego members on this particular date or make the group a global alias for Bo. Preserve the October 11 date, 5 PM start confirmed again in the organizer October 8 post, venue, original artwork, canonical page, and earliest discovery timestamp. October 12: newly owner-verified artist profiles linked to confirmed billing.",
     "sources": [
       {
         "name": "Passion Fest official event page and flyer",
@@ -3089,9 +3096,16 @@
         "type": "official_event",
         "authority": "official_event",
         "priority": 112
+      },
+      {
+        "name": "TBlessing official Passion Fest performance announcement",
+        "url": "https://www.instagram.com/tblessing_18/reel/DeJ081iTl7j/",
+        "type": "official_artist",
+        "authority": "artist_announcement",
+        "priority": 112
       }
     ],
-    "auditVerified": "2026-10-08"
+    "auditVerified": "2026-10-12"
   },
   {
     "id": "aamu-gospel-explosion-huntsville-2026-10-11",
@@ -5703,12 +5717,20 @@
     "country": "US",
     "artists": [
       "Miles Minnick",
-      "Gifted Hands",
+      "Yung Kriss",
       "Datin",
-      "TRU-SERVA",
-      "VVS Big Rock",
       "Lyric The Geenyus",
-      "MAYIA"
+      "TRU-SERVA",
+      "MAYIA",
+      "Dre Skywalker",
+      "VVS Big Rock",
+      "Eli Williams",
+      "TVNK",
+      "Th3 Saga",
+      "TruthSoldier",
+      "ZEKE",
+      "Joshua Penn",
+      "B.E.R.I.D.O.X."
     ],
     "headliner": "Miles Minnick",
     "eventType": "festival",
@@ -5726,21 +5748,89 @@
     "lineupExplicit": true,
     "sources": [
       {
-        "name": "Flavor Fest official 2026 schedule",
-        "url": "https://www.flavorfest.org/schedule",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      },
-      {
-        "name": "Flavor Fest official Friday poster",
+        "name": "Flavor Fest current Friday concert poster",
         "url": "https://www.flavorfest.org/",
         "type": "manual_verified",
-        "authority": "official_festival",
-        "priority": 106
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Eli Williams official performance announcement",
+        "url": "https://www.instagram.com/eliwilliamssss/p/DdmMA0JOH4q/",
+        "type": "manual_verified",
+        "authority": "artist",
+        "priority": 115
+      },
+      {
+        "name": "TVNK and Flavor Fest official collaborative announcement",
+        "url": "https://www.instagram.com/iamtvnk/p/Dduir12qiAF/",
+        "type": "official_artist",
+        "authority": "artist_announcement",
+        "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11"
+    "auditVerified": "2026-10-12",
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Yung Kriss",
+      "TH3 Saga",
+      "Datin",
+      "Lyric The Geenyus",
+      "Princess Tayy",
+      "4KL",
+      "Truth Soldier",
+      "Zeke",
+      "TRU-SERVA",
+      "Joshua Penn",
+      "Leon",
+      "Tyler Errae",
+      "Yvonne Sigars",
+      "Songbird SB",
+      "Louis Self",
+      "MAYIA",
+      "Adji Merveille",
+      "Way",
+      "King Jamezzz",
+      "Dre Skywalker",
+      "Jaybez",
+      "B.E.R.I.D.O.X",
+      "DiE$eL-E",
+      "TVNK",
+      "VVS Big Rock",
+      "Jailynn",
+      "Eli Williams"
+    ],
+    "officialBill": [
+      "Miles Minnick",
+      "Yung Kriss",
+      "TH3 Saga",
+      "Datin",
+      "Lyric The Geenyus",
+      "Princess Tayy",
+      "4KL",
+      "Truth Soldier",
+      "Zeke",
+      "TRU-SERVA",
+      "Joshua Penn",
+      "Leon",
+      "Tyler Errae",
+      "Yvonne Sigars",
+      "Songbird SB",
+      "Louis Self",
+      "MAYIA",
+      "Adji Merveille",
+      "Way",
+      "King Jamezzz",
+      "Dre Skywalker",
+      "Jaybez",
+      "B.E.R.I.D.O.X",
+      "DiE$eL-E",
+      "TVNK",
+      "VVS Big Rock",
+      "Jailynn",
+      "Eli Williams"
+    ],
+    "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown. Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates. October 8: owner verified TVNK in the artist Sheet. His September 25 collaborative announcement with Flavor Fest explicitly confirms November 6 at Crossover Church. Connect the existing TVNK billing to his curated artist profile. October 12: newly owner-verified artist profiles linked to confirmed billing."
   },
   {
     "id": "don-ready-club-217-los-angeles-2026-11-06",
@@ -6056,7 +6146,12 @@
       "Biancallove",
       "Monster Tarver",
       "C4 Crotona",
-      "DJ Geech"
+      "DJ Geech",
+      "Toyalove",
+      "PressNJ",
+      "Nigil Lee",
+      "Sir James",
+      "Big Lek"
     ],
     "headliner": "Lecrae",
     "eventType": "festival",
@@ -6076,9 +6171,16 @@
         "type": "manual_verified",
         "authority": "official_event",
         "priority": 115
+      },
+      {
+        "name": "Nigil Lee confirms November 7 performance",
+        "url": "https://www.instagram.com/where_is_nigil_lee/p/Ddjt_p-FP7G/",
+        "type": "official_artist",
+        "authority": "artist_announcement",
+        "priority": 112
       }
     ],
-    "auditVerified": "2026-10-08",
+    "auditVerified": "2026-10-12",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -6093,7 +6195,7 @@
       "Loso",
       "Je’hil",
       "Press NJ",
-      "Nigel Lee",
+      "Nigil Lee",
       "Craig Watson",
       "Sir James",
       "Keenen",
@@ -6104,7 +6206,7 @@
       "Monster Tarver",
       "C4 Crotona"
     ],
-    "notes": "All 20 named performers on the official Saturday poster are included, including A. Ward and Loso in the compliment battle and named Holy Culture showcase/Gritty stage artists. Gifted Hands is Saturday according to both the current schedule and poster. Beat battles and breakdancing descriptions without named performers are not invented artists. October 8: owner verified DJ Geech in the artist Sheet; official team page identifies Maleek Geech Taylor, and current Saturday concert poster explicitly bills Geech. Connect that existing concert billing to DJ Geech’s curated profile. Do not infer concerts from his separate director or panel roles.",
+    "notes": "All 20 named performers on the official Saturday poster are included, including A. Ward and Loso in the compliment battle and named Holy Culture showcase/Gritty stage artists. Gifted Hands is Saturday according to both the current schedule and poster. Beat battles and breakdancing descriptions without named performers are not invented artists. October 8: owner verified DJ Geech in the artist Sheet; official team page identifies Maleek Geech Taylor, and current Saturday concert poster explicitly bills Geech. Connect that existing concert billing to DJ Geech’s curated profile. Do not infer concerts from his separate director or panel roles. October 12: newly owner-verified artist profiles linked to confirmed billing. Nigil Lee personally confirms November 7; the poster spelling Nigel is a typo.",
     "id": "flavor-fest-2026-saturday-concerts",
     "imageSource": "Official Flavor Fest Saturday concert poster",
     "imageSourceUrl": "https://www.flavorfest.org/",
@@ -6119,7 +6221,7 @@
       "Loso",
       "Je’hil",
       "Press NJ",
-      "Nigel Lee",
+      "Nigil Lee",
       "Craig Watson",
       "Sir James",
       "Keenen",
@@ -8699,5 +8801,709 @@
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true
+  },
+  {
+    "id": "victory-over-darkness-fullerton-2026-10-24",
+    "title": "Victory Over Darkness Concert",
+    "startDate": "2026-10-24",
+    "endDate": "2026-10-24",
+    "startTime": "12:00",
+    "timezone": "America/Los_Angeles",
+    "venue": "New Wine Church",
+    "address": "1425 S Brookhurst Road",
+    "city": "Fullerton",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "New Creation",
+      "DB Reborn",
+      "Bobby Bendito",
+      "626authentic",
+      "MC Blvd",
+      "NLT",
+      "ETRNL x R3DMND",
+      "Pastor JMag",
+      "Queen Jean",
+      "Ghetto Alibi",
+      "L. Varez",
+      "Kingdom Worshipers",
+      "Carolina",
+      "Lady Phqenix",
+      "DJ X316"
+    ],
+    "advertisedBilling": [
+      "New Creation",
+      "DB Reborn",
+      "Bobby Bendito",
+      "626authentic",
+      "MC Blvd",
+      "NLT",
+      "ETRNL x R3DMND",
+      "Pastor JMag",
+      "Queen Jean",
+      "Ghetto Alibi",
+      "L. Varez",
+      "Kingdom Worshipers",
+      "Carolina",
+      "Lady Phqenix",
+      "DJ X316"
+    ],
+    "officialBill": [
+      "New Creation",
+      "DB Reborn",
+      "Bobby Bendito",
+      "626authentic",
+      "MC Blvd",
+      "NLT",
+      "ETRNL x R3DMND",
+      "Pastor JMag",
+      "Queen Jean",
+      "Ghetto Alibi",
+      "L. Varez",
+      "Kingdom Worshipers",
+      "Carolina",
+      "Lady Phqenix",
+      "DJ X316"
+    ],
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/victory-over-darkness-concert-tickets-1995168803600",
+    "officialUrl": "https://www.eventbrite.com/e/victory-over-darkness-concert-tickets-1995168803600",
+    "image": "assets/events/victory-over-darkness-fullerton-2026-10-24-official-flyer.webp",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "detailImageLayout": "portrait",
+    "imageSource": "Official event announcement",
+    "imageSourceUrl": "https://images.squarespace-cdn.com/content/v1/69444e8770eec34d3344dadf/1790611067687-71RWXS8O7BBGQZ18T5F9/IMG_0901.JPG",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "authority": "official_event",
+    "confidence": "high",
+    "sourceName": "Official artist / organizer announcement",
+    "firstSeen": "2026-10-12T19:39:04Z",
+    "lastVerified": "2026-10-12T19:39:04Z",
+    "publicDescription": "An afternoon of live Christian music at New Wine Church. Hosted by Jael Serrano of Impact Radio, with guest speaker Pastor Chris Mora.",
+    "notes": "Official artist calendar and full flyer confirm Fullerton despite the older Whittier URL slug. All named musical billing retained; host and guest speaker described separately.",
+    "sources": [
+      {
+        "name": "Official artist / organizer announcement",
+        "url": "https://www.eventbrite.com/e/victory-over-darkness-concert-tickets-1995168803600",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "Official artist / organizer announcement",
+        "url": "https://www.bobbybendito.com/upcoming-events/whittier-california",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "startDateTime": "2026-10-24T12:00:00-07:00",
+    "endTime": "18:00",
+    "endDateTime": "2026-10-24T18:00:00-07:00",
+    "price": "$10 presale"
+  },
+  {
+    "id": "revival-night-east-chicago-2026-10-31",
+    "title": "Revival Night — Bobby Bendito & Cierra Barrera",
+    "startDate": "2026-10-31",
+    "endDate": "2026-10-31",
+    "startTime": "17:00",
+    "timezone": "America/Chicago",
+    "venue": "East Chicago Church",
+    "address": "4427 Olcott Avenue",
+    "city": "East Chicago",
+    "state": "IN",
+    "country": "US",
+    "artists": [
+      "Bobby Bendito",
+      "Cierra Barrera",
+      "Rio Camacho",
+      "Amber"
+    ],
+    "advertisedBilling": [
+      "Bobby Bendito",
+      "Cierra Barrera",
+      "Rio Camacho",
+      "Amber"
+    ],
+    "officialBill": [
+      "Bobby Bendito",
+      "Cierra Barrera",
+      "Rio Camacho",
+      "Amber"
+    ],
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bobbybendito.com/upcoming-events/revival-night",
+    "officialUrl": "https://www.bobbybendito.com/upcoming-events/revival-night",
+    "image": "assets/events/revival-night-east-chicago-2026-10-31-official-flyer.jpg",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "detailImageLayout": "portrait",
+    "imageSource": "Official event announcement",
+    "imageSourceUrl": "https://images.squarespace-cdn.com/content/v1/69444e8770eec34d3344dadf/1790611635951-0Z1DDJBUI2EC24OUO98K/27f84d9489ade2fa5311e6481a3e5d5f.JPEG?format=1000w",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "authority": "official_event",
+    "confidence": "high",
+    "sourceName": "Official artist / organizer announcement",
+    "firstSeen": "2026-10-12T19:39:04Z",
+    "lastVerified": "2026-10-12T19:39:04Z",
+    "publicDescription": "Revival Night with Bobby Bendito, Cierra Barrera and local artists at East Chicago Church.",
+    "notes": "Artist website flyer confirms October 31, 5–8 PM. Official ticket listing additionally names Rio Camacho and worship leader Amber; do not invent a surname.",
+    "sources": [
+      {
+        "name": "Official artist / organizer announcement",
+        "url": "https://www.bobbybendito.com/upcoming-events/revival-night",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "Official artist / organizer announcement",
+        "url": "https://www.eventbrite.com/e/revival-night-tickets-2003186514790",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "startDateTime": "2026-10-31T17:00:00-05:00",
+    "endTime": "20:00",
+    "endDateTime": "2026-10-31T20:00:00-05:00",
+    "price": "Free"
+  },
+  {
+    "id": "kingdom-seekers-family-day-stockton-2026-10-18",
+    "title": "Kingdom Seekers Family Day",
+    "startDate": "2026-10-18",
+    "endDate": "2026-10-18",
+    "startTime": "13:00",
+    "timezone": "America/Los_Angeles",
+    "venue": "San Joaquin County Fairgrounds",
+    "address": "1658 Airport Way",
+    "city": "Stockton",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Oracle The Messenger",
+      "EGR",
+      "Nova Ghost 3.0",
+      "Saviance One",
+      "Steve-O and the Boyz"
+    ],
+    "advertisedBilling": [
+      "Oracle The Messenger",
+      "EGR",
+      "Nova Ghost 3.0",
+      "Saviance One",
+      "Steve-O and the Boyz"
+    ],
+    "officialBill": [
+      "Oracle The Messenger",
+      "EGR",
+      "Nova Ghost 3.0",
+      "Saviance One",
+      "Steve-O and the Boyz"
+    ],
+    "eventType": "event",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/eternaltone7/reel/DdqJTFAhq16/",
+    "officialUrl": "https://www.instagram.com/eternaltone7/reel/DdqJTFAhq16/",
+    "image": "assets/events/kingdom-seekers-family-day-stockton-2026-10-18-official-flyer.jpg",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "detailImageLayout": "portrait",
+    "imageSource": "Official event announcement",
+    "imageSourceUrl": "https://www.instagram.com/egrxofficial/reel/DeNC11aME87/",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "authority": "official_event",
+    "confidence": "high",
+    "sourceName": "Official artist / organizer announcement",
+    "firstSeen": "2026-10-12T19:39:04Z",
+    "lastVerified": "2026-10-12T19:39:04Z",
+    "publicDescription": "Free family event with live music, a car show, food and vendors. EGR is scheduled to perform at 3 PM.",
+    "notes": "Current organizer and artist announcements supersede the old $10-admission poster. Use the updated FREE EVENT flyer. General event starts at 1 PM; EGR set is 3 PM.",
+    "sources": [
+      {
+        "name": "Official artist / organizer announcement",
+        "url": "https://www.instagram.com/eternaltone7/reel/DdqJTFAhq16/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "Official artist / organizer announcement",
+        "url": "https://www.instagram.com/egrxofficial/reel/DeNC11aME87/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "startDateTime": "2026-10-18T13:00:00-07:00",
+    "endTime": "19:00",
+    "endDateTime": "2026-10-18T19:00:00-07:00",
+    "price": "Free"
+  },
+  {
+    "id": "do-not-be-afraid-costa-mesa-2026-10-31",
+    "title": "Do Not Be Afraid — Jesus & Hip Hop",
+    "startDate": "2026-10-31",
+    "endDate": "2026-10-31",
+    "startTime": "",
+    "timezone": "America/Los_Angeles",
+    "venue": "O.C. Christian Center",
+    "address": "3303 Harbor Boulevard, Suite A-104",
+    "city": "Costa Mesa",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Adam Cashen",
+      "N.E.W.S.",
+      "Liquid Ice",
+      "Rico",
+      "Even B Kim",
+      "Mic Esco",
+      "Nate Roze",
+      "J3DI",
+      "DJ Dr. Rock"
+    ],
+    "advertisedBilling": [
+      "Adam Cashen",
+      "N.E.W.S.",
+      "Liquid Ice",
+      "Rico",
+      "Even B Kim",
+      "Mic Esco",
+      "Nate Roze",
+      "J3DI",
+      "DJ Dr. Rock"
+    ],
+    "officialBill": [
+      "Adam Cashen",
+      "N.E.W.S.",
+      "Liquid Ice",
+      "Rico",
+      "Even B Kim",
+      "Mic Esco",
+      "Nate Roze",
+      "J3DI",
+      "DJ Dr. Rock"
+    ],
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://jesusandhiphop.com/events",
+    "officialUrl": "https://jesusandhiphop.com/events",
+    "image": "assets/events/do-not-be-afraid-costa-mesa-2026-10-31-official-flyer.webp",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "detailImageLayout": "portrait",
+    "imageSource": "Official event announcement",
+    "imageSourceUrl": "https://jesusandhiphop.com/events",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "authority": "official_event",
+    "confidence": "high",
+    "sourceName": "Official artist / organizer announcement",
+    "firstSeen": "2026-10-12T19:39:04Z",
+    "lastVerified": "2026-10-12T19:39:04Z",
+    "publicDescription": "Free Christian hip-hop concert with live music and worship at O.C. Christian Center.",
+    "notes": "Official event page and artist announcement confirm October 31. Only doors at 7 PM are announced; leave concert start unspecified. The October 30 open-mic event is separate.",
+    "sources": [
+      {
+        "name": "Official artist / organizer announcement",
+        "url": "https://jesusandhiphop.com/events",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "Official artist / organizer announcement",
+        "url": "https://www.instagram.com/prayfornews777/reel/DeK9OlJh5RC/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "price": "Free"
+  },
+  {
+    "id": "rap-go-round-west-palm-beach-2026-11-20",
+    "title": "Rap Go Round — Pass The Mic 2026",
+    "startDate": "2026-11-20",
+    "endDate": "2026-11-20",
+    "startTime": "21:00",
+    "timezone": "America/New_York",
+    "venue": "Catalyst Hip-Hop Youth Collective",
+    "address": "2470 Parker Avenue",
+    "city": "West Palm Beach",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Naldo",
+      "DJ Eternitrock"
+    ],
+    "advertisedBilling": [
+      "Naldo",
+      "DJ Eternitrock"
+    ],
+    "officialBill": [
+      "Naldo",
+      "DJ Eternitrock"
+    ],
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/holy_waters_hiphop/p/DeRgzrnkV7d/",
+    "officialUrl": "https://www.instagram.com/holy_waters_hiphop/p/DeRgzrnkV7d/",
+    "image": "assets/events/rap-go-round-west-palm-beach-2026-11-20-official-flyer.jpg",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "detailImageLayout": "portrait",
+    "imageSource": "Official event announcement",
+    "imageSourceUrl": "https://scontent-iad3-2.cdninstagram.com/v/t51.82787-15/841166272_17910980151500626_7356051550035348650_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ig_cache_key=NDAwMzk2MzE3OTkwNjQ1ODk4MA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=oFxX2_T9n88Q7kNvwE3p5h6&_nc_oc=AdrWNa7KrOMO1DjK-COBsh4gthnG_QruOImVBfsBGbPoBx8tZz8t8UN_Z9YBTSPa0WY&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_gid=GH2EtWaqpU_eU-SP5U0p8g&_nc_ss=7a22e&oh=00_AQNWvVjd718f4MvCsm8ZuGarKAWDDNajqeeaHduy8vzW_w&oe=6AD30FFD",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "authority": "official_event",
+    "confidence": "high",
+    "sourceName": "Official artist / organizer announcement",
+    "firstSeen": "2026-10-12T19:39:04Z",
+    "lastVerified": "2026-10-12T19:39:04Z",
+    "publicDescription": "Holy Waters Hip Hop and Catalyst present Rap Go Round, featuring Naldo, DJ Eternitrock, an artist showcase and a live Vice City Cypher.",
+    "notes": "Naldo explicitly confirms performing November 20, 9 PM–midnight. Organizer flyer names DJ Eternitrock and says more showcase performers will be revealed. Tagged accounts alone are not extra billing. Display a single November 20 show; no spurious November 20–21 date range.",
+    "sources": [
+      {
+        "name": "Official artist / organizer announcement",
+        "url": "https://www.instagram.com/holy_waters_hiphop/p/DeRgzrnkV7d/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "Official artist / organizer announcement",
+        "url": "https://www.instagram.com/naldo_aka_naldeezy/reel/DeKOIOJJVKP/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "startDateTime": "2026-11-20T21:00:00-05:00"
+  },
+  {
+    "id": "night-of-worship-tampa-2026-10-31",
+    "title": "Night of Worship — Worshipping Beyond the Walls",
+    "startDate": "2026-10-31",
+    "endDate": "2026-10-31",
+    "startTime": "18:00",
+    "timezone": "America/New_York",
+    "venue": "3506 Machado Street",
+    "address": "3506 Machado Street",
+    "city": "Tampa",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Sir James"
+    ],
+    "advertisedBilling": [
+      "Sir James"
+    ],
+    "officialBill": [
+      "Sir James"
+    ],
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/aye_sirjames/p/DeUwRzuhEen/",
+    "officialUrl": "https://www.instagram.com/aye_sirjames/p/DeUwRzuhEen/",
+    "image": "assets/events/night-of-worship-tampa-2026-10-31-official-flyer.jpg",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "detailImageLayout": "portrait",
+    "imageSource": "Official event announcement",
+    "imageSourceUrl": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/844670889_18630817474006343_92198545773752006_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ig_cache_key=NDAwNTAzODI5ODY0NDEwNTEyNw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTM1Ny5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=kEQg0PKdqgUQ7kNvwH5zdGR&_nc_oc=AdoOMQZsdLgp5X3Lx4yB4bGWyBsYe-ID9QpKksaJdB110JJoVfdMrR0Y6lWeJeYnG74&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&_nc_gid=hhUaL-dKgiBCCt5WKbJ39A&_nc_ss=7a22e&oh=00_AQM3K62uyrzUIED2GUdFYp3FyTduuNOqplIrmlOnxXCEkw&oe=6AD3111E",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "authority": "official_event",
+    "confidence": "high",
+    "sourceName": "Official artist / organizer announcement",
+    "firstSeen": "2026-10-12T19:39:04Z",
+    "lastVerified": "2026-10-12T19:39:04Z",
+    "publicDescription": "Outdoor Night of Worship featuring Sir James. All are welcome; bring a lawn chair.",
+    "notes": "Sir James explicitly confirms ministering at this event. Flyer specifies church yard at this address, but no legible church name; do not invent one.",
+    "sources": [
+      {
+        "name": "Official artist / organizer announcement",
+        "url": "https://www.instagram.com/aye_sirjames/p/DeUwRzuhEen/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "startDateTime": "2026-10-31T18:00:00-04:00"
+  },
+  {
+    "id": "harvest-fest-ontario-2026-10-31",
+    "title": "Harvest Fest — 626authentic & Lyrical Levite",
+    "startDate": "2026-10-31",
+    "endDate": "2026-10-31",
+    "startTime": "",
+    "timezone": "America/Los_Angeles",
+    "venue": "Victory Outreach Ontario Bilingual Church",
+    "address": "215 W G Street",
+    "city": "Ontario",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "626authentic",
+      "Lyrical Levite"
+    ],
+    "advertisedBilling": [
+      "626authentic",
+      "Lyrical Levite"
+    ],
+    "officialBill": [
+      "626authentic",
+      "Lyrical Levite"
+    ],
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/voontariobilingual/p/Dd7tAP9GvUD/",
+    "officialUrl": "https://www.instagram.com/voontariobilingual/p/Dd7tAP9GvUD/",
+    "image": "assets/events/harvest-fest-ontario-2026-10-31-official-flyer.jpg",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "detailImageLayout": "portrait",
+    "imageSource": "Official event announcement",
+    "imageSourceUrl": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/831354523_18222346831338604_8146946501559204930_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ig_cache_key=Mzk5Nzk4MTk3MTE0ODI4ODc4MA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=uSDODCna5bUQ7kNvwFH2Agl&_nc_oc=Adphq8Eq0t650YkD2xwke2KGHVbxY_gML4yKLJPynYUkS12sghMLPdRWwFzWtX0gVCQ&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_gid=w-PDkvUpoqL9EQJZwMTARw&_nc_ss=7a22e&oh=00_AQPfQD7QpS_9luPI9tOr9zbULCMAMwELF50AsCY2WeQMSA&oe=6AD2F980",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "authority": "official_event",
+    "confidence": "high",
+    "sourceName": "Official artist / organizer announcement",
+    "firstSeen": "2026-10-12T19:39:04Z",
+    "lastVerified": "2026-10-12T19:39:04Z",
+    "publicDescription": "Harvest Fest at Victory Outreach Ontario Bilingual Church with live music from 626authentic and Lyrical Levite.",
+    "notes": "Official church collaborative artist announcements confirm both performers. Flyer gives doors at 5 PM only; concert start left blank.",
+    "sources": [
+      {
+        "name": "Official artist / organizer announcement",
+        "url": "https://www.instagram.com/voontariobilingual/p/Dd7tAP9GvUD/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ]
+  },
+  {
+    "id": "house-of-deliverance-music-fest-wichita-falls-2026-10-03",
+    "title": "House of Deliverance Music Fest",
+    "startDate": "2026-10-03",
+    "endDate": "2026-10-03",
+    "startTime": "10:00",
+    "timezone": "America/Chicago",
+    "venue": "Bridwell Park",
+    "address": "1200 Harrison Street",
+    "city": "Wichita Falls",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Drew Anderson",
+      "Manna",
+      "Gospel Ready",
+      "Bobby Bendito",
+      "Cierra Barrera",
+      "KG Santiago",
+      "Da Young Disciples"
+    ],
+    "advertisedBilling": [
+      "Drew Anderson",
+      "Manna",
+      "Gospel Ready",
+      "Bobby Bendito",
+      "Cierra Barrera",
+      "KG Santiago",
+      "Da Young Disciples"
+    ],
+    "officialBill": [
+      "Drew Anderson",
+      "Manna",
+      "Gospel Ready",
+      "Bobby Bendito",
+      "Cierra Barrera",
+      "KG Santiago",
+      "Da Young Disciples"
+    ],
+    "eventType": "festival",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bobbybendito.com/upcoming-events/wichita-falls-texas",
+    "officialUrl": "https://www.bobbybendito.com/upcoming-events/wichita-falls-texas",
+    "image": "assets/events/house-of-deliverance-music-fest-wichita-falls-2026-10-03-official-flyer.jpg",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "detailImageLayout": "portrait",
+    "imageSource": "Official event announcement",
+    "imageSourceUrl": "https://images.squarespace-cdn.com/content/v1/69444e8770eec34d3344dadf/1790610691113-HBPIYUSEG1JOKJTLL95S/IMG_7478+2.JPEG?format=1000w",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "authority": "official_event",
+    "confidence": "high",
+    "sourceName": "Official artist / organizer announcement",
+    "firstSeen": "2026-10-12T19:39:04Z",
+    "lastVerified": "2026-10-12T19:39:04Z",
+    "publicDescription": "Sixth annual House of Deliverance Music Fest, a free family event with live music at Bridwell Park.",
+    "notes": "Official artist calendar explicitly dates this event October 3, 2026; full printed musical lineup preserved. Added after completion to the archive.",
+    "sources": [
+      {
+        "name": "Official artist / organizer announcement",
+        "url": "https://www.bobbybendito.com/upcoming-events/wichita-falls-texas",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "startDateTime": "2026-10-03T10:00:00-05:00",
+    "endTime": "16:00",
+    "endDateTime": "2026-10-03T16:00:00-05:00",
+    "price": "Free"
+  },
+  {
+    "id": "pray-for-my-hood-stockton-2026-10-11",
+    "title": "Pray for My Hood — Free Concert",
+    "startDate": "2026-10-11",
+    "endDate": "2026-10-11",
+    "startTime": "13:00",
+    "timezone": "America/Los_Angeles",
+    "venue": "Boggs Tract",
+    "address": "1803 Harbor Avenue",
+    "city": "Stockton",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "KC",
+      "Sevin",
+      "Dontae",
+      "Nu Tone",
+      "EGR",
+      "Oracle The Messenger"
+    ],
+    "advertisedBilling": [
+      "KC",
+      "Sevin",
+      "Dontae",
+      "Nu Tone",
+      "EGR",
+      "Oracle The Messenger"
+    ],
+    "officialBill": [
+      "KC",
+      "Sevin",
+      "Dontae",
+      "Nu Tone",
+      "EGR",
+      "Oracle The Messenger"
+    ],
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/kcandthekingdom/reel/DeBCdfURybi/",
+    "officialUrl": "https://www.instagram.com/kcandthekingdom/reel/DeBCdfURybi/",
+    "image": "assets/events/pray-for-my-hood-stockton-2026-10-11-official-flyer.jpg",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "detailImageLayout": "portrait",
+    "imageSource": "Official event announcement",
+    "imageSourceUrl": "https://www.instagram.com/kcandthekingdom/reel/DeBCdfURybi/",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "authority": "official_event",
+    "confidence": "high",
+    "sourceName": "Official artist / organizer announcement",
+    "firstSeen": "2026-10-12T19:39:04Z",
+    "lastVerified": "2026-10-12T19:39:04Z",
+    "publicDescription": "Free concert in Stockton’s Boggs Tract with KC, Sevin, Dontae, Nu Tone, EGR and Oracle The Messenger.",
+    "notes": "KC official announcements confirm full lineup, October 11, 1–5 PM and 1803 Harbor Avenue. Original event-specific promotional reel cover retained. Added after completion to archive.",
+    "sources": [
+      {
+        "name": "Official artist / organizer announcement",
+        "url": "https://www.instagram.com/kcandthekingdom/reel/DeBCdfURybi/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "Official artist / organizer announcement",
+        "url": "https://www.instagram.com/kcandthekingdom/reel/DeFd2SXSzCU/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "startDateTime": "2026-10-11T13:00:00-07:00",
+    "endTime": "17:00",
+    "endDateTime": "2026-10-11T17:00:00-07:00",
+    "price": "Free"
+  },
+  {
+    "id": "unity-in-the-community-el-monte-2026-09-19",
+    "title": "Unity in the Community — 626authentic Live",
+    "startDate": "2026-09-19",
+    "endDate": "2026-09-19",
+    "startTime": "11:00",
+    "timezone": "America/Los_Angeles",
+    "venue": "Tony Arceo Park",
+    "address": "",
+    "city": "El Monte",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "626authentic"
+    ],
+    "advertisedBilling": [
+      "626authentic"
+    ],
+    "officialBill": [
+      "626authentic"
+    ],
+    "eventType": "event",
+    "status": "scheduled",
+    "ticketUrl": "https://www.instagram.com/626authentic/p/DdMxJq7EiAD/",
+    "officialUrl": "https://www.instagram.com/626authentic/p/DdMxJq7EiAD/",
+    "image": "assets/events/unity-in-the-community-el-monte-2026-09-19-official-flyer.jpg",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "detailImageLayout": "portrait",
+    "imageSource": "Official event announcement",
+    "imageSourceUrl": "https://www.instagram.com/626authentic/p/DdMxJq7EiAD/",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "authority": "official_event",
+    "confidence": "high",
+    "sourceName": "Official artist / organizer announcement",
+    "firstSeen": "2026-10-12T19:39:04Z",
+    "lastVerified": "2026-10-12T19:39:04Z",
+    "publicDescription": "Community celebration with live music from 626authentic at Tony Arceo Park.",
+    "notes": "Official collaborative announcement confirms 626authentic live September 19. Music starts at 11 AM; the earlier community march and City Hall prayer are separate. Other unnamed performers not invented. Added after completion to archive.",
+    "sources": [
+      {
+        "name": "Official artist / organizer announcement",
+        "url": "https://www.instagram.com/626authentic/p/DdMxJq7EiAD/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "startDateTime": "2026-09-19T11:00:00-07:00",
+    "endTime": "13:00",
+    "endDateTime": "2026-09-19T13:00:00-07:00"
   }
 ]
