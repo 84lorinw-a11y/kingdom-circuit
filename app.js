@@ -347,7 +347,9 @@ const ARTIST_ROSTER_ORDER = [
   "tonyxtrotter",
   "Milla",
   "Prodigal",
-  "DJ CAM"
+  "DJ CAM",
+  "DJ Mr.E",
+  "Ally Minju"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -4998,6 +5000,39 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/dj-cam-official-oct11.jpg",
     "imagePosition": "50% 20%",
     "state": "FL",
+    "sourceRegistryVerified": true
+  },
+  "dj mr.e": {
+    "aliases": [
+      "DJ Mr.E",
+      "DJ Mr. E",
+      "DJ Mr E",
+      "DJMrEMusic",
+      "Eddy Jackson"
+    ],
+    "website": "https://djmremusic.com/",
+    "instagramProfile": "https://www.instagram.com/djmremusic/",
+    "spotifyProfile": "https://open.spotify.com/artist/10REJ4p30t7vU1qYAB01Xn",
+    "youtubeProfile": "https://www.youtube.com/@DJMrEMusic",
+    "officialImageSource": "https://open.spotify.com/artist/10REJ4p30t7vU1qYAB01Xn",
+    "imageUrl": "assets/artists/dj-mr-e-official-oct12.jpg",
+    "imagePosition": "50% 20%",
+    "state": "FL",
+    "sourceRegistryVerified": true
+  },
+  "ally minju": {
+    "aliases": [
+      "Ally Minju",
+      "allyminju",
+      "prodMinju"
+    ],
+    "website": "https://linktr.ee/allyminju?utm_source=linktree_profile_share&ltsid=0c4532b8-409d-4678-b4ae-a38ed01a193f",
+    "instagramProfile": "https://www.instagram.com/allyminju/",
+    "spotifyProfile": "https://open.spotify.com/artist/3jZQxUxjnQ753paNQHHuUk",
+    "youtubeProfile": "https://www.youtube.com/@allyminju/releases",
+    "officialImageSource": "Artist-supplied photo via owner, October 12, 2026",
+    "imageUrl": "assets/artists/ally-minju-artist-supplied-oct12.png",
+    "imagePosition": "50% 50%",
     "sourceRegistryVerified": true
   }
 };
@@ -9651,6 +9686,39 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imagePosition": "50% 20%",
     "state": "FL",
     "sourceRegistryVerified": true
+  },
+  "dj mr.e": {
+    "aliases": [
+      "DJ Mr.E",
+      "DJ Mr. E",
+      "DJ Mr E",
+      "DJMrEMusic",
+      "Eddy Jackson"
+    ],
+    "website": "https://djmremusic.com/",
+    "instagramProfile": "https://www.instagram.com/djmremusic/",
+    "spotifyProfile": "https://open.spotify.com/artist/10REJ4p30t7vU1qYAB01Xn",
+    "youtubeProfile": "https://www.youtube.com/@DJMrEMusic",
+    "officialImageSource": "https://open.spotify.com/artist/10REJ4p30t7vU1qYAB01Xn",
+    "imageUrl": "assets/artists/dj-mr-e-official-oct12.jpg",
+    "imagePosition": "50% 20%",
+    "state": "FL",
+    "sourceRegistryVerified": true
+  },
+  "ally minju": {
+    "aliases": [
+      "Ally Minju",
+      "allyminju",
+      "prodMinju"
+    ],
+    "website": "https://linktr.ee/allyminju?utm_source=linktree_profile_share&ltsid=0c4532b8-409d-4678-b4ae-a38ed01a193f",
+    "instagramProfile": "https://www.instagram.com/allyminju/",
+    "spotifyProfile": "https://open.spotify.com/artist/3jZQxUxjnQ753paNQHHuUk",
+    "youtubeProfile": "https://www.youtube.com/@allyminju/releases",
+    "officialImageSource": "Artist-supplied photo via owner, October 12, 2026",
+    "imageUrl": "assets/artists/ally-minju-artist-supplied-oct12.png",
+    "imagePosition": "50% 50%",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -10989,6 +11057,14 @@ const STATIC_ARTIST_PORTRAITS = {
   "dj cam": {
     "imageUrl": "assets/artists/dj-cam-official-oct11.jpg",
     "imagePosition": "50% 20%"
+  },
+  "dj mr.e": {
+    "imageUrl": "assets/artists/dj-mr-e-official-oct12.jpg",
+    "imagePosition": "50% 20%"
+  },
+  "ally minju": {
+    "imageUrl": "assets/artists/ally-minju-artist-supplied-oct12.png",
+    "imagePosition": "50% 50%"
   }
 };
 

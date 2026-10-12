@@ -61,7 +61,7 @@ EVENTS = (
         "startDateTime": "2026-10-30T20:00:00-04:00", "endDateTime": "2026-10-30T23:59:00-04:00",
         "venue": "3918 NW 167th St", "address": "3918 Northwest 167th Street",
         "city": "Miami Gardens", "state": "FL", "postalCode": "33054",
-        "artists": ["Joz"], "advertisedBilling": ["Southside Joz", "DJ Mr. E"],
+        "artists": ["Joz", "DJ Mr.E"], "advertisedBilling": ["Southside Joz", "DJ Mr. E"],
         "lineupExplicit": True, "ageRestriction": "18+", "host": "Sean Olivera",
         "officialUrl": "https://www.eventbrite.com/e/good-vibez-jesus-glow-in-the-dark-party-tickets-1997092475354",
         "ticketUrl": "https://www.eventbrite.com/e/good-vibez-jesus-glow-in-the-dark-party-tickets-1997092475354",

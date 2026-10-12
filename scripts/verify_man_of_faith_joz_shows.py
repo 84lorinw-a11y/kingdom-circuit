@@ -68,7 +68,7 @@ def verify(site: Path) -> None:
             assert all(name in html.unescape(card) for name in source["advertisedBilling"])
             if source.get("unconfirmedArtists"):
                 assert 'unconfirmed' not in card.lower(), (path, "removed session note returned")
-            if source["artists"] == ["Joz"]:
+            if "Joz" in source["artists"]:
                 assert '<a href="/artists/joz/">Southside Joz</a>' in card
         assert builder.absolute(href) in (site / "sitemap.xml").read_text()
     print("Submitted shows verified: artwork, local dates, billing, artist links, listings and internal session metadata")
