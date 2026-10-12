@@ -369,7 +369,8 @@ const ARTIST_ROSTER_ORDER = [
   "Big Lek",
   "Naldo",
   "TruthSoldier",
-  "SOC Driz"
+  "SOC Driz",
+  "Justo Chalaire"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -5323,6 +5324,20 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/socdriz/",
     "imageUrl": "assets/artists/soc-driz-official-oct12.jpg",
     "imagePosition": "50% 50%",
+    "sourceRegistryVerified": true
+  },
+  "justo chalaire": {
+    "aliases": [
+      "Justo Chalaire",
+      "Justo"
+    ],
+    "website": "https://www.instagram.com/justochalaire/",
+    "instagramProfile": "https://www.instagram.com/justochalaire/",
+    "spotifyProfile": "https://open.spotify.com/artist/1Hp8z1Le8QmPo11sSLk8Uc",
+    "youtubeProfile": "https://www.youtube.com/@justochalaire",
+    "officialImageSource": "https://www.instagram.com/p/DeILxW2PSfi/",
+    "imageUrl": "assets/artists/justo-chalaire-official-performance-oct12.jpg",
+    "imagePosition": "50% 40%",
     "sourceRegistryVerified": true
   }
 };
@@ -10279,6 +10294,20 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/soc-driz-official-oct12.jpg",
     "imagePosition": "50% 50%",
     "sourceRegistryVerified": true
+  },
+  "justo chalaire": {
+    "aliases": [
+      "Justo Chalaire",
+      "Justo"
+    ],
+    "website": "https://www.instagram.com/justochalaire/",
+    "instagramProfile": "https://www.instagram.com/justochalaire/",
+    "spotifyProfile": "https://open.spotify.com/artist/1Hp8z1Le8QmPo11sSLk8Uc",
+    "youtubeProfile": "https://www.youtube.com/@justochalaire",
+    "officialImageSource": "https://www.instagram.com/p/DeILxW2PSfi/",
+    "imageUrl": "assets/artists/justo-chalaire-official-performance-oct12.jpg",
+    "imagePosition": "50% 40%",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -11705,6 +11734,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "soc driz": {
     "imageUrl": "assets/artists/soc-driz-official-oct12.jpg",
     "imagePosition": "50% 50%"
+  },
+  "justo chalaire": {
+    "imageUrl": "assets/artists/justo-chalaire-official-performance-oct12.jpg",
+    "imagePosition": "50% 40%"
   }
 };
 
