@@ -56,7 +56,7 @@ class VerifiedShowArtworkTests(unittest.TestCase):
     def test_saved_by_grace_lists_all_five_without_creating_artist_profiles(self):
         pin = artwork.BY_ID["supplemental:issac-mansfield-saved-by-grace-2026"]
         self.assertEqual(pin["advertisedBilling"],
-                         ["Issac Mansfield", "Josh Morgan", "DJ Cam", "Lev Nova", "Junado"])
+                         ["Issac Mansfield", "Josh Morgan", "DJ CAM", "Lev Nova", "Junado"])
         self.assertEqual(pin["officialBill"], pin["advertisedBilling"])
         self.assertNotIn("artists", pin)
 

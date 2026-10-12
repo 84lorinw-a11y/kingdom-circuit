@@ -347,7 +347,7 @@ const ARTIST_ROSTER_ORDER = [
   "tonyxtrotter",
   "Milla",
   "Prodigal",
-  "DJ Cam"
+  "DJ CAM"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -4984,8 +4984,8 @@ const VERIFIED_ARTIST_REGISTRY = {
   },
   "dj cam": {
     "aliases": [
-      "DJ Cam",
       "DJ CAM",
+      "DJ Cam",
       "djcam.bpm",
       "DJCam.BPM1",
       "onlyonedjcam"
@@ -9636,8 +9636,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
   },
   "dj cam": {
     "aliases": [
-      "DJ Cam",
       "DJ CAM",
+      "DJ Cam",
       "djcam.bpm",
       "DJCam.BPM1",
       "onlyonedjcam"
