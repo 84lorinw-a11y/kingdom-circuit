@@ -5293,9 +5293,9 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/naldo_aka_naldeezy/",
     "spotifyProfile": "",
     "youtubeProfile": "https://www.youtube.com/channel/UCSvkjNdirkKyLlGbypr53rA",
-    "officialImageSource": "https://www.instagram.com/naldo_aka_naldeezy/reel/Ddwr7rOpS3l/",
-    "imageUrl": "assets/artists/naldo-official-oct12.jpg",
-    "imagePosition": "50% 65%",
+    "officialImageSource": "https://www.instagram.com/naldo_aka_naldeezy/p/DJVvnMitCvT/",
+    "imageUrl": "assets/artists/naldo-official-portrait-oct12.webp",
+    "imagePosition": "45% 0%",
     "sourceRegistryVerified": true
   },
   "truthsoldier": {
@@ -10262,9 +10262,9 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/naldo_aka_naldeezy/",
     "spotifyProfile": "",
     "youtubeProfile": "https://www.youtube.com/channel/UCSvkjNdirkKyLlGbypr53rA",
-    "officialImageSource": "https://www.instagram.com/naldo_aka_naldeezy/reel/Ddwr7rOpS3l/",
-    "imageUrl": "assets/artists/naldo-official-oct12.jpg",
-    "imagePosition": "50% 65%",
+    "officialImageSource": "https://www.instagram.com/naldo_aka_naldeezy/p/DJVvnMitCvT/",
+    "imageUrl": "assets/artists/naldo-official-portrait-oct12.webp",
+    "imagePosition": "45% 0%",
     "sourceRegistryVerified": true
   },
   "truthsoldier": {
@@ -11724,8 +11724,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 35%"
   },
   "naldo": {
-    "imageUrl": "assets/artists/naldo-official-oct12.jpg",
-    "imagePosition": "50% 65%"
+    "imageUrl": "assets/artists/naldo-official-portrait-oct12.webp",
+    "imagePosition": "45% 0%"
   },
   "truthsoldier": {
     "imageUrl": "assets/artists/truthsoldier-official-oct12.jpg",
