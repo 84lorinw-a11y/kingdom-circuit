@@ -5281,9 +5281,9 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/big_lek116/",
     "spotifyProfile": "https://open.spotify.com/artist/43VQgJQAqaO8FHNjBHgpGV",
     "youtubeProfile": "https://www.youtube.com/user/breezyCboy2",
-    "officialImageSource": "https://i.scdn.co/image/ab6761670000ecd44a4703e7d60142ec3b25a028",
-    "imageUrl": "assets/artists/big-lek-official-oct12.jpg",
-    "imagePosition": "50% 35%",
+    "officialImageSource": "owner-supplied:codex-clipboard-3632dbaf-ede3-47db-8517-371697a4d91f.png",
+    "imageUrl": "assets/artists/big-lek-owner-supplied-oct12.png",
+    "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   },
   "naldo": {
@@ -10252,9 +10252,9 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/big_lek116/",
     "spotifyProfile": "https://open.spotify.com/artist/43VQgJQAqaO8FHNjBHgpGV",
     "youtubeProfile": "https://www.youtube.com/user/breezyCboy2",
-    "officialImageSource": "https://i.scdn.co/image/ab6761670000ecd44a4703e7d60142ec3b25a028",
-    "imageUrl": "assets/artists/big-lek-official-oct12.jpg",
-    "imagePosition": "50% 35%",
+    "officialImageSource": "owner-supplied:codex-clipboard-3632dbaf-ede3-47db-8517-371697a4d91f.png",
+    "imageUrl": "assets/artists/big-lek-owner-supplied-oct12.png",
+    "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   },
   "naldo": {
@@ -11724,8 +11724,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 15%"
   },
   "big lek": {
-    "imageUrl": "assets/artists/big-lek-official-oct12.jpg",
-    "imagePosition": "50% 35%"
+    "imageUrl": "assets/artists/big-lek-owner-supplied-oct12.png",
+    "imagePosition": "50% 0%"
   },
   "naldo": {
     "imageUrl": "assets/artists/naldo-official-portrait-oct12.webp",
