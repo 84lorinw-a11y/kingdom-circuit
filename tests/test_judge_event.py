@@ -14,6 +14,7 @@ class JudgeEventTests(unittest.TestCase):
     def test_judges_are_visible_and_linked_but_never_schema_performers(self):
         event = next(e for e in json.loads((ROOT / 'config/manual-events.json').read_text())
                      if e.get('id') == 'whos-got-talent-kissimmee-2026-10-24')
+        event = dict(event, billingRole='judges')
         roster = [{'name':'Biancallove'}, {'name':'GIOVANI'}]
         card = builder.event_card(event, roster)
         self.assertIn('>Event</span>', card)
@@ -30,6 +31,22 @@ class JudgeEventTests(unittest.TestCase):
         self.assertTrue(repair_event_schema(stale, event))
         self.assertEqual(stale['@type'], 'Event')
         self.assertNotIn('performer', stale)
+        self.assertFalse(repair_event_schema(stale, event))
+
+    def test_biancallove_live_performance_removes_judges_label(self):
+        event = next(e for e in json.loads((ROOT / 'config/manual-events.json').read_text())
+                     if e.get('id') == 'whos-got-talent-kissimmee-2026-10-24')
+        card = builder.event_card(event, [{'name': 'Biancallove'}, {'name': 'GIOVANI'}])
+        self.assertNotIn('Judges:', card)
+        self.assertIn('>Event</span>', card)
+        self.assertIn('/artists/biancallove/', card)
+        self.assertIn('Pastor Nomar Ayala', card)
+        schema = builder.event_schema(event)
+        self.assertEqual([p['name'] for p in schema['performer']], ['Biancallove'])
+        self.assertIn('live performance by Biancallove', schema['description'])
+        stale = dict(schema, performer=[{'@type': 'MusicGroup', 'name': n} for n in event['officialBill']])
+        self.assertTrue(repair_event_schema(stale, event))
+        self.assertEqual([p['name'] for p in stale['performer']], ['Biancallove'])
         self.assertFalse(repair_event_schema(stale, event))
 
 

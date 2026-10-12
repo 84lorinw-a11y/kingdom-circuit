@@ -5925,14 +5925,14 @@
       "Biancallove",
       "Pastor Nomar Ayala"
     ],
-    "billingRole": "judges",
+    "billingRole": "mixed",
     "eventType": "event",
     "status": "scheduled",
     "lineupExplicit": true,
     "officialUrl": "https://talents4christ.org/open-mic",
     "ticketUrl": "https://talents4christ.org/open-mic",
-    "description": "Talents 4 Christ presents Who's Got Talent?, a Christian talent competition featuring CHH, singing, spoken word, dance, and live music. Judges: GIOVANI, Biancallove, and Pastor Nomar Ayala. October 24, 2026 at 7 PM at Solid Rock Community Church in Kissimmee, Florida. See the official event page for audience tickets and artist registration.",
-    "publicDescription": "Talents 4 Christ presents Who's Got Talent?, a Christian talent competition featuring CHH, singing, spoken word, dance, and live music. Judges: GIOVANI, Biancallove, and Pastor Nomar Ayala. October 24, 2026 at 7 PM at Solid Rock Community Church in Kissimmee, Florida. See the official event page for audience tickets and artist registration.",
+    "description": "Talents 4 Christ presents Who's Got Talent?, a Christian talent competition featuring CHH, singing, spoken word, dance, and live music, including a live performance by Biancallove. October 24, 2026 at 7 PM at Solid Rock Community Church in Kissimmee, Florida. See the official event page for audience tickets and artist registration.",
+    "publicDescription": "Talents 4 Christ presents Who's Got Talent?, a Christian talent competition featuring CHH, singing, spoken word, dance, and live music, including a live performance by Biancallove. October 24, 2026 at 7 PM at Solid Rock Community Church in Kissimmee, Florida. See the official event page for audience tickets and artist registration.",
     "price": "Donation-based general admission",
     "image": "assets/events/whos-got-talent-kissimmee-2026-10-24.png",
     "imageType": "event_artwork",
@@ -5944,11 +5944,11 @@
     "authority": "official_event",
     "confidence": "high",
     "firstSeen": "2026-10-06T17:47:12Z",
-    "lastVerified": "2026-10-06T17:47:12Z",
-    "auditVerified": "2026-10-06",
+    "lastVerified": "2026-10-12T16:22:36.593816+00:00",
+    "auditVerified": "2026-10-12",
     "editorialBatch": "2026-10-06-submitted-events",
     "organizer": "Talents 4 Christ",
-    "notes": "Owner requested this community talent event as an exception and specifically requested the judges in the lineup and an Event label. All three are explicitly judges, not confirmed concert performers. Official website and flyer agree on October 24 and 7 PM show start (6:30 PM doors). No end time announced. Audience admission is donation based; $25 is the separate artist registration fee. Address from the exact official flyer.",
+    "notes": "Owner confirmed on October 12 that Biancallove will perform live as well as judge, and requested removal of the judges comment. Full advertised billing retained. GIOVANI and Pastor Nomar Ayala are billed participants; no live performance is assumed for them. Official website and flyer agree on October 24 and 7 PM show start (6:30 PM doors). No end time announced. Audience admission is donation based; $25 is the separate artist registration fee. Address from the exact official flyer.",
     "sources": [
       {
         "name": "Talents 4 Christ official event page and flyer",
@@ -5957,6 +5957,10 @@
         "authority": "official_event",
         "priority": 115
       }
+    ],
+    "unconfirmedArtists": [
+      "GIOVANI",
+      "Pastor Nomar Ayala"
     ]
   },
   {

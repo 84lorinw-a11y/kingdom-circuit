@@ -380,7 +380,7 @@ def main(site_root: str) -> None:
         artist_links = production_builder.billing_links(event, billing_artists)
         card = re.sub(r'<p class="artist-line">.*?</p>',
                       lambda _: f'<p class="artist-line">{artist_links}</p>' + production_builder.hosts_line(event), card, count=1, flags=re.S)
-        if event.get("billingRole") == "judges":
+        if event.get("billingRole") == "judges" or event.get("eventType") == "event":
             card = card.replace('<span class="badge badge-gold">Concert</span>',
                                 '<span class="badge badge-gold">Event</span>')
         start_time = html.escape(str(event.get("startTime") or ""), quote=True)
