@@ -84,23 +84,24 @@ class SubmittedShowTests(unittest.TestCase):
         shows.apply(self.root, "2026-09-25")
         self.assertEqual([saturday], self.read("supplemental-events.json"))
 
-    def test_artist_session_note_is_internal_and_is_not_schema_confirmed(self):
-        from finalize_seo_indexing import repair_event_schema
+    def test_weekend_expansion_preserves_identity_without_inventing_individual_set_times(self):
         spin = shows.EVENTS[3]
-        artists = [{"name": "Bobby Real Montgomery"}]
+        artists = [{"name": "Bobby Real Montgomery"}, {"name": "Shaquille Jones"}]
         line = builder.billing_links(spin, artists)
-        self.assertEqual('<a href="/artists/bobby-real-montgomery/">Bobby Real Montgomery</a>', line)
+        self.assertIn('<a href="/artists/bobby-real-montgomery/">Bobby Real Montgomery</a>', line)
+        self.assertIn('<a href="/artists/shaquille-jones/">Shaquille Jones</a>', line)
         schema = builder.event_schema(spin)
-        self.assertNotIn("performer", schema)
+        self.assertIn("Shaquille Jones", [p['name'] for p in schema['performer']])
         self.assertEqual(spin["publicDescription"], schema["description"])
-        self.assertNotIn("unconfirmed", schema["description"])
-        self.assertEqual("2026-10-23T19:30:00-04:00", schema["startDate"])
-        self.assertEqual("The Lawrence Hotel", schema["location"]["name"])
-        stale = {"performer": [{"name": "Bobby Real Montgomery"}, {"name": "Confirmed guest"}]}
-        self.assertTrue(repair_event_schema(stale, spin))
-        self.assertEqual([{"name": "Confirmed guest"}], stale["performer"])
-        self.assertFalse(repair_event_schema(stale, spin))
-        self.assertNotIn('(session unconfirmed)', builder.billing_links(shows.EVENTS[0], artists))
+        self.assertEqual("2026-10-21", schema["startDate"])
+        self.assertEqual("2026-10-24", schema["endDate"])
+        self.assertEqual("Event", schema["@type"])
+        self.assertFalse(spin['startTime'])
+        self.assertIn('/event/the-spin-awards-pre-ceremony-2026-10-23-lawrenceville-3623f3/', spin['legacyEventPaths'])
+        shows.apply(self.root, "2026-10-24")
+        self.assertTrue(any(shows.matches(e, spin) for e in self.read('events.json')))
+        shows.apply(self.root, "2026-10-25")
+        self.assertFalse(any(shows.matches(e, spin) for e in self.read('events.json')))
 
 
 if __name__ == "__main__":

@@ -30,8 +30,9 @@ def verify(site: Path) -> None:
         assert uses_image(detail, site, source["image"]), (href, "wrong flyer")
         assert source["officialUrl"] in detail
         schemas = [json.loads(raw) for raw in re.findall(r'<script type="application/ld\+json">(.*?)</script>', detail, re.S)]
-        schema = next(s for s in schemas if s.get("@type") == "MusicEvent")
-        assert schema["startDate"] == source.get("startDateTime", source["startDate"]), (href, "wrong local date/time")
+        schema_type = "MusicEvent" if source["eventType"] in {"concert", "festival"} else "Event"
+        schema = next(s for s in schemas if s.get("@type") == schema_type)
+        assert schema["startDate"] == (source.get("startDateTime") or source["startDate"]), (href, "wrong local date/time")
         if source.get("endDateTime"):
             assert schema["endDate"] == source["endDateTime"]
         if source.get("ageRestriction"):
