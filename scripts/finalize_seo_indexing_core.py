@@ -35,6 +35,7 @@ def slug(value: str) -> str:
 
 
 STATE_SLUGS = {slug(name) for name in STATE_NAMES.values()}
+STATE_SLUGS.add("pr")  # Preserve Puerto Rico's existing published URL.
 CORE_INDEX_URLS = {
     "/",
     "/shows/",

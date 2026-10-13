@@ -68,6 +68,9 @@ jobs:
       - name: Apply durable September 12 audit repairs
         run: python scripts/apply_sep12_live_audit_repairs.py
 
+      - name: Remember permanent state pages before date rollover
+        run: python scripts/permanent_state_pages.py --source .
+
       - name: Remove completed shows from source data
         run: python scripts/prune_past_events.py --source .
 
@@ -120,7 +123,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -- events.json run-status.json cache/ticketmaster-attractions.json \
             supplemental-events.json config/artists.json coverage-gaps.json app.js \
-            full-scan-status.json full-scan-candidates.json
+            full-scan-status.json full-scan-candidates.json config/permanent-state-pages.json
           if git diff --cached --quiet; then
             echo "No event-data changes to commit."
           else
@@ -455,6 +458,9 @@ jobs:
             --source-events supplemental-events.json \
             --source-history event-history.json
 
+      - name: Preserve permanent state navigation and complete archives
+        run: python scripts/permanent_state_pages.py --source . --site _site
+
       - name: Refresh final production indexing after redesign
         run: python scripts/finalize_seo_indexing_core.py --site _site --show-requested-event-address
 
@@ -484,6 +490,9 @@ jobs:
 
       - name: Verify artist details in the final production artifact
         run: python scripts/finalize_artist_details.py _site --check
+
+      - name: Verify permanent state pages in the final production artifact
+        run: python scripts/permanent_state_pages.py --source . --site _site --check
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

@@ -361,6 +361,13 @@ def main():
 
     for code,shows in by_state.items():
         name=STATE_NAMES.get(code,code); p=state_path(code); urls.append(p); crumbs=[("Shows","/shows/"),(name,p)]; body=f'<section class="page-hero hero-compact">{breadcrumbs(crumbs)}<p class="eyebrow">{esc(name)}</p><h1>Christian Hip-Hop Shows in {esc(name)}</h1><p class="hero-text">Browse upcoming verified CHH concerts, Christian rap shows, and festivals in {esc(name)}.</p></section><section class="calendar"><div class="event-grid">{"".join(event_card(e,artists) for e in shows)}</div></section>'; write_page(p,page(f"Christian Hip-Hop Shows in {name} | The Kingdom Circuit",f"Find upcoming Christian hip-hop concerts and festivals in {name}.",p,body,[breadcrumb_schema(crumbs)]))
+    # State URLs outlive the last upcoming show. Later overlays keep the existing
+    # active-state presentation; empty states get useful navigation and history.
+    from permanent_state_pages import discover_codes, write_empty_page
+    for code in discover_codes(REPO):
+        if code not in by_state:
+            write_empty_page(OUT, code)
+            urls.append(state_path(code))
     for (city,code),shows in by_city.items():
         state=STATE_NAMES.get(code,code); p=city_path(city,code); urls.append(p); crumbs=[("Shows","/shows/"),(state,state_path(code)),(city,p)]; body=f'<section class="page-hero hero-compact">{breadcrumbs(crumbs)}<p class="eyebrow">{esc(city)}, {esc(code)}</p><h1>Christian Hip-Hop Shows in {esc(city)}</h1><p class="hero-text">Browse upcoming verified CHH concerts and festivals in {esc(city)}, {esc(state)}.</p></section><section class="calendar"><div class="event-grid">{"".join(event_card(e,artists) for e in shows)}</div></section>'; write_page(p,page(f"Christian Hip-Hop Shows in {city}, {code} | The Kingdom Circuit",f"Find upcoming Christian hip-hop concerts and festivals in {city}, {state}.",p,body,[breadcrumb_schema(crumbs)]))
     for (year,month),shows in by_month.items():
