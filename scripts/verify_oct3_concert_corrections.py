@@ -8,7 +8,7 @@ from pathlib import Path
 import sys
 from zoneinfo import ZoneInfo
 
-from apply_oct3_concert_corrections import ROOT, WRONG_NEHEMIAH_IDS, rejected, key
+from apply_oct3_concert_corrections import ROOT, WRONG_NEHEMIAH_IDS, WRONG_ZEKE_IDS, rejected, key
 from apply_verified_event_overrides import REVIVAL_NIGHT_EVENT
 from apply_verified_show_artwork import BY_ID
 from build_seo_site import event_path, fnv
@@ -21,12 +21,18 @@ def verify(site):
     assert not any(rejected(e) for e in events)
     history = json.loads((ROOT / 'event-history.json').read_text())['events']
     assert not any(rejected(e.get('event', e)) for e in history)
-    for event_id in WRONG_NEHEMIAH_IDS:
+    for event_id in WRONG_NEHEMIAH_IDS | WRONG_ZEKE_IDS:
         assert not list((site / 'event').glob(f'*-{fnv(event_id)}/index.html')), event_id
     nehemiah = [e for e in events if 'Nehemiah' in e.get('artists', [])]
     if today <= '2026-10-17':
         assert len([e for e in nehemiah if key(e) == 'adrenaline-valrico-2026-10-17']) == 1
     registry = json.loads((site / 'config/artists.json').read_text())
+    zeke = next(a for a in registry if a['name'] == 'ZEKE')
+    assert '32942' in zeke['bandsintownRejectedArtistIds']
+    if today <= '2026-11-06':
+        flavor = next(e for e in events if key(e) == 'flavor-fest-2026-friday-concerts')
+        assert 'ZEKE' in flavor['artists']
+        assert 'flavor-fest' in (site / 'artists/zeke/index.html').read_text().casefold()
     artist = next(a for a in json.loads((ROOT / 'config/artists.json').read_text()) if a['name'] == 'Nehemiah')
     assert '15347266' in artist['bandsintownRejectedArtistIds']
     assert artist['socialSearchEnabled'] and not artist['ticketmasterEnabled'] and not artist['textMatchEnabled']
@@ -63,7 +69,7 @@ def verify(site):
         assert 'adrenaline' in text.casefold()
     public_artist = next(a for a in registry if a['name'] == 'Nehemiah')
     assert (site / public_artist['imageUrl'].lstrip('/')).is_file()
-    print(json.dumps(dict(verifiedConcerts=verified, removedWrongArtistShows=len(WRONG_NEHEMIAH_IDS), nehemiahShows=len(nehemiah)), indent=2))
+    print(json.dumps(dict(verifiedConcerts=verified, removedWrongArtistShows=len(WRONG_NEHEMIAH_IDS | WRONG_ZEKE_IDS), nehemiahShows=len(nehemiah)), indent=2))
 
 
 if __name__ == '__main__':

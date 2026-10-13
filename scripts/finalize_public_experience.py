@@ -151,6 +151,9 @@ def finalize_public_experience(site: Path) -> dict[str, Any]:
         "--origin", PUBLIC_ORIGIN,
         "--workers", "8",
         "--timeout", "12",
+        # Preserve owner-supplied full-resolution portraits (including 24 MP
+        # PNGs) while still generating the same bounded responsive WebPs.
+        "--max-image-bytes", str(24 * 1024 * 1024),
         "--wall-time", "360" if remote_images else "180",
     ]
     if not remote_images:

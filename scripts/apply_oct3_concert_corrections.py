@@ -13,6 +13,13 @@ WRONG_NEHEMIAH_IDS = {
     "bandsintown:108952489", "bandsintown:1040377145", "bandsintown:108952495",
     "bandsintown:108952501",
 }
+# Seattle punk band, unrelated to CHH artist @zekegarciamusic.
+WRONG_ZEKE_IDS = {
+    "bandsintown:108743066", "bandsintown:1039610753", "bandsintown:1039610768",
+    "bandsintown:1039833054", "bandsintown:108655781", "bandsintown:108737724",
+    "bandsintown:1040273637", "bandsintown:1040409354", "bandsintown:1040274569",
+    "bandsintown:1040258635",
+}
 ADRENALINE_DUPLICATE = "bandsintown:1040469553"
 OWNER_REMOVED_EVENT_IDS = {"rap-go-round-west-palm-beach-2026-11-20"}
 
@@ -22,11 +29,11 @@ def key(event):
 
 
 def rejected(event):
-    if key(event) in WRONG_NEHEMIAH_IDS | {ADRENALINE_DUPLICATE} | OWNER_REMOVED_EVENT_IDS:
+    if key(event) in WRONG_NEHEMIAH_IDS | WRONG_ZEKE_IDS | {ADRENALINE_DUPLICATE} | OWNER_REMOVED_EVENT_IDS:
         return True
-    # Keep independently verified CHH shows. Only this provider's known metal
-    # band identity is rejected, never all events matching the name Nehemiah.
-    return str(event.get("bandsintownArtistId") or "") == "15347266"
+    # Reject only the known unrelated band identities. Independently verified
+    # CHH appearances, including ZEKE at Flavor Fest, remain eligible.
+    return str(event.get("bandsintownArtistId") or "") in {"15347266", "32942"}
 
 
 def apply(root=ROOT, today=None):
@@ -64,4 +71,4 @@ def apply(root=ROOT, today=None):
 
 if __name__ == "__main__":
     apply()
-    print("October 3 concerts preserved; unrelated Nehemiah band and Adrenaline duplicate removed")
+    print("October 3 concerts preserved; unrelated Nehemiah/Zeke bands and Adrenaline duplicate removed")

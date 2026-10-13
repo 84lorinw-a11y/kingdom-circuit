@@ -371,7 +371,9 @@ const ARTIST_ROSTER_ORDER = [
   "SOC Driz",
   "Justo Chalaire",
   "Kyaliyah",
-  "Ahmad Nelson"
+  "Ahmad Nelson",
+  "Taylented",
+  "ricko!"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -5357,6 +5359,32 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/_ahmad1887/p/DdzT9EulIgH/?img_index=2",
     "imageUrl": "assets/artists/ahmad-nelson-official-oct13.jpg",
     "imagePosition": "50% 10%",
+    "sourceRegistryVerified": true
+  },
+  "taylented": {
+    "aliases": [
+      "Taylented"
+    ],
+    "website": "https://www.instagram.com/itstaylented/",
+    "instagramProfile": "https://www.instagram.com/itstaylented/",
+    "spotifyProfile": "https://open.spotify.com/artist/3IOqaQSOAsNh3zsTVOAchE",
+    "youtubeProfile": "https://www.youtube.com/channel/UCRhOiRf2SYLw9QXV7NWWohQ",
+    "officialImageSource": "Owner-supplied portrait, October 13, 2026",
+    "imageUrl": "assets/artists/taylented-owner-oct13.png",
+    "imagePosition": "50% 42%",
+    "sourceRegistryVerified": true
+  },
+  "ricko!": {
+    "aliases": [
+      "ricko!"
+    ],
+    "website": "https://linktr.ee/rickodunine",
+    "instagramProfile": "https://www.instagram.com/rickodunine/",
+    "spotifyProfile": "https://open.spotify.com/artist/4DElyywux5lCNkJiFlZ3I1",
+    "youtubeProfile": "https://www.youtube.com/channel/UCzHa_2yNMELdtGokPJuQSIg",
+    "officialImageSource": "https://www.instagram.com/rickodunine/p/DeS0QKujPEx/?img_index=4",
+    "imageUrl": "assets/artists/ricko-official-oct13.jpg",
+    "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   }
 };
@@ -10345,6 +10373,32 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/ahmad-nelson-official-oct13.jpg",
     "imagePosition": "50% 10%",
     "sourceRegistryVerified": true
+  },
+  "taylented": {
+    "aliases": [
+      "Taylented"
+    ],
+    "website": "https://www.instagram.com/itstaylented/",
+    "instagramProfile": "https://www.instagram.com/itstaylented/",
+    "spotifyProfile": "https://open.spotify.com/artist/3IOqaQSOAsNh3zsTVOAchE",
+    "youtubeProfile": "https://www.youtube.com/channel/UCRhOiRf2SYLw9QXV7NWWohQ",
+    "officialImageSource": "Owner-supplied portrait, October 13, 2026",
+    "imageUrl": "assets/artists/taylented-owner-oct13.png",
+    "imagePosition": "50% 42%",
+    "sourceRegistryVerified": true
+  },
+  "ricko!": {
+    "aliases": [
+      "ricko!"
+    ],
+    "website": "https://linktr.ee/rickodunine",
+    "instagramProfile": "https://www.instagram.com/rickodunine/",
+    "spotifyProfile": "https://open.spotify.com/artist/4DElyywux5lCNkJiFlZ3I1",
+    "youtubeProfile": "https://www.youtube.com/channel/UCzHa_2yNMELdtGokPJuQSIg",
+    "officialImageSource": "https://www.instagram.com/rickodunine/p/DeS0QKujPEx/?img_index=4",
+    "imageUrl": "assets/artists/ricko-official-oct13.jpg",
+    "imagePosition": "50% 0%",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -11779,6 +11833,14 @@ const STATIC_ARTIST_PORTRAITS = {
   "ahmad nelson": {
     "imageUrl": "assets/artists/ahmad-nelson-official-oct13.jpg",
     "imagePosition": "50% 10%"
+  },
+  "taylented": {
+    "imageUrl": "assets/artists/taylented-owner-oct13.png",
+    "imagePosition": "50% 42%"
+  },
+  "ricko!": {
+    "imageUrl": "assets/artists/ricko-official-oct13.jpg",
+    "imagePosition": "50% 0%"
   }
 };
 

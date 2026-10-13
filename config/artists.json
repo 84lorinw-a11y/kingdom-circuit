@@ -9321,10 +9321,13 @@
     "imagePosition": "50% 60%",
     "rosterOrder": 344,
     "sheetRosterOrder": 599,
-    "sourceIdentityNotes": "Owner verified in Artist Database row 343, imported October 12, 2026. Official social identities checked against the approved Sheet. Original official image saved locally and pinned; generic provider matching disabled until a provider identity is verified. Official/social discovery enabled.",
+    "sourceIdentityNotes": "Owner verified in Artist Database row 343, imported October 12, 2026. Official social identities checked against the approved Sheet. Original official image saved locally and pinned; generic provider matching disabled until a provider identity is verified. Official/social discovery enabled. October 13: reject Bandsintown 32942, the unrelated Seattle punk band. Name-only Bandsintown discovery is blocked until the CHH artist has a verified provider ID; official Flavor Fest billing remains valid.",
     "enabled": true,
     "sourceRegistryVerified": true,
-    "sourceRegistryRosterOrder": 344
+    "sourceRegistryRosterOrder": 344,
+    "bandsintownRejectedArtistIds": [
+      "32942"
+    ]
   },
   {
     "name": "Nigil Lee",
@@ -9716,6 +9719,62 @@
     "enabled": true,
     "sourceRegistryVerified": true,
     "sourceRegistryRosterOrder": 358,
+    "topStreamingPriority": false
+  },
+  {
+    "name": "Taylented",
+    "aliases": [
+      "Taylented"
+    ],
+    "state": "",
+    "label": "",
+    "category": "core",
+    "monitoringPriority": 3,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "website": "https://www.instagram.com/itstaylented/",
+    "instagramProfile": "https://www.instagram.com/itstaylented/",
+    "spotifyProfile": "https://open.spotify.com/artist/3IOqaQSOAsNh3zsTVOAchE",
+    "youtubeProfile": "https://www.youtube.com/channel/UCRhOiRf2SYLw9QXV7NWWohQ",
+    "officialImageSource": "Owner-supplied portrait, October 13, 2026",
+    "imageUrl": "assets/artists/taylented-owner-oct13.png",
+    "imagePosition": "50% 42%",
+    "rosterOrder": 359,
+    "sheetRosterOrder": null,
+    "sourceIdentityNotes": "Owner-Verified Artist Database row 608, imported October 13, 2026. Approved links from freshly reviewed Sheet; Spotify tracking parameters removed. Owner clarified Taylented is the artist and Anisha Tolbert is her manager, then corrected Sheet name and Instagram. Exact owner-provided portrait preserved. Unverified provider matching remains disabled.",
+    "enabled": true,
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 359,
+    "topStreamingPriority": false
+  },
+  {
+    "name": "ricko!",
+    "aliases": [
+      "ricko!"
+    ],
+    "state": "",
+    "label": "",
+    "category": "core",
+    "monitoringPriority": 3,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "website": "https://linktr.ee/rickodunine",
+    "instagramProfile": "https://www.instagram.com/rickodunine/",
+    "spotifyProfile": "https://open.spotify.com/artist/4DElyywux5lCNkJiFlZ3I1",
+    "youtubeProfile": "https://www.youtube.com/channel/UCzHa_2yNMELdtGokPJuQSIg",
+    "officialImageSource": "https://www.instagram.com/rickodunine/p/DeS0QKujPEx/?img_index=4",
+    "imageUrl": "assets/artists/ricko-official-oct13.jpg",
+    "imagePosition": "50% 0%",
+    "rosterOrder": 360,
+    "sheetRosterOrder": null,
+    "sourceIdentityNotes": "Owner-Verified Artist Database row 609, imported October 13, 2026. Approved links from freshly reviewed Sheet; Spotify tracking parameters removed. Official Instagram October 9 carousel slide 4 supplies the portrait. Preserve lower-case name and exclamation mark. Unverified provider matching remains disabled.",
+    "enabled": true,
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 360,
     "topStreamingPriority": false
   }
 ]

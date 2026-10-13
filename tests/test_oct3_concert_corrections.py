@@ -9,10 +9,24 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import collect_bandsintown_rest as collector
-from apply_oct3_concert_corrections import apply, rejected, WRONG_NEHEMIAH_IDS, ADRENALINE_DUPLICATE
+from apply_oct3_concert_corrections import apply, rejected, WRONG_NEHEMIAH_IDS, WRONG_ZEKE_IDS, ADRENALINE_DUPLICATE
 
 
 class OctoberConcertCorrectionTests(unittest.TestCase):
+    def test_zeke_requires_verified_identity_and_preserves_flavor_fest(self):
+        artist = {'name': 'ZEKE', 'aliases': ['ZEKE'], 'bandsintownRejectedArtistIds': ['32942']}
+        with patch.object(collector, 'get_json') as fetch:
+            self.assertEqual(collector.resolve_artist(artist)[2], 'ambiguous_name_requires_configured_id')
+            fetch.assert_not_called()
+            artist['bandsintownArtistId'] = '32942'
+            self.assertEqual(collector.resolve_artist(artist)[2], 'configured_id_rejected')
+            fetch.assert_not_called()
+        for event_id in WRONG_ZEKE_IDS:
+            self.assertTrue(rejected({'id': event_id}))
+        self.assertTrue(rejected({'id': 'future-unrelated-show', 'bandsintownArtistId': '32942'}))
+        self.assertFalse(rejected({'id': 'manual:flavor-fest-2026-friday-concerts', 'artists': ['ZEKE']}))
+        self.assertFalse(rejected({'id': 'new-official-chh-show', 'artists': ['ZEKE']}))
+
     def test_name_collision_never_queries_generic_artist_search(self):
         artist = {'name':'Nehemiah', 'aliases':['Nehemiah','its_nehe02'], 'bandsintownRejectedArtistIds':['15347266']}
         with patch.object(collector,'get_json') as fetch:
@@ -40,6 +54,8 @@ class OctoberConcertCorrectionTests(unittest.TestCase):
             saved=dict(approved[0],id='manual:'+approved[0]['id'],firstSeen='2026-10-02T12:00:00Z',status='cancelled')
             keep={'id':'adrenaline-valrico-2026-10-17','artists':['Nehemiah'],'firstSeen':'2026-10-01T00:00:00Z'}
             bad=[{'id':e,'artists':['Nehemiah']} for e in WRONG_NEHEMIAH_IDS | {ADRENALINE_DUPLICATE}]
+            bad.extend({'id': e, 'artists': ['ZEKE']} for e in WRONG_ZEKE_IDS)
+            bad.append({'id': 'future-unrelated-zeke-show', 'bandsintownArtistId': '32942'})
             bad.append({'id':'manual:rap-go-round-west-palm-beach-2026-11-20','artists':['Naldo','DJ Eternitrock']})
             paths=['events.json','supplemental-events.json','config/manual-events.json']
             for name in paths:(root/name).write_text(json.dumps([copy.deepcopy(saved),copy.deepcopy(keep),*bad]))
