@@ -71,6 +71,8 @@ class PermanentStateTests(unittest.TestCase):
         text = page.read_text()
         self.assertIn("Stay tuned for more shows", text)
         self.assertIn("Check back for new Pennsylvania dates", text)
+        self.assertIn('<h1 data-permanent-state-heading>', text)
+        self.assertIn(states.EMPTY_HEADING_STYLE, text)
         self.assertIn('href="/shows/">Explore All Shows', text)
         self.assertIn("15 archived shows", text)
         self.assertEqual(text.count('class="past-show-row"'), 15)
@@ -89,6 +91,7 @@ class PermanentStateTests(unittest.TestCase):
         page.write_text(text)
         states.finalize(self.site, self.source, history=[])
         self.assertNotIn('data-state-empty=', page.read_text())
+        self.assertNotIn('data-permanent-state-heading', page.read_text())
         self.assertIn('https://kingdomcircuit.com/shows/pennsylvania/', page.read_text())
 
     def test_gate_rejects_missing_page_message_sitemap_and_stale_empty(self):

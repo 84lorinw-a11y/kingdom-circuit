@@ -17,6 +17,10 @@ REGISTRY = "config/permanent-state-pages.json"
 CODES = set("AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY PR".split())
 ARCHIVE_RE = re.compile(r'<section\b(?=[^>]*\bdata-past-shows-archive\b)[^>]*>.*?</section>', re.S)
 NAV_RE = re.compile(r'<section\b[^>]*data-permanent-state-navigation[^>]*>.*?</section>', re.S)
+EMPTY_HEADING_STYLE = ('<style id="permanent-state-heading-style">'
+                       '@media(max-width:600px){h1[data-permanent-state-heading]'
+                       '{font-size:10vw!important;overflow-wrap:anywhere}}'
+                       '</style>')
 
 
 def state_name(code):
@@ -159,6 +163,11 @@ def finalize(site, source, history=None, check=False):
             raise ValueError(f"Permanent state empty message missing: {path}")
         if has_upcoming and 'data-state-empty=' in text:
             raise ValueError(f"Empty state message remained with upcoming shows: {path}")
+        if not has_upcoming:
+            if '<h1 data-permanent-state-heading' not in text:
+                text = text.replace('<h1>', '<h1 data-permanent-state-heading>', 1)
+            if 'id="permanent-state-heading-style"' not in text:
+                text = text.replace('</head>', EMPTY_HEADING_STYLE + '</head>', 1)
         canonical = f'https://kingdomcircuit.com{path}'
         if f'rel="canonical" href="{canonical}"' not in text:
             raise ValueError(f"State canonical changed: {path}")
