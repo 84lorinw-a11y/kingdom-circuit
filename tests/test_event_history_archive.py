@@ -6,6 +6,7 @@ import tempfile
 import datetime as dt
 import json
 import unittest
+from unittest.mock import patch
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -15,6 +16,22 @@ import add_past_show_archives as past_archives
 
 
 class EventHistoryArchiveTests(unittest.TestCase):
+    def test_rejected_identity_cannot_return_from_current_saved_or_git_history(self) -> None:
+        bad = {"id": "bandsintown:1039610768", "artists": ["ZEKE"], "startDate": "2026-10-15"}
+        future_bad = {"id": "future-wrong-zeke", "bandsintownArtistId": "32942", "startDate": "2026-12-01"}
+        good = {"id": "manual:flavor-fest-2026-friday-concerts", "artists": ["ZEKE"], "startDate": "2026-11-06"}
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp)
+            source, history = root / "events.json", root / "event-history.json"
+            source.write_text(json.dumps([bad, future_bad, good]))
+            history.write_text(json.dumps({"events": [{"archiveKey": archive.archive_key(bad), "event": bad}]}))
+            with patch.object(archive, "EVENT_FILES", (source,)), patch.object(archive, "HISTORY_FILE", history), patch.object(archive, "git_event_snapshots", return_value=[("2026-10-12T00:00:00Z", [bad, future_bad, good])]):
+                archive.main()
+                archive.main()
+            result = json.loads(history.read_text())
+            self.assertEqual([good["id"]], [r["event"]["id"] for r in result["events"]])
+            self.assertEqual(1, result["summary"]["totalArchived"])
+
     def test_both_public_event_feeds_are_archived(self) -> None:
         self.assertEqual(
             ["events.json", "supplemental-events.json"],

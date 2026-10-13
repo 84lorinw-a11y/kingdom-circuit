@@ -17,6 +17,8 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
+from apply_oct3_concert_corrections import rejected as rejected_event
+
 ROOT = Path(__file__).resolve().parents[1]
 EVENT_FILES = (ROOT / "events.json", ROOT / "supplemental-events.json")
 HISTORY_FILE = ROOT / "event-history.json"
@@ -184,7 +186,7 @@ def git_event_snapshots() -> list[tuple[str, list[dict[str, Any]]]]:
                 continue
             events = [
                 event for event in parsed
-                if isinstance(event, dict) and not is_test_event(event)
+                if isinstance(event, dict) and not is_test_event(event) and not rejected_event(event)
             ]
             snapshots.append((committed_at, events))
     return sorted(snapshots, key=lambda item: item[0])
@@ -225,7 +227,7 @@ def upsert_snapshot(
 
     for raw_event in events:
         event = canonicalize_known_event_identity(raw_event)
-        if is_test_event(event):
+        if is_test_event(event) or rejected_event(event):
             continue
         key = archive_key(event)
         record = by_key.get(key)
@@ -291,7 +293,7 @@ def main() -> None:
         current.extend(payload)
     current_events = [
         event for event in current
-        if isinstance(event, dict) and not is_test_event(event)
+        if isinstance(event, dict) and not is_test_event(event) and not rejected_event(event)
     ]
 
     history = load_json(
@@ -308,6 +310,7 @@ def main() -> None:
         if isinstance(record, dict)
         and isinstance(record.get("event"), dict)
         and not is_test_event(record["event"])
+        and not rejected_event(record["event"])
     ]
     for record in records:
         record["event"] = canonicalize_known_event_identity(record["event"])
