@@ -294,7 +294,16 @@ jobs:
           assert "Christian Hip-Hop &amp; Rap Concerts in Texas" in texas
           assert "Artists With Upcoming Texas Shows" in texas
 
-          event = next((root / "event").glob("*/index.html"))
+          # Select a concert from published data. Directory iteration is not
+          # deterministic and can pick a general Event or a redirect page.
+          import sys
+          sys.path.insert(0, "scripts")
+          from build_seo_site import event_path
+          published = json.loads((root / "events.json").read_text())
+          published += json.loads((root / "supplemental-events.json").read_text())
+          concert = next(e for e in published if e.get("eventType", "concert") in {"concert", "festival"}
+                         and e.get("status") != "merged")
+          event = root / event_path(concert).strip("/") / "index.html"
           event_text = event.read_text(encoding="utf-8")
           assert '"@type":"MusicEvent"' in event_text
           assert 'content="index,follow"' in event_text
