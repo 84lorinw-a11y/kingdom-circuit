@@ -27,7 +27,8 @@ def verify(site):
     if today <= '2026-10-17':
         assert len([e for e in nehemiah if key(e) == 'adrenaline-valrico-2026-10-17']) == 1
     registry = json.loads((site / 'config/artists.json').read_text())
-    zeke = next(a for a in registry if a['name'] == 'ZEKE')
+    # Collector-only identity controls are intentionally omitted from public JSON.
+    zeke = next(a for a in json.loads((ROOT / 'config/artists.json').read_text()) if a['name'] == 'ZEKE')
     assert '32942' in zeke['bandsintownRejectedArtistIds']
     if today <= '2026-11-06':
         flavor = next(e for e in events if key(e) == 'flavor-fest-2026-friday-concerts')
