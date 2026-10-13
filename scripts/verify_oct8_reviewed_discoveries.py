@@ -59,11 +59,17 @@ def verify(site):
     kaden = next((e for e in raw if e.get("id") == "manual:kaden-jordan-2026-11-13-orlando"), None)
     if kaden and builder.current(kaden):
         assert kaden["artists"] == ["Kaden Jordan", "Christopher Syncere"]
-        assert kaden["title"] == "Kaden Jordan — The Babytooth Experience"
+        assert kaden["title"] == "The Renovation Project"
+        assert kaden["advertisedBilling"] == ["Christopher Syncere", "Kaden Jordan", "2RU", "JAYSOTO", "MEMO"]
+        assert kaden["startTime"] == "19:00" and kaden["doorsTime"] == "18:30"
         href = builder.event_path(kaden)
+        detail = (site / href.strip("/") / "index.html").read_text()
+        assert uses_image(detail, site, "assets/events/renovation-project-orlando-2026-11-13.jpg"), "Renovation Project flyer missing"
         assert href in (site / "artists/christopher-syncere/index.html").read_text()
         old = site / "event/kaden-jordan-live-2026-11-13-orlando-8aaa06/index.html"
         assert old.is_file() and href in old.read_text(), "Existing Kaden URL lost its redirect"
+        previous = site / "event/kaden-jordan-the-babytooth-experience-2026-11-13-orlando-8aaa06/index.html"
+        assert previous.is_file() and href in previous.read_text(), "Babytooth URL lost its redirect"
 
     artists = json.loads((site / "config/artists.json").read_text())
     redeemed = next(a for a in artists if a["name"] == "REDEEMED")

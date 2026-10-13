@@ -381,24 +381,50 @@ def kaden_event(date: str, venue: str, city: str, state: str) -> dict:
     }
     if date == "2026-11-13" and city == "Orlando":
         event.update({
-            "title": "Kaden Jordan — The Babytooth Experience",
-            "legacyEventPaths": ["/event/kaden-jordan-live-2026-11-13-orlando-8aaa06/"],
+            "title": "The Renovation Project",
+            "legacyEventPaths": [
+                "/event/kaden-jordan-live-2026-11-13-orlando-8aaa06/",
+                "/event/kaden-jordan-the-babytooth-experience-2026-11-13-orlando-8aaa06/",
+            ],
             "artists": ["Kaden Jordan", "Christopher Syncere"],
-            "advertisedBilling": ["Kaden Jordan", "Christopher Syncere"],
-            "officialBill": ["Kaden Jordan", "Christopher Syncere"],
-            "supportActs": ["Christopher Syncere"],
+            "advertisedBilling": ["Christopher Syncere", "Kaden Jordan", "2RU", "JAYSOTO", "MEMO"],
+            "officialBill": ["Christopher Syncere", "Kaden Jordan", "2RU", "JAYSOTO", "MEMO"],
+            "supportActs": ["2RU", "JAYSOTO", "MEMO"],
+            "headliner": "",
+            "endDate": "2026-11-13",
+            "startTime": "19:00",
+            "endTime": "22:00",
+            "doorsTime": "18:30",
+            "startDateTime": "2026-11-13T19:00:00-05:00",
+            "endDateTime": "2026-11-13T22:00:00-05:00",
             "address": "8287 Curry Ford Rd",
             "postalCode": "32822",
-            "ticketUrl": "https://www.songkick.com/concerts/43409379-kaden-jordan-at-gathering-place",
-            "officialUrl": "https://www.songkick.com/concerts/43409379-kaden-jordan-at-gathering-place",
-            "auditVerified": "2026-10-08",
-            "publicDescription": "Kaden Jordan brings The Babytooth Experience to The Gathering Place in Orlando with Christopher Syncere. Visit the official listing for the latest event details.",
-            "notes": "October 8: event-specific Songkick listing, linked from Kaden Jordan's official Tour page, confirms Christopher Syncere and The Babytooth Experience title. Concert time is not published; keep it blank.",
+            "ticketUrl": "https://www.eventbrite.com/e/the-renovation-project-tickets-2002811792987",
+            "officialUrl": "https://www.eventbrite.com/e/the-renovation-project-tickets-2002811792987",
+            "image": "assets/events/renovation-project-orlando-2026-11-13.jpg",
+            "imageType": "event_artwork",
+            "imageOverride": True,
+            "imageSource": "Official Renovation Project announcement shared by the organizer",
+            "imageSourceUrl": "https://www.instagram.com/p/Dec2kX2us26/",
+            "detailImageLayout": "portrait",
+            "organizer": "Renovation Records",
+            "musicConfirmed": True,
+            "sourceName": "Renovation Records official Eventbrite listing and announcement",
+            "authority": "official_event",
+            "firstSeen": "2026-09-12T14:26:19Z",
+            "auditVerified": "2026-10-13",
+            "publicDescription": "The Renovation Project brings Christopher Syncere, Kaden Jordan, 2RU, JAYSOTO and MEMO to The Gathering Place in Orlando. Doors open at 6:30 PM; the live concert runs from 7 to 10 PM Eastern. See the official ticket page for current ticket options and fees.",
+            "notes": "October 13: owner-shared organizer Instagram announcement Dec2kX2us26 and the linked official Eventbrite event confirm The Renovation Project title, five billed acts, November 13, 2026, 6:30 PM doors, 7 PM show, and 8287 Curry Ford Rd, Orlando FL32822. Eventbrite confirms 10 PM end and -05:00 local offset. This is the existing Kaden Jordan/Christopher Syncere show at the same date/address, previously called The Babytooth Experience; update it without adding a duplicate. Preserve stable ID, both older page redirects and September 12 first discovery from event history. Flyer advertises $10; Eventbrite currently offers $7–$10.65 options, so do not assert a single all-in ticket price. Use exact original 1706x2133 portrait flyer. Instagram tags alone do not add further performers beyond the five printed acts. Only the two existing curated artists receive profile links.",
         })
         event["sources"].append({
-            "name": "Artist-linked Songkick event listing and support lineup",
-            "url": event["officialUrl"], "type": "manual_verified",
-            "authority": "artist_calendar", "priority": 115,
+            "name": "Renovation Records official Eventbrite event",
+            "url": event["officialUrl"], "type": "official_event",
+            "authority": "official_event", "priority": 120,
+        })
+        event["sources"].append({
+            "name": "Official organizer announcement and full-lineup flyer",
+            "url": event["imageSourceUrl"], "type": "official_event",
+            "authority": "official_event", "priority": 120,
         })
     return event
 

@@ -7610,9 +7610,9 @@
   },
   {
     "id": "kaden-jordan-babytooth-orlando-november-2026",
-    "title": "The Babytooth Experience",
+    "title": "The Renovation Project",
     "startDate": "2026-11-13",
-    "startTime": "",
+    "startTime": "19:00",
     "timezone": "America/New_York",
     "venue": "The Gathering Place",
     "address": "8287 Curry Ford Rd",
@@ -7623,22 +7623,88 @@
       "Kaden Jordan",
       "Christopher Syncere"
     ],
-    "headliner": "Kaden Jordan",
+    "headliner": "",
     "eventType": "concert",
-    "ticketUrl": "https://www.songkick.com/concerts/43409379-kaden-jordan-at-gathering-place",
-    "officialUrl": "https://kadenjordan.com/pages/tour",
-    "image": "assets/events/kaden-jordan-babytooth-tour-2026-portrait.jpg",
+    "ticketUrl": "https://www.eventbrite.com/e/the-renovation-project-tickets-2002811792987",
+    "officialUrl": "https://www.eventbrite.com/e/the-renovation-project-tickets-2002811792987",
+    "image": "assets/events/renovation-project-orlando-2026-11-13.jpg",
     "price": "",
     "status": "scheduled",
     "lineupExplicit": true,
-    "authority": "artist_calendar",
-    "sourceName": "Kaden Jordan official tour calendar",
+    "authority": "official_event",
+    "sourceName": "Renovation Records official Eventbrite listing and announcement",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
-    "imageSource": "Owner-selected official Instagram show artwork",
-    "imageSourceUrl": "https://www.instagram.com/p/DdC2jcyR5h8/",
-    "detailImageLayout": "portrait"
+    "imageSource": "Official Renovation Project announcement shared by the organizer",
+    "imageSourceUrl": "https://www.instagram.com/p/Dec2kX2us26/",
+    "detailImageLayout": "portrait",
+    "confidence": "high",
+    "sources": [
+      {
+        "name": "Kaden Jordan official TOUR page",
+        "url": "https://kadenjordan.com/pages/tour",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      },
+      {
+        "name": "Songkick calendar linked by Kaden Jordan official site",
+        "url": "https://www.songkick.com/artists/10314485-kaden-jordan",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 90
+      },
+      {
+        "name": "Renovation Records official Eventbrite event",
+        "url": "https://www.eventbrite.com/e/the-renovation-project-tickets-2002811792987",
+        "type": "official_event",
+        "authority": "official_event",
+        "priority": 120
+      },
+      {
+        "name": "Official organizer announcement and full-lineup flyer",
+        "url": "https://www.instagram.com/p/Dec2kX2us26/",
+        "type": "official_event",
+        "authority": "official_event",
+        "priority": 120
+      }
+    ],
+    "legacyEventPaths": [
+      "/event/kaden-jordan-live-2026-11-13-orlando-8aaa06/",
+      "/event/kaden-jordan-the-babytooth-experience-2026-11-13-orlando-8aaa06/"
+    ],
+    "advertisedBilling": [
+      "Christopher Syncere",
+      "Kaden Jordan",
+      "2RU",
+      "JAYSOTO",
+      "MEMO"
+    ],
+    "officialBill": [
+      "Christopher Syncere",
+      "Kaden Jordan",
+      "2RU",
+      "JAYSOTO",
+      "MEMO"
+    ],
+    "supportActs": [
+      "2RU",
+      "JAYSOTO",
+      "MEMO"
+    ],
+    "endDate": "2026-11-13",
+    "endTime": "22:00",
+    "doorsTime": "18:30",
+    "startDateTime": "2026-11-13T19:00:00-05:00",
+    "endDateTime": "2026-11-13T22:00:00-05:00",
+    "postalCode": "32822",
+    "organizer": "Renovation Records",
+    "musicConfirmed": true,
+    "firstSeen": "2026-09-12T14:26:19Z",
+    "auditVerified": "2026-10-13",
+    "publicDescription": "The Renovation Project brings Christopher Syncere, Kaden Jordan, 2RU, JAYSOTO and MEMO to The Gathering Place in Orlando. Doors open at 6:30 PM; the live concert runs from 7 to 10 PM Eastern. See the official ticket page for current ticket options and fees.",
+    "notes": "October 13: owner-shared organizer Instagram announcement Dec2kX2us26 and the linked official Eventbrite event confirm The Renovation Project title, five billed acts, November 13, 2026, 6:30 PM doors, 7 PM show, and 8287 Curry Ford Rd, Orlando FL32822. Eventbrite confirms 10 PM end and -05:00 local offset. This is the existing Kaden Jordan/Christopher Syncere show at the same date/address, previously called The Babytooth Experience; update it without adding a duplicate. Preserve stable ID, both older page redirects and September 12 first discovery from event history. Flyer advertises $10; Eventbrite currently offers $7–$10.65 options, so do not assert a single all-in ticket price. Use exact original 1706x2133 portrait flyer. Instagram tags alone do not add further performers beyond the five printed acts. Only the two existing curated artists receive profile links."
   },
   {
     "id": "awake-fest-dj-bryce-g-eustis-2026-11-13",
