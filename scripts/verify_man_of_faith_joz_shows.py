@@ -29,6 +29,19 @@ def verify(site: Path) -> None:
         detail = (site / href.strip("/") / "index.html").read_text()
         assert uses_image(detail, site, source["image"]), (href, "wrong flyer")
         assert source["officialUrl"] in detail
+        if source['id'].startswith('spin-awards-'):
+            from finalize_spin_details import public_path
+            assert detail.count('data-kc-spin-program="true"') == 1, (href, 'missing or repeated SPIN schedule')
+            related = next(e for e in submission.EVENTS if e['id'] == source['relatedEventId'])
+            assert public_path(related) in detail, (href, 'missing related SPIN listing')
+            for row in source['programSchedule']:
+                assert row['text'] in html.unescape(detail), (href, 'missing schedule detail', row)
+            if source.get('billingLabel'):
+                assert source['billingLabel'] in detail
+            assert not event.get('unconfirmedArtists'), (href, 'directly confirmed artists must stay confirmed')
+            for legacy in source.get('legacyEventPaths', []):
+                redirect = (site / legacy.strip('/') / 'index.html').read_text()
+                assert href in redirect, (legacy, 'old SPIN link was not preserved')
         schemas = [json.loads(raw) for raw in re.findall(r'<script type="application/ld\+json">(.*?)</script>', detail, re.S)]
         schema_type = "MusicEvent" if source["eventType"] in {"concert", "festival"} else "Event"
         schema = next(s for s in schemas if s.get("@type") == schema_type)

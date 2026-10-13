@@ -93,7 +93,7 @@ class SubmittedShowTests(unittest.TestCase):
         schema = builder.event_schema(spin)
         self.assertIn("Shaquille Jones", [p['name'] for p in schema['performer']])
         self.assertEqual(spin["publicDescription"], schema["description"])
-        self.assertEqual("2026-10-21", schema["startDate"])
+        self.assertEqual("2026-10-22", schema["startDate"])
         self.assertEqual("2026-10-24", schema["endDate"])
         self.assertEqual("Event", schema["@type"])
         self.assertFalse(spin['startTime'])
@@ -102,6 +102,50 @@ class SubmittedShowTests(unittest.TestCase):
         self.assertTrue(any(shows.matches(e, spin) for e in self.read('events.json')))
         shows.apply(self.root, "2026-10-25")
         self.assertFalse(any(shows.matches(e, spin) for e in self.read('events.json')))
+
+    def test_spin_split_preserves_direct_confirmations_and_survives_stale_refresh(self):
+        weekend, chocolate = shows.EVENTS[3:5]
+        stale = dict(weekend, startDate='2026-10-21', artists=['Bobby Real Montgomery'])
+        self.save('events.json', [stale])
+        shows.apply(self.root, '2026-10-13')
+        rows = self.read('events.json')
+        published = next(e for e in rows if shows.matches(e, weekend))
+        kickoff = next(e for e in rows if shows.matches(e, chocolate))
+        self.assertEqual(['Ahmad Nelson'], kickoff['artists'])
+        self.assertEqual(['Ahmad Nelson'], kickoff['advertisedBilling'])
+        self.assertEqual('2026-10-21T19:00:00-04:00', builder.event_schema(kickoff)['startDate'])
+        self.assertEqual('2026-10-22', published['startDate'])
+        self.assertIn('Shaquille Jones', published['artists'])
+        self.assertIn('Bobby Real Montgomery', published['artists'])
+        self.assertEqual(20, len(published['advertisedBilling']))
+        self.assertFalse(kickoff['unconfirmedArtists'])
+        self.assertFalse(published['unconfirmedArtists'])
+        self.assertFalse(shows.matches(kickoff, weekend))
+        self.assertFalse(shows.matches(published, chocolate))
+        self.assertNotIn('Destiny Diggs', published['hosts'])
+        self.assertNotIn('DJ Tony Tone', kickoff['advertisedBilling'])
+        self.assertEqual(weekend['firstSeen'], published['firstSeen'])
+        before = self.read('events.json')
+        shows.apply(self.root, '2026-10-13')
+        self.assertEqual(before, self.read('events.json'))
+
+    def test_spin_program_survives_repeated_finalization_without_touching_other_pages(self):
+        from finalize_spin_details import finalize_spin_details, public_path
+        for event in shows.EVENTS[3:5]:
+            page = self.root / public_path(event).strip('/') / 'index.html'
+            page.parent.mkdir(parents=True)
+            page.write_text('<p class="artist-line">Ahmad or weekend artists</p><dl class="detail-list"><div><dt>Date</dt><dd>date</dd></div></dl>')
+        other = self.root / 'unrelated.html'
+        other.write_text('<p>Keep this page</p>')
+        finalize_spin_details(self.root)
+        first = {p: p.read_text() for p in self.root.rglob('*.html')}
+        finalize_spin_details(self.root)
+        self.assertEqual(first, {p: p.read_text() for p in self.root.rglob('*.html')})
+        self.assertEqual('<p>Keep this page</p>', other.read_text())
+        weekend = first[self.root / public_path(shows.EVENTS[3]).strip('/') / 'index.html']
+        self.assertIn('Artists appearing across the weekend', weekend)
+        self.assertIn('Lawrenceville Arts Center', weekend)
+        self.assertIn(public_path(shows.EVENTS[4]), weekend)
 
 
 if __name__ == "__main__":

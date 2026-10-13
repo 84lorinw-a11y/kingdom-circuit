@@ -1,6 +1,6 @@
 {
   "historyVersion": 2,
-  "updatedAt": "2026-10-13T18:18:00Z",
+  "updatedAt": "2026-10-13T19:55:41Z",
   "events": [
     {
       "archiveKey": "id:official:df86501a61bd2659126a",
@@ -21161,14 +21161,14 @@
       "event": {
         "id": "manual:spin-awards-pre-ceremony-lawrenceville-2026-10-23",
         "title": "The Spin Awards — 10th Anniversary Weekend",
-        "startDate": "2026-10-21",
+        "startDate": "2026-10-22",
         "endDate": "2026-10-24",
         "startTime": "",
         "endTime": "",
         "timezone": "America/New_York",
         "startDateTime": "",
         "endDateTime": "",
-        "venue": "Jewelz Bar & Lounge / The Lawrence Hotel / Lawrenceville Arts Center",
+        "venue": "The Lawrence Hotel / Lawrenceville Arts Center",
         "address": "",
         "city": "Lawrenceville",
         "state": "GA",
@@ -21225,7 +21225,7 @@
         "lineupExplicit": true,
         "host": "",
         "confidence": "high",
-        "publicDescription": "The Spin Awards celebrates its 10th anniversary October 21–24, 2026 in Lawrenceville, Georgia. October 21: Chocolate Affair kickoff at Jewelz Bar & Lounge, doors 6 PM and entertainment 7 PM. October 22–23: music, worship and showcases at The Lawrence Hotel; Friday pre-ceremony is 7:30–9:30 PM. October 24: main ceremony at Lawrenceville Arts Center at 7:30 PM. Artists appear across the weekend; individual set dates and times vary. See the official itinerary for the latest schedule.",
+        "publicDescription": "The SPIN Awards 10th Anniversary Weekend Experience runs October 22–24 in Lawrenceville, Georgia, with performances across the weekend. Thursday and Friday activities take place at The Lawrence Hotel; Friday’s pre-ceremony starts at 7:30 PM. Saturday’s main awards ceremony is at Lawrenceville Arts Center at 7:30 PM, with red carpet at 5:30 PM. Thursday and Friday registration is free; Saturday requires a ticket. The October 21 Chocolate Affair featuring Ahmad Nelson has its own listing.",
         "officialUrl": "https://www.thespinawards.com/spinitin/",
         "ticketUrl": "",
         "image": "assets/events/spin-awards-2026-four-day-itinerary.jpg",
@@ -21233,8 +21233,8 @@
         "imageSourceUrl": "https://www.instagram.com/thespinawards/p/Dc_O5zLREnQ/",
         "organizer": "The Spin Awards",
         "firstSeen": "2026-09-25T21:08:55Z",
-        "lastVerified": "2026-10-13T13:13:46Z",
-        "notes": "Owner requested all four days and full announced music billing on October 13. Official updated four-day itinerary and October 8 Urban Soul Cafe co-announcement confirm October 21 kickoff; website itinerary covers October 22–24. Official performer announcement series confirms the listed artists; Jdot! confirmed by management. Bobby Real Montgomery and Shaquille Jones also confirmed directly to the owner. This replaces the old Friday-only scope while preserving stable ID and firstSeen. No artist is assigned an unannounced individual day/set. Honorees, nominees, panelists, sponsor logos, playlist collaborators and tagged accounts are not inferred as performers. Official artwork is the complete four-day portrait itinerary; its schedule may be revised, so latest organizer website takes precedence for individual session times.",
+        "lastVerified": "2026-10-13T19:52:15Z",
+        "notes": "Owner requested all four days and full announced music billing on October 13. Official updated four-day itinerary and October 8 Urban Soul Cafe co-announcement confirm October 21 kickoff; website itinerary covers October 22–24. Official performer announcement series confirms the listed artists; Jdot! confirmed by management. Bobby Real Montgomery and Shaquille Jones also confirmed directly to the owner. This replaces the old Friday-only scope while preserving stable ID and firstSeen. No artist is assigned an unannounced individual day/set. Honorees, nominees, panelists, sponsor logos, playlist collaborators and tagged accounts are not inferred as performers. Official artwork is the complete four-day portrait itinerary; its schedule may be revised, so latest organizer website takes precedence for individual session times. Owner approved splitting October 21 Chocolate Affair from October 22–24 on October 13 after research. Honor direct artist confirmations from Bobby Real Montgomery and Shaquille Jones as confirmed performances; do not mark them unconfirmed merely because individual sessions are not announced. Preserve the entire 20-act bill and original identity/discovery. Ahmad Nelson is directly confirmed for the separate October 21 event. Wednesday hosts belong only on that listing.",
         "country": "US",
         "eventType": "event",
         "status": "scheduled",
@@ -21395,16 +21395,48 @@
         ],
         "musicConfirmed": true,
         "hosts": [
-          "Destiny Diggs and DJ Tony Tone (October 21 kickoff)",
           "Destiny Kingcannon (October 23 pre-ceremony)",
           "Tony Gee (main ceremony)"
         ],
         "detailImageLayout": "portrait",
         "legacyEventPaths": [
-          "/event/the-spin-awards-pre-ceremony-2026-10-23-lawrenceville-3623f3/"
+          "/event/the-spin-awards-pre-ceremony-2026-10-23-lawrenceville-3623f3/",
+          "/event/the-spin-awards-10th-anniversary-weekend-2026-10-21-lawrenceville-3623f3/"
         ],
-        "legacyEventNotice": "This listing now covers the full October 21–24 Spin Awards weekend, including the October 23 pre-ceremony.",
-        "auditVerified": "2026-10-13"
+        "legacyEventNotice": "This listing covers the October 22–24 SPIN Awards Weekend Experience, including the October 23 pre-ceremony. The October 21 Chocolate Affair now has a separate listing.",
+        "auditVerified": "2026-10-13",
+        "billingLabel": "Artists appearing across the weekend",
+        "programSchedule": [
+          {
+            "label": "Thu, Oct 22",
+            "text": "The Lawrence Hotel — worship, showcases and DJ programming. Dr. Lonnie Hunter at 2 PM; DJ B4EY at 9:15 PM."
+          },
+          {
+            "label": "Fri, Oct 23",
+            "text": "The Lawrence Hotel — daytime programming and artist spotlight; pre-ceremony 7:30–9:30 PM."
+          },
+          {
+            "label": "Sat, Oct 24",
+            "text": "Lawrenceville Arts Center — red carpet 5:30 PM; main ceremony 7:30 PM."
+          },
+          {
+            "label": "Admission",
+            "text": "Thursday and Friday registration is free. Saturday’s main ceremony requires a ticket."
+          }
+        ],
+        "programNote": "All times Eastern. Artists perform across the weekend; individual sets vary by session.",
+        "eventLinks": [
+          {
+            "label": "Free Thursday–Friday registration",
+            "url": "https://www.thespinawards.com/register/"
+          },
+          {
+            "label": "Saturday ceremony tickets",
+            "url": "https://www.thespinawards.com/tickets/"
+          }
+        ],
+        "relatedEventId": "spin-awards-chocolate-affair-lawrenceville-2026-10-21",
+        "relatedEventLabel": "October 21: Chocolate Affair with Ahmad Nelson"
       }
     },
     {
@@ -33314,11 +33346,111 @@
           }
         ]
       }
+    },
+    {
+      "archiveKey": "id:manual:spin-awards-chocolate-affair-lawrenceville-2026-10-21",
+      "firstArchivedAt": "2026-10-13T19:55:41Z",
+      "firstSeenOnCalendar": "2026-10-13T18:55:00Z",
+      "lastSeenOnCalendar": "2026-10-13T19:55:41Z",
+      "calendarPresence": "present",
+      "removedFromCalendarAt": "",
+      "reappearedCount": 0,
+      "observedOnOrAfterEventDate": false,
+      "firstObservedOnOrAfterEventDate": "",
+      "dateState": "upcoming",
+      "observedInGitHistory": false,
+      "firstGitObservedAt": "",
+      "lastGitObservedAt": "",
+      "event": {
+        "id": "manual:spin-awards-chocolate-affair-lawrenceville-2026-10-21",
+        "title": "SPIN Awards — Chocolate Affair",
+        "startDate": "2026-10-21",
+        "endDate": "2026-10-21",
+        "startTime": "19:00",
+        "endTime": "",
+        "doorsTime": "18:00",
+        "timezone": "America/New_York",
+        "startDateTime": "2026-10-21T19:00:00-04:00",
+        "endDateTime": "",
+        "venue": "Jewelz Bar & Lounge",
+        "address": "1365 Grayson Hwy, Suite 113",
+        "city": "Lawrenceville",
+        "state": "GA",
+        "postalCode": "30045",
+        "country": "US",
+        "artists": [
+          "Ahmad Nelson"
+        ],
+        "advertisedBilling": [
+          "Ahmad Nelson"
+        ],
+        "officialBill": [
+          "Ahmad Nelson"
+        ],
+        "unconfirmedArtists": [],
+        "lineupExplicit": true,
+        "headliner": "",
+        "hosts": [
+          "Destiny Diggs",
+          "DJ Tony Tone"
+        ],
+        "host": "",
+        "confidence": "high",
+        "eventType": "event",
+        "status": "scheduled",
+        "musicConfirmed": true,
+        "officialUrl": "https://www.instagram.com/uscafe/p/DeP0rBlj0Ff/",
+        "ticketUrl": "",
+        "image": "assets/events/spin-awards-chocolate-affair-2026-10-21-owner.png",
+        "imageType": "event_artwork",
+        "imageOverride": true,
+        "imagePosition": "center",
+        "imageSource": "Official Chocolate Affair flyer supplied by Ahmad Nelson through the owner",
+        "imageSourceUrl": "https://www.instagram.com/uscafe/p/DeP0rBlj0Ff/",
+        "detailImageLayout": "portrait",
+        "organizer": "Urban Soul Cafe",
+        "firstSeen": "2026-10-13T18:55:00Z",
+        "lastVerified": "2026-10-13T19:52:15Z",
+        "auditVerified": "2026-10-13",
+        "authority": "official_event",
+        "sourceName": "Official organizer event listing",
+        "publicDescription": "Urban Soul Cafe presents the SPIN Awards 10th Anniversary Chocolate Affair on October 21 at Jewelz Bar & Lounge in Lawrenceville, Georgia, featuring a live performance by Ahmad Nelson. Hosted by Destiny Diggs and DJ Tony Tone. Doors open at 6 PM; entertainment starts at 7 PM Eastern. Free admission, with food and drinks available for purchase.",
+        "programSchedule": [
+          {
+            "label": "Evening",
+            "text": "Doors open at 6 PM Eastern. Live entertainment starts at 7 PM."
+          },
+          {
+            "label": "Admission",
+            "text": "Free admission. Food and drinks available for purchase."
+          }
+        ],
+        "programNote": "",
+        "eventLinks": [],
+        "relatedEventId": "spin-awards-pre-ceremony-lawrenceville-2026-10-23",
+        "relatedEventLabel": "October 22–24: SPIN Awards Weekend Experience",
+        "notes": "Ahmad Nelson told the owner he is performing and supplied the exact Chocolate Affair flyer. Owner explicitly approved trusting direct artist confirmations and this split on October 13. Treat Ahmad as a confirmed performer even though the generic flyer lists the hosts rather than every performer. Do not infer that the entire SPIN weekend bill performs October 21. Destiny Diggs and DJ Tony Tone are hosts, not inferred musical billing. Keep artwork exact and local. End time and individual set times are not published.",
+        "sources": [
+          {
+            "name": "Urban Soul Cafe official Chocolate Affair announcement",
+            "url": "https://www.instagram.com/uscafe/p/DeP0rBlj0Ff/",
+            "type": "official_event",
+            "authority": "official_event",
+            "priority": 115
+          },
+          {
+            "name": "Ahmad Nelson direct performance confirmation relayed by site owner October 13, 2026",
+            "type": "artist_submission",
+            "authority": "official_artist",
+            "priority": 115
+          }
+        ]
+      }
     }
   ],
   "summary": {
-    "totalArchived": 506,
-    "currentlyPresent": 249,
+    "totalArchived": 507,
+    "currentlyPresent": 250,
     "pastDated": 315,
     "observedOnOrAfterEventDate": 199,
     "gitSnapshotsScanned": 1956,
