@@ -315,8 +315,8 @@ EVENTS = (
      'postalCode': '30045',
      'country': 'US',
      'artists': ['Ahmad Nelson'],
-     'advertisedBilling': ['Ahmad Nelson'],
-     'officialBill': ['Ahmad Nelson'],
+     'advertisedBilling': ['Ahmad Nelson', 'Lady Cam'],
+     'officialBill': ['Ahmad Nelson', 'Lady Cam'],
      'unconfirmedArtists': [],
      'lineupExplicit': True,
      'headliner': '',
@@ -342,8 +342,8 @@ EVENTS = (
      'authority': 'official_event',
      'sourceName': 'Official organizer event listing',
      'publicDescription': 'Urban Soul Cafe presents the SPIN Awards 10th Anniversary Chocolate Affair on October '
-                          '21 at Jewelz Bar & Lounge in Lawrenceville, Georgia, featuring a live performance by '
-                          'Ahmad Nelson. Hosted by Destiny Diggs and DJ Tony Tone. Doors open at 6 PM; '
+                          '21 at Jewelz Bar & Lounge in Lawrenceville, Georgia, featuring live performances by '
+                          'Ahmad Nelson and Lady Cam. Hosted by Destiny Diggs and DJ Tony Tone. Doors open at 6 PM; '
                           'entertainment starts at 7 PM Eastern. Free admission, with food and drinks available '
                           'for purchase.',
      'programSchedule': [{'label': 'Evening', 'text': 'Doors open at 6 PM Eastern. Live entertainment starts at 7 PM.'},
@@ -357,7 +357,11 @@ EVENTS = (
               'as a confirmed performer even though the generic flyer lists the hosts rather than every performer. '
               'Do not infer that the entire SPIN weekend bill performs October 21. Destiny Diggs and DJ Tony Tone '
               'are hosts, not inferred musical billing. Keep artwork exact and local. End time and individual set '
-              'times are not published.',
+              'times are not published. Lady Cam explicitly confirms her October 21 Urban Soul Cafe performance '
+              'in her official tour-week post DecuMrERxcw, shared by the owner October 13. Add her to the full '
+              'billing alongside Ahmad; she is not yet a curated profile. The same flyer separately labels '
+              'October 22 Dope Women in Radio as a performance and October 24 as Red Carpet & Awards Show. '
+              'Do not infer a Saturday performance or merge the separate dates.',
      'sources': [{'name': 'Urban Soul Cafe official Chocolate Affair announcement',
                   'url': 'https://www.instagram.com/uscafe/p/DeP0rBlj0Ff/',
                   'type': 'official_event',
@@ -365,6 +369,11 @@ EVENTS = (
                   'priority': 115},
                  {'name': 'Ahmad Nelson direct performance confirmation relayed by site owner October 13, 2026',
                   'type': 'artist_submission',
+                  'authority': 'official_artist',
+                  'priority': 115},
+                 {'name': 'Lady Cam official tour-week flyer: October 21 Urban Soul Cafe performance',
+                  'url': 'https://www.instagram.com/p/DecuMrERxcw/',
+                  'type': 'official_artist',
                   'authority': 'official_artist',
                   'priority': 115}]},
 )

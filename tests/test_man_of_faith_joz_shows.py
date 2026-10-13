@@ -112,7 +112,7 @@ class SubmittedShowTests(unittest.TestCase):
         published = next(e for e in rows if shows.matches(e, weekend))
         kickoff = next(e for e in rows if shows.matches(e, chocolate))
         self.assertEqual(['Ahmad Nelson'], kickoff['artists'])
-        self.assertEqual(['Ahmad Nelson'], kickoff['advertisedBilling'])
+        self.assertEqual(['Ahmad Nelson', 'Lady Cam'], kickoff['advertisedBilling'])
         self.assertEqual('2026-10-21T19:00:00-04:00', builder.event_schema(kickoff)['startDate'])
         self.assertEqual('2026-10-22', published['startDate'])
         self.assertIn('Shaquille Jones', published['artists'])
