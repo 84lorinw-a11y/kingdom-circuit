@@ -2757,7 +2757,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/419NjKezGEJOVPtiymCp2p",
     "youtubeProfile": "https://www.youtube.com/c/TyBrasel/about",
     "officialImageSource": "https://www.instagram.com/Ty_Brasel",
-    "imageUrl": "assets/artists/ty-brasel-saved.webp",
+    "imageUrl": "assets/artists/ty-brasel-official-portrait-2026-10-13.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -7770,7 +7770,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/419NjKezGEJOVPtiymCp2p",
     "youtubeProfile": "https://www.youtube.com/c/TyBrasel/about",
     "officialImageSource": "https://www.instagram.com/Ty_Brasel",
-    "imageUrl": "assets/artists/ty-brasel-saved.webp",
+    "imageUrl": "assets/artists/ty-brasel-official-portrait-2026-10-13.webp",
     "imagePosition": "center",
     "sourceRegistryVerified": true
   },
@@ -11091,7 +11091,7 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "center"
   },
   "ty brasel": {
-    "imageUrl": "assets/artists/ty-brasel-saved.webp",
+    "imageUrl": "assets/artists/ty-brasel-official-portrait-2026-10-13.webp",
     "imagePosition": "center"
   },
   "j. monty": {
