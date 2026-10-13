@@ -370,7 +370,8 @@ const ARTIST_ROSTER_ORDER = [
   "TruthSoldier",
   "SOC Driz",
   "Justo Chalaire",
-  "Kyaliyah"
+  "Kyaliyah",
+  "Ahmad Nelson"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -5343,6 +5344,19 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/_kyaliyah_/p/DY_A52rjGYl/?img_index=2",
     "imageUrl": "assets/artists/kyaliyah-official-oct13.jpg",
     "imagePosition": "50% 15%",
+    "sourceRegistryVerified": true
+  },
+  "ahmad nelson": {
+    "aliases": [
+      "Ahmad Nelson"
+    ],
+    "website": "https://www.instagram.com/_ahmad1887/",
+    "instagramProfile": "https://www.instagram.com/_ahmad1887/",
+    "spotifyProfile": "https://open.spotify.com/artist/0l1MUtnx6TEE3zi6sDBdFA",
+    "youtubeProfile": "https://www.youtube.com/channel/UCf7qkw_-HXVI8O1nlW6rj5w",
+    "officialImageSource": "https://www.instagram.com/_ahmad1887/p/DdzT9EulIgH/?img_index=2",
+    "imageUrl": "assets/artists/ahmad-nelson-official-oct13.jpg",
+    "imagePosition": "50% 10%",
     "sourceRegistryVerified": true
   }
 };
@@ -10318,6 +10332,19 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/kyaliyah-official-oct13.jpg",
     "imagePosition": "50% 15%",
     "sourceRegistryVerified": true
+  },
+  "ahmad nelson": {
+    "aliases": [
+      "Ahmad Nelson"
+    ],
+    "website": "https://www.instagram.com/_ahmad1887/",
+    "instagramProfile": "https://www.instagram.com/_ahmad1887/",
+    "spotifyProfile": "https://open.spotify.com/artist/0l1MUtnx6TEE3zi6sDBdFA",
+    "youtubeProfile": "https://www.youtube.com/channel/UCf7qkw_-HXVI8O1nlW6rj5w",
+    "officialImageSource": "https://www.instagram.com/_ahmad1887/p/DdzT9EulIgH/?img_index=2",
+    "imageUrl": "assets/artists/ahmad-nelson-official-oct13.jpg",
+    "imagePosition": "50% 10%",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -11748,6 +11775,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "kyaliyah": {
     "imageUrl": "assets/artists/kyaliyah-official-oct13.jpg",
     "imagePosition": "50% 15%"
+  },
+  "ahmad nelson": {
+    "imageUrl": "assets/artists/ahmad-nelson-official-oct13.jpg",
+    "imagePosition": "50% 10%"
   }
 };
 
