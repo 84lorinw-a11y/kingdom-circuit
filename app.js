@@ -369,7 +369,8 @@ const ARTIST_ROSTER_ORDER = [
   "Big Lek",
   "TruthSoldier",
   "SOC Driz",
-  "Justo Chalaire"
+  "Justo Chalaire",
+  "Kyaliyah"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -5267,8 +5268,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/aye_sirjames/",
     "spotifyProfile": "https://open.spotify.com/artist/3AMeHBUOA8xN4KQZ8ISxvy",
     "youtubeProfile": "https://www.youtube.com/@ayesirjames",
-    "officialImageSource": "https://www.instagram.com/aye_sirjames/reel/DeQTFiwhJs8/",
-    "imageUrl": "assets/artists/sir-james-official-oct12.jpg",
+    "officialImageSource": "owner-supplied:codex-clipboard-d12f8551-336a-4e6b-b87c-82ffbabf8542.png",
+    "imageUrl": "assets/artists/sir-james-owner-oct13.png",
     "imagePosition": "50% 15%",
     "sourceRegistryVerified": true
   },
@@ -5325,6 +5326,23 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/p/DeILxW2PSfi/",
     "imageUrl": "assets/artists/justo-chalaire-official-performance-oct12.jpg",
     "imagePosition": "50% 40%",
+    "sourceRegistryVerified": true
+  },
+  "kyaliyah": {
+    "aliases": [
+      "Kyaliyah",
+      "KyAliyah",
+      "Ky’Aliyah",
+      "Ky'Aliyah",
+      "Ky Aliyah"
+    ],
+    "website": "https://linktr.ee/Kyaliyahh",
+    "instagramProfile": "https://www.instagram.com/_kyaliyah_/",
+    "spotifyProfile": "https://open.spotify.com/artist/3krDXaVAkmB70hLE4C5mN7",
+    "youtubeProfile": "https://www.youtube.com/@kyaliyah1338/featured",
+    "officialImageSource": "https://www.instagram.com/_kyaliyah_/p/DY_A52rjGYl/?img_index=2",
+    "imageUrl": "assets/artists/kyaliyah-official-oct13.jpg",
+    "imagePosition": "50% 15%",
     "sourceRegistryVerified": true
   }
 };
@@ -10224,8 +10242,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/aye_sirjames/",
     "spotifyProfile": "https://open.spotify.com/artist/3AMeHBUOA8xN4KQZ8ISxvy",
     "youtubeProfile": "https://www.youtube.com/@ayesirjames",
-    "officialImageSource": "https://www.instagram.com/aye_sirjames/reel/DeQTFiwhJs8/",
-    "imageUrl": "assets/artists/sir-james-official-oct12.jpg",
+    "officialImageSource": "owner-supplied:codex-clipboard-d12f8551-336a-4e6b-b87c-82ffbabf8542.png",
+    "imageUrl": "assets/artists/sir-james-owner-oct13.png",
     "imagePosition": "50% 15%",
     "sourceRegistryVerified": true
   },
@@ -10282,6 +10300,23 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/p/DeILxW2PSfi/",
     "imageUrl": "assets/artists/justo-chalaire-official-performance-oct12.jpg",
     "imagePosition": "50% 40%",
+    "sourceRegistryVerified": true
+  },
+  "kyaliyah": {
+    "aliases": [
+      "Kyaliyah",
+      "KyAliyah",
+      "Ky’Aliyah",
+      "Ky'Aliyah",
+      "Ky Aliyah"
+    ],
+    "website": "https://linktr.ee/Kyaliyahh",
+    "instagramProfile": "https://www.instagram.com/_kyaliyah_/",
+    "spotifyProfile": "https://open.spotify.com/artist/3krDXaVAkmB70hLE4C5mN7",
+    "youtubeProfile": "https://www.youtube.com/@kyaliyah1338/featured",
+    "officialImageSource": "https://www.instagram.com/_kyaliyah_/p/DY_A52rjGYl/?img_index=2",
+    "imageUrl": "assets/artists/kyaliyah-official-oct13.jpg",
+    "imagePosition": "50% 15%",
     "sourceRegistryVerified": true
   }
 };
@@ -11691,7 +11726,7 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 25%"
   },
   "sir james": {
-    "imageUrl": "assets/artists/sir-james-official-oct12.jpg",
+    "imageUrl": "assets/artists/sir-james-owner-oct13.png",
     "imagePosition": "50% 15%"
   },
   "big lek": {
@@ -11709,6 +11744,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "justo chalaire": {
     "imageUrl": "assets/artists/justo-chalaire-official-performance-oct12.jpg",
     "imagePosition": "50% 40%"
+  },
+  "kyaliyah": {
+    "imageUrl": "assets/artists/kyaliyah-official-oct13.jpg",
+    "imagePosition": "50% 15%"
   }
 };
 
