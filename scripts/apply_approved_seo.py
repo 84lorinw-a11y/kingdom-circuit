@@ -333,7 +333,10 @@ def final_production_verify(root: pathlib.Path) -> None:
         failures.append("kb:next-show-link")
 
     directory = (root / "artists/index.html").read_text(encoding="utf-8")
-    if "assets/artists/1k-phew.webp" not in directory:
+    phew_image = next(artist["imageUrl"] for artist in json.loads(
+        (root / "config/artists.json").read_text(encoding="utf-8")
+    ) if artist["name"] == "1K Phew")
+    if phew_image not in directory:
         failures.append("directory-1k-phew-image")
     if "Christian Hip-Hop Artists" not in directory:
         failures.append("directory-schema")

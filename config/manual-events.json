@@ -9727,7 +9727,8 @@
     "artists": [
       "MAYIA",
       "Toyalove",
-      "Shaquille Jones"
+      "Shaquille Jones",
+      "Rainbow Israel"
     ],
     "advertisedBilling": [
       "Shaquille Jones",
@@ -10522,5 +10523,96 @@
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true
+  },
+  {
+    "id": "light-up-the-world-fest-dallas-2026-10-31",
+    "title": "Light Up The World Fest",
+    "startDate": "2026-10-31",
+    "endDate": "2026-10-31",
+    "startTime": "17:00",
+    "endTime": "",
+    "timezone": "America/Chicago",
+    "startDateTime": "2026-10-31T17:00:00-05:00",
+    "endDateTime": "",
+    "venue": "2919 Canton St",
+    "address": "2919 Canton St",
+    "city": "Dallas",
+    "state": "TX",
+    "postalCode": "75226",
+    "country": "US",
+    "artists": [
+      "Adrion Butler",
+      "Rainbow Israel"
+    ],
+    "advertisedBilling": [
+      "Gifted Hands",
+      "Nameless Servant",
+      "Soloso JesusBaby",
+      "Adrion Butler",
+      "Rainbow Israel",
+      "God’s Voice",
+      "Bean",
+      "Zsel",
+      "Zanijah La Shae",
+      "Chef Boi"
+    ],
+    "officialBill": [
+      "Gifted Hands",
+      "Nameless Servant",
+      "Soloso JesusBaby",
+      "Adrion Butler",
+      "Rainbow Israel",
+      "God’s Voice",
+      "Bean",
+      "Zsel",
+      "Zanijah La Shae",
+      "Chef Boi"
+    ],
+    "unconfirmedArtists": [],
+    "lineupExplicit": true,
+    "headliner": "Gifted Hands",
+    "confidence": "high",
+    "eventType": "festival",
+    "status": "scheduled",
+    "musicConfirmed": true,
+    "officialUrl": "https://www.lightuptheworldfest.co/events/light-up-the-world-fest",
+    "ticketUrl": "https://www.lightuptheworldfest.co/events/light-up-the-world-fest",
+    "image": "assets/events/light-up-the-world-fest-dallas-2026-10-31.jpg",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "imageSource": "Official full-lineup portrait flyer shared by Rainbow Israel, September 6, 2026",
+    "imageSourceUrl": "https://www.instagram.com/rainbowisrael/p/Dc8-3Epm68O/?img_index=2",
+    "detailImageLayout": "portrait",
+    "organizer": "Light Up The World Fest",
+    "firstSeen": "2026-10-13T20:48:16Z",
+    "lastVerified": "2026-10-13T20:48:16Z",
+    "auditVerified": "2026-10-13",
+    "authority": "official_event",
+    "sourceName": "Artist submission and official festival website",
+    "publicDescription": "Light Up The World Fest brings Christian hip-hop performances, worship, ministry, faith-inspired fashion and vendors to Dallas. See the official event page for current tickets and arrival details.",
+    "notes": "Rainbow Israel submitted this event directly to Kingdom Circuit, relayed by the owner October 13, 2026. Preserve all nine submitted performers; Chef Boi is additionally listed in the official event page expanded lineup. The submitted 5 PM start agrees with Rainbow’s September 6 official flyer (4 PM doors / 5 PM event). The ticket page currently says 6 PM Central; timing discrepancy was raised with the owner. Use the direct artist-submitted 5 PM pending clarification, not 5 PM doors. No end time inferred. Flyer is the exact full-resolution 1294x1676 portrait; older printed ticket prices are not copied into structured data because current ticket page has different prices. Use the working official .co domain; submitted .com currently displays an unconnected Wix domain. Do not invent a venue business name from a street address.",
+    "sources": [
+      {
+        "name": "Rainbow Israel direct show submission, relayed by site owner October 13, 2026",
+        "type": "artist_submission",
+        "authority": "official_artist",
+        "priority": 115
+      },
+      {
+        "name": "Light Up The World Fest official event and lineup",
+        "url": "https://www.lightuptheworldfest.co/events/light-up-the-world-fest",
+        "type": "official_event",
+        "authority": "official_event",
+        "priority": 110
+      },
+      {
+        "name": "Rainbow Israel official full-lineup flyer",
+        "url": "https://www.instagram.com/rainbowisrael/p/Dc8-3Epm68O/?img_index=2",
+        "type": "official_artist",
+        "authority": "official_artist",
+        "priority": 110
+      }
+    ]
   }
 ]

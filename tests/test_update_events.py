@@ -210,9 +210,9 @@ class KingdomCircuitV7Tests(unittest.TestCase):
             positions,
             preferred,
         )
-        self.assertEqual(final[0]["image"], "assets/artists/1k-phew.webp")
+        self.assertEqual(final[0]["image"], "assets/artists/1k-phew-owner-oct13.png")
         self.assertEqual(final[0]["imageType"], "artist")
-        self.assertEqual(final[0]["imagePosition"], "50% 24%")
+        self.assertEqual(final[0]["imagePosition"], "50% 0%")
 
     def test_first_seen_marks_only_genuinely_new_events(self):
         existing = candidate(title="Existing Show", artists=["KB"], url="https://example.com/existing")
@@ -596,14 +596,14 @@ class KingdomCircuitV7Tests(unittest.TestCase):
         }
         self.assertTrue(expected.issubset(identifiers))
 
-    def test_master_roster_has_360_unique_artists(self):
+    def test_master_roster_has_361_unique_artists(self):
         artists = json.loads((ROOT / "config" / "artists.json").read_text())
         names = [item["name"] for item in artists]
-        self.assertEqual(len(names), 360)
-        self.assertEqual(len({name.casefold() for name in names}), 360)
+        self.assertEqual(len(names), 361)
+        self.assertEqual(len({name.casefold() for name in names}), 361)
         self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 1), 91)
         self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 2), 142)
-        self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 3), 127)
+        self.assertEqual(sum(1 for item in artists if item.get("monitoringPriority") == 3), 128)
 
     def test_top_streaming_priority_artists_are_present(self):
         artists = json.loads((ROOT / "config" / "artists.json").read_text())

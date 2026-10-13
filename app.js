@@ -373,7 +373,8 @@ const ARTIST_ROSTER_ORDER = [
   "Kyaliyah",
   "Ahmad Nelson",
   "Taylented",
-  "ricko!"
+  "ricko!",
+  "Rainbow Israel"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -482,8 +483,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/6CQGrt3AJ2gx5oMSR0mwbl",
     "youtubeProfile": "https://www.youtube.com/@Phewskii",
     "officialImageSource": "https://www.1kphew.com/bio",
-    "imageUrl": "assets/artists/1k-phew.webp",
-    "imagePosition": "50% 24%",
+    "imageUrl": "assets/artists/1k-phew-owner-oct13.png",
+    "imagePosition": "50% 0%",
     "label": "Reach Records",
     "sourceRegistryVerified": true
   },
@@ -2071,7 +2072,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "youtubeProfile": "https://www.youtube.com/@childlikecici",
     "officialImageSource": "https://www.childlikecici.com/",
     "imageUrl": "assets/artists/childlike-cici-saved.webp",
-    "imagePosition": "center",
+    "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   },
   "yung kriss": {
@@ -5386,6 +5387,19 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/ricko-official-oct13.jpg",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
+  },
+  "rainbow israel": {
+    "aliases": [
+      "Rainbow Israel"
+    ],
+    "website": "https://www.instagram.com/rainbowisrael/",
+    "instagramProfile": "https://www.instagram.com/rainbowisrael/",
+    "spotifyProfile": "https://open.spotify.com/artist/5NxO5E8ULz1ye1EIEeuM98",
+    "youtubeProfile": "https://www.youtube.com/channel/UCj20bKWrtGb0iEqw7Wyb8Qg",
+    "officialImageSource": "https://www.lightuptheworldfest.co/copy-of-artists",
+    "imageUrl": "assets/artists/rainbow-israel-official-oct13.png",
+    "imagePosition": "50% 0%",
+    "sourceRegistryVerified": true
   }
 };
 const VERIFIED_ARTIST_REGISTRY_UPDATES = {
@@ -5481,8 +5495,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6CQGrt3AJ2gx5oMSR0mwbl",
     "youtubeProfile": "https://www.youtube.com/@Phewskii",
     "officialImageSource": "https://www.1kphew.com/bio",
-    "imageUrl": "assets/artists/1k-phew.webp",
-    "imagePosition": "50% 24%",
+    "imageUrl": "assets/artists/1k-phew-owner-oct13.png",
+    "imagePosition": "50% 0%",
     "label": "Reach Records",
     "sourceRegistryVerified": true
   },
@@ -7084,7 +7098,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "youtubeProfile": "https://www.youtube.com/@childlikecici",
     "officialImageSource": "https://www.childlikecici.com/",
     "imageUrl": "assets/artists/childlike-cici-saved.webp",
-    "imagePosition": "center",
+    "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   },
   "yung kriss": {
@@ -10399,6 +10413,19 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/ricko-official-oct13.jpg",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
+  },
+  "rainbow israel": {
+    "aliases": [
+      "Rainbow Israel"
+    ],
+    "website": "https://www.instagram.com/rainbowisrael/",
+    "instagramProfile": "https://www.instagram.com/rainbowisrael/",
+    "spotifyProfile": "https://open.spotify.com/artist/5NxO5E8ULz1ye1EIEeuM98",
+    "youtubeProfile": "https://www.youtube.com/channel/UCj20bKWrtGb0iEqw7Wyb8Qg",
+    "officialImageSource": "https://www.lightuptheworldfest.co/copy-of-artists",
+    "imageUrl": "assets/artists/rainbow-israel-official-oct13.png",
+    "imagePosition": "50% 0%",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -10427,8 +10454,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "center"
   },
   "1k phew": {
-    "imageUrl": "assets/artists/1k-phew.webp",
-    "imagePosition": "50% 24%"
+    "imageUrl": "assets/artists/1k-phew-owner-oct13.png",
+    "imagePosition": "50% 0%"
   },
   "miles minnick": {
     "imageUrl": "assets/artists/miles-minnick-saved.webp",
@@ -10892,7 +10919,7 @@ const STATIC_ARTIST_PORTRAITS = {
   },
   "childlike cici": {
     "imageUrl": "assets/artists/childlike-cici-saved.webp",
-    "imagePosition": "center"
+    "imagePosition": "50% 0%"
   },
   "yung kriss": {
     "imageUrl": "assets/artists/yung-kriss-saved.webp",
@@ -11840,6 +11867,10 @@ const STATIC_ARTIST_PORTRAITS = {
   },
   "ricko!": {
     "imageUrl": "assets/artists/ricko-official-oct13.jpg",
+    "imagePosition": "50% 0%"
+  },
+  "rainbow israel": {
+    "imageUrl": "assets/artists/rainbow-israel-official-oct13.png",
     "imagePosition": "50% 0%"
   }
 };

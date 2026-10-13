@@ -290,7 +290,10 @@ jobs:
 
           directory = (root / "artists/index.html").read_text(encoding="utf-8")
           assert "data-seo-enhanced-directory" in directory
-          assert "assets/artists/1k-phew.webp" in directory
+          phew_image = next(artist["imageUrl"] for artist in json.loads(
+              (root / "config/artists.json").read_text(encoding="utf-8")
+          ) if artist["name"] == "1K Phew")
+          assert phew_image in directory
           assert '"@type":"ItemList"' in directory
 
           texas = (root / "shows/texas/index.html").read_text(encoding="utf-8")

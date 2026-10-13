@@ -174,8 +174,8 @@
     "ticketmasterEnabled": true,
     "category": "reach",
     "label": "Reach Records",
-    "imageUrl": "assets/artists/1k-phew.webp",
-    "imagePosition": "50% 24%",
+    "imageUrl": "assets/artists/1k-phew-owner-oct13.png",
+    "imagePosition": "50% 0%",
     "preferArtistImage": true,
     "monitoringPriority": 1,
     "topStreamingPriority": true,
@@ -3380,7 +3380,7 @@
     "spotifyProfile": "https://open.spotify.com/artist/1cgfDToH1viXSfFzd5WOz1",
     "youtubeProfile": "https://www.youtube.com/@childlikecici",
     "officialImageSource": "https://www.childlikecici.com/",
-    "imagePosition": "center",
+    "imagePosition": "50% 0%",
     "bandsintownProfile": "https://www.bandsintown.com/a/15543552",
     "sourceRegistryVerified": true,
     "sourceRegistryRosterOrder": 123,
@@ -9776,5 +9776,32 @@
     "sourceRegistryVerified": true,
     "sourceRegistryRosterOrder": 360,
     "topStreamingPriority": false
+  },
+  {
+    "name": "Rainbow Israel",
+    "aliases": [
+      "Rainbow Israel"
+    ],
+    "state": "",
+    "label": "",
+    "category": "core",
+    "monitoringPriority": 3,
+    "ticketmasterEnabled": false,
+    "textMatchEnabled": false,
+    "socialSearchEnabled": true,
+    "activeStatus": "active_or_unknown",
+    "website": "https://www.instagram.com/rainbowisrael/",
+    "instagramProfile": "https://www.instagram.com/rainbowisrael/",
+    "spotifyProfile": "https://open.spotify.com/artist/5NxO5E8ULz1ye1EIEeuM98",
+    "youtubeProfile": "https://www.youtube.com/channel/UCj20bKWrtGb0iEqw7Wyb8Qg",
+    "officialImageSource": "https://www.lightuptheworldfest.co/copy-of-artists",
+    "imageUrl": "assets/artists/rainbow-israel-official-oct13.png",
+    "imagePosition": "50% 0%",
+    "rosterOrder": 361,
+    "sheetRosterOrder": null,
+    "sourceIdentityNotes": "Owner-Verified Artist Database physical row 610 imported October 13, 2026. Exact approved Instagram, Spotify and YouTube from the Sheet. Instagram is the approved website fallback. Official festival artists page labels the blue-cap performing portrait as Rainbow Israel. Local image is a complete 903px browser rendition of the 2000px official original; direct original download was unavailable. Do not guess unrelated provider identities; automatic name-only matching remains disabled.",
+    "enabled": true,
+    "sourceRegistryVerified": true,
+    "sourceRegistryRosterOrder": 361
   }
 ]
