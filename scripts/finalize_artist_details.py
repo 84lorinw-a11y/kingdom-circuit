@@ -41,8 +41,8 @@ MOBILE_FRAMING = {
   body .kc-rd-profile-name { bottom: 10px; }
 }''',
     '1k-phew': '''@media (max-width: 720px) {
-  body .kc-rd-profile-visual { aspect-ratio: 4 / 5; }
-  body .kc-rd-profile-visual img { object-position: 50% 25% !important; }
+  body .kc-rd-profile-visual { aspect-ratio: 1 / 1; }
+  body .kc-rd-profile-visual img { object-position: 50% 15% !important; }
   body .kc-rd-profile-visual::after {
     height: 30%;
     background: linear-gradient(to bottom, transparent, rgba(5,5,5,.5));
