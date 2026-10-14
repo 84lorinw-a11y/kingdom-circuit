@@ -1520,7 +1520,7 @@ const VERIFIED_ARTIST_REGISTRY = {
       "J J L",
       "JJL"
     ],
-    "website": "https://open.spotify.com/artist/5saP6cHfo2flMEQuAJITBS",
+    "website": "https://www.instagram.com/jjl_music/?hl=en",
     "instagramProfile": "https://www.instagram.com/jjl_music/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/5saP6cHfo2flMEQuAJITBS",
     "youtubeProfile": "https://music.youtube.com/channel/UC0vTVAlJijP9UvlEeezSmjw",
@@ -6546,7 +6546,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "J J L",
       "JJL"
     ],
-    "website": "https://open.spotify.com/artist/5saP6cHfo2flMEQuAJITBS",
+    "website": "https://www.instagram.com/jjl_music/?hl=en",
     "instagramProfile": "https://www.instagram.com/jjl_music/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/5saP6cHfo2flMEQuAJITBS",
     "youtubeProfile": "https://music.youtube.com/channel/UC0vTVAlJijP9UvlEeezSmjw",
