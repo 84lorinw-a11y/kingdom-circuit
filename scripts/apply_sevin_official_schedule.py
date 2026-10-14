@@ -121,10 +121,9 @@ SEVIN_EVENTS[-1]["legacyEventPaths"] = [
 ]
 SEVIN_EVENTS[-1]["legacyEventNotice"] = "The venue location has been updated to Old Hickory in the Nashville area. The concert date is unchanged."
 
-# Unsupported listings are unpublished, not labeled canceled or redirected to
-# unrelated concerts. Sacramento Nov 20–22 is a tour weekend, not a confirmed
-# concert night. Oahu Jan 14–16 has conflicting 2026/2027 source years. Keep both
-# off the calendar until individual performance details are confirmed.
+# Retire the old unsupported dates without removing subsequently confirmed
+# individual events. The November 21/22 Sacramento performances are maintained
+# in config/oct3-verified-concerts.json. Oahu still has conflicting source years.
 RETIRED_STOPS = {
     ("2026-09-26", "kansas city", "MO"),
     ("2026-11-21", "charlotte", "NC"),
@@ -162,6 +161,10 @@ def is_sevin(event: dict[str, Any]) -> bool:
 
 
 def managed_event(event: dict[str, Any]) -> bool:
+    # The verified noon block party is separate from the 7 PM concert in the
+    # same city. Do not discard it when restoring the evening concert record.
+    if str(event.get("id") or "").removeprefix("manual:") == "bandsintown:107971164":
+        return False
     if str(event.get("id") or "") in CANONICAL_IDS | RETIRED_IDS:
         return True
     city = str(event.get("city") or "").strip().casefold().removeprefix("sponsor ")

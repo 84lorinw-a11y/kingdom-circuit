@@ -8,6 +8,16 @@ import apply_sevin_official_schedule as sevin
 
 
 class SevinConfirmedScheduleTests(unittest.TestCase):
+    def test_nashville_daytime_block_party_survives_evening_concert_refresh(self):
+        for prefix in ("", "manual:"):
+            block_party = {"id": prefix + "bandsintown:107971164", "artists": ["Sevin"],
+                           "startDate": "2026-10-24", "startTime": "12:00",
+                           "city": "Old Hickory", "state": "TN"}
+            events, supplemental = sevin.normalize_schedule([block_party], [])
+            self.assertEqual([block_party], events)
+            evening = next(e for e in supplemental if e["id"] == "sevin-live-nashville-2026-10-24")
+            self.assertEqual("19:00", evening["startTime"])
+
     def test_refresh_removes_stale_provider_records_and_is_idempotent(self):
         rows = [
             {"id": "collector:kansas", "artists": ["Sevin"], "startDate": "2026-09-26", "city": "Sponsor Kansas City", "state": "MO"},
