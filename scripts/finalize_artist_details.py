@@ -23,6 +23,10 @@ FRAMING_STYLE = re.compile(r'\s*<style data-kc-artist-framing>.*?</style>\s*', r
 # Owner-approved mobile framing, applied after every imported redesign.
 # Inline page-scoped CSS avoids stale shared styles and leaves desktop intact.
 MOBILE_FRAMING = {
+    'ricko': '''@media (max-width: 720px) {
+  body .kc-rd-profile-visual { aspect-ratio: 1 / 1; }
+  body .kc-rd-profile-name { bottom: 10px; }
+}''',
     '1k-phew': '''@media (max-width: 720px) {
   body .kc-rd-profile-visual { aspect-ratio: 4 / 5; }
   body .kc-rd-profile-visual img { object-position: 50% 25% !important; }
