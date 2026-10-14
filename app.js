@@ -5383,8 +5383,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/rickodunine/",
     "spotifyProfile": "https://open.spotify.com/artist/4DElyywux5lCNkJiFlZ3I1",
     "youtubeProfile": "https://www.youtube.com/channel/UCzHa_2yNMELdtGokPJuQSIg",
-    "officialImageSource": "https://www.instagram.com/rickodunine/p/DeS0QKujPEx/?img_index=4",
-    "imageUrl": "assets/artists/ricko-official-oct13.jpg",
+    "officialImageSource": "Artist-supplied artwork via owner, October 13, 2026",
+    "imageUrl": "assets/artists/ricko-artist-supplied-oct13.png",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   },
@@ -10409,8 +10409,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/rickodunine/",
     "spotifyProfile": "https://open.spotify.com/artist/4DElyywux5lCNkJiFlZ3I1",
     "youtubeProfile": "https://www.youtube.com/channel/UCzHa_2yNMELdtGokPJuQSIg",
-    "officialImageSource": "https://www.instagram.com/rickodunine/p/DeS0QKujPEx/?img_index=4",
-    "imageUrl": "assets/artists/ricko-official-oct13.jpg",
+    "officialImageSource": "Artist-supplied artwork via owner, October 13, 2026",
+    "imageUrl": "assets/artists/ricko-artist-supplied-oct13.png",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   },
@@ -11866,7 +11866,7 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 42%"
   },
   "ricko!": {
-    "imageUrl": "assets/artists/ricko-official-oct13.jpg",
+    "imageUrl": "assets/artists/ricko-artist-supplied-oct13.png",
     "imagePosition": "50% 0%"
   },
   "rainbow israel": {
