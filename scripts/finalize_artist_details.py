@@ -19,6 +19,20 @@ ROW = re.compile(r'<a\b(?=[^>]*class="[^"]*\bkc-rd-show-row\b)[^>]*>.*?</a>', re
 NEXT = re.compile(r'<a\b(?=[^>]*class="[^"]*\bkc-rd-next-show\b)[^>]*>.*?</a>', re.S)
 NAV = re.compile(r'\s*<nav\b[^>]*data-kc-artist-states[^>]*>.*?</nav>', re.S)
 EXTRA = re.compile(r'<span class="kc-rd-event-(?:title|status)">.*?</span>', re.S)
+FRAMING_STYLE = re.compile(r'\s*<style data-kc-artist-framing>.*?</style>\s*', re.S)
+# Owner-approved mobile framing, applied after every imported redesign.
+# Inline page-scoped CSS avoids stale shared styles and leaves desktop intact.
+MOBILE_FRAMING = {
+    '1k-phew': '''@media (max-width: 720px) {
+  body .kc-rd-profile-visual { aspect-ratio: 4 / 5; }
+  body .kc-rd-profile-visual img { object-position: 50% 25% !important; }
+  body .kc-rd-profile-visual::after {
+    height: 30%;
+    background: linear-gradient(to bottom, transparent, rgba(5,5,5,.5));
+  }
+  body .kc-rd-profile-name { bottom: 10px; }
+}''',
+}
 
 
 def text(value: str) -> str:
@@ -150,6 +164,10 @@ def render_profile(site: Path, profile: Path, source: str, base: str) -> str:
             raise ValueError(f'Schedule section missing: {profile}')
     link = f'<link rel="stylesheet" href="{base}{CSS}?v=1" data-kc-artist-details>'
     source = re.sub(r'\s*<link\b[^>]*data-kc-artist-details[^>]*>\s*', '', source)
+    source = FRAMING_STYLE.sub('', source)
+    framing = MOBILE_FRAMING.get(profile.parent.name)
+    if framing:
+        link += '\n<style data-kc-artist-framing>' + framing + '</style>'
     # The existing year finalizer owns the last style in <head>. Preserve its
     # position so its independent repeat-safety check still passes unchanged.
     if '<style data-kc-artist-schedule-years>' in source:
@@ -192,6 +210,10 @@ def check(site: Path, base: str = BASE) -> dict:
                 counts['statusRows'] += bool(status)
         if f'href="{base}{CSS}?v=1"' not in source:
             failures.append(f'{profile}: details stylesheet missing')
+        framing = MOBILE_FRAMING.get(profile.parent.name)
+        actual_framing = re.findall(r'<style data-kc-artist-framing>(.*?)</style>', source, re.S)
+        if actual_framing != ([framing] if framing else []):
+            failures.append(f'{profile}: approved mobile framing missing or changed')
     if not counts['profiles']:
         failures.append('No artist profiles found')
     manifest = site / 'assets/live-redesign-manifest.json'
