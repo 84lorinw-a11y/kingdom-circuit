@@ -23,6 +23,9 @@ FRAMING_STYLE = re.compile(r'\s*<style data-kc-artist-framing>.*?</style>\s*', r
 # Owner-approved mobile framing, applied after every imported redesign.
 # Inline page-scoped CSS avoids stale shared styles and leaves desktop intact.
 MOBILE_FRAMING = {
+    'joz': '''@media (max-width: 720px) {
+  body .kc-rd-profile-visual img { object-position: 50% 30% !important; }
+}''',
     'kurtis-hoppie': '''@media (max-width: 720px) {
   body .kc-rd-profile-visual img { object-position: 50% 0% !important; }
 }''',
