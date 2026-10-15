@@ -374,7 +374,12 @@ const ARTIST_ROSTER_ORDER = [
   "Ahmad Nelson",
   "Taylented",
   "ricko!",
-  "Rainbow Israel"
+  "Rainbow Israel",
+  "Viktor",
+  "Zay Lowly",
+  "Gregg Styles",
+  "Amos Salem",
+  "Chosen Few"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -5399,6 +5404,91 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.lightuptheworldfest.co/copy-of-artists",
     "imageUrl": "assets/artists/rainbow-israel-official-oct13.png",
     "imagePosition": "50% 0%",
+    "sourceRegistryVerified": true
+  },
+  "viktor": {
+    "aliases": [
+      "Viktor",
+      "Vik†or",
+      "GodsDogViktor",
+      "godsdogvlu"
+    ],
+    "website": "https://linktr.ee/ViktorOfficial",
+    "instagramProfile": "https://www.instagram.com/godsdogvlu/",
+    "spotifyProfile": "https://open.spotify.com/artist/3Q0lm43vVzULUnKqb16ouS",
+    "youtubeProfile": "https://www.youtube.com/@GodsDogViktor",
+    "officialImageSource": "https://open.spotify.com/artist/3Q0lm43vVzULUnKqb16ouS",
+    "imageUrl": "assets/artists/viktor-2026-10-15.jpg",
+    "imagePosition": "50% 0%",
+    "state": "CA",
+    "label": "Ghost Ride the Gospel",
+    "sourceRegistryVerified": true
+  },
+  "zay lowly": {
+    "aliases": [
+      "Zay Lowly",
+      "SAWVEE",
+      "X-A-V Productions",
+      "zaylowly_music"
+    ],
+    "website": "https://www.instagram.com/zaylowly_music/",
+    "instagramProfile": "https://www.instagram.com/zaylowly_music/",
+    "spotifyProfile": "https://open.spotify.com/artist/4tSYcZnaLqb3SYp0jgSyC0",
+    "youtubeProfile": "https://www.youtube.com/@Zay_lowly",
+    "officialImageSource": "https://open.spotify.com/artist/4tSYcZnaLqb3SYp0jgSyC0",
+    "imageUrl": "assets/artists/zay-lowly-2026-10-15.webp",
+    "imagePosition": "50% 0%",
+    "state": "CA",
+    "label": "Nu Wave Entertainment",
+    "sourceRegistryVerified": true
+  },
+  "gregg styles": {
+    "aliases": [
+      "Gregg Styles",
+      "greggstyles_"
+    ],
+    "website": "https://linktr.ee/greggstyles",
+    "instagramProfile": "https://www.instagram.com/greggstyles_/",
+    "spotifyProfile": "https://open.spotify.com/artist/2032mN96lEz5mMu13YgTvA",
+    "youtubeProfile": "https://www.youtube.com/@greggstyles",
+    "officialImageSource": "https://open.spotify.com/artist/2032mN96lEz5mMu13YgTvA",
+    "imageUrl": "assets/artists/gregg-styles-2026-10-15.webp",
+    "imagePosition": "50% 10%",
+    "state": "CA",
+    "label": "HOGMOB Ministries",
+    "sourceRegistryVerified": true
+  },
+  "amos salem": {
+    "aliases": [
+      "Amos Salem",
+      "Famos Amos",
+      "amosssalem"
+    ],
+    "website": "https://dot.cards/famosamos74",
+    "instagramProfile": "https://www.instagram.com/amosssalem/",
+    "spotifyProfile": "https://open.spotify.com/artist/0d8xyXZba2pQg5Eyobot25",
+    "youtubeProfile": "https://www.youtube.com/@amossalem",
+    "officialImageSource": "https://open.spotify.com/artist/0d8xyXZba2pQg5Eyobot25",
+    "imageUrl": "assets/artists/amos-salem-2026-10-15.jpg",
+    "imagePosition": "50% 0%",
+    "state": "CA",
+    "sourceRegistryVerified": true
+  },
+  "chosen few": {
+    "aliases": [
+      "Chosen Few",
+      "Chosen Few Music",
+      "CHOSENFEWMUZIC",
+      "chosenfewmuzic"
+    ],
+    "website": "https://chosenfewmuzic.com",
+    "instagramProfile": "https://www.instagram.com/chosenfewmuzic/",
+    "spotifyProfile": "https://open.spotify.com/artist/7cwyunU7dk1HLl1lgRDgrW",
+    "youtubeProfile": "https://www.youtube.com/@ChosenFewMusic-c8n",
+    "officialImageSource": "https://open.spotify.com/artist/7cwyunU7dk1HLl1lgRDgrW",
+    "imageUrl": "assets/artists/chosen-few-2026-10-15.webp",
+    "imagePosition": "50% 15%",
+    "state": "CA",
     "sourceRegistryVerified": true
   }
 };
@@ -10426,6 +10516,91 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/rainbow-israel-official-oct13.png",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
+  },
+  "viktor": {
+    "aliases": [
+      "Viktor",
+      "Vik†or",
+      "GodsDogViktor",
+      "godsdogvlu"
+    ],
+    "website": "https://linktr.ee/ViktorOfficial",
+    "instagramProfile": "https://www.instagram.com/godsdogvlu/",
+    "spotifyProfile": "https://open.spotify.com/artist/3Q0lm43vVzULUnKqb16ouS",
+    "youtubeProfile": "https://www.youtube.com/@GodsDogViktor",
+    "officialImageSource": "https://open.spotify.com/artist/3Q0lm43vVzULUnKqb16ouS",
+    "imageUrl": "assets/artists/viktor-2026-10-15.jpg",
+    "imagePosition": "50% 0%",
+    "state": "CA",
+    "label": "Ghost Ride the Gospel",
+    "sourceRegistryVerified": true
+  },
+  "zay lowly": {
+    "aliases": [
+      "Zay Lowly",
+      "SAWVEE",
+      "X-A-V Productions",
+      "zaylowly_music"
+    ],
+    "website": "https://www.instagram.com/zaylowly_music/",
+    "instagramProfile": "https://www.instagram.com/zaylowly_music/",
+    "spotifyProfile": "https://open.spotify.com/artist/4tSYcZnaLqb3SYp0jgSyC0",
+    "youtubeProfile": "https://www.youtube.com/@Zay_lowly",
+    "officialImageSource": "https://open.spotify.com/artist/4tSYcZnaLqb3SYp0jgSyC0",
+    "imageUrl": "assets/artists/zay-lowly-2026-10-15.webp",
+    "imagePosition": "50% 0%",
+    "state": "CA",
+    "label": "Nu Wave Entertainment",
+    "sourceRegistryVerified": true
+  },
+  "gregg styles": {
+    "aliases": [
+      "Gregg Styles",
+      "greggstyles_"
+    ],
+    "website": "https://linktr.ee/greggstyles",
+    "instagramProfile": "https://www.instagram.com/greggstyles_/",
+    "spotifyProfile": "https://open.spotify.com/artist/2032mN96lEz5mMu13YgTvA",
+    "youtubeProfile": "https://www.youtube.com/@greggstyles",
+    "officialImageSource": "https://open.spotify.com/artist/2032mN96lEz5mMu13YgTvA",
+    "imageUrl": "assets/artists/gregg-styles-2026-10-15.webp",
+    "imagePosition": "50% 10%",
+    "state": "CA",
+    "label": "HOGMOB Ministries",
+    "sourceRegistryVerified": true
+  },
+  "amos salem": {
+    "aliases": [
+      "Amos Salem",
+      "Famos Amos",
+      "amosssalem"
+    ],
+    "website": "https://dot.cards/famosamos74",
+    "instagramProfile": "https://www.instagram.com/amosssalem/",
+    "spotifyProfile": "https://open.spotify.com/artist/0d8xyXZba2pQg5Eyobot25",
+    "youtubeProfile": "https://www.youtube.com/@amossalem",
+    "officialImageSource": "https://open.spotify.com/artist/0d8xyXZba2pQg5Eyobot25",
+    "imageUrl": "assets/artists/amos-salem-2026-10-15.jpg",
+    "imagePosition": "50% 0%",
+    "state": "CA",
+    "sourceRegistryVerified": true
+  },
+  "chosen few": {
+    "aliases": [
+      "Chosen Few",
+      "Chosen Few Music",
+      "CHOSENFEWMUZIC",
+      "chosenfewmuzic"
+    ],
+    "website": "https://chosenfewmuzic.com",
+    "instagramProfile": "https://www.instagram.com/chosenfewmuzic/",
+    "spotifyProfile": "https://open.spotify.com/artist/7cwyunU7dk1HLl1lgRDgrW",
+    "youtubeProfile": "https://www.youtube.com/@ChosenFewMusic-c8n",
+    "officialImageSource": "https://open.spotify.com/artist/7cwyunU7dk1HLl1lgRDgrW",
+    "imageUrl": "assets/artists/chosen-few-2026-10-15.webp",
+    "imagePosition": "50% 15%",
+    "state": "CA",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -11872,6 +12047,26 @@ const STATIC_ARTIST_PORTRAITS = {
   "rainbow israel": {
     "imageUrl": "assets/artists/rainbow-israel-official-oct13.png",
     "imagePosition": "50% 0%"
+  },
+  "viktor": {
+    "imageUrl": "assets/artists/viktor-2026-10-15.jpg",
+    "imagePosition": "50% 0%"
+  },
+  "zay lowly": {
+    "imageUrl": "assets/artists/zay-lowly-2026-10-15.webp",
+    "imagePosition": "50% 0%"
+  },
+  "gregg styles": {
+    "imageUrl": "assets/artists/gregg-styles-2026-10-15.webp",
+    "imagePosition": "50% 10%"
+  },
+  "amos salem": {
+    "imageUrl": "assets/artists/amos-salem-2026-10-15.jpg",
+    "imagePosition": "50% 0%"
+  },
+  "chosen few": {
+    "imageUrl": "assets/artists/chosen-few-2026-10-15.webp",
+    "imagePosition": "50% 15%"
   }
 };
 
