@@ -380,7 +380,8 @@ const ARTIST_ROSTER_ORDER = [
   "Gregg Styles",
   "Amos Salem",
   "Chosen Few",
-  "JJ Stone"
+  "JJ Stone",
+  "MARV"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -5506,6 +5507,21 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imagePosition": "50% 50%",
     "state": "SK",
     "label": "True Freedom Entertainment",
+    "sourceRegistryVerified": true
+  },
+  "marv": {
+    "aliases": [
+      "MARV",
+      "Marv Rogers",
+      "marvrogers"
+    ],
+    "website": "https://www.instagram.com/marvrogers/",
+    "instagramProfile": "https://www.instagram.com/marvrogers/",
+    "spotifyProfile": "https://open.spotify.com/artist/4jBiLv1a8QGElMKTozxv35",
+    "youtubeProfile": "https://www.youtube.com/@MARVROGERS",
+    "officialImageSource": "https://open.spotify.com/artist/4jBiLv1a8QGElMKTozxv35",
+    "imageUrl": "assets/artists/marv-official-spotify-oct15.jpg",
+    "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   }
 };
@@ -10634,6 +10650,21 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "state": "SK",
     "label": "True Freedom Entertainment",
     "sourceRegistryVerified": true
+  },
+  "marv": {
+    "aliases": [
+      "MARV",
+      "Marv Rogers",
+      "marvrogers"
+    ],
+    "website": "https://www.instagram.com/marvrogers/",
+    "instagramProfile": "https://www.instagram.com/marvrogers/",
+    "spotifyProfile": "https://open.spotify.com/artist/4jBiLv1a8QGElMKTozxv35",
+    "youtubeProfile": "https://www.youtube.com/@MARVROGERS",
+    "officialImageSource": "https://open.spotify.com/artist/4jBiLv1a8QGElMKTozxv35",
+    "imageUrl": "assets/artists/marv-official-spotify-oct15.jpg",
+    "imagePosition": "50% 0%",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -12104,6 +12135,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "jj stone": {
     "imageUrl": "assets/artists/jj-stone-submitted-2026-10-15.png",
     "imagePosition": "50% 50%"
+  },
+  "marv": {
+    "imageUrl": "assets/artists/marv-official-spotify-oct15.jpg",
+    "imagePosition": "50% 0%"
   }
 };
 
