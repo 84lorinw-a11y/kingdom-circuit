@@ -5402,8 +5402,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/rainbowisrael/",
     "spotifyProfile": "https://open.spotify.com/artist/5NxO5E8ULz1ye1EIEeuM98",
     "youtubeProfile": "https://www.youtube.com/channel/UCj20bKWrtGb0iEqw7Wyb8Qg",
-    "officialImageSource": "https://www.lightuptheworldfest.co/copy-of-artists",
-    "imageUrl": "assets/artists/rainbow-israel-official-oct13.png",
+    "officialImageSource": "owner-supplied:codex-clipboard-fcd3042c-0dda-4164-8a99-719b71bd2622.png",
+    "imageUrl": "assets/artists/rainbow-israel-artist-supplied-oct15.png",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   },
@@ -10529,8 +10529,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/rainbowisrael/",
     "spotifyProfile": "https://open.spotify.com/artist/5NxO5E8ULz1ye1EIEeuM98",
     "youtubeProfile": "https://www.youtube.com/channel/UCj20bKWrtGb0iEqw7Wyb8Qg",
-    "officialImageSource": "https://www.lightuptheworldfest.co/copy-of-artists",
-    "imageUrl": "assets/artists/rainbow-israel-official-oct13.png",
+    "officialImageSource": "owner-supplied:codex-clipboard-fcd3042c-0dda-4164-8a99-719b71bd2622.png",
+    "imageUrl": "assets/artists/rainbow-israel-artist-supplied-oct15.png",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   },
@@ -12078,7 +12078,7 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 0%"
   },
   "rainbow israel": {
-    "imageUrl": "assets/artists/rainbow-israel-official-oct13.png",
+    "imageUrl": "assets/artists/rainbow-israel-artist-supplied-oct15.png",
     "imagePosition": "50% 0%"
   },
   "viktor": {
