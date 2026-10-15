@@ -379,7 +379,8 @@ const ARTIST_ROSTER_ORDER = [
   "Zay Lowly",
   "Gregg Styles",
   "Amos Salem",
-  "Chosen Few"
+  "Chosen Few",
+  "JJ Stone"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -5489,6 +5490,22 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/chosen-few-2026-10-15.webp",
     "imagePosition": "50% 15%",
     "state": "CA",
+    "sourceRegistryVerified": true
+  },
+  "jj stone": {
+    "aliases": [
+      "JJ Stone",
+      "its_jjstone"
+    ],
+    "website": "https://truefreedoment.org/",
+    "instagramProfile": "https://www.instagram.com/its_jjstone/",
+    "spotifyProfile": "https://open.spotify.com/artist/5F7KoTb9I6k7GyMtu55Lch",
+    "youtubeProfile": "https://www.youtube.com/@jjstonemusic",
+    "officialImageSource": "https://drive.google.com/file/d/1RdC7Hl5SzumKH2Awj-vvKmSMMYZcTN7_/view",
+    "imageUrl": "assets/artists/jj-stone-submitted-2026-10-15.png",
+    "imagePosition": "50% 50%",
+    "state": "SK",
+    "label": "True Freedom Entertainment",
     "sourceRegistryVerified": true
   }
 };
@@ -10601,6 +10618,22 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imagePosition": "50% 15%",
     "state": "CA",
     "sourceRegistryVerified": true
+  },
+  "jj stone": {
+    "aliases": [
+      "JJ Stone",
+      "its_jjstone"
+    ],
+    "website": "https://truefreedoment.org/",
+    "instagramProfile": "https://www.instagram.com/its_jjstone/",
+    "spotifyProfile": "https://open.spotify.com/artist/5F7KoTb9I6k7GyMtu55Lch",
+    "youtubeProfile": "https://www.youtube.com/@jjstonemusic",
+    "officialImageSource": "https://drive.google.com/file/d/1RdC7Hl5SzumKH2Awj-vvKmSMMYZcTN7_/view",
+    "imageUrl": "assets/artists/jj-stone-submitted-2026-10-15.png",
+    "imagePosition": "50% 50%",
+    "state": "SK",
+    "label": "True Freedom Entertainment",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -12067,6 +12100,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "chosen few": {
     "imageUrl": "assets/artists/chosen-few-2026-10-15.webp",
     "imagePosition": "50% 15%"
+  },
+  "jj stone": {
+    "imageUrl": "assets/artists/jj-stone-submitted-2026-10-15.png",
+    "imagePosition": "50% 50%"
   }
 };
 

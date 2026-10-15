@@ -79,6 +79,16 @@ class September12Phase2PublishTests(unittest.TestCase):
         self.assertTrue(finalizer.repair_event_schema(unsupported, {"ticketUrl": "https://instagram.com/p/test"}))
         self.assertNotIn("offers", unsupported)
 
+    def test_schema_preserves_verified_international_country(self):
+        schema = {"@type": "MusicEvent", "location": {"@type": "Place", "address": {
+            "addressLocality": "Saskatoon", "addressRegion": "SK", "addressCountry": "US"
+        }}}
+        self.assertTrue(finalizer.repair_event_schema(schema, {"country": "CA"}))
+        self.assertEqual(schema["location"]["address"]["addressCountry"], "CA")
+        self.assertFalse(finalizer.repair_event_schema(schema, {"country": "CA"}))
+        self.assertFalse(finalizer.repair_event_schema(schema, {}))
+        self.assertEqual(schema["location"]["address"]["addressCountry"], "CA")
+
     def test_disabled_madison_profile_is_removed_from_artifact(self):
         with tempfile.TemporaryDirectory() as tmp:
             site = pathlib.Path(tmp)

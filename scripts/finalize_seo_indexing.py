@@ -151,6 +151,15 @@ def repair_event_schema(schema: dict, source: dict | None) -> bool:
             changed = True
         return changed
 
+    # Imported SEO overlays assume U.S. locations; retain the verified country
+    # for artist-submitted international shows as well.
+    country = str(source.get("country") or "").strip().upper()
+    location = schema.get("location")
+    address = location.get("address") if isinstance(location, dict) else None
+    if country and isinstance(address, dict) and address.get("addressCountry") != country:
+        address["addressCountry"] = country
+        changed = True
+
     ticket = direct_ticket_url(source.get("ticketUrl"))
     if ticket:
         offer = {"@type": "Offer", "url": ticket}
