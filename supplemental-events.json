@@ -2152,18 +2152,14 @@
     "artists": [
       "Miles Minnick",
       "Gifted Hands",
-      "Datin",
-      "TRU-SERVA",
-      "VVS Big Rock",
-      "Lyric The Geenyus",
-      "MAYIA"
+      "Datin"
     ],
     "headliner": "Miles Minnick",
     "eventType": "festival",
     "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/a2407af7-a012-4df1-8d42-d247ab82cd8b/FF26-Promo-Friday-Night%2B%281%29.jpg",
+    "image": "assets/events/flavor-fest-friday-2026.webp",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -2179,16 +2175,8 @@
         "type": "manual_verified",
         "authority": "official_event",
         "priority": 112
-      },
-      {
-        "name": "Flavor Fest official Friday poster",
-        "url": "https://www.flavorfest.org/",
-        "type": "manual_verified",
-        "authority": "official_festival",
-        "priority": 106
       }
-    ],
-    "auditVerified": "2026-09-11"
+    ]
   },
   {
     "id": "bandsintown:108881783",
@@ -2576,6 +2564,74 @@
     "trackedArtist": "Hulvey"
   },
   {
+    "id": "submitted:jj-stone-nrg-saskatoon-2026-11-13",
+    "title": "NRG Conference — Friday Live Performance",
+    "startDate": "2026-11-13",
+    "endDate": "2026-11-13",
+    "startTime": "21:00",
+    "endTime": "",
+    "timezone": "America/Regina",
+    "startDateTime": "2026-11-13T21:00:00-06:00",
+    "venue": "Horizon College & Seminary",
+    "address": "",
+    "city": "Saskatoon",
+    "state": "SK",
+    "country": "CA",
+    "postalCode": "S7N 3P9",
+    "artists": [
+      "JJ Stone"
+    ],
+    "headliner": "JJ Stone",
+    "advertisedBilling": [
+      "JJ Stone",
+      "Alibii",
+      "Heaven Lee"
+    ],
+    "officialBill": [
+      "JJ Stone",
+      "Alibii",
+      "Heaven Lee"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.tickettailor.com/events/horizoncollegeandseminary/2065402",
+    "officialUrl": "https://www.tickettailor.com/events/horizoncollegeandseminary/2065402",
+    "sourceName": "NRG Conference official schedule and JJ Stone artist submission",
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-10-15T17:51:30Z",
+    "lastVerified": "2026-10-15T17:51:30Z",
+    "auditVerified": "2026-10-15",
+    "image": "assets/events/nrg-conference-saskatoon-2026-11-13.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "NRG Conference official Ticket Tailor artwork, submitted by JJ Stone",
+    "imageSourceUrl": "https://www.tickettailor.com/events/horizoncollegeandseminary/2065402",
+    "detailImageLayout": "landscape",
+    "publicDescription": "JJ Stone, Alibii and Heaven Lee perform at the NRG Conference in Saskatoon, Saskatchewan, Canada. The Friday live performance begins at 9 PM. This senior youth conference runs November 13–15; this listing covers the Friday performance. See the organizer for conference registration and admission details.",
+    "price": "Conference registration: CAD $65; see organizer for admission details",
+    "notes": "Direct invited-artist submission from JJ Stone confirms the three-person bill and November 13 at 21:00. Official Ticket Tailor Friday schedule independently confirms 9:00 PM Live Performance. The overall conference runs November 13 at 6:45 PM through November 15 at 11:30 AM; those are not the concert start/end or individual set times. No standalone concert-only ticket or end time is asserted. Official artwork retained as supplied. Keep this artist-submitted Canadian show in supplemental-events.json so the U.S.-only discovery collector cannot overwrite its location.",
+    "sources": [
+      {
+        "name": "NRG Conference official Friday schedule",
+        "url": "https://www.tickettailor.com/events/horizoncollegeandseminary/2065402",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "JJ Stone direct artist submission relayed and approved by owner, October 15, 2026",
+        "url": "https://www.instagram.com/its_jjstone/",
+        "type": "artist_submission",
+        "authority": "artist_calendar",
+        "priority": 112
+      }
+    ]
+  },
+  {
     "id": "bandsintown:1040314202",
     "title": "Pastor Mike Jr. at WL Jack Howard Theatre",
     "startDate": "2026-11-14",
@@ -2748,6 +2804,45 @@
       "G3rm 43"
     ],
     "lastVerified": "2026-10-14T18:55:47Z"
+  },
+  {
+    "title": "The Kickback",
+    "startDate": "2026-11-14",
+    "startTime": "19:00",
+    "timezone": "America/Chicago",
+    "venue": "2305 SE 14th St",
+    "address": "2305 SE 14th St",
+    "city": "Grand Prairie",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "CJ Emulous"
+    ],
+    "headliner": "CJ Emulous",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
+    "officialUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
+    "image": "assets/events/cj-emulous-kickback-2026.svg",
+    "price": "",
+    "sourceName": "CJ Emulous official calendar",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "CJ Emulous official calendar",
+        "url": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 112
+      }
+    ],
+    "auditVerified": "2026-09-11",
+    "id": "cj-emulous-kickback-grand-prairie-2026",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true
   },
   {
     "id": "bandsintown:1040378722",
@@ -3202,7 +3297,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.cjemulous.com/event-details/zion-ultra-lounge-w-miles-minnick-cj-emulous",
     "officialUrl": "https://www.cjemulous.com/event-details/zion-ultra-lounge-w-miles-minnick-cj-emulous",
-    "image": "assets/events/miles-cj-zion-ultra-2026.svg",
+    "image": "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
     "price": "",
     "sourceName": "CJ Emulous official calendar",
     "authority": "artist_calendar",
@@ -3219,7 +3314,7 @@
     ],
     "auditVerified": "2026-09-11",
     "id": "miles-cj-zion-ultra-lounge-chandler-2026",
-    "imageType": "event_artwork",
+    "imageType": "artist",
     "imagePosition": "center",
     "imageOverride": true,
     "notes": "CJ Emulous's official calendar confirms Miles Minnick and CJ Emulous at Zion Ultra Lounge on December 5, 2026 at 7:00 PM."
@@ -3389,112 +3484,5 @@
     "bandsintownResolvedName": "1K Phew",
     "bandsintownIdentity": "exact_name_or_alias",
     "trackedArtist": "1K Phew"
-  },
-  {
-    "title": "The Kickback",
-    "startDate": "2026-11-14",
-    "startTime": "19:00",
-    "timezone": "America/Chicago",
-    "venue": "2305 SE 14th St",
-    "address": "2305 SE 14th St",
-    "city": "Grand Prairie",
-    "state": "TX",
-    "country": "US",
-    "artists": [
-      "CJ Emulous"
-    ],
-    "headliner": "CJ Emulous",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-    "officialUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-    "image": "assets/events/cj-emulous-kickback-2026.svg",
-    "price": "",
-    "sourceName": "CJ Emulous official calendar",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "CJ Emulous official calendar",
-        "url": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-11",
-    "id": "cj-emulous-kickback-grand-prairie-2026",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true
-  },
-  {
-    "id": "submitted:jj-stone-nrg-saskatoon-2026-11-13",
-    "title": "NRG Conference — Friday Live Performance",
-    "startDate": "2026-11-13",
-    "endDate": "2026-11-13",
-    "startTime": "21:00",
-    "endTime": "",
-    "timezone": "America/Regina",
-    "startDateTime": "2026-11-13T21:00:00-06:00",
-    "venue": "Horizon College & Seminary",
-    "address": "",
-    "city": "Saskatoon",
-    "state": "SK",
-    "country": "CA",
-    "postalCode": "S7N 3P9",
-    "artists": [
-      "JJ Stone"
-    ],
-    "headliner": "JJ Stone",
-    "advertisedBilling": [
-      "JJ Stone",
-      "Alibii",
-      "Heaven Lee"
-    ],
-    "officialBill": [
-      "JJ Stone",
-      "Alibii",
-      "Heaven Lee"
-    ],
-    "lineupExplicit": true,
-    "musicConfirmed": true,
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.tickettailor.com/events/horizoncollegeandseminary/2065402",
-    "officialUrl": "https://www.tickettailor.com/events/horizoncollegeandseminary/2065402",
-    "sourceName": "NRG Conference official schedule and JJ Stone artist submission",
-    "authority": "official_event",
-    "confidence": "high",
-    "firstSeen": "2026-10-15T17:51:30Z",
-    "lastVerified": "2026-10-15T17:51:30Z",
-    "auditVerified": "2026-10-15",
-    "image": "assets/events/nrg-conference-saskatoon-2026-11-13.jpg",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "NRG Conference official Ticket Tailor artwork, submitted by JJ Stone",
-    "imageSourceUrl": "https://www.tickettailor.com/events/horizoncollegeandseminary/2065402",
-    "detailImageLayout": "landscape",
-    "publicDescription": "JJ Stone, Alibii and Heaven Lee perform at the NRG Conference in Saskatoon, Saskatchewan, Canada. The Friday live performance begins at 9 PM. This senior youth conference runs November 13–15; this listing covers the Friday performance. See the organizer for conference registration and admission details.",
-    "price": "Conference registration: CAD $65; see organizer for admission details",
-    "notes": "Direct invited-artist submission from JJ Stone confirms the three-person bill and November 13 at 21:00. Official Ticket Tailor Friday schedule independently confirms 9:00 PM Live Performance. The overall conference runs November 13 at 6:45 PM through November 15 at 11:30 AM; those are not the concert start/end or individual set times. No standalone concert-only ticket or end time is asserted. Official artwork retained as supplied. Keep this artist-submitted Canadian show in supplemental-events.json so the U.S.-only discovery collector cannot overwrite its location.",
-    "sources": [
-      {
-        "name": "NRG Conference official Friday schedule",
-        "url": "https://www.tickettailor.com/events/horizoncollegeandseminary/2065402",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "JJ Stone direct artist submission relayed and approved by owner, October 15, 2026",
-        "url": "https://www.instagram.com/its_jjstone/",
-        "type": "artist_submission",
-        "authority": "artist_calendar",
-        "priority": 112
-      }
-    ]
   }
 ]
