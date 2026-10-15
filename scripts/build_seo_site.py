@@ -328,11 +328,16 @@ def main():
             body=f'<section class="page-hero hero-compact"><p class="eyebrow">Merged listing</p><h1>This show has one canonical page</h1><p class="hero-text">This duplicate listing was consolidated with the confirmed venue event.</p><a class="primary-button" href="{target}">View the canonical event</a></section><script>location.replace({json.dumps(target)});</script>'
             write_page(p,page("Merged event | The Kingdom Circuit","This duplicate show listing has moved to its canonical event page.",p,body))
             continue
-        cancelled=not scheduled(e)
+        cancelled=norm(e.get("status")) in {"cancelled", "canceled"}
+        postponed=norm(e.get("status")) == "postponed"
         notice='<div class="empty-panel" role="status"><strong>Cancelled.</strong> The organizer has confirmed this event is cancelled. See the official details below.</div>' if cancelled else rescheduled_notice(e)
+        if postponed:
+            notice='<div class="empty-panel" role="status"><strong>Postponed.</strong> A new date has not been announced. The date below is the original schedule. See the official announcement for updates.</div>'
         status_label=event_status_label(e)
         detail_class = "event-detail event-detail--landscape" if e.get("detailImageLayout") == "landscape" else "event-detail"
         body=f'<section class="event-detail-section">{breadcrumbs(crumbs)}{notice}<article class="{detail_class}"><div class="event-detail-media"><img class="{cls}" src="{esc(img)}" alt="{esc(e.get("title"))}" width="1200" height="675"></div><div class="event-detail-copy"><p class="eyebrow">{esc("Cancelled event" if cancelled else event_type_label(e))}</p><h1>{esc(e.get("title"))}</h1><p class="artist-line">{artist_links}</p>{hosts_line(e)}<dl class="detail-list"><div><dt>Status</dt><dd>{esc(status_label)}</dd></div><div><dt>Date</dt><dd>{esc(format_date(e))}</dd></div><div><dt>Venue</dt><dd>{esc(e.get("venue") or "Venue to be announced")}</dd></div><div><dt>Location</dt><dd>{esc(loc)}</dd></div><div><dt>Source</dt><dd>{esc(source_text(e))}</dd></div></dl><a class="primary-button" href="{esc(official)}" target="_blank" rel="noopener">Official details</a><p class="disclaimer">{"This URL is retained so visitors can confirm the cancellation with the organizer." if cancelled else "Event details may change. Confirm final information with the official organizer or ticket provider before purchasing or traveling."}</p></div></article></section>'
+        if postponed:
+            body=body.replace('<p class="eyebrow">'+esc(event_type_label(e))+'</p>', '<p class="eyebrow">Postponed event</p>', 1).replace('<dt>Date</dt>', '<dt>Originally scheduled</dt>', 1)
         description = e.get("publicDescription") or f"{names} live in {loc} on {format_date(e)}. Verified official show details."
         write_page(p,page(f"{e.get('title')} - {loc} | The Kingdom Circuit",description,p,body,[event_schema(e),breadcrumb_schema(crumbs)]))
         for legacy in e.get("legacyEventPaths") or []:

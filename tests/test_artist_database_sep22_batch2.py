@@ -107,7 +107,8 @@ class ArtistDatabaseSeptember22BatchTwoTests(unittest.TestCase):
             self.assertEqual("New Covenant Church", mayia["venue"])
             self.assertEqual("Pleasant Garden", mayia["city"])
             self.assertEqual(["MAYIA"], mayia["artists"])
-            self.assertEqual("https://mayiawarren.org/home", mayia["officialUrl"])
+            self.assertEqual("postponed", mayia["status"])
+            self.assertEqual("https://www.instagram.com/p/Dehg-BzRvR5/", mayia["officialUrl"])
 
             ty_brasel = by_id["ty-brasel-outlandish-fest-fort-worth-2026"]
             self.assertEqual("2026-11-14", ty_brasel["startDate"])

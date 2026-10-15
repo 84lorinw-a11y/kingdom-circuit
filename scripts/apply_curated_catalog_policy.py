@@ -15,6 +15,7 @@ from pathlib import Path
 from typing import Any
 
 from apply_sep26_requested_lineups import patch_event as apply_reviewed_lineup
+from apply_mayia_postponement import apply as apply_mayia_postponement
 
 POLICY_VERSION = 7
 ROOT = Path(__file__).resolve().parents[1]
@@ -549,6 +550,7 @@ def build_coverage_report(
 
 
 def main() -> int:
+    apply_mayia_postponement(ROOT)
     artists = load(ARTISTS_FILE, [])
     sources = load(OFFICIAL_SOURCES_FILE, [])
     events = load(EVENTS_FILE, [])
