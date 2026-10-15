@@ -11682,5 +11682,85 @@
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true
+  },
+  {
+    "id": "above-the-noise-rooftop-washington-2026-10-31",
+    "title": "Above the Noise: A Rooftop Experience",
+    "startDate": "2026-10-31",
+    "endDate": "2026-10-31",
+    "startTime": "15:00",
+    "endTime": "18:00",
+    "startDateTime": "2026-10-31T15:00:00-04:00",
+    "endDateTime": "2026-10-31T18:00:00-04:00",
+    "timezone": "America/New_York",
+    "doorsTime": "14:30",
+    "venue": "1625 Eye Street NW — Rooftop",
+    "address": "1625 Eye Street NW",
+    "city": "Washington",
+    "state": "DC",
+    "postalCode": "20006",
+    "country": "US",
+    "artists": [
+      "Howard Langford"
+    ],
+    "advertisedBilling": [
+      "Nate Period",
+      "Howard Langford",
+      "Kevin \"KC\" Campbell",
+      "Bre Black"
+    ],
+    "officialBill": [
+      "Nate Period",
+      "Howard Langford",
+      "Kevin \"KC\" Campbell",
+      "Bre Black"
+    ],
+    "eventType": "concert",
+    "status": "scheduled",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "officialUrl": "https://www.812project.app/events/ATOeVlpqi3kXwEZz40uc",
+    "ticketUrl": "https://www.eventbrite.com/e/above-the-noise-a-rooftop-experience-tickets-2002262257311",
+    "image": "assets/events/above-the-noise-washington-2026-10-31.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "detailImageLayout": "portrait",
+    "imageSource": "Organizer portrait flyer, also shared by Kevin KC Campbell",
+    "imageSourceUrl": "https://www.instagram.com/p/DehnFuJOaol/",
+    "price": "From $17.85",
+    "ageRestriction": "14+",
+    "organizer": "Nate Period",
+    "description": "An afternoon rooftop concert featuring Nate Period, Howard Langford, Kevin \"KC\" Campbell, and Bre Black. Live worship and Christian hip-hop, local vendors and games. Doors open at 2:30 PM; performances run 3–6 PM Eastern.",
+    "sourceName": "Artist announcement and organizer ticket listing",
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-10-15T19:00:00Z",
+    "lastVerified": "2026-10-15T19:00:00Z",
+    "auditVerified": "2026-10-15",
+    "notes": "Owner-requested addition. Full four-person lineup transcribed from organizer portrait flyer and Kevin KC Campbell Instagram post DehnFuJOaol. Eventbrite confirms Oct 31, 2026, 3–6 PM at 1625 Eye Street NW; doors 2:30 PM; ages 14+. 8:12 Project renders 2–5 PM in viewer CDT and explicitly 3 PM EDT at venue. Use venue local time. Eventbrite address supersedes the 8:12 listing’s mistaken Interstate Street expansion. Three new artist candidates are in the Sheet pending owner verification; only existing verified Howard Langford is associated with a directory profile.",
+    "sources": [
+      {
+        "name": "Kevin KC Campbell artist announcement and full lineup flyer",
+        "url": "https://www.instagram.com/p/DehnFuJOaol/",
+        "type": "artist_social",
+        "authority": "artist_calendar",
+        "priority": 112
+      },
+      {
+        "name": "Nate Period organizer event listing",
+        "url": "https://www.812project.app/events/ATOeVlpqi3kXwEZz40uc",
+        "type": "official_event",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "Official Eventbrite tickets, local time and venue address",
+        "url": "https://www.eventbrite.com/e/above-the-noise-a-rooftop-experience-tickets-2002262257311",
+        "type": "venue_ticket",
+        "authority": "venue_ticket",
+        "priority": 115
+      }
+    ]
   }
 ]
