@@ -1626,61 +1626,77 @@
     "title": "Ignite and Unite Tour",
     "startDate": "2026-11-14",
     "endDate": "2026-11-14",
-    "startTime": "",
+    "startTime": "18:00",
     "timezone": "America/New_York",
-    "startDateTime": "",
-    "venue": "Church of Plantation",
-    "address": "",
+    "startDateTime": "2026-11-14T18:00:00-05:00",
+    "venue": "First Baptist Church of Plantation",
+    "address": "150 NW 46th Avenue",
     "city": "Plantation",
     "state": "FL",
     "country": "US",
     "artists": [
       "Bo Fisher",
-      "B. Cody Shields"
+      "B. Cody Shields",
+      "Justo Chalaire",
+      "Brother Bo",
+      "K'nek"
     ],
     "advertisedBilling": [
       "Pastor John Humphries",
       "OTG Zico",
+      "Madigan",
       "Altar Ego",
       "J10",
       "Legit",
       "3HRE",
-      "B. Cody Shields"
+      "B. Cody Shields",
+      "Brother Bo",
+      "K'nek"
     ],
     "officialBill": [
       "Pastor John Humphries",
       "OTG Zico",
+      "Madigan",
       "Altar Ego",
       "J10",
       "Legit",
       "3HRE",
-      "B. Cody Shields"
+      "B. Cody Shields",
+      "Brother Bo",
+      "K'nek"
     ],
     "headliner": "Altar Ego",
     "eventType": "concert",
     "status": "scheduled",
-    "detailsPending": true,
+    "detailsPending": false,
     "lineupExplicit": true,
-    "officialUrl": "https://kingdomcircuit.com/assets/events/ignite-and-unite-tour-artist-submitted-2026.png",
+    "officialUrl": "https://www.instagram.com/p/DehB1hrxLIR/",
     "ticketUrl": "",
-    "image": "assets/events/ignite-and-unite-tour-artist-submitted-2026.png",
+    "image": "assets/events/ignite-and-unite-plantation-2026-11-14-official.jpg",
     "imageType": "event_artwork",
     "imageOverride": true,
     "imagePosition": "center",
     "detailImageLayout": "portrait",
-    "imageSource": "Ignite and Unite Tour flyer supplied by Bo Fisher",
-    "imageSourceUrl": "https://kingdomcircuit.com/assets/events/ignite-and-unite-tour-artist-submitted-2026.png",
+    "imageSource": "Holy Waters Hip Hop official November 14 Plantation flyer",
+    "imageSourceUrl": "https://www.instagram.com/p/DehB1hrxLIR/",
     "organizer": "",
     "price": "",
-    "publicDescription": "The Ignite and Unite Tour comes to Church of Plantation in Plantation, Florida. The flyer lists Pastor John Humphries, OTG Zico, Altar Ego, J10, Legit, 3HRE, and B. Cody Shields. Start time and ticket details are to be announced.",
-    "sourceName": "Bo Fisher artist-submitted Ignite and Unite Tour flyer",
+    "publicDescription": "The Ignite and Unite Tour comes to First Baptist Church of Plantation with Pastor John Humphries, OTG Zico, Madigan, Altar Ego, J10, Legit, 3HRE, B. Cody Shields, Brother Bo, and K'nek. Doors open at 5:30 PM; the event starts at 6 PM Eastern on November 14, 2026, at 150 NW 46th Avenue, Plantation, FL 33317.",
+    "sourceName": "Holy Waters Hip Hop official Plantation tour announcement",
     "authority": "official_event",
-    "confidence": "medium",
+    "confidence": "high",
     "firstSeen": "2026-10-08T23:11:36Z",
-    "lastVerified": "2026-10-08T23:11:36Z",
-    "auditVerified": "2026-10-08",
-    "notes": "Bo Fisher supplied the tour flyer directly to the site owner. The flyer prints month/day, venue, city and this full billing, but no year or start times. On October 8, 2026 the owner explicitly instructed us to assume 2026 for all four dates. The year is owner-approved, not independently verified from a public announcement. Leave startTime and ticketUrl empty and detailsPending true. Official details links to the exact unedited artist-supplied flyer hosted locally, not a guessed ticket page or unrelated venue listing. Owner confirmed Bo appears as part of Altar Ego; keep Altar Ego in public billing and link the record to Bo Fisher and the already verified B. Cody Shields. No global group alias or new artist profiles.",
+    "lastVerified": "2026-10-15T19:41:39Z",
+    "auditVerified": "2026-10-15",
+    "notes": "October 15: owner supplied the Holy Waters Hip Hop Instagram announcement DehB1hrxLIR. Its date-specific portrait flyer explicitly prints November 14, 2026; doors 5:30 PM; event 6 PM; First Baptist Church of Plantation; 150 NW 46th Avenue, Plantation FL 33317. Full advertised bill includes Madigan, Brother Bo, and K'nek in addition to the original tour artists. Caption tags @brotherbo and @westhetech, matching the existing verified profiles. Keep Altar Ego as the public group billing; Bo Fisher and Justo Chalaire are schedule associations, with both tagged on this announcement and the group membership previously verified from Altar Ego's official bio. Do not turn the group into a global alias or add the two members as separate solo billings. This new flyer supersedes the original tour-wide artwork, unknown time and abbreviated venue for the Plantation date only. The printed 2026 year now confirms the earlier owner-approved year. Ticket and price details remain unannounced; the QR code says donate, not tickets.",
     "sources": [
+      {
+        "name": "Holy Waters Hip Hop date-specific November 14 flyer and artist tags",
+        "url": "https://www.instagram.com/p/DehB1hrxLIR/",
+        "type": "artist_social",
+        "authority": "official_event",
+        "priority": 115
+      },
       {
         "name": "Bo Fisher artist-submitted Ignite and Unite Tour flyer",
         "url": "https://kingdomcircuit.com/assets/events/ignite-and-unite-tour-artist-submitted-2026.png",
@@ -1688,6 +1704,9 @@
         "authority": "official_event",
         "priority": 112
       }
-    ]
+    ],
+    "doorsTime": "17:30",
+    "postalCode": "33317",
+    "musicConfirmed": true
   }
 }
