@@ -4676,9 +4676,9 @@
   {
     "title": "The Sac Town Give Back",
     "startDate": "2026-10-17",
-    "startTime": "",
+    "startTime": "12:00",
     "timezone": "America/Los_Angeles",
-    "venue": "985 Riverfront St",
+    "venue": "Drake's / The Barn",
     "address": "985 Riverfront St",
     "city": "West Sacramento",
     "state": "CA",
@@ -4691,11 +4691,11 @@
     "status": "scheduled",
     "ticketUrl": "",
     "officialUrl": "https://www.cjemulous.com/event-details/the-sac-town-give-back",
-    "image": "assets/artists/cj-emulous-official-performance-oct10.jpeg",
-    "imageType": "artist",
-    "imagePosition": "50% 30%",
+    "image": "assets/events/cj-emulous-sac-town-give-back-2026-10-17-portrait.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
     "imageOverride": true,
-    "price": "",
+    "price": "Free",
     "lineupExplicit": true,
     "authority": "artist_calendar",
     "confidence": "high",
@@ -4707,14 +4707,22 @@
         "type": "manual_verified",
         "authority": "artist_calendar",
         "priority": 100
+      },
+      {
+        "name": "AMR Productions / Beats4Hope official CJ Emulous flyer",
+        "url": "https://www.instagram.com/reel/DeVFDDhK_fm/",
+        "type": "manual_verified",
+        "authority": "official_promoter",
+        "priority": 100
       }
     ],
-    "auditVerified": "2026-09-13",
-    "notes": "Artist appearance at a community give-back event. The official title does not establish a standalone rap concert; time is left blank pending a local source.",
+    "auditVerified": "2026-10-15",
+    "notes": "Free, family-friendly community give-back event benefiting Sacramento Loaves & Fishes, with a special performance by CJ Emulous. The organizer's flyer confirms the event runs noon–5 PM; CJ's individual set time is not announced.",
     "id": "manual:cj-emulous-sac-town-give-back-west-sacramento-2026",
-    "imageSource": "CJ Emulous official performance gallery",
-    "imageSourceUrl": "https://static.wixstatic.com/media/9c331a_f37c062fb676436db0bd59dab1fa8acb~mv2.jpeg",
-    "detailImageLayout": "portrait"
+    "imageSource": "AMR Productions / Beats4Hope official CJ Emulous flyer (reel frame at 00:25)",
+    "imageSourceUrl": "https://www.instagram.com/reel/DeVFDDhK_fm/",
+    "detailImageLayout": "portrait",
+    "endTime": "17:00"
   },
   {
     "id": "manual:mayia-nc-state-fair-2026",

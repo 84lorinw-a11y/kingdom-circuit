@@ -120,8 +120,10 @@ UPSERTS = {
     "cj-emulous-sac-town-give-back-west-sacramento-2026": E(
         "The Sac Town Give Back", "2026-10-17", "West Sacramento", "CA", ["CJ Emulous"],
         "https://www.cjemulous.com/event-details/the-sac-town-give-back", "CJ Emulous official calendar",
-        venue="985 Riverfront St", address="985 Riverfront St", event_type="appearance", tz="America/Los_Angeles",
-        notes="Artist appearance at a community give-back event. The official title does not establish a standalone rap concert; time is left blank pending a local source."
+        venue="Drake's / The Barn", address="985 Riverfront St", event_type="appearance", tz="America/Los_Angeles",
+        time="12:00", end_time="17:00", price="Free", auditVerified="2026-10-15",
+        extra=[src("AMR Productions / Beats4Hope official CJ Emulous flyer", "https://www.instagram.com/reel/DeVFDDhK_fm/", "official_promoter")],
+        notes="Free, family-friendly community give-back event benefiting Sacramento Loaves & Fishes, with a special performance by CJ Emulous. The organizer's flyer confirms the event runs noon–5 PM; CJ's individual set time is not announced."
     ),
     "cj-emulous-new-mainstream-miami-2026-11-05": E(
         "New Mainstream Tour — Miles Minnick, Tommy Zuko & CJ Emulous", "2026-11-05", "Miami", "FL",
