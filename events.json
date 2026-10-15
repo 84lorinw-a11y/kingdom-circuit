@@ -13282,5 +13282,70 @@
     "postalCode": "31601",
     "price": "Park admission or 2027 Season Pass required; general concert admission included",
     "notes": "Official 2027 calendar confirms Lecrae May 8 at 8 PM; FAQ says venue seating opens one hour before all concerts. Other season artists perform on different dates and are not this concert lineup. General concert entry is not unconditionally free: paid park admission or a valid season pass is required. No event-specific flyer found; use the approved local Lecrae photo."
+  },
+  {
+    "id": "marv-de-la-cruz-la-popup-2026-11-14",
+    "title": "MARV & De La Cruz — LA Pop-Up Show",
+    "startDate": "2026-11-14",
+    "endDate": "2026-11-14",
+    "startTime": "19:00",
+    "endTime": "",
+    "startDateTime": "2026-11-14T19:00:00-08:00",
+    "timezone": "America/Los_Angeles",
+    "venue": "1626 N La Brea Ave",
+    "address": "1626 N La Brea Ave",
+    "city": "Los Angeles",
+    "state": "CA",
+    "postalCode": "90028",
+    "country": "US",
+    "artists": [
+      "De La Cruz"
+    ],
+    "advertisedBilling": [
+      "MARV",
+      "De La Cruz"
+    ],
+    "officialBill": [
+      "MARV",
+      "De La Cruz"
+    ],
+    "eventType": "concert",
+    "status": "scheduled",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "officialUrl": "https://www.instagram.com/p/Deh4BUXAc5O/",
+    "ticketUrl": "https://www.eventbrite.com/e/nitelight-x-make-heaven-crowded-la-popup-show-tickets-2003425806518",
+    "image": "assets/events/marv-de-la-cruz-la-pop-up-2026-11-14.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "detailImageLayout": "portrait",
+    "imageSource": "MARV official collaboration post with NiteLight Hollywood and Make Heaven Crowded",
+    "imageSourceUrl": "https://www.instagram.com/p/Deh4BUXAc5O/",
+    "organizer": "NiteLight x Make Heaven Crowded",
+    "description": "MARV and De La Cruz perform at the NiteLight x Make Heaven Crowded Los Angeles pop-up show, with additional special guests to be announced. The artist flyer advertises 7 PM Pacific; Eventbrite currently lists 8 PM, so confirm the final time with the organizer.",
+    "sourceName": "Artist announcement and official Eventbrite tickets",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "firstSeen": "2026-10-15T22:10:14Z",
+    "lastVerified": "2026-10-15T22:10:14Z",
+    "auditVerified": "2026-10-15",
+    "notes": "Owner requested addition October 15, 2026. Exact official 1087x1449 portrait flyer confirms November 14 at 7 PM and 1626 N La Brea Ave; Eventbrite confirms Saturday November 14, 2026 and the address but differs at 8 PM (datetime 2026-11-15T04:00:00Z). Prioritize current artist-announced 7 PM pending clarification; do not infer doors or an end time. No venue business name inferred from the street address. MARV is the CHH artist @marvrogers, Spotify 4jBiLv1a8QGElMKTozxv35, official YouTube @MARVROGERS. Owner requested Sheet-only candidate pending verification, so only approved De La Cruz has a directory association. Unnamed special guests remain unnamed.",
+    "sources": [
+      {
+        "name": "MARV artist announcement and official portrait flyer",
+        "url": "https://www.instagram.com/p/Deh4BUXAc5O/",
+        "type": "artist_social",
+        "authority": "artist_calendar",
+        "priority": 120
+      },
+      {
+        "name": "Radiance Music Group official Eventbrite ticket listing",
+        "url": "https://www.eventbrite.com/e/nitelight-x-make-heaven-crowded-la-popup-show-tickets-2003425806518",
+        "type": "venue_ticket",
+        "authority": "venue_ticket",
+        "priority": 115
+      }
+    ]
   }
 ]
