@@ -37,13 +37,13 @@ RETIRED_URLS = {
 }
 WHATUPRG_PUBLIC_DESCRIPTIONS = {
     "whatuprg-houston-2026-11-19": (
-        "WHATUPRG’s NEW SAINT HOLY TOUR stops at Rockefellers in Houston on November 19, 2026 at 7:30 PM with aftrthght and De La Cruz. Official event details and ticketing are linked."
+        "WHATUPRG’s NEW SAINT HOLY TOUR stops at Rockefellers in Houston on November 19, 2026 with aftrthght and De La Cruz. Doors open at 7 PM; the show starts at 7:30 PM Central Time."
     ),
     "whatuprg-dallas-2026-11-20": (
-        "WHATUPRG’s NEW SAINT HOLY TOUR stops at Ridglea Room in Fort Worth on November 20, 2026 at 7:30 PM with aftrthght and De La Cruz. The tour markets this stop as Dallas–Fort Worth."
+        "WHATUPRG’s NEW SAINT HOLY TOUR stops at Ridglea Room in Fort Worth on November 20, 2026 with aftrthght and De La Cruz. Doors open at 7 PM; the show starts at 7:30 PM Central Time. The tour markets this stop as Dallas–Fort Worth."
     ),
     "whatuprg-san-antonio-2026-11-22": (
-        "WHATUPRG’s NEW SAINT HOLY TOUR stops at Paper Tiger in San Antonio on November 22, 2026 at 7:30 PM with aftrthght and De La Cruz. Official event details are linked."
+        "WHATUPRG’s NEW SAINT HOLY TOUR stops at Paper Tiger in San Antonio on November 22, 2026 with aftrthght and De La Cruz. Doors open at 7 PM; the show starts at 8 PM Central Time."
     ),
 }
 CLEVELAND = {

@@ -13,6 +13,26 @@ from apply_oct3_concert_corrections import apply, rejected, WRONG_NEHEMIAH_IDS, 
 
 
 class OctoberConcertCorrectionTests(unittest.TestCase):
+    def test_harvest_fest_provider_refresh_keeps_one_corrected_show(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'config').mkdir()
+            approved = json.loads((ROOT / 'config/oct3-verified-concerts.json').read_text())
+            show = next(e for e in approved if e['id'] == 'bandsintown:1040178082')
+            (root / 'config/oct3-verified-concerts.json').write_text(json.dumps([show]))
+            stale = dict(show, title='Jon Keith at Word of Faith International Christian Center', startTime='18:30')
+            for name in ['events.json', 'config/manual-events.json']:
+                (root / name).write_text('[]')
+            (root / 'supplemental-events.json').write_text(json.dumps([stale]))
+            (root / 'event-history.json').write_text('{"events": []}')
+            apply(root, today='2026-10-15')
+            published = json.loads((root / 'events.json').read_text())
+            self.assertEqual(len(published), 1)
+            self.assertEqual(published[0]['title'], 'Harvest Fest 2026 — Jon Keith')
+            self.assertEqual(published[0]['startTime'], '20:00')
+            self.assertEqual(published[0]['firstSeen'], '2026-09-07T16:08:12Z')
+            self.assertEqual(json.loads((root / 'supplemental-events.json').read_text()), [])
+
     def test_zeke_requires_verified_identity_and_preserves_flavor_fest(self):
         artist = {'name': 'ZEKE', 'aliases': ['ZEKE'], 'bandsintownRejectedArtistIds': ['32942']}
         with patch.object(collector, 'get_json') as fetch:

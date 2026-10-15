@@ -47,7 +47,10 @@ class PendingDetailsTests(unittest.TestCase):
         )
         for e in rows:
             self.assertFalse(e["detailsPending"])
-            self.assertEqual(e["startTime"], "19:30")
+            expected_time = "20:00" if e["city"] == "San Antonio" else "19:30"
+            self.assertEqual(e["startTime"], expected_time)
+            self.assertEqual(e["doorsTime"], "19:00")
+            self.assertEqual(e["startDateTime"], f'{e["startDate"]}T{expected_time}:00-06:00')
             self.assertEqual(e["artists"], ["WHATUPRG", "aftrthght", "De La Cruz"])
             self.assertEqual(e["firstSeen"], "2026-09-30T03:02:53.929665Z")
 
