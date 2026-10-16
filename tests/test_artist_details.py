@@ -5,6 +5,7 @@ from pathlib import Path
 import re
 import tempfile
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location('artist_details', ROOT / 'scripts/finalize_artist_details.py')
@@ -13,6 +14,42 @@ SPEC.loader.exec_module(details)
 
 
 class ArtistDetailsTests(unittest.TestCase):
+    def test_profile_windows_preserve_original_image_proportions(self):
+        portraits = json.loads((ROOT / 'config/artist-portraits.json').read_text())
+        for slug, entry in details.PROFILE_FRAMING.items():
+            with self.subTest(artist=slug):
+                portrait = portraits[entry['artist']]
+                self.assertEqual(entry['imageSha256'], portrait['sha256'],
+                                 'Recheck framing when the approved photo changes')
+                for view in ('desktop', 'mobile'):
+                    frame = entry.get(view, {})
+                    if 'window' not in frame:
+                        continue
+                    width, height = frame['window'][2:]
+                    displayed_ratio = frame['ratio'] * height / width
+                    self.assertAlmostEqual(displayed_ratio, portrait['width'] / portrait['height'], places=5)
+
+    def test_kevin_mobile_and_unconfigured_profiles_keep_existing_framing(self):
+        css = details.framing_css('kevin-kc-campbell')
+        self.assertTrue(css.startswith(details.MOBILE_FRAMING['kevin-kc-campbell']))
+        self.assertEqual(css.count('@media (max-width: 720px)'), 1)
+        self.assertNotIn('mobile', details.PROFILE_FRAMING['kevin-kc-campbell'])
+        self.assertEqual(details.framing_css('unconfigured-artist'), '')
+
+    def test_name_only_adjustment_does_not_change_photo_geometry(self):
+        with patch.dict(details.PROFILE_FRAMING, {'example': {'mobile': {'nameOnly': True, 'nameSize': 8}}}):
+            css = details.framing_css('example')
+            self.assertIn('.kc-rd-profile-name', css)
+            self.assertNotIn('.kc-rd-profile-visual', css)
+
+    def test_invalid_framing_is_rejected_before_publication(self):
+        for window in ([0, 0, 0, 1], [0, float('nan'), 1, 1]):
+            with self.subTest(window=window), patch.dict(details.PROFILE_FRAMING, {
+                'example': {'desktop': {'window': window, 'ratio': 1, 'nameSize': 5}}
+            }):
+                with self.assertRaises(ValueError):
+                    details.framing_css('example')
+
     def fixture(self, site, base=details.BASE, status='Sold Out'):
         profile = site / 'artists/example/index.html'
         profile.parent.mkdir(parents=True)

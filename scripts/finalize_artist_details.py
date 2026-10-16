@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import math
 from pathlib import Path
 import re
 import shutil
@@ -74,6 +75,57 @@ MOBILE_FRAMING = {
   body .kc-rd-profile-name { bottom: 10px; }
 }''',
 }
+
+# Page-scoped presentation only: the approved photo, optimized variants, and
+# directory thumbnails stay untouched. Coordinates describe a viewport in
+# fractions of the original image; out-of-bounds space provides headroom.
+FRAMING_PATH = Path(__file__).resolve().parents[1] / 'config/artist-profile-framing.json'
+PROFILE_FRAMING = json.loads(FRAMING_PATH.read_text())
+
+
+def framing_css(slug: str) -> str:
+    parts = [MOBILE_FRAMING[slug]] if slug in MOBILE_FRAMING else []
+    entry = PROFILE_FRAMING.get(slug, {})
+    for view, query in [('desktop', 'min-width: 721px'), ('mobile', 'max-width: 720px')]:
+        frame = entry.get(view)
+        if not frame:
+            continue
+        inset, largest = (20, 60) if view == 'desktop' else (12, 36)
+        name_size = frame['nameSize']
+        if not math.isfinite(name_size) or not 1 <= name_size <= 12:
+            raise ValueError(f'Invalid artist name size: {slug}/{view}')
+        name_css = f'''
+  body .kc-rd-profile-hero {{ container-type: inline-size; }}
+  body .kc-rd-profile-name {{
+    left: {inset}px; right: {inset}px; bottom: {inset}px; max-width: calc(100% - {2 * inset}px);
+    font-size: clamp(18px, {name_size}cqw, {largest}px); line-height: 1.08;
+    letter-spacing: -.035em; overflow-wrap: normal; word-break: normal; white-space: normal;
+    margin: 0; text-shadow: 0 2px 10px rgba(0,0,0,.8);
+  }}'''
+        if frame.get('nameOnly'):
+            parts.append(f'@media ({query}) {{' + name_css + '\n}')
+            continue
+        x, y, width, height = frame['window']
+        ratio = frame['ratio']
+        brightness = frame.get('brightness', 1)
+        if not all(math.isfinite(v) for v in [x, y, width, height, ratio, name_size, brightness]):
+            raise ValueError(f'Non-finite artist framing: {slug}/{view}')
+        if not (0 < width <= 5 and 0 < height <= 5 and .5 <= ratio <= 2 and 1 <= brightness <= 1.2):
+            raise ValueError(f'Invalid artist framing: {slug}/{view}')
+        parts.append(f'''@media ({query}) {{
+  body .kc-rd-profile-visual {{ aspect-ratio: {ratio:.8f}; background: #160c09; }}
+  body .kc-rd-profile-visual img {{
+    position: absolute; width: {100 / width:.6f}% !important; height: {100 / height:.6f}% !important;
+    left: {-100 * x / width:.6f}%; top: {-100 * y / height:.6f}%;
+    object-fit: fill !important; max-width: none !important; transform: none !important;
+    filter: brightness({brightness});
+  }}
+  body .kc-rd-profile-visual::after {{
+    height: 24%; background: linear-gradient(to bottom, transparent, rgba(5,5,5,.65));
+  }}
+{name_css}
+}}''')
+    return '\n'.join(parts)
 
 
 def text(value: str) -> str:
@@ -206,7 +258,7 @@ def render_profile(site: Path, profile: Path, source: str, base: str) -> str:
     link = f'<link rel="stylesheet" href="{base}{CSS}?v=1" data-kc-artist-details>'
     source = re.sub(r'\s*<link\b[^>]*data-kc-artist-details[^>]*>\s*', '', source)
     source = FRAMING_STYLE.sub('', source)
-    framing = MOBILE_FRAMING.get(profile.parent.name)
+    framing = framing_css(profile.parent.name)
     if framing:
         link += '\n<style data-kc-artist-framing>' + framing + '</style>'
     # The existing year finalizer owns the last style in <head>. Preserve its
@@ -251,10 +303,10 @@ def check(site: Path, base: str = BASE) -> dict:
                 counts['statusRows'] += bool(status)
         if f'href="{base}{CSS}?v=1"' not in source:
             failures.append(f'{profile}: details stylesheet missing')
-        framing = MOBILE_FRAMING.get(profile.parent.name)
+        framing = framing_css(profile.parent.name)
         actual_framing = re.findall(r'<style data-kc-artist-framing>(.*?)</style>', source, re.S)
         if actual_framing != ([framing] if framing else []):
-            failures.append(f'{profile}: approved mobile framing missing or changed')
+            failures.append(f'{profile}: approved artist framing missing or changed')
     if not counts['profiles']:
         failures.append('No artist profiles found')
     manifest = site / 'assets/live-redesign-manifest.json'
