@@ -381,7 +381,9 @@ const ARTIST_ROSTER_ORDER = [
   "Amos Salem",
   "Chosen Few",
   "JJ Stone",
-  "MARV"
+  "MARV",
+  "Nate Period",
+  "Kevin \"KC\" Campbell"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -5521,6 +5523,37 @@ const VERIFIED_ARTIST_REGISTRY = {
     "youtubeProfile": "https://www.youtube.com/@MARVROGERS",
     "officialImageSource": "https://open.spotify.com/artist/4jBiLv1a8QGElMKTozxv35",
     "imageUrl": "assets/artists/marv-official-spotify-oct15.jpg",
+    "imagePosition": "50% 0%",
+    "sourceRegistryVerified": true
+  },
+  "nate period": {
+    "aliases": [
+      "Nate Period",
+      "Nateperiod",
+      "Nate."
+    ],
+    "website": "https://linktr.ee/DevotedMusicOfficial",
+    "instagramProfile": "https://www.instagram.com/nateperiod/",
+    "spotifyProfile": "https://open.spotify.com/artist/1GleyFWOUROB314b8UlM6F",
+    "youtubeProfile": "https://www.youtube.com/channel/UCs3QwNgb0-dxl_Fb5-4k6xA",
+    "officialImageSource": "https://open.spotify.com/artist/1GleyFWOUROB314b8UlM6F",
+    "imageUrl": "assets/artists/nate-period-official-oct16.jpg",
+    "imagePosition": "50% 0%",
+    "label": "Devoted Music",
+    "sourceRegistryVerified": true
+  },
+  "kevin \"kc\" campbell": {
+    "aliases": [
+      "Kevin \"KC\" Campbell",
+      "Kevin KC Campbell",
+      "Kevin K.C. Campbell"
+    ],
+    "website": "https://www.instagram.com/kevinkccampbell/",
+    "instagramProfile": "https://www.instagram.com/kevinkccampbell/",
+    "spotifyProfile": "https://open.spotify.com/artist/3pwMonKf5GnWs6lhfjXe5j",
+    "youtubeProfile": "",
+    "officialImageSource": "https://www.instagram.com/kevinkccampbell/",
+    "imageUrl": "assets/artists/kevin-kc-campbell-official-oct16.jpg",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   }
@@ -10665,6 +10698,37 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/marv-official-spotify-oct15.jpg",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
+  },
+  "nate period": {
+    "aliases": [
+      "Nate Period",
+      "Nateperiod",
+      "Nate."
+    ],
+    "website": "https://linktr.ee/DevotedMusicOfficial",
+    "instagramProfile": "https://www.instagram.com/nateperiod/",
+    "spotifyProfile": "https://open.spotify.com/artist/1GleyFWOUROB314b8UlM6F",
+    "youtubeProfile": "https://www.youtube.com/channel/UCs3QwNgb0-dxl_Fb5-4k6xA",
+    "officialImageSource": "https://open.spotify.com/artist/1GleyFWOUROB314b8UlM6F",
+    "imageUrl": "assets/artists/nate-period-official-oct16.jpg",
+    "imagePosition": "50% 0%",
+    "label": "Devoted Music",
+    "sourceRegistryVerified": true
+  },
+  "kevin \"kc\" campbell": {
+    "aliases": [
+      "Kevin \"KC\" Campbell",
+      "Kevin KC Campbell",
+      "Kevin K.C. Campbell"
+    ],
+    "website": "https://www.instagram.com/kevinkccampbell/",
+    "instagramProfile": "https://www.instagram.com/kevinkccampbell/",
+    "spotifyProfile": "https://open.spotify.com/artist/3pwMonKf5GnWs6lhfjXe5j",
+    "youtubeProfile": "",
+    "officialImageSource": "https://www.instagram.com/kevinkccampbell/",
+    "imageUrl": "assets/artists/kevin-kc-campbell-official-oct16.jpg",
+    "imagePosition": "50% 0%",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -12138,6 +12202,14 @@ const STATIC_ARTIST_PORTRAITS = {
   },
   "marv": {
     "imageUrl": "assets/artists/marv-official-spotify-oct15.jpg",
+    "imagePosition": "50% 0%"
+  },
+  "nate period": {
+    "imageUrl": "assets/artists/nate-period-official-oct16.jpg",
+    "imagePosition": "50% 0%"
+  },
+  "kevin \"kc\" campbell": {
+    "imageUrl": "assets/artists/kevin-kc-campbell-official-oct16.jpg",
     "imagePosition": "50% 0%"
   }
 };
