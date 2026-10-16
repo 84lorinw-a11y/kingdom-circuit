@@ -23,6 +23,16 @@ FRAMING_STYLE = re.compile(r'\s*<style data-kc-artist-framing>.*?</style>\s*', r
 # Owner-approved mobile framing, applied after every imported redesign.
 # Inline page-scoped CSS avoids stale shared styles and leaves desktop intact.
 MOBILE_FRAMING = {
+    'nate-period': '''@media (max-width: 720px) {
+  body .kc-rd-profile-visual { aspect-ratio: 1 / 1; }
+  body .kc-rd-profile-visual img { object-position: 50% 0% !important; }
+  body .kc-rd-profile-name { bottom: 10px; font-size: clamp(1.6rem, 9vw, 3.5rem); }
+}''',
+    'kevin-kc-campbell': '''@media (max-width: 720px) {
+  body .kc-rd-profile-visual { aspect-ratio: 1 / 1; }
+  body .kc-rd-profile-visual img { object-position: 50% 0% !important; }
+  body .kc-rd-profile-name { bottom: 10px; font-size: clamp(1.4rem, 6.5vw, 3rem); }
+}''',
     'marv': '''@media (max-width: 720px) {
   body .kc-rd-profile-visual { aspect-ratio: 1 / 1; }
   body .kc-rd-profile-visual img { object-position: 50% 0% !important; }
