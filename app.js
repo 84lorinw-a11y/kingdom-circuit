@@ -5552,8 +5552,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/kevinkccampbell/",
     "spotifyProfile": "https://open.spotify.com/artist/3pwMonKf5GnWs6lhfjXe5j",
     "youtubeProfile": "",
-    "officialImageSource": "https://www.instagram.com/kevinkccampbell/",
-    "imageUrl": "assets/artists/kevin-kc-campbell-official-oct16.jpg",
+    "officialImageSource": "https://www.instagram.com/p/DNYahG4xBUB/?img_index=3",
+    "imageUrl": "assets/artists/kevin-kc-campbell-concert-hires-oct16.jpg",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   }
@@ -10725,8 +10725,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/kevinkccampbell/",
     "spotifyProfile": "https://open.spotify.com/artist/3pwMonKf5GnWs6lhfjXe5j",
     "youtubeProfile": "",
-    "officialImageSource": "https://www.instagram.com/kevinkccampbell/",
-    "imageUrl": "assets/artists/kevin-kc-campbell-official-oct16.jpg",
+    "officialImageSource": "https://www.instagram.com/p/DNYahG4xBUB/?img_index=3",
+    "imageUrl": "assets/artists/kevin-kc-campbell-concert-hires-oct16.jpg",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   }
@@ -12209,7 +12209,7 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 0%"
   },
   "kevin \"kc\" campbell": {
-    "imageUrl": "assets/artists/kevin-kc-campbell-official-oct16.jpg",
+    "imageUrl": "assets/artists/kevin-kc-campbell-concert-hires-oct16.jpg",
     "imagePosition": "50% 0%"
   }
 };
