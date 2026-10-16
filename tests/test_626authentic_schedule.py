@@ -11,10 +11,15 @@ class AuthenticScheduleTests(unittest.TestCase):
             artist=next(x for x in json.loads((ROOT/filename).read_text()) if x['name']=='626authentic')
             self.assertIn('626 Authentic',artist['aliases'])
 
-    def test_refresh_restores_four_distinct_upcoming_shows(self):
+    def test_refresh_restores_distinct_upcoming_shows(self):
         approved=json.loads((ROOT/'config/oct3-verified-concerts.json').read_text())
         expected={e['id']:e for e in approved if '626authentic' in e.get('artists',[]) and e['startDate']>='2026-10-12'}
-        self.assertEqual(len(expected),4)
+        self.assertTrue({
+            'victory-over-darkness-fullerton-2026-10-24',
+            'harvest-fest-ontario-2026-10-31',
+            'westside-social-holy-ghost-hip-hop-venice-2026-10-25',
+            'harvest-fest-crestline-2026-10-31',
+        }.issubset(expected))
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp);(root/'config').mkdir()
             (root/'config/oct3-verified-concerts.json').write_text(json.dumps(approved))

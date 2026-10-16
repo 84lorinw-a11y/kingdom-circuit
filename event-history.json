@@ -20628,7 +20628,9 @@
           "Zenwi",
           "Wiff.P",
           "Dondrae",
-          "Jayde Eliyah"
+          "Jayde Eliyah",
+          "JEM",
+          "Revolution"
         ],
         "officialBill": [
           "Monae",
@@ -20637,7 +20639,9 @@
           "Zenwi",
           "Wiff.P",
           "Dondrae",
-          "Jayde Eliyah"
+          "Jayde Eliyah",
+          "JEM",
+          "Revolution"
         ],
         "lineupExplicit": true,
         "musicConfirmed": true,
@@ -20661,22 +20665,37 @@
             "type": "manual_verified",
             "authority": "official_event",
             "priority": 115
+          },
+          {
+            "name": "JEM performance announcement",
+            "url": "https://www.instagram.com/zenwiofficial/p/Deh88UvnZ1f/",
+            "type": "manual_verified",
+            "authority": "official_event",
+            "priority": 115
+          },
+          {
+            "name": "Revolution dance performance announcement",
+            "url": "https://www.instagram.com/zenwiofficial/p/Deh8CaUnbvh/",
+            "type": "manual_verified",
+            "authority": "official_event",
+            "priority": 115
           }
         ],
         "firstSeen": "2026-10-01T18:00:00Z",
-        "lastVerified": "2026-10-02T18:00:00Z",
-        "auditVerified": "2026-10-02",
+        "lastVerified": "2026-10-16T19:24:15Z",
+        "auditVerified": "2026-10-16",
         "editorialBatch": "2026-10-02-verified-artists",
         "postalCode": "33596",
         "doorsTime": "17:00",
-        "notes": "Current Eventbrite listing explicitly gives 5 PM doors and 6 PM music. Full flyer billing preserved; Monae and Jayde Eliyah do not have curated artist profiles.",
+        "notes": "Current Eventbrite listing explicitly gives 5 PM doors and 6 PM music. Full flyer billing preserved; Monae and Jayde Eliyah do not have curated artist profiles. October 16: organizer adds JEM and Revolution; Revolution is explicitly a dance group, not a rapper.",
         "mergedFromIds": [
           "bandsintown:1040469553"
         ],
         "legacyEventPaths": [
           "/event/nehemiah-at-2106-lithia-pinecrest-rd-2026-10-17-valrico-manor-c47e17/"
         ],
-        "detailImageLayout": "portrait"
+        "detailImageLayout": "portrait",
+        "publicDescription": "Adrenaline features Monae, JAYLXN, Nehemiah, Zenwi, Wiff.P, Dondrae, Jayde Eliyah and JEM, with a dance performance by Revolution. Doors open at 5 PM; music begins at 6 PM."
       }
     },
     {
@@ -23475,7 +23494,11 @@
         "state": "TX",
         "country": "US",
         "artists": [
-          "Lecrae"
+          "Lecrae",
+          "Lizzie Morgan",
+          "Miles Minnick",
+          "Lin D",
+          "Lil Ziggy"
         ],
         "headliner": "Lecrae",
         "eventType": "festival",
@@ -23487,6 +23510,13 @@
         "sourceName": "Space City Fest official organizer",
         "sources": [
           {
+            "name": "Lil Ziggy official Space City Fest performance announcement",
+            "url": "https://www.instagram.com/iamlilziggy/p/DeiHUlNJPye/",
+            "type": "manual_verified",
+            "authority": "official_event",
+            "priority": 115
+          },
+          {
             "name": "Space City Fest official organizer",
             "url": "https://www.spacecitychurch.com/spacecityfest",
             "type": "manual_verified",
@@ -23494,11 +23524,28 @@
             "priority": 112
           }
         ],
-        "lastVerified": "2026-07-31T00:00:00Z",
+        "lastVerified": "2026-10-16T19:24:15Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "verifiedVersion": 7,
-        "imagePosition": "center"
+        "imagePosition": "center",
+        "advertisedBilling": [
+          "Lecrae",
+          "Lizzie Morgan",
+          "Miles Minnick",
+          "Lin D",
+          "Lil Ziggy"
+        ],
+        "officialBill": [
+          "Lecrae",
+          "Lizzie Morgan",
+          "Miles Minnick",
+          "Lin D",
+          "Lil Ziggy"
+        ],
+        "lineupExplicit": true,
+        "auditVerified": "2026-10-16",
+        "notes": "October 16: Lil Ziggy announces Space City Fest at Discovery Green October 25. Preserve the organizer’s existing four acts. This is separate from Space City Liftoff."
       }
     },
     {
@@ -23527,7 +23574,8 @@
           "Lecrae",
           "Lizzie Morgan",
           "Miles Minnick",
-          "Lin D"
+          "Lin D",
+          "Lil Ziggy"
         ],
         "headliner": "Lecrae",
         "eventType": "festival",
@@ -23539,21 +23587,14 @@
         "sourceName": "Space City Fest official organizer",
         "sources": [
           {
-            "name": "Space City Fest official organizer",
-            "url": "https://www.spacecitychurch.com/spacecityfest",
-            "type": "space_city",
-            "authority": "official_festival",
-            "priority": 108
-          },
-          {
-            "name": "Space City Fest venue listing",
-            "url": "https://www.discoverygreen.com/event/space-city-church/october-25-2026-400-pm/",
-            "type": "space_city",
-            "authority": "official_festival",
-            "priority": 104
+            "name": "Lil Ziggy official Space City Fest performance announcement",
+            "url": "https://www.instagram.com/iamlilziggy/p/DeiHUlNJPye/",
+            "type": "manual_verified",
+            "authority": "official_event",
+            "priority": 115
           }
         ],
-        "lastVerified": "2026-09-12T14:12:12Z",
+        "lastVerified": "2026-10-16T19:24:15Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -23561,7 +23602,24 @@
         "firstSeen": "2026-08-09T00:00:00Z",
         "imageOverride": true,
         "imageSource": "Space City Church official updated Space City Fest flyer",
-        "imageSourceUrl": "https://www.instagram.com/p/DeKSYsMjVdT/"
+        "imageSourceUrl": "https://www.instagram.com/p/DeKSYsMjVdT/",
+        "advertisedBilling": [
+          "Lecrae",
+          "Lizzie Morgan",
+          "Miles Minnick",
+          "Lin D",
+          "Lil Ziggy"
+        ],
+        "officialBill": [
+          "Lecrae",
+          "Lizzie Morgan",
+          "Miles Minnick",
+          "Lin D",
+          "Lil Ziggy"
+        ],
+        "lineupExplicit": true,
+        "auditVerified": "2026-10-16",
+        "notes": "October 16: Lil Ziggy announces Space City Fest at Discovery Green October 25. Preserve the organizer’s existing four acts. This is separate from Space City Liftoff."
       },
       "observedInGitHistory": true,
       "firstGitObservedAt": "2026-07-31T08:57:18Z",

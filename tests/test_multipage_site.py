@@ -244,7 +244,7 @@ class MultiPageProductionTests(unittest.TestCase):
         events = json.loads((ROOT / "events.json").read_text(encoding="utf-8"))
         event = next(event for event in events if event.get("title") == "Space City Fest 2026")
         self.assertEqual(
-            ["Lecrae", "Lizzie Morgan", "Miles Minnick", "Lin D"],
+            ["Lecrae", "Lizzie Morgan", "Miles Minnick", "Lin D", "Lil Ziggy"],
             event.get("artists"),
         )
         self.assertEqual("assets/events/space-city-fest-2026-oct6-flyer.jpg", event.get("image"))
