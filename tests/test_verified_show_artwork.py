@@ -129,11 +129,30 @@ class VerifiedShowArtworkTests(unittest.TestCase):
                 artwork.reconcile_provider_duplicates(feeds)
             self.assertEqual(before, feeds)
         with self.assertRaisesRegex(ValueError, 'missing reviewed record'):
-            artwork.reconcile_provider_duplicates({'primary': [alias]}, [{'event': canonical}])
+            artwork.reconcile_provider_duplicates({'primary': [alias]})
         unknown = {'primary': [dict(alias, id='unreviewed-provider-id')], 'supplemental': [canonical]}
         before = copy.deepcopy(unknown)
         self.assertEqual(0, artwork.reconcile_provider_duplicates(unknown))
         self.assertEqual(before, unknown)
+
+    def test_retained_identity_only_reconciles_a_current_exact_duplicate(self):
+        canonical = dict(id='bandsintown:108975912', title='Reviewed Atlanta concert',
+                         startDate='2026-11-29', startTime='19:00', venue='Variety Playhouse',
+                         city='Atlanta', state='GA', artists=['Alex Jean'], firstSeen='2026-09-01')
+        history = [{'event': copy.deepcopy(canonical)}]
+        before = copy.deepcopy(history)
+        empty = {'primary': []}
+        self.assertEqual(0, artwork.reconcile_provider_duplicates(empty, history))
+        self.assertEqual([], empty['primary'])
+        incoming = dict(canonical, id='ticketmaster:Z7r9jZ1AAepra', firstSeen='2026-10-17', status='cancelled')
+        self.assertEqual(1, artwork.reconcile_provider_duplicates({'primary': [incoming]}, history))
+        self.assertEqual(canonical['id'], incoming['id'])
+        self.assertEqual('cancelled', incoming['status'])
+        self.assertEqual('2026-09-01', incoming['firstSeen'])
+        self.assertEqual(before, history)
+        moved = dict(canonical, id='ticketmaster:Z7r9jZ1AAepra', startDate='2026-12-01')
+        with self.assertRaisesRegex(ValueError, 'identity conflict'):
+            artwork.reconcile_provider_duplicates({'primary': [moved]}, history)
 
     def test_refresh_restores_artwork_without_changing_event_identity_or_details(self):
         for pin in artwork.PINS:

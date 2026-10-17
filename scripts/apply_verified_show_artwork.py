@@ -40,12 +40,14 @@ PUBLISHED_DATES = {
 def reconcile_provider_duplicates(feeds, history=()):
     """Keep reviewed identity/details when these exact provider duplicates arrive.
 
-    A current reviewed record must exist, with matching date, venue, city, state
-    and performers. Conflicts stop publication instead of silently overwriting
-    a reschedule. History contributes discovery age, never a replacement event.
+    A current exact alias must exist. Its reviewed counterpart may be retained
+    in history when the collector has already deduplicated the provider feeds.
+    Matching date/venue/city/state/performers are still required. History alone
+    never creates a show; conflicts stop publication rather than erase a move.
     """
     from build_seo_site import event_path, norm
     from apply_sep26_requested_lineups import PATCHES
+    from catalog_removals import removed_event
 
     rows = [row for values in feeds.values() for row in values]
     changed = 0
@@ -55,6 +57,13 @@ def reconcile_provider_duplicates(feeds, history=()):
         if not incoming:
             continue
         reviewed = [row for row in rows if row.get('id') == canonical_id]
+        if not reviewed:
+            retained = [entry.get('event', entry) for entry in history
+                        if entry.get('event', entry).get('id') == canonical_id]
+            if len(retained) == 1 and not removed_event(retained[0]):
+                # Reconcile a currently observed duplicate, not an absent show.
+                # A copy prevents rewriting the retained historical evidence.
+                reviewed = [copy.deepcopy(retained[0])]
         if not reviewed:
             raise ValueError(f'{alias}: missing reviewed record {canonical_id}')
         # The current manual seed can contain newly verified artist-profile
