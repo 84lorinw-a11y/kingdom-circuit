@@ -8,6 +8,28 @@ import national_discovery as discovery
 
 
 class NationalDiscoveryTests(unittest.TestCase):
+    def test_owner_artist_order_precedes_date_order_and_forty_artist_cap(self):
+        href = lambda slug: discovery.SITE_BASE + 'artists/' + slug + '/'
+        picks = [href(s) for s in ('whatuprg', 'brenno', '1k-phew', 'joz', 'tru-serva', 'cj-emulous')]
+        remaining = [href(f'artist-{i}') for i in range(45)]
+        original = remaining + list(reversed(picks))
+        result = discovery.featured_artist_hrefs(original)
+        self.assertEqual(result, picks + remaining[:34])
+        self.assertEqual(len(result), 40)
+        self.assertEqual(original, remaining + list(reversed(picks)))
+
+    def test_priority_does_not_invent_artists_without_eligible_upcoming_shows(self):
+        href = lambda slug: discovery.SITE_BASE + 'artists/' + slug + '/'
+        original = [href('mayia'), href('cj-emulous'), href('brenno'), href('hulvey')]
+        self.assertEqual(discovery.featured_artist_hrefs(original),
+                         [href('brenno'), href('cj-emulous'), href('mayia'), href('hulvey')])
+        self.assertEqual(discovery.featured_artist_hrefs([]), [])
+
+    def test_featured_artist_order_has_no_duplicates_and_preserves_other_artists(self):
+        href = lambda slug: discovery.SITE_BASE + 'artists/' + slug + '/'
+        self.assertEqual(discovery.featured_artist_hrefs([href('hulvey'), href('brenno'), href('hulvey'), href('brenno')]),
+                         [href('brenno'), href('hulvey')])
+
     def test_readable_follow_bar_and_tighter_header_spacing(self):
         css = (Path(__file__).resolve().parents[1] / 'assets/national-discovery.css').read_text()
         fan = (Path(__file__).resolve().parents[1] / 'assets/fan-discovery.css').read_text()

@@ -31,6 +31,9 @@ ABOUT_PATH = 'about-us/index.html'
 ABOUT_HREF = SITE_BASE + 'about-us/'
 HOME_HEADING = 'Find CHH Shows Near You!'
 HOME_SUBTITLE = 'CHH concerts, christian rap shows and festivals!'
+# Owner-selected homepage order; only promote artists already eligible below.
+# Canonical profile slugs keep this independent of roster order and aliases.
+HOME_ARTIST_PRIORITY = ('whatuprg', 'brenno', '1k-phew', 'joz', 'tru-serva', 'cj-emulous')
 FACEBOOK_HREF = 'https://www.facebook.com/profile.php?id=61593510924754'
 FACEBOOK_BUTTON = (f'<a class="kc-facebook-button" href="{FACEBOOK_HREF}" target="_blank" rel="noopener noreferrer" '
                    'aria-label="Kingdom Circuit on Facebook (opens in new tab)" title="Follow Kingdom Circuit on Facebook">'
@@ -189,6 +192,14 @@ def search_portrait(image):
     return {'src': src, 'position': position}
 
 
+def featured_artist_hrefs(upcoming):
+    """Prioritize eligible owner picks, then preserve next-show discovery order."""
+    priority = [SITE_BASE + 'artists/' + slug + '/' for slug in HOME_ARTIST_PRIORITY]
+    ordered = list(dict.fromkeys(upcoming))
+    return ([href for href in priority if href in ordered]
+            + [href for href in ordered if href not in priority])[:40]
+
+
 def load_context(live, as_of):
     states = mobile.catalog(live)
     baseline_states = states
@@ -214,8 +225,10 @@ def load_context(live, as_of):
             counts[href] += 1
             if feature_eligible(record) and href in portraits and href not in upcoming:
                 upcoming.append(href)
-    # Counts are computed over every show, while selection follows the next dates.
-    artists = [{**portraits[href], 'href': href, 'count': counts[href]} for href in upcoming[:40]]
+    # Counts cover every show. Owner picks lead only while eligible; the rest
+    # retain next-show order. Apply priority before the 40-artist shelf limit.
+    artists = [{**portraits[href], 'href': href, 'count': counts[href]}
+               for href in featured_artist_hrefs(upcoming)]
     # Recalculate recommendation counts from the current, unexpired calendar.
     state_counts = Counter(r['attrs'].get('data-state', '') for r in active)
     states = [{**s, 'count': state_counts[s['code']] if s['code'] else 0} for s in states]
@@ -711,6 +724,7 @@ def verify(live, site, context):
     if context['artists']:
         artist_shelf = artist_shelves[0]
         assert len(artist_shelf.children) == len(context['artists']) <= 40
+        assert [n.attrs['href'] for n in artist_shelf.children] == [a['href'] for a in context['artists']], 'Homepage artist order changed'
         assert artist_shelf.start < home.one(lambda n: n.attrs.get('id') == 'kc-next-shelf').start
     expected_week, expected_next = home_selection(context)
     next_first = context['as_of'] + timedelta(days=7 - context['as_of'].weekday())
