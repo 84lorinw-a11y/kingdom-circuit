@@ -383,7 +383,8 @@ const ARTIST_ROSTER_ORDER = [
   "JJ Stone",
   "MARV",
   "Nate Period",
-  "Kevin \"KC\" Campbell"
+  "Kevin \"KC\" Campbell",
+  "Crown One"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -5555,6 +5556,22 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/kevinkccampbell/",
     "imageUrl": "assets/artists/kevin-kc-campbell-instagram-cleanup-oct16.png",
     "imagePosition": "50% 0%",
+    "sourceRegistryVerified": true
+  },
+  "crown one": {
+    "aliases": [
+      "Crown One",
+      "CrownOneSOG"
+    ],
+    "website": "https://crownone.kpmusicrecords.com/",
+    "instagramProfile": "https://www.instagram.com/crownonesog/",
+    "spotifyProfile": "https://open.spotify.com/artist/3LT4j7qHPWxOpJ8ex5Igji",
+    "youtubeProfile": "https://www.youtube.com/@kpmusictv",
+    "officialImageSource": "https://www.facebook.com/photo.php?fbid=835289308599815",
+    "imageUrl": "assets/artists/crown-one-submitted-oct17.jpg",
+    "imagePosition": "50% 0%",
+    "state": "OH",
+    "label": "KP Music Records",
     "sourceRegistryVerified": true
   }
 };
@@ -10729,6 +10746,22 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/kevin-kc-campbell-instagram-cleanup-oct16.png",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
+  },
+  "crown one": {
+    "aliases": [
+      "Crown One",
+      "CrownOneSOG"
+    ],
+    "website": "https://crownone.kpmusicrecords.com/",
+    "instagramProfile": "https://www.instagram.com/crownonesog/",
+    "spotifyProfile": "https://open.spotify.com/artist/3LT4j7qHPWxOpJ8ex5Igji",
+    "youtubeProfile": "https://www.youtube.com/@kpmusictv",
+    "officialImageSource": "https://www.facebook.com/photo.php?fbid=835289308599815",
+    "imageUrl": "assets/artists/crown-one-submitted-oct17.jpg",
+    "imagePosition": "50% 0%",
+    "state": "OH",
+    "label": "KP Music Records",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -12210,6 +12243,10 @@ const STATIC_ARTIST_PORTRAITS = {
   },
   "kevin \"kc\" campbell": {
     "imageUrl": "assets/artists/kevin-kc-campbell-instagram-cleanup-oct16.png",
+    "imagePosition": "50% 0%"
+  },
+  "crown one": {
+    "imageUrl": "assets/artists/crown-one-submitted-oct17.jpg",
     "imagePosition": "50% 0%"
   }
 };
