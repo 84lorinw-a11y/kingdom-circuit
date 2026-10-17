@@ -74,13 +74,14 @@ class VerifiedShowArtworkTests(unittest.TestCase):
 
     def test_observed_label_calendar_duplicates_keep_published_provider_pages(self):
         for identity, verified in artwork.PUBLISHED_DATES.items():
-            alias = next(k for k, v in artwork.PROVIDER_ALIASES.items() if v == identity)
-            canonical = dict(id=identity, title='Published concert', **verified, startTime='19:00',
+            alias, canonical_id = next((k, v) for k, v in artwork.PROVIDER_ALIASES.items()
+                                       if v.removeprefix('manual:') == identity)
+            canonical = dict(id=canonical_id, title='Published concert', **verified, startTime='19:00',
                              venue='Reviewed venue', city='Reviewed city', state='TX', artists=['Artist'])
             incoming = dict(canonical, id=alias, title='Label concert', startTime='')
             feeds = {'primary': [incoming], 'supplemental': [canonical]}
             artwork.reconcile_provider_duplicates(feeds)
-            self.assertEqual(identity, incoming['id'])
+            self.assertEqual(canonical_id, incoming['id'])
             self.assertEqual('Published concert', incoming['title'])
             self.assertEqual('19:00', incoming['startTime'])
 

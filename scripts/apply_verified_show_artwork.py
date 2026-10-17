@@ -15,6 +15,8 @@ BY_ID = {pin["id"]: pin for pin in PINS}
 # Do not match by artist/date alone: an artist can play twice on the same day.
 PROVIDER_ALIASES = {
     "bandsintown:108856031": "manual:808-beezy-bandsintown-108856031",
+    "bandsintown:108856562": "manual:808-beezy-bandsintown-108856562",
+    "bandsintown:108856576": "manual:808-beezy-bandsintown-108856576",
     "ticketmaster:Z7r9jZ1AAepra": "bandsintown:108975912",
     "official:82953bf17964628bbd9b": "bandsintown:108881783",
     "ticketmaster:vv1AaZkfMGkd2fZDG": "bandsintown:1040378722",
@@ -28,9 +30,11 @@ PROVIDER_ALIASES = {
     "official:b240438b7b7f8a82189d": "bandsintown:1040597655",
     "official:d890394094e7c9393937": "bandsintown:1040596451",
 }
-# These four already-published calendar records have no separate artwork pin.
-# Their exact duplicate label-calendar links name the same Bandsintown event IDs.
+# These already-published calendar records have no separate artwork pin.
+# Their exact duplicate calendar links name the same Bandsintown event IDs.
 PUBLISHED_DATES = {
+    '808-beezy-bandsintown-108856562': {'startDate': '2027-02-12'},
+    '808-beezy-bandsintown-108856576': {'startDate': '2027-02-13'},
     'bandsintown:109034401': {'startDate': '2026-11-13'},
     'bandsintown:1040595947': {'startDate': '2027-02-13'},
     'bandsintown:1040597655': {'startDate': '2027-02-20'},
