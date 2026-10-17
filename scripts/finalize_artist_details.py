@@ -78,7 +78,8 @@ MOBILE_FRAMING = {
 
 # Page-scoped presentation only: the approved photo, optimized variants, and
 # directory thumbnails stay untouched. Coordinates describe a viewport in
-# fractions of the original image; out-of-bounds space provides headroom.
+# fractions of the original image. Every crop stays inside the photo so the
+# image fills its frame without invented borders or stretched proportions.
 FRAMING_PATH = Path(__file__).resolve().parents[1] / 'config/artist-profile-framing.json'
 PROFILE_FRAMING = json.loads(FRAMING_PATH.read_text())
 
@@ -102,6 +103,9 @@ def framing_css(slug: str) -> str:
     letter-spacing: -.035em; overflow-wrap: normal; word-break: normal; white-space: normal;
     margin: 0; text-shadow: 0 2px 10px rgba(0,0,0,.8);
   }}'''
+        if frame.get('nameBelow'):
+            name_css += f'''
+  body .kc-rd-profile-name {{ position: relative; inset: auto; max-width: none; padding: {inset}px; }}'''
         if frame.get('nameOnly'):
             parts.append(f'@media ({query}) {{' + name_css + '\n}')
             continue
@@ -110,14 +114,16 @@ def framing_css(slug: str) -> str:
         brightness = frame.get('brightness', 1)
         if not all(math.isfinite(v) for v in [x, y, width, height, ratio, name_size, brightness]):
             raise ValueError(f'Non-finite artist framing: {slug}/{view}')
-        if not (0 < width <= 5 and 0 < height <= 5 and .5 <= ratio <= 2 and 1 <= brightness <= 1.2):
+        if not (0 < width <= 1.000002 and 0 < height <= 1.000002 and
+                0 <= x <= 1 - width + .000002 and 0 <= y <= 1 - height + .000002 and
+                .5 <= ratio <= 2 and 1 <= brightness <= 1.2):
             raise ValueError(f'Invalid artist framing: {slug}/{view}')
         parts.append(f'''@media ({query}) {{
   body .kc-rd-profile-visual {{ aspect-ratio: {ratio:.8f}; background: #160c09; }}
   body .kc-rd-profile-visual img {{
     position: absolute; width: {100 / width:.6f}% !important; height: {100 / height:.6f}% !important;
     left: {-100 * x / width:.6f}%; top: {-100 * y / height:.6f}%;
-    object-fit: fill !important; max-width: none !important; transform: none !important;
+    object-fit: cover !important; max-width: none !important; transform: none !important;
     filter: brightness({brightness});
   }}
   body .kc-rd-profile-visual::after {{

@@ -25,7 +25,11 @@ class ArtistDetailsTests(unittest.TestCase):
                     frame = entry.get(view, {})
                     if 'window' not in frame:
                         continue
-                    width, height = frame['window'][2:]
+                    x, y, width, height = frame['window']
+                    self.assertGreaterEqual(x, 0)
+                    self.assertGreaterEqual(y, 0)
+                    self.assertLessEqual(x + width, 1.000002)
+                    self.assertLessEqual(y + height, 1.000002)
                     displayed_ratio = frame['ratio'] * height / width
                     self.assertAlmostEqual(displayed_ratio, portrait['width'] / portrait['height'], places=5)
 
@@ -43,7 +47,9 @@ class ArtistDetailsTests(unittest.TestCase):
             self.assertNotIn('.kc-rd-profile-visual', css)
 
     def test_invalid_framing_is_rejected_before_publication(self):
-        for window in ([0, 0, 0, 1], [0, float('nan'), 1, 1]):
+        for window in ([0, 0, 0, 1], [0, float('nan'), 1, 1],
+                       [-.1, 0, 1, 1], [0, -.1, 1, 1],
+                       [0, 0, 1.1, 1], [0, .2, 1, .9]):
             with self.subTest(window=window), patch.dict(details.PROFILE_FRAMING, {
                 'example': {'desktop': {'window': window, 'ratio': 1, 'nameSize': 5}}
             }):

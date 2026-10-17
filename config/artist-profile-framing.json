@@ -5,10 +5,10 @@
     "reason": "Strong portrait, but very dark and crown tight against top edge on both sizes.",
     "desktop": {
       "window": [
-        -0.105735,
-        -0.025,
-        1.21147,
-        0.908602
+        0,
+        0.06019561,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6,
@@ -16,10 +16,10 @@
     },
     "mobile": {
       "window": [
-        0.034162,
-        -0.025,
-        0.908602,
-        0.908602
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6,
@@ -32,22 +32,22 @@
     "reason": "Clear image but two-person concept artwork makes Hulvey a smaller subject on the right.",
     "desktop": {
       "window": [
-        -0.193333,
-        -0.02,
-        1.386667,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.0,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.02,
-        -0.02,
-        1.04,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 1.0,
       "nameSize": 8.6
     }
   },
@@ -64,6 +64,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.18748122,
+        1,
+        0.628125
+      ]
     }
   },
   "caleb-gordon": {
@@ -72,20 +82,20 @@
     "reason": "Hair touches the upper boundary; mobile title takes two lines over chest.",
     "desktop": {
       "window": [
-        0.139641,
-        -0.025,
-        0.55,
-        0.84619
+        0.08965443,
+        0,
+        0.64997217,
+        1.0
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.195275,
-        -0.025,
-        0.438731,
-        0.9
+        0.17090095,
+        0,
+        0.48747913,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -97,13 +107,23 @@
     "reason": "Desktop has room above the scalp; mobile crops the top of the head and pushes the name toward his chin.",
     "mobile": {
       "window": [
-        -0.143575,
-        -0.04,
-        1.287151,
-        1.08
+        0,
+        0.06359099,
+        1,
+        0.90209918
       ],
-      "ratio": 1,
+      "ratio": 0.93012223,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.06516691,
+        1,
+        0.8390625
+      ]
     }
   },
   "nobigdyl": {
@@ -112,20 +132,20 @@
     "reason": "Hat is cut at the upper edge in both views.",
     "desktop": {
       "window": [
-        0.05,
-        -0.025,
-        0.95,
-        0.7125
+        0,
+        0,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.1,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -144,6 +164,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.150949,
+        1,
+        0.63398438
+      ]
     }
   },
   "jon-keith": {
@@ -179,20 +209,20 @@
     "reason": "Top of braided hair is tight/cropped in both views; face remains readable.",
     "desktop": {
       "window": [
-        -0.001913,
-        -0.025,
-        1.003826,
-        0.75287
+        0,
+        0.03372079,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.1,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -204,20 +234,20 @@
     "reason": "Upper hair is cut off in both layouts.",
     "desktop": {
       "window": [
-        -0.179271,
-        -0.009454,
-        1.358543,
-        1.018907
+        0,
+        0,
+        1,
+        0.81876469
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.22135214,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.009454,
-        -0.009454,
-        1.018907,
-        1.018907
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -248,20 +278,20 @@
     "reason": "Hair is clipped; mobile splits WHATUPRG into WHATUPR and G.",
     "desktop": {
       "window": [
-        -0.104108,
-        -0.025,
-        1.208216,
-        0.906162
+        0,
+        0.00355445,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.093838,
-        -0.025,
-        0.906162,
-        0.906162
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -280,6 +310,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.1065561,
+        1,
+        0.6234375
+      ]
     }
   },
   "limoblaze": {
@@ -313,20 +353,20 @@
     "reason": "Top of head/hair is clipped in both views; mobile name covers much of the torso.",
     "desktop": {
       "window": [
-        0.037694,
-        -0.025,
-        0.95,
-        0.7125
+        0,
+        0,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.062694,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -338,13 +378,23 @@
     "reason": "Desktop includes both members; mobile cuts the nearer member's cap and crowds both subjects.",
     "mobile": {
       "window": [
-        -0.126742,
-        -0.02,
-        1.253484,
-        1.04
+        0,
+        0.08515625,
+        1,
+        0.8296875
       ],
       "ratio": 1,
       "nameSize": 8.158
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.18886719,
+        1,
+        0.62226563
+      ]
     }
   },
   "steven-malcolm": {
@@ -354,12 +404,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
-        0.761615
+        0.01166194,
+        1,
+        0.76161462
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.57121097
+      ]
     }
   },
   "gawvi": {
@@ -368,20 +428,20 @@
     "reason": "Desktop crown is tight; mobile cuts the scalp at the top boundary.",
     "desktop": {
       "window": [
-        -0.22,
-        -0.04,
-        1.44,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.04,
-        -0.04,
-        1.08,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -400,6 +460,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.23868143,
+        1,
+        0.49949084
+      ]
     }
   },
   "fern": {
@@ -408,13 +478,23 @@
     "reason": "Desktop has ample space above cap; mobile pushes cap to the top edge.",
     "mobile": {
       "window": [
-        -0.126419,
-        -0.02,
-        1.252837,
-        1.04
+        0,
+        0.08494208,
+        1,
+        0.83011583
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.18870656,
+        1,
+        0.62258687
+      ]
     }
   },
   "marty": {
@@ -423,20 +503,20 @@
     "reason": "Photo is visibly soft and tightly cropped around cap and face.",
     "desktop": {
       "window": [
-        -0.22,
-        -0.04,
-        1.44,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.04,
-        -0.04,
-        1.08,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -449,12 +529,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
-        0.867188
+        0,
+        1,
+        0.8671875
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.0421439,
+        1,
+        0.65039062
+      ]
     }
   },
   "skema-boy": {
@@ -488,20 +578,20 @@
     "reason": "Good face visibility but hair is very tight to the upper edge.",
     "desktop": {
       "window": [
-        0.095163,
-        -0.04,
-        0.81,
-        1.08
+        0.12516328,
+        0,
+        0.75,
+        1.0
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.196413,
-        -0.04,
-        0.6075,
-        1.08
+        0.21891328,
+        0,
+        0.5625,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -513,13 +603,23 @@
     "reason": "Desktop includes full beanie; mobile clips it at the top.",
     "mobile": {
       "window": [
-        -0.090923,
-        -0.025,
-        1.181847,
-        0.99349
+        0,
+        0.0276081,
+        1,
+        0.840625
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.0529658,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.02866522,
+        1,
+        0.79834027
+      ]
     }
   },
   "canon": {
@@ -528,20 +628,20 @@
     "reason": "Head is cut off on desktop and almost entirely absent on mobile.",
     "desktop": {
       "window": [
-        0.004528,
-        -0.025,
-        0.95,
-        0.7125
+        0,
+        0,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.029528,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -553,20 +653,20 @@
     "reason": "Crown and hair are clipped at the upper edge in both views.",
     "desktop": {
       "window": [
-        -0.081667,
-        -0.025,
-        1.163335,
-        0.872501
+        0,
+        0,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.017274,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -585,6 +685,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.17065697,
+        1,
+        0.62226563
+      ]
     }
   },
   "sevin": {
@@ -593,20 +703,20 @@
     "reason": "Cap is cut by the top edge in both views.",
     "desktop": {
       "window": [
-        0.05,
-        -0.025,
-        0.95,
-        0.7125
+        0,
+        0,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.088238,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -618,22 +728,22 @@
     "reason": "Illustrated album cover replaces a recognizable artist portrait and includes another artist.",
     "desktop": {
       "window": [
-        -0.263741,
-        -0.02,
-        1.527481,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 0.9078125,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.072806,
-        -0.02,
-        1.145611,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 0.9078125,
       "nameSize": 8.6
     }
   },
@@ -644,12 +754,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
-        0.892188
+        0.07490175,
+        1,
+        0.8921875
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.08047792,
+        1,
+        0.66914063
+      ]
     }
   },
   "forrest-frank": {
@@ -683,22 +803,22 @@
     "reason": "Desktop group nearly fills height; mobile cuts several members' heads.",
     "desktop": {
       "window": [
-        -0.193333,
-        -0.02,
-        1.386667,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.0,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.02,
-        -0.02,
-        1.04,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 1.0,
       "nameSize": 8.6
     }
   },
@@ -715,6 +835,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.12133077,
+        1,
+        0.62226563
+      ]
     }
   },
   "shepherd": {
@@ -723,20 +853,20 @@
     "reason": "Upper head is cut off on both views, especially mobile.",
     "desktop": {
       "window": [
-        0.034293,
-        -0.025,
-        0.95,
-        0.7125
+        0,
+        0,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.059293,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -775,20 +905,20 @@
     "reason": "Very tight beauty crop cuts upper hair and leaves only eyes and mask prominent.",
     "desktop": {
       "window": [
-        -0.22,
-        -0.04,
-        1.44,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.04,
-        -0.04,
-        1.08,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -834,6 +964,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.15620851,
+        1,
+        0.63398438
+      ]
     }
   },
   "jabari-heavens": {
@@ -842,10 +982,10 @@
     "reason": "Dark low-angle studio photo; mobile clips hair and places title over beard/neck.",
     "desktop": {
       "window": [
-        -0.08585,
-        -0.025,
-        1.1717,
-        0.753824
+        0,
+        0.05950779,
+        1,
+        0.64335938
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6,
@@ -854,9 +994,9 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
-        0.857812
+        0.05414646,
+        1,
+        0.8578125
       ],
       "ratio": 1,
       "nameSize": 8.6,
@@ -869,22 +1009,22 @@
     "reason": "Group photo is visibly soft; mobile cuts the upper portions of the outer members' heads.",
     "desktop": {
       "window": [
-        -0.193333,
-        -0.02,
-        1.386667,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.0,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.02,
-        -0.02,
-        1.04,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 1.0,
       "nameSize": 8.6
     }
   },
@@ -894,20 +1034,20 @@
     "reason": "Beanie is cut off in both layouts; crop is extremely tight.",
     "desktop": {
       "window": [
-        -0.212125,
-        -0.04,
-        1.42425,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.01105845,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.034094,
-        -0.04,
-        1.068188,
-        1.08
+        0.0109375,
+        0,
+        0.9890625,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -919,22 +1059,22 @@
     "reason": "Release artwork and large branding obscure the artist; no clear face.",
     "desktop": {
       "window": [
-        -0.193333,
-        -0.02,
-        1.386667,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.0,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.02,
-        -0.02,
-        1.04,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 1.0,
       "nameSize": 8.6
     }
   },
@@ -951,6 +1091,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.04090381,
+        1,
+        0.68085938
+      ]
     }
   },
   "bishop-freeze": {
@@ -959,20 +1109,20 @@
     "reason": "Cap is cropped in both; mobile two-line title intrudes near chin.",
     "desktop": {
       "window": [
-        -0.214438,
-        -0.035829,
-        1.428876,
-        1.071657
+        0,
+        0.03338507,
+        1,
+        0.86115298
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.16123387,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.035829,
-        -0.035829,
-        1.071657,
-        1.071657
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -984,20 +1134,20 @@
     "reason": "Recognizable portrait, but hairstyle touches/crosses top boundary.",
     "desktop": {
       "window": [
-        -0.038635,
-        -0.025,
-        1.07727,
-        0.807953
+        0,
+        0.08048483,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.065159,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -1009,20 +1159,20 @@
     "reason": "Desktop crown is tight; mobile cuts upper hair.",
     "desktop": {
       "window": [
-        -0.22,
-        -0.04,
-        1.44,
-        1.08
+        0,
+        0.06958611,
+        1,
+        0.92445653
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.08171663,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.04,
-        -0.04,
-        1.08,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -1035,12 +1185,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
+        0.02127547,
+        1,
         0.83125
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.03118645,
+        1,
+        0.6234375
+      ]
     }
   },
   "nicky-gracious": {
@@ -1049,20 +1209,20 @@
     "reason": "Hair is clipped in both views; mobile title approaches mouth/chin.",
     "desktop": {
       "window": [
-        -0.123728,
-        -0.025,
-        1.247456,
-        0.937056
+        0,
+        0,
+        1,
+        0.75299156
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.33011444,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
         0,
-        -0.025,
-        0.935592,
-        0.937056
+        0,
+        0.9984375,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -1074,10 +1234,10 @@
     "reason": "Crown is clipped, and backlighting leaves face dark.",
     "desktop": {
       "window": [
-        -0.00235,
-        -0.025,
-        1.0047,
-        0.748808
+        0,
+        0,
+        1,
+        0.74530517
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6,
@@ -1085,10 +1245,10 @@
     },
     "mobile": {
       "window": [
-        0.094331,
-        -0.025,
-        0.905669,
-        0.9
+        0,
+        0,
+        1,
+        0.99374022
       ],
       "ratio": 1,
       "nameSize": 8.6,
@@ -1127,12 +1287,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
-        0.839063
+        0.01476528,
+        1,
+        0.8390625
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.29610591,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.01955754,
+        1,
+        0.64737187
+      ]
     }
   },
   "y-shadey": {
@@ -1142,12 +1312,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
-        0.740628
+        0.08128673,
+        1,
+        0.74062772
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.08848091,
+        1,
+        0.55547079
+      ]
     }
   },
   "dante-pride": {
@@ -1157,12 +1337,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        0.988163,
-        0.9
+        0,
+        1,
+        0.91078067
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.01007959,
+        1,
+        0.6830855
+      ]
     }
   },
   "brother-bo": {
@@ -1178,6 +1368,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.18668072,
+        1,
+        0.64101563
+      ]
     }
   },
   "tommy-chapa": {
@@ -1187,9 +1387,9 @@
     "desktop": {
       "window": [
         0,
-        -0.025,
-        0.95,
-        0.7125
+        0,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
@@ -1197,9 +1397,9 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -1211,20 +1411,20 @@
     "reason": "Upper hair is cut on desktop; mobile cuts further into forehead.",
     "desktop": {
       "window": [
-        0.05,
-        -0.025,
-        0.95,
-        0.7125
+        0,
+        0.00302907,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.078008,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -1236,20 +1436,20 @@
     "reason": "Artwork is tightly cropped into the face; mobile removes the eyes/upper head.",
     "desktop": {
       "window": [
-        -0.22,
-        -0.04,
-        1.44,
-        1.08
+        0,
+        0,
+        1,
+        0.89366725
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.11898472,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.04,
-        -0.04,
-        1.08,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -1261,22 +1461,22 @@
     "reason": "Release artwork within artwork makes the face tiny and adds competing text.",
     "desktop": {
       "window": [
-        -0.02,
-        -0.193333,
-        1.04,
-        1.386667
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.77777778,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.02,
-        -0.424444,
-        1.04,
-        1.848889
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 1.77777778,
       "nameSize": 8.6
     }
   },
@@ -1286,13 +1486,23 @@
     "reason": "Desktop preserves cap/eyes; mobile shows mostly microphone arm and lower face.",
     "mobile": {
       "window": [
-        -0.126742,
-        -0.02,
-        1.253484,
-        1.04
+        0,
+        0.08515625,
+        1,
+        0.8296875
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.62226563
+      ]
     }
   },
   "rua-young": {
@@ -1333,6 +1543,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.08410407,
+        1,
+        0.64335938
+      ]
     }
   },
   "holy-gabbana": {
@@ -1398,6 +1618,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.09475747,
+        1,
+        0.62695312
+      ]
     }
   },
   "gospel-gangstaz": {
@@ -1406,22 +1636,22 @@
     "reason": "Album art contains no recognizable artist/group portrait.",
     "desktop": {
       "window": [
-        -0.193333,
-        -0.02,
-        1.386667,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.0,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.02,
-        -0.02,
-        1.04,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 1.0,
       "nameSize": 8.6
     }
   },
@@ -1438,6 +1668,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.17705229,
+        1,
+        0.62695312
+      ]
     }
   },
   "dkg-kie": {
@@ -1446,22 +1686,22 @@
     "reason": "Original looks grainy; mobile cuts hair above the headband.",
     "desktop": {
       "window": [
-        -0.335992,
-        -0.024128,
-        1.671985,
-        1.048256
+        0,
+        0,
+        1,
+        0.8359375
       ],
-      "ratio": 1.33333333,
+      "ratio": 1,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.126994,
-        -0.024128,
-        1.253989,
-        1.048256
+        0,
+        0.0398651,
+        1,
+        0.84234875
       ],
-      "ratio": 1,
+      "ratio": 0.99238884,
       "nameSize": 8.6
     }
   },
@@ -1478,6 +1718,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.10495722,
+        1,
+        0.63046875
+      ]
     }
   },
   "canton-jones": {
@@ -1486,22 +1736,22 @@
     "reason": "Release artwork and embedded typography compete with the artist/title.",
     "desktop": {
       "window": [
-        -0.324783,
-        -0.02,
-        1.649566,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 0.840625,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.118587,
-        -0.02,
-        1.237175,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 0.840625,
       "nameSize": 8.6
     }
   },
@@ -1512,9 +1762,9 @@
     "desktop": {
       "window": [
         0,
-        -0.025,
-        0.95,
-        0.7125
+        0.01072591,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6,
@@ -1523,9 +1773,9 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6,
@@ -1563,20 +1813,20 @@
     "reason": "Forehead/hair are cut at the upper edge on both sizes.",
     "desktop": {
       "window": [
-        -0.190163,
-        -0.017622,
-        1.380327,
-        1.035245
+        0,
+        0,
+        1,
+        0.83189323
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.20207734,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.017622,
-        -0.017622,
-        1.035245,
-        1.035245
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -1588,20 +1838,20 @@
     "reason": "Purple cap is cut off in both views.",
     "desktop": {
       "window": [
-        -0.22,
-        -0.04,
-        1.44,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.04,
-        -0.04,
-        1.08,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -1632,22 +1882,22 @@
     "reason": "Both members' hair/head tops touch or cross the upper boundary.",
     "desktop": {
       "window": [
-        -0.193333,
-        -0.02,
-        1.386667,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.0,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.02,
-        -0.02,
-        1.04,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 1.0,
       "nameSize": 8.6
     }
   },
@@ -1664,6 +1914,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.18919675,
+        1,
+        0.525
+      ]
     }
   },
   "vvs-big-rock": {
@@ -1672,22 +1932,22 @@
     "reason": "Composite artwork leaves a small downward-facing subject; mobile title is close to face.",
     "desktop": {
       "window": [
-        -0.334085,
-        -0.02,
-        1.66817,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 0.83125,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.125564,
-        -0.02,
-        1.251128,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 0.83125,
       "nameSize": 8.6
     }
   },
@@ -1697,22 +1957,22 @@
     "reason": "Cross/release artwork contains no visible artist.",
     "desktop": {
       "window": [
-        -0.309732,
-        -0.02,
-        1.619465,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 0.85625,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.107299,
-        -0.02,
-        1.214599,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 0.85625,
       "nameSize": 8.6
     }
   },
@@ -1732,10 +1992,10 @@
     },
     "mobile": {
       "window": [
-        0.1,
-        -0.008169,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -1747,20 +2007,20 @@
     "reason": "Hand intentionally covers nearly all of the face.",
     "desktop": {
       "window": [
-        -0.318696,
-        -0.02,
-        1.637392,
-        1.04
+        0,
+        0.18242187,
+        1,
+        0.63515625
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.114022,
-        -0.02,
-        1.228044,
-        1.04
+        0,
+        0.0765625,
+        1,
+        0.846875
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -1772,20 +2032,20 @@
     "reason": "Upper scalp is clipped in both views.",
     "desktop": {
       "window": [
-        -0.22,
-        -0.04,
-        1.44,
-        1.08
+        0,
+        0,
+        1,
+        0.9596561
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.04203996,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.04,
-        -0.04,
-        1.08,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -1797,22 +2057,22 @@
     "reason": "Stylized release illustration rather than a clean portrait; mobile cuts the scalp.",
     "desktop": {
       "window": [
-        -0.356506,
-        -0.04,
-        1.713011,
-        1.08
+        0,
+        0,
+        1,
+        0.840625
       ],
-      "ratio": 1.33333333,
+      "ratio": 1,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.142379,
-        -0.04,
-        1.284758,
-        1.08
+        0,
+        0,
+        1,
+        0.98400626
       ],
-      "ratio": 1,
+      "ratio": 0.85428826,
       "nameSize": 8.6
     }
   },
@@ -1823,9 +2083,9 @@
     "desktop": {
       "window": [
         0,
-        -0.025,
-        0.95,
-        0.7125
+        0,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
@@ -1833,9 +2093,9 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -1854,6 +2114,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.10718103,
+        1,
+        0.61992188
+      ]
     }
   },
   "queen-lee": {
@@ -1890,12 +2160,22 @@
     "mobile": {
       "window": [
         0,
-        -0.002283,
-        1.0,
+        0.0309672,
+        1,
         0.83125
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.07668595,
+        1,
+        0.6234375
+      ]
     }
   },
   "yasmine-jinelle": {
@@ -1911,6 +2191,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.06727673,
+        1,
+        0.6234375
+      ]
     }
   },
   "lyric-the-geenyus": {
@@ -1920,12 +2210,22 @@
     "mobile": {
       "window": [
         0,
-        -0.019816,
-        1.0,
-        0.829688
+        0.01337111,
+        1,
+        0.8296875
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.05900392,
+        1,
+        0.62226563
+      ]
     }
   },
   "afeni": {
@@ -1934,22 +2234,22 @@
     "reason": "Release artwork has text instead of a visible artist.",
     "desktop": {
       "window": [
-        -0.193333,
-        -0.02,
-        1.386667,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.0,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.02,
-        -0.02,
-        1.04,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 1.0,
       "nameSize": 8.6
     }
   },
@@ -1959,13 +2259,23 @@
     "reason": "Mobile clips parts of the raised hand/hair near top; face remains readable.",
     "mobile": {
       "window": [
-        -0.114022,
-        -0.02,
-        1.228044,
-        1.04
+        0,
+        0.0765625,
+        1,
+        0.846875
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.18242187,
+        1,
+        0.63515625
+      ]
     }
   },
   "neisha-glow": {
@@ -2009,10 +2319,10 @@
     },
     "mobile": {
       "window": [
-        0.053636,
-        -0.021355,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -2024,14 +2334,24 @@
     "reason": "Mobile cuts upper hair/head; desktop portrait is coherent despite dark lighting.",
     "mobile": {
       "window": [
-        -0.007977,
-        -0.025,
-        1.015955,
-        0.849275
+        0,
+        0.07308006,
+        1,
+        0.8359375
       ],
       "ratio": 1,
       "nameSize": 8.6,
       "brightness": 1.1
+    },
+    "desktop": {
+      "ratio": 1.22490142,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.07691718,
+        1,
+        0.68245288
+      ]
     }
   },
   "grits": {
@@ -2040,22 +2360,22 @@
     "reason": "Group framing clips the tops of heads.",
     "desktop": {
       "window": [
-        -0.193333,
-        -0.02,
-        1.386667,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.0,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.02,
-        -0.02,
-        1.04,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 1.0,
       "nameSize": 8.6
     }
   },
@@ -2065,10 +2385,10 @@
     "reason": "Artist is a tiny, nearly invisible figure in a very dark scene.",
     "desktop": {
       "window": [
-        -0.193333,
-        -0.02,
-        1.386667,
-        1.04
+        0,
+        0.125,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6,
@@ -2076,10 +2396,10 @@
     },
     "mobile": {
       "window": [
-        -0.02,
-        -0.02,
-        1.04,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6,
@@ -2093,12 +2413,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
+        0.11337375,
+        1,
         0.83125
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.31418169,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.11834193,
+        1,
+        0.63252289
+      ]
     }
   },
   "manafest": {
@@ -2107,22 +2437,22 @@
     "reason": "Sliced release-cover treatment fragments the face and includes extra typography.",
     "desktop": {
       "window": [
-        -0.193333,
-        -0.02,
-        1.386667,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.0,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.02,
-        -0.02,
-        1.04,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 1.0,
       "nameSize": 8.6
     }
   },
@@ -2139,6 +2469,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.07932184,
+        1,
+        0.62695312
+      ]
     }
   },
   "nesk-only": {
@@ -2148,12 +2488,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
-        0.854688
+        0.09389961,
+        1,
+        0.8546875
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.09924141,
+        1,
+        0.64101563
+      ]
     }
   },
   "futuristic": {
@@ -2169,6 +2519,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.16124796,
+        1,
+        0.63398438
+      ]
     }
   },
   "sondae": {
@@ -2205,12 +2565,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
-        0.835938
+        0.02276576,
+        1,
+        0.8359375
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.62695312
+      ]
     }
   },
   "kieran-the-light": {
@@ -2219,13 +2589,23 @@
     "reason": "Mobile clips hair and puts the name across beard/neck.",
     "mobile": {
       "window": [
-        -0.030307,
-        -0.025,
-        1.060614,
-        0.881635
+        0,
+        0.08677337,
+        1,
+        0.83125
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.1733244,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.0898432,
+        1,
+        0.7084571
+      ]
     }
   },
   "childlike-cici": {
@@ -2235,12 +2615,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
+        0,
+        1,
         0.834375
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.03605681,
+        1,
+        0.62578125
+      ]
     }
   },
   "yung-kriss": {
@@ -2250,12 +2640,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
-        0.854688
+        0.04553211,
+        1,
+        0.8546875
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.052924,
+        1,
+        0.64101563
+      ]
     }
   },
   "eluzai": {
@@ -2290,12 +2690,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
+        0,
+        1,
         0.840625
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.63046875
+      ]
     }
   },
   "gavin-the-hotrod": {
@@ -2305,12 +2715,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
-        0.854688
+        0.09984173,
+        1,
+        0.8546875
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.10518352,
+        1,
+        0.64101563
+      ]
     }
   },
   "s-b-g": {
@@ -2326,6 +2746,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.11742967,
+        1,
+        0.62578125
+      ]
     }
   },
   "lanell-grant": {
@@ -2334,23 +2764,25 @@
     "reason": "Face sits too low; title overlaps lower face and mobile loses much of it.",
     "desktop": {
       "window": [
-        -0.491326,
         0,
-        1.982652,
-        1.25
+        0,
+        1,
+        1
       ],
-      "ratio": 1.33333333,
-      "nameSize": 5.6
+      "ratio": 0.840625,
+      "nameSize": 5.6,
+      "nameBelow": true
     },
     "mobile": {
       "window": [
-        -0.25,
         0,
-        1.5,
-        1.2609375
+        0,
+        1,
+        1
       ],
-      "ratio": 1,
-      "nameSize": 8.6
+      "ratio": 0.840625,
+      "nameSize": 8.6,
+      "nameBelow": true
     }
   },
   "mogli-the-iceburg": {
@@ -2359,13 +2791,23 @@
     "reason": "Mobile clips hair and places the two-line title across beard/mouth area.",
     "mobile": {
       "window": [
-        -0.006628,
-        0.015714,
-        1.013255,
-        0.840685
+        0,
+        0.14869715,
+        1,
+        0.8296875
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.22816469,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.07824,
+        1,
+        0.67555068
+      ]
     }
   },
   "emanueldaprophet": {
@@ -2374,20 +2816,20 @@
     "reason": "Head is cut at top, and praying hands cover much of face.",
     "desktop": {
       "window": [
-        -0.071356,
-        -0.025,
-        1.142711,
-        0.857033
+        0,
+        0,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.075249,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -2399,10 +2841,10 @@
     "reason": "Dim couch snapshot has weak face detail and tight mobile cap framing.",
     "desktop": {
       "window": [
-        -0.334085,
-        -0.02,
-        1.66817,
-        1.04
+        0,
+        0.18828125,
+        1,
+        0.6234375
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6,
@@ -2410,10 +2852,10 @@
     },
     "mobile": {
       "window": [
-        -0.125564,
-        -0.02,
-        1.251128,
-        1.04
+        0,
+        0.084375,
+        1,
+        0.83125
       ],
       "ratio": 1,
       "nameSize": 8.6,
@@ -2426,20 +2868,20 @@
     "reason": "Cap is cut off at the upper edge in both sizes.",
     "desktop": {
       "window": [
-        -0.177424,
-        -0.008068,
-        1.354848,
-        1.016136
+        0,
+        0,
+        1,
+        0.81653758
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.22468337,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.008068,
-        -0.008068,
-        1.016136,
-        1.016136
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -2476,22 +2918,22 @@
     "reason": "Photo is somewhat grainy; mobile clips the cap.",
     "desktop": {
       "window": [
-        -0.336446,
-        -0.021472,
-        1.672893,
-        1.042944
+        0,
+        0.04031473,
+        1,
+        0.83125
       ],
-      "ratio": 1.33333333,
+      "ratio": 1,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.127335,
-        -0.021472,
-        1.25467,
-        1.042944
+        0,
+        0.04014398,
+        1,
+        0.83808015
       ],
-      "ratio": 1,
+      "ratio": 0.99185025,
       "nameSize": 8.6
     }
   },
@@ -2501,20 +2943,20 @@
     "reason": "Cap is cropped in both views.",
     "desktop": {
       "window": [
-        -0.22,
-        -0.04,
-        1.44,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.04,
-        -0.04,
-        1.08,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -2526,20 +2968,20 @@
     "reason": "Desktop hair is tight to top; mobile clips upper head.",
     "desktop": {
       "window": [
-        0.035749,
-        -0.007071,
-        0.95,
-        0.7125
+        0,
+        0.01317943,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.060749,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -2551,20 +2993,20 @@
     "reason": "Performer is almost entirely silhouetted; face cannot be read.",
     "desktop": {
       "window": [
-        -0.323253,
-        -0.02,
-        1.646506,
-        1.04
+        0,
+        0.18417969,
+        1,
+        0.63164063
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.11744,
-        -0.02,
-        1.234879,
-        1.04
+        0,
+        0.07890625,
+        1,
+        0.8421875
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -2608,6 +3050,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.10260403,
+        1,
+        0.62109375
+      ]
     }
   },
   "kaden-jordan": {
@@ -2660,20 +3112,20 @@
     "reason": "Cap/head is clipped in both; mobile splits CHVRCH562 mid-word.",
     "desktop": {
       "window": [
-        0.05,
-        -0.025,
-        0.95,
-        0.7125
+        0,
+        0.00669963,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.080443,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -2738,19 +3190,19 @@
     "desktop": {
       "window": [
         0,
-        -0.025,
-        0.95,
-        0.7125
+        0,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.015387,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -2763,12 +3215,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
-        0.829688
+        0.10128262,
+        1,
+        0.8296875
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.10646817,
+        1,
+        0.62226563
+      ]
     }
   },
   "mayia": {
@@ -2777,20 +3239,20 @@
     "reason": "Upper head is cut, and mobile loses much of the upper face.",
     "desktop": {
       "window": [
-        0.05,
-        -0.025,
-        0.95,
-        0.713615
+        0,
+        0,
+        1,
+        0.75117371
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.101406,
-        -0.025,
-        0.898594,
-        0.9
+        0.0015625,
+        0,
+        0.9984375,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -2803,12 +3265,22 @@
     "mobile": {
       "window": [
         0,
-        -0.001026,
-        1.0,
-        0.835938
+        0.08559505,
+        1,
+        0.8359375
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.10705743,
+        1,
+        0.62695312
+      ]
     }
   },
   "monster-tarver": {
@@ -2817,10 +3289,10 @@
     "reason": "Top of scalp is cut at both sizes.",
     "desktop": {
       "window": [
-        -0.043034,
-        -0.025,
-        1.086067,
-        0.81455
+        0,
+        0.03292202,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
@@ -2828,9 +3300,9 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -2849,6 +3321,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.05211624,
+        1,
+        0.62578125
+      ]
     }
   },
   "brinson": {
@@ -2857,20 +3339,20 @@
     "reason": "Extreme close-up leaves much of head and one side of face outside frame.",
     "desktop": {
       "window": [
-        -0.22,
-        -0.04,
-        1.44,
-        1.08
+        0,
+        0,
+        1,
+        0.98760438
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.0125512,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.04,
-        -0.04,
-        1.08,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -2882,10 +3364,10 @@
     "reason": "Clear portrait; mobile has almost no space above hair.",
     "mobile": {
       "window": [
-        -0.002959,
-        -0.002959,
-        1.005918,
-        1.005918
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -2929,6 +3411,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.08316268,
+        1,
+        0.63046875
+      ]
     }
   },
   "nissi-shalom": {
@@ -2937,22 +3429,22 @@
     "reason": "Grainy multi-person scene is usable, but less clear than a solo profile portrait.",
     "desktop": {
       "window": [
-        -0.193333,
-        -0.02,
-        1.386667,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.0,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.02,
-        -0.02,
-        1.04,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 1.0,
       "nameSize": 8.6
     }
   },
@@ -2962,13 +3454,23 @@
     "reason": "Mobile clips bright hair and splits SteveUnordinary mid-word.",
     "mobile": {
       "window": [
-        -0.011008,
-        -0.025,
-        1.022015,
-        0.887876
+        0,
+        0.11955649,
+        1,
+        0.86875
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.21763801,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.12343845,
+        1,
+        0.71347149
+      ]
     }
   },
   "jj-chosen": {
@@ -2977,20 +3479,20 @@
     "reason": "Topknot is clipped on desktop and removed on mobile.",
     "desktop": {
       "window": [
-        -0.284087,
-        -0.003531,
-        1.568174,
-        1.007062
+        0,
+        0.06712448,
+        1,
+        0.80924593
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.05808379,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.088065,
-        -0.003531,
-        1.17613,
-        1.007062
+        0,
+        0.06594938,
+        1,
+        0.85625
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -3002,13 +3504,23 @@
     "reason": "Mobile removes cap/upper head and crowds chin with title.",
     "mobile": {
       "window": [
-        -0.141187,
-        -0.04,
-        1.282375,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 0.8421875,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.8421875
+      ]
     }
   },
   "hy-chu": {
@@ -3028,9 +3540,9 @@
     "mobile": {
       "window": [
         0,
-        -0.009003,
-        0.90283,
-        0.9
+        0.0031348,
+        1,
+        0.9968652
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -3042,20 +3554,20 @@
     "reason": "Face is clear, but hair is very tight at upper edge.",
     "desktop": {
       "window": [
-        -0.22,
-        -0.04,
-        1.44,
-        1.08
+        0,
+        0,
+        1,
+        0.86909118
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.15062726,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.04,
-        -0.04,
-        1.08,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -3093,9 +3605,9 @@
     "desktop": {
       "window": [
         0,
-        -0.025,
-        0.95,
-        0.7125
+        0.00777048,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
@@ -3103,9 +3615,9 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -3117,10 +3629,10 @@
     "reason": "Very dark/grainy face; mobile clips hair and title crowds lower face.",
     "desktop": {
       "window": [
-        -0.118742,
-        0.032729,
-        1.237485,
-        0.833852
+        0,
+        0,
+        1,
+        0.67382813
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6,
@@ -3144,20 +3656,20 @@
     "reason": "Upper hair is clipped on both sizes.",
     "desktop": {
       "window": [
-        -0.06254,
-        -0.025,
-        1.12508,
-        0.84381
+        0,
+        0.03661302,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.008404,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -3170,12 +3682,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
+        0.08421015,
+        1,
         0.83125
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.02082734,
+        1,
+        0.6234375
+      ]
     }
   },
   "dell-mac": {
@@ -3184,22 +3706,22 @@
     "reason": "Intentional motion blur makes face difficult to recognize at either size.",
     "desktop": {
       "window": [
-        -0.334085,
-        -0.02,
-        1.66817,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 0.83125,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.125564,
-        -0.02,
-        1.251128,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 0.83125,
       "nameSize": 8.6
     }
   },
@@ -3209,10 +3731,10 @@
     "reason": "Face remains clear; mobile crown is very tight to top edge.",
     "mobile": {
       "window": [
-        0.1,
-        -0.014203,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -3224,20 +3746,20 @@
     "reason": "Upper hair/head is cut at both sizes despite an otherwise strong colorful portrait.",
     "desktop": {
       "window": [
-        -0.161016,
-        -0.025,
-        1.322032,
-        0.991524
+        0,
+        0,
+        1,
+        0.79676038
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.25508249,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
         0,
-        -0.025,
-        0.991524,
-        0.991524
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -3256,6 +3778,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.13764523,
+        1,
+        0.63046875
+      ]
     }
   },
   "howard-langford": {
@@ -3364,20 +3896,20 @@
     "reason": "Upper hair/head is clipped in both views.",
     "desktop": {
       "window": [
-        -0.206254,
-        -0.02969,
-        1.412508,
-        1.059381
+        0,
+        0,
+        1,
+        0.85128808
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.17469048,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.02969,
-        -0.02969,
-        1.059381,
-        1.059381
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -3451,10 +3983,10 @@
     },
     "mobile": {
       "window": [
-        0.124545,
-        -0.013904,
-        0.675,
-        0.9
+        0.08704472,
+        0,
+        0.75,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -3466,20 +3998,20 @@
     "reason": "Heavy blue wash and softness reduce facial detail.",
     "desktop": {
       "window": [
-        0.05,
-        -0.025,
-        0.95,
-        0.7125
+        0,
+        0,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.1,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -3492,12 +4024,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
+        0,
+        1,
         0.8
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.6
+      ]
     }
   },
   "h-u-r-t": {
@@ -3506,20 +4048,20 @@
     "reason": "Extreme low face placement; lower face is cut/crowded by title, especially mobile.",
     "desktop": {
       "window": [
-        -0.22,
-        -0.04,
-        1.44,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.04,
-        -0.04,
-        1.08,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -3557,12 +4099,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
-        0.760295
+        0,
+        1,
+        0.76029476
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.57022107
+      ]
     }
   },
   "dontae": {
@@ -3571,20 +4123,20 @@
     "reason": "Cap is cut off at the upper edge in both sizes.",
     "desktop": {
       "window": [
-        0.036222,
-        -0.025,
-        0.95,
-        0.689121
+        0,
+        0,
+        1,
+        0.72539063
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.045955,
-        -0.025,
-        0.930533,
-        0.9
+        0,
+        0,
+        1,
+        0.9671875
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -3603,6 +4155,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.14238763,
+        1,
+        0.63398438
+      ]
     }
   },
   "drew-ava": {
@@ -3636,20 +4198,20 @@
     "reason": "Cap is cut off at top in both views.",
     "desktop": {
       "window": [
-        -0.22,
-        -0.04,
-        1.44,
-        1.08
+        0,
+        0,
+        1,
+        0.97868644
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.02177772,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.04,
-        -0.04,
-        1.08,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -3661,20 +4223,20 @@
     "reason": "Cap is cut; embedded promotional lettering competes with page title.",
     "desktop": {
       "window": [
-        0.43799,
-        -0.04,
-        0.56201,
-        1.08
+        0.47962033,
+        0,
+        0.52037967,
+        1.0
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.578492,
-        -0.04,
-        0.421508,
-        1.08
+        0.60971524,
+        0,
+        0.39028476,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -3686,22 +4248,22 @@
     "reason": "Upper hair of left member is clipped; group needs a little more breathing room.",
     "desktop": {
       "window": [
-        -0.193333,
-        -0.02,
-        1.386667,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.0,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.02,
-        -0.02,
-        1.04,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 1.0,
       "nameSize": 8.6
     }
   },
@@ -3711,22 +4273,22 @@
     "reason": "Video/screenshot-style image has embedded quote and weak detail.",
     "desktop": {
       "window": [
-        -0.424444,
-        -0.02,
-        1.848889,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 0.75,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.193333,
-        -0.02,
-        1.386667,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 0.75,
       "nameSize": 8.6
     }
   },
@@ -3736,20 +4298,20 @@
     "reason": "Top of beanie is cut at both sizes.",
     "desktop": {
       "window": [
-        0.023139,
-        -0.025,
-        0.976861,
-        0.732646
+        0,
+        0,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.1,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -3820,20 +4382,20 @@
     "reason": "Desktop uses a soft CAR BARS still; mobile clips the cap.",
     "desktop": {
       "window": [
-        -0.254386,
-        -0.025,
-        1.508772,
-        0.636513
+        0,
+        0.01035967,
+        1,
+        0.51148375
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.09974169,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.065789,
-        -0.025,
-        1.131579,
-        0.636513
+        0,
+        0.00908426,
+        1,
+        0.5625
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -3845,10 +4407,10 @@
     "reason": "Soft video-style image; mobile cuts off top of cap.",
     "desktop": {
       "window": [
-        -0.118776,
-        -0.025,
-        1.237553,
-        0.522093
+        0,
+        0.01072209,
+        1,
+        0.421875
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
@@ -3856,8 +4418,8 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
+        0.00720647,
+        1,
         0.5625
       ],
       "ratio": 1,
@@ -3871,12 +4433,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
-        0.826562
+        0.06299109,
+        1,
+        0.8265625
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.27076855,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.650443
+      ]
     }
   },
   "sho-baraka": {
@@ -3885,20 +4457,20 @@
     "reason": "Camera obscures part of face; mobile also cuts off hat.",
     "desktop": {
       "window": [
-        -0.337233,
-        -0.02,
-        1.674465,
-        1.04
+        0,
+        0,
+        1,
+        0.62109375
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.127925,
-        -0.02,
-        1.255849,
-        1.04
+        0,
+        0,
+        1,
+        0.828125
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -3910,20 +4482,20 @@
     "reason": "Top of head is cropped at both sizes.",
     "desktop": {
       "window": [
-        -0.151823,
-        -0.025,
-        1.303645,
-        0.977734
+        0,
+        0,
+        1,
+        0.7856791
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.27278427,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
         0,
-        -0.025,
-        0.977734,
-        0.977734
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -3935,20 +4507,20 @@
     "reason": "Upper head is cut at both sizes.",
     "desktop": {
       "window": [
-        0.030654,
-        -0.025,
-        0.95,
-        0.7125
+        0,
+        0,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.055654,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -3967,6 +4539,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.09504542,
+        1,
+        0.61992188
+      ]
     }
   },
   "george-rose": {
@@ -3975,20 +4557,20 @@
     "reason": "Hair is cut; mobile name breaks mid-word onto a second line.",
     "desktop": {
       "window": [
-        -0.015117,
-        -0.025,
-        1.030234,
-        0.772676
+        0,
+        0,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.04663,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -4001,9 +4583,9 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        0.955377,
-        0.955377
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -4015,10 +4597,10 @@
     "reason": "Clear portrait; mobile hair sits against top edge.",
     "mobile": {
       "window": [
-        0.012028,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -4030,22 +4612,22 @@
     "reason": "Green graphic contains no recognizable artist portrait.",
     "desktop": {
       "window": [
-        -0.320209,
-        -0.02,
-        1.640419,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 0.8453125,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.115157,
-        -0.02,
-        1.230314,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 0.8453125,
       "nameSize": 8.6
     }
   },
@@ -4080,13 +4662,23 @@
     "reason": "Mobile name sits close to chin and darkens lower face.",
     "mobile": {
       "window": [
-        -0.000361,
-        -0.025,
-        1.000722,
-        0.838105
+        0,
+        0.07230543,
+        1,
+        0.8375
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.2435463,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.076406,
+        1,
+        0.67347714
+      ]
     }
   },
   "peair": {
@@ -4096,7 +4688,7 @@
     "desktop": {
       "window": [
         0.143782,
-        0.143093,
+        0.09663131,
         0.665,
         0.422379
       ],
@@ -4120,13 +4712,23 @@
     "reason": "Full beanie visible; mobile title crowds lower face.",
     "mobile": {
       "window": [
-        -0.143575,
-        -0.04,
-        1.287151,
-        1.08
+        0,
+        0,
+        1,
+        0.87321796
       ],
-      "ratio": 1,
+      "ratio": 0.96088553,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.8390625
+      ]
     }
   },
   "saint-jones": {
@@ -4135,20 +4737,20 @@
     "reason": "Cap is clipped at the upper edge at both sizes.",
     "desktop": {
       "window": [
-        -0.22,
-        -0.04,
-        1.44,
-        1.08
+        0,
+        0,
+        1,
+        0.92222902
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.08432935,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.04,
-        -0.04,
-        1.08,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -4160,10 +4762,10 @@
     "reason": "Desktop retains cap; mobile trims the raised cap at top.",
     "mobile": {
       "window": [
-        0.05549,
-        -0.025,
-        0.898594,
-        0.9
+        0.0015625,
+        0,
+        0.9984375,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -4202,20 +4804,20 @@
     "reason": "Red cap touches and is trimmed by upper edge.",
     "desktop": {
       "window": [
-        -0.18933,
-        -0.016997,
-        1.37866,
-        1.033995
+        0,
+        0,
+        1,
+        0.83088854
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.20353086,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.016997,
-        -0.016997,
-        1.033995,
-        1.033995
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -4227,13 +4829,23 @@
     "reason": "Mobile name covers lower face and beard.",
     "mobile": {
       "window": [
-        -0.072022,
-        -0.025,
-        1.144044,
-        0.949199
+        0,
+        0,
+        1,
+        0.8296875
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.08775911,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.7627493
+      ]
     }
   },
   "kham": {
@@ -4242,20 +4854,20 @@
     "reason": "Upper hairstyle is clipped at both sizes.",
     "desktop": {
       "window": [
-        -0.103833,
-        -0.025,
-        1.207667,
-        0.90575
+        0,
+        0,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.09425,
-        -0.025,
-        0.90575,
-        0.90575
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -4267,13 +4879,23 @@
     "reason": "Desktop works; mobile title overlays mouth and lower face.",
     "mobile": {
       "window": [
-        -0.04339,
-        -0.025,
-        1.086779,
-        0.920366
+        0,
+        0.08131105,
+        1,
+        0.846875
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.14507541,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.08399342,
+        1,
+        0.73958011
+      ]
     }
   },
   "jonah-daniel": {
@@ -4307,20 +4929,20 @@
     "reason": "Cap is tight against desktop top and clipped on mobile.",
     "desktop": {
       "window": [
-        0.002522,
-        -0.025,
-        0.95,
-        0.7125
+        0,
+        0,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.027522,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -4339,6 +4961,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.04247395,
+        1,
+        0.64335938
+      ]
     }
   },
   "untidld": {
@@ -4347,13 +4979,23 @@
     "reason": "Mobile title covers mouth and lower face.",
     "mobile": {
       "window": [
-        -0.129508,
-        -0.04,
-        1.259016,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 0.8578125,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.8578125
+      ]
     }
   },
   "kvng-flvcko": {
@@ -4362,20 +5004,20 @@
     "reason": "Upper hair is cut at both sizes.",
     "desktop": {
       "window": [
-        0.019151,
-        -0.025,
-        0.95,
-        0.7125
+        0,
+        0,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.044151,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -4388,12 +5030,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
+        0.02395765,
+        1,
         0.75
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.05203748,
+        1,
+        0.5625
+      ]
     }
   },
   "serious-voice": {
@@ -4427,13 +5079,23 @@
     "reason": "Desktop works; mobile cuts off forehead and upper hair.",
     "mobile": {
       "window": [
-        -0.103141,
-        -0.04,
-        1.206283,
-        1.08
+        0,
+        0.00353246,
+        1,
+        0.98474742
       ],
-      "ratio": 1,
+      "ratio": 0.90917983,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.00576834,
+        1,
+        0.8953125
+      ]
     }
   },
   "carita-cole": {
@@ -4442,20 +5104,20 @@
     "reason": "High ponytail is cut at both sizes.",
     "desktop": {
       "window": [
-        -0.046832,
-        -0.025,
-        1.093665,
-        0.820248
+        0,
+        0,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.064812,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -4518,12 +5180,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
+        0,
+        1,
         0.8
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.01669199,
+        1,
+        0.6
+      ]
     }
   },
   "mike-real": {
@@ -4533,7 +5205,7 @@
     "desktop": {
       "window": [
         0.45,
-        0.056625,
+        0,
         0.55,
         0.618267
       ],
@@ -4582,10 +5254,10 @@
     "reason": "Mobile hairstyle sits very close to top edge.",
     "mobile": {
       "window": [
-        0.070468,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -4656,10 +5328,10 @@
     "reason": "Face is dark against otherwise clear studio image.",
     "desktop": {
       "window": [
-        0.040081,
-        -0.025,
-        0.95,
-        0.7125
+        0,
+        0.07792741,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6,
@@ -4667,10 +5339,10 @@
     },
     "mobile": {
       "window": [
-        0.065081,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6,
@@ -4684,9 +5356,9 @@
     "desktop": {
       "window": [
         0,
-        -0.025,
-        0.95,
-        0.7125
+        0,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
@@ -4694,9 +5366,9 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -4708,10 +5380,10 @@
     "reason": "Mobile title overlays mouth and beard.",
     "mobile": {
       "window": [
-        0.045085,
-        -0.025,
-        0.950793,
-        0.950793
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -4750,13 +5422,23 @@
     "reason": "Mobile cuts off forehead and top of head.",
     "mobile": {
       "window": [
-        -0.024427,
-        -0.025,
-        1.048854,
-        0.876776
+        0,
+        0,
+        1,
+        0.8359375
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.18648023,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.7045524
+      ]
     }
   },
   "swaizy": {
@@ -4765,13 +5447,23 @@
     "reason": "Mobile title covers mouth and lower face.",
     "mobile": {
       "window": [
-        -0.053431,
-        -0.006082,
-        1.106862,
-        0.920079
+        0,
+        0.14137931,
+        1,
+        0.83125
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.12429943,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.14367683,
+        1,
+        0.73934931
+      ]
     }
   },
   "j-list": {
@@ -4780,20 +5472,20 @@
     "reason": "Cap is clipped and downward pose hides face almost completely.",
     "desktop": {
       "window": [
-        -0.193333,
-        -0.02,
-        1.386667,
-        1.04
+        0,
+        0.0425,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.02,
-        -0.02,
-        1.04,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -4830,20 +5522,20 @@
     "reason": "Extreme side-profile close-up cuts off upper head and much of face.",
     "desktop": {
       "window": [
-        -0.193333,
-        -0.02,
-        1.386667,
-        1.04
+        0,
+        0.125,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.02,
-        -0.02,
-        1.04,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -4877,6 +5569,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.05718803,
+        1,
+        0.63046875
+      ]
     }
   },
   "pishko": {
@@ -4895,10 +5597,10 @@
     },
     "mobile": {
       "window": [
-        0.052751,
-        -0.011562,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -4910,10 +5612,10 @@
     "reason": "Mobile upper hair is clipped and name crowds chin.",
     "mobile": {
       "window": [
-        -0.04,
-        -0.04,
-        1.08,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -4925,10 +5627,10 @@
     "reason": "Very dark hooded image hides eyes and most facial detail.",
     "desktop": {
       "window": [
-        -0.193333,
-        -0.02,
-        1.386667,
-        1.04
+        0,
+        0.0425,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6,
@@ -4936,10 +5638,10 @@
     },
     "mobile": {
       "window": [
-        -0.02,
-        -0.02,
-        1.04,
-        1.04
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6,
@@ -4952,10 +5654,10 @@
     "reason": "Clear smiling portrait; mobile head touches top edge.",
     "mobile": {
       "window": [
-        0.072444,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -4967,20 +5669,20 @@
     "reason": "Close-up cuts off upper hair at both sizes.",
     "desktop": {
       "window": [
-        -0.22,
-        -0.04,
-        1.44,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.04,
-        -0.04,
-        1.08,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -4993,9 +5695,9 @@
     "desktop": {
       "window": [
         0,
-        -0.025,
-        0.95,
-        0.7125
+        0.04036905,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
@@ -5003,9 +5705,9 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -5017,13 +5719,23 @@
     "reason": "Mobile clips upper hair.",
     "mobile": {
       "window": [
-        -0.007912,
-        -0.025,
-        1.015824,
-        0.861863
+        0,
+        0,
+        1,
+        0.8484375
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.22505945,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.69256843
+      ]
     }
   },
   "feed-em": {
@@ -5032,10 +5744,10 @@
     "reason": "Top of beanie is cut at both sizes.",
     "desktop": {
       "window": [
-        -0.02103,
-        -0.025,
-        1.04206,
-        0.781545
+        0,
+        0.02070924,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
@@ -5043,9 +5755,9 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -5058,12 +5770,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
-        0.848437
+        0,
+        1,
+        0.8484375
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.01751949,
+        1,
+        0.63632813
+      ]
     }
   },
   "triple-o": {
@@ -5073,12 +5795,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
+        0,
+        1,
         0.83125
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.04547962,
+        1,
+        0.6234375
+      ]
     }
   },
   "dwayne-tryumf": {
@@ -5087,13 +5819,23 @@
     "reason": "Mobile cuts forehead/hair and places two-line title across lower face.",
     "mobile": {
       "window": [
-        -0.152075,
-        -0.04,
-        1.304151,
-        1.08
+        0,
+        0,
+        1,
+        0.98023655
       ],
-      "ratio": 1,
+      "ratio": 0.84482159,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.828125
+      ]
     }
   },
   "manny-montes": {
@@ -5102,10 +5844,10 @@
     "reason": "Image is so dark that face and clothing lose detail.",
     "desktop": {
       "window": [
-        -0.014423,
-        -0.025,
-        1.028846,
-        0.771634
+        0,
+        0.09196487,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6,
@@ -5113,10 +5855,10 @@
     },
     "mobile": {
       "window": [
-        0.024582,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6,
@@ -5129,10 +5871,10 @@
     "reason": "Mobile upper hair is tight against edge.",
     "mobile": {
       "window": [
-        0.318527,
-        -0.025,
-        0.506519,
-        0.9
+        0.29038732,
+        0,
+        0.56279904,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -5144,10 +5886,10 @@
     "reason": "Mobile head sits very close to top edge.",
     "mobile": {
       "window": [
-        0.214963,
-        -0.025,
-        0.506519,
-        0.9
+        0.18682256,
+        0,
+        0.56279904,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -5159,10 +5901,10 @@
     "reason": "Dark portrait; mobile clips upper hairstyle.",
     "desktop": {
       "window": [
-        -0.000461,
-        0.171145,
-        1.000923,
-        0.627532
+        0,
+        0.20125513,
+        1,
+        0.62695313
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6,
@@ -5193,6 +5935,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33306972,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.16343146,
+        1,
+        0.52393171
+      ]
     }
   },
   "garko": {
@@ -5220,21 +5972,21 @@
     "reason": "Hand and cap obscure eyes; face is small/dark on desktop.",
     "desktop": {
       "window": [
-        -0.327394,
-        -0.025,
-        1.654789,
-        0.828041
+        0,
+        0.08358221,
+        1,
+        0.66539001
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.00270141,
       "nameSize": 5.6,
       "brightness": 1.1
     },
     "mobile": {
       "window": [
-        -0.120546,
-        -0.025,
-        1.241092,
-        0.828041
+        0,
+        0.08353727,
+        1,
+        0.6671875
       ],
       "ratio": 1,
       "nameSize": 8.6,
@@ -5247,10 +5999,10 @@
     "reason": "Artist-provided photo remains intact; desktop subject is small.",
     "desktop": {
       "window": [
-        0.08,
-        0.12,
-        0.94,
-        0.47
+        0,
+        0.105,
+        1,
+        0.5
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
@@ -5343,10 +6095,10 @@
     "reason": "Clear side-profile; mobile title crowds lower beard.",
     "mobile": {
       "window": [
-        0.043832,
-        -0.025,
-        0.956168,
-        0.956168
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -5358,10 +6110,10 @@
     "reason": "Cap is clipped at the upper edge at both sizes.",
     "desktop": {
       "window": [
-        -0.094505,
-        -0.025,
-        1.18901,
-        0.891758
+        0,
+        0.01610822,
+        1,
+        0.75
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
@@ -5369,9 +6121,9 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        0.9,
-        0.9
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -5383,22 +6135,22 @@
     "reason": "Strong motion blur/double exposure obscures facial detail.",
     "desktop": {
       "window": [
-        -0.02,
-        -0.084543,
-        1.04,
-        1.169087
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.49882904,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.02,
-        -0.279391,
-        1.04,
-        1.558782
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1,
+      "ratio": 1.49882904,
       "nameSize": 8.6
     }
   },
@@ -5502,20 +6254,20 @@
     "reason": "Cap is cut and much of face is in deep shadow.",
     "desktop": {
       "window": [
-        -0.22,
-        -0.04,
-        1.44,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
-      "ratio": 1.33333333,
+      "ratio": 1,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.04,
-        -0.04,
-        1.08,
-        1.08
+        0,
+        0,
+        1,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -5527,20 +6279,20 @@
     "reason": "Distinctive chair composition but face is quite small.",
     "desktop": {
       "window": [
-        0.324309,
-        -0.010119,
-        0.55,
-        0.825
+        0.26597518,
+        0,
+        0.66666667,
+        1.0
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.374309,
-        -0.025,
-        0.45,
-        0.9
+        0.34930851,
+        0,
+        0.5,
+        1.0
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -5559,6 +6311,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.63515625
+      ]
     }
   },
   "b-e-r-i-d-o-x": {
@@ -5568,12 +6330,22 @@
     "mobile": {
       "window": [
         0,
-        -0.025,
-        1.0,
+        0,
+        1,
         0.75
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.5625
+      ]
     }
   },
   "tblessing": {
@@ -5582,13 +6354,23 @@
     "reason": "Desktop works; mobile trims top of tilted cap.",
     "mobile": {
       "window": [
-        -0.042694,
-        0.015038,
-        1.085389,
-        0.610531
+        0,
+        0.11261567,
+        1,
+        0.5625
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.1465427,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.11441304,
+        1,
+        0.49060537
+      ]
     }
   },
   "zeke": {
@@ -5597,20 +6379,20 @@
     "reason": "Distant back/side performance view provides little facial detail.",
     "desktop": {
       "window": [
-        -0.539188,
-        -0.02,
-        2.078376,
-        1.04
+        0,
+        0.24980469,
+        1,
+        0.50039063
       ],
       "ratio": 1.33333333,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.279391,
-        -0.02,
-        1.558782,
-        1.04
+        0,
+        0.16640625,
+        1,
+        0.6671875
       ],
       "ratio": 1,
       "nameSize": 8.6
@@ -5647,20 +6429,20 @@
     "reason": "Video-style portrait; mobile title overlays mouth and lower face.",
     "desktop": {
       "window": [
-        -0.236174,
-        -0.025,
-        1.472348,
-        0.914466
+        0,
+        0.08031667,
+        1,
+        0.73483904
       ],
-      "ratio": 1.33333333,
+      "ratio": 1.12694748,
       "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        -0.052131,
-        -0.025,
-        1.104261,
-        0.914466
+        0,
+        0.07798452,
+        1,
+        0.828125
       ],
       "ratio": 1,
       "nameSize": 7.75
@@ -5722,13 +6504,23 @@
     "reason": "Mobile cuts top of red cap.",
     "mobile": {
       "window": [
-        -0.13218,
-        -0.025,
-        1.264361,
-        0.948271
+        0,
+        0.02576842,
+        1,
+        0.76200318
       ],
-      "ratio": 1,
+      "ratio": 0.98424787,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.0260685,
+        1,
+        0.75
+      ]
     }
   },
   "mic-esco": {
@@ -5784,12 +6576,22 @@
     "mobile": {
       "window": [
         0,
-        -5.9e-05,
-        1.0,
-        0.704688
+        0.02812806,
+        1,
+        0.7046875
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.06688587,
+        1,
+        0.52851563
+      ]
     }
   },
   "soc-driz": {
@@ -5918,6 +6720,16 @@
       ],
       "ratio": 1,
       "nameSize": 8.6
+    },
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.4215
+      ]
     }
   },
   "jj-stone": {
@@ -5945,13 +6757,718 @@
     "reason": "Owner requested a less zoomed desktop photo; keep the approved mobile framing exactly unchanged.",
     "desktop": {
       "window": [
-        -0.25,
-        -0.035,
-        1.5,
-        1.125
+        0,
+        0,
+        1,
+        1
       ],
-      "ratio": 1.33333333,
+      "ratio": 1,
       "nameSize": 5.6
+    }
+  },
+  "1k-phew": {
+    "artist": "1K Phew",
+    "imageSha256": "6df7b566d71761e10c8e1cb99b4a38f94aebbf25d22fdb70307a37addc31e829",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.14888716,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.08144448,
+        1,
+        0.57936499
+      ]
+    }
+  },
+  "aaron-cole": {
+    "artist": "Aaron Cole",
+    "imageSha256": "ab59e8abe7eb9a25bac5b22269d2bf4039bf948cbe412ebfca9c6c58e39ef86d",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.24696487,
+        1,
+        0.6234375
+      ]
+    }
+  },
+  "egr": {
+    "artist": "EGR",
+    "imageSha256": "7ac916e459ec31a1024742c716dee589323d56190987cd3b1a025b9260325c42",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.06056292,
+        1,
+        0.62578125
+      ]
+    }
+  },
+  "bizzle": {
+    "artist": "Bizzle",
+    "imageSha256": "380e22c191f7e645622f72d4c6120f54db795b5ae853b014f58c784c8aaab0f7",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.0974445,
+        1,
+        0.6234375
+      ]
+    }
+  },
+  "kurtis-hoppie": {
+    "artist": "Kurtis Hoppie",
+    "imageSha256": "555c3a6bc1c7ad4db8506a134beaa441f624369c07465644e356dcbdd9a9d2fb",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.5625
+      ]
+    }
+  },
+  "wuhsahbee": {
+    "artist": "Wuhsahbee",
+    "imageSha256": "f642694a2876df1ddc7a8804a7d6ba1d51a15769ff6ed412394c025319790b88",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.19837954,
+        1,
+        0.62695312
+      ]
+    }
+  },
+  "stixx-aka-conejo": {
+    "artist": "Stixx aka Conejo",
+    "imageSha256": "083792a920181470e597f10ccf160a8ac97ac72fd1c61b58d324b9238f6099e3",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.17883867,
+        1,
+        0.62226563
+      ]
+    }
+  },
+  "kaboose": {
+    "artist": "Kaboose",
+    "imageSha256": "7ea961334d3e846e5fcbdfdfd0ccf1a70044be7077f2a4882c90bd4e0ad11e34",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.21275288,
+        1,
+        0.63046875
+      ]
+    }
+  },
+  "petrina-delacey": {
+    "artist": "Petrina DeLacey",
+    "imageSha256": "bf61dcbcafab160bf1235e960bb1d6322c2ee380308d91f05c829f521367a309",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.2953931,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.15964201,
+        1,
+        0.65375908
+      ]
+    }
+  },
+  "joz": {
+    "artist": "Joz",
+    "imageSha256": "13e4492ea5d49de61edb718fc5105c044097a8a467bdb847c135d3c1531811fe",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.16225861,
+        1,
+        0.628125
+      ]
+    }
+  },
+  "jered-sanders": {
+    "artist": "Jered Sanders",
+    "imageSha256": "45ba01dc282ab8296e323dace32fb2b128de061e7ff6880a6d0bda1db680154c",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.14876758,
+        1,
+        0.62695312
+      ]
+    }
+  },
+  "nxtmike": {
+    "artist": "NXTMIKE",
+    "imageSha256": "937032f1aba2e882e0508ff19840c63f17efa4b5c85b207bf324c9b42643d87a",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.0171627,
+        1,
+        0.59957326
+      ]
+    }
+  },
+  "generation-recovery": {
+    "artist": "Generation Recovery",
+    "imageSha256": "1e87497902a6b5b6dc0634f6d8f21570feaa169702b8a3416de2ef38ebd522ff",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.12141949,
+        1,
+        0.63515625
+      ]
+    }
+  },
+  "j-monty": {
+    "artist": "J. Monty",
+    "imageSha256": "efa7eb053c8eed33a68ec9efd64817b45a88ebf88f69280b7c8afcb3de2059c4",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.21035652,
+        1,
+        0.525
+      ]
+    }
+  },
+  "n-x": {
+    "artist": "N!X",
+    "imageSha256": "ab549d3e89787b32e38a810c241a8990669b2ed6b35059a74b234a33f7dd36b4",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.18749191,
+        1,
+        0.63046875
+      ]
+    }
+  },
+  "d-riddick": {
+    "artist": "D Riddick",
+    "imageSha256": "fbe6cb120f9c8b9ed179a8df627aeba064b894c150d0002ceca202575aed86a8",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.15806624,
+        1,
+        0.6234375
+      ]
+    }
+  },
+  "deon": {
+    "artist": "DEON",
+    "imageSha256": "6a52cea672e4f72532953b9cf55352c9714409394b99cee7f54286014f8949c8",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.06959892,
+        1,
+        0.62695312
+      ]
+    }
+  },
+  "bobby-real-montgomery": {
+    "artist": "Bobby Real Montgomery",
+    "imageSha256": "c0e6179b3161e6e8ed493004e330c7321f9eed70321a1d02a5581906307f4155",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.5
+      ]
+    }
+  },
+  "eli-williams": {
+    "artist": "Eli Williams",
+    "imageSha256": "ca513195ba3906b3e28d7513dc27a0f8d6934c726411676f811c92ef44209305",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.15383156,
+        1,
+        0.55932203
+      ]
+    }
+  },
+  "heiressirami": {
+    "artist": "HeiressIrami",
+    "imageSha256": "9e355b41ff02bf57c0fad592624592ff99f12e1cc5cbcaafa0cdd09d4e2f65ad",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.21108745,
+        1,
+        0.5625
+      ]
+    }
+  },
+  "rio-24k": {
+    "artist": "Rio 24k",
+    "imageSha256": "a9d44d705c512b0658a145c83d5a00ab4a43196c734d509ff373c16f7dd1716b",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.07,
+        1,
+        0.63515625
+      ]
+    }
+  },
+  "jamil": {
+    "artist": "Jamil",
+    "imageSha256": "14f5e089e0c01d625189575d3200439261c820ee4b3b9cd2616edb619130dc8b",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.15893183,
+        1,
+        0.62226563
+      ]
+    }
+  },
+  "arize": {
+    "artist": "Arize",
+    "imageSha256": "e668e0792db79cc5ed56c436d77969896037dbabdecf4b31f229a5c7bb257c18",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.16897817,
+        1,
+        0.61992188
+      ]
+    }
+  },
+  "big-rev": {
+    "artist": "Big Rev.",
+    "imageSha256": "a67caf73059508560248a62619aca81d713defe522a1d2b9e8b2c6b25bda894a",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.18915474,
+        1,
+        0.62109375
+      ]
+    }
+  },
+  "not-klyde": {
+    "artist": "Not Klyde",
+    "imageSha256": "f414c18d9af40a90a031b7fdfe878675dd7207b917e312bff35171ba0448e71d",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.20022845,
+        1,
+        0.421875
+      ]
+    }
+  },
+  "bill-b": {
+    "artist": "Bill B.",
+    "imageSha256": "cb3aaeadf0ceeeb58fb597901318d51c43e13181203c3b209fad0041206dbe4c",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.08,
+        1,
+        0.62929688
+      ]
+    }
+  },
+  "gin-sk": {
+    "artist": "GiNŌSKŌ",
+    "imageSha256": "a663b98f6c613b695f8331957a2ba6cdbd15afa75c1c10383c2b7024767cf57e",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.18476562,
+        1,
+        0.63046875
+      ]
+    }
+  },
+  "idego": {
+    "artist": "IDEGO",
+    "imageSha256": "520428d7d972c4f15e4a50034ce8a92cb0c3de5d59fba8fdf653afad715113d1",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.07567644,
+        1,
+        0.62929688
+      ]
+    }
+  },
+  "ej-swavv": {
+    "artist": "EJ Swavv",
+    "imageSha256": "500f9503b45d4955a20dca2e86d11b30213087f57c6c2b25d308cca95d36f054",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.15236698,
+        1,
+        0.62226563
+      ]
+    }
+  },
+  "tukool-tiff": {
+    "artist": "TuKool Tiff",
+    "imageSha256": "da2cd841f900f9565e4ff211f41fdb574df745dc0acf82711ffbcf77195fb385",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.10268699,
+        1,
+        0.62695312
+      ]
+    }
+  },
+  "de-aris": {
+    "artist": "De'Aris",
+    "imageSha256": "b95ff58cb6dc5247eaeea9547e793655ab6c5f6c46ae1e1ffa71e1b2939c1c9c",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.15620873,
+        1,
+        0.63632813
+      ]
+    }
+  },
+  "will-kellum": {
+    "artist": "Will Kellum",
+    "imageSha256": "103313ae30c734b6379aa225f0d31d60bf99b046ca76a79e3a833460bc885e44",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.06868902,
+        1,
+        0.64101563
+      ]
+    }
+  },
+  "outr-cty": {
+    "artist": "outr.cty",
+    "imageSha256": "2a3971dcdbad2c3957d9c514f6a1d590017b6ebe976ccc7a9fd47fe2d5b757d0",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.06498891,
+        1,
+        0.63398438
+      ]
+    }
+  },
+  "adriel-cruz": {
+    "artist": "Adriel Cruz",
+    "imageSha256": "c68ab6a167ae4ae0063b3491250a3e6bd34e3705ffa6fe726bb08214cf18fb3c",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.08755579,
+        1,
+        0.56191467
+      ]
+    }
+  },
+  "solachi-voz": {
+    "artist": "Solachi Voz",
+    "imageSha256": "1c7d07039d3a37e36d0af81691b2d09af35b4115d604de9492b1ea095db95c49",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.01000661,
+        1,
+        0.6
+      ]
+    }
+  },
+  "dre-murray": {
+    "artist": "Dre Murray",
+    "imageSha256": "1fc6367820164fd02fcff9c5c5f07af7b9b423ff8d17cc9dab8cd06917fef241",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.62109375
+      ]
+    }
+  },
+  "dillon-chase": {
+    "artist": "Dillon Chase",
+    "imageSha256": "b294c68ae6a070590bbfbcb6e6da5f51748a958665a2d1661be51e6b372ef878",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.09288513,
+        1,
+        0.62695312
+      ]
+    }
+  },
+  "battz": {
+    "artist": "Battz",
+    "imageSha256": "b652b22def383722f782011c3fee53bd18217dd7409e643791ce9605ef8e6798",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.10345603,
+        1,
+        0.6328125
+      ]
+    }
+  },
+  "k-drama": {
+    "artist": "K-Drama",
+    "imageSha256": "769d0d8e2fb22e6c848d335ace328a9a1a94a313821ecde70a7e61c8b26cfdfc",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.11184626,
+        1,
+        0.63515625
+      ]
+    }
+  },
+  "isaiah-robin": {
+    "artist": "Isaiah Robin",
+    "imageSha256": "cc6a68ccfe7af5d46add5af1a2433a574e165214d2e4f96c7a63a160e96b37e1",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.11852159,
+        1,
+        0.63046875
+      ]
+    }
+  },
+  "still-shadey": {
+    "artist": "Still Shadey",
+    "imageSha256": "76e0846985248b117242fe4e0f0aba87af57336dadca13b3fe2a043176e27415",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.17517901,
+        1,
+        0.62578125
+      ]
+    }
+  },
+  "tuv": {
+    "artist": "TUVÍ",
+    "imageSha256": "86d1d2533c71199fe415579d3b11edfdc0d12e65945daccedde9c80d6404fb2e",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.04134839,
+        1,
+        0.6984375
+      ]
+    }
+  },
+  "eliisetapart": {
+    "artist": "EliiSetApart",
+    "imageSha256": "7f7824b390fee78c2d56b8f2d5683fafb82c30f5970869932da5f9bfe926c901",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.6
+      ]
+    }
+  },
+  "tonyxtrotter": {
+    "artist": "tonyxtrotter",
+    "imageSha256": "970329f8b51115d624b73bd2220febb9517ecca632c9d6288f4d6c2d6a4eb864",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.11694589,
+        1,
+        0.50039063
+      ]
+    }
+  },
+  "xeem": {
+    "artist": "Xeem",
+    "imageSha256": "c31d360f9018588fe84ccddb7716606b6b314eb1925b0ae28cc94ef4fb320eab",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.2059695,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.07440387,
+        1,
+        0.69705328
+      ]
+    }
+  },
+  "big-lek": {
+    "artist": "Big Lek",
+    "imageSha256": "acfd14c00cd651a0a7b5fcf2bd107579fed8d1237907e469beea1e73dc128026",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0,
+        1,
+        0.5
+      ]
+    }
+  },
+  "rainbow-israel": {
+    "artist": "Rainbow Israel",
+    "imageSha256": "49cda5ffd763f7c93406f75ea597f6dc7a685bfeb7c30ffad8d52618edcfda17",
+    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "desktop": {
+      "ratio": 1.33333333,
+      "nameSize": 5.6,
+      "window": [
+        0,
+        0.03529666,
+        1,
+        0.5
+      ]
     }
   }
 }
