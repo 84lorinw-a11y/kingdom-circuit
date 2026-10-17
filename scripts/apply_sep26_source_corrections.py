@@ -12,6 +12,7 @@ from apply_sep13_content_repairs import NEW_EVENTS
 from apply_sep13_requested_events import UPSERTS
 from apply_sep26_approved_audit import patch_event as patch_approved_audit
 from apply_verified_show_artwork import patch_event as patch_show_artwork
+from apply_verified_show_artwork import reconcile_provider_duplicates
 from apply_sep26_requested_lineups import patch_event as patch_requested_lineups
 from catalog_removals import apply as apply_catalog_removals
 from apply_verified_date_corrections import patch_event as patch_verified_dates, normalize_provider_identity
@@ -168,6 +169,8 @@ def apply(root: Path = ROOT, today: str | None = None) -> None:
         patch_requested_lineups(row)
         patch_verified_dates(row)
         patch_show_artwork(row)
+
+    reconcile_provider_duplicates(feeds, entries)
 
     for name, rows in feeds.items():
         (root / name).write_text(json.dumps(rows, indent=2, ensure_ascii=False) + "\n")

@@ -11,6 +11,130 @@ import apply_verified_show_artwork as artwork
 
 
 class VerifiedShowArtworkTests(unittest.TestCase):
+    def test_known_manual_prefix_reimports_keep_already_published_unprefixed_ids(self):
+        from build_seo_site import event_path
+        for alias, identity in artwork.PROVIDER_ALIASES.items():
+            if not alias.startswith('manual:'):
+                continue
+            canonical = dict(id=identity, title='Reviewed show', startDate=artwork.BY_ID[identity]['startDate'],
+                             venue='Reviewed venue', city='Reviewed city', state='TX', artists=['Artist'],
+                             timezone='America/Chicago', endTime='23:00', firstSeen='2026-09-01')
+            incoming = dict(canonical, id=alias, timezone='', endTime='', firstSeen='2026-10-17')
+            wanted_path = event_path(canonical)
+            feeds = {'primary': [incoming], 'manual': [canonical]}
+            artwork.reconcile_provider_duplicates(feeds)
+            self.assertEqual(wanted_path, event_path(incoming))
+            self.assertEqual('America/Chicago', incoming['timezone'])
+            self.assertEqual('23:00', incoming['endTime'])
+            self.assertEqual('2026-09-01', incoming['firstSeen'])
+
+    def test_manual_reimport_keeps_full_billing_without_expanding_curated_profiles(self):
+        identity = 'above-the-noise-rooftop-washington-2026-10-31'
+        canonical = dict(id=identity, title='Above the Noise', startDate='2026-10-31',
+                         venue='Rooftop', city='Washington', state='DC', artists=['Howard Langford'],
+                         advertisedBilling=['Nate Period', 'Howard Langford', 'Kevin "KC" Campbell'])
+        incoming = dict(canonical, id='manual:' + identity, artists=list(canonical['advertisedBilling']))
+        artwork.reconcile_provider_duplicates({'primary': [incoming], 'manual': [canonical]})
+        self.assertEqual(['Howard Langford'], incoming['artists'])
+        self.assertEqual(3, len(incoming['advertisedBilling']))
+
+    def test_current_manual_artist_associations_win_over_stale_supplemental_copy(self):
+        identity = 'above-the-noise-rooftop-washington-2026-10-31'
+        seed = dict(id=identity, title='Above the Noise', startDate='2026-10-31',
+                    venue='Rooftop', city='Washington', state='DC',
+                    artists=['Nate Period', 'Howard Langford', 'Kevin "KC" Campbell'],
+                    advertisedBilling=['Nate Period', 'Howard Langford', 'Kevin "KC" Campbell', 'Bre Black'])
+        stale = dict(seed, artists=['Howard Langford'])
+        incoming = dict(seed, id='manual:' + identity)
+        feeds = {'events.json': [incoming], 'supplemental-events.json': [stale],
+                 'config/manual-events.json': [seed]}
+        artwork.reconcile_provider_duplicates(feeds)
+        self.assertEqual(['Nate Period', 'Howard Langford', 'Kevin "KC" Campbell'], incoming['artists'])
+        self.assertEqual(incoming['artists'], stale['artists'])
+        self.assertNotIn('Bre Black', incoming['artists'])
+        self.assertIn('Bre Black', incoming['advertisedBilling'])
+
+    def test_observed_label_calendar_duplicates_keep_published_provider_pages(self):
+        for identity, verified in artwork.PUBLISHED_DATES.items():
+            alias = next(k for k, v in artwork.PROVIDER_ALIASES.items() if v == identity)
+            canonical = dict(id=identity, title='Published concert', **verified, startTime='19:00',
+                             venue='Reviewed venue', city='Reviewed city', state='TX', artists=['Artist'])
+            incoming = dict(canonical, id=alias, title='Label concert', startTime='')
+            feeds = {'primary': [incoming], 'supplemental': [canonical]}
+            artwork.reconcile_provider_duplicates(feeds)
+            self.assertEqual(identity, incoming['id'])
+            self.assertEqual('Published concert', incoming['title'])
+            self.assertEqual('19:00', incoming['startTime'])
+
+    def test_reviewed_glovember_keeps_music_time_and_complete_bill(self):
+        from apply_sep26_requested_lineups import PATCHES
+        canonical = dict(copy.deepcopy(PATCHES['bandsintown:1040378722']),
+                         id='bandsintown:1040378722', city='Los Angeles', state='CA')
+        incoming = dict(canonical, id='ticketmaster:vv1AaZkfMGkd2fZDG',
+                        startTime='19:00', artists=['Miles Minnick'])
+        feeds = {'primary': [incoming], 'supplemental': [canonical]}
+        self.assertEqual(1, artwork.reconcile_provider_duplicates(feeds))
+        self.assertEqual('20:00', incoming['startTime'])
+        self.assertIn('CJ Emulous', incoming['artists'])
+        self.assertIn('Eli Williams', incoming['advertisedBilling'])
+        self.assertEqual(canonical, incoming)
+
+    def test_reviewed_festival_collapses_exact_primary_duplicate_not_other_shows(self):
+        from apply_sep26_requested_lineups import PATCHES
+        canonical = dict(copy.deepcopy(PATCHES['rock-the-universe-orlando-2027']),
+                         id='manual:rock-the-universe-orlando-2027')
+        incoming = dict(canonical, id='official:498b9c1935ee983f352d')
+        other = dict(canonical, id='separate-unreviewed-performance')
+        feeds = {'primary': [incoming, canonical, other]}
+        self.assertEqual(1, artwork.reconcile_provider_duplicates(feeds))
+        self.assertEqual([canonical['id'], other['id']], [row['id'] for row in feeds['primary']])
+        self.assertEqual('2027-01-23', feeds['primary'][0]['endDate'])
+
+    def test_exact_provider_duplicate_preserves_reviewed_identity_details_and_age(self):
+        from build_seo_site import event_path, merge_events
+        canonical = dict(id='bandsintown:108881783', title='Hulvey at Vines Center',
+                         startDate='2026-11-06', startTime='20:00', venue='Vines Center',
+                         city='Lynchburg', state='VA', artists=['Hulvey'], status='scheduled',
+                         sources=[{'name': 'Reviewed venue'}])
+        incoming = dict(canonical, id='official:82953bf17964628bbd9b',
+                        title='Hulvey — Live at Vines Center', startTime='',
+                        firstSeen='2026-10-17', sources=[{'name': 'Reach Records'}],
+                        status='cancelled', image='artist-photo.jpg')
+        old_path, canonical_path = event_path(incoming), event_path(canonical)
+        feeds = {'events.json': [incoming], 'supplemental-events.json': [canonical]}
+        history = [{'event': copy.deepcopy(canonical), 'firstSeenOnCalendar': '2026-09-01'}]
+        self.assertEqual(1, artwork.reconcile_provider_duplicates(feeds, history))
+        self.assertEqual(canonical, incoming)
+        self.assertEqual(canonical_path, event_path(incoming))
+        self.assertIn(old_path, incoming['legacyEventPaths'])
+        self.assertEqual('20:00', incoming['startTime'])
+        self.assertEqual('2026-09-01', incoming['firstSeen'])
+        self.assertEqual('cancelled', incoming['status'])
+        self.assertEqual(2, len(incoming['sources'][1:]))
+        self.assertEqual(artwork.BY_ID[canonical['id']]['image'], incoming['image'])
+        self.assertEqual(1, len(merge_events(*feeds.values())))
+        once = copy.deepcopy(feeds)
+        self.assertEqual(0, artwork.reconcile_provider_duplicates(feeds, history))
+        self.assertEqual(once, feeds)
+
+    def test_provider_duplicate_conflicts_fail_instead_of_guessing_or_restoring_history(self):
+        canonical = dict(id='bandsintown:108975912', startDate='2026-11-29', startTime='19:00',
+                         venue='Variety Playhouse', city='Atlanta', state='GA', artists=['Alex Jean'])
+        alias = dict(canonical, id='ticketmaster:Z7r9jZ1AAepra')
+        for field, value in [('startDate', '2026-12-01'), ('startTime', '21:00'),
+                             ('venue', 'Different venue'), ('artists', ['Another artist'])]:
+            feeds = {'primary': [dict(alias, **{field: value})], 'supplemental': [copy.deepcopy(canonical)]}
+            before = copy.deepcopy(feeds)
+            with self.assertRaisesRegex(ValueError, 'identity conflict'):
+                artwork.reconcile_provider_duplicates(feeds)
+            self.assertEqual(before, feeds)
+        with self.assertRaisesRegex(ValueError, 'missing reviewed record'):
+            artwork.reconcile_provider_duplicates({'primary': [alias]}, [{'event': canonical}])
+        unknown = {'primary': [dict(alias, id='unreviewed-provider-id')], 'supplemental': [canonical]}
+        before = copy.deepcopy(unknown)
+        self.assertEqual(0, artwork.reconcile_provider_duplicates(unknown))
+        self.assertEqual(before, unknown)
+
     def test_refresh_restores_artwork_without_changing_event_identity_or_details(self):
         for pin in artwork.PINS:
             with self.subTest(event=pin["id"]):
