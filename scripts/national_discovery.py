@@ -38,7 +38,7 @@ HOME_ARTIST_PRIORITY = ('whatuprg', 'brenno', '1k-phew', 'joz', 'tru-serva', 'cj
 # an old crop to a replacement photo or change directory/profile image framing.
 # asset, intrinsic width/height, object-position, scale, transform-origin
 HOME_ARTIST_CIRCLE_CROPS = {
-    '1k-phew': ('6df7b566d71761e10c8e1cb9-q95-w639.webp', 639, 960, '50% 12%', 1.05, '50% 0%'),
+    '1k-phew': ('31e76a330afa96b1e466948b-w639.webp', 639, 960, '50% 12%', 1.05, '50% 0%'),
     'cj-emulous': ('4c8ff9f99d115317dfbf4ebc-w1280.webp', 1280, 1920, '50% 15%', 1.55, '0% 0%'),
     'zay-lowly': ('1ef856d020303e85e2b334b5-w562.webp', 562, 1000, '50% 0%', 1.5, '100% 0%'),
     'shaquille-jones': ('b4cdb3853ce544c6c633adc6-w640.webp', 640, 427, '78% 35%', 1, '50% 50%'),

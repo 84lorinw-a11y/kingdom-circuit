@@ -705,7 +705,7 @@ def render_content(
     # variant URL prevents clients from reusing the earlier compressed copy.
     if digest == "6df7b566d71761e10c8e1cb99b4a38f94aebbf25d22fdb70307a37addc31e829":
         quality = max(quality, 95)
-        content_id += "-q95"
+        content_id = hashlib.sha256(f"{digest}:quality95".encode()).hexdigest()[:24]
     targets = [(width, staging / f"{content_id}-w{width}.webp") for width in chosen]
     actual_dimensions = backend.render(data, targets, quality, deadline)
     variants = tuple(
