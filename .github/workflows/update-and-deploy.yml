@@ -133,7 +133,7 @@ jobs:
             --message "chore: refresh show listings [skip ci]" \
             --replay "python scripts/replay_source_update.py full" \
             --sync-checkout \
-            events.json supplemental-events.json config/manual-events.json config/artists.json app.js coverage-gaps.json run-status.json cache/ticketmaster-attractions.json full-scan-status.json full-scan-candidates.json config/permanent-state-pages.json tests/test_update_events.py event-history.json
+            events.json supplemental-events.json config/manual-events.json config/artists.json app.js coverage-gaps.json run-status.json cache/ticketmaster-attractions.json full-scan-status.json full-scan-candidates.json bandsintown-status.json bandsintown-candidates.json config/permanent-state-pages.json tests/test_update_events.py event-history.json
 
       - name: Check out pinned approved SEO source
         uses: actions/checkout@v4

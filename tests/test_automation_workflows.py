@@ -22,6 +22,10 @@ class AutomationWorkflowTests(unittest.TestCase):
         save = main.split('- name: Save refreshed event data')[1].split('- name: Check out pinned')[0]
         self.assertIn('event-history.json', save)
         self.assertIn('config/permanent-state-pages.json', save)
+        # The expanded scan delegates to the REST collector, which also writes
+        # these two reports even when it discovers no additional shows.
+        self.assertIn('bandsintown-status.json', save)
+        self.assertIn('bandsintown-candidates.json', save)
         self.assertIn('TICKETMASTER_API_KEY:', save)
         self.assertIn('--sync-checkout', save)
         website = self.workflow('artist-website-refresh').split('- name: Save discovered shows')[1]
