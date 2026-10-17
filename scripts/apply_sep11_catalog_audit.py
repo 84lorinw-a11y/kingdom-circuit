@@ -420,6 +420,11 @@ def apply() -> dict:
 
 def assert_event(items: list[dict], event_id: str, artists: list[str]) -> dict:
     matches = [item for item in items if item.get("id") == event_id]
+    if not matches:
+        from retained_event_validation import completed_history_event
+        retained = completed_history_event(ROOT, event_id)
+        if retained is not None:
+            matches = [retained]
     if len(matches) != 1:
         raise SystemExit(f"Expected one {event_id}, found {len(matches)}")
     event = matches[0]

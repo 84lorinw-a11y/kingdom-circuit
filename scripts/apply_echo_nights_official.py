@@ -222,6 +222,13 @@ def enforce_json(root: Path) -> int:
         print(f"ECHO Nights 26 repaired in {filename} with official artwork: {IMAGE}")
 
     if found == 0:
+        from retained_event_validation import completed_history_event
+        retained = completed_history_event(root, EVENT_ID)
+        if retained is not None:
+            if retained.get('image') != IMAGE or retained.get('officialUrl') != TICKET_URL:
+                raise SystemExit('Retained ECHO Nights official artwork/details do not match the verified record')
+            print('ECHO Nights is completed; verified retained history without restoring an upcoming listing.')
+            return 0
         raise SystemExit("ECHO Nights 26 event was not found in any source file")
     return repaired
 
