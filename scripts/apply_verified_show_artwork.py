@@ -14,6 +14,7 @@ BY_ID = {pin["id"]: pin for pin in PINS}
 # Observed alternate-provider records for the same reviewed performances.
 # Do not match by artist/date alone: an artist can play twice on the same day.
 PROVIDER_ALIASES = {
+    "bandsintown:108856031": "manual:808-beezy-bandsintown-108856031",
     "ticketmaster:Z7r9jZ1AAepra": "bandsintown:108975912",
     "official:82953bf17964628bbd9b": "bandsintown:108881783",
     "ticketmaster:vv1AaZkfMGkd2fZDG": "bandsintown:1040378722",
@@ -100,7 +101,10 @@ def reconcile_provider_duplicates(feeds, history=()):
         ages = [row['firstSeen'] for row in [*reviewed, *incoming] if row.get('firstSeen')]
         for entry in history:
             event = entry.get('event', entry)
-            if event.get('id') == canonical_id:
+            if (event.get('id') in {canonical_id, alias}
+                    and event.get('startDate') == wanted.get('startDate')
+                    and all(norm(event.get(k)) == norm(wanted.get(k))
+                            for k in ('venue', 'city', 'state'))):
                 ages.extend(value for value in (event.get('firstSeen'),
                             entry.get('firstSeenOnCalendar')) if value)
         if ages:

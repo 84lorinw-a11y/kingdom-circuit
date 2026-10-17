@@ -11,6 +11,24 @@ import apply_verified_show_artwork as artwork
 
 
 class VerifiedShowArtworkTests(unittest.TestCase):
+    def test_returning_808_calendar_keeps_reviewed_url_flyer_and_original_discovery(self):
+        canonical = dict(id='manual:808-beezy-bandsintown-108856031',
+                         title='808 BEEZY — Live at FCA Warrior Night', startDate='2026-11-02',
+                         startTime='20:00', venue='FCA Warrior Night', city='Fort Wayne',
+                         state='IN', artists=['808 BEEZY'], firstSeen='2026-09-12')
+        incoming = dict(canonical, id='bandsintown:108856031', title='FCA Warrior Night',
+                        firstSeen='2026-10-17', image='artist-photo.webp')
+        history = [{'event': copy.deepcopy(canonical), 'firstSeenOnCalendar': '2026-09-11'},
+                   {'event': dict(incoming, firstSeen='2026-09-02')},
+                   {'event': dict(incoming, startDate='2025-11-02', firstSeen='2025-09-02')}]
+        before = copy.deepcopy(history)
+        self.assertEqual(1, artwork.reconcile_provider_duplicates({'primary': [incoming]}, history))
+        self.assertEqual(canonical['id'], incoming['id'])
+        self.assertEqual(canonical['title'], incoming['title'])
+        self.assertEqual('2026-09-02', incoming['firstSeen'])
+        self.assertEqual(artwork.BY_ID[canonical['id'].removeprefix('manual:')]['image'], incoming['image'])
+        self.assertEqual(before, history)
+
     def test_known_manual_prefix_reimports_keep_already_published_unprefixed_ids(self):
         from build_seo_site import event_path
         for alias, identity in artwork.PROVIDER_ALIASES.items():
