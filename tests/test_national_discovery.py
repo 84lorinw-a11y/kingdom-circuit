@@ -491,7 +491,7 @@ class NationalDiscoveryTests(unittest.TestCase):
             self.assertEqual(discovery.circle_portrait({'href':'/artists/someone-else/', 'image':original}), original)
 
     def test_home_circle_crop_adds_style_when_missing(self):
-        image = '<img src="/assets/optimized/6df7b566d71761e10c8e1cb9-w639.webp?quality=95" width="639" height="960">'
+        image = '<img src="/assets/optimized/6df7b566d71761e10c8e1cb9-w639.webp" width="639" height="960">'
         result = discovery.circle_portrait({'href':'/artists/1k-phew/', 'image':image})
         self.assertIn('style="object-position:50% 12%;transform:scale(1.05);transform-origin:50% 0%"', result)
 
