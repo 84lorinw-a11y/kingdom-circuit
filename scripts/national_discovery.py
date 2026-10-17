@@ -34,6 +34,16 @@ HOME_SUBTITLE = 'CHH concerts, christian rap shows and festivals!'
 # Owner-selected homepage order; only promote artists already eligible below.
 # Canonical profile slugs keep this independent of roster order and aliases.
 HOME_ARTIST_PRIORITY = ('whatuprg', 'brenno', '1k-phew', 'joz', 'tru-serva', 'cj-emulous')
+# Circle-only crops, visually reviewed on the exact current photos. Never apply
+# an old crop to a replacement photo or change directory/profile image framing.
+# asset, intrinsic width/height, object-position, scale, transform-origin
+HOME_ARTIST_CIRCLE_CROPS = {
+    '1k-phew': ('6df7b566d71761e10c8e1cb9-w639.webp', 639, 960, '50% 0%', 1.2, '95% 0%'),
+    'cj-emulous': ('4c8ff9f99d115317dfbf4ebc-w1280.webp', 1280, 1920, '50% 15%', 1.55, '0% 0%'),
+    'zay-lowly': ('1ef856d020303e85e2b334b5-w562.webp', 562, 1000, '50% 0%', 1.5, '100% 0%'),
+    'shaquille-jones': ('b4cdb3853ce544c6c633adc6-w640.webp', 640, 427, '78% 35%', 1, '50% 50%'),
+    'scarlito-jr': ('296279fcb910860da24b7c07-w529.webp', 529, 640, '50% 0%', 1.5, '95% 0%'),
+}
 FACEBOOK_HREF = 'https://www.facebook.com/profile.php?id=61593510924754'
 FACEBOOK_BUTTON = (f'<a class="kc-facebook-button" href="{FACEBOOK_HREF}" target="_blank" rel="noopener noreferrer" '
                    'aria-label="Kingdom Circuit on Facebook (opens in new tab)" title="Follow Kingdom Circuit on Facebook">'
@@ -317,9 +327,32 @@ def teaser(record, image=True, eager=False):
             f'<p class="kc-teaser-venue" title="{escape(record["meta"].get("Venue", ""))}">{escape(record["meta"].get("Venue", ""))}</p></div></article>')
 
 
+def circle_portrait(artist):
+    """Keep real image bytes/variants and scope reviewed framing to this shelf."""
+    image = artist['image']
+    slug = artist['href'].removeprefix(SITE_BASE + 'artists/').strip('/')
+    crop = HOME_ARTIST_CIRCLE_CROPS.get(slug)
+    if not crop:
+        return image
+    attrs = Document(image).one(lambda n: n.tag == 'img').attrs
+    asset, width, height, position, scale, origin = crop
+    if (Path(urlsplit(attrs.get('src', '')).path).name != asset
+            or attrs.get('width') != str(width) or attrs.get('height') != str(height)):
+        return image
+    declarations = [s.strip() for s in attrs.get('style', '').split(';')
+                    if s.strip() and s.partition(':')[0].strip() not in
+                    ('object-position', 'transform', 'transform-origin')]
+    declarations += [f'object-position:{position}', f'transform:scale({scale})',
+                     f'transform-origin:{origin}']
+    style = 'style="' + escape(';'.join(declarations), quote=True) + '"'
+    if 'style' in attrs:
+        return re.sub(r'style="[^"]*"', lambda _: style, image, count=1)
+    return image.replace('<img ', '<img ' + style + ' ', 1)
+
+
 def artist_tile(artist):
     # The adjacent visible name labels this single link; avoid reading it twice.
-    image = re.sub(r'alt="[^"]*"', 'alt=""', artist['image'])
+    image = re.sub(r'alt="[^"]*"', 'alt=""', circle_portrait(artist))
     image = re.sub(r'sizes="[^"]*"',
                    'sizes="(min-width: 1000px) 170px, (min-width: 700px) 30vw, 45vw"', image)
     count = artist['count']

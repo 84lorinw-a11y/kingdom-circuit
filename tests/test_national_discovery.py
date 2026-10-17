@@ -465,6 +465,36 @@ class NationalDiscoveryTests(unittest.TestCase):
         self.assertIn('<strong>Artist &amp; Co</strong>', tile)
         self.assertIn('2 upcoming shows', tile)
 
+    def test_home_circle_crops_only_reviewed_photos_and_preserves_sources(self):
+        for slug, (asset, width, height, position, scale, origin) in discovery.HOME_ARTIST_CIRCLE_CROPS.items():
+            with self.subTest(slug=slug):
+                image = (f'<img src="/assets/optimized/{asset}" width="{width}" height="{height}" '
+                         'srcset="small.webp 320w" alt="Artist" style="object-position:center;opacity:1">')
+                artist = {'href':f'/artists/{slug}/', 'image':image}
+                result = discovery.circle_portrait(artist)
+                self.assertIn(f'object-position:{position}', result)
+                self.assertIn(f'transform:scale({scale})', result)
+                self.assertIn(f'transform-origin:{origin}', result)
+                self.assertIn('opacity:1', result)
+                before = discovery.Document(image).one(lambda n: n.tag == 'img').attrs
+                after = discovery.Document(result).one(lambda n: n.tag == 'img').attrs
+                self.assertEqual({k:v for k,v in before.items() if k != 'style'},
+                                 {k:v for k,v in after.items() if k != 'style'})
+                self.assertEqual(discovery.circle_portrait({**artist, 'image':result}), result)
+                self.assertEqual(artist['image'], image)
+
+    def test_home_circle_crops_do_not_follow_replacement_photos_or_other_artists(self):
+        for slug, (asset, width, height, *_) in discovery.HOME_ARTIST_CIRCLE_CROPS.items():
+            original = f'<img src="/assets/optimized/{asset}" width="{width}" height="{height}">'
+            for image in (original.replace(asset, 'new-photo.webp'), original.replace(f'height="{height}"', 'height="999"')):
+                self.assertEqual(discovery.circle_portrait({'href':f'/artists/{slug}/', 'image':image}), image)
+            self.assertEqual(discovery.circle_portrait({'href':'/artists/someone-else/', 'image':original}), original)
+
+    def test_home_circle_crop_adds_style_when_missing(self):
+        image = '<img src="/assets/optimized/6df7b566d71761e10c8e1cb9-w639.webp" width="639" height="960">'
+        result = discovery.circle_portrait({'href':'/artists/1k-phew/', 'image':image})
+        self.assertIn('style="object-position:50% 0%;transform:scale(1.2);transform-origin:95% 0%"', result)
+
     def test_pipeline_runs_national_before_final_artifact_verification(self):
         root = Path(__file__).resolve().parents[1]
         workflow = (root / '.github/workflows/update-and-deploy.yml').read_text()
