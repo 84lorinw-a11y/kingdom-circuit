@@ -14,7 +14,7 @@ from apply_sep26_approved_audit import patch_event as patch_approved_audit
 from apply_verified_show_artwork import patch_event as patch_show_artwork
 from apply_sep26_requested_lineups import patch_event as patch_requested_lineups
 from catalog_removals import apply as apply_catalog_removals
-from apply_verified_date_corrections import patch_event as patch_verified_dates
+from apply_verified_date_corrections import patch_event as patch_verified_dates, normalize_provider_identity
 from apply_oct6_show_audit import apply as apply_oct6_audit
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -149,6 +149,12 @@ def apply(root: Path = ROOT, today: str | None = None) -> None:
             else:
                 row.update(status="merged", mergedIntoId=canonical["id"], mergeReason="Consolidated with the canonical Beyond The Walls 2026 listing; full lineup confirmed by promoter.")
 
+    # Normalize the observed provider alias before artwork pins are resolved.
+    # Retained history keeps its recorded identities; only current feeds change.
+    for rows in feeds.values():
+        for row in rows:
+            normalize_provider_identity(row)
+
     # Keep this event-specific artwork through the artist calendar refresh.
     # Hulvey's other shows continue to use their existing images.
     for row in [row for rows in feeds.values() for row in rows] + historical:
@@ -160,8 +166,8 @@ def apply(root: Path = ROOT, today: str | None = None) -> None:
             row["detailsPending"] = False
         patch_approved_audit(row)
         patch_requested_lineups(row)
-        patch_show_artwork(row)
         patch_verified_dates(row)
+        patch_show_artwork(row)
 
     for name, rows in feeds.items():
         (root / name).write_text(json.dumps(rows, indent=2, ensure_ascii=False) + "\n")

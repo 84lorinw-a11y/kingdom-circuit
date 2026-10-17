@@ -6,10 +6,35 @@ import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import update_events as collector
-from apply_verified_date_corrections import patch_event, SCOOTIE_DATES, SCOOTIE_URL
+from apply_verified_date_corrections import (patch_event, normalize_provider_identity,
+    SCOOTIE_DATES, SCOOTIE_URL, SCOOTIE_CANONICAL_ID, SCOOTIE_PROVIDER_ALIAS)
 
 
 class LocalConcertDateTests(unittest.TestCase):
+    def test_observed_provider_id_change_keeps_existing_public_identity(self):
+        from apply_verified_show_artwork import patch_event as pin_artwork
+        import build_seo_site as builder
+        event={'id':SCOOTIE_PROVIDER_ALIAS,'officialUrl':SCOOTIE_URL,
+               'title':'Scootie Wop at MATCH','city':'Houston','startDate':'2026-11-15',
+               'firstSeen':'2026-08-09','status':'cancelled'}
+        self.assertTrue(normalize_provider_identity(event))
+        patch_event(event); pin_artwork(event)
+        self.assertEqual(SCOOTIE_CANONICAL_ID,event['id'])
+        self.assertEqual('2026-11-14',event['startDate'])
+        self.assertEqual('2026-08-09',event['firstSeen'])
+        self.assertEqual('cancelled',event['status'])
+        self.assertEqual('assets/events/scootie-wop-chh-matters-houston-2026-11-14.jpg',event['image'])
+        self.assertEqual(builder.event_path(dict(event,id=SCOOTIE_CANONICAL_ID)),builder.event_path(event))
+        self.assertFalse(normalize_provider_identity(event))
+
+    def test_provider_identity_fix_does_not_touch_reschedules_or_other_sources(self):
+        base={'id':SCOOTIE_PROVIDER_ALIAS,'officialUrl':SCOOTIE_URL,'startDate':'2026-11-14'}
+        for changed in ({'id':'another-event'},{'officialUrl':'https://example.test/other'},
+                        {'startDate':'2026-12-12'}):
+            event={**base,**changed}; before=copy.deepcopy(event)
+            self.assertFalse(normalize_provider_identity(event))
+            self.assertEqual(before,event)
+
     def event(self, start, end):
         raw = {
             "@type": "MusicEvent", "name": "Scootie Wop at MATCH",
