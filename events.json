@@ -1457,7 +1457,7 @@
     "firstSeen": "2026-08-09T00:00:00Z",
     "authority": "artist_calendar",
     "lineupExplicit": true,
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "imageOverride": true
   },
   {
@@ -2872,7 +2872,7 @@
     "firstSeen": "2026-08-09T00:00:00Z",
     "authority": "artist_calendar",
     "lineupExplicit": true,
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "imageOverride": true
   },
   {
@@ -3324,7 +3324,7 @@
     "id": "manual:mayia-boxyard-saturdaze-2026",
     "title": "Boxyard Saturdaze",
     "startDate": "2026-10-10",
-    "startTime": "12:30",
+    "startTime": "11:30",
     "timezone": "America/New_York",
     "venue": "Boxyard RTP — BeatBox Stage",
     "address": "",
@@ -3339,7 +3339,7 @@
     "status": "scheduled",
     "ticketUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
     "officialUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
-    "image": "assets/events/mayia-boxyard-2026-10-10.png",
+    "image": "assets/events/mayia-boxyard-2026-10-10-portrait.jpg",
     "price": "",
     "sourceName": "Boxyard RTP official event",
     "sources": [
@@ -3366,7 +3366,7 @@
     "firstSeen": "2026-08-09T00:00:00Z",
     "authority": "official_event",
     "lineupExplicit": true,
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-26",
     "officialBill": [
       "DJ Watty Tha Shepherd",
       "MAYIA WARREN"
@@ -3791,7 +3791,12 @@
       "BigBreeze",
       "Mission",
       "Lyric The Geenyus",
-      "Bo Fisher"
+      "Bo Fisher",
+      "Xeem",
+      "Bruh",
+      "SOC Driz",
+      "Big Lek",
+      "TBlessing"
     ],
     "advertisedBilling": [
       "Queen Lee",
@@ -3808,7 +3813,8 @@
       "Lauryn Nicole",
       "Mr Griffin",
       "Zoe Junior",
-      "DJ Byrd"
+      "DJ Byrd",
+      "TBlessing"
     ],
     "officialBill": [
       "Queen Lee",
@@ -3825,7 +3831,8 @@
       "Lauryn Nicole",
       "Mr Griffin",
       "Zoe Junior",
-      "DJ Byrd"
+      "DJ Byrd",
+      "TBlessing"
     ],
     "headliner": "",
     "eventType": "festival",
@@ -3841,13 +3848,13 @@
     "imageSource": "Passion Fest official Givebutter event flyer",
     "imageSourceUrl": "https://givebutter.s3.amazonaws.com/media/66EVLgGnfueAfTP34WJm8ePqTwFxXIjEUam2gay7.jpg",
     "organizer": "Passion Fest",
-    "publicDescription": "Passion Fest II brings Christian rap to Charlotte with Queen Lee, Big Breeze, XEEM, Mission, Princess Tayy SGL, Altar Ego, BRUH, KAPPAA!, Lyric The Geenyus, SOC Driz, Big Lek, Lauryn Nicole, Mr Griffin, Zoe Junior, and DJ Byrd.",
+    "publicDescription": "Passion Fest II brings Christian rap to Charlotte with Queen Lee, Big Breeze, XEEM, Mission, Princess Tayy SGL, Altar Ego, BRUH, KAPPAA!, Lyric The Geenyus, SOC Driz, Big Lek, Lauryn Nicole, Mr Griffin, Zoe Junior, and DJ Byrd. Also featuring TBlessing.",
     "sourceName": "Passion Fest official event page and flyer",
     "authority": "official_event",
     "confidence": "high",
     "firstSeen": "2026-09-29T15:14:40Z",
     "lastVerified": "2026-09-29T15:14:40Z",
-    "notes": "October 8 owner-provided lineup flyer confirms Queen Lee, Big Breeze, XEEM, Mission, Princess Tayy SGL, Altar Ego, BRUH, KAPPAA!, Lyric The Geenyus, SOC Driz, Big Lek, Lauryn Nicole, Mr Griffin, and Zoe Junior. The organizer separately confirms DJ Byrd in its October 7 Instagram announcement. Bill all 15 acts, including those without curated profiles. Big Breeze links to the existing BigBreeze profile through its verified alias; do not create a second identity for Markel. The owner confirms Bo Fisher performs under Altar Ego; retain Bo Fisher as a curated schedule association rather than a separate solo billing. Mission and Lyric The Geenyus are already curated and gain schedule associations. The earlier Bo Fisher promotional caption alone was not explicit performance confirmation. Do not infer extra Altar Ego members on this particular date or make the group a global alias for Bo. Preserve the October 11 date, 5 PM start confirmed again in the organizer October 8 post, venue, original artwork, canonical page, and earliest discovery timestamp.",
+    "notes": "October 8 owner-provided lineup flyer confirms Queen Lee, Big Breeze, XEEM, Mission, Princess Tayy SGL, Altar Ego, BRUH, KAPPAA!, Lyric The Geenyus, SOC Driz, Big Lek, Lauryn Nicole, Mr Griffin, and Zoe Junior. The organizer separately confirms DJ Byrd in its October 7 Instagram announcement. Bill all 15 acts, including those without curated profiles. Big Breeze links to the existing BigBreeze profile through its verified alias; do not create a second identity for Markel. The owner confirms Bo Fisher performs under Altar Ego; retain Bo Fisher as a curated schedule association rather than a separate solo billing. Mission and Lyric The Geenyus are already curated and gain schedule associations. The earlier Bo Fisher promotional caption alone was not explicit performance confirmation. Do not infer extra Altar Ego members on this particular date or make the group a global alias for Bo. Preserve the October 11 date, 5 PM start confirmed again in the organizer October 8 post, venue, original artwork, canonical page, and earliest discovery timestamp. October 12: newly owner-verified artist profiles linked to confirmed billing.",
     "sources": [
       {
         "name": "Passion Fest official event page and flyer",
@@ -3862,8 +3869,37 @@
         "type": "official_event",
         "authority": "official_event",
         "priority": 112
+      },
+      {
+        "name": "Bo Fisher official Passion Fest promotional post",
+        "url": "https://www.instagram.com/bo_fisher_/reel/DeHCihVxAik/",
+        "type": "official_artist",
+        "authority": "artist_announcement",
+        "priority": 112
+      },
+      {
+        "name": "Passion Fest official DJ Byrd performance announcement",
+        "url": "https://www.instagram.com/passionfestnc/p/DeMoL62RurM/",
+        "type": "official_event",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "Passion Fest current organizer date and 5 PM start confirmation",
+        "url": "https://www.instagram.com/passionfestnc/p/DePusD-DxSk/",
+        "type": "official_event",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "TBlessing official Passion Fest performance announcement",
+        "url": "https://www.instagram.com/tblessing_18/reel/DeJ081iTl7j/",
+        "type": "official_artist",
+        "authority": "artist_announcement",
+        "priority": 112
       }
-    ]
+    ],
+    "auditVerified": "2026-10-12"
   },
   {
     "id": "manual:aamu-gospel-explosion-huntsville-2026-10-11",
@@ -3998,8 +4034,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.eventim.us/event/parris-chariz/699959",
     "officialUrl": "https://www.eventim.us/event/parris-chariz/699959",
-    "image": "assets/artists/parris-chariz.webp",
-    "imageType": "artist",
+    "image": "assets/events/parris-chariz-dallas-2026-10-11.jpg",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "price": "",
     "sourceName": "Spune / Eventim official listing",
@@ -4021,7 +4057,10 @@
         "authority": "official_event",
         "priority": 100
       }
-    ]
+    ],
+    "imageOverride": true,
+    "imageSource": "Eventim official Parris Chariz Dallas event flyer",
+    "imageSourceUrl": "https://www.eventim.us/event/parris-chariz/699959"
   },
   {
     "id": "manual:cj-emulous-turlock-back-to-school-2026",
@@ -4064,7 +4103,7 @@
     "firstSeen": "2026-08-09T00:00:00Z",
     "authority": "artist_calendar",
     "lineupExplicit": true,
-    "auditVerified": "2026-09-22",
+    "auditVerified": "2026-09-13",
     "imageOverride": true,
     "officialBill": [
       "CJ Emulous",
@@ -4668,7 +4707,7 @@
     "firstSeen": "2026-08-09T00:00:00Z",
     "authority": "official_event",
     "lineupExplicit": true,
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "notes": "One event with two confirmed acoustic sets: 10–11 AM and 12–1 PM.",
     "imageOverride": true,
     "imageSource": "Previously approved MAYIA photo",
@@ -5092,7 +5131,7 @@
     "firstSeen": "2026-08-09T00:00:00Z",
     "authority": "artist_calendar",
     "lineupExplicit": true,
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-13",
     "imageOverride": true,
     "imageSource": "Mission official October 17 concert flyer",
     "imageSourceUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento"
@@ -5442,7 +5481,7 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-26",
     "id": "manual:alex-zurdo-zona-zero-san-juan-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -8799,7 +8838,7 @@
     "eventType": "festival",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "assets/events/flavor-fest-friday-2026.webp",
+    "image": "assets/events/flavor-fest-friday-2026.png",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -8899,7 +8938,7 @@
       "Jailynn",
       "Eli Williams"
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-10-12",
     "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown. Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates. October 8: owner verified TVNK in the artist Sheet. His September 25 collaborative announcement with Flavor Fest explicitly confirms November 6 at Crossover Church. Connect the existing TVNK billing to his curated artist profile. October 12: newly owner-verified artist profiles linked to confirmed billing.",
     "imageSource": "Official Flavor Fest Friday concert poster",
     "imageSourceUrl": "https://www.flavorfest.org/schedule"
@@ -9399,7 +9438,7 @@
     "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/",
-    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/989d4d2e-f454-4a1b-99df-cc78cf6e6749/FF26-Promo-Saturday-Night.jpg",
+    "image": "assets/events/flavor-fest-saturday-2026.jpg",
     "price": "",
     "sourceName": "Flavor Fest official Saturday poster",
     "sources": [
@@ -9541,117 +9580,6 @@
     "imageOverride": true,
     "imageSource": "Official Christlike University Florida tour flyer listing Miami, Jacksonville and Orlando dates",
     "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
-  },
-  {
-    "id": "ticketmaster:vv1AAZk3FGkdmpCG1",
-    "title": "Beyond The Walls 2026",
-    "startDate": "2026-11-07",
-    "startTime": "19:30",
-    "timezone": "America/New_York",
-    "venue": "The Cambridge Room at House of Blues Cleveland",
-    "address": "308 Euclid Ave",
-    "city": "Cleveland",
-    "state": "OH",
-    "country": "US",
-    "artists": [
-      "KB",
-      "Brenno",
-      "Mike Teezy",
-      "Porsha Love",
-      "Eli Williams"
-    ],
-    "headliner": "KB",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
-    "officialUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
-    "image": "assets/events/beyond-the-walls-cleveland-2026-11-07.jpg",
-    "price": "",
-    "sourceName": "Ticketmaster / House of Blues Cleveland",
-    "sources": [
-      {
-        "name": "Ticketmaster / House of Blues Cleveland",
-        "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      },
-      {
-        "name": "Beyond The Walls promoter's official flyer",
-        "url": "https://www.instagram.com/p/DbwTgsNRsyI/",
-        "type": "manual_verified",
-        "authority": "organizer",
-        "priority": 115
-      },
-      {
-        "name": "Ticketmaster",
-        "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
-        "type": "ticketmaster",
-        "authority": "venue_ticket",
-        "priority": 94
-      }
-    ],
-    "lastVerified": "2026-09-12T14:12:12Z",
-    "confidence": "high",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-07-30T03:46:47Z",
-    "doorsTime": "19:30",
-    "startDateTime": "2026-11-07T19:30:00-05:00",
-    "advertisedBilling": [
-      "KB",
-      "Brenno",
-      "Mike Teezy",
-      "Porsha Love",
-      "Taylor Wells",
-      "Renzoe",
-      "Eli Williams"
-    ],
-    "officialBill": [
-      "KB",
-      "Brenno",
-      "Mike Teezy",
-      "Porsha Love",
-      "Taylor Wells",
-      "Renzoe",
-      "Eli Williams"
-    ],
-    "lineupExplicit": true,
-    "auditVerified": "2026-09-26",
-    "authority": "venue_ticket",
-    "legacyEventPaths": [
-      "/event/beyond-the-walls-2026-11-07-cleveland-91b8a7/",
-      "/event/beyond-the-walls-3-2026-11-07-cleveland-3fa023/"
-    ],
-    "legacyEventNotice": "Beyond The Walls 2026 takes place November 7 at 7:30 PM.",
-    "mergedFromIds": [
-      "bandsintown:108631622",
-      "official:4e2fc5c7c02ab1d34b9e",
-      "supplemental:beyond-the-walls-3-brenno-2026"
-    ],
-    "notes": "Promoter submission and the official Eric Stephens / Beyond The Walls Instagram flyer confirm KB, Brenno, Mike Teezy, Porsha Love, Taylor Wells and Renzoe. This resolves the earlier incomplete Ticketmaster bill. Flyer explicitly dates November 7, 2026 and labels 6 PM VIP entry / 7:30 PM GA doors; Ticketmaster confirms music at 8 PM; the owner explicitly requested that Kingdom Circuit display 7:30 PM for this show on September 26, superseding the earlier 8 PM display. The owner requested the public title Beyond The Walls 2026 on September 28, superseding Beyond The Walls 3 and the submission's conflicting 2027 title. The owner also requested Eli Williams as DJ; his name appears on the same flyer and his official profile https://www.instagram.com/eliwilliamssss/ confirms his DJ role. Taylor Wells and Renzoe remain visible unlinked billing because they are outside the curated roster. Eli Williams was added to the owner-verified roster on September 29 and is now linked to his artist profile.",
-    "sourceConflicts": [
-      {
-        "url": "https://music.apple.com/us/concerts/ce.01a1c61a-49a9-4e19-b629-46bac43b4970",
-        "reportedArtist": "Mike Teezy",
-        "reportedStartTime": "18:00",
-        "resolution": "Promoter submission and official flyer confirm Mike Teezy on the canonical event. Keep the duplicate merged; 6 PM is VIP entry on the flyer. Ticketmaster labels 7:30 PM doors and 8 PM music; the owner explicitly chose the 7:30 PM listing time for Kingdom Circuit.",
-        "resolvedBy": "https://www.instagram.com/p/DbwTgsNRsyI/",
-        "resolvedDate": "2026-09-26"
-      },
-      {
-        "url": "https://www.bandsintown.com/e/108631622",
-        "reportedArtist": "Mike Teezy",
-        "reportedStartTime": "18:00",
-        "resolution": "Promoter submission and official flyer confirm Mike Teezy on the canonical event. Keep the duplicate merged; 6 PM is VIP entry on the flyer. Ticketmaster labels 7:30 PM doors and 8 PM music; the owner explicitly chose the 7:30 PM listing time for Kingdom Circuit.",
-        "resolvedBy": "https://www.instagram.com/p/DbwTgsNRsyI/",
-        "resolvedDate": "2026-09-26"
-      }
-    ],
-    "imageOverride": true,
-    "imageSource": "Promoter's official Beyond The Walls Cleveland flyer",
-    "imageSourceUrl": "https://www.instagram.com/p/DbwTgsNRsyI/"
   },
   {
     "id": "bandsintown:108940372",
@@ -10971,45 +10899,6 @@
     ]
   },
   {
-    "title": "The Kickback",
-    "startDate": "2026-11-14",
-    "startTime": "19:00",
-    "timezone": "America/Chicago",
-    "venue": "2305 SE 14th St",
-    "address": "2305 SE 14th St",
-    "city": "Grand Prairie",
-    "state": "TX",
-    "country": "US",
-    "artists": [
-      "CJ Emulous"
-    ],
-    "headliner": "CJ Emulous",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-    "officialUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-    "image": "assets/events/cj-emulous-kickback-2026.svg",
-    "price": "",
-    "sourceName": "CJ Emulous official calendar",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "CJ Emulous official calendar",
-        "url": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-11",
-    "id": "manual:cj-emulous-kickback-grand-prairie-2026",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true
-  },
-  {
     "title": "GLO Concert",
     "startDate": "2026-11-15",
     "startTime": "",
@@ -11762,7 +11651,7 @@
     "officialUrl": "https://www.eventbrite.com/e/revival-nights-tickets-2000057247066",
     "image": "assets/events/asap-preach-revival-nights-2026-11-21-portrait.jpg",
     "imageType": "event_artwork",
-    "detailImageLayout": "landscape",
+    "detailImageLayout": "portrait",
     "imagePosition": "center",
     "imageOverride": true,
     "price": "Free",
@@ -11776,8 +11665,8 @@
       "Dray Day Ministries"
     ],
     "organizer": "Revival Ignited Ministries",
-    "imageSource": "Revival Nights official Eventbrite artwork",
-    "imageSourceUrl": "https://www.eventbrite.com/e/revival-nights-tickets-2000057247066",
+    "imageSource": "Owner-selected official Instagram show artwork",
+    "imageSourceUrl": "https://www.instagram.com/p/DeCQS13GggV/",
     "auditVerified": "2026-09-22",
     "firstSeen": "2026-09-22T22:10:30Z",
     "lastVerified": "2026-09-22T22:10:30Z",
@@ -12485,7 +12374,7 @@
     "firstSeen": "2026-08-09T00:00:00Z",
     "authority": "artist_calendar",
     "lineupExplicit": true,
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-09-23",
     "imageOverride": true,
     "notes": "CJ Emulous's official calendar confirms Miles Minnick and CJ Emulous at Zion Ultra Lounge on December 5, 2026 at 7:00 PM."
   },
@@ -12549,8 +12438,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.songkick.com/artists/10314485-kaden-jordan",
     "officialUrl": "https://kadenjordan.com/pages/tour",
-    "image": "https://images.sk-static.com/images/media/profile_images/artists/10314485/large_avatar",
-    "imageType": "artist",
+    "image": "assets/events/kaden-jordan-babytooth-tour-2026-portrait.jpg",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "price": "",
     "sourceName": "Kaden Jordan official tour page / Songkick",
@@ -12572,7 +12461,11 @@
         "authority": "artist_calendar",
         "priority": 90
       }
-    ]
+    ],
+    "imageOverride": true,
+    "imageSource": "Owner-selected official Instagram show artwork",
+    "imageSourceUrl": "https://www.instagram.com/p/DdC2jcyR5h8/",
+    "detailImageLayout": "portrait"
   },
   {
     "id": "manual:egr-2026-12-12-jamestown-nd",
@@ -13949,5 +13842,116 @@
     "postalCode": "31601",
     "price": "Park admission or 2027 Season Pass required; general concert admission included",
     "notes": "Official 2027 calendar confirms Lecrae May 8 at 8 PM; FAQ says venue seating opens one hour before all concerts. Other season artists perform on different dates and are not this concert lineup. General concert entry is not unconditionally free: paid park admission or a valid season pass is required. No event-specific flyer found; use the approved local Lecrae photo."
+  },
+  {
+    "id": "ticketmaster:vv1AAZk3FGkdmpCG1",
+    "title": "Beyond The Walls 2026",
+    "startDate": "2026-11-07",
+    "startTime": "19:30",
+    "timezone": "America/New_York",
+    "venue": "The Cambridge Room at House of Blues Cleveland",
+    "address": "308 Euclid Ave",
+    "city": "Cleveland",
+    "state": "OH",
+    "country": "US",
+    "artists": [
+      "KB",
+      "Brenno",
+      "Mike Teezy",
+      "Porsha Love",
+      "Eli Williams"
+    ],
+    "headliner": "KB",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+    "officialUrl": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+    "image": "assets/events/beyond-the-walls-cleveland-2026-11-07.jpg",
+    "price": "",
+    "sourceName": "Ticketmaster / House of Blues Cleveland",
+    "sources": [
+      {
+        "name": "Ticketmaster / House of Blues Cleveland",
+        "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      },
+      {
+        "name": "Beyond The Walls promoter's official flyer",
+        "url": "https://www.instagram.com/p/DbwTgsNRsyI/",
+        "type": "manual_verified",
+        "authority": "organizer",
+        "priority": 115
+      },
+      {
+        "name": "Ticketmaster",
+        "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+        "type": "ticketmaster",
+        "authority": "venue_ticket",
+        "priority": 94
+      }
+    ],
+    "lastVerified": "2026-09-12T14:12:12Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-07-30T03:46:47Z",
+    "doorsTime": "19:30",
+    "startDateTime": "2026-11-07T19:30:00-05:00",
+    "advertisedBilling": [
+      "KB",
+      "Brenno",
+      "Mike Teezy",
+      "Porsha Love",
+      "Taylor Wells",
+      "Renzoe",
+      "Eli Williams"
+    ],
+    "officialBill": [
+      "KB",
+      "Brenno",
+      "Mike Teezy",
+      "Porsha Love",
+      "Taylor Wells",
+      "Renzoe",
+      "Eli Williams"
+    ],
+    "lineupExplicit": true,
+    "auditVerified": "2026-09-26",
+    "authority": "venue_ticket",
+    "legacyEventPaths": [
+      "/event/beyond-the-walls-2026-11-07-cleveland-91b8a7/",
+      "/event/beyond-the-walls-3-2026-11-07-cleveland-3fa023/"
+    ],
+    "legacyEventNotice": "Beyond The Walls 2026 takes place November 7 at 7:30 PM.",
+    "mergedFromIds": [
+      "bandsintown:108631622",
+      "official:4e2fc5c7c02ab1d34b9e",
+      "supplemental:beyond-the-walls-3-brenno-2026"
+    ],
+    "notes": "Promoter submission and the official Eric Stephens / Beyond The Walls Instagram flyer confirm KB, Brenno, Mike Teezy, Porsha Love, Taylor Wells and Renzoe. This resolves the earlier incomplete Ticketmaster bill. Flyer explicitly dates November 7, 2026 and labels 6 PM VIP entry / 7:30 PM GA doors; Ticketmaster confirms music at 8 PM; the owner explicitly requested that Kingdom Circuit display 7:30 PM for this show on September 26, superseding the earlier 8 PM display. The owner requested the public title Beyond The Walls 2026 on September 28, superseding Beyond The Walls 3 and the submission's conflicting 2027 title. The owner also requested Eli Williams as DJ; his name appears on the same flyer and his official profile https://www.instagram.com/eliwilliamssss/ confirms his DJ role. Taylor Wells and Renzoe remain visible unlinked billing because they are outside the curated roster. Eli Williams was added to the owner-verified roster on September 29 and is now linked to his artist profile.",
+    "sourceConflicts": [
+      {
+        "url": "https://music.apple.com/us/concerts/ce.01a1c61a-49a9-4e19-b629-46bac43b4970",
+        "reportedArtist": "Mike Teezy",
+        "reportedStartTime": "18:00",
+        "resolution": "Promoter submission and official flyer confirm Mike Teezy on the canonical event. Keep the duplicate merged; 6 PM is VIP entry on the flyer. Ticketmaster labels 7:30 PM doors and 8 PM music; the owner explicitly chose the 7:30 PM listing time for Kingdom Circuit.",
+        "resolvedBy": "https://www.instagram.com/p/DbwTgsNRsyI/",
+        "resolvedDate": "2026-09-26"
+      },
+      {
+        "url": "https://www.bandsintown.com/e/108631622",
+        "reportedArtist": "Mike Teezy",
+        "reportedStartTime": "18:00",
+        "resolution": "Promoter submission and official flyer confirm Mike Teezy on the canonical event. Keep the duplicate merged; 6 PM is VIP entry on the flyer. Ticketmaster labels 7:30 PM doors and 8 PM music; the owner explicitly chose the 7:30 PM listing time for Kingdom Circuit.",
+        "resolvedBy": "https://www.instagram.com/p/DbwTgsNRsyI/",
+        "resolvedDate": "2026-09-26"
+      }
+    ],
+    "imageOverride": true,
+    "imageSource": "Promoter's official Beyond The Walls Cleveland flyer",
+    "imageSourceUrl": "https://www.instagram.com/p/DbwTgsNRsyI/"
   }
 ]
