@@ -62,10 +62,10 @@ class SocialPreviewTests(unittest.TestCase):
                 social_preview.SOCIAL_PREVIEW_URL,
             )
             self.assertEqual(
-                social_preview.meta_content(homepage, "og:image:width"), "1200"
+                social_preview.meta_content(homepage, "og:image:width"), "512"
             )
             self.assertEqual(
-                social_preview.meta_content(homepage, "og:image:height"), "630"
+                social_preview.meta_content(homepage, "og:image:height"), "512"
             )
             self.assertEqual(
                 social_preview.meta_content(homepage, "twitter:image:alt"),
@@ -96,10 +96,29 @@ class SocialPreviewTests(unittest.TestCase):
 
     def test_uses_production_identity_only(self) -> None:
         self.assertEqual(
-            "https://kingdomcircuit.com/assets/social-preview-wordmark-20260917.png",
+            "https://kingdomcircuit.com/assets/social-preview-circle-20261017.png",
             social_preview.SOCIAL_PREVIEW_URL,
         )
         self.assertNotIn("github.io", social_preview.SOCIAL_PREVIEW_URL)
+
+    def test_migrates_previous_wordmark_and_preserves_page_identity(self) -> None:
+        previous = '''<html><head><title>Original SEO title</title>
+<link rel="canonical" href="https://kingdomcircuit.com/">
+<meta property="og:image" content="https://kingdomcircuit.com/assets/social-preview-wordmark-20260917.png">
+<meta name="twitter:image" content="https://kingdomcircuit.com/assets/social-preview-wordmark-20260917.png">
+</head><body>Original page</body></html>'''
+        home, changed = social_preview.apply_to_html(previous, Path("index.html"))
+        self.assertTrue(changed)
+        self.assertEqual(social_preview.meta_content(home, "twitter:card"), "summary")
+        self.assertEqual(social_preview.meta_content(home, "og:title"), social_preview.HOMEPAGE_PREVIEW_TITLE)
+        self.assertEqual(social_preview.meta_content(home, "og:description"), social_preview.HOMEPAGE_PREVIEW_DESCRIPTION)
+        self.assertIn("<title>Original SEO title</title>", home)
+        self.assertIn('<link rel="canonical" href="https://kingdomcircuit.com/">', home)
+        self.assertIn("<body>Original page</body>", home)
+        generic, changed = social_preview.apply_to_html(previous, Path("shows/index.html"))
+        self.assertTrue(changed)
+        self.assertEqual(social_preview.meta_content(generic, "og:image"), social_preview.SOCIAL_PREVIEW_URL)
+        self.assertEqual(social_preview.meta_content(generic, "og:title"), "")
 
     def test_mixed_metadata_never_overwrites_specific_event_art(self) -> None:
         output, changed = social_preview.apply_to_html(

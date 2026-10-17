@@ -13,18 +13,22 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOCIAL_PREVIEW_REL = Path("assets/social-preview-wordmark-20260917.png")
+SOCIAL_PREVIEW_REL = Path("assets/social-preview-circle-20261017.png")
 SOCIAL_PREVIEW_URL = (
-    "https://kingdomcircuit.com/assets/social-preview-wordmark-20260917.png"
+    "https://kingdomcircuit.com/assets/social-preview-circle-20261017.png"
 )
-SOCIAL_PREVIEW_ALT = "The Kingdom Circuit — Find Christian Hip-Hop Shows & Festivals"
-SOCIAL_PREVIEW_SIZE = (1200, 630)
+SOCIAL_PREVIEW_ALT = "Kingdom Circuit circular Instagram logo"
+SOCIAL_PREVIEW_SIZE = (512, 512)
+HOMEPAGE_PREVIEW_TITLE = "Find Your Next CHH Show | Kingdom Circuit"
+HOMEPAGE_PREVIEW_DESCRIPTION = (
+    "Christian hip-hop concerts and festivals across the U.S. and Canada."
+)
 SOCIAL_PREVIEW_SHA256 = (
-    "af873c5e21288dd2d74cac91fc8a7f52f569e315978de7fb1a64ab11783bc110"
+    "a55b26f732ad22be4f9c5b1e39518886b7124202ba2db158f61e607f6e009747"
 )
 
 GENERIC_SOCIAL_IMAGE_RE = re.compile(
-    r"(?:^|/)assets/(?:(?:logo|logo-wordmark)\.(?:png|svg)|social-preview\.png)"
+    r"(?:^|/)assets/(?:(?:logo|logo-wordmark)\.(?:png|svg)|social-preview(?:-wordmark-20260917)?\.png)"
     r"(?:[?#]|$)",
     flags=re.I,
 )
@@ -109,11 +113,19 @@ def apply_to_html(text: str, relative: Path) -> tuple[str, bool]:
         ("og:image:width", str(SOCIAL_PREVIEW_SIZE[0])),
         ("og:image:height", str(SOCIAL_PREVIEW_SIZE[1])),
         ("og:image:alt", SOCIAL_PREVIEW_ALT),
-        ("twitter:card", "summary_large_image"),
+        ("twitter:card", "summary"),
         ("twitter:image", SOCIAL_PREVIEW_URL),
         ("twitter:image:alt", SOCIAL_PREVIEW_ALT),
     ):
         text = set_meta(text, key, value)
+    if relative == Path("index.html"):
+        for key, value in (
+            ("og:title", HOMEPAGE_PREVIEW_TITLE),
+            ("twitter:title", HOMEPAGE_PREVIEW_TITLE),
+            ("og:description", HOMEPAGE_PREVIEW_DESCRIPTION),
+            ("twitter:description", HOMEPAGE_PREVIEW_DESCRIPTION),
+        ):
+            text = set_meta(text, key, value)
     return text, text != original
 
 
@@ -142,7 +154,7 @@ def install_asset(site: Path) -> None:
         )
     if sha256(source) != SOCIAL_PREVIEW_SHA256:
         raise RuntimeError(
-            "Production social preview does not match the approved test asset: "
+            "Production social preview does not match the approved circle logo: "
             f"{source}"
         )
 
@@ -189,7 +201,7 @@ def verify(site: Path) -> dict[str, int]:
                 "og:image:width": str(SOCIAL_PREVIEW_SIZE[0]),
                 "og:image:height": str(SOCIAL_PREVIEW_SIZE[1]),
                 "og:image:alt": SOCIAL_PREVIEW_ALT,
-                "twitter:card": "summary_large_image",
+                "twitter:card": "summary",
                 "twitter:image": SOCIAL_PREVIEW_URL,
                 "twitter:image:alt": SOCIAL_PREVIEW_ALT,
             }
@@ -206,6 +218,14 @@ def verify(site: Path) -> dict[str, int]:
             failures.append("social-preview:homepage-og-image")
         if meta_content(text, "twitter:image") != SOCIAL_PREVIEW_URL:
             failures.append("social-preview:homepage-twitter-image")
+        for key, wanted in (
+            ("og:title", HOMEPAGE_PREVIEW_TITLE),
+            ("twitter:title", HOMEPAGE_PREVIEW_TITLE),
+            ("og:description", HOMEPAGE_PREVIEW_DESCRIPTION),
+            ("twitter:description", HOMEPAGE_PREVIEW_DESCRIPTION),
+        ):
+            if meta_content(text, key) != wanted:
+                failures.append(f"social-preview:homepage-metadata:{key}")
 
     if failures:
         raise RuntimeError(
