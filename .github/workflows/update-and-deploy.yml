@@ -18,6 +18,8 @@ permissions:
 concurrency:
   group: kingdom-circuit-pages
   cancel-in-progress: false
+  # Keep full scans and collector-triggered deploys instead of replacing pending runs.
+  queue: max
 
 env:
   APPROVED_SEO_REPO: 84lorinw-a11y/kingdom-circuit-test

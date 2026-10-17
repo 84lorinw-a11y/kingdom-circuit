@@ -38,6 +38,7 @@ class AutomationWorkflowTests(unittest.TestCase):
         self.assertIn('"Refresh official artist website shows"', main)
         self.assertIn('"Merge verified artist seed events"', main)
         self.assertIn('cancel-in-progress: false', main)
+        self.assertIn('queue: max', main)
         for name in ('Add priority artist fallback calendars', 'Collect upcoming shows', 'Run expanded all-artist source scan', 'Save refreshed event data'):
             condition = main.split('- name: ' + name)[1].split('\n')[1]
             self.assertIn("github.event_name == 'schedule'", condition)
