@@ -1,13 +1,51 @@
 import copy
+import json
 import sys
+import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from apply_sep26_requested_lineups import PATCHES, patch_event
 
 
 class RequestedLineupTests(unittest.TestCase):
+    def test_gate_checks_reviewed_record_before_provider_display_merge(self):
+        import verify_sep26_requested_lineups as gate
+        wanted = dict(startDate="2099-10-31", startTime="16:00", title="Reviewed concert",
+                      venue="Concert Park", artists=["Reviewed artist"],
+                      advertisedBilling=["Reviewed artist"])
+        primary = dict(wanted, id="manual:reviewed-concert", city="Austin", state="TX")
+        provider = dict(primary, id="provider:separate-listing", artists=["Additional artist"])
+        href = gate.builder.event_path(primary)
+        schema = {"@type": "MusicEvent", "performer": [{"name": "Reviewed artist"}]}
+        with tempfile.TemporaryDirectory() as tmp, patch.dict(gate.PATCHES, {"reviewed-concert": wanted}, clear=True):
+            site = Path(tmp)
+            (site / "config").mkdir()
+            (site / "config/artists.json").write_text("[]")
+            (site / "events.json").write_text(json.dumps([primary]))
+            (site / "supplemental-events.json").write_text(json.dumps([provider]))
+            (site / "shows").mkdir()
+            (site / "shows/index.html").write_text(
+                f'<article data-event-card><a href="{href}">Reviewed artist</a></article>')
+            detail = site / href.strip("/") / "index.html"
+            detail.parent.mkdir(parents=True)
+            detail.write_text('<p class="artist-line">Reviewed artist</p>'
+                              + '<script type="application/ld+json">' + json.dumps(schema) + '</script>')
+            gate.verify(site)
+            # A provider contribution must not hide damage to the reviewed record.
+            primary["artists"] = []
+            (site / "events.json").write_text(json.dumps([primary]))
+            with self.assertRaises(AssertionError):
+                gate.verify(site)
+            primary["artists"] = ["Reviewed artist"]
+            (site / "events.json").write_text(json.dumps([primary]))
+            detail.write_text(detail.read_text().replace('<p class="artist-line">Reviewed artist</p>',
+                                                         '<p class="artist-line">Wrong artist</p>'))
+            with self.assertRaises(AssertionError):
+                gate.verify(site)
+
     def test_refresh_is_scoped_idempotent_and_preserves_discovery(self):
         for event_id, wanted in PATCHES.items():
             with self.subTest(event=event_id):

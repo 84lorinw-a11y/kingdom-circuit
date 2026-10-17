@@ -9,9 +9,16 @@ from apply_sep26_requested_lineups import PATCHES
 
 
 def verify(site: Path):
-    rows = builder.merge_events(json.loads((site / "events.json").read_text()),
-                                json.loads((site / "supplemental-events.json").read_text()))
+    primary = json.loads((site / "events.json").read_text())
+    supplemental = json.loads((site / "supplemental-events.json").read_text())
+    rows = builder.merge_events(primary, supplemental)
     by_id = {str(r["id"]).removeprefix("manual:"): r for r in rows}
+    # Check reviewed records before the display merge can append performers
+    # from a separate artist-calendar listing at the same venue and time.
+    # The merged page, billing, schema and curated schedules are checked below.
+    reviewed_by_id = {}
+    for row in primary + supplemental:
+        reviewed_by_id.setdefault(str(row["id"]).removeprefix("manual:"), row)
     roster = json.loads((site / "config/artists.json").read_text())
     curated = {a["name"] for a in roster if a.get("enabled") is not False}
     shows = (site / "shows/index.html").read_text()
@@ -20,9 +27,10 @@ def verify(site: Path):
         if not builder.current(wanted):
             continue
         event = by_id[event_id]
+        reviewed = reviewed_by_id[event_id]
         for key in ("startDate", "startTime", "title", "venue", "artists", "advertisedBilling", "hosts", "officialUrl", "ticketUrl"):
             if key in wanted:
-                assert event.get(key) == wanted[key], (event_id, key, event.get(key))
+                assert reviewed.get(key) == wanted[key], (event_id, key, reviewed.get(key))
         href = builder.event_path(event)
         detail = (site / href.strip("/") / "index.html").read_text()
         card = next(c for c in cards if f'href="{href}"' in c)
