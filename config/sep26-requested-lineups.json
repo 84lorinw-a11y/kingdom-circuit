@@ -1716,26 +1716,36 @@
       "Lizzie Morgan",
       "Miles Minnick",
       "Lin D",
-      "Lil Ziggy"
+      "Lil Ziggy",
+      "Young Jayden"
     ],
     "advertisedBilling": [
       "Lecrae",
       "Lizzie Morgan",
       "Miles Minnick",
       "Lin D",
-      "Lil Ziggy"
+      "Lil Ziggy",
+      "Young Jayden"
     ],
     "officialBill": [
       "Lecrae",
       "Lizzie Morgan",
       "Miles Minnick",
       "Lin D",
-      "Lil Ziggy"
+      "Lil Ziggy",
+      "Young Jayden"
     ],
     "lineupExplicit": true,
-    "lastVerified": "2026-10-16T19:24:15Z",
-    "auditVerified": "2026-10-16",
+    "lastVerified": "2026-10-17T22:57:40Z",
+    "auditVerified": "2026-10-17",
     "sources": [
+      {
+        "name": "Young Jayden artist and label performance announcement",
+        "url": "https://www.instagram.com/youngjaydenofficial/p/DelCrPZNJ3l/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 115
+      },
       {
         "name": "Lil Ziggy official Space City Fest performance announcement",
         "url": "https://www.instagram.com/iamlilziggy/p/DeiHUlNJPye/",
@@ -1744,6 +1754,107 @@
         "priority": 115
       }
     ],
-    "notes": "October 16: Lil Ziggy announces Space City Fest at Discovery Green October 25. Preserve the organizer’s existing four acts. This is separate from Space City Liftoff."
+    "notes": "October 17: Young Jayden’s collaborative announcement explicitly bills his Space City Fest performance on October 25 at Discovery Green, 4–8 PM. Preserve all five previously confirmed acts. This is separate from Space City Liftoff."
+  },
+  "cj-emulous-rize-az-music-festival-2027": {
+    "title": "Rise AZ Music Festival 2027",
+    "startDate": "2027-04-17",
+    "startTime": "",
+    "timezone": "America/Phoenix",
+    "venue": "Veterans Memorial Park",
+    "address": "",
+    "city": "Sierra Vista",
+    "state": "AZ",
+    "country": "US",
+    "artists": [
+      "CJ Emulous",
+      "EGR",
+      "Bobby Bendito"
+    ],
+    "headliner": "",
+    "eventType": "festival",
+    "status": "scheduled",
+    "ticketUrl": "",
+    "officialUrl": "https://www.riseazmusicfestival.com/",
+    "price": "",
+    "lineupExplicit": true,
+    "authority": "official_event",
+    "confidence": "high",
+    "sourceName": "Rise AZ official festival and CJ Emulous official calendar",
+    "sources": [
+      {
+        "name": "Rise AZ official 2027 festival and announced artists",
+        "url": "https://www.riseazmusicfestival.com/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "CJ Emulous official performance calendar",
+        "url": "https://www.cjemulous.com/event-details/rize-az-music-festival",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 115
+      }
+    ],
+    "auditVerified": "2026-10-17",
+    "notes": "Owner approved expanding this existing listing to the April 17–18, 2027 festival weekend. Official organizer confirms Saturday April 17 music festival and Sunday April 18 Rise Up Service. Keep CJ Emulous from his own official calendar. EGR is in the Saturday introduction. Bobby Bendito, Remedy and Honor & Glory are announced on the 2027 page, but interleaved headings leave their precise day unclear; do not assign their sets to Saturday. Matt Baird and Saul Aubin are specifically Sunday guests. Johnathan Morin is an announced ministry guest, not confirmed musical billing. Ignore stale 2026 banners, hours and price text. No individual set time is published.",
+    "advertisedBilling": [
+      "Disciple",
+      "Ignescent",
+      "Clean Slate & Mallory B.",
+      "EGR",
+      "CJ Emulous",
+      "Bobby Bendito",
+      "Remedy",
+      "Honor & Glory",
+      "Matt Baird",
+      "Saul Aubin"
+    ],
+    "officialBill": [
+      "Disciple",
+      "Ignescent",
+      "Clean Slate & Mallory B.",
+      "EGR",
+      "CJ Emulous",
+      "Bobby Bendito",
+      "Remedy",
+      "Honor & Glory",
+      "Matt Baird",
+      "Saul Aubin"
+    ],
+    "lastVerified": "2026-10-17T22:57:40Z",
+    "publicDescription": "Rise AZ’s April 17–18 weekend includes the Saturday music festival and Sunday Rise Up Service at Veterans Memorial Park. EGR and CJ Emulous are confirmed for Saturday; Bobby Bendito is announced for the weekend, with his specific day and set time still to be confirmed. Sunday guests include Matt Baird and Saul Aubin. See the organizer for the final daily schedule.",
+    "legacyEventPaths": [
+      "/event/rize-az-music-festival-2027-04-17-sierra-vista-f47ad6/"
+    ],
+    "endDate": "2027-04-18",
+    "legacyEventNotice": "Rise AZ’s April 17–18, 2027 festival weekend now includes the announced lineup and Sunday Rise Up Service. View the updated listing for details."
+  },
+  "above-the-noise-rooftop-washington-2026-10-31": {
+    "startDate": "2026-10-31",
+    "advertisedBilling": [
+      "Nate Period",
+      "Howard Langford",
+      "Kevin \"KC\" Campbell",
+      "Bre Black"
+    ],
+    "officialBill": [
+      "Nate Period",
+      "Howard Langford",
+      "Kevin \"KC\" Campbell",
+      "Bre Black"
+    ],
+    "lastVerified": "2026-10-17T22:57:40Z",
+    "auditVerified": "2026-10-17",
+    "sources": [
+      {
+        "name": "Bre Black direct performance confirmation",
+        "url": "https://www.instagram.com/breblackmusic/reel/DeiP9uKOaTM/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 115
+      }
+    ]
   }
 }
