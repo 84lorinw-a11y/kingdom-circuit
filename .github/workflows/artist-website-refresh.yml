@@ -21,7 +21,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: kingdom-circuit-artist-websites
+  group: kingdom-circuit-artist-websites-${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && (github.event.workflow_run.event == 'schedule' || github.event.workflow_run.event == 'workflow_dispatch')) }}
   cancel-in-progress: true
 
 jobs:

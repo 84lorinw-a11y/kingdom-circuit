@@ -70,6 +70,14 @@ class AutomationWorkflowTests(unittest.TestCase):
         self.assertNotIn('menu-toggle', script)
         self.assertNotIn('menu-drawer', script)
 
+    def test_skipped_followups_cannot_cancel_active_checks_or_replace_receipts(self):
+        for name in ('artist-website-refresh', 'live-browser-retest', 'sep11-catalog-audit-guard', 'guard-deonte-hall-submission'):
+            group = next(line for line in self.workflow(name).splitlines() if 'group:' in line)
+            self.assertIn("github.event.workflow_run.conclusion == 'success'", group)
+        receipt = self.workflow('capture-live-deploy-status')
+        self.assertIn("conclusion != 'skipped'", receipt)
+        self.assertIn("conclusion != 'cancelled'", receipt)
+
 
 if __name__ == '__main__':
     unittest.main()

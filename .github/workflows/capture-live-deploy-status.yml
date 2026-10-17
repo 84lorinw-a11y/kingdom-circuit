@@ -10,6 +10,7 @@ permissions:
 
 jobs:
   capture:
+    if: github.event.workflow_run.conclusion != 'skipped' && github.event.workflow_run.conclusion != 'cancelled'
     runs-on: ubuntu-latest
     steps:
       - name: Check out latest main

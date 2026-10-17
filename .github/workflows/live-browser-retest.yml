@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: kingdom-circuit-live-browser-check
+  group: kingdom-circuit-live-browser-check-${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
   cancel-in-progress: true
 
 jobs:
