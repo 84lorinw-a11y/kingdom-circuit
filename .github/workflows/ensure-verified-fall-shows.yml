@@ -32,21 +32,7 @@ jobs:
       - name: Save verified show corrections
         shell: bash
         run: |
-          set -euo pipefail
-          git config user.name "kingdom-circuit-verified-shows"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add events.json supplemental-events.json config/manual-events.json
-          if git diff --cached --quiet; then
-            echo "Verified show data already correct."
-            exit 0
-          fi
-          git commit -m "Ensure verified Fall 2026 shows [verified fall sync]"
-          for attempt in 1 2 3; do
-            if git push origin HEAD:main; then
-              exit 0
-            fi
-            git fetch origin main
-            git rebase origin/main
-          done
-          echo "Unable to save verified show corrections after retries."
-          exit 1
+          python scripts/publish_automation_changes.py \
+            --message "Ensure verified Fall 2026 shows [verified fall sync]" \
+            --replay "python scripts/replay_source_update.py fall" \
+            events.json supplemental-events.json config/manual-events.json config/artists.json app.js coverage-gaps.json

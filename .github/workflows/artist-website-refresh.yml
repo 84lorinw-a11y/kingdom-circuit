@@ -79,32 +79,12 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_*.py' -v
 
       - name: Save discovered shows and synced registry
+        env:
+          TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
+          ARTIST_WEBSITE_MIN_INTERVAL: "0.20"
         shell: bash
         run: |
-          set -euo pipefail
-          git config user.name "kingdom-circuit-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- events.json run-status.json artist-website-events.json \
-            artist-website-status.json config/artists.json app.js \
-            config/verified-artist-websites.json tests/test_update_events.py \
-            cache/ticketmaster-attractions.json supplemental-events.json coverage-gaps.json
-          if git diff --cached --quiet; then
-            echo "No artist-show or registry changes to save."
-            exit 0
-          fi
-
-          git commit -m "chore: refresh verified artist shows"
-          PUSHED=0
-          for attempt in 1 2 3; do
-            if git push origin HEAD:main; then
-              PUSHED=1
-              break
-            fi
-            echo "Push raced with another automation commit; rebasing and retrying ($attempt/3)."
-            git fetch origin main
-            git rebase origin/main
-          done
-          if [ "$PUSHED" -ne 1 ]; then
-            echo "Unable to save verified artist show refresh after retries."
-            exit 1
-          fi
+          python scripts/publish_automation_changes.py \
+            --message "chore: refresh verified artist shows" \
+            --replay "python scripts/replay_source_update.py websites" \
+            events.json supplemental-events.json config/manual-events.json config/artists.json app.js coverage-gaps.json run-status.json artist-website-events.json artist-website-status.json config/verified-artist-websites.json tests/test_update_events.py cache/ticketmaster-attractions.json

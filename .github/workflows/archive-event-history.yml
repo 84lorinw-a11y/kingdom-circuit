@@ -54,27 +54,7 @@ jobs:
       - name: Save event history
         shell: bash
         run: |
-          set -euo pipefail
-          git config user.name "kingdom-circuit-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- event-history.json
-          if git diff --cached --quiet; then
-            echo "No event-history changes to commit."
-            exit 0
-          fi
-
-          git commit -m "chore: archive event history [skip ci]"
-          PUSHED=0
-          for attempt in 1 2 3; do
-            if git push origin HEAD:main; then
-              PUSHED=1
-              break
-            fi
-            echo "History push raced with another commit; rebasing and retrying ($attempt/3)."
-            git fetch origin main
-            git rebase origin/main
-          done
-          if [ "$PUSHED" -ne 1 ]; then
-            echo "Unable to save event history after retries."
-            exit 1
-          fi
+          python scripts/publish_automation_changes.py \
+            --message "chore: archive event history [skip ci]" \
+            --replay "python scripts/archive_event_history.py" \
+            event-history.json

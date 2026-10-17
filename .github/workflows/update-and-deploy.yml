@@ -6,6 +6,9 @@ on:
   schedule:
     - cron: "23 11 * * *"
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Daily Bandsintown discovery", "Refresh official artist website shows", "Merge verified artist seed events"]
+    types: [completed]
 
 permissions:
   contents: write
@@ -14,7 +17,7 @@ permissions:
 
 concurrency:
   group: kingdom-circuit-pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 env:
   APPROVED_SEO_REPO: 84lorinw-a11y/kingdom-circuit-test
@@ -24,6 +27,7 @@ env:
 
 jobs:
   update-and-deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -32,6 +36,9 @@ jobs:
     steps:
       - name: Check out production repository
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -47,17 +54,17 @@ jobs:
           node --test tests/artist-intake-submit.test.cjs
 
       - name: Add priority artist fallback calendars
-        if: github.event_name != 'push' || contains(github.event.head_commit.message, '[full scan]')
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message || '', '[full scan]')
         run: python scripts/apply_priority_source_fallbacks.py
 
       - name: Collect upcoming shows
-        if: github.event_name != 'push' || contains(github.event.head_commit.message, '[full scan]')
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message || '', '[full scan]')
         env:
           TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
         run: python scripts/update_events.py
 
       - name: Run expanded all-artist source scan
-        if: github.event_name != 'push' || contains(github.event.head_commit.message, '[full scan]')
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message || '', '[full scan]')
         run: |
           python -m py_compile scripts/scan_all_artist_sources.py
           python scripts/scan_all_artist_sources.py
@@ -111,38 +118,20 @@ jobs:
         run: python scripts/apply_oct3_concert_corrections.py
 
       - name: Restore runtime-only source configuration
-        if: github.event_name != 'push' || contains(github.event.head_commit.message, '[full scan]')
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message || '', '[full scan]')
         run: git checkout -- config/official-sources.json
 
       - name: Save refreshed event data
-        if: github.event_name != 'push' || contains(github.event.head_commit.message, '[full scan]')
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message || '', '[full scan]')
+        env:
+          TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
         shell: bash
         run: |
-          set -euo pipefail
-          git config user.name "kingdom-circuit-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- events.json run-status.json cache/ticketmaster-attractions.json \
-            supplemental-events.json config/artists.json coverage-gaps.json app.js \
-            full-scan-status.json full-scan-candidates.json config/permanent-state-pages.json
-          if git diff --cached --quiet; then
-            echo "No event-data changes to commit."
-          else
-            git commit -m "chore: refresh show listings [skip ci]"
-            PUSHED=0
-            for attempt in 1 2 3; do
-              if git push origin HEAD:main; then
-                PUSHED=1
-                break
-              fi
-              echo "Push raced with another safe automation commit; rebasing and retrying ($attempt/3)."
-              git fetch origin main
-              git rebase origin/main
-            done
-            if [ "$PUSHED" -ne 1 ]; then
-              echo "Unable to save refreshed event data after retries."
-              exit 1
-            fi
-          fi
+          python scripts/publish_automation_changes.py \
+            --message "chore: refresh show listings [skip ci]" \
+            --replay "python scripts/replay_source_update.py full" \
+            --sync-checkout \
+            events.json supplemental-events.json config/manual-events.json config/artists.json app.js coverage-gaps.json run-status.json cache/ticketmaster-attractions.json full-scan-status.json full-scan-candidates.json config/permanent-state-pages.json tests/test_update_events.py event-history.json
 
       - name: Check out pinned approved SEO source
         uses: actions/checkout@v4

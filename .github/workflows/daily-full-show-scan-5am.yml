@@ -2,8 +2,8 @@ name: Daily 5AM Full Show Scan
 
 on:
   schedule:
-    - cron: "0 10 * * *"
-    - cron: "0 11 * * *"
+    - cron: "0 5 * * *"
+      timezone: "America/Chicago"
   workflow_dispatch:
 
 permissions:
@@ -14,13 +14,13 @@ jobs:
   dispatch-full-scan:
     runs-on: ubuntu-latest
     steps:
-      - name: Check Central time
+      - name: Honor scheduled runs even when GitHub starts them late
         id: local-time
         shell: bash
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
-          elif [ "$(TZ=America/Chicago date +%H)" = "05" ]; then
+          elif [ "${{ github.event_name }}" = "schedule" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           else
             echo "run=false" >> "$GITHUB_OUTPUT"

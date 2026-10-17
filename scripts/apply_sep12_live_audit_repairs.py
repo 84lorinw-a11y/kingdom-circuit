@@ -253,16 +253,6 @@ def apply() -> dict[str, int]:
 
         by_id = {event.get("id"): event for event in rows}
         for event in rows:
-            if _is_zauntee_tour(event):
-                event["image"] = ZAUNTEE_TOUR_IMAGE
-                event["imageType"] = "artist"
-                event["imagePosition"] = "center"
-                event["imageOverride"] = True
-                event["imageSource"] = "Official Ticketmaster God Remembers Tour portrait"
-                event["imageSourceUrl"] = ZAUNTEE_TOUR_IMAGE_SOURCE
-                report["zaunteeTourImages"] += 1
-                changed = True
-
             if event.get("id") == FAITH_JAM_ID:
                 artists = event.setdefault("artists", [])
                 if "Brother Bo" not in artists:
@@ -358,6 +348,20 @@ def apply() -> dict[str, int]:
                 retired["mergedIntoId"] = canonical_id
                 retired["notes"] = "Duplicate support-artist listing consolidated into the canonical official-venue event."
                 report["zaunteeRetiredRecords"] += 1
+                changed = True
+
+        # A fresh Ticketmaster row may initially name only Zauntee. Apply the
+        # reviewed portrait AFTER the identity/lineup merges above, just as the
+        # verifier evaluates the final rows (not their pre-merge state).
+        for event in rows:
+            if _is_zauntee_tour(event):
+                event["image"] = ZAUNTEE_TOUR_IMAGE
+                event["imageType"] = "artist"
+                event["imagePosition"] = "center"
+                event["imageOverride"] = True
+                event["imageSource"] = "Official Ticketmaster God Remembers Tour portrait"
+                event["imageSourceUrl"] = ZAUNTEE_TOUR_IMAGE_SOURCE
+                report["zaunteeTourImages"] += 1
                 changed = True
 
         if changed:

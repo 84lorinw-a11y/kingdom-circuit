@@ -105,10 +105,13 @@ class September12Phase2PublishTests(unittest.TestCase):
             self.assertNotIn("madison-ryann-ward", sitemap.read_text(encoding="utf-8"))
             self.assertGreaterEqual(result["profiles_removed"], 1)
 
-    def test_deonte_guard_commits_complete_repair_set_before_rebase(self):
+    def test_deonte_guard_publishes_complete_repair_set_and_replays_on_conflict(self):
         workflow = (ROOT / ".github" / "workflows" / "guard-deonte-hall-submission.yml").read_text(encoding="utf-8")
-        self.assertIn("git add -A", workflow)
-        self.assertLess(workflow.index("git add -A"), workflow.index("git pull --rebase origin main"))
+        self.assertIn('python scripts/publish_automation_changes.py', workflow)
+        self.assertIn('--replay "python scripts/apply_deonte_hall_submission.py"', workflow)
+        for filename in ('events.json','supplemental-events.json','config/manual-events.json','config/artists.json','app.js'):
+            self.assertIn(filename, workflow[workflow.index('python scripts/publish_automation_changes.py'):])
+        self.assertNotIn('git pull --rebase', workflow)
 
 
 if __name__ == "__main__":

@@ -65,33 +65,7 @@ jobs:
       - name: Persist curated catalog changes
         shell: bash
         run: |
-          set -euo pipefail
-          git config user.name "kingdom-circuit-curation"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          # The policy and verified-event repairs can update auxiliary tracked
-          # files too. Commit their complete output so subsequent collection
-          # and audit pushes cannot erase manually verified Sep 13 records.
-          git add -A
-
-          if git diff --cached --quiet; then
-            echo "Catalog already matches editorial policy and verified event repairs."
-            exit 0
-          fi
-
-          git commit -m "Curate CHH roster and verified event coverage"
-          PUSHED=0
-          for attempt in 1 2 3; do
-            if git push origin HEAD:main; then
-              PUSHED=1
-              break
-            fi
-            echo "Push raced with another commit; rebasing and retrying ($attempt/3)."
-            git fetch origin main
-            git rebase origin/main
-          done
-
-          if [ "$PUSHED" -ne 1 ]; then
-            echo "Unable to persist curated catalog changes after retries."
-            exit 1
-          fi
+          python scripts/publish_automation_changes.py \
+            --message "Curate CHH roster and verified event coverage" \
+            --replay "python scripts/replay_source_update.py catalog" \
+            events.json supplemental-events.json config/manual-events.json config/artists.json app.js coverage-gaps.json

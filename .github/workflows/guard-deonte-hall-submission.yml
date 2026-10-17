@@ -61,17 +61,7 @@ jobs:
       - name: Save corrected Deonte Hall data
         shell: bash
         run: |
-          set -euo pipefail
-          git config user.name "kingdom-circuit-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # The repair script can touch verified registry/generated source files in
-          # addition to the primary event JSON. Commit the complete intended repair
-          # set before rebasing so git pull --rebase never sees a dirty worktree.
-          git add -A
-          if git diff --cached --quiet; then
-            echo "Deonte Hall listing already correct."
-            exit 0
-          fi
-          git commit -m "fix: restore Deonte Hall official show details"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          python scripts/publish_automation_changes.py \
+            --message "fix: restore Deonte Hall official show details" \
+            --replay "python scripts/apply_deonte_hall_submission.py" \
+            events.json supplemental-events.json config/manual-events.json config/artists.json app.js coverage-gaps.json

@@ -76,8 +76,11 @@ class MilesCjFall2026RepairTests(unittest.TestCase):
         ):
             workflow = (ROOT / relative_path).read_text(encoding="utf-8")
             repair = workflow.index("python scripts/apply_miles_cj_fall_2026_repairs.py")
-            commit = workflow.index("git add")
+            commit = workflow.index("python scripts/publish_automation_changes.py")
             self.assertLess(repair, commit, relative_path)
+            self.assertIn('--replay "python scripts/replay_source_update.py', workflow)
+        from scripts.replay_source_update import CURATION
+        self.assertIn('apply_miles_cj_fall_2026_repairs.py', CURATION)
 
 
 if __name__ == "__main__":

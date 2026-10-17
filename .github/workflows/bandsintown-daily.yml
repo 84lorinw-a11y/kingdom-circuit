@@ -39,23 +39,7 @@ jobs:
       - name: Save Bandsintown results and trigger production deploy
         shell: bash
         run: |
-          set -euo pipefail
-          git config user.name "kingdom-circuit-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add supplemental-events.json bandsintown-status.json bandsintown-candidates.json
-          if git diff --cached --quiet; then
-            echo "No Bandsintown data changes."
-            exit 0
-          fi
-          # Do not use [skip ci] here: this commit must trigger the main production
-          # workflow so newly discovered/removed shows are reflected on the live site.
-          git commit -m "chore: refresh Bandsintown discoveries"
-          for attempt in 1 2 3; do
-            if git push origin HEAD:main; then
-              exit 0
-            fi
-            git fetch origin main
-            git rebase origin/main
-          done
-          echo "Unable to save Bandsintown results after retries."
-          exit 1
+          python scripts/publish_automation_changes.py \
+            --message "chore: refresh Bandsintown discoveries" \
+            --replay "python scripts/run_bandsintown_refresh.py" \
+            supplemental-events.json bandsintown-status.json bandsintown-candidates.json

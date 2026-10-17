@@ -9,6 +9,29 @@ from scripts import apply_sep12_live_audit_repairs as repairs
 
 
 class September12LiveAuditRepairTests(unittest.TestCase):
+    def test_fresh_ticketmaster_rows_receive_portrait_after_support_merge(self):
+        authoritative = self._authoritative_rare()
+        for initial_artists in (["Zauntee"], ["Zauntee", "Skema Boy"]):
+            with self.subTest(artists=initial_artists), tempfile.TemporaryDirectory() as directory:
+                paths = tuple(Path(directory) / name for name in ('events.json', 'supplemental-events.json', 'manual.json'))
+                rows = [authoritative] + [
+                    {"id": spec[0], "title": "Zauntee — God Remembers Tour", "artists": list(initial_artists), "image": "provider-landscape.jpg"}
+                    for spec in repairs.ZAUNTEE_MERGES.values()
+                ]
+                for path in paths:
+                    self._write(path, rows)
+                with patch.object(repairs, 'EVENTS_FILE', paths[0]), patch.object(repairs, 'MANUAL_EVENTS_FILE', paths[2]), patch.object(repairs, 'EVENT_FILES', paths):
+                    repairs.apply()
+                    repairs.check()
+                    first = [path.read_bytes() for path in paths]
+                    repairs.apply()
+                    repairs.check()
+                    self.assertEqual(first, [path.read_bytes() for path in paths])
+                for path in paths:
+                    shows = [e for e in json.loads(path.read_text()) if repairs._is_zauntee_tour(e)]
+                    self.assertEqual(3, len(shows))
+                    self.assertTrue(all(e['image'] == repairs.ZAUNTEE_TOUR_IMAGE for e in shows))
+
     @staticmethod
     def _authoritative_rare() -> dict:
         rows = json.loads(Path("config/manual-events.json").read_text(encoding="utf-8"))
