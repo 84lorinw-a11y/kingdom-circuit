@@ -2839,13 +2839,6 @@
         "type": "bandsintown_rest",
         "authority": "artist_calendar",
         "priority": 74
-      },
-      {
-        "name": "Ticketmaster",
-        "url": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
-        "type": "ticketmaster",
-        "authority": "venue_ticket",
-        "priority": 94
       }
     ],
     "confidence": "medium",
@@ -2890,8 +2883,7 @@
     "imageSourceUrl": "https://www.instagram.com/p/Ddo8xGgoQhN/",
     "legacyEventNotice": "GLOVEMBER takes place November 14, 2026 at 8 PM at The Belasco. This duplicate listing has been combined with the main event.",
     "mergedFromIds": [
-      "manual:cj-emulous-glo-concert-los-angeles-2026",
-      "ticketmaster:vv1AaZkfMGkd2fZDG"
+      "manual:cj-emulous-glo-concert-los-angeles-2026"
     ],
     "firstSeen": "2026-08-09T00:00:00Z"
   },
