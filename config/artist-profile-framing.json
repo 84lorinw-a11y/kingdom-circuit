@@ -2230,14 +2230,14 @@
   },
   "afeni": {
     "artist": "Afeni",
-    "imageSha256": "ca7f4b69ae8d0ded7c426655d2d65c4d5465f52c7e277830438f33e1d4eff4ed",
-    "reason": "Release artwork has text instead of a visible artist.",
+    "imageSha256": "ebd4ad50bf59d10dc08c1f3c30c151413f65af640d4cb4161ea1ec711d400414",
+    "reason": "Official artist portrait; top-aligned framing keeps her face visible and fills the profile image area on desktop and mobile.",
     "desktop": {
       "window": [
         0,
         0,
         1,
-        1.0
+        0.75
       ],
       "ratio": 1.0,
       "nameSize": 5.6
@@ -2247,9 +2247,9 @@
         0,
         0,
         1,
-        1.0
+        0.8333333333333333
       ],
-      "ratio": 1.0,
+      "ratio": 0.9,
       "nameSize": 8.6
     }
   },
