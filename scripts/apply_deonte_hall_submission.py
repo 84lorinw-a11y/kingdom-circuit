@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 import subprocess
 import sys
@@ -250,14 +251,20 @@ def run_verified_event_overrides() -> None:
     )
 
 
-def main() -> int:
+def main(argv=None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--submission-only', action='store_true',
+                        help='Repair only this submission and reviewed artist record; leave broader catalog normalization to the build.')
+    args = parser.parse_args(argv)
     patch_verified_updates()
     patch_artists()
     patch_submitted_event()
     verify()
-    run_verified_show_repairs()
-    run_verified_event_overrides()
-    print("Deonte Hall submission, reviewed show repairs, and verified event overrides applied.")
+    if not args.submission_only:
+        run_verified_show_repairs()
+        run_verified_event_overrides()
+    print("Deonte Hall submission applied." if args.submission_only else
+          "Deonte Hall submission, reviewed show repairs, and verified event overrides applied.")
     return 0
 
 

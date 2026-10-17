@@ -32,7 +32,7 @@ jobs:
           python-version: "3.12"
 
       - name: Restore Deonte Hall verified submission
-        run: python scripts/apply_deonte_hall_submission.py
+        run: python scripts/apply_deonte_hall_submission.py --submission-only
 
       - name: Verify official Facebook details
         run: |
@@ -63,5 +63,5 @@ jobs:
         run: |
           python scripts/publish_automation_changes.py \
             --message "fix: restore Deonte Hall official show details" \
-            --replay "python scripts/apply_deonte_hall_submission.py" \
-            events.json supplemental-events.json config/manual-events.json config/artists.json app.js coverage-gaps.json
+            --replay "python scripts/apply_deonte_hall_submission.py --submission-only" \
+            events.json supplemental-events.json config/artists.json config/verified-artist-registry-updates.json
