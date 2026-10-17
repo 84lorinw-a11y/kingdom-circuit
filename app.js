@@ -1653,8 +1653,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/3b15IaMeDOJZggq75TNNo9",
     "youtubeProfile": "https://www.youtube.com/@SwayGTTBmusic",
     "officialImageSource": "https://www.instagram.com/swaygodtooktheburden.wav/",
-    "imageUrl": "assets/artists/sway-gttb-saved.webp",
-    "imagePosition": "center",
+    "imageUrl": "assets/artists/sway-gttb-official-2026-10-16.jpg",
+    "imagePosition": "50% 40%",
     "state": "ND",
     "sourceRegistryVerified": true
   },
@@ -6826,8 +6826,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3b15IaMeDOJZggq75TNNo9",
     "youtubeProfile": "https://www.youtube.com/@SwayGTTBmusic",
     "officialImageSource": "https://www.instagram.com/swaygodtooktheburden.wav/",
-    "imageUrl": "assets/artists/sway-gttb-saved.webp",
-    "imagePosition": "center",
+    "imageUrl": "assets/artists/sway-gttb-official-2026-10-16.jpg",
+    "imagePosition": "50% 40%",
     "state": "ND",
     "sourceRegistryVerified": true
   },
@@ -11097,8 +11097,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "center"
   },
   "sway gttb": {
-    "imageUrl": "assets/artists/sway-gttb-saved.webp",
-    "imagePosition": "center"
+    "imageUrl": "assets/artists/sway-gttb-official-2026-10-16.jpg",
+    "imagePosition": "50% 40%"
   },
   "kashh kade": {
     "imageUrl": "assets/artists/kashh-kade-saved.webp",
