@@ -75,6 +75,9 @@ jobs:
       - name: Merge website shows into calendar
         run: python scripts/merge_artist_website_events.py
 
+      - name: Reapply verified corrections after all imports
+        run: python scripts/replay_source_update.py normalize
+
       - name: Run production tests
         run: python -m unittest discover -s tests -p 'test_*.py' -v
 
@@ -87,4 +90,4 @@ jobs:
           python scripts/publish_automation_changes.py \
             --message "chore: refresh verified artist shows" \
             --replay "python scripts/replay_source_update.py websites" \
-            events.json supplemental-events.json config/manual-events.json config/artists.json app.js coverage-gaps.json run-status.json artist-website-events.json artist-website-status.json config/verified-artist-websites.json tests/test_update_events.py cache/ticketmaster-attractions.json
+            events.json supplemental-events.json config/manual-events.json config/artists.json app.js coverage-gaps.json run-status.json artist-website-events.json artist-website-status.json config/verified-artist-websites.json tests/test_update_events.py cache/ticketmaster-attractions.json event-history.json config/permanent-state-pages.json

@@ -5,6 +5,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from tests.catalog_history import load_catalog
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,7 +29,7 @@ class EchoNightsOfficialArtworkTests(unittest.TestCase):
 
     def test_all_runtime_sources_use_the_portrait_poster(self):
         for filename in echo_nights.SOURCE_FILES:
-            rows = json.loads((ROOT / filename).read_text(encoding="utf-8"))
+            rows = load_catalog(ROOT / filename)
             matches = [row for row in rows if row.get("id") == echo_nights.EVENT_ID]
             self.assertEqual(1, len(matches), filename)
             event = matches[0]

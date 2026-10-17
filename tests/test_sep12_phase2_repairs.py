@@ -2,6 +2,7 @@ import importlib.util
 import json
 import pathlib
 import unittest
+from tests.catalog_history import load_catalog
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -18,8 +19,8 @@ class September12Phase2Repairs(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.seo = load_module("build_seo_site_phase2", ROOT / "scripts" / "build_seo_site.py")
-        cls.events = json.loads((ROOT / "events.json").read_text(encoding="utf-8"))
-        cls.supplemental = json.loads((ROOT / "supplemental-events.json").read_text(encoding="utf-8"))
+        cls.events = load_catalog(ROOT / "events.json")
+        cls.supplemental = load_catalog(ROOT / "supplemental-events.json")
 
     def test_multiday_ranges_are_displayed(self):
         cases = {

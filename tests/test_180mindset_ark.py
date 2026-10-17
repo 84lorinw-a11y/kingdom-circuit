@@ -1,6 +1,7 @@
 import json
 import unittest
 from pathlib import Path
+from tests.catalog_history import load_catalog
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -10,7 +11,7 @@ class MindsetArkTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.artists = json.loads((ROOT / "config" / "artists.json").read_text(encoding="utf-8"))
-        cls.supplemental = json.loads((ROOT / "supplemental-events.json").read_text(encoding="utf-8"))
+        cls.supplemental = load_catalog(ROOT / "supplemental-events.json")
 
     def test_180mindset_has_verified_profile_image(self):
         artist = next(row for row in self.artists if row.get("name") == "180MINDSET")

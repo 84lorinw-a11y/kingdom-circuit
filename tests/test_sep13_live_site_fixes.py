@@ -3,6 +3,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from tests.catalog_history import load_catalog
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,7 +18,7 @@ EVENT_FILES = (
 
 
 def load(path):
-    return json.loads(path.read_text(encoding="utf-8"))
+    return load_catalog(path)
 
 
 def identity(event):

@@ -1,6 +1,7 @@
 import json
 import unittest
 from pathlib import Path
+from tests.catalog_history import load_catalog
 
 from scripts.apply_sep22_artist_registry_batch import ROWS
 
@@ -98,7 +99,7 @@ class ArtistDatabaseSeptember22BatchTwoTests(unittest.TestCase):
 
     def test_show_audit_repairs_are_durable(self):
         for relative_path in ("config/manual-events.json", "supplemental-events.json"):
-            events = json.loads((ROOT / relative_path).read_text(encoding="utf-8"))
+            events = load_catalog(ROOT / relative_path)
             by_id = {event["id"]: event for event in events}
 
             mayia = by_id["mayia-songs-that-speak-conference-pleasant-garden-2026"]

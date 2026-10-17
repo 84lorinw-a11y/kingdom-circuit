@@ -4,6 +4,7 @@ import re
 import unittest
 from datetime import date
 from pathlib import Path
+from tests.catalog_history import load_catalog
 
 from scripts.apply_curated_catalog_policy import curate_event
 from scripts.apply_live_artist_overrides import dedupe_bandsintown_event_cards, sync_artist_page_show_counts
@@ -115,7 +116,7 @@ class MultiPageProductionTests(unittest.TestCase):
     def test_every_zauntee_god_remembers_record_uses_verified_artwork_or_safe_fallback(self):
         records = []
         for filename in ("events.json", "supplemental-events.json"):
-            records.extend(json.loads((ROOT / filename).read_text(encoding="utf-8")))
+            records.extend(load_catalog(ROOT / filename))
         tour = [
             event for event in records
             if "god remembers tour" in event.get("title", "").casefold()
@@ -138,7 +139,7 @@ class MultiPageProductionTests(unittest.TestCase):
             )
 
     def test_yung_kriss_event_artwork_is_high_resolution_and_pinned(self):
-        events = json.loads((ROOT / "events.json").read_text(encoding="utf-8"))
+        events = load_catalog(ROOT / "events.json")
         expected = {
             "HVO Fest 2026": "assets/events/hvo-fest-2026.jpg",
         }
@@ -183,7 +184,7 @@ class MultiPageProductionTests(unittest.TestCase):
             self.assertGreater((ROOT / image).stat().st_size, 100_000)
 
     def test_supplemental_events_are_complete(self):
-        events = json.loads((ROOT / "supplemental-events.json").read_text(encoding="utf-8"))
+        events = load_catalog(ROOT / "supplemental-events.json")
         self.assertEqual(len(events), len({event["id"] for event in events}))
 
         skema_events = [event for event in events if "Skema Boy" in event.get("artists", [])]

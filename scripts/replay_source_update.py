@@ -23,9 +23,11 @@ def run(script):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('kind', choices=['catalog', 'full', 'websites', 'fall', 'audit', 'status'])
+    parser.add_argument('kind', choices=['catalog', 'full', 'websites', 'normalize', 'fall', 'audit', 'status'])
     kind = parser.parse_args().kind
-    if kind == 'catalog':
+    if kind == 'normalize':
+        for script in SOURCE_REPAIRS: run(script)
+    elif kind == 'catalog':
         for script in CURATION: run(script)
     elif kind == 'fall':
         run('ensure_verified_fall_2026_shows.py')
@@ -51,7 +53,8 @@ def main():
         if kind == 'websites':
             run('collect_artist_website_events.py')
             run('merge_artist_website_events.py')
-            subprocess.run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_*.py', '-q'], check=True)
+            for script in SOURCE_REPAIRS: run(script)
+        subprocess.run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_*.py', '-q'], check=True)
     else:
         import json
         from datetime import datetime, timezone

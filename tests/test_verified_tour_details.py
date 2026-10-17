@@ -2,6 +2,7 @@ import json
 import sys
 import unittest
 from pathlib import Path
+from tests.catalog_history import load_catalog
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,7 +16,7 @@ import apply_verified_content_overrides as overrides  # noqa: E402
 class VerifiedTourDetailsTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.events = json.loads((ROOT / "events.json").read_text(encoding="utf-8"))
+        cls.events = load_catalog(ROOT / "events.json")
 
     def event(self, event_id):
         return next(item for item in self.events if item.get("id") == event_id)

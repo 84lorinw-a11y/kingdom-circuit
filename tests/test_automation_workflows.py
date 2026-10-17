@@ -26,6 +26,11 @@ class AutomationWorkflowTests(unittest.TestCase):
         self.assertIn('--sync-checkout', save)
         website = self.workflow('artist-website-refresh').split('- name: Save discovered shows')[1]
         self.assertIn('TICKETMASTER_API_KEY:', website)
+        self.assertIn('event-history.json', website)
+        self.assertIn('config/permanent-state-pages.json', website)
+        whole_website = self.workflow('artist-website-refresh')
+        self.assertLess(whole_website.index('python scripts/merge_artist_website_events.py'), whole_website.index('python scripts/replay_source_update.py normalize'))
+        self.assertLess(whole_website.index('python scripts/replay_source_update.py normalize'), whole_website.index('- name: Run production tests'))
         for name in ('catalog-curation', 'ensure-verified-fall-shows'):
             self.assertIn('event-history.json', self.workflow(name))
         # Replays must apply the same ordered source repairs as the original run.

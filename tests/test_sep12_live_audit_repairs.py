@@ -4,6 +4,7 @@ import unittest
 from datetime import date
 from pathlib import Path
 from unittest.mock import patch
+from tests.catalog_history import load_catalog
 
 from scripts import apply_sep12_live_audit_repairs as repairs
 
@@ -99,8 +100,7 @@ class September12LiveAuditRepairTests(unittest.TestCase):
             repairs.authoritative_rare([unverified])
 
     def test_cancelled_rare_event_is_removed_from_upcoming_but_retained_as_page(self):
-        source = Path("events.json").read_text(encoding="utf-8")
-        rows = json.loads(source)
+        rows = load_catalog(Path("events.json"))
         rare = next(event for event in rows if repairs.RARE_EVENTBRITE_ID in json.dumps(event))
         self.assertEqual(rare.get("status"), "cancelled")
         self.assertTrue(rare.get("cancellationConfirmed"))
@@ -120,7 +120,7 @@ class September12LiveAuditRepairTests(unittest.TestCase):
         self.assertIn('if (state) state.value = "";', source)
 
     def test_fastivalle_uses_eventbrite_organizer_details(self):
-        rows = json.loads(Path("events.json").read_text(encoding="utf-8"))
+        rows = load_catalog(Path("events.json"))
         event = next(event for event in rows if event.get("id") == repairs.FASTIVALLE_ID)
 
         self.assertEqual("14:00", event["startTime"])
@@ -134,7 +134,7 @@ class September12LiveAuditRepairTests(unittest.TestCase):
         self.assertNotIn(repairs.FASTIVALLE_STALE_APPLE_URL, json.dumps(event))
 
     def test_anike_all_star_uses_official_event_artwork(self):
-        rows = json.loads(Path("events.json").read_text(encoding="utf-8"))
+        rows = load_catalog(Path("events.json"))
         event = next(event for event in rows if event.get("id") == repairs.ANIKE_ALL_STAR_ID)
 
         self.assertEqual(repairs.ANIKE_ALL_STAR_IMAGE, event["image"])
