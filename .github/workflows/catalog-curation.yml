@@ -68,4 +68,4 @@ jobs:
           python scripts/publish_automation_changes.py \
             --message "Curate CHH roster and verified event coverage" \
             --replay "python scripts/replay_source_update.py catalog" \
-            events.json supplemental-events.json config/manual-events.json config/artists.json app.js coverage-gaps.json
+            events.json supplemental-events.json config/manual-events.json config/artists.json app.js coverage-gaps.json event-history.json

@@ -35,4 +35,4 @@ jobs:
           python scripts/publish_automation_changes.py \
             --message "Ensure verified Fall 2026 shows [verified fall sync]" \
             --replay "python scripts/replay_source_update.py fall" \
-            events.json supplemental-events.json config/manual-events.json config/artists.json app.js coverage-gaps.json
+            events.json supplemental-events.json config/manual-events.json config/artists.json app.js coverage-gaps.json event-history.json
