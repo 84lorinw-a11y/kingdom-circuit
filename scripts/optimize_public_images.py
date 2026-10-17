@@ -701,11 +701,12 @@ def render_content(
     if len(chosen) < 2:
         raise OptimizationFailure("insufficient-variant-widths")
     content_id = digest[:24]
+    cache_suffix = ""
     # Preserve detail in the owner's red-lit 1K Phew portrait. A distinct
     # variant URL prevents clients from reusing the earlier compressed copy.
     if digest == "6df7b566d71761e10c8e1cb99b4a38f94aebbf25d22fdb70307a37addc31e829":
         quality = max(quality, 95)
-        content_id = hashlib.sha256(f"{digest}:quality95".encode()).hexdigest()[:24]
+        cache_suffix = "?quality=95"
     targets = [(width, staging / f"{content_id}-w{width}.webp") for width in chosen]
     actual_dimensions = backend.render(data, targets, quality, deadline)
     variants = tuple(
@@ -713,7 +714,7 @@ def render_content(
             width=actual_width,
             height=actual_height,
             filename=path.name,
-            url=f"{base}assets/optimized/{path.name}",
+            url=f"{base}assets/optimized/{path.name}{cache_suffix}",
         )
         for (_, path), (actual_width, actual_height) in zip(targets, actual_dimensions)
     )
