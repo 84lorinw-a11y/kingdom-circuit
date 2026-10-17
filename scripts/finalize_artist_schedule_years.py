@@ -110,9 +110,13 @@ def patch_profile(document: str, root: pathlib.Path, today: dt.date) -> str:
     for attribute, key in (("property", "og:title"), ("name", "twitter:title")):
         pattern = rf'(<meta\s+{attribute}="{key}"\s+content=")[^"]*(")'
         document = re.sub(pattern, lambda m: m[1] + title + m[2], document)
-    document = YEAR_STYLE_RE.sub("", document)
-    if next_year_dates:
-        document = document.replace("</head>", YEAR_STYLE + "\n</head>", 1)
+    # Later presentation layers may append their assets after this style. A
+    # correct year style need not move to the end of <head> on every check.
+    styles = YEAR_STYLE_RE.findall(document)
+    if not (next_year_dates and len(styles) == 1 and styles[0].rstrip() == YEAR_STYLE):
+        document = YEAR_STYLE_RE.sub("", document)
+        if next_year_dates:
+            document = document.replace("</head>", YEAR_STYLE + "\n</head>", 1)
     return document
 
 

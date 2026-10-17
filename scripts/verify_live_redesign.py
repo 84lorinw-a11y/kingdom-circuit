@@ -222,7 +222,10 @@ def verify(site: pathlib.Path) -> dict[str, int]:
             failures.append(f"stale-favicon:{relative}")
 
     home = read(site / "index.html")
-    for phrase in ("Find Christian", "Hip Hop Shows", "Near You!", "Shows Listed", "Artists Tracked"):
+    home_phrases = ("Find CHH Shows Near You!", "CHH concerts, christian rap shows and festivals!",
+                    "Happening This Week", "Artists with upcoming shows", "Coming Up Next", "About Us") \
+        if 'data-national-home' in home else ("Find Christian", "Hip Hop Shows", "Near You!", "Shows Listed", "Artists Tracked")
+    for phrase in home_phrases:
         if phrase not in home:
             failures.append(f"home:missing:{phrase}")
     for phrase in (

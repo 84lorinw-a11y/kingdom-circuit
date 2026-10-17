@@ -1,0 +1,262 @@
+/* Fan-first layout. Existing colors, logos, artwork and page identities remain. */
+html { scroll-padding-top: calc(var(--kc-rd-followbar-height) + 8px); }
+body .kc-fan-home { --fan-line: #423129; --fan-accent: #ed8869; }
+body .kc-fan-home .kc-discovery-hero { display: block; padding: 10px 16px 12px; }
+body .kc-fan-home .kc-discovery-intro { max-width: 700px; }
+body .kc-fan-home .kc-rd-home-title { font-size: clamp(1.1rem, 7.15cqi, 2.65rem); margin-bottom: 5px; }
+body .kc-fan-home .kc-discovery-deck { margin: 0 0 12px; }
+body .kc-fan-finder { margin: 0; max-width: 900px; }
+body .kc-fan-finder > .kc-fan-where-when { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px; }
+.kc-fan-where-when label { min-width: 0; font-size: .66rem; text-transform: uppercase; font-weight: 800; letter-spacing: .08em; color: #efab93; }
+.kc-fan-where-when select { display: block; width: 100%; min-width: 0; min-height: 44px; margin-top: 5px; padding: 8px 10px; background: #100e0c; color: #faf6ef; border: 1px solid #61463a; border-radius: 7px; font: inherit; font-size: 16px; text-transform: none; letter-spacing: 0; }
+body .kc-fan-search-line { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+body .kc-fan-search-line button { background: #ed8869; border-color: #f7b49b; color: #170c08; font-weight: 850; padding-inline: 12px; }
+body .kc-fan-home .kc-discovery-section { border-top: 0; padding: 18px 16px 12px; }
+body .kc-fan-home #calendar { padding-top: 8px; }
+body .kc-fan-home .kc-discovery-heading { flex-wrap: nowrap; align-items: center; gap: 12px; margin-bottom: 12px; }
+body .kc-fan-home .kc-discovery-heading h2 { font-size: clamp(1.35rem, 5.5vw, 2rem); line-height: 1.15; }
+body .kc-fan-home .kc-discovery-heading .eyebrow { font-size: .63rem; margin-bottom: 5px; letter-spacing: .06em; }
+body .kc-fan-home .kc-discovery-heading > a { font-size: .76rem; flex-shrink: 0; gap: 4px; white-space: nowrap; }
+.kc-fan-shelf-wrap { min-width: 0; }
+body .kc-fan-shelf { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 180px; gap: 12px; overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: #9c5c47 #20150f; padding: 2px 2px 12px; margin-inline: -2px; align-items: start; }
+.kc-fan-shelf > * { scroll-snap-align: start; }
+body .kc-fan-shelf .kc-discovery-show { display: flex; flex-direction: column; width: 180px; height: 350px; gap: 0; padding: 0; border-color: #423129; overflow: hidden; border-radius: 9px; background: #100e0c; box-sizing: border-box; }
+body .kc-fan-shelf .kc-teaser-image { display: block; position: relative; overflow: hidden; height: auto; aspect-ratio: var(--kc-artwork-ratio, 1092 / 1440); border-radius: 0; background: #080808; flex: none; }
+body .kc-fan-shelf .kc-teaser-image img,
+body .kc-fan-shelf .kc-teaser-image img.artist-photo { object-fit: contain; }
+body .kc-fan-shelf .kc-teaser-image[data-artwork-treatment="photo-fill"] img:not([data-kc-fallback-used]) { object-fit: cover; }
+body .kc-fan-shelf .kc-teaser-image[data-artwork-treatment="border-trim"] img:not([data-kc-fallback-used]) { position: absolute; width: var(--kc-art-w); height: var(--kc-art-h); max-width: none; left: var(--kc-art-x); top: var(--kc-art-y); }
+body .kc-fan-shelf .kc-teaser-copy { display: grid; grid-template-rows: 14px 34px 14px 14px 14px; row-gap: 1px; align-content: start; padding: 8px; flex: 1; min-height: 0; width: 100%; box-sizing: border-box; }
+/* Category labels are omitted from compact previews. */
+body .kc-fan-shelf .kc-teaser-copy .event-badges { display: none; }
+body .kc-fan-shelf .kc-teaser-date { font-size: 11px; line-height: 14px; color: #eabd9a; margin: 0; }
+body .kc-fan-shelf .kc-teaser-copy h3 { font-size: 14px; margin: 0; line-height: 17px; overflow: hidden; }
+body .kc-fan-shelf .kc-teaser-copy h3 a { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; padding: 0; }
+body .kc-fan-shelf .kc-teaser-location,
+body .kc-fan-shelf .kc-teaser-venue,
+body .kc-fan-shelf .artist-line { font-size: 11px; line-height: 14px; margin: 0; }
+/* Previews stay equal-height. Full text remains accessible and on event pages. */
+body .kc-fan-shelf .kc-teaser-date,
+body .kc-fan-shelf .kc-teaser-location,
+body .kc-fan-shelf .kc-teaser-venue,
+body .kc-fan-shelf .artist-line { display: block; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kc-fan-shelf-controls { display: flex; justify-content: end; align-items: center; gap: 8px; padding-top: 4px; }
+.kc-fan-shelf-controls > span { margin-right: auto; font-size: .7rem; color: #b8aaa0; }
+.kc-fan-shelf-controls button { width: 44px; height: 44px; border: 1px solid #634132; border-radius: 50%; color: #f4efe8; background: #211711; font: inherit; font-size: 1.3rem; cursor: pointer; }
+.kc-fan-shelf-controls button:disabled { opacity: .35; cursor: default; }
+.kc-fan-shelf-controls[hidden] { display: none; }
+body .kc-fan-home .kc-discovery-artists { grid-auto-columns: 140px; }
+body .kc-fan-home .kc-discovery-artist > div { border-radius: 50%; }
+body .kc-fan-home .kc-discovery-artist strong { font-size: .9rem; text-align: center; }
+body .kc-fan-home .kc-discovery-artist > span { text-align: center; font-size: .72rem; }
+.kc-fan-explore { max-width: 1148px; margin: 22px auto 0; padding: 22px 16px; border-block: 1px solid #423129; }
+.kc-fan-explore h2 { margin: 0 0 14px; font-size: 1.4rem; text-transform: none; }
+.kc-fan-explore-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.kc-fan-explore-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 12px; border: 1px solid #61463a; border-radius: 7px; font-size: .8rem; text-decoration: none; }
+/* Every calendar gets a short introduction instead of two screenfuls of headings. */
+html:has([data-national-discovery]) body .page-hero.hero-compact { min-height: 0; padding: 22px 16px 16px; max-width: 1180px; margin: auto; }
+html:has([data-national-discovery]) body .page-hero.hero-compact h1 { font-size: clamp(1.7rem, 6.8vw, 3rem); max-width: 100%; line-height: 1.12; margin: 0 0 10px; text-transform: none; letter-spacing: -.03em; }
+html:has([data-national-discovery]) body .page-hero.hero-compact .eyebrow { font-size: .65rem; margin: 0 0 7px; }
+html:has([data-national-discovery]) body .page-hero.hero-compact .hero-text { font-size: .85rem; line-height: 1.5; margin: 0; max-width: 700px; }
+html:has([data-national-discovery]) body main > .kc-state-finder-compact { margin-bottom: 12px; padding-block: 0; border-radius: 7px; }
+html:has([data-national-discovery]) body .calendar, html:has([data-national-discovery]) body #upcoming-shows { padding: 14px 16px 36px; max-width: 1180px; margin: auto; }
+html:has([data-national-discovery]) body .calendar-heading { align-items: center; margin-bottom: 12px; gap: 8px; }
+html:has([data-national-discovery]) body .calendar-heading h2 { font-size: 1.25rem; line-height: 1.2; margin: 0; text-transform: none; }
+html:has([data-national-discovery]) body .calendar-heading .eyebrow,
+html:has([data-national-discovery]) body .calendar-heading > div > p,
+html:has([data-national-discovery]) body .kc-weekend-route { display: none; }
+html:has([data-national-discovery]) body .quick-filters { gap: 6px; margin-bottom: 12px; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
+html:has([data-national-discovery]) body .filter-chip { min-height: 40px; padding: 8px 12px; font-size: .78rem; white-space: nowrap; }
+html:has([data-national-discovery]) body .filter-dock { padding: 12px; margin-bottom: 14px; }
+body .calendar form.kc-fan-filters { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 0; margin: 0; align-items: end; border-radius: 10px; }
+body .kc-fan-filters .field-search { grid-column: 1/-1; }
+body .kc-fan-filters .field { min-width: 0; margin: 0; }
+body .kc-fan-filters .field > span { font-size: .66rem; margin-bottom: 5px; }
+body .calendar .kc-fan-filters input, body .calendar .kc-fan-filters select { min-height: 44px; height: 44px; padding: 8px 10px; font-size: 16px; min-width: 0; }
+body .kc-fan-filters details { grid-column: 1/-1; min-width: 0; }
+.kc-fan-filters summary { cursor: pointer; min-height: 40px; display: flex; align-items: center; justify-content: space-between; font-size: .8rem; font-weight: 700; color: #efab93; list-style: none; }
+.kc-fan-filters summary::after { content: '+'; }
+.kc-fan-filters details[open] summary::after { content: '−'; }
+.kc-fan-extra-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding-top: 5px; }
+body .kc-fan-filters .reset-button { min-height: 40px; padding: 7px 12px; font-size: .78rem; margin: 0; grid-column: 1/-1; width: max-content; }
+body .kc-calendar-tools { margin-bottom: 12px; gap: 8px; }
+body .kc-view-toggle button { min-height: 40px; padding: 7px 12px; font-size: .78rem; }
+.kc-fan-active { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; }
+.kc-fan-active button { border: 1px solid #704c3d; border-radius: 20px; background: #231711; color: #f4e7d7; min-height: 40px; padding: 7px 12px; cursor: pointer; font: inherit; font-size: .78rem; }
+.kc-fan-artist-results { padding: 14px; border: 1px solid #704c3d; border-radius: 10px; margin: 0 0 14px; background: #17100d; }
+.kc-fan-artist-results h2 { font-size: 1rem; text-transform: none; margin: 0 0 10px; }
+.kc-fan-artist-results > p { color: #c5bcb6; font-size: .76rem; margin: 8px 0 0; }
+.kc-fan-artist-results a { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 48px; padding: 8px 0; text-decoration: none; border-top: 1px solid #423129; }
+.kc-fan-artist-results a:first-child { border-top: 0; }
+.kc-fan-artist-results strong { font-size: .93rem; }
+.kc-fan-artist-results small { color: #c5bcb6; display: block; font-size: .74rem; }
+.kc-fan-artist-results a.kc-profile-link { display: grid; grid-template-columns: 72px minmax(0, 1fr) auto; column-gap: 14px; row-gap: 4px; padding-block: 12px; }
+.kc-profile-avatar { position: relative; display: grid; place-items: center; width: 72px; height: 72px; border-radius: 50%; overflow: hidden; background: #35251e; border: 1px solid #8b5b47; }
+.kc-profile-avatar img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
+.kc-profile-initials { color: #efab93; font-size: 1.1rem; font-weight: 800; }
+.kc-profile-copy { min-width: 0; overflow-wrap: anywhere; }
+.kc-fan-artist-results .kc-profile-copy strong { display: block; font-size: 1.1rem; line-height: 1.25; margin-bottom: 4px; }
+.kc-fan-artist-results .kc-profile-copy small { line-height: 1.45; }
+.kc-fan-artist-results .kc-profile-action { display: inline-flex; align-items: center; justify-content: center; min-height: 34px; max-width: none; width: fit-content; padding: 7px 10px; border: 1px solid #8b5b47; border-radius: 20px; text-align: center; }
+.kc-fan-artist-results .kc-profile-link:hover .kc-profile-action { border-color: #ed8869; background: #35251e; }
+@media (max-width: 600px) {
+  /* Give this longer heading the full phone width; keep its directory action above. */
+  body .kc-fan-home [aria-labelledby="kc-artists-heading"] .kc-discovery-heading { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 12px; }
+  body .kc-fan-home [aria-labelledby="kc-artists-heading"] .kc-discovery-heading > div { display: contents; }
+  body .kc-fan-home [aria-labelledby="kc-artists-heading"] .kc-discovery-heading .eyebrow { grid-column: 1; grid-row: 1; margin: 0; }
+  body .kc-fan-home [aria-labelledby="kc-artists-heading"] .kc-discovery-heading > a { grid-column: 2; grid-row: 1; justify-self: end; }
+  body .kc-fan-home #kc-artists-heading { grid-column: 1 / -1; grid-row: 2; font-size: clamp(1rem, 5.8vw, 1.5rem); white-space: nowrap; }
+  .kc-fan-artist-results a.kc-profile-link { grid-template-columns: 64px minmax(0, 1fr); column-gap: 12px; }
+  .kc-profile-avatar { width: 64px; height: 64px; grid-row: 1 / 3; }
+  .kc-fan-artist-results .kc-profile-action { grid-column: 2; text-align: left; max-width: none; }
+}
+.kc-fan-artist-results[hidden], .kc-fan-active:empty { display: none; }
+html:has([data-national-discovery]) body .quick-filters[hidden] { display: none; }
+html:has([data-national-discovery]) body .kc-page-jumps { padding: 0 16px 10px; }
+html:has([data-national-discovery]) body .kc-page-jumps a { min-height: 40px; padding: 7px 10px; font-size: .75rem; }
+html:has([data-national-discovery]) body .kc-city-links { padding: 12px 16px; }
+html:has([data-national-discovery]) body .kc-city-links .seo-chip-grid { display: flex; flex-wrap: nowrap; overflow-x: auto; }
+html:has([data-national-discovery]) body .kc-city-links .seo-chip { flex: 0 0 auto; }
+html:has([data-national-discovery]) body .event-grid { gap: 14px; }
+html:has([data-national-discovery]) body .event-card { border-radius: 12px; overflow: hidden; }
+html:has([data-national-discovery]) body .event-card h3 { font-size: 1.2rem; line-height: 1.25; }
+html:has([data-national-discovery]) body .event-content { padding: 16px; }
+html:has([data-national-discovery]) body .event-meta { gap: 9px; }
+/* Compact full calendars: uniform Brenno-sized boxes with bounded text previews.
+   Scoped to calendars so home previews, artist details and event pages stay intact. */
+html:has([data-national-discovery]) body .calendar .event-grid {
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+}
+html:has([data-national-discovery]) body .calendar .event-card {
+  grid-template-columns: minmax(0, 40%) minmax(0, 1fr);
+  align-items: stretch;
+  height: 218px;
+  box-sizing: border-box;
+  position: relative;
+  min-width: 0;
+}
+html:has([data-national-discovery]) body .calendar .event-card[hidden] { display: none; }
+html:has([data-national-discovery]) body .calendar .event-media {
+  /* Override the source site's !important landscape-frame safeguard, only here. */
+  aspect-ratio: auto !important;
+  min-height: 0;
+  height: 100% !important;
+  align-self: stretch;
+  border-radius: 0;
+}
+html:has([data-national-discovery]) body .calendar .event-media img.event-artwork {
+  object-fit: contain;
+  padding: 0 !important;
+}
+html:has([data-national-discovery]) body .calendar .event-media img.artist-photo {
+  object-fit: cover;
+  padding: 0;
+}
+html:has([data-national-discovery]) body .calendar .event-content {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) 30px;
+  padding: 8px;
+  gap: 4px;
+  height: 100%;
+  box-sizing: border-box;
+  min-height: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+/* Hide categories only. Sold-out / cancellation / pending warnings stay visible. */
+html:has([data-national-discovery]) body .calendar .event-badges .badge-gold { display: none; }
+html:has([data-national-discovery]) body .calendar .event-badges { position: absolute; left: 5px; bottom: 5px; max-width: calc(40% - 10px); margin: 0; gap: 3px; z-index: 1; }
+html:has([data-national-discovery]) body .calendar .badge { font-size: 10px; line-height: 12px; padding: 3px 5px; background: #17100d; }
+html:has([data-national-discovery]) body .calendar .event-main { min-width: 0; min-height: 0; }
+html:has([data-national-discovery]) body .calendar .event-card h3 { font-size: 14px; line-height: 16px; height: 32px; margin: 0 0 4px; }
+html:has([data-national-discovery]) body .calendar .event-card h3 a,
+html:has([data-national-discovery]) body .calendar .artist-line,
+html:has([data-national-discovery]) body .calendar .event-meta dd {
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+html:has([data-national-discovery]) body .calendar .event-card h3 a { max-height: 32px; }
+html:has([data-national-discovery]) body .calendar .artist-line { font-size: 11.5px; line-height: 14px; height: 28px; margin: 0; }
+/* Focused artist links can scroll inside the two-line area without growing the card. */
+html:has([data-national-discovery]) body .calendar .artist-line:focus-within { display: block; overflow-y: auto; }
+html:has([data-national-discovery]) body .calendar .host-line { font-size: 10.5px; line-height: 14px; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+html:has([data-national-discovery]) body .calendar .event-meta { gap: 3px; margin: 4px 0 0; font-size: 11.5px; line-height: 14px; }
+html:has([data-national-discovery]) body .calendar .event-meta > div { display: block; }
+html:has([data-national-discovery]) body .calendar .event-meta dd { margin: 0; max-height: 28px; }
+/* The dl retains its accessible labels; the familiar values don't need a label column. */
+html:has([data-national-discovery]) body .calendar .event-meta dt {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+html:has([data-national-discovery]) body .calendar .event-meta > div:first-child dd { color: #eabd9a; font-weight: 700; }
+html:has([data-national-discovery]) body .calendar .event-meta > div:last-child dd { color: #f4efe8; font-weight: 700; -webkit-line-clamp: 1; max-height: 14px; }
+html:has([data-national-discovery]) body .calendar .event-footer { gap: 4px; min-width: 0; align-items: center; }
+html:has([data-national-discovery]) body .calendar .official-button {
+  min-height: 30px !important; height: 30px; padding: 4px 8px; font-size: 11px; line-height: 14px;
+  border-width: 1px; border-radius: 15px; box-sizing: border-box;
+  display: inline-flex; align-items: center; justify-content: center; text-align: center;
+}
+@media (min-width: 600px) {
+  html:has([data-national-discovery]) body .calendar .event-card { grid-template-columns: 178px minmax(0, 1fr); height: 237px; }
+  html:has([data-national-discovery]) body .calendar .event-content { padding: 10px; }
+  html:has([data-national-discovery]) body .calendar .event-badges { max-width: 168px; }
+  html:has([data-national-discovery]) body .calendar .event-card h3 { font-size: 16px; line-height: 18px; height: 36px; }
+  html:has([data-national-discovery]) body .calendar .event-card h3 a { max-height: 36px; }
+  html:has([data-national-discovery]) body .calendar .artist-line,
+  html:has([data-national-discovery]) body .calendar .event-meta { font-size: 12.5px; }
+}
+@media (min-width: 1000px) {
+  html:has([data-national-discovery]) body .calendar .event-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+html:has([data-national-discovery]) body .event-detail-section { padding: 20px 16px 40px; }
+html:has([data-national-discovery]) body .event-detail h1 { font-size: clamp(1.65rem, 7vw, 3rem); line-height: 1.12; }
+html:has([data-national-discovery]) body .event-detail .official-button { min-height: 48px; }
+@media (max-width: 760px) {
+  html:has([data-national-discovery]) body .event-detail { display: flex; flex-direction: column; gap: 22px; }
+  html:has([data-national-discovery]) body .event-detail-copy { order: -1; }
+  html:has([data-national-discovery]) body .event-detail-copy .detail-list { gap: 10px; margin-block: 16px; }
+  html:has([data-national-discovery]) body .event-detail-copy .eyebrow { margin: 0 0 8px; font-size: .65rem; }
+  html:has([data-national-discovery]) body .event-detail-media { max-width: 560px; width: 100%; margin: auto; }
+}
+html:has([data-national-discovery]) body .kc-discovery-breadcrumb { padding-block: 4px; }
+html:has([data-national-discovery]) body .site-footer { padding-block: 28px; }
+.kc-fan-shelf :focus-visible, .kc-fan-shelf:focus-visible, .kc-fan-filters :focus-visible, .kc-fan-active :focus-visible, .kc-fan-artist-results :focus-visible { outline: 2px solid #ffc999; outline-offset: 3px; }
+@media (min-width: 800px) {
+  body .kc-fan-home .kc-discovery-hero { padding: 16px 28px 20px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 32px; align-items: center; }
+  body .kc-fan-home .kc-discovery-intro { grid-area: auto; }
+  body .kc-fan-home .kc-discovery-section { padding: 24px 28px 12px; }
+  body .kc-fan-home .kc-discovery-artists { grid-auto-columns: calc((100% - 60px)/6); }
+  body .calendar form.kc-fan-filters { grid-template-columns: minmax(220px, 2fr) 1fr 1fr; }
+  body .kc-fan-filters .field-search { grid-column: auto; }
+  .kc-fan-explore { padding: 24px 28px; }
+}
+@media (prefers-reduced-motion: reduce) { .kc-fan-shelf { scroll-behavior: auto; } }
+
+/* October 17: additive details and clear discovery. */
+.kc-search-icon { width: 18px; height: 18px; vertical-align: middle; flex-shrink: 0; }
+body .kc-fan-search-line button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; }
+.kc-fan-suggestions { max-width: 900px; margin-top: 10px; }
+.kc-profile-action { color: #efab93; font-size: .73rem; font-weight: 700; max-width: 90px; text-align: right; }
+.kc-neighbor-states { max-width: 1148px; margin: 12px auto 24px; padding: 16px; border: 1px solid #61463a; border-radius: 10px; background: #17100d; }
+.kc-neighbor-states h2 { font-size: 1.15rem; margin: 0 0 8px; text-transform: none; }
+.kc-neighbor-states p { font-size: .85rem; line-height: 1.5; color: #c5bcb6; }
+.kc-neighbor-states[hidden] { display: none; }
+.kc-calendar-tools:has([data-selected-state][hidden]) { display: none; }
+.kc-artist-show-details { padding: 24px 20px; border-top: 1px solid #423129; }
+.kc-artist-show-details h2 { font-size: 1.5rem; text-transform: none; margin: 0 0 18px; }
+body .kc-artist-show-details .event-grid { display: grid; grid-template-columns: minmax(0,1fr); gap: 20px; }
+body .kc-artist-show-details .event-card { display: grid; grid-template-columns: minmax(0,1fr); }
+body .kc-artist-show-details .event-media { min-height: 0; aspect-ratio: auto; }
+body .kc-artist-show-details .event-media img { height: auto; width: 100%; max-height: 520px; object-fit: contain; }
+@media (min-width: 760px) {
+  body .kc-artist-show-details .event-card { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: start; }
+}
+.kc-card-sample-page { max-width: 960px; margin: auto; padding: 24px 16px; }
+.kc-card-sample-page h1 { font-size: 1.8rem; text-transform: none; }
+.kc-card-sample-page > p { font-size: .9rem; color: #c5bcb6; }
+.kc-card-formats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; margin-top: 24px; align-items: start; }
+.kc-card-formats h2 { font-size: .95rem; text-transform: none; margin: 0 0 8px; }
+.kc-card-formats section > p { color: #c5bcb6; font-size: .8rem; line-height: 1.4; min-height: 3em; }
+body .kc-card-formats .kc-fan-shelf { display: block; width: 180px; max-width: 100%; overflow: visible; padding: 0; margin: 0; }

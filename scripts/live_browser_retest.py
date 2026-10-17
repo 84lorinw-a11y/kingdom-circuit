@@ -24,7 +24,7 @@ def main():
             else: options.add_argument('--window-size=1440,1000')
             driver = webdriver.Chrome(options=options); driver.set_page_load_timeout(45)
             wait = WebDriverWait(driver,30)
-            for route in ('/','/shows/','/artists/','/artists/kb/'):
+            for route in ('/','/shows/','/artists/','/artists/kb/','/about-us/','/shows/this-weekend/'):
                 driver.get(origin+route+'?browser-retest='+str(os.environ.get('GITHUB_RUN_ID','local')))
                 wait.until(lambda d:d.find_elements(By.TAG_NAME,'h1'))
                 metrics=driver.execute_script('return [innerWidth,document.documentElement.scrollWidth,document.body.scrollWidth]')
@@ -33,9 +33,14 @@ def main():
                 check(f'{width}px {route} production canonical',driver.find_element(By.CSS_SELECTOR,'link[rel="canonical"]').get_attribute('href')==origin+route)
                 if route == '/':
                     nav=driver.find_element(By.CSS_SELECTOR,'nav[aria-label="Primary navigation"]')
-                    for path in ('/shows/','/shows/this-month/','/festivals/','/new-shows/','/artists/'):
+                    for path in ('/shows/','/shows/this-weekend/','/shows/this-month/','/festivals/','/new-shows/','/artists/','/about-us/'):
                         links=nav.find_elements(By.CSS_SELECTOR,f'a[href="{path}"]')
                         check(f'{width}px navigation {path}',len(links)==1 and links[0].is_displayed())
+                    check(f'{width}px approved discovery home',bool(driver.find_elements(By.CSS_SELECTOR,'[data-national-home]')))
+                    sizes=driver.execute_script('return [...document.querySelectorAll("[data-discovery-show]:not([hidden])")].map(n=>[Math.round(n.getBoundingClientRect().width),Math.round(n.getBoundingClientRect().height)])')
+                    check(f'{width}px uniform show cards',not sizes or len(set(map(tuple,sizes)))==1,str(sizes[:4]))
+                    check(f'{width}px Facebook link',bool(driver.find_elements(By.CSS_SELECTOR,'a[href="https://www.facebook.com/profile.php?id=61593510924754"]')))
+                    driver.save_screenshot(str(output/f'{width}px-home.png'))
                 if route == '/shows/' and width in (1440,390):
                     wait.until(lambda d:len(d.find_elements(By.CSS_SELECTOR,'[data-state-filter] option'))>1)
                     cards=lambda:driver.find_elements(By.CSS_SELECTOR,'[data-event-card]')
@@ -55,6 +60,14 @@ def main():
                         for summary in driver.find_elements(By.CSS_SELECTOR,'[data-event-filters] details:not([open]) > summary'): summary.click()
                     reset.click(); wait.until(lambda d:len(visible())==baseline)
                     check(f'{width}px reset restores current calendar',True)
+                    for value,name in (('TX','Texas'),('FL','Florida')):
+                        state.select_by_value(value)
+                        wait.until(lambda d:d.find_element(By.CSS_SELECTOR,'[data-selected-state]').get_attribute('href')==origin+'/shows/'+name.lower()+'/')
+                        check(f'{width}px shortcut follows {name}',name in driver.find_element(By.CSS_SELECTOR,'[data-selected-state]').text)
+                if route == '/artists/kb/':
+                    rows=driver.find_elements(By.CSS_SELECTOR,'.kc-rd-show-row')
+                    details=driver.find_elements(By.CSS_SELECTOR,'[data-artist-show-details] [data-event-card]')
+                    check(f'{width}px detailed shows retained below summary',len(rows)==len(details),f'{len(rows)} summary / {len(details)} full cards')
             driver.save_screenshot(str(output/f'{width}px.png'))
         except Exception as exc:
             check(f'{width}px browser sequence',False,f'{type(exc).__name__}: {str(exc)[:1000]}')

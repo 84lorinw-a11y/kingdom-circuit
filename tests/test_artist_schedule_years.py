@@ -101,6 +101,11 @@ class ArtistScheduleYearTests(unittest.TestCase):
         self.assertIn("A &amp; B Concerts", result)
         self.assertNotIn("&amp;amp;", result)
 
+    def test_later_discovery_assets_do_not_make_correct_years_appear_stale(self):
+        first = self.patch(self.profile(["2027-04-24"]))
+        final = first.replace('</head>', '<link rel="stylesheet" href="/assets/fan-discovery.css"></head>')
+        self.assertEqual(self.patch(final), final)
+
     def test_sparse_years_do_not_claim_unlisted_year(self):
         self.assertEqual(years.title_for("Artist", {2026, 2028}), "Artist Concerts & Tour Dates 2026, 2028 | Kingdom Circuit")
 

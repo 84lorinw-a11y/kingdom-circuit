@@ -1,0 +1,83 @@
+/* A deliberately scoped mobile-first layer. Original brand, data and artwork stay intact. */
+body .kc-state-finder {
+  width: 100%; max-width: 1180px; margin: 0 auto; padding: 26px 20px;
+  background: #15100e; border: 1px solid #523329; border-radius: 14px;
+}
+body .kc-state-finder h2 { margin: 0; font-size: clamp(1.35rem, 4.8vw, 1.8rem); line-height: 1.15; letter-spacing: -.025em; text-transform: none; }
+body .kc-state-finder > p { color: #c5b9b3; font-size: .92rem; margin: 8px 0 18px; }
+.kc-state-picker > label { display: block; font-size: .8rem; font-weight: 700; color: #e6d6ce; margin-bottom: 7px; }
+.kc-state-picker > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+.kc-state-picker select { width: 100%; min-width: 0; height: 48px; padding: 10px; border: 1px solid #6d544b; border-radius: 7px; background: #080808; color: #f5f2ea; font: inherit; font-size: 16px; }
+.kc-state-picker button { min-height: 48px; border: 1px solid #ed8869; border-radius: 7px; padding: 10px 13px; background: #ed8869; color: #170c08; font: inherit; font-size: .85rem; font-weight: 800; cursor: pointer; }
+.kc-state-picker button:disabled { background: #34251f; color: #b8a49a; border-color: #574035; cursor: default; }
+.kc-state-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.kc-featured-states { margin-top: 16px; }
+.kc-state-links a { display: flex; flex-direction: column; justify-content: center; min-width: 0; min-height: 58px; padding: 10px 12px; border: 1px solid #49352d; border-radius: 7px; text-decoration: none; line-height: 1.25; font-size: .92rem; font-weight: 750; overflow-wrap: anywhere; }
+.kc-state-links a:hover { border-color: #ef9377; background: #271b16; }
+.kc-state-links small { display: block; color: #bdb0a7; font-size: .73rem; font-weight: 400; margin-top: 4px; }
+.kc-all-states { margin-top: 12px; }
+.kc-all-states summary { min-height: 44px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-size: .88rem; font-weight: 700; color: #efab93; list-style: none; }
+.kc-all-states summary::-webkit-details-marker { display: none; }
+.kc-all-states summary::after { content: '+'; font-size: 1.3rem; }
+.kc-all-states[open] summary::after { content: '−'; }
+body .kc-rd-home-hero { display: grid; grid-template-columns: minmax(0, 1fr); gap: 26px; padding-top: 30px; padding-bottom: 34px; }
+body .kc-rd-home-hero .mission-statement { margin-top: 0; font-size: 1rem; line-height: 1.5; font-weight: 650; }
+body .kc-rd-home-hero .kc-rd-home-stats { margin-top: 18px; }
+body .kc-rd-home-hero .kc-rd-stat { min-height: 78px; padding: 12px 16px; }
+body .kc-home-about, body .kc-home-intro { min-width: 0; }
+body main > .kc-state-finder { width: calc(100% - 32px); margin: 0 auto 28px; }
+body main > .kc-state-finder-compact { padding-top: 7px; padding-bottom: 7px; }
+.kc-state-finder-compact .kc-all-states { margin-top: 0; }
+.kc-state-finder-compact .kc-all-states[open] { padding-bottom: 13px; }
+body .page-hero.hero-compact.seo-location-hero { min-height: 0; padding-top: 30px; padding-bottom: 22px; }
+body .seo-location-hero h1 { font-size: clamp(2rem, 8vw, 4.25rem); line-height: 1.04; max-width: 960px; margin-bottom: 18px; text-wrap: balance; overflow-wrap: anywhere; }
+body .seo-location-hero .hero-text { margin-bottom: 0; font-size: 1rem; line-height: 1.55; color: #bcb8b0; }
+.kc-page-jumps { max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 8px; padding: 0 24px 20px; }
+.kc-page-jumps a { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 14px; border: 1px solid #554039; border-radius: 7px; text-decoration: none; font-size: .85rem; font-weight: 700; }
+body .kc-city-links { display: block; padding-top: 22px; padding-bottom: 22px; }
+body .kc-city-links .eyebrow { display: none; }
+body .kc-city-links h2 { font-size: 1rem; line-height: 1.3; margin: 0 0 13px; text-transform: none; }
+body .kc-city-links .seo-chip { min-height: 44px; font-size: .85rem; border-radius: 7px; }
+body #upcoming-shows { padding-top: 26px; padding-bottom: 36px; }
+body #upcoming-shows .calendar-heading h2 { font-size: clamp(1.7rem, 6vw, 2.7rem); line-height: 1.1; }
+#upcoming-shows, #state-artists, #past-shows, #browse-states { scroll-margin-top: 64px; }
+.kc-calendar-tools { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin: 0 0 18px; }
+.kc-view-toggle { display: inline-flex; padding: 3px; border: 1px solid #554039; border-radius: 9px; background: #100d0b; }
+.kc-view-toggle button { min-height: 44px; padding: 10px 16px; border: 0; border-radius: 6px; font: inherit; font-size: .85rem; font-weight: 700; background: transparent; color: #bab0aa; cursor: pointer; }
+.kc-view-toggle button[aria-pressed="true"] { background: #e8876d; color: #160b08; }
+.kc-selected-state { display: inline-flex; min-height: 44px; align-items: center; font-size: .9rem; color: #f0ad95; text-underline-offset: 4px; }
+body .event-grid.kc-quick-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
+body .kc-quick-list .event-card { display: block; min-height: 0; }
+body .kc-quick-list .event-media { display: none; }
+body .kc-quick-list .event-content { display: flex; flex-direction: row; justify-content: space-between; gap: 20px; padding: 20px; min-width: 0; }
+body .kc-quick-list .event-main { min-width: 0; }
+body .kc-quick-list .event-card h3 { font-size: 1.3rem; line-height: 1.25; margin: 8px 0; }
+body .kc-quick-list .artist-line { margin: 6px 0 12px; font-size: .9rem; }
+body .kc-quick-list .event-meta { margin: 8px 0 0; gap: 5px; font-size: .9rem; }
+body .kc-quick-list .event-footer { border: 0; margin: 0; padding: 0; align-self: center; flex-shrink: 0; }
+body .kc-quick-list .official-button { min-height: 44px; padding: 10px 16px; font-size: .85rem; }
+.kc-state-finder :focus-visible, .kc-page-jumps a:focus-visible, .kc-calendar-tools :focus-visible { outline: 3px solid #ffbf8d; outline-offset: 4px; }
+[data-state-picker][hidden], [data-calendar-tools][hidden], [data-selected-state][hidden] { display: none !important; }
+@media (min-width: 900px) {
+  body .kc-rd-home-hero { grid-template-columns: minmax(0, 1.12fr) minmax(350px, .88fr); grid-template-areas: 'intro finder' 'about finder'; column-gap: 48px; row-gap: 24px; padding: 48px max(24px, calc((100vw - 1180px) / 2)); align-items: start; }
+  .kc-home-intro { grid-area: intro; }
+  .kc-home-about { grid-area: about; }
+  .kc-rd-home-hero .kc-state-finder { grid-area: finder; margin-top: 0; }
+  body .kc-rd-home-title { font-size: clamp(3rem, 4.9vw, 4.6rem); }
+  main > .kc-state-finder .kc-featured-states { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  main > .kc-state-finder .kc-all-states .kc-state-links { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  main > .kc-state-finder .kc-state-picker { max-width: 580px; }
+}
+@media (max-width: 600px) {
+  body .kc-state-finder { padding: 20px 15px 12px; }
+  .kc-page-jumps { padding-left: 16px; padding-right: 16px; }
+  body .kc-quick-list .event-content { display: block; padding: 16px; }
+  body .kc-quick-list .event-footer { margin-top: 14px; }
+  body .kc-quick-list .official-button { width: auto; }
+  .kc-state-picker button { padding: 10px; }
+}
+@media (max-width: 360px) {
+  body .kc-rd-home-title { font-size: clamp(1.6rem, 10.7vw, 2.4rem); }
+  .kc-state-picker > div { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { html:has([data-mobile-seo-preview]) { scroll-behavior: auto; } }

@@ -54,6 +54,7 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_*.py' -v
           node --test tests/artist-intake-submit.test.cjs
+          node --test tests/mobile-discovery.test.cjs tests/national-discovery.test.cjs tests/fan-discovery.test.cjs
 
       - name: Add priority artist fallback calendars
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message || '', '[full scan]')
@@ -490,6 +491,19 @@ jobs:
 
       - name: Verify permanent state pages in the final production artifact
         run: python scripts/permanent_state_pages.py --source . --site _site --check
+
+      - name: Apply approved fan-first discovery layout
+        run: python scripts/finalize_fan_discovery.py _site _discovery_baseline
+
+      - name: Verify promoted production discovery
+        run: |
+          python scripts/finalize_fan_discovery.py _site _discovery_baseline --check
+          python scripts/verify_live_redesign.py _site
+          python scripts/finalize_artist_details.py _site --check
+          python scripts/apply_artist_intake.py _site --check
+          node --check _site/assets/mobile-seo-preview.js
+          node --check _site/assets/national-discovery.js
+          node --check _site/assets/fan-discovery.js
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
