@@ -10,6 +10,15 @@ from scripts.publish_automation_changes import git, publish
 
 
 class AutomationPublicationTests(unittest.TestCase):
+    def test_refreshed_source_is_validated_before_it_is_saved(self):
+        workflow = (Path(__file__).resolve().parents[1] / '.github/workflows/update-and-deploy.yml').read_text()
+        correction = workflow.index('- name: Preserve October 3 concert corrections and artist identity')
+        validation = workflow.index('- name: Validate refreshed source before publication')
+        publication = workflow.index('- name: Save refreshed event data')
+        self.assertLess(correction, validation)
+        self.assertLess(validation, publication)
+        self.assertIn("python -m unittest discover -s tests -p 'test_*.py' -q", workflow[validation:publication])
+
     def setup_repo(self, directory):
         base = Path(directory)
         remote, owner, bot = [base / n for n in ('remote.git', 'owner', 'bot')]
