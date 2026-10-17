@@ -1848,8 +1848,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/3x6BDfLBgSZo72lry8q2CL",
     "youtubeProfile": "https://www.youtube.com/channel/UC7ijuNEvB9WHgYsDcGtnGhw",
     "officialImageSource": "https://www.instagram.com/afenifrl/",
-    "imageUrl": "assets/artists/afeni-saved.webp",
-    "imagePosition": "center",
+    "imageUrl": "assets/artists/afeni-official-2026-10-16.jpg",
+    "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   },
   "alexus snow": {
@@ -7021,8 +7021,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3x6BDfLBgSZo72lry8q2CL",
     "youtubeProfile": "https://www.youtube.com/channel/UC7ijuNEvB9WHgYsDcGtnGhw",
     "officialImageSource": "https://www.instagram.com/afenifrl/",
-    "imageUrl": "assets/artists/afeni-saved.webp",
-    "imagePosition": "center",
+    "imageUrl": "assets/artists/afeni-official-2026-10-16.jpg",
+    "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   },
   "alexus snow": {
@@ -11153,8 +11153,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "center"
   },
   "afeni": {
-    "imageUrl": "assets/artists/afeni-saved.webp",
-    "imagePosition": "center"
+    "imageUrl": "assets/artists/afeni-official-2026-10-16.jpg",
+    "imagePosition": "50% 0%"
   },
   "alexus snow": {
     "imageUrl": "assets/artists/alexus-snow-saved.webp",
