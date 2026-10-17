@@ -1,6 +1,7 @@
 """Label announced shows with incomplete details after imported renderers run."""
 import json
 import re
+from html import escape
 
 
 def detail_html(document, event):
@@ -40,13 +41,16 @@ def detail_html(document, event):
 def apply(site):
     from build_seo_site import event_path
     pending = {}
+    notices = {}
     for name in ("events.json", "supplemental-events.json"):
         path = site / name
         if path.exists():
             for event in json.loads(path.read_text()):
+                if event.get("publicNotice"):
+                    notices[event_path(event)] = event["publicNotice"]
                 if event.get("detailsPending") and event.get("status") == "scheduled":
                     pending[event_path(event)] = event
-    if not pending:
+    if not pending and not notices:
         return
     badge = '<span class="badge" data-kc-pending-details>Details pending</span>'
 
@@ -62,5 +66,10 @@ def apply(site):
         path = '/' + str(page.parent.relative_to(site)) + '/'
         if path in pending:
             text = detail_html(text, pending[path])
+        if path in notices:
+            text = re.sub(r'<p data-kc-event-notice>.*?</p>', '', text, flags=re.S)
+            notice = '<p data-kc-event-notice>' + escape(notices[path]) + '</p>'
+            text = re.sub(r'(<p class="artist-line">.*?</p>)',
+                          lambda match: match[0] + notice, text, count=1, flags=re.S)
         if text != original:
             page.write_text(text)

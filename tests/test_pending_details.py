@@ -98,6 +98,23 @@ class PendingDetailsTests(unittest.TestCase):
         apply(self.root)
         self.assertEqual(page.read_text(), text)
 
+    def test_public_notice_is_escaped_scoped_and_idempotent(self):
+        event = dict(self.events[0], publicNotice='Guest speaker; music day <pending>.')
+        (self.root / "events.json").write_text(json.dumps([event]))
+        page = self.root / event_path(event).strip("/") / "index.html"
+        page.parent.mkdir(parents=True)
+        original = '<p class="artist-line">Confirmed artist</p><dt>Status</dt><dd>Scheduled</dd>'
+        page.write_text(original)
+        other = self.root / 'index.html'
+        other.write_text(original)
+        apply(self.root)
+        first = page.read_text()
+        self.assertIn('Guest speaker; music day &lt;pending&gt;.', first)
+        self.assertIn('<dd>Scheduled</dd>', first)
+        self.assertEqual(other.read_text(), original)
+        apply(self.root)
+        self.assertEqual(page.read_text(), first)
+
 
 if __name__ == "__main__":
     unittest.main()

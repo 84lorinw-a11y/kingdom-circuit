@@ -50,10 +50,11 @@ def verify(site: Path):
         schema = next(s for s in schemas if s.get("@type") == "MusicEvent")
         if wanted.get("startDateTime"):
             assert schema["startDate"] == wanted["startDateTime"]
+        performer_names = {performer["name"] for performer in schema["performer"]}
         for host in wanted.get("hosts", []):
-            assert host not in json.dumps(schema["performer"]), (event_id, "host listed as performer")
+            assert host not in performer_names, (event_id, "host listed as performer")
         for name in wanted.get("advertisedBilling", []):
-            assert name in json.dumps(schema["performer"], ensure_ascii=False), (event_id, name, "schema")
+            assert name in performer_names, (event_id, name, "schema")
         for old in wanted.get("legacyEventPaths", []):
             assert f'location.replace("{href}")' in (site / old.strip("/") / "index.html").read_text()
     print("Requested concert corrections verified: complete billing, curated schedules, start times, sources and redirects")
