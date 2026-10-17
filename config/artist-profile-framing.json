@@ -6899,6 +6899,10 @@
         1,
         0.65375908
       ]
+    },
+    "mobile": {
+      "nameOnly": true,
+      "nameSize": 8.6
     }
   },
   "joz": {
@@ -7469,6 +7473,15 @@
         1,
         0.5
       ]
+    }
+  },
+  "rare-of-breed": {
+    "artist": "Rare of Breed",
+    "imageSha256": "f108bffbbecae9ce261d2289dc5f71024cb729208258292c66f4b81fc3444596",
+    "reason": "Keep the mobile artist name on one compact line below his face. Preserve the current photograph and desktop presentation.",
+    "mobile": {
+      "nameOnly": true,
+      "nameSize": 8.6
     }
   }
 }
