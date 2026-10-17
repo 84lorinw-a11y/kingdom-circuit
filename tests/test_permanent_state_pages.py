@@ -119,7 +119,9 @@ class PermanentStateTests(unittest.TestCase):
         self.assertLess(workflow.index("Apply approved mobile-first live redesign"), workflow.index("Preserve permanent state navigation"))
         self.assertLess(workflow.index("Preserve permanent state navigation"), workflow.index("Refresh final production indexing"))
         self.assertLess(workflow.index("Verify permanent state pages"), workflow.index("Upload Pages artifact"))
-        self.assertIn("full-scan-candidates.json config/permanent-state-pages.json", workflow)
+        save = workflow.split('- name: Save refreshed event data')[1].split('- name: Check out pinned')[0]
+        self.assertIn('full-scan-candidates.json', save)
+        self.assertIn('config/permanent-state-pages.json', save)
 
 
 if __name__ == "__main__":
