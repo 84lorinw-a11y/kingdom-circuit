@@ -13081,5 +13081,89 @@
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true
+  },
+  {
+    "id": "faith-festival-panama-city-beach-2026",
+    "title": "Faith Festival — Panama City Beach",
+    "startDate": "2026-10-24",
+    "endDate": "2026-10-24",
+    "startTime": "09:30",
+    "doorsTime": "09:30",
+    "timezone": "America/Chicago",
+    "startDateTime": "2026-10-24T09:30:00-05:00",
+    "venue": "Aaron Bessant Park",
+    "address": "500 W Park Drive",
+    "city": "Panama City Beach",
+    "state": "FL",
+    "postalCode": "32413",
+    "country": "US",
+    "artists": [
+      "B. Cody Shields"
+    ],
+    "advertisedBilling": [
+      "B. Cody Shields",
+      "Todd Allen Herendeen",
+      "Joseph Kevin"
+    ],
+    "officialBill": [
+      "B. Cody Shields",
+      "Todd Allen Herendeen",
+      "Joseph Kevin"
+    ],
+    "headliner": "",
+    "eventType": "festival",
+    "status": "scheduled",
+    "detailsPending": false,
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "officialUrl": "https://faithfestivalpcb.com/",
+    "ticketUrl": "",
+    "price": "Free admission",
+    "image": "assets/events/faith-festival-panama-city-beach-2026-official.jpg",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "detailImageLayout": "portrait",
+    "imageSource": "Faith Festival official local-talent flyer shared with B. Cody Shields",
+    "imageSourceUrl": "https://www.instagram.com/p/DenAFEvvOz1/",
+    "organizer": "Faith Festival PCB",
+    "publicDescription": "Free Faith Festival at Aaron Bessant Park in Panama City Beach, featuring B. Cody Shields, Todd Allen Herendeen and Joseph Kevin alongside local worship music. The festival runs from 9:30 AM until sunset on October 24, 2026. The listed time is the festival opening; B. Cody Shields’s individual set time has not been announced. Proceeds support The Ark Transitional Housing Ministry.",
+    "sourceName": "Faith Festival PCB official artist announcement and website",
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-10-18T04:05:39Z",
+    "lastVerified": "2026-10-18T04:05:39Z",
+    "auditVerified": "2026-10-18",
+    "notes": "October 17, 2026: owner asked to check B. Cody Shields’s October 24 show. His verified @bcodyshields profile carries a collaborative post with @faithfestivalpcb (DenAFEvvOz1) whose portrait flyer prints October 24, 2026, Aaron Bessant Park, and B. Cody Shields, Todd Herendeen and Joseph Kevin. Caption confirms free admission, doors 9:30 AM and Todd Allen Herendeen’s full name. Organizer’s October 17 countdown flyer DenKk-CAX3T prints 9:30 AM to sunset; official about page confirms 500 W Park Dr, Panama City Beach, FL 32413. Use America/Chicago (Central), not eastern Florida time. 09:30 is festival opening, not Cody’s unannounced set time. Other festival artists include local worship bands; bill lists only the three named artist guests on this announcement and does not claim an exhaustive all-day schedule. Official unedited portrait artwork saved locally. No duplicate found in latest production events, supplemental events or manual events.",
+    "sources": [
+      {
+        "name": "Official collaborative local artist flyer and free admission announcement",
+        "url": "https://www.instagram.com/p/DenAFEvvOz1/",
+        "type": "artist_social",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Official festival countdown flyer: 9:30 AM to sunset",
+        "url": "https://www.instagram.com/p/DenKk-CAX3T/",
+        "type": "official_social",
+        "authority": "official_event",
+        "priority": 110
+      },
+      {
+        "name": "Official festival venue and address",
+        "url": "https://faithfestivalpcb.com/about/",
+        "type": "official_website",
+        "authority": "official_event",
+        "priority": 110
+      },
+      {
+        "name": "Official festival date and gates time",
+        "url": "https://faithfestivalpcb.com/",
+        "type": "official_website",
+        "authority": "official_event",
+        "priority": 110
+      }
+    ]
   }
 ]
