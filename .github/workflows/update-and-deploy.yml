@@ -22,6 +22,8 @@ concurrency:
   queue: max
 
 env:
+  APPROVED_GAME_REPO: 84lorinw-a11y/kingdom-circuit-test
+  APPROVED_GAME_REF: 2695b988a8e82c649d7a26b87f4988a982168d21
   APPROVED_SEO_REPO: 84lorinw-a11y/kingdom-circuit-test
   APPROVED_SEO_REF: af197d30b8ad4e3cb33e37cfc7a2de086335140d
   APPROVED_REDESIGN_REPO: 84lorinw-a11y/kingdom-circuit-test
@@ -507,6 +509,28 @@ jobs:
 
       - name: Display verified sold-out artwork notices
         run: python scripts/finalize_sold_out_artwork.py _site
+
+      - name: Check out approved CHH Show Night release
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.APPROVED_GAME_REPO }}
+          ref: ${{ env.APPROVED_GAME_REF }}
+          path: _game_source
+          sparse-checkout: |
+            test-overrides/chh-show-night
+            test-overrides/chh-show-night-manifest.json
+            tests/chh-game
+            game-backend
+          sparse-checkout-cone-mode: false
+          fetch-depth: 1
+
+      - name: Verify approved game behavior
+        run: node --test _game_source/tests/chh-game/*.test.mjs
+
+      - name: Publish isolated CHH Show Night game
+        run: |
+          python scripts/publish_chh_game.py _site --source _game_source --baseline _game_baseline.json
+          python scripts/publish_chh_game.py _site --source _game_source --baseline _game_baseline.json --check
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
