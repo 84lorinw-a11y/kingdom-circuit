@@ -8,6 +8,25 @@ from pathlib import Path, PurePosixPath
 ROOT = Path(__file__).resolve().parents[1]
 RELEASE = json.loads((ROOT / 'config/chh-game-release.json').read_text())
 TEXT = {'.html', '.css', '.mjs'}
+SHARE_PATH = 'play/assets/chh-show-night-share-20261018.jpg'
+
+
+def share_metadata():
+    title = 'CHH Show Night | Kingdom Circuit'
+    description = 'Bring your crew. Play the artist challenges. Rep the merch. All glory to Jesus.'
+    image = 'https://kingdomcircuit.com/' + SHARE_PATH
+    values = [('og:type', 'website'), ('og:site_name', 'Kingdom Circuit'),
+              ('og:title', title), ('og:description', description),
+              ('og:url', 'https://kingdomcircuit.com/play/'), ('og:image', image),
+              ('og:image:secure_url', image), ('og:image:type', 'image/jpeg'),
+              ('og:image:width', '600'), ('og:image:height', '600'),
+              ('og:image:alt', 'CHH Show Night concert scene with Steven, Eli, Joz and the crowd')]
+    return ('<meta name="description" content="' + description + '">' +
+            ''.join(f'<meta property="{key}" content="{value}">' for key, value in values) +
+            '<meta name="twitter:card" content="summary">' +
+            f'<meta name="twitter:title" content="{title}">' +
+            f'<meta name="twitter:description" content="{description}">' +
+            f'<meta name="twitter:image" content="{image}">')
 
 
 def digest(data):
@@ -36,9 +55,16 @@ def expected_files(source, release=RELEASE):
             text = data.decode('utf-8')
             # Only remove test labels. Preserve gameplay, endpoint, paths and media.
             text = text.replace(' · TEST PREVIEW', '').replace('Kingdom Circuit Test', 'Kingdom Circuit')
+            if name == 'index.html' and release.get('shareImageSHA256'):
+                text = text.replace('</title>', '</title>' + share_metadata(), 1)
             assert not any(marker in text for marker in ('TEST PREVIEW', 'G-TEST-DISABLED', '/kingdom-circuit-test/', 'PLAY_PASSWORD', '/api/login'))
             data = text.encode('utf-8')
         expected['play/' + name] = data
+    if release.get('shareImageSHA256'):
+        share = (ROOT / 'game-release/chh-show-night-share-20261018.jpg').read_bytes()
+        assert digest(share) == release['shareImageSHA256'], 'Share image changed'
+        assert share.startswith(b'\xff\xd8\xff'), 'Share image must be JPEG'
+        expected[SHARE_PATH] = share
     return expected
 
 
@@ -68,6 +94,8 @@ def verify(site, source, baseline, release=RELEASE):
     assert '<meta name="score-service" content="https://script.google.com/macros/s/' in page
     assert 'Content-Security-Policy' in page and 'https://script.googleusercontent.com' in page
     assert 'type="password"' not in page
+    if release.get('shareImageSHA256'):
+        assert share_metadata() in page and (site / SHARE_PATH).is_file(), 'Share preview missing'
     for name in before:
         if Path(name).suffix in {'.html', '.xml'}:
             text = (site / name).read_text()

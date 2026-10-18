@@ -71,6 +71,16 @@ class GameReleaseTests(unittest.TestCase):
         self.assertLess(build, workflow.index('uses: actions/upload-pages-artifact'))
         self.assertIn('node --test _game_source/tests/chh-game/*.test.mjs', workflow)
 
+    def test_live_game_has_compact_share_image_and_preserves_privacy(self):
+        self.release['shareImageSHA256'] = game.RELEASE['shareImageSHA256']
+        self.build()
+        page = (self.site / 'play/index.html').read_text()
+        self.assertIn('property="og:image" content="https://kingdomcircuit.com/play/assets/', page)
+        self.assertIn('name="twitter:card" content="summary"', page)
+        self.assertIn('property="og:image:width" content="600"', page)
+        self.assertIn('noindex,nofollow', page)
+        self.assertTrue((self.site / game.SHARE_PATH).is_file())
+
 
 if __name__ == '__main__':
     unittest.main()
