@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-17T16:55:27Z",
-  "artistsChecked": 370,
+  "generatedAt": "2026-10-18T15:45:30Z",
+  "artistsChecked": 371,
   "eventLinksFoundAcrossSearches": 0,
   "uniqueEventPagesDiscovered": 0,
   "eventPagesChecked": 0,
   "matchedUpcomingEvents": 0,
   "alreadyInCatalog": 0,
   "newCandidateEvents": 0,
-  "searchFailures": 370,
+  "searchFailures": 371,
   "detailFailures": 0,
   "artistResults": [
     {
@@ -540,6 +540,14 @@
     },
     {
       "artist": "Corincris",
+      "searchLinksFound": 0,
+      "matchedEvents": 0,
+      "newCandidates": 0,
+      "status": "failed",
+      "error": "HTTPError 405 | HTTPError 405"
+    },
+    {
+      "artist": "Crown One",
       "searchLinksFound": 0,
       "matchedEvents": 0,
       "newCandidates": 0,
