@@ -505,6 +505,9 @@ jobs:
           node --check _site/assets/national-discovery.js
           node --check _site/assets/fan-discovery.js
 
+      - name: Display verified sold-out artwork notices
+        run: python scripts/finalize_sold_out_artwork.py _site
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
