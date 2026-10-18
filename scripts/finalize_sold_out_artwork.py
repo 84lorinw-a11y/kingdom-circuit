@@ -13,7 +13,7 @@ from mobile_discovery import Document, replace_spans
 
 ROOT = Path(__file__).resolve().parents[1]
 CSS = 'assets/sold-out-artwork.css'
-LINK = f'<link rel="stylesheet" href="/{CSS}?v=1">'
+LINK = f'<link rel="stylesheet" href="/{CSS}?v=2">'
 BANNER = '<span class="kc-sold-out-banner">SOLD OUT</span>'
 BADGE = '<span class="badge kc-sold-out-label">Sold out</span>'
 
