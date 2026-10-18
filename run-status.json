@@ -1,10 +1,10 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-10-17T18:38:52Z",
-  "lastSuccessfulUpdate": "2026-10-17T18:38:52Z",
-  "eventsPublished": 121,
-  "candidatesCollected": 242,
+  "lastAttempt": "2026-10-18T13:44:19Z",
+  "lastSuccessfulUpdate": "2026-10-18T13:44:19Z",
+  "eventsPublished": 119,
+  "candidatesCollected": 245,
   "artistsConfigured": 371,
   "artistsByPriority": {
     "priority1": 91,
@@ -15,7 +15,7 @@
   "socialSearchArtistsEnabled": 326,
   "freeTextAliasesProtected": 214,
   "artistsMatchedOnTicketmaster": 61,
-  "officialEventsFound": 37,
+  "officialEventsFound": 36,
   "ticketmasterEventsFound": 11,
   "instagramArtistsConfigured": 326,
   "instagramQueriesRun": 328,
@@ -411,7 +411,7 @@
     {
       "name": "ChristianHits festival directory",
       "status": "ok",
-      "eventsFound": 2
+      "eventsFound": 1
     },
     {
       "name": "Konnect Concert Series - Space City Church",
@@ -600,7 +600,7 @@
   "errorCount": 0,
   "warnings": [
     "Holy Smoke official festival: Unable to retrieve https://indietribe.us/products/holy-smoke-2026: HTTP Error 404: Not Found",
-    "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
+    "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 404: Not Found",
     "NF Bandsintown public calendar: robots.txt does not allow automated retrieval",
     "Mike Malagies Bandsintown public calendar: robots.txt does not allow automated retrieval",
     "Parris Chariz Bandsintown public calendar: robots.txt does not allow automated retrieval",

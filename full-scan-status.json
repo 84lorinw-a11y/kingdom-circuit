@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T18:54:17Z",
+  "generatedAt": "2026-10-18T14:02:47Z",
   "artistsChecked": 371,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
@@ -9,8 +9,8 @@
     "status": "ok",
     "artistsAttempted": 371,
     "resolved": 232,
-    "rawUpcomingUSRows": 90,
-    "newEventsPublished": 11,
+    "rawUpcomingUSRows": 88,
+    "newEventsPublished": 8,
     "festivalCandidatesHeld": 1,
     "requestErrors": 0
   },
@@ -23,8 +23,8 @@
   "sourceStatusCounts": {
     "delegated_to_structured_rest": 371,
     "blocked_by_robots": 374,
-    "no_events": 518,
-    "failed": 11
+    "no_events": 520,
+    "failed": 9
   },
   "newEvents": [],
   "sourceResults": [
@@ -602,9 +602,8 @@
       "artist": "Mike Malagies",
       "source": "official website",
       "url": "https://www.mikemalagiesofficial.com/",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.mikemalagiesofficial.com/: HTTP Error 429: Too Many Requests"
+      "status": "no_events",
+      "eventsFound": 0
     },
     {
       "artist": "Mike Malagies",
@@ -2174,9 +2173,8 @@
       "artist": "TRU-SERVA",
       "source": "official website",
       "url": "https://www.iamtruserva.com/",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.iamtruserva.com/: HTTP Error 429: Too Many Requests"
+      "status": "no_events",
+      "eventsFound": 0
     },
     {
       "artist": "TRU-SERVA",
