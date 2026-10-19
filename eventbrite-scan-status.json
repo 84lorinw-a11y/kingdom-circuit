@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-18T15:45:30Z",
-  "artistsChecked": 371,
+  "generatedAt": "2026-10-19T18:40:09Z",
+  "artistsChecked": 373,
   "eventLinksFoundAcrossSearches": 0,
   "uniqueEventPagesDiscovered": 0,
   "eventPagesChecked": 0,
   "matchedUpcomingEvents": 0,
   "alreadyInCatalog": 0,
   "newCandidateEvents": 0,
-  "searchFailures": 371,
+  "searchFailures": 373,
   "detailFailures": 0,
   "artistResults": [
     {
@@ -276,6 +276,14 @@
     },
     {
       "artist": "Battz",
+      "searchLinksFound": 0,
+      "matchedEvents": 0,
+      "newCandidates": 0,
+      "status": "failed",
+      "error": "HTTPError 405 | HTTPError 405"
+    },
+    {
+      "artist": "Believin Stephen",
       "searchLinksFound": 0,
       "matchedEvents": 0,
       "newCandidates": 0,
@@ -1612,6 +1620,14 @@
     },
     {
       "artist": "L.O.G.",
+      "searchLinksFound": 0,
+      "matchedEvents": 0,
+      "newCandidates": 0,
+      "status": "failed",
+      "error": "HTTPError 405 | HTTPError 405"
+    },
+    {
+      "artist": "Lady Cam",
       "searchLinksFound": 0,
       "matchedEvents": 0,
       "newCandidates": 0,
