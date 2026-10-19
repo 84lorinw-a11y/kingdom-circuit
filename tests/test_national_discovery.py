@@ -490,10 +490,19 @@ class NationalDiscoveryTests(unittest.TestCase):
                 self.assertEqual(discovery.circle_portrait({'href':f'/artists/{slug}/', 'image':image}), image)
             self.assertEqual(discovery.circle_portrait({'href':'/artists/someone-else/', 'image':original}), original)
 
+    def test_zoomed_circle_requests_enough_pixels_from_existing_variants(self):
+        image = ('<img src="/assets/optimized/872cd12991d3b650b1f675b3-w427.webp" '
+                 'width="427" height="640" sizes="170px" '
+                 'srcset="small.webp 320w, full.webp 427w">')
+        tile = discovery.artist_tile({'name':'Bobby Bendito', 'href':'/artists/bobby-bendito/',
+                                     'count':1, 'image':image})
+        self.assertIn('sizes="(min-width: 1000px) 500px, 350px"', tile)
+        self.assertIn('srcset="small.webp 320w, full.webp 427w"', tile)
+
     def test_home_circle_crop_adds_style_when_missing(self):
         image = '<img src="/assets/optimized/6df7b566d71761e10c8e1cb9-w639.webp" width="639" height="960">'
         result = discovery.circle_portrait({'href':'/artists/1k-phew/', 'image':image})
-        self.assertIn('style="object-position:50% 12%;transform:scale(1.05);transform-origin:50% 0%"', result)
+        self.assertIn('style="object-position:50% 12%;transform:scale(1.2075);transform-origin:86.14% 0.00%"', result)
 
     def test_pipeline_runs_national_before_final_artifact_verification(self):
         root = Path(__file__).resolve().parents[1]
