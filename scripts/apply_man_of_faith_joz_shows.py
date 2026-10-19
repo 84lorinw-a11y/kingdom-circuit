@@ -314,7 +314,7 @@ EVENTS = (
      'state': 'GA',
      'postalCode': '30045',
      'country': 'US',
-     'artists': ['Ahmad Nelson'],
+     'artists': ['Ahmad Nelson', 'Lady Cam'],
      'advertisedBilling': ['Ahmad Nelson', 'Lady Cam'],
      'officialBill': ['Ahmad Nelson', 'Lady Cam'],
      'unconfirmedArtists': [],
@@ -358,8 +358,9 @@ EVENTS = (
               'Do not infer that the entire SPIN weekend bill performs October 21. Destiny Diggs and DJ Tony Tone '
               'are hosts, not inferred musical billing. Keep artwork exact and local. End time and individual set '
               'times are not published. Lady Cam explicitly confirms her October 21 Urban Soul Cafe performance '
-              'in her official tour-week post DecuMrERxcw, shared by the owner October 13. Add her to the full '
-              'billing alongside Ahmad; she is not yet a curated profile. The same flyer separately labels '
+              'in her official tour-week post DecuMrERxcw, shared by the owner October 13. Lady Cam was added '
+              'to the owner-verified curated roster on October 19; connect her profile alongside Ahmad. '
+              'The same flyer separately labels '
               'October 22 Dope Women in Radio as a performance and October 24 as Red Carpet & Awards Show. '
               'Do not infer a Saturday performance or merge the separate dates.',
      'sources': [{'name': 'Urban Soul Cafe official Chocolate Affair announcement',

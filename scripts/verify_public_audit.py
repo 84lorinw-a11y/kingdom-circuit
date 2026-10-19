@@ -55,6 +55,16 @@ def iter_json_keys(value, prefix: str = "") -> Iterable[Tuple[str, str]]:
             yield from iter_json_keys(child, f"{prefix}[{index}]")
 
 
+def without_reviewed_http_websites(text: str) -> str:
+    """Exempt exact verified website fields; all loadable HTTP URLs still fail."""
+    return re.sub(
+        r'(["\']website["\']\s*:\s*)(["\'])(http://[^"\']+)\2',
+        lambda match: match.group(1) + match.group(2) + "verified-navigation" + match.group(2)
+        if match.group(3) in repair.VERIFIED_HTTP_WEBSITES else match.group(0),
+        text,
+    )
+
+
 def verify_operational_cleanup(site: Path, audit: Audit) -> None:
     for name in sorted(repair.INTERNAL_DIRS):
         audit.expect(not (site / name).exists(), f"internal directory remains: {name}")
@@ -102,7 +112,7 @@ def verify_operational_cleanup(site: Path, audit: Audit) -> None:
                 normalized not in repair.PRIVATE_JSON_KEYS and not normalized.startswith("internal"),
                 f"private JSON field remains in {rel}: {dotted}",
             )
-        audit.expect('"http://' not in json.dumps(payload), f"insecure URL remains in {rel}")
+        audit.expect('"http://' not in without_reviewed_http_websites(json.dumps(payload)), f"insecure URL remains in {rel}")
 
 
 def verify_source_exposure(rel: Path, text: str, audit: Audit) -> None:
@@ -181,7 +191,8 @@ def verify_internal_attributes(site: Path, rel: Path, text: str, audit: Audit) -
                 f"{rel}: site-owned {attr} points at the test path: {value}",
             )
         if parsed.scheme == "http":
-            audit.expect(False, f"{rel}: insecure external {attr}: {value}")
+            audit.expect(attr == "href" and value in repair.VERIFIED_HTTP_WEBSITES,
+                         f"{rel}: insecure external {attr}: {value}")
         target = repair.internal_target_rel(value, rel)
         if target is not None:
             audit.expect((site / target).is_file(), f"{rel}: broken internal {attr}: {value} -> {target}")
@@ -319,7 +330,7 @@ def verify_runtime(site: Path, audit: Audit) -> None:
                 f"{rel}: embeds private field {field}",
             )
         audit.expect(
-            not re.search(r'["\']http://[^"\']+["\']', text, re.I),
+            not re.search(r'["\']http://[^"\']+["\']', without_reviewed_http_websites(text), re.I),
             f"{rel}: embeds an insecure external URL",
         )
     app = site / "app.js"

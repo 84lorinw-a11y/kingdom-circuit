@@ -33,6 +33,19 @@ INTERNAL_HOSTS = {
 }
 LEGACY_BASES = ("/kingdom-circuit/", "/kingdom-circuit-test/")
 
+# Preserve owner-reviewed navigation links when the artist's host does not
+# support HTTPS. This does not permit HTTP images, scripts, or form actions.
+VERIFIED_HTTP_WEBSITES = {
+    row["website"] for row in json.loads(
+        (Path(__file__).resolve().parents[1] /
+         "config/verified-artist-registry-updates.json").read_text()
+    ) if str(row.get("website", "")).startswith("http://")
+}
+VERIFIED_WEBSITE_SCHEMES = {
+    variant: url for url in VERIFIED_HTTP_WEBSITES
+    for variant in (url, "https://" + url[7:])
+}
+
 # A CSP meta tag is the strongest practical policy GitHub Pages can apply from
 # repository content.  Response-only directives (for example frame-ancestors)
 # deliberately are not claimed here.
@@ -302,7 +315,8 @@ def normalize_html_urls(text: str) -> str:
 
     def replace_attr(match: re.Match) -> str:
         name, quote, value = match.group(1), match.group(2), match.group(3)
-        normalized = normalize_internal_url(value)
+        reviewed = VERIFIED_WEBSITE_SCHEMES.get(html.unescape(value)) if name.lower() == "href" else None
+        normalized = reviewed or normalize_internal_url(value)
         return f"{name}={quote}{html.escape(normalized, quote=True)}{quote}"
 
     return attr_pattern.sub(replace_attr, text)
@@ -871,7 +885,10 @@ def sanitize_json_value(value):
             normalized = re.sub(r"[^a-z0-9]", "", str(key).casefold())
             if normalized in PRIVATE_JSON_KEYS or normalized.startswith("internal"):
                 continue
-            cleaned[key] = sanitize_json_value(item)
+            if key == "website" and isinstance(item, str) and item in VERIFIED_WEBSITE_SCHEMES:
+                cleaned[key] = VERIFIED_WEBSITE_SCHEMES[item]
+            else:
+                cleaned[key] = sanitize_json_value(item)
         return cleaned
     if isinstance(value, str) and value.lower().startswith("http://"):
         return "https://" + value[len("http://"):]
@@ -990,6 +1007,13 @@ def patch_runtime_javascript(site: Path, report: Dict[str, int]) -> None:
     text = re.sub(
         r'(?P<quote>["\'])http://(?P<url>[^"\']+)(?P=quote)',
         lambda match: match.group("quote") + "https://" + match.group("url") + match.group("quote"),
+        text,
+    )
+    # The embedded public artist registry must match the verified website link.
+    text = re.sub(
+        r'(["\']website["\']\s*:\s*)(["\'])(https?://[^"\']+)\2',
+        lambda match: match.group(1) + match.group(2) +
+        VERIFIED_WEBSITE_SCHEMES.get(match.group(3), match.group(3)) + match.group(2),
         text,
     )
     static_guard = '''  const staticExperience = document.querySelector(

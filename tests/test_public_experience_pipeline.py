@@ -17,11 +17,34 @@ import finalize_public_experience as public_pipeline  # noqa: E402
 import finalize_seo_indexing as seo_finalizer  # noqa: E402
 import optimize_public_images as image_optimizer  # noqa: E402
 import verify_public_image_repairs as image_verifier  # noqa: E402
+import verify_public_audit as audit_verifier  # noqa: E402
 import verify_public_performance as performance_verifier  # noqa: E402
 import verify_public_ux as ux_verifier  # noqa: E402
 
 
 class PublicExperiencePipelineTests(unittest.TestCase):
+    def test_reviewed_http_website_survives_build_normalization(self):
+        url = 'http://www.iloveladycam.com/'
+        upgraded = url.replace('http:', 'https:')
+        for candidate in (url, upgraded):
+            self.assertIn(f'href="{url}"', audit_repairs.normalize_html_urls(
+                f'<a href="{candidate}">Official website</a>'))
+            self.assertEqual({'website': url}, audit_repairs.sanitize_json_value({'website': candidate}))
+        self.assertNotIn('http://', audit_verifier.without_reviewed_http_websites(
+            '{"website":"' + url + '"}'))
+
+    def test_http_website_exception_does_not_allow_insecure_resources(self):
+        url = 'http://www.iloveladycam.com/'
+        self.assertIn('src="https://', audit_repairs.normalize_html_urls(f'<img src="{url}">'))
+        self.assertIn('action="https://', audit_repairs.normalize_html_urls(f'<form action="{url}">'))
+        self.assertEqual({'image': url.replace('http:', 'https:')},
+                         audit_repairs.sanitize_json_value({'image': url}))
+        self.assertIn(url, audit_verifier.without_reviewed_http_websites('{"image":"' + url + '"}'))
+        audit = audit_verifier.Audit()
+        audit_verifier.verify_internal_attributes(Path('/tmp'), Path('index.html'),
+            f'<a href="{url}">Website</a><img src="{url}"><form action="{url}">', audit)
+        self.assertEqual(2, len(audit.failures))
+
     def test_card_dedupe_preserves_distinct_same_day_performance_times(self):
         def card(start_time: str, href: str) -> str:
             return f'''<article data-event-card data-date="2026-09-22" data-start-time="{start_time}">

@@ -384,7 +384,8 @@ const ARTIST_ROSTER_ORDER = [
   "MARV",
   "Nate Period",
   "Kevin \"KC\" Campbell",
-  "Crown One"
+  "Crown One",
+  "Lady Cam"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -5572,6 +5573,20 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imagePosition": "50% 0%",
     "state": "OH",
     "label": "KP Music Records",
+    "sourceRegistryVerified": true
+  },
+  "lady cam": {
+    "aliases": [
+      "Lady Cam",
+      "ladycammc"
+    ],
+    "website": "http://www.iloveladycam.com/",
+    "instagramProfile": "https://www.instagram.com/ladycammc/",
+    "spotifyProfile": "https://open.spotify.com/artist/1wsJxrGmgeajSrtLmWGr9i",
+    "youtubeProfile": "https://www.youtube.com/LADYCAMM",
+    "officialImageSource": "https://www.instagram.com/ladycammc/",
+    "imageUrl": "assets/artists/lady-cam-official-oct19.jpg",
+    "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   }
 };
@@ -10762,6 +10777,20 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "state": "OH",
     "label": "KP Music Records",
     "sourceRegistryVerified": true
+  },
+  "lady cam": {
+    "aliases": [
+      "Lady Cam",
+      "ladycammc"
+    ],
+    "website": "http://www.iloveladycam.com/",
+    "instagramProfile": "https://www.instagram.com/ladycammc/",
+    "spotifyProfile": "https://open.spotify.com/artist/1wsJxrGmgeajSrtLmWGr9i",
+    "youtubeProfile": "https://www.youtube.com/LADYCAMM",
+    "officialImageSource": "https://www.instagram.com/ladycammc/",
+    "imageUrl": "assets/artists/lady-cam-official-oct19.jpg",
+    "imagePosition": "50% 0%",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -12247,6 +12276,10 @@ const STATIC_ARTIST_PORTRAITS = {
   },
   "crown one": {
     "imageUrl": "assets/artists/crown-one-submitted-oct17.jpg",
+    "imagePosition": "50% 0%"
+  },
+  "lady cam": {
+    "imageUrl": "assets/artists/lady-cam-official-oct19.jpg",
     "imagePosition": "50% 0%"
   }
 };
