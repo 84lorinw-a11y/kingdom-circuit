@@ -385,7 +385,8 @@ const ARTIST_ROSTER_ORDER = [
   "Nate Period",
   "Kevin \"KC\" Campbell",
   "Crown One",
-  "Lady Cam"
+  "Lady Cam",
+  "Believin Stephen"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -5586,6 +5587,22 @@ const VERIFIED_ARTIST_REGISTRY = {
     "youtubeProfile": "https://www.youtube.com/LADYCAMM",
     "officialImageSource": "https://www.instagram.com/ladycammc/",
     "imageUrl": "assets/artists/lady-cam-official-oct19.jpg",
+    "imagePosition": "50% 0%",
+    "sourceRegistryVerified": true
+  },
+  "believin stephen": {
+    "aliases": [
+      "Believin Stephen",
+      "Believin’ Stephen",
+      "Stephen Brindle",
+      "believinstephen"
+    ],
+    "website": "https://www.instagram.com/believinstephen/",
+    "instagramProfile": "https://www.instagram.com/believinstephen/",
+    "spotifyProfile": "https://open.spotify.com/artist/6C7cApykc389MmY7iCEJzG",
+    "youtubeProfile": "https://www.youtube.com/user/BelievinStephen",
+    "officialImageSource": "https://www.instagram.com/believinstephen/",
+    "imageUrl": "assets/artists/believin-stephen-official-oct19.jpg",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   }
@@ -10791,6 +10808,22 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/lady-cam-official-oct19.jpg",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
+  },
+  "believin stephen": {
+    "aliases": [
+      "Believin Stephen",
+      "Believin’ Stephen",
+      "Stephen Brindle",
+      "believinstephen"
+    ],
+    "website": "https://www.instagram.com/believinstephen/",
+    "instagramProfile": "https://www.instagram.com/believinstephen/",
+    "spotifyProfile": "https://open.spotify.com/artist/6C7cApykc389MmY7iCEJzG",
+    "youtubeProfile": "https://www.youtube.com/user/BelievinStephen",
+    "officialImageSource": "https://www.instagram.com/believinstephen/",
+    "imageUrl": "assets/artists/believin-stephen-official-oct19.jpg",
+    "imagePosition": "50% 0%",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -12280,6 +12313,10 @@ const STATIC_ARTIST_PORTRAITS = {
   },
   "lady cam": {
     "imageUrl": "assets/artists/lady-cam-official-oct19.jpg",
+    "imagePosition": "50% 0%"
+  },
+  "believin stephen": {
+    "imageUrl": "assets/artists/believin-stephen-official-oct19.jpg",
     "imagePosition": "50% 0%"
   }
 };
