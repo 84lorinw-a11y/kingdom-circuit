@@ -1,26 +1,26 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-10-19T15:41:20Z",
-  "lastSuccessfulUpdate": "2026-10-19T15:41:20Z",
-  "eventsPublished": 126,
+  "lastAttempt": "2026-10-19T17:32:57Z",
+  "lastSuccessfulUpdate": "2026-10-19T17:32:57Z",
+  "eventsPublished": 117,
   "candidatesCollected": 248,
-  "artistsConfigured": 372,
+  "artistsConfigured": 373,
   "artistsByPriority": {
     "priority1": 91,
     "priority2": 142,
-    "priority3": 139
+    "priority3": 140
   },
   "ticketmasterArtistsEnabled": 196,
-  "socialSearchArtistsEnabled": 327,
-  "freeTextAliasesProtected": 216,
+  "socialSearchArtistsEnabled": 328,
+  "freeTextAliasesProtected": 219,
   "artistsMatchedOnTicketmaster": 61,
   "officialEventsFound": 36,
   "ticketmasterEventsFound": 11,
-  "instagramArtistsConfigured": 327,
-  "instagramQueriesRun": 329,
-  "instagramQueriesAttempted": 327,
-  "instagramResultsFound": 0,
+  "instagramArtistsConfigured": 328,
+  "instagramQueriesRun": 330,
+  "instagramQueriesAttempted": 328,
+  "instagramResultsFound": 2,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,10 +46,32 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
+    },
+    {
+      "url": "https://www.instagram.com/p/signin/",
+      "title": "Instagram",
+      "artists": [],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
+    },
+    {
+      "url": "https://www.instagram.com/p/Ddoskf1CNWE/",
+      "title": "sondae | Got married to my shawtyyy | Instagram",
+      "artists": [
+        "Sondae"
+      ],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 452,
+  "sourcesChecked": 453,
   "unmatchedArtists": [
     "Scootie Wop",
     "Mike Malagies",
@@ -592,8 +614,8 @@
       "name": "Instagram public announcement scan",
       "status": "ok",
       "eventsFound": 0,
-      "artistsChecked": 327,
-      "queriesRun": 329
+      "artistsChecked": 328,
+      "queriesRun": 330
     }
   ],
   "warningCount": 18,
@@ -619,9 +641,5 @@
     "Anike Bandsintown public calendar: robots.txt does not allow automated retrieval"
   ],
   "errors": [],
-  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings.",
-  "artistWebsiteEventsFound": 0,
-  "artistWebsiteSeedEvents": 22,
-  "artistWebsiteEventsAdded": 3,
-  "artistWebsiteMergeAt": "2026-10-19T15:50:50Z"
+  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings."
 }

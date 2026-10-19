@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-10-18T14:56:01Z",
-  "artistsChecked": 371,
+  "generatedAt": "2026-10-19T17:49:56Z",
+  "artistsChecked": 373,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
   "festivalCandidates": 1,
   "bandsintown": {
     "discoveryMode": "structured_rest",
     "status": "ok",
-    "artistsAttempted": 371,
-    "resolved": 232,
-    "rawUpcomingUSRows": 88,
+    "artistsAttempted": 373,
+    "resolved": 234,
+    "rawUpcomingUSRows": 90,
     "newEventsPublished": 8,
     "festivalCandidatesHeld": 1,
     "requestErrors": 0
   },
   "songkick": {
-    "artistsAttempted": 371,
+    "artistsAttempted": 373,
     "resolved": 0,
-    "blockedByRobots": 371,
+    "blockedByRobots": 373,
     "eventsFound": 0
   },
   "sourceStatusCounts": {
-    "delegated_to_structured_rest": 371,
-    "blocked_by_robots": 374,
-    "no_events": 520,
-    "failed": 9
+    "delegated_to_structured_rest": 373,
+    "blocked_by_robots": 376,
+    "no_events": 521,
+    "failed": 11
   },
   "newEvents": [],
   "sourceResults": [
@@ -602,8 +602,9 @@
       "artist": "Mike Malagies",
       "source": "official website",
       "url": "https://www.mikemalagiesofficial.com/",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.mikemalagiesofficial.com/: HTTP Error 429: Too Many Requests"
     },
     {
       "artist": "Mike Malagies",
@@ -2173,8 +2174,9 @@
       "artist": "TRU-SERVA",
       "source": "official website",
       "url": "https://www.iamtruserva.com/",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.iamtruserva.com/: HTTP Error 429: Too Many Requests"
     },
     {
       "artist": "TRU-SERVA",
@@ -8210,6 +8212,51 @@
       "artist": "Crown One",
       "source": "Spotify profile",
       "url": "https://open.spotify.com/artist/3LT4j7qHPWxOpJ8ex5Igji",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Lady Cam",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Lady Cam",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Lady Cam",
+      "source": "official website",
+      "url": "http://www.iloveladycam.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Lady Cam",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/1wsJxrGmgeajSrtLmWGr9i",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Believin Stephen",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Believin Stephen",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Believin Stephen",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/6C7cApykc389MmY7iCEJzG",
       "status": "no_events",
       "eventsFound": 0
     }
