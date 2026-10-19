@@ -41,6 +41,52 @@
     ]
   },
   {
+    "id": "manual:hulvey-could-be-tonight-silver-spring-2026",
+    "title": "Hulvey - Could Be Tonight Tour",
+    "startDate": "2026-09-08",
+    "startTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "The Fillmore Silver Spring",
+    "address": "8656 Colesville Rd",
+    "city": "Silver Spring",
+    "state": "MD",
+    "country": "US",
+    "artists": [
+      "Hulvey",
+      "indie tribe.",
+      "Kijan Boone"
+    ],
+    "headliner": "Hulvey",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketmaster.com/hulvey-could-be-tonight-tour-silver-spring-maryland-09-08-2026/event/1500647FE337D3A1",
+    "officialUrl": "https://www.livenation.com/event/1AvfZ_6GkTNuWC-/hulvey-could-be-tonight-tour",
+    "image": "assets/artists/hulvey.webp",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "price": "",
+    "lineupExplicit": true,
+    "authority": "official_event",
+    "sourceName": "Live Nation official event",
+    "sources": [
+      {
+        "name": "Live Nation official event",
+        "url": "https://www.livenation.com/event/1AvfZ_6GkTNuWC-/hulvey-could-be-tonight-tour",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "Ticketmaster official ticketing",
+        "url": "https://www.ticketmaster.com/hulvey-could-be-tonight-tour-silver-spring-maryland-09-08-2026/event/1500647FE337D3A1",
+        "type": "venue_ticket",
+        "authority": "venue_ticket",
+        "priority": 94
+      }
+    ],
+    "confidence": "high"
+  },
+  {
     "id": "submitted:deonte-hall-truth-in-action-battle-creek-2026",
     "title": "Truth in Action First Annual Gospel Music Concert",
     "startDate": "2026-09-12",
@@ -267,6 +313,95 @@
     "imagePosition": "center",
     "imageSource": "Owner-supplied official HOG MOB Millville concert flyer",
     "imageSourceUrl": "https://hogmob.com/wp-content/uploads/2026/08/Sevin-live-NJ.jpg"
+  },
+  {
+    "id": "ark-of-worship-2026",
+    "title": "Ark of Worship Gospel & Christian Music Festival 2026",
+    "startDate": "2026-10-09",
+    "endDate": "2026-10-10",
+    "startTime": "",
+    "venue": "Southwest Trail Riders Association Property",
+    "address": "13711 Almeda School Rd",
+    "city": "Houston",
+    "state": "TX",
+    "artists": [
+      "Zauntee",
+      "Scootie Wop",
+      "Dante' Pride",
+      "Anike",
+      "Y Shadey",
+      "180MINDSET",
+      "Kijan Boone"
+    ],
+    "headliner": "Zauntee",
+    "eventType": "festival",
+    "ticketUrl": "https://www.arkofworship.com/tickets",
+    "officialUrl": "https://www.arkofworship.com/lineup",
+    "image": "assets/events/ark-of-worship-2026.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "User-provided official Ark of Worship festival flyer",
+    "imageSourceUrl": "https://www.arkofworship.com/",
+    "auditVerified": "2026-09-26",
+    "price": "$59+ single-day / $99+ 2-day",
+    "status": "scheduled",
+    "lineupExplicit": true,
+    "authority": "official_festival",
+    "sourceName": "Ark of Worship official festival lineup",
+    "advertisedBilling": [
+      "Jekalyn Carr",
+      "Kierra Sheard",
+      "Travis Greene",
+      "Charles Weems",
+      "Kijan Boone",
+      "Zauntee",
+      "Scootie Wop",
+      "Dante' Pride",
+      "Anike",
+      "Ahjah",
+      "Y Shadey",
+      "Kefia Rollerson",
+      "DJ PARTYwithParks",
+      "180MINDSET"
+    ],
+    "officialBill": [
+      "Jekalyn Carr",
+      "Kierra Sheard",
+      "Travis Greene",
+      "Charles Weems",
+      "Kijan Boone",
+      "Zauntee",
+      "Scootie Wop",
+      "Dante' Pride",
+      "Anike",
+      "Ahjah",
+      "Y Shadey",
+      "Kefia Rollerson",
+      "DJ PARTYwithParks",
+      "180MINDSET"
+    ],
+    "performerDays": {
+      "2026-10-09": [
+        "Kijan Boone",
+        "Ahjah",
+        "Anike",
+        "Y Shadey",
+        "180MINDSET",
+        "DJ PARTYwithParks"
+      ],
+      "2026-10-10": [
+        "Jekalyn Carr",
+        "Kierra Sheard",
+        "Travis Greene",
+        "Charles Weems",
+        "Zauntee",
+        "Scootie Wop",
+        "Dante' Pride",
+        "Kefia Rollerson",
+        "DJ PARTYwithParks"
+      ]
+    }
   },
   {
     "id": "eventbrite:reign-volume-one-aasha-marie-brooklyn-2026",
@@ -2138,13 +2273,6 @@
         "type": "bandsintown_rest",
         "authority": "artist_calendar",
         "priority": 74
-      },
-      {
-        "name": "Ticketmaster",
-        "url": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
-        "type": "ticketmaster",
-        "authority": "venue_ticket",
-        "priority": 94
       }
     ],
     "confidence": "medium",
@@ -2189,8 +2317,7 @@
     "imageSourceUrl": "https://www.instagram.com/p/Ddo8xGgoQhN/",
     "legacyEventNotice": "GLOVEMBER takes place November 14, 2026 at 8 PM at The Belasco. This duplicate listing has been combined with the main event.",
     "mergedFromIds": [
-      "manual:cj-emulous-glo-concert-los-angeles-2026",
-      "ticketmaster:vv1AaZkfMGkd2fZDG"
+      "manual:cj-emulous-glo-concert-los-angeles-2026"
     ],
     "firstSeen": "2026-08-09T00:00:00Z"
   },
