@@ -1,8 +1,8 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-10-19T17:32:57Z",
-  "lastSuccessfulUpdate": "2026-10-19T17:32:57Z",
+  "lastAttempt": "2026-10-19T18:42:39Z",
+  "lastSuccessfulUpdate": "2026-10-19T18:42:39Z",
   "eventsPublished": 117,
   "candidatesCollected": 248,
   "artistsConfigured": 373,
@@ -20,7 +20,7 @@
   "instagramArtistsConfigured": 328,
   "instagramQueriesRun": 330,
   "instagramQueriesAttempted": 328,
-  "instagramResultsFound": 2,
+  "instagramResultsFound": 0,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,28 +46,6 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
-    },
-    {
-      "url": "https://www.instagram.com/p/signin/",
-      "title": "Instagram",
-      "artists": [],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
-    },
-    {
-      "url": "https://www.instagram.com/p/Ddoskf1CNWE/",
-      "title": "sondae | Got married to my shawtyyy | Instagram",
-      "artists": [
-        "Sondae"
-      ],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
@@ -622,7 +600,7 @@
   "errorCount": 0,
   "warnings": [
     "Holy Smoke official festival: Unable to retrieve https://indietribe.us/products/holy-smoke-2026: HTTP Error 404: Not Found",
-    "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
+    "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 404: Not Found",
     "NF Bandsintown public calendar: robots.txt does not allow automated retrieval",
     "Mike Malagies Bandsintown public calendar: robots.txt does not allow automated retrieval",
     "Parris Chariz Bandsintown public calendar: robots.txt does not allow automated retrieval",

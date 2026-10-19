@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T17:49:56Z",
+  "generatedAt": "2026-10-19T19:00:05Z",
   "artistsChecked": 373,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
@@ -23,8 +23,8 @@
   "sourceStatusCounts": {
     "delegated_to_structured_rest": 373,
     "blocked_by_robots": 376,
-    "no_events": 521,
-    "failed": 11
+    "no_events": 524,
+    "failed": 8
   },
   "newEvents": [],
   "sourceResults": [
@@ -602,9 +602,8 @@
       "artist": "Mike Malagies",
       "source": "official website",
       "url": "https://www.mikemalagiesofficial.com/",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.mikemalagiesofficial.com/: HTTP Error 429: Too Many Requests"
+      "status": "no_events",
+      "eventsFound": 0
     },
     {
       "artist": "Mike Malagies",
@@ -2174,9 +2173,8 @@
       "artist": "TRU-SERVA",
       "source": "official website",
       "url": "https://www.iamtruserva.com/",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.iamtruserva.com/: HTTP Error 429: Too Many Requests"
+      "status": "no_events",
+      "eventsFound": 0
     },
     {
       "artist": "TRU-SERVA",
@@ -4570,9 +4568,8 @@
       "artist": "Xerogangg",
       "source": "official website",
       "url": "https://www.xerogangg.com/",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.xerogangg.com/: HTTP Error 429: Too Many Requests"
+      "status": "no_events",
+      "eventsFound": 0
     },
     {
       "artist": "Xerogangg",
