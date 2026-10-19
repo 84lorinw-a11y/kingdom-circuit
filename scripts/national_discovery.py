@@ -377,6 +377,8 @@ def artist_tile(artist):
     if zoom and float(zoom.group(1)) > 1:
         # Request enough pixels for the enlarged image, not just its circle.
         scale = float(zoom.group(1))
+        attrs = Document(image).one(lambda n: n.tag == 'img').attrs
+        scale *= max(int(attrs.get('width', 1)) / int(attrs.get('height', 1)), 1)
         sizes = f'(min-width: 1000px) {round(200 * scale)}px, {round(140 * scale)}px'
     image = re.sub(r'sizes="[^"]*"', f'sizes="{sizes}"', image)
     count = artist['count']

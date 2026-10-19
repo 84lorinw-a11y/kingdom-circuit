@@ -499,6 +499,15 @@ class NationalDiscoveryTests(unittest.TestCase):
         self.assertIn('sizes="(min-width: 1000px) 500px, 350px"', tile)
         self.assertIn('srcset="small.webp 320w, full.webp 427w"', tile)
 
+    def test_wide_zoomed_circle_accounts_for_cover_width(self):
+        image = ('<img src="/assets/optimized/5fcd51378270d2cd7b110a87-w1200.webp" '
+                 'width="1200" height="630" sizes="170px" '
+                 'srcset="small.webp 320w, medium.webp 640w, full.webp 1200w">')
+        tile = discovery.artist_tile({'name':'Kaden Jordan', 'href':'/artists/kaden-jordan/',
+                                     'count':1, 'image':image})
+        self.assertIn('sizes="(min-width: 1000px) 857px, 600px"', tile)
+        self.assertIn('srcset="small.webp 320w, medium.webp 640w, full.webp 1200w"', tile)
+
     def test_home_circle_crop_adds_style_when_missing(self):
         image = '<img src="/assets/optimized/6df7b566d71761e10c8e1cb9-w639.webp" width="639" height="960">'
         result = discovery.circle_portrait({'href':'/artists/1k-phew/', 'image':image})
