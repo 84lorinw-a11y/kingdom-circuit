@@ -1,25 +1,25 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-10-18T14:38:55Z",
-  "lastSuccessfulUpdate": "2026-10-18T14:38:55Z",
-  "eventsPublished": 152,
-  "candidatesCollected": 245,
-  "artistsConfigured": 371,
+  "lastAttempt": "2026-10-19T15:41:20Z",
+  "lastSuccessfulUpdate": "2026-10-19T15:41:20Z",
+  "eventsPublished": 126,
+  "candidatesCollected": 248,
+  "artistsConfigured": 372,
   "artistsByPriority": {
     "priority1": 91,
     "priority2": 142,
-    "priority3": 138
+    "priority3": 139
   },
   "ticketmasterArtistsEnabled": 196,
-  "socialSearchArtistsEnabled": 326,
-  "freeTextAliasesProtected": 214,
+  "socialSearchArtistsEnabled": 327,
+  "freeTextAliasesProtected": 216,
   "artistsMatchedOnTicketmaster": 61,
   "officialEventsFound": 36,
   "ticketmasterEventsFound": 11,
-  "instagramArtistsConfigured": 326,
-  "instagramQueriesRun": 328,
-  "instagramQueriesAttempted": 326,
+  "instagramArtistsConfigured": 327,
+  "instagramQueriesRun": 329,
+  "instagramQueriesAttempted": 327,
   "instagramResultsFound": 0,
   "instagramEventsFound": 0,
   "instagramCandidates": [
@@ -49,7 +49,7 @@
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 451,
+  "sourcesChecked": 452,
   "unmatchedArtists": [
     "Scootie Wop",
     "Mike Malagies",
@@ -592,15 +592,15 @@
       "name": "Instagram public announcement scan",
       "status": "ok",
       "eventsFound": 0,
-      "artistsChecked": 326,
-      "queriesRun": 328
+      "artistsChecked": 327,
+      "queriesRun": 329
     }
   ],
   "warningCount": 18,
   "errorCount": 0,
   "warnings": [
     "Holy Smoke official festival: Unable to retrieve https://indietribe.us/products/holy-smoke-2026: HTTP Error 404: Not Found",
-    "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 404: Not Found",
+    "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
     "NF Bandsintown public calendar: robots.txt does not allow automated retrieval",
     "Mike Malagies Bandsintown public calendar: robots.txt does not allow automated retrieval",
     "Parris Chariz Bandsintown public calendar: robots.txt does not allow automated retrieval",
@@ -623,5 +623,5 @@
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 22,
   "artistWebsiteEventsAdded": 3,
-  "artistWebsiteMergeAt": "2026-10-18T15:10:30Z"
+  "artistWebsiteMergeAt": "2026-10-19T15:50:50Z"
 }
