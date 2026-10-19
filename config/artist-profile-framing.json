@@ -499,16 +499,16 @@
   },
   "marty": {
     "artist": "Marty",
-    "imageSha256": "fbd20d044256dcf51c9ce9eeb9fda35a4364b9e65023677771723c1b3a979a9c",
-    "reason": "Photo is visibly soft and tightly cropped around cap and face.",
+    "imageSha256": "96376f67dc26b5945ef722edbbed974e29c12f53b68120e0f6243a69deb81fb1",
+    "reason": "Owner-selected photograph with requested natural clarity cleanup and closer upper-body crop; keep full cap and face visible.",
     "desktop": {
       "window": [
         0,
-        0,
+        0.02,
         1,
-        1.0
+        0.7407407407407407
       ],
-      "ratio": 1,
+      "ratio": 1.35,
       "nameSize": 5.6
     },
     "mobile": {
@@ -516,7 +516,7 @@
         0,
         0,
         1,
-        1.0
+        1
       ],
       "ratio": 1,
       "nameSize": 8.6

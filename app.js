@@ -746,9 +746,9 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/deathbymartymar/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/5BfKKSmpGmj2moMNlaWeJK",
     "youtubeProfile": "https://www.youtube.com/@deathbymartymar",
-    "officialImageSource": "https://open.spotify.com/artist/5BfKKSmpGmj2moMNlaWeJK",
-    "imageUrl": "assets/artists/marty-saved.webp",
-    "imagePosition": "center",
+    "officialImageSource": "Owner-provided photo; requested natural clarity cleanup and close crop, October 19, 2026",
+    "imageUrl": "assets/artists/marty-cleaned-oct19.png",
+    "imagePosition": "50% 30%",
     "sourceRegistryVerified": true
   },
   "brvndonp": {
@@ -5951,9 +5951,9 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/deathbymartymar/?hl=en",
     "spotifyProfile": "https://open.spotify.com/artist/5BfKKSmpGmj2moMNlaWeJK",
     "youtubeProfile": "https://www.youtube.com/@deathbymartymar",
-    "officialImageSource": "https://open.spotify.com/artist/5BfKKSmpGmj2moMNlaWeJK",
-    "imageUrl": "assets/artists/marty-saved.webp",
-    "imagePosition": "center",
+    "officialImageSource": "Owner-provided photo; requested natural clarity cleanup and close crop, October 19, 2026",
+    "imageUrl": "assets/artists/marty-cleaned-oct19.png",
+    "imagePosition": "50% 30%",
     "sourceRegistryVerified": true
   },
   "brvndonp": {
@@ -10924,8 +10924,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "center"
   },
   "marty": {
-    "imageUrl": "assets/artists/marty-saved.webp",
-    "imagePosition": "center"
+    "imageUrl": "assets/artists/marty-cleaned-oct19.png",
+    "imagePosition": "50% 30%"
   },
   "brvndonp": {
     "imageUrl": "assets/artists/brvndonp-saved.webp",
