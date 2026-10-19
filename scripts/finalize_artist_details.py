@@ -13,6 +13,7 @@ from pathlib import Path
 import re
 import shutil
 from urllib.parse import unquote, urlsplit
+from artist_thumbnail_framing import frame_directory
 
 BASE = "/"
 CSS = "assets/artist-schedule-details.css"
@@ -103,6 +104,10 @@ def framing_css(slug: str) -> str:
     letter-spacing: -.035em; overflow-wrap: normal; word-break: normal; white-space: normal;
     margin: 0; text-shadow: 0 2px 10px rgba(0,0,0,.8);
   }}'''
+        if frame.get('priorityName'):
+            # Supersede an older artist-specific rule from the pinned design.
+            name_css += f'''
+  body .kc-rd-profile-hero #kc-rd-artist-name {{ font-size: clamp(18px, {name_size}cqw, {largest}px); }}'''
         if frame.get('nameBelow'):
             name_css += f'''
   body .kc-rd-profile-name {{ position: relative; inset: auto; max-width: none; padding: {inset}px; }}'''
@@ -338,6 +343,9 @@ def main():
     if not args.check:
         for profile, source in profiles(site):
             profile.write_text(render_profile(site, profile, source, args.base))
+        directory = site / 'artists/index.html'
+        if directory.is_file():
+            directory.write_text(frame_directory(directory.read_text()))
         shutil.copyfile(Path(__file__).resolve().parents[1] / 'assets/artist-schedule-details.css', site / CSS)
     print(json.dumps(check(site, args.base), indent=2))
 

@@ -4345,7 +4345,7 @@
   "a-i-the-anomaly": {
     "artist": "A.I. The Anomaly",
     "imageSha256": "b20e02bc141f33f78f0215ff2dfa1490157023266ea001eaa423c65b247762ea",
-    "reason": "Desktop leaves a large empty area above a small subject; mobile frames her well.",
+    "reason": "Desktop leaves a large empty area above a small subject; mobile frames her well. Oct 18: reviewed mobile headroom and compact title.",
     "desktop": {
       "window": [
         0,
@@ -4357,8 +4357,14 @@
       "nameSize": 5.6
     },
     "mobile": {
-      "nameOnly": true,
-      "nameSize": 8.6
+      "window": [
+        0.0,
+        0.154688,
+        1.0,
+        0.845313
+      ],
+      "ratio": 1,
+      "nameSize": 7.8
     }
   },
   "selah-the-corner": {
@@ -4594,16 +4600,16 @@
   "404-chew": {
     "artist": "404 Chew",
     "imageSha256": "f514fbfcb92cf3d3a5d4c639ebbc13fde295d64e8a374e9a4e95edbb7cccd9d5",
-    "reason": "Clear portrait; mobile hair sits against top edge.",
+    "reason": "Clear portrait; mobile hair sits against top edge. Oct 18: reviewed mobile headroom and compact title.",
     "mobile": {
       "window": [
-        0,
-        0,
-        1,
+        0.0,
+        0.0,
+        1.0,
         1.0
       ],
       "ratio": 1,
-      "nameSize": 8.6
+      "nameSize": 7.8
     }
   },
   "g3rm-43": {
@@ -5001,7 +5007,7 @@
   "kvng-flvcko": {
     "artist": "Kvng Flvcko",
     "imageSha256": "711e1e9893bb2bd9b01fbe6b69f17aa937a5dd2bc8b66c0ee0ec71c439c88ba8",
-    "reason": "Upper hair is cut at both sizes.",
+    "reason": "Upper hair is cut at both sizes. Oct 18: reviewed mobile headroom and compact title.",
     "desktop": {
       "window": [
         0,
@@ -5014,13 +5020,13 @@
     },
     "mobile": {
       "window": [
-        0,
-        0,
-        1,
+        0.0,
+        0.0,
+        1.0,
         1.0
       ],
       "ratio": 1,
-      "nameSize": 8.6
+      "nameSize": 7.8
     }
   },
   "drea-lp": {
@@ -5544,16 +5550,16 @@
   "zee": {
     "artist": "ZEE",
     "imageSha256": "70e198c3981a0f0a6388296e3eb77ae9c091fcd62a7d08cc693b7c870cf7b701",
-    "reason": "Energetic performance shot; mobile head is tight against top.",
+    "reason": "Energetic performance shot; mobile head is tight against top. Oct 18: reviewed mobile headroom and compact title.",
     "mobile": {
       "window": [
-        0.1,
-        0.1,
-        0.9,
-        0.9
+        0.0,
+        0.0,
+        0.85,
+        0.85
       ],
       "ratio": 1,
-      "nameSize": 8.6
+      "nameSize": 7.8
     }
   },
   "tj-carroll": {
@@ -6326,16 +6332,16 @@
   "b-e-r-i-d-o-x": {
     "artist": "B.E.R.I.D.O.X.",
     "imageSha256": "b8936bdf9ba3fbe81c06945beb9e048e4d9b3c170afd4e69a953059a27f245ef",
-    "reason": "Mobile clips upper head and breaks the final X onto another line.",
+    "reason": "Mobile clips upper head and breaks the final X onto another line. Oct 18: reviewed mobile headroom and compact title.",
     "mobile": {
       "window": [
-        0,
-        0,
-        1,
+        0.0,
+        0.058637,
+        1.0,
         0.75
       ],
       "ratio": 1,
-      "nameSize": 8.6
+      "nameSize": 7.8
     },
     "desktop": {
       "ratio": 1.33333333,
@@ -6672,7 +6678,7 @@
   "ahmad-nelson": {
     "artist": "Ahmad Nelson",
     "imageSha256": "85eecbea0790556ea03203c1713d890f784739978c3927bfb205d077044e7f4d",
-    "reason": "Desktop full-body view makes face small; mobile crop works.",
+    "reason": "Desktop full-body view makes face small; mobile crop works. Oct 18: reviewed mobile headroom and compact title.",
     "desktop": {
       "window": [
         0.21181,
@@ -6684,8 +6690,14 @@
       "nameSize": 5.6
     },
     "mobile": {
-      "nameOnly": true,
-      "nameSize": 8.6
+      "window": [
+        0.204134,
+        0.005737,
+        0.680351,
+        0.510263
+      ],
+      "ratio": 1,
+      "nameSize": 7.8
     }
   },
   "taylented": {
@@ -6829,7 +6841,7 @@
   "kurtis-hoppie": {
     "artist": "Kurtis Hoppie",
     "imageSha256": "555c3a6bc1c7ad4db8506a134beaa441f624369c07465644e356dcbdd9a9d2fb",
-    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "reason": "Fill the desktop photo frame using the existing portrait. Oct 18: reviewed mobile headroom and compact title.",
     "desktop": {
       "ratio": 1.33333333,
       "nameSize": 5.6,
@@ -6839,6 +6851,16 @@
         1,
         0.5625
       ]
+    },
+    "mobile": {
+      "window": [
+        0.0,
+        0,
+        1.0,
+        0.75
+      ],
+      "ratio": 1,
+      "nameSize": 7.4
     }
   },
   "wuhsahbee": {
@@ -6859,7 +6881,7 @@
   "stixx-aka-conejo": {
     "artist": "Stixx aka Conejo",
     "imageSha256": "083792a920181470e597f10ccf160a8ac97ac72fd1c61b58d324b9238f6099e3",
-    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "reason": "Fill the desktop photo frame using the existing portrait. Oct 18: reviewed mobile headroom and compact title.",
     "desktop": {
       "ratio": 1.33333333,
       "nameSize": 5.6,
@@ -6869,6 +6891,10 @@
         1,
         0.62226563
       ]
+    },
+    "mobile": {
+      "nameOnly": true,
+      "nameSize": 6.6
     }
   },
   "kaboose": {
@@ -6923,7 +6949,7 @@
   "jered-sanders": {
     "artist": "Jered Sanders",
     "imageSha256": "45ba01dc282ab8296e323dace32fb2b128de061e7ff6880a6d0bda1db680154c",
-    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "reason": "Fill the desktop photo frame using the existing portrait. Oct 18: reviewed mobile headroom and compact title.",
     "desktop": {
       "ratio": 1.33333333,
       "nameSize": 5.6,
@@ -6933,6 +6959,16 @@
         1,
         0.62695312
       ]
+    },
+    "mobile": {
+      "window": [
+        0.0,
+        0,
+        1.0,
+        0.835938
+      ],
+      "ratio": 1,
+      "nameSize": 7.3
     }
   },
   "nxtmike": {
@@ -6953,7 +6989,7 @@
   "generation-recovery": {
     "artist": "Generation Recovery",
     "imageSha256": "1e87497902a6b5b6dc0634f6d8f21570feaa169702b8a3416de2ef38ebd522ff",
-    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "reason": "Fill the desktop photo frame using the existing portrait. Oct 18: reviewed mobile headroom and compact title.",
     "desktop": {
       "ratio": 1.33333333,
       "nameSize": 5.6,
@@ -6963,12 +6999,22 @@
         1,
         0.63515625
       ]
+    },
+    "mobile": {
+      "window": [
+        0,
+        0,
+        1,
+        0.846875
+      ],
+      "ratio": 1,
+      "nameSize": 6.8
     }
   },
   "j-monty": {
     "artist": "J. Monty",
     "imageSha256": "efa7eb053c8eed33a68ec9efd64817b45a88ebf88f69280b7c8afcb3de2059c4",
-    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "reason": "Fill the desktop photo frame using the existing portrait. Oct 18: reviewed mobile headroom and compact title.",
     "desktop": {
       "ratio": 1.33333333,
       "nameSize": 5.6,
@@ -6978,6 +7024,16 @@
         1,
         0.525
       ]
+    },
+    "mobile": {
+      "window": [
+        0.10382,
+        0.190098,
+        0.843223,
+        0.590256
+      ],
+      "ratio": 1,
+      "nameSize": 7.8
     }
   },
   "n-x": {
@@ -7013,7 +7069,7 @@
   "deon": {
     "artist": "DEON",
     "imageSha256": "6a52cea672e4f72532953b9cf55352c9714409394b99cee7f54286014f8949c8",
-    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "reason": "Fill the desktop photo frame using the existing portrait. Oct 18: reviewed mobile headroom and compact title.",
     "desktop": {
       "ratio": 1.33333333,
       "nameSize": 5.6,
@@ -7023,12 +7079,22 @@
         1,
         0.62695312
       ]
+    },
+    "mobile": {
+      "window": [
+        0.0,
+        0.015263,
+        1.0,
+        0.835938
+      ],
+      "ratio": 1,
+      "nameSize": 7.8
     }
   },
   "bobby-real-montgomery": {
     "artist": "Bobby Real Montgomery",
     "imageSha256": "c0e6179b3161e6e8ed493004e330c7321f9eed70321a1d02a5581906307f4155",
-    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "reason": "Fill the desktop photo frame using the existing portrait. Oct 18: reviewed mobile headroom and compact title.",
     "desktop": {
       "ratio": 1.33333333,
       "nameSize": 5.6,
@@ -7038,6 +7104,11 @@
         1,
         0.5
       ]
+    },
+    "mobile": {
+      "nameOnly": true,
+      "nameSize": 5.8,
+      "priorityName": true
     }
   },
   "eli-williams": {
@@ -7148,7 +7219,7 @@
   "bill-b": {
     "artist": "Bill B.",
     "imageSha256": "cb3aaeadf0ceeeb58fb597901318d51c43e13181203c3b209fad0041206dbe4c",
-    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "reason": "Fill the desktop photo frame using the existing portrait. Oct 18: reviewed mobile headroom and compact title.",
     "desktop": {
       "ratio": 1.33333333,
       "nameSize": 5.6,
@@ -7158,6 +7229,10 @@
         1,
         0.62929688
       ]
+    },
+    "mobile": {
+      "nameOnly": true,
+      "nameSize": 8.6
     }
   },
   "gin-sk": {
@@ -7358,7 +7433,7 @@
   "isaiah-robin": {
     "artist": "Isaiah Robin",
     "imageSha256": "cc6a68ccfe7af5d46add5af1a2433a574e165214d2e4f96c7a63a160e96b37e1",
-    "reason": "Fill the desktop photo frame using the existing portrait.",
+    "reason": "Fill the desktop photo frame using the existing portrait. Oct 18: reviewed mobile headroom and compact title.",
     "desktop": {
       "ratio": 1.33333333,
       "nameSize": 5.6,
@@ -7368,6 +7443,16 @@
         1,
         0.63046875
       ]
+    },
+    "mobile": {
+      "window": [
+        0.0,
+        0.064279,
+        1.0,
+        0.840625
+      ],
+      "ratio": 1,
+      "nameSize": 7.8
     }
   },
   "still-shadey": {
@@ -7507,6 +7592,147 @@
       ],
       "ratio": 0.996875,
       "nameSize": 10
+    }
+  },
+  "hyper-fenton": {
+    "artist": "Hyper Fenton",
+    "imageSha256": "1acd116b8b8ff192e91263043422d4193a839bc9f600d1b7cf9368105eafec5e",
+    "reason": " Oct 18: reviewed mobile headroom and compact title.",
+    "mobile": {
+      "nameOnly": true,
+      "nameSize": 7.7
+    }
+  },
+  "gio": {
+    "artist": "gio.",
+    "imageSha256": "a314f37526f4a5cb9268e0e0b9d78f58b6fa323b9f970b9918795c615c72ff19",
+    "reason": " Oct 18: reviewed mobile headroom and compact title.",
+    "mobile": {
+      "window": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "ratio": 1,
+      "nameSize": 7.8
+    }
+  },
+  "man-of-faith": {
+    "artist": "Man Of FAITH",
+    "imageSha256": "ae9445b128e31ef020f828869be26070f24f40ceebed83774f05de8c8e5e6c7a",
+    "reason": " Oct 18: reviewed mobile headroom and compact title.",
+    "mobile": {
+      "window": [
+        0.0,
+        0,
+        1.0,
+        1.0
+      ],
+      "ratio": 1,
+      "nameSize": 7.6
+    }
+  },
+  "christrebel": {
+    "artist": "christrebel",
+    "imageSha256": "1c4ab8bb4f66b4890f8302459cfb45ed41f74323c9e1fa5ecbd55d8f8767e008",
+    "reason": " Oct 18: reviewed mobile headroom and compact title.",
+    "mobile": {
+      "window": [
+        0.169356,
+        0.0,
+        0.674209,
+        0.674209
+      ],
+      "ratio": 1,
+      "nameSize": 7.8
+    }
+  },
+  "mahogany-jones": {
+    "artist": "Mahogany Jones",
+    "imageSha256": "93ac93ea8792170e2f9f533e3794a69d1f51f36526362831195e9ce23482131a",
+    "reason": " Oct 18: reviewed mobile headroom and compact title.",
+    "mobile": {
+      "nameOnly": true,
+      "nameSize": 7.2
+    }
+  },
+  "fresh-ie": {
+    "artist": "Fresh IE",
+    "imageSha256": "10c937b2f9cbbb40f135890c0c0f191d87a9a045cdf166cd00ce78aa0b1e973f",
+    "reason": " Oct 18: reviewed mobile headroom and compact title.",
+    "mobile": {
+      "window": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "ratio": 1,
+      "nameSize": 7.8
+    }
+  },
+  "rubinsky-rbk": {
+    "artist": "Rubinsky RBK",
+    "imageSha256": "22714534f3a8c0cc461ddad6f650739b14cba3fad31ca446a105694a5295b373",
+    "reason": " Oct 18: reviewed mobile headroom and compact title.",
+    "mobile": {
+      "nameOnly": true,
+      "nameSize": 7.3
+    }
+  },
+  "ariel-kelly": {
+    "artist": "Ariel Kelly",
+    "imageSha256": "7dedf37d0d4bea46a13d076f3190ba8a8782f0f403284b7fa9e6e830dd32369e",
+    "reason": " Oct 18: reviewed mobile headroom and compact title.",
+    "mobile": {
+      "window": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "ratio": 1,
+      "nameSize": 7.8
+    }
+  },
+  "tvnk": {
+    "artist": "TVNK",
+    "imageSha256": "9f72fa869bc5fd59ca55d8c7ba33563bc37d2ec15b3bc6e7c43b7494e4a3bff8",
+    "reason": " Oct 18: reviewed mobile headroom and compact title.",
+    "mobile": {
+      "window": [
+        0.107863,
+        0.0,
+        0.745313,
+        1.0
+      ],
+      "ratio": 1,
+      "nameSize": 7.8
+    }
+  },
+  "shaquille-jones": {
+    "artist": "Shaquille Jones",
+    "imageSha256": "b4cdb3853ce544c6c633adc6a74e8072a9843886a19507c0e2f7f3a1568e5c3d",
+    "reason": " Oct 18: reviewed mobile headroom and compact title.",
+    "mobile": {
+      "nameOnly": true,
+      "nameSize": 6.9
+    }
+  },
+  "ricko": {
+    "artist": "ricko!",
+    "imageSha256": "1e678ba477d10164feb99b6c0437b79f0b984def431cb3ec56dc4238f1c0d997",
+    "reason": " Oct 18: reviewed mobile headroom and compact title.",
+    "mobile": {
+      "window": [
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "ratio": 1,
+      "nameSize": 7.8
     }
   }
 }

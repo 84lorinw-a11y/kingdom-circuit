@@ -19,6 +19,7 @@ from zoneinfo import ZoneInfo
 
 import mobile_discovery as mobile
 from mobile_discovery import Document, replace_spans, source_html
+from artist_thumbnail_framing import CROPS as HOME_ARTIST_CIRCLE_CROPS, frame_portrait
 SITE_BASE = "/"
 SITE_ORIGIN = "https://kingdomcircuit.com"
 
@@ -34,35 +35,6 @@ HOME_SUBTITLE = 'CHH concerts, christian rap shows and festivals!'
 # Owner-selected homepage order; only promote artists already eligible below.
 # Canonical profile slugs keep this independent of roster order and aliases.
 HOME_ARTIST_PRIORITY = ('whatuprg', 'brenno', '1k-phew', 'joz', 'tru-serva', 'cj-emulous')
-# Circle-only crops, visually reviewed on the exact current photos. Never apply
-# an old crop to a replacement photo or change directory/profile image framing.
-# asset, intrinsic width/height, object-position, scale, transform-origin
-HOME_ARTIST_CIRCLE_CROPS = {
-    '1k-phew': ('6df7b566d71761e10c8e1cb9-w639.webp', 639, 960, '50% 12%', 1.2075, '86.14% 0.00%'),
-    'cj-emulous': ('4c8ff9f99d115317dfbf4ebc-w1280.webp', 1280, 1920, '50% 15%', 2.17, '17.09% 22.22%'),
-    'zay-lowly': ('1ef856d020303e85e2b334b5-w562.webp', 562, 1000, '50% 0%', 1.5, '100% 0%'),
-    'shaquille-jones': ('b4cdb3853ce544c6c633adc6-w640.webp', 640, 427, '78% 35%', 1, '50% 50%'),
-    'scarlito-jr': ('296279fcb910860da24b7c07-w529.webp', 529, 640, '50% 0%', 2.25, '80.60% 26.00%'),
-    'joz': ('13e4492ea5d49de61edb718f-w536.webp', 536, 640, '50% 0%', 1.55, '50.00% 25.00%'),
-    'tru-serva': ('8b6c8fe234f8c3e9f34e52c2-w448.webp', 448, 640, 'center', 1.85, '42.00% 14.00%'),
-    'brvndonp': ('6738031e3330ebc52a05c12b-w555.webp', 555, 640, '50% 0%', 1.45, '46.00% 12.00%'),
-    'egr': ('7ac916e459ec31a1024742c7-w534.webp', 534, 640, '50% 0%', 1.2, '50.00% 10.00%'),
-    'big-rev': ('a67caf73059508560248a626-w530.webp', 530, 640, '50% 30%', 1.35, '58.00% 48.00%'),
-    'jimmy-rock': ('a1b18f402a212805bb6c38eb-w1080.webp', 1080, 1080, '50% 25%', 1.3, '50.00% 23.00%'),
-    'ahmad-nelson': ('85eecbea0790556ea03203c1-w1280.webp', 1280, 1707, '50% 0%', 2.0, '53.00% 12.00%'),
-    'issac-mansfield': ('fff42ec6cc80eb408686e20c-w547.webp', 547, 640, 'center', 1.4, '46.00% 25.00%'),
-    'kaden-jordan': ('5fcd51378270d2cd7b110a87-w1200.webp', 1200, 630, 'center', 2.25, '44.00% 46.00%'),
-    'j-reborn': ('53646a22d5b24f328b8c1533-w432.webp', 432, 432, 'center', 1.2, '47.00% 0.00%'),
-    'b-cody-shields': ('d53f73d897476f5bd002ec0b-w640.webp', 640, 640, 'center', 1.45, '48.00% 0.00%'),
-    'bobby-bendito': ('872cd12991d3b650b1f675b3-w427.webp', 427, 640, '50% 30%', 2.5, '48.00% 55.00%'),
-    'childlike-cici': ('65f0547f3aa6195ef16623a2-w534.webp', 534, 640, '50% 0%', 1.6, '77.00% 16.00%'),
-    'alex-jean': ('a269a47ee35ff66790bf0769-w640.webp', 640, 640, 'center', 1.65, '51.00% 8.00%'),
-    'dante-pride': ('1581e49ec709cba375f12b10-w980.webp', 980, 1076, '50% 0%', 1.55, '48.00% 9.00%'),
-    'queen-lee': ('c6a0cfe501346bd73e814a02-w532.webp', 532, 640, 'center', 1.65, '67.00% 85.00%'),
-    'de-la-cruz': ('3e366f64ab59668cc75a41ec-w534.webp', 534, 640, '50% 30%', 1.7, '49.00% 30.00%'),
-    'xay-hill': ('2606d91b60e688d0cc1e8bf1-w900.webp', 900, 900, 'center', 1.6, '49.00% 65.00%'),
-    'fresh-ie': ('10c937b2f9cbbb40f135890c-w900.webp', 900, 900, '50% 30%', 1.15, '36.00% 12.00%'),
-}
 FACEBOOK_HREF = 'https://www.facebook.com/profile.php?id=61593510924754'
 FACEBOOK_BUTTON = (f'<a class="kc-facebook-button" href="{FACEBOOK_HREF}" target="_blank" rel="noopener noreferrer" '
                    'aria-label="Kingdom Circuit on Facebook (opens in new tab)" title="Follow Kingdom Circuit on Facebook">'
@@ -347,26 +319,9 @@ def teaser(record, image=True, eager=False):
 
 
 def circle_portrait(artist):
-    """Keep real image bytes/variants and scope reviewed framing to this shelf."""
-    image = artist['image']
+    """Use the same reviewed crop in directory squares and homepage circles."""
     slug = artist['href'].removeprefix(SITE_BASE + 'artists/').strip('/')
-    crop = HOME_ARTIST_CIRCLE_CROPS.get(slug)
-    if not crop:
-        return image
-    attrs = Document(image).one(lambda n: n.tag == 'img').attrs
-    asset, width, height, position, scale, origin = crop
-    if (Path(urlsplit(attrs.get('src', '')).path).name != asset
-            or attrs.get('width') != str(width) or attrs.get('height') != str(height)):
-        return image
-    declarations = [s.strip() for s in attrs.get('style', '').split(';')
-                    if s.strip() and s.partition(':')[0].strip() not in
-                    ('object-position', 'transform', 'transform-origin')]
-    declarations += [f'object-position:{position}', f'transform:scale({scale})',
-                     f'transform-origin:{origin}']
-    style = 'style="' + escape(';'.join(declarations), quote=True) + '"'
-    if 'style' in attrs:
-        return re.sub(r'style="[^"]*"', lambda _: style, image, count=1)
-    return image.replace('<img ', '<img ' + style + ' ', 1)
+    return frame_portrait(artist['image'], slug)
 
 
 def artist_tile(artist):
