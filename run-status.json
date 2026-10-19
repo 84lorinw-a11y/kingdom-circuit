@@ -1,9 +1,9 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-10-19T18:42:39Z",
-  "lastSuccessfulUpdate": "2026-10-19T18:42:39Z",
-  "eventsPublished": 153,
+  "lastAttempt": "2026-10-19T19:57:58Z",
+  "lastSuccessfulUpdate": "2026-10-19T19:57:58Z",
+  "eventsPublished": 126,
   "candidatesCollected": 248,
   "artistsConfigured": 373,
   "artistsByPriority": {
@@ -600,7 +600,7 @@
   "errorCount": 0,
   "warnings": [
     "Holy Smoke official festival: Unable to retrieve https://indietribe.us/products/holy-smoke-2026: HTTP Error 404: Not Found",
-    "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 404: Not Found",
+    "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 429: Too Many Requests",
     "NF Bandsintown public calendar: robots.txt does not allow automated retrieval",
     "Mike Malagies Bandsintown public calendar: robots.txt does not allow automated retrieval",
     "Parris Chariz Bandsintown public calendar: robots.txt does not allow automated retrieval",
@@ -623,5 +623,5 @@
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 22,
   "artistWebsiteEventsAdded": 3,
-  "artistWebsiteMergeAt": "2026-10-19T19:14:39Z"
+  "artistWebsiteMergeAt": "2026-10-19T20:08:29Z"
 }
