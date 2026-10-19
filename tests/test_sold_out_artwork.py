@@ -1,4 +1,5 @@
 import sys
+import json
 from pathlib import Path
 import unittest
 
@@ -7,6 +8,19 @@ from finalize_sold_out_artwork import transform
 
 
 class SoldOutArtworkTests(unittest.TestCase):
+    def test_future_weekly_cards_keep_sold_out_artwork_and_accessible_label(self):
+        card = '<article class="kc-discovery-show"><a class="kc-teaser-image" href="/event/full/"><img src="original.jpg"></a><div class="kc-teaser-copy">A &amp; B</div></article>'
+        payload = json.dumps([{'date':'2026-10-24', 'html':card}]).replace('<', '\\u003c')
+        text = '<head></head><script id="kc-weekly-shows" type="application/json">' + payload + '</script>'
+        result = transform(text, '/', {'/event/full/':{}})
+        updated = json.loads(result.split('type="application/json">')[1].split('</script>')[0])[0]['html']
+        self.assertIn('kc-sold-out-banner', updated)
+        self.assertIn('kc-sold-out-label', updated)
+        self.assertIn('src="original.jpg"', updated)
+        self.assertIn('A &amp; B', updated)
+        self.assertIn('assets/sold-out-artwork.css', result)
+        self.assertEqual(result, transform(result, '/', {'/event/full/':{}}))
+
     def test_reviewed_event_has_visible_and_accessible_status_on_both_card_layouts(self):
         for card, media, copy in [('event-card', 'event-media', 'event-content'),
                                   ('kc-discovery-show', 'kc-teaser-image', 'kc-teaser-copy')]:

@@ -4,18 +4,74 @@
   const normalize = value => String(value || '').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').trim();
   const activeOn = (card, date) => (card.endDate || card.date || '9999-12-31') >= date;
   const previewExpired = (weekEnd, today) => !!weekEnd && weekEnd < today;
+  const addDays = (day, count) => {
+    const date = new Date(day + 'T12:00:00Z');
+    date.setUTCDate(date.getUTCDate() + count);
+    return date.toISOString().slice(0, 10);
+  };
+  const weeklyWindow = today => {
+    const start = addDays(today, -((new Date(today + 'T12:00:00Z').getUTCDay() + 6) % 7));
+    return {start, end:addDays(start, 6), nextStart:addDays(start, 7), nextEnd:addDays(start, 13)};
+  };
+  const weeklySelection = (records, today) => {
+    const range = weeklyWindow(today);
+    const active = records.filter(r => activeOn(r, today)).sort((a,b) => a.date.localeCompare(b.date));
+    return {range, week:active.filter(r => r.date <= range.end),
+      next:active.filter(r => r.date > range.end && r.date <= range.nextEnd)};
+  };
+  const dateLabel = (first, last) => {
+    const a = new Date(first + 'T12:00:00Z'), b = new Date(last + 'T12:00:00Z');
+    const month = (d, style) => new Intl.DateTimeFormat('en-US', {month:style,timeZone:'UTC'}).format(d);
+    if (a.getUTCFullYear() !== b.getUTCFullYear()) return `${month(a,'short')} ${a.getUTCDate()}, ${a.getUTCFullYear()} – ${month(b,'short')} ${b.getUTCDate()}, ${b.getUTCFullYear()}`;
+    if (a.getUTCMonth() !== b.getUTCMonth()) return `${month(a,'short')} ${a.getUTCDate()} – ${month(b,'short')} ${b.getUTCDate()}, ${b.getUTCFullYear()}`;
+    return `${month(a,'long')} ${a.getUTCDate()}–${b.getUTCDate()}, ${b.getUTCFullYear()}`;
+  };
+  const catalogToday = () => {
+    const parts = new Intl.DateTimeFormat('en-US', {timeZone:'America/Los_Angeles', year:'numeric', month:'2-digit', day:'2-digit'}).formatToParts(new Date());
+    const part = type => parts.find(p => p.type === type).value;
+    return `${part('year')}-${part('month')}-${part('day')}`;
+  };
+  function refreshWeeklyPreviews(root, today) {
+    const home = root.querySelector('[data-national-home]');
+    const inventory = root.querySelector('#kc-weekly-shows');
+    if (!home || !inventory || home.dataset.previewAsOf === today) return;
+    const {range, week, next} = weeklySelection(JSON.parse(inventory.textContent), today);
+    for (const [id, records, first, last] of [
+      ['kc-week-shelf', week, range.start, range.end],
+      ['kc-next-shelf', next, range.nextStart, range.nextEnd],
+    ]) {
+      const shelf = root.querySelector('#' + id);
+      const section = shelf.closest('.kc-discovery-section');
+      // These fragments are escaped, build-generated copies of published cards.
+      // The inert inventory loads no extra images until a show enters a shelf.
+      shelf.innerHTML = records.map(r => r.html).join('');
+      shelf.scrollLeft = 0;
+      shelf.closest('[data-fan-shelf]').hidden = false;
+      section.dataset.previewWeekEnd = range.end;
+      section.querySelector('.eyebrow').textContent = dateLabel(first, last) + ' · Nationwide';
+      section.querySelector('[data-discovery-empty]').hidden = records.length > 0;
+      shelf.dispatchEvent(new Event('scroll'));
+    }
+    home.dataset.previewAsOf = today;
+  }
   const matches = (card, filters, date) => activeOn(card, date) &&
     (!filters.q || normalize(card.search).includes(normalize(filters.q))) &&
     (!filters.artist || (card.artists || '').split('|').includes(filters.artist)) &&
     (!filters.state || card.state === filters.state) &&
     (!filters.type || card.type === filters.type);
-  if (typeof module !== 'undefined' && module.exports) module.exports = {normalize, activeOn, matches, previewExpired};
+  if (typeof module !== 'undefined' && module.exports) module.exports = {normalize, activeOn, matches, previewExpired, weeklyWindow, weeklySelection, dateLabel, refreshWeeklyPreviews};
   if (typeof document === 'undefined') return;
 
   function init() {
-    const parts = new Intl.DateTimeFormat('en-US', {timeZone: 'America/Los_Angeles', year:'numeric', month:'2-digit', day:'2-digit'}).formatToParts(new Date());
-    const part = type => parts.find(p => p.type === type).value;
-    const today = `${part('year')}-${part('month')}-${part('day')}`;
+    const today = catalogToday();
+    refreshWeeklyPreviews(document, today);
+    if (document.querySelector('#kc-weekly-shows')) {
+      // Also recover a tab left open overnight or restored from the back cache.
+      const refresh = () => refreshWeeklyPreviews(document, catalogToday());
+      document.addEventListener('visibilitychange', () => { if (!document.hidden) refresh(); });
+      window.addEventListener('pageshow', refresh);
+      window.setInterval(refresh, 60000);
+    }
     document.querySelectorAll('[data-discovery-show]').forEach(card => { card.hidden = !activeOn(card.dataset, today); });
     document.querySelectorAll('.kc-discovery-section').forEach(section => {
       const empty = section.querySelector('[data-discovery-empty]');

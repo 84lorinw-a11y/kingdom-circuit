@@ -28,10 +28,18 @@ def reviewed_events(site):
     return events
 
 
-def transform(text, own_path, events):
+def transform(text, own_path, events, include_styles=True):
     doc = Document(text)
     edits = []
     for node in doc.nodes:
+        if node.tag == 'script' and node.attrs.get('id') == 'kc-weekly-shows':
+            # Future weekly cards must retain the same reviewed notices after rollover.
+            inventory = json.loads(text[node.opening_end:node.closing_start])
+            updated = [{**row, 'html': transform(row['html'], own_path, events, include_styles=False)}
+                       for row in inventory]
+            if updated != inventory:
+                payload = json.dumps(updated, ensure_ascii=False).replace('<', '\\u003c')
+                edits.append((node.opening_end, node.closing_start, payload))
         detail = node.has('event-detail-media') and own_path in events
         card = (node.has('event-media') or node.has('kc-teaser-image')) and node.attrs.get('href') in events
         if (detail or card) and 'data-sold-out-artwork' not in node.attrs:
@@ -48,7 +56,7 @@ def transform(text, own_path, events):
         if node.has('event-detail-copy') and own_path in events and 'kc-sold-out-notice' not in doc.raw(node):
             edits.append((node.opening_end, node.opening_end,
                           '<p class="kc-sold-out-notice"><strong>SOLD OUT</strong> — Registration is closed.</p>'))
-    if edits and LINK not in text:
+    if edits and include_styles and LINK not in text:
         head = doc.one(lambda n: n.tag == 'head')
         edits.append((head.closing_start, head.closing_start, LINK))
     return replace_spans(text, edits)

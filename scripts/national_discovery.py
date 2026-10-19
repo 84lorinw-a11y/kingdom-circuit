@@ -24,7 +24,7 @@ SITE_BASE = "/"
 SITE_ORIGIN = "https://kingdomcircuit.com"
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '20261017-live-1'
+VERSION = '20261019-weekly-rollover-1'
 ASSETS = ('national-discovery.css', 'national-discovery.js', 'fan-discovery.css', 'fan-discovery.js')
 WEEKEND_PATH = 'shows/this-weekend/index.html'
 WEEKEND_HREF = SITE_BASE + 'shows/this-weekend/'
@@ -126,6 +126,15 @@ def weekend_matches(start, end, day):
 
 def week_end(day):
     return day + timedelta(days=6 - day.weekday())
+
+
+def weekly_inventory(context):
+    """Keep approved cards available across rollovers, without another request."""
+    return [{'date': r['attrs']['data-date'],
+             'endDate': r['attrs'].get('data-end-date') or r['attrs']['data-date'],
+             'html': teaser(r)}
+            for r in sorted(context['active'], key=lambda r: r['attrs']['data-date'])
+            if feature_eligible(r)]
 
 
 def home_selection(context):
@@ -350,7 +359,9 @@ def home_content(text, context):
     primary, following = home_selection(context)
     options = ''.join(f'<option value="{s["code"] or s["name"]}" data-state-href="{s["href"]}">{escape(s["name"])}</option>' for s in states)
     tiles = ''.join(artist_tile(a) for a in context['artists'])
-    out = f'''<div class="kc-discovery-home kc-fan-home" data-national-home>
+    inventory = json.dumps(weekly_inventory(context), ensure_ascii=False).replace('<', '\\u003c')
+    out = f'''<div class="kc-discovery-home kc-fan-home" data-national-home data-preview-as-of="{context['as_of']}">
+<script type="application/json" id="kc-weekly-shows">{inventory}</script>
 <section class="kc-discovery-hero" aria-label="Find your next show">
 <div class="kc-discovery-intro">{title}
 <p class="kc-discovery-deck">{HOME_SUBTITLE}</p>
@@ -360,7 +371,7 @@ def home_content(text, context):
 <label class="kc-discovery-sr-only" for="kc-home-search">Search shows by artist, city, venue or show name</label><div class="kc-fan-search-line"><input id="kc-home-search" name="q" type="search" placeholder="Artist, city, venue or show" maxlength="160" autocomplete="off"><button type="submit">{SEARCH_ICON} Search</button></div></form>
 </section>
 <section class="kc-discovery-section" id="calendar" aria-labelledby="kc-weekend-heading" data-preview-week-end="{week_end(context['as_of'])}">
-{section_heading(date_label(context['as_of'], week_end(context['as_of'])) + ' · Nationwide', 'Happening This Week', SITE_BASE + 'shows/?dates=week', 'View all', 'kc-weekend-heading')}
+{section_heading(date_label(context['as_of'] - timedelta(days=context['as_of'].weekday()), week_end(context['as_of'])) + ' · Nationwide', 'Happening This Week', SITE_BASE + 'shows/?dates=week', 'View all', 'kc-weekend-heading')}
 {shelf('kc-week-shelf', ''.join(teaser(r, eager=i == 0) for i, r in enumerate(primary)), 'Happening This Week')}
 <p class="kc-discovery-empty" data-discovery-empty{' hidden' if primary else ''}>No more featured shows this week. Explore the next dates below or <a href="{SITE_BASE}shows/">browse all shows.</a></p></section>
 '''
@@ -733,6 +744,10 @@ def verify(live, site, context):
     all_urls = {r['href'] for r in all_cards}
     assert {r['href'] for r in card_records(source_html(live, 'index.html'))} <= all_urls, 'A former home listing is missing from All Shows'
     teasers = [n for n in home.nodes if 'data-discovery-show' in n.attrs]
+    inventory_node = home.one(lambda n: n.attrs.get('id') == 'kc-weekly-shows')
+    # Script text is raw JSON, not rendered HTML (entities inside card HTML stay escaped).
+    inventory = json.loads(home.source[inventory_node.opening_end:inventory_node.closing_start])
+    assert inventory == weekly_inventory(context), 'Rollover inventory must retain every eligible published show and original artwork'
     assert len(teasers) == len(home_selection(context)[0]) + len(home_selection(context)[1]), 'Every eligible weekly show must be available'
     artist_shelves = [n for n in home.nodes if n.attrs.get('id') == 'kc-artist-shelf']
     if context['artists']:

@@ -1,5 +1,6 @@
 from datetime import date
 from pathlib import Path
+import json
 import sys
 import unittest
 
@@ -8,6 +9,26 @@ import national_discovery as discovery
 
 
 class NationalDiscoveryTests(unittest.TestCase):
+    def test_rollover_inventory_retains_future_cards_images_and_escaped_text(self):
+        image = '<img src="/assets/original.webp" width="720" height="1080" alt="Artist" sizes="100vw">'
+        record = lambda day: {'attrs':{'data-date':day}, 'href':'/event/' + day + '/', 'image':image,
+                             'name':'Artist "Live" </script>', 'artists':'<p class="artist-line">A &amp; B</p>',
+                             'badges':'', 'meta':{'Venue':'Hall', 'Date':day}}
+        records = [record('2026-10-24'), record('2026-10-30'), record('2027-01-04')]
+        context = {'active':records, 'as_of':date(2026,10,19), 'states':[], 'artists':[], 'artist_total':371}
+        output = discovery.home_content('<main></main>', context)
+        doc = discovery.Document(output)
+        payload = doc.one(lambda n:n.attrs.get('id') == 'kc-weekly-shows')
+        raw = output[payload.opening_end:payload.closing_start]
+        self.assertNotIn('<', raw)
+        inventory = json.loads(raw)
+        self.assertEqual([r['date'] for r in inventory], ['2026-10-24','2026-10-30','2027-01-04'])
+        self.assertEqual(inventory, discovery.weekly_inventory(context))
+        self.assertIn('A &amp; B', inventory[0]['html'])
+        self.assertIn('src="/assets/original.webp"', inventory[0]['html'])
+        self.assertIn('October 19–25, 2026', output)
+        self.assertIn('Oct 26 – Nov 1, 2026', output)
+
     def test_owner_artist_order_precedes_date_order_and_forty_artist_cap(self):
         href = lambda slug: discovery.SITE_BASE + 'artists/' + slug + '/'
         picks = [href(s) for s in ('whatuprg', 'brenno', '1k-phew', 'joz', 'tru-serva', 'cj-emulous')]
