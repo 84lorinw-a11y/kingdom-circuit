@@ -4,10 +4,25 @@ from pathlib import Path
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from finalize_sold_out_artwork import transform
+from finalize_sold_out_artwork import transform, BADGE, LINK
+from mobile_discovery import Document
 
 
 class SoldOutArtworkTests(unittest.TestCase):
+    def test_sold_out_label_preserves_calendar_two_row_layout_and_repairs_old_markup(self):
+        for legacy in ('', BADGE):
+            text = '<html><head><link rel="stylesheet" href="/assets/sold-out-artwork.css?v=2"></head><body><article class="event-card"><a class="event-media" href="/event/full/"><img src="official.jpg"></a><div class="event-content">' + legacy + '<div class="event-main"><div class="event-badges"><span class="badge badge-gold">Concert</span></div><h3>Reach1</h3><p class="artist-line">EGR</p><dl>Date, venue and city</dl></div><div class="event-footer"><a>Official details</a></div></div></article></body></html>'
+            result = transform(text, '/', {'/event/full/':{}})
+            doc = Document(result)
+            content = doc.one(lambda n:n.has('event-content'))
+            self.assertEqual([n.attrs['class'] for n in content.children], ['event-main','event-footer'])
+            badges = doc.one(lambda n:n.has('event-badges'))
+            self.assertIn(BADGE, doc.raw(badges))
+            self.assertEqual(result.count(BADGE), 1)
+            self.assertEqual(result.count(LINK), 1)
+            self.assertIn('Date, venue and city', result)
+            self.assertEqual(result, transform(result, '/', {'/event/full/':{}}))
+
     def test_future_weekly_cards_keep_sold_out_artwork_and_accessible_label(self):
         card = '<article class="kc-discovery-show"><a class="kc-teaser-image" href="/event/full/"><img src="original.jpg"></a><div class="kc-teaser-copy">A &amp; B</div></article>'
         payload = json.dumps([{'date':'2026-10-24', 'html':card}]).replace('<', '\\u003c')
@@ -24,7 +39,7 @@ class SoldOutArtworkTests(unittest.TestCase):
     def test_reviewed_event_has_visible_and_accessible_status_on_both_card_layouts(self):
         for card, media, copy in [('event-card', 'event-media', 'event-content'),
                                   ('kc-discovery-show', 'kc-teaser-image', 'kc-teaser-copy')]:
-            text = f'<html><head></head><body><article class="{card}"><a class="{media}" href="/event/full/" aria-hidden="true"><img src="official.jpg"></a><div class="{copy}"><h3>Concert</h3></div></article></body></html>'
+            text = f'<html><head></head><body><article class="{card}"><a class="{media}" href="/event/full/" aria-hidden="true"><img src="official.jpg"></a><div class="{copy}"><div class="event-main"><div class="event-badges"></div><h3>Concert</h3></div></div></article></body></html>'
             result = transform(text, '/', {'/event/full/': {}})
             self.assertIn('kc-sold-out-banner', result)
             self.assertIn('kc-sold-out-label', result)

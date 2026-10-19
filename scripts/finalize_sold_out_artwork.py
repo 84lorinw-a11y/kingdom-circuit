@@ -13,7 +13,7 @@ from mobile_discovery import Document, replace_spans
 
 ROOT = Path(__file__).resolve().parents[1]
 CSS = 'assets/sold-out-artwork.css'
-LINK = f'<link rel="stylesheet" href="/{CSS}?v=2">'
+LINK = f'<link rel="stylesheet" href="/{CSS}?v=3">'
 BANNER = '<span class="kc-sold-out-banner">SOLD OUT</span>'
 BADGE = '<span class="badge kc-sold-out-label">Sold out</span>'
 
@@ -29,6 +29,7 @@ def reviewed_events(site):
 
 
 def transform(text, own_path, events, include_styles=True):
+    text = text.replace(f'href="/{CSS}?v=2"', f'href="/{CSS}?v=3"')
     doc = Document(text)
     edits = []
     for node in doc.nodes:
@@ -47,11 +48,23 @@ def transform(text, own_path, events, include_styles=True):
             edits.append((node.closing_start, node.closing_start, BANNER))
         if node.has('event-card') or node.has('kc-discovery-show'):
             links = [n.attrs.get('href') for n in doc.nodes if n.tag == 'a' and node.start < n.start < node.end]
-            if not any(link in events for link in links) or 'kc-sold-out-label' in doc.raw(node):
+            if not any(link in events for link in links):
                 continue
             # Image links can be aria-hidden; keep a readable status in the copy too.
-            copy = next(n for n in doc.nodes if node.start < n.start < node.end
-                        and (n.has('event-content') or n.has('kc-teaser-copy')))
+            # Standard cards have exactly two grid rows: main content and footer.
+            # A status must not become a third grid item that takes the main row.
+            inside = [n for n in doc.nodes if node.start < n.start < node.end]
+            if node.has('event-card'):
+                copy = next((n for n in inside if n.has('event-badges')), None)
+                if copy is None:
+                    copy = next(n for n in inside if n.has('event-main'))
+            else:
+                copy = next(n for n in inside if n.has('kc-teaser-copy'))
+            existing = next((n for n in inside if n.has('kc-sold-out-label')), None)
+            if existing:
+                if existing in copy.children:
+                    continue
+                edits.append((existing.start, existing.end, ''))
             edits.append((copy.opening_end, copy.opening_end, BADGE))
         if node.has('event-detail-copy') and own_path in events and 'kc-sold-out-notice' not in doc.raw(node):
             edits.append((node.opening_end, node.opening_end,
