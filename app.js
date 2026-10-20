@@ -387,7 +387,8 @@ const ARTIST_ROSTER_ORDER = [
   "Crown One",
   "Lady Cam",
   "Believin Stephen",
-  "Ryan Ellis"
+  "Ryan Ellis",
+  "Kemara Lynn"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -5619,6 +5620,22 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://ryanellismusic.com/about/",
     "imageUrl": "assets/artists/ryan-ellis-press-oct20.jpg",
     "imagePosition": "55% 35%",
+    "sourceRegistryVerified": true
+  },
+  "kemara lynn": {
+    "aliases": [
+      "Kemara Lynn",
+      "Kfire",
+      "Kemara Stallworth"
+    ],
+    "website": "https://linktr.ee/kemaralynn",
+    "instagramProfile": "https://www.instagram.com/kemaralynn/",
+    "spotifyProfile": "https://open.spotify.com/artist/4DAuBp6fTU9YFdNe98nNtW",
+    "youtubeProfile": "https://www.youtube.com/@kemaralynn",
+    "officialImageSource": "https://share.icloud.com/photos/001OcZM-u99Z8XNdm9pzC_JUw",
+    "imageUrl": "assets/artists/kemara-lynn-artist-submitted-oct20.jpg",
+    "imagePosition": "50% 0%",
+    "state": "MI",
     "sourceRegistryVerified": true
   }
 };
@@ -10853,6 +10870,22 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/ryan-ellis-press-oct20.jpg",
     "imagePosition": "55% 35%",
     "sourceRegistryVerified": true
+  },
+  "kemara lynn": {
+    "aliases": [
+      "Kemara Lynn",
+      "Kfire",
+      "Kemara Stallworth"
+    ],
+    "website": "https://linktr.ee/kemaralynn",
+    "instagramProfile": "https://www.instagram.com/kemaralynn/",
+    "spotifyProfile": "https://open.spotify.com/artist/4DAuBp6fTU9YFdNe98nNtW",
+    "youtubeProfile": "https://www.youtube.com/@kemaralynn",
+    "officialImageSource": "https://share.icloud.com/photos/001OcZM-u99Z8XNdm9pzC_JUw",
+    "imageUrl": "assets/artists/kemara-lynn-artist-submitted-oct20.jpg",
+    "imagePosition": "50% 0%",
+    "state": "MI",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -12351,6 +12384,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "ryan ellis": {
     "imageUrl": "assets/artists/ryan-ellis-press-oct20.jpg",
     "imagePosition": "55% 35%"
+  },
+  "kemara lynn": {
+    "imageUrl": "assets/artists/kemara-lynn-artist-submitted-oct20.jpg",
+    "imagePosition": "50% 0%"
   }
 };
 
