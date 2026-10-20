@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T19:00:05Z",
+  "generatedAt": "2026-10-20T14:57:06Z",
   "artistsChecked": 373,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
@@ -9,9 +9,9 @@
     "status": "ok",
     "artistsAttempted": 373,
     "resolved": 234,
-    "rawUpcomingUSRows": 90,
+    "rawUpcomingUSRows": 91,
     "newEventsPublished": 8,
-    "festivalCandidatesHeld": 1,
+    "festivalCandidatesHeld": 2,
     "requestErrors": 0
   },
   "songkick": {
@@ -23,8 +23,8 @@
   "sourceStatusCounts": {
     "delegated_to_structured_rest": 373,
     "blocked_by_robots": 376,
-    "no_events": 524,
-    "failed": 8
+    "no_events": 525,
+    "failed": 7
   },
   "newEvents": [],
   "sourceResults": [
@@ -2729,10 +2729,9 @@
     {
       "artist": "Manafest",
       "source": "official website",
-      "url": "https://www.manafest.com/go",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.manafest.com/go: HTTP Error 404: Not Found"
+      "url": "https://manafest.com/",
+      "status": "no_events",
+      "eventsFound": 0
     },
     {
       "artist": "Manafest",
