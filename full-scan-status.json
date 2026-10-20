@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T14:57:06Z",
+  "generatedAt": "2026-10-20T16:20:45Z",
   "artistsChecked": 373,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
@@ -23,8 +23,8 @@
   "sourceStatusCounts": {
     "delegated_to_structured_rest": 373,
     "blocked_by_robots": 376,
-    "no_events": 525,
-    "failed": 7
+    "no_events": 523,
+    "failed": 9
   },
   "newEvents": [],
   "sourceResults": [
@@ -602,8 +602,9 @@
       "artist": "Mike Malagies",
       "source": "official website",
       "url": "https://www.mikemalagiesofficial.com/",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.mikemalagiesofficial.com/: HTTP Error 429: Too Many Requests"
     },
     {
       "artist": "Mike Malagies",
@@ -4567,8 +4568,9 @@
       "artist": "Xerogangg",
       "source": "official website",
       "url": "https://www.xerogangg.com/",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.xerogangg.com/: HTTP Error 429: Too Many Requests"
     },
     {
       "artist": "Xerogangg",
