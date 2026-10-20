@@ -173,6 +173,7 @@
       "B-Wade SBG",
       "L.O.G.",
       "KTMoney",
+      "Kobe J",
       "Michael Powers",
       "On This Rock"
     ],
@@ -181,6 +182,7 @@
       "B-Wade SBG",
       "L.O.G.",
       "KTMoney",
+      "Kobe J",
       "Michael Powers",
       "On This Rock"
     ],
@@ -188,14 +190,14 @@
     "musicConfirmed": true,
     "eventType": "concert",
     "status": "scheduled",
-    "officialUrl": "https://www.instagram.com/b.wade_sbg_music/p/Dd7nozDsoaM/",
-    "ticketUrl": "https://www.instagram.com/b.wade_sbg_music/p/Dd7nozDsoaM/",
-    "image": "assets/events/chh-takeover-huntington-2026-10-25.jpg",
+    "officialUrl": "https://www.instagram.com/b.wade_sbg_music/p/DeHWNT_xdLx/",
+    "ticketUrl": "",
+    "image": "assets/events/chh-takeover-huntington-updated-2026-10-25.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "imageSource": "Official artist or organizer flyer",
-    "imageSourceUrl": "https://www.instagram.com/b.wade_sbg_music/p/Dd7nozDsoaM/",
+    "imageSourceUrl": "https://www.instagram.com/b.wade_sbg_music/p/DeHWNT_xdLx/",
     "confidence": "high",
     "authority": "official_event",
     "sourceName": "Official artist or organizer announcement",
@@ -216,12 +218,13 @@
       }
     ],
     "firstSeen": "2026-10-01T18:00:00Z",
-    "lastVerified": "2026-10-02T18:00:00Z",
-    "auditVerified": "2026-10-06",
+    "lastVerified": "2026-10-20T04:28:14.692666Z",
+    "auditVerified": "2026-10-19",
     "editorialBatch": "2026-10-02-verified-artists",
     "doorsTime": "17:00",
-    "publicDescription": "CHH Takeover Night features Big Rev., B-Wade SBG, L.O.G. and KTMoney, with worship by Michael Powers and On This Rock.",
-    "notes": "The artist co-post and event flyer confirm all four CHH artists, worship participants, venue and 5:30 PM show start. Doors are 5 PM."
+    "publicDescription": "CHH Takeover Night features Big Rev., B-Wade SBG, L.O.G., KTMoney and Kobe J, with worship by Michael Powers of On This Rock. Doors open at 5 PM; the show starts at 5:30 PM. Admission is free; no ticket is required.",
+    "notes": "Updated October 5 artist flyer and caption explicitly confirm Kobe J alongside the existing performers, 5 PM doors, 5:30 PM show, and free admission with a freewill offering. No new artist profile or duplicate show created.",
+    "price": "Free admission; freewill offering accepted"
   },
   {
     "id": "the-comeback-2-gainesville-2026-11-01",
@@ -304,10 +307,12 @@
     ],
     "headliner": "Alex Jean",
     "advertisedBilling": [
-      "Alex Jean"
+      "Alex Jean",
+      "Reece"
     ],
     "officialBill": [
-      "Alex Jean"
+      "Alex Jean",
+      "Reece"
     ],
     "lineupExplicit": true,
     "musicConfirmed": true,
@@ -326,6 +331,13 @@
     "sourceName": "The Bomb Factory / AXS official event",
     "sources": [
       {
+        "name": "Reece official Welcome Home Tour support announcement",
+        "url": "https://www.instagram.com/onlyreece/reel/DeqBvzBsbiX/",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 115
+      },
+      {
         "name": "The Bomb Factory official event",
         "url": "https://www.thebombfactory.com/events/detail/alex-jean-1626463",
         "type": "manual_verified",
@@ -341,17 +353,20 @@
       }
     ],
     "firstSeen": "2026-09-29T18:00:00Z",
-    "lastVerified": "2026-10-09T02:00:40Z",
-    "auditVerified": "2026-10-08",
+    "lastVerified": "2026-10-20T04:28:14.692666Z",
+    "auditVerified": "2026-10-19",
     "editorialBatch": "2026-10-08-reviewed-discoveries",
     "postalCode": "75226",
     "doorsTime": "19:00",
     "ageRestriction": "All ages",
-    "notes": "October 8, 2026: owner approved restoring the previously held date after venue corroboration. The Bomb Factory explicitly lists November 19, 8 PM show and 7 PM doors, On Sale Now, and its AXS event link. Current AXS detail listing matches; checkout was not tested. Preserve approved Welcome Home Tour artwork and original event identity/discovery date.",
+    "notes": "October 8, 2026: owner approved restoring the previously held date after venue corroboration. The Bomb Factory explicitly lists November 19, 8 PM show and 7 PM doors, On Sale Now, and its AXS event link. Current AXS detail listing matches; checkout was not tested. Preserve approved Welcome Home Tour artwork and original event identity/discovery date. October 19: Reece (@onlyreece) announced these four support dates; he is distinct from Reece Lache. Keep unlinked billing until roster approval.",
     "sourceEventIds": [
       "axs:1626463"
     ],
-    "publicDescription": "Alex Jean performs at The Studio at The Bomb Factory in Dallas on November 19, 2026. Show starts at 8 PM. See the official venue listing for event details and tickets.",
-    "detailImageLayout": "portrait"
+    "publicDescription": "Alex Jean brings The Welcome Home Tour to Dallas, with support from Reece.",
+    "detailImageLayout": "portrait",
+    "supportActs": [
+      "Reece"
+    ]
   }
 ]

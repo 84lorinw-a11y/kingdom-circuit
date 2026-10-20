@@ -24099,6 +24099,7 @@
           "B-Wade SBG",
           "L.O.G.",
           "KTMoney",
+          "Kobe J",
           "Michael Powers",
           "On This Rock"
         ],
@@ -24107,6 +24108,7 @@
           "B-Wade SBG",
           "L.O.G.",
           "KTMoney",
+          "Kobe J",
           "Michael Powers",
           "On This Rock"
         ],
@@ -24114,14 +24116,14 @@
         "musicConfirmed": true,
         "eventType": "concert",
         "status": "scheduled",
-        "officialUrl": "https://www.instagram.com/b.wade_sbg_music/p/Dd7nozDsoaM/",
-        "ticketUrl": "https://www.instagram.com/b.wade_sbg_music/p/Dd7nozDsoaM/",
-        "image": "assets/events/chh-takeover-huntington-2026-10-25.jpg",
+        "officialUrl": "https://www.instagram.com/b.wade_sbg_music/p/DeHWNT_xdLx/",
+        "ticketUrl": "",
+        "image": "assets/events/chh-takeover-huntington-updated-2026-10-25.jpg",
         "imageType": "event_artwork",
         "imagePosition": "center",
         "imageOverride": true,
         "imageSource": "Official artist or organizer flyer",
-        "imageSourceUrl": "https://www.instagram.com/b.wade_sbg_music/p/Dd7nozDsoaM/",
+        "imageSourceUrl": "https://www.instagram.com/b.wade_sbg_music/p/DeHWNT_xdLx/",
         "confidence": "high",
         "authority": "official_event",
         "sourceName": "Official artist or organizer announcement",
@@ -24142,12 +24144,13 @@
           }
         ],
         "firstSeen": "2026-10-01T18:00:00Z",
-        "lastVerified": "2026-10-02T18:00:00Z",
-        "auditVerified": "2026-10-06",
+        "lastVerified": "2026-10-20T04:28:14.692666Z",
+        "auditVerified": "2026-10-19",
         "editorialBatch": "2026-10-02-verified-artists",
         "doorsTime": "17:00",
-        "publicDescription": "CHH Takeover Night features Big Rev., B-Wade SBG, L.O.G. and KTMoney, with worship by Michael Powers and On This Rock.",
-        "notes": "The artist co-post and event flyer confirm all four CHH artists, worship participants, venue and 5:30 PM show start. Doors are 5 PM."
+        "publicDescription": "CHH Takeover Night features Big Rev., B-Wade SBG, L.O.G., KTMoney and Kobe J, with worship by Michael Powers of On This Rock. Doors open at 5 PM; the show starts at 5:30 PM. Admission is free; no ticket is required.",
+        "notes": "Updated October 5 artist flyer and caption explicitly confirm Kobe J alongside the existing performers, 5 PM doors, 5:30 PM show, and free admission with a freewill offering. No new artist profile or duplicate show created.",
+        "price": "Free admission; freewill offering accepted"
       }
     },
     {
@@ -32875,10 +32878,12 @@
         ],
         "headliner": "Alex Jean",
         "advertisedBilling": [
-          "Alex Jean"
+          "Alex Jean",
+          "Reece"
         ],
         "officialBill": [
-          "Alex Jean"
+          "Alex Jean",
+          "Reece"
         ],
         "lineupExplicit": true,
         "musicConfirmed": true,
@@ -32897,6 +32902,13 @@
         "sourceName": "The Bomb Factory / AXS official event",
         "sources": [
           {
+            "name": "Reece official Welcome Home Tour support announcement",
+            "url": "https://www.instagram.com/onlyreece/reel/DeqBvzBsbiX/",
+            "type": "manual_verified",
+            "authority": "official_artist",
+            "priority": 115
+          },
+          {
             "name": "The Bomb Factory official event",
             "url": "https://www.thebombfactory.com/events/detail/alex-jean-1626463",
             "type": "manual_verified",
@@ -32912,18 +32924,21 @@
           }
         ],
         "firstSeen": "2026-09-29T18:00:00Z",
-        "lastVerified": "2026-10-09T02:00:40Z",
-        "auditVerified": "2026-10-08",
+        "lastVerified": "2026-10-20T04:28:14.692666Z",
+        "auditVerified": "2026-10-19",
         "editorialBatch": "2026-10-08-reviewed-discoveries",
         "postalCode": "75226",
         "doorsTime": "19:00",
         "ageRestriction": "All ages",
-        "notes": "October 8, 2026: owner approved restoring the previously held date after venue corroboration. The Bomb Factory explicitly lists November 19, 8 PM show and 7 PM doors, On Sale Now, and its AXS event link. Current AXS detail listing matches; checkout was not tested. Preserve approved Welcome Home Tour artwork and original event identity/discovery date.",
+        "notes": "October 8, 2026: owner approved restoring the previously held date after venue corroboration. The Bomb Factory explicitly lists November 19, 8 PM show and 7 PM doors, On Sale Now, and its AXS event link. Current AXS detail listing matches; checkout was not tested. Preserve approved Welcome Home Tour artwork and original event identity/discovery date. October 19: Reece (@onlyreece) announced these four support dates; he is distinct from Reece Lache. Keep unlinked billing until roster approval.",
         "sourceEventIds": [
           "axs:1626463"
         ],
-        "publicDescription": "Alex Jean performs at The Studio at The Bomb Factory in Dallas on November 19, 2026. Show starts at 8 PM. See the official venue listing for event details and tickets.",
-        "detailImageLayout": "portrait"
+        "publicDescription": "Alex Jean brings The Welcome Home Tour to Dallas, with support from Reece.",
+        "detailImageLayout": "portrait",
+        "supportActs": [
+          "Reece"
+        ]
       }
     },
     {
@@ -33203,21 +33218,25 @@
         "country": "US",
         "artists": [
           "626authentic",
-          "Petrina DeLacey"
+          "Key'ijah",
+          "Tha inspiration",
+          "Petrina DeLacey",
+          "JBthaPreacher",
+          "JJ Chosen"
         ],
         "headliner": "",
         "advertisedBilling": [
           "626authentic",
-          "Keyijah",
-          "Tha Inspiration",
+          "Key'ijah",
+          "Tha inspiration",
           "Petrina DeLacey",
           "JBthaPreacher",
           "JJ Chosen"
         ],
         "officialBill": [
           "626authentic",
-          "Keyijah",
-          "Tha Inspiration",
+          "Key'ijah",
+          "Tha inspiration",
           "Petrina DeLacey",
           "JBthaPreacher",
           "JJ Chosen"
@@ -33238,8 +33257,8 @@
         "confidence": "high",
         "sourceName": "Official event listing and artist announcement",
         "firstSeen": "2026-10-16T19:24:15Z",
-        "lastVerified": "2026-10-16T19:24:15Z",
-        "auditVerified": "2026-10-16",
+        "lastVerified": "2026-10-20T04:28:14.692666Z",
+        "auditVerified": "2026-10-19",
         "publicDescription": "Kingdom Builders returns for its second year with 626authentic, Keyijah, Tha Inspiration, Petrina DeLacey, JBthaPreacher and JJ Chosen. Doors open at 6 PM and the event begins at 6:30 PM. Michael and Angelica Lynn are also announced as ministering.",
         "description": "Kingdom Builders returns for its second year with 626authentic, Keyijah, Tha Inspiration, Petrina DeLacey, JBthaPreacher and JJ Chosen. Doors open at 6 PM and the event begins at 6:30 PM. Michael and Angelica Lynn are also announced as ministering.",
         "notes": "Fresh October 16 artist announcement. Flyer explicitly provides 6 PM doors, 6:30 PM event start and Lancaster address (93534). The caption’s 6 PM is doors, not the show start. Michael and Angelica Lynn are ministry guests and are not added as musical performers. No venue/business name or ticket URL is announced.",
@@ -34522,10 +34541,12 @@
           "Alex Jean"
         ],
         "advertisedBilling": [
-          "Alex Jean"
+          "Alex Jean",
+          "Reece"
         ],
         "officialBill": [
-          "Alex Jean"
+          "Alex Jean",
+          "Reece"
         ],
         "headliner": "",
         "eventType": "concert",
@@ -34540,19 +34561,26 @@
         "imagePosition": "center",
         "imageSource": "Alex Jean official Welcome Home Tour 2026 poster",
         "imageSourceUrl": "https://www.instagram.com/meaningalex/p/Dd_duSRxzAf/",
-        "publicDescription": "Alex Jean performs at The Plaza Live in Orlando. This is an all-ages concert.",
+        "publicDescription": "Alex Jean brings The Welcome Home Tour to Orlando, with support from Reece.",
         "sourceName": "The Plaza Live official event page",
         "authority": "official_event",
         "confidence": "high",
         "firstSeen": "2026-09-30T00:30:00Z",
-        "lastVerified": "2026-09-30T01:28:26Z",
+        "lastVerified": "2026-10-20T04:28:14.692666Z",
         "editorialBatch": "2026-09-29-expanded-source-search",
         "postalCode": "32803",
         "doorsTime": "19:00",
         "ageRestriction": "All ages",
-        "notes": "Venue confirmsNovember27,2026at8PMandlinksAXS1632882. AXSlistsgeneralonsaleOctober2at10AM. The separateDallasNovember19candidateisheldandnotapproved.",
+        "notes": "Venue confirmsNovember27,2026at8PMandlinksAXS1632882. AXSlistsgeneralonsaleOctober2at10AM. The separateDallasNovember19candidateisheldandnotapproved. October 19: Reece (@onlyreece) announced these four support dates; he is distinct from Reece Lache. Keep unlinked billing until roster approval.",
         "startDateTime": "2026-11-27T20:00:00-05:00",
         "sources": [
+          {
+            "name": "Reece official Welcome Home Tour support announcement",
+            "url": "https://www.instagram.com/onlyreece/reel/DeqBvzBsbiX/",
+            "type": "manual_verified",
+            "authority": "official_artist",
+            "priority": 115
+          },
           {
             "name": "Alex Jean official tour calendar",
             "url": "https://alexjeantour.com/",
@@ -34568,8 +34596,11 @@
             "priority": 115
           }
         ],
-        "auditVerified": "2026-10-02",
-        "detailImageLayout": "portrait"
+        "auditVerified": "2026-10-19",
+        "detailImageLayout": "portrait",
+        "supportActs": [
+          "Reece"
+        ]
       }
     },
     {
@@ -34610,6 +34641,13 @@
         "sourceName": "Bandsintown",
         "sources": [
           {
+            "name": "Reece official Welcome Home Tour support announcement",
+            "url": "https://www.instagram.com/onlyreece/reel/DeqBvzBsbiX/",
+            "type": "manual_verified",
+            "authority": "official_artist",
+            "priority": 115
+          },
+          {
             "name": "AXS / Variety Playhouse",
             "url": "https://www.axs.com/events/1634213/alex-jean-tickets",
             "type": "manual_verified",
@@ -34649,10 +34687,10 @@
         "imageOverride": true,
         "imageSource": "Alex Jean official Welcome Home Tour 2026 poster",
         "imageSourceUrl": "https://www.instagram.com/meaningalex/p/Dd_duSRxzAf/",
-        "auditVerified": "2026-10-02",
+        "auditVerified": "2026-10-19",
         "startDateTime": "2026-11-29T19:00:00-05:00",
         "doorsTime": "18:00",
-        "notes": "AXS confirms Variety Playhouse, 7 PM concert and 6 PM doors; replaces the generic tour-name venue and incorrect 6 PM start.",
+        "notes": "AXS confirms Variety Playhouse, 7 PM concert and 6 PM doors; replaces the generic tour-name venue and incorrect 6 PM start. October 19: Reece (@onlyreece) announced these four support dates; he is distinct from Reece Lache. Keep unlinked billing until roster approval.",
         "detailImageLayout": "portrait",
         "firstSeen": "2026-09-30T16:34:22Z",
         "legacyEventPaths": [
@@ -34660,7 +34698,22 @@
         ],
         "mergedFromIds": [
           "ticketmaster:Z7r9jZ1AAepra"
-        ]
+        ],
+        "advertisedBilling": [
+          "Alex Jean",
+          "Reece"
+        ],
+        "officialBill": [
+          "Alex Jean",
+          "Reece"
+        ],
+        "supportActs": [
+          "Reece"
+        ],
+        "lineupExplicit": true,
+        "musicConfirmed": true,
+        "lastVerified": "2026-10-20T04:28:14.692666Z",
+        "publicDescription": "Alex Jean brings The Welcome Home Tour to Atlanta, with support from Reece."
       }
     },
     {
@@ -34754,6 +34807,13 @@
         "sourceName": "Bandsintown",
         "sources": [
           {
+            "name": "Reece official Welcome Home Tour support announcement",
+            "url": "https://www.instagram.com/onlyreece/reel/DeqBvzBsbiX/",
+            "type": "manual_verified",
+            "authority": "official_artist",
+            "priority": 115
+          },
+          {
             "name": "The Pyrle official tickets",
             "url": "https://www.tixr.com/groups/thepyrle/events/alex-jean-209045",
             "type": "manual_verified",
@@ -34786,10 +34846,26 @@
         "imageOverride": true,
         "imageSource": "Alex Jean official Welcome Home Tour 2026 poster",
         "imageSourceUrl": "https://www.instagram.com/meaningalex/p/Dd_duSRxzAf/",
-        "auditVerified": "2026-10-02",
+        "auditVerified": "2026-10-19",
         "startDateTime": "2026-12-01T20:00:00-05:00",
         "doorsTime": "19:00",
-        "detailImageLayout": "portrait"
+        "detailImageLayout": "portrait",
+        "advertisedBilling": [
+          "Alex Jean",
+          "Reece"
+        ],
+        "officialBill": [
+          "Alex Jean",
+          "Reece"
+        ],
+        "supportActs": [
+          "Reece"
+        ],
+        "lineupExplicit": true,
+        "musicConfirmed": true,
+        "lastVerified": "2026-10-20T04:28:14.692666Z",
+        "publicDescription": "Alex Jean brings The Welcome Home Tour to Greensboro, with support from Reece.",
+        "notes": " October 19: Reece (@onlyreece) announced these four support dates; he is distinct from Reece Lache. Keep unlinked billing until roster approval."
       }
     },
     {
@@ -35250,17 +35326,20 @@
         "timezone": "America/New_York",
         "venue": "",
         "address": "",
-        "city": "Atlanta",
+        "city": "Jonesboro",
         "state": "GA",
         "country": "US",
         "artists": [
-          "Shaquille Jones"
+          "Shaquille Jones",
+          "Ahmad Nelson"
         ],
         "advertisedBilling": [
-          "Shaquille Jones"
+          "Shaquille Jones",
+          "Ahmad Nelson"
         ],
         "officialBill": [
-          "Shaquille Jones"
+          "Shaquille Jones",
+          "Ahmad Nelson"
         ],
         "hosts": [
           "Blessed Empress",
@@ -35284,12 +35363,19 @@
         "authority": "official_event",
         "confidence": "high",
         "firstSeen": "2026-10-13T13:13:46Z",
-        "lastVerified": "2026-10-13T13:13:46Z",
-        "auditVerified": "2026-10-13",
+        "lastVerified": "2026-10-20T04:28:14.692666Z",
+        "auditVerified": "2026-10-19",
         "price": "General admission $10 plus fees; VIP $30 plus fees",
-        "publicDescription": "The 3rd Annual Vibe5 Awards takes place December 5, 2026, 6–11 PM in Atlanta, hosted by Blessed Empress and Jdot!. Shaquille Jones has confirmed his participation directly. Venue and additional performer announcements are pending. Official artwork promotes the December 4–6 weekend; this listing is specifically for the December 5 awards show.",
-        "notes": "Owner explicitly requested publishing Shaquille Jones based on his direct artist confirmation. Official event ticket page confirms December 5, 2026, 6–11 PM Atlanta; no venue published. Official hosts announcement confirms Blessed Empress and Jdot! as hosts, not automatically music acts. Reviewed current organizer website, Instagram and Facebook; full music performance roster not yet published. Do not turn nominees, tagged accounts, prior-year clips or prior honorees into performers. Artwork labels Bryan Andrew Wilson 2024 honoree and Canton Jones 2025 honoree; neither is evidence of 2026 performance. December 4 preshow and December 6 outreach are separate events and Shaquille is not assigned to them.",
+        "publicDescription": "The 3rd Annual Vibe5 Awards takes place December 5, 2026, 6–11 PM in Jonesboro, Georgia, hosted by Blessed Empress and Jdot!. Announced performers include Ahmad Nelson, with Shaquille Jones also confirmed directly. The exact venue is still to be announced. Official artwork covers the December 4–6 weekend; this listing is for the December 5 awards show.",
+        "notes": "Owner explicitly requested publishing Shaquille Jones based on his direct artist confirmation. Official event ticket page confirms December 5, 2026, 6–11 PM Atlanta; no venue published. Official hosts announcement confirms Blessed Empress and Jdot! as hosts, not automatically music acts. Reviewed current organizer website, Instagram and Facebook; full music performance roster not yet published. Do not turn nominees, tagged accounts, prior-year clips or prior honorees into performers. Artwork labels Bryan Andrew Wilson 2024 honoree and Canton Jones 2025 honoree; neither is evidence of 2026 performance. December 4 preshow and December 6 outreach are separate events and Shaquille is not assigned to them. October 19 update: organizer now specifies Jonesboro, GA, and its DesUapBnyYX performer announcement explicitly bills Ahmad Nelson. Preserve Shaquille’s direct artist confirmation; venue remains unannounced.",
         "sources": [
+          {
+            "name": "Vibe5 official Ahmad Nelson performance announcement",
+            "url": "https://www.instagram.com/vibe5ent/p/DesUapBnyYX/",
+            "type": "manual_verified",
+            "authority": "official_event",
+            "priority": 115
+          },
           {
             "name": "Official December 5 ticket listing",
             "url": "https://www.vibe5entertainment.com/event-details/2026-3rd-annual-vibe5-awards",
@@ -35311,7 +35397,11 @@
             "authority": "artist_submission",
             "priority": 115
           }
-        ]
+        ],
+        "legacyEventPaths": [
+          "/event/3rd-annual-vibe5-awards-2026-12-05-atlanta-86cc21/"
+        ],
+        "publicNotice": "December 5 awards show in Jonesboro, Georgia. Exact venue pending. Ahmad Nelson and Shaquille Jones are confirmed; further performer announcements are pending."
       }
     },
     {
