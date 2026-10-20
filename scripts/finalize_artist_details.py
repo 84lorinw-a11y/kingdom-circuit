@@ -6,6 +6,7 @@ The independent --check pass runs immediately before the deployment artifact upl
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html
 import json
 import math
@@ -83,6 +84,29 @@ MOBILE_FRAMING = {
 # image fills its frame without invented borders or stretched proportions.
 FRAMING_PATH = Path(__file__).resolve().parents[1] / 'config/artist-profile-framing.json'
 PROFILE_FRAMING = json.loads(FRAMING_PATH.read_text())
+PORTRAITS = json.loads((FRAMING_PATH.parent / 'artist-portraits.json').read_text())
+ORIGINAL_PICTURE = re.compile(r'<picture data-kc-desktop-original><source\b[^>]*>(<img\b[^>]*>)</picture>')
+
+
+def desktop_original(source: str, slug: str, site: Path, base: str) -> str:
+    """Keep mobile's responsive image; avoid another lossy encode on desktop."""
+    entry = PROFILE_FRAMING.get(slug, {})
+    if not entry.get('desktop', {}).get('originalSource'):
+        return source
+    portrait = PORTRAITS[entry['artist']]
+    asset = site / portrait['asset']
+    if hashlib.sha256(asset.read_bytes()).hexdigest() != entry['imageSha256']:
+        raise ValueError(f'Original desktop portrait changed: {slug}')
+    source = ORIGINAL_PICTURE.sub(lambda m: m.group(1), source)
+    pattern = r'<img\b(?=[^>]*class="[^"]*\bkc-rd-profile-img\b)[^>]*>'
+    url = html.escape(base + portrait['asset'], quote=True)
+    source, count = re.subn(pattern, lambda m: (
+        '<picture data-kc-desktop-original>'
+        f'<source media="(min-width: 721px)" srcset="{url}">'
+        + m.group(0) + '</picture>'), source)
+    if count != 1:
+        raise ValueError(f'Expected one profile portrait: {slug}')
+    return source
 
 
 def framing_css(slug: str) -> str:
@@ -249,6 +273,7 @@ def enrich_row(row: str, site: Path, base: str, *, next_show=False) -> str:
 
 
 def render_profile(site: Path, profile: Path, source: str, base: str) -> str:
+    source = desktop_original(source, profile.parent.name, site, base)
     name = profile_name(source)
     source = ROW.sub(lambda m: enrich_row(m.group(0), site, base), source)
     source = NEXT.sub(lambda m: enrich_row(m.group(0), site, base, next_show=True), source)
@@ -318,6 +343,8 @@ def check(site: Path, base: str = BASE) -> dict:
         actual_framing = re.findall(r'<style data-kc-artist-framing>(.*?)</style>', source, re.S)
         if actual_framing != ([framing] if framing else []):
             failures.append(f'{profile}: approved artist framing missing or changed')
+        if desktop_original(source, profile.parent.name, site, base) != source:
+            failures.append(f'{profile}: original desktop portrait missing or changed')
     if not counts['profiles']:
         failures.append('No artist profiles found')
     manifest = site / 'assets/live-redesign-manifest.json'

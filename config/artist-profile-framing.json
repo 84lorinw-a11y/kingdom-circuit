@@ -7813,8 +7813,9 @@
   "kemara-lynn": {
     "artist": "Kemara Lynn",
     "imageSha256": "093eb21670a4af01555b53596e614ffdd1ec8ba5074dcc86d95c0794848e1f12",
-    "reason": "Artist-submitted studio portrait; full head visible with filled mobile and desktop frames. Original image retained unchanged.",
+    "reason": "Artist-submitted studio portrait; desktop serves the unchanged original to avoid extra compression. Approved mobile image and framing retained.",
     "desktop": {
+      "originalSource": true,
       "window": [
         0,
         0,

@@ -1,5 +1,6 @@
 import importlib.util
 import datetime as dt
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -14,6 +15,25 @@ SPEC.loader.exec_module(details)
 
 
 class ArtistDetailsTests(unittest.TestCase):
+    def test_desktop_original_preserves_mobile_image_and_is_repeat_safe(self):
+        with tempfile.TemporaryDirectory() as temp:
+            site = Path(temp)
+            original = b'approved original bytes'
+            (site / 'photo.jpg').write_bytes(original)
+            image = '<img class="kc-rd-profile-img" src="small.webp" srcset="small.webp 320w, large.webp 960w" sizes="100vw" alt="Artist">'
+            entry = {'artist': 'Artist', 'imageSha256': hashlib.sha256(original).hexdigest(),
+                     'desktop': {'originalSource': True}}
+            with patch.dict(details.PROFILE_FRAMING, {'example': entry}), patch.dict(
+                    details.PORTRAITS, {'Artist': {'asset': 'photo.jpg'}}):
+                after = details.desktop_original(image, 'example', site, '/')
+                self.assertIn('<source media="(min-width: 721px)" srcset="/photo.jpg">', after)
+                self.assertIn(image, after)
+                self.assertEqual(details.desktop_original(after, 'example', site, '/'), after)
+                self.assertEqual(details.desktop_original(image, 'unconfigured', site, '/'), image)
+                (site / 'photo.jpg').write_bytes(b'unapproved replacement')
+                with self.assertRaises(ValueError):
+                    details.desktop_original(image, 'example', site, '/')
+
     def test_profile_windows_preserve_original_image_proportions(self):
         portraits = json.loads((ROOT / 'config/artist-portraits.json').read_text())
         for slug, entry in details.PROFILE_FRAMING.items():
