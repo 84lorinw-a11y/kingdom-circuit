@@ -128,44 +128,6 @@
     "notes": "Official ticket provider lists this event as sold out. Sold out is not a cancellation."
   },
   {
-    "id": "eventbrite:gracefest-lecrae-castaic-2026",
-    "title": "GRACEFEST 2026",
-    "startDate": "2026-09-19",
-    "startTime": "13:30",
-    "timezone": "America/Los_Angeles",
-    "venue": "Castaic Lake State Recreation Area",
-    "address": "Castaic Lake Drive",
-    "city": "Castaic",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "Lecrae"
-    ],
-    "headliner": "Lecrae",
-    "eventType": "festival",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-    "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-    "image": "assets/events/gracefest-2026.png",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "price": "",
-    "sourceName": "Official Eventbrite listing",
-    "authority": "official_festival",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Official Eventbrite listing",
-        "url": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-        "type": "eventbrite",
-        "authority": "official_festival",
-        "priority": 104
-      }
-    ]
-  },
-  {
     "id": "eventbrite:hip-hop-in-the-park-cortland-2026",
     "title": "Hip Hop in the Park",
     "startDate": "2026-09-19",
@@ -202,6 +164,44 @@
         "type": "eventbrite",
         "authority": "venue_ticket",
         "priority": 94
+      }
+    ]
+  },
+  {
+    "id": "eventbrite:gracefest-lecrae-castaic-2026",
+    "title": "GRACEFEST 2026",
+    "startDate": "2026-09-19",
+    "startTime": "13:30",
+    "timezone": "America/Los_Angeles",
+    "venue": "Castaic Lake State Recreation Area",
+    "address": "Castaic Lake Drive",
+    "city": "Castaic",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Lecrae"
+    ],
+    "headliner": "Lecrae",
+    "eventType": "festival",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+    "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+    "image": "assets/events/gracefest-2026.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "price": "",
+    "sourceName": "Official Eventbrite listing",
+    "authority": "official_festival",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+        "type": "eventbrite",
+        "authority": "official_festival",
+        "priority": 104
       }
     ]
   },
@@ -467,58 +467,6 @@
     "trackedArtist": "Childlike CiCi"
   },
   {
-    "id": "bandsintown:108144023",
-    "title": "GODLY AMBITION TOUR — HOUSTON, TX",
-    "startDate": "2026-10-24",
-    "startTime": "18:00",
-    "timezone": "America/Chicago",
-    "venue": "The Bronze Peacock at House of Blues Houston",
-    "address": "1204 Caroline St",
-    "city": "Houston",
-    "state": "TX",
-    "country": "US",
-    "artists": [
-      "Ruslan"
-    ],
-    "headliner": "Ruslan",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
-    "officialUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
-    "image": "assets/events/ruslan-ticketmaster-2026.jpg",
-    "price": "",
-    "sourceName": "Ticketmaster",
-    "sources": [
-      {
-        "name": "Ticketmaster",
-        "url": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 100
-      },
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/108144023?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "108144023",
-    "bandsintownArtistId": "602133",
-    "bandsintownResolvedName": "RUSLAN",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Ruslan",
-    "imageType": "artist",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Ticketmaster official Ruslan photo",
-    "imageSourceUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
-    "authority": "venue_ticket",
-    "auditVerified": "2026-10-06"
-  },
-  {
     "id": "mike-teezy-hrvstland-festival-2026",
     "title": "HRVSTLAND Festival 2026",
     "startDate": "2026-10-24",
@@ -656,6 +604,58 @@
       "DJ PARTYwithParks"
     ],
     "startDateTime": "2026-10-24T16:00:00-04:00"
+  },
+  {
+    "id": "bandsintown:108144023",
+    "title": "GODLY AMBITION TOUR — HOUSTON, TX",
+    "startDate": "2026-10-24",
+    "startTime": "18:00",
+    "timezone": "America/Chicago",
+    "venue": "The Bronze Peacock at House of Blues Houston",
+    "address": "1204 Caroline St",
+    "city": "Houston",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Ruslan"
+    ],
+    "headliner": "Ruslan",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
+    "officialUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
+    "image": "assets/events/ruslan-ticketmaster-2026.jpg",
+    "price": "",
+    "sourceName": "Ticketmaster",
+    "sources": [
+      {
+        "name": "Ticketmaster",
+        "url": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
+      },
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/108144023?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "108144023",
+    "bandsintownArtistId": "602133",
+    "bandsintownResolvedName": "RUSLAN",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Ruslan",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Ticketmaster official Ruslan photo",
+    "imageSourceUrl": "https://www.ticketmaster.com/ruslan-kd-godly-ambition-tour-moved-houston-texas-10-24-2026/event/3A00636DD48C7831",
+    "authority": "venue_ticket",
+    "auditVerified": "2026-10-06"
   },
   {
     "id": "sevin-live-nashville-2026-10-24",
@@ -1639,44 +1639,6 @@
     ]
   },
   {
-    "id": "bandsintown:109046095",
-    "title": "K-Drama at Crossover Church",
-    "startDate": "2026-11-07",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "Crossover Church",
-    "address": "1235 E Fowler Ave",
-    "city": "Tampa",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "K-Drama"
-    ],
-    "headliner": "K-Drama",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/109046095?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/109046095?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/k-drama-verified-oct10.jpg",
-    "price": "",
-    "sourceName": "Bandsintown",
-    "sources": [
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/109046095?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "109046095",
-    "bandsintownArtistId": "4403",
-    "bandsintownResolvedName": "K-Drama",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "K-Drama"
-  },
-  {
     "id": "supplemental:skema-boy-2026-11-08-atlanta-ga",
     "title": "Zauntee: God Remembers Tour - with Skema Boy",
     "startDate": "2026-11-08",
@@ -1896,115 +1858,57 @@
     ]
   },
   {
-    "id": "bandsintown:1040378722",
-    "title": "Miles Minnick — GLOVEMBER",
+    "id": "bandsintown:1040314202",
+    "title": "Pastor Mike Jr. at WL Jack Howard Theatre",
     "startDate": "2026-11-14",
-    "startTime": "20:00",
-    "timezone": "America/Los_Angeles",
-    "venue": "The Belasco",
-    "address": "1050 S Hill St",
-    "city": "Los Angeles",
-    "state": "CA",
+    "startTime": "15:00",
+    "timezone": "",
+    "venue": "WL Jack Howard Theatre",
+    "address": "401 Lea Joyner Memorial Expressway",
+    "city": "Monroe",
+    "state": "LA",
     "country": "US",
     "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "MikeySoChristian",
-      "Lul DreDay",
-      "Eli Williams"
+      "Pastor Mike Jr."
     ],
-    "headliner": "Miles Minnick",
+    "headliner": "Pastor Mike Jr.",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
-    "officialUrl": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
-    "image": "assets/events/miles-minnick-glovember-2026-11-14.jpg",
+    "ticketUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
+    "officialUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
+    "image": "assets/events/pastor-mike-monroe-2026-11-14-instagram.jpg",
     "price": "",
-    "sourceName": "Ticketmaster / The Belasco",
+    "sourceName": "Ticketmaster / W L Jack Howard Theatre",
     "sources": [
       {
-        "name": "Ticketmaster / The Belasco",
-        "url": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
+        "name": "Ticketmaster / W L Jack Howard Theatre",
+        "url": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
         "type": "manual_verified",
         "authority": "venue_ticket",
-        "priority": 115
-      },
-      {
-        "name": "Miles Minnick and CJ Emulous official GLOVEMBER flyer",
-        "url": "https://www.instagram.com/p/Ddo8xGgoQhN/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Eli Williams official performance announcement",
-        "url": "https://www.instagram.com/eliwilliamssss/p/Ddo-VxfOYH1/",
-        "type": "manual_verified",
-        "authority": "artist",
         "priority": 115
       },
       {
         "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/1040378722?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "url": "https://www.bandsintown.com/e/1040314202?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
         "type": "bandsintown_rest",
         "authority": "artist_calendar",
         "priority": 74
-      },
-      {
-        "name": "Ticketmaster",
-        "url": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
-        "type": "ticketmaster",
-        "authority": "venue_ticket",
-        "priority": 94
       }
     ],
     "confidence": "medium",
-    "bandsintownEventId": "1040378722",
-    "bandsintownArtistId": "15395466",
-    "bandsintownResolvedName": "Miles Minnick",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Miles Minnick",
-    "advertisedBilling": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "MikeySoChristian",
-      "Lul DreDay",
-      "DJ Malski",
-      "Eli Williams"
-    ],
-    "officialBill": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "MikeySoChristian",
-      "Lul DreDay",
-      "DJ Malski",
-      "Eli Williams"
-    ],
-    "lineupExplicit": true,
-    "auditVerified": "2026-10-06",
-    "doorsTime": "19:00",
-    "startDateTime": "2026-11-14T20:00:00-08:00",
+    "bandsintownEventId": "1040314202",
+    "bandsintownArtistId": "15540358",
+    "bandsintownResolvedName": "Pastor Mike Jr.",
+    "bandsintownIdentity": "configured_id",
+    "trackedArtist": "Pastor Mike Jr.",
     "authority": "venue_ticket",
-    "notes": "Official co-posted flyer bills Miles Minnick, Tommy Zuko, CJ Emulous, Mikeyso and Lul DreDay, hosted by DJ Malski; Eli Williams' dated announcement confirms his participation. Ticketmaster confirms November 14, The Belasco, 6 PM early entry, 7 PM doors, 8 PM show. October 6 review: CJ's GLOvember source links this exact Ticketmaster event, so its November 15 duplicate is merged here. Owner authorized withholding the conflicting November 14 Grand Prairie listing pending confirmation; no cancellation is claimed. Preserve the full reviewed bill and approved artwork.",
-    "legacyEventPaths": [
-      "/event/miles-minnick-at-below-at-the-belasco-2026-11-14-los-angeles-5d10ab/",
-      "/event/glo-concert-2026-11-15-los-angeles-1f2b48/",
-      "/event/miles-minnick-glovember-2026-11-14-los-angeles-5d45ea/"
-    ],
+    "auditVerified": "2026-09-26",
     "imageType": "event_artwork",
+    "imageSource": "Owner-selected official Instagram show artwork",
+    "imageSourceUrl": "https://www.instagram.com/p/DdZkgYKmbXf/",
     "imagePosition": "center",
     "imageOverride": true,
-    "imageSource": "Miles Minnick and CJ Emulous official GLOVEMBER Instagram flyer",
-    "imageSourceUrl": "https://www.instagram.com/p/Ddo8xGgoQhN/",
-    "legacyEventNotice": "GLOVEMBER takes place November 14, 2026 at 8 PM at The Belasco. This duplicate listing has been combined with the main event.",
-    "mergedFromIds": [
-      "manual:cj-emulous-glo-concert-los-angeles-2026",
-      "ticketmaster:vv1AaZkfMGkd2fZDG"
-    ],
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "detailImageLayout": "portrait"
   },
   {
     "id": "ty-brasel-outlandish-fest-fort-worth-2026",
@@ -2142,57 +2046,115 @@
     ]
   },
   {
-    "id": "bandsintown:1040314202",
-    "title": "Pastor Mike Jr. at WL Jack Howard Theatre",
+    "id": "bandsintown:1040378722",
+    "title": "Miles Minnick — GLOVEMBER",
     "startDate": "2026-11-14",
-    "startTime": "15:00",
-    "timezone": "",
-    "venue": "WL Jack Howard Theatre",
-    "address": "401 Lea Joyner Memorial Expressway",
-    "city": "Monroe",
-    "state": "LA",
+    "startTime": "20:00",
+    "timezone": "America/Los_Angeles",
+    "venue": "The Belasco",
+    "address": "1050 S Hill St",
+    "city": "Los Angeles",
+    "state": "CA",
     "country": "US",
     "artists": [
-      "Pastor Mike Jr."
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "MikeySoChristian",
+      "Lul DreDay",
+      "Eli Williams"
     ],
-    "headliner": "Pastor Mike Jr.",
+    "headliner": "Miles Minnick",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
-    "officialUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
-    "image": "assets/events/pastor-mike-monroe-2026-11-14-instagram.jpg",
+    "ticketUrl": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
+    "officialUrl": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
+    "image": "assets/events/miles-minnick-glovember-2026-11-14.jpg",
     "price": "",
-    "sourceName": "Ticketmaster / W L Jack Howard Theatre",
+    "sourceName": "Ticketmaster / The Belasco",
     "sources": [
       {
-        "name": "Ticketmaster / W L Jack Howard Theatre",
-        "url": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
+        "name": "Ticketmaster / The Belasco",
+        "url": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
         "type": "manual_verified",
         "authority": "venue_ticket",
         "priority": 115
       },
       {
+        "name": "Miles Minnick and CJ Emulous official GLOVEMBER flyer",
+        "url": "https://www.instagram.com/p/Ddo8xGgoQhN/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Eli Williams official performance announcement",
+        "url": "https://www.instagram.com/eliwilliamssss/p/Ddo-VxfOYH1/",
+        "type": "manual_verified",
+        "authority": "artist",
+        "priority": 115
+      },
+      {
         "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/1040314202?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "url": "https://www.bandsintown.com/e/1040378722?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
         "type": "bandsintown_rest",
         "authority": "artist_calendar",
         "priority": 74
+      },
+      {
+        "name": "Ticketmaster",
+        "url": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
+        "type": "ticketmaster",
+        "authority": "venue_ticket",
+        "priority": 94
       }
     ],
     "confidence": "medium",
-    "bandsintownEventId": "1040314202",
-    "bandsintownArtistId": "15540358",
-    "bandsintownResolvedName": "Pastor Mike Jr.",
-    "bandsintownIdentity": "configured_id",
-    "trackedArtist": "Pastor Mike Jr.",
+    "bandsintownEventId": "1040378722",
+    "bandsintownArtistId": "15395466",
+    "bandsintownResolvedName": "Miles Minnick",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Miles Minnick",
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "MikeySoChristian",
+      "Lul DreDay",
+      "DJ Malski",
+      "Eli Williams"
+    ],
+    "officialBill": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "MikeySoChristian",
+      "Lul DreDay",
+      "DJ Malski",
+      "Eli Williams"
+    ],
+    "lineupExplicit": true,
+    "auditVerified": "2026-10-06",
+    "doorsTime": "19:00",
+    "startDateTime": "2026-11-14T20:00:00-08:00",
     "authority": "venue_ticket",
-    "auditVerified": "2026-09-26",
+    "notes": "Official co-posted flyer bills Miles Minnick, Tommy Zuko, CJ Emulous, Mikeyso and Lul DreDay, hosted by DJ Malski; Eli Williams' dated announcement confirms his participation. Ticketmaster confirms November 14, The Belasco, 6 PM early entry, 7 PM doors, 8 PM show. October 6 review: CJ's GLOvember source links this exact Ticketmaster event, so its November 15 duplicate is merged here. Owner authorized withholding the conflicting November 14 Grand Prairie listing pending confirmation; no cancellation is claimed. Preserve the full reviewed bill and approved artwork.",
+    "legacyEventPaths": [
+      "/event/miles-minnick-at-below-at-the-belasco-2026-11-14-los-angeles-5d10ab/",
+      "/event/glo-concert-2026-11-15-los-angeles-1f2b48/",
+      "/event/miles-minnick-glovember-2026-11-14-los-angeles-5d45ea/"
+    ],
     "imageType": "event_artwork",
-    "imageSource": "Owner-selected official Instagram show artwork",
-    "imageSourceUrl": "https://www.instagram.com/p/DdZkgYKmbXf/",
     "imagePosition": "center",
     "imageOverride": true,
-    "detailImageLayout": "portrait"
+    "imageSource": "Miles Minnick and CJ Emulous official GLOVEMBER Instagram flyer",
+    "imageSourceUrl": "https://www.instagram.com/p/Ddo8xGgoQhN/",
+    "legacyEventNotice": "GLOVEMBER takes place November 14, 2026 at 8 PM at The Belasco. This duplicate listing has been combined with the main event.",
+    "mergedFromIds": [
+      "manual:cj-emulous-glo-concert-los-angeles-2026",
+      "ticketmaster:vv1AaZkfMGkd2fZDG"
+    ],
+    "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
     "id": "supplemental:skema-boy-2026-11-16-dallas-tx",
