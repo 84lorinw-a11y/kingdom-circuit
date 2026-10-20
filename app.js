@@ -386,7 +386,8 @@ const ARTIST_ROSTER_ORDER = [
   "Kevin \"KC\" Campbell",
   "Crown One",
   "Lady Cam",
-  "Believin Stephen"
+  "Believin Stephen",
+  "Ryan Ellis"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -5604,6 +5605,20 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/believinstephen/",
     "imageUrl": "assets/artists/believin-stephen-official-oct19.jpg",
     "imagePosition": "50% 0%",
+    "sourceRegistryVerified": true
+  },
+  "ryan ellis": {
+    "aliases": [
+      "Ryan Ellis",
+      "ryanellis"
+    ],
+    "website": "https://link.me/ryanellis",
+    "instagramProfile": "https://www.instagram.com/ryanellis/",
+    "spotifyProfile": "https://open.spotify.com/artist/7mkCeiRcySEQSSAMYbud5C",
+    "youtubeProfile": "https://www.youtube.com/channel/UC4G3elLxexn6P44xzIqEPfA",
+    "officialImageSource": "https://open.spotify.com/artist/7mkCeiRcySEQSSAMYbud5C",
+    "imageUrl": "assets/artists/ryan-ellis-official-oct20.jpg",
+    "imagePosition": "45% 35%",
     "sourceRegistryVerified": true
   }
 };
@@ -10824,6 +10839,20 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/believin-stephen-official-oct19.jpg",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
+  },
+  "ryan ellis": {
+    "aliases": [
+      "Ryan Ellis",
+      "ryanellis"
+    ],
+    "website": "https://link.me/ryanellis",
+    "instagramProfile": "https://www.instagram.com/ryanellis/",
+    "spotifyProfile": "https://open.spotify.com/artist/7mkCeiRcySEQSSAMYbud5C",
+    "youtubeProfile": "https://www.youtube.com/channel/UC4G3elLxexn6P44xzIqEPfA",
+    "officialImageSource": "https://open.spotify.com/artist/7mkCeiRcySEQSSAMYbud5C",
+    "imageUrl": "assets/artists/ryan-ellis-official-oct20.jpg",
+    "imagePosition": "45% 35%",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -12318,6 +12347,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "believin stephen": {
     "imageUrl": "assets/artists/believin-stephen-official-oct19.jpg",
     "imagePosition": "50% 0%"
+  },
+  "ryan ellis": {
+    "imageUrl": "assets/artists/ryan-ellis-official-oct20.jpg",
+    "imagePosition": "45% 35%"
   }
 };
 
