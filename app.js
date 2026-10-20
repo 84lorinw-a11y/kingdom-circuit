@@ -5602,9 +5602,9 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/believinstephen/",
     "spotifyProfile": "https://open.spotify.com/artist/6C7cApykc389MmY7iCEJzG",
     "youtubeProfile": "https://www.youtube.com/user/BelievinStephen",
-    "officialImageSource": "https://www.instagram.com/believinstephen/",
-    "imageUrl": "assets/artists/believin-stephen-official-oct19.jpg",
-    "imagePosition": "50% 0%",
+    "officialImageSource": "https://www.instagram.com/believinstephen/p/DTRgCVNDqX6/",
+    "imageUrl": "assets/artists/believin-stephen-selected-oct20.jpg",
+    "imagePosition": "50% 22%",
     "sourceRegistryVerified": true
   },
   "ryan ellis": {
@@ -10835,9 +10835,9 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/believinstephen/",
     "spotifyProfile": "https://open.spotify.com/artist/6C7cApykc389MmY7iCEJzG",
     "youtubeProfile": "https://www.youtube.com/user/BelievinStephen",
-    "officialImageSource": "https://www.instagram.com/believinstephen/",
-    "imageUrl": "assets/artists/believin-stephen-official-oct19.jpg",
-    "imagePosition": "50% 0%",
+    "officialImageSource": "https://www.instagram.com/believinstephen/p/DTRgCVNDqX6/",
+    "imageUrl": "assets/artists/believin-stephen-selected-oct20.jpg",
+    "imagePosition": "50% 22%",
     "sourceRegistryVerified": true
   },
   "ryan ellis": {
@@ -12345,8 +12345,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 0%"
   },
   "believin stephen": {
-    "imageUrl": "assets/artists/believin-stephen-official-oct19.jpg",
-    "imagePosition": "50% 0%"
+    "imageUrl": "assets/artists/believin-stephen-selected-oct20.jpg",
+    "imagePosition": "50% 22%"
   },
   "ryan ellis": {
     "imageUrl": "assets/artists/ryan-ellis-official-oct20.jpg",
