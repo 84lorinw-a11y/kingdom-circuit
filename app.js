@@ -5616,9 +5616,9 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/ryanellis/",
     "spotifyProfile": "https://open.spotify.com/artist/7mkCeiRcySEQSSAMYbud5C",
     "youtubeProfile": "https://www.youtube.com/channel/UC4G3elLxexn6P44xzIqEPfA",
-    "officialImageSource": "https://open.spotify.com/artist/7mkCeiRcySEQSSAMYbud5C",
-    "imageUrl": "assets/artists/ryan-ellis-official-oct20.jpg",
-    "imagePosition": "45% 35%",
+    "officialImageSource": "https://ryanellismusic.com/about/",
+    "imageUrl": "assets/artists/ryan-ellis-press-oct20.jpg",
+    "imagePosition": "55% 35%",
     "sourceRegistryVerified": true
   }
 };
@@ -10849,9 +10849,9 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/ryanellis/",
     "spotifyProfile": "https://open.spotify.com/artist/7mkCeiRcySEQSSAMYbud5C",
     "youtubeProfile": "https://www.youtube.com/channel/UC4G3elLxexn6P44xzIqEPfA",
-    "officialImageSource": "https://open.spotify.com/artist/7mkCeiRcySEQSSAMYbud5C",
-    "imageUrl": "assets/artists/ryan-ellis-official-oct20.jpg",
-    "imagePosition": "45% 35%",
+    "officialImageSource": "https://ryanellismusic.com/about/",
+    "imageUrl": "assets/artists/ryan-ellis-press-oct20.jpg",
+    "imagePosition": "55% 35%",
     "sourceRegistryVerified": true
   }
 };
@@ -12349,8 +12349,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 22%"
   },
   "ryan ellis": {
-    "imageUrl": "assets/artists/ryan-ellis-official-oct20.jpg",
-    "imagePosition": "45% 35%"
+    "imageUrl": "assets/artists/ryan-ellis-press-oct20.jpg",
+    "imagePosition": "55% 35%"
   }
 };
 
