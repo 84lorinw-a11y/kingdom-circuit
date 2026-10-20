@@ -1,8 +1,8 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-10-20T19:01:43Z",
-  "lastSuccessfulUpdate": "2026-10-20T19:01:43Z",
+  "lastAttempt": "2026-10-20T20:04:27Z",
+  "lastSuccessfulUpdate": "2026-10-20T20:04:27Z",
   "eventsPublished": 136,
   "candidatesCollected": 258,
   "artistsConfigured": 374,
@@ -20,7 +20,7 @@
   "instagramArtistsConfigured": 329,
   "instagramQueriesRun": 331,
   "instagramQueriesAttempted": 329,
-  "instagramResultsFound": 2,
+  "instagramResultsFound": 0,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,26 +46,6 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
-    },
-    {
-      "url": "https://www.instagram.com/p/signin/",
-      "title": "Instagram",
-      "artists": [],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
-    },
-    {
-      "url": "https://www.instagram.com/p/CwSeblILNvp/",
-      "title": "Hamady Dia on Instagram",
-      "artists": [],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
@@ -643,5 +623,5 @@
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 22,
   "artistWebsiteEventsAdded": 3,
-  "artistWebsiteMergeAt": "2026-10-20T19:12:01Z"
+  "artistWebsiteMergeAt": "2026-10-20T20:14:16Z"
 }
