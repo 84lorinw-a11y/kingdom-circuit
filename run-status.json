@@ -1,26 +1,26 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-10-20T16:03:48Z",
-  "lastSuccessfulUpdate": "2026-10-20T16:03:48Z",
-  "eventsPublished": 163,
+  "lastAttempt": "2026-10-20T19:01:43Z",
+  "lastSuccessfulUpdate": "2026-10-20T19:01:43Z",
+  "eventsPublished": 136,
   "candidatesCollected": 258,
-  "artistsConfigured": 373,
+  "artistsConfigured": 374,
   "artistsByPriority": {
     "priority1": 91,
     "priority2": 142,
-    "priority3": 140
+    "priority3": 141
   },
   "ticketmasterArtistsEnabled": 196,
-  "socialSearchArtistsEnabled": 328,
-  "freeTextAliasesProtected": 219,
+  "socialSearchArtistsEnabled": 329,
+  "freeTextAliasesProtected": 221,
   "artistsMatchedOnTicketmaster": 61,
   "officialEventsFound": 36,
   "ticketmasterEventsFound": 11,
-  "instagramArtistsConfigured": 328,
-  "instagramQueriesRun": 330,
-  "instagramQueriesAttempted": 328,
-  "instagramResultsFound": 0,
+  "instagramArtistsConfigured": 329,
+  "instagramQueriesRun": 331,
+  "instagramQueriesAttempted": 329,
+  "instagramResultsFound": 2,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,10 +46,30 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
+    },
+    {
+      "url": "https://www.instagram.com/p/signin/",
+      "title": "Instagram",
+      "artists": [],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
+    },
+    {
+      "url": "https://www.instagram.com/p/CwSeblILNvp/",
+      "title": "Hamady Dia on Instagram",
+      "artists": [],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 453,
+  "sourcesChecked": 454,
   "unmatchedArtists": [
     "Scootie Wop",
     "Mike Malagies",
@@ -592,8 +612,8 @@
       "name": "Instagram public announcement scan",
       "status": "ok",
       "eventsFound": 0,
-      "artistsChecked": 328,
-      "queriesRun": 330
+      "artistsChecked": 329,
+      "queriesRun": 331
     }
   ],
   "warningCount": 18,
@@ -623,5 +643,5 @@
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 22,
   "artistWebsiteEventsAdded": 3,
-  "artistWebsiteMergeAt": "2026-10-20T16:37:25Z"
+  "artistWebsiteMergeAt": "2026-10-20T19:12:01Z"
 }
