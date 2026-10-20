@@ -14,7 +14,15 @@ from catalog_removals import removed_event
 from add_past_show_archives import is_test, trusted
 
 REGISTRY = "config/permanent-state-pages.json"
-CODES = set("AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY PR".split())
+US_CODES = set("AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY PR".split())
+CANADIAN_REGIONS = {
+    "AB": "Alberta", "BC": "British Columbia", "MB": "Manitoba",
+    "NB": "New Brunswick", "NL": "Newfoundland and Labrador",
+    "NS": "Nova Scotia", "NT": "Northwest Territories", "NU": "Nunavut",
+    "ON": "Ontario", "PE": "Prince Edward Island", "QC": "Quebec",
+    "SK": "Saskatchewan", "YT": "Yukon",
+}
+CODES = US_CODES | CANADIAN_REGIONS.keys()
 ARCHIVE_RE = re.compile(r'<section\b(?=[^>]*\bdata-past-shows-archive\b)[^>]*>.*?</section>', re.S)
 NAV_RE = re.compile(r'<section\b[^>]*data-permanent-state-navigation[^>]*>.*?</section>', re.S)
 EMPTY_HEADING_STYLE = ('<style id="permanent-state-heading-style">'
@@ -25,6 +33,8 @@ EMPTY_HEADING_STYLE = ('<style id="permanent-state-heading-style">'
 
 def state_name(code):
     from build_seo_site import STATE_NAMES
+    if code in CANADIAN_REGIONS:
+        return CANADIAN_REGIONS[code]
     return "Puerto Rico" if code == "PR" else STATE_NAMES[code]
 
 
@@ -35,8 +45,12 @@ def state_path(code):
 
 
 def eligible(event):
-    return (isinstance(event, dict) and event.get("state") in CODES
-            and str(event.get("country") or "US").upper() in {"US", "USA", "PR"}
+    if not isinstance(event, dict):
+        return False
+    country = str(event.get("country") or "US").upper()
+    region_matches = ((country in {"US", "USA", "PR"} and event.get("state") in US_CODES)
+                      or (country in {"CA", "CAN", "CANADA"} and event.get("state") in CANADIAN_REGIONS))
+    return (region_matches
             and not removed_event(event) and not rejected(event) and not is_test(event))
 
 

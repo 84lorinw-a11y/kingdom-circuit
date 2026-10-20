@@ -16,6 +16,15 @@ def removed_artist(name):
 
 
 def withheld_event(event):
+    # Artist's November 7 listing explicitly says he is a beat-battle judge,
+    # not a performer. Keep the real Flavor Fest concert and other K-Drama sets.
+    if event.get("startDate") == "2026-11-07" and (
+        str(event.get("id") or "").removeprefix("manual:") == "bandsintown:109046095"
+        or any(re.search(r"bandsintown\.com/[et]/109046095(?:[/?#-]|$)",
+                         str(event.get(field) or ""))
+               for field in ("officialUrl", "ticketUrl"))
+    ):
+        return True
     # October 8: owner rejected this specific event because the artist match
     # is not reliable. Keep future source refreshes from publishing it.
     rejected_url = "https://www.kingdomtix.org/events/ec10348c-3f78-4c97-95d6-587a5f5fb380"

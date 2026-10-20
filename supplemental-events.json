@@ -1411,10 +1411,10 @@
   },
   {
     "id": "bandsintown:109046038",
-    "title": "K-Drama at Crossroads Church Mason",
+    "title": "K-Drama — Youth Leadership Seminar (School Event)",
     "startDate": "2026-10-28",
     "startTime": "08:00",
-    "timezone": "",
+    "timezone": "America/New_York",
     "venue": "Crossroads Church Mason",
     "address": "990 Reading Rd",
     "city": "Mason",
@@ -1433,6 +1433,13 @@
     "sourceName": "Bandsintown",
     "sources": [
       {
+        "name": "K-Drama artist-published event description",
+        "url": "https://www.bandsintown.com/e/109046038",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 115
+      },
+      {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/109046038?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
         "type": "bandsintown_rest",
@@ -1445,7 +1452,14 @@
     "bandsintownArtistId": "4403",
     "bandsintownResolvedName": "K-Drama",
     "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "K-Drama"
+    "trackedArtist": "K-Drama",
+    "startDateTime": "2026-10-28T08:00:00-04:00",
+    "publicNotice": "K-Drama performs at the Anthony Muñoz Foundation Youth Leadership Seminar. Admission is limited to students attending with their school and registered volunteers.",
+    "publicDescription": "K-Drama performs at the Anthony Muñoz Foundation Youth Leadership Seminar at Crossroads Church Mason. This school event is restricted to attending students and volunteers.",
+    "auditVerified": "2026-10-20",
+    "legacyEventPaths": [
+      "/event/k-drama-at-crossroads-church-mason-2026-10-28-mason-3bebe9/"
+    ]
   },
   {
     "id": "supplemental:skema-boy-2026-10-28-columbus-oh",
@@ -2035,8 +2049,8 @@
     "title": "NWO NYI Fall Retreat 2026",
     "startDate": "2026-11-06",
     "startTime": "19:00",
-    "timezone": "",
-    "venue": "NWO NYI Fall Retreat 2026",
+    "timezone": "America/New_York",
+    "venue": "Cross Oak Camp & Retreat Center",
     "address": "272 Jack Oak Point Rd",
     "city": "Saint Marys",
     "state": "OH",
@@ -2054,6 +2068,13 @@
     "sourceName": "Bandsintown",
     "sources": [
       {
+        "name": "K-Drama artist-published event description",
+        "url": "https://www.bandsintown.com/e/109046072",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 115
+      },
+      {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/109046072?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
         "type": "bandsintown_rest",
@@ -2066,7 +2087,10 @@
     "bandsintownArtistId": "4403",
     "bandsintownResolvedName": "K-Drama",
     "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "K-Drama"
+    "trackedArtist": "K-Drama",
+    "startDateTime": "2026-11-06T19:00:00-05:00",
+    "publicNotice": "K-Drama performs at the NWO NYI Fall Retreat. See the organizer for retreat registration and attendance requirements.",
+    "auditVerified": "2026-10-20"
   },
   {
     "id": "supplemental:skema-boy-2026-11-06-nashville-tn",
@@ -2219,44 +2243,6 @@
       "Monster Tarver",
       "C4 Crotona"
     ]
-  },
-  {
-    "id": "bandsintown:109046095",
-    "title": "K-Drama at Crossover Church",
-    "startDate": "2026-11-07",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "Crossover Church",
-    "address": "1235 E Fowler Ave",
-    "city": "Tampa",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "K-Drama"
-    ],
-    "headliner": "K-Drama",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/109046095?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/109046095?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/k-drama-verified-oct10.jpg",
-    "price": "",
-    "sourceName": "Bandsintown",
-    "sources": [
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/109046095?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "109046095",
-    "bandsintownArtistId": "4403",
-    "bandsintownResolvedName": "K-Drama",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "K-Drama"
   },
   {
     "id": "supplemental:skema-boy-2026-11-08-atlanta-ga",

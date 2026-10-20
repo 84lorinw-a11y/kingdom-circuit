@@ -36,6 +36,9 @@ def slug(value: str) -> str:
 
 STATE_SLUGS = {slug(name) for name in STATE_NAMES.values()}
 STATE_SLUGS.add("pr")  # Preserve Puerto Rico's existing published URL.
+# Canadian province pages retain the short URLs already published by the
+# builder, including Saskatoon's /shows/sk/ destination.
+STATE_SLUGS.update("ab bc mb nb nl ns nt nu on pe qc sk yt".split())
 CORE_INDEX_URLS = {
     "/",
     "/shows/",

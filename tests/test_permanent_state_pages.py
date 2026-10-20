@@ -49,14 +49,26 @@ class PermanentStateTests(unittest.TestCase):
         states.sync_registry(self.source)
         self.assertEqual(first, (self.source / states.REGISTRY).read_bytes())
 
-    def test_rejected_test_foreign_and_invalid_regions_do_not_create_pages(self):
+    def test_rejected_test_and_mismatched_regions_do_not_create_pages(self):
         events = [dict(self.event(), id="bandsintown:108743066", state="AK"),
                   dict(self.event(), title="Test event", state="HI"),
-                  dict(self.event(), country="CA", state="BC"),
+                  dict(self.event(), country="GB", state="BC"),
+                  dict(self.event(), country="US", state="SK"),
+                  dict(self.event(), country="CA", state="CA"),
                   dict(self.event(), state="../../unsafe"),
                   dict(self.event(), artists=["Propaganda"], state="VT")]
         (self.source / "events.json").write_text(json.dumps(events))
         self.assertEqual(states.discover_codes(self.source), ["PA", "PR"])
+
+    def test_canadian_show_remains_discoverable_after_rollover(self):
+        canadian = dict(self.event(), city="Saskatoon", state="SK", country="CA")
+        (self.source / "events.json").write_text(json.dumps([canadian]))
+        self.assertEqual(states.sync_registry(self.source), ["PA", "PR", "SK"])
+        (self.source / "events.json").write_text("[]")
+        self.assertEqual(states.discover_codes(self.source), ["PA", "PR", "SK"])
+        self.assertEqual(states.state_name("SK"), "Saskatchewan")
+        self.assertEqual(states.state_path("SK"), "/shows/sk/")
+        self.assertTrue(classify("/shows/sk/", "")[0])
 
     def test_history_restores_established_state_even_without_upcoming(self):
         (self.source / "event-history.json").write_text(json.dumps({"events": [{"event": dict(self.event(), state="WI")}]}))

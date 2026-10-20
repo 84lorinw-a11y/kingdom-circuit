@@ -12,6 +12,16 @@ from apply_sep13_requested_events import patch_rows
 
 
 class October6AccuracyTests(unittest.TestCase):
+    def test_judge_only_flavor_fest_listing_does_not_remove_other_sets(self):
+        row = dict(id="bandsintown:109046095", startDate="2026-11-07",
+                   artists=["K-Drama"])
+        self.assertTrue(withheld_event(row))
+        self.assertTrue(withheld_event(dict(row, id="reimported",
+            officialUrl="https://www.bandsintown.com/e/109046095?ref=calendar")))
+        self.assertFalse(withheld_event(dict(row, id="manual:flavor-fest-2026-saturday-concerts")))
+        self.assertFalse(withheld_event(dict(row, startDate="2027-11-07")))
+        self.assertFalse(withheld_event(dict(row, id="bandsintown:109046072", startDate="2026-11-06")))
+
     def test_refresh_merges_duplicate_preserves_first_seen_and_holds_only_conflict(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

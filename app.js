@@ -1982,7 +1982,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "aliases": [
       "Manafest"
     ],
-    "website": "https://www.manafest.com/go",
+    "website": "https://manafest.com/",
     "instagramProfile": "https://www.instagram.com/manafest/",
     "spotifyProfile": "https://open.spotify.com/artist/4uOFEWy9mIcvQbr03IbPcL",
     "youtubeProfile": "https://www.youtube.com/@Manafest",
@@ -7201,7 +7201,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "aliases": [
       "Manafest"
     ],
-    "website": "https://www.manafest.com/go",
+    "website": "https://manafest.com/",
     "instagramProfile": "https://www.instagram.com/manafest/",
     "spotifyProfile": "https://open.spotify.com/artist/4uOFEWy9mIcvQbr03IbPcL",
     "youtubeProfile": "https://www.youtube.com/@Manafest",
