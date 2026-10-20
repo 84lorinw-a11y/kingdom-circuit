@@ -21501,13 +21501,6 @@
             "type": "official_artist",
             "authority": "official_artist",
             "priority": 115
-          },
-          {
-            "name": "Official organizer event listing",
-            "url": "https://www.instagram.com/uscafe/p/DeP0rBlj0Ff/",
-            "type": "official_event",
-            "authority": "official_event",
-            "priority": 112
           }
         ]
       }
@@ -21916,20 +21909,6 @@
             "type": "official_event",
             "authority": "official_event",
             "priority": 115
-          },
-          {
-            "name": "Official organizer event listing",
-            "url": "https://www.thespinawards.com/spinitin/",
-            "type": "official_event",
-            "authority": "official_event",
-            "priority": 112
-          },
-          {
-            "name": "Official Spin Awards four-day itinerary artwork",
-            "url": "https://www.instagram.com/thespinawards/p/Dc_O5zLREnQ/",
-            "type": "official_event",
-            "authority": "official_event",
-            "priority": 112
           }
         ],
         "musicConfirmed": true,
@@ -25346,12 +25325,12 @@
       "firstGitObservedAt": "2026-09-07T16:08:12Z",
       "lastGitObservedAt": "2026-10-14T20:24:37Z",
       "event": {
-        "id": "bandsintown:1040178082",
-        "title": "Jon Keith at Word of Faith International Christian Center",
+        "id": "manual:bandsintown:1040178082",
+        "title": "Harvest Fest 2026 — Jon Keith",
         "startDate": "2026-10-30",
-        "startTime": "18:30",
-        "timezone": "",
-        "venue": "Word of Faith International Christian Center",
+        "startTime": "20:00",
+        "timezone": "America/Detroit",
+        "venue": "Word of Faith International Christian Center — Hagin Gym",
         "address": "20000 W Nine Mile Rd",
         "city": "Southfield",
         "state": "MI",
@@ -25362,12 +25341,19 @@
         "headliner": "Jon Keith",
         "eventType": "concert",
         "status": "scheduled",
-        "ticketUrl": "https://www.bandsintown.com/e/1040178082?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "officialUrl": "https://www.bandsintown.com/e/1040178082?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "ticketUrl": "",
+        "officialUrl": "https://www.instagram.com/wordoffaithcc/p/Decx25qy4KS/",
         "image": "assets/events/harvest-fest-jon-keith-southfield-2026-10-30.jpg",
         "price": "",
-        "sourceName": "Bandsintown",
+        "sourceName": "Official organizer announcement",
         "sources": [
+          {
+            "name": "Official organizer concert announcement and flyer",
+            "url": "https://www.instagram.com/wordoffaithcc/p/Decx25qy4KS/",
+            "type": "manual_verified",
+            "authority": "official_event",
+            "priority": 125
+          },
           {
             "name": "Bandsintown",
             "url": "https://www.bandsintown.com/e/1040178082?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
@@ -25376,7 +25362,7 @@
             "priority": 74
           }
         ],
-        "confidence": "medium",
+        "confidence": "high",
         "bandsintownEventId": "1040178082",
         "bandsintownArtistId": "12604065",
         "bandsintownResolvedName": "Jon Keith",
@@ -25387,7 +25373,32 @@
         "imageOverride": true,
         "imageSource": "Official organizer concert flyer",
         "imageSourceUrl": "https://www.instagram.com/wordoffaithcc/p/Decx25qy4KS/",
-        "detailImageLayout": "portrait"
+        "detailImageLayout": "portrait",
+        "endDate": "2026-10-30",
+        "startDateTime": "2026-10-30T20:00:00-04:00",
+        "postalCode": "48075",
+        "advertisedBilling": [
+          "Jon Keith"
+        ],
+        "officialBill": [
+          "Jon Keith"
+        ],
+        "lineupExplicit": true,
+        "musicConfirmed": true,
+        "detailsPending": false,
+        "authority": "official_event",
+        "firstSeen": "2026-09-07T16:08:12Z",
+        "lastVerified": "2026-10-15T11:30:00Z",
+        "auditVerified": "2026-10-15",
+        "publicDescription": "Jon Keith performs live at Harvest Fest in Hagin Gym. Concert doors open to everyone at 8 PM Eastern Time. Activities for students in grades 6–12 begin separately at 7 PM.",
+        "notes": "Organizer caption and dated flyer confirm October 30, 2026, 8 PM public concert doors, Hagin Gym, and 20000 W Nine Mile Rd, Southfield. The 7 PM youth activities are not the public concert start. An individual Jon Keith set time is not announced.",
+        "doorsTime": "20:00",
+        "timeBasis": "concert_doors",
+        "legacyEventPaths": [
+          "/event/jon-keith-at-word-of-faith-international-christian-center-2026-10-30-southfield-8599ea/"
+        ],
+        "legacyEventNotice": "This listing now uses the organizer’s Harvest Fest title, official flyer and public-concert details.",
+        "sourceConflict": "Bandsintown listed 6:30 PM; the organizer’s current concert flyer and caption confirm public concert doors at 8 PM, with separate student activities at 7 PM."
       }
     },
     {
@@ -29821,7 +29832,7 @@
             "priority": 94
           }
         ],
-        "lastVerified": "2026-10-20T20:04:27Z",
+        "lastVerified": "2026-10-20T23:00:51Z",
         "confidence": "high",
         "imageType": "event_artwork",
         "imagePosition": "center",
@@ -33209,7 +33220,7 @@
             "url": "https://dice.fm/partner/tickets/event/yo5xer-whatuprg-w-aftrthght-de-la-cruz-19th-nov-rockerfellers-houston-tickets",
             "type": "manual_verified",
             "authority": "venue_ticket",
-            "priority": 100
+            "priority": 125
           },
           {
             "name": "WHATUPRG official Instagram announcement",
@@ -33397,7 +33408,7 @@
         "postalCode": "75226",
         "doorsTime": "19:00",
         "ageRestriction": "All ages",
-        "notes": " October 19 artist announcement: Reece (@onlyreece), not Reece Lache, supports these four dates. Preserve unlinked full billing.",
+        "notes": "October 8, 2026: owner approved restoring the previously held date after venue corroboration. The Bomb Factory explicitly lists November 19, 8 PM show and 7 PM doors, On Sale Now, and its AXS event link. Current AXS detail listing matches; checkout was not tested. Preserve approved Welcome Home Tour artwork and original event identity/discovery date. October 19: Reece (@onlyreece) announced these four support dates; he is distinct from Reece Lache. Keep unlinked billing until roster approval.",
         "sourceEventIds": [
           "axs:1626463"
         ],
@@ -34027,7 +34038,7 @@
             "url": "https://dice.fm/partner/tickets/event/mxynyr-whatuprg-w-aftrthght-de-la-cruz-20th-nov-ridglea-room-fort-worth-tickets",
             "type": "manual_verified",
             "authority": "venue_ticket",
-            "priority": 100
+            "priority": 125
           },
           {
             "name": "WHATUPRG official Instagram announcement",
@@ -35090,7 +35101,7 @@
             "url": "https://wl.eventim.us/event/whatuprg/707572?afflky=PaperTiger",
             "type": "manual_verified",
             "authority": "venue_ticket",
-            "priority": 100
+            "priority": 125
           },
           {
             "name": "WHATUPRG official Instagram announcement",
