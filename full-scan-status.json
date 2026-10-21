@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-10-20T16:20:45Z",
-  "artistsChecked": 373,
+  "generatedAt": "2026-10-21T15:08:37Z",
+  "artistsChecked": 375,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
   "festivalCandidates": 1,
   "bandsintown": {
     "discoveryMode": "structured_rest",
     "status": "ok",
-    "artistsAttempted": 373,
-    "resolved": 234,
-    "rawUpcomingUSRows": 91,
+    "artistsAttempted": 375,
+    "resolved": 236,
+    "rawUpcomingUSRows": 92,
     "newEventsPublished": 8,
     "festivalCandidatesHeld": 2,
     "requestErrors": 0
   },
   "songkick": {
-    "artistsAttempted": 373,
+    "artistsAttempted": 375,
     "resolved": 0,
-    "blockedByRobots": 373,
+    "blockedByRobots": 375,
     "eventsFound": 0
   },
   "sourceStatusCounts": {
-    "delegated_to_structured_rest": 373,
-    "blocked_by_robots": 376,
-    "no_events": 523,
-    "failed": 9
+    "delegated_to_structured_rest": 375,
+    "blocked_by_robots": 378,
+    "no_events": 528,
+    "failed": 7
   },
   "newEvents": [],
   "sourceResults": [
@@ -602,9 +602,8 @@
       "artist": "Mike Malagies",
       "source": "official website",
       "url": "https://www.mikemalagiesofficial.com/",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.mikemalagiesofficial.com/: HTTP Error 429: Too Many Requests"
+      "status": "no_events",
+      "eventsFound": 0
     },
     {
       "artist": "Mike Malagies",
@@ -4568,9 +4567,8 @@
       "artist": "Xerogangg",
       "source": "official website",
       "url": "https://www.xerogangg.com/",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.xerogangg.com/: HTTP Error 429: Too Many Requests"
+      "status": "no_events",
+      "eventsFound": 0
     },
     {
       "artist": "Xerogangg",
@@ -4946,9 +4944,8 @@
       "artist": "Sho Baraka",
       "source": "official website",
       "url": "https://www.shobaraka.com",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.shobaraka.com: HTTP Error 429: Too Many Requests"
+      "status": "no_events",
+      "eventsFound": 0
     },
     {
       "artist": "Sho Baraka",
@@ -8229,8 +8226,9 @@
       "artist": "Lady Cam",
       "source": "official website",
       "url": "http://www.iloveladycam.com/",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve http://www.iloveladycam.com/: HTTP Error 429: Too Many Requests"
     },
     {
       "artist": "Lady Cam",
@@ -8255,6 +8253,51 @@
       "artist": "Believin Stephen",
       "source": "Spotify profile",
       "url": "https://open.spotify.com/artist/6C7cApykc389MmY7iCEJzG",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Ryan Ellis",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Ryan Ellis",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Ryan Ellis",
+      "source": "official website",
+      "url": "https://link.me/ryanellis",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Ryan Ellis",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/7mkCeiRcySEQSSAMYbud5C",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kemara Lynn",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kemara Lynn",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kemara Lynn",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/4DAuBp6fTU9YFdNe98nNtW",
       "status": "no_events",
       "eventsFound": 0
     }
