@@ -127,14 +127,30 @@ EVENT = {
     "confidence": "high",
     "lineupExplicit": True,
     "firstSeen": "2026-09-24T12:00:00Z",
-    "lastVerified": "2026-09-24T12:00:00Z",
-    "auditVerified": "2026-09-24",
+    "lastVerified": "2026-10-21T12:45:00Z",
+    "auditVerified": "2026-10-21",
     "notes": (
         "Promoter Shawn Mitchell submitted the complete performance lineup. "
         "The organizer's official page confirms the date, 4:30–8:00 PM time "
-        "span, venue address, and ticket options."
+        "span, venue address, and ticket options. October 21 recheck: the new "
+        "D Riddick and Leah Dates spotlights confirm the existing seven-person "
+        "concert bill. Workshop speakers are not additional musical performers."
     ),
     "sources": [
+        {
+            "name": "Organizer D Riddick lineup spotlight, October 21",
+            "url": "https://www.instagram.com/othrwrldly.x/p/DevY4oPxZdn/",
+            "type": "official_event",
+            "authority": "official_event",
+            "priority": 125,
+        },
+        {
+            "name": "Organizer Leah Dates lineup spotlight, October 20",
+            "url": "https://www.instagram.com/othrwrldly.x/p/DeunppQN42b/",
+            "type": "official_event",
+            "authority": "official_event",
+            "priority": 125,
+        },
         {
             "name": "OTHRWRLDLY official [TRNSCND] 2026 event page",
             "url": OFFICIAL_URL,

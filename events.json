@@ -4657,7 +4657,8 @@
     "state": "AZ",
     "country": "US",
     "artists": [
-      "Jon Keith"
+      "Jon Keith",
+      "CHVRCH562"
     ],
     "headliner": "Jon Keith",
     "eventType": "concert",
@@ -4678,7 +4679,7 @@
       "trtle",
       "HLYVRS31",
       "CHVNCELLOR",
-      "CHVRCHS62",
+      "CHVRCH562",
       "Adam Verdi"
     ],
     "authority": "venue_ticket",
@@ -4705,12 +4706,35 @@
         "type": "manual_verified",
         "authority": "artist_calendar",
         "priority": 76
+      },
+      {
+        "name": "CHVRCH562 explicitly confirms live performance",
+        "url": "https://www.instagram.com/chvrch562/reel/DeuHEOwvZef/",
+        "type": "manual_verified",
+        "authority": "artist_announcement",
+        "priority": 125
       }
     ],
     "ageRestriction": "Under 18 with parent or legal guardian",
-    "notes": "Free public event. Official ticket page lists doors at 3:00 PM and event hours 4:00–9:30 PM. User-provided organizer flyer confirms Jon Keith as the featured headliner.",
-    "auditVerified": "2026-09-14",
-    "id": "manual:light-in-the-darkness-phoenix-2026"
+    "notes": "Free public event. Official ticket page lists doors at 3:00 PM and event hours 4:00–9:30 PM. User-provided organizer flyer confirms Jon Keith as the featured headliner. October 21: CHVRCH562 explicitly confirms PERFORMING LIVE on October 31 in his new announcement, superseding his earlier testimony-only wording. Correct the flyer spelling CHVRCHS62 to his verified artist name CHVRCH562 and link his profile.",
+    "auditVerified": "2026-10-21",
+    "id": "manual:light-in-the-darkness-phoenix-2026",
+    "officialBill": [
+      "Jon Keith",
+      "Grace Graber",
+      "trtle",
+      "HLYVRS31",
+      "CHVNCELLOR",
+      "CHVRCH562",
+      "Adam Verdi"
+    ],
+    "lastVerified": "2026-10-21T12:31:24.096874Z",
+    "musicConfirmed": true,
+    "firstSeen": "2026-10-21T12:31:24.096874Z",
+    "legacyEventPaths": [
+      "/event/light-in-the-darkness-2026-10-31-phoenix-a3c7e6/"
+    ],
+    "legacyEventNotice": "This is the current, verified listing for the same event."
   },
   {
     "id": "manual:light-up-the-world-fest-dallas-2026-10-31",
@@ -7137,14 +7161,17 @@
     "state": "FL",
     "country": "US",
     "artists": [
-      "Zauntee"
+      "Zauntee",
+      "Skema Boy"
     ],
     "headliner": "Zauntee",
     "advertisedBilling": [
-      "Zauntee"
+      "Zauntee",
+      "Skema Boy"
     ],
     "officialBill": [
-      "Zauntee"
+      "Zauntee",
+      "Skema Boy"
     ],
     "officialUrl": "https://www.awake-fest.com/",
     "ticketUrl": "https://www.awake-fest.com/",
@@ -7168,18 +7195,33 @@
         "type": "manual_verified",
         "authority": "artist_calendar",
         "priority": 112
+      },
+      {
+        "name": "Skema Boy independent Awake-Fest appearance",
+        "url": "https://www.bandsintown.com/e/109057790",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 125
       }
     ],
     "firstSeen": "2026-10-08T00:38:06Z",
-    "lastVerified": "2026-10-08T00:38:06Z",
-    "auditVerified": "2026-10-07",
+    "lastVerified": "2026-10-21T12:31:24.096874Z",
+    "auditVerified": "2026-10-21",
     "editorialBatch": "2026-10-07-reviewed-discoveries",
-    "notes": "Organizer website confirms Zauntee with a November 14 artist graphic; artist event 108938482 confirms 4 PM at Ferran Park and free admission. This listing covers his Saturday performance, not both festival days. DJ Bryce G/Joyful Noize appears November 13 on a separate dated graphic and must not be inferred on the Saturday bill. Not GOD REMEMBERS tour. Organizer Facebook November 14 occurrence: https://www.facebook.com/events/1402555261232662/1402555944565927/",
+    "notes": "Organizer website confirms Zauntee with a November 14 artist graphic; artist event 108938482 confirms 4 PM at Ferran Park and free admission. This listing covers his Saturday performance, not both festival days. DJ Bryce G/Joyful Noize appears November 13 on a separate dated graphic and must not be inferred on the Saturday bill. Not GOD REMEMBERS tour. Organizer Facebook November 14 occurrence: https://www.facebook.com/events/1402555261232662/1402555944565927/ October 21: Skema Boy has an independent artist-calendar event 109057790 explicitly naming Awake-Fest at Ferran Park on November 14. Add him to Saturday only based on that event, not a general tour association. Keep the organizer 4 PM festival opening; do not infer an individual set time from the feed.",
     "price": "Free",
     "bandsintownEventId": "108938482",
     "sourceEventIds": [
-      "bandsintown:108938482"
-    ]
+      "bandsintown:108938482",
+      "bandsintown:109057790"
+    ],
+    "supportActs": [
+      "Skema Boy"
+    ],
+    "legacyEventPaths": [
+      "/event/awake-fest-2026-zauntee-2026-11-14-eustis-7d85bb/"
+    ],
+    "legacyEventNotice": "This is the current, verified listing for the same event."
   },
   {
     "id": "manual:trnscnd-va-fredericksburg-2026",
@@ -7246,10 +7288,24 @@
     "confidence": "high",
     "lineupExplicit": true,
     "firstSeen": "2026-09-24T12:00:00Z",
-    "lastVerified": "2026-09-24T12:00:00Z",
-    "auditVerified": "2026-09-24",
-    "notes": "Promoter Shawn Mitchell submitted the complete performance lineup. The organizer's official page confirms the date, 4:30–8:00 PM time span, venue address, and ticket options.",
+    "lastVerified": "2026-10-21T12:45:00Z",
+    "auditVerified": "2026-10-21",
+    "notes": "Promoter Shawn Mitchell submitted the complete performance lineup. The organizer's official page confirms the date, 4:30–8:00 PM time span, venue address, and ticket options. October 21 recheck: the new D Riddick and Leah Dates spotlights confirm the existing seven-person concert bill. Workshop speakers are not additional musical performers.",
     "sources": [
+      {
+        "name": "Organizer D Riddick lineup spotlight, October 21",
+        "url": "https://www.instagram.com/othrwrldly.x/p/DevY4oPxZdn/",
+        "type": "official_event",
+        "authority": "official_event",
+        "priority": 125
+      },
+      {
+        "name": "Organizer Leah Dates lineup spotlight, October 20",
+        "url": "https://www.instagram.com/othrwrldly.x/p/DeunppQN42b/",
+        "type": "official_event",
+        "authority": "official_event",
+        "priority": 125
+      },
       {
         "name": "OTHRWRLDLY official [TRNSCND] 2026 event page",
         "url": "https://othrwrldly.com/trnscnd",
@@ -9026,47 +9082,52 @@
   },
   {
     "id": "manual:bandsintown:107625490",
-    "title": "M.O.B. Tour — Ghetto Gospel Concert",
+    "title": "Ghetto Gospel — Sevin & Dontae",
     "startDate": "2026-11-22",
     "endDate": "2026-11-22",
     "startTime": "19:00",
     "endTime": "",
     "timezone": "America/Los_Angeles",
-    "venue": "To be announced",
-    "address": "",
+    "venue": "The Guild Theatre",
+    "address": "2828 35th Street",
     "city": "Sacramento",
     "state": "CA",
     "country": "US",
     "artists": [
-      "Sevin"
+      "Sevin",
+      "Dontae"
     ],
     "headliner": "Sevin",
     "advertisedBilling": [
-      "Sevin"
+      "Sevin",
+      "Dontae",
+      "DJ Eddie Z"
     ],
     "officialBill": [
-      "Sevin"
+      "Sevin",
+      "Dontae",
+      "DJ Eddie Z"
     ],
     "lineupExplicit": true,
     "eventType": "concert",
     "status": "scheduled",
     "musicConfirmed": true,
-    "officialUrl": "https://www.bandsintown.com/e/107625490-sevin-hog-mob-ministries-at-sacramento-ca",
-    "ticketUrl": "",
+    "officialUrl": "https://www.eventbrite.com/e/ghetto-gospel-sevin-donate-live-in-concert-tickets-2003581552358",
+    "ticketUrl": "https://www.eventbrite.com/e/ghetto-gospel-sevin-donate-live-in-concert-tickets-2003581552358",
     "authority": "artist_calendar",
     "confidence": "high",
     "sourceName": "Official artist event listing",
     "firstSeen": "2026-10-14T03:04:47Z",
-    "lastVerified": "2026-10-14T03:04:47Z",
-    "auditVerified": "2026-10-13",
-    "publicDescription": "Sevin performs a career-spanning concert with live instruments and visual production as part of the M.O.B. Tour. Free general admission; VIP options are offered separately. Venue to be announced.",
-    "description": "Sevin performs a career-spanning concert with live instruments and visual production as part of the M.O.B. Tour. Free general admission; VIP options are offered separately. Venue to be announced.",
-    "image": "assets/artists/sevin.webp",
-    "imageType": "artist",
+    "lastVerified": "2026-10-21T12:31:24.096874Z",
+    "auditVerified": "2026-10-21",
+    "publicDescription": "HOG MOB presents Sevin and Dontae with DJ Eddie Z at The Guild Theatre. Doors open at 6 PM; the concert starts at 7 PM. Ages 18+. Free general admission; VIP options are available separately.",
+    "description": "HOG MOB presents Sevin and Dontae with DJ Eddie Z at The Guild Theatre. Doors open at 6 PM; the concert starts at 7 PM. Ages 18+. Free general admission; VIP options are available separately.",
+    "image": "assets/events/sevin-ghetto-gospel-sacramento-2026-11-22.jpg",
+    "imageType": "event_artwork",
     "imageOverride": true,
-    "imagePosition": "50% 30%",
-    "imageSource": "Approved static Sevin artist portrait",
-    "imageSourceUrl": "https://hogmob.com/",
+    "imagePosition": "center",
+    "imageSource": "Official HOG MOB Sacramento flyer",
+    "imageSourceUrl": "https://www.eventbrite.com/e/ghetto-gospel-sevin-donate-live-in-concert-tickets-2003581552358",
     "sources": [
       {
         "name": "Sevin HOG MOB Ministries verified artist concert",
@@ -9081,11 +9142,30 @@
         "type": "manual_verified",
         "authority": "artist_calendar",
         "priority": 115
+      },
+      {
+        "name": "HOG MOB official Sacramento tickets and full bill",
+        "url": "https://www.eventbrite.com/e/ghetto-gospel-sevin-donate-live-in-concert-tickets-2003581552358",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 125
       }
     ],
     "startDateTime": "2026-11-22T19:00:00-08:00",
     "price": "Free general admission; VIP sold separately",
-    "notes": "Current verified artist event confirms Sunday November 22, 2026 at 7 PM PST. Sacramento, Ca is a city placeholder, not a venue. The official city tour weekend agrees. Do not revive the retired December 5 Sacramento listing or use the older generic concert page date. No current event-specific flyer found; approved artist photo is an explicit fallback."
+    "notes": "October 21: official HOG MOB Eventbrite and matching dated flyer resolve the previously unannounced venue and confirm Sevin, Dontae and DJ Eddie Z, 6 PM doors, 7 PM concert and 18+ admission. Ticket title misspells Dontae as Donate; the organizer description and flyer correctly identify Dontae. Preserve original discovery and event ID; not a new or duplicate Sacramento show.",
+    "postalCode": "95817",
+    "doorsTime": "18:00",
+    "supportActs": [
+      "Dontae",
+      "DJ Eddie Z"
+    ],
+    "ageRestriction": "18+",
+    "legacyEventPaths": [
+      "/event/m-o-b-tour-ghetto-gospel-concert-2026-11-22-sacramento-4245d4/",
+      "/event/m-o-b-tour-ghetto-gospel-concert-2026-11-22-sacramento-1a3b2d/"
+    ],
+    "legacyEventNotice": "This is the current, verified listing for the same event."
   },
   {
     "id": "manual:whatuprg-san-antonio-2026-11-22",
@@ -11899,5 +11979,308 @@
         "resolvedDate": "2026-09-26"
       }
     ]
+  },
+  {
+    "id": "manual:dfw-anthem-night-hurst-2026-10-30",
+    "title": "DFW Anthem Night — Trap Worship Pop Up",
+    "startDate": "2026-10-30",
+    "endDate": "2026-10-30",
+    "startTime": "",
+    "endTime": "",
+    "timezone": "America/Chicago",
+    "venue": "824 W Pipeline Rd",
+    "address": "824 W Pipeline Rd",
+    "city": "Hurst",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "BrvndonP"
+    ],
+    "headliner": "BrvndonP",
+    "advertisedBilling": [
+      "BrvndonP"
+    ],
+    "officialBill": [
+      "BrvndonP"
+    ],
+    "supportActs": [],
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/dfw-anthem-night-trap-worship-pop-up-tickets-2003639036294",
+    "officialUrl": "https://www.eventbrite.com/e/dfw-anthem-night-trap-worship-pop-up-tickets-2003639036294",
+    "image": "assets/events/dfw-anthem-night-hurst-2026-10-30.jpg",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "sourceName": "Official event and artist announcements",
+    "authority": "official_event",
+    "sources": [
+      {
+        "name": "Official event announcement",
+        "url": "https://www.eventbrite.com/e/dfw-anthem-night-trap-worship-pop-up-tickets-2003639036294",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 125
+      },
+      {
+        "name": "BrvndonP confirms DFW pop-up and doors time",
+        "url": "https://www.instagram.com/iambrvndonp/reel/Deu8zPgI0e_/",
+        "type": "manual_verified",
+        "authority": "artist_announcement",
+        "priority": 125
+      }
+    ],
+    "imageSource": "Official event artwork",
+    "imageSourceUrl": "https://www.eventbrite.com/e/dfw-anthem-night-trap-worship-pop-up-tickets-2003639036294",
+    "doorsTime": "18:30",
+    "postalCode": "76053",
+    "ageRestriction": "All ages",
+    "price": "",
+    "publicDescription": "BrvndonP brings Anthem Night to Hurst with live trap worship and special guests. Doors open at 6:30 PM; the performance start time has not been announced.",
+    "notes": "October 21 review: official Eventbrite and BrvndonP October 20 announcement confirm October 30 in Hurst. The flyer and artist explicitly label 6:30 PM as doors, so startTime is intentionally blank. Eventbrite highlights contain a conflicting 6 PM doors value; use the matching flyer and artist statement. No unnamed guests are inferred as performers.",
+    "description": "BrvndonP brings Anthem Night to Hurst with live trap worship and special guests. Doors open at 6:30 PM; the performance start time has not been announced.",
+    "lastVerified": "2026-10-21T12:31:24.096874Z",
+    "auditVerified": "2026-10-21",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "firstSeen": "2026-10-21T12:31:24.096874Z"
+  },
+  {
+    "id": "manual:blessing-offor-ryan-ellis-los-angeles-2026-10-28",
+    "title": "Blessing Offor: Heart So Real Tour Pt. 2 — with Ryan Ellis",
+    "startDate": "2026-10-28",
+    "endDate": "2026-10-28",
+    "startTime": "",
+    "endTime": "",
+    "timezone": "America/Los_Angeles",
+    "venue": "The Moroccan Lounge",
+    "address": "901 E 1st Street",
+    "city": "Los Angeles",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Ryan Ellis"
+    ],
+    "headliner": "Blessing Offor",
+    "advertisedBilling": [
+      "Blessing Offor",
+      "Ryan Ellis"
+    ],
+    "officialBill": [
+      "Blessing Offor",
+      "Ryan Ellis"
+    ],
+    "supportActs": [
+      "Ryan Ellis"
+    ],
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketmaster.com/event/090064F0E40615CE",
+    "officialUrl": "https://themoroccan.com/tm-event/blessing-offor-heart-so-real-tour-pt-2/",
+    "image": "assets/events/blessing-offor-ryan-ellis-la-2026-10-28.jpg",
+    "imageType": "artist",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "sourceName": "Official event and artist announcements",
+    "authority": "official_event",
+    "sources": [
+      {
+        "name": "Official event announcement",
+        "url": "https://themoroccan.com/tm-event/blessing-offor-heart-so-real-tour-pt-2/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 125
+      },
+      {
+        "name": "Venue calendar explicitly bills Ryan Ellis",
+        "url": "https://themoroccan.com/",
+        "type": "manual_verified",
+        "authority": "venue",
+        "priority": 125
+      },
+      {
+        "name": "Official ticket listing",
+        "url": "https://www.ticketmaster.com/event/090064F0E40615CE",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 125
+      },
+      {
+        "name": "Ryan Ellis official artist calendar",
+        "url": "https://www.bandsintown.com/e/1040554523",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 125
+      }
+    ],
+    "imageSource": "Official venue / Ticketmaster Blessing Offor event image",
+    "imageSourceUrl": "https://s1.ticketm.net/dam/a/cd3/3d47f6fa-68d3-42ea-87dd-d66c06589cd3_TABLET_LANDSCAPE_16_9.jpg",
+    "doorsTime": "18:30",
+    "ageRestriction": "All ages",
+    "price": "$20 advance / $25 day of show; see tickets for fees",
+    "bandsintownEventId": "1040554523",
+    "sourceEventIds": [
+      "bandsintown:1040554523"
+    ],
+    "publicDescription": "Ryan Ellis opens for Blessing Offor at The Moroccan Lounge. All ages. Doors open at 6:30 PM; the venue has not published a separate performance start time.",
+    "notes": "October 21: venue calendar explicitly lists Ryan Ellis as support for Blessing Offor, matching Ryan Ellis artist event 1040554523. Ticketmaster and the venue show 6:30 PM, but venue labels it doors; do not present it as concert start. This is one show, not a separate Ryan Ellis headlining concert. Official event image is a portrait photo of the headliner; no event-specific flyer was found.",
+    "description": "Ryan Ellis opens for Blessing Offor at The Moroccan Lounge. All ages. Doors open at 6:30 PM; the venue has not published a separate performance start time.",
+    "lastVerified": "2026-10-21T12:31:24.096874Z",
+    "auditVerified": "2026-10-21",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "firstSeen": "2026-10-21T12:31:24.096874Z"
+  },
+  {
+    "id": "manual:mayia-legacy-church-grand-opening-raleigh-2026-10-25",
+    "title": "Legacy Church Grand Opening — MAYIA",
+    "startDate": "2026-10-25",
+    "endDate": "2026-10-25",
+    "startTime": "10:30",
+    "endTime": "",
+    "timezone": "America/New_York",
+    "venue": "Triangle Cinemas",
+    "address": "9500 Forum Drive",
+    "city": "Raleigh",
+    "state": "NC",
+    "country": "US",
+    "artists": [
+      "MAYIA"
+    ],
+    "headliner": "MAYIA",
+    "advertisedBilling": [
+      "MAYIA",
+      "Becky Wondracek"
+    ],
+    "officialBill": [
+      "MAYIA",
+      "Becky Wondracek"
+    ],
+    "supportActs": [
+      "Becky Wondracek"
+    ],
+    "eventType": "appearance",
+    "status": "scheduled",
+    "ticketUrl": "",
+    "officialUrl": "https://www.instagram.com/mayiawarren/p/DevGFFLxty-/",
+    "image": "assets/events/mayia-legacy-grand-opening-2026-10-25.webp",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "sourceName": "Official event and artist announcements",
+    "authority": "official_event",
+    "sources": [
+      {
+        "name": "Official event announcement",
+        "url": "https://www.instagram.com/mayiawarren/p/DevGFFLxty-/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 125
+      }
+    ],
+    "imageSource": "Official event artwork",
+    "imageSourceUrl": "https://www.instagram.com/mayiawarren/p/DevGFFLxty-/",
+    "startDateTime": "2026-10-25T10:30:00-04:00",
+    "postalCode": "27615",
+    "publicDescription": "Legacy Church celebrates its grand opening with special music artists MAYIA Warren and Pastor Becky Wondracek. The public church service starts at 10:30 AM, with food trucks and activities for children.",
+    "notes": "Artist-shared flyer explicitly names both special music artists, Sunday October 25, 10:30 AM service start, Triangle Cinemas and full address. Listed as a musical appearance within a church grand opening, not a standalone headline concert or an individual set time. Everyone is welcome; no ticket price is asserted.",
+    "description": "Legacy Church celebrates its grand opening with special music artists MAYIA Warren and Pastor Becky Wondracek. The public church service starts at 10:30 AM, with food trucks and activities for children.",
+    "lastVerified": "2026-10-21T12:31:24.096874Z",
+    "auditVerified": "2026-10-21",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "firstSeen": "2026-10-21T12:31:24.096874Z"
+  },
+  {
+    "id": "manual:bandsintown:108945796",
+    "title": "JIMMY ROCK at The Cathedral",
+    "startDate": "2026-10-30",
+    "startTime": "",
+    "timezone": "America/Los_Angeles",
+    "venue": "The Cathedral",
+    "address": "350 N Garey Ave",
+    "city": "Pomona",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "JIMMY ROCK"
+    ],
+    "headliner": "JIMMY ROCK",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/the-cathedral-presents-jimmy-rock-tickets-2002084741356",
+    "officialUrl": "https://www.eventbrite.com/e/the-cathedral-presents-jimmy-rock-tickets-2002084741356",
+    "image": "assets/events/jimmy-rock-cathedral-pomona-2026-10-30-portrait.jpg",
+    "price": "",
+    "sourceName": "Eventbrite",
+    "sources": [
+      {
+        "name": "Eventbrite",
+        "url": "https://www.eventbrite.com/e/the-cathedral-presents-jimmy-rock-tickets-2002084741356",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
+      },
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/108945796?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      },
+      {
+        "name": "JIMMY ROCK updated full Pomona bill",
+        "url": "https://www.instagram.com/jimmyrock/p/DeuMUK0kSiv/",
+        "type": "manual_verified",
+        "authority": "artist_announcement",
+        "priority": 125
+      }
+    ],
+    "confidence": "high",
+    "bandsintownEventId": "108945796",
+    "bandsintownArtistId": "7118692",
+    "bandsintownResolvedName": "JIMMY ROCK",
+    "bandsintownIdentity": "configured_id",
+    "trackedArtist": "JIMMY ROCK",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Owner-selected official Instagram show artwork",
+    "imageSourceUrl": "https://www.instagram.com/p/Ddo5jbFTUos/",
+    "authority": "venue_ticket",
+    "detailImageLayout": "portrait",
+    "doorsTime": "19:00",
+    "advertisedBilling": [
+      "JIMMY ROCK",
+      "ttt timothy",
+      "Born 2 Times",
+      "DJ Agape"
+    ],
+    "officialBill": [
+      "JIMMY ROCK",
+      "ttt timothy",
+      "Born 2 Times",
+      "DJ Agape"
+    ],
+    "supportActs": [
+      "ttt timothy",
+      "Born 2 Times",
+      "DJ Agape"
+    ],
+    "publicDescription": "JIMMY ROCK brings Rave & Worship to The Cathedral with opening sets by ttt timothy, Born 2 Times and DJ Agape. All ages. Doors open at 7 PM; a separate performance start has not been announced.",
+    "notes": "October 21: exact approved portrait flyer names all three opening DJs; Jimmy Rock October 20 post independently tags all three supporting accounts. The poster and caption identify 7 PM as doors, so leave the performance start unset. Preserve this existing event and its artwork.",
+    "description": "JIMMY ROCK brings Rave & Worship to The Cathedral with opening sets by ttt timothy, Born 2 Times and DJ Agape. All ages. Doors open at 7 PM; a separate performance start has not been announced.",
+    "lastVerified": "2026-10-21T12:31:24.096874Z",
+    "auditVerified": "2026-10-21",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "firstSeen": "2026-10-21T12:31:24.096874Z",
+    "legacyEventPaths": [
+      "/event/jimmy-rock-at-the-cathedral-2026-10-30-pomona-2daf2c/"
+    ],
+    "legacyEventNotice": "This is the current, verified listing for the same event."
   }
 ]
