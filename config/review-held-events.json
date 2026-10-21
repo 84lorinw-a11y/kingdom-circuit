@@ -1,7 +1,7 @@
 [
   {
     "reviewedAt": "2026-10-06",
-    "reviewStatus": "withheld_pending_confirmation",
+    "reviewStatus": "resolved_rescheduled",
     "reason": "Owner authorized cleanup. CJ's Grand Prairie November 14 booking conflicts with the same evening's ticket-backed GLOVEMBER in Los Angeles. No cancellation has been established; retain privately for review and possible restoration.",
     "conflictingEventId": "bandsintown:1040378722",
     "sources": [
@@ -46,6 +46,9 @@
       "imageType": "event_artwork",
       "imagePosition": "center",
       "imageOverride": true
-    }
+    },
+    "resolvedAt": "2026-10-20",
+    "resolution": "Owner received direct organizer confirmation that CJ requested Friday November 13. Publish the rescheduled show and new flyer; retain this original snapshot for history.",
+    "currentEventId": "manual:cj-emulous-kickback-grand-prairie-2026"
   }
 ]

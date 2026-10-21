@@ -11616,42 +11616,98 @@
   },
   {
     "title": "The Kickback",
-    "startDate": "2026-11-14",
+    "startDate": "2026-11-13",
     "startTime": "19:00",
     "timezone": "America/Chicago",
-    "venue": "2305 SE 14th St",
+    "venue": "Jesús Centro de Avivamiento (JCDA)",
     "address": "2305 SE 14th St",
     "city": "Grand Prairie",
     "state": "TX",
     "country": "US",
     "artists": [
-      "CJ Emulous"
+      "CJ Emulous",
+      "Brandon Trejo"
     ],
     "headliner": "CJ Emulous",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-    "officialUrl": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
-    "image": "assets/events/cj-emulous-kickback-2026.svg",
-    "price": "",
-    "sourceName": "CJ Emulous official calendar",
-    "authority": "artist_calendar",
+    "ticketUrl": "https://www.eventbrite.com/e/the-kickback-tickets-2003607610298",
+    "officialUrl": "https://www.eventbrite.com/e/the-kickback-tickets-2003607610298",
+    "image": "assets/events/cj-emulous-kickback-2026-11-13-official-flyer.jpg",
+    "price": "Free — RSVP required",
+    "sourceName": "The KickBack Texas Tour / Christology Records",
+    "authority": "official_event",
     "confidence": "high",
     "lineupExplicit": true,
     "sources": [
       {
-        "name": "CJ Emulous official calendar",
+        "name": "Organizer confirmed to owner that CJ requested Friday; official new flyer and caption",
+        "url": "https://www.instagram.com/p/Deu2JCvs98r/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 130
+      },
+      {
+        "name": "The Kickback official Eventbrite registration",
+        "url": "https://www.eventbrite.com/e/the-kickback-tickets-2003607610298",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 125
+      },
+      {
+        "name": "CJ Emulous original calendar — November 14 superseded by confirmed reschedule",
         "url": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
         "type": "manual_verified",
         "authority": "artist_calendar",
-        "priority": 112
+        "priority": 80
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-10-20",
     "id": "manual:cj-emulous-kickback-grand-prairie-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "imageOverride": true
+    "imageOverride": true,
+    "endTime": "21:00",
+    "startDateTime": "2026-11-13T19:00:00-06:00",
+    "endDateTime": "2026-11-13T21:00:00-06:00",
+    "postalCode": "75051",
+    "officialBill": [
+      "CJ Emulous",
+      "Josh Donnell",
+      "Brandon Trejo",
+      "Gospel Ready",
+      "Thomas Nunez",
+      "Ashley Briana",
+      "Neto Gonzales",
+      "MJ Vazquez",
+      "SF Rich"
+    ],
+    "advertisedBilling": [
+      "CJ Emulous",
+      "Josh Donnell",
+      "Brandon Trejo",
+      "Gospel Ready",
+      "Thomas Nunez",
+      "Ashley Briana",
+      "Neto Gonzales",
+      "MJ Vazquez",
+      "SF Rich"
+    ],
+    "hosts": [
+      "J. Harvey"
+    ],
+    "imageSource": "Christology Records / The KickBack Texas Tour official October 20 flyer",
+    "imageSourceUrl": "https://www.instagram.com/p/Deu2JCvs98r/",
+    "lastVerified": "2026-10-21T00:10:02.261359+00:00",
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "previousStartDate": "2026-11-14",
+    "notes": "October 20 owner relayed direct organizer confirmation that CJ asked to move the show to Friday. The new Christology Records / KickBack Texas Tour flyer and caption confirm November 13, 2026, 7–9 PM, free admission with Eventbrite RSVP, and 2305 SE 14th St, Grand Prairie. This supersedes the stale November 14 date on CJ’s calendar and resolves the prior GLOVEMBER conflict. Use the flyer/venue address 2305, not the ticket location widget’s 2505 typo. Full flyer billing preserved; Gospel Ready and Neto Gonzales wrap across lines. J. Harvey is the host, not an inferred musical performer. No individual set or separate doors time announced.",
+    "publicDescription": "Christology Records presents The Kickback featuring CJ Emulous, with Josh Donnell, Brandon Trejo, Gospel Ready, Thomas Nunez, Ashley Briana, Neto Gonzales, MJ Vazquez and SF Rich. Hosted by J. Harvey. Friday, November 13, 7–9 PM at JCDA in Grand Prairie. Free admission; RSVP through Eventbrite. Rescheduled from November 14.",
+    "description": "Christology Records presents The Kickback featuring CJ Emulous, with Josh Donnell, Brandon Trejo, Gospel Ready, Thomas Nunez, Ashley Briana, Neto Gonzales, MJ Vazquez and SF Rich. Hosted by J. Harvey. Friday, November 13, 7–9 PM at JCDA in Grand Prairie. Free admission; RSVP through Eventbrite. Rescheduled from November 14.",
+    "legacyEventPaths": [
+      "/event/the-kickback-2026-11-14-grand-prairie-ce6c40/",
+      "/event/the-kickback-2026-11-14-grand-prairie-6fd96a/"
+    ]
   },
   {
     "title": "Alex Zurdo: Zona Zero",

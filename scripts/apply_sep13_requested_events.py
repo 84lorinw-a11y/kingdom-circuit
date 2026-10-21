@@ -219,7 +219,7 @@ EXISTING = {
     "cj-emulous-syatp-sierra-vista-2026": ("https://www.cjemulous.com/event-details/syatp-concert-w-cj-emulous", ["CJ Emulous"]),
     "cj-emulous-live-loud-chico-2026": ("https://www.cjemulous.com/event-details/live-loud-w-cj-emulous", ["CJ Emulous"]),
     "cj-emulous-turlock-back-to-school-2026": ("https://www.cjemulous.com/event-details/back-to-school-concert-w-cj-emulous-1", None),
-    "cj-emulous-kickback-grand-prairie-2026": ("https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous", ["CJ Emulous"]),
+    "cj-emulous-kickback-grand-prairie-2026": ("https://www.instagram.com/p/Deu2JCvs98r/", ["CJ Emulous", "Brandon Trejo"]),
     "miles-cj-zion-ultra-lounge-chandler-2026": ("https://www.cjemulous.com/event-details/zion-ultra-lounge-w-miles-minnick-cj-emulous", ["Miles Minnick", "CJ Emulous"]),
 }
 TAMPA_CONFLICTS = {
