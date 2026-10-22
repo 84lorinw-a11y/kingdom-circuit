@@ -1,8 +1,8 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-10-22T14:53:56Z",
-  "lastSuccessfulUpdate": "2026-10-22T14:53:56Z",
+  "lastAttempt": "2026-10-22T16:11:22Z",
+  "lastSuccessfulUpdate": "2026-10-22T16:11:22Z",
   "eventsPublished": 128,
   "candidatesCollected": 260,
   "artistsConfigured": 375,
@@ -23,6 +23,16 @@
   "instagramResultsFound": 1,
   "instagramEventsFound": 0,
   "instagramCandidates": [
+    {
+      "url": "https://www.instagram.com/reel/DcMt1bWS-ZZ/",
+      "title": "Eric Lee | My recreation of an original concert hand bill ...",
+      "artists": [],
+      "date": "",
+      "city": "Miami",
+      "state": "OK",
+      "score": 4,
+      "reason": "official artist ownership was not clear; a future date was not explicit; no tracked artist was confidently matched"
+    },
     {
       "url": "https://www.instagram.com/p/DboKM3GJM4A/",
       "title": "Official EGR 2026 schedule graphic supplied to The Kingdom Circuit and manually transcribed.",
@@ -46,18 +56,6 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
-    },
-    {
-      "url": "https://www.instagram.com/p/Ddoskf1CNWE/",
-      "title": "sondae | Got married to my shawtyyy | Instagram",
-      "artists": [
-        "Sondae"
-      ],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
