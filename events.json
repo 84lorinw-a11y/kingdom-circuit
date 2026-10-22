@@ -11140,8 +11140,8 @@
     "status": "scheduled",
     "ticketUrl": "https://www.ticketmaster.com/event/090064F0E40615CE",
     "officialUrl": "https://themoroccan.com/tm-event/blessing-offor-heart-so-real-tour-pt-2/",
-    "image": "assets/events/blessing-offor-ryan-ellis-la-2026-10-28.jpg",
-    "imageType": "artist",
+    "image": "assets/events/blessing-offor-heart-so-real-tour-pt2-oct2026.jpg",
+    "imageType": "event_artwork",
     "imageOverride": true,
     "imagePosition": "center",
     "sourceName": "Official event and artist announcements",
@@ -11174,10 +11174,17 @@
         "type": "manual_verified",
         "authority": "artist_calendar",
         "priority": 125
+      },
+      {
+        "name": "Blessing Offor official tour artwork and dates",
+        "url": "https://www.instagram.com/blessingoffor/p/DeAHTjII6Oa/",
+        "type": "manual_verified",
+        "authority": "artist_announcement",
+        "priority": 125
       }
     ],
-    "imageSource": "Official venue / Ticketmaster Blessing Offor event image",
-    "imageSourceUrl": "https://s1.ticketm.net/dam/a/cd3/3d47f6fa-68d3-42ea-87dd-d66c06589cd3_TABLET_LANDSCAPE_16_9.jpg",
+    "imageSource": "Blessing Offor official Heart So Real Tour Pt. 2 announcement",
+    "imageSourceUrl": "https://www.instagram.com/blessingoffor/p/DeAHTjII6Oa/",
     "doorsTime": "18:30",
     "ageRestriction": "All ages",
     "price": "$20 advance / $25 day of show; see tickets for fees",
@@ -11186,7 +11193,7 @@
       "bandsintown:1040554523"
     ],
     "publicDescription": "Ryan Ellis opens for Blessing Offor at The Moroccan Lounge. All ages. Doors open at 6:30 PM; the venue has not published a separate performance start time.",
-    "notes": "October 21: venue calendar explicitly lists Ryan Ellis as support for Blessing Offor, matching Ryan Ellis artist event 1040554523. Ticketmaster and the venue show 6:30 PM, but venue labels it doors; do not present it as concert start. This is one show, not a separate Ryan Ellis headlining concert. Official event image is a portrait photo of the headliner; no event-specific flyer was found.",
+    "notes": "October 21: venue calendar explicitly lists Ryan Ellis as support for Blessing Offor, matching Ryan Ellis artist event 1040554523. Ticketmaster and the venue show 6:30 PM, but venue labels it doors; do not present it as concert start. This is one show, not a separate Ryan Ellis headlining concert. October 21 artwork update: official Blessing Offor tour announcement poster explicitly includes October 28 at The Moroccan Lounge in Los Angeles. Ryan Ellis support is verified for this date only.",
     "description": "Ryan Ellis opens for Blessing Offor at The Moroccan Lounge. All ages. Doors open at 6:30 PM; the venue has not published a separate performance start time.",
     "lastVerified": "2026-10-21T12:31:24.096874Z",
     "auditVerified": "2026-10-21",
