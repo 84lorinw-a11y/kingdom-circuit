@@ -1,13 +1,14 @@
 {
-  "generatedAt": "2026-10-21T16:37:51Z",
+  "generatedAt": "2026-10-22T16:51:55Z",
   "artistsConfigured": 375,
   "officialWebsitesChecked": 231,
   "artistsWithEvents": 0,
   "eventsFound": 0,
-  "warningCount": 127,
+  "warningCount": 129,
   "warnings": [
     "Aaron Cole Bandsintown: Unable to retrieve https://www.bandsintown.com/a/2471775: HTTP Error 403: Forbidden",
     "Aaron Cole Bandsintown: Unable to retrieve https://www.bandsintown.com/a/2471775: HTTP Error 403: Forbidden",
+    "Fern: Unable to retrieve https://fernofficial.com/: <urlopen error [Errno 101] Network is unreachable>",
     "Bizzle: Unable to retrieve https://bizzle.vip/: <urlopen error [Errno -2] Name or service not known>",
     "Issac Mansfield: robots.txt blocked https://www.issacmansfield.com/",
     "Shonlock: Unable to retrieve https://www.shonlock.com/: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1010)>",
@@ -104,8 +105,7 @@
     "Swaizy: robots.txt blocked https://linktr.ee/swaizyofficial",
     "Taelor Gray: robots.txt blocked https://linktr.ee/taelor_gray",
     "Pishko: robots.txt blocked https://linktr.ee/PISHKO",
-    "Mouthpi3ce: robots.txt blocked https://linktr.ee/Mouthpi3ce",
-    "Reblah: robots.txt blocked https://linktr.ee/Reblah"
+    "Mouthpi3ce: robots.txt blocked https://linktr.ee/Mouthpi3ce"
   ],
   "mode": "all-tracked-artists-official-website-scan"
 }
