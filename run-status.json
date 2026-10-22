@@ -1,10 +1,10 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-10-21T16:05:41Z",
-  "lastSuccessfulUpdate": "2026-10-21T16:05:41Z",
-  "eventsPublished": 166,
-  "candidatesCollected": 262,
+  "lastAttempt": "2026-10-22T14:53:56Z",
+  "lastSuccessfulUpdate": "2026-10-22T14:53:56Z",
+  "eventsPublished": 128,
+  "candidatesCollected": 260,
   "artistsConfigured": 375,
   "artistsByPriority": {
     "priority1": 91,
@@ -15,12 +15,12 @@
   "socialSearchArtistsEnabled": 330,
   "freeTextAliasesProtected": 224,
   "artistsMatchedOnTicketmaster": 61,
-  "officialEventsFound": 36,
+  "officialEventsFound": 34,
   "ticketmasterEventsFound": 11,
   "instagramArtistsConfigured": 330,
   "instagramQueriesRun": 332,
   "instagramQueriesAttempted": 330,
-  "instagramResultsFound": 0,
+  "instagramResultsFound": 1,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,10 +46,22 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
+    },
+    {
+      "url": "https://www.instagram.com/p/Ddoskf1CNWE/",
+      "title": "sondae | Got married to my shawtyyy | Instagram",
+      "artists": [
+        "Sondae"
+      ],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 455,
+  "sourcesChecked": 453,
   "unmatchedArtists": [
     "Scootie Wop",
     "Mike Malagies",
@@ -405,13 +417,13 @@
     },
     {
       "name": "ChristianHits consolidated show feed",
-      "status": "ok",
-      "eventsFound": 1
+      "status": "warning",
+      "eventsFound": 0
     },
     {
       "name": "ChristianHits festival directory",
-      "status": "ok",
-      "eventsFound": 1
+      "status": "warning",
+      "eventsFound": 0
     },
     {
       "name": "Konnect Concert Series - Space City Church",
@@ -596,7 +608,7 @@
       "queriesRun": 332
     }
   ],
-  "warningCount": 18,
+  "warningCount": 20,
   "errorCount": 0,
   "warnings": [
     "Holy Smoke official festival: Unable to retrieve https://indietribe.us/products/holy-smoke-2026: HTTP Error 404: Not Found",
@@ -607,6 +619,8 @@
     "Torey D'Shaun Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14363770-torey-d%27shaun: HTTP Error 403: Forbidden",
     "Derek Minor Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/12211056-derek-minor: HTTP Error 403: Forbidden",
     "Social Club Misfits Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/13345973-social-club-misfits: HTTP Error 403: Forbidden",
+    "ChristianHits consolidated show feed: Unable to retrieve https://christianhits.net/shows.php: HTTP Error 500: Internal Server Error",
+    "ChristianHits festival directory: Unable to retrieve https://www.christianhits.net/festivals.php: HTTP Error 500: Internal Server Error",
     "Manafest official tour: Unable to retrieve https://www.manafest.com/tour-dates: HTTP Error 404: Not Found",
     "Manafest Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4465-manafest: HTTP Error 403: Forbidden",
     "GRITS Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/805-grits: HTTP Error 403: Forbidden",
@@ -619,9 +633,5 @@
     "Anike Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4673148-anike: HTTP Error 403: Forbidden"
   ],
   "errors": [],
-  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings.",
-  "artistWebsiteEventsFound": 0,
-  "artistWebsiteSeedEvents": 22,
-  "artistWebsiteEventsAdded": 3,
-  "artistWebsiteMergeAt": "2026-10-21T16:40:33Z"
+  "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings."
 }

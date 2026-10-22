@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T16:24:29Z",
+  "generatedAt": "2026-10-22T15:13:36Z",
   "artistsChecked": 375,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
@@ -23,8 +23,8 @@
   "sourceStatusCounts": {
     "delegated_to_structured_rest": 375,
     "blocked_by_robots": 378,
-    "no_events": 528,
-    "failed": 7
+    "no_events": 529,
+    "failed": 6
   },
   "newEvents": [],
   "sourceResults": [
@@ -8226,9 +8226,8 @@
       "artist": "Lady Cam",
       "source": "official website",
       "url": "http://www.iloveladycam.com/",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve http://www.iloveladycam.com/: HTTP Error 429: Too Many Requests"
+      "status": "no_events",
+      "eventsFound": 0
     },
     {
       "artist": "Lady Cam",
