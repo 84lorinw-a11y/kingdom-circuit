@@ -388,7 +388,8 @@ const ARTIST_ROSTER_ORDER = [
   "Lady Cam",
   "Believin Stephen",
   "Ryan Ellis",
-  "Kemara Lynn"
+  "Kemara Lynn",
+  "R3st0red"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -5636,6 +5637,22 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/kemara-lynn-artist-submitted-oct20.jpg",
     "imagePosition": "50% 0%",
     "state": "MI",
+    "sourceRegistryVerified": true
+  },
+  "r3st0red": {
+    "aliases": [
+      "R3st0red",
+      "R3ST0RED",
+      "holyrockout"
+    ],
+    "website": "https://www.instagram.com/holyrockout/",
+    "instagramProfile": "https://www.instagram.com/holyrockout/",
+    "spotifyProfile": "https://open.spotify.com/artist/61hdUXk2jifcjdhVGuJLwL",
+    "youtubeProfile": "https://www.youtube.com/@R3st0redmusic",
+    "officialImageSource": "https://www.instagram.com/holyrockout/p/DdVBMoInMnQ/?img_index=15",
+    "imageUrl": "assets/artists/r3st0red-official-oct23.jpg",
+    "imagePosition": "67% 32%",
+    "state": "MD",
     "sourceRegistryVerified": true
   }
 };
@@ -10886,6 +10903,22 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imagePosition": "50% 0%",
     "state": "MI",
     "sourceRegistryVerified": true
+  },
+  "r3st0red": {
+    "aliases": [
+      "R3st0red",
+      "R3ST0RED",
+      "holyrockout"
+    ],
+    "website": "https://www.instagram.com/holyrockout/",
+    "instagramProfile": "https://www.instagram.com/holyrockout/",
+    "spotifyProfile": "https://open.spotify.com/artist/61hdUXk2jifcjdhVGuJLwL",
+    "youtubeProfile": "https://www.youtube.com/@R3st0redmusic",
+    "officialImageSource": "https://www.instagram.com/holyrockout/p/DdVBMoInMnQ/?img_index=15",
+    "imageUrl": "assets/artists/r3st0red-official-oct23.jpg",
+    "imagePosition": "67% 32%",
+    "state": "MD",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -12388,6 +12421,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "kemara lynn": {
     "imageUrl": "assets/artists/kemara-lynn-artist-submitted-oct20.jpg",
     "imagePosition": "50% 0%"
+  },
+  "r3st0red": {
+    "imageUrl": "assets/artists/r3st0red-official-oct23.jpg",
+    "imagePosition": "67% 32%"
   }
 };
 
