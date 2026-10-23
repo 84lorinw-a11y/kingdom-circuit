@@ -18,7 +18,7 @@ VISIBILITY_CUTOFF = TODAY
 GA_ID = "G-N2KK9XF4TJ"
 FAVICON_HTML = '''<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-kc-stacked-v2-48.png"><link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-kc-stacked-v2-96.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-kc-stacked-v2-180.png"><link rel="manifest" href="/manifest.webmanifest"><meta name="apple-mobile-web-app-title" content="Kingdom Circuit">'''
 STATE_NAMES = {
-    "AL":"Alabama","AK":"Alaska","AZ":"Arizona","AR":"Arkansas","CA":"California","CO":"Colorado","CT":"Connecticut","DE":"Delaware","DC":"District of Columbia","FL":"Florida","GA":"Georgia","HI":"Hawaii","ID":"Idaho","IL":"Illinois","IN":"Indiana","IA":"Iowa","KS":"Kansas","KY":"Kentucky","LA":"Louisiana","ME":"Maine","MD":"Maryland","MA":"Massachusetts","MI":"Michigan","MN":"Minnesota","MS":"Mississippi","MO":"Missouri","MT":"Montana","NE":"Nebraska","NV":"Nevada","NH":"New Hampshire","NJ":"New Jersey","NM":"New Mexico","NY":"New York","NC":"North Carolina","ND":"North Dakota","OH":"Ohio","OK":"Oklahoma","OR":"Oregon","PA":"Pennsylvania","RI":"Rhode Island","SC":"South Carolina","SD":"South Dakota","TN":"Tennessee","TX":"Texas","UT":"Utah","VT":"Vermont","VA":"Virginia","WA":"Washington","WV":"West Virginia","WI":"Wisconsin","WY":"Wyoming"
+    "AL":"Alabama","AK":"Alaska","AZ":"Arizona","AR":"Arkansas","CA":"California","CO":"Colorado","CT":"Connecticut","DE":"Delaware","DC":"District of Columbia","FL":"Florida","GA":"Georgia","HI":"Hawaii","ID":"Idaho","IL":"Illinois","IN":"Indiana","IA":"Iowa","KS":"Kansas","KY":"Kentucky","LA":"Louisiana","ME":"Maine","MD":"Maryland","MA":"Massachusetts","MI":"Michigan","MN":"Minnesota","MS":"Mississippi","MO":"Missouri","MT":"Montana","NE":"Nebraska","NV":"Nevada","NH":"New Hampshire","NJ":"New Jersey","NM":"New Mexico","NY":"New York","NC":"North Carolina","ND":"North Dakota","OH":"Ohio","OK":"Oklahoma","OR":"Oregon","PA":"Pennsylvania","RI":"Rhode Island","SC":"South Carolina","SD":"South Dakota","TN":"Tennessee","TX":"Texas","UT":"Utah","VT":"Vermont","VA":"Virginia","WA":"Washington","WV":"West Virginia","WI":"Wisconsin","WY":"Wyoming","PR":"Puerto Rico"
 }
 
 
@@ -58,6 +58,15 @@ def current(e):
 def scheduled(e):
     return norm(e.get("status") or "scheduled") not in {"cancelled", "canceled", "postponed", "merged"}
 
+def domestic_event(event):
+    """Publish only U.S. performances (including Puerto Rico); retain foreign sources."""
+    country = norm(event.get("country") or "US")
+    state = str(event.get("state") or "").strip().upper()
+    return country in {"us", "usa", "united states", "united states of america", "pr", "puerto rico"} and (
+        not state or state in STATE_NAMES
+    )
+
+
 def same_event(a,b):
     if a.get("startDate") != b.get("startDate") or norm(a.get("city")) != norm(b.get("city")): return False
     if a.get("startTime") and b.get("startTime") and a.get("startTime") != b.get("startTime"): return False
@@ -66,8 +75,8 @@ def same_event(a,b):
     return bool(same_venue or shared)
 
 def merge_events(primary, supplemental):
-    primary = [event for event in primary if not removed_event(event)]
-    supplemental = [event for event in supplemental if not removed_event(event)]
+    primary = [event for event in primary if not removed_event(event) and domestic_event(event)]
+    supplemental = [event for event in supplemental if not removed_event(event) and domestic_event(event)]
     out = [dict(e, artists=list(e.get("artists",[]))) for e in primary]
     for inc in supplemental:
         if norm(inc.get("status")) == "merged":
