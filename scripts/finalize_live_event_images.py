@@ -305,6 +305,13 @@ def set_img_src(tag: str, src: str, key: str) -> str:
     )
 
 
+def has_valid_event_artwork(tag: str) -> bool:
+    classes = re.search(r'\bclass=["\']([^"\']*)["\']', tag, flags=re.I)
+    src = re.search(r'\bsrc=["\']([^"\']*)["\']', tag, flags=re.I)
+    return bool(classes and "event-artwork" in classes.group(1).split()
+                and src and not needs_repair(html.unescape(src.group(1))))
+
+
 def repair_fallbacks_in_block(block: str) -> tuple[str, bool]:
     forced = forced_primary_key(block)
     key = forced or key_from_html(block)
@@ -315,9 +322,12 @@ def repair_fallbacks_in_block(block: str) -> tuple[str, bool]:
     if forced:
         def force_repl(match: re.Match[str]) -> str:
             nonlocal changed
+            if has_valid_event_artwork(match.group(0)):
+                return match.group(0)
             changed = True
             return set_img_src(match.group(0), IMAGE_CANDIDATES[forced][0], forced)
-        return re.sub(r'<img\b[^>]*>', force_repl, block, count=1, flags=re.I), True
+        updated = re.sub(r'<img\b[^>]*>', force_repl, block, count=1, flags=re.I)
+        return updated, changed
 
     def repl(match: re.Match[str]) -> str:
         nonlocal changed
@@ -361,7 +371,7 @@ def patch_html_page(page: pathlib.Path, removed_slugs: set[str]) -> tuple[int, i
                 nonlocal repaired
                 tag = match.group(0)
                 is_event_media = bool(re.search(r'\bclass=["\'][^"\']*(?:artist-photo|event-artwork)', tag, flags=re.I))
-                if forced and is_event_media:
+                if forced and is_event_media and not has_valid_event_artwork(tag):
                     repaired += 1
                     return set_img_src(tag, IMAGE_CANDIDATES[forced][0], forced)
                 src_match = re.search(r'\bsrc=["\']([^"\']*)["\']', tag, flags=re.I)

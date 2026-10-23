@@ -67,8 +67,10 @@ class RequestedLineupTests(unittest.TestCase):
     def test_flavor_days_follow_current_posters_without_duplicate_performers(self):
         friday = PATCHES["flavor-fest-2026-friday-concerts"]["advertisedBilling"]
         saturday = PATCHES["flavor-fest-2026-saturday-concerts"]["advertisedBilling"]
-        self.assertEqual((len(friday), len(saturday)), (28, 20))
+        self.assertEqual((len(friday), len(saturday)), (28, 21))
         self.assertEqual(len(friday), len(set(friday)))
+        self.assertEqual(len(saturday), len(set(saturday)))
+        self.assertIn("The Rkitect", saturday)
         self.assertIn("Yung Kriss", friday)
         self.assertNotIn("Gifted Hands", friday)
         self.assertIn("Gifted Hands", saturday)

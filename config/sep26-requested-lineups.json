@@ -272,7 +272,8 @@
       "Hova-Flow",
       "Elizer O.R.",
       "Monster Tarver",
-      "C4 Crotona"
+      "C4 Crotona",
+      "The Rkitect"
     ],
     "officialBill": [
       "Lecrae",
@@ -294,11 +295,19 @@
       "Hova-Flow",
       "Elizer O.R.",
       "Monster Tarver",
-      "C4 Crotona"
+      "C4 Crotona",
+      "The Rkitect"
     ],
     "lineupExplicit": true,
-    "auditVerified": "2026-10-12",
+    "auditVerified": "2026-10-23",
     "sources": [
+      {
+        "name": "The Rkitect confirms November 7 Gritty Stage performance",
+        "url": "https://www.instagram.com/the_rkitect/reel/De1g6MegM9x/",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 115
+      },
       {
         "name": "Flavor Fest current Saturday concert poster",
         "url": "https://www.flavorfest.org/",
@@ -314,7 +323,8 @@
         "priority": 112
       }
     ],
-    "notes": "All 20 named performers on the official Saturday poster are included, including A. Ward and Loso in the compliment battle and named Holy Culture showcase/Gritty stage artists. Gifted Hands is Saturday according to both the current schedule and poster. Beat battles and breakdancing descriptions without named performers are not invented artists. October 8: owner verified DJ Geech in the artist Sheet; official team page identifies Maleek Geech Taylor, and current Saturday concert poster explicitly bills Geech. Connect that existing concert billing to DJ Geech’s curated profile. Do not infer concerts from his separate director or panel roles. October 12: newly owner-verified artist profiles linked to confirmed billing. Nigil Lee personally confirms November 7; the poster spelling Nigel is a typo."
+    "notes": "All 20 named performers on the official Saturday poster are included, including A. Ward and Loso in the compliment battle and named Holy Culture showcase/Gritty stage artists. Gifted Hands is Saturday according to both the current schedule and poster. Beat battles and breakdancing descriptions without named performers are not invented artists. October 8: owner verified DJ Geech in the artist Sheet; official team page identifies Maleek Geech Taylor, and current Saturday concert poster explicitly bills Geech. Connect that existing concert billing to DJ Geech’s curated profile. Do not infer concerts from his separate director or panel roles. October 12: newly owner-verified artist profiles linked to confirmed billing. Nigil Lee personally confirms November 7; the poster spelling Nigel is a typo. October 23: The Rkitect explicitly confirms November 7 on the Gritty Stage; retain as unlinked performer billing. The published 7 PM concert start is not an asserted individual set time.",
+    "lastVerified": "2026-10-23T22:33:46.736976Z"
   },
   "bandsintown:1040378722": {
     "startDate": "2026-11-14",
@@ -395,15 +405,37 @@
     "ticketUrl": "https://www.axs.com/events/1304795/nobigdyl-unplugged-tickets",
     "sourceName": "AXS / Cannery Hall",
     "authority": "venue_ticket",
-    "auditVerified": "2026-09-26",
+    "auditVerified": "2026-10-23",
     "sources": [
       {
-        "name": "AXS / Cannery Hall",
+        "name": "AXS official UNPLUGGED listing",
         "url": "https://www.axs.com/events/1304795/nobigdyl-unplugged-tickets",
         "type": "manual_verified",
         "authority": "venue_ticket",
         "priority": 115
+      },
+      {
+        "name": "Official live-band announcement",
+        "url": "https://www.instagram.com/nobigdyl/p/De0Dyw6xO3a/",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 115
       }
+    ],
+    "startTime": "20:00",
+    "startDateTime": "2027-01-22T20:00:00-06:00",
+    "doorsTime": "19:00",
+    "timezone": "America/Chicago",
+    "venue": "Cannery Hall — Mainstage",
+    "postalCode": "37203",
+    "ageRestriction": "All ages",
+    "publicDescription": "nobigdyl. performs UNPLUGGED with a live band at Cannery Hall’s Mainstage in Nashville. Doors open at 7 PM; the all-ages show begins at 8 PM.",
+    "notes": "October 23 audit: existing provider record, not a new show. Official AXS and artist announcement verify title, Mainstage, 8 PM show, 7 PM doors and live band. Preserve provider ID and discovery date.",
+    "title": "nobigdyl. UNPLUGGED",
+    "lastVerified": "2026-10-23T22:33:46.736976Z",
+    "confidence": "high",
+    "legacyEventPaths": [
+      "/event/nobigdyl-at-cannery-hall-2027-01-22-nashville-ce782c/"
     ]
   },
   "bandsintown:1040314202": {
@@ -2010,6 +2042,61 @@
         "authority": "artist_calendar",
         "priority": 115
       }
+    ]
+  },
+  "bandsintown:108923215": {
+    "startDate": "2026-11-20",
+    "startTime": "18:00",
+    "endTime": "21:30",
+    "endDate": "2026-11-20",
+    "startDateTime": "2026-11-20T18:00:00-07:00",
+    "endDateTime": "2026-11-20T21:30:00-07:00",
+    "doorsTime": "17:30",
+    "timezone": "America/Boise",
+    "venue": "The Whosoevers",
+    "postalCode": "83709",
+    "advertisedBilling": [
+      "Kurtis Hoppie",
+      "Spencer Boliou",
+      "Derek Ryan",
+      "Kaleah Rochelle"
+    ],
+    "officialBill": [
+      "Kurtis Hoppie",
+      "Spencer Boliou",
+      "Derek Ryan",
+      "Kaleah Rochelle"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "officialUrl": "https://www.tickettailor.com/events/udkevents/2425184",
+    "ticketUrl": "https://www.tickettailor.com/events/udkevents/2425184",
+    "price": "$20 general admission; $75 VIP",
+    "ageRestriction": "All ages",
+    "publicDescription": "The Promised VI features Kurtis Hoppie, Spencer Boliou, Derek Ryan and Kaleah Rochelle at The Whosoevers in Boise. Doors open at 5:30 PM; the all-ages show runs 6–9:30 PM.",
+    "sources": [
+      {
+        "name": "Official UDK Events ticket listing",
+        "url": "https://www.tickettailor.com/events/udkevents/2425184",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 115
+      },
+      {
+        "name": "Kurtis Hoppie artist announcement",
+        "url": "https://www.instagram.com/thekurtishoppie/reel/DezCIXAgzl3/",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 115
+      }
+    ],
+    "notes": "October 23 audit: existing provider event, not a new show. Official organizer ticket page replaces the event title accidentally used as venue and confirms full lineup, doors, show time and all-ages admission. Preserve provider ID, original address and discovery date.",
+    "title": "The Promised VI",
+    "lastVerified": "2026-10-23T22:33:46.736976Z",
+    "auditVerified": "2026-10-23",
+    "confidence": "high",
+    "artists": [
+      "Kurtis Hoppie"
     ]
   }
 }
