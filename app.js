@@ -720,8 +720,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/6Ms95MzjHZvqs79Nw3hXrx",
     "youtubeProfile": "https://www.youtube.com/channel/UCLbkU1IRos-VlB7fwACr_YQ",
     "officialImageSource": "https://www.mikemalagiesofficial.com/",
-    "imageUrl": "assets/artists/mike-malagies-saved.jpg",
-    "imagePosition": "center",
+    "imageUrl": "assets/artists/mike-malagies-official-hires-oct22.webp",
+    "imagePosition": "50% 35%",
     "sourceRegistryVerified": true
   },
   "fern": {
@@ -5955,8 +5955,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6Ms95MzjHZvqs79Nw3hXrx",
     "youtubeProfile": "https://www.youtube.com/channel/UCLbkU1IRos-VlB7fwACr_YQ",
     "officialImageSource": "https://www.mikemalagiesofficial.com/",
-    "imageUrl": "assets/artists/mike-malagies-saved.jpg",
-    "imagePosition": "center",
+    "imageUrl": "assets/artists/mike-malagies-official-hires-oct22.webp",
+    "imagePosition": "50% 35%",
     "sourceRegistryVerified": true
   },
   "fern": {
@@ -10978,8 +10978,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 0%"
   },
   "mike malagies": {
-    "imageUrl": "assets/artists/mike-malagies-saved.jpg",
-    "imagePosition": "center"
+    "imageUrl": "assets/artists/mike-malagies-official-hires-oct22.webp",
+    "imagePosition": "50% 35%"
   },
   "fern": {
     "imageUrl": "assets/artists/fern-saved.webp",

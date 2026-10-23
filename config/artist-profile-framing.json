@@ -449,27 +449,28 @@
   },
   "mike-malagies": {
     "artist": "Mike Malagies",
-    "imageSha256": "675de021a45ce8ece35cdcae0fa1ef0ffc4f9c965a7b4b5b999227f825e7d1d6",
-    "reason": "Strong live photo; mobile cuts the raised hand but keeps face clear.",
+    "imageSha256": "a8498a2d11babbf550b5d3263d8de0e357bcf6b60efbc1dd315ff47c714aafaa",
+    "reason": "Owner approved cleaner official photo. Replace 327px thumbnail with a 2080px web version from the 4160px original; face centered with headroom, full frames and title below face. No generative edits.",
+    "desktop": {
+      "window": [
+        0.08,
+        0.25,
+        0.84,
+        0.42
+      ],
+      "ratio": 1.3333333333333333,
+      "nameSize": 5.6,
+      "originalSource": true
+    },
     "mobile": {
       "window": [
-        0,
-        0,
-        1.0,
-        0.665988
+        0.08,
+        0.235,
+        0.84,
+        0.56
       ],
       "ratio": 1,
       "nameSize": 8.6
-    },
-    "desktop": {
-      "ratio": 1.33333333,
-      "nameSize": 5.6,
-      "window": [
-        0,
-        0.23868143,
-        1,
-        0.49949084
-      ]
     }
   },
   "fern": {

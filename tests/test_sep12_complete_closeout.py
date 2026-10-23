@@ -12,7 +12,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import finalize_sep12_complete_closeout as closeout
 
 APPROVED_CURRENT_LOGO = "/assets/logo-wordmark.svg?v=1"
-MIKE_MALAGIES_APPROVED_IMAGE = "https://static.wixstatic.com/media/61a78b_7545031064f049a6843e4c7d0666886f~mv2.jpg/v1/fill/w_327%2Ch_491%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/61a78b_7545031064f049a6843e4c7d0666886f~mv2.jpg"
+MIKE_MALAGIES_APPROVED_IMAGE = "https://static.wixstatic.com/media/61a78b_7545031064f049a6843e4c7d0666886f~mv2.jpg"
 
 
 class September12CompleteCloseoutTests(unittest.TestCase):
@@ -85,6 +85,8 @@ class September12CompleteCloseoutTests(unittest.TestCase):
         mike = next(item for item in artists if item.get("name") == "Mike Malagies")
         portrait = json.loads((ROOT / "config/artist-portraits.json").read_text())["Mike Malagies"]
         self.assertEqual(MIKE_MALAGIES_APPROVED_IMAGE, portrait["sourceUrl"])
+        self.assertGreaterEqual(portrait["width"], 2080)
+        self.assertGreaterEqual(portrait["height"], 3120)
         self.assertEqual(portrait["asset"], mike.get("imageUrl"))
         self.assertTrue((ROOT / portrait["asset"]).is_file())
         self.assertNotIn("mike malagies", {closeout.norm(key[0]) for key in closeout.ARTWORK_REPLACEMENTS})
