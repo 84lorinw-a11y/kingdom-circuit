@@ -14,14 +14,20 @@ def verify(site: Path):
     roster = json.loads((site / "config/artists.json").read_text())
     curated = {builder.norm(artist["name"]): artist["name"]
                for artist in roster if artist.get("enabled") is not False}
-    rows = builder.merge_events(json.loads((site / "events.json").read_text()),
-                                json.loads((site / "supplemental-events.json").read_text()))
+    primary = json.loads((site / "events.json").read_text())
+    supplemental = json.loads((site / "supplemental-events.json").read_text())
+    rows = builder.merge_events(primary, supplemental)
+    # Source artwork pins can outlive a change in public geography. Only exempt
+    # an absent page when its actual retained source record is outside scope.
+    excluded_ids = {str(row["id"]).removeprefix("manual:")
+                    for row in primary + supplemental
+                    if not builder.domestic_event(row)}
     by_id = {str(row["id"]).removeprefix("manual:"): row for row in rows}
     targets = {}
     for pin in PINS:
         event = by_id.get(pin["id"])
         if not event:
-            assert not builder.current(pin), (pin["id"], "missing active event")
+            assert not builder.current(pin) or pin["id"] in excluded_ids, (pin["id"], "missing active event")
             continue
         assert event["startDate"] == pin["startDate"], (pin["id"], "date changed")
         image_path = event["image"].lstrip("/")

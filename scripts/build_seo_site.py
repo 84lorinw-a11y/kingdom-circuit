@@ -41,7 +41,9 @@ def event_slug(e):
 
 def event_path(e): return f"/event/{event_slug(e)}/"
 def artist_path(name): return f"/artists/{slug(name)}/"
-def state_path(code): return f"/shows/{slug(STATE_NAMES.get(code,code))}/"
+def state_path(code):
+    # Keep Puerto Rico's established route aligned with permanent state pages.
+    return "/shows/pr/" if code == "PR" else f"/shows/{slug(STATE_NAMES.get(code,code))}/"
 def city_path(city, code): return f"/shows/{slug(city)}-{slug(STATE_NAMES.get(code,code))}/"
 def absolute(path): return SITE.rstrip("/") + "/" + path.lstrip("/")
 

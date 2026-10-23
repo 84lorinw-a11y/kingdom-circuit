@@ -7,11 +7,15 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import permanent_state_pages as states
-from build_seo_site import event_path
+from build_seo_site import event_path, state_path as seo_state_path
 from finalize_seo_indexing_core import classify
 
 
 class PermanentStateTests(unittest.TestCase):
+    def test_seo_and_permanent_puerto_rico_routes_agree(self):
+        self.assertEqual(seo_state_path("PR"), "/shows/pr/")
+        self.assertEqual(seo_state_path("PR"), states.state_path("PR"))
+
     def setUp(self):
         temp = tempfile.TemporaryDirectory()
         self.addCleanup(temp.cleanup)
