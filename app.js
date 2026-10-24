@@ -11,7 +11,8 @@ const FALLBACK_EVENT_IMAGE = `${BASE}assets/event-fallback.webp`;
 const ARTIST_SUBMISSION_ENDPOINT = "https://formspree.io/f/mljreawj";
 const VERIFIED_ARTIST_IMAGE_ENDPOINT = "https://open.voidware.de/artist/";
 let PLATFORM_ICON_SEQUENCE = 0;
-const STATE_NAMES = {AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",DE:"Delaware",DC:"District of Columbia",FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming",PR:"Puerto Rico"};
+const STATE_NAMES = {AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",DE:"Delaware",DC:"District of Columbia",FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming",PR:"Puerto Rico",AB:"Alberta",BC:"British Columbia",MB:"Manitoba",NB:"New Brunswick",NL:"Newfoundland and Labrador",NS:"Nova Scotia",NT:"Northwest Territories",NU:"Nunavut",ON:"Ontario",PE:"Prince Edward Island",QC:"Quebec",SK:"Saskatchewan",YT:"Yukon"};
+const CANADIAN_CODES = ["AB", "BC", "MB", "NB", "NL", "NS", "NT", "NU", "ON", "PE", "QC", "SK", "YT"];
 // Artist source registry imported from Book4.xlsx. Only rows marked Verified are enriched.
 const ARTIST_ROSTER_ORDER = [
   "Lecrae",
@@ -12780,12 +12781,13 @@ function mergeEventRecords(existing, incoming) {
   if (lastVerified) merged.lastVerified = lastVerified;
   return merged;
 }
-// Display only U.S. events, including Puerto Rico; retain foreign source history separately.
+// Display U.S./Puerto Rico and Canadian events; keep country and province codes distinct.
 function isDomesticEvent(event) {
   const country = String(event?.country || "US").trim().toUpperCase();
   const state = String(event?.state || "").trim().toUpperCase();
+  if (["CA", "CAN", "CANADA"].includes(country)) return !state || CANADIAN_CODES.includes(state);
   return ["US", "USA", "UNITED STATES", "UNITED STATES OF AMERICA", "PR", "PUERTO RICO"].includes(country)
-    && (!state || Object.prototype.hasOwnProperty.call(STATE_NAMES, state));
+    && (!state || (Object.prototype.hasOwnProperty.call(STATE_NAMES, state) && !CANADIAN_CODES.includes(state)));
 }
 function mergeEventLists(primary, supplemental) {
   const merged = [];

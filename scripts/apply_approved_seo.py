@@ -403,6 +403,12 @@ def main(site_root: str) -> None:
         pathlib.Path(__file__).with_name("build_seo_site.py"),
     )
     billing_artists = json.loads((root / "config/artists.json").read_text(encoding="utf-8"))
+    overlay.STATE_NAMES.update(production_builder.STATE_NAMES)
+    overlay.state_href = production_builder.state_path
+    overlay.city_href = production_builder.city_path
+    overlay.artist_state_href = lambda name, code: (
+        f"/artists/{artist_slug(name)}/{production_builder.slug(code if code in production_builder.CANADIAN_REGIONS else production_builder.STATE_NAMES.get(code, code))}/"
+    )
     overlay.future = production_builder.current
     overlay.merge_events = lambda primary, supplemental: merge_production_events(
         production_builder,

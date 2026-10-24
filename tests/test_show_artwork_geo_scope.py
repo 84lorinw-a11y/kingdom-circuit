@@ -20,9 +20,9 @@ class ArtworkGeographyTests(unittest.TestCase):
             with patch.object(artwork, "PINS", [{"id": "pinned-show", "startDate": "2999-01-01"}]):
                 artwork.verify(site)
 
-    def test_retained_canadian_source_does_not_require_us_page(self):
+    def test_retained_out_of_scope_source_does_not_require_public_page(self):
         self.run_verification([{"id": "pinned-show", "startDate": "2999-01-01",
-                                "state": "SK", "country": "CA"}])
+                                "state": "LND", "country": "GB"}])
 
     def test_missing_current_pin_still_fails_without_excluded_source(self):
         with self.assertRaisesRegex(AssertionError, "missing active event"):

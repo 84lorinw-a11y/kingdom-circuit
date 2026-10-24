@@ -21,6 +21,10 @@ STATE_NAMES = {
     "AL":"Alabama","AK":"Alaska","AZ":"Arizona","AR":"Arkansas","CA":"California","CO":"Colorado","CT":"Connecticut","DE":"Delaware","DC":"District of Columbia","FL":"Florida","GA":"Georgia","HI":"Hawaii","ID":"Idaho","IL":"Illinois","IN":"Indiana","IA":"Iowa","KS":"Kansas","KY":"Kentucky","LA":"Louisiana","ME":"Maine","MD":"Maryland","MA":"Massachusetts","MI":"Michigan","MN":"Minnesota","MS":"Mississippi","MO":"Missouri","MT":"Montana","NE":"Nebraska","NV":"Nevada","NH":"New Hampshire","NJ":"New Jersey","NM":"New Mexico","NY":"New York","NC":"North Carolina","ND":"North Dakota","OH":"Ohio","OK":"Oklahoma","OR":"Oregon","PA":"Pennsylvania","RI":"Rhode Island","SC":"South Carolina","SD":"South Dakota","TN":"Tennessee","TX":"Texas","UT":"Utah","VT":"Vermont","VA":"Virginia","WA":"Washington","WV":"West Virginia","WI":"Wisconsin","WY":"Wyoming","PR":"Puerto Rico"
 }
 
+US_REGION_CODES = frozenset(STATE_NAMES)
+CANADIAN_REGIONS = {'AB': 'Alberta', 'BC': 'British Columbia', 'MB': 'Manitoba', 'NB': 'New Brunswick', 'NL': 'Newfoundland and Labrador', 'NS': 'Nova Scotia', 'NT': 'Northwest Territories', 'NU': 'Nunavut', 'ON': 'Ontario', 'PE': 'Prince Edward Island', 'QC': 'Quebec', 'SK': 'Saskatchewan', 'YT': 'Yukon'}
+STATE_NAMES.update(CANADIAN_REGIONS)
+
 
 def esc(v): return html.escape(str(v or ""), quote=True)
 def norm(v): return str(v or "").strip().casefold()
@@ -43,8 +47,8 @@ def event_path(e): return f"/event/{event_slug(e)}/"
 def artist_path(name): return f"/artists/{slug(name)}/"
 def state_path(code):
     # Keep Puerto Rico's established route aligned with permanent state pages.
-    return "/shows/pr/" if code == "PR" else f"/shows/{slug(STATE_NAMES.get(code,code))}/"
-def city_path(city, code): return f"/shows/{slug(city)}-{slug(STATE_NAMES.get(code,code))}/"
+    return f"/shows/{code.lower()}/" if code == "PR" or code in CANADIAN_REGIONS else f"/shows/{slug(STATE_NAMES.get(code,code))}/"
+def city_path(city, code): return f"/shows/{slug(city)}-{slug(code if code in CANADIAN_REGIONS else STATE_NAMES.get(code,code))}/"
 def absolute(path): return SITE.rstrip("/") + "/" + path.lstrip("/")
 
 def image_url(value):
@@ -61,11 +65,13 @@ def scheduled(e):
     return norm(e.get("status") or "scheduled") not in {"cancelled", "canceled", "postponed", "merged"}
 
 def domestic_event(event):
-    """Publish only U.S. performances (including Puerto Rico); retain foreign sources."""
+    """Publish U.S./Puerto Rico and owner-approved Canadian coverage."""
     country = norm(event.get("country") or "US")
     state = str(event.get("state") or "").strip().upper()
+    if country in {"ca", "can", "canada"}:
+        return not state or state in CANADIAN_REGIONS
     return country in {"us", "usa", "united states", "united states of america", "pr", "puerto rico"} and (
-        not state or state in STATE_NAMES
+        not state or state in US_REGION_CODES
     )
 
 
