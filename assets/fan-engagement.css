@@ -1,0 +1,86 @@
+/* Draft addition, scoped to the empty-show panel. Existing artist styling stays. */
+.kc-empty-discovery {
+  margin: 0;
+  padding: 24px;
+  border: 1px solid #332a22;
+  border-radius: 10px;
+  background: #100e0b;
+  color: #f6f3ed;
+}
+.kc-empty-message {
+  margin: 0 0 18px;
+  font-size: 20px;
+  line-height: 1.28;
+  font-weight: 750;
+  letter-spacing: -.025em;
+}
+.kc-draft-break { display: none; }
+.kc-empty-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.kc-empty-actions a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 8px;
+  min-width: 0;
+  transition: background-color .15s ease, outline-color .15s ease;
+}
+.kc-empty-actions a:focus-visible { outline: 3px solid #f6f3ed; outline-offset: 4px; }
+.kc-empty-explore {
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  color: #090806 !important;
+  background: #ff805b;
+  border: 1px solid #ff805b;
+}
+.kc-empty-explore > span { display: grid; gap: 2px; }
+.kc-empty-explore strong { font-size: 20px; line-height: 1.2; letter-spacing: -.025em; }
+.kc-empty-explore span span { font-size: 16px; line-height: 1.25; font-weight: 650; }
+.kc-empty-explore > img { flex: 0 0 24px; }
+.kc-empty-explore:hover { background: #ff997b; }
+.kc-empty-instagram {
+  gap: 16px;
+  padding: 14px 18px;
+  background: #1a1712;
+  color: #f6f3ed !important;
+  border: 1px solid #574334;
+}
+.kc-empty-instagram > span { font-size: 17px; line-height: 1.25; font-weight: 750; }
+.kc-empty-instagram-logo { flex: 0 0 48px; width: 48px; height: 48px; }
+.kc-empty-outbound { margin-left: auto; flex: 0 0 24px; filter: invert(1); }
+.kc-empty-instagram:hover { background: #292117; }
+@media (max-width: 720px) {
+  body:has([data-empty-discovery]:not([hidden])) .kc-rd-profile-section-title { margin-inline: 5px !important; }
+  body:has([data-empty-discovery]:not([hidden])) .kc-rd-show-list { margin: 12px 0 0 !important; }
+  .kc-empty-discovery { padding: 24px 14px 14px; border-radius: 8px; }
+  .kc-empty-message { margin: 0 2px 16px; font-size: 20px; line-height: 1.2; }
+  .kc-empty-actions { grid-template-columns: 1fr; gap: 10px; }
+  .kc-empty-explore { padding: 14px 12px; min-height: 70px; }
+  .kc-empty-explore strong { font-size: 20px; }
+  .kc-empty-instagram { padding: 13px 14px; gap: 18px; min-height: 78px; }
+  .kc-empty-instagram > span { font-size: 17px; }
+  body:has([data-empty-discovery]:not([hidden])) .kc-rd-past-shows { margin: 12px 0 28px !important; padding: 0 !important; border-radius: 8px !important; }
+  body:has([data-empty-discovery]:not([hidden])) .kc-rd-past-shows summary { flex-wrap: nowrap !important; min-height: 90px; padding: 22px 18px !important; gap: 10px !important; }
+  body:has([data-empty-discovery]:not([hidden])) .kc-rd-past-shows summary > span { white-space: nowrap; font-size: 12px; }
+  body:has([data-empty-discovery]:not([hidden])) .kc-rd-past-shows summary .past-count { margin-left: auto; font-size: 10.5px; letter-spacing: 1px; }
+  body:has([data-empty-discovery]:not([hidden])) .kc-rd-past-shows summary::after { flex: 0 0 auto; }
+}
+@media (max-width: 360px) {
+  .kc-empty-discovery { padding-inline: 12px; }
+  .kc-empty-explore strong { font-size: 19px; }
+  .kc-empty-instagram { gap: 14px; padding-inline: 12px; }
+  .kc-empty-instagram > span { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { .kc-empty-actions a { transition: none; } }
+
+[data-empty-discovery][hidden] { display: none !important; }
+.kc-empty-explore strong [data-live-show-count] {font:inherit;display:inline}
+.kc-analytics-viewer {margin:0;background:#100e0b;color:#f6f3ed;font:16px/1.5 system-ui,sans-serif}
+.kc-analytics-viewer main {max-width:1000px;margin:auto;padding:24px}
+.kc-analytics-viewer a {color:#ff997b}.kc-analytics-viewer nav,.kc-analytics-controls{display:flex;flex-wrap:wrap;gap:16px;margin:20px 0}
+.kc-analytics-viewer button {min-height:44px;padding:10px 16px;border-radius:8px;border:1px solid #ff805b;background:#211a16;color:#fff;font:inherit;cursor:pointer}
+.kc-test-label {font-weight:750;color:#ff997b}.kc-analytics-viewer pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}
+.kc-analytics-viewer details{border:1px solid #574334;border-radius:8px;padding:12px;margin:8px 0}
+#analytics-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+#analytics-summary p{background:#211a16;padding:16px;border-radius:8px;margin:0}
+#analytics-summary strong{display:block;font-size:28px}

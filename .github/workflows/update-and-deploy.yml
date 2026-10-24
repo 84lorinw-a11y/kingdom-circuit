@@ -55,7 +55,7 @@ jobs:
       - name: Run all automated tests
         run: |
           python -m unittest discover -s tests -p 'test_*.py' -v
-          node --test tests/artist-intake-submit.test.cjs
+          node --test tests/artist-intake-submit.test.cjs tests/artist-engagement.test.cjs
           node --test tests/mobile-discovery.test.cjs tests/national-discovery.test.cjs tests/fan-discovery.test.cjs
 
       - name: Add priority artist fallback calendars
@@ -509,6 +509,12 @@ jobs:
 
       - name: Display verified sold-out artwork notices
         run: python scripts/finalize_sold_out_artwork.py _site
+
+      - name: Apply and verify approved artist discovery and Google events
+        run: |
+          python scripts/artist_engagement.py _site _engagement_baseline
+          python scripts/artist_engagement.py _site _engagement_baseline --check
+          node --check _site/assets/fan-engagement.js
 
       - name: Check out approved CHH Show Night release
         uses: actions/checkout@v4
