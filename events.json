@@ -12759,5 +12759,82 @@
         "resolvedDate": "2026-09-26"
       }
     ]
+  },
+  {
+    "id": "manual:legacy-conf-miami-live-concert-north-lauderdale-2026-11-21",
+    "title": "Legacy Conf Miami — Live Concert",
+    "startDate": "2026-11-21",
+    "endDate": "2026-11-21",
+    "startTime": "16:45",
+    "endTime": "",
+    "timezone": "America/New_York",
+    "startDateTime": "2026-11-21T16:45:00-05:00",
+    "venue": "Riverside Church",
+    "address": "957 Rock Island Rd",
+    "city": "North Lauderdale",
+    "state": "FL",
+    "postalCode": "33068",
+    "country": "US",
+    "artists": [
+      "Tommy Royale",
+      "Shepherd",
+      "GIOVANI"
+    ],
+    "headliner": "Tommy Royale",
+    "advertisedBilling": [
+      "Tommy Royale",
+      "Shepherd",
+      "GIOVANI"
+    ],
+    "officialBill": [
+      "Tommy Royale",
+      "Shepherd",
+      "GIOVANI"
+    ],
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://lp.constantcontactpages.com/ev/reg/94b25beb-7b74-4d98-b521-9a65a1933d6d",
+    "officialUrl": "https://lp.constantcontactpages.com/ev/reg/94b25beb-7b74-4d98-b521-9a65a1933d6d",
+    "image": "assets/events/legacy-conf-miami-north-lauderdale-2026-11-21.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Legacy Disciple official Miami conference flyer",
+    "imageSourceUrl": "https://www.instagram.com/p/De5HkNbnWc9/",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "authority": "official_event",
+    "confidence": "high",
+    "sourceName": "Legacy Disciple official concert announcement and Miami schedule",
+    "organizer": "Legacy Disciple",
+    "firstSeen": "2026-10-24T22:58:50Z",
+    "lastVerified": "2026-10-24T22:58:50Z",
+    "auditVerified": "2026-10-24",
+    "publicDescription": "Tommy Royale, Shepherd, and GIOVANI perform in the closing concert at Legacy Conf Miami. The live concert begins at 4:45 PM at Riverside Church in North Lauderdale. The full conference begins at 9 AM; register through the official event page.",
+    "description": "Tommy Royale, Shepherd, and GIOVANI perform in the closing concert at Legacy Conf Miami. The live concert begins at 4:45 PM at Riverside Church in North Lauderdale. The full conference begins at 9 AM; register through the official event page.",
+    "notes": "Previously held research lead resolved by the October 24 organizer announcement: caption explicitly names Tommy Royale, Shepherd and Giovani as music performers. The flyer labels Preston Perry and Manouchka Charles as general-session speakers, and Shepherd as conference host; the caption separately confirms his music role. The Miami-specific organizer schedule explicitly lists a 4:45 PM live concert. Registration confirms November 21, 2026, Riverside Church, 957 Rock Island Rd, North Lauderdale, FL 33068; 9 AM–6:30 PM is the full conference window, not the concert start or verified individual set times. Advertised as Miami, but public venue city uses North Lauderdale. No concert-only ticket, doors time, exact set times, or standalone concert end inferred. Price omitted because the ticket page displays $54.99 while its description says it increases to $59.99 after October 21.",
+    "sources": [
+      {
+        "name": "Legacy Disciple October 24 Miami music lineup announcement",
+        "url": "https://www.instagram.com/p/De5HkNbnWc9/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 116
+      },
+      {
+        "name": "Legacy Miami venue and 4:45 PM live-concert schedule",
+        "url": "https://www.legacydisciple.org/miami-need-to-know-2",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 116
+      },
+      {
+        "name": "Legacy Miami official registration",
+        "url": "https://lp.constantcontactpages.com/ev/reg/94b25beb-7b74-4d98-b521-9a65a1933d6d",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 115
+      }
+    ]
   }
 ]
