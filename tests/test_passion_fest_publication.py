@@ -17,7 +17,7 @@ class PassionFestPublicationTests(unittest.TestCase):
         candidate = update_events.normalize_manual_event(row, "2026-09-29T15:14:40Z")
         published = update_events.finalize_event(candidate, {})
         self.assertIsNotNone(published)
-        self.assertEqual(published["artists"], ["Queen Lee", "BigBreeze", "Mission", "Lyric The Geenyus", "Bo Fisher", "Xeem", "Bruh", "SOC Driz", "Big Lek", "TBlessing"])
+        self.assertEqual(published["artists"], ["Queen Lee", "BigBreeze", "Mission", "Lyric The Geenyus", "Bo Fisher", "Xeem", "Bruh", "SOC Driz", "Big Lek", "TBlessing", "Altar Ego"])
 
     def test_refresh_preserves_billing_and_deduplicates_without_changing_other_shows(self):
         other = {"id": "other-show", "title": "Unrelated show"}

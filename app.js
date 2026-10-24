@@ -389,7 +389,8 @@ const ARTIST_ROSTER_ORDER = [
   "Believin Stephen",
   "Ryan Ellis",
   "Kemara Lynn",
-  "R3st0red"
+  "R3st0red",
+  "Altar Ego"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -5653,6 +5654,23 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/r3st0red-official-oct23.jpg",
     "imagePosition": "67% 32%",
     "state": "MD",
+    "sourceRegistryVerified": true
+  },
+  "altar ego": {
+    "aliases": [
+      "Altar Ego",
+      "ALtAR EGO",
+      "Altar Ego Records"
+    ],
+    "website": "https://www.instagram.com/altaregorecords/",
+    "instagramProfile": "https://www.instagram.com/altaregorecords/",
+    "spotifyProfile": "https://open.spotify.com/artist/4lZP7gtShMKQthYf6o6V0K",
+    "youtubeProfile": "https://www.youtube.com/@ThisIsAltarEgo",
+    "officialImageSource": "https://www.instagram.com/thedripcafecolorado/p/DdR-SVHJ3Fx/",
+    "imageUrl": "assets/artists/altar-ego-owner-approved-oct23.jpg",
+    "imagePosition": "50% 26.6%",
+    "state": "SC",
+    "label": "Altar Ego Records",
     "sourceRegistryVerified": true
   }
 };
@@ -10919,6 +10937,23 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imagePosition": "67% 32%",
     "state": "MD",
     "sourceRegistryVerified": true
+  },
+  "altar ego": {
+    "aliases": [
+      "Altar Ego",
+      "ALtAR EGO",
+      "Altar Ego Records"
+    ],
+    "website": "https://www.instagram.com/altaregorecords/",
+    "instagramProfile": "https://www.instagram.com/altaregorecords/",
+    "spotifyProfile": "https://open.spotify.com/artist/4lZP7gtShMKQthYf6o6V0K",
+    "youtubeProfile": "https://www.youtube.com/@ThisIsAltarEgo",
+    "officialImageSource": "https://www.instagram.com/thedripcafecolorado/p/DdR-SVHJ3Fx/",
+    "imageUrl": "assets/artists/altar-ego-owner-approved-oct23.jpg",
+    "imagePosition": "50% 26.6%",
+    "state": "SC",
+    "label": "Altar Ego Records",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -12425,6 +12460,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "r3st0red": {
     "imageUrl": "assets/artists/r3st0red-official-oct23.jpg",
     "imagePosition": "67% 32%"
+  },
+  "altar ego": {
+    "imageUrl": "assets/artists/altar-ego-owner-approved-oct23.jpg",
+    "imagePosition": "50% 26.6%"
   }
 };
 
