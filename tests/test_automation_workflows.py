@@ -50,9 +50,11 @@ class AutomationWorkflowTests(unittest.TestCase):
         self.assertIn('queue: max', main)
         for name in ('Add priority artist fallback calendars', 'Collect upcoming shows', 'Run expanded all-artist source scan', 'Save refreshed event data'):
             condition = main.split('- name: ' + name)[1].split('\n')[1]
-            self.assertIn("github.event_name == 'schedule'", condition)
-            self.assertIn("github.event_name == 'workflow_dispatch'", condition)
-            self.assertNotIn("!= 'push'", condition)
+            self.assertIn("steps.refresh-mode.outputs.discovery == 'true'", condition)
+        self.assertIn('python scripts/calendar_maintenance.py --mode', main)
+        self.assertIn('cron: "15 0 * * *"', main)
+        self.assertIn('timezone: "America/Los_Angeles"', main)
+        self.assertIn('options: [full, dates]', main)
         website = self.workflow('artist-website-refresh')
         self.assertIn("github.event.workflow_run.event == 'schedule'", website)
         self.assertIn("github.event.workflow_run.event == 'workflow_dispatch'", website)

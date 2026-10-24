@@ -4,8 +4,15 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: "23 11 * * *"
+    - cron: "15 0 * * *"
+      timezone: "America/Los_Angeles"
   workflow_dispatch:
+    inputs:
+      refresh_mode:
+        description: "Refresh dates from existing verified data or discover new shows"
+        type: choice
+        options: [full, dates]
+        default: full
   workflow_run:
     workflows: ["Daily Bandsintown discovery", "Refresh official artist website shows", "Merge verified artist seed events"]
     types: [completed]
@@ -49,6 +56,14 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Choose independent date maintenance or full discovery
+        id: refresh-mode
+        env:
+          KC_EVENT_NAME: ${{ github.event_name }}
+          KC_REQUESTED_MODE: ${{ inputs.refresh_mode }}
+          KC_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+        run: python scripts/calendar_maintenance.py --mode >> "$GITHUB_OUTPUT"
+
       - name: Sync verified artist registry
         run: python scripts/sync_verified_artist_registry.py
 
@@ -59,17 +74,17 @@ jobs:
           node --test tests/mobile-discovery.test.cjs tests/national-discovery.test.cjs tests/fan-discovery.test.cjs
 
       - name: Add priority artist fallback calendars
-        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message || '', '[full scan]')
+        if: steps.refresh-mode.outputs.discovery == 'true'
         run: python scripts/apply_priority_source_fallbacks.py
 
       - name: Collect upcoming shows
-        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message || '', '[full scan]')
+        if: steps.refresh-mode.outputs.discovery == 'true'
         env:
           TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
         run: python scripts/update_events.py
 
       - name: Run expanded all-artist source scan
-        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message || '', '[full scan]')
+        if: steps.refresh-mode.outputs.discovery == 'true'
         run: |
           python -m py_compile scripts/scan_all_artist_sources.py
           python scripts/scan_all_artist_sources.py
@@ -123,14 +138,14 @@ jobs:
         run: python scripts/apply_oct3_concert_corrections.py
 
       - name: Restore runtime-only source configuration
-        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message || '', '[full scan]')
+        if: steps.refresh-mode.outputs.discovery == 'true'
         run: git checkout -- config/official-sources.json
 
       - name: Validate refreshed source before publication
         run: python -m unittest discover -s tests -p 'test_*.py' -q
 
       - name: Save refreshed event data
-        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message || '', '[full scan]')
+        if: steps.refresh-mode.outputs.discovery == 'true'
         env:
           TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
         shell: bash
@@ -541,6 +556,9 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
+      - name: Verify current dates counts and all artist next shows
+        run: python scripts/calendar_maintenance.py --site _site --output calendar-freshness-build.json
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -549,3 +567,23 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+      - name: Verify published calendar freshness
+        shell: bash
+        run: |
+          for attempt in 1 2 3; do
+            if python scripts/calendar_maintenance.py --live https://kingdomcircuit.com --output calendar-freshness-live.json; then
+              exit 0
+            fi
+            if [ "$attempt" -lt 3 ]; then sleep 20; fi
+          done
+          exit 1
+
+      - name: Keep calendar freshness verification results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: calendar-freshness
+          path: calendar-freshness-*.json
+          if-no-files-found: ignore
+          retention-days: 14

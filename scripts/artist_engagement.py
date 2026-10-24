@@ -23,7 +23,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ('fan-engagement.js', 'fan-engagement.css',
           'fan-instagram.svg', 'fan-arrow-right.svg', 'fan-arrow-up-right.svg')
 FILES = frozenset({f'assets/{n}' for n in ASSETS} | {'assets/fan-show-catalog.json', MANIFEST})
-VERSION = '20261024-4'
+VERSION = '20261024-5'
 
 def context(live, as_of=None):
     doc = Document(source_text(live, 'shows/index.html'))
@@ -33,7 +33,9 @@ def context(live, as_of=None):
     shows = []
     for r in card_records(source_text(live, 'shows/index.html')):
         shows.append({'path': r['href'], 'name': r['name'], 'date': r['attrs']['data-date'],
-                      'end': r['attrs'].get('data-end-date') or r['attrs']['data-date']})
+                      'end': r['attrs'].get('data-end-date') or r['attrs']['data-date'],
+                      'when': r['meta'].get('Date',''), 'venue': r['meta'].get('Venue',''),
+                      'location': r['meta'].get('Location','')})
     artists = {}
     for file in sorted((live / 'artists').glob('*/index.html')):
         doc = Document(file.read_text())
@@ -131,7 +133,8 @@ def transform(relative, data, ctx):
 
 def generated(ctx):
     result = {f'assets/{n}': (ROOT/'assets'/n).read_bytes() for n in ASSETS}
-    catalog = {'asOf':ctx['asOf'], 'shows':ctx['shows']}
+    catalog = {'asOf':ctx['asOf'], 'shows':ctx['shows'],
+               'artists':{a['path']:a['shows'] for a in ctx['artists'].values()}}
     result['assets/fan-show-catalog.json'] = (json.dumps(catalog, separators=(',',':'))+'\n').encode()
     return result
 

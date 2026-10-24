@@ -28,6 +28,25 @@ test('artist selection is a destination action; state links are not weekend or m
  assert.equal(r.event,'artist_select');
 });
 const {STORE,safeText,clean,today,countShows,tracker,attemptState}=require('../assets/fan-engagement.js');
+test('artist schedule drops yesterday and missing catalog records while retaining an ongoing multi-day show',()=>{
+ const {artistSchedule}=require('../assets/fan-engagement.js');
+ const shows=[{path:'/yesterday',date:'2026-10-23'},{path:'/ongoing',date:'2026-10-22',end:'2026-10-24'},{path:'/later',date:'2026-11-01'}];
+ assert.deepEqual(artistSchedule(['/yesterday','/missing','/ongoing','/later'],shows,'2026-10-24').map(s=>s.path),['/ongoing','/later']);
+ assert.deepEqual(artistSchedule(['/yesterday','/later'],shows,'2026-10-24').map(s=>s.path),['/later']);
+ assert.deepEqual(artistSchedule(['/yesterday'],shows,'2026-10-24'),[]);
+});
+test('visible next-show card advances to the remaining future performance with its real place and time',()=>{
+ const {refreshArtistSchedule}=require('../assets/fan-engagement.js');
+ const row=path=>({hidden:false,getAttribute:()=>path});const old=row('/old'),future=row('/future');
+ const fields=Object.fromEntries(['.kc-rd-next-kicker','.kc-rd-next-place','.kc-rd-next-venue','.kc-rd-event-title'].map(k=>[k,{textContent:'old'}]));
+ const next={href:'/old',hidden:false,getAttribute(){return this.href},setAttribute(k,v){this.href=v},querySelector:s=>fields[s]};
+ const total={textContent:'2 upcoming'};const listing={querySelectorAll:()=>[old,future]};
+ const doc={querySelector:s=>({'.kc-rd-show-list':listing,'.kc-rd-next-show':next,'.kc-rd-upcoming-total':total})[s],querySelectorAll:()=>[]};
+ refreshArtistSchedule(doc,{showPaths:['/old','/future']},[{path:'/old',date:'2026-10-23'},{path:'/future',date:'2026-11-13',name:'NRG Conference',location:'Saskatoon, SK',venue:'Horizon',when:'Fri, Nov 13, 2026 - 9:00 PM'}],'2026-10-24');
+ assert.equal(old.hidden,true);assert.equal(future.hidden,false);assert.equal(next.href,'/future');assert.equal(total.textContent,'1 upcoming');
+ assert.equal(fields['.kc-rd-next-kicker'].textContent,'Next show · NOV 13');
+ assert.equal(fields['.kc-rd-next-place'].textContent,'Saskatoon, SK');assert.equal(fields['.kc-rd-next-venue'].textContent,'Horizon · 9:00 PM');
+});
 function storage(){const s=new Map();return{getItem:k=>s.get(k),setItem:(k,v)=>s.set(k,v)};}
 test('count matches inclusive end dates, deduplicates events and crosses Pacific midnight',()=>{
  const shows=[{path:'/a',date:'2026-10-23'},{path:'/b',date:'2026-10-21',end:'2026-10-24'},{path:'/c',date:'2027-01-02'},{path:'/a',date:'2026-10-23'}];
