@@ -23,9 +23,13 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ('fan-engagement.js', 'fan-engagement.css',
           'fan-instagram.svg', 'fan-arrow-right.svg', 'fan-arrow-up-right.svg')
 FILES = frozenset({f'assets/{n}' for n in ASSETS} | {'assets/fan-show-catalog.json', MANIFEST})
-VERSION = '20261024-3'
+VERSION = '20261024-4'
 
 def context(live, as_of=None):
+    doc = Document(source_text(live, 'shows/index.html'))
+    nav = doc.one(lambda n: n.tag == 'nav' and n.has('kc-state-links'))
+    state_paths = {n.attrs['href']: doc.text(next(c for c in n.children if c.tag == 'span')) for n in doc.nodes
+                   if n.tag == 'a' and nav.start < n.start < nav.end}
     shows = []
     for r in card_records(source_text(live, 'shows/index.html')):
         shows.append({'path': r['href'], 'name': r['name'], 'date': r['attrs']['data-date'],
@@ -45,7 +49,7 @@ def context(live, as_of=None):
         artists[rel] = {'name': doc.text(names[0]), 'shows': rows,
                         'empty': not rows, 'path': BASE + rel.removesuffix('index.html')}
     today = as_of or datetime.now(ZoneInfo('America/Los_Angeles')).date().isoformat()
-    return {'asOf': today, 'shows': shows, 'artists': artists,
+    return {'asOf': today, 'shows': shows, 'artists': artists, 'statePaths': state_paths,
             'count': sum(s['end'] >= today for s in shows)}
 
 def panel(name, count):
@@ -91,7 +95,7 @@ def transform(relative, data, ctx):
     if not rel.endswith('.html'):
         return data
     text = data.decode()
-    config = {'mode': 'production', 'base': BASE, 'version': VERSION, 'pageType': 'other', 'artist': '', 'show': ''}
+    config = {'mode': 'production', 'base': BASE, 'version': VERSION, 'pageType': 'other', 'artist': '', 'show': '', 'statePaths': ctx.get('statePaths', {})}
     if rel in ctx['artists']:
         artist = ctx['artists'][rel]
         config.update(pageType='artist', artist=artist['name'], showPaths=artist['shows'])
@@ -115,6 +119,8 @@ def transform(relative, data, ctx):
         config['pageType'] = 'submission'
     elif rel == 'index.html':
         config['pageType'] = 'home'
+    elif rel == 'about-us/index.html':
+        config['pageType'] = 'about'
     elif rel.startswith(('shows/', 'festivals/', 'new-shows/')):
         config['pageType'] = 'show_list'
     elif rel == 'artists/index.html':
@@ -145,6 +151,18 @@ def verify(live, site, ctx):
         assert [(n.attrs.get('src'),n.attrs.get('srcset')) for n in before.nodes if n.tag=='img'] == [(n.attrs.get('src'),n.attrs.get('srcset')) for n in after.nodes if n.tag=='img' and 'fan-' not in n.attrs.get('src','')], f'{rel}: photo changed'
     return {'version':VERSION, 'asOf':ctx['asOf'], 'count':ctx['count'], 'artistPages':len(ctx['artists']), 'emptyArtistPages':empty, 'analyticsDestination':'existing-production-Google-Analytics'}
 
+def verify_google_tag(text, relative):
+    """Check executable tags, not an ID left behind in a disabled-tag comment."""
+    doc = Document(text)
+    scripts = [n for n in doc.nodes if n.tag == 'script']
+    loaders = [n for n in scripts if 'googletagmanager.com/gtag/js' in n.attrs.get('src', '')]
+    assert len(loaders) == 1, f'{relative}: expected exactly one Google loader'
+    assert loaders[0].attrs['src'] == 'https://www.googletagmanager.com/gtag/js?id=G-N2KK9XF4TJ'
+    assert 'async' in loaders[0].attrs, f'{relative}: Google must not block rendering'
+    inline = '\n'.join(doc.raw(n) for n in scripts if not n.attrs.get('src') and n.attrs.get('type', '') != 'application/json')
+    assert 'dataLayer' in inline and re.search(r'function\s+gtag\s*\(', inline), f'{relative}: missing Google bootstrap'
+    assert len(re.findall(r"gtag\(\s*['\"]config['\"]\s*,\s*['\"]G-N2KK9XF4TJ['\"]", inline)) == 1, f'{relative}: missing/duplicate Google config'
+
 def verify_release(site, baseline):
     metadata=json.loads((site/MANIFEST).read_text())
     ctx=context(baseline,metadata['asOf'])
@@ -160,6 +178,11 @@ def verify_release(site, baseline):
         text=(site/rel).read_text()
         assert 'G-N2KK9XF4TJ' in text, f'Existing Google tag missing: {rel}'
         assert '/kingdom-circuit-test/' not in text and 'G-NBY8D9JSDH' not in text
+    for rel in before:
+        if rel.suffix == '.html':
+            text = (site/rel).read_text()
+            if 'id="kc-fan-config"' in text:
+                verify_google_tag(text, str(rel))
     assert (site/'CNAME').read_text().strip()=='kingdomcircuit.com'
     result.update(originalFilesPreserved=len(before),productionIdentityVerified=True)
     return result

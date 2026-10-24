@@ -2,8 +2,8 @@
 (function (root) {
   'use strict';
   const STORE = 'kc-fan-test-events-v1', JOURNEY = 'kc-fan-empty-journey-v1';
-  const EVENTS = new Set(['artist_view','show_view','page_engagement','empty_shows_impression','empty_shows_click','event_select','ticket_referral','instagram_referral','artist_social_click','artist_jump_select','artist_suggestion_open','search_results','form_start','form_attempt','form_success','form_error','web_performance','site_error','traffic_arrival','state_select']);
-  const KEYS = new Set(['page_type','page_path','artist_name','show_name','placement','action','platform','destination_host','destination_path','result_count','search_term','state','dates','artist_filter','show_type','form_type','error_type','metric','value','viewport','source_artist','source_action','source','medium','campaign','referrer_host','visible_seconds','scroll_percent','show_count']);
+  const EVENTS = new Set(['artist_view','artist_select','show_view','page_engagement','empty_shows_impression','empty_shows_click','event_select','ticket_referral','instagram_referral','facebook_referral','artist_social_click','artist_jump_select','artist_suggestion_open','search_results','form_start','form_attempt','form_success','form_error','web_performance','site_error','traffic_arrival','state_select','collection_select']);
+  const KEYS = new Set(['page_type','page_path','artist_name','show_name','placement','action','platform','referral_type','destination_host','destination_path','result_count','search_term','state','dates','artist_filter','show_type','form_type','error_type','metric','value','lcp_ms','layout_shift_sum','max_interaction_ms','viewport','source_artist','source_action','source','medium','campaign','referrer_host','visible_seconds','scroll_percent','show_count']);
   function safeText(value) {
     const s = String(value ?? '').trim().replace(/[\x00-\x1f]/g,' ');
     // Never collect contact information, URLs, long numbers or submitted fields.
@@ -40,7 +40,28 @@
       finish(form,status){const s=states.get(form);if(!s?.pending || !['success','error'].includes(status))return null;s.pending=false;return {type:s.type,status};}
     };
   }
-  const api={STORE,JOURNEY,safeText,clean,today,countShows,tracker,attemptState};
+  function classifyLink({url,origin,base='/',statePaths={},inArtistArea=false,inEventArea=false,label=''}) {
+    if(!['https:','http:'].includes(url.protocol))return null;
+    const path=url.pathname,host=url.hostname.toLowerCase(),at=domain=>host===domain||host.endsWith('.'+domain);
+    if(url.origin===origin){
+      const params={destination_path:path};
+      if(path.startsWith(base+'event/'))return {event:'event_select',params};
+      if(path.startsWith(base+'artists/') && /^[^/]+\/$/.test(path.slice((base+'artists/').length)))return {event:'artist_select',params};
+      if(Object.hasOwn(statePaths,path))return {event:'state_select',params:{...params,state:statePaths[path]}};
+      if(path.startsWith(base+'shows/')||path===base+'festivals/'||path===base+'new-shows/')return {event:'collection_select',params};
+      return null;
+    }
+    const params={destination_host:host};
+    if(at('instagram.com')&&path.replace(/\/+$/,'').toLowerCase()==='/thekingdomcircuit')return {event:'instagram_referral',params:{platform:'instagram',...params}};
+    if(at('facebook.com')&&path==='/profile.php'&&url.searchParams.get('id')==='61593510924754')return {event:'facebook_referral',params:{platform:'facebook',...params}};
+    if(inEventArea&&/official details|tickets|register/i.test(label))return {event:'ticket_referral',params:{...params,referral_type:/register/i.test(label)?'registration':/tickets/i.test(label)?'ticket':'information'}};
+    if(inArtistArea){
+      const platform=at('instagram.com')?'instagram':at('spotify.com')?'spotify':at('youtube.com')||at('youtu.be')?'youtube':at('facebook.com')?'facebook':at('tiktok.com')?'tiktok':/official website/i.test(label)?'website':null;
+      if(platform)return {event:'artist_social_click',params:{platform,...params}};
+    }
+    return null;
+  }
+  const api={STORE,JOURNEY,safeText,clean,today,countShows,tracker,attemptState,classifyLink};
   if (typeof module==='object' && module.exports) module.exports=api;
   if (!root.document) return;
   const d=root.document, configNode=d.getElementById('kc-fan-config'); if (!configNode || root.KCFanAnalytics) return;
@@ -85,7 +106,7 @@
     try{const r=await fetch(config.base+(config.catalogFile||'assets/fan-show-catalog.json'),{cache:'no-cache'});if(!r.ok)throw new Error();const data=await r.json();if(!Array.isArray(data.shows))throw new Error();catalog=data;lastFetch=Date.now();updateCatalog();}
     catch(_){track('site_error',{error_type:'catalog_unavailable'});observePanel();}finally{fetchPending=false;}
   }
-  function placement(el){return el.closest('[data-empty-discovery]')?'artist_no_shows':el.closest('header')?'header':el.closest('footer')?'footer':config.pageType;}
+  function placement(el){return el.closest('[data-empty-discovery]')?'artist_no_shows':el.closest('.kc-fan-artist-results')?'artist_search_results':el.closest('.kc-discovery-artists')?'home_artist_shelf':el.closest('[aria-labelledby="kc-weekend-heading"]')?'home_this_week':el.closest('[aria-labelledby="kc-next-heading"]')?'home_next_week':el.closest('[data-artist-card]')?'artist_directory':el.closest('header')?'header':el.closest('footer')?'footer':config.pageType;}
   function artistFor(el){if(config.artist)return config.artist;const card=el.closest('[data-artist-card]');return card?.querySelector('h2,h3')?.textContent.trim()||'';}
   d.addEventListener('click',event=>{
     const a=event.target.closest?.('a[href]');if(!a)return;
@@ -96,37 +117,35 @@
       track('empty_shows_click',{...shared,action:a.dataset.emptyAction,show_count:count});
       write(storage,JOURNEY,{artist:config.artist,action:a.dataset.emptyAction,time:Date.now()});
     }
-    if(url.origin===location.origin){
-      if(url.pathname.startsWith(config.base+'event/')) track('event_select',{...shared,...journey(),destination_path:url.pathname,show_name:a.closest('[data-event-card]')?.querySelector('h3')?.textContent.trim()||a.querySelector('.kc-rd-event-title')?.textContent.trim()||''});
-      if(url.pathname.startsWith(config.base+'shows/') && url.pathname!==config.base+'shows/') track('state_select',{...shared,destination_path:url.pathname});
-      return;
-    }
-    const ownIG=/(^|\.)instagram\.com$/.test(url.hostname)&&url.pathname.replace(/\/+$/,'').toLowerCase()==='/thekingdomcircuit';
-    if(ownIG){track('instagram_referral',{...shared,destination_host:url.hostname});return;}
-    const eventArea=a.closest('[data-event-card],.event-detail');
-    if(eventArea && (/official details|tickets|register/i.test((a.textContent||'')+' '+(a.getAttribute('aria-label')||'')))){
-      track('ticket_referral',{...shared,...journey(),show_name:config.show||eventArea.querySelector('h3')?.textContent.trim(),destination_host:url.hostname});return;
-    }
-    // Artist links only: never mistake an event's Instagram announcement for an artist profile.
-    if(config.pageType==='artist' || a.closest('[data-artist-card]')){
-      const platform=/instagram\.com$/.test(url.hostname)?'instagram':/spotify\.com$/.test(url.hostname)?'spotify':/youtube\.com$|youtu\.be$/.test(url.hostname)?'youtube':/facebook\.com$/.test(url.hostname)?'facebook':/tiktok\.com$/.test(url.hostname)?'tiktok':/official website/i.test(a.textContent)?'website':null;
-      if(platform)track('artist_social_click',{...shared,platform,destination_host:url.hostname});
-    }
+    const eventArea=a.closest('[data-event-card],.event-detail,.kc-discovery-show');
+    const result=classifyLink({url,origin:location.origin,base:config.base,statePaths:config.statePaths,
+      inEventArea:!!eventArea,inArtistArea:config.pageType==='artist'||!!a.closest('[data-artist-card]'),
+      label:(a.textContent||'')+' '+(a.getAttribute('aria-label')||'')});
+    if(!result)return;
+    const fields={...shared,...journey(),...result.params};
+    if(result.event==='artist_select')fields.artist_name=a.querySelector('strong')?.textContent.trim()||a.closest('[data-artist-card]')?.querySelector('h2,h3')?.textContent.trim()||a.textContent.trim();
+    if(['event_select','ticket_referral'].includes(result.event))fields.show_name=eventArea?.querySelector('h3')?.textContent.trim()||a.querySelector('.kc-rd-event-title')?.textContent.trim()||config.show||'';
+    track(result.event,fields);
   },true);
   d.addEventListener('focusin',e=>{const f=e.target.closest?.(formSelector);if(f && formStates.start(f,formType(f)))track('form_start',{form_type:formType(f)});},true);
   d.addEventListener('submit',e=>{const f=e.target;if(!f.matches?.(formSelector))return;const type=formType(f);if(formStates.start(f,type))track('form_start',{form_type:type});if(formStates.attempt(f,type))track('form_attempt',{form_type:type});},true);
   d.addEventListener('kc:submission-result',e=>{const result=formStates.finish(e.target,e.detail?.status);if(result)track('form_'+result.status,{form_type:result.type,...(result.status==='error'?{error_type:'submission_failed'}:{})});});
   let invalidTimer;d.addEventListener('invalid',e=>{const f=e.target.closest?.(formSelector);if(!f)return;clearTimeout(invalidTimer);invalidTimer=setTimeout(()=>track('form_error',{form_type:formType(f),error_type:'validation'}),100);},true);
   let searchTimer,lastSearch='';
-  function results(){
+  function results(action='initial_results'){
     const f=d.querySelector('[data-event-filters]');if(!f)return;
     const query=f.querySelector('[data-search-filter]')?.value||'';
     const values={search_term:query,state:f.querySelector('[data-state-filter]')?.value||'',artist_filter:f.querySelector('[data-artist-filter]')?.value||'',show_type:f.querySelector('[data-type-filter]')?.value||'',dates:f.querySelector('select[aria-label="Dates"]')?.value||new URLSearchParams(location.search).get('dates')||'all'};
     const resultCount=[...d.querySelectorAll('[data-event-card]')].filter(e=>!e.hidden).length;
     const signature=JSON.stringify({...values,result_count:resultCount});if(signature===lastSearch)return;lastSearch=signature;
-    track('search_results',{...values,result_count:resultCount});
+    track('search_results',{...values,action,result_count:resultCount});
   }
-  function queueSearch(e){if(e && !e.target.closest?.('[data-event-filters],.kc-fan-active'))return;clearTimeout(searchTimer);searchTimer=setTimeout(results,500);}
+  function queueSearch(e){
+    if(e && !e.target.closest?.('[data-event-filters],.kc-fan-active'))return;
+    if(e?.type==='click'&&!e.target.closest?.('button,.kc-fan-active'))return;
+    const action=!e?'history_navigation':e.target.matches?.('[data-search-filter]')?'search_change':'filter_change';
+    clearTimeout(searchTimer);searchTimer=setTimeout(()=>results(action),500);
+  }
   ['input','change','click'].forEach(name=>d.addEventListener(name,queueSearch,true));
   d.addEventListener('submit',e=>{if(!e.target.matches?.('[data-fan-finder]'))return;track('search_results',{placement:'home',action:'search_submit',search_term:e.target.elements.q?.value||'',state:e.target.elements.state?.value||'',dates:e.target.elements.dates?.value||''});},true);
   root.addEventListener('popstate',()=>queueSearch());
@@ -144,7 +163,7 @@
       if(type==='event'&&entry.interactionId)perf.max_interaction_ms=Math.max(perf.max_interaction_ms||0,entry.duration);
     }});po.observe({type,buffered:true,...(type==='event'?{durationThreshold:40}:{})});
   }catch(_){}
-  function reportPerformance(){for(const[metric,value]of Object.entries(perf)){track('web_performance',{metric,value});delete perf[metric];}}
+  function reportPerformance(){for(const[metric,value]of Object.entries(perf)){track('web_performance',{metric,value,[metric]:value});delete perf[metric];}}
   root.addEventListener('pagehide',reportPerformance);d.addEventListener('visibilitychange',()=>{if(d.visibilityState==='hidden')reportPerformance();});
   let errors=0;root.addEventListener('error',e=>{if(errors++>=5)return;track('site_error',{error_type:e.target?.tagName==='IMG'?'image_load':e.target?.tagName==='SCRIPT'?'script_load':'javascript'});},true);
   root.addEventListener('unhandledrejection',()=>{if(errors++<5)track('site_error',{error_type:'unhandled_promise'});});
