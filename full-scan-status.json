@@ -1,29 +1,29 @@
 {
-  "generatedAt": "2026-10-22T16:28:01Z",
-  "artistsChecked": 375,
+  "generatedAt": "2026-10-25T14:23:50Z",
+  "artistsChecked": 377,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
   "festivalCandidates": 1,
   "bandsintown": {
     "discoveryMode": "structured_rest",
     "status": "ok",
-    "artistsAttempted": 375,
-    "resolved": 236,
-    "rawUpcomingUSRows": 92,
-    "newEventsPublished": 8,
+    "artistsAttempted": 377,
+    "resolved": 237,
+    "rawUpcomingUSRows": 88,
+    "newEventsPublished": 9,
     "festivalCandidatesHeld": 2,
     "requestErrors": 0
   },
   "songkick": {
-    "artistsAttempted": 375,
+    "artistsAttempted": 377,
     "resolved": 0,
-    "blockedByRobots": 375,
+    "blockedByRobots": 377,
     "eventsFound": 0
   },
   "sourceStatusCounts": {
-    "delegated_to_structured_rest": 375,
-    "blocked_by_robots": 378,
-    "no_events": 529,
+    "delegated_to_structured_rest": 377,
+    "blocked_by_robots": 380,
+    "no_events": 531,
     "failed": 6
   },
   "newEvents": [],
@@ -8297,6 +8297,44 @@
       "artist": "Kemara Lynn",
       "source": "Spotify profile",
       "url": "https://open.spotify.com/artist/4DAuBp6fTU9YFdNe98nNtW",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "R3st0red",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "R3st0red",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "R3st0red",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/61hdUXk2jifcjdhVGuJLwL",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Altar Ego",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Altar Ego",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Altar Ego",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/4lZP7gtShMKQthYf6o6V0K",
       "status": "no_events",
       "eventsFound": 0
     }

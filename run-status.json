@@ -1,26 +1,26 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-10-23T02:13:37Z",
-  "lastSuccessfulUpdate": "2026-10-23T02:13:37Z",
-  "eventsPublished": 180,
-  "candidatesCollected": 263,
-  "artistsConfigured": 375,
+  "lastAttempt": "2026-10-25T14:04:37Z",
+  "lastSuccessfulUpdate": "2026-10-25T14:04:37Z",
+  "eventsPublished": 145,
+  "candidatesCollected": 272,
+  "artistsConfigured": 377,
   "artistsByPriority": {
     "priority1": 91,
-    "priority2": 142,
-    "priority3": 142
+    "priority2": 143,
+    "priority3": 143
   },
   "ticketmasterArtistsEnabled": 196,
-  "socialSearchArtistsEnabled": 330,
-  "freeTextAliasesProtected": 224,
+  "socialSearchArtistsEnabled": 332,
+  "freeTextAliasesProtected": 228,
   "artistsMatchedOnTicketmaster": 61,
-  "officialEventsFound": 36,
+  "officialEventsFound": 33,
   "ticketmasterEventsFound": 11,
-  "instagramArtistsConfigured": 330,
-  "instagramQueriesRun": 332,
-  "instagramQueriesAttempted": 330,
-  "instagramResultsFound": 1,
+  "instagramArtistsConfigured": 332,
+  "instagramQueriesRun": 334,
+  "instagramQueriesAttempted": 332,
+  "instagramResultsFound": 0,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,22 +46,10 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
-    },
-    {
-      "url": "https://www.instagram.com/p/C_8FTFIxVFE/",
-      "title": "Instagram",
-      "artists": [
-        "S.O."
-      ],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 455,
+  "sourcesChecked": 457,
   "unmatchedArtists": [
     "Scootie Wop",
     "Mike Malagies",
@@ -203,7 +191,7 @@
     {
       "name": "Reach Records consolidated calendar",
       "status": "ok",
-      "eventsFound": 9
+      "eventsFound": 8
     },
     {
       "name": "Reach Records - 1K Phew",
@@ -578,7 +566,7 @@
     {
       "name": "Kaden Jordan official tour / Songkick",
       "status": "ok",
-      "eventsFound": 7
+      "eventsFound": 6
     },
     {
       "name": "FLAME Plano official registration",
@@ -588,7 +576,7 @@
     {
       "name": "Mike Teezy Apple Music concerts",
       "status": "ok",
-      "eventsFound": 2
+      "eventsFound": 1
     },
     {
       "name": "Parris Chariz Apple Music concerts",
@@ -604,8 +592,8 @@
       "name": "Instagram public announcement scan",
       "status": "ok",
       "eventsFound": 0,
-      "artistsChecked": 330,
-      "queriesRun": 332
+      "artistsChecked": 332,
+      "queriesRun": 334
     }
   ],
   "warningCount": 18,
@@ -634,6 +622,6 @@
   "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings.",
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 22,
-  "artistWebsiteEventsAdded": 0,
-  "artistWebsiteMergeAt": "2026-10-25T12:51:11Z"
+  "artistWebsiteEventsAdded": 3,
+  "artistWebsiteMergeAt": "2026-10-25T14:23:53Z"
 }
