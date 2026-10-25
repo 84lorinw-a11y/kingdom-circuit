@@ -76,7 +76,6 @@ class OctoberConcertCorrectionTests(unittest.TestCase):
             bad=[{'id':e,'artists':['Nehemiah']} for e in WRONG_NEHEMIAH_IDS | {ADRENALINE_DUPLICATE}]
             bad.extend({'id': e, 'artists': ['ZEKE']} for e in WRONG_ZEKE_IDS)
             bad.append({'id': 'future-unrelated-zeke-show', 'bandsintownArtistId': '32942'})
-            bad.append({'id':'manual:rap-go-round-west-palm-beach-2026-11-20','artists':['Naldo','DJ Eternitrock']})
             paths=['events.json','supplemental-events.json','config/manual-events.json']
             for name in paths:(root/name).write_text(json.dumps([copy.deepcopy(saved),copy.deepcopy(keep),*bad]))
             (root/'event-history.json').write_text(json.dumps({'events':[{'event':e} for e in [saved,keep,*bad]]}))
@@ -95,3 +94,28 @@ class OctoberConcertCorrectionTests(unittest.TestCase):
             apply(root,today='2027-01-01')
             self.assertNotIn(saved['id'],[e['id'] for e in json.loads((root/'events.json').read_text())])
             self.assertEqual(len(json.loads((root/'event-history.json').read_text())['events']),2)
+
+    def test_reapproved_rap_go_round_restores_current_billing_and_address(self):
+        approved = json.loads((ROOT / 'config/oct3-verified-concerts.json').read_text())
+        show = next(e for e in approved if e['id'] == 'rap-go-round-west-palm-beach-2026-11-20')
+        event_id = 'manual:' + show['id']
+        self.assertFalse(rejected({'id': event_id}))
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'config').mkdir()
+            (root / 'config/oct3-verified-concerts.json').write_text(json.dumps([show]))
+            stale = dict(show, id=event_id, artists=['Naldo', 'DJ Eternitrock'],
+                         advertisedBilling=['Naldo', 'DJ Eternitrock'], address='2470 Parker Avenue')
+            for name in ['events.json', 'supplemental-events.json', 'config/manual-events.json']:
+                (root / name).write_text(json.dumps([stale]))
+            (root / 'event-history.json').write_text(json.dumps({'events': [{'event': stale}]}))
+            apply(root, today='2026-10-24')
+            rows = json.loads((root / 'events.json').read_text())
+            self.assertEqual(len(rows), 1)
+            for e in [rows[0], json.loads((root / 'event-history.json').read_text())['events'][0]['event']]:
+                self.assertEqual(e['artists'], ['DJ Eternitrock'])
+                self.assertEqual(e['advertisedBilling'], ['DJ Eternitrock'])
+                self.assertEqual(e['address'], '2740 Parker Avenue')
+                self.assertEqual(e['firstSeen'], '2026-10-12T19:39:04Z')
+                self.assertEqual(e['startTime'], '21:00')
+            self.assertEqual(json.loads((root / 'supplemental-events.json').read_text()), [])

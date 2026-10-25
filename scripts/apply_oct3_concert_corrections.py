@@ -21,7 +21,8 @@ WRONG_ZEKE_IDS = {
     "bandsintown:1040258635",
 }
 ADRENALINE_DUPLICATE = "bandsintown:1040469553"
-OWNER_REMOVED_EVENT_IDS = {"rap-go-round-west-palm-beach-2026-11-20"}
+# October 24: the owner reapproved Rap Go Round. Its reviewed seed now keeps
+# only the current confirmed DJ billing; Naldo remains outside the roster.
 
 
 def key(event):
@@ -29,7 +30,7 @@ def key(event):
 
 
 def rejected(event):
-    if key(event) in WRONG_NEHEMIAH_IDS | WRONG_ZEKE_IDS | {ADRENALINE_DUPLICATE} | OWNER_REMOVED_EVENT_IDS:
+    if key(event) in WRONG_NEHEMIAH_IDS | WRONG_ZEKE_IDS | {ADRENALINE_DUPLICATE}:
         return True
     # Reject only the known unrelated band identities. Independently verified
     # CHH appearances, including ZEKE at Flavor Fest, remain eligible.
