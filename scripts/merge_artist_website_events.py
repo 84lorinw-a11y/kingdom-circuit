@@ -92,6 +92,24 @@ def main() -> int:
     finalized_dynamic = apply_first_seen(finalized_dynamic, existing, checked_at)
     finalized_seed = apply_first_seen(finalized_seed, existing, checked_at)
 
+    # Preserve earliest verified firstSeen from supplemental source records even
+    # when the discovery collector has temporarily dropped a curated seed ID.
+    supplemental = load_json(ROOT / "supplemental-events.json", [])
+    earliest_by_id = {}
+    for prior in [*existing, *(supplemental if isinstance(supplemental, list) else [])]:
+        if not isinstance(prior, dict):
+            continue
+        event_id = str(prior.get("id") or "")
+        first_seen = str(prior.get("firstSeen") or "")
+        if event_id and first_seen and (
+            event_id not in earliest_by_id or first_seen < earliest_by_id[event_id]
+        ):
+            earliest_by_id[event_id] = first_seen
+    for event in finalized_seed:
+        prior_first_seen = earliest_by_id.get(str(event.get("id") or ""))
+        if prior_first_seen and prior_first_seen < str(event.get("firstSeen") or checked_at):
+            event["firstSeen"] = prior_first_seen
+
     merged = [dict(event) for event in existing if isinstance(event, dict)]
     added = 0
 
