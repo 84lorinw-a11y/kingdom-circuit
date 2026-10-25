@@ -984,7 +984,7 @@
     "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "assets/events/flavor-fest-friday-2026.png",
+    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/a2407af7-a012-4df1-8d42-d247ab82cd8b/FF26-Promo-Friday-Night%2B%281%29.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -1083,7 +1083,7 @@
       "Jailynn",
       "Eli Williams"
     ],
-    "auditVerified": "2026-10-12",
+    "auditVerified": "2026-09-11",
     "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown. Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates. October 8: owner verified TVNK in the artist Sheet. His September 25 collaborative announcement with Flavor Fest explicitly confirms November 6 at Crossover Church. Connect the existing TVNK billing to his curated artist profile. October 12: newly owner-verified artist profiles linked to confirmed billing.",
     "imageSource": "Official Flavor Fest Friday concert poster",
     "imageSourceUrl": "https://www.flavorfest.org/schedule"
@@ -1213,7 +1213,7 @@
     "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/",
-    "image": "assets/events/flavor-fest-saturday-2026.jpg",
+    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/989d4d2e-f454-4a1b-99df-cc78cf6e6749/FF26-Promo-Saturday-Night.jpg",
     "price": "",
     "sourceName": "Flavor Fest official Saturday poster",
     "authority": "official_festival",
@@ -2308,7 +2308,7 @@
     "status": "scheduled",
     "ticketUrl": "https://www.cjemulous.com/event-details/zion-ultra-lounge-w-miles-minnick-cj-emulous",
     "officialUrl": "https://www.cjemulous.com/event-details/zion-ultra-lounge-w-miles-minnick-cj-emulous",
-    "image": "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
+    "image": "assets/events/miles-cj-zion-ultra-2026.svg",
     "price": "",
     "sourceName": "CJ Emulous official calendar",
     "authority": "artist_calendar",
@@ -2323,9 +2323,9 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-23",
+    "auditVerified": "2026-09-11",
     "id": "miles-cj-zion-ultra-lounge-chandler-2026",
-    "imageType": "artist",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "notes": "CJ Emulous's official calendar confirms Miles Minnick and CJ Emulous at Zion Ultra Lounge on December 5, 2026 at 7:00 PM."
@@ -2538,5 +2538,492 @@
     "mergedFromIds": [
       "bandsintown:108856576"
     ]
+  },
+  {
+    "title": "Future Legacy Hip-Hop Showcase",
+    "startDate": "2026-10-04",
+    "startTime": "18:30",
+    "timezone": "America/Chicago",
+    "venue": "Cannery Hall — Row One Stage",
+    "address": "1 Cannery Row",
+    "city": "Nashville",
+    "state": "TN",
+    "country": "US",
+    "artists": [
+      "1K Phew",
+      "Don Ready",
+      "LaNell Grant",
+      "Nathan Davis Jr.",
+      "Trendsetter Sense",
+      "Parris Chariz",
+      "Tommy Zuko"
+    ],
+    "headliner": "1K Phew",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.axs.com/events/1580749/future-legacy-hip-hop-showcase-tickets",
+    "officialUrl": "https://www.axs.com/events/1580749/future-legacy-hip-hop-showcase-tickets",
+    "image": "https://images.discovery-prod.axs.com/2026/08/uploadedimage_6a871ac3abd11.jpg",
+    "price": "",
+    "sourceName": "AXS / GMA official Future Legacy listing",
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "GMA Dove Week official schedule",
+        "url": "https://gospelmusic.org/news/dove-week-2026-see-the-schedule",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "GMA Museum official Future Legacy calendar",
+        "url": "https://www.cgmmuseum.org/event/future-legacy-hip-hop-showcase-sponsored-by-vyb/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 120
+      },
+      {
+        "name": "Rapzilla September 30 full-lineup announcement",
+        "url": "https://rapzilla.com/2026-09-future-legacy-hip-hop-showcase-nashville-dove-awards-week/",
+        "type": "manual_verified",
+        "authority": "editorial",
+        "priority": 100
+      },
+      {
+        "name": "AXS official event",
+        "url": "https://www.axs.com/events/1580749/future-legacy-hip-hop-showcase-tickets",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 94
+      }
+    ],
+    "auditVerified": "2026-10-01",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "officialBill": [
+      "1K Phew",
+      "Don Ready",
+      "LaNell Grant",
+      "Nathan Davis Jr.",
+      "DJ Trendsetter Sense",
+      "Parris Chariz",
+      "ADIA",
+      "JustCordell",
+      "Tommy Zuko",
+      "CeJae"
+    ],
+    "notes": "October 1 review: the GMA museum official calendar confirms Tommy Zuko and CeJae; September 30 Rapzilla announcement confirms the complete ten-name performer bill, with DJ Focus and Keal K as hosts. Preserve approved artwork, venue, concert time, event identity and discovery age. CeJae, ADIA and JustCordell remain unlinked billing without new curated profiles.",
+    "advertisedBilling": [
+      "1K Phew",
+      "Don Ready",
+      "LaNell Grant",
+      "Nathan Davis Jr.",
+      "DJ Trendsetter Sense",
+      "Parris Chariz",
+      "ADIA",
+      "JustCordell",
+      "Tommy Zuko",
+      "CeJae"
+    ],
+    "hosts": [
+      "DJ Focus",
+      "Keal K"
+    ],
+    "id": "future-legacy-hip-hop-showcase-nashville-2026"
+  },
+  {
+    "title": "Fountain Fest WV 2026",
+    "startDate": "2026-09-18",
+    "startTime": "20:00",
+    "timezone": "America/New_York",
+    "venue": "Orr's Farm Market",
+    "address": "",
+    "city": "Martinsburg",
+    "state": "WV",
+    "country": "US",
+    "artists": [
+      "Rare of Breed"
+    ],
+    "headliner": "Rare of Breed",
+    "eventType": "festival",
+    "status": "scheduled",
+    "ticketUrl": "https://my.onecause.com/event/organizations/0908e5f7-6980-4a38-8fc5-456d973dcdce/events/vevt:62b43d8b-59e2-479d-a013-fa697f27e51c/home/story",
+    "officialUrl": "https://fountainfestwv.com/",
+    "image": "https://i0.wp.com/fountainfestwv.com/wp-content/uploads/2026/07/Rare-of-Breed-Promo-.webp?resize=720%2C900&ssl=1",
+    "price": "",
+    "sourceName": "Fountain Fest WV official lineup",
+    "authority": "official_festival",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Fountain Fest WV official lineup",
+        "url": "https://fountainfestwv.com/",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 112
+      }
+    ],
+    "auditVerified": "2026-09-11",
+    "endDate": "2026-09-19",
+    "notes": "Rare of Breed performs Friday September 18 at 8 PM; festival continues September 19.",
+    "id": "fountain-fest-wv-2026",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": true
+  },
+  {
+    "title": "Mission and Special Guests",
+    "startDate": "2026-10-17",
+    "startTime": "18:30",
+    "timezone": "America/Los_Angeles",
+    "venue": "Victory Outreach South Sacramento",
+    "address": "6831 Savings Pl",
+    "city": "Sacramento",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Mission"
+    ],
+    "headliner": "Mission",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
+    "officialUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
+    "image": "assets/events/mission-sacramento-2026-10-17.jpg",
+    "price": "",
+    "sourceName": "Mission official Bandsintown event",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Mission official Bandsintown event",
+        "url": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 112
+      }
+    ],
+    "auditVerified": "2026-09-11",
+    "id": "mission-friends-sacramento-2026",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true
+  },
+  {
+    "title": "Boxyard Saturdaze",
+    "startDate": "2026-10-10",
+    "startTime": "12:30",
+    "timezone": "America/New_York",
+    "venue": "Boxyard RTP — BeatBox Stage",
+    "address": "",
+    "city": "Durham",
+    "state": "NC",
+    "country": "US",
+    "artists": [
+      "MAYIA"
+    ],
+    "headliner": "MAYIA",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+    "officialUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+    "image": "assets/events/mayia-boxyard-2026-10-10.png",
+    "price": "",
+    "sourceName": "Boxyard RTP official event",
+    "authority": "official_event",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Boxyard RTP official event",
+        "url": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "MAYIA official calendar",
+        "url": "https://mayiawarren.org/go/bandsintown/21578/event/108885203",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ],
+    "auditVerified": "2026-09-11",
+    "officialBill": [
+      "DJ Watty Tha Shepherd",
+      "MAYIA WARREN"
+    ],
+    "id": "mayia-boxyard-saturdaze-2026",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true
+  },
+  {
+    "title": "MAYIA at the NC State Fair",
+    "startDate": "2026-10-17",
+    "startTime": "10:00",
+    "timezone": "America/New_York",
+    "venue": "Heritage Circle Stage — NC State Fairgrounds",
+    "address": "",
+    "city": "Raleigh",
+    "state": "NC",
+    "country": "US",
+    "artists": [
+      "MAYIA"
+    ],
+    "headliner": "MAYIA",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ncagr.gov/divisions/ncstatefair/buy-tickets-now",
+    "officialUrl": "https://www.ncagr.gov/divisions/ncstatefair",
+    "image": "assets/artists/mayia-restored-show-photo.webp",
+    "price": "",
+    "sourceName": "North Carolina State Fair official site",
+    "authority": "official_event",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "North Carolina State Fair official site",
+        "url": "https://www.ncagr.gov/divisions/ncstatefair",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "MAYIA official calendar",
+        "url": "https://mayiawarren.org/go/bandsintown/21578/event/108885151",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 100
+      }
+    ],
+    "auditVerified": "2026-09-11",
+    "notes": "One event with two confirmed acoustic sets: 10–11 AM and 12–1 PM.",
+    "id": "mayia-nc-state-fair-2026",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": true
+  },
+  {
+    "title": "SYATP Concert",
+    "startDate": "2026-09-23",
+    "startTime": "19:00",
+    "timezone": "America/Phoenix",
+    "venue": "Shiloh Christian Ministries",
+    "address": "1519 S Ave Del Sol",
+    "city": "Sierra Vista",
+    "state": "AZ",
+    "country": "US",
+    "artists": [
+      "CJ Emulous"
+    ],
+    "headliner": "CJ Emulous",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.cjemulous.com/event-details/syatp-concert-w-cj-emulous",
+    "officialUrl": "https://www.cjemulous.com/event-details/syatp-concert-w-cj-emulous",
+    "image": "https://static.wixstatic.com/media/9c331a_e63115b208054353a76258a4897ad76c~mv2.jpeg/v1/fill/w_980%2Ch_653%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_auto/9c331a_e63115b208054353a76258a4897ad76c~mv2.jpeg",
+    "price": "",
+    "sourceName": "CJ Emulous official calendar",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "CJ Emulous official calendar",
+        "url": "https://www.cjemulous.com/event-details/syatp-concert-w-cj-emulous",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 112
+      }
+    ],
+    "auditVerified": "2026-09-11",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "id": "cj-emulous-syatp-sierra-vista-2026"
+  },
+  {
+    "title": "Live Loud",
+    "startDate": "2026-10-07",
+    "startTime": "19:00",
+    "timezone": "America/Los_Angeles",
+    "venue": "2801 Notre Dame Blvd",
+    "address": "2801 Notre Dame Blvd",
+    "city": "Chico",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "CJ Emulous"
+    ],
+    "headliner": "CJ Emulous",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.cjemulous.com/event-details/live-loud-w-cj-emulous",
+    "officialUrl": "https://www.cjemulous.com/event-details/live-loud-w-cj-emulous",
+    "image": "https://static.wixstatic.com/media/9c331a_394502e64a45489e872ee2b71bb1a0de~mv2.jpg/v1/fill/w_980%2Ch_543%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_auto/9c331a_394502e64a45489e872ee2b71bb1a0de~mv2.jpg",
+    "price": "",
+    "sourceName": "CJ Emulous official calendar",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "CJ Emulous official calendar",
+        "url": "https://www.cjemulous.com/event-details/live-loud-w-cj-emulous",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 112
+      }
+    ],
+    "auditVerified": "2026-09-11",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "id": "cj-emulous-live-loud-chico-2026"
+  },
+  {
+    "title": "Teen Club Kickoff / Back to School Concert",
+    "startDate": "2026-10-12",
+    "startTime": "18:00",
+    "timezone": "America/Los_Angeles",
+    "venue": "Westside Ministries",
+    "address": "950 Columbia Ave",
+    "city": "Turlock",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "CJ Emulous",
+      "Lul DreDay",
+      "MikeySoChristian"
+    ],
+    "headliner": "CJ Emulous",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.cjemulous.com/event-details/back-to-school-concert-w-cj-emulous-1",
+    "officialUrl": "https://www.cjemulous.com/event-details/back-to-school-concert-w-cj-emulous-1",
+    "image": "https://static.wixstatic.com/media/9c331a_7832125534df4c06b583f033fe19273e~mv2.png",
+    "price": "",
+    "sourceName": "CJ Emulous official calendar and event flyer",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "CJ Emulous official calendar and event flyer",
+        "url": "https://www.cjemulous.com/event-details/back-to-school-concert-w-cj-emulous-1",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 112
+      }
+    ],
+    "auditVerified": "2026-09-22",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "officialBill": [
+      "CJ Emulous",
+      "Lul DreDay",
+      "MikeySoChristian"
+    ],
+    "id": "cj-emulous-turlock-back-to-school-2026"
+  },
+  {
+    "title": "The Kickback",
+    "startDate": "2026-11-13",
+    "startTime": "19:00",
+    "timezone": "America/Chicago",
+    "venue": "Jesús Centro de Avivamiento (JCDA)",
+    "address": "2305 SE 14th St",
+    "city": "Grand Prairie",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "CJ Emulous",
+      "Brandon Trejo"
+    ],
+    "headliner": "CJ Emulous",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/the-kickback-tickets-2003607610298",
+    "officialUrl": "https://www.eventbrite.com/e/the-kickback-tickets-2003607610298",
+    "image": "assets/events/cj-emulous-kickback-2026-11-13-official-flyer.jpg",
+    "price": "Free — RSVP required",
+    "sourceName": "The KickBack Texas Tour / Christology Records",
+    "authority": "official_event",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "The KickBack Texas Tour / Christology Records",
+        "url": "https://www.eventbrite.com/e/the-kickback-tickets-2003607610298",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "auditVerified": "2026-09-11",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "officialBill": [
+      "CJ Emulous",
+      "Josh Donnell",
+      "Brandon Trejo",
+      "Gospel Ready",
+      "Thomas Nunez",
+      "Ashley Briana",
+      "Neto Gonzales",
+      "MJ Vazquez",
+      "SF Rich"
+    ],
+    "notes": "October 20 owner relayed direct organizer confirmation that CJ asked to move the show to Friday. The new Christology Records / KickBack Texas Tour flyer and caption confirm November 13, 2026, 7–9 PM, free admission with Eventbrite RSVP, and 2305 SE 14th St, Grand Prairie. This supersedes the stale November 14 date on CJ’s calendar and resolves the prior GLOVEMBER conflict. Use the flyer/venue address 2305, not the ticket location widget’s 2505 typo. Full flyer billing preserved; Gospel Ready and Neto Gonzales wrap across lines. J. Harvey is the host, not an inferred musical performer. No individual set or separate doors time announced.",
+    "id": "cj-emulous-kickback-grand-prairie-2026"
+  },
+  {
+    "title": "Alex Zurdo: Zona Zero",
+    "startDate": "2026-10-18",
+    "startTime": "18:00",
+    "timezone": "America/Puerto_Rico",
+    "venue": "Coliseo de Puerto Rico",
+    "address": "500 Arterial B",
+    "city": "San Juan",
+    "state": "PR",
+    "country": "US",
+    "artists": [
+      "Alex Zurdo"
+    ],
+    "headliner": "Alex Zurdo",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://choli.ticketera.com/event/alex-zurdo-zona-cero-6dn2x2",
+    "officialUrl": "https://www.coliseodepuertorico.com/alexzurdozonazero/",
+    "image": "assets/events/alex-zurdo-zona-zero-instagram-oct10.jpg",
+    "price": "",
+    "sourceName": "Coliseo de Puerto Rico official event",
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Coliseo de Puerto Rico official event",
+        "url": "https://www.coliseodepuertorico.com/alexzurdozonazero/",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      }
+    ],
+    "auditVerified": "2026-09-11",
+    "id": "alex-zurdo-zona-zero-san-juan-2026",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true
   }
 ]
