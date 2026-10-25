@@ -578,7 +578,7 @@ const VERIFIED_ARTIST_REGISTRY = {
       "Scootie Wop"
     ],
     "website": "https://starrbaby.com/",
-    "instagramProfile": "https://www.instagram.com/scootiewop/",
+    "instagramProfile": "https://www.instagram.com/starrbaby.wrld/",
     "spotifyProfile": "https://open.spotify.com/artist/1JAoqu34UmPWUUAjLMXt5I",
     "youtubeProfile": "https://www.youtube.com/channel/UCxiuNRFW37J9uXL6SGCW0MQ",
     "officialImageSource": "https://starrbaby.com/",
@@ -5846,7 +5846,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
       "Scootie Wop"
     ],
     "website": "https://starrbaby.com/",
-    "instagramProfile": "https://www.instagram.com/scootiewop/",
+    "instagramProfile": "https://www.instagram.com/starrbaby.wrld/",
     "spotifyProfile": "https://open.spotify.com/artist/1JAoqu34UmPWUUAjLMXt5I",
     "youtubeProfile": "https://www.youtube.com/channel/UCxiuNRFW37J9uXL6SGCW0MQ",
     "officialImageSource": "https://starrbaby.com/",
