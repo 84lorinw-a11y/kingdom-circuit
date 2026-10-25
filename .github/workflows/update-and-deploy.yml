@@ -141,6 +141,10 @@ jobs:
         if: steps.refresh-mode.outputs.discovery == 'true'
         run: git checkout -- config/official-sources.json
 
+      - name: Restore verified artist website seeds after full discovery
+        if: steps.refresh-mode.outputs.discovery == 'true'
+        run: python scripts/merge_artist_website_events.py
+
       - name: Validate refreshed source before publication
         run: python -m unittest discover -s tests -p 'test_*.py' -q
 
