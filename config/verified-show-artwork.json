@@ -504,12 +504,13 @@
   {
     "id": "bandsintown:1037809090",
     "startDate": "2027-01-22",
-    "image": "assets/events/nobigdyl-unplugged-2027-01-22.jpg",
-    "imageType": "artist",
+    "image": "assets/events/nobigdyl-unplugged-2027-01-22-instagram-oct25.jpg",
+    "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
-    "imageSource": "AXS official nobigdyl. UNPLUGGED event image",
-    "imageSourceUrl": "https://www.axs.com/events/1304795/nobigdyl-unplugged-tickets"
+    "imageSource": "nobigdyl. official UNPLUGGED Instagram announcement selected by owner",
+    "imageSourceUrl": "https://www.instagram.com/p/De0Dyw6xO3a/",
+    "detailImageLayout": "portrait"
   },
   {
     "id": "bandsintown:1040314202",
@@ -1784,5 +1785,25 @@
     "imagePosition": "center",
     "imageOverride": true,
     "detailImageLayout": "portrait"
+  },
+  {
+    "id": "bandsintown:109072940",
+    "startDate": "2026-11-14",
+    "image": "assets/events/issac-unity-pop-up-orlando-2026-11-14-official.webp",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Issac Mansfield official Bandsintown event flyer",
+    "imageSourceUrl": "https://www.bandsintown.com/e/109072940",
+    "advertisedBilling": [
+      "Issac Mansfield",
+      "SYL noiZ",
+      "GIOVANI"
+    ],
+    "officialBill": [
+      "Issac Mansfield",
+      "SYL noiZ",
+      "GIOVANI"
+    ]
   }
 ]
