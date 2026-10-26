@@ -391,7 +391,8 @@ const ARTIST_ROSTER_ORDER = [
   "Ryan Ellis",
   "Kemara Lynn",
   "R3st0red",
-  "Altar Ego"
+  "Altar Ego",
+  "Trexyn"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -5672,6 +5673,20 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imagePosition": "50% 26.6%",
     "state": "SC",
     "label": "Altar Ego Records",
+    "sourceRegistryVerified": true
+  },
+  "trexyn": {
+    "aliases": [
+      "Trexyn",
+      "trexynmusic"
+    ],
+    "website": "https://linktr.ee/TREXYN?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAafA64W4wWaHj9Ail-dtkjGLXAnXwykc0_MssUj80dt7_YTe3exVsReHUK6iAg_aem_pGQtNpbAQvZsnl8mQF7PuA",
+    "instagramProfile": "https://www.instagram.com/trexynmusic/",
+    "spotifyProfile": "https://open.spotify.com/artist/2i6lLO0wkXwHTTN9pMFcFX?utm_medium=share&utm_source=linktree",
+    "youtubeProfile": "https://www.youtube.com/@TrexynMusic",
+    "officialImageSource": "https://www.instagram.com/p/Ddp_SyZHLUy/",
+    "imageUrl": "assets/artists/trexyn-owner-selected-oct26.jpg",
+    "imagePosition": "50% 70%",
     "sourceRegistryVerified": true
   }
 };
@@ -10955,6 +10970,20 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "state": "SC",
     "label": "Altar Ego Records",
     "sourceRegistryVerified": true
+  },
+  "trexyn": {
+    "aliases": [
+      "Trexyn",
+      "trexynmusic"
+    ],
+    "website": "https://linktr.ee/TREXYN?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAafA64W4wWaHj9Ail-dtkjGLXAnXwykc0_MssUj80dt7_YTe3exVsReHUK6iAg_aem_pGQtNpbAQvZsnl8mQF7PuA",
+    "instagramProfile": "https://www.instagram.com/trexynmusic/",
+    "spotifyProfile": "https://open.spotify.com/artist/2i6lLO0wkXwHTTN9pMFcFX?utm_medium=share&utm_source=linktree",
+    "youtubeProfile": "https://www.youtube.com/@TrexynMusic",
+    "officialImageSource": "https://www.instagram.com/p/Ddp_SyZHLUy/",
+    "imageUrl": "assets/artists/trexyn-owner-selected-oct26.jpg",
+    "imagePosition": "50% 70%",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -12465,6 +12494,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "altar ego": {
     "imageUrl": "assets/artists/altar-ego-owner-approved-oct23.jpg",
     "imagePosition": "50% 26.6%"
+  },
+  "trexyn": {
+    "imageUrl": "assets/artists/trexyn-owner-selected-oct26.jpg",
+    "imagePosition": "50% 70%"
   }
 };
 
