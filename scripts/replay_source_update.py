@@ -50,11 +50,11 @@ def main():
                     run(script)
             finally:
                 config.write_bytes(original)
-        # Rebase replay must restore curated artist seed IDs just like the
-        # workflow's pre-publication path. Otherwise a competing commit can
-        # cause the replay validation to reject three protected 808 BEEZY shows.
         if kind == 'full':
+            # Initial repairs reconcile provider identities before seeds merge.
+            # Reapply approved corrections to any records restored by the merge.
             run('merge_artist_website_events.py')
+            for script in SOURCE_REPAIRS: run(script)
         if kind == 'websites':
             run('collect_artist_website_events.py')
             run('merge_artist_website_events.py')

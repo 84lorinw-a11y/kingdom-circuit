@@ -20,12 +20,41 @@ class AutomationPublicationTests(unittest.TestCase):
         self.assertIn("python -m unittest discover -s tests -p 'test_*.py' -q", workflow[validation:publication])
 
     def test_full_replay_restores_curated_artist_seeds_before_final_validation(self):
-        replay = (Path(__file__).resolve().parents[1] / 'scripts/replay_source_update.py').read_text()
-        full_replay = replay.index("if kind == 'full':")
-        validation = replay.index("subprocess.run([sys.executable, '-m', 'unittest', 'discover'", full_replay)
-        self.assertIn("run('merge_artist_website_events.py')", replay[full_replay:validation])
+        from scripts import replay_source_update as replay
+        from scripts.apply_verified_show_artwork import patch_event, BY_ID
+        event = {}
+        calls = []
+
+        def source_step(script):
+            calls.append(script)
+            if script == 'merge_artist_website_events.py':
+                event.update(id='manual:808-beezy-bandsintown-108856031',
+                             startDate='2026-11-02', image='old-artist-portrait.webp',
+                             firstSeen='2026-09-02T14:46:37Z')
+            if script == 'apply_sep26_source_corrections.py':
+                patch_event(event)
+
+        with patch.object(sys, 'argv', ['replay_source_update.py', 'full']), \
+             patch.object(replay, 'run', side_effect=source_step), \
+             patch.object(replay, 'Path'), patch.object(replay.subprocess, 'run'):
+            replay.main()
+
+        self.assertEqual(BY_ID['808-beezy-bandsintown-108856031']['image'], event['image'])
+        self.assertEqual('2026-09-02T14:46:37Z', event['firstSeen'])
+        self.assertLess(calls.index('scan_all_artist_sources.py'), calls.index('merge_artist_website_events.py'))
+        self.assertTrue(all(calls.index('merge_artist_website_events.py') < len(calls) - 1 - calls[::-1].index(step)
+                            for step in replay.SOURCE_REPAIRS))
+
+    def test_full_workflow_restores_seeds_before_approved_corrections(self):
         workflow = (Path(__file__).resolve().parents[1] / '.github/workflows/update-and-deploy.yml').read_text()
-        self.assertIn("python scripts/merge_artist_website_events.py", workflow)
+        merge = workflow.index('python scripts/merge_artist_website_events.py')
+        self.assertLess(workflow.index('python scripts/scan_all_artist_sources.py'), merge)
+        normalize = workflow.index('python scripts/replay_source_update.py normalize', merge)
+        self.assertLess(merge, normalize)
+        self.assertLess(normalize, workflow.index('- name: Validate refreshed source before publication'))
+        # Reconcile duplicate provider identities before the seed merger, which
+        # deliberately rejects losing a curated seed to a conflicting identity.
+        self.assertLess(workflow.index('python scripts/apply_sep26_source_corrections.py'), merge)
         self.assertIn("replay_source_update.py full", workflow)
 
     def setup_repo(self, directory):
