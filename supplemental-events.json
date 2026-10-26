@@ -128,6 +128,44 @@
     "notes": "Official ticket provider lists this event as sold out. Sold out is not a cancellation."
   },
   {
+    "id": "eventbrite:gracefest-lecrae-castaic-2026",
+    "title": "GRACEFEST 2026",
+    "startDate": "2026-09-19",
+    "startTime": "13:30",
+    "timezone": "America/Los_Angeles",
+    "venue": "Castaic Lake State Recreation Area",
+    "address": "Castaic Lake Drive",
+    "city": "Castaic",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Lecrae"
+    ],
+    "headliner": "Lecrae",
+    "eventType": "festival",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+    "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+    "image": "assets/events/gracefest-2026.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "price": "",
+    "sourceName": "Official Eventbrite listing",
+    "authority": "official_festival",
+    "confidence": "high",
+    "lineupExplicit": true,
+    "sources": [
+      {
+        "name": "Official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
+        "type": "eventbrite",
+        "authority": "official_festival",
+        "priority": 104
+      }
+    ]
+  },
+  {
     "id": "eventbrite:hip-hop-in-the-park-cortland-2026",
     "title": "Hip Hop in the Park",
     "startDate": "2026-09-19",
@@ -164,44 +202,6 @@
         "type": "eventbrite",
         "authority": "venue_ticket",
         "priority": 94
-      }
-    ]
-  },
-  {
-    "id": "eventbrite:gracefest-lecrae-castaic-2026",
-    "title": "GRACEFEST 2026",
-    "startDate": "2026-09-19",
-    "startTime": "13:30",
-    "timezone": "America/Los_Angeles",
-    "venue": "Castaic Lake State Recreation Area",
-    "address": "Castaic Lake Drive",
-    "city": "Castaic",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "Lecrae"
-    ],
-    "headliner": "Lecrae",
-    "eventType": "festival",
-    "status": "scheduled",
-    "ticketUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-    "officialUrl": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-    "image": "assets/events/gracefest-2026.png",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "price": "",
-    "sourceName": "Official Eventbrite listing",
-    "authority": "official_festival",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Official Eventbrite listing",
-        "url": "https://www.eventbrite.com/e/gracefest-2026-lecrae-bethel-music-jeremy-camp-tickets-1991972644803",
-        "type": "eventbrite",
-        "authority": "official_festival",
-        "priority": 104
       }
     ]
   },
@@ -493,10 +493,10 @@
   },
   {
     "id": "bandsintown:109046038",
-    "title": "K-Drama — Youth Leadership Seminar (School Event)",
+    "title": "K-Drama at Crossroads Church Mason",
     "startDate": "2026-10-28",
     "startTime": "08:00",
-    "timezone": "America/New_York",
+    "timezone": "",
     "venue": "Crossroads Church Mason",
     "address": "990 Reading Rd",
     "city": "Mason",
@@ -515,13 +515,6 @@
     "sourceName": "Bandsintown",
     "sources": [
       {
-        "name": "K-Drama artist-published event description",
-        "url": "https://www.bandsintown.com/e/109046038",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 115
-      },
-      {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/109046038?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
         "type": "bandsintown_rest",
@@ -534,14 +527,7 @@
     "bandsintownArtistId": "4403",
     "bandsintownResolvedName": "K-Drama",
     "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "K-Drama",
-    "startDateTime": "2026-10-28T08:00:00-04:00",
-    "publicNotice": "K-Drama performs at the Anthony Muñoz Foundation Youth Leadership Seminar. Admission is limited to students attending with their school and registered volunteers.",
-    "publicDescription": "K-Drama performs at the Anthony Muñoz Foundation Youth Leadership Seminar at Crossroads Church Mason. This school event is restricted to attending students and volunteers.",
-    "auditVerified": "2026-10-20",
-    "legacyEventPaths": [
-      "/event/k-drama-at-crossroads-church-mason-2026-10-28-mason-3bebe9/"
-    ]
+    "trackedArtist": "K-Drama"
   },
   {
     "id": "supplemental:skema-boy-2026-10-28-columbus-oh",
@@ -1041,8 +1027,8 @@
     "title": "NWO NYI Fall Retreat 2026",
     "startDate": "2026-11-06",
     "startTime": "19:00",
-    "timezone": "America/New_York",
-    "venue": "Cross Oak Camp & Retreat Center",
+    "timezone": "",
+    "venue": "NWO NYI Fall Retreat 2026",
     "address": "272 Jack Oak Point Rd",
     "city": "Saint Marys",
     "state": "OH",
@@ -1060,13 +1046,6 @@
     "sourceName": "Bandsintown",
     "sources": [
       {
-        "name": "K-Drama artist-published event description",
-        "url": "https://www.bandsintown.com/e/109046072",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 115
-      },
-      {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/109046072?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
         "type": "bandsintown_rest",
@@ -1079,10 +1058,7 @@
     "bandsintownArtistId": "4403",
     "bandsintownResolvedName": "K-Drama",
     "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "K-Drama",
-    "startDateTime": "2026-11-06T19:00:00-05:00",
-    "publicNotice": "K-Drama performs at the NWO NYI Fall Retreat. See the organizer for retreat registration and attendance requirements.",
-    "auditVerified": "2026-10-20"
+    "trackedArtist": "K-Drama"
   },
   {
     "id": "supplemental:skema-boy-2026-11-06-nashville-tn",
@@ -1245,6 +1221,44 @@
       "The Rkitect"
     ],
     "lastVerified": "2026-10-23T22:33:46.736976Z"
+  },
+  {
+    "id": "bandsintown:109046095",
+    "title": "K-Drama at Crossover Church",
+    "startDate": "2026-11-07",
+    "startTime": "19:00",
+    "timezone": "",
+    "venue": "Crossover Church",
+    "address": "1235 E Fowler Ave",
+    "city": "Tampa",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "K-Drama"
+    ],
+    "headliner": "K-Drama",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/109046095?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/109046095?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/k-drama-verified-oct10.jpg",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/109046095?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "109046095",
+    "bandsintownArtistId": "4403",
+    "bandsintownResolvedName": "K-Drama",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "K-Drama"
   },
   {
     "id": "supplemental:skema-boy-2026-11-08-atlanta-ga",
@@ -1466,121 +1480,107 @@
     ]
   },
   {
-    "id": "bandsintown:109072940",
-    "title": "UNITY POP-UP TOUR",
+    "id": "bandsintown:1040378722",
+    "title": "Miles Minnick — GLOVEMBER",
     "startDate": "2026-11-14",
-    "startTime": "11:00",
-    "timezone": "",
-    "venue": "UNITY POP-UP TOUR",
-    "address": "801 Dorscher Rd",
-    "city": "Orlando",
-    "state": "FL",
+    "startTime": "20:00",
+    "timezone": "America/Los_Angeles",
+    "venue": "The Belasco",
+    "address": "1050 S Hill St",
+    "city": "Los Angeles",
+    "state": "CA",
     "country": "US",
     "artists": [
-      "Issac Mansfield",
-      "GIOVANI"
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "MikeySoChristian",
+      "Lul DreDay",
+      "Eli Williams"
     ],
-    "headliner": "Issac Mansfield",
+    "headliner": "Miles Minnick",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/109072940?app_id=js_kingdomcircuit.com&came_from=267&custom=true&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/109072940?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/events/issac-unity-pop-up-orlando-2026-11-14-official.webp",
-    "price": "Free",
-    "sourceName": "Bandsintown",
-    "sources": [
-      {
-        "name": "Issac Mansfield Bandsintown event with complete lineup and official flyer",
-        "url": "https://www.bandsintown.com/e/109072940",
-        "type": "manual_verified",
-        "authority": "official_artist",
-        "priority": 115
-      },
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/109072940?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "109072940",
-    "bandsintownArtistId": "15588396",
-    "bandsintownResolvedName": "Issac Mansfield",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Issac Mansfield",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Issac Mansfield official Bandsintown event flyer",
-    "imageSourceUrl": "https://www.bandsintown.com/e/109072940",
-    "auditVerified": "2026-10-25",
-    "advertisedBilling": [
-      "Issac Mansfield",
-      "SYL noiZ",
-      "GIOVANI"
-    ],
-    "officialBill": [
-      "Issac Mansfield",
-      "SYL noiZ",
-      "GIOVANI"
-    ],
-    "lineupExplicit": true,
-    "notes": "Owner requested the original Bandsintown flyer and complete announced bill. Bandsintown event 109072940 names Issac Mansfield, SYL noiZ and Giovani. Giovani profile 15656198 is the same exact profile stored for curated GIOVANI. SYL noiZ remains visible unlinked billing pending separate artist verification. Preserve this existing event identity and schedule."
-  },
-  {
-    "id": "bandsintown:1040314202",
-    "title": "Pastor Mike Jr. at WL Jack Howard Theatre",
-    "startDate": "2026-11-14",
-    "startTime": "15:00",
-    "timezone": "",
-    "venue": "WL Jack Howard Theatre",
-    "address": "401 Lea Joyner Memorial Expressway",
-    "city": "Monroe",
-    "state": "LA",
-    "country": "US",
-    "artists": [
-      "Pastor Mike Jr."
-    ],
-    "headliner": "Pastor Mike Jr.",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
-    "officialUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
-    "image": "assets/events/pastor-mike-monroe-2026-11-14-instagram.jpg",
+    "ticketUrl": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
+    "officialUrl": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
+    "image": "assets/events/miles-minnick-glovember-2026-11-14.jpg",
     "price": "",
-    "sourceName": "Ticketmaster / W L Jack Howard Theatre",
+    "sourceName": "Ticketmaster / The Belasco",
     "sources": [
       {
-        "name": "Ticketmaster / W L Jack Howard Theatre",
-        "url": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
+        "name": "Ticketmaster / The Belasco",
+        "url": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
         "type": "manual_verified",
         "authority": "venue_ticket",
         "priority": 115
       },
       {
+        "name": "Miles Minnick and CJ Emulous official GLOVEMBER flyer",
+        "url": "https://www.instagram.com/p/Ddo8xGgoQhN/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Eli Williams official performance announcement",
+        "url": "https://www.instagram.com/eliwilliamssss/p/Ddo-VxfOYH1/",
+        "type": "manual_verified",
+        "authority": "artist",
+        "priority": 115
+      },
+      {
         "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/1040314202?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "url": "https://www.bandsintown.com/e/1040378722?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
         "type": "bandsintown_rest",
         "authority": "artist_calendar",
         "priority": 74
       }
     ],
     "confidence": "medium",
-    "bandsintownEventId": "1040314202",
-    "bandsintownArtistId": "15540358",
-    "bandsintownResolvedName": "Pastor Mike Jr.",
-    "bandsintownIdentity": "configured_id",
-    "trackedArtist": "Pastor Mike Jr.",
+    "bandsintownEventId": "1040378722",
+    "bandsintownArtistId": "15395466",
+    "bandsintownResolvedName": "Miles Minnick",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Miles Minnick",
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "MikeySoChristian",
+      "Lul DreDay",
+      "DJ Malski",
+      "Eli Williams"
+    ],
+    "officialBill": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "MikeySoChristian",
+      "Lul DreDay",
+      "DJ Malski",
+      "Eli Williams"
+    ],
+    "lineupExplicit": true,
+    "auditVerified": "2026-10-06",
+    "doorsTime": "19:00",
+    "startDateTime": "2026-11-14T20:00:00-08:00",
     "authority": "venue_ticket",
-    "auditVerified": "2026-09-26",
+    "notes": "Official co-posted flyer bills Miles Minnick, Tommy Zuko, CJ Emulous, Mikeyso and Lul DreDay, hosted by DJ Malski; Eli Williams' dated announcement confirms his participation. Ticketmaster confirms November 14, The Belasco, 6 PM early entry, 7 PM doors, 8 PM show. October 6 review: CJ's GLOvember source links this exact Ticketmaster event, so its November 15 duplicate is merged here. Owner authorized withholding the conflicting November 14 Grand Prairie listing pending confirmation; no cancellation is claimed. Preserve the full reviewed bill and approved artwork.",
+    "legacyEventPaths": [
+      "/event/miles-minnick-at-below-at-the-belasco-2026-11-14-los-angeles-5d10ab/",
+      "/event/glo-concert-2026-11-15-los-angeles-1f2b48/",
+      "/event/miles-minnick-glovember-2026-11-14-los-angeles-5d45ea/"
+    ],
     "imageType": "event_artwork",
-    "imageSource": "Owner-selected official Instagram show artwork",
-    "imageSourceUrl": "https://www.instagram.com/p/DdZkgYKmbXf/",
     "imagePosition": "center",
     "imageOverride": true,
-    "detailImageLayout": "portrait"
+    "imageSource": "Miles Minnick and CJ Emulous official GLOVEMBER Instagram flyer",
+    "imageSourceUrl": "https://www.instagram.com/p/Ddo8xGgoQhN/",
+    "legacyEventNotice": "GLOVEMBER takes place November 14, 2026 at 8 PM at The Belasco. This duplicate listing has been combined with the main event.",
+    "mergedFromIds": [
+      "manual:cj-emulous-glo-concert-los-angeles-2026"
+    ],
+    "firstSeen": "2026-08-09T00:00:00Z"
   },
   {
     "id": "ty-brasel-outlandish-fest-fort-worth-2026",
@@ -1718,107 +1718,101 @@
     ]
   },
   {
-    "id": "bandsintown:1040378722",
-    "title": "Miles Minnick — GLOVEMBER",
+    "id": "bandsintown:1040314202",
+    "title": "Pastor Mike Jr. at WL Jack Howard Theatre",
     "startDate": "2026-11-14",
-    "startTime": "20:00",
-    "timezone": "America/Los_Angeles",
-    "venue": "The Belasco",
-    "address": "1050 S Hill St",
-    "city": "Los Angeles",
-    "state": "CA",
+    "startTime": "15:00",
+    "timezone": "",
+    "venue": "WL Jack Howard Theatre",
+    "address": "401 Lea Joyner Memorial Expressway",
+    "city": "Monroe",
+    "state": "LA",
     "country": "US",
     "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "MikeySoChristian",
-      "Lul DreDay",
-      "Eli Williams"
+      "Pastor Mike Jr."
     ],
-    "headliner": "Miles Minnick",
+    "headliner": "Pastor Mike Jr.",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
-    "officialUrl": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
-    "image": "assets/events/miles-minnick-glovember-2026-11-14.jpg",
+    "ticketUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
+    "officialUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
+    "image": "assets/events/pastor-mike-monroe-2026-11-14-instagram.jpg",
     "price": "",
-    "sourceName": "Ticketmaster / The Belasco",
+    "sourceName": "Ticketmaster / W L Jack Howard Theatre",
     "sources": [
       {
-        "name": "Ticketmaster / The Belasco",
-        "url": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
+        "name": "Ticketmaster / W L Jack Howard Theatre",
+        "url": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
         "type": "manual_verified",
         "authority": "venue_ticket",
         "priority": 115
       },
       {
-        "name": "Miles Minnick and CJ Emulous official GLOVEMBER flyer",
-        "url": "https://www.instagram.com/p/Ddo8xGgoQhN/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Eli Williams official performance announcement",
-        "url": "https://www.instagram.com/eliwilliamssss/p/Ddo-VxfOYH1/",
-        "type": "manual_verified",
-        "authority": "artist",
-        "priority": 115
-      },
-      {
         "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/1040378722?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "url": "https://www.bandsintown.com/e/1040314202?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
         "type": "bandsintown_rest",
         "authority": "artist_calendar",
         "priority": 74
       }
     ],
     "confidence": "medium",
-    "bandsintownEventId": "1040378722",
-    "bandsintownArtistId": "15395466",
-    "bandsintownResolvedName": "Miles Minnick",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Miles Minnick",
-    "advertisedBilling": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "MikeySoChristian",
-      "Lul DreDay",
-      "DJ Malski",
-      "Eli Williams"
-    ],
-    "officialBill": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "MikeySoChristian",
-      "Lul DreDay",
-      "DJ Malski",
-      "Eli Williams"
-    ],
-    "lineupExplicit": true,
-    "auditVerified": "2026-10-06",
-    "doorsTime": "19:00",
-    "startDateTime": "2026-11-14T20:00:00-08:00",
+    "bandsintownEventId": "1040314202",
+    "bandsintownArtistId": "15540358",
+    "bandsintownResolvedName": "Pastor Mike Jr.",
+    "bandsintownIdentity": "configured_id",
+    "trackedArtist": "Pastor Mike Jr.",
     "authority": "venue_ticket",
-    "notes": "Official co-posted flyer bills Miles Minnick, Tommy Zuko, CJ Emulous, Mikeyso and Lul DreDay, hosted by DJ Malski; Eli Williams' dated announcement confirms his participation. Ticketmaster confirms November 14, The Belasco, 6 PM early entry, 7 PM doors, 8 PM show. October 6 review: CJ's GLOvember source links this exact Ticketmaster event, so its November 15 duplicate is merged here. Owner authorized withholding the conflicting November 14 Grand Prairie listing pending confirmation; no cancellation is claimed. Preserve the full reviewed bill and approved artwork.",
-    "legacyEventPaths": [
-      "/event/miles-minnick-at-below-at-the-belasco-2026-11-14-los-angeles-5d10ab/",
-      "/event/glo-concert-2026-11-15-los-angeles-1f2b48/",
-      "/event/miles-minnick-glovember-2026-11-14-los-angeles-5d45ea/"
+    "auditVerified": "2026-09-26",
+    "imageType": "event_artwork",
+    "imageSource": "Owner-selected official Instagram show artwork",
+    "imageSourceUrl": "https://www.instagram.com/p/DdZkgYKmbXf/",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "detailImageLayout": "portrait"
+  },
+  {
+    "id": "bandsintown:109072940",
+    "title": "UNITY POP-UP TOUR",
+    "startDate": "2026-11-14",
+    "startTime": "11:00",
+    "timezone": "",
+    "venue": "UNITY POP-UP TOUR",
+    "address": "801 Dorscher Rd",
+    "city": "Orlando",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Issac Mansfield"
     ],
+    "headliner": "Issac Mansfield",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/109072940?app_id=js_kingdomcircuit.com&came_from=267&custom=true&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/109072940?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/events/issac-unity-pop-up-orlando-2026-11-14-official.webp",
+    "price": "Free",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/109072940?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "109072940",
+    "bandsintownArtistId": "15588396",
+    "bandsintownResolvedName": "Issac Mansfield",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Issac Mansfield",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
-    "imageSource": "Miles Minnick and CJ Emulous official GLOVEMBER Instagram flyer",
-    "imageSourceUrl": "https://www.instagram.com/p/Ddo8xGgoQhN/",
-    "legacyEventNotice": "GLOVEMBER takes place November 14, 2026 at 8 PM at The Belasco. This duplicate listing has been combined with the main event.",
-    "mergedFromIds": [
-      "manual:cj-emulous-glo-concert-los-angeles-2026"
-    ],
-    "firstSeen": "2026-08-09T00:00:00Z"
+    "imageSource": "Issac Mansfield official Bandsintown event flyer",
+    "imageSourceUrl": "https://www.bandsintown.com/e/109072940",
+    "auditVerified": "2026-10-25"
   },
   {
     "id": "supplemental:skema-boy-2026-11-16-dallas-tx",
@@ -2014,8 +2008,8 @@
     "title": "The Promised VI",
     "startDate": "2026-11-20",
     "startTime": "18:00",
-    "timezone": "America/Boise",
-    "venue": "The Whosoevers",
+    "timezone": "",
+    "venue": "The Promised VI",
     "address": "20 S Auto Dr",
     "city": "Boise",
     "state": "ID",
@@ -2026,26 +2020,12 @@
     "headliner": "Kurtis Hoppie",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.tickettailor.com/events/udkevents/2425184",
-    "officialUrl": "https://www.tickettailor.com/events/udkevents/2425184",
+    "ticketUrl": "https://www.bandsintown.com/t/108923215?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/108923215?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
     "image": "assets/events/the-promised-vi-2026-11-20.jpg",
-    "price": "$20 general admission; $75 VIP",
+    "price": "",
     "sourceName": "Bandsintown",
     "sources": [
-      {
-        "name": "Official UDK Events ticket listing",
-        "url": "https://www.tickettailor.com/events/udkevents/2425184",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 115
-      },
-      {
-        "name": "Kurtis Hoppie artist announcement",
-        "url": "https://www.instagram.com/thekurtishoppie/reel/DezCIXAgzl3/",
-        "type": "manual_verified",
-        "authority": "official_artist",
-        "priority": 115
-      },
       {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/108923215?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
@@ -2054,7 +2034,7 @@
         "priority": 74
       }
     ],
-    "confidence": "high",
+    "confidence": "medium",
     "bandsintownEventId": "108923215",
     "bandsintownArtistId": "15395568",
     "bandsintownResolvedName": "Kurtis Hoppie",
@@ -2065,31 +2045,7 @@
     "imageOverride": true,
     "imageSource": "Official The Promised VI event flyer",
     "imageSourceUrl": "https://www.bandsintown.com/e/108923215",
-    "auditVerified": "2026-10-23",
-    "endTime": "21:30",
-    "endDate": "2026-11-20",
-    "startDateTime": "2026-11-20T18:00:00-07:00",
-    "endDateTime": "2026-11-20T21:30:00-07:00",
-    "doorsTime": "17:30",
-    "postalCode": "83709",
-    "advertisedBilling": [
-      "Kurtis Hoppie",
-      "Spencer Boliou",
-      "Derek Ryan",
-      "Kaleah Rochelle"
-    ],
-    "officialBill": [
-      "Kurtis Hoppie",
-      "Spencer Boliou",
-      "Derek Ryan",
-      "Kaleah Rochelle"
-    ],
-    "lineupExplicit": true,
-    "musicConfirmed": true,
-    "ageRestriction": "All ages",
-    "publicDescription": "The Promised VI features Kurtis Hoppie, Spencer Boliou, Derek Ryan and Kaleah Rochelle at The Whosoevers in Boise. Doors open at 5:30 PM; the all-ages show runs 6–9:30 PM.",
-    "notes": "October 23 audit: existing provider event, not a new show. Official organizer ticket page replaces the event title accidentally used as venue and confirms full lineup, doors, show time and all-ages admission. Preserve provider ID, original address and discovery date.",
-    "lastVerified": "2026-10-23T22:33:46.736976Z"
+    "auditVerified": "2026-10-23"
   },
   {
     "id": "supplemental:skema-boy-2026-11-21-denver-co",
@@ -2184,7 +2140,7 @@
     "title": "Alex Jean at The Pyrle",
     "startDate": "2026-12-01",
     "startTime": "20:00",
-    "timezone": "America/New_York",
+    "timezone": "",
     "venue": "The Pyrle",
     "address": "232 S Elm St",
     "city": "Greensboro",
@@ -2196,33 +2152,12 @@
     "headliner": "Alex Jean",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.tixr.com/groups/thepyrle/events/alex-jean-209045",
-    "officialUrl": "https://www.tixr.com/groups/thepyrle/events/alex-jean-209045",
+    "ticketUrl": "https://www.bandsintown.com/t/108976155?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/108976155?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
     "image": "assets/events/alex-jean-welcome-home-tour-2026-portrait.jpg",
     "price": "",
     "sourceName": "Bandsintown",
     "sources": [
-      {
-        "name": "Reece official Welcome Home Tour support announcement",
-        "url": "https://www.instagram.com/onlyreece/reel/DeqBvzBsbiX/",
-        "type": "manual_verified",
-        "authority": "official_artist",
-        "priority": 115
-      },
-      {
-        "name": "The Pyrle official tickets",
-        "url": "https://www.tixr.com/groups/thepyrle/events/alex-jean-209045",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Alex Jean official tour calendar",
-        "url": "https://alexjeantour.com/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
       {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/108976155?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
@@ -2242,26 +2177,7 @@
     "imageOverride": true,
     "imageSource": "Alex Jean official Welcome Home Tour 2026 poster",
     "imageSourceUrl": "https://www.instagram.com/meaningalex/p/Dd_duSRxzAf/",
-    "auditVerified": "2026-10-19",
-    "startDateTime": "2026-12-01T20:00:00-05:00",
-    "doorsTime": "19:00",
-    "advertisedBilling": [
-      "Alex Jean",
-      "Reece"
-    ],
-    "officialBill": [
-      "Alex Jean",
-      "Reece"
-    ],
-    "supportActs": [
-      "Reece"
-    ],
-    "lineupExplicit": true,
-    "musicConfirmed": true,
-    "lastVerified": "2026-10-20T04:28:14.692666Z",
-    "publicDescription": "Alex Jean brings The Welcome Home Tour to Greensboro, with support from Reece.",
-    "notes": " October 19 artist announcement: Reece (@onlyreece), not Reece Lache, supports these four dates. Preserve unlinked full billing.",
-    "detailImageLayout": "portrait"
+    "auditVerified": "2026-10-19"
   },
   {
     "title": "Miles Minnick & CJ Emulous at Zion Ultra Lounge",
