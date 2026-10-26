@@ -1,25 +1,25 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-10-26T10:25:40Z",
-  "lastSuccessfulUpdate": "2026-10-26T10:25:40Z",
-  "eventsPublished": 158,
+  "lastAttempt": "2026-10-26T15:34:50Z",
+  "lastSuccessfulUpdate": "2026-10-26T15:34:50Z",
+  "eventsPublished": 128,
   "candidatesCollected": 275,
-  "artistsConfigured": 377,
+  "artistsConfigured": 378,
   "artistsByPriority": {
     "priority1": 91,
     "priority2": 143,
-    "priority3": 143
+    "priority3": 144
   },
   "ticketmasterArtistsEnabled": 196,
-  "socialSearchArtistsEnabled": 332,
-  "freeTextAliasesProtected": 228,
+  "socialSearchArtistsEnabled": 333,
+  "freeTextAliasesProtected": 230,
   "artistsMatchedOnTicketmaster": 61,
   "officialEventsFound": 31,
   "ticketmasterEventsFound": 11,
-  "instagramArtistsConfigured": 332,
-  "instagramQueriesRun": 334,
-  "instagramQueriesAttempted": 332,
+  "instagramArtistsConfigured": 333,
+  "instagramQueriesRun": 335,
+  "instagramQueriesAttempted": 333,
   "instagramResultsFound": 1,
   "instagramEventsFound": 0,
   "instagramCandidates": [
@@ -48,8 +48,8 @@
       "reason": "the known post was not publicly indexed with enough event details"
     },
     {
-      "url": "https://www.instagram.com/reel/C1xfGz9IsXC/",
-      "title": "Instagram",
+      "url": "https://www.instagram.com/p/DehgSIrCJP1/",
+      "title": "Quality Education School | Our Middle and High School ... - Instagram",
       "artists": [],
       "date": "",
       "city": "",
@@ -59,7 +59,7 @@
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 457,
+  "sourcesChecked": 458,
   "unmatchedArtists": [
     "Scootie Wop",
     "Mike Malagies",
@@ -602,8 +602,8 @@
       "name": "Instagram public announcement scan",
       "status": "ok",
       "eventsFound": 0,
-      "artistsChecked": 332,
-      "queriesRun": 334
+      "artistsChecked": 333,
+      "queriesRun": 335
     }
   ],
   "warningCount": 18,
@@ -632,6 +632,6 @@
   "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings.",
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 22,
-  "artistWebsiteEventsAdded": 0,
-  "artistWebsiteMergeAt": "2026-10-26T14:31:25Z"
+  "artistWebsiteEventsAdded": 3,
+  "artistWebsiteMergeAt": "2026-10-26T15:44:42Z"
 }
