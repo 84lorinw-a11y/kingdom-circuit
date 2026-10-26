@@ -1,9 +1,9 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-10-26T15:34:50Z",
-  "lastSuccessfulUpdate": "2026-10-26T15:34:50Z",
-  "eventsPublished": 128,
+  "lastAttempt": "2026-10-26T16:26:22Z",
+  "lastSuccessfulUpdate": "2026-10-26T16:26:22Z",
+  "eventsPublished": 145,
   "candidatesCollected": 275,
   "artistsConfigured": 378,
   "artistsByPriority": {
@@ -20,7 +20,7 @@
   "instagramArtistsConfigured": 333,
   "instagramQueriesRun": 335,
   "instagramQueriesAttempted": 333,
-  "instagramResultsFound": 1,
+  "instagramResultsFound": 0,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,16 +46,6 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
-    },
-    {
-      "url": "https://www.instagram.com/p/DehgSIrCJP1/",
-      "title": "Quality Education School | Our Middle and High School ... - Instagram",
-      "artists": [],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
@@ -633,5 +623,5 @@
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 22,
   "artistWebsiteEventsAdded": 3,
-  "artistWebsiteMergeAt": "2026-10-26T15:44:42Z"
+  "artistWebsiteMergeAt": "2026-10-26T16:45:52Z"
 }

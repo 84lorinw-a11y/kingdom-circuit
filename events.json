@@ -919,7 +919,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-10-26T15:34:50Z",
+    "lastVerified": "2026-10-26T16:26:22Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 0%",
@@ -1363,14 +1363,12 @@
         "priority": 120
       }
     ],
-    "lastVerified": "2026-10-26T15:34:50Z",
+    "lastVerified": "2026-10-26T16:26:22Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
-    "ageRestriction": "18+",
-    "notes": "Official venue listing specifies an 18+ age restriction.",
     "doorsTime": "17:00",
     "performanceTime": "18:30",
     "mergedIds": [
@@ -1379,6 +1377,8 @@
     "imageOverride": true,
     "imageSource": "Zauntee official God Remembers Tour 2026 full itinerary poster",
     "imageSourceUrl": "https://www.instagram.com/zauntee/p/Da0mxSfyRwu/",
+    "ageRestriction": "18+",
+    "notes": "Official venue listing specifies an 18+ age restriction.",
     "detailImageLayout": "portrait"
   },
   {
@@ -1412,7 +1412,7 @@
         "priority": 76
       }
     ],
-    "lastVerified": "2026-10-26T15:44:42Z",
+    "lastVerified": "2026-10-26T16:45:52Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1455,7 +1455,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-10-26T15:34:50Z",
+    "lastVerified": "2026-10-26T16:26:22Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1589,6 +1589,250 @@
     "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
   },
   {
+    "id": "official:652bb96bc9c6543ec7d3",
+    "title": "WHATUPRG — Live at Vanguard University",
+    "startDate": "2026-11-06",
+    "startTime": "",
+    "timezone": "",
+    "venue": "Vanguard University",
+    "address": "",
+    "city": "Costa Mesa",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "WHATUPRG"
+    ],
+    "headliner": "WHATUPRG",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/1040595689?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.reachrecords.com/artists/whatuprg/",
+    "image": "assets/artists/whatuprg-saved.jpg",
+    "price": "",
+    "sourceName": "Reach Records - WHATUPRG",
+    "sources": [
+      {
+        "name": "Reach Records - WHATUPRG",
+        "url": "https://www.reachrecords.com/artists/whatuprg/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
+      }
+    ],
+    "lastVerified": "2026-10-26T16:26:22Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-10-17T17:56:36Z"
+  },
+  {
+    "id": "manual:flavor-fest-2026-friday-concerts",
+    "title": "Flavor Fest 2026 — Friday Concerts",
+    "startDate": "2026-11-06",
+    "startTime": "19:00",
+    "timezone": "",
+    "venue": "Crossover Church",
+    "address": "1235 Fowler Ave",
+    "city": "Tampa",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Yung Kriss",
+      "Datin",
+      "Lyric The Geenyus",
+      "TRU-SERVA",
+      "MAYIA",
+      "Dre Skywalker",
+      "VVS Big Rock",
+      "Eli Williams",
+      "TVNK",
+      "Th3 Saga",
+      "TruthSoldier",
+      "ZEKE",
+      "Joshua Penn",
+      "B.E.R.I.D.O.X."
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "festival",
+    "status": "scheduled",
+    "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
+    "officialUrl": "https://www.flavorfest.org/schedule",
+    "image": "assets/events/flavor-fest-friday-2026.png",
+    "price": "",
+    "sourceName": "Flavor Fest official 2026 schedule",
+    "sources": [
+      {
+        "name": "Flavor Fest current Friday concert poster",
+        "url": "https://www.flavorfest.org/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Eli Williams official performance announcement",
+        "url": "https://www.instagram.com/eliwilliamssss/p/DdmMA0JOH4q/",
+        "type": "manual_verified",
+        "authority": "artist",
+        "priority": 115
+      },
+      {
+        "name": "TVNK and Flavor Fest official collaborative announcement",
+        "url": "https://www.instagram.com/iamtvnk/p/Dduir12qiAF/",
+        "type": "official_artist",
+        "authority": "artist_announcement",
+        "priority": 112
+      },
+      {
+        "name": "Flavor Fest official 2026 schedule",
+        "url": "https://www.flavorfest.org/schedule",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ],
+    "lastVerified": "2026-10-26T16:26:22Z",
+    "confidence": "high",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "imageOverride": true,
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Yung Kriss",
+      "TH3 Saga",
+      "Datin",
+      "Lyric The Geenyus",
+      "Princess Tayy",
+      "4KL",
+      "Truth Soldier",
+      "Zeke",
+      "TRU-SERVA",
+      "Joshua Penn",
+      "Leon",
+      "Tyler Errae",
+      "Yvonne Sigars",
+      "Songbird SB",
+      "Louis Self",
+      "MAYIA",
+      "Adji Merveille",
+      "Way",
+      "King Jamezzz",
+      "Dre Skywalker",
+      "Jaybez",
+      "B.E.R.I.D.O.X",
+      "DiE$eL-E",
+      "TVNK",
+      "VVS Big Rock",
+      "Jailynn",
+      "Eli Williams"
+    ],
+    "officialBill": [
+      "Miles Minnick",
+      "Yung Kriss",
+      "TH3 Saga",
+      "Datin",
+      "Lyric The Geenyus",
+      "Princess Tayy",
+      "4KL",
+      "Truth Soldier",
+      "Zeke",
+      "TRU-SERVA",
+      "Joshua Penn",
+      "Leon",
+      "Tyler Errae",
+      "Yvonne Sigars",
+      "Songbird SB",
+      "Louis Self",
+      "MAYIA",
+      "Adji Merveille",
+      "Way",
+      "King Jamezzz",
+      "Dre Skywalker",
+      "Jaybez",
+      "B.E.R.I.D.O.X",
+      "DiE$eL-E",
+      "TVNK",
+      "VVS Big Rock",
+      "Jailynn",
+      "Eli Williams"
+    ],
+    "lineupExplicit": true,
+    "auditVerified": "2026-10-12",
+    "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown. Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates. October 8: owner verified TVNK in the artist Sheet. His September 25 collaborative announcement with Flavor Fest explicitly confirms November 6 at Crossover Church. Connect the existing TVNK billing to his curated artist profile. October 12: newly owner-verified artist profiles linked to confirmed billing.",
+    "imageSource": "Official Flavor Fest Friday concert poster",
+    "imageSourceUrl": "https://www.flavorfest.org/schedule"
+  },
+  {
+    "id": "manual:don-ready-club-217-los-angeles-2026-11-06",
+    "title": "Christian Latin & Rap Club Night with Don Ready",
+    "startDate": "2026-11-06",
+    "endDate": "2026-11-06",
+    "startTime": "20:00",
+    "startDateTime": "2026-11-06T20:00:00-08:00",
+    "timezone": "America/Los_Angeles",
+    "venue": "6111 S Gramercy Place",
+    "address": "6111 S Gramercy Place",
+    "city": "Los Angeles",
+    "state": "CA",
+    "country": "US",
+    "artists": [
+      "Don Ready"
+    ],
+    "headliner": "Don Ready",
+    "officialBill": [
+      "Don Ready"
+    ],
+    "advertisedBilling": [
+      "Don Ready"
+    ],
+    "lineupExplicit": true,
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfImRp0hde1M6VeTYf3nQ_agjRXGlBmUaQa4nBd7wUYgwCaZg/viewform",
+    "officialUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfImRp0hde1M6VeTYf3nQ_agjRXGlBmUaQa4nBd7wUYgwCaZg/viewform",
+    "sourceName": "Club 2:17 official event registration",
+    "price": "Free",
+    "description": "Club 2:17 presents a free Christian Latin and rap club night in Los Angeles with a live performance by Don Ready. The event begins at 8 PM with music, dancing, food, games, and community; Don Ready performs later in the evening. Register through the official event link.",
+    "image": "assets/events/don-ready-club-217-los-angeles-2026-11-06.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Official Club 2:17 and Don Ready event flyer",
+    "imageSourceUrl": "https://www.instagram.com/christianclub.la/p/DeDOFANvmLV/",
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-10-05T18:39:31Z",
+    "lastVerified": "2026-10-05T18:39:31Z",
+    "auditVerified": "2026-10-05",
+    "editorialBatch": "2026-10-05-submitted-shows",
+    "sources": [
+      {
+        "name": "Club 2:17 official event registration",
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLSfImRp0hde1M6VeTYf3nQ_agjRXGlBmUaQa4nBd7wUYgwCaZg/viewform",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Club 2:17 official Don Ready announcement and flyer",
+        "url": "https://www.instagram.com/christianclub.la/p/DeDOFANvmLV/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      }
+    ]
+  },
+  {
     "id": "bandsintown:108881783",
     "title": "Hulvey at Vines Center",
     "startDate": "2026-11-06",
@@ -1658,250 +1902,6 @@
     ],
     "mergedFromIds": [
       "official:82953bf17964628bbd9b"
-    ]
-  },
-  {
-    "id": "official:652bb96bc9c6543ec7d3",
-    "title": "WHATUPRG — Live at Vanguard University",
-    "startDate": "2026-11-06",
-    "startTime": "",
-    "timezone": "",
-    "venue": "Vanguard University",
-    "address": "",
-    "city": "Costa Mesa",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "WHATUPRG"
-    ],
-    "headliner": "WHATUPRG",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/1040595689?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "officialUrl": "https://www.reachrecords.com/artists/whatuprg/",
-    "image": "assets/artists/whatuprg-saved.jpg",
-    "price": "",
-    "sourceName": "Reach Records - WHATUPRG",
-    "sources": [
-      {
-        "name": "Reach Records - WHATUPRG",
-        "url": "https://www.reachrecords.com/artists/whatuprg/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 86
-      },
-      {
-        "name": "Reach Records consolidated calendar",
-        "url": "https://www.reachrecords.com/events/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 84
-      }
-    ],
-    "lastVerified": "2026-10-26T15:34:50Z",
-    "confidence": "high",
-    "imageType": "artist",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-10-17T17:56:36Z"
-  },
-  {
-    "id": "manual:flavor-fest-2026-friday-concerts",
-    "title": "Flavor Fest 2026 — Friday Concerts",
-    "startDate": "2026-11-06",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "Crossover Church",
-    "address": "1235 E Fowler Ave",
-    "city": "Tampa",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Yung Kriss",
-      "Datin",
-      "Lyric The Geenyus",
-      "TRU-SERVA",
-      "MAYIA",
-      "Dre Skywalker",
-      "VVS Big Rock",
-      "Eli Williams",
-      "TVNK",
-      "Th3 Saga",
-      "TruthSoldier",
-      "ZEKE",
-      "Joshua Penn",
-      "B.E.R.I.D.O.X."
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "festival",
-    "status": "scheduled",
-    "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
-    "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/a2407af7-a012-4df1-8d42-d247ab82cd8b/FF26-Promo-Friday-Night%2B%281%29.jpg",
-    "price": "",
-    "sourceName": "Flavor Fest official 2026 schedule",
-    "sources": [
-      {
-        "name": "Flavor Fest current Friday concert poster",
-        "url": "https://www.flavorfest.org/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Eli Williams official performance announcement",
-        "url": "https://www.instagram.com/eliwilliamssss/p/DdmMA0JOH4q/",
-        "type": "manual_verified",
-        "authority": "artist",
-        "priority": 115
-      },
-      {
-        "name": "TVNK and Flavor Fest official collaborative announcement",
-        "url": "https://www.instagram.com/iamtvnk/p/Dduir12qiAF/",
-        "type": "official_artist",
-        "authority": "artist_announcement",
-        "priority": 112
-      },
-      {
-        "name": "Flavor Fest official 2026 schedule",
-        "url": "https://www.flavorfest.org/schedule",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      }
-    ],
-    "lastVerified": "2026-10-26T15:34:50Z",
-    "confidence": "high",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z",
-    "imageOverride": true,
-    "advertisedBilling": [
-      "Miles Minnick",
-      "Yung Kriss",
-      "TH3 Saga",
-      "Datin",
-      "Lyric The Geenyus",
-      "Princess Tayy",
-      "4KL",
-      "Truth Soldier",
-      "Zeke",
-      "TRU-SERVA",
-      "Joshua Penn",
-      "Leon",
-      "Tyler Errae",
-      "Yvonne Sigars",
-      "Songbird SB",
-      "Louis Self",
-      "MAYIA",
-      "Adji Merveille",
-      "Way",
-      "King Jamezzz",
-      "Dre Skywalker",
-      "Jaybez",
-      "B.E.R.I.D.O.X",
-      "DiE$eL-E",
-      "TVNK",
-      "VVS Big Rock",
-      "Jailynn",
-      "Eli Williams"
-    ],
-    "officialBill": [
-      "Miles Minnick",
-      "Yung Kriss",
-      "TH3 Saga",
-      "Datin",
-      "Lyric The Geenyus",
-      "Princess Tayy",
-      "4KL",
-      "Truth Soldier",
-      "Zeke",
-      "TRU-SERVA",
-      "Joshua Penn",
-      "Leon",
-      "Tyler Errae",
-      "Yvonne Sigars",
-      "Songbird SB",
-      "Louis Self",
-      "MAYIA",
-      "Adji Merveille",
-      "Way",
-      "King Jamezzz",
-      "Dre Skywalker",
-      "Jaybez",
-      "B.E.R.I.D.O.X",
-      "DiE$eL-E",
-      "TVNK",
-      "VVS Big Rock",
-      "Jailynn",
-      "Eli Williams"
-    ],
-    "lineupExplicit": true,
-    "auditVerified": "2026-09-11",
-    "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown. Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates. October 8: owner verified TVNK in the artist Sheet. His September 25 collaborative announcement with Flavor Fest explicitly confirms November 6 at Crossover Church. Connect the existing TVNK billing to his curated artist profile. October 12: newly owner-verified artist profiles linked to confirmed billing.",
-    "imageSource": "Official Flavor Fest Friday concert poster",
-    "imageSourceUrl": "https://www.flavorfest.org/schedule"
-  },
-  {
-    "id": "manual:don-ready-club-217-los-angeles-2026-11-06",
-    "title": "Christian Latin & Rap Club Night with Don Ready",
-    "startDate": "2026-11-06",
-    "endDate": "2026-11-06",
-    "startTime": "20:00",
-    "startDateTime": "2026-11-06T20:00:00-08:00",
-    "timezone": "America/Los_Angeles",
-    "venue": "6111 S Gramercy Place",
-    "address": "6111 S Gramercy Place",
-    "city": "Los Angeles",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "Don Ready"
-    ],
-    "headliner": "Don Ready",
-    "officialBill": [
-      "Don Ready"
-    ],
-    "advertisedBilling": [
-      "Don Ready"
-    ],
-    "lineupExplicit": true,
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfImRp0hde1M6VeTYf3nQ_agjRXGlBmUaQa4nBd7wUYgwCaZg/viewform",
-    "officialUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfImRp0hde1M6VeTYf3nQ_agjRXGlBmUaQa4nBd7wUYgwCaZg/viewform",
-    "sourceName": "Club 2:17 official event registration",
-    "price": "Free",
-    "description": "Club 2:17 presents a free Christian Latin and rap club night in Los Angeles with a live performance by Don Ready. The event begins at 8 PM with music, dancing, food, games, and community; Don Ready performs later in the evening. Register through the official event link.",
-    "image": "assets/events/don-ready-club-217-los-angeles-2026-11-06.jpg",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Official Club 2:17 and Don Ready event flyer",
-    "imageSourceUrl": "https://www.instagram.com/christianclub.la/p/DeDOFANvmLV/",
-    "authority": "official_event",
-    "confidence": "high",
-    "firstSeen": "2026-10-05T18:39:31Z",
-    "lastVerified": "2026-10-05T18:39:31Z",
-    "auditVerified": "2026-10-05",
-    "editorialBatch": "2026-10-05-submitted-shows",
-    "sources": [
-      {
-        "name": "Club 2:17 official event registration",
-        "url": "https://docs.google.com/forms/d/e/1FAIpQLSfImRp0hde1M6VeTYf3nQ_agjRXGlBmUaQa4nBd7wUYgwCaZg/viewform",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Club 2:17 official Don Ready announcement and flyer",
-        "url": "https://www.instagram.com/christianclub.la/p/DeDOFANvmLV/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      }
     ]
   },
   {
@@ -2090,7 +2090,7 @@
     "title": "Flavor Fest 2026 — Saturday Concerts",
     "startDate": "2026-11-07",
     "startTime": "19:00",
-    "timezone": "America/New_York",
+    "timezone": "",
     "venue": "Crossover Church",
     "address": "1235 Fowler Ave",
     "city": "Tampa",
@@ -2113,7 +2113,7 @@
     "status": "scheduled",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/",
-    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/989d4d2e-f454-4a1b-99df-cc78cf6e6749/FF26-Promo-Saturday-Night.jpg",
+    "image": "assets/events/flavor-fest-saturday-2026.jpg",
     "price": "",
     "sourceName": "Flavor Fest official Saturday poster",
     "sources": [
@@ -2196,8 +2196,7 @@
     "notes": "All 20 named performers on the official Saturday poster are included, including A. Ward and Loso in the compliment battle and named Holy Culture showcase/Gritty stage artists. Gifted Hands is Saturday according to both the current schedule and poster. Beat battles and breakdancing descriptions without named performers are not invented artists. October 8: owner verified DJ Geech in the artist Sheet; official team page identifies Maleek Geech Taylor, and current Saturday concert poster explicitly bills Geech. Connect that existing concert billing to DJ Geech’s curated profile. Do not infer concerts from his separate director or panel roles. October 12: newly owner-verified artist profiles linked to confirmed billing. Nigil Lee personally confirms November 7; the poster spelling Nigel is a typo. October 23: The Rkitect explicitly confirms November 7 on the Gritty Stage; retain as unlinked performer billing. The published 7 PM concert start is not an asserted individual set time.",
     "imageOverride": true,
     "imageSource": "Official Flavor Fest Saturday concert poster",
-    "imageSourceUrl": "https://www.flavorfest.org/",
-    "authority": "official_festival"
+    "imageSourceUrl": "https://www.flavorfest.org/"
   },
   {
     "title": "Miles Minnick – Christlike University – Florida Campus Tour in Jacksonville",
@@ -2435,7 +2434,7 @@
         "priority": 120
       }
     ],
-    "lastVerified": "2026-10-26T15:34:50Z",
+    "lastVerified": "2026-10-26T16:26:22Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2588,58 +2587,6 @@
     "notes": "Bo Fisher supplied the tour flyer directly to the site owner. The flyer prints month/day, venue, city and this full billing, but no year or start times. On October 8, 2026 the owner explicitly instructed us to assume 2026 for all four dates. The year is owner-approved, not independently verified from a public announcement. Leave startTime and ticketUrl empty and detailsPending true. Official details links to the exact unedited artist-supplied flyer hosted locally, not a guessed ticket page or unrelated venue listing. Owner confirmed Bo appears as part of Altar Ego; keep Altar Ego in public billing and link the record to Bo Fisher and the already verified B. Cody Shields. No global group alias or new artist profiles. October 23: associate the separately owner-verified Altar Ego group profile with this explicit group billing. Preserve existing solo artist associations and the advertised lineup."
   },
   {
-    "id": "bandsintown:109034401",
-    "title": "Hulvey at ITOWN Church - Madison Campus",
-    "startDate": "2026-11-13",
-    "startTime": "19:00",
-    "timezone": "",
-    "venue": "ITOWN Church - Madison Campus",
-    "address": "6607 Providence Dr",
-    "city": "Anderson",
-    "state": "IN",
-    "country": "US",
-    "artists": [
-      "Hulvey"
-    ],
-    "headliner": "Hulvey",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/109034401?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/109034401?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/hulvey-saved.webp",
-    "price": "",
-    "sourceName": "Bandsintown",
-    "sources": [
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/109034401?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      },
-      {
-        "name": "Reach Records - Hulvey",
-        "url": "https://www.reachrecords.com/artists/hulvey/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 86
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "109034401",
-    "bandsintownArtistId": "15506918",
-    "bandsintownResolvedName": "Hulvey",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Hulvey",
-    "firstSeen": "2026-10-15T15:24:10Z",
-    "legacyEventPaths": [
-      "/event/hulvey-live-at-itown-church-madison-campus-2026-11-13-anderson-091a78/"
-    ],
-    "mergedFromIds": [
-      "official:433b136650c8a5f6b264"
-    ]
-  },
-  {
     "id": "manual:ignite-and-unite-tour-daytona-beach-2026-11-13",
     "title": "Ignite and Unite Tour",
     "startDate": "2026-11-13",
@@ -2762,6 +2709,58 @@
     "editorialBatch": "2026-10-07-reviewed-discoveries",
     "notes": "Owner requested coverage of both festival days. Organizer homepage dated November 13 graphic confirms DJ Bryce G / The Joyful Noize; separate November 14 graphic confirms Zauntee. Official festival banners confirm November 13–14, 2026, 4–9 PM at Ferran Park, Eustis. The displayed 4 PM is the festival opening time, not an announced DJ set time. This record covers Friday only. Earliest discovery retained from the October 7 festival audit. DJ Bryce G remains event billing without creating an unreviewed artist profile.",
     "price": "Free"
+  },
+  {
+    "id": "bandsintown:109034401",
+    "title": "Hulvey at ITOWN Church - Madison Campus",
+    "startDate": "2026-11-13",
+    "startTime": "19:00",
+    "timezone": "",
+    "venue": "ITOWN Church - Madison Campus",
+    "address": "6607 Providence Dr",
+    "city": "Anderson",
+    "state": "IN",
+    "country": "US",
+    "artists": [
+      "Hulvey"
+    ],
+    "headliner": "Hulvey",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/109034401?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/109034401?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/hulvey-saved.webp",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/109034401?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      },
+      {
+        "name": "Reach Records - Hulvey",
+        "url": "https://www.reachrecords.com/artists/hulvey/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "109034401",
+    "bandsintownArtistId": "15506918",
+    "bandsintownResolvedName": "Hulvey",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Hulvey",
+    "firstSeen": "2026-10-15T15:24:10Z",
+    "legacyEventPaths": [
+      "/event/hulvey-live-at-itown-church-madison-campus-2026-11-13-anderson-091a78/"
+    ],
+    "mergedFromIds": [
+      "official:433b136650c8a5f6b264"
+    ]
   },
   {
     "id": "manual:kaden-jordan-2026-11-13-orlando",
@@ -3286,7 +3285,7 @@
         "priority": 74
       }
     ],
-    "lastVerified": "2026-10-26T15:34:50Z",
+    "lastVerified": "2026-10-26T16:26:22Z",
     "confidence": "high",
     "endDate": "2026-11-14",
     "endTime": "22:00",
@@ -3511,13 +3510,6 @@
         "type": "bandsintown_rest",
         "authority": "artist_calendar",
         "priority": 74
-      },
-      {
-        "name": "Ticketmaster",
-        "url": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
-        "type": "ticketmaster",
-        "authority": "venue_ticket",
-        "priority": 94
       }
     ],
     "confidence": "medium",
@@ -3562,8 +3554,7 @@
     "imageSourceUrl": "https://www.instagram.com/p/Ddo8xGgoQhN/",
     "legacyEventNotice": "GLOVEMBER takes place November 14, 2026 at 8 PM at The Belasco. This duplicate listing has been combined with the main event.",
     "mergedFromIds": [
-      "manual:cj-emulous-glo-concert-los-angeles-2026",
-      "ticketmaster:vv1AaZkfMGkd2fZDG"
+      "manual:cj-emulous-glo-concert-los-angeles-2026"
     ],
     "firstSeen": "2026-08-09T00:00:00Z"
   },
@@ -3598,7 +3589,7 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-10-26T15:34:50Z",
+    "lastVerified": "2026-10-26T16:26:22Z",
     "confidence": "high",
     "imageType": "fallback",
     "imagePosition": "center",
@@ -3651,7 +3642,7 @@
         "priority": 120
       }
     ],
-    "lastVerified": "2026-10-26T15:34:50Z",
+    "lastVerified": "2026-10-26T16:26:22Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -3761,7 +3752,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-10-26T15:34:50Z",
+    "lastVerified": "2026-10-26T16:26:22Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 0%",
@@ -4232,7 +4223,7 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-10-26T15:34:50Z",
+    "lastVerified": "2026-10-26T16:26:22Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -4279,7 +4270,7 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-10-26T15:34:50Z",
+    "lastVerified": "2026-10-26T16:26:22Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -4395,7 +4386,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-10-26T15:34:50Z",
+    "lastVerified": "2026-10-26T16:26:22Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 0%",
@@ -4465,7 +4456,7 @@
     "title": "Miles Minnick & CJ Emulous at Zion Ultra Lounge",
     "startDate": "2026-12-05",
     "startTime": "19:00",
-    "timezone": "America/Phoenix",
+    "timezone": "",
     "venue": "Zion Ultra Lounge",
     "address": "2301 S Stearman Dr",
     "city": "Chandler",
@@ -4492,17 +4483,14 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-10-26T15:34:50Z",
+    "lastVerified": "2026-10-26T16:26:22Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
-    "auditVerified": "2026-09-11",
-    "notes": "CJ Emulous's official calendar confirms Miles Minnick and CJ Emulous at Zion Ultra Lounge on December 5, 2026 at 7:00 PM.",
-    "authority": "artist_calendar",
-    "lineupExplicit": true,
-    "imageOverride": true
+    "auditVerified": "2026-09-23",
+    "notes": "CJ Emulous's official calendar confirms Miles Minnick and CJ Emulous at Zion Ultra Lounge on December 5, 2026 at 7:00 PM."
   },
   {
     "id": "manual:egr-2026-12-11-fargo-nd",
@@ -4535,7 +4523,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-10-26T15:34:50Z",
+    "lastVerified": "2026-10-26T16:26:22Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 0%",
@@ -4576,7 +4564,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-10-26T15:34:50Z",
+    "lastVerified": "2026-10-26T16:26:22Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 0%",
@@ -4737,7 +4725,7 @@
         "priority": 74
       }
     ],
-    "lastVerified": "2026-10-26T15:34:50Z",
+    "lastVerified": "2026-10-26T16:26:22Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "center",
@@ -4800,7 +4788,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-10-26T15:34:50Z",
+    "lastVerified": "2026-10-26T16:26:22Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -4969,13 +4957,6 @@
         "type": "manual_verified",
         "authority": "artist_calendar",
         "priority": 115
-      },
-      {
-        "name": "ChristianHits consolidated show feed",
-        "url": "https://www.universalorlando.com/web/en/us/things-to-do/events/rock-the-universe",
-        "type": "christian_hits",
-        "authority": "aggregator",
-        "priority": 46
       }
     ],
     "auditVerified": "2026-10-08",
@@ -5093,7 +5074,7 @@
         "priority": 76
       }
     ],
-    "lastVerified": "2026-10-26T15:44:42Z",
+    "lastVerified": "2026-10-26T16:45:52Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "center",
@@ -5190,7 +5171,7 @@
         "priority": 76
       }
     ],
-    "lastVerified": "2026-10-26T15:44:42Z",
+    "lastVerified": "2026-10-26T16:45:52Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "center",
@@ -5425,7 +5406,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-10-26T15:34:50Z",
+    "lastVerified": "2026-10-26T16:26:22Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -8891,14 +8872,28 @@
     "lineupExplicit": true,
     "sources": [
       {
-        "name": "The KickBack Texas Tour / Christology Records",
-        "url": "https://www.eventbrite.com/e/the-kickback-tickets-2003607610298",
+        "name": "Organizer confirmed to owner that CJ requested Friday; official new flyer and caption",
+        "url": "https://www.instagram.com/p/Deu2JCvs98r/",
         "type": "manual_verified",
         "authority": "official_event",
-        "priority": 112
+        "priority": 130
+      },
+      {
+        "name": "The Kickback official Eventbrite registration",
+        "url": "https://www.eventbrite.com/e/the-kickback-tickets-2003607610298",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 125
+      },
+      {
+        "name": "CJ Emulous original calendar — November 14 superseded by confirmed reschedule",
+        "url": "https://www.cjemulous.com/event-details/the-kickback-w-cj-emulous",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 80
       }
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-10-20",
     "id": "manual:cj-emulous-kickback-grand-prairie-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -10569,440 +10564,5 @@
     ],
     "legacyEventNotice": "This existing December 11 Ocala listing now uses the organizer’s UNFLTRD event name and expanded lineup.",
     "notes": "Updates the existing Kaden Jordan Ocala listing, preserving its public stable ID and earliest September 12 discovery. The alternate manual seed ID kaden-jordan-babytooth-ocala-2026 is normalized to that existing public ID. Official NEXT CHURCH page confirms Joyful Noize, Kaden Jordan, XEEM, and links the pictured Christian rapper C. Lynn. Jonathan Stamper and Tyler Sterban are not inferred as musical performers. Full original event artwork retained; no new artist profiles or verification changes."
-  },
-  {
-    "title": "Future Legacy Hip-Hop Showcase",
-    "startDate": "2026-10-04",
-    "startTime": "18:30",
-    "timezone": "America/Chicago",
-    "venue": "Cannery Hall — Row One Stage",
-    "address": "1 Cannery Row",
-    "city": "Nashville",
-    "state": "TN",
-    "country": "US",
-    "artists": [
-      "1K Phew",
-      "Don Ready",
-      "LaNell Grant",
-      "Nathan Davis Jr.",
-      "Trendsetter Sense",
-      "Parris Chariz",
-      "Tommy Zuko"
-    ],
-    "headliner": "1K Phew",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.axs.com/events/1580749/future-legacy-hip-hop-showcase-tickets",
-    "officialUrl": "https://www.axs.com/events/1580749/future-legacy-hip-hop-showcase-tickets",
-    "image": "https://images.discovery-prod.axs.com/2026/08/uploadedimage_6a871ac3abd11.jpg",
-    "price": "",
-    "sourceName": "AXS / GMA official Future Legacy listing",
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "GMA Dove Week official schedule",
-        "url": "https://gospelmusic.org/news/dove-week-2026-see-the-schedule",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "GMA Museum official Future Legacy calendar",
-        "url": "https://www.cgmmuseum.org/event/future-legacy-hip-hop-showcase-sponsored-by-vyb/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 120
-      },
-      {
-        "name": "Rapzilla September 30 full-lineup announcement",
-        "url": "https://rapzilla.com/2026-09-future-legacy-hip-hop-showcase-nashville-dove-awards-week/",
-        "type": "manual_verified",
-        "authority": "editorial",
-        "priority": 100
-      },
-      {
-        "name": "AXS official event",
-        "url": "https://www.axs.com/events/1580749/future-legacy-hip-hop-showcase-tickets",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 94
-      }
-    ],
-    "auditVerified": "2026-10-01",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "officialBill": [
-      "1K Phew",
-      "Don Ready",
-      "LaNell Grant",
-      "Nathan Davis Jr.",
-      "DJ Trendsetter Sense",
-      "Parris Chariz",
-      "ADIA",
-      "JustCordell",
-      "Tommy Zuko",
-      "CeJae"
-    ],
-    "notes": "October 1 review: the GMA museum official calendar confirms Tommy Zuko and CeJae; September 30 Rapzilla announcement confirms the complete ten-name performer bill, with DJ Focus and Keal K as hosts. Preserve approved artwork, venue, concert time, event identity and discovery age. CeJae, ADIA and JustCordell remain unlinked billing without new curated profiles.",
-    "advertisedBilling": [
-      "1K Phew",
-      "Don Ready",
-      "LaNell Grant",
-      "Nathan Davis Jr.",
-      "DJ Trendsetter Sense",
-      "Parris Chariz",
-      "ADIA",
-      "JustCordell",
-      "Tommy Zuko",
-      "CeJae"
-    ],
-    "hosts": [
-      "DJ Focus",
-      "Keal K"
-    ],
-    "id": "manual:future-legacy-hip-hop-showcase-nashville-2026"
-  },
-  {
-    "title": "Fountain Fest WV 2026",
-    "startDate": "2026-09-18",
-    "startTime": "20:00",
-    "timezone": "America/New_York",
-    "venue": "Orr's Farm Market",
-    "address": "",
-    "city": "Martinsburg",
-    "state": "WV",
-    "country": "US",
-    "artists": [
-      "Rare of Breed"
-    ],
-    "headliner": "Rare of Breed",
-    "eventType": "festival",
-    "status": "scheduled",
-    "ticketUrl": "https://my.onecause.com/event/organizations/0908e5f7-6980-4a38-8fc5-456d973dcdce/events/vevt:62b43d8b-59e2-479d-a013-fa697f27e51c/home/story",
-    "officialUrl": "https://fountainfestwv.com/",
-    "image": "https://i0.wp.com/fountainfestwv.com/wp-content/uploads/2026/07/Rare-of-Breed-Promo-.webp?resize=720%2C900&ssl=1",
-    "price": "",
-    "sourceName": "Fountain Fest WV official lineup",
-    "authority": "official_festival",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Fountain Fest WV official lineup",
-        "url": "https://fountainfestwv.com/",
-        "type": "manual_verified",
-        "authority": "official_festival",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-11",
-    "endDate": "2026-09-19",
-    "notes": "Rare of Breed performs Friday September 18 at 8 PM; festival continues September 19.",
-    "id": "manual:fountain-fest-wv-2026",
-    "imageType": "artist",
-    "imagePosition": "center",
-    "imageOverride": true
-  },
-  {
-    "title": "Mission and Special Guests",
-    "startDate": "2026-10-17",
-    "startTime": "18:30",
-    "timezone": "America/Los_Angeles",
-    "venue": "Victory Outreach South Sacramento",
-    "address": "6831 Savings Pl",
-    "city": "Sacramento",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "Mission"
-    ],
-    "headliner": "Mission",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
-    "officialUrl": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
-    "image": "assets/events/mission-sacramento-2026-10-17.jpg",
-    "price": "",
-    "sourceName": "Mission official Bandsintown event",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Mission official Bandsintown event",
-        "url": "https://www.bandsintown.com/e/108816740-mission-at-victory-outreach-south-sacramento",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-11",
-    "id": "manual:mission-friends-sacramento-2026",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true
-  },
-  {
-    "title": "Boxyard Saturdaze",
-    "startDate": "2026-10-10",
-    "startTime": "12:30",
-    "timezone": "America/New_York",
-    "venue": "Boxyard RTP — BeatBox Stage",
-    "address": "",
-    "city": "Durham",
-    "state": "NC",
-    "country": "US",
-    "artists": [
-      "MAYIA"
-    ],
-    "headliner": "MAYIA",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
-    "officialUrl": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
-    "image": "assets/events/mayia-boxyard-2026-10-10.png",
-    "price": "",
-    "sourceName": "Boxyard RTP official event",
-    "authority": "official_event",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Boxyard RTP official event",
-        "url": "https://boxyard.rtp.org/events/saturdaze-wattyandmayia-102026-295-435-108/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      },
-      {
-        "name": "MAYIA official calendar",
-        "url": "https://mayiawarren.org/go/bandsintown/21578/event/108885203",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ],
-    "auditVerified": "2026-09-11",
-    "officialBill": [
-      "DJ Watty Tha Shepherd",
-      "MAYIA WARREN"
-    ],
-    "id": "manual:mayia-boxyard-saturdaze-2026",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true
-  },
-  {
-    "title": "MAYIA at the NC State Fair",
-    "startDate": "2026-10-17",
-    "startTime": "10:00",
-    "timezone": "America/New_York",
-    "venue": "Heritage Circle Stage — NC State Fairgrounds",
-    "address": "",
-    "city": "Raleigh",
-    "state": "NC",
-    "country": "US",
-    "artists": [
-      "MAYIA"
-    ],
-    "headliner": "MAYIA",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.ncagr.gov/divisions/ncstatefair/buy-tickets-now",
-    "officialUrl": "https://www.ncagr.gov/divisions/ncstatefair",
-    "image": "assets/artists/mayia-restored-show-photo.webp",
-    "price": "",
-    "sourceName": "North Carolina State Fair official site",
-    "authority": "official_event",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "North Carolina State Fair official site",
-        "url": "https://www.ncagr.gov/divisions/ncstatefair",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      },
-      {
-        "name": "MAYIA official calendar",
-        "url": "https://mayiawarren.org/go/bandsintown/21578/event/108885151",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 100
-      }
-    ],
-    "auditVerified": "2026-09-11",
-    "notes": "One event with two confirmed acoustic sets: 10–11 AM and 12–1 PM.",
-    "id": "manual:mayia-nc-state-fair-2026",
-    "imageType": "artist",
-    "imagePosition": "center",
-    "imageOverride": true
-  },
-  {
-    "title": "SYATP Concert",
-    "startDate": "2026-09-23",
-    "startTime": "19:00",
-    "timezone": "America/Phoenix",
-    "venue": "Shiloh Christian Ministries",
-    "address": "1519 S Ave Del Sol",
-    "city": "Sierra Vista",
-    "state": "AZ",
-    "country": "US",
-    "artists": [
-      "CJ Emulous"
-    ],
-    "headliner": "CJ Emulous",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.cjemulous.com/event-details/syatp-concert-w-cj-emulous",
-    "officialUrl": "https://www.cjemulous.com/event-details/syatp-concert-w-cj-emulous",
-    "image": "https://static.wixstatic.com/media/9c331a_e63115b208054353a76258a4897ad76c~mv2.jpeg/v1/fill/w_980%2Ch_653%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_auto/9c331a_e63115b208054353a76258a4897ad76c~mv2.jpeg",
-    "price": "",
-    "sourceName": "CJ Emulous official calendar",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "CJ Emulous official calendar",
-        "url": "https://www.cjemulous.com/event-details/syatp-concert-w-cj-emulous",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-11",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "id": "manual:cj-emulous-syatp-sierra-vista-2026"
-  },
-  {
-    "title": "Live Loud",
-    "startDate": "2026-10-07",
-    "startTime": "19:00",
-    "timezone": "America/Los_Angeles",
-    "venue": "2801 Notre Dame Blvd",
-    "address": "2801 Notre Dame Blvd",
-    "city": "Chico",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "CJ Emulous"
-    ],
-    "headliner": "CJ Emulous",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.cjemulous.com/event-details/live-loud-w-cj-emulous",
-    "officialUrl": "https://www.cjemulous.com/event-details/live-loud-w-cj-emulous",
-    "image": "https://static.wixstatic.com/media/9c331a_394502e64a45489e872ee2b71bb1a0de~mv2.jpg/v1/fill/w_980%2Ch_543%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_auto/9c331a_394502e64a45489e872ee2b71bb1a0de~mv2.jpg",
-    "price": "",
-    "sourceName": "CJ Emulous official calendar",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "CJ Emulous official calendar",
-        "url": "https://www.cjemulous.com/event-details/live-loud-w-cj-emulous",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-11",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "id": "manual:cj-emulous-live-loud-chico-2026"
-  },
-  {
-    "title": "Teen Club Kickoff / Back to School Concert",
-    "startDate": "2026-10-12",
-    "startTime": "18:00",
-    "timezone": "America/Los_Angeles",
-    "venue": "Westside Ministries",
-    "address": "950 Columbia Ave",
-    "city": "Turlock",
-    "state": "CA",
-    "country": "US",
-    "artists": [
-      "CJ Emulous",
-      "Lul DreDay",
-      "MikeySoChristian"
-    ],
-    "headliner": "CJ Emulous",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.cjemulous.com/event-details/back-to-school-concert-w-cj-emulous-1",
-    "officialUrl": "https://www.cjemulous.com/event-details/back-to-school-concert-w-cj-emulous-1",
-    "image": "https://static.wixstatic.com/media/9c331a_7832125534df4c06b583f033fe19273e~mv2.png",
-    "price": "",
-    "sourceName": "CJ Emulous official calendar and event flyer",
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "CJ Emulous official calendar and event flyer",
-        "url": "https://www.cjemulous.com/event-details/back-to-school-concert-w-cj-emulous-1",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-22",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "officialBill": [
-      "CJ Emulous",
-      "Lul DreDay",
-      "MikeySoChristian"
-    ],
-    "id": "manual:cj-emulous-turlock-back-to-school-2026"
-  },
-  {
-    "title": "Alex Zurdo: Zona Zero",
-    "startDate": "2026-10-18",
-    "startTime": "18:00",
-    "timezone": "America/Puerto_Rico",
-    "venue": "Coliseo de Puerto Rico",
-    "address": "500 Arterial B",
-    "city": "San Juan",
-    "state": "PR",
-    "country": "US",
-    "artists": [
-      "Alex Zurdo"
-    ],
-    "headliner": "Alex Zurdo",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://choli.ticketera.com/event/alex-zurdo-zona-cero-6dn2x2",
-    "officialUrl": "https://www.coliseodepuertorico.com/alexzurdozonazero/",
-    "image": "assets/events/alex-zurdo-zona-zero-instagram-oct10.jpg",
-    "price": "",
-    "sourceName": "Coliseo de Puerto Rico official event",
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "lineupExplicit": true,
-    "sources": [
-      {
-        "name": "Coliseo de Puerto Rico official event",
-        "url": "https://www.coliseodepuertorico.com/alexzurdozonazero/",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-11",
-    "id": "manual:alex-zurdo-zona-zero-san-juan-2026",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true
   }
 ]

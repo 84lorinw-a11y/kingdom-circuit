@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-26T10:42:00Z",
-  "artistsChecked": 377,
+  "generatedAt": "2026-10-26T16:45:48Z",
+  "artistsChecked": 378,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
   "festivalCandidates": 1,
   "bandsintown": {
     "discoveryMode": "structured_rest",
     "status": "ok",
-    "artistsAttempted": 377,
+    "artistsAttempted": 378,
     "resolved": 237,
     "rawUpcomingUSRows": 86,
     "newEventsPublished": 9,
@@ -15,15 +15,15 @@
     "requestErrors": 0
   },
   "songkick": {
-    "artistsAttempted": 377,
+    "artistsAttempted": 378,
     "resolved": 0,
-    "blockedByRobots": 377,
+    "blockedByRobots": 378,
     "eventsFound": 0
   },
   "sourceStatusCounts": {
-    "delegated_to_structured_rest": 377,
-    "blocked_by_robots": 380,
-    "no_events": 531,
+    "delegated_to_structured_rest": 378,
+    "blocked_by_robots": 381,
+    "no_events": 532,
     "failed": 6
   },
   "newEvents": [],
@@ -8335,6 +8335,25 @@
       "artist": "Altar Ego",
       "source": "Spotify profile",
       "url": "https://open.spotify.com/artist/4lZP7gtShMKQthYf6o6V0K",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Trexyn",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Trexyn",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Trexyn",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/2i6lLO0wkXwHTTN9pMFcFX?utm_medium=share&utm_source=linktree",
       "status": "no_events",
       "eventsFound": 0
     }
