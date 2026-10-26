@@ -38564,51 +38564,89 @@
       "lastGitObservedAt": "2026-10-25T14:40:39Z",
       "event": {
         "id": "manual:kaden-jordan-2026-12-11-ocala",
-        "title": "Kaden Jordan Live",
+        "title": "UNFLTRD ’26",
         "startDate": "2026-12-11",
-        "startTime": "",
+        "startTime": "19:00",
         "timezone": "America/New_York",
         "venue": "NEXT CHURCH",
-        "address": "",
+        "address": "8070 SW 60th Ave",
         "city": "Ocala",
         "state": "FL",
         "country": "US",
         "artists": [
-          "Kaden Jordan"
+          "Kaden Jordan",
+          "DJ Bryce G",
+          "Xeem",
+          "C. Lynn"
         ],
-        "headliner": "Kaden Jordan",
+        "headliner": "",
         "eventType": "concert",
         "status": "scheduled",
-        "ticketUrl": "https://www.songkick.com/artists/10314485-kaden-jordan",
-        "officialUrl": "https://kadenjordan.com/pages/tour",
-        "image": "assets/events/kaden-jordan-babytooth-tour-2026-portrait.jpg",
+        "ticketUrl": "https://www.ournextchurch.com/unfltrd",
+        "officialUrl": "https://www.ournextchurch.com/unfltrd",
+        "image": "assets/events/unfltrd-ocala-2026-12-11-official.jpg",
         "imageType": "event_artwork",
         "imagePosition": "center",
-        "price": "",
-        "sourceName": "Kaden Jordan official tour page / Songkick",
-        "authority": "artist_calendar",
+        "price": "Free",
+        "sourceName": "NEXT CHURCH — official UNFLTRD lineup and schedule",
+        "authority": "official_event",
         "confidence": "high",
         "lineupExplicit": true,
         "sources": [
           {
-            "name": "Kaden Jordan official TOUR page",
-            "url": "https://kadenjordan.com/pages/tour",
+            "name": "NEXT CHURCH — official UNFLTRD lineup and schedule",
+            "url": "https://www.ournextchurch.com/unfltrd",
             "type": "manual_verified",
-            "authority": "artist_calendar",
-            "priority": 100
+            "authority": "official_event",
+            "priority": 116
           },
           {
-            "name": "Songkick calendar linked by Kaden Jordan official site",
-            "url": "https://www.songkick.com/artists/10314485-kaden-jordan",
+            "name": "The Joyful Noize — December 11 appearance",
+            "url": "https://www.instagram.com/thejoyfulnoize/p/DezymeAH7vx/",
             "type": "manual_verified",
-            "authority": "artist_calendar",
-            "priority": 90
+            "authority": "official_event",
+            "priority": 116
+          },
+          {
+            "name": "Hot 95.9 — official community event calendar",
+            "url": "https://hot959.com/events/unfltrd-26/",
+            "type": "manual_verified",
+            "authority": "official_event",
+            "priority": 116
           }
         ],
         "imageOverride": true,
-        "imageSource": "Owner-selected official Instagram show artwork",
-        "imageSourceUrl": "https://www.instagram.com/p/DdC2jcyR5h8/",
-        "detailImageLayout": "portrait"
+        "imageSource": "Original official artist announcement artwork",
+        "imageSourceUrl": "https://www.instagram.com/thejoyfulnoize/p/DezymeAH7vx/",
+        "detailImageLayout": "portrait",
+        "endDate": "2026-12-11",
+        "postalCode": "34476",
+        "advertisedBilling": [
+          "Kaden Jordan",
+          "DJ Bryce G",
+          "Xeem",
+          "C. Lynn"
+        ],
+        "officialBill": [
+          "Kaden Jordan",
+          "DJ Bryce G",
+          "Xeem",
+          "C. Lynn"
+        ],
+        "musicConfirmed": true,
+        "firstSeen": "2026-09-12T14:26:19Z",
+        "lastVerified": "2026-10-26T01:45:07Z",
+        "auditVerified": "2026-10-25",
+        "publicDescription": "Free youth and young adult event at NEXT CHURCH with announced music guests Kaden Jordan, DJ Bryce G / The Joyful Noize, XEEM and C. Lynn. Doors open at 6 PM and the program starts at 7 PM. Individual performance times have not been announced.",
+        "description": "Free youth and young adult event at NEXT CHURCH with announced music guests Kaden Jordan, DJ Bryce G / The Joyful Noize, XEEM and C. Lynn. Doors open at 6 PM and the program starts at 7 PM. Individual performance times have not been announced.",
+        "startDateTime": "2026-12-11T19:00:00-05:00",
+        "doorsTime": "18:00",
+        "organizer": "NEXT CHURCH",
+        "legacyEventPaths": [
+          "/event/kaden-jordan-live-2026-12-11-ocala-32d243/"
+        ],
+        "legacyEventNotice": "This existing December 11 Ocala listing now uses the organizer’s UNFLTRD event name and expanded lineup.",
+        "notes": "Updates the existing Kaden Jordan Ocala listing, preserving its public stable ID and earliest September 12 discovery. The alternate manual seed ID kaden-jordan-babytooth-ocala-2026 is normalized to that existing public ID. Official NEXT CHURCH page confirms Joyful Noize, Kaden Jordan, XEEM, and links the pictured Christian rapper C. Lynn. Jonathan Stamper and Tyler Sterban are not inferred as musical performers. Full original event artwork retained; no new artist profiles or verification changes."
       }
     },
     {
