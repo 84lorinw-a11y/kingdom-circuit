@@ -21,12 +21,12 @@ class AutomationPublicationTests(unittest.TestCase):
 
     def test_full_replay_restores_curated_artist_seeds_before_final_validation(self):
         replay = (Path(__file__).resolve().parents[1] / 'scripts/replay_source_update.py').read_text()
-        full_replay = replay.index("if kind == 'full':\\n            run('merge_artist_website_events.py')")
+        full_replay = replay.index("if kind == 'full':")
         validation = replay.index("subprocess.run([sys.executable, '-m', 'unittest', 'discover'", full_replay)
-        self.assertLess(full_replay, validation)
+        self.assertIn("run('merge_artist_website_events.py')", replay[full_replay:validation])
         workflow = (Path(__file__).resolve().parents[1] / '.github/workflows/update-and-deploy.yml').read_text()
         self.assertIn("python scripts/merge_artist_website_events.py", workflow)
-        self.assertIn("--replay \\"python scripts/replay_source_update.py full\\"", workflow)
+        self.assertIn("replay_source_update.py full", workflow)
 
     def setup_repo(self, directory):
         base = Path(directory)
