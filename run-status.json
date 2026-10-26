@@ -1,10 +1,10 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-10-25T15:01:03Z",
-  "lastSuccessfulUpdate": "2026-10-25T15:01:03Z",
-  "eventsPublished": 128,
-  "candidatesCollected": 272,
+  "lastAttempt": "2026-10-26T10:25:40Z",
+  "lastSuccessfulUpdate": "2026-10-26T10:25:40Z",
+  "eventsPublished": 145,
+  "candidatesCollected": 275,
   "artistsConfigured": 377,
   "artistsByPriority": {
     "priority1": 91,
@@ -15,12 +15,12 @@
   "socialSearchArtistsEnabled": 332,
   "freeTextAliasesProtected": 228,
   "artistsMatchedOnTicketmaster": 61,
-  "officialEventsFound": 33,
+  "officialEventsFound": 31,
   "ticketmasterEventsFound": 11,
   "instagramArtistsConfigured": 332,
   "instagramQueriesRun": 334,
   "instagramQueriesAttempted": 332,
-  "instagramResultsFound": 0,
+  "instagramResultsFound": 1,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,6 +46,16 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
+    },
+    {
+      "url": "https://www.instagram.com/reel/C1xfGz9IsXC/",
+      "title": "Instagram",
+      "artists": [],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
@@ -246,12 +256,12 @@
     {
       "name": "Space City Fest official organizer",
       "status": "ok",
-      "eventsFound": 1
+      "eventsFound": 0
     },
     {
       "name": "Space City Fest venue listing",
       "status": "ok",
-      "eventsFound": 1
+      "eventsFound": 0
     },
     {
       "name": "Rural Music Festival official event",
@@ -623,5 +633,5 @@
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 22,
   "artistWebsiteEventsAdded": 3,
-  "artistWebsiteMergeAt": "2026-10-25T15:10:45Z"
+  "artistWebsiteMergeAt": "2026-10-26T10:42:02Z"
 }
