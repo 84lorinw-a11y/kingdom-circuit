@@ -242,7 +242,9 @@ class MultiPageProductionTests(unittest.TestCase):
         self.assertEqual(b"\xff\xd8", genesis_asset.read_bytes()[:2])
 
     def test_space_city_fest_has_current_lineup_and_artwork(self):
-        events = json.loads((ROOT / "events.json").read_text(encoding="utf-8"))
+        # Once October 25 has passed, validate the archived event instead of
+        # requiring a completed concert to remain in the upcoming feed.
+        events = load_catalog(ROOT / "events.json")
         event = next(event for event in events if event.get("title") == "Space City Fest 2026")
         self.assertEqual(
             ["Lecrae", "Lizzie Morgan", "Miles Minnick", "Lin D", "Lil Ziggy", "Young Jayden"],
