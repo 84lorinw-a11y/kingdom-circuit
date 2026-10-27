@@ -7493,23 +7493,37 @@
     ],
     "headliner": "BrvndonP",
     "advertisedBilling": [
-      "BrvndonP"
+      "BrvndonP",
+      "Antwaun Cooks",
+      "Janae Simmons"
     ],
     "officialBill": [
-      "BrvndonP"
+      "BrvndonP",
+      "Antwaun Cooks",
+      "Janae Simmons"
     ],
-    "supportActs": [],
+    "supportActs": [
+      "Antwaun Cooks",
+      "Janae Simmons"
+    ],
     "eventType": "concert",
     "status": "scheduled",
     "ticketUrl": "https://www.eventbrite.com/e/dfw-anthem-night-trap-worship-pop-up-tickets-2003639036294",
     "officialUrl": "https://www.eventbrite.com/e/dfw-anthem-night-trap-worship-pop-up-tickets-2003639036294",
-    "image": "assets/events/dfw-anthem-night-hurst-2026-10-30.jpg",
+    "image": "assets/events/dfw-anthem-night-hurst-2026-10-30-guests-oct27.jpg",
     "imageType": "event_artwork",
     "imageOverride": true,
     "imagePosition": "center",
     "sourceName": "Official event and artist announcements",
     "authority": "official_event",
     "sources": [
+      {
+        "name": "BrvndonP announces Antwaun Cooks and Janae Simmons with updated flyer",
+        "url": "https://www.instagram.com/p/De-lWaUlh0-/",
+        "type": "manual_verified",
+        "authority": "artist_announcement",
+        "priority": 130
+      },
       {
         "name": "Official event announcement",
         "url": "https://www.eventbrite.com/e/dfw-anthem-night-trap-worship-pop-up-tickets-2003639036294",
@@ -7525,21 +7539,22 @@
         "priority": 125
       }
     ],
-    "imageSource": "Official event artwork",
-    "imageSourceUrl": "https://www.eventbrite.com/e/dfw-anthem-night-trap-worship-pop-up-tickets-2003639036294",
+    "imageSource": "BrvndonP official October 26 announcement and full guest-lineup flyer",
+    "imageSourceUrl": "https://www.instagram.com/p/De-lWaUlh0-/",
     "doorsTime": "18:30",
     "postalCode": "76053",
     "ageRestriction": "All ages",
     "price": "",
-    "publicDescription": "BrvndonP brings Anthem Night to Hurst with live trap worship and special guests. Doors open at 6:30 PM; the performance start time has not been announced.",
-    "notes": "October 21 review: official Eventbrite and BrvndonP October 20 announcement confirm October 30 in Hurst. The flyer and artist explicitly label 6:30 PM as doors, so startTime is intentionally blank. Eventbrite highlights contain a conflicting 6 PM doors value; use the matching flyer and artist statement. No unnamed guests are inferred as performers.",
-    "description": "BrvndonP brings Anthem Night to Hurst with live trap worship and special guests. Doors open at 6:30 PM; the performance start time has not been announced.",
-    "lastVerified": "2026-10-21T12:31:24.096874Z",
-    "auditVerified": "2026-10-21",
+    "publicDescription": "BrvndonP brings Anthem Night to Hurst with special guests Antwaun Cooks and Janae Simmons for a live trap worship pop-up. Friday, October 30, at 824 W Pipeline Rd. Doors open at 6:30 PM; the performance start time has not been announced.",
+    "notes": "October 21 review: official Eventbrite and BrvndonP October 20 announcement confirm October 30 in Hurst. The flyer and artist explicitly label 6:30 PM as doors, so startTime is intentionally blank. Eventbrite highlights contain a conflicting 6 PM doors value; use the matching flyer and artist statement. No unnamed guests are inferred as performers. October 27 update: owner-selected BrvndonP October 26 Instagram announcement explicitly adds special guests Antwaun Cooks and Janae Simmons. Original full-resolution flyer saved locally; complete advertised bill preserved without adding unverified artist profiles. Date, venue and 6:30 PM doors are unchanged.",
+    "description": "BrvndonP brings Anthem Night to Hurst with special guests Antwaun Cooks and Janae Simmons for a live trap worship pop-up. Friday, October 30, at 824 W Pipeline Rd. Doors open at 6:30 PM; the performance start time has not been announced.",
+    "lastVerified": "2026-10-27T19:39:13.531877+00:00",
+    "auditVerified": "2026-10-27",
     "confidence": "high",
     "lineupExplicit": true,
     "musicConfirmed": true,
-    "firstSeen": "2026-10-21T12:31:24.096874Z"
+    "firstSeen": "2026-10-21T12:31:24.096874Z",
+    "detailImageLayout": "portrait"
   },
   {
     "id": "bandsintown:108945796",
