@@ -1,9 +1,9 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-10-27T10:27:34Z",
-  "lastSuccessfulUpdate": "2026-10-27T10:27:34Z",
-  "eventsPublished": 155,
+  "lastAttempt": "2026-10-27T15:41:23Z",
+  "lastSuccessfulUpdate": "2026-10-27T15:41:23Z",
+  "eventsPublished": 146,
   "candidatesCollected": 278,
   "artistsConfigured": 378,
   "artistsByPriority": {
@@ -49,7 +49,7 @@
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 458,
+  "sourcesChecked": 456,
   "unmatchedArtists": [
     "Scootie Wop",
     "Mike Malagies",
@@ -245,7 +245,7 @@
     },
     {
       "name": "Space City Fest official organizer",
-      "status": "ok",
+      "status": "warning",
       "eventsFound": 0
     },
     {
@@ -495,7 +495,7 @@
     },
     {
       "name": "TJ Carroll official site",
-      "status": "ok",
+      "status": "warning",
       "eventsFound": 0
     },
     {
@@ -596,10 +596,11 @@
       "queriesRun": 335
     }
   ],
-  "warningCount": 18,
+  "warningCount": 20,
   "errorCount": 0,
   "warnings": [
     "Holy Smoke official festival: Unable to retrieve https://indietribe.us/products/holy-smoke-2026: HTTP Error 404: Not Found",
+    "Space City Fest official organizer: Unable to retrieve https://www.spacecitychurch.com/spacecityfest: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>",
     "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 404: Not Found",
     "NF Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11969355-nf: HTTP Error 403: Forbidden",
     "Mike Malagies Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15593996-mike-malagies: HTTP Error 403: Forbidden",
@@ -607,6 +608,7 @@
     "Torey D'Shaun Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/14363770-torey-d%27shaun: HTTP Error 403: Forbidden",
     "Derek Minor Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/12211056-derek-minor: HTTP Error 403: Forbidden",
     "Social Club Misfits Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/13345973-social-club-misfits: HTTP Error 403: Forbidden",
+    "TJ Carroll official site: Unable to retrieve https://www.tjcarrollmusic.com/: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>",
     "Manafest official tour: Unable to retrieve https://www.manafest.com/tour-dates: HTTP Error 404: Not Found",
     "Manafest Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4465-manafest: HTTP Error 403: Forbidden",
     "GRITS Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/805-grits: HTTP Error 403: Forbidden",
@@ -622,6 +624,6 @@
   "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings.",
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 22,
-  "artistWebsiteEventsAdded": 0,
-  "artistWebsiteMergeAt": "2026-10-27T13:28:55Z"
+  "artistWebsiteEventsAdded": 3,
+  "artistWebsiteMergeAt": "2026-10-27T16:01:06Z"
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T10:43:50Z",
+  "generatedAt": "2026-10-27T16:01:04Z",
   "artistsChecked": 378,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
@@ -23,8 +23,8 @@
   "sourceStatusCounts": {
     "delegated_to_structured_rest": 378,
     "blocked_by_robots": 382,
-    "no_events": 531,
-    "failed": 6
+    "no_events": 526,
+    "failed": 11
   },
   "newEvents": [],
   "sourceResults": [
@@ -6496,8 +6496,9 @@
       "artist": "TJ Carroll",
       "source": "official profile",
       "url": "https://www.tjcarrollmusic.com/",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.tjcarrollmusic.com/: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
     },
     {
       "artist": "TJ Carroll",
@@ -6913,8 +6914,9 @@
       "artist": "Von Won",
       "source": "official website",
       "url": "https://www.grownandsaved.com/vonwon",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.grownandsaved.com/vonwon: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
     },
     {
       "artist": "Von Won",
@@ -6939,8 +6941,9 @@
       "artist": "Lil Ziggy",
       "source": "official website",
       "url": "https://www.grownandsaved.com/lilziggy",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.grownandsaved.com/lilziggy: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
     },
     {
       "artist": "Lil Ziggy",
@@ -6965,8 +6968,9 @@
       "artist": "Young Jayden",
       "source": "official website",
       "url": "https://www.grownandsaved.com/youngjayden",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.grownandsaved.com/youngjayden: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
     },
     {
       "artist": "Young Jayden",
@@ -6991,8 +6995,9 @@
       "artist": "Dougie D",
       "source": "official website",
       "url": "https://www.grownandsaved.com/dougied",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.grownandsaved.com/dougied: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
     },
     {
       "artist": "Dougie D",
