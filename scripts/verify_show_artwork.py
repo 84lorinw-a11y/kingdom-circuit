@@ -34,7 +34,7 @@ def verify(site: Path):
         digest = hashlib.sha256((site / pin["image"]).read_bytes()).hexdigest()[:24]
         assert image_path == pin["image"] or re.fullmatch(
             rf"assets/optimized/{digest}-w\d+\.webp", image_path
-        ), (pin["id"], "feed image")
+        ), (pin["id"], "feed image", {"actual": image_path, "approved": pin["image"], "approved_sha24": digest})
         assert event["imageType"] == pin["imageType"], (pin["id"], "image type")
         href = builder.event_path(event)
         targets[href] = pin
