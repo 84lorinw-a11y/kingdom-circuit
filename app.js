@@ -392,7 +392,8 @@ const ARTIST_ROSTER_ORDER = [
   "Kemara Lynn",
   "R3st0red",
   "Altar Ego",
-  "Trexyn"
+  "Trexyn",
+  "QEW"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -5687,6 +5688,20 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/p/Ddp_SyZHLUy/",
     "imageUrl": "assets/artists/trexyn-owner-selected-oct26.jpg",
     "imagePosition": "50% 70%",
+    "sourceRegistryVerified": true
+  },
+  "qew": {
+    "aliases": [
+      "QEW",
+      "qew_official"
+    ],
+    "website": "https://linktr.ee/QEWofficial",
+    "instagramProfile": "https://www.instagram.com/qew_official/",
+    "spotifyProfile": "https://open.spotify.com/artist/7GJBelg5G2JgssKWZtoJq7",
+    "youtubeProfile": "https://www.youtube.com/channel/UCr7O7vAVOxQFAsqBrCCm3CA",
+    "officialImageSource": "https://open.spotify.com/artist/7GJBelg5G2JgssKWZtoJq7",
+    "imageUrl": "assets/artists/qew-official-spotify-oct27.jpg",
+    "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   }
 };
@@ -10984,6 +10999,20 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/trexyn-owner-selected-oct26.jpg",
     "imagePosition": "50% 70%",
     "sourceRegistryVerified": true
+  },
+  "qew": {
+    "aliases": [
+      "QEW",
+      "qew_official"
+    ],
+    "website": "https://linktr.ee/QEWofficial",
+    "instagramProfile": "https://www.instagram.com/qew_official/",
+    "spotifyProfile": "https://open.spotify.com/artist/7GJBelg5G2JgssKWZtoJq7",
+    "youtubeProfile": "https://www.youtube.com/channel/UCr7O7vAVOxQFAsqBrCCm3CA",
+    "officialImageSource": "https://open.spotify.com/artist/7GJBelg5G2JgssKWZtoJq7",
+    "imageUrl": "assets/artists/qew-official-spotify-oct27.jpg",
+    "imagePosition": "50% 0%",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -12498,6 +12527,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "trexyn": {
     "imageUrl": "assets/artists/trexyn-owner-selected-oct26.jpg",
     "imagePosition": "50% 70%"
+  },
+  "qew": {
+    "imageUrl": "assets/artists/qew-official-spotify-oct27.jpg",
+    "imagePosition": "50% 0%"
   }
 };
 
