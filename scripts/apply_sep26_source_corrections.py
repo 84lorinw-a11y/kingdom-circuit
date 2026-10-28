@@ -177,6 +177,8 @@ def apply(root: Path = ROOT, today: str | None = None) -> None:
     if history is not None:
         history_path.write_text(json.dumps(history, indent=2, ensure_ascii=False) + "\n")
     apply_oct6_audit(root)
+    from private_events import apply as apply_private_events
+    apply_private_events(root)
 
 
 if __name__ == "__main__":

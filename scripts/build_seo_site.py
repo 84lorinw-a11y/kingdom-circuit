@@ -62,7 +62,7 @@ def current(e):
     except Exception: return True
 
 def scheduled(e):
-    return norm(e.get("status") or "scheduled") not in {"cancelled", "canceled", "postponed", "merged"}
+    return norm(e.get("status") or "scheduled") not in {"cancelled", "canceled", "postponed", "merged", "private"}
 
 def domestic_event(event):
     """Publish U.S./Puerto Rico and owner-approved Canadian coverage."""

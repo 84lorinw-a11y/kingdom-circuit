@@ -28,7 +28,8 @@ class LiveRedesignPromotionTests(unittest.TestCase):
             workflow,
         )
         self.assertIn("--production", workflow)
-        self.assertIn("--source-history event-history.json", workflow)
+        self.assertIn("private_events.py --public-history _public-event-history.json", workflow)
+        self.assertIn("--source-history _public-event-history.json", workflow)
         self.assertIn("scripts/verify_live_redesign.py _site", workflow)
 
     def test_approved_seo_uses_the_production_visibility_cutoff(self) -> None:

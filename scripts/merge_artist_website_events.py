@@ -29,6 +29,9 @@ SEED_EVENTS_FILE = ROOT / "config" / "artist-website-seed-events.json"
 
 
 def main() -> int:
+    from private_events import apply as apply_private, matches as private_match, records as private_records
+    apply_private(ROOT)
+    private = private_records(ROOT)
     checked_at = iso_z(now_utc())
     today = now_utc().date()
 
@@ -54,6 +57,8 @@ def main() -> int:
 
     normalized_seed = []
     for raw in seed_events:
+        if any(private_match(raw, held) for held in private):
+            continue
         event = normalize_manual_event(raw, checked_at)
         if event:
             event["sourceAuthority"] = "artist_calendar"
@@ -78,6 +83,7 @@ def main() -> int:
     # sometimes only an hour or two apart and linked from the same official tour page.
     dynamic_candidates = merge_events([
         event for event in website_events if isinstance(event, dict)
+        and not any(private_match(event, held) for held in private)
     ])
     images = artist_image_map(artists, attraction_cache)
     positions = artist_image_positions(artists)

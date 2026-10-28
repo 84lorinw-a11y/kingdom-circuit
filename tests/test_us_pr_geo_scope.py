@@ -61,8 +61,16 @@ class GeographyAndVenueGuards(unittest.TestCase):
         events = json.loads((ROOT / "events.json").read_text(encoding="utf-8"))
         supplemental = json.loads((ROOT / "supplemental-events.json").read_text(encoding="utf-8"))
         seeds = json.loads((ROOT / "config/artist-website-seed-events.json").read_text(encoding="utf-8"))
+        private = json.loads((ROOT / "config/private-events.json").read_text())
         for num, venue in {"108856031": "Indiana Tech", "108856562": "North Canton Chapel", "108856576": "North Canton Chapel"}.items():
             with self.subTest(num=num):
+                if num in {'108856562', '108856576'}:
+                    retained = next(e for e in private if e['id'] == f'manual:808-beezy-bandsintown-{num}')
+                    self.assertEqual(retained['venue'], venue)
+                    self.assertEqual(retained['firstSeen'], '2026-09-02T14:46:37Z')
+                    self.assertEqual(retained['status'], 'private')
+                    self.assertFalse(any(e.get('id') == retained['id'] for e in events + supplemental))
+                    continue
                 published = next(e for e in events if e.get("id") == f"manual:808-beezy-bandsintown-{num}")
                 source = next(e for e in supplemental if e.get("id") == f"manual:808-beezy-bandsintown-{num}")
                 seed = next(e for e in seeds if e.get("id") == f"808-beezy-bandsintown-{num}")

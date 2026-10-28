@@ -67,6 +67,9 @@ jobs:
       - name: Sync verified artist registry
         run: python scripts/sync_verified_artist_registry.py
 
+      - name: Apply confirmed private admission before validation
+        run: python scripts/private_events.py
+
       - name: Run all automated tests
         run: |
           python -m unittest discover -s tests -p 'test_*.py' -v
@@ -476,11 +479,13 @@ jobs:
 
       - name: Apply approved mobile-first live redesign
         run: |
+          python scripts/private_events.py --site _site
+          python scripts/private_events.py --public-history _public-event-history.json
           python _redesign_source/scripts/apply_test_redesign.py _site \
             --production \
             --source-events events.json \
             --source-events supplemental-events.json \
-            --source-history event-history.json
+            --source-history _public-event-history.json
 
       - name: Preserve permanent state navigation and complete archives
         run: python scripts/permanent_state_pages.py --source . --site _site
@@ -567,6 +572,9 @@ jobs:
 
       - name: Verify current dates counts and all artist next shows
         run: python scripts/calendar_maintenance.py --site _site --output calendar-freshness-build.json
+
+      - name: Verify private bookings stay out of public recommendations
+        run: python scripts/private_events.py --site _site --check
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

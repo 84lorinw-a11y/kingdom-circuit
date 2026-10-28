@@ -169,7 +169,7 @@ def load_events(root: pathlib.Path) -> tuple[list[dict], dict[str, str]]:
         if not isinstance(record, dict):
             continue
         event = record.get("event")
-        if not isinstance(event, dict) or is_test(event) or not trusted(event):
+        if not isinstance(event, dict) or is_test(event) or not trusted(event) or norm(event.get('status')) == 'private':
             continue
         if (event.get("id"), event.get("startDate")) in merged:
             continue
