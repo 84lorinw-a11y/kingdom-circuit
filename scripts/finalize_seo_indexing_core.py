@@ -13,6 +13,7 @@ from finalize_artist_schedule_years import apply as finalize_artist_schedule_yea
 from apply_sep26_approved_audit import finalize_availability
 from finalize_pending_details import apply as finalize_pending_details
 from finalize_spin_details import finalize_spin_details
+from finalize_event_schedules import apply as finalize_event_schedules
 
 SITE_ORIGIN = "https://kingdomcircuit.com"
 BRAND_STYLESHEET = "/assets/brand-live.css?v=1"
@@ -235,6 +236,7 @@ def apply(root: pathlib.Path, *, include_requested_addresses: bool = False) -> d
     finalize_availability(root)
     finalize_pending_details(root)
     finalize_spin_details(root)
+    finalize_event_schedules(root)
     branded_pages = apply_branding(root)
     indexed: list[tuple[str, str]] = []
     noindexed: list[tuple[str, str]] = []
