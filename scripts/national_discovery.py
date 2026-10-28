@@ -764,7 +764,12 @@ def verify(live, site, context):
     assert [r['href'] for r in expected_next] == [r['href'] for r in next_inventory], 'Next week must include every eligible Monday–Sunday show, without a cap or later dates'
     next_section = home.one(lambda n: n.attrs.get('aria-labelledby') == 'kc-next-heading')
     assert date_label(next_first, next_last) + ' · Nationwide' in home.text(next_section)
-    assert SITE_BASE + 'shows/?dates=upcoming' in home.raw(next_section)
+    for heading in ('kc-weekend-heading', 'kc-next-heading'):
+        section = home.one(lambda n: n.attrs.get('aria-labelledby') == heading)
+        section_doc = Document(home.raw(section))
+        section_header = section_doc.one(lambda n: n.has('kc-discovery-heading'))
+        view_all, = [n for n in section_header.children if n.tag == 'a']
+        assert view_all.attrs.get('href') == SITE_BASE + 'shows/', 'Homepage View all must open the unfiltered full calendar'
     for ident, expected in (('kc-week-shelf', expected_week), ('kc-next-shelf', expected_next)):
         shelf_node = home.one(lambda n: n.attrs.get('id') == ident)
         part = Document(home.raw(shelf_node))
