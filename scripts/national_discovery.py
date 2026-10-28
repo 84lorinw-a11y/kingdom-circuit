@@ -371,7 +371,7 @@ def home_content(text, context):
 <label class="kc-discovery-sr-only" for="kc-home-search">Search shows by artist, city, venue or show name</label><div class="kc-fan-search-line"><input id="kc-home-search" name="q" type="search" placeholder="Artist, city, venue or show" maxlength="160" autocomplete="off"><button type="submit">{SEARCH_ICON} Search</button></div></form>
 </section>
 <section class="kc-discovery-section" id="calendar" aria-labelledby="kc-weekend-heading" data-preview-week-end="{week_end(context['as_of'])}">
-{section_heading(date_label(context['as_of'] - timedelta(days=context['as_of'].weekday()), week_end(context['as_of'])) + ' · Nationwide', 'Happening This Week', SITE_BASE + 'shows/?dates=week', 'View all', 'kc-weekend-heading')}
+{section_heading(date_label(context['as_of'] - timedelta(days=context['as_of'].weekday()), week_end(context['as_of'])) + ' · Nationwide', 'Happening This Week', SITE_BASE + 'shows/', 'View all', 'kc-weekend-heading')}
 {shelf('kc-week-shelf', ''.join(teaser(r, eager=i == 0) for i, r in enumerate(primary)), 'Happening This Week')}
 <p class="kc-discovery-empty" data-discovery-empty{' hidden' if primary else ''}>No more featured shows this week. Explore the next dates below or <a href="{SITE_BASE}shows/">browse all shows.</a></p></section>
 '''
@@ -380,7 +380,7 @@ def home_content(text, context):
                 + section_heading('Follow the music', 'Artists with upcoming shows', SITE_BASE + 'artists/', 'All artists', 'kc-artists-heading')
                 + shelf('kc-artist-shelf', tiles, 'Artists with upcoming shows', artists=True) + '</section>')
     out += f'''<section class="kc-discovery-section" aria-labelledby="kc-next-heading" data-preview-week-end="{week_end(context['as_of'])}">
-{section_heading(date_label(week_end(context['as_of']) + timedelta(days=1), week_end(context['as_of']) + timedelta(days=7)) + ' · Nationwide', 'Coming Up Next', SITE_BASE + 'shows/?dates=upcoming', 'View all', 'kc-next-heading')}
+{section_heading(date_label(week_end(context['as_of']) + timedelta(days=1), week_end(context['as_of']) + timedelta(days=7)) + ' · Nationwide', 'Coming Up Next', SITE_BASE + 'shows/', 'View all', 'kc-next-heading')}
 {shelf('kc-next-shelf', ''.join(teaser(r) for r in following), 'Coming Up Next')}
 <p class="kc-discovery-empty" data-discovery-empty{' hidden' if following else ''}>No featured shows listed for next week yet. <a href="{SITE_BASE}shows/">Explore all shows.</a></p></section>'''
     out += (f'<section class="kc-fan-explore" id="browse-states" aria-label="Browse shows by state">'
