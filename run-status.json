@@ -1,9 +1,9 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-10-28T10:26:54Z",
-  "lastSuccessfulUpdate": "2026-10-28T10:26:54Z",
-  "eventsPublished": 190,
+  "lastAttempt": "2026-10-28T17:19:35Z",
+  "lastSuccessfulUpdate": "2026-10-28T17:19:35Z",
+  "eventsPublished": 180,
   "candidatesCollected": 312,
   "artistsConfigured": 379,
   "artistsByPriority": {
@@ -20,7 +20,7 @@
   "instagramArtistsConfigured": 334,
   "instagramQueriesRun": 336,
   "instagramQueriesAttempted": 334,
-  "instagramResultsFound": 0,
+  "instagramResultsFound": 1,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,6 +46,18 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
+    },
+    {
+      "url": "https://www.instagram.com/p/Ddoskf1CNWE/",
+      "title": "sondae | Got married to my shawtyyy | Instagram",
+      "artists": [
+        "Sondae"
+      ],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
@@ -622,6 +634,6 @@
   "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings.",
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 22,
-  "artistWebsiteEventsAdded": 0,
-  "artistWebsiteMergeAt": "2026-10-28T14:14:45Z"
+  "artistWebsiteEventsAdded": 3,
+  "artistWebsiteMergeAt": "2026-10-28T17:36:26Z"
 }
