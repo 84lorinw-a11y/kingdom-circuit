@@ -62,7 +62,7 @@ def current(e):
     except Exception: return True
 
 def scheduled(e):
-    return norm(e.get("status") or "scheduled") not in {"cancelled", "canceled", "postponed", "merged", "private"}
+    return norm(e.get("status") or "scheduled") not in {"cancelled", "canceled", "postponed", "merged"}
 
 def domestic_event(event):
     """Publish U.S./Puerto Rico and owner-approved Canadian coverage."""
@@ -131,7 +131,7 @@ def event_type_label(e):
 
 def event_status_label(e):
     value = norm(e.get("status") or "scheduled")
-    return {"cancelled":"Cancelled","canceled":"Cancelled","postponed":"Postponed","rescheduled":"Rescheduled"}.get(value,"Scheduled")
+    return {"cancelled":"Cancelled","canceled":"Cancelled","postponed":"Postponed","rescheduled":"Rescheduled","private":"Private Event"}.get(value,"Scheduled")
 
 def rescheduled_notice(e):
     if norm(e.get("status")) != "rescheduled": return ""
@@ -215,7 +215,7 @@ def event_schema(e):
     if e.get("endDateTime") or e.get("endDate"): data["endDate"]=e.get("endDateTime") or e["endDate"]
     if e.get("previousStartDate") and status == "https://schema.org/EventRescheduled": data["previousStartDate"]=e["previousStartDate"]
     url=e.get("officialUrl") or e.get("ticketUrl")
-    if url and status == "https://schema.org/EventScheduled": data["offers"]={"@type":"Offer","url":url}
+    if url and status == "https://schema.org/EventScheduled" and norm(e.get("status")) != "private": data["offers"]={"@type":"Offer","url":url}
     return data
 
 def event_card(e,artists):

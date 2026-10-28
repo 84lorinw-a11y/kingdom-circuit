@@ -523,6 +523,9 @@ jobs:
       - name: Verify permanent state pages in the final production artifact
         run: python scripts/permanent_state_pages.py --source . --site _site --check
 
+      - name: Label private bookings on all show cards
+        run: python scripts/private_events.py --site _site --label-listings
+
       - name: Apply approved fan-first discovery layout
         run: python scripts/finalize_fan_discovery.py _site _discovery_baseline
 
@@ -573,7 +576,7 @@ jobs:
       - name: Verify current dates counts and all artist next shows
         run: python scripts/calendar_maintenance.py --site _site --output calendar-freshness-build.json
 
-      - name: Verify private bookings stay out of public recommendations
+      - name: Verify private bookings remain listed with admission labels
         run: python scripts/private_events.py --site _site --check
 
       - name: Upload Pages artifact

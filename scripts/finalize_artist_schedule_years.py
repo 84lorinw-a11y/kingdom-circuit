@@ -57,6 +57,14 @@ def event_dates(root: pathlib.Path, anchor: str) -> tuple[dt.date, dt.date]:
         raise ValueError(f"Unexpected upcoming event URL: {href}")
     page = root / "event" / parts[2] / "index.html"
     document = page.read_text(encoding="utf-8")
+    # Private bookings stay listed but do not publish public Event rich results.
+    # Their visible, machine-readable date supports the same schedule rollover.
+    private_date = re.search(r'<time data-kc-private-date datetime="([^"]+)" data-end-date="([^"]+)"', document)
+    if private_date:
+        start, end = (dt.date.fromisoformat(value) for value in private_date.groups())
+        if end < start:
+            raise ValueError(f"Event ends before its start: {href}")
+        return start, end
     for raw in re.findall(r'<script\b[^>]*type="application/ld\+json"[^>]*>(.*?)</script>', document, re.S):
         for node in schema_nodes(json.loads(raw)):
             types = node.get("@type", [])

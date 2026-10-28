@@ -69,7 +69,11 @@ class GeographyAndVenueGuards(unittest.TestCase):
                     self.assertEqual(retained['venue'], venue)
                     self.assertEqual(retained['firstSeen'], '2026-09-02T14:46:37Z')
                     self.assertEqual(retained['status'], 'private')
-                    self.assertFalse(any(e.get('id') == retained['id'] for e in events + supplemental))
+                    for rows in (events, supplemental):
+                        published = [e for e in rows if e.get('id') == retained['id']]
+                        self.assertEqual(len(published), 1)
+                        self.assertEqual(published[0]['status'], 'private')
+                        self.assertEqual(published[0]['firstSeen'], retained['firstSeen'])
                     continue
                 published = next(e for e in events if e.get("id") == f"manual:808-beezy-bandsintown-{num}")
                 source = next(e for e in supplemental if e.get("id") == f"manual:808-beezy-bandsintown-{num}")
