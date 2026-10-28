@@ -802,7 +802,8 @@ def event_page_fields(text: str) -> Dict[str, str]:
         image = schema_image.group(1) if schema_image else ""
     return {
         "title": plain_text(h1.group(1)) if h1 else "Event",
-        "date": details.get("Date", "Date to be announced"),
+        "date": details.get("Date") or details.get("Originally scheduled", "Date to be announced"),
+        "status": details.get("Status", ""),
         "venue": details.get("Venue", ""),
         "location": details.get("Location", "Location to be announced"),
         "image": image,
@@ -854,6 +855,8 @@ def repair_merged_page(text: str, rel: Path, report: Dict[str, int]) -> Tuple[st
 
 def repair_event_page(text: str, rel: Path, used_titles: Dict[str, Path], report: Dict[str, int]) -> str:
     fields = event_page_fields(text)
+    if fields["status"].casefold() in {"cancelled", "canceled"}:
+        fields["title"] = "Cancelled: " + fields["title"]
     title = f"{fields['title']} — {fields['location']} — {fields['date']} | Kingdom Circuit"
     folded = plain_text(title).casefold()
     if folded in used_titles:

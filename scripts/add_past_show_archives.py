@@ -143,6 +143,10 @@ def known_artists(root: pathlib.Path) -> tuple[set[str], dict[str, str]]:
     return known, by_slug
 
 
+def cancelled(event: dict) -> bool:
+    return norm(event.get("status")) in {"cancelled", "canceled"}
+
+
 def load_events(root: pathlib.Path) -> tuple[list[dict], dict[str, str]]:
     path = root / "event-history.json"
     known, by_slug = known_artists(root)
@@ -156,14 +160,23 @@ def load_events(root: pathlib.Path) -> tuple[list[dict], dict[str, str]]:
     cutoff = today - dt.timedelta(days=PAST_GRACE_DAYS)
     oldest = today - dt.timedelta(days=ARCHIVE_DAYS)
     selected: dict[str, dict] = {}
-    for record in history.get("events", []) if isinstance(history, dict) else []:
-        if not isinstance(record, dict) or not record.get("observedOnOrAfterEventDate"):
+    records = history.get("events", []) if isinstance(history, dict) else []
+    # Only suppress explicitly reconciled aliases; retain every history record.
+    merged = {(alias, row["event"].get("startDate"))
+              for row in records if isinstance(row, dict) and isinstance(row.get("event"), dict)
+              for alias in row["event"].get("mergedFromIds", [])}
+    for record in records:
+        if not isinstance(record, dict):
             continue
         event = record.get("event")
         if not isinstance(event, dict) or is_test(event) or not trusted(event):
             continue
+        if (event.get("id"), event.get("startDate")) in merged:
+            continue
+        if not cancelled(event) and not record.get("observedOnOrAfterEventDate"):
+            continue
         when = event_date(event)
-        if when is None or when >= cutoff or when < oldest:
+        if when is None or (when >= cutoff and not cancelled(event)) or when < oldest:
             continue
         if str(event.get("country") or "US").upper() not in {"", "US", "USA"}:
             continue
@@ -188,7 +201,8 @@ def archive_row(event: dict, known_slugs: set[str]) -> str:
         artists.append(f"+{len(names)-5} more")
     location = ", ".join(x for x in (str(event.get("city") or "").strip(), str(event.get("state") or "").strip()) if x)
     details = " · ".join(x for x in (" · ".join(artists), esc(event.get("venue")), esc(location)) if x)
-    return f'<article class="past-show-row"><div class="past-show-date">{esc(date_label(event))}</div><div class="past-show-copy"><h3><a href="{event_path(event)}">{esc(event.get("title"))}</a></h3><p>{details}</p></div></article>'
+    status = '<strong>Cancelled</strong> · ' if cancelled(event) else ''
+    return f'<article class="past-show-row"><div class="past-show-date">{esc(date_label(event))}</div><div class="past-show-copy"><h3><a href="{event_path(event)}">{status}{esc(event.get("title"))}</a></h3><p>{details}</p></div></article>'
 
 
 def section(events: list[dict], known_slugs: set[str]) -> str:
@@ -197,7 +211,8 @@ def section(events: list[dict], known_slugs: set[str]) -> str:
         return ""
     rows = "".join(archive_row(event, known_slugs) for event in shown)
     noun = "show" if len(shown) == 1 else "shows"
-    return f'<section class="past-shows-archive" data-past-shows-archive><details><summary><span>Past shows</span><span class="past-count">{len(shown)} archived {noun}</span></summary><div class="past-show-list">{rows}</div><p class="past-archive-note">Past listings are preserved for concert history. Upcoming shows remain at the top of this page.</p></details></section>'
+    label = 'Show archive' if any(cancelled(event) for event in shown) else 'Past shows'
+    return f'<section class="past-shows-archive" data-past-shows-archive><details><summary><span>{label}</span><span class="past-count">{len(shown)} archived {noun}</span></summary><div class="past-show-list">{rows}</div><p class="past-archive-note">Archived listings are preserved for reference. Cancelled events are marked. Upcoming shows remain at the top of this page.</p></details></section>'
 
 
 def inject(page: pathlib.Path, events: list[dict], known_slugs: set[str]) -> bool:
@@ -256,8 +271,20 @@ def past_page(root: pathlib.Path, event: dict, known_slugs: set[str]) -> str:
         if event.get(source_key):
             address[schema_key] = event[source_key]
     schema_json = json.dumps(schema, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    is_cancelled = cancelled(event)
+    if is_cancelled:
+        schema["eventStatus"] = "https://schema.org/EventCancelled"
+        schema_json = json.dumps(schema, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    page_label = "Cancelled event" if is_cancelled else "Past Show"
+    notice = ("<strong>This event was cancelled.</strong><p>The original date and lineup are retained for reference. This event is not an upcoming or completed performance.</p>" if is_cancelled else "<strong>This event has passed.</strong><p>Kingdom Circuit keeps verified past listings available as concert history. Use the links below for current shows.</p>")
+    status_row = "<div><dt>Status</dt><dd>Cancelled</dd></div>" if is_cancelled else ""
+    top_notice = f'<div class="past-event-notice" role="status">{notice}</div>' if is_cancelled else ""
+    inline_notice = "" if is_cancelled else f'<div class="past-event-notice">{notice}</div>'
+    date_heading = "Originally scheduled" if is_cancelled else "Date"
     desc = f"Past Christian hip-hop show: {title} in {city}, {state} on {date_label(event)}. Browse current Kingdom Circuit show listings."
-    return f'''<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="index,follow"><meta name="description" content="{esc(desc)}"><link rel="canonical" href="{esc(canonical)}">{FAVICON_HTML}<link rel="stylesheet" href="/styles.css?v=10.3"><meta property="og:type" content="website"><meta property="og:title" content="{esc(title)} - Past Show | Kingdom Circuit"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{esc(canonical)}"><script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','{GA_ID}');</script><script type="application/ld+json">{schema_json}</script><title>{esc(title)} - Past Show | Kingdom Circuit</title>{STYLE}</head><body><header class="site-header"><div class="header-inner"><a class="brand" href="/" aria-label="The Kingdom Circuit home"><img src="{BRAND_LOGO}" alt="The Kingdom Circuit - Christian hip-hop, live and connected"></a></div></header><main><section class="event-detail-section"><p class="eyebrow"><a class="text-link" href="/shows/">Shows</a> / Past show</p><article class="event-detail">{media}<div class="event-detail-copy"><p class="eyebrow">Past show</p><h1>{esc(title)}</h1><p class="artist-line">{artists}</p><div class="past-event-notice"><strong>This event has passed.</strong><p>Kingdom Circuit keeps verified past listings available as concert history. Use the links below for current shows.</p></div><dl class="detail-list"><div><dt>Date</dt><dd>{esc(date_label(event))}</dd></div><div><dt>Venue</dt><dd>{esc(venue)}</dd></div><div><dt>Location</dt><dd>{esc(city)}, {esc(state)}</dd></div></dl><div class="profile-links">{''.join(nav)}</div>{source}</div></article></section></main><footer class="site-footer"><div><strong>The Kingdom Circuit</strong><p>Christian hip-hop, live and connected.</p></div><div class="footer-links"><a href="/shows/">All Shows</a><a href="/artists/">Artists</a><a href="/festivals/">Festivals</a><a href="/submit/">Submit a Show</a></div><p class="footer-note">Past event details are preserved for historical reference.</p></footer></body></html>'''
+    if is_cancelled:
+        desc = f"Cancelled: {title}, originally scheduled for {date_label(event)} in {city}, {state}. Retained for reference."
+    return f'''<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="index,follow"><meta name="description" content="{esc(desc)}"><link rel="canonical" href="{esc(canonical)}">{FAVICON_HTML}<link rel="stylesheet" href="/styles.css?v=10.3"><meta property="og:type" content="website"><meta property="og:title" content="{esc(title)} - {page_label} | Kingdom Circuit"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{esc(canonical)}"><script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','{GA_ID}');</script><script type="application/ld+json">{schema_json}</script><title>{esc(title)} - {page_label} | Kingdom Circuit</title>{STYLE}</head><body><header class="site-header"><div class="header-inner"><a class="brand" href="/" aria-label="The Kingdom Circuit home"><img src="{BRAND_LOGO}" alt="The Kingdom Circuit - Christian hip-hop, live and connected"></a></div></header><main><section class="event-detail-section"><p class="eyebrow"><a class="text-link" href="/shows/">Shows</a> / {page_label}</p>{top_notice}<article class="event-detail">{media}<div class="event-detail-copy"><p class="eyebrow">{page_label}</p><h1>{esc(title)}</h1><p class="artist-line">{artists}</p>{inline_notice}<dl class="detail-list">{status_row}<div><dt>{date_heading}</dt><dd>{esc(date_label(event))}</dd></div><div><dt>Venue</dt><dd>{esc(venue)}</dd></div><div><dt>Location</dt><dd>{esc(city)}, {esc(state)}</dd></div></dl><div class="profile-links">{''.join(nav)}</div>{source}</div></article></section></main><footer class="site-footer"><div><strong>The Kingdom Circuit</strong><p>Christian hip-hop, live and connected.</p></div><div class="footer-links"><a href="/shows/">All Shows</a><a href="/artists/">Artists</a><a href="/festivals/">Festivals</a><a href="/submit/">Submit a Show</a></div><p class="footer-note">Past event details are preserved for historical reference.</p></footer></body></html>'''
 
 
 def apply_past_show_archives(root: pathlib.Path) -> dict:

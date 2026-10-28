@@ -26,6 +26,12 @@ def verify(site: Path):
     targets = {}
     for pin in PINS:
         event = by_id.get(pin["id"])
+        if not event and builder.norm(pin.get("status")) in {"cancelled", "canceled"}:
+            # Cancelled shows leave public discovery feeds but retain an archive
+            # page and their approved artwork. Verify that page, not an active card.
+            seeds = json.loads((Path(__file__).resolve().parents[1] / "config/manual-events.json").read_text())
+            event = next((e for e in seeds if str(e.get("id")).removeprefix("manual:") == pin["id"]
+                          and e.get("startDate") == pin["startDate"]), None)
         if not event:
             assert not builder.current(pin) or pin["id"] in excluded_ids, (pin["id"], "missing active event")
             continue
@@ -39,6 +45,9 @@ def verify(site: Path):
         href = builder.event_path(event)
         targets[href] = pin
         text = (site / href.strip("/") / "index.html").read_text()
+        if builder.norm(pin.get("status")) in {"cancelled", "canceled"}:
+            assert event.get("status") in {"cancelled", "canceled"}
+            assert 'https://schema.org/EventCancelled' in text, (pin["id"], "missing cancellation")
         if pin.get("officialUrl"):
             assert event["officialUrl"] == pin["officialUrl"], (pin["id"], "primary source")
             assert event["ticketUrl"] == pin["ticketUrl"], (pin["id"], "ticket destination")
@@ -69,6 +78,7 @@ def verify(site: Path):
             href = re.search(r'href="(/event/[^\"]+)"', card)
             pin = targets.get(href[1]) if href else None
             if pin:
+                assert builder.scheduled(pin), (page, pin["id"], "cancelled show in discovery")
                 assert uses_image(card, site, pin["image"]), (page, pin["id"], "discovery artwork")
                 if "advertisedBilling" in pin:
                     assert all(name in html.unescape(card) for name in pin["advertisedBilling"])

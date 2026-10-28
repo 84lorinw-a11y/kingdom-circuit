@@ -26,6 +26,16 @@ def verify(site: Path):
     for event_id, wanted in PATCHES.items():
         if not builder.current(wanted):
             continue
+        if builder.norm(wanted.get("status")) in {"cancelled", "canceled"}:
+            seeds = json.loads((Path(__file__).resolve().parents[1] / "config/manual-events.json").read_text())
+            archived = next(e for e in seeds if str(e.get("id")).removeprefix("manual:") == event_id
+                            and e.get("startDate") == wanted["startDate"])
+            assert archived.get("status") in {"cancelled", "canceled"}
+            href = builder.event_path(archived)
+            detail = (site / href.strip("/") / "index.html").read_text()
+            assert 'https://schema.org/EventCancelled' in detail, (event_id, "missing cancellation archive")
+            assert not any(f'href="{href}"' in card for card in cards), (event_id, "still upcoming")
+            continue
         event = by_id[event_id]
         reviewed = reviewed_by_id[event_id]
         for key in ("startDate", "startTime", "title", "venue", "artists", "advertisedBilling", "hosts", "officialUrl", "ticketUrl"):

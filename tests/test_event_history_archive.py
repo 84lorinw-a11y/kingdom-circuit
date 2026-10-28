@@ -17,6 +17,36 @@ import add_past_show_archives as past_archives
 
 
 class EventHistoryArchiveTests(unittest.TestCase):
+    def test_cancelled_future_show_is_archived_once_without_marking_it_performed(self) -> None:
+        date = (dt.datetime.now(past_archives.PACIFIC).date() + dt.timedelta(days=3)).isoformat()
+        event = dict(id="cancelled-rooftop", title="Rooftop concert", startDate=date,
+                     city="Washington", state="DC", artists=["Nate Period"],
+                     confidence="high", status="cancelled", mergedFromIds=["manual:cancelled-rooftop"])
+        records = [{"observedOnOrAfterEventDate": False, "event": event},
+                   {"observedOnOrAfterEventDate": False, "event": dict(event, id="manual:cancelled-rooftop", mergedFromIds=[])},
+                   {"observedOnOrAfterEventDate": False, "event": dict(event, id="scheduled-rooftop", status="scheduled", mergedFromIds=[])}]
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp)
+            (root / "event-history.json").write_text(json.dumps({"events": records}))
+            selected, _ = past_archives.load_events(root)
+            self.assertEqual([event["id"]], [e["id"] for e in selected])
+            self.assertEqual(records, json.loads((root / "event-history.json").read_text())["events"])
+            for day in (date, (dt.datetime.now(past_archives.PACIFIC).date() - dt.timedelta(days=1)).isoformat()):
+                page = past_archives.past_page(root, dict(event, startDate=day), set())
+                self.assertIn('https://schema.org/EventCancelled', page)
+                self.assertNotIn('EventCompleted', page)
+                self.assertIn('This event was cancelled.', page)
+                self.assertNotIn('This event has passed.', page)
+                self.assertIn('Originally scheduled', page)
+            self.assertIn('<strong>Cancelled</strong>', past_archives.archive_row(event, set()))
+            self.assertIn('Show archive', past_archives.section(selected, set()))
+            from apply_public_audit_repairs import repair_event_page
+            from collections import defaultdict
+            repaired = repair_event_page(page, pathlib.Path('event/rooftop/index.html'), {}, defaultdict(int))
+            self.assertIn('<title>Cancelled: Rooftop concert', repaired)
+            self.assertNotIn('Date to be announced', repaired)
+            self.assertLess(page.index('This event was cancelled.'), page.index('<article'))
+
     def test_archived_requested_address_survives_final_indexing(self) -> None:
         from finalize_seo_indexing_core import finalize_requested_event_address
         event = next(e for e in json.loads((ROOT / "config/manual-events.json").read_text())
