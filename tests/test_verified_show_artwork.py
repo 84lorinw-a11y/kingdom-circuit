@@ -11,6 +11,21 @@ import apply_verified_show_artwork as artwork
 
 
 class VerifiedShowArtworkTests(unittest.TestCase):
+    def test_liberty_partial_provider_bill_keeps_verified_opener_without_merging_other_show(self):
+        canonical = dict(id='bandsintown:108881783', title='Hulvey at Vines Center',
+                         startDate='2026-11-06', startTime='20:00', venue='Vines Center',
+                         city='Lynchburg', state='VA', artists=['Hulvey', "Torey D'Shaun"])
+        incoming = dict(canonical, id='official:82953bf17964628bbd9b', artists=['Hulvey'])
+        feeds = {'primary': [copy.deepcopy(incoming)], 'reviewed': [copy.deepcopy(canonical)]}
+        artwork.reconcile_provider_duplicates(feeds)
+        self.assertEqual(['Hulvey', "Torey D'Shaun"], feeds['primary'][0]['artists'])
+        self.assertEqual(canonical['id'], feeds['primary'][0]['id'])
+        for change in ({'venue': 'Another venue'}, {'startDate': '2026-11-07'},
+                       {'artists': ['Unrelated artist']}):
+            with self.assertRaisesRegex(ValueError, 'identity conflict'):
+                artwork.reconcile_provider_duplicates({'primary': [dict(incoming, **change)],
+                                                       'reviewed': [copy.deepcopy(canonical)]})
+
     def test_returning_808_calendar_keeps_reviewed_url_flyer_and_original_discovery(self):
         canonical = dict(id='manual:808-beezy-bandsintown-108856031',
                          title='808 BEEZY — Live at FCA Warrior Night', startDate='2026-11-02',

@@ -144,7 +144,16 @@
     "imagePosition": "center",
     "imageOverride": true,
     "imageSource": "Official TicketWeb city-specific concert poster",
-    "imageSourceUrl": "https://www.ticketweb.com/event/kickstand-productions-presents-zauntee-god-the-loving-touch-tickets/14259604?pl=lovingtouch"
+    "imageSourceUrl": "https://www.ticketweb.com/event/kickstand-productions-presents-zauntee-god-the-loving-touch-tickets/14259604?pl=lovingtouch",
+    "doorsTime": "19:00",
+    "timezone": "America/Detroit",
+    "address": "22634 Woodward Avenue",
+    "postalCode": "48220",
+    "ageRestriction": "All ages",
+    "officialUrl": "https://thelovingtouchferndale.com/events",
+    "sourceName": "The Loving Touch official calendar",
+    "auditVerified": "2026-10-29",
+    "notes": "October 29 audit: The Loving Touch official calendar explicitly labels 7 PM as doors. TicketWeb also displays 7 PM without a separate show-start label. Retain the existing 8 PM show time from the earlier artist-management listing; it was not independently reconfirmed in this audit. Do not replace the music time with the doors time."
   },
   {
     "id": "egr-2026-10-31-patterson-ca",
@@ -1157,7 +1166,7 @@
     "ticketUrl": "https://events.liberty.edu/event/hulvey-concert",
     "sourceName": "Liberty University",
     "timezone": "America/New_York",
-    "auditVerified": "2026-10-10",
+    "auditVerified": "2026-10-29",
     "confidence": "high"
   },
   {

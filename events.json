@@ -1770,7 +1770,8 @@
     "state": "VA",
     "country": "US",
     "artists": [
-      "Hulvey"
+      "Hulvey",
+      "Torey D'Shaun"
     ],
     "headliner": "Hulvey",
     "eventType": "concert",
@@ -1821,14 +1822,28 @@
     "imageOverride": true,
     "imageSource": "Liberty University official Hulvey concert artwork",
     "imageSourceUrl": "https://events.liberty.edu/event/hulvey-concert",
-    "auditVerified": "2026-10-10",
+    "auditVerified": "2026-10-29",
     "firstSeen": "2026-09-09T14:51:28Z",
     "legacyEventPaths": [
       "/event/hulvey-live-at-vines-center-2026-11-06-lynchburg-dd0c71/"
     ],
     "mergedFromIds": [
       "official:82953bf17964628bbd9b"
-    ]
+    ],
+    "supportActs": [
+      "Torey D'Shaun"
+    ],
+    "advertisedBilling": [
+      "Hulvey",
+      "Torey D'Shaun"
+    ],
+    "officialBill": [
+      "Hulvey",
+      "Torey D'Shaun"
+    ],
+    "lineupExplicit": true,
+    "endTime": "22:00",
+    "notes": "October 29 audit: Liberty University's official concert page names Torey D'Shaun as opener and lists 8–10 PM. Preserve the existing event identity and title."
   },
   {
     "id": "manual:ignite-and-unite-tour-jacksonville-2026-11-07",
@@ -16241,5 +16256,64 @@
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true
+  },
+  {
+    "id": "manual:aaron-cole-hope-station-benefit-nashville-2026-11-11",
+    "title": "92Q Presents: The Hope Station Benefit Concert",
+    "startDate": "2026-11-11",
+    "startTime": "19:00",
+    "doorsTime": "18:00",
+    "startDateTime": "2026-11-11T19:00:00-06:00",
+    "timezone": "America/Chicago",
+    "venue": "Chief's on Broadway",
+    "city": "Nashville",
+    "state": "TN",
+    "country": "US",
+    "artists": [
+      "Aaron Cole"
+    ],
+    "headliner": "Aaron Cole",
+    "advertisedBilling": [
+      "Aaron Cole",
+      "ANTHNY",
+      "San Franklin",
+      "Taylor Hill"
+    ],
+    "officialBill": [
+      "Aaron Cole",
+      "ANTHNY",
+      "San Franklin",
+      "Taylor Hill"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.tixr.com/groups/chiefsonbroadway/events/92q-presents-the-hope-station-benefit-concert-w-aaron-cole-anthny-san-franklin-taylor-hill-210759",
+    "officialUrl": "https://www.tixr.com/groups/chiefsonbroadway/events/92q-presents-the-hope-station-benefit-concert-w-aaron-cole-anthny-san-franklin-taylor-hill-210759",
+    "ageRestriction": "All ages",
+    "admissionNotes": "All ages. Doors at 6 PM; concert at 7 PM.",
+    "description": "92Q presents a benefit concert supporting The Hope Station, featuring Aaron Cole, ANTHNY, San Franklin and Taylor Hill. Doors open at 6 PM and the concert starts at 7 PM.",
+    "image": "assets/events/aaron-cole-hope-station-nashville-2026-11-11.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Chief's on Broadway official Tixr event image",
+    "imageSourceUrl": "https://www.tixr.com/groups/chiefsonbroadway/events/92q-presents-the-hope-station-benefit-concert-w-aaron-cole-anthny-san-franklin-taylor-hill-210759",
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "sourceName": "Chief's on Broadway / Tixr",
+    "firstSeen": "2026-10-29T11:59:34.751957+00:00",
+    "lastVerified": "2026-10-29T11:59:34.751957+00:00",
+    "auditVerified": "2026-10-29",
+    "sources": [
+      {
+        "name": "Chief's on Broadway / Tixr official listing",
+        "url": "https://www.tixr.com/groups/chiefsonbroadway/events/92q-presents-the-hope-station-benefit-concert-w-aaron-cole-anthny-san-franklin-taylor-hill-210759",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 115
+      }
+    ]
   }
 ]

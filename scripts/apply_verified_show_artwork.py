@@ -90,10 +90,18 @@ def reconcile_provider_duplicates(feeds, history=()):
             # time and only the headliner. The Oct 6 record confirms 8 PM music
             # and the full bill; do not discard either during deduplication.
             glo_alias = row.get('id') == 'ticketmaster:vv1AaZkfMGkd2fZDG'
+            # Liberty names Torey as the opener; the exact label-calendar
+            # alias still lists only Hulvey. Accept that known partial bill,
+            # while the date, venue, city and state checks remain mandatory.
+            liberty_partial_bill = (
+                alias == 'official:82953bf17964628bbd9b'
+                and performers == {'hulvey'}
+                and wanted_performers == {'hulvey', "torey d'shaun"}
+            )
             same = (row.get('startDate') == wanted.get('startDate') == verified['startDate']
                     and all(norm(row.get(k)) == norm(wanted.get(k)) and norm(row.get(k))
                             for k in ('venue', 'city', 'state'))
-                    and (performers == wanted_performers or manual_bill or
+                    and (performers == wanted_performers or manual_bill or liberty_partial_bill or
                          (glo_alias and performers == {'miles minnick'} and performers < wanted_performers))
                     and bool(wanted.get('artists'))
                     and (not row.get('startTime') or not wanted.get('startTime')

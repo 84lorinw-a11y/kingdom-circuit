@@ -446,9 +446,9 @@
     "title": "Zauntee: God Remembers Tour - with Skema Boy",
     "startDate": "2026-10-29",
     "startTime": "20:00",
-    "timezone": "",
+    "timezone": "America/Detroit",
     "venue": "The Loving Touch",
-    "address": "",
+    "address": "22634 Woodward Avenue",
     "city": "Ferndale",
     "state": "MI",
     "country": "US",
@@ -460,11 +460,18 @@
     "eventType": "concert",
     "status": "onsale",
     "ticketUrl": "https://www.ticketweb.com/event/kickstand-productions-presents-zauntee-god-the-loving-touch-tickets/14259604?pl=lovingtouch",
-    "officialUrl": "https://www.ticketweb.com/event/kickstand-productions-presents-zauntee-god-the-loving-touch-tickets/14259604?pl=lovingtouch",
+    "officialUrl": "https://thelovingtouchferndale.com/events",
     "image": "assets/events/zauntee-god-remembers-ferndale-2026.png",
     "price": "",
-    "sourceName": "Skema Boy official tour page",
+    "sourceName": "The Loving Touch official calendar",
     "sources": [
+      {
+        "name": "The Loving Touch official calendar",
+        "url": "https://thelovingtouchferndale.com/events",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
+      },
       {
         "name": "Skema Boy official tour page",
         "url": "https://rixonentertainment.com/skema-boy",
@@ -488,7 +495,12 @@
     "firstSeen": "2026-08-11T22:00:00Z",
     "imageOverride": true,
     "imageSource": "Official TicketWeb city-specific concert poster",
-    "imageSourceUrl": "https://www.ticketweb.com/event/kickstand-productions-presents-zauntee-god-the-loving-touch-tickets/14259604?pl=lovingtouch"
+    "imageSourceUrl": "https://www.ticketweb.com/event/kickstand-productions-presents-zauntee-god-the-loving-touch-tickets/14259604?pl=lovingtouch",
+    "doorsTime": "19:00",
+    "postalCode": "48220",
+    "ageRestriction": "All ages",
+    "auditVerified": "2026-10-29",
+    "notes": "October 29 audit: The Loving Touch official calendar explicitly labels 7 PM as doors. TicketWeb also displays 7 PM without a separate show-start label. Retain the existing 8 PM show time from the earlier artist-management listing; it was not independently reconfirmed in this audit. Do not replace the music time with the doors time."
   },
   {
     "id": "above-the-noise-rooftop-washington-2026-10-31",
