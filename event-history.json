@@ -30217,10 +30217,10 @@
         "id": "manual:ignite-and-unite-tour-jacksonville-2026-11-07",
         "title": "Ignite and Unite Tour",
         "startDate": "2026-11-07",
-        "startTime": "",
+        "startTime": "18:00",
         "timezone": "America/New_York",
         "venue": "Murray Hill Theatre",
-        "address": "",
+        "address": "932 Edgewood Avenue South",
         "city": "Jacksonville",
         "state": "FL",
         "country": "US",
@@ -30233,11 +30233,25 @@
         "eventType": "concert",
         "status": "scheduled",
         "ticketUrl": "",
-        "officialUrl": "https://kingdomcircuit.com/assets/events/ignite-and-unite-tour-artist-submitted-2026.png",
-        "image": "assets/events/ignite-and-unite-tour-artist-submitted-2026.png",
-        "price": "",
-        "sourceName": "Bo Fisher artist-submitted Ignite and Unite Tour flyer",
+        "officialUrl": "https://www.instagram.com/p/DfFL_UXtrzr/",
+        "image": "assets/events/ignite-and-unite-jacksonville-2026-11-07-oct29.jpg",
+        "price": "Free — no tickets needed",
+        "sourceName": "Murray Hill Theatre / Infiltrate Records official announcement",
         "sources": [
+          {
+            "name": "Murray Hill Theatre October 29 official announcement",
+            "url": "https://www.instagram.com/p/DfFL_UXtrzr/",
+            "type": "manual_verified",
+            "authority": "official_event",
+            "priority": 112
+          },
+          {
+            "name": "Murray Hill Theatre official event details",
+            "url": "https://app.opendate.io/e/unity-in-the-community-november-07-2026-753723",
+            "type": "manual_verified",
+            "authority": "venue_ticket",
+            "priority": 112
+          },
           {
             "name": "Bo Fisher artist-submitted Ignite and Unite Tour flyer",
             "url": "https://kingdomcircuit.com/assets/events/ignite-and-unite-tour-artist-submitted-2026.png",
@@ -30246,43 +30260,71 @@
             "priority": 112
           }
         ],
-        "lastVerified": "2026-10-08T23:11:36Z",
-        "confidence": "medium",
+        "lastVerified": "2026-10-29T15:28:05.624009Z",
+        "confidence": "high",
         "endDate": "2026-11-07",
         "imageType": "event_artwork",
         "imagePosition": "center",
         "verifiedVersion": 9,
         "firstSeen": "2026-10-08T23:11:36Z",
-        "startDateTime": "",
+        "startDateTime": "2026-11-07T18:00:00-05:00",
         "advertisedBilling": [
-          "Pastor John Humphries",
-          "OTG Zico",
-          "Altar Ego",
+          "3HRE",
           "J10",
           "Legit",
-          "3HRE",
-          "B. Cody Shields"
+          "B. Cody Shields",
+          "Altar Ego",
+          "OTG Zico",
+          "Kelo Cho",
+          "DJ Scott Free"
         ],
         "officialBill": [
-          "Pastor John Humphries",
-          "OTG Zico",
-          "Altar Ego",
+          "3HRE",
           "J10",
           "Legit",
-          "3HRE",
-          "B. Cody Shields"
+          "B. Cody Shields",
+          "Altar Ego",
+          "OTG Zico",
+          "Kelo Cho",
+          "DJ Scott Free"
         ],
-        "detailsPending": true,
+        "detailsPending": false,
         "lineupExplicit": true,
         "imageOverride": true,
         "detailImageLayout": "portrait",
-        "imageSource": "Ignite and Unite Tour flyer supplied by Bo Fisher",
-        "imageSourceUrl": "https://kingdomcircuit.com/assets/events/ignite-and-unite-tour-artist-submitted-2026.png",
-        "organizer": "",
-        "publicDescription": "The Ignite and Unite Tour comes to Murray Hill Theatre in Jacksonville, Florida. The flyer lists Pastor John Humphries, OTG Zico, Altar Ego, J10, Legit, 3HRE, and B. Cody Shields. Start time and ticket details are to be announced.",
+        "imageSource": "Murray Hill Theatre October 29 official Unity in the Community / Ignite and Unite flyer",
+        "imageSourceUrl": "https://www.instagram.com/p/DfFL_UXtrzr/",
+        "organizer": "Infiltrate Records / Murray Hill Theatre",
+        "publicDescription": "Free admission — no tickets needed. Unity in the Community begins outside Murray Hill Theatre at 3:30 PM, followed by the Ignite and Unite concert inside at 6 PM; concert doors open at 5:30 PM. Performing: 3HRE, J10, Legit, B. Cody Shields, Altar Ego, OTG Zico, Kelo Cho and DJ Scott Free. Pastor John Humphries brings the message. All ages welcome.",
         "authority": "official_event",
-        "auditVerified": "2026-10-08",
-        "notes": "Bo Fisher supplied the tour flyer directly to the site owner. The flyer prints month/day, venue, city and this full billing, but no year or start times. On October 8, 2026 the owner explicitly instructed us to assume 2026 for all four dates. The year is owner-approved, not independently verified from a public announcement. Leave startTime and ticketUrl empty and detailsPending true. Official details links to the exact unedited artist-supplied flyer hosted locally, not a guessed ticket page or unrelated venue listing. Owner confirmed Bo appears as part of Altar Ego; keep Altar Ego in public billing and link the record to Bo Fisher and the already verified B. Cody Shields. No global group alias or new artist profiles. October 23: associate the separately owner-verified Altar Ego group profile with this explicit group billing. Preserve existing solo artist associations and the advertised lineup."
+        "auditVerified": "2026-10-29",
+        "notes": "Updated from the venue's October 29 Instagram announcement supplied by the owner. The latest announcement says free admission and no tickets needed, superseding the older $10 / IGNITE discount-code instructions. Latest flyer and caption omit Madigan; do not carry that older billing forward. Venue ticket page confirms concert doors 5:30 PM and all ages. 3:30 PM is the outdoor outreach start, not the indoor concert. Preserve the existing title, ID, URL, firstSeen, and verified artist associations; no new artist verification implied.",
+        "doorsTime": "17:30",
+        "postalCode": "32205",
+        "hosts": [
+          "Pastor John Humphries (message)"
+        ],
+        "ageRestriction": "All ages",
+        "editorialBatch": "2026-10-29-ignite-brenno",
+        "publicNotice": "Free admission — no tickets needed. Community outreach starts at 3:30 PM; the indoor concert starts at 6 PM.",
+        "scheduleDetails": [
+          {
+            "label": "Community outreach",
+            "text": "3:30 PM — Unity in the Community outside the theatre."
+          },
+          {
+            "label": "Concert doors",
+            "text": "5:30 PM Eastern."
+          },
+          {
+            "label": "Concert",
+            "text": "6:00 PM Eastern."
+          },
+          {
+            "label": "Admission",
+            "text": "Free, all ages. No tickets needed."
+          }
+        ]
       }
     },
     {
@@ -35478,7 +35520,7 @@
             "url": "https://dice.fm/partner/tickets/event/yo5xer-whatuprg-w-aftrthght-de-la-cruz-19th-nov-rockerfellers-houston-tickets",
             "type": "manual_verified",
             "authority": "venue_ticket",
-            "priority": 125
+            "priority": 100
           },
           {
             "name": "WHATUPRG official Instagram announcement",
@@ -35666,7 +35708,7 @@
         "postalCode": "75226",
         "doorsTime": "19:00",
         "ageRestriction": "All ages",
-        "notes": "October 8, 2026: owner approved restoring the previously held date after venue corroboration. The Bomb Factory explicitly lists November 19, 8 PM show and 7 PM doors, On Sale Now, and its AXS event link. Current AXS detail listing matches; checkout was not tested. Preserve approved Welcome Home Tour artwork and original event identity/discovery date. October 19: Reece (@onlyreece) announced these four support dates; he is distinct from Reece Lache. Keep unlinked billing until roster approval.",
+        "notes": " October 19 artist announcement: Reece (@onlyreece), not Reece Lache, supports these four dates. Preserve unlinked full billing.",
         "sourceEventIds": [
           "axs:1626463"
         ],
@@ -36387,7 +36429,7 @@
             "url": "https://dice.fm/partner/tickets/event/mxynyr-whatuprg-w-aftrthght-de-la-cruz-20th-nov-ridglea-room-fort-worth-tickets",
             "type": "manual_verified",
             "authority": "venue_ticket",
-            "priority": 125
+            "priority": 100
           },
           {
             "name": "WHATUPRG official Instagram announcement",
@@ -37750,7 +37792,7 @@
             "url": "https://wl.eventim.us/event/whatuprg/707572?afflky=PaperTiger",
             "type": "manual_verified",
             "authority": "venue_ticket",
-            "priority": 125
+            "priority": 100
           },
           {
             "name": "WHATUPRG official Instagram announcement",
