@@ -9812,9 +9812,9 @@
     "lineupExplicit": true,
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfImRp0hde1M6VeTYf3nQ_agjRXGlBmUaQa4nBd7wUYgwCaZg/viewform",
-    "officialUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfImRp0hde1M6VeTYf3nQ_agjRXGlBmUaQa4nBd7wUYgwCaZg/viewform",
-    "sourceName": "Club 2:17 official event registration",
+    "ticketUrl": "https://www.eventbrite.com/e/christian-latin-rap-club-night-w-don-ready-free-event-tickets-2003215547628",
+    "officialUrl": "https://www.eventbrite.com/e/christian-latin-rap-club-night-w-don-ready-free-event-tickets-2003215547628",
+    "sourceName": "Eventbrite — Christian Latin & Rap Club Night with Don Ready",
     "price": "Free",
     "description": "Club 2:17 presents a free Christian Latin and rap club night in Los Angeles with a live performance by Don Ready. The event begins at 8 PM with music, dancing, food, games, and community; Don Ready performs later in the evening. Register through the official event link.",
     "image": "assets/events/don-ready-club-217-los-angeles-2026-11-06.jpg",
@@ -9826,10 +9826,17 @@
     "authority": "official_event",
     "confidence": "high",
     "firstSeen": "2026-10-05T18:39:31Z",
-    "lastVerified": "2026-10-05T18:39:31Z",
-    "auditVerified": "2026-10-05",
+    "lastVerified": "2026-10-29T10:00:03Z",
+    "auditVerified": "2026-10-29",
     "editorialBatch": "2026-10-05-submitted-shows",
     "sources": [
+      {
+        "name": "Eventbrite — organizer event and free RSVP",
+        "url": "https://www.eventbrite.com/e/christian-latin-rap-club-night-w-don-ready-free-event-tickets-2003215547628",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 118
+      },
       {
         "name": "Club 2:17 official event registration",
         "url": "https://docs.google.com/forms/d/e/1FAIpQLSfImRp0hde1M6VeTYf3nQ_agjRXGlBmUaQa4nBd7wUYgwCaZg/viewform",
@@ -9844,7 +9851,8 @@
         "authority": "official_event",
         "priority": 115
       }
-    ]
+    ],
+    "notes": "Eventbrite organizer page confirms Nov 6, 2026, 8:00 PM event start, 6111 S Gramercy Pl, Los Angeles, free entry, ages 16+, and a later live Don Ready set. Exact Don Ready performance start is not published; 8 PM is the event start, not a verified set time. Retain original Club 2:17 registration as an alternate source."
   },
   {
     "id": "ignite-and-unite-tour-jacksonville-2026-11-07",
