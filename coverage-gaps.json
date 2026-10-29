@@ -1,6 +1,6 @@
 {
   "policyVersion": 7,
-  "generatedAt": "2026-10-29T15:29:42Z",
+  "generatedAt": "2026-10-29T16:53:37Z",
   "highRiskArtists": [
     {
       "artist": "Mike Malagies",
@@ -314,5 +314,19 @@
     "Incomplete confirmed events stay off the public calendar until a venue/city/state can be verified.",
     "Held festival candidates create workflow warnings until an official lineup is verified and published."
   ],
-  "heldFestivalCandidates": []
+  "heldFestivalCandidates": [
+    {
+      "id": "bandsintown:109096526",
+      "title": "Hulvey at Gatlinburg Convention Center",
+      "startDate": "2026-12-27",
+      "city": "Gatlinburg",
+      "state": "TN",
+      "artists": [
+        "Hulvey"
+      ],
+      "officialUrl": "https://www.bandsintown.com/e/109096526?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+      "status": "needs_official_lineup_review",
+      "reason": "A tracked artist calendar reports this festival, but no official-lineup record is published yet."
+    }
+  ]
 }

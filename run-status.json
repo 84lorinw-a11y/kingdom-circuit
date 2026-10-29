@@ -1,10 +1,10 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-10-29T10:32:29Z",
-  "lastSuccessfulUpdate": "2026-10-29T10:32:29Z",
-  "eventsPublished": 194,
-  "candidatesCollected": 314,
+  "lastAttempt": "2026-10-29T16:34:02Z",
+  "lastSuccessfulUpdate": "2026-10-29T16:34:02Z",
+  "eventsPublished": 183,
+  "candidatesCollected": 316,
   "artistsConfigured": 379,
   "artistsByPriority": {
     "priority1": 91,
@@ -20,19 +20,9 @@
   "instagramArtistsConfigured": 334,
   "instagramQueriesRun": 336,
   "instagramQueriesAttempted": 334,
-  "instagramResultsFound": 2,
+  "instagramResultsFound": 1,
   "instagramEventsFound": 0,
   "instagramCandidates": [
-    {
-      "url": "https://www.instagram.com/p/DUVyYybj02x/",
-      "title": "Top Shelf Alpha Health Files | Manergy is a simple daily ... - Instagram",
-      "artists": [],
-      "date": "",
-      "city": "unmotivated",
-      "state": "OR",
-      "score": 2,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; no tracked artist was confidently matched"
-    },
     {
       "url": "https://www.instagram.com/p/DboKM3GJM4A/",
       "title": "Official EGR 2026 schedule graphic supplied to The Kingdom Circuit and manually transcribed.",
@@ -58,14 +48,16 @@
       "reason": "the known post was not publicly indexed with enough event details"
     },
     {
-      "url": "https://www.instagram.com/reel/DPVzDe3iAZD/",
-      "title": "‎CinemaON | سینما آنلاین‎ on Instagram‎: \"فیلم: بانوی بهشت ...",
-      "artists": [],
+      "url": "https://www.instagram.com/p/C4J4c6hRJHG/",
+      "title": "Gloria Kwan Kremer | English muffin pizzas. So yummy! I ... - Instagram",
+      "artists": [
+        "S.O."
+      ],
       "date": "",
       "city": "",
       "state": "",
       "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
@@ -642,6 +634,6 @@
   "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings.",
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 20,
-  "artistWebsiteEventsAdded": 0,
-  "artistWebsiteMergeAt": "2026-10-29T14:35:35Z"
+  "artistWebsiteEventsAdded": 1,
+  "artistWebsiteMergeAt": "2026-10-29T16:53:37Z"
 }
