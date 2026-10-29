@@ -6,7 +6,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 BATCH = "2026-09-29-expanded-source-search"
-APPROVED_BATCHES = {BATCH, "2026-09-30-whatuprg-announced", "2026-10-05-submitted-shows", "2026-10-06-submitted-events", "2026-10-07-submitted-events", "2026-10-07-reviewed-discoveries", "2026-10-08-reviewed-discoveries", "2026-10-09-reviewed-discoveries", "2026-10-11-reviewed-discoveries", "2026-10-17-approved-shows", "2026-10-27-approved-shows"}
+APPROVED_BATCHES = {BATCH, '2026-10-29-ignite-brenno', "2026-09-30-whatuprg-announced", "2026-10-05-submitted-shows", "2026-10-06-submitted-events", "2026-10-07-submitted-events", "2026-10-07-reviewed-discoveries", "2026-10-08-reviewed-discoveries", "2026-10-09-reviewed-discoveries", "2026-10-11-reviewed-discoveries", "2026-10-17-approved-shows", "2026-10-27-approved-shows"}
 
 
 def matches(event, approved):

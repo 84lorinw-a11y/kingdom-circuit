@@ -5733,11 +5733,11 @@
     "title": "Ignite and Unite Tour",
     "startDate": "2026-11-07",
     "endDate": "2026-11-07",
-    "startTime": "",
+    "startTime": "18:00",
     "timezone": "America/New_York",
-    "startDateTime": "",
+    "startDateTime": "2026-11-07T18:00:00-05:00",
     "venue": "Murray Hill Theatre",
-    "address": "",
+    "address": "932 Edgewood Avenue South",
     "city": "Jacksonville",
     "state": "FL",
     "country": "US",
@@ -5747,54 +5747,89 @@
       "Altar Ego"
     ],
     "advertisedBilling": [
-      "Pastor John Humphries",
-      "OTG Zico",
-      "Altar Ego",
+      "3HRE",
       "J10",
       "Legit",
-      "3HRE",
-      "B. Cody Shields"
+      "B. Cody Shields",
+      "Altar Ego",
+      "OTG Zico",
+      "Kelo Cho",
+      "DJ Scott Free"
     ],
     "officialBill": [
-      "Pastor John Humphries",
-      "OTG Zico",
-      "Altar Ego",
+      "3HRE",
       "J10",
       "Legit",
-      "3HRE",
-      "B. Cody Shields"
+      "B. Cody Shields",
+      "Altar Ego",
+      "OTG Zico",
+      "Kelo Cho",
+      "DJ Scott Free"
     ],
     "headliner": "Altar Ego",
     "eventType": "concert",
     "status": "scheduled",
-    "detailsPending": true,
+    "detailsPending": false,
     "lineupExplicit": true,
-    "officialUrl": "https://kingdomcircuit.com/assets/events/ignite-and-unite-tour-artist-submitted-2026.png",
+    "officialUrl": "https://www.instagram.com/p/DfFL_UXtrzr/",
     "ticketUrl": "",
-    "image": "assets/events/ignite-and-unite-tour-artist-submitted-2026.png",
+    "image": "assets/events/ignite-and-unite-jacksonville-2026-11-07-oct29.jpg",
     "imageType": "event_artwork",
     "imageOverride": true,
     "imagePosition": "center",
     "detailImageLayout": "portrait",
-    "imageSource": "Ignite and Unite Tour flyer supplied by Bo Fisher",
-    "imageSourceUrl": "https://kingdomcircuit.com/assets/events/ignite-and-unite-tour-artist-submitted-2026.png",
-    "organizer": "",
-    "price": "",
-    "publicDescription": "The Ignite and Unite Tour comes to Murray Hill Theatre in Jacksonville, Florida. The flyer lists Pastor John Humphries, OTG Zico, Altar Ego, J10, Legit, 3HRE, and B. Cody Shields. Start time and ticket details are to be announced.",
-    "sourceName": "Bo Fisher artist-submitted Ignite and Unite Tour flyer",
+    "imageSource": "Murray Hill Theatre October 29 official Unity in the Community / Ignite and Unite flyer",
+    "imageSourceUrl": "https://www.instagram.com/p/DfFL_UXtrzr/",
+    "organizer": "Infiltrate Records / Murray Hill Theatre",
+    "price": "Free — no tickets needed",
+    "publicDescription": "Free admission — no tickets needed. Unity in the Community begins outside Murray Hill Theatre at 3:30 PM, followed by the Ignite and Unite concert inside at 6 PM; concert doors open at 5:30 PM. Performing: 3HRE, J10, Legit, B. Cody Shields, Altar Ego, OTG Zico, Kelo Cho and DJ Scott Free. Pastor John Humphries brings the message. All ages welcome.",
+    "sourceName": "Murray Hill Theatre / Infiltrate Records official announcement",
     "authority": "official_event",
-    "confidence": "medium",
+    "confidence": "high",
     "firstSeen": "2026-10-08T23:11:36Z",
-    "lastVerified": "2026-10-08T23:11:36Z",
-    "auditVerified": "2026-10-08",
-    "notes": "Bo Fisher supplied the tour flyer directly to the site owner. The flyer prints month/day, venue, city and this full billing, but no year or start times. On October 8, 2026 the owner explicitly instructed us to assume 2026 for all four dates. The year is owner-approved, not independently verified from a public announcement. Leave startTime and ticketUrl empty and detailsPending true. Official details links to the exact unedited artist-supplied flyer hosted locally, not a guessed ticket page or unrelated venue listing. Owner confirmed Bo appears as part of Altar Ego; keep Altar Ego in public billing and link the record to Bo Fisher and the already verified B. Cody Shields. No global group alias or new artist profiles. October 23: associate the separately owner-verified Altar Ego group profile with this explicit group billing. Preserve existing solo artist associations and the advertised lineup.",
+    "lastVerified": "2026-10-29T15:28:05.624009Z",
+    "auditVerified": "2026-10-29",
+    "notes": "Updated from the venue's October 29 Instagram announcement supplied by the owner. The latest announcement says free admission and no tickets needed, superseding the older $10 / IGNITE discount-code instructions. Latest flyer and caption omit Madigan; do not carry that older billing forward. Venue ticket page confirms concert doors 5:30 PM and all ages. 3:30 PM is the outdoor outreach start, not the indoor concert. Preserve the existing title, ID, URL, firstSeen, and verified artist associations; no new artist verification implied.",
     "sources": [
       {
-        "name": "Bo Fisher artist-submitted Ignite and Unite Tour flyer",
-        "url": "https://kingdomcircuit.com/assets/events/ignite-and-unite-tour-artist-submitted-2026.png",
+        "name": "Murray Hill Theatre October 29 official announcement",
+        "url": "https://www.instagram.com/p/DfFL_UXtrzr/",
         "type": "manual_verified",
         "authority": "official_event",
         "priority": 112
+      },
+      {
+        "name": "Murray Hill Theatre official event details",
+        "url": "https://app.opendate.io/e/unity-in-the-community-november-07-2026-753723",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      }
+    ],
+    "doorsTime": "17:30",
+    "postalCode": "32205",
+    "hosts": [
+      "Pastor John Humphries (message)"
+    ],
+    "ageRestriction": "All ages",
+    "editorialBatch": "2026-10-29-ignite-brenno",
+    "publicNotice": "Free admission — no tickets needed. Community outreach starts at 3:30 PM; the indoor concert starts at 6 PM.",
+    "scheduleDetails": [
+      {
+        "label": "Community outreach",
+        "text": "3:30 PM — Unity in the Community outside the theatre."
+      },
+      {
+        "label": "Concert doors",
+        "text": "5:30 PM Eastern."
+      },
+      {
+        "label": "Concert",
+        "text": "6:00 PM Eastern."
+      },
+      {
+        "label": "Admission",
+        "text": "Free, all ages. No tickets needed."
       }
     ]
   },
@@ -21394,5 +21429,90 @@
       }
     ],
     "scheduleNote": "All times are local to the venue. CJ Emulous appears in Pre-Jam; Andy Mineo featuring Magic & Bird (with Wordsplayed) is on the main lineup."
+  },
+  {
+    "id": "ythcon-brenno-denver-2026",
+    "title": "YTHCON 2026 — featuring Brenno",
+    "startDate": "2026-11-25",
+    "endDate": "2026-11-27",
+    "startTime": "",
+    "timezone": "America/Denver",
+    "venue": "Hyatt Regency Denver at Colorado Convention Center",
+    "address": "650 15th Street",
+    "city": "Denver",
+    "state": "CO",
+    "postalCode": "80202",
+    "country": "US",
+    "artists": [
+      "Brenno"
+    ],
+    "advertisedBilling": [
+      "Brenno"
+    ],
+    "officialBill": [
+      "Brenno"
+    ],
+    "headliner": "Brenno",
+    "eventType": "conference",
+    "status": "scheduled",
+    "detailsPending": true,
+    "lineupExplicit": true,
+    "officialUrl": "https://www.cddcyouth.com/convention/",
+    "ticketUrl": "https://www.cddcyouth.com/convention/",
+    "organizer": "CDDC Youth",
+    "price": "Full conference registration required",
+    "publicNotice": "Full conference registration required. Brenno’s specific appearance date and time are still to be announced.",
+    "scheduleDetails": [
+      {
+        "label": "Conference dates",
+        "text": "November 25–27, 2026."
+      },
+      {
+        "label": "Brenno appearance",
+        "text": "Exact date, time and appearance format have not been announced."
+      },
+      {
+        "label": "Admission",
+        "text": "Full paid conference registration is required for every session and night service. No separate walk-in concert admission."
+      }
+    ],
+    "image": "assets/artists/brenno-saved.jpg",
+    "imageType": "artist",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "imageSource": "Existing approved Brenno artist photo",
+    "imageSourceUrl": "https://www.instagram.com/brenno.music/",
+    "publicDescription": "Brenno has announced YTHCON in Denver as part of his fall preaching and performances tour. The conference runs November 25–27 at the Hyatt Regency Denver, 650 15th Street. His specific appearance date, time and format have not been announced. Full conference registration is required to attend any session or night service; there is no separate walk-in concert admission. Register through CDDC Youth.",
+    "sourceName": "Brenno official Instagram story / CDDC Youth official conference registration",
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-10-29T15:28:05.624009Z",
+    "lastVerified": "2026-10-29T15:28:05.624009Z",
+    "auditVerified": "2026-10-29",
+    "editorialBatch": "2026-10-29-ignite-brenno",
+    "notes": "Owner supplied a screenshot of @brenno.music's fall tour story on October 29 confirming 11.25–27 YTHCON, Denver CO, under Preaching & Performances. CDDC Youth home and convention pages plus the embedded Brushfire attendee event 637080 confirm November 25–27, 2026, Hyatt Regency at 650 15th Street. The organizer calls this a closed event requiring full paid conference registration for all sessions. This is one conference appearance, not three separately confirmed concerts. Do not label the Nov 25 3 PM registration timestamp or 6:30 PM opening service as Brenno's set time. The exact appearance format and slot remain unannounced. Organizer artwork servers timed out; use the existing approved artist photo rather than a broken remote image.",
+    "sources": [
+      {
+        "name": "Brenno official Instagram story supplied by site owner",
+        "url": "https://www.instagram.com/brenno.music/",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 112
+      },
+      {
+        "name": "CDDC Youth official convention details",
+        "url": "https://www.cddcyouth.com/convention/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "CDDC Youth official conference dates",
+        "url": "https://www.cddcyouth.com/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      }
+    ]
   }
 ]
