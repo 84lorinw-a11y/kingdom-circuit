@@ -12,7 +12,7 @@ import pathlib
 import re
 
 FALLBACK = "/assets/event-fallback.webp"
-GUARD_SCRIPT = "/assets/verified-event-artwork-guard.js?v=20260912-2"
+GUARD_SCRIPT = "/assets/verified-event-artwork-guard.js?v=20261030-1"
 
 # title -> (date, image). Every non-local value is tied to an organizer,
 # official artist account, or verified artist streaming profile.
@@ -31,7 +31,7 @@ VERIFIED_ARTWORK: dict[str, tuple[str, str]] = {
     ),
     "Miles Minnick & CJ Emulous at Zion Ultra Lounge": (
         "2026-12-05",
-        "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
+        "assets/events/miles-minnick-chandler-2026-12-05.jpg",
     ),
     "Fountain Fest WV 2026": (
         "2026-09-18",

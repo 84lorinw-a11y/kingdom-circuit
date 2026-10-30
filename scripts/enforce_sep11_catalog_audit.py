@@ -27,7 +27,7 @@ VERIFIED_EVENT_IMAGES = {
     "mission-friends-sacramento-2026": ("assets/events/mission-sacramento-2026-10-17.jpg", "event_artwork"),
     "alex-zurdo-zona-zero-san-juan-2026": ("assets/events/alex-zurdo-zona-zero-instagram-oct10.jpg", "event_artwork"),
     "cj-emulous-kickback-grand-prairie-2026": ("assets/events/cj-emulous-kickback-2026-11-13-official-flyer.jpg", "event_artwork"),
-    "miles-cj-zion-ultra-lounge-chandler-2026": ("assets/events/miles-cj-zion-ultra-2026.svg", "event_artwork"),
+    "miles-cj-zion-ultra-lounge-chandler-2026": ("assets/events/miles-minnick-chandler-2026-12-05.jpg", "event_artwork"),
 }
 
 
