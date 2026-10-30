@@ -11,7 +11,7 @@ BASE_URL = "https://kingdomcircuit.com"
 # the September 12 closeout. The legacy files can remain in the repository for
 # history, but must not be referenced by the public artifact.
 REPLACEMENTS = {
-    "/assets/events/miles-cj-zion-ultra-2026.svg": "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
+    "/assets/events/miles-cj-zion-ultra-2026.svg": "/assets/events/miles-minnick-chandler-2026-12-05.jpg",
     "/assets/events/fountain-fest-wv-2026.svg": "https://i0.wp.com/fountainfestwv.com/wp-content/uploads/2026/07/Rare-of-Breed-Promo-.webp?resize=720%2C900&ssl=1",
     "/assets/events/mission-friends-sacramento-2026.svg": "/assets/events/mission-sacramento-2026-10-17.jpg",
     "/assets/events/mayia-boxyard-saturdaze-2026.svg": "/assets/events/mayia-boxyard-2026-10-10.png",

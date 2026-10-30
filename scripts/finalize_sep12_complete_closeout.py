@@ -52,11 +52,11 @@ ARTWORK_REPLACEMENTS = {
         "classification": 3,
     },
     ("Miles Minnick & CJ Emulous at Zion Ultra Lounge", "2026-12-05"): {
-        "image": "https://i.scdn.co/image/ab6761610000e5eb88d578e199bd2ce1021def5b",
-        "imageType": "artist",
-        "source": "Miles Minnick verified Spotify artist profile",
-        "sourceUrl": "https://open.spotify.com/",
-        "classification": 3,
+        "image": "assets/events/miles-minnick-chandler-2026-12-05.jpg",
+        "imageType": "event_artwork",
+        "source": "Zion Ultra Lounge official Eventbrite concert flyer",
+        "sourceUrl": "https://www.eventbrite.com/e/miles-minnick-concert-tickets-2002952477779",
+        "classification": 1,
     },
     ("Mission and Special Guests", "2026-10-17"): {
         "image": "assets/events/mission-sacramento-2026-10-17.jpg",
