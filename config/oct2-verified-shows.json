@@ -320,16 +320,23 @@
     "status": "scheduled",
     "officialUrl": "https://www.thebombfactory.com/events/detail/alex-jean-1626463",
     "ticketUrl": "https://www.axs.com/events/1626463/alex-jean-tickets",
-    "image": "assets/events/alex-jean-welcome-home-tour-2026-portrait.jpg",
+    "image": "assets/events/alex-jean-welcome-home-tour-2026-legs-1-2.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
-    "imageSource": "Alex Jean official Welcome Home Tour 2026 poster",
-    "imageSourceUrl": "https://www.instagram.com/meaningalex/p/Dd_duSRxzAf/",
+    "imageSource": "Alex Jean official Welcome Home Tour 2026 legs 1 and 2 announcement",
+    "imageSourceUrl": "https://www.instagram.com/p/DfHvQEVttbb/",
     "confidence": "high",
     "authority": "venue_ticket",
     "sourceName": "The Bomb Factory / AXS official event",
     "sources": [
+      {
+        "name": "Alex Jean official tour expansion and artwork",
+        "url": "https://www.instagram.com/p/DfHvQEVttbb/",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 120
+      },
       {
         "name": "Reece official Welcome Home Tour support announcement",
         "url": "https://www.instagram.com/onlyreece/reel/DeqBvzBsbiX/",
@@ -353,7 +360,7 @@
       }
     ],
     "firstSeen": "2026-09-29T18:00:00Z",
-    "lastVerified": "2026-10-20T04:28:14.692666Z",
+    "lastVerified": "2026-10-30T14:59:28.018045Z",
     "auditVerified": "2026-10-19",
     "editorialBatch": "2026-10-08-reviewed-discoveries",
     "postalCode": "75226",
