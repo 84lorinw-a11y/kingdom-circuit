@@ -1,10 +1,10 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-10-29T16:34:02Z",
-  "lastSuccessfulUpdate": "2026-10-29T16:34:02Z",
-  "eventsPublished": 183,
-  "candidatesCollected": 316,
+  "lastAttempt": "2026-10-30T10:18:54Z",
+  "lastSuccessfulUpdate": "2026-10-30T10:18:54Z",
+  "eventsPublished": 187,
+  "candidatesCollected": 323,
   "artistsConfigured": 379,
   "artistsByPriority": {
     "priority1": 91,
@@ -15,12 +15,12 @@
   "socialSearchArtistsEnabled": 334,
   "freeTextAliasesProtected": 232,
   "artistsMatchedOnTicketmaster": 61,
-  "officialEventsFound": 33,
+  "officialEventsFound": 38,
   "ticketmasterEventsFound": 12,
   "instagramArtistsConfigured": 334,
   "instagramQueriesRun": 336,
   "instagramQueriesAttempted": 334,
-  "instagramResultsFound": 1,
+  "instagramResultsFound": 0,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,18 +46,6 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
-    },
-    {
-      "url": "https://www.instagram.com/p/C4J4c6hRJHG/",
-      "title": "Gloria Kwan Kremer | English muffin pizzas. So yummy! I ... - Instagram",
-      "artists": [
-        "S.O."
-      ],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
@@ -203,7 +191,7 @@
     {
       "name": "Reach Records consolidated calendar",
       "status": "ok",
-      "eventsFound": 9
+      "eventsFound": 12
     },
     {
       "name": "Reach Records - 1K Phew",
@@ -218,7 +206,7 @@
     {
       "name": "Reach Records - Hulvey",
       "status": "ok",
-      "eventsFound": 2
+      "eventsFound": 4
     },
     {
       "name": "Reach Records - Jackie Hill Perry",
@@ -635,5 +623,5 @@
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 20,
   "artistWebsiteEventsAdded": 1,
-  "artistWebsiteMergeAt": "2026-10-29T16:53:37Z"
+  "artistWebsiteMergeAt": "2026-10-30T10:36:26Z"
 }
