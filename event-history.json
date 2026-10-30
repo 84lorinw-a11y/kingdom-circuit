@@ -40731,10 +40731,10 @@
         "id": "official:d75bf3c2dc7765b59753",
         "title": "Hulvey — Live at Gatlinburg Convention Center",
         "startDate": "2026-12-27",
-        "startTime": "",
-        "timezone": "",
+        "startTime": "19:30",
+        "timezone": "America/New_York",
         "venue": "Gatlinburg Convention Center",
-        "address": "",
+        "address": "234 Airport Road",
         "city": "Gatlinburg",
         "state": "TN",
         "country": "US",
@@ -40744,12 +40744,33 @@
         "headliner": "Hulvey",
         "eventType": "concert",
         "status": "scheduled",
-        "ticketUrl": "https://www.bandsintown.com/t/109096526?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-        "officialUrl": "https://www.reachrecords.com/artists/hulvey/",
-        "image": "assets/artists/hulvey-saved.webp",
-        "price": "",
-        "sourceName": "Reach Records - Hulvey",
+        "ticketUrl": "https://myconferencesregistration.com/register/xtreme-winter/step1",
+        "officialUrl": "https://xtremeconferences.com/winter/schedules.html",
+        "image": "assets/events/xtreme-winter-2026-official-lineup.jpg",
+        "price": "$99 conference-only registration (full conference; no lodging)",
+        "sourceName": "Xtreme Winter official conference schedule",
         "sources": [
+          {
+            "name": "Xtreme Winter 2026 official session schedule",
+            "url": "https://xtremeconferences.com/winter/schedules.html",
+            "type": "manual_verified",
+            "authority": "official_festival",
+            "priority": 120
+          },
+          {
+            "name": "Xtreme Conferences official flyer",
+            "url": "https://www.instagram.com/p/DbDrWYWu5vW/",
+            "type": "official_social",
+            "authority": "official_festival",
+            "priority": 115
+          },
+          {
+            "name": "Xtreme Winter registration information",
+            "url": "https://xtremeconferences.com/winter/registration.html",
+            "type": "official_event",
+            "authority": "official_festival",
+            "priority": 115
+          },
           {
             "name": "Reach Records - Hulvey",
             "url": "https://www.reachrecords.com/artists/hulvey/",
@@ -40765,12 +40786,82 @@
             "priority": 84
           }
         ],
-        "lastVerified": "2026-10-30T10:18:54Z",
+        "lastVerified": "2026-10-30T14:38:15.523336+00:00",
         "confidence": "high",
-        "imageType": "artist",
+        "imageType": "event_artwork",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-10-30T10:18:54Z"
+        "firstSeen": "2026-10-30T10:18:54Z",
+        "endTime": "22:00",
+        "startDateTime": "2026-12-27T19:30:00-05:00",
+        "endDateTime": "2026-12-27T22:00:00-05:00",
+        "postalCode": "37738",
+        "fullAddress": "234 Airport Road, Gatlinburg, TN 37738",
+        "advertisedBilling": [
+          "Hulvey",
+          "Chapels Worship"
+        ],
+        "officialBill": [
+          "Hulvey",
+          "Chapels Worship"
+        ],
+        "hosts": [
+          "DJ GBABY",
+          "Nich Oswald"
+        ],
+        "speakers": [
+          "Tom Richter"
+        ],
+        "conferenceArtists": [
+          "Anne Wilson",
+          "Hulvey",
+          "Colton Dixon",
+          "Strings & Heart",
+          "Chapels Worship",
+          "NewSong"
+        ],
+        "lineupExplicit": true,
+        "musicConfirmed": true,
+        "authority": "official_festival",
+        "imageOverride": true,
+        "detailImageLayout": "portrait",
+        "imageSource": "Xtreme Conferences official 2026 lineup flyer selected by owner",
+        "imageSourceUrl": "https://www.instagram.com/p/DbDrWYWu5vW/",
+        "description": "Xtreme Winter 2026 in Gatlinburg: Hulvey performs during the 2026-12-27 evening session, scheduled for 7:30–10:00 PM EST. Chapels Worship leads conference worship; Tom Richter is the session speaker. DJ GBABY and Nich Oswald host the conference. This appearance is part of the December 27–29, 2026 student conference. The flyer shows the full conference roster; artists appear in different sessions. Conference-only registration is $99 for the full conference without lodging; the organizer does not advertise that price as a single-session ticket.",
+        "publicDescription": "Xtreme Winter 2026 in Gatlinburg: Hulvey performs during the 2026-12-27 evening session, scheduled for 7:30–10:00 PM EST. Chapels Worship leads conference worship; Tom Richter is the session speaker. DJ GBABY and Nich Oswald host the conference. This appearance is part of the December 27–29, 2026 student conference. The flyer shows the full conference roster; artists appear in different sessions. Conference-only registration is $99 for the full conference without lodging; the organizer does not advertise that price as a single-session ticket.",
+        "auditVerified": "2026-10-30",
+        "scheduleDetails": [
+          {
+            "label": "Hulvey evening session",
+            "text": "2026-12-27 · 7:30–10:00 PM EST. This is the full evening-session window; a separate Hulvey set time is not published."
+          },
+          {
+            "label": "Evening music",
+            "text": "Hulvey, Chapels Worship. Chapels Worship leads worship throughout the conference."
+          },
+          {
+            "label": "Speaker and hosts",
+            "text": "Session speaker: Tom Richter. Conference hosts: DJ GBABY and Nich Oswald."
+          },
+          {
+            "label": "Conference dates",
+            "text": "December 27–29, 2026 · Gatlinburg, TN"
+          },
+          {
+            "label": "Across the conference",
+            "text": "Anne Wilson, Hulvey, Colton Dixon, Strings & Heart, Chapels Worship, NewSong. Performances vary by session; see the official schedule."
+          },
+          {
+            "label": "Admission",
+            "text": "Advance conference registration required. Conference-only registration is $99 without lodging; this is a full-conference rate, not an advertised single-session ticket."
+          },
+          {
+            "label": "Address",
+            "text": "Gatlinburg Convention Center · 234 Airport Road, Gatlinburg, TN 37738"
+          }
+        ],
+        "scheduleNote": "All times are local to the venue. Schedule subject to change; confirm attendance options with Xtreme Conferences.",
+        "notes": "Owner-requested artwork and details update, October 30, 2026. Official organizer schedule confirms Hulvey on Dec 27 Gatlinburg, Dec 28 Branson and Dec 30 Gatlinburg. Retain actual Hulvey performance dates, session-specific musicians and separate speaker/host roles. Do not use this poster for Cincinnati Dec 29, which is Follow 2026. Preserve existing IDs, titles, URLs and firstSeen values."
       }
     },
     {
@@ -40791,10 +40882,10 @@
         "id": "official:b0d6dc5f6a1910094666",
         "title": "Hulvey — Live at The Mansion Theatre for the Performing Arts",
         "startDate": "2026-12-28",
-        "startTime": "",
-        "timezone": "",
+        "startTime": "19:30",
+        "timezone": "America/Chicago",
         "venue": "The Mansion Theatre for the Performing Arts",
-        "address": "",
+        "address": "189 Expressway Lane",
         "city": "Branson",
         "state": "MO",
         "country": "US",
@@ -40804,12 +40895,33 @@
         "headliner": "Hulvey",
         "eventType": "concert",
         "status": "scheduled",
-        "ticketUrl": "https://www.bandsintown.com/t/109096534?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-        "officialUrl": "https://www.reachrecords.com/artists/hulvey/",
-        "image": "assets/artists/hulvey-saved.webp",
-        "price": "",
-        "sourceName": "Reach Records - Hulvey",
+        "ticketUrl": "https://myconferencesregistration.com/register/xtreme-winter/step1",
+        "officialUrl": "https://xtremeconferences.com/winter/schedules.html",
+        "image": "assets/events/xtreme-winter-2026-official-lineup.jpg",
+        "price": "$99 conference-only registration (full conference; no lodging)",
+        "sourceName": "Xtreme Winter official conference schedule",
         "sources": [
+          {
+            "name": "Xtreme Winter 2026 official session schedule",
+            "url": "https://xtremeconferences.com/winter/schedules.html",
+            "type": "manual_verified",
+            "authority": "official_festival",
+            "priority": 120
+          },
+          {
+            "name": "Xtreme Conferences official flyer",
+            "url": "https://www.instagram.com/p/DbDrWYWu5vW/",
+            "type": "official_social",
+            "authority": "official_festival",
+            "priority": 115
+          },
+          {
+            "name": "Xtreme Winter registration information",
+            "url": "https://xtremeconferences.com/winter/registration.html",
+            "type": "official_event",
+            "authority": "official_festival",
+            "priority": 115
+          },
           {
             "name": "Reach Records - Hulvey",
             "url": "https://www.reachrecords.com/artists/hulvey/",
@@ -40825,12 +40937,82 @@
             "priority": 84
           }
         ],
-        "lastVerified": "2026-10-30T10:18:54Z",
+        "lastVerified": "2026-10-30T14:38:15.523336+00:00",
         "confidence": "high",
-        "imageType": "artist",
+        "imageType": "event_artwork",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-10-30T10:18:54Z"
+        "firstSeen": "2026-10-30T10:18:54Z",
+        "endTime": "22:00",
+        "startDateTime": "2026-12-28T19:30:00-06:00",
+        "endDateTime": "2026-12-28T22:00:00-06:00",
+        "postalCode": "65616",
+        "fullAddress": "189 Expressway Lane, Branson, MO 65616",
+        "advertisedBilling": [
+          "Hulvey",
+          "Chapels Worship"
+        ],
+        "officialBill": [
+          "Hulvey",
+          "Chapels Worship"
+        ],
+        "hosts": [
+          "DJ GBABY",
+          "Nich Oswald"
+        ],
+        "speakers": [
+          "Tom Richter"
+        ],
+        "conferenceArtists": [
+          "Anne Wilson",
+          "Hulvey",
+          "Colton Dixon",
+          "Strings & Heart",
+          "Chapels Worship",
+          "NewSong"
+        ],
+        "lineupExplicit": true,
+        "musicConfirmed": true,
+        "authority": "official_festival",
+        "imageOverride": true,
+        "detailImageLayout": "portrait",
+        "imageSource": "Xtreme Conferences official 2026 lineup flyer selected by owner",
+        "imageSourceUrl": "https://www.instagram.com/p/DbDrWYWu5vW/",
+        "description": "Xtreme Winter 2026 in Branson: Hulvey performs during the 2026-12-28 evening session, scheduled for 7:30–10:00 PM CST. Chapels Worship leads conference worship; Tom Richter is the session speaker. DJ GBABY and Nich Oswald host the conference. This appearance is part of the December 27–29, 2026 student conference. The flyer shows the full conference roster; artists appear in different sessions. Conference-only registration is $99 for the full conference without lodging; the organizer does not advertise that price as a single-session ticket.",
+        "publicDescription": "Xtreme Winter 2026 in Branson: Hulvey performs during the 2026-12-28 evening session, scheduled for 7:30–10:00 PM CST. Chapels Worship leads conference worship; Tom Richter is the session speaker. DJ GBABY and Nich Oswald host the conference. This appearance is part of the December 27–29, 2026 student conference. The flyer shows the full conference roster; artists appear in different sessions. Conference-only registration is $99 for the full conference without lodging; the organizer does not advertise that price as a single-session ticket.",
+        "auditVerified": "2026-10-30",
+        "scheduleDetails": [
+          {
+            "label": "Hulvey evening session",
+            "text": "2026-12-28 · 7:30–10:00 PM CST. This is the full evening-session window; a separate Hulvey set time is not published."
+          },
+          {
+            "label": "Evening music",
+            "text": "Hulvey, Chapels Worship. Chapels Worship leads worship throughout the conference."
+          },
+          {
+            "label": "Speaker and hosts",
+            "text": "Session speaker: Tom Richter. Conference hosts: DJ GBABY and Nich Oswald."
+          },
+          {
+            "label": "Conference dates",
+            "text": "December 27–29, 2026 · Branson, MO"
+          },
+          {
+            "label": "Across the conference",
+            "text": "Anne Wilson, Hulvey, Colton Dixon, Strings & Heart, Chapels Worship, NewSong. Performances vary by session; see the official schedule."
+          },
+          {
+            "label": "Admission",
+            "text": "Advance conference registration required. Conference-only registration is $99 without lodging; this is a full-conference rate, not an advertised single-session ticket."
+          },
+          {
+            "label": "Address",
+            "text": "The Mansion Theatre for the Performing Arts · 189 Expressway Lane, Branson, MO 65616"
+          }
+        ],
+        "scheduleNote": "All times are local to the venue. Schedule subject to change; confirm attendance options with Xtreme Conferences.",
+        "notes": "Owner-requested artwork and details update, October 30, 2026. Official organizer schedule confirms Hulvey on Dec 27 Gatlinburg, Dec 28 Branson and Dec 30 Gatlinburg. Retain actual Hulvey performance dates, session-specific musicians and separate speaker/host roles. Do not use this poster for Cincinnati Dec 29, which is Follow 2026. Preserve existing IDs, titles, URLs and firstSeen values."
       }
     },
     {
