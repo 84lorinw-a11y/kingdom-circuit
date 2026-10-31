@@ -10141,28 +10141,97 @@
     "notes": "Owner-requested artwork and details update, October 30, 2026. Official organizer schedule confirms Hulvey on Dec 27 Gatlinburg, Dec 28 Branson and Dec 30 Gatlinburg. Retain actual Hulvey performance dates, session-specific musicians and separate speaker/host roles. Do not use this poster for Cincinnati Dec 29, which is Follow 2026. Preserve existing IDs, titles, URLs and firstSeen values."
   },
   {
-    "id": "ticketmaster:k7vGF_4M3EccR",
+    "id": "manual:alex-jean-sony-hall-new-york-2026-12-28",
     "title": "Alex Jean — The Welcome Home Tour",
     "startDate": "2026-12-28",
+    "endDate": "2026-12-28",
     "startTime": "20:00",
+    "doorsTime": "18:30",
     "timezone": "America/New_York",
+    "startDateTime": "2026-12-28T20:00:00-05:00",
     "venue": "Sony Hall",
     "address": "235 W 46th St",
     "city": "New York",
     "state": "NY",
+    "postalCode": "10036",
     "country": "US",
     "artists": [
       "Alex Jean"
     ],
     "headliner": "Alex Jean",
+    "advertisedBilling": [
+      "Alex Jean",
+      "Reece"
+    ],
+    "officialBill": [
+      "Alex Jean",
+      "Reece"
+    ],
+    "supportActs": [
+      "Reece"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.ticketmaster.com/event/0000655DD29EDB6F",
     "officialUrl": "https://sonyhall.com/shows/?eid=TWL7887887",
-    "image": "assets/events/alex-jean-welcome-home-tour-2026-legs-1-2.jpg",
-    "price": "",
+    "ticketUrl": "https://www.ticketmaster.com/event/0000655DD29EDB6F",
     "sourceName": "Sony Hall / Ticketmaster official event",
+    "confidence": "high",
+    "authority": "venue_ticket",
+    "sourceEventIds": [
+      "ticketmaster:0000655DD29EDB6F"
+    ],
+    "firstSeen": "2026-10-30T14:59:28.018045Z",
+    "lastVerified": "2026-10-30T14:59:28.018045Z",
+    "auditVerified": "2026-10-30",
+    "ageRestriction": "All ages",
+    "editorialBatch": "2026-10-30-alex-jean-tour-expansion",
+    "publicDescription": "Alex Jean brings The Welcome Home Tour to Sony Hall in New York, with special guest Reece.",
+    "scheduleDetails": [
+      {
+        "label": "Doors",
+        "text": "6:30 PM EST"
+      },
+      {
+        "label": "Show",
+        "text": "8:00 PM EST"
+      },
+      {
+        "label": "Admission",
+        "text": "All ages. Standing room and VIP wing seating are available; tables have a $20 minimum per person."
+      }
+    ],
+    "notes": "Reece (@onlyreece) is confirmed by the official tour calendar. Preserve the support billing without associating Reece Lache.",
     "sources": [
+      {
+        "name": "Sony Hall / Ticketmaster official event",
+        "url": "https://sonyhall.com/shows/?eid=TWL7887887",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 120
+      },
+      {
+        "name": "Ticketmaster official event",
+        "url": "https://www.ticketmaster.com/event/0000655DD29EDB6F",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 120
+      },
+      {
+        "name": "Alex Jean official tour calendar",
+        "url": "https://alexjeantour.com/",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 120
+      },
+      {
+        "name": "Alex Jean official tour expansion and artwork",
+        "url": "https://www.instagram.com/p/DfHvQEVttbb/",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 120
+      },
       {
         "name": "Sony Hall / Ticketmaster official event",
         "url": "https://sonyhall.com/shows/?eid=TWL7887887",
@@ -10178,13 +10247,19 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-10-30T16:29:56Z",
-    "confidence": "high",
-    "endDate": "2026-12-28",
+    "image": "assets/events/alex-jean-welcome-home-tour-2026-legs-1-2.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-10-30T16:29:56Z"
+    "imageOverride": true,
+    "imageSource": "Alex Jean official Welcome Home Tour 2026 legs 1 and 2 announcement",
+    "imageSourceUrl": "https://www.instagram.com/p/DfHvQEVttbb/",
+    "detailImageLayout": "portrait",
+    "legacyEventPaths": [
+      "/event/alex-jean-the-welcome-home-tour-2026-12-28-new-york-5cab33/"
+    ],
+    "mergedFromIds": [
+      "ticketmaster:k7vGF_4M3EccR"
+    ]
   },
   {
     "id": "official:856f1913ed1c6be9b355",

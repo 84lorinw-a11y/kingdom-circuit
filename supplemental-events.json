@@ -3261,6 +3261,20 @@
         "type": "manual_verified",
         "authority": "official_artist",
         "priority": 120
+      },
+      {
+        "name": "Sony Hall / Ticketmaster official event",
+        "url": "https://sonyhall.com/shows/?eid=TWL7887887",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      },
+      {
+        "name": "Ticketmaster",
+        "url": "https://www.ticketmaster.com/alex-jean-new-york-new-york-12-28-2026/event/0000655DD29EDB6F",
+        "type": "ticketmaster",
+        "authority": "venue_ticket",
+        "priority": 94
       }
     ],
     "image": "assets/events/alex-jean-welcome-home-tour-2026-legs-1-2.jpg",
@@ -3269,7 +3283,13 @@
     "imageOverride": true,
     "imageSource": "Alex Jean official Welcome Home Tour 2026 legs 1 and 2 announcement",
     "imageSourceUrl": "https://www.instagram.com/p/DfHvQEVttbb/",
-    "detailImageLayout": "portrait"
+    "detailImageLayout": "portrait",
+    "legacyEventPaths": [
+      "/event/alex-jean-the-welcome-home-tour-2026-12-28-new-york-5cab33/"
+    ],
+    "mergedFromIds": [
+      "ticketmaster:k7vGF_4M3EccR"
+    ]
   },
   {
     "id": "manual:alex-jean-howard-theatre-washington-2026-12-29",
