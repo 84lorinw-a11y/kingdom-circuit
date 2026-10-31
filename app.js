@@ -5815,8 +5815,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/3KWaEmoWl9ShwuQ7UB3ipO",
     "youtubeProfile": "https://www.youtube.com/@therealdtel",
     "officialImageSource": "https://open.spotify.com/artist/3KWaEmoWl9ShwuQ7UB3ipO",
-    "imageUrl": "assets/artists/thereal-d-tel-portrait-review-oct31.jpg",
-    "imagePosition": "50% 0%",
+    "imageUrl": "assets/artists/thereal-d-tel-official-portrait-oct31-v2.jpg",
+    "imagePosition": "50% 20%",
     "sourceRegistryVerified": true
   },
   "joshua 1.9": {
@@ -5828,8 +5828,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/31xCLL3xRRHVJWPrl4eRcj",
     "youtubeProfile": "https://www.youtube.com/channel/UC1iw2oBE5nfbKXhEdpWp-IQ",
     "officialImageSource": "https://open.spotify.com/artist/31xCLL3xRRHVJWPrl4eRcj",
-    "imageUrl": "assets/artists/joshua-1-9-portrait-review-oct31.jpg",
-    "imagePosition": "50% 0%",
+    "imageUrl": "assets/artists/joshua-1-9-official-portrait-oct31-v2.png",
+    "imagePosition": "50% 20%",
     "sourceRegistryVerified": true
   },
   "saltie the salt shaker": {
@@ -5842,8 +5842,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/34g3lHUhCaaqQ5NPrK7wPY",
     "youtubeProfile": "",
     "officialImageSource": "https://open.spotify.com/artist/34g3lHUhCaaqQ5NPrK7wPY",
-    "imageUrl": "assets/artists/saltie-the-salt-shaker-official-oct31.jpg",
-    "imagePosition": "50% 0%",
+    "imageUrl": "assets/artists/saltie-the-salt-shaker-official-portrait-oct31-v2.jpg",
+    "imagePosition": "50% 20%",
     "sourceRegistryVerified": true
   },
   "mark the prophet": {
@@ -5933,8 +5933,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/5n5UjB4Hwoqr9MpJfjFYxY?si=qQsPq3t6RfGWSQx3LBS4yw&utm_medium=share&utm_source=linktree&nd=1&dlsi=af9bded3423447af",
     "youtubeProfile": "https://www.youtube.com/@AntLeeJrOfficial/videos",
     "officialImageSource": "https://open.spotify.com/artist/5n5UjB4Hwoqr9MpJfjFYxY",
-    "imageUrl": "assets/artists/ant-lee-portrait-review-oct31.jpg",
-    "imagePosition": "50% 0%",
+    "imageUrl": "assets/artists/ant-lee-official-portrait-oct31-v2.jpg",
+    "imagePosition": "50% 20%",
     "country": "CA",
     "sourceRegistryVerified": true
   },
@@ -6008,8 +6008,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/7cuelzrJqmyjGag6YhQifZ",
     "youtubeProfile": "https://www.youtube.com/@lyrical.disciple",
     "officialImageSource": "https://open.spotify.com/artist/7cuelzrJqmyjGag6YhQifZ",
-    "imageUrl": "assets/artists/lyrical-disciple-portrait-review-oct31.jpg",
-    "imagePosition": "50% 0%",
+    "imageUrl": "assets/artists/lyrical-disciple-official-portrait-oct31-v2.jpg",
+    "imagePosition": "50% 20%",
     "state": "ON",
     "country": "CA",
     "sourceRegistryVerified": true
@@ -6041,8 +6041,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/6lOxQXsyXlUwyTdw13lhmE",
     "youtubeProfile": "https://www.youtube.com/@cdotmorethanmusic",
     "officialImageSource": "https://open.spotify.com/artist/6lOxQXsyXlUwyTdw13lhmE",
-    "imageUrl": "assets/artists/c-dot-portrait-review-oct31.jpg",
-    "imagePosition": "50% 0%",
+    "imageUrl": "assets/artists/c-dot-official-portrait-oct31-v2.jpg",
+    "imagePosition": "50% 20%",
     "state": "ON",
     "country": "CA",
     "sourceRegistryVerified": true
@@ -6197,8 +6197,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/4layy4JKlZineBqGzkvBpM",
     "youtubeProfile": "https://www.youtube.com/@TheRunawayDotCa",
     "officialImageSource": "https://open.spotify.com/artist/4layy4JKlZineBqGzkvBpM",
-    "imageUrl": "assets/artists/jon-corbin-portrait-review-oct31.png",
-    "imagePosition": "50% 0%",
+    "imageUrl": "assets/artists/jon-corbin-official-portrait-oct31-v2.jpg",
+    "imagePosition": "50% 20%",
     "state": "NS",
     "country": "CA",
     "sourceRegistryVerified": true
@@ -11606,8 +11606,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3KWaEmoWl9ShwuQ7UB3ipO",
     "youtubeProfile": "https://www.youtube.com/@therealdtel",
     "officialImageSource": "https://open.spotify.com/artist/3KWaEmoWl9ShwuQ7UB3ipO",
-    "imageUrl": "assets/artists/thereal-d-tel-portrait-review-oct31.jpg",
-    "imagePosition": "50% 0%",
+    "imageUrl": "assets/artists/thereal-d-tel-official-portrait-oct31-v2.jpg",
+    "imagePosition": "50% 20%",
     "sourceRegistryVerified": true
   },
   "joshua 1.9": {
@@ -11619,8 +11619,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/31xCLL3xRRHVJWPrl4eRcj",
     "youtubeProfile": "https://www.youtube.com/channel/UC1iw2oBE5nfbKXhEdpWp-IQ",
     "officialImageSource": "https://open.spotify.com/artist/31xCLL3xRRHVJWPrl4eRcj",
-    "imageUrl": "assets/artists/joshua-1-9-portrait-review-oct31.jpg",
-    "imagePosition": "50% 0%",
+    "imageUrl": "assets/artists/joshua-1-9-official-portrait-oct31-v2.png",
+    "imagePosition": "50% 20%",
     "sourceRegistryVerified": true
   },
   "saltie the salt shaker": {
@@ -11633,8 +11633,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/34g3lHUhCaaqQ5NPrK7wPY",
     "youtubeProfile": "",
     "officialImageSource": "https://open.spotify.com/artist/34g3lHUhCaaqQ5NPrK7wPY",
-    "imageUrl": "assets/artists/saltie-the-salt-shaker-official-oct31.jpg",
-    "imagePosition": "50% 0%",
+    "imageUrl": "assets/artists/saltie-the-salt-shaker-official-portrait-oct31-v2.jpg",
+    "imagePosition": "50% 20%",
     "sourceRegistryVerified": true
   },
   "mark the prophet": {
@@ -11724,8 +11724,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/5n5UjB4Hwoqr9MpJfjFYxY?si=qQsPq3t6RfGWSQx3LBS4yw&utm_medium=share&utm_source=linktree&nd=1&dlsi=af9bded3423447af",
     "youtubeProfile": "https://www.youtube.com/@AntLeeJrOfficial/videos",
     "officialImageSource": "https://open.spotify.com/artist/5n5UjB4Hwoqr9MpJfjFYxY",
-    "imageUrl": "assets/artists/ant-lee-portrait-review-oct31.jpg",
-    "imagePosition": "50% 0%",
+    "imageUrl": "assets/artists/ant-lee-official-portrait-oct31-v2.jpg",
+    "imagePosition": "50% 20%",
     "country": "CA",
     "sourceRegistryVerified": true
   },
@@ -11799,8 +11799,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/7cuelzrJqmyjGag6YhQifZ",
     "youtubeProfile": "https://www.youtube.com/@lyrical.disciple",
     "officialImageSource": "https://open.spotify.com/artist/7cuelzrJqmyjGag6YhQifZ",
-    "imageUrl": "assets/artists/lyrical-disciple-portrait-review-oct31.jpg",
-    "imagePosition": "50% 0%",
+    "imageUrl": "assets/artists/lyrical-disciple-official-portrait-oct31-v2.jpg",
+    "imagePosition": "50% 20%",
     "state": "ON",
     "country": "CA",
     "sourceRegistryVerified": true
@@ -11832,8 +11832,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/6lOxQXsyXlUwyTdw13lhmE",
     "youtubeProfile": "https://www.youtube.com/@cdotmorethanmusic",
     "officialImageSource": "https://open.spotify.com/artist/6lOxQXsyXlUwyTdw13lhmE",
-    "imageUrl": "assets/artists/c-dot-portrait-review-oct31.jpg",
-    "imagePosition": "50% 0%",
+    "imageUrl": "assets/artists/c-dot-official-portrait-oct31-v2.jpg",
+    "imagePosition": "50% 20%",
     "state": "ON",
     "country": "CA",
     "sourceRegistryVerified": true
@@ -11988,8 +11988,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/4layy4JKlZineBqGzkvBpM",
     "youtubeProfile": "https://www.youtube.com/@TheRunawayDotCa",
     "officialImageSource": "https://open.spotify.com/artist/4layy4JKlZineBqGzkvBpM",
-    "imageUrl": "assets/artists/jon-corbin-portrait-review-oct31.png",
-    "imagePosition": "50% 0%",
+    "imageUrl": "assets/artists/jon-corbin-official-portrait-oct31-v2.jpg",
+    "imagePosition": "50% 20%",
     "state": "NS",
     "country": "CA",
     "sourceRegistryVerified": true
@@ -13548,16 +13548,16 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 0%"
   },
   "thereal d.tel": {
-    "imageUrl": "assets/artists/thereal-d-tel-portrait-review-oct31.jpg",
-    "imagePosition": "50% 0%"
+    "imageUrl": "assets/artists/thereal-d-tel-official-portrait-oct31-v2.jpg",
+    "imagePosition": "50% 20%"
   },
   "joshua 1.9": {
-    "imageUrl": "assets/artists/joshua-1-9-portrait-review-oct31.jpg",
-    "imagePosition": "50% 0%"
+    "imageUrl": "assets/artists/joshua-1-9-official-portrait-oct31-v2.png",
+    "imagePosition": "50% 20%"
   },
   "saltie the salt shaker": {
-    "imageUrl": "assets/artists/saltie-the-salt-shaker-official-oct31.jpg",
-    "imagePosition": "50% 0%"
+    "imageUrl": "assets/artists/saltie-the-salt-shaker-official-portrait-oct31-v2.jpg",
+    "imagePosition": "50% 20%"
   },
   "mark the prophet": {
     "imageUrl": "assets/artists/mark-the-prophet-portrait-review-oct31.jpg",
@@ -13584,8 +13584,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 0%"
   },
   "ant lee": {
-    "imageUrl": "assets/artists/ant-lee-portrait-review-oct31.jpg",
-    "imagePosition": "50% 0%"
+    "imageUrl": "assets/artists/ant-lee-official-portrait-oct31-v2.jpg",
+    "imagePosition": "50% 20%"
   },
   "kdfromthepack": {
     "imageUrl": "assets/artists/kdfromthepack-portrait-review-oct31.jpg",
@@ -13604,16 +13604,16 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 0%"
   },
   "lyrical disciple": {
-    "imageUrl": "assets/artists/lyrical-disciple-portrait-review-oct31.jpg",
-    "imagePosition": "50% 0%"
+    "imageUrl": "assets/artists/lyrical-disciple-official-portrait-oct31-v2.jpg",
+    "imagePosition": "50% 20%"
   },
   "scribe music": {
     "imageUrl": "assets/artists/scribe-music-portrait-review-oct31.png",
     "imagePosition": "50% 0%"
   },
   "c-dot": {
-    "imageUrl": "assets/artists/c-dot-portrait-review-oct31.jpg",
-    "imagePosition": "50% 0%"
+    "imageUrl": "assets/artists/c-dot-official-portrait-oct31-v2.jpg",
+    "imagePosition": "50% 20%"
   },
   "spencer xavier": {
     "imageUrl": "assets/artists/spencer-xavier-portrait-review-oct31.jpg",
@@ -13652,8 +13652,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 0%"
   },
   "jon corbin": {
-    "imageUrl": "assets/artists/jon-corbin-portrait-review-oct31.png",
-    "imagePosition": "50% 0%"
+    "imageUrl": "assets/artists/jon-corbin-official-portrait-oct31-v2.jpg",
+    "imagePosition": "50% 20%"
   },
   "kojo dave": {
     "imageUrl": "assets/artists/kojo-dave-portrait-review-oct31.jpg",
