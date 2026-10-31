@@ -22,6 +22,7 @@ import urllib.request
 from datetime import date
 from pathlib import Path
 from typing import Any
+from canadian_event_guard import is_canadian
 
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
@@ -250,6 +251,7 @@ def main() -> int:
         if not (
             isinstance(e, dict)
             and str(e.get("id") or "").startswith("bandsintown:")
+            and not is_canadian(e)
             and norm(e.get("authority")) in {"", "artist_calendar"}
         )
     ]

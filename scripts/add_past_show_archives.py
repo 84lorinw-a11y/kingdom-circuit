@@ -148,6 +148,7 @@ def cancelled(event: dict) -> bool:
 
 
 def load_events(root: pathlib.Path) -> tuple[list[dict], dict[str, str]]:
+    from build_seo_site import domestic_event
     path = root / "event-history.json"
     known, by_slug = known_artists(root)
     if not path.is_file():
@@ -178,7 +179,7 @@ def load_events(root: pathlib.Path) -> tuple[list[dict], dict[str, str]]:
         when = event_date(event)
         if when is None or (when >= cutoff and not cancelled(event)) or when < oldest:
             continue
-        if str(event.get("country") or "US").upper() not in {"", "US", "USA"}:
+        if not domestic_event(event):
             continue
         if not all(str(event.get(k) or "").strip() for k in ("title", "city", "state", "startDate")):
             continue

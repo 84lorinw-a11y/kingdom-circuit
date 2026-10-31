@@ -13,6 +13,7 @@ from __future__ import annotations
 import json
 import sys
 from pathlib import Path
+from canadian_event_guard import is_canadian
 
 ROOT = Path(__file__).resolve().parents[1]
 SUPPLEMENTAL = ROOT / "supplemental-events.json"
@@ -50,6 +51,10 @@ def is_refreshable_bit(event) -> bool:
     provider payload. Those higher-authority records must survive refreshes.
     """
     if not isinstance(event, dict) or not str(event.get("id") or "").startswith("bandsintown:"):
+        return False
+    # The current collector only queries/publishes U.S. bookings. It cannot
+    # authoritatively replace approved Canadian shows, even on a successful run.
+    if is_canadian(event):
         return False
     return norm(event.get("authority")) in {"", "artist_calendar"}
 

@@ -13,6 +13,10 @@ import shlex
 import subprocess
 import tempfile
 import time
+try:
+    from .canadian_event_guard import read_events, retention_errors, today_cutoff
+except ImportError:
+    from canadian_event_guard import read_events, retention_errors, today_cutoff
 
 
 def git(root, *args, check=True):
@@ -38,6 +42,7 @@ def publish(root, paths, commands, message, *, attempts=4, sync=False, before_pu
             work = Path(tmp) / 'work'
             git(root, 'worktree', 'add', '--detach', str(work), latest)
             try:
+                canadian_baseline = read_events(work)
                 if latest == original and attempt == 0:
                     for name, content in snapshots.items():
                         target = work / name
@@ -53,6 +58,9 @@ def publish(root, paths, commands, message, *, attempts=4, sync=False, before_pu
                 touched = set(git(work, 'diff', '--name-only').stdout.splitlines())
                 if touched - allowed:
                     raise RuntimeError(f'Replay changed unlisted files: {sorted(touched - allowed)}')
+                lost = retention_errors(canadian_baseline, read_events(work), today_cutoff())
+                if lost:
+                    raise RuntimeError('Canadian event preservation blocked publication:\n' + '\n'.join(lost))
                 existing = [p for p in paths if (work / p).exists() or git(work, 'ls-files', '--', p).stdout.strip()]
                 git(work, 'add', '--', *existing)
                 if git(work, 'diff', '--cached', '--quiet', check=False).returncode == 0:

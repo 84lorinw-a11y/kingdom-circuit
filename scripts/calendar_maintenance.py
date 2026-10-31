@@ -11,6 +11,7 @@ import urllib.request
 from zoneinfo import ZoneInfo
 from mobile_discovery import Document
 from national_discovery import card_records
+from canadian_event_guard import read_events, catalog_errors as canadian_catalog_errors
 
 def today():
     return datetime.now(ZoneInfo('America/Los_Angeles')).date().isoformat()
@@ -82,7 +83,8 @@ def verify_site(site,day):
     catalog=json.loads((site/'assets/fan-show-catalog.json').read_text())
     paths=[site/'index.html',site/'shows/index.html',*(site/'artists').glob('*/index.html')]
     pages={p.relative_to(site).as_posix():p.read_text() for p in paths}
-    return {'asOf':day,'upcoming':len(catalog['shows']),'artistsChecked':len(paths)-2,'errors':page_errors(pages,catalog,day)}
+    errors=page_errors(pages,catalog,day)+canadian_catalog_errors(read_events(site),catalog,day)
+    return {'asOf':day,'upcoming':len(catalog['shows']),'artistsChecked':len(paths)-2,'errors':errors}
 
 def verify_live(origin,day):
     def read(path):
@@ -99,7 +101,9 @@ def verify_live(origin,day):
     paths=['index.html','shows/index.html',*(k.strip('/')+'/index.html' for k in dict.fromkeys(sample))]
     with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
         pages=dict(zip(paths,pool.map(read,paths)))
-    return {'asOf':day,'upcoming':len(catalog['shows']),'artistsChecked':len(paths)-2,'errors':page_errors(pages,catalog,day)}
+    expected=read_events(Path(__file__).resolve().parents[1])
+    errors=page_errors(pages,catalog,day)+canadian_catalog_errors(expected,catalog,day)
+    return {'asOf':day,'upcoming':len(catalog['shows']),'artistsChecked':len(paths)-2,'errors':errors}
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--mode',action='store_true');parser.add_argument('--site',type=Path);parser.add_argument('--live');parser.add_argument('--day');parser.add_argument('--output',type=Path)

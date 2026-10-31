@@ -23,6 +23,22 @@ dependencies. Missing/corrupt/replaced images stop publication so the previous r
 stays live. When intentionally removing an artist, remove their portrait registry and
 override entries together. Keep old image files for historical references.
 
+## Canadian bookings and daily updates
+
+Approved Canadian shows live in `supplemental-events.json` with `country: "CA"`
+and the correct province. The U.S.-only Bandsintown collector must preserve them.
+The shared bot publisher checks against the latest main branch and refuses to
+save an update that loses an upcoming Canadian booking. Both date-only and full
+discovery deployments also compare a pre-refresh snapshot with the final feeds
+and public show catalog before uploading. The daily live calendar check verifies
+that current Canadian source listings are still public.
+
+These checks automatically cover newly added Canadian shows. They allow normal
+rollover after `endDate` (or `startDate` for a single-day event), and explicit
+cancellation or duplicate reconciliation. Archived Canadian shows remain eligible
+for past-show pages. A missing-show guard failure requires investigating the
+collector or build; do not delete the approved booking to silence the check.
+
 ## Master v9
 
 - Removes TobyMac from active CHH monitoring while preserving his name only on Ticketmaster events explicitly shared with KB.

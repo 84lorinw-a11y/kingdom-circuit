@@ -64,6 +64,9 @@ jobs:
           KC_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
         run: python scripts/calendar_maintenance.py --mode >> "$GITHUB_OUTPUT"
 
+      - name: Snapshot Canadian bookings before automated changes
+        run: python scripts/canadian_event_guard.py --snapshot "$RUNNER_TEMP/canadian-bookings.json"
+
       - name: Sync verified artist registry
         run: python scripts/sync_verified_artist_registry.py
 
@@ -154,7 +157,9 @@ jobs:
           python -m unittest discover -s tests -p 'test_us_pr_geo_scope.py' -q
 
       - name: Validate refreshed source before publication
-        run: python -m unittest discover -s tests -p 'test_*.py' -q
+        run: |
+          python scripts/canadian_event_guard.py --baseline "$RUNNER_TEMP/canadian-bookings.json"
+          python -m unittest discover -s tests -p 'test_*.py' -q
 
       - name: Save refreshed event data
         if: steps.refresh-mode.outputs.discovery == 'true'
@@ -578,6 +583,9 @@ jobs:
 
       - name: Verify private bookings remain listed with admission labels
         run: python scripts/private_events.py --site _site --check
+
+      - name: Verify Canadian bookings survived the complete build
+        run: python scripts/canadian_event_guard.py --baseline "$RUNNER_TEMP/canadian-bookings.json" --site _site
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
