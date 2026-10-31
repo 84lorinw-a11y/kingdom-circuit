@@ -18,6 +18,8 @@ PROVIDER_ALIASES = {
     "bandsintown:108856562": "manual:808-beezy-bandsintown-108856562",
     "bandsintown:108856576": "manual:808-beezy-bandsintown-108856576",
     "ticketmaster:Z7r9jZ1AAepra": "bandsintown:108975912",
+    # Sony Hall ticketing and the artist-verified Dec 28 show are one performance.
+    "ticketmaster:k7vGF_4M3EccR": "manual:alex-jean-sony-hall-new-york-2026-12-28",
     "official:82953bf17964628bbd9b": "bandsintown:108881783",
     "ticketmaster:vv1AaZkfMGkd2fZDG": "bandsintown:1040378722",
     "official:498b9c1935ee983f352d": "manual:rock-the-universe-orlando-2027",
