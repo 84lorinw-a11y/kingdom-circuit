@@ -1,26 +1,26 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-10-31T15:35:39Z",
-  "lastSuccessfulUpdate": "2026-10-31T15:35:39Z",
-  "eventsPublished": 181,
-  "candidatesCollected": 327,
-  "artistsConfigured": 379,
+  "lastAttempt": "2026-10-31T18:25:12Z",
+  "lastSuccessfulUpdate": "2026-10-31T18:25:12Z",
+  "eventsPublished": 164,
+  "candidatesCollected": 328,
+  "artistsConfigured": 412,
   "artistsByPriority": {
     "priority1": 91,
-    "priority2": 144,
-    "priority3": 144
+    "priority2": 146,
+    "priority3": 165
   },
   "ticketmasterArtistsEnabled": 196,
-  "socialSearchArtistsEnabled": 334,
-  "freeTextAliasesProtected": 232,
+  "socialSearchArtistsEnabled": 367,
+  "freeTextAliasesProtected": 275,
   "artistsMatchedOnTicketmaster": 61,
   "officialEventsFound": 38,
   "ticketmasterEventsFound": 13,
-  "instagramArtistsConfigured": 334,
-  "instagramQueriesRun": 336,
-  "instagramQueriesAttempted": 334,
-  "instagramResultsFound": 0,
+  "instagramArtistsConfigured": 367,
+  "instagramQueriesRun": 369,
+  "instagramQueriesAttempted": 367,
+  "instagramResultsFound": 1,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,10 +46,20 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DQfpcLdAe6u/",
+      "title": "Caiden’s Courage | Caiden’s ADHD kicked in — he couldn’t decide if he ...",
+      "artists": [],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 459,
+  "sourcesChecked": 492,
   "unmatchedArtists": [
     "Scootie Wop",
     "Mike Malagies",
@@ -592,8 +602,8 @@
       "name": "Instagram public announcement scan",
       "status": "ok",
       "eventsFound": 0,
-      "artistsChecked": 334,
-      "queriesRun": 336
+      "artistsChecked": 367,
+      "queriesRun": 369
     }
   ],
   "warningCount": 18,
@@ -623,5 +633,5 @@
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 20,
   "artistWebsiteEventsAdded": 1,
-  "artistWebsiteMergeAt": "2026-10-31T15:54:32Z"
+  "artistWebsiteMergeAt": "2026-10-31T18:35:24Z"
 }
