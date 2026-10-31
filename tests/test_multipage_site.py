@@ -91,7 +91,7 @@ class MultiPageProductionTests(unittest.TestCase):
         self.assertTrue((ROOT / artist["imageUrl"]).is_file())
         self.assertIn("mzstatic.com", portrait["previousSource"])
 
-        events = json.loads((ROOT / "events.json").read_text(encoding="utf-8"))
+        events = load_catalog(ROOT / "events.json")
         event = next(item for item in events if item.get("id") == "manual:bandsintown:1040178082")
         self.assertEqual(event["image"], "assets/events/harvest-fest-jon-keith-southfield-2026-10-30.jpg")
         self.assertTrue((ROOT / event["image"]).is_file())

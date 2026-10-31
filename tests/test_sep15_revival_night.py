@@ -3,6 +3,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from tests.catalog_history import load_catalog
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -36,7 +37,7 @@ SPOTIFY_PROFILES = {
 
 
 def load(relative: str):
-    return json.loads((ROOT / relative).read_text(encoding="utf-8"))
+    return load_catalog(ROOT / relative)
 
 
 def base_id(event: dict) -> str:
