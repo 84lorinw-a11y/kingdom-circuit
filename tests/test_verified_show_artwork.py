@@ -26,6 +26,31 @@ class VerifiedShowArtworkTests(unittest.TestCase):
                 artwork.reconcile_provider_duplicates({'primary': [dict(incoming, **change)],
                                                        'reviewed': [copy.deepcopy(canonical)]})
 
+    def test_sony_hall_ticketmaster_alias_preserves_verified_flyer_and_age(self):
+        from build_seo_site import event_path
+        reviewed = dict(id='manual:alex-jean-sony-hall-new-york-2026-12-28',
+                        title='Alex Jean — The Welcome Home Tour',
+                        startDate='2026-12-28', startTime='20:00',
+                        venue='Sony Hall', city='New York', state='NY',
+                        artists=['Alex Jean'], advertisedBilling=['Alex Jean', 'Reece'],
+                        firstSeen='2026-10-30T14:59:28Z',
+                        image='assets/events/alex-jean-welcome-home-tour-2026-legs-1-2.jpg',
+                        imageType='event_artwork')
+        ticketmaster = dict(reviewed, id='ticketmaster:k7vGF_4M3EccR',
+                            firstSeen='2026-10-30T16:29:56Z',
+                            image='assets/artists/alex-jean.webp')
+        old_path = event_path(ticketmaster)
+        feeds = {'events.json': [ticketmaster],
+                 'supplemental-events.json': [copy.deepcopy(reviewed)]}
+        self.assertEqual(1, artwork.reconcile_provider_duplicates(feeds))
+        self.assertEqual(reviewed['id'], ticketmaster['id'])
+        self.assertEqual(reviewed['firstSeen'], ticketmaster['firstSeen'])
+        self.assertEqual(reviewed['advertisedBilling'], ticketmaster['advertisedBilling'])
+        self.assertEqual(artwork.BY_ID[reviewed['id'].removeprefix('manual:')]['image'],
+                         ticketmaster['image'])
+        self.assertIn(old_path, ticketmaster['legacyEventPaths'])
+        self.assertEqual(1, len({event['id'] for feed in feeds.values() for event in feed}))
+
     def test_returning_808_calendar_keeps_reviewed_url_flyer_and_original_discovery(self):
         canonical = dict(id='manual:808-beezy-bandsintown-108856031',
                          title='808 BEEZY — Live at FCA Warrior Night', startDate='2026-11-02',
