@@ -86,6 +86,46 @@ FRAMING_PATH = Path(__file__).resolve().parents[1] / 'config/artist-profile-fram
 PROFILE_FRAMING = json.loads(FRAMING_PATH.read_text())
 PORTRAITS = json.loads((FRAMING_PATH.parent / 'artist-portraits.json').read_text())
 ORIGINAL_PICTURE = re.compile(r'<picture data-kc-desktop-original><source\b[^>]*>(<img\b[^>]*>)</picture>')
+PROFILE_IMAGE = re.compile(r'<img\b(?=[^>]*class="[^"]*\bkc-rd-profile-img\b)[^>]*>')
+
+
+def responsive_crop_sizes(source: str, slug: str) -> str:
+    """Size responsive sources for the enlarged image inside an opted-in crop."""
+    entry = PROFILE_FRAMING.get(slug, {})
+    if entry.get('responsiveCrop') is not True:
+        return source
+    widths = {}
+    for view in ('desktop', 'mobile'):
+        frame = entry.get(view, {})
+        window = frame.get('window', [0, 0, 1, 1])
+        if not isinstance(window, (list, tuple)) or len(window) != 4:
+            raise ValueError(f'Invalid responsive crop window: {slug}/{view}')
+        width = 1 if frame.get('nameOnly') else window[2]
+        if (isinstance(width, bool) or not isinstance(width, (int, float)) or
+                not math.isfinite(width) or not 0 < width <= 1.000002):
+            raise ValueError(f'Invalid responsive crop width: {slug}/{view}')
+        scale = 100 / width
+        if not math.isfinite(scale):
+            raise ValueError(f'Invalid responsive crop width: {slug}/{view}')
+        # The visual can occupy at most the viewport width. CSS scales the
+        # complete image by 1 / window width before clipping it to that visual.
+        widths[view] = f'{scale:.6f}'.rstrip('0').rstrip('.') + 'vw'
+    sizes = f'(max-width: 720px) {widths["mobile"]}, {widths["desktop"]}'
+
+    def resize(match):
+        tag = match.group(0)
+        replacement = f'sizes="{sizes}"'
+        tag, count = re.subn(r'(?<!\S)sizes\s*=\s*(?:"[^"]*"|\'[^\']*\'|[^\s>]+)',
+                             lambda _: replacement, tag)
+        if not count:
+            ending = '/>' if tag.endswith('/>') else '>'
+            tag = tag[:-len(ending)] + ' ' + replacement + ending
+        return tag
+
+    source, count = PROFILE_IMAGE.subn(resize, source)
+    if count != 1:
+        raise ValueError(f'Expected one responsive profile portrait: {slug}')
+    return source
 
 
 def desktop_original(source: str, slug: str, site: Path, base: str) -> str:
@@ -98,9 +138,8 @@ def desktop_original(source: str, slug: str, site: Path, base: str) -> str:
     if hashlib.sha256(asset.read_bytes()).hexdigest() != entry['imageSha256']:
         raise ValueError(f'Original desktop portrait changed: {slug}')
     source = ORIGINAL_PICTURE.sub(lambda m: m.group(1), source)
-    pattern = r'<img\b(?=[^>]*class="[^"]*\bkc-rd-profile-img\b)[^>]*>'
     url = html.escape(base + portrait['asset'], quote=True)
-    source, count = re.subn(pattern, lambda m: (
+    source, count = PROFILE_IMAGE.subn(lambda m: (
         '<picture data-kc-desktop-original>'
         f'<source media="(min-width: 721px)" srcset="{url}">'
         + m.group(0) + '</picture>'), source)
@@ -273,6 +312,7 @@ def enrich_row(row: str, site: Path, base: str, *, next_show=False) -> str:
 
 
 def render_profile(site: Path, profile: Path, source: str, base: str) -> str:
+    source = responsive_crop_sizes(source, profile.parent.name)
     source = desktop_original(source, profile.parent.name, site, base)
     name = profile_name(source)
     source = ROW.sub(lambda m: enrich_row(m.group(0), site, base), source)
@@ -343,6 +383,8 @@ def check(site: Path, base: str = BASE) -> dict:
         actual_framing = re.findall(r'<style data-kc-artist-framing>(.*?)</style>', source, re.S)
         if actual_framing != ([framing] if framing else []):
             failures.append(f'{profile}: approved artist framing missing or changed')
+        if responsive_crop_sizes(source, profile.parent.name) != source:
+            failures.append(f'{profile}: responsive crop sizes missing or changed')
         if desktop_original(source, profile.parent.name, site, base) != source:
             failures.append(f'{profile}: original desktop portrait missing or changed')
     if not counts['profiles']:

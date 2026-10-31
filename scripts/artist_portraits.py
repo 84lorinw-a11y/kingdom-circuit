@@ -40,6 +40,7 @@ def local_asset(root: Path, value: str) -> Path:
 
 
 def decode_image(path: Path) -> tuple[int, int]:
+    """Validate the original bytes and report the browser-oriented dimensions."""
     from PIL import Image
     with Image.open(path) as image:
         image.verify()
@@ -47,7 +48,10 @@ def decode_image(path: Path) -> tuple[int, int]:
         image.load()
         if min(image.size) < 64:
             raise ValueError(f"Artist portrait is too small: {path}")
-        return image.size
+        # Browsers and the optimizer honor EXIF orientation. Quarter-turn
+        # orientations (including their mirrored variants) exchange the axes;
+        # reading the metadata leaves the approved original file untouched.
+        return image.size[::-1] if image.getexif().get(274) in (5, 6, 7, 8) else image.size
 
 
 def load_portraits(root: Path = ROOT, *, decode: bool = False) -> dict[str, dict]:

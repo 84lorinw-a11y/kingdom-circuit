@@ -15,6 +15,67 @@ SPEC.loader.exec_module(details)
 
 
 class ArtistDetailsTests(unittest.TestCase):
+    def test_responsive_crop_is_opt_in_and_preserves_other_image_attributes(self):
+        image = ('<img class="kc-rd-profile-img" src="small.webp" '
+                 'srcset="small.webp 320w, large.webp 1600w" sizes="100vw" '
+                 'alt="Artist &amp; Friends" loading="eager" fetchpriority="high" '
+                 'data-sizes="preserve" width="1200" height="1500">')
+        entry = {'desktop': {'window': [0, 0, .5, 1]},
+                 'mobile': {'window': [0, 0, .4, 1]}}
+        with patch.dict(details.PROFILE_FRAMING, {'example': entry}):
+            self.assertEqual(details.responsive_crop_sizes(image, 'example'), image)
+            entry['responsiveCrop'] = True
+            expected = image.replace('sizes="100vw"',
+                                     'sizes="(max-width: 720px) 250vw, 200vw"')
+            after = details.responsive_crop_sizes(image, 'example')
+            self.assertEqual(after, expected)
+            self.assertEqual(details.responsive_crop_sizes(after, 'example'), after)
+            self.assertEqual(details.responsive_crop_sizes(image, 'unconfigured'), image)
+            without_sizes = image.replace(' sizes="100vw"', '')
+            self.assertIn('sizes="(max-width: 720px) 250vw, 200vw"',
+                          details.responsive_crop_sizes(without_sizes, 'example'))
+
+    def test_invalid_responsive_crop_widths_fail_before_publication(self):
+        image = '<img class="kc-rd-profile-img" src="portrait.jpg">'
+        for width in (0, -1, 1.1, 1e-310, float('nan'), float('inf'), '0.5', None, True):
+            for view in ('desktop', 'mobile'):
+                with self.subTest(width=width, view=view), patch.dict(details.PROFILE_FRAMING, {
+                    'example': {'responsiveCrop': True, view: {'window': [0, 0, width, 1]}}
+                }):
+                    with self.assertRaises(ValueError):
+                        details.responsive_crop_sizes(image, 'example')
+
+    def test_responsive_crop_render_keeps_desktop_source_and_final_gate_is_repeat_safe(self):
+        with tempfile.TemporaryDirectory() as temp:
+            site = Path(temp)
+            profile, before = self.fixture(site)
+            original = b'approved original bytes'
+            (site / 'photo.jpg').write_bytes(original)
+            image = ('<img class="kc-rd-profile-img" src="small.webp" '
+                     'srcset="small.webp 320w, large.webp 1600w" sizes="100vw" '
+                     'alt="Artist" fetchpriority="high">')
+            before = before.replace('<img src="portrait.jpg">', image)
+            entry = {'artist': 'Artist', 'imageSha256': hashlib.sha256(original).hexdigest(),
+                     'responsiveCrop': True,
+                     'desktop': {'originalSource': True, 'window': [0, 0, .5, 1],
+                                 'ratio': 1, 'nameSize': 5},
+                     'mobile': {'window': [0, 0, .4, 1], 'ratio': 1, 'nameSize': 5}}
+            with patch.dict(details.PROFILE_FRAMING, {'example': entry}), patch.dict(
+                    details.PORTRAITS, {'Artist': {'asset': 'photo.jpg'}}):
+                after = details.render_profile(site, profile, before, '/')
+                expected_image = image.replace('sizes="100vw"',
+                                               'sizes="(max-width: 720px) 250vw, 200vw"')
+                self.assertIn('<picture data-kc-desktop-original>'
+                              '<source media="(min-width: 721px)" srcset="/photo.jpg">'
+                              + expected_image + '</picture>', after)
+                self.assertEqual(details.render_profile(site, profile, after, '/'), after)
+                profile.write_text(after)
+                details.check(site)
+                profile.write_text(after.replace('sizes="(max-width: 720px) 250vw, 200vw"',
+                                                 'sizes="100vw"'))
+                with self.assertRaisesRegex(ValueError, 'responsive crop sizes'):
+                    details.check(site)
+
     def test_desktop_original_preserves_mobile_image_and_is_repeat_safe(self):
         with tempfile.TemporaryDirectory() as temp:
             site = Path(temp)

@@ -16,6 +16,24 @@ import sync_verified_artist_registry as sync
 
 
 class ArtistPortraitTests(unittest.TestCase):
+    def test_decode_reports_exif_oriented_dimensions_without_changing_original(self):
+        from PIL import Image, ImageOps
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'portrait.jpg'
+            for orientation in range(1, 9):
+                with self.subTest(orientation=orientation):
+                    exif = Image.Exif()
+                    exif[274] = orientation
+                    Image.new('RGB', (120, 80), '#2468ac').save(path, exif=exif)
+                    original = path.read_bytes()
+                    with Image.open(path) as image:
+                        displayed_size = ImageOps.exif_transpose(image).size
+                    self.assertEqual(portraits.decode_image(path), displayed_size)
+                    self.assertEqual(path.read_bytes(), original)
+                    with Image.open(path) as image:
+                        self.assertEqual(image.size, (120, 80))
+                        self.assertEqual(image.getexif()[274], orientation)
+
     def fixture(self, root):
         (root / 'config').mkdir()
         (root / 'assets/artists').mkdir(parents=True)

@@ -41,6 +41,7 @@ import xml.etree.ElementTree as ET
 DEFAULT_BASE = "/"
 DEFAULT_ORIGIN = "https://kingdomcircuit.com"
 DEFAULT_WIDTHS = (320, 640, 960, 1280)
+PORTRAIT_FRAMING_PATH = Path(__file__).resolve().parents[1] / "config/artist-profile-framing.json"
 CARD_SIZES = (
     "(max-width: 600px) calc(100vw - 32px), "
     "(max-width: 900px) calc(100vw - 48px), "
@@ -684,6 +685,28 @@ def planned_widths(source_width: int, requested: tuple[int, ...]) -> list[int]:
     return sorted(set(widths))
 
 
+def portrait_responsive_widths(path: Path) -> dict[str, tuple[int, ...]]:
+    """Read additional widths for explicitly opted-in, checksum-pinned portraits."""
+    framing = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(framing, dict):
+        raise ValueError("Portrait framing must be an object")
+    result: dict[str, tuple[int, ...]] = {}
+    for slug, entry in framing.items():
+        if not isinstance(entry, dict):
+            raise ValueError(f"Invalid portrait framing: {slug}")
+        if "responsiveWidths" not in entry:
+            continue
+        widths = entry["responsiveWidths"]
+        digest = entry.get("imageSha256")
+        if (entry.get("responsiveCrop") is not True or
+                not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest) or
+                not isinstance(widths, list) or not widths or
+                any(type(width) is not int or not 16 <= width <= 2048 for width in widths)):
+            raise ValueError(f"Invalid responsive portrait widths: {slug}")
+        result[digest] = tuple(sorted(set(result.get(digest, ())).union(widths)))
+    return result
+
+
 def render_content(
     digest: str,
     data: bytes,
@@ -1046,8 +1069,9 @@ def main(argv: Optional[list[str]] = None) -> int:
         return 2
 
     try:
+        portrait_widths = portrait_responsive_widths(PORTRAIT_FRAMING_PATH)
         backend = choose_backend()
-    except RuntimeError as exc:
+    except (OSError, ValueError, RuntimeError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 2
 
@@ -1133,7 +1157,7 @@ def main(argv: Optional[list[str]] = None) -> int:
                         data,
                         staging,
                         base,
-                        args.widths,
+                        tuple(sorted(set(args.widths).union(portrait_widths.get(digest, ())))),
                         args.quality,
                         backend,
                         deadline,
