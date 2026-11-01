@@ -1,10 +1,10 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-10-31T18:25:12Z",
-  "lastSuccessfulUpdate": "2026-10-31T18:25:12Z",
-  "eventsPublished": 164,
-  "candidatesCollected": 328,
+  "lastAttempt": "2026-11-01T11:35:14Z",
+  "lastSuccessfulUpdate": "2026-11-01T11:35:14Z",
+  "eventsPublished": 166,
+  "candidatesCollected": 329,
   "artistsConfigured": 412,
   "artistsByPriority": {
     "priority1": 91,
@@ -20,7 +20,7 @@
   "instagramArtistsConfigured": 367,
   "instagramQueriesRun": 369,
   "instagramQueriesAttempted": 367,
-  "instagramResultsFound": 1,
+  "instagramResultsFound": 0,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,16 +46,6 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
-    },
-    {
-      "url": "https://www.instagram.com/reel/DQfpcLdAe6u/",
-      "title": "Caiden’s Courage | Caiden’s ADHD kicked in — he couldn’t decide if he ...",
-      "artists": [],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
@@ -633,5 +623,5 @@
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 20,
   "artistWebsiteEventsAdded": 1,
-  "artistWebsiteMergeAt": "2026-10-31T18:35:24Z"
+  "artistWebsiteMergeAt": "2026-11-01T11:52:30Z"
 }
