@@ -8111,30 +8111,32 @@
   },
   "joshua-1-9": {
     "artist": "joshua 1.9",
-    "imageSha256": "2d4546df7095a6c73311ce2510056ff60dadb97106a78e9c5ac6870386a6b649",
+    "imageSha256": "d451f815a4d1d5d63384ce587170d8be296053a11b1f483c03b54a00d3a61f16",
     "responsiveCrop": true,
-    "reason": "Artist appears alone outdoors in clear daylight, with his face and eyes visible, red cap intact, and folded arms beneath his face. It removes the rejected studio photo’s blurred hand across his forehead. This frame has stronger portrait composition and clearer facial visibility than the grainy family selfie and small concert crops reviewed.",
+    "reason": "Owner-selected original Instagram photo. Chest-up framing isolates Joshua on the right, preserves his complete red cap/head and hand, and leaves lower chest space for the artist name. Original pixels are preserved; presentation uses CSS crop windows and responsive WebP variants.",
     "desktop": {
       "window": [
-        0.04,
-        0.34,
-        0.9,
-        0.50625
+        0.55,
+        0.325,
+        0.36,
+        0.27
       ],
       "ratio": 1.0,
-      "nameSize": 5.6,
-      "originalSource": true
+      "nameSize": 5.6
     },
     "mobile": {
       "window": [
-        0.04,
-        0.34,
-        0.86,
-        0.48375
+        0.55,
+        0.325,
+        0.36,
+        0.27
       ],
       "ratio": 1.0,
       "nameSize": 8
-    }
+    },
+    "responsiveWidths": [
+      2048
+    ]
   },
   "saltie-the-salt-shaker": {
     "artist": "Saltie the Salt Shaker",

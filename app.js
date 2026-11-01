@@ -5827,9 +5827,9 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/joshua1ninee/",
     "spotifyProfile": "https://open.spotify.com/artist/31xCLL3xRRHVJWPrl4eRcj",
     "youtubeProfile": "https://www.youtube.com/channel/UC1iw2oBE5nfbKXhEdpWp-IQ",
-    "officialImageSource": "https://open.spotify.com/artist/31xCLL3xRRHVJWPrl4eRcj",
-    "imageUrl": "assets/artists/joshua-1-9-official-portrait-oct31-v2.png",
-    "imagePosition": "50% 20%",
+    "officialImageSource": "https://www.instagram.com/p/DbTkXIimg12/",
+    "imageUrl": "assets/artists/joshua-1-9-owner-selected-instagram-nov1.jpg",
+    "imagePosition": "72% 38%",
     "sourceRegistryVerified": true
   },
   "saltie the salt shaker": {
@@ -11618,9 +11618,9 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/joshua1ninee/",
     "spotifyProfile": "https://open.spotify.com/artist/31xCLL3xRRHVJWPrl4eRcj",
     "youtubeProfile": "https://www.youtube.com/channel/UC1iw2oBE5nfbKXhEdpWp-IQ",
-    "officialImageSource": "https://open.spotify.com/artist/31xCLL3xRRHVJWPrl4eRcj",
-    "imageUrl": "assets/artists/joshua-1-9-official-portrait-oct31-v2.png",
-    "imagePosition": "50% 20%",
+    "officialImageSource": "https://www.instagram.com/p/DbTkXIimg12/",
+    "imageUrl": "assets/artists/joshua-1-9-owner-selected-instagram-nov1.jpg",
+    "imagePosition": "72% 38%",
     "sourceRegistryVerified": true
   },
   "saltie the salt shaker": {
@@ -13552,8 +13552,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 20%"
   },
   "joshua 1.9": {
-    "imageUrl": "assets/artists/joshua-1-9-official-portrait-oct31-v2.png",
-    "imagePosition": "50% 20%"
+    "imageUrl": "assets/artists/joshua-1-9-owner-selected-instagram-nov1.jpg",
+    "imagePosition": "72% 38%"
   },
   "saltie the salt shaker": {
     "imageUrl": "assets/artists/saltie-the-salt-shaker-official-portrait-oct31-v2.jpg",
