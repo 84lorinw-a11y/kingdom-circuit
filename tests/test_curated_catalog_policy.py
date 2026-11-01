@@ -146,6 +146,30 @@ class CuratedCatalogPolicyTests(unittest.TestCase):
         self.assertFalse(MODULE.is_known_duplicate_fragment(held))
         self.assertFalse(MODULE.is_known_duplicate_fragment(orlando))
 
+    def test_mike_malagies_december_12_duplicate_is_suppressed(self):
+        # Apple Music's artist calendar confirms the 5 PM Kissimmee event.
+        # Its separate 10 PM import is a weaker duplicate, not a second show.
+        imported = {
+            "id": "official:5f5e88420934ba61cf99",
+            "title": "Mike Malagies @ Sun On the Beach",
+            "startDate": "2026-12-12",
+            "startTime": "22:00",
+            "city": "Kissimmee",
+            "state": "FL",
+            "artists": ["Mike Malagies"],
+        }
+        canonical = {
+            "id": "manual:mike-malagies-its-a-god-night-orlando-2026-12-12",
+            "title": "Mike Malagies — It’s A God Night (Orlando)",
+            "startDate": "2026-12-12",
+            "startTime": "17:00",
+            "city": "Kissimmee",
+            "state": "FL",
+            "artists": ["Mike Malagies"],
+        }
+        self.assertTrue(MODULE.is_known_duplicate_fragment(imported))
+        self.assertFalse(MODULE.is_known_duplicate_fragment(canonical))
+
     def test_ark_of_worship_uses_pinned_event_artwork(self):
         event = MODULE.ARK_OF_WORSHIP
         self.assertEqual("assets/events/ark-of-worship-2026.png", event["image"])
