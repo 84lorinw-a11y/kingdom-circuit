@@ -250,6 +250,9 @@ KNOWN_DUPLICATE_IDS = {
     "official:120917fb9608dd188970",
     "official:098a68e0a836f7285d1c",
     "official:436dedf4f197e9587ed4",
+    # Apple Music import of Mike Malagies Dec 12 Kissimmee has a false 10 PM
+    # start. The primary 5 PM It’s A God Night event already has a curated ID.
+    "official:5f5e88420934ba61cf99",
 }
 
 
