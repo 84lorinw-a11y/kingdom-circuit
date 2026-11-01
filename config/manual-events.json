@@ -6425,12 +6425,12 @@
     "ageRestriction": "All ages",
     "admissionNotes": "All ages. Doors at 6 PM; concert at 7 PM.",
     "description": "92Q presents a benefit concert supporting The Hope Station, featuring Aaron Cole, ANTHNY, San Franklin and Taylor Hill. Doors open at 6 PM and the concert starts at 7 PM.",
-    "image": "assets/events/aaron-cole-hope-station-nashville-2026-11-11.png",
+    "image": "assets/events/hope-station-benefit-92q-instagram-2026-11-11.jpg",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
-    "imageSource": "Chief's on Broadway official Tixr event image",
-    "imageSourceUrl": "https://www.tixr.com/groups/chiefsonbroadway/events/92q-presents-the-hope-station-benefit-concert-w-aaron-cole-anthny-san-franklin-taylor-hill-210759",
+    "imageSource": "92Q Nashville official Instagram flyer, selected by owner",
+    "imageSourceUrl": "https://www.instagram.com/p/De2Ndy0O28l/",
     "authority": "venue_ticket",
     "confidence": "high",
     "sourceName": "Chief's on Broadway / Tixr",
@@ -6439,13 +6439,21 @@
     "auditVerified": "2026-10-29",
     "sources": [
       {
+        "name": "92Q Nashville official Hope Station concert flyer",
+        "url": "https://www.instagram.com/p/De2Ndy0O28l/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 120
+      },
+      {
         "name": "Chief's on Broadway / Tixr official listing",
         "url": "https://www.tixr.com/groups/chiefsonbroadway/events/92q-presents-the-hope-station-benefit-concert-w-aaron-cole-anthny-san-franklin-taylor-hill-210759",
         "type": "manual_verified",
         "authority": "venue_ticket",
         "priority": 115
       }
-    ]
+    ],
+    "detailImageLayout": "portrait"
   },
   {
     "id": "ignite-and-unite-tour-daytona-beach-2026-11-13",
