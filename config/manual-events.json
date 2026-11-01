@@ -22173,5 +22173,118 @@
     "imageSource": "Official TicketSource It's A God Night Miami flyer",
     "soldOut": true,
     "ticketAvailability": "sold_out"
+  },
+  {
+    "country": "US",
+    "eventType": "concert",
+    "status": "scheduled",
+    "confidence": "high",
+    "authority": "official_event",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "lineupExplicit": true,
+    "auditVerified": "2026-10-31",
+    "id": "corey-red-precise-saintuary-morrow-2026-12-05",
+    "title": "Corey Red & Precise — Street Prophecy Release Party",
+    "startDate": "2026-12-05",
+    "startTime": "19:00",
+    "endTime": "23:00",
+    "timezone": "America/New_York",
+    "venue": "The Saintuary",
+    "address": "1078 Citizens Parkway, Suite F",
+    "city": "Morrow",
+    "state": "GA",
+    "artists": [
+      "Corey Red",
+      "Precise"
+    ],
+    "headliner": "Corey Red",
+    "advertisedBilling": [
+      "Corey Red",
+      "Precise"
+    ],
+    "officialBill": [
+      "Corey Red",
+      "Precise"
+    ],
+    "hosts": [
+      "DJ Sean Blu"
+    ],
+    "ticketUrl": "https://www.eventbrite.com/e/corey-red-and-precise-the-saintuary-tickets-2003683710917",
+    "officialUrl": "https://www.eventbrite.com/e/corey-red-and-precise-the-saintuary-tickets-2003683710917",
+    "image": "assets/events/corey-red-precise-saintuary-2026-12-05.jpg",
+    "imageSource": "Official Eventbrite event flyer",
+    "imageSourceUrl": "https://www.eventbrite.com/e/corey-red-and-precise-the-saintuary-tickets-2003683710917",
+    "sourceName": "The Saintuary / Eventbrite",
+    "sources": [
+      {
+        "name": "The Saintuary official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/corey-red-and-precise-the-saintuary-tickets-2003683710917",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      }
+    ],
+    "notes": "Official organizer listing confirms December 5, 2026, 7–11 PM in Morrow, Georgia. Flyer presents Corey Red & Precise Street Prophecy 2026, hosted by DJ Sean Blu and presented by DJ I Rock Jesus. Believin Stephen appeared in platform search results but is not billed; do not infer his participation. The Eventbrite map pin appears inconsistent with the explicitly written Morrow address; use the written venue address.",
+    "editorialBatch": "2026-10-31-reviewed-discoveries"
+  },
+  {
+    "country": "US",
+    "eventType": "concert",
+    "status": "scheduled",
+    "confidence": "high",
+    "authority": "official_event",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "lineupExplicit": true,
+    "auditVerified": "2026-10-31",
+    "id": "shai-linne-ready-conference-kansas-city-2027-01-29",
+    "title": "Shai Linne Concert — Ready Conference",
+    "startDate": "2027-01-29",
+    "startTime": "21:00",
+    "endTime": "22:00",
+    "timezone": "America/Chicago",
+    "venue": "Chapel — Midwestern Baptist Theological Seminary & Spurgeon College",
+    "address": "5001 N Oak Trafficway",
+    "city": "Kansas City",
+    "state": "MO",
+    "artists": [
+      "Shai Linne"
+    ],
+    "headliner": "Shai Linne",
+    "advertisedBilling": [
+      "Shai Linne"
+    ],
+    "officialBill": [
+      "Shai Linne"
+    ],
+    "ticketUrl": "https://ready27.events.mbts.edu/",
+    "officialUrl": "https://spurgeoncollege.com/ready-conference/",
+    "image": "assets/events/shai-linne-ready-conference-2027-01-29.jpg",
+    "imageSource": "Official Ready Conference 2027 announcement",
+    "imageSourceUrl": "https://spurgeoncollege.com/wp-content/uploads/2026/09/Ready-2027-Launch-1080x1920-1.jpg",
+    "price": "Concert only: $15",
+    "sourceName": "Spurgeon College / Ready Conference",
+    "sources": [
+      {
+        "name": "Official Ready Conference schedule",
+        "url": "https://ready27.events.mbts.edu/schedule/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Spurgeon College official conference and concert information",
+        "url": "https://spurgeoncollege.com/ready-conference/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      }
+    ],
+    "notes": "The conference is January 29–30, but this listing is specifically the Friday January 29 concert, 9–10 PM. Concert registration opens at 8:30 PM in the Welcome Center. Concert-only admission is $15. Official schedule labels January hours CDT; preserve advertised local clock time using America/Chicago (CST on this date), not the erroneous daylight abbreviation.",
+    "registrationTime": "20:30",
+    "editorialBatch": "2026-10-31-reviewed-discoveries"
   }
 ]
