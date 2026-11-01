@@ -49,7 +49,10 @@ def verify_sitemap_dates(site: pathlib.Path) -> None:
     """Do not publish freshness claims without per-page modification history."""
     sitemap = ET.fromstring(read(site / "sitemap.xml"))
     if any(node.tag.rsplit("}", 1)[-1] == "lastmod" for node in sitemap.iter()):
-        raise ValueError("Sitemap lastmod must be omitted until per-page dates are reliable")
+        if not (site / 'url-continuity-manifest.json').is_file():
+            raise ValueError("Sitemap lastmod must be omitted until per-page dates are reliable")
+        from url_continuity import verify
+        verify(site)
 
 
 def png_ihdr(path: pathlib.Path) -> tuple[int, int, int, int]:

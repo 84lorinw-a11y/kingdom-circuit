@@ -176,6 +176,9 @@ jobs:
             --sync-checkout \
             events.json supplemental-events.json config/manual-events.json config/artists.json app.js coverage-gaps.json run-status.json cache/ticketmaster-attractions.json full-scan-status.json full-scan-candidates.json bandsintown-status.json bandsintown-candidates.json config/permanent-state-pages.json tests/test_update_events.py event-history.json
 
+      - name: Reconcile durable event identities before page generation
+        run: python scripts/url_continuity.py --prepare
+
       - name: Check out pinned approved SEO source
         uses: actions/checkout@v4
         with:
@@ -590,6 +593,12 @@ jobs:
       - name: Verify Canadian bookings survived the complete build
         run: python scripts/canadian_event_guard.py --baseline "$RUNNER_TEMP/canadian-bookings.json" --site _site
 
+      - name: Preserve published URLs and record real page changes
+        run: |
+          python scripts/url_continuity.py --site _site
+          python scripts/url_continuity.py --site _site --check
+          python scripts/calendar_maintenance.py --site _site --output calendar-freshness-build.json
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -598,6 +607,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+      - name: Save successful publication URL history
+        run: python scripts/publish_url_state.py
 
       - name: Verify published calendar freshness
         shell: bash

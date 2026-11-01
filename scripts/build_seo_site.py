@@ -333,7 +333,7 @@ def main():
         except Exception: pass
 
     for e in retained:
-        p=event_path(e); urls.append(p); loc=", ".join(x for x in (e.get("city"),e.get("state")) if x); names=", ".join(e.get("artists",[])) or e.get("headliner") or "CHH artists"
+        p=event_path(e); loc=", ".join(x for x in (e.get("city"),e.get("state")) if x); names=", ".join(e.get("artists",[])) or e.get("headliner") or "CHH artists"
         crumbs=[("Shows","/shows/")]
         if e.get("state"): crumbs.append((STATE_NAMES.get(e["state"],e["state"]),state_path(e["state"])))
         crumbs.append((e.get("title") or "Event",p))
@@ -341,10 +341,13 @@ def main():
         merged=norm(e.get("status")) == "merged"
         if merged:
             canonical=next((item for item in retained if item.get("id") == e.get("mergedIntoId")), None)
-            target=event_path(canonical) if canonical else "/shows/"
+            if canonical is None:
+                raise ValueError(f"Merged event has no surviving page: {e.get('id')}")
+            target=event_path(canonical)
             body=f'<section class="page-hero hero-compact"><p class="eyebrow">Merged listing</p><h1>This show has one canonical page</h1><p class="hero-text">This duplicate listing was consolidated with the confirmed venue event.</p><a class="primary-button" href="{target}">View the canonical event</a></section><script>location.replace({json.dumps(target)});</script>'
-            write_page(p,page("Merged event | The Kingdom Circuit","This duplicate show listing has moved to its canonical event page.",p,body))
+            write_page(p,page("Merged event | The Kingdom Circuit","This duplicate show listing has moved to its canonical event page.",target,body))
             continue
+        urls.append(p)
         cancelled=norm(e.get("status")) in {"cancelled", "canceled"}
         postponed=norm(e.get("status")) == "postponed"
         notice='<div class="empty-panel" role="status"><strong>Cancelled.</strong> The organizer has confirmed this event is cancelled. See the official details below.</div>' if cancelled else rescheduled_notice(e)
