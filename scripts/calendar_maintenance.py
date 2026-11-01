@@ -81,7 +81,14 @@ def page_errors(pages,catalog,day):
 
 def verify_site(site,day):
     catalog=json.loads((site/'assets/fan-show-catalog.json').read_text())
+    aliases = {}
+    receipt = site / 'url-continuity-manifest.json'
+    if receipt.is_file():
+        from url_continuity import verify
+        verify(site)  # Validate redirects before excluding them from profile checks.
+        aliases = json.loads(receipt.read_text()).get('redirects', {})
     paths=[site/'index.html',site/'shows/index.html',*(site/'artists').glob('*/index.html')]
+    paths=[p for p in paths if '/' + p.parent.relative_to(site).as_posix().strip('./') + '/' not in aliases]
     pages={p.relative_to(site).as_posix():p.read_text() for p in paths}
     errors=page_errors(pages,catalog,day)+canadian_catalog_errors(read_events(site),catalog,day)
     return {'asOf':day,'upcoming':len(catalog['shows']),'artistsChecked':len(paths)-2,'errors':errors}
