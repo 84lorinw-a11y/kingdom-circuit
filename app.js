@@ -5906,8 +5906,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/tradition.christ/",
     "spotifyProfile": "https://open.spotify.com/artist/2pJFYSt5t65Wf6bK5Ii5cQ",
     "youtubeProfile": "https://www.youtube.com/playlist?list=OLAK5uy_m_5hc2hDhPn328Sm3C7mW1p6U_66c07HI",
-    "officialImageSource": "https://open.spotify.com/artist/2pJFYSt5t65Wf6bK5Ii5cQ",
-    "imageUrl": "assets/artists/tradition-portrait-review-oct31.jpg",
+    "officialImageSource": "https://kingdomcircuit.com/assets/artists/tradition-owner-provided-nov1.png",
+    "imageUrl": "assets/artists/tradition-owner-provided-nov1.png",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   },
@@ -11697,8 +11697,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/tradition.christ/",
     "spotifyProfile": "https://open.spotify.com/artist/2pJFYSt5t65Wf6bK5Ii5cQ",
     "youtubeProfile": "https://www.youtube.com/playlist?list=OLAK5uy_m_5hc2hDhPn328Sm3C7mW1p6U_66c07HI",
-    "officialImageSource": "https://open.spotify.com/artist/2pJFYSt5t65Wf6bK5Ii5cQ",
-    "imageUrl": "assets/artists/tradition-portrait-review-oct31.jpg",
+    "officialImageSource": "https://kingdomcircuit.com/assets/artists/tradition-owner-provided-nov1.png",
+    "imageUrl": "assets/artists/tradition-owner-provided-nov1.png",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   },
@@ -13576,7 +13576,7 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 0%"
   },
   "tradition": {
-    "imageUrl": "assets/artists/tradition-portrait-review-oct31.jpg",
+    "imageUrl": "assets/artists/tradition-owner-provided-nov1.png",
     "imagePosition": "50% 0%"
   },
   "mntis": {
