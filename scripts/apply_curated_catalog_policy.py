@@ -373,7 +373,16 @@ def is_known_duplicate_fragment(event: dict[str, Any]) -> bool:
         if (event_date, city) in duplicate_collection_stops:
             return True
 
-    # Alex Jean's Dallas hold was released by the owner on October 8, 2026.
+    # Current owner instruction: keep the Nov 19 Dallas Alex Jean appearance
+    # on hold, even though the venue has confirmed the event. Retain the
+    # original curated record in manual source/history for later release.
+    if event_date == "2026-11-19" and "alex jean" in artists:
+        if (city == "dallas" and norm(event.get("state")) == "tx") or (
+            "1626463" in str(event.get("officialUrl") or "")
+            or "1626463" in str(event.get("ticketUrl") or "")
+        ):
+            return True
+
     return False
 
 
