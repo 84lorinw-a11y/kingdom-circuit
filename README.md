@@ -23,6 +23,13 @@ dependencies. Missing/corrupt/replaced images stop publication so the previous r
 stays live. When intentionally removing an artist, remove their portrait registry and
 override entries together. Keep old image files for historical references.
 
+## Event flyer selection
+
+If event artwork is landscape, check the official artist or organizer Instagram
+for a portrait flyer before publishing. Prefer owner-selected official artwork,
+save a versioned local file, and preserve its original proportions without
+cutting off flyer text. Check the event page and show card on mobile and desktop.
+
 ## Canadian bookings and daily updates
 
 Approved Canadian shows live in `supplemental-events.json` with `country: "CA"`
