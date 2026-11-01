@@ -6051,7 +6051,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "aliases": [
       "Spencer Xavier"
     ],
-    "website": "https://www.instagram.com/sxsoundoff/",
+    "website": "https://sxsoundoff.com/",
     "instagramProfile": "https://www.instagram.com/sxsoundoff/",
     "spotifyProfile": "https://open.spotify.com/artist/6UhA1SHLCpqViw5rO4BgVa",
     "youtubeProfile": "https://www.youtube.com/@sxsoundoff",
@@ -11842,7 +11842,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "aliases": [
       "Spencer Xavier"
     ],
-    "website": "https://www.instagram.com/sxsoundoff/",
+    "website": "https://sxsoundoff.com/",
     "instagramProfile": "https://www.instagram.com/sxsoundoff/",
     "spotifyProfile": "https://open.spotify.com/artist/6UhA1SHLCpqViw5rO4BgVa",
     "youtubeProfile": "https://www.youtube.com/@sxsoundoff",
