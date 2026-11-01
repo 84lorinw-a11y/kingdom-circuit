@@ -5919,9 +5919,9 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/mantis_rap/",
     "spotifyProfile": "https://open.spotify.com/artist/3ovZ8fuAdN3sTuOBWSsMSp",
     "youtubeProfile": "https://www.youtube.com/@mantis_rap",
-    "officialImageSource": "https://open.spotify.com/artist/3ovZ8fuAdN3sTuOBWSsMSp",
-    "imageUrl": "assets/artists/mntis-portrait-review-oct31.png",
-    "imagePosition": "50% 0%",
+    "officialImageSource": "https://kingdomcircuit.com/assets/artists/mntis-owner-provided-nov1.png",
+    "imageUrl": "assets/artists/mntis-owner-provided-nov1.png",
+    "imagePosition": "50% 50%",
     "sourceRegistryVerified": true
   },
   "ant lee": {
@@ -11710,9 +11710,9 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/mantis_rap/",
     "spotifyProfile": "https://open.spotify.com/artist/3ovZ8fuAdN3sTuOBWSsMSp",
     "youtubeProfile": "https://www.youtube.com/@mantis_rap",
-    "officialImageSource": "https://open.spotify.com/artist/3ovZ8fuAdN3sTuOBWSsMSp",
-    "imageUrl": "assets/artists/mntis-portrait-review-oct31.png",
-    "imagePosition": "50% 0%",
+    "officialImageSource": "https://kingdomcircuit.com/assets/artists/mntis-owner-provided-nov1.png",
+    "imageUrl": "assets/artists/mntis-owner-provided-nov1.png",
+    "imagePosition": "50% 50%",
     "sourceRegistryVerified": true
   },
   "ant lee": {
@@ -13580,8 +13580,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 0%"
   },
   "mntis": {
-    "imageUrl": "assets/artists/mntis-portrait-review-oct31.png",
-    "imagePosition": "50% 0%"
+    "imageUrl": "assets/artists/mntis-owner-provided-nov1.png",
+    "imagePosition": "50% 50%"
   },
   "ant lee": {
     "imageUrl": "assets/artists/ant-lee-official-portrait-oct31-v2.jpg",
