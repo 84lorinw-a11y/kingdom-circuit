@@ -169,6 +169,11 @@ class CuratedCatalogPolicyTests(unittest.TestCase):
         }
         self.assertTrue(MODULE.is_known_duplicate_fragment(imported))
         self.assertFalse(MODULE.is_known_duplicate_fragment(canonical))
+        curated = MODULE.curate_event(canonical)
+        self.assertIn(
+            "/event/mike-malagies-sun-on-the-beach-2026-12-12-kissimmee-eeaa01/",
+            curated.get("legacyEventPaths", []),
+        )
 
     def test_ark_of_worship_uses_pinned_event_artwork(self):
         event = MODULE.ARK_OF_WORSHIP
