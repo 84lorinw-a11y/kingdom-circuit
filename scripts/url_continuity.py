@@ -198,9 +198,10 @@ def prepare(root):
             selected[keep] = merge_details(selected[keep], event)
         else:
             selected[keep] = event
-            owners[keep] = name
+            owners[keep] = set()
+        owners[keep].add(name)
     for name in FEEDS:
-        save(root / name, [event for key, event in selected.items() if owners[key] == name])
+        save(root / name, [event for key, event in selected.items() if name in owners[key]])
     for key, event in selected.items():
         state['events'][key]['event'] = {k: event[k] for k in SNAPSHOT_FIELDS if k in event}
     # Existing reviewed mergedFromIds must also retire old archived identities.
@@ -346,7 +347,11 @@ def finalize(root, site, today=None):
     for key, event in history.items():
         if key in aliases: continue
         path = generated_path(event)
-        if target_file(site, path).is_file() and key not in state['events']:
+        file = target_file(site, path)
+        if path in state['redirects']: continue
+        if file.is_file() and key not in state['events']:
+            facts = PageFacts(file.read_text())
+            if facts.refresh or facts.canonical != ORIGIN + path: continue
             state['events'][key] = {'path': path, 'sourceIds': [], 'event': {k: event[k] for k in SNAPSHOT_FIELDS if k in event}}
     from catalog_removals import removed_event
     from owner_roster import filter_events

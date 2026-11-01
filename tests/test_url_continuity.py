@@ -117,6 +117,16 @@ class URLContinuityTests(unittest.TestCase):
         uc.finalize(self.root, self.site)
         self.assertFalse(uc.target_file(self.site, self.path).exists())
 
+    def test_same_identity_retains_required_presence_in_both_feeds(self):
+        private = dict(self.event, status='private')
+        self.write_inputs(primary=[private], secondary=[private])
+        uc.prepare(self.root)
+        for name in uc.FEEDS:
+            rows = uc.load(self.root / name, [])
+            self.assertEqual(1, len(rows))
+            self.assertEqual('private', rows[0]['status'])
+            self.assertEqual(self.event['id'], rows[0]['id'])
+
     def test_shared_tour_homepage_is_not_an_identity(self):
         a = dict(self.event, officialUrl='https://example.org/pages/tour')
         self.assertFalse(uc.same_performance(a, dict(a, id='different')))
@@ -174,6 +184,19 @@ class URLContinuityTests(unittest.TestCase):
         text = uc.target_file(self.site, self.path).read_text()
         self.assertIn('Not open to the public', text)
         self.assertEqual([], uc.PageFacts(text).schemas)
+
+    def test_archived_alias_page_does_not_register_a_second_canonical_identity(self):
+        old = dict(self.event, id='archived:old')
+        old_path = uc.generated_path(old)
+        self.write_inputs(); uc.prepare(self.root)
+        uc.save(self.root / 'event-history.json', {'events': [{'event': old}]})
+        self.page(self.path)
+        file = self.page(old_path, canonical=self.path)
+        file.write_text(file.read_text().replace('</body>', '<script>location.replace("' + self.path + '");</script></body>'))
+        uc.finalize(self.root, self.site)
+        state = uc.load(self.root / uc.WORK_FILE, {})
+        self.assertNotIn(old['id'], state['events'])
+        self.assertEqual(self.path, state['redirects'][old_path])
 
     def test_runtime_cards_use_registered_path_after_rename(self):
         import subprocess
