@@ -5774,8 +5774,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/0YEAFWgahlVVHVnisqqJm6",
     "youtubeProfile": "https://www.youtube.com/@jlubamba",
     "officialImageSource": "https://linktr.ee/jlubamba",
-    "imageUrl": "assets/artists/j-lubamba-portrait-review-oct31.jpg",
-    "imagePosition": "50% 0%",
+    "imageUrl": "assets/artists/j-lubamba-requested-instagram-oct31.jpg",
+    "imagePosition": "50% 20%",
     "country": "CA",
     "sourceRegistryVerified": true
   },
@@ -6102,8 +6102,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/4cceNSxdTThq6CLC2CA0bE",
     "youtubeProfile": "https://www.youtube.com/@NBzing",
     "officialImageSource": "https://open.spotify.com/artist/4cceNSxdTThq6CLC2CA0bE",
-    "imageUrl": "assets/artists/nick-betzing-portrait-review-oct31.png",
-    "imagePosition": "50% 0%",
+    "imageUrl": "assets/artists/nick-betzing-requested-instagram-oct31.jpg",
+    "imagePosition": "50% 20%",
     "state": "MB",
     "country": "CA",
     "sourceRegistryVerified": true
@@ -11565,8 +11565,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/0YEAFWgahlVVHVnisqqJm6",
     "youtubeProfile": "https://www.youtube.com/@jlubamba",
     "officialImageSource": "https://linktr.ee/jlubamba",
-    "imageUrl": "assets/artists/j-lubamba-portrait-review-oct31.jpg",
-    "imagePosition": "50% 0%",
+    "imageUrl": "assets/artists/j-lubamba-requested-instagram-oct31.jpg",
+    "imagePosition": "50% 20%",
     "country": "CA",
     "sourceRegistryVerified": true
   },
@@ -11893,8 +11893,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/4cceNSxdTThq6CLC2CA0bE",
     "youtubeProfile": "https://www.youtube.com/@NBzing",
     "officialImageSource": "https://open.spotify.com/artist/4cceNSxdTThq6CLC2CA0bE",
-    "imageUrl": "assets/artists/nick-betzing-portrait-review-oct31.png",
-    "imagePosition": "50% 0%",
+    "imageUrl": "assets/artists/nick-betzing-requested-instagram-oct31.jpg",
+    "imagePosition": "50% 20%",
     "state": "MB",
     "country": "CA",
     "sourceRegistryVerified": true
@@ -13536,8 +13536,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 0%"
   },
   "j lubamba": {
-    "imageUrl": "assets/artists/j-lubamba-portrait-review-oct31.jpg",
-    "imagePosition": "50% 0%"
+    "imageUrl": "assets/artists/j-lubamba-requested-instagram-oct31.jpg",
+    "imagePosition": "50% 20%"
   },
   "veshone": {
     "imageUrl": "assets/artists/veshone-portrait-review-oct31.jpg",
@@ -13628,8 +13628,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 0%"
   },
   "nick betzing": {
-    "imageUrl": "assets/artists/nick-betzing-portrait-review-oct31.png",
-    "imagePosition": "50% 0%"
+    "imageUrl": "assets/artists/nick-betzing-requested-instagram-oct31.jpg",
+    "imagePosition": "50% 20%"
   },
   "die-rek": {
     "imageUrl": "assets/artists/die-rek-portrait-review-oct31.jpg",
