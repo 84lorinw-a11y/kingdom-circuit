@@ -32,6 +32,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install pinned image verification backend
+        run: python -c "import sys; sys.path.insert(0, 'scripts'); from finalize_public_experience import ensure_image_backend; print(ensure_image_backend())"
+
       - name: Enforce verified catalog audit and artist exclusion
         run: python scripts/enforce_sep11_catalog_audit.py
 
