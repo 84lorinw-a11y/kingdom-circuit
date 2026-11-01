@@ -124,6 +124,15 @@ def label_listings(site, root=ROOT):
     return changed
 
 
+def accessible_page(document):
+    """Give retained private listings the shared keyboard navigation shell."""
+    from apply_public_ux_repairs import ensure_page_shell, replace_attr
+    document = ensure_page_shell(document)
+    return re.sub(r'<main\b[^>]*>',
+                  lambda match: replace_attr(match.group(0), 'tabindex', '-1'),
+                  document, count=1, flags=re.I)
+
+
 def write_pages(site, root=ROOT):
     from build_seo_site import page, esc, event_path, format_date, image_url, breadcrumb_schema
     written = []
@@ -148,6 +157,7 @@ def write_pages(site, root=ROOT):
             document = page('808 BEEZY — AMPLIFY | Private Event | Kingdom Circuit',
                             event['publicDescription'], canonical, body,
                             [breadcrumb_schema(crumbs)])
+            document = accessible_page(document)
             target = site / path.strip('/') / 'index.html'
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_text(document)

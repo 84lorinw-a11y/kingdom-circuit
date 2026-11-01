@@ -24,7 +24,7 @@ SITE_BASE = "/"
 SITE_ORIGIN = "https://kingdomcircuit.com"
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '20261019-weekly-rollover-1'
+VERSION = '20261031-mobile-audit-1'
 ASSETS = ('national-discovery.css', 'national-discovery.js', 'fan-discovery.css', 'fan-discovery.js')
 WEEKEND_PATH = 'shows/this-weekend/index.html'
 WEEKEND_HREF = SITE_BASE + 'shows/this-weekend/'
@@ -515,6 +515,13 @@ def transform(relative, source, context):
         raise ValueError('National discovery overlay must run once')
     if name == 'index.html':
         text = home_content(text, context)
+    # Retained event aliases can predate the shared keyboard-navigation shell.
+    if 'kc-skip-link' not in text:
+        from apply_public_ux_repairs import ensure_page_shell, replace_attr
+        text = ensure_page_shell(text)
+        text = re.sub(r'<main\b[^>]*>',
+                      lambda match: replace_attr(match.group(0), 'tabindex', '-1'),
+                      text, count=1, flags=re.I)
     text = add_shared_navigation(text, name)
     text = artist_details(text, context)
     text = nearby_state_section(text, name, context)

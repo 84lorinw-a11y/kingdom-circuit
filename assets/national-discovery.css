@@ -170,3 +170,16 @@ body .kc-weekend-hero { padding-block: 30px; }
   body .calendar .filters input, body .calendar .filters select { min-width: 0; width: 100%; font-size: 16px; min-height: 48px; }
   body .calendar .filters > button { grid-column: auto; min-width: 0; min-height: 48px; margin: 0; padding: 10px; }
 }
+
+/* Keep native form controls readable on the dark submission surface. */
+[data-submission-submit] {
+  color: var(--cream, #f5f2ea);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 900;
+  min-height: 44px;
+}
+[data-submission-submit]:hover { color: #080808; }
+[data-submission-submit]:focus-visible { outline: 3px solid #ffc999; outline-offset: 4px; }
+.submission-form input[type="date"],
+.submission-form input[type="time"] { color-scheme: dark; }

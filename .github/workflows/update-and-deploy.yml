@@ -80,7 +80,7 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_*.py' -v
           node --test tests/artist-intake-submit.test.cjs tests/artist-engagement.test.cjs
-          node --test tests/mobile-discovery.test.cjs tests/national-discovery.test.cjs tests/fan-discovery.test.cjs
+          node --test tests/mobile-discovery.test.cjs tests/national-discovery.test.cjs tests/fan-discovery.test.cjs tests/artist-directory-filter.test.cjs
 
       - name: Add priority artist fallback calendars
         if: steps.refresh-mode.outputs.discovery == 'true'

@@ -3,6 +3,7 @@
 (() => {
   const BASE = "/";
   const STATE_NAMES = {
+    BC:"British Columbia",ON:"Ontario",SK:"Saskatchewan",
     AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",DE:"Delaware",DC:"District of Columbia",FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming"
   };
 
@@ -51,9 +52,121 @@
     ].map(norm).join("|");
   }
 
-  function eventHref(event) {
+  function matchingShows(shows, state = "", month = "") {
+    return shows.filter(event =>
+      (!state || String(event?.state || "").trim().toUpperCase() === state) &&
+      (!month || monthKey(event?.startDate) === month)
+    );
+  }
+
+  function canonicalEventPath(event, catalog, artistPath) {
+    // Use published paths, rather than rebuilding a slug that may have changed.
+    const artistPaths = catalog?.artists?.[artistPath];
+    const allowed = Array.isArray(artistPaths) ? new Set(artistPaths) : null;
+    const location = [event?.city, event?.state].filter(Boolean).join(", ");
+    const time = /^(\d{1,2}):(\d{2})$/.exec(String(event?.startTime || ""));
+    const hour = time ? Number(time[1]) : null;
+    const clock = time ? `${hour % 12 || 12}:${time[2]} ${hour >= 12 ? "pm" : "am"}` : null;
+    const samePlaceAndDate = (Array.isArray(catalog?.shows) ? catalog.shows : []).filter(show =>
+      /^\/event\/[^/?#]+\/$/.test(show?.path || "") &&
+      (!allowed || allowed.has(show.path)) &&
+      String(show.date || "").slice(0, 10) === String(event?.startDate || "").slice(0, 10) &&
+      norm(show.location) === norm(location)
+    ).filter(show => {
+      const publishedClock = /(?:^| - )(\d{1,2}:\d{2} [ap]m)$/.exec(norm(show.when));
+      return !clock || !publishedClock || publishedClock[1] === clock;
+    });
+    const candidates = samePlaceAndDate.filter(show => norm(show.venue) === norm(event?.venue));
+    const exact = candidates.filter(show => norm(show.name) === norm(event?.title));
+    if (exact.length === 1) return exact[0].path;
+    if (allowed && candidates.length === 1) return candidates[0].path;
+    // Supplemental listings can omit a room suffix and append supporting
+    // billing. Require the same published artist, date, city, time and a unique
+    // title/venue prefix match; never collapse an ambiguous same-day schedule.
+    if (allowed && time) {
+      const named = samePlaceAndDate.filter(show => {
+        const name = norm(show.name), title = norm(event?.title);
+        const venue = norm(event?.venue), publishedVenue = norm(show.venue);
+        return venue && (publishedVenue === venue || publishedVenue.startsWith(`${venue} `)) &&
+          (title === name || title.startsWith(`${name} - `) || title.startsWith(`${name} — `)) &&
+          norm(show.when).endsWith(` - ${clock}`);
+      });
+      if (named.length === 1) return named[0].path;
+    }
+    return null;
+  }
+
+  function uniqueArtistShows(shows, catalog, artistPath) {
+    const seen = new Set();
+    return shows.filter(event => {
+      // Different feeds can publish the same booking with different IDs. Only
+      // merge them when the published catalog resolves them to the same page;
+      // ambiguous or unmapped same-day performances retain separate identities.
+      const path = canonicalEventPath(event, catalog, artistPath);
+      const key = path ? `path:${path}` : eventKey(event);
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }
+
+  function eventHref(event, catalog, artistPath) {
+    const path = canonicalEventPath(event, catalog, artistPath);
+    if (path) return path;
     if (event?.id) return `${BASE}event/?id=${encodeURIComponent(event.id)}`;
     return event?.officialUrl || event?.ticketUrl || `${BASE}shows/`;
+  }
+
+  function nextShowLabel(event) {
+    const raw = String(event?.startDate || "").slice(0, 10);
+    const date = /^\d{4}-\d{2}-\d{2}$/.test(raw)
+      ? new Intl.DateTimeFormat("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(`${raw}T12:00:00Z`))
+      : raw;
+    return [date, [event?.city, event?.state].filter(Boolean).join(", ")].filter(Boolean).join(" · ");
+  }
+
+  function syncDirectoryFilters(controls, apply, browser) {
+    const { artistSelect, stateSelect, monthSelect, upcomingOnly, reset } = controls;
+    const defaultUpcoming = upcomingOnly.defaultChecked;
+    const selects = { artist: artistSelect, state: stateSelect, month: monthSelect };
+    function restore() {
+      const params = new URL(browser.location.href).searchParams;
+      Object.entries(selects).forEach(([key, select]) => {
+        const wanted = params.get(key) || "";
+        const option = Array.from(select.options).find(item => norm(item.value) === norm(wanted));
+        select.value = option?.value || "";
+      });
+      upcomingOnly.checked = params.has("upcoming") ? params.get("upcoming") !== "0" : defaultUpcoming;
+      apply();
+    }
+    function change() {
+      const url = new URL(browser.location.href);
+      Object.entries(selects).forEach(([key, select]) => {
+        if (select.value) url.searchParams.set(key, select.value);
+        else url.searchParams.delete(key);
+      });
+      url.searchParams.set("upcoming", upcomingOnly.checked ? "1" : "0");
+      // Replace this directory visit, so Back from a show restores its filters
+      // without stepping through each individual selection.
+      try { browser.history.replaceState(browser.history.state, "", url.pathname + url.search + url.hash); } catch (_) {}
+      apply();
+    }
+    [...Object.values(selects), upcomingOnly].forEach(control => control.addEventListener("change", change));
+    reset.addEventListener("click", () => {
+      Object.values(selects).forEach(select => { select.value = ""; });
+      upcomingOnly.checked = false;
+      change();
+    });
+    browser.addEventListener("popstate", restore);
+    browser.addEventListener("pageshow", restore);
+    restore();
+    return restore;
+  }
+
+  function emptyMessage(upcomingOnly) {
+    return upcomingOnly
+      ? 'No artists with upcoming shows match these filters. Uncheck “Only artists with upcoming shows” to include all artists.'
+      : "No artists match those filters.";
   }
 
   function installStyles() {
@@ -119,10 +232,11 @@
   }
 
   async function loadDirectoryData() {
-    const [eventsResponse, supplementalResponse, artistsResponse] = await Promise.all([
+    const [eventsResponse, supplementalResponse, artistsResponse, catalogResponse] = await Promise.all([
       fetch(`${BASE}events.json`, { cache: "no-store" }),
       fetch(`${BASE}supplemental-events.json`, { cache: "no-store" }),
-      fetch(`${BASE}config/artists.json`, { cache: "no-store" })
+      fetch(`${BASE}config/artists.json`, { cache: "no-store" }),
+      fetch(`${BASE}assets/fan-show-catalog.json`, { cache: "no-cache" }).catch(() => null)
     ]);
 
     if (!eventsResponse.ok || !artistsResponse.ok) {
@@ -132,6 +246,7 @@
     const primary = await eventsResponse.json();
     const supplemental = supplementalResponse.ok ? await supplementalResponse.json() : [];
     const artists = await artistsResponse.json();
+    const catalog = catalogResponse?.ok ? await catalogResponse.json().catch(() => null) : null;
     if (!Array.isArray(primary) || !Array.isArray(artists)) {
       throw new Error("Artist directory filter data is malformed");
     }
@@ -174,36 +289,38 @@
       );
     });
 
-    return { artists, merged, canonicalByAlias, showsByArtist };
+    return { artists, merged, canonicalByAlias, showsByArtist, catalog };
   }
 
   function cardArtistName(card) {
     return card.querySelector("h2 a")?.textContent?.trim() || "";
   }
 
-  function linkNextShows(cards, showsByArtist) {
-    cards.forEach(card => {
-      const artistName = norm(cardArtistName(card));
-      const nextShow = showsByArtist.get(artistName)?.[0];
+  function updateCardShows(card, shows, filtered, catalog) {
+      const nextShow = shows[0];
+      const count = card.querySelector(".artist-card-body > p");
+      if (count) count.textContent = `${shows.length} ${filtered ? "matching" : "upcoming"} show${shows.length === 1 ? "" : "s"}`;
       const line = card.querySelector(".seo-card-next");
       const strong = line?.querySelector("strong");
-      if (!nextShow || !line || !strong || line.querySelector("a")) return;
+      const states = card.querySelector(".seo-card-states");
+      if (states) {
+        const title = document.createElement("strong");
+        title.textContent = filtered ? "Matching:" : "Upcoming:";
+        const values = [...new Set(shows.map(event => event.state).filter(Boolean))].join(", ");
+        states.replaceChildren(title, document.createTextNode(` ${values}`));
+        states.hidden = !values;
+      }
+      if (!line || !strong) return;
+      line.hidden = !nextShow;
+      if (!nextShow) return;
+      strong.textContent = filtered ? "Next match:" : "Next:";
 
       const label = document.createElement("a");
       label.className = "seo-card-next-link text-link";
-      label.href = eventHref(nextShow);
-      label.setAttribute("aria-label", `Open ${cardArtistName(card) || "artist"} next show`);
-
-      const trailingNodes = [];
-      let node = strong.nextSibling;
-      while (node) {
-        const next = node.nextSibling;
-        trailingNodes.push(node);
-        node = next;
-      }
-      trailingNodes.forEach(item => label.appendChild(item));
-      line.appendChild(label);
-    });
+      label.href = eventHref(nextShow, catalog, card.querySelector("h2 a")?.getAttribute("href"));
+      label.setAttribute("aria-label", `Open ${cardArtistName(card) || "artist"} next${filtered ? " matching" : ""} show`);
+      label.textContent = nextShowLabel(nextShow);
+      line.replaceChildren(strong, document.createTextNode(" "), label);
   }
 
   function removeDuplicateArtistJump() {
@@ -226,6 +343,9 @@
     }
     const empty = directory.querySelector("[data-artist-empty]");
     if (empty) empty.textContent = "No artists match those filters.";
+    const state = toolbar.querySelector("[data-directory-state-filter]");
+    const stateLabel = state?.closest("label")?.querySelector("span");
+    if (stateLabel) stateLabel.textContent = "State / province";
     return true;
   }
 
@@ -260,7 +380,7 @@
 
     const states = [...new Set(data.merged.map(event => String(event?.state || "").trim().toUpperCase()).filter(Boolean))]
       .sort((a, b) => (STATE_NAMES[a] || a).localeCompare(STATE_NAMES[b] || b));
-    stateSelect.innerHTML = '<option value="">All states</option>' + states
+    stateSelect.innerHTML = '<option value="">All states / provinces</option>' + states
       .map(code => `<option value="${code}">${STATE_NAMES[code] || code}</option>`)
       .join("");
 
@@ -276,7 +396,8 @@
       cards.forEach(card => {
         const displayName = cardArtistName(card);
         const canonical = data.canonicalByAlias.get(norm(displayName)) || norm(displayName);
-        const shows = data.showsByArtist.get(canonical) || [];
+        const shows = uniqueArtistShows(data.showsByArtist.get(canonical) || [], data.catalog,
+          card.querySelector("h2 a")?.getAttribute("href"));
         const statesForArtist = [...new Set(shows.map(event => String(event?.state || "").trim().toUpperCase()).filter(Boolean))];
         const monthsForArtist = [...new Set(shows.map(event => monthKey(event?.startDate)).filter(Boolean))];
         card.dataset.directoryArtist = canonical;
@@ -295,10 +416,8 @@
       cards.forEach(card => {
         const cardArtist = card.dataset.directoryArtist || norm(cardArtistName(card));
         const shows = Array.isArray(card._kcUpcomingShows) ? card._kcUpcomingShows : [];
-        const matchesEventPair = shows.some(event =>
-          (!selectedState || String(event?.state || "").trim().toUpperCase() === selectedState) &&
-          (!selectedMonth || monthKey(event?.startDate) === selectedMonth)
-        );
+        const matchedShows = matchingShows(shows, selectedState, selectedMonth);
+        const matchesEventPair = matchedShows.length > 0;
         const hasUpcoming = card.dataset.directoryHasShows === "true";
         const matches =
           (!selectedArtist || cardArtist === selectedArtist) &&
@@ -307,6 +426,7 @@
 
         card.hidden = !matches;
         if (matches) {
+          updateCardShows(card, matchedShows, Boolean(selectedState || selectedMonth), data.catalog);
           card.style.removeProperty("display");
           card.removeAttribute("aria-hidden");
           visible += 1;
@@ -319,23 +439,14 @@
       if (count) count.textContent = visible === cards.length ? `${visible} artists` : `${visible} showing · ${cards.length} total`;
       if (empty) {
         empty.hidden = visible !== 0;
-        empty.textContent = visible === 0 ? "No artists match those filters." : empty.textContent;
+        empty.textContent = visible === 0 ? emptyMessage(requireUpcoming) : empty.textContent;
       }
       removeDuplicateArtistJump();
-      linkNextShows(cards, data.showsByArtist);
     }
 
-    artistSelect.addEventListener("change", enrichAndApply);
-    stateSelect.addEventListener("change", enrichAndApply);
-    monthSelect.addEventListener("change", enrichAndApply);
-    upcomingOnly.addEventListener("change", enrichAndApply);
-    reset.addEventListener("click", () => {
-      artistSelect.value = "";
-      stateSelect.value = "";
-      monthSelect.value = "";
-      upcomingOnly.checked = false;
-      enrichAndApply();
-    });
+    const restoreFilters = syncDirectoryFilters(
+      { artistSelect, stateSelect, monthSelect, upcomingOnly, reset }, enrichAndApply, window
+    );
 
     let scheduled = false;
     const observer = new MutationObserver(() => {
@@ -343,12 +454,11 @@
       scheduled = true;
       requestAnimationFrame(() => {
         scheduled = false;
-        enrichAndApply();
+        restoreFilters();
       });
     });
     observer.observe(grid, { childList: true });
 
-    enrichAndApply();
   }
 
   function install() {
@@ -356,6 +466,10 @@
     installDirectoryFilters();
   }
 
+  if (typeof module !== "undefined" && module.exports) {
+    module.exports = { matchingShows, eventHref, canonicalEventPath, uniqueArtistShows, nextShowLabel, updateCardShows, syncDirectoryFilters, emptyMessage, STATE_NAMES };
+  }
+  if (typeof document === "undefined") return;
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", install, { once: true });
   } else {

@@ -1,0 +1,185 @@
+{
+  "captured": "2026-10-31",
+  "source": "Published events.json, supplemental-events.json and assets/fan-show-catalog.json; frozen regression evidence, independent of future catalog pruning.",
+  "events": [
+    {
+      "id": "manual:flavor-fest-2026-saturday-concerts",
+      "title": "Flavor Fest 2026 — Saturday Concerts",
+      "startDate": "2026-11-07",
+      "startTime": "19:00",
+      "venue": "Crossover Church",
+      "city": "Tampa",
+      "state": "FL",
+      "artists": [
+        "Lecrae",
+        "Biancallove",
+        "Monster Tarver",
+        "C4 Crotona",
+        "DJ Geech",
+        "Toyalove",
+        "PressNJ",
+        "Nigil Lee",
+        "Sir James",
+        "Big Lek"
+      ],
+      "status": "scheduled"
+    },
+    {
+      "id": "manual:lecrae-wild-adventures-valdosta-2027-05-08",
+      "title": "Lecrae — Wild Adventures LIVE!",
+      "startDate": "2027-05-08",
+      "endDate": "2027-05-08",
+      "startTime": "20:00",
+      "venue": "Wild Adventures LIVE! Amphitheater",
+      "city": "Valdosta",
+      "state": "GA",
+      "artists": [
+        "Lecrae"
+      ],
+      "status": "scheduled"
+    },
+    {
+      "id": "flavor-fest-2026-saturday-concerts",
+      "title": "Flavor Fest 2026 — Saturday Concerts",
+      "startDate": "2026-11-07",
+      "startTime": "19:00",
+      "venue": "Crossover Church",
+      "city": "Tampa",
+      "state": "FL",
+      "artists": [
+        "Lecrae",
+        "Biancallove",
+        "Monster Tarver",
+        "C4 Crotona",
+        "DJ Geech",
+        "Toyalove",
+        "PressNJ",
+        "Nigil Lee",
+        "Sir James",
+        "Big Lek"
+      ],
+      "status": "scheduled"
+    },
+    {
+      "id": "manual:ant-lee-light-up-the-city-sarnia-2026-11-13",
+      "title": "Light Up The City — Ant Lee",
+      "startDate": "2026-11-13",
+      "endDate": "2026-11-13",
+      "startTime": "19:00",
+      "venue": "Bethel Sarnia Pentecostal Church",
+      "city": "Sarnia",
+      "state": "ON",
+      "artists": [
+        "Ant Lee"
+      ],
+      "status": "scheduled"
+    },
+    {
+      "id": "manual:ant-lee-light-up-the-city-lloydminster-2027-02-26",
+      "title": "Light Up The City — Ant Lee",
+      "startDate": "2027-02-26",
+      "endDate": "2027-02-27",
+      "startTime": "",
+      "venue": "ACTS Church Lloydminster",
+      "city": "Lloydminster",
+      "state": "SK",
+      "artists": [
+        "Ant Lee"
+      ],
+      "status": "scheduled"
+    },
+    {
+      "id": "ticketmaster:G5eVZ_ClfLPQX",
+      "title": "ZAUNTEE: God Remembers Tour",
+      "startDate": "2026-11-04",
+      "startTime": "20:00",
+      "venue": "Neighborhood Theatre Tap Room",
+      "city": "Charlotte",
+      "state": "NC",
+      "artists": [
+        "Zauntee",
+        "Skema Boy"
+      ],
+      "status": "onsale"
+    },
+    {
+      "id": "supplemental:skema-boy-2026-11-04-charlotte-nc",
+      "title": "Zauntee: God Remembers Tour - with Skema Boy",
+      "startDate": "2026-11-04",
+      "startTime": "20:00",
+      "venue": "Neighborhood Theatre",
+      "city": "Charlotte",
+      "state": "NC",
+      "artists": [
+        "Zauntee",
+        "Skema Boy"
+      ],
+      "status": "onsale"
+    }
+  ],
+  "catalog": {
+    "artists": {
+      "/artists/ant-lee/": [
+        "/event/light-up-the-city-ant-lee-2026-11-13-sarnia-61f1c1/",
+        "/event/light-up-the-city-ant-lee-2027-02-26-lloydminster-c950ee/"
+      ],
+      "/artists/lecrae/": [
+        "/event/flavor-fest-2026-saturday-concerts-2026-11-07-tampa-cf7fac/",
+        "/event/lecrae-wild-adventures-live-2027-05-08-valdosta-f61d2f/"
+      ],
+      "/artists/skema-boy/": [
+        "/event/zauntee-god-remembers-tour-2026-11-04-charlotte-3114fc/"
+      ],
+      "/artists/zauntee/": [
+        "/event/zauntee-god-remembers-tour-2026-11-04-charlotte-3114fc/"
+      ]
+    },
+    "shows": [
+      {
+        "path": "/event/flavor-fest-2026-saturday-concerts-2026-11-07-tampa-cf7fac/",
+        "name": "Flavor Fest 2026 — Saturday Concerts",
+        "date": "2026-11-07",
+        "end": "2026-11-07",
+        "when": "Sat, Nov 7, 2026 - 7:00 PM",
+        "venue": "Crossover Church",
+        "location": "Tampa, FL"
+      },
+      {
+        "path": "/event/light-up-the-city-ant-lee-2026-11-13-sarnia-61f1c1/",
+        "name": "Light Up The City — Ant Lee",
+        "date": "2026-11-13",
+        "end": "2026-11-13",
+        "when": "Fri, Nov 13, 2026 - 7:00 PM",
+        "venue": "Bethel Sarnia Pentecostal Church",
+        "location": "Sarnia, ON"
+      },
+      {
+        "path": "/event/light-up-the-city-ant-lee-2027-02-26-lloydminster-c950ee/",
+        "name": "Light Up The City — Ant Lee",
+        "date": "2027-02-26",
+        "end": "2027-02-27",
+        "when": "Fri, Feb 26–27, 2027",
+        "venue": "ACTS Church Lloydminster",
+        "location": "Lloydminster, SK"
+      },
+      {
+        "path": "/event/lecrae-wild-adventures-live-2027-05-08-valdosta-f61d2f/",
+        "name": "Lecrae — Wild Adventures LIVE!",
+        "date": "2027-05-08",
+        "end": "2027-05-08",
+        "when": "Sat, May 8, 2027 - 8:00 PM",
+        "venue": "Wild Adventures LIVE! Amphitheater",
+        "location": "Valdosta, GA"
+      },
+      {
+        "path": "/event/zauntee-god-remembers-tour-2026-11-04-charlotte-3114fc/",
+        "name": "ZAUNTEE: God Remembers Tour",
+        "date": "2026-11-04",
+        "end": "2026-11-04",
+        "when": "Wed, Nov 4, 2026 - 8:00 PM",
+        "venue": "Neighborhood Theatre Tap Room",
+        "location": "Charlotte, NC"
+      }
+    ]
+  }
+}

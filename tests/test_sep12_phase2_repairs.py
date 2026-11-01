@@ -1,6 +1,8 @@
 import importlib.util
 import json
 import pathlib
+import shutil
+import subprocess
 import unittest
 from tests.catalog_history import load_catalog
 
@@ -56,10 +58,17 @@ class September12Phase2Repairs(unittest.TestCase):
         return repairs.ZAUNTEE_MERGES
 
     def test_directory_state_and_month_require_one_matching_show(self):
-        script = (ROOT / "assets" / "artist-filter-fix.js").read_text(encoding="utf-8")
-        self.assertIn("const matchesEventPair = shows.some", script)
-        self.assertIn("monthKey(event?.startDate) === selectedMonth", script)
-        self.assertNotIn("(!selectedState || cardStates.has(selectedState))", script)
+        result = subprocess.run([shutil.which("node") or "node", "-e", """
+          const {matchingShows}=require('./assets/artist-filter-fix.js');
+          const shows=[{state:'ON',startDate:'2026-11-13'},
+                       {state:'SK',startDate:'2027-02-26'}];
+          process.stdout.write(JSON.stringify([
+            matchingShows(shows,'ON','2027-02').length,
+            matchingShows(shows,'ON','2026-11').length,
+            matchingShows(shows,'SK','2027-02').length
+          ]));
+        """], cwd=ROOT, check=True, capture_output=True, text=True)
+        self.assertEqual([0, 1, 1], json.loads(result.stdout))
 
     def test_static_builder_retains_browser_redirect_pages(self):
         merged = [item for item in self.supplemental if item.get("status") == "merged"]

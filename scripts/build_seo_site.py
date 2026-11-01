@@ -361,9 +361,18 @@ def main():
             if not re.fullmatch(r"/event/[a-z0-9-]+/", str(legacy)):
                 raise RuntimeError(f"Unsafe legacy event path: {legacy}")
             if legacy == p: continue
-            notice=e.get("legacyEventNotice") or "The listing moved to its December 18 date."
-            heading="Updated event listing" if e.get("legacyEventNotice") else "This event has a new date"
-            label="Updated event" if e.get("legacyEventNotice") else "Rescheduled event"
+            if cancelled:
+                notice="This event was cancelled. The event record is retained for reference."
+                heading="This event was cancelled"
+                label="Cancelled event"
+            elif postponed:
+                notice="This event was postponed. View the current event listing for updates."
+                heading="This event was postponed"
+                label="Postponed event"
+            else:
+                notice=e.get("legacyEventNotice") or "This listing has moved. View the current event details."
+                heading="Updated event listing"
+                label="Updated event"
             redirect_body=f'<section class="page-hero hero-compact"><p class="eyebrow">{esc(label)}</p><h1>{esc(heading)}</h1><p class="hero-text">{esc(notice)}</p><a class="primary-button" href="{p}">View the updated event</a></section><script>location.replace({json.dumps(p)});</script>'
             write_page(legacy,page(f"{label} | The Kingdom Circuit",notice,p,redirect_body))
 
