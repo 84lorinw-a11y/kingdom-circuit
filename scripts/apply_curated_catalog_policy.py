@@ -288,6 +288,17 @@ def curate_event(event: dict[str, Any]) -> dict[str, Any] | None:
 
     updated = dict(event)
     updated["artists"] = artists
+    # Preserve the published URL of a weaker Apple Music duplicate as a
+    # redirect to the original verified 5 PM Mike Malagies concert.
+    if updated.get("id") == "manual:mike-malagies-its-a-god-night-orlando-2026-12-12":
+        legacy = "/event/mike-malagies-sun-on-the-beach-2026-12-12-kissimmee-eeaa01/"
+        updated["legacyEventPaths"] = list(dict.fromkeys([
+            *(updated.get("legacyEventPaths") or []), legacy
+        ]))
+        updated["legacyEventNotice"] = (
+            "This duplicate 10 PM listing has moved to the verified 5 PM "
+            "It's A God Night event with official tickets and artwork."
+        )
     if norm(updated.get("headliner")) in EXCLUDED_ARTISTS:
         updated["headliner"] = artists[0]
     if "rare of breed" in {norm(name) for name in artists}:
