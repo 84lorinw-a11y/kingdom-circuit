@@ -1,8 +1,8 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-11-02T11:24:40Z",
-  "lastSuccessfulUpdate": "2026-11-02T11:24:40Z",
+  "lastAttempt": "2026-11-02T20:58:09Z",
+  "lastSuccessfulUpdate": "2026-11-02T20:58:09Z",
   "eventsPublished": 164,
   "candidatesCollected": 329,
   "artistsConfigured": 412,
@@ -20,9 +20,21 @@
   "instagramArtistsConfigured": 367,
   "instagramQueriesRun": 369,
   "instagramQueriesAttempted": 367,
-  "instagramResultsFound": 1,
+  "instagramResultsFound": 2,
   "instagramEventsFound": 0,
   "instagramCandidates": [
+    {
+      "url": "https://www.instagram.com/reel/DfLuBnrsGr0/",
+      "title": "@aftrthght | @sade pls clear this | Instagram",
+      "artists": [
+        "aftrthght"
+      ],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 3,
+      "reason": "live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
+    },
     {
       "url": "https://www.instagram.com/p/DboKM3GJM4A/",
       "title": "Official EGR 2026 schedule graphic supplied to The Kingdom Circuit and manually transcribed.",
@@ -48,8 +60,8 @@
       "reason": "the known post was not publicly indexed with enough event details"
     },
     {
-      "url": "https://www.instagram.com/p/signin/",
-      "title": "Instagram",
+      "url": "https://www.instagram.com/p/CdOLqwtL9ah/",
+      "title": "585 WRESTLING | The 585 Management team, the 585 Owner Hunter AndrewZ ...",
       "artists": [],
       "date": "",
       "city": "",
@@ -633,5 +645,5 @@
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 20,
   "artistWebsiteEventsAdded": 1,
-  "artistWebsiteMergeAt": "2026-11-02T11:42:09Z"
+  "artistWebsiteMergeAt": "2026-11-02T21:16:48Z"
 }
