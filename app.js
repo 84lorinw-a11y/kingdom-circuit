@@ -5932,9 +5932,9 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/antleejr/",
     "spotifyProfile": "https://open.spotify.com/artist/5n5UjB4Hwoqr9MpJfjFYxY?si=qQsPq3t6RfGWSQx3LBS4yw&utm_medium=share&utm_source=linktree&nd=1&dlsi=af9bded3423447af",
     "youtubeProfile": "https://www.youtube.com/@AntLeeJrOfficial/videos",
-    "officialImageSource": "https://open.spotify.com/artist/5n5UjB4Hwoqr9MpJfjFYxY",
-    "imageUrl": "assets/artists/ant-lee-official-portrait-oct31-v2.jpg",
-    "imagePosition": "50% 20%",
+    "officialImageSource": "https://kingdomcircuit.com/assets/artists/ant-lee-owner-selected-nov1.png",
+    "imageUrl": "assets/artists/ant-lee-owner-selected-nov1.png",
+    "imagePosition": "78% 0%",
     "country": "CA",
     "sourceRegistryVerified": true
   },
@@ -11723,9 +11723,9 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/antleejr/",
     "spotifyProfile": "https://open.spotify.com/artist/5n5UjB4Hwoqr9MpJfjFYxY?si=qQsPq3t6RfGWSQx3LBS4yw&utm_medium=share&utm_source=linktree&nd=1&dlsi=af9bded3423447af",
     "youtubeProfile": "https://www.youtube.com/@AntLeeJrOfficial/videos",
-    "officialImageSource": "https://open.spotify.com/artist/5n5UjB4Hwoqr9MpJfjFYxY",
-    "imageUrl": "assets/artists/ant-lee-official-portrait-oct31-v2.jpg",
-    "imagePosition": "50% 20%",
+    "officialImageSource": "https://kingdomcircuit.com/assets/artists/ant-lee-owner-selected-nov1.png",
+    "imageUrl": "assets/artists/ant-lee-owner-selected-nov1.png",
+    "imagePosition": "78% 0%",
     "country": "CA",
     "sourceRegistryVerified": true
   },
@@ -13584,8 +13584,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 50%"
   },
   "ant lee": {
-    "imageUrl": "assets/artists/ant-lee-official-portrait-oct31-v2.jpg",
-    "imagePosition": "50% 20%"
+    "imageUrl": "assets/artists/ant-lee-owner-selected-nov1.png",
+    "imagePosition": "78% 0%"
   },
   "kdfromthepack": {
     "imageUrl": "assets/artists/kdfromthepack-portrait-review-oct31.jpg",
