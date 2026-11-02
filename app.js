@@ -5746,7 +5746,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/2fxgXM6gZJD4XlRl2Dg4hE",
     "youtubeProfile": "https://www.youtube.com/@JayyBrownOfficial",
     "officialImageSource": "https://open.spotify.com/artist/2fxgXM6gZJD4XlRl2Dg4hE",
-    "imageUrl": "assets/artists/jayy-brown-portrait-review-oct31.jpg",
+    "imageUrl": "assets/artists/jayy-brown-owner-selected-nov2.png",
     "imagePosition": "50% 0%",
     "country": "CA",
     "sourceRegistryVerified": true
@@ -11537,7 +11537,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/2fxgXM6gZJD4XlRl2Dg4hE",
     "youtubeProfile": "https://www.youtube.com/@JayyBrownOfficial",
     "officialImageSource": "https://open.spotify.com/artist/2fxgXM6gZJD4XlRl2Dg4hE",
-    "imageUrl": "assets/artists/jayy-brown-portrait-review-oct31.jpg",
+    "imageUrl": "assets/artists/jayy-brown-owner-selected-nov2.png",
     "imagePosition": "50% 0%",
     "country": "CA",
     "sourceRegistryVerified": true
@@ -13528,7 +13528,7 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 0%"
   },
   "jayy brown": {
-    "imageUrl": "assets/artists/jayy-brown-portrait-review-oct31.jpg",
+    "imageUrl": "assets/artists/jayy-brown-owner-selected-nov2.png",
     "imagePosition": "50% 0%"
   },
   "one8tea": {
