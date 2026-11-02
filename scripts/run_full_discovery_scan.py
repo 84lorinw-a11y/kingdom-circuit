@@ -87,6 +87,7 @@ def merge_bandsintown_status(full_status: dict[str, Any], bit_status: dict[str, 
     checked = int(bit_status.get("artistsChecked") or full_status.get("artistsChecked") or 0)
     resolved = int(bit_status.get("artistsResolved") or 0)
     raw_rows = int(bit_status.get("rawUpcomingUSRows") or 0)
+    canadian_rows = int(bit_status.get("rawUpcomingCARows") or 0)
     published = int(bit_status.get("newNonFestivalShowsPublished") or 0)
     held = int(bit_status.get("festivalCandidatesHeld") or 0)
     request_errors = int(bit_status.get("requestErrors") or 0)
@@ -96,6 +97,8 @@ def merge_bandsintown_status(full_status: dict[str, Any], bit_status: dict[str, 
         "artistsAttempted": checked,
         "resolved": resolved,
         "rawUpcomingUSRows": raw_rows,
+        "rawUpcomingCARows": canadian_rows,
+        "rawUpcomingRows": raw_rows + canadian_rows,
         "newEventsPublished": published,
         "festivalCandidatesHeld": held,
         "requestErrors": request_errors,

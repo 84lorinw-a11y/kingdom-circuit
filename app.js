@@ -13835,9 +13835,12 @@ function sharedEventUrl(left, right) {
 }
 function sameEvent(existing, incoming) {
   if (!existing || !incoming || String(existing.startDate || "") !== String(incoming.startDate || "")) return false;
+  const isCanadian = event => ["CA", "CAN", "CANADA"].includes(String(event.country || "").trim().toUpperCase());
+  if (isCanadian(existing) !== isCanadian(incoming)) return false;
 
   const leftState = normalize(existing.state);
   const rightState = normalize(incoming.state);
+  if (isCanadian(existing) && leftState && rightState && leftState !== rightState) return false;
   const earlyLeftArtists = eventArtistSet(existing);
   const earlySharedArtist = [...eventArtistSet(incoming)].some(name => earlyLeftArtists.has(name));
   const earlyLeftVenue = normalizeEventVenue(existing.venue);

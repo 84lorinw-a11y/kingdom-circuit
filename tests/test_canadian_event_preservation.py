@@ -1,4 +1,4 @@
-"""Canadian bookings must survive U.S.-only collectors and automated publication."""
+"""Canadian bookings must survive discovery refreshes and automated publication."""
 import datetime as dt
 import json
 from pathlib import Path
@@ -28,10 +28,12 @@ def canadian_show(**changes):
 
 
 class CanadianEventPreservationTests(unittest.TestCase):
-    def test_us_only_bandsintown_refresh_does_not_own_canadian_rows(self):
+    def test_provider_refresh_owns_canadian_rows_but_not_official_or_cancelled(self):
         for country in ['CA', 'CAN', 'Canada']:
             with self.subTest(country=country):
-                self.assertFalse(refresh.is_refreshable_bit(canadian_show(country=country)))
+                self.assertTrue(refresh.is_refreshable_bit(canadian_show(country=country)))
+                self.assertFalse(refresh.is_refreshable_bit(canadian_show(country=country, authority='official_event')))
+                self.assertFalse(refresh.is_refreshable_bit(canadian_show(country=country, status='cancelled')))
         self.assertTrue(refresh.is_refreshable_bit(canadian_show(country='US', state='CA')))
 
     def test_successful_empty_bandsintown_refresh_retains_canadian_record(self):

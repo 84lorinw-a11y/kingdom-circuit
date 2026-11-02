@@ -1,6 +1,6 @@
 # The Kingdom Circuit
 
-A free, automated U.S. Christian hip-hop concert and festival calendar.
+A free, automated U.S. and Canadian Christian hip-hop concert and festival calendar.
 
 ## Artist portraits are static editorial assets
 
@@ -33,7 +33,12 @@ cutting off flyer text. Check the event page and show card on mobile and desktop
 ## Canadian bookings and daily updates
 
 Approved Canadian shows live in `supplemental-events.json` with `country: "CA"`
-and the correct province. The U.S.-only Bandsintown collector must preserve them.
+and the correct province. Bandsintown discovery imports U.S. and Canadian dates
+for enabled, identity-matched artists, with Canadian province names normalized
+to their codes. Festival/conference candidates still require lineup review.
+Provider-owned dates refresh automatically; official records and selected artwork
+remain protected. Empty/missing provider results and request errors cannot remove
+a Canadian booking. The separate U.S. collector preserves existing Canadian rows.
 The shared bot publisher checks against the latest main branch and refuses to
 save an update that loses an upcoming Canadian booking. Both date-only and full
 discovery deployments also compare a pre-refresh snapshot with the final feeds

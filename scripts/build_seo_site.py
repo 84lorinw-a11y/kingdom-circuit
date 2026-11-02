@@ -9,6 +9,7 @@ import shutil
 from collections import defaultdict
 from zoneinfo import ZoneInfo
 from catalog_removals import removed_event
+from canadian_event_guard import is_canadian
 
 REPO = pathlib.Path.cwd()
 OUT = REPO / "_site"
@@ -76,6 +77,8 @@ def domestic_event(event):
 
 
 def same_event(a,b):
+    if is_canadian(a) != is_canadian(b): return False
+    if is_canadian(a) and a.get("state") and b.get("state") and norm(a["state"]) != norm(b["state"]): return False
     if a.get("startDate") != b.get("startDate") or norm(a.get("city")) != norm(b.get("city")): return False
     if a.get("startTime") and b.get("startTime") and a.get("startTime") != b.get("startTime"): return False
     same_venue = norm(a.get("venue")) and norm(a.get("venue")) == norm(b.get("venue"))

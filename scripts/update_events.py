@@ -7,8 +7,9 @@ The collector uses free structured and public first-party inputs:
 3. Selected CHH calendars that are filtered to the tracked artist roster.
 4. A free, best-effort public-index scan of Instagram announcements for every tracked artist.
 
-Only high-confidence, future, U.S. events are published. The script is designed
-for a scheduled GitHub Actions workflow and uses only Python's standard library.
+Only high-confidence, future, U.S. events are newly collected here. Existing
+approved Canadian bookings are retained through their final date. The script is
+designed for a scheduled GitHub Actions workflow and uses only Python's standard library.
 """
 
 from __future__ import annotations
@@ -36,6 +37,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 from instagram_monitor import scan_instagram_index
+import canadian_event_guard
 
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
@@ -2963,6 +2965,34 @@ def preserve_recent_existing(
     # previously incorrect festival lineups and duplicates from lingering after deploy.
     return fresh_events
 
+
+def preserve_canadian_existing(
+    fresh_events: list[dict[str, Any]],
+    existing_events: list[dict[str, Any]],
+    cutoff: str,
+) -> list[dict[str, Any]]:
+    """Keep approved Canadian rows that this U.S.-only collector cannot replace."""
+    output = list(fresh_events)
+    represented = {
+        key
+        for event in fresh_events
+        for key in [canadian_event_guard.identity(event), *event.get("mergedFromIds", [])]
+    }
+    for event in canadian_event_guard.upcoming_canadian(existing_events, cutoff):
+        key = canadian_event_guard.identity(event)
+        if key not in represented:
+            # Keep the source payload intact, including explicit local time,
+            # official details, artwork overrides, and its original firstSeen.
+            output.append(event)
+            represented.add(key)
+    output.sort(key=lambda item: (
+        str(item.get("startDate") or "9999-12-31"),
+        str(item.get("startTime") or "23:59"),
+        str(item.get("title") or "").casefold(),
+    ))
+    return output
+
+
 def apply_first_seen(
     events: list[dict[str, Any]],
     existing_events: list[dict[str, Any]],
@@ -3114,6 +3144,7 @@ def main() -> int:
     prefer_artist = preferred_artist_images(artists)
     events = finalize_events(candidates, images, today, image_positions, prefer_artist)
     events = apply_first_seen(events, existing_events, checked_at)
+    events = preserve_canadian_existing(events, existing_events, canadian_event_guard.today_cutoff())
     write_json(EVENTS_FILE, events)
     write_json(ATTRACTION_CACHE_FILE, attraction_cache)
 

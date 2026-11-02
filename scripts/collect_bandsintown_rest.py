@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Discover upcoming US shows for the full artist registry via Bandsintown REST.
+"""Discover upcoming U.S. and Canadian shows via Bandsintown REST.
 
 This collector intentionally uses the structured REST route rather than public
 Bandsintown artist pages, which are blocked from GitHub-hosted runners. It is a
@@ -8,7 +8,7 @@ conservative discovery source:
 - short/ambiguous artist names require a configured Bandsintown ID
 - festivals are held for official-lineup confirmation
 - events already represented by a multi-day event range are deduped
-- only new, non-festival US events are written to supplemental-events.json
+- only new, non-festival U.S./Canadian events are written to supplemental-events.json
 """
 from __future__ import annotations
 
@@ -19,9 +19,10 @@ import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 from canadian_event_guard import is_canadian
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -35,6 +36,13 @@ APP_ID = "js_kingdomcircuit.com"
 
 FESTIVAL_TERMS = re.compile(r"\b(festival|fest|conference|convention|summit)\b", re.I)
 RISKY_NAMES = {"116", "350", "kb", "nf", "so", "jr", "nehemiah", "zeke"}
+CANADIAN_REGIONS = {
+    "AB": "Alberta", "BC": "British Columbia", "MB": "Manitoba",
+    "NB": "New Brunswick", "NL": "Newfoundland and Labrador",
+    "NS": "Nova Scotia", "NT": "Northwest Territories", "NU": "Nunavut",
+    "ON": "Ontario", "PE": "Prince Edward Island", "QC": "Quebec",
+    "SK": "Saskatchewan", "YT": "Yukon",
+}
 
 
 def load(path: Path, default: Any) -> Any:
@@ -57,6 +65,24 @@ def norm(value: Any) -> str:
 
 def compact_name(value: str) -> str:
     return norm(value).replace(" ", "")
+
+
+def country_code(value: Any) -> str:
+    country = norm(value)
+    if country in {"united states", "united states of america", "us", "usa"}:
+        return "US"
+    if country in {"canada", "ca", "can"}:
+        return "CA"
+    return ""
+
+
+def region_code(value: Any, country: str) -> str:
+    region = str(value or "").strip()
+    if country == "CA":
+        for code, name in CANADIAN_REGIONS.items():
+            if norm(region) in {norm(code), norm(name)}:
+                return code
+    return region.upper() if len(region) == 2 else region
 
 
 def risky_identity(name: str) -> bool:
@@ -163,6 +189,15 @@ def existing_duplicate(candidate: dict[str, Any], published: list[dict[str, Any]
         sources = event.get("sources") or []
         if bit_id and any(bit_id in str(src.get("url") or "") for src in sources if isinstance(src, dict)):
             return True
+        # Same-named cities/venues across borders or provinces are distinct.
+        ccountry = country_code(candidate.get("country"))
+        ecountry = country_code(event.get("country"))
+        if ccountry and ecountry and ccountry != ecountry:
+            continue
+        cstate = region_code(candidate.get("state"), ccountry)
+        estate = region_code(event.get("state"), ecountry)
+        if cstate and estate and norm(cstate) != norm(estate):
+            continue
         if event_range_contains(event, cdate):
             # A candidate within an existing multi-day event is the same appearance,
             # even when Bandsintown represents the artist's performance as a day-specific row.
@@ -195,18 +230,30 @@ def compact_event(raw: dict[str, Any], artist: dict[str, Any], resolved_name: st
     artist_name = str(artist.get("name") or "").strip()
     source_url = str(raw.get("url") or "").strip()
     event_id = str(raw.get("id") or "").strip()
+    country = country_code(venue.get("country"))
+    timezone = str(venue.get("timezone") or raw.get("timezone") or "").strip()
+    start_datetime = ""
+    try:
+        parsed = datetime.fromisoformat(start.replace("Z", "+00:00"))
+        if parsed.tzinfo is None and timezone:
+            parsed = parsed.replace(tzinfo=ZoneInfo(timezone))
+        if parsed.tzinfo is not None:
+            start_datetime = parsed.isoformat()
+    except (ValueError, ZoneInfoNotFoundError):
+        pass  # Keep local date/time; never guess a timezone from the province.
     image = str(artist.get("imageUrl") or "").strip() or f"assets/artists/{slugify(artist_name)}.webp"
     return {
         "id": f"bandsintown:{event_id}",
         "title": title or (f"{artist_name} Live" if not venue_name else f"{artist_name} at {venue_name}"),
         "startDate": start_date,
         "startTime": start[11:16] if len(start) >= 16 else "",
-        "timezone": "",
+        **({"startDateTime": start_datetime} if start_datetime else {}),
+        "timezone": timezone,
         "venue": venue_name,
         "address": str(venue.get("street_address") or "").strip(),
         "city": str(venue.get("city") or "").strip(),
-        "state": str(venue.get("region") or "").strip(),
-        "country": "US",
+        "state": region_code(venue.get("region"), country),
+        "country": country,
         "artists": [artist_name],
         "headliner": artist_name,
         "eventType": "concert",
@@ -245,7 +292,8 @@ def main() -> int:
     # Existing provider-owned Bandsintown rows are intentionally excluded from
     # the dedupe baseline. A record can retain a Bandsintown ID after official
     # details replace the provider payload, so higher-authority records remain
-    # protected and participate in duplicate detection.
+    # protected and participate in duplicate detection. Direct collector calls
+    # also keep Canadian rows; the refresh wrapper handles their safe updates.
     non_bit = [
         e for e in supplemental
         if not (
@@ -253,6 +301,7 @@ def main() -> int:
             and str(e.get("id") or "").startswith("bandsintown:")
             and not is_canadian(e)
             and norm(e.get("authority")) in {"", "artist_calendar"}
+            and norm(e.get("status")) not in {"cancelled", "canceled", "postponed", "merged"}
         )
     ]
     published = [e for e in [*events, *non_bit] if isinstance(e, dict)]
@@ -263,8 +312,9 @@ def main() -> int:
     resolved = 0
     duplicates = 0
     raw_us = 0
+    raw_ca = 0
 
-    seen_candidate_keys: set[tuple[str, str, str, str]] = set()
+    seen_candidate_keys: set[tuple[str, ...]] = set()
     for index, artist in enumerate(enabled, start=1):
         name = str(artist.get("name") or "").strip()
         artist_id, resolved_name, identity = resolve_artist(artist)
@@ -284,11 +334,15 @@ def main() -> int:
             compact = compact_event(raw, artist, resolved_name, identity)
             if not compact["startDate"] or compact["startDate"] < today:
                 continue
-            country = norm((raw.get("venue") or {}).get("country")) if isinstance(raw.get("venue"), dict) else ""
-            if country not in {"united states", "us", "usa"}:
+            country = compact["country"]
+            if country not in {"US", "CA"}:
                 continue
-            raw_us += 1
-            key = (norm(name), compact["startDate"], norm(compact["city"]), norm(compact["venue"]))
+            if country == "CA" and compact["state"] not in CANADIAN_REGIONS:
+                errors.append({"artist": name, "error": "invalid_canadian_province", "eventId": compact["bandsintownEventId"]})
+                continue
+            raw_us += int(country == "US")
+            raw_ca += int(country == "CA")
+            key = (norm(name), compact["startDate"], country, norm(compact["state"]), norm(compact["city"]), norm(compact["venue"]))
             if key in seen_candidate_keys:
                 continue
             seen_candidate_keys.add(key)
@@ -318,6 +372,8 @@ def main() -> int:
         "artistsChecked": len(enabled),
         "artistsResolved": resolved,
         "rawUpcomingUSRows": raw_us,
+        "rawUpcomingCARows": raw_ca,
+        "rawUpcomingRows": raw_us + raw_ca,
         "duplicatesFiltered": duplicates,
         "festivalCandidatesHeld": len(holds),
         "newNonFestivalShowsPublished": len(candidates),

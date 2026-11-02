@@ -24,6 +24,7 @@ class FullDiscoveryScanTests(unittest.TestCase):
                 "artistsChecked": 390,
                 "artistsResolved": 210,
                 "rawUpcomingUSRows": 80,
+                "rawUpcomingCARows": 6,
                 "newNonFestivalShowsPublished": 12,
                 "festivalCandidatesHeld": 4,
                 "requestErrors": 3,
@@ -32,6 +33,8 @@ class FullDiscoveryScanTests(unittest.TestCase):
         self.assertEqual(merged["bandsintown"]["discoveryMode"], "structured_rest")
         self.assertEqual(merged["bandsintown"]["resolved"], 210)
         self.assertEqual(merged["bandsintown"]["newEventsPublished"], 12)
+        self.assertEqual(merged["bandsintown"]["rawUpcomingCARows"], 6)
+        self.assertEqual(merged["bandsintown"]["rawUpcomingRows"], 86)
         self.assertEqual(merged["bandsintownHtml"]["status"], "skipped_structured_rest_used")
 
     def test_structured_failure_is_reported_without_claiming_success(self):
