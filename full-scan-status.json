@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T17:36:08Z",
+  "generatedAt": "2026-11-02T11:42:06Z",
   "artistsChecked": 412,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
@@ -9,7 +9,7 @@
     "status": "ok",
     "artistsAttempted": 412,
     "resolved": 254,
-    "rawUpcomingUSRows": 91,
+    "rawUpcomingUSRows": 88,
     "newEventsPublished": 13,
     "festivalCandidatesHeld": 2,
     "requestErrors": 0
@@ -24,7 +24,7 @@
     "delegated_to_structured_rest": 412,
     "blocked_by_robots": 415,
     "no_events": 574,
-    "failed": 6
+    "failed": 7
   },
   "newEvents": [],
   "sourceResults": [
@@ -8226,8 +8226,9 @@
       "artist": "Lady Cam",
       "source": "official website",
       "url": "http://www.iloveladycam.com/",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve http://www.iloveladycam.com/: HTTP Error 429: Too Many Requests"
     },
     {
       "artist": "Lady Cam",
@@ -8846,6 +8847,13 @@
       "artist": "Spencer Xavier",
       "source": "Songkick",
       "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Spencer Xavier",
+      "source": "official website",
+      "url": "https://sxsoundoff.com/",
+      "status": "no_events",
       "eventsFound": 0
     },
     {

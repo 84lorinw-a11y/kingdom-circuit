@@ -1,9 +1,9 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-11-01T17:18:51Z",
-  "lastSuccessfulUpdate": "2026-11-01T17:18:51Z",
-  "eventsPublished": 166,
+  "lastAttempt": "2026-11-02T11:24:40Z",
+  "lastSuccessfulUpdate": "2026-11-02T11:24:40Z",
+  "eventsPublished": 164,
   "candidatesCollected": 329,
   "artistsConfigured": 412,
   "artistsByPriority": {
@@ -16,7 +16,7 @@
   "freeTextAliasesProtected": 275,
   "artistsMatchedOnTicketmaster": 61,
   "officialEventsFound": 38,
-  "ticketmasterEventsFound": 13,
+  "ticketmasterEventsFound": 12,
   "instagramArtistsConfigured": 367,
   "instagramQueriesRun": 369,
   "instagramQueriesAttempted": 367,
@@ -48,14 +48,14 @@
       "reason": "the known post was not publicly indexed with enough event details"
     },
     {
-      "url": "https://www.instagram.com/reel/DfHz9LUi4dN/",
-      "title": "T A N M O Y | শুভ কালীপুজো ... - Instagram",
+      "url": "https://www.instagram.com/p/signin/",
+      "title": "Instagram",
       "artists": [],
       "date": "",
       "city": "",
       "state": "",
       "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched; festival posts require an official festival lineup source"
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
@@ -633,5 +633,5 @@
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 20,
   "artistWebsiteEventsAdded": 1,
-  "artistWebsiteMergeAt": "2026-11-01T17:36:12Z"
+  "artistWebsiteMergeAt": "2026-11-02T11:42:09Z"
 }
