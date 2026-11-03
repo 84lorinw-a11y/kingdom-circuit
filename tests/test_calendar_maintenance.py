@@ -25,6 +25,18 @@ class CalendarMaintenanceTests(unittest.TestCase):
         self.assertTrue(any('expired' in e for e in failures))
         self.assertTrue(any('duplicate' in e for e in failures))
 
+    def test_owner_hold_catches_dallas_without_hiding_other_alex_jean_shows(self):
+        cards = [
+            {'attrs': {'data-date': '2026-11-19', 'data-state': 'TX'},
+             'meta': {'Location': 'Dallas, TX'}, 'artists': '<a>Alex Jean</a>'},
+            {'attrs': {'data-date': '2026-11-27', 'data-state': 'FL'},
+             'meta': {'Location': 'Orlando, FL'}, 'artists': '<a>Alex Jean</a>'},
+            {'attrs': {'data-date': '2026-11-19', 'data-state': 'TX'},
+             'meta': {'Location': 'Houston, TX'}, 'artists': '<a>WHATUPRG</a>'},
+        ]
+        self.assertEqual(len(maintenance.owner_hold_errors(cards)), 1)
+        self.assertEqual(maintenance.owner_hold_errors(cards[1:]), [])
+
     def test_artist_check_rejects_yesterday_next_show_even_with_a_future_show(self):
         html='''<script id="kc-fan-config" type="application/json">{"artist":"Test","showPaths":["/event/yesterday/","/event/future/"]}</script>
         <a class="kc-rd-next-show" href="/event/yesterday/"></a>
