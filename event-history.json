@@ -30869,13 +30869,13 @@
         "lineupExplicit": true,
         "officialUrl": "https://www.instagram.com/p/DfFL_UXtrzr/",
         "ticketUrl": "",
-        "image": "assets/events/ignite-and-unite-jacksonville-2026-11-07-oct29.jpg",
+        "image": "assets/events/ignite-and-unite-jacksonville-2026-11-07-tour-site-nov3.png",
         "imageType": "event_artwork",
         "imageOverride": true,
         "imagePosition": "center",
         "detailImageLayout": "portrait",
-        "imageSource": "Murray Hill Theatre October 29 official Unity in the Community / Ignite and Unite flyer",
-        "imageSourceUrl": "https://www.instagram.com/p/DfFL_UXtrzr/",
+        "imageSource": "Ignite and Unite Tour official Jacksonville showcard selected by owner November 3",
+        "imageSourceUrl": "https://www.igniteandunitetour.com/",
         "organizer": "Infiltrate Records / Murray Hill Theatre",
         "price": "Free — no tickets needed",
         "publicDescription": "Free admission — no tickets needed. Unity in the Community begins outside Murray Hill Theatre at 3:30 PM, followed by the Ignite and Unite concert inside at 6 PM; concert doors open at 5:30 PM. Performing: 3HRE, J10, Legit, B. Cody Shields, Altar Ego, OTG Zico, Kelo Cho and DJ Scott Free. Pastor John Humphries brings the message. All ages welcome.",
@@ -30883,9 +30883,9 @@
         "authority": "official_event",
         "confidence": "high",
         "firstSeen": "2026-10-08T23:11:36Z",
-        "lastVerified": "2026-10-29T15:28:05.624009Z",
-        "auditVerified": "2026-10-29",
-        "notes": "Updated from the venue's October 29 Instagram announcement supplied by the owner. The latest announcement says free admission and no tickets needed, superseding the older $10 / IGNITE discount-code instructions. Latest flyer and caption omit Madigan; do not carry that older billing forward. Venue ticket page confirms concert doors 5:30 PM and all ages. 3:30 PM is the outdoor outreach start, not the indoor concert. Preserve the existing title, ID, URL, firstSeen, and verified artist associations; no new artist verification implied.",
+        "lastVerified": "2026-11-03T18:10:49.161592Z",
+        "auditVerified": "2026-11-03",
+        "notes": "Updated from the venue's October 29 Instagram announcement supplied by the owner. The latest announcement says free admission and no tickets needed, superseding the older $10 / IGNITE discount-code instructions. Latest flyer and caption omit Madigan; do not carry that older billing forward. Venue ticket page confirms concert doors 5:30 PM and all ages. 3:30 PM is the outdoor outreach start, not the indoor concert. Preserve the existing title, ID, URL, firstSeen, and verified artist associations; no new artist verification implied. November 3: owner selected the date-specific showcard from the official tour website. Original PNG retained unchanged. Preserve the original October 8 discovery date, canonical ID, full confirmed billing and existing artist associations. A donate QR is not a ticket offer. The selected earlier tour card prints $10/$12 and includes Madigan; the venue's October 29 primary announcement was freshly re-read November 3 and confirms free admission/no tickets and the existing musical bill. Keep the newer event facts; older printed pricing does not apply. Do not infer a cancellation from an omitted name. The website schedule's January 7 text is an obvious conflicting label; the card and dated venue announcement both confirm November 7, 2026.",
         "sources": [
           {
             "name": "Murray Hill Theatre October 29 official announcement",
@@ -30900,6 +30900,13 @@
             "type": "manual_verified",
             "authority": "venue_ticket",
             "priority": 112
+          },
+          {
+            "name": "Ignite and Unite official tour website and city showcard",
+            "url": "https://www.igniteandunitetour.com/",
+            "type": "manual_verified",
+            "authority": "official_event",
+            "priority": 116
           }
         ],
         "doorsTime": "17:30",
@@ -30909,7 +30916,7 @@
         ],
         "ageRestriction": "All ages",
         "editorialBatch": "2026-10-29-ignite-brenno",
-        "publicNotice": "Free admission — no tickets needed. Community outreach starts at 3:30 PM; the indoor concert starts at 6 PM.",
+        "publicNotice": "Free admission — no tickets needed. Community outreach starts at 3:30 PM; the indoor concert starts at 6 PM. Older prices printed on the tour flyer do not apply.",
         "scheduleDetails": [
           {
             "label": "Community outreach",
@@ -30925,7 +30932,7 @@
           },
           {
             "label": "Admission",
-            "text": "Free, all ages. No tickets needed."
+            "text": "Free, all ages. No tickets needed. Older prices printed on the tour flyer do not apply."
           }
         ]
       }
@@ -32523,10 +32530,10 @@
         "id": "manual:ignite-and-unite-tour-deland-2026-11-11",
         "title": "Ignite and Unite Tour",
         "startDate": "2026-11-11",
-        "startTime": "",
+        "startTime": "18:00",
         "timezone": "America/New_York",
         "venue": "Corner Gate",
-        "address": "",
+        "address": "330 E New York Avenue",
         "city": "DeLand",
         "state": "FL",
         "country": "US",
@@ -32539,10 +32546,10 @@
         "eventType": "concert",
         "status": "scheduled",
         "ticketUrl": "",
-        "officialUrl": "https://kingdomcircuit.com/assets/events/ignite-and-unite-tour-artist-submitted-2026.png",
-        "image": "assets/events/ignite-and-unite-tour-artist-submitted-2026.png",
-        "price": "",
-        "sourceName": "Bo Fisher artist-submitted Ignite and Unite Tour flyer",
+        "officialUrl": "https://www.igniteandunitetour.com/",
+        "image": "assets/events/ignite-and-unite-deland-2026-11-11-tour-site-nov3.png",
+        "price": "Free",
+        "sourceName": "Ignite and Unite official tour website and city showcard",
         "sources": [
           {
             "name": "Bo Fisher artist-submitted Ignite and Unite Tour flyer",
@@ -32550,16 +32557,23 @@
             "type": "manual_verified",
             "authority": "official_event",
             "priority": 112
+          },
+          {
+            "name": "Ignite and Unite official tour website and city showcard",
+            "url": "https://www.igniteandunitetour.com/",
+            "type": "manual_verified",
+            "authority": "official_event",
+            "priority": 116
           }
         ],
-        "lastVerified": "2026-10-08T23:11:36Z",
-        "confidence": "medium",
+        "lastVerified": "2026-11-03T18:10:49.161592Z",
+        "confidence": "high",
         "endDate": "2026-11-11",
         "imageType": "event_artwork",
         "imagePosition": "center",
         "verifiedVersion": 9,
         "firstSeen": "2026-10-08T23:11:36Z",
-        "startDateTime": "",
+        "startDateTime": "2026-11-11T18:00:00-05:00",
         "advertisedBilling": [
           "Pastor John Humphries",
           "OTG Zico",
@@ -32578,17 +32592,37 @@
           "3HRE",
           "B. Cody Shields"
         ],
-        "detailsPending": true,
+        "detailsPending": false,
         "lineupExplicit": true,
         "imageOverride": true,
         "detailImageLayout": "portrait",
-        "imageSource": "Ignite and Unite Tour flyer supplied by Bo Fisher",
-        "imageSourceUrl": "https://kingdomcircuit.com/assets/events/ignite-and-unite-tour-artist-submitted-2026.png",
+        "imageSource": "Ignite and Unite Tour official DeLand showcard selected by owner November 3",
+        "imageSourceUrl": "https://www.igniteandunitetour.com/",
         "organizer": "",
-        "publicDescription": "The Ignite and Unite Tour comes to Corner Gate in DeLand, Florida. The flyer lists Pastor John Humphries, OTG Zico, Altar Ego, J10, Legit, 3HRE, and B. Cody Shields. Start time and ticket details are to be announced.",
+        "publicDescription": "The Ignite and Unite Tour comes to Corner Gate in DeLand, Florida, on November 11, 2026. Doors open at 5:30 PM; the event starts at 6 PM Eastern. Free admission. The confirmed bill is Pastor John Humphries, OTG Zico, Altar Ego, J10, Legit, 3HRE, and B. Cody Shields.",
         "authority": "official_event",
-        "auditVerified": "2026-10-08",
-        "notes": "Bo Fisher supplied the tour flyer directly to the site owner. The flyer prints month/day, venue, city and this full billing, but no year or start times. On October 8, 2026 the owner explicitly instructed us to assume 2026 for all four dates. The year is owner-approved, not independently verified from a public announcement. Leave startTime and ticketUrl empty and detailsPending true. Official details links to the exact unedited artist-supplied flyer hosted locally, not a guessed ticket page or unrelated venue listing. Owner confirmed Bo appears as part of Altar Ego; keep Altar Ego in public billing and link the record to Bo Fisher and the already verified B. Cody Shields. No global group alias or new artist profiles. October 23: associate the separately owner-verified Altar Ego group profile with this explicit group billing. Preserve existing solo artist associations and the advertised lineup."
+        "auditVerified": "2026-11-03",
+        "notes": "Bo Fisher supplied the tour flyer directly to the site owner. The flyer prints month/day, venue, city and this full billing, but no year or start times. On October 8, 2026 the owner explicitly instructed us to assume 2026 for all four dates. The year is owner-approved, not independently verified from a public announcement. Leave startTime and ticketUrl empty and detailsPending true. Official details links to the exact unedited artist-supplied flyer hosted locally, not a guessed ticket page or unrelated venue listing. Owner confirmed Bo appears as part of Altar Ego; keep Altar Ego in public billing and link the record to Bo Fisher and the already verified B. Cody Shields. No global group alias or new artist profiles. October 23: associate the separately owner-verified Altar Ego group profile with this explicit group billing. Preserve existing solo artist associations and the advertised lineup. November 3: owner selected the date-specific showcard from the official tour website. Original PNG retained unchanged. Preserve the original October 8 discovery date, canonical ID, full confirmed billing and existing artist associations. A donate QR is not a ticket offer. The official schedule and city card now confirm the 2026 date, full address, 5:30 PM doors, 6 PM event start and free admission. These verified details supersede the prior TBA instructions; no unknown end, age, RSVP requirement or ticket offer was added. The official tour site replaces the old standalone tour-wide image as Official Details. Cornergate Coffee House in the official website schedule is the same announced Corner Gate venue; retain the established venue label.",
+        "doorsTime": "17:30",
+        "postalCode": "32724",
+        "scheduleDetails": [
+          {
+            "label": "Concert doors",
+            "text": "5:30 PM Eastern"
+          },
+          {
+            "label": "Start",
+            "text": "6:00 PM Eastern"
+          },
+          {
+            "label": "Admission",
+            "text": "Free"
+          },
+          {
+            "label": "Venue address",
+            "text": "330 E New York Avenue, DeLand, FL 32724"
+          }
+        ]
       }
     },
     {
@@ -33020,10 +33054,10 @@
         "id": "manual:ignite-and-unite-tour-daytona-beach-2026-11-13",
         "title": "Ignite and Unite Tour",
         "startDate": "2026-11-13",
-        "startTime": "",
+        "startTime": "18:00",
         "timezone": "America/New_York",
         "venue": "The Porch",
-        "address": "",
+        "address": "212 S Beach Street, Suite 110",
         "city": "Daytona Beach",
         "state": "FL",
         "country": "US",
@@ -33036,10 +33070,10 @@
         "eventType": "concert",
         "status": "scheduled",
         "ticketUrl": "",
-        "officialUrl": "https://kingdomcircuit.com/assets/events/ignite-and-unite-tour-artist-submitted-2026.png",
-        "image": "assets/events/ignite-and-unite-tour-artist-submitted-2026.png",
-        "price": "",
-        "sourceName": "Bo Fisher artist-submitted Ignite and Unite Tour flyer",
+        "officialUrl": "https://www.igniteandunitetour.com/",
+        "image": "assets/events/ignite-and-unite-daytona-beach-2026-11-13-tour-site-nov3.png",
+        "price": "Free",
+        "sourceName": "Ignite and Unite official tour website and city showcard",
         "sources": [
           {
             "name": "Bo Fisher artist-submitted Ignite and Unite Tour flyer",
@@ -33047,16 +33081,23 @@
             "type": "manual_verified",
             "authority": "official_event",
             "priority": 112
+          },
+          {
+            "name": "Ignite and Unite official tour website and city showcard",
+            "url": "https://www.igniteandunitetour.com/",
+            "type": "manual_verified",
+            "authority": "official_event",
+            "priority": 116
           }
         ],
-        "lastVerified": "2026-10-08T23:11:36Z",
-        "confidence": "medium",
+        "lastVerified": "2026-11-03T18:10:49.161592Z",
+        "confidence": "high",
         "endDate": "2026-11-13",
         "imageType": "event_artwork",
         "imagePosition": "center",
         "verifiedVersion": 9,
         "firstSeen": "2026-10-08T23:11:36Z",
-        "startDateTime": "",
+        "startDateTime": "2026-11-13T18:00:00-05:00",
         "advertisedBilling": [
           "Pastor John Humphries",
           "OTG Zico",
@@ -33075,17 +33116,37 @@
           "3HRE",
           "B. Cody Shields"
         ],
-        "detailsPending": true,
+        "detailsPending": false,
         "lineupExplicit": true,
         "imageOverride": true,
         "detailImageLayout": "portrait",
-        "imageSource": "Ignite and Unite Tour flyer supplied by Bo Fisher",
-        "imageSourceUrl": "https://kingdomcircuit.com/assets/events/ignite-and-unite-tour-artist-submitted-2026.png",
+        "imageSource": "Ignite and Unite Tour official Daytona Beach showcard selected by owner November 3",
+        "imageSourceUrl": "https://www.igniteandunitetour.com/",
         "organizer": "",
-        "publicDescription": "The Ignite and Unite Tour comes to The Porch in Daytona Beach, Florida. The flyer lists Pastor John Humphries, OTG Zico, Altar Ego, J10, Legit, 3HRE, and B. Cody Shields. Start time and ticket details are to be announced.",
+        "publicDescription": "The Ignite and Unite Tour comes to The Porch in Daytona Beach, Florida, on November 13, 2026. Doors open at 5:30 PM; the event starts at 6 PM Eastern. Free admission. The confirmed bill is Pastor John Humphries, OTG Zico, Altar Ego, J10, Legit, 3HRE, and B. Cody Shields.",
         "authority": "official_event",
-        "auditVerified": "2026-10-08",
-        "notes": "Bo Fisher supplied the tour flyer directly to the site owner. The flyer prints month/day, venue, city and this full billing, but no year or start times. On October 8, 2026 the owner explicitly instructed us to assume 2026 for all four dates. The year is owner-approved, not independently verified from a public announcement. Leave startTime and ticketUrl empty and detailsPending true. Official details links to the exact unedited artist-supplied flyer hosted locally, not a guessed ticket page or unrelated venue listing. Owner confirmed Bo appears as part of Altar Ego; keep Altar Ego in public billing and link the record to Bo Fisher and the already verified B. Cody Shields. No global group alias or new artist profiles. October 23: associate the separately owner-verified Altar Ego group profile with this explicit group billing. Preserve existing solo artist associations and the advertised lineup."
+        "auditVerified": "2026-11-03",
+        "notes": "Bo Fisher supplied the tour flyer directly to the site owner. The flyer prints month/day, venue, city and this full billing, but no year or start times. On October 8, 2026 the owner explicitly instructed us to assume 2026 for all four dates. The year is owner-approved, not independently verified from a public announcement. Leave startTime and ticketUrl empty and detailsPending true. Official details links to the exact unedited artist-supplied flyer hosted locally, not a guessed ticket page or unrelated venue listing. Owner confirmed Bo appears as part of Altar Ego; keep Altar Ego in public billing and link the record to Bo Fisher and the already verified B. Cody Shields. No global group alias or new artist profiles. October 23: associate the separately owner-verified Altar Ego group profile with this explicit group billing. Preserve existing solo artist associations and the advertised lineup. November 3: owner selected the date-specific showcard from the official tour website. Original PNG retained unchanged. Preserve the original October 8 discovery date, canonical ID, full confirmed billing and existing artist associations. A donate QR is not a ticket offer. The official schedule and city card now confirm the 2026 date, full address, 5:30 PM doors, 6 PM event start and free admission. These verified details supersede the prior TBA instructions; no unknown end, age, RSVP requirement or ticket offer was added. The official tour site replaces the old standalone tour-wide image as Official Details.",
+        "doorsTime": "17:30",
+        "postalCode": "32114",
+        "scheduleDetails": [
+          {
+            "label": "Concert doors",
+            "text": "5:30 PM Eastern"
+          },
+          {
+            "label": "Start",
+            "text": "6:00 PM Eastern"
+          },
+          {
+            "label": "Admission",
+            "text": "Free"
+          },
+          {
+            "label": "Venue address",
+            "text": "212 S Beach Street, Suite 110, Daytona Beach, FL 32114"
+          }
+        ]
       }
     },
     {
@@ -34761,8 +34822,8 @@
         "status": "scheduled",
         "ticketUrl": "",
         "officialUrl": "https://www.instagram.com/p/DehB1hrxLIR/",
-        "image": "assets/events/ignite-and-unite-plantation-2026-11-14-official.jpg",
-        "price": "",
+        "image": "assets/events/ignite-and-unite-plantation-2026-11-14-tour-site-nov3.png",
+        "price": "Free",
         "sourceName": "Holy Waters Hip Hop official Plantation tour announcement",
         "sources": [
           {
@@ -34778,9 +34839,16 @@
             "type": "manual_verified",
             "authority": "official_event",
             "priority": 112
+          },
+          {
+            "name": "Ignite and Unite official tour website and city showcard",
+            "url": "https://www.igniteandunitetour.com/",
+            "type": "manual_verified",
+            "authority": "official_event",
+            "priority": 116
           }
         ],
-        "lastVerified": "2026-10-15T19:41:39Z",
+        "lastVerified": "2026-11-03T18:10:49.161592Z",
         "confidence": "high",
         "endDate": "2026-11-14",
         "imageType": "event_artwork",
@@ -34816,16 +34884,34 @@
         "lineupExplicit": true,
         "imageOverride": true,
         "detailImageLayout": "portrait",
-        "imageSource": "Holy Waters Hip Hop official November 14 Plantation flyer",
-        "imageSourceUrl": "https://www.instagram.com/p/DehB1hrxLIR/",
+        "imageSource": "Ignite and Unite Tour official Plantation showcard selected by owner November 3",
+        "imageSourceUrl": "https://www.igniteandunitetour.com/",
         "organizer": "",
-        "publicDescription": "The Ignite and Unite Tour comes to First Baptist Church of Plantation with Pastor John Humphries, OTG Zico, Madigan, Altar Ego, J10, Legit, 3HRE, B. Cody Shields, Brother Bo, and K'nek. Doors open at 5:30 PM; the event starts at 6 PM Eastern on November 14, 2026, at 150 NW 46th Avenue, Plantation, FL 33317.",
+        "publicDescription": "The Ignite and Unite Tour comes to First Baptist Church of Plantation with Pastor John Humphries, OTG Zico, Madigan, Altar Ego, J10, Legit, 3HRE, B. Cody Shields, Brother Bo, and K'nek. Doors open at 5:30 PM; the event starts at 6 PM Eastern on November 14, 2026, at 150 NW 46th Avenue, Plantation, FL 33317. Free admission is confirmed by the official tour schedule.",
         "authority": "official_event",
-        "auditVerified": "2026-10-15",
-        "notes": "October 15: owner supplied the Holy Waters Hip Hop Instagram announcement DehB1hrxLIR. Its date-specific portrait flyer explicitly prints November 14, 2026; doors 5:30 PM; event 6 PM; First Baptist Church of Plantation; 150 NW 46th Avenue, Plantation FL 33317. Full advertised bill includes Madigan, Brother Bo, and K'nek in addition to the original tour artists. Caption tags @brotherbo and @westhetech, matching the existing verified profiles. Keep Altar Ego as the public group billing; Bo Fisher and Justo Chalaire are schedule associations, with both tagged on this announcement and the group membership previously verified from Altar Ego's official bio. Do not turn the group into a global alias or add the two members as separate solo billings. This new flyer supersedes the original tour-wide artwork, unknown time and abbreviated venue for the Plantation date only. The printed 2026 year now confirms the earlier owner-approved year. Ticket and price details remain unannounced; the QR code says donate, not tickets. October 23: associate the separately owner-verified Altar Ego group profile with this explicit group billing. Preserve existing solo artist associations and the advertised lineup.",
+        "auditVerified": "2026-11-03",
+        "notes": "October 15: owner supplied the Holy Waters Hip Hop Instagram announcement DehB1hrxLIR. Its date-specific portrait flyer explicitly prints November 14, 2026; doors 5:30 PM; event 6 PM; First Baptist Church of Plantation; 150 NW 46th Avenue, Plantation FL 33317. Full advertised bill includes Madigan, Brother Bo, and K'nek in addition to the original tour artists. Caption tags @brotherbo and @westhetech, matching the existing verified profiles. Keep Altar Ego as the public group billing; Bo Fisher and Justo Chalaire are schedule associations, with both tagged on this announcement and the group membership previously verified from Altar Ego's official bio. Do not turn the group into a global alias or add the two members as separate solo billings. This new flyer supersedes the original tour-wide artwork, unknown time and abbreviated venue for the Plantation date only. The printed 2026 year now confirms the earlier owner-approved year. Ticket and price details remain unannounced; the QR code says donate, not tickets. October 23: associate the separately owner-verified Altar Ego group profile with this explicit group billing. Preserve existing solo artist associations and the advertised lineup. November 3: owner selected the date-specific showcard from the official tour website. Original PNG retained unchanged. Preserve the original October 8 discovery date, canonical ID, full confirmed billing and existing artist associations. A donate QR is not a ticket offer. The official tour schedule confirms free admission. Keep the broader date-specific October 15 confirmed bill and group/member associations, including Madigan, Brother Bo and K'nek; the selected artwork is not evidence of a cancellation.",
         "doorsTime": "17:30",
         "postalCode": "33317",
-        "musicConfirmed": true
+        "musicConfirmed": true,
+        "scheduleDetails": [
+          {
+            "label": "Concert doors",
+            "text": "5:30 PM Eastern"
+          },
+          {
+            "label": "Start",
+            "text": "6:00 PM Eastern"
+          },
+          {
+            "label": "Admission",
+            "text": "Free"
+          },
+          {
+            "label": "Venue address",
+            "text": "150 NW 46th Avenue, Plantation, FL 33317"
+          }
+        ]
       }
     },
     {
