@@ -5,6 +5,8 @@ import sys
 import subprocess
 import re
 import unittest
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -75,9 +77,19 @@ class GeographyAndVenueGuards(unittest.TestCase):
                         self.assertEqual(published[0]['status'], 'private')
                         self.assertEqual(published[0]['firstSeen'], retained['firstSeen'])
                     continue
+                seed = next(e for e in seeds if e.get("id") == f"808-beezy-bandsintown-{num}")
+                self.assertEqual(seed["venue"], venue)
+                cutoff = datetime.now(ZoneInfo("America/Los_Angeles")).date().isoformat()
+                if (seed.get("endDate") or seed["startDate"]) < cutoff:
+                    history = json.loads((ROOT / "event-history.json").read_text())["events"]
+                    retained = [row.get("event", row) for row in history
+                                if row.get("event", row).get("id") == f"manual:808-beezy-bandsintown-{num}"]
+                    self.assertEqual(len(retained), 1)
+                    self.assertEqual(retained[0]["venue"], venue)
+                    self.assertEqual(retained[0]["firstSeen"], "2026-09-02T14:46:37Z")
+                    continue
                 published = next(e for e in events if e.get("id") == f"manual:808-beezy-bandsintown-{num}")
                 source = next(e for e in supplemental if e.get("id") == f"manual:808-beezy-bandsintown-{num}")
-                seed = next(e for e in seeds if e.get("id") == f"808-beezy-bandsintown-{num}")
                 self.assertEqual((published["venue"], source["venue"], seed["venue"]), (venue, venue, venue))
                 self.assertEqual(published["firstSeen"], "2026-09-02T14:46:37Z")
                 self.assertEqual(source["firstSeen"], "2026-09-02T14:46:37Z")
