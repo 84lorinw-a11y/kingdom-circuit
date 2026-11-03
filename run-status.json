@@ -1,40 +1,28 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-11-02T20:58:09Z",
-  "lastSuccessfulUpdate": "2026-11-02T20:58:09Z",
-  "eventsPublished": 164,
-  "candidatesCollected": 329,
-  "artistsConfigured": 412,
+  "lastAttempt": "2026-11-03T18:56:47Z",
+  "lastSuccessfulUpdate": "2026-11-03T18:56:47Z",
+  "eventsPublished": 169,
+  "candidatesCollected": 336,
+  "artistsConfigured": 413,
   "artistsByPriority": {
     "priority1": 91,
     "priority2": 146,
-    "priority3": 165
+    "priority3": 166
   },
   "ticketmasterArtistsEnabled": 196,
-  "socialSearchArtistsEnabled": 367,
-  "freeTextAliasesProtected": 275,
+  "socialSearchArtistsEnabled": 368,
+  "freeTextAliasesProtected": 277,
   "artistsMatchedOnTicketmaster": 61,
-  "officialEventsFound": 38,
+  "officialEventsFound": 39,
   "ticketmasterEventsFound": 12,
-  "instagramArtistsConfigured": 367,
-  "instagramQueriesRun": 369,
-  "instagramQueriesAttempted": 367,
-  "instagramResultsFound": 2,
+  "instagramArtistsConfigured": 368,
+  "instagramQueriesRun": 370,
+  "instagramQueriesAttempted": 368,
+  "instagramResultsFound": 0,
   "instagramEventsFound": 0,
   "instagramCandidates": [
-    {
-      "url": "https://www.instagram.com/reel/DfLuBnrsGr0/",
-      "title": "@aftrthght | @sade pls clear this | Instagram",
-      "artists": [
-        "aftrthght"
-      ],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 3,
-      "reason": "live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
-    },
     {
       "url": "https://www.instagram.com/p/DboKM3GJM4A/",
       "title": "Official EGR 2026 schedule graphic supplied to The Kingdom Circuit and manually transcribed.",
@@ -58,20 +46,10 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
-    },
-    {
-      "url": "https://www.instagram.com/p/CdOLqwtL9ah/",
-      "title": "585 WRESTLING | The 585 Management team, the 585 Owner Hunter AndrewZ ...",
-      "artists": [],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 492,
+  "sourcesChecked": 493,
   "unmatchedArtists": [
     "Scootie Wop",
     "Mike Malagies",
@@ -218,7 +196,7 @@
     {
       "name": "Reach Records - 1K Phew",
       "status": "ok",
-      "eventsFound": 3
+      "eventsFound": 4
     },
     {
       "name": "Reach Records - Anike",
@@ -614,8 +592,8 @@
       "name": "Instagram public announcement scan",
       "status": "ok",
       "eventsFound": 0,
-      "artistsChecked": 367,
-      "queriesRun": 369
+      "artistsChecked": 368,
+      "queriesRun": 370
     }
   ],
   "warningCount": 18,
@@ -644,6 +622,6 @@
   "message": "Verified U.S. music listings updated across the 300-artist monitoring roster with identity-safe matching, source health, duplicate merging, and protected manual listings.",
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 20,
-  "artistWebsiteEventsAdded": 1,
-  "artistWebsiteMergeAt": "2026-11-02T21:16:48Z"
+  "artistWebsiteEventsAdded": 0,
+  "artistWebsiteMergeAt": "2026-11-03T19:15:08Z"
 }

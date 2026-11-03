@@ -1,32 +1,32 @@
 {
-  "generatedAt": "2026-11-02T21:16:46Z",
-  "artistsChecked": 412,
+  "generatedAt": "2026-11-03T19:15:05Z",
+  "artistsChecked": 413,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
   "festivalCandidates": 1,
   "bandsintown": {
     "discoveryMode": "structured_rest",
     "status": "ok",
-    "artistsAttempted": 412,
+    "artistsAttempted": 413,
     "resolved": 254,
-    "rawUpcomingUSRows": 88,
+    "rawUpcomingUSRows": 87,
     "rawUpcomingCARows": 3,
-    "rawUpcomingRows": 91,
+    "rawUpcomingRows": 90,
     "newEventsPublished": 13,
     "festivalCandidatesHeld": 2,
     "requestErrors": 0
   },
   "songkick": {
-    "artistsAttempted": 412,
+    "artistsAttempted": 413,
     "resolved": 0,
-    "blockedByRobots": 412,
+    "blockedByRobots": 413,
     "eventsFound": 0
   },
   "sourceStatusCounts": {
-    "delegated_to_structured_rest": 412,
-    "blocked_by_robots": 415,
-    "no_events": 575,
-    "failed": 6
+    "delegated_to_structured_rest": 413,
+    "blocked_by_robots": 417,
+    "no_events": 574,
+    "failed": 7
   },
   "newEvents": [],
   "sourceResults": [
@@ -5780,7 +5780,7 @@
       "artist": "Solachi Voz",
       "source": "official website",
       "url": "https://www.solachivoz.com/about",
-      "status": "no_events",
+      "status": "blocked_by_robots",
       "eventsFound": 0
     },
     {
@@ -8228,8 +8228,9 @@
       "artist": "Lady Cam",
       "source": "official website",
       "url": "http://www.iloveladycam.com/",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve http://www.iloveladycam.com/: HTTP Error 429: Too Many Requests"
     },
     {
       "artist": "Lady Cam",
@@ -9065,6 +9066,25 @@
       "artist": "Kojo Dave",
       "source": "Spotify profile",
       "url": "https://open.spotify.com/artist/2SjA4XyWd56a9VEfOoXrce",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "elllli",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "elllli",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "elllli",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/3C2zF2KoMybEmTQQwNxk1S",
       "status": "no_events",
       "eventsFound": 0
     }
