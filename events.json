@@ -1766,7 +1766,7 @@
     "eventType": "festival",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "https://images.squarespace-cdn.com/content/v1/65b435646b1eae535f97c6a3/a2407af7-a012-4df1-8d42-d247ab82cd8b/FF26-Promo-Friday-Night%2B%281%29.jpg",
+    "image": "assets/events/flavor-fest-friday-2026.webp",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -1866,7 +1866,7 @@
       "Jailynn",
       "Eli Williams"
     ],
-    "auditVerified": "2026-09-11",
+    "auditVerified": "2026-10-12",
     "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown. Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates. October 8: owner verified TVNK in the artist Sheet. His September 25 collaborative announcement with Flavor Fest explicitly confirms November 6 at Crossover Church. Connect the existing TVNK billing to his curated artist profile. October 12: newly owner-verified artist profiles linked to confirmed billing."
   },
   {
@@ -3277,104 +3277,6 @@
     "firstSeen": "2026-10-15T15:24:10Z"
   },
   {
-    "id": "manual:ignite-and-unite-tour-daytona-beach-2026-11-13",
-    "title": "Ignite and Unite Tour",
-    "startDate": "2026-11-13",
-    "startTime": "18:00",
-    "timezone": "America/New_York",
-    "venue": "The Porch",
-    "address": "212 S Beach Street, Suite 110",
-    "city": "Daytona Beach",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Bo Fisher",
-      "B. Cody Shields",
-      "Altar Ego"
-    ],
-    "headliner": "Altar Ego",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "",
-    "officialUrl": "https://www.igniteandunitetour.com/",
-    "image": "assets/events/ignite-and-unite-daytona-beach-2026-11-13-tour-site-nov3.png",
-    "price": "Free",
-    "sourceName": "Ignite and Unite official tour website and city showcard",
-    "sources": [
-      {
-        "name": "Bo Fisher artist-submitted Ignite and Unite Tour flyer",
-        "url": "https://kingdomcircuit.com/assets/events/ignite-and-unite-tour-artist-submitted-2026.png",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 112
-      },
-      {
-        "name": "Ignite and Unite official tour website and city showcard",
-        "url": "https://www.igniteandunitetour.com/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 116
-      }
-    ],
-    "lastVerified": "2026-11-03T18:10:49.161592Z",
-    "confidence": "high",
-    "endDate": "2026-11-13",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-10-08T23:11:36Z",
-    "startDateTime": "2026-11-13T18:00:00-05:00",
-    "advertisedBilling": [
-      "Pastor John Humphries",
-      "OTG Zico",
-      "Altar Ego",
-      "J10",
-      "Legit",
-      "3HRE",
-      "B. Cody Shields"
-    ],
-    "officialBill": [
-      "Pastor John Humphries",
-      "OTG Zico",
-      "Altar Ego",
-      "J10",
-      "Legit",
-      "3HRE",
-      "B. Cody Shields"
-    ],
-    "detailsPending": false,
-    "lineupExplicit": true,
-    "imageOverride": true,
-    "detailImageLayout": "portrait",
-    "imageSource": "Ignite and Unite Tour official Daytona Beach showcard selected by owner November 3",
-    "imageSourceUrl": "https://www.igniteandunitetour.com/",
-    "organizer": "",
-    "publicDescription": "The Ignite and Unite Tour comes to The Porch in Daytona Beach, Florida, on November 13, 2026. Doors open at 5:30 PM; the event starts at 6 PM Eastern. Free admission. The confirmed bill is Pastor John Humphries, OTG Zico, Altar Ego, J10, Legit, 3HRE, and B. Cody Shields.",
-    "authority": "official_event",
-    "auditVerified": "2026-11-03",
-    "notes": "Bo Fisher supplied the tour flyer directly to the site owner. The flyer prints month/day, venue, city and this full billing, but no year or start times. On October 8, 2026 the owner explicitly instructed us to assume 2026 for all four dates. The year is owner-approved, not independently verified from a public announcement. Leave startTime and ticketUrl empty and detailsPending true. Official details links to the exact unedited artist-supplied flyer hosted locally, not a guessed ticket page or unrelated venue listing. Owner confirmed Bo appears as part of Altar Ego; keep Altar Ego in public billing and link the record to Bo Fisher and the already verified B. Cody Shields. No global group alias or new artist profiles. October 23: associate the separately owner-verified Altar Ego group profile with this explicit group billing. Preserve existing solo artist associations and the advertised lineup. November 3: owner selected the date-specific showcard from the official tour website. Original PNG retained unchanged. Preserve the original October 8 discovery date, canonical ID, full confirmed billing and existing artist associations. A donate QR is not a ticket offer. The official schedule and city card now confirm the 2026 date, full address, 5:30 PM doors, 6 PM event start and free admission. These verified details supersede the prior TBA instructions; no unknown end, age, RSVP requirement or ticket offer was added. The official tour site replaces the old standalone tour-wide image as Official Details.",
-    "doorsTime": "17:30",
-    "postalCode": "32114",
-    "scheduleDetails": [
-      {
-        "label": "Concert doors",
-        "text": "5:30 PM Eastern"
-      },
-      {
-        "label": "Start",
-        "text": "6:00 PM Eastern"
-      },
-      {
-        "label": "Admission",
-        "text": "Free"
-      },
-      {
-        "label": "Venue address",
-        "text": "212 S Beach Street, Suite 110, Daytona Beach, FL 32114"
-      }
-    ]
-  },
-  {
     "id": "manual:awake-fest-dj-bryce-g-eustis-2026-11-13",
     "title": "Awake-Fest 2026 — DJ Bryce G",
     "startDate": "2026-11-13",
@@ -3488,6 +3390,104 @@
       "Dox Black",
       "Zay Harper",
       "Rich Musiq"
+    ]
+  },
+  {
+    "id": "manual:ignite-and-unite-tour-daytona-beach-2026-11-13",
+    "title": "Ignite and Unite Tour",
+    "startDate": "2026-11-13",
+    "startTime": "18:00",
+    "timezone": "America/New_York",
+    "venue": "The Porch",
+    "address": "212 S Beach Street, Suite 110",
+    "city": "Daytona Beach",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Bo Fisher",
+      "B. Cody Shields",
+      "Altar Ego"
+    ],
+    "headliner": "Altar Ego",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "",
+    "officialUrl": "https://www.igniteandunitetour.com/",
+    "image": "assets/events/ignite-and-unite-daytona-beach-2026-11-13-tour-site-nov3.png",
+    "price": "Free",
+    "sourceName": "Ignite and Unite official tour website and city showcard",
+    "sources": [
+      {
+        "name": "Bo Fisher artist-submitted Ignite and Unite Tour flyer",
+        "url": "https://kingdomcircuit.com/assets/events/ignite-and-unite-tour-artist-submitted-2026.png",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "Ignite and Unite official tour website and city showcard",
+        "url": "https://www.igniteandunitetour.com/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 116
+      }
+    ],
+    "lastVerified": "2026-11-03T18:10:49.161592Z",
+    "confidence": "high",
+    "endDate": "2026-11-13",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-10-08T23:11:36Z",
+    "startDateTime": "2026-11-13T18:00:00-05:00",
+    "advertisedBilling": [
+      "Pastor John Humphries",
+      "OTG Zico",
+      "Altar Ego",
+      "J10",
+      "Legit",
+      "3HRE",
+      "B. Cody Shields"
+    ],
+    "officialBill": [
+      "Pastor John Humphries",
+      "OTG Zico",
+      "Altar Ego",
+      "J10",
+      "Legit",
+      "3HRE",
+      "B. Cody Shields"
+    ],
+    "detailsPending": false,
+    "lineupExplicit": true,
+    "imageOverride": true,
+    "detailImageLayout": "portrait",
+    "imageSource": "Ignite and Unite Tour official Daytona Beach showcard selected by owner November 3",
+    "imageSourceUrl": "https://www.igniteandunitetour.com/",
+    "organizer": "",
+    "publicDescription": "The Ignite and Unite Tour comes to The Porch in Daytona Beach, Florida, on November 13, 2026. Doors open at 5:30 PM; the event starts at 6 PM Eastern. Free admission. The confirmed bill is Pastor John Humphries, OTG Zico, Altar Ego, J10, Legit, 3HRE, and B. Cody Shields.",
+    "authority": "official_event",
+    "auditVerified": "2026-11-03",
+    "notes": "Bo Fisher supplied the tour flyer directly to the site owner. The flyer prints month/day, venue, city and this full billing, but no year or start times. On October 8, 2026 the owner explicitly instructed us to assume 2026 for all four dates. The year is owner-approved, not independently verified from a public announcement. Leave startTime and ticketUrl empty and detailsPending true. Official details links to the exact unedited artist-supplied flyer hosted locally, not a guessed ticket page or unrelated venue listing. Owner confirmed Bo appears as part of Altar Ego; keep Altar Ego in public billing and link the record to Bo Fisher and the already verified B. Cody Shields. No global group alias or new artist profiles. October 23: associate the separately owner-verified Altar Ego group profile with this explicit group billing. Preserve existing solo artist associations and the advertised lineup. November 3: owner selected the date-specific showcard from the official tour website. Original PNG retained unchanged. Preserve the original October 8 discovery date, canonical ID, full confirmed billing and existing artist associations. A donate QR is not a ticket offer. The official schedule and city card now confirm the 2026 date, full address, 5:30 PM doors, 6 PM event start and free admission. These verified details supersede the prior TBA instructions; no unknown end, age, RSVP requirement or ticket offer was added. The official tour site replaces the old standalone tour-wide image as Official Details.",
+    "doorsTime": "17:30",
+    "postalCode": "32114",
+    "scheduleDetails": [
+      {
+        "label": "Concert doors",
+        "text": "5:30 PM Eastern"
+      },
+      {
+        "label": "Start",
+        "text": "6:00 PM Eastern"
+      },
+      {
+        "label": "Admission",
+        "text": "Free"
+      },
+      {
+        "label": "Venue address",
+        "text": "212 S Beach Street, Suite 110, Daytona Beach, FL 32114"
+      }
     ]
   },
   {
@@ -7802,8 +7802,8 @@
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
-    "auditVerified": "2026-10-30",
-    "notes": "Official Eventbrite listing and flyer reviewed October 30, 2026: Miles Minnick, CJ Emulous, Nameless Servant, A4L and Th3rddae Da Mouthpiece; December 5 at Vybe Event Center, 2301 South Stearman Drive, Chandler AZ 85286. Doors 6:30 PM; show 7–11 PM; all ages and free parking. Zion Ultra Lounge Inc is the promoter. Existing listing identity and title retained to preserve the published URL. The three additional supporting acts appear in the full billing without creating unverified artist profiles.",
+    "auditVerified": "2026-09-23",
+    "notes": "CJ Emulous's official calendar confirms Miles Minnick and CJ Emulous at Zion Ultra Lounge on December 5, 2026 at 7:00 PM.",
     "doorsTime": "18:30",
     "endTime": "23:00",
     "startDateTime": "2026-12-05T19:00:00-07:00",
