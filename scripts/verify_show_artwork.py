@@ -7,7 +7,10 @@ from pathlib import Path
 
 import build_seo_site as builder
 from apply_verified_show_artwork import PINS
+from apply_oct2_verified_shows import OWNER_HELD_IDS
 from verify_egr_bizzle_updates import uses_image
+
+ROOT = Path(__file__).resolve().parents[1]
 
 
 def verify(site: Path):
@@ -26,10 +29,25 @@ def verify(site: Path):
     targets = {}
     for pin in PINS:
         event = by_id.get(pin["id"])
+        if pin["id"] in OWNER_HELD_IDS:
+            assert not any(str(row["id"]).removeprefix("manual:") == pin["id"]
+                           for row in primary + supplemental), (pin["id"], "held event in public feed")
+            seeds = json.loads((ROOT / "config/manual-events.json").read_text())
+            history = json.loads((ROOT / "event-history.json").read_text())["events"]
+            for label, retained in (("source", seeds),
+                                    ("history", [row.get("event", row) for row in history])):
+                matches = [row for row in retained
+                           if str(row.get("id")).removeprefix("manual:") == pin["id"]
+                           and row.get("startDate") == pin["startDate"]]
+                assert len(matches) == 1, (pin["id"], "retained held " + label)
+                assert matches[0].get("image") == pin["image"], (pin["id"], label, "held artwork")
+                assert matches[0].get("imageType") == pin["imageType"], (pin["id"], label, "held image type")
+            assert (site / pin["image"]).is_file(), (pin["id"], "missing retained held artwork")
+            continue
         if not event and builder.norm(pin.get("status")) in {"cancelled", "canceled"}:
             # Cancelled shows leave public discovery feeds but retain an archive
             # page and their approved artwork. Verify that page, not an active card.
-            seeds = json.loads((Path(__file__).resolve().parents[1] / "config/manual-events.json").read_text())
+            seeds = json.loads((ROOT / "config/manual-events.json").read_text())
             event = next((e for e in seeds if str(e.get("id")).removeprefix("manual:") == pin["id"]
                           and e.get("startDate") == pin["startDate"]), None)
         if not event:

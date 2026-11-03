@@ -7,6 +7,7 @@ import sys
 import build_seo_site as builder
 from catalog_removals import withheld_event
 from verify_egr_bizzle_updates import uses_image
+from apply_oct2_verified_shows import OWNER_HELD_IDS
 
 ROOT = Path(__file__).resolve().parents[1]
 BATCH = "2026-10-08-reviewed-discoveries"
@@ -23,6 +24,9 @@ def verify(site):
         if not builder.current(wanted):
             continue
         matches = [e for e in raw if str(e["id"]).removeprefix("manual:") == wanted["id"]]
+        if wanted["id"] in OWNER_HELD_IDS:
+            assert not matches, (wanted["id"], "held event in public feed")
+            continue
         if not builder.scheduled(wanted):
             # Final public feeds intentionally contain upcoming shows only;
             # the existing event URL remains as the cancellation notice.

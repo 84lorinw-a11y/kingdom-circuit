@@ -6,6 +6,7 @@ from pathlib import Path
 
 import build_seo_site as builder
 from apply_sep26_requested_lineups import PATCHES
+from apply_oct2_verified_shows import OWNER_HELD_IDS
 
 
 def verify(site: Path):
@@ -25,6 +26,9 @@ def verify(site: Path):
     cards = re.findall(r'<article\b[^>]*data-event-card[^>]*>.*?</article>', shows, re.S)
     for event_id, wanted in PATCHES.items():
         if not builder.current(wanted):
+            continue
+        if event_id in OWNER_HELD_IDS:
+            assert event_id not in reviewed_by_id, (event_id, "held event in public feed")
             continue
         if builder.norm(wanted.get("status")) in {"cancelled", "canceled"}:
             seeds = json.loads((Path(__file__).resolve().parents[1] / "config/manual-events.json").read_text())
