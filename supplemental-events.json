@@ -3297,6 +3297,92 @@
     "notes": "October 31: official TicketWeb event confirms Nov 22, 2026 at Skully's Music Diner, 1151 N High St, Columbus. Its advertised 6:00 PM is DOORS, not a confirmed concert start; leave startTime blank. JIMMY ROCK appearance is sourced to his configured Bandsintown calendar; TicketWeb names Rave Jesus as presenter but does not independently confirm JIMMY ROCK support. Preserve original event ID and approved image."
   },
   {
+    "id": "manual:elllli-christian-hip-hop-sherbrooke-2026-11-27",
+    "title": "elllli — Christian Hip-Hop Concert",
+    "startDate": "2026-11-27",
+    "endDate": "2026-11-27",
+    "startTime": "19:30",
+    "startDateTime": "2026-11-27T19:30:00-05:00",
+    "timezone": "America/Toronto",
+    "venue": "Église Le Carrefour",
+    "address": "601 rue Saint-Michel",
+    "city": "Sherbrooke",
+    "state": "QC",
+    "postalCode": "J1E 2L2",
+    "country": "CA",
+    "artists": [
+      "elllli"
+    ],
+    "advertisedBilling": [
+      "elllli"
+    ],
+    "officialBill": [
+      "elllli"
+    ],
+    "eventType": "concert",
+    "status": "scheduled",
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "ticketUrl": "",
+    "officialUrl": "https://www.instagram.com/p/DfQJfQ5iY4z/",
+    "image": "assets/events/elllli-christian-hip-hop-sherbrooke-2026-11-27.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "elllli and Jeunesse Carrefour official main English concert flyer",
+    "imageSourceUrl": "https://www.instagram.com/p/DfQJfQ5iY4z/",
+    "authority": "official_event",
+    "sourceName": "Official artist and organizer announcements",
+    "confidence": "high",
+    "firstSeen": "2026-11-02",
+    "lastVerified": "2026-11-03T15:59:40Z",
+    "auditVerified": "2026-11-03",
+    "price": "Free",
+    "publicDescription": "A Christian hip-hop concert by elllli at Église Le Carrefour in Sherbrooke. Free admission. The announced start is 7:30 PM Eastern.",
+    "scheduleDetails": [
+      {
+        "label": "Start",
+        "text": "7:30 PM Eastern"
+      },
+      {
+        "label": "End time",
+        "text": "Unconfirmed"
+      },
+      {
+        "label": "Admission",
+        "text": "Free"
+      },
+      {
+        "label": "Venue address",
+        "text": "601 rue Saint-Michel, Sherbrooke, QC J1E 2L2, Canada"
+      }
+    ],
+    "notes": "Previously discovered during the November 2 review; preserve that discovery date. The November 2, 2026 artist/Jeunesse Carrefour coauthored announcement supplies English and French flyers. Both give November 27, free admission and a 7:30 PM start. English artwork gives 10 PM and French artwork gives 9 PM; end time is intentionally unset. No event-specific age restriction, doors time or ticket/RSVP requirement is confirmed. A commenter mentioning age 18 and the general youth ministry policy do not establish concert admission. Only elllli is announced; no additional performers inferred. Original first-slide portrait flyer retained unchanged.",
+    "sources": [
+      {
+        "name": "elllli and Jeunesse Carrefour official main concert flyer and French variant",
+        "url": "https://www.instagram.com/p/DfQJfQ5iY4z/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Jeunesse Carrefour official organizer profile",
+        "url": "https://www.instagram.com/lajeunesseducarrefour/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Église Le Carrefour official venue address",
+        "url": "https://www.lecarrefour.org/",
+        "type": "manual_verified",
+        "authority": "venue",
+        "priority": 115
+      }
+    ]
+  },
+  {
     "id": "bandsintown:108976155",
     "title": "Alex Jean at The Pyrle",
     "startDate": "2026-12-01",
@@ -3513,12 +3599,12 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-10-30",
+    "auditVerified": "2026-09-23",
     "id": "miles-cj-zion-ultra-lounge-chandler-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
-    "notes": "Official Eventbrite listing and flyer reviewed October 30, 2026: Miles Minnick, CJ Emulous, Nameless Servant, A4L and Th3rddae Da Mouthpiece; December 5 at Vybe Event Center, 2301 South Stearman Drive, Chandler AZ 85286. Doors 6:30 PM; show 7–11 PM; all ages and free parking. Zion Ultra Lounge Inc is the promoter. Existing listing identity and title retained to preserve the published URL. The three additional supporting acts appear in the full billing without creating unverified artist profiles.",
+    "notes": "CJ Emulous's official calendar confirms Miles Minnick and CJ Emulous at Zion Ultra Lounge on December 5, 2026 at 7:00 PM.",
     "endDate": "2026-12-05",
     "doorsTime": "18:30",
     "endTime": "23:00",
@@ -4196,92 +4282,6 @@
         "type": "artist_calendar",
         "authority": "artist_calendar",
         "priority": 112
-      }
-    ]
-  },
-  {
-    "id": "manual:elllli-christian-hip-hop-sherbrooke-2026-11-27",
-    "title": "elllli — Christian Hip-Hop Concert",
-    "startDate": "2026-11-27",
-    "endDate": "2026-11-27",
-    "startTime": "19:30",
-    "startDateTime": "2026-11-27T19:30:00-05:00",
-    "timezone": "America/Toronto",
-    "venue": "Église Le Carrefour",
-    "address": "601 rue Saint-Michel",
-    "city": "Sherbrooke",
-    "state": "QC",
-    "postalCode": "J1E 2L2",
-    "country": "CA",
-    "artists": [
-      "elllli"
-    ],
-    "advertisedBilling": [
-      "elllli"
-    ],
-    "officialBill": [
-      "elllli"
-    ],
-    "eventType": "concert",
-    "status": "scheduled",
-    "lineupExplicit": true,
-    "musicConfirmed": true,
-    "ticketUrl": "",
-    "officialUrl": "https://www.instagram.com/p/DfQJfQ5iY4z/",
-    "image": "assets/events/elllli-christian-hip-hop-sherbrooke-2026-11-27.jpg",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "elllli and Jeunesse Carrefour official main English concert flyer",
-    "imageSourceUrl": "https://www.instagram.com/p/DfQJfQ5iY4z/",
-    "authority": "official_event",
-    "sourceName": "Official artist and organizer announcements",
-    "confidence": "high",
-    "firstSeen": "2026-11-02",
-    "lastVerified": "2026-11-03T15:59:40Z",
-    "auditVerified": "2026-11-03",
-    "price": "Free",
-    "publicDescription": "A Christian hip-hop concert by elllli at Église Le Carrefour in Sherbrooke. Free admission. The announced start is 7:30 PM Eastern.",
-    "scheduleDetails": [
-      {
-        "label": "Start",
-        "text": "7:30 PM Eastern"
-      },
-      {
-        "label": "End time",
-        "text": "Unconfirmed"
-      },
-      {
-        "label": "Admission",
-        "text": "Free"
-      },
-      {
-        "label": "Venue address",
-        "text": "601 rue Saint-Michel, Sherbrooke, QC J1E 2L2, Canada"
-      }
-    ],
-    "notes": "Previously discovered during the November 2 review; preserve that discovery date. The November 2, 2026 artist/Jeunesse Carrefour coauthored announcement supplies English and French flyers. Both give November 27, free admission and a 7:30 PM start. English artwork gives 10 PM and French artwork gives 9 PM; end time is intentionally unset. No event-specific age restriction, doors time or ticket/RSVP requirement is confirmed. A commenter mentioning age 18 and the general youth ministry policy do not establish concert admission. Only elllli is announced; no additional performers inferred. Original first-slide portrait flyer retained unchanged.",
-    "sources": [
-      {
-        "name": "elllli and Jeunesse Carrefour official main concert flyer and French variant",
-        "url": "https://www.instagram.com/p/DfQJfQ5iY4z/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Jeunesse Carrefour official organizer profile",
-        "url": "https://www.instagram.com/lajeunesseducarrefour/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Église Le Carrefour official venue address",
-        "url": "https://www.lecarrefour.org/",
-        "type": "manual_verified",
-        "authority": "venue",
-        "priority": 115
       }
     ]
   }
