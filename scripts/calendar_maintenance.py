@@ -33,6 +33,20 @@ def catalog_errors(catalog, day):
     if not paths: errors.append('upcoming catalog is empty')
     return errors
 
+def owner_hold_errors(records):
+    """Block publishing a specifically owner-held show even if a stale page restores it."""
+    errors = []
+    for record in records:
+        attrs = record.get('attrs', {})
+        location = record.get('meta', {}).get('Location', '').casefold()
+        billed = record.get('artists', '').casefold()
+        if (attrs.get('data-date') == '2026-11-19'
+                and attrs.get('data-state', '').casefold() in {'tx', 'texas'}
+                and 'dallas' in location and 'alex jean' in billed):
+            errors.append('owner-held Alex Jean Dallas Nov 19 show leaked into public calendar')
+    return errors
+
+
 def artist_errors(html, shows, day):
     doc=Document(html); errors=[]
     configs=[n for n in doc.nodes if n.attrs.get('id')=='kc-fan-config']
@@ -62,6 +76,7 @@ def page_errors(pages,catalog,day):
     errors=catalog_errors(catalog,day)
     all_paths=[s['path'] for s in catalog.get('shows',[])]
     records=card_records(pages['shows/index.html'])
+    errors.extend(owner_hold_errors(records))
     if set(r['href'] for r in records)!=set(all_paths):errors.append('All Shows differs from the shared catalog')
     home=Document(pages['index.html'])
     homes=[n for n in home.nodes if 'data-national-home' in n.attrs]
