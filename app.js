@@ -426,7 +426,8 @@ const ARTIST_ROSTER_ORDER = [
   "BrandyIn",
   "Loupin",
   "Jon Corbin",
-  "Kojo Dave"
+  "Kojo Dave",
+  "elllli"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -6215,6 +6216,21 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/kojo-dave-portrait-review-oct31.jpg",
     "imagePosition": "50% 0%",
     "state": "ON",
+    "country": "CA",
+    "sourceRegistryVerified": true
+  },
+  "elllli": {
+    "aliases": [
+      "elllli",
+      "Elliott"
+    ],
+    "website": "https://linktr.ee/elllli_music",
+    "instagramProfile": "https://www.instagram.com/_.itzelliott._/",
+    "spotifyProfile": "https://open.spotify.com/artist/3C2zF2KoMybEmTQQwNxk1S",
+    "youtubeProfile": "",
+    "officialImageSource": "https://www.instagram.com/_.itzelliott._/",
+    "imageUrl": "assets/artists/elllli-official-instagram-nov3.jpg",
+    "imagePosition": "50% 20%",
     "country": "CA",
     "sourceRegistryVerified": true
   }
@@ -12008,6 +12024,21 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "state": "ON",
     "country": "CA",
     "sourceRegistryVerified": true
+  },
+  "elllli": {
+    "aliases": [
+      "elllli",
+      "Elliott"
+    ],
+    "website": "https://linktr.ee/elllli_music",
+    "instagramProfile": "https://www.instagram.com/_.itzelliott._/",
+    "spotifyProfile": "https://open.spotify.com/artist/3C2zF2KoMybEmTQQwNxk1S",
+    "youtubeProfile": "",
+    "officialImageSource": "https://www.instagram.com/_.itzelliott._/",
+    "imageUrl": "assets/artists/elllli-official-instagram-nov3.jpg",
+    "imagePosition": "50% 20%",
+    "country": "CA",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -13658,6 +13689,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "kojo dave": {
     "imageUrl": "assets/artists/kojo-dave-portrait-review-oct31.jpg",
     "imagePosition": "50% 0%"
+  },
+  "elllli": {
+    "imageUrl": "assets/artists/elllli-official-instagram-nov3.jpg",
+    "imagePosition": "50% 20%"
   }
 };
 
