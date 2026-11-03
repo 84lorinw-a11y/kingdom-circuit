@@ -2,10 +2,12 @@ import copy
 import importlib.util
 import json
 from pathlib import Path
+import sys
 import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
 spec = importlib.util.spec_from_file_location("reviewed", ROOT / "scripts/preserve_reviewed_discoveries.py")
 reviewed = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(reviewed)
@@ -49,7 +51,7 @@ class ReviewedDiscoveriesTests(unittest.TestCase):
         reviewed.apply(self.root, expired, [], today="2026-12-06")
         self.assertEqual(expired, [])
 
-    def test_oct8_release_dedupes_dallas_and_preserves_other_dates(self):
+    def test_current_hold_blocks_dallas_replay_and_preserves_other_dates(self):
         dallas = dict(id="bandsintown:candidate", startDate="2026-11-19",
                       artists=["Alex Jean"], city="Dallas")
         other_day = dict(dallas, id="another-day", startDate="2026-11-20")
@@ -58,15 +60,16 @@ class ReviewedDiscoveriesTests(unittest.TestCase):
         approved = [e for e in json.loads((ROOT / "config/manual-events.json").read_text())
                     if e.get("editorialBatch") == "2026-10-08-reviewed-discoveries"]
         (self.root / "config/manual-events.json").write_text(json.dumps(approved))
+        retained_source = (self.root / "config/manual-events.json").read_bytes()
         # Provider candidates use the same explicit AXS source identity.
         dallas['officialUrl'] = 'https://www.axs.com/events/1626463/alex-jean-tickets'
         supplemental[0]['officialUrl'] = dallas['officialUrl']
         reviewed.apply(self.root, events, supplemental, today="2026-10-08")
-        self.assertEqual(len([e for e in events if e.get('city') == 'Dallas']), 2)
+        self.assertEqual(len([e for e in events if e.get('city') == 'Dallas']), 1)
         self.assertEqual(supplemental, [])
         self.assertIn(other_day, events)
-        restored = next(e for e in events if e.get('id') == 'manual:alex-jean-dallas-2026-11-19')
-        self.assertEqual(restored['startTime'], '20:00')
+        self.assertFalse(any(e.get('id') == 'manual:alex-jean-dallas-2026-11-19' for e in events))
+        self.assertEqual((self.root / "config/manual-events.json").read_bytes(), retained_source)
         recover = next(e for e in events if e.get('city') == 'Decatur')
         self.assertEqual(recover['startTime'], '')
         self.assertNotIn('startDateTime', recover)

@@ -23,7 +23,11 @@ class OctoberIntakeTests(unittest.TestCase):
             stale = dict(wanted[0], id='manual:' + wanted[0]['id'], artists=['Zenwi'],
                          image='expired-social-url', firstSeen='2026-09-30T00:00:00Z')
             for name in ['events.json', 'supplemental-events.json', 'config/manual-events.json']:
-                (root / name).write_text(json.dumps([copy.deepcopy(stale)]))
+                rows = [copy.deepcopy(stale)]
+                if name == 'config/manual-events.json':
+                    rows.append(copy.deepcopy(next(row for row in wanted
+                                                  if row['id'] == 'alex-jean-dallas-2026-11-19')))
+                (root / name).write_text(json.dumps(rows))
             (root / 'event-history.json').write_text(json.dumps({'events': [{'event': stale}]}))
             apply(root, today='2026-10-02')
             first = {p: (root / p).read_bytes() for p in ['events.json', 'config/manual-events.json', 'event-history.json']}
@@ -39,7 +43,7 @@ class OctoberIntakeTests(unittest.TestCase):
             self.assertEqual(len(manual), len(wanted))
             self.assertTrue(any(str(row.get('id')) == 'alex-jean-dallas-2026-11-19' for row in manual))
 
-    def test_released_alex_dallas_is_restored_once_with_venue_source(self):
+    def test_current_alex_dallas_hold_preserves_source_and_history(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             (root / 'config').mkdir()
@@ -50,15 +54,16 @@ class OctoberIntakeTests(unittest.TestCase):
                 row = copy.deepcopy(held)
                 row['id'] = ('manual:' if name != 'config/manual-events.json' else '') + held['id']
                 (root / name).write_text(json.dumps([row]))
-            (root / 'event-history.json').write_text(json.dumps({'events': []}))
-            apply(root, today='2026-10-03')
+            history = {'events': [{'event': dict(copy.deepcopy(held), id='manual:' + held['id'])}]}
+            (root / 'event-history.json').write_text(json.dumps(history))
+            apply(root, today='2026-11-03')
             for name in ['events.json', 'supplemental-events.json', 'config/manual-events.json']:
                 rows = json.loads((root / name).read_text())
                 matches = [row for row in rows if 'alex-jean-dallas-2026-11-19' in str(row.get('id'))]
-                self.assertEqual(len(matches), 0 if name == 'supplemental-events.json' else 1)
+                self.assertEqual(len(matches), 1 if name == 'config/manual-events.json' else 0)
                 if matches:
-                    self.assertEqual(matches[0]['officialUrl'], 'https://www.thebombfactory.com/events/detail/alex-jean-1626463')
-                    self.assertEqual(matches[0]['startTime'], '20:00')
+                    self.assertEqual(matches[0], held)
+            self.assertEqual(json.loads((root / 'event-history.json').read_text()), history)
 
     def test_visalia_keeps_its_identity_and_host_separate_from_performers(self):
         row = {'id': 'manual:egr-2026-10-10-visalia-ca', 'startDate': '2026-10-10',

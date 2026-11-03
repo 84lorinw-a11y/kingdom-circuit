@@ -8,8 +8,8 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
-# October 8: owner approved restoring Alex Jean Dallas after venue confirmation.
-OWNER_HELD_IDS: set[str] = set()
+# The current owner hold supersedes the older October 8 release approval.
+OWNER_HELD_IDS = {"alex-jean-dallas-2026-11-19"}
 
 
 def key(event):
@@ -27,8 +27,8 @@ def apply(root: Path = ROOT, today: str | None = None):
 
     # Owner/editorial holds must win over older verified-intake snapshots.
     # Remove held records from every live feed and never restore them here.
-    for rows in feeds.values():
-        rows[:] = [row for row in rows if key(row) not in OWNER_HELD_IDS]
+    for name in ("events.json", "supplemental-events.json"):
+        feeds[name][:] = [row for row in feeds[name] if key(row) not in OWNER_HELD_IDS]
 
     for approved in wanted:
         event_id = approved["id"]
