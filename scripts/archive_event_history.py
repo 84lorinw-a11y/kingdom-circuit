@@ -66,6 +66,8 @@ def normalize(value: Any) -> str:
 def canonicalize_known_event_identity(event: dict[str, Any]) -> dict[str, Any]:
     """Repair stable provider identity mistakes before they enter show history."""
     repaired = dict(event)
+    from apply_verified_date_corrections import patch_event as patch_verified_dates
+    patch_verified_dates(repaired)
     urls = " ".join(
         str(repaired.get(field) or "")
         for field in ("ticketUrl", "officialUrl")
