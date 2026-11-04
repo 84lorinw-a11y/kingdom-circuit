@@ -1,9 +1,9 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-11-03T18:56:47Z",
-  "lastSuccessfulUpdate": "2026-11-03T18:56:47Z",
-  "eventsPublished": 169,
+  "lastAttempt": "2026-11-04T18:50:32Z",
+  "lastSuccessfulUpdate": "2026-11-04T18:50:32Z",
+  "eventsPublished": 170,
   "candidatesCollected": 336,
   "artistsConfigured": 413,
   "artistsByPriority": {
@@ -20,7 +20,7 @@
   "instagramArtistsConfigured": 368,
   "instagramQueriesRun": 370,
   "instagramQueriesAttempted": 368,
-  "instagramResultsFound": 0,
+  "instagramResultsFound": 2,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,6 +46,26 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DMLHLddsfk1/",
+      "title": "Lily | Which do you prefer?? Soda Pop (An ACNH Music ... - Instagram",
+      "artists": [],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DMGGIu7Mztt/",
+      "title": "Lily | If you’re seeing this……. You could be one of ... - Instagram",
+      "artists": [],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
@@ -623,5 +643,5 @@
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 20,
   "artistWebsiteEventsAdded": 0,
-  "artistWebsiteMergeAt": "2026-11-03T19:15:08Z"
+  "artistWebsiteMergeAt": "2026-11-04T19:10:29Z"
 }
