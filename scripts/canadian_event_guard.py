@@ -67,8 +67,12 @@ def catalog_errors(events, catalog, day):
     except ImportError:
         from build_seo_site import event_path
     paths = {show.get('path') for show in catalog.get('shows', [])}
-    return sorted({f'Canadian show missing from published catalog: {event_path(event)}'
-                   for event in upcoming_canadian(events, day) if event_path(event) not in paths})
+    # URL continuity retains the first published destination after title/venue
+    # corrections. Before finalization, source rows still use the generated path.
+    expected = {event.get('canonicalPath') or event_path(event)
+                for event in upcoming_canadian(events, day)}
+    return sorted(f'Canadian show missing from published catalog: {path}'
+                  for path in expected if path not in paths)
 
 
 def main():

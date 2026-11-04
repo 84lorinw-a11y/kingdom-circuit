@@ -81,6 +81,19 @@ class CanadianEventPreservationTests(unittest.TestCase):
                 missing = {'shows':[row for row in catalog['shows'] if row['path'] != event_path(event)]}
                 self.assertTrue(guard.catalog_errors(events, missing, guard.today_cutoff()))
 
+    def test_renamed_canadian_show_uses_preserved_published_url(self):
+        original = canadian_show(title='Original announced show')
+        preserved = event_path(original)
+        renamed = dict(original, title='Updated venue showcase', canonicalPath=preserved)
+        self.assertNotEqual(preserved, event_path(renamed))
+        self.assertEqual([], guard.catalog_errors(
+            [renamed], {'shows': [{'path': preserved}]}, '2099-02-26'))
+        # The original destination must actually be in the catalog; a new
+        # title alias alone cannot mask a missing canonical listing.
+        self.assertTrue(guard.catalog_errors(
+            [renamed], {'shows': [{'path': event_path(renamed)}]}, '2099-02-26'))
+        self.assertTrue(guard.catalog_errors([renamed], {'shows': []}, '2099-02-26'))
+
     def test_date_and_full_workflows_both_guard_source_and_final_artifact(self):
         workflow = (ROOT/'.github/workflows/update-and-deploy.yml').read_text()
         snapshot = workflow.index('- name: Snapshot Canadian bookings')
