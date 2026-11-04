@@ -110,46 +110,49 @@
     "country": "US",
     "artists": [
       "mica",
-      "Jomar Santiago",
-      "Josmir Maria",
-      "Anais Liriano"
+      "Myron",
+      "Eddie Cuba"
     ],
     "headliner": "mica",
     "advertisedBilling": [
       "mica",
-      "Jomar Santiago",
-      "Josmir Maria",
+      "Myron",
+      "Eddie Cuba",
       "Anais Liriano",
       "Pastor Jordon Diaz",
       "Pastor Tito Figueroa",
-      "Pastor Jujie Rodriguez"
+      "Pastor Jujie Rodriguez",
+      "Pastor Valerie"
     ],
     "officialBill": [
       "mica",
-      "Jomar Santiago",
-      "Josmir Maria",
+      "Myron",
+      "Eddie Cuba",
       "Anais Liriano",
       "Pastor Jordon Diaz",
       "Pastor Tito Figueroa",
-      "Pastor Jujie Rodriguez"
+      "Pastor Jujie Rodriguez",
+      "Pastor Valerie"
     ],
     "billingRole": "mixed",
     "unconfirmedArtists": [
+      "Anais Liriano",
       "Pastor Jordon Diaz",
       "Pastor Tito Figueroa",
-      "Pastor Jujie Rodriguez"
+      "Pastor Jujie Rodriguez",
+      "Pastor Valerie"
     ],
     "eventType": "event",
     "status": "scheduled",
-    "ticketUrl": "https://www.instagram.com/p/DePgHcLpTMD/",
-    "officialUrl": "https://www.instagram.com/p/DePgHcLpTMD/",
-    "image": "assets/events/chosen-next-gen-bronx-2026-11-07-official-flyer.jpg",
+    "ticketUrl": "https://www.instagram.com/p/DfIH5VRCe2k/",
+    "officialUrl": "https://www.instagram.com/p/DfIH5VRCe2k/",
+    "image": "assets/events/chosen-next-gen-bronx-2026-11-07-official-oct30.jpg",
     "imageType": "event_artwork",
     "imageOverride": true,
     "imagePosition": "center",
     "detailImageLayout": "portrait",
-    "imageSource": "CHOSEN Next Gen Conference official portrait flyer",
-    "imageSourceUrl": "https://www.instagram.com/p/DePgHcLpTMD/",
+    "imageSource": "CHOSEN Next Gen Conference October 30 official flyer",
+    "imageSourceUrl": "https://www.instagram.com/p/DfIH5VRCe2k/",
     "price": "$25",
     "lineupExplicit": true,
     "musicConfirmed": true,
@@ -158,10 +161,17 @@
     "sourceName": "CHOSEN Next Gen Conference official announcement",
     "organizer": "CHOSEN Next Gen Conference",
     "firstSeen": "2026-10-12T18:07:39Z",
-    "lastVerified": "2026-10-12T18:07:39Z",
-    "publicDescription": "CHOSEN Next Gen Conference 2026 — A New Era, November 7, 11 AM–3 PM at One Way Church in the Bronx. Featuring mica and Jomar Santiago, worship artists Josmir Maria and Anais Liriano, and pastors Jordon Diaz, Tito Figueroa and Jujie Rodriguez. Registration is $25; see the organizer’s official announcement for details.",
-    "notes": "Owner supplied official organizer post confirming mica. Event starts at 11 AM; individual set times are not announced. One Way Church official Instagram confirms 1112 Garrison Ave. Flyer spells pastor Jujie Rodriguez, corroborated by his church biography. Pastor names are conference billing, not asserted musical performers. The organizer Linktree still links 2025 registration instructions, so the current 2026 post is the official details destination.",
+    "lastVerified": "2026-11-04T15:56:34Z",
+    "publicDescription": "CHOSEN Next Gen Conference 2026 — A New Era, November 7, 11 AM–3 PM at One Way Church in the Bronx. The worship experience features mica, Myron and Eddie Cuba. Main speakers are pastors Tito Figueroa and Jujie Rodriguez; the panel includes Pastor Jujie Rodriguez, Anais Liriano, Pastor Valerie and Pastor Jordon Diaz. Registration is $25; see the organizer’s official announcement for details.",
+    "notes": "Owner supplied official organizer post confirming mica. Event starts at 11 AM; individual set times are not announced. One Way Church official Instagram confirms 1112 Garrison Ave. Flyer spells pastor Jujie Rodriguez, corroborated by his church biography. Pastor names are conference billing, not asserted musical performers. The organizer Linktree still links 2025 registration instructions, so the current 2026 post is the official details destination. November 4: owner selected the organizer’s October 30 carousel DfIH5VRCe2k, coauthored by @chosenconf and @fcc.inc_. Its worship-experience slide explicitly confirms mica (@literallymica), Myron (@divine.myron) and Eddie Cuba (@eddiejcuba), superseding the earlier musical billing of Jomar Santiago, Josmir Maria and Anais Liriano. The main-speakers slide names Pastor Tito Figueroa and Pastor Jujie Rodriguez. The panel slide names P. Jujie, Min. Anais, P. Valerie and P. Jordan; the main poster spells P. Jordon Diaz, so retain that established full spelling. Anais Liriano and the pastors remain conference billing only and are excluded from musical-performer schema. Pastor Valerie’s surname is not published; do not infer it. Retain the existing mica profile association and headliner; no new curated artist profiles are authorized. Date, 11 AM–3 PM event time, venue, address and $25 registration are unchanged; individual performance times are not announced. Preserve the older official post as historical provenance.",
     "sources": [
+      {
+        "name": "CHOSEN October 30 official flyer and speaker, panel and worship slides",
+        "url": "https://www.instagram.com/p/DfIH5VRCe2k/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 118
+      },
       {
         "name": "CHOSEN official 2026 flyer",
         "url": "https://www.instagram.com/p/DePgHcLpTMD/",
@@ -176,7 +186,8 @@
         "authority": "official_event",
         "priority": 100
       }
-    ]
+    ],
+    "publicNotice": "Worship: mica, Myron and Eddie Cuba. Main speakers: Pastor Tito Figueroa and Pastor Jujie Rodriguez. Panel: Pastor Jujie Rodriguez, Anais Liriano, Pastor Valerie and Pastor Jordon Diaz."
   },
   {
     "id": "victory-over-darkness-fullerton-2026-10-24",
