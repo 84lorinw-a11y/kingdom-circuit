@@ -108,6 +108,17 @@ def verify_site(site,day):
     errors=page_errors(pages,catalog,day)+canadian_catalog_errors(read_events(site),catalog,day)
     return {'asOf':day,'upcoming':len(catalog['shows']),'artistsChecked':len(paths)-2,'errors':errors}
 
+def live_expected_events(source):
+    # Source feeds lack the canonicalPath added to the final artifact. Resolve
+    # stable identities from local publication history, independently of the
+    # public catalog being checked, so a missing canonical still fails.
+    registry=source/'config/url-continuity.json'
+    state=json.loads(registry.read_text()) if registry.is_file() else {}
+    paths={source_id:record['path'] for event_id,record in state.get('events',{}).items()
+           for source_id in [event_id,*record.get('sourceIds',[])]}
+    return [dict(event,canonicalPath=paths[event['id']]) if event.get('id') in paths
+            else dict(event) for event in read_events(source)]
+
 def verify_live(origin,day):
     def read(path):
         req=urllib.request.Request(origin.rstrip('/')+'/'+path,headers={'User-Agent':'KingdomCircuit-freshness-check','Cache-Control':'no-cache'})
@@ -123,7 +134,7 @@ def verify_live(origin,day):
     paths=['index.html','shows/index.html',*(k.strip('/')+'/index.html' for k in dict.fromkeys(sample))]
     with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
         pages=dict(zip(paths,pool.map(read,paths)))
-    expected=read_events(Path(__file__).resolve().parents[1])
+    expected=live_expected_events(Path(__file__).resolve().parents[1])
     errors=page_errors(pages,catalog,day)+canadian_catalog_errors(expected,catalog,day)
     return {'asOf':day,'upcoming':len(catalog['shows']),'artistsChecked':len(paths)-2,'errors':errors}
 

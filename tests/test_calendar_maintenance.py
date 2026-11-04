@@ -1,11 +1,16 @@
+import copy
+import io
 import json
 import pathlib
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
+from urllib.parse import urlsplit
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / 'scripts'))
 import calendar_maintenance as maintenance
+from build_seo_site import event_path
 
 
 class CalendarMaintenanceTests(unittest.TestCase):
@@ -52,3 +57,77 @@ class CalendarMaintenanceTests(unittest.TestCase):
         self.assertEqual(maintenance.week_window('2026-10-26'), ('2026-10-26','2026-11-01','2026-11-02','2026-11-08'))
         self.assertEqual(maintenance.week_window('2026-12-31'), ('2026-12-28','2027-01-03','2027-01-04','2027-01-10'))
 
+
+class LiveCalendarCanonicalTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = pathlib.Path(self.temp.name)
+        (self.root / 'config').mkdir()
+        self.day = '2099-02-26'
+        self.events = [
+            dict(id='manual:renamed-canadian', title='Updated venue showcase',
+                 startDate=self.day, endDate=self.day, city='Surrey', state='BC',
+                 country='CA', artists=['Test Artist'], status='scheduled'),
+            dict(id='manual:other-canadian', title='Other Canadian concert',
+                 startDate=self.day, endDate=self.day, city='Saskatoon', state='SK',
+                 country='CA', artists=['Other Artist'], status='scheduled'),
+        ]
+        self.original_path = event_path(dict(self.events[0], title='Original announced showcase'))
+        self.other_path = event_path(self.events[1])
+        self.registry = {'events': {
+            self.events[0]['id']: {'path': self.original_path, 'sourceIds': ['provider:renamed-alias']},
+            self.events[1]['id']: {'path': self.other_path, 'sourceIds': []},
+        }}
+
+    def verify_live(self, paths, with_registry=True):
+        registry_file = self.root / 'config/url-continuity.json'
+        if with_registry:
+            registry_file.write_text(json.dumps(self.registry))
+        catalog = {'asOf': self.day, 'artists': {}, 'shows': [
+            {'path': path, 'date': self.day, 'end': self.day} for path in paths]}
+        home = (f'<div data-national-home data-preview-as-of="{self.day}"></div>'
+                '<section id="kc-week-shelf"></section><section id="kc-next-shelf"></section>')
+        cards = ''.join(
+            f'<article data-event-card><h3><a href="{path}">Concert</a></h3>'
+            '<img src="/flyer.jpg"><p class="artist-line">Test Artist</p>'
+            '<div class="event-badges"></div></article>' for path in paths)
+        responses = {'/assets/fan-show-catalog.json': json.dumps(catalog),
+                     '/index.html': home, '/shows/index.html': cards}
+        original_events = copy.deepcopy(self.events)
+        original_registry = registry_file.read_bytes() if registry_file.exists() else None
+        with patch.object(maintenance, '__file__', str(self.root / 'scripts/calendar_maintenance.py')), \
+             patch.object(maintenance, 'read_events', return_value=self.events), \
+             patch.object(maintenance.urllib.request, 'urlopen',
+                          side_effect=lambda request, timeout: io.BytesIO(
+                              responses[urlsplit(request.full_url).path].encode())):
+            result = maintenance.verify_live('https://example.invalid', self.day)
+        self.assertEqual(self.events, original_events, 'Live checking must not mutate source records')
+        if original_registry is not None:
+            self.assertEqual(registry_file.read_bytes(), original_registry)
+        return result['errors']
+
+    def test_live_renamed_show_uses_local_published_identity(self):
+        self.assertNotEqual(self.original_path, event_path(self.events[0]))
+        self.assertEqual(self.verify_live([self.original_path, self.other_path]), [])
+
+    def test_live_source_id_alias_uses_same_local_published_identity(self):
+        self.events[0]['id'] = 'provider:renamed-alias'
+        self.assertEqual(self.verify_live([self.original_path, self.other_path]), [])
+
+    def test_live_alias_route_cannot_mask_missing_canonical_listing(self):
+        errors = self.verify_live([event_path(self.events[0]), self.other_path])
+        self.assertEqual(errors, [f'Canadian show missing from published catalog: {self.original_path}'])
+
+    def test_live_missing_other_canadian_still_fails(self):
+        errors = self.verify_live([self.original_path])
+        self.assertEqual(errors, [f'Canadian show missing from published catalog: {self.other_path}'])
+
+    def test_live_unregistered_show_keeps_generated_path_fallback(self):
+        self.events[0]['id'] = 'manual:new-canadian-show'
+        generated = event_path(self.events[0])
+        self.assertEqual(self.verify_live([generated, self.other_path]), [])
+
+    def test_live_without_registry_keeps_generated_path_fallback(self):
+        self.assertEqual(self.verify_live([event_path(event) for event in self.events],
+                                          with_registry=False), [])
