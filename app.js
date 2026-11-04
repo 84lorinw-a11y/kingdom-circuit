@@ -427,7 +427,8 @@ const ARTIST_ROSTER_ORDER = [
   "Loupin",
   "Jon Corbin",
   "Kojo Dave",
-  "elllli"
+  "elllli",
+  "GZeal"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -6232,6 +6233,20 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/elllli-official-instagram-nov3.jpg",
     "imagePosition": "50% 20%",
     "country": "CA",
+    "sourceRegistryVerified": true
+  },
+  "gzeal": {
+    "aliases": [
+      "GZeal"
+    ],
+    "website": "https://linktr.ee/gzeal",
+    "instagramProfile": "https://www.instagram.com/gzeal104/",
+    "spotifyProfile": "https://open.spotify.com/artist/46KagDbgfOCQduqfTHbYrK",
+    "youtubeProfile": "https://www.youtube.com/channel/UChGCHNHeZsMNLMpXdA4Gj5g",
+    "officialImageSource": "https://www.instagram.com/gzeal104/",
+    "imageUrl": "assets/artists/gzeal-official-linktree-nov4.png",
+    "imagePosition": "58% 0%",
+    "country": "US",
     "sourceRegistryVerified": true
   }
 };
@@ -12039,6 +12054,20 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imagePosition": "50% 20%",
     "country": "CA",
     "sourceRegistryVerified": true
+  },
+  "gzeal": {
+    "aliases": [
+      "GZeal"
+    ],
+    "website": "https://linktr.ee/gzeal",
+    "instagramProfile": "https://www.instagram.com/gzeal104/",
+    "spotifyProfile": "https://open.spotify.com/artist/46KagDbgfOCQduqfTHbYrK",
+    "youtubeProfile": "https://www.youtube.com/channel/UChGCHNHeZsMNLMpXdA4Gj5g",
+    "officialImageSource": "https://www.instagram.com/gzeal104/",
+    "imageUrl": "assets/artists/gzeal-official-linktree-nov4.png",
+    "imagePosition": "58% 0%",
+    "country": "US",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -13693,6 +13722,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "elllli": {
     "imageUrl": "assets/artists/elllli-official-instagram-nov3.jpg",
     "imagePosition": "50% 20%"
+  },
+  "gzeal": {
+    "imageUrl": "assets/artists/gzeal-official-linktree-nov4.png",
+    "imagePosition": "58% 0%"
   }
 };
 
