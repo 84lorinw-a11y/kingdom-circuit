@@ -46,6 +46,9 @@ jobs:
       - name: Re-enforce after registry generation
         run: python scripts/enforce_sep11_catalog_audit.py
 
+      - name: Reapply current verified corrections after the legacy audit
+        run: python scripts/replay_source_update.py normalize
+
       - name: Run project tests
         run: python -m unittest discover -s tests -p 'test_*.py' -v
 
@@ -55,4 +58,6 @@ jobs:
           python scripts/publish_automation_changes.py \
             --message "Apply verified Sep 11 catalog audit [catalog audit]" \
             --replay "python scripts/replay_source_update.py audit" \
-            events.json supplemental-events.json config/manual-events.json config/artists.json app.js coverage-gaps.json tests/test_update_events.py
+            events.json supplemental-events.json config/manual-events.json config/artists.json app.js coverage-gaps.json tests/test_update_events.py \
+            event-history.json config/permanent-state-pages.json config/verified-artist-registry-updates.json \
+            config/verified-artist-websites.json config/artist-website-seed-events.json

@@ -34,6 +34,7 @@ def main():
         run('apply_miles_cj_fall_2026_repairs.py')
     elif kind == 'audit':
         for script in ['enforce_sep11_catalog_audit.py', 'sync_verified_artist_registry.py', 'enforce_sep11_catalog_audit.py']: run(script)
+        for script in SOURCE_REPAIRS: run(script)
         subprocess.run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_*.py', '-q'], check=True)
     elif kind in ('full', 'websites'):
         run('sync_verified_artist_registry.py')

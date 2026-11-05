@@ -95,6 +95,106 @@ class LocalConcertDateTests(unittest.TestCase):
             repair.apply(root, '2026-11-04')
             self.assertEqual(once, {name: (root / name).read_bytes() for name in inputs})
 
+    def test_simultaneous_scootie_aliases_merge_without_losing_approved_details(self):
+        import apply_sep26_source_corrections as repair
+        canonical = {
+            'id': SCOOTIE_CANONICAL_ID, 'title': 'Scootie Wop @ MATCH',
+            'officialUrl': 'https://www.instagram.com/p/DfTOHOODGjO/',
+            'ticketUrl': SCOOTIE_URL, 'startDate': '2027-05-01',
+            'startTime': '18:00', 'endTime': '22:00', 'timezone': 'America/Chicago',
+            'venue': 'Match Midtown Arts & Theater Center Houston',
+            'address': '3400 Main St', 'city': 'Houston', 'state': 'TX',
+            'artists': ['Scootie Wop'], 'status': 'rescheduled',
+            'firstSeen': '2026-08-09T00:00:00Z',
+            'sources': [{'name': 'Apple Music', 'url': SCOOTIE_URL}],
+        }
+        manual = dict(canonical, id='manual:scootie-wop-match-houston-2026',
+                      title='Scootie Wop at MATCH', firstSeen='2026-11-04T00:00:00Z',
+                      ticketUrl='https://www.bandsintown.com/e/1039613019',
+                      venue='MATCH - Midtown Arts and Theater Center Houston',
+                      sources=[{'name': 'Artist calendar', 'url': 'https://example.test/artist'}],
+                      legacyEventPaths=['/event/previous-scootie-listing/'])
+        provider = dict(canonical, id=SCOOTIE_PROVIDER_ALIAS, officialUrl=SCOOTIE_URL,
+                        startDate='2026-11-15', firstSeen='2026-08-08T00:00:00Z')
+        other = dict(canonical, id='another-scootie-show',
+                     officialUrl='https://example.test/other', ticketUrl='')
+        # Cover aliases arriving before the canonical record and rows already
+        # rewritten to the same ID by an earlier refresh.
+        for incoming in ([manual, canonical, provider],
+                         [dict(manual, id=SCOOTIE_CANONICAL_ID), canonical]):
+            with self.subTest(ids=[row['id'] for row in incoming]), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                (root / 'config').mkdir()
+                history = {'historyVersion': 2, 'events': []}
+                inputs = {'events.json': [*copy.deepcopy(incoming), copy.deepcopy(other)],
+                          'supplemental-events.json': [], 'config/manual-events.json': [],
+                          'event-history.json': history}
+                for name, value in inputs.items():
+                    (root / name).write_text(json.dumps(value))
+                repair.apply(root, '2026-11-05')
+                current = json.loads((root / 'events.json').read_text())
+                copies = [row for row in current if row['id'] == SCOOTIE_CANONICAL_ID]
+                self.assertEqual(1, len(copies))
+                merged = copies[0]
+                for key in ('title', 'ticketUrl', 'venue', 'address', 'artists'):
+                    self.assertEqual(canonical[key], merged[key], key)
+                self.assertEqual('2027-05-01', merged['startDate'])
+                self.assertEqual('2027-05-01T18:00:00-05:00', merged['startDateTime'])
+                self.assertEqual('rescheduled', merged['status'])
+                self.assertEqual('2026-11-14', merged['previousStartDate'])
+                self.assertEqual(min(row['firstSeen'] for row in incoming), merged['firstSeen'])
+                self.assertEqual('assets/events/scootie-wop-chh-matters-rescheduled-2027-05-01.jpg', merged['image'])
+                urls = {row['url'] for row in merged['sources']}
+                self.assertTrue({SCOOTIE_URL, 'https://example.test/artist',
+                                 'https://www.bandsintown.com/e/1039613019'} <= urls)
+                self.assertIn('/event/previous-scootie-listing/', merged['legacyEventPaths'])
+                self.assertIn(other, current)
+                self.assertEqual(history, json.loads((root / 'event-history.json').read_text()))
+                once = {name: (root / name).read_bytes() for name in inputs}
+                repair.apply(root, '2026-11-05')
+                self.assertEqual(once, {name: (root / name).read_bytes() for name in inputs})
+
+    def test_scootie_consolidation_keeps_reviewed_discovery_age_for_late_reimports(self):
+        from apply_verified_date_corrections import reconcile_scootie_duplicates
+        canonical = {'id': SCOOTIE_CANONICAL_ID, 'title': 'Scootie Wop at MATCH',
+                     'officialUrl': SCOOTIE_URL, 'ticketUrl': SCOOTIE_URL,
+                     'startDate': '2027-05-01', 'startTime': '18:00',
+                     'venue': 'MATCH - Midtown Arts and Theater Center Houston',
+                     'city': 'Houston', 'state': 'TX', 'artists': ['Scootie Wop'],
+                     'firstSeen': '2026-11-04T00:00:00Z'}
+        rows = [canonical, dict(canonical, id=SCOOTIE_PROVIDER_ALIAS,
+                                firstSeen='2026-11-05T00:00:00Z')]
+        reconcile_scootie_duplicates(rows)
+        self.assertEqual(1, len(rows))
+        self.assertEqual('2026-08-09T00:00:00Z', rows[0]['firstSeen'])
+        once = copy.deepcopy(rows)
+        reconcile_scootie_duplicates(rows)
+        self.assertEqual(once, rows)
+
+    def test_scootie_consolidation_preserves_cancellation_and_rejects_conflicting_sessions(self):
+        from apply_verified_date_corrections import reconcile_scootie_duplicates
+        canonical = {'id': SCOOTIE_CANONICAL_ID, 'title': 'Scootie Wop at MATCH',
+                     'officialUrl': SCOOTIE_URL, 'ticketUrl': SCOOTIE_URL,
+                     'startDate': '2027-05-01', 'startTime': '18:00',
+                     'venue': 'MATCH - Midtown Arts and Theater Center Houston',
+                     'city': 'Houston', 'state': 'TX', 'artists': ['Scootie Wop']}
+        cancelled = dict(canonical, id=SCOOTIE_PROVIDER_ALIAS, status='cancelled')
+        rows = [copy.deepcopy(canonical), cancelled]
+        reconcile_scootie_duplicates(rows)
+        self.assertEqual(1, len(rows))
+        self.assertEqual('cancelled', rows[0]['status'])
+        self.assertNotIn(SCOOTIE_CANONICAL_ID, rows[0]['mergedFromIds'])
+        conflict = [copy.deepcopy(canonical), dict(canonical, startTime='21:00')]
+        before = copy.deepcopy(conflict)
+        with self.assertRaisesRegex(ValueError, 'conflicts with the reviewed MATCH performance'):
+            reconcile_scootie_duplicates(conflict)
+        self.assertEqual(before, conflict)
+        future = [copy.deepcopy(canonical), dict(canonical, startDate='2027-06-01')]
+        before = copy.deepcopy(future)
+        reconcile_scootie_duplicates(future)
+        self.assertEqual(before, future)
+        reconcile_scootie_duplicates([])
+
     def test_archive_bot_does_not_restore_superseded_date_from_git_snapshot(self):
         from archive_event_history import canonicalize_known_event_identity
         stale = {'id': SCOOTIE_PROVIDER_ALIAS, 'officialUrl': SCOOTIE_URL,

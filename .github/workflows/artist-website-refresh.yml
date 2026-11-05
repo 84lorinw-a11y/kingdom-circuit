@@ -43,6 +43,11 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install pinned image verification backend
+        run: |
+          python -m pip install --disable-pip-version-check --no-input --only-binary=:all: Pillow==12.3.0
+          python -c "from PIL import features; assert features.check('webp'), 'Pillow WebP support missing'"
+
       - name: Sync verified artist registry
         run: python scripts/sync_verified_artist_registry.py
 

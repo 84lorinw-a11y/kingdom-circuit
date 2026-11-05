@@ -15,7 +15,8 @@ from apply_verified_show_artwork import patch_event as patch_show_artwork
 from apply_verified_show_artwork import reconcile_provider_duplicates
 from apply_sep26_requested_lineups import patch_event as patch_requested_lineups
 from catalog_removals import apply as apply_catalog_removals
-from apply_verified_date_corrections import patch_event as patch_verified_dates, normalize_provider_identity
+from apply_verified_date_corrections import (patch_event as patch_verified_dates,
+    normalize_provider_identity, reconcile_scootie_duplicates)
 from apply_oct6_show_audit import apply as apply_oct6_audit
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -153,6 +154,7 @@ def apply(root: Path = ROOT, today: str | None = None) -> None:
     # Normalize the observed provider alias before artwork pins are resolved.
     # Retained history keeps its recorded identities; only current feeds change.
     for rows in feeds.values():
+        reconcile_scootie_duplicates(rows)
         for row in rows:
             normalize_provider_identity(row)
 

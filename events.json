@@ -6138,74 +6138,34 @@
         "type": "jsonld",
         "authority": "artist_calendar",
         "priority": 74
-      }
-    ],
-    "lastVerified": "2026-11-05T15:10:18Z",
-    "confidence": "high",
-    "endDate": "2027-05-01",
-    "endTime": "22:00",
-    "startDateTime": "2027-05-01T18:00:00-05:00",
-    "endDateTime": "2027-05-01T22:00:00-05:00",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z",
-    "previousStartDate": "2026-11-14",
-    "auditVerified": "2026-11-04",
-    "publicDescription": "Rescheduled from November 14, 2026 to May 1, 2027. Existing tickets remain valid.",
-    "imageOverride": true,
-    "imageSource": "APTITUDE official reschedule announcement",
-    "imageSourceUrl": "https://www.instagram.com/p/DfTOHOODGjO/",
-    "detailImageLayout": "portrait"
-  },
-  {
-    "id": "official:0dd5f599b4db080206cf",
-    "title": "Scootie Wop at MATCH",
-    "startDate": "2027-05-01",
-    "startTime": "18:00",
-    "timezone": "America/Chicago",
-    "venue": "MATCH - Midtown Arts and Theater Center Houston",
-    "address": "3400 Main St",
-    "city": "Houston",
-    "state": "TX",
-    "country": "US",
-    "artists": [
-      "Scootie Wop"
-    ],
-    "headliner": "Scootie Wop",
-    "eventType": "concert",
-    "status": "rescheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/1039613019-scootie-wop-at-match-midtown-arts-and-theater-center-houston",
-    "officialUrl": "https://www.instagram.com/p/DfTOHOODGjO/",
-    "image": "assets/events/scootie-wop-chh-matters-rescheduled-2027-05-01.jpg",
-    "price": "",
-    "sourceName": "APTITUDE official reschedule announcement",
-    "sources": [
+      },
       {
-        "name": "APTITUDE official reschedule announcement",
-        "url": "https://www.instagram.com/p/DfTOHOODGjO/",
-        "type": "manual_verified",
-        "authority": "organizer",
-        "priority": 115
+        "name": "Retained ticketUrl",
+        "url": "https://www.bandsintown.com/e/1039613019-scootie-wop-at-match-midtown-arts-and-theater-center-houston",
+        "type": "retained_reference"
       }
     ],
     "lastVerified": "2026-11-05T15:10:18Z",
     "confidence": "high",
     "endDate": "2027-05-01",
+    "endTime": "22:00",
+    "startDateTime": "2027-05-01T18:00:00-05:00",
+    "endDateTime": "2027-05-01T22:00:00-05:00",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
-    "endTime": "22:00",
-    "startDateTime": "2027-05-01T18:00:00-05:00",
-    "endDateTime": "2027-05-01T22:00:00-05:00",
     "previousStartDate": "2026-11-14",
     "auditVerified": "2026-11-04",
     "publicDescription": "Rescheduled from November 14, 2026 to May 1, 2027. Existing tickets remain valid.",
     "imageOverride": true,
     "imageSource": "APTITUDE official reschedule announcement",
     "imageSourceUrl": "https://www.instagram.com/p/DfTOHOODGjO/",
-    "detailImageLayout": "portrait"
+    "detailImageLayout": "portrait",
+    "legacyEventPaths": [
+      "/event/scootie-wop-at-match-2027-05-01-houston-939e4b/"
+    ],
+    "mergedFromIds": []
   },
   {
     "id": "manual:rural-music-festival-2027",
