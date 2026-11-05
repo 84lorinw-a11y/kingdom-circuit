@@ -13335,5 +13335,78 @@
     "firstSeen": "2026-11-04",
     "lastVerified": "2026-11-05T01:06:28Z",
     "auditVerified": "2026-11-04"
+  },
+  {
+    "id": "anthem-night-dmv-capitol-heights-2026-11-20",
+    "title": "Anthem Night DMV — Trap Worship Pop Up",
+    "startDate": "2026-11-20",
+    "endDate": "2026-11-20",
+    "startTime": "",
+    "endTime": "",
+    "doorsTime": "18:30",
+    "timezone": "America/New_York",
+    "venue": "7230 Central Avenue",
+    "address": "7230 Central Avenue",
+    "postalCode": "20743",
+    "city": "Capitol Heights",
+    "state": "MD",
+    "country": "US",
+    "artists": [
+      "BrvndonP"
+    ],
+    "headliner": "BrvndonP",
+    "advertisedBilling": [
+      "BrvndonP"
+    ],
+    "officialBill": [
+      "BrvndonP"
+    ],
+    "ticketUrl": "https://brushfire.com/anthemnights/dmv/643773",
+    "officialUrl": "https://brushfire.com/anthemnights/dmv/643773",
+    "image": "assets/events/anthem-night-dmv-capitol-heights-2026-11-20.png",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "detailImageLayout": "portrait",
+    "imageSource": "Anthem Nights official DMV main flyer from linked Brushfire event",
+    "imageSourceUrl": "https://brushfire.com/anthemnights/dmv/643773",
+    "price": "$26.75 general admission ($25.00 + $1.75 service fee)",
+    "ageRestriction": "",
+    "publicNotice": "Doors open at 6:30 PM EST. Performance start and end times are unannounced. Special guests are unannounced. Standing room.",
+    "publicDescription": "BrvndonP brings Anthem Night to the DMV for a live trap worship pop-up on Friday, November 20, 2026, at 7230 Central Avenue, Capitol Heights, Maryland 20743. Doors open at 6:30 PM Eastern; performance start and end times are unannounced. The experience includes a live band and vocal collective. Special guests have not been announced. General admission is listed at $25 plus a $1.75 service fee ($26.75 total), with standing room. An age policy and proper venue name have not been published.",
+    "notes": "Owner approved adding this new DMV show after November 4 review established it was absent from all source/live listings, with no reschedule evidence. It is distinct from the archived October 30 Hurst TX Anthem Night and December 11 Chicago listing. Fresh artist/organizer joint Instagram post, matching full original flyer, official organizer homepage/upcoming page and linked Brushfire event643773 confirm November20,2026 and doors18:30EST. Brushfire URL supplied by organizer initially contains /DFW/ but same numericID resolves canonical /dmv/; do not confuse it with pastDFW event642609. Static Brushfire metadata contained stale July20/Detroit7PM copy, but current rendered details are DMV-specific; ignore stale copy. Header6:30 explicitly says doors, matching flyer and artist caption; startTime/endTime intentionally blank and no exact performanceDateTime invented. Current GET TICKETS table explicitly lists GeneralAdmission25USD plus1.75service fee,total26.75, standingroom. No age restriction or separate proper venue name provided, so address used for location and age blank. Flyer deliberately obscures specialguestnames; do not infer AntwaunCooks/JanaeSimmons from separateHurst show. Preserve existing416artist registry/socials/images. LegitimatefirstSeenNovember4 from original source check.",
+    "sourceName": "BrvndonP and Anthem Nights official announcement and Brushfire tickets",
+    "sources": [
+      {
+        "name": "BrvndonP and Anthem Nights joint DMV announcement",
+        "url": "https://www.instagram.com/p/DfVwyFwoIAt/",
+        "type": "manual_verified",
+        "authority": "artist_announcement",
+        "priority": 130
+      },
+      {
+        "name": "Anthem Nights official DMV Brushfire event",
+        "url": "https://brushfire.com/anthemnights/dmv/643773",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 125
+      },
+      {
+        "name": "Anthem Nights official upcoming events",
+        "url": "https://anthemnight.com/upcoming-events",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 125
+      }
+    ],
+    "eventType": "concert",
+    "status": "scheduled",
+    "musicConfirmed": true,
+    "lineupExplicit": true,
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-11-04",
+    "lastVerified": "2026-11-05T02:35:56Z",
+    "auditVerified": "2026-11-04"
   }
 ]
