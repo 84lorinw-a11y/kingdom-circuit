@@ -884,93 +884,6 @@
     "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
   },
   {
-    "id": "bandsintown:108881783",
-    "title": "Hulvey at Vines Center",
-    "startDate": "2026-11-06",
-    "startTime": "20:00",
-    "timezone": "America/New_York",
-    "venue": "Vines Center",
-    "address": "1971 University Blvd",
-    "city": "Lynchburg",
-    "state": "VA",
-    "country": "US",
-    "artists": [
-      "Hulvey",
-      "Torey D'Shaun"
-    ],
-    "headliner": "Hulvey",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://events.liberty.edu/event/hulvey-concert",
-    "officialUrl": "https://events.liberty.edu/event/hulvey-concert",
-    "image": "assets/events/hulvey-liberty-2026-11-06.png",
-    "price": "",
-    "sourceName": "Liberty University",
-    "sources": [
-      {
-        "name": "Liberty University",
-        "url": "https://events.liberty.edu/event/hulvey-concert",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 100
-      },
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/108881783?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      },
-      {
-        "name": "Reach Records - Hulvey",
-        "url": "https://www.reachrecords.com/artists/hulvey/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 86
-      },
-      {
-        "name": "Reach Records consolidated calendar",
-        "url": "https://www.reachrecords.com/events/",
-        "type": "reach_records",
-        "authority": "artist_label",
-        "priority": 84
-      }
-    ],
-    "confidence": "high",
-    "bandsintownEventId": "108881783",
-    "bandsintownArtistId": "15506918",
-    "bandsintownResolvedName": "Hulvey",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Hulvey",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Liberty University official Hulvey concert artwork",
-    "imageSourceUrl": "https://events.liberty.edu/event/hulvey-concert",
-    "auditVerified": "2026-10-29",
-    "firstSeen": "2026-09-09T14:51:28Z",
-    "legacyEventPaths": [
-      "/event/hulvey-live-at-vines-center-2026-11-06-lynchburg-dd0c71/"
-    ],
-    "mergedFromIds": [
-      "official:82953bf17964628bbd9b"
-    ],
-    "supportActs": [
-      "Torey D'Shaun"
-    ],
-    "advertisedBilling": [
-      "Hulvey",
-      "Torey D'Shaun"
-    ],
-    "officialBill": [
-      "Hulvey",
-      "Torey D'Shaun"
-    ],
-    "lineupExplicit": true,
-    "endTime": "22:00",
-    "notes": "October 29 audit: Liberty University's official concert page names Torey D'Shaun as opener and lists 8–10 PM. Preserve the existing event identity and title."
-  },
-  {
     "id": "official:652bb96bc9c6543ec7d3",
     "title": "WHATUPRG — Live at Vanguard University",
     "startDate": "2026-11-06",
@@ -1221,6 +1134,93 @@
       }
     ],
     "notes": "Eventbrite organizer page confirms Nov 6, 2026, 8:00 PM event start, 6111 S Gramercy Pl, Los Angeles, free entry, ages 16+, and a later live Don Ready set. Exact Don Ready performance start is not published; 8 PM is the event start, not a verified set time. Retain original Club 2:17 registration as an alternate source."
+  },
+  {
+    "id": "bandsintown:108881783",
+    "title": "Hulvey at Vines Center",
+    "startDate": "2026-11-06",
+    "startTime": "20:00",
+    "timezone": "America/New_York",
+    "venue": "Vines Center",
+    "address": "1971 University Blvd",
+    "city": "Lynchburg",
+    "state": "VA",
+    "country": "US",
+    "artists": [
+      "Hulvey",
+      "Torey D'Shaun"
+    ],
+    "headliner": "Hulvey",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://events.liberty.edu/event/hulvey-concert",
+    "officialUrl": "https://events.liberty.edu/event/hulvey-concert",
+    "image": "assets/events/hulvey-liberty-2026-11-06.png",
+    "price": "",
+    "sourceName": "Liberty University",
+    "sources": [
+      {
+        "name": "Liberty University",
+        "url": "https://events.liberty.edu/event/hulvey-concert",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
+      },
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/108881783?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      },
+      {
+        "name": "Reach Records - Hulvey",
+        "url": "https://www.reachrecords.com/artists/hulvey/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      },
+      {
+        "name": "Reach Records consolidated calendar",
+        "url": "https://www.reachrecords.com/events/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 84
+      }
+    ],
+    "confidence": "high",
+    "bandsintownEventId": "108881783",
+    "bandsintownArtistId": "15506918",
+    "bandsintownResolvedName": "Hulvey",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Hulvey",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Liberty University official Hulvey concert artwork",
+    "imageSourceUrl": "https://events.liberty.edu/event/hulvey-concert",
+    "auditVerified": "2026-10-29",
+    "firstSeen": "2026-09-09T14:51:28Z",
+    "legacyEventPaths": [
+      "/event/hulvey-live-at-vines-center-2026-11-06-lynchburg-dd0c71/"
+    ],
+    "mergedFromIds": [
+      "official:82953bf17964628bbd9b"
+    ],
+    "supportActs": [
+      "Torey D'Shaun"
+    ],
+    "advertisedBilling": [
+      "Hulvey",
+      "Torey D'Shaun"
+    ],
+    "officialBill": [
+      "Hulvey",
+      "Torey D'Shaun"
+    ],
+    "lineupExplicit": true,
+    "endTime": "22:00",
+    "notes": "October 29 audit: Liberty University's official concert page names Torey D'Shaun as opener and lists 8–10 PM. Preserve the existing event identity and title."
   },
   {
     "id": "bandsintown:108940352",
@@ -1564,7 +1564,8 @@
     "notes": "All 20 named performers on the official Saturday poster are included, including A. Ward and Loso in the compliment battle and named Holy Culture showcase/Gritty stage artists. Gifted Hands is Saturday according to both the current schedule and poster. Beat battles and breakdancing descriptions without named performers are not invented artists. October 8: owner verified DJ Geech in the artist Sheet; official team page identifies Maleek Geech Taylor, and current Saturday concert poster explicitly bills Geech. Connect that existing concert billing to DJ Geech’s curated profile. Do not infer concerts from his separate director or panel roles. October 12: newly owner-verified artist profiles linked to confirmed billing. Nigil Lee personally confirms November 7; the poster spelling Nigel is a typo. October 23: The Rkitect explicitly confirms November 7 on the Gritty Stage; retain as unlinked performer billing. The published 7 PM concert start is not an asserted individual set time.",
     "imageOverride": true,
     "imageSource": "Official Flavor Fest Saturday concert poster",
-    "imageSourceUrl": "https://www.flavorfest.org/"
+    "imageSourceUrl": "https://www.flavorfest.org/",
+    "authority": "official_festival"
   },
   {
     "title": "Miles Minnick – Christlike University – Florida Campus Tour in Jacksonville",
@@ -2762,75 +2763,6 @@
     ]
   },
   {
-    "id": "official:0dd5f599b4db080206cf",
-    "title": "Scootie Wop @ MATCH - Midtown Arts and Theater Center Houston",
-    "startDate": "2027-05-01",
-    "startTime": "18:00",
-    "timezone": "America/Chicago",
-    "venue": "Match Midtown Arts & Theater Center Houston",
-    "address": "3400 Main St",
-    "city": "Houston",
-    "state": "TX",
-    "country": "US",
-    "artists": [
-      "Scootie Wop"
-    ],
-    "headliner": "Scootie Wop",
-    "eventType": "concert",
-    "status": "rescheduled",
-    "ticketUrl": "https://music.apple.com/us/concerts/ce.b01ccaf9-dcf3-44a6-afbf-4bd6d2fc60ae",
-    "officialUrl": "https://www.instagram.com/p/DfTOHOODGjO/",
-    "image": "assets/events/scootie-wop-chh-matters-rescheduled-2027-05-01.jpg",
-    "price": "",
-    "sourceName": "APTITUDE official reschedule announcement",
-    "sources": [
-      {
-        "name": "APTITUDE official reschedule announcement",
-        "url": "https://www.instagram.com/p/DfTOHOODGjO/",
-        "type": "manual_verified",
-        "authority": "organizer",
-        "priority": 115
-      },
-      {
-        "name": "Scootie Wop Apple Music concert",
-        "url": "https://music.apple.com/us/concerts/ce.b01ccaf9-dcf3-44a6-afbf-4bd6d2fc60ae",
-        "type": "jsonld",
-        "authority": "artist_calendar",
-        "priority": 74
-      },
-      {
-        "name": "Retained ticketUrl",
-        "url": "https://www.bandsintown.com/e/1039613019-scootie-wop-at-match-midtown-arts-and-theater-center-houston",
-        "type": "retained_reference"
-      }
-    ],
-    "lastVerified": "2026-11-05T23:24:24Z",
-    "confidence": "high",
-    "endDate": "2027-05-01",
-    "endTime": "22:00",
-    "startDateTime": "2027-05-01T18:00:00-05:00",
-    "endDateTime": "2027-05-01T22:00:00-05:00",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "verifiedVersion": 9,
-    "firstSeen": "2026-08-09T00:00:00Z",
-    "previousStartDate": "2026-11-14",
-    "auditVerified": "2026-11-04",
-    "publicDescription": "Rescheduled from November 14, 2026 to May 1, 2027. Existing tickets remain valid.",
-    "legacyEventPaths": [
-      "/event/scootie-wop-match-midtown-arts-and-theater-center-houston-2026-11-14-houston-1fc3cb/",
-      "/event/scootie-wop-at-match-2027-05-01-houston-c640c4/"
-    ],
-    "mergedFromIds": [
-      "official:1a0b83a961646c580989",
-      "manual:scootie-wop-match-houston-2026"
-    ],
-    "imageOverride": true,
-    "imageSource": "APTITUDE official reschedule announcement",
-    "imageSourceUrl": "https://www.instagram.com/p/DfTOHOODGjO/",
-    "detailImageLayout": "portrait"
-  },
-  {
     "id": "manual:cherish-fashion-show-benefit-charlotte-2026-11-14",
     "title": "C.h.e.r.i.sh. Fashion Show Benefit",
     "startDate": "2026-11-14",
@@ -3041,13 +2973,6 @@
         "type": "bandsintown_rest",
         "authority": "artist_calendar",
         "priority": 74
-      },
-      {
-        "name": "Ticketmaster",
-        "url": "https://www.ticketmaster.com/miles-minnick-glovember-los-angeles-california-11-14-2026/event/09006537CF500ECC",
-        "type": "ticketmaster",
-        "authority": "venue_ticket",
-        "priority": 94
       }
     ],
     "confidence": "medium",
@@ -3092,8 +3017,7 @@
     "imageSourceUrl": "https://www.instagram.com/p/Ddo8xGgoQhN/",
     "legacyEventNotice": "GLOVEMBER takes place November 14, 2026 at 8 PM at The Belasco. This duplicate listing has been combined with the main event.",
     "mergedFromIds": [
-      "manual:cj-emulous-glo-concert-los-angeles-2026",
-      "ticketmaster:vv1AaZkfMGkd2fZDG"
+      "manual:cj-emulous-glo-concert-los-angeles-2026"
     ],
     "firstSeen": "2026-08-09T00:00:00Z"
   },
@@ -4400,7 +4324,7 @@
         "url": "https://www.cjemulous.com/event-details/zion-ultra-lounge-w-miles-minnick-cj-emulous",
         "type": "manual_verified",
         "authority": "artist_calendar",
-        "priority": 100
+        "priority": 112
       }
     ],
     "lastVerified": "2026-11-05T23:24:24Z",
@@ -5279,13 +5203,6 @@
         "type": "ticketmaster",
         "authority": "venue_ticket",
         "priority": 94
-      },
-      {
-        "name": "Sony Hall / Ticketmaster official event",
-        "url": "https://sonyhall.com/shows/?eid=TWL7887887",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
       }
     ],
     "image": "assets/events/alex-jean-welcome-home-tour-2026-legs-1-2.jpg",
@@ -5710,13 +5627,6 @@
         "type": "manual_verified",
         "authority": "artist_calendar",
         "priority": 115
-      },
-      {
-        "name": "ChristianHits consolidated show feed",
-        "url": "https://www.universalorlando.com/web/en/us/things-to-do/events/rock-the-universe",
-        "type": "christian_hits",
-        "authority": "aggregator",
-        "priority": 46
       }
     ],
     "auditVerified": "2026-10-08",
@@ -6192,6 +6102,75 @@
         "priority": 112
       }
     ]
+  },
+  {
+    "id": "official:0dd5f599b4db080206cf",
+    "title": "Scootie Wop @ MATCH - Midtown Arts and Theater Center Houston",
+    "startDate": "2027-05-01",
+    "startTime": "18:00",
+    "timezone": "America/Chicago",
+    "venue": "Match Midtown Arts & Theater Center Houston",
+    "address": "3400 Main St",
+    "city": "Houston",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Scootie Wop"
+    ],
+    "headliner": "Scootie Wop",
+    "eventType": "concert",
+    "status": "rescheduled",
+    "ticketUrl": "https://music.apple.com/us/concerts/ce.b01ccaf9-dcf3-44a6-afbf-4bd6d2fc60ae",
+    "officialUrl": "https://www.instagram.com/p/DfTOHOODGjO/",
+    "image": "assets/events/scootie-wop-chh-matters-rescheduled-2027-05-01.jpg",
+    "price": "",
+    "sourceName": "APTITUDE official reschedule announcement",
+    "sources": [
+      {
+        "name": "APTITUDE official reschedule announcement",
+        "url": "https://www.instagram.com/p/DfTOHOODGjO/",
+        "type": "manual_verified",
+        "authority": "organizer",
+        "priority": 115
+      },
+      {
+        "name": "Scootie Wop Apple Music concert",
+        "url": "https://music.apple.com/us/concerts/ce.b01ccaf9-dcf3-44a6-afbf-4bd6d2fc60ae",
+        "type": "jsonld",
+        "authority": "artist_calendar",
+        "priority": 74
+      },
+      {
+        "name": "Retained ticketUrl",
+        "url": "https://www.bandsintown.com/e/1039613019-scootie-wop-at-match-midtown-arts-and-theater-center-houston",
+        "type": "retained_reference"
+      }
+    ],
+    "lastVerified": "2026-11-05T23:24:24Z",
+    "confidence": "high",
+    "endDate": "2027-05-01",
+    "endTime": "22:00",
+    "startDateTime": "2027-05-01T18:00:00-05:00",
+    "endDateTime": "2027-05-01T22:00:00-05:00",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-08-09T00:00:00Z",
+    "previousStartDate": "2026-11-14",
+    "auditVerified": "2026-11-04",
+    "publicDescription": "Rescheduled from November 14, 2026 to May 1, 2027. Existing tickets remain valid.",
+    "legacyEventPaths": [
+      "/event/scootie-wop-match-midtown-arts-and-theater-center-houston-2026-11-14-houston-1fc3cb/",
+      "/event/scootie-wop-at-match-2027-05-01-houston-c640c4/"
+    ],
+    "mergedFromIds": [
+      "official:1a0b83a961646c580989",
+      "manual:scootie-wop-match-houston-2026"
+    ],
+    "imageOverride": true,
+    "imageSource": "APTITUDE official reschedule announcement",
+    "imageSourceUrl": "https://www.instagram.com/p/DfTOHOODGjO/",
+    "detailImageLayout": "portrait"
   },
   {
     "id": "manual:rural-music-festival-2027",
