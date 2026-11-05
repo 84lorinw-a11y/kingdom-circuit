@@ -41,13 +41,19 @@ import xml.etree.ElementTree as ET
 DEFAULT_BASE = "/"
 DEFAULT_ORIGIN = "https://kingdomcircuit.com"
 DEFAULT_WIDTHS = (320, 640, 960, 1280)
-# These three landscape flyers retain their full original files. A 960px
-# derivative covers their typical 475px display at 2x without growing the
-# shared image budget or reducing quality for existing images.
+# These four new flyers retain their full original files. Their scoped
+# derivatives fit the existing image budget without changing other images.
 SOURCE_MAX_WIDTHS = {
     "bfe0fd493bc4c09990a335251bfac01cfeff676e56a22db17c654411dc5bf40e": 960,  # Northeast
     "76e8cc1fd94f9ba22c0fd15eafa8c25d7833ef9c7db5aa2c72205fc416854d0b": 960,  # Ozark
     "fb68c0da0d7b469f66fb1e75e5fc69a3be33d13c053c8dc1b78f93f9a13365a0": 960,  # Smoky Mountain
+    "2306ef2022bd043f5d9c78985e2824cb51a4d2ffcd7434aac70b3d186a52779c": 960,  # Sondaze Social
+}
+SOURCE_QUALITIES = {
+    "bfe0fd493bc4c09990a335251bfac01cfeff676e56a22db17c654411dc5bf40e": 75,
+    "76e8cc1fd94f9ba22c0fd15eafa8c25d7833ef9c7db5aa2c72205fc416854d0b": 75,
+    "fb68c0da0d7b469f66fb1e75e5fc69a3be33d13c053c8dc1b78f93f9a13365a0": 75,
+    "2306ef2022bd043f5d9c78985e2824cb51a4d2ffcd7434aac70b3d186a52779c": 75,
 }
 PORTRAIT_FRAMING_PATH = Path(__file__).resolve().parents[1] / "config/artist-profile-framing.json"
 CARD_SIZES = (
@@ -734,6 +740,7 @@ def render_content(
     if len(chosen) < 2:
         raise OptimizationFailure("insufficient-variant-widths")
     content_id = digest[:24]
+    quality = SOURCE_QUALITIES.get(digest, quality)
     # Preserve detail in the owner's red-lit 1K Phew portrait while retaining
     # the source-digest identity checked by the approved-portrait safeguards.
     if digest == "6df7b566d71761e10c8e1cb99b4a38f94aebbf25d22fdb70307a37addc31e829":

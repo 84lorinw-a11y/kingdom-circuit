@@ -15,20 +15,22 @@ import optimize_public_images as optimizer
 
 
 class PortraitResponsiveVariantTests(unittest.TestCase):
-    def test_winterfest_caps_leave_other_flyers_and_pinned_portraits_unchanged(self):
+    def test_new_flyer_limits_leave_other_flyers_and_pinned_portraits_unchanged(self):
         repository = Path(__file__).resolve().parents[1]
         cases = [
-            ('assets/events/northeast-winterfest-stamford-2027-01-15.jpg', [320, 640, 960], 'event-artwork'),
-            ('assets/events/ozark-winterfest-branson-2027-02-05.jpg', [320, 640, 960], 'event-artwork'),
-            ('assets/events/smoky-mountain-winterfest-pigeon-forge-2027-03-05.jpg', [320, 640, 960], 'event-artwork'),
-            ('assets/events/kb-strength-to-stand-2026-2027-official-showcard.jpg', [320, 640, 960, 1280], 'event-artwork'),
-            ('assets/artists/caleb-gordon-primary.jpg', [320, 640, 960, 1280], 'artist-photo'),
+            ('assets/events/northeast-winterfest-stamford-2027-01-15.jpg', [320, 640, 960], 'event-artwork', 75),
+            ('assets/events/ozark-winterfest-branson-2027-02-05.jpg', [320, 640, 960], 'event-artwork', 75),
+            ('assets/events/smoky-mountain-winterfest-pigeon-forge-2027-03-05.jpg', [320, 640, 960], 'event-artwork', 75),
+            ('assets/events/drea-lp-sondaze-social-nashville-2026-12-20.png', [320, 640, 960], 'event-artwork', 75),
+            ('assets/events/kb-strength-to-stand-2026-2027-official-showcard.jpg', [320, 640, 960, 1280], 'event-artwork', 82),
+            ('assets/artists/caleb-gordon-primary.jpg', [320, 640, 960, 1280], 'artist-photo', 82),
+            ('assets/artists/1k-phew-owner-oct13.png', [320, 639], 'artist-photo', 95),
         ]
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             originals = {}
             tags = []
-            for source, expected, css_class in cases:
+            for source, expected, css_class, _ in cases:
                 data = (repository / source).read_bytes()
                 destination = root / source
                 destination.parent.mkdir(parents=True, exist_ok=True)
@@ -36,17 +38,25 @@ class PortraitResponsiveVariantTests(unittest.TestCase):
                 originals[source] = data
                 tags.append(f'<img class="{css_class}" src="/{source}" alt="Test image">')
             (root / 'index.html').write_text(''.join(tags))
-            self.assertEqual(optimizer.main([str(root), '--offline']), 0)
+            backend = optimizer.choose_backend()
+            with (patch.object(optimizer, 'choose_backend', return_value=backend),
+                  patch.object(backend, 'render', wraps=backend.render) as render):
+                self.assertEqual(optimizer.main([str(root), '--offline']), 0)
+            actual_qualities = {
+                hashlib.sha256(call.args[0]).hexdigest()[:24]: call.args[2]
+                for call in render.call_args_list
+            }
             manifest = json.loads((root / 'assets/optimized/manifest.json').read_text())
             self.assertEqual(manifest['requestedWidths'], [320, 640, 960, 1280])
             self.assertEqual(manifest['quality'], 82)
             self.assertEqual(manifest['failedSourceCount'], 0)
             images = {item['id']: item for item in manifest['images']}
             html = (root / 'index.html').read_text()
-            for source, expected, _ in cases:
+            for source, expected, _, expected_quality in cases:
                 with self.subTest(source=source):
                     content_id = hashlib.sha256(originals[source]).hexdigest()[:24]
                     variants = images[content_id]['variants']
+                    self.assertEqual(actual_qualities[content_id], expected_quality)
                     self.assertEqual([variant['width'] for variant in variants], expected)
                     self.assertEqual((root / source).read_bytes(), originals[source])
                     self.assertIn(f'{content_id}-w{expected[-1]}.webp {expected[-1]}w', html)
