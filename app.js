@@ -428,7 +428,8 @@ const ARTIST_ROSTER_ORDER = [
   "Jon Corbin",
   "Kojo Dave",
   "elllli",
-  "GZeal"
+  "GZeal",
+  "Semajay ThegospelRapper"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -6247,6 +6248,19 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/gzeal-official-linktree-nov4.png",
     "imagePosition": "58% 0%",
     "country": "US",
+    "sourceRegistryVerified": true
+  },
+  "semajay thegospelrapper": {
+    "aliases": [
+      "Semajay ThegospelRapper"
+    ],
+    "website": "https://bio.site/SemajayMusic",
+    "instagramProfile": "https://www.instagram.com/semajaythegospelrapper/",
+    "spotifyProfile": "https://open.spotify.com/artist/63YBvqN16iycxsrcivSF2m",
+    "youtubeProfile": "",
+    "officialImageSource": "https://www.instagram.com/semajaythegospelrapper/",
+    "imageUrl": "assets/artists/semajay-thegospelrapper-official-bio-site-nov4.png",
+    "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   }
 };
@@ -12068,6 +12082,19 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imagePosition": "58% 0%",
     "country": "US",
     "sourceRegistryVerified": true
+  },
+  "semajay thegospelrapper": {
+    "aliases": [
+      "Semajay ThegospelRapper"
+    ],
+    "website": "https://bio.site/SemajayMusic",
+    "instagramProfile": "https://www.instagram.com/semajaythegospelrapper/",
+    "spotifyProfile": "https://open.spotify.com/artist/63YBvqN16iycxsrcivSF2m",
+    "youtubeProfile": "",
+    "officialImageSource": "https://www.instagram.com/semajaythegospelrapper/",
+    "imageUrl": "assets/artists/semajay-thegospelrapper-official-bio-site-nov4.png",
+    "imagePosition": "50% 0%",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -13726,6 +13753,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "gzeal": {
     "imageUrl": "assets/artists/gzeal-official-linktree-nov4.png",
     "imagePosition": "58% 0%"
+  },
+  "semajay thegospelrapper": {
+    "imageUrl": "assets/artists/semajay-thegospelrapper-official-bio-site-nov4.png",
+    "imagePosition": "50% 0%"
   }
 };
 
