@@ -1,31 +1,31 @@
 {
-  "generatedAt": "2026-11-04T19:10:26Z",
-  "artistsChecked": 413,
+  "generatedAt": "2026-11-05T15:31:38Z",
+  "artistsChecked": 416,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
   "festivalCandidates": 1,
   "bandsintown": {
     "discoveryMode": "structured_rest",
     "status": "ok",
-    "artistsAttempted": 413,
+    "artistsAttempted": 416,
     "resolved": 254,
-    "rawUpcomingUSRows": 87,
+    "rawUpcomingUSRows": 85,
     "rawUpcomingCARows": 3,
-    "rawUpcomingRows": 90,
+    "rawUpcomingRows": 88,
     "newEventsPublished": 13,
     "festivalCandidatesHeld": 2,
     "requestErrors": 0
   },
   "songkick": {
-    "artistsAttempted": 413,
+    "artistsAttempted": 416,
     "resolved": 0,
-    "blockedByRobots": 413,
+    "blockedByRobots": 416,
     "eventsFound": 0
   },
   "sourceStatusCounts": {
-    "delegated_to_structured_rest": 413,
-    "blocked_by_robots": 417,
-    "no_events": 575,
+    "delegated_to_structured_rest": 416,
+    "blocked_by_robots": 420,
+    "no_events": 579,
     "failed": 6
   },
   "newEvents": [],
@@ -1241,7 +1241,7 @@
       "url": "https://www.shonlock.com/",
       "status": "failed",
       "eventsFound": 0,
-      "error": "Unable to retrieve https://www.shonlock.com/: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1010)>"
+      "error": "Unable to retrieve https://www.shonlock.com/: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1011)>"
     },
     {
       "artist": "Shonlock",
@@ -1294,7 +1294,7 @@
       "url": "https://houseoftbone.com/",
       "status": "failed",
       "eventsFound": 0,
-      "error": "Unable to retrieve https://houseoftbone.com/: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'houseoftbone.com'. (_ssl.c:1010)>"
+      "error": "Unable to retrieve https://houseoftbone.com/: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'houseoftbone.com'. (_ssl.c:1011)>"
     },
     {
       "artist": "T-Bone",
@@ -9084,6 +9084,70 @@
       "artist": "elllli",
       "source": "Spotify profile",
       "url": "https://open.spotify.com/artist/3C2zF2KoMybEmTQQwNxk1S",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "GZeal",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "GZeal",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "GZeal",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/46KagDbgfOCQduqfTHbYrK",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Semajay ThegospelRapper",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Semajay ThegospelRapper",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Semajay ThegospelRapper",
+      "source": "official website",
+      "url": "https://bio.site/SemajayMusic",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Semajay ThegospelRapper",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/63YBvqN16iycxsrcivSF2m",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "HisnameJirr",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "HisnameJirr",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "HisnameJirr",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/3iz7aOssbRgzYL5v5dLg21",
       "status": "no_events",
       "eventsFound": 0
     }

@@ -1,26 +1,26 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-11-04T18:50:32Z",
-  "lastSuccessfulUpdate": "2026-11-04T18:50:32Z",
-  "eventsPublished": 170,
-  "candidatesCollected": 336,
-  "artistsConfigured": 413,
+  "lastAttempt": "2026-11-05T15:10:18Z",
+  "lastSuccessfulUpdate": "2026-11-05T15:10:18Z",
+  "eventsPublished": 180,
+  "candidatesCollected": 343,
+  "artistsConfigured": 416,
   "artistsByPriority": {
     "priority1": 91,
-    "priority2": 146,
-    "priority3": 166
+    "priority2": 147,
+    "priority3": 168
   },
   "ticketmasterArtistsEnabled": 196,
-  "socialSearchArtistsEnabled": 368,
-  "freeTextAliasesProtected": 277,
+  "socialSearchArtistsEnabled": 371,
+  "freeTextAliasesProtected": 280,
   "artistsMatchedOnTicketmaster": 61,
   "officialEventsFound": 39,
-  "ticketmasterEventsFound": 12,
-  "instagramArtistsConfigured": 368,
-  "instagramQueriesRun": 370,
-  "instagramQueriesAttempted": 368,
-  "instagramResultsFound": 2,
+  "ticketmasterEventsFound": 11,
+  "instagramArtistsConfigured": 371,
+  "instagramQueriesRun": 373,
+  "instagramQueriesAttempted": 371,
+  "instagramResultsFound": 0,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,30 +46,10 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
-    },
-    {
-      "url": "https://www.instagram.com/reel/DMLHLddsfk1/",
-      "title": "Lily | Which do you prefer?? Soda Pop (An ACNH Music ... - Instagram",
-      "artists": [],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
-    },
-    {
-      "url": "https://www.instagram.com/reel/DMGGIu7Mztt/",
-      "title": "Lily | If you’re seeing this……. You could be one of ... - Instagram",
-      "artists": [],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 493,
+  "sourcesChecked": 496,
   "unmatchedArtists": [
     "Scootie Wop",
     "Mike Malagies",
@@ -612,8 +592,8 @@
       "name": "Instagram public announcement scan",
       "status": "ok",
       "eventsFound": 0,
-      "artistsChecked": 368,
-      "queriesRun": 370
+      "artistsChecked": 371,
+      "queriesRun": 373
     }
   ],
   "warningCount": 18,
@@ -643,5 +623,5 @@
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 20,
   "artistWebsiteEventsAdded": 0,
-  "artistWebsiteMergeAt": "2026-11-04T19:10:29Z"
+  "artistWebsiteMergeAt": "2026-11-05T15:31:42Z"
 }
