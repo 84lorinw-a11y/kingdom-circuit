@@ -429,7 +429,8 @@ const ARTIST_ROSTER_ORDER = [
   "Kojo Dave",
   "elllli",
   "GZeal",
-  "Semajay ThegospelRapper"
+  "Semajay ThegospelRapper",
+  "HisnameJirr"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -6260,6 +6261,19 @@ const VERIFIED_ARTIST_REGISTRY = {
     "youtubeProfile": "",
     "officialImageSource": "https://www.instagram.com/semajaythegospelrapper/",
     "imageUrl": "assets/artists/semajay-thegospelrapper-official-bio-site-nov4.png",
+    "imagePosition": "50% 0%",
+    "sourceRegistryVerified": true
+  },
+  "hisnamejirr": {
+    "aliases": [
+      "HisnameJirr"
+    ],
+    "website": "https://www.instagram.com/hisname_jirr/",
+    "instagramProfile": "https://www.instagram.com/hisname_jirr/",
+    "spotifyProfile": "https://open.spotify.com/artist/3iz7aOssbRgzYL5v5dLg21",
+    "youtubeProfile": "https://www.youtube.com/channel/UCZas4fe5ANO53-vPL34ZX3g",
+    "officialImageSource": "https://www.instagram.com/p/DWnANTwjTla/",
+    "imageUrl": "assets/artists/hisnamejirr-official-ripe-nov4.png",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   }
@@ -12095,6 +12109,19 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/semajay-thegospelrapper-official-bio-site-nov4.png",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
+  },
+  "hisnamejirr": {
+    "aliases": [
+      "HisnameJirr"
+    ],
+    "website": "https://www.instagram.com/hisname_jirr/",
+    "instagramProfile": "https://www.instagram.com/hisname_jirr/",
+    "spotifyProfile": "https://open.spotify.com/artist/3iz7aOssbRgzYL5v5dLg21",
+    "youtubeProfile": "https://www.youtube.com/channel/UCZas4fe5ANO53-vPL34ZX3g",
+    "officialImageSource": "https://www.instagram.com/p/DWnANTwjTla/",
+    "imageUrl": "assets/artists/hisnamejirr-official-ripe-nov4.png",
+    "imagePosition": "50% 0%",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -13756,6 +13783,10 @@ const STATIC_ARTIST_PORTRAITS = {
   },
   "semajay thegospelrapper": {
     "imageUrl": "assets/artists/semajay-thegospelrapper-official-bio-site-nov4.png",
+    "imagePosition": "50% 0%"
+  },
+  "hisnamejirr": {
+    "imageUrl": "assets/artists/hisnamejirr-official-ripe-nov4.png",
     "imagePosition": "50% 0%"
   }
 };
