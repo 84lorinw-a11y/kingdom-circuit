@@ -1046,7 +1046,8 @@ def arguments(argv: Optional[list[str]] = None) -> argparse.Namespace:
     parser.add_argument("--base", default=DEFAULT_BASE, help="Published site base path")
     parser.add_argument("--origin", default=DEFAULT_ORIGIN, help="Published site origin")
     parser.add_argument("--widths", type=parse_widths, default=DEFAULT_WIDTHS)
-    parser.add_argument("--quality", type=int, default=82)
+    # Keep the growing full-resolution library within the existing output budget.
+    parser.add_argument("--quality", type=int, default=81)
     parser.add_argument("--workers", type=int, default=6)
     parser.add_argument("--timeout", type=float, default=12.0, help="Per-download timeout in seconds")
     parser.add_argument("--wall-time", type=float, default=180.0, help="Total soft deadline in seconds")

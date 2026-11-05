@@ -15,15 +15,15 @@ import optimize_public_images as optimizer
 
 
 class PortraitResponsiveVariantTests(unittest.TestCase):
-    def test_new_flyer_limits_leave_other_flyers_and_pinned_portraits_unchanged(self):
+    def test_flyer_limits_preserve_originals_and_widths_with_quality_overrides(self):
         repository = Path(__file__).resolve().parents[1]
         cases = [
             ('assets/events/northeast-winterfest-stamford-2027-01-15.jpg', [320, 640, 960], 'event-artwork', 75),
             ('assets/events/ozark-winterfest-branson-2027-02-05.jpg', [320, 640, 960], 'event-artwork', 75),
             ('assets/events/smoky-mountain-winterfest-pigeon-forge-2027-03-05.jpg', [320, 640, 960], 'event-artwork', 75),
             ('assets/events/drea-lp-sondaze-social-nashville-2026-12-20.png', [320, 640, 960], 'event-artwork', 75),
-            ('assets/events/kb-strength-to-stand-2026-2027-official-showcard.jpg', [320, 640, 960, 1280], 'event-artwork', 82),
-            ('assets/artists/caleb-gordon-primary.jpg', [320, 640, 960, 1280], 'artist-photo', 82),
+            ('assets/events/kb-strength-to-stand-2026-2027-official-showcard.jpg', [320, 640, 960, 1280], 'event-artwork', 81),
+            ('assets/artists/caleb-gordon-primary.jpg', [320, 640, 960, 1280], 'artist-photo', 81),
             ('assets/artists/1k-phew-owner-oct13.png', [320, 639], 'artist-photo', 95),
         ]
         with tempfile.TemporaryDirectory() as tmp:
@@ -48,7 +48,7 @@ class PortraitResponsiveVariantTests(unittest.TestCase):
             }
             manifest = json.loads((root / 'assets/optimized/manifest.json').read_text())
             self.assertEqual(manifest['requestedWidths'], [320, 640, 960, 1280])
-            self.assertEqual(manifest['quality'], 82)
+            self.assertEqual(manifest['quality'], 81)
             self.assertEqual(manifest['failedSourceCount'], 0)
             images = {item['id']: item for item in manifest['images']}
             html = (root / 'index.html').read_text()
