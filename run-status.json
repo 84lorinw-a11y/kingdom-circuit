@@ -1,26 +1,26 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-11-05T18:55:35Z",
-  "lastSuccessfulUpdate": "2026-11-05T18:55:35Z",
-  "eventsPublished": 179,
-  "candidatesCollected": 343,
-  "artistsConfigured": 416,
+  "lastAttempt": "2026-11-05T19:56:57Z",
+  "lastSuccessfulUpdate": "2026-11-05T19:56:57Z",
+  "eventsPublished": 161,
+  "candidatesCollected": 344,
+  "artistsConfigured": 417,
   "artistsByPriority": {
     "priority1": 91,
     "priority2": 147,
-    "priority3": 168
+    "priority3": 169
   },
   "ticketmasterArtistsEnabled": 196,
-  "socialSearchArtistsEnabled": 371,
-  "freeTextAliasesProtected": 280,
+  "socialSearchArtistsEnabled": 372,
+  "freeTextAliasesProtected": 281,
   "artistsMatchedOnTicketmaster": 61,
   "officialEventsFound": 39,
   "ticketmasterEventsFound": 11,
-  "instagramArtistsConfigured": 371,
-  "instagramQueriesRun": 373,
-  "instagramQueriesAttempted": 371,
-  "instagramResultsFound": 2,
+  "instagramArtistsConfigured": 372,
+  "instagramQueriesRun": 374,
+  "instagramQueriesAttempted": 372,
+  "instagramResultsFound": 1,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -48,18 +48,8 @@
       "reason": "the known post was not publicly indexed with enough event details"
     },
     {
-      "url": "https://www.instagram.com/p/CrOSadArPUM/",
-      "title": "Kristi Noem | “Ten feet. I think you'll find it's exact same ...",
-      "artists": [],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
-    },
-    {
-      "url": "https://www.instagram.com/p/signin/",
-      "title": "Instagram",
+      "url": "https://www.instagram.com/p/DL7wBYYMtkI/",
+      "title": "J & D Customs | Custom Tees & Gifts | ️𝐖𝐞 𝐎𝐮𝐭𝐬𝐢𝐝𝐞 𝐈𝐧 𝟗 ...",
       "artists": [],
       "date": "",
       "city": "",
@@ -69,7 +59,7 @@
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 496,
+  "sourcesChecked": 497,
   "unmatchedArtists": [
     "Scootie Wop",
     "Mike Malagies",
@@ -612,8 +602,8 @@
       "name": "Instagram public announcement scan",
       "status": "ok",
       "eventsFound": 0,
-      "artistsChecked": 371,
-      "queriesRun": 373
+      "artistsChecked": 372,
+      "queriesRun": 374
     }
   ],
   "warningCount": 18,
@@ -643,5 +633,5 @@
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 20,
   "artistWebsiteEventsAdded": 0,
-  "artistWebsiteMergeAt": "2026-11-05T19:14:18Z"
+  "artistWebsiteMergeAt": "2026-11-05T20:06:00Z"
 }
