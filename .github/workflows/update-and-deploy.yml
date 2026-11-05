@@ -559,6 +559,11 @@ jobs:
           python scripts/artist_engagement.py _site _engagement_baseline --check
           node --check _site/assets/fan-engagement.js
 
+      - name: Publish and verify approved show information
+        run: |
+          python scripts/show_information.py --site _site
+          python scripts/show_information.py --site _site --check
+
       - name: Check out approved CHH Show Night release
         uses: actions/checkout@v4
         with:
