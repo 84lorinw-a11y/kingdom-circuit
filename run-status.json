@@ -1,8 +1,8 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-11-05T19:56:57Z",
-  "lastSuccessfulUpdate": "2026-11-05T19:56:57Z",
+  "lastAttempt": "2026-11-05T21:22:42Z",
+  "lastSuccessfulUpdate": "2026-11-05T21:22:42Z",
   "eventsPublished": 161,
   "candidatesCollected": 344,
   "artistsConfigured": 417,
@@ -48,14 +48,16 @@
       "reason": "the known post was not publicly indexed with enough event details"
     },
     {
-      "url": "https://www.instagram.com/p/DL7wBYYMtkI/",
-      "title": "J & D Customs | Custom Tees & Gifts | ️𝐖𝐞 𝐎𝐮𝐭𝐬𝐢𝐝𝐞 𝐈𝐧 𝟗 ...",
-      "artists": [],
+      "url": "https://www.instagram.com/p/DTaVD7skWiJ/",
+      "title": "Instagram",
+      "artists": [
+        "S.O."
+      ],
       "date": "",
       "city": "",
       "state": "",
       "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
@@ -633,5 +635,5 @@
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 20,
   "artistWebsiteEventsAdded": 0,
-  "artistWebsiteMergeAt": "2026-11-05T20:06:00Z"
+  "artistWebsiteMergeAt": "2026-11-05T21:33:14Z"
 }
