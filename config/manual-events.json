@@ -1530,6 +1530,69 @@
     "sourceName": "TPR official Eden Experience tour"
   },
   {
+    "title": "Oasis Ministry — QBELV Tour 2026",
+    "startDate": "2026-09-27",
+    "startTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "United Palace",
+    "address": "4140 Broadway",
+    "city": "New York",
+    "state": "NY",
+    "country": "US",
+    "artists": [
+      "Alex Zurdo"
+    ],
+    "headliner": "Alex Zurdo",
+    "eventType": "concert",
+    "status": "rescheduled",
+    "ticketUrl": "https://www.boletosexpress.com/oasis-ministry-s/88341/",
+    "officialUrl": "https://www.boletosexpress.com/oasis-ministry-s/88341/",
+    "image": "assets/events/oasis-ministry-qbelv-new-york-2026-09-27.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "price": "",
+    "lineupExplicit": true,
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "sourceName": "United Palace / Boletos Express official listing",
+    "sources": [
+      {
+        "name": "United Palace / Boletos Express official listing",
+        "url": "https://www.boletosexpress.com/oasis-ministry-s/88341/",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
+      },
+      {
+        "name": "United Palace / Boletos Express official listing",
+        "url": "https://unitedpalace.boletosexpress.com/oasis-ministry-s/88341/",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 100
+      }
+    ],
+    "auditVerified": "2026-09-26",
+    "doorsTime": "17:30",
+    "notes": "The current NEW DATE/TIME header and revised September 27 poster confirm September 27 at 7:00 PM. Older text lower on the ticket page still describes the superseded schedule.",
+    "advertisedBilling": [
+      "Oasis Ministry",
+      "Lisney De Font",
+      "Alex Zurdo"
+    ],
+    "imageSource": "Boletos Express updated official event poster",
+    "imageSourceUrl": "https://www.boletosexpress.com/events/883/88341.jpg?v=1790378696",
+    "previousStartDate": "2026-09-26",
+    "startDateTime": "2026-09-27T19:00:00-04:00",
+    "firstSeen": "2026-09-13T18:39:20Z",
+    "postalCode": "10033",
+    "legacyEventPaths": [
+      "/event/oasis-ministry-qbelv-tour-2026-2026-09-26-new-york-d3b318/"
+    ],
+    "legacyEventNotice": "This concert has moved to Sunday, September 27, 2026 at 7:00 PM at United Palace.",
+    "id": "oasis-ministry-qbelv-new-york-2026"
+  },
+  {
     "id": "let-the-church-sing-tour-dunedin-2026",
     "title": "Let The Church Sing Tour Night 3",
     "startDate": "2026-10-02",
@@ -3644,6 +3707,74 @@
     "imageOverride": true,
     "imageSource": "Owner-selected official EGR conference reel cover",
     "imageSourceUrl": "https://www.instagram.com/reel/DdckMZMPsgf/"
+  },
+  {
+    "title": "Mike Malagies — It’s A God Night (Miami)",
+    "startDate": "2026-10-16",
+    "startTime": "19:00",
+    "doorsTime": "18:30",
+    "timezone": "America/New_York",
+    "startDateTime": "2026-10-16T19:00:00-04:00",
+    "advertisedBilling": [
+      "Mike Malagies",
+      "DJ JBEZ"
+    ],
+    "firstSeen": "2026-09-13T14:21:37Z",
+    "legacyEventPaths": [
+      "/event/mike-malagies-florida-takeover-miami-2026-10-16-north-miami-6a5e6f/"
+    ],
+    "legacyEventNotice": "This concert is now listed as Mike Malagies — It’s A God Night (Miami), starting at 7:00 PM on October 16.",
+    "notes": "TicketSource describes VIP 6:00–6:30 PM, doors 6:30 PM, concert starting at 7:00 PM with DJ JBEZ, and Mike Malagies 7:30–9:00 PM. The listing header's 6:30 PM is doors.",
+    "venue": "Black Box Media Miami",
+    "address": "12355 NE 13th Ave Unit #403-404",
+    "city": "North Miami",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Mike Malagies"
+    ],
+    "headliner": "Mike Malagies",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
+    "officialUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
+    "image": "assets/events/mike-malagies-miami-2026-10-16.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "lineupExplicit": true,
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "sourceName": "TicketSource exact event listing",
+    "sources": [
+      {
+        "name": "TicketSource exact event listing",
+        "url": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      },
+      {
+        "name": "Black Box Media Miami official venue",
+        "url": "https://www.blackboxstudiosmiami.com/event-list",
+        "type": "manual_verified",
+        "authority": "venue",
+        "priority": 112
+      },
+      {
+        "name": "TicketSource exact event listing",
+        "url": "https://www.ticketsource.com/the-sound-system/mike-malagies-florida-takeover-miami/e-vgxqxl",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      }
+    ],
+    "auditVerified": "2026-09-26",
+    "id": "mike-malagies-florida-takeover-miami-2026",
+    "imageSourceUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
+    "imageSource": "Official TicketSource It's A God Night Miami flyer",
+    "soldOut": true,
+    "ticketAvailability": "sold_out"
   },
   {
     "id": "new-kids-on-the-block-concert-orlando-2026-10-16",
@@ -9581,76 +9712,6 @@
     "notes": "Fresh October 2026 artist flyer explicitly lists November 5, December 3 and January 7, every first Thursday, 6–9 PM. These align with 2026/2027 weekdays. Venue confirms address and Christian DJ event identity. Venue page retains stale January 8, 2026 date/price; do not apply that old date or $20 price to these new dates. No recurrence beyond the three explicitly announced dates."
   },
   {
-    "title": "Miles Minnick at Black Box Media Miami",
-    "startDate": "2026-11-05",
-    "startTime": "18:30",
-    "timezone": "America/New_York",
-    "venue": "Black Box Media Miami",
-    "address": "12355 NE 13th Ave Unit #403-404",
-    "city": "North Miami",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108940329",
-    "officialUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
-    "image": "assets/events/miles-minnick-florida-campus-tour-2026.jpg",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "lineupExplicit": true,
-    "advertisedBilling": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "sourceName": "Bandsintown verified event listing",
-    "sources": [
-      {
-        "name": "Eli Williams official performance announcement",
-        "url": "https://www.instagram.com/eliwilliamssss/p/DdmMA0JOH4q/",
-        "type": "manual_verified",
-        "authority": "artist",
-        "priority": 115
-      },
-      {
-        "name": "Bandsintown verified event listing",
-        "url": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 94
-      },
-      {
-        "name": "CJ Emulous official tour calendar",
-        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-23",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 88
-      }
-    ],
-    "notes": " Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates.",
-    "auditVerified": "2026-09-23",
-    "officialBill": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "id": "miles-minnick-black-box-north-miami-2026-11-05",
-    "imageOverride": true,
-    "imageSource": "Official Christlike University Florida tour flyer listing Miami, Jacksonville and Orlando dates",
-    "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
-  },
-  {
     "id": "flavor-fest-2026-friday-concerts",
     "title": "Flavor Fest 2026 — Friday Concerts",
     "startDate": "2026-11-06",
@@ -9682,7 +9743,7 @@
     "eventType": "festival",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "assets/events/flavor-fest-friday-2026.png",
+    "image": "assets/events/flavor-fest-friday-2026.webp",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -9783,9 +9844,7 @@
       "Eli Williams"
     ],
     "auditVerified": "2026-10-12",
-    "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown. Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates. October 8: owner verified TVNK in the artist Sheet. His September 25 collaborative announcement with Flavor Fest explicitly confirms November 6 at Crossover Church. Connect the existing TVNK billing to his curated artist profile. October 12: newly owner-verified artist profiles linked to confirmed billing.",
-    "imageSource": "Official Flavor Fest Friday concert poster",
-    "imageSourceUrl": "https://www.flavorfest.org/schedule"
+    "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown. Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates. October 8: owner verified TVNK in the artist Sheet. His September 25 collaborative announcement with Flavor Fest explicitly confirms November 6 at Crossover Church. Connect the existing TVNK billing to his curated artist profile. October 12: newly owner-verified artist profiles linked to confirmed billing."
   },
   {
     "id": "holy-hip-hop-church-lake-almanor-2026-11-06",
@@ -10410,151 +10469,6 @@
       "The Rkitect"
     ],
     "lastVerified": "2026-10-23T22:33:46.736976Z"
-  },
-  {
-    "title": "Miles Minnick – Christlike University – Florida Campus Tour in Jacksonville",
-    "startDate": "2026-11-07",
-    "startTime": "19:00",
-    "timezone": "America/New_York",
-    "venue": "The Albatross",
-    "venueAliases": [
-      "Underbelly"
-    ],
-    "address": "113 E Bay St",
-    "city": "Jacksonville",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
-    "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
-    "image": "assets/events/miles-minnick-florida-campus-tour-2026.jpg",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "lineupExplicit": true,
-    "advertisedBilling": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "sourceName": "Live Nation official event listing",
-    "sources": [
-      {
-        "name": "Live Nation official event listing",
-        "url": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      },
-      {
-        "name": "Bandsintown verified lineup",
-        "url": "https://www.bandsintown.com/e/108940352-miles-minnick-at-the-albatross",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 94
-      }
-    ],
-    "supersededSources": [
-      {
-        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-25",
-        "publishedDate": "2026-11-07",
-        "publishedCity": "Tampa",
-        "reason": "Conflicts with the venue-specific Jacksonville ticket listing and is not supported by the official Flavor Fest concert schedule."
-      }
-    ],
-    "notes": "The venue-specific Jacksonville ticket listing supersedes CJ's older November 7 Tampa calendar entry. Miles may also appear on the 11:45 AM Flavor Fest artist panel in Tampa; that daytime panel is not this concert.",
-    "auditVerified": "2026-09-23",
-    "id": "miles-minnick-christlike-university-jacksonville-2026-11-07",
-    "imageOverride": true,
-    "imageSource": "Official Christlike University Florida tour flyer listing Miami, Jacksonville and Orlando dates",
-    "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
-  },
-  {
-    "title": "Miles Minnick – Christlike University – Florida Campus Tour in Orlando",
-    "startDate": "2026-11-08",
-    "startTime": "19:00",
-    "timezone": "America/New_York",
-    "venue": "Conduit",
-    "address": "6700 Aloma Ave",
-    "city": "Winter Park",
-    "advertisedCity": "Orlando",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
-    "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
-    "image": "assets/events/miles-minnick-florida-campus-tour-2026.jpg",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "lineupExplicit": true,
-    "advertisedBilling": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "sourceName": "Live Nation official event listing",
-    "sources": [
-      {
-        "name": "Eli Williams official performance announcement",
-        "url": "https://www.instagram.com/eliwilliamssss/p/DdmMA0JOH4q/",
-        "type": "manual_verified",
-        "authority": "artist",
-        "priority": 115
-      },
-      {
-        "name": "Live Nation official event listing",
-        "url": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      },
-      {
-        "name": "Bandsintown verified lineup",
-        "url": "https://www.bandsintown.com/e/108940372-miles-minnick-at-conduit",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 94
-      }
-    ],
-    "supersededSources": [
-      {
-        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-26",
-        "publishedDate": "2026-11-08",
-        "publishedCity": "Jacksonville",
-        "reason": "Conflicts with the venue-specific Conduit ticket listing in Winter Park."
-      }
-    ],
-    "notes": " Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates.",
-    "auditVerified": "2026-09-23",
-    "officialBill": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "id": "miles-minnick-christlike-university-orlando-2026-11-08",
-    "imageOverride": true,
-    "imageSource": "Official Christlike University Florida tour flyer listing Miami, Jacksonville and Orlando dates",
-    "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
   },
   {
     "id": "botzy-mike-summers-jwoodz-live-band-los-angeles-2026-11-10",
@@ -15537,12 +15451,12 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-10-30",
+    "auditVerified": "2026-09-23",
     "id": "miles-cj-zion-ultra-lounge-chandler-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
-    "notes": "Official Eventbrite listing and flyer reviewed October 30, 2026: Miles Minnick, CJ Emulous, Nameless Servant, A4L and Th3rddae Da Mouthpiece; December 5 at Vybe Event Center, 2301 South Stearman Drive, Chandler AZ 85286. Doors 6:30 PM; show 7–11 PM; all ages and free parking. Zion Ultra Lounge Inc is the promoter. Existing listing identity and title retained to preserve the published URL. The three additional supporting acts appear in the full billing without creating unverified artist profiles.",
+    "notes": "CJ Emulous's official calendar confirms Miles Minnick and CJ Emulous at Zion Ultra Lounge on December 5, 2026 at 7:00 PM.",
     "endDate": "2026-12-05",
     "doorsTime": "18:30",
     "endTime": "23:00",
@@ -16144,6 +16058,74 @@
     "imageSourceUrl": "https://www.jimmyrock.com/"
   },
   {
+    "id": "drea-lp-sondaze-social-nashville-2026-12-20",
+    "title": "Sondaze Social — Drea LP",
+    "startDate": "2026-12-20",
+    "endDate": "2026-12-20",
+    "startTime": "14:00",
+    "endTime": "18:00",
+    "startDateTime": "2026-12-20T14:00:00-06:00",
+    "endDateTime": "2026-12-20T18:00:00-06:00",
+    "timezone": "America/Chicago",
+    "venue": "NoWhere Special",
+    "address": "2000 Belcourt Ave",
+    "postalCode": "",
+    "city": "Nashville",
+    "state": "TN",
+    "country": "US",
+    "artists": [
+      "Drea LP"
+    ],
+    "headliner": "Drea LP",
+    "advertisedBilling": [
+      "Drea LP"
+    ],
+    "officialBill": [
+      "Drea LP"
+    ],
+    "ticketUrl": "",
+    "officialUrl": "https://drealp.com/event/6785400/785411205/sondaze-social",
+    "organizerName": "Urban Soul Cafe",
+    "image": "assets/events/drea-lp-sondaze-social-nashville-2026-12-20.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Drea LP official event page original portrait flyer",
+    "imageSourceUrl": "https://drealp.com/event/6785400/785411205/sondaze-social",
+    "price": "Free admission",
+    "ageRestriction": "Venue normally 21+; event-specific exceptions unconfirmed",
+    "publicNotice": "Free admission. The event runs 2–6 PM; Drea LP’s exact set time is unannounced. The venue normally operates as 21+; event-specific exceptions are unconfirmed.",
+    "publicDescription": "Urban Soul Cafe hosts Sondaze Social with Drea LP performing live on December 20, 2026 at NoWhere Special, 2000 Belcourt Ave, Nashville. The event runs 2–6 PM Central, with free admission and public entry advertised by the artist. Drea LP’s exact set time is unannounced. The venue normally operates as 21+; event-specific exceptions are unconfirmed.",
+    "notes": "Owner authorized confirmed recommended additions November4. This resolves the earlier held December20 brunch: the current official artist flyer explicitly says Drea LP PERFORMING LIVE. The organizer and 2–6PM event window are printed on the flyer and agree with artist MusicEvent JSON-LD. Do not treat2PM as the artist’s individual set. Free admission and open to public stated explicitly on artist page. Venue homepage says21+; no event-specific exception confirmed, so do not call all-ages. Official flyer/page address2000BelcourtAve takes precedence over a mismatched older1910press-release address. Postal code remains unverified. The social was known in the October29 reminder before music was confirmed; use original discovery date to avoid treating old discovery as new.",
+    "sourceName": "Drea LP official event page and original flyer",
+    "sources": [
+      {
+        "name": "Drea LP official Sondaze Social event",
+        "url": "https://drealp.com/event/6785400/785411205/sondaze-social",
+        "type": "manual_verified",
+        "authority": "artist",
+        "priority": 115
+      },
+      {
+        "name": "NoWhere Special official general age policy",
+        "url": "https://www.nowherespecialnash.com/",
+        "type": "manual_verified",
+        "authority": "venue",
+        "priority": 115
+      }
+    ],
+    "eventType": "concert",
+    "status": "scheduled",
+    "musicConfirmed": true,
+    "lineupExplicit": true,
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-10-29",
+    "lastVerified": "2026-11-05T02:41:22Z",
+    "auditVerified": "2026-11-04",
+    "detailImageLayout": "portrait"
+  },
+  {
     "title": "Kelo Cho Presents: The Worship After Christmas",
     "startDate": "2026-12-26",
     "startTime": "19:00",
@@ -16194,6 +16176,91 @@
     "id": "kelo-worship-after-christmas-jacksonville-2026",
     "imageSource": "Owner-selected official Instagram show artwork",
     "imageSourceUrl": "https://www.instagram.com/p/Dc6YJAmu9aj/",
+    "detailImageLayout": "portrait"
+  },
+  {
+    "id": "kb-strength-to-stand-december-pigeon-forge-2026-12-28",
+    "title": "Strength to Stand December Conference — KB",
+    "startDate": "2026-12-28",
+    "endDate": "2026-12-30",
+    "startTime": "",
+    "endTime": "",
+    "timezone": "America/New_York",
+    "venue": "LeConte Center at Pigeon Forge",
+    "address": "2986 Teaster Lane",
+    "postalCode": "37863",
+    "city": "Pigeon Forge",
+    "state": "TN",
+    "artists": [
+      "KB"
+    ],
+    "headliner": "KB",
+    "advertisedBilling": [
+      "KB",
+      "Charity Gayle",
+      "STS Worship"
+    ],
+    "officialBill": [
+      "KB",
+      "Charity Gayle",
+      "STS Worship"
+    ],
+    "ticketUrl": "https://www.strengthtostand.org/dec-registration",
+    "officialUrl": "https://www.strengthtostand.org/dec-registration",
+    "image": "assets/events/kb-strength-to-stand-2026-2027-official-showcard.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageSource": "Strength to Stand official KB 2026/2027 conference showcard; owner-selected Instagram announcement",
+    "imageSourceUrl": "https://www.instagram.com/p/DY5WoqdyMhq/",
+    "price": "$99 commuter conference registration; lodging packages vary",
+    "ageRestriction": "Sixth grade or at least 12 years old; younger children require organizer permission",
+    "publicNotice": "Student conference; registration required. December 28–30 is the conference window. KB’s performance day and time are not confirmed.",
+    "publicDescription": "Strength to Stand December Conference runs December 28–30, 2026 at the LeConte Center in Pigeon Forge. Music features KB, Charity Gayle and STS Worship. KB is announced as a late-night feature; his exact performance day and time are not published. Preston Perry, Scott Dawson, Noah Herrin and Brian Mills are conference speakers, not additional musical performers. Commuter conference registration is advertised at $99 per person, excluding lodging. Standalone concert-only admission is unconfirmed.",
+    "notes": "Owner authorized adding recommended confirmed discoveries November 4. The official May28 Instagram announcement explicitly confirms KB at BOTH December and January conferences. Retain this as one conference-window record, not three performances. Do not infer set dates or times from church travel schedules. Reuse the owner-approved official 26/27 portrait showcard unchanged. Registration is $99 commuter excluding lodging; official December page adds $5 late fee after Dec7. Do not copy the January speakers or January registration URL. This is separate from the already-live January16–18 booking.",
+    "sourceName": "Strength to Stand official December 2026 conference announcement and registration",
+    "sources": [
+      {
+        "name": "Strength to Stand official conference program",
+        "url": "https://www.strengthtostand.org/sts-conference",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Official December and January KB announcement",
+        "url": "https://www.instagram.com/p/DY5WoqdyMhq/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Official December registration",
+        "url": "https://www.strengthtostand.org/dec-registration",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "LeConte Center address",
+        "url": "https://www.lecontecenter.com/contact-us/",
+        "type": "manual_verified",
+        "authority": "venue",
+        "priority": 115
+      }
+    ],
+    "country": "US",
+    "eventType": "concert",
+    "status": "scheduled",
+    "musicConfirmed": true,
+    "lineupExplicit": true,
+    "authority": "official_event",
+    "confidence": "high",
+    "imageOverride": true,
+    "firstSeen": "2026-11-04",
+    "lastVerified": "2026-11-05T02:41:22Z",
+    "auditVerified": "2026-11-04",
+    "organizerName": "Strength to Stand / Scott Dawson Evangelistic Association",
+    "organizerUrl": "https://www.strengthtostand.org/",
     "detailImageLayout": "portrait"
   },
   {
@@ -17214,6 +17281,82 @@
     "notes": "October 19 owner requested all upcoming Lady Cam performances. Exact Bandsintown account is embedded on her Sheet-verified official website; its Spotify artist 1wsJxrGmgeajSrtLmWGr9i and Instagram ladycammc match. Concert entry lists this local date/time and says Come and Praise the Lord with us. Street address, additional billing and end time are not published; do not invent them. No dedicated event flyer found; use her saved official performance portrait.",
     "publicDescription": "Lady Cam performs at God’s Powerful Hands Ministries in McDonough, Georgia.",
     "bandsintownEventId": "108969375"
+  },
+  {
+    "title": "Northeast Winterfest 2027 — EGR",
+    "startDate": "2027-01-15",
+    "endDate": "2027-01-17",
+    "country": "US",
+    "city": "Stamford",
+    "state": "CT",
+    "venue": "DoubleTree by Hilton Stamford",
+    "address": "1 First Stamford Place",
+    "postalCode": "06901",
+    "officialUrl": "https://csareg.com/event/northeast-winterfest/",
+    "ticketUrl": "https://csareg.com/event/northeast-winterfest/",
+    "id": "northeast-winterfest-stamford-2027-01-15",
+    "startTime": "",
+    "endTime": "",
+    "timezone": "America/New_York",
+    "artists": [
+      "EGR"
+    ],
+    "advertisedBilling": [
+      "EGR",
+      "Lizzie Morgan",
+      "Soul Cry"
+    ],
+    "officialBill": [
+      "EGR",
+      "Lizzie Morgan",
+      "Soul Cry"
+    ],
+    "image": "assets/events/northeast-winterfest-stamford-2027-01-15.jpg",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "imageSource": "Church of God Youth and Discipleship official 2027 conference flyer",
+    "imageSourceUrl": "https://www.cogyd.org/s/Northeast_Slide.jpg",
+    "organizerName": "Church of God Youth and Discipleship",
+    "organizerUrl": "https://www.cogyd.org/mywinterfest",
+    "price": "$119 conference ticket without hotel, plus 5% processing fee.",
+    "ageRestriction": "",
+    "publicNotice": "Dates shown cover the conference. The artist performance day and time are unannounced. Church or youth-group conference registration is required.",
+    "publicDescription": "Northeast Winterfest 2027 takes place at DoubleTree by Hilton Stamford in Stamford, CT. The official artist bill includes EGR, Lizzie Morgan, Soul Cry. Dates shown cover the full conference; exact artist performance days and times have not been announced. Conference registration through a church or youth group is required. The registration form requires church and pastor information and payment by church credit card. $119 conference ticket without hotel, plus 5% processing fee. Standalone concert admission is unconfirmed.",
+    "notes": "Owner authorized recommended show additions November4. Current official 2027 poster and organizer-linked CSA registration verify dates, venue and artist bill. Publication as one conference-window music appearance is an editorial judgment from the rapper's placement among musical acts; no explicit set assignment is published. Do not create one show for each conference day or infer check-in as concert time. Other billed conference guests, not counted as musical performers: Manouchka Charles, Javon Ruff, Chris Estrada, Kaci Stewart. Original landscape flyer preserved intact; no portrait found in bounded official website/current Instagram review. Fee-inclusive numeric ticket price not supplied; price description retains the advertised base and5% processing fee. No new artist profiles or verification statuses. Premier CJ Emulous remains held for schedule conflict, separate from this record.",
+    "sourceName": "Church of God Youth and Discipleship official current flyer and CSA registration",
+    "sources": [
+      {
+        "name": "Official 2027 conference announcement",
+        "url": "https://www.cogyd.org/northeast27",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Official dated full conference flyer",
+        "url": "https://www.cogyd.org/s/Northeast_Slide.jpg",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Organizer-linked registration",
+        "url": "https://csareg.com/event/northeast-winterfest/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      }
+    ],
+    "eventType": "concert",
+    "status": "scheduled",
+    "musicConfirmed": true,
+    "lineupExplicit": true,
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-11-04",
+    "lastVerified": "2026-11-05T02:44:27Z",
+    "auditVerified": "2026-11-04"
   },
   {
     "id": "winter-jam-2027-jacksonville-fl-2027-01-15",
@@ -19241,6 +19384,86 @@
       }
     ],
     "scheduleNote": "All times are local to the venue. CJ Emulous appears in Pre-Jam; Andy Mineo featuring Magic & Bird (with Wordsplayed) is on the main lineup."
+  },
+  {
+    "title": "Ozark Winterfest 2027 — EGR",
+    "startDate": "2027-02-05",
+    "endDate": "2027-02-07",
+    "country": "US",
+    "city": "Branson",
+    "state": "MO",
+    "venue": "The Mansion Theatre",
+    "address": "189 Expressway Lane",
+    "postalCode": "65616",
+    "officialUrl": "https://csareg.com/event/ozark-winterfest/",
+    "ticketUrl": "https://csareg.com/event/ozark-winterfest/",
+    "id": "ozark-winterfest-branson-2027-02-05",
+    "startTime": "",
+    "endTime": "",
+    "timezone": "America/Chicago",
+    "artists": [
+      "EGR"
+    ],
+    "advertisedBilling": [
+      "EGR",
+      "Gracie Binion Worship",
+      "Grace Graber",
+      "PRESTXN",
+      "Lee U Worship"
+    ],
+    "officialBill": [
+      "EGR",
+      "Gracie Binion Worship",
+      "Grace Graber",
+      "PRESTXN",
+      "Lee U Worship"
+    ],
+    "image": "assets/events/ozark-winterfest-branson-2027-02-05.jpg",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "imageSource": "Church of God Youth and Discipleship official 2027 conference flyer",
+    "imageSourceUrl": "https://www.cogyd.org/s/Ozark_Slide.jpg",
+    "organizerName": "Church of God Youth and Discipleship",
+    "organizerUrl": "https://www.cogyd.org/mywinterfest",
+    "price": "$119 conference ticket without hotel, plus 5% processing fee.",
+    "ageRestriction": "",
+    "publicNotice": "Dates shown cover the conference. The artist performance day and time are unannounced. Church or youth-group conference registration is required.",
+    "publicDescription": "Ozark Winterfest 2027 takes place at The Mansion Theatre in Branson, MO. The official artist bill includes EGR, Gracie Binion Worship, Grace Graber, PRESTXN, Lee U Worship. Dates shown cover the full conference; exact artist performance days and times have not been announced. Conference registration through a church or youth group is required. The registration form requires church and pastor information and payment by church credit card. $119 conference ticket without hotel, plus 5% processing fee. Standalone concert admission is unconfirmed.",
+    "notes": "Owner authorized recommended show additions November4. Current official 2027 poster and organizer-linked CSA registration verify dates, venue and artist bill. Publication as one conference-window music appearance is an editorial judgment from the rapper's placement among musical acts; no explicit set assignment is published. Do not create one show for each conference day or infer check-in as concert time. Other billed conference guests, not counted as musical performers: JV Pender, Ruthie Thompson, Brian Varnell, Phillip Walker. Original landscape flyer preserved intact; no portrait found in bounded official website/current Instagram review. Fee-inclusive numeric ticket price not supplied; price description retains the advertised base and5% processing fee. No new artist profiles or verification statuses. Premier CJ Emulous remains held for schedule conflict, separate from this record.",
+    "sourceName": "Church of God Youth and Discipleship official current flyer and CSA registration",
+    "sources": [
+      {
+        "name": "Official 2027 conference announcement",
+        "url": "https://www.cogyd.org/ozark27",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Official dated full conference flyer",
+        "url": "https://www.cogyd.org/s/Ozark_Slide.jpg",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Organizer-linked registration",
+        "url": "https://csareg.com/event/ozark-winterfest/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      }
+    ],
+    "eventType": "concert",
+    "status": "scheduled",
+    "musicConfirmed": true,
+    "lineupExplicit": true,
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-11-04",
+    "lastVerified": "2026-11-05T02:44:27Z",
+    "auditVerified": "2026-11-04"
   },
   {
     "id": "lovesick-fest-irvine-2027-02-05",
@@ -21446,6 +21669,88 @@
     "scheduleNote": "All times are local to the venue. CJ Emulous appears in Pre-Jam; Andy Mineo featuring Magic & Bird (with Wordsplayed) is on the main lineup."
   },
   {
+    "title": "Smoky Mountain Winterfest 2027 — Marty",
+    "startDate": "2027-03-05",
+    "endDate": "2027-03-07",
+    "country": "US",
+    "city": "Pigeon Forge",
+    "state": "TN",
+    "venue": "LeConte Center",
+    "address": "2986 Teaster Lane",
+    "postalCode": "37863",
+    "officialUrl": "https://csareg.com/event/smoky-mountain-winterfest/",
+    "ticketUrl": "https://csareg.com/event/smoky-mountain-winterfest/",
+    "id": "smoky-mountain-winterfest-pigeon-forge-2027-03-05",
+    "startTime": "",
+    "endTime": "",
+    "timezone": "America/New_York",
+    "artists": [
+      "Marty"
+    ],
+    "advertisedBilling": [
+      "Steven & Hannah Musso",
+      "Lizzie Morgan",
+      "Danny Gokey",
+      "Marty",
+      "LIN D",
+      "Lee U Worship"
+    ],
+    "officialBill": [
+      "Steven & Hannah Musso",
+      "Lizzie Morgan",
+      "Danny Gokey",
+      "Marty",
+      "LIN D",
+      "Lee U Worship"
+    ],
+    "image": "assets/events/smoky-mountain-winterfest-pigeon-forge-2027-03-05.jpg",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imagePosition": "center",
+    "imageSource": "Church of God Youth and Discipleship official 2027 conference flyer",
+    "imageSourceUrl": "https://www.cogyd.org/s/Smoky_Slide-fdhr.jpg",
+    "organizerName": "Church of God Youth and Discipleship",
+    "organizerUrl": "https://www.cogyd.org/mywinterfest",
+    "price": "$139 conference ticket without hotel, plus 5% processing fee.",
+    "ageRestriction": "",
+    "publicNotice": "Dates shown cover the conference. The artist performance day and time are unannounced. Church or youth-group conference registration is required.",
+    "publicDescription": "Smoky Mountain Winterfest 2027 takes place at LeConte Center in Pigeon Forge, TN. The official artist bill includes Steven & Hannah Musso, Lizzie Morgan, Danny Gokey, Marty, LIN D, Lee U Worship. Dates shown cover the full conference; exact artist performance days and times have not been announced. Conference registration through a church or youth group is required. The registration form requires church and pastor information and payment by church credit card. $139 conference ticket without hotel, plus 5% processing fee. Standalone concert admission is unconfirmed.",
+    "notes": "Owner authorized recommended show additions November4. Current official 2027 poster and organizer-linked CSA registration verify dates, venue and artist bill. Publication as one conference-window music appearance is an editorial judgment from the rapper's placement among musical acts; no explicit set assignment is published. Do not create one show for each conference day or infer check-in as concert time. Other billed conference guests, not counted as musical performers: Manouchka Charles, Noah Herrin, Keenan Clark, Tyshone Roland. Original landscape flyer preserved intact; no portrait found in bounded official website/current Instagram review. Fee-inclusive numeric ticket price not supplied; price description retains the advertised base and5% processing fee. No new artist profiles or verification statuses. Premier CJ Emulous remains held for schedule conflict, separate from this record.",
+    "sourceName": "Church of God Youth and Discipleship official current flyer and CSA registration",
+    "sources": [
+      {
+        "name": "Official 2027 conference announcement",
+        "url": "https://www.cogyd.org/smwf27",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Official dated full conference flyer",
+        "url": "https://www.cogyd.org/s/Smoky_Slide-fdhr.jpg",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Organizer-linked registration",
+        "url": "https://csareg.com/event/smoky-mountain-winterfest/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      }
+    ],
+    "eventType": "concert",
+    "status": "scheduled",
+    "musicConfirmed": true,
+    "lineupExplicit": true,
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-11-04",
+    "lastVerified": "2026-11-05T02:44:27Z",
+    "auditVerified": "2026-11-04"
+  },
+  {
     "id": "winter-jam-2027-knoxville-tn-2027-03-05",
     "title": "Winter Jam 2027",
     "tour": "Winter Jam 2027",
@@ -23347,525 +23652,209 @@
     "firstSeen": "2026-10-27T19:03:05Z"
   },
   {
-    "title": "Oasis Ministry — QBELV Tour 2026",
-    "startDate": "2026-09-27",
-    "startTime": "19:00",
+    "title": "Miles Minnick at Black Box Media Miami",
+    "startDate": "2026-11-05",
+    "startTime": "18:30",
     "timezone": "America/New_York",
-    "venue": "United Palace",
-    "address": "4140 Broadway",
-    "city": "New York",
-    "state": "NY",
-    "country": "US",
-    "artists": [
-      "Alex Zurdo"
-    ],
-    "headliner": "Alex Zurdo",
-    "eventType": "concert",
-    "status": "rescheduled",
-    "ticketUrl": "https://www.boletosexpress.com/oasis-ministry-s/88341/",
-    "officialUrl": "https://www.boletosexpress.com/oasis-ministry-s/88341/",
-    "image": "assets/events/oasis-ministry-qbelv-new-york-2026-09-27.jpg",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "price": "",
-    "lineupExplicit": true,
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "sourceName": "United Palace / Boletos Express official listing",
-    "sources": [
-      {
-        "name": "United Palace / Boletos Express official listing",
-        "url": "https://www.boletosexpress.com/oasis-ministry-s/88341/",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 100
-      },
-      {
-        "name": "United Palace / Boletos Express official listing",
-        "url": "https://unitedpalace.boletosexpress.com/oasis-ministry-s/88341/",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 100
-      }
-    ],
-    "auditVerified": "2026-09-26",
-    "doorsTime": "17:30",
-    "notes": "The current NEW DATE/TIME header and revised September 27 poster confirm September 27 at 7:00 PM. Older text lower on the ticket page still describes the superseded schedule.",
-    "advertisedBilling": [
-      "Oasis Ministry",
-      "Lisney De Font",
-      "Alex Zurdo"
-    ],
-    "imageSource": "Boletos Express updated official event poster",
-    "imageSourceUrl": "https://www.boletosexpress.com/events/883/88341.jpg?v=1790378696",
-    "previousStartDate": "2026-09-26",
-    "startDateTime": "2026-09-27T19:00:00-04:00",
-    "firstSeen": "2026-09-13T18:39:20Z",
-    "postalCode": "10033",
-    "legacyEventPaths": [
-      "/event/oasis-ministry-qbelv-tour-2026-2026-09-26-new-york-d3b318/"
-    ],
-    "legacyEventNotice": "This concert has moved to Sunday, September 27, 2026 at 7:00 PM at United Palace.",
-    "id": "oasis-ministry-qbelv-new-york-2026"
-  },
-  {
-    "title": "Mike Malagies — It’s A God Night (Miami)",
-    "startDate": "2026-10-16",
-    "startTime": "19:00",
-    "doorsTime": "18:30",
-    "timezone": "America/New_York",
-    "startDateTime": "2026-10-16T19:00:00-04:00",
-    "advertisedBilling": [
-      "Mike Malagies",
-      "DJ JBEZ"
-    ],
-    "firstSeen": "2026-09-13T14:21:37Z",
-    "legacyEventPaths": [
-      "/event/mike-malagies-florida-takeover-miami-2026-10-16-north-miami-6a5e6f/"
-    ],
-    "legacyEventNotice": "This concert is now listed as Mike Malagies — It’s A God Night (Miami), starting at 7:00 PM on October 16.",
-    "notes": "TicketSource describes VIP 6:00–6:30 PM, doors 6:30 PM, concert starting at 7:00 PM with DJ JBEZ, and Mike Malagies 7:30–9:00 PM. The listing header's 6:30 PM is doors.",
     "venue": "Black Box Media Miami",
     "address": "12355 NE 13th Ave Unit #403-404",
     "city": "North Miami",
     "state": "FL",
     "country": "US",
     "artists": [
-      "Mike Malagies"
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
     ],
-    "headliner": "Mike Malagies",
+    "headliner": "Miles Minnick",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
-    "officialUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
-    "image": "assets/events/mike-malagies-miami-2026-10-16.png",
-    "imageType": "event_artwork",
+    "ticketUrl": "https://www.bandsintown.com/t/108940329",
+    "officialUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
+    "image": "assets/artists/miles-minnick.webp",
+    "imageType": "artist",
     "imagePosition": "center",
-    "imageOverride": true,
     "lineupExplicit": true,
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "sourceName": "TicketSource exact event listing",
-    "sources": [
-      {
-        "name": "TicketSource exact event listing",
-        "url": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      },
-      {
-        "name": "Black Box Media Miami official venue",
-        "url": "https://www.blackboxstudiosmiami.com/event-list",
-        "type": "manual_verified",
-        "authority": "venue",
-        "priority": 112
-      },
-      {
-        "name": "TicketSource exact event listing",
-        "url": "https://www.ticketsource.com/the-sound-system/mike-malagies-florida-takeover-miami/e-vgxqxl",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      }
-    ],
-    "auditVerified": "2026-09-26",
-    "id": "mike-malagies-florida-takeover-miami-2026",
-    "imageSourceUrl": "https://www.ticketsource.com/the-sound-system/mike-malagies-it-s-a-god-night-miami/e-vgxqxl",
-    "imageSource": "Official TicketSource It's A God Night Miami flyer",
-    "soldOut": true,
-    "ticketAvailability": "sold_out"
-  },
-  {
-    "id": "drea-lp-sondaze-social-nashville-2026-12-20",
-    "title": "Sondaze Social — Drea LP",
-    "startDate": "2026-12-20",
-    "endDate": "2026-12-20",
-    "startTime": "14:00",
-    "endTime": "18:00",
-    "startDateTime": "2026-12-20T14:00:00-06:00",
-    "endDateTime": "2026-12-20T18:00:00-06:00",
-    "timezone": "America/Chicago",
-    "venue": "NoWhere Special",
-    "address": "2000 Belcourt Ave",
-    "postalCode": "",
-    "city": "Nashville",
-    "state": "TN",
-    "country": "US",
-    "artists": [
-      "Drea LP"
-    ],
-    "headliner": "Drea LP",
     "advertisedBilling": [
-      "Drea LP"
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
     ],
-    "officialBill": [
-      "Drea LP"
-    ],
-    "ticketUrl": "",
-    "officialUrl": "https://drealp.com/event/6785400/785411205/sondaze-social",
-    "organizerName": "Urban Soul Cafe",
-    "image": "assets/events/drea-lp-sondaze-social-nashville-2026-12-20.png",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Drea LP official event page original portrait flyer",
-    "imageSourceUrl": "https://drealp.com/event/6785400/785411205/sondaze-social",
-    "price": "Free admission",
-    "ageRestriction": "Venue normally 21+; event-specific exceptions unconfirmed",
-    "publicNotice": "Free admission. The event runs 2–6 PM; Drea LP’s exact set time is unannounced. The venue normally operates as 21+; event-specific exceptions are unconfirmed.",
-    "publicDescription": "Urban Soul Cafe hosts Sondaze Social with Drea LP performing live on December 20, 2026 at NoWhere Special, 2000 Belcourt Ave, Nashville. The event runs 2–6 PM Central, with free admission and public entry advertised by the artist. Drea LP’s exact set time is unannounced. The venue normally operates as 21+; event-specific exceptions are unconfirmed.",
-    "notes": "Owner authorized confirmed recommended additions November4. This resolves the earlier held December20 brunch: the current official artist flyer explicitly says Drea LP PERFORMING LIVE. The organizer and 2–6PM event window are printed on the flyer and agree with artist MusicEvent JSON-LD. Do not treat2PM as the artist’s individual set. Free admission and open to public stated explicitly on artist page. Venue homepage says21+; no event-specific exception confirmed, so do not call all-ages. Official flyer/page address2000BelcourtAve takes precedence over a mismatched older1910press-release address. Postal code remains unverified. The social was known in the October29 reminder before music was confirmed; use original discovery date to avoid treating old discovery as new.",
-    "sourceName": "Drea LP official event page and original flyer",
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "sourceName": "Bandsintown verified event listing",
     "sources": [
       {
-        "name": "Drea LP official Sondaze Social event",
-        "url": "https://drealp.com/event/6785400/785411205/sondaze-social",
+        "name": "Eli Williams official performance announcement",
+        "url": "https://www.instagram.com/eliwilliamssss/p/DdmMA0JOH4q/",
         "type": "manual_verified",
         "authority": "artist",
         "priority": 115
       },
       {
-        "name": "NoWhere Special official general age policy",
-        "url": "https://www.nowherespecialnash.com/",
+        "name": "Bandsintown verified event listing",
+        "url": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
         "type": "manual_verified",
-        "authority": "venue",
-        "priority": 115
+        "authority": "artist_calendar",
+        "priority": 94
+      },
+      {
+        "name": "CJ Emulous official tour calendar",
+        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-23",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 88
       }
     ],
-    "eventType": "concert",
-    "status": "scheduled",
-    "musicConfirmed": true,
-    "lineupExplicit": true,
-    "authority": "official_event",
-    "confidence": "high",
-    "firstSeen": "2026-10-29",
-    "lastVerified": "2026-11-05T02:41:22Z",
-    "auditVerified": "2026-11-04",
-    "detailImageLayout": "portrait"
+    "notes": " Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates.",
+    "auditVerified": "2026-09-23",
+    "officialBill": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
+    ],
+    "id": "miles-minnick-black-box-north-miami-2026-11-05"
   },
   {
-    "id": "kb-strength-to-stand-december-pigeon-forge-2026-12-28",
-    "title": "Strength to Stand December Conference — KB",
-    "startDate": "2026-12-28",
-    "endDate": "2026-12-30",
-    "startTime": "",
-    "endTime": "",
+    "title": "Miles Minnick – Christlike University – Florida Campus Tour in Jacksonville",
+    "startDate": "2026-11-07",
+    "startTime": "19:00",
     "timezone": "America/New_York",
-    "venue": "LeConte Center at Pigeon Forge",
-    "address": "2986 Teaster Lane",
-    "postalCode": "37863",
-    "city": "Pigeon Forge",
-    "state": "TN",
-    "artists": [
-      "KB"
+    "venue": "The Albatross",
+    "venueAliases": [
+      "Underbelly"
     ],
-    "headliner": "KB",
-    "advertisedBilling": [
-      "KB",
-      "Charity Gayle",
-      "STS Worship"
-    ],
-    "officialBill": [
-      "KB",
-      "Charity Gayle",
-      "STS Worship"
-    ],
-    "ticketUrl": "https://www.strengthtostand.org/dec-registration",
-    "officialUrl": "https://www.strengthtostand.org/dec-registration",
-    "image": "assets/events/kb-strength-to-stand-2026-2027-official-showcard.jpg",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageSource": "Strength to Stand official KB 2026/2027 conference showcard; owner-selected Instagram announcement",
-    "imageSourceUrl": "https://www.instagram.com/p/DY5WoqdyMhq/",
-    "price": "$99 commuter conference registration; lodging packages vary",
-    "ageRestriction": "Sixth grade or at least 12 years old; younger children require organizer permission",
-    "publicNotice": "Student conference; registration required. December 28–30 is the conference window. KB’s performance day and time are not confirmed.",
-    "publicDescription": "Strength to Stand December Conference runs December 28–30, 2026 at the LeConte Center in Pigeon Forge. Music features KB, Charity Gayle and STS Worship. KB is announced as a late-night feature; his exact performance day and time are not published. Preston Perry, Scott Dawson, Noah Herrin and Brian Mills are conference speakers, not additional musical performers. Commuter conference registration is advertised at $99 per person, excluding lodging. Standalone concert-only admission is unconfirmed.",
-    "notes": "Owner authorized adding recommended confirmed discoveries November 4. The official May28 Instagram announcement explicitly confirms KB at BOTH December and January conferences. Retain this as one conference-window record, not three performances. Do not infer set dates or times from church travel schedules. Reuse the owner-approved official 26/27 portrait showcard unchanged. Registration is $99 commuter excluding lodging; official December page adds $5 late fee after Dec7. Do not copy the January speakers or January registration URL. This is separate from the already-live January16–18 booking.",
-    "sourceName": "Strength to Stand official December 2026 conference announcement and registration",
-    "sources": [
-      {
-        "name": "Strength to Stand official conference program",
-        "url": "https://www.strengthtostand.org/sts-conference",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Official December and January KB announcement",
-        "url": "https://www.instagram.com/p/DY5WoqdyMhq/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Official December registration",
-        "url": "https://www.strengthtostand.org/dec-registration",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "LeConte Center address",
-        "url": "https://www.lecontecenter.com/contact-us/",
-        "type": "manual_verified",
-        "authority": "venue",
-        "priority": 115
-      }
-    ],
+    "address": "113 E Bay St",
+    "city": "Jacksonville",
+    "state": "FL",
     "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "headliner": "Miles Minnick",
     "eventType": "concert",
     "status": "scheduled",
-    "musicConfirmed": true,
+    "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
+    "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
+    "image": "assets/artists/miles-minnick.webp",
+    "imageType": "artist",
+    "imagePosition": "center",
     "lineupExplicit": true,
-    "authority": "official_event",
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "authority": "venue_ticket",
     "confidence": "high",
-    "imageOverride": true,
-    "firstSeen": "2026-11-04",
-    "lastVerified": "2026-11-05T02:41:22Z",
-    "auditVerified": "2026-11-04",
-    "organizerName": "Strength to Stand / Scott Dawson Evangelistic Association",
-    "organizerUrl": "https://www.strengthtostand.org/",
-    "detailImageLayout": "portrait"
+    "sourceName": "Live Nation official event listing",
+    "sources": [
+      {
+        "name": "Live Nation official event listing",
+        "url": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      },
+      {
+        "name": "Bandsintown verified lineup",
+        "url": "https://www.bandsintown.com/e/108940352-miles-minnick-at-the-albatross",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 94
+      }
+    ],
+    "supersededSources": [
+      {
+        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-25",
+        "publishedDate": "2026-11-07",
+        "publishedCity": "Tampa",
+        "reason": "Conflicts with the venue-specific Jacksonville ticket listing and is not supported by the official Flavor Fest concert schedule."
+      }
+    ],
+    "notes": "The venue-specific Jacksonville ticket listing supersedes CJ's older November 7 Tampa calendar entry. Miles may also appear on the 11:45 AM Flavor Fest artist panel in Tampa; that daytime panel is not this concert.",
+    "auditVerified": "2026-09-23",
+    "id": "miles-minnick-christlike-university-jacksonville-2026-11-07"
   },
   {
-    "title": "Northeast Winterfest 2027 — EGR",
-    "startDate": "2027-01-15",
-    "endDate": "2027-01-17",
-    "country": "US",
-    "city": "Stamford",
-    "state": "CT",
-    "venue": "DoubleTree by Hilton Stamford",
-    "address": "1 First Stamford Place",
-    "postalCode": "06901",
-    "officialUrl": "https://csareg.com/event/northeast-winterfest/",
-    "ticketUrl": "https://csareg.com/event/northeast-winterfest/",
-    "id": "northeast-winterfest-stamford-2027-01-15",
-    "startTime": "",
-    "endTime": "",
+    "title": "Miles Minnick – Christlike University – Florida Campus Tour in Orlando",
+    "startDate": "2026-11-08",
+    "startTime": "19:00",
     "timezone": "America/New_York",
-    "artists": [
-      "EGR"
-    ],
-    "advertisedBilling": [
-      "EGR",
-      "Lizzie Morgan",
-      "Soul Cry"
-    ],
-    "officialBill": [
-      "EGR",
-      "Lizzie Morgan",
-      "Soul Cry"
-    ],
-    "image": "assets/events/northeast-winterfest-stamford-2027-01-15.jpg",
-    "imageType": "event_artwork",
-    "imageOverride": true,
-    "imagePosition": "center",
-    "imageSource": "Church of God Youth and Discipleship official 2027 conference flyer",
-    "imageSourceUrl": "https://www.cogyd.org/s/Northeast_Slide.jpg",
-    "organizerName": "Church of God Youth and Discipleship",
-    "organizerUrl": "https://www.cogyd.org/mywinterfest",
-    "price": "$119 conference ticket without hotel, plus 5% processing fee.",
-    "ageRestriction": "",
-    "publicNotice": "Dates shown cover the conference. The artist performance day and time are unannounced. Church or youth-group conference registration is required.",
-    "publicDescription": "Northeast Winterfest 2027 takes place at DoubleTree by Hilton Stamford in Stamford, CT. The official artist bill includes EGR, Lizzie Morgan, Soul Cry. Dates shown cover the full conference; exact artist performance days and times have not been announced. Conference registration through a church or youth group is required. The registration form requires church and pastor information and payment by church credit card. $119 conference ticket without hotel, plus 5% processing fee. Standalone concert admission is unconfirmed.",
-    "notes": "Owner authorized recommended show additions November4. Current official 2027 poster and organizer-linked CSA registration verify dates, venue and artist bill. Publication as one conference-window music appearance is an editorial judgment from the rapper's placement among musical acts; no explicit set assignment is published. Do not create one show for each conference day or infer check-in as concert time. Other billed conference guests, not counted as musical performers: Manouchka Charles, Javon Ruff, Chris Estrada, Kaci Stewart. Original landscape flyer preserved intact; no portrait found in bounded official website/current Instagram review. Fee-inclusive numeric ticket price not supplied; price description retains the advertised base and5% processing fee. No new artist profiles or verification statuses. Premier CJ Emulous remains held for schedule conflict, separate from this record.",
-    "sourceName": "Church of God Youth and Discipleship official current flyer and CSA registration",
-    "sources": [
-      {
-        "name": "Official 2027 conference announcement",
-        "url": "https://www.cogyd.org/northeast27",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Official dated full conference flyer",
-        "url": "https://www.cogyd.org/s/Northeast_Slide.jpg",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Organizer-linked registration",
-        "url": "https://csareg.com/event/northeast-winterfest/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      }
-    ],
-    "eventType": "concert",
-    "status": "scheduled",
-    "musicConfirmed": true,
-    "lineupExplicit": true,
-    "authority": "official_event",
-    "confidence": "high",
-    "firstSeen": "2026-11-04",
-    "lastVerified": "2026-11-05T02:44:27Z",
-    "auditVerified": "2026-11-04"
-  },
-  {
-    "title": "Ozark Winterfest 2027 — EGR",
-    "startDate": "2027-02-05",
-    "endDate": "2027-02-07",
+    "venue": "Conduit",
+    "address": "6700 Aloma Ave",
+    "city": "Winter Park",
+    "advertisedCity": "Orlando",
+    "state": "FL",
     "country": "US",
-    "city": "Branson",
-    "state": "MO",
-    "venue": "The Mansion Theatre",
-    "address": "189 Expressway Lane",
-    "postalCode": "65616",
-    "officialUrl": "https://csareg.com/event/ozark-winterfest/",
-    "ticketUrl": "https://csareg.com/event/ozark-winterfest/",
-    "id": "ozark-winterfest-branson-2027-02-05",
-    "startTime": "",
-    "endTime": "",
-    "timezone": "America/Chicago",
     "artists": [
-      "EGR"
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
     ],
-    "advertisedBilling": [
-      "EGR",
-      "Gracie Binion Worship",
-      "Grace Graber",
-      "PRESTXN",
-      "Lee U Worship"
-    ],
-    "officialBill": [
-      "EGR",
-      "Gracie Binion Worship",
-      "Grace Graber",
-      "PRESTXN",
-      "Lee U Worship"
-    ],
-    "image": "assets/events/ozark-winterfest-branson-2027-02-05.jpg",
-    "imageType": "event_artwork",
-    "imageOverride": true,
-    "imagePosition": "center",
-    "imageSource": "Church of God Youth and Discipleship official 2027 conference flyer",
-    "imageSourceUrl": "https://www.cogyd.org/s/Ozark_Slide.jpg",
-    "organizerName": "Church of God Youth and Discipleship",
-    "organizerUrl": "https://www.cogyd.org/mywinterfest",
-    "price": "$119 conference ticket without hotel, plus 5% processing fee.",
-    "ageRestriction": "",
-    "publicNotice": "Dates shown cover the conference. The artist performance day and time are unannounced. Church or youth-group conference registration is required.",
-    "publicDescription": "Ozark Winterfest 2027 takes place at The Mansion Theatre in Branson, MO. The official artist bill includes EGR, Gracie Binion Worship, Grace Graber, PRESTXN, Lee U Worship. Dates shown cover the full conference; exact artist performance days and times have not been announced. Conference registration through a church or youth group is required. The registration form requires church and pastor information and payment by church credit card. $119 conference ticket without hotel, plus 5% processing fee. Standalone concert admission is unconfirmed.",
-    "notes": "Owner authorized recommended show additions November4. Current official 2027 poster and organizer-linked CSA registration verify dates, venue and artist bill. Publication as one conference-window music appearance is an editorial judgment from the rapper's placement among musical acts; no explicit set assignment is published. Do not create one show for each conference day or infer check-in as concert time. Other billed conference guests, not counted as musical performers: JV Pender, Ruthie Thompson, Brian Varnell, Phillip Walker. Original landscape flyer preserved intact; no portrait found in bounded official website/current Instagram review. Fee-inclusive numeric ticket price not supplied; price description retains the advertised base and5% processing fee. No new artist profiles or verification statuses. Premier CJ Emulous remains held for schedule conflict, separate from this record.",
-    "sourceName": "Church of God Youth and Discipleship official current flyer and CSA registration",
-    "sources": [
-      {
-        "name": "Official 2027 conference announcement",
-        "url": "https://www.cogyd.org/ozark27",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Official dated full conference flyer",
-        "url": "https://www.cogyd.org/s/Ozark_Slide.jpg",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Organizer-linked registration",
-        "url": "https://csareg.com/event/ozark-winterfest/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      }
-    ],
+    "headliner": "Miles Minnick",
     "eventType": "concert",
     "status": "scheduled",
-    "musicConfirmed": true,
-    "lineupExplicit": true,
-    "authority": "official_event",
-    "confidence": "high",
-    "firstSeen": "2026-11-04",
-    "lastVerified": "2026-11-05T02:44:27Z",
-    "auditVerified": "2026-11-04"
-  },
-  {
-    "title": "Smoky Mountain Winterfest 2027 — Marty",
-    "startDate": "2027-03-05",
-    "endDate": "2027-03-07",
-    "country": "US",
-    "city": "Pigeon Forge",
-    "state": "TN",
-    "venue": "LeConte Center",
-    "address": "2986 Teaster Lane",
-    "postalCode": "37863",
-    "officialUrl": "https://csareg.com/event/smoky-mountain-winterfest/",
-    "ticketUrl": "https://csareg.com/event/smoky-mountain-winterfest/",
-    "id": "smoky-mountain-winterfest-pigeon-forge-2027-03-05",
-    "startTime": "",
-    "endTime": "",
-    "timezone": "America/New_York",
-    "artists": [
-      "Marty"
-    ],
-    "advertisedBilling": [
-      "Steven & Hannah Musso",
-      "Lizzie Morgan",
-      "Danny Gokey",
-      "Marty",
-      "LIN D",
-      "Lee U Worship"
-    ],
-    "officialBill": [
-      "Steven & Hannah Musso",
-      "Lizzie Morgan",
-      "Danny Gokey",
-      "Marty",
-      "LIN D",
-      "Lee U Worship"
-    ],
-    "image": "assets/events/smoky-mountain-winterfest-pigeon-forge-2027-03-05.jpg",
-    "imageType": "event_artwork",
-    "imageOverride": true,
+    "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
+    "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
+    "image": "assets/artists/miles-minnick.webp",
+    "imageType": "artist",
     "imagePosition": "center",
-    "imageSource": "Church of God Youth and Discipleship official 2027 conference flyer",
-    "imageSourceUrl": "https://www.cogyd.org/s/Smoky_Slide-fdhr.jpg",
-    "organizerName": "Church of God Youth and Discipleship",
-    "organizerUrl": "https://www.cogyd.org/mywinterfest",
-    "price": "$139 conference ticket without hotel, plus 5% processing fee.",
-    "ageRestriction": "",
-    "publicNotice": "Dates shown cover the conference. The artist performance day and time are unannounced. Church or youth-group conference registration is required.",
-    "publicDescription": "Smoky Mountain Winterfest 2027 takes place at LeConte Center in Pigeon Forge, TN. The official artist bill includes Steven & Hannah Musso, Lizzie Morgan, Danny Gokey, Marty, LIN D, Lee U Worship. Dates shown cover the full conference; exact artist performance days and times have not been announced. Conference registration through a church or youth group is required. The registration form requires church and pastor information and payment by church credit card. $139 conference ticket without hotel, plus 5% processing fee. Standalone concert admission is unconfirmed.",
-    "notes": "Owner authorized recommended show additions November4. Current official 2027 poster and organizer-linked CSA registration verify dates, venue and artist bill. Publication as one conference-window music appearance is an editorial judgment from the rapper's placement among musical acts; no explicit set assignment is published. Do not create one show for each conference day or infer check-in as concert time. Other billed conference guests, not counted as musical performers: Manouchka Charles, Noah Herrin, Keenan Clark, Tyshone Roland. Original landscape flyer preserved intact; no portrait found in bounded official website/current Instagram review. Fee-inclusive numeric ticket price not supplied; price description retains the advertised base and5% processing fee. No new artist profiles or verification statuses. Premier CJ Emulous remains held for schedule conflict, separate from this record.",
-    "sourceName": "Church of God Youth and Discipleship official current flyer and CSA registration",
+    "lineupExplicit": true,
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
+    ],
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "sourceName": "Live Nation official event listing",
     "sources": [
       {
-        "name": "Official 2027 conference announcement",
-        "url": "https://www.cogyd.org/smwf27",
+        "name": "Eli Williams official performance announcement",
+        "url": "https://www.instagram.com/eliwilliamssss/p/DdmMA0JOH4q/",
         "type": "manual_verified",
-        "authority": "official_event",
+        "authority": "artist",
         "priority": 115
       },
       {
-        "name": "Official dated full conference flyer",
-        "url": "https://www.cogyd.org/s/Smoky_Slide-fdhr.jpg",
+        "name": "Live Nation official event listing",
+        "url": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
         "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
+        "authority": "venue_ticket",
+        "priority": 112
       },
       {
-        "name": "Organizer-linked registration",
-        "url": "https://csareg.com/event/smoky-mountain-winterfest/",
+        "name": "Bandsintown verified lineup",
+        "url": "https://www.bandsintown.com/e/108940372-miles-minnick-at-conduit",
         "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
+        "authority": "artist_calendar",
+        "priority": 94
       }
     ],
-    "eventType": "concert",
-    "status": "scheduled",
-    "musicConfirmed": true,
-    "lineupExplicit": true,
-    "authority": "official_event",
-    "confidence": "high",
-    "firstSeen": "2026-11-04",
-    "lastVerified": "2026-11-05T02:44:27Z",
-    "auditVerified": "2026-11-04"
+    "supersededSources": [
+      {
+        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-26",
+        "publishedDate": "2026-11-08",
+        "publishedCity": "Jacksonville",
+        "reason": "Conflicts with the venue-specific Conduit ticket listing in Winter Park."
+      }
+    ],
+    "notes": " Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates.",
+    "auditVerified": "2026-09-23",
+    "officialBill": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
+    ],
+    "id": "miles-minnick-christlike-university-orlando-2026-11-08"
   }
 ]
