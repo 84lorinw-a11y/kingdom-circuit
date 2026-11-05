@@ -15,6 +15,48 @@ import optimize_public_images as optimizer
 
 
 class PortraitResponsiveVariantTests(unittest.TestCase):
+    def test_winterfest_caps_leave_other_flyers_and_pinned_portraits_unchanged(self):
+        repository = Path(__file__).resolve().parents[1]
+        cases = [
+            ('assets/events/northeast-winterfest-stamford-2027-01-15.jpg', [320, 640, 960], 'event-artwork'),
+            ('assets/events/ozark-winterfest-branson-2027-02-05.jpg', [320, 640, 960], 'event-artwork'),
+            ('assets/events/smoky-mountain-winterfest-pigeon-forge-2027-03-05.jpg', [320, 640, 960], 'event-artwork'),
+            ('assets/events/kb-strength-to-stand-2026-2027-official-showcard.jpg', [320, 640, 960, 1280], 'event-artwork'),
+            ('assets/artists/caleb-gordon-primary.jpg', [320, 640, 960, 1280], 'artist-photo'),
+        ]
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            originals = {}
+            tags = []
+            for source, expected, css_class in cases:
+                data = (repository / source).read_bytes()
+                destination = root / source
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                destination.write_bytes(data)
+                originals[source] = data
+                tags.append(f'<img class="{css_class}" src="/{source}" alt="Test image">')
+            (root / 'index.html').write_text(''.join(tags))
+            self.assertEqual(optimizer.main([str(root), '--offline']), 0)
+            manifest = json.loads((root / 'assets/optimized/manifest.json').read_text())
+            self.assertEqual(manifest['requestedWidths'], [320, 640, 960, 1280])
+            self.assertEqual(manifest['quality'], 82)
+            self.assertEqual(manifest['failedSourceCount'], 0)
+            images = {item['id']: item for item in manifest['images']}
+            html = (root / 'index.html').read_text()
+            for source, expected, _ in cases:
+                with self.subTest(source=source):
+                    content_id = hashlib.sha256(originals[source]).hexdigest()[:24]
+                    variants = images[content_id]['variants']
+                    self.assertEqual([variant['width'] for variant in variants], expected)
+                    self.assertEqual((root / source).read_bytes(), originals[source])
+                    self.assertIn(f'{content_id}-w{expected[-1]}.webp {expected[-1]}w', html)
+                    if expected[-1] == 960:
+                        self.assertNotIn(f'{content_id}-w1280.webp', html)
+                        self.assertFalse((root / 'assets/optimized' / f'{content_id}-w1280.webp').exists())
+                    for variant in variants:
+                        with Image.open(root / variant['file']) as image:
+                            self.assertEqual(image.size, (variant['width'], variant['height']))
+
     def test_only_pinned_opt_in_gets_extra_variant_without_upscaling_or_source_changes(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

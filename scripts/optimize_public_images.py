@@ -41,6 +41,14 @@ import xml.etree.ElementTree as ET
 DEFAULT_BASE = "/"
 DEFAULT_ORIGIN = "https://kingdomcircuit.com"
 DEFAULT_WIDTHS = (320, 640, 960, 1280)
+# These three landscape flyers retain their full original files. A 960px
+# derivative covers their typical 475px display at 2x without growing the
+# shared image budget or reducing quality for existing images.
+SOURCE_MAX_WIDTHS = {
+    "bfe0fd493bc4c09990a335251bfac01cfeff676e56a22db17c654411dc5bf40e": 960,  # Northeast
+    "76e8cc1fd94f9ba22c0fd15eafa8c25d7833ef9c7db5aa2c72205fc416854d0b": 960,  # Ozark
+    "fb68c0da0d7b469f66fb1e75e5fc69a3be33d13c053c8dc1b78f93f9a13365a0": 960,  # Smoky Mountain
+}
 PORTRAIT_FRAMING_PATH = Path(__file__).resolve().parents[1] / "config/artist-profile-framing.json"
 CARD_SIZES = (
     "(max-width: 600px) calc(100vw - 32px), "
@@ -721,6 +729,8 @@ def render_content(
     if source_width < 2 or source_height < 1:
         raise OptimizationFailure("image-too-small")
     chosen = planned_widths(source_width, widths)
+    if digest in SOURCE_MAX_WIDTHS:
+        chosen = [width for width in chosen if width <= SOURCE_MAX_WIDTHS[digest]]
     if len(chosen) < 2:
         raise OptimizationFailure("insufficient-variant-widths")
     content_id = digest[:24]
