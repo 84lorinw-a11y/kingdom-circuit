@@ -4251,7 +4251,7 @@
         "title": "Flavor Fest 2026 — Saturday Concerts",
         "startDate": "2026-11-07",
         "startTime": "19:00",
-        "timezone": "America/New_York",
+        "timezone": "",
         "city": "Tampa",
         "state": "FL",
         "country": "US",
@@ -4288,12 +4288,12 @@
         "title": "Flavor Fest 2026 — Friday Concerts",
         "startDate": "2026-11-06",
         "startTime": "19:00",
-        "timezone": "America/New_York",
+        "timezone": "",
         "city": "Tampa",
         "state": "FL",
         "country": "US",
         "venue": "Crossover Church",
-        "address": "1235 E Fowler Ave",
+        "address": "1235 Fowler Ave",
         "artists": [
           "Miles Minnick",
           "Yung Kriss",
@@ -10091,7 +10091,10 @@
     },
     "official:0dd5f599b4db080206cf": {
       "path": "/event/scootie-wop-at-match-2026-11-14-houston-939e4b/",
-      "sourceIds": [],
+      "sourceIds": [
+        "manual:scootie-wop-match-houston-2026",
+        "official:1a0b83a961646c580989"
+      ],
       "event": {
         "id": "official:0dd5f599b4db080206cf",
         "title": "Scootie Wop @ MATCH - Midtown Arts and Theater Center Houston",
@@ -10117,9 +10120,13 @@
         "imageType": "event_artwork",
         "confidence": "high",
         "publicDescription": "Rescheduled from November 14, 2026 to May 1, 2027. Existing tickets remain valid.",
-        "mergedFromIds": [],
+        "mergedFromIds": [
+          "manual:scootie-wop-match-houston-2026",
+          "official:1a0b83a961646c580989"
+        ],
         "legacyEventPaths": [
-          "/event/scootie-wop-at-match-2027-05-01-houston-939e4b/"
+          "/event/scootie-wop-match-midtown-arts-and-theater-center-houston-2026-11-14-houston-1fc3cb/",
+          "/event/scootie-wop-at-match-2027-05-01-houston-c640c4/"
         ]
       }
     },
@@ -15160,7 +15167,9 @@
     "/artists/b4l-lildon/": "/artists/b4l-lil-don/",
     "/event/scootie-wop-at-match-2027-05-01-houston-939e4b/": "/event/scootie-wop-at-match-2026-11-14-houston-939e4b/",
     "/event/scootie-wop-match-midtown-arts-and-theater-center-houston-2027-05-01-houston-939e4b/": "/event/scootie-wop-at-match-2026-11-14-houston-939e4b/",
-    "/event/matthew-plante-headlining-show-at-d-lounge-2026-11-07-surrey-6ba4e6/": "/event/music-showcase-remembrance-day-tribute-with-matthew-plante-2026-11-07-surrey-6ba4e6/"
+    "/event/matthew-plante-headlining-show-at-d-lounge-2026-11-07-surrey-6ba4e6/": "/event/music-showcase-remembrance-day-tribute-with-matthew-plante-2026-11-07-surrey-6ba4e6/",
+    "/event/scootie-wop-match-midtown-arts-and-theater-center-houston-2026-11-14-houston-1fc3cb/": "/event/scootie-wop-at-match-2026-11-14-houston-939e4b/",
+    "/event/scootie-wop-at-match-2027-05-01-houston-c640c4/": "/event/scootie-wop-at-match-2026-11-14-houston-939e4b/"
   },
   "pages": {
     "/artists/180mindset/": {
@@ -23097,8 +23106,8 @@
       ]
     },
     "/event/flavor-fest-2026-friday-concerts-2026-11-06-tampa-b41edf/": {
-      "fingerprint": "0b69a0a10d2b72dcc2b1f87857b51bcf9717a5cb0c895259dfde59e3b2d6dae1",
-      "lastmod": null,
+      "fingerprint": "a24f4905f12deadf402baca449137a7ce6a85892cee98736cc6ada0943d6f8d8",
+      "lastmod": "2026-11-05",
       "title": "Flavor Fest 2026 — Friday Concerts — Tampa, FL — Fri, Nov 6, 2026 - 7:00 PM | Kingdom Circuit",
       "heading": "Flavor Fest 2026 — Friday Concerts",
       "eventPaths": [
@@ -29711,5 +29720,5 @@
     }
   },
   "retiredPaths": [],
-  "publishedAt": "2026-11-05T18:33:21.198313+00:00"
+  "publishedAt": "2026-11-05T19:24:58.177398+00:00"
 }
