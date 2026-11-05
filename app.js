@@ -6272,8 +6272,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/hisname_jirr/",
     "spotifyProfile": "https://open.spotify.com/artist/3iz7aOssbRgzYL5v5dLg21",
     "youtubeProfile": "https://www.youtube.com/channel/UCZas4fe5ANO53-vPL34ZX3g",
-    "officialImageSource": "https://www.instagram.com/p/DWnANTwjTla/",
-    "imageUrl": "assets/artists/hisnamejirr-official-ripe-nov4.png",
+    "officialImageSource": "https://www.instagram.com/p/DLzqE3FAeyV/",
+    "imageUrl": "assets/artists/hisnamejirr-owner-instagram-dlzqe3faeyv-nov4.jpg",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   }
@@ -12118,8 +12118,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/hisname_jirr/",
     "spotifyProfile": "https://open.spotify.com/artist/3iz7aOssbRgzYL5v5dLg21",
     "youtubeProfile": "https://www.youtube.com/channel/UCZas4fe5ANO53-vPL34ZX3g",
-    "officialImageSource": "https://www.instagram.com/p/DWnANTwjTla/",
-    "imageUrl": "assets/artists/hisnamejirr-official-ripe-nov4.png",
+    "officialImageSource": "https://www.instagram.com/p/DLzqE3FAeyV/",
+    "imageUrl": "assets/artists/hisnamejirr-owner-instagram-dlzqe3faeyv-nov4.jpg",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
   }
@@ -13786,7 +13786,7 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 0%"
   },
   "hisnamejirr": {
-    "imageUrl": "assets/artists/hisnamejirr-official-ripe-nov4.png",
+    "imageUrl": "assets/artists/hisnamejirr-owner-instagram-dlzqe3faeyv-nov4.jpg",
     "imagePosition": "50% 0%"
   }
 };
