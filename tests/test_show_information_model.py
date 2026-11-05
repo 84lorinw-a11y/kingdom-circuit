@@ -200,6 +200,47 @@ class ShowInformationModelTests(unittest.TestCase):
         self.assertEqual(legacy["organizerName"], "Real organizer")
         self.assertNotIn("organizerUrl", legacy)
 
+    def test_collected_flat_organizer_fields_survive_repeated_normalization(self):
+        for name, url in (
+            ("Urban Soul Cafe", None),
+            ("Strength to Stand / Scott Dawson Evangelistic Association", "https://www.strengthtostand.org/"),
+            ("Church of God Youth and Discipleship", "https://www.cogyd.org/mywinterfest"),
+        ):
+            with self.subTest(organizer=name):
+                source = self.event(organizerName=" " + name + " ")
+                if url:
+                    source["organizerUrl"] = " " + url + " "
+                before = copy.deepcopy(source)
+                result = normalize(source)
+                self.assertEqual(result.get("organizerName"), name)
+                self.assertEqual(result.get("organizerUrl"), url)
+                self.assertEqual(normalize(result), result)
+                self.assertEqual(source, before)
+
+    def test_canonical_organizer_wins_without_borrowing_a_flat_organizer_url(self):
+        for canonical, expected_url in (
+            ({"name": "Current promoter", "url": "https://current.example/"}, "https://current.example/"),
+            ({"name": "Current promoter", "url": "javascript:alert(1)"}, None),
+            ("Current promoter", None),
+        ):
+            with self.subTest(organizer=canonical):
+                result = normalize(self.event(organizer=canonical, organizerName="Old promoter",
+                                              organizerUrl="https://old.example/"))
+                self.assertEqual(result["organizerName"], "Current promoter")
+                self.assertEqual(result.get("organizerUrl"), expected_url)
+                self.assertEqual(normalize(result), result)
+
+    def test_flat_organizer_rejects_unsafe_urls_and_requires_a_name(self):
+        for url in ("javascript:alert(1)", "https://user:secret@promoter.example/",
+                    "https://promoter.example/a b", "//promoter.example/"):
+            with self.subTest(url=url):
+                result = normalize(self.event(organizerName="Confirmed promoter", organizerUrl=url))
+                self.assertEqual(result.get("organizerName"), "Confirmed promoter")
+                self.assertNotIn("organizerUrl", result)
+        result = normalize(self.event(organizerName=" ", organizerUrl="https://promoter.example/"))
+        self.assertNotIn("organizerName", result)
+        self.assertNotIn("organizerUrl", result)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -2,6 +2,7 @@
 import json
 import re
 from pathlib import Path
+from urllib.parse import urlsplit
 
 # September 28: the owner removed Jay Kalyl from the curated database and
 # explicitly requested removal of his profile and every show from the site.
@@ -13,6 +14,31 @@ REMOVED_ARTISTS = {"jay kalyl", "propaganda"}
 
 def removed_artist(name):
     return re.sub(r"[\s_-]+", " ", str(name or "").casefold()).strip() in REMOVED_ARTISTS
+
+
+def misattributed_event(event):
+    # November 5 review: this exact Betsy booking features the Miami jazz
+    # pianist, not the Christian singer in our Ryan Ellis roster. Preserve the
+    # original evidence/history; exclude only this reviewed date and identity.
+    if event.get("startDate") != "2026-11-13":
+        return False
+    if str(event.get("id") or "").removeprefix("manual:") == "bandsintown:1040781482":
+        return True
+    for field in ("officialUrl", "ticketUrl"):
+        try:
+            url = urlsplit(str(event.get(field) or ""))
+            host = (url.hostname or "").lower().removeprefix("www.")
+        except ValueError:
+            continue
+        if url.scheme not in {"http", "https"}:
+            continue
+        if host == "bandsintown.com" and re.fullmatch(r"/[et]/1040781482(?:[-/].*)?", url.path):
+            return True
+        if host == "thebetsyhotel.com" and url.path.rstrip("/") == (
+            "/event-calendar/live-music-intergenerational-jazz-ellis-duo-13"
+        ):
+            return True
+    return False
 
 
 def withheld_event(event):
@@ -45,7 +71,7 @@ def withheld_event(event):
 
 
 def removed_event(event):
-    if withheld_event(event):
+    if withheld_event(event) or misattributed_event(event):
         return True
     names = [event.get("headliner"), *event.get("artists", []),
              *event.get("advertisedBilling", []), *event.get("officialBill", [])]
@@ -63,7 +89,8 @@ def apply(root: Path):
             continue
         data = json.loads(path.read_text())
         rows = data.get("events", []) if isinstance(data, dict) else data
-        kept = [entry for entry in rows if not removed_event(entry.get("event", entry))]
+        kept = [entry for entry in rows if not removed_event(entry.get("event", entry))
+                or (relative == "event-history.json" and misattributed_event(entry.get("event", entry)))]
         if len(kept) == len(rows):
             continue
         if isinstance(data, dict):

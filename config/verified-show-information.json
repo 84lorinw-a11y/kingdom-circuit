@@ -1,0 +1,2000 @@
+{
+  "version": 1,
+  "events": [
+    {
+      "id": "manual:shai-linne-ready-conference-kansas-city-2027-01-29",
+      "startDate": "2027-01-29",
+      "city": "Kansas City",
+      "state": "MO",
+      "country": "US",
+      "facts": {
+        "postalCode": "64118",
+        "organizer": {
+          "name": "Spurgeon College",
+          "url": "https://spurgeoncollege.com/ready-conference/"
+        },
+        "registrationLocation": "Welcome Center",
+        "publicDescription": "Shai Linne performs Friday night during Ready Conference. Concert admission is included with regular conference registration; a concert-only ticket is also available."
+      },
+      "sources": [
+        {
+          "url": "https://spurgeoncollege.com/ready-conference/",
+          "reviewedAt": "2026-11-02",
+          "confidence": "previously reviewed"
+        },
+        {
+          "url": "https://ready27.events.mbts.edu/registration/select",
+          "reviewedAt": "2026-11-02",
+          "confidence": "previously reviewed"
+        },
+        {
+          "url": "https://ready27.events.mbts.edu/schedule/",
+          "reviewedAt": "2026-11-02",
+          "confidence": "previously reviewed"
+        }
+      ],
+      "expectedVenue": "Chapel — Midwestern Baptist Theological Seminary & Spurgeon College",
+      "expectedAddress": "5001 N Oak Trafficway"
+    },
+    {
+      "id": "manual:miles-minnick-black-box-north-miami-2026-11-05",
+      "startDate": "2026-11-05",
+      "city": "North Miami",
+      "state": "FL",
+      "country": "US",
+      "facts": {
+        "postalCode": "33161"
+      },
+      "sources": [
+        {
+          "url": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami?came_from=253",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The November 5 artist event page gives Black Box Media Miami at 12355 NE 13th Ave Unit #403-404, North Miami, FL 33161.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/SearchResults?Detail=FL.DOS.Corporations.Shared.Contracts.FilingRecord&InquiryDirectionType=PreviousRecord&InquiryType=EntityName&ListNameOrder=BLACKBOXIMPEXP+L180000409610&SearchNameOrder=BLACKBOXMIAMI+L130000259900&SearchTerm=BLACKBOX+IMP+",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Florida’s official business registry lists Black Box Media Miami LLC’s principal address at the same street and units, with postal code 33161; the record includes a 2026 annual report.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Black Box Media Miami",
+      "expectedAddress": "12355 NE 13th Ave Unit #403-404"
+    },
+    {
+      "id": "manual:don-ready-club-217-los-angeles-2026-11-06",
+      "startDate": "2026-11-06",
+      "city": "Los Angeles",
+      "state": "CA",
+      "country": "US",
+      "facts": {
+        "postalCode": "90047",
+        "organizer": {
+          "name": "Club 2:17"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/e/christian-latin-rap-club-night-w-don-ready-free-event-tickets-2003215547628?aff=ebdssbdestsearch",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The organizer’s Eventbrite listing places this event at 6111 South Gramercy Place, Los Angeles, CA 90047. The indexed primary page was readable; direct open returned a cache error.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://ladybugministry.com/contact-us/",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "A current organization at the supplied street separately identifies its Los Angeles location as 6111 S Gramercy Pl, Los Angeles, CA 90047.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.instagram.com/christianclub.la/p/DeDOFANvmLV/",
+          "fields": [
+            "organizer"
+          ],
+          "quoteOrSummary": "Existing verified production description explicitly states: Club 2:17 presents. The retained full description distinguishes presenter, artists, hosts and venue. Only the explicit presenting organization name is added; no organizer URL is inferred.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.eventbrite.com/e/christian-latin-rap-club-night-w-don-ready-free-event-tickets-2003215547628",
+          "fields": [
+            "organizer"
+          ],
+          "quoteOrSummary": "Existing verified production description explicitly states: Club 2:17 presents. The retained full description distinguishes presenter, artists, hosts and venue. Only the explicit presenting organization name is added; no organizer URL is inferred.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "6111 S Gramercy Place",
+      "expectedAddress": "6111 S Gramercy Place"
+    },
+    {
+      "id": "manual:flavor-fest-2026-friday-concerts",
+      "startDate": "2026-11-06",
+      "city": "Tampa",
+      "state": "FL",
+      "country": "US",
+      "facts": {
+        "postalCode": "33612"
+      },
+      "sources": [
+        {
+          "url": "https://www.crossoverchurch.org/contact-us",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The venue identifies its church/office location as 1235 East Fowler Avenue in Tampa, Florida 33612; the shipping address is separate.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.flavorfest.org/home",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The official 2026 festival site places the November 5–8 festival at Crossover Church and shows its Tampa postal code as 33612.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Crossover Church",
+      "expectedAddress": "1235 E Fowler Ave"
+    },
+    {
+      "id": "bandsintown:108881783",
+      "startDate": "2026-11-06",
+      "city": "Lynchburg",
+      "state": "VA",
+      "country": "US",
+      "facts": {
+        "postalCode": "24515"
+      },
+      "sources": [
+        {
+          "url": "https://events.liberty.edu/event/hulvey-concert",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The official university event URL displays the matching campus street address, 1971 University Blvd., Lynchburg, VA 24515. This establishes the postal code, not a new performance-time claim.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Vines Center",
+      "expectedAddress": "1971 University Blvd"
+    },
+    {
+      "id": "bandsintown:109046072",
+      "startDate": "2026-11-06",
+      "city": "Saint Marys",
+      "state": "OH",
+      "country": "US",
+      "facts": {
+        "postalCode": "45885"
+      },
+      "sources": [
+        {
+          "url": "https://crossoakcamp.com/contact-us/",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The camp’s official contact page gives its location as 272 Jack Oak Point Rd, St. Marys, OH 45885.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Cross Oak Camp & Retreat Center",
+      "expectedAddress": "272 Jack Oak Point Rd"
+    },
+    {
+      "id": "ticketmaster:vv1AAZk3FGkdmpCG1",
+      "startDate": "2026-11-07",
+      "city": "Cleveland",
+      "state": "OH",
+      "country": "US",
+      "facts": {
+        "postalCode": "44114"
+      },
+      "sources": [
+        {
+          "url": "https://cleveland.houseofblues.com/contact",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The official venue contact page, which links the Cambridge Room, gives 308 Euclid Avenue, Cleveland, OH 44114.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "The Cambridge Room at House of Blues Cleveland",
+      "expectedAddress": "308 Euclid Ave"
+    },
+    {
+      "id": "manual:crushing-addiction-rally-clanton-2026-11-07",
+      "startDate": "2026-11-07",
+      "city": "Clanton",
+      "state": "AL",
+      "country": "US",
+      "facts": {
+        "postalCode": "35045",
+        "organizer": {
+          "name": "Surrendered Ministries"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.surrenderedministries.net/event-details/crushing-addiction-rally",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The organizer’s event page lists Goose Pond Park at 906 7th St N, Clanton, AL 35045 for November 7, 2026.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.surrenderedministries.net/event-details/crushing-addiction-rally",
+          "fields": [
+            "organizer"
+          ],
+          "quoteOrSummary": "Existing verified production description explicitly states: Surrendered Ministries presents. The retained full description distinguishes presenter, artists, hosts and venue. Only the explicit presenting organization name is added; no organizer URL is inferred.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Goose Pond Park",
+      "expectedAddress": "906 7th St N"
+    },
+    {
+      "id": "manual:egr-big-brother-album-release-stockton-2026-11-07",
+      "startDate": "2026-11-07",
+      "city": "Stockton",
+      "state": "CA",
+      "country": "US",
+      "facts": {
+        "postalCode": "95205"
+      },
+      "sources": [
+        {
+          "url": "https://www.vostockton.org/",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Victory Outreach Stockton’s official visit information gives 2725 Waterloo Rd, Stockton, CA 95205. This verifies the supplied venue street’s postal code; it does not independently establish EGR attendance.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "2725 Waterloo Rd",
+      "expectedAddress": "2725 Waterloo Rd"
+    },
+    {
+      "id": "manual:flavor-fest-2026-saturday-concerts",
+      "startDate": "2026-11-07",
+      "city": "Tampa",
+      "state": "FL",
+      "country": "US",
+      "facts": {
+        "postalCode": "33612"
+      },
+      "sources": [
+        {
+          "url": "https://www.crossoverchurch.org/contact-us",
+          "fields": [
+            "postalCode",
+            "address"
+          ],
+          "quoteOrSummary": "The venue identifies its church/office location as 1235 East Fowler Avenue in Tampa, Florida 33612; this supports adding the missing east directional.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.flavorfest.org/home",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The official 2026 festival site places the November 5–8 festival at Crossover Church and shows its Tampa postal code as 33612.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Crossover Church",
+      "expectedAddress": "1235 Fowler Ave"
+    },
+    {
+      "id": "manual:miles-minnick-christlike-university-jacksonville-2026-11-07",
+      "startDate": "2026-11-07",
+      "city": "Jacksonville",
+      "state": "FL",
+      "country": "US",
+      "facts": {
+        "postalCode": "32202"
+      },
+      "sources": [
+        {
+          "url": "https://www.livenation.com/venue/KovZpZAJFekA/underbelly-events",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The official ticketing venue page gives 113 E. Bay St., Jacksonville, FL 32202 and lists the November 7 Miles Minnick event. Underbelly is the former name of The Albatross.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://thealbatrossjax.com/home",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The venue’s own current home page identifies it as The Albatross at 113 E Bay St.; the primary Live Nation page retains the former Underbelly name.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "The Albatross",
+      "expectedAddress": "113 E Bay St"
+    },
+    {
+      "id": "manual:miles-minnick-christlike-university-orlando-2026-11-08",
+      "startDate": "2026-11-08",
+      "city": "Winter Park",
+      "state": "FL",
+      "country": "US",
+      "facts": {
+        "postalCode": "32792"
+      },
+      "sources": [
+        {
+          "url": "https://www.conduitfl.com/tech-info/",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Conduit’s official venue details give 6700 Aloma Ave, Winter Park, FL 32792.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Conduit",
+      "expectedAddress": "6700 Aloma Ave"
+    },
+    {
+      "id": "ticketmaster:vvG1zZ_ClQMRrF",
+      "startDate": "2026-11-08",
+      "city": "Atlanta",
+      "state": "GA",
+      "country": "US",
+      "facts": {
+        "postalCode": "30303"
+      },
+      "sources": [
+        {
+          "url": "https://www.masqueradeatlanta.com/contact/",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The venue places its 50 Lower Alabama Street SW address in Atlanta, GA 30303. Its public parking/entrance at 75 MLK Jr Drive SW is also in 30303.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "The Masquerade - Altar",
+      "expectedAddress": "50 Lower Alabama Street"
+    },
+    {
+      "id": "manual:awake-fest-dj-bryce-g-eustis-2026-11-13",
+      "startDate": "2026-11-13",
+      "city": "Eustis",
+      "state": "FL",
+      "country": "US",
+      "facts": {
+        "postalCode": "32726"
+      },
+      "sources": [
+        {
+          "url": "https://www.eustis.org/files/assets/public/v/1/events-amp-tourism/docs/2025-applications/tiny-little-and-junior-miss-application.pdf",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "City of Eustis venue documentation identifies the Alice McClelland Memorial Bandshell at 250 Ferran Park Dr., Eustis, FL 32726. It verifies the venue address only.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.eustis.org/Parks/Ferran-Park",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The current city park page also places Ferran Park in postal code 32726. Its general park address is 50 Ferran Park Dr.; the bandshell-specific city document supports retaining 250.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Ferran Park — Alice McClelland Memorial Bandshell",
+      "expectedAddress": "250 Ferran Park Drive"
+    },
+    {
+      "id": "manual:awake-fest-zauntee-eustis-2026-11-14",
+      "startDate": "2026-11-14",
+      "city": "Eustis",
+      "state": "FL",
+      "country": "US",
+      "facts": {
+        "postalCode": "32726"
+      },
+      "sources": [
+        {
+          "url": "https://www.eustis.org/files/assets/public/v/1/events-amp-tourism/docs/2025-applications/tiny-little-and-junior-miss-application.pdf",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "City of Eustis venue documentation identifies the Alice McClelland Memorial Bandshell at 250 Ferran Park Dr., Eustis, FL 32726. It verifies the venue address only.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.eustis.org/Parks/Ferran-Park",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The current city park page also places Ferran Park in postal code 32726. Its general park address is 50 Ferran Park Dr.; the bandshell-specific city document supports retaining 250.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Ferran Park — Alice McClelland Memorial Bandshell",
+      "expectedAddress": "250 Ferran Park Drive"
+    },
+    {
+      "id": "manual:breaking-the-silence-dalton-2026-11-14",
+      "startDate": "2026-11-14",
+      "city": "Dalton",
+      "state": "GA",
+      "country": "US",
+      "facts": {
+        "postalCode": "30721"
+      },
+      "sources": [
+        {
+          "url": "https://www.northgafair.com/event-details/breaking-the-silence",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The fairgrounds’ official page for this November 14, 2026 event gives North Ga Fair Association Fairgrounds, 500 Legion Dr, Dalton, GA 30721.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.agr.state.ga.us/fairs",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Georgia’s Department of Agriculture separately lists North Georgia Agricultural Fair at 500 Legion Drive, Dalton, GA 30721-2509, supporting the event-specific ZIP.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "North Georgia Ag Fairgrounds",
+      "expectedAddress": "500 Legion Dr"
+    },
+    {
+      "id": "manual:christ-over-fear-fest-whittier-2026-11-14",
+      "startDate": "2026-11-14",
+      "city": "Whittier",
+      "state": "CA",
+      "country": "US",
+      "facts": {
+        "postalCode": "90603"
+      },
+      "sources": [
+        {
+          "url": "https://www.praisechapelwhittier.com/service-times",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The church’s official visitor page gives 16269 Whittier Blvd., Whittier, CA 90603.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Praise Chapel Whittier",
+      "expectedAddress": "16269 Whittier Boulevard"
+    },
+    {
+      "id": "bandsintown:1040378722",
+      "startDate": "2026-11-14",
+      "city": "Los Angeles",
+      "state": "CA",
+      "country": "US",
+      "facts": {
+        "postalCode": "90015"
+      },
+      "sources": [
+        {
+          "url": "https://www.thebelasco.com/visit",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The venue’s official visitor information gives 1050 S Hill St., Los Angeles, CA 90015.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "The Belasco",
+      "expectedAddress": "1050 S Hill St"
+    },
+    {
+      "id": "ty-brasel-outlandish-fest-fort-worth-2026",
+      "startDate": "2026-11-14",
+      "city": "Fort Worth",
+      "state": "TX",
+      "country": "US",
+      "facts": {
+        "postalCode": "76116"
+      },
+      "sources": [
+        {
+          "url": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The organizer’s official November 14, 2026 listing gives The Rail, 3101 Joyce Dr, Fort Worth, TX 76116.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "The Rail",
+      "expectedAddress": "3101 Joyce Dr"
+    },
+    {
+      "id": "bandsintown:1040314202",
+      "startDate": "2026-11-14",
+      "city": "Monroe",
+      "state": "LA",
+      "country": "US",
+      "facts": {
+        "postalCode": "71201"
+      },
+      "sources": [
+        {
+          "url": "https://www.ticketmaster.com/w-l-jack-howard-theatre-tickets-monroe/venue/221641?tt_scene=anchor_view",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Official ticket seller's venue record gives 401 Lea Joyner Memorial Expressway, Monroe, LA 71201. Venue address evidence; not new event-date verification.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "WL Jack Howard Theatre",
+      "expectedAddress": "401 Lea Joyner Memorial Expressway"
+    },
+    {
+      "id": "bandsintown:109072940",
+      "startDate": "2026-11-14",
+      "city": "Orlando",
+      "state": "FL",
+      "country": "US",
+      "facts": {
+        "postalCode": "32818"
+      },
+      "sources": [
+        {
+          "url": "https://gbccf.org/other/contact",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Grace Bible Church's contact page confirms the already-listed street, 801 Dorscher Rd, Orlando FL 32818. This establishes the street's ZIP; it does not independently establish the church as the concert venue.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.eventbrite.com/d/fl--ormond-beach/spirituality--events--next-week/",
+          "fields": [
+            "venue"
+          ],
+          "quoteOrSummary": "The ticket provider's search-indexed listings explicitly name UNITY Pop-Up Tour: Orlando!, Saturday Nov 14 at 11 AM, at Grace Bible Church of Central Florida. Combined with the church's official street address, this resolves the title-only venue field. Direct page open returned cache miss.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "UNITY POP-UP TOUR",
+      "expectedAddress": "801 Dorscher Rd"
+    },
+    {
+      "id": "ticketmaster:vvG10Z_CMA3B0H",
+      "startDate": "2026-11-19",
+      "city": "Los Angeles",
+      "state": "CA",
+      "country": "US",
+      "facts": {
+        "postalCode": "90012"
+      },
+      "sources": [
+        {
+          "url": "https://www.ticketmaster.com/zauntee-god-remembers-tour-los-angeles-california-11-19-2026/event/090064EDC54BA93C",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Official event ticket page lists 901 1st Street, Los Angeles CA 90012. The venue location FAQ agrees; its page footer has a conflicting 90017, so the event-specific ticket address and explicit location FAQ take precedence.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://themoroccan.com/info/",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The location FAQ explicitly gives 901 E 1st Street, Los Angeles CA 90012. Footer instead says 90017; the discrepancy is recorded here.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "The Moroccan Lounge",
+      "expectedAddress": "901 E 1st Street"
+    },
+    {
+      "id": "manual:kingdom-builders-lancaster-2026-11-20",
+      "startDate": "2026-11-20",
+      "city": "Lancaster",
+      "state": "CA",
+      "country": "US",
+      "facts": {
+        "postalCode": "93534"
+      },
+      "sources": [
+        {
+          "url": "https://kingdomcircuit.com/assets/optimized/b7e97279ed03330026cee775-w1024.webp",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Visual inspection of the saved organizer flyer: 1051 W Columbia Way, Suite 209, Lancaster CA 93534; Nov 20, 6 PM doors / 6:30 PM start. Original organizer post is https://www.instagram.com/626authentic/p/DekIM5LG9B8/ (unavailable to web reader). This is direct flyer evidence, not inferred from Lancaster.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "1051 W Columbia Way, Suite 209",
+      "expectedAddress": "1051 W Columbia Way, Suite 209"
+    },
+    {
+      "id": "bandsintown:109072793",
+      "startDate": "2026-11-20",
+      "city": "Belleville",
+      "state": "MI",
+      "country": "US",
+      "facts": {
+        "postalCode": "48111"
+      },
+      "sources": [
+        {
+          "url": "https://www.diamondbackmusichall.com/tm-event/rave-jesus-rave-revival-tour-2/",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Official event page lists Diamondback Music Hall at 49345 S. Interstate 94 Service Dr, Belleville, MI 48111.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Diamondback Music Hall",
+      "expectedAddress": "49345 S Interstate 94 Service Dr"
+    },
+    {
+      "id": "manual:chain-breaker-kingsport-2026-11-21",
+      "startDate": "2026-11-21",
+      "city": "Kingsport",
+      "state": "TN",
+      "country": "US",
+      "facts": {
+        "postalCode": "37660"
+      },
+      "sources": [
+        {
+          "url": "https://billywayne.net/event/lamplight-theatre-alice-in-wonderland-production-kingsport-tn/",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Billy Wayne Ministries' own LampLight production listing identifies LampLight Theatre at 140 Broad St, Kingsport TN 37660. Venue fact only, not verification of the Chain Breaker concert.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "The LampLight Theatre",
+      "expectedAddress": "140 Broad St"
+    },
+    {
+      "id": "manual:kaboose-city-life-willmar-2026-11-21",
+      "startDate": "2026-11-21",
+      "city": "Willmar",
+      "state": "MN",
+      "country": "US",
+      "facts": {
+        "postalCode": "56201",
+        "organizer": {
+          "name": "City Life Willmar"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://yfcminnesota.com/yfc-weekly-schedule-2/",
+          "fields": [
+            "postalCode",
+            "address"
+          ],
+          "quoteOrSummary": "The host organization's own Willmar schedule/contact footer lists 106 Litchfield Ave SW, Willmar MN 56201. Confirms the listed street's postal code and missing SW directional; not a fresh verification of the Nov 21 concert.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.instagram.com/p/DfNE32MhOyB/",
+          "fields": [
+            "organizer"
+          ],
+          "quoteOrSummary": "Existing verified production description explicitly states: City Life Willmar presents. The retained full description distinguishes presenter, artists, hosts and venue. Only the explicit presenting organization name is added; no organizer URL is inferred.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "First Street Warehouse",
+      "expectedAddress": "106 Litchfield Ave"
+    },
+    {
+      "id": "bandsintown:109105799",
+      "startDate": "2026-11-21",
+      "city": "Detroit",
+      "state": "MI",
+      "country": "US",
+      "facts": {
+        "postalCode": "48238"
+      },
+      "sources": [
+        {
+          "url": "https://senate.michigan.gov/information/legislatively-directed-spending-items/2026/high-praise-family-church/",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The Michigan Senate's April 2026 recipient filing explicitly identifies High Praise Family Church's physical address as 8809 Schoolcraft, Detroit MI 48238. This is primary government address evidence for the street already stored, not confirmation that the Cool Kidz concert is hosted by that church.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "THE KINGDOM'S COOL KIDZ PLAYLIST CONCERT",
+      "expectedAddress": "8809 Schoolcraft"
+    },
+    {
+      "id": "manual:the-hrvst-altar-ego-j-list-westminster-2026-11-28",
+      "startDate": "2026-11-28",
+      "city": "Westminster",
+      "state": "SC",
+      "country": "US",
+      "facts": {
+        "postalCode": "29693"
+      },
+      "sources": [
+        {
+          "url": "https://kingdomcircuit.com/assets/optimized/055bdb1d840af38c3d6cc635-w640.webp",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Visual inspection of the saved official HRVST flyer shows Compassionate Outreach Missions, 1101 Chau Ram Park Rd, Westminster SC 29693. The bottom text is partly clipped in the saved image, but the ZIP digits 29693 are readable. Original Instagram post https://www.instagram.com/p/Detx6nDDAlL/ was unavailable to the web reader.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "medium"
+        }
+      ],
+      "expectedVenue": "Compassionate Outreach Missions",
+      "expectedAddress": "1101 Chau Ram Park Road"
+    },
+    {
+      "id": "bandsintown:108975912",
+      "startDate": "2026-11-29",
+      "city": "Atlanta",
+      "state": "GA",
+      "country": "US",
+      "facts": {
+        "postalCode": "30307"
+      },
+      "sources": [
+        {
+          "url": "https://www.variety-playhouse.com/getting-here/",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The venue's official Getting Here page gives 1099 Euclid Ave NE, Atlanta GA 30307. Venue fact only.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Variety Playhouse",
+      "expectedAddress": "1099 Euclid Ave NE"
+    },
+    {
+      "id": "bandsintown:108976155",
+      "startDate": "2026-12-01",
+      "city": "Greensboro",
+      "state": "NC",
+      "country": "US",
+      "facts": {
+        "postalCode": "27401"
+      },
+      "sources": [
+        {
+          "url": "https://www.thepyrle.com/contact/",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The venue's official contact page gives 232 S Elm St, Greensboro NC 27401. Venue fact only.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "The Pyrle",
+      "expectedAddress": "232 S Elm St"
+    },
+    {
+      "id": "manual:corey-red-precise-saintuary-morrow-2026-12-05",
+      "startDate": "2026-12-05",
+      "city": "Morrow",
+      "state": "GA",
+      "country": "US",
+      "facts": {
+        "postalCode": "30260"
+      },
+      "sources": [
+        {
+          "url": "https://sandypointholdings.com/contact/",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "This business's own contact page explicitly gives the exact already-listed street and suite: 1078 Citizens Pkwy, Suite F, Morrow GA 30260. It confirms the address's ZIP only; it is not the Saintuary's own page and does not independently establish the concert's venue occupancy.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "medium"
+        },
+        {
+          "url": "https://ecorp.sos.ga.gov/BusinessSearch/DownloadFile?filingNo=19519040",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Georgia Secretary of State filing for GLOVIM Bible Institute confirms the same building, 1078 Citizens Pkwy (Suite A), Morrow GA 30260. Building-level postal corroboration only.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "medium"
+        }
+      ],
+      "expectedVenue": "The Saintuary",
+      "expectedAddress": "1078 Citizens Parkway, Suite F"
+    },
+    {
+      "id": "bandsintown:1040726548",
+      "startDate": "2026-12-11",
+      "city": "Chicago",
+      "state": "IL",
+      "country": "US",
+      "facts": {
+        "postalCode": "60619"
+      },
+      "sources": [
+        {
+          "url": "https://www.greenwoodoasis.com/contact",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The venue's own contact page gives 7621 S Greenwood Ave, Chicago IL 60619. Its upcoming events page also lists Christmas at the Oasis on Dec 11, 2026; the ZIP is a venue fact.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Greenwood Oasis",
+      "expectedAddress": "7621 S Greenwood Ave"
+    },
+    {
+      "id": "manual:miles-minnick-christlike-christmas-berkeley-2026-12-17",
+      "startDate": "2026-12-17",
+      "city": "Berkeley",
+      "state": "CA",
+      "country": "US",
+      "facts": {
+        "postalCode": "94704"
+      },
+      "sources": [
+        {
+          "url": "https://www.prekindle.com/event/52416-miles-minnick-berkeley",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Official ticket page confirms Cornerstone at 2367 Shattuck Ave, Berkeley CA 94704 for the Dec 17 show. Official venue contact page agrees. Its FAQ lists 2110 Durant Ave as music venue/box-office entrance; the current main address remains valid.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.cornerstoneberkeley.com/contact",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Venue contact page lists 2367 Shattuck Ave, Berkeley CA 94704.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Cornerstone",
+      "expectedAddress": "2367 Shattuck Ave"
+    },
+    {
+      "id": "manual:jimmy-rock-worship-wawa-miami-2026",
+      "startDate": "2026-12-18",
+      "city": "Miami",
+      "state": "FL",
+      "country": "US",
+      "facts": {
+        "postalCode": "33132"
+      },
+      "sources": [
+        {
+          "url": "https://www.miami.gov/My-Government/Departments/Office-of-Capital-Improvements/Capital-Improvements-Projects-Construction-Notices-Per-District/District-2-Capital-Improvements-Projects-1-1/Margaret-Pace-Park-Phase-1",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "City of Miami, the park's public operator, identifies Margaret Pace Park at 1745 N Bayshore Dr, Miami FL 33132. Venue/pickup address fact only; does not independently verify the Rave & Worship boat event.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "The Worship Wawa — Margaret Pace Park pickup",
+      "expectedAddress": "1745 N Bayshore Dr"
+    },
+    {
+      "id": "manual:kelo-worship-after-christmas-jacksonville-2026",
+      "startDate": "2026-12-26",
+      "city": "Jacksonville",
+      "state": "FL",
+      "country": "US",
+      "facts": {
+        "postalCode": "32205"
+      },
+      "sources": [
+        {
+          "url": "https://murrayhilltheatre.com/contact-us/",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The venue's own contact page gives 932 Edgewood Ave South, Jacksonville FL 32205.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Murray Hill Theatre",
+      "expectedAddress": "932 Edgewood Ave S"
+    },
+    {
+      "id": "bandsintown:1040675970",
+      "startDate": "2027-01-23",
+      "city": "Rockville",
+      "state": "MD",
+      "country": "US",
+      "facts": {
+        "postalCode": "20850"
+      },
+      "sources": [
+        {
+          "url": "https://clearskiesmeadery.com/",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Venue homepage's Contact Us section explicitly lists 15201 Display Ct, Rockville MD 20850. Legacy official .co site search index agrees. A visitor-board event template inconsistently uses Derwood 20855 while its event text says Rockville 20850; direct venue address is used.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Clear Skies Meadery",
+      "expectedAddress": "15201 Display Court"
+    },
+    {
+      "id": "manual:1k-phew-rock-box-san-antonio-2027-01-30",
+      "startDate": "2027-01-30",
+      "city": "San Antonio",
+      "state": "TX",
+      "country": "US",
+      "facts": {
+        "postalCode": "78205"
+      },
+      "sources": [
+        {
+          "url": "https://www.stubwire.com/e/38193/hiphopnightstherockboxw1kphew/therockbox/",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "The event's ticket page gives The Rock Box, Underground Stage, 1223 E. Houston St, San Antonio TX 78205, January 30, 2027.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "The Rock Box — Underground Stage",
+      "expectedAddress": "1223 E Houston St"
+    },
+    {
+      "id": "bandsintown:1040596451",
+      "startDate": "2027-03-20",
+      "city": "Elgin",
+      "state": "IL",
+      "country": "US",
+      "facts": {
+        "postalCode": "60123"
+      },
+      "sources": [
+        {
+          "url": "https://areayouth.squarespace.com/avl-chi",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Official Area Youth Ministry search-indexed page for its Sept 20, 2026 volleyball event explicitly identifies AYM Student Center Gym at 1000 N Randall Rd, Elgin IL 60123. Used only as venue-address evidence, not as confirmation of the March 20 concert. Direct open returned cache miss.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "AYM Student Center",
+      "expectedAddress": "1000 N Randall Rd"
+    },
+    {
+      "id": "supplemental:skema-boy-2026-11-06-nashville-tn",
+      "startDate": "2026-11-06",
+      "city": "Nashville",
+      "state": "TN",
+      "country": "US",
+      "facts": {
+        "address": "1 Cannery Row",
+        "postalCode": "37203"
+      },
+      "sources": [
+        {
+          "url": "https://www.axs.com/events/1521471/zauntee-tickets",
+          "fields": [
+            "venue",
+            "address"
+          ],
+          "quoteOrSummary": "Official ticket link from Cannery Hall confirms Zauntee with Skema Boy on November 6, 2026 at Row One Stage, 1 Cannery Row. Doors 7 PM; show 8 PM.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://canneryhall.com/contact/",
+          "fields": [
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Venue contact page gives 1 Cannery Row, Nashville, Tennessee 37203.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Cannery Hall",
+      "expectedAddress": "1 Cannery Row"
+    },
+    {
+      "id": "supplemental:skema-boy-2026-11-10-jacksonville-fl",
+      "startDate": "2026-11-10",
+      "city": "Jacksonville",
+      "state": "FL",
+      "country": "US",
+      "facts": {
+        "address": "1528 Hendricks Avenue",
+        "postalCode": "32207"
+      },
+      "sources": [
+        {
+          "url": "https://jaxlive.com/venue/jack-rabbits/",
+          "fields": [
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Jack Rabbits official venue page lists 1528 Hendricks Ave, Jacksonville, FL 32207.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Jack Rabbits",
+      "expectedAddress": "1528 Hendricks Avenue"
+    },
+    {
+      "id": "manual:aaron-cole-hope-station-benefit-nashville-2026-11-11",
+      "startDate": "2026-11-11",
+      "city": "Nashville",
+      "state": "TN",
+      "country": "US",
+      "facts": {
+        "address": "200 Broadway",
+        "postalCode": "37201",
+        "organizer": {
+          "name": "92Q"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.chiefsonbroadway.com/events/92q-presents-the-hope-station-benefit-concert-w-aaron-cole-anthny-san-franklin",
+          "fields": [
+            "venue",
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Exact November 11 benefit page places the concert in the Neon Steeple at Chief’s; site address is 200 Broadway, Nashville, TN 37201. It distinguishes 6 PM doors from 7 PM show.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.instagram.com/p/De2Ndy0O28l/",
+          "fields": [
+            "organizer"
+          ],
+          "quoteOrSummary": "Existing verified production description explicitly states: 92Q presents. The retained full description distinguishes presenter, artists, hosts and venue. Only the explicit presenting organization name is added; no organizer URL is inferred.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.tixr.com/groups/chiefsonbroadway/events/92q-presents-the-hope-station-benefit-concert-w-aaron-cole-anthny-san-franklin-taylor-hill-210759",
+          "fields": [
+            "organizer"
+          ],
+          "quoteOrSummary": "Existing verified production description explicitly states: 92Q presents. The retained full description distinguishes presenter, artists, hosts and venue. Only the explicit presenting organization name is added; no organizer URL is inferred.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Chief's on Broadway",
+      "expectedAddress": "200 Broadway"
+    },
+    {
+      "id": "supplemental:skema-boy-2026-11-11-tampa-fl",
+      "startDate": "2026-11-11",
+      "city": "Tampa",
+      "state": "FL",
+      "country": "US",
+      "facts": {
+        "address": "14802 North Nebraska Avenue",
+        "postalCode": "33613"
+      },
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/e/zauntee-god-remembers-tour-tickets-1993716545858",
+          "fields": [
+            "venue",
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Official ticket page linked by The Orpheum confirms Zauntee with Skema Boy, November 11, 2026, at 14802 North Nebraska Avenue, Tampa, FL 33613.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://theorpheum.com/",
+          "fields": [
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Venue’s own calendar lists the exact event and its location footer gives the same current North Tampa address.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "The Orpheum",
+      "expectedAddress": "14802 North Nebraska Avenue"
+    },
+    {
+      "id": "manual:musiq-in-the-park-concord-2026-11-13",
+      "startDate": "2026-11-13",
+      "city": "Concord",
+      "state": "CA",
+      "country": "US",
+      "facts": {
+        "address": "2175 Willow Pass Road",
+        "postalCode": "94520"
+      },
+      "sources": [
+        {
+          "url": "https://www.cityofconcord.org/DocumentCenter/View/14335/CityOfConcord-activity-guide-WinterSpring2026-FINAL?bidId=",
+          "fields": [
+            "address"
+          ],
+          "quoteOrSummary": "The city’s indexed 2026 activity-guide park table gives Todos Santos Plaza as 2175 Willow Pass Road. Full PDF fetch exceeds the web tool’s file-size limit.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.cityofconcord.org/Facilities/Facility/Details/Todos-Santos-Plaza-36",
+          "fields": [
+            "venue",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Current city facility page identifies Todos Santos Plaza at Willow Pass Road and Grant Street, Concord, CA 94520.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Todos Santos Plaza",
+      "expectedAddress": "2175 Willow Pass Road"
+    },
+    {
+      "id": "submitted:jj-stone-nrg-saskatoon-2026-11-13",
+      "startDate": "2026-11-13",
+      "city": "Saskatoon",
+      "state": "SK",
+      "country": "CA",
+      "facts": {
+        "address": "604 Webster Street"
+      },
+      "sources": [
+        {
+          "url": "https://www.tickettailor.com/events/horizoncollegeandseminary/2065402",
+          "fields": [
+            "venue",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Organizer’s NRG registration page identifies Horizon College & Seminary and S7N3P9. Friday November 13 schedule lists the live performance at 9 PM; Saturday alone includes a temporary move to Forest Grove.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.horizon.edu/contact/",
+          "fields": [
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Current campus contact page gives 604 Webster Street, Saskatoon, Saskatchewan, S7N 3P9, Canada.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Horizon College & Seminary",
+      "expectedAddress": "604 Webster Street"
+    },
+    {
+      "id": "supplemental:skema-boy-2026-11-16-dallas-tx",
+      "startDate": "2026-11-16",
+      "city": "Dallas",
+      "state": "TX",
+      "country": "US",
+      "facts": {
+        "address": "3414 Elm Street",
+        "postalCode": "75226"
+      },
+      "sources": [
+        {
+          "url": "https://www.sonsofhermannhall.com/events/zauntee-with-special-guest-skema-boy-on-november-16",
+          "fields": [
+            "venue",
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Venue’s exact November 16, 2026 Zauntee/Skema Boy page gives Sons of Hermann Hall, 3414 Elm St, Dallas, TX 75226. Body distinguishes 7 PM doors and 8 PM show.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.eventim.us/event/zauntee/698943",
+          "fields": [
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Official ticket destination linked by the venue corroborates 3414 Elm St, Dallas, TX 75226 for the November 16 concert.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Sons Of Hermann Hall",
+      "expectedAddress": "3414 Elm Street"
+    },
+    {
+      "id": "supplemental:skema-boy-2026-11-18-phoenix-az",
+      "startDate": "2026-11-18",
+      "city": "Phoenix",
+      "state": "AZ",
+      "country": "US",
+      "facts": {
+        "address": "130 N. Central Avenue",
+        "postalCode": "85004"
+      },
+      "sources": [
+        {
+          "url": "https://www.ticketweb.com/event/zauntee-god-remembers-tour-valley-bar-tickets/14252734",
+          "fields": [
+            "venue",
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Exact official November 18, 2026 ticket page gives Valley Bar, 130 N. Central Avenue, Phoenix, AZ 85004; show 8 PM MST and doors 7 PM MST.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Valley Bar",
+      "expectedAddress": "130 N. Central Avenue"
+    },
+    {
+      "id": "manual:gifted-hands-dax-minneapolis-2026-11-19",
+      "startDate": "2026-11-19",
+      "city": "Minneapolis",
+      "state": "MN",
+      "country": "US",
+      "facts": {
+        "address": "1308 SE 4th Street",
+        "postalCode": "55414"
+      },
+      "sources": [
+        {
+          "url": "https://www.ticketmaster.com/varsity-theater-tickets-minneapolis/venue/50144",
+          "fields": [
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Official primary-ticketing venue page gives 1308 SE 4th Street, Minneapolis, MN 55414.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Varsity Theater",
+      "expectedAddress": "1308 SE 4th Street"
+    },
+    {
+      "id": "manual:gifted-hands-dax-chicago-2026-11-21",
+      "startDate": "2026-11-21",
+      "city": "Chicago",
+      "state": "IL",
+      "country": "US",
+      "facts": {
+        "address": "329 N. Dearborn Street",
+        "postalCode": "60654"
+      },
+      "sources": [
+        {
+          "url": "https://www.ticketmaster.com/house-of-blues-chicago-tickets-chicago/venue/32905",
+          "fields": [
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Official primary-ticketing venue page gives 329 N Dearborn St, Chicago, IL 60654.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "House of Blues Chicago",
+      "expectedAddress": "329 N. Dearborn Street"
+    },
+    {
+      "id": "manual:bandsintown:107971264",
+      "startDate": "2026-11-21",
+      "city": "Sacramento",
+      "state": "CA",
+      "country": "US",
+      "facts": {
+        "address": "3930 West Land Park Drive",
+        "postalCode": "95822"
+      },
+      "sources": [
+        {
+          "url": "https://www.bandsintown.com/e/107971264-sevin-hog-mob-ministries-at-sacramento-zoo",
+          "fields": [
+            "venue",
+            "address"
+          ],
+          "quoteOrSummary": "Exact artist event listing confirms the November 21 noon community BBQ/concert at Sacramento Zoo; venue section lists 3930 W Land Park Dr.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.saczoo.org/contact-us",
+          "fields": [
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Zoo’s own contact page gives 3930 West Land Park Drive, Sacramento, CA 95822.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Sacramento Zoo",
+      "expectedAddress": "3930 West Land Park Drive"
+    },
+    {
+      "id": "supplemental:skema-boy-2026-11-21-denver-co",
+      "startDate": "2026-11-21",
+      "city": "Denver",
+      "state": "CO",
+      "country": "US",
+      "facts": {
+        "address": "3602 E. Colfax Avenue",
+        "postalCode": "80206"
+      },
+      "sources": [
+        {
+          "url": "https://lost-lake.com/event/zauntee-w-skema-boy/lost-lake/denver-colorado/",
+          "fields": [
+            "venue",
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Venue’s exact November 21 Zauntee/Skema Boy page lists Lost Lake at 3602 E. Colfax, Denver, CO 80206; doors 7 PM, show 8 PM.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Lost Lake Lounge",
+      "expectedAddress": "3602 E. Colfax Avenue"
+    },
+    {
+      "id": "manual:bandsintown:108969341",
+      "startDate": "2027-01-22",
+      "city": "Fayetteville",
+      "state": "GA",
+      "country": "US",
+      "facts": {
+        "address": "107 Highland Hills Road",
+        "postalCode": "30214"
+      },
+      "sources": [
+        {
+          "url": "https://music.apple.com/us/concerts/ce.3098de01-f5a0-431c-8e0e-2c742de77ec7",
+          "fields": [
+            "venue",
+            "address"
+          ],
+          "quoteOrSummary": "Apple Music’s event-specific Bandsintown feed corroborates Lady Cam, January 22, 2027, at Family Life Missionary Baptist Church, 107 Highland Hills Rd, Fayetteville.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.familylifembc.com/",
+          "fields": [
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Church’s current official website explicitly identifies its public physical address as 107 Highland Hills Rd, Fayetteville, GA 30214.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Family Life Missionary Baptist Church",
+      "expectedAddress": "107 Highland Hills Road"
+    },
+    {
+      "id": "manual:ignite-and-unite-tour-deland-2026-11-11",
+      "startDate": "2026-11-11",
+      "city": "DeLand",
+      "state": "FL",
+      "country": "US",
+      "facts": {
+        "organizer": {
+          "name": "Ignite and Unite Tour",
+          "url": "https://www.igniteandunitetour.com/"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://cornergatecoffeehouse.com/",
+          "fields": [
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "The venue-owned website identifies Corner Gate Coffee House in DeLand and lists its location as 330 East New York Avenue, Deland, FL 32724. This establishes venue location, not the concert start time.",
+          "reviewedAt": "2026-11-03",
+          "confidence": "high for address, doors/start, source and artwork; current dated Jacksonville admission supersedes older prices; no unannounced end or age restrictions inferred"
+        },
+        {
+          "url": "https://www.igniteandunitetour.com/",
+          "fields": [
+            "officialUrl",
+            "artwork",
+            "startTime",
+            "doorsTime",
+            "price",
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Owner-selected official tour schedule and this city’s original showcard confirm the venue/address, 5:30 PM doors and 6 PM start. DeLand, Daytona Beach and Plantation are labeled Free Event. Tour-site prices for Jacksonville are older than the dated October 29 venue announcement; retain current free/no-ticket facts. The tour-site January 7 Jacksonville schedule text is a typo: the flyer and dated venue announcement confirm November 7, 2026.",
+          "reviewedAt": "2026-11-03",
+          "confidence": "high for address, doors/start, source and artwork; current dated Jacksonville admission supersedes older prices; no unannounced end or age restrictions inferred"
+        },
+        {
+          "url": "https://static.wixstatic.com/media/690614_d1e62803c0e64313ae73e8275825bdae~mv2.png",
+          "reviewedAt": "2026-11-03",
+          "confidence": "high for address, doors/start, source and artwork; current dated Jacksonville admission supersedes older prices; no unannounced end or age restrictions inferred"
+        }
+      ],
+      "expectedVenue": "Corner Gate",
+      "expectedAddress": "330 E New York Avenue"
+    },
+    {
+      "id": "manual:ignite-and-unite-tour-daytona-beach-2026-11-13",
+      "startDate": "2026-11-13",
+      "city": "Daytona Beach",
+      "state": "FL",
+      "country": "US",
+      "facts": {
+        "organizer": {
+          "name": "Ignite and Unite Tour",
+          "url": "https://www.igniteandunitetour.com/"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://theporchhealthbar.com/events",
+          "fields": [
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "The Porch Health Bar official website lists 212 South Beach Street, Daytona Beach, FL 32114. Its events page currently supplies a September 18 worship night but no November 13 tour time.",
+          "reviewedAt": "2026-11-03",
+          "confidence": "high for address, doors/start, source and artwork; current dated Jacksonville admission supersedes older prices; no unannounced end or age restrictions inferred"
+        },
+        {
+          "url": "https://www.igniteandunitetour.com/",
+          "fields": [
+            "officialUrl",
+            "artwork",
+            "startTime",
+            "doorsTime",
+            "price",
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Owner-selected official tour schedule and this city’s original showcard confirm the venue/address, 5:30 PM doors and 6 PM start. DeLand, Daytona Beach and Plantation are labeled Free Event. Tour-site prices for Jacksonville are older than the dated October 29 venue announcement; retain current free/no-ticket facts. The tour-site January 7 Jacksonville schedule text is a typo: the flyer and dated venue announcement confirm November 7, 2026.",
+          "reviewedAt": "2026-11-03",
+          "confidence": "high for address, doors/start, source and artwork; current dated Jacksonville admission supersedes older prices; no unannounced end or age restrictions inferred"
+        },
+        {
+          "url": "https://static.wixstatic.com/media/690614_bfc9c5fdd65b408589fe70c16c158e56~mv2.png",
+          "reviewedAt": "2026-11-03",
+          "confidence": "high for address, doors/start, source and artwork; current dated Jacksonville admission supersedes older prices; no unannounced end or age restrictions inferred"
+        }
+      ],
+      "expectedVenue": "The Porch",
+      "expectedAddress": "212 S Beach Street, Suite 110"
+    },
+    {
+      "id": "official:652bb96bc9c6543ec7d3",
+      "startDate": "2026-11-06",
+      "city": "Costa Mesa",
+      "state": "CA",
+      "country": "US",
+      "facts": {
+        "address": "55 Fair Drive",
+        "postalCode": "92626"
+      },
+      "sources": [
+        {
+          "url": "https://www.vanguard.edu/about/contact-us",
+          "fields": [
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "University contact page confirms the already-listed campus at 55 Fair Drive, Costa Mesa CA 92626-9601; use five-digit ZIP.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Vanguard University",
+      "expectedAddress": "55 Fair Drive"
+    },
+    {
+      "id": "official:82bb2a5f42c828c2537d",
+      "startDate": "2026-11-13",
+      "city": "Anderson",
+      "state": "IN",
+      "country": "US",
+      "facts": {
+        "address": "6607 Providence Dr.",
+        "postalCode": "46013",
+        "startTime": "19:00",
+        "timezone": "America/Indiana/Indianapolis"
+      },
+      "sources": [
+        {
+          "url": "https://www.itownchurch.com/hulvey",
+          "fields": [
+            "address",
+            "postalCode",
+            "startTime",
+            "timezone"
+          ],
+          "quoteOrSummary": "Host church explicitly advertises November13,2026 concert at7PM, ITOWN Madison Campus,6607 Providence Dr.,Anderson IN46013. Timezone follows venue locality.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "ITOWN Church - Madison Campus",
+      "expectedAddress": "6607 Providence Dr."
+    },
+    {
+      "id": "manual:babytooth-experience-huntington-beach-2026-11-21",
+      "startDate": "2026-11-21",
+      "city": "Huntington Beach",
+      "state": "CA",
+      "country": "US",
+      "facts": {
+        "postalCode": "92649"
+      },
+      "sources": [
+        {
+          "url": "https://www.ocreporter.news/LegalNotices/OCR-2026-03-25.pdf",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "March2026 published business filing identifies The Father's House of Huntington Beach/Legacy Center OC at the exact stored street15202TransistorLane,HuntingtonBeachCA92649. Used only for ZIP; not proof of venue billing.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "15202 Transistor Lane",
+      "expectedAddress": "15202 Transistor Lane"
+    },
+    {
+      "id": "bandsintown:109072797",
+      "startDate": "2026-11-22",
+      "city": "Columbus",
+      "state": "OH",
+      "country": "US",
+      "facts": {
+        "postalCode": "43201"
+      },
+      "sources": [
+        {
+          "url": "https://shortnorth.org/businesses/skullys-music-diner/",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Local district business listing gives Skully's at1151N.HighSt,ColumbusOH43201; matches stored street. Official venue site was inaccessible.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Skully's Music Diner",
+      "expectedAddress": "1151 North High Street"
+    },
+    {
+      "id": "manual:ant-lee-light-up-the-city-lloydminster-2027-02-26",
+      "startDate": "2027-02-26",
+      "city": "Lloydminster",
+      "state": "SK",
+      "country": "CA",
+      "facts": {
+        "address": "4729 50 Street",
+        "postalCode": "S9V 0M6"
+      },
+      "sources": [
+        {
+          "url": "https://paocsk.ca/churches/acts-church-lloydminster",
+          "fields": [
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Official PAOC district directory gives4729 50Street,LloydminsterSK S9V0M6 and states Alberta time zone.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "ACTS Church Lloydminster",
+      "expectedAddress": "4729 50 Street"
+    },
+    {
+      "id": "manual:cj-emulous-rize-az-music-festival-2027",
+      "startDate": "2027-04-17",
+      "city": "Sierra Vista",
+      "state": "AZ",
+      "country": "US",
+      "facts": {
+        "address": "3105 E. Fry Boulevard",
+        "postalCode": "85635"
+      },
+      "sources": [
+        {
+          "url": "https://www.sierravistaaz.gov/home/showpublisheddocument/15471/639099403739800000",
+          "fields": [
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "City's2026public-involvement report identifies VeteransMemorialPark,3105E.FryBlvd,SierraVistaAZ85635. Venue address only.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Veterans Memorial Park",
+      "expectedAddress": "3105 E. Fry Boulevard"
+    },
+    {
+      "id": "manual:rock-the-pines-tyler-2027",
+      "startDate": "2027-04-24",
+      "city": "Tyler",
+      "state": "TX",
+      "country": "US",
+      "facts": {
+        "postalCode": "75704"
+      },
+      "sources": [
+        {
+          "url": "https://www.theparkofetx.com/contact-us",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Venue's own contact page confirms204PattonLane,TylerTX75704. Office hours are not concert hours.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "The Park of East Texas",
+      "expectedAddress": "204 Patton Lane"
+    },
+    {
+      "id": "official:856f1913ed1c6be9b355",
+      "startDate": "2026-12-29",
+      "city": "Cincinnati",
+      "state": "OH",
+      "country": "US",
+      "facts": {
+        "address": "525 Elm St",
+        "postalCode": "45202",
+        "startTime": "21:00",
+        "timezone": "America/New_York"
+      },
+      "sources": [
+        {
+          "url": "https://followconference.org/",
+          "fields": [
+            "startTime",
+            "eventIdentity"
+          ],
+          "quoteOrSummary": "Official FOLLOW 2026 conference schedule, Tuesday December 29: '9 pm | Hulvey Concert'. The 7 PM entry is Main Session 3, a different program item. The complete conference runs December 28–31 in Cincinnati.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://followconference.org/",
+          "fields": [
+            "venue",
+            "address",
+            "postalCode",
+            "city",
+            "state"
+          ],
+          "quoteOrSummary": "The organizer FAQ identifies First Financial Center, explains it was formerly Duke Energy Convention Center, and gives 525 Elm St, Cincinnati, OH 45202. The older venue name remains elsewhere on the same page.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Duke Energy Convention Center",
+      "expectedAddress": "525 Elm St"
+    },
+    {
+      "id": "manual:rock-the-universe-orlando-2027",
+      "startDate": "2027-01-22",
+      "city": "Orlando",
+      "state": "FL",
+      "country": "US",
+      "facts": {
+        "address": "6000 Universal Boulevard",
+        "postalCode": "32819"
+      },
+      "sources": [
+        {
+          "url": "https://www.universalorlando.com/web/en/us/plan-your-visit/hours-information/contact-us/",
+          "fields": [
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Official Universal contact page assigns 6000 Universal Boulevard, Orlando, FL 32819 to the theme parks and CityWalk parking garage. This is the public arrival address, distinct from the corporate office address at 1000 Universal Studios Plaza.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.universalorlando.com/web/en/us/plan-your-visit/hours-information/contact-us/",
+          "fields": [
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Official Universal contact page identifies theme parks and CityWalk parking garage at6000UniversalBoulevard,OrlandoFL32819. Corporate-office address not used.",
+          "reviewedAt": "2026-11-02",
+          "confidence": "high"
+        }
+      ],
+      "expectedVenue": "Universal Studios Florida",
+      "expectedAddress": "6000 Universal Boulevard"
+    },
+    {
+      "id": "manual:ignite-and-unite-tour-plantation-2026-11-14",
+      "startDate": "2026-11-14",
+      "city": "Plantation",
+      "state": "FL",
+      "country": "US",
+      "facts": {
+        "organizer": {
+          "name": "Ignite and Unite Tour",
+          "url": "https://www.igniteandunitetour.com/"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.igniteandunitetour.com/",
+          "fields": [
+            "officialUrl",
+            "artwork",
+            "startTime",
+            "doorsTime",
+            "price",
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "Owner-selected official tour schedule and this city’s original showcard confirm the venue/address, 5:30 PM doors and 6 PM start. DeLand, Daytona Beach and Plantation are labeled Free Event. Tour-site prices for Jacksonville are older than the dated October 29 venue announcement; retain current free/no-ticket facts. The tour-site January 7 Jacksonville schedule text is a typo: the flyer and dated venue announcement confirm November 7, 2026.",
+          "reviewedAt": "2026-11-03",
+          "confidence": "high for address, doors/start, source and artwork; current dated Jacksonville admission supersedes older prices; no unannounced end or age restrictions inferred"
+        },
+        {
+          "url": "https://static.wixstatic.com/media/690614_6986a6fd2a0b4ee9ad7cb3f44ca6204f~mv2.png",
+          "reviewedAt": "2026-11-03",
+          "confidence": "high for address, doors/start, source and artwork; current dated Jacksonville admission supersedes older prices; no unannounced end or age restrictions inferred"
+        }
+      ],
+      "expectedVenue": "First Baptist Church of Plantation",
+      "expectedAddress": "150 NW 46th Avenue"
+    },
+    {
+      "id": "bandsintown:109121424",
+      "startDate": "2026-11-19",
+      "city": "Montréal",
+      "state": "QC",
+      "country": "CA",
+      "expectedVenue": "Newspeak",
+      "facts": {
+        "postalCode": "H2X 3C5",
+        "timezone": "America/Toronto",
+        "price": "CA$20 cash at the door, or free admission with proof of an iTunes album preorder",
+        "publicDescription": "Daniel Saad's Until It Doesn't album launch at Newspeak in Montréal runs from 8 PM Thursday, November 19, 2026, to midnight. DJ Rawad will perform a DJ set, with surprise guests. Admission is CA$20 cash at the door, or free with proof of an iTunes album preorder."
+      },
+      "sources": [
+        {
+          "url": "https://www.instagram.com/p/DfYGEGrBoJ9/",
+          "fields": [
+            "price",
+            "publicDescription",
+            "timezone"
+          ],
+          "quoteOrSummary": "Official artist announcement and unchanged original flyer confirm the November 19, 2026 album launch at Newspeak, 8 PM to midnight, DJ Rawad set and surprise guests, $20 cash admission or free entry with proof of an iTunes album preorder. Montréal local time uses America/Toronto. No age restriction or organizer role is inferred.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.newspeakmtl.com/info",
+          "fields": [
+            "postalCode",
+            "venue"
+          ],
+          "quoteOrSummary": "Official venue information confirms Newspeak at 1403 Rue Sainte-Élisabeth, Montréal, QC H2X 3C5.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        }
+      ],
+      "expectedAddress": "1403 Rue Ste-Élisabeth"
+    },
+    {
+      "id": "manual:cj-emulous-kickback-grand-prairie-2026",
+      "startDate": "2026-11-13",
+      "city": "Grand Prairie",
+      "state": "TX",
+      "country": "US",
+      "expectedVenue": "Jesús Centro de Avivamiento (JCDA)",
+      "facts": {
+        "organizer": {
+          "name": "Christology Records"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.instagram.com/p/Deu2JCvs98r/",
+          "fields": [
+            "organizer"
+          ],
+          "quoteOrSummary": "The owner-confirmed official October 20 rescheduling flyer and retained verified public description explicitly state: Christology Records presents The Kickback. J. Harvey is separately the host, and JCDA is the venue.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.eventbrite.com/e/the-kickback-tickets-2003607610298",
+          "fields": [
+            "eventIdentity"
+          ],
+          "quoteOrSummary": "Existing verified official registration for the same November 13 performance; registration URL is retained without replacement.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        }
+      ],
+      "expectedAddress": "2305 SE 14th St"
+    },
+    {
+      "id": "manual:cherish-fashion-show-benefit-charlotte-2026-11-14",
+      "startDate": "2026-11-14",
+      "city": "Charlotte",
+      "state": "NC",
+      "country": "US",
+      "expectedVenue": "Eastgate Charlotte",
+      "facts": {
+        "organizer": {
+          "name": "C.h.e.r.i.sh."
+        }
+      },
+      "sources": [
+        {
+          "url": "https://givebutter.s3.amazonaws.com/media/MI2Nc2XnNAwGUDXWLtyvsEBLJt1iC4op4xNnorzL.png",
+          "fields": [
+            "organizer"
+          ],
+          "quoteOrSummary": "Existing verified production description explicitly states: C.h.e.r.i.sh. presents. The retained full description distinguishes presenter, artists, hosts and venue. Only the explicit presenting organization name is added; no organizer URL is inferred.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://givebutter.com/wonderfullymade",
+          "fields": [
+            "organizer"
+          ],
+          "quoteOrSummary": "Existing verified production description explicitly states: C.h.e.r.i.sh. presents. The retained full description distinguishes presenter, artists, hosts and venue. Only the explicit presenting organization name is added; no organizer URL is inferred.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        }
+      ],
+      "expectedAddress": "10132 Harrisburg Road"
+    },
+    {
+      "id": "manual:miles-cj-zion-ultra-lounge-chandler-2026",
+      "startDate": "2026-12-05",
+      "city": "Chandler",
+      "state": "AZ",
+      "country": "US",
+      "expectedVenue": "Vybe Event Center",
+      "facts": {
+        "organizer": {
+          "name": "Zion Ultra Lounge Inc"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/e/miles-minnick-concert-tickets-2002952477779",
+          "fields": [
+            "organizer"
+          ],
+          "quoteOrSummary": "Existing verified production description explicitly states: Zion Ultra Lounge Inc presents. The retained full description distinguishes presenter, artists, hosts and venue. Only the explicit presenting organization name is added; no organizer URL is inferred.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        }
+      ],
+      "expectedAddress": "2301 South Stearman Drive"
+    },
+    {
+      "id": "manual:holy-hip-hop-church-lake-almanor-2026-11-06",
+      "startDate": "2026-11-06",
+      "city": "Lake Almanor",
+      "state": "CA",
+      "country": "US",
+      "expectedVenue": "Lake Almanor Community Church",
+      "facts": {
+        "organizer": {
+          "name": "T.O.C R.O.C Ministries"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.instagram.com/toc2daroc/p/Def9BlLJonP/",
+          "fields": [
+            "organizer"
+          ],
+          "quoteOrSummary": "Existing verified production description explicitly states: T.O.C R.O.C Ministries presents. The retained full description distinguishes presenter, artists, hosts and venue. Only the explicit presenting organization name is added; no organizer URL is inferred.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        }
+      ],
+      "expectedAddress": "2610 Plumas County A13"
+    }
+  ]
+}

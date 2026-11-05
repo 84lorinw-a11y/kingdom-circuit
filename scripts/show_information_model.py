@@ -355,6 +355,12 @@ def normalize(event):
                 result["organizerUrl"] = _url(organizer["url"])
     elif _text(organizer):
         result["organizerName"] = organizer.strip()
+    # Some verified production records store the organizer as flat fields.
+    # Prefer the canonical organizer, and never attach a legacy URL to it.
+    if "organizerName" not in result and _text(event.get("organizerName")):
+        result["organizerName"] = _text(event["organizerName"])
+        if _url(event.get("organizerUrl")):
+            result["organizerUrl"] = _url(event["organizerUrl"])
     admission = _text(event.get("admissionRestriction")) or _text(event.get("ageRestriction"))
     if private:
         admission = "Private / invite-only event"

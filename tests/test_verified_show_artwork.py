@@ -11,6 +11,15 @@ import apply_verified_show_artwork as artwork
 
 
 class VerifiedShowArtworkTests(unittest.TestCase):
+    def test_daniel_launch_title_is_corrected_without_overwriting_a_later_venue(self):
+        old = dict(id='bandsintown:109121424', startDate='2026-11-19',
+                   venue="Until It Doesn't Launch Event - Montreal, New Speak")
+        artwork.patch_event(old)
+        self.assertEqual(old['venue'], 'Newspeak')
+        moved = dict(old, venue='New confirmed venue')
+        artwork.patch_event(moved)
+        self.assertEqual(moved['venue'], 'New confirmed venue')
+
     def test_liberty_partial_provider_bill_keeps_verified_opener_without_merging_other_show(self):
         canonical = dict(id='bandsintown:108881783', title='Hulvey at Vines Center',
                          startDate='2026-11-06', startTime='20:00', venue='Vines Center',

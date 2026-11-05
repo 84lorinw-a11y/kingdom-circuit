@@ -146,6 +146,9 @@ jobs:
       - name: Preserve October 3 concert corrections and artist identity
         run: python scripts/apply_oct3_concert_corrections.py
 
+      - name: Restore reviewed missing show information
+        run: python scripts/apply_verified_show_information.py
+
       - name: Restore runtime-only source configuration
         if: steps.refresh-mode.outputs.discovery == 'true'
         run: git checkout -- config/official-sources.json

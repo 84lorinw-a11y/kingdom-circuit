@@ -50,5 +50,56 @@
     "resolvedAt": "2026-10-20",
     "resolution": "Owner received direct organizer confirmation that CJ requested Friday November 13. Publish the rescheduled show and new flyer; retain this original snapshot for history.",
     "currentEventId": "manual:cj-emulous-kickback-grand-prairie-2026"
+  },
+  {
+    "reviewedAt": "2026-11-05",
+    "reviewStatus": "confirmed_identity_mismatch",
+    "publish": false,
+    "excludedEventId": "bandsintown:1040781482",
+    "reason": "The venue identifies its November 13 Ellis Duo booking as Cindy Ellis on vocals and Ryan Ellis, a Miami jazz pianist and school music educator. Our tracked Ryan Ellis is the California Christian singer and Navy veteran identified by his official artist biography. The shared name caused a false Bandsintown association. This is not a cancellation; retain the original record as evidence, but do not publish it as a performance by our tracked artist.",
+    "sources": [
+      "https://www.thebetsyhotel.com/event-calendar/live-music-intergenerational-jazz-ellis-duo-13",
+      "https://ryanellismusic.com/about/",
+      "https://www.bandsintown.com/e/1040781482"
+    ],
+    "scope": "Only the November 13, 2026 booking with Bandsintown event ID 1040781482 or its exact official event URL. Other Ryan Ellis dates and venues remain eligible.",
+    "event": {
+      "id": "bandsintown:1040781482",
+      "title": "Ryan Ellis at The Betsy Hotel",
+      "startDate": "2026-11-13",
+      "startTime": "18:00",
+      "timezone": "",
+      "venue": "The Betsy Hotel",
+      "address": "1440 Ocean Dr",
+      "city": "Miami Beach",
+      "state": "FL",
+      "country": "US",
+      "artists": [
+        "Ryan Ellis"
+      ],
+      "headliner": "Ryan Ellis",
+      "eventType": "concert",
+      "status": "scheduled",
+      "ticketUrl": "https://www.bandsintown.com/t/1040781482?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+      "officialUrl": "https://www.bandsintown.com/e/1040781482?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+      "image": "assets/artists/ryan-ellis-press-oct20.jpg",
+      "price": "",
+      "sourceName": "Bandsintown",
+      "sources": [
+        {
+          "name": "Bandsintown",
+          "url": "https://www.bandsintown.com/e/1040781482?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "type": "bandsintown_rest",
+          "authority": "artist_calendar",
+          "priority": 74
+        }
+      ],
+      "confidence": "medium",
+      "bandsintownEventId": "1040781482",
+      "bandsintownArtistId": "218834",
+      "bandsintownResolvedName": "Ryan Ellis",
+      "bandsintownIdentity": "exact_name_or_alias",
+      "trackedArtist": "Ryan Ellis"
+    }
   }
 ]

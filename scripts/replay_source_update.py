@@ -14,7 +14,8 @@ SOURCE_REPAIRS = ['apply_curated_catalog_policy.py', 'apply_sep12_live_audit_rep
     'permanent_state_pages.py --source .', 'prune_past_events.py --source .',
     'apply_sevin_official_schedule.py', 'apply_live_artist_overrides.py --source .',
     'apply_deonte_hall_submission.py', *CURATION[1:],
-    'apply_oct2_verified_shows.py', 'apply_oct3_concert_corrections.py']
+    'apply_oct2_verified_shows.py', 'apply_oct3_concert_corrections.py',
+    'apply_verified_show_information.py']
 
 
 def run(script):

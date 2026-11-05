@@ -167,8 +167,15 @@ def patch_event(event):
     pin = BY_ID.get(event_id)
     if not pin or event.get("startDate") != pin["startDate"]:
         return False
-    event.update(copy.deepcopy({key: value for key, value in pin.items()
-                                if key not in {"id", "startDate"}}))
+    values = copy.deepcopy({key: value for key, value in pin.items()
+                            if key not in {"id", "startDate"}})
+    # This provider put the launch-event title in its venue field. Correct
+    # only that known bad value; a later confirmed venue change must survive.
+    if event_id == 'bandsintown:109121424' and event.get('venue') not in {
+        "Until It Doesn't Launch Event - Montreal, New Speak", 'Newspeak', '', None
+    }:
+        values.pop('venue', None)
+    event.update(values)
     if pin.get("officialUrl"):
         # Keep the original calendar evidence, but prioritize the exact ticket
         # page the owner selected. Repeated refreshes must not duplicate it.
