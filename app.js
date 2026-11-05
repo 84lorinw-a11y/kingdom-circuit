@@ -6286,8 +6286,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/officialging17/",
     "spotifyProfile": "https://open.spotify.com/artist/6PbK7lHIBspmVr7n9KoHFC",
     "youtubeProfile": "https://www.youtube.com/channel/UC--1GCuD7a0OmLo8QFsVKkQ",
-    "officialImageSource": "https://www.instagram.com/p/DaJQnqRFgmW/",
-    "imageUrl": "assets/artists/g-ng-owner-instagram-DaJQnqRFgmW-nov5.jpg",
+    "officialImageSource": "https://kingdomcircuit.com/assets/artists/g-ng-owner-approved-stage-nov5.png",
+    "imageUrl": "assets/artists/g-ng-owner-approved-stage-nov5.png",
     "imagePosition": "45% 20%",
     "sourceRegistryVerified": true
   }
@@ -12145,8 +12145,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/officialging17/",
     "spotifyProfile": "https://open.spotify.com/artist/6PbK7lHIBspmVr7n9KoHFC",
     "youtubeProfile": "https://www.youtube.com/channel/UC--1GCuD7a0OmLo8QFsVKkQ",
-    "officialImageSource": "https://www.instagram.com/p/DaJQnqRFgmW/",
-    "imageUrl": "assets/artists/g-ng-owner-instagram-DaJQnqRFgmW-nov5.jpg",
+    "officialImageSource": "https://kingdomcircuit.com/assets/artists/g-ng-owner-approved-stage-nov5.png",
+    "imageUrl": "assets/artists/g-ng-owner-approved-stage-nov5.png",
     "imagePosition": "45% 20%",
     "sourceRegistryVerified": true
   }
@@ -13817,7 +13817,7 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 0%"
   },
   "g!ng": {
-    "imageUrl": "assets/artists/g-ng-owner-instagram-DaJQnqRFgmW-nov5.jpg",
+    "imageUrl": "assets/artists/g-ng-owner-approved-stage-nov5.png",
     "imagePosition": "45% 20%"
   }
 };
