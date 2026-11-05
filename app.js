@@ -430,7 +430,8 @@ const ARTIST_ROSTER_ORDER = [
   "elllli",
   "GZeal",
   "Semajay ThegospelRapper",
-  "HisnameJirr"
+  "HisnameJirr",
+  "G!nG"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -6275,6 +6276,19 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/p/DLzqE3FAeyV/",
     "imageUrl": "assets/artists/hisnamejirr-owner-instagram-dlzqe3faeyv-nov4.jpg",
     "imagePosition": "50% 0%",
+    "sourceRegistryVerified": true
+  },
+  "g!ng": {
+    "aliases": [
+      "G!nG"
+    ],
+    "website": "https://linktr.ee/g_ing",
+    "instagramProfile": "https://www.instagram.com/officialging17/",
+    "spotifyProfile": "https://open.spotify.com/artist/6PbK7lHIBspmVr7n9KoHFC",
+    "youtubeProfile": "https://www.youtube.com/channel/UC--1GCuD7a0OmLo8QFsVKkQ",
+    "officialImageSource": "https://www.instagram.com/officialging17/",
+    "imageUrl": "assets/artists/g-ng-official-linktree-nov5.jpeg",
+    "imagePosition": "50% 50%",
     "sourceRegistryVerified": true
   }
 };
@@ -12122,6 +12136,19 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/hisnamejirr-owner-instagram-dlzqe3faeyv-nov4.jpg",
     "imagePosition": "50% 0%",
     "sourceRegistryVerified": true
+  },
+  "g!ng": {
+    "aliases": [
+      "G!nG"
+    ],
+    "website": "https://linktr.ee/g_ing",
+    "instagramProfile": "https://www.instagram.com/officialging17/",
+    "spotifyProfile": "https://open.spotify.com/artist/6PbK7lHIBspmVr7n9KoHFC",
+    "youtubeProfile": "https://www.youtube.com/channel/UC--1GCuD7a0OmLo8QFsVKkQ",
+    "officialImageSource": "https://www.instagram.com/officialging17/",
+    "imageUrl": "assets/artists/g-ng-official-linktree-nov5.jpeg",
+    "imagePosition": "50% 50%",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -13788,6 +13815,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "hisnamejirr": {
     "imageUrl": "assets/artists/hisnamejirr-owner-instagram-dlzqe3faeyv-nov4.jpg",
     "imagePosition": "50% 0%"
+  },
+  "g!ng": {
+    "imageUrl": "assets/artists/g-ng-official-linktree-nov5.jpeg",
+    "imagePosition": "50% 50%"
   }
 };
 

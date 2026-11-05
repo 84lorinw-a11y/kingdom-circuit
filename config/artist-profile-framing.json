@@ -8971,5 +8971,38 @@
       1280,
       1440
     ]
+  },
+  "g-ng": {
+    "artist": "G!nG",
+    "imageSha256": "f96a48f6cd069a9c30a11fd1a6650f00b9996cc806955cd07ea75b289f505303",
+    "responsiveCrop": true,
+    "reason": "Original official Linktree performance portrait, unchanged2000x2000. Target-only CSS windows retain full cap, hair and face at useful scale on desktop and phones.",
+    "desktop": {
+      "window": [
+        0.15,
+        0.2,
+        0.7,
+        0.525
+      ],
+      "ratio": 1.3333333333333333,
+      "nameSize": 3.2
+    },
+    "mobile": {
+      "window": [
+        0.15,
+        0.2,
+        0.7,
+        0.7
+      ],
+      "ratio": 1,
+      "nameSize": 7.8
+    },
+    "responsiveWidths": [
+      640,
+      960,
+      1280,
+      1600,
+      2000
+    ]
   }
 }
