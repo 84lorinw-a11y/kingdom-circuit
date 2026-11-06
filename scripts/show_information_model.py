@@ -41,6 +41,7 @@ _PRIVATE = re.compile(r"\b(?:private\s+event|invite[\s-]*only|invitation[\s-]*on
 PRIVATE_ADDRESS_FIELDS = ('address', 'address2', 'suite', 'postalCode', 'fullAddress')
 _UNKNOWN_FACT = {'tbd', 'tba', 'unknown', 'not confirmed', 'not provided', 'to be announced',
                  'to be determined', 'venue not confirmed', 'venue not provided',
+                 'venue to be announced', 'venue to be determined',
                  'address not confirmed', 'address not provided'}
 _DERIVED = (
     "dateLabel", "startTimeLabel", "doorsTimeLabel", "registrationTimeLabel",
@@ -341,8 +342,13 @@ def normalize(event):
     end_day, end_clock, end = _temporal(event, "end", zone, start_day if event.get("endTime") else None)
     # An earlier end clock does not establish an overnight date. Keep the known
     # clock visible, but do not fabricate tomorrow (or an impossible schema end).
-    invalid_end = bool(start_day and end_day and (end_day < start_day or (
-        end_day == start_day and start_clock and end_clock and end_clock < start_clock)))
+    if start and end:
+        # Explicit offsets disambiguate repeated clocks during a DST fallback.
+        # Compare instants, including when both datetimes share one ZoneInfo.
+        invalid_end = end.astimezone(timezone.utc) < start.astimezone(timezone.utc)
+    else:
+        invalid_end = bool(start_day and end_day and (end_day < start_day or (
+            end_day == start_day and start_clock and end_clock and end_clock < start_clock)))
     if start_day:
         result["schemaStartDate"] = _schema_datetime(start_day, start_clock, start, zone)
         result["dateLabel"] = _date_label(start_day)
@@ -365,7 +371,9 @@ def normalize(event):
         if field not in result:
             continue
         reference = end if field == 'endTimeLabel' else start
-        if not reference and zone and start_day and field in ('doorsTimeLabel', 'registrationTimeLabel'):
+        if zone and start_day and field in ('doorsTimeLabel', 'registrationTimeLabel'):
+            # Doors and registration can precede a timezone transition on the
+            # show date. Ambiguous/nonexistent clocks must not inherit an offset.
             clock = _clock(event.get('doorsTime' if field == 'doorsTimeLabel' else 'registrationTime'))
             reference = _localize(datetime.combine(start_day, clock), zone) if clock else None
         if reference:

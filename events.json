@@ -2182,7 +2182,7 @@
     "id": "manual:ignite-and-unite-tour-daytona-beach-2026-11-13",
     "title": "Ignite and Unite Tour",
     "startDate": "2026-11-13",
-    "startTime": "18:00",
+    "startTime": "",
     "timezone": "America/New_York",
     "venue": "The Porch",
     "address": "212 S Beach Street, Suite 110",
@@ -2200,7 +2200,7 @@
     "ticketUrl": "",
     "officialUrl": "https://www.igniteandunitetour.com/",
     "image": "assets/events/ignite-and-unite-daytona-beach-2026-11-13-tour-site-nov3.png",
-    "price": "Free",
+    "price": "Free; preregistration required through the official event page.",
     "sourceName": "Ignite and Unite official tour website and city showcard",
     "sources": [
       {
@@ -2225,7 +2225,7 @@
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-10-08T23:11:36Z",
-    "startDateTime": "2026-11-13T18:00:00-05:00",
+    "startDateTime": "",
     "advertisedBilling": [
       "Pastor John Humphries",
       "OTG Zico",
@@ -2254,30 +2254,16 @@
       "name": "Ignite and Unite Tour",
       "url": "https://www.igniteandunitetour.com/"
     },
-    "publicDescription": "The Ignite and Unite Tour comes to The Porch in Daytona Beach, Florida, on November 13, 2026. Doors open at 5:30 PM; the event starts at 6 PM Eastern. Free admission. The confirmed bill is Pastor John Humphries, OTG Zico, Altar Ego, J10, Legit, 3HRE, and B. Cody Shields.",
+    "publicDescription": "The Ignite and Unite Tour comes to The Porch in Daytona Beach on November 13, 2026, with Pastor John Humphries, OTG Zico, Altar Ego, J10, Legit, 3HRE and B. Cody Shields. Free admission with preregistration. The tour flyer and venue registration page list different show and doors times; confirm the schedule with The Porch.",
     "authority": "official_event",
     "auditVerified": "2026-11-03",
     "notes": "Bo Fisher supplied the tour flyer directly to the site owner. The flyer prints month/day, venue, city and this full billing, but no year or start times. On October 8, 2026 the owner explicitly instructed us to assume 2026 for all four dates. The year is owner-approved, not independently verified from a public announcement. Leave startTime and ticketUrl empty and detailsPending true. Official details links to the exact unedited artist-supplied flyer hosted locally, not a guessed ticket page or unrelated venue listing. Owner confirmed Bo appears as part of Altar Ego; keep Altar Ego in public billing and link the record to Bo Fisher and the already verified B. Cody Shields. No global group alias or new artist profiles. October 23: associate the separately owner-verified Altar Ego group profile with this explicit group billing. Preserve existing solo artist associations and the advertised lineup. November 3: owner selected the date-specific showcard from the official tour website. Original PNG retained unchanged. Preserve the original October 8 discovery date, canonical ID, full confirmed billing and existing artist associations. A donate QR is not a ticket offer. The official schedule and city card now confirm the 2026 date, full address, 5:30 PM doors, 6 PM event start and free admission. These verified details supersede the prior TBA instructions; no unknown end, age, RSVP requirement or ticket offer was added. The official tour site replaces the old standalone tour-wide image as Official Details.",
-    "doorsTime": "17:30",
+    "doorsTime": "",
     "postalCode": "32114",
-    "scheduleDetails": [
-      {
-        "label": "Concert doors",
-        "text": "5:30 PM Eastern"
-      },
-      {
-        "label": "Start",
-        "text": "6:00 PM Eastern"
-      },
-      {
-        "label": "Admission",
-        "text": "Free"
-      },
-      {
-        "label": "Venue address",
-        "text": "212 S Beach Street, Suite 110, Daytona Beach, FL 32114"
-      }
-    ]
+    "scheduleDetails": [],
+    "ageRestriction": "Under 16 must attend with an adult.",
+    "publicNotice": "Show and doors times are not confirmed because official sources disagree. Confirm with The Porch before attending.",
+    "scheduleNote": "The tour flyer lists doors at 5:30 PM and the show at 6 PM. The linked venue registration page lists doors at 6:30 PM and the show at 7 PM. Confirm the schedule with The Porch."
   },
   {
     "id": "official:82bb2a5f42c828c2537d",
@@ -3393,8 +3379,8 @@
     "endDate": "2026-11-21",
     "startTime": "",
     "timezone": "America/Los_Angeles",
-    "venue": "15202 Transistor Lane",
-    "address": "15202 Transistor Lane",
+    "venue": "",
+    "address": "",
     "city": "Huntington Beach",
     "state": "CA",
     "country": "US",
@@ -3445,7 +3431,9 @@
     "sourceEventIds": [
       "official:962113b5923429ffb4f0"
     ],
-    "postalCode": "92649"
+    "postalCode": "",
+    "admissionRestriction": "RSVP/application required. The organizer provides location details.",
+    "scheduleNote": "The public RSVP page shares Huntington Beach but withholds the street address. Request attendance through the official listing for location details."
   },
   {
     "id": "manual:chain-breaker-kingsport-2026-11-21",
@@ -4628,11 +4616,11 @@
     "startDateTime": "2026-12-12T17:00:00-06:00",
     "timezone": "America/Chicago",
     "doorsTime": "16:00",
-    "venue": "Royse City High School",
-    "address": "700 FM 2642",
+    "venue": "",
+    "address": "",
     "city": "Royse City",
     "state": "TX",
-    "postalCode": "75189",
+    "postalCode": "",
     "country": "US",
     "artists": [
       "Rainbow Israel",
@@ -4677,7 +4665,7 @@
     "imageOverride": true,
     "detailImageLayout": "portrait",
     "imageSource": "Official portrait flyer supplied by Rainbow Israel through the site owner, October 15, 2026",
-    "price": "Free; Eventbrite registration required",
+    "price": "Free concert; register through Eventbrite for the giveaways.",
     "ageRestriction": "All ages",
     "organizer": "The Hip Hop Worship Gathering & New Hope Baptist Church Royse City",
     "description": "A free Christmas hip-hop worship concert featuring Emcee N.I.C.E., The Hip Hop Worship Gathering, Jai Symphony, Rainbow Israel, Shaquille Jones, Soloso, Zsel The Artist, Terrance Watson, Royse City High School Choir, The N3w Hop3 Band, and James Okon. Hosted by Miss Victoria, with host pastor Reverend Stephen Grays. Doors at 4 PM; the organizer agenda starts at 5 PM. Register through Eventbrite. The artist-supplied flyer lists Royse City High School; the ticket page currently lists a different venue, so confirm the location with the organizer before attending.",
@@ -4715,7 +4703,10 @@
     ],
     "mergedFromIds": [
       "manual:hhwg-christmas-extravaganza-royse-city-2026-12-12"
-    ]
+    ],
+    "publicNotice": "Venue not confirmed: the official flyer lists Royse City High School, while Eventbrite lists New Hope Baptist Church. Confirm the location with the organizer before traveling.",
+    "scheduleNote": "The flyer lists Royse City High School, 700 FM 2642. Eventbrite lists New Hope Baptist Church, 801 E. Old Greenville Rd. The organizer needs to confirm the venue.",
+    "publicDescription": "A free Christmas hip-hop worship concert presented by The Hip Hop Worship Gathering and New Hope Baptist Church Royse City. Doors are listed at 4 PM and the concert at 5 PM. Registration through Eventbrite is for giveaways. The flyer and ticket page name different venues; confirm the location with the organizer before attending."
   },
   {
     "id": "manual:mike-malagies-its-a-god-night-orlando-2026-12-12",

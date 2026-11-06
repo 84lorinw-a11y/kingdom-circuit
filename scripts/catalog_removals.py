@@ -1,4 +1,4 @@
-"""Owner-requested complete removals, including archived and refreshed shows."""
+"""Owner-requested removals and publication holds for refreshed shows."""
 import json
 import re
 from pathlib import Path
@@ -87,8 +87,35 @@ def withheld_event(event):
     return False
 
 
+def location_review_event(event):
+    # The artist calendar pairs Texas Motorplex with a Florida locality.
+    # Hold only this booking until the location is confirmed; it is not canceled.
+    if event.get("startDate") != "2026-11-21":
+        return False
+    if str(event.get("id") or "").removeprefix("manual:") == "official:023c040d4ea33e120949":
+        return True
+    if str(event.get("bandsintownEventId") or "") == "1040798191":
+        return True
+    for field in ("officialUrl", "ticketUrl"):
+        raw = str(event.get(field) or "")
+        if any(character.isspace() for character in raw):
+            continue
+        try:
+            url = urlsplit(raw)
+            host = (url.hostname or "").lower().removeprefix("www.")
+            port = url.port
+        except ValueError:
+            continue
+        if (url.scheme in {"http", "https"} and host == "bandsintown.com"
+                and not url.username and not url.password
+                and port in {None, 443 if url.scheme == "https" else 80}
+                and re.fullmatch(r"/[et]/1040798191(?:-[^/]+)?/?", url.path)):
+            return True
+    return False
+
+
 def removed_event(event):
-    if withheld_event(event) or misattributed_event(event):
+    if withheld_event(event) or misattributed_event(event) or location_review_event(event):
         return True
     names = [event.get("headliner"), *event.get("artists", []),
              *event.get("advertisedBilling", []), *event.get("officialBill", [])]
@@ -107,7 +134,9 @@ def apply(root: Path):
         data = json.loads(path.read_text())
         rows = data.get("events", []) if isinstance(data, dict) else data
         kept = [entry for entry in rows if not removed_event(entry.get("event", entry))
-                or (relative == "event-history.json" and misattributed_event(entry.get("event", entry)))]
+                or (relative == "event-history.json" and (
+                    misattributed_event(entry.get("event", entry))
+                    or location_review_event(entry.get("event", entry))))]
         if len(kept) == len(rows):
             continue
         if isinstance(data, dict):

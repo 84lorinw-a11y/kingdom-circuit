@@ -2,7 +2,7 @@ import copy
 import pathlib
 import sys
 import unittest
-from datetime import timezone, timedelta
+from datetime import datetime, timezone, timedelta
 from unittest.mock import patch
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "scripts"))
@@ -39,6 +39,13 @@ class ShowInformationModelTests(unittest.TestCase):
         confirmed = normalize(self.event(title='An evening at Chapel', venue='Chapel'))
         self.assertEqual(confirmed['venue'], 'Chapel')
 
+    def test_explicit_venue_announcement_placeholders_remain_unknown(self):
+        for venue in ('Venue to be announced', 'VENUE TO BE DETERMINED'):
+            with self.subTest(venue=venue):
+                result = normalize(self.event(venue=venue))
+                self.assertEqual(result['venue'], '')
+                self.assertEqual(result['venueLabel'], 'Venue not confirmed')
+
     def test_public_description_precedes_legacy_description(self):
         result = normalize(self.event(publicDescription=" Public copy ", description="Other", notes="Internal"))
         self.assertEqual(result["description"], "Public copy")
@@ -50,6 +57,67 @@ class ShowInformationModelTests(unittest.TestCase):
         self.assertEqual(winter["schemaStartDate"], "2027-01-29T21:00:00-06:00")
         self.assertEqual(summer["schemaStartDate"], "2027-07-29T21:00:00-05:00")
         self.assertEqual((winter["timezoneLabel"], summer["timezoneLabel"]), ("CST", "CDT"))
+
+    def test_secondary_clocks_use_their_own_spring_and_fall_offsets(self):
+        for day, doors, registration, start_label, doors_label, registration_label in (
+            ('2027-03-14', '01:30', '01:15', '3:30 AM EDT', '1:30 AM EST', '1:15 AM EST'),
+            ('2027-11-07', '00:30', '00:15', '3:30 AM EST', '12:30 AM EDT', '12:15 AM EDT'),
+        ):
+            with self.subTest(day=day):
+                result = normalize(self.event(startDate=day, startTime='03:30',
+                    doorsTime=doors, registrationTime=registration, timezone='America/New_York'))
+                self.assertEqual(result['startTimeLabel'], start_label)
+                for field, expected in (('doorsTimeLabel', doors_label),
+                                        ('registrationTimeLabel', registration_label)):
+                    with self.subTest(field=field):
+                        self.assertEqual(result[field], expected)
+
+    def test_ambiguous_and_nonexistent_secondary_clocks_keep_zone_name_fallback(self):
+        for day, doors, registration, doors_label, registration_label in (
+            ('2027-11-07', '01:15', '01:45', '1:15 AM', '1:45 AM'),
+            ('2027-03-14', '02:15', '02:45', '2:15 AM', '2:45 AM'),
+        ):
+            with self.subTest(day=day):
+                result = normalize(self.event(startDate=day, startTime='03:30',
+                    doorsTime=doors, registrationTime=registration, timezone='America/New_York'))
+                for field, expected in (('doorsTimeLabel', doors_label),
+                                        ('registrationTimeLabel', registration_label)):
+                    with self.subTest(field=field):
+                        self.assertEqual(result[field], expected + ' (America/New_York)')
+
+    def test_explicit_end_offsets_determine_order_during_fall_back(self):
+        earlier = '2027-11-07T01:45:00-04:00'
+        later = '2027-11-07T01:15:00-05:00'
+        for start, end, valid in ((earlier, later, True), (later, earlier, False)):
+            with self.subTest(start=start, end=end):
+                result = normalize(self.event(startDate='2027-11-07', startTime='',
+                    startDateTime=start, endDateTime=end, timezone='America/New_York'))
+                self.assertEqual(result['schemaStartDate'], start)
+                if valid:
+                    self.assertEqual(result.get('schemaEndDate'), end)
+                    elapsed = datetime.fromisoformat(result['schemaEndDate']) - datetime.fromisoformat(result['schemaStartDate'])
+                    self.assertEqual(elapsed, timedelta(minutes=30))
+                else:
+                    self.assertNotIn('schemaEndDate', result)
+
+    def test_auto_localized_end_order_and_elapsed_time_across_dst_changes(self):
+        for day, start_clock, end_clock, start_iso, end_iso, elapsed in (
+            ('2027-03-14', '01:30', '03:30', '2027-03-14T01:30:00-05:00',
+             '2027-03-14T03:30:00-04:00', timedelta(hours=1)),
+            ('2027-11-07', '00:30', '02:30', '2027-11-07T00:30:00-04:00',
+             '2027-11-07T02:30:00-05:00', timedelta(hours=3)),
+        ):
+            with self.subTest(day=day):
+                result = normalize(self.event(startDate=day, startTime=start_clock,
+                    endTime=end_clock, timezone='America/New_York'))
+                self.assertEqual(result['schemaStartDate'], start_iso)
+                self.assertEqual(result['schemaEndDate'], end_iso)
+                self.assertEqual(datetime.fromisoformat(result['schemaEndDate']) -
+                                 datetime.fromisoformat(result['schemaStartDate']), elapsed)
+                reversed_result = normalize(self.event(startDate=day, startTime=end_clock,
+                    endTime=start_clock, timezone='America/New_York'))
+                self.assertEqual(reversed_result['schemaStartDate'], end_iso)
+                self.assertNotIn('schemaEndDate', reversed_result)
 
     def test_bc_permanent_pacific_time_does_not_display_mountain_time(self):
         source = self.event(startDate='2026-11-07', startTime='19:30',

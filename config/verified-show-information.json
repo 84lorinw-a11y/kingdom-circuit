@@ -2130,10 +2130,65 @@
           "url": "https://static.wixstatic.com/media/690614_bfc9c5fdd65b408589fe70c16c158e56~mv2.png",
           "reviewedAt": "2026-11-03",
           "confidence": "high for address, doors/start, source and artwork; current dated Jacksonville admission supersedes older prices; no unannounced end or age restrictions inferred"
+        },
+        {
+          "url": "https://www.igniteandunitetour.com/",
+          "reviewedAt": "2026-11-05",
+          "quoteOrSummary": "City-specific Nov13flyer lists5:30PMdoors/6PMshow; exacttourlinks EventCreate; user requested tourwebsiteCTA."
+        },
+        {
+          "url": "https://www.eventcreate.com/e/the-porch-jesus-night-club-nov-3th",
+          "reviewedAt": "2026-11-05",
+          "quoteOrSummary": "Exact date registration lists6:30PMdoors/7PMshow, free mandatory preregistration, under16withadult."
         }
       ],
       "expectedVenue": "The Porch",
-      "expectedAddress": "212 S Beach Street, Suite 110"
+      "expectedAddress": "212 S Beach Street, Suite 110",
+      "corrections": [
+        {
+          "expected": {
+            "ageRestriction": null,
+            "price": "Free",
+            "publicNotice": null,
+            "scheduleNote": null,
+            "startTime": "18:00",
+            "startDateTime": "2026-11-13T18:00:00-05:00",
+            "doorsTime": "17:30",
+            "scheduleDetails": [
+              {
+                "label": "Concert doors",
+                "text": "5:30 PM Eastern"
+              },
+              {
+                "label": "Start",
+                "text": "6:00 PM Eastern"
+              },
+              {
+                "label": "Admission",
+                "text": "Free"
+              },
+              {
+                "label": "Venue address",
+                "text": "212 S Beach Street, Suite 110, Daytona Beach, FL 32114"
+              }
+            ],
+            "publicDescription": "The Ignite and Unite Tour comes to The Porch in Daytona Beach, Florida, on November 13, 2026. Doors open at 5:30 PM; the event starts at 6 PM Eastern. Free admission. The confirmed bill is Pastor John Humphries, OTG Zico, Altar Ego, J10, Legit, 3HRE, and B. Cody Shields."
+          },
+          "facts": {
+            "ageRestriction": "Under 16 must attend with an adult.",
+            "price": "Free; preregistration required through the official event page.",
+            "publicNotice": "Show and doors times are not confirmed because official sources disagree. Confirm with The Porch before attending.",
+            "scheduleNote": "The tour flyer lists doors at 5:30 PM and the show at 6 PM. The linked venue registration page lists doors at 6:30 PM and the show at 7 PM. Confirm the schedule with The Porch.",
+            "startTime": "",
+            "startDateTime": "",
+            "doorsTime": "",
+            "scheduleDetails": [],
+            "publicDescription": "The Ignite and Unite Tour comes to The Porch in Daytona Beach on November 13, 2026, with Pastor John Humphries, OTG Zico, Altar Ego, J10, Legit, 3HRE and B. Cody Shields. Free admission with preregistration. The tour flyer and venue registration page list different show and doors times; confirm the schedule with The Porch."
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source conflict / restricted public RSVP location audit; do not infer missing facts."
+        }
+      ]
     },
     {
       "id": "official:652bb96bc9c6543ec7d3",
@@ -2237,9 +2292,7 @@
       "city": "Huntington Beach",
       "state": "CA",
       "country": "US",
-      "facts": {
-        "postalCode": "92649"
-      },
+      "facts": {},
       "sources": [
         {
           "url": "https://www.ocreporter.news/LegalNotices/OCR-2026-03-25.pdf",
@@ -2249,10 +2302,35 @@
           "quoteOrSummary": "March2026 published business filing identifies The Father's House of Huntington Beach/Legacy Center OC at the exact stored street15202TransistorLane,HuntingtonBeachCA92649. Used only for ZIP; not proof of venue billing.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://partiful.com/e/9wVqEVujrtfNv03Vr5C7",
+          "reviewedAt": "2026-11-05",
+          "quoteOrSummary": "Artist-hosted page shows RestrictedAccess, Getonthelist; publicpayload guestActionAPPLY, approximateLocationHuntingtonBeachCA, addressLinesempty, no streetorpostal."
         }
       ],
       "expectedVenue": "15202 Transistor Lane",
-      "expectedAddress": "15202 Transistor Lane"
+      "expectedAddress": "15202 Transistor Lane",
+      "corrections": [
+        {
+          "expected": {
+            "venue": "15202 Transistor Lane",
+            "address": "15202 Transistor Lane",
+            "postalCode": "92649",
+            "admissionRestriction": null,
+            "scheduleNote": null
+          },
+          "facts": {
+            "venue": "",
+            "address": "",
+            "postalCode": "",
+            "admissionRestriction": "RSVP/application required. The organizer provides location details.",
+            "scheduleNote": "The public RSVP page shares Huntington Beach but withholds the street address. Request attendance through the official listing for location details."
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source conflict / restricted public RSVP location audit; do not infer missing facts."
+        }
+      ]
     },
     {
       "id": "bandsintown:109072797",
@@ -2764,9 +2842,7 @@
         "organizer": {
           "name": "Music Calgary",
           "url": "https://www.musiccalgary.ca/"
-        },
-        "doorsTime": "20:00",
-        "ageRestriction": "Under 18 must be accompanied by a parent or legal guardian."
+        }
       },
       "sources": [
         {
@@ -2780,6 +2856,21 @@
         {
           "url": "https://www.alberta.ca/albertas-new-time-system-abt",
           "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.musiccalgary.ca/conference",
+          "reviewedAt": "2026-11-05",
+          "quoteOrSummary": "Organizer FAQ identifies Friday Heliopolis as 18+."
+        },
+        {
+          "url": "https://www.musiccalgary.ca/schedule",
+          "reviewedAt": "2026-11-05",
+          "quoteOrSummary": "Organizer late-show heading identifies 10:30 PM doors."
+        },
+        {
+          "url": "https://www.eventbrite.ca/e/heliopolis-soundoff-summit-showcase-tickets-2003992006036?aff=ZaireInk",
+          "reviewedAt": "2026-11-05",
+          "quoteOrSummary": "Ticket page permits under18 with guardian and shows doors8PM; FAQ lists Zaire Ink10:55PM."
         }
       ],
       "corrections": [
@@ -2809,6 +2900,28 @@
             "publicNotice": "Published start times differ. Confirm the late-show schedule with the organizer before attending."
           },
           "reviewedAt": "2026-11-05"
+        },
+        {
+          "expected": {
+            "ageRestriction": "Under 18 must be accompanied by a parent or legal guardian.",
+            "doorsTime": "20:00",
+            "scheduleNote": null,
+            "publicNotice": "Published start times differ. Confirm the late-show schedule with the organizer before attending.",
+            "startTime": "22:00",
+            "startDateTime": "2026-11-13T22:00:00-06:00",
+            "publicDescription": "A mixed hip-hop showcase featuring Christian rapper Zaire Ink alongside the full announced bill. Eventbrite lists a 10 PM–1 AM event window; live performances begin at 10:30 PM, with Zaire Ink scheduled for 10:55 PM. Ends at 1 AM Saturday, November 14."
+          },
+          "facts": {
+            "ageRestriction": "Age restriction not confirmed. Organizer says 18+; ticket listing differs. Confirm with the organizer before attending.",
+            "doorsTime": "",
+            "scheduleNote": "Doors not confirmed: the organizer lists 10:30 PM, while Eventbrite lists 8 PM. Confirm the late-show schedule with the organizer before attending.",
+            "publicNotice": "Show schedule and age restriction are not confirmed because official sources disagree. Confirm with Music Calgary before attending.",
+            "startTime": "",
+            "startDateTime": "",
+            "publicDescription": "A mixed hip-hop showcase featuring Christian rapper Zaire Ink alongside the announced bill. Published event, performance and doors times differ; check with Music Calgary for the final schedule. The published event window ends at 1 AM Saturday, November 14."
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source conflict / restricted public RSVP location audit; do not infer missing facts."
         }
       ]
     },
@@ -5132,6 +5245,52 @@
           "url": "https://botzy.wtf/rsvp",
           "reviewedAt": "2026-11-05",
           "quoteOrSummary": "Existing accepted public description explicitly says BOTZY and Mike Summers present the live band album experience. Surface that existing presenter credit. Fresh RSVP site is inaccessible; the flyer was visually reviewed. Keep invitation-only status and address withheld."
+        }
+      ]
+    },
+    {
+      "id": "hhwg-christmas-extravaganza-royse-city-2026-12-12",
+      "startDate": "2026-12-12",
+      "city": "Royse City",
+      "state": "TX",
+      "country": "US",
+      "expectedVenue": "Royse City High School",
+      "expectedAddress": "700 FM 2642",
+      "facts": {},
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/e/hhwg-new-hope-baptist-church-christmas-extravaganza-tickets-2001777780227",
+          "reviewedAt": "2026-11-05",
+          "quoteOrSummary": "Current exact ticket page locates event at New Hope Baptist801E.OldGreenville and says registration is for giveaways."
+        },
+        {
+          "url": "/Users/lorinwilliamson/Documents/Kingdom Circuit Workspaces/nov5-show-information-production/assets/optimized/c88d87cc8f2fe8824803e767-w1122.webp",
+          "reviewedAt": "2026-11-05",
+          "quoteOrSummary": "Previously visually reviewed official current flyer locates event at Royse City High School700FM2642; see prior batch2 evidence. Not newly fetched from Instagram."
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "price": "Free; Eventbrite registration required",
+            "publicNotice": null,
+            "scheduleNote": null,
+            "venue": "Royse City High School",
+            "address": "700 FM 2642",
+            "postalCode": "75189",
+            "publicDescription": null
+          },
+          "facts": {
+            "price": "Free concert; register through Eventbrite for the giveaways.",
+            "publicNotice": "Venue not confirmed: the official flyer lists Royse City High School, while Eventbrite lists New Hope Baptist Church. Confirm the location with the organizer before traveling.",
+            "scheduleNote": "The flyer lists Royse City High School, 700 FM 2642. Eventbrite lists New Hope Baptist Church, 801 E. Old Greenville Rd. The organizer needs to confirm the venue.",
+            "venue": "",
+            "address": "",
+            "postalCode": "",
+            "publicDescription": "A free Christmas hip-hop worship concert presented by The Hip Hop Worship Gathering and New Hope Baptist Church Royse City. Doors are listed at 4 PM and the concert at 5 PM. Registration through Eventbrite is for giveaways. The flyer and ticket page name different venues; confirm the location with the organizer before attending."
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source conflict / restricted public RSVP location audit; do not infer missing facts."
         }
       ]
     }

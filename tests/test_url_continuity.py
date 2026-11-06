@@ -198,6 +198,107 @@ class URLContinuityTests(unittest.TestCase):
         self.assertNotIn(old['id'], state['events'])
         self.assertEqual(self.path, state['redirects'][old_path])
 
+    def flavor_concert(self, day):
+        weekday = 'friday' if day == '2026-11-06' else 'saturday'
+        return {'id': f'manual:flavor-fest-2026-{weekday}-concerts',
+                'title': f'Flavor Fest 2026 — {weekday.title()} Concerts',
+                'startDate': day, 'startTime': '19:00', 'city': 'Tampa',
+                'state': 'FL', 'country': 'US', 'venue': 'Crossover Church',
+                'artists': ['Miles Minnick' if weekday == 'friday' else 'Lecrae'],
+                'status': 'scheduled', 'ticketUrl': 'https://flavorfest.ticketspice.com/full-conference-'}
+
+    def test_reviewed_flavor_aliases_forward_without_removing_current_concerts(self):
+        current = [self.flavor_concert(day) for day in ('2026-11-06', '2026-11-07')]
+        aliases = [dict(e, id=e['id'].removeprefix('manual:')) for e in current]
+        state = uc.empty_state()
+        for e in current + aliases:
+            state['events'][e['id']] = {'path': uc.generated_path(e), 'sourceIds': [], 'event': e}
+        self.write_inputs(primary=current, secondary=aliases, state=state)
+        uc.prepare(self.root)
+        for e in current:
+            self.page(uc.generated_path(e), 'Current confirmed concert')
+        for e in aliases:
+            self.page(uc.generated_path(e), 'This previously listed show is no longer in our current calendar.')
+        for name, events in zip(uc.FEEDS, (current, aliases)):
+            uc.save(self.site / name, events)
+        uc.finalize(self.root, self.site)
+        first = uc.load(self.root / uc.WORK_FILE, {})
+        for original, alias in zip(current, aliases):
+            target, old = uc.generated_path(original), uc.generated_path(alias)
+            text = uc.target_file(self.site, old).read_text()
+            facts = uc.PageFacts(text)
+            self.assertEqual(uc.ORIGIN + target, facts.canonical)
+            self.assertEqual('0; url=' + uc.ORIGIN + target, facts.refresh)
+            self.assertNotIn('no longer in our current calendar', text)
+            self.assertEqual([], facts.schemas)
+            self.assertIn('Current confirmed concert', uc.target_file(self.site, target).read_text())
+            self.assertNotIn(uc.ORIGIN + old, (self.site / 'sitemap.xml').read_text())
+            self.assertIn(uc.ORIGIN + target, (self.site / 'sitemap.xml').read_text())
+            self.assertIn(original['id'], first['events'])
+            self.assertNotIn(alias['id'], first['events'])
+            self.assertIn(alias['id'], first['events'][original['id']]['sourceIds'])
+        self.assertEqual([e['id'] for e in current], [e['id'] for e in uc.load(self.root / 'events.json', [])])
+        self.assertEqual([e['id'] for e in aliases], [e['id'] for e in uc.load(self.site / 'supplemental-events.json', [])])
+        self.assertEqual([uc.generated_path(e) for e in current],
+                         [e['canonicalPath'] for e in uc.load(self.site / 'supplemental-events.json', [])])
+        uc.persist(self.root, self.root / uc.WORK_FILE)
+        uc.prepare(self.root)
+        uc.finalize(self.root, self.site)
+        self.assertEqual(set(e['id'] for e in current), set(uc.load(self.root / uc.WORK_FILE, {})['events']))
+        uc.verify(self.site)
+
+    def test_reviewed_flavor_alias_does_not_merge_conflicting_sessions_or_missing_survivor(self):
+        original = self.flavor_concert('2026-11-06')
+        for fields in ({'startDate': '2026-11-07'}, {'startTime': '21:00'},
+                       {'venue': 'Other venue'}, {'status': 'private'}):
+            with self.subTest(fields=fields):
+                alias = dict(original, id=original['id'].removeprefix('manual:'), **fields)
+                state = uc.empty_state()
+                for e in (original, alias):
+                    state['events'][e['id']] = {'path': uc.generated_path(e), 'sourceIds': [], 'event': e}
+                self.page(uc.generated_path(original))
+                uc.reconcile_reviewed_aliases(state, {e['id']: e for e in (original, alias)}, {original['id']}, self.site)
+                self.assertIn(alias['id'], state['events'])
+                self.assertEqual({}, state['redirects'])
+        alias = dict(original, id=original['id'].removeprefix('manual:'))
+        state = uc.empty_state()
+        for e in (original, alias):
+            state['events'][e['id']] = {'path': uc.generated_path(e), 'sourceIds': [], 'event': e}
+        uc.reconcile_reviewed_aliases(state, {e['id']: e for e in (original, alias)}, set(), self.site)
+        self.assertEqual({}, state['redirects'])
+
+    def test_location_review_preserves_url_history_and_noindex_notice(self):
+        from catalog_removals import apply
+        held = {'id': 'official:023c040d4ea33e120949', 'title': '1K Phew — Live at Texas Motorplex',
+                'startDate': '2026-11-21', 'startTime': '', 'artists': ['1K Phew'],
+                'venue': 'Texas Motorplex', 'city': 'Swiss Golf And Tennis Club Mobile Home Park',
+                'state': 'FL', 'country': 'US', 'status': 'scheduled'}
+        held_path = uc.generated_path(held)
+        state = copy.deepcopy(self.state)
+        state['events'][held['id']] = {'path': held_path, 'sourceIds': [], 'event': held}
+        self.write_inputs(primary=[self.event, held], state=state)
+        history = {'events': [{'event': copy.deepcopy(held)}]}
+        uc.save(self.root / 'event-history.json', history)
+        apply(self.root)
+        uc.prepare(self.root)
+        self.page(self.path)
+        self.page(held_path, 'Old Florida location <script type="application/ld+json">{"@type":"Event"}</script>')
+        uc.finalize(self.root, self.site, '2026-11-05')
+        text = uc.target_file(self.site, held_path).read_text()
+        facts = uc.PageFacts(text)
+        self.assertEqual(uc.ORIGIN + held_path, facts.canonical)
+        self.assertEqual('noindex,follow', facts.robots)
+        self.assertEqual('1K Phew — Location under review', facts.h1)
+        self.assertIn('No cancellation has been confirmed', text)
+        self.assertNotIn('no longer in our current calendar', text)
+        self.assertEqual([], facts.schemas)
+        self.assertNotIn(uc.ORIGIN + held_path, (self.site / 'sitemap.xml').read_text())
+        self.assertEqual(history, uc.load(self.root / 'event-history.json', {}))
+        self.assertEqual([self.event['id']], [e['id'] for e in uc.load(self.root / 'events.json', [])])
+        self.assertEqual(held['id'], uc.load(self.root / uc.WORK_FILE, {})['events'][held['id']]['event']['id'])
+        uc.finalize(self.root, self.site, '2026-11-05')
+        self.assertEqual('noindex,follow', uc.PageFacts(uc.target_file(self.site, held_path).read_text()).robots)
+
     def test_runtime_cards_use_registered_path_after_rename(self):
         import subprocess
         edited = dict(self.event, title='New title')

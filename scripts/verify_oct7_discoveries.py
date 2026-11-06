@@ -6,6 +6,7 @@ import re
 import sys
 
 import build_seo_site as builder
+from apply_verified_show_information import enrich
 from verify_egr_bizzle_updates import uses_image
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,7 +16,10 @@ BATCH = "2026-10-07-reviewed-discoveries"
 def verify(site):
     rows = builder.merge_events(json.loads((site / "events.json").read_text()),
                                 json.loads((site / "supplemental-events.json").read_text()))
-    approved = [e for e in json.loads((ROOT / "config/manual-events.json").read_text())
+    registry = ROOT / 'config/verified-show-information.json'
+    reviewed = json.loads(registry.read_text()).get('events', []) if registry.exists() else []
+    # Later guarded source corrections supersede the original discovery seed.
+    approved = [enrich(e, reviewed) for e in json.loads((ROOT / "config/manual-events.json").read_text())
                 if e.get("editorialBatch") == BATCH]
     checked = 0
     for wanted in approved:

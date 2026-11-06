@@ -29,6 +29,12 @@ SNAPSHOT_FIELDS = ('id', 'title', 'startDate', 'endDate', 'startTime', 'endTime'
                    'postalCode', 'artists', 'headliner', 'status', 'eventType',
                    'officialUrl', 'ticketUrl', 'image', 'imageType', 'confidence',
                    'publicDescription', 'mergedFromIds', 'legacyEventPaths')
+# Reviewed November 5: these published source IDs duplicate the retained manual
+# Flavor Fest concert identities. Keep the old links without a false removal notice.
+REVIEWED_EVENT_ALIASES = (
+    ('flavor-fest-2026-friday-concerts', 'manual:flavor-fest-2026-friday-concerts', '2026-11-06'),
+    ('flavor-fest-2026-saturday-concerts', 'manual:flavor-fest-2026-saturday-concerts', '2026-11-07'),
+)
 
 
 def load(path, default):
@@ -292,9 +298,64 @@ def forwarding_page(target):
 </head><body><main><p>THE KINGDOM CIRCUIT</p><h1>Taking you to the show…</h1><p>This listing has an updated link.</p><a href="{absolute}">Continue to show</a></main></body></html>'''
 
 
-def retained_page(path, title, body):
+def retained_page(path, title, body, *, index=True):
     from build_seo_site import FAVICON_HTML
-    return f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow"><link rel="canonical" href="{ORIGIN + path}"><title>{html.escape(title)} | Kingdom Circuit</title>{FAVICON_HTML}<style>body{{margin:0;background:#080808;color:#eee;font:16px/1.65 system-ui,sans-serif}}main{{max-width:56rem;margin:auto;padding:24px}}a{{color:#ef9988}}li{{margin:12px 0}}h1{{font-size:1.8rem}}img{{max-width:100%;height:auto}}</style></head><body><main><p><a href="/">THE KINGDOM CIRCUIT</a></p><h1>{html.escape(title)}</h1>{body}<p><a href="/shows/">Browse upcoming shows</a> · <a href="/artists/">Browse artists</a></p></main></body></html>'''
+    robots = 'index,follow' if index else 'noindex,follow'
+    return f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="{robots}"><link rel="canonical" href="{ORIGIN + path}"><title>{html.escape(title)} | Kingdom Circuit</title>{FAVICON_HTML}<style>body{{margin:0;background:#080808;color:#eee;font:16px/1.65 system-ui,sans-serif}}main{{max-width:56rem;margin:auto;padding:24px}}a{{color:#ef9988}}li{{margin:12px 0}}h1{{font-size:1.8rem}}img{{max-width:100%;height:auto}}</style></head><body><main><p><a href="/">THE KINGDOM CIRCUIT</a></p><h1>{html.escape(title)}</h1>{body}<p><a href="/shows/">Browse upcoming shows</a> · <a href="/artists/">Browse artists</a></p></main></body></html>'''
+
+
+def restore_location_review(site, path, event):
+    """Retain the reviewed conflicting booking without publishing a location."""
+    title = '1K Phew — Location under review'
+    body = ('<p><strong>Location not confirmed.</strong> The artist calendar lists '
+            'Texas Motorplex with a Florida locality; the venue website places '
+            'Texas Motorplex in Ennis, Texas. Confirm the booking and location '
+            'before making plans.</p><p>This listing is temporarily excluded from '
+            'upcoming show and location searches. No cancellation has been confirmed.</p>')
+    if event.get('startDate'):
+        body += '<p>Recorded date: ' + html.escape(str(event['startDate'])) + '</p>'
+    body += ('<p><a href="https://www.reachrecords.com/artists/1k-phew/" rel="noopener">'
+             'Artist calendar</a> · <a href="https://www.texasmotorplex.com/" '
+             'rel="noopener">Venue information</a></p>')
+    file = target_file(site, path)
+    file.parent.mkdir(parents=True, exist_ok=True)
+    file.write_text(retained_page(path, title, body, index=False))
+
+
+def reconcile_reviewed_aliases(state, history, current_ids, site):
+    """Consolidate only the two reviewed, still-matching published aliases."""
+    for alias_id, keep_id, day in REVIEWED_EVENT_ALIASES:
+        old = state['events'].get(alias_id)
+        keep = state['events'].get(keep_id)
+        if not old or not keep or keep_id not in current_ids:
+            continue
+        old_event = history.get(alias_id, old['event'])
+        current = history.get(keep_id, keep['event'])
+        # These exact IDs were reviewed together; their TicketSpice root and
+        # festival schedule URLs do not qualify for generic provider matching.
+        identity_fields = ('title', 'startDate', 'startTime', 'city', 'state', 'country', 'venue')
+        matching = all(norm(old_event.get(k)) and norm(old_event.get(k)) == norm(current.get(k))
+                       for k in identity_fields)
+        shared_artists = {norm(a) for a in old_event.get('artists', [])} & {
+            norm(a) for a in current.get('artists', [])}
+        if (old_event.get('startDate') != day or current.get('startDate') != day
+                or not matching or not shared_artists
+                or norm(old_event.get('status') or 'scheduled') != norm(current.get('status') or 'scheduled')
+                or (old_event.get('endDate') and current.get('endDate')
+                    and old_event['endDate'] != current['endDate'])):
+            continue
+        destination = safe_path(keep['path'])
+        file = target_file(site, destination)
+        if not file.is_file():
+            continue
+        facts = PageFacts(file.read_text())
+        if facts.refresh or facts.canonical != ORIGIN + destination:
+            continue
+        for path in {old['path'], generated_path(old_event), *old_event.get('legacyEventPaths', [])}:
+            if path != destination:
+                state['redirects'][safe_path(path)] = destination
+        keep['sourceIds'] = sorted(set(keep.get('sourceIds', [])) | {alias_id, *old.get('sourceIds', [])})
+        del state['events'][alias_id]
 
 
 def restore_event(site, path, event, today):
@@ -340,8 +401,11 @@ def finalize(root, site, today=None):
     rules = load(root / RULES_FILE, {})
     history = {e['id']: e for e in source_events(root) if e.get('id')}
     # Reconciled current feeds outrank older manual seeds and archived snapshots.
+    current_ids = set()
     for name in FEEDS:
-        history.update({e['id']: e for e in load(root / name, []) if e.get('id')})
+        current = {e['id']: e for e in load(root / name, []) if e.get('id')}
+        history.update(current)
+        current_ids.update(current)
     aliases = {alias: key for key, rec in state['events'].items() for alias in rec.get('sourceIds', [])}
     # Remember only actual generated event pages, not every unverified history record.
     for key, event in history.items():
@@ -353,10 +417,15 @@ def finalize(root, site, today=None):
             facts = PageFacts(file.read_text())
             if facts.refresh or facts.canonical != ORIGIN + path: continue
             state['events'][key] = {'path': path, 'sourceIds': [], 'event': {k: event[k] for k in SNAPSHOT_FIELDS if k in event}}
-    from catalog_removals import removed_event
+    from catalog_removals import location_review_event, removed_event
     from owner_roster import filter_events
     excluded_paths = set(rules.get('retiredPaths', [])) | set(state.get('retiredPaths', []))
     for key, record in list(state['events'].items()):
+        if record['path'] not in excluded_paths and location_review_event(record['event']):
+            preferred = safe_path(record['path'])
+            restore_location_review(site, preferred, record['event'])
+            state['pages'].pop(preferred, None)
+            continue
         if record['path'] in excluded_paths or removed_event(record['event']) or not filter_events([record['event']]):
             excluded_paths.add(record['path'])
             del state['events'][key]
@@ -374,6 +443,7 @@ def finalize(root, site, today=None):
             restore_event(site, preferred, record['event'], today)
         for old in event.get('legacyEventPaths', []):
             if old != preferred: state['redirects'][safe_path(old)] = preferred
+    reconcile_reviewed_aliases(state, history, current_ids, site)
     # Existing artist/event aliases already carry a valid destination canonical.
     for file in site.rglob('index.html'):
         path = '/' + file.parent.relative_to(site).as_posix().strip('./') + '/'
