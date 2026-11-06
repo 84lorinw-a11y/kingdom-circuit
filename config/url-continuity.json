@@ -85,7 +85,7 @@
         "headliner": "1K Phew",
         "status": "scheduled",
         "eventType": "concert",
-        "officialUrl": "https://www.bandsintown.com/e/1040595947?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "officialUrl": "https://www.ignitionstudents.org/atlanta",
         "ticketUrl": "https://www.bandsintown.com/e/1040595947?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
         "image": "assets/artists/1k-phew-owner-oct13.png",
         "confidence": "medium",
@@ -119,7 +119,7 @@
         "headliner": "1K Phew",
         "status": "scheduled",
         "eventType": "concert",
-        "officialUrl": "https://www.bandsintown.com/e/1040597655?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "officialUrl": "https://www.ignitionstudents.org/new-york",
         "ticketUrl": "https://www.bandsintown.com/e/1040597655?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
         "image": "assets/artists/1k-phew-owner-oct13.png",
         "confidence": "medium",
@@ -2008,7 +2008,7 @@
         "id": "ticketmaster:vv1AAZk3FGkdmpCG1",
         "title": "Beyond The Walls 2026",
         "startDate": "2026-11-07",
-        "startTime": "",
+        "startTime": "20:00",
         "timezone": "America/New_York",
         "city": "Cleveland",
         "state": "OH",
@@ -4271,7 +4271,9 @@
         "image": "assets/events/flavor-fest-saturday-2026.jpg",
         "imageType": "event_artwork",
         "confidence": "high",
-        "mergedFromIds": []
+        "mergedFromIds": [
+          "flavor-fest-2026-saturday-concerts"
+        ]
       }
     },
     "manual:flavor-fest-2026-friday-concerts": {
@@ -4316,7 +4318,9 @@
         "image": "assets/events/flavor-fest-friday-2026.png",
         "imageType": "event_artwork",
         "confidence": "high",
-        "mergedFromIds": []
+        "mergedFromIds": [
+          "flavor-fest-2026-friday-concerts"
+        ]
       }
     },
     "manual:flowfest-greenwood-2026-12-31": {
@@ -7144,9 +7148,9 @@
         "city": "Huntington Beach",
         "state": "CA",
         "country": "US",
-        "venue": "",
-        "address": "",
-        "postalCode": "",
+        "venue": "15202 Transistor Lane",
+        "address": "15202 Transistor Lane",
+        "postalCode": "92649",
         "artists": [
           "Kaden Jordan",
           "Kai Uriah"
@@ -10133,6 +10137,7 @@
         "country": "US",
         "venue": "Match Midtown Arts & Theater Center Houston",
         "address": "3400 Main St",
+        "postalCode": "77002",
         "artists": [
           "Scootie Wop"
         ],
@@ -10528,13 +10533,14 @@
         "title": "State Youth Conference with CJ Emulous",
         "startDate": "2026-11-27",
         "endDate": "2026-11-29",
-        "startTime": "19:00",
+        "startTime": "",
         "timezone": "America/New_York",
-        "city": "Cocoa",
+        "city": "Orlando",
         "state": "FL",
         "country": "US",
-        "venue": "Venue not provided",
-        "address": "",
+        "venue": "Rosen Centre Hotel",
+        "address": "9840 International Dr",
+        "postalCode": "32819",
         "artists": [
           "CJ Emulous"
         ],
@@ -11652,11 +11658,11 @@
         "title": "UNITY POP-UP TOUR",
         "startDate": "2026-11-14",
         "startTime": "11:00",
-        "timezone": "",
+        "timezone": "America/New_York",
         "city": "Orlando",
         "state": "FL",
         "country": "US",
-        "venue": "UNITY POP-UP TOUR",
+        "venue": "Grace Bible Church of Central Florida",
         "address": "801 Dorscher Rd",
         "postalCode": "32818",
         "artists": [
@@ -11667,7 +11673,7 @@
         "status": "scheduled",
         "eventType": "concert",
         "officialUrl": "https://www.bandsintown.com/e/109072940?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "ticketUrl": "https://www.bandsintown.com/t/109072940?app_id=js_kingdomcircuit.com&came_from=267&custom=true&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+        "ticketUrl": "https://www.eventbrite.com/e/unity-pop-up-tour-orlando-tickets-2003836750663",
         "image": "assets/events/issac-unity-pop-up-orlando-2026-11-14-official.webp",
         "imageType": "event_artwork",
         "confidence": "medium",
@@ -11819,7 +11825,7 @@
         "title": "WHATUPRG — Live at Vanguard University",
         "startDate": "2026-11-06",
         "startTime": "",
-        "timezone": "",
+        "timezone": "America/Los_Angeles",
         "city": "Costa Mesa",
         "state": "CA",
         "country": "US",
@@ -11832,11 +11838,12 @@
         "headliner": "WHATUPRG",
         "status": "scheduled",
         "eventType": "concert",
-        "officialUrl": "https://www.reachrecords.com/artists/whatuprg/",
+        "officialUrl": "https://www.ignitionstudents.org/socal#register",
         "ticketUrl": "https://www.bandsintown.com/e/1040595689?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
         "image": "assets/artists/whatuprg-saved.jpg",
         "imageType": "artist",
         "confidence": "high",
+        "publicDescription": "WHATUPRG is announced for November 6 at Ignition SoCal, a Christian student conference at Vanguard University. The conference runs November 6–7; the artist’s individual set time has not been published.",
         "mergedFromIds": []
       }
     },
@@ -14384,14 +14391,14 @@
         "title": "5ive — Me Against The World Forever Album Release Concert",
         "startDate": "2026-11-12",
         "endDate": "2026-11-12",
-        "startTime": "18:30",
+        "startTime": "17:30",
         "timezone": "America/Denver",
         "city": "Albuquerque",
         "state": "NM",
         "country": "US",
         "venue": "The Upper Room",
         "address": "4700 Central Ave SE",
-        "postalCode": "",
+        "postalCode": "87108",
         "artists": [
           "5ive",
           "Datin",
@@ -15143,7 +15150,8 @@
     "/event/miles-minnick-and-cj-emulous-at-vybe-event-center-2026-12-05-chandler-bfff69/": "/event/miles-minnick-and-cj-emulous-at-zion-ultra-lounge-2026-12-05-chandler-bfff69/",
     "/event/miles-minnick-and-cj-emulous-at-vybe-event-center-2026-12-05-chandler-ea61eb/": "/event/miles-minnick-and-cj-emulous-at-zion-ultra-lounge-2026-12-05-chandler-bfff69/",
     "/event/flavor-fest-2026-friday-concerts-2026-11-06-tampa-414fbd/": "/event/flavor-fest-2026-friday-concerts-2026-11-06-tampa-b41edf/",
-    "/event/flavor-fest-2026-saturday-concerts-2026-11-07-tampa-983c29/": "/event/flavor-fest-2026-saturday-concerts-2026-11-07-tampa-cf7fac/"
+    "/event/flavor-fest-2026-saturday-concerts-2026-11-07-tampa-983c29/": "/event/flavor-fest-2026-saturday-concerts-2026-11-07-tampa-cf7fac/",
+    "/event/state-youth-conference-with-cj-emulous-2026-11-27-orlando-25bf50/": "/event/state-youth-conference-with-cj-emulous-2026-11-27-cocoa-25bf50/"
   },
   "pages": {
     "/artists/180mindset/": {
@@ -15164,7 +15172,7 @@
       "eventPaths": []
     },
     "/artists/1k-phew/": {
-      "fingerprint": "afffdafe036aca689430700434e84212246e6d16228d5cc2375798c6741f0047",
+      "fingerprint": "1ed385688ed26c92b76c4aa6dc8bfcaec81847199e1f1b83a2b1f3bb34b6a9a9",
       "lastmod": "2026-11-06",
       "title": "1K Phew Concerts & Tour Dates 2027 | Kingdom Circuit",
       "heading": "1K Phew",
@@ -15189,7 +15197,7 @@
       ]
     },
     "/": {
-      "fingerprint": "338c2d0a17e2b9ea5deda93883d935c28aaa820f5a3f3d316f5b0e403f7cfe1b",
+      "fingerprint": "ac4bb19163801a2e2eec2797e6ed8aaff022b55a1ab39b9047d2ac8c41151f2c",
       "lastmod": "2026-11-06",
       "title": "Christian Hip-Hop Shows & Festivals | Kingdom Circuit",
       "heading": "Find CHH Shows Near You!",
@@ -15257,8 +15265,8 @@
       "eventPaths": []
     },
     "/artists/1k-phew/georgia/": {
-      "fingerprint": "c2971e1a885451a7650de551eafb3e7b6a2e5ae4d15232b12523be7f00cb1f9d",
-      "lastmod": null,
+      "fingerprint": "f2b1b7e6005adb0bb03e2c79ec4310ac5b8567f56ee83a05c5230b29fc4b7886",
+      "lastmod": "2026-11-06",
       "title": "1K Phew Concerts in Georgia | Upcoming Shows",
       "heading": "1K Phew Concerts in Georgia",
       "eventPaths": [
@@ -15293,8 +15301,8 @@
       "eventPaths": []
     },
     "/artists/1k-phew/new-york/": {
-      "fingerprint": "b075a4b0854626cb14856fbb2507655c601f7fa4a1e88627d77baa9631e679ed",
-      "lastmod": null,
+      "fingerprint": "b37f3ffb931cf3ad3cad7bb6f24f863120717de17743f87d87083479bad20a57",
+      "lastmod": "2026-11-06",
       "title": "1K Phew Concerts in New York | Upcoming Shows",
       "heading": "1K Phew Concerts in New York",
       "eventPaths": [
@@ -16439,7 +16447,7 @@
       "eventPaths": []
     },
     "/artists/brenno/": {
-      "fingerprint": "635994c7054b19810f0ebdb76401fb817a5c585078a64973bef4d36f19254218",
+      "fingerprint": "60b8345b5958d5e79edd195bb41fbaf007f542c4dffd08dfbad522280ac81b42",
       "lastmod": "2026-11-06",
       "title": "Brenno Concerts & Tour Dates 2026 | Kingdom Circuit",
       "heading": "Brenno",
@@ -16469,7 +16477,7 @@
       ]
     },
     "/artists/brenno/ohio/": {
-      "fingerprint": "773b8ba4d7b5d460092f8c825d97e6bcbfedab69665d3592a9abafe761892de4",
+      "fingerprint": "4c64481d2392b35671a84af55930f8fcd0b3307aca33af033318493321963e82",
       "lastmod": "2026-11-06",
       "title": "Brenno Concerts in Ohio | Upcoming Shows",
       "heading": "Brenno Concerts in Ohio",
@@ -16720,7 +16728,7 @@
       ]
     },
     "/artists/cj-emulous/": {
-      "fingerprint": "4335d0479cb8be5bbd3c4363c98f222fecf1b588451e5115e050fd5249d74432",
+      "fingerprint": "6c61b3a9c5d7ccce079fd7cbcb2f1d572924edc56ec41f998a964675838c5ce3",
       "lastmod": "2026-11-06",
       "title": "CJ Emulous Concerts & Tour Dates 2026–2027 | Kingdom Circuit",
       "heading": "CJ Emulous",
@@ -16822,7 +16830,7 @@
       ]
     },
     "/artists/cj-emulous/florida/": {
-      "fingerprint": "f9b00a2ba600cd193055b1f08e5c52e56d99995362d561cefd9efed342ec5a93",
+      "fingerprint": "24feee2961aa7d98d685c0e3ce417dd4a0d316322352cc45d23b7732e0c36b14",
       "lastmod": "2026-11-06",
       "title": "CJ Emulous Concerts in Florida | Upcoming Shows",
       "heading": "CJ Emulous Concerts in Florida",
@@ -17155,8 +17163,8 @@
       ]
     },
     "/artists/datin/": {
-      "fingerprint": "85bbcd12382293d9425ccd32bfcee611a71f1312ed89cc909fe63bbcf9eb8350",
-      "lastmod": "2026-11-05",
+      "fingerprint": "5f1f378bdaa4ec932651068459ca4e3f38cfa359e4c725a58360e78c7286e377",
+      "lastmod": "2026-11-06",
       "title": "Datin Concerts & Tour Dates 2026 | Kingdom Circuit",
       "heading": "Datin",
       "eventPaths": [
@@ -17447,8 +17455,8 @@
       ]
     },
     "/artists/don-ready/": {
-      "fingerprint": "76fb0fadcc65da67eb572606412ca129f13b1753ed95b5463a3f9a3516ec8aea",
-      "lastmod": "2026-11-03",
+      "fingerprint": "f9217ae4500633300c3b132d5392b102aa841bcb09364ff7bd954e1a8a1eab61",
+      "lastmod": "2026-11-06",
       "title": "Don Ready Concerts & Tour Dates 2026 | Kingdom Circuit",
       "heading": "Don Ready",
       "eventPaths": [
@@ -17665,7 +17673,7 @@
       ]
     },
     "/artists/eli-williams/": {
-      "fingerprint": "f16a0d3b21feb690783f446f222bf63235c94d8b2c291c4947bef709c8560b01",
+      "fingerprint": "1f938955bc8c01531b30b4b7d245837e406322d7f3a330b684c026b3c7ceb4f4",
       "lastmod": "2026-11-06",
       "title": "Eli Williams Concerts & Tour Dates 2026 | Kingdom Circuit",
       "heading": "Eli Williams",
@@ -17701,7 +17709,7 @@
       ]
     },
     "/artists/eli-williams/ohio/": {
-      "fingerprint": "dea04dfbcc9386aa982f26400d4735e8f2f9d86e598abc92cb0483e0ea8c8e03",
+      "fingerprint": "8646c2246cf78f66d5fd3f783f5deba7bb529ef9652ab17e6c17d6f7bbd98c46",
       "lastmod": "2026-11-06",
       "title": "Eli Williams Concerts in Ohio | Upcoming Shows",
       "heading": "Eli Williams Concerts in Ohio",
@@ -17955,7 +17963,7 @@
       ]
     },
     "/artists/giovani/": {
-      "fingerprint": "ea1ce0e5e83d85a51c26bbcd236d87794f1b11ba40003d6407f661efaac21844",
+      "fingerprint": "9b19e679195bbfb67ba34b52bd05ec27df5791d39c7511d4d2a87ef9c28eff46",
       "lastmod": "2026-11-06",
       "title": "GIOVANI Concerts & Tour Dates 2026 | Kingdom Circuit",
       "heading": "GIOVANI",
@@ -17967,8 +17975,8 @@
       ]
     },
     "/artists/giovani/florida/": {
-      "fingerprint": "195b946c3b47db15d1e8da680da03b41ab4d553610e42962c38c257862a176c1",
-      "lastmod": null,
+      "fingerprint": "cfbbe8b18007d54925f0eda04c72adbc9fd4a66fd48b6c09fa85c91756dc7312",
+      "lastmod": "2026-11-06",
       "title": "GIOVANI Concerts in Florida | Upcoming Shows",
       "heading": "GIOVANI Concerts in Florida",
       "eventPaths": [
@@ -18259,7 +18267,7 @@
       "eventPaths": []
     },
     "/artists/issac-mansfield/": {
-      "fingerprint": "52f6b2f1a50a7dc52f0ed824fc64b1d8f54ca9ebe08befa99c7e2537c194cadc",
+      "fingerprint": "63036b54ad34728ba8e095f6e45014d65ade09de2f3b27a8e89768e63bbd2e73",
       "lastmod": "2026-11-06",
       "title": "Issac Mansfield Concerts & Tour Dates 2026 | Kingdom Circuit",
       "heading": "Issac Mansfield",
@@ -18273,8 +18281,8 @@
       ]
     },
     "/artists/issac-mansfield/florida/": {
-      "fingerprint": "5bf9abe963d6b78f85e4b4cc70bf633105b19d3d6bf371c32383f4147a921cb0",
-      "lastmod": null,
+      "fingerprint": "eb8f6a44c89eb8f138378aa559a5327185760fef886c50cf6ed7ab9360bfdd8e",
+      "lastmod": "2026-11-06",
       "title": "Issac Mansfield Concerts in Florida | Upcoming Shows",
       "heading": "Issac Mansfield Concerts in Florida",
       "eventPaths": [
@@ -18761,7 +18769,7 @@
       ]
     },
     "/artists/kaden-jordan/": {
-      "fingerprint": "67e39570324dce0dcc0986d94aff04c996c0a17addc386db9afa43093713e2eb",
+      "fingerprint": "a5014cebde31ba99a1ea5ee3ae1c8b3d05c568af370573a1a25d50b3bb774650",
       "lastmod": "2026-11-06",
       "title": "Kaden Jordan Concerts & Tour Dates 2026 | Kingdom Circuit",
       "heading": "Kaden Jordan",
@@ -18775,7 +18783,7 @@
       ]
     },
     "/artists/kaden-jordan/california/": {
-      "fingerprint": "8a5ec0fdc48a70d071a667ffdf435db3a0ed7be6b83429dcb715108b16bda1ec",
+      "fingerprint": "d8a93e4f8dd067bed847531e265b14c960bec55dd390a66238dba47a63060266",
       "lastmod": "2026-11-06",
       "title": "Kaden Jordan Concerts in California | Upcoming Shows",
       "heading": "Kaden Jordan Concerts in California",
@@ -18804,7 +18812,7 @@
       "eventPaths": []
     },
     "/artists/kai-uriah/": {
-      "fingerprint": "991461d0b16a35f7839a30ec27fa1d1709ff680404a6381ce29a278c173744d3",
+      "fingerprint": "8aeec3c566496dc792982fd8663cd1d7824f0d1de667f51005994e0f4ca3b6b9",
       "lastmod": "2026-11-06",
       "title": "Kai Uriah Concerts & Tour Dates 2026 | Kingdom Circuit",
       "heading": "Kai Uriah",
@@ -18813,7 +18821,7 @@
       ]
     },
     "/artists/kai-uriah/california/": {
-      "fingerprint": "e7d5f8f72343366a229a5a694cd6b41c01270c64eb934b84cdb20d2f56a37fe5",
+      "fingerprint": "3e6373750fb833d20fd65019ec0f34f566d3ac2e9752ba5af575c34c13e7524b",
       "lastmod": "2026-11-06",
       "title": "Kai Uriah Concerts in California | Upcoming Shows",
       "heading": "Kai Uriah Concerts in California",
@@ -18829,7 +18837,7 @@
       "eventPaths": []
     },
     "/artists/kb/": {
-      "fingerprint": "79f2a4aff72206d0540ea9bb36626c8cc30bde90976bd01ff3c0fa15a07b12f3",
+      "fingerprint": "3bbb30efd3b63a07b0b6a295f3f1a8b7d9e878823b69ea4d64c0393e05d284e2",
       "lastmod": "2026-11-06",
       "title": "KB Concerts & Tour Dates 2026–2027 | Kingdom Circuit",
       "heading": "KB",
@@ -18863,7 +18871,7 @@
       "eventPaths": []
     },
     "/artists/kb/ohio/": {
-      "fingerprint": "47c081fdd45d109d26aab7f4d8d4801c9fa936b3b0d20190fcd016a53c8a34fa",
+      "fingerprint": "987fecc74a514f70a7824906e65ca8da5ecc47002214ca441ebc7b3d8ff37034",
       "lastmod": "2026-11-06",
       "title": "KB Concerts in Ohio | Upcoming Shows",
       "heading": "KB Concerts in Ohio",
@@ -19527,7 +19535,7 @@
       ]
     },
     "/artists/mike-teezy/": {
-      "fingerprint": "1a2d2bcd957fd8e3a5aacfcdeb034cb5200b34020da68b363c40ae8874ec4ed5",
+      "fingerprint": "da8ca8ecaa053df965060758242b111b44a0471fce58a088fbcf7ee35eca25f5",
       "lastmod": "2026-11-06",
       "title": "Mike Teezy Concerts & Tour Dates 2026 | Kingdom Circuit",
       "heading": "Mike Teezy",
@@ -19540,7 +19548,7 @@
       ]
     },
     "/artists/mike-teezy/ohio/": {
-      "fingerprint": "e8bf5946262c31a78b4a65c01fa0c9a633d06ca176f6dab3c15d42c9f797cad3",
+      "fingerprint": "07f8f826f6b281979bc0d45b062d93c5cc54af7c8b3a94669e6ffc3e962ff057",
       "lastmod": "2026-11-06",
       "title": "Mike Teezy Concerts in Ohio | Upcoming Shows",
       "heading": "Mike Teezy Concerts in Ohio",
@@ -19975,7 +19983,7 @@
       "eventPaths": []
     },
     "/artists/porsha-love/": {
-      "fingerprint": "e2c75923435032061823a9037de4897dfc61918a8ebb61a6c8542b61830eff42",
+      "fingerprint": "c8bf20650ad144e58844b91ca764983d1eaf4f62a36aab68c1fd6236cdf33692",
       "lastmod": "2026-11-06",
       "title": "Porsha Love Concerts & Tour Dates 2026 | Kingdom Circuit",
       "heading": "Porsha Love",
@@ -19984,7 +19992,7 @@
       ]
     },
     "/artists/porsha-love/ohio/": {
-      "fingerprint": "fd02d2af530b77560fc349538175c5bfcc6cdc077e75bfee049ce0609472dd8d",
+      "fingerprint": "7895cdabeb0cd1749c5c45ec968b4945c21e8921a1fed410881ed4217db57b34",
       "lastmod": "2026-11-06",
       "title": "Porsha Love Concerts in Ohio | Upcoming Shows",
       "heading": "Porsha Love Concerts in Ohio",
@@ -21298,8 +21306,8 @@
       "eventPaths": []
     },
     "/artists/whatuprg/": {
-      "fingerprint": "063592e21398fdbc25e8f038e9705b5ddfbdac178d2d2eed6b4dc167bf1b161a",
-      "lastmod": null,
+      "fingerprint": "4fea8101f48de06fe2937f97b8d0995665bf1c13d8f28d3657ab0d9b1ef02ee2",
+      "lastmod": "2026-11-06",
       "title": "WHATUPRG Concerts & Tour Dates 2026 | Kingdom Circuit",
       "heading": "WHATUPRG",
       "eventPaths": [
@@ -21313,8 +21321,8 @@
       ]
     },
     "/artists/whatuprg/california/": {
-      "fingerprint": "478719d01994e4f7705e974629fd08684c86762c62baf2165ff6b455bcf4fd16",
-      "lastmod": null,
+      "fingerprint": "e0a5b6de417dd6fa373af00c29366cdc5849fb838338873b2f55f425bcfc6484",
+      "lastmod": "2026-11-06",
       "title": "WHATUPRG Concerts in California | Upcoming Shows",
       "heading": "WHATUPRG Concerts in California",
       "eventPaths": [
@@ -21911,7 +21919,7 @@
       "eventPaths": []
     },
     "/event/1k-phew-at-tbd-2027-02-13-atlanta-af4207/": {
-      "fingerprint": "f90f6caa58fe76229df73baf624dc73de704a8d5e20d8c4532b78dc0215d59fc",
+      "fingerprint": "b3123c22f918267e7f6f24f81deafadd62fd7f291885e9af3fe254ad0795456d",
       "lastmod": "2026-11-06",
       "title": "1K Phew at TBD — Atlanta, GA — Sat, Feb 13, 2027 - 9:30 AM | Kingdom Circuit",
       "heading": "1K Phew at TBD",
@@ -21922,7 +21930,7 @@
       ]
     },
     "/event/1k-phew-at-tbd-2027-02-20-new-york-d4abcd/": {
-      "fingerprint": "2e1b70b84bff06dd52a4e1aa7989489871c97845060fa57989966a7b61e922f9",
+      "fingerprint": "91e3ca90d1fcbaf67785c7474a2d56990bd9d5bfbfde00b5123aded89c02627d",
       "lastmod": "2026-11-06",
       "title": "1K Phew at TBD — New York, NY — Sat, Feb 20, 2027 - 9:45 AM | Kingdom Circuit",
       "heading": "1K Phew at TBD",
@@ -21986,8 +21994,8 @@
       ]
     },
     "/event/3rd-annual-vibe5-awards-2026-12-05-jonesboro-86cc21/": {
-      "fingerprint": "d592561250f1488ac94cf314c53959aa0b9094cffd3a56c2841c0e9ed359b8ba",
-      "lastmod": "2026-11-05",
+      "fingerprint": "44111613d1cf4309ac824aeb8c890f98b3e7b2106df7f3cff6de38f89b8d4fb2",
+      "lastmod": "2026-11-06",
       "title": "3rd Annual Vibe5 Awards — Jonesboro, GA — Sat, Dec 5, 2026 - 6:00 PM | Kingdom Circuit",
       "heading": "3rd Annual Vibe5 Awards",
       "eventPaths": [
@@ -22428,9 +22436,9 @@
       "eventPaths": []
     },
     "/event/beyond-the-walls-2026-2026-11-07-cleveland-3fa023/": {
-      "fingerprint": "d61f724fd3612f9c31bb22c579979e29cfd21bae935e85fb880ab7974644a1b8",
+      "fingerprint": "d258d9ff038b685518068717651bfdf2390e3abf2a177bbf22aa1f615817923d",
       "lastmod": "2026-11-06",
-      "title": "Beyond The Walls 2026 — Cleveland, OH — Sat, Nov 7, 2026 | Kingdom Circuit",
+      "title": "Beyond The Walls 2026 — Cleveland, OH — Sat, Nov 7, 2026 - 8:00 PM | Kingdom Circuit",
       "heading": "Beyond The Walls 2026",
       "eventPaths": [
         "/event/kb-at-diamondback-music-hall-with-skema-boy-2026-12-04-belleville-dd874c/",
@@ -22496,7 +22504,7 @@
       ]
     },
     "/event/c-h-e-r-i-sh-fashion-show-benefit-2026-11-14-charlotte-8691a9/": {
-      "fingerprint": "ba3118230069f0427dd334aca085018a2280534b7c00f73f66b108f78df587be",
+      "fingerprint": "84180b250dfcd330f6524559fb77871f1f6f10e8edb13c7a0b1023741b7f87eb",
       "lastmod": "2026-11-06",
       "title": "C.h.e.r.i.sh. Fashion Show Benefit — Charlotte, NC — Sat, Nov 14, 2026 - 7:00 PM | Kingdom Circuit",
       "heading": "C.h.e.r.i.sh. Fashion Show Benefit",
@@ -22691,7 +22699,7 @@
       ]
     },
     "/event/christian-latin-and-rap-club-night-with-don-ready-2026-11-06-los-angeles-5106ac/": {
-      "fingerprint": "6a901c1219a5a203b96f5096ce329f5d81514820a9302e7e3a4d7e779a3cea01",
+      "fingerprint": "f6e79fcd5f8ea768bc4c22b04794768812c246a72a7b5ddfdf82bd300a4341df",
       "lastmod": "2026-11-06",
       "title": "Christian Latin & Rap Club Night with Don Ready — Los Angeles, CA — Fri, Nov 6, 2026 - 8:00 PM | Kingdom Circuit",
       "heading": "Christian Latin & Rap Club Night with Don Ready",
@@ -23774,7 +23782,7 @@
       "eventPaths": []
     },
     "/event/invasion-2026-kevi-morse-concert-2026-12-05-sparta-b38b3a/": {
-      "fingerprint": "778fe330ce2702b0f9fe4cfe9eaf5dc46ef0fa30caba92ba7f3740c6679d87d0",
+      "fingerprint": "472f348343724dac888ef100728b45c9576e62d37ecb3b582dde79e4132bff2d",
       "lastmod": "2026-11-06",
       "title": "Invasion 2026 — Kevi Morse Concert — Sparta, MI — Sat, Dec 5, 2026 | Kingdom Circuit",
       "heading": "Invasion 2026 — Kevi Morse Concert",
@@ -23806,7 +23814,7 @@
       "eventPaths": []
     },
     "/event/jimmy-rock-at-skullys-music-diner-2026-11-22-columbus-990456/": {
-      "fingerprint": "404da5f3bdc533a0cae41c569a9018512cfec8a6b2ec4430433c0c81a445fe35",
+      "fingerprint": "7fda551fc64920000a3ad50918de71b0bce07ac12d005dbd6fdefbea66280fbb",
       "lastmod": "2026-11-06",
       "title": "JIMMY ROCK at Skullys Music Diner — Columbus, OH — Sun, Nov 22, 2026 | Kingdom Circuit",
       "heading": "JIMMY ROCK at Skullys Music Diner",
@@ -23884,7 +23892,7 @@
       "eventPaths": []
     },
     "/event/kaden-jordan-the-babytooth-experience-2026-11-21-huntington-beach-f08073/": {
-      "fingerprint": "b44519ddebe60de8a1b06e8eb8e4f98b262ca70de1127e2cc797af2f19735624",
+      "fingerprint": "5175c237eb744b5ac340accec5a1936d3262ff7a74d3e9c735f58bef81f0befb",
       "lastmod": "2026-11-06",
       "title": "Kaden Jordan — The Babytooth Experience — Huntington Beach, CA — Sat, Nov 21, 2026 | Kingdom Circuit",
       "heading": "Kaden Jordan — The Babytooth Experience",
@@ -23895,7 +23903,7 @@
       ]
     },
     "/event/kb-at-diamondback-music-hall-with-skema-boy-2026-12-04-belleville-dd874c/": {
-      "fingerprint": "344528fedc118670c6ceaaea0df0c572ccae1b0a225ddc5aa77afb1c2c0fbc27",
+      "fingerprint": "2081fa2440847e6cdf5747c050c07ed8981bf4eb3d098670b1e462526e06341e",
       "lastmod": "2026-11-06",
       "title": "KB at Diamondback Music Hall — with Skema Boy — Belleville, MI — Fri, Dec 4, 2026 - 7:30 PM | Kingdom Circuit",
       "heading": "KB at Diamondback Music Hall — with Skema Boy",
@@ -24336,7 +24344,7 @@
       ]
     },
     "/event/nwo-nyi-fall-retreat-2026-2026-11-06-saint-marys-cdf5c9/": {
-      "fingerprint": "f421509b778eb2747e63c8e14e4d70fdc41dcf283bd456453804ab570509f56c",
+      "fingerprint": "51705520a6edc962ddf9ea739cdba355a7dc98260f3db0c7c2184b33e34790be",
       "lastmod": "2026-11-06",
       "title": "NWO NYI Fall Retreat 2026 — Saint Marys, OH — Fri, Nov 6, 2026 - 7:00 PM | Kingdom Circuit",
       "heading": "NWO NYI Fall Retreat 2026",
@@ -24622,7 +24630,7 @@
       "eventPaths": []
     },
     "/event/revival-nights-asap-preach-and-dray-day-ministries-2026-11-21-hilliard-884fb3/": {
-      "fingerprint": "6bc001b174c2051ad80ff0b40b68ae5e17c3f0b4f4f9365868a0c2a1b0142e2b",
+      "fingerprint": "54f45a82eb199ff3a67f1bbbf43f67441cebbe46fc1f32ed8b13f8adfeba800b",
       "lastmod": "2026-11-06",
       "title": "Revival Nights — ASAP Preach & Dray Day Ministries — Hilliard, OH — Sat, Nov 21, 2026 - 6:00 PM | Kingdom Circuit",
       "heading": "Revival Nights — ASAP Preach & Dray Day Ministries",
@@ -24671,7 +24679,7 @@
       ]
     },
     "/event/rock-the-universe-2027-2027-01-22-orlando-cc7c28/": {
-      "fingerprint": "e436ca6463d78dd838a0a8d6ffd664f76e6bc6fb8be099856165755d69afbda3",
+      "fingerprint": "ad6d7de1dd7391cb10598548e0c2b9a7320cd5a65ae70a6cd9db98bf2408ab25",
       "lastmod": "2026-11-06",
       "title": "Rock the Universe 2027 — Orlando, FL — Fri, Jan 22–23, 2027 | Kingdom Circuit",
       "heading": "Rock the Universe 2027",
@@ -24689,7 +24697,7 @@
       "eventPaths": []
     },
     "/event/rural-music-festival-2027-2027-08-27-isle-c4b79f/": {
-      "fingerprint": "5de728f7c39d28ef15102767bbf138df258d0e64967b9f34569895f351e41448",
+      "fingerprint": "3b6eb33f0e82cac4ec0db9e0cf910023f19683a410ccb9dec5ed5cde7f9ffc26",
       "lastmod": "2026-11-06",
       "title": "Rural Music Festival 2027 — Isle, MN — Fri, Aug 27–29, 2027 | Kingdom Circuit",
       "heading": "Rural Music Festival 2027",
@@ -24792,7 +24800,7 @@
       "eventPaths": []
     },
     "/event/scootie-wop-at-match-2026-11-14-houston-939e4b/": {
-      "fingerprint": "9e9aeac5c3079e168f0eb85a8fc32f16f620b1b2fd61f50eff4babaa7d37d018",
+      "fingerprint": "0bd87533f85ebd7301eaa2d32e9b5ed44e83b71220a546cd938885409b674b97",
       "lastmod": "2026-11-06",
       "title": "Scootie Wop @ MATCH - Midtown Arts and Theater Center Houston — Houston, TX — Sat, May 1, 2027 - 6:00 PM | Kingdom Circuit",
       "heading": "Scootie Wop @ MATCH - Midtown Arts and Theater Center Houston",
@@ -24897,9 +24905,9 @@
       "eventPaths": []
     },
     "/event/state-youth-conference-with-cj-emulous-2026-11-27-cocoa-25bf50/": {
-      "fingerprint": "816582c0141abb4d2f19b103edbd0341ddf66ae6bd218d3a9fb51b82a92bacfc",
+      "fingerprint": "4a7a8e7b3413244bc2d09a7c15a0c87bef5337f4b8782550e20a86855757fe21",
       "lastmod": "2026-11-06",
-      "title": "State Youth Conference with CJ Emulous — Cocoa, FL — Fri, Nov 27–29, 2026 - 7:00 PM | Kingdom Circuit",
+      "title": "State Youth Conference with CJ Emulous — Orlando, FL — Fri, Nov 27–29, 2026 | Kingdom Circuit",
       "heading": "State Youth Conference with CJ Emulous",
       "eventPaths": [
         "/event/miles-minnick-at-black-box-media-miami-2026-11-05-north-miami-7ff15c/",
@@ -25197,7 +25205,7 @@
       "eventPaths": []
     },
     "/event/unity-pop-up-tour-2026-11-14-orlando-5ce15b/": {
-      "fingerprint": "5941a67d1d54437148f5163d0d9901746cb40038657e9ae79978096b4dec98c1",
+      "fingerprint": "071001b0812112680965aa2398a7f069dfed06f440eba06c319773fd97c02d13",
       "lastmod": "2026-11-06",
       "title": "UNITY POP-UP TOUR — Orlando, FL — Sat, Nov 14, 2026 - 11:00 AM | Kingdom Circuit",
       "heading": "UNITY POP-UP TOUR",
@@ -25236,7 +25244,7 @@
       "eventPaths": []
     },
     "/event/whatuprg-live-at-vanguard-university-2026-11-06-costa-mesa-ed50ac/": {
-      "fingerprint": "125802930c28e0e54e81c4acc69471bf56dc00cc64af083d4375705216eac0ea",
+      "fingerprint": "a32a258c706953871d8955ea8972231ecac08c1e601bc6444f7a41bf6e2b3cb7",
       "lastmod": "2026-11-06",
       "title": "WHATUPRG — Live at Vanguard University — Costa Mesa, CA — Fri, Nov 6, 2026 | Kingdom Circuit",
       "heading": "WHATUPRG — Live at Vanguard University",
@@ -25698,7 +25706,7 @@
       ]
     },
     "/event/ythcon-2026-featuring-brenno-2026-11-25-denver-6c6b85/": {
-      "fingerprint": "e3a59a1551da5f95169a4ae7aa285b4fb58155d0428008db951401abbba1819b",
+      "fingerprint": "782a89ea80419ea5715ca3a477d3ee039d5e9c87c713f84c33be711f5635257c",
       "lastmod": "2026-11-06",
       "title": "YTHCON 2026 — featuring Brenno — Denver, CO — Wed, Nov 25–27, 2026 | Kingdom Circuit",
       "heading": "YTHCON 2026 — featuring Brenno",
@@ -25808,7 +25816,7 @@
       ]
     },
     "/event/zauntee-god-remembers-tour-with-skema-boy-2026-11-11-tampa-83fcb0/": {
-      "fingerprint": "8df3e68fbf0dd47f9219a31c69db81a83d2d9e85bdb5bd4d46448413d9790d7f",
+      "fingerprint": "252a6f9020325953d1db1bd48612f45eabb8518c133e5bd18c421b9ac8833581",
       "lastmod": "2026-11-06",
       "title": "Zauntee: God Remembers Tour - with Skema Boy — Tampa, FL — Wed, Nov 11, 2026 | Kingdom Circuit",
       "heading": "Zauntee: God Remembers Tour - with Skema Boy",
@@ -25870,7 +25878,7 @@
       ]
     },
     "/shows/": {
-      "fingerprint": "02b18f2ec3e2e907110964fc3dc8e784b35089ac889e92e6b183e80cde549168",
+      "fingerprint": "76ad92680ac80915e6e949a430318768febbb8e14fe22f94543c2f13f4862892",
       "lastmod": "2026-11-06",
       "title": "Christian Hip-Hop Shows & Concerts | The Kingdom Circuit",
       "heading": "Christian Hip-Hop Shows",
@@ -26102,7 +26110,7 @@
       ]
     },
     "/new-shows/": {
-      "fingerprint": "8c956842d252ffe4e35b469ed514805daa072a31f517c4c2162a18b300e0554f",
+      "fingerprint": "0622bf522116d2e363709a80f8e8f68ecc1f0e6608bb3d5b7dc3d81610ba3a1e",
       "lastmod": "2026-11-06",
       "title": "New Christian Hip-Hop Shows | The Kingdom Circuit",
       "heading": "New to Kingdom Circuit",
@@ -26221,8 +26229,8 @@
       ]
     },
     "/shows/atlanta-georgia/": {
-      "fingerprint": "958a5fe5b04beadc424dd7cefa116260ca87a04a00acc15e0926e48239e92709",
-      "lastmod": "2026-11-05",
+      "fingerprint": "01f00d4d47e411d8f8e103e93e2b0c685d9943f5af097dec76c122d6b10a1d02",
+      "lastmod": "2026-11-06",
       "title": "Christian Hip-Hop & Rap Concerts in Atlanta, GA | Kingdom Circuit",
       "heading": "Christian Hip-Hop & Rap Concerts in Atlanta",
       "eventPaths": [
@@ -26358,7 +26366,7 @@
       ]
     },
     "/shows/california/": {
-      "fingerprint": "1545229f181226552a6178fe72eaf326705f14116187f8ac2daaed28403072ba",
+      "fingerprint": "a666f02ecf1afe4e2dfda42b7e6f42a008bfe9eb53c1512871ac3d7188dabbdc",
       "lastmod": "2026-11-06",
       "title": "Christian Hip-Hop & Rap Concerts in California | Kingdom Circuit",
       "heading": "Christian Hip-Hop & Rap Concerts in California",
@@ -26516,7 +26524,7 @@
       ]
     },
     "/shows/cleveland-ohio/": {
-      "fingerprint": "abc2fd6c58d01cdb7f600ff717a1474170c99ff102e281519467846ec9b9ec3d",
+      "fingerprint": "3275653be7d5ab2c8ddabfdf3ff515c5de4bbf497368b1ffb7dd295b036a1ded",
       "lastmod": "2026-11-06",
       "title": "Christian Hip-Hop & Rap Concerts in Cleveland, OH | Kingdom Circuit",
       "heading": "Christian Hip-Hop & Rap Concerts in Cleveland",
@@ -26525,9 +26533,9 @@
       ]
     },
     "/shows/cocoa-florida/": {
-      "fingerprint": "b1166fa17db013186eab9a0148bea15605aa78e96f13deb8c106f415f38e3dd9",
+      "fingerprint": "752f936de08f678f40d554e72e15c3f2e48db664f03c429e6bda14dd5cdbbf03",
       "lastmod": "2026-11-06",
-      "title": "Christian Hip-Hop & Rap Concerts in Cocoa, FL | Kingdom Circuit",
+      "title": "Christian Hip-Hop & Rap Concerts in Cocoa | Kingdom Circuit",
       "heading": "Christian Hip-Hop & Rap Concerts in Cocoa",
       "eventPaths": [
         "/event/state-youth-conference-with-cj-emulous-2026-11-27-cocoa-25bf50/"
@@ -26581,8 +26589,8 @@
       ]
     },
     "/shows/costa-mesa-california/": {
-      "fingerprint": "bbbf40fe071c11244ad91fdd4e405e9c2b5ca79c89c20fe43f996bf8e52d2e03",
-      "lastmod": "2026-11-01",
+      "fingerprint": "23962c8f6282fb75d419bec6185c155a773a3a6698619c3eefb0e16eafd6fb3b",
+      "lastmod": "2026-11-06",
       "title": "Christian Hip-Hop & Rap Concerts in Costa Mesa, CA | Kingdom Circuit",
       "heading": "Christian Hip-Hop & Rap Concerts in Costa Mesa",
       "eventPaths": [
@@ -26816,7 +26824,7 @@
       ]
     },
     "/shows/february-2027/": {
-      "fingerprint": "f314de3a82780b4c2d9e4af2869a74e668b80c7cac59f5fed3c722f24a9cae68",
+      "fingerprint": "a03c11c375f690b13fa5dd5f576ef1cdc7d1631637dd47f2abffabb3e02ade2e",
       "lastmod": "2026-11-06",
       "title": "Christian Hip-Hop Shows in February 2027 | The Kingdom Circuit",
       "heading": "Christian Hip-Hop Shows in February 2027",
@@ -26865,7 +26873,7 @@
       ]
     },
     "/shows/florida/": {
-      "fingerprint": "9871522c26814509873b5a595bb8cfde856db54081507e4dce0cda40a72a504a",
+      "fingerprint": "3cc0c09b25588ac71805311053570342bb1efd6cfdb61936d2042e6f9f8ab89c",
       "lastmod": "2026-11-06",
       "title": "Christian Hip-Hop & Rap Concerts in Florida | Kingdom Circuit",
       "heading": "Christian Hip-Hop & Rap Concerts in Florida",
@@ -26994,8 +27002,8 @@
       ]
     },
     "/shows/georgia/": {
-      "fingerprint": "6d8316455a01f5790b4360978e8f298d6c788b87fc4c65c04c76e753f430809a",
-      "lastmod": "2026-11-05",
+      "fingerprint": "abe195c4a17b85d0bbfc6f2a488d9d9d99b192e1a8b664e3a5fd49d502263cf5",
+      "lastmod": "2026-11-06",
       "title": "Christian Hip-Hop & Rap Concerts in Georgia | Kingdom Circuit",
       "heading": "Christian Hip-Hop & Rap Concerts in Georgia",
       "eventPaths": [
@@ -27101,7 +27109,7 @@
       ]
     },
     "/shows/huntington-beach-california/": {
-      "fingerprint": "205d4558ab3cf3fe2f9f0d458190bf7adf8535cdbddfb14e51e37ac15ea00db8",
+      "fingerprint": "324932d6a0283afc5a5f08bc269d720d67bbdda6118bea12eaf8dfb987d3da09",
       "lastmod": "2026-11-06",
       "title": "Christian Hip-Hop & Rap Concerts in Huntington Beach, CA | Kingdom Circuit",
       "heading": "Christian Hip-Hop & Rap Concerts in Huntington Beach",
@@ -27684,8 +27692,8 @@
       ]
     },
     "/shows/new-mexico/": {
-      "fingerprint": "b3b2526c97046c8cb281745e6135bfc75c4e880b7dd419ecdadfd7fc3dfb64bb",
-      "lastmod": "2026-11-03",
+      "fingerprint": "2b82cdce4e77b9a08ec102a0e70e208f655b94f2ca8f7efe8d7f3c1619a07aa4",
+      "lastmod": "2026-11-06",
       "title": "Christian Hip-Hop & Rap Concerts in New Mexico | Kingdom Circuit",
       "heading": "Christian Hip-Hop & Rap Concerts in New Mexico",
       "eventPaths": [
@@ -27706,8 +27714,8 @@
       ]
     },
     "/shows/new-york-new-york/": {
-      "fingerprint": "9c3a222e34fdf7e0457e47c93b6d3358077b9c75f4ba914cacdcff876744743f",
-      "lastmod": "2026-11-05",
+      "fingerprint": "58fc7dcedc3b3343cd33b6e124ec89dde0563fd01463702415ce5560804832ab",
+      "lastmod": "2026-11-06",
       "title": "Christian Hip-Hop & Rap Concerts in New York, NY | Kingdom Circuit",
       "heading": "Christian Hip-Hop & Rap Concerts in New York",
       "eventPaths": [
@@ -27721,8 +27729,8 @@
       ]
     },
     "/shows/new-york/": {
-      "fingerprint": "e2a991aad735f721ff73ecfdadb672ee1f9c29130e079e8bf1a125c72506d8a8",
-      "lastmod": "2026-11-05",
+      "fingerprint": "0b2ca1aac194b4b2332ce5db2ecf06c802b19bb89889763564cca9fbfd28404f",
+      "lastmod": "2026-11-06",
       "title": "Christian Hip-Hop & Rap Concerts in New York | Kingdom Circuit",
       "heading": "Christian Hip-Hop & Rap Concerts in New York",
       "eventPaths": [
@@ -27812,7 +27820,7 @@
       ]
     },
     "/shows/november-2026/": {
-      "fingerprint": "69f1d15f6da2765e66b51d57e94864d9815882caab3b30ea0ee9b7b4e12a842f",
+      "fingerprint": "99f398896f3625d0a897e6e8c55d2270534b6932326db79dd995730b4d4d9e11",
       "lastmod": "2026-11-06",
       "title": "Christian Hip-Hop Shows in November 2026 | The Kingdom Circuit",
       "heading": "Christian Hip-Hop Shows in November 2026",
@@ -27957,7 +27965,7 @@
       ]
     },
     "/shows/ohio/": {
-      "fingerprint": "aca82f415a0b01322dd9c3cfdafef1b63344b6bdb26482985129f4a6a3095cd8",
+      "fingerprint": "604674d4a47c77f65de6bad14350cbc6560563f689f9e71249c617a68f5d0d78",
       "lastmod": "2026-11-06",
       "title": "Christian Hip-Hop & Rap Concerts in Ohio | Kingdom Circuit",
       "heading": "Christian Hip-Hop & Rap Concerts in Ohio",
@@ -28050,7 +28058,7 @@
       ]
     },
     "/shows/orlando-florida/": {
-      "fingerprint": "3b19636e5280c6a2df555741e3722106f6d3d2b01f339719599a26311fff78f8",
+      "fingerprint": "e242af8c2a8931bcc36c5590b2f057cec09c6c45b71f7ed5f91915b7eaee8e2e",
       "lastmod": "2026-11-06",
       "title": "Christian Hip-Hop & Rap Concerts in Orlando, FL | Kingdom Circuit",
       "heading": "Christian Hip-Hop & Rap Concerts in Orlando",
@@ -28069,6 +28077,7 @@
         "/event/rock-the-universe-2027-2027-01-22-orlando-cc7c28/",
         "/event/saved-by-grace-2026-10-03-orlando-8ff28e/",
         "/event/serve-sessions-ryan-trey-album-release-party-2026-10-24-orlando-017aed/",
+        "/event/state-youth-conference-with-cj-emulous-2026-11-27-cocoa-25bf50/",
         "/event/the-renovation-project-2026-11-13-orlando-8aaa06/",
         "/event/unity-pop-up-tour-2026-11-14-orlando-5ce15b/"
       ]
@@ -28453,7 +28462,7 @@
       ]
     },
     "/shows/this-month/": {
-      "fingerprint": "5583f333142233de074ce28ab365b9e9226d32abd96b1f53412f6f90c9ed6027",
+      "fingerprint": "2a247e5db9cd8ffde3927adabf769611881a8f19c9b0db38233c4c7c267bc54a",
       "lastmod": "2026-11-06",
       "title": "Christian Hip-Hop Shows in November 2026 | The Kingdom Circuit",
       "heading": "Christian Hip-Hop Shows This Month",
@@ -28573,7 +28582,7 @@
       ]
     },
     "/shows/this-weekend/": {
-      "fingerprint": "c8aef3c606103a75b79722788cc9a431f20ba12d9339672fc905d860b5fdbf8c",
+      "fingerprint": "614d688e26dd60ee9d3f0ab05bc99a5eb41004415a2f683652498ae182fcd1a5",
       "lastmod": "2026-11-06",
       "title": "CHH Concerts & Shows This Weekend | Kingdom Circuit",
       "heading": "Christian Hip-Hop Shows This Weekend",
@@ -29129,8 +29138,8 @@
       ]
     },
     "/artists/datin/new-mexico/": {
-      "fingerprint": "56909bb056b06f17cd5843d6dd63aaaa049371d09c0e53596f6c53745ccddf5c",
-      "lastmod": "2026-11-03",
+      "fingerprint": "160ace932391df49f0a8dc59541c3cfe6fa3e312ae6be8ec4110d86567056248",
+      "lastmod": "2026-11-06",
       "title": "Datin Concerts in New Mexico | Upcoming Shows",
       "heading": "Datin Concerts in New Mexico",
       "eventPaths": [
@@ -29151,8 +29160,8 @@
       ]
     },
     "/artists/don-ready/new-mexico/": {
-      "fingerprint": "baf3dc5b5e6ed68dc7ec01924c2a30f8c74357f254480998303642c970735abe",
-      "lastmod": "2026-11-03",
+      "fingerprint": "49ad68671a96a9a28fe378b9a11a4962ce8f44f11ecfb8c13d3cceabc7b72c7d",
+      "lastmod": "2026-11-06",
       "title": "Don Ready Concerts in New Mexico | Upcoming Shows",
       "heading": "Don Ready Concerts in New Mexico",
       "eventPaths": [
@@ -29173,8 +29182,8 @@
       ]
     },
     "/event/5ive-me-against-the-world-forever-album-release-concert-2026-11-11-portales-1871a8/": {
-      "fingerprint": "4bc0cbca665feffb7d4e3cc6c5aa589c5059f0992bca30c20e452064f3ef6ef8",
-      "lastmod": "2026-11-05",
+      "fingerprint": "1a99935e3033a437a709aae1f2c603f0c6cf0dc3d52a1eaa5886b4df3d7b7e05",
+      "lastmod": "2026-11-06",
       "title": "5ive — Me Against The World Forever Album Release Concert — Portales, NM — Wed, Nov 11, 2026 | Kingdom Circuit",
       "heading": "5ive — Me Against The World Forever Album Release Concert",
       "eventPaths": [
@@ -29184,9 +29193,9 @@
       ]
     },
     "/event/5ive-me-against-the-world-forever-album-release-concert-2026-11-12-albuquerque-fceb66/": {
-      "fingerprint": "92b90eb602ae1a34a9c8b59f90af5712338ce7f21856a272cc949227b0c4dc3d",
-      "lastmod": "2026-11-05",
-      "title": "5ive — Me Against The World Forever Album Release Concert — Albuquerque, NM — Thu, Nov 12, 2026 - 6:30 PM | Kingdom Circuit",
+      "fingerprint": "26d7983f4e28708360d3ef29d5d6934dac4a4fddb546698a848bb6d46a3e7ed7",
+      "lastmod": "2026-11-06",
+      "title": "5ive — Me Against The World Forever Album Release Concert — Albuquerque, NM — Thu, Nov 12, 2026 - 5:30 PM | Kingdom Circuit",
       "heading": "5ive — Me Against The World Forever Album Release Concert",
       "eventPaths": [
         "/event/5ive-me-against-the-world-forever-album-release-concert-2026-11-11-portales-1871a8/",
@@ -29195,8 +29204,8 @@
       ]
     },
     "/event/5ive-me-against-the-world-forever-album-release-concert-2026-11-14-raton-f4adbc/": {
-      "fingerprint": "e9f381a29f33f42019a2ebfb1b6830d0c66c6494abddc543a8012f84da428da9",
-      "lastmod": "2026-11-05",
+      "fingerprint": "3c56d20dc96dfc8b0dd5bc0ca80626e6aaa06adb54b5648612e996d5137206e7",
+      "lastmod": "2026-11-06",
       "title": "5ive — Me Against The World Forever Album Release Concert — Raton, NM — Sat, Nov 14, 2026 - 6:30 PM | Kingdom Circuit",
       "heading": "5ive — Me Against The World Forever Album Release Concert",
       "eventPaths": [
@@ -29206,8 +29215,8 @@
       ]
     },
     "/event/5ive-me-against-the-world-forever-album-release-concert-2026-11-18-earth-0fc3b8/": {
-      "fingerprint": "a9a8a0ea1baf951833a3c02fe3de76766cff41232801dfc157fad1f5571f3d57",
-      "lastmod": "2026-11-05",
+      "fingerprint": "c8fb28cc681fe31fd769b8ee6d7d39a6c80dc3167caa040a8f88134f9e182d4c",
+      "lastmod": "2026-11-06",
       "title": "5ive — Me Against The World Forever Album Release Concert — Earth, TX — Wed, Nov 18, 2026 - 6:30 PM | Kingdom Circuit",
       "heading": "5ive — Me Against The World Forever Album Release Concert",
       "eventPaths": [
@@ -29217,8 +29226,8 @@
       ]
     },
     "/event/5ive-me-against-the-world-forever-album-release-concert-2026-11-20-odessa-c94d80/": {
-      "fingerprint": "d1b074b4765492c0f0e6d070135ed4d14947d9ca3df12b20cb8a8b007f9684b7",
-      "lastmod": "2026-11-05",
+      "fingerprint": "ead80b91a62b88a422fa313f8d8eeeca2caece783cb85ba12b5649e5c831e5f9",
+      "lastmod": "2026-11-06",
       "title": "5ive — Me Against The World Forever Album Release Concert — Odessa, TX — Fri, Nov 20, 2026 - 7:00 PM | Kingdom Circuit",
       "heading": "5ive — Me Against The World Forever Album Release Concert",
       "eventPaths": [
@@ -29228,8 +29237,8 @@
       ]
     },
     "/event/5ive-me-against-the-world-forever-album-release-concert-2026-11-21-san-antonio-7e4d4c/": {
-      "fingerprint": "c4ecea73ad4a289b23686392f0d65ffe06f533857956598c482a81cc171f8971",
-      "lastmod": "2026-11-05",
+      "fingerprint": "b0df005d2aae0c25fa2177ad42b6b7cf9636d8a166c2f311d6a7009c94b9bf65",
+      "lastmod": "2026-11-06",
       "title": "5ive — Me Against The World Forever Album Release Concert — San Antonio, TX — Sat, Nov 21, 2026 - 6:00 PM | Kingdom Circuit",
       "heading": "5ive — Me Against The World Forever Album Release Concert",
       "eventPaths": [
@@ -29239,8 +29248,8 @@
       ]
     },
     "/shows/albuquerque-new-mexico/": {
-      "fingerprint": "caa949a7e5cc1f86368e852baa42e86e0d1a6db1e753f14b547693c663639da6",
-      "lastmod": "2026-11-03",
+      "fingerprint": "2130b38d6618c434237b273492cb8e83ca2545aff47e86156f535e2f1d27dd58",
+      "lastmod": "2026-11-06",
       "title": "Christian Hip-Hop & Rap Concerts in Albuquerque, NM | Kingdom Circuit",
       "heading": "Christian Hip-Hop & Rap Concerts in Albuquerque",
       "eventPaths": [
@@ -29302,7 +29311,7 @@
       ]
     },
     "/event/heliopolis-soundoff-summit-showcase-2026-11-13-calgary-76de9f/": {
-      "fingerprint": "6b900d961db513e7c53fbbded0d61dedd3bc5b0aeeadddbd24afca734eb582d2",
+      "fingerprint": "9269da10a45e13174655fcb26ec46703ec83059aaecedd48e270cf84310a0717",
       "lastmod": "2026-11-06",
       "title": "Heliopolis Soundoff Summit Showcase — Calgary, AB — Fri, Nov 13–14, 2026 | Kingdom Circuit",
       "heading": "Heliopolis Soundoff Summit Showcase",
@@ -29363,7 +29372,7 @@
       ]
     },
     "/event/freedom-conference-2027-hulvey-2027-06-17-san-antonio-2d5c9f/": {
-      "fingerprint": "a864e7ceb2281a1f91310e0d8f76aab69801d92a56214da36eac541ed54bde9d",
+      "fingerprint": "1f31d83622660a4dddc5bf12c87d54ca48ddb11b6ab75850399c9ba6fdf1b5e7",
       "lastmod": "2026-11-06",
       "title": "Freedom Conference 2027 — Hulvey — San Antonio, TX — Thu, Jun 17–18, 2027 | Kingdom Circuit",
       "heading": "Freedom Conference 2027 — Hulvey",
@@ -29385,7 +29394,7 @@
       ]
     },
     "/event/strength-to-stand-january-conference-kb-2027-01-16-pigeon-forge-da3d2d/": {
-      "fingerprint": "a7772c9c2ccdf9d499d74c44720a3295ae66b8cb5a59ecaf0268f9f2fa9eaaa4",
+      "fingerprint": "290fbed2b1174a1842fcc258fb8a018d9e178a6b1dedb7f8dc3242a001058f35",
       "lastmod": "2026-11-06",
       "title": "Strength to Stand January Conference — KB — Pigeon Forge, TN — Sat, Jan 16–18, 2027 | Kingdom Circuit",
       "heading": "Strength to Stand January Conference — KB",
@@ -29551,7 +29560,7 @@
       ]
     },
     "/event/northeast-winterfest-2027-egr-2027-01-15-stamford-a3ba57/": {
-      "fingerprint": "76ea16c0b3db69d48e243e425d9582a4c5d8c91084483a5fa5284c88d98e3867",
+      "fingerprint": "fbc7d97821520e1b6772e3687a9113844991c683917c8b482df6c243308af5ae",
       "lastmod": "2026-11-06",
       "title": "Northeast Winterfest 2027 — EGR — Stamford, CT — Fri, Jan 15–17, 2027 | Kingdom Circuit",
       "heading": "Northeast Winterfest 2027 — EGR",
@@ -29575,7 +29584,7 @@
       ]
     },
     "/event/smoky-mountain-winterfest-2027-marty-2027-03-05-pigeon-forge-e547f0/": {
-      "fingerprint": "36eda678b6bbcaa3c8fcf52d76de0ded2b388f7e4988105206afb5d7e8b54f16",
+      "fingerprint": "fae739ced8ac04a32fe9e7d3358cf9f411cca41d617e9c3e80de383b24ad2b5f",
       "lastmod": "2026-11-06",
       "title": "Smoky Mountain Winterfest 2027 — Marty — Pigeon Forge, TN — Fri, Mar 5–7, 2027 | Kingdom Circuit",
       "heading": "Smoky Mountain Winterfest 2027 — Marty",
@@ -29599,7 +29608,7 @@
       ]
     },
     "/event/strength-to-stand-december-conference-kb-2026-12-28-pigeon-forge-a8f653/": {
-      "fingerprint": "531d2fc5692eed7b76d7e0da84bec7c55d26624b510cd343dd5f9345fd010fb3",
+      "fingerprint": "822e0226c498ad4b09be427ea76511a6eb02caa442bad40db56bf4774f3318e1",
       "lastmod": "2026-11-06",
       "title": "Strength to Stand December Conference — KB — Pigeon Forge, TN — Mon, Dec 28–30, 2026 | Kingdom Circuit",
       "heading": "Strength to Stand December Conference — KB",
@@ -29695,5 +29704,5 @@
     "/event/altar-ego-at-clear-skies-meadery-2027-01-23-rockville-3e2bbf/",
     "/event/ryan-ellis-at-the-betsy-hotel-2026-11-13-miami-beach-e47963/"
   ],
-  "publishedAt": "2026-11-06T03:16:51.935647+00:00"
+  "publishedAt": "2026-11-06T04:09:27.711306+00:00"
 }
