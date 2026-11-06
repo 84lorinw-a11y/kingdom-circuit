@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-11-05T19:14:14Z",
-  "artistsChecked": 416,
+  "generatedAt": "2026-11-06T18:47:30Z",
+  "artistsChecked": 417,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
   "festivalCandidates": 1,
   "bandsintown": {
     "discoveryMode": "structured_rest",
     "status": "ok",
-    "artistsAttempted": 416,
+    "artistsAttempted": 417,
     "resolved": 255,
     "rawUpcomingUSRows": 85,
     "rawUpcomingCARows": 4,
@@ -17,16 +17,16 @@
     "requestErrors": 0
   },
   "songkick": {
-    "artistsAttempted": 416,
+    "artistsAttempted": 417,
     "resolved": 0,
-    "blockedByRobots": 416,
+    "blockedByRobots": 417,
     "eventsFound": 0
   },
   "sourceStatusCounts": {
-    "delegated_to_structured_rest": 416,
-    "blocked_by_robots": 420,
-    "no_events": 579,
-    "failed": 6
+    "delegated_to_structured_rest": 417,
+    "blocked_by_robots": 421,
+    "no_events": 578,
+    "failed": 8
   },
   "newEvents": [],
   "sourceResults": [
@@ -306,8 +306,9 @@
       "artist": "Trip Lee",
       "source": "official website",
       "url": "https://builttobrag.com/",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://builttobrag.com/: HTTP Error 500: Internal Server Error"
     },
     {
       "artist": "Trip Lee",
@@ -675,8 +676,9 @@
       "artist": "BrvndonP",
       "source": "official website",
       "url": "https://iambrvndonp.com/",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://iambrvndonp.com/: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1011)>"
     },
     {
       "artist": "BrvndonP",
@@ -9148,6 +9150,25 @@
       "artist": "HisnameJirr",
       "source": "Spotify profile",
       "url": "https://open.spotify.com/artist/3iz7aOssbRgzYL5v5dLg21",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "G!nG",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "G!nG",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "G!nG",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/6PbK7lHIBspmVr7n9KoHFC",
       "status": "no_events",
       "eventsFound": 0
     }
