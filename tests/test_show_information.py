@@ -67,7 +67,7 @@ class ProductionShowInformationTests(unittest.TestCase):
         labels = [doc.text(n) for n in doc.nodes if n.tag == 'dt' and facts.start < n.start < facts.end]
         self.assertEqual(labels, ['Status', 'Date', 'Venue', 'Location', 'Organizer / promoter'])
         panel = doc.one(lambda n: n.has('kc-more-details'))
-        self.assertNotIn('Organizer', doc.text(panel))
+        self.assertNotIn('Organizer / promoter', doc.text(panel))
         self.assertIn('$15 concert only', doc.text(panel))
         schema = next(show.event_schemas(show.schema_blocks(rendered)[0][1]))
         self.assertEqual(schema['organizer'], {'@type': 'Organization', 'name': 'Real promoter', 'url': 'https://promoter.example/'})

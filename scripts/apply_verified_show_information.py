@@ -16,7 +16,8 @@ FIELDS = {'address', 'address2', 'postalCode', 'venue', 'city', 'startTime', 'st
           'publicNotice', 'price', 'ageRestriction', 'admissionRestriction',
           'parking', 'accessibility', 'entryRequirements', 'refundPolicy',
           'scheduleNote', 'scheduleDetails', 'ticketUrl', 'ticketUrlVerified',
-          'registrationUrl', 'registrationUrlVerified', 'primaryTimeKind', 'officialUrl'}
+          'registrationUrl', 'registrationUrlVerified', 'primaryTimeKind', 'officialUrl',
+          'venueUrl', 'venueInstagram', 'organizerInstagram', 'organizerWebsite', 'eventInstagram'}
 VERIFICATION_URLS = {'ticketUrlVerified': 'ticketUrl',
                      'registrationUrlVerified': 'registrationUrl'}
 
@@ -59,6 +60,15 @@ def enrich(event, reviewed):
         accepted_venues += [c['facts']['venue'] for c in corrections if 'venue' in c['facts']]
         if text(event.get('venue')) not in {text(v) for v in accepted_venues}:
             continue
+        # Social/website links belong to the reviewed entity, not merely the
+        # booking. A newer organizer credit must not inherit the old account.
+        if 'expectedOrganizerName' in item:
+            current_organizer = event.get('organizer')
+            if isinstance(current_organizer, dict):
+                current_organizer = current_organizer.get('name')
+            current_organizer = current_organizer or event.get('organizerName') or ''
+            if text(current_organizer) != text(item['expectedOrganizerName']):
+                continue
         try:
             from .show_information_model import normalize
         except ImportError:
@@ -111,19 +121,28 @@ def enrich(event, reviewed):
 
 
 def apply(root=ROOT):
-    config = root / 'config/verified-show-information.json'
-    if not config.exists():
+    registries = []
+    for filename in ('verified-show-information.json', 'verified-show-links.json'):
+        config = root / 'config' / filename
+        if not config.exists():
+            continue
+        registry = json.loads(config.read_text())
+        if registry.get('version') != 1:
+            raise ValueError('Unsupported verified show information registry')
+        registries.append(registry['events'])
+    if not registries:
         return 0
-    registry = json.loads(config.read_text())
-    if registry.get('version') != 1:
-        raise ValueError('Unsupported verified show information registry')
     changed = 0
     for name in ('events.json', 'supplemental-events.json'):
         path = root / name
         if not path.exists():
             continue
         before = json.loads(path.read_text())
-        after = [enrich(event, registry['events']) for event in before]
+        after = before
+        # Settle reviewed venue/organizer corrections before binding entity
+        # links to those names. A single pass must match subsequent rebuilds.
+        for reviewed in registries:
+            after = [enrich(event, reviewed) for event in after]
         if after != before:
             path.write_text(json.dumps(after, indent=2, ensure_ascii=False) + '\n')
             changed += 1

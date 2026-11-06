@@ -18,6 +18,10 @@ are sanitized. Consumers should use the derived fields below for publication:
 * Optional display strings: dateLabel, startTimeLabel, doorsTimeLabel,
   registrationTimeLabel, endTimeLabel, timezoneLabel, priceLabel, organizerName,
   organizerUrl, admissionLabel. Unknown optional values are absent.
+* Optional entity links: venueUrl, venueInstagram, organizerWebsite,
+  organizerInstagram and eventInstagram. Profile links are Instagram accounts,
+  not posts; website labels never point at a ticket-platform/social profile.
+  performerInstagrams is derived only when the current artist registry is passed.
 
 Curated URL flags are exact booleans: ticketUrlVerified/registrationUrlVerified.
 Known direct ticket-platform event paths may qualify without a flag. Generic
@@ -47,6 +51,8 @@ _DERIVED = (
     "dateLabel", "startTimeLabel", "doorsTimeLabel", "registrationTimeLabel",
     "endTimeLabel", "timezoneLabel", "priceLabel", "organizerName",
     "organizerUrl", "admissionLabel", "schemaStartDate", "schemaEndDate", "venueLabel", "venueLocality",
+    "venueUrl", "venueInstagram", "organizerWebsite", "organizerInstagram",
+    "eventInstagram", "performerInstagrams",
 )
 
 
@@ -84,6 +90,69 @@ def _social_or_music(url):
         "youtube.com", "youtu.be", "spotify.com", "music.apple.com",
         "soundcloud.com", "linktr.ee",
     ))
+
+
+def _instagram_profile(value):
+    url = _url(value)
+    if not url or _host(url) != 'instagram.com':
+        return ''
+    parsed = urlsplit(url)
+    try:
+        port = parsed.port
+    except ValueError:
+        return ''
+    if port not in (None, 443, 80):
+        return ''
+    match = re.fullmatch(r'/([A-Za-z0-9._]{1,30})/?', parsed.path)
+    if not match or match[1].casefold() in {
+            'p', 'reel', 'reels', 'tv', 'stories', 'accounts', 'explore',
+            'direct', 'about', 'legal', 'directory', 'developer', 'challenge'}:
+        return ''
+    return 'https://www.instagram.com/' + match[1].lower() + '/'
+
+
+def _entity_website(value):
+    url = _url(value)
+    if not url or _social_or_music(url):
+        return ''
+    host = _host(url)
+    if re.search(r'(?:^|\.)(?:eventbrite|ticketmaster|livenation|bandsintown|'
+                 r'tickettailor|ticketweb|tixr|axs|etix|ticketsource|eventim|'
+                 r'showclix|dice|prekindle|stubwire|ticketleap|universe|'
+                 r'humanitix|ticketspice|brushfire)\.', host):
+        return ''
+    return url
+
+
+def _performer_instagrams(event, artists):
+    lookup = {}
+    for artist in artists:
+        if not isinstance(artist, dict) or artist.get('enabled') is False:
+            continue
+        name = _text(artist.get('name'))
+        if not name:
+            continue
+        url = _instagram_profile(artist.get('instagramProfile'))
+        aliases = artist.get('aliases') if isinstance(artist.get('aliases'), list) else []
+        for alias in [name, *aliases]:
+            alias = ' '.join(_text(alias).casefold().split())
+            if alias:
+                lookup.setdefault(alias, set()).add((name, url))
+    result, seen = [], set()
+    billed = event.get('artists') or []
+    if isinstance(billed, str):
+        billed = [billed]
+    for name in billed:
+        if isinstance(name, dict):
+            name = name.get('name')
+        candidates = lookup.get(' '.join(_text(name).casefold().split()), set())
+        if len(candidates) != 1:
+            continue
+        canonical, url = next(iter(candidates))
+        if url and (canonical, url) not in seen:
+            result.append({'name': canonical, 'url': url})
+            seen.add((canonical, url))
+    return result
 
 
 def _direct_ticket_platform(url):
@@ -288,7 +357,7 @@ def _price(event):
     return label, offer
 
 
-def normalize(event):
+def normalize(event, *, artists=()):
     """Return source facts and safe publication fields without mutating input."""
     try:
         from .catalog_removals import public_event
@@ -406,6 +475,22 @@ def normalize(event):
         result["organizerName"] = _text(event["organizerName"])
         if _url(event.get("organizerUrl")):
             result["organizerUrl"] = _url(event["organizerUrl"])
+    if venue:
+        for field, clean in (('venueUrl', _entity_website), ('venueInstagram', _instagram_profile)):
+            if value := clean(event.get(field)):
+                result[field] = value
+    if result.get('organizerName'):
+        website = _entity_website(event.get('organizerWebsite')) or _entity_website(result.get('organizerUrl'))
+        if website:
+            result['organizerWebsite'] = website
+        social = (organizer.get('instagramProfile') or organizer.get('instagram')) if isinstance(organizer, dict) else None
+        social = _instagram_profile(social or event.get('organizerInstagram'))
+        if social:
+            result['organizerInstagram'] = social
+    if social := _instagram_profile(event.get('eventInstagram')):
+        result['eventInstagram'] = social
+    if performers := _performer_instagrams(event, artists):
+        result['performerInstagrams'] = performers
     admission = _text(event.get("admissionRestriction")) or _text(event.get("ageRestriction"))
     if private:
         admission = "Private / invite-only event"

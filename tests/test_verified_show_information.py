@@ -43,10 +43,48 @@ class VerifiedShowInformationTests(unittest.TestCase):
             current = {**self.event, key: value}
             self.assertEqual(enrich(current, [self.pin]), current)
 
+    def test_entity_links_require_the_reviewed_organizer_and_survive_replay(self):
+        event = {**self.event, 'organizer': {'name': 'Presenter'}}
+        pin = {**self.pin, 'expectedOrganizerName': 'Presenter', 'facts': {
+            'organizerInstagram': 'https://www.instagram.com/presenter/',
+            'venueUrl': 'https://hall.example/'}}
+        result = enrich(event, [pin])
+        self.assertEqual(result['organizerInstagram'], pin['facts']['organizerInstagram'])
+        self.assertEqual(enrich(result, [pin]), result)
+        newer = {**event, 'organizer': {'name': 'New Presenter'}}
+        self.assertEqual(enrich(newer, [pin]), newer)
+
+    def test_separate_verified_links_registry_is_applied_to_the_feeds(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'config').mkdir()
+            (root / 'events.json').write_text(json.dumps([self.event]))
+            pin = {**self.pin, 'facts': {'venueUrl': 'https://hall.example/'}}
+            (root / 'config/verified-show-links.json').write_text(json.dumps({'version': 1, 'events': [pin]}))
+            self.assertEqual(apply(root), 1)
+            self.assertEqual(json.loads((root / 'events.json').read_text())[0]['venueUrl'], 'https://hall.example/')
+            self.assertEqual(apply(root), 0)
+
     def test_private_street_and_postal_are_not_added(self):
         result = enrich({**self.event, 'admission': 'private'}, [self.pin])
         self.assertFalse(result.get('address'))
         self.assertNotIn('postalCode', result)
+
+    def test_links_bind_after_a_reviewed_venue_and_organizer_correction(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'config').mkdir()
+            (root / 'events.json').write_text(json.dumps([self.event]))
+            information = {**self.pin, 'facts': {'organizer': {'name': 'Presenter'}},
+                           'corrections': [{'expected': {'venue': 'Hall'}, 'facts': {'venue': 'New Hall'}}]}
+            links = {**self.pin, 'expectedVenue': 'New Hall', 'expectedOrganizerName': 'Presenter',
+                     'facts': {'organizerInstagram': 'https://www.instagram.com/presenter/'}}
+            for filename, pin in [('verified-show-information.json', information), ('verified-show-links.json', links)]:
+                (root / 'config' / filename).write_text(json.dumps({'version': 1, 'events': [pin]}))
+            self.assertEqual(apply(root), 1)
+            row = json.loads((root / 'events.json').read_text())[0]
+            self.assertEqual(row['organizerInstagram'], links['facts']['organizerInstagram'])
+            self.assertEqual(apply(root), 0)
 
     def test_reviewed_city_correction_preserves_identity_and_rejects_later_moves(self):
         current = {**self.event, 'canonicalPath': '/event/original-city/'}

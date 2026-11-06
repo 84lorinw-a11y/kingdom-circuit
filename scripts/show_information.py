@@ -19,7 +19,7 @@ from show_information_model import normalize
 from private_events import redact_public_feeds, verify_public_feeds
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '20261105-1'
+VERSION = '20261106-1'
 CSS = 'assets/show-information.css'
 EVENT_TYPES = {'Event', 'MusicEvent', 'Festival'}
 SOURCE_FILES = ('events.json', 'supplemental-events.json', 'config/artists.json', 'assets/fan-show-catalog.json')
@@ -64,6 +64,8 @@ def schema_key(schema):
 
 
 def context(site):
+    artist_file = site / 'config/artists.json'
+    artists = json.loads(artist_file.read_text()) if artist_file.is_file() else []
     rows = {}
     for filename in ('events.json', 'supplemental-events.json'):
         for row in json.loads((site / filename).read_text()):
@@ -76,7 +78,7 @@ def context(site):
                         rows[identity][field] = deepcopy(value)
     by_key, by_hash, by_path = {}, {}, {}
     for row in rows.values():
-        record = normalize(row)
+        record = normalize(row, artists=artists)
         by_key.setdefault(key(row), record)
         if row.get('id'):
             by_hash[digest(row['id'])] = record
@@ -155,6 +157,23 @@ def more_details(record):
     for source, label in (('accessibility', 'Accessibility'), ('parking', 'Parking'), ('entryRequirements', 'Entry'), ('refundPolicy', 'Refund policy')):
         if isinstance(record.get(source), str) and record[source].strip():
             facts.append((label, escape(record[source])))
+    # These normalized profiles are exact registry matches or independently
+    # verified event/venue/promoter identities. Keep them secondary to the one
+    # Official details action and the existing internal artist navigation.
+    def external_link(url, label):
+        return f'<a class="kc-show-entity-link" href="{escape(url, quote=True)}" target="_blank" rel="noopener noreferrer">{escape(label)}</a>'
+
+    performers = record.get('performerInstagrams') or []
+    if performers:
+        links = [external_link(item['url'], item['name'] + ' (@' + item['url'].rstrip('/').rsplit('/', 1)[-1] + ')') for item in performers]
+        facts.append(('Performer Instagram', '<ul class="kc-show-profile-links">' + ''.join('<li>' + link + '</li>' for link in links) + '</ul>'))
+    for source, label in (('eventInstagram', 'Event Instagram'), ('venueInstagram', 'Venue Instagram'), ('organizerInstagram', 'Organizer Instagram')):
+        if record.get(source):
+            url = record[source]
+            facts.append((label, external_link(url, '@' + url.rstrip('/').rsplit('/', 1)[-1])))
+    for source, label, name in (('venueUrl', 'Venue website', 'venueLabel'), ('organizerWebsite', 'Organizer website', 'organizerName')):
+        if record.get(source):
+            facts.append((label, external_link(record[source], record.get(name) or label)))
     labels = {label.casefold() for label, _ in facts}
     for item in record.get('scheduleDetails') or []:
         if not isinstance(item, dict):
@@ -166,7 +185,7 @@ def more_details(record):
     description = record.get('description') or ''
     if not facts and not description and not record.get('scheduleNote'):
         return ''
-    content = f'<p>{escape(description)}</p>' if description else ''
+    content = ''.join(f'<p>{escape(paragraph.strip())}</p>' for paragraph in re.split(r'\n\s*\n', description) if paragraph.strip())
     if facts:
         content += '<dl class="kc-extra-facts">' + ''.join(f'<div><dt>{label}</dt><dd>{value}</dd></div>' for label, value in facts) + '</dl>'
     if record.get('scheduleNote'):
