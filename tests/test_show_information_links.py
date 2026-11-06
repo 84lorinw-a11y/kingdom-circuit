@@ -13,6 +13,48 @@ from test_show_information import fixture, record
 
 
 class ShowInformationLinksTests(unittest.TestCase):
+    def test_separate_organizer_link_labels_keep_tour_website_and_promoter_account_distinct(self):
+        joint = 'NewSong / TPR'
+        row = record(organizer={'name': joint, 'url': 'https://jamtour.com/'},
+                     organizerLinkName='Shared fallback', organizerWebsiteName='Winter Jam',
+                     organizerInstagramName='TPR',
+                     organizerInstagram='https://www.instagram.com/tprlive.co/')
+        result = show.detail_transform(fixture(), row)
+        doc = Document(result)
+        panel = doc.one(lambda n: n.has('kc-more-details'))
+        links = {n.attrs.get('href'): doc.text(n) for n in doc.nodes
+                 if n.tag == 'a' and panel.start < n.start < panel.end}
+        self.assertEqual(links['https://jamtour.com/'], 'Winter Jam')
+        self.assertEqual(links['https://www.instagram.com/tprlive.co/'], 'TPR (@tprlive.co)')
+        self.assertIn(joint, doc.text(doc.one(lambda n: n.has('detail-list'))))
+        schema = next(show.event_schemas(show.schema_blocks(result)[0][1]))
+        self.assertEqual(schema['organizer'],
+                         {'@type': 'Organization', 'name': joint, 'url': 'https://jamtour.com/'})
+        self.assertNotIn('sameAs', schema['organizer'])
+        self.assertEqual(show.detail_transform(result, row), result)
+
+    def test_joint_organizer_links_name_the_member_without_changing_credit_or_schema(self):
+        joint = 'Catalyst Hip Hop / Holy Waters Ministry Network'
+        member = 'Holy Waters Ministry Network'
+        row = record(organizer={'name': joint}, organizerLinkName=member,
+                     organizerWebsite='https://www.holywatersministry.org/',
+                     organizerInstagram='https://www.instagram.com/holy_waters_hiphop/')
+        result = show.detail_transform(fixture(), row)
+        doc = Document(result)
+        main = doc.one(lambda n: n.has('detail-list'))
+        self.assertIn(joint, doc.text(main))
+        panel = doc.one(lambda n: n.has('kc-more-details'))
+        links = {n.attrs.get('href'): doc.text(n) for n in doc.nodes
+                 if n.tag == 'a' and panel.start < n.start < panel.end}
+        self.assertEqual(links['https://www.holywatersministry.org/'], member)
+        self.assertEqual(links['https://www.instagram.com/holy_waters_hiphop/'],
+                         member + ' (@holy_waters_hiphop)')
+        schema = next(show.event_schemas(show.schema_blocks(result)[0][1]))
+        self.assertEqual(schema['organizer'], {'@type': 'Organization', 'name': joint})
+        self.assertNotIn('sameAs', schema['organizer'])
+        self.assertNotIn('url', schema['organizer'])
+        self.assertEqual(show.detail_transform(result, row), result)
+
     def test_verified_profiles_are_secondary_and_do_not_change_event_navigation_or_offer(self):
         row = record()
         row.update({

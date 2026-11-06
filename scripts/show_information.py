@@ -19,7 +19,7 @@ from show_information_model import normalize
 from private_events import redact_public_feeds, verify_public_feeds
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '20261106-1'
+VERSION = '20261106-2'
 CSS = 'assets/show-information.css'
 EVENT_TYPES = {'Event', 'MusicEvent', 'Festival'}
 SOURCE_FILES = ('events.json', 'supplemental-events.json', 'config/artists.json', 'assets/fan-show-catalog.json')
@@ -170,10 +170,17 @@ def more_details(record):
     for source, label in (('eventInstagram', 'Event Instagram'), ('venueInstagram', 'Venue Instagram'), ('organizerInstagram', 'Organizer Instagram')):
         if record.get(source):
             url = record[source]
-            facts.append((label, external_link(url, '@' + url.rstrip('/').rsplit('/', 1)[-1])))
+            account = '@' + url.rstrip('/').rsplit('/', 1)[-1]
+            if source == 'organizerInstagram':
+                link_name = record.get('organizerInstagramName') or record.get('organizerLinkName')
+                if link_name:
+                    account = link_name + ' (' + account + ')'
+            facts.append((label, external_link(url, account)))
     for source, label, name in (('venueUrl', 'Venue website', 'venueLabel'), ('organizerWebsite', 'Organizer website', 'organizerName')):
         if record.get(source):
-            facts.append((label, external_link(record[source], record.get(name) or label)))
+            link_name = ((record.get('organizerWebsiteName') or record.get('organizerLinkName'))
+                         if source == 'organizerWebsite' else None)
+            facts.append((label, external_link(record[source], link_name or record.get(name) or label)))
     labels = {label.casefold() for label, _ in facts}
     for item in record.get('scheduleDetails') or []:
         if not isinstance(item, dict):

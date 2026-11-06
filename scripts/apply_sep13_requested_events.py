@@ -174,17 +174,18 @@ UPSERTS = {
     "jimmy-rock-worship-wawa-miami-2026": E(
         "JIMMY ROCK'S Rave & Worship — The Worship Wawa", "2026-12-18", "Miami", "FL", ["JIMMY ROCK"],
         JIMMY_MIAMI_RESCHEDULE_POST, "Official Instagram postponement announcement",
-        venue="The Worship Wawa — Margaret Pace Park pickup", address="1745 N Bayshore Dr", event_type="party_bus", time="17:00",
+        venue="Venue not confirmed", address="", event_type="party_bus", time="", postalCode="",
         tz="America/New_York", ticket="https://fareharbor.com/embeds/book/theworshipwawa/?full-items=yes",
         authority="official_event", status="rescheduled", previousStartDate="2026-09-18",
-        rescheduleReason="Weather", auditVerified="2026-09-17",
+        rescheduleReason="Weather", auditVerified="2026-11-06",
         legacyEventPaths=[JIMMY_MIAMI_OLD_PATH],
         image=JIMMY_MIAMI_EVENT_IMAGE, image_type="event_artwork", image_override=True,
         imageSource="The Worship Wawa official event poster",
         imageSourceUrl="https://www.theworshipwawa.com/jimmyrock-rave-worship",
-        rideTimes=["17:00", "18:15", "19:30", "20:45"],
-        notes="Originally scheduled for September 18, 2026; postponed due to weather and rescheduled for December 18, 2026 per the official Instagram announcement. In-person party-bus event. Four one-hour rides depart at 5:00, 6:15, 7:30 and 8:45 PM. Arrive 15 minutes early; Bandsintown's 4:30 PM header aligns with earliest check-in, not an online event.",
+        rideTimes=[],
+        notes="Originally scheduled for September 18, 2026; postponed due to weather and rescheduled for December 18, 2026 per the official Instagram announcement. The organizer's current December 18 page confirms Miami but says the venue and times will be announced. Earlier pickup and ride-time details are not confirmed for the rescheduled event.",
         extra=[
+            src("Current December 18 organizer page; venue and times pending", "https://theworshipwawa.com/jinglebellrock/", "official_event", 100),
             src("The Worship Wawa official event page", "https://www.theworshipwawa.com/jimmyrock-rave-worship", "artist_calendar", 100),
             src("JIMMY ROCK Bandsintown", "https://www.bandsintown.com/e/108769357", "artist_calendar", 74),
         ]

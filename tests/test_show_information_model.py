@@ -14,6 +14,47 @@ class ShowInformationModelTests(unittest.TestCase):
         return {"title": "A real concert", "startDate": "2027-01-29",
                 "startTime": "21:00", "timezone": "America/Chicago", **fields}
 
+    def test_each_organizer_link_label_requires_its_own_valid_destination(self):
+        names = {'organizerWebsiteName': '  Winter Jam  ', 'organizerInstagramName': '  TPR  '}
+        for organizer in ({}, {'organizer': {'name': 'NewSong / TPR'}}):
+            for links, present in (({}, set()),
+                    ({'organizerWebsite': 'https://jamtour.com/'}, {'organizerWebsiteName'}),
+                    ({'organizerInstagram': 'https://www.instagram.com/tprlive.co/'}, {'organizerInstagramName'}),
+                    ({'organizerWebsite': 'https://www.eventbrite.com/o/tour-123',
+                      'organizerInstagram': 'https://www.instagram.com/p/post/'}, set())):
+                with self.subTest(organizer=organizer, links=links):
+                    source = self.event(**organizer, **links, **names)
+                    before = copy.deepcopy(source)
+                    result = normalize(source)
+                    self.assertEqual(source, before)
+                    for field, value in names.items():
+                        if organizer and field in present:
+                            self.assertEqual(result.get(field), value.strip())
+                        else:
+                            self.assertNotIn(field, result)
+
+    def test_scoped_organizer_link_name_requires_both_organizer_and_valid_organizer_link(self):
+        for links in ({}, {'venueUrl': 'https://venue.example/'},
+                      {'organizerInstagram': 'https://www.instagram.com/p/unverified-post/'},
+                      {'organizerWebsite': 'https://www.eventbrite.com/e/show-tickets-123'}):
+            with self.subTest(links=links):
+                result = normalize(self.event(organizer={'name': 'One / Two'},
+                    organizerLinkName='Two', **links))
+                self.assertNotIn('organizerLinkName', result)
+        result = normalize(self.event(organizerLinkName='Two',
+            organizerWebsite='https://two.example/'))
+        self.assertNotIn('organizerLinkName', result)
+        for organizer, links in (
+            ({'organizer': {'name': 'One / Two'}}, {'organizerWebsite': 'https://two.example/'}),
+            ({'organizerName': 'One / Two'}, {'organizerInstagram': 'https://www.instagram.com/two/'}),
+        ):
+            source = self.event(**organizer, **links, organizerLinkName='  Two  ')
+            before = copy.deepcopy(source)
+            result = normalize(source)
+            self.assertEqual(result['organizerLinkName'], 'Two')
+            self.assertEqual(result['organizerName'], 'One / Two')
+            self.assertEqual(source, before)
+
     def test_source_is_preserved_without_mutation_and_notes_are_not_description(self):
         source = self.event(country="CA", notes="Internal research, do not publish", artists=["Artist"])
         before = copy.deepcopy(source)

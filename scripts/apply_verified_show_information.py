@@ -17,7 +17,8 @@ FIELDS = {'address', 'address2', 'postalCode', 'venue', 'city', 'startTime', 'st
           'parking', 'accessibility', 'entryRequirements', 'refundPolicy',
           'scheduleNote', 'scheduleDetails', 'ticketUrl', 'ticketUrlVerified',
           'registrationUrl', 'registrationUrlVerified', 'primaryTimeKind', 'officialUrl',
-          'venueUrl', 'venueInstagram', 'organizerInstagram', 'organizerWebsite', 'eventInstagram'}
+          'venueUrl', 'venueInstagram', 'organizerInstagram', 'organizerWebsite',
+          'organizerLinkName', 'organizerWebsiteName', 'organizerInstagramName', 'eventInstagram'}
 VERIFICATION_URLS = {'ticketUrlVerified': 'ticketUrl',
                      'registrationUrlVerified': 'registrationUrl'}
 

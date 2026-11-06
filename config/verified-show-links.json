@@ -10,7 +10,11 @@
       "expectedVenue": "VyStar Veterans Memorial Arena",
       "facts": {
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
-        "organizerInstagram": "https://www.instagram.com/tprlive.co/"
+        "organizerInstagram": "https://www.instagram.com/tprlive.co/",
+        "organizerLinkName": "TPR",
+        "venueUrl": "https://arena.jaxevents.com/",
+        "venueInstagram": "https://www.instagram.com/vystarvetarena/",
+        "organizerWebsiteName": "Winter Jam"
       },
       "sources": [
         {
@@ -22,6 +26,20 @@
           "url": "https://tprlive.co/",
           "reviewedAt": "2026-11-06",
           "evidence": "TPR official home page directly links instagram.com/tprlive.co/."
+        },
+        {
+          "url": "https://arena.jaxevents.com/",
+          "evidence": "JaxEvents’ dedicated arena site identifies VyStar Veterans Memorial Arena and directly links vystarvetarena. The exact Winter Jam page gives the matching 300 A Philip Randolph Boulevard address.",
+          "status": 200,
+          "receipt": "venue-3-receipts/711d34137e2d.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://ballpark.jaxevents.com/",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/vystarvetarena/",
+          "status": 200,
+          "receipt": "venue-3-receipts/8fe35a8513ac.json",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "NewSong / TPR"
@@ -35,7 +53,11 @@
       "expectedVenue": "Yuengling Center",
       "facts": {
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
-        "organizerInstagram": "https://www.instagram.com/tprlive.co/"
+        "organizerInstagram": "https://www.instagram.com/tprlive.co/",
+        "organizerLinkName": "TPR",
+        "venueUrl": "https://www.yuenglingcenter.com/",
+        "venueInstagram": "https://www.instagram.com/yuenglingcenter/",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -47,6 +69,11 @@
           "url": "https://tprlive.co/",
           "reviewedAt": "2026-11-06",
           "evidence": "TPR official home page directly links instagram.com/tprlive.co/."
+        },
+        {
+          "url": "https://www.yuenglingcenter.com/",
+          "evidence": "Official arena site matches12499 USF Bull Run Dr Tampa and directly links Instagram; receipt258.",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "NewSong / TPR"
@@ -62,7 +89,9 @@
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
         "organizerInstagram": "https://www.instagram.com/tprlive.co/",
         "venueUrl": "https://www.gassouthdistrict.com/",
-        "venueInstagram": "https://www.instagram.com/GasSouthDistrict"
+        "venueInstagram": "https://www.instagram.com/GasSouthDistrict",
+        "organizerLinkName": "TPR",
+        "organizerWebsiteName": "Winter Jam"
       },
       "sources": [
         {
@@ -99,7 +128,9 @@
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
         "organizerInstagram": "https://www.instagram.com/tprlive.co/",
         "venueUrl": "https://www.bokcenter.com/",
-        "venueInstagram": "https://www.instagram.com/bokcenter"
+        "venueInstagram": "https://www.instagram.com/bokcenter",
+        "organizerLinkName": "TPR",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -136,7 +167,9 @@
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
         "organizerInstagram": "https://www.instagram.com/tprlive.co/",
         "venueUrl": "https://www.t-mobilecenter.com/",
-        "venueInstagram": "https://www.instagram.com/tmobilecenter"
+        "venueInstagram": "https://www.instagram.com/tmobilecenter",
+        "organizerLinkName": "TPR",
+        "organizerWebsiteName": "Winter Jam"
       },
       "sources": [
         {
@@ -171,7 +204,11 @@
       "expectedVenue": "Casey's Center",
       "facts": {
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
-        "organizerInstagram": "https://www.instagram.com/tprlive.co/"
+        "organizerInstagram": "https://www.instagram.com/tprlive.co/",
+        "organizerLinkName": "TPR",
+        "venueUrl": "https://www.iowaeventscenter.com/",
+        "venueInstagram": "https://www.instagram.com/caseyscenter/",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -183,6 +220,16 @@
           "url": "https://tprlive.co/",
           "reviewedAt": "2026-11-06",
           "evidence": "TPR official home page directly links instagram.com/tprlive.co/."
+        },
+        {
+          "url": "https://www.iowaeventscenter.com/",
+          "evidence": "Official Iowa Events Center Get Connected page explicitly links Casey's Center Instagram under the Casey's Center heading.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.iowaeventscenter.com/about/get-connected",
+          "evidence": "Casey's Center section links official Instagram profile caseyscenter.",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "NewSong / TPR"
@@ -196,7 +243,11 @@
       "expectedVenue": "Ford Center",
       "facts": {
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
-        "organizerInstagram": "https://www.instagram.com/tprlive.co/"
+        "organizerInstagram": "https://www.instagram.com/tprlive.co/",
+        "organizerLinkName": "TPR",
+        "venueUrl": "https://www.fordcenter.com/home",
+        "venueInstagram": "https://www.instagram.com/thefordcenter/",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -208,6 +259,20 @@
           "url": "https://tprlive.co/",
           "reviewedAt": "2026-11-06",
           "evidence": "TPR official home page directly links instagram.com/tprlive.co/."
+        },
+        {
+          "url": "https://www.fordcenter.com/home",
+          "evidence": "Ford Center’s own site gives 1 SE Martin Luther King Jr Boulevard, Evansville, and directly links thefordcenter.",
+          "status": 200,
+          "receipt": "venue-3-receipts/bcfa734c0440.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.fordcenter.com/home",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/thefordcenter/",
+          "status": 200,
+          "receipt": "venue-3-receipts/bcfa734c0440.json",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "NewSong / TPR"
@@ -223,7 +288,9 @@
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
         "organizerInstagram": "https://www.instagram.com/tprlive.co/",
         "venueUrl": "https://www.bridgestonearena.com/",
-        "venueInstagram": "https://www.instagram.com/bridgestonearenaofficial"
+        "venueInstagram": "https://www.instagram.com/bridgestonearenaofficial",
+        "organizerLinkName": "TPR",
+        "organizerWebsiteName": "Winter Jam"
       },
       "sources": [
         {
@@ -260,7 +327,9 @@
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
         "organizerInstagram": "https://www.instagram.com/tprlive.co/",
         "venueUrl": "https://www.kfcyumcenter.com/",
-        "venueInstagram": "https://www.instagram.com/kfcyumcenter"
+        "venueInstagram": "https://www.instagram.com/kfcyumcenter",
+        "organizerLinkName": "TPR",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -297,7 +366,9 @@
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
         "organizerInstagram": "https://www.instagram.com/tprlive.co/",
         "venueUrl": "https://simmonsbankarena.com/",
-        "venueInstagram": "https://www.instagram.com/simmonsbankarena/"
+        "venueInstagram": "https://www.instagram.com/simmonsbankarena/",
+        "organizerLinkName": "TPR",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -334,7 +405,9 @@
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
         "organizerInstagram": "https://www.instagram.com/tprlive.co/",
         "venueUrl": "https://www.vanandelarena.com/",
-        "venueInstagram": "https://www.instagram.com/vanandelarenagr/"
+        "venueInstagram": "https://www.instagram.com/vanandelarenagr/",
+        "organizerLinkName": "TPR",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -369,7 +442,11 @@
       "expectedVenue": "Vandalia Health Coliseum",
       "facts": {
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
-        "organizerInstagram": "https://www.instagram.com/tprlive.co/"
+        "organizerInstagram": "https://www.instagram.com/tprlive.co/",
+        "organizerLinkName": "TPR",
+        "venueUrl": "https://www.chaswvccc.com/",
+        "venueInstagram": "https://www.instagram.com/chaswvccc/",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -381,6 +458,16 @@
           "url": "https://tprlive.co/",
           "reviewedAt": "2026-11-06",
           "evidence": "TPR official home page directly links instagram.com/tprlive.co/."
+        },
+        {
+          "url": "https://www.chaswvccc.com/",
+          "evidence": "Official Charleston Coliseum complex website confirms 200 Civic Center Drive; new Vandalia Health naming is the same venue. Instagram text present in A-Z guide but target not yet resolved.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.chaswvccc.com/",
+          "evidence": "Official Charleston venue site directly links chaswvccc Instagram.",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "NewSong / TPR"
@@ -396,7 +483,9 @@
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
         "organizerInstagram": "https://www.instagram.com/tprlive.co/",
         "venueUrl": "https://www.schottensteincenter.com/",
-        "venueInstagram": "https://www.instagram.com/theschott"
+        "venueInstagram": "https://www.instagram.com/theschott",
+        "organizerLinkName": "TPR",
+        "organizerWebsiteName": "Winter Jam"
       },
       "sources": [
         {
@@ -433,7 +522,9 @@
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
         "organizerInstagram": "https://www.instagram.com/tprlive.co/",
         "venueUrl": "https://heritagebankcenter.com/",
-        "venueInstagram": "https://www.instagram.com/HeritageBankCtr"
+        "venueInstagram": "https://www.instagram.com/HeritageBankCtr",
+        "organizerLinkName": "TPR",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -470,7 +561,9 @@
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
         "organizerInstagram": "https://www.instagram.com/tprlive.co/",
         "venueUrl": "https://www.santander-arena.com/",
-        "venueInstagram": "https://www.instagram.com/santander_arena"
+        "venueInstagram": "https://www.instagram.com/santander_arena",
+        "organizerLinkName": "TPR",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -507,7 +600,9 @@
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
         "organizerInstagram": "https://www.instagram.com/tprlive.co/",
         "venueUrl": "https://www.lenovocenter.com/",
-        "venueInstagram": "https://www.instagram.com/LenovoCenter"
+        "venueInstagram": "https://www.instagram.com/LenovoCenter",
+        "organizerLinkName": "TPR",
+        "organizerWebsiteName": "Winter Jam"
       },
       "sources": [
         {
@@ -542,7 +637,11 @@
       "expectedVenue": "First Horizon Coliseum",
       "facts": {
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
-        "organizerInstagram": "https://www.instagram.com/tprlive.co/"
+        "organizerInstagram": "https://www.instagram.com/tprlive.co/",
+        "organizerLinkName": "TPR",
+        "venueUrl": "https://www.gsocomplex.com/venues/detail/first-horizon-coliseum",
+        "venueInstagram": "https://www.instagram.com/firsthorizoncoliseum/",
+        "organizerWebsiteName": "Winter Jam"
       },
       "sources": [
         {
@@ -554,6 +653,16 @@
           "url": "https://tprlive.co/",
           "reviewedAt": "2026-11-06",
           "evidence": "TPR official home page directly links instagram.com/tprlive.co/."
+        },
+        {
+          "url": "https://www.gsocomplex.com/venues/detail/first-horizon-coliseum",
+          "evidence": "Official Greensboro Complex venue page and terms explicitly identify First Horizon Coliseum and its official Instagram handle.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.gsocomplex.com/terms-conditions",
+          "evidence": "Official terms explicitly name First Horizon Coliseum social handles, including Instagram firsthorizoncoliseum.",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "NewSong / TPR"
@@ -569,7 +678,9 @@
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
         "organizerInstagram": "https://www.instagram.com/tprlive.co/",
         "venueUrl": "https://www.peoriaciviccenter.com/",
-        "venueInstagram": "https://www.instagram.com/peoriaciviccenter"
+        "venueInstagram": "https://www.instagram.com/peoriaciviccenter",
+        "organizerLinkName": "TPR",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -604,7 +715,11 @@
       "expectedVenue": "Great Southern Bank Arena",
       "facts": {
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
-        "organizerInstagram": "https://www.instagram.com/tprlive.co/"
+        "organizerInstagram": "https://www.instagram.com/tprlive.co/",
+        "organizerLinkName": "TPR",
+        "venueUrl": "https://greatsouthernbankarena.com/",
+        "venueInstagram": "https://www.instagram.com/GreatSouthernBankArena/",
+        "organizerWebsiteName": "Winter Jam"
       },
       "sources": [
         {
@@ -616,6 +731,20 @@
           "url": "https://tprlive.co/",
           "reviewedAt": "2026-11-06",
           "evidence": "TPR official home page directly links instagram.com/tprlive.co/."
+        },
+        {
+          "url": "https://greatsouthernbankarena.com/Connect.htm",
+          "evidence": "The arena’s dedicated Connect page directly links GreatSouthernBankArena. Its official FAQ gives 685 S. John Q. Hammons Parkway, Springfield. The generic Missouri State footer account was excluded.",
+          "status": 200,
+          "receipt": "venue-3-receipts/4971236b9df1.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://greatsouthernbankarena.com/Connect.htm",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/GreatSouthernBankArena/",
+          "status": 200,
+          "receipt": "venue-3-receipts/4971236b9df1.json",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "NewSong / TPR"
@@ -631,7 +760,9 @@
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
         "organizerInstagram": "https://www.instagram.com/tprlive.co/",
         "venueUrl": "https://familyarena.com/",
-        "venueInstagram": "https://www.instagram.com/thefamilyarena/"
+        "venueInstagram": "https://www.instagram.com/thefamilyarena/",
+        "organizerLinkName": "TPR",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -668,7 +799,9 @@
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
         "organizerInstagram": "https://www.instagram.com/tprlive.co/",
         "venueUrl": "https://www.landerscenter.com/",
-        "venueInstagram": "https://www.instagram.com/LandersCenter"
+        "venueInstagram": "https://www.instagram.com/LandersCenter",
+        "organizerLinkName": "TPR",
+        "organizerWebsiteName": "Winter Jam"
       },
       "sources": [
         {
@@ -705,7 +838,9 @@
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
         "organizerInstagram": "https://www.instagram.com/tprlive.co/",
         "venueUrl": "https://www.bonsecoursarena.com/",
-        "venueInstagram": "https://www.instagram.com/bswarena"
+        "venueInstagram": "https://www.instagram.com/bswarena",
+        "organizerLinkName": "TPR",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -742,7 +877,9 @@
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
         "organizerInstagram": "https://www.instagram.com/tprlive.co/",
         "venueUrl": "https://www.bjcc.org/",
-        "venueInstagram": "https://www.instagram.com/thebjcc/"
+        "venueInstagram": "https://www.instagram.com/thebjcc/",
+        "organizerLinkName": "TPR",
+        "organizerWebsiteName": "Winter Jam"
       },
       "sources": [
         {
@@ -777,7 +914,10 @@
       "expectedVenue": "USA Mitchell Center",
       "facts": {
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
-        "organizerInstagram": "https://www.instagram.com/tprlive.co/"
+        "organizerInstagram": "https://www.instagram.com/tprlive.co/",
+        "organizerLinkName": "TPR",
+        "venueUrl": "https://www.mitchellcenter.com/departments/mitchellcenter/mitchellcenter/",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -789,6 +929,13 @@
           "url": "https://tprlive.co/",
           "reviewedAt": "2026-11-06",
           "evidence": "TPR official home page directly links instagram.com/tprlive.co/."
+        },
+        {
+          "url": "https://www.mitchellcenter.com/departments/mitchellcenter/mitchellcenter/",
+          "evidence": "The University of South Alabama’s official Mitchell Center page identifies the Mobile arena at 5950 Old Shell Road.",
+          "status": 200,
+          "receipt": "venue-3-receipts/8231e1b878af.json",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "NewSong / TPR"
@@ -802,7 +949,11 @@
       "expectedVenue": "Allen County War Memorial Coliseum",
       "facts": {
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
-        "organizerInstagram": "https://www.instagram.com/tprlive.co/"
+        "organizerInstagram": "https://www.instagram.com/tprlive.co/",
+        "organizerLinkName": "TPR",
+        "venueUrl": "https://www.memorialcoliseum.com/",
+        "venueInstagram": "https://www.instagram.com/acwmc/",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -814,6 +965,11 @@
           "url": "https://tprlive.co/",
           "reviewedAt": "2026-11-06",
           "evidence": "TPR official home page directly links instagram.com/tprlive.co/."
+        },
+        {
+          "url": "https://www.memorialcoliseum.com/assets/doc/2024_EventResourceGuide-web-673cb74f7b.pdf",
+          "evidence": "Official Coliseum event resource guide identifies Fort Wayne arena and explicitly lists www.instagram.com/acwmc.",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "NewSong / TPR"
@@ -827,7 +983,10 @@
       "expectedVenue": "Thompson-Boling Arena at Food City Center",
       "facts": {
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
-        "organizerInstagram": "https://www.instagram.com/tprlive.co/"
+        "organizerInstagram": "https://www.instagram.com/tprlive.co/",
+        "organizerLinkName": "TPR",
+        "venueUrl": "https://utsports.com/sports/2025/8/18/thompson-boling-arena-at-food-city-center",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -839,6 +998,13 @@
           "url": "https://tprlive.co/",
           "reviewedAt": "2026-11-06",
           "evidence": "TPR official home page directly links instagram.com/tprlive.co/."
+        },
+        {
+          "url": "https://utsports.com/sports/2025/8/18/thompson-boling-arena-at-food-city-center",
+          "evidence": "University of Tennessee Athletics identifies its Thompson-Boling Arena at Food City Center in Knoxville. The exact Winter Jam source separately matches 1600 Phillip Fulmer Way.",
+          "status": 200,
+          "receipt": "venue-3-receipts/1a4c05adc054.json",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "NewSong / TPR"
@@ -852,7 +1018,11 @@
       "expectedVenue": "Gainbridge Fieldhouse",
       "facts": {
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
-        "organizerInstagram": "https://www.instagram.com/tprlive.co/"
+        "organizerInstagram": "https://www.instagram.com/tprlive.co/",
+        "organizerLinkName": "TPR",
+        "venueUrl": "https://www.gainbridgefieldhouse.com/",
+        "venueInstagram": "https://www.instagram.com/gainbridgefieldhouse/",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -864,6 +1034,11 @@
           "url": "https://tprlive.co/",
           "reviewedAt": "2026-11-06",
           "evidence": "TPR official home page directly links instagram.com/tprlive.co/."
+        },
+        {
+          "url": "https://www.gainbridgefieldhouse.com/",
+          "evidence": "Official arena site matches125 S Pennsylvania St Indianapolis and directly links Instagram; receipt305.",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "NewSong / TPR"
@@ -877,7 +1052,11 @@
       "expectedVenue": "Huntington Bank Arena",
       "facts": {
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
-        "organizerInstagram": "https://www.instagram.com/tprlive.co/"
+        "organizerInstagram": "https://www.instagram.com/tprlive.co/",
+        "organizerLinkName": "TPR",
+        "venueUrl": "https://www.hbarena.com/",
+        "venueInstagram": "https://www.instagram.com/hbarenacc/",
+        "organizerWebsiteName": "Winter Jam"
       },
       "sources": [
         {
@@ -889,6 +1068,11 @@
           "url": "https://tprlive.co/",
           "reviewedAt": "2026-11-06",
           "evidence": "TPR official home page directly links instagram.com/tprlive.co/."
+        },
+        {
+          "url": "https://www.hbarena.com/",
+          "evidence": "Official Huntington Bank Arena website confirms Tupelo venue, 375 E Main Street, and directly links this Instagram.",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "NewSong / TPR"
@@ -902,7 +1086,11 @@
       "expectedVenue": "INTRUST Bank Arena",
       "facts": {
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
-        "organizerInstagram": "https://www.instagram.com/tprlive.co/"
+        "organizerInstagram": "https://www.instagram.com/tprlive.co/",
+        "organizerLinkName": "TPR",
+        "venueUrl": "https://www.intrustbankarena.com/",
+        "venueInstagram": "https://www.instagram.com/intrustbankarena/",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -914,6 +1102,20 @@
           "url": "https://tprlive.co/",
           "reviewedAt": "2026-11-06",
           "evidence": "TPR official home page directly links instagram.com/tprlive.co/."
+        },
+        {
+          "url": "https://www.intrustbankarena.com/",
+          "evidence": "INTRUST Bank Arena’s own site gives 500 E. Waterman, Wichita, and directly links intrustbankarena.",
+          "status": 200,
+          "receipt": "venue-3-receipts/ef42d3ee1aef.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.intrustbankarena.com/",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/intrustbankarena/",
+          "status": 200,
+          "receipt": "venue-3-receipts/ef42d3ee1aef.json",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "NewSong / TPR"
@@ -927,7 +1129,11 @@
       "expectedVenue": "Paycom Center",
       "facts": {
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
-        "organizerInstagram": "https://www.instagram.com/tprlive.co/"
+        "organizerInstagram": "https://www.instagram.com/tprlive.co/",
+        "organizerLinkName": "TPR",
+        "venueUrl": "https://www.paycomcenter.com/",
+        "venueInstagram": "https://www.instagram.com/paycomcenter/",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -939,6 +1145,11 @@
           "url": "https://tprlive.co/",
           "reviewedAt": "2026-11-06",
           "evidence": "TPR official home page directly links instagram.com/tprlive.co/."
+        },
+        {
+          "url": "https://www.paycomcenter.com/interact-with-us/social-media",
+          "evidence": "Official arena social media page explicitly links Instagram and gives100 W Reno Ave Oklahoma City; receipt308.",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "NewSong / TPR"
@@ -952,7 +1163,11 @@
       "expectedVenue": "Brookshire Grocery Arena",
       "facts": {
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
-        "organizerInstagram": "https://www.instagram.com/tprlive.co/"
+        "organizerInstagram": "https://www.instagram.com/tprlive.co/",
+        "organizerLinkName": "TPR",
+        "venueUrl": "https://brookshiregroceryarena.com/",
+        "venueInstagram": "https://www.instagram.com/brookshirearena/",
+        "organizerWebsiteName": "Winter Jam"
       },
       "sources": [
         {
@@ -964,6 +1179,16 @@
           "url": "https://tprlive.co/",
           "reviewedAt": "2026-11-06",
           "evidence": "TPR official home page directly links instagram.com/tprlive.co/."
+        },
+        {
+          "url": "https://brookshiregroceryarena.com/",
+          "evidence": "Official arena site and its press releases confirm Bossier City and 2000 Brookshire Arena Drive. Instagram not yet verified; Legends Global is the operator, not a venue-specific account.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://brookshiregroceryarena.com/",
+          "evidence": "Official Brookshire Grocery Arena site directly links brookshirearena Instagram.",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "NewSong / TPR"
@@ -977,7 +1202,11 @@
       "expectedVenue": "Bojangles Coliseum",
       "facts": {
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
-        "organizerInstagram": "https://www.instagram.com/tprlive.co/"
+        "organizerInstagram": "https://www.instagram.com/tprlive.co/",
+        "organizerLinkName": "TPR",
+        "venueUrl": "https://www.boplex.com/our-venues/bojangles-coliseum",
+        "venueInstagram": "https://www.instagram.com/TheBOplex/",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -989,6 +1218,20 @@
           "url": "https://tprlive.co/",
           "reviewedAt": "2026-11-06",
           "evidence": "TPR official home page directly links instagram.com/tprlive.co/."
+        },
+        {
+          "url": "https://www.boplex.com/our-venues/bojangles-coliseum",
+          "evidence": "The BOplex’s official page identifies Bojangles Coliseum at 2700 East Independence Boulevard, Charlotte. Its directly linked TheBOplex account covers the venue complex.",
+          "status": 200,
+          "receipt": "venue-3-receipts/d335353ec237.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.boplex.com/our-venues/bojangles-coliseum",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/TheBOplex/",
+          "status": 200,
+          "receipt": "venue-3-receipts/d335353ec237.json",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "NewSong / TPR"
@@ -1002,7 +1245,11 @@
       "expectedVenue": "Bryce Jordan Center",
       "facts": {
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
-        "organizerInstagram": "https://www.instagram.com/tprlive.co/"
+        "organizerInstagram": "https://www.instagram.com/tprlive.co/",
+        "organizerLinkName": "TPR",
+        "venueUrl": "https://bjc.psu.edu/",
+        "venueInstagram": "https://www.instagram.com/jordancenter/",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -1014,6 +1261,20 @@
           "url": "https://tprlive.co/",
           "reviewedAt": "2026-11-06",
           "evidence": "TPR official home page directly links instagram.com/tprlive.co/."
+        },
+        {
+          "url": "https://bjc.psu.edu/about/connect-with-us",
+          "evidence": "Bryce Jordan Center at Penn State’s official Connect With Us page directly links jordancenter and identifies the exact arena.",
+          "status": 200,
+          "receipt": "venue-3-receipts/be5ca54abed1.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://bjc.psu.edu/about/connect-with-us",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/jordancenter/",
+          "status": 200,
+          "receipt": "venue-3-receipts/be5ca54abed1.json",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "NewSong / TPR"
@@ -1027,7 +1288,10 @@
       "expectedVenue": "George Gervin Game Above Center",
       "facts": {
         "eventInstagram": "https://www.instagram.com/winterjamtour/",
-        "organizerInstagram": "https://www.instagram.com/tprlive.co/"
+        "organizerInstagram": "https://www.instagram.com/tprlive.co/",
+        "organizerLinkName": "TPR",
+        "venueUrl": "https://emueagles.com/facilities/gervin-gameabove-center/1",
+        "organizerWebsiteName": "TPR"
       },
       "sources": [
         {
@@ -1039,6 +1303,11 @@
           "url": "https://tprlive.co/",
           "reviewedAt": "2026-11-06",
           "evidence": "TPR official home page directly links instagram.com/tprlive.co/."
+        },
+        {
+          "url": "https://emueagles.com/facilities/gervin-gameabove-center/1",
+          "evidence": "Official Eastern Michigan Athletics facility page identifies George Gervin GameAbove Center,799 N Hewitt Rd Ypsilanti. Browser receipt saved; footer contains sports-team Instagram profiles, not dedicated venue.",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "NewSong / TPR"
@@ -1052,13 +1321,20 @@
       "expectedVenue": "Oceans Church",
       "facts": {
         "organizerInstagram": "https://www.instagram.com/tprlive.co/",
-        "organizerWebsite": "https://tprlive.co/"
+        "organizerWebsite": "https://tprlive.co/",
+        "venueUrl": "https://www.oceanschurch.com/",
+        "venueInstagram": "https://www.instagram.com/oceanschurch/"
       },
       "sources": [
         {
           "url": "https://tprlive.co/",
           "reviewedAt": "2026-11-06",
           "evidence": "Official TPR website directly links its Instagram; existing exact event organizer is TPR."
+        },
+        {
+          "url": "https://www.oceanschurch.com/",
+          "evidence": "Official site lists Irvine campus9800 Muirlands Blvd and directly links Instagram; receipt279.",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "TPR."
@@ -1072,13 +1348,19 @@
       "expectedVenue": "DoubleTree by Hilton Stamford",
       "facts": {
         "organizerInstagram": "https://www.instagram.com/cogyd",
-        "organizerWebsite": "https://www.cogyd.org/mywinterfest"
+        "organizerWebsite": "https://www.cogyd.org/mywinterfest",
+        "venueUrl": "https://www.hilton.com/en/hotels/bdrsfdt-doubletree-stamford/"
       },
       "sources": [
         {
           "url": "https://www.cogyd.org/mywinterfest",
           "reviewedAt": "2026-11-06",
           "evidence": "Official Winterfest page directly links http://www.instagram.com/cogyd and labels the page @COGYD."
+        },
+        {
+          "url": "https://www.hilton.com/en/hotels/bdrsfdt-doubletree-stamford/",
+          "evidence": "Official Hilton property page identifies DoubleTree Stamford at1 First Stamford Place. Global doubletree Instagram is not a verified property-specific account.",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "Church of God Youth and Discipleship"
@@ -1092,13 +1374,29 @@
       "expectedVenue": "The Mansion Theatre",
       "facts": {
         "organizerInstagram": "https://www.instagram.com/cogyd",
-        "organizerWebsite": "https://www.cogyd.org/mywinterfest"
+        "organizerWebsite": "https://www.cogyd.org/mywinterfest",
+        "venueUrl": "https://www.themansiontheatre.com/",
+        "venueInstagram": "https://www.instagram.com/themansiontheatre/"
       },
       "sources": [
         {
           "url": "https://www.cogyd.org/mywinterfest",
           "reviewedAt": "2026-11-06",
           "evidence": "Official Winterfest page directly links http://www.instagram.com/cogyd and labels the page @COGYD."
+        },
+        {
+          "url": "https://www.themansiontheatre.com/",
+          "evidence": "The Mansion Theatre’s own site gives 189 Expressway Lane, Branson, and directly links themansiontheatre.",
+          "status": 200,
+          "receipt": "venue-3-receipts/f83641770780.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.themansiontheatre.com/",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/themansiontheatre/",
+          "status": 200,
+          "receipt": "venue-3-receipts/f83641770780.json",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "Church of God Youth and Discipleship"
@@ -1130,6 +1428,11 @@
           "url": "https://www.lecontecenter.com/event-info/faqs/",
           "reviewedAt": "2026-11-06",
           "evidence": "Official FAQ provides parking and visitor policies."
+        },
+        {
+          "url": "https://www.lecontecenter.com/",
+          "evidence": "Existing official LeConte Center website preserved. No separate venue Instagram verified.",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "Church of God Youth and Discipleship"
@@ -1142,7 +1445,11 @@
       "country": "US",
       "expectedVenue": "Vanguard University",
       "facts": {
-        "eventInstagram": "https://www.instagram.com/ignitionstudents/"
+        "eventInstagram": "https://www.instagram.com/ignitionstudents/",
+        "venueUrl": "https://www.vanguard.edu/",
+        "venueInstagram": "https://www.instagram.com/vanguardu/",
+        "organizerInstagram": "https://www.instagram.com/ignitionstudents/",
+        "organizerLinkName": "Ignition"
       },
       "sources": [
         {
@@ -1159,8 +1466,21 @@
           "url": "https://www.ignitionstudents.org/new-york",
           "reviewedAt": "2026-11-06",
           "evidence": "New York event page repeats the same Ignition profile."
+        },
+        {
+          "url": "https://www.vanguard.edu/",
+          "evidence": "University homepage identifies Costa Mesa campus and directly links its Instagram; saved primary HTML receipt 001.json.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.ignitionstudents.org/socal",
+          "evidence": "The exact SoCal conference site links the Ignition Instagram account and separately links Area Youth. Keep the full joint organizer credit; the selected profile belongs to Ignition.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/aab22a976354.json",
+          "reviewedAt": "2026-11-06"
         }
-      ]
+      ],
+      "expectedOrganizerName": "Ignition / Area Youth Ministry"
     },
     {
       "id": "bandsintown:1040595947",
@@ -1170,7 +1490,8 @@
       "country": "US",
       "expectedVenue": "TBD",
       "facts": {
-        "eventInstagram": "https://www.instagram.com/ignitionstudents/"
+        "eventInstagram": "https://www.instagram.com/ignitionstudents/",
+        "organizerInstagram": "https://www.instagram.com/ignitionstudents/"
       },
       "sources": [
         {
@@ -1187,8 +1508,23 @@
           "url": "https://www.ignitionstudents.org/new-york",
           "reviewedAt": "2026-11-06",
           "evidence": "New York event page repeats the same Ignition profile."
+        },
+        {
+          "url": "https://www.ignitionstudents.org/atlanta",
+          "evidence": "Official Atlanta conference page directly links ignitionstudents.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/67a513180303.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.ignitionstudents.org/new-york",
+          "evidence": "Official New York conference page directly links the same Ignition account. No venue or clock changes are proposed.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/93225a044fde.json",
+          "reviewedAt": "2026-11-06"
         }
-      ]
+      ],
+      "expectedOrganizerName": "Ignition Student Conference"
     },
     {
       "id": "bandsintown:1040597655",
@@ -1198,7 +1534,8 @@
       "country": "US",
       "expectedVenue": "TBD",
       "facts": {
-        "eventInstagram": "https://www.instagram.com/ignitionstudents/"
+        "eventInstagram": "https://www.instagram.com/ignitionstudents/",
+        "organizerInstagram": "https://www.instagram.com/ignitionstudents/"
       },
       "sources": [
         {
@@ -1215,8 +1552,23 @@
           "url": "https://www.ignitionstudents.org/new-york",
           "reviewedAt": "2026-11-06",
           "evidence": "New York event page repeats the same Ignition profile."
+        },
+        {
+          "url": "https://www.ignitionstudents.org/atlanta",
+          "evidence": "Official Atlanta conference page directly links ignitionstudents.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/67a513180303.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.ignitionstudents.org/new-york",
+          "evidence": "Official New York conference page directly links the same Ignition account. No venue or clock changes are proposed.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/93225a044fde.json",
+          "reviewedAt": "2026-11-06"
         }
-      ]
+      ],
+      "expectedOrganizerName": "Ignition Student Conference"
     },
     {
       "id": "manual:kb-strength-to-stand-january-pigeon-forge-2027-01-16",
@@ -1228,7 +1580,9 @@
       "facts": {
         "eventInstagram": "https://www.instagram.com/strengthtostand",
         "organizerWebsite": "https://www.strengthtostand.org/",
-        "venueUrl": "https://www.lecontecenter.com/"
+        "venueUrl": "https://www.lecontecenter.com/",
+        "organizerInstagram": "https://www.instagram.com/strengthtostand/",
+        "organizerLinkName": "Strength to Stand"
       },
       "sources": [
         {
@@ -1250,6 +1604,20 @@
           "url": "https://www.lecontecenter.com/event-info/faqs/",
           "reviewedAt": "2026-11-06",
           "evidence": "Official FAQ provides parking and visitor policies."
+        },
+        {
+          "url": "https://www.lecontecenter.com/",
+          "evidence": "The LeConte Center’s own site identifies the Pigeon Forge venue at 2986 Teaster Lane.",
+          "status": 200,
+          "receipt": "venue-3-receipts/d64b88fb7001.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.strengthtostand.org/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official Strength to Stand program operated by Scott Dawson Evangelistic Association directly links its program account. Same official program as the existing organizer website.",
+          "receipt": "root-source-receipts/1f1761f4d8da0c.json",
+          "status": 200
         }
       ],
       "expectedOrganizerName": "Scott Dawson Evangelistic Association"
@@ -1264,7 +1632,9 @@
       "facts": {
         "eventInstagram": "https://www.instagram.com/strengthtostand",
         "organizerWebsite": "https://www.strengthtostand.org/",
-        "venueUrl": "https://www.lecontecenter.com/"
+        "venueUrl": "https://www.lecontecenter.com/",
+        "organizerInstagram": "https://www.instagram.com/strengthtostand/",
+        "organizerLinkName": "Strength to Stand"
       },
       "sources": [
         {
@@ -1286,6 +1656,27 @@
           "url": "https://www.lecontecenter.com/event-info/faqs/",
           "reviewedAt": "2026-11-06",
           "evidence": "Official FAQ provides parking and visitor policies."
+        },
+        {
+          "url": "https://www.lecontecenter.com/",
+          "evidence": "The LeConte Center’s own site identifies the Pigeon Forge venue at 2986 Teaster Lane.",
+          "status": 200,
+          "receipt": "venue-3-receipts/d64b88fb7001.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.strengthtostand.org/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official conference organizer site directly links @strengthtostand.",
+          "receipt": "root-source-receipts/1f1761f4d8da0c.json",
+          "status": 200
+        },
+        {
+          "url": "https://www.strengthtostand.org/dec-registration",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official conference organizer site directly links @strengthtostand.",
+          "receipt": "root-source-receipts/1cd6922c5ae1a2.json",
+          "status": 200
         }
       ],
       "expectedOrganizerName": "Strength to Stand / Scott Dawson Evangelistic Association"
@@ -1301,7 +1692,9 @@
         "eventInstagram": "https://www.instagram.com/flavorfest/",
         "organizerWebsite": "https://www.flavorfest.org/",
         "venueUrl": "https://www.crossoverchurch.org/",
-        "venueInstagram": "https://www.instagram.com/crossover813"
+        "venueInstagram": "https://www.instagram.com/crossover813",
+        "organizerInstagram": "https://www.instagram.com/flavorfest/",
+        "organizerLinkName": "Flavor Fest"
       },
       "sources": [
         {
@@ -1318,6 +1711,13 @@
           "url": "https://www.crossoverchurch.org/",
           "reviewedAt": "2026-11-06",
           "evidence": "Official Crossover Church website links instagram.com/crossover813."
+        },
+        {
+          "url": "https://www.flavorfest.org/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Retained primary-source proof in verified-show-links.json: official Squarespace socialAccounts profileUrl links @flavorfest. Current homepage confirms festival identity; this is the festival co-organizer account, not a separate Crossover Church account.",
+          "receipt": "root-source-receipts/2bca0670c4fa80.json",
+          "status": 200
         }
       ],
       "expectedOrganizerName": "Flavor Fest / Crossover Church"
@@ -1333,7 +1733,9 @@
         "eventInstagram": "https://www.instagram.com/flavorfest/",
         "organizerWebsite": "https://www.flavorfest.org/",
         "venueUrl": "https://www.crossoverchurch.org/",
-        "venueInstagram": "https://www.instagram.com/crossover813"
+        "venueInstagram": "https://www.instagram.com/crossover813",
+        "organizerInstagram": "https://www.instagram.com/flavorfest/",
+        "organizerLinkName": "Flavor Fest"
       },
       "sources": [
         {
@@ -1350,6 +1752,13 @@
           "url": "https://www.crossoverchurch.org/",
           "reviewedAt": "2026-11-06",
           "evidence": "Official Crossover Church website links instagram.com/crossover813."
+        },
+        {
+          "url": "https://www.flavorfest.org/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Retained primary-source proof in verified-show-links.json: official Squarespace socialAccounts profileUrl links @flavorfest. Current homepage confirms festival identity; this is the festival co-organizer account, not a separate Crossover Church account.",
+          "receipt": "root-source-receipts/2bca0670c4fa80.json",
+          "status": 200
         }
       ],
       "expectedOrganizerName": "Flavor Fest / Crossover Church"
@@ -1363,7 +1772,10 @@
       "expectedVenue": "Skate Reflections",
       "facts": {
         "venueUrl": "https://www.skatereflections.com/",
-        "venueInstagram": "https://www.instagram.com/skatereflections/"
+        "venueInstagram": "https://www.instagram.com/skatereflections/",
+        "organizerWebsite": "https://www.thejoyfulnoize.shop/",
+        "organizerInstagram": "https://www.instagram.com/thejoyfulnoize/",
+        "organizerLinkName": "The Joyful Noize"
       },
       "sources": [
         {
@@ -1375,8 +1787,29 @@
           "url": "https://www.skatereflections.com/joyful-noize/",
           "reviewedAt": "2026-11-06",
           "evidence": "Official venue page hosts Praise N Skate; event-specific text also contains a singular skatereflection link."
+        },
+        {
+          "url": "https://www.skatereflections.com/joyful-noize/",
+          "evidence": "The co-organizer’s own page identifies Joyful Noize and the Praise ’N’ Skate collaboration.",
+          "status": 200,
+          "receipt": "root-source-receipts/4fac7e4271cc32.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.thejoyfulnoize.shop/",
+          "evidence": "Primary Joyful Noize site identifies the Orlando Christian event organization led by Bryce and Imani Thompson.",
+          "status": "web-tool or retained verified source; see evidence qualification",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.ournextchurch.com/unfltrd",
+          "evidence": "A current official partner event explicitly labels The Joyful Noize and links its thejoyfulnoize Instagram profile; other performer links are not used for the church.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/42495cedfa7a.json",
+          "reviewedAt": "2026-11-06"
         }
-      ]
+      ],
+      "expectedOrganizerName": "The Joyful Noize / Skate Reflections"
     },
     {
       "id": "manual:praise-n-skate-kissimmee-2027-01-07",
@@ -1387,7 +1820,10 @@
       "expectedVenue": "Skate Reflections",
       "facts": {
         "venueUrl": "https://www.skatereflections.com/",
-        "venueInstagram": "https://www.instagram.com/skatereflections/"
+        "venueInstagram": "https://www.instagram.com/skatereflections/",
+        "organizerWebsite": "https://www.thejoyfulnoize.shop/",
+        "organizerInstagram": "https://www.instagram.com/thejoyfulnoize/",
+        "organizerLinkName": "The Joyful Noize"
       },
       "sources": [
         {
@@ -1399,8 +1835,29 @@
           "url": "https://www.skatereflections.com/joyful-noize/",
           "reviewedAt": "2026-11-06",
           "evidence": "Official venue page hosts Praise N Skate; event-specific text also contains a singular skatereflection link."
+        },
+        {
+          "url": "https://www.skatereflections.com/joyful-noize/",
+          "evidence": "The co-organizer’s own page identifies Joyful Noize and the Praise ’N’ Skate collaboration.",
+          "status": 200,
+          "receipt": "root-source-receipts/4fac7e4271cc32.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.thejoyfulnoize.shop/",
+          "evidence": "Primary Joyful Noize site identifies the Orlando Christian event organization led by Bryce and Imani Thompson.",
+          "status": "web-tool or retained verified source; see evidence qualification",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.ournextchurch.com/unfltrd",
+          "evidence": "A current official partner event explicitly labels The Joyful Noize and links its thejoyfulnoize Instagram profile; other performer links are not used for the church.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/42495cedfa7a.json",
+          "reviewedAt": "2026-11-06"
         }
-      ]
+      ],
+      "expectedOrganizerName": "The Joyful Noize / Skate Reflections"
     },
     {
       "id": "manual:ignite-and-unite-tour-jacksonville-2026-11-07",
@@ -1411,7 +1868,10 @@
       "expectedVenue": "Murray Hill Theatre",
       "facts": {
         "venueUrl": "https://murrayhilltheatre.com/",
-        "venueInstagram": "https://www.instagram.com/murrayhilltheatre/"
+        "venueInstagram": "https://www.instagram.com/murrayhilltheatre/",
+        "organizerWebsite": "https://www.infiltratetheworld.org/infiltrate-records",
+        "organizerInstagram": "https://www.instagram.com/infiltraterecords/",
+        "organizerLinkName": "Infiltrate Records"
       },
       "sources": [
         {
@@ -1423,8 +1883,29 @@
           "url": "https://murrayhilltheatre.com/faq/",
           "reviewedAt": "2026-11-06",
           "evidence": "FAQ repeats official social link and publishes accessibility / box-office information."
+        },
+        {
+          "url": "https://www.infiltratetheworld.org/",
+          "evidence": "The ministry website includes an Infiltrate Records section and directly links the infiltraterecords Instagram profile.",
+          "status": 200,
+          "receipt": "root-source-receipts/7ee064d83a5699.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.infiltratetheworld.org/infiltrate-records",
+          "evidence": "Primary label page identifies Infiltrate Records as the ministry’s Christian/gospel record label, with Jacksonville identity.",
+          "status": "web-tool or retained verified source; see evidence qualification",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://murrayhilltheatre.com/",
+          "evidence": "The co-organizer’s official site lists the exact November 7 Unity in the Community event and directly links murrayhilltheatre on Instagram.",
+          "status": 200,
+          "receipt": "root-source-receipts/f14c873ac30221.json",
+          "reviewedAt": "2026-11-06"
         }
-      ]
+      ],
+      "expectedOrganizerName": "Infiltrate Records / Murray Hill Theatre"
     },
     {
       "id": "manual:kelo-worship-after-christmas-jacksonville-2026",
@@ -1435,7 +1916,10 @@
       "expectedVenue": "Murray Hill Theatre",
       "facts": {
         "venueUrl": "https://murrayhilltheatre.com/",
-        "venueInstagram": "https://www.instagram.com/murrayhilltheatre/"
+        "venueInstagram": "https://www.instagram.com/murrayhilltheatre/",
+        "organizerWebsite": "https://murrayhilltheatre.com/",
+        "organizerInstagram": "https://www.instagram.com/murrayhilltheatre/",
+        "organizerLinkName": "Murray Hill Theatre"
       },
       "sources": [
         {
@@ -1447,8 +1931,23 @@
           "url": "https://murrayhilltheatre.com/faq/",
           "reviewedAt": "2026-11-06",
           "evidence": "FAQ repeats official social link and publishes accessibility / box-office information."
+        },
+        {
+          "url": "https://murrayhilltheatre.com/event/kelo-cho-presents-the-worship-after-christmas/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Exact official event and venue/co-host homepage directly link Murray Hill Theatre profile. Links identify this co-host, not Kelo Cho’s separate artist account.",
+          "receipt": "root-source-receipts/b5dba4c591b9c8.json",
+          "status": 200
+        },
+        {
+          "url": "https://murrayhilltheatre.com/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Exact official event and venue/co-host homepage directly link Murray Hill Theatre profile. Links identify this co-host, not Kelo Cho’s separate artist account.",
+          "receipt": "root-source-receipts/f14c873ac30221.json",
+          "status": 200
         }
-      ]
+      ],
+      "expectedOrganizerName": "Kelo Cho / Murray Hill Theatre"
     },
     {
       "id": "manual:kb-skema-boy-diamondback-belleville-2026",
@@ -1459,15 +1958,26 @@
       "expectedVenue": "Diamondback Music Hall",
       "facts": {
         "venueUrl": "https://www.diamondbackmusichall.com/",
-        "venueInstagram": "https://www.instagram.com/diamondbackmusichall/"
+        "venueInstagram": "https://www.instagram.com/diamondbackmusichall/",
+        "organizerWebsite": "https://www.diamondbackmusichall.com/",
+        "organizerInstagram": "https://www.instagram.com/diamondbackmusichall/",
+        "organizerLinkName": "Diamondback Music Hall"
       },
       "sources": [
         {
           "url": "https://www.diamondbackmusichall.com/",
           "reviewedAt": "2026-11-06",
           "evidence": "Official venue home page names Belleville, lists both Rave Jesus and KB shows, and directly links DiamondBack Music Hall - Instagram Follow."
+        },
+        {
+          "url": "https://www.diamondbackmusichall.com/tm-event/kb/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Exact official show page links Diamondback Music Hall website and Instagram. These links identify the named co-host only; no Pinnacle Events Group account was independently established.",
+          "receipt": "root-source-receipts/d144139a48d80a.json",
+          "status": 200
         }
-      ]
+      ],
+      "expectedOrganizerName": "Pinnacle Events Group and Diamondback Music Hall"
     },
     {
       "id": "bandsintown:109072793",
@@ -1478,15 +1988,26 @@
       "expectedVenue": "Diamondback Music Hall",
       "facts": {
         "venueUrl": "https://www.diamondbackmusichall.com/",
-        "venueInstagram": "https://www.instagram.com/diamondbackmusichall/"
+        "venueInstagram": "https://www.instagram.com/diamondbackmusichall/",
+        "organizerWebsite": "https://www.diamondbackmusichall.com/",
+        "organizerInstagram": "https://www.instagram.com/diamondbackmusichall/",
+        "organizerLinkName": "Diamondback Music Hall"
       },
       "sources": [
         {
           "url": "https://www.diamondbackmusichall.com/",
           "reviewedAt": "2026-11-06",
           "evidence": "Official venue home page names Belleville, lists both Rave Jesus and KB shows, and directly links DiamondBack Music Hall - Instagram Follow."
+        },
+        {
+          "url": "https://www.diamondbackmusichall.com/tm-event/rave-jesus-rave-revival-tour-2/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Exact official show page links Diamondback Music Hall website and Instagram. These links identify the named co-host only; no Pinnacle Events Group account was independently established.",
+          "receipt": "root-source-receipts/c060866284a598.json",
+          "status": 200
         }
-      ]
+      ],
+      "expectedOrganizerName": "Pinnacle Events Group / Diamondback Music Hall"
     },
     {
       "id": "manual:hulvey-xtreme-winter-gatlinburg-2026-12-30",
@@ -1498,7 +2019,8 @@
       "facts": {
         "eventInstagram": "https://www.instagram.com/xtreme_conferences/",
         "organizerWebsite": "https://xtremeconferences.com/",
-        "venueUrl": "https://www.gatlinburg.com/meetings/the-convention-center/"
+        "venueUrl": "https://www.gatlinburg.com/meetings/the-convention-center/",
+        "organizerInstagram": "https://www.instagram.com/xtreme_conferences/"
       },
       "sources": [
         {
@@ -1515,6 +2037,18 @@
           "url": "https://www.gatlinburg.com/meetings/the-convention-center/",
           "reviewedAt": "2026-11-06",
           "evidence": "Official Gatlinburg CVB Convention Center page describes this venue."
+        },
+        {
+          "url": "https://www.gatlinburg.com/meetings/the-convention-center/",
+          "evidence": "Existing official convention-center website preserved. No separate venue Instagram verified; did not substitute the general tourism account.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://xtremeconferences.com/winter/schedules.html",
+          "evidence": "The official winter conference schedules page confirms Xtreme identity and directly links xtreme_conferences on Instagram.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/df769519b603.json",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "Xtreme Conferences"
@@ -1529,7 +2063,8 @@
       "facts": {
         "eventInstagram": "https://www.instagram.com/xtreme_conferences/",
         "organizerWebsite": "https://xtremeconferences.com/",
-        "venueUrl": "https://www.gatlinburg.com/meetings/the-convention-center/"
+        "venueUrl": "https://www.gatlinburg.com/meetings/the-convention-center/",
+        "organizerInstagram": "https://www.instagram.com/xtreme_conferences/"
       },
       "sources": [
         {
@@ -1546,6 +2081,18 @@
           "url": "https://www.gatlinburg.com/meetings/the-convention-center/",
           "reviewedAt": "2026-11-06",
           "evidence": "Official Gatlinburg CVB Convention Center page describes this venue."
+        },
+        {
+          "url": "https://www.gatlinburg.com/meetings/the-convention-center/",
+          "evidence": "Existing official convention-center website preserved. No separate venue Instagram verified; did not substitute the general tourism account.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://xtremeconferences.com/winter/schedules.html",
+          "evidence": "The official winter conference schedules page confirms Xtreme identity and directly links xtreme_conferences on Instagram.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/df769519b603.json",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "Xtreme Conferences"
@@ -1559,13 +2106,30 @@
       "expectedVenue": "The Park of East Texas",
       "facts": {
         "eventInstagram": "https://www.instagram.com/rockthepines",
-        "organizerWebsite": "https://rockthepines.org/"
+        "organizerWebsite": "https://rockthepines.org/",
+        "venueUrl": "https://www.theparkofetx.com/",
+        "organizerInstagram": "https://www.instagram.com/rockthepines/",
+        "organizerLinkName": "Rock The Pines"
       },
       "sources": [
         {
           "url": "https://rockthepines.org/",
           "reviewedAt": "2026-11-06",
           "evidence": "Official site identifies 2027 festival presented by KVNE and directly links rockthepines Instagram."
+        },
+        {
+          "url": "https://www.theparkofetx.com/contact-us",
+          "evidence": "The Park of East Texas’ own contact page gives 204 Patton Lane, Tyler, Texas.",
+          "status": 200,
+          "receipt": "venue-3-receipts/607cc2da9531.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://rockthepines.org/",
+          "evidence": "Official festival website directly links rockthepines on Instagram. Links identify the festival and do not imply it is the whole KVNE organization.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/c59fef05530b.json",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "Rock The Pines / KVNE"
@@ -1598,7 +2162,9 @@
       "expectedVenue": "Chapel — Midwestern Baptist Theological Seminary & Spurgeon College",
       "facts": {
         "organizerInstagram": "https://www.instagram.com/spurgeon_college/",
-        "organizerWebsite": "https://spurgeoncollege.com/"
+        "organizerWebsite": "https://spurgeoncollege.com/",
+        "venueUrl": "https://www.mbts.edu/",
+        "venueInstagram": "https://www.instagram.com/midwesternseminary/"
       },
       "sources": [
         {
@@ -1610,6 +2176,11 @@
           "url": "https://spurgeoncollege.com/",
           "reviewedAt": "2026-11-06",
           "evidence": "Official college home page directly links spurgeon_college Instagram via social icons and hashtag links."
+        },
+        {
+          "url": "https://www.mbts.edu/about/contact-information/",
+          "evidence": "Official seminary contact page gives5001 North Oak Trafficway Kansas City and explicitly links its Instagram. Venue is campus chapel; source also links Ready Conference.",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "Spurgeon College"
@@ -1622,13 +2193,27 @@
       "country": "US",
       "expectedVenue": "Corner Gate",
       "facts": {
-        "organizerWebsite": "https://www.igniteandunitetour.com/"
+        "organizerWebsite": "https://www.igniteandunitetour.com/",
+        "venueUrl": "https://cornergatecoffeehouse.com/",
+        "venueInstagram": "https://www.instagram.com/cornergatecoffeehouse/"
       },
       "sources": [
         {
           "url": "https://www.igniteandunitetour.com/",
           "reviewedAt": "2026-11-06",
           "evidence": "Official tour website lists DeLand, Daytona Beach and Plantation stops and names Ignite and Unite Tour."
+        },
+        {
+          "url": "https://cornergatecoffeehouse.com/",
+          "evidence": "Official site gives330 E New York Ave DeLand and directly links Instagram; receipt043.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.igniteandunitetour.com/",
+          "evidence": "Official tour site lists the same Florida tour stops and official registration destinations. No organizer Instagram anchor was found.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/209fdfd7a169.json",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "Ignite and Unite Tour"
@@ -1641,13 +2226,26 @@
       "country": "US",
       "expectedVenue": "The Porch",
       "facts": {
-        "organizerWebsite": "https://www.igniteandunitetour.com/"
+        "organizerWebsite": "https://www.igniteandunitetour.com/",
+        "venueUrl": "https://theporchhealthbar.com/"
       },
       "sources": [
         {
           "url": "https://www.igniteandunitetour.com/",
           "reviewedAt": "2026-11-06",
           "evidence": "Official tour website lists DeLand, Daytona Beach and Plantation stops and names Ignite and Unite Tour."
+        },
+        {
+          "url": "https://theporchhealthbar.com/",
+          "evidence": "Official website identifies The Porch Health Bar at 212 South Beach Street, Daytona Beach. Instagram footer and structured sameAs disagree; withheld pending resolution.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.igniteandunitetour.com/",
+          "evidence": "Official tour site lists the same Florida tour stops and official registration destinations. No organizer Instagram anchor was found.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/209fdfd7a169.json",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "Ignite and Unite Tour"
@@ -1660,13 +2258,28 @@
       "country": "US",
       "expectedVenue": "First Baptist Church of Plantation",
       "facts": {
-        "organizerWebsite": "https://www.igniteandunitetour.com/"
+        "organizerWebsite": "https://www.igniteandunitetour.com/",
+        "venueUrl": "https://fbcplantation.org/"
       },
       "sources": [
         {
           "url": "https://www.igniteandunitetour.com/",
           "reviewedAt": "2026-11-06",
           "evidence": "Official tour website lists DeLand, Daytona Beach and Plantation stops and names Ignite and Unite Tour."
+        },
+        {
+          "url": "https://fbcplantation.org/",
+          "evidence": "Church site gives First Baptist Church of Plantation, 150 NW 46th Avenue, Plantation.",
+          "status": 200,
+          "receipt": "venue-3-receipts/040954febd5a.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.igniteandunitetour.com/",
+          "evidence": "Official tour site lists the same Florida tour stops and official registration destinations. No organizer Instagram anchor was found.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/209fdfd7a169.json",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedOrganizerName": "Ignite and Unite Tour"
@@ -1759,7 +2372,10 @@
       "country": "US",
       "expectedVenue": "The Plaza Live",
       "facts": {
-        "venueUrl": "https://www.plazaliveorlando.org/"
+        "venueUrl": "https://www.plazaliveorlando.org/",
+        "venueInstagram": "https://www.instagram.com/plazaliveorlando/",
+        "organizerWebsite": "https://www.aegpresents.com/",
+        "organizerInstagram": "https://www.instagram.com/aegpresents/"
       },
       "sources": [
         {
@@ -1771,8 +2387,33 @@
           "url": "https://www.plazaliveorlando.org/faqs",
           "evidence": "See combined evidence below.",
           "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.plazaliveorlando.org/shows/alex-jean-27-nov",
+          "evidence": "The Plaza Live’s official site lists the exact Alex Jean November 27 show and directly links plazaliveorlando.",
+          "status": 200,
+          "receipt": "venue-3-receipts/143f992f600b.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.plazaliveorlando.org/shows/alex-jean-27-nov",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/plazaliveorlando/",
+          "status": 200,
+          "receipt": "venue-3-receipts/143f992f600b.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.axs.com/events/1632882/alex-jean-tickets",
+          "evidence": "Official AXS listing for Alex Jean, The Plaza Live, Nov. 27, 2026 explicitly credits AEG Presents.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.aegpresents.com/",
+          "evidence": "Official promoter website directly links Instagram @aegpresents. This organizer is verified for the Orlando stop only, not inferred across the tour.",
+          "reviewedAt": "2026-11-06"
         }
-      ]
+      ],
+      "expectedOrganizerName": "AEG Presents"
     },
     {
       "id": "manual:trnscnd-va-fredericksburg-2026",
@@ -1782,13 +2423,28 @@
       "country": "US",
       "expectedVenue": "Calvary Chapel Fredericksburg",
       "facts": {
-        "organizerInstagram": "https://www.instagram.com/othrwrldly.x/"
+        "organizerInstagram": "https://www.instagram.com/othrwrldly.x/",
+        "venueUrl": "https://ccfred.org/",
+        "venueInstagram": "https://www.instagram.com/calvarychapelfredericksburg/",
+        "organizerWebsite": "https://othrwrldly.com/"
       },
       "sources": [
         {
           "url": "https://othrwrldly.com/trnscnd",
           "evidence": "Official event describes purpose, evening concert/vendor experience, workshop program and included lunch; footer directly links organizer Instagram. Do not treat workshop speakers as musical performers.",
           "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://ccfred.org/",
+          "evidence": "Official church site gives3625 Latimers Knoll Ct Fredericksburg and directly links Instagram; receipt079.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://othrwrldly.com/trnscnd",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official TRNSCND event site establishes OTHRWRLDLY as host; existing verified Instagram retained.",
+          "receipt": "root-source-receipts/0909cb85407cc7.json",
+          "status": 200
         }
       ],
       "expectedOrganizerName": "OTHRWRLDLY."
@@ -1802,15 +2458,25 @@
       "expectedVenue": "Lost Lake Lounge",
       "facts": {
         "venueUrl": "https://lost-lake.com/",
-        "venueInstagram": "https://www.instagram.com/lostlakedenver/"
+        "venueInstagram": "https://www.instagram.com/lostlakedenver/",
+        "organizerWebsite": "https://lost-lake.com/",
+        "organizerInstagram": "https://www.instagram.com/lostlakedenver/"
       },
       "sources": [
         {
           "url": "https://lost-lake.com/event/zauntee-w-skema-boy/lost-lake/denver-colorado/",
           "evidence": "Exact date-specific venue page names both artists, provides album description and VIP package,will-call and refund policies. Existing guardian age rule, doors and start match. Official footer Instagram href must be checked against snapshot before importing link.",
           "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://lost-lake.com/event/zauntee-w-skema-boy/lost-lake/denver-colorado/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Exact official event page directly links @lostlakedenver.",
+          "receipt": "root-source-receipts/ee8cad2ec7dc91.json",
+          "status": 200
         }
-      ]
+      ],
+      "expectedOrganizerName": "Lost Lake"
     },
     {
       "id": "manual:miles-minnick-christlike-university-jacksonville-2026-11-07",
@@ -1843,6 +2509,2875 @@
           "reviewedAt": "2026-11-06"
         }
       ]
+    },
+    {
+      "id": "manual:chosen-next-gen-conference-bronx-2026",
+      "startDate": "2026-11-07",
+      "city": "Bronx",
+      "state": "NY",
+      "country": "US",
+      "expectedVenue": "One Way Church",
+      "facts": {
+        "venueUrl": "https://onewaychurchthepoint-378656.churchcenter.com/home",
+        "venueInstagram": "https://www.instagram.com/onewaychurchthepoint/",
+        "organizerInstagram": "https://www.instagram.com/chosenconf/"
+      },
+      "sources": [
+        {
+          "url": "https://onewaychurchthepoint-378656.churchcenter.com/home",
+          "evidence": "Official Church Center homepage identifies One Way Church The Point, Bronx Garrison Ave, links matching Instagram and TikTok handle ending1112. Browser receipt saved.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.instagram.com/p/DfIH5VRCe2k/",
+          "evidence": "Production manual-event provenance records the owner-selected October 30 official carousel as coauthored by chosenconf and fcc.inc_. chosenconf is the conference account. Fresh post/profile requests did not expose readable content.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/85a9e7bc3cb1.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "CHOSEN Next Gen Conference"
+    },
+    {
+      "id": "ticketmaster:vvG1zZ_ClQMRrF",
+      "startDate": "2026-11-08",
+      "city": "Atlanta",
+      "state": "GA",
+      "country": "US",
+      "expectedVenue": "The Masquerade - Altar",
+      "facts": {
+        "venueUrl": "https://www.masqueradeatlanta.com/",
+        "venueInstagram": "https://www.instagram.com/masquerade_atl/",
+        "organizerWebsite": "https://www.masqueradeatlanta.com/",
+        "organizerInstagram": "https://www.instagram.com/masquerade_atl/"
+      },
+      "sources": [
+        {
+          "url": "https://www.masqueradeatlanta.com/",
+          "evidence": "Official site lists exact Zauntee show and directly links Instagram; contact page gives50 Lower Alabama Street Atlanta. Browser receipt saved.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.masqueradeatlanta.com/events/zauntee/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Exact show on the official venue/promoter website; own footer links this profile, separately from artist links.",
+          "receipt": "root-source-receipts/45c8e8368a96f2.json",
+          "status": 200
+        }
+      ],
+      "expectedOrganizerName": "The Masquerade"
+    },
+    {
+      "id": "supplemental:skema-boy-2026-11-10-jacksonville-fl",
+      "startDate": "2026-11-10",
+      "city": "Jacksonville",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "Jack Rabbits",
+      "facts": {
+        "venueUrl": "https://jaxlive.com/venue/jack-rabbits/",
+        "venueInstagram": "https://www.instagram.com/jackrabbitslive/"
+      },
+      "sources": [
+        {
+          "url": "https://linktr.ee/jackrabbits",
+          "evidence": "Official venue page matches1528 Hendricks Ave Jacksonville. Official Linktree links jaxlive calendar and jackrabbitslive Instagram.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": ""
+    },
+    {
+      "id": "manual:musiq-in-the-park-concord-2026-11-13",
+      "startDate": "2026-11-13",
+      "city": "Concord",
+      "state": "CA",
+      "country": "US",
+      "expectedVenue": "Todos Santos Plaza",
+      "facts": {
+        "venueUrl": "https://www.cityofconcord.org/Facilities/Facility/Details/Todos-Santos-Plaza-36"
+      },
+      "sources": [
+        {
+          "url": "https://www.cityofconcord.org/Facilities/Facility/Details/Todos-Santos-Plaza-36",
+          "evidence": "Municipal facilities directory identifies Todos Santos Plaza, Willow Pass Road and Grant Street, Concord. No dedicated plaza Instagram verified.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": ""
+    },
+    {
+      "id": "manual:ant-lee-light-up-the-city-sarnia-2026-11-13",
+      "startDate": "2026-11-13",
+      "city": "Sarnia",
+      "state": "ON",
+      "country": "CA",
+      "expectedVenue": "Bethel Sarnia Pentecostal Church",
+      "facts": {
+        "venueUrl": "https://www.bethelsarnia.com/",
+        "venueInstagram": "https://www.instagram.com/bethelsarnia/",
+        "organizerInstagram": "https://www.instagram.com/antleejr/",
+        "organizerLinkName": "Ant Lee — More Than Us"
+      },
+      "sources": [
+        {
+          "url": "https://www.bethelsarnia.com/",
+          "evidence": "Official site matches1565 London Line,Sarnia and directly links Instagram; receipt060.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://events.ticketleap.com/tickets/morethanus/light-up-the-city-sarnia",
+          "evidence": "Official Ticketleap seller_organization and contactInfo.name both explicitly say More Than Us. The same official organizer contactInfo.social.instagram field points to https://instagram.com/antleejr. Website field empty.",
+          "receipt": "root-source-receipts/7e7447d8f2d2b0.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "More Than Us"
+    },
+    {
+      "id": "manual:pull-up-and-praise-pickering-2026-11-13",
+      "startDate": "2026-11-13",
+      "city": "Pickering",
+      "state": "ON",
+      "country": "CA",
+      "expectedVenue": "Remarkable Event Centre",
+      "facts": {
+        "venueUrl": "https://www.remarkableeventcentre.com/",
+        "venueInstagram": "https://www.instagram.com/remarkableeventcentre/"
+      },
+      "sources": [
+        {
+          "url": "https://www.remarkableeventcentre.com/",
+          "evidence": "Official site matches1734 Orangebrook Court Unit2,Pickering and directly links Instagram; receipt066. Distinct from Pickering Event Centre at another address.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Shawn Simpson / Heavyweight Fest"
+    },
+    {
+      "id": "manual:breaking-the-silence-dalton-2026-11-14",
+      "startDate": "2026-11-14",
+      "city": "Dalton",
+      "state": "GA",
+      "country": "US",
+      "expectedVenue": "North Georgia Ag Fairgrounds",
+      "facts": {
+        "venueUrl": "https://www.northgafair.com/",
+        "venueInstagram": "https://www.instagram.com/northgaagfair/"
+      },
+      "sources": [
+        {
+          "url": "https://www.northgafair.com/",
+          "evidence": "Official North Georgia Agricultural Fair site matches500 Legion Drive Dalton and directly links Instagram; receipt072.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": ""
+    },
+    {
+      "id": "ty-brasel-outlandish-fest-fort-worth-2026",
+      "startDate": "2026-11-14",
+      "city": "Fort Worth",
+      "state": "TX",
+      "country": "US",
+      "expectedVenue": "The Rail",
+      "facts": {
+        "venueUrl": "https://therailclub.net/",
+        "venueInstagram": "https://www.instagram.com/therailtx/",
+        "organizerWebsite": "https://www.outlandishlive.org/",
+        "organizerInstagram": "https://www.instagram.com/outlandishlive/"
+      },
+      "sources": [
+        {
+          "url": "https://therailclub.net/",
+          "evidence": "Official current website lists exact Outlandish Fest Nov14 at3101 Joyce Dr,Fort Worth and directly links Instagram. Browser receipt saved; reject outdated railclublive.com.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official event page identifies organizer and directly links @outlandishlive.",
+          "receipt": "root-source-receipts/f5b0e1d438e92f.json",
+          "status": 200
+        }
+      ],
+      "expectedOrganizerName": "Outlandish Live"
+    },
+    {
+      "id": "marv-de-la-cruz-la-popup-2026-11-14",
+      "startDate": "2026-11-14",
+      "city": "Los Angeles",
+      "state": "CA",
+      "country": "US",
+      "expectedVenue": "1626 N La Brea Ave",
+      "facts": {
+        "venueUrl": "https://www.radianceinternational.org/church",
+        "venueInstagram": "https://www.instagram.com/radianceintl/"
+      },
+      "sources": [
+        {
+          "url": "https://www.radianceinternational.org/church",
+          "evidence": "Official Radiance church page states1626 N La Brea Ave Los Angeles and links Instagram. The event lists that exact address; preserve current address-only venue label.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "NiteLight x Make Heaven Crowded"
+    },
+    {
+      "id": "manual:winistry-night-concord-2026-11-15",
+      "startDate": "2026-11-15",
+      "city": "Concord",
+      "state": "NC",
+      "country": "US",
+      "expectedVenue": "Dave & Buster's Concord",
+      "facts": {
+        "venueUrl": "https://www.daveandbusters.com/us/en/about/locations/concord/",
+        "organizerWebsite": "https://mariomckennon.com/",
+        "organizerInstagram": "https://www.instagram.com/riomckennon/"
+      },
+      "sources": [
+        {
+          "url": "https://www.daveandbusters.com/us/en/about/locations/concord/",
+          "evidence": "Official location page matches8361 Concord Mills Boulevard. Only national daveandbusters Instagram appears in footer; dedicated Concord account not verified.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.eventbrite.com/o/121837946063",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official Eventbrite organizer links mariomckennon.com and @riomckennon; his own website confirms that exact Instagram profile.",
+          "receipt": "root-source-receipts/964094b9d1a6ab.json",
+          "status": 200
+        },
+        {
+          "url": "https://mariomckennon.com/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official Eventbrite organizer links mariomckennon.com and @riomckennon; his own website confirms that exact Instagram profile.",
+          "receipt": "root-source-receipts/c641f0741644eb.json",
+          "status": 200
+        }
+      ],
+      "expectedOrganizerName": "Mario McKennon"
+    },
+    {
+      "id": "supplemental:skema-boy-2026-11-18-phoenix-az",
+      "startDate": "2026-11-18",
+      "city": "Phoenix",
+      "state": "AZ",
+      "country": "US",
+      "expectedVenue": "Valley Bar",
+      "facts": {
+        "venueUrl": "https://www.valleybarphx.com/",
+        "venueInstagram": "https://www.instagram.com/valleybarphx/",
+        "organizerWebsite": "https://psykosteve.com/"
+      },
+      "sources": [
+        {
+          "url": "https://www.valleybarphx.com/",
+          "evidence": "Official venue site identifies130 N Central Avenue Phoenix and Follow on Instagram link resolves to valleybarphx.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://psykosteve.com/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official promoter website verified through web search/open. Direct HTML collection was blocked with HTTP 403; no Instagram guessed.",
+          "receipt": "root-source-receipts/b199edbfcd4b5a.json",
+          "status": "HTTP Error 403: Forbidden"
+        }
+      ],
+      "expectedOrganizerName": "Psyko Steve Presents"
+    },
+    {
+      "id": "bandsintown:109121424",
+      "startDate": "2026-11-19",
+      "city": "Montréal",
+      "state": "QC",
+      "country": "CA",
+      "expectedVenue": "Newspeak",
+      "facts": {
+        "venueUrl": "https://www.newspeakmtl.com/",
+        "venueInstagram": "https://www.instagram.com/newspeakmtl/"
+      },
+      "sources": [
+        {
+          "url": "https://www.newspeakmtl.com/info",
+          "evidence": "Official venue info page identifies1403 Rue Ste Elisabeth Montreal and directly links Instagram; receipt108.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": ""
+    },
+    {
+      "id": "manual:anthem-night-dmv-capitol-heights-2026-11-20",
+      "startDate": "2026-11-20",
+      "city": "Capitol Heights",
+      "state": "MD",
+      "country": "US",
+      "expectedVenue": "7230 Central Avenue",
+      "facts": {
+        "venueUrl": "https://impactonechurch.org/venue/",
+        "venueInstagram": "https://www.instagram.com/impactonechurch/",
+        "organizerWebsite": "https://anthemnight.com/",
+        "organizerInstagram": "https://www.instagram.com/anthemnightsac/",
+        "organizerLinkName": "Anthem Nights"
+      },
+      "sources": [
+        {
+          "url": "https://impactonechurch.org/venue/",
+          "evidence": "Official venue page identifies7230 Central Avenue Capitol Heights and links Impact One Church Instagram; receipt114. Preserve address-only venue label.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://brushfire.com/anthemnights/dmv/643773",
+          "evidence": "Exact Anthem Nights Global LLC ticket source directly links anthemnight.com.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/562816d010db.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://anthemnight.com",
+          "evidence": "The linked official Christian music collective homepage directly links anthemnightsac on Instagram.",
+          "status": 200,
+          "receipt": "root-source-receipts/e6cc09a8e99b73.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Anthem Nights Global LLC"
+    },
+    {
+      "id": "manual:mayia-night-of-hope-apex-2026-11-20",
+      "startDate": "2026-11-20",
+      "city": "Apex",
+      "state": "NC",
+      "country": "US",
+      "expectedVenue": "Apex Baptist Church Fellowship Hall",
+      "facts": {
+        "venueUrl": "https://apexbaptist.org/",
+        "venueInstagram": "https://www.instagram.com/apexbaptist/",
+        "organizerWebsite": "https://carolinacarecenter.org/",
+        "organizerInstagram": "https://www.instagram.com/carolinacarecenter/"
+      },
+      "sources": [
+        {
+          "url": "https://apexbaptist.org/",
+          "evidence": "Official church site matches110 S Salem Street Apex and links Instagram; receipt120.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://carolinacarecenter.org/hope/",
+          "evidence": "The nonprofit’s own exact Night of Hope event page names MAYIA and directly links carolinacarecenter on Instagram.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/279fb2adf3fb.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Carolina Care Center"
+    },
+    {
+      "id": "manual:gifted-hands-dax-milwaukee-2026-11-20",
+      "startDate": "2026-11-20",
+      "city": "Milwaukee",
+      "state": "WI",
+      "country": "US",
+      "expectedVenue": "The Rave / Eagles Club",
+      "facts": {
+        "venueUrl": "https://www.therave.com/",
+        "venueInstagram": "https://www.instagram.com/theraveusa/"
+      },
+      "sources": [
+        {
+          "url": "https://www.therave.com/",
+          "evidence": "Official Rave/Eagles Club website identifies2401 W Wisconsin Ave Milwaukee and links Instagram; receipt127.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": ""
+    },
+    {
+      "id": "manual:kaboose-city-life-willmar-2026-11-21",
+      "startDate": "2026-11-21",
+      "city": "Willmar",
+      "state": "MN",
+      "country": "US",
+      "expectedVenue": "First Street Warehouse",
+      "facts": {
+        "venueUrl": "https://yfcminnesota.com/",
+        "organizerWebsite": "https://yfcminnesota.com/ministries/",
+        "organizerLinkName": "City Life Willmar / Youth for Christ Minnesota"
+      },
+      "sources": [
+        {
+          "url": "https://yfcminnesota.com/",
+          "evidence": "Official West Central Minnesota YFC homepage gives106 Litchfield Ave SW Willmar; local resource guide calls the facility First Street Warehouse and links this site. Browser receipt saved.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://yfcminnesota.com/ministries/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Youth for Christ Minnesota ministries page explicitly identifies City Life Willmar and its local director. Use official parent program page; a fresh exact social profile could not be independently verified.",
+          "receipt": "root-source-receipts/261f5f140f4a5c.json",
+          "status": 200
+        }
+      ],
+      "expectedOrganizerName": "City Life Willmar"
+    },
+    {
+      "id": "manual:revival-nights-asap-preach-hilliard-2026",
+      "startDate": "2026-11-21",
+      "city": "Hilliard",
+      "state": "OH",
+      "country": "US",
+      "expectedVenue": "Franklin County Fairgrounds — Edwards Building",
+      "facts": {
+        "venueUrl": "https://www.fcfair.org/",
+        "venueInstagram": "https://www.instagram.com/franklincountyfairohio/",
+        "organizerWebsite": "https://revivalignited.net/",
+        "organizerInstagram": "https://www.instagram.com/revivalignited/"
+      },
+      "sources": [
+        {
+          "url": "https://www.fcfair.org/fairgrounds/",
+          "evidence": "Official Franklin County Fairgrounds site identifies Hilliard grounds and Edwards Building and directly links Instagram; receipt151.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.eventbrite.com/e/revival-nights-tickets-2000057247066",
+          "evidence": "Exact Ohio event credits Revival Ignited Ministries.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/62bc5cbede89.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://revivalignited.net/",
+          "evidence": "The matching ministry’s official site identifies its ministry leadership and Ohio events and directly links revivalignited on Instagram.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/4350a88b849e.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Revival Ignited Ministries"
+    },
+    {
+      "id": "manual:the-chamber-vol-1-corvallis-2026-11-21",
+      "startDate": "2026-11-21",
+      "city": "Corvallis",
+      "state": "OR",
+      "country": "US",
+      "expectedVenue": "Corvallis Community Center",
+      "facts": {
+        "venueUrl": "https://www.corvallisoregon.gov/directory-listing/c3-corvallis-community-center"
+      },
+      "sources": [
+        {
+          "url": "https://www.corvallisoregon.gov/directory-listing/c3-corvallis-community-center",
+          "evidence": "Municipal venue page identifies C3 Corvallis Community Center at2601 NW Tyler Ave; receipt157. No dedicated Instagram verified.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.tickettailor.com/checkout/view-event/id/9144465/chk/28bb42e7981e7b98ad292022136429f3/",
+          "evidence": "Exact Chamber Vol. 1 registration names Bring the Fire.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/e20c18ba19c2.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://bringthefirechamber.com/",
+          "evidence": "Official Chamber event site matches the Corvallis showcase but exposes no official Instagram link.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/7b9dea545551.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Bring the Fire"
+    },
+    {
+      "id": "manual:bandsintown:107625490",
+      "startDate": "2026-11-22",
+      "city": "Sacramento",
+      "state": "CA",
+      "country": "US",
+      "expectedVenue": "The Guild Theatre",
+      "facts": {
+        "venueUrl": "https://www.sthope.org/guild-theater-home",
+        "venueInstagram": "https://www.instagram.com/guildtheateroakpark/",
+        "organizerWebsite": "https://hogmob.com/",
+        "organizerInstagram": "https://www.instagram.com/sevinhogmob/"
+      },
+      "sources": [
+        {
+          "url": "https://www.sthope.org/sites/main/files/file-attachments/guild_theater_2019_catering_menu.pdf?1549955897=",
+          "evidence": "Current StHOPE site identifies ownership/management of Guild Theater at2828 35th St Sacramento. Official catering PDF explicitly names Instagram guildtheateroakpark.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://hogmob.com/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "HOG MOB official website directly designates @sevinhogmob as its Instagram. Shared ministry/founder account, not inferred from artist name.",
+          "receipt": "root-source-receipts/059b007f0eb0d3.json",
+          "status": 200
+        }
+      ],
+      "expectedOrganizerName": "HOG MOB Ministries"
+    },
+    {
+      "id": "manual:cj-emulous-state-youth-conference-cocoa-2026",
+      "startDate": "2026-11-27",
+      "city": "Orlando",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "Rosen Centre Hotel",
+      "facts": {
+        "venueUrl": "https://www.rosencentre.com/",
+        "venueInstagram": "https://www.instagram.com/rosen_centre/"
+      },
+      "sources": [
+        {
+          "url": "https://www.rosencentre.com/",
+          "evidence": "Official hotel site identifies9840 International Drive Orlando and directly links Instagram; receipt171.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Florida Cocoa Church of God"
+    },
+    {
+      "id": "manual:creatives-showcase-philadelphia-2026-12-01",
+      "startDate": "2026-12-01",
+      "city": "Philadelphia",
+      "state": "PA",
+      "country": "US",
+      "expectedVenue": "Venice Island Performing Arts & Recreation Center",
+      "facts": {
+        "venueUrl": "https://www.veniceisland.org/",
+        "venueInstagram": "https://www.instagram.com/venice_island/",
+        "organizerWebsite": "https://www.ripecreatives.com/creatives",
+        "organizerInstagram": "https://www.instagram.com/ripecreatives/",
+        "organizerLinkName": "Creatives’ Philly / Ripe Creatives"
+      },
+      "sources": [
+        {
+          "url": "https://www.veniceisland.org/",
+          "evidence": "Official performing arts venue site matches7 Lock Street Philadelphia and directly links Instagram; receipt183.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.ripecreatives.com/events/creatives-showcase",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official Ripe Creatives site identifies Creatives’ Philly as its program and publishes this exact showcase. Its official profile is @ripecreatives.",
+          "receipt": "root-source-receipts/7724646c020488.json",
+          "status": 200
+        },
+        {
+          "url": "https://www.ripecreatives.com/creatives",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official Ripe Creatives site identifies Creatives’ Philly as its program and publishes this exact showcase. Its official profile is @ripecreatives.",
+          "receipt": "root-source-receipts/a295fcfaba4e30.json",
+          "status": 200
+        }
+      ],
+      "expectedOrganizerName": "Creatives’ Philly"
+    },
+    {
+      "id": "manual:journey-to-bethlehem-joyful-noize-preshow-orlando-2026-12-13",
+      "startDate": "2026-12-13",
+      "city": "Orlando",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "Dr. Phillips Center for the Performing Arts — Walt Disney Theater",
+      "facts": {
+        "venueUrl": "https://www.drphillipscenter.org/",
+        "venueInstagram": "https://www.instagram.com/drphillipsctr/",
+        "organizerWebsite": "https://www.suarezentertainmentgrp.com/",
+        "organizerInstagram": "https://www.instagram.com/suarezentertainmentgrp_/"
+      },
+      "sources": [
+        {
+          "url": "https://www.drphillipscenter.org/",
+          "evidence": "Official performing arts center site gives445 S Magnolia Ave Orlando and Instagram footer link resolves to drphillipsctr.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.suarezentertainmentgrp.com/",
+          "evidence": "The matching entertainment company’s own homepage explicitly publishes “Social Media IG @suarezentertainmentgrp_”. The profile URL uses that declared handle, not a guessed name.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/2deab641f0a1.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Suarez Entertainment Group"
+    },
+    {
+      "id": "manual:drea-lp-sondaze-social-nashville-2026-12-20",
+      "startDate": "2026-12-20",
+      "city": "Nashville",
+      "state": "TN",
+      "country": "US",
+      "expectedVenue": "NoWhere Special",
+      "facts": {
+        "venueUrl": "https://www.nowherespecialnash.com/home",
+        "venueInstagram": "https://www.instagram.com/nowherespecialnash/",
+        "organizerWebsite": "https://urbansoulcafe.com/"
+      },
+      "sources": [
+        {
+          "url": "https://www.nowherespecialnash.com/home",
+          "evidence": "Official Nashville venue homepage directly links Instagram. Opening press release identifies Hillsboro Village venue and official domain; artist event page identifies NoWhere Special.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://drealp.com/event/6785400/785411205/sondaze-social",
+          "evidence": "Artist’s exact event listing corroborates the Nashville event; its performer Instagram is not assigned to the promoter.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/cdc0427dc6d4.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://urbansoulcafe.com/",
+          "evidence": "Official Urban Soul Cafe site describes its Nashville gospel events and repeats @uscafe under Social Networks, but its Instagram destination is not exposed as a working outbound anchor.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/2a14875ccd73.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Urban Soul Cafe"
+    },
+    {
+      "id": "official:b0d6dc5f6a1910094666",
+      "startDate": "2026-12-28",
+      "city": "Branson",
+      "state": "MO",
+      "country": "US",
+      "expectedVenue": "The Mansion Theatre for the Performing Arts",
+      "facts": {
+        "venueUrl": "https://www.themansiontheatre.com/",
+        "venueInstagram": "https://www.instagram.com/themansiontheatre/",
+        "organizerWebsite": "https://xtremeconferences.com/",
+        "organizerInstagram": "https://www.instagram.com/xtreme_conferences/"
+      },
+      "sources": [
+        {
+          "url": "https://www.themansiontheatre.com/",
+          "evidence": "Official theater site identifies189 Expressway Lane Branson and directly links Instagram; receipt237.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://xtremeconferences.com/winter/schedules.html",
+          "evidence": "Official Xtreme Winter 2026 schedule lists Hulvey on December 28 evening in Branson at The Mansion Theatre.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://xtremeconferences.com/winter/XTRWNTR-2025-Step-Two.pdf",
+          "evidence": "Official organizer registration material identifies XTREME_CONFERENCES social handle.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://xtremeconferences.com/LIFTUP/XW2017_RoomingList.pdf",
+          "evidence": "Official organizer material explicitly labels Instagram /XTREME_CONFERENCES, corroborating the handle; current Instagram content could not be read.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Xtreme Conferences"
+    },
+    {
+      "id": "manual:flowfest-greenwood-2026-12-31",
+      "startDate": "2026-12-31",
+      "city": "Greenwood",
+      "state": "SC",
+      "country": "US",
+      "expectedVenue": "Real Life Church",
+      "facts": {
+        "venueUrl": "https://reallifechurchsc.com/",
+        "venueInstagram": "https://www.instagram.com/real_life_church_/",
+        "organizerInstagram": "https://www.instagram.com/altaregorecords/"
+      },
+      "sources": [
+        {
+          "url": "https://reallifechurchsc.com/",
+          "evidence": "Official church site matches2352 Highway72/221East Greenwood and directly links Instagram; receipt245.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://events.humanitix.com/flowfest",
+          "evidence": "Exact FlowFest host is Altar Ego and event description identifies Justo Chalaire and Bo Fisher, matching the curated Christian duo rather than the unrelated idol duo.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/d59c4a408177.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://events.humanitix.com/host/altar-ego",
+          "evidence": "The exact organizer profile lists FlowFest but does not provide an independent website.",
+          "status": 200,
+          "receipt": "root-source-receipts/1b329f834e0ccc.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.holywatersministry.org/",
+          "evidence": "Primary ministry partner site directly links altaregorecords. This agrees with the owner-reviewed Altar Ego identity and Instagram in config/artists.json.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/e2b40c895387.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Altar Ego"
+    },
+    {
+      "id": "bandsintown:1037809090",
+      "startDate": "2027-01-22",
+      "city": "Nashville",
+      "state": "TN",
+      "country": "US",
+      "expectedVenue": "Cannery Hall — Mainstage",
+      "facts": {
+        "venueUrl": "https://canneryhall.com/",
+        "venueInstagram": "https://www.instagram.com/canneryhallnashville/",
+        "organizerWebsite": "https://aegpresents.com/",
+        "organizerInstagram": "https://www.instagram.com/aegpresents/"
+      },
+      "sources": [
+        {
+          "url": "https://canneryhall.com/",
+          "evidence": "Official venue homepage identifies Cannery Hall Nashville and directly links Instagram. Browser receipt saved.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://aegpresents.com/",
+          "evidence": "AEG Presents’ own corporate concert site directly links aegpresents on Instagram. Artist/feed Instagram posts and AXS corporate accounts are excluded.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/af23194c7cdc.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "AEG Presents"
+    },
+    {
+      "id": "bandsintown:1040596451",
+      "startDate": "2027-03-20",
+      "city": "Elgin",
+      "state": "IL",
+      "country": "US",
+      "expectedVenue": "AYM Student Center",
+      "facts": {
+        "venueUrl": "https://areayouth.squarespace.com/avl-chi",
+        "venueInstagram": "https://www.instagram.com/area.youth/",
+        "organizerWebsite": "https://www.ignitionstudents.org/",
+        "organizerInstagram": "https://www.instagram.com/ignitionstudents/"
+      },
+      "sources": [
+        {
+          "url": "https://areayouth.squarespace.com/avl-chi",
+          "evidence": "Official Area Youth Ministry Chicago page identifies AYM Student Center1000 N Randall Rd Elgin and directly links Instagram; receipt311.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.bandsintown.com/e/1040596451-1k-phew-at-aym-student-center?came_from=148",
+          "evidence": "Exact 1K Phew AYM Student Center date describes the event as Ignition Youth.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.ignitionstudents.org/",
+          "evidence": "Official website lists Chicago/Elgin March 19–20, 2027, features 1K Phew, and directly links Instagram @ignitionstudents.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Ignition Youth Conference"
+    },
+    {
+      "id": "official:0dd5f599b4db080206cf",
+      "startDate": "2027-05-01",
+      "city": "Houston",
+      "state": "TX",
+      "country": "US",
+      "expectedVenue": "Match Midtown Arts & Theater Center Houston",
+      "facts": {
+        "venueUrl": "https://matchouston.org/",
+        "venueInstagram": "https://www.instagram.com/matchouston/",
+        "organizerWebsite": "https://www.weareaptitude.org/",
+        "organizerInstagram": "https://www.instagram.com/weareaptitude/"
+      },
+      "sources": [
+        {
+          "url": "https://matchouston.org/",
+          "evidence": "Official venue site matches3400 Main St Houston and directly links Instagram; receipt321.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.eventbrite.com/e/chh-matters-with-scootie-wop-tickets-2002800244445",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Organizer identity is cross-linked by official event page and own site. Older event page used only for organizer identity; May 1 2027 rescheduled show date remains unchanged.",
+          "receipt": "root-source-receipts/43dc8f12ad53cf.json",
+          "status": 200
+        },
+        {
+          "url": "https://www.weareaptitude.org/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Organizer identity is cross-linked by official event page and own site. Older event page used only for organizer identity; May 1 2027 rescheduled show date remains unchanged.",
+          "receipt": "root-source-receipts/7dafea1a4d1d30.json",
+          "status": 200
+        }
+      ],
+      "expectedOrganizerName": "APTITUDE"
+    },
+    {
+      "id": "manual:hulvey-freedom-conference-san-antonio-2027-06-17",
+      "startDate": "2027-06-17",
+      "city": "San Antonio",
+      "state": "TX",
+      "country": "US",
+      "expectedVenue": "Freeman Coliseum",
+      "facts": {
+        "venueUrl": "https://freemancoliseum.com/",
+        "venueInstagram": "https://www.instagram.com/freemancoliseum/",
+        "organizerWebsite": "https://www.communitybible.com/",
+        "organizerInstagram": "https://www.instagram.com/cbcsocial/"
+      },
+      "sources": [
+        {
+          "url": "https://freemancoliseum.com/",
+          "evidence": "Official coliseum site matches3201 E Houston St San Antonio and directly links Instagram; receipt327.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.freedomconfsatx.com/",
+          "evidence": "Official Freedom Conference page identifies the conference; its speaker/performer accounts are not church accounts.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/904a0dc2cd9e.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.communitybible.com/",
+          "evidence": "The San Antonio church’s own homepage directly links cbcsocial.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/5e06ae589e93.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.communitybible.com/events",
+          "evidence": "The church’s event calendar lists Freedom Conference, tying the official church identity to the booking.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/128ba1130fc3.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Community Bible Church"
+    },
+    {
+      "id": "bandsintown:108881783",
+      "startDate": "2026-11-06",
+      "city": "Lynchburg",
+      "state": "VA",
+      "country": "US",
+      "expectedVenue": "Vines Center",
+      "facts": {
+        "venueUrl": "https://www.liberty.edu/events/on-campus-venues/",
+        "organizerWebsite": "https://www.liberty.edu/student-activities/",
+        "organizerInstagram": "https://www.instagram.com/libertysa/"
+      },
+      "sources": [
+        {
+          "url": "https://www.liberty.edu/events/on-campus-venues/",
+          "evidence": "Official university venue directory specifically identifies Vines Center in Lynchburg. No separate venue Instagram confirmed.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.liberty.edu/student-activities/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official Student Activities page links @libertysa; general university account on event footer is not the specific department.",
+          "receipt": "root-source-receipts/4c278389ce7caa.json",
+          "status": 200
+        }
+      ],
+      "expectedOrganizerName": "Liberty University Student Activities"
+    },
+    {
+      "id": "manual:crushing-addiction-rally-clanton-2026-11-07",
+      "startDate": "2026-11-07",
+      "city": "Clanton",
+      "state": "AL",
+      "country": "US",
+      "expectedVenue": "Goose Pond Park",
+      "facts": {
+        "venueUrl": "https://www.clantonal.gov/Facilities/Facility/Details/Goosepond-Park-3",
+        "organizerWebsite": "https://www.surrenderedministries.net/",
+        "organizerInstagram": "https://www.instagram.com/surrenderedministries12/"
+      },
+      "sources": [
+        {
+          "url": "https://www.clantonal.gov/Facilities/Facility/Details/Goosepond-Park-3",
+          "evidence": "City of Clanton facility page identifies Goosepond Park at 906 7th Street North.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.surrenderedministries.net/event-details/crushing-addiction-rally",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official event page identifies Surrendered Ministries and directly links this Instagram account.",
+          "receipt": "root-source-receipts/48cab19c91498b.json",
+          "status": 200
+        }
+      ],
+      "expectedOrganizerName": "Surrendered Ministries"
+    },
+    {
+      "id": "ticketmaster:vv1AAZk3FGkdmpCG1",
+      "startDate": "2026-11-07",
+      "city": "Cleveland",
+      "state": "OH",
+      "country": "US",
+      "expectedVenue": "The Cambridge Room at House of Blues Cleveland",
+      "facts": {
+        "venueUrl": "https://cleveland.houseofblues.com/",
+        "venueInstagram": "https://www.instagram.com/hobcleveland/"
+      },
+      "sources": [
+        {
+          "url": "https://cleveland.houseofblues.com/",
+          "evidence": "Official Cleveland venue site confirms 308 Euclid Avenue and directly links this Instagram in its footer.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": ""
+    },
+    {
+      "id": "manual:aaron-cole-hope-station-benefit-nashville-2026-11-11",
+      "startDate": "2026-11-11",
+      "city": "Nashville",
+      "state": "TN",
+      "country": "US",
+      "expectedVenue": "Chief's on Broadway",
+      "facts": {
+        "venueUrl": "https://www.chiefsonbroadway.com/",
+        "venueInstagram": "https://www.instagram.com/chiefsbroadway/",
+        "organizerWebsite": "https://www.92qnashville.com/",
+        "organizerInstagram": "https://www.instagram.com/92qnashville/"
+      },
+      "sources": [
+        {
+          "url": "https://www.chiefsonbroadway.com/",
+          "evidence": "Official venue site confirms 200 Broadway Nashville and links this Instagram; also advertises the Aaron Cole benefit event.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.92qnashville.com/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official Nashville station site directly links its Instagram account; station name matches event promoter.",
+          "receipt": "root-source-receipts/e0801c3d168d6f.json",
+          "status": 200
+        }
+      ],
+      "expectedOrganizerName": "92Q"
+    },
+    {
+      "id": "submitted:jj-stone-nrg-saskatoon-2026-11-13",
+      "startDate": "2026-11-13",
+      "city": "Saskatoon",
+      "state": "SK",
+      "country": "CA",
+      "expectedVenue": "Horizon College & Seminary",
+      "facts": {
+        "venueUrl": "https://www.horizon.edu/",
+        "venueInstagram": "https://www.instagram.com/horizoncollege/",
+        "organizerWebsite": "https://www.horizon.edu/",
+        "organizerInstagram": "https://www.instagram.com/horizoncollege/"
+      },
+      "sources": [
+        {
+          "url": "https://www.horizon.edu/",
+          "evidence": "Official college website identifies Saskatoon campus and directly links this Instagram in its footer.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Horizon College & Seminary"
+    },
+    {
+      "id": "bandsintown:109072940",
+      "startDate": "2026-11-14",
+      "city": "Orlando",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "Grace Bible Church of Central Florida",
+      "facts": {
+        "venueUrl": "https://gbccf.org/",
+        "venueInstagram": "https://www.instagram.com/gracebiblechurchcf/",
+        "organizerInstagram": "https://www.instagram.com/goddidit.movement/"
+      },
+      "sources": [
+        {
+          "url": "https://gbccf.org/",
+          "evidence": "Official church website identifies 801 Dorscher Road, Orlando. Main Instagram uses unresolved bit.ly/2XPVR7t; excluded gbclatino because it is a ministry-specific account.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://bit.ly/2XPVR7t",
+          "evidence": "Main Instagram link published on gbccf.org resolved to instagram.com/gracebiblechurchcf/; redirect verified in shared root-source-index.json.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.goddiditmovement.com/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official movement homepage directly links this Instagram account.",
+          "receipt": "root-source-receipts/a8a4737aaf5d5a.json",
+          "status": 200
+        }
+      ],
+      "expectedOrganizerName": "God Did It Movement"
+    },
+    {
+      "id": "manual:christ-over-fear-fest-whittier-2026-11-14",
+      "startDate": "2026-11-14",
+      "city": "Whittier",
+      "state": "CA",
+      "country": "US",
+      "expectedVenue": "Praise Chapel Whittier",
+      "facts": {
+        "venueUrl": "https://www.praisechapelwhittier.com/",
+        "venueInstagram": "https://www.instagram.com/pcwhittier/",
+        "organizerWebsite": "https://www.praisechapelwhittier.com/",
+        "organizerInstagram": "https://www.instagram.com/pcwhittier/",
+        "organizerLinkName": "Praise Chapel Whittier"
+      },
+      "sources": [
+        {
+          "url": "https://www.praisechapelwhittier.com/",
+          "evidence": "Official church site confirms Whittier identity/address and directly links this Instagram.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.instagram.com/christoverfearfest/p/DdR7e77ymWI/",
+          "evidence": "Retained official festival post establishes the joint event identity; current Instagram content is gated.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/9792d61a8b2e.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.praisechapelwhittier.com/meet-us",
+          "evidence": "The Whittier church’s own website identifies the same church and directly links pcwhittier on Instagram.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/ff40022d4c5b.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Christ Over Fear Fest / Praise Chapel Whittier"
+    },
+    {
+      "id": "manual:5ive-me-against-the-world-forever-raton-2026-11-14",
+      "startDate": "2026-11-14",
+      "city": "Raton",
+      "state": "NM",
+      "country": "US",
+      "expectedVenue": "Mesa Church",
+      "facts": {
+        "venueUrl": "https://mesaraton.org/",
+        "venueInstagram": "https://www.instagram.com/mesaraton/"
+      },
+      "sources": [
+        {
+          "url": "https://mesaraton.org/",
+          "evidence": "Official Mesa Church in Raton website confirms 917 S 2nd Street and directly links this Instagram; distinguished from unrelated Mesa churches.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": ""
+    },
+    {
+      "id": "bandsintown:1040378722",
+      "startDate": "2026-11-14",
+      "city": "Los Angeles",
+      "state": "CA",
+      "country": "US",
+      "expectedVenue": "The Belasco",
+      "facts": {
+        "venueUrl": "https://www.thebelasco.com/",
+        "venueInstagram": "https://www.instagram.com/belascola/"
+      },
+      "sources": [
+        {
+          "url": "https://www.thebelasco.com/",
+          "evidence": "Official Los Angeles venue website confirms 1050 S Hill Street and links this Instagram in its footer.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": ""
+    },
+    {
+      "id": "supplemental:skema-boy-2026-11-16-dallas-tx",
+      "startDate": "2026-11-16",
+      "city": "Dallas",
+      "state": "TX",
+      "country": "US",
+      "expectedVenue": "Sons Of Hermann Hall",
+      "facts": {
+        "venueUrl": "https://www.sonsofhermannhall.com/",
+        "venueInstagram": "https://www.instagram.com/sonsofhermannhall/",
+        "organizerInstagram": "https://www.instagram.com/spune/"
+      },
+      "sources": [
+        {
+          "url": "https://www.sonsofhermannhall.com/",
+          "evidence": "Official venue website identifies 3414 Elm Street Dallas and links the Instagram account; tracking query removed.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://spune.com/",
+          "evidence": "Spune’s official production/ticketing site directly links the spune Instagram profile.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/569504d6c52f.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Spune Productions"
+    },
+    {
+      "id": "manual:gifted-hands-dax-minneapolis-2026-11-19",
+      "startDate": "2026-11-19",
+      "city": "Minneapolis",
+      "state": "MN",
+      "country": "US",
+      "expectedVenue": "Varsity Theater",
+      "facts": {
+        "venueUrl": "https://www.varsitytheater.com/",
+        "venueInstagram": "https://www.instagram.com/varsitytheater/"
+      },
+      "sources": [
+        {
+          "url": "https://www.varsitytheater.com/",
+          "evidence": "Official Minneapolis venue website confirms 1308 SE 4th Street and links this Instagram.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": ""
+    },
+    {
+      "id": "bandsintown:108923215",
+      "startDate": "2026-11-20",
+      "city": "Boise",
+      "state": "ID",
+      "country": "US",
+      "expectedVenue": "The Whosoevers",
+      "facts": {
+        "venueUrl": "https://thewhosoevers.com/events/thewhosoevershq/",
+        "venueInstagram": "https://www.instagram.com/thewhosoevershq/"
+      },
+      "sources": [
+        {
+          "url": "https://thewhosoevers.com/events/thewhosoevershq/",
+          "evidence": "Official HQ page describes this Boise music venue and explicitly links TheWhosoeversHQ Instagram.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Upside Down Kingdoms Events"
+    },
+    {
+      "id": "manual:chain-breaker-kingsport-2026-11-21",
+      "startDate": "2026-11-21",
+      "city": "Kingsport",
+      "state": "TN",
+      "country": "US",
+      "expectedVenue": "The LampLight Theatre",
+      "facts": {
+        "venueUrl": "https://lamplighttheatre.net/",
+        "venueInstagram": "https://www.instagram.com/lamplight_theatre/"
+      },
+      "sources": [
+        {
+          "url": "https://lamplighttheatre.net/",
+          "evidence": "Official Kingsport theater site identifies 140 Broad Street and links this Instagram.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": ""
+    },
+    {
+      "id": "manual:gifted-hands-dax-chicago-2026-11-21",
+      "startDate": "2026-11-21",
+      "city": "Chicago",
+      "state": "IL",
+      "country": "US",
+      "expectedVenue": "House of Blues Chicago",
+      "facts": {
+        "venueUrl": "https://chicago.houseofblues.com/",
+        "venueInstagram": "https://www.instagram.com/hobchicago/"
+      },
+      "sources": [
+        {
+          "url": "https://chicago.houseofblues.com/",
+          "evidence": "Official Chicago House of Blues website identifies 329 N Dearborn and links this Instagram.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": ""
+    },
+    {
+      "id": "manual:whatuprg-san-antonio-2026-11-22",
+      "startDate": "2026-11-22",
+      "city": "San Antonio",
+      "state": "TX",
+      "country": "US",
+      "expectedVenue": "Paper Tiger",
+      "facts": {
+        "venueUrl": "https://papertigersatx.com/",
+        "organizerWebsite": "https://papertigersatx.com/"
+      },
+      "sources": [
+        {
+          "url": "https://papertigersatx.com/",
+          "evidence": "Official venue page confirms 2410 N St Marys Street, San Antonio. HTTP collection received 403 but web source was readable; no primary-source Instagram verified.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://wl.eventim.us/event/whatuprg/707572?afflky=PaperTiger",
+          "evidence": "Exact WHATUPRG ticket listing identifies Paper Tiger.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/5fc26519aa5e.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://papertigersatx.com/",
+          "evidence": "Primary website web extraction shows Paper Tiger events and matching 2410 N. St. Mary’s Street, San Antonio address. Direct HTTP collection was blocked.",
+          "status": "failed",
+          "receipt": "root-source-receipts/4e85c04ff8f667.json",
+          "fetchError": "HTTP Error 403: Forbidden",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Paper Tiger"
+    },
+    {
+      "id": "manual:elllli-christian-hip-hop-sherbrooke-2026-11-27",
+      "startDate": "2026-11-27",
+      "city": "Sherbrooke",
+      "state": "QC",
+      "country": "CA",
+      "expectedVenue": "Église Le Carrefour",
+      "facts": {
+        "venueUrl": "https://www.lecarrefour.org/"
+      },
+      "sources": [
+        {
+          "url": "https://www.lecarrefour.org/",
+          "evidence": "Official church site confirms 601 rue Saint-Michel, Sherbrooke. HTTP collection received 406 but readable web content matched the location.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": ""
+    },
+    {
+      "id": "manual:miracles-in-the-valley-mesa-2026-12-05",
+      "startDate": "2026-12-05",
+      "city": "Mesa",
+      "state": "AZ",
+      "country": "US",
+      "expectedVenue": "Gateway City Church",
+      "facts": {
+        "venueUrl": "https://mygatewaycity.church/arizona",
+        "venueInstagram": "https://www.instagram.com/gatewaycitychurch/",
+        "organizerWebsite": "https://mygatewaycity.church/arizona",
+        "organizerInstagram": "https://www.instagram.com/gatewaycitychurch/",
+        "organizerLinkName": "Gateway City Church"
+      },
+      "sources": [
+        {
+          "url": "https://mygatewaycity.church/arizona",
+          "evidence": "Official Gateway City Arizona campus page confirms Mesa location and directly links gatewaycitychurch. This is the official shared church-network account, not a separate Mesa-only profile.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Gateway City Church / BF Ministries / Miracle Ops / Soldiers For Christ"
+    },
+    {
+      "id": "manual:corey-red-precise-saintuary-morrow-2026-12-05",
+      "startDate": "2026-12-05",
+      "city": "Morrow",
+      "state": "GA",
+      "country": "US",
+      "expectedVenue": "The Saintuary",
+      "facts": {
+        "venueUrl": "https://www.thesaintuaryclub.com/",
+        "venueInstagram": "https://www.instagram.com/thesaintuarynightclub/",
+        "organizerWebsite": "https://www.thesaintuaryclub.com/",
+        "organizerInstagram": "https://www.instagram.com/thesaintuarynightclub/",
+        "organizerLinkName": "The Saintuary"
+      },
+      "sources": [
+        {
+          "url": "https://www.thesaintuaryclub.com/",
+          "evidence": "Official about-us page identifies founder Stephen Gibbs and Atlanta-area Christian club. Eventbrite lists Stephen Gibbs of The Saintuary as organizer and the Morrow address, establishing identity.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.thesaintuaryclub.com/about-us",
+          "evidence": "Names Stephen Gibbs as Founder & CEO.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.eventbrite.com/e/corey-red-and-precise-the-saintuary-tickets-2003683710917",
+          "evidence": "Organizer Stephen Gibbs of The Saintuary; venue 1078 Citizens Parkway Suite F, Morrow GA.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.thesaintuaryclub.com/about-us",
+          "evidence": "Official Saintuary about-us page directly links thesaintuarynightclub Instagram.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.thesaintuaryclub.com/about-us",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official venue links its Instagram account; confirmed in organizer-1-receipts/a071156a0ad8.json."
+        },
+        {
+          "url": "https://www.eventbrite.com/e/corey-red-and-precise-the-saintuary-tickets-2003683710917",
+          "evidence": "Exact event explicitly credits Stephen Gibbs of The Saintuary.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/8278a1677223.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.thesaintuaryclub.com/about-us",
+          "evidence": "Official venue/organization page names Stephen Gibbs as founder and CEO and directly links thesaintuarynightclub on Instagram.",
+          "status": 200,
+          "receipt": "root-source-receipts/a071156a0ad859.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Stephen Gibbs of The Saintuary"
+    },
+    {
+      "id": "bandsintown:1040726548",
+      "startDate": "2026-12-11",
+      "city": "Chicago",
+      "state": "IL",
+      "country": "US",
+      "expectedVenue": "Greenwood Oasis",
+      "facts": {
+        "venueUrl": "https://www.greenwoodoasis.com/",
+        "venueInstagram": "https://www.instagram.com/thegreenwoodoasis/"
+      },
+      "sources": [
+        {
+          "url": "https://www.greenwoodoasis.com/",
+          "evidence": "Official Chicago event space website confirms 7621 S Greenwood Avenue and directly links this Instagram.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": ""
+    },
+    {
+      "id": "manual:miles-minnick-christlike-christmas-berkeley-2026-12-17",
+      "startDate": "2026-12-17",
+      "city": "Berkeley",
+      "state": "CA",
+      "country": "US",
+      "expectedVenue": "Cornerstone",
+      "facts": {
+        "venueUrl": "https://www.cornerstoneberkeley.com/",
+        "venueInstagram": "https://www.instagram.com/cornerstoneberkeley/",
+        "organizerWebsite": "https://www.cornerstoneberkeley.com/",
+        "organizerInstagram": "https://www.instagram.com/cornerstoneberkeley/"
+      },
+      "sources": [
+        {
+          "url": "https://www.cornerstoneberkeley.com/",
+          "evidence": "Official Berkeley venue website confirms venue identity and directly links this Instagram.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Cornerstone"
+    },
+    {
+      "id": "manual:alex-jean-howard-theatre-washington-2026-12-29",
+      "startDate": "2026-12-29",
+      "city": "Washington",
+      "state": "DC",
+      "country": "US",
+      "expectedVenue": "Howard Theatre",
+      "facts": {
+        "venueUrl": "https://www.unionstagepresents.com/the-howard/shows",
+        "venueInstagram": "https://www.instagram.com/howardtheatre/"
+      },
+      "sources": [
+        {
+          "url": "https://www.unionstagepresents.com/the-howard/shows",
+          "evidence": "thehowardtheatre.com redirects to this official Howard Theatre page. Its footer links Howard Theatre Instagram separately from other operator venues.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": ""
+    },
+    {
+      "id": "manual:chh-gospel-hip-hop-cruise-summit-miami-2027-01-10",
+      "startDate": "2027-01-10",
+      "city": "Miami",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "Carnival Celebration — departing Miami",
+      "facts": {
+        "venueUrl": "https://www.carnival.com/cruise-ships/carnival-celebration"
+      },
+      "sources": [
+        {
+          "url": "https://www.carnival.com/cruise-ships/carnival-celebration",
+          "evidence": "Official cruise-line page for the named ship. No distinct official ship Instagram found; did not substitute fan accounts.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "CHH & Gospel Hip Hop Cruise & Summit"
+    },
+    {
+      "id": "manual:ging-live-first-headlining-south-attleboro-2027-01-15",
+      "startDate": "2027-01-15",
+      "city": "South Attleboro",
+      "state": "MA",
+      "country": "US",
+      "expectedVenue": "Crossroads International Church",
+      "facts": {
+        "venueUrl": "https://www.cic.church/",
+        "organizerWebsite": "https://www.fuseconcerts.org/",
+        "organizerInstagram": "https://www.instagram.com/fuseconcerts/"
+      },
+      "sources": [
+        {
+          "url": "https://www.cic.church/",
+          "evidence": "Official Crossroads International Church site, corroborated by the Assemblies of God directory at 1052 Newport Avenue, South Attleboro. Site Instagram link is a location page, not an account, so withheld.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://events.humanitix.com/g-ng-in-concert-one-night-only",
+          "evidence": "Exact event names Fuse Ministries. Its Instagram destination is malformed and is not copied.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/d79352e51aa0.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.fuseconcerts.org/",
+          "evidence": "The organizer’s own site provides the valid direct fuseconcerts Instagram profile URL.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/711c3fdd8e5c.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Fuse Ministries"
+    },
+    {
+      "id": "manual:rock-the-universe-orlando-2027",
+      "startDate": "2027-01-22",
+      "city": "Orlando",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "Universal Studios Florida",
+      "facts": {
+        "venueUrl": "https://www.universalorlando.com/web/en/us/theme-parks/universal-studios-florida",
+        "organizerWebsite": "https://www.universalorlando.com/web/en/us/things-to-do/events/rock-the-universe"
+      },
+      "sources": [
+        {
+          "url": "https://www.universalorlando.com/web/en/us/theme-parks/universal-studios-florida",
+          "evidence": "Official resort page for Universal Studios Florida. Venue Instagram still requires a primary-source account link.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.universalorlando.com/web/en/us/things-to-do/events/rock-the-universe",
+          "evidence": "Official Universal Orlando resort operates its own Rock the Universe festival, admission and lineup page; organizer identity is the resort, not a performer or outside ticket seller.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Universal Orlando Resort"
+    },
+    {
+      "id": "manual:1k-phew-rock-box-san-antonio-2027-01-30",
+      "startDate": "2027-01-30",
+      "city": "San Antonio",
+      "state": "TX",
+      "country": "US",
+      "expectedVenue": "The Rock Box — Underground Stage",
+      "facts": {
+        "venueUrl": "https://www.therockboxsa.com/",
+        "organizerWebsite": "https://www.therockboxsa.com/"
+      },
+      "sources": [
+        {
+          "url": "https://www.therockboxsa.com/",
+          "evidence": "Official San Antonio music-venue page confirms 1223 E Houston Street. No Instagram profile verified from primary sources.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "The Rock Box"
+    },
+    {
+      "id": "manual:ant-lee-light-up-the-city-lloydminster-2027-02-26",
+      "startDate": "2027-02-26",
+      "city": "Lloydminster",
+      "state": "SK",
+      "country": "CA",
+      "expectedVenue": "ACTS Church Lloydminster",
+      "facts": {
+        "venueUrl": "https://www.actschurchlloydminster.ca/",
+        "venueInstagram": "https://www.instagram.com/actschurchlloydminster/"
+      },
+      "sources": [
+        {
+          "url": "https://www.actschurchlloydminster.ca/",
+          "evidence": "Official ACTS church site links this Instagram; Lloydminster civic directory corroborates 4729 50 Street.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": ""
+    },
+    {
+      "id": "manual:center-stage-passion-fest-raleigh-2027-03-20",
+      "startDate": "2027-03-20",
+      "city": "Raleigh",
+      "state": "NC",
+      "country": "US",
+      "expectedVenue": "Vision Church RDU",
+      "facts": {
+        "venueUrl": "https://visionrdu.com/",
+        "venueInstagram": "https://www.instagram.com/visionrdu/",
+        "organizerWebsite": "https://passionfest.org/",
+        "organizerInstagram": "https://www.instagram.com/passionfestnc/"
+      },
+      "sources": [
+        {
+          "url": "https://visionrdu.com/",
+          "evidence": "Official Vision Church RDU site links this Instagram; Plan a Visit page explicitly confirms 5808 Departure Drive, Raleigh.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://visionrdu.com/plan-a-visit/",
+          "evidence": "Official address: 5808 Departure Drive, Raleigh NC 27616.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.eventbrite.com/o/passion-fest-120919651686",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official organizer profile links passionfest.org, which resolves to the exact Center Stage event; official fundraiser links @passionfestnc.",
+          "receipt": "root-source-receipts/6e376fa1697576.json",
+          "status": 200
+        },
+        {
+          "url": "https://passionfest.org/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official organizer profile links passionfest.org, which resolves to the exact Center Stage event; official fundraiser links @passionfestnc.",
+          "receipt": "root-source-receipts/c1ea2091438784.json",
+          "status": 200
+        },
+        {
+          "url": "https://givebutter.com/center-stage-2027-dudtjq",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official organizer profile links passionfest.org, which resolves to the exact Center Stage event; official fundraiser links @passionfestnc.",
+          "receipt": "root-source-receipts/2f29845fb13a97.json",
+          "status": 200
+        }
+      ],
+      "expectedOrganizerName": "Passion Fest"
+    },
+    {
+      "id": "manual:cj-emulous-rize-az-music-festival-2027",
+      "startDate": "2027-04-17",
+      "city": "Sierra Vista",
+      "state": "AZ",
+      "country": "US",
+      "expectedVenue": "Veterans Memorial Park",
+      "facts": {
+        "venueUrl": "https://www.sierravistaaz.gov/our-city/tourism/event-meeting-planners/about-sierra-vista/venues",
+        "organizerWebsite": "https://www.riseazmusicfestival.com/"
+      },
+      "sources": [
+        {
+          "url": "https://www.sierravistaaz.gov/our-city/tourism/event-meeting-planners/about-sierra-vista/venues",
+          "evidence": "Official Sierra Vista venue directory describes Veterans Memorial Park and its concert pavilion. No official park-specific Instagram verified.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.riseazmusicfestival.com/",
+          "evidence": "Official Rise AZ festival site links volunteer/vendor registration to the RPPLLC ticketing account and lists organizer contact Jai.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://rppllc.bammtickets.com/?action=buyfordatetime&eventID=403569",
+          "evidence": "Promoter-controlled sponsorship page explicitly identifies Rocha Planning and Promotions as organizer of Rise AZ Music Festival and other Southern Arizona events.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://landmark-cafe.com/when-sierra-vista-shows-up-for-its-own/",
+          "evidence": "Participating local business names Jai Rocha and team as the driving force behind Rise AZ, corroborating organizer identity.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Rocha Planning and Promotions"
+    },
+    {
+      "id": "manual:jimmy-rock-icff-after-party-orlando-2027-05-01",
+      "startDate": "2027-05-01",
+      "city": "Orlando",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "Hilton DoubleTree at SeaWorld — Royal 2",
+      "facts": {
+        "venueUrl": "https://www.hilton.com/en/hotels/mcosrdt-doubletree-orlando-theme-park-resort/",
+        "venueInstagram": "https://www.instagram.com/doubletreeorlandoseaworld/"
+      },
+      "sources": [
+        {
+          "url": "https://www.hilton.com/en/hotels/mcosrdt-doubletree-orlando-theme-park-resort/",
+          "evidence": "Official Hilton property is now called DoubleTree Orlando Theme Park Resort, formerly at SeaWorld, at 10100 International Drive. Hotel-authored Cvent promotion explicitly identifies Instagram @DOUBLETREEORLANDOSEAWORLD.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.cvent.com/venues/orlando/resort/doubletree-by-hilton-orlando-theme-park-resort/venue-1c9298ca-9d23-4d7c-ba4d-e339ff9c1e5f/promotions?promotionId=4757e8c7-d9d4-4ad7-a153-d3aa2110791f",
+          "evidence": "Hotel promotional terms explicitly list Instagram @DOUBLETREEORLANDOSEAWORLD.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": ""
+    },
+    {
+      "id": "bandsintown:109046072",
+      "startDate": "2026-11-06",
+      "city": "Saint Marys",
+      "state": "OH",
+      "country": "US",
+      "expectedVenue": "Cross Oak Camp & Retreat Center",
+      "facts": {
+        "venueUrl": "https://crossoakcamp.com/",
+        "venueInstagram": "https://www.instagram.com/crossoak_camp/"
+      },
+      "sources": [
+        {
+          "url": "https://crossoakcamp.com/about-us/",
+          "evidence": "Camp identifies itself as Cross Oak in St. Marys, Ohio, with the matching Jack Oak Point Road location. Its own site links the camp Instagram profile.",
+          "status": 200,
+          "receipt": "venue-3-receipts/d6bfab4d24bb.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://crossoakcamp.com/about-us/",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/crossoak_camp/",
+          "status": 200,
+          "receipt": "venue-3-receipts/d6bfab4d24bb.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Northwestern Ohio District NYI"
+    },
+    {
+      "id": "supplemental:skema-boy-2026-11-06-nashville-tn",
+      "startDate": "2026-11-06",
+      "city": "Nashville",
+      "state": "TN",
+      "country": "US",
+      "expectedVenue": "Cannery Hall — Row One Stage",
+      "facts": {
+        "venueUrl": "https://canneryhall.com/",
+        "venueInstagram": "https://www.instagram.com/canneryhallnashville/"
+      },
+      "sources": [
+        {
+          "url": "https://canneryhall.com/",
+          "evidence": "Venue calendar explicitly lists the November 6 Zauntee / Skema Boy booking in Row One Stage. The actual social anchor is canneryhallnashville; a different handle in legacy markup was not used.",
+          "status": 200,
+          "receipt": "venue-3-receipts/6a7f0ea06a61.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://canneryhall.com/",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/canneryhallnashville/",
+          "status": 200,
+          "receipt": "venue-3-receipts/6a7f0ea06a61.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": ""
+    },
+    {
+      "id": "manual:egr-big-brother-album-release-stockton-2026-11-07",
+      "startDate": "2026-11-07",
+      "city": "Stockton",
+      "state": "CA",
+      "country": "US",
+      "expectedVenue": "2725 Waterloo Rd",
+      "facts": {
+        "venueUrl": "https://www.vostockton.org/",
+        "venueInstagram": "https://www.instagram.com/vostockton/"
+      },
+      "sources": [
+        {
+          "url": "https://www.vostockton.org/",
+          "evidence": "Victory Outreach Stockton publishes 2725 Waterloo Road as its physical location, matching the address-only show venue. Its own site links vostockton. This identifies the premises; it does not assign an event organizer.",
+          "status": 200,
+          "receipt": "venue-3-receipts/bdcc14562201.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.vostockton.org/",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/vostockton/",
+          "status": 200,
+          "receipt": "venue-3-receipts/bdcc14562201.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": ""
+    },
+    {
+      "id": "manual:miles-minnick-christlike-university-orlando-2026-11-08",
+      "startDate": "2026-11-08",
+      "city": "Winter Park",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "Conduit",
+      "facts": {
+        "venueUrl": "https://www.conduitfl.com/",
+        "venueInstagram": "https://www.instagram.com/conduit_fl/",
+        "organizerWebsite": "https://www.endoxabooking.com/",
+        "organizerInstagram": "https://www.instagram.com/endoxabookingfl/"
+      },
+      "sources": [
+        {
+          "url": "https://www.conduitfl.com/tm-event/miles-minnick-christlike-university-florida-campus-tour/",
+          "evidence": "Conduit hosts the exact Miles Minnick November 8 event. Its calendar location is 6700 Aloma Avenue, Winter Park, and its social anchor is conduit_fl. Unrelated theindependentsf template markup was excluded.",
+          "status": 200,
+          "receipt": "venue-3-receipts/8cc1db58f585.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.conduitfl.com/tm-event/miles-minnick-christlike-university-florida-campus-tour/",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/conduit_fl/",
+          "status": 200,
+          "receipt": "venue-3-receipts/8cc1db58f585.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.conduitfl.com/tm-event/miles-minnick-christlike-university-florida-campus-tour/",
+          "evidence": "The exact Miles Minnick Conduit listing identifies Endoxa Presents; Conduit’s own venue Instagram is not substituted for the organizer.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/8cc1db58f585.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.endoxabooking.com/",
+          "evidence": "The organizer’s Florida concert website directly links endoxabookingfl on Instagram.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/2ae8a340b5ca.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Endoxa Presents"
+    },
+    {
+      "id": "supplemental:skema-boy-2026-11-11-tampa-fl",
+      "startDate": "2026-11-11",
+      "city": "Tampa",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "The Orpheum",
+      "facts": {
+        "venueUrl": "https://theorpheum.com/",
+        "venueInstagram": "https://www.instagram.com/tampaorpheum/",
+        "organizerWebsite": "https://theorpheum.com/",
+        "organizerInstagram": "https://www.instagram.com/tampaorpheum/",
+        "organizerLinkName": "The Orpheum"
+      },
+      "sources": [
+        {
+          "url": "https://theorpheum.com/about",
+          "evidence": "Official Orpheum page gives 14802 North Nebraska Avenue, Tampa, and links tampaorpheum.",
+          "status": 200,
+          "receipt": "venue-3-receipts/a24c18a0c702.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://theorpheum.com/about",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/tampaorpheum/",
+          "status": 200,
+          "receipt": "venue-3-receipts/a24c18a0c702.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "The Orpheum & Endoxa Booking"
+    },
+    {
+      "id": "manual:awake-fest-dj-bryce-g-eustis-2026-11-13",
+      "startDate": "2026-11-13",
+      "city": "Eustis",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "Ferran Park — Alice McClelland Memorial Bandshell",
+      "facts": {
+        "venueUrl": "https://www.eustis.org/Parks/Ferran-Park",
+        "organizerWebsite": "https://www.awake-fest.com/",
+        "organizerInstagram": "https://www.instagram.com/awakefest/"
+      },
+      "sources": [
+        {
+          "url": "https://www.eustis.org/Parks/Ferran-Park",
+          "evidence": "The City of Eustis park page identifies Ferran Park and its historic bandshell. This is the municipal venue page, not a promoter site.",
+          "status": "readable primary web extraction",
+          "receipt": "venue-3-receipts/web-primary-053-0.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.awake-fest.com/",
+          "evidence": "Official festival production site operates festival volunteer, sponsor, church-partner and donation resources under Awake-Fest branding and confirms Joyful Noize and Zauntee. Name is the public festival organization, not an inferred sponsoring church.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.awake-fest.com/churches",
+          "evidence": "Festival directly recruits its church partners; no particular partner is substituted as sole promoter.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.awake-fest.com/donate",
+          "evidence": "Official festival website directly links Instagram @awakefest and Facebook awakefesteustis.",
+          "receipt": "root-source-receipts/7f3edfd414fc4b.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Awake-Fest"
+    },
+    {
+      "id": "manual:awake-fest-zauntee-eustis-2026-11-14",
+      "startDate": "2026-11-14",
+      "city": "Eustis",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "Ferran Park — Alice McClelland Memorial Bandshell",
+      "facts": {
+        "venueUrl": "https://www.eustis.org/Parks/Ferran-Park",
+        "organizerWebsite": "https://www.awake-fest.com/",
+        "organizerInstagram": "https://www.instagram.com/awakefest/"
+      },
+      "sources": [
+        {
+          "url": "https://www.eustis.org/Parks/Ferran-Park",
+          "evidence": "The City of Eustis park page identifies Ferran Park and its historic bandshell. This is the municipal venue page, not a promoter site.",
+          "status": "readable primary web extraction",
+          "receipt": "venue-3-receipts/web-primary-053-0.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.awake-fest.com/",
+          "evidence": "Official festival production site operates festival volunteer, sponsor, church-partner and donation resources under Awake-Fest branding and confirms Joyful Noize and Zauntee. Name is the public festival organization, not an inferred sponsoring church.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.awake-fest.com/churches",
+          "evidence": "Festival directly recruits its church partners; no particular partner is substituted as sole promoter.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.awake-fest.com/donate",
+          "evidence": "Official festival website directly links Instagram @awakefest and Facebook awakefesteustis.",
+          "receipt": "root-source-receipts/7f3edfd414fc4b.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Awake-Fest"
+    },
+    {
+      "id": "official:82bb2a5f42c828c2537d",
+      "startDate": "2026-11-13",
+      "city": "Anderson",
+      "state": "IN",
+      "country": "US",
+      "expectedVenue": "ITOWN Church - Madison Campus",
+      "facts": {
+        "venueUrl": "https://www.itownchurch.com/"
+      },
+      "sources": [
+        {
+          "url": "https://itownconnect.com/contact",
+          "evidence": "ITOWN’s own childcare ministry identifies Madison Campus at 6607 Providence Drive, Anderson, and explicitly identifies its relationship to ITOWN Church. The church website is linked from the same organization.",
+          "status": 200,
+          "receipt": "venue-3-receipts/3717f4c94b52.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "ITOWN Church"
+    },
+    {
+      "id": "manual:kaden-jordan-2026-11-13-orlando",
+      "startDate": "2026-11-13",
+      "city": "Orlando",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "The Gathering Place",
+      "facts": {
+        "venueUrl": "https://www.tgporl.org/"
+      },
+      "sources": [
+        {
+          "url": "https://www.tgporl.org/about/our-beliefs",
+          "evidence": "The Gathering’s own site gives 8287 Curry Ford Road, Orlando, matching this listing.",
+          "status": 200,
+          "receipt": "venue-3-receipts/8017e0c26a27.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Renovation Records"
+    },
+    {
+      "id": "manual:heliopolis-soundoff-summit-showcase-calgary-2026-11-13",
+      "startDate": "2026-11-13",
+      "city": "Calgary",
+      "state": "AB",
+      "country": "CA",
+      "expectedVenue": "Heliopolis",
+      "facts": {
+        "venueUrl": "https://heliopolisyyc.ca/",
+        "organizerInstagram": "https://www.instagram.com/music_calgary/"
+      },
+      "sources": [
+        {
+          "url": "https://heliopolisyyc.ca/new-heliopolis/",
+          "evidence": "The venue’s own page identifies Heliopolis at 817 1st SW, Calgary. Its description explains the change from social cafe to evening venue.",
+          "status": "readable primary web extraction",
+          "receipt": "venue-3-receipts/web-primary-070-1.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.eventbrite.ca/e/heliopolis-soundoff-summit-showcase-tickets-2003992006036?aff=ZaireInk",
+          "evidence": "Exact showcase identifies Music Calgary as the organizer.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/3c4eee1ab785.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.musiccalgary.ca/",
+          "evidence": "Music Calgary’s own site directly links music_calgary on Instagram.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/339eb678cefd.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Music Calgary"
+    },
+    {
+      "id": "bandsintown:1040314202",
+      "startDate": "2026-11-14",
+      "city": "Monroe",
+      "state": "LA",
+      "country": "US",
+      "expectedVenue": "WL Jack Howard Theatre",
+      "facts": {
+        "venueUrl": "https://yourciviccenter.org/venues/jack-howard-theatre/",
+        "venueInstagram": "https://www.instagram.com/monroeciviccenter/"
+      },
+      "sources": [
+        {
+          "url": "https://yourciviccenter.org/venues/jack-howard-theatre/",
+          "evidence": "Official Monroe Civic Center page identifies Jack Howard Theatre within its complex and links the complex Instagram account. This account covers the theatre, not an unrelated promoter.",
+          "status": 200,
+          "receipt": "venue-3-receipts/305b7b614f13.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://yourciviccenter.org/venues/jack-howard-theatre/",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/monroeciviccenter/",
+          "status": 200,
+          "receipt": "venue-3-receipts/305b7b614f13.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Pastor CeJAY, Bishop Michael Douglas Sr. & New Generations Church"
+    },
+    {
+      "id": "manual:cherish-fashion-show-benefit-charlotte-2026-11-14",
+      "startDate": "2026-11-14",
+      "city": "Charlotte",
+      "state": "NC",
+      "country": "US",
+      "expectedVenue": "Eastgate Charlotte",
+      "facts": {
+        "venueUrl": "https://www.eastgateclt.com/",
+        "venueInstagram": "https://www.instagram.com/eastgateclt/",
+        "organizerWebsite": "https://www.cherishinc.org/",
+        "organizerInstagram": "https://www.instagram.com/cherishincorg/"
+      },
+      "sources": [
+        {
+          "url": "https://www.eastgateclt.com/",
+          "evidence": "The official website’s referenced application script renders Eastgate Church at 10132 Harrisburg Road, Charlotte, and an Instagram footer anchor to eastgateclt. The application source was read directly; no browser execution was claimed.",
+          "status": 200,
+          "receipt": "venue-3-receipts/96f88dba9fb4.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.eastgateclt.com/",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/eastgateclt/",
+          "status": 200,
+          "receipt": "venue-3-receipts/eastgate-public-assets.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://givebutter.com/wonderfullymade",
+          "evidence": "The exact benefit registration links cherishinc.org as the nonprofit organizer’s website.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/9629380eb9c5.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.cherishinc.org/",
+          "evidence": "The Charlotte nonprofit identifies its full name and directly links cherishincorg on Instagram.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/84bf97609bcc.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "C.h.e.r.i.sh."
+    },
+    {
+      "id": "manual:whatuprg-houston-2026-11-19",
+      "startDate": "2026-11-19",
+      "city": "Houston",
+      "state": "TX",
+      "country": "US",
+      "expectedVenue": "Rockefellers",
+      "facts": {
+        "venueUrl": "https://www.rockefellershouston.com/",
+        "venueInstagram": "https://www.instagram.com/rockefellershouston/"
+      },
+      "sources": [
+        {
+          "url": "https://www.rockefellershouston.com/",
+          "evidence": "Rockefellers’ own site gives 3620 Washington Avenue, Houston, and directly links rockefellershouston.",
+          "status": 200,
+          "receipt": "venue-3-receipts/1d79030f6b83.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.rockefellershouston.com/",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/rockefellershouston/",
+          "status": 200,
+          "receipt": "venue-3-receipts/1d79030f6b83.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "FREESUNDAES"
+    },
+    {
+      "id": "ticketmaster:vvG10Z_CMA3B0H",
+      "startDate": "2026-11-19",
+      "city": "Los Angeles",
+      "state": "CA",
+      "country": "US",
+      "expectedVenue": "The Moroccan Lounge",
+      "facts": {
+        "venueUrl": "https://themoroccan.com/",
+        "venueInstagram": "https://www.instagram.com/moroccanlounge/",
+        "organizerWebsite": "https://themoroccan.com/",
+        "organizerInstagram": "https://www.instagram.com/moroccanlounge/"
+      },
+      "sources": [
+        {
+          "url": "https://themoroccan.com/tm-event/zauntee-god-remembers-tour/",
+          "evidence": "The venue’s exact Zauntee event page identifies the Moroccan Lounge, 901 E 1st Street in Los Angeles, and directly links moroccanlounge.",
+          "status": 200,
+          "receipt": "venue-3-receipts/c7ddf0a8bcc1.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://themoroccan.com/tm-event/zauntee-god-remembers-tour/",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/moroccanlounge/",
+          "status": 200,
+          "receipt": "venue-3-receipts/c7ddf0a8bcc1.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://themoroccan.com/tm-event/zauntee-god-remembers-tour/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official exact event page and actual footer Instagram anchor establish both links.",
+          "receipt": "root-source-receipts/c7ddf0a8bcc12d.json",
+          "status": 200
+        }
+      ],
+      "expectedOrganizerName": "The Moroccan Lounge"
+    },
+    {
+      "id": "manual:whatuprg-dallas-2026-11-20",
+      "startDate": "2026-11-20",
+      "city": "Fort Worth",
+      "state": "TX",
+      "country": "US",
+      "expectedVenue": "Ridglea Room",
+      "facts": {
+        "venueUrl": "https://theridglea.com/",
+        "venueInstagram": "https://www.instagram.com/ridgleatheater/"
+      },
+      "sources": [
+        {
+          "url": "https://theridglea.com/",
+          "evidence": "The Ridglea complex site explicitly includes the Ridglea Room, gives 6025 Camp Bowie Boulevard in Fort Worth, and links ridgleatheater.",
+          "status": 200,
+          "receipt": "venue-3-receipts/f463801227cc.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://theridglea.com/",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/ridgleatheater/",
+          "status": 200,
+          "receipt": "venue-3-receipts/f463801227cc.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "FREESUNDAES"
+    },
+    {
+      "id": "manual:bandsintown:107971264",
+      "startDate": "2026-11-21",
+      "city": "Sacramento",
+      "state": "CA",
+      "country": "US",
+      "expectedVenue": "Sacramento Zoo",
+      "facts": {
+        "venueUrl": "https://www.saczoo.org/",
+        "venueInstagram": "https://www.instagram.com/sacramentozoo/",
+        "organizerWebsite": "https://hogmob.com/",
+        "organizerInstagram": "https://www.instagram.com/sevinhogmob/"
+      },
+      "sources": [
+        {
+          "url": "https://www.saczoo.org/",
+          "evidence": "Sacramento Zoo’s official site identifies 3930 West Land Park Drive and directly links sacramentozoo.",
+          "status": 200,
+          "receipt": "venue-3-receipts/0ead20c02ec6.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.saczoo.org/",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/sacramentozoo/",
+          "status": 200,
+          "receipt": "venue-3-receipts/0ead20c02ec6.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.bandsintown.com/e/107971264-sevin-hog-mob-ministries-at-sacramento-zoo?came_from=252",
+          "evidence": "Indexed exact November 21 Sacramento show describes Hog Mob and other local ministries as hosting the Pray 4 My Hood block party.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://hogmob.com/mob-tour/",
+          "evidence": "Official ministry tour page describes its Pray 4 My Hood block-party ministry.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://hogmob.com/",
+          "evidence": "Official ministry website SOCIALS > INSTAGRAM directly links instagram.com/sevinhogmob; artist/ministry shared account is the organization-designated account.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "HOG MOB Ministries"
+    },
+    {
+      "id": "manual:legacy-conf-miami-live-concert-north-lauderdale-2026-11-21",
+      "startDate": "2026-11-21",
+      "city": "North Lauderdale",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "Riverside Church",
+      "facts": {
+        "venueUrl": "https://954church.churchcenter.com/home",
+        "venueInstagram": "https://www.instagram.com/954church/",
+        "organizerWebsite": "https://www.legacydisciple.org/",
+        "organizerInstagram": "https://www.instagram.com/legacydisciple/"
+      },
+      "sources": [
+        {
+          "url": "https://954church.churchcenter.com/home",
+          "evidence": "Riverside Church’s own Church Center page identifies 957 Rock Island Road, North Lauderdale, and directly links the 954church Instagram account.",
+          "status": 200,
+          "receipt": "venue-3-receipts/1ef1aa54dbda.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://954church.churchcenter.com/home",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/954church/",
+          "status": 200,
+          "receipt": "venue-3-receipts/1ef1aa54dbda.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.legacydisciple.org/",
+          "evidence": "Official ministry homepage directly links legacydisciple on Instagram.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/f8e8857404f4.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.legacydisciple.org/miami-need-to-know-2",
+          "evidence": "Official Miami event information corroborates the named organizer and links the same Instagram account.",
+          "status": 200,
+          "receipt": "root-source-receipts/604bb2546edf2e.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Legacy Disciple"
+    },
+    {
+      "id": "manual:g2g-gala-fort-lauderdale-2026-11-21",
+      "startDate": "2026-11-21",
+      "city": "Fort Lauderdale",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "New Mount Olive Baptist Church",
+      "facts": {
+        "venueUrl": "https://mountolive.org/"
+      },
+      "sources": [
+        {
+          "url": "https://mountolive.org/plan-your-visit/",
+          "evidence": "New Mount Olive’s official site gives 400 NW 9th Avenue, Fort Lauderdale. Both newmtolive and newmtoliveftl are outbound Instagram anchors on its current pages.",
+          "status": 200,
+          "receipt": "venue-3-receipts/7c8b15f6c89f.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "G2G NIGHTS"
+    },
+    {
+      "id": "bandsintown:109072797",
+      "startDate": "2026-11-22",
+      "city": "Columbus",
+      "state": "OH",
+      "country": "US",
+      "expectedVenue": "Skully's Music Diner",
+      "facts": {
+        "venueUrl": "https://www.skullys.org/",
+        "venueInstagram": "https://www.instagram.com/skullysmusicdiner/",
+        "organizerWebsite": "https://www.ravejesus.com/",
+        "organizerInstagram": "https://www.instagram.com/ravejesusmusic/",
+        "organizerLinkName": "Rave Jesus"
+      },
+      "sources": [
+        {
+          "url": "https://www.skullys.org/",
+          "evidence": "Skully’s official site gives 1151 North High Street, Columbus, and directly links skullysmusicdiner.",
+          "status": 200,
+          "receipt": "venue-3-receipts/e265d10d2557.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.skullys.org/",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/skullysmusicdiner/",
+          "status": 200,
+          "receipt": "venue-3-receipts/e265d10d2557.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.ticketweb.com/event/rave-revival-fall-tour-skullys-music-diner-tickets/14295004",
+          "evidence": "Exact ticket listing credits Capacity Entertainment and Rave Jesus; HTTP collection was blocked, but indexed primary listing retained that credit.",
+          "status": 506,
+          "receipt": "organizer-1-receipts/6a55d1c1901b.json",
+          "fetchError": "HTTP 506",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.ravejesus.com/tour",
+          "evidence": "Rave Jesus’s own tour page includes the November 22 Columbus/Skully’s booking and directly links ravejesusmusic on Instagram.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/f64dbc383ce0.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Capacity Entertainment / Rave Jesus"
+    },
+    {
+      "id": "manual:ythcon-brenno-denver-2026",
+      "startDate": "2026-11-25",
+      "city": "Denver",
+      "state": "CO",
+      "country": "US",
+      "expectedVenue": "Hyatt Regency Denver at Colorado Convention Center",
+      "facts": {
+        "venueUrl": "https://www.hyatt.com/hyatt-regency/en-US/dencc-hyatt-regency-denver-at-colorado-convention-center",
+        "organizerWebsite": "https://www.cddcyouth.com/"
+      },
+      "sources": [
+        {
+          "url": "https://www.hyatt.com/hyatt-regency/en-US/dencc-hyatt-regency-denver-at-colorado-convention-center",
+          "evidence": "Hyatt’s exact hotel page identifies Hyatt Regency Denver at Colorado Convention Center at 650 15th Street, Denver.",
+          "status": "readable primary web extraction",
+          "receipt": "venue-3-receipts/web-primary-169-2.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.cddcyouth.com/convention/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official CDDC Youth site advertises the matching YTHCON Denver 2026 conference. No exact Instagram profile found in its official links.",
+          "receipt": "root-source-receipts/cd5ffdb5ff73b9.json",
+          "status": 200
+        },
+        {
+          "url": "https://www.cddcyouth.com/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official CDDC Youth site advertises the matching YTHCON Denver 2026 conference. No exact Instagram profile found in its official links.",
+          "receipt": "root-source-receipts/f6af1e9300932f.json",
+          "status": 200
+        }
+      ],
+      "expectedOrganizerName": "CDDC Youth"
+    },
+    {
+      "id": "bandsintown:108975912",
+      "startDate": "2026-11-29",
+      "city": "Atlanta",
+      "state": "GA",
+      "country": "US",
+      "expectedVenue": "Variety Playhouse",
+      "facts": {
+        "venueUrl": "https://www.variety-playhouse.com/",
+        "venueInstagram": "https://www.instagram.com/varietyplayhouse/",
+        "organizerWebsite": "https://www.zeromile.com/"
+      },
+      "sources": [
+        {
+          "url": "https://www.variety-playhouse.com/getting-here/",
+          "evidence": "Venue directions give 1099 Euclid Avenue NE, Atlanta, and the official website links varietyplayhouse.",
+          "status": 200,
+          "receipt": "venue-3-receipts/1a34a2dafb1c.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://variety-playhouse.com/",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/varietyplayhouse/",
+          "status": 200,
+          "receipt": "venue-3-receipts/82cbb53dcb94.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.zeromile.com/",
+          "evidence": "The official Zero Mile concert operator website is readable and matches the approved presenter entity.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/cae8510dd548.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.zeromile.com/contact/",
+          "evidence": "Official contact page exposes no Zero Mile Instagram link. Its AEG parent-company policy links do not establish a Zero Mile account.",
+          "status": 200,
+          "receipt": "root-source-receipts/3c6b27b31cdbc0.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Zero Mile Presents"
+    },
+    {
+      "id": "manual:carols-in-the-park-arizona-city-2026-12-03",
+      "startDate": "2026-12-03",
+      "city": "Arizona City",
+      "state": "AZ",
+      "country": "US",
+      "expectedVenue": "Arizona City Park",
+      "facts": {
+        "venueUrl": "https://www.fbcazcity.com/",
+        "organizerWebsite": "https://www.fbcazcity.com/"
+      },
+      "sources": [
+        {
+          "url": "https://www.fbcazcity.com/carolsinthepark",
+          "evidence": "The church’s own page explicitly identifies Arizona City Park at 13955 S. Sunland Gin Road for the exact Carols in the Park event. Its homepage includes Arizona City Park as part of its campus information.",
+          "status": 200,
+          "receipt": "venue-3-receipts/61c3495e4670.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.fbcazcity.com/carolsinthepark",
+          "evidence": "Church operates official Carols in the Park event page, donation fund and attendance/parking instructions, establishing it as host of this event.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "First Baptist Church of Arizona City"
+    },
+    {
+      "id": "manual:kevi-morse-invasion-sparta-2026-12-05",
+      "startDate": "2026-12-05",
+      "city": "Sparta",
+      "state": "MI",
+      "country": "US",
+      "expectedVenue": "Sparta Center Church",
+      "facts": {
+        "venueUrl": "https://www.spartabaptist.org/",
+        "organizerWebsite": "https://www.spartabaptist.org/"
+      },
+      "sources": [
+        {
+          "url": "https://www.spartabaptist.org/new-here/contact-us/",
+          "evidence": "Although the domain and page title retain Sparta Baptist Church, the official contact page explicitly names Sparta Center Church at 38 S State Street, Sparta, Michigan.",
+          "status": 200,
+          "receipt": "venue-3-receipts/e47665b5b492.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.eventbrite.com/e/invasion-2026-tickets-2000303583866",
+          "evidence": "Exact Invasion registration identifies Sparta Center Church and its Sparta street address.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/c45576c80527.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.spartabaptist.org/new-here/contact-us/",
+          "evidence": "The church’s retained spartabaptist.org domain contact page explicitly identifies Sparta Center Church at the matching location.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/e47665b5b492.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Sparta Center Church"
+    },
+    {
+      "id": "manual:tommy-royale-cars-christ-orlando-2026-12-05",
+      "startDate": "2026-12-05",
+      "city": "Orlando",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "Dezerland Park Orlando",
+      "facts": {
+        "venueUrl": "https://dezerlandpark.com/",
+        "venueInstagram": "https://www.instagram.com/dezerlandparkorlandoofficial/",
+        "organizerWebsite": "https://carschrist.com/",
+        "organizerInstagram": "https://www.instagram.com/carsnchristt/"
+      },
+      "sources": [
+        {
+          "url": "https://dezerlandpark.com/contact/",
+          "evidence": "Dezerland’s official contact page gives 5250 International Drive, Orlando, and directly links dezerlandparkorlandoofficial.",
+          "status": 200,
+          "receipt": "venue-3-receipts/d969ec32ddfc.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://dezerlandpark.com/contact/",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/dezerlandparkorlandoofficial/",
+          "status": 200,
+          "receipt": "venue-3-receipts/d969ec32ddfc.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://events.humanitix.com/cars-and-christ-orlando",
+          "evidence": "Exact Orlando event names Cars & Christ and directly links carsnchristt.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/c8fdcfffa135.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://carschrist.com/",
+          "evidence": "The organizer’s own website confirms the same entity and directly links the same carsnchristt Instagram profile.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/11153c596db1.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Cars & Christ Inc."
+    },
+    {
+      "id": "manual:miles-cj-zion-ultra-lounge-chandler-2026",
+      "startDate": "2026-12-05",
+      "city": "Chandler",
+      "state": "AZ",
+      "country": "US",
+      "expectedVenue": "Vybe Event Center",
+      "facts": {
+        "venueUrl": "https://www.vybechandler.com/",
+        "venueInstagram": "https://www.instagram.com/vybechandler/",
+        "organizerWebsite": "https://zulvirtual.com/"
+      },
+      "sources": [
+        {
+          "url": "https://www.vybechandler.com/",
+          "evidence": "Vybe’s official site gives 2301 South Stearman Drive in Chandler and links vybechandler.",
+          "status": 200,
+          "receipt": "venue-3-receipts/bb5168173a38.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.vybechandler.com/",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/vybechandler/",
+          "status": 200,
+          "receipt": "venue-3-receipts/bb5168173a38.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.eventbrite.com/o/121825910399",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official Eventbrite organizer links zulvirtual.com, whose site explicitly identifies the Arizona Zion Ultra Lounge organization.",
+          "receipt": "root-source-receipts/1192f819327d8d.json",
+          "status": 200
+        },
+        {
+          "url": "https://zulvirtual.com/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official Eventbrite organizer links zulvirtual.com, whose site explicitly identifies the Arizona Zion Ultra Lounge organization.",
+          "receipt": "root-source-receipts/74e7aa40e53c9f.json",
+          "status": "<urlopen error [Errno 50] Network is down>"
+        }
+      ],
+      "expectedOrganizerName": "Zion Ultra Lounge Inc"
+    },
+    {
+      "id": "manual:kaden-jordan-2026-12-11-ocala",
+      "startDate": "2026-12-11",
+      "city": "Ocala",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "NEXT CHURCH",
+      "facts": {
+        "venueUrl": "https://www.ournextchurch.com/",
+        "organizerWebsite": "https://www.ournextchurch.com/"
+      },
+      "sources": [
+        {
+          "url": "https://www.ournextchurch.com/",
+          "evidence": "NEXT Church’s own site identifies its Ocala campus and the exact UNFLTRD concert. The concert page’s Instagram links belong to performers, not the church.",
+          "status": 200,
+          "receipt": "venue-3-receipts/2383d442c74a.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.ournextchurch.com/unfltrd",
+          "evidence": "The church’s own exact UNFLTRD page verifies its site. Outbound Instagram links name performers, not the church, so none is assigned to NEXT CHURCH.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/42495cedfa7a.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "NEXT CHURCH"
+    },
+    {
+      "id": "manual:mike-malagies-its-a-god-night-orlando-2026-12-12",
+      "startDate": "2026-12-12",
+      "city": "Kissimmee",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "Sun on the Beach — Old Town",
+      "facts": {
+        "venueUrl": "https://sunonthebeachfl.com/"
+      },
+      "sources": [
+        {
+          "url": "https://sunonthebeachfl.com/",
+          "evidence": "Sun on the Beach’s official site gives 5770 West Irlo Bronson Memorial Highway, Kissimmee; Old Town’s tenant page independently identifies the same business and website.",
+          "status": 200,
+          "receipt": "venue-3-receipts/61747fa0ebb3.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": ""
+    },
+    {
+      "id": "manual:jimmy-rock-worship-wawa-miami-2026",
+      "startDate": "2026-12-18",
+      "city": "Miami",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "Venue not confirmed",
+      "facts": {
+        "organizerWebsite": "https://theworshipwawa.com/",
+        "organizerInstagram": "https://www.instagram.com/theworshipwawa/"
+      },
+      "sources": [
+        {
+          "url": "https://www.theworshipwawa.com/",
+          "evidence": "The Worship Wawa’s own site describes the Miami mobile worship venue and directly links theworshipwawa. These links belong to the mobile venue, not Margaret Pace Park, which is the pickup location.",
+          "status": 200,
+          "receipt": "venue-3-receipts/c0b1e341cb56.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.theworshipwawa.com/",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/theworshipwawa/",
+          "status": 200,
+          "receipt": "venue-3-receipts/c0b1e341cb56.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://theworshipwawa.com/",
+          "evidence": "Official operator homepage explicitly promotes Dec. 18 Jingle Bell Rock with Jimmy Rock as its Wawa Christmas bash, and directly links @theworshipwawa. Saved primary HTTP 200 receipt confirms event host and official profile.",
+          "receipt": "venue-3-receipts/c0b1e341cb56.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://theworshipwawa.com/jinglebellrock/",
+          "evidence": "Exact Dec. 18 Jimmy Rock event page identifies The Worship Wawa, lists its ticket checkout and organizer contact, and explicitly says venue and times will be announced.",
+          "receipt": "root-source-receipts/4a0576f47c76a7.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "The Worship Wawa"
+    },
+    {
+      "id": "official:856f1913ed1c6be9b355",
+      "startDate": "2026-12-29",
+      "city": "Cincinnati",
+      "state": "OH",
+      "country": "US",
+      "expectedVenue": "Duke Energy Convention Center",
+      "facts": {
+        "venueUrl": "https://thefirstfinancialcenter.com/",
+        "venueInstagram": "https://www.instagram.com/cincyffc/",
+        "organizerWebsite": "https://followconference.org/",
+        "organizerInstagram": "https://www.instagram.com/followcon2026/",
+        "organizerLinkName": "FOLLOW Conference"
+      },
+      "sources": [
+        {
+          "url": "https://cincyconventions.com/",
+          "evidence": "The convention center’s established domain redirects to its current First Financial Center website, whose own social anchor is cincyffc. Its newsroom confirms the naming-rights change; this is the former Duke Energy Convention Center, not a namesake.",
+          "status": 200,
+          "receipt": "venue-3-receipts/17216cf2b7f8.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://cincyconventions.com/",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/cincyffc/",
+          "status": 200,
+          "receipt": "venue-3-receipts/17216cf2b7f8.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://followconference.org/",
+          "evidence": "Official FOLLOW 2026 conference site explicitly lists Hulvey, schedules his concert Tuesday Dec. 29 at 9 PM, gives Cincinnati convention-center address, follow@wesleyan.org contact and says The Wesleyan Church absorbs registration processing fees.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://na.eventscloud.com/follow26",
+          "evidence": "Official conference site links to this registration destination. Registration fetch returned 403; no additional booking claims imported.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://followconference.org/",
+          "evidence": "Official conference website directly links @followcon2026 as its conference account, separately from parent Next Gen ministry account. Label organizer links FOLLOW Conference.",
+          "receipt": "root-source-receipts/46cbbb02cce5ec.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "The Wesleyan Church — FOLLOW Conference"
+    },
+    {
+      "id": "manual:bandsintown:108969341",
+      "startDate": "2027-01-22",
+      "city": "Fayetteville",
+      "state": "GA",
+      "country": "US",
+      "expectedVenue": "Family Life Missionary Baptist Church",
+      "facts": {
+        "venueUrl": "https://www.familylifembc.com/",
+        "venueInstagram": "https://www.instagram.com/familylifembc/"
+      },
+      "sources": [
+        {
+          "url": "https://www.familylifembc.com/",
+          "evidence": "Family Life Missionary Baptist Church’s own site identifies 107 Highland Hills Road, Fayetteville, Georgia, and directly links familylifembc.",
+          "status": 200,
+          "receipt": "venue-3-receipts/b848b945bdb8.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.familylifembc.com/",
+          "evidence": "Actual outbound Instagram anchor on the official venue/operator page: https://www.instagram.com/familylifembc/",
+          "status": 200,
+          "receipt": "venue-3-receipts/b848b945bdb8.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": ""
+    },
+    {
+      "id": "manual:lecrae-wild-adventures-valdosta-2027-05-08",
+      "startDate": "2027-05-08",
+      "city": "Valdosta",
+      "state": "GA",
+      "country": "US",
+      "expectedVenue": "Wild Adventures LIVE! Amphitheater",
+      "facts": {
+        "venueUrl": "https://www.wildadventures.com/explore-the-park/concerts/",
+        "organizerWebsite": "https://www.wildadventures.com/"
+      },
+      "sources": [
+        {
+          "url": "https://www.wildadventures.com/",
+          "evidence": "Wild Adventures’ official site identifies its LIVE! concert venue within the Valdosta theme park and gives 3766 Old Clyattville Road.",
+          "status": "readable primary web extraction",
+          "receipt": "venue-3-receipts/web-primary-325-3.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.wildadventures.com/explore-the-park/concerts/",
+          "evidence": "Park operates its official Wild Adventures LIVE concert series and directly lists Lecrae May 8, 2027. Circle K is named presenting sponsor, not substituted as event organizer.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Wild Adventures Theme Park"
+    },
+    {
+      "id": "manual:holy-hip-hop-church-lake-almanor-2026-11-06",
+      "startDate": "2026-11-06",
+      "city": "Lake Almanor",
+      "state": "CA",
+      "country": "US",
+      "expectedVenue": "Lake Almanor Community Church",
+      "facts": {
+        "organizerInstagram": "https://www.instagram.com/toc2daroc/"
+      },
+      "sources": [
+        {
+          "url": "https://www.instagram.com/toc2daroc/p/Def9BlLJonP/",
+          "evidence": "The retained owner-reviewed official organizer announcement is posted by toc2daroc and explicitly credits T.O.C R.O.C Ministries. The profile is derived from that previously verified author, not a guessed handle. Fresh Instagram request returned a login shell.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/76d93f456da8.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "T.O.C R.O.C Ministries"
+    },
+    {
+      "id": "manual:don-ready-club-217-los-angeles-2026-11-06",
+      "startDate": "2026-11-06",
+      "city": "Los Angeles",
+      "state": "CA",
+      "country": "US",
+      "expectedVenue": "6111 S Gramercy Place",
+      "facts": {
+        "organizerInstagram": "https://www.instagram.com/christianclub.la/"
+      },
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/e/christian-latin-rap-club-night-w-don-ready-free-event-tickets-2003215547628",
+          "evidence": "The exact Don Ready event links the Justin and Petrina Berry organizer profile.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/17ba857e9c1f.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.eventbrite.com/o/75350234143",
+          "evidence": "The organizer profile has an outbound christianclub.la Instagram link and matching Organization.sameAs, and lists the exact current Don Ready event.",
+          "status": 200,
+          "receipt": "root-source-receipts/9454e8b5afb15e.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Club 2:17"
+    },
+    {
+      "id": "manual:rap-go-round-west-palm-beach-2026-11-20",
+      "startDate": "2026-11-20",
+      "city": "West Palm Beach",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "2740 Parker Avenue",
+      "facts": {
+        "organizerWebsite": "https://www.holywatersministry.org/",
+        "organizerInstagram": "https://www.instagram.com/holy_waters_hiphop/",
+        "organizerLinkName": "Holy Waters Ministry Network"
+      },
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/e/rap-go-round-tickets-2002700148054",
+          "evidence": "Exact event text names Catalyst Hip Hop as host and Holy Waters as co-host and directly links both Instagram profiles and holywatersministry.org.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/f3e9f121ded9.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.holywatersministry.org/",
+          "evidence": "The ministry site confirms the same public identity and links holy_waters_hiphop via an outbound redirect.",
+          "status": 200,
+          "receipt": "organizer-1-receipts/e2b40c895387.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Catalyst Hip Hop / Holy Waters Ministry Network"
+    },
+    {
+      "id": "manual:vibe5-awards-atlanta-2026-12-05",
+      "startDate": "2026-12-05",
+      "city": "Jonesboro",
+      "state": "GA",
+      "country": "US",
+      "expectedVenue": "",
+      "facts": {
+        "organizerWebsite": "https://www.vibe5entertainment.com/"
+      },
+      "sources": [
+        {
+          "url": "https://www.vibe5entertainment.com/event-details/2026-3rd-annual-vibe5-awards",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official event and organizer homepage verified. Instagram anchor points to website-template provider @wix and is intentionally rejected.",
+          "receipt": "root-source-receipts/229869089f5842.json",
+          "status": 200
+        },
+        {
+          "url": "https://www.vibe5entertainment.com/",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official event and organizer homepage verified. Instagram anchor points to website-template provider @wix and is intentionally rejected.",
+          "receipt": "root-source-receipts/264c23a1d9c7a1.json",
+          "status": 200
+        }
+      ],
+      "expectedOrganizerName": "Vibe5 Entertainment"
+    },
+    {
+      "id": "hhwg-christmas-extravaganza-royse-city-2026-12-12",
+      "startDate": "2026-12-12",
+      "city": "Royse City",
+      "state": "TX",
+      "country": "US",
+      "expectedVenue": "",
+      "facts": {
+        "organizerInstagram": "https://www.instagram.com/hiphopworshipgarthering2025/",
+        "organizerLinkName": "The Hip Hop Worship Gathering"
+      },
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/o/121769294845",
+          "reviewedAt": "2026-11-06",
+          "evidence": "Official HHWG organizer profile directly links this exact spelling of the Instagram account. New Hope co-host account and venue remain unresolved; no venue/address change.",
+          "receipt": "root-source-receipts/c59a3b9a4512a4.json",
+          "status": 200
+        }
+      ],
+      "expectedOrganizerName": "The Hip Hop Worship Gathering & New Hope Baptist Church Royse City"
+    },
+    {
+      "id": "manual:kingdom-builders-lancaster-2026-11-20",
+      "startDate": "2026-11-20",
+      "city": "Lancaster",
+      "state": "CA",
+      "country": "US",
+      "expectedVenue": "1051 W Columbia Way, Suite 209",
+      "facts": {
+        "organizerWebsite": "https://www.kingdombuilderschurch.net/"
+      },
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/e/kingdom-builders-concert-tickets-2003431968950",
+          "evidence": "Eventbrite exact November 20 Lancaster concert explicitly says By / Organized by KINGDOM BUILDERS So. Cal Hub.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.kingdombuilderschurch.net/",
+          "evidence": "Official site has matching organization name and 1051 Columbia Way Suites 209–210 Lancaster address.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Kingdom Builders So. Cal Hub"
+    },
+    {
+      "id": "manual:jesus-loves-hip-hop-dallas-2026-12-05",
+      "startDate": "2026-12-05",
+      "city": "Dallas",
+      "state": "TX",
+      "country": "US",
+      "expectedVenue": "DS Studio",
+      "facts": {
+        "organizerInstagram": "https://www.instagram.com/jesusloveshiphop0/"
+      },
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/e/jesus-loves-hip-hop-concert-tickets-2003799493225?aff=ebdssbdestsearch",
+          "evidence": "Collected exact December 5 Dallas event HTTP 200. Visible By / Organized by Jesus Loves Hip Hop and Event JSON-LD organizer identify Jesus Loves Hip Hop and link official organizer profile 9776783754.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.eventbrite.com/e/worship-in-motion-faith-fitness-tickets-2001690535275?aff=ebdssbdestsearch",
+          "evidence": "Another official event by the same Jesus Loves Hip Hop organization explicitly supplies instagram.com/jesusloveshiphop0 as its Instagram. The exact Dallas event now independently verifies the host match.",
+          "reviewedAt": "2026-11-06"
+        }
+      ],
+      "expectedOrganizerName": "Jesus Loves Hip Hop"
     }
   ]
 }

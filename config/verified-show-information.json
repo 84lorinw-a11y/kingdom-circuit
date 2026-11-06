@@ -754,7 +754,10 @@
       "facts": {
         "postalCode": "32726",
         "ageRestriction": "All ages",
-        "publicDescription": "Awake-Fest is a free youth festival serving students across Lake County, with all ages welcome. This listing covers the festival appearance by DJ Bryce G / The Joyful Noize."
+        "publicDescription": "Awake-Fest is a free youth festival serving students across Lake County, with all ages welcome. This listing covers the festival appearance by DJ Bryce G / The Joyful Noize.",
+        "organizer": {
+          "name": "Awake-Fest"
+        }
       },
       "sources": [
         {
@@ -783,6 +786,22 @@
           "url": "https://www.awake-fest.com/",
           "evidence": "Official homepage describes free youth festival/allages and links both named featured acts. Existing individually reviewed dated graphics establish each day; do not merge the two dates or imply a precise artist set time.",
           "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.awake-fest.com/",
+          "evidence": "Official festival production site operates festival volunteer, sponsor, church-partner and donation resources under Awake-Fest branding and confirms Joyful Noize and Zauntee. Name is the public festival organization, not an inferred sponsoring church.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.awake-fest.com/churches",
+          "evidence": "Festival directly recruits its church partners; no particular partner is substituted as sole promoter.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.awake-fest.com/donate",
+          "evidence": "Official festival website directly links Instagram @awakefest and Facebook awakefesteustis.",
+          "receipt": "root-source-receipts/7f3edfd414fc4b.json",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedVenue": "Ferran Park — Alice McClelland Memorial Bandshell",
@@ -797,7 +816,10 @@
       "facts": {
         "postalCode": "32726",
         "ageRestriction": "All ages",
-        "publicDescription": "Awake-Fest is a free youth festival serving students across Lake County, with all ages welcome. This listing covers the festival appearance by Zauntee."
+        "publicDescription": "Awake-Fest is a free youth festival serving students across Lake County, with all ages welcome. This listing covers the festival appearance by Zauntee.",
+        "organizer": {
+          "name": "Awake-Fest"
+        }
       },
       "sources": [
         {
@@ -825,6 +847,22 @@
         {
           "url": "https://www.awake-fest.com/",
           "evidence": "Official homepage describes free youth festival/allages and links both named featured acts. Existing individually reviewed dated graphics establish each day; do not merge the two dates or imply a precise artist set time.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.awake-fest.com/",
+          "evidence": "Official festival production site operates festival volunteer, sponsor, church-partner and donation resources under Awake-Fest branding and confirms Joyful Noize and Zauntee. Name is the public festival organization, not an inferred sponsoring church.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.awake-fest.com/churches",
+          "evidence": "Festival directly recruits its church partners; no particular partner is substituted as sole promoter.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.awake-fest.com/donate",
+          "evidence": "Official festival website directly links Instagram @awakefest and Facebook awakefesteustis.",
+          "receipt": "root-source-receipts/7f3edfd414fc4b.json",
           "reviewedAt": "2026-11-06"
         }
       ],
@@ -1176,7 +1214,10 @@
       "state": "CA",
       "country": "US",
       "facts": {
-        "postalCode": "93534"
+        "postalCode": "93534",
+        "organizer": {
+          "name": "Kingdom Builders So. Cal Hub"
+        }
       },
       "sources": [
         {
@@ -1187,6 +1228,16 @@
           "quoteOrSummary": "Visual inspection of the saved organizer flyer: 1051 W Columbia Way, Suite 209, Lancaster CA 93534; Nov 20, 6 PM doors / 6:30 PM start. Original organizer post is https://www.instagram.com/626authentic/p/DekIM5LG9B8/ (unavailable to web reader). This is direct flyer evidence, not inferred from Lancaster.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.eventbrite.com/e/kingdom-builders-concert-tickets-2003431968950",
+          "evidence": "Eventbrite exact November 20 Lancaster concert explicitly says By / Organized by KINGDOM BUILDERS So. Cal Hub.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.kingdombuilderschurch.net/",
+          "evidence": "Official site has matching organization name and 1051 Columbia Way Suites 209–210 Lancaster address.",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedVenue": "1051 W Columbia Way, Suite 209",
@@ -1603,22 +1654,55 @@
       "city": "Miami",
       "state": "FL",
       "country": "US",
+      "expectedVenue": "The Worship Wawa — Margaret Pace Park pickup",
+      "expectedAddress": "1745 N Bayshore Dr",
       "facts": {
-        "postalCode": "33132"
+        "organizer": {
+          "name": "The Worship Wawa"
+        }
       },
-      "sources": [
+      "corrections": [
         {
-          "url": "https://www.miami.gov/My-Government/Departments/Office-of-Capital-Improvements/Capital-Improvements-Projects-Construction-Notices-Per-District/District-2-Capital-Improvements-Projects-1-1/Margaret-Pace-Park-Phase-1",
-          "fields": [
-            "postalCode"
-          ],
-          "quoteOrSummary": "City of Miami, the park's public operator, identifies Margaret Pace Park at 1745 N Bayshore Dr, Miami FL 33132. Venue/pickup address fact only; does not independently verify the Rave & Worship boat event.",
-          "reviewedAt": "2026-11-02",
-          "confidence": "high"
+          "expected": {
+            "startTime": "17:00",
+            "venue": "The Worship Wawa — Margaret Pace Park pickup",
+            "address": "1745 N Bayshore Dr",
+            "postalCode": "33132"
+          },
+          "facts": {
+            "startTime": "",
+            "venue": "Venue not confirmed",
+            "address": "",
+            "postalCode": ""
+          }
         }
       ],
-      "expectedVenue": "The Worship Wawa — Margaret Pace Park pickup",
-      "expectedAddress": "1745 N Bayshore Dr"
+      "sources": [
+        {
+          "url": "https://theworshipwawa.com/jinglebellrock/",
+          "fields": [
+            "startTime",
+            "venue",
+            "address",
+            "postalCode"
+          ],
+          "quoteOrSummary": "The current organizer page for December 18 confirms Miami, says venue reveal soon, and explicitly says the venue and times will be announced. Old park pickup and ride times are no longer confirmed.",
+          "reviewedAt": "2026-11-06",
+          "confidence": "high"
+        },
+        {
+          "url": "https://theworshipwawa.com/",
+          "evidence": "Official operator homepage explicitly promotes Dec. 18 Jingle Bell Rock with Jimmy Rock as its Wawa Christmas bash, and directly links @theworshipwawa. Saved primary HTTP 200 receipt confirms event host and official profile.",
+          "receipt": "venue-3-receipts/c0b1e341cb56.json",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://theworshipwawa.com/jinglebellrock/",
+          "evidence": "Exact Dec. 18 Jimmy Rock event page identifies The Worship Wawa, lists its ticket checkout and organizer contact, and explicitly says venue and times will be announced.",
+          "receipt": "root-source-receipts/4a0576f47c76a7.json",
+          "reviewedAt": "2026-11-06"
+        }
+      ]
     },
     {
       "id": "manual:kelo-worship-after-christmas-jacksonville-2026",
@@ -1737,7 +1821,10 @@
       "state": "IL",
       "country": "US",
       "facts": {
-        "postalCode": "60123"
+        "postalCode": "60123",
+        "organizer": {
+          "name": "Ignition Youth Conference"
+        }
       },
       "sources": [
         {
@@ -1748,6 +1835,16 @@
           "quoteOrSummary": "Official Area Youth Ministry search-indexed page for its Sept 20, 2026 volleyball event explicitly identifies AYM Student Center Gym at 1000 N Randall Rd, Elgin IL 60123. Used only as venue-address evidence, not as confirmation of the March 20 concert. Direct open returned cache miss.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.bandsintown.com/e/1040596451-1k-phew-at-aym-student-center?came_from=148",
+          "evidence": "Exact 1K Phew AYM Student Center date describes the event as Ignition Youth.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.ignitionstudents.org/",
+          "evidence": "Official website lists Chicago/Elgin March 19–20, 2027, features 1K Phew, and directly links Instagram @ignitionstudents.",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedVenue": "AYM Student Center",
@@ -2334,7 +2431,10 @@
       "country": "US",
       "facts": {
         "address": "3930 West Land Park Drive",
-        "postalCode": "95822"
+        "postalCode": "95822",
+        "organizer": {
+          "name": "HOG MOB Ministries"
+        }
       },
       "sources": [
         {
@@ -2356,6 +2456,21 @@
           "quoteOrSummary": "Zoo’s own contact page gives 3930 West Land Park Drive, Sacramento, CA 95822.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.bandsintown.com/e/107971264-sevin-hog-mob-ministries-at-sacramento-zoo?came_from=252",
+          "evidence": "Indexed exact November 21 Sacramento show describes Hog Mob and other local ministries as hosting the Pray 4 My Hood block party.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://hogmob.com/mob-tour/",
+          "evidence": "Official ministry tour page describes its Pray 4 My Hood block-party ministry.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://hogmob.com/",
+          "evidence": "Official ministry website SOCIALS > INSTAGRAM directly links instagram.com/sevinhogmob; artist/ministry shared account is the organization-designated account.",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedVenue": "Sacramento Zoo",
@@ -2891,7 +3006,10 @@
       "facts": {
         "venue": "15202 Transistor Lane",
         "address": "15202 Transistor Lane",
-        "postalCode": "92649"
+        "postalCode": "92649",
+        "organizer": {
+          "name": "Kaden Jordan"
+        }
       },
       "sources": [
         {
@@ -2959,6 +3077,12 @@
           "quoteOrSummary": "Fresh artist-hosted Partiful page requires joining the list. Public payload guestAction APPLY, approximateLocation Huntington Beach CA, addressLines empty. Date 2026-11-22T02:30Z equalsNov 21at18:30Pacific.",
           "reviewedAt": "2026-11-05",
           "confidence": "high"
+        },
+        {
+          "url": "https://partiful.com/e/9wVqEVujrtfNv03Vr5C7",
+          "evidence": "Official event page explicitly states Hosted by Kaden Jordan; embedded event hostName agrees. Public event title BABYTOOTH EXPERIENCE: LOS ANGELES and Nov. 21 date establish exact event identity.",
+          "receipt": "root-source-receipts/eb5ea44e0a7f4f.json",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedVenue": "15202 Transistor Lane",
@@ -3130,7 +3254,10 @@
       "country": "US",
       "facts": {
         "address": "3105 E. Fry Boulevard",
-        "postalCode": "85635"
+        "postalCode": "85635",
+        "organizer": {
+          "name": "Rocha Planning and Promotions"
+        }
       },
       "sources": [
         {
@@ -3142,6 +3269,21 @@
           "quoteOrSummary": "City's2026public-involvement report identifies VeteransMemorialPark,3105E.FryBlvd,SierraVistaAZ85635. Venue address only.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.riseazmusicfestival.com/",
+          "evidence": "Official Rise AZ festival site links volunteer/vendor registration to the RPPLLC ticketing account and lists organizer contact Jai.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://rppllc.bammtickets.com/?action=buyfordatetime&eventID=403569",
+          "evidence": "Promoter-controlled sponsorship page explicitly identifies Rocha Planning and Promotions as organizer of Rise AZ Music Festival and other Southern Arizona events.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://landmark-cafe.com/when-sierra-vista-shows-up-for-its-own/",
+          "evidence": "Participating local business names Jai Rocha and team as the driving force behind Rise AZ, corroborating organizer identity.",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedVenue": "Veterans Memorial Park",
@@ -3215,7 +3357,10 @@
             "label": "Conference admission",
             "text": "Part of FOLLOW Conference, December 28–31, 2026. A standalone concert ticket is not confirmed."
           }
-        ]
+        ],
+        "organizer": {
+          "name": "The Wesleyan Church — FOLLOW Conference"
+        }
       },
       "sources": [
         {
@@ -3252,6 +3397,22 @@
         {
           "url": "https://followconference.org/",
           "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://followconference.org/",
+          "evidence": "Official FOLLOW 2026 conference site explicitly lists Hulvey, schedules his concert Tuesday Dec. 29 at 9 PM, gives Cincinnati convention-center address, follow@wesleyan.org contact and says The Wesleyan Church absorbs registration processing fees.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://na.eventscloud.com/follow26",
+          "evidence": "Official conference site links to this registration destination. Registration fetch returned 403; no additional booking claims imported.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://followconference.org/",
+          "evidence": "Official conference website directly links @followcon2026 as its conference account, separately from parent Next Gen ministry account. Label organizer links FOLLOW Conference.",
+          "receipt": "root-source-receipts/46cbbb02cce5ec.json",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedVenue": "Duke Energy Convention Center",
@@ -3279,7 +3440,10 @@
             "label": "Saturday, January 23",
             "text": "gio. performs on the Hollywood Stage; Torey D’Shaun on the FanZone Stage. Joyful Noize is FanZone DJ and host. Exact set times are unannounced."
           }
-        ]
+        ],
+        "organizer": {
+          "name": "Universal Orlando Resort"
+        }
       },
       "sources": [
         {
@@ -3329,6 +3493,11 @@
           "quoteOrSummary": "Official individual event-only prices are 109.99 one night or 154.99 both nights, plus tax. Lower group prices are excluded from the suggested standard price.",
           "reviewedAt": "2026-11-05",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.universalorlando.com/web/en/us/things-to-do/events/rock-the-universe",
+          "evidence": "Official Universal Orlando resort operates its own Rock the Universe festival, admission and lineup page; organizer identity is the resort, not a performer or outside ticket seller.",
+          "reviewedAt": "2026-11-06"
         }
       ],
       "expectedVenue": "Universal Studios Florida",
@@ -4081,12 +4250,20 @@
             "label": "Parking",
             "text": "Parking is available in the church lot, with overflow behind the church."
           }
-        ]
+        ],
+        "organizer": {
+          "name": "First Baptist Church of Arizona City"
+        }
       },
       "sources": [
         {
           "url": "https://www.fbcazcity.com/carolsinthepark",
           "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.fbcazcity.com/carolsinthepark",
+          "evidence": "Church operates official Carols in the Park event page, donation fund and attendance/parking instructions, establishing it as host of this event.",
+          "reviewedAt": "2026-11-06"
         }
       ]
     },
@@ -5736,7 +5913,10 @@
             "label": "Reserved seating",
             "text": "General-public reserved seats cost US$15–US$20 extra and go on sale March 1, 2027; valid park admission or a season pass is still required."
           }
-        ]
+        ],
+        "organizer": {
+          "name": "Wild Adventures Theme Park"
+        }
       },
       "sources": [
         {
@@ -5746,6 +5926,11 @@
         {
           "url": "https://www.wildadventures.com/explore-the-park/concerts",
           "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.wildadventures.com/explore-the-park/concerts/",
+          "evidence": "Park operates its official Wild Adventures LIVE concert series and directly lists Lecrae May 8, 2027. Circle K is named presenting sponsor, not substituted as event organizer.",
+          "reviewedAt": "2026-11-06"
         }
       ]
     },
@@ -7277,7 +7462,10 @@
         "parking": "The Plaza Live provides free on-site parking, including accessible spaces.",
         "accessibility": "The venue states that it is ADA accessible. Contact it at least two weeks before the event to request assisted-listening devices or interpreter services. Trained service animals are permitted.",
         "entryRequirements": "No re-entry. Reasonably sized bags are subject to search; backpacks, duffel bags and oversized purses are prohibited. All guests pass through security screening. Outside food, drinks and weapons are prohibited. Phone cameras are allowed; professional cameras require a media pass. Children over two require a ticket.",
-        "refundPolicy": "Refunds may be available through the original ticket seller but are not guaranteed."
+        "refundPolicy": "Refunds may be available through the original ticket seller but are not guaranteed.",
+        "organizer": {
+          "name": "AEG Presents"
+        }
       },
       "sources": [
         {
@@ -7288,6 +7476,16 @@
         {
           "url": "https://www.plazaliveorlando.org/faqs",
           "evidence": "See combined evidence below.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.axs.com/events/1632882/alex-jean-tickets",
+          "evidence": "Official AXS listing for Alex Jean, The Plaza Live, Nov. 27, 2026 explicitly credits AEG Presents.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.aegpresents.com/",
+          "evidence": "Official promoter website directly links Instagram @aegpresents. This organizer is verified for the Orlando stop only, not inferred across the tour.",
           "reviewedAt": "2026-11-06"
         }
       ]
@@ -7442,6 +7640,82 @@
             "venue": "Venue not confirmed"
           },
           "reason": "Official Hip Hop & Hope website establishes an outreach organization, not a physical show venue. Preserve the booking and city; do not present its PMB mailing address as the venue."
+        }
+      ]
+    },
+    {
+      "id": "manual:jesus-loves-hip-hop-dallas-2026-12-05",
+      "startDate": "2026-12-05",
+      "city": "Dallas",
+      "state": "TX",
+      "country": "US",
+      "expectedVenue": "DS Studio",
+      "facts": {
+        "organizer": {
+          "name": "Jesus Loves Hip Hop"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/e/jesus-loves-hip-hop-concert-tickets-2003799493225?aff=ebdssbdestsearch",
+          "evidence": "Collected exact December 5 Dallas event HTTP 200. Visible By / Organized by Jesus Loves Hip Hop and Event JSON-LD organizer identify Jesus Loves Hip Hop and link official organizer profile 9776783754.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.eventbrite.com/e/worship-in-motion-faith-fitness-tickets-2001690535275?aff=ebdssbdestsearch",
+          "evidence": "Another official event by the same Jesus Loves Hip Hop organization explicitly supplies instagram.com/jesusloveshiphop0 as its Instagram. The exact Dallas event now independently verifies the host match.",
+          "reviewedAt": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "id": "official:b0d6dc5f6a1910094666",
+      "startDate": "2026-12-28",
+      "city": "Branson",
+      "state": "MO",
+      "country": "US",
+      "expectedVenue": "The Mansion Theatre for the Performing Arts",
+      "facts": {
+        "organizer": {
+          "name": "Xtreme Conferences"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://xtremeconferences.com/winter/schedules.html",
+          "evidence": "Official Xtreme Winter 2026 schedule lists Hulvey on December 28 evening in Branson at The Mansion Theatre.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://xtremeconferences.com/winter/XTRWNTR-2025-Step-Two.pdf",
+          "evidence": "Official organizer registration material identifies XTREME_CONFERENCES social handle.",
+          "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://xtremeconferences.com/LIFTUP/XW2017_RoomingList.pdf",
+          "evidence": "Official organizer material explicitly labels Instagram /XTREME_CONFERENCES, corroborating the handle; current Instagram content could not be read.",
+          "reviewedAt": "2026-11-06"
+        }
+      ]
+    },
+    {
+      "id": "manual:ant-lee-light-up-the-city-sarnia-2026-11-13",
+      "startDate": "2026-11-13",
+      "city": "Sarnia",
+      "state": "ON",
+      "country": "CA",
+      "expectedVenue": "Bethel Sarnia Pentecostal Church",
+      "facts": {
+        "organizer": {
+          "name": "More Than Us"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://events.ticketleap.com/tickets/morethanus/light-up-the-city-sarnia",
+          "evidence": "Official Ticketleap seller_organization and contactInfo.name both explicitly say More Than Us. The same official organizer contactInfo.social.instagram field points to https://instagram.com/antleejr. Website field empty.",
+          "receipt": "root-source-receipts/7e7447d8f2d2b0.json",
+          "reviewedAt": "2026-11-06"
         }
       ]
     }

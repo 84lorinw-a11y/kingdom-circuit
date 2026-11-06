@@ -21,6 +21,10 @@ are sanitized. Consumers should use the derived fields below for publication:
 * Optional entity links: venueUrl, venueInstagram, organizerWebsite,
   organizerInstagram and eventInstagram. Profile links are Instagram accounts,
   not posts; website labels never point at a ticket-platform/social profile.
+  organizerLinkName scopes secondary links to a named co-organizer without
+  replacing the complete organizer credit or its structured-data identity.
+  organizerWebsiteName and organizerInstagramName override that shared label
+  when the website and account belong to different credited entities.
   performerInstagrams is derived only when the current artist registry is passed.
 
 Curated URL flags are exact booleans: ticketUrlVerified/registrationUrlVerified.
@@ -51,7 +55,8 @@ _DERIVED = (
     "dateLabel", "startTimeLabel", "doorsTimeLabel", "registrationTimeLabel",
     "endTimeLabel", "timezoneLabel", "priceLabel", "organizerName",
     "organizerUrl", "admissionLabel", "schemaStartDate", "schemaEndDate", "venueLabel", "venueLocality",
-    "venueUrl", "venueInstagram", "organizerWebsite", "organizerInstagram",
+    "venueUrl", "venueInstagram", "organizerWebsite", "organizerInstagram", "organizerLinkName",
+    "organizerWebsiteName", "organizerInstagramName",
     "eventInstagram", "performerInstagrams",
 )
 
@@ -487,6 +492,12 @@ def normalize(event, *, artists=()):
         social = _instagram_profile(social or event.get('organizerInstagram'))
         if social:
             result['organizerInstagram'] = social
+        if website or social:
+            if name := _text(event.get('organizerLinkName')):
+                result['organizerLinkName'] = name
+        for field, destination in (('organizerWebsiteName', website), ('organizerInstagramName', social)):
+            if destination and (name := _text(event.get(field))):
+                result[field] = name
     if social := _instagram_profile(event.get('eventInstagram')):
         result['eventInstagram'] = social
     if performers := _performer_instagrams(event, artists):

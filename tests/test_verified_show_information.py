@@ -54,6 +54,20 @@ class VerifiedShowInformationTests(unittest.TestCase):
         newer = {**event, 'organizer': {'name': 'New Presenter'}}
         self.assertEqual(enrich(newer, [pin]), newer)
 
+    def test_scoped_link_name_uses_the_same_organizer_identity_guard(self):
+        event = {**self.event, 'organizer': {'name': 'One / Two'}}
+        pin = {**self.pin, 'expectedOrganizerName': 'One / Two', 'facts': {
+            'organizerWebsite': 'https://two.example/', 'organizerLinkName': 'Two',
+            'organizerWebsiteName': 'Two website', 'organizerInstagramName': 'Two account'}}
+        result = enrich(event, [pin])
+        self.assertEqual(result['organizerLinkName'], 'Two')
+        self.assertEqual(result['organizerWebsiteName'], 'Two website')
+        self.assertEqual(result['organizerInstagramName'], 'Two account')
+        self.assertEqual(result['organizer'], event['organizer'])
+        self.assertEqual(enrich(result, [pin]), result)
+        newer = {**event, 'organizer': {'name': 'New Presenter'}}
+        self.assertEqual(enrich(newer, [pin]), newer)
+
     def test_separate_verified_links_registry_is_applied_to_the_feeds(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
