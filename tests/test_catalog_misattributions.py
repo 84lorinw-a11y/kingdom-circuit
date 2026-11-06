@@ -125,6 +125,38 @@ class LocationUnconfirmedBookingTests(unittest.TestCase):
         return self.event(id='official:other-1k-phew-show', title='1K Phew concert',
                           venue='Concert Hall', city='Orlando')
 
+    def test_provider_rediscovery_does_not_reset_the_reviewed_bookings_age(self):
+        anchor = '2026-11-03T18:56:47Z'
+        variants = [self.event(firstSeen='2026-11-06T18:28:31Z'), self.event(),
+                    self.event(id='reimported', bandsintownEventId='1040798191',
+                               firstSeen='2026-11-06T18:28:31Z')]
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for name in ('events.json', 'supplemental-events.json'):
+                (root / name).write_text(json.dumps(variants))
+            before = copy.deepcopy(variants)
+            apply(root)
+            for name in ('events.json', 'supplemental-events.json'):
+                projected = json.loads((root / name).read_text())
+                self.assertEqual([row.get('firstSeen') for row in projected], [anchor] * 3)
+                self.assertTrue(all(row['locationUnconfirmed'] for row in projected))
+            self.assertEqual(variants, before)
+            once = (root / 'events.json').read_bytes()
+            apply(root)
+            self.assertEqual((root / 'events.json').read_bytes(), once)
+
+    def test_discovery_anchor_keeps_earlier_age_and_is_exactly_dated_and_identified(self):
+        earlier = self.event(firstSeen='2026-10-30T09:00:00Z')
+        self.assertEqual(public_event(earlier)['firstSeen'], '2026-10-30T09:00:00Z')
+        unrelated = [self.event(startDate='2026-11-22'),
+                     self.event(startDate='2027-11-21'),
+                     self.event(id='official:023c040d4ea33e1209490'),
+                     self.event(id='reimported', bandsintownEventId='10407981910'),
+                     self.other_show()]
+        for event in unrelated:
+            with self.subTest(event=event):
+                self.assertEqual(public_event(event), event)
+
     def test_exact_dated_booking_is_retained_but_never_assigned_a_location(self):
         variants = [self.event(), self.event(id='manual:official:023c040d4ea33e120949'),
                     self.event(id='reimported', officialUrl='https://www.bandsintown.com/e/1040798191-1k-phew?ref=calendar'),

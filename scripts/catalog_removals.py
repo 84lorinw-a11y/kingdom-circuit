@@ -126,6 +126,10 @@ def public_event(event):
     result = deepcopy(event)
     if not location_review_event(event):
         return result
+    # Retained history records this exact booking on November 3. A provider
+    # reimport must not restart its seven-day New Shows discovery window.
+    first_seen = '2026-11-03T18:56:47Z'
+    result['firstSeen'] = min(first_seen, result.get('firstSeen') or first_seen)
     try:
         from .show_information_model import is_private_event
     except ImportError:
