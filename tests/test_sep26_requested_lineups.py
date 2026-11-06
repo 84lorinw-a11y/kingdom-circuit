@@ -11,6 +11,58 @@ from apply_sep26_requested_lineups import PATCHES, patch_event
 
 
 class RequestedLineupTests(unittest.TestCase):
+    def test_gate_applies_guarded_seed_correction_and_rejects_stale_clock_or_lineup(self):
+        import verify_sep26_requested_lineups as gate
+        wanted = dict(startDate="2099-11-13", startTime="18:00",
+                      startDateTime="2099-11-13T18:00:00-05:00",
+                      title="Reviewed concert", venue="The Porch",
+                      city="Daytona Beach", state="FL", country="US",
+                      artists=["Reviewed Artist"], advertisedBilling=["Reviewed Artist"])
+        original = copy.deepcopy(wanted)
+        correction = dict(id="manual:reviewed-concert", startDate=wanted["startDate"],
+                          city="Daytona Beach", state="FL", country="US",
+                          expectedVenue="The Porch", facts={}, corrections=[{
+                              "expected": {"startTime": "18:00", "startDateTime": wanted["startDateTime"]},
+                              "facts": {"startTime": "", "startDateTime": ""}}])
+        row = dict(wanted, id="manual:reviewed-concert", startTime="", startDateTime="")
+        href = gate.builder.event_path(row)
+        schema = {"@type": "MusicEvent", "startDate": wanted["startDate"],
+                  "performer": [{"name": "Reviewed Artist"}]}
+        with tempfile.TemporaryDirectory() as tmp, patch.dict(gate.PATCHES, {"reviewed-concert": wanted}, clear=True):
+            site = Path(tmp)
+            with patch.object(gate, "ROOT", site):
+                (site / "config").mkdir()
+                (site / "config/artists.json").write_text("[]")
+                (site / "config/verified-show-information.json").write_text(json.dumps({"events": [correction]}))
+                (site / "events.json").write_text(json.dumps([row]))
+                (site / "supplemental-events.json").write_text("[]")
+                (site / "shows").mkdir()
+                (site / "shows/index.html").write_text(
+                    f'<article data-event-card><a href="{href}">Reviewed Artist</a></article>')
+                detail = site / href.strip("/") / "index.html"
+                detail.parent.mkdir(parents=True)
+                render = lambda: detail.write_text('<p class="artist-line">Reviewed Artist</p>'
+                    + '<script type="application/ld+json">' + json.dumps(schema) + '</script>')
+                render()
+                gate.verify(site)
+                self.assertEqual(wanted, original, "Verification must not mutate the original seed")
+                schema["startDate"] = wanted["startDateTime"]
+                render()
+                with self.assertRaises(AssertionError):
+                    gate.verify(site)
+                schema["startDate"] = wanted["startDate"]
+                render()
+                row["artists"] = []
+                (site / "events.json").write_text(json.dumps([row]))
+                with self.assertRaises(AssertionError):
+                    gate.verify(site)
+                row["artists"] = wanted["artists"]
+                (site / "events.json").write_text(json.dumps([row]))
+                correction["city"] = "Another city"
+                (site / "config/verified-show-information.json").write_text(json.dumps({"events": [correction]}))
+                with self.assertRaises(AssertionError):
+                    gate.verify(site)
+
     def test_chandler_title_uses_venue_without_changing_the_published_url(self):
         row = {'id': 'manual:miles-cj-zion-ultra-lounge-chandler-2026',
                'startDate': '2026-12-05',

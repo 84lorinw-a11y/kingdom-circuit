@@ -7,6 +7,9 @@ from pathlib import Path
 import build_seo_site as builder
 from apply_sep26_requested_lineups import PATCHES
 from apply_oct2_verified_shows import OWNER_HELD_IDS
+from apply_verified_show_information import enrich
+
+ROOT = Path(__file__).resolve().parents[1]
 
 
 def verify(site: Path):
@@ -24,7 +27,13 @@ def verify(site: Path):
     curated = {a["name"] for a in roster if a.get("enabled") is not False}
     shows = (site / "shows/index.html").read_text()
     cards = re.findall(r'<article\b[^>]*data-event-card[^>]*>.*?</article>', shows, re.S)
+    registry = ROOT / "config/verified-show-information.json"
+    reviewed_facts = json.loads(registry.read_text()).get("events", []) if registry.exists() else []
     for event_id, wanted in PATCHES.items():
+        # PATCHES predates later, guarded corrections. Its key carries the ID
+        # needed to apply those exact date/location corrections to the seed.
+        # Do not derive expectations from the public record being checked.
+        wanted = enrich(dict(wanted, id=event_id), reviewed_facts)
         if not builder.current(wanted):
             continue
         if event_id in OWNER_HELD_IDS:
@@ -62,8 +71,8 @@ def verify(site: Path):
             assert expected_hosts in html.unescape(detail) and expected_hosts in html.unescape(card), event_id
         schemas = [json.loads(s) for s in re.findall(r'<script type="application/ld\+json">(.*?)</script>', detail, re.S)]
         schema = next(s for s in schemas if s.get("@type") == "MusicEvent")
-        if wanted.get("startDateTime"):
-            assert schema["startDate"] == wanted["startDateTime"]
+        if "startDateTime" in wanted:
+            assert schema["startDate"] == (wanted["startDateTime"] or wanted["startDate"])
         performer_names = {performer["name"] for performer in schema["performer"]}
         for host in wanted.get("hosts", []):
             assert host not in performer_names, (event_id, "host listed as performer")
