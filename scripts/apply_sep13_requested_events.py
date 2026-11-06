@@ -343,7 +343,18 @@ def verify():
         if len(matches) != 1: raise SystemExit(f"Expected one {event_id}; found {len(matches)}")
     if len([a for a in artists if norm(a.get("name")) == "jimmy rock"]) != 1: raise SystemExit("JIMMY ROCK profile missing/duplicated")
     if any(TAMPA_CONFLICTS & urls(r) for r in events): raise SystemExit("Unresolved CJ Tampa/Flavor conflict was published")
-    cocoa = [r for r in events if r.get("startDate") == "2026-11-27" and r.get("endDate") == "2026-11-29" and norm(r.get("city")) == "cocoa"]
+    # This district's name is not necessarily the conference municipality.
+    # Accept its original seed before enrichment and the guarded reviewed city
+    # afterward; never match an unrelated conference by dates alone.
+    from apply_verified_show_information import enrich
+    conference_id = "cj-emulous-state-youth-conference-cocoa-2026"
+    seed = dict(UPSERTS[conference_id], id="manual:" + conference_id)
+    registry_path = ROOT / "config" / "verified-show-information.json"
+    reviewed = load(registry_path).get("events", []) if registry_path.exists() else []
+    accepted_cities = {norm(seed['city']), norm(enrich(seed, reviewed)['city'])}
+    cocoa = [r for r in events if str(r.get('id') or '').removeprefix('manual:') == conference_id
+             and r.get("startDate") == "2026-11-27" and r.get("endDate") == "2026-11-29"
+             and norm(r.get("city")) in accepted_cities]
     if len(cocoa) != 1: raise SystemExit("Cocoa conference must be one 11/27–11/29 record")
     if any(norm(a.get("name")) == "madison ryann ward" and a.get("enabled") is not False for a in artists): raise SystemExit("Madison Ryann Ward exclusion regressed")
 

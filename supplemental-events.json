@@ -1178,7 +1178,7 @@
     "ticketUrl": "https://www.eventbrite.com/e/zauntee-god-remembers-tour-tickets-1993716545858",
     "officialUrl": "https://www.eventbrite.com/e/zauntee-god-remembers-tour-tickets-1993716545858",
     "image": "assets/events/zauntee-god-remembers-tour-2026-portrait.jpg",
-    "price": "",
+    "price": "Listed ticket range: $24.30–$81 USD.",
     "sourceName": "Skema Boy official tour page",
     "sources": [
       {
@@ -1281,7 +1281,7 @@
     "auditVerified": "2026-11-03",
     "price": "Pay what you can at the door; see Eventbrite for online tickets",
     "publicDescription": "A mixed hip-hop showcase featuring Christian rapper Zaire Ink alongside the announced bill. Published event, performance and doors times differ; check with Music Calgary for the final schedule. The published event window ends at 1 AM Saturday, November 14.",
-    "publicNotice": "Show schedule and age restriction are not confirmed because official sources disagree. Confirm with Music Calgary before attending.",
+    "publicNotice": "Show schedule is not confirmed because official sources disagree. Confirm with Music Calgary before attending.",
     "notes": "Owner explicitly requested this Canadian concert. The November 3 artist/Heliopolis coauthored announcement confirms Zaire Ink performs live November 13 and uses gospelrap/chh tags; his official website confirms the Christian hip-hop connection. This is a mixed hip-hop showcase, not a claim that every billed artist performs Christian music. Eventbrite's expanded lineup contains all nine retained names; Tea Fannie also hosts. No headliner or other curated artist association is inferred. Eventbrite advertises November 13 at 10 PM through November 14 at 1 AM; the official main flyer says 10:30 PM Late Show and the event FAQ starts performances at 10:30 PM, with Zaire Ink at 10:55 PM. Do not convert the overnight end to midnight November 13. Doors conflict: Eventbrite says 9 PM, while Music Calgary's schedule says 10:30 PM doors. Age conflict: Eventbrite allows under-18 guests with a parent/legal guardian, while the conference FAQ says Heliopolis is 18+. Structured doorsTime and ageRestriction intentionally remain unset. Eventbrite currently shows CA$11.98 online and its FAQ says pay what you can at the door; no fee breakdown, checkout deadline or full-conference access is inferred. The generic organizer $15/show text is not substituted for event-specific admission. The organizer schedule's Ranchmans venue line is a template conflict; the current ticket page and coauthored flyer identify Heliopolis at 817 1 Street Southwest. Preserve the artist affiliate ticket URL and original flyer bytes.",
     "sources": [
       {
@@ -1325,7 +1325,7 @@
       "url": "https://www.musiccalgary.ca/"
     },
     "doorsTime": "",
-    "ageRestriction": "Age restriction not confirmed. Organizer says 18+; ticket listing differs. Confirm with the organizer before attending.",
+    "ageRestriction": "18+; physical ID required.",
     "scheduleNote": "Doors not confirmed: the organizer lists 10:30 PM, while Eventbrite lists 8 PM. Confirm the late-show schedule with the organizer before attending."
   },
   {
@@ -1581,8 +1581,8 @@
     "title": "UNITY POP-UP TOUR",
     "startDate": "2026-11-14",
     "startTime": "11:00",
-    "timezone": "",
-    "venue": "UNITY POP-UP TOUR",
+    "timezone": "America/New_York",
+    "venue": "Grace Bible Church of Central Florida",
     "address": "801 Dorscher Rd",
     "city": "Orlando",
     "state": "FL",
@@ -1594,7 +1594,7 @@
     "headliner": "Issac Mansfield",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/109072940?app_id=js_kingdomcircuit.com&came_from=267&custom=true&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "ticketUrl": "https://www.eventbrite.com/e/unity-pop-up-tour-orlando-tickets-2003836750663",
     "officialUrl": "https://www.bandsintown.com/e/109072940?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
     "image": "assets/events/issac-unity-pop-up-orlando-2026-11-14-official.webp",
     "price": "Free",
@@ -1639,7 +1639,13 @@
     ],
     "lineupExplicit": true,
     "notes": "Owner requested the original Bandsintown flyer and complete announced bill. Bandsintown event 109072940 names Issac Mansfield, SYL noiZ and Giovani. Giovani profile 15656198 is the same exact profile stored for curated GIOVANI. SYL noiZ remains visible unlinked billing pending separate artist verification. Preserve this existing event identity and schedule.",
-    "postalCode": "32818"
+    "postalCode": "32818",
+    "organizer": {
+      "name": "God Did It Movement",
+      "url": "https://www.goddiditmovement.com/"
+    },
+    "ageRestriction": "Everyone welcome.",
+    "ticketUrlVerified": true
   },
   {
     "id": "bandsintown:1040314202",
@@ -2625,7 +2631,7 @@
     "ticketUrl": "https://www.ticketweb.com/event/rave-revival-fall-tour-skullys-music-diner-tickets/14295004",
     "officialUrl": "https://www.ticketweb.com/event/rave-revival-fall-tour-skullys-music-diner-tickets/14295004",
     "image": "assets/artists/jimmy-rock-instagram-profile.jpg",
-    "price": "",
+    "price": "General admission US$35.44 including listed fees; meet-and-greet plus general admission US$88.25 including listed fees.",
     "sourceName": "TicketWeb primary details / JIMMY ROCK artist calendar",
     "sources": [
       {
@@ -2653,7 +2659,17 @@
     "authority": "venue_ticket",
     "auditVerified": "2026-10-31",
     "notes": "October 31: official TicketWeb event confirms Nov 22, 2026 at Skully's Music Diner, 1151 N High St, Columbus. Its advertised 6:00 PM is DOORS, not a confirmed concert start; leave startTime blank. JIMMY ROCK appearance is sourced to his configured Bandsintown calendar; TicketWeb names Rave Jesus as presenter but does not independently confirm JIMMY ROCK support. Preserve original event ID and approved image.",
-    "postalCode": "43201"
+    "postalCode": "43201",
+    "organizer": {
+      "name": "Capacity Entertainment / Rave Jesus"
+    },
+    "ageRestriction": "All ages",
+    "scheduleDetails": [
+      {
+        "label": "Meet and greet",
+        "text": "Meet-and-greet ticket holders receive early entry at 5 PM. General admission doors open at 6 PM; performance start is unannounced."
+      }
+    ]
   },
   {
     "id": "manual:elllli-christian-hip-hop-sherbrooke-2026-11-27",

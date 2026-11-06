@@ -48,6 +48,23 @@ class VerifiedShowInformationTests(unittest.TestCase):
         self.assertFalse(result.get('address'))
         self.assertNotIn('postalCode', result)
 
+    def test_reviewed_city_correction_preserves_identity_and_rejects_later_moves(self):
+        current = {**self.event, 'canonicalPath': '/event/original-city/'}
+        pin = {**self.pin, 'facts': {}, 'corrections': [{
+            'expected': {'city': 'City', 'venue': 'Hall', 'address': ''},
+            'facts': {'city': 'Correct city', 'venue': 'Confirmed hall', 'address': '10 Main St'}}]}
+        changed = enrich(current, [pin])
+        self.assertEqual(changed['city'], 'Correct city')
+        self.assertEqual(changed['id'], current['id'])
+        self.assertEqual(changed['canonicalPath'], current['canonicalPath'])
+        self.assertEqual(enrich(changed, [pin]), changed)
+        for field, value in [('city', 'Later city'), ('venue', 'Later hall'),
+                             ('state', 'NY'), ('startDate', '2027-02-01')]:
+            later = {**changed, field: value}
+            self.assertEqual(enrich(later, [pin]), later)
+        with self.assertRaises(ValueError):
+            enrich(current, [{**self.pin, 'facts': {'city': 'Unguarded city'}}])
+
     def test_reviewed_correction_replaces_only_the_exact_prior_values(self):
         current = {**self.event, 'startTime': '18:00', 'startDateTime': '2027-01-29T18:00:00-06:00'}
         pin = {**self.pin, 'facts': {}, 'corrections': [{
@@ -60,6 +77,28 @@ class VerifiedShowInformationTests(unittest.TestCase):
         self.assertEqual(enrich(newer, [pin]), newer)
         partially_refreshed = {**changed, 'startTime': '18:00'}
         self.assertEqual(enrich(partially_refreshed, [pin]), changed)
+
+    def test_reviewed_followup_keeps_later_clocks_and_location_corrections_independent(self):
+        registry = json.loads((Path(__file__).resolve().parents[1] /
+                               'config/verified-show-information.json').read_text())['events']
+        pins = {p['id']: p for p in registry}
+        beyond = pins['ticketmaster:vv1AAZk3FGkdmpCG1']
+        event = {k: beyond[k] for k in ('id', 'startDate', 'city', 'state', 'country')}
+        event.update(venue=beyond['expectedVenue'], startTime='21:00', startDateTime='',
+                     primaryTimeKind='', ageRestriction='All ages')
+        changed = enrich(event, [beyond])
+        self.assertEqual(changed['startTime'], '21:00')
+        self.assertFalse(changed.get('startDateTime'))
+        cocoa = pins['manual:cj-emulous-state-youth-conference-cocoa-2026']
+        event = {k: cocoa[k] for k in ('id', 'startDate', 'city', 'state', 'country')}
+        event.update(venue=cocoa['expectedVenue'], address='', startTime='20:00')
+        changed = enrich(event, [cocoa])
+        self.assertEqual(changed['city'], 'Orlando')
+        self.assertEqual(changed['venue'], 'Rosen Centre Hotel')
+        self.assertEqual(changed['startTime'], '20:00')
+        self.assertEqual(enrich(changed, [cocoa]), changed)
+        moved = {**event, 'venue': 'Later venue', 'address': '20 New Rd'}
+        self.assertEqual(enrich(moved, [cocoa]), moved)
 
     def test_correction_cannot_replace_unlisted_fields_or_expose_private_address(self):
         unsafe = {**self.pin, 'facts': {}, 'corrections': [{

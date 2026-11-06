@@ -907,7 +907,7 @@
     "title": "WHATUPRG — Live at Vanguard University",
     "startDate": "2026-11-06",
     "startTime": "",
-    "timezone": "",
+    "timezone": "America/Los_Angeles",
     "venue": "Vanguard University",
     "address": "55 Fair Drive",
     "city": "Costa Mesa",
@@ -920,9 +920,9 @@
     "eventType": "concert",
     "status": "scheduled",
     "ticketUrl": "https://www.bandsintown.com/e/1040595689?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "officialUrl": "https://www.reachrecords.com/artists/whatuprg/",
+    "officialUrl": "https://www.ignitionstudents.org/socal#register",
     "image": "assets/artists/whatuprg-saved.jpg",
-    "price": "",
+    "price": "Students: $20 USD; first-time student attendees: free; adults: $35 USD.",
     "sourceName": "Reach Records - WHATUPRG",
     "sources": [
       {
@@ -946,7 +946,20 @@
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-10-17T17:56:36Z",
-    "postalCode": "92626"
+    "postalCode": "92626",
+    "doorsTime": "18:30",
+    "organizer": {
+      "name": "Ignition / Area Youth Ministry",
+      "url": "https://www.ignitionstudents.org/socal"
+    },
+    "ageRestriction": "Students in grades 7–12; parents, youth pastors and mentors may attend.",
+    "publicDescription": "WHATUPRG is announced for November 6 at Ignition SoCal, a Christian student conference at Vanguard University. The conference runs November 6–7; the artist’s individual set time has not been published.",
+    "scheduleDetails": [
+      {
+        "label": "Friday conference schedule",
+        "text": "Registration begins at 6 PM; doors and dinner at 6:30 PM; Session 1 at 7:30 PM; Night Market at 8:30 PM. Friday programming runs until 10 PM. These are conference times, not a confirmed WHATUPRG set time."
+      }
+    ]
   },
   {
     "id": "manual:flavor-fest-2026-friday-concerts",
@@ -3341,8 +3354,8 @@
     "endDate": "2026-11-21",
     "startTime": "",
     "timezone": "America/Los_Angeles",
-    "venue": "",
-    "address": "",
+    "venue": "15202 Transistor Lane",
+    "address": "15202 Transistor Lane",
     "city": "Huntington Beach",
     "state": "CA",
     "country": "US",
@@ -3393,9 +3406,9 @@
     "sourceEventIds": [
       "official:962113b5923429ffb4f0"
     ],
-    "postalCode": "",
-    "admissionRestriction": "RSVP/application required. The organizer provides location details.",
-    "scheduleNote": "The public RSVP page shares Huntington Beach but withholds the street address. Request attendance through the official listing for location details."
+    "postalCode": "92649",
+    "admissionRestriction": "RSVP/application required through the official event page.",
+    "scheduleNote": "The artist’s official tour page publishes this location through Songkick. RSVP/application is required through Partiful; the performance start time is not announced."
   },
   {
     "id": "manual:chain-breaker-kingsport-2026-11-21",
@@ -3798,11 +3811,11 @@
   {
     "title": "State Youth Conference with CJ Emulous",
     "startDate": "2026-11-27",
-    "startTime": "19:00",
+    "startTime": "",
     "timezone": "America/New_York",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "Cocoa",
+    "venue": "Rosen Centre Hotel",
+    "address": "9840 International Dr",
+    "city": "Orlando",
     "state": "FL",
     "country": "US",
     "artists": [
@@ -3860,7 +3873,11 @@
     },
     "id": "manual:cj-emulous-state-youth-conference-cocoa-2026",
     "imageSource": "Official conference-branded CJ Emulous graphic",
-    "imageSourceUrl": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous"
+    "imageSourceUrl": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous",
+    "postalCode": "32819",
+    "organizer": {
+      "name": "Florida Cocoa Church of God"
+    }
   },
   {
     "id": "manual:alex-jean-plaza-live-orlando-2026-11-27",
@@ -4316,7 +4333,17 @@
     ],
     "organizer": {
       "name": "Sparta Center Church"
-    }
+    },
+    "scheduleDetails": [
+      {
+        "label": "Saturday evening",
+        "text": "Sean McDowell’s message begins at 6:30 PM. Kevi Morse performs after the message and a cereal-bar break; an exact concert start time is not announced."
+      },
+      {
+        "label": "Admission",
+        "text": "Saturday evening is open to families, churches and the community. Full-weekend registration is not required for the Saturday session and concert."
+      }
+    ]
   },
   {
     "country": "US",
@@ -5773,7 +5800,18 @@
     "postalCode": "32819",
     "doorsTime": "16:00",
     "ageRestriction": "All ages",
-    "scheduleNote": "Event-ticket holders may enter after 4 PM; each night runs until 1 AM. Individual performance times have not been announced."
+    "scheduleNote": "Event-ticket holders may enter after 4 PM; each night runs until 1 AM. Individual performance times have not been announced.",
+    "price": "Individual event-only tickets: US$109.99 for one night or US$154.99 for both nights, plus tax.",
+    "scheduleDetails": [
+      {
+        "label": "Friday, January 22",
+        "text": "1K Phew performs on the Hollywood Stage. Joyful Noize is FanZone DJ and host. Exact set times are unannounced."
+      },
+      {
+        "label": "Saturday, January 23",
+        "text": "gio. performs on the Hollywood Stage; Torey D’Shaun on the FanZone Stage. Joyful Noize is FanZone DJ and host. Exact set times are unannounced."
+      }
+    ]
   },
   {
     "country": "US",
@@ -5980,9 +6018,9 @@
     "eventType": "concert",
     "status": "scheduled",
     "ticketUrl": "https://www.bandsintown.com/e/1040595947?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "officialUrl": "https://www.bandsintown.com/e/1040595947?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.ignitionstudents.org/atlanta",
     "image": "assets/artists/1k-phew-owner-oct13.png",
-    "price": "",
+    "price": "Student registration $20; includes meals, night market and snacks.",
     "sourceName": "Bandsintown",
     "sources": [
       {
@@ -6019,7 +6057,12 @@
     ],
     "mergedFromIds": [
       "official:540ae4cdd11793a36815"
-    ]
+    ],
+    "ageRestriction": "Student conference for grades 7–12.",
+    "organizer": {
+      "name": "Ignition Student Conference",
+      "url": "https://www.ignitionstudents.org/"
+    }
   },
   {
     "id": "manual:808-beezy-bandsintown-108856576",
@@ -6086,9 +6129,9 @@
     "eventType": "concert",
     "status": "scheduled",
     "ticketUrl": "https://www.bandsintown.com/e/1040597655?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "officialUrl": "https://www.bandsintown.com/e/1040597655?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.ignitionstudents.org/new-york",
     "image": "assets/artists/1k-phew-owner-oct13.png",
-    "price": "",
+    "price": "Student registration $20; includes meals, night market and snacks.",
     "sourceName": "Bandsintown",
     "sources": [
       {
@@ -6125,7 +6168,12 @@
     ],
     "mergedFromIds": [
       "official:b240438b7b7f8a82189d"
-    ]
+    ],
+    "ageRestriction": "Student conference for grades 7–12.",
+    "organizer": {
+      "name": "Ignition Student Conference",
+      "url": "https://www.ignitionstudents.org/"
+    }
   },
   {
     "id": "bandsintown:1040596451",
@@ -6328,7 +6376,8 @@
     "organizer": {
       "name": "APTITUDE"
     },
-    "ticketUrlVerified": false
+    "ticketUrlVerified": false,
+    "postalCode": "77002"
   },
   {
     "id": "manual:rural-music-festival-2027",
@@ -6390,13 +6439,20 @@
     "editorialBatch": "2026-10-27-approved-shows",
     "auditVerified": "2026-10-27",
     "lastVerified": "2026-10-27T19:03:05Z",
-    "firstSeen": "2026-10-27T19:03:05Z"
+    "firstSeen": "2026-10-27T19:03:05Z",
+    "ageRestriction": "All ages",
+    "scheduleDetails": [
+      {
+        "label": "Festival window",
+        "text": "Organizer registration lists August 27 at noon through August 29 at 1 PM. Individual daily performance schedules and the 2027 lineup are unannounced."
+      }
+    ]
   },
   {
     "id": "ticketmaster:vv1AAZk3FGkdmpCG1",
     "title": "Beyond The Walls 2026",
     "startDate": "2026-11-07",
-    "startTime": "",
+    "startTime": "20:00",
     "timezone": "America/New_York",
     "venue": "The Cambridge Room at House of Blues Cleveland",
     "address": "308 Euclid Ave",
@@ -6448,7 +6504,7 @@
     "verifiedVersion": 9,
     "firstSeen": "2026-07-30T03:46:47Z",
     "doorsTime": "19:30",
-    "startDateTime": "",
+    "startDateTime": "2026-11-07T20:00:00-05:00",
     "advertisedBilling": [
       "KB",
       "Brenno",
@@ -6503,7 +6559,8 @@
       }
     ],
     "postalCode": "44114",
-    "primaryTimeKind": "doors"
+    "primaryTimeKind": "",
+    "ageRestriction": "All ages"
   },
   {
     "id": "manual:chosen-next-gen-conference-bronx-2026",
@@ -7160,7 +7217,7 @@
     "firstSeen": "2026-10-13T13:13:46Z",
     "lastVerified": "2026-10-20T04:28:14.692666Z",
     "auditVerified": "2026-10-19",
-    "price": "General admission $10 plus fees; VIP $30 plus fees",
+    "price": "General admission $10 + $0.25 ticket service fee; VIP $30 + $0.75 ticket service fee.",
     "publicDescription": "The 3rd Annual Vibe5 Awards takes place December 5, 2026, 6–11 PM in Jonesboro, Georgia, hosted by Blessed Empress and Jdot!. Announced performers include Ahmad Nelson, with Shaquille Jones also confirmed directly. The exact venue is still to be announced. Official artwork covers the December 4–6 weekend; this listing is for the December 5 awards show.",
     "notes": "Owner explicitly requested publishing Shaquille Jones based on his direct artist confirmation. Official event ticket page confirms December 5, 2026, 6–11 PM Atlanta; no venue published. Official hosts announcement confirms Blessed Empress and Jdot! as hosts, not automatically music acts. Reviewed current organizer website, Instagram and Facebook; full music performance roster not yet published. Do not turn nominees, tagged accounts, prior-year clips or prior honorees into performers. Artwork labels Bryan Andrew Wilson 2024 honoree and Canton Jones 2025 honoree; neither is evidence of 2026 performance. December 4 preshow and December 6 outreach are separate events and Shaquille is not assigned to them. October 19 update: organizer now specifies Jonesboro, GA, and its DesUapBnyYX performer announcement explicitly bills Ahmad Nelson. Preserve Shaquille’s direct artist confirmation; venue remains unannounced.",
     "sources": [
@@ -15432,11 +15489,11 @@
     "title": "5ive — Me Against The World Forever Album Release Concert",
     "startDate": "2026-11-12",
     "endDate": "2026-11-12",
-    "startTime": "18:30",
+    "startTime": "17:30",
     "timezone": "America/Denver",
     "venue": "The Upper Room",
     "address": "4700 Central Ave SE",
-    "postalCode": "",
+    "postalCode": "87108",
     "city": "Albuquerque",
     "state": "NM",
     "country": "US",
@@ -15481,7 +15538,7 @@
     "scheduleDetails": [
       {
         "label": "Start",
-        "text": "6:30 PM Mountain"
+        "text": "5:30 PM Mountain"
       },
       {
         "label": "Admission",
@@ -15514,7 +15571,7 @@
         "priority": 90
       }
     ],
-    "startDateTime": "2026-11-12T18:30:00-07:00"
+    "startDateTime": "2026-11-12T17:30:00-07:00"
   },
   {
     "id": "manual:5ive-me-against-the-world-forever-raton-2026-11-14",
@@ -15942,7 +15999,8 @@
     "organizer": {
       "name": "Scott Dawson Evangelistic Association",
       "url": "https://www.strengthtostand.org/"
-    }
+    },
+    "scheduleNote": "KB is billed for a late-night concert; his individual performance day and exact start time have not been published."
   },
   {
     "id": "manual:jimmy-rock-icff-after-party-orlando-2027-05-01",
@@ -16090,7 +16148,13 @@
     "auditVerified": "2026-11-04",
     "organizer": {
       "name": "Community Bible Church"
-    }
+    },
+    "scheduleDetails": [
+      {
+        "label": "Conference concert",
+        "text": "The conference program lists a concert Thursday, June 17 at 8:30 PM. Hulvey’s individual set is not explicitly assigned to that slot."
+      }
+    ]
   },
   {
     "id": "manual:rooted-gifted-gospel-showcase-east-chicago-2026-11-21",
@@ -16506,7 +16570,8 @@
     "auditVerified": "2026-11-04",
     "organizerName": "Strength to Stand / Scott Dawson Evangelistic Association",
     "organizerUrl": "https://www.strengthtostand.org/",
-    "detailImageLayout": "portrait"
+    "detailImageLayout": "portrait",
+    "scheduleNote": "KB is billed for a late-night concert; his individual performance day and exact start time have not been published."
   },
   {
     "title": "Northeast Winterfest 2027 — EGR",
@@ -16582,7 +16647,13 @@
     "confidence": "high",
     "firstSeen": "2026-11-04",
     "lastVerified": "2026-11-05T02:44:27Z",
-    "auditVerified": "2026-11-04"
+    "auditVerified": "2026-11-04",
+    "scheduleDetails": [
+      {
+        "label": "Conference check-in",
+        "text": "Friday, January 15: 4–8 PM at DoubleTree by Hilton Stamford. The artist performance day and time are unannounced."
+      }
+    ]
   },
   {
     "title": "Ozark Winterfest 2027 — EGR",
@@ -16744,7 +16815,13 @@
     "confidence": "high",
     "firstSeen": "2026-11-04",
     "lastVerified": "2026-11-05T02:44:27Z",
-    "auditVerified": "2026-11-04"
+    "auditVerified": "2026-11-04",
+    "scheduleDetails": [
+      {
+        "label": "Conference check-in",
+        "text": "Friday, March 5: 10 AM–7 PM at LeConte Center. Marty’s performance day and time are unannounced."
+      }
+    ]
   },
   {
     "id": "manual:ging-live-first-headlining-south-attleboro-2027-01-15",

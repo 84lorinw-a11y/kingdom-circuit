@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-FIELDS = {'address', 'address2', 'postalCode', 'venue', 'startTime', 'startDateTime',
+FIELDS = {'address', 'address2', 'postalCode', 'venue', 'city', 'startTime', 'startDateTime',
           'endTime', 'endDateTime', 'endDate', 'doorsTime', 'timezone',
           'organizer', 'registrationLocation', 'registrationTime', 'publicDescription',
           'publicNotice', 'price', 'ageRestriction', 'admissionRestriction',
@@ -35,6 +35,8 @@ def enrich(event, reviewed):
         facts = item['facts']
         if set(facts) - FIELDS:
             raise ValueError(f"Unapproved show fields for {item['id']}: {set(facts) - FIELDS}")
+        if 'city' in facts:
+            raise ValueError(f"City changes require an explicit correction for {item['id']}")
         corrections = item.get('corrections', [])
         for correction in corrections:
             expected, replacements = correction['expected'], correction['facts']
@@ -47,7 +49,11 @@ def enrich(event, reviewed):
         if item['id'] not in identities or event.get('startDate') != item['startDate']:
             continue
         if any(text(event.get(k) or ('US' if k == 'country' else '')) != text(item.get(k))
-               for k in ('city', 'state', 'country')):
+               for k in ('state', 'country')):
+            continue
+        accepted_cities = [item.get('city')]
+        accepted_cities += [c['facts']['city'] for c in corrections if 'city' in c['facts']]
+        if text(event.get('city')) not in {text(city) for city in accepted_cities}:
             continue
         accepted_venues = [item.get('expectedVenue')]
         accepted_venues += [c['facts']['venue'] for c in corrections if 'venue' in c['facts']]

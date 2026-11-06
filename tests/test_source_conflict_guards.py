@@ -16,11 +16,12 @@ class SourceConflictGuards(unittest.TestCase):
         self.registry=json.loads((ROOT/'config/verified-show-information.json').read_text())['events']
     def reviewed(self,part):
         return next(e for e in self.registry if part in e['id'])
-    def stale(self,item):
-        return {'id':item['id'],'startDate':item['startDate'],'city':item['city'],'state':item['state'],'country':item['country'],'venue':item['expectedVenue'],'address':item.get('expectedAddress',''),**copy.deepcopy(item['corrections'][-1]['expected'])}
+    def stale(self,item,field=None):
+        correction=next(c for c in reversed(item['corrections']) if field is None or field in c['expected'])
+        return {'id':item['id'],'startDate':item['startDate'],'city':item['city'],'state':item['state'],'country':item['country'],'venue':item['expectedVenue'],'address':item.get('expectedAddress',''),**copy.deepcopy(correction['expected'])}
     def test_disputed_times_cannot_reappear_through_curated_refresh(self):
         for part in ('ignite-and-unite-tour-daytona','heliopolis-soundoff'):
-            item=self.reviewed(part); original=self.stale(item); result=enrich(original,[item])
+            item=self.reviewed(part); original=self.stale(item,'startTime'); result=enrich(original,[item])
             self.assertEqual(result['startTime'],'');self.assertEqual(result['startDateTime'],'');self.assertEqual(result['doorsTime'],'')
             self.assertIn('not confirmed',result['publicNotice'])
             self.assertEqual(enrich(result,[item]),result)
@@ -34,12 +35,14 @@ class SourceConflictGuards(unittest.TestCase):
         schema=next(event_schemas(schema_blocks(rendered)[0][1]))
         self.assertNotIn('name',schema['location']);self.assertNotIn('streetAddress',schema['location']['address'])
         self.assertIn('register through Eventbrite for the giveaways',result['price'])
-    def test_rsvp_restricted_street_removed_without_inventing_private_status(self):
+    def test_artist_published_rsvp_location_restored_without_inventing_walk_in_access(self):
         item=self.reviewed('babytooth-experience-huntington'); original=self.stale(item);result=enrich(original,[item]);norm=normalize(result)
-        self.assertFalse(norm['private']);self.assertFalse(norm['address']);self.assertFalse(norm['venue']);self.assertFalse(norm['postalCode'])
+        self.assertFalse(norm['private']);self.assertEqual(norm['address'],'15202 Transistor Lane');self.assertEqual(norm['postalCode'],'92649')
         self.assertEqual(enrich(result,[item]),result)
         rendered=detail_transform(fixture(),norm)
-        self.assertNotIn('15202 Transistor Lane',rendered);self.assertNotIn('92649',rendered)
+        self.assertIn('15202 Transistor Lane',rendered);self.assertIn('92649',rendered)
         self.assertIn('RSVP/application required',rendered)
+        private=normalize(enrich({**original,'admission':'private'},[item]))
+        self.assertTrue(private['private']);self.assertFalse(private['address']);self.assertFalse(private['postalCode'])
 
 if __name__=='__main__':unittest.main()

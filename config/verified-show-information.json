@@ -341,7 +341,8 @@
       "facts": {
         "postalCode": "44114",
         "primaryTimeKind": "doors",
-        "price": "General admission $35; VIP $70 (advertised flyer prices; fees unconfirmed)"
+        "price": "General admission $35; VIP $70 (advertised flyer prices; fees unconfirmed)",
+        "ageRestriction": "All ages"
       },
       "sources": [
         {
@@ -356,6 +357,30 @@
         {
           "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
           "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+          "fields": [
+            "startTime",
+            "startDateTime",
+            "primaryTimeKind",
+            "ageRestriction"
+          ],
+          "quoteOrSummary": "Exact November 7 Cleveland ticket listing separates 8 PM music from 7:30 PM doors and explicitly permits all ages.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.brennomusic.live/",
+          "fields": [
+            "startTime",
+            "startDateTime",
+            "primaryTimeKind",
+            "ageRestriction"
+          ],
+          "quoteOrSummary": "Artist tour page independently lists November 7 Cleveland Beyond the Walls; no clock.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
         }
       ],
       "expectedVenue": "The Cambridge Room at House of Blues Cleveland",
@@ -371,6 +396,22 @@
             "startDateTime": ""
           },
           "reviewedAt": "2026-11-05"
+        },
+        {
+          "expected": {
+            "startTime": "",
+            "startDateTime": "",
+            "primaryTimeKind": "doors",
+            "ageRestriction": null
+          },
+          "facts": {
+            "startTime": "20:00",
+            "startDateTime": "2026-11-07T20:00:00-05:00",
+            "primaryTimeKind": "",
+            "ageRestriction": "All ages"
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
         }
       ]
     },
@@ -870,7 +911,14 @@
       "state": "FL",
       "country": "US",
       "facts": {
-        "postalCode": "32818"
+        "postalCode": "32818",
+        "timezone": "America/New_York",
+        "organizer": {
+          "name": "God Did It Movement",
+          "url": "https://www.goddiditmovement.com/"
+        },
+        "ageRestriction": "Everyone welcome.",
+        "ticketUrlVerified": true
       },
       "sources": [
         {
@@ -890,10 +938,91 @@
           "quoteOrSummary": "The ticket provider's search-indexed listings explicitly name UNITY Pop-Up Tour: Orlando!, Saturday Nov 14 at 11 AM, at Grace Bible Church of Central Florida. Combined with the church's official street address, this resolves the title-only venue field. Direct page open returned cache miss.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.givesendgo.com/lp/god-did-it",
+          "fields": [
+            "venue",
+            "timezone",
+            "organizer",
+            "ageRestriction",
+            "ticketUrl",
+            "ticketUrlVerified"
+          ],
+          "quoteOrSummary": "Official God Did It movement page links November14 UNITY event landing page.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.goddiditmovement.com/unity",
+          "fields": [
+            "venue",
+            "timezone",
+            "organizer",
+            "ageRestriction",
+            "ticketUrl",
+            "ticketUrlVerified"
+          ],
+          "quoteOrSummary": "Official event landing page links Eventbrite ticket2003836750663.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.eventbrite.com/e/unity-pop-up-tour-orl-tickets-2003836750663?lid=x7r08kx6mqn3",
+          "fields": [
+            "venue",
+            "timezone",
+            "organizer",
+            "ageRestriction",
+            "ticketUrl",
+            "ticketUrlVerified"
+          ],
+          "quoteOrSummary": "Official linked ticket page redirects to Orlando canonical ticket. November14,11AM–5PM; Grace Bible Church of Central Florida; 801DorscherRd32818; By God Did It Movement; everyone welcome and activities free. JSONLD start11:00-05:00/end17:00-05:00.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://gbccf.org/other/contact",
+          "fields": [
+            "venue",
+            "timezone",
+            "organizer",
+            "ageRestriction",
+            "ticketUrl",
+            "ticketUrlVerified"
+          ],
+          "quoteOrSummary": "Venue website independently confirms801DorscherRoad,OrlandoFL32818.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
         }
       ],
       "expectedVenue": "UNITY POP-UP TOUR",
-      "expectedAddress": "801 Dorscher Rd"
+      "expectedAddress": "801 Dorscher Rd",
+      "corrections": [
+        {
+          "expected": {
+            "venue": "UNITY POP-UP TOUR",
+            "timezone": "",
+            "organizer": null,
+            "ageRestriction": null,
+            "ticketUrl": "https://www.bandsintown.com/t/109072940?app_id=js_kingdomcircuit.com&came_from=267&custom=true&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+            "ticketUrlVerified": null
+          },
+          "facts": {
+            "venue": "Grace Bible Church of Central Florida",
+            "timezone": "America/New_York",
+            "organizer": {
+              "name": "God Did It Movement",
+              "url": "https://www.goddiditmovement.com/"
+            },
+            "ageRestriction": "Everyone welcome.",
+            "ticketUrl": "https://www.eventbrite.com/e/unity-pop-up-tour-orlando-tickets-2003836750663",
+            "ticketUrlVerified": true
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
+        }
+      ]
     },
     {
       "id": "ticketmaster:vvG10Z_CMA3B0H",
@@ -1614,7 +1743,8 @@
         "doorsTime": "19:00",
         "primaryTimeKind": "doors",
         "ageRestriction": "All ages; under 18 must be accompanied by a parent or legal guardian",
-        "ticketUrlVerified": true
+        "ticketUrlVerified": true,
+        "price": "Listed ticket range: $24.30–$81 USD."
       },
       "sources": [
         {
@@ -1649,6 +1779,42 @@
         {
           "url": "https://www.eventbrite.com/e/zauntee-god-remembers-tour-tickets-1993716545858",
           "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.eventbrite.com/e/zauntee-god-remembers-tour-tickets-1993716545858",
+          "fields": [
+            "price"
+          ],
+          "quoteOrSummary": "Fresh official ticket body explicitly labels 7 PM as doors. Its Event JSON-LD lists USD 24.30–81.00; fee inclusion is not established.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.theorpheum.com/",
+          "fields": [
+            "price"
+          ],
+          "quoteOrSummary": "Official venue calendar links this exact Eventbrite event and provides no separate performance clock.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.bandsintown.com/e/108660108-skema-boy-at-the-orpheum?came_from=252",
+          "fields": [
+            "price"
+          ],
+          "quoteOrSummary": "Fresh indexed Skema Boy listing gives 8 PM for the exact date and venue. Full page is unavailable; original artist authorisation was not independently established.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://rixonentertainment.com/skema-boy",
+          "fields": [
+            "price"
+          ],
+          "quoteOrSummary": "Official management page returned only a script shell.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
         }
       ],
       "expectedVenue": "The Orpheum",
@@ -1682,6 +1848,16 @@
             "ticketUrl": "https://www.eventbrite.com/e/zauntee-god-remembers-tour-tickets-1993716545858"
           },
           "reviewedAt": "2026-11-05"
+        },
+        {
+          "expected": {
+            "price": ""
+          },
+          "facts": {
+            "price": "Listed ticket range: $24.30–$81 USD."
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
         }
       ]
     },
@@ -2198,7 +2374,22 @@
       "country": "US",
       "facts": {
         "address": "55 Fair Drive",
-        "postalCode": "92626"
+        "postalCode": "92626",
+        "timezone": "America/Los_Angeles",
+        "doorsTime": "18:30",
+        "organizer": {
+          "name": "Ignition / Area Youth Ministry",
+          "url": "https://www.ignitionstudents.org/socal"
+        },
+        "ageRestriction": "Students in grades 7–12; parents, youth pastors and mentors may attend.",
+        "price": "Students: $20 USD; first-time student attendees: free; adults: $35 USD.",
+        "publicDescription": "WHATUPRG is announced for November 6 at Ignition SoCal, a Christian student conference at Vanguard University. The conference runs November 6–7; the artist’s individual set time has not been published.",
+        "scheduleDetails": [
+          {
+            "label": "Friday conference schedule",
+            "text": "Registration begins at 6 PM; doors and dinner at 6:30 PM; Session 1 at 7:30 PM; Night Market at 8:30 PM. Friday programming runs until 10 PM. These are conference times, not a confirmed WHATUPRG set time."
+          }
+        ]
       },
       "sources": [
         {
@@ -2210,10 +2401,92 @@
           "quoteOrSummary": "University contact page confirms the already-listed campus at 55 Fair Drive, Costa Mesa CA 92626-9601; use five-digit ZIP.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.ignitionstudents.org/socal",
+          "fields": [
+            "timezone",
+            "doorsTime",
+            "organizer",
+            "ageRestriction",
+            "price",
+            "publicDescription",
+            "scheduleDetails",
+            "officialUrl"
+          ],
+          "quoteOrSummary": "Official location page publishes Vanguard on Nov 6–7, youth/adult eligibility, student/adult prices, first-time student free admission, and Friday registration/doors/session schedule. Its musical-guests section uses the WHATUPRG image; Reach independently lists the Nov 6 appearance. Registration is embedded at the #register anchor; no transaction/fee-inclusive price was verified.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.reachrecords.com/artists/whatuprg/",
+          "fields": [
+            "timezone",
+            "doorsTime",
+            "organizer",
+            "ageRestriction",
+            "price",
+            "publicDescription",
+            "scheduleDetails",
+            "officialUrl"
+          ],
+          "quoteOrSummary": "Artist label’s calendar announces WHATUPRG at Vanguard University on Nov 6, 2026; no individual set clock.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.ignitionstudents.org/s/Ignition-socal-FAQ_1141011.pdf",
+          "fields": [
+            "timezone",
+            "doorsTime",
+            "organizer",
+            "ageRestriction",
+            "price",
+            "publicDescription",
+            "scheduleDetails",
+            "officialUrl"
+          ],
+          "quoteOrSummary": "The official linked FAQ repeats the grade 7–12 eligibility and conference schedule. Conference sessions are not labeled as the artist’s set.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
         }
       ],
       "expectedVenue": "Vanguard University",
-      "expectedAddress": "55 Fair Drive"
+      "expectedAddress": "55 Fair Drive",
+      "corrections": [
+        {
+          "expected": {
+            "timezone": "",
+            "doorsTime": null,
+            "organizer": null,
+            "ageRestriction": null,
+            "price": "",
+            "publicDescription": null,
+            "scheduleDetails": null,
+            "officialUrl": "https://www.reachrecords.com/artists/whatuprg/"
+          },
+          "facts": {
+            "timezone": "America/Los_Angeles",
+            "doorsTime": "18:30",
+            "organizer": {
+              "name": "Ignition / Area Youth Ministry",
+              "url": "https://www.ignitionstudents.org/socal"
+            },
+            "ageRestriction": "Students in grades 7–12; parents, youth pastors and mentors may attend.",
+            "price": "Students: $20 USD; first-time student attendees: free; adults: $35 USD.",
+            "publicDescription": "WHATUPRG is announced for November 6 at Ignition SoCal, a Christian student conference at Vanguard University. The conference runs November 6–7; the artist’s individual set time has not been published.",
+            "scheduleDetails": [
+              {
+                "label": "Friday conference schedule",
+                "text": "Registration begins at 6 PM; doors and dinner at 6:30 PM; Session 1 at 7:30 PM; Night Market at 8:30 PM. Friday programming runs until 10 PM. These are conference times, not a confirmed WHATUPRG set time."
+              }
+            ],
+            "officialUrl": "https://www.ignitionstudents.org/socal#register"
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
+        }
+      ]
     },
     {
       "id": "official:82bb2a5f42c828c2537d",
@@ -2292,7 +2565,11 @@
       "city": "Huntington Beach",
       "state": "CA",
       "country": "US",
-      "facts": {},
+      "facts": {
+        "venue": "15202 Transistor Lane",
+        "address": "15202 Transistor Lane",
+        "postalCode": "92649"
+      },
       "sources": [
         {
           "url": "https://www.ocreporter.news/LegalNotices/OCR-2026-03-25.pdf",
@@ -2307,6 +2584,58 @@
           "url": "https://partiful.com/e/9wVqEVujrtfNv03Vr5C7",
           "reviewedAt": "2026-11-05",
           "quoteOrSummary": "Artist-hosted page shows RestrictedAccess, Getonthelist; publicpayload guestActionAPPLY, approximateLocationHuntingtonBeachCA, addressLinesempty, no streetorpostal."
+        },
+        {
+          "url": "https://kadenjordan.com/pages/tour",
+          "fields": [
+            "venue",
+            "address",
+            "postalCode",
+            "admissionRestriction",
+            "scheduleNote"
+          ],
+          "quoteOrSummary": "Official artist tour page includes Songkick widget artist 10314485 and LIVE SHOWS link.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.songkick.com/artists/10314485-kaden-jordan",
+          "fields": [
+            "venue",
+            "address",
+            "postalCode",
+            "admissionRestriction",
+            "scheduleNote"
+          ],
+          "quoteOrSummary": "Fresh linked artist calendar listsSatNov 21HuntingtonBeach at15202TransistorLn and links exact event 43449567.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.songkick.com/concerts/43449567-kaden-jordan-at-15202-transistor-ln-huntington-beach-ca-92649-united-states",
+          "fields": [
+            "venue",
+            "address",
+            "postalCode",
+            "admissionRestriction",
+            "scheduleNote"
+          ],
+          "quoteOrSummary": "Fresh exact event publishes 15202 Transistor Ln, Huntington Beach, CA 92649; tour Babytooth Experience; doors 18:30.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://partiful.com/e/9wVqEVujrtfNv03Vr5C7",
+          "fields": [
+            "venue",
+            "address",
+            "postalCode",
+            "admissionRestriction",
+            "scheduleNote"
+          ],
+          "quoteOrSummary": "Fresh artist-hosted Partiful page requires joining the list. Public payload guestAction APPLY, approximateLocation Huntington Beach CA, addressLines empty. Date 2026-11-22T02:30Z equalsNov 21at18:30Pacific.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
         }
       ],
       "expectedVenue": "15202 Transistor Lane",
@@ -2329,6 +2658,24 @@
           },
           "reviewedAt": "2026-11-05",
           "reason": "Fresh official-source conflict / restricted public RSVP location audit; do not infer missing facts."
+        },
+        {
+          "expected": {
+            "venue": "",
+            "address": "",
+            "postalCode": "",
+            "admissionRestriction": "RSVP/application required. The organizer provides location details.",
+            "scheduleNote": "The public RSVP page shares Huntington Beach but withholds the street address. Request attendance through the official listing for location details."
+          },
+          "facts": {
+            "venue": "15202 Transistor Lane",
+            "address": "15202 Transistor Lane",
+            "postalCode": "92649",
+            "admissionRestriction": "RSVP/application required through the official event page.",
+            "scheduleNote": "The artist’s official tour page publishes this location through Songkick. RSVP/application is required through Partiful; the performance start time is not announced."
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
         }
       ]
     },
@@ -2339,7 +2686,18 @@
       "state": "OH",
       "country": "US",
       "facts": {
-        "postalCode": "43201"
+        "postalCode": "43201",
+        "organizer": {
+          "name": "Capacity Entertainment / Rave Jesus"
+        },
+        "ageRestriction": "All ages",
+        "price": "General admission US$35.44 including listed fees; meet-and-greet plus general admission US$88.25 including listed fees.",
+        "scheduleDetails": [
+          {
+            "label": "Meet and greet",
+            "text": "Meet-and-greet ticket holders receive early entry at 5 PM. General admission doors open at 6 PM; performance start is unannounced."
+          }
+        ]
       },
       "sources": [
         {
@@ -2350,10 +2708,59 @@
           "quoteOrSummary": "Local district business listing gives Skully's at1151N.HighSt,ColumbusOH43201; matches stored street. Official venue site was inaccessible.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.ticketweb.com/event/rave-revival-fall-tour-skullys-music-diner-tickets/14295004",
+          "fields": [
+            "organizer",
+            "ageRestriction",
+            "price",
+            "scheduleDetails"
+          ],
+          "quoteOrSummary": "Fresh TicketWeb text credits Capacity Entertainment and Rave Jesus as presenters; doors 6 PM, all ages, GA 35.44 including listed fees, meet-and-greet plus GA 88.25 including listed fees, early entry 5 PM.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.celebrityetc.com/tm-event/rave-revival-fall-tour/",
+          "fields": [
+            "organizer",
+            "ageRestriction",
+            "price",
+            "scheduleDetails"
+          ],
+          "quoteOrSummary": "Promoter page independently repeats Capacity Entertainment, Rave Jesus presenter credit, 6 PM doors and 35.44–88.25 price range.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
         }
       ],
       "expectedVenue": "Skully's Music Diner",
-      "expectedAddress": "1151 North High Street"
+      "expectedAddress": "1151 North High Street",
+      "corrections": [
+        {
+          "expected": {
+            "organizer": null,
+            "ageRestriction": null,
+            "price": "",
+            "scheduleDetails": null
+          },
+          "facts": {
+            "organizer": {
+              "name": "Capacity Entertainment / Rave Jesus"
+            },
+            "ageRestriction": "All ages",
+            "price": "General admission US$35.44 including listed fees; meet-and-greet plus general admission US$88.25 including listed fees.",
+            "scheduleDetails": [
+              {
+                "label": "Meet and greet",
+                "text": "Meet-and-greet ticket holders receive early entry at 5 PM. General admission doors open at 6 PM; performance start is unannounced."
+              }
+            ]
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
+        }
+      ]
     },
     {
       "id": "manual:ant-lee-light-up-the-city-lloydminster-2027-02-26",
@@ -2514,7 +2921,18 @@
         "postalCode": "32819",
         "doorsTime": "16:00",
         "ageRestriction": "All ages",
-        "scheduleNote": "Event-ticket holders may enter after 4 PM; each night runs until 1 AM. Individual performance times have not been announced."
+        "scheduleNote": "Event-ticket holders may enter after 4 PM; each night runs until 1 AM. Individual performance times have not been announced.",
+        "price": "Individual event-only tickets: US$109.99 for one night or US$154.99 for both nights, plus tax.",
+        "scheduleDetails": [
+          {
+            "label": "Friday, January 22",
+            "text": "1K Phew performs on the Hollywood Stage. Joyful Noize is FanZone DJ and host. Exact set times are unannounced."
+          },
+          {
+            "label": "Saturday, January 23",
+            "text": "gio. performs on the Hollywood Stage; Torey D’Shaun on the FanZone Stage. Joyful Noize is FanZone DJ and host. Exact set times are unannounced."
+          }
+        ]
       },
       "sources": [
         {
@@ -2544,10 +2962,53 @@
         {
           "url": "https://www.universalorlando.com/web-store/en/us/add-ons?tab=Rock+The+Universe",
           "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.universalorlando.com/web/en/us/things-to-do/events/rock-the-universe",
+          "fields": [
+            "price",
+            "scheduleDetails"
+          ],
+          "quoteOrSummary": "Fresh official lineup assigns 1K Phew to Friday Hollywood Stage, gio. to Saturday Hollywood Stage, Torey D’Shaun to Saturday FanZone, and Joyful Noize to both days.4 PM is entry time.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.universalorlando.com/web/en/us/things-to-do/events/rock-the-universe/tickets",
+          "fields": [
+            "price",
+            "scheduleDetails"
+          ],
+          "quoteOrSummary": "Official individual event-only prices are 109.99 one night or 154.99 both nights, plus tax. Lower group prices are excluded from the suggested standard price.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
         }
       ],
       "expectedVenue": "Universal Studios Florida",
-      "expectedAddress": "6000 Universal Boulevard"
+      "expectedAddress": "6000 Universal Boulevard",
+      "corrections": [
+        {
+          "expected": {
+            "price": null,
+            "scheduleDetails": null
+          },
+          "facts": {
+            "price": "Individual event-only tickets: US$109.99 for one night or US$154.99 for both nights, plus tax.",
+            "scheduleDetails": [
+              {
+                "label": "Friday, January 22",
+                "text": "1K Phew performs on the Hollywood Stage. Joyful Noize is FanZone DJ and host. Exact set times are unannounced."
+              },
+              {
+                "label": "Saturday, January 23",
+                "text": "gio. performs on the Hollywood Stage; Torey D’Shaun on the FanZone Stage. Joyful Noize is FanZone DJ and host. Exact set times are unannounced."
+              }
+            ]
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
+        }
+      ]
     },
     {
       "id": "manual:ignite-and-unite-tour-plantation-2026-11-14",
@@ -2871,6 +3332,66 @@
           "url": "https://www.eventbrite.ca/e/heliopolis-soundoff-summit-showcase-tickets-2003992006036?aff=ZaireInk",
           "reviewedAt": "2026-11-05",
           "quoteOrSummary": "Ticket page permits under18 with guardian and shows doors8PM; FAQ lists Zaire Ink10:55PM."
+        },
+        {
+          "url": "https://heliopolisyyc.ca/",
+          "fields": [
+            "ageRestriction",
+            "publicNotice"
+          ],
+          "quoteOrSummary": "The official venue footer states a general 18+ admission policy and requires physical identification.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.musiccalgary.ca/conference",
+          "fields": [
+            "ageRestriction",
+            "publicNotice"
+          ],
+          "quoteOrSummary": "Organizer FAQ explicitly states Friday Heliopolis 18+.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.musiccalgary.ca/schedule/mixer-nov-12-npd3h-f3fpf?format=json",
+          "fields": [
+            "ageRestriction",
+            "publicNotice"
+          ],
+          "quoteOrSummary": "Exact event title labels 10:30 PM doors. Embedded checkout matches Eventbrite 2003992006036. Record timestamps permit limited chronology.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://images.squarespace-cdn.com/content/v1/67eeb98314c5ce2fced771b5/b947fdaa-02d7-43b3-82d7-42bcc8bfc98e/Nov+13+-+Late+Night.png",
+          "fields": [
+            "ageRestriction",
+            "publicNotice"
+          ],
+          "quoteOrSummary": "Fresh organizer poster visually reviewed: November 13 Friday, Heliopolis, doors 10:30 PM.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.eventbrite.ca/e/heliopolis-soundoff-summit-showcase-tickets-2003992006036?aff=ZaireInk",
+          "fields": [
+            "ageRestriction",
+            "publicNotice"
+          ],
+          "quoteOrSummary": "Ticket header 10 PM–1 AM; doors 8 PM; accompanied-under-18 badge; set-time FAQ begins 10:30 PM and lists Zaire Ink 10:55 PM.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.instagram.com/p/DfRDrx7qWZE/",
+          "fields": [
+            "ageRestriction",
+            "publicNotice"
+          ],
+          "quoteOrSummary": "Artist public post metadata confirms Nov 13 Helio booking; caption does not specify age or time.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
         }
       ],
       "corrections": [
@@ -2922,6 +3443,18 @@
           },
           "reviewedAt": "2026-11-05",
           "reason": "Fresh official-source conflict / restricted public RSVP location audit; do not infer missing facts."
+        },
+        {
+          "expected": {
+            "ageRestriction": "Age restriction not confirmed. Organizer says 18+; ticket listing differs. Confirm with the organizer before attending.",
+            "publicNotice": "Show schedule and age restriction are not confirmed because official sources disagree. Confirm with Music Calgary before attending."
+          },
+          "facts": {
+            "ageRestriction": "18+; physical ID required.",
+            "publicNotice": "Show schedule is not confirmed because official sources disagree. Confirm with Music Calgary before attending."
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
         }
       ]
     },
@@ -3705,7 +4238,15 @@
       "country": "US",
       "expectedVenue": "Redemption Hill",
       "expectedAddress": "43694 Highway 47",
-      "facts": {},
+      "facts": {
+        "ageRestriction": "All ages",
+        "scheduleDetails": [
+          {
+            "label": "Festival window",
+            "text": "Organizer registration lists August 27 at noon through August 29 at 1 PM. Individual daily performance schedules and the 2027 lineup are unannounced."
+          }
+        ]
+      },
       "sources": [
         {
           "url": "https://www.facebook.com/ruralmusicministries/posts/pfbid02zg6G5CYRFPDYxgvY2VwqSDbDCRUKVHk1aBShoy6QXWSjdEPu7n36eeCtye6prDWml",
@@ -3718,6 +4259,36 @@
         {
           "url": "/Users/lorinwilliamson/Documents/Kingdom Circuit Workspaces/nov5-show-information-production/assets/events/rural-music-festival-2027.jpg",
           "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.ruralmusic.org/",
+          "fields": [
+            "ageRestriction",
+            "scheduleDetails"
+          ],
+          "quoteOrSummary": "Fresh main page confirms August 27–29, 2027 and links the exact 2027 ticket page.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.ruralmusic.org/event-details/rural-music-festival-2027",
+          "fields": [
+            "ageRestriction",
+            "scheduleDetails"
+          ],
+          "quoteOrSummary": "Exact 2027 ticket page explicitly welcomes all ages, offers free GA and donation tiers, and lists the overall window August 27 noon–August 29 at 1 PM.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.ruralmusic.org/copy-of-festival-info-2",
+          "fields": [
+            "ageRestriction",
+            "scheduleDetails"
+          ],
+          "quoteOrSummary": "The page mixes a 2027 ticket card with a 2026 lineup grid: Friday 8/28, Saturday 8/29, Sunday 8/30. Do not reuse that lineup or set days for 2027.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
         }
       ],
       "corrections": [
@@ -3729,6 +4300,23 @@
             "officialUrl": "https://www.ruralmusic.org/"
           },
           "reviewedAt": "2026-11-05"
+        },
+        {
+          "expected": {
+            "ageRestriction": null,
+            "scheduleDetails": null
+          },
+          "facts": {
+            "ageRestriction": "All ages",
+            "scheduleDetails": [
+              {
+                "label": "Festival window",
+                "text": "Organizer registration lists August 27 at noon through August 29 at 1 PM. Individual daily performance schedules and the 2027 lineup are unannounced."
+              }
+            ]
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
         }
       ]
     },
@@ -3884,12 +4472,130 @@
       "expectedVenue": "Venue not provided",
       "expectedAddress": "",
       "facts": {
-        "startTime": "19:00"
+        "organizer": {
+          "name": "Florida Cocoa Church of God"
+        }
       },
       "sources": [
         {
           "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous",
           "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous",
+          "fields": [
+            "city",
+            "venue",
+            "address",
+            "postalCode",
+            "organizer",
+            "startTime"
+          ],
+          "quoteOrSummary": "Artist page Nov27 visible7PM; schema2026-11-27T19:00:00-08:00; locationCocoaFL. Artist artwork explicitly FLORIDA COCOA CHURCH OF GOD.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj",
+          "fields": [
+            "city",
+            "venue",
+            "address",
+            "postalCode",
+            "organizer",
+            "startTime"
+          ],
+          "quoteOrSummary": "Nov28 visible10AM; schema10:00-08:00; same district artwork.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous-2",
+          "fields": [
+            "city",
+            "venue",
+            "address",
+            "postalCode",
+            "organizer",
+            "startTime"
+          ],
+          "quoteOrSummary": "Nov29 visible9AM; schema09:00-08:00; same district artwork.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.churchofgodsop.com/event-details/cog-state-youth-convention-fl-cocoa-office",
+          "fields": [
+            "city",
+            "venue",
+            "address",
+            "postalCode",
+            "organizer",
+            "startTime"
+          ],
+          "quoteOrSummary": "Affiliated church exact event FL Cocoa Office. Its visually reviewed official flyer names same district; THE OUT POUR SYC26,November27–29,RosenCentreHotel,9840InternationalDr,OrlandoFL32819. The generic page template startsNov26 and disagrees with its own flyer; flyer agrees with artist dates.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.cocoastrongflcog.org/",
+          "fields": [
+            "city",
+            "venue",
+            "address",
+            "postalCode",
+            "organizer",
+            "startTime"
+          ],
+          "quoteOrSummary": "Official district website alternate attempted; cached page only older events; network failure in direct read.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://linktr.ee/floridacocoacog",
+          "fields": [
+            "city",
+            "venue",
+            "address",
+            "postalCode",
+            "organizer",
+            "startTime"
+          ],
+          "quoteOrSummary": "Official youth registration link points to staleSYC25/closed Jotform, rejected for2026.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "city": "Cocoa",
+            "venue": "Venue not provided",
+            "address": "",
+            "postalCode": null,
+            "organizer": null
+          },
+          "facts": {
+            "city": "Orlando",
+            "venue": "Rosen Centre Hotel",
+            "address": "9840 International Dr",
+            "postalCode": "32819",
+            "organizer": {
+              "name": "Florida Cocoa Church of God"
+            }
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
+        },
+        {
+          "expected": {
+            "startTime": "19:00"
+          },
+          "facts": {
+            "startTime": ""
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Published conference session clock uses conflicting Pacific metadata and is not identified as the artist set. Preserve a later corrected source time."
         }
       ]
     },
@@ -3935,7 +4641,8 @@
         "organizer": {
           "name": "Scott Dawson Evangelistic Association",
           "url": "https://www.strengthtostand.org/"
-        }
+        },
+        "scheduleNote": "KB is billed for a late-night concert; his individual performance day and exact start time have not been published."
       },
       "sources": [
         {
@@ -3945,6 +4652,45 @@
         {
           "url": "https://www.strengthtostand.org/jan-registration",
           "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.strengthtostand.org/sts-conference",
+          "fields": [
+            "scheduleNote"
+          ],
+          "quoteOrSummary": "Fresh 26/27 conference page credits Scott Dawson Evangelistic Association supervision and bills KB for a late-night concert; no individual day or clock.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.strengthtostand.org/sts-conference",
+          "fields": [
+            "scheduleNote"
+          ],
+          "quoteOrSummary": "January registration confirms January 16–18, 2027, without a KB performance clock.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://drive.google.com/drive/mobile/folders/1fi7piGCjcC8at1w7KuWFJBVlNJaENR_p",
+          "fields": [
+            "scheduleNote"
+          ],
+          "quoteOrSummary": "Linked 26/27 media kit returns an empty web view; direct certificate error.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "scheduleNote": null
+          },
+          "facts": {
+            "scheduleNote": "KB is billed for a late-night concert; his individual performance day and exact start time have not been published."
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
         }
       ]
     },
@@ -4689,12 +5435,52 @@
       "facts": {
         "organizer": {
           "name": "Sparta Center Church"
-        }
+        },
+        "scheduleDetails": [
+          {
+            "label": "Saturday evening",
+            "text": "Sean McDowell’s message begins at 6:30 PM. Kevi Morse performs after the message and a cereal-bar break; an exact concert start time is not announced."
+          },
+          {
+            "label": "Admission",
+            "text": "Saturday evening is open to families, churches and the community. Full-weekend registration is not required for the Saturday session and concert."
+          }
+        ]
       },
       "sources": [
         {
           "url": "https://www.eventbrite.com/e/invasion-2026-tickets-2000303583866",
           "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.eventbrite.com/e/invasion-2026-tickets-2000303583866",
+          "fields": [
+            "scheduleDetails"
+          ],
+          "quoteOrSummary": "Fresh official Eventbrite page specifies a 6:30 PM message, then a cereal-bar break, then Kevi Morse. Public Saturday admission 10 dollars; under 5 free. Full-weekend grade 6–12 restrictions must not be imposed on this public session.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "scheduleDetails": null
+          },
+          "facts": {
+            "scheduleDetails": [
+              {
+                "label": "Saturday evening",
+                "text": "Sean McDowell’s message begins at 6:30 PM. Kevi Morse performs after the message and a cereal-bar break; an exact concert start time is not announced."
+              },
+              {
+                "label": "Admission",
+                "text": "Saturday evening is open to families, churches and the community. Full-weekend registration is not required for the Saturday session and concert."
+              }
+            ]
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
         }
       ]
     },
@@ -5158,7 +5944,8 @@
         "organizer": {
           "name": "APTITUDE"
         },
-        "ticketUrlVerified": false
+        "ticketUrlVerified": false,
+        "postalCode": "77002"
       },
       "sources": [
         {
@@ -5168,6 +5955,33 @@
         {
           "url": "https://music.apple.com/us/concerts/ce.b01ccaf9-dcf3-44a6-afbf-4bd6d2fc60ae",
           "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://matchouston.org/rent-office",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Official venue footer identifies3400MainStreet,HoustonTX77002.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://matchouston.org/venue/rehearsal-room",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Independentpage onofficialvenuewebsite repeats3400MainStreet77002. This supportsbuildingZIP, not a room assignment.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.instagram.com/p/DfTOHOODGjO/",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Rescheduling post inaccessiblelogin; existing approvedMay1,2027date andcanonicalidentity preserved.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
         }
       ],
       "corrections": [
@@ -5179,6 +5993,16 @@
             "ticketUrl": ""
           },
           "reviewedAt": "2026-11-05"
+        },
+        {
+          "expected": {
+            "postalCode": null
+          },
+          "facts": {
+            "postalCode": "77002"
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
         }
       ]
     },
@@ -5193,7 +6017,13 @@
       "facts": {
         "organizer": {
           "name": "Community Bible Church"
-        }
+        },
+        "scheduleDetails": [
+          {
+            "label": "Conference concert",
+            "text": "The conference program lists a concert Thursday, June 17 at 8:30 PM. Hulvey’s individual set is not explicitly assigned to that slot."
+          }
+        ]
       },
       "sources": [
         {
@@ -5203,6 +6033,41 @@
         {
           "url": "https://www.communitybible.com/Registration/freedomconf2027",
           "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.freedomconfsatx.com/",
+          "fields": [
+            "scheduleDetails"
+          ],
+          "quoteOrSummary": "Fresh 2027 conference schedule lists a Thursday June 17 concert at 8:30 PM. Hulvey is in the lineup, but that schedule slot does not name him.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.communitybible.com/Registration/freedomconf2027",
+          "fields": [
+            "scheduleDetails"
+          ],
+          "quoteOrSummary": "Fresh official registration page returns HTTP 200 with an Error view and no usable detailed schedule.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "scheduleDetails": null
+          },
+          "facts": {
+            "scheduleDetails": [
+              {
+                "label": "Conference concert",
+                "text": "The conference program lists a concert Thursday, June 17 at 8:30 PM. Hulvey’s individual set is not explicitly assigned to that slot."
+              }
+            ]
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
         }
       ]
     },
@@ -5291,6 +6156,619 @@
           },
           "reviewedAt": "2026-11-05",
           "reason": "Fresh official-source conflict / restricted public RSVP location audit; do not infer missing facts."
+        }
+      ]
+    },
+    {
+      "id": "manual:kb-strength-to-stand-december-pigeon-forge-2026-12-28",
+      "startDate": "2026-12-28",
+      "city": "Pigeon Forge",
+      "state": "TN",
+      "country": "US",
+      "expectedVenue": "LeConte Center at Pigeon Forge",
+      "expectedAddress": "2986 Teaster Lane",
+      "facts": {
+        "scheduleNote": "KB is billed for a late-night concert; his individual performance day and exact start time have not been published."
+      },
+      "sources": [
+        {
+          "url": "https://www.strengthtostand.org/sts-conference",
+          "fields": [
+            "scheduleNote",
+            "organizer"
+          ],
+          "quoteOrSummary": "Fresh 26/27 conference page credits Scott Dawson Evangelistic Association supervision and bills KB for a late-night concert; no individual day or clock.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.strengthtostand.org/dec-registration",
+          "fields": [
+            "scheduleNote",
+            "organizer"
+          ],
+          "quoteOrSummary": "December registration confirms December 28–30, 2026, without a KB performance clock.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://drive.google.com/drive/mobile/folders/1fi7piGCjcC8at1w7KuWFJBVlNJaENR_p",
+          "fields": [
+            "scheduleNote",
+            "organizer"
+          ],
+          "quoteOrSummary": "Linked 26/27 media kit returns an empty web view; direct certificate error.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "scheduleNote": null
+          },
+          "facts": {
+            "scheduleNote": "KB is billed for a late-night concert; his individual performance day and exact start time have not been published."
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
+        }
+      ]
+    },
+    {
+      "id": "manual:northeast-winterfest-stamford-2027-01-15",
+      "startDate": "2027-01-15",
+      "city": "Stamford",
+      "state": "CT",
+      "country": "US",
+      "expectedVenue": "DoubleTree by Hilton Stamford",
+      "expectedAddress": "1 First Stamford Place",
+      "facts": {
+        "organizer": {
+          "name": "Church of God International Youth Department",
+          "url": "https://www.cogyd.org/mywinterfest"
+        },
+        "scheduleDetails": [
+          {
+            "label": "Conference check-in",
+            "text": "Friday, January 15: 4–8 PM at DoubleTree by Hilton Stamford. The artist performance day and time are unannounced."
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://csareg.com/event/northeast-winterfest/",
+          "fields": [
+            "organizer",
+            "scheduleDetails"
+          ],
+          "quoteOrSummary": "Current 2027 registration confirms dates, venue and price, without an EGR set time.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://csareg.com/event/northeast-winterfest/faq/",
+          "fields": [
+            "organizer",
+            "scheduleDetails"
+          ],
+          "quoteOrSummary": "January 15, 2027 check-in is 4–8 PM at the DoubleTree. This is registration, not an EGR performance.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.cogyd.org/northeast27",
+          "fields": [
+            "organizer",
+            "scheduleDetails"
+          ],
+          "quoteOrSummary": "Fresh official Church of God International Youth Department page links registration and its 2027 Northeast flyer.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "organizer": null,
+            "scheduleDetails": null
+          },
+          "facts": {
+            "organizer": {
+              "name": "Church of God International Youth Department",
+              "url": "https://www.cogyd.org/mywinterfest"
+            },
+            "scheduleDetails": [
+              {
+                "label": "Conference check-in",
+                "text": "Friday, January 15: 4–8 PM at DoubleTree by Hilton Stamford. The artist performance day and time are unannounced."
+              }
+            ]
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
+        }
+      ]
+    },
+    {
+      "id": "manual:ozark-winterfest-branson-2027-02-05",
+      "startDate": "2027-02-05",
+      "city": "Branson",
+      "state": "MO",
+      "country": "US",
+      "expectedVenue": "The Mansion Theatre",
+      "expectedAddress": "189 Expressway Lane",
+      "facts": {
+        "organizer": {
+          "name": "Church of God International Youth Department",
+          "url": "https://www.cogyd.org/mywinterfest"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://csareg.com/event/ozark-winterfest/",
+          "fields": [
+            "organizer"
+          ],
+          "quoteOrSummary": "Current 2027 registration confirms dates, venue and price, without an EGR set time.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://csareg.com/event/ozark-winterfest/faq/",
+          "fields": [
+            "organizer"
+          ],
+          "quoteOrSummary": "The web FAQ describes 2026 dates and a 109-dollar ticket. Its check-in clock is rejected for 2027.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.cogyd.org/ozark27",
+          "fields": [
+            "organizer"
+          ],
+          "quoteOrSummary": "Fresh official Church of God International Youth Department page links registration and its 2027 Ozark flyer.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "organizer": null
+          },
+          "facts": {
+            "organizer": {
+              "name": "Church of God International Youth Department",
+              "url": "https://www.cogyd.org/mywinterfest"
+            }
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
+        }
+      ]
+    },
+    {
+      "id": "manual:smoky-mountain-winterfest-pigeon-forge-2027-03-05",
+      "startDate": "2027-03-05",
+      "city": "Pigeon Forge",
+      "state": "TN",
+      "country": "US",
+      "expectedVenue": "LeConte Center",
+      "expectedAddress": "2986 Teaster Lane",
+      "facts": {
+        "organizer": {
+          "name": "Church of God International Youth Department",
+          "url": "https://www.cogyd.org/mywinterfest"
+        },
+        "scheduleDetails": [
+          {
+            "label": "Conference check-in",
+            "text": "Friday, March 5: 10 AM–7 PM at LeConte Center. Marty’s performance day and time are unannounced."
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://csareg.com/event/smoky-mountain-winterfest/",
+          "fields": [
+            "organizer",
+            "scheduleDetails"
+          ],
+          "quoteOrSummary": "Current 2027 registration confirms dates, venue and price, without a Marty set time.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://csareg.com/event/smoky-mountain-winterfest/faq/",
+          "fields": [
+            "organizer",
+            "scheduleDetails"
+          ],
+          "quoteOrSummary": "March 5, 2027 check-in is 10 AM–7 PM at LeConte Center. This is registration, not Marty’s performance.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.cogyd.org/smwf27",
+          "fields": [
+            "organizer",
+            "scheduleDetails"
+          ],
+          "quoteOrSummary": "Fresh official Church of God International Youth Department SMWF 27 page links registration and its flyer.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "organizer": null,
+            "scheduleDetails": null
+          },
+          "facts": {
+            "organizer": {
+              "name": "Church of God International Youth Department",
+              "url": "https://www.cogyd.org/mywinterfest"
+            },
+            "scheduleDetails": [
+              {
+                "label": "Conference check-in",
+                "text": "Friday, March 5: 10 AM–7 PM at LeConte Center. Marty’s performance day and time are unannounced."
+              }
+            ]
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
+        }
+      ]
+    },
+    {
+      "id": "manual:5ive-me-against-the-world-forever-albuquerque-2026-11-12",
+      "startDate": "2026-11-12",
+      "city": "Albuquerque",
+      "state": "NM",
+      "country": "US",
+      "expectedVenue": "The Upper Room",
+      "expectedAddress": "4700 Central Ave SE",
+      "facts": {
+        "postalCode": "87108"
+      },
+      "sources": [
+        {
+          "url": "https://www.instagram.com/p/DfSV8KEDNzA/",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Direct post returned Instagram login shell, not post content. Existing official six-date November flyer visually inspected; no ZIP printed.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.underhisconstruction.org/help-us",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Venue operator identifies its store at 4700 Central Ave SE.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://npiregistry.cms.hhs.gov/api/?number=1104560507&version=2.1",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "Official CMS record separately identifies LOCATION 4700 CENTRAL AVE SE, ALBUQUERQUE NM 871081225. Mailing ZIP87198 is not the venue ZIP.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.doseofreality.com/wp-content/uploads/2025/06/NM_Native_American_Resource_Directory_2025.pdf",
+          "fields": [
+            "postalCode"
+          ],
+          "quoteOrSummary": "New Mexico resource directory also identifies this physical address with ZIP87108.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.instagram.com/p/DfSV8KEDNzA/",
+          "fields": [
+            "startTime",
+            "startDateTime",
+            "scheduleDetails"
+          ],
+          "quoteOrSummary": "Fresh public captioned embed identifies Nov12, Albuquerque, The Upper Room,4700CentralAveSE,5:30PM. Separate Raton/Earth stops are6:30PM.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "postalCode": ""
+          },
+          "facts": {
+            "postalCode": "87108"
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
+        },
+        {
+          "expected": {
+            "startTime": "18:30",
+            "startDateTime": "2026-11-12T18:30:00-07:00",
+            "scheduleDetails": [
+              {
+                "label": "Start",
+                "text": "6:30 PM Mountain"
+              },
+              {
+                "label": "Admission",
+                "text": "Free"
+              },
+              {
+                "label": "Venue address",
+                "text": "4700 Central Ave SE, Albuquerque, NM"
+              },
+              {
+                "label": "Special guest opener",
+                "text": "JW Deuce"
+              }
+            ]
+          },
+          "facts": {
+            "startTime": "17:30",
+            "startDateTime": "2026-11-12T17:30:00-07:00",
+            "scheduleDetails": [
+              {
+                "label": "Start",
+                "text": "5:30 PM Mountain"
+              },
+              {
+                "label": "Admission",
+                "text": "Free"
+              },
+              {
+                "label": "Venue address",
+                "text": "4700 Central Ave SE, Albuquerque, NM"
+              },
+              {
+                "label": "Special guest opener",
+                "text": "JW Deuce"
+              }
+            ]
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh artist caption explicitly gives Albuquerque5:30PM; prior record cites same source but copied6:30PM. Guard clock, ISO and visible schedule together."
+        }
+      ]
+    },
+    {
+      "id": "manual:vibe5-awards-atlanta-2026-12-05",
+      "startDate": "2026-12-05",
+      "city": "Jonesboro",
+      "state": "GA",
+      "country": "US",
+      "expectedVenue": "",
+      "expectedAddress": "",
+      "facts": {},
+      "sources": [
+        {
+          "url": "https://www.vibe5entertainment.com/event-details/2026-3rd-annual-vibe5-awards",
+          "fields": [
+            "price"
+          ],
+          "quoteOrSummary": "Fresh official ticket page saysDecember5,6PM–11PM,ATLANTA only. GA$10+$0.25ticket service fee; VIP$30+$0.75ticket service fee. No named venue or street.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.vibe5entertainment.com/vibe5awards",
+          "fields": [
+            "price"
+          ],
+          "quoteOrSummary": "Official awards landing has no venue/address; current official image saysDecember4–6 Atlanta Georgia, no street.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.instagram.com/vibe5ent/",
+          "fields": [
+            "price"
+          ],
+          "quoteOrSummary": "Official-linked social searched; no discoverable exact venue announcement.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "price": "General admission $10 plus fees; VIP $30 plus fees"
+          },
+          "facts": {
+            "price": "General admission $10 + $0.25 ticket service fee; VIP $30 + $0.75 ticket service fee."
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
+        }
+      ]
+    },
+    {
+      "id": "bandsintown:1040595947",
+      "startDate": "2027-02-13",
+      "city": "Atlanta",
+      "state": "GA",
+      "country": "US",
+      "expectedVenue": "TBD",
+      "expectedAddress": "TBD",
+      "facts": {
+        "ageRestriction": "Student conference for grades 7–12.",
+        "price": "Student registration $20; includes meals, night market and snacks.",
+        "organizer": {
+          "name": "Ignition Student Conference",
+          "url": "https://www.ignitionstudents.org/"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.reachrecords.com/artists/1k-phew/",
+          "fields": [
+            "ageRestriction",
+            "price",
+            "officialUrl",
+            "organizer"
+          ],
+          "quoteOrSummary": "Official label calendar confirms exactdate andcity; venueTBD.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.bandsintown.com/e/1040595947-1k-phew-at-tbd?came_from=257",
+          "fields": [
+            "ageRestriction",
+            "price",
+            "officialUrl",
+            "organizer"
+          ],
+          "quoteOrSummary": "Indexedartistlisting explicitly IgnitionYouth and09:30EST. Direct event access blocked403.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.ignitionstudents.org/atlanta",
+          "fields": [
+            "ageRestriction",
+            "price",
+            "officialUrl",
+            "organizer"
+          ],
+          "quoteOrSummary": "Official city registration page matches exactappearance date. Student conference grades7–12;$20studentregistration includesmeals,nightmarket,snacks. Saturday9AM–9PM; no venue/street.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.ignitionstudents.org/",
+          "fields": [
+            "ageRestriction",
+            "price",
+            "officialUrl",
+            "organizer"
+          ],
+          "quoteOrSummary": "Official conference homepage lists1KPhew andsaysguests varybycity; artistcalendar ties his specificdate. Sponsored/poweredbyCSBC,AYM,GlobalLeadershipSummitNextGen,Dare2Share,WordofLife.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "ageRestriction": null,
+            "price": "",
+            "officialUrl": "https://www.bandsintown.com/e/1040595947?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+            "organizer": null
+          },
+          "facts": {
+            "ageRestriction": "Student conference for grades 7–12.",
+            "price": "Student registration $20; includes meals, night market and snacks.",
+            "officialUrl": "https://www.ignitionstudents.org/atlanta",
+            "organizer": {
+              "name": "Ignition Student Conference",
+              "url": "https://www.ignitionstudents.org/"
+            }
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
+        }
+      ]
+    },
+    {
+      "id": "bandsintown:1040597655",
+      "startDate": "2027-02-20",
+      "city": "New York",
+      "state": "NY",
+      "country": "US",
+      "expectedVenue": "TBD",
+      "expectedAddress": "TBD",
+      "facts": {
+        "ageRestriction": "Student conference for grades 7–12.",
+        "price": "Student registration $20; includes meals, night market and snacks.",
+        "organizer": {
+          "name": "Ignition Student Conference",
+          "url": "https://www.ignitionstudents.org/"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.reachrecords.com/artists/1k-phew/",
+          "fields": [
+            "ageRestriction",
+            "price",
+            "officialUrl",
+            "organizer"
+          ],
+          "quoteOrSummary": "Official label calendar confirms exactdate andcity; venueTBD.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.bandsintown.com/e/1040597655-1k-phew-at-tbd?came_from=257",
+          "fields": [
+            "ageRestriction",
+            "price",
+            "officialUrl",
+            "organizer"
+          ],
+          "quoteOrSummary": "Indexedartistlisting explicitly IgnitionYouth and09:45EST. Direct event access blocked403.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.ignitionstudents.org/new-york",
+          "fields": [
+            "ageRestriction",
+            "price",
+            "officialUrl",
+            "organizer"
+          ],
+          "quoteOrSummary": "Official city registration page matches exactappearance date. Student conference grades7–12;$20studentregistration includesmeals,nightmarket,snacks. Saturday9AM–9PM; no venue/street.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.ignitionstudents.org/",
+          "fields": [
+            "ageRestriction",
+            "price",
+            "officialUrl",
+            "organizer"
+          ],
+          "quoteOrSummary": "Official conference homepage lists1KPhew andsaysguests varybycity; artistcalendar ties his specificdate. Sponsored/poweredbyCSBC,AYM,GlobalLeadershipSummitNextGen,Dare2Share,WordofLife.",
+          "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "ageRestriction": null,
+            "price": "",
+            "officialUrl": "https://www.bandsintown.com/e/1040597655?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+            "organizer": null
+          },
+          "facts": {
+            "ageRestriction": "Student conference for grades 7–12.",
+            "price": "Student registration $20; includes meals, night market and snacks.",
+            "officialUrl": "https://www.ignitionstudents.org/new-york",
+            "organizer": {
+              "name": "Ignition Student Conference",
+              "url": "https://www.ignitionstudents.org/"
+            }
+          },
+          "reviewedAt": "2026-11-05",
+          "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
         }
       ]
     }
