@@ -1217,6 +1217,118 @@
     "startDateTime": ""
   },
   {
+    "id": "manual:heliopolis-soundoff-summit-showcase-calgary-2026-11-13",
+    "title": "Heliopolis Soundoff Summit Showcase",
+    "startDate": "2026-11-13",
+    "endDate": "2026-11-14",
+    "startTime": "",
+    "endTime": "01:00",
+    "startDateTime": "",
+    "endDateTime": "2026-11-14T01:00:00-06:00",
+    "timezone": "America/Edmonton",
+    "venue": "Heliopolis",
+    "address": "817 1 Street Southwest",
+    "city": "Calgary",
+    "state": "AB",
+    "postalCode": "T2P 7N2",
+    "country": "CA",
+    "artists": [
+      "Zaire Ink"
+    ],
+    "advertisedBilling": [
+      "Tea Fannie",
+      "Marz Tha Advocate",
+      "Daniel Caceres",
+      "Zaire Ink",
+      "Jaba Hill",
+      "Tinywiings",
+      "Bijaan",
+      "Jackie Art",
+      "Junia-T"
+    ],
+    "officialBill": [
+      "Tea Fannie",
+      "Marz Tha Advocate",
+      "Daniel Caceres",
+      "Zaire Ink",
+      "Jaba Hill",
+      "Tinywiings",
+      "Bijaan",
+      "Jackie Art",
+      "Junia-T"
+    ],
+    "hosts": [
+      "Tea Fannie"
+    ],
+    "eventType": "concert",
+    "status": "scheduled",
+    "musicConfirmed": true,
+    "lineupExplicit": true,
+    "ticketUrl": "https://www.eventbrite.ca/e/heliopolis-soundoff-summit-showcase-tickets-2003992006036?aff=ZaireInk",
+    "officialUrl": "https://www.eventbrite.ca/e/heliopolis-soundoff-summit-showcase-tickets-2003992006036?aff=ZaireInk",
+    "image": "assets/events/heliopolis-soundoff-summit-showcase-calgary-2026-11-13.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "detailImageLayout": "portrait",
+    "imageSource": "Zaire Ink and Heliopolis official main Soundoff Summit flyer",
+    "imageSourceUrl": "https://www.instagram.com/p/DfRDrx7qWZE/",
+    "sourceName": "Official artist, organizer and ticket announcements",
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-11-03T19:41:44Z",
+    "lastVerified": "2026-11-03T19:41:44Z",
+    "auditVerified": "2026-11-03",
+    "price": "Pay what you can at the door; see Eventbrite for online tickets",
+    "publicDescription": "A mixed hip-hop showcase featuring Christian rapper Zaire Ink alongside the announced bill. Published event, performance and doors times differ; check with Music Calgary for the final schedule. The published event window ends at 1 AM Saturday, November 14.",
+    "publicNotice": "Show schedule and age restriction are not confirmed because official sources disagree. Confirm with Music Calgary before attending.",
+    "notes": "Owner explicitly requested this Canadian concert. The November 3 artist/Heliopolis coauthored announcement confirms Zaire Ink performs live November 13 and uses gospelrap/chh tags; his official website confirms the Christian hip-hop connection. This is a mixed hip-hop showcase, not a claim that every billed artist performs Christian music. Eventbrite's expanded lineup contains all nine retained names; Tea Fannie also hosts. No headliner or other curated artist association is inferred. Eventbrite advertises November 13 at 10 PM through November 14 at 1 AM; the official main flyer says 10:30 PM Late Show and the event FAQ starts performances at 10:30 PM, with Zaire Ink at 10:55 PM. Do not convert the overnight end to midnight November 13. Doors conflict: Eventbrite says 9 PM, while Music Calgary's schedule says 10:30 PM doors. Age conflict: Eventbrite allows under-18 guests with a parent/legal guardian, while the conference FAQ says Heliopolis is 18+. Structured doorsTime and ageRestriction intentionally remain unset. Eventbrite currently shows CA$11.98 online and its FAQ says pay what you can at the door; no fee breakdown, checkout deadline or full-conference access is inferred. The generic organizer $15/show text is not substituted for event-specific admission. The organizer schedule's Ranchmans venue line is a template conflict; the current ticket page and coauthored flyer identify Heliopolis at 817 1 Street Southwest. Preserve the artist affiliate ticket URL and original flyer bytes.",
+    "sources": [
+      {
+        "name": "Heliopolis Soundoff Summit Showcase — official Eventbrite ticket page, expanded full lineup and FAQ",
+        "url": "https://www.eventbrite.ca/e/heliopolis-soundoff-summit-showcase-tickets-2003992006036?aff=ZaireInk",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Zaire Ink and Heliopolis official live-performance announcement and main flyer",
+        "url": "https://www.instagram.com/p/DfRDrx7qWZE/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Zaire Ink official artist biography",
+        "url": "https://www.zaireink.com/",
+        "type": "manual_verified",
+        "authority": "artist",
+        "priority": 110
+      },
+      {
+        "name": "Music Calgary official Soundoff Summit schedule — conflicting doors information",
+        "url": "https://www.musiccalgary.ca/schedule",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 105
+      },
+      {
+        "name": "Music Calgary official conference FAQ — conflicting age policy",
+        "url": "https://www.musiccalgary.ca/conference",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 105
+      }
+    ],
+    "organizer": {
+      "name": "Music Calgary",
+      "url": "https://www.musiccalgary.ca/"
+    },
+    "doorsTime": "",
+    "ageRestriction": "Age restriction not confirmed. Organizer says 18+; ticket listing differs. Confirm with the organizer before attending.",
+    "scheduleNote": "Doors not confirmed: the organizer lists 10:30 PM, while Eventbrite lists 8 PM. Confirm the late-show schedule with the organizer before attending."
+  },
+  {
     "id": "bandsintown:109085657",
     "title": "RWG TOUR 2026",
     "startDate": "2026-11-13",
@@ -1463,118 +1575,6 @@
     "organizer": {
       "name": "Horizon College & Seminary"
     }
-  },
-  {
-    "id": "manual:heliopolis-soundoff-summit-showcase-calgary-2026-11-13",
-    "title": "Heliopolis Soundoff Summit Showcase",
-    "startDate": "2026-11-13",
-    "endDate": "2026-11-14",
-    "startTime": "",
-    "endTime": "01:00",
-    "startDateTime": "",
-    "endDateTime": "2026-11-14T01:00:00-06:00",
-    "timezone": "America/Edmonton",
-    "venue": "Heliopolis",
-    "address": "817 1 Street Southwest",
-    "city": "Calgary",
-    "state": "AB",
-    "postalCode": "T2P 7N2",
-    "country": "CA",
-    "artists": [
-      "Zaire Ink"
-    ],
-    "advertisedBilling": [
-      "Tea Fannie",
-      "Marz Tha Advocate",
-      "Daniel Caceres",
-      "Zaire Ink",
-      "Jaba Hill",
-      "Tinywiings",
-      "Bijaan",
-      "Jackie Art",
-      "Junia-T"
-    ],
-    "officialBill": [
-      "Tea Fannie",
-      "Marz Tha Advocate",
-      "Daniel Caceres",
-      "Zaire Ink",
-      "Jaba Hill",
-      "Tinywiings",
-      "Bijaan",
-      "Jackie Art",
-      "Junia-T"
-    ],
-    "hosts": [
-      "Tea Fannie"
-    ],
-    "eventType": "concert",
-    "status": "scheduled",
-    "musicConfirmed": true,
-    "lineupExplicit": true,
-    "ticketUrl": "https://www.eventbrite.ca/e/heliopolis-soundoff-summit-showcase-tickets-2003992006036?aff=ZaireInk",
-    "officialUrl": "https://www.eventbrite.ca/e/heliopolis-soundoff-summit-showcase-tickets-2003992006036?aff=ZaireInk",
-    "image": "assets/events/heliopolis-soundoff-summit-showcase-calgary-2026-11-13.jpg",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "detailImageLayout": "portrait",
-    "imageSource": "Zaire Ink and Heliopolis official main Soundoff Summit flyer",
-    "imageSourceUrl": "https://www.instagram.com/p/DfRDrx7qWZE/",
-    "sourceName": "Official artist, organizer and ticket announcements",
-    "authority": "official_event",
-    "confidence": "high",
-    "firstSeen": "2026-11-03T19:41:44Z",
-    "lastVerified": "2026-11-03T19:41:44Z",
-    "auditVerified": "2026-11-03",
-    "price": "Pay what you can at the door; see Eventbrite for online tickets",
-    "publicDescription": "A mixed hip-hop showcase featuring Christian rapper Zaire Ink alongside the announced bill. Published event, performance and doors times differ; check with Music Calgary for the final schedule. The published event window ends at 1 AM Saturday, November 14.",
-    "publicNotice": "Show schedule and age restriction are not confirmed because official sources disagree. Confirm with Music Calgary before attending.",
-    "notes": "Owner explicitly requested this Canadian concert. The November 3 artist/Heliopolis coauthored announcement confirms Zaire Ink performs live November 13 and uses gospelrap/chh tags; his official website confirms the Christian hip-hop connection. This is a mixed hip-hop showcase, not a claim that every billed artist performs Christian music. Eventbrite's expanded lineup contains all nine retained names; Tea Fannie also hosts. No headliner or other curated artist association is inferred. Eventbrite advertises November 13 at 10 PM through November 14 at 1 AM; the official main flyer says 10:30 PM Late Show and the event FAQ starts performances at 10:30 PM, with Zaire Ink at 10:55 PM. Do not convert the overnight end to midnight November 13. Doors conflict: Eventbrite says 9 PM, while Music Calgary's schedule says 10:30 PM doors. Age conflict: Eventbrite allows under-18 guests with a parent/legal guardian, while the conference FAQ says Heliopolis is 18+. Structured doorsTime and ageRestriction intentionally remain unset. Eventbrite currently shows CA$11.98 online and its FAQ says pay what you can at the door; no fee breakdown, checkout deadline or full-conference access is inferred. The generic organizer $15/show text is not substituted for event-specific admission. The organizer schedule's Ranchmans venue line is a template conflict; the current ticket page and coauthored flyer identify Heliopolis at 817 1 Street Southwest. Preserve the artist affiliate ticket URL and original flyer bytes.",
-    "sources": [
-      {
-        "name": "Heliopolis Soundoff Summit Showcase — official Eventbrite ticket page, expanded full lineup and FAQ",
-        "url": "https://www.eventbrite.ca/e/heliopolis-soundoff-summit-showcase-tickets-2003992006036?aff=ZaireInk",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Zaire Ink and Heliopolis official live-performance announcement and main flyer",
-        "url": "https://www.instagram.com/p/DfRDrx7qWZE/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Zaire Ink official artist biography",
-        "url": "https://www.zaireink.com/",
-        "type": "manual_verified",
-        "authority": "artist",
-        "priority": 110
-      },
-      {
-        "name": "Music Calgary official Soundoff Summit schedule — conflicting doors information",
-        "url": "https://www.musiccalgary.ca/schedule",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 105
-      },
-      {
-        "name": "Music Calgary official conference FAQ — conflicting age policy",
-        "url": "https://www.musiccalgary.ca/conference",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 105
-      }
-    ],
-    "organizer": {
-      "name": "Music Calgary",
-      "url": "https://www.musiccalgary.ca/"
-    },
-    "doorsTime": "",
-    "ageRestriction": "Age restriction not confirmed. Organizer says 18+; ticket listing differs. Confirm with the organizer before attending.",
-    "scheduleNote": "Doors not confirmed: the organizer lists 10:30 PM, while Eventbrite lists 8 PM. Confirm the late-show schedule with the organizer before attending."
   },
   {
     "id": "bandsintown:109072940",
@@ -2959,12 +2959,12 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-10-30",
+    "auditVerified": "2026-09-23",
     "id": "miles-cj-zion-ultra-lounge-chandler-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
-    "notes": "Official Eventbrite listing and flyer reviewed October 30, 2026: Miles Minnick, CJ Emulous, Nameless Servant, A4L and Th3rddae Da Mouthpiece; December 5 at Vybe Event Center, 2301 South Stearman Drive, Chandler AZ 85286. Doors 6:30 PM; show 7–11 PM; all ages and free parking. Zion Ultra Lounge Inc is the promoter. Existing listing identity and canonical URL retained. November 5 audit corrects the heading to the actual Vybe Event Center venue; Zion Ultra Lounge Inc is the promoter. The three additional supporting acts appear in the full billing without creating unverified artist profiles.",
+    "notes": "CJ Emulous's official calendar confirms Miles Minnick and CJ Emulous at Zion Ultra Lounge on December 5, 2026 at 7:00 PM.",
     "endDate": "2026-12-05",
     "doorsTime": "18:30",
     "endTime": "23:00",
