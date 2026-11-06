@@ -115,6 +115,65 @@ class ArtistScheduleYearTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "no dated event"):
             self.patch(document)
 
+    def unconfirmed_booking(self):
+        from catalog_removals import public_event
+        from build_seo_site import event_path
+        event = public_event({
+            'id': 'official:023c040d4ea33e120949', 'startDate': '2026-11-21',
+            'title': '1K Phew — Live at Texas Motorplex', 'artists': ['1K Phew'],
+            'venue': 'Texas Motorplex', 'city': 'Swiss Golf And Tennis Club Mobile Home Park',
+            'state': 'FL', 'country': 'US', 'status': 'scheduled',
+        })
+        event['canonicalPath'] = '/event/1k-phew-live-at-texas-motorplex-2026-11-21-swiss-golf-and-tennis-club-mobile-home-park-a168a7/'
+        generated = event_path(event)
+        self.assertEqual(generated, '/event/1k-phew-live-performance-2026-11-21-item-a168a7/')
+        for path in (generated, event['canonicalPath']):
+            page = self.root / path.strip('/') / 'index.html'
+            page.parent.mkdir(parents=True, exist_ok=True)
+            page.write_text('<html><h1>1K Phew — Live performance</h1><p>November 21, 2026. Location not confirmed.</p></html>')
+        for name in ('events.json', 'supplemental-events.json'):
+            (self.root / name).write_text(json.dumps([event]))
+        return event, generated
+
+    def test_approved_booking_uses_known_date_before_and_after_canonical_reconciliation(self):
+        event, generated = self.unconfirmed_booking()
+        for path in (generated, event['canonicalPath']):
+            with self.subTest(path=path):
+                source = self.root / path.strip('/') / 'index.html'
+                before = source.read_bytes()
+                anchor = '<a href="' + path + '">1K Phew</a>'
+                self.assertEqual(years.event_dates(self.root, anchor), (dt.date(2026, 11, 21), dt.date(2026, 11, 21)))
+                self.assertEqual(source.read_bytes(), before)
+                self.assertNotIn('application/ld+json', source.read_text())
+        # Exercise the exact failing pinned-redesign row and Next Show shapes.
+        profile = self.profile(['2026-11-21'], name='1K Phew').replace('/event/0/', generated)
+        result = self.patch(profile, dt.date(2026, 11, 6))
+        self.assertIn('1K Phew Concerts &amp; Tour Dates 2026', result)
+        self.assertIn('Next show · NOV 21', result)
+        self.assertEqual(self.patch(result, dt.date(2026, 11, 6)), result)
+        with self.assertRaisesRegex(ValueError, 'Expired show'):
+            self.patch(profile, dt.date(2026, 11, 22))
+
+    def test_source_fallback_does_not_waive_unrelated_missing_schema(self):
+        event, generated = self.unconfirmed_booking()
+        for changes in ({'locationUnconfirmed': False}, {'locationUnconfirmed': 'true'},
+                        {'id': 'unrelated-booking'}, {'startDate': '2026-11-22'}):
+            with self.subTest(changes=changes):
+                for name in ('events.json', 'supplemental-events.json'):
+                    (self.root / name).write_text(json.dumps([{**event, **changes}]))
+                with self.assertRaisesRegex(ValueError, 'no dated event'):
+                    years.event_dates(self.root, '<a href="' + generated + '">')
+
+    def test_unconfirmed_source_date_ranges_must_agree_and_be_valid(self):
+        event, generated = self.unconfirmed_booking()
+        (self.root / 'supplemental-events.json').write_text(json.dumps([{**event, 'endDate': '2026-11-22'}]))
+        with self.assertRaisesRegex(ValueError, 'Conflicting source dates'):
+            years.event_dates(self.root, '<a href="' + generated + '">')
+        for end in ('2026-11-20', 'not-a-date'):
+            (self.root / 'supplemental-events.json').write_text(json.dumps([{**event, 'endDate': end}]))
+            with self.assertRaises(ValueError):
+                years.event_dates(self.root, '<a href="' + generated + '">')
+
     def test_other_published_event_types_and_graph_schema(self):
         for event_type in ("Event", "Festival", ["Event", "MusicEvent"]):
             document = self.profile(["2027-04-24"])

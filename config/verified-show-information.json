@@ -2397,6 +2397,49 @@
           },
           "reviewedAt": "2026-11-06",
           "reason": "Owner explicitly reaffirmed the official tour and city flyer schedule: 5:30 PM doors and 6 PM start. This supersedes the prior conservative schedule-conflict hold; retain other event facts and original URL."
+        },
+        {
+          "expected": {
+            "ageRestriction": "Under 16 must attend with an adult.",
+            "price": "Free",
+            "publicNotice": "",
+            "scheduleNote": "",
+            "startTime": "18:00",
+            "startDateTime": "2026-11-13T18:00:00-05:00",
+            "doorsTime": "17:30",
+            "scheduleDetails": [
+              {
+                "label": "Concert doors",
+                "text": "5:30 PM Eastern"
+              },
+              {
+                "label": "Start",
+                "text": "6:00 PM Eastern"
+              },
+              {
+                "label": "Admission",
+                "text": "Free"
+              },
+              {
+                "label": "Venue address",
+                "text": "212 S Beach Street, Suite 110, Daytona Beach, FL 32114"
+              }
+            ],
+            "publicDescription": "The Ignite and Unite Tour comes to The Porch in Daytona Beach, Florida, on November 13, 2026. Doors open at 5:30 PM; the event starts at 6 PM Eastern. Free admission. The confirmed bill is Pastor John Humphries, OTG Zico, Altar Ego, J10, Legit, 3HRE, and B. Cody Shields."
+          },
+          "facts": {
+            "ageRestriction": "Under 16 must attend with an adult.",
+            "price": "Free; preregistration required through the official event page.",
+            "publicNotice": "",
+            "scheduleNote": "",
+            "startTime": "18:00",
+            "startDateTime": "2026-11-13T18:00:00-05:00",
+            "doorsTime": "17:30",
+            "scheduleDetails": [],
+            "publicDescription": "The Ignite and Unite Tour comes to The Porch in Daytona Beach on November 13, 2026. Doors open at 5:30 PM and the show starts at 6 PM Eastern. Free admission with preregistration. The announced bill is Pastor John Humphries, OTG Zico, Altar Ego, J10, Legit, 3HRE and B. Cody Shields."
+          },
+          "reviewedAt": "2026-11-06",
+          "reason": "Preserve the owner-approved schedule and already verified preregistration wording after the known Fall tour seed restores its older description, price text and duplicate schedule rows. This exact observed refresh variant is guarded; newer changed clocks or facts are not overwritten."
         }
       ]
     },

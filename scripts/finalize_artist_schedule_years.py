@@ -49,6 +49,36 @@ def schema_nodes(value):
         yield from schema_nodes(value.get("@graph", []))
 
 
+def unconfirmed_booking_dates(root: pathlib.Path, path: str) -> tuple[dt.date, dt.date] | None:
+    """Read an approved schema-less booking's date from this artifact's feeds.
+
+    The pinned redesign links the generated slug before URL reconciliation;
+    later checks use the retained canonical. Both must identify the same
+    reviewed booking. Missing schema on ordinary events remains a hard error.
+    """
+    from build_seo_site import event_path
+    from catalog_removals import location_review_event
+
+    dates = set()
+    for name in ("events.json", "supplemental-events.json"):
+        source = root / name
+        if not source.is_file():
+            continue
+        for event in json.loads(source.read_text(encoding="utf-8")):
+            if not isinstance(event, dict) or event.get("locationUnconfirmed") is not True or not location_review_event(event):
+                continue
+            if path not in {event_path(event), event.get("canonicalPath")}:
+                continue
+            start = dt.date.fromisoformat(event["startDate"])
+            end = dt.date.fromisoformat(event.get("endDate") or event["startDate"])
+            if end < start:
+                raise ValueError(f"Event ends before its start: {path}")
+            dates.add((start, end))
+    if len(dates) > 1:
+        raise ValueError(f"Conflicting source dates for unconfirmed booking: {path}")
+    return next(iter(dates)) if dates else None
+
+
 def event_dates(root: pathlib.Path, anchor: str) -> tuple[dt.date, dt.date]:
     href = re.search(r'\bhref="([^"]+)"', anchor).group(1)
     url = urlsplit(html.unescape(href))
@@ -75,6 +105,9 @@ def event_dates(root: pathlib.Path, anchor: str) -> tuple[dt.date, dt.date]:
             if end < start:
                 raise ValueError(f"Event ends before its start: {href}")
             return start, end
+    source_dates = unconfirmed_booking_dates(root, url.path)
+    if source_dates:
+        return source_dates
     raise ValueError(f"Upcoming event has no dated event schema: {href}")
 
 
