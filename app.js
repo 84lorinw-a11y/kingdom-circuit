@@ -6233,8 +6233,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/3C2zF2KoMybEmTQQwNxk1S",
     "youtubeProfile": "",
     "officialImageSource": "https://www.instagram.com/_.itzelliott._/",
-    "imageUrl": "assets/artists/elllli-official-instagram-nov3.jpg",
-    "imagePosition": "50% 20%",
+    "imageUrl": "assets/artists/elllli-owner-selected-woodland-nov6.png",
+    "imagePosition": "39% 45%",
     "country": "CA",
     "sourceRegistryVerified": true
   },
@@ -12092,8 +12092,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/3C2zF2KoMybEmTQQwNxk1S",
     "youtubeProfile": "",
     "officialImageSource": "https://www.instagram.com/_.itzelliott._/",
-    "imageUrl": "assets/artists/elllli-official-instagram-nov3.jpg",
-    "imagePosition": "50% 20%",
+    "imageUrl": "assets/artists/elllli-owner-selected-woodland-nov6.png",
+    "imagePosition": "39% 45%",
     "country": "CA",
     "sourceRegistryVerified": true
   },
@@ -13801,8 +13801,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 0%"
   },
   "elllli": {
-    "imageUrl": "assets/artists/elllli-official-instagram-nov3.jpg",
-    "imagePosition": "50% 20%"
+    "imageUrl": "assets/artists/elllli-owner-selected-woodland-nov6.png",
+    "imagePosition": "39% 45%"
   },
   "gzeal": {
     "imageUrl": "assets/artists/gzeal-official-linktree-nov4.png",
