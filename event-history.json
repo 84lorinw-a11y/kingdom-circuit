@@ -34506,10 +34506,10 @@
         "title": "True Freedom Experience",
         "startDate": "2026-11-14",
         "endDate": "2026-11-14",
-        "startTime": "",
-        "endTime": "",
+        "startTime": "16:00",
+        "endTime": "21:00",
         "timezone": "America/Regina",
-        "venue": "",
+        "venue": "Ministikwan Lake Cree Nation Band Hall",
         "address": "",
         "city": "Ministikwan Lake",
         "state": "SK",
@@ -34520,14 +34520,20 @@
         ],
         "headliner": "JJ Stone",
         "advertisedBilling": [
-          "JJ Stone",
           "Alibii",
-          "Josiah Griffiths"
+          "JJ Stone",
+          "Josiah Griffiths",
+          "Heaven Lee",
+          "Lydia Brown",
+          "Kayden Alexan"
         ],
         "officialBill": [
-          "JJ Stone",
           "Alibii",
-          "Josiah Griffiths"
+          "JJ Stone",
+          "Josiah Griffiths",
+          "Heaven Lee",
+          "Lydia Brown",
+          "Kayden Alexan"
         ],
         "lineupExplicit": true,
         "musicConfirmed": true,
@@ -34539,23 +34545,23 @@
         "authority": "artist_calendar",
         "confidence": "high",
         "firstSeen": "2026-11-06",
-        "lastVerified": "2026-11-06T18:04:59.203612+00:00",
+        "lastVerified": "2026-11-06T18:38:16.475815+00:00",
         "auditVerified": "2026-11-06",
-        "image": "assets/artists/jj-stone-submitted-2026-10-15.png",
-        "imageType": "artist",
-        "imagePosition": "50% 50%",
+        "image": "assets/events/true-freedom-experience-ministikwan-2026-11-14.png",
+        "imageType": "event_artwork",
+        "imagePosition": "center",
         "imageOverride": true,
-        "imageSource": "Existing owner-approved JJ Stone portrait; submitted event flyer inaccessible",
-        "imageSourceUrl": "https://drive.google.com/file/d/1RdC7Hl5SzumKH2Awj-vvKmSMMYZcTN7_/view",
+        "imageSource": "JJ Stone artist-submitted True Freedom Experience flyer, supplied by owner",
+        "imageSourceUrl": "https://drive.google.com/file/d/1nVBCbQK-oCkWWGavSAMWU2zJZrGfRZxF/view?usp=sharing",
         "price": "Free",
         "organizer": {
           "name": "True Freedom Entertainment",
           "url": "https://truefreedoment.org/"
         },
         "organizerWebsite": "https://truefreedoment.org/",
-        "publicDescription": "True Freedom Experience brings JJ Stone, Alibii and Josiah Griffiths to Ministikwan Lake, Saskatchewan, Canada, on Saturday, November 14, 2026. Free admission. The start time and specific venue address are not yet confirmed.",
-        "publicNotice": "Free admission. Start time and specific venue details are to be confirmed.",
-        "notes": "Owner relayed invited-artist JJ Stone show submission November 6, 2026 and authorized research/publication: True Freedom Experience, November14, free, JJ Stone/Alibii/Josiah Griffiths, venue Ministikwin Lake and city Ministikwin, SK. Standardized community spelling to Ministikwan Lake using Meadow Lake Tribal Council and official federal profile; no specific building, street/postal address, age restriction, registration or performance clock was supplied or independently confirmed. Do not use lake coordinates, band mailing address or unrelated older fundraiser address as the concert venue. This is distinct from the November13 NRG Saskatoon show and held December5 Saskatoon True Freedom lead; do not merge or import their facts. Submitted Drive flyer could not be obtained through certificate-validated access; retain approved JJ Stone portrait as an explicitly typed artist fallback, not event artwork. No artist/social/portrait/Sheet changes.",
+        "publicDescription": "True Freedom Experience takes place on Saturday, November 14, 2026, from 4–9 PM at Ministikwan Lake Cree Nation Band Hall in Ministikwan Lake, Saskatchewan, Canada. The flyer introduces Alibii, JJ Stone, Josiah Griffiths and Heaven Lee, featuring Lydia Brown and Kayden Alexan. The event includes Christian rap, speaking, worship, games and original music. Free admission; youth event, all welcome.",
+        "publicNotice": "Free admission. Youth event — all welcome.",
+        "notes": "Owner relayed invited-artist JJ Stone submission November 6, 2026 and authorized publication: True Freedom Experience, November14,2026, free admission. Owner subsequently supplied the exact original Drive flyer (clipboard434b1787-bb8c-4b2e-a3a9-f1662e6fe7a2.png, SHA256f197070235785582d79ecc1efa839877cbb59b5cf5ec004ffa501919745c9dcd). Flyer confirms November14,4–9PM event hours, Ministikwin Lake Cree Nation Band Hall, four introducing artists Alibii/JJ Stone/Josiah Griffiths/Heaven Lee and featured Lydia Brown/Kayden Alexan, Christian rap/speaking/worship/games/original music, youth event(all welcome), and @truefreedom.ent. Year and free admission come from direct artist submission; the poster does not print a year or price. Standardized Ministikwan spelling using official community references while preserving original poster pixels. Saskatchewan government confirms UTC−06 province-wide as of October30,2026; use America/Regina. These are overall event hours, not individual set/doors times. Specific street/postal address and numeric age/accompaniment rules remain unconfirmed; do not infer a band mailing address. Distinct from Nov13 NRG Saskatoon and held Dec5 Saskatoon lead. FirstSeen and original event identity preserved. All six printed names remain billed, only JJ Stone links to existing curated artist; no roster/Sheet/portrait/social changes.",
         "sources": [
           {
             "name": "JJ Stone invited-artist submission, relayed by owner November 6, 2026",
@@ -34565,7 +34571,7 @@
             "priority": 112
           },
           {
-            "name": "Artist-submitted True Freedom Experience flyer (access unavailable)",
+            "name": "Artist-submitted True Freedom Experience flyer, original supplied by owner",
             "url": "https://drive.google.com/file/d/1nVBCbQK-oCkWWGavSAMWU2zJZrGfRZxF/view?usp=sharing",
             "type": "artist_submission",
             "authority": "artist_calendar",
@@ -34577,8 +34583,20 @@
             "type": "official_community",
             "authority": "official_event",
             "priority": 100
+          },
+          {
+            "name": "Saskatchewan government time system effective October30,2026",
+            "url": "https://www.saskatchewan.ca/government/municipal-administration/tools-guides-and-resources/saskatchewan-time-system",
+            "type": "official_government",
+            "authority": "official_event",
+            "priority": 100
           }
-        ]
+        ],
+        "startDateTime": "2026-11-14T16:00:00-06:00",
+        "endDateTime": "2026-11-14T21:00:00-06:00",
+        "detailImageLayout": "portrait",
+        "ageRestriction": "Youth event (all welcome)",
+        "organizerInstagram": "https://www.instagram.com/truefreedom.ent/"
       }
     },
     {
