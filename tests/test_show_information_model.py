@@ -51,6 +51,22 @@ class ShowInformationModelTests(unittest.TestCase):
         self.assertEqual(summer["schemaStartDate"], "2027-07-29T21:00:00-05:00")
         self.assertEqual((winter["timezoneLabel"], summer["timezoneLabel"]), ("CST", "CDT"))
 
+    def test_bc_permanent_pacific_time_does_not_display_mountain_time(self):
+        source = self.event(startDate='2026-11-07', startTime='19:30',
+            startDateTime='2026-11-07T19:30:00-07:00', endTime='22:00',
+            timezone='America/Vancouver', city='Surrey', state='BC', country='CA')
+        result = normalize(source)
+        self.assertEqual(result['schemaStartDate'], '2026-11-07T19:30:00-07:00')
+        self.assertEqual(result['startTimeLabel'], '7:30 PM PT')
+        self.assertEqual(result['endTimeLabel'], '10:00 PM PT')
+
+    def test_alberta_permanent_time_uses_correct_offset_and_label(self):
+        source = self.event(startDate='2026-11-13', startTime='22:00',
+                           timezone='America/Edmonton', city='Calgary', state='AB', country='CA')
+        result = normalize(source)
+        self.assertEqual(result['schemaStartDate'], '2026-11-13T22:00:00-06:00')
+        self.assertEqual(result['startTimeLabel'], '10:00 PM ABT')
+
     def test_verified_explicit_clock_and_offset_win_over_conflicting_host_timezone(self):
         source = self.event(startDate='2026-11-13', startTime='22:00',
             startDateTime='2026-11-13T22:00:00-07:00', endDate='2026-11-14', endTime='01:00',
@@ -112,6 +128,17 @@ class ShowInformationModelTests(unittest.TestCase):
             self.assertIsNone(result["offer"])
         self.assertFalse(normalize(self.event(title="Youth Night", ageRestriction="Ages 13–18"))["private"])
         self.assertFalse(normalize(self.event(title="Private Thoughts album tour"))["private"])
+
+    def test_venue_city_is_presentation_locality_without_mutating_market_identity(self):
+        source = self.event(city='St. Louis', venueCity='St. Charles',
+                            fullAddress='2002 Arena Pkwy, St. Charles, MO 63303')
+        before = dict(source)
+        result = normalize(source)
+        self.assertEqual(result['venueLocality'], 'St. Charles')
+        self.assertEqual(result['city'], 'St. Louis')
+        self.assertEqual(source, before)
+        for missing in ('', 'TBD', 'Not confirmed'):
+            self.assertEqual(normalize(self.event(city='St. Louis', venueCity=missing))['venueLocality'], 'St. Louis')
 
     def test_generic_information_and_profiles_are_not_ticket_offers(self):
         for url in ("https://www.bandsintown.com/e/123-an-event", "https://www.eventbrite.com/",

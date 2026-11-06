@@ -13,6 +13,8 @@ are sanitized. Consumers should use the derived fields below for publication:
 * ``schemaStartDate`` / ``schemaEndDate``: ISO dates or known local datetimes,
   with confirmed offsets when available; never invent a timezone.
   Raw time fields are retained for compatibility; use these derived schema values.
+* ``venueLocality``: confirmed venue municipality, falling back to market city.
+  The original ``city`` remains unchanged for catalog identity and URLs.
 * Optional display strings: dateLabel, startTimeLabel, doorsTimeLabel,
   registrationTimeLabel, endTimeLabel, timezoneLabel, priceLabel, organizerName,
   organizerUrl, admissionLabel. Unknown optional values are absent.
@@ -28,7 +30,7 @@ put in Offer. Legacy price strings remain display-only. No network calls occur.
 from __future__ import annotations
 
 from copy import deepcopy
-from datetime import date, datetime, time, timezone
+from datetime import date, datetime, time, timezone, timedelta
 from decimal import Decimal, InvalidOperation
 import re
 from urllib.parse import urlsplit
@@ -36,18 +38,26 @@ from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 
 _PRIVATE = re.compile(r"\b(?:private\s+event|invite[\s-]*only|invitation[\s-]*only|not\s+open\s+to\s+the\s+public)\b", re.I)
+PRIVATE_ADDRESS_FIELDS = ('address', 'address2', 'suite', 'postalCode', 'fullAddress')
 _UNKNOWN_FACT = {'tbd', 'tba', 'unknown', 'not confirmed', 'not provided', 'to be announced',
                  'to be determined', 'venue not confirmed', 'venue not provided',
                  'address not confirmed', 'address not provided'}
 _DERIVED = (
     "dateLabel", "startTimeLabel", "doorsTimeLabel", "registrationTimeLabel",
     "endTimeLabel", "timezoneLabel", "priceLabel", "organizerName",
-    "organizerUrl", "admissionLabel", "schemaStartDate", "schemaEndDate", "venueLabel",
+    "organizerUrl", "admissionLabel", "schemaStartDate", "schemaEndDate", "venueLabel", "venueLocality",
 )
 
 
 def _text(value):
     return value.strip() if isinstance(value, str) else ""
+
+
+def is_private_event(event):
+    """Use the same explicit admission rules for HTML, schema and public feeds."""
+    return event.get("private") is True or any(_text(event.get(key)).casefold() == "private"
+        for key in ("status", "admission", "admissionRestriction")) or any(_PRIVATE.search(_text(event.get(key)))
+        for key in ("status", "admission", "admissionRestriction", "title", "venue", "ageRestriction"))
 
 
 def _url(value):
@@ -170,6 +180,15 @@ def _zone(value):
 
 def _localize(value, zone):
     """Do not choose an offset for an ambiguous or nonexistent local clock."""
+    # The province ended the November fallback in 2026. Host databases can
+    # lag the rule or use a Mountain abbreviation; the Vancouver region now
+    # remains UTC-7. Other B.C. IANA regions retain their own rules.
+    if getattr(zone, 'key', '') == 'America/Vancouver' and value.date() >= date(2026, 11, 1):
+        return value.replace(tzinfo=timezone(timedelta(hours=-7), 'PT'))
+    # Alberta adopted permanent UTC-6 (ABT) on November 1, 2026.
+    # https://www.alberta.ca/albertas-new-time-system-abt
+    if getattr(zone, 'key', '') == 'America/Edmonton' and value.date() >= date(2026, 11, 1):
+        return value.replace(tzinfo=timezone(timedelta(hours=-6), 'ABT'))
     candidates = []
     for fold in (0, 1):
         aware = value.replace(tzinfo=zone, fold=fold)
@@ -204,6 +223,19 @@ def _date_label(value):
 
 
 def _timezone_label(aware, zone):
+    if (getattr(zone, 'key', '') == 'America/Edmonton'
+            and aware.date() >= date(2026, 11, 1)
+            and aware.utcoffset() == timedelta(hours=-6)):
+        return 'ABT'
+    # B.C. names its permanent UTC-7 zone Pacific time from November 2026.
+    # Some system tzdata versions abbreviate Vancouver as MST after the change.
+    # Keep the verified offset, but use the province's published regional name.
+    # https://news.gov.bc.ca/releases/2026AG0013-000209
+    if (getattr(zone, 'key', '') == 'America/Vancouver'
+            and aware.date() >= date(2026, 11, 1)
+            and aware.utcoffset() is not None
+            and aware.utcoffset().total_seconds() == -7 * 3600):
+        return 'PT'
     if zone:
         local = _localize(aware.replace(tzinfo=None), zone)
         if local and local.utcoffset() == aware.utcoffset():
@@ -273,16 +305,16 @@ def normalize(event):
         venue = ""
     result["venue"] = venue
     result["venueLabel"] = venue or "Venue not confirmed"
+    venue_city = _text(event.get('venueCity'))
+    result['venueLocality'] = (venue_city if venue_city.casefold() not in _UNKNOWN_FACT else '') or _text(event.get('city'))
     for field in ('address', 'address2', 'suite', 'postalCode'):
         if _text(result.get(field)).casefold() in _UNKNOWN_FACT:
             result[field] = ''
     status = _text(event.get("status")).casefold().replace("-", "_").replace(" ", "_")
-    private = event.get("private") is True or any(_text(event.get(key)).casefold() == "private"
-        for key in ("status", "admission", "admissionRestriction")) or any(_PRIVATE.search(_text(event.get(key)))
-        for key in ("status", "admission", "admissionRestriction", "title", "venue", "ageRestriction"))
+    private = is_private_event(event)
     result["private"] = bool(private)
     if private:
-        for field in ('address', 'address2', 'suite', 'postalCode', 'fullAddress'):
+        for field in PRIVATE_ADDRESS_FIELDS:
             result[field] = ""
     description = _text(event.get("publicDescription")) or _text(event.get("description"))
     if description:

@@ -10,6 +10,36 @@ from build_seo_site import scheduled, event_path, event_card, event_schema
 
 
 class PrivateEventsTests(unittest.TestCase):
+    def test_public_feed_redaction_is_narrow_and_preserves_source_history(self):
+        hidden = {'id': 'private-1', 'title': 'Retreat', 'startDate': '2027-01-29',
+                  'status': 'private', 'city': 'Town', 'state': 'OH', 'country': 'US',
+                  'address': '123 Hidden Rd', 'address2': 'Second building', 'suite': 'Room 2',
+                  'postalCode': '12345', 'fullAddress': '123 Hidden Rd, Town OH 12345'}
+        public = dict(hidden, id='public-1', status='scheduled', title='Public concert')
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            site = root / 'public'
+            site.mkdir()
+            source = json.dumps([hidden, public])
+            for name in ('events.json', 'supplemental-events.json'):
+                (root / name).write_text(source)
+                (site / name).write_text(source)
+            (root / 'event-history.json').write_text(source)
+            self.assertEqual(private.redact_public_feeds(site, root), 2)
+            self.assertEqual(private.redact_public_feeds(site, root), 0)
+            private.verify_public_feeds(site, root)
+            for name in ('events.json', 'supplemental-events.json'):
+                published = json.loads((site / name).read_text())
+                self.assertEqual(published[1], public)
+                self.assertEqual(published[0], {k: v for k, v in hidden.items() if k not in private.PRIVATE_ADDRESS_FIELDS})
+                self.assertEqual((root / name).read_text(), source)
+            self.assertEqual((root / 'event-history.json').read_text(), source)
+            with self.assertRaisesRegex(ValueError, 'separate public artifact'):
+                private.redact_public_feeds(root, root)
+            (site / 'events.json').write_text(source)
+            with self.assertRaisesRegex(AssertionError, 'Private address fields exposed'):
+                private.verify_public_feeds(site, root)
+
     def test_provider_refresh_cannot_reopen_admission_or_remove_history(self):
         pinned = private.records()[0]
         stale = dict(pinned, status='scheduled', id='bandsintown:108856562')

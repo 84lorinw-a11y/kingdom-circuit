@@ -8,6 +8,7 @@ import sys
 
 import apply_sep26_source_corrections as repair
 import build_seo_site as builder
+from apply_verified_show_information import enrich
 from verify_sep26_approved_audit import verify as verify_approved_audit
 from verify_egr_bizzle_updates import uses_image
 from verify_show_artwork import verify as verify_show_artwork
@@ -19,6 +20,10 @@ def verify(site: Path) -> None:
     for identity, wanted in ((repair.OASIS_ID, repair.UPSERTS[repair.OASIS_ID]),
                              (repair.MIAMI_ID, repair.NEW_EVENTS[repair.MIAMI_ID]),
                              (repair.CLEVELAND_ID, repair.CLEVELAND)):
+        # Later verified source corrections take precedence over the older
+        # snapshot, including Cleveland's distinct GA doors clock.
+        registry = json.loads((Path(__file__).resolve().parents[1] / 'config/verified-show-information.json').read_text())
+        wanted = enrich(wanted, registry['events'])
         if not builder.current(wanted):
             continue
         matching = [row for row in rows if repair.identity(row) == identity]
@@ -33,7 +38,7 @@ def verify(site: Path) -> None:
         assert all(name in billing for name in wanted["advertisedBilling"]), (identity, "billing")
         schemas = [json.loads(raw) for raw in re.findall(r'<script type="application/ld\+json">(.*?)</script>', detail, re.S)]
         schema = next(item for item in schemas if item.get("@type") == "MusicEvent")
-        assert schema["startDate"] == wanted["startDateTime"], (identity, "schema start")
+        assert schema["startDate"] == (wanted.get("startDateTime") or wanted["startDate"]), (identity, "schema start")
         for legacy in wanted["legacyEventPaths"]:
             redirect = (site / legacy.strip("/") / "index.html").read_text()
             assert f'location.replace("{href}")' in redirect, legacy

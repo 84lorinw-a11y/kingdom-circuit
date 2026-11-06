@@ -48,6 +48,86 @@ class VerifiedShowInformationTests(unittest.TestCase):
         self.assertFalse(result.get('address'))
         self.assertNotIn('postalCode', result)
 
+    def test_reviewed_correction_replaces_only_the_exact_prior_values(self):
+        current = {**self.event, 'startTime': '18:00', 'startDateTime': '2027-01-29T18:00:00-06:00'}
+        pin = {**self.pin, 'facts': {}, 'corrections': [{
+            'expected': {'startTime': '18:00', 'startDateTime': '2027-01-29T18:00:00-06:00'},
+            'facts': {'startTime': '19:30', 'startDateTime': '2027-01-29T19:30:00-06:00'}}]}
+        changed = enrich(current, [pin])
+        self.assertEqual(changed['startTime'], '19:30')
+        self.assertEqual(enrich(changed, [pin]), changed)
+        newer = {**current, 'startTime': '20:00'}
+        self.assertEqual(enrich(newer, [pin]), newer)
+        partially_refreshed = {**changed, 'startTime': '18:00'}
+        self.assertEqual(enrich(partially_refreshed, [pin]), changed)
+
+    def test_correction_cannot_replace_unlisted_fields_or_expose_private_address(self):
+        unsafe = {**self.pin, 'facts': {}, 'corrections': [{
+            'expected': {'image': 'a.jpg'}, 'facts': {'image': 'b.jpg'}}]}
+        with self.assertRaises(ValueError):
+            enrich(self.event, [unsafe])
+        private = {**self.event, 'admission': 'private'}
+        pin = {**self.pin, 'facts': {}, 'corrections': [{
+            'expected': {'address': ''}, 'facts': {'address': '100 Hidden St'}}]}
+        self.assertFalse(enrich(private, [pin]).get('address'))
+
+    def test_correction_does_not_replace_a_newer_legacy_organizer(self):
+        current = {**self.event, 'organizerName': 'New Presenter'}
+        pin = {**self.pin, 'facts': {}, 'corrections': [{
+            'expected': {'organizer': None}, 'facts': {'organizer': {'name': 'Old Presenter'}}}]}
+        self.assertEqual(enrich(current, [pin]), current)
+
+    def test_verification_flags_follow_only_the_reviewed_destination(self):
+        from scripts.show_information_model import normalize
+        for url_field, flag in [('ticketUrl', 'ticketUrlVerified'),
+                                ('registrationUrl', 'registrationUrlVerified')]:
+            with self.subTest(field=url_field):
+                old, approved = 'https://old.test/details', 'https://approved.test/admission'
+                pin = {**self.pin, 'facts': {flag: True}, 'corrections': [{
+                    'expected': {url_field: old}, 'facts': {url_field: approved}}]}
+                current = {**self.event, url_field: old}
+                changed = enrich(current, [pin])
+                self.assertEqual(changed[url_field], approved)
+                self.assertIs(changed[flag], True)
+                self.assertEqual(enrich(changed, [pin]), changed)
+                newer = {**current, url_field: 'https://new.test/information'}
+                result = enrich(newer, [pin])
+                self.assertEqual(result, newer)
+                self.assertIsNone(normalize(result)['offer'])
+                rejected = {**current, url_field: approved, flag: False}
+                self.assertEqual(enrich(rejected, [pin]), rejected)
+
+    def test_negative_verification_does_not_suppress_a_new_destination(self):
+        pin = {**self.pin, 'facts': {'ticketUrlVerified': False}, 'corrections': [{
+            'expected': {'ticketUrl': 'https://old.test/wrong-event'},
+            'facts': {'ticketUrl': ''}}]}
+        current = {**self.event, 'ticketUrl': 'https://old.test/wrong-event'}
+        self.assertEqual(enrich(current, [pin])['ticketUrl'], '')
+        self.assertIs(enrich(current, [pin])['ticketUrlVerified'], False)
+        newer = {**current, 'ticketUrl': 'https://new.test/tickets'}
+        self.assertEqual(enrich(newer, [pin]), newer)
+
+    def test_unbound_verification_cannot_certify_a_url(self):
+        current = {**self.event, 'ticketUrl': 'https://new.test/information'}
+        pin = {**self.pin, 'facts': {'ticketUrlVerified': True}}
+        self.assertEqual(enrich(current, [pin]), current)
+        pin['facts'] = {}
+        pin['corrections'] = [{'expected': {'ticketUrlVerified': None},
+                               'facts': {'ticketUrlVerified': True}}]
+        with self.assertRaises(ValueError):
+            enrich(current, [pin])
+
+    def test_clock_correction_requires_guard_for_an_existing_iso_timestamp(self):
+        for prefix in ('start', 'end'):
+            with self.subTest(prefix=prefix):
+                clock, iso = prefix + 'Time', prefix + 'DateTime'
+                current = {**self.event, clock: '18:00', iso: '2027-01-29T20:00:00-06:00'}
+                pin = {**self.pin, 'facts': {}, 'corrections': [{
+                    'expected': {clock: '18:00'}, 'facts': {clock: '19:30'}}]}
+                self.assertEqual(enrich(current, [pin]), current)
+                without_iso = {k: v for k, v in current.items() if k != iso}
+                self.assertEqual(enrich(without_iso, [pin])[clock], '19:30')
+
     def test_disallowed_fact_fails_instead_of_overwriting_artwork_or_identity(self):
         bad = {**self.pin, 'facts': {'image': 'old.jpg'}}
         with self.assertRaises(ValueError):

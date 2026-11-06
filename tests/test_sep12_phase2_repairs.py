@@ -38,7 +38,13 @@ class September12Phase2Repairs(unittest.TestCase):
         # The owner's September 26 follow-up selects 7:30 PM general admission.
         self.assertFalse(any(item.get("id") == "official:4e2fc5c7c02ab1d34b9e" for item in self.events))
         event = next(item for item in self.events if item.get("id") == "ticketmaster:vv1AAZk3FGkdmpCG1")
-        self.assertEqual("19:30", event.get("startTime"))
+        # The Nov 5 official flyer review distinguishes the owner's selected
+        # 7:30 GA/doors time from an unconfirmed performance start.
+        from scripts.show_information_model import normalize
+        self.assertEqual("", event.get("startTime"))
+        self.assertEqual("19:30", event.get("doorsTime"))
+        self.assertEqual("doors", event.get("primaryTimeKind"))
+        self.assertIn("7:30 PM", normalize(event)["dateLabel"])
         self.assertEqual("America/New_York", event.get("timezone"))
         self.assertNotIn("endDate", event)
         self.assertIn("05006488EE58E30A", event.get("officialUrl", ""))

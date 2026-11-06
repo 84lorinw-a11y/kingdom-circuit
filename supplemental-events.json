@@ -550,7 +550,10 @@
         "label": "Venue address",
         "text": "1235 E Fowler Ave, Tampa, FL 33612"
       }
-    ]
+    ],
+    "organizer": {
+      "name": "Holy Motion and The Believers Social"
+    }
   },
   {
     "id": "flavor-fest-2026-friday-concerts",
@@ -589,7 +592,7 @@
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
-    "price": "",
+    "price": "Friday concert-only admission: US$35; other conference and concert packages are sold separately.",
     "sourceName": "Flavor Fest official 2026 schedule",
     "authority": "official_event",
     "confidence": "high",
@@ -688,7 +691,12 @@
     "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown. Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates. October 8: owner verified TVNK in the artist Sheet. His September 25 collaborative announcement with Flavor Fest explicitly confirms November 6 at Crossover Church. Connect the existing TVNK billing to his curated artist profile. October 12: newly owner-verified artist profiles linked to confirmed billing.",
     "imageSource": "Official Flavor Fest Friday concert poster",
     "imageSourceUrl": "https://www.flavorfest.org/schedule",
-    "postalCode": "33612"
+    "postalCode": "33612",
+    "doorsTime": "18:30",
+    "organizer": {
+      "name": "Flavor Fest / Crossover Church",
+      "url": "https://www.flavorfest.org/"
+    }
   },
   {
     "id": "bandsintown:109046072",
@@ -710,7 +718,7 @@
     "ticketUrl": "https://www.bandsintown.com/t/109046072?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
     "officialUrl": "https://www.bandsintown.com/e/109046072?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
     "image": "assets/artists/k-drama-verified-oct10.jpg",
-    "price": "",
+    "price": "Retreat registration: $170 students; $125 adult chaperones. Registration deadline October 19; contact organizer about availability.",
     "sourceName": "Bandsintown",
     "sources": [
       {
@@ -737,7 +745,18 @@
     "startDateTime": "2026-11-06T19:00:00-05:00",
     "publicNotice": "K-Drama performs at the NWO NYI Fall Retreat. See the organizer for retreat registration and attendance requirements.",
     "auditVerified": "2026-10-20",
-    "postalCode": "45885"
+    "postalCode": "45885",
+    "organizer": {
+      "name": "Northwestern Ohio District NYI",
+      "url": "https://www.nwonaz.org/nyi/"
+    },
+    "ageRestriction": "Students in sixth grade through high school; sixth-grade participation is at each church’s discretion. Adult chaperones register through their church.",
+    "scheduleDetails": [
+      {
+        "label": "Retreat check-in",
+        "text": "Friday, 6–7 PM. K-Drama’s individual set time is not separately confirmed."
+      }
+    ]
   },
   {
     "id": "supplemental:skema-boy-2026-11-06-nashville-tn",
@@ -745,7 +764,7 @@
     "startDate": "2026-11-06",
     "startTime": "20:00",
     "timezone": "",
-    "venue": "Cannery Hall",
+    "venue": "Cannery Hall — Row One Stage",
     "address": "1 Cannery Row",
     "city": "Nashville",
     "state": "TN",
@@ -757,7 +776,7 @@
     "headliner": "Zauntee",
     "eventType": "concert",
     "status": "onsale",
-    "ticketUrl": "https://www.bandsintown.com/e/108660004-skema-boy-at-cannery-hall",
+    "ticketUrl": "https://www.axs.com/events/1521471/zauntee-tickets",
     "officialUrl": "https://www.bandsintown.com/e/108660004-skema-boy-at-cannery-hall",
     "image": "assets/events/zauntee-god-remembers-tour-2026-portrait.jpg",
     "price": "",
@@ -788,12 +807,14 @@
     "imageSource": "Zauntee official God Remembers Tour 2026 full itinerary poster",
     "imageSourceUrl": "https://www.instagram.com/zauntee/p/Da0mxSfyRwu/",
     "detailImageLayout": "portrait",
-    "postalCode": "37203"
+    "postalCode": "37203",
+    "doorsTime": "19:00",
+    "ageRestriction": "All ages"
   },
   {
     "title": "Matthew Plante — Headlining Show at D Lounge",
     "startDate": "2026-11-07",
-    "startTime": "18:00",
+    "startTime": "19:30",
     "endTime": "22:00",
     "venue": "D Lounge Kitchen & Bar",
     "address": "7380 King George Blvd #700",
@@ -815,7 +836,7 @@
     ],
     "officialUrl": "https://www.eventbrite.ca/e/matthew-plante-headlining-show-d-lounge-kitchen-bar-tickets-2004390257216",
     "price": "CA$22.62 listed on Eventbrite",
-    "publicDescription": "Matthew Plante headlines an all-ages music showcase at D Lounge Kitchen & Bar with XAY DRYZ, 404, Eclipse, Tyce Pruden, Rick Flowz and special guests. November 7, 6–10 PM. Eventbrite lists tickets at CA$22.62; the flyer advertises $20.",
+    "publicDescription": "Matthew Plante headlines an all-ages music showcase presented by D Lounge Kitchen & Bar, with XAY DRYZ, 404, Eclipse, Tyce Pruden, Rick Flowz and special guests. Dinner and soundcheck run from 6–7:30 PM; performances follow until 10 PM. Eventbrite lists tickets at CA$22.62; the flyer advertises $20.",
     "notes": "Artist November 4 flyer and artist-bio-linked Eventbrite confirm D Lounge, 6–10 PM, all ages and updated bill. Supersedes old Cloverdale 7 PM details and unavailable original ticket listing. Current sources do not reconfirm the old tribute, benefit, Big M.I.C or HBS claims; no old-ticket transfer/refund policy or formal cancellation is asserted. Eventbrite displays CA$22.62; final checkout total was not independently verified. America/Vancouver is UTC−07:00 on this date under current timezone rules and BC permanent Pacific time (https://news.gov.bc.ca/releases/2026AG0013-000209). Curated artist association, event ID and original discovery date retained. Canadian supplemental record survives discovery refreshes.",
     "id": "manual:matthew-plante-remembrance-showcase-surrey-2026-11-07",
     "endDate": "2026-11-07",
@@ -841,7 +862,7 @@
     "auditVerified": "2026-11-04",
     "imagePosition": "center",
     "imageOverride": true,
-    "startDateTime": "2026-11-07T18:00:00-07:00",
+    "startDateTime": "2026-11-07T19:30:00-07:00",
     "image": "assets/events/matthew-plante-d-lounge-surrey-2026-11-07-nov4.jpg",
     "imageType": "event_artwork",
     "imageSource": "Matthew Plante official November 4 show flyer",
@@ -863,7 +884,19 @@
         "priority": 112
       }
     ],
-    "publicNotice": "Updated venue: D Lounge Kitchen & Bar. November 7, 6–10 PM. All ages. Eventbrite lists tickets at CA$22.62; the flyer advertises $20."
+    "publicNotice": "Updated venue: D Lounge Kitchen & Bar. Dinner and soundcheck at 6 PM; performances at 7:30 PM. All ages.",
+    "organizer": {
+      "name": "D Lounge Kitchen & Bar"
+    },
+    "ageRestriction": "All ages",
+    "parking": "Free parking",
+    "refundPolicy": "No refunds.",
+    "scheduleDetails": [
+      {
+        "label": "Dinner and soundcheck",
+        "text": "6–7:30 PM PT; performances follow at 7:30 PM."
+      }
+    ]
   },
   {
     "title": "Flavor Fest 2026 — Saturday Concerts",
@@ -893,7 +926,7 @@
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/",
     "image": "assets/events/flavor-fest-saturday-2026.jpg",
-    "price": "",
+    "price": "Saturday concert-only admission: $35; fees not confirmed.",
     "sourceName": "Flavor Fest official Saturday poster",
     "authority": "official_festival",
     "confidence": "high",
@@ -976,7 +1009,12 @@
       "The Rkitect"
     ],
     "lastVerified": "2026-10-23T22:33:46.736976Z",
-    "postalCode": "33612"
+    "postalCode": "33612",
+    "doorsTime": "18:30",
+    "organizer": {
+      "name": "Flavor Fest / Crossover Church",
+      "url": "https://www.flavorfest.org/"
+    }
   },
   {
     "id": "supplemental:skema-boy-2026-11-08-atlanta-ga",
@@ -1085,7 +1123,7 @@
     "headliner": "Zauntee",
     "eventType": "concert",
     "status": "onsale",
-    "ticketUrl": "https://www.bandsintown.com/e/108653118",
+    "ticketUrl": "https://www.etix.com/ticket/p/73926772/zauntee-god-remembers-tourwith-guest-skema-boy-jacksonville-jack-rabbits-live?partner_id=100",
     "officialUrl": "https://www.bandsintown.com/e/108653118",
     "image": "assets/events/zauntee-god-remembers-tour-2026-portrait.jpg",
     "price": "",
@@ -1116,13 +1154,14 @@
     "imageSource": "Zauntee official God Remembers Tour 2026 full itinerary poster",
     "imageSourceUrl": "https://www.instagram.com/zauntee/p/Da0mxSfyRwu/",
     "detailImageLayout": "portrait",
-    "postalCode": "32207"
+    "postalCode": "32207",
+    "doorsTime": "19:00"
   },
   {
     "id": "supplemental:skema-boy-2026-11-11-tampa-fl",
     "title": "Zauntee: God Remembers Tour - with Skema Boy",
     "startDate": "2026-11-11",
-    "startTime": "20:00",
+    "startTime": "",
     "timezone": "",
     "venue": "The Orpheum",
     "address": "14802 North Nebraska Avenue",
@@ -1136,8 +1175,8 @@
     "headliner": "Zauntee",
     "eventType": "concert",
     "status": "onsale",
-    "ticketUrl": "https://www.bandsintown.com/e/108653123",
-    "officialUrl": "https://www.bandsintown.com/e/108653123",
+    "ticketUrl": "https://www.eventbrite.com/e/zauntee-god-remembers-tour-tickets-1993716545858",
+    "officialUrl": "https://www.eventbrite.com/e/zauntee-god-remembers-tour-tickets-1993716545858",
     "image": "assets/events/zauntee-god-remembers-tour-2026-portrait.jpg",
     "price": "",
     "sourceName": "Skema Boy official tour page",
@@ -1167,7 +1206,15 @@
     "imageSource": "Zauntee official God Remembers Tour 2026 full itinerary poster",
     "imageSourceUrl": "https://www.instagram.com/zauntee/p/Da0mxSfyRwu/",
     "detailImageLayout": "portrait",
-    "postalCode": "33613"
+    "postalCode": "33613",
+    "organizer": {
+      "name": "The Orpheum & Endoxa Booking"
+    },
+    "doorsTime": "19:00",
+    "primaryTimeKind": "doors",
+    "ageRestriction": "All ages; under 18 must be accompanied by a parent or legal guardian",
+    "ticketUrlVerified": true,
+    "startDateTime": ""
   },
   {
     "id": "bandsintown:109085657",
@@ -1339,7 +1386,11 @@
         "priority": 112
       }
     ],
-    "publicNotice": "Eventbrite lists tickets at CA$22.90; the flyer shows an earlier price. Doors open at 8 PM. Individual performance times are unconfirmed."
+    "publicNotice": "Eventbrite lists tickets at CA$22.90; the flyer shows an earlier price. Doors open at 8 PM. Individual performance times are unconfirmed.",
+    "organizer": {
+      "name": "Shawn Simpson / Heavyweight Fest"
+    },
+    "ageRestriction": "All ages"
   },
   {
     "id": "submitted:jj-stone-nrg-saskatoon-2026-11-13",
@@ -1408,7 +1459,10 @@
         "priority": 112
       }
     ],
-    "publicNotice": "Conference registration closed October 31. Youth admission is for ages 13–18, with separate leader/pastor registration. Late registration and standalone concert admission are unconfirmed."
+    "publicNotice": "Conference registration closed October 31. Youth admission is for ages 13–18, with separate leader/pastor registration. Late registration and standalone concert admission are unconfirmed.",
+    "organizer": {
+      "name": "Horizon College & Seminary"
+    }
   },
   {
     "id": "manual:heliopolis-soundoff-summit-showcase-calgary-2026-11-13",
@@ -1417,8 +1471,8 @@
     "endDate": "2026-11-14",
     "startTime": "22:00",
     "endTime": "01:00",
-    "startDateTime": "2026-11-13T22:00:00-07:00",
-    "endDateTime": "2026-11-14T01:00:00-07:00",
+    "startDateTime": "2026-11-13T22:00:00-06:00",
+    "endDateTime": "2026-11-14T01:00:00-06:00",
     "timezone": "America/Edmonton",
     "venue": "Heliopolis",
     "address": "817 1 Street Southwest",
@@ -1475,7 +1529,7 @@
     "auditVerified": "2026-11-03",
     "price": "Pay what you can at the door; see Eventbrite for online tickets",
     "publicDescription": "A mixed hip-hop showcase featuring Christian rapper Zaire Ink alongside the full announced bill. Eventbrite lists a 10 PM–1 AM event window; live performances begin at 10:30 PM, with Zaire Ink scheduled for 10:55 PM. Ends at 1 AM Saturday, November 14.",
-    "publicNotice": "Mixed hip-hop showcase featuring Christian rapper Zaire Ink. Ends at 1 AM Saturday, November 14, Mountain Time. Doors and age policy are unconfirmed; check the official details.",
+    "publicNotice": "Published start times differ. Confirm the late-show schedule with the organizer before attending.",
     "notes": "Owner explicitly requested this Canadian concert. The November 3 artist/Heliopolis coauthored announcement confirms Zaire Ink performs live November 13 and uses gospelrap/chh tags; his official website confirms the Christian hip-hop connection. This is a mixed hip-hop showcase, not a claim that every billed artist performs Christian music. Eventbrite's expanded lineup contains all nine retained names; Tea Fannie also hosts. No headliner or other curated artist association is inferred. Eventbrite advertises November 13 at 10 PM through November 14 at 1 AM; the official main flyer says 10:30 PM Late Show and the event FAQ starts performances at 10:30 PM, with Zaire Ink at 10:55 PM. Do not convert the overnight end to midnight November 13. Doors conflict: Eventbrite says 9 PM, while Music Calgary's schedule says 10:30 PM doors. Age conflict: Eventbrite allows under-18 guests with a parent/legal guardian, while the conference FAQ says Heliopolis is 18+. Structured doorsTime and ageRestriction intentionally remain unset. Eventbrite currently shows CA$11.98 online and its FAQ says pay what you can at the door; no fee breakdown, checkout deadline or full-conference access is inferred. The generic organizer $15/show text is not substituted for event-specific admission. The organizer schedule's Ranchmans venue line is a template conflict; the current ticket page and coauthored flyer identify Heliopolis at 817 1 Street Southwest. Preserve the artist affiliate ticket URL and original flyer bytes.",
     "sources": [
       {
@@ -1513,7 +1567,13 @@
         "authority": "official_event",
         "priority": 105
       }
-    ]
+    ],
+    "organizer": {
+      "name": "Music Calgary",
+      "url": "https://www.musiccalgary.ca/"
+    },
+    "doorsTime": "20:00",
+    "ageRestriction": "Under 18 must be accompanied by a parent or legal guardian."
   },
   {
     "id": "bandsintown:109072940",
@@ -1600,7 +1660,7 @@
     "ticketUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
     "officialUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
     "image": "assets/events/pastor-mike-monroe-2026-11-14-instagram.jpg",
-    "price": "",
+    "price": "Advertised ticket levels: $30, $40 and $60; fees not confirmed.",
     "sourceName": "Ticketmaster / W L Jack Howard Theatre",
     "sources": [
       {
@@ -1632,7 +1692,11 @@
     "imagePosition": "center",
     "imageOverride": true,
     "detailImageLayout": "portrait",
-    "postalCode": "71201"
+    "postalCode": "71201",
+    "organizer": {
+      "name": "Pastor CeJAY, Bishop Michael Douglas Sr. & New Generations Church"
+    },
+    "doorsTime": "14:00"
   },
   {
     "id": "ty-brasel-outlandish-fest-fort-worth-2026",
@@ -1669,7 +1733,7 @@
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
-    "price": "",
+    "price": "General admission $25.46 including listed tax and service fee",
     "sourceName": "Outlandish Fest official ticket page and Ty Brasel artist calendar",
     "authority": "official_festival",
     "confidence": "high",
@@ -1768,7 +1832,11 @@
     "mergedFromIds": [
       "manual:ty-brasel-outlandish-fest-fort-worth-2026"
     ],
-    "postalCode": "76116"
+    "postalCode": "76116",
+    "organizer": {
+      "name": "Outlandish Live"
+    },
+    "ageRestriction": "All ages"
   },
   {
     "id": "bandsintown:1040378722",
@@ -1892,10 +1960,10 @@
     "headliner": "Zauntee",
     "eventType": "concert",
     "status": "onsale",
-    "ticketUrl": "https://www.bandsintown.com/e/108660132-zauntee-at-sons-of-hermann-hall",
+    "ticketUrl": "https://wl.eventim.us/event/zauntee/698943?afflky=SpuneProductions",
     "officialUrl": "https://www.bandsintown.com/e/108660132-zauntee-at-sons-of-hermann-hall",
     "image": "assets/events/zauntee-god-remembers-tour-2026-portrait.jpg",
-    "price": "",
+    "price": "Advance general admission $20; day-of-show $25, plus applicable fees and taxes.",
     "sourceName": "Skema Boy official tour page",
     "sources": [
       {
@@ -1923,7 +1991,13 @@
     "imageSource": "Zauntee official God Remembers Tour 2026 full itinerary poster",
     "imageSourceUrl": "https://www.instagram.com/zauntee/p/Da0mxSfyRwu/",
     "detailImageLayout": "portrait",
-    "postalCode": "75226"
+    "postalCode": "75226",
+    "organizer": {
+      "name": "Spune Productions",
+      "url": "https://spune.com/"
+    },
+    "doorsTime": "19:00",
+    "ageRestriction": "All ages"
   },
   {
     "id": "supplemental:skema-boy-2026-11-18-phoenix-az",
@@ -1946,7 +2020,7 @@
     "ticketUrl": "https://www.ticketweb.com/event/zauntee-god-remembers-tour-valley-bar-tickets/14252734",
     "officialUrl": "https://www.ticketweb.com/event/zauntee-god-remembers-tour-valley-bar-tickets/14252734",
     "image": "assets/events/zauntee-god-remembers-tour-2026-portrait.jpg",
-    "price": "",
+    "price": "General admission $18 advance or $20 day of show, plus fees; VIP $63 plus fees",
     "sourceName": "Skema Boy official tour page",
     "sources": [
       {
@@ -1974,7 +2048,12 @@
     "imageSource": "Zauntee official God Remembers Tour 2026 full itinerary poster",
     "imageSourceUrl": "https://www.instagram.com/zauntee/p/Da0mxSfyRwu/",
     "detailImageLayout": "portrait",
-    "postalCode": "85004"
+    "postalCode": "85004",
+    "organizer": {
+      "name": "Psyko Steve Presents"
+    },
+    "doorsTime": "19:00",
+    "ageRestriction": "Ages 16+; under 16 admitted with their legal guardian"
   },
   {
     "id": "bandsintown:109085695",
@@ -2191,7 +2270,11 @@
     "ageRestriction": "All ages",
     "publicDescription": "The Promised VI features Kurtis Hoppie, Spencer Boliou, Derek Ryan and Kaleah Rochelle at The Whosoevers in Boise. Doors open at 5:30 PM; the all-ages show runs 6–9:30 PM.",
     "notes": "October 23 audit: existing provider event, not a new show. Official organizer ticket page replaces the event title accidentally used as venue and confirms full lineup, doors, show time and all-ages admission. Preserve provider ID, original address and discovery date.",
-    "lastVerified": "2026-10-23T22:33:46.736976Z"
+    "lastVerified": "2026-10-23T22:33:46.736976Z",
+    "organizer": {
+      "name": "Upside Down Kingdoms Events",
+      "url": "https://www.tickettailor.com/events/udkevents/2425184"
+    }
   },
   {
     "id": "bandsintown:109072793",
@@ -2210,10 +2293,10 @@
     "headliner": "JIMMY ROCK",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.diamondbackmusichall.com/tm-event/rave-jesus-rave-revival-tour-2/",
+    "ticketUrl": "https://www.ticketweb.com/event/rave-jesus-rave-revival-tour-diamondback-music-hall-tickets/14292794",
     "officialUrl": "https://www.diamondbackmusichall.com/tm-event/rave-jesus-rave-revival-tour-2/",
     "image": "assets/artists/jimmy-rock-instagram-profile.jpg",
-    "price": "",
+    "price": "US$27.50 advance / US$30 day of show, plus fees; US$75 meet-and-greet with general admission, plus fees.",
     "sourceName": "Diamondback Music Hall official event",
     "sources": [
       {
@@ -2252,7 +2335,17 @@
     "lineupExplicit": true,
     "auditVerified": "2026-10-31",
     "notes": "October 31 primary venue verification: Diamondback Music Hall lists Friday Nov 20, 2026, 7:00 PM SHOW, 6:00 PM public DOORS (5:00 PM meet-and-greet), Rave Jesus headlining with Jimmy Rock and Maxxer as support. Earlier Bandsintown 6:00 PM was doors, not concert start. Preserve original Bandsintown ID, artist image and earliest legitimate firstSeen.",
-    "postalCode": "48111"
+    "postalCode": "48111",
+    "organizer": {
+      "name": "Pinnacle Events Group / Diamondback Music Hall"
+    },
+    "ageRestriction": "All ages; guests under 18 must be accompanied by a parent or guardian.",
+    "scheduleDetails": [
+      {
+        "label": "Meet-and-greet entry",
+        "text": "5 PM for the separate meet-and-greet ticket; public doors open at 6 PM."
+      }
+    ]
   },
   {
     "id": "bandsintown:109085738",
@@ -2448,7 +2541,11 @@
         "label": "Venue address",
         "text": "2601 NW Tyler Ave, Corvallis, OR 97330"
       }
-    ]
+    ],
+    "organizer": {
+      "name": "Bring the Fire",
+      "url": "https://bringthefirechamber.com/"
+    }
   },
   {
     "id": "supplemental:skema-boy-2026-11-21-denver-co",
@@ -2468,7 +2565,7 @@
     "headliner": "Zauntee",
     "eventType": "concert",
     "status": "onsale",
-    "ticketUrl": "https://lost-lake.com/event/zauntee-w-skema-boy/lost-lake/denver-colorado/",
+    "ticketUrl": "https://www.etix.com/ticket/p/48442908/zauntee-wskema-boy-denver-lost-lake-lounge?partner_id=100",
     "officialUrl": "https://lost-lake.com/event/zauntee-w-skema-boy/lost-lake/denver-colorado/",
     "image": "assets/events/zauntee-god-remembers-tour-2026-portrait.jpg",
     "price": "",
@@ -2499,7 +2596,13 @@
     "imageSource": "Zauntee official God Remembers Tour 2026 full itinerary poster",
     "imageSourceUrl": "https://www.instagram.com/zauntee/p/Da0mxSfyRwu/",
     "detailImageLayout": "portrait",
-    "postalCode": "80206"
+    "postalCode": "80206",
+    "organizer": {
+      "name": "Lost Lake"
+    },
+    "doorsTime": "19:00",
+    "ageRestriction": "Ages 16+; under 16 admitted with a ticketed guardian aged 21+",
+    "ticketUrlVerified": true
   },
   {
     "id": "bandsintown:109072797",
@@ -2815,7 +2918,7 @@
     ]
   },
   {
-    "title": "Miles Minnick & CJ Emulous at Zion Ultra Lounge",
+    "title": "Miles Minnick & CJ Emulous at Vybe Event Center",
     "startDate": "2026-12-05",
     "startTime": "19:00",
     "timezone": "America/Phoenix",
@@ -2860,7 +2963,7 @@
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
-    "notes": "Official Eventbrite listing and flyer reviewed October 30, 2026: Miles Minnick, CJ Emulous, Nameless Servant, A4L and Th3rddae Da Mouthpiece; December 5 at Vybe Event Center, 2301 South Stearman Drive, Chandler AZ 85286. Doors 6:30 PM; show 7–11 PM; all ages and free parking. Zion Ultra Lounge Inc is the promoter. Existing listing identity and title retained to preserve the published URL. The three additional supporting acts appear in the full billing without creating unverified artist profiles.",
+    "notes": "Official Eventbrite listing and flyer reviewed October 30, 2026: Miles Minnick, CJ Emulous, Nameless Servant, A4L and Th3rddae Da Mouthpiece; December 5 at Vybe Event Center, 2301 South Stearman Drive, Chandler AZ 85286. Doors 6:30 PM; show 7–11 PM; all ages and free parking. Zion Ultra Lounge Inc is the promoter. Existing listing identity and canonical URL retained. November 5 audit corrects the heading to the actual Vybe Event Center venue; Zion Ultra Lounge Inc is the promoter. The three additional supporting acts appear in the full billing without creating unverified artist profiles.",
     "endDate": "2026-12-05",
     "doorsTime": "18:30",
     "endTime": "23:00",
@@ -2909,7 +3012,8 @@
     ],
     "organizer": {
       "name": "Zion Ultra Lounge Inc"
-    }
+    },
+    "canonicalPath": "/event/miles-minnick-and-cj-emulous-at-zion-ultra-lounge-2026-12-05-chandler-bfff69/"
   },
   {
     "id": "bandsintown:1040726548",
@@ -3062,7 +3166,8 @@
     ],
     "mergedFromIds": [
       "ticketmaster:k7vGF_4M3EccR"
-    ]
+    ],
+    "price": "Standing room $25 advance / $30 day of show; VIP wing seating $50 advance / $55 day of show (fees not confirmed)"
   },
   {
     "id": "manual:alex-jean-howard-theatre-washington-2026-12-29",
@@ -3349,46 +3454,10 @@
     "legacyEventPaths": [
       "/event/nobigdyl-at-cannery-hall-2027-01-22-nashville-ce782c/"
     ],
-    "detailImageLayout": "portrait"
-  },
-  {
-    "id": "bandsintown:1040675970",
-    "title": "Altar Ego at Clear Skies Meadery",
-    "startDate": "2027-01-23",
-    "startTime": "18:00",
-    "timezone": "",
-    "venue": "Clear Skies Meadery",
-    "address": "15201 Display Court",
-    "city": "Rockville",
-    "state": "MD",
-    "country": "US",
-    "artists": [
-      "Altar Ego"
-    ],
-    "headliner": "Altar Ego",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/1040675970?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/1040675970?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/altar-ego-owner-approved-oct23.jpg",
-    "price": "",
-    "sourceName": "Bandsintown",
-    "sources": [
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/1040675970?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "1040675970",
-    "bandsintownArtistId": "3457500",
-    "bandsintownResolvedName": "Altar Ego",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Altar Ego",
-    "postalCode": "20850"
+    "detailImageLayout": "portrait",
+    "organizer": {
+      "name": "AEG Presents"
+    }
   },
   {
     "id": "manual:808-beezy-bandsintown-108856562",

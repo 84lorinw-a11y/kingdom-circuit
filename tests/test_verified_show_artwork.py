@@ -259,7 +259,12 @@ class VerifiedShowArtworkTests(unittest.TestCase):
             artwork.patch_event(event)
             artwork.patch_event(event)
             self.assertIn(provider, event["officialUrl"])
-            self.assertEqual(event["ticketUrl"], event["officialUrl"])
+            if event_id == "bandsintown:108881783":
+                # Liberty's calendar remains the evidence source while the
+                # admission button points directly to its official box office.
+                self.assertEqual(event["ticketUrl"], "https://liberty.evenue.net/event/SA26/SA-02")
+            else:
+                self.assertEqual(event["ticketUrl"], event["officialUrl"])
             self.assertEqual(event["sources"], [event["sources"][0], old_source])
             self.assertEqual(event["sources"][0]["url"], pin["officialUrl"])
             self.assertEqual(event["firstSeen"], "2026-08-01")

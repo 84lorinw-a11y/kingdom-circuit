@@ -22,6 +22,14 @@ class CatalogMisattributionTests(unittest.TestCase):
                     headliner='Ryan Ellis', status='scheduled', confidence='high',
                     officialUrl='https://www.bandsintown.com/e/1040781482', **fields)
 
+    def test_idol_duo_booking_does_not_match_the_chh_group(self):
+        wrong = dict(id='bandsintown:1040675970', startDate='2027-01-23', artists=['Altar Ego'],
+                     officialUrl='https://www.eventbrite.com/e/idol-game-lost-destination-6-month-anniversary-live-tickets-2003227249629')
+        self.assertTrue(removed_event(wrong))
+        self.assertTrue(removed_event({**wrong, 'id': 'new-provider-id'}))
+        self.assertFalse(removed_event({**wrong, 'startDate': '2027-02-23'}))
+        self.assertFalse(removed_event({**wrong, 'id': 'valid-chh', 'officialUrl': 'https://www.instagram.com/altaregorecords/'}))
+
     def other_show(self):
         return {**self.event(), 'id': 'official:ryan-valid', 'title': 'Ryan Ellis concert',
                 'venue': 'Concert Hall', 'city': 'Los Angeles', 'state': 'CA',

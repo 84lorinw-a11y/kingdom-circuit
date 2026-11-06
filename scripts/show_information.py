@@ -16,6 +16,7 @@ import re
 
 from mobile_discovery import Document, replace_spans
 from show_information_model import normalize
+from private_events import redact_public_feeds, verify_public_feeds
 
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = '20261105-1'
@@ -114,7 +115,7 @@ def attributes(opening, values):
 
 
 def address_html(record):
-    locality = ', '.join(str(record.get(k) or '').strip() for k in ('city', 'state') if record.get(k))
+    locality = ', '.join(str(record.get(k) or '').strip() for k in ('venueLocality', 'state') if record.get(k))
     if not record.get('private') and record.get('postalCode'):
         locality += ' ' + str(record['postalCode'])
     country = {'US': 'United States', 'CA': 'Canada', 'PR': 'Puerto Rico'}.get(record.get('country'), record.get('country', ''))
@@ -196,10 +197,10 @@ def patched_schema(value, record):
         else:
             location.pop('name', None)
         address = location.setdefault('address', {'@type': 'PostalAddress'})
-        for source, target in (('address', 'streetAddress'), ('city', 'addressLocality'), ('state', 'addressRegion'), ('postalCode', 'postalCode'), ('country', 'addressCountry')):
+        for source, target in (('address', 'streetAddress'), ('venueLocality', 'addressLocality'), ('state', 'addressRegion'), ('postalCode', 'postalCode'), ('country', 'addressCountry')):
             if record.get(source):
                 address[target] = record[source]
-            elif source in {'address', 'postalCode'}:
+            elif source in {'address', 'postalCode', 'venueLocality'}:
                 address.pop(target, None)
         if record.get('address2') or record.get('suite'):
             address['streetAddress'] = ', '.join(x for x in [record.get('address'), record.get('address2') or record.get('suite')] if x)
@@ -323,6 +324,7 @@ def source_hashes(site):
 
 def verify(site, ctx=None):
     ctx = ctx or context(site)
+    verify_public_feeds(site)
     assert (site / CSS).read_bytes() == (ROOT / CSS).read_bytes(), 'Show information stylesheet drift'
     report = {'version': VERSION, 'eventPages': len(ctx['pages']), 'organizerRows': 0, 'detailsPanels': 0, 'ticketOffers': 0, 'privatePages': 0, 'canadianPages': 0}
     for relative, record in ctx['pages'].items():
@@ -345,6 +347,7 @@ def verify(site, ctx=None):
             assert schema.get('offers') == record.get('offer'), f'Offer mismatch: {relative}'
             assert schema.get('startDate') == record.get('schemaStartDate'), f'Start time mismatch: {relative}'
             assert (schema.get('organizer') or {}).get('name') == record.get('organizerName'), f'Organizer schema mismatch: {relative}'
+            assert (schema.get('location', {}).get('address') or {}).get('addressLocality') == record.get('venueLocality'), f'Venue municipality mismatch: {relative}'
             if record.get('offer'):
                 buttons = [n for n in doc.nodes if n.tag == 'a' and n.has('primary-button') and doc.text(n).casefold() == 'official details']
                 assert len(buttons) == 1 and buttons[0].attrs.get('href') == record['offer']['url'], f'Visible ticket/Offer mismatch: {relative}'
@@ -362,6 +365,10 @@ def verify(site, ctx=None):
 
 
 def build(site):
+    # These are generated public copies, not the repository's raw source feeds.
+    # Redact before taking the rendering invariant snapshot; no other source
+    # facts, catalog identities, listing counts or archive records may change.
+    redact_public_feeds(site)
     before = source_hashes(site)
     ctx = context(site)
     for source in site.rglob('*.html'):

@@ -13,6 +13,7 @@ from apply_verified_event_overrides import REVIVAL_NIGHT_EVENT
 from apply_verified_show_artwork import BY_ID
 from build_seo_site import event_path, fnv
 from verify_egr_bizzle_updates import uses_image
+from apply_verified_show_information import enrich
 
 
 def verify(site):
@@ -44,7 +45,11 @@ def verify(site):
     for event_id in ['whatuprg-houston-2026-11-19','whatuprg-dallas-2026-11-20','whatuprg-san-antonio-2026-11-22']:
         wanted.append(dict(BY_ID[event_id], advertisedBilling=['WHATUPRG', 'aftrthght', 'De La Cruz']))
     verified = []
+    reviewed = json.loads((ROOT / 'config/verified-show-information.json').read_text())['events']
     for expected in wanted:
+        # Keep the original identity/artwork checks while honoring later
+        # source-verified venue and timing corrections for this exact show.
+        expected = enrich(expected, reviewed)
         if (expected.get('endDate') or expected['startDate']) < today:
             continue
         matches = [e for e in events if key(e) == key(expected)]

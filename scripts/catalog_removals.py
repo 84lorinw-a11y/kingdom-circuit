@@ -17,6 +17,23 @@ def removed_artist(name):
 
 
 def misattributed_event(event):
+    # The Jan 23 idol concert bills @altarego_info (NJ/NY idol duo), not
+    # @altaregorecords (Bo Fisher / Justo Chalaire). Keep raw evidence/history.
+    if event.get("startDate") == "2027-01-23":
+        if str(event.get("id") or "").removeprefix("manual:") == "bandsintown:1040675970":
+            return True
+        for field in ("officialUrl", "ticketUrl"):
+            try:
+                url = urlsplit(str(event.get(field) or ""))
+                host = (url.hostname or "").lower().removeprefix("www.")
+            except ValueError:
+                continue
+            if url.scheme not in {"http", "https"}:
+                continue
+            if host == "bandsintown.com" and re.fullmatch(r"/[et]/1040675970(?:[-/].*)?", url.path):
+                return True
+            if host == "eventbrite.com" and url.path.endswith("-tickets-2003227249629"):
+                return True
     # November 5 review: this exact Betsy booking features the Miami jazz
     # pianist, not the Christian singer in our Ryan Ellis roster. Preserve the
     # original evidence/history; exclude only this reviewed date and identity.

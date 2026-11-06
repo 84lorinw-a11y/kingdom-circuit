@@ -42,6 +42,23 @@ def fixture(private=False):
 
 
 class ProductionShowInformationTests(unittest.TestCase):
+    def test_venue_municipality_drives_address_and_schema_without_rewriting_market_city(self):
+        for market, municipality, state, postal in (
+            ('Little Rock', 'North Little Rock', 'AR', '72114'),
+            ('St. Louis', 'St. Charles', 'MO', '63303'),
+        ):
+            with self.subTest(market=market):
+                row = record(city=market, venueCity=municipality, state=state, postalCode=postal)
+                rendered = show.detail_transform(fixture(), row)
+                doc = Document(rendered)
+                address = doc.one(lambda n: n.has('kc-address'))
+                self.assertIn(f'{municipality}, {state} {postal}', doc.text(address))
+                schema = next(show.event_schemas(show.schema_blocks(rendered)[0][1]))
+                self.assertEqual(schema['location']['address']['addressLocality'], municipality)
+                self.assertEqual(row['city'], market)
+                self.assertIn('https://kingdomcircuit.com/event/sample/', rendered)
+                self.assertEqual(show.detail_transform(rendered, row), rendered)
+
     def test_confirmed_organizer_is_main_row_after_location_and_matches_schema(self):
         row = record(organizer={'name': 'Real promoter', 'url': 'https://promoter.example/'}, price='$15 concert only')
         rendered = show.detail_transform(fixture(), row)
@@ -142,6 +159,41 @@ class ProductionShowInformationTests(unittest.TestCase):
             self.assertEqual(show.build(site), report)
             self.assertEqual((site / 'event/sample/index.html').read_bytes(), saved)
             self.assertEqual(saved.count(b'data-kc-show-information'), 1)
+
+    def test_publication_redacts_private_feed_addresses_but_preserves_raw_source_and_listing(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            site = root / 'public'
+            (site / 'assets').mkdir(parents=True)
+            (site / 'config').mkdir()
+            (site / 'event/sample').mkdir(parents=True)
+            current = {**record(), 'canonicalPath': '/event/sample/', 'status': 'private',
+                'address': '123 Hidden Street', 'address2': 'Room 7', 'suite': 'Suite 8',
+                'postalCode': '99999', 'fullAddress': '123 Hidden Street, Kansas City, MO 99999'}
+            raw = json.dumps([current])
+            for name in ('events.json', 'supplemental-events.json'):
+                (root / name).write_text(raw)
+                (site / name).write_text(raw)
+            (root / 'event-history.json').write_text(raw)
+            (site / 'config/artists.json').write_text('[{"name":"Artist"}]')
+            catalog = json.dumps({'shows': [{'path': '/event/sample/', 'date': '2027-01-29'}]})
+            (site / 'assets/fan-show-catalog.json').write_text(catalog)
+            (site / 'event/sample/index.html').write_text(fixture(True))
+            report = show.build(site)
+            self.assertEqual(report['privatePages'], 1)
+            for name in ('events.json', 'supplemental-events.json'):
+                published = json.loads((site / name).read_text())
+                self.assertEqual(len(published), 1)
+                self.assertEqual(published[0]['id'], current['id'])
+                self.assertEqual(published[0]['city'], current['city'])
+                for field in ('address', 'address2', 'suite', 'postalCode', 'fullAddress'):
+                    self.assertNotIn(field, published[0])
+                self.assertEqual((root / name).read_text(), raw)
+            self.assertEqual((root / 'event-history.json').read_text(), raw)
+            self.assertEqual((site / 'assets/fan-show-catalog.json').read_text(), catalog)
+            self.assertIn('Private Event', (site / 'event/sample/index.html').read_text())
+            self.assertEqual(show.build(site), report)
+            self.assertEqual(show.verify(site), report)
 
     def test_official_ticket_page_gets_offer_without_extra_button(self):
         row = record(officialUrl='https://events.humanitix.com/an-actual-event')

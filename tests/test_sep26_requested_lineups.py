@@ -11,6 +11,19 @@ from apply_sep26_requested_lineups import PATCHES, patch_event
 
 
 class RequestedLineupTests(unittest.TestCase):
+    def test_chandler_title_uses_venue_without_changing_the_published_url(self):
+        row = {'id': 'manual:miles-cj-zion-ultra-lounge-chandler-2026',
+               'startDate': '2026-12-05',
+               'title': 'Miles Minnick & CJ Emulous at Zion Ultra Lounge'}
+        patch_event(row)
+        self.assertEqual(row['title'], 'Miles Minnick & CJ Emulous at Vybe Event Center')
+        self.assertEqual(row['venue'], 'Vybe Event Center')
+        self.assertIn('Zion Ultra Lounge Inc presents', row['publicDescription'])
+        # URL continuity consumes this durable canonical pin after the base
+        # builder generates its title-derived candidate path.
+        self.assertEqual(row['canonicalPath'],
+                         '/event/miles-minnick-and-cj-emulous-at-zion-ultra-lounge-2026-12-05-chandler-bfff69/')
+
     def test_gate_checks_reviewed_record_before_provider_display_merge(self):
         import verify_sep26_requested_lineups as gate
         wanted = dict(startDate="2099-10-31", startTime="16:00", title="Reviewed concert",

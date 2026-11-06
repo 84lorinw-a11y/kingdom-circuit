@@ -19,7 +19,8 @@ class MilesCjFall2026RepairTests(unittest.TestCase):
 
     def test_florida_tour_stops_are_canonical(self):
         expected = {
-            "manual:miles-minnick-black-box-north-miami-2026-11-05": ("2026-11-05", "18:30", "Black Box Media Miami", "North Miami"),
+            # Official TicketSource schedule: 6:30 PM doors, 7 PM concert.
+            "manual:miles-minnick-black-box-north-miami-2026-11-05": ("2026-11-05", "19:00", "Black Box Media Miami", "North Miami"),
             "manual:miles-minnick-christlike-university-jacksonville-2026-11-07": ("2026-11-07", "19:00", "The Albatross", "Jacksonville"),
             "manual:miles-minnick-christlike-university-orlando-2026-11-08": ("2026-11-08", "19:00", "Conduit", "Winter Park"),
         }

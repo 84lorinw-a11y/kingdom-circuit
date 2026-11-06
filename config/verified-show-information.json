@@ -43,7 +43,25 @@
       "state": "FL",
       "country": "US",
       "facts": {
-        "postalCode": "33161"
+        "postalCode": "33161",
+        "doorsTime": "18:30",
+        "organizer": {
+          "name": "The Sound System Events",
+          "url": "https://www.ticketsource.com/the-sound-system"
+        },
+        "ticketUrlVerified": true,
+        "price": "$21.69–$57.92, including booking fee",
+        "publicDescription": "The Miami stop of Miles Minnick’s Christlike University Tour, with Tommy Zuko, CJ Emulous and Eli Williams. Doors open at 6:30 PM; the concert starts at 7 PM.",
+        "scheduleDetails": [
+          {
+            "label": "VIP",
+            "text": "6–6:30 PM EST."
+          },
+          {
+            "label": "Miles Minnick set",
+            "text": "7:30–9 PM EST."
+          }
+        ]
       },
       "sources": [
         {
@@ -63,10 +81,40 @@
           "quoteOrSummary": "Florida’s official business registry lists Black Box Media Miami LLC’s principal address at the same street and units, with postal code 33161; the record includes a 2026 annual report.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://milesminnick.com/tour",
+          "reviewedAt": "2026-11-05",
+          "quoteOrSummary": "The artist’s Miami Tickets link redirects through Bandsintown to this TicketSource performance."
+        },
+        {
+          "url": "https://www.ticketsource.com/the-sound-system/t-xdyqpje",
+          "reviewedAt": "2026-11-05",
+          "quoteOrSummary": "The Sound System Events; VIP 6–6:30; doors 6:30; concert starts 7; Miles 7:30–9; ticket price including booking fee $21.69–$57.92."
         }
       ],
       "expectedVenue": "Black Box Media Miami",
-      "expectedAddress": "12355 NE 13th Ave Unit #403-404"
+      "expectedAddress": "12355 NE 13th Ave Unit #403-404",
+      "corrections": [
+        {
+          "expected": {
+            "startTime": "18:30"
+          },
+          "facts": {
+            "startTime": "19:00"
+          },
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "expected": {
+            "ticketUrl": "https://www.bandsintown.com/t/108940329"
+          },
+          "facts": {
+            "ticketUrl": "https://www.ticketsource.com/the-sound-system/t-xdyqpje"
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
     },
     {
       "id": "manual:don-ready-club-217-los-angeles-2026-11-06",
@@ -78,7 +126,14 @@
         "postalCode": "90047",
         "organizer": {
           "name": "Club 2:17"
-        }
+        },
+        "ageRestriction": "16+",
+        "scheduleDetails": [
+          {
+            "label": "Organizer credit",
+            "text": "Eventbrite lists Justin & Petrina Berry as the event organizer; the flyer bills Don Ready x Club 2:17."
+          }
+        ]
       },
       "sources": [
         {
@@ -116,6 +171,10 @@
           "quoteOrSummary": "Existing verified production description explicitly states: Club 2:17 presents. The retained full description distinguishes presenter, artists, hosts and venue. Only the explicit presenting organization name is added; no organizer URL is inferred.",
           "reviewedAt": "2026-11-05",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.eventbrite.com/e/christian-latin-rap-club-night-w-don-ready-free-event-tickets-2003215547628",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "6111 S Gramercy Place",
@@ -128,7 +187,13 @@
       "state": "FL",
       "country": "US",
       "facts": {
-        "postalCode": "33612"
+        "postalCode": "33612",
+        "doorsTime": "18:30",
+        "price": "Friday concert-only admission: US$35; other conference and concert packages are sold separately.",
+        "organizer": {
+          "name": "Flavor Fest / Crossover Church",
+          "url": "https://www.flavorfest.org/"
+        }
       },
       "sources": [
         {
@@ -148,6 +213,19 @@
           "quoteOrSummary": "The official 2026 festival site places the November 5–8 festival at Crossover Church and shows its Tampa postal code as 33612.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.flavorfest.org/schedule",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://flavorfest.ticketspice.com/full-conference-",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.flavorfest.org/ourteam",
+          "reviewedAt": "2026-11-05",
+          "quoteOrSummary": "Fresh official team page explicitly identifies Flavor Fest as the annual conference and music festival hosted by Crossover Church; the official schedule lists Friday November 6 concerts. This independently confirms the same organizer as Saturday."
         }
       ],
       "expectedVenue": "Crossover Church",
@@ -160,7 +238,11 @@
       "state": "VA",
       "country": "US",
       "facts": {
-        "postalCode": "24515"
+        "postalCode": "24515",
+        "organizer": {
+          "name": "Liberty University Student Activities"
+        },
+        "ticketUrlVerified": true
       },
       "sources": [
         {
@@ -171,10 +253,33 @@
           "quoteOrSummary": "The official university event URL displays the matching campus street address, 1971 University Blvd., Lynchburg, VA 24515. This establishes the postal code, not a new performance-time claim.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://events.liberty.edu/event/hulvey-concert",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.liberty.edu/student-activities/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://liberty.evenue.net/event/SA26/SA-02",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "Vines Center",
-      "expectedAddress": "1971 University Blvd"
+      "expectedAddress": "1971 University Blvd",
+      "corrections": [
+        {
+          "expected": {
+            "ticketUrl": "https://events.liberty.edu/event/hulvey-concert"
+          },
+          "facts": {
+            "ticketUrl": "https://liberty.evenue.net/event/SA26/SA-02"
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
     },
     {
       "id": "bandsintown:109046072",
@@ -183,7 +288,19 @@
       "state": "OH",
       "country": "US",
       "facts": {
-        "postalCode": "45885"
+        "postalCode": "45885",
+        "organizer": {
+          "name": "Northwestern Ohio District NYI",
+          "url": "https://www.nwonaz.org/nyi/"
+        },
+        "ageRestriction": "Students in sixth grade through high school; sixth-grade participation is at each church’s discretion. Adult chaperones register through their church.",
+        "price": "Retreat registration: $170 students; $125 adult chaperones. Registration deadline October 19; contact organizer about availability.",
+        "scheduleDetails": [
+          {
+            "label": "Retreat check-in",
+            "text": "Friday, 6–7 PM. K-Drama’s individual set time is not separately confirmed."
+          }
+        ]
       },
       "sources": [
         {
@@ -194,6 +311,22 @@
           "quoteOrSummary": "The camp’s official contact page gives its location as 272 Jack Oak Point Rd, St. Marys, OH 45885.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.bandsintown.com/e/109046072?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.bandsintown.com/t/109046072?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.nwonaz.org/nyi/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://forms.gle/4UFFUXNrW4zHCEZq9",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "Cross Oak Camp & Retreat Center",
@@ -206,7 +339,9 @@
       "state": "OH",
       "country": "US",
       "facts": {
-        "postalCode": "44114"
+        "postalCode": "44114",
+        "primaryTimeKind": "doors",
+        "price": "General admission $35; VIP $70 (advertised flyer prices; fees unconfirmed)"
       },
       "sources": [
         {
@@ -217,10 +352,27 @@
           "quoteOrSummary": "The official venue contact page, which links the Cambridge Room, gives 308 Euclid Avenue, Cleveland, OH 44114.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.ticketmaster.com/beyond-the-walls-3-cleveland-ohio-11-07-2026/event/05006488EE58E30A",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "The Cambridge Room at House of Blues Cleveland",
-      "expectedAddress": "308 Euclid Ave"
+      "expectedAddress": "308 Euclid Ave",
+      "corrections": [
+        {
+          "expected": {
+            "startTime": "19:30",
+            "startDateTime": "2026-11-07T19:30:00-05:00"
+          },
+          "facts": {
+            "startTime": "",
+            "startDateTime": ""
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
     },
     {
       "id": "manual:crushing-addiction-rally-clanton-2026-11-07",
@@ -232,7 +384,8 @@
         "postalCode": "35045",
         "organizer": {
           "name": "Surrendered Ministries"
-        }
+        },
+        "price": "Free"
       },
       "sources": [
         {
@@ -252,6 +405,10 @@
           "quoteOrSummary": "Existing verified production description explicitly states: Surrendered Ministries presents. The retained full description distinguishes presenter, artists, hosts and venue. Only the explicit presenting organization name is added; no organizer URL is inferred.",
           "reviewedAt": "2026-11-05",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.surrenderedministries.net/event-details/crushing-addiction-rally",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "Goose Pond Park",
@@ -264,7 +421,8 @@
       "state": "CA",
       "country": "US",
       "facts": {
-        "postalCode": "95205"
+        "postalCode": "95205",
+        "ageRestriction": "All ages"
       },
       "sources": [
         {
@@ -275,6 +433,10 @@
           "quoteOrSummary": "Victory Outreach Stockton’s official visit information gives 2725 Waterloo Rd, Stockton, CA 95205. This verifies the supplied venue street’s postal code; it does not independently establish EGR attendance.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://form.jotform.com/262884326241055",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "2725 Waterloo Rd",
@@ -287,7 +449,13 @@
       "state": "FL",
       "country": "US",
       "facts": {
-        "postalCode": "33612"
+        "postalCode": "33612",
+        "doorsTime": "18:30",
+        "price": "Saturday concert-only admission: $35; fees not confirmed.",
+        "organizer": {
+          "name": "Flavor Fest / Crossover Church",
+          "url": "https://www.flavorfest.org/"
+        }
       },
       "sources": [
         {
@@ -308,6 +476,22 @@
           "quoteOrSummary": "The official 2026 festival site places the November 5–8 festival at Crossover Church and shows its Tampa postal code as 33612.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.flavorfest.org/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://flavorfest.ticketspice.com/full-conference-",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.flavorfest.org/schedule",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.flavorfest.org/ourteam",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "Crossover Church",
@@ -352,7 +536,13 @@
       "state": "FL",
       "country": "US",
       "facts": {
-        "postalCode": "32792"
+        "postalCode": "32792",
+        "organizer": {
+          "name": "Endoxa Presents"
+        },
+        "doorsTime": "19:00",
+        "ageRestriction": "All ages",
+        "price": "Tickets advertised at $26.91 by the venue; confirm current availability with the official seller."
       },
       "sources": [
         {
@@ -363,10 +553,46 @@
           "quoteOrSummary": "Conduit’s official venue details give 6700 Aloma Ave, Winter Park, FL 32792.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://conduitfl.com/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.conduitfl.com/tm-event/miles-minnick-christlike-university-florida-campus-tour/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.ticketweb.com/event/miles-minnick-christlike-university-conduit-tickets/14336884?pl=conduit&REFID=clientsitewp",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "Conduit",
-      "expectedAddress": "6700 Aloma Ave"
+      "expectedAddress": "6700 Aloma Ave",
+      "corrections": [
+        {
+          "expected": {
+            "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando"
+          },
+          "facts": {
+            "officialUrl": "https://www.conduitfl.com/tm-event/miles-minnick-christlike-university-florida-campus-tour/"
+          },
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "expected": {
+            "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando"
+          },
+          "facts": {
+            "ticketUrl": "https://www.ticketweb.com/event/miles-minnick-christlike-university-conduit-tickets/14336884?pl=conduit&REFID=clientsitewp"
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
     },
     {
       "id": "ticketmaster:vvG1zZ_ClQMRrF",
@@ -375,7 +601,11 @@
       "state": "GA",
       "country": "US",
       "facts": {
-        "postalCode": "30303"
+        "postalCode": "30303",
+        "organizer": {
+          "name": "The Masquerade"
+        },
+        "ageRestriction": "All ages"
       },
       "sources": [
         {
@@ -386,6 +616,14 @@
           "quoteOrSummary": "The venue places its 50 Lower Alabama Street SW address in Atlanta, GA 30303. Its public parking/entrance at 75 MLK Jr Drive SW is also in 30303.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.masqueradeatlanta.com/events/zauntee/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.ticketmaster.com/zauntee-god-remembers-tour-atlanta-georgia-11-08-2026/event/0E0064EADADEF788",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "The Masquerade - Altar",
@@ -398,7 +636,8 @@
       "state": "FL",
       "country": "US",
       "facts": {
-        "postalCode": "32726"
+        "postalCode": "32726",
+        "ageRestriction": "All ages"
       },
       "sources": [
         {
@@ -418,6 +657,10 @@
           "quoteOrSummary": "The current city park page also places Ferran Park in postal code 32726. Its general park address is 50 Ferran Park Dr.; the bandshell-specific city document supports retaining 250.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.awake-fest.com/",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "Ferran Park — Alice McClelland Memorial Bandshell",
@@ -430,7 +673,8 @@
       "state": "FL",
       "country": "US",
       "facts": {
-        "postalCode": "32726"
+        "postalCode": "32726",
+        "ageRestriction": "All ages"
       },
       "sources": [
         {
@@ -450,6 +694,10 @@
           "quoteOrSummary": "The current city park page also places Ferran Park in postal code 32726. Its general park address is 50 Ferran Park Dr.; the bandshell-specific city document supports retaining 250.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.awake-fest.com/",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "Ferran Park — Alice McClelland Memorial Bandshell",
@@ -462,7 +710,13 @@
       "state": "GA",
       "country": "US",
       "facts": {
-        "postalCode": "30721"
+        "postalCode": "30721",
+        "scheduleDetails": [
+          {
+            "label": "Event hours",
+            "text": "11 AM–5 PM; car, truck, bike and Jeep show supporting first responders."
+          }
+        ]
       },
       "sources": [
         {
@@ -482,6 +736,10 @@
           "quoteOrSummary": "Georgia’s Department of Agriculture separately lists North Georgia Agricultural Fair at 500 Legion Drive, Dalton, GA 30721-2509, supporting the event-specific ZIP.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.northgafair.com/event-details/breaking-the-silence",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "North Georgia Ag Fairgrounds",
@@ -540,7 +798,12 @@
       "state": "TX",
       "country": "US",
       "facts": {
-        "postalCode": "76116"
+        "postalCode": "76116",
+        "organizer": {
+          "name": "Outlandish Live"
+        },
+        "ageRestriction": "All ages",
+        "price": "General admission $25.46 including listed tax and service fee"
       },
       "sources": [
         {
@@ -551,6 +814,10 @@
           "quoteOrSummary": "The organizer’s official November 14, 2026 listing gives The Rail, 3101 Joyce Dr, Fort Worth, TX 76116.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "The Rail",
@@ -563,7 +830,12 @@
       "state": "LA",
       "country": "US",
       "facts": {
-        "postalCode": "71201"
+        "postalCode": "71201",
+        "organizer": {
+          "name": "Pastor CeJAY, Bishop Michael Douglas Sr. & New Generations Church"
+        },
+        "doorsTime": "14:00",
+        "price": "Advertised ticket levels: $30, $40 and $60; fees not confirmed."
       },
       "sources": [
         {
@@ -574,6 +846,18 @@
           "quoteOrSummary": "Official ticket seller's venue record gives 401 Lea Joyner Memorial Expressway, Monroe, LA 71201. Venue address evidence; not new event-date verification.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-11-14-2026/event/1B0065317903452A",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://monroela.us/events/pastor-mike-jr-live/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "/Users/lorinwilliamson/Documents/Kingdom Circuit Workspaces/nov5-show-information-production/assets/events/pastor-mike-monroe-2026-11-14-instagram.jpg",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "WL Jack Howard Theatre",
@@ -618,7 +902,12 @@
       "state": "CA",
       "country": "US",
       "facts": {
-        "postalCode": "90012"
+        "postalCode": "90012",
+        "organizer": {
+          "name": "The Moroccan Lounge"
+        },
+        "ageRestriction": "All ages",
+        "price": "US$18 advance or at the door; US$63 VIP. Additional ticket fees may apply."
       },
       "sources": [
         {
@@ -638,6 +927,14 @@
           "quoteOrSummary": "The location FAQ explicitly gives 901 E 1st Street, Los Angeles CA 90012. Footer instead says 90017; the discrepancy is recorded here.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://themoroccan.com/tm-event/zauntee-god-remembers-tour/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.ticketmaster.com/zauntee-god-remembers-tour-los-angeles-california-11-19-2026/event/090064EDC54BA93C",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "The Moroccan Lounge",
@@ -673,7 +970,18 @@
       "state": "MI",
       "country": "US",
       "facts": {
-        "postalCode": "48111"
+        "postalCode": "48111",
+        "organizer": {
+          "name": "Pinnacle Events Group / Diamondback Music Hall"
+        },
+        "ageRestriction": "All ages; guests under 18 must be accompanied by a parent or guardian.",
+        "price": "US$27.50 advance / US$30 day of show, plus fees; US$75 meet-and-greet with general admission, plus fees.",
+        "scheduleDetails": [
+          {
+            "label": "Meet-and-greet entry",
+            "text": "5 PM for the separate meet-and-greet ticket; public doors open at 6 PM."
+          }
+        ]
       },
       "sources": [
         {
@@ -684,10 +992,33 @@
           "quoteOrSummary": "Official event page lists Diamondback Music Hall at 49345 S. Interstate 94 Service Dr, Belleville, MI 48111.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.diamondbackmusichall.com/tm-event/rave-jesus-rave-revival-tour-2/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.diamondbackmusichall.com/rave-jesus/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.ticketweb.com/event/rave-jesus-rave-revival-tour-diamondback-music-hall-tickets/14292794",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "Diamondback Music Hall",
-      "expectedAddress": "49345 S Interstate 94 Service Dr"
+      "expectedAddress": "49345 S Interstate 94 Service Dr",
+      "corrections": [
+        {
+          "expected": {
+            "ticketUrl": "https://www.diamondbackmusichall.com/tm-event/rave-jesus-rave-revival-tour-2/"
+          },
+          "facts": {
+            "ticketUrl": "https://www.ticketweb.com/event/rave-jesus-rave-revival-tour-diamondback-music-hall-tickets/14292794"
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
     },
     {
       "id": "manual:chain-breaker-kingsport-2026-11-21",
@@ -696,7 +1027,9 @@
       "state": "TN",
       "country": "US",
       "facts": {
-        "postalCode": "37660"
+        "postalCode": "37660",
+        "doorsTime": "15:00",
+        "price": "Free admission; an optional love offering will be received."
       },
       "sources": [
         {
@@ -707,6 +1040,10 @@
           "quoteOrSummary": "Billy Wayne Ministries' own LampLight production listing identifies LampLight Theatre at 140 Broad St, Kingsport TN 37660. Venue fact only, not verification of the Chain Breaker concert.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.bandsintown.com/e/108514680-redeemed-at-the-lamplight-theatre",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "The LampLight Theatre",
@@ -801,7 +1138,10 @@
       "state": "GA",
       "country": "US",
       "facts": {
-        "postalCode": "30307"
+        "postalCode": "30307",
+        "organizer": {
+          "name": "Zero Mile Presents"
+        }
       },
       "sources": [
         {
@@ -812,6 +1152,14 @@
           "quoteOrSummary": "The venue's official Getting Here page gives 1099 Euclid Ave NE, Atlanta GA 30307. Venue fact only.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.axs.com/events/1634213/alex-jean-tickets",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://variety-playhouse.com/calendar/",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "Variety Playhouse",
@@ -847,7 +1195,17 @@
       "state": "GA",
       "country": "US",
       "facts": {
-        "postalCode": "30260"
+        "postalCode": "30260",
+        "organizer": {
+          "name": "Stephen Gibbs of The Saintuary"
+        },
+        "price": "US$10 advertised online; Eventbrite currently lists US$13.51.",
+        "scheduleDetails": [
+          {
+            "label": "Event hours",
+            "text": "7–11 PM; hosted by Steph Swig, with live music, dancing and food available for purchase."
+          }
+        ]
       },
       "sources": [
         {
@@ -867,6 +1225,10 @@
           "quoteOrSummary": "Georgia Secretary of State filing for GLOVIM Bible Institute confirms the same building, 1078 Citizens Pkwy (Suite A), Morrow GA 30260. Building-level postal corroboration only.",
           "reviewedAt": "2026-11-02",
           "confidence": "medium"
+        },
+        {
+          "url": "https://www.eventbrite.com/e/corey-red-and-precise-the-saintuary-tickets-2003683710917",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "The Saintuary",
@@ -902,7 +1264,11 @@
       "state": "CA",
       "country": "US",
       "facts": {
-        "postalCode": "94704"
+        "postalCode": "94704",
+        "organizer": {
+          "name": "Cornerstone"
+        },
+        "ageRestriction": "All ages"
       },
       "sources": [
         {
@@ -922,6 +1288,10 @@
           "quoteOrSummary": "Venue contact page lists 2367 Shattuck Ave, Berkeley CA 94704.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.prekindle.com/event/52416-miles-minnick-berkeley",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "Cornerstone",
@@ -957,7 +1327,11 @@
       "state": "FL",
       "country": "US",
       "facts": {
-        "postalCode": "32205"
+        "postalCode": "32205",
+        "organizer": {
+          "name": "Kelo Cho / Murray Hill Theatre"
+        },
+        "ageRestriction": "All ages"
       },
       "sources": [
         {
@@ -968,33 +1342,38 @@
           "quoteOrSummary": "The venue's own contact page gives 932 Edgewood Ave South, Jacksonville FL 32205.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://murrayhilltheatre.com/event/kelo-cho-presents-the-worship-after-christmas/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.eventbrite.com/e/kelo-cho-presents-the-worship-after-christmas-tickets-1992972194483",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "Murray Hill Theatre",
-      "expectedAddress": "932 Edgewood Ave S"
-    },
-    {
-      "id": "bandsintown:1040675970",
-      "startDate": "2027-01-23",
-      "city": "Rockville",
-      "state": "MD",
-      "country": "US",
-      "facts": {
-        "postalCode": "20850"
-      },
-      "sources": [
+      "expectedAddress": "932 Edgewood Ave S",
+      "corrections": [
         {
-          "url": "https://clearskiesmeadery.com/",
-          "fields": [
-            "postalCode"
-          ],
-          "quoteOrSummary": "Venue homepage's Contact Us section explicitly lists 15201 Display Ct, Rockville MD 20850. Legacy official .co site search index agrees. A visitor-board event template inconsistently uses Derwood 20855 while its event text says Rockville 20850; direct venue address is used.",
-          "reviewedAt": "2026-11-02",
-          "confidence": "high"
+          "expected": {
+            "doorsTime": "18:00"
+          },
+          "facts": {
+            "doorsTime": "18:30"
+          },
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "expected": {
+            "price": "$15"
+          },
+          "facts": {
+            "price": "Eventbrite currently lists US$17.94–US$23.84; ticket options and fees may vary."
+          },
+          "reviewedAt": "2026-11-05"
         }
-      ],
-      "expectedVenue": "Clear Skies Meadery",
-      "expectedAddress": "15201 Display Court"
+      ]
     },
     {
       "id": "manual:1k-phew-rock-box-san-antonio-2027-01-30",
@@ -1003,7 +1382,12 @@
       "state": "TX",
       "country": "US",
       "facts": {
-        "postalCode": "78205"
+        "postalCode": "78205",
+        "organizer": {
+          "name": "The Rock Box"
+        },
+        "price": "$30.25 general admission; $35.75 day of show. Listed prices include all fees.",
+        "ageRestriction": "All ages with restrictions; confirm the venue’s requirements before attending."
       },
       "sources": [
         {
@@ -1014,6 +1398,10 @@
           "quoteOrSummary": "The event's ticket page gives The Rock Box, Underground Stage, 1223 E. Houston St, San Antonio TX 78205, January 30, 2027.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.stubwire.com/e/38193/hiphopnightstherockboxw1kphew/therockbox/",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "The Rock Box — Underground Stage",
@@ -1050,7 +1438,9 @@
       "country": "US",
       "facts": {
         "address": "1 Cannery Row",
-        "postalCode": "37203"
+        "postalCode": "37203",
+        "doorsTime": "19:00",
+        "ageRestriction": "All ages"
       },
       "sources": [
         {
@@ -1072,10 +1462,42 @@
           "quoteOrSummary": "Venue contact page gives 1 Cannery Row, Nashville, Tennessee 37203.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.bandsintown.com/e/108660004-skema-boy-at-cannery-hall",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.axs.com/uk/events/1521471/zauntee-tickets",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.axs.com/events/1521471/zauntee-tickets",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "Cannery Hall",
-      "expectedAddress": "1 Cannery Row"
+      "expectedAddress": "1 Cannery Row",
+      "corrections": [
+        {
+          "expected": {
+            "venue": "Cannery Hall"
+          },
+          "facts": {
+            "venue": "Cannery Hall — Row One Stage"
+          },
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "expected": {
+            "ticketUrl": "https://www.bandsintown.com/e/108660004-skema-boy-at-cannery-hall"
+          },
+          "facts": {
+            "ticketUrl": "https://www.axs.com/events/1521471/zauntee-tickets"
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
     },
     {
       "id": "supplemental:skema-boy-2026-11-10-jacksonville-fl",
@@ -1085,7 +1507,8 @@
       "country": "US",
       "facts": {
         "address": "1528 Hendricks Avenue",
-        "postalCode": "32207"
+        "postalCode": "32207",
+        "doorsTime": "19:00"
       },
       "sources": [
         {
@@ -1097,10 +1520,37 @@
           "quoteOrSummary": "Jack Rabbits official venue page lists 1528 Hendricks Ave, Jacksonville, FL 32207.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.bandsintown.com/e/108653118",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jaxlive.com/event/zauntee-2/jack-rabbits/jacksonville-florida/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.etix.com/ticket/p/73926772/zauntee-god-remembers-tourwith-guest-skema-boy-jacksonville-jack-rabbits-live?partner_id=100",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.jaxlive.com/",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "Jack Rabbits",
-      "expectedAddress": "1528 Hendricks Avenue"
+      "expectedAddress": "1528 Hendricks Avenue",
+      "corrections": [
+        {
+          "expected": {
+            "ticketUrl": "https://www.bandsintown.com/e/108653118"
+          },
+          "facts": {
+            "ticketUrl": "https://www.etix.com/ticket/p/73926772/zauntee-god-remembers-tourwith-guest-skema-boy-jacksonville-jack-rabbits-live?partner_id=100"
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
     },
     {
       "id": "manual:aaron-cole-hope-station-benefit-nashville-2026-11-11",
@@ -1157,7 +1607,14 @@
       "country": "US",
       "facts": {
         "address": "14802 North Nebraska Avenue",
-        "postalCode": "33613"
+        "postalCode": "33613",
+        "organizer": {
+          "name": "The Orpheum & Endoxa Booking"
+        },
+        "doorsTime": "19:00",
+        "primaryTimeKind": "doors",
+        "ageRestriction": "All ages; under 18 must be accompanied by a parent or legal guardian",
+        "ticketUrlVerified": true
       },
       "sources": [
         {
@@ -1180,10 +1637,53 @@
           "quoteOrSummary": "Venue’s own calendar lists the exact event and its location footer gives the same current North Tampa address.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.bandsintown.com/e/108653123",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.theorpheum.com/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.eventbrite.com/e/zauntee-god-remembers-tour-tickets-1993716545858",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "The Orpheum",
-      "expectedAddress": "14802 North Nebraska Avenue"
+      "expectedAddress": "14802 North Nebraska Avenue",
+      "corrections": [
+        {
+          "expected": {
+            "startTime": "20:00",
+            "startDateTime": null
+          },
+          "facts": {
+            "startTime": "",
+            "startDateTime": ""
+          },
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "expected": {
+            "officialUrl": "https://www.bandsintown.com/e/108653123"
+          },
+          "facts": {
+            "officialUrl": "https://www.eventbrite.com/e/zauntee-god-remembers-tour-tickets-1993716545858"
+          },
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "expected": {
+            "ticketUrl": "https://www.bandsintown.com/e/108653123"
+          },
+          "facts": {
+            "ticketUrl": "https://www.eventbrite.com/e/zauntee-god-remembers-tour-tickets-1993716545858"
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
     },
     {
       "id": "manual:musiq-in-the-park-concord-2026-11-13",
@@ -1226,7 +1726,10 @@
       "state": "SK",
       "country": "CA",
       "facts": {
-        "address": "604 Webster Street"
+        "address": "604 Webster Street",
+        "organizer": {
+          "name": "Horizon College & Seminary"
+        }
       },
       "sources": [
         {
@@ -1248,6 +1751,10 @@
           "quoteOrSummary": "Current campus contact page gives 604 Webster Street, Saskatoon, Saskatchewan, S7N 3P9, Canada.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.tickettailor.com/events/horizoncollegeandseminary/2065402",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "Horizon College & Seminary",
@@ -1261,7 +1768,14 @@
       "country": "US",
       "facts": {
         "address": "3414 Elm Street",
-        "postalCode": "75226"
+        "postalCode": "75226",
+        "organizer": {
+          "name": "Spune Productions",
+          "url": "https://spune.com/"
+        },
+        "doorsTime": "19:00",
+        "ageRestriction": "All ages",
+        "price": "Advance general admission $20; day-of-show $25, plus applicable fees and taxes."
       },
       "sources": [
         {
@@ -1284,10 +1798,37 @@
           "quoteOrSummary": "Official ticket destination linked by the venue corroborates 3414 Elm St, Dallas, TX 75226 for the November 16 concert.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.bandsintown.com/e/108660132-zauntee-at-sons-of-hermann-hall",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.sonsofhermannhall.com/events/zauntee-with-special-guest-skema-boy-on-november-16",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://wl.eventim.us/event/zauntee/698943?afflky=SpuneProductions",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://spune.com/",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "Sons Of Hermann Hall",
-      "expectedAddress": "3414 Elm Street"
+      "expectedAddress": "3414 Elm Street",
+      "corrections": [
+        {
+          "expected": {
+            "ticketUrl": "https://www.bandsintown.com/e/108660132-zauntee-at-sons-of-hermann-hall"
+          },
+          "facts": {
+            "ticketUrl": "https://wl.eventim.us/event/zauntee/698943?afflky=SpuneProductions"
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
     },
     {
       "id": "supplemental:skema-boy-2026-11-18-phoenix-az",
@@ -1297,7 +1838,13 @@
       "country": "US",
       "facts": {
         "address": "130 N. Central Avenue",
-        "postalCode": "85004"
+        "postalCode": "85004",
+        "organizer": {
+          "name": "Psyko Steve Presents"
+        },
+        "doorsTime": "19:00",
+        "ageRestriction": "Ages 16+; under 16 admitted with their legal guardian",
+        "price": "General admission $18 advance or $20 day of show, plus fees; VIP $63 plus fees"
       },
       "sources": [
         {
@@ -1310,6 +1857,14 @@
           "quoteOrSummary": "Exact official November 18, 2026 ticket page gives Valley Bar, 130 N. Central Avenue, Phoenix, AZ 85004; show 8 PM MST and doors 7 PM MST.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.ticketweb.com/event/zauntee-god-remembers-tour-valley-bar-tickets/14252734",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.valleybarphx.com/tm-event/zauntee-god-remembers-tour/",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "Valley Bar",
@@ -1408,7 +1963,13 @@
       "country": "US",
       "facts": {
         "address": "3602 E. Colfax Avenue",
-        "postalCode": "80206"
+        "postalCode": "80206",
+        "organizer": {
+          "name": "Lost Lake"
+        },
+        "doorsTime": "19:00",
+        "ageRestriction": "Ages 16+; under 16 admitted with a ticketed guardian aged 21+",
+        "ticketUrlVerified": true
       },
       "sources": [
         {
@@ -1421,10 +1982,29 @@
           "quoteOrSummary": "Venue’s exact November 21 Zauntee/Skema Boy page lists Lost Lake at 3602 E. Colfax, Denver, CO 80206; doors 7 PM, show 8 PM.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://lost-lake.com/event/zauntee-w-skema-boy/lost-lake/denver-colorado/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.etix.com/ticket/p/48442908/zauntee-wskema-boy-denver-lost-lake-lounge?partner_id=100",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "Lost Lake Lounge",
-      "expectedAddress": "3602 E. Colfax Avenue"
+      "expectedAddress": "3602 E. Colfax Avenue",
+      "corrections": [
+        {
+          "expected": {
+            "ticketUrl": "https://lost-lake.com/event/zauntee-w-skema-boy/lost-lake/denver-colorado/"
+          },
+          "facts": {
+            "ticketUrl": "https://www.etix.com/ticket/p/48442908/zauntee-wskema-boy-denver-lost-lake-lounge?partner_id=100"
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
     },
     {
       "id": "manual:bandsintown:108969341",
@@ -1590,7 +2170,22 @@
         "address": "6607 Providence Dr.",
         "postalCode": "46013",
         "startTime": "19:00",
-        "timezone": "America/Indiana/Indianapolis"
+        "timezone": "America/Indiana/Indianapolis",
+        "organizer": {
+          "name": "ITOWN Church",
+          "url": "https://www.itownchurch.com/"
+        },
+        "ageRestriction": "All ages; children must be accompanied by an adult. All attendees need a ticket.",
+        "scheduleDetails": [
+          {
+            "label": "Admission",
+            "text": "Tickets are required for all ages. Childcare is not provided."
+          },
+          {
+            "label": "Ticket policy",
+            "text": "Tickets are transferable but nonrefundable."
+          }
+        ]
       },
       "sources": [
         {
@@ -1604,10 +2199,37 @@
           "quoteOrSummary": "Host church explicitly advertises November13,2026 concert at7PM, ITOWN Madison Campus,6607 Providence Dr.,Anderson IN46013. Timezone follows venue locality.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.reachrecords.com/artists/hulvey/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.bandsintown.com/t/109034401?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.itownchurch.com/hulvey",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://brushfire.com/itownchurch/hulvey/641021",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "ITOWN Church - Madison Campus",
-      "expectedAddress": "6607 Providence Dr."
+      "expectedAddress": "6607 Providence Dr.",
+      "corrections": [
+        {
+          "expected": {
+            "ticketUrl": "https://www.bandsintown.com/t/109034401?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket"
+          },
+          "facts": {
+            "ticketUrl": "https://brushfire.com/itownchurch/hulvey/641021"
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
     },
     {
       "id": "manual:babytooth-experience-huntington-beach-2026-11-21",
@@ -1712,7 +2334,15 @@
       "state": "TX",
       "country": "US",
       "facts": {
-        "postalCode": "75704"
+        "postalCode": "75704",
+        "ageRestriction": "Children 8 and under receive free general admission.",
+        "price": "Saturday general admission US$49.67 including listed fees; full-weekend general admission US$83.82 including listed fees.",
+        "scheduleDetails": [
+          {
+            "label": "Festival dates",
+            "text": "The full festival runs April 23–24, 2027; individual artist performance days and set times should be confirmed with the organizer."
+          }
+        ]
       },
       "sources": [
         {
@@ -1723,6 +2353,14 @@
           "quoteOrSummary": "Venue's own contact page confirms204PattonLane,TylerTX75704. Office hours are not concert hours.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://rockthepines.org/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://rockthepines26.ticketspice.com/rock-the-pines-2027",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "The Park of East Texas",
@@ -1738,7 +2376,14 @@
         "address": "525 Elm St",
         "postalCode": "45202",
         "startTime": "21:00",
-        "timezone": "America/New_York"
+        "timezone": "America/New_York",
+        "ageRestriction": "All ages",
+        "scheduleDetails": [
+          {
+            "label": "Conference admission",
+            "text": "Part of FOLLOW Conference, December 28–31, 2026. A standalone concert ticket is not confirmed."
+          }
+        ]
       },
       "sources": [
         {
@@ -1763,6 +2408,18 @@
           "quoteOrSummary": "The organizer FAQ identifies First Financial Center, explains it was formerly Duke Energy Convention Center, and gives 525 Elm St, Cincinnati, OH 45202. The older venue name remains elsewhere on the same page.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.reachrecords.com/events/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.bandsintown.com/t/109096549?app_id=01df058d58993b0aa9bad03067b3503e&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://followconference.org/",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "Duke Energy Convention Center",
@@ -1776,7 +2433,10 @@
       "country": "US",
       "facts": {
         "address": "6000 Universal Boulevard",
-        "postalCode": "32819"
+        "postalCode": "32819",
+        "doorsTime": "16:00",
+        "ageRestriction": "All ages",
+        "scheduleNote": "Event-ticket holders may enter after 4 PM; each night runs until 1 AM. Individual performance times have not been announced."
       },
       "sources": [
         {
@@ -1798,6 +2458,14 @@
           "quoteOrSummary": "Official Universal contact page identifies theme parks and CityWalk parking garage at6000UniversalBoulevard,OrlandoFL32819. Corporate-office address not used.",
           "reviewedAt": "2026-11-02",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.universalorlando.com/web/en/us/things-to-do/events/rock-the-universe",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.universalorlando.com/web-store/en/us/add-ons?tab=Rock+The+Universe",
+          "reviewedAt": "2026-11-05"
         }
       ],
       "expectedVenue": "Universal Studios Florida",
@@ -1995,6 +2663,2477 @@
         }
       ],
       "expectedAddress": "2610 Plumas County A13"
+    },
+    {
+      "id": "manual:matthew-plante-remembrance-showcase-surrey-2026-11-07",
+      "startDate": "2026-11-07",
+      "city": "Surrey",
+      "state": "BC",
+      "country": "CA",
+      "expectedVenue": "D Lounge Kitchen & Bar",
+      "expectedAddress": "7380 King George Blvd #700",
+      "facts": {
+        "organizer": {
+          "name": "D Lounge Kitchen & Bar"
+        },
+        "ageRestriction": "All ages",
+        "parking": "Free parking",
+        "refundPolicy": "No refunds.",
+        "scheduleDetails": [
+          {
+            "label": "Dinner and soundcheck",
+            "text": "6–7:30 PM PT; performances follow at 7:30 PM."
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.instagram.com/matthewplantemusic/p/DfVJ_ZtSRfv/",
+          "reviewedAt": "2026-11-05",
+          "quoteOrSummary": "Official flyer visually inspected: D LOUNGE KITCHEN & BAR Presents; all ages. Local original artwork matthew-plante-d-lounge-surrey-2026-11-07-nov4.jpg."
+        },
+        {
+          "url": "https://www.eventbrite.ca/e/matthew-plante-headlining-show-d-lounge-kitchen-bar-tickets-2004390257216",
+          "reviewedAt": "2026-11-05",
+          "quoteOrSummary": "Dinner and soundcheck 6–7:30, show from there until10PM. All ages, free parking, no refunds, CA$22.62. Exact street and unit retained."
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "startTime": "18:00",
+            "startDateTime": "2026-11-07T18:00:00-07:00"
+          },
+          "facts": {
+            "startTime": "19:30",
+            "startDateTime": "2026-11-07T19:30:00-07:00"
+          },
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "expected": {
+            "publicDescription": "Matthew Plante headlines an all-ages music showcase at D Lounge Kitchen & Bar with XAY DRYZ, 404, Eclipse, Tyce Pruden, Rick Flowz and special guests. November 7, 6–10 PM. Eventbrite lists tickets at CA$22.62; the flyer advertises $20."
+          },
+          "facts": {
+            "publicDescription": "Matthew Plante headlines an all-ages music showcase presented by D Lounge Kitchen & Bar, with XAY DRYZ, 404, Eclipse, Tyce Pruden, Rick Flowz and special guests. Dinner and soundcheck run from 6–7:30 PM; performances follow until 10 PM. Eventbrite lists tickets at CA$22.62; the flyer advertises $20."
+          },
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "expected": {
+            "publicNotice": "Updated venue: D Lounge Kitchen & Bar. November 7, 6–10 PM. All ages. Eventbrite lists tickets at CA$22.62; the flyer advertises $20."
+          },
+          "facts": {
+            "publicNotice": "Updated venue: D Lounge Kitchen & Bar. Dinner and soundcheck at 6 PM; performances at 7:30 PM. All ages."
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:kaden-jordan-2026-11-13-orlando",
+      "startDate": "2026-11-13",
+      "city": "Orlando",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "The Gathering Place",
+      "expectedAddress": "8287 Curry Ford Rd",
+      "facts": {
+        "price": "$10 advertised on the official flyer; online ticket options and fees may vary."
+      },
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/e/the-renovation-project-tickets-2002811792987",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "/Users/lorinwilliamson/Documents/Kingdom Circuit Workspaces/nov5-show-information-production/assets/events/renovation-project-orlando-2026-11-13.jpg",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:heliopolis-soundoff-summit-showcase-calgary-2026-11-13",
+      "startDate": "2026-11-13",
+      "city": "Calgary",
+      "state": "AB",
+      "country": "CA",
+      "expectedVenue": "Heliopolis",
+      "expectedAddress": "817 1 Street Southwest",
+      "facts": {
+        "organizer": {
+          "name": "Music Calgary",
+          "url": "https://www.musiccalgary.ca/"
+        },
+        "doorsTime": "20:00",
+        "ageRestriction": "Under 18 must be accompanied by a parent or legal guardian."
+      },
+      "sources": [
+        {
+          "url": "https://www.eventbrite.ca/e/heliopolis-soundoff-summit-showcase-tickets-2003992006036?aff=ZaireInk",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "/Users/lorinwilliamson/Documents/Kingdom Circuit Workspaces/nov5-show-information-production/assets/events/heliopolis-soundoff-summit-showcase-calgary-2026-11-13.jpg",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.alberta.ca/albertas-new-time-system-abt",
+          "reviewedAt": "2026-11-05"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "startDateTime": "2026-11-13T22:00:00-07:00"
+          },
+          "facts": {
+            "startDateTime": "2026-11-13T22:00:00-06:00"
+          },
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "expected": {
+            "endDateTime": "2026-11-14T01:00:00-07:00"
+          },
+          "facts": {
+            "endDateTime": "2026-11-14T01:00:00-06:00"
+          },
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "expected": {
+            "publicNotice": "Mixed hip-hop showcase featuring Christian rapper Zaire Ink. Ends at 1 AM Saturday, November 14, Mountain Time. Doors and age policy are unconfirmed; check the official details."
+          },
+          "facts": {
+            "publicNotice": "Published start times differ. Confirm the late-show schedule with the organizer before attending."
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "bandsintown:108923215",
+      "startDate": "2026-11-20",
+      "city": "Boise",
+      "state": "ID",
+      "country": "US",
+      "expectedVenue": "The Whosoevers",
+      "expectedAddress": "20 S Auto Dr",
+      "facts": {
+        "organizer": {
+          "name": "Upside Down Kingdoms Events",
+          "url": "https://www.tickettailor.com/events/udkevents/2425184"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.tickettailor.com/events/udkevents/2425184",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "/Users/lorinwilliamson/Documents/Kingdom Circuit Workspaces/nov5-show-information-production/assets/events/the-promised-vi-2026-11-20.jpg",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:gifted-hands-dax-milwaukee-2026-11-20",
+      "startDate": "2026-11-20",
+      "city": "Milwaukee",
+      "state": "WI",
+      "country": "US",
+      "expectedVenue": "The Rave / Eagles Club",
+      "expectedAddress": "2401 W Wisconsin Avenue",
+      "facts": {
+        "price": "Advertised two-ticket offer: $30 for a pair, plus fees; limited availability."
+      },
+      "sources": [
+        {
+          "url": "https://store.therave.com/p-6430-dax.aspx",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:rooted-gifted-gospel-showcase-east-chicago-2026-11-21",
+      "startDate": "2026-11-21",
+      "city": "East Chicago",
+      "state": "IN",
+      "country": "US",
+      "expectedVenue": "Leon Kendrick Youth Voices United of East Chicago",
+      "expectedAddress": "3601 Grand Boulevard",
+      "facts": {
+        "organizer": {
+          "name": "M&J Production",
+          "url": "https://www.eventbrite.com/o/mj-production-121812405522"
+        },
+        "doorsTime": "15:00",
+        "scheduleDetails": [
+          {
+            "label": "Parking",
+            "text": "Free parking is advertised."
+          },
+          {
+            "label": "Refunds",
+            "text": "Refunds are offered up to seven days before the event."
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/e/rooted-gifted-gospel-showcase-tickets-2002737175805",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:revival-nights-asap-preach-hilliard-2026",
+      "startDate": "2026-11-21",
+      "city": "Hilliard",
+      "state": "OH",
+      "country": "US",
+      "expectedVenue": "Franklin County Fairgrounds — Edwards Building",
+      "expectedAddress": "5035 Northwest Parkway",
+      "facts": {
+        "scheduleDetails": [
+          {
+            "label": "Parking",
+            "text": "Free parking is advertised."
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/e/revival-nights-tickets-2000057247066",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:the-chamber-vol-1-corvallis-2026-11-21",
+      "startDate": "2026-11-21",
+      "city": "Corvallis",
+      "state": "OR",
+      "country": "US",
+      "expectedVenue": "Corvallis Community Center",
+      "expectedAddress": "2601 NW Tyler Ave",
+      "facts": {
+        "organizer": {
+          "name": "Bring the Fire",
+          "url": "https://bringthefirechamber.com/"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.tickettailor.com/checkout/view-event/id/9144465/chk/28bb42e7981e7b98ad292022136429f3/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bringthefirechamber.com/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "/Users/lorinwilliamson/Documents/Kingdom Circuit Workspaces/nov5-show-information-production/assets/events/the-chamber-vol-1-corvallis-2026-11-21.jpg",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:ythcon-brenno-denver-2026",
+      "startDate": "2026-11-25",
+      "city": "Denver",
+      "state": "CO",
+      "country": "US",
+      "expectedVenue": "Hyatt Regency Denver at Colorado Convention Center",
+      "expectedAddress": "650 15th Street",
+      "facts": {},
+      "sources": [
+        {
+          "url": "https://www.cddcyouth.com/convention/",
+          "reviewedAt": "2026-11-05"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "price": "Full conference registration required"
+          },
+          "facts": {
+            "price": "Late full-conference registration: $110. All sessions require registration."
+          },
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "expected": {
+            "scheduleDetails": [
+              {
+                "label": "Conference dates",
+                "text": "November 25–27, 2026."
+              },
+              {
+                "label": "Brenno appearance",
+                "text": "Exact date, time and appearance format have not been announced."
+              },
+              {
+                "label": "Admission",
+                "text": "Full paid conference registration is required for every session and night service. No separate walk-in concert admission."
+              }
+            ]
+          },
+          "facts": {
+            "scheduleDetails": [
+              {
+                "label": "Admission",
+                "text": "Full conference registration is required for the sessions and night services."
+              }
+            ]
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:creatives-showcase-philadelphia-2026-12-01",
+      "startDate": "2026-12-01",
+      "city": "Philadelphia",
+      "state": "PA",
+      "country": "US",
+      "expectedVenue": "Venice Island Performing Arts & Recreation Center",
+      "expectedAddress": "7 Lock Street",
+      "facts": {
+        "organizer": {
+          "name": "Creatives’ Philly",
+          "url": "https://www.eventbrite.com/o/creatives-philly-17686004441"
+        },
+        "doorsTime": "18:45",
+        "scheduleDetails": [
+          {
+            "label": "Parking",
+            "text": "Paid parking is available."
+          },
+          {
+            "label": "Ticket policy",
+            "text": "No refunds are advertised."
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.ripecreatives.com/events/creatives-showcase",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.eventbrite.com/e/creatives-showcase-a-year-end-celebration-tickets-1981360447435",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:carols-in-the-park-arizona-city-2026-12-03",
+      "startDate": "2026-12-03",
+      "city": "Arizona City",
+      "state": "AZ",
+      "country": "US",
+      "expectedVenue": "Arizona City Park",
+      "expectedAddress": "13955 S. Sunland Gin Rd.",
+      "facts": {
+        "scheduleDetails": [
+          {
+            "label": "Attendance",
+            "text": "No ticket or RSVP is required. Chairs are provided."
+          },
+          {
+            "label": "Parking",
+            "text": "Parking is available in the church lot, with overflow behind the church."
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.fbcazcity.com/carolsinthepark",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:kb-skema-boy-diamondback-belleville-2026",
+      "startDate": "2026-12-04",
+      "city": "Belleville",
+      "state": "MI",
+      "country": "US",
+      "expectedVenue": "Diamondback Music Hall",
+      "expectedAddress": "49345 S Interstate 94 Service Dr",
+      "facts": {},
+      "sources": [
+        {
+          "url": "https://www.diamondbackmusichall.com/tm-event/kb/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.ticketweb.com/event/kb-diamondback-music-hall-tickets/14328014",
+          "reviewedAt": "2026-11-05"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "price": "$40.63–$53.50"
+          },
+          "facts": {
+            "price": "Venue-advertised tickets: $16.95–$53.50; ticket options and availability may vary."
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:journey-to-bethlehem-joyful-noize-preshow-orlando-2026-12-13",
+      "startDate": "2026-12-13",
+      "city": "Orlando",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "Dr. Phillips Center for the Performing Arts",
+      "expectedAddress": "445 S Magnolia Ave",
+      "facts": {
+        "organizer": {
+          "name": "Suarez Entertainment Group"
+        },
+        "price": "Free admission; standby availability is not guaranteed.",
+        "ageRestriction": "All ages",
+        "publicNotice": "The musical currently has a standby line. Admission is subject to availability and is not guaranteed.",
+        "scheduleDetails": [
+          {
+            "label": "Main musical",
+            "text": "Journey to Bethlehem begins at 7 PM. DJ Bryce G’s preshow time has not been announced."
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://luma.com/toyelu89",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.drphillipscenter.org/show/journey-to-bethlehem-rvl7",
+          "reviewedAt": "2026-11-05"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "venue": "Dr. Phillips Center for the Performing Arts"
+          },
+          "facts": {
+            "venue": "Dr. Phillips Center for the Performing Arts — Walt Disney Theater"
+          },
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "expected": {
+            "officialUrl": "https://luma.com/toyelu89"
+          },
+          "facts": {
+            "officialUrl": "https://www.drphillipscenter.org/show/journey-to-bethlehem-rvl7"
+          },
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "expected": {
+            "ticketUrl": "https://luma.com/toyelu89"
+          },
+          "facts": {
+            "ticketUrl": "https://www.drphillipscenter.org/show/journey-to-bethlehem-rvl7"
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:drea-lp-sondaze-social-nashville-2026-12-20",
+      "startDate": "2026-12-20",
+      "city": "Nashville",
+      "state": "TN",
+      "country": "US",
+      "expectedVenue": "NoWhere Special",
+      "expectedAddress": "2000 Belcourt Ave",
+      "facts": {
+        "postalCode": "37212"
+      },
+      "sources": [
+        {
+          "url": "https://drealp.com/event/6785400/785411205/sondaze-social",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.nowherespecialnash.com",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "/Users/lorinwilliamson/Documents/Kingdom Circuit Workspaces/nov5-show-information-production/assets/events/drea-lp-sondaze-social-nashville-2026-12-20.png",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:flowfest-greenwood-2026-12-31",
+      "startDate": "2026-12-31",
+      "city": "Greenwood",
+      "state": "SC",
+      "country": "US",
+      "expectedVenue": "Real Life Church",
+      "expectedAddress": "2352 Highway 72/221 East",
+      "facts": {
+        "price": "Donation-based general admission."
+      },
+      "sources": [
+        {
+          "url": "https://events.humanitix.com/flowfest",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://events.humanitix.com/flowfest/tickets",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-jacksonville-fl-2027-01-15",
+      "startDate": "2027-01-15",
+      "city": "Jacksonville",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "VyStar Veterans Memorial Arena",
+      "expectedAddress": "300 A Philip Randolph Blvd",
+      "facts": {
+        "organizer": {
+          "name": "NewSong / TPR",
+          "url": "https://jamtour.com/"
+        },
+        "ageRestriction": "All ages"
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/01-15-Jacksonville.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-duluth-ga-2027-01-17",
+      "startDate": "2027-01-17",
+      "city": "Duluth",
+      "state": "GA",
+      "country": "US",
+      "expectedVenue": "Gas South Arena",
+      "expectedAddress": "6400 Sugarloaf Pkwy",
+      "facts": {
+        "organizer": {
+          "name": "NewSong / TPR",
+          "url": "https://jamtour.com/"
+        },
+        "ageRestriction": "All ages"
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/01-17-Duluth.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-kansas-city-mo-2027-01-23",
+      "startDate": "2027-01-23",
+      "city": "Kansas City",
+      "state": "MO",
+      "country": "US",
+      "expectedVenue": "T-Mobile Center",
+      "expectedAddress": "1407 Grand Blvd",
+      "facts": {
+        "organizer": {
+          "name": "NewSong / TPR",
+          "url": "https://jamtour.com/"
+        },
+        "ageRestriction": "All ages"
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/01-23-Kansas-City.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-nashville-tn-2027-01-29",
+      "startDate": "2027-01-29",
+      "city": "Nashville",
+      "state": "TN",
+      "country": "US",
+      "expectedVenue": "Bridgestone Arena",
+      "expectedAddress": "501 Broadway",
+      "facts": {
+        "organizer": {
+          "name": "NewSong / TPR",
+          "url": "https://jamtour.com/"
+        },
+        "ageRestriction": "All ages"
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/01-29-Nashville.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-columbus-oh-2027-02-06",
+      "startDate": "2027-02-06",
+      "city": "Columbus",
+      "state": "OH",
+      "country": "US",
+      "expectedVenue": "Schottenstein Center",
+      "expectedAddress": "555 Borror Dr",
+      "facts": {
+        "organizer": {
+          "name": "NewSong / TPR",
+          "url": "https://jamtour.com/"
+        },
+        "ageRestriction": "All ages"
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/02-06-Columbus.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-raleigh-nc-2027-02-12",
+      "startDate": "2027-02-12",
+      "city": "Raleigh",
+      "state": "NC",
+      "country": "US",
+      "expectedVenue": "Lenovo Center",
+      "expectedAddress": "1400 Edwards Mill Rd",
+      "facts": {
+        "organizer": {
+          "name": "NewSong / TPR",
+          "url": "https://jamtour.com/"
+        },
+        "ageRestriction": "All ages"
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/02-12-Raleigh.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-greensboro-nc-2027-02-13",
+      "startDate": "2027-02-13",
+      "city": "Greensboro",
+      "state": "NC",
+      "country": "US",
+      "expectedVenue": "First Horizon Coliseum",
+      "expectedAddress": "1921 W Gate City Blvd",
+      "facts": {
+        "organizer": {
+          "name": "NewSong / TPR",
+          "url": "https://jamtour.com/"
+        },
+        "ageRestriction": "All ages"
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/02-13-Greensboro.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-springfield-mo-2027-02-19",
+      "startDate": "2027-02-19",
+      "city": "Springfield",
+      "state": "MO",
+      "country": "US",
+      "expectedVenue": "Great Southern Bank Arena",
+      "expectedAddress": "685 S John Q Hammons Pkwy",
+      "facts": {
+        "organizer": {
+          "name": "NewSong / TPR",
+          "url": "https://jamtour.com/"
+        },
+        "ageRestriction": "All ages"
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/02-19-Springfield.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-southaven-ms-2027-02-21",
+      "startDate": "2027-02-21",
+      "city": "Southaven",
+      "state": "MS",
+      "country": "US",
+      "expectedVenue": "Landers Center",
+      "expectedAddress": "4560 Venture Dr",
+      "facts": {
+        "organizer": {
+          "name": "NewSong / TPR",
+          "url": "https://jamtour.com/"
+        },
+        "ageRestriction": "All ages"
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/02-21-Southaven.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-birmingham-al-2027-02-27",
+      "startDate": "2027-02-27",
+      "city": "Birmingham",
+      "state": "AL",
+      "country": "US",
+      "expectedVenue": "Legacy Arena at the BJCC",
+      "expectedAddress": "1898 9th Ave N",
+      "facts": {
+        "organizer": {
+          "name": "NewSong / TPR",
+          "url": "https://jamtour.com/"
+        },
+        "ageRestriction": "All ages"
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/02-27-Birmingham.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-tupelo-ms-2027-03-07",
+      "startDate": "2027-03-07",
+      "city": "Tupelo",
+      "state": "MS",
+      "country": "US",
+      "expectedVenue": "Huntington Bank Arena",
+      "expectedAddress": "375 E Main St",
+      "facts": {
+        "organizer": {
+          "name": "NewSong / TPR",
+          "url": "https://jamtour.com/"
+        },
+        "ageRestriction": "All ages"
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/03-07-Tupelo.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-bossier-city-la-2027-03-14",
+      "startDate": "2027-03-14",
+      "city": "Bossier City",
+      "state": "LA",
+      "country": "US",
+      "expectedVenue": "Brookshire Grocery Arena",
+      "expectedAddress": "2000 Brookshire Arena Dr",
+      "facts": {
+        "organizer": {
+          "name": "NewSong / TPR",
+          "url": "https://jamtour.com/"
+        },
+        "ageRestriction": "All ages"
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/03-14-Bossier-City.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:center-stage-passion-fest-raleigh-2027-03-20",
+      "startDate": "2027-03-20",
+      "city": "Raleigh",
+      "state": "NC",
+      "country": "US",
+      "expectedVenue": "Vision Church RDU",
+      "expectedAddress": "5808 Departure Dr",
+      "facts": {},
+      "sources": [
+        {
+          "url": "https://givebutter.com/center-stage-2027-dudtjq",
+          "reviewedAt": "2026-11-05"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "publicNotice": "Lineup to be announced. Outdoor Fan Fest starts at 3 PM; festival doors open at 5 PM."
+          },
+          "facts": {
+            "publicNotice": "The organizer lists March 20 as tentative; the date may change."
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:rural-music-festival-2027",
+      "startDate": "2027-08-27",
+      "city": "Isle",
+      "state": "MN",
+      "country": "US",
+      "expectedVenue": "Redemption Hill",
+      "expectedAddress": "43694 Highway 47",
+      "facts": {},
+      "sources": [
+        {
+          "url": "https://www.facebook.com/ruralmusicministries/posts/pfbid02zg6G5CYRFPDYxgvY2VwqSDbDCRUKVHk1aBShoy6QXWSjdEPu7n36eeCtye6prDWml",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.ruralmusic.org/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "/Users/lorinwilliamson/Documents/Kingdom Circuit Workspaces/nov5-show-information-production/assets/events/rural-music-festival-2027.jpg",
+          "reviewedAt": "2026-11-05"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "officialUrl": "https://www.facebook.com/ruralmusicministries/posts/pfbid02zg6G5CYRFPDYxgvY2VwqSDbDCRUKVHk1aBShoy6QXWSjdEPu7n36eeCtye6prDWml"
+          },
+          "facts": {
+            "officialUrl": "https://www.ruralmusic.org/"
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:the-main-event-washington-2026-11-12",
+      "startDate": "2026-11-12",
+      "city": "Washington",
+      "state": "DC",
+      "country": "US",
+      "expectedVenue": "Simple Underground Stage",
+      "expectedAddress": "5420 3rd Street NW",
+      "facts": {},
+      "sources": [
+        {
+          "url": "https://posh.vip/e/the-main-event-8",
+          "reviewedAt": "2026-11-05"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "price": "$10 presale; $20 at the door (ticket fees may apply)"
+          },
+          "facts": {
+            "price": "US$10 presale (US$12.71 including listed ticket fees); US$20 at the door."
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:pull-up-and-praise-pickering-2026-11-13",
+      "startDate": "2026-11-13",
+      "city": "Pickering",
+      "state": "ON",
+      "country": "CA",
+      "expectedVenue": "Remarkable Event Centre",
+      "expectedAddress": "1734 Orangebrook Court, Unit 2",
+      "facts": {
+        "organizer": {
+          "name": "Shawn Simpson / Heavyweight Fest"
+        },
+        "ageRestriction": "All ages"
+      },
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/e/pull-up-and-praise-tickets-2003103588756",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:the-holy-ghost-experience-chattanooga-2026-11-14",
+      "startDate": "2026-11-14",
+      "city": "Chattanooga",
+      "state": "TN",
+      "country": "US",
+      "expectedVenue": "4850 Highway 58",
+      "expectedAddress": "4850 Highway 58",
+      "facts": {
+        "price": "US$17.85 currently listed on Eventbrite."
+      },
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/e/the-holy-ghost-experience-tickets-2003759046247",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:whatuprg-houston-2026-11-19",
+      "startDate": "2026-11-19",
+      "city": "Houston",
+      "state": "TX",
+      "country": "US",
+      "expectedVenue": "Rockefellers",
+      "expectedAddress": "3620 Washington Ave",
+      "facts": {
+        "organizer": {
+          "name": "FREESUNDAES"
+        },
+        "ageRestriction": "All ages",
+        "price": "From US$30.66, including the fees shown by DICE.",
+        "scheduleDetails": [
+          {
+            "label": "Announced set times",
+            "text": "De La Cruz 7:45 PM; aftrthght 8:15 PM; WHATUPRG 9 PM."
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://dice.fm/partner/tickets/event/yo5xer-whatuprg-w-aftrthght-de-la-cruz-19th-nov-rockerfellers-houston-tickets",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:rap-go-round-west-palm-beach-2026-11-20",
+      "startDate": "2026-11-20",
+      "city": "West Palm Beach",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "2740 Parker Avenue",
+      "expectedAddress": "2740 Parker Avenue",
+      "facts": {},
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/e/rap-go-round-tickets-2002700148054",
+          "reviewedAt": "2026-11-05"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "organizer": "Holy Waters Ministry Network"
+          },
+          "facts": {
+            "organizer": {
+              "name": "Catalyst Hip Hop / Holy Waters Ministry Network"
+            }
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:bandsintown:107625490",
+      "startDate": "2026-11-22",
+      "city": "Sacramento",
+      "state": "CA",
+      "country": "US",
+      "expectedVenue": "The Guild Theatre",
+      "expectedAddress": "2828 35th Street",
+      "facts": {
+        "organizer": {
+          "name": "HOG MOB Ministries"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/e/ghetto-gospel-sevin-donate-live-in-concert-tickets-2003581552358",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:cj-emulous-state-youth-conference-cocoa-2026",
+      "startDate": "2026-11-27",
+      "city": "Cocoa",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "Venue not provided",
+      "expectedAddress": "",
+      "facts": {
+        "startTime": "19:00"
+      },
+      "sources": [
+        {
+          "url": "https://www.cjemulous.com/event-details/state-youth-conference-w-cj-emulous",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:miracles-in-the-valley-mesa-2026-12-05",
+      "startDate": "2026-12-05",
+      "city": "Mesa",
+      "state": "AZ",
+      "country": "US",
+      "expectedVenue": "Gateway City Church",
+      "expectedAddress": "1440 S Country Club Drive, Suite 12",
+      "facts": {
+        "organizer": {
+          "name": "Gateway City Church / BF Ministries / Miracle Ops / Soldiers For Christ"
+        },
+        "scheduleDetails": [
+          {
+            "label": "Vehicle roll-in",
+            "text": "10 AM–noon; the public event runs noon–5 PM."
+          },
+          {
+            "label": "Car-show entry",
+            "text": "Cars US$25, bikes US$15, pedal cars US$10, or a blanket/toy donation; spectator admission is not specified."
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.instagram.com/sevinhogmob/p/Dexk5PxvlTZ/",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:kb-strength-to-stand-january-pigeon-forge-2027-01-16",
+      "startDate": "2027-01-16",
+      "city": "Pigeon Forge",
+      "state": "TN",
+      "country": "US",
+      "expectedVenue": "LeConte Center at Pigeon Forge",
+      "expectedAddress": "2986 Teaster Lane",
+      "facts": {
+        "organizer": {
+          "name": "Scott Dawson Evangelistic Association",
+          "url": "https://www.strengthtostand.org/"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.strengthtostand.org/sts-conference",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.strengthtostand.org/jan-registration",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "bandsintown:1037809090",
+      "startDate": "2027-01-22",
+      "city": "Nashville",
+      "state": "TN",
+      "country": "US",
+      "expectedVenue": "Cannery Hall — Mainstage",
+      "expectedAddress": "1 Cannery Row",
+      "facts": {
+        "organizer": {
+          "name": "AEG Presents"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.axs.com/events/1304795/nobigdyl-unplugged-tickets",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-des-moines-ia-2027-01-24",
+      "startDate": "2027-01-24",
+      "city": "Des Moines",
+      "state": "IA",
+      "country": "US",
+      "expectedVenue": "Casey's Center",
+      "expectedAddress": "233 Center St",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/01-24-Des-Moines.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "scheduleDetails": [
+              {
+                "label": "Jam Nation entry",
+                "text": "3:00 PM"
+              },
+              {
+                "label": "General entry",
+                "text": "4:00 PM"
+              },
+              {
+                "label": "Pre-Jam begins",
+                "text": "5:00 PM"
+              },
+              {
+                "label": "Main show",
+                "text": "5:00 PM"
+              },
+              {
+                "label": "Address",
+                "text": "233 Center St, Des Moines, IA 50309"
+              },
+              {
+                "label": "Admission",
+                "text": "$15 donation at the door; no tickets required for general admission."
+              }
+            ]
+          },
+          "facts": {
+            "scheduleDetails": [
+              {
+                "label": "General admission",
+                "text": "US$15 requested donation per person ages 3 and up at the door, payable by cash or check; no general-admission ticket required."
+              }
+            ]
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-little-rock-ar-2027-01-31",
+      "startDate": "2027-01-31",
+      "city": "Little Rock",
+      "state": "AR",
+      "country": "US",
+      "expectedVenue": "Simmons Bank Arena",
+      "expectedAddress": "1 Simmons Bank Arena Dr",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/01-31-LittleRock.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "scheduleDetails": [
+              {
+                "label": "Jam Nation entry",
+                "text": "3:00 PM"
+              },
+              {
+                "label": "General entry",
+                "text": "4:00 PM"
+              },
+              {
+                "label": "Pre-Jam begins",
+                "text": "4:00 PM"
+              },
+              {
+                "label": "Main show",
+                "text": "5:00 PM"
+              },
+              {
+                "label": "Address",
+                "text": "1 Simmons Bank Arena Dr, North Little Rock, AR 72114"
+              },
+              {
+                "label": "Admission",
+                "text": "$15 donation at the door; no tickets required for general admission."
+              }
+            ]
+          },
+          "facts": {
+            "scheduleDetails": [
+              {
+                "label": "General admission",
+                "text": "US$15 requested donation per person ages 3 and up at the door, payable by cash or check; no general-admission ticket required."
+              }
+            ]
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:lovesick-fest-irvine-2027-02-05",
+      "startDate": "2027-02-05",
+      "city": "Irvine",
+      "state": "CA",
+      "country": "US",
+      "expectedVenue": "Oceans Church",
+      "expectedAddress": "9800 Muirlands Blvd",
+      "facts": {
+        "organizer": {
+          "name": "TPR.",
+          "url": "https://tprlive.co/"
+        },
+        "scheduleDetails": [
+          {
+            "label": "VIP entry",
+            "text": "VIP doors open at 4:45 PM; general-admission doors at 5 PM."
+          },
+          {
+            "label": "Tickets for children",
+            "text": "Attendees over age 2 require their own ticket."
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.ticketweb.com/event/lovesick-fest-irvine-oceans-church-tickets/14344534",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://tprlive.co/products/lovesick-fest-irvine-ca-february-5-2027",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-cincinnati-oh-2027-02-07",
+      "startDate": "2027-02-07",
+      "city": "Cincinnati",
+      "state": "OH",
+      "country": "US",
+      "expectedVenue": "Heritage Bank Center",
+      "expectedAddress": "100 Broadway",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/02-07-Cincinnati.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "scheduleDetails": [
+              {
+                "label": "Jam Nation entry",
+                "text": "2:30 PM"
+              },
+              {
+                "label": "General entry",
+                "text": "3:00 PM"
+              },
+              {
+                "label": "Pre-Jam begins",
+                "text": "4:00 PM"
+              },
+              {
+                "label": "Main show",
+                "text": "5:00 PM"
+              },
+              {
+                "label": "Address",
+                "text": "100 Broadway, Cincinnati, OH 45202"
+              },
+              {
+                "label": "Admission",
+                "text": "$15 donation at the door; no tickets required for general admission."
+              }
+            ]
+          },
+          "facts": {
+            "scheduleDetails": [
+              {
+                "label": "General admission",
+                "text": "US$15 requested donation per person ages 3 and up at the door, payable by cash or check; no general-admission ticket required."
+              }
+            ]
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-mobile-al-2027-02-28",
+      "startDate": "2027-02-28",
+      "city": "Mobile",
+      "state": "AL",
+      "country": "US",
+      "expectedVenue": "USA Mitchell Center",
+      "expectedAddress": "5950 Old Shell Rd",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/02-28-Mobile.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "scheduleDetails": [
+              {
+                "label": "Jam Nation entry",
+                "text": "3:00 PM"
+              },
+              {
+                "label": "General entry",
+                "text": "4:00 PM"
+              },
+              {
+                "label": "Pre-Jam begins",
+                "text": "4:00 PM"
+              },
+              {
+                "label": "Main show",
+                "text": "5:00 PM"
+              },
+              {
+                "label": "Address",
+                "text": "5950 Old Shell Rd, Mobile, AL 36608"
+              },
+              {
+                "label": "Admission",
+                "text": "$15 donation at the door; no tickets required for general admission."
+              }
+            ]
+          },
+          "facts": {
+            "scheduleDetails": [
+              {
+                "label": "General admission",
+                "text": "US$15 requested donation per person ages 3 and up at the door, payable by cash or check; no general-admission ticket required."
+              }
+            ]
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-knoxville-tn-2027-03-05",
+      "startDate": "2027-03-05",
+      "city": "Knoxville",
+      "state": "TN",
+      "country": "US",
+      "expectedVenue": "Thompson-Boling Arena at Food City Center",
+      "expectedAddress": "1600 Phillip Fulmer Way #202",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/03-05-Knoxville.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "scheduleDetails": [
+              {
+                "label": "Jam Nation entry",
+                "text": "5:00 PM"
+              },
+              {
+                "label": "General entry",
+                "text": "6:00 PM"
+              },
+              {
+                "label": "Pre-Jam begins",
+                "text": "6:00 PM"
+              },
+              {
+                "label": "Main show",
+                "text": "7:00 PM"
+              },
+              {
+                "label": "Address",
+                "text": "1600 Phillip Fulmer Way #202, Knoxville, TN 37996"
+              },
+              {
+                "label": "Admission",
+                "text": "$15 donation at the door; no tickets required for general admission."
+              }
+            ]
+          },
+          "facts": {
+            "scheduleDetails": [
+              {
+                "label": "General admission",
+                "text": "US$15 requested donation per person ages 3 and up at the door, payable by cash or check; no general-admission ticket required."
+              }
+            ]
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-wichita-ks-2027-03-12",
+      "startDate": "2027-03-12",
+      "city": "Wichita",
+      "state": "KS",
+      "country": "US",
+      "expectedVenue": "INTRUST Bank Arena",
+      "expectedAddress": "500 E Waterman St",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/03-12-Wichita.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "scheduleDetails": [
+              {
+                "label": "Jam Nation entry",
+                "text": "5:00 PM"
+              },
+              {
+                "label": "General entry",
+                "text": "6:00 PM"
+              },
+              {
+                "label": "Pre-Jam begins",
+                "text": "6:00 PM"
+              },
+              {
+                "label": "Main show",
+                "text": "7:00 PM"
+              },
+              {
+                "label": "Address",
+                "text": "500 E Waterman St, Wichita, KS 67202"
+              },
+              {
+                "label": "Admission",
+                "text": "$15 donation at the door; no tickets required for general admission."
+              }
+            ]
+          },
+          "facts": {
+            "scheduleDetails": [
+              {
+                "label": "General admission",
+                "text": "US$15 requested donation per person ages 3 and up at the door, payable by cash or check; no general-admission ticket required."
+              }
+            ]
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-charlotte-nc-2027-03-19",
+      "startDate": "2027-03-19",
+      "city": "Charlotte",
+      "state": "NC",
+      "country": "US",
+      "expectedVenue": "Bojangles Coliseum",
+      "expectedAddress": "2700 E Independence Blvd",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/03-19-Charlotte.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "scheduleDetails": [
+              {
+                "label": "Jam Nation entry",
+                "text": "5:00 PM"
+              },
+              {
+                "label": "General entry",
+                "text": "6:00 PM"
+              },
+              {
+                "label": "Pre-Jam begins",
+                "text": "6:00 PM"
+              },
+              {
+                "label": "Main show",
+                "text": "7:00 PM"
+              },
+              {
+                "label": "Address",
+                "text": "2700 E Independence Blvd, Charlotte, NC 28205"
+              },
+              {
+                "label": "Admission",
+                "text": "$15 donation at the door; no tickets required for general admission."
+              }
+            ]
+          },
+          "facts": {
+            "scheduleDetails": [
+              {
+                "label": "General admission",
+                "text": "US$15 requested donation per person ages 3 and up at the door, payable by cash or check; no general-admission ticket required."
+              }
+            ]
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-state-college-pa-2027-03-20",
+      "startDate": "2027-03-20",
+      "city": "State College",
+      "state": "PA",
+      "country": "US",
+      "expectedVenue": "Bryce Jordan Center",
+      "expectedAddress": "720 Curtin Rd",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/03-20-State-College.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "scheduleDetails": [
+              {
+                "label": "Jam Nation entry",
+                "text": "4:00 PM"
+              },
+              {
+                "label": "General entry",
+                "text": "5:00 PM"
+              },
+              {
+                "label": "Pre-Jam begins",
+                "text": "5:00 PM"
+              },
+              {
+                "label": "Main show",
+                "text": "6:00 PM"
+              },
+              {
+                "label": "Address",
+                "text": "720 Curtin Rd, State College, PA 16801"
+              },
+              {
+                "label": "Admission",
+                "text": "$15 donation at the door; no tickets required for general admission."
+              }
+            ]
+          },
+          "facts": {
+            "scheduleDetails": [
+              {
+                "label": "General admission",
+                "text": "US$15 requested donation per person ages 3 and up at the door, payable by cash or check; no general-admission ticket required."
+              }
+            ]
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:lecrae-wild-adventures-valdosta-2027-05-08",
+      "startDate": "2027-05-08",
+      "city": "Valdosta",
+      "state": "GA",
+      "country": "US",
+      "expectedVenue": "Wild Adventures LIVE! Amphitheater",
+      "expectedAddress": "3766 Old Clyattville Road",
+      "facts": {
+        "scheduleDetails": [
+          {
+            "label": "Reserved seating",
+            "text": "General-public reserved seats cost US$15–US$20 extra and go on sale March 1, 2027; valid park admission or a season pass is still required."
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://www.wildadventures.com/explore-the-park/concerts/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.wildadventures.com/explore-the-park/concerts",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:anthem-night-dmv-capitol-heights-2026-11-20",
+      "startDate": "2026-11-20",
+      "city": "Capitol Heights",
+      "state": "MD",
+      "country": "US",
+      "expectedVenue": "7230 Central Avenue",
+      "expectedAddress": "7230 Central Avenue",
+      "facts": {
+        "organizer": {
+          "name": "Anthem Nights Global LLC"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://brushfire.com/anthemnights/dmv/643773",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:mayia-night-of-hope-apex-2026-11-20",
+      "startDate": "2026-11-20",
+      "city": "Apex",
+      "state": "NC",
+      "country": "US",
+      "expectedVenue": "Apex Baptist Church Fellowship Hall",
+      "expectedAddress": "110 S Salem Street",
+      "facts": {
+        "organizer": {
+          "name": "Carolina Care Center"
+        },
+        "price": "$69 regular individual admission (fundraising dinner and live entertainment)"
+      },
+      "sources": [
+        {
+          "url": "https://carolinacarecenter.org/hope/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://secure.qgiv.com/for/carolinacarecenter/event/hope/",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:whatuprg-dallas-2026-11-20",
+      "startDate": "2026-11-20",
+      "city": "Fort Worth",
+      "state": "TX",
+      "country": "US",
+      "expectedVenue": "Ridglea Room",
+      "expectedAddress": "6025 Camp Bowie Blvd",
+      "facts": {
+        "organizer": {
+          "name": "FREESUNDAES"
+        },
+        "ageRestriction": "All ages",
+        "price": "$30.66 advertised ticket total"
+      },
+      "sources": [
+        {
+          "url": "https://dice.fm/partner/tickets/event/mxynyr-whatuprg-w-aftrthght-de-la-cruz-20th-nov-ridglea-room-fort-worth-tickets",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:whatuprg-san-antonio-2026-11-22",
+      "startDate": "2026-11-22",
+      "city": "San Antonio",
+      "state": "TX",
+      "country": "US",
+      "expectedVenue": "Paper Tiger",
+      "expectedAddress": "2410 N St Mary's St",
+      "facts": {
+        "organizer": {
+          "name": "Paper Tiger"
+        },
+        "price": "General admission $25 plus fees and any applicable tax"
+      },
+      "sources": [
+        {
+          "url": "https://wl.eventim.us/event/whatuprg/707572?afflky=PaperTiger",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:kevi-morse-invasion-sparta-2026-12-05",
+      "startDate": "2026-12-05",
+      "city": "Sparta",
+      "state": "MI",
+      "country": "US",
+      "expectedVenue": "Sparta Center Church",
+      "expectedAddress": "38 S State Street",
+      "facts": {
+        "organizer": {
+          "name": "Sparta Center Church"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/e/invasion-2026-tickets-2000303583866",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:tommy-royale-cars-christ-orlando-2026-12-05",
+      "startDate": "2026-12-05",
+      "city": "Orlando",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "Dezerland Park Orlando",
+      "expectedAddress": "5250 International Dr",
+      "facts": {
+        "organizer": {
+          "name": "Cars & Christ Inc."
+        }
+      },
+      "sources": [
+        {
+          "url": "https://events.humanitix.com/cars-and-christ-orlando",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:alex-jean-sony-hall-new-york-2026-12-28",
+      "startDate": "2026-12-28",
+      "city": "New York",
+      "state": "NY",
+      "country": "US",
+      "expectedVenue": "Sony Hall",
+      "expectedAddress": "235 W 46th St",
+      "facts": {
+        "price": "Standing room $25 advance / $30 day of show; VIP wing seating $50 advance / $55 day of show (fees not confirmed)"
+      },
+      "sources": [
+        {
+          "url": "https://sonyhall.com/shows/?eid=TWL7887887",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.ticketmaster.com/event/0000655DD29EDB6F",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-tampa-fl-2027-01-16",
+      "startDate": "2027-01-16",
+      "city": "Tampa",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "Yuengling Center",
+      "expectedAddress": "12499 USF Bull Run Drive",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/01-16-Tampa.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-tulsa-ok-2027-01-22",
+      "startDate": "2027-01-22",
+      "city": "Tulsa",
+      "state": "OK",
+      "country": "US",
+      "expectedVenue": "BOK Center",
+      "expectedAddress": "200 S Denver Ave.",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/01-22-Tulsa.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-evansville-in-2027-01-28",
+      "startDate": "2027-01-28",
+      "city": "Evansville",
+      "state": "IN",
+      "country": "US",
+      "expectedVenue": "Ford Center",
+      "expectedAddress": "1 SE Martin Luther King Jr Blvd",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/01-28-Evansville.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-louisville-ky-2027-01-30",
+      "startDate": "2027-01-30",
+      "city": "Louisville",
+      "state": "KY",
+      "country": "US",
+      "expectedVenue": "KFC Yum! Center",
+      "expectedAddress": "1 Arena Plaza",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/01-30-Louisville.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-grand-rapids-mi-2027-02-04",
+      "startDate": "2027-02-04",
+      "city": "Grand Rapids",
+      "state": "MI",
+      "country": "US",
+      "expectedVenue": "Van Andel Arena",
+      "expectedAddress": "130 Fulton St W",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/02-04-Grand-Rapids.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-charleston-wv-2027-02-05",
+      "startDate": "2027-02-05",
+      "city": "Charleston",
+      "state": "WV",
+      "country": "US",
+      "expectedVenue": "Vandalia Health Coliseum",
+      "expectedAddress": "200 Civic Center Dr",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/02-05-Charleston.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-reading-pa-2027-02-11",
+      "startDate": "2027-02-11",
+      "city": "Reading",
+      "state": "PA",
+      "country": "US",
+      "expectedVenue": "Santander Arena",
+      "expectedAddress": "700 Penn St",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/02-11-Reading.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-peoria-il-2027-02-18",
+      "startDate": "2027-02-18",
+      "city": "Peoria",
+      "state": "IL",
+      "country": "US",
+      "expectedVenue": "Peoria Civic Center Arena",
+      "expectedAddress": "201 SW Jefferson Ave",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/02-18-Peoria.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-st-louis-mo-2027-02-20",
+      "startDate": "2027-02-20",
+      "city": "St. Louis",
+      "state": "MO",
+      "country": "US",
+      "expectedVenue": "The Family Arena",
+      "expectedAddress": "2002 Arena Pkwy",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/02-20-St-Louis.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-greenville-sc-2027-02-26",
+      "startDate": "2027-02-26",
+      "city": "Greenville",
+      "state": "SC",
+      "country": "US",
+      "expectedVenue": "Bon Secours Wellness Arena",
+      "expectedAddress": "650 N Academy St",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/02-26-Greenville.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-fort-wayne-in-2027-03-04",
+      "startDate": "2027-03-04",
+      "city": "Fort Wayne",
+      "state": "IN",
+      "country": "US",
+      "expectedVenue": "Allen County War Memorial Coliseum",
+      "expectedAddress": "4000 Parnell Ave",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/03-04-Fort-Wayne.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-indianapolis-in-2027-03-06",
+      "startDate": "2027-03-06",
+      "city": "Indianapolis",
+      "state": "IN",
+      "country": "US",
+      "expectedVenue": "Gainbridge Fieldhouse",
+      "expectedAddress": "125 S Pennsylvania St",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/03-06-Indianapolis.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-oklahoma-city-ok-2027-03-13",
+      "startDate": "2027-03-13",
+      "city": "Oklahoma City",
+      "state": "OK",
+      "country": "US",
+      "expectedVenue": "Paycom Center",
+      "expectedAddress": "100 W Reno Ave",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/03-13-Oklahoma-City.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:winter-jam-2027-ypsilanti-mi-2027-03-21",
+      "startDate": "2027-03-21",
+      "city": "Ypsilanti",
+      "state": "MI",
+      "country": "US",
+      "expectedVenue": "George Gervin Game Above Center",
+      "expectedAddress": "799 N Hewitt Rd",
+      "facts": {
+        "ageRestriction": "All ages",
+        "organizer": {
+          "name": "NewSong / TPR"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://jamtour.com/03-21-Ypsilanti.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://jamtour.com/faq.html",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://bjc.psu.edu/news/detail/winter-jam-2027-brings-crowder-anne-wilson-andy-mineo-strings-heart-terrian-red-newsong-to-the-bryce-jordan-center",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "official:0dd5f599b4db080206cf",
+      "startDate": "2027-05-01",
+      "city": "Houston",
+      "state": "TX",
+      "country": "US",
+      "expectedVenue": "Match Midtown Arts & Theater Center Houston",
+      "expectedAddress": "3400 Main St",
+      "facts": {
+        "organizer": {
+          "name": "APTITUDE"
+        },
+        "ticketUrlVerified": false
+      },
+      "sources": [
+        {
+          "url": "https://www.instagram.com/p/DfTOHOODGjO/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://music.apple.com/us/concerts/ce.b01ccaf9-dcf3-44a6-afbf-4bd6d2fc60ae",
+          "reviewedAt": "2026-11-05"
+        }
+      ],
+      "corrections": [
+        {
+          "expected": {
+            "ticketUrl": "https://music.apple.com/us/concerts/ce.b01ccaf9-dcf3-44a6-afbf-4bd6d2fc60ae"
+          },
+          "facts": {
+            "ticketUrl": ""
+          },
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:hulvey-freedom-conference-san-antonio-2027-06-17",
+      "startDate": "2027-06-17",
+      "city": "San Antonio",
+      "state": "TX",
+      "country": "US",
+      "expectedVenue": "Freeman Coliseum",
+      "expectedAddress": "3201 E Houston St",
+      "facts": {
+        "organizer": {
+          "name": "Community Bible Church"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.freedomconfsatx.com/",
+          "reviewedAt": "2026-11-05"
+        },
+        {
+          "url": "https://www.communitybible.com/Registration/freedomconf2027",
+          "reviewedAt": "2026-11-05"
+        }
+      ]
+    },
+    {
+      "id": "manual:believers-social-flavor-fest-kickoff-tampa-2026-11-05",
+      "startDate": "2026-11-05",
+      "city": "Tampa",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "Crossover Church",
+      "expectedAddress": "1235 E Fowler Ave",
+      "facts": {
+        "organizer": {
+          "name": "Holy Motion and The Believers Social"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.instagram.com/p/DfPpqewEYCx/",
+          "reviewedAt": "2026-11-05",
+          "quoteOrSummary": "Existing accepted production description explicitly says presented by Holy Motion and The Believers Social, in partnership with Crossover Church and Flavor Fest. Surface that existing presenter credit in its dedicated row; DJ PARTYwithParks remains the DJ host. Fresh Instagram access is restricted; this is preservation of the existing accepted credit, not a new claim of source verification."
+        }
+      ]
+    },
+    {
+      "id": "manual:botzy-mike-summers-jwoodz-live-band-los-angeles-2026-11-10",
+      "startDate": "2026-11-10",
+      "city": "Los Angeles",
+      "state": "CA",
+      "country": "US",
+      "expectedVenue": "Location shared after RSVP (invite only)",
+      "expectedAddress": "",
+      "facts": {
+        "organizer": {
+          "name": "BOTZY and Mike Summers"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://botzy.wtf/rsvp",
+          "reviewedAt": "2026-11-05",
+          "quoteOrSummary": "Existing accepted public description explicitly says BOTZY and Mike Summers present the live band album experience. Surface that existing presenter credit. Fresh RSVP site is inaccessible; the flyer was visually reviewed. Keep invitation-only status and address withheld."
+        }
+      ]
     }
   ]
 }

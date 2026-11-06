@@ -11,6 +11,8 @@ from pathlib import Path
 import re
 from zoneinfo import ZoneInfo
 
+from show_information_model import PRIVATE_ADDRESS_FIELDS, is_private_event
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -31,6 +33,40 @@ def matches(event, private):
     return any(re.search(r'bandsintown\.com/[et]/' + num + r'(?:[/?#-]|$)',
                          str(event.get(field) or ''))
                for num in numbers for field in ('officialUrl', 'ticketUrl'))
+
+
+def redact_public_feeds(site, root=ROOT):
+    """Remove private street fields only from generated public feed copies.
+
+    Source records, admission evidence, history, identities and listing counts
+    stay intact. This runs at the final publication layer, after raw records
+    have already supplied the rest of the site build.
+    """
+    if site.resolve() == root.resolve():
+        raise ValueError('Private feed redaction requires a separate public artifact')
+    private = records(root)
+    changed = 0
+    for name in ('events.json', 'supplemental-events.json'):
+        path = site / name
+        rows = json.loads(path.read_text())
+        updated = copy.deepcopy(rows)
+        for event in updated:
+            if is_private_event(event) or any(matches(event, held) for held in private):
+                for field in PRIVATE_ADDRESS_FIELDS:
+                    event.pop(field, None)
+        if updated != rows:
+            path.write_text(json.dumps(updated, indent=2, ensure_ascii=False) + '\n')
+            changed += 1
+    return changed
+
+
+def verify_public_feeds(site, root=ROOT):
+    private = records(root)
+    for name in ('events.json', 'supplemental-events.json'):
+        for event in json.loads((site / name).read_text()):
+            if is_private_event(event) or any(matches(event, held) for held in private):
+                leaked = [field for field in PRIVATE_ADDRESS_FIELDS if event.get(field)]
+                assert not leaked, f'Private address fields exposed in {name}: {event.get("id")}: {leaked}'
 
 
 def apply(root=ROOT, as_of=None):
@@ -169,6 +205,7 @@ def verify(site, root=ROOT):
     from build_seo_site import event_path
     from calendar_maintenance import artist_errors
     private = records(root)
+    verify_public_feeds(site, root)
     catalog = json.loads((site / 'assets/fan-show-catalog.json').read_text())
     paths = {path for event in private for path in
              [event_path(event), *event.get('legacyEventPaths', [])]}

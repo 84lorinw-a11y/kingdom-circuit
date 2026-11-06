@@ -50,7 +50,9 @@ class KBDiamondbackProductionTests(unittest.TestCase):
 
     def test_event_details_match_the_official_venue_and_ticket_listings(self):
         event = next(event for event in self.events if event.get("id") == RUNTIME_ID)
-        expected = overrides.KB_DIAMONDBACK_EVENT
+        # The current official venue listing has a newer advertised range.
+        expected = {**overrides.KB_DIAMONDBACK_EVENT,
+                    'price': 'Venue-advertised tickets: $16.95–$53.50; ticket options and availability may vary.'}
         for field in (
             "title", "startDate", "startTime", "doorsTime", "timezone",
             "venue", "address", "postalCode", "city", "state", "artists",
