@@ -291,6 +291,34 @@ def detail_transform(text, record):
 def listing_transform(text, ctx):
     doc = Document(text)
     changes = []
+    # Artist schedules use compact links rather than the full event-card
+    # markup. The pinned redesign copies their venue text before this shared
+    # fact layer runs, so reconcile that one label without rebuilding the row.
+    for link in doc.nodes:
+        if link.tag != 'a' or not (link.has('kc-rd-show-row') or link.has('kc-rd-next-show')):
+            continue
+        record = ctx['paths'].get(link.attrs.get('href'))
+        if not record:
+            continue
+        expected = record['venueLabel']
+        for venue in doc.nodes:
+            if not (link.start < venue.start < link.end and (venue.has('kc-rd-show-venue') or venue.has('kc-rd-next-venue'))):
+                continue
+            current = doc.text(venue)
+            if current == expected or (venue.has('kc-rd-next-venue') and current.startswith(expected + ' · ')):
+                continue
+            # The Next Show line may append a time. Keep the existing clock
+            # exactly; a middot within a venue name alone is not a clock.
+            clock = re.search(r'( · \d{1,2}(?::\d{2})?\s*[AP]M(?:\s+[A-Z]{2,5})?)$', current) if venue.has('kc-rd-next-venue') else None
+            suffix = clock[1] if clock else ''
+            previous = current[:-len(suffix)] if suffix else current
+            changes.append((venue.opening_end, venue.closing_start, escape(expected + suffix)))
+            aria = link.attrs.get('aria-label', '')
+            base, separator, title_status = aria.partition(' | ')
+            old_suffix = ', ' + previous
+            if base.endswith(old_suffix):
+                corrected = base[:-len(old_suffix)] + ', ' + expected + separator + title_status
+                changes.append((link.start, link.opening_end, attributes(text[link.start:link.opening_end], {'aria-label': corrected})))
     for card in doc.nodes:
         if not (card.has('event-card') or card.has('kc-discovery-show')):
             continue
