@@ -1221,9 +1221,9 @@
     "title": "Heliopolis Soundoff Summit Showcase",
     "startDate": "2026-11-13",
     "endDate": "2026-11-14",
-    "startTime": "",
+    "startTime": "22:00",
     "endTime": "01:00",
-    "startDateTime": "",
+    "startDateTime": "2026-11-13T22:00:00-06:00",
     "endDateTime": "2026-11-14T01:00:00-06:00",
     "timezone": "America/Edmonton",
     "venue": "Heliopolis",
@@ -1280,8 +1280,8 @@
     "lastVerified": "2026-11-03T19:41:44Z",
     "auditVerified": "2026-11-03",
     "price": "Pay what you can at the door; see Eventbrite for online tickets",
-    "publicDescription": "A mixed hip-hop showcase featuring Christian rapper Zaire Ink alongside the announced bill. Published event, performance and doors times differ; check with Music Calgary for the final schedule. The published event window ends at 1 AM Saturday, November 14.",
-    "publicNotice": "Show schedule is not confirmed because official sources disagree. Confirm with Music Calgary before attending.",
+    "publicDescription": "A mixed hip-hop showcase organized by Music Calgary, featuring Christian rapper Zaire Ink alongside the announced bill. The event starts at 10 PM on Friday, November 13, and ends at 1 AM Saturday, November 14. Under 18 must be accompanied by a parent or legal guardian.",
+    "publicNotice": "",
     "notes": "Owner explicitly requested this Canadian concert. The November 3 artist/Heliopolis coauthored announcement confirms Zaire Ink performs live November 13 and uses gospelrap/chh tags; his official website confirms the Christian hip-hop connection. This is a mixed hip-hop showcase, not a claim that every billed artist performs Christian music. Eventbrite's expanded lineup contains all nine retained names; Tea Fannie also hosts. No headliner or other curated artist association is inferred. Eventbrite advertises November 13 at 10 PM through November 14 at 1 AM; the official main flyer says 10:30 PM Late Show and the event FAQ starts performances at 10:30 PM, with Zaire Ink at 10:55 PM. Do not convert the overnight end to midnight November 13. Doors conflict: Eventbrite says 9 PM, while Music Calgary's schedule says 10:30 PM doors. Age conflict: Eventbrite allows under-18 guests with a parent/legal guardian, while the conference FAQ says Heliopolis is 18+. Structured doorsTime and ageRestriction intentionally remain unset. Eventbrite currently shows CA$11.98 online and its FAQ says pay what you can at the door; no fee breakdown, checkout deadline or full-conference access is inferred. The generic organizer $15/show text is not substituted for event-specific admission. The organizer schedule's Ranchmans venue line is a template conflict; the current ticket page and coauthored flyer identify Heliopolis at 817 1 Street Southwest. Preserve the artist affiliate ticket URL and original flyer bytes.",
     "sources": [
       {
@@ -1325,8 +1325,8 @@
       "url": "https://www.musiccalgary.ca/"
     },
     "doorsTime": "",
-    "ageRestriction": "18+; physical ID required.",
-    "scheduleNote": "Doors not confirmed: the organizer lists 10:30 PM, while Eventbrite lists 8 PM. Confirm the late-show schedule with the organizer before attending."
+    "ageRestriction": "Under 18 must be accompanied by a parent or legal guardian.",
+    "scheduleNote": ""
   },
   {
     "id": "bandsintown:109085657",
@@ -3631,5 +3631,70 @@
         "priority": 112
       }
     ]
+  },
+  {
+    "id": "official:023c040d4ea33e120949",
+    "title": "1K Phew — Live performance",
+    "startDate": "2026-11-21",
+    "startTime": "",
+    "timezone": "",
+    "venue": "",
+    "address": "",
+    "city": "",
+    "state": "",
+    "country": "US",
+    "artists": [
+      "1K Phew"
+    ],
+    "headliner": "1K Phew",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "",
+    "officialUrl": "https://www.reachrecords.com/artists/1k-phew/",
+    "image": "assets/artists/1k-phew-owner-oct13.png",
+    "price": "",
+    "sourceName": "Reach Records - 1K Phew",
+    "sources": [
+      {
+        "name": "Reach Records - 1K Phew",
+        "url": "https://www.reachrecords.com/artists/1k-phew/",
+        "type": "reach_records",
+        "authority": "artist_label",
+        "priority": 86
+      }
+    ],
+    "lastVerified": "2026-11-05T23:24:24Z",
+    "confidence": "high",
+    "imageType": "artist",
+    "imagePosition": "50% 0%",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-11-03T18:56:47Z",
+    "locationUnconfirmed": true,
+    "ticketUrlVerified": false,
+    "registrationUrlVerified": false,
+    "publicDescription": "1K Phew's official artist calendar lists a performance on November 21, 2026. Location and important show details are not confirmed.",
+    "scheduleNote": "Location, venue, start time, admission and ticket details are not confirmed. Check the official artist calendar for updates before making plans.",
+    "venueCity": "",
+    "address2": "",
+    "suite": "",
+    "postalCode": "",
+    "fullAddress": "",
+    "latitude": "",
+    "longitude": "",
+    "lat": "",
+    "lng": "",
+    "lon": "",
+    "geo": "",
+    "coordinates": "",
+    "endTime": "",
+    "startDateTime": "",
+    "endDateTime": "",
+    "doorsTime": "",
+    "registrationTime": "",
+    "registrationLocation": "",
+    "primaryTimeKind": "",
+    "registrationUrl": "",
+    "description": "",
+    "canonicalPath": "/event/1k-phew-live-at-texas-motorplex-2026-11-21-swiss-golf-and-tennis-club-mobile-home-park-a168a7/"
   }
 ]

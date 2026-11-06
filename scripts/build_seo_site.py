@@ -8,7 +8,7 @@ import re
 import shutil
 from collections import defaultdict
 from zoneinfo import ZoneInfo
-from catalog_removals import removed_event
+from catalog_removals import public_event, removed_event
 from canadian_event_guard import is_canadian
 from show_information_model import normalize as show_information
 
@@ -87,8 +87,8 @@ def same_event(a,b):
     return bool(same_venue or shared)
 
 def merge_events(primary, supplemental):
-    primary = [event for event in primary if not removed_event(event) and domestic_event(event)]
-    supplemental = [event for event in supplemental if not removed_event(event) and domestic_event(event)]
+    primary = [public_event(event) for event in primary if not removed_event(event) and domestic_event(event)]
+    supplemental = [public_event(event) for event in supplemental if not removed_event(event) and domestic_event(event)]
     out = [dict(e, artists=list(e.get("artists",[]))) for e in primary]
     for inc in supplemental:
         if norm(inc.get("status")) == "merged":
@@ -188,7 +188,7 @@ def footer():
     return '''<footer class="site-footer"><div><strong>The Kingdom Circuit</strong><p>Christian hip-hop, live and connected.</p></div><div class="footer-links"><a href="/shows/">All Shows</a><a href="/artists/">Artists</a><a href="/festivals/">Festivals</a><a href="/submit/">Submit a Show</a></div><p class="footer-note">Event details may change; confirm with the official source before traveling.</p></footer>'''
 
 def head(title, desc, canonical, schemas=None):
-    schema_html="".join(f'<script type="application/ld+json">{json.dumps(s,separators=(",",":"),ensure_ascii=False).replace("</","<\\/")}</script>' for s in (schemas or []))
+    schema_html="".join(f'<script type="application/ld+json">{json.dumps(s,separators=(",",":"),ensure_ascii=False).replace("</","<\\/")}</script>' for s in (schemas or []) if s is not None)
     return f'''<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="index,follow"><meta name="description" content="{esc(desc)}"><meta name="theme-color" content="#080808"><link rel="canonical" href="{esc(absolute(canonical))}">{FAVICON_HTML}<link rel="stylesheet" href="/styles.css?v=10.3"><meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{esc(absolute(canonical))}"><script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','{GA_ID}');</script><script src="/seo-static.js?v=1" defer></script><title>{esc(title)}</title>{schema_html}</head>'''
 
 def page(title,desc,canonical,body,schemas=None): return f'<!DOCTYPE html><html lang="en">{head(title,desc,canonical,schemas)}<body>{header()}<main>{body}</main>{footer()}</body></html>'
@@ -202,6 +202,8 @@ def breadcrumb_schema(items):
     return {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":i+1,"name":n,"item":absolute(p)} for i,(n,p) in enumerate(items)]}
 
 def event_schema(e):
+    if e.get("locationUnconfirmed"):
+        return None
     start=e.get("startDateTime") or (e.get("startDate","")+("T"+e["startTime"] if e.get("startTime") else ""))
     status={"cancelled":"https://schema.org/EventCancelled","canceled":"https://schema.org/EventCancelled","postponed":"https://schema.org/EventPostponed","rescheduled":"https://schema.org/EventRescheduled"}.get(norm(e.get("status")),"https://schema.org/EventScheduled")
     billing=e.get("advertisedBilling") or e.get("artists",[])
@@ -226,7 +228,7 @@ def event_card(e,artists):
     cfg=artist_cfg(artists,e.get("headliner") or ((e.get("artists") or [""])[0]))
     img=image_url(e.get("image") or cfg.get("imageUrl")); pos=e.get("imagePosition") or cfg.get("imagePosition") or "center"
     typ="event-artwork" if e.get("imageType")=="event_artwork" else "artist-photo"
-    location=", ".join(x for x in (e.get("city"),e.get("state")) if x) or "Location to be announced"
+    location="Location not confirmed" if e.get("locationUnconfirmed") else (", ".join(x for x in (e.get("city"),e.get("state")) if x) or "Location to be announced")
     artists_html=billing_links(e, artists)
     official=e.get("officialUrl") or e.get("ticketUrl") or "#"
     search=norm(" ".join([str(e.get('title') or ''),str(e.get('venue') or ''),str(e.get('city') or ''),str(e.get('state') or ''),str(e.get('sourceName') or ''),*(str(n) for n in e.get('artists',[]))]))
@@ -337,7 +339,7 @@ def main():
         except Exception: pass
 
     for e in retained:
-        p=event_path(e); loc=", ".join(x for x in (e.get("city"),e.get("state")) if x); names=", ".join(e.get("artists",[])) or e.get("headliner") or "CHH artists"
+        p=event_path(e); loc="Location not confirmed" if e.get("locationUnconfirmed") else ", ".join(x for x in (e.get("city"),e.get("state")) if x); names=", ".join(e.get("artists",[])) or e.get("headliner") or "CHH artists"
         crumbs=[("Shows","/shows/")]
         if e.get("state"): crumbs.append((STATE_NAMES.get(e["state"],e["state"]),state_path(e["state"])))
         crumbs.append((e.get("title") or "Event",p))

@@ -2316,6 +2316,20 @@
           "url": "https://www.eventcreate.com/e/the-porch-jesus-night-club-nov-3th",
           "reviewedAt": "2026-11-05",
           "quoteOrSummary": "Exact date registration lists6:30PMdoors/7PMshow, free mandatory preregistration, under16withadult."
+        },
+        {
+          "url": "https://www.igniteandunitetour.com/",
+          "reviewedAt": "2026-11-06",
+          "fields": [
+            "startTime",
+            "startDateTime",
+            "doorsTime",
+            "publicNotice",
+            "scheduleNote",
+            "publicDescription"
+          ],
+          "quoteOrSummary": "Owner selected the tour website and city flyer as the schedule authority and reaffirmed 5:30 PM doors / 6 PM show. The linked EventCreate page was the source of the prior differing 6:30 PM / 7 PM pair; no venue confirmation of that pair is claimed.",
+          "verificationMethod": "Owner-directed source selection in this chat; prior flyer independently read."
         }
       ],
       "expectedVenue": "The Porch",
@@ -2363,6 +2377,26 @@
           },
           "reviewedAt": "2026-11-05",
           "reason": "Fresh official-source conflict / restricted public RSVP location audit; do not infer missing facts."
+        },
+        {
+          "expected": {
+            "startTime": "",
+            "startDateTime": "",
+            "doorsTime": "",
+            "publicNotice": "Show and doors times are not confirmed because official sources disagree. Confirm with The Porch before attending.",
+            "scheduleNote": "The tour flyer lists doors at 5:30 PM and the show at 6 PM. The linked venue registration page lists doors at 6:30 PM and the show at 7 PM. Confirm the schedule with The Porch.",
+            "publicDescription": "The Ignite and Unite Tour comes to The Porch in Daytona Beach on November 13, 2026, with Pastor John Humphries, OTG Zico, Altar Ego, J10, Legit, 3HRE and B. Cody Shields. Free admission with preregistration. The tour flyer and venue registration page list different show and doors times; confirm the schedule with The Porch."
+          },
+          "facts": {
+            "startTime": "18:00",
+            "startDateTime": "2026-11-13T18:00:00-05:00",
+            "doorsTime": "17:30",
+            "publicNotice": "",
+            "scheduleNote": "",
+            "publicDescription": "The Ignite and Unite Tour comes to The Porch in Daytona Beach on November 13, 2026. Doors open at 5:30 PM and the show starts at 6 PM Eastern. Free admission with preregistration. The announced bill is Pastor John Humphries, OTG Zico, Altar Ego, J10, Legit, 3HRE and B. Cody Shields."
+          },
+          "reviewedAt": "2026-11-06",
+          "reason": "Owner explicitly reaffirmed the official tour and city flyer schedule: 5:30 PM doors and 6 PM start. This supersedes the prior conservative schedule-conflict hold; retain other event facts and original URL."
         }
       ]
     },
@@ -3392,6 +3426,21 @@
           "quoteOrSummary": "Artist public post metadata confirms Nov 13 Helio booking; caption does not specify age or time.",
           "reviewedAt": "2026-11-05",
           "confidence": "high"
+        },
+        {
+          "url": "https://www.eventbrite.ca/e/heliopolis-soundoff-summit-showcase-tickets-2003992006036?aff=ZaireInk",
+          "reviewedAt": "2026-11-06",
+          "fields": [
+            "startTime",
+            "startDateTime",
+            "ageRestriction",
+            "publicNotice",
+            "scheduleNote",
+            "publicDescription",
+            "organizer"
+          ],
+          "quoteOrSummary": "Fresh event-specific Eventbrite response names Music Calgary; event header Friday November 13 10 PM–1 AM; admission under18withparentorlegalguardian. Owner directs these facts be published. FAQ lists Zaire Ink10:55PM and JabaHill11PM, so no artist set timestamp was added. Existing correct Alberta local offset and overnight end retained.",
+          "verificationMethod": "Fresh public ticket page and owner instruction."
         }
       ],
       "corrections": [
@@ -3455,6 +3504,26 @@
           },
           "reviewedAt": "2026-11-05",
           "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
+        },
+        {
+          "expected": {
+            "startTime": "",
+            "startDateTime": "",
+            "ageRestriction": "18+; physical ID required.",
+            "publicNotice": "Show schedule is not confirmed because official sources disagree. Confirm with Music Calgary before attending.",
+            "scheduleNote": "Doors not confirmed: the organizer lists 10:30 PM, while Eventbrite lists 8 PM. Confirm the late-show schedule with the organizer before attending.",
+            "publicDescription": "A mixed hip-hop showcase featuring Christian rapper Zaire Ink alongside the announced bill. Published event, performance and doors times differ; check with Music Calgary for the final schedule. The published event window ends at 1 AM Saturday, November 14."
+          },
+          "facts": {
+            "startTime": "22:00",
+            "startDateTime": "2026-11-13T22:00:00-06:00",
+            "ageRestriction": "Under 18 must be accompanied by a parent or legal guardian.",
+            "publicNotice": "",
+            "scheduleNote": "",
+            "publicDescription": "A mixed hip-hop showcase organized by Music Calgary, featuring Christian rapper Zaire Ink alongside the announced bill. The event starts at 10 PM on Friday, November 13, and ends at 1 AM Saturday, November 14. Under 18 must be accompanied by a parent or legal guardian."
+          },
+          "reviewedAt": "2026-11-06",
+          "reason": "Owner selected the event-specific Eventbrite details. Fresh ticket page corroborates 10 PM start, Music Calgary and accompanied-under-18 admission. Supersedes prior general venue/FAQ conflict hold. Leave doors unconfirmed and omit the optional Zaire set time because current FAQ says 10:55 PM, not 11 PM."
         }
       ]
     },

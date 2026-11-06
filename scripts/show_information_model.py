@@ -290,6 +290,11 @@ def _price(event):
 
 def normalize(event):
     """Return source facts and safe publication fields without mutating input."""
+    try:
+        from .catalog_removals import public_event
+    except ImportError:
+        from catalog_removals import public_event
+    event = public_event(event)
     result = deepcopy(event)
     for key in _DERIVED:
         result.pop(key, None)
@@ -331,7 +336,7 @@ def normalize(event):
     if label:
         result["priceLabel"] = label
     result["offer"] = None
-    if (destination and destination["kind"] != "details" and not private
+    if (destination and destination["kind"] != "details" and not private and not result.get("locationUnconfirmed")
             and status not in {"cancelled", "canceled", "postponed", "merged"}):
         result["offer"] = {"@type": "Offer", "url": destination["url"], **price_fields}
         if sold_out:

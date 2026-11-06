@@ -267,37 +267,45 @@ class URLContinuityTests(unittest.TestCase):
         uc.reconcile_reviewed_aliases(state, {e['id']: e for e in (original, alias)}, set(), self.site)
         self.assertEqual({}, state['redirects'])
 
-    def test_location_review_preserves_url_history_and_noindex_notice(self):
-        from catalog_removals import apply
-        held = {'id': 'official:023c040d4ea33e120949', 'title': '1K Phew — Live at Texas Motorplex',
-                'startDate': '2026-11-21', 'startTime': '', 'artists': ['1K Phew'],
-                'venue': 'Texas Motorplex', 'city': 'Swiss Golf And Tennis Club Mobile Home Park',
-                'state': 'FL', 'country': 'US', 'status': 'scheduled'}
-        held_path = uc.generated_path(held)
+    def test_restored_unconfirmed_booking_preserves_canonical_and_raw_history(self):
+        from catalog_removals import apply, public_event
+        original = {'id': 'official:023c040d4ea33e120949', 'title': '1K Phew — Live at Texas Motorplex',
+                    'startDate': '2026-11-21', 'startTime': '', 'artists': ['1K Phew'],
+                    'venue': 'Texas Motorplex', 'city': 'Swiss Golf And Tennis Club Mobile Home Park',
+                    'state': 'FL', 'country': 'US', 'status': 'scheduled'}
+        original_path = uc.generated_path(original)
         state = copy.deepcopy(self.state)
-        state['events'][held['id']] = {'path': held_path, 'sourceIds': [], 'event': held}
-        self.write_inputs(primary=[self.event, held], state=state)
-        history = {'events': [{'event': copy.deepcopy(held)}]}
+        state['events'][original['id']] = {'path': original_path, 'sourceIds': [], 'event': original}
+        self.write_inputs(primary=[self.event, original], state=state)
+        history = {'events': [{'event': copy.deepcopy(original)}]}
         uc.save(self.root / 'event-history.json', history)
+        before_history = (self.root / 'event-history.json').read_bytes()
         apply(self.root)
         uc.prepare(self.root)
+        projected = public_event(original)
         self.page(self.path)
-        self.page(held_path, 'Old Florida location <script type="application/ld+json">{"@type":"Event"}</script>')
-        uc.finalize(self.root, self.site, '2026-11-05')
-        text = uc.target_file(self.site, held_path).read_text()
+        self.page(original_path, 'Old Florida location <script type="application/ld+json">{"@type":"Event"}</script>')
+        self.page(uc.generated_path(projected), 'Location not confirmed; venue and start time not confirmed.')
+        for name in uc.FEEDS:
+            uc.save(self.site / name, uc.load(self.root / name, []))
+        uc.finalize(self.root, self.site, '2026-11-06')
+        text = uc.target_file(self.site, original_path).read_text()
         facts = uc.PageFacts(text)
-        self.assertEqual(uc.ORIGIN + held_path, facts.canonical)
-        self.assertEqual('noindex,follow', facts.robots)
-        self.assertEqual('1K Phew — Location under review', facts.h1)
-        self.assertIn('No cancellation has been confirmed', text)
-        self.assertNotIn('no longer in our current calendar', text)
+        self.assertEqual(uc.ORIGIN + original_path, facts.canonical)
+        self.assertEqual('index,follow', facts.robots)
+        self.assertIn('Location not confirmed', text)
+        self.assertNotIn('Old Florida location', text)
+        self.assertNotIn('temporarily excluded', text)
         self.assertEqual([], facts.schemas)
-        self.assertNotIn(uc.ORIGIN + held_path, (self.site / 'sitemap.xml').read_text())
-        self.assertEqual(history, uc.load(self.root / 'event-history.json', {}))
-        self.assertEqual([self.event['id']], [e['id'] for e in uc.load(self.root / 'events.json', [])])
-        self.assertEqual(held['id'], uc.load(self.root / uc.WORK_FILE, {})['events'][held['id']]['event']['id'])
-        uc.finalize(self.root, self.site, '2026-11-05')
-        self.assertEqual('noindex,follow', uc.PageFacts(uc.target_file(self.site, held_path).read_text()).robots)
+        self.assertIn(uc.ORIGIN + original_path, (self.site / 'sitemap.xml').read_text())
+        self.assertEqual(before_history, (self.root / 'event-history.json').read_bytes())
+        public = next(e for e in uc.load(self.site / 'events.json', []) if e['id'] == original['id'])
+        self.assertEqual(original_path, public['canonicalPath'])
+        self.assertTrue(public['locationUnconfirmed'])
+        self.assertEqual(('', '', ''), (public['city'], public['state'], public['venue']))
+        self.assertEqual({self.event['id'], original['id']}, {e['id'] for e in uc.load(self.root / 'events.json', [])})
+        uc.finalize(self.root, self.site, '2026-11-06')
+        self.assertEqual(text, uc.target_file(self.site, original_path).read_text())
 
     def test_runtime_cards_use_registered_path_after_rename(self):
         import subprocess

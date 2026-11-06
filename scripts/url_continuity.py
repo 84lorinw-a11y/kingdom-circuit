@@ -17,6 +17,7 @@ from pathlib import Path
 import re
 from urllib.parse import urlsplit
 import xml.etree.ElementTree as ET
+from catalog_removals import public_event
 
 ORIGIN = 'https://kingdomcircuit.com'
 STATE_FILE = 'config/url-continuity.json'
@@ -28,7 +29,7 @@ SNAPSHOT_FIELDS = ('id', 'title', 'startDate', 'endDate', 'startTime', 'endTime'
                    'timezone', 'city', 'state', 'country', 'venue', 'address',
                    'postalCode', 'artists', 'headliner', 'status', 'eventType',
                    'officialUrl', 'ticketUrl', 'image', 'imageType', 'confidence',
-                   'publicDescription', 'mergedFromIds', 'legacyEventPaths')
+                   'publicDescription', 'locationUnconfirmed', 'mergedFromIds', 'legacyEventPaths')
 # Reviewed November 5: these published source IDs duplicate the retained manual
 # Flavor Fest concert identities. Keep the old links without a false removal notice.
 REVIEWED_EVENT_ALIASES = (
@@ -76,7 +77,7 @@ def source_events(root):
         result.extend(load(root / name, []))
     from catalog_removals import removed_event
     from owner_roster import filter_events
-    return [e for e in filter_events(result) if not removed_event(e)]
+    return [public_event(e) for e in filter_events(result) if not removed_event(e)]
 
 
 def event_url(value):
@@ -124,7 +125,7 @@ def merge_details(preferred, other):
             result.pop(key, None)
     result['id'] = preferred['id']
     result['mergedFromIds'] = sorted(set(result.get('mergedFromIds', [])) | ({other['id']} if other['id'] != preferred['id'] else set()))
-    return result
+    return public_event(result)
 
 
 def prepare(root):
@@ -168,7 +169,7 @@ def prepare(root):
     current_by_id = {e['id']: e for _, e in rows if e.get('id') and e.get('status') != 'merged'}
     rows.sort(key=lambda pair: (pair[1].get('id') not in state['events'], not str(pair[1].get('id', '')).startswith('manual:')))
     for name, original in rows:
-        event = copy.deepcopy(original)
+        event = public_event(original)
         event_id = event.get('id')
         if not event_id:
             raise ValueError('Published events require a persistent source ID')
@@ -421,7 +422,7 @@ def finalize(root, site, today=None):
     from owner_roster import filter_events
     excluded_paths = set(rules.get('retiredPaths', [])) | set(state.get('retiredPaths', []))
     for key, record in list(state['events'].items()):
-        if record['path'] not in excluded_paths and location_review_event(record['event']):
+        if record['path'] not in excluded_paths and key not in current_ids and location_review_event(record['event']):
             preferred = safe_path(record['path'])
             restore_location_review(site, preferred, record['event'])
             state['pages'].pop(preferred, None)

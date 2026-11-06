@@ -10,7 +10,7 @@ import re
 from zoneinfo import ZoneInfo
 
 from apply_oct3_concert_corrections import rejected
-from catalog_removals import removed_event
+from catalog_removals import location_review_event, removed_event
 from add_past_show_archives import is_test, trusted
 
 REGISTRY = "config/permanent-state-pages.json"
@@ -50,7 +50,7 @@ def eligible(event):
     country = str(event.get("country") or "US").upper()
     region_matches = ((country in {"US", "USA", "PR"} and event.get("state") in US_CODES)
                       or (country in {"CA", "CAN", "CANADA"} and event.get("state") in CANADIAN_REGIONS))
-    return (region_matches
+    return (region_matches and not location_review_event(event)
             and not removed_event(event) and not rejected(event) and not is_test(event))
 
 

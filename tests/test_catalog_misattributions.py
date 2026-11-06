@@ -8,7 +8,7 @@ import unittest
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from catalog_removals import apply, location_review_event, removed_event
+from catalog_removals import apply, location_review_event, public_event, removed_event
 from build_seo_site import merge_events
 import add_past_show_archives as archives
 import url_continuity as continuity
@@ -110,7 +110,7 @@ class CatalogMisattributionTests(unittest.TestCase):
             self.assertEqual(json.loads((root / 'event-history.json').read_text()), history)
 
 
-class LocationReviewHoldTests(unittest.TestCase):
+class LocationUnconfirmedBookingTests(unittest.TestCase):
     def event(self, **fields):
         return {'id': 'official:023c040d4ea33e120949',
                 'title': '1K Phew — Live at Texas Motorplex',
@@ -125,7 +125,7 @@ class LocationReviewHoldTests(unittest.TestCase):
         return self.event(id='official:other-1k-phew-show', title='1K Phew concert',
                           venue='Concert Hall', city='Orlando')
 
-    def test_only_exact_dated_identity_or_trusted_event_links_trigger_location_hold(self):
+    def test_exact_dated_booking_is_retained_but_never_assigned_a_location(self):
         variants = [self.event(), self.event(id='manual:official:023c040d4ea33e120949'),
                     self.event(id='reimported', officialUrl='https://www.bandsintown.com/e/1040798191-1k-phew?ref=calendar'),
                     self.event(id='reimported', ticketUrl='https://bandsintown.com/t/1040798191/'),
@@ -136,8 +136,8 @@ class LocationReviewHoldTests(unittest.TestCase):
             with self.subTest(event=event):
                 before = copy.deepcopy(event)
                 self.assertTrue(location_review_event(event))
-                self.assertTrue(removed_event(event))
-                self.assertEqual(merge_events([good], [event]), [good])
+                self.assertFalse(removed_event(event))
+                self.assertEqual(merge_events([good], [event]), [good, public_event(event)])
                 self.assertFalse(state_eligible(event))
                 self.assertEqual(event, before)
                 for day in ('2026-11-20', '2026-11-22', '2027-11-21'):
@@ -176,7 +176,7 @@ class LocationReviewHoldTests(unittest.TestCase):
                 self.assertFalse(location_review_event(event))
                 self.assertFalse(removed_event(event))
 
-    def test_refresh_removes_public_copies_and_manual_seed_but_preserves_raw_history(self):
+    def test_refresh_sanitizes_public_copies_but_preserves_raw_manual_seed_and_history(self):
         held, good = self.event(), self.other_show()
         history = {'events': [{'event': held, 'firstSeenOnCalendar': '2026-11-03',
                                'observedOnOrAfterEventDate': False}, {'event': good}]}
@@ -190,9 +190,9 @@ class LocationReviewHoldTests(unittest.TestCase):
             history_bytes = (root / 'event-history.json').read_bytes()
             apply(root)
             for name in ('events.json', 'supplemental-events.json'):
-                self.assertEqual(json.loads((root / name).read_text()), [good])
+                self.assertEqual(json.loads((root / name).read_text()), [public_event(held), good])
             self.assertEqual(json.loads((root / 'config/manual-events.json').read_text()),
-                             {'events': [good], 'version': 1})
+                             {'events': [held, good], 'version': 1})
             self.assertEqual((root / 'event-history.json').read_bytes(), history_bytes)
             once = {str(p.relative_to(root)): p.read_bytes() for p in root.rglob('*.json')}
             apply(root)
@@ -200,7 +200,7 @@ class LocationReviewHoldTests(unittest.TestCase):
         self.assertEqual(held['status'], 'scheduled')
         self.assertEqual((held['city'], held['state']), ('Swiss Golf And Tennis Club Mobile Home Park', 'FL'))
 
-    def test_location_hold_never_reappears_as_a_past_show(self):
+    def test_unconfirmed_booking_never_becomes_a_claimed_past_performance(self):
         held, good = self.event(), self.other_show()
         history = {'events': [{'event': event, 'observedOnOrAfterEventDate': True}
                               for event in (held, good)]}
@@ -227,8 +227,8 @@ class LocationReviewHoldTests(unittest.TestCase):
         held = [record for record in records if location_review_event(record.get('event', {}))]
         self.assertEqual(len(held), 1)
         record = held[0]
-        self.assertEqual(record['reviewStatus'], 'pending_location_confirmation')
-        self.assertIs(record['publish'], False)
+        self.assertEqual(record['reviewStatus'], 'listed_location_unconfirmed')
+        self.assertIs(record['publish'], True)
         self.assertEqual(record['event']['status'], 'scheduled')
         self.assertEqual((record['event']['venue'], record['event']['city'], record['event']['state']),
                          ('Texas Motorplex', 'Swiss Golf And Tennis Club Mobile Home Park', 'FL'))

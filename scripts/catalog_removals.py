@@ -1,6 +1,7 @@
 """Owner-requested removals and publication holds for refreshed shows."""
 import json
 import re
+from copy import deepcopy
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -89,7 +90,8 @@ def withheld_event(event):
 
 def location_review_event(event):
     # The artist calendar pairs Texas Motorplex with a Florida locality.
-    # Hold only this booking until the location is confirmed; it is not canceled.
+    # November 6: the owner accepts the artist calendar's booking, but neither
+    # conflicting location. Keep its exact identity available for redaction.
     if event.get("startDate") != "2026-11-21":
         return False
     if str(event.get("id") or "").removeprefix("manual:") == "official:023c040d4ea33e120949":
@@ -114,8 +116,44 @@ def location_review_event(event):
     return False
 
 
+def public_event(event):
+    """Project the one owner-approved booking without unverified location facts.
+
+    Provider refreshes may reintroduce the conflicting venue/locality or a new
+    provider ID. Keep raw history and the source input intact; sanitize only
+    the independent publication copy, using the exact dated identity above.
+    """
+    result = deepcopy(event)
+    if not location_review_event(event):
+        return result
+    try:
+        from .show_information_model import is_private_event
+    except ImportError:
+        from show_information_model import is_private_event
+    if is_private_event(event):
+        result["private"] = True
+    result.update({
+        "locationUnconfirmed": True,
+        "title": "1K Phew — Live performance",
+        "officialUrl": "https://www.reachrecords.com/artists/1k-phew/",
+        "ticketUrlVerified": False,
+        "registrationUrlVerified": False,
+        "publicDescription": "1K Phew's official artist calendar lists a performance on November 21, 2026. Location and important show details are not confirmed.",
+        "scheduleNote": "Location, venue, start time, admission and ticket details are not confirmed. Check the official artist calendar for updates before making plans.",
+    })
+    for field in (
+        "venue", "venueCity", "city", "state", "address", "address2", "suite",
+        "postalCode", "fullAddress", "latitude", "longitude", "lat", "lng", "lon",
+        "geo", "coordinates", "timezone", "startTime", "endTime", "startDateTime",
+        "endDateTime", "doorsTime", "registrationTime", "registrationLocation",
+        "primaryTimeKind", "ticketUrl", "registrationUrl", "description",
+    ):
+        result[field] = ""
+    return result
+
+
 def removed_event(event):
-    if withheld_event(event) or misattributed_event(event) or location_review_event(event):
+    if withheld_event(event) or misattributed_event(event):
         return True
     names = [event.get("headliner"), *event.get("artists", []),
              *event.get("advertisedBilling", []), *event.get("officialBill", [])]
@@ -137,7 +175,9 @@ def apply(root: Path):
                 or (relative == "event-history.json" and (
                     misattributed_event(entry.get("event", entry))
                     or location_review_event(entry.get("event", entry))))]
-        if len(kept) == len(rows):
+        if relative in {"events.json", "supplemental-events.json"}:
+            kept = [public_event(entry) for entry in kept]
+        if kept == rows:
             continue
         if isinstance(data, dict):
             data["events"] = kept

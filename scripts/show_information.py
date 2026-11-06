@@ -115,6 +115,8 @@ def attributes(opening, values):
 
 
 def address_html(record):
+    if record.get('locationUnconfirmed'):
+        return '<address class="kc-address">Location not confirmed</address>'
     locality = ', '.join(str(record.get(k) or '').strip() for k in ('venueLocality', 'state') if record.get(k))
     if not record.get('private') and record.get('postalCode'):
         locality += ' ' + str(record['postalCode'])
@@ -178,7 +180,7 @@ def patched_schema(value, record):
     if not isinstance(value, dict):
         return value
     value = deepcopy(value)
-    if record.get('private') and value.get('@type') in EVENT_TYPES | {'Offer', 'AggregateOffer'}:
+    if (record.get('private') or record.get('locationUnconfirmed')) and value.get('@type') in EVENT_TYPES | {'Offer', 'AggregateOffer'}:
         return None
     if value.get('@type') in EVENT_TYPES:
         for source, target in (('schemaStartDate', 'startDate'), ('schemaEndDate', 'endDate'), ('description', 'description')):
@@ -343,6 +345,8 @@ def verify(site, ctx=None):
         if record.get('private'):
             assert not schemas, f'Private event has public schema: {relative}'
             report['privatePages'] += 1
+        if record.get('locationUnconfirmed'):
+            assert not schemas, f'Unconfirmed location has public Event schema: {relative}'
         for schema in schemas:
             assert schema.get('offers') == record.get('offer'), f'Offer mismatch: {relative}'
             assert schema.get('startDate') == record.get('schemaStartDate'), f'Start time mismatch: {relative}'

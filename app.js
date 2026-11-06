@@ -14268,7 +14268,7 @@ function eventCard(event) {
   const search = [event.title, event.venue, event.city, event.state, event.sourceName, ...(event.artists || [])].join(" ").toLocaleLowerCase();
   const artists = (event.artists || []).map(normalize).join("|");
   const img = eventImage(event);
-  const location = [event.city, event.state].filter(Boolean).join(", ") || "Location to be announced";
+  const location = event.locationUnconfirmed ? "Location not confirmed" : ([event.city, event.state].filter(Boolean).join(", ") || "Location to be announced");
   const price = event.price ? `<p class="price-line">Listed price: ${esc(event.price)}</p>` : "";
   const recent = "";
   return `<article class="event-card" data-event-card data-search="${esc(search)}" data-artists="${esc(artists)}" data-state="${esc(event.state || "")}" data-type="${esc(event.eventType || "concert")}" data-date="${esc(event.startDate || "")}" data-end-date="${esc(event.endDate || event.startDate || "")}">
@@ -14767,7 +14767,7 @@ function renderEventDetail() {
     return;
   }
   const img = eventImage(event);
-  const locationText = [event.city, event.state].filter(Boolean).join(", ");
+  const locationText = event.locationUnconfirmed ? "Location not confirmed" : [event.city, event.state].filter(Boolean).join(", ");
   root.innerHTML = `<article class="event-detail"><div class="event-detail-media"><img class="${imageClass(event)}" src="${esc(img)}" alt="${esc(event.title)}" style="object-position:${esc(imagePosition(event))}" onerror="this.onerror=null;this.className='event-artwork';this.src='${FALLBACK_EVENT_IMAGE}';"></div><div class="event-detail-copy"><p class="eyebrow">${esc(eventTypeLabel(event))}</p><h1>${esc(event.title)}</h1><p class="artist-line">${artistLinks(event)}</p>${hostsLine(event)}<dl class="detail-list"><div><dt>Date</dt><dd>${esc(formatDate(event))}</dd></div><div><dt>Venue</dt><dd>${esc(eventVenueLabel(event))}</dd></div><div><dt>Location</dt><dd>${esc(locationText || "Location to be announced")}</dd></div>${event.price ? `<div><dt>Price</dt><dd>${esc(event.price)}</dd></div>` : ""}<div><dt>Source</dt><dd>${esc(sourceText(event))}</dd></div></dl><a class="primary-button" href="${esc(event.officialUrl || event.ticketUrl || "#")}" target="_blank" rel="noopener">Official details</a><p class="disclaimer">Event details, availability, pricing, and lineups may change.
 Confirm final information with the official organizer or ticket provider before purchasing or traveling.</p></div></article>`;
   document.title = `${event.title} | The Kingdom Circuit`;

@@ -103,14 +103,14 @@
     }
   },
   {
-    "reviewedAt": "2026-11-05",
-    "reviewStatus": "pending_location_confirmation",
-    "publish": false,
+    "reviewedAt": "2026-11-06",
+    "reviewStatus": "listed_location_unconfirmed",
+    "publish": true,
     "excludedEventId": "official:023c040d4ea33e120949",
     "canonicalPath": "/event/1k-phew-live-at-texas-motorplex-2026-11-21-swiss-golf-and-tennis-club-mobile-home-park-a168a7/",
-    "reason": "Owner approved withholding this exact November 21 booking from discovery while its location is confirmed. The official Reach Records calendar pairs Texas Motorplex with a Florida locality, while the venue website gives an Ennis, Texas address. A venue-name match does not establish that this booking belongs in Ennis. This is not a cancellation; preserve the complete original source record and history and retain the established URL as a location-review notice.",
+    "reason": "November 6 owner decision: restore this exact booking because the official Reach Records artist calendar confirms the artist and date. Publish location, venue and important show details as unconfirmed; do not infer either Florida or Texas. Keep the original source snapshot and history unchanged, retain the published canonical URL, and suppress location filters and public Event/Offer markup until the location is verified.",
     "scope": "Only November 21, 2026 with ID official:023c040d4ea33e120949 (optionally prefixed manual:), exact Bandsintown event or ticket URL 1040798191, or bandsintownEventId 1040798191. Other 1K Phew shows and dates remain eligible.",
-    "publicNotice": "Location not confirmed. The artist calendar lists Texas Motorplex with a Florida locality; the venue website places Texas Motorplex in Ennis, Texas. Confirm the booking and location before making plans.",
+    "publicNotice": "Location and important show details are not confirmed. Check the official artist calendar for updates before making plans.",
     "sources": [
       "https://www.reachrecords.com/artists/1k-phew/",
       "https://www.bandsintown.com/e/1040798191",
