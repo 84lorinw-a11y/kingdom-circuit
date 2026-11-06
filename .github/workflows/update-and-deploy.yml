@@ -610,11 +610,15 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # A rerun retains earlier artifacts; select only this attempt's build.
+          name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
           path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+        with:
+          artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Save successful publication URL history
         run: python scripts/publish_url_state.py

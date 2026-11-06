@@ -73,6 +73,21 @@ class AutomationWorkflowTests(unittest.TestCase):
                 self.assertNotIn('git pull --rebase', text)
                 self.assertNotIn('git push --force', text)
 
+    def test_pages_rerun_selects_only_its_own_uploaded_artifact(self):
+        text = self.workflow('update-and-deploy')
+        upload = text.split('- name: Upload Pages artifact')[1].split('- name:')[0]
+        deploy = text.split('- name: Deploy to GitHub Pages')[1].split('- name:')[0]
+        upload_name = next(line.strip().split(': ', 1)[1] for line in upload.splitlines()
+                           if line.strip().startswith('name: '))
+        deploy_name = next(line.strip().split(': ', 1)[1] for line in deploy.splitlines()
+                           if line.strip().startswith('artifact_name: '))
+        self.assertEqual(upload_name, deploy_name)
+        self.assertIn('${{ github.run_id }}', upload_name)
+        self.assertIn('${{ github.run_attempt }}', upload_name)
+        first = upload_name.replace('${{ github.run_id }}', '123').replace('${{ github.run_attempt }}', '1')
+        retry = deploy_name.replace('${{ github.run_id }}', '123').replace('${{ github.run_attempt }}', '2')
+        self.assertNotEqual(first, retry)
+
     def test_browser_audit_matches_current_navigation_and_retains_failure_evidence(self):
         text = self.workflow('live-browser-retest')
         script = (ROOT / 'scripts/live_browser_retest.py').read_text()
