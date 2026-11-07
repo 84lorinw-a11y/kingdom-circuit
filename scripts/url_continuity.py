@@ -383,7 +383,7 @@ def reconcile_reviewed_aliases(state, history, current_ids, site):
         del state['events'][alias_id]
 
 
-def restore_event(site, path, event, today):
+def restore_event(site, path, event, today, *, session_review=False):
     esc = html.escape
     status = norm(event.get('status'))
     day = event.get('endDate') or event.get('startDate', '')
@@ -396,6 +396,10 @@ def restore_event(site, path, event, today):
     body = '<p><strong>' + notice + '</strong></p><dl>'
     body += ''.join(f'<dt>{label}</dt><dd>{esc(str(value))}</dd>' for label, value in details if value)
     body += '</dl>'
+    if session_review:
+        body += ('<p>Archived source listings for this date record different start times. '
+                 'Whether they describe separate performances has not been verified. '
+                 'The time above belongs to this specific source listing.</p>')
     if event.get('artists'):
         body += '<p>' + esc(' · '.join(event['artists'])) + '</p>'
     if event.get('address') and status != 'private':
@@ -415,6 +419,30 @@ def rewrite_paths(text, mapping):
     # Exact path substrings include their trailing slash and cannot match another slug.
     pattern = re.compile('|'.join(re.escape(k) for k in sorted(mapping, key=len, reverse=True)))
     return pattern.sub(lambda match: mapping[match[0]], text)
+
+
+def remember_reviewed_calendars(state, rules, allowed_artists):
+    """Recover known calendars from retained identities, never guessed URLs."""
+    from build_seo_site import slug
+    for calendar in rules.get('retainedCalendars', []):
+        path = safe_path(calendar['path'])
+        artist = calendar.get('artist')
+        if artist and slug(artist) not in allowed_artists:
+            continue
+        related = []
+        for record in state['events'].values():
+            event = record['event']
+            if artist and norm(artist) not in {norm(a) for a in event.get('artists', [])}:
+                continue
+            if any(norm(event.get(field)) != norm(calendar[field])
+                   for field in ('state', 'city') if field in calendar):
+                continue
+            if calendar.get('month') and not str(event.get('startDate', '')).startswith(calendar['month'] + '-'):
+                continue
+            related.append((event.get('startDate', ''), record['path']))
+        if related:
+            state['pages'].setdefault(path, {}).update(
+                heading=calendar['title'], eventPaths=[p for _, p in sorted(set(related))])
 
 
 def finalize(root, site, today=None):
@@ -445,6 +473,7 @@ def finalize(root, site, today=None):
     from catalog_removals import location_review_event, removed_event
     from owner_roster import filter_events
     excluded_paths = set(rules.get('retiredPaths', [])) | set(state.get('retiredPaths', []))
+    session_review_paths = {p for group in rules.get('reviewRequired', []) for p in group.get('paths', [])}
     for key, record in list(state['events'].items()):
         if record['path'] not in excluded_paths and key not in current_ids and location_review_event(record['event']):
             preferred = safe_path(record['path'])
@@ -466,6 +495,10 @@ def finalize(root, site, today=None):
             state['redirects'][current] = preferred
         if not target.is_file():
             restore_event(site, preferred, record['event'], today)
+        # Similar archived cards must not hide the source-specific clocks that
+        # prevented a reviewed merge. No active performance is rewritten here.
+        if preferred in session_review_paths and (record['event'].get('endDate') or record['event'].get('startDate', '9999')) < today:
+            restore_event(site, preferred, record['event'], today, session_review=True)
         for old in event.get('legacyEventPaths', []):
             if old != preferred: state['redirects'][safe_path(old)] = preferred
     reconcile_reviewed_aliases(state, history, current_ids, site)
@@ -500,6 +533,7 @@ def finalize(root, site, today=None):
     retired = excluded_paths
     from build_seo_site import slug
     allowed_artists = {slug(a.get('name')) for a in load(root / 'config/artists.json', []) if a.get('enabled') is not False}
+    remember_reviewed_calendars(state, rules, allowed_artists)
     for path, record in state['pages'].items():
         if path in redirects or path in retired or target_file(site, path).exists(): continue
         if not path.startswith(('/artists/', '/shows/')): continue

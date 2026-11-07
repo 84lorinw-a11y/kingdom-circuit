@@ -123,7 +123,7 @@ def enrich(event, reviewed):
 
 def apply(root=ROOT):
     registries = []
-    for filename in ('verified-show-information.json', 'verified-show-links.json'):
+    for filename in ('verified-show-information.json', 'verified-show-links.json', 'verified-show-prices.json'):
         config = root / 'config' / filename
         if not config.exists():
             continue

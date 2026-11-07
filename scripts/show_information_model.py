@@ -407,6 +407,13 @@ def normalize(event, *, artists=()):
     sold_out = event.get("soldOut") is True or _text(event.get("ticketAvailability")).casefold() in {"sold_out", "sold out", "soldout"} or status in {"sold_out", "soldout"}
     result["soldOut"] = sold_out
     label, price_fields = _price(event)
+    price = event.get('price')
+    if (isinstance(price, dict) and price.get('verifiedUrl')
+            and price['verifiedUrl'] != (destination or {}).get('url')):
+        # A reviewed quote belongs to the admission destination that supplied it.
+        # A later ticket/registration URL must not silently inherit that quote.
+        price_fields = {}
+        label = 'Price not confirmed for the current ticket link.'
     if label:
         result["priceLabel"] = label
     result["offer"] = None

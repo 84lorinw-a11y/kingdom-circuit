@@ -22,3 +22,7 @@ python scripts/publish_url_state.py
 ```
 
 The publisher uses a fresh checkout, updates only the registry, retries competing Git pushes without force, and refuses to overwrite a newer deployed state. The original provider feeds remain owned by their existing collectors. Unit tests are in `tests/test_url_continuity.py`; live follow-through should sample an old link, its canonical destination, the duplicate survivor, and sitemap/Google canonical selection.
+
+Reviewed historical calendar recovery uses `retainedCalendars` in the identity override registry. It derives archive links from retained event identities with exact artist/state/city/month filters; empty or removed-artist calendars are not fabricated. Remembered aliases still forward to their reviewed destination and stay out of the sitemap. In November 7 recovery, the removed Vic Lucas and Chad Jones profiles remain removed.
+
+An identical rendered card is not sufficient proof of an identical performance. The three 808 BEEZY groups in `reviewRequired` have conflicting source clocks. Their archived pages now display their own recorded clock and source, with an explicit uncertainty note, and do not emit Event/Offer markup. Only source IDs with confirmed equivalent performance identity are consolidated.

@@ -1,0 +1,358 @@
+{
+  "version": 1,
+  "policy": "Encode only reviewed admission totals including mandatory fees. Match the exact prior label and ticket URL; later source changes win. Unknown prices, ambiguous fees, private bookings and informational links never become numeric offers.",
+  "events": [
+    {
+      "id": "manual:anthem-night-dmv-capitol-heights-2026-11-20",
+      "startDate": "2026-11-20",
+      "city": "Capitol Heights",
+      "state": "MD",
+      "country": "US",
+      "expectedVenue": "7230 Central Avenue",
+      "facts": {},
+      "corrections": [
+        {
+          "expected": {
+            "price": "$26.75 general admission ($25.00 + $1.75 service fee)",
+            "ticketUrl": "https://brushfire.com/anthemnights/dmv/643773"
+          },
+          "facts": {
+            "price": {
+              "amount": "26.75",
+              "currency": "USD",
+              "ticketType": "General admission",
+              "label": "$26.75 general admission ($25.00 + $1.75 service fee)",
+              "includesAllFeesConfirmed": true,
+              "verifiedUrl": "https://brushfire.com/anthemnights/dmv/643773"
+            },
+            "ticketUrl": "https://brushfire.com/anthemnights/dmv/643773"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://brushfire.com/anthemnights/dmv/643773",
+          "evidence": "Live Brushfire ticket table November 7: $25 plus $1.75 service fee = $26.75."
+        }
+      ],
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "ty-brasel-outlandish-fest-fort-worth-2026",
+      "startDate": "2026-11-14",
+      "city": "Fort Worth",
+      "state": "TX",
+      "country": "US",
+      "expectedVenue": "The Rail",
+      "facts": {},
+      "corrections": [
+        {
+          "expected": {
+            "price": "General admission $25.46 including listed tax and service fee",
+            "ticketUrl": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
+            "ticketUrlVerified": null
+          },
+          "facts": {
+            "price": {
+              "amount": "25.46",
+              "currency": "USD",
+              "ticketType": "General admission",
+              "label": "General admission $25.46 including listed tax and service fee",
+              "includesAllFeesConfirmed": true,
+              "verifiedUrl": "https://www.outlandishlive.org/event-details/outlandish-fest-2026"
+            },
+            "ticketUrl": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
+            "ticketUrlVerified": true
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.outlandishlive.org/event-details/outlandish-fest-2026",
+          "evidence": "Live organizer ticket table November 7: $23 plus $1.84 sales tax plus $0.62 service fee = $25.46. Multi-person bundles are not individual admission."
+        }
+      ],
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "manual:the-main-event-washington-2026-11-12",
+      "startDate": "2026-11-12",
+      "city": "Washington",
+      "state": "DC",
+      "country": "US",
+      "expectedVenue": "Simple Underground Stage",
+      "facts": {},
+      "corrections": [
+        {
+          "expected": {
+            "price": "US$10 presale (US$12.71 including listed ticket fees); US$20 at the door.",
+            "ticketUrl": "https://posh.vip/e/the-main-event-8"
+          },
+          "facts": {
+            "price": {
+              "amount": "12.71",
+              "currency": "USD",
+              "ticketType": "Presale general admission",
+              "label": "US$10 presale (US$12.71 including listed ticket fees); US$20 at the door.",
+              "includesAllFeesConfirmed": true,
+              "verifiedUrl": "https://posh.vip/e/the-main-event-8"
+            },
+            "ticketUrl": "https://posh.vip/e/the-main-event-8"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://posh.vip/e/the-main-event-8",
+          "evidence": "Live Posh Buy tickets from $12.71 November 7; matching reviewed presale total includes listed fees."
+        }
+      ],
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "manual:ging-live-first-headlining-south-attleboro-2027-01-15",
+      "startDate": "2027-01-15",
+      "city": "South Attleboro",
+      "state": "MA",
+      "country": "US",
+      "expectedVenue": "Crossroads International Church",
+      "facts": {},
+      "corrections": [
+        {
+          "expected": {
+            "price": "$5 general admission + $1.94 booking fee (USD)",
+            "ticketUrl": "https://events.humanitix.com/g-ng-in-concert-one-night-only/tickets"
+          },
+          "facts": {
+            "price": {
+              "amount": "6.94",
+              "currency": "USD",
+              "ticketType": "General admission",
+              "label": "$5 general admission + $1.94 booking fee (USD)",
+              "includesAllFeesConfirmed": true,
+              "verifiedUrl": "https://events.humanitix.com/g-ng-in-concert-one-night-only/tickets"
+            },
+            "ticketUrl": "https://events.humanitix.com/g-ng-in-concert-one-night-only/tickets"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://events.humanitix.com/g-ng-in-concert-one-night-only/tickets",
+          "evidence": "Live Humanitix General Admission November 7: $5 plus $1.94 booking fee = $6.94. Optional love offering excluded."
+        }
+      ],
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "manual:1k-phew-rock-box-san-antonio-2027-01-30",
+      "startDate": "2027-01-30",
+      "city": "San Antonio",
+      "state": "TX",
+      "country": "US",
+      "expectedVenue": "The Rock Box — Underground Stage",
+      "facts": {},
+      "corrections": [
+        {
+          "expected": {
+            "price": "$30.25 general admission; $35.75 day of show. Listed prices include all fees.",
+            "ticketUrl": "https://www.stubwire.com/e/38193/hiphopnightstherockboxw1kphew/therockbox/"
+          },
+          "facts": {
+            "price": {
+              "amount": "30.25",
+              "currency": "USD",
+              "ticketType": "General admission",
+              "label": "$30.25 general admission; $35.75 day of show. Listed prices include all fees.",
+              "includesAllFeesConfirmed": true,
+              "verifiedUrl": "https://www.stubwire.com/e/38193/hiphopnightstherockboxw1kphew/therockbox/"
+            },
+            "ticketUrl": "https://www.stubwire.com/e/38193/hiphopnightstherockboxw1kphew/therockbox/"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.stubwire.com/e/38193/hiphopnightstherockboxw1kphew/therockbox/",
+          "evidence": "Live StubWire November 7 explicitly states prices include all fees; $30.25 advance general admission. Day-of $35.75 is a later price."
+        }
+      ],
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "manual:revival-nights-asap-preach-hilliard-2026",
+      "startDate": "2026-11-21",
+      "city": "Hilliard",
+      "state": "OH",
+      "country": "US",
+      "expectedVenue": "Franklin County Fairgrounds — Edwards Building",
+      "facts": {},
+      "corrections": [
+        {
+          "expected": {
+            "price": "Free",
+            "ticketUrl": "https://www.eventbrite.com/e/revival-nights-tickets-2000057247066"
+          },
+          "facts": {
+            "price": {
+              "amount": "0",
+              "currency": "USD",
+              "ticketType": "Free general admission",
+              "label": "Free",
+              "includesAllFeesConfirmed": true,
+              "verifiedUrl": "https://www.eventbrite.com/e/revival-nights-tickets-2000057247066"
+            },
+            "ticketUrl": "https://www.eventbrite.com/e/revival-nights-tickets-2000057247066"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/e/revival-nights-tickets-2000057247066",
+          "evidence": "Existing reviewed official event record explicitly confirms free admission at this exact ticket destination. No stock or availability inferred; paid VIP options are excluded."
+        }
+      ],
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "manual:bandsintown:107625490",
+      "startDate": "2026-11-22",
+      "city": "Sacramento",
+      "state": "CA",
+      "country": "US",
+      "expectedVenue": "The Guild Theatre",
+      "facts": {},
+      "corrections": [
+        {
+          "expected": {
+            "price": "Free general admission; VIP sold separately",
+            "ticketUrl": "https://www.eventbrite.com/e/ghetto-gospel-sevin-donate-live-in-concert-tickets-2003581552358"
+          },
+          "facts": {
+            "price": {
+              "amount": "0",
+              "currency": "USD",
+              "ticketType": "Free general admission",
+              "label": "Free general admission; VIP sold separately",
+              "includesAllFeesConfirmed": true,
+              "verifiedUrl": "https://www.eventbrite.com/e/ghetto-gospel-sevin-donate-live-in-concert-tickets-2003581552358"
+            },
+            "ticketUrl": "https://www.eventbrite.com/e/ghetto-gospel-sevin-donate-live-in-concert-tickets-2003581552358"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/e/ghetto-gospel-sevin-donate-live-in-concert-tickets-2003581552358",
+          "evidence": "Existing reviewed official event record explicitly confirms free admission at this exact ticket destination. No stock or availability inferred; paid VIP options are excluded."
+        }
+      ],
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "manual:tommy-royale-cars-christ-orlando-2026-12-05",
+      "startDate": "2026-12-05",
+      "city": "Orlando",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "Dezerland Park Orlando",
+      "facts": {},
+      "corrections": [
+        {
+          "expected": {
+            "price": "Free registration",
+            "ticketUrl": "https://events.humanitix.com/cars-and-christ-orlando"
+          },
+          "facts": {
+            "price": {
+              "amount": "0",
+              "currency": "USD",
+              "ticketType": "Free general admission",
+              "label": "Free registration",
+              "includesAllFeesConfirmed": true,
+              "verifiedUrl": "https://events.humanitix.com/cars-and-christ-orlando"
+            },
+            "ticketUrl": "https://events.humanitix.com/cars-and-christ-orlando"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://events.humanitix.com/cars-and-christ-orlando",
+          "evidence": "Existing reviewed official event record explicitly confirms free admission at this exact ticket destination. No stock or availability inferred; paid VIP options are excluded."
+        }
+      ],
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "manual:rap-go-round-west-palm-beach-2026-11-20",
+      "startDate": "2026-11-20",
+      "city": "West Palm Beach",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "2740 Parker Avenue",
+      "facts": {},
+      "corrections": [
+        {
+          "expected": {
+            "price": "Free",
+            "ticketUrl": "https://www.eventbrite.com/e/rap-go-round-tickets-2002700148054"
+          },
+          "facts": {
+            "price": {
+              "amount": "0",
+              "currency": "USD",
+              "ticketType": "Free general admission",
+              "label": "Free",
+              "includesAllFeesConfirmed": true,
+              "verifiedUrl": "https://www.eventbrite.com/e/rap-go-round-tickets-2002700148054"
+            },
+            "ticketUrl": "https://www.eventbrite.com/e/rap-go-round-tickets-2002700148054"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/e/rap-go-round-tickets-2002700148054",
+          "evidence": "Existing reviewed official event record explicitly confirms free admission at this exact ticket destination. No stock or availability inferred; paid VIP options are excluded."
+        }
+      ],
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "bandsintown:109072940",
+      "startDate": "2026-11-14",
+      "city": "Orlando",
+      "state": "FL",
+      "country": "US",
+      "expectedVenue": "Grace Bible Church of Central Florida",
+      "facts": {},
+      "corrections": [
+        {
+          "expected": {
+            "price": "Free",
+            "ticketUrl": "https://www.eventbrite.com/e/unity-pop-up-tour-orlando-tickets-2003836750663"
+          },
+          "facts": {
+            "price": {
+              "amount": "0",
+              "currency": "USD",
+              "ticketType": "Free general admission",
+              "label": "Free",
+              "includesAllFeesConfirmed": true,
+              "verifiedUrl": "https://www.eventbrite.com/e/unity-pop-up-tour-orlando-tickets-2003836750663"
+            },
+            "ticketUrl": "https://www.eventbrite.com/e/unity-pop-up-tour-orlando-tickets-2003836750663"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.eventbrite.com/e/unity-pop-up-tour-orlando-tickets-2003836750663",
+          "evidence": "Existing reviewed official event record explicitly confirms free admission at this exact ticket destination. No stock or availability inferred; paid VIP options are excluded."
+        }
+      ],
+      "reviewedAt": "2026-11-07"
+    }
+  ]
+}

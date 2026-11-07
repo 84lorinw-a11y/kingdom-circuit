@@ -257,6 +257,61 @@
         "/event/beyond-the-walls-3-2026-11-07-cleveland-fae402/"
       ],
       "evidence": "Verified same-show old/new URL mapping from November 1 investigation; retain corrected current listing."
+    },
+    {
+      "keepId": "ticketmaster:G5dIZbzpM_abq",
+      "keepPath": "/event/forrest-frank-the-jesus-generation-tour-2026-07-30-austin-1c5739/",
+      "aliasIds": [
+        "official:29f19c38ff406820fa64"
+      ],
+      "aliasPaths": [
+        "/event/forrest-frank-the-jesus-generation-tour-2026-07-30-austin-4c64d0/"
+      ],
+      "evidence": "Same Forrest Frank tour/date/city and 19:00 start; earlier Ticketmaster record supplies Moody Center venue; official import lacks venue."
+    },
+    {
+      "keepId": "manual:808-beezy-rwg-oakland-me-2026-09-08",
+      "keepPath": "/event/rwg-tour-2026-2026-09-08-oakland-ff511c/",
+      "aliasIds": [
+        "bandsintown:108771984"
+      ],
+      "aliasPaths": [
+        "/event/rwg-tour-2026-2026-09-08-oakland-78e87c/"
+      ],
+      "evidence": "Same Bandsintown event 108771984, Oakland ME September 8 at 08:30; retain earlier manually reviewed identity; generic tour name is not a verified venue."
+    },
+    {
+      "keepId": "official:12ef07b891bbeeefbcb1",
+      "keepPath": "/event/uprise-festival-2026-2026-09-11-shippensburg-12bad1/",
+      "aliasIds": [
+        "official:0ac72030904117f28951"
+      ],
+      "aliasPaths": [
+        "/event/uprise-festival-2026-2026-09-11-shippensburg-19f46f/"
+      ],
+      "evidence": "Identical official Uprise source, September 11 date and Shippensburg venue; retain earlier full-bill record including CJ Emulous."
+    },
+    {
+      "keepId": "manual:808-beezy-bandsintown-108772413",
+      "keepPath": "/event/808-beezy-live-at-rwg-tour-2026-2026-09-18-dola-f98cbd/",
+      "aliasIds": [
+        "bandsintown:108772413"
+      ],
+      "aliasPaths": [
+        "/event/rwg-tour-2026-2026-09-18-dola-170ca5/"
+      ],
+      "evidence": "Same exact Bandsintown 108772413 source and 08:45 Dola session; does not merge the separate 09:45 source."
+    },
+    {
+      "keepId": "manual:808-beezy-bandsintown-108772493",
+      "keepPath": "/event/808-beezy-live-at-rwg-tour-2026-2026-09-22-ohio-09794e/",
+      "aliasIds": [
+        "bandsintown:108772493"
+      ],
+      "aliasPaths": [
+        "/event/rwg-tour-2026-2026-09-22-ohio-a6f86d/"
+      ],
+      "evidence": "Same exact Bandsintown 108772493 source and 08:20 Ohio IL session; does not merge the separate 10:53 source."
     }
   ],
   "redirects": {
@@ -266,7 +321,10 @@
     "/event/1k-phew-live-at-oceanside-pier-amphitheater-2026-10-03-oceanside-361a34/": "/event/worship-night-2026-10-03-oceanside-361a34/",
     "/event/egr-live-chandler-2026-10-03-chandler-3f4bba/": "/event/zion-ultra-lounge-christian-music-pop-up-concert-2026-10-03-chandler-3f4bba/",
     "/event/egr-live-whittier-2026-09-26-whittier-137bc9/": "/event/trickle-effect-egr-and-kim-hitt-galvan-2026-09-26-whittier-137bc9/",
-    "/event/open-skies-bethel-music-with-jenn-johnson-kb-2026-09-26-topeka-0a9fd5/": "/event/open-skies-bethel-music-with-kb-2026-09-26-topeka-0a9fd5/"
+    "/event/open-skies-bethel-music-with-jenn-johnson-kb-2026-09-26-topeka-0a9fd5/": "/event/open-skies-bethel-music-with-kb-2026-09-26-topeka-0a9fd5/",
+    "/artists/k-drama/florida/": "/artists/k-drama/",
+    "/shows/leander-austin-texas/": "/shows/leander-texas/",
+    "/shows/sponsor-nashville-tennessee/": "/shows/nashville-tennessee/"
   },
   "retiredPaths": [],
   "reviewRequired": [
@@ -291,5 +349,42 @@
       ],
       "reason": "Separate source IDs and conflicting recorded start times; do not merge without session verification."
     }
-  ]
+  ],
+  "retainedCalendars": [
+    {
+      "path": "/artists/braille/ohio/",
+      "title": "Braille shows in Ohio — archive",
+      "artist": "Braille",
+      "state": "OH"
+    },
+    {
+      "path": "/artists/dkg-kie/ohio/",
+      "title": "DKG Kie shows in Ohio — archive",
+      "artist": "DKG Kie",
+      "state": "OH"
+    },
+    {
+      "path": "/artists/kelo/ohio/",
+      "title": "Kelo shows in Ohio — archive",
+      "artist": "Kelo",
+      "state": "OH"
+    },
+    {
+      "path": "/shows/august-2026/",
+      "title": "Christian hip-hop shows — August 2026 archive",
+      "month": "2026-08"
+    },
+    {
+      "path": "/shows/september-2026/",
+      "title": "Christian hip-hop shows — September 2026 archive",
+      "month": "2026-09"
+    },
+    {
+      "path": "/shows/leander-texas/",
+      "title": "Christian hip-hop shows in Leander, Texas — archive",
+      "city": "Leander",
+      "state": "TX"
+    }
+  ],
+  "retainedCalendarEvidence": "Reviewed November 7 against published URL audit and retained event identities. K-Drama retired Florida filter leads to the full artist schedule. Leander / Austin is the prior market label for the Leander booking; Sponsor Nashville is a parser prefix on the Nashville event, not a real city. Chad Jones and Vic Lucas remain intentionally removed."
 }

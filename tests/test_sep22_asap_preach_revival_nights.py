@@ -13,6 +13,7 @@ if str(SCRIPTS) not in sys.path:
 import apply_verified_event_overrides as overrides
 import build_seo_site
 import update_events
+from show_information_model import normalize as show_information
 
 
 EVENT_ID = overrides.ASAP_PREACH_REVIVAL_EVENT_ID
@@ -57,10 +58,12 @@ class ASAPPreachRevivalNightsProductionTests(unittest.TestCase):
             "title", "startDate", "endDate", "startTime", "endTime", "timezone",
             "venue", "address", "postalCode", "city", "state", "artists",
             "headliner", "supportActs", "advertisedBilling", "ticketUrl",
-            "officialUrl", "image", "imageType", "price", "ageRestriction",
+            "officialUrl", "image", "imageType", "ageRestriction",
             "sourceName", "organizer", "firstSeen", "lastVerified",
         ):
             self.assertEqual(expected[field], event[field], field)
+
+        self.assertEqual(expected['price'], show_information(event)['priceLabel'])
 
         self.assertTrue(event["lineupExplicit"])
         self.assertTrue(event["imageOverride"])

@@ -603,6 +603,8 @@ jobs:
 
       - name: Preserve published URLs and record real page changes
         run: |
+          python scripts/organization_identity.py --site _site
+          python scripts/organization_identity.py --site _site --check
           python scripts/url_continuity.py --site _site
           python scripts/url_continuity.py --site _site --check
           python scripts/calendar_maintenance.py --site _site --output calendar-freshness-build.json
