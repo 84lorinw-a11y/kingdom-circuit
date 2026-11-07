@@ -17875,5 +17875,73 @@
     ],
     "organizerWebsite": "https://gospelmelodiesdayparty.com/",
     "notes": "Owner approved adding this show on November 7. Only named performers are individual bill entries; unnamed special guests are not guessed. Host and curator are not musical performers. Visible primary event page advertises From $39.11. Do not claim all-in total or verified checkout/offer. Earliest discovery evidence: 2026-10-31/virginia-competitor-audit/public-comparison.json contains exact Eventbrite ID at showfaith-virginia.virginiaLinks[2], then Nov 7/Kascades. Same event ID is now rescheduled. Use March 27, 2027 at Scandals Live. Old November 7, 2026/Kascades listings and dated Eventbrite flyer are obsolete. Do not restore/duplicate former date. The dated Eventbrite flyer is obsolete; original undated official series artwork is used without alteration."
+  },
+  {
+    "id": "manual:xeem-live-atlanta-2026-12-13",
+    "title": "XEEM — Live in Atlanta",
+    "startDate": "2026-12-13",
+    "startTime": "20:00",
+    "startDateTime": "2026-12-13T20:00:00-05:00",
+    "doorsTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "Vinyl at Center Stage",
+    "address": "1374 West Peachtree Street",
+    "postalCode": "30309",
+    "city": "Atlanta",
+    "state": "GA",
+    "country": "US",
+    "artists": [
+      "Xeem"
+    ],
+    "headliner": "Xeem",
+    "advertisedBilling": [
+      "Xeem"
+    ],
+    "officialBill": [
+      "Xeem"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "eventType": "concert",
+    "status": "scheduled",
+    "officialUrl": "https://www.centerstage-atlanta.com/events/xeem/",
+    "ticketUrl": "https://www.ticketmaster.com/xeem-live-in-atlanta-atlanta-georgia-12-13-2026/event/0E006563DF6921E5",
+    "ticketUrlVerified": true,
+    "venueUrl": "https://www.centerstage-atlanta.com/about-the-venues/",
+    "image": "assets/events/xeem-live-atlanta-2026-12-13-venue.png",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "imageOverride": true,
+    "detailImageLayout": "landscape",
+    "imageSource": "Center Stage Atlanta official XEEM promotional photo",
+    "imageSourceUrl": "https://www.centerstage-atlanta.com/wp-content/uploads/2026/11/2564784_XEEM-scaled.png",
+    "publicDescription": "XEEM performs live at Vinyl in Atlanta. Doors open at 7 PM and the show starts at 8 PM.",
+    "sourceName": "Center Stage Atlanta / Ticketmaster official event",
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "firstSeen": "2026-11-07",
+    "lastVerified": "2026-11-07",
+    "auditVerified": "2026-11-07",
+    "editorialBatch": "2026-11-07-xeem-owner-approved",
+    "sourceEventIds": [
+      "ticketmaster:0E006563DF6921E5"
+    ],
+    "sources": [
+      {
+        "name": "Center Stage Atlanta official event",
+        "url": "https://www.centerstage-atlanta.com/events/xeem/",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 125
+      },
+      {
+        "name": "Ticketmaster official event",
+        "url": "https://www.ticketmaster.com/xeem-live-in-atlanta-atlanta-georgia-12-13-2026/event/0E006563DF6921E5",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 120
+      }
+    ],
+    "notes": "Owner approved addition November 7, 2026. Venue and Ticketmaster agree Sunday December 13 local time, doors 7 PM and show 8 PM. The official venue biography links the exact curated Instagram @therealxeem and Spotify artist 0dDTkO63rogOPK6WRBoyxK, confirming identity. No support acts, end time, admission price or checkout total verified. The venue supplies an undated promotional photograph, retained unchanged and typed artist, not event artwork. Venue JSON-LD datePublished and event sitemap both give 2026-11-04T22:30:56+00:00; this is publication metadata, distinct from Kingdom Circuit discovery on November 7. Preserve existing Ocala appearance, artist portrait, socials and conservative provider matching safeguards."
   }
 ]
