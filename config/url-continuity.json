@@ -560,7 +560,9 @@
     },
     "manual:808-beezy-bandsintown-108772413": {
       "path": "/event/808-beezy-live-at-rwg-tour-2026-2026-09-18-dola-f98cbd/",
-      "sourceIds": [],
+      "sourceIds": [
+        "bandsintown:108772413"
+      ],
       "event": {
         "id": "manual:808-beezy-bandsintown-108772413",
         "title": "808 BEEZY — Live at RWG TOUR 2026",
@@ -582,7 +584,10 @@
         "ticketUrl": "https://www.bandsintown.com/e/108772413",
         "image": "assets/event-fallback.webp",
         "imageType": "fallback",
-        "confidence": "high"
+        "confidence": "high",
+        "mergedFromIds": [
+          "bandsintown:108772413"
+        ]
       }
     },
     "manual:808-beezy-bandsintown-108772449": {
@@ -641,7 +646,9 @@
     },
     "manual:808-beezy-bandsintown-108772493": {
       "path": "/event/808-beezy-live-at-rwg-tour-2026-2026-09-22-ohio-09794e/",
-      "sourceIds": [],
+      "sourceIds": [
+        "bandsintown:108772493"
+      ],
       "event": {
         "id": "manual:808-beezy-bandsintown-108772493",
         "title": "808 BEEZY — Live at RWG TOUR 2026",
@@ -663,7 +670,10 @@
         "ticketUrl": "https://www.bandsintown.com/e/108772493",
         "image": "assets/event-fallback.webp",
         "imageType": "fallback",
-        "confidence": "high"
+        "confidence": "high",
+        "mergedFromIds": [
+          "bandsintown:108772493"
+        ]
       }
     },
     "manual:808-beezy-bandsintown-108772501": {
@@ -4389,34 +4399,11 @@
         "confidence": "medium"
       }
     },
-    "official:29f19c38ff406820fa64": {
-      "path": "/event/forrest-frank-the-jesus-generation-tour-2026-07-30-austin-4c64d0/",
-      "sourceIds": [],
-      "event": {
-        "id": "official:29f19c38ff406820fa64",
-        "title": "Forrest Frank: The Jesus Generation Tour",
-        "startDate": "2026-07-30",
-        "startTime": "19:00",
-        "timezone": "America/Chicago",
-        "city": "Austin",
-        "state": "TX",
-        "country": "US",
-        "venue": "Venue not provided",
-        "address": "2001 Robert Dedman Drive",
-        "artists": [
-          "Forrest Frank"
-        ],
-        "status": "scheduled",
-        "eventType": "concert",
-        "officialUrl": "https://tprlive.co/collections/forrest-frank-the-jesus-generation-tour",
-        "ticketUrl": "https://tprlive.co/collections",
-        "image": "http://tprlive.co/cdn/shop/collections/ForrestFrank_2026_1080x1080_1.webp?v=1784735553",
-        "confidence": "high"
-      }
-    },
     "ticketmaster:G5dIZbzpM_abq": {
       "path": "/event/forrest-frank-the-jesus-generation-tour-2026-07-30-austin-1c5739/",
-      "sourceIds": [],
+      "sourceIds": [
+        "official:29f19c38ff406820fa64"
+      ],
       "event": {
         "id": "ticketmaster:G5dIZbzpM_abq",
         "title": "Forrest Frank: The Jesus Generation Tour",
@@ -4436,7 +4423,10 @@
         "officialUrl": "https://www.ticketmaster.com/forrest-frank-the-jesus-generation-tour-austin-texas-07-30-2026/event/3A006385B764961D",
         "ticketUrl": "https://www.ticketmaster.com/forrest-frank-the-jesus-generation-tour-austin-texas-07-30-2026/event/3A006385B764961D",
         "image": "https://s1.ticketm.net/dam/a/7cf/e3601527-01f0-4ad7-a104-208869fe87cf_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-        "confidence": "high"
+        "confidence": "high",
+        "mergedFromIds": [
+          "official:29f19c38ff406820fa64"
+        ]
       }
     },
     "official:4276e9afe5cb57b97dca": {
@@ -9841,35 +9831,11 @@
         "mergedFromIds": []
       }
     },
-    "bandsintown:108771984": {
-      "path": "/event/rwg-tour-2026-2026-09-08-oakland-78e87c/",
-      "sourceIds": [],
-      "event": {
-        "id": "bandsintown:108771984",
-        "title": "RWG TOUR 2026",
-        "startDate": "2026-09-08",
-        "startTime": "08:30",
-        "timezone": "",
-        "city": "Oakland",
-        "state": "ME",
-        "country": "US",
-        "venue": "RWG TOUR 2026",
-        "address": "",
-        "artists": [
-          "808 BEEZY"
-        ],
-        "headliner": "808 BEEZY",
-        "status": "scheduled",
-        "eventType": "concert",
-        "officialUrl": "https://www.bandsintown.com/e/108771984?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "ticketUrl": "https://www.bandsintown.com/e/108771984?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "image": "assets/artists/808-beezy.webp",
-        "confidence": "medium"
-      }
-    },
     "manual:808-beezy-rwg-oakland-me-2026-09-08": {
       "path": "/event/rwg-tour-2026-2026-09-08-oakland-ff511c/",
-      "sourceIds": [],
+      "sourceIds": [
+        "bandsintown:108771984"
+      ],
       "event": {
         "id": "manual:808-beezy-rwg-oakland-me-2026-09-08",
         "title": "RWG TOUR 2026",
@@ -9891,7 +9857,10 @@
         "ticketUrl": "https://www.bandsintown.com/e/108771984-808-beezy-at-oakland-me?came_from=294",
         "image": "assets/event-fallback.webp",
         "imageType": "fallback",
-        "confidence": "high"
+        "confidence": "high",
+        "mergedFromIds": [
+          "bandsintown:108771984"
+        ]
       }
     },
     "manual:808-beezy-rwg-waldoboro-me-2026-09-08": {
@@ -11634,7 +11603,9 @@
     },
     "official:12ef07b891bbeeefbcb1": {
       "path": "/event/uprise-festival-2026-2026-09-11-shippensburg-12bad1/",
-      "sourceIds": [],
+      "sourceIds": [
+        "official:0ac72030904117f28951"
+      ],
       "event": {
         "id": "official:12ef07b891bbeeefbcb1",
         "title": "Uprise Festival 2026",
@@ -11665,7 +11636,10 @@
         "ticketUrl": "https://www.uprisefest.com/uprise-2026",
         "image": "https://s1.ticketm.net/dam/a/1cb/834c7b9b-5176-4d5c-b69c-d8cda9cd91cb_1753211_TABLET_LANDSCAPE_LARGE_16_9.jpg",
         "imageType": "artist",
-        "confidence": "high"
+        "confidence": "high",
+        "mergedFromIds": [
+          "official:0ac72030904117f28951"
+        ]
       }
     },
     "bandsintown:109072940": {
@@ -11697,41 +11671,6 @@
         "confidence": "medium",
         "publicDescription": "God Did It Movement and partner churches present a free outdoor community day with live worship, Christian music, guest speakers and baptisms. Visitors can browse a Christian market, watch live art and find activities for children, including face painting and hair braiding. Free groceries are available for families in need; RSVP helps organizers plan supplies.",
         "mergedFromIds": []
-      }
-    },
-    "official:0ac72030904117f28951": {
-      "path": "/event/uprise-festival-2026-2026-09-11-shippensburg-19f46f/",
-      "sourceIds": [],
-      "event": {
-        "id": "official:0ac72030904117f28951",
-        "title": "Uprise Festival 2026",
-        "startDate": "2026-09-11",
-        "endDate": "2026-09-12",
-        "startTime": "",
-        "timezone": "",
-        "city": "Shippensburg",
-        "state": "PA",
-        "country": "US",
-        "venue": "Shippensburg Community Fairgrounds",
-        "address": "10131 Possum Hollow Rd",
-        "artists": [
-          "KB",
-          "Hulvey",
-          "nobigdyl.",
-          "Miles Minnick",
-          "1K Phew",
-          "Anike",
-          "Kijan Boone",
-          "Tommy Zuko"
-        ],
-        "headliner": "KB",
-        "status": "scheduled",
-        "eventType": "festival",
-        "officialUrl": "https://www.uprisefest.com/uprise-2026",
-        "ticketUrl": "https://www.uprisefest.com/uprise-2026",
-        "image": "https://s1.ticketm.net/dam/a/1cb/834c7b9b-5176-4d5c-b69c-d8cda9cd91cb_1753211_TABLET_LANDSCAPE_LARGE_16_9.jpg",
-        "imageType": "artist",
-        "confidence": "high"
       }
     },
     "manual:victory-over-darkness-fullerton-2026-10-24": {
@@ -13944,32 +13883,6 @@
         "confidence": "high"
       }
     },
-    "bandsintown:108772413": {
-      "path": "/event/rwg-tour-2026-2026-09-18-dola-170ca5/",
-      "sourceIds": [],
-      "event": {
-        "id": "bandsintown:108772413",
-        "title": "RWG TOUR 2026",
-        "startDate": "2026-09-18",
-        "startTime": "08:45",
-        "timezone": "",
-        "city": "Dola",
-        "state": "OH",
-        "country": "US",
-        "venue": "RWG TOUR 2026",
-        "address": "",
-        "artists": [
-          "808 BEEZY"
-        ],
-        "headliner": "808 BEEZY",
-        "status": "scheduled",
-        "eventType": "concert",
-        "officialUrl": "https://www.bandsintown.com/e/108772413?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "ticketUrl": "https://www.bandsintown.com/e/108772413?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "image": "assets/artists/808-beezy.webp",
-        "confidence": "medium"
-      }
-    },
     "bandsintown:108772465": {
       "path": "/event/rwg-tour-2026-2026-09-21-granville-910993/",
       "sourceIds": [],
@@ -13992,32 +13905,6 @@
         "eventType": "concert",
         "officialUrl": "https://www.bandsintown.com/e/108772465?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
         "ticketUrl": "https://www.bandsintown.com/e/108772465?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "image": "assets/artists/808-beezy.webp",
-        "confidence": "medium"
-      }
-    },
-    "bandsintown:108772493": {
-      "path": "/event/rwg-tour-2026-2026-09-22-ohio-a6f86d/",
-      "sourceIds": [],
-      "event": {
-        "id": "bandsintown:108772493",
-        "title": "RWG TOUR 2026",
-        "startDate": "2026-09-22",
-        "startTime": "08:20",
-        "timezone": "",
-        "city": "Ohio",
-        "state": "IL",
-        "country": "US",
-        "venue": "RWG TOUR 2026",
-        "address": "",
-        "artists": [
-          "808 BEEZY"
-        ],
-        "headliner": "808 BEEZY",
-        "status": "scheduled",
-        "eventType": "concert",
-        "officialUrl": "https://www.bandsintown.com/e/108772493?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "ticketUrl": "https://www.bandsintown.com/e/108772493?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
         "image": "assets/artists/808-beezy.webp",
         "confidence": "medium"
       }
@@ -15308,7 +15195,15 @@
     "/event/flavor-fest-2026-friday-concerts-2026-11-06-tampa-414fbd/": "/event/flavor-fest-2026-friday-concerts-2026-11-06-tampa-b41edf/",
     "/event/flavor-fest-2026-saturday-concerts-2026-11-07-tampa-983c29/": "/event/flavor-fest-2026-saturday-concerts-2026-11-07-tampa-cf7fac/",
     "/event/state-youth-conference-with-cj-emulous-2026-11-27-orlando-25bf50/": "/event/state-youth-conference-with-cj-emulous-2026-11-27-cocoa-25bf50/",
-    "/event/1k-phew-live-performance-2026-11-21-item-a168a7/": "/event/1k-phew-live-at-texas-motorplex-2026-11-21-swiss-golf-and-tennis-club-mobile-home-park-a168a7/"
+    "/event/1k-phew-live-performance-2026-11-21-item-a168a7/": "/event/1k-phew-live-at-texas-motorplex-2026-11-21-swiss-golf-and-tennis-club-mobile-home-park-a168a7/",
+    "/event/forrest-frank-the-jesus-generation-tour-2026-07-30-austin-4c64d0/": "/event/forrest-frank-the-jesus-generation-tour-2026-07-30-austin-1c5739/",
+    "/event/rwg-tour-2026-2026-09-08-oakland-78e87c/": "/event/rwg-tour-2026-2026-09-08-oakland-ff511c/",
+    "/event/uprise-festival-2026-2026-09-11-shippensburg-19f46f/": "/event/uprise-festival-2026-2026-09-11-shippensburg-12bad1/",
+    "/event/rwg-tour-2026-2026-09-18-dola-170ca5/": "/event/808-beezy-live-at-rwg-tour-2026-2026-09-18-dola-f98cbd/",
+    "/event/rwg-tour-2026-2026-09-22-ohio-a6f86d/": "/event/808-beezy-live-at-rwg-tour-2026-2026-09-22-ohio-09794e/",
+    "/artists/k-drama/florida/": "/artists/k-drama/",
+    "/shows/leander-austin-texas/": "/shows/leander-texas/",
+    "/shows/sponsor-nashville-tennessee/": "/shows/nashville-tennessee/"
   },
   "pages": {
     "/artists/180mindset/": {
@@ -15355,7 +15250,7 @@
       ]
     },
     "/": {
-      "fingerprint": "30be71a08d0dd18292ee77d9624909cf36c05c9184bf54e8cc5c18354820a519",
+      "fingerprint": "a69acd6a5a2b6080eb4250324d6f4e61b6e500813ee84fda77f51ea8dc4c9596",
       "lastmod": "2026-11-07",
       "title": "Christian Hip-Hop Shows & Festivals | Kingdom Circuit",
       "heading": "Find CHH Shows Near You!",
@@ -15601,12 +15496,11 @@
       ]
     },
     "/artists/808-beezy/maine/": {
-      "fingerprint": "b41909cc4967c19a8af00d134ecf866238b03c01a99b5f508f55a546bac03123",
-      "lastmod": null,
+      "fingerprint": "51b6d35759c398760559fc02ce70e622238d017e76f862f002232ed5e9228171",
+      "lastmod": "2026-11-07",
       "title": "808 BEEZY Concerts in Maine | Upcoming Shows",
       "heading": "808 BEEZY Concerts in Maine",
       "eventPaths": [
-        "/event/rwg-tour-2026-2026-09-08-oakland-78e87c/",
         "/event/rwg-tour-2026-2026-09-08-oakland-ff511c/",
         "/event/rwg-tour-2026-2026-09-08-waldoboro-bc9ea7/",
         "/event/rwg-tour-2026-2026-09-09-gardiner-6d7b53/",
@@ -22145,16 +22039,16 @@
       "eventPaths": []
     },
     "/event/808-beezy-live-at-rwg-tour-2026-2026-09-18-dola-869218/": {
-      "fingerprint": "c830065e254b4e59e18a88942b6f9a7c68101da663e8442b1ab6e16d8c1f9b82",
-      "lastmod": null,
-      "title": "808 BEEZY — Live at RWG TOUR 2026 — Dola, OH — Sep 18, 2026 | Kingdom Circuit",
+      "fingerprint": "05b17dc77d15a0890237dc71c7bebccd3b041b677a140b7578695023e6ba65fb",
+      "lastmod": "2026-11-07",
+      "title": "808 BEEZY — Live at RWG TOUR 2026 | Kingdom Circuit",
       "heading": "808 BEEZY — Live at RWG TOUR 2026",
       "eventPaths": []
     },
     "/event/808-beezy-live-at-rwg-tour-2026-2026-09-18-dola-f98cbd/": {
-      "fingerprint": "5d112178ef26e595a7db9be4be8ef2a61e8fa8fc542035b0c3e94e453b656c80",
-      "lastmod": null,
-      "title": "808 BEEZY — Live at RWG TOUR 2026 — Dola, OH — Sep 18, 2026 — RWG TOUR 2026 | Kingdom Circuit",
+      "fingerprint": "1be690a7a070389fdbc3fa0663d6d0978331a8b1194830d1f9d4fe9dbdb2a62b",
+      "lastmod": "2026-11-07",
+      "title": "808 BEEZY — Live at RWG TOUR 2026 | Kingdom Circuit",
       "heading": "808 BEEZY — Live at RWG TOUR 2026",
       "eventPaths": []
     },
@@ -22173,16 +22067,16 @@
       "eventPaths": []
     },
     "/event/808-beezy-live-at-rwg-tour-2026-2026-09-22-ohio-09794e/": {
-      "fingerprint": "f6a99cf08112dda80a38cebeb52e64fad245f78e98ac0de8b65293c4c73607e5",
-      "lastmod": null,
-      "title": "808 BEEZY — Live at RWG TOUR 2026 — Ohio, IL — Sep 22, 2026 | Kingdom Circuit",
+      "fingerprint": "102c52664b8e6d9345c9a47ab55e4c696581f8a4b70139b58c3dea18f8f499a9",
+      "lastmod": "2026-11-07",
+      "title": "808 BEEZY — Live at RWG TOUR 2026 | Kingdom Circuit",
       "heading": "808 BEEZY — Live at RWG TOUR 2026",
       "eventPaths": []
     },
     "/event/808-beezy-live-at-rwg-tour-2026-2026-09-22-ohio-9ef7ce/": {
-      "fingerprint": "10edb44c596f51bb3f41fe3df2bae59919341407ebdb428a75bfa0340e227748",
-      "lastmod": null,
-      "title": "808 BEEZY — Live at RWG TOUR 2026 — Ohio, IL — Sep 22, 2026 — RWG TOUR 2026 | Kingdom Circuit",
+      "fingerprint": "86ddd250841e8cc8efc710f76ec3375e87cd1316e8d485315e578cb4fa134a34",
+      "lastmod": "2026-11-07",
+      "title": "808 BEEZY — Live at RWG TOUR 2026 | Kingdom Circuit",
       "heading": "808 BEEZY — Live at RWG TOUR 2026",
       "eventPaths": []
     },
@@ -22243,16 +22137,16 @@
       "eventPaths": []
     },
     "/event/808-beezy-live-in-delano-ca-2026-10-08-delano-ccf4b6/": {
-      "fingerprint": "2f2432a9211bedca7221f76d3abc55fe8b02375384b818c51a84be562da0aacb",
-      "lastmod": null,
-      "title": "808 BEEZY — Live in Delano, CA — Delano, CA — Oct 8, 2026 | Kingdom Circuit",
+      "fingerprint": "94a31b575e2db12eda1304b7c0f010c69229112eb1485947c635c735fccaa31b",
+      "lastmod": "2026-11-07",
+      "title": "808 BEEZY — Live in Delano, CA | Kingdom Circuit",
       "heading": "808 BEEZY — Live in Delano, CA",
       "eventPaths": []
     },
     "/event/808-beezy-live-in-delano-ca-2026-10-08-delano-d17357/": {
-      "fingerprint": "e0899b6517ac945752076e61ebe8b9e4138e975eb1b45e5158ecf44d7621bfac",
-      "lastmod": null,
-      "title": "808 BEEZY — Live in Delano, CA — Delano, CA — Oct 8, 2026 — Venue to be announced | Kingdom Circuit",
+      "fingerprint": "b0810ca513a9dd285f77b3ad7135e851afa6a174845f3a127796952f54ab7a07",
+      "lastmod": "2026-11-07",
+      "title": "808 BEEZY — Live in Delano, CA | Kingdom Circuit",
       "heading": "808 BEEZY — Live in Delano, CA",
       "eventPaths": []
     },
@@ -22704,7 +22598,7 @@
       "eventPaths": []
     },
     "/event/cars-and-christ-orlando-tommy-royale-2026-12-05-orlando-bb8b53/": {
-      "fingerprint": "7dceef2054f0ba1661833098bbe064d921da565f52187356b7148861e12fa433",
+      "fingerprint": "43aeb122aa3bcc3c971dae72aaaee0303eab8e10e816a5a58eec88b4537b0f4f",
       "lastmod": "2026-11-07",
       "title": "Cars & Christ Orlando — Tommy Royale — Orlando, FL — Sat, Dec 5, 2026 - 5:00 PM | Kingdom Circuit",
       "heading": "Cars & Christ Orlando — Tommy Royale",
@@ -23247,7 +23141,7 @@
       "eventPaths": []
     },
     "/event/ghetto-gospel-sevin-and-dontae-2026-11-22-sacramento-4245d4/": {
-      "fingerprint": "501b44c62e32b531aebce0472540418eecf007c5ea3db506be5f73284efaba73",
+      "fingerprint": "d6f942820ee194d976256ee65b7a32b840291abd855640b1989bdd2d6a193e50",
       "lastmod": "2026-11-07",
       "title": "Ghetto Gospel — Sevin & Dontae — Sacramento, CA — Sun, Nov 22, 2026 - 7:00 PM | Kingdom Circuit",
       "heading": "Ghetto Gospel — Sevin & Dontae",
@@ -23385,8 +23279,8 @@
       "eventPaths": []
     },
     "/event/hip-hop-nights-at-the-rock-box-1k-phew-2027-01-30-san-antonio-3f1b73/": {
-      "fingerprint": "364ddefdaaa32e4e406e880cffd20b76e9db0977f63155f72ddbe1b4f0df51a4",
-      "lastmod": "2026-11-06",
+      "fingerprint": "99ca189bcb6c4f9e5c3167d92a01c9b18a7087c7866e02e5874d24f3461d0237",
+      "lastmod": "2026-11-07",
       "title": "Hip Hop Nights at The Rock Box — 1K Phew — San Antonio, TX — Sat, Jan 30, 2027 - 8:00 PM | Kingdom Circuit",
       "heading": "Hip Hop Nights at The Rock Box — 1K Phew",
       "eventPaths": [
@@ -24464,8 +24358,8 @@
       "eventPaths": []
     },
     "/event/outlandish-fest-2026-2026-11-14-fort-worth-8e2969/": {
-      "fingerprint": "1ce5a3bd2f3273fa02565a868875aa9af81ecd304695935f4d37abc1ce35a270",
-      "lastmod": "2026-11-06",
+      "fingerprint": "367d92a9d1ab9aaa24441e54654297d7e5a074299910f62d76ec1175ef6255d6",
+      "lastmod": "2026-11-07",
       "title": "Outlandish Fest 2026 — Fort Worth, TX — Sat, Nov 14, 2026 - 6:00 PM | Kingdom Circuit",
       "heading": "Outlandish Fest 2026",
       "eventPaths": [
@@ -24552,7 +24446,7 @@
       "eventPaths": []
     },
     "/event/rap-go-round-pass-the-mic-2026-2026-11-20-west-palm-beach-64e241/": {
-      "fingerprint": "33978ecacdd23ef95fd671a98e73478c46c541a312a0afb71deefebe4edc4596",
+      "fingerprint": "203970195127bbb69ba70b85ec753027ddaff26a0635de849d04af8fa6a86813",
       "lastmod": "2026-11-07",
       "title": "Rap Go Round — Pass The Mic 2026 — West Palm Beach, FL — Fri, Nov 20, 2026 - 9:00 PM | Kingdom Circuit",
       "heading": "Rap Go Round — Pass The Mic 2026",
@@ -24660,7 +24554,7 @@
       "eventPaths": []
     },
     "/event/revival-nights-asap-preach-and-dray-day-ministries-2026-11-21-hilliard-884fb3/": {
-      "fingerprint": "95d5c5781ed0488ceb44600780dba45bc9e3af8bc3e3a2bf23aaf80497b9e145",
+      "fingerprint": "94e71703d05179f8a19ba3b9c4f3a34ec8ef564dff6a50f9ff1db936a36c58f6",
       "lastmod": "2026-11-07",
       "title": "Revival Nights — ASAP Preach & Dray Day Ministries — Hilliard, OH — Sat, Nov 21, 2026 - 6:00 PM | Kingdom Circuit",
       "heading": "Revival Nights — ASAP Preach & Dray Day Ministries",
@@ -25068,8 +24962,8 @@
       "eventPaths": []
     },
     "/event/the-main-event-2026-11-12-washington-9003b0/": {
-      "fingerprint": "fb12c5ee2ce2dd045492392fac7a06eb84968913a185271ac63ec6565cdc22d0",
-      "lastmod": "2026-11-06",
+      "fingerprint": "09547fb0fe3fb7f9d89ec6911cb8c876111c8be0f6799017fd3fe520d336d024",
+      "lastmod": "2026-11-07",
       "title": "The Main Event — Washington, DC — Thu, Nov 12, 2026 - 8:00 PM | Kingdom Circuit",
       "heading": "The Main Event",
       "eventPaths": [
@@ -25231,7 +25125,7 @@
       "eventPaths": []
     },
     "/event/unity-pop-up-tour-2026-11-14-orlando-5ce15b/": {
-      "fingerprint": "eda649c4e8ee32561ece806d42337bc7fc924abd104867a86a3ef37d89392a06",
+      "fingerprint": "e054113bf479d4e288a855b882f136a781bc768f70c7f5d606c9877ec973872d",
       "lastmod": "2026-11-07",
       "title": "UNITY POP-UP TOUR — Orlando, FL — Sat, Nov 14, 2026 - 11:00 AM | Kingdom Circuit",
       "heading": "UNITY POP-UP TOUR",
@@ -26098,11 +25992,12 @@
       ]
     },
     "/new-shows/": {
-      "fingerprint": "e9c0792798d9f6b75faf4c959ad4219561e1788b7f1bbaffbe2c7dbf7a3df547",
+      "fingerprint": "9fd6a9325bd9e3520382875dbf32d3de121c9b35429274bfcb2b968c779897e4",
       "lastmod": "2026-11-07",
       "title": "New Christian Hip-Hop Shows | The Kingdom Circuit",
       "heading": "New to Kingdom Circuit",
       "eventPaths": [
+        "/event/1k-phew-live-at-texas-motorplex-2026-11-21-swiss-golf-and-tennis-club-mobile-home-park-a168a7/",
         "/event/5ive-me-against-the-world-forever-album-release-concert-2026-11-11-portales-1871a8/",
         "/event/5ive-me-against-the-world-forever-album-release-concert-2026-11-12-albuquerque-fceb66/",
         "/event/5ive-me-against-the-world-forever-album-release-concert-2026-11-14-raton-f4adbc/",
@@ -28683,7 +28578,7 @@
       ]
     },
     "/shows/austin-texas/": {
-      "fingerprint": "c0fc8308bf06d570c76c05fbee376b226d5a104b652078c6025a534b3a517267",
+      "fingerprint": "fa8b599247d22b7b5653c944e30629879590152e6bee97a36814d583befdd5a3",
       "lastmod": "2026-11-07",
       "title": "Christian Hip-Hop Shows in Austin, Texas | Kingdom Circuit",
       "heading": "Christian Hip-Hop Shows in Austin, Texas",
@@ -28691,8 +28586,7 @@
         "/event/anike-live-at-3ten-austin-city-limits-live-2026-08-15-austin-499af9/",
         "/event/anike-live-at-the-all-star-experience-live-concert-2026-10-11-austin-b52a11/",
         "/event/anike-live-at-the-banquet-2026-08-16-austin-2ba354/",
-        "/event/forrest-frank-the-jesus-generation-tour-2026-07-30-austin-1c5739/",
-        "/event/forrest-frank-the-jesus-generation-tour-2026-07-30-austin-4c64d0/"
+        "/event/forrest-frank-the-jesus-generation-tour-2026-07-30-austin-1c5739/"
       ]
     },
     "/shows/hampton-georgia/": {
@@ -29395,8 +29289,8 @@
       ]
     },
     "/event/anthem-night-dmv-trap-worship-pop-up-2026-11-20-capitol-heights-0644e1/": {
-      "fingerprint": "ee4aa30146243502c21f734df3cdb1cf68c734efd847f2c960b17cb0d63da923",
-      "lastmod": "2026-11-06",
+      "fingerprint": "9219d7671b943b42e25bc74212793d67145e2578d5b298c4ca65bb70389b0614",
+      "lastmod": "2026-11-07",
       "title": "Anthem Night DMV — Trap Worship Pop Up — Capitol Heights, MD — Fri, Nov 20, 2026 | Kingdom Circuit",
       "heading": "Anthem Night DMV — Trap Worship Pop Up",
       "eventPaths": [
@@ -29567,8 +29461,8 @@
       ]
     },
     "/event/g-ng-live-first-headlining-show-2027-01-15-south-attleboro-2148f6/": {
-      "fingerprint": "481f721b90b58a79913672a071ca066b219bd3a52ac8bda0cfcd3c596b9e3e86",
-      "lastmod": "2026-11-06",
+      "fingerprint": "9ffe942ef43a97b0cda978d87b9a4bd2b16dc8252d5e925a71a0a2b460328c1b",
+      "lastmod": "2026-11-07",
       "title": "G!nG LIVE — First Headlining Show — South Attleboro, MA — Fri, Jan 15, 2027 - 7:00 PM | Kingdom Circuit",
       "heading": "G!nG LIVE — First Headlining Show",
       "eventPaths": []
@@ -29681,11 +29575,202 @@
       "eventPaths": [
         "/event/miracles-in-the-valley-mesa-2026-12-05-mesa-18d318/"
       ]
+    },
+    "/artists/braille/ohio/": {
+      "fingerprint": "775125824588b21ee2a3589e250cb6d07b6595b614452ee7de2a19075a8eefe1",
+      "lastmod": null,
+      "title": "Braille shows in Ohio — archive | Kingdom Circuit",
+      "heading": "Braille shows in Ohio — archive",
+      "eventPaths": [
+        "/event/braille-at-westside-bowl-2026-08-28-youngstown-7d951d/"
+      ]
+    },
+    "/artists/dkg-kie/ohio/": {
+      "fingerprint": "f4e6bd108034ebce52306d968be9c3499b43b2ab1538df7a9864b4f4952cf19f",
+      "lastmod": null,
+      "title": "DKG Kie shows in Ohio — archive | Kingdom Circuit",
+      "heading": "DKG Kie shows in Ohio — archive",
+      "eventPaths": [
+        "/event/dkg-kie-at-grace-church-barberton-campus-2026-08-28-barberton-6042d7/"
+      ]
+    },
+    "/artists/kelo/ohio/": {
+      "fingerprint": "7a7f8a2ac5aa159899cf55d99f8d73aea9a6eb77f77063b0c0df17eecc0bd02d",
+      "lastmod": null,
+      "title": "Kelo shows in Ohio — archive | Kingdom Circuit",
+      "heading": "Kelo shows in Ohio — archive",
+      "eventPaths": [
+        "/event/kelo-at-grace-church-barberton-campus-2026-08-28-barberton-2139dd/"
+      ]
+    },
+    "/shows/august-2026/": {
+      "fingerprint": "14015005f23169e5aaa6e7db772916360c4af865865b6fc3c6fea7fb6f7335d9",
+      "lastmod": null,
+      "title": "Christian hip-hop shows — August 2026 archive | Kingdom Circuit",
+      "heading": "Christian hip-hop shows — August 2026 archive",
+      "eventPaths": [
+        "/event/1k-phew-live-at-1k-phew-field-day-2026-08-29-atlanta-cd3ace/",
+        "/event/1k-phew-live-at-impact-church-youth-talent-expo-2026-08-08-atlanta-1b5573/",
+        "/event/1k-phew-live-at-mt-zion-baptist-church-2026-08-23-whites-creek-ca0d10/",
+        "/event/1k-phew-live-at-pneuma-church-2026-08-01-chattanooga-0260c9/",
+        "/event/1k-phew-live-at-smac-s-empowerment-luncheon-2026-08-05-birmingham-c15bee/",
+        "/event/anike-live-at-3ten-austin-city-limits-live-2026-08-15-austin-499af9/",
+        "/event/anike-live-at-the-banquet-2026-08-16-austin-2ba354/",
+        "/event/braille-at-westside-bowl-2026-08-28-youngstown-7d951d/",
+        "/event/caleb-gordon-the-eden-experience-2026-08-14-phoenix-23868e/",
+        "/event/caleb-gordon-the-eden-experience-2026-08-16-pomona-984284/",
+        "/event/caleb-gordon-the-eden-experience-2026-08-16-pomona-los-angeles-945dd0/",
+        "/event/caleb-gordon-the-eden-experience-2026-08-18-fair-oaks-c83027/",
+        "/event/caleb-gordon-the-eden-experience-2026-08-18-fair-oaks-sacramento-a60791/",
+        "/event/canton-jones-at-holiday-inn-and-suites-beaufort-highway-21-by-ihg-2026-08-29-beaufort-927275/",
+        "/event/dkg-kie-at-grace-church-barberton-campus-2026-08-28-barberton-6042d7/",
+        "/event/egr-live-bakersfield-2026-08-21-bakersfield-9f05f5/",
+        "/event/egr-live-forest-falls-2026-08-28-forest-falls-8bc535/",
+        "/event/egr-live-fresno-2026-08-22-fresno-d107a1/",
+        "/event/egr-live-san-bernardino-2026-08-14-san-bernardino-cd5630/",
+        "/event/egr-live-santa-ana-2026-08-29-santa-ana-eb6160/",
+        "/event/egr-live-spokane-2026-08-16-spokane-fc4177/",
+        "/event/egr-live-tacoma-2026-08-15-tacoma-208f55/",
+        "/event/egr-live-trenton-2026-08-08-trenton-616287/",
+        "/event/flame-live-in-concert-2026-08-08-plano-2a9f7f/",
+        "/event/forrest-frank-the-jesus-generation-tour-2026-08-01-arlington-95c8cf/",
+        "/event/holy-smoke-2026-2026-08-06-nashville-952f59/",
+        "/event/hope-fest-2026-2026-08-22-daytona-beach-ac6572/",
+        "/event/hulvey-16-and-over-with-parent-or-legal-guardian-2026-08-28-dallas-c3e133/",
+        "/event/hulvey-2026-08-12-st-louis-70ce09/",
+        "/event/hulvey-2026-08-15-denver-d0d5e6/",
+        "/event/hulvey-2026-08-19-portland-e7bec0/",
+        "/event/hulvey-2026-08-22-los-angeles-45800d/",
+        "/event/hulvey-could-be-tonight-tour-2026-08-18-seattle-827602/",
+        "/event/hulvey-could-be-tonight-tour-2026-08-21-sacramento-15d987/",
+        "/event/hulvey-could-be-tonight-tour-2026-08-23-san-diego-d2d67e/",
+        "/event/hulvey-could-be-tonight-tour-2026-08-24-phoenix-c3f6ef/",
+        "/event/hulvey-could-be-tonight-tour-2026-08-27-san-antonio-ce7e33/",
+        "/event/hulvey-could-be-tonight-tour-2026-08-29-houston-d0d339/",
+        "/event/hulvey-w-indie-tribe-2026-08-13-oklahoma-city-015c35/",
+        "/event/kelo-at-grace-church-barberton-campus-2026-08-28-barberton-2139dd/",
+        "/event/konnect-concert-series-2026-08-22-houston-3d3289/",
+        "/event/off-the-charts-music-festival-2026-2026-08-15-cavalier-581328/",
+        "/event/rural-music-festival-2026-2026-08-28-isle-aa0202/",
+        "/event/sevin-live-concert-2026-08-29-san-diego-6ec8d7/",
+        "/event/stellar-mike-teezy-pop-up-experience-2026-08-22-charlotte-ef15d3/",
+        "/event/steven-malcolm-at-the-centre-2026-08-20-adrian-4413d3/",
+        "/event/turned-up-for-christ-2026-08-28-corbin-8dd468/"
+      ]
+    },
+    "/shows/september-2026/": {
+      "fingerprint": "c012875bf4494aeb9e3dcd85cc33652f9276cf2dea30fa43930565f5373cef2b",
+      "lastmod": null,
+      "title": "Christian hip-hop shows — September 2026 archive | Kingdom Circuit",
+      "heading": "Christian hip-hop shows — September 2026 archive",
+      "eventPaths": [
+        "/event/1k-phew-live-at-fastivalle-2026-2026-09-26-indianapolis-d60ea0/",
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-16-bowling-green-b1c1a6/",
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-16-desloge-bbc3f4/",
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-17-bunker-hill-9738a7/",
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-17-mulberry-grove-fb8efe/",
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-18-dola-869218/",
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-18-dola-f98cbd/",
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-21-dunlap-7b853b/",
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-21-granville-f38a75/",
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-22-ohio-09794e/",
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-22-ohio-9ef7ce/",
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-22-princeton-3ad0ae/",
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-23-elwood-b35b3f/",
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-23-mokena-a558ea/",
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-24-hume-c4cb77/",
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-24-kansas-ac8d0f/",
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-25-malta-bend-f3c3e1/",
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-25-wellington-2dc18f/",
+        "/event/access-granted-marriage-retreat-with-psalm-bird-and-cj-emulous-2026-09-25-winters-351382/",
+        "/event/an-evening-with-project-nation-ft-marty-from-social-club-misfits-2026-09-10-kuna-cc9415/",
+        "/event/block-party-2026-09-12-greensboro-98a087/",
+        "/event/caleb-gordon-the-eden-experience-2026-09-18-southlake-f04cff/",
+        "/event/caleb-gordon-the-eden-experience-2026-09-20-san-antonio-54bf7e/",
+        "/event/caleb-gordon-the-eden-experience-2026-09-22-leander-19d1d1/",
+        "/event/caleb-gordon-the-eden-experience-2026-09-24-richmond-025ae1/",
+        "/event/caleb-gordon-the-eden-experience-2026-09-26-orlando-871a66/",
+        "/event/celebrate-minnesota-tobymac-and-kb-2026-09-19-waite-park-dd6a9a/",
+        "/event/egr-live-carson-2026-09-18-carson-217b8a/",
+        "/event/egr-live-corpus-christi-2026-09-12-corpus-christi-7bd370/",
+        "/event/egr-live-manteca-2026-09-19-manteca-3678dd/",
+        "/event/egr-live-nashville-2026-09-05-nashville-dd98ef/",
+        "/event/faith-jam-2026-2026-09-26-sparta-4411b1/",
+        "/event/fountain-fest-wv-2026-2026-09-18-martinsburg-1cd64d/",
+        "/event/god-bless-r-and-b-ii-kennis-clark-don-ready-and-friends-2026-09-02-atlanta-10ec00/",
+        "/event/gracefest-2026-2026-09-19-castaic-6ba1c0/",
+        "/event/grand-opening-the-whosoevers-boise-invasion-2026-09-26-boise-98ceee/",
+        "/event/hip-hop-in-the-park-2026-09-19-cortland-94d6e9/",
+        "/event/holy-nights-tour-sanger-ca-2026-09-19-sanger-b67096/",
+        "/event/holy-nights-tour-yucca-valley-ca-2026-09-16-yucca-valley-9638fc/",
+        "/event/hulvey-2026-09-03-orlando-742bc3/",
+        "/event/hulvey-2026-09-22-grand-rapids-b48ef2/",
+        "/event/hulvey-could-be-tonight-tour-2026-09-01-birmingham-5a6bb8/",
+        "/event/hulvey-could-be-tonight-tour-2026-09-06-charlotte-ce2b63/",
+        "/event/hulvey-could-be-tonight-tour-2026-09-08-silver-spring-ba8db5/",
+        "/event/hulvey-could-be-tonight-tour-2026-09-13-new-york-e71f38/",
+        "/event/hulvey-could-be-tonight-tour-2026-09-15-boston-883545/",
+        "/event/hulvey-could-be-tonight-tour-2026-09-18-detroit-0bd71c/",
+        "/event/hulvey-could-be-tonight-tour-2026-09-19-chicago-96a450/",
+        "/event/hulvey-could-be-tonight-tour-2026-09-26-cincinnati-8f820f/",
+        "/event/hulvey-could-be-tonight-tour-2026-09-27-atlanta-48679c/",
+        "/event/hulvey-live-at-elevation-2026-09-22-grand-rapids-77e2ba/",
+        "/event/hulvey-live-at-first-ave-2026-09-20-minneapolis-31908f/",
+        "/event/hulvey-live-at-five-2026-09-05-jacksonville-20c432/",
+        "/event/hulvey-live-at-hifi-annex-2026-09-23-indianapolis-71c8fc/",
+        "/event/hulvey-live-at-miami-beach-bandshell-2026-09-04-miami-beach-397925/",
+        "/event/hulvey-w-indie-tribe-2026-09-10-philadelphia-8d612a/",
+        "/event/hulvey-w-indie-tribe-2026-09-25-columbus-f88802/",
+        "/event/hvo-fest-2026-2026-09-26-los-angeles-32c599/",
+        "/event/immersion-music-and-arts-festival-2026-2026-09-05-circleville-0ab500/",
+        "/event/jay-way-at-crown-hill-theatre-2026-09-04-brooklyn-2767be/",
+        "/event/jimmy-rock-rave-and-worship-denver-2026-2026-09-25-centennial-12d4ab/",
+        "/event/kaden-jordan-live-2026-09-23-orlando-04eadd/",
+        "/event/kingdom-choice-awards-2026-2026-09-19-corona-4f9ae8/",
+        "/event/lecrae-live-at-castaic-lake-state-recreation-area-2026-09-19-castaic-4a4619/",
+        "/event/lifelight-festival-2026-2026-09-06-sioux-falls-14fa95/",
+        "/event/miles-minnick-new-mainstream-tour-2026-09-13-new-york-f8e896/",
+        "/event/oasis-ministry-qbelv-tour-2026-2026-09-27-new-york-d3b318/",
+        "/event/open-skies-bethel-music-with-kb-2026-09-26-topeka-0a9fd5/",
+        "/event/rare-of-breed-at-clarksville-high-school-fine-arts-building-2026-09-05-clarksville-e30119/",
+        "/event/rare-of-breed-at-mt-carmel-baptist-church-2026-09-04-lake-ozark-ab5b35/",
+        "/event/rare-of-breed-at-south-dakota-military-heritage-alliance-inc-2026-09-02-sioux-falls-3d5849/",
+        "/event/rwg-tour-2026-2026-09-08-oakland-ff511c/",
+        "/event/rwg-tour-2026-2026-09-08-waldoboro-bc9ea7/",
+        "/event/rwg-tour-2026-2026-09-09-gardiner-6d7b53/",
+        "/event/rwg-tour-2026-2026-09-09-location-tbd-e33493/",
+        "/event/rwg-tour-2026-2026-09-09-mechanic-falls-21cd61/",
+        "/event/rwg-tour-2026-2026-09-10-waterville-333b96/",
+        "/event/rwg-tour-2026-2026-09-17-bunker-hill-842185/",
+        "/event/rwg-tour-2026-2026-09-21-granville-910993/",
+        "/event/rwg-tour-2026-2026-09-24-kansas-2609e0/",
+        "/event/sevin-live-concert-2026-09-26-millville-3b1409/",
+        "/event/shiloh-church-with-cj-emulous-2026-09-20-sierra-vista-bf5a18/",
+        "/event/syatp-concert-2026-09-23-sierra-vista-121b78/",
+        "/event/the-genesis-show-all-women-s-chh-event-2026-09-19-roswell-9d321d/",
+        "/event/tribe-fest-2026-2026-09-25-rialto-2303be/",
+        "/event/trickle-effect-egr-and-kim-hitt-galvan-2026-09-26-whittier-137bc9/",
+        "/event/trip-lee-live-at-rock-the-pines-2026-2026-09-05-mineola-1b312f/",
+        "/event/truth-in-action-first-annual-gospel-music-concert-2026-09-12-battle-creek-ccf46e/",
+        "/event/truthx-concert-2026-2026-09-12-brandon-bacbe4/",
+        "/event/unity-in-the-community-626authentic-live-2026-09-19-el-monte-4cf6a0/",
+        "/event/uprise-festival-2026-2026-09-11-shippensburg-12bad1/",
+        "/event/worship-in-the-pines-brandon-lake-and-more-2026-09-11-saratoga-springs-7f1e44/"
+      ]
+    },
+    "/shows/leander-texas/": {
+      "fingerprint": "3af95f01d27d53227c88192b660186b3e5a21d1a29d57ee7a7a64c17786870f2",
+      "lastmod": null,
+      "title": "Christian hip-hop shows in Leander, Texas — archive | Kingdom Circuit",
+      "heading": "Christian hip-hop shows in Leander, Texas — archive",
+      "eventPaths": [
+        "/event/caleb-gordon-the-eden-experience-2026-09-22-leander-19d1d1/"
+      ]
     }
   },
   "retiredPaths": [
     "/event/altar-ego-at-clear-skies-meadery-2027-01-23-rockville-3e2bbf/",
     "/event/ryan-ellis-at-the-betsy-hotel-2026-11-13-miami-beach-e47963/"
   ],
-  "publishedAt": "2026-11-07T15:11:17.672095+00:00"
+  "publishedAt": "2026-11-07T15:22:20.218714+00:00"
 }
