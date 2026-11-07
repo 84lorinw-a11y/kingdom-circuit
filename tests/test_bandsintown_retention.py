@@ -12,6 +12,7 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import collect_bandsintown_rest as collector
 import run_bandsintown_refresh as refresh
+import apply_curated_catalog_policy as policy
 
 ARTIST = {'name': 'Issac Mansfield', 'enabled': True,
           'bandsintownProfile': 'https://www.bandsintown.com/a/15588396-issac-mansfield'}
@@ -124,7 +125,8 @@ class MissingProviderRetentionTests(unittest.TestCase):
         excluded = show(artists=['Madison Ryann Ward'], headliner='Madison Ryann Ward', trackedArtist='Madison Ryann Ward')
         for prior, artists in [(show(), [disabled]), (held, [dict(ARTIST,name='Alex Jean')]),
                                (removed, [dict(ARTIST,name='Propaganda')]), (excluded, [dict(ARTIST,name='Madison Ryann Ward')])]:
-            with self.subTest(prior=prior, artists=artists):
+            with self.subTest(prior=prior, artists=artists), \
+                    patch.object(policy, 'OWNER_HELD_IDS', {'alex-jean-dallas-2026-11-19'}):
                 self.assertEqual(self.run_refresh([prior], artists=artists)[0], [])
 
     def test_protected_official_cancelled_postponed_merged_records_win_same_provider_id(self):

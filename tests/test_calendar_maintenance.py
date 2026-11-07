@@ -39,8 +39,10 @@ class CalendarMaintenanceTests(unittest.TestCase):
             {'attrs': {'data-date': '2026-11-19', 'data-state': 'TX'},
              'meta': {'Location': 'Houston, TX'}, 'artists': '<a>WHATUPRG</a>'},
         ]
-        self.assertEqual(len(maintenance.owner_hold_errors(cards)), 1)
-        self.assertEqual(maintenance.owner_hold_errors(cards[1:]), [])
+        self.assertEqual(maintenance.owner_hold_errors(cards), [])
+        with patch.object(maintenance, 'OWNER_HELD_IDS', {'alex-jean-dallas-2026-11-19'}, create=True):
+            self.assertEqual(len(maintenance.owner_hold_errors(cards)), 1)
+            self.assertEqual(maintenance.owner_hold_errors(cards[1:]), [])
 
     def test_artist_check_rejects_yesterday_next_show_even_with_a_future_show(self):
         html='''<script id="kc-fan-config" type="application/json">{"artist":"Test","showPaths":["/event/yesterday/","/event/future/"]}</script>

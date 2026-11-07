@@ -5,6 +5,7 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -64,7 +65,8 @@ class ReviewedDiscoveriesTests(unittest.TestCase):
         # Provider candidates use the same explicit AXS source identity.
         dallas['officialUrl'] = 'https://www.axs.com/events/1626463/alex-jean-tickets'
         supplemental[0]['officialUrl'] = dallas['officialUrl']
-        reviewed.apply(self.root, events, supplemental, today="2026-10-08")
+        with patch.object(reviewed, 'OWNER_HELD_IDS', {'alex-jean-dallas-2026-11-19'}):
+            reviewed.apply(self.root, events, supplemental, today="2026-10-08")
         self.assertEqual(len([e for e in events if e.get('city') == 'Dallas']), 1)
         self.assertEqual(supplemental, [])
         self.assertIn(other_day, events)
@@ -75,7 +77,8 @@ class ReviewedDiscoveriesTests(unittest.TestCase):
         self.assertNotIn('startDateTime', recover)
         self.assertFalse(any('808' in e.get('title','') for e in events))
         snapshot = copy.deepcopy(events)
-        reviewed.apply(self.root, events, supplemental, today="2026-10-08")
+        with patch.object(reviewed, 'OWNER_HELD_IDS', {'alex-jean-dallas-2026-11-19'}):
+            reviewed.apply(self.root, events, supplemental, today="2026-10-08")
         self.assertEqual(events, snapshot)
 
     def test_oct7_discoveries_replace_provider_fragments_without_resetting_age(self):

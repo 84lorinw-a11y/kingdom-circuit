@@ -4,10 +4,12 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from apply_oct2_verified_shows import apply
+import apply_oct2_verified_shows as intake
 from apply_sep26_requested_lineups import patch_event
 from catalog_removals import removed_event
 from artist_portraits import load_portraits
@@ -43,7 +45,7 @@ class OctoberIntakeTests(unittest.TestCase):
             self.assertEqual(len(manual), len(wanted))
             self.assertTrue(any(str(row.get('id')) == 'alex-jean-dallas-2026-11-19' for row in manual))
 
-    def test_current_alex_dallas_hold_preserves_source_and_history(self):
+    def test_active_owner_hold_preserves_source_and_history(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             (root / 'config').mkdir()
@@ -56,7 +58,8 @@ class OctoberIntakeTests(unittest.TestCase):
                 (root / name).write_text(json.dumps([row]))
             history = {'events': [{'event': dict(copy.deepcopy(held), id='manual:' + held['id'])}]}
             (root / 'event-history.json').write_text(json.dumps(history))
-            apply(root, today='2026-11-03')
+            with patch.object(intake, 'OWNER_HELD_IDS', {'alex-jean-dallas-2026-11-19'}):
+                apply(root, today='2026-11-03')
             for name in ['events.json', 'supplemental-events.json', 'config/manual-events.json']:
                 rows = json.loads((root / name).read_text())
                 matches = [row for row in rows if 'alex-jean-dallas-2026-11-19' in str(row.get('id'))]
@@ -64,6 +67,27 @@ class OctoberIntakeTests(unittest.TestCase):
                 if matches:
                     self.assertEqual(matches[0], held)
             self.assertEqual(json.loads((root / 'event-history.json').read_text()), history)
+
+    def test_reapproved_dallas_returns_once_with_original_age_and_complete_bill(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'config').mkdir()
+            approved = next(row for row in json.loads((ROOT / 'config/oct2-verified-shows.json').read_text())
+                            if row['id'] == 'alex-jean-dallas-2026-11-19')
+            (root / 'config/oct2-verified-shows.json').write_text(json.dumps([approved]))
+            for name in ['events.json', 'supplemental-events.json', 'config/manual-events.json']:
+                (root / name).write_text('[]')
+            (root / 'event-history.json').write_text('{"events": []}')
+            apply(root, today='2026-11-07')
+            apply(root, today='2026-11-07')
+            rows = json.loads((root / 'events.json').read_text())
+            self.assertEqual(len(rows), 1)
+            self.assertEqual(rows[0]['id'], 'manual:alex-jean-dallas-2026-11-19')
+            self.assertEqual(rows[0]['firstSeen'], '2026-09-29T18:00:00Z')
+            self.assertEqual(rows[0]['advertisedBilling'], ['Alex Jean', 'Reece'])
+            self.assertEqual(rows[0]['startTime'], '20:00')
+            self.assertEqual(rows[0]['doorsTime'], '19:00')
+            self.assertEqual(json.loads((root / 'supplemental-events.json').read_text()), [])
 
     def test_visalia_keeps_its_identity_and_host_separate_from_performers(self):
         row = {'id': 'manual:egr-2026-10-10-visalia-ca', 'startDate': '2026-10-10',

@@ -1,6 +1,7 @@
 import importlib.util
 import sys
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 
@@ -126,7 +127,7 @@ class CuratedCatalogPolicyTests(unittest.TestCase):
         self.assertEqual("event_artwork", event["imageType"])
         self.assertTrue(event["imageOverride"])
 
-    def test_alex_jean_dallas_owner_hold_is_enforced(self):
+    def test_reapproved_alex_jean_dallas_is_eligible_and_optional_hold_still_works(self):
         held = {
             "id": "axs:1626463",
             "startDate": "2026-11-19",
@@ -143,10 +144,14 @@ class CuratedCatalogPolicyTests(unittest.TestCase):
             "artists": ["Alex Jean"],
             "officialUrl": "https://example.com/orlando",
         }
-        self.assertTrue(MODULE.is_known_duplicate_fragment(held))
+        self.assertFalse(MODULE.is_known_duplicate_fragment(held))
         self.assertFalse(MODULE.is_known_duplicate_fragment(orlando))
         manual = dict(held, id="manual:alex-jean-dallas-2026-11-19", officialUrl="https://www.thebombfactory.com/events/detail/alex-jean-1626463")
-        self.assertTrue(MODULE.is_known_duplicate_fragment(manual))
+        self.assertFalse(MODULE.is_known_duplicate_fragment(manual))
+        with patch.object(MODULE, 'OWNER_HELD_IDS', {'alex-jean-dallas-2026-11-19'}, create=True):
+            self.assertTrue(MODULE.is_known_duplicate_fragment(held))
+            self.assertTrue(MODULE.is_known_duplicate_fragment(manual))
+            self.assertFalse(MODULE.is_known_duplicate_fragment(orlando))
 
     def test_mike_malagies_december_12_duplicate_is_suppressed(self):
         # Apple Music's artist calendar confirms the 5 PM Kissimmee event.

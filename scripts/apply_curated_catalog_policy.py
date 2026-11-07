@@ -16,6 +16,7 @@ from typing import Any
 
 from apply_sep26_requested_lineups import patch_event as apply_reviewed_lineup
 from apply_mayia_postponement import apply as apply_mayia_postponement
+from apply_oct2_verified_shows import OWNER_HELD_IDS
 
 POLICY_VERSION = 7
 ROOT = Path(__file__).resolve().parents[1]
@@ -373,10 +374,10 @@ def is_known_duplicate_fragment(event: dict[str, Any]) -> bool:
         if (event_date, city) in duplicate_collection_stops:
             return True
 
-    # Current owner instruction: keep the Nov 19 Dallas Alex Jean appearance
-    # on hold, even though the venue has confirmed the event. Retain the
-    # original curated record in manual source/history for later release.
-    if event_date == "2026-11-19" and "alex jean" in artists:
+    # Only an active owner hold may suppress the reviewed Dallas performance.
+    # The owner released its earlier hold on November 7.
+    if ("alex-jean-dallas-2026-11-19" in OWNER_HELD_IDS
+            and event_date == "2026-11-19" and "alex jean" in artists):
         if (city == "dallas" and norm(event.get("state")) == "tx") or (
             "1626463" in str(event.get("officialUrl") or "")
             or "1626463" in str(event.get("ticketUrl") or "")

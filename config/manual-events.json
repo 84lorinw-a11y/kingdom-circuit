@@ -7479,13 +7479,13 @@
       }
     ],
     "firstSeen": "2026-09-29T18:00:00Z",
-    "lastVerified": "2026-10-30T14:59:28.018045Z",
-    "auditVerified": "2026-10-19",
+    "lastVerified": "2026-11-07",
+    "auditVerified": "2026-11-07",
     "editorialBatch": "2026-10-08-reviewed-discoveries",
     "postalCode": "75226",
     "doorsTime": "19:00",
-    "ageRestriction": "All ages",
-    "notes": " October 19 artist announcement: Reece (@onlyreece), not Reece Lache, supports these four dates. Preserve unlinked full billing.",
+    "ageRestriction": "All ages; ages 16 and under with a parent or legal guardian",
+    "notes": "October 8, 2026: owner approved restoring the previously held date after venue corroboration. The Bomb Factory explicitly lists November 19, 8 PM show and 7 PM doors, On Sale Now, and its AXS event link. Current AXS detail listing matches; checkout was not tested. Preserve approved Welcome Home Tour artwork and original event identity/discovery date. October 19: Reece (@onlyreece) announced these four support dates; he is distinct from Reece Lache. Keep unlinked billing until roster approval. November 7: owner explicitly reapproved adding the show. Current venue and AXS confirm Nov19, 8 PM/7 PM doors, AEG Presents and special guest Reece. Remove earlier active-discovery hold; preserve original ID, canonical URL, September29 firstSeen, original approved tour artwork and unlinked @onlyreece billing. No current ticket price or end time verified.",
     "sourceEventIds": [
       "axs:1626463"
     ],
@@ -7493,7 +7493,8 @@
     "detailImageLayout": "portrait",
     "supportActs": [
       "Reece"
-    ]
+    ],
+    "organizer": "AEG Presents"
   },
   {
     "id": "mayia-night-of-hope-apex-2026-11-20",
@@ -24223,5 +24224,486 @@
     ],
     "ticketUrlVerified": false,
     "registrationUrlVerified": false
+  },
+  {
+    "id": "qp-union-city-2026-11-08",
+    "title": "Q.P. — From Da Streets to the Pulpit",
+    "startDate": "2026-11-08",
+    "endDate": "2026-11-08",
+    "startTime": "17:00",
+    "timezone": "America/Chicago",
+    "venue": "Discovery Park of America",
+    "address": "830 Everett Boulevard",
+    "postalCode": "38261",
+    "city": "Union City",
+    "state": "TN",
+    "country": "US",
+    "artists": [
+      "Q.P."
+    ],
+    "advertisedBilling": [
+      "Q.P."
+    ],
+    "officialBill": [
+      "Q.P."
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "eventType": "concert",
+    "status": "scheduled",
+    "officialUrl": "https://www.eventbrite.com/e/from-da-streets-to-the-pulpit-gospel-rap-concert-and-testimonial-tickets-2002411165700",
+    "ticketUrl": "https://www.eventbrite.com/e/from-da-streets-to-the-pulpit-gospel-rap-concert-and-testimonial-tickets-2002411165700",
+    "image": "assets/events/qp-union-city-2026-11-08-original.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Spiritually Speaking Records official event page original artwork",
+    "imageSourceUrl": "https://www.eventbrite.com/e/from-da-streets-to-the-pulpit-gospel-rap-concert-and-testimonial-tickets-2002411165700",
+    "sourceName": "Spiritually Speaking Records official event page",
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-11-04",
+    "lastVerified": "2026-11-07",
+    "auditVerified": "2026-11-07",
+    "editorialBatch": "2026-11-07-owner-approved-missing-shows",
+    "sources": [
+      {
+        "name": "Spiritually Speaking Records official event page",
+        "url": "https://www.eventbrite.com/e/from-da-streets-to-the-pulpit-gospel-rap-concert-and-testimonial-tickets-2002411165700",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 125
+      }
+    ],
+    "startDateTime": "2026-11-08T17:00:00-06:00",
+    "headliner": "Q.P.",
+    "doorsTime": "16:00",
+    "endTime": "20:00",
+    "endDateTime": "2026-11-08T20:00:00-06:00",
+    "organizer": "Spiritually Speaking Records",
+    "organizerUrl": "https://www.eventbrite.com/o/121670002631",
+    "price": "Ages 5 and under: free; ages 6–17: $20; ages 18+: $30",
+    "ageRestriction": "Under 14 with a parent or legal guardian",
+    "publicDescription": "Q.P. (Quincey Porter) presents a gospel rap concert and testimony at Discovery Park of America. Doors open at 4 PM and the program runs 5–8 PM, with a meal at 7 PM. Food and drinks are included with admission. Free parking.",
+    "scheduleDetails": [
+      {
+        "label": "Tickets",
+        "text": "The organizer advertises free admission for ages 5 and under, $20 for ages 6–17, and $30 for adults 18 and older. Church youth groups can get 10 tickets for $170 through the organizer. Eventbrite currently shows tickets from $21.95; check the official page for current options and fees."
+      }
+    ],
+    "sourceEventIds": [
+      "eventbrite:2002411165700"
+    ],
+    "notes": "Owner approved addition November 7. Q.P. is the sole named musical performer; other support acts are not announced. Official FAQ admission tiers are display-only, not verified all-in checkout amounts. Preserve November 4 research discovery. Primary Eventbrite hero is the original album/event artwork, not a date-specific concert flyer."
+  },
+  {
+    "id": "gospel-rap-expo-orlando-2026-11-14",
+    "title": "Gospel Rap Expo",
+    "startDate": "2026-11-14",
+    "endDate": "2026-11-14",
+    "startTime": "17:00",
+    "timezone": "America/New_York",
+    "venue": "Pine Hills Community Church",
+    "address": "1305 North Pine Hills Road",
+    "postalCode": "32808",
+    "city": "Orlando",
+    "state": "FL",
+    "country": "US",
+    "artists": [],
+    "advertisedBilling": [],
+    "officialBill": [],
+    "lineupExplicit": false,
+    "musicConfirmed": true,
+    "eventType": "concert",
+    "status": "scheduled",
+    "officialUrl": "https://www.phccnation.com/event-details-registration/gospel-rap-expo",
+    "ticketUrl": "https://www.phccnation.com/event-details-registration/gospel-rap-expo",
+    "image": "assets/events/gospel-rap-expo-orlando-2026-11-14-original.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Pine Hills Community Church official event page original artwork",
+    "imageSourceUrl": "https://www.phccnation.com/event-details-registration/gospel-rap-expo",
+    "sourceName": "Pine Hills Community Church official event page",
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-11-04",
+    "lastVerified": "2026-11-07",
+    "auditVerified": "2026-11-07",
+    "editorialBatch": "2026-11-07-owner-approved-missing-shows",
+    "sources": [
+      {
+        "name": "Pine Hills Community Church official event page",
+        "url": "https://www.phccnation.com/event-details-registration/gospel-rap-expo",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 125
+      },
+      {
+        "name": "Pine Hills Community Church Gospel Rap Expo program",
+        "url": "https://www.phccnation.com/gospel-rap-expo-2026",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      }
+    ],
+    "startDateTime": "2026-11-14T17:00:00-05:00",
+    "endTime": "21:00",
+    "endDateTime": "2026-11-14T21:00:00-05:00",
+    "organizer": "Pine Hills Community Church",
+    "organizerWebsite": "https://www.phccnation.com/",
+    "price": "Free; offering collected",
+    "publicDescription": "Pine Hills Community Church presents a free gospel rap showcase for local artists and groups, with a music industry panel. The published event window is 5–9 PM; the organizer describes the showcase as lasting about two to three hours. An offering will be collected.",
+    "detailImageLayout": "portrait",
+    "scheduleDetails": [
+      {
+        "label": "Lineup",
+        "text": "Individual performers and panel members have not been announced."
+      },
+      {
+        "label": "Program",
+        "text": "Published event window: 5–9 PM. The organizer describes the music showcase as approximately two to three hours."
+      }
+    ],
+    "notes": "Owner approved addition November 7. Official dated poster confirms November 14 at 5 PM, full church address and free admission. Performers remain unannounced; stock or unnamed faces in the artwork are not artist identity evidence. Distinct from the existing same-day UNITY Orlando event at a different venue. Preserve November 4 discovery."
+  },
+  {
+    "id": "oh-give-thanks-irvington-2026-11-14",
+    "title": "Annual Oh Give Thanks Concert 2026",
+    "startDate": "2026-11-14",
+    "endDate": "2026-11-14",
+    "startTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "Shiloh Ministries Church",
+    "address": "987 Clinton Avenue",
+    "postalCode": "07111",
+    "city": "Irvington",
+    "state": "NJ",
+    "country": "US",
+    "artists": [],
+    "advertisedBilling": [],
+    "officialBill": [],
+    "lineupExplicit": false,
+    "musicConfirmed": true,
+    "eventType": "concert",
+    "status": "scheduled",
+    "officialUrl": "https://www.eventbrite.com/e/annual-oh-give-thanks-concert-2026-tickets-2003229121227",
+    "ticketUrl": "https://www.eventbrite.com/e/annual-oh-give-thanks-concert-2026-tickets-2003229121227",
+    "image": "assets/events/oh-give-thanks-irvington-2026-11-14-original.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Shiloh Ministries official event page original artwork",
+    "imageSourceUrl": "https://www.eventbrite.com/e/annual-oh-give-thanks-concert-2026-tickets-2003229121227",
+    "sourceName": "Shiloh Ministries official event page",
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-11-04",
+    "lastVerified": "2026-11-07",
+    "auditVerified": "2026-11-07",
+    "editorialBatch": "2026-11-07-owner-approved-missing-shows",
+    "sources": [
+      {
+        "name": "Shiloh Ministries official event page",
+        "url": "https://www.eventbrite.com/e/annual-oh-give-thanks-concert-2026-tickets-2003229121227",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 125
+      }
+    ],
+    "startDateTime": "2026-11-14T19:00:00-05:00",
+    "doorsTime": "18:30",
+    "endTime": "23:30",
+    "endDateTime": "2026-11-14T23:30:00-05:00",
+    "organizer": "Shiloh Ministries",
+    "organizerUrl": "https://www.eventbrite.com/o/112997718631",
+    "hosts": [
+      "Prophet Ragive Dulcio"
+    ],
+    "price": "$25 advertised admission; Eventbrite currently shows $28.52",
+    "ageRestriction": "All ages",
+    "publicDescription": "Shiloh Ministries Church presents an evening of Christian rap, worship, choir, solos, poetry and plays, hosted by Prophet Ragive Dulcio. Doors open at 6:30 PM; the program runs 7–11:30 PM. All ages are welcome, with free parking.",
+    "scheduleDetails": [
+      {
+        "label": "Lineup",
+        "text": "The organizer confirms Christian rap, choir, solos and special guests; individual musical performers have not been announced."
+      }
+    ],
+    "sourceEventIds": [
+      "eventbrite:2003229121227"
+    ],
+    "notes": "Owner approved addition November 7. The unchanged original official flyer names Shiloh Ministries Church and host Prophet Ragive Dulcio, who is not asserted as a musical performer. Flyer advertises $25 admission; current Eventbrite displays $28.52. Do not invent the fee breakdown or a verified checkout amount. Current primary page supplies full Irvington address despite stale Location TBD snippets. Earliest known discovery November 4."
+  },
+  {
+    "id": "gospel-melodies-detroit-ferndale-2026-12-05",
+    "title": "Gospel Melodies Day Party & Brunch: Detroit",
+    "startDate": "2026-12-05",
+    "endDate": "2026-12-05",
+    "startTime": "12:00",
+    "startDateTime": "2026-12-05T12:00:00-05:00",
+    "timezone": "America/Detroit",
+    "venue": "Orchid Theatre",
+    "address": "141 West Nine Mile Road",
+    "postalCode": "48220",
+    "city": "Ferndale",
+    "state": "MI",
+    "country": "US",
+    "artists": [
+      "DJ Ty King",
+      "GM Band"
+    ],
+    "advertisedBilling": [
+      "DJ Ty King",
+      "GM Band"
+    ],
+    "officialBill": [
+      "DJ Ty King",
+      "GM Band"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "eventType": "concert",
+    "status": "scheduled",
+    "officialUrl": "https://www.eventbrite.com/e/gospel-melodies-day-party-brunch-detroit-tickets-1990737312892",
+    "ticketUrl": "https://www.eventbrite.com/e/gospel-melodies-day-party-brunch-detroit-tickets-1990737312892",
+    "organizer": "Gospel Melodies Day Party Tour",
+    "organizerUrl": "https://www.eventbrite.com/o/90205397443",
+    "image": "assets/events/gospel-melodies-official-undated-series-logo.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Gospel Melodies Day Party Tour official undated series artwork",
+    "imageSourceUrl": "https://gospelmelodiesdayparty.com/",
+    "price": "From $28.45",
+    "ageRestriction": "18+",
+    "publicDescription": "DJ Ty King and the GM Band bring gospel, R&B, Holy Hip-Hop and Rhythm & Praise to an interactive day party, with special guests to be announced. Hosted by Charles Clark and curated by Dr. Nathaniel “FloWay” Felton. General admission does not guarantee seating; seating is first come, first served. Food and beverages are available for purchase.",
+    "sourceName": "Gospel Melodies Day Party Tour official event page",
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-11-07",
+    "lastVerified": "2026-11-07",
+    "auditVerified": "2026-11-07",
+    "editorialBatch": "2026-11-07-owner-approved-missing-shows",
+    "sourceEventIds": [
+      "eventbrite:1990737312892"
+    ],
+    "sources": [
+      {
+        "name": "Gospel Melodies Day Party Tour official event page",
+        "url": "https://www.eventbrite.com/e/gospel-melodies-day-party-brunch-detroit-tickets-1990737312892",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 125
+      },
+      {
+        "name": "Gospel Melodies official series and music program",
+        "url": "https://gospelmelodiesdayparty.com/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      }
+    ],
+    "hosts": [
+      "Charles Clark"
+    ],
+    "organizerWebsite": "https://gospelmelodiesdayparty.com/",
+    "notes": "Owner approved adding this show on November 7. Only named performers are individual bill entries; unnamed special guests are not guessed. Host and curator are not musical performers. Visible primary event page advertises From $28.45. Do not claim all-in total or verified checkout/offer. Earliest discovery evidence: 2026-11-07/missing-shows-deep-search/east-south/findings.json and root-ui/gospel-melodies-detroit.txt; no older observation found for this ID.  The dated Eventbrite flyer is obsolete; original undated official series artwork is used without alteration."
+  },
+  {
+    "id": "christmas-jawn-philadelphia-2026-12-12",
+    "title": "A Christmas Jawn",
+    "startDate": "2026-12-12",
+    "endDate": "2026-12-12",
+    "startTime": "14:00",
+    "startDateTime": "2026-12-12T14:00:00-05:00",
+    "timezone": "America/New_York",
+    "venue": "Billy Penn Studios",
+    "address": "1516 North 5th Street",
+    "postalCode": "19122",
+    "city": "Philadelphia",
+    "state": "PA",
+    "country": "US",
+    "artists": [],
+    "advertisedBilling": [],
+    "officialBill": [],
+    "lineupExplicit": false,
+    "musicConfirmed": true,
+    "eventType": "concert",
+    "status": "scheduled",
+    "officialUrl": "https://www.eventbrite.com/e/a-christmas-jawn-tickets-2003998564653",
+    "ticketUrl": "https://www.eventbrite.com/e/a-christmas-jawn-tickets-2003998564653",
+    "organizer": "Holy Culture",
+    "organizerUrl": "https://www.eventbrite.com/o/114863468091",
+    "image": "assets/events/christmas-jawn-philadelphia-2026-12-12-original.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Holy Culture official event flyer",
+    "imageSourceUrl": "https://www.eventbrite.com/e/a-christmas-jawn-tickets-2003998564653",
+    "price": "Free RSVP",
+    "ageRestriction": "All ages",
+    "publicDescription": "Holy Culture presents a free Christmas gathering with a live DJ playing Christian hip-hop and holiday favorites, a holiday gift market, festive treats, games, face painting, ornament decorating and giveaways. All ages are welcome; RSVP is free. Free parking.",
+    "sourceName": "Holy Culture official event page",
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-11-04",
+    "lastVerified": "2026-11-07",
+    "auditVerified": "2026-11-07",
+    "editorialBatch": "2026-11-07-owner-approved-missing-shows",
+    "sourceEventIds": [
+      "eventbrite:2003998564653"
+    ],
+    "sources": [
+      {
+        "name": "Holy Culture official event page",
+        "url": "https://www.eventbrite.com/e/a-christmas-jawn-tickets-2003998564653",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 125
+      }
+    ],
+    "endTime": "18:00",
+    "endDateTime": "2026-12-12T18:00:00-05:00",
+    "scheduleDetails": [
+      {
+        "label": "Lineup",
+        "text": "Live DJ playing Christian hip-hop and holiday favorites; DJ name not announced."
+      }
+    ],
+    "notes": "Owner approved adding this show on November 7. Do not turn Holy Culture (organizer) or gift-market vendors into performers. Official overview, ticket panel and JSON-LD agree free admission/RSVP; no checkout performed. Earliest discovery evidence: 2026-11-04/missing-shows-deep-search/findings.json candidate key christmas-jawn-philadelphia-2026-12-12 and root-evidence/christmas-jawn-ax.txt. "
+  },
+  {
+    "id": "encounter-festival-vacaville-2027-01-08",
+    "title": "Encounter Festival",
+    "startDate": "2027-01-08",
+    "endDate": "2027-01-08",
+    "startTime": "18:00",
+    "timezone": "America/Los_Angeles",
+    "venue": "Journey Downtown Theater",
+    "address": "308 Main Street",
+    "postalCode": "95688",
+    "city": "Vacaville",
+    "state": "CA",
+    "country": "US",
+    "artists": [],
+    "advertisedBilling": [],
+    "officialBill": [],
+    "lineupExplicit": false,
+    "musicConfirmed": true,
+    "eventType": "festival",
+    "status": "scheduled",
+    "officialUrl": "https://journeydowntown.com/catering-inventory/p/encounter-festival-8-january-2027",
+    "ticketUrl": "https://journeydowntown.com/catering-inventory/p/encounter-festival-8-january-2027",
+    "image": "assets/events/encounter-festival-vacaville-2027-01-08-original.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Journey Downtown official event page original artwork",
+    "imageSourceUrl": "https://journeydowntown.com/catering-inventory/p/encounter-festival-8-january-2027",
+    "sourceName": "Journey Downtown official event page",
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-11-04",
+    "lastVerified": "2026-11-07",
+    "auditVerified": "2026-11-07",
+    "editorialBatch": "2026-11-07-owner-approved-missing-shows",
+    "sources": [
+      {
+        "name": "Journey Downtown official event page",
+        "url": "https://journeydowntown.com/catering-inventory/p/encounter-festival-8-january-2027",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 125
+      }
+    ],
+    "startDateTime": "2027-01-08T18:00:00-08:00",
+    "doorsTime": "17:30",
+    "price": "From $17",
+    "ageRestriction": "All ages",
+    "detailImageLayout": "portrait",
+    "venueUrl": "https://journeydowntown.com/",
+    "publicDescription": "Encounter Festival brings Christian rap, hip-hop, pop and indie music to Journey Downtown in Vacaville. Doors open at 5:30 PM and the festival starts at 6 PM. All ages are welcome; individual performers have not been announced.",
+    "scheduleDetails": [
+      {
+        "label": "Lineup",
+        "text": "Performers have not been announced."
+      }
+    ],
+    "notes": "Owner approved addition November 7. The FULL original official venue-linked flyer explicitly says January 8, 2027, doors 5:30 PM and starts 6:00 PM. Earlier cropped screenshot review missed the start line; the full original is authoritative. Named performers, organizer, end time and checkout total are unannounced. Price from current venue page is display-only. Preserve November 4 discovery."
+  },
+  {
+    "id": "gospel-melodies-virginia-beach-2027-03-27",
+    "title": "Gospel Melodies Day Party & Brunch: Virginia Beach",
+    "startDate": "2027-03-27",
+    "endDate": "2027-03-27",
+    "startTime": "14:00",
+    "startDateTime": "2027-03-27T14:00:00-04:00",
+    "timezone": "America/New_York",
+    "venue": "Scandals Live",
+    "address": "3501 Holland Road, #113",
+    "postalCode": "23452",
+    "city": "Virginia Beach",
+    "state": "VA",
+    "country": "US",
+    "artists": [
+      "DJ Ty King",
+      "GM Band"
+    ],
+    "advertisedBilling": [
+      "DJ Ty King",
+      "GM Band"
+    ],
+    "officialBill": [
+      "DJ Ty King",
+      "GM Band"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "eventType": "concert",
+    "status": "scheduled",
+    "officialUrl": "https://www.eventbrite.com/e/gospel-melodies-day-party-brunch-virginia-beach-va-tickets-1989308274600",
+    "ticketUrl": "https://www.eventbrite.com/e/gospel-melodies-day-party-brunch-virginia-beach-va-tickets-1989308274600",
+    "organizer": "Gospel Melodies Day Party Tour",
+    "organizerUrl": "https://www.eventbrite.com/o/90205397443",
+    "image": "assets/events/gospel-melodies-official-undated-series-logo.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Gospel Melodies Day Party Tour official undated series artwork",
+    "imageSourceUrl": "https://gospelmelodiesdayparty.com/",
+    "price": "From $39.11",
+    "ageRestriction": "18+",
+    "publicDescription": "An afternoon of gospel music, faith, culture and community with DJ Ty King, the GM Band and special guests to be announced. Hosted by Charles Clark and curated by Dr. Nathaniel “FloWay” Felton. Seating is first come, first served; food and beverages are available for purchase. Free parking.",
+    "sourceName": "Gospel Melodies Day Party Tour official event page",
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-10-31",
+    "lastVerified": "2026-11-07",
+    "auditVerified": "2026-11-07",
+    "editorialBatch": "2026-11-07-owner-approved-missing-shows",
+    "sourceEventIds": [
+      "eventbrite:1989308274600"
+    ],
+    "sources": [
+      {
+        "name": "Gospel Melodies Day Party Tour official event page",
+        "url": "https://www.eventbrite.com/e/gospel-melodies-day-party-brunch-virginia-beach-va-tickets-1989308274600",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 125
+      },
+      {
+        "name": "Gospel Melodies official series and music program",
+        "url": "https://gospelmelodiesdayparty.com/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      }
+    ],
+    "hosts": [
+      "Charles Clark"
+    ],
+    "organizerWebsite": "https://gospelmelodiesdayparty.com/",
+    "notes": "Owner approved adding this show on November 7. Only named performers are individual bill entries; unnamed special guests are not guessed. Host and curator are not musical performers. Visible primary event page advertises From $39.11. Do not claim all-in total or verified checkout/offer. Earliest discovery evidence: 2026-10-31/virginia-competitor-audit/public-comparison.json contains exact Eventbrite ID at showfaith-virginia.virginiaLinks[2], then Nov 7/Kascades. Same event ID is now rescheduled. Use March 27, 2027 at Scandals Live. Old November 7, 2026/Kascades listings and dated Eventbrite flyer are obsolete. Do not restore/duplicate former date. The dated Eventbrite flyer is obsolete; original undated official series artwork is used without alteration."
   }
 ]

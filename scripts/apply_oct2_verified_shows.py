@@ -8,8 +8,9 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
-# The current owner hold supersedes the older October 8 release approval.
-OWNER_HELD_IDS = {"alex-jean-dallas-2026-11-19"}
+# November 7: the owner reapproved the verified Dallas performance. Keep the
+# shared hold registry for future editorial decisions and all refresh guards.
+OWNER_HELD_IDS: set[str] = set()
 
 
 def key(event):

@@ -12,6 +12,7 @@ from zoneinfo import ZoneInfo
 from mobile_discovery import Document
 from national_discovery import card_records
 from canadian_event_guard import read_events, catalog_errors as canadian_catalog_errors
+from apply_oct2_verified_shows import OWNER_HELD_IDS
 
 def today():
     return datetime.now(ZoneInfo('America/Los_Angeles')).date().isoformat()
@@ -36,6 +37,8 @@ def catalog_errors(catalog, day):
 def owner_hold_errors(records):
     """Block publishing a specifically owner-held show even if a stale page restores it."""
     errors = []
+    if 'alex-jean-dallas-2026-11-19' not in OWNER_HELD_IDS:
+        return errors
     for record in records:
         attrs = record.get('attrs', {})
         location = record.get('meta', {}).get('Location', '').casefold()
