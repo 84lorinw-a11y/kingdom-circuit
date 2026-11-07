@@ -495,7 +495,7 @@ jobs:
         run: |
           python scripts/private_events.py --site _site
           python scripts/private_events.py --public-history _public-event-history.json
-          python _redesign_source/scripts/apply_test_redesign.py _site \
+          python scripts/apply_production_redesign.py _redesign_source/scripts/apply_test_redesign.py _site \
             --production \
             --source-events events.json \
             --source-events supplemental-events.json \

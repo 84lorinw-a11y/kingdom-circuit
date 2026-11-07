@@ -7,6 +7,8 @@ The caller supplies the complete reviewed output allowlist and replay commands.
 """
 from __future__ import annotations
 import argparse
+from datetime import datetime
+import json
 import os
 from pathlib import Path
 import shlex
@@ -21,6 +23,48 @@ except ImportError:
 
 def git(root, *args, check=True):
     return subprocess.run(['git', '-C', str(root), *args], check=check, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+
+def preserve_unchanged_coverage_report(work, baseline):
+    """Suppress only a new timestamp on an otherwise identical JSON report.
+
+    Called only in the isolated publication worktree after the allowlist and
+    retention checks. Restoring the baseline bytes also avoids formatting churn;
+    every non-timestamp JSON value must be unchanged, including its type.
+    Invalid, absent, or newly created reports are left to the caller's validators.
+    """
+    target = work / 'coverage-gaps.json'
+    if baseline is None or not target.is_file() or target.is_symlink():
+        return False
+
+    def unique_object(pairs):
+        value = {}
+        for key, item in pairs:
+            if key in value:
+                raise ValueError('Duplicate coverage report key')
+            value[key] = item
+        return value
+
+    try:
+        before, after = [json.loads(raw, object_pairs_hook=unique_object)
+                         for raw in (baseline, target.read_bytes())]
+        if not all(isinstance(report, dict) for report in (before, after)):
+            return False
+        for report in (before, after):
+            stamp = report.get('generatedAt')
+            if not isinstance(stamp, str) or datetime.fromisoformat(stamp.replace('Z', '+00:00')).tzinfo is None:
+                return False
+        if before['generatedAt'] == after['generatedAt']:
+            return False
+        content = [json.dumps({key: value for key, value in report.items() if key != 'generatedAt'},
+                              sort_keys=True, ensure_ascii=False, allow_nan=False)
+                   for report in (before, after)]
+        if content[0] != content[1]:
+            return False
+    except (ValueError, TypeError, UnicodeDecodeError):
+        return False
+    target.write_bytes(baseline)
+    return True
 
 
 def publish(root, paths, commands, message, *, attempts=4, sync=False, before_push=None):
@@ -43,6 +87,9 @@ def publish(root, paths, commands, message, *, attempts=4, sync=False, before_pu
             git(root, 'worktree', 'add', '--detach', str(work), latest)
             try:
                 canadian_baseline = read_events(work)
+                coverage = work / 'coverage-gaps.json'
+                coverage_baseline = (coverage.read_bytes() if 'coverage-gaps.json' in allowed
+                                     and coverage.is_file() and not coverage.is_symlink() else None)
                 if latest == original and attempt == 0:
                     for name, content in snapshots.items():
                         target = work / name
@@ -61,6 +108,8 @@ def publish(root, paths, commands, message, *, attempts=4, sync=False, before_pu
                 lost = retention_errors(canadian_baseline, read_events(work), today_cutoff())
                 if lost:
                     raise RuntimeError('Canadian event preservation blocked publication:\n' + '\n'.join(lost))
+                if 'coverage-gaps.json' in allowed and preserve_unchanged_coverage_report(work, coverage_baseline):
+                    print('Coverage report content unchanged; preserving its prior generatedAt.', flush=True)
                 existing = [p for p in paths if (work / p).exists() or git(work, 'ls-files', '--', p).stdout.strip()]
                 git(work, 'add', '--', *existing)
                 if git(work, 'diff', '--cached', '--quiet', check=False).returncode == 0:

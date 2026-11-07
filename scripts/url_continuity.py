@@ -317,9 +317,16 @@ def forwarding_page(target):
 
 
 def retained_page(path, title, body, *, index=True):
-    from build_seo_site import FAVICON_HTML
+    from build_seo_site import FAVICON_HTML, GA_ID
     robots = 'index,follow' if index else 'noindex,follow'
-    return f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="{robots}"><link rel="canonical" href="{ORIGIN + path}"><title>{html.escape(title)} | Kingdom Circuit</title>{FAVICON_HTML}<style>body{{margin:0;background:#080808;color:#eee;font:16px/1.65 system-ui,sans-serif}}main{{max-width:56rem;margin:auto;padding:24px}}a{{color:#ef9988}}li{{margin:12px 0}}h1{{font-size:1.8rem}}img{{max-width:100%;height:auto}}</style></head><body><main><p><a href="/">THE KINGDOM CIRCUIT</a></p><h1>{html.escape(title)}</h1>{body}<p><a href="/shows/">Browse upcoming shows</a> · <a href="/artists/">Browse artists</a></p></main></body></html>'''
+    # Use only the rendered, already-redacted copy; never raw history fields.
+    visible = ' '.join(value for value in PageFacts('<main>' + body + '</main>').values
+                       if isinstance(value, str))
+    description = ' '.join((title.rstrip('. ') + '. ' + visible).split())
+    if len(description) > 160:
+        description = description[:157].rsplit(' ', 1)[0] + '…'
+    analytics = f"""<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','{GA_ID}');</script>"""
+    return f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="{robots}"><meta name="description" content="{html.escape(description, quote=True)}"><link rel="canonical" href="{ORIGIN + path}"><title>{html.escape(title)} | Kingdom Circuit</title>{FAVICON_HTML}{analytics}<style>body{{margin:0;background:#080808;color:#eee;font:16px/1.65 system-ui,sans-serif}}main{{max-width:56rem;margin:auto;padding:24px}}a{{color:#ef9988}}li{{margin:12px 0}}h1{{font-size:1.8rem}}img{{max-width:100%;height:auto}}</style></head><body><main><p><a href="/">THE KINGDOM CIRCUIT</a></p><h1>{html.escape(title)}</h1>{body}<p><a href="/shows/">Browse upcoming shows</a> · <a href="/artists/">Browse artists</a></p></main></body></html>'''
 
 
 def restore_location_review(site, path, event):

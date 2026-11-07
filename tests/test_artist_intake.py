@@ -36,7 +36,7 @@ class ArtistIntakeTests(unittest.TestCase):
 
     def test_workflow_applies_and_checks_after_imported_redesign(self):
         workflow = (ROOT / '.github/workflows/update-and-deploy.yml').read_text()
-        self.assertLess(workflow.index('python _redesign_source/scripts/apply_test_redesign.py'), workflow.index('python scripts/apply_artist_intake.py _site'))
+        self.assertLess(workflow.index('python scripts/apply_production_redesign.py _redesign_source/scripts/apply_test_redesign.py'), workflow.index('python scripts/apply_artist_intake.py _site'))
         self.assertLess(workflow.index('python scripts/apply_artist_intake.py _site'), workflow.index('python scripts/apply_artist_intake.py _site --check'))
         self.assertIn('node --test tests/artist-intake-submit.test.cjs', workflow)
 

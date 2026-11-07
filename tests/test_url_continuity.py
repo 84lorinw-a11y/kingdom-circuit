@@ -179,6 +179,62 @@ class URLContinuityTests(unittest.TestCase):
         self.assertIn('<meta http-equiv="refresh" content="0;', text)
         self.assertIn('Continue to show', text)
 
+    def test_retained_calendar_has_truthful_description_and_single_production_analytics(self):
+        import re
+        title = 'Miles Minnick in Virginia'
+        body = '<p>No upcoming shows are currently confirmed on this calendar.</p>'
+        text = uc.retained_page('/artists/miles-minnick/virginia/', title, body)
+        facts = uc.PageFacts(text)
+        self.assertEqual(title + '. No upcoming shows are currently confirmed on this calendar.',
+                         facts.description)
+        self.assertEqual(uc.ORIGIN + '/artists/miles-minnick/virginia/', facts.canonical)
+        self.assertEqual('index,follow', facts.robots)
+        self.assertEqual(['G-N2KK9XF4TJ'], re.findall(
+            r'<script async src="https://www.googletagmanager.com/gtag/js\?id=([^"]+)"', text))
+        self.assertEqual(['G-N2KK9XF4TJ'], re.findall(r"gtag\('config','([^']+)'\)", text))
+        self.assertEqual([], facts.schemas)
+
+    def test_retained_description_uses_escaped_visible_text_without_script_contents(self):
+        title = 'Hope "Live" & Friends'
+        text = uc.retained_page('/event/retained/', title,
+            '<p>Postponed &amp; awaiting a new date.</p><script>window.hiddenFact="unverified";</script>')
+        self.assertEqual('Hope "Live" & Friends. Postponed & awaiting a new date.',
+                         uc.PageFacts(text).description)
+        self.assertIn('content="Hope &quot;Live&quot; &amp; Friends.', text)
+        self.assertNotIn('hiddenFact', uc.PageFacts(text).description)
+
+    def test_retained_description_is_bounded_without_adding_unconfirmed_facts(self):
+        body = '<p>This date has passed. These recorded details are retained for reference.</p>'
+        body += '<p>' + ('Previously listed performer ' * 20) + '</p>'
+        text = uc.retained_page('/event/retained/', 'Example concert', body)
+        description = uc.PageFacts(text).description
+        self.assertTrue(description.startswith('Example concert. This date has passed.'))
+        self.assertLessEqual(len(description), 160)
+        self.assertNotIn('tickets', description.lower())
+        self.assertEqual([], uc.PageFacts(text).schemas)
+
+    def test_retained_private_description_does_not_restore_redacted_address_or_offers(self):
+        event = dict(self.event, status='private', address='999 Private Retreat Road',
+                     postalCode='99999', ticketUrl='https://tickets.example/private/')
+        original = copy.deepcopy(event)
+        uc.restore_event(self.site, self.path, event, '2026-11-01')
+        text = uc.target_file(self.site, self.path).read_text()
+        facts = uc.PageFacts(text)
+        self.assertIn('Private event. Not open to the public.', facts.description)
+        self.assertNotIn('999 Private Retreat Road', text)
+        self.assertNotIn('99999', text)
+        self.assertEqual([], facts.schemas)
+        self.assertEqual(original, event)
+        self.assertEqual(uc.ORIGIN + self.path, facts.canonical)
+
+    def test_retained_location_review_keeps_noindex_with_factual_description(self):
+        uc.restore_location_review(self.site, self.path, {'startDate': '2026-11-21'})
+        facts = uc.PageFacts(uc.target_file(self.site, self.path).read_text())
+        self.assertEqual('noindex,follow', facts.robots)
+        self.assertIn('Location not confirmed.', facts.description)
+        self.assertEqual(uc.ORIGIN + self.path, facts.canonical)
+        self.assertEqual([], facts.schemas)
+
     def test_retained_private_event_never_becomes_public_schema(self):
         uc.restore_event(self.site, self.path, dict(self.event, status='private'), '2026-11-01')
         text = uc.target_file(self.site, self.path).read_text()

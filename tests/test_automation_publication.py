@@ -101,5 +101,125 @@ class AutomationPublicationTests(unittest.TestCase):
             before=git(remote,'rev-parse','main').stdout.strip()
             self.assertEqual(before,publish(bot,['events.json'],['python repair.py'],'No change'))
 
+    def setup_coverage_repo(self, directory, report=None):
+        remote, owner, bot = self.setup_repo(directory)
+        report = report if report is not None else {
+            'policyVersion': 7, 'generatedAt': '2026-11-06T23:34:10Z',
+            'highRiskArtists': [{'artist': 'Example', 'failed': True}],
+            'mediumRiskArtists': [], 'summary': {'count': 1},
+        }
+        original = json.dumps(report, indent=2) + '\n'
+        (owner/'coverage-gaps.json').write_text(original)
+        git(owner, 'add', 'coverage-gaps.json'); git(owner, 'commit', '-m', 'Coverage baseline')
+        git(owner, 'push', 'origin', 'main'); git(bot, 'pull', '--ff-only')
+        return remote, owner, bot, report, original
+
+    def test_timestamp_only_coverage_does_not_commit_or_change_user_checkout(self):
+        with tempfile.TemporaryDirectory() as directory:
+            remote, _, bot, report, original = self.setup_coverage_repo(directory)
+            report['generatedAt'] = '2026-11-07T14:15:00Z'
+            generated = json.dumps(report, indent=2) + '\n'
+            (bot/'coverage-gaps.json').write_text(generated)
+            before = git(remote, 'rev-parse', 'main').stdout.strip()
+            sha = publish(bot, ['coverage-gaps.json'], [f'{sys.executable} repair.py'], 'Coverage refresh')
+            self.assertEqual(before, sha)
+            self.assertEqual(before, git(remote, 'rev-parse', 'main').stdout.strip())
+            self.assertEqual(original, git(remote, 'show', sha + ':coverage-gaps.json').stdout)
+            self.assertEqual(generated, (bot/'coverage-gaps.json').read_text())
+            self.assertEqual(1, git(bot, 'worktree', 'list', '--porcelain').stdout.count('worktree '))
+
+    def test_meaningful_coverage_changes_keep_new_timestamp_and_exact_output(self):
+        variants = [
+            {'highRiskArtists': [{'artist': 'New confirmed risk', 'failed': True}]},
+            {'summary': {'count': 2}},
+            {'summary': {'count': True}},  # Python equality must not hide a JSON type change.
+            {'policyVersion': 8},
+            {'newField': 'review required'},
+        ]
+        for change in variants:
+            with self.subTest(change=change), tempfile.TemporaryDirectory() as directory:
+                remote, _, bot, report, _ = self.setup_coverage_repo(directory)
+                report.update(change, generatedAt='2026-11-07T14:15:00Z')
+                generated = json.dumps(report, indent=2) + '\n'
+                (bot/'coverage-gaps.json').write_text(generated)
+                sha = publish(bot, ['coverage-gaps.json'], [f'{sys.executable} repair.py'], 'Changed coverage')
+                self.assertEqual(generated, git(remote, 'show', sha + ':coverage-gaps.json').stdout)
+
+    def test_timestamp_suppression_does_not_suppress_other_allowlisted_output(self):
+        with tempfile.TemporaryDirectory() as directory:
+            remote, _, bot, report, original = self.setup_coverage_repo(directory)
+            report['generatedAt'] = '2026-11-07T14:15:00Z'
+            (bot/'coverage-gaps.json').write_text(json.dumps(report) + '\n')
+            changed_events = '{"owner":"original","bot":1}\n'
+            (bot/'events.json').write_text(changed_events)
+            sha = publish(bot, ['coverage-gaps.json', 'events.json'], [f'{sys.executable} repair.py'], 'Actual source update')
+            self.assertEqual(original, git(remote, 'show', sha + ':coverage-gaps.json').stdout)
+            self.assertEqual(changed_events, git(remote, 'show', sha + ':events.json').stdout)
+            self.assertEqual('events.json', git(remote, 'diff-tree', '--no-commit-id', '--name-only', '-r', sha).stdout.strip())
+
+    def test_invalid_or_non_report_coverage_is_never_silently_normalized(self):
+        values = ['{broken JSON', '[]\n', '{"generatedAt":"not a timestamp","summary":1}\n',
+                  '{"generatedAt":"2026-11-07T14:15:00Z","generatedAt":"2026-11-07T15:00:00Z"}\n']
+        for generated in values:
+            with self.subTest(generated=generated), tempfile.TemporaryDirectory() as directory:
+                remote, _, bot, _, _ = self.setup_coverage_repo(directory)
+                (bot/'coverage-gaps.json').write_text(generated)
+                sha = publish(bot, ['coverage-gaps.json'], [f'{sys.executable} repair.py'], 'Caller-validated coverage')
+                self.assertEqual(generated, git(remote, 'show', sha + ':coverage-gaps.json').stdout)
+
+    def test_first_coverage_report_and_missing_baseline_timestamp_are_preserved(self):
+        for has_baseline in (False, True):
+            with self.subTest(has_baseline=has_baseline), tempfile.TemporaryDirectory() as directory:
+                if has_baseline:
+                    remote, _, bot, _, _ = self.setup_coverage_repo(directory, report={'summary': {'count': 1}})
+                else:
+                    remote, _, bot = self.setup_repo(directory)
+                generated = '{"summary":{"count":1},"generatedAt":"2026-11-07T14:15:00Z"}\n'
+                (bot/'coverage-gaps.json').write_text(generated)
+                sha = publish(bot, ['coverage-gaps.json'], [f'{sys.executable} repair.py'], 'First coverage timestamp')
+                self.assertEqual(generated, git(remote, 'show', sha + ':coverage-gaps.json').stdout)
+
+    def test_unlisted_timestamp_only_report_still_fails_closed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            remote, _, bot, report, _ = self.setup_coverage_repo(directory)
+            before = git(remote, 'rev-parse', 'main').stdout
+            report['generatedAt'] = '2026-11-07T14:15:00Z'
+            (bot/'coverage-gaps.json').write_text(json.dumps(report) + '\n')
+            with self.assertRaisesRegex(RuntimeError, 'Unlisted tracked changes'):
+                publish(bot, ['events.json'], [f'{sys.executable} repair.py'], 'Unlisted report')
+            self.assertEqual(before, git(remote, 'rev-parse', 'main').stdout)
+
+    def test_concurrent_main_change_still_replays_and_preserves_owner_coverage(self):
+        with tempfile.TemporaryDirectory() as directory:
+            remote, owner, bot, report, _ = self.setup_coverage_repo(directory)
+            replay = """import json
+from pathlib import Path
+p=Path('coverage-gaps.json')
+v=json.loads(p.read_text()); v['generatedAt']='2026-11-07T14:15:00Z'
+p.write_text(json.dumps(v)+'\\n')
+p=Path('events.json'); v=json.loads(p.read_text()); v['bot']=1
+p.write_text(json.dumps(v)+'\\n')
+"""
+            (owner/'coverage-replay.py').write_text(replay)
+            git(owner, 'add', 'coverage-replay.py'); git(owner, 'commit', '-m', 'Verified replay')
+            git(owner, 'push', 'origin', 'main'); git(bot, 'pull', '--ff-only')
+            subprocess.run([sys.executable, 'coverage-replay.py'], cwd=bot, check=True)
+            local_report = (bot/'coverage-gaps.json').read_text()
+            before_checkout = git(bot, 'rev-parse', 'HEAD').stdout
+            def competing_push(attempt, work):
+                if attempt == 0:
+                    report['highRiskArtists'].append({'artist': 'Owner confirmed risk', 'failed': True})
+                    report['generatedAt'] = '2026-11-07T14:16:00Z'
+                    (owner/'coverage-gaps.json').write_text(json.dumps(report, indent=2) + '\n')
+                    (owner/'events.json').write_text('{"owner":"new confirmed show","bot":0}\n')
+                    git(owner, 'add', '.'); git(owner, 'commit', '-m', 'Meaningful owner change'); git(owner, 'push', 'origin', 'main')
+            with patch('scripts.publish_automation_changes.time.sleep'):
+                sha = publish(bot, ['coverage-gaps.json', 'events.json'], [f'{sys.executable} coverage-replay.py'],
+                              'Refreshed source', before_push=competing_push)
+            self.assertEqual(report, json.loads(git(remote, 'show', sha + ':coverage-gaps.json').stdout))
+            self.assertEqual({'owner': 'new confirmed show', 'bot': 1}, json.loads(git(remote, 'show', sha + ':events.json').stdout))
+            self.assertEqual(local_report, (bot/'coverage-gaps.json').read_text())
+            self.assertEqual(before_checkout, git(bot, 'rev-parse', 'HEAD').stdout)
+
 
 if __name__ == '__main__': unittest.main()
