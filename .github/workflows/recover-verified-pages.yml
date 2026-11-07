@@ -1,0 +1,93 @@
+name: Recover verified November 7 Pages release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
+
+jobs:
+  recover-verified-pages:
+    if: github.ref == 'refs/heads/main' && github.repository == '84lorinw-a11y/kingdom-circuit'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out recovery verifier
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+
+      - name: Read original build and artifact provenance
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p recovery/evidence
+          gh api repos/84lorinw-a11y/kingdom-circuit/actions/runs/42410736914 > recovery/evidence/run.json
+          gh api 'repos/84lorinw-a11y/kingdom-circuit/actions/runs/42410736914/jobs?filter=latest&per_page=100' > recovery/evidence/jobs.json
+          gh api repos/84lorinw-a11y/kingdom-circuit/actions/artifacts/13589113167 > recovery/evidence/artifact.json
+
+      - name: Download exact verified Pages artifact
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          github-token: ${{ github.token }}
+          repository: 84lorinw-a11y/kingdom-circuit
+          run-id: 42410736914
+          name: github-pages-42410736914-1
+          path: recovery/source
+
+      - name: Verify original gates identity date and exact site bytes
+        run: |
+          python scripts/verify_pages_recovery.py \
+            --manifest config/pages-recovery-2026-11-07.json \
+            --run-json recovery/evidence/run.json \
+            --jobs-json recovery/evidence/jobs.json \
+            --artifact-json recovery/evidence/artifact.json \
+            --tar recovery/source/artifact.tar \
+            --output recovery/evidence/verification.json
+
+      - name: Upload identical verified Pages tar
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
+          path: recovery/source/artifact.tar
+          if-no-files-found: error
+          retention-days: 1
+          compression-level: 0
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346
+        with:
+          artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Verify published calendar freshness
+        run: |
+          for attempt in 1 2 3; do
+            if python scripts/calendar_maintenance.py --live https://kingdomcircuit.com --output recovery/evidence/calendar-freshness-live.json; then
+              exit 0
+            fi
+            if [ "$attempt" -lt 3 ]; then sleep 20; fi
+          done
+          exit 1
+
+      - name: Keep recovery provenance and verification
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: verified-pages-recovery-${{ github.run_id }}-${{ github.run_attempt }}
+          path: recovery/evidence
+          if-no-files-found: ignore
+          retention-days: 14
