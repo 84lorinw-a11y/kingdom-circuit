@@ -5,16 +5,21 @@ The underlying collector correctly dedupes Bandsintown against the main catalog 
 non-Bandsintown supplemental events. Previously, however, it also compared fresh
 Bandsintown rows against its own prior output, then replaced those prior rows with
 an empty result. This wrapper removes prior Bandsintown-generated rows only for the
-comparison phase, runs the collector, and preserves prior rows for artists whose
-Bandsintown request explicitly failed during this run. Canadian bookings also
-survive missing provider results; absence alone is not cancellation evidence.
+comparison phase, runs the collector, and retains established upcoming US/CA
+bookings omitted by the provider. Absence alone is review evidence, not proof of
+cancellation; exact replacements and existing editorial exclusions still win.
 """
 from __future__ import annotations
 
+from datetime import date, datetime, timezone
 import json
+import re
 import sys
 from pathlib import Path
-from canadian_event_guard import is_canadian
+from urllib.parse import urlsplit
+from canadian_event_guard import is_canadian, today_cutoff
+from catalog_removals import removed_event
+from apply_curated_catalog_policy import EXCLUDED_ARTISTS, curate_event, is_known_duplicate_fragment
 
 ROOT = Path(__file__).resolve().parents[1]
 SUPPLEMENTAL = ROOT / "supplemental-events.json"
@@ -55,7 +60,9 @@ def is_refreshable_bit(event) -> bool:
         return False
     # Explicit editorial cancellations and official records are never revived
     # by a provider's still-scheduled listing.
-    if norm(event.get("status")) in {"cancelled", "canceled", "postponed", "merged"}:
+    if event.get("holdReason") or norm(event.get("status")) in {
+        "cancelled", "canceled", "postponed", "merged", "held", "hold", "removed"
+    }:
         return False
     return norm(event.get("authority")) in {"", "artist_calendar"}
 
@@ -102,79 +109,148 @@ def preserve_canadian_details(fresh_events: list[dict], prior_events: list[dict]
                     event["startDateTime"] = prior["startDateTime"]
 
 
-def main() -> int:
-    original = load(SUPPLEMENTAL, [])
-    if not isinstance(original, list):
-        raise SystemExit("supplemental-events.json must be an array")
+def exact_identities(event: dict) -> set[str]:
+    """Only durable IDs/provider links prove that another row replaces this one."""
+    aliases = event.get("mergedFromIds") or []
+    identifiers = {str(value) for value in [event.get("id"), *(aliases if isinstance(aliases, list) else [])] if value}
+    for value in list(identifiers):
+        if value.startswith("manual:bandsintown:"):
+            identifiers.add(value.removeprefix("manual:"))
+    if event.get("bandsintownEventId"):
+        identifiers.add("bandsintown:" + str(event["bandsintownEventId"]))
+    sources = event.get("sources") or []
+    urls = [event.get("officialUrl"), event.get("ticketUrl"),
+            *(source.get("url") for source in sources if isinstance(source, dict))]
+    for value in urls:
+        try:
+            url = urlsplit(str(value or ""))
+            match = re.fullmatch(r"/[et]/(\d+)(?:-[^/]+)?/?", url.path)
+            if url.scheme in {"http", "https"} and (url.hostname or "").lower() in {"bandsintown.com", "www.bandsintown.com"} and match:
+                identifiers.add("bandsintown:" + match[1])
+        except ValueError:
+            continue
+    return identifiers
 
+
+def retained_missing(event: dict, cutoff: str, disabled: set[str], country_code) -> dict | None:
+    """Keep eligible source facts while applying existing editorial exclusions."""
+    if country_code(event.get("country")) not in {"US", "CA"}:
+        return None
+    if removed_event(event) or is_known_duplicate_fragment(event):
+        return None
+    owner = event.get("trackedArtist") or event.get("headliner")
+    owners = [owner] if owner else event.get("artists", [])
+    if any(norm(name) in disabled for name in owners) or event.get("holdReason"):
+        return None
+    if norm(event.get("status")) in {"cancelled", "canceled", "postponed", "merged", "held", "hold", "removed"}:
+        return None
+    retained = curate_event(event)
+    if retained is None:
+        return None
+    excluded = disabled | EXCLUDED_ARTISTS
+    for field in ("artists", "advertisedBilling", "officialBill"):
+        if field in retained:
+            retained[field] = [name for name in retained[field] if norm(name) not in excluded]
+    if not retained["artists"]:
+        return None
+    if norm(retained.get("headliner")) in excluded:
+        retained["headliner"] = retained["artists"][0]
+    try:
+        start = date.fromisoformat(str(event.get("startDate") or "")[:10])
+    except ValueError:
+        return None
+    try:
+        end = date.fromisoformat(str(event.get("endDate") or "")[:10])
+    except ValueError:
+        end = start
+    return retained if max(start, end).isoformat() >= cutoff else None
+
+
+def read_rows(path: Path) -> list[dict]:
+    rows = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(rows, list) or not all(isinstance(row, dict) for row in rows):
+        raise ValueError(f"Expected an array of objects: {path.name}")
+    return rows
+
+
+def main() -> int:
+    original_bytes = SUPPLEMENTAL.read_bytes()
+    original = read_rows(SUPPLEMENTAL)
+    original_status = STATUS.read_bytes() if STATUS.exists() else None
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import collect_bandsintown_rest as collector  # type: ignore
+
+    primary = read_rows(collector.EVENTS_FILE)
+    roster = read_rows(collector.ARTISTS_FILE)
+    disabled = {norm(name) for artist in roster if artist.get("enabled", True) is False
+                for name in [artist.get("name"), *(artist.get("aliases") or [])] if name}
     prior_bit = [event for event in original if is_refreshable_bit(event)]
     non_bit = [event for event in original if not is_refreshable_bit(event)]
-
-    # Critical: the collector must not see its own previous Bandsintown rows while
-    # deciding whether a fresh Bandsintown event duplicates the established catalog.
-    save(SUPPLEMENTAL, non_bit)
-
+    started = datetime.now(timezone.utc)
     try:
-        sys.path.insert(0, str(ROOT / "scripts"))
-        import collect_bandsintown_rest  # type: ignore
-
-        result = int(collect_bandsintown_rest.main())
+        # Prior BIT rows must not self-dedupe. Requiring a newly written receipt
+        # also prevents old request errors from being mistaken for this pass.
+        save(SUPPLEMENTAL, non_bit)
+        STATUS.unlink(missing_ok=True)
+        result = int(collector.main())
         if result != 0:
             raise RuntimeError(f"collector returned {result}")
-    except Exception:
-        # Never leave the working tree with a destructive partial refresh.
-        save(SUPPLEMENTAL, original)
+        refreshed = read_rows(SUPPLEMENTAL)
+        status = json.loads(STATUS.read_text(encoding="utf-8"))
+        if not isinstance(status, dict) or not isinstance(status.get("errors"), list) or not all(isinstance(item, dict) for item in status["errors"]):
+            raise ValueError("Bandsintown refresh produced an invalid status")
+        expected_artists = sum(artist.get("enabled", True) is not False and bool(artist.get("name")) for artist in roster)
+        if (type(status.get("artistsChecked")) is not int or status["artistsChecked"] != expected_artists
+                or type(status.get("requestErrors")) is not int or status["requestErrors"] < len(status["errors"])):
+            raise ValueError("Bandsintown refresh produced an incomplete status")
+        generated = datetime.fromisoformat(str(status.get("generatedAt") or "").replace("Z", "+00:00"))
+        if generated.tzinfo is None or not started <= generated <= datetime.now(timezone.utc):
+            raise ValueError("Bandsintown refresh did not produce a current status")
+
+        protected = set().union(*(exact_identities(event) for event in [*non_bit, *primary]))
+        fresh_bit = [event for event in refreshed if is_refreshable_bit(event) and not exact_identities(event) & protected]
+        # The collector only adds provider-owned rows. Restore the original
+        # protected records, including holds its older filter does not recognize.
+        fresh_non_bit = non_bit
+        preserve_canadian_details(fresh_bit, prior_bit)
+        curated_images_preserved = preserve_curated_image_overrides(fresh_bit, prior_bit)
+        replacements = set().union(*(exact_identities(event) for event in [*refreshed, *primary]))
+        cutoff = today_cutoff()
+        preserved = []
+        for event in prior_bit:
+            if not exact_identities(event) & replacements:
+                retained = retained_missing(event, cutoff, disabled, collector.country_code)
+                if retained is not None:
+                    preserved.append(retained)
+        failed_artists = {norm(item.get("artist")) for item in status["errors"] if item.get("artist")}
+        merged = [*fresh_non_bit, *fresh_bit, *preserved]
+        merged.sort(key=lambda event: (str(event.get("startDate") or "9999-12-31"), str(event.get("title") or "")))
+        save(SUPPLEMENTAL, merged)
+
+        status["activeNonFestivalBandsintownShows"] = len(fresh_bit) + len(preserved)
+        status["priorBandsintownShows"] = len(prior_bit)
+        status["preservedDueToRequestErrors"] = sum(
+            norm(event.get("trackedArtist") or event.get("headliner")) in failed_artists for event in preserved)
+        status["preservedCanadianShows"] = sum(is_canadian(event) for event in preserved)
+        status["curatedImageOverridesPreserved"] = curated_images_preserved
+        status["missingProviderShowsRetained"] = len(preserved)
+        status["missingProviderReview"] = [
+            {"id": event["id"], "officialUrl": event.get("officialUrl") or "",
+             "reason": "absent_from_current_provider_output_not_confirmed_cancelled"}
+            for event in preserved]
+        save(STATUS, status)
+    except (Exception, SystemExit):
+        SUPPLEMENTAL.write_bytes(original_bytes)
+        if original_status is None:
+            STATUS.unlink(missing_ok=True)
+        else:
+            STATUS.write_bytes(original_status)
         raise
 
-    refreshed = load(SUPPLEMENTAL, [])
-    status = load(STATUS, {})
-    if not isinstance(refreshed, list) or not isinstance(status, dict):
-        save(SUPPLEMENTAL, original)
-        raise SystemExit("Bandsintown refresh produced invalid output")
-
-    fresh_bit = [event for event in refreshed if is_refreshable_bit(event)]
-    fresh_non_bit = [event for event in refreshed if not is_refreshable_bit(event)]
-    preserve_canadian_details(fresh_bit, prior_bit)
-    curated_images_preserved = preserve_curated_image_overrides(fresh_bit, prior_bit)
-
-    # If a specific artist's request failed, keep that artist's last known rows for
-    # this run rather than deleting valid shows because of a transient API problem.
-    failed_artists = {
-        norm(item.get("artist"))
-        for item in status.get("errors", [])
-        if isinstance(item, dict) and item.get("artist")
-    }
-    fresh_ids = {
-        str(identifier)
-        for event in refreshed
-        for identifier in [event.get("id") or "", *event.get("mergedFromIds", [])]
-    }
-    preserved = [
-        event for event in prior_bit
-        if (is_canadian(event) or norm(event.get("trackedArtist") or event.get("headliner")) in failed_artists)
-        and str(event.get("id") or "") not in fresh_ids
-    ]
-
-    merged = [*fresh_non_bit, *fresh_bit, *preserved]
-    merged.sort(key=lambda event: (str(event.get("startDate") or "9999-12-31"), str(event.get("title") or "")))
-    save(SUPPLEMENTAL, merged)
-
-    status["activeNonFestivalBandsintownShows"] = len(fresh_bit) + len(preserved)
-    status["priorBandsintownShows"] = len(prior_bit)
-    status["preservedDueToRequestErrors"] = sum(
-        norm(event.get("trackedArtist") or event.get("headliner")) in failed_artists
-        for event in preserved
-    )
-    status["preservedCanadianShows"] = sum(is_canadian(event) for event in preserved)
-    status["curatedImageOverridesPreserved"] = curated_images_preserved
-    save(STATUS, status)
-
-    print(
-        "Bandsintown refresh safeguard: "
-        f"prior={len(prior_bit)}, fresh={len(fresh_bit)}, "
-        f"preserved_on_error={status['preservedDueToRequestErrors']}, "
-        f"preserved_canadian={status['preservedCanadianShows']}, curated_images={curated_images_preserved}"
-    )
+    print("Bandsintown refresh safeguard: "
+          f"prior={len(prior_bit)}, fresh={len(fresh_bit)}, missing_for_review={len(preserved)}, "
+          f"preserved_on_error={status['preservedDueToRequestErrors']}, "
+          f"preserved_canadian={status['preservedCanadianShows']}, curated_images={curated_images_preserved}")
     return 0
 
 
