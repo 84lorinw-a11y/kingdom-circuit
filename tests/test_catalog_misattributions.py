@@ -9,6 +9,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from catalog_removals import apply, location_review_event, public_event, removed_event
+import catalog_removals as catalog
 from build_seo_site import merge_events
 import add_past_show_archives as archives
 import url_continuity as continuity
@@ -111,6 +112,24 @@ class CatalogMisattributionTests(unittest.TestCase):
 
 
 class LocationUnconfirmedBookingTests(unittest.TestCase):
+    def setUp(self):
+        temp = tempfile.TemporaryDirectory()
+        self.addCleanup(temp.cleanup)
+        self.review_file = Path(temp.name) / 'review-held-events.json'
+        source = {'name': 'Reach Records', 'url': 'https://www.reachrecords.com/artists/1k-phew/'}
+        unresolved = {
+            'excludedEventId': 'official:023c040d4ea33e120949',
+            'reviewStatus': 'listed_location_unconfirmed', 'publish': True,
+            'event': dict(self.event(), sources=[source]),
+            'sources': [source['url'], 'https://www.texasmotorplex.com/'],
+            'reason': 'The artist calendar pairs a Texas venue with a conflicting Florida locality.',
+            'evidence': [{'url': source['url'], 'observation': 'The booking is confirmed; its location remains unconfirmed.'}],
+        }
+        self.review_file.write_text(json.dumps([unresolved]))
+        boundary = patch.object(catalog, 'REVIEW_FILE', self.review_file, create=True)
+        boundary.start()
+        self.addCleanup(boundary.stop)
+
     def event(self, **fields):
         return {'id': 'official:023c040d4ea33e120949',
                 'title': '1K Phew — Live at Texas Motorplex',
@@ -254,8 +273,7 @@ class LocationUnconfirmedBookingTests(unittest.TestCase):
             self.assertEqual((root / 'event-history.json').read_bytes(), original)
 
     def test_review_record_keeps_original_location_and_pending_status(self):
-        root = Path(__file__).resolve().parents[1]
-        records = json.loads((root / 'config/review-held-events.json').read_text())
+        records = json.loads(self.review_file.read_text())
         held = [record for record in records if location_review_event(record.get('event', {}))]
         self.assertEqual(len(held), 1)
         record = held[0]

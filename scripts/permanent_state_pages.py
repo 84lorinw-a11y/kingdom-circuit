@@ -10,7 +10,7 @@ import re
 from zoneinfo import ZoneInfo
 
 from apply_oct3_concert_corrections import rejected
-from catalog_removals import location_review_event, removed_event
+from catalog_removals import location_review_event, public_event, removed_event
 from add_past_show_archives import is_test, trusted
 
 REGISTRY = "config/permanent-state-pages.json"
@@ -47,6 +47,7 @@ def state_path(code):
 def eligible(event):
     if not isinstance(event, dict):
         return False
+    event = public_event(event)
     country = str(event.get("country") or "US").upper()
     region_matches = ((country in {"US", "USA", "PR"} and event.get("state") in US_CODES)
                       or (country in {"CA", "CAN", "CANADA"} and event.get("state") in CANADIAN_REGIONS))
@@ -73,7 +74,7 @@ def discover_codes(source):
         payload = json.loads(path.read_text())
         records = payload.get("events", []) if isinstance(payload, dict) else payload
         for record in records:
-            event = record.get("event", record)
+            event = public_event(record.get("event", record))
             if eligible(event) and (name != "event-history.json" or trusted(event)):
                 codes.add(event["state"])
     return sorted(codes)
@@ -125,7 +126,7 @@ def approved_history(site, source):
     module.configure_environment(True)
     events, _, _ = module.load_source_history(
         [source / "event-history.json"], site, dt.datetime.now(ZoneInfo("America/Los_Angeles")).date())
-    return [event for event in events if eligible(event)]
+    return [public_event(event) for event in events if eligible(event)]
 
 
 def archive_section(site, events):

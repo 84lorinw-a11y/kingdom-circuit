@@ -4,15 +4,21 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import url_continuity as uc
+import catalog_removals as catalog
 
 
 class URLContinuityTests(unittest.TestCase):
     def setUp(self):
         temp = tempfile.TemporaryDirectory(); self.addCleanup(temp.cleanup)
         self.root = Path(temp.name); self.site = self.root / '_site'; self.site.mkdir()
+        self.review_file = self.root / 'config/review-held-events.json'
+        boundary = patch.object(catalog, 'REVIEW_FILE', self.review_file, create=True)
+        boundary.start()
+        self.addCleanup(boundary.stop)
         self.event = {'id': 'manual:show', 'title': 'Example concert', 'startDate': '2026-12-17',
                       'startTime': '19:00', 'city': 'Berkeley', 'state': 'CA', 'venue': 'Cornerstone',
                       'artists': ['Miles Minnick'], 'status': 'scheduled',
@@ -362,6 +368,74 @@ class URLContinuityTests(unittest.TestCase):
         self.assertEqual({self.event['id'], original['id']}, {e['id'] for e in uc.load(self.root / 'events.json', [])})
         uc.finalize(self.root, self.site, '2026-11-06')
         self.assertEqual(text, uc.target_file(self.site, original_path).read_text())
+
+    def test_resolved_location_prepare_merges_reviewed_aliases_into_original_canonical(self):
+        canonical_id = 'official:023c040d4ea33e120949'
+        manual_alias_id = 'manual:' + canonical_id
+        provider_id = 'bandsintown:1040798191'
+        retained = '/event/1k-phew-live-at-texas-motorplex-2026-11-21-swiss-golf-and-tennis-club-mobile-home-park-a168a7/'
+        provider_path = '/event/1k-phew-live-performance-2026-11-21-item-fd1047/'
+        source = {
+            'id': canonical_id, 'title': '1K Phew at Texas Motorplex',
+            'startDate': '2026-11-21', 'startTime': '18:00',
+            'venue': 'Texas Motorplex', 'city': 'Swiss Golf And Tennis Club Mobile Home Park',
+            'state': 'FL', 'country': 'US', 'status': 'scheduled',
+            'artists': ['1K Phew'], 'firstSeen': '2026-11-06T12:00:00Z',
+            'officialUrl': 'https://www.reachrecords.com/artists/1k-phew/',
+            'ticketUrl': 'https://www.bandsintown.com/e/1040798191',
+        }
+        manual = dict(source, id=manual_alias_id)
+        provider = dict(source, id=provider_id, bandsintownEventId='1040798191')
+        resolved = {
+            'id': canonical_id, 'title': 'Cars & Christ Dallas',
+            'startDate': '2026-11-21', 'endDate': '2026-11-21',
+            'startTime': '17:00', 'endTime': '21:00',
+            'startDateTime': '2026-11-21T17:00:00-06:00',
+            'endDateTime': '2026-11-21T21:00:00-06:00',
+            'timezone': 'America/Chicago', 'venue': 'Texas Motorplex',
+            'address': '7500 W Hwy 287', 'postalCode': '75119',
+            'city': 'Ennis', 'state': 'TX', 'country': 'US',
+            'status': 'scheduled', 'eventType': 'concert',
+            'artists': ['1K Phew', 'Trendsetter Sense'], 'headliner': '1K Phew',
+            'advertisedBilling': ['1K Phew', 'DJ Trendsetter Sense'],
+            'officialBill': ['1K Phew', 'DJ Trendsetter Sense'],
+            'musicConfirmed': True, 'lineupExplicit': True,
+            'officialUrl': 'https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas-2026',
+            'ticketUrl': 'https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas-2026',
+            'ticketUrlVerified': False, 'registrationUrlVerified': False,
+            'price': 'Free', 'locationUnconfirmed': False,
+            'firstSeen': '2026-11-03T18:56:47Z', 'confidence': 'high',
+        }
+        state = uc.empty_state()
+        state['events'][canonical_id] = {'path': retained, 'sourceIds': [], 'event': source}
+        state['events'][provider_id] = {'path': provider_path, 'sourceIds': [], 'event': provider}
+        rules = {'merges': [{
+            'keepId': canonical_id, 'keepPath': retained,
+            'aliasIds': [manual_alias_id, provider_id], 'aliasPaths': [provider_path],
+        }]}
+        self.write_inputs(primary=[manual], secondary=[provider], state=state, rules=rules)
+        uc.save(self.root / 'config/manual-events.json', [resolved])
+        uc.save(self.review_file, [{'excludedEventId': canonical_id,
+                                   'reviewStatus': 'resolved_location_confirmed',
+                                   'publish': True, 'resolvedEvent': resolved}])
+        uc.save(self.root / 'event-history.json', {'events': [{'event': source}, {'event': provider}]})
+        raw_history = (self.root / 'event-history.json').read_bytes()
+
+        result = uc.prepare(self.root)
+        self.assertEqual(result['events'], 1)
+        for filename in uc.FEEDS:
+            rows = uc.load(self.root / filename, [])
+            self.assertEqual([row['id'] for row in rows], [canonical_id])
+            self.assertEqual((rows[0]['city'], rows[0]['state'], rows[0]['startTime']), ('Ennis', 'TX', '17:00'))
+            self.assertIs(rows[0]['locationUnconfirmed'], False)
+            self.assertEqual(rows[0]['firstSeen'], '2026-11-03T18:56:47Z')
+            self.assertEqual(rows[0]['advertisedBilling'], ['1K Phew', 'DJ Trendsetter Sense'])
+        prepared = uc.load(self.root / uc.WORK_FILE, {})
+        self.assertEqual(set(prepared['events']), {canonical_id})
+        self.assertEqual(prepared['events'][canonical_id]['path'], retained)
+        self.assertEqual(set(prepared['events'][canonical_id]['sourceIds']), {manual_alias_id, provider_id})
+        self.assertEqual(prepared['redirects'][provider_path], retained)
+        self.assertEqual((self.root / 'event-history.json').read_bytes(), raw_history)
 
     def test_runtime_cards_use_registered_path_after_rename(self):
         import subprocess

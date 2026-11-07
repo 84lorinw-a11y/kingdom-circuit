@@ -11,6 +11,8 @@ from urllib.parse import urlsplit
 # archived/collector records. Host-only billing at another artist's event is
 # not a separately confirmed performance by the removed artist.
 REMOVED_ARTISTS = {"jay kalyl", "propaganda"}
+REVIEW_FILE = Path(__file__).resolve().parents[1] / "config/review-held-events.json"
+LOCATION_REVIEW_ID = "official:023c040d4ea33e120949"
 
 
 def removed_artist(name):
@@ -88,13 +90,15 @@ def withheld_event(event):
     return False
 
 
-def location_review_event(event):
+def _location_review_identity(event):
     # The artist calendar pairs Texas Motorplex with a Florida locality.
     # November 6: the owner accepts the artist calendar's booking, but neither
     # conflicting location. Keep its exact identity available for redaction.
     if event.get("startDate") != "2026-11-21":
         return False
-    if str(event.get("id") or "").removeprefix("manual:") == "official:023c040d4ea33e120949":
+    if str(event.get("id") or "").removeprefix("manual:") in {
+        LOCATION_REVIEW_ID, "bandsintown:1040798191"
+    }:
         return True
     if str(event.get("bandsintownEventId") or "") == "1040798191":
         return True
@@ -116,15 +120,54 @@ def location_review_event(event):
     return False
 
 
+def _location_resolution():
+    """Only a complete, explicitly approved repository review releases the hold."""
+    try:
+        records = json.loads(REVIEW_FILE.read_text())
+    except (OSError, ValueError):
+        return None
+    if not isinstance(records, list):
+        return None
+    for record in records:
+        if not isinstance(record, dict) or not (
+            record.get("excludedEventId") == LOCATION_REVIEW_ID
+            and record.get("reviewStatus") == "resolved_location_confirmed"
+            and record.get("publish") is True
+        ):
+            continue
+        event = record.get("resolvedEvent")
+        if (not isinstance(event, dict) or event.get("id") != LOCATION_REVIEW_ID
+                or event.get("startDate") != "2026-11-21"
+                or event.get("locationUnconfirmed") is not False):
+            continue
+        required = ("title", "venue", "address", "city", "state", "country",
+                    "timezone", "startTime", "endTime", "startDateTime", "endDateTime",
+                    "officialUrl")
+        if not all(isinstance(event.get(key), str) and event[key].strip() for key in required):
+            continue
+        if not isinstance(event.get("artists"), list) or "1K Phew" not in event["artists"]:
+            continue
+        return event
+    return None
+
+
+def location_review_event(event):
+    return _location_review_identity(event) and _location_resolution() is None
+
+
+def resolved_location_event(event):
+    return _location_review_identity(event) and _location_resolution() is not None
+
+
 def public_event(event):
-    """Project the one owner-approved booking without unverified location facts.
+    """Project reviewed facts without mutating historical/provider evidence.
 
     Provider refreshes may reintroduce the conflicting venue/locality or a new
     provider ID. Keep raw history and the source input intact; sanitize only
     the independent publication copy, using the exact dated identity above.
     """
     result = deepcopy(event)
-    if not location_review_event(event):
+    if not _location_review_identity(event):
         return result
     # Retained history records this exact booking on November 3. A provider
     # reimport must not restart its seven-day New Shows discovery window.
@@ -136,6 +179,41 @@ def public_event(event):
         from show_information_model import is_private_event
     if is_private_event(event):
         result["private"] = True
+    resolution = _location_resolution()
+    if resolution is not None:
+        # Remove stale provider geography, clocks and admission claims before
+        # overlaying the explicit review. Identity, continuity and status stay
+        # attached to the input record; a stale scheduled seed cannot reopen it.
+        for field in (
+            "venueCity", "address2", "suite", "fullAddress", "latitude", "longitude",
+            "lat", "lng", "lon", "geo", "coordinates", "doorsTime", "registrationTime",
+            "registrationLocation", "registrationUrl", "primaryTimeKind", "description",
+            "admissionRestriction", "ageRestriction", "offers", "offer", "priceAmount",
+            "priceCurrency", "ticketStatus",
+        ):
+            result.pop(field, None)
+        fields = (
+            "title", "startDate", "endDate", "venue", "address", "city", "state",
+            "postalCode", "country", "timezone", "startTime", "endTime", "startDateTime",
+            "endDateTime", "artists", "headliner", "advertisedBilling", "officialBill",
+            "lineupExplicit", "musicConfirmed", "eventType", "officialUrl", "ticketUrl",
+            "ticketUrlVerified", "registrationUrlVerified", "price", "organizer",
+            "organizerUrl", "publicDescription", "scheduleNote", "image", "imageType",
+            "imagePosition", "imageOverride", "imageSource", "imageSourceUrl", "confidence",
+            "locationUnconfirmed", "sourceName", "authority", "lastVerified", "auditVerified",
+        )
+        for field in fields:
+            if field in resolution:
+                result[field] = deepcopy(resolution[field])
+        if str(event.get("status") or "").casefold() not in {
+            "cancelled", "canceled", "postponed", "rescheduled", "private", "merged"
+        }:
+            result["status"] = resolution.get("status", "scheduled")
+        sources = result.setdefault("sources", [])
+        if isinstance(sources, list):
+            sources.extend(deepcopy(source) for source in resolution.get("sources", [])
+                           if source not in sources)
+        return result
     result.update({
         "locationUnconfirmed": True,
         "title": "1K Phew — Live performance",

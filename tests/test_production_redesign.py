@@ -7,12 +7,14 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import apply_production_redesign as production
+import catalog_removals as catalog
 
 
 def approved_filter():
@@ -25,6 +27,11 @@ def approved_filter():
 
 class ProductionNewShowsTests(unittest.TestCase):
     def setUp(self):
+        temp = tempfile.TemporaryDirectory()
+        self.addCleanup(temp.cleanup)
+        boundary = patch.object(catalog, 'REVIEW_FILE', pathlib.Path(temp.name) / 'missing-review.json', create=True)
+        boundary.start()
+        self.addCleanup(boundary.stop)
         self.redesign = approved_filter()
         production.configure_new_show_keys(self.redesign)
         # Captured production card: preserve its canonical URL and unconfirmed text.

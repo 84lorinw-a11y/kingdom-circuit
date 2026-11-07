@@ -4,11 +4,14 @@ import json
 from pathlib import Path
 import subprocess
 import sys
+import tempfile
 import unittest
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from build_seo_site import event_card, event_schema, head, merge_events
 from catalog_removals import public_event, removed_event
+import catalog_removals as catalog
 from mobile_discovery import Document
 from show_information import detail_transform, event_schemas, patched_schema, schema_blocks
 from show_information_model import normalize
@@ -16,6 +19,15 @@ from url_continuity import merge_details
 
 
 class UnconfirmedBookingPublicationTests(unittest.TestCase):
+    def setUp(self):
+        temp = tempfile.TemporaryDirectory()
+        self.addCleanup(temp.cleanup)
+        # This suite exercises the unresolved branch independently of the live
+        # owner's later resolution for the same historical source identity.
+        boundary = patch.object(catalog, 'REVIEW_FILE', Path(temp.name) / 'missing-review.json', create=True)
+        boundary.start()
+        self.addCleanup(boundary.stop)
+
     def source(self, **changes):
         return {
             'id': 'official:023c040d4ea33e120949', 'startDate': '2026-11-21',

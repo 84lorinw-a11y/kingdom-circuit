@@ -17,7 +17,7 @@ from pathlib import Path
 import re
 from urllib.parse import urlsplit
 import xml.etree.ElementTree as ET
-from catalog_removals import public_event
+from catalog_removals import public_event, resolved_location_event
 
 ORIGIN = 'https://kingdomcircuit.com'
 STATE_FILE = 'config/url-continuity.json'
@@ -142,6 +142,16 @@ def merge_details(preferred, other):
             result.pop(key, None)
     result['id'] = preferred['id']
     result['mergedFromIds'] = sorted(set(result.get('mergedFromIds', [])) | ({other['id']} if other['id'] != preferred['id'] else set()))
+    # This reviewed booking's scheduled manual seed supplies missing facts,
+    # but must not reopen a later cancellation/private/provider status. A
+    # retired alias marked merged does not change its surviving show's status.
+    protected = {'cancelled', 'canceled', 'postponed', 'rescheduled', 'private'}
+    if (resolved_location_event(preferred) and resolved_location_event(other)
+            and norm(preferred.get('status')) not in protected
+            and norm(other.get('status')) in protected):
+        for key in ('status', 'statusNotes', 'cancellationReason'):
+            if key in other:
+                result[key] = copy.deepcopy(other[key])
     return public_event(result)
 
 

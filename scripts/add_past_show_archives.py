@@ -149,7 +149,8 @@ def cancelled(event: dict) -> bool:
 
 def load_events(root: pathlib.Path) -> tuple[list[dict], dict[str, str]]:
     from build_seo_site import domestic_event
-    from catalog_removals import location_review_event, misattributed_event
+    from catalog_removals import location_review_event, misattributed_event, public_event
+    from show_information_model import is_private_event
     path = root / "event-history.json"
     known, by_slug = known_artists(root)
     if not path.is_file():
@@ -171,7 +172,10 @@ def load_events(root: pathlib.Path) -> tuple[list[dict], dict[str, str]]:
         if not isinstance(record, dict):
             continue
         event = record.get("event")
-        if not isinstance(event, dict) or misattributed_event(event) or location_review_event(event) or is_test(event) or not trusted(event) or norm(event.get('status')) == 'private':
+        if not isinstance(event, dict):
+            continue
+        event = public_event(event)
+        if misattributed_event(event) or location_review_event(event) or is_test(event) or not trusted(event) or is_private_event(event):
             continue
         if (event.get("id"), event.get("startDate")) in merged:
             continue

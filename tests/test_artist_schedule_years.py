@@ -6,10 +6,12 @@ import pathlib
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import finalize_artist_schedule_years as years
+import catalog_removals as catalog
 
 
 class ArtistScheduleYearTests(unittest.TestCase):
@@ -18,6 +20,9 @@ class ArtistScheduleYearTests(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.root = pathlib.Path(self.temp.name)
         self.today = dt.date(2026, 9, 24)
+        boundary = patch.object(catalog, 'REVIEW_FILE', self.root / 'missing-review.json', create=True)
+        boundary.start()
+        self.addCleanup(boundary.stop)
 
     def event(self, slug, start, end=None):
         page = self.root / "event" / slug / "index.html"
