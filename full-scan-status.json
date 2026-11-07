@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T18:47:30Z",
+  "generatedAt": "2026-11-07T14:52:56Z",
   "artistsChecked": 417,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
@@ -9,10 +9,10 @@
     "status": "ok",
     "artistsAttempted": 417,
     "resolved": 255,
-    "rawUpcomingUSRows": 85,
+    "rawUpcomingUSRows": 79,
     "rawUpcomingCARows": 4,
-    "rawUpcomingRows": 89,
-    "newEventsPublished": 14,
+    "rawUpcomingRows": 83,
+    "newEventsPublished": 12,
     "festivalCandidatesHeld": 2,
     "requestErrors": 0
   },
@@ -25,8 +25,8 @@
   "sourceStatusCounts": {
     "delegated_to_structured_rest": 417,
     "blocked_by_robots": 421,
-    "no_events": 578,
-    "failed": 8
+    "no_events": 579,
+    "failed": 7
   },
   "newEvents": [],
   "sourceResults": [
@@ -676,9 +676,8 @@
       "artist": "BrvndonP",
       "source": "official website",
       "url": "https://iambrvndonp.com/",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://iambrvndonp.com/: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1011)>"
+      "status": "no_events",
+      "eventsFound": 0
     },
     {
       "artist": "BrvndonP",
