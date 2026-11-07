@@ -1,19 +1,17 @@
 {
-  "generatedAt": "2026-11-06T23:29:51Z",
+  "generatedAt": "2026-11-07T15:26:23Z",
   "artistsConfigured": 417,
   "officialWebsitesChecked": 258,
   "artistsWithEvents": 0,
   "eventsFound": 0,
-  "warningCount": 149,
+  "warningCount": 147,
   "warnings": [
     "Trip Lee: Unable to retrieve https://builttobrag.com/: HTTP Error 500: Internal Server Error",
     "Aaron Cole Bandsintown: Unable to retrieve https://www.bandsintown.com/a/2471775: HTTP Error 403: Forbidden",
     "Aaron Cole Bandsintown: Unable to retrieve https://www.bandsintown.com/a/2471775: HTTP Error 403: Forbidden",
-    "BrvndonP: Unable to retrieve https://iambrvndonp.com/: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1011)>",
     "Bizzle: Unable to retrieve https://bizzle.vip/: <urlopen error [Errno -2] Name or service not known>",
     "Issac Mansfield: robots.txt blocked https://www.issacmansfield.com/",
     "Shonlock: Unable to retrieve https://www.shonlock.com/: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1011)>",
-    "T-Bone: Unable to retrieve https://houseoftbone.com/: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'houseoftbone.com'. (_ssl.c:1011)>",
     "808 BEEZY Bandsintown: Unable to retrieve https://www.bandsintown.com/a/792282-808-beezy: HTTP Error 403: Forbidden",
     "Porsha Love: robots.txt blocked https://linktr.ee/iamporshalove",
     "Kijan Boone: robots.txt blocked https://linktr.ee/kijanboone",
@@ -105,7 +103,9 @@
     "Mike REAL: robots.txt blocked https://linktr.ee/mikerealmusic",
     "T Log: robots.txt blocked https://linktr.ee/tlog.music",
     "Stephen the Levite: robots.txt blocked https://linktr.ee/dawhistleblower",
-    "De La Cruz: robots.txt blocked https://linktr.ee/DeLaCruz14"
+    "De La Cruz: robots.txt blocked https://linktr.ee/DeLaCruz14",
+    "Swaizy: robots.txt blocked https://linktr.ee/swaizyofficial",
+    "Taelor Gray: robots.txt blocked https://linktr.ee/taelor_gray"
   ],
   "mode": "all-tracked-artists-official-website-scan"
 }
