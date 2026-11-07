@@ -66,6 +66,23 @@ def safe_path(path):
     return path
 
 
+def internal_event_paths(links):
+    """Record local relationships without stripping external ticket origins."""
+    paths = set()
+    for link in links:
+        parsed = urlsplit(link)
+        if parsed.scheme and parsed.scheme != 'https':
+            continue
+        if parsed.netloc:
+            if parsed.netloc.casefold() != urlsplit(ORIGIN).netloc:
+                continue
+        elif parsed.scheme:
+            continue
+        if parsed.path.startswith('/event/'):
+            paths.add(safe_path(parsed.path))
+    return sorted(paths)
+
+
 def target_file(site, path):
     return site / safe_path(path).lstrip('/') / 'index.html'
 
@@ -483,7 +500,10 @@ def finalize(root, site, today=None):
         if parts[0] == 'artists' and len(parts) > 1 and parts[1] not in allowed_artists: continue
         title = record.get('heading') or record.get('title', '').split('|')[0].strip()
         body = '<p>No upcoming shows are currently confirmed on this calendar.</p>'
-        related = record.get('eventPaths', [])
+        # Older page snapshots also captured external ticket URL pathnames.
+        # Relationships do not own URLs: retain only registered local events
+        # and their aliases, without relaxing canonical/redirect validation.
+        related = [p for p in record.get('eventPaths', []) if p in occupied or p in redirects]
         related = list(dict.fromkeys(redirects.get(p, p) for p in related))
         links = []
         for event_path in related:
@@ -540,7 +560,7 @@ def finalize(root, site, today=None):
         elif not previous and path not in rules.get('baselinePaths', []):
             lastmod = today
         state['pages'][path] = {'fingerprint': fingerprint, 'lastmod': lastmod, 'title': facts.title,
-                                'heading': facts.h1, 'eventPaths': sorted(set(urlsplit(u).path for u in facts.links if urlsplit(u).path.startswith('/event/')))}
+                                'heading': facts.h1, 'eventPaths': internal_event_paths(facts.links)}
         node = ET.SubElement(sitemap, 'url'); ET.SubElement(node, 'loc').text = ORIGIN + path
         if lastmod: ET.SubElement(node, 'lastmod').text = lastmod; dated += 1
     ET.indent(sitemap)

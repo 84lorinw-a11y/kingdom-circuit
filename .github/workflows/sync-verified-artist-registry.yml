@@ -60,5 +60,20 @@ jobs:
           print('Verified artist registry block validated:', len(updates), 'rows; roster=', len(artists))
           PY
 
+      - name: Install pinned image verification backend
+        run: |
+          python - <<'PYTHON'
+          import importlib.metadata
+          import subprocess
+          import sys
+          sys.path.insert(0, 'scripts')
+          from finalize_public_experience import PINNED_PILLOW
+          subprocess.run([sys.executable, '-m', 'pip', 'install', '--disable-pip-version-check',
+                          '--no-input', '--only-binary=:all:', PINNED_PILLOW], check=True)
+          from PIL import features
+          assert importlib.metadata.version('Pillow') == PINNED_PILLOW.split('==', 1)[1]
+          assert features.check('webp'), 'Pinned Pillow must provide WebP support'
+          PYTHON
+
       - name: Run production tests
         run: python -m unittest discover -s tests -p 'test_*.py' -v

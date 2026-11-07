@@ -329,6 +329,61 @@ class URLContinuityTests(unittest.TestCase):
         self.assertTrue((self.site / 'url-continuity-manifest.json').is_file())
         self.assertTrue(all(not (self.site / p).exists() for p in (uc.STATE_FILE, uc.RULES_FILE, uc.WORK_FILE)))
 
+    def test_external_ticket_paths_are_not_recorded_as_local_event_relationships(self):
+        self.page(self.path)
+        external = 'https://liberty.evenue.net/event/SA26/SA-02'
+        other_external = 'https://tickets.example/event/provider-show/'
+        links = (f'<a href="{self.path}">Local show</a>'
+                 f'<a href="{uc.ORIGIN}{self.path}?source=calendar#tickets">Same site</a>'
+                 f'<a href="//kingdomcircuit.com{self.path}">Same site relative scheme</a>'
+                 f'<a href="{external}">Tickets</a>'
+                 f'<a href="{other_external}">Other tickets</a>')
+        calendar = self.page('/shows/', links)
+        uc.prepare(self.root)
+        uc.finalize(self.root, self.site)
+        state = uc.load(self.root / uc.WORK_FILE, {})
+        self.assertEqual([self.path], state['pages']['/shows/']['eventPaths'])
+        self.assertIn(external, calendar.read_text())
+        self.assertIn(other_external, calendar.read_text())
+        self.assertEqual(uc.ORIGIN + self.path, uc.PageFacts(uc.target_file(self.site, self.path).read_text()).canonical)
+        uc.verify(self.site)
+
+    def test_rollover_restores_calendar_despite_legacy_external_ticket_relationship(self):
+        calendar = '/artists/miles-minnick/virginia/'
+        alias = '/event/previous-show-link/'
+        self.state['redirects'][alias] = self.path
+        self.state['pages'][calendar] = {
+            'title': 'Miles Minnick Virginia shows', 'heading': 'Miles Minnick in Virginia',
+            'eventPaths': [self.path, alias, '/event/SA26/SA-02', '/event/provider-show/']}
+        self.write_inputs(primary=[])
+        uc.save(self.root / 'config/artists.json', [{'name': 'Miles Minnick', 'enabled': True}])
+        uc.prepare(self.root)
+        uc.finalize(self.root, self.site)
+        text = uc.target_file(self.site, calendar).read_text()
+        self.assertIn('No upcoming shows are currently confirmed', text)
+        self.assertIn(f'href="{self.path}"', text)
+        self.assertNotIn('/event/SA26/SA-02', text)
+        self.assertNotIn('/event/provider-show/', text)
+        self.assertEqual(uc.ORIGIN + calendar, uc.PageFacts(text).canonical)
+        self.assertEqual('0; url=' + uc.ORIGIN + self.path,
+                         uc.PageFacts(uc.target_file(self.site, alias).read_text()).refresh)
+        state = uc.load(self.root / uc.WORK_FILE, {})
+        self.assertEqual([self.path], state['pages'][calendar]['eventPaths'])
+        self.assertEqual(self.path, state['events'][self.event['id']]['path'])
+        self.assertIn(uc.ORIGIN + calendar, (self.site / 'sitemap.xml').read_text())
+        self.assertIn(uc.ORIGIN + self.path, (self.site / 'sitemap.xml').read_text())
+        uc.persist(self.root, self.root / uc.WORK_FILE)
+        uc.finalize(self.root, self.site)
+        self.assertEqual(text, uc.target_file(self.site, calendar).read_text())
+        uc.verify(self.site)
+
+    def test_malformed_same_origin_event_link_still_fails_validation(self):
+        self.page(self.path)
+        self.page('/shows/', '<a href="https://kingdomcircuit.com/event/../../">Invalid local link</a>')
+        uc.prepare(self.root)
+        with self.assertRaisesRegex(ValueError, 'Invalid retained URL path'):
+            uc.finalize(self.root, self.site)
+
     def test_paths_cannot_escape_site_or_redirect_offsite(self):
         for path in ('https://evil.example/', '//evil.example/', '/../../', '/event/a/?url=x'):
             with self.subTest(path=path):
