@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T14:52:56Z",
+  "generatedAt": "2026-11-07T17:21:23Z",
   "artistsChecked": 417,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
@@ -25,8 +25,8 @@
   "sourceStatusCounts": {
     "delegated_to_structured_rest": 417,
     "blocked_by_robots": 421,
-    "no_events": 579,
-    "failed": 7
+    "no_events": 580,
+    "failed": 6
   },
   "newEvents": [],
   "sourceResults": [
@@ -1293,9 +1293,8 @@
       "artist": "T-Bone",
       "source": "official website",
       "url": "https://houseoftbone.com/",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://houseoftbone.com/: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'houseoftbone.com'. (_ssl.c:1011)>"
+      "status": "no_events",
+      "eventsFound": 0
     },
     {
       "artist": "T-Bone",
