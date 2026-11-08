@@ -41,6 +41,52 @@
     ]
   },
   {
+    "id": "manual:hulvey-could-be-tonight-silver-spring-2026",
+    "title": "Hulvey - Could Be Tonight Tour",
+    "startDate": "2026-09-08",
+    "startTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "The Fillmore Silver Spring",
+    "address": "8656 Colesville Rd",
+    "city": "Silver Spring",
+    "state": "MD",
+    "country": "US",
+    "artists": [
+      "Hulvey",
+      "indie tribe.",
+      "Kijan Boone"
+    ],
+    "headliner": "Hulvey",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketmaster.com/hulvey-could-be-tonight-tour-silver-spring-maryland-09-08-2026/event/1500647FE337D3A1",
+    "officialUrl": "https://www.livenation.com/event/1AvfZ_6GkTNuWC-/hulvey-could-be-tonight-tour",
+    "image": "assets/artists/hulvey.webp",
+    "imageType": "artist",
+    "imagePosition": "50% 30%",
+    "price": "",
+    "lineupExplicit": true,
+    "authority": "official_event",
+    "sourceName": "Live Nation official event",
+    "sources": [
+      {
+        "name": "Live Nation official event",
+        "url": "https://www.livenation.com/event/1AvfZ_6GkTNuWC-/hulvey-could-be-tonight-tour",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "Ticketmaster official ticketing",
+        "url": "https://www.ticketmaster.com/hulvey-could-be-tonight-tour-silver-spring-maryland-09-08-2026/event/1500647FE337D3A1",
+        "type": "venue_ticket",
+        "authority": "venue_ticket",
+        "priority": 94
+      }
+    ],
+    "confidence": "high"
+  },
+  {
     "id": "submitted:deonte-hall-truth-in-action-battle-creek-2026",
     "title": "Truth in Action First Annual Gospel Music Concert",
     "startDate": "2026-09-12",
@@ -269,6 +315,95 @@
     "imageSourceUrl": "https://hogmob.com/wp-content/uploads/2026/08/Sevin-live-NJ.jpg"
   },
   {
+    "id": "ark-of-worship-2026",
+    "title": "Ark of Worship Gospel & Christian Music Festival 2026",
+    "startDate": "2026-10-09",
+    "endDate": "2026-10-10",
+    "startTime": "",
+    "venue": "Southwest Trail Riders Association Property",
+    "address": "13711 Almeda School Rd",
+    "city": "Houston",
+    "state": "TX",
+    "artists": [
+      "Zauntee",
+      "Scootie Wop",
+      "Dante' Pride",
+      "Anike",
+      "Y Shadey",
+      "180MINDSET",
+      "Kijan Boone"
+    ],
+    "headliner": "Zauntee",
+    "eventType": "festival",
+    "ticketUrl": "https://www.arkofworship.com/tickets",
+    "officialUrl": "https://www.arkofworship.com/lineup",
+    "image": "assets/events/ark-of-worship-2026.png",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "User-provided official Ark of Worship festival flyer",
+    "imageSourceUrl": "https://www.arkofworship.com/",
+    "auditVerified": "2026-09-26",
+    "price": "$59+ single-day / $99+ 2-day",
+    "status": "scheduled",
+    "lineupExplicit": true,
+    "authority": "official_festival",
+    "sourceName": "Ark of Worship official festival lineup",
+    "advertisedBilling": [
+      "Jekalyn Carr",
+      "Kierra Sheard",
+      "Travis Greene",
+      "Charles Weems",
+      "Kijan Boone",
+      "Zauntee",
+      "Scootie Wop",
+      "Dante' Pride",
+      "Anike",
+      "Ahjah",
+      "Y Shadey",
+      "Kefia Rollerson",
+      "DJ PARTYwithParks",
+      "180MINDSET"
+    ],
+    "officialBill": [
+      "Jekalyn Carr",
+      "Kierra Sheard",
+      "Travis Greene",
+      "Charles Weems",
+      "Kijan Boone",
+      "Zauntee",
+      "Scootie Wop",
+      "Dante' Pride",
+      "Anike",
+      "Ahjah",
+      "Y Shadey",
+      "Kefia Rollerson",
+      "DJ PARTYwithParks",
+      "180MINDSET"
+    ],
+    "performerDays": {
+      "2026-10-09": [
+        "Kijan Boone",
+        "Ahjah",
+        "Anike",
+        "Y Shadey",
+        "180MINDSET",
+        "DJ PARTYwithParks"
+      ],
+      "2026-10-10": [
+        "Jekalyn Carr",
+        "Kierra Sheard",
+        "Travis Greene",
+        "Charles Weems",
+        "Zauntee",
+        "Scootie Wop",
+        "Dante' Pride",
+        "Kefia Rollerson",
+        "DJ PARTYwithParks"
+      ]
+    }
+  },
+  {
     "id": "eventbrite:reign-volume-one-aasha-marie-brooklyn-2026",
     "title": "REIGN volume one",
     "startDate": "2026-10-10",
@@ -372,6 +507,145 @@
     "ticketAvailability": "cancelled",
     "notes": "Cancelled by the organizer. This page is retained as a cancellation notice.",
     "auditVerified": "2026-09-13"
+  },
+  {
+    "id": "mike-teezy-hrvstland-festival-2026",
+    "title": "HRVSTLAND Festival 2026",
+    "startDate": "2026-10-24",
+    "startTime": "16:00",
+    "endTime": "20:00",
+    "doorsTime": "15:30",
+    "timezone": "America/New_York",
+    "venue": "Unity Charlotte International",
+    "address": "5323 E Independence Blvd",
+    "city": "Charlotte",
+    "state": "NC",
+    "country": "US",
+    "artists": [
+      "Mike Teezy",
+      "Anike",
+      "Alex Jean",
+      "Dante' Pride",
+      "Don Ready",
+      "ADIA",
+      "Jamil",
+      "Queen Lee"
+    ],
+    "headliner": "Mike Teezy",
+    "eventType": "festival",
+    "ticketUrl": "https://www.miketeezymusic.com/event-details/hlfest",
+    "officialUrl": "https://www.miketeezymusic.com/event-details/hlfest",
+    "image": "assets/events/hrvstland-festival-2026-oct9-lineup.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "HRVSTLAND Festival official October 9 full-lineup flyer",
+    "imageSourceUrl": "https://www.instagram.com/hrvstlandfest/p/DeSc2G9SXfl/",
+    "price": "",
+    "status": "scheduled",
+    "lineupExplicit": true,
+    "authority": "official_festival",
+    "sourceName": "HRVSTLAND official event page",
+    "officialBill": [
+      "Mike Teezy",
+      "Alex Jean",
+      "Anike",
+      "ADIA",
+      "Dante' Pride",
+      "Don Ready",
+      "Franchesca",
+      "Queen Lee",
+      "Jamil",
+      "Joshuaa*",
+      "Allen B.",
+      "2P",
+      "Kennis Clark",
+      "DJ PARTYwithParks"
+    ],
+    "sources": [
+      {
+        "name": "HRVSTLAND Festival official October 9 full-lineup flyer",
+        "url": "https://www.instagram.com/hrvstlandfest/p/DeSc2G9SXfl/",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 120
+      },
+      {
+        "name": "HRVSTLAND Festival / Mike Teezy official October 1 full-lineup flyer",
+        "url": "https://www.instagram.com/hrvstlandfest/p/Dd9xRpxGDd1/",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 120
+      },
+      {
+        "name": "HRVSTLAND official event page",
+        "url": "https://www.miketeezymusic.com/event-details/hlfest",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "HRVSTLAND official Alex Jean announcement",
+        "url": "https://www.instagram.com/hrvstlandfest/p/Dd7CfLcSoqw/",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 115
+      },
+      {
+        "name": "HRVSTLAND official Franchesca announcement",
+        "url": "https://www.instagram.com/hrvstlandfest/p/DdUGHHoyubJ/",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 115
+      },
+      {
+        "name": "HRVSTLAND official Anike announcement",
+        "url": "https://www.instagram.com/hrvstlandfest/p/DdJf5AwRqUS/",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 108
+      },
+      {
+        "name": "HRVSTLAND official Dante Pride announcement",
+        "url": "https://www.instagram.com/hrvstlandfest/p/DdML-roReO-/",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 108
+      },
+      {
+        "name": "HRVSTLAND official Don Ready announcement",
+        "url": "https://www.instagram.com/hrvstlandfest/p/DdQJbYFMvVX/",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 108
+      },
+      {
+        "name": "HRVSTLAND official ADIA announcement",
+        "url": "https://www.instagram.com/hrvstlandfest/p/DdMs5MsyAAj/",
+        "type": "manual_verified",
+        "authority": "official_festival",
+        "priority": 108
+      }
+    ],
+    "notes": "Official October 1 HRVSTLAND / Mike Teezy full-lineup flyer confirms all fourteen billed performers, including Allen B., 2P and Kennis Clark. Use the complete first carousel slide; the second slide is a dated countdown. The published schedule remains marketplace 1:30–4 PM, VIP 2–3:30 PM, general-admission doors/DJ party 3:30 PM, concert 4 PM. Kingdom Circuit lists the concert start. Individual artist set times are not published. October 9: owner requested the new official DeSc2G9SXfl full-lineup artwork. It supersedes the October 1 image; use the complete original 1748x2183 flyer. Existing event details and billing are unchanged.",
+    "auditVerified": "2026-10-02",
+    "advertisedBilling": [
+      "Mike Teezy",
+      "Alex Jean",
+      "Anike",
+      "ADIA",
+      "Dante' Pride",
+      "Don Ready",
+      "Franchesca",
+      "Queen Lee",
+      "Jamil",
+      "Joshuaa*",
+      "Allen B.",
+      "2P",
+      "Kennis Clark",
+      "DJ PARTYwithParks"
+    ],
+    "startDateTime": "2026-10-24T16:00:00-04:00"
   },
   {
     "id": "sevin-live-nashville-2026-10-24",
@@ -1052,44 +1326,6 @@
     "trackedArtist": "808 BEEZY"
   },
   {
-    "id": "bandsintown:1040781482",
-    "title": "Ryan Ellis at The Betsy Hotel",
-    "startDate": "2026-11-13",
-    "startTime": "18:00",
-    "timezone": "",
-    "venue": "The Betsy Hotel",
-    "address": "1440 Ocean Dr",
-    "city": "Miami Beach",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Ryan Ellis"
-    ],
-    "headliner": "Ryan Ellis",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/1040781482?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/1040781482?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/ryan-ellis-press-oct20.jpg",
-    "price": "",
-    "sourceName": "Bandsintown",
-    "sources": [
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/1040781482?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "1040781482",
-    "bandsintownArtistId": "218834",
-    "bandsintownResolvedName": "Ryan Ellis",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Ryan Ellis"
-  },
-  {
     "title": "Light Up The City — Ant Lee",
     "startDate": "2026-11-13",
     "startTime": "19:00",
@@ -1438,7 +1674,8 @@
     "state": "FL",
     "country": "US",
     "artists": [
-      "Issac Mansfield"
+      "Issac Mansfield",
+      "GIOVANI"
     ],
     "headliner": "Issac Mansfield",
     "eventType": "concert",
@@ -1449,6 +1686,13 @@
     "price": "Free",
     "sourceName": "Bandsintown",
     "sources": [
+      {
+        "name": "Issac Mansfield Bandsintown event with complete lineup and official flyer",
+        "url": "https://www.bandsintown.com/e/109072940",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 115
+      },
       {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/109072940?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
@@ -1468,7 +1712,19 @@
     "imageOverride": true,
     "imageSource": "Issac Mansfield official Bandsintown event flyer",
     "imageSourceUrl": "https://www.bandsintown.com/e/109072940",
-    "auditVerified": "2026-10-25"
+    "auditVerified": "2026-10-25",
+    "advertisedBilling": [
+      "Issac Mansfield",
+      "SYL noiZ",
+      "GIOVANI"
+    ],
+    "officialBill": [
+      "Issac Mansfield",
+      "SYL noiZ",
+      "GIOVANI"
+    ],
+    "lineupExplicit": true,
+    "notes": "Owner requested the original Bandsintown flyer and complete announced bill. Bandsintown event 109072940 names Issac Mansfield, SYL noiZ and Giovani. Giovani profile 15656198 is the same exact profile stored for curated GIOVANI. SYL noiZ remains visible unlinked billing pending separate artist verification. Preserve this existing event identity and schedule."
   },
   {
     "id": "bandsintown:1040314202",
@@ -2052,7 +2308,7 @@
     "startDate": "2026-11-19",
     "startTime": "20:00",
     "timezone": "America/Toronto",
-    "venue": "Until It Doesn't Launch Event - Montreal, New Speak",
+    "venue": "Newspeak",
     "address": "1403 Rue Ste-Élisabeth",
     "city": "Montréal",
     "state": "QC",
@@ -2087,7 +2343,8 @@
     "imagePosition": "center",
     "imageOverride": true,
     "imageSource": "Daniel Saad official Until It Doesnt album launch flyer",
-    "imageSourceUrl": "https://www.instagram.com/p/DfYGEGrBoJ9/"
+    "imageSourceUrl": "https://www.instagram.com/p/DfYGEGrBoJ9/",
+    "detailImageLayout": "portrait"
   },
   {
     "id": "supplemental:skema-boy-2026-11-19-los-angeles-ca",
@@ -2145,8 +2402,8 @@
     "title": "The Promised VI",
     "startDate": "2026-11-20",
     "startTime": "18:00",
-    "timezone": "",
-    "venue": "The Promised VI",
+    "timezone": "America/Boise",
+    "venue": "The Whosoevers",
     "address": "20 S Auto Dr",
     "city": "Boise",
     "state": "ID",
@@ -2157,12 +2414,26 @@
     "headliner": "Kurtis Hoppie",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108923215?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/108923215?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "ticketUrl": "https://www.tickettailor.com/events/udkevents/2425184",
+    "officialUrl": "https://www.tickettailor.com/events/udkevents/2425184",
     "image": "assets/events/the-promised-vi-2026-11-20.jpg",
-    "price": "",
+    "price": "$20 general admission; $75 VIP",
     "sourceName": "Bandsintown",
     "sources": [
+      {
+        "name": "Official UDK Events ticket listing",
+        "url": "https://www.tickettailor.com/events/udkevents/2425184",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 115
+      },
+      {
+        "name": "Kurtis Hoppie artist announcement",
+        "url": "https://www.instagram.com/thekurtishoppie/reel/DezCIXAgzl3/",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 115
+      },
       {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/108923215?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
@@ -2171,7 +2442,7 @@
         "priority": 74
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "bandsintownEventId": "108923215",
     "bandsintownArtistId": "15395568",
     "bandsintownResolvedName": "Kurtis Hoppie",
@@ -2182,7 +2453,31 @@
     "imageOverride": true,
     "imageSource": "Official The Promised VI event flyer",
     "imageSourceUrl": "https://www.bandsintown.com/e/108923215",
-    "auditVerified": "2026-10-23"
+    "auditVerified": "2026-10-23",
+    "endTime": "21:30",
+    "endDate": "2026-11-20",
+    "startDateTime": "2026-11-20T18:00:00-07:00",
+    "endDateTime": "2026-11-20T21:30:00-07:00",
+    "doorsTime": "17:30",
+    "postalCode": "83709",
+    "advertisedBilling": [
+      "Kurtis Hoppie",
+      "Spencer Boliou",
+      "Derek Ryan",
+      "Kaleah Rochelle"
+    ],
+    "officialBill": [
+      "Kurtis Hoppie",
+      "Spencer Boliou",
+      "Derek Ryan",
+      "Kaleah Rochelle"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "ageRestriction": "All ages",
+    "publicDescription": "The Promised VI features Kurtis Hoppie, Spencer Boliou, Derek Ryan and Kaleah Rochelle at The Whosoevers in Boise. Doors open at 5:30 PM; the all-ages show runs 6–9:30 PM.",
+    "notes": "October 23 audit: existing provider event, not a new show. Official organizer ticket page replaces the event title accidentally used as venue and confirms full lineup, doors, show time and all-ages admission. Preserve provider ID, original address and discovery date.",
+    "lastVerified": "2026-10-23T22:33:46.736976Z"
   },
   {
     "id": "bandsintown:109072793",
@@ -2365,26 +2660,27 @@
   },
   {
     "id": "bandsintown:1040798191",
-    "title": "1K Phew at Texas Motorplex",
+    "title": "Cars & Christ Dallas",
     "startDate": "2026-11-21",
-    "startTime": "18:00",
-    "timezone": "",
+    "startTime": "17:00",
+    "timezone": "America/Chicago",
     "venue": "Texas Motorplex",
-    "address": "7500 US-287",
-    "city": "Swiss Golf And Tennis Club Mobile Home Park",
-    "state": "FL",
+    "address": "7500 W Hwy 287",
+    "city": "Ennis",
+    "state": "TX",
     "country": "US",
     "artists": [
-      "1K Phew"
+      "1K Phew",
+      "Trendsetter Sense"
     ],
     "headliner": "1K Phew",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/1040798191?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "officialUrl": "https://www.bandsintown.com/e/1040798191?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/1k-phew-owner-oct13.png",
-    "price": "",
-    "sourceName": "Bandsintown",
+    "ticketUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas",
+    "officialUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas",
+    "image": "assets/events/1k-phew-cars-and-christ-dallas-2026-11-21-original.jpg",
+    "price": "Free",
+    "sourceName": "Cars & Christ Dallas official announcement",
     "sources": [
       {
         "name": "Bandsintown",
@@ -2392,14 +2688,80 @@
         "type": "bandsintown_rest",
         "authority": "artist_calendar",
         "priority": 74
+      },
+      {
+        "name": "Cars & Christ Dallas — 1K Phew announcement",
+        "url": "https://www.instagram.com/p/Dfc4dnzi6DA/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 125
+      },
+      {
+        "name": "Cars & Christ official event page",
+        "url": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 120
+      },
+      {
+        "name": "Cars & Christ Dallas — DJ announcement",
+        "url": "https://www.instagram.com/americashallbesaved/p/DfSEfmSioj1/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 120
+      },
+      {
+        "name": "Texas Motorplex official address",
+        "url": "https://www.texasmotorplex.com/contact",
+        "type": "manual_verified",
+        "authority": "venue",
+        "priority": 115
+      },
+      {
+        "name": "Cars & Christ Dallas — Project Pat appearance",
+        "url": "https://www.instagram.com/americashallbesaved/p/DfYXUtZi9Ws/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 115
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "bandsintownEventId": "1040798191",
     "bandsintownArtistId": "12546964",
     "bandsintownResolvedName": "1K Phew",
     "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "1K Phew"
+    "trackedArtist": "1K Phew",
+    "firstSeen": "2026-11-03T18:56:47Z",
+    "endDate": "2026-11-21",
+    "postalCode": "75119",
+    "endTime": "21:00",
+    "startDateTime": "2026-11-21T17:00:00-06:00",
+    "endDateTime": "2026-11-21T21:00:00-06:00",
+    "advertisedBilling": [
+      "1K Phew",
+      "DJ Trendsetter Sense"
+    ],
+    "officialBill": [
+      "1K Phew",
+      "DJ Trendsetter Sense"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "ticketUrlVerified": false,
+    "registrationUrlVerified": false,
+    "organizer": "Cars & Christ",
+    "organizerUrl": "https://www.zeffy.com/en-US/organizations/cars-and-christ",
+    "publicDescription": "1K Phew performs live with DJ Trendsetter Sense at Cars & Christ Dallas, a free, family-friendly community event with show cars, music, ministry, baptisms and food trucks. Project Pat and Chosen Journey Show are also advertised to appear. The event runs 5–9 PM Central; individual set times and doors have not been announced. Optional donations are available on the official event page.",
+    "scheduleNote": "Event window: 5–9 PM Central. Individual set times and doors have not been announced.",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Cars & Christ Dallas official 1K Phew showcard",
+    "imageSourceUrl": "https://www.instagram.com/p/Dfc4dnzi6DA/",
+    "locationUnconfirmed": false,
+    "authority": "promoter",
+    "lastVerified": "2026-11-07",
+    "auditVerified": "2026-11-07"
   },
   {
     "id": "bandsintown:109085738",
@@ -2824,7 +3186,7 @@
     "title": "Alex Jean at The Pyrle",
     "startDate": "2026-12-01",
     "startTime": "20:00",
-    "timezone": "",
+    "timezone": "America/New_York",
     "venue": "The Pyrle",
     "address": "232 S Elm St",
     "city": "Greensboro",
@@ -2836,12 +3198,40 @@
     "headliner": "Alex Jean",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108976155?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/108976155?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "ticketUrl": "https://www.tixr.com/groups/thepyrle/events/alex-jean-209045",
+    "officialUrl": "https://www.tixr.com/groups/thepyrle/events/alex-jean-209045",
     "image": "assets/events/alex-jean-welcome-home-tour-2026-legs-1-2.jpg",
     "price": "",
     "sourceName": "Bandsintown",
     "sources": [
+      {
+        "name": "Alex Jean official tour expansion and artwork",
+        "url": "https://www.instagram.com/p/DfHvQEVttbb/",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 120
+      },
+      {
+        "name": "Reece official Welcome Home Tour support announcement",
+        "url": "https://www.instagram.com/onlyreece/reel/DeqBvzBsbiX/",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 115
+      },
+      {
+        "name": "The Pyrle official tickets",
+        "url": "https://www.tixr.com/groups/thepyrle/events/alex-jean-209045",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Alex Jean official tour calendar",
+        "url": "https://alexjeantour.com/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
       {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/108976155?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
@@ -2861,7 +3251,26 @@
     "imageOverride": true,
     "imageSource": "Alex Jean official Welcome Home Tour 2026 legs 1 and 2 announcement",
     "imageSourceUrl": "https://www.instagram.com/p/DfHvQEVttbb/",
-    "auditVerified": "2026-10-19"
+    "auditVerified": "2026-10-19",
+    "startDateTime": "2026-12-01T20:00:00-05:00",
+    "doorsTime": "19:00",
+    "advertisedBilling": [
+      "Alex Jean",
+      "Reece"
+    ],
+    "officialBill": [
+      "Alex Jean",
+      "Reece"
+    ],
+    "supportActs": [
+      "Reece"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "lastVerified": "2026-10-30T14:59:28.018045Z",
+    "publicDescription": "Alex Jean brings The Welcome Home Tour to Greensboro, with support from Reece.",
+    "notes": " October 19 artist announcement: Reece (@onlyreece), not Reece Lache, supports these four dates. Preserve unlinked full billing.",
+    "detailImageLayout": "portrait"
   },
   {
     "id": "manual:jesus-loves-hip-hop-dallas-2026-12-05",
@@ -3077,12 +3486,12 @@
         "priority": 112
       }
     ],
-    "auditVerified": "2026-09-23",
+    "auditVerified": "2026-10-30",
     "id": "miles-cj-zion-ultra-lounge-chandler-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
-    "notes": "CJ Emulous's official calendar confirms Miles Minnick and CJ Emulous at Zion Ultra Lounge on December 5, 2026 at 7:00 PM.",
+    "notes": "Official Eventbrite listing and flyer reviewed October 30, 2026: Miles Minnick, CJ Emulous, Nameless Servant, A4L and Th3rddae Da Mouthpiece; December 5 at Vybe Event Center, 2301 South Stearman Drive, Chandler AZ 85286. Doors 6:30 PM; show 7–11 PM; all ages and free parking. Zion Ultra Lounge Inc is the promoter. Existing listing identity and canonical URL retained. November 5 audit corrects the heading to the actual Vybe Event Center venue; Zion Ultra Lounge Inc is the promoter. The three additional supporting acts appear in the full billing without creating unverified artist profiles.",
     "endDate": "2026-12-05",
     "doorsTime": "18:30",
     "endTime": "23:00",
@@ -3222,7 +3631,7 @@
     "auditVerified": "2026-10-30",
     "ageRestriction": "All ages",
     "editorialBatch": "2026-10-30-alex-jean-tour-expansion",
-    "publicDescription": "Alex Jean brings The Welcome Home Tour to New York with special guest Reece. The Orlando artist combines Christian hip-hop, songwriting and guitar, exploring faith, purpose, identity and life with Christ. His music seeks to share the Gospel and connect with believers and people exploring faith.",
+    "publicDescription": "Alex Jean brings The Welcome Home Tour to Sony Hall in New York, with special guest Reece.",
     "scheduleDetails": [
       {
         "label": "Doors",
@@ -3599,44 +4008,6 @@
     "venueInstagram": "https://www.instagram.com/canneryhallnashville/",
     "organizerWebsite": "https://aegpresents.com/",
     "organizerInstagram": "https://www.instagram.com/aegpresents/"
-  },
-  {
-    "id": "bandsintown:1040675970",
-    "title": "Altar Ego at Clear Skies Meadery",
-    "startDate": "2027-01-23",
-    "startTime": "18:00",
-    "timezone": "",
-    "venue": "Clear Skies Meadery",
-    "address": "15201 Display Court",
-    "city": "Rockville",
-    "state": "MD",
-    "country": "US",
-    "artists": [
-      "Altar Ego"
-    ],
-    "headliner": "Altar Ego",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/1040675970?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/1040675970?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/altar-ego-owner-approved-oct23.jpg",
-    "price": "",
-    "sourceName": "Bandsintown",
-    "sources": [
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/1040675970?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "1040675970",
-    "bandsintownArtistId": "3457500",
-    "bandsintownResolvedName": "Altar Ego",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Altar Ego"
   },
   {
     "id": "manual:808-beezy-bandsintown-108856562",
