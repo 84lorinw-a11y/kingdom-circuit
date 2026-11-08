@@ -22,6 +22,8 @@ class PortraitResponsiveVariantTests(unittest.TestCase):
             ('assets/events/ozark-winterfest-branson-2027-02-05.jpg', [320, 640, 960], 'event-artwork', 75),
             ('assets/events/smoky-mountain-winterfest-pigeon-forge-2027-03-05.jpg', [320, 640, 960], 'event-artwork', 75),
             ('assets/events/drea-lp-sondaze-social-nashville-2026-12-20.png', [320, 640, 960], 'event-artwork', 75),
+            ('assets/events/e5-affair-memphis-2026-11-28-instagram.jpg', [320, 640, 960], 'event-artwork', 81),
+            ('assets/events/saint-rockstar-centerville-2026-11-08-artist.jpg', [320, 640, 960], 'artist-photo', 81),
             ('assets/events/kb-strength-to-stand-2026-2027-official-showcard.jpg', [320, 640, 960, 1280], 'event-artwork', 81),
             ('assets/artists/caleb-gordon-primary.jpg', [320, 640, 960, 1280], 'artist-photo', 81),
             ('assets/artists/1k-phew-owner-oct13.png', [320, 639], 'artist-photo', 95),
