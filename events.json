@@ -18194,5 +18194,281 @@
       }
     ],
     "notes": "Owner approved November 7 following prior held-lead review. Use latest official 8PM flyer over older 7PM Bandsintown entry. Performer KC and the Kingdom, guest speaker Sevin; do not add Sevin to artists, billing or performer schema/schedule. Exact event room/tenant, age policy, doors and end time not confirmed. Public operator site confirms community-center name and ZIP at flyer address. Full original weekend flyer retained unchanged, but only Friday concert is added; do not create speaking/recovery/prayer/movie programs as concerts. Earliest identified Friday concert evidence November 7; October 31 generic recovery/weekend search is not a confirmed concert record."
+  },
+  {
+    "id": "manual:e5-affair-memphis-2026-11-28",
+    "title": "E5 Affair",
+    "startDate": "2026-11-28",
+    "endDate": "2026-11-28",
+    "startTime": "17:00",
+    "endTime": "21:00",
+    "startDateTime": "2026-11-28T17:00:00-06:00",
+    "endDateTime": "2026-11-28T21:00:00-06:00",
+    "timezone": "America/Chicago",
+    "venue": "1112 East McLemore Avenue",
+    "address": "1112 East McLemore Avenue",
+    "city": "Memphis",
+    "state": "TN",
+    "postalCode": "38106",
+    "country": "US",
+    "artists": [
+      "5_7 Grace Completed",
+      "Holy1Dove",
+      "Ryder4Christ",
+      "Kaye Savannah",
+      "ZONO",
+      "NBSRyan",
+      "Hi-Lite Real",
+      "Darren Stone"
+    ],
+    "advertisedBilling": [
+      "5_7 Grace Completed",
+      "Holy1Dove",
+      "Ryder4Christ",
+      "Kaye Savannah",
+      "ZONO",
+      "NBSRyan",
+      "Hi-Lite Real",
+      "Darren Stone"
+    ],
+    "officialBill": [
+      "5_7 Grace Completed",
+      "Holy1Dove",
+      "Ryder4Christ",
+      "Kaye Savannah",
+      "ZONO",
+      "NBSRyan",
+      "Hi-Lite Real",
+      "Darren Stone"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "eventType": "concert",
+    "status": "scheduled",
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-11-07",
+    "lastVerified": "2026-11-07",
+    "auditVerified": "2026-11-07",
+    "editorialBatch": "2026-11-07-e5-damac-unleashed",
+    "image": "assets/events/e5-affair-memphis-2026-11-28-instagram.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "detailImageLayout": "portrait",
+    "imageSource": "Original organizer Instagram flyer selected by the owner",
+    "imageSourceUrl": "https://www.instagram.com/p/Dd9f826CoV8/",
+    "officialUrl": "https://www.eventbrite.com/e/e5-affair-tickets-2003269251257",
+    "ticketUrl": "https://www.eventbrite.com/e/e5-affair-tickets-2003269251257",
+    "ticketUrlVerified": true,
+    "organizer": "5_7 Grace Completed",
+    "organizerInstagram": "https://www.instagram.com/5_7_music/",
+    "admissionRestriction": "All ages",
+    "publicDescription": "E5 Affair brings 5_7 Grace Completed, Holy1Dove, Ryder4Christ, Kaye Savannah, ZONO, NBSRyan, Hi-Lite Real and Darren Stone to Memphis for an evening of Christian music. All ages.",
+    "sourceName": "E5 Affair organizer / Eventbrite / artist calendars",
+    "sourceEventIds": [
+      "eventbrite:2003269251257",
+      "bandsintown:1040588814"
+    ],
+    "sources": [
+      {
+        "name": "Official E5 Affair ticket listing",
+        "url": "https://www.eventbrite.com/e/e5-affair-tickets-2003269251257",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 120
+      },
+      {
+        "name": "Owner-selected original organizer flyer",
+        "url": "https://www.instagram.com/p/Dd9f826CoV8/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 120
+      },
+      {
+        "name": "Darren Stone performer announcement",
+        "url": "https://www.instagram.com/reel/De1uDrXhsh6/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 120
+      },
+      {
+        "name": "Hi-Lite Real artist calendar",
+        "url": "https://www.bandsintown.com/e/1040588814-hi-lite-real-at-1112-e-mclemore-ave",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 120
+      }
+    ],
+    "notes": "Owner approved November 7. Authentic four-person flyer retained; full eight-person bill combines organizer/Eventbrite/artist-calendar evidence and Darren Stone’s event-specific announcement. Mr. Del is not billed. Building name, price and doors are unconfirmed; use the verified address as venue label without inventing a facility name. No artist profile or verification changes."
+  },
+  {
+    "id": "manual:damac-saint-rockstar-centerville-2026-11-08",
+    "title": "Connect: DaMAC + Saint Rockstar",
+    "startDate": "2026-11-08",
+    "endDate": "2026-11-08",
+    "startTime": "18:15",
+    "endTime": "20:30",
+    "startDateTime": "2026-11-08T18:15:00-05:00",
+    "endDateTime": "2026-11-08T20:30:00-05:00",
+    "timezone": "America/New_York",
+    "venue": "Centerville Grace Church",
+    "address": "410 East Social Row Road",
+    "city": "Centerville",
+    "state": "OH",
+    "postalCode": "45458",
+    "country": "US",
+    "artists": [
+      "DaMAC",
+      "Saint Rockstar"
+    ],
+    "advertisedBilling": [
+      "DaMAC",
+      "Saint Rockstar"
+    ],
+    "officialBill": [
+      "DaMAC",
+      "Saint Rockstar"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "eventType": "concert",
+    "status": "scheduled",
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-11-07",
+    "lastVerified": "2026-11-07",
+    "auditVerified": "2026-11-07",
+    "editorialBatch": "2026-11-07-e5-damac-unleashed",
+    "image": "assets/events/saint-rockstar-centerville-2026-11-08-artist.jpg",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "detailImageLayout": "square",
+    "imageSource": "Saint Rockstar official Linktree artist photo; not an event flyer",
+    "imageSourceUrl": "https://linktr.ee/saintrockstar",
+    "officialUrl": "https://www.centervillegrace.org/calendar",
+    "ticketUrl": "",
+    "ticketUrlVerified": false,
+    "organizer": "Centerville Grace — Connect Youth",
+    "organizerWebsite": "https://www.centervillegrace.org/youth",
+    "venueUrl": "https://www.centervillegrace.org/",
+    "price": "Free admission",
+    "admissionRestriction": "Connect Youth program: grades 6–12",
+    "publicDescription": "DaMAC and Saint Rockstar perform at Centerville Grace Church as part of the Connect Youth program for students in grades 6–12. Admission is free. The church calendar confirms this specific concert from 6:15 to 8:30 PM.",
+    "sourceName": "Centerville Grace official calendar / Saint Rockstar artist listing",
+    "sourceEventIds": [
+      "bandsintown:108909230"
+    ],
+    "sources": [
+      {
+        "name": "Official church concert calendar",
+        "url": "https://www.centervillegrace.org/calendar",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 120
+      },
+      {
+        "name": "Connect Youth program and audience",
+        "url": "https://www.centervillegrace.org/youth",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 120
+      },
+      {
+        "name": "Saint Rockstar concert listing",
+        "url": "https://www.bandsintown.com/e/108909230-saint-rockstar-at-centerville-grace?came_from=19",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 120
+      }
+    ],
+    "notes": "Owner approved November 7. Church ICS named November 8 exception confirms DaMAC concert, 18:15–20:30 EST; Bandsintown confirms both performers and free admission. Youth context grades 6–12, not an all-ages claim and not confirmed private. Do not create general recurring youth services. No direct ticket checkout or original event flyer confirmed. Image is an authentic photo of the named confirmed performer, not a concert flyer."
+  },
+  {
+    "id": "manual:unleashed-anniversary-benefit-st-petersburg-2026-11-20",
+    "title": "Unleashed Anniversary: Benefit Concert for Fat Boy Juice & Family",
+    "startDate": "2026-11-20",
+    "endDate": "2026-11-20",
+    "startTime": "19:00",
+    "endTime": "21:00",
+    "startDateTime": "2026-11-20T19:00:00-05:00",
+    "endDateTime": "2026-11-20T21:00:00-05:00",
+    "timezone": "America/New_York",
+    "venue": "Loud Studios",
+    "address": "3193 Tech Drive",
+    "city": "St. Petersburg",
+    "state": "FL",
+    "postalCode": "33716",
+    "country": "US",
+    "artists": [
+      "Joe Battle",
+      "Jayla Aleese",
+      "Zhalarina"
+    ],
+    "advertisedBilling": [
+      "Joe Battle",
+      "Jayla Aleese",
+      "Zhalarina"
+    ],
+    "officialBill": [
+      "Joe Battle",
+      "Jayla Aleese",
+      "Zhalarina"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "eventType": "concert",
+    "status": "scheduled",
+    "authority": "official_event",
+    "confidence": "high",
+    "firstSeen": "2026-11-07",
+    "lastVerified": "2026-11-07",
+    "auditVerified": "2026-11-07",
+    "editorialBatch": "2026-11-07-e5-damac-unleashed",
+    "image": "assets/events/zhalarina-unleashed-2026-11-20-artist.jpg",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "detailImageLayout": "square",
+    "imageSource": "Zhalarina official booking-agency artist photo; not an event flyer",
+    "imageSourceUrl": "https://braveenough.com/zhalarina/",
+    "officialUrl": "https://www.eventbrite.com/e/unleashed-anniversary-benefit-concert-for-fat-boy-juice-family-tickets-1997851271935",
+    "ticketUrl": "https://www.eventbrite.com/e/unleashed-anniversary-benefit-concert-for-fat-boy-juice-family-tickets-1997851271935",
+    "ticketUrlVerified": true,
+    "organizer": "Leonard’s Lens",
+    "venueUrl": "https://www.loudstudiosfl.com/",
+    "price": {
+      "amount": 0,
+      "currency": "USD",
+      "label": "Free admission; optional donations for Fat Boy Juice and family.",
+      "includesAllFeesConfirmed": true,
+      "verifiedUrl": "https://www.eventbrite.com/e/unleashed-anniversary-benefit-concert-for-fat-boy-juice-family-tickets-1997851271935"
+    },
+    "admissionRestriction": "All ages",
+    "parking": "Free parking",
+    "publicNotice": "Fat Boy Juice is the benefit recipient and will not perform.",
+    "publicDescription": "Joe Battle, Jayla Aleese and Zhalarina perform at this free Unleashed anniversary benefit concert for Fat Boy Juice and his family. Optional donations support the family. All ages; the organizer requests reservations and lists seating for 120 guests.",
+    "sourceName": "Updated official Unleashed Eventbrite listing / Loud Studios",
+    "sourceEventIds": [
+      "eventbrite:1997851271935"
+    ],
+    "sources": [
+      {
+        "name": "Updated official benefit concert and reservations",
+        "url": "https://www.eventbrite.com/e/unleashed-anniversary-benefit-concert-for-fat-boy-juice-family-tickets-1997851271935",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 120
+      },
+      {
+        "name": "Official venue and address",
+        "url": "https://www.loudstudiosfl.com/contact-us",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 120
+      }
+    ],
+    "notes": "Owner approved November 7. Same-day directly retrieved updated Eventbrite confirms replacement benefit title and bill: Joe Battle, Jayla Aleese, Zhalarina. Explicitly excludes Fat Boy Juice from performance. Do not restore old Live Recording Experience title, performing claim, full-band promise, food offering or 150-seat teaser. Current official flyer unavailable; use authentic Zhalarina booking-agency portrait rather than misleading superseded artwork. Formal ticket/venue address says St. Petersburg, while narrative mentions Largo. Venue general recurring open mic overlaps but does not establish cancellation; no change to approved date. Free entry and voluntary donations; current ticket inventory not verified. No artist registry changes. Image is an authentic photo of the named confirmed performer, not a concert flyer."
   }
 ]
