@@ -13,6 +13,22 @@ from urllib.parse import urlsplit
 REMOVED_ARTISTS = {"jay kalyl", "propaganda"}
 REVIEW_FILE = Path(__file__).resolve().parents[1] / "config/review-held-events.json"
 LOCATION_REVIEW_ID = "official:023c040d4ea33e120949"
+# November 7 owner decisions are occurrence-specific, not artist removals.
+# Retain the source snapshots and rationale in config/review-held-events.json.
+OWNER_REJECTED_OCCURRENCES = {
+    "2026-11-11": {
+        "urls": {("posh.vip", "/e/praise-party-skate-night-edition")},
+        "bandsintown_ids": set(),
+    },
+    "2026-11-15": {
+        "urls": {("merrymancenter.org", "/events/b-shoc")},
+        "bandsintown_ids": set(),
+    },
+    "2027-02-20": {
+        "urls": {("kingdomtix.org", "/events/1ee1aa0a-f1c7-472e-9b04-f3bb56d79cbc")},
+        "bandsintown_ids": {"108711786", "109041557"},
+    },
+}
 
 
 def removed_artist(name):
@@ -61,7 +77,41 @@ def misattributed_event(event):
     return False
 
 
+def owner_rejected_occurrence(event):
+    reviewed = OWNER_REJECTED_OCCURRENCES.get(event.get("startDate"))
+    if not reviewed:
+        return False
+    provider_ids = reviewed["bandsintown_ids"]
+    event_id = str(event.get("id") or "").removeprefix("manual:")
+    if (event_id in {"bandsintown:" + value for value in provider_ids}
+            or str(event.get("bandsintownEventId") or "") in provider_ids):
+        return True
+    for field in ("officialUrl", "ticketUrl", "registrationUrl"):
+        raw = str(event.get(field) or "")
+        if any(character.isspace() for character in raw):
+            continue
+        try:
+            url = urlsplit(raw)
+            host = (url.hostname or "").lower().removeprefix("www.")
+            port = url.port
+        except ValueError:
+            continue
+        if (url.scheme not in {"http", "https"} or url.username or url.password
+                or port not in {None, 443 if url.scheme == "https" else 80}):
+            continue
+        path = url.path.rstrip("/")
+        if (host, path) in reviewed["urls"]:
+            return True
+        if host == "bandsintown.com":
+            match = re.fullmatch(r"/[et]/(\d+)(?:-[^/]+)?", path)
+            if match and match[1] in provider_ids:
+                return True
+    return False
+
+
 def withheld_event(event):
+    if owner_rejected_occurrence(event):
+        return True
     # Artist's November 7 listing explicitly says he is a beat-battle judge,
     # not a performer. Keep the real Flavor Fest concert and other K-Drama sets.
     if event.get("startDate") == "2026-11-07" and (

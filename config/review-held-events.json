@@ -288,5 +288,81 @@
         }
       ]
     }
+  },
+  {
+    "reviewedAt": "2026-11-07",
+    "reviewStatus": "owner_rejected_occurrence",
+    "publish": false,
+    "leadId": "DJMarPraisePartyNov11Newark",
+    "reason": "The owner explicitly declined adding this exact November 11, 2026 Newark show. This is an editorial exclusion, not a cancellation or an artist-wide rejection.",
+    "scope": "Only November 11, 2026 with the exact Posh Praise Party: Skate Night Edition event URL. Other DJ Mar dates and events remain eligible.",
+    "sources": [
+      "https://posh.vip/e/praise-party-skate-night-edition"
+    ],
+    "event": {
+      "title": "Praise Party: Skate Night Edition",
+      "startDate": "2026-11-11",
+      "city": "Newark",
+      "state": "NJ",
+      "country": "US",
+      "venue": "Branch Brook Park Roller Skating Center",
+      "artists": [
+        "DJ Mar"
+      ],
+      "officialUrl": "https://posh.vip/e/praise-party-skate-night-edition"
+    }
+  },
+  {
+    "reviewedAt": "2026-11-07",
+    "reviewStatus": "owner_rejected_occurrence",
+    "publish": false,
+    "leadId": "BSHOCNov15Kearney",
+    "reason": "The owner explicitly declined adding this exact November 15, 2026 Kearney show. This is an editorial exclusion, not a cancellation or an artist-wide rejection.",
+    "scope": "Only November 15, 2026 with the exact Merryman Performing Arts Center B-SHOC event URL. Other B-SHOC dates, including separately held 2027 leads, remain eligible for review.",
+    "sources": [
+      "https://merrymancenter.org/events/b-shoc/"
+    ],
+    "event": {
+      "title": "Big Igloo presents B-SHOC",
+      "startDate": "2026-11-15",
+      "city": "Kearney",
+      "state": "NE",
+      "country": "US",
+      "venue": "Merryman Performing Arts Center",
+      "artists": [
+        "B-SHOC"
+      ],
+      "officialUrl": "https://merrymancenter.org/events/b-shoc/"
+    }
+  },
+  {
+    "reviewedAt": "2026-11-07",
+    "reviewStatus": "owner_rejected_occurrence",
+    "publish": false,
+    "leadId": "ReUpEvenBkimFeb20Hemet",
+    "reason": "The owner explicitly declined adding this exact February 20, 2027 Hemet show. This is an editorial exclusion, not a cancellation or an artist-wide rejection. The Christway provider record describes the same occurrence, not another concert.",
+    "scope": "Only February 20, 2027 with Kingdomtix event UUID 1ee1aa0a-f1c7-472e-9b04-f3bb56d79cbc or Bandsintown event ID 108711786 or 109041557 (including direct event/ticket URLs and manual-prefixed IDs). Other even bkim, DJ Shondo, and Christway events remain eligible.",
+    "sources": [
+      "https://www.kingdomtix.org/events/1ee1aa0a-f1c7-472e-9b04-f3bb56d79cbc",
+      "https://www.bandsintown.com/e/108711786",
+      "https://www.bandsintown.com/e/109041557"
+    ],
+    "event": {
+      "title": "The Re-Up Hemet",
+      "startDate": "2027-02-20",
+      "city": "Hemet",
+      "state": "CA",
+      "country": "US",
+      "venue": "Living Way Hemet",
+      "artists": [
+        "even bkim",
+        "DJ Shondo"
+      ],
+      "officialUrl": "https://www.kingdomtix.org/events/1ee1aa0a-f1c7-472e-9b04-f3bb56d79cbc"
+    },
+    "providerEventIds": [
+      "bandsintown:108711786",
+      "bandsintown:109041557"
+    ]
   }
 ]
