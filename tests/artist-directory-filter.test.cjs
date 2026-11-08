@@ -12,6 +12,25 @@ const paths = [
   '/event/light-up-the-city-ant-lee-2027-02-26-lloydminster-c950ee/'
 ];
 
+test('directory uses final published artist membership and canonical links while retaining zero-show artists', () => {
+  const {catalogArtistShows,isUpcoming,catalogToday} = require('../assets/artist-filter-fix.js');
+  const published={shows:[
+    {path:paths[0],date:'2026-11-13',end:'2026-11-14',name:'Light Up The City',location:'Sarnia, ON',venue:'Bethel'},
+    {path:paths[1],date:'2027-02-26',end:'2027-02-26',name:'Light Up The City',location:'Lloydminster, SK',venue:'The Word'},
+    {path:'/event/other/',date:'2027-01-01',location:'New York, NY'}
+  ],artists:{'/artists/ant-lee/':[paths[0],paths[0],paths[1],'/event/missing/'],'/artists/no-shows/':[]}};
+  const current=catalogArtistShows(published,'/artists/ant-lee/','2026-11-14');
+  assert.equal(current.length,2);
+  assert.deepEqual(matchingShows(current,'ON','2026-11').map(show=>show.canonicalPath),[paths[0]]);
+  assert.equal(eventHref(current[0],published,'/artists/ant-lee/'),paths[0]);
+  assert.equal(catalogArtistShows(published,'/artists/ant-lee/','2026-11-15').length,1);
+  assert.deepEqual(catalogArtistShows(published,'/artists/no-shows/','2026-11-14'),[]);
+  assert.deepEqual(catalogArtistShows(published,'/artists/unknown/','2026-11-14'),[]);
+  assert.equal(catalogArtistShows(null,'/artists/ant-lee/'),null,'Unavailable catalog permits the existing source fallback');
+  assert.equal(isUpcoming({startDate:'2026-11-07'},catalogToday(new Date('2026-11-08T07:59:59Z'))),true);
+  assert.equal(isUpcoming({startDate:'2026-11-07'},catalogToday(new Date('2026-11-08T08:00:00Z'))),false);
+});
+
 test('Ontario in November and Saskatchewan in February match the same event, not separate shows', () => {
   assert.ok(sarnia && lloydminster, 'Frozen Canadian fixtures must be present');
   assert.deepEqual(matchingShows(shows, 'ON', '2026-11'), [sarnia]);

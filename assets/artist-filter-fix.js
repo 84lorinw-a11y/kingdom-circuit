@@ -23,16 +23,17 @@
       .format(new Date(Date.UTC(year, month - 1, 1)));
   }
 
-  function isUpcoming(event) {
+  function catalogToday(now = new Date()) {
+    const parts = Object.fromEntries(new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit'
+    }).formatToParts(now).map(part => [part.type, part.value]));
+    return `${parts.year}-${parts.month}-${parts.day}`;
+  }
+
+  function isUpcoming(event, day = catalogToday()) {
     const raw = String(event?.endDate || event?.startDate || "").slice(0, 10);
     if (!/^\d{4}-\d{2}-\d{2}$/.test(raw)) return true;
-    const today = new Date();
-    const localToday = [
-      today.getFullYear(),
-      String(today.getMonth() + 1).padStart(2, "0"),
-      String(today.getDate()).padStart(2, "0")
-    ].join("-");
-    return raw >= localToday;
+    return raw >= day;
   }
 
   function isPublished(event) {
@@ -63,6 +64,8 @@
     // Use published paths, rather than rebuilding a slug that may have changed.
     const artistPaths = catalog?.artists?.[artistPath];
     const allowed = Array.isArray(artistPaths) ? new Set(artistPaths) : null;
+    if (event?.canonicalPath && (!allowed || allowed.has(event.canonicalPath)) &&
+        catalog?.shows?.some(show => show.path === event.canonicalPath)) return event.canonicalPath;
     const location = [event?.city, event?.state].filter(Boolean).join(", ");
     const time = /^(\d{1,2}):(\d{2})$/.exec(String(event?.startTime || ""));
     const hour = time ? Number(time[1]) : null;
@@ -108,6 +111,21 @@
       seen.add(key);
       return true;
     });
+  }
+
+  function catalogArtistShows(catalog, artistPath, day = catalogToday()) {
+    if (!Array.isArray(catalog?.shows) || !catalog.artists || typeof catalog.artists !== 'object') return null;
+    const byPath = new Map(catalog.shows.map(show => [show.path, show]));
+    return [...new Set(catalog.artists[artistPath] || [])].map(path => byPath.get(path))
+      .filter(show => show && (show.end || show.date || '') >= day)
+      .sort((a, b) => a.date.localeCompare(b.date))
+      .map(show => {
+        // Published locations already use the site's state/province suffix.
+        const place = /^(.*),\s*([A-Z]{2})$/.exec(show.location || '');
+        return {id: `catalog:${show.path}`, canonicalPath: show.path, title: show.name,
+          startDate: show.date, endDate: show.end || show.date, venue: show.venue,
+          city: place ? place[1] : show.location || '', state: place ? place[2] : ''};
+      });
   }
 
   function eventHref(event, catalog, artistPath) {
@@ -396,8 +414,9 @@
       cards.forEach(card => {
         const displayName = cardArtistName(card);
         const canonical = data.canonicalByAlias.get(norm(displayName)) || norm(displayName);
-        const shows = uniqueArtistShows(data.showsByArtist.get(canonical) || [], data.catalog,
-          card.querySelector("h2 a")?.getAttribute("href"));
+        const artistPath = card.querySelector("h2 a")?.getAttribute("href");
+        const shows = catalogArtistShows(data.catalog, artistPath) ?? uniqueArtistShows(
+          (data.showsByArtist.get(canonical) || []).filter(event => isUpcoming(event)), data.catalog, artistPath);
         const statesForArtist = [...new Set(shows.map(event => String(event?.state || "").trim().toUpperCase()).filter(Boolean))];
         const monthsForArtist = [...new Set(shows.map(event => monthKey(event?.startDate)).filter(Boolean))];
         card.dataset.directoryArtist = canonical;
@@ -447,6 +466,15 @@
     const restoreFilters = syncDirectoryFilters(
       { artistSelect, stateSelect, monthSelect, upcomingOnly, reset }, enrichAndApply, window
     );
+    const refreshCatalog = event => {
+      const catalog = event?.detail || window.KCFanCatalog;
+      if (Array.isArray(catalog?.shows) && catalog.artists) data.catalog = catalog;
+      enrichAndApply();
+    };
+    document.addEventListener('kc:catalog-updated', refreshCatalog);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) refreshCatalog(); });
+    window.setInterval(refreshCatalog, 60000);
+    refreshCatalog();
 
     let scheduled = false;
     const observer = new MutationObserver(() => {
@@ -467,7 +495,7 @@
   }
 
   if (typeof module !== "undefined" && module.exports) {
-    module.exports = { matchingShows, eventHref, canonicalEventPath, uniqueArtistShows, nextShowLabel, updateCardShows, syncDirectoryFilters, emptyMessage, STATE_NAMES };
+    module.exports = { matchingShows, eventHref, canonicalEventPath, uniqueArtistShows, catalogArtistShows, catalogToday, isUpcoming, nextShowLabel, updateCardShows, syncDirectoryFilters, emptyMessage, STATE_NAMES };
   }
   if (typeof document === "undefined") return;
   if (document.readyState === "loading") {

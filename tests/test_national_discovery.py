@@ -3,12 +3,33 @@ from pathlib import Path
 import json
 import sys
 import unittest
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import national_discovery as discovery
 
 
 class NationalDiscoveryTests(unittest.TestCase):
+    def test_inline_artist_schedules_use_unique_published_paths_and_final_dates(self):
+        directory = ('<article data-artist-card><h2><a href="/artists/mica/">Mica</a></h2>'
+                     '<img src="/assets/mica.webp"></article>'
+                     '<article data-artist-card><h2><a href="/artists/no-shows/">No Shows</a></h2>'
+                     '<img src="/assets/other.webp"></article>')
+        records = [{'href': '/event/' + end + '/', 'name': 'Concert', 'meta': {}, 'badges': '',
+                    'attrs': {'data-date': '2026-11-07', 'data-end-date': end},
+                    'artists': '<p><a href="/artists/mica/">Mica</a><a href="/artists/mica/">Mica</a></p>'}
+                   for end in ('2026-11-07', '2026-11-09')]
+        with patch.object(discovery.mobile, 'catalog', return_value=[]), \
+             patch.object(discovery, 'source_html', return_value=directory), \
+             patch.object(discovery, 'card_records', side_effect=[records, records]):
+            context = discovery.load_context(Path('/unused'), date(2026, 11, 8))
+        mica, empty = context['search_artists']
+        self.assertEqual(mica['count'], 1)
+        self.assertEqual(mica['shows'], [{'path': '/event/2026-11-09/', 'date': '2026-11-07', 'end': '2026-11-09'}])
+        self.assertEqual(empty['count'], 0)
+        self.assertEqual(empty['shows'], [])
+        self.assertEqual(context['artists'][0]['count'], 1)
+
     def test_rollover_inventory_retains_future_cards_images_and_escaped_text(self):
         image = '<img src="/assets/original.webp" width="720" height="1080" alt="Artist" sizes="100vw">'
         record = lambda day: {'attrs':{'data-date':day}, 'href':'/event/' + day + '/', 'image':image,

@@ -47,13 +47,42 @@
     if (valid) { link.href = state.href; link.textContent = `View all ${state.name} shows →`; }
     else { link.removeAttribute('href'); link.textContent = ''; }
   }
-  if (typeof module !== 'undefined' && module.exports) module.exports = {normalize, searchMatch, addDays, weekEnd, dateMatch, matches, artistMatches, profileLink, calendarScope, completeCalendarURL, syncStateShortcut};
-  if (typeof document === 'undefined') return;
-
-  const todayString = () => {
-    const parts = new Intl.DateTimeFormat('en-US', {timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+  const todayString = (now = new Date()) => {
+    const parts = new Intl.DateTimeFormat('en-US', {timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(now);
     return ['year','month','day'].map(k => parts.find(p => p.type === k).value).join('-');
   };
+  function artistCount(artist, catalog, day = todayString()) {
+    let shows = artist.shows;
+    if (Array.isArray(catalog?.shows) && catalog.artists && typeof catalog.artists === 'object') {
+      const paths = new Set(catalog.artists[artist.href] || []);
+      shows = catalog.shows.filter(show => paths.has(show.path));
+    }
+    // Older cached markup has only a count. New builds carry compact schedules,
+    // so expiration stays correct even while the shared catalog is unavailable.
+    if (!Array.isArray(shows)) return Number(artist.count) || 0;
+    return new Set(shows.filter(show => (show.end || show.date || '') >= day).map(show => show.path)).size;
+  }
+  const artistCountCopy = count => count ? `${count} upcoming show${count === 1 ? '' : 's'} · Official socials & show history` : 'Official socials & show history · No upcoming dates listed';
+  function refreshArtistDiscovery(doc, artists, catalog, day = todayString()) {
+    const byHref = new Map(artists.map(artist => [artist.href, artist]));
+    doc.querySelectorAll('.kc-discovery-artist, .kc-profile-link').forEach(link => {
+      const artist = byHref.get(link.getAttribute('href')); if (!artist) return;
+      const count = artistCount(artist, catalog, day);
+      const tile = link.classList.contains('kc-discovery-artist');
+      const label = link.querySelector(tile ? ':scope > span' : '.kc-profile-copy small');
+      if (label) label.textContent = tile ? `${count} upcoming show${count === 1 ? '' : 's'}` : artistCountCopy(count);
+      if (tile) link.hidden = count === 0;
+    });
+    const shelf = doc.querySelector('#kc-artist-shelf');
+    if (shelf) {
+      const section = shelf.closest('.kc-discovery-section');
+      if (section) section.hidden = !shelf.querySelector('.kc-discovery-artist:not([hidden])');
+      shelf.dispatchEvent(new Event('scroll'));
+    }
+  }
+  if (typeof module !== 'undefined' && module.exports) module.exports = {normalize, searchMatch, addDays, weekEnd, dateMatch, matches, artistMatches, profileLink, calendarScope, completeCalendarURL, syncStateShortcut, todayString, artistCount, refreshArtistDiscovery};
+  if (typeof document === 'undefined') return;
+
   const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; };
   function profileLink(artist) {
     if (!artist.href?.startsWith('/artists/')) return null;
@@ -70,7 +99,8 @@
       photo.src = artist.portrait.src; avatar.append(photo);
     }
     const copy = el('span','kc-profile-copy');
-    copy.append(el('strong','',artist.name), el('small','',artist.count ? `${artist.count} upcoming show${artist.count === 1 ? '' : 's'} · Official socials & show history` : 'Official socials & show history · No upcoming dates listed'));
+    const count = artistCount(artist, typeof window === 'object' ? window.KCFanCatalog : null);
+    copy.append(el('strong','',artist.name), el('small','',artistCountCopy(count)));
     link.append(avatar, copy, el('span','kc-profile-action','View artist profile'));
     return link;
   }
@@ -232,7 +262,17 @@
     new MutationObserver(() => apply(false)).observe(grid,{childList:true});
     apply(false);
   }
-  function init() { shelves(); homeFinder(); calendar(); }
+  function init() {
+    shelves(); homeFinder(); calendar();
+    const artists = JSON.parse(document.querySelector('#kc-fan-artists')?.textContent || '[]');
+    if (!artists.length) return;
+    const refresh = () => refreshArtistDiscovery(document, artists, window.KCFanCatalog);
+    document.addEventListener('kc:catalog-updated', refresh);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) refresh(); });
+    window.addEventListener('pageshow', refresh);
+    window.setInterval(refresh, 60000);
+    refresh();
+  }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => requestAnimationFrame(init), {once:true});
   else requestAnimationFrame(init);
 })();

@@ -1,4 +1,5 @@
 import sys
+import json
 import unittest
 from tempfile import TemporaryDirectory
 from pathlib import Path
@@ -7,6 +8,38 @@ import artist_engagement as fan
 from mobile_discovery import Document
 
 class FanEngagement(unittest.TestCase):
+    def test_final_discovery_counts_follow_catalog_membership_instead_of_linked_billing(self):
+        artists = [{'name': 'Mica', 'href': '/artists/mica/', 'count': 1},
+                   {'name': 'Altar Ego', 'href': '/artists/altar-ego/', 'count': 5},
+                   {'name': 'No Shows', 'href': '/artists/no-shows/', 'count': 0}]
+        text = ('<script type="application/json" id="kc-fan-artists">' + json.dumps(artists) + '</script>'
+                '<a class="kc-discovery-artist" href="/artists/mica/"><div><img src="/mica.jpg"></div>'
+                '<strong>Mica</strong><span>1 upcoming show</span></a>'
+                '<a class="kc-discovery-artist" href="/artists/altar-ego/"><div><img src="/altar.jpg"></div>'
+                '<strong>Altar Ego</strong><span>5 upcoming shows</span></a>')
+        ctx = {'asOf': '2026-11-08', 'shows': [{'path': '/old/', 'date': '2026-11-07', 'end': '2026-11-07'},
+               *[{'path': f'/show/{i}/', 'date': '2026-11-14', 'end': '2026-11-14'} for i in range(6)]],
+               'artists': {'mica': {'path': '/artists/mica/', 'shows': ['/old/']},
+                           'altar': {'path': '/artists/altar-ego/', 'shows': [f'/show/{i}/' for i in range(6)] + ['/show/0/', '/absent/']},
+                           'none': {'path': '/artists/no-shows/', 'shows': []}}}
+        output = fan.reconcile_artist_counts(text, ctx)
+        doc = Document(output)
+        revised = json.loads(doc.text(doc.one(lambda n: n.attrs.get('id') == 'kc-fan-artists')))
+        self.assertEqual([a['count'] for a in revised], [0, 6, 0])
+        self.assertEqual([len(a['shows']) for a in revised], [0, 6, 0])
+        tiles = [n for n in doc.nodes if n.has('kc-discovery-artist')]
+        self.assertIn('hidden', tiles[0].attrs)
+        self.assertNotIn('hidden', tiles[1].attrs)
+        self.assertEqual(doc.text(tiles[1].children[-1]), '6 upcoming shows')
+        self.assertEqual([n.attrs['src'] for n in doc.nodes if n.tag == 'img'], ['/mica.jpg', '/altar.jpg'])
+        self.assertEqual(fan.reconcile_artist_counts(output, ctx), output)
+        css = (fan.ROOT/'assets/national-discovery.css').read_text()
+        self.assertIn('.kc-discovery-artist[hidden]', css)
+        self.assertIn('.kc-discovery-section[hidden]', css)
+        profile_css = (fan.ROOT/'assets/fan-engagement.css').read_text()
+        for selector in ('.kc-rd-show-row[hidden]', '.kc-rd-next-show[hidden]', '.kc-rd-profile-empty[hidden]'):
+            self.assertIn(selector, profile_css)
+
     def test_state_classification_uses_final_directory_names_not_counts_or_weekend_links(self):
         with TemporaryDirectory() as tmp:
             site=Path(tmp);(site/'shows').mkdir()

@@ -120,7 +120,7 @@ body .kc-weekend-hero { padding-block: 30px; }
 .kc-weekend-hero h1 { font-size: clamp(2rem, 8vw, 4rem); line-height: 1.08; letter-spacing: -.025em; text-wrap: balance; }
 .kc-weekend-expired, .kc-discovery-empty { line-height: 1.6; color: #dfc0a6; padding: 16px 0; }
 .kc-discovery-home :focus-visible, .kc-discovery-breadcrumb a:focus-visible, .kc-weekend-route a:focus-visible { outline: 3px solid #ffc999; outline-offset: 4px; }
-[data-discovery-show][hidden], .kc-weekend-expired[hidden], .kc-discovery-empty[hidden] { display: none !important; }
+[data-discovery-show][hidden], .kc-discovery-artist[hidden], .kc-discovery-section[hidden], .kc-weekend-expired[hidden], .kc-discovery-empty[hidden] { display: none !important; }
 @media (min-width: 700px) {
   .kc-discovery-hero, .kc-discovery-section { padding-inline: 28px; }
   .kc-teaser-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }

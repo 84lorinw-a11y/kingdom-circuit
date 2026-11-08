@@ -7,7 +7,11 @@ import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import apply_sep26_source_corrections as repair
+from apply_verified_show_information import apply as apply_reviewed_information, enrich
 from finalize_seo_indexing_core import concert_start_only
+from prune_past_events import prune_source
+from show_information_model import normalize
+from tests.catalog_history import append_completed
 
 
 class SourceCorrectionTests(unittest.TestCase):
@@ -77,6 +81,45 @@ class SourceCorrectionTests(unittest.TestCase):
         start = '<div><dt>Date</dt><dd>Sep 27 - 7:00 PM</dd></div>'
         link = '<a href="https://example.com">Official details</a>'
         self.assertEqual(start + link, concert_start_only(start + '<div><dt>Doors</dt><dd>5:30 PM</dd></div>' + link))
+
+    def test_reviewed_cleveland_clock_survives_november_8_archive_rollover(self):
+        registry = json.loads((repair.ROOT / "config/verified-show-information.json").read_text())
+        reviewed = next(row for row in registry["events"] if row["id"] == repair.CLEVELAND_ID)
+        self.save("config/verified-show-information.json", {"version": 1, "events": [reviewed]})
+        approved = enrich(copy.deepcopy(repair.CLEVELAND), [reviewed])
+        entry = {"archiveKey": "canonical-cleveland", "firstSeenOnCalendar": "2026-07-30",
+                 "lastSeenOnCalendar": "2026-11-07", "event": approved}
+        unrelated = {"archiveKey": "unrelated", "event": copy.deepcopy(self.other)}
+        self.save("event-history.json", {"summary": {"total": 2}, "events": [entry, unrelated]})
+        self.save("events.json", [approved])
+
+        repair.apply(self.root, "2026-11-07")
+        apply_reviewed_information(self.root)
+        current = next(row for row in self.read("events.json") if row["id"] == repair.CLEVELAND_ID)
+        self.assertEqual("20:00", current["startTime"])
+
+        # Exercise the real workflow boundary: the next day removes the live
+        # row, repairs retained history, then validates that historical record.
+        prune_source(self.root, "2026-11-08")
+        repair.apply(self.root, "2026-11-08")
+        apply_reviewed_information(self.root)
+        self.assertFalse(any(row["id"] == repair.CLEVELAND_ID for row in self.read("events.json")))
+        history = self.read("event-history.json")
+        archived = append_completed([], history["events"], {repair.CLEVELAND_ID}, "2026-11-08")[0]
+        self.assertEqual("20:00", archived["startTime"])
+        self.assertEqual("19:30", archived["doorsTime"])
+        self.assertNotEqual("doors", archived.get("primaryTimeKind"))
+        self.assertEqual("2026-11-07T20:00:00-05:00", normalize(archived)["schemaStartDate"])
+        self.assertNotIn("endDate", archived)
+        for field in ("id", "firstSeen", "officialUrl", "ticketUrl", "legacyEventPaths",
+                      "advertisedBilling", "officialBill", "sources"):
+            self.assertEqual(current[field], archived[field], field)
+        self.assertEqual({k: v for k, v in entry.items() if k != "event"},
+                         {k: v for k, v in history["events"][0].items() if k != "event"})
+        self.assertEqual(unrelated, history["events"][1])
+        repair.apply(self.root, "2026-11-08")
+        apply_reviewed_information(self.root)
+        self.assertEqual(history, self.read("event-history.json"))
 
 
 if __name__ == "__main__":

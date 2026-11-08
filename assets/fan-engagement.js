@@ -22,10 +22,33 @@
     const byPath=new Map(shows.map(s=>[s.path,s]));
     return [...new Set(paths)].map(path=>byPath.get(path)).filter(s=>s && (s.end||s.date)>=day).sort((a,b)=>a.date.localeCompare(b.date));
   }
+  function scheduleRow(doc,show,day) {
+    const node=(tag,cls,text)=>{const el=doc.createElement(tag);if(cls)el.className=cls;if(text)el.textContent=text;return el;};
+    const row=node('a','kc-rd-show-row');row.setAttribute('href',show.path);
+    row.setAttribute('aria-label',[show.when||show.date,show.location,show.venue,show.name].filter(Boolean).join(', '));
+    const date=node('span','kc-rd-show-date'),when=new Date(show.date+'T12:00:00Z');
+    date.append(node('span','',new Intl.DateTimeFormat('en-US',{month:'short',timeZone:'UTC'}).format(when).toUpperCase()),node('strong','',String(when.getUTCDate())));
+    if(show.date.slice(0,4)!==day.slice(0,4))date.append(node('span','kc-rd-show-year',show.date.slice(0,4)));
+    const place=node('span','kc-rd-show-place');
+    place.append(node('strong','',show.location),node('span','kc-rd-show-venue',show.venue),node('span','kc-rd-event-title',show.name));
+    const arrow=node('span','kc-rd-chevron','›');arrow.setAttribute('aria-hidden','true');
+    row.append(date,place,arrow);return row;
+  }
   function refreshArtistSchedule(doc,config,shows,day=today()) {
     const active=artistSchedule(config.showPaths||[],shows,day),paths=new Set(active.map(s=>s.path));
     const listing=doc.querySelector('.kc-rd-show-list');if(!listing)return active;
-    listing.querySelectorAll('.kc-rd-show-row').forEach(row=>{row.hidden=!paths.has(row.getAttribute('href'));});
+    const rows=new Map([...listing.querySelectorAll('.kc-rd-show-row')].map(row=>[row.getAttribute('href'),row]));
+    let added=false;
+    active.forEach(show=>{
+      // A cached empty profile may receive a newer catalog. Every counted path
+      // must have a real schedule link, even before its HTML is refreshed.
+      if(!rows.has(show.path) && /^\/event\/[^/?#]+\/$/.test(show.path)){
+        const row=scheduleRow(doc,show,day);listing.append(row);rows.set(show.path,row);added=true;
+      }
+    });
+    if(added)active.forEach(show=>{const row=rows.get(show.path);if(row)listing.append(row);});
+    rows.forEach((row,path)=>{row.hidden=!paths.has(path);});
+    if(active.length)listing.querySelectorAll('.kc-rd-profile-empty').forEach(row=>{row.hidden=true;});
     doc.querySelectorAll('[data-event-card]').forEach(card=>{
       if(card.closest('.kc-rd-past-shows'))return;
       const path=card.querySelector('h3 a')?.getAttribute('href');if(path)card.hidden=!paths.has(path);
@@ -111,11 +134,15 @@
   },{threshold:.5}):null;
   function updateCatalog() {
     if(!catalog)return;
+    // All discovery surfaces consume the same published membership and dates.
+    root.KCFanCatalog=catalog;
+    d.dispatchEvent(new CustomEvent('kc:catalog-updated',{detail:catalog}));
     count=countShows(catalog.shows);
     d.querySelectorAll('[data-live-show-count]').forEach(el=>{if(el.textContent!==String(count))el.textContent=count;});
     if(config.pageType!=='artist')return;
     const listing=d.querySelector('.kc-rd-show-list');if(!listing)return;
-    const active=refreshArtistSchedule(d,config,catalog.shows).length>0;
+    const scheduleConfig={...config,showPaths:catalog.artists?.[location.pathname]||config.showPaths};
+    const active=refreshArtistSchedule(d,scheduleConfig,catalog.shows).length>0;
     let panel=listing.querySelector('[data-empty-discovery]');
     if(!active && !panel){listing.append(d.getElementById('kc-empty-template').content.cloneNode(true));panel=listing.querySelector('[data-empty-discovery]');}
     if(panel)panel.hidden=active;

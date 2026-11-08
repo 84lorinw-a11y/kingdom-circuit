@@ -3,6 +3,48 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
 const {searchMatch, weekEnd, dateMatch, matches, artistMatches, calendarScope, completeCalendarURL, syncStateShortcut} = require('../assets/fan-discovery.js');
+const {artistCount, refreshArtistDiscovery, todayString} = require('../assets/fan-discovery.js');
+test('cached homepage, directory and profile count the same unique current published shows', () => {
+  const {artistSchedule, today} = require('../assets/fan-engagement.js');
+  const {catalogArtistShows, catalogToday} = require('../assets/artist-filter-fix.js');
+  const href = '/artists/mica/';
+  const shows = [
+    {path:'/event/yesterday/',date:'2026-11-07',end:'2026-11-07'},
+    {path:'/event/ongoing/',date:'2026-11-07',end:'2026-11-08'},
+    {path:'/event/future/',date:'2026-11-14',end:'2026-11-14'}
+  ];
+  const paths = [...shows.map(show => show.path),shows[1].path,'/event/absent/'];
+  const catalog = {shows,artists:{[href]:paths,'/artists/no-shows/':[]}};
+  const artist = {href,count:99,shows:[...shows,shows[1]]};
+  for (const [timestamp,day,expected] of [
+    ['2026-11-08T07:59:59Z','2026-11-07',3],
+    ['2026-11-08T08:00:00Z','2026-11-08',2],
+    ['2026-11-09T08:00:00Z','2026-11-09',1]
+  ]) {
+    for (const clock of [todayString,today,catalogToday]) assert.equal(clock(new Date(timestamp)),day);
+    assert.equal(artistCount(artist,null,day),expected,'Inline schedules work without a catalog request');
+    assert.equal(artistCount(artist,catalog,day),expected);
+    assert.equal(artistSchedule(paths,shows,day).length,expected);
+    assert.equal(catalogArtistShows(catalog,href,day).length,expected);
+  }
+  const removed = {...catalog,artists:{[href]:[]}};
+  assert.equal(artistCount(artist,removed,'2026-11-08'),0,'Published membership overrides old inline counts');
+  assert.equal(artistCount({href:'/artists/no-shows/',count:0,shows:[]},catalog,'2026-11-08'),0);
+});
+test('rollover hides expired homepage tiles, updates existing search copy and keeps profile links', () => {
+  const href='/artists/mica/',label={textContent:'1 upcoming show'},copy={textContent:'old'};
+  const tile={hidden:false,classList:{contains:()=>true},getAttribute:()=>href,querySelector:()=>label};
+  const result={hidden:false,classList:{contains:()=>false},getAttribute:()=>href,querySelector:()=>copy};
+  const section={hidden:false},shelf={closest:()=>section,querySelector:()=>tile.hidden?null:tile,dispatchEvent(){}};
+  const doc={querySelectorAll:()=>[tile,result],querySelector:()=>shelf};
+  const artists=[{href,count:1,shows:[{path:'/event/old/',date:'2026-11-07',end:'2026-11-07'}]}];
+  refreshArtistDiscovery(doc,artists,null,'2026-11-07');
+  assert.equal(tile.hidden,false);assert.equal(section.hidden,false);
+  refreshArtistDiscovery(doc,artists,null,'2026-11-08');
+  assert.equal(tile.hidden,true);assert.equal(section.hidden,true);
+  assert.equal(result.hidden,false);assert.equal(result.getAttribute('href'),href);
+  assert.equal(label.textContent,'0 upcoming shows');assert.match(copy.textContent,/No upcoming dates listed/);
+});
 test('date landing pages route broader filters to the full calendar with all selections intact', () => {
   for (const [path,scope] of [['this-weekend','weekend'],['this-month','month']]) {
     const pathname = '/shows/' + path + '/';

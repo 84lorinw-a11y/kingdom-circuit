@@ -40,12 +40,30 @@ test('visible next-show card advances to the remaining future performance with i
  const row=path=>({hidden:false,getAttribute:()=>path});const old=row('/old'),future=row('/future');
  const fields=Object.fromEntries(['.kc-rd-next-kicker','.kc-rd-next-place','.kc-rd-next-venue','.kc-rd-event-title'].map(k=>[k,{textContent:'old'}]));
  const next={href:'/old',hidden:false,getAttribute(){return this.href},setAttribute(k,v){this.href=v},querySelector:s=>fields[s]};
- const total={textContent:'2 upcoming'};const listing={querySelectorAll:()=>[old,future]};
+ const total={textContent:'2 upcoming'};const listing={querySelectorAll:selector=>selector==='.kc-rd-show-row'?[old,future]:[]};
  const doc={querySelector:s=>({'.kc-rd-show-list':listing,'.kc-rd-next-show':next,'.kc-rd-upcoming-total':total})[s],querySelectorAll:()=>[]};
  refreshArtistSchedule(doc,{showPaths:['/old','/future']},[{path:'/old',date:'2026-10-23'},{path:'/future',date:'2026-11-13',name:'NRG Conference',location:'Saskatoon, SK',venue:'Horizon',when:'Fri, Nov 13, 2026 - 9:00 PM'}],'2026-10-24');
  assert.equal(old.hidden,true);assert.equal(future.hidden,false);assert.equal(next.href,'/future');assert.equal(total.textContent,'1 upcoming');
  assert.equal(fields['.kc-rd-next-kicker'].textContent,'Next show · NOV 13');
  assert.equal(fields['.kc-rd-next-place'].textContent,'Saskatoon, SK');assert.equal(fields['.kc-rd-next-venue'].textContent,'Horizon · 9:00 PM');
+});
+test('a cached zero-show profile gains a clickable row when current catalog membership adds a show',()=>{
+ const {refreshArtistSchedule}=require('../assets/fan-engagement.js');
+ const node=tag=>({tag,children:[],attrs:{},setAttribute(k,v){this.attrs[k]=v;},getAttribute(k){return this.attrs[k];},append(...nodes){for(const n of nodes){this.children=this.children.filter(old=>old!==n);this.children.push(n);}}});
+ const listing=node('div'),empty={hidden:false},total={textContent:'0 upcoming'};
+ listing.querySelectorAll=selector=>selector==='.kc-rd-show-row'?listing.children.filter(row=>row.className==='kc-rd-show-row'):[empty];
+ const doc={createElement:node,querySelector:selector=>({'.kc-rd-show-list':listing,'.kc-rd-upcoming-total':total})[selector],querySelectorAll:()=>[]};
+ const show={path:'/event/first-show/',date:'2027-01-03',end:'2027-01-04',when:'Jan 3, 2027',name:'First show',location:'Toronto, ON',venue:'Hall'};
+ refreshArtistSchedule(doc,{showPaths:[show.path,show.path]},[show],'2026-11-08');
+ assert.equal(total.textContent,'1 upcoming');assert.equal(empty.hidden,true);
+ assert.equal(listing.children.length,1);const row=listing.children[0];
+ assert.equal(row.getAttribute('href'),show.path);assert.equal(row.hidden,false);
+ assert.equal(row.children[1].children[2].textContent,'First show');
+ assert.equal(row.children[0].children[2].textContent,'2027');
+ refreshArtistSchedule(doc,{showPaths:[show.path]},[show],'2027-01-04');
+ assert.equal(listing.children.length,1);assert.equal(row.hidden,false);
+ refreshArtistSchedule(doc,{showPaths:[show.path]},[show],'2027-01-05');
+ assert.equal(total.textContent,'0 upcoming');assert.equal(row.hidden,true);
 });
 function storage(){const s=new Map();return{getItem:k=>s.get(k),setItem:(k,v)=>s.set(k,v)};}
 test('count matches inclusive end dates, deduplicates events and crosses Pacific midnight',()=>{

@@ -74,6 +74,7 @@
 @media (prefers-reduced-motion: reduce) { .kc-empty-actions a { transition: none; } }
 
 [data-empty-discovery][hidden] { display: none !important; }
+body .kc-rd-show-row[hidden], body .kc-rd-next-show[hidden], body .kc-rd-next--empty[hidden], body .kc-rd-profile-empty[hidden] { display: none !important; }
 .kc-empty-explore strong [data-live-show-count] {font:inherit;display:inline}
 .kc-analytics-viewer {margin:0;background:#100e0b;color:#f6f3ed;font:16px/1.5 system-ui,sans-serif}
 .kc-analytics-viewer main {max-width:1000px;margin:auto;padding:24px}

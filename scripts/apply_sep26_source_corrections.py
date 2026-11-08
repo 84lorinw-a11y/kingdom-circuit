@@ -18,6 +18,7 @@ from catalog_removals import apply as apply_catalog_removals
 from apply_verified_date_corrections import (patch_event as patch_verified_dates,
     normalize_provider_identity, reconcile_scootie_duplicates)
 from apply_oct6_show_audit import apply as apply_oct6_audit
+from apply_verified_show_information import enrich as enrich_reviewed_information
 
 ROOT = Path(__file__).resolve().parents[1]
 DOVE_EVENT_ID = "bandsintown:1040305060"
@@ -132,6 +133,15 @@ def apply(root: Path = ROOT, today: str | None = None) -> None:
         canonical["sources"] = unique(wanted["sources"] + [source for row in originals for source in row.get("sources", [])])
         canonical["legacyEventPaths"] = unique(wanted["legacyEventPaths"] + [path for row in originals for path in row.get("legacyEventPaths", [])])
         canonical["id"] = event_id if event_id == CLEVELAND_ID else "manual:" + event_id
+        if event_id == CLEVELAND_ID:
+            # Later reviewed music/doors corrections must also survive in
+            # history after the completed show leaves the current feeds.
+            registry_path = root / "config/verified-show-information.json"
+            if registry_path.exists():
+                registry = json.loads(registry_path.read_text())
+                if registry.get("version") != 1:
+                    raise ValueError("Unsupported verified show information registry")
+                canonical = enrich_reviewed_information(canonical, registry["events"])
         for name, rows in feeds.items():
             rows[:] = [row for row in rows if identity(row) != event_id]
             if name == "events.json" and wanted["startDate"] >= today:

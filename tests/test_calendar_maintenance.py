@@ -59,6 +59,31 @@ class CalendarMaintenanceTests(unittest.TestCase):
         self.assertEqual(maintenance.week_window('2026-10-26'), ('2026-10-26','2026-11-01','2026-11-02','2026-11-08'))
         self.assertEqual(maintenance.week_window('2026-12-31'), ('2026-12-28','2027-01-03','2027-01-04','2027-01-10'))
 
+    def test_artist_discovery_rejects_phantom_counts_after_last_show_expires(self):
+        catalog = {'artists': {'/artists/mica/': ['/event/past/']},
+                   'shows': [{'path': '/event/past/', 'date': '2026-11-07'}]}
+        home = '''<script id="kc-fan-artists">[{"href":"/artists/mica/","count":1}]</script>
+        <a class="kc-discovery-artist" href="/artists/mica/"><strong>mica</strong><small>1 upcoming show</small></a>'''
+        failures = maintenance.artist_discovery_errors(home, catalog, '2026-11-08')
+        self.assertTrue(any('search count' in e for e in failures))
+        self.assertTrue(any('homepage artist' in e for e in failures))
+        directory = '''<article data-artist-card data-has-shows="true"><h2><a href="/artists/mica/">mica</a></h2>
+        <p>1 upcoming show</p></article>'''
+        failures = maintenance.artist_discovery_errors(directory, catalog, '2026-11-08')
+        self.assertTrue(any('directory count' in e for e in failures))
+        self.assertTrue(any('directory availability' in e for e in failures))
+
+    def test_artist_discovery_uses_unique_current_paths_and_multiday_end(self):
+        catalog = {'artists': {'/artists/active/': ['/event/fest/', '/event/fest/', '/event/absent/'],
+                               '/artists/quiet/': []},
+                   'shows': [{'path': '/event/fest/', 'date': '2026-11-07', 'end': '2026-11-08'}]}
+        html = '''<script id="kc-fan-artists">[{"href":"/artists/active/","count":1},{"href":"/artists/quiet/","count":0}]</script>
+        <a class="kc-discovery-artist" href="/artists/active/"><strong>CHVRCH562</strong><span>1 upcoming show</span></a>
+        <a class="kc-discovery-artist" href="/artists/quiet/" hidden><strong>Quiet</strong><span>0 upcoming shows</span></a>
+        <article data-artist-card data-has-shows="true"><h2><a href="/artists/active/">Active</a></h2><p>1 upcoming show</p><p>Next: Festival</p></article>
+        <article data-artist-card data-has-shows="false"><h2><a href="/artists/quiet/">Quiet</a></h2><p>0 upcoming shows</p><div>Instagram</div></article>'''
+        self.assertEqual(maintenance.artist_discovery_errors(html, catalog, '2026-11-08'), [])
+
 
 class LiveCalendarCanonicalTests(unittest.TestCase):
     def setUp(self):
@@ -95,7 +120,7 @@ class LiveCalendarCanonicalTests(unittest.TestCase):
             '<img src="/flyer.jpg"><p class="artist-line">Test Artist</p>'
             '<div class="event-badges"></div></article>' for path in paths)
         responses = {'/assets/fan-show-catalog.json': json.dumps(catalog),
-                     '/index.html': home, '/shows/index.html': cards}
+                     '/index.html': home, '/shows/index.html': cards, '/artists/index.html': ''}
         original_events = copy.deepcopy(self.events)
         original_registry = registry_file.read_bytes() if registry_file.exists() else None
         with patch.object(maintenance, '__file__', str(self.root / 'scripts/calendar_maintenance.py')), \

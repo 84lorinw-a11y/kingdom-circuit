@@ -23,7 +23,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ('fan-engagement.js', 'fan-engagement.css',
           'fan-instagram.svg', 'fan-arrow-right.svg', 'fan-arrow-up-right.svg')
 FILES = frozenset({f'assets/{n}' for n in ASSETS} | {'assets/fan-show-catalog.json', MANIFEST})
-VERSION = '20261024-5'
+VERSION = '20261108-artist-counts-1'
 
 def context(live, as_of=None):
     doc = Document(source_text(live, 'shows/index.html'))
@@ -66,6 +66,35 @@ def once(text, old, new):
     assert text.count(old) == 1, f'Instrumentation anchor changed: {old[:90]}'
     return text.replace(old, new, 1)
 
+def reconcile_artist_counts(text, ctx):
+    """Match discovery metadata to the final memberships used by the catalog."""
+    doc = Document(text)
+    inventories = [node for node in doc.nodes if node.attrs.get('id') == 'kc-fan-artists']
+    if not inventories:
+        return text
+    by_path = {show['path']: show for show in ctx['shows']
+               if (show.get('end') or show['date']) >= ctx['asOf']}
+    schedules = {artist['path']: [by_path[path] for path in dict.fromkeys(artist['shows']) if path in by_path]
+                 for artist in ctx['artists'].values()}
+    changes = []
+    for inventory in inventories:
+        artists = json.loads(doc.text(inventory))
+        for artist in artists:
+            shows = schedules.get(artist['href'], [])
+            artist['count'] = len(shows)
+            artist['shows'] = [{key: show.get(key, show['date']) for key in ('path', 'date', 'end')} for show in shows]
+        changes.append((inventory.opening_end, inventory.closing_start,
+                        json.dumps(artists, ensure_ascii=True).replace('<', '\\u003c')))
+    for tile in (node for node in doc.nodes if node.has('kc-discovery-artist')):
+        count = len(schedules.get(tile.attrs.get('href'), []))
+        label = next(node for node in tile.children if node.tag == 'span')
+        changes.append((label.opening_end, label.closing_start,
+                        f'{count} upcoming show{"s" if count != 1 else ""}'))
+        if not count and 'hidden' not in tile.attrs:
+            opening = text[tile.start:tile.opening_end]
+            changes.append((tile.start, tile.opening_end, opening[:-1] + ' hidden>'))
+    return replace_spans(text, changes)
+
 def transform(relative, data, ctx):
     rel = str(relative)
     if rel == 'app.js':
@@ -96,7 +125,8 @@ def transform(relative, data, ctx):
         return text.encode()
     if not rel.endswith('.html'):
         return data
-    text = data.decode()
+    text = reconcile_artist_counts(data.decode(), ctx)
+    text = re.sub(r'(/assets/artist-filter-fix\.js)(?:\?[^"\s]*)?', r'\1?v=' + VERSION, text)
     config = {'mode': 'production', 'base': BASE, 'version': VERSION, 'pageType': 'other', 'artist': '', 'show': '', 'statePaths': ctx.get('statePaths', {})}
     if rel in ctx['artists']:
         artist = ctx['artists'][rel]

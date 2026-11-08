@@ -24,7 +24,7 @@ SITE_BASE = "/"
 SITE_ORIGIN = "https://kingdomcircuit.com"
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '20261031-mobile-audit-1'
+VERSION = '20261108-artist-counts-1'
 ASSETS = ('national-discovery.css', 'national-discovery.js', 'fan-discovery.css', 'fan-discovery.js')
 WEEKEND_PATH = 'shows/this-weekend/index.html'
 WEEKEND_HREF = SITE_BASE + 'shows/this-weekend/'
@@ -227,12 +227,15 @@ def load_context(live, as_of):
         portraits[link.attrs['href']] = {'name': part.text(heading),
                                         'image': part.raw(part.one(lambda n: n.tag == 'img'))}
     counts = Counter()
+    artist_shows = {}
     upcoming = []
     for record in active:
         fragment = Document(record['artists'])
-        for link in (n for n in fragment.nodes if n.tag == 'a'):
-            href = link.attrs['href']
+        for href in dict.fromkeys(n.attrs['href'] for n in fragment.nodes if n.tag == 'a'):
             counts[href] += 1
+            artist_shows.setdefault(href, []).append({
+                'path': record['href'], 'date': record['attrs']['data-date'],
+                'end': record['attrs'].get('data-end-date') or record['attrs']['data-date']})
             if feature_eligible(record) and href in portraits and href not in upcoming:
                 upcoming.append(href)
     # Counts cover every show. Owner picks lead only while eligible; the rest
@@ -246,6 +249,7 @@ def load_context(live, as_of):
     recent = [active_by_href[r['href']] for r in card_records(source_html(live, 'new-shows/index.html'))
               if r['href'] in active_by_href]
     search_artists = [{'name': p['name'], 'href': href, 'count': counts[href],
+                       'shows': artist_shows.get(href, []),
                        'portrait': search_portrait(p['image'])} for href, p in portraits.items()]
     return {'states': states, 'baseline_states': baseline_states, 'records': records, 'active': active, 'weekend': weekend,
             'artists': artists, 'artist_total': len(portraits), 'search_artists': search_artists,

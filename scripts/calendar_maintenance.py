@@ -71,6 +71,44 @@ def artist_errors(html, shows, day):
         if 'data-live-show-count' in node.attrs and doc.text(node)!=str(len(by_path)):errors.append('discovery count differs from catalog')
     return errors
 
+def artist_discovery_errors(html, catalog, day):
+    """Check artist counts on discovery pages against the same current schedule."""
+    doc = Document(html)
+    current = {s['path'] for s in catalog.get('shows', [])
+               if (s.get('end') or s.get('date', '')) >= day}
+    counts = {href: len(set(paths) & current)
+              for href, paths in catalog.get('artists', {}).items()}
+    errors = []
+    for node in doc.nodes:
+        if node.attrs.get('id') == 'kc-fan-artists':
+            for artist in json.loads(doc.text(node)):
+                href = artist.get('href', '')
+                if artist.get('count') != counts.get(href, 0):
+                    errors.append(f'artist search count differs from catalog: {href}')
+        if node.has('kc-discovery-artist'):
+            href = node.attrs.get('href', '')
+            labels = [re.fullmatch(r'(\d+) upcoming shows?', doc.text(n))
+                      for n in node.children if n.tag in {'span', 'small'}]
+            label = next((label for label in labels if label), None)
+            if not label or int(label[1]) != counts.get(href, 0) or (not counts.get(href, 0) and 'hidden' not in node.attrs):
+                errors.append(f'homepage artist count differs from catalog: {href}')
+        if 'data-artist-card' in node.attrs:
+            part = Document(doc.raw(node))
+            headings = [n for n in part.nodes if n.tag == 'h2']
+            links = [n for n in headings[0].children if n.tag == 'a'] if headings else []
+            if not links:
+                errors.append('artist directory profile link missing')
+                continue
+            href = links[0].attrs.get('href', '')
+            labels = [re.fullmatch(r'(\d+) upcoming shows?', part.text(n))
+                      for n in part.nodes if n.tag == 'p']
+            label = next((label for label in labels if label), None)
+            if not label or int(label[1]) != counts.get(href, 0):
+                errors.append(f'artist directory count differs from catalog: {href}')
+            if node.attrs.get('data-has-shows') != str(bool(counts.get(href, 0))).lower():
+                errors.append(f'artist directory availability differs from catalog: {href}')
+    return errors
+
 def week_window(day):
     d=date.fromisoformat(day);start=d-timedelta(days=d.weekday())
     return tuple((start+timedelta(days=n)).isoformat() for n in [0,6,7,13])
@@ -93,6 +131,8 @@ def page_errors(pages,catalog,day):
             begins=node.attrs.get('data-date','');ends=node.attrs.get('data-end-date') or begins
             if ends<max(day,lo) or begins>hi:errors.append('show outside current weekly window: '+section_id)
     for path,html in pages.items():
+        if path in {'index.html', 'artists/index.html', 'shows/index.html'}:
+            errors.extend(path+': '+e for e in artist_discovery_errors(html,catalog,day))
         if re.fullmatch(r'artists/[^/]+/index.html',path):
             errors.extend(path+': '+e for e in artist_errors(html,catalog['shows'],day))
     return errors
@@ -105,11 +145,11 @@ def verify_site(site,day):
         from url_continuity import verify
         verify(site)  # Validate redirects before excluding them from profile checks.
         aliases = json.loads(receipt.read_text()).get('redirects', {})
-    paths=[site/'index.html',site/'shows/index.html',*(site/'artists').glob('*/index.html')]
+    paths=[site/'index.html',site/'shows/index.html',site/'artists/index.html',*(site/'artists').glob('*/index.html')]
     paths=[p for p in paths if '/' + p.parent.relative_to(site).as_posix().strip('./') + '/' not in aliases]
     pages={p.relative_to(site).as_posix():p.read_text() for p in paths}
     errors=page_errors(pages,catalog,day)+canadian_catalog_errors(read_events(site),catalog,day)
-    return {'asOf':day,'upcoming':len(catalog['shows']),'artistsChecked':len(paths)-2,'errors':errors}
+    return {'asOf':day,'upcoming':len(catalog['shows']),'artistsChecked':len(paths)-3,'errors':errors}
 
 def live_expected_events(source):
     # Source feeds lack the canonicalPath added to the final artifact. Resolve
@@ -134,12 +174,12 @@ def verify_live(origin,day):
     sample=(keys+keys)[offset:offset+12]
     by_path={s['path']:s for s in catalog['shows']}
     sample+= [k for k,v in artists.items() if v and by_path.get(v[0],{}).get('date')==day]
-    paths=['index.html','shows/index.html',*(k.strip('/')+'/index.html' for k in dict.fromkeys(sample))]
+    paths=['index.html','shows/index.html','artists/index.html',*(k.strip('/')+'/index.html' for k in dict.fromkeys(sample))]
     with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
         pages=dict(zip(paths,pool.map(read,paths)))
     expected=live_expected_events(Path(__file__).resolve().parents[1])
     errors=page_errors(pages,catalog,day)+canadian_catalog_errors(expected,catalog,day)
-    return {'asOf':day,'upcoming':len(catalog['shows']),'artistsChecked':len(paths)-2,'errors':errors}
+    return {'asOf':day,'upcoming':len(catalog['shows']),'artistsChecked':len(paths)-3,'errors':errors}
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--mode',action='store_true');parser.add_argument('--site',type=Path);parser.add_argument('--live');parser.add_argument('--day');parser.add_argument('--output',type=Path)
