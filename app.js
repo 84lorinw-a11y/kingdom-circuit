@@ -431,7 +431,8 @@ const ARTIST_ROSTER_ORDER = [
   "GZeal",
   "Semajay ThegospelRapper",
   "HisnameJirr",
-  "G!nG"
+  "G!nG",
+  "SYL noiZ"
 ];
 const VERIFIED_ARTIST_REGISTRY = {
   "808 beezy": {
@@ -6289,6 +6290,19 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://kingdomcircuit.com/assets/artists/g-ng-owner-approved-stage-nov5.png",
     "imageUrl": "assets/artists/g-ng-owner-approved-stage-nov5.png",
     "imagePosition": "45% 20%",
+    "sourceRegistryVerified": true
+  },
+  "syl noiz": {
+    "aliases": [
+      "SYL noiZ"
+    ],
+    "website": "https://www.sylnoiz.com/",
+    "instagramProfile": "https://www.instagram.com/sylnoiz/",
+    "spotifyProfile": "https://open.spotify.com/artist/2OmdAhy2xwZkAyFEQPe7fq",
+    "youtubeProfile": "https://www.youtube.com/@sylnoiz",
+    "officialImageSource": "https://www.sylnoiz.com/",
+    "imageUrl": "assets/artists/syl-noiz-official-portrait-nov9.jpg",
+    "imagePosition": "50% 28%",
     "sourceRegistryVerified": true
   }
 };
@@ -12149,6 +12163,19 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/g-ng-owner-approved-stage-nov5.png",
     "imagePosition": "45% 20%",
     "sourceRegistryVerified": true
+  },
+  "syl noiz": {
+    "aliases": [
+      "SYL noiZ"
+    ],
+    "website": "https://www.sylnoiz.com/",
+    "instagramProfile": "https://www.instagram.com/sylnoiz/",
+    "spotifyProfile": "https://open.spotify.com/artist/2OmdAhy2xwZkAyFEQPe7fq",
+    "youtubeProfile": "https://www.youtube.com/@sylnoiz",
+    "officialImageSource": "https://www.sylnoiz.com/",
+    "imageUrl": "assets/artists/syl-noiz-official-portrait-nov9.jpg",
+    "imagePosition": "50% 28%",
+    "sourceRegistryVerified": true
   }
 };
 const STATIC_ARTIST_PORTRAITS = {
@@ -13819,6 +13846,10 @@ const STATIC_ARTIST_PORTRAITS = {
   "g!ng": {
     "imageUrl": "assets/artists/g-ng-owner-approved-stage-nov5.png",
     "imagePosition": "45% 20%"
+  },
+  "syl noiz": {
+    "imageUrl": "assets/artists/syl-noiz-official-portrait-nov9.jpg",
+    "imagePosition": "50% 28%"
   }
 };
 

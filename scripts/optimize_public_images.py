@@ -44,7 +44,6 @@ DEFAULT_WIDTHS = (320, 640, 960, 1280)
 # These reviewed images retain their full original files. Their scoped
 # derivatives fit the existing image budget without changing other images.
 SOURCE_MAX_WIDTHS = {
-    "571433f8734854951111d0d16d9e2119b3ba50f6e7a89fb44cd2305c183981a4": 960,  # Archived Flavor Fest Saturday flyer
     "bfe0fd493bc4c09990a335251bfac01cfeff676e56a22db17c654411dc5bf40e": 960,  # Northeast
     "76e8cc1fd94f9ba22c0fd15eafa8c25d7833ef9c7db5aa2c72205fc416854d0b": 960,  # Ozark
     "fb68c0da0d7b469f66fb1e75e5fc69a3be33d13c053c8dc1b78f93f9a13365a0": 960,  # Smoky Mountain
