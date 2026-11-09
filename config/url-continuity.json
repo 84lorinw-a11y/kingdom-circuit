@@ -8016,7 +8016,9 @@
     },
     "manual:mike-malagies-its-a-god-night-orlando-2026-12-12": {
       "path": "/event/mike-malagies-it-s-a-god-night-orlando-2026-12-12-kissimmee-4cf61c/",
-      "sourceIds": [],
+      "sourceIds": [
+        "official:5f5e88420934ba61cf99"
+      ],
       "event": {
         "id": "manual:mike-malagies-its-a-god-night-orlando-2026-12-12",
         "title": "Mike Malagies — It’s A God Night (Orlando)",
@@ -8041,7 +8043,10 @@
         "imageType": "event_artwork",
         "confidence": "high",
         "publicDescription": "Mike Malagies brings It’s A God Night to Sun on the Beach in Old Town, Kissimmee, in the Orlando area. An all-ages evening of live music, mini-sermons and worship. General admission opens at 4 PM and the show starts at 5 PM. VIP meet and greet runs 2:30–4 PM and requires a VIP ticket.",
-        "mergedFromIds": []
+        "mergedFromIds": [],
+        "legacyEventPaths": [
+          "/event/mike-malagies-sun-on-the-beach-2026-12-12-kissimmee-eeaa01/"
+        ]
       }
     },
     "manual:miles-cj-zion-ultra-lounge-chandler-2026": {
@@ -8118,34 +8123,6 @@
           "bandsintown:108940329",
           "manual:cj-emulous-new-mainstream-miami-2026-11-05"
         ]
-      }
-    },
-    "official:5f5e88420934ba61cf99": {
-      "path": "/event/mike-malagies-sun-on-the-beach-2026-12-12-kissimmee-eeaa01/",
-      "sourceIds": [],
-      "event": {
-        "id": "official:5f5e88420934ba61cf99",
-        "title": "Mike Malagies @ Sun On the Beach",
-        "startDate": "2026-12-12",
-        "endDate": "2026-12-13",
-        "startTime": "22:00",
-        "timezone": "",
-        "city": "Kissimmee",
-        "state": "FL",
-        "country": "US",
-        "venue": "Sun On The Beach",
-        "address": "5770 W Irlo Bronson Memorial Hwy",
-        "artists": [
-          "Mike Malagies"
-        ],
-        "headliner": "Mike Malagies",
-        "status": "scheduled",
-        "eventType": "concert",
-        "officialUrl": "https://music.apple.com/us/concerts/artist/1573408784",
-        "ticketUrl": "https://music.apple.com/us/concerts/artist/1573408784",
-        "image": "assets/artists/mike-malagies-official-hires-oct22.webp",
-        "imageType": "artist",
-        "confidence": "high"
       }
     },
     "manual:miles-minnick-christlike-christmas-berkeley-2026-12-17": {
@@ -11645,7 +11622,9 @@
     },
     "bandsintown:109072940": {
       "path": "/event/unity-pop-up-tour-2026-11-14-orlando-5ce15b/",
-      "sourceIds": [],
+      "sourceIds": [
+        "bandsintown:109044233"
+      ],
       "event": {
         "id": "bandsintown:109072940",
         "title": "UNITY POP-UP TOUR",
@@ -11672,7 +11651,12 @@
         "imageType": "event_artwork",
         "confidence": "medium",
         "publicDescription": "God Did It Movement and partner churches present a free outdoor community day with live worship, Christian music, guest speakers and baptisms. Visitors can browse a Christian market, watch live art and find activities for children, including face painting and hair braiding. Free groceries are available for families in need; RSVP helps organizers plan supplies. The announced music lineup includes Issac Mansfield, SYL noiZ, GIOVANI, Landy and Cory BiNks.",
-        "mergedFromIds": []
+        "mergedFromIds": [
+          "bandsintown:109044233"
+        ],
+        "legacyEventPaths": [
+          "/event/syl-noiz-at-grace-bible-church-of-central-florida-2026-11-14-orlando-103645/"
+        ]
       }
     },
     "manual:victory-over-darkness-fullerton-2026-10-24": {
@@ -15754,7 +15738,9 @@
     },
     "manual:jackie-hill-perry-blameless-charlotte-2027-02-18": {
       "path": "/event/blameless-the-tour-with-jackie-hill-perry-2027-02-18-charlotte-2b5ff9/",
-      "sourceIds": [],
+      "sourceIds": [
+        "ticketmaster:G5eVZ_pLsqK3P"
+      ],
       "event": {
         "id": "manual:jackie-hill-perry-blameless-charlotte-2027-02-18",
         "title": "Blameless: The Tour with Jackie Hill Perry",
@@ -15777,7 +15763,9 @@
         "imageType": "event_artwork",
         "confidence": "high",
         "publicDescription": "Jackie Hill Perry brings Blameless: The Tour to The Fillmore Charlotte in Charlotte. Presale begins November 12, 2026; email-list signup is available through the official tour page.",
-        "mergedFromIds": []
+        "mergedFromIds": [
+          "ticketmaster:G5eVZ_pLsqK3P"
+        ]
       }
     },
     "manual:jackie-hill-perry-blameless-nashville-2027-02-19": {
@@ -15896,7 +15884,9 @@
     },
     "manual:jackie-hill-perry-blameless-new-york-2027-02-24": {
       "path": "/event/blameless-the-tour-with-jackie-hill-perry-2027-02-24-new-york-e69457/",
-      "sourceIds": [],
+      "sourceIds": [
+        "ticketmaster:k7vGF_pxExPtR"
+      ],
       "event": {
         "id": "manual:jackie-hill-perry-blameless-new-york-2027-02-24",
         "title": "Blameless: The Tour with Jackie Hill Perry",
@@ -15919,7 +15909,9 @@
         "imageType": "event_artwork",
         "confidence": "high",
         "publicDescription": "Jackie Hill Perry brings Blameless: The Tour to Irving Plaza in New York. Presale begins November 12, 2026; email-list signup is available through the official tour page.",
-        "mergedFromIds": []
+        "mergedFromIds": [
+          "ticketmaster:k7vGF_pxExPtR"
+        ]
       }
     },
     "manual:jackie-hill-perry-blameless-chicago-2027-02-26": {
@@ -15982,7 +15974,9 @@
     },
     "manual:jackie-hill-perry-blameless-cincinnati-2027-02-28": {
       "path": "/event/blameless-the-tour-with-jackie-hill-perry-2027-02-28-cincinnati-b81291/",
-      "sourceIds": [],
+      "sourceIds": [
+        "ticketmaster:1kAOvP_oGAG4-0T"
+      ],
       "event": {
         "id": "manual:jackie-hill-perry-blameless-cincinnati-2027-02-28",
         "title": "Blameless: The Tour with Jackie Hill Perry",
@@ -15999,6 +15993,7 @@
         "artists": [
           "Jackie Hill Perry"
         ],
+        "headliner": "Jackie Hill Perry",
         "status": "scheduled",
         "eventType": "concert",
         "officialUrl": "https://www.ticketmaster.com/blameless-the-tour-with-jackie-hill-cincinnati-ohio-02-28-2027/event/160065651C56193F",
@@ -16007,7 +16002,9 @@
         "imageType": "event_artwork",
         "confidence": "high",
         "publicDescription": "Jackie Hill Perry brings Blameless: The Tour to Bogart's in Cincinnati. Presale begins November 12, 2026; email-list signup is available through the official tour page.",
-        "mergedFromIds": []
+        "mergedFromIds": [
+          "ticketmaster:1kAOvP_oGAG4-0T"
+        ]
       }
     },
     "manual:jackie-hill-perry-blameless-houston-2027-03-03": {
@@ -16225,28 +16222,28 @@
         "mergedFromIds": []
       }
     },
-    "bandsintown:109044233": {
-      "path": "/event/syl-noiz-at-grace-bible-church-of-central-florida-2026-11-14-orlando-103645/",
+    "bandsintown:108966578": {
+      "path": "/event/syl-noiz-at-el-paso-paintball-park-at-x-motoball-2027-05-28-el-paso-76ff27/",
       "sourceIds": [],
       "event": {
-        "id": "bandsintown:109044233",
-        "title": "SYL noiZ at Grace Bible Church of Central Florida",
-        "startDate": "2026-11-14",
-        "startTime": "11:00",
+        "id": "bandsintown:108966578",
+        "title": "SYL noiZ at El Paso Paintball Park at X Motoball",
+        "startDate": "2027-05-28",
+        "startTime": "18:00",
         "timezone": "",
-        "city": "Orlando",
-        "state": "FL",
+        "city": "El Paso",
+        "state": "TX",
         "country": "US",
-        "venue": "Grace Bible Church of Central Florida",
-        "address": "801 Dorscher Rd",
+        "venue": "El Paso Paintball Park at X Motoball",
+        "address": "14372 Loving Ln",
         "artists": [
           "SYL noiZ"
         ],
         "headliner": "SYL noiZ",
         "status": "scheduled",
         "eventType": "concert",
-        "officialUrl": "https://www.bandsintown.com/e/109044233?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "ticketUrl": "https://www.bandsintown.com/t/109044233?app_id=js_kingdomcircuit.com&came_from=267&custom=true&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+        "officialUrl": "https://www.bandsintown.com/e/108966578?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "ticketUrl": "https://www.bandsintown.com/e/108966578?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
         "image": "assets/artists/syl-noiz-official-portrait-nov9.jpg",
         "confidence": "medium",
         "mergedFromIds": []
@@ -16366,7 +16363,12 @@
     "/event/1k-phew-live-performance-2026-11-21-item-fd1047/": "/event/1k-phew-live-at-texas-motorplex-2026-11-21-swiss-golf-and-tennis-club-mobile-home-park-a168a7/",
     "/event/cars-and-christ-dallas-2026-11-21-ennis-a168a7/": "/event/1k-phew-live-at-texas-motorplex-2026-11-21-swiss-golf-and-tennis-club-mobile-home-park-a168a7/",
     "/event/cars-and-christ-dallas-2026-11-21-ennis-fd1047/": "/event/1k-phew-live-at-texas-motorplex-2026-11-21-swiss-golf-and-tennis-club-mobile-home-park-a168a7/",
-    "/event/cars-and-christ-dallas-2026-11-21-ennis-48a857/": "/event/1k-phew-live-at-texas-motorplex-2026-11-21-swiss-golf-and-tennis-club-mobile-home-park-a168a7/"
+    "/event/cars-and-christ-dallas-2026-11-21-ennis-48a857/": "/event/1k-phew-live-at-texas-motorplex-2026-11-21-swiss-golf-and-tennis-club-mobile-home-park-a168a7/",
+    "/event/blameless-the-tour-with-jackie-hill-perry-2027-02-18-charlotte-ae81f8/": "/event/blameless-the-tour-with-jackie-hill-perry-2027-02-18-charlotte-2b5ff9/",
+    "/event/blameless-the-tour-with-jackie-hill-perry-2027-02-24-new-york-b1f6c9/": "/event/blameless-the-tour-with-jackie-hill-perry-2027-02-24-new-york-e69457/",
+    "/event/mike-malagies-sun-on-the-beach-2026-12-12-kissimmee-eeaa01/": "/event/mike-malagies-it-s-a-god-night-orlando-2026-12-12-kissimmee-4cf61c/",
+    "/event/syl-noiz-at-grace-bible-church-of-central-florida-2026-11-14-orlando-103645/": "/event/unity-pop-up-tour-2026-11-14-orlando-5ce15b/",
+    "/event/blameless-the-tour-with-jackie-hill-perry-2027-02-28-cincinnati-65c0fc/": "/event/blameless-the-tour-with-jackie-hill-perry-2027-02-28-cincinnati-b81291/"
   },
   "pages": {
     "/artists/180mindset/": {
@@ -31886,11 +31888,18 @@
       "title": "SYL noiZ at Grace Bible Church of Central Florida | Kingdom Circuit",
       "heading": "SYL noiZ at Grace Bible Church of Central Florida",
       "eventPaths": []
+    },
+    "/event/syl-noiz-at-el-paso-paintball-park-at-x-motoball-2027-05-28-el-paso-76ff27/": {
+      "fingerprint": "e2dcee64755462607d6f8e5df77a3516240d1e485d71c9ec2d1dbd2c9453e027",
+      "lastmod": "2026-11-09",
+      "title": "SYL noiZ at El Paso Paintball Park at X Motoball | Kingdom Circuit",
+      "heading": "SYL noiZ at El Paso Paintball Park at X Motoball",
+      "eventPaths": []
     }
   },
   "retiredPaths": [
     "/event/altar-ego-at-clear-skies-meadery-2027-01-23-rockville-3e2bbf/",
     "/event/ryan-ellis-at-the-betsy-hotel-2026-11-13-miami-beach-e47963/"
   ],
-  "publishedAt": "2026-11-09T21:25:16.075642+00:00"
+  "publishedAt": "2026-11-09T23:11:44.746184+00:00"
 }
