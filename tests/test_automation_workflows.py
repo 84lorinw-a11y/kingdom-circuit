@@ -38,8 +38,23 @@ class AutomationWorkflowTests(unittest.TestCase):
         for name in ('catalog-curation', 'ensure-verified-fall-shows'):
             self.assertIn('event-history.json', self.workflow(name))
         # Replays must apply the same ordered source repairs as the original run.
-        positions = [main.index('python scripts/' + script) for script in SOURCE_REPAIRS]
+        repairs = main.split('- name: Apply curated catalog policy and coverage audit')[1].split('- name: Validate refreshed source before publication')[0]
+        positions = [repairs.index('python scripts/' + script) for script in SOURCE_REPAIRS]
         self.assertEqual(positions, sorted(positions))
+
+    def test_reviewed_information_replays_before_initial_tests_and_after_repairs(self):
+        main = self.workflow('update-and-deploy')
+        command = 'python scripts/apply_verified_show_information.py'
+        initial = main.split('- name: Apply confirmed private admission before validation')[1].split('- name: Run all automated tests')[0]
+        self.assertIn(command, initial)
+        self.assertLess(initial.index('python scripts/private_events.py'), initial.index(command))
+        self.assertNotIn('if:', initial)
+        later = main.split('- name: Preserve October 3 concert corrections and artist identity')[1].split('- name: Validate refreshed source before publication')[0]
+        self.assertLess(later.index('python scripts/apply_oct3_concert_corrections.py'), later.index(command))
+        replay = later.split('- name: Restore reviewed missing show information')[1].split('\n      - name:', 1)[0]
+        self.assertIn(command, replay)
+        self.assertNotIn('if:', replay)
+        self.assertEqual(main.count(command), 2)
 
     def test_collector_completions_deploy_without_recursive_full_scan(self):
         main = self.workflow('update-and-deploy')

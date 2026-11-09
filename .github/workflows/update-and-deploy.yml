@@ -76,6 +76,9 @@ jobs:
       - name: Apply confirmed private admission before validation
         run: python scripts/private_events.py
 
+      - name: Restore reviewed show information before initial validation
+        run: python scripts/apply_verified_show_information.py
+
       - name: Run all automated tests
         run: |
           python -m unittest discover -s tests -p 'test_*.py' -v

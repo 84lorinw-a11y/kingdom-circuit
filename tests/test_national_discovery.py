@@ -2,6 +2,7 @@ from datetime import date
 from pathlib import Path
 import json
 import sys
+import tempfile
 import unittest
 from unittest.mock import patch
 
@@ -10,6 +11,112 @@ import national_discovery as discovery
 
 
 class NationalDiscoveryTests(unittest.TestCase):
+    def month_fixture(self, root):
+        def card(slug, day, end=''):
+            return (f'<article data-event-card data-date="{day}" data-end-date="{end}" data-state="FL">'
+                    f'<h3><a href="/event/{slug}/">{slug}</a></h3><img src="/assets/show.webp">'
+                    '<p class="artist-line">Artist</p><div class="event-badges"></div></article>')
+        cards = {slug: card(slug, day, end) for slug, day, end in (
+            ('old', '2026-10-31', ''), ('ongoing', '2026-11-07', '2026-11-09'),
+            ('november', '2026-11-12', ''), ('december', '2026-12-01', ''),
+            ('january', '2027-01-02', ''))}
+        def write(relative, content):
+            path = root / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(content)
+        state_nav = '<nav data-permanent-state-navigation><a href="/shows/florida/">Florida</a></nav>'
+        filters = '<form data-event-filters><select name="artist"><option>All artists</option></select><select name="state"></select><select name="month"></select><input type="checkbox" name="upcoming"><button>Clear</button></form>'
+        source = ('<html><head><title>All Shows</title><link rel="canonical" href="https://kingdomcircuit.com/shows/"></head>'
+                  '<body><a class="kc-skip-link"></a><main><h1>All Shows</h1>'
+                  + discovery.mobile.finder([{'name': 'Florida', 'href': '/shows/florida/', 'count': 4}], compact=True) + state_nav
+                  + '<section class="calendar"><h2 class="calendar-heading">Upcoming shows</h2>'
+                  + filters + ''.join(cards.values()) + '</section></main><footer class="site-footer"></footer></body></html>')
+        write('shows/index.html', source)
+        write('shows/florida/index.html', ''.join(cards.values()))
+        write('artists/index.html', '')
+        write('new-shows/index.html', ''.join(cards.values()))
+        for slug, body, robots, canonical in (
+            ('january-2027', cards['january'], '', ''),
+            ('november-2026', cards['ongoing'] + cards['november'], '', ''),
+            ('december-2026', cards['december'], '', ''),
+            ('october-2026', cards['old'], '', ''),
+            ('july-2027', '<p>Previously listed shows</p><a href="/event/january/">Historical reference</a>', '', ''),
+            ('august-2027', cards['january'], 'noindex,follow', ''),
+            ('september-2027', cards['january'], '', 'https://kingdomcircuit.com/shows/january-2027/'),
+            ('this-month', cards['november'], '', ''),
+        ):
+            write(f'shows/{slug}/index.html',
+                  f'<link rel="canonical" href="{canonical or "https://kingdomcircuit.com/shows/" + slug + "/"}">'
+                  f'<meta name="robots" content="{robots}">{body}')
+        return source, filters
+
+    def test_all_shows_links_existing_current_month_calendars_without_changing_filters_or_cards(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source, filters = self.month_fixture(root)
+            context = discovery.load_context(root, date(2026, 11, 8))
+            output = discovery.transform(Path('shows/index.html'), source.encode(), context).decode()
+        doc = discovery.Document(output)
+        block = doc.one(lambda n: n.attrs.get('id') == 'browse-months')
+        month_doc = discovery.Document(doc.raw(block))
+        self.assertEqual([n.attrs['href'] for n in month_doc.nodes if n.tag == 'a'],
+                         ['/shows/november-2026/', '/shows/december-2026/', '/shows/january-2027/'])
+        self.assertEqual([month_doc.text(n) for n in month_doc.nodes if n.tag == 'small'],
+                         ['2 upcoming', '1 upcoming', '1 upcoming'])
+        self.assertNotIn('open', month_doc.one(lambda n: n.tag == 'details').attrs)
+        self.assertLess(doc.one(lambda n: n.attrs.get('id') == 'browse-states').end, block.end)
+        self.assertIn(filters, output)
+        self.assertEqual(discovery.card_records(output), discovery.card_records(source))
+        self.assertIn('<link rel="canonical" href="https://kingdomcircuit.com/shows/">', output)
+        self.assertNotIn('browse-months', discovery.transform(Path('shows/florida/index.html'), source.encode(), context).decode())
+
+    def test_downstream_artist_catalog_keeps_state_paths_separate_from_month_links(self):
+        import artist_engagement
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source, _ = self.month_fixture(root)
+            context = discovery.load_context(root, date(2026, 11, 8))
+            output = discovery.transform(Path('shows/index.html'), source.encode(), context).decode()
+            (root / 'shows/index.html').write_text(output)
+            downstream = artist_engagement.context(root, as_of='2026-11-08')
+        self.assertEqual(downstream['statePaths'], {'/shows/florida/': 'Florida'})
+        self.assertEqual(downstream['count'], 4)
+        self.assertEqual([show['path'] for show in downstream['shows']],
+                         ['/event/old/', '/event/ongoing/', '/event/november/', '/event/december/', '/event/january/'])
+
+    def test_month_navigation_rollover_uses_actual_current_cards_not_historical_references(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source, _ = self.month_fixture(root)
+            context = discovery.load_context(root, date(2027, 1, 1))
+            output = discovery.transform(Path('shows/index.html'), source.encode(), context).decode()
+            doc = discovery.Document(output)
+            block = discovery.Document(doc.raw(doc.one(lambda n: n.attrs.get('id') == 'browse-months')))
+            self.assertEqual([n.attrs['href'] for n in block.nodes if n.tag == 'a'], ['/shows/january-2027/'])
+            self.assertEqual([block.text(n) for n in block.nodes if n.tag == 'span'], ['January 2027'])
+            context = discovery.load_context(root, date(2027, 2, 1))
+            output = discovery.transform(Path('shows/index.html'), source.encode(), context).decode()
+            self.assertNotIn('browse-months', output)
+
+    def test_month_navigation_verification_rejects_missing_links_stale_counts_and_missing_targets(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source, _ = self.month_fixture(root)
+            context = discovery.load_context(root, date(2026, 11, 8))
+            output = discovery.transform(Path('shows/index.html'), source.encode(), context).decode()
+            page = root / 'shows/index.html'
+            page.write_text(output)
+            self.assertEqual(discovery.verify_month_navigation(root, context['active']), 3)
+            for broken in (output.replace('href="/shows/december-2026/"', 'href="/shows/november-2026/"'),
+                           output.replace('2 upcoming', '99 upcoming')):
+                page.write_text(broken)
+                with self.assertRaises(AssertionError):
+                    discovery.verify_month_navigation(root, context['active'])
+            page.write_text(output)
+            (root / 'shows/december-2026/index.html').unlink()
+            with self.assertRaises(AssertionError):
+                discovery.verify_month_navigation(root, context['active'])
+
     def test_inline_artist_schedules_use_unique_published_paths_and_final_dates(self):
         directory = ('<article data-artist-card><h2><a href="/artists/mica/">Mica</a></h2>'
                      '<img src="/assets/mica.webp"></article>'

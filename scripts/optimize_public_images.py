@@ -50,6 +50,7 @@ SOURCE_MAX_WIDTHS = {
     "2306ef2022bd043f5d9c78985e2824cb51a4d2ffcd7434aac70b3d186a52779c": 960,  # Sondaze Social
     "25c0e50bb8708408b0ba35249338609a65c26200e4fe446dded34501a5000e78": 960,  # E5 Affair
     "9671a7f695ed50ee7aaa68e7dac12cac76ea75d7b7db64b9b8de6f34914c1133": 960,  # Saint Rockstar
+    "0206f326d02fee2d2ea16de4b207b707774cd8e0dd174f8378d88bfc43e9fa40": 960,  # Xtreme Winter official lineup
 }
 SOURCE_QUALITIES = {
     "bfe0fd493bc4c09990a335251bfac01cfeff676e56a22db17c654411dc5bf40e": 75,

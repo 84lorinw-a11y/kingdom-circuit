@@ -210,6 +210,67 @@ def featured_artist_hrefs(upcoming):
             + [href for href in ordered if href not in priority])[:40]
 
 
+def current_month_pages(site, active):
+    """Promote existing dated calendars only when they contain current cards."""
+    names = ('January', 'February', 'March', 'April', 'May', 'June',
+             'July', 'August', 'September', 'October', 'November', 'December')
+    active_hrefs = {record['href'] for record in active}
+    months = []
+    for path in (site / 'shows').glob('*/index.html'):
+        match = re.fullmatch(r'([a-z]+)-(\d{4})', path.parent.name)
+        if not match or match[1].title() not in names:
+            continue
+        name, year = match[1].title(), int(match[2])
+        href = SITE_BASE + path.relative_to(site).parent.as_posix() + '/'
+        doc = Document(path.read_text())
+        canonicals = [n.attrs.get('href') for n in doc.nodes
+                      if n.tag == 'link' and n.attrs.get('rel') == 'canonical']
+        if canonicals != [SITE_ORIGIN + href] or any(
+                n.tag == 'meta' and n.attrs.get('name', '').lower() in {'robots', 'googlebot'}
+                and re.search(r'\b(?:noindex|none)\b', n.attrs.get('content', ''), re.I)
+                for n in doc.nodes):
+            continue
+        count = sum(record['href'] in active_hrefs for record in card_records(doc.source))
+        if count:
+            months.append({'name': f'{name} {year}', 'href': href, 'count': count,
+                           'order': (year, names.index(name))})
+    return sorted(months, key=lambda month: month['order'])
+
+
+def month_navigation(text, name, context):
+    months = context.get('months', [])
+    if name != 'shows/index.html' or not months:
+        return text
+    doc = Document(text)
+    assert not any(n.attrs.get('id') == 'browse-months' for n in doc.nodes), 'Month navigation already exists'
+    states = doc.one(lambda n: n.attrs.get('id') == 'browse-states')
+    links = ''.join(mobile.state_link(month) for month in months)
+    block = ('<section class="kc-state-finder kc-state-finder-compact" id="browse-months" aria-label="Month show pages">'
+             '<details class="kc-all-states"><summary>Browse CHH shows by month</summary>'
+             f'<nav class="kc-month-links" aria-label="Months with upcoming shows"><div class="kc-state-links">{links}</div></nav></details></section>')
+    return replace_spans(text, [(states.end, states.end, block)])
+
+
+def verify_month_navigation(site, active):
+    """Check the published links against eligible target pages, not output bytes."""
+    expected = current_month_pages(site, active)
+    doc = Document((site / 'shows/index.html').read_text())
+    blocks = [n for n in doc.nodes if n.attrs.get('id') == 'browse-months']
+    assert len(blocks) == bool(expected), 'Missing or unnecessary dated-month navigation'
+    if expected:
+        block = Document(doc.raw(blocks[0]))
+        details = block.one(lambda n: n.tag == 'details')
+        assert 'open' not in details.attrs, 'Month navigation should start collapsed'
+        links = [n for n in block.nodes if n.tag == 'a']
+        assert [n.attrs.get('href') for n in links] == [m['href'] for m in expected], 'Eligible month calendars must all be linked in date order'
+        for link, month in zip(links, expected):
+            item = Document(block.raw(link))
+            assert item.text(item.one(lambda n: n.tag == 'span')) == month['name']
+            assert item.text(item.one(lambda n: n.tag == 'small')) == f'{month["count"]} upcoming', 'Month count must match current cards'
+        assert doc.one(lambda n: n.attrs.get('id') == 'browse-states').end <= blocks[0].start
+    return len(expected)
+
+
 def load_context(live, as_of):
     states = mobile.catalog(live)
     baseline_states = states
@@ -253,7 +314,7 @@ def load_context(live, as_of):
                        'portrait': search_portrait(p['image'])} for href, p in portraits.items()]
     return {'states': states, 'baseline_states': baseline_states, 'records': records, 'active': active, 'weekend': weekend,
             'artists': artists, 'artist_total': len(portraits), 'search_artists': search_artists,
-            'recent': recent, 'as_of': as_of}
+            'recent': recent, 'as_of': as_of, 'months': current_month_pages(live, active)}
 
 
 def section_heading(eyebrow, title, href, action, ident):
@@ -529,6 +590,7 @@ def transform(relative, source, context):
     text = add_shared_navigation(text, name)
     text = artist_details(text, context)
     text = nearby_state_section(text, name, context)
+    text = month_navigation(text, name, context)
     assets = (f'<link rel="stylesheet" href="{SITE_BASE}assets/{ASSETS[0]}?v={VERSION}" data-national-discovery>'
               f'<script src="{SITE_BASE}assets/{ASSETS[1]}?v={VERSION}" defer></script>'
               f'<link rel="stylesheet" href="{SITE_BASE}assets/{ASSETS[2]}?v={VERSION}">'
@@ -737,6 +799,7 @@ def verify(live, site, context):
     assert about.one(lambda n: n.tag == 'meta' and n.attrs.get('name') == 'robots').attrs['content'] == 'index,follow'
     all_cards = card_records((site / 'shows/index.html').read_text())
     assert [r['html'] for r in all_cards] == [r['html'] for r in context['records']], 'Full national calendar changed'
+    month_pages = verify_month_navigation(site, context['active'])
     # Search uses the original directory photo for every artist, including zero-show profiles.
     directory = Document(source_html(live, 'artists/index.html'))
     original_portraits = {}
@@ -860,6 +923,8 @@ def verify(live, site, context):
             continue
         check_new_links(before, after)
         check_navigation(after)
+        if rel.as_posix() != 'shows/index.html':
+            assert not any(n.attrs.get('id') == 'browse-months' for n in after.nodes), 'Month navigation belongs on All Shows'
         assert len([n for n in after.nodes if n.tag == 'h1']) == 1, rel
         # No original metadata, canonical or structured-data changes on existing URLs.
         for predicate in (lambda n: n.tag in {'meta', 'title'} or (n.tag == 'link' and n.attrs.get('rel') == 'canonical'),
@@ -890,6 +955,7 @@ def verify(live, site, context):
     return {'verifiedPages': checked, 'weekendShows': len(context['weekend']),
             'homepageShowPreviews': len(teasers), 'completeCalendarShows': len(all_cards),
             'verifiedNewLocalDestinations': len(checked_links),
+            'linkedCurrentMonthCalendars': month_pages,
             'allOriginalSeoIdentitiesPreserved': True, 'missionPreserved': True, 'missionLocation': ABOUT_HREF}
 
 
