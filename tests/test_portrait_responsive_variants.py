@@ -18,6 +18,7 @@ class PortraitResponsiveVariantTests(unittest.TestCase):
     def test_flyer_limits_preserve_originals_and_widths_with_quality_overrides(self):
         repository = Path(__file__).resolve().parents[1]
         cases = [
+            ('assets/events/flavor-fest-saturday-2026.jpg', [320, 640, 960], 'event-artwork', 81),
             ('assets/events/northeast-winterfest-stamford-2027-01-15.jpg', [320, 640, 960], 'event-artwork', 75),
             ('assets/events/ozark-winterfest-branson-2027-02-05.jpg', [320, 640, 960], 'event-artwork', 75),
             ('assets/events/smoky-mountain-winterfest-pigeon-forge-2027-03-05.jpg', [320, 640, 960], 'event-artwork', 75),
