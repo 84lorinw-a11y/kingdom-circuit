@@ -1023,6 +1023,196 @@
     ]
   },
   {
+    "title": "Light in the Darkness",
+    "startDate": "2026-10-31",
+    "startTime": "16:00",
+    "endTime": "21:30",
+    "doorsTime": "15:00",
+    "timezone": "America/Phoenix",
+    "venue": "South Mountain Activity Complex",
+    "address": "10401 S Central Ave",
+    "city": "Phoenix",
+    "state": "AZ",
+    "country": "US",
+    "artists": [
+      "Jon Keith"
+    ],
+    "headliner": "Jon Keith",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343",
+    "officialUrl": "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343",
+    "image": "assets/events/light-in-the-darkness-full-lineup-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Official Light in the Darkness Instagram full lineup flyer",
+    "imageSourceUrl": "https://www.instagram.com/lightinthedarknesssouthmtn/p/DdKPGXUyJrt/",
+    "price": "Free",
+    "lineupExplicit": true,
+    "advertisedBilling": [
+      "Jon Keith",
+      "Grace Graber",
+      "trtle",
+      "HLYVRS31",
+      "CHVNCELLOR",
+      "CHVRCHS62",
+      "Adam Verdi"
+    ],
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "sourceName": "Official Eventbrite listing",
+    "sources": [
+      {
+        "name": "Official Eventbrite listing",
+        "url": "https://www.eventbrite.com/e/light-in-the-darkness-tickets-1997479295343",
+        "type": "eventbrite",
+        "authority": "venue_ticket",
+        "priority": 112
+      },
+      {
+        "name": "City of Phoenix venue listing",
+        "url": "https://www.phoenix.gov/calendar/parks-events/south-mountain-grand-opening-.html",
+        "type": "manual_verified",
+        "authority": "venue",
+        "priority": 86
+      },
+      {
+        "name": "Bandsintown event listing",
+        "url": "https://www.bandsintown.com/e/108849019-trtle-at-south-mountain-activity-complex",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 76
+      }
+    ],
+    "ageRestriction": "Under 18 with parent or legal guardian",
+    "notes": "Free public event. Official ticket page lists doors at 3:00 PM and event hours 4:00–9:30 PM. User-provided organizer flyer confirms Jon Keith as the featured headliner.",
+    "auditVerified": "2026-09-14",
+    "id": "manual:light-in-the-darkness-phoenix-2026"
+  },
+  {
+    "id": "bandsintown:108940329",
+    "title": "Miles Minnick at Black Box Media Miami",
+    "startDate": "2026-11-05",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "Venue not provided",
+    "address": "",
+    "city": "North Miami",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "merged",
+    "mergedIntoId": "manual:miles-minnick-black-box-north-miami-2026-11-05",
+    "officialUrl": "",
+    "ticketUrl": "",
+    "sourceName": "Superseded listing",
+    "notes": "This older listing is retained only to redirect visitors to the corrected canonical event.",
+    "auditVerified": "2026-09-23"
+  },
+  {
+    "id": "manual:cj-emulous-new-mainstream-miami-2026-11-05",
+    "title": "New Mainstream Tour — Miles Minnick, Tommy Zuko & CJ Emulous",
+    "startDate": "2026-11-05",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "Venue not provided",
+    "address": "",
+    "city": "Miami",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "merged",
+    "mergedIntoId": "manual:miles-minnick-black-box-north-miami-2026-11-05",
+    "officialUrl": "",
+    "ticketUrl": "",
+    "sourceName": "Superseded listing",
+    "notes": "This older listing is retained only to redirect visitors to the corrected canonical event.",
+    "auditVerified": "2026-09-23"
+  },
+  {
+    "title": "Miles Minnick at Black Box Media Miami",
+    "startDate": "2026-11-05",
+    "startTime": "18:30",
+    "timezone": "America/New_York",
+    "venue": "Black Box Media Miami",
+    "address": "12355 NE 13th Ave Unit #403-404",
+    "city": "North Miami",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/108940329",
+    "officialUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
+    "image": "assets/events/miles-minnick-florida-campus-tour-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "lineupExplicit": true,
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
+    ],
+    "authority": "artist_calendar",
+    "confidence": "high",
+    "sourceName": "Bandsintown verified event listing",
+    "sources": [
+      {
+        "name": "Eli Williams official performance announcement",
+        "url": "https://www.instagram.com/eliwilliamssss/p/DdmMA0JOH4q/",
+        "type": "manual_verified",
+        "authority": "artist",
+        "priority": 115
+      },
+      {
+        "name": "Bandsintown verified event listing",
+        "url": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 94
+      },
+      {
+        "name": "CJ Emulous official tour calendar",
+        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-23",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 88
+      }
+    ],
+    "notes": " Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates.",
+    "auditVerified": "2026-09-23",
+    "officialBill": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
+    ],
+    "id": "manual:miles-minnick-black-box-north-miami-2026-11-05",
+    "imageOverride": true,
+    "imageSource": "Official Christlike University Florida tour flyer listing Miami, Jacksonville and Orlando dates",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
+  },
+  {
     "id": "manual:flavor-fest-2026-friday-concerts",
     "title": "Flavor Fest 2026 — Friday Concerts",
     "startDate": "2026-11-06",
@@ -1054,7 +1244,7 @@
     "eventType": "festival",
     "ticketUrl": "https://flavorfest.ticketspice.com/full-conference-",
     "officialUrl": "https://www.flavorfest.org/schedule",
-    "image": "assets/events/flavor-fest-friday-2026.webp",
+    "image": "assets/events/flavor-fest-friday-2026.png",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
@@ -1155,7 +1345,153 @@
       "Eli Williams"
     ],
     "auditVerified": "2026-10-12",
-    "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown. Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates. October 8: owner verified TVNK in the artist Sheet. His September 25 collaborative announcement with Flavor Fest explicitly confirms November 6 at Crossover Church. Connect the existing TVNK billing to his curated artist profile. October 12: newly owner-verified artist profiles linked to confirmed billing."
+    "notes": "All 27 named performers on the current Fridaynightconcert.png poster are included once, including the 16 Bar Challenge and Rhythm/Gritty stages. Current schedule agrees Yung Kriss is Friday and Gifted Hands is Saturday. Poster MAYIA WARREN maps to curated MAYIA. Follow the current poster: Songbird SB replaces Breezy, and Von Won is no longer shown. Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates. October 8: owner verified TVNK in the artist Sheet. His September 25 collaborative announcement with Flavor Fest explicitly confirms November 6 at Crossover Church. Connect the existing TVNK billing to his curated artist profile. October 12: newly owner-verified artist profiles linked to confirmed billing.",
+    "imageSource": "Official Flavor Fest Friday concert poster",
+    "imageSourceUrl": "https://www.flavorfest.org/schedule"
+  },
+  {
+    "id": "bandsintown:108940352",
+    "title": "Miles Minnick at The Albatross",
+    "startDate": "2026-11-07",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "Venue not provided",
+    "address": "",
+    "city": "Jacksonville",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "merged",
+    "mergedIntoId": "manual:miles-minnick-christlike-university-jacksonville-2026-11-07",
+    "officialUrl": "",
+    "ticketUrl": "",
+    "sourceName": "Superseded listing",
+    "notes": "This older listing is retained only to redirect visitors to the corrected canonical event.",
+    "auditVerified": "2026-09-23"
+  },
+  {
+    "title": "Miles Minnick – Christlike University – Florida Campus Tour in Jacksonville",
+    "startDate": "2026-11-07",
+    "startTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "The Albatross",
+    "venueAliases": [
+      "Underbelly"
+    ],
+    "address": "113 E Bay St",
+    "city": "Jacksonville",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
+    "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
+    "image": "assets/events/miles-minnick-florida-campus-tour-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "lineupExplicit": true,
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "sourceName": "Live Nation official event listing",
+    "sources": [
+      {
+        "name": "Live Nation official event listing",
+        "url": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      },
+      {
+        "name": "Bandsintown verified lineup",
+        "url": "https://www.bandsintown.com/e/108940352-miles-minnick-at-the-albatross",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 94
+      }
+    ],
+    "supersededSources": [
+      {
+        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-25",
+        "publishedDate": "2026-11-07",
+        "publishedCity": "Tampa",
+        "reason": "Conflicts with the venue-specific Jacksonville ticket listing and is not supported by the official Flavor Fest concert schedule."
+      }
+    ],
+    "notes": "The venue-specific Jacksonville ticket listing supersedes CJ's older November 7 Tampa calendar entry. Miles may also appear on the 11:45 AM Flavor Fest artist panel in Tampa; that daytime panel is not this concert.",
+    "auditVerified": "2026-09-23",
+    "id": "manual:miles-minnick-christlike-university-jacksonville-2026-11-07",
+    "imageOverride": true,
+    "imageSource": "Official Christlike University Florida tour flyer listing Miami, Jacksonville and Orlando dates",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
+  },
+  {
+    "id": "bandsintown:108940372",
+    "title": "Miles Minnick at Conduit",
+    "startDate": "2026-11-08",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "Venue not provided",
+    "address": "",
+    "city": "Winter Park",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "merged",
+    "mergedIntoId": "manual:miles-minnick-christlike-university-orlando-2026-11-08",
+    "officialUrl": "",
+    "ticketUrl": "",
+    "sourceName": "Superseded listing",
+    "notes": "This older listing is retained only to redirect visitors to the corrected canonical event.",
+    "auditVerified": "2026-09-23"
+  },
+  {
+    "id": "manual:cj-emulous-new-mainstream-jacksonville-2026-11-08",
+    "title": "New Mainstream Tour — Miles Minnick, Tommy Zuko & CJ Emulous",
+    "startDate": "2026-11-08",
+    "startTime": "",
+    "timezone": "America/New_York",
+    "venue": "Venue not provided",
+    "address": "",
+    "city": "Jacksonville",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "merged",
+    "mergedIntoId": "manual:miles-minnick-christlike-university-orlando-2026-11-08",
+    "officialUrl": "",
+    "ticketUrl": "",
+    "sourceName": "Superseded listing",
+    "notes": "This older listing is retained only to redirect visitors to the corrected canonical event.",
+    "auditVerified": "2026-09-23"
   },
   {
     "id": "manual:qp-union-city-2026-11-08",
@@ -1310,6 +1646,85 @@
       }
     ],
     "notes": "Owner approved November 7. Church ICS named November 8 exception confirms DaMAC concert, 18:15–20:30 EST; Bandsintown confirms both performers and free admission. Youth context grades 6–12, not an all-ages claim and not confirmed private. Do not create general recurring youth services. No direct ticket checkout or original event flyer confirmed. Image is an authentic photo of the named confirmed performer, not a concert flyer."
+  },
+  {
+    "title": "Miles Minnick – Christlike University – Florida Campus Tour in Orlando",
+    "startDate": "2026-11-08",
+    "startTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "Conduit",
+    "address": "6700 Aloma Ave",
+    "city": "Winter Park",
+    "advertisedCity": "Orlando",
+    "state": "FL",
+    "country": "US",
+    "artists": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
+    ],
+    "headliner": "Miles Minnick",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
+    "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
+    "image": "assets/events/miles-minnick-florida-campus-tour-2026.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "lineupExplicit": true,
+    "advertisedBilling": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
+    ],
+    "authority": "venue_ticket",
+    "confidence": "high",
+    "sourceName": "Live Nation official event listing",
+    "sources": [
+      {
+        "name": "Eli Williams official performance announcement",
+        "url": "https://www.instagram.com/eliwilliamssss/p/DdmMA0JOH4q/",
+        "type": "manual_verified",
+        "authority": "artist",
+        "priority": 115
+      },
+      {
+        "name": "Live Nation official event listing",
+        "url": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 112
+      },
+      {
+        "name": "Bandsintown verified lineup",
+        "url": "https://www.bandsintown.com/e/108940372-miles-minnick-at-conduit",
+        "type": "manual_verified",
+        "authority": "artist_calendar",
+        "priority": 94
+      }
+    ],
+    "supersededSources": [
+      {
+        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-26",
+        "publishedDate": "2026-11-08",
+        "publishedCity": "Jacksonville",
+        "reason": "Conflicts with the venue-specific Conduit ticket listing in Winter Park."
+      }
+    ],
+    "notes": " Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates.",
+    "auditVerified": "2026-09-23",
+    "officialBill": [
+      "Miles Minnick",
+      "Tommy Zuko",
+      "CJ Emulous",
+      "Eli Williams"
+    ],
+    "id": "manual:miles-minnick-christlike-university-orlando-2026-11-08",
+    "imageOverride": true,
+    "imageSource": "Official Christlike University Florida tour flyer listing Miami, Jacksonville and Orlando dates",
+    "imageSourceUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami"
   },
   {
     "id": "ticketmaster:vvG1zZ_ClQMRrF",
@@ -1608,10 +2023,7 @@
     "detailImageLayout": "portrait",
     "imageSource": "Ignite and Unite Tour official DeLand showcard selected by owner November 3",
     "imageSourceUrl": "https://www.igniteandunitetour.com/",
-    "organizer": {
-      "name": "Ignite and Unite Tour",
-      "url": "https://www.igniteandunitetour.com/"
-    },
+    "organizer": "",
     "publicDescription": "The Ignite and Unite Tour comes to Corner Gate in DeLand, Florida, on November 11, 2026. Doors open at 5:30 PM; the event starts at 6 PM Eastern. Free admission. The confirmed bill is Pastor John Humphries, OTG Zico, Altar Ego, J10, Legit, 3HRE, and B. Cody Shields.",
     "authority": "official_event",
     "auditVerified": "2026-11-03",
@@ -2053,7 +2465,7 @@
     "ticketUrl": "",
     "officialUrl": "https://www.igniteandunitetour.com/",
     "image": "assets/events/ignite-and-unite-daytona-beach-2026-11-13-tour-site-nov3.png",
-    "price": "Free; preregistration required through the official event page.",
+    "price": "Free",
     "sourceName": "Ignite and Unite official tour website and city showcard",
     "sources": [
       {
@@ -2103,17 +2515,31 @@
     "detailImageLayout": "portrait",
     "imageSource": "Ignite and Unite Tour official Daytona Beach showcard selected by owner November 3",
     "imageSourceUrl": "https://www.igniteandunitetour.com/",
-    "organizer": {
-      "name": "Ignite and Unite Tour",
-      "url": "https://www.igniteandunitetour.com/"
-    },
-    "publicDescription": "The Ignite and Unite Tour comes to The Porch in Daytona Beach on November 13, 2026. Doors open at 5:30 PM and the show starts at 6 PM Eastern. Free admission with preregistration. The announced bill is Pastor John Humphries, OTG Zico, Altar Ego, J10, Legit, 3HRE and B. Cody Shields.",
+    "organizer": "",
+    "publicDescription": "The Ignite and Unite Tour comes to The Porch in Daytona Beach, Florida, on November 13, 2026. Doors open at 5:30 PM; the event starts at 6 PM Eastern. Free admission. The confirmed bill is Pastor John Humphries, OTG Zico, Altar Ego, J10, Legit, 3HRE, and B. Cody Shields.",
     "authority": "official_event",
     "auditVerified": "2026-11-03",
     "notes": "Bo Fisher supplied the tour flyer directly to the site owner. The flyer prints month/day, venue, city and this full billing, but no year or start times. On October 8, 2026 the owner explicitly instructed us to assume 2026 for all four dates. The year is owner-approved, not independently verified from a public announcement. Leave startTime and ticketUrl empty and detailsPending true. Official details links to the exact unedited artist-supplied flyer hosted locally, not a guessed ticket page or unrelated venue listing. Owner confirmed Bo appears as part of Altar Ego; keep Altar Ego in public billing and link the record to Bo Fisher and the already verified B. Cody Shields. No global group alias or new artist profiles. October 23: associate the separately owner-verified Altar Ego group profile with this explicit group billing. Preserve existing solo artist associations and the advertised lineup. November 3: owner selected the date-specific showcard from the official tour website. Original PNG retained unchanged. Preserve the original October 8 discovery date, canonical ID, full confirmed billing and existing artist associations. A donate QR is not a ticket offer. The official schedule and city card now confirm the 2026 date, full address, 5:30 PM doors, 6 PM event start and free admission. These verified details supersede the prior TBA instructions; no unknown end, age, RSVP requirement or ticket offer was added. The official tour site replaces the old standalone tour-wide image as Official Details.",
     "doorsTime": "17:30",
     "postalCode": "32114",
-    "scheduleDetails": [],
+    "scheduleDetails": [
+      {
+        "label": "Concert doors",
+        "text": "5:30 PM Eastern"
+      },
+      {
+        "label": "Start",
+        "text": "6:00 PM Eastern"
+      },
+      {
+        "label": "Admission",
+        "text": "Free"
+      },
+      {
+        "label": "Venue address",
+        "text": "212 S Beach Street, Suite 110, Daytona Beach, FL 32114"
+      }
+    ],
     "ageRestriction": "Under 16 must attend with an adult.",
     "publicNotice": "",
     "scheduleNote": "",
@@ -2233,7 +2659,7 @@
         "priority": 80
       }
     ],
-    "auditVerified": "2026-10-20",
+    "auditVerified": "2026-09-13",
     "id": "manual:cj-emulous-kickback-grand-prairie-2026",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2596,7 +3022,7 @@
     "detailImageLayout": "portrait",
     "imageSource": "Owner-supplied [TRNSCND] 2026 flyer, October 9, 2026",
     "imageSourceUrl": "https://kingdomcircuit.com/assets/events/trnscnd-va-2026-owner-oct9.png",
-    "price": "Concert pass US$20; full-day pass US$30. Ticket fees are not specified on the organizer page.",
+    "price": "$15 concert pass / $20 full-day pass",
     "organizer": "OTHRWRLDLY.",
     "sourceName": "Promoter submission and OTHRWRLDLY official event page",
     "authority": "promoter_submission",
@@ -2642,83 +3068,7 @@
         "authority": "owner_confirmation",
         "priority": 110
       }
-    ],
-    "publicDescription": "[TRNSCND] brings together faith-focused musicians, visual artists, filmmakers and other creatives for performances, conversation and professional connections. The evening concert pass includes the vendor floor and light refreshments. A separate full-day pass also covers daytime workshops and lunch.",
-    "organizerInstagram": "https://www.instagram.com/othrwrldly.x/",
-    "venueUrl": "https://ccfred.org/",
-    "venueInstagram": "https://www.instagram.com/calvarychapelfredericksburg/",
-    "organizerWebsite": "https://othrwrldly.com/"
-  },
-  {
-    "id": "manual:gospel-rap-expo-orlando-2026-11-14",
-    "title": "Gospel Rap Expo",
-    "startDate": "2026-11-14",
-    "endDate": "2026-11-14",
-    "startTime": "17:00",
-    "timezone": "America/New_York",
-    "venue": "Pine Hills Community Church",
-    "address": "1305 North Pine Hills Road",
-    "postalCode": "32808",
-    "city": "Orlando",
-    "state": "FL",
-    "country": "US",
-    "artists": [],
-    "advertisedBilling": [],
-    "officialBill": [],
-    "lineupExplicit": false,
-    "musicConfirmed": true,
-    "eventType": "concert",
-    "status": "scheduled",
-    "officialUrl": "https://www.phccnation.com/event-details-registration/gospel-rap-expo",
-    "ticketUrl": "https://www.phccnation.com/event-details-registration/gospel-rap-expo",
-    "image": "assets/events/gospel-rap-expo-orlando-2026-11-14-original.jpg",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Pine Hills Community Church official event page original artwork",
-    "imageSourceUrl": "https://www.phccnation.com/event-details-registration/gospel-rap-expo",
-    "sourceName": "Pine Hills Community Church official event page",
-    "authority": "official_event",
-    "confidence": "high",
-    "firstSeen": "2026-11-04",
-    "lastVerified": "2026-11-07",
-    "auditVerified": "2026-11-07",
-    "editorialBatch": "2026-11-07-owner-approved-missing-shows",
-    "sources": [
-      {
-        "name": "Pine Hills Community Church official event page",
-        "url": "https://www.phccnation.com/event-details-registration/gospel-rap-expo",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 125
-      },
-      {
-        "name": "Pine Hills Community Church Gospel Rap Expo program",
-        "url": "https://www.phccnation.com/gospel-rap-expo-2026",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      }
-    ],
-    "startDateTime": "2026-11-14T17:00:00-05:00",
-    "endTime": "21:00",
-    "endDateTime": "2026-11-14T21:00:00-05:00",
-    "organizer": "Pine Hills Community Church",
-    "organizerWebsite": "https://www.phccnation.com/",
-    "price": "Free; offering collected",
-    "publicDescription": "Pine Hills Community Church presents a free gospel rap showcase for local artists and groups, with a music industry panel. The published event window is 5–9 PM; the organizer describes the showcase as lasting about two to three hours. An offering will be collected.",
-    "detailImageLayout": "portrait",
-    "scheduleDetails": [
-      {
-        "label": "Lineup",
-        "text": "Individual performers and panel members have not been announced."
-      },
-      {
-        "label": "Program",
-        "text": "Published event window: 5–9 PM. The organizer describes the music showcase as approximately two to three hours."
-      }
-    ],
-    "notes": "Owner approved addition November 7. Official dated poster confirms November 14 at 5 PM, full church address and free admission. Performers remain unannounced; stock or unnamed faces in the artwork are not artist identity evidence. Distinct from the existing same-day UNITY Orlando event at a different venue. Preserve November 4 discovery."
+    ]
   },
   {
     "id": "manual:christ-over-fear-fest-whittier-2026-11-14",
@@ -3011,10 +3361,7 @@
     "detailImageLayout": "portrait",
     "imageSource": "Ignite and Unite Tour official Plantation showcard selected by owner November 3",
     "imageSourceUrl": "https://www.igniteandunitetour.com/",
-    "organizer": {
-      "name": "Ignite and Unite Tour",
-      "url": "https://www.igniteandunitetour.com/"
-    },
+    "organizer": "",
     "publicDescription": "The Ignite and Unite Tour comes to First Baptist Church of Plantation with Pastor John Humphries, OTG Zico, Madigan, Altar Ego, J10, Legit, 3HRE, B. Cody Shields, Brother Bo, and K'nek. Doors open at 5:30 PM; the event starts at 6 PM Eastern on November 14, 2026, at 150 NW 46th Avenue, Plantation, FL 33317. Free admission is confirmed by the official tour schedule.",
     "authority": "official_event",
     "auditVerified": "2026-11-03",
@@ -3372,73 +3719,6 @@
       }
     ],
     "notes": "Owner approved November 7. Venue and RSVP confirm all three performers. Original Instagram flyer names Young C and Uninvtd; Stevener is additionally confirmed in venue/RSVP description. No roster verification changes. Partiful shows 0/50 spots left and Join waitlist; its Restricted Access is guest-list visibility, not private attendance. Donation is optional, not a $25 ticket price. Waitlist is not treated as SoldOut or available ticket inventory: destination remains official information with no Offer markup. No age policy verified."
-  },
-  {
-    "id": "manual:oh-give-thanks-irvington-2026-11-14",
-    "title": "Annual Oh Give Thanks Concert 2026",
-    "startDate": "2026-11-14",
-    "endDate": "2026-11-14",
-    "startTime": "19:00",
-    "timezone": "America/New_York",
-    "venue": "Shiloh Ministries Church",
-    "address": "987 Clinton Avenue",
-    "postalCode": "07111",
-    "city": "Irvington",
-    "state": "NJ",
-    "country": "US",
-    "artists": [],
-    "advertisedBilling": [],
-    "officialBill": [],
-    "lineupExplicit": false,
-    "musicConfirmed": true,
-    "eventType": "concert",
-    "status": "scheduled",
-    "officialUrl": "https://www.eventbrite.com/e/annual-oh-give-thanks-concert-2026-tickets-2003229121227",
-    "ticketUrl": "https://www.eventbrite.com/e/annual-oh-give-thanks-concert-2026-tickets-2003229121227",
-    "image": "assets/events/oh-give-thanks-irvington-2026-11-14-original.png",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Shiloh Ministries official event page original artwork",
-    "imageSourceUrl": "https://www.eventbrite.com/e/annual-oh-give-thanks-concert-2026-tickets-2003229121227",
-    "sourceName": "Shiloh Ministries official event page",
-    "authority": "official_event",
-    "confidence": "high",
-    "firstSeen": "2026-11-04",
-    "lastVerified": "2026-11-07",
-    "auditVerified": "2026-11-07",
-    "editorialBatch": "2026-11-07-owner-approved-missing-shows",
-    "sources": [
-      {
-        "name": "Shiloh Ministries official event page",
-        "url": "https://www.eventbrite.com/e/annual-oh-give-thanks-concert-2026-tickets-2003229121227",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 125
-      }
-    ],
-    "startDateTime": "2026-11-14T19:00:00-05:00",
-    "doorsTime": "18:30",
-    "endTime": "23:30",
-    "endDateTime": "2026-11-14T23:30:00-05:00",
-    "organizer": "Shiloh Ministries",
-    "organizerUrl": "https://www.eventbrite.com/o/112997718631",
-    "hosts": [
-      "Prophet Ragive Dulcio"
-    ],
-    "price": "$25 advertised admission; Eventbrite currently shows $28.52",
-    "ageRestriction": "All ages",
-    "publicDescription": "Shiloh Ministries Church presents an evening of Christian rap, worship, choir, solos, poetry and plays, hosted by Prophet Ragive Dulcio. Doors open at 6:30 PM; the program runs 7–11:30 PM. All ages are welcome, with free parking.",
-    "scheduleDetails": [
-      {
-        "label": "Lineup",
-        "text": "The organizer confirms Christian rap, choir, solos and special guests; individual musical performers have not been announced."
-      }
-    ],
-    "sourceEventIds": [
-      "eventbrite:2003229121227"
-    ],
-    "notes": "Owner approved addition November 7. The unchanged original official flyer names Shiloh Ministries Church and host Prophet Ragive Dulcio, who is not asserted as a musical performer. Flyer advertises $25 admission; current Eventbrite displays $28.52. Do not invent the fee breakdown or a verified checkout amount. Current primary page supplies full Irvington address despite stale Location TBD snippets. Earliest known discovery November 4."
   },
   {
     "id": "manual:cherish-fashion-show-benefit-charlotte-2026-11-14",
@@ -4146,7 +4426,7 @@
         "url": "https://dice.fm/partner/tickets/event/yo5xer-whatuprg-w-aftrthght-de-la-cruz-19th-nov-rockerfellers-houston-tickets",
         "type": "manual_verified",
         "authority": "venue_ticket",
-        "priority": 125
+        "priority": 100
       },
       {
         "name": "WHATUPRG official Instagram announcement",
@@ -4280,13 +4560,13 @@
       }
     ],
     "firstSeen": "2026-09-29T18:00:00Z",
-    "lastVerified": "2026-11-07",
-    "auditVerified": "2026-11-07",
+    "lastVerified": "2026-10-30T14:59:28.018045Z",
+    "auditVerified": "2026-10-19",
     "editorialBatch": "2026-10-08-reviewed-discoveries",
     "postalCode": "75226",
     "doorsTime": "19:00",
     "ageRestriction": "All ages; ages 16 and under with a parent or legal guardian",
-    "notes": "October 8, 2026: owner approved restoring the previously held date after venue corroboration. The Bomb Factory explicitly lists November 19, 8 PM show and 7 PM doors, On Sale Now, and its AXS event link. Current AXS detail listing matches; checkout was not tested. Preserve approved Welcome Home Tour artwork and original event identity/discovery date. October 19: Reece (@onlyreece) announced these four support dates; he is distinct from Reece Lache. Keep unlinked billing until roster approval. November 7: owner explicitly reapproved adding the show. Current venue and AXS confirm Nov19, 8 PM/7 PM doors, AEG Presents and special guest Reece. Remove earlier active-discovery hold; preserve original ID, canonical URL, September29 firstSeen, original approved tour artwork and unlinked @onlyreece billing. No current ticket price or end time verified.",
+    "notes": " October 19 artist announcement: Reece (@onlyreece), not Reece Lache, supports these four dates. Preserve unlinked full billing.",
     "sourceEventIds": [
       "axs:1626463"
     ],
@@ -4894,7 +5174,7 @@
         "url": "https://dice.fm/partner/tickets/event/mxynyr-whatuprg-w-aftrthght-de-la-cruz-20th-nov-ridglea-room-fort-worth-tickets",
         "type": "manual_verified",
         "authority": "venue_ticket",
-        "priority": 125
+        "priority": 100
       },
       {
         "name": "WHATUPRG official Instagram announcement",
@@ -5462,7 +5742,8 @@
         "label": "Refunds",
         "text": "Refunds are offered up to seven days before the event."
       }
-    ]
+    ],
+    "detailImageLayout": "portrait"
   },
   {
     "id": "manual:chain-breaker-kingsport-2026-11-21",
@@ -6303,7 +6584,7 @@
         "url": "https://wl.eventim.us/event/whatuprg/707572?afflky=PaperTiger",
         "type": "manual_verified",
         "authority": "venue_ticket",
-        "priority": 125
+        "priority": 100
       },
       {
         "name": "WHATUPRG official Instagram announcement",
@@ -6453,9 +6734,9 @@
     "startDate": "2026-11-27",
     "startTime": "",
     "timezone": "America/New_York",
-    "venue": "Rosen Centre Hotel",
-    "address": "9840 International Dr",
-    "city": "Orlando",
+    "venue": "Venue not provided",
+    "address": "",
+    "city": "Cocoa",
     "state": "FL",
     "country": "US",
     "artists": [
@@ -7057,7 +7338,8 @@
     "venueInstagram": "https://www.instagram.com/venice_island/",
     "organizerWebsite": "https://www.ripecreatives.com/creatives",
     "organizerInstagram": "https://www.instagram.com/ripecreatives/",
-    "organizerLinkName": "Creatives’ Philly / Ripe Creatives"
+    "organizerLinkName": "Creatives’ Philly / Ripe Creatives",
+    "detailImageLayout": "portrait"
   },
   {
     "id": "manual:cj-emulous-christlike-christmas-berkeley-2026",
@@ -7985,8 +8267,8 @@
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
-    "auditVerified": "2026-09-23",
-    "notes": "CJ Emulous's official calendar confirms Miles Minnick and CJ Emulous at Zion Ultra Lounge on December 5, 2026 at 7:00 PM.",
+    "auditVerified": "2026-10-30",
+    "notes": "Official Eventbrite listing and flyer reviewed October 30, 2026: Miles Minnick, CJ Emulous, Nameless Servant, A4L and Th3rddae Da Mouthpiece; December 5 at Vybe Event Center, 2301 South Stearman Drive, Chandler AZ 85286. Doors 6:30 PM; show 7–11 PM; all ages and free parking. Zion Ultra Lounge Inc is the promoter. Existing listing identity and canonical URL retained. November 5 audit corrects the heading to the actual Vybe Event Center venue; Zion Ultra Lounge Inc is the promoter. The three additional supporting acts appear in the full billing without creating unverified artist profiles.",
     "doorsTime": "18:30",
     "endTime": "23:00",
     "startDateTime": "2026-12-05T19:00:00-07:00",
@@ -8214,69 +8496,6 @@
     "imageSourceUrl": "https://open.spotify.com/artist/4EJIkbig1thbV3C3B68c56"
   },
   {
-    "id": "manual:christmas-jawn-philadelphia-2026-12-12",
-    "title": "A Christmas Jawn",
-    "startDate": "2026-12-12",
-    "endDate": "2026-12-12",
-    "startTime": "14:00",
-    "startDateTime": "2026-12-12T14:00:00-05:00",
-    "timezone": "America/New_York",
-    "venue": "Billy Penn Studios",
-    "address": "1516 North 5th Street",
-    "postalCode": "19122",
-    "city": "Philadelphia",
-    "state": "PA",
-    "country": "US",
-    "artists": [],
-    "advertisedBilling": [],
-    "officialBill": [],
-    "lineupExplicit": false,
-    "musicConfirmed": true,
-    "eventType": "concert",
-    "status": "scheduled",
-    "officialUrl": "https://www.eventbrite.com/e/a-christmas-jawn-tickets-2003998564653",
-    "ticketUrl": "https://www.eventbrite.com/e/a-christmas-jawn-tickets-2003998564653",
-    "organizer": "Holy Culture",
-    "organizerUrl": "https://www.eventbrite.com/o/114863468091",
-    "image": "assets/events/christmas-jawn-philadelphia-2026-12-12-original.png",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Holy Culture official event flyer",
-    "imageSourceUrl": "https://www.eventbrite.com/e/a-christmas-jawn-tickets-2003998564653",
-    "price": "Free RSVP",
-    "ageRestriction": "All ages",
-    "publicDescription": "Holy Culture presents a free Christmas gathering with a live DJ playing Christian hip-hop and holiday favorites, a holiday gift market, festive treats, games, face painting, ornament decorating and giveaways. All ages are welcome; RSVP is free. Free parking.",
-    "sourceName": "Holy Culture official event page",
-    "authority": "official_event",
-    "confidence": "high",
-    "firstSeen": "2026-11-04",
-    "lastVerified": "2026-11-07",
-    "auditVerified": "2026-11-07",
-    "editorialBatch": "2026-11-07-owner-approved-missing-shows",
-    "sourceEventIds": [
-      "eventbrite:2003998564653"
-    ],
-    "sources": [
-      {
-        "name": "Holy Culture official event page",
-        "url": "https://www.eventbrite.com/e/a-christmas-jawn-tickets-2003998564653",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 125
-      }
-    ],
-    "endTime": "18:00",
-    "endDateTime": "2026-12-12T18:00:00-05:00",
-    "scheduleDetails": [
-      {
-        "label": "Lineup",
-        "text": "Live DJ playing Christian hip-hop and holiday favorites; DJ name not announced."
-      }
-    ],
-    "notes": "Owner approved adding this show on November 7. Do not turn Holy Culture (organizer) or gift-market vendors into performers. Official overview, ticket panel and JSON-LD agree free admission/RSVP; no checkout performed. Earliest discovery evidence: 2026-11-04/missing-shows-deep-search/findings.json candidate key christmas-jawn-philadelphia-2026-12-12 and root-evidence/christmas-jawn-ax.txt. "
-  },
-  {
     "id": "hhwg-christmas-extravaganza-royse-city-2026-12-12",
     "title": "HHWG & New Hope Baptist Church Christmas Extravaganza",
     "startDate": "2026-12-12",
@@ -8463,7 +8682,11 @@
         "priority": 112
       }
     ],
-    "venueUrl": "https://sunonthebeachfl.com/"
+    "venueUrl": "https://sunonthebeachfl.com/",
+    "legacyEventPaths": [
+      "/event/mike-malagies-sun-on-the-beach-2026-12-12-kissimmee-eeaa01/"
+    ],
+    "legacyEventNotice": "This duplicate 10 PM listing has moved to the verified 5 PM It's A God Night event with official tickets and artwork."
   },
   {
     "id": "manual:journey-to-bethlehem-joyful-noize-preshow-orlando-2026-12-13",
@@ -9026,7 +9249,7 @@
     "ticketUrl": "https://www.eventbrite.com/e/kelo-cho-presents-the-worship-after-christmas-tickets-1992972194483",
     "officialUrl": "https://murrayhilltheatre.com/event/kelo-cho-presents-the-worship-after-christmas/",
     "image": "assets/events/kelo-worship-after-christmas-2026-12-26-portrait.jpg",
-    "price": "Eventbrite currently lists US$17.94–US$23.84; ticket options and fees may vary.",
+    "price": "$15",
     "sourceName": "Murray Hill Theatre official event",
     "sources": [
       {
@@ -9054,7 +9277,7 @@
     "lineupExplicit": true,
     "authority": "official_event",
     "auditVerified": "2026-09-13",
-    "doorsTime": "18:30",
+    "doorsTime": "18:00",
     "advertisedBilling": [
       "Kelo Cho"
     ],
@@ -9502,7 +9725,7 @@
     "auditVerified": "2026-10-30",
     "ageRestriction": "All ages",
     "editorialBatch": "2026-10-30-alex-jean-tour-expansion",
-    "publicDescription": "Alex Jean brings The Welcome Home Tour to New York with special guest Reece. The Orlando artist combines Christian hip-hop, songwriting and guitar, exploring faith, purpose, identity and life with Christ. His music seeks to share the Gospel and connect with believers and people exploring faith.",
+    "publicDescription": "Alex Jean brings The Welcome Home Tour to Sony Hall in New York, with special guest Reece.",
     "scheduleDetails": [
       {
         "label": "Doors",
@@ -9888,7 +10111,7 @@
     "ticketUrl": "https://events.humanitix.com/flowfest",
     "officialUrl": "https://events.humanitix.com/flowfest",
     "image": "assets/events/flowfest-greenwood-2026-12-31-portrait.webp",
-    "price": "Donation-based general admission.",
+    "price": "",
     "sourceName": "FlowFest official Humanitix listing",
     "sources": [
       {
@@ -10008,65 +10231,6 @@
     "organizerWebsite": "https://www.thejoyfulnoize.shop/",
     "organizerInstagram": "https://www.instagram.com/thejoyfulnoize/",
     "organizerLinkName": "The Joyful Noize"
-  },
-  {
-    "id": "manual:encounter-festival-vacaville-2027-01-08",
-    "title": "Encounter Festival",
-    "startDate": "2027-01-08",
-    "endDate": "2027-01-08",
-    "startTime": "18:00",
-    "timezone": "America/Los_Angeles",
-    "venue": "Journey Downtown Theater",
-    "address": "308 Main Street",
-    "postalCode": "95688",
-    "city": "Vacaville",
-    "state": "CA",
-    "country": "US",
-    "artists": [],
-    "advertisedBilling": [],
-    "officialBill": [],
-    "lineupExplicit": false,
-    "musicConfirmed": true,
-    "eventType": "festival",
-    "status": "scheduled",
-    "officialUrl": "https://journeydowntown.com/catering-inventory/p/encounter-festival-8-january-2027",
-    "ticketUrl": "https://journeydowntown.com/catering-inventory/p/encounter-festival-8-january-2027",
-    "image": "assets/events/encounter-festival-vacaville-2027-01-08-original.jpg",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "imageSource": "Journey Downtown official event page original artwork",
-    "imageSourceUrl": "https://journeydowntown.com/catering-inventory/p/encounter-festival-8-january-2027",
-    "sourceName": "Journey Downtown official event page",
-    "authority": "official_event",
-    "confidence": "high",
-    "firstSeen": "2026-11-04",
-    "lastVerified": "2026-11-07",
-    "auditVerified": "2026-11-07",
-    "editorialBatch": "2026-11-07-owner-approved-missing-shows",
-    "sources": [
-      {
-        "name": "Journey Downtown official event page",
-        "url": "https://journeydowntown.com/catering-inventory/p/encounter-festival-8-january-2027",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 125
-      }
-    ],
-    "startDateTime": "2027-01-08T18:00:00-08:00",
-    "doorsTime": "17:30",
-    "price": "From $17",
-    "ageRestriction": "All ages",
-    "detailImageLayout": "portrait",
-    "venueUrl": "https://journeydowntown.com/",
-    "publicDescription": "Encounter Festival brings Christian rap, hip-hop, pop and indie music to Journey Downtown in Vacaville. Doors open at 5:30 PM and the festival starts at 6 PM. All ages are welcome; individual performers have not been announced.",
-    "scheduleDetails": [
-      {
-        "label": "Lineup",
-        "text": "Performers have not been announced."
-      }
-    ],
-    "notes": "Owner approved addition November 7. The FULL original official venue-linked flyer explicitly says January 8, 2027, doors 5:30 PM and starts 6:00 PM. Earlier cropped screenshot review missed the start line; the full original is authoritative. Named performers, organizer, end time and checkout total are unannounced. Price from current venue page is display-only. Preserve November 4 discovery."
   },
   {
     "id": "manual:chh-gospel-hip-hop-cruise-summit-miami-2027-01-10",
@@ -11400,7 +11564,7 @@
     "startTime": "",
     "timezone": "America/New_York",
     "venue": "Universal Studios Florida",
-    "address": "6000 Universal Boulevard",
+    "address": "",
     "city": "Orlando",
     "state": "FL",
     "country": "US",
@@ -14067,74 +14231,6 @@
     "publicDescription": "Ignition is a Christian student conference for grades 7–12. Student admission includes meals, a night market and snacks. This listing tracks 1K Phew’s appearance during the conference.",
     "eventInstagram": "https://www.instagram.com/ignitionstudents/",
     "organizerInstagram": "https://www.instagram.com/ignitionstudents/"
-  },
-  {
-    "id": "manual:the-big-game-festival-los-angeles-2027-02-13",
-    "title": "The Big Game Festival",
-    "startDate": "2027-02-13",
-    "endDate": "2027-02-13",
-    "startTime": "13:00",
-    "endTime": "21:00",
-    "timezone": "America/Los_Angeles",
-    "startDateTime": "2027-02-13T13:00:00-08:00",
-    "endDateTime": "2027-02-13T21:00:00-08:00",
-    "venue": "Southern Missionary Baptist Church",
-    "address": "4678 West Adams Boulevard",
-    "postalCode": "90016",
-    "city": "Los Angeles",
-    "state": "CA",
-    "country": "US",
-    "artists": [],
-    "advertisedBilling": [],
-    "officialBill": [],
-    "lineupExplicit": false,
-    "musicConfirmed": true,
-    "eventType": "festival",
-    "status": "scheduled",
-    "officialUrl": "https://thebiggamefestival.com/",
-    "ticketUrl": "https://www.eventbrite.com/e/the-big-game-festival-tickets-2004243732958",
-    "ticketUrlVerified": true,
-    "organizer": "The Man Up Club",
-    "organizerUrl": "https://themanupclub.org/",
-    "organizerWebsite": "https://themanupclub.org/",
-    "eventInstagram": "https://www.instagram.com/thebiggamefest/",
-    "publicNotice": "Lineup TBA. Performer announcements are pending.",
-    "publicDescription": "The Big Game Festival brings Christian hip-hop and urban gospel performances, athlete faith stories and community activities to Los Angeles. Presented by The Man Up Club in partnership with Releve’ Entertainment and Youth Edutainment League. Lineup TBA; performers have not been announced.",
-    "refundPolicy": "The official ticket listing states no refunds.",
-    "image": "assets/events/the-big-game-festival-2027-02-13-original.jpg",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "detailImageLayout": "landscape",
-    "imageSource": "The Big Game Festival official Eventbrite original artwork",
-    "imageSourceUrl": "https://cdn.evbuc.com/images/1197119100/255221222651/1/original.20261102-211159",
-    "sourceName": "The Big Game Festival official website / Eventbrite",
-    "authority": "official_event",
-    "confidence": "high",
-    "firstSeen": "2026-11-07",
-    "lastVerified": "2026-11-07",
-    "auditVerified": "2026-11-07",
-    "editorialBatch": "2026-11-07-three-owner-approved-shows",
-    "sourceEventIds": [
-      "eventbrite:2004243732958"
-    ],
-    "sources": [
-      {
-        "name": "Official festival website",
-        "url": "https://thebiggamefestival.com/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 120
-      },
-      {
-        "name": "Official festival tickets",
-        "url": "https://www.eventbrite.com/e/the-big-game-festival-tickets-2004243732958",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 120
-      }
-    ],
-    "notes": "Owner approved November 7 despite lineup TBA. CHH/urban gospel performances explicitly confirmed by organizer. No fabricated TBA performer or XROSS performer: XROSS is an organizer contact only. No numeric ticket price, age limit or venue website verified. Preserve authentic landscape artwork without generating/reconstructing a portrait."
   },
   {
     "id": "manual:winter-jam-2027-greensboro-nc-2027-02-13",
@@ -16953,69 +17049,6 @@
     "organizerInstagram": "https://www.instagram.com/ignitionstudents/"
   },
   {
-    "id": "manual:center-stage-passion-fest-raleigh-2027-03-20",
-    "title": "Center Stage 2027 — Passion Fest",
-    "startDate": "2027-03-20",
-    "endDate": "2027-03-20",
-    "startTime": "17:00",
-    "doorsTime": "17:00",
-    "timezone": "America/New_York",
-    "startDateTime": "2027-03-20T17:00:00-04:00",
-    "venue": "Vision Church RDU",
-    "address": "5808 Departure Dr",
-    "city": "Raleigh",
-    "state": "NC",
-    "postalCode": "27616",
-    "country": "US",
-    "artists": [],
-    "headliner": "",
-    "advertisedBilling": [],
-    "officialBill": [],
-    "organizer": "Passion Fest",
-    "officialUrl": "https://givebutter.com/center-stage-2027-dudtjq",
-    "ticketUrl": "https://givebutter.com/center-stage-2027-dudtjq",
-    "image": "assets/events/center-stage-passion-fest-raleigh-2027-03-20.jpg",
-    "imageSource": "Passion Fest official Center Stage 2027 Givebutter artwork",
-    "imageSourceUrl": "https://givebutter.s3.amazonaws.com/media/IM9dhbtUn7tM2Jh5wKPyTobmApP7C6wQBNRE1UAm.jpg",
-    "sourceName": "Passion Fest official announcement and presale page",
-    "publicDescription": "Passion Fest presents Center Stage 2027, a Christian rap festival at Vision Church RDU in Raleigh. The outdoor Fan Fest begins at 3 PM with food trucks, vendors and activities. Festival doors open at 5 PM. The performer lineup has not yet been announced.",
-    "publicNotice": "The organizer lists March 20 as tentative; the date may change.",
-    "notes": "Owner requested the newly announced March Passion Fest event. Official Instagram reel caption confirms March 20, Raleigh, 5 PM and Vision Church RDU; reel artwork explicitly says March 2027. QR code resolves to the event-specific Givebutter presale page, which independently confirms Saturday March 20, 2027 at 5 PM EDT and 5808 Departure Dr. Its schedule explains Fan Fest starts at 3 PM and festival doors open at 5 PM. The later organizer biography has stale March 2025 template text; use the current event title, structured date and new reel artwork. Sponsors/partners are not a performer lineup. Do not inherit the October 2026 Passion Fest II bill or the May 2026 CenterStage bill.",
-    "sources": [
-      {
-        "name": "Passion Fest new Center Stage announcement",
-        "url": "https://www.instagram.com/passionfestnc/reel/DenDBfap9ac/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Official Center Stage 2027 presale page from announcement QR code",
-        "url": "https://givebutter.com/center-stage-2027-dudtjq",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      }
-    ],
-    "eventType": "festival",
-    "status": "scheduled",
-    "lineupExplicit": false,
-    "lineupStatus": "to_be_announced",
-    "musicConfirmed": true,
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "authority": "official_event",
-    "confidence": "high",
-    "auditVerified": "2026-10-17",
-    "lastVerified": "2026-10-18T00:58:06Z",
-    "firstSeen": "2026-10-18T00:58:06Z",
-    "venueUrl": "https://visionrdu.com/",
-    "venueInstagram": "https://www.instagram.com/visionrdu/",
-    "organizerWebsite": "https://passionfest.org/",
-    "organizerInstagram": "https://www.instagram.com/passionfestnc/"
-  },
-  {
     "id": "manual:winter-jam-2027-state-college-pa-2027-03-20",
     "title": "Winter Jam 2027",
     "tour": "Winter Jam 2027",
@@ -17403,7 +17436,7 @@
     "startTime": "",
     "timezone": "America/Phoenix",
     "venue": "Veterans Memorial Park",
-    "address": "3105 E. Fry Boulevard",
+    "address": "",
     "city": "Sierra Vista",
     "state": "AZ",
     "country": "US",
@@ -17547,23 +17580,7 @@
         "authority": "official_festival",
         "priority": 112
       }
-    ],
-    "postalCode": "75704",
-    "ageRestriction": "Children 8 and under receive free general admission.",
-    "price": "Saturday general admission US$49.67 including listed fees; full-weekend general admission US$83.82 including listed fees.",
-    "scheduleDetails": [
-      {
-        "label": "Festival dates",
-        "text": "The full festival runs April 23–24, 2027; individual artist performance days and set times should be confirmed with the organizer."
-      }
-    ],
-    "publicDescription": "Rock The Pines is a two-day Christian music festival with live performances, food trucks, vendors and family activities. General-admission guests use the lawn and should bring a lawn chair or blanket. Reserved preferred seating and separately purchased pit upgrades are also offered; an upgrade does not replace festival admission.",
-    "refundPolicy": "The organizer describes the festival as rain or shine, with no returns, refunds or exchanges.",
-    "eventInstagram": "https://www.instagram.com/rockthepines",
-    "organizerWebsite": "https://rockthepines.org/",
-    "venueUrl": "https://www.theparkofetx.com/",
-    "organizerInstagram": "https://www.instagram.com/rockthepines/",
-    "organizerLinkName": "Rock The Pines"
+    ]
   },
   {
     "id": "official:0dd5f599b4db080206cf",
@@ -17878,411 +17895,5 @@
     "venueInstagram": "https://www.instagram.com/freemancoliseum/",
     "organizerWebsite": "https://www.communitybible.com/",
     "organizerInstagram": "https://www.instagram.com/cbcsocial/"
-  },
-  {
-    "id": "manual:rural-music-festival-2027",
-    "title": "Rural Music Festival 2027",
-    "startDate": "2027-08-27",
-    "endDate": "2027-08-29",
-    "startTime": "",
-    "endTime": "",
-    "doorsTime": "",
-    "timezone": "America/Chicago",
-    "venue": "Redemption Hill",
-    "address": "43694 Highway 47",
-    "city": "Isle",
-    "state": "MN",
-    "postalCode": "56342",
-    "country": "US",
-    "artists": [],
-    "headliner": "",
-    "advertisedBilling": [],
-    "officialBill": [],
-    "organizer": "RURAL Music Ministries",
-    "officialUrl": "https://www.ruralmusic.org/",
-    "ticketUrl": "",
-    "image": "assets/events/rural-music-festival-2027.jpg",
-    "imageSource": "Official RURAL Music Ministries 2027 announcement flyer",
-    "imageSourceUrl": "https://www.facebook.com/ruralmusicministries/posts/pfbid02zg6G5CYRFPDYxgvY2VwqSDbDCRUKVHk1aBShoy6QXWSjdEPu7n36eeCtye6prDWml",
-    "sourceName": "RURAL Music Ministries",
-    "publicDescription": "Rural Music Festival returns to Redemption Hill in Isle, Minnesota, August 27–29, 2027. The three-day Christian music festival is free to attend. Artist announcements and daily times are still to come.",
-    "publicNotice": "August 27–29, 2027. Free admission. Lineup and daily times to be announced.",
-    "notes": "Owner requested addition from the official October 26, 2026 Facebook announcement. Flyer confirms August 27–29, 2027, Redemption Hill, Isle, MN, and free admission. Organizer comment explicitly says artist and lineup announcements are to come. Street address corroborated on the official Rural website. Do not inherit the 2026 lineup or 12 PM–8 PM times.",
-    "sources": [
-      {
-        "name": "RURAL Music Ministries — official 2027 announcement",
-        "url": "https://www.facebook.com/ruralmusicministries/posts/pfbid02zg6G5CYRFPDYxgvY2VwqSDbDCRUKVHk1aBShoy6QXWSjdEPu7n36eeCtye6prDWml",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 115
-      },
-      {
-        "name": "Rural Music Festival official website — venue address",
-        "url": "https://www.ruralmusic.org/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 105
-      }
-    ],
-    "eventType": "festival",
-    "status": "scheduled",
-    "lineupExplicit": false,
-    "lineupStatus": "to_be_announced",
-    "musicConfirmed": true,
-    "detailsPending": true,
-    "price": "Free",
-    "imageType": "event_artwork",
-    "imagePosition": "center",
-    "imageOverride": true,
-    "authority": "official_event",
-    "confidence": "high",
-    "editorialBatch": "2026-10-27-approved-shows",
-    "auditVerified": "2026-10-27",
-    "lastVerified": "2026-10-27T19:03:05Z",
-    "firstSeen": "2026-10-27T19:03:05Z",
-    "ageRestriction": "All ages",
-    "scheduleDetails": [
-      {
-        "label": "Festival window",
-        "text": "Organizer registration lists August 27 at noon through August 29 at 1 PM. Individual daily performance schedules and the 2027 lineup are unannounced."
-      }
-    ],
-    "organizerWebsite": "https://www.ruralmusic.org/"
-  },
-  {
-    "title": "Miles Minnick at Black Box Media Miami",
-    "startDate": "2026-11-05",
-    "startTime": "18:30",
-    "timezone": "America/New_York",
-    "venue": "Black Box Media Miami",
-    "address": "12355 NE 13th Ave Unit #403-404",
-    "city": "North Miami",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108940329",
-    "officialUrl": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
-    "image": "assets/artists/miles-minnick.webp",
-    "imageType": "artist",
-    "imagePosition": "center",
-    "lineupExplicit": true,
-    "advertisedBilling": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "authority": "artist_calendar",
-    "confidence": "high",
-    "sourceName": "Bandsintown verified event listing",
-    "sources": [
-      {
-        "name": "Eli Williams official performance announcement",
-        "url": "https://www.instagram.com/eliwilliamssss/p/DdmMA0JOH4q/",
-        "type": "manual_verified",
-        "authority": "artist",
-        "priority": 115
-      },
-      {
-        "name": "Bandsintown verified event listing",
-        "url": "https://www.bandsintown.com/e/108940329-miles-minnick-at-black-box-media-miami",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 94
-      },
-      {
-        "name": "CJ Emulous official tour calendar",
-        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-23",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 88
-      }
-    ],
-    "notes": " Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates.",
-    "auditVerified": "2026-09-23",
-    "officialBill": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "id": "manual:miles-minnick-black-box-north-miami-2026-11-05"
-  },
-  {
-    "title": "Miles Minnick – Christlike University – Florida Campus Tour in Jacksonville",
-    "startDate": "2026-11-07",
-    "startTime": "19:00",
-    "timezone": "America/New_York",
-    "venue": "The Albatross",
-    "venueAliases": [
-      "Underbelly"
-    ],
-    "address": "113 E Bay St",
-    "city": "Jacksonville",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
-    "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
-    "image": "assets/artists/miles-minnick.webp",
-    "imageType": "artist",
-    "imagePosition": "center",
-    "lineupExplicit": true,
-    "advertisedBilling": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "sourceName": "Live Nation official event listing",
-    "sources": [
-      {
-        "name": "Live Nation official event listing",
-        "url": "https://www.livenation.com/event/rZ7HnEZ1AfGUq7/miles-minnick-christlike-university-florida-campus-tour-in-jacksonville",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      },
-      {
-        "name": "Bandsintown verified lineup",
-        "url": "https://www.bandsintown.com/e/108940352-miles-minnick-at-the-albatross",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 94
-      }
-    ],
-    "supersededSources": [
-      {
-        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-25",
-        "publishedDate": "2026-11-07",
-        "publishedCity": "Tampa",
-        "reason": "Conflicts with the venue-specific Jacksonville ticket listing and is not supported by the official Flavor Fest concert schedule."
-      }
-    ],
-    "notes": "The venue-specific Jacksonville ticket listing supersedes CJ's older November 7 Tampa calendar entry. Miles may also appear on the 11:45 AM Flavor Fest artist panel in Tampa; that daytime panel is not this concert.",
-    "auditVerified": "2026-09-23",
-    "id": "manual:miles-minnick-christlike-university-jacksonville-2026-11-07"
-  },
-  {
-    "title": "Miles Minnick – Christlike University – Florida Campus Tour in Orlando",
-    "startDate": "2026-11-08",
-    "startTime": "19:00",
-    "timezone": "America/New_York",
-    "venue": "Conduit",
-    "address": "6700 Aloma Ave",
-    "city": "Winter Park",
-    "advertisedCity": "Orlando",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
-    "officialUrl": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
-    "image": "assets/artists/miles-minnick.webp",
-    "imageType": "artist",
-    "imagePosition": "center",
-    "lineupExplicit": true,
-    "advertisedBilling": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "authority": "venue_ticket",
-    "confidence": "high",
-    "sourceName": "Live Nation official event listing",
-    "sources": [
-      {
-        "name": "Eli Williams official performance announcement",
-        "url": "https://www.instagram.com/eliwilliamssss/p/DdmMA0JOH4q/",
-        "type": "manual_verified",
-        "authority": "artist",
-        "priority": 115
-      },
-      {
-        "name": "Live Nation official event listing",
-        "url": "https://www.livenation.com/event/rZ7HnEZ1AfGUq0/miles-minnick-christlike-university-florida-campus-tour-in-orlando",
-        "type": "manual_verified",
-        "authority": "venue_ticket",
-        "priority": 112
-      },
-      {
-        "name": "Bandsintown verified lineup",
-        "url": "https://www.bandsintown.com/e/108940372-miles-minnick-at-conduit",
-        "type": "manual_verified",
-        "authority": "artist_calendar",
-        "priority": 94
-      }
-    ],
-    "supersededSources": [
-      {
-        "url": "https://www.cjemulous.com/event-details/new-mainstream-tour-w-miles-minnick-tommy-zuko-26",
-        "publishedDate": "2026-11-08",
-        "publishedCity": "Jacksonville",
-        "reason": "Conflicts with the venue-specific Conduit ticket listing in Winter Park."
-      }
-    ],
-    "notes": " Eli Williams confirmed this performance in his official September 2026 announcement, reviewed September 29. This association is limited to the explicitly advertised dates.",
-    "auditVerified": "2026-09-23",
-    "officialBill": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous",
-      "Eli Williams"
-    ],
-    "id": "manual:miles-minnick-christlike-university-orlando-2026-11-08"
-  },
-  {
-    "id": "manual:cj-emulous-new-mainstream-miami-2026-11-05",
-    "title": "New Mainstream Tour — Miles Minnick, Tommy Zuko & CJ Emulous",
-    "startDate": "2026-11-05",
-    "startTime": "",
-    "timezone": "America/New_York",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "Miami",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "merged",
-    "mergedIntoId": "manual:miles-minnick-black-box-north-miami-2026-11-05",
-    "officialUrl": "",
-    "ticketUrl": "",
-    "sourceName": "Superseded listing",
-    "notes": "This older listing is retained only to redirect visitors to the corrected canonical event.",
-    "auditVerified": "2026-09-23"
-  },
-  {
-    "id": "manual:cj-emulous-new-mainstream-jacksonville-2026-11-08",
-    "title": "New Mainstream Tour — Miles Minnick, Tommy Zuko & CJ Emulous",
-    "startDate": "2026-11-08",
-    "startTime": "",
-    "timezone": "America/New_York",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "Jacksonville",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "merged",
-    "mergedIntoId": "manual:miles-minnick-christlike-university-orlando-2026-11-08",
-    "officialUrl": "",
-    "ticketUrl": "",
-    "sourceName": "Superseded listing",
-    "notes": "This older listing is retained only to redirect visitors to the corrected canonical event.",
-    "auditVerified": "2026-09-23"
-  },
-  {
-    "id": "bandsintown:108940329",
-    "title": "Miles Minnick at Black Box Media Miami",
-    "startDate": "2026-11-05",
-    "startTime": "",
-    "timezone": "America/New_York",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "North Miami",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "merged",
-    "mergedIntoId": "manual:miles-minnick-black-box-north-miami-2026-11-05",
-    "officialUrl": "",
-    "ticketUrl": "",
-    "sourceName": "Superseded listing",
-    "notes": "This older listing is retained only to redirect visitors to the corrected canonical event.",
-    "auditVerified": "2026-09-23"
-  },
-  {
-    "id": "bandsintown:108940352",
-    "title": "Miles Minnick at The Albatross",
-    "startDate": "2026-11-07",
-    "startTime": "",
-    "timezone": "America/New_York",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "Jacksonville",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "merged",
-    "mergedIntoId": "manual:miles-minnick-christlike-university-jacksonville-2026-11-07",
-    "officialUrl": "",
-    "ticketUrl": "",
-    "sourceName": "Superseded listing",
-    "notes": "This older listing is retained only to redirect visitors to the corrected canonical event.",
-    "auditVerified": "2026-09-23"
-  },
-  {
-    "id": "bandsintown:108940372",
-    "title": "Miles Minnick at Conduit",
-    "startDate": "2026-11-08",
-    "startTime": "",
-    "timezone": "America/New_York",
-    "venue": "Venue not provided",
-    "address": "",
-    "city": "Winter Park",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Miles Minnick",
-      "Tommy Zuko",
-      "CJ Emulous"
-    ],
-    "headliner": "Miles Minnick",
-    "eventType": "concert",
-    "status": "merged",
-    "mergedIntoId": "manual:miles-minnick-christlike-university-orlando-2026-11-08",
-    "officialUrl": "",
-    "ticketUrl": "",
-    "sourceName": "Superseded listing",
-    "notes": "This older listing is retained only to redirect visitors to the corrected canonical event.",
-    "auditVerified": "2026-09-23"
   }
 ]
