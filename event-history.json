@@ -2367,7 +2367,7 @@
         "status": "scheduled",
         "ticketUrl": "https://tprlive.co/collections",
         "officialUrl": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
-        "image": "http://tprlive.co/cdn/shop/collections/CG_TEE_TourAdmat_General_1080x1080_1.webp?v=1784735114",
+        "image": "assets/events/caleb-gordon-eden-2026-preserved-published-1080.webp",
         "price": "",
         "sourceName": "TPR - Caleb Gordon Eden Experience",
         "sources": [
@@ -2384,7 +2384,10 @@
         "imageType": "event_artwork",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-08-09T00:00:00Z"
+        "firstSeen": "2026-08-09T00:00:00Z",
+        "imageOverride": true,
+        "imageSource": "Preserved unchanged previously published 1080px Caleb Gordon Eden Experience poster; original source unavailable",
+        "imageSourceUrl": "http://tprlive.co/cdn/shop/collections/CG_TEE_TourAdmat_General_1080x1080_1.webp?v=1784735114"
       }
     },
     {
@@ -2540,7 +2543,7 @@
         "status": "scheduled",
         "ticketUrl": "https://tprlive.co/collections",
         "officialUrl": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
-        "image": "http://tprlive.co/cdn/shop/collections/CG_TEE_TourAdmat_General_1080x1080_1.webp?v=1784735114",
+        "image": "assets/events/caleb-gordon-eden-2026-preserved-published-1080.webp",
         "price": "",
         "sourceName": "TPR - Caleb Gordon Eden Experience",
         "sources": [
@@ -2557,7 +2560,10 @@
         "imageType": "event_artwork",
         "imagePosition": "center",
         "verifiedVersion": 9,
-        "firstSeen": "2026-08-09T00:00:00Z"
+        "firstSeen": "2026-08-09T00:00:00Z",
+        "imageOverride": true,
+        "imageSource": "Preserved unchanged previously published 1080px Caleb Gordon Eden Experience poster; original source unavailable",
+        "imageSourceUrl": "http://tprlive.co/cdn/shop/collections/CG_TEE_TourAdmat_General_1080x1080_1.webp?v=1784735114"
       }
     },
     {
@@ -12439,7 +12445,7 @@
         "status": "scheduled",
         "ticketUrl": "https://www.cjemulous.com/event-details/syatp-concert-w-cj-emulous",
         "officialUrl": "https://www.cjemulous.com/event-details/syatp-concert-w-cj-emulous",
-        "image": "https://static.wixstatic.com/media/9c331a_e63115b208054353a76258a4897ad76c~mv2.jpeg/v1/fill/w_980%2Ch_653%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_auto/9c331a_e63115b208054353a76258a4897ad76c~mv2.jpeg",
+        "image": "assets/events/cj-emulous-syatp-2026-preserved-source.webp",
         "price": "",
         "sourceName": "CJ Emulous official calendar",
         "authority": "artist_calendar",
@@ -12458,7 +12464,9 @@
         "imageType": "event_artwork",
         "imagePosition": "center",
         "imageOverride": true,
-        "id": "cj-emulous-syatp-sierra-vista-2026"
+        "id": "cj-emulous-syatp-sierra-vista-2026",
+        "imageSource": "Unchanged exact previously published CJ Emulous SYATP stage photograph, preserved locally",
+        "imageSourceUrl": "https://static.wixstatic.com/media/9c331a_e63115b208054353a76258a4897ad76c~mv2.jpeg/v1/fill/w_980%2Ch_653%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_auto/9c331a_e63115b208054353a76258a4897ad76c~mv2.jpeg"
       }
     },
     {
@@ -12493,7 +12501,7 @@
         "status": "scheduled",
         "ticketUrl": "https://www.cjemulous.com/event-details/syatp-concert-w-cj-emulous",
         "officialUrl": "https://www.cjemulous.com/event-details/syatp-concert-w-cj-emulous",
-        "image": "https://static.wixstatic.com/media/9c331a_e63115b208054353a76258a4897ad76c~mv2.jpeg/v1/fill/w_980%2Ch_653%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_auto/9c331a_e63115b208054353a76258a4897ad76c~mv2.jpeg",
+        "image": "assets/events/cj-emulous-syatp-2026-preserved-source.webp",
         "price": "",
         "sourceName": "CJ Emulous official calendar",
         "authority": "artist_calendar",
@@ -12512,7 +12520,9 @@
         "imageType": "event_artwork",
         "imagePosition": "center",
         "imageOverride": true,
-        "id": "manual:cj-emulous-syatp-sierra-vista-2026"
+        "id": "manual:cj-emulous-syatp-sierra-vista-2026",
+        "imageSource": "Unchanged exact previously published CJ Emulous SYATP stage photograph, preserved locally",
+        "imageSourceUrl": "https://static.wixstatic.com/media/9c331a_e63115b208054353a76258a4897ad76c~mv2.jpeg/v1/fill/w_980%2Ch_653%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_auto/9c331a_e63115b208054353a76258a4897ad76c~mv2.jpeg"
       }
     },
     {
@@ -33724,7 +33734,8 @@
         "artists": [
           "Bo Fisher",
           "B. Cody Shields",
-          "Altar Ego"
+          "Altar Ego",
+          "SYL noiZ"
         ],
         "headliner": "Altar Ego",
         "eventType": "concert",
@@ -33748,6 +33759,13 @@
             "type": "manual_verified",
             "authority": "official_event",
             "priority": 116
+          },
+          {
+            "name": "SYL noiZ official current event page and organizer lineup review",
+            "url": "https://www.sylnoiz.com/event-details/ignite-and-unite-tour",
+            "type": "manual_verified",
+            "authority": "artist_calendar",
+            "priority": 120
           }
         ],
         "lastVerified": "2026-11-03T18:10:49.161592Z",
@@ -33765,7 +33783,8 @@
           "J10",
           "Legit",
           "3HRE",
-          "B. Cody Shields"
+          "B. Cody Shields",
+          "SYL noiZ"
         ],
         "officialBill": [
           "Pastor John Humphries",
@@ -33774,7 +33793,8 @@
           "J10",
           "Legit",
           "3HRE",
-          "B. Cody Shields"
+          "B. Cody Shields",
+          "SYL noiZ"
         ],
         "detailsPending": false,
         "lineupExplicit": true,
@@ -33786,7 +33806,7 @@
         "publicDescription": "The Ignite and Unite Tour comes to The Porch in Daytona Beach, Florida, on November 13, 2026. Doors open at 5:30 PM; the event starts at 6 PM Eastern. Free admission. The confirmed bill is Pastor John Humphries, OTG Zico, Altar Ego, J10, Legit, 3HRE, and B. Cody Shields.",
         "authority": "official_event",
         "auditVerified": "2026-11-03",
-        "notes": "Bo Fisher supplied the tour flyer directly to the site owner. The flyer prints month/day, venue, city and this full billing, but no year or start times. On October 8, 2026 the owner explicitly instructed us to assume 2026 for all four dates. The year is owner-approved, not independently verified from a public announcement. Leave startTime and ticketUrl empty and detailsPending true. Official details links to the exact unedited artist-supplied flyer hosted locally, not a guessed ticket page or unrelated venue listing. Owner confirmed Bo appears as part of Altar Ego; keep Altar Ego in public billing and link the record to Bo Fisher and the already verified B. Cody Shields. No global group alias or new artist profiles. October 23: associate the separately owner-verified Altar Ego group profile with this explicit group billing. Preserve existing solo artist associations and the advertised lineup. November 3: owner selected the date-specific showcard from the official tour website. Original PNG retained unchanged. Preserve the original October 8 discovery date, canonical ID, full confirmed billing and existing artist associations. A donate QR is not a ticket offer. The official schedule and city card now confirm the 2026 date, full address, 5:30 PM doors, 6 PM event start and free admission. These verified details supersede the prior TBA instructions; no unknown end, age, RSVP requirement or ticket offer was added. The official tour site replaces the old standalone tour-wide image as Official Details.",
+        "notes": "Bo Fisher supplied the tour flyer directly to the site owner. The flyer prints month/day, venue, city and this full billing, but no year or start times. On October 8, 2026 the owner explicitly instructed us to assume 2026 for all four dates. The year is owner-approved, not independently verified from a public announcement. Leave startTime and ticketUrl empty and detailsPending true. Official details links to the exact unedited artist-supplied flyer hosted locally, not a guessed ticket page or unrelated venue listing. Owner confirmed Bo appears as part of Altar Ego; keep Altar Ego in public billing and link the record to Bo Fisher and the already verified B. Cody Shields. No global group alias or new artist profiles. October 23: associate the separately owner-verified Altar Ego group profile with this explicit group billing. Preserve existing solo artist associations and the advertised lineup. November 3: owner selected the date-specific showcard from the official tour website. Original PNG retained unchanged. Preserve the original October 8 discovery date, canonical ID, full confirmed billing and existing artist associations. A donate QR is not a ticket offer. The official schedule and city card now confirm the 2026 date, full address, 5:30 PM doors, 6 PM event start and free admission. These verified details supersede the prior TBA instructions; no unknown end, age, RSVP requirement or ticket offer was added. The official tour site replaces the old standalone tour-wide image as Official Details. November9: owner requested newly curatedSYLnoiZ association. Preserve existing event identity, owner-selected image and confirmed schedule. Current official source corroboratesSYLbilling; fullsource evidence in syl-noiz-add/source-events.",
         "doorsTime": "17:30",
         "postalCode": "32114",
         "scheduleDetails": [
@@ -34778,7 +34798,8 @@
         "country": "US",
         "artists": [
           "Issac Mansfield",
-          "GIOVANI"
+          "GIOVANI",
+          "SYL noiZ"
         ],
         "headliner": "Issac Mansfield",
         "eventType": "concert",
@@ -34809,6 +34830,13 @@
             "type": "bandsintown_rest",
             "authority": "artist_calendar",
             "priority": 74
+          },
+          {
+            "name": "SYL noiZ official current event page and organizer lineup review",
+            "url": "https://www.eventbrite.com/e/unity-pop-up-tour-orlando-tickets-2003836750663",
+            "type": "manual_verified",
+            "authority": "official_event",
+            "priority": 120
           }
         ],
         "confidence": "medium",
@@ -34826,15 +34854,19 @@
         "advertisedBilling": [
           "Issac Mansfield",
           "SYL noiZ",
-          "GIOVANI"
+          "GIOVANI",
+          "Landy",
+          "Cory BiNks"
         ],
         "officialBill": [
           "Issac Mansfield",
           "SYL noiZ",
-          "GIOVANI"
+          "GIOVANI",
+          "Landy",
+          "Cory BiNks"
         ],
         "lineupExplicit": true,
-        "notes": "Owner requested the original Bandsintown flyer and complete announced bill. Bandsintown event 109072940 names Issac Mansfield, SYL noiZ and Giovani. Giovani profile 15656198 is the same exact profile stored for curated GIOVANI. SYL noiZ remains visible unlinked billing pending separate artist verification. Preserve this existing event identity and schedule.",
+        "notes": "Owner requested the original Bandsintown flyer and complete announced bill. Bandsintown event 109072940 names Issac Mansfield, SYL noiZ and Giovani. Giovani profile 15656198 is the same exact profile stored for curated GIOVANI. SYL noiZ remains visible unlinked billing pending separate artist verification. Preserve this existing event identity and schedule. November9: owner requested newly curatedSYLnoiZ association. Preserve existing event identity, owner-selected image and confirmed schedule. Current official source corroboratesSYLbilling; fullsource evidence in syl-noiz-add/source-events.",
         "postalCode": "32818",
         "organizer": {
           "name": "God Did It Movement",
@@ -38930,13 +38962,13 @@
         "lastVerified": "2026-11-07",
         "auditVerified": "2026-11-07",
         "editorialBatch": "2026-11-07-e5-damac-unleashed",
-        "image": "assets/events/zhalarina-unleashed-2026-11-20-artist.jpg",
-        "imageType": "artist",
+        "image": "assets/events/unleashed-benefit-st-petersburg-2026-11-20-instagram.jpg",
+        "imageType": "event_artwork",
         "imagePosition": "center",
         "imageOverride": true,
-        "detailImageLayout": "square",
-        "imageSource": "Zhalarina official booking-agency artist photo; not an event flyer",
-        "imageSourceUrl": "https://braveenough.com/zhalarina/",
+        "detailImageLayout": "portrait",
+        "imageSource": "Owner-selected official Leonard’s Lens Instagram benefit concert flyer, November 9, 2026",
+        "imageSourceUrl": "https://www.instagram.com/p/DfhYiTXlVlM/",
         "officialUrl": "https://www.eventbrite.com/e/unleashed-anniversary-benefit-concert-for-fat-boy-juice-family-tickets-1997851271935",
         "ticketUrl": "https://www.eventbrite.com/e/unleashed-anniversary-benefit-concert-for-fat-boy-juice-family-tickets-1997851271935",
         "ticketUrlVerified": true,
@@ -38973,7 +39005,7 @@
             "priority": 120
           }
         ],
-        "notes": "Owner approved November 7. Same-day directly retrieved updated Eventbrite confirms replacement benefit title and bill: Joe Battle, Jayla Aleese, Zhalarina. Explicitly excludes Fat Boy Juice from performance. Do not restore old Live Recording Experience title, performing claim, full-band promise, food offering or 150-seat teaser. Current official flyer unavailable; use authentic Zhalarina booking-agency portrait rather than misleading superseded artwork. Formal ticket/venue address says St. Petersburg, while narrative mentions Largo. Venue general recurring open mic overlaps but does not establish cancellation; no change to approved date. Free entry and voluntary donations; current ticket inventory not verified. No artist registry changes. Image is an authentic photo of the named confirmed performer, not a concert flyer."
+        "notes": "Owner approved November 7. Same-day directly retrieved updated Eventbrite confirms replacement benefit title and bill: Joe Battle, Jayla Aleese, Zhalarina. Explicitly excludes Fat Boy Juice from performance. Do not restore old Live Recording Experience title, performing claim, full-band promise, food offering or 150-seat teaser. Owner selected the official Leonard’s Lens November 9 Instagram benefit concert flyer (DfhYiTXlVlM); retain the full poster. Formal ticket/venue address says St. Petersburg, while narrative mentions Largo. Venue general recurring open mic overlaps but does not establish cancellation; no change to approved date. Free entry and voluntary donations; current ticket inventory not verified. No artist registry changes. The approved image is the current benefit concert flyer and matches the confirmed three-performer bill."
       }
     },
     {
@@ -43892,11 +43924,13 @@
         "headliner": "JJ Stone",
         "advertisedBilling": [
           "Josiah",
-          "JJ Stone"
+          "JJ Stone",
+          "Alibii"
         ],
         "officialBill": [
           "Josiah",
-          "JJ Stone"
+          "JJ Stone",
+          "Alibii"
         ],
         "lineupExplicit": true,
         "musicConfirmed": true,
