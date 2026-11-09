@@ -159,6 +159,7 @@ def prepare(root):
     state = load(root / STATE_FILE, empty_state())
     rules = load(root / RULES_FILE, {})
     aliases = {}
+    identity_only_aliases = set()
     for event_id, record in state['events'].items():
         for source_id in [event_id, *record.get('sourceIds', [])]:
             if source_id in aliases and aliases[source_id] != event_id:
@@ -167,15 +168,20 @@ def prepare(root):
     for group in rules.get('merges', []):
         for source_id in [group['keepId'], *group['aliasIds']]:
             aliases[source_id] = group['keepId']
+        if group.get('identityOnly'):
+            identity_only_aliases.update(group['aliasIds'])
     retired = set(rules.get('retiredPaths', [])) | set(state.get('retiredPaths', []))
     all_rows = source_events(root)
     by_id = {e['id']: e for e in all_rows if e.get('id')}
+    identity_only_survivors = {}
     for group in rules.get('merges', []):
         keep = group['keepId']
         if group['keepPath'] in retired: continue
         preferred = by_id.get(keep) or state['events'].get(keep, {}).get('event')
         if not preferred:
             raise ValueError(f'Reviewed duplicate has no surviving record: {keep}')
+        if group.get('identityOnly'):
+            identity_only_survivors[keep] = copy.deepcopy(preferred)
         record = state['events'].setdefault(keep, {'path': group['keepPath'], 'sourceIds': [], 'event': preferred})
         for source_id in group['aliasIds']:
             record['sourceIds'] = sorted(set(record['sourceIds']) | {source_id})
@@ -183,7 +189,8 @@ def prepare(root):
             if previous:
                 state['redirects'][previous['path']] = record['path']
                 record['sourceIds'] = sorted(set(record['sourceIds']) | set(previous.get('sourceIds', [])))
-            if source_id in by_id:
+            # Reviewed identity-only corrections reject the alias's event facts.
+            if source_id in by_id and not group.get('identityOnly'):
                 preferred = merge_details(preferred, by_id[source_id])
         record['event'] = {k: preferred[k] for k in SNAPSHOT_FIELDS if k in preferred}
         for path in group['aliasPaths']:
@@ -214,11 +221,14 @@ def prepare(root):
                 aliases[event_id] = keep
         # A new source ID carries current facts; history only supplies identity.
         # Keep the current canonical/manual record when it is still in the feeds.
+        # Identity-only corrections retain the survivor's facts even on reimport.
         preferred = current_by_id.get(keep) if keep != event_id else event
-        if preferred is None and original.get('status') != 'merged': preferred = event
-        preferred = preferred or by_id.get(keep) or state['events'].get(keep, {}).get('event') or event
+        if (preferred is None and original.get('status') != 'merged'
+                and event_id not in identity_only_aliases): preferred = event
+        preferred = (preferred or by_id.get(keep) or identity_only_survivors.get(keep)
+                     or state['events'].get(keep, {}).get('event') or event)
         preferred = dict(preferred, id=keep)
-        event = merge_details(preferred, event)
+        event = merge_details(preferred, {'id': event_id} if event_id in identity_only_aliases else event)
         old_path = generated_path(original)
         record = state['events'].setdefault(keep, {'path': generated_path(preferred), 'sourceIds': [], 'event': {}})
         record['sourceIds'] = sorted(set(record['sourceIds']) | {event_id, *event.get('mergedFromIds', [])} - {keep})
@@ -455,6 +465,15 @@ def remember_reviewed_calendars(state, rules, allowed_artists):
                 heading=calendar['title'], eventPaths=[p for _, p in sorted(set(related))])
 
 
+def calendar_robots(path, text):
+    """Apply shared eligibility only to artist/state and city calendars."""
+    from finalize_seo_indexing_core import classify
+    indexable, reason = classify(path, text)
+    if reason in ('artist-state', 'empty-artist-state', 'city', 'empty-city'):
+        return 'index,follow' if indexable else 'noindex,follow'
+    return None
+
+
 def finalize(root, site, today=None):
     today = today or dt.datetime.now(dt.timezone.utc).date().isoformat()
     # Build overlays copy source trees; these registries are never public assets.
@@ -593,14 +612,22 @@ def finalize(root, site, today=None):
     for source, target in redirects.items():
         file = target_file(site, source); file.parent.mkdir(parents=True, exist_ok=True)
         file.write_text(forwarding_page(target))
+    from finalize_seo_indexing_core import set_robots
     sitemap = ET.Element('urlset', xmlns=NS['s'])
     dated = 0
     for file in sorted(site.rglob('index.html')):
         path = '/' + file.parent.relative_to(site).as_posix().strip('./') + '/'
         if path == '//': path = '/'
         if path in redirects or path.startswith(('/_','/chh-show-night/')): continue
-        facts = PageFacts(file.read_text())
-        if 'noindex' in facts.robots or facts.canonical != ORIGIN + path: continue
+        text = file.read_text()
+        directive = calendar_robots(path, text)
+        if directive is not None:
+            updated = set_robots(text, directive)
+            if updated != text: file.write_text(updated)
+            text = updated
+        facts = PageFacts(text)
+        if facts.canonical != ORIGIN + path: continue
+        if 'noindex' in facts.robots and directive is None: continue
         previous = state['pages'].get(path, {})
         fingerprint = facts.fingerprint()
         # Unknown historical dates stay omitted. Changes from a recorded baseline
@@ -612,6 +639,8 @@ def finalize(root, site, today=None):
             lastmod = today
         state['pages'][path] = {'fingerprint': fingerprint, 'lastmod': lastmod, 'title': facts.title,
                                 'heading': facts.h1, 'eventPaths': internal_event_paths(facts.links)}
+        # Excluded calendars keep their history so a later show can reuse the URL.
+        if 'noindex' in facts.robots: continue
         node = ET.SubElement(sitemap, 'url'); ET.SubElement(node, 'loc').text = ORIGIN + path
         if lastmod: ET.SubElement(node, 'lastmod').text = lastmod; dated += 1
     ET.indent(sitemap)
@@ -658,7 +687,14 @@ def verify(site):
     for file in site.rglob('index.html'):
         path = '/' + file.parent.relative_to(site).as_posix().strip('./') + '/'
         if path in redirects: continue
-        for link in PageFacts(file.read_text()).links:
+        text = file.read_text(); facts = PageFacts(text)
+        directive = calendar_robots(path, text)
+        if directive is not None:
+            if facts.robots != directive:
+                raise ValueError(f'Calendar indexing policy conflicts with robots: {path}')
+            if directive == 'index,follow' and path not in urls:
+                raise ValueError(f'Missing eligible calendar sitemap entry: {path}')
+        for link in facts.links:
             parsed = urlsplit(link)
             if parsed.netloc and parsed.netloc != 'kingdomcircuit.com': continue
             if parsed.path in redirects: raise ValueError(f'Internal link still uses an alias: {file} -> {link}')

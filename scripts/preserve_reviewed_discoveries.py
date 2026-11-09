@@ -51,6 +51,19 @@ def apply(root: Path, events: list, supplemental: list, today=None):
             continue
         restored = deepcopy(approved)
         restored["id"] = "manual:" + approved["id"]
+        # Seed facts remain authoritative, but an earlier curation/continuity
+        # pass may have attached reviewed identities that the seed predates.
+        # Keep that explicit history when replacing the feed record.
+        for field in ("legacyEventPaths", "mergedFromIds"):
+            values = [value for event in [approved, *existing]
+                      for value in event.get(field, [])]
+            if values:
+                restored[field] = list(dict.fromkeys(values))
+        if not restored.get("legacyEventNotice"):
+            notice = next((e["legacyEventNotice"] for e in existing
+                           if e.get("legacyEventNotice")), None)
+            if notice:
+                restored["legacyEventNotice"] = notice
         ages = [e["firstSeen"] for e in existing + [approved] if e.get("firstSeen")]
         if ages:
             restored["firstSeen"] = min(ages)

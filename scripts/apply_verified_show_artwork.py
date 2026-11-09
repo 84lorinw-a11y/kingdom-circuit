@@ -31,6 +31,8 @@ PROVIDER_ALIASES = {
     "official:540ae4cdd11793a36815": "bandsintown:1040595947",
     "official:b240438b7b7f8a82189d": "bandsintown:1040597655",
     "official:d890394094e7c9393937": "bandsintown:1040596451",
+    # SYL's artist-calendar entry is the reviewed UNITY Orlando performance.
+    "bandsintown:109044233": "bandsintown:109072940",
 }
 # These already-published calendar records have no separate artwork pin.
 # Their exact duplicate calendar links name the same Bandsintown event IDs.
@@ -100,10 +102,17 @@ def reconcile_provider_duplicates(feeds, history=()):
                 and performers == {'hulvey'}
                 and wanted_performers == {'hulvey', "torey d'shaun"}
             )
+            # The organizer's exact Nov 14 UNITY listing confirms this partial
+            # SYL calendar bill; retain the full reviewed lineup and flyer.
+            unity_partial_bill = (
+                alias == 'bandsintown:109044233'
+                and performers == {'syl noiz'}
+                and wanted_performers == {'issac mansfield', 'giovani', 'syl noiz'}
+            )
             same = (row.get('startDate') == wanted.get('startDate') == verified['startDate']
                     and all(norm(row.get(k)) == norm(wanted.get(k)) and norm(row.get(k))
                             for k in ('venue', 'city', 'state'))
-                    and (performers == wanted_performers or manual_bill or liberty_partial_bill or
+                    and (performers == wanted_performers or manual_bill or liberty_partial_bill or unity_partial_bill or
                          (glo_alias and performers == {'miles minnick'} and performers < wanted_performers))
                     and bool(wanted.get('artists'))
                     and (not row.get('startTime') or not wanted.get('startTime')

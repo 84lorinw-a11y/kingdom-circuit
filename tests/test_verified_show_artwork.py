@@ -11,6 +11,64 @@ import apply_verified_show_artwork as artwork
 
 
 class VerifiedShowArtworkTests(unittest.TestCase):
+    def unity_orlando_records(self):
+        canonical = dict(id='bandsintown:109072940', title='UNITY POP-UP TOUR',
+                         startDate='2026-11-14', startTime='11:00',
+                         venue='Grace Bible Church of Central Florida',
+                         address='801 Dorscher Rd', city='Orlando', state='FL',
+                         artists=['Issac Mansfield', 'GIOVANI', 'SYL noiZ'],
+                         status='scheduled', timezone='America/New_York',
+                         firstSeen='2026-10-25',
+                         ticketUrl='https://www.eventbrite.com/e/unity-pop-up-tour-orlando-tickets-2003836750663',
+                         sources=[{'name': 'Reviewed organizer listing'}])
+        artwork.patch_event(canonical)
+        incoming = dict(canonical, id='bandsintown:109044233',
+                        title='SYL noiZ at Grace Bible Church of Central Florida',
+                        artists=['SYL noiZ'], firstSeen='2026-11-09',
+                        image='assets/artists/syl-noiz-official-portrait-nov9.jpg',
+                        sources=[{'name': 'SYL noiZ artist calendar'}])
+        return canonical, incoming
+
+    def test_unity_partial_provider_bill_preserves_reviewed_identity_flyer_and_url(self):
+        from build_seo_site import event_path, merge_events
+        canonical, incoming = self.unity_orlando_records()
+        alias_path, canonical_path = event_path(incoming), event_path(canonical)
+        unrelated = dict(incoming, id='unreviewed-evening-performance', startTime='19:00')
+        feeds = {'events.json': [],
+                 'supplemental-events.json': [incoming, copy.deepcopy(canonical), unrelated]}
+        # The public builder otherwise selects the earlier provider identity and
+        # absorbs only artists, which loses the required official artwork pin.
+        self.assertNotIn(canonical['id'], {r['id'] for r in merge_events(*feeds.values())})
+        self.assertEqual(1, artwork.reconcile_provider_duplicates(feeds))
+        merged = merge_events(*feeds.values())
+        self.assertEqual([canonical['id'], unrelated['id']], [r['id'] for r in merged])
+        kept = merged[0]
+        for key in ('title', 'startDate', 'startTime', 'venue', 'address', 'city',
+                    'state', 'artists', 'timezone', 'firstSeen', 'ticketUrl',
+                    'image', 'imageType', 'advertisedBilling'):
+            self.assertEqual(canonical[key], kept[key], key)
+        self.assertEqual(canonical_path, event_path(kept))
+        self.assertIn(alias_path, kept['legacyEventPaths'])
+        self.assertIn('bandsintown:109044233', kept['mergedFromIds'])
+        self.assertIn({'name': 'SYL noiZ artist calendar'}, kept['sources'])
+        self.assertEqual(unrelated, feeds['supplemental-events.json'][1])
+        once = copy.deepcopy(feeds)
+        self.assertEqual(0, artwork.reconcile_provider_duplicates(feeds))
+        self.assertEqual(once, feeds)
+
+    def test_unity_partial_bill_alias_rejects_changed_performance_or_unreviewed_artist(self):
+        canonical, incoming = self.unity_orlando_records()
+        for change in ({'startDate': '2026-11-15'}, {'startTime': '19:00'},
+                       {'venue': 'Another venue'}, {'city': 'Kissimmee'},
+                       {'state': 'GA'}, {'artists': ['Another artist']}):
+            with self.subTest(change=change):
+                feeds = {'primary': [dict(incoming, **change)],
+                         'reviewed': [copy.deepcopy(canonical)]}
+                before = copy.deepcopy(feeds)
+                with self.assertRaisesRegex(ValueError, 'identity conflict'):
+                    artwork.reconcile_provider_duplicates(feeds)
+                self.assertEqual(before, feeds)
+
     def test_daniel_launch_title_is_corrected_without_overwriting_a_later_venue(self):
         old = dict(id='bandsintown:109121424', startDate='2026-11-19',
                    venue="Until It Doesn't Launch Event - Montreal, New Speak")

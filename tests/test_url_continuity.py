@@ -5,6 +5,7 @@ import sys
 import tempfile
 import unittest
 from unittest.mock import patch
+import xml.etree.ElementTree as ET
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import url_continuity as uc
@@ -500,11 +501,122 @@ class URLContinuityTests(unittest.TestCase):
         state = uc.load(self.root / uc.WORK_FILE, {})
         self.assertEqual([self.path], state['pages'][calendar]['eventPaths'])
         self.assertEqual(self.path, state['events'][self.event['id']]['path'])
-        self.assertIn(uc.ORIGIN + calendar, (self.site / 'sitemap.xml').read_text())
+        self.assertEqual('noindex,follow', uc.PageFacts(text).robots)
+        self.assertNotIn(uc.ORIGIN + calendar, (self.site / 'sitemap.xml').read_text())
         self.assertIn(uc.ORIGIN + self.path, (self.site / 'sitemap.xml').read_text())
         uc.persist(self.root, self.root / uc.WORK_FILE)
         uc.finalize(self.root, self.site)
         self.assertEqual(text, uc.target_file(self.site, calendar).read_text())
+        uc.verify(self.site)
+
+    def test_empty_city_rollover_retains_historical_links_without_sitemap_entry(self):
+        calendar = '/shows/berkeley-california/'
+        self.state['pages'][calendar] = {
+            'title': 'Berkeley shows', 'eventPaths': [self.path]}
+        self.write_inputs(primary=[])
+        uc.prepare(self.root)
+        uc.finalize(self.root, self.site)
+        text = uc.target_file(self.site, calendar).read_text()
+        self.assertIn('No upcoming shows are currently confirmed', text)
+        self.assertIn(f'href="{self.path}"', text)
+        self.assertEqual(uc.ORIGIN + calendar, uc.PageFacts(text).canonical)
+        self.assertEqual('noindex,follow', uc.PageFacts(text).robots)
+        self.assertNotIn(uc.ORIGIN + calendar, (self.site / 'sitemap.xml').read_text())
+        self.assertEqual([self.path], uc.load(self.root / uc.WORK_FILE, {})['pages'][calendar]['eventPaths'])
+        uc.persist(self.root, self.root / uc.WORK_FILE)
+        uc.finalize(self.root, self.site)
+        self.assertEqual(text, uc.target_file(self.site, calendar).read_text())
+        uc.verify(self.site)
+
+    def test_existing_empty_calendars_are_corrected_on_repeat_finalization(self):
+        calendars = ['/artists/miles-minnick/california/', '/shows/berkeley-california/']
+        for calendar in calendars:
+            self.page(calendar, f'No upcoming shows. <a href="{self.path}">Earlier show</a>')
+        uc.prepare(self.root)
+        uc.finalize(self.root, self.site)
+        expected = {}
+        for calendar in calendars:
+            text = uc.target_file(self.site, calendar).read_text()
+            self.assertEqual('noindex,follow', uc.PageFacts(text).robots)
+            self.assertIn('Earlier show', text)
+            expected[calendar] = text
+            uc.target_file(self.site, calendar).write_text(text.replace('noindex,follow', 'index,follow'))
+        uc.finalize(self.root, self.site)
+        for calendar in calendars:
+            self.assertEqual(expected[calendar], uc.target_file(self.site, calendar).read_text())
+            self.assertNotIn(uc.ORIGIN + calendar, (self.site / 'sitemap.xml').read_text())
+
+    def test_returning_upcoming_show_reindexes_same_retained_calendar_urls(self):
+        calendars = ['/artists/miles-minnick/california/', '/shows/berkeley-california/']
+        card = f'<article data-event-card data-date="2026-12-17"><a href="{self.path}">New verified show</a></article>'
+        for calendar in calendars:
+            self.state['pages'][calendar] = {
+                'title': 'Previously empty calendar', 'eventPaths': [],
+                'fingerprint': 'previous-empty-calendar', 'lastmod': '2026-11-08'}
+            page = self.page(calendar, card)
+            page.write_text(page.read_text().replace('index,follow', 'noindex,follow'))
+        self.write_inputs()
+        uc.prepare(self.root)
+        uc.finalize(self.root, self.site)
+        for calendar in calendars:
+            text = uc.target_file(self.site, calendar).read_text()
+            self.assertIn(card, text)
+            self.assertEqual('index,follow', uc.PageFacts(text).robots)
+            self.assertEqual(uc.ORIGIN + calendar, uc.PageFacts(text).canonical)
+            self.assertIn(uc.ORIGIN + calendar, (self.site / 'sitemap.xml').read_text())
+        uc.verify(self.site)
+
+    def test_final_gate_rejects_reenabled_empty_calendar_outside_sitemap(self):
+        calendar = '/shows/berkeley-california/'
+        page = self.page(calendar, 'No upcoming shows')
+        page.write_text(page.read_text().replace('index,follow', 'noindex,follow'))
+        uc.prepare(self.root)
+        uc.finalize(self.root, self.site)
+        page.write_text(page.read_text().replace('noindex,follow', 'index,follow'))
+        with self.assertRaisesRegex(ValueError, 'Calendar indexing policy.*berkeley-california'):
+            uc.verify(self.site)
+
+    def test_final_gate_rejects_excluded_populated_calendar_outside_sitemap(self):
+        calendar = '/artists/miles-minnick/california/'
+        page = self.page(calendar, f'<article data-event-card><a href="{self.path}">Upcoming show</a></article>')
+        uc.prepare(self.root)
+        uc.finalize(self.root, self.site)
+        page.write_text(page.read_text().replace('index,follow', 'noindex,follow'))
+        sitemap = ET.parse(self.site / 'sitemap.xml')
+        for node in list(sitemap.getroot()):
+            if node.find('s:loc', uc.NS).text == uc.ORIGIN + calendar:
+                sitemap.getroot().remove(node)
+        sitemap.write(self.site / 'sitemap.xml')
+        with self.assertRaisesRegex(ValueError, 'Calendar indexing policy.*miles-minnick/california'):
+            uc.verify(self.site)
+
+    def test_final_gate_rejects_missing_populated_calendar_sitemap_entry(self):
+        calendar = '/shows/berkeley-california/'
+        self.page(calendar, f'<article data-event-card><a href="{self.path}">Upcoming show</a></article>')
+        uc.prepare(self.root)
+        uc.finalize(self.root, self.site)
+        sitemap = ET.parse(self.site / 'sitemap.xml')
+        for node in list(sitemap.getroot()):
+            if node.find('s:loc', uc.NS).text == uc.ORIGIN + calendar:
+                sitemap.getroot().remove(node)
+        sitemap.write(self.site / 'sitemap.xml')
+        with self.assertRaisesRegex(ValueError, 'Missing eligible calendar.*berkeley-california'):
+            uc.verify(self.site)
+
+    def test_calendar_policy_preserves_archive_profile_state_and_reviewed_noindex(self):
+        preserved = ['/artists/miles-minnick/', '/shows/california/', '/shows/october-2026/', self.path]
+        for path in preserved:
+            self.page(path, 'Retained history')
+        review = '/event/location-review/'
+        review_page = uc.target_file(self.site, review)
+        review_page.parent.mkdir(parents=True)
+        review_page.write_text(uc.retained_page(review, 'Location review', 'Location unconfirmed', index=False))
+        before = {path: uc.target_file(self.site, path).read_text() for path in [*preserved, review]}
+        uc.prepare(self.root)
+        uc.finalize(self.root, self.site)
+        for path, text in before.items():
+            self.assertEqual(text, uc.target_file(self.site, path).read_text())
+            self.assertEqual(path != review, uc.ORIGIN + path in (self.site / 'sitemap.xml').read_text())
         uc.verify(self.site)
 
     def test_malformed_same_origin_event_link_still_fails_validation(self):
