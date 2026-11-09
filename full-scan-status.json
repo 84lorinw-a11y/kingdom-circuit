@@ -1,32 +1,32 @@
 {
-  "generatedAt": "2026-11-09T15:42:25Z",
-  "artistsChecked": 417,
+  "generatedAt": "2026-11-09T22:06:43Z",
+  "artistsChecked": 418,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
   "festivalCandidates": 1,
   "bandsintown": {
     "discoveryMode": "structured_rest",
     "status": "ok",
-    "artistsAttempted": 417,
-    "resolved": 255,
-    "rawUpcomingUSRows": 68,
+    "artistsAttempted": 418,
+    "resolved": 256,
+    "rawUpcomingUSRows": 72,
     "rawUpcomingCARows": 4,
-    "rawUpcomingRows": 72,
-    "newEventsPublished": 11,
+    "rawUpcomingRows": 76,
+    "newEventsPublished": 13,
     "festivalCandidatesHeld": 2,
     "requestErrors": 0
   },
   "songkick": {
-    "artistsAttempted": 417,
+    "artistsAttempted": 418,
     "resolved": 0,
-    "blockedByRobots": 417,
+    "blockedByRobots": 418,
     "eventsFound": 0
   },
   "sourceStatusCounts": {
-    "delegated_to_structured_rest": 417,
-    "blocked_by_robots": 421,
-    "no_events": 579,
-    "failed": 7
+    "delegated_to_structured_rest": 418,
+    "blocked_by_robots": 422,
+    "no_events": 582,
+    "failed": 6
   },
   "newEvents": [],
   "sourceResults": [
@@ -8228,9 +8228,8 @@
       "artist": "Lady Cam",
       "source": "official website",
       "url": "http://www.iloveladycam.com/",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve http://www.iloveladycam.com/: HTTP Error 429: Too Many Requests"
+      "status": "no_events",
+      "eventsFound": 0
     },
     {
       "artist": "Lady Cam",
@@ -9168,6 +9167,32 @@
       "artist": "G!nG",
       "source": "Spotify profile",
       "url": "https://open.spotify.com/artist/6PbK7lHIBspmVr7n9KoHFC",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "SYL noiZ",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "SYL noiZ",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "SYL noiZ",
+      "source": "official website",
+      "url": "https://www.sylnoiz.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "SYL noiZ",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/2OmdAhy2xwZkAyFEQPe7fq",
       "status": "no_events",
       "eventsFound": 0
     }

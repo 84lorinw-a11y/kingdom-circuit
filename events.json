@@ -1586,7 +1586,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-11-09T15:25:41Z",
+    "lastVerified": "2026-11-09T21:48:00Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "center",
@@ -2469,7 +2469,7 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-11-09T15:25:41Z",
+    "lastVerified": "2026-11-09T21:48:00Z",
     "confidence": "high",
     "imageType": "fallback",
     "imagePosition": "center",
@@ -2522,7 +2522,7 @@
         "priority": 120
       }
     ],
-    "lastVerified": "2026-11-09T15:25:41Z",
+    "lastVerified": "2026-11-09T21:48:00Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2650,7 +2650,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-11-09T15:25:41Z",
+    "lastVerified": "2026-11-09T21:48:00Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 0%",
@@ -3658,7 +3658,7 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-11-09T15:25:41Z",
+    "lastVerified": "2026-11-09T21:48:00Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -3705,7 +3705,7 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-11-09T15:25:41Z",
+    "lastVerified": "2026-11-09T21:48:00Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -3827,7 +3827,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-11-09T15:25:41Z",
+    "lastVerified": "2026-11-09T21:48:00Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 0%",
@@ -4017,10 +4017,10 @@
         "url": "https://www.cjemulous.com/event-details/zion-ultra-lounge-w-miles-minnick-cj-emulous",
         "type": "manual_verified",
         "authority": "artist_calendar",
-        "priority": 112
+        "priority": 100
       }
     ],
-    "lastVerified": "2026-11-09T15:25:41Z",
+    "lastVerified": "2026-11-09T21:48:00Z",
     "confidence": "high",
     "endDate": "2026-12-05",
     "imageType": "event_artwork",
@@ -4116,7 +4116,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-11-09T15:25:41Z",
+    "lastVerified": "2026-11-09T21:48:00Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 0%",
@@ -4157,7 +4157,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-11-09T15:25:41Z",
+    "lastVerified": "2026-11-09T21:48:00Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 0%",
@@ -4398,7 +4398,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-11-09T15:25:41Z",
+    "lastVerified": "2026-11-09T21:48:00Z",
     "confidence": "high",
     "endDate": "2026-12-17",
     "imageType": "event_artwork",
@@ -4465,7 +4465,7 @@
         "priority": 74
       }
     ],
-    "lastVerified": "2026-11-09T15:25:41Z",
+    "lastVerified": "2026-11-09T21:48:00Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "center",
@@ -4529,7 +4529,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-11-09T15:25:41Z",
+    "lastVerified": "2026-11-09T21:48:00Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -5103,7 +5103,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-11-09T15:25:41Z",
+    "lastVerified": "2026-11-09T21:48:00Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "center",
@@ -5767,6 +5767,52 @@
     "legacyEventNotice": "This retreat booking is a private event and is not open to the public."
   },
   {
+    "id": "ticketmaster:G5eVZ_pLsqK3P",
+    "title": "Blameless: The Tour with Jackie Hill Perry",
+    "startDate": "2027-02-18",
+    "startTime": "19:00",
+    "timezone": "America/New_York",
+    "venue": "The Fillmore Charlotte",
+    "address": "820 Hamilton Street",
+    "city": "Charlotte",
+    "state": "NC",
+    "country": "US",
+    "artists": [
+      "Jackie Hill Perry"
+    ],
+    "headliner": "Jackie Hill Perry",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://stillblameless.com/tour",
+    "officialUrl": "https://stillblameless.com/tour",
+    "image": "assets/events/jackie-hill-perry-blameless-tour-2027.jpg",
+    "price": "",
+    "sourceName": "Official artist tour announcement and venue listings",
+    "sources": [
+      {
+        "name": "Official artist tour announcement and venue listings",
+        "url": "https://stillblameless.com/tour",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "Ticketmaster",
+        "url": "https://www.ticketmaster.com/blameless-the-tour-with-jackie-hill-charlotte-north-carolina-02-18-2027/event/2D006567F17534A5",
+        "type": "ticketmaster",
+        "authority": "venue_ticket",
+        "priority": 94
+      }
+    ],
+    "lastVerified": "2026-11-09T21:48:00Z",
+    "confidence": "high",
+    "endDate": "2027-02-18",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-11-09"
+  },
+  {
     "id": "bandsintown:1040597655",
     "title": "1K Phew at TBD",
     "startDate": "2027-02-20",
@@ -5832,6 +5878,91 @@
     "publicDescription": "Ignition is a Christian student conference for grades 7–12. Student admission includes meals, a night market and snacks. This listing tracks 1K Phew’s appearance during the conference.",
     "eventInstagram": "https://www.instagram.com/ignitionstudents/",
     "organizerInstagram": "https://www.instagram.com/ignitionstudents/"
+  },
+  {
+    "id": "ticketmaster:k7vGF_pxExPtR",
+    "title": "Blameless: The Tour with Jackie Hill Perry",
+    "startDate": "2027-02-24",
+    "startTime": "18:00",
+    "timezone": "America/New_York",
+    "venue": "Irving Plaza",
+    "address": "17 Irving Place",
+    "city": "New York",
+    "state": "NY",
+    "country": "US",
+    "artists": [
+      "Jackie Hill Perry"
+    ],
+    "headliner": "Jackie Hill Perry",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://stillblameless.com/tour",
+    "officialUrl": "https://stillblameless.com/tour",
+    "image": "assets/events/jackie-hill-perry-blameless-tour-2027.jpg",
+    "price": "",
+    "sourceName": "Official artist tour announcement and venue listings",
+    "sources": [
+      {
+        "name": "Official artist tour announcement and venue listings",
+        "url": "https://stillblameless.com/tour",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
+      {
+        "name": "Ticketmaster",
+        "url": "https://www.ticketmaster.com/blameless-the-tour-with-jackie-hill-new-york-new-york-02-24-2027/event/00006568A78A5A6F",
+        "type": "ticketmaster",
+        "authority": "venue_ticket",
+        "priority": 94
+      }
+    ],
+    "lastVerified": "2026-11-09T21:48:00Z",
+    "confidence": "high",
+    "endDate": "2027-02-24",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-11-09"
+  },
+  {
+    "id": "ticketmaster:1kAOvP_oGAG4-0T",
+    "title": "Blameless: The Tour with Jackie Hill Perry",
+    "startDate": "2027-02-28",
+    "startTime": "20:00",
+    "timezone": "America/New_York",
+    "venue": "Bogart's",
+    "address": "2621 Short Vine Street",
+    "city": "Cincinnati",
+    "state": "OH",
+    "country": "US",
+    "artists": [
+      "Jackie Hill Perry"
+    ],
+    "headliner": "Jackie Hill Perry",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.ticketmaster.com/blameless-the-tour-with-jackie-hill-cincinnati-ohio-02-28-2027/event/160065651C56193F",
+    "officialUrl": "https://www.ticketmaster.com/blameless-the-tour-with-jackie-hill-cincinnati-ohio-02-28-2027/event/160065651C56193F",
+    "image": "assets/events/jackie-hill-perry-blameless-tour-2027.jpg",
+    "price": "",
+    "sourceName": "Ticketmaster",
+    "sources": [
+      {
+        "name": "Ticketmaster",
+        "url": "https://www.ticketmaster.com/blameless-the-tour-with-jackie-hill-cincinnati-ohio-02-28-2027/event/160065651C56193F",
+        "type": "ticketmaster",
+        "authority": "venue_ticket",
+        "priority": 94
+      }
+    ],
+    "lastVerified": "2026-11-09T21:48:00Z",
+    "confidence": "high",
+    "endDate": "2027-02-28",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-11-09"
   },
   {
     "id": "bandsintown:1040596451",
@@ -6020,7 +6151,7 @@
         "type": "retained_reference"
       }
     ],
-    "lastVerified": "2026-11-09T15:25:41Z",
+    "lastVerified": "2026-11-09T21:48:00Z",
     "confidence": "high",
     "endDate": "2027-05-01",
     "endTime": "22:00",
