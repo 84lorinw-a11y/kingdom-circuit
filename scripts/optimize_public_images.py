@@ -51,6 +51,9 @@ SOURCE_MAX_WIDTHS = {
     "25c0e50bb8708408b0ba35249338609a65c26200e4fe446dded34501a5000e78": 960,  # E5 Affair
     "9671a7f695ed50ee7aaa68e7dac12cac76ea75d7b7db64b9b8de6f34914c1133": 960,  # Saint Rockstar
     "0206f326d02fee2d2ea16de4b207b707774cd8e0dd174f8378d88bfc43e9fa40": 960,  # Xtreme Winter official lineup
+    "67c2360768eaa5ea04a439632bbfa73861e3dc795768cb21c401e12904f6aa84": 960,  # Friendsgiving official flyer
+    "0d5706db3fca23891f495df34337f9fbc54a5ea60e49933795b615dcbc97695c": 960,  # Archived Rural Music Festival flyer
+    "f328df06cc8face88347695ff41defa9eb6bc0dc03479a3bef9433148533232b": 960,  # Archived Teen Club Kickoff flyer
 }
 SOURCE_QUALITIES = {
     "bfe0fd493bc4c09990a335251bfac01cfeff676e56a22db17c654411dc5bf40e": 75,

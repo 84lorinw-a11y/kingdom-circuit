@@ -25,6 +25,7 @@ class PortraitResponsiveVariantTests(unittest.TestCase):
             ('assets/events/e5-affair-memphis-2026-11-28-instagram.jpg', [320, 640, 960], 'event-artwork', 81),
             ('assets/events/saint-rockstar-centerville-2026-11-08-artist.jpg', [320, 640, 960], 'artist-photo', 81),
             ('assets/events/xtreme-winter-2026-official-lineup.jpg', [320, 640, 960], 'event-artwork', 81),
+            ('assets/events/friendsgiving-stellar-thomasville-2026-11-28-instagram.jpg', [320, 640, 960], 'event-artwork', 81),
             ('assets/events/kb-strength-to-stand-2026-2027-official-showcard.jpg', [320, 640, 960, 1280], 'event-artwork', 81),
             ('assets/artists/caleb-gordon-primary.jpg', [320, 640, 960, 1280], 'artist-photo', 81),
             ('assets/artists/1k-phew-owner-oct13.png', [320, 639], 'artist-photo', 95),
