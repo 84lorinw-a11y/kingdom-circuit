@@ -1,10 +1,10 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-11-07T17:03:21Z",
-  "lastSuccessfulUpdate": "2026-11-07T17:03:21Z",
-  "eventsPublished": 176,
-  "candidatesCollected": 343,
+  "lastAttempt": "2026-11-09T15:25:41Z",
+  "lastSuccessfulUpdate": "2026-11-09T15:25:41Z",
+  "eventsPublished": 185,
+  "candidatesCollected": 351,
   "artistsConfigured": 417,
   "artistsByPriority": {
     "priority1": 91,
@@ -15,14 +15,26 @@
   "socialSearchArtistsEnabled": 372,
   "freeTextAliasesProtected": 281,
   "artistsMatchedOnTicketmaster": 61,
-  "officialEventsFound": 36,
-  "ticketmasterEventsFound": 11,
+  "officialEventsFound": 35,
+  "ticketmasterEventsFound": 7,
   "instagramArtistsConfigured": 372,
   "instagramQueriesRun": 374,
   "instagramQueriesAttempted": 372,
-  "instagramResultsFound": 0,
+  "instagramResultsFound": 1,
   "instagramEventsFound": 0,
   "instagramCandidates": [
+    {
+      "url": "https://www.instagram.com/p/DIVzl4DgDjU/",
+      "title": "ANIKE EKINA | Music wasn’t my first love – it was my second. I didn’t ...",
+      "artists": [
+        "Anike"
+      ],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 3,
+      "reason": "live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit"
+    },
     {
       "url": "https://www.instagram.com/p/DboKM3GJM4A/",
       "title": "Official EGR 2026 schedule graphic supplied to The Kingdom Circuit and manually transcribed.",
@@ -576,7 +588,7 @@
     {
       "name": "Mike Teezy Apple Music concerts",
       "status": "ok",
-      "eventsFound": 1
+      "eventsFound": 0
     },
     {
       "name": "Parris Chariz Apple Music concerts",
@@ -624,5 +636,5 @@
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 20,
   "artistWebsiteEventsAdded": 0,
-  "artistWebsiteMergeAt": "2026-11-07T17:21:26Z"
+  "artistWebsiteMergeAt": "2026-11-09T15:42:29Z"
 }

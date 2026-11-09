@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T17:21:23Z",
+  "generatedAt": "2026-11-09T15:42:25Z",
   "artistsChecked": 417,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
@@ -9,10 +9,10 @@
     "status": "ok",
     "artistsAttempted": 417,
     "resolved": 255,
-    "rawUpcomingUSRows": 79,
+    "rawUpcomingUSRows": 68,
     "rawUpcomingCARows": 4,
-    "rawUpcomingRows": 83,
-    "newEventsPublished": 12,
+    "rawUpcomingRows": 72,
+    "newEventsPublished": 11,
     "festivalCandidatesHeld": 2,
     "requestErrors": 0
   },
@@ -25,8 +25,8 @@
   "sourceStatusCounts": {
     "delegated_to_structured_rest": 417,
     "blocked_by_robots": 421,
-    "no_events": 580,
-    "failed": 6
+    "no_events": 579,
+    "failed": 7
   },
   "newEvents": [],
   "sourceResults": [
@@ -8228,8 +8228,9 @@
       "artist": "Lady Cam",
       "source": "official website",
       "url": "http://www.iloveladycam.com/",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve http://www.iloveladycam.com/: HTTP Error 429: Too Many Requests"
     },
     {
       "artist": "Lady Cam",

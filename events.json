@@ -1576,7 +1576,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-11-07T17:03:21Z",
+    "lastVerified": "2026-11-09T15:25:41Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "center",
@@ -2459,7 +2459,7 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-11-07T17:03:21Z",
+    "lastVerified": "2026-11-09T15:25:41Z",
     "confidence": "high",
     "imageType": "fallback",
     "imagePosition": "center",
@@ -2512,7 +2512,7 @@
         "priority": 120
       }
     ],
-    "lastVerified": "2026-11-07T17:03:21Z",
+    "lastVerified": "2026-11-09T15:25:41Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2640,7 +2640,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-11-07T17:03:21Z",
+    "lastVerified": "2026-11-09T15:25:41Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 0%",
@@ -2850,16 +2850,11 @@
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-11-03T18:56:47Z",
-    "locationUnconfirmed": false,
-    "ticketUrlVerified": false,
-    "registrationUrlVerified": false,
-    "publicDescription": "1K Phew performs live with DJ Trendsetter Sense at Cars & Christ Dallas, a free, family-friendly community event with show cars, music, ministry, baptisms and food trucks. Project Pat and Chosen Journey Show are also advertised to appear. The event runs 5–9 PM Central; individual set times and doors have not been announced. Optional donations are available on the official event page.",
-    "scheduleNote": "Event window: 5–9 PM Central. Individual set times and doors have not been announced.",
+    "endDate": "2026-11-21",
     "postalCode": "75119",
     "endTime": "21:00",
     "startDateTime": "2026-11-21T17:00:00-06:00",
     "endDateTime": "2026-11-21T21:00:00-06:00",
-    "endDate": "2026-11-21",
     "advertisedBilling": [
       "1K Phew",
       "DJ Trendsetter Sense"
@@ -2870,11 +2865,117 @@
     ],
     "lineupExplicit": true,
     "musicConfirmed": true,
+    "ticketUrlVerified": false,
+    "registrationUrlVerified": false,
     "organizer": "Cars & Christ",
     "organizerUrl": "https://www.zeffy.com/en-US/organizations/cars-and-christ",
+    "publicDescription": "1K Phew performs live with DJ Trendsetter Sense at Cars & Christ Dallas, a free, family-friendly community event with show cars, music, ministry, baptisms and food trucks. Project Pat and Chosen Journey Show are also advertised to appear. The event runs 5–9 PM Central; individual set times and doors have not been announced. Optional donations are available on the official event page.",
+    "scheduleNote": "Event window: 5–9 PM Central. Individual set times and doors have not been announced.",
     "imageOverride": true,
     "imageSource": "Cars & Christ Dallas official 1K Phew showcard",
     "imageSourceUrl": "https://www.instagram.com/p/Dfc4dnzi6DA/",
+    "locationUnconfirmed": false,
+    "authority": "promoter",
+    "auditVerified": "2026-11-07"
+  },
+  {
+    "id": "manual:official:023c040d4ea33e120949",
+    "title": "Cars & Christ Dallas",
+    "startDate": "2026-11-21",
+    "startTime": "17:00",
+    "timezone": "America/Chicago",
+    "venue": "Texas Motorplex",
+    "address": "7500 W Hwy 287",
+    "city": "Ennis",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "1K Phew",
+      "Trendsetter Sense"
+    ],
+    "headliner": "1K Phew",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas",
+    "officialUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas",
+    "image": "assets/events/1k-phew-cars-and-christ-dallas-2026-11-21-original.jpg",
+    "price": "Free",
+    "sourceName": "Cars & Christ Dallas official announcement",
+    "sources": [
+      {
+        "name": "Cars & Christ Dallas official announcement",
+        "url": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 112
+      },
+      {
+        "name": "Cars & Christ Dallas — 1K Phew announcement",
+        "url": "https://www.instagram.com/p/Dfc4dnzi6DA/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 125
+      },
+      {
+        "name": "Cars & Christ official event page",
+        "url": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 120
+      },
+      {
+        "name": "Cars & Christ Dallas — DJ announcement",
+        "url": "https://www.instagram.com/americashallbesaved/p/DfSEfmSioj1/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 120
+      },
+      {
+        "name": "Texas Motorplex official address",
+        "url": "https://www.texasmotorplex.com/contact",
+        "type": "manual_verified",
+        "authority": "venue",
+        "priority": 115
+      },
+      {
+        "name": "Cars & Christ Dallas — Project Pat appearance",
+        "url": "https://www.instagram.com/americashallbesaved/p/DfYXUtZi9Ws/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 115
+      }
+    ],
+    "lastVerified": "2026-11-07",
+    "confidence": "high",
+    "endDate": "2026-11-21",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-11-03T18:56:47Z",
+    "postalCode": "75119",
+    "endTime": "21:00",
+    "startDateTime": "2026-11-21T17:00:00-06:00",
+    "endDateTime": "2026-11-21T21:00:00-06:00",
+    "advertisedBilling": [
+      "1K Phew",
+      "DJ Trendsetter Sense"
+    ],
+    "officialBill": [
+      "1K Phew",
+      "DJ Trendsetter Sense"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "ticketUrlVerified": false,
+    "registrationUrlVerified": false,
+    "organizer": "Cars & Christ",
+    "organizerUrl": "https://www.zeffy.com/en-US/organizations/cars-and-christ",
+    "publicDescription": "1K Phew performs live with DJ Trendsetter Sense at Cars & Christ Dallas, a free, family-friendly community event with show cars, music, ministry, baptisms and food trucks. Project Pat and Chosen Journey Show are also advertised to appear. The event runs 5–9 PM Central; individual set times and doors have not been announced. Optional donations are available on the official event page.",
+    "scheduleNote": "Event window: 5–9 PM Central. Individual set times and doors have not been announced.",
+    "imageOverride": true,
+    "imageSource": "Cars & Christ Dallas official 1K Phew showcard",
+    "imageSourceUrl": "https://www.instagram.com/p/Dfc4dnzi6DA/",
+    "locationUnconfirmed": false,
     "authority": "promoter",
     "auditVerified": "2026-11-07"
   },
@@ -3547,7 +3648,7 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-11-07T17:03:21Z",
+    "lastVerified": "2026-11-09T15:25:41Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -3594,7 +3695,7 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-11-07T17:03:21Z",
+    "lastVerified": "2026-11-09T15:25:41Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -3716,7 +3817,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-11-07T17:03:21Z",
+    "lastVerified": "2026-11-09T15:25:41Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 0%",
@@ -3906,10 +4007,10 @@
         "url": "https://www.cjemulous.com/event-details/zion-ultra-lounge-w-miles-minnick-cj-emulous",
         "type": "manual_verified",
         "authority": "artist_calendar",
-        "priority": 112
+        "priority": 100
       }
     ],
-    "lastVerified": "2026-11-07T17:03:21Z",
+    "lastVerified": "2026-11-09T15:25:41Z",
     "confidence": "high",
     "endDate": "2026-12-05",
     "imageType": "event_artwork",
@@ -4005,7 +4106,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-11-07T17:03:21Z",
+    "lastVerified": "2026-11-09T15:25:41Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 0%",
@@ -4046,7 +4147,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-11-07T17:03:21Z",
+    "lastVerified": "2026-11-09T15:25:41Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 0%",
@@ -4287,7 +4388,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-11-07T17:03:21Z",
+    "lastVerified": "2026-11-09T15:25:41Z",
     "confidence": "high",
     "endDate": "2026-12-17",
     "imageType": "event_artwork",
@@ -4354,7 +4455,7 @@
         "priority": 74
       }
     ],
-    "lastVerified": "2026-11-07T17:03:21Z",
+    "lastVerified": "2026-11-09T15:25:41Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "center",
@@ -4418,7 +4519,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-11-07T17:03:21Z",
+    "lastVerified": "2026-11-09T15:25:41Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -4992,7 +5093,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-11-07T17:03:21Z",
+    "lastVerified": "2026-11-09T15:25:41Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "center",
@@ -5909,7 +6010,7 @@
         "type": "retained_reference"
       }
     ],
-    "lastVerified": "2026-11-07T17:03:21Z",
+    "lastVerified": "2026-11-09T15:25:41Z",
     "confidence": "high",
     "endDate": "2027-05-01",
     "endTime": "22:00",
