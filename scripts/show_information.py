@@ -385,7 +385,6 @@ def verify(site, ctx=None):
     report = {'version': VERSION, 'eventPages': len(ctx['pages']), 'organizerRows': 0, 'detailsPanels': 0, 'ticketOffers': 0, 'privatePages': 0, 'canadianPages': 0}
     for relative, record in ctx['pages'].items():
         data = (site / relative).read_bytes()
-        assert transform(relative, data, ctx) == data, f'Unapplied or duplicate show information: {relative}'
         doc = Document(data.decode())
         main = doc.one(lambda n: n.has('event-detail-copy'))
         facts = next(n for n in main.children if n.has('detail-list'))
@@ -394,6 +393,10 @@ def verify(site, ctx=None):
         if rows:
             value = next(n for n in rows[0].children if n.tag == 'dd')
             assert doc.text(value) == record['organizerName'], f'Organizer text mismatch: {relative}'
+            links = [n.attrs.get('href') for n in doc.nodes
+                     if n.tag == 'a' and value.start < n.start < value.end]
+            expected_links = [record['organizerUrl']] if record.get('organizerUrl') else []
+            assert links == expected_links, f'Organizer visible link mismatch: {relative}'
             report['organizerRows'] += 1
         schemas = [s for _, value in schema_blocks(doc.source) for s in event_schemas(value)]
         if record.get('private'):
@@ -405,11 +408,13 @@ def verify(site, ctx=None):
             assert schema.get('offers') == record.get('offer'), f'Offer mismatch: {relative}'
             assert schema.get('startDate') == record.get('schemaStartDate'), f'Start time mismatch: {relative}'
             assert (schema.get('organizer') or {}).get('name') == record.get('organizerName'), f'Organizer schema mismatch: {relative}'
+            assert (schema.get('organizer') or {}).get('url') == record.get('organizerUrl'), f'Organizer schema URL mismatch: {relative}'
             assert (schema.get('location', {}).get('address') or {}).get('addressLocality') == record.get('venueLocality'), f'Venue municipality mismatch: {relative}'
             if record.get('offer'):
                 buttons = [n for n in doc.nodes if n.tag == 'a' and n.has('primary-button') and doc.text(n).casefold() == 'official details']
                 assert len(buttons) == 1 and buttons[0].attrs.get('href') == record['offer']['url'], f'Visible ticket/Offer mismatch: {relative}'
                 report['ticketOffers'] += 1
+        assert transform(relative, data, ctx) == data, f'Unapplied or duplicate show information: {relative}'
         panels = [n for n in doc.nodes if n.has('kc-more-details')]
         assert len(panels) == int(bool(more_details(record))), f'More details mismatch: {relative}'
         report['detailsPanels'] += len(panels)
