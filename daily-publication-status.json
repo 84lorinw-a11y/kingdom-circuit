@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "scheduled": {},
+  "latest": {
+    "runId": "42894147368",
+    "attempt": "1",
+    "conclusion": "failure",
+    "mode": "full",
+    "day": "2026-11-10",
+    "finishedAt": "2026-11-10T20:43:19.627376+00:00",
+    "stages": {
+      "collection": "skipped",
+      "source_save": "skipped",
+      "build": "skipped",
+      "deployment": "failure",
+      "live": "skipped",
+      "freshness": "skipped"
+    },
+    "catalogDay": "",
+    "savedSourceSha": "",
+    "htmlUrl": "https://github.com/84lorinw-a11y/kingdom-circuit/actions/runs/42894147368"
+  }
+}
