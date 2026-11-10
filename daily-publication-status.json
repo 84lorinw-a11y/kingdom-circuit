@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "scheduled": {},
   "latest": {
-    "runId": "42900067636",
+    "runId": "42905561320",
     "attempt": "1",
     "conclusion": "success",
-    "mode": "full",
+    "mode": "dates",
     "day": "2026-11-10",
-    "finishedAt": "2026-11-10T21:46:25.923890+00:00",
+    "finishedAt": "2026-11-10T22:02:46.923044+00:00",
     "stages": {
-      "collection": "success",
+      "collection": "skipped",
       "source_save": "success",
       "build": "success",
       "deployment": "success",
@@ -17,7 +17,7 @@
       "freshness": "success"
     },
     "catalogDay": "2026-11-10",
-    "savedSourceSha": "da4e73c4f81d97369228d3d7aea3e1081e83259c",
-    "htmlUrl": "https://github.com/84lorinw-a11y/kingdom-circuit/actions/runs/42900067636"
+    "savedSourceSha": "8e19445095f28fbaff10e0122e293fe7d9c5390d",
+    "htmlUrl": "https://github.com/84lorinw-a11y/kingdom-circuit/actions/runs/42905561320"
   }
 }
