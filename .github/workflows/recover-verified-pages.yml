@@ -6,22 +6,21 @@ on:
 permissions:
   contents: read
   actions: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: kingdom-circuit-pages
-  cancel-in-progress: false
-  queue: max
 
 jobs:
   recover-verified-pages:
     if: github.ref == 'refs/heads/main' && github.repository == '84lorinw-a11y/kingdom-circuit'
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Refuse expired November 7 recovery
+        shell: bash
+        run: |
+          mkdir -p recovery/evidence
+          printf '{"passed":false,"retired":true,"error":"The November 7 recovery has expired. Use the current update-and-deploy workflow and its publication audits."}\n' > recovery/evidence/retired.json
+          printf '## Recovery retired\n\nThe November 7 recovery has expired. Run **Update and deploy show calendar** to build and verify a current release. No recovery artifact was published.\n' >> "$GITHUB_STEP_SUMMARY"
+          echo '::error::The November 7 recovery is retired; use the current audited publication workflow.'
+          exit 1
+
       - name: Check out recovery verifier
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
 

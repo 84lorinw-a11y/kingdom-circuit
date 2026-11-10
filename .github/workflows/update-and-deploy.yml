@@ -612,6 +612,16 @@ jobs:
           python scripts/url_continuity.py --site _site --check
           python scripts/calendar_maintenance.py --site _site --output calendar-freshness-build.json
 
+      - name: Audit final publication artifact
+        id: publication-audit
+        shell: bash
+        run: |
+          release_id="$(git rev-parse HEAD)-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          python scripts/publication_audit.py --site _site \
+            --release-id "$release_id" \
+            --report publication-audit.json \
+            --summary publication-audit.md
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -625,7 +635,17 @@ jobs:
         with:
           artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
 
+      - name: Verify exact published release
+        id: live-publication-audit
+        run: |
+          python scripts/verify_live_publication.py \
+            --base-url https://kingdomcircuit.com \
+            --manifest _site/publication-manifest.json \
+            --report live-publication-audit.json \
+            --summary live-publication-audit.md
+
       - name: Save successful publication URL history
+        if: ${{ !cancelled() && steps.deployment.conclusion == 'success' }}
         run: python scripts/publish_url_state.py
 
       - name: Verify published calendar freshness
@@ -638,6 +658,37 @@ jobs:
             if [ "$attempt" -lt 3 ]; then sleep 20; fi
           done
           exit 1
+
+      - name: Summarize publication verification
+        if: always()
+        shell: bash
+        env:
+          BUILD_AUDIT_OUTCOME: ${{ steps.publication-audit.outcome || 'not run' }}
+          LIVE_AUDIT_OUTCOME: ${{ steps.live-publication-audit.outcome || 'not run' }}
+          DEPLOYMENT_OUTCOME: ${{ steps.deployment.outcome || 'not run' }}
+        run: |
+          printf '## Publication verification\n\nBuild audit: %s\n\nPages deployment: %s\n\nLive audit: %s\n\n' \
+            "$BUILD_AUDIT_OUTCOME" "$DEPLOYMENT_OUTCOME" "$LIVE_AUDIT_OUTCOME" >> "$GITHUB_STEP_SUMMARY"
+          for report in publication-audit.md live-publication-audit.md; do
+            if [ -s "$report" ]; then
+              cat "$report" >> "$GITHUB_STEP_SUMMARY"
+              printf '\n' >> "$GITHUB_STEP_SUMMARY"
+            fi
+          done
+
+      - name: Keep publication audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: publication-audit-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            publication-audit.json
+            publication-audit.md
+            live-publication-audit.json
+            live-publication-audit.md
+            _site/publication-manifest.json
+          if-no-files-found: ignore
+          retention-days: 14
 
       - name: Keep calendar freshness verification results
         if: always()
