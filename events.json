@@ -18052,81 +18052,6 @@
     "venueUrl": "https://vfcthomasville.org/"
   },
   {
-    "title": "Worship Night — bodie & Hannah Brazney",
-    "startDate": "2026-11-09",
-    "endDate": "2026-11-09",
-    "startTime": "",
-    "endTime": "",
-    "doorsTime": "18:00",
-    "timezone": "America/Los_Angeles",
-    "venue": "Kingdom Coffee Houses",
-    "address": "1941 Newport Blvd",
-    "city": "Costa Mesa",
-    "state": "CA",
-    "postalCode": "92627",
-    "country": "US",
-    "artists": [
-      "bodie",
-      "Hannah Brazney"
-    ],
-    "advertisedBilling": [
-      "bodie",
-      "Hannah Brazney"
-    ],
-    "officialBill": [
-      "bodie",
-      "Hannah Brazney"
-    ],
-    "lineupExplicit": true,
-    "musicConfirmed": true,
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "",
-    "officialUrl": "https://www.instagram.com/p/DfgaPlJNx8i/",
-    "venueUrl": "https://www.kingdomcoffeehouses.com/",
-    "venueInstagram": "https://www.instagram.com/kingdom.coffee.houses/",
-    "organizer": "Kingdom Coffee Houses",
-    "organizerWebsite": "https://www.kingdomcoffeehouses.com/",
-    "organizerInstagram": "https://www.instagram.com/kingdom.coffee.houses/",
-    "image": "assets/events/worship-night-bodie-hannah-brazney-costa-mesa-2026-11-09-instagram.jpg",
-    "imageType": "event_artwork",
-    "imageOverride": true,
-    "imagePosition": "center",
-    "detailImageLayout": "portrait",
-    "publicDescription": "Kingdom Coffee Houses presents Worship Night with bodie and Hannah Brazney on Monday, November 9, 2026, in Costa Mesa, California. Doors open at 6 PM Pacific Time.",
-    "id": "manual:worship-night-bodie-hannah-brazney-costa-mesa-2026-11-09",
-    "authority": "official_event",
-    "confidence": "high",
-    "firstSeen": "2026-11-09",
-    "lastVerified": "2026-11-09",
-    "auditVerified": "2026-11-09",
-    "editorialBatch": "2026-11-09-three-show-add",
-    "imageSource": "Original Kingdom Coffee Houses event flyer",
-    "imageSourceUrl": "https://www.instagram.com/p/DfgaPlJNx8i/",
-    "sourceName": "Official venue and organizer announcement",
-    "sourceEventIds": [
-      "instagram:DfgaPlJNx8i"
-    ],
-    "scheduleNote": "Doors open at 6 PM PST. Performance start and end times have not been announced for this specific event.",
-    "sources": [
-      {
-        "name": "Organizer event-specific worship night announcement",
-        "url": "https://www.instagram.com/p/DfgaPlJNx8i/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 120
-      },
-      {
-        "name": "Official venue address",
-        "url": "https://www.kingdomcoffeehouses.com/",
-        "type": "manual_verified",
-        "authority": "official_event",
-        "priority": 110
-      }
-    ],
-    "notes": "Owner explicitly requested this worship night November9. Original flyer prints MondayNov9,doors6PM,bodie,HannahBrazney and1941NewportBlvd,CostaMesaCA92627. Year2026 is derived from organizer post timestamp2026-11-09T03:53:55Z(November8Pacific) plus MondayNovember9, not a printed year on flyer. Official venue corroborates address. Generic recurring NightHangs music6:30-7:30PM is not copied as event-specific start/end. No verified price,ticket,age limit or newartistprofile. User approval covers this worship music event without claiming all performers are CHH. Original artwork unedited; firstKCdiscoveryNovember9 separate from announcement."
-  },
-  {
     "id": "manual:deon-the-blitz-georgia-youth-convention-byron-2026-11-21",
     "title": "DEON — The Blitz at Georgia Youth Convention",
     "startDate": "2026-11-21",
@@ -18756,7 +18681,10 @@
     "startDateTime": "2027-02-26T19:00:00-06:00",
     "ageRestriction": "All Ages",
     "ticketUrl": "https://www.axs.com/events/1694984/blameless-the-tour-with-jackie-hill-perry-tickets?skin=thevic",
-    "organizer": "TPR.",
+    "organizer": {
+      "name": "TPR.",
+      "url": "https://tprlive.co/"
+    },
     "publicDescription": "Jackie Hill Perry brings Blameless: The Tour to The Vic Theatre in Chicago. Presale begins November 12, 2026; email-list signup is available through the official tour page. Preston Perry is also billed as a guest; his role has not been specified.",
     "sources": [
       {
@@ -19091,7 +19019,10 @@
     "startDateTime": "2027-03-06T19:00:00-05:00",
     "ageRestriction": "All Ages",
     "ticketUrl": "https://app.opendate.io/confirms/795082/web_orders/new",
-    "organizer": "TPR Presents",
+    "organizer": {
+      "name": "TPR Presents",
+      "url": "https://tprlive.co/"
+    },
     "price": "Venue-advertised $45.39–$164.90; see ticket options",
     "publicDescription": "Jackie Hill Perry brings Blameless: The Tour to The Plaza Live in Orlando. Presale begins November 12, 2026; email-list signup is available through the official tour page.",
     "sources": [
