@@ -90,10 +90,13 @@ def reconcile_provider_duplicates(feeds, history=()):
                            and bool(performers)
                            and (wanted_performers | performers)
                                <= {norm(a) for a in wanted.get('advertisedBilling', [])})
-            # This exact Ticketmaster alias reports the already-reviewed doors
-            # time and only the headliner. The Oct 6 record confirms 8 PM music
-            # and the full bill; do not discard either during deduplication.
+            # This exact Ticketmaster alias reports the reviewed doors time
+            # and a partial bill (Miles alone, then Miles + Tommy on Nov 10).
+            # Keep the full reviewed bill; never accept an unreviewed name or
+            # a partial bill that no longer contains the headliner.
             glo_alias = row.get('id') == 'ticketmaster:vv1AaZkfMGkd2fZDG'
+            glo_partial_bill = (glo_alias and 'miles minnick' in performers
+                                and performers < wanted_performers)
             # Liberty names Torey as the opener; the exact label-calendar
             # alias still lists only Hulvey. Accept that known partial bill,
             # while the date, venue, city and state checks remain mandatory.
@@ -112,8 +115,8 @@ def reconcile_provider_duplicates(feeds, history=()):
             same = (row.get('startDate') == wanted.get('startDate') == verified['startDate']
                     and all(norm(row.get(k)) == norm(wanted.get(k)) and norm(row.get(k))
                             for k in ('venue', 'city', 'state'))
-                    and (performers == wanted_performers or manual_bill or liberty_partial_bill or unity_partial_bill or
-                         (glo_alias and performers == {'miles minnick'} and performers < wanted_performers))
+                    and (performers == wanted_performers or manual_bill or liberty_partial_bill
+                         or unity_partial_bill or glo_partial_bill)
                     and bool(wanted.get('artists'))
                     and (not row.get('startTime') or not wanted.get('startTime')
                          or row['startTime'] == wanted['startTime']

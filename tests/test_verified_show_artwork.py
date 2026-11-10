@@ -205,6 +205,81 @@ class VerifiedShowArtworkTests(unittest.TestCase):
         self.assertIn('Eli Williams', incoming['advertisedBilling'])
         self.assertEqual(canonical, incoming)
 
+    def glovember_ticketmaster_records(self):
+        from apply_sep26_requested_lineups import PATCHES
+        from update_events import extract_ticketmaster_event
+        canonical = dict(copy.deepcopy(PATCHES['bandsintown:1040378722']),
+                         id='bandsintown:1040378722', city='Los Angeles', state='CA',
+                         firstSeen='2026-08-09T00:00:00Z')
+        # Nov 10 public ticket listing names Miles, Tommy and DJ Mal-Ski;
+        # only the first two are tracked profiles. Its More Info still says
+        # 7 PM doors and 8 PM show for this exact reviewed ticket identity.
+        raw = dict(id='vv1AaZkfMGkd2fZDG', name='Miles Minnick - GLOVEMBER',
+                   url=canonical['ticketUrl'],
+                   dates={'start': {'localDate': '2026-11-14', 'localTime': '19:00:00'},
+                          'timezone': 'America/Los_Angeles', 'status': {'code': 'onsale'}},
+                   classifications=[{'segment': {'name': 'Music'}}],
+                   _embedded={'venues': [{'name': 'The Belasco',
+                                          'city': {'name': 'Los Angeles'},
+                                          'state': {'stateCode': 'CA'},
+                                          'country': {'countryCode': 'US'}}],
+                              'attractions': [{'name': name} for name in
+                                              ('Miles Minnick', 'Tommy Zuko', 'DJ Mal-Ski')]})
+        incoming = extract_ticketmaster_event(
+            raw, 'Miles Minnick', {'miles minnick': 'Miles Minnick', 'tommy zuko': 'Tommy Zuko'},
+            '2026-11-10T12:00:00Z')
+        self.assertEqual(['Miles Minnick', 'Tommy Zuko'], incoming['artists'])
+        self.assertEqual('19:00', incoming['startTime'])
+        return canonical, incoming
+
+    def test_glovember_fresh_partial_ticket_bill_preserves_reviewed_release(self):
+        from build_seo_site import event_path
+        canonical, incoming = self.glovember_ticketmaster_records()
+        expected_path = event_path(canonical)
+        alias_path = event_path(incoming)
+        expected = copy.deepcopy(canonical)
+        feeds = {'events.json': [incoming], 'supplemental-events.json': [canonical]}
+        self.assertEqual(1, artwork.reconcile_provider_duplicates(feeds))
+        for field in ('id', 'title', 'startDate', 'startTime', 'startDateTime', 'doorsTime',
+                      'artists', 'advertisedBilling', 'officialBill', 'ticketUrl', 'firstSeen'):
+            self.assertEqual(expected[field], incoming[field], field)
+        self.assertEqual(expected_path, event_path(incoming))
+        self.assertIn(alias_path, incoming['legacyEventPaths'])
+        self.assertIn('ticketmaster:vv1AaZkfMGkd2fZDG', incoming['mergedFromIds'])
+        self.assertEqual(artwork.BY_ID[canonical['id']]['image'], incoming['image'])
+        once = copy.deepcopy(feeds)
+        self.assertEqual(0, artwork.reconcile_provider_duplicates(feeds))
+        self.assertEqual(once, feeds)
+
+    def test_glovember_partial_bill_still_rejects_performance_conflicts(self):
+        canonical, incoming = self.glovember_ticketmaster_records()
+        changes = ({'artists': ['Miles Minnick', 'Unreviewed artist']},
+                   {'artists': ['Tommy Zuko']}, {'artists': []},
+                   {'startDate': '2026-11-15'}, {'startTime': '18:00'},
+                   {'startTime': '21:00'}, {'venue': 'Another venue'},
+                   {'city': 'San Diego'}, {'state': 'NV'})
+        for change in changes:
+            with self.subTest(change=change):
+                feeds = {'primary': [dict(incoming, **change)],
+                         'reviewed': [copy.deepcopy(canonical)]}
+                before = copy.deepcopy(feeds)
+                with self.assertRaisesRegex(ValueError, 'identity conflict'):
+                    artwork.reconcile_provider_duplicates(feeds)
+                self.assertEqual(before, feeds)
+        feeds = {'primary': [incoming], 'reviewed': [dict(canonical, doorsTime='18:00')]}
+        with self.assertRaisesRegex(ValueError, 'identity conflict'):
+            artwork.reconcile_provider_duplicates(feeds)
+
+    def test_glovember_partial_bill_cancellation_is_preserved(self):
+        canonical, incoming = self.glovember_ticketmaster_records()
+        for status in ('cancelled', 'postponed'):
+            with self.subTest(status=status):
+                fresh = dict(incoming, status=status)
+                artwork.reconcile_provider_duplicates(
+                    {'primary': [fresh], 'reviewed': [copy.deepcopy(canonical)]})
+                self.assertEqual(status, fresh['status'])
+                self.assertEqual(canonical['artists'], fresh['artists'])
+
     def test_reviewed_festival_collapses_exact_primary_duplicate_not_other_shows(self):
         from apply_sep26_requested_lineups import PATCHES
         canonical = dict(copy.deepcopy(PATCHES['rock-the-universe-orlando-2027']),

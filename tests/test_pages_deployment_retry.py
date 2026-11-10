@@ -66,12 +66,12 @@ class PagesDeploymentRetryTests(unittest.TestCase):
     def setUp(self):
         self.steps = workflow_steps()
 
-    def simulate(self, *, first='success', retry='success', live='success', source='success', cancelled=False):
+    def simulate(self, *, first='success', retry='success', live='success', source='success', upload='success', cancelled=False):
         """Model actual conditions and continue-on-error; run the actual shell gate."""
         states = {'publication-audit': {'outcome': source, 'conclusion': source},
-                  'pages-artifact': {'outcome': 'success' if source == 'success' else 'skipped',
-                                     'conclusion': 'success' if source == 'success' else 'skipped'}}
-        failed = source != 'success'
+                  'pages-artifact': {'outcome': upload if source == 'success' else 'skipped',
+                                     'conclusion': upload if source == 'success' else 'skipped'}}
+        failed = source != 'success' or upload != 'success'
         visited = []
         plan = [('Deploy to GitHub Pages', first),
                 ('Retry accepted Pages artifact once', retry),
@@ -170,8 +170,15 @@ class PagesDeploymentRetryTests(unittest.TestCase):
         self.assertFalse(success)
         self.assertEqual(states['deployment']['outcome'], 'skipped')
         self.assertEqual(states['deployment-retry']['outcome'], 'skipped')
-        self.assertEqual(states['pages-publication']['outcome'], 'failure')
+        self.assertEqual(states['pages-publication']['outcome'], 'skipped')
         self.assertNotIn('Verify exact published release', visited)
+
+    def test_artifact_upload_failure_is_not_mislabeled_as_pages_deployment_failure(self):
+        states, visited, success = self.simulate(upload='failure')
+        self.assertFalse(success)
+        for step in ('deployment', 'deployment-retry', 'pages-publication', 'live-publication-audit'):
+            self.assertEqual(states[step]['outcome'], 'skipped')
+        self.assertNotIn('Save successful publication URL history', visited)
 
     def test_acceptance_shell_rejects_missing_skipped_or_failed_deployment(self):
         block = self.steps['Require successful Pages publication']

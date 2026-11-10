@@ -741,7 +741,7 @@ jobs:
 
       - name: Require successful Pages publication
         id: pages-publication
-        if: ${{ !cancelled() }}
+        if: ${{ !cancelled() && steps.publication-audit.outcome == 'success' && steps.pages-artifact.outcome == 'success' }}
         shell: bash
         env:
           FIRST_DEPLOYMENT_OUTCOME: ${{ steps.deployment.outcome }}
@@ -797,6 +797,19 @@ jobs:
               printf '\n' >> "$GITHUB_STEP_SUMMARY"
             fi
           done
+
+      - name: Capture limited source failure facts
+        if: ${{ failure() && steps.source-save.outcome != 'success' }}
+        run: python scripts/capture_source_failure.py --source . --output "$RUNNER_TEMP/source-failure.json"
+
+      - name: Keep limited source failure facts
+        if: ${{ failure() && steps.source-save.outcome != 'success' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-failure-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/source-failure.json
+          if-no-files-found: ignore
+          retention-days: 14
 
       - name: Keep publication audit evidence
         if: always()
