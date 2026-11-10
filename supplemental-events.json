@@ -789,44 +789,6 @@
     "trackedArtist": "808 BEEZY"
   },
   {
-    "id": "bandsintown:1040781482",
-    "title": "Ryan Ellis at The Betsy Hotel",
-    "startDate": "2026-11-13",
-    "startTime": "18:00",
-    "timezone": "",
-    "venue": "The Betsy Hotel",
-    "address": "1440 Ocean Dr",
-    "city": "Miami Beach",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Ryan Ellis"
-    ],
-    "headliner": "Ryan Ellis",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/1040781482?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/1040781482?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/ryan-ellis-press-oct20.jpg",
-    "price": "",
-    "sourceName": "Bandsintown",
-    "sources": [
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/1040781482?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "1040781482",
-    "bandsintownArtistId": "218834",
-    "bandsintownResolvedName": "Ryan Ellis",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Ryan Ellis"
-  },
-  {
     "title": "Light Up The City — Ant Lee",
     "startDate": "2026-11-13",
     "startTime": "19:00",
@@ -1164,69 +1126,61 @@
     "organizerInstagram": "https://www.instagram.com/music_calgary/"
   },
   {
-    "id": "bandsintown:109044233",
-    "title": "SYL noiZ at Grace Bible Church of Central Florida",
+    "id": "bandsintown:109072940",
+    "title": "UNITY POP-UP TOUR",
     "startDate": "2026-11-14",
     "startTime": "11:00",
-    "timezone": "",
+    "timezone": "America/New_York",
     "venue": "Grace Bible Church of Central Florida",
     "address": "801 Dorscher Rd",
     "city": "Orlando",
     "state": "FL",
     "country": "US",
     "artists": [
+      "Issac Mansfield",
+      "GIOVANI",
       "SYL noiZ"
-    ],
-    "headliner": "SYL noiZ",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/109044233?app_id=js_kingdomcircuit.com&came_from=267&custom=true&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/109044233?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/syl-noiz-official-portrait-nov9.jpg",
-    "price": "Free",
-    "sourceName": "Bandsintown",
-    "sources": [
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/109044233?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "109044233",
-    "bandsintownArtistId": "15542811",
-    "bandsintownResolvedName": "SYL noiZ",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "SYL noiZ"
-  },
-  {
-    "id": "bandsintown:109072940",
-    "title": "UNITY POP-UP TOUR",
-    "startDate": "2026-11-14",
-    "startTime": "11:00",
-    "timezone": "",
-    "venue": "UNITY POP-UP TOUR",
-    "address": "801 Dorscher Rd",
-    "city": "Orlando",
-    "state": "FL",
-    "country": "US",
-    "artists": [
-      "Issac Mansfield"
     ],
     "headliner": "Issac Mansfield",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/109072940?app_id=js_kingdomcircuit.com&came_from=267&custom=true&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "ticketUrl": "https://www.eventbrite.com/e/unity-pop-up-tour-orlando-tickets-2003836750663",
     "officialUrl": "https://www.bandsintown.com/e/109072940?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
     "image": "assets/events/issac-unity-pop-up-orlando-2026-11-14-official.webp",
-    "price": "Free",
+    "price": {
+      "amount": "0",
+      "currency": "USD",
+      "ticketType": "Free general admission",
+      "label": "Free",
+      "includesAllFeesConfirmed": true,
+      "verifiedUrl": "https://www.eventbrite.com/e/unity-pop-up-tour-orlando-tickets-2003836750663"
+    },
     "sourceName": "Bandsintown",
     "sources": [
       {
+        "name": "Issac Mansfield Bandsintown event with complete lineup and official flyer",
+        "url": "https://www.bandsintown.com/e/109072940",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 115
+      },
+      {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/109072940?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      },
+      {
+        "name": "SYL noiZ official current event page and organizer lineup review",
+        "url": "https://www.eventbrite.com/e/unity-pop-up-tour-orlando-tickets-2003836750663",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 120
+      },
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/109044233?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
         "type": "bandsintown_rest",
         "authority": "artist_calendar",
         "priority": 74
@@ -1243,7 +1197,41 @@
     "imageOverride": true,
     "imageSource": "Issac Mansfield official Bandsintown event flyer",
     "imageSourceUrl": "https://www.bandsintown.com/e/109072940",
-    "auditVerified": "2026-10-25"
+    "auditVerified": "2026-10-25",
+    "postalCode": "32818",
+    "organizer": {
+      "name": "God Did It Movement",
+      "url": "https://www.goddiditmovement.com/"
+    },
+    "ageRestriction": "Everyone welcome.",
+    "publicDescription": "God Did It Movement and partner churches present a free outdoor community day with live worship, Christian music, guest speakers and baptisms. Visitors can browse a Christian market, watch live art and find activities for children, including face painting and hair braiding. Free groceries are available for families in need; RSVP helps organizers plan supplies. The announced music lineup includes Issac Mansfield, SYL noiZ, GIOVANI, Landy and Cory BiNks.",
+    "ticketUrlVerified": true,
+    "venueUrl": "https://gbccf.org/",
+    "venueInstagram": "https://www.instagram.com/gracebiblechurchcf/",
+    "organizerInstagram": "https://www.instagram.com/goddidit.movement/",
+    "advertisedBilling": [
+      "Issac Mansfield",
+      "SYL noiZ",
+      "GIOVANI",
+      "Landy",
+      "Cory BiNks"
+    ],
+    "officialBill": [
+      "Issac Mansfield",
+      "SYL noiZ",
+      "GIOVANI",
+      "Landy",
+      "Cory BiNks"
+    ],
+    "lineupExplicit": true,
+    "notes": "Owner requested the original Bandsintown flyer and complete announced bill. Bandsintown event 109072940 names Issac Mansfield, SYL noiZ and Giovani. Giovani profile 15656198 is the same exact profile stored for curated GIOVANI. SYL noiZ remains visible unlinked billing pending separate artist verification. Preserve this existing event identity and schedule. November9: owner requested newly curatedSYLnoiZ association. Preserve existing event identity, owner-selected image and confirmed schedule. Current official source corroboratesSYLbilling; fullsource evidence in syl-noiz-add/source-events.",
+    "firstSeen": "2026-10-24T14:08:55Z",
+    "legacyEventPaths": [
+      "/event/syl-noiz-at-grace-bible-church-of-central-florida-2026-11-14-orlando-103645/"
+    ],
+    "mergedFromIds": [
+      "bandsintown:109044233"
+    ]
   },
   {
     "id": "bandsintown:1040314202",
@@ -1827,7 +1815,7 @@
     "startDate": "2026-11-19",
     "startTime": "20:00",
     "timezone": "America/Toronto",
-    "venue": "Until It Doesn't Launch Event - Montreal, New Speak",
+    "venue": "Newspeak",
     "address": "1403 Rue Ste-Élisabeth",
     "city": "Montréal",
     "state": "QC",
@@ -1841,7 +1829,7 @@
     "ticketUrl": "https://www.bandsintown.com/t/109121424?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
     "officialUrl": "https://www.bandsintown.com/e/109121424?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
     "image": "assets/events/daniel-saad-until-it-doesnt-montreal-2026-11-19.jpg",
-    "price": "",
+    "price": "CA$20 cash at the door, or free admission with proof of an iTunes album preorder",
     "sourceName": "Bandsintown",
     "sources": [
       {
@@ -1862,7 +1850,12 @@
     "imagePosition": "center",
     "imageOverride": true,
     "imageSource": "Daniel Saad official Until It Doesnt album launch flyer",
-    "imageSourceUrl": "https://www.instagram.com/p/DfYGEGrBoJ9/"
+    "imageSourceUrl": "https://www.instagram.com/p/DfYGEGrBoJ9/",
+    "detailImageLayout": "portrait",
+    "postalCode": "H2X 3C5",
+    "publicDescription": "Daniel Saad's Until It Doesn't album launch at Newspeak in Montréal runs from 8 PM Thursday, November 19, 2026, to midnight. DJ Rawad will perform a DJ set, with surprise guests. Admission is CA$20 cash at the door, or free with proof of an iTunes album preorder.",
+    "venueUrl": "https://www.newspeakmtl.com/",
+    "venueInstagram": "https://www.instagram.com/newspeakmtl/"
   },
   {
     "id": "supplemental:skema-boy-2026-11-19-los-angeles-ca",
@@ -1996,8 +1989,8 @@
     "title": "The Promised VI",
     "startDate": "2026-11-20",
     "startTime": "18:00",
-    "timezone": "",
-    "venue": "The Promised VI",
+    "timezone": "America/Boise",
+    "venue": "The Whosoevers",
     "address": "20 S Auto Dr",
     "city": "Boise",
     "state": "ID",
@@ -2008,12 +2001,26 @@
     "headliner": "Kurtis Hoppie",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108923215?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/108923215?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "ticketUrl": "https://www.tickettailor.com/events/udkevents/2425184",
+    "officialUrl": "https://www.tickettailor.com/events/udkevents/2425184",
     "image": "assets/events/the-promised-vi-2026-11-20.jpg",
-    "price": "",
+    "price": "$20 general admission; $75 VIP",
     "sourceName": "Bandsintown",
     "sources": [
+      {
+        "name": "Official UDK Events ticket listing",
+        "url": "https://www.tickettailor.com/events/udkevents/2425184",
+        "type": "manual_verified",
+        "authority": "venue_ticket",
+        "priority": 115
+      },
+      {
+        "name": "Kurtis Hoppie artist announcement",
+        "url": "https://www.instagram.com/thekurtishoppie/reel/DezCIXAgzl3/",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 115
+      },
       {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/108923215?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
@@ -2022,7 +2029,7 @@
         "priority": 74
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "bandsintownEventId": "108923215",
     "bandsintownArtistId": "15395568",
     "bandsintownResolvedName": "Kurtis Hoppie",
@@ -2033,7 +2040,37 @@
     "imageOverride": true,
     "imageSource": "Official The Promised VI event flyer",
     "imageSourceUrl": "https://www.bandsintown.com/e/108923215",
-    "auditVerified": "2026-10-23"
+    "auditVerified": "2026-10-23",
+    "endTime": "21:30",
+    "endDate": "2026-11-20",
+    "startDateTime": "2026-11-20T18:00:00-07:00",
+    "endDateTime": "2026-11-20T21:30:00-07:00",
+    "doorsTime": "17:30",
+    "postalCode": "83709",
+    "advertisedBilling": [
+      "Kurtis Hoppie",
+      "Spencer Boliou",
+      "Derek Ryan",
+      "Kaleah Rochelle"
+    ],
+    "officialBill": [
+      "Kurtis Hoppie",
+      "Spencer Boliou",
+      "Derek Ryan",
+      "Kaleah Rochelle"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "ageRestriction": "All ages",
+    "publicDescription": "The Promised VI features Kurtis Hoppie, Spencer Boliou, Derek Ryan and Kaleah Rochelle at The Whosoevers in Boise. Doors open at 5:30 PM; the all-ages show runs 6–9:30 PM.",
+    "notes": "October 23 audit: existing provider event, not a new show. Official organizer ticket page replaces the event title accidentally used as venue and confirms full lineup, doors, show time and all-ages admission. Preserve provider ID, original address and discovery date.",
+    "lastVerified": "2026-10-23T22:33:46.736976Z",
+    "organizer": {
+      "name": "Upside Down Kingdoms Events",
+      "url": "https://www.tickettailor.com/events/udkevents/2425184"
+    },
+    "venueUrl": "https://thewhosoevers.com/events/thewhosoevershq/",
+    "venueInstagram": "https://www.instagram.com/thewhosoevershq/"
   },
   {
     "id": "bandsintown:109072793",
@@ -2742,7 +2779,7 @@
     "title": "Alex Jean at The Pyrle",
     "startDate": "2026-12-01",
     "startTime": "20:00",
-    "timezone": "",
+    "timezone": "America/New_York",
     "venue": "The Pyrle",
     "address": "232 S Elm St",
     "city": "Greensboro",
@@ -2754,12 +2791,40 @@
     "headliner": "Alex Jean",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/108976155?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/108976155?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "ticketUrl": "https://www.tixr.com/groups/thepyrle/events/alex-jean-209045",
+    "officialUrl": "https://www.tixr.com/groups/thepyrle/events/alex-jean-209045",
     "image": "assets/events/alex-jean-welcome-home-tour-2026-legs-1-2.jpg",
     "price": "",
     "sourceName": "Bandsintown",
     "sources": [
+      {
+        "name": "Alex Jean official tour expansion and artwork",
+        "url": "https://www.instagram.com/p/DfHvQEVttbb/",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 120
+      },
+      {
+        "name": "Reece official Welcome Home Tour support announcement",
+        "url": "https://www.instagram.com/onlyreece/reel/DeqBvzBsbiX/",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 115
+      },
+      {
+        "name": "The Pyrle official tickets",
+        "url": "https://www.tixr.com/groups/thepyrle/events/alex-jean-209045",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
+      {
+        "name": "Alex Jean official tour calendar",
+        "url": "https://alexjeantour.com/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 115
+      },
       {
         "name": "Bandsintown",
         "url": "https://www.bandsintown.com/e/108976155?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
@@ -2779,7 +2844,33 @@
     "imageOverride": true,
     "imageSource": "Alex Jean official Welcome Home Tour 2026 legs 1 and 2 announcement",
     "imageSourceUrl": "https://www.instagram.com/p/DfHvQEVttbb/",
-    "auditVerified": "2026-10-19"
+    "auditVerified": "2026-10-19",
+    "postalCode": "27401",
+    "publicDescription": "Alex Jean brings The Welcome Home Tour to Greensboro with support from Reece. The Orlando artist blends Christian hip-hop, songwriting and guitar, with songs about faith, purpose, identity and life with Christ. He describes his mission as sharing the Gospel and encouraging both believers and people exploring faith.",
+    "parking": "The Greene Street Parking Deck at 211 S Greene St is directly beside The Pyrle. Nearby surface lots and street parking are also available.",
+    "accessibility": "The Pyrle states that every level is accessible by elevator.",
+    "entryRequirements": "Venue policy permits clear bags up to 12 × 6 × 12 inches and small non-clear purses or clutches around 5 × 8 inches. Larger bags and backpacks are prohibited; medical and childcare bags require inspection at the designated entrance. All bags may be searched. Merchandise and bars accept cards or phone payments, not cash. Smoking and vaping are prohibited indoors. Professional cameras are prohibited; phone cameras are allowed. Re-entry normally requires advance approval and a box-office hand stamp, followed by another security check.",
+    "refundPolicy": "All sales are final. The venue allows refunds when the entire performance is canceled without a replacement date.",
+    "venueUrl": "https://www.thepyrle.com/",
+    "venueInstagram": "https://www.instagram.com/thepyrle/",
+    "startDateTime": "2026-12-01T20:00:00-05:00",
+    "doorsTime": "19:00",
+    "advertisedBilling": [
+      "Alex Jean",
+      "Reece"
+    ],
+    "officialBill": [
+      "Alex Jean",
+      "Reece"
+    ],
+    "supportActs": [
+      "Reece"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "lastVerified": "2026-10-30T14:59:28.018045Z",
+    "notes": " October 19 artist announcement: Reece (@onlyreece), not Reece Lache, supports these four dates. Preserve unlinked full billing.",
+    "detailImageLayout": "portrait"
   },
   {
     "id": "manual:jesus-loves-hip-hop-dallas-2026-12-05",
@@ -3099,7 +3190,10 @@
     "bandsintownArtistId": "12839877",
     "bandsintownResolvedName": "BrvndonP",
     "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "BrvndonP"
+    "trackedArtist": "BrvndonP",
+    "postalCode": "60619",
+    "venueUrl": "https://www.greenwoodoasis.com/",
+    "venueInstagram": "https://www.instagram.com/thegreenwoodoasis/"
   },
   {
     "id": "manual:alex-jean-sony-hall-new-york-2026-12-28",
@@ -3525,44 +3619,6 @@
     "venueInstagram": "https://www.instagram.com/canneryhallnashville/",
     "organizerWebsite": "https://aegpresents.com/",
     "organizerInstagram": "https://www.instagram.com/aegpresents/"
-  },
-  {
-    "id": "bandsintown:1040675970",
-    "title": "Altar Ego at Clear Skies Meadery",
-    "startDate": "2027-01-23",
-    "startTime": "18:00",
-    "timezone": "",
-    "venue": "Clear Skies Meadery",
-    "address": "15201 Display Court",
-    "city": "Rockville",
-    "state": "MD",
-    "country": "US",
-    "artists": [
-      "Altar Ego"
-    ],
-    "headliner": "Altar Ego",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/t/1040675970?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-    "officialUrl": "https://www.bandsintown.com/e/1040675970?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/altar-ego-owner-approved-oct23.jpg",
-    "price": "",
-    "sourceName": "Bandsintown",
-    "sources": [
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/1040675970?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "1040675970",
-    "bandsintownArtistId": "3457500",
-    "bandsintownResolvedName": "Altar Ego",
-    "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Altar Ego"
   },
   {
     "id": "manual:808-beezy-bandsintown-108856562",
