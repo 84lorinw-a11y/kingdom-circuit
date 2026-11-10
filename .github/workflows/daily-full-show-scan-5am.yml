@@ -1,14 +1,16 @@
 name: Daily 5AM Full Show Scan
 
 on:
-  schedule:
-    - cron: "0 5 * * *"
-      timezone: "America/Chicago"
   workflow_dispatch:
 
 permissions:
   actions: write
   contents: read
+
+concurrency:
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
 
 jobs:
   dispatch-full-scan:

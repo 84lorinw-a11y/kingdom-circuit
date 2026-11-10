@@ -1,14 +1,15 @@
 name: Promote verified Eventbrite shows
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'config/.eventbrite-live-fix'
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
 
 jobs:
   promote:

@@ -1,16 +1,16 @@
 name: Apply approved CHH artist additions
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - scripts/apply_aug20_artist_additions.py
-      - .github/workflows/apply-aug20-artist-additions.yml
   workflow_dispatch:
 
 permissions:
   contents: write
   actions: write
+
+concurrency:
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
 
 jobs:
   apply:

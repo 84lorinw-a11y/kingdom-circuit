@@ -17,9 +17,11 @@ from apply_oct2_verified_shows import OWNER_HELD_IDS
 def today():
     return datetime.now(ZoneInfo('America/Los_Angeles')).date().isoformat()
 
-def refresh_mode(event, requested='', message=''):
+def refresh_mode(event, requested='', message='', schedule=''):
     if event == 'workflow_dispatch':
         return 'dates' if requested == 'dates' else 'full'
+    if event == 'schedule' and schedule in {'17 4 * * *', '47 4 * * *'}:
+        return 'full'
     return 'full' if event == 'push' and '[full scan]' in message else 'dates'
 
 def catalog_errors(catalog, day):
@@ -185,7 +187,7 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--mode',action='store_true');parser.add_argument('--site',type=Path);parser.add_argument('--live');parser.add_argument('--day');parser.add_argument('--output',type=Path)
     args=parser.parse_args()
     if args.mode:
-        mode=refresh_mode(os.getenv('KC_EVENT_NAME',''),os.getenv('KC_REQUESTED_MODE',''),os.getenv('KC_COMMIT_MESSAGE',''))
+        mode=refresh_mode(os.getenv('KC_EVENT_NAME',''),os.getenv('KC_REQUESTED_MODE',''),os.getenv('KC_COMMIT_MESSAGE',''),os.getenv('KC_SCHEDULE',''))
         print('discovery='+str(mode=='full').lower());print('mode='+mode)
     else:
         day=args.day or today()

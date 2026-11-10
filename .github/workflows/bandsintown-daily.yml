@@ -1,22 +1,15 @@
 name: Daily Bandsintown discovery
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - scripts/collect_bandsintown_rest.py
-      - scripts/run_bandsintown_refresh.py
-      - .github/workflows/bandsintown-daily.yml
-  schedule:
-    - cron: "55 10 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: kingdom-circuit-bandsintown
-  cancel-in-progress: true
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
 
 jobs:
   discover:

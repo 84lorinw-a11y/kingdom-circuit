@@ -1,20 +1,15 @@
 name: Remove false TRU-SERVA Las Cruces match
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/remove-tru-serva-las-cruces-false-match.yml
-  workflow_run:
-    workflows:
-      - Refresh Supplemental Events
-      - Update and deploy show calendar
-    types: [completed]
   workflow_dispatch:
 
 permissions:
   contents: write
-  actions: write
+
+concurrency:
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
 
 jobs:
   repair:
@@ -50,9 +45,3 @@ jobs:
             --message "Remove false TRU-SERVA Las Cruces listing [skip ci]" \
             --replay "python scripts/remove_false_tru_serva.py" \
             config/manual-events.json events.json supplemental-events.json data/verified-false-matches.json
-
-      - name: Refresh and deploy production
-        if: steps.repair.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh workflow run update-and-deploy.yml --ref main

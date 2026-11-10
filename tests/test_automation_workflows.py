@@ -1,33 +1,72 @@
 """Regression contracts for the recurring jobs and their shared publication path."""
 from pathlib import Path
+import re
+import shlex
 import unittest
 from scripts.replay_source_update import SOURCE_REPAIRS
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def step(text, name):
+    """Read one named step, stopping at the next step or job."""
+    matches = list(re.finditer(r'^      - name: ' + re.escape(name) + r'$', text, re.M))
+    if len(matches) != 1:
+        raise AssertionError('Expected one workflow step: ' + name)
+    body = text[matches[0].end():]
+    end = re.search(r'^(?:      - |  [\w-]+:)', body, re.M)
+    return body[:end.start()] if end else body
+
+
+def field(block, name, indentation=8):
+    match = re.search(r'^' + ' ' * indentation + re.escape(name) + r': (.+)$', block, re.M)
+    return match[1] if match else None
+
+
+def runs_in_mode(block, discovery, *, previous_failure=False):
+    """Evaluate the source steps' actual limited condition, failing on new syntax."""
+    expression = field(block, 'if')
+    if expression is None:
+        return not previous_failure
+    if expression != "steps.refresh-mode.outputs.discovery == 'true'":
+        raise AssertionError('Unsupported source-step condition: ' + expression)
+    return discovery and not previous_failure
+
+
 class AutomationWorkflowTests(unittest.TestCase):
     def workflow(self, name):
         return (ROOT / '.github/workflows' / (name + '.yml')).read_text()
 
-    def test_delayed_daily_scan_is_not_skipped_by_runner_clock(self):
-        text = self.workflow('daily-full-show-scan-5am')
-        self.assertIn('timezone: "America/Chicago"', text)
-        self.assertIn('cron: "0 5 * * *"', text)
-        self.assertNotIn('date +%H', text)
-        self.assertIn('"schedule"', text)
+    def test_scheduled_source_mode_uses_the_schedule_not_runner_clock(self):
+        main = self.workflow('update-and-deploy')
+        selection = step(main, 'Choose independent date maintenance or full discovery')
+        claim = step(main, 'Claim the daily sequence before collecting anything')
+        for block in (selection, claim):
+            self.assertEqual(field(block, 'KC_SCHEDULE', 10), '${{ github.event.schedule }}')
+            self.assertIsNone(field(block, 'if'))
+            self.assertNotRegex(block, r'date\s+.*%H')
+        self.assertIn('python scripts/calendar_maintenance.py --mode', selection)
 
     def test_source_refresh_replay_has_full_outputs_and_credentials(self):
         main = self.workflow('update-and-deploy')
-        save = main.split('- name: Save refreshed event data')[1].split('- name: Check out pinned')[0]
-        self.assertIn('event-history.json', save)
-        self.assertIn('config/permanent-state-pages.json', save)
+        save = step(main, 'Save refreshed event data')
+        outputs = shlex.split(save.split('        run: |', 1)[1].replace('\\\n', ' '))
+        for path in ('event-history.json', 'config/permanent-state-pages.json',
+                     'artist-website-events.json', 'artist-website-status.json',
+                     'config/verified-artist-websites.json', 'config/verified-artist-registry-updates.json',
+                     'config/artist-website-seed-events.json', 'eventbrite-scan-status.json',
+                     'eventbrite-scan-candidates.json', 'data/verified-false-matches.json'):
+            self.assertIn(path, outputs)
         # The expanded scan delegates to the REST collector, which also writes
         # these two reports even when it discovers no additional shows.
         self.assertIn('bandsintown-status.json', save)
         self.assertIn('bandsintown-candidates.json', save)
         self.assertIn('TICKETMASTER_API_KEY:', save)
         self.assertIn('--sync-checkout', save)
+        self.assertIn('--reuse-validated-output', outputs)
+        replays = [outputs[index + 1] for index, arg in enumerate(outputs) if arg == '--replay']
+        self.assertEqual(replays, ['python scripts/replay_source_update.py normalize',
+                                  'python -m unittest discover -s tests -p test_*.py -q'])
         website = self.workflow('artist-website-refresh').split('- name: Save discovered shows')[1]
         self.assertIn('TICKETMASTER_API_KEY:', website)
         self.assertIn('event-history.json', website)
@@ -39,8 +78,10 @@ class AutomationWorkflowTests(unittest.TestCase):
             self.assertIn('event-history.json', self.workflow(name))
         # Replays must apply the same ordered source repairs as the original run.
         repairs = main.split('- name: Apply curated catalog policy and coverage audit')[1].split('- name: Validate refreshed source before publication')[0]
-        positions = [repairs.index('python scripts/' + script) for script in SOURCE_REPAIRS]
-        self.assertEqual(positions, sorted(positions))
+        actual = re.findall(r'^\s*(?:run: )?python scripts/(.+)$', repairs, re.M)
+        # Compare the full sequence, including the deliberately repeated audit
+        # around registry sync; first-index checks miss a reversed duplicate.
+        self.assertEqual(actual[:len(SOURCE_REPAIRS)], SOURCE_REPAIRS)
 
     def test_reviewed_information_replays_before_initial_tests_and_after_repairs(self):
         main = self.workflow('update-and-deploy')
@@ -56,27 +97,31 @@ class AutomationWorkflowTests(unittest.TestCase):
         self.assertNotIn('if:', replay)
         self.assertEqual(main.count(command), 2)
 
-    def test_collector_completions_deploy_without_recursive_full_scan(self):
+    def test_only_full_mode_collects_but_both_modes_archive_validate_and_save(self):
         main = self.workflow('update-and-deploy')
-        self.assertIn('"Daily Bandsintown discovery"', main)
-        self.assertIn('"Refresh official artist website shows"', main)
-        self.assertIn('"Merge verified artist seed events"', main)
-        self.assertIn('cancel-in-progress: false', main)
-        self.assertIn('queue: max', main)
-        for name in ('Add priority artist fallback calendars', 'Collect upcoming shows', 'Run expanded all-artist source scan', 'Save refreshed event data'):
-            condition = main.split('- name: ' + name)[1].split('\n')[1]
-            self.assertIn("steps.refresh-mode.outputs.discovery == 'true'", condition)
-        self.assertIn('python scripts/calendar_maintenance.py --mode', main)
-        self.assertIn('cron: "15 0 * * *"', main)
-        self.assertIn('timezone: "America/Los_Angeles"', main)
-        self.assertIn('options: [full, dates]', main)
-        website = self.workflow('artist-website-refresh')
-        self.assertIn("github.event.workflow_run.event == 'schedule'", website)
-        self.assertIn("github.event.workflow_run.event == 'workflow_dispatch'", website)
+        discovery_steps = ('Add priority artist fallback calendars', 'Collect upcoming shows',
+                           'Run expanded all-artist source scan',
+                           'Collect official websites while preserving accepted missing bookings',
+                           'Scan Eventbrite for every tracked artist as a review queue')
+        daily_steps = ('Archive existing bookings before any source replacement',
+                       'Restore verified artist website seeds after full discovery',
+                       'Archive reconciled bookings and preserve reviewed corrections',
+                       'Validate refreshed source before publication', 'Save refreshed event data')
+        for name in discovery_steps + daily_steps:
+            block = step(main, name)
+            with self.subTest(step=name):
+                self.assertTrue(runs_in_mode(block, True))
+                self.assertEqual(runs_in_mode(block, False), name in daily_steps)
+                self.assertFalse(runs_in_mode(block, True, previous_failure=True))
+                self.assertFalse(runs_in_mode(block, False, previous_failure=True))
+        self.assertLess(main.index('- name: ' + daily_steps[0]),
+                        main.index('- name: Collect upcoming shows'))
+        self.assertLess(main.index('- name: ' + daily_steps[2]),
+                        main.index('- name: Validate refreshed source before publication'))
 
-    def test_all_active_source_writers_replay_instead_of_rebasing_generated_json(self):
+    def test_reusable_source_writers_replay_instead_of_rebasing_generated_json(self):
         names = ('archive-event-history', 'artist-website-refresh', 'bandsintown-daily',
-                 'capture-live-deploy-status', 'catalog-curation', 'ensure-verified-fall-shows',
+                 'catalog-curation', 'ensure-verified-fall-shows',
                  'eventbrite-artist-scan', 'fix-hvo-event-link', 'guard-deonte-hall-submission',
                  'guard-echo-nights-official', 'merge-verified-artist-seeds',
                  'remove-tru-serva-las-cruces-false-match', 'sep11-catalog-audit-guard', 'update-and-deploy')
@@ -112,13 +157,26 @@ class AutomationWorkflowTests(unittest.TestCase):
         self.assertNotIn('menu-toggle', script)
         self.assertNotIn('menu-drawer', script)
 
-    def test_skipped_followups_cannot_cancel_active_checks_or_replace_receipts(self):
-        for name in ('artist-website-refresh', 'live-browser-retest', 'sep11-catalog-audit-guard', 'guard-deonte-hall-submission'):
-            group = next(line for line in self.workflow(name).splitlines() if 'group:' in line)
-            self.assertIn("github.event.workflow_run.conclusion == 'success'", group)
-        receipt = self.workflow('capture-live-deploy-status')
-        self.assertIn("conclusion != 'skipped'", receipt)
-        self.assertIn("conclusion != 'cancelled'", receipt)
+    def test_skipped_browser_followups_cannot_cancel_active_checks(self):
+        browser = self.workflow('live-browser-retest')
+        group = next(line for line in browser.splitlines() if 'group:' in line)
+        self.assertIn("github.event.workflow_run.conclusion == 'success'", group)
+        self.assertIn("if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'", browser)
+
+    def test_result_receipt_waits_for_publisher_and_records_failures_inside_its_lock(self):
+        main = self.workflow('update-and-deploy')
+        receipt = main.split('\n  record-result:\n', 1)[1]
+        self.assertEqual(field(receipt, 'needs', 4), '[plan, update-and-deploy]')
+        self.assertEqual(field(receipt, 'if', 4),
+                         "${{ always() && needs.plan.result == 'success' && needs.plan.outputs.run == 'true' }}")
+        self.assertNotRegex(receipt, re.compile(r'^ +concurrency:', re.M))
+        save = step(main, 'Save the result while still holding the publication lock')
+        self.assertEqual(field(save, 'KC_RESULT', 10), '${{ needs.update-and-deploy.result }}')
+        for stage in ('collection', 'source_save', 'source_sha', 'build', 'deployment', 'live', 'freshness'):
+            self.assertEqual(field(save, 'KC_' + stage.upper(), 10),
+                             '${{ needs.update-and-deploy.outputs.' + stage + ' }}')
+        self.assertIn('python scripts/coordinated_schedule.py record', save)
+        self.assertIn('daily-publication-status.json live-deploy-status.json', save)
 
 
 if __name__ == '__main__':

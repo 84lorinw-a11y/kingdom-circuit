@@ -1,16 +1,15 @@
 name: Guard ECHO Nights official artwork
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: echo-nights-official-artwork
-  cancel-in-progress: true
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
 
 jobs:
   enforce:

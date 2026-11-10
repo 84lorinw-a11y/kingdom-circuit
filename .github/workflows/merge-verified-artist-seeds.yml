@@ -1,20 +1,15 @@
 name: Merge verified artist seed events
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "config/artist-website-seed-events.json"
-      - "scripts/merge_artist_website_events.py"
-      - ".github/workflows/merge-verified-artist-seeds.yml"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: kingdom-circuit-verified-artist-seeds
-  cancel-in-progress: true
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
 
 jobs:
   merge:

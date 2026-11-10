@@ -1,33 +1,16 @@
 name: Capture live deployment result
 
 on:
-  workflow_run:
-    workflows: ["Update and deploy show calendar"]
-    types: [completed]
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  capture:
-    if: github.event.workflow_run.conclusion != 'skipped' && github.event.workflow_run.conclusion != 'cancelled'
+  receipt-location:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out latest main
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          fetch-depth: 1
-
-      - name: Save deployment status without overwriting newer receipts
-        env:
-          RUN_ID: ${{ github.event.workflow_run.id }}
-          RESULT: ${{ github.event.workflow_run.conclusion }}
-          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
-          RUN_URL: ${{ github.event.workflow_run.html_url }}
+      - name: Use the coordinated publication receipt
         run: |
-          python scripts/replay_source_update.py status
-          python scripts/publish_automation_changes.py \
-            --message "Capture live deployment result [skip ci]" \
-            --replay "python scripts/replay_source_update.py status" \
-            live-deploy-status.json
+          echo "Deployment receipts are recorded inside Update and deploy show calendar."
+          echo "Open that run for its source, publication, and exact live verification results."

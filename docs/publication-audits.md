@@ -5,7 +5,24 @@ Every normal publication runs two required checks in `Update and deploy show cal
 1. **Audit final publication artifact** runs after the final page changes and before `Upload Pages artifact`. It checks the completed `_site` and writes `_site/publication-manifest.json` only when the artifact passes. The release ID combines the actual build checkout's Git commit, Actions run ID, and run attempt.
 2. **Verify exact published release** runs immediately after Pages deployment. It compares the live site against that build's local manifest. A live check failure makes the workflow fail even if Pages accepted the upload.
 
-These checks run for the nightly date update, the 5AM Central full discovery scan, manual runs, pushes, and successful collector follow-ups. Discovery behavior and scheduling are unchanged. The shared deployment queue continues to serialize publications; a delayed scheduled start is still allowed to run.
+These checks run through one workflow for the nightly date update, morning full discovery, manual runs, and human pushes. Collection, archival, source saving, publication, and the final receipt share the `kingdom-circuit-pages` lock. Independent collector completion triggers and automatic legacy writers are retired. Legacy manual tools share the lock and cannot cancel a publication.
+
+## Daily sequence and timing
+
+| Local time | GitHub work |
+| --- | --- |
+| 00:15 America/Los_Angeles (normally 02:15 Central) | Archive before pruning, refresh dates from accepted data, validate, publish, verify. No source scan. |
+| 04:17 America/Chicago | Archive the previous source; collect base sources, structured Bandsintown and expanded artist sources, official websites and seeds, then Eventbrite research; validate; save; build; publish; verify. |
+| 04:47 America/Chicago | Same morning entrypoint, only when no morning attempt claimed this local day. An existing running, completed, failed, or interrupted attempt suppresses this fallback. |
+| 06:00 America/Chicago | Existing Codex read-only monitor checks the workflow receipts and live site. Publication does not depend on Codex or the laptop. |
+
+IANA timezone schedules follow daylight saving time. The main morning entry is off the busy hour and allows 103 minutes before the monitor, but that is headroom, not a completion guarantee. A delayed midnight refresh becomes a no-op if the morning full sequence already verified the current Pacific catalog date.
+
+The planning job durably saves the daily claim in `daily-publication-status.json` before starting collectors. The final result job runs inside the same workflow lock, including on failure, and records stage outcomes plus the saved source SHA. The legacy `live-deploy-status.json` monitor contract remains available. A claim without a final receipt is interrupted/unfinished, not permission for another automatic scan. Explicit reviewed manual recovery remains possible; select `dates` to rebuild saved data without another source scan.
+
+Official website omissions retain only previously accepted exact event identities. They are reported for review; omission alone is not cancellation. Eventbrite results remain a research queue, not unreviewed automatic event promotion. Collection receipts must be current and account for the current roster; blocked provider surfaces remain visible as limitations, not a claim that every website was readable.
+
+Validated source saves use `--reuse-validated-output`. If main advanced, unchanged output paths preserve owner edits and unrelated changes survive; different edits to the same file stop publication for reconciliation. Offline normalization/tests may run, but a Git save race no longer triggers another network scan. No force-push or automatic conflict-side selection is used.
 
 If Pages deploys successfully, publication URL history is saved even when the live check fails. This preserves the record of what was deployed without treating a failed live audit as successful verification.
 
@@ -15,7 +32,7 @@ If the first Pages deployment attempt fails, the workflow retries exactly once u
 
 Open the deployment run in GitHub Actions. Its job summary records the build audit, both Pages attempt outcomes, the publication gate, and the live audit. The `publication-audit-<run>-<attempt>` artifact retains available JSON reports, readable summaries, and the expected manifest for 14 days, including when a required check fails. Existing calendar freshness evidence remains available separately.
 
-A failed build audit stops upload and deployment. A failed live audit means the deployment needs investigation: inspect its report to distinguish propagation delays, the wrong release, and content failures. Do not rerun a deployment just to dismiss a failed audit; inspect the reported evidence and correct the cause. The existing deployment-result workflow captures the overall outcome and links to the run. These workflows do not send messages or change notification preferences.
+A failed build audit stops upload and deployment. A failed live audit means the deployment needs investigation: inspect its report to distinguish propagation delays, the wrong release, and content failures. Do not rerun a deployment just to dismiss a failed audit; inspect the reported evidence and correct the cause. The final result job captures the overall outcome and links to the run. These workflows do not send messages or change notification preferences.
 
 `Live SEO Audit` is now a manual, read-only check using the same live verifier. It fetches the currently published manifest and checks that release's listed files. This is useful for investigating the current site, but it does not independently prove that a particular Actions build deployed. Each normal deployment supplies its own expected manifest for that proof. The manual workflow retains its reports as Actions artifacts and does not write or force-push an audit branch.
 
@@ -40,4 +57,4 @@ The second command is meaningful after that artifact has been deployed. For a re
 
 `Recover verified November 7 Pages release` is retired. Its first step fails with a clear explanation and its Pages write permissions have been removed. The frozen November 7 manifest and offline recovery verifier remain historical evidence; they are not updated to claim that later checks ran on the old artifact. Use the current audited deployment workflow for a new release.
 
-GitHub schedules may be delayed or dropped under service load. The dispatcher starting successfully does not prove that publication finished. Existing schedules remain 5AM America/Chicago for full discovery and 00:15 America/Los_Angeles for date maintenance. The publication gates validate runs that execute; they cannot guarantee that GitHub starts every scheduled run. See [GitHub's schedule limitations](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
+GitHub schedules may be delayed or dropped under service load. A saved claim proves a sequence started, not that publication finished. The 04:47 catch-up can recover a missing primary trigger, but both triggers use GitHub and cannot guarantee service availability. A normally queued or running job is not a failure. After two failed same-artifact Pages attempts, the workflow stops and retains evidence; it does not launch an unlimited retry, rescan, or separate recovery controller. See [GitHub's schedule limitations](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).

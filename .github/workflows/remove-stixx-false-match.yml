@@ -1,15 +1,16 @@
 name: Remove false Stixx Miami match
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/remove-stixx-false-match.yml
   workflow_dispatch:
 
 permissions:
   contents: write
   actions: write
+
+concurrency:
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
 
 jobs:
   repair:

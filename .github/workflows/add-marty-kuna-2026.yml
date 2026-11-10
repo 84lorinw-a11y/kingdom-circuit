@@ -1,15 +1,16 @@
 name: Add Marty Kuna 2026 event
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/add-marty-kuna-2026.yml
   workflow_dispatch:
 
 permissions:
   contents: write
   actions: write
+
+concurrency:
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
 
 jobs:
   add-event:

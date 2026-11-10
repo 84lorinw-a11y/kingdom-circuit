@@ -1,15 +1,16 @@
 name: Fix event image primary artist matching
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/fix-event-image-primary-artist-match.yml
   workflow_dispatch:
 
 permissions:
   contents: write
   actions: write
+
+concurrency:
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
 
 jobs:
   repair:

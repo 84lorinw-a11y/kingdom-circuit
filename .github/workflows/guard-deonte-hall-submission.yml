@@ -1,19 +1,15 @@
 name: Guard Deonte Hall submitted show
 
 on:
-  push:
-    branches: [main]
-  workflow_run:
-    workflows: ["Update and deploy show calendar"]
-    types: [completed]
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: deonte-hall-submission-guard-${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
-  cancel-in-progress: true
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
 
 jobs:
   enforce:

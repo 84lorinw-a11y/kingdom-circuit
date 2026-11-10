@@ -1,19 +1,15 @@
 name: Enforce September 11 catalog audit
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
-  workflow_run:
-    workflows: ["Update and deploy show calendar"]
-    types: [completed]
 
 permissions:
   contents: write
 
 concurrency:
-  group: sep11-catalog-audit-guard-${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
-  cancel-in-progress: true
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
 
 jobs:
   enforce:

@@ -79,11 +79,11 @@ def context(site):
     by_key, by_hash, by_path = {}, {}, {}
     for row in rows.values():
         record = normalize(row, artists=artists)
-        by_key.setdefault(key(row), record)
+        by_key.setdefault(key(row), []).append(record)
         if row.get('id'):
-            by_hash[digest(row['id'])] = record
+            by_hash.setdefault(digest(row['id']), []).append(record)
         if str(row.get('canonicalPath') or '').startswith('/event/'):
-            by_path[row['canonicalPath']] = record
+            by_path.setdefault(row['canonicalPath'], []).append(record)
     catalog = json.loads((site / 'assets/fan-show-catalog.json').read_text())
     pages = {}
     for show in catalog['shows']:
@@ -95,10 +95,22 @@ def context(site):
         if 'http-equiv="refresh"' in text or 'class="event-detail-copy"' not in text:
             raise ValueError(f'Upcoming show has no canonical detail page: {path}')
         schemas = [s for _, value in schema_blocks(text) for s in event_schemas(value)]
-        record = by_path.get(path) or next((by_key[schema_key(s)] for s in schemas if schema_key(s) in by_key), None)
-        if record is None:
+        # The URL's durable identity wins over descriptive fields shared by
+        # separate performances. Canonical paths are attached by URL continuity
+        # late in the build; use the source-ID hash before that pass as well.
+        candidates = by_path.get(path)
+        if candidates is None:
             match = re.search(r'-([0-9a-f]{6})/$', path)
-            record = by_hash.get(match[1]) if match else None
+            candidates = by_hash.get(match[1]) if match else None
+        if candidates is None:
+            candidates = []
+            for schema in schemas:
+                for candidate in by_key.get(schema_key(schema), []):
+                    if candidate not in candidates:
+                        candidates.append(candidate)
+        if len(candidates) > 1:
+            raise ValueError(f'Ambiguous catalog/source identity: {path}')
+        record = candidates[0] if candidates else None
         if record is None or record.get('startDate') != show['date']:
             raise ValueError(f'Current catalog/source identity mismatch: {path}')
         pages[rel] = record

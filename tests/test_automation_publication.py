@@ -19,7 +19,7 @@ class AutomationPublicationTests(unittest.TestCase):
         self.assertLess(validation, publication)
         self.assertIn("python -m unittest discover -s tests -p 'test_*.py' -q", workflow[validation:publication])
 
-    def test_full_replay_restores_curated_artist_seeds_before_final_validation(self):
+    def test_manual_full_replay_restores_curated_artist_seeds_before_final_validation(self):
         from scripts import replay_source_update as replay
         from scripts.apply_verified_show_artwork import patch_event, BY_ID
         event = {}
@@ -55,7 +55,12 @@ class AutomationPublicationTests(unittest.TestCase):
         # Reconcile duplicate provider identities before the seed merger, which
         # deliberately rejects losing a curated seed to a conflicting identity.
         self.assertLess(workflow.index('python scripts/apply_sep26_source_corrections.py'), merge)
-        self.assertIn("replay_source_update.py full", workflow)
+        # A repository race reuses the validated source result and runs local
+        # corrections/tests; it must not start another full network collection.
+        save = workflow.split('- name: Save refreshed event data', 1)[1].split('\n      - name:', 1)[0]
+        self.assertIn('--reuse-validated-output', save)
+        self.assertIn('--replay "python scripts/replay_source_update.py normalize"', save)
+        self.assertNotIn('replay_source_update.py full', save)
 
     def setup_repo(self, directory):
         base = Path(directory)

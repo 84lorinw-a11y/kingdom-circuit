@@ -1,28 +1,15 @@
 name: Refresh official artist website shows
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "scripts/collect_artist_website_events.py"
-      - "scripts/merge_artist_website_events.py"
-      - "scripts/sync_verified_artist_registry.py"
-      - "scripts/sync_verified_artist_websites.py"
-      - "config/verified-artist-registry-updates.json"
-      - "config/verified-artist-websites.json"
-      - "config/artist-website-seed-events.json"
-      - ".github/workflows/artist-website-refresh.yml"
-  workflow_run:
-    workflows: ["Update and deploy show calendar"]
-    types: [completed]
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: kingdom-circuit-artist-websites-${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && (github.event.workflow_run.event == 'schedule' || github.event.workflow_run.event == 'workflow_dispatch')) }}
-  cancel-in-progress: true
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
 
 jobs:
   refresh:

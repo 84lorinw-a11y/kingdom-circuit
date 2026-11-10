@@ -2,13 +2,14 @@ name: Fix Echo Nights 26 source records
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/echo-nights-source-records-trigger.txt'
 
 permissions:
   contents: write
+
+concurrency:
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
 
 jobs:
   fix-echo-source-records:

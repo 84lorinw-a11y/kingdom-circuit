@@ -6,6 +6,11 @@ on:
   schedule:
     - cron: "15 0 * * *"
       timezone: "America/Los_Angeles"
+    - cron: "17 4 * * *"
+      timezone: "America/Chicago"
+    # Same sequence, only if the primary daily attempt never claimed its day.
+    - cron: "47 4 * * *"
+      timezone: "America/Chicago"
   workflow_dispatch:
     inputs:
       refresh_mode:
@@ -13,9 +18,6 @@ on:
         type: choice
         options: [full, dates]
         default: full
-  workflow_run:
-    workflows: ["Daily Bandsintown discovery", "Refresh official artist website shows", "Merge verified artist seed events"]
-    types: [completed]
 
 permissions:
   contents: write
@@ -25,7 +27,7 @@ permissions:
 concurrency:
   group: kingdom-circuit-pages
   cancel-in-progress: false
-  # Keep full scans and collector-triggered deploys instead of replacing pending runs.
+  # This lock covers planning, all collectors, publication, and final receipts.
   queue: max
 
 env:
@@ -37,9 +39,63 @@ env:
   APPROVED_REDESIGN_REF: 66751f756158fae6c2682e34f7da12306bd133ab
 
 jobs:
-  update-and-deploy:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+  plan:
     runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.plan.outputs.run }}
+      mode: ${{ steps.plan.outputs.mode }}
+      day: ${{ steps.plan.outputs.day }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Claim the daily sequence before collecting anything
+        id: plan
+        env:
+          KC_SCHEDULE: ${{ github.event.schedule }}
+          KC_REQUESTED_MODE: ${{ inputs.refresh_mode }}
+          KC_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+        run: python scripts/coordinated_schedule.py claim
+      - name: Persist the daily claim before starting work
+        if: github.event_name == 'schedule' && steps.plan.outputs.run == 'true'
+        env:
+          KC_SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          python scripts/publish_automation_changes.py \
+            --message "Claim coordinated daily publication [skip ci]" \
+            --reuse-validated-output \
+            --replay "python scripts/coordinated_schedule.py claim" \
+            daily-publication-status.json
+      - name: Verify this run owns the saved daily claim
+        if: github.event_name == 'schedule' && steps.plan.outputs.run == 'true'
+        env:
+          KC_MODE: ${{ steps.plan.outputs.mode }}
+          KC_DAY: ${{ steps.plan.outputs.day }}
+        run: |
+          git fetch origin main
+          git show origin/main:daily-publication-status.json > daily-publication-status.json
+          python scripts/coordinated_schedule.py verify-claim
+      - name: Explain schedule decision
+        run: echo '${{ steps.plan.outputs.reason }}' >> "$GITHUB_STEP_SUMMARY"
+
+  update-and-deploy:
+    needs: plan
+    if: needs.plan.outputs.run == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    outputs:
+      collection: ${{ steps.discovery-receipt.outcome }}
+      source_save: ${{ steps.source-save.outcome }}
+      source_sha: ${{ steps.source-save.outputs.validated_source_sha }}
+      build: ${{ steps.publication-audit.outcome }}
+      deployment: ${{ steps.pages-publication.outcome }}
+      live: ${{ steps.live-publication-audit.outcome }}
+      freshness: ${{ steps.live-freshness.outcome }}
+      catalog_day: ${{ steps.live-freshness.outputs.as_of }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url || steps.deployment-retry.outputs.page_url }}
@@ -65,10 +121,14 @@ jobs:
           KC_EVENT_NAME: ${{ github.event_name }}
           KC_REQUESTED_MODE: ${{ inputs.refresh_mode }}
           KC_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+          KC_SCHEDULE: ${{ github.event.schedule }}
         run: python scripts/calendar_maintenance.py --mode >> "$GITHUB_OUTPUT"
 
       - name: Snapshot Canadian bookings before automated changes
         run: python scripts/canadian_event_guard.py --snapshot "$RUNNER_TEMP/canadian-bookings.json"
+
+      - name: Archive existing bookings before any source replacement
+        run: python scripts/coordinated_source_refresh.py prepare --snapshot "$RUNNER_TEMP/accepted-website-bookings.json"
 
       - name: Sync verified artist registry
         run: python scripts/sync_verified_artist_registry.py
@@ -89,6 +149,10 @@ jobs:
         if: steps.refresh-mode.outputs.discovery == 'true'
         run: python scripts/apply_priority_source_fallbacks.py
 
+      - name: Record the start of this collection pass
+        if: steps.refresh-mode.outputs.discovery == 'true'
+        run: echo "KC_COLLECTION_STARTED_AT=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_ENV"
+
       - name: Collect upcoming shows
         if: steps.refresh-mode.outputs.discovery == 'true'
         env:
@@ -96,6 +160,7 @@ jobs:
         run: python scripts/update_events.py
 
       - name: Run expanded all-artist source scan
+        id: full-scan
         if: steps.refresh-mode.outputs.discovery == 'true'
         run: |
           python -m py_compile scripts/scan_all_artist_sources.py
@@ -103,6 +168,16 @@ jobs:
 
       - name: Apply curated catalog policy and coverage audit
         run: python scripts/apply_curated_catalog_policy.py
+
+      - name: Apply former standalone catalog protections inside the sequence
+        run: |
+          python scripts/enforce_sep11_catalog_audit.py
+          python scripts/sync_verified_artist_registry.py
+          python scripts/enforce_sep11_catalog_audit.py
+          python scripts/ensure_verified_fall_2026_shows.py
+          python scripts/apply_echo_nights_official.py
+          python scripts/preserve_hvo_link.py
+          python scripts/remove_false_tru_serva.py
 
       - name: Apply durable September 12 audit repairs
         run: python scripts/apply_sep12_live_audit_repairs.py
@@ -158,12 +233,28 @@ jobs:
 
       # Initial repairs reconcile provider identities before seed restoration.
       # Restored seeds then need the same approved corrections as other records.
-      - name: Restore verified artist website seeds after full discovery
+      - name: Collect official websites while preserving accepted missing bookings
         if: steps.refresh-mode.outputs.discovery == 'true'
+        run: python scripts/coordinated_source_refresh.py websites --snapshot "$RUNNER_TEMP/accepted-website-bookings.json"
+
+      - name: Restore verified artist website seeds after full discovery
         run: |
           python scripts/merge_artist_website_events.py
           python scripts/replay_source_update.py normalize
           python -m unittest discover -s tests -p 'test_us_pr_geo_scope.py' -q
+
+      - name: Archive reconciled bookings and preserve reviewed corrections
+        run: python scripts/coordinated_source_refresh.py finalize --snapshot "$RUNNER_TEMP/accepted-website-bookings.json"
+
+      - name: Scan Eventbrite for every tracked artist as a review queue
+        if: steps.refresh-mode.outputs.discovery == 'true'
+        timeout-minutes: 25
+        run: python scripts/scan_eventbrite_artists.py
+
+      - name: Verify every collection stage belongs to this pass and current roster
+        id: discovery-receipt
+        if: steps.refresh-mode.outputs.discovery == 'true'
+        run: python scripts/verify_discovery_receipt.py --source . --report "$RUNNER_TEMP/discovery-receipt.json"
 
       - name: Validate refreshed source before publication
         run: |
@@ -171,16 +262,19 @@ jobs:
           python -m unittest discover -s tests -p 'test_*.py' -q
 
       - name: Save refreshed event data
-        if: steps.refresh-mode.outputs.discovery == 'true'
+        id: source-save
         env:
           TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
         shell: bash
         run: |
           python scripts/publish_automation_changes.py \
             --message "chore: refresh show listings [skip ci]" \
-            --replay "python scripts/replay_source_update.py full" \
+            --reuse-validated-output \
+            --replay "python scripts/replay_source_update.py normalize" \
+            --replay "python -m unittest discover -s tests -p test_*.py -q" \
             --sync-checkout \
-            events.json supplemental-events.json config/manual-events.json config/artists.json app.js coverage-gaps.json run-status.json cache/ticketmaster-attractions.json full-scan-status.json full-scan-candidates.json bandsintown-status.json bandsintown-candidates.json config/permanent-state-pages.json tests/test_update_events.py event-history.json
+            events.json supplemental-events.json config/manual-events.json config/artists.json app.js coverage-gaps.json run-status.json cache/ticketmaster-attractions.json full-scan-status.json full-scan-candidates.json bandsintown-status.json bandsintown-candidates.json config/permanent-state-pages.json tests/test_update_events.py event-history.json \
+            artist-website-events.json artist-website-status.json config/verified-artist-websites.json config/verified-artist-registry-updates.json config/artist-website-seed-events.json eventbrite-scan-status.json eventbrite-scan-candidates.json data/verified-false-matches.json
 
       - name: Reconcile durable event identities before page generation
         run: python scripts/url_continuity.py --prepare
@@ -673,10 +767,12 @@ jobs:
         run: python scripts/publish_url_state.py
 
       - name: Verify published calendar freshness
+        id: live-freshness
         shell: bash
         run: |
           for attempt in 1 2 3; do
             if python scripts/calendar_maintenance.py --live https://kingdomcircuit.com --output calendar-freshness-live.json; then
+              python -c "import json; print('as_of=' + json.load(open('calendar-freshness-live.json'))['asOf'])" >> "$GITHUB_OUTPUT"
               exit 0
             fi
             if [ "$attempt" -lt 3 ]; then sleep 20; fi
@@ -713,6 +809,7 @@ jobs:
             live-publication-audit.json
             live-publication-audit.md
             _site/publication-manifest.json
+            ${{ runner.temp }}/discovery-receipt.json
           if-no-files-found: ignore
           retention-days: 14
 
@@ -724,3 +821,36 @@ jobs:
           path: calendar-freshness-*.json
           if-no-files-found: ignore
           retention-days: 14
+
+  record-result:
+    needs: [plan, update-and-deploy]
+    if: ${{ always() && needs.plan.result == 'success' && needs.plan.outputs.run == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Save the result while still holding the publication lock
+        env:
+          KC_MODE: ${{ needs.plan.outputs.mode }}
+          KC_DAY: ${{ needs.plan.outputs.day }}
+          KC_RESULT: ${{ needs.update-and-deploy.result }}
+          KC_COLLECTION: ${{ needs.update-and-deploy.outputs.collection }}
+          KC_SOURCE_SAVE: ${{ needs.update-and-deploy.outputs.source_save }}
+          KC_SOURCE_SHA: ${{ needs.update-and-deploy.outputs.source_sha }}
+          KC_BUILD: ${{ needs.update-and-deploy.outputs.build }}
+          KC_DEPLOYMENT: ${{ needs.update-and-deploy.outputs.deployment }}
+          KC_LIVE: ${{ needs.update-and-deploy.outputs.live }}
+          KC_FRESHNESS: ${{ needs.update-and-deploy.outputs.freshness }}
+          KC_CATALOG_DAY: ${{ needs.update-and-deploy.outputs.catalog_day }}
+        run: |
+          python scripts/coordinated_schedule.py record
+          python scripts/publish_automation_changes.py \
+            --message "Record coordinated publication result [skip ci]" \
+            --replay "python scripts/coordinated_schedule.py record" \
+            daily-publication-status.json live-deploy-status.json

@@ -1,14 +1,15 @@
 name: Fix Light in the Darkness artwork
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/fix-light-in-darkness-art.yml"
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
 
 jobs:
   fix-artwork:

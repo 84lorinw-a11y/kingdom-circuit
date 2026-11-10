@@ -57,6 +57,6 @@ if old_guard != guard_text:
     guard.write_text(guard_text, encoding='utf-8')
     changed = True
 
-with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as out:
-    out.write(f'changed={str(changed).lower()}\n')
-
+if os.environ.get('GITHUB_OUTPUT'):
+    with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as out:
+        out.write(f'changed={str(changed).lower()}\n')

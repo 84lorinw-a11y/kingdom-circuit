@@ -1,15 +1,16 @@
 name: Fix cross-location event dedupe
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/fix-cross-location-event-dedupe.yml
   workflow_dispatch:
 
 permissions:
   contents: write
   actions: write
+
+concurrency:
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
 
 jobs:
   repair:

@@ -1,16 +1,19 @@
 name: Finalize Sep 13 verified refresh once
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/sep13-finalize-once.yml
+  workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
+
 jobs:
   finalize:
+    # Historical one-shot remains guarded; manual use cannot bypass its original marker.
     if: contains(github.event.head_commit.message, '[sep13 finalize]')
     runs-on: ubuntu-latest
     steps:

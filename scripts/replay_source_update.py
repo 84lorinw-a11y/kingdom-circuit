@@ -17,6 +17,12 @@ SOURCE_REPAIRS = ['apply_curated_catalog_policy.py', 'apply_sep12_live_audit_rep
     'apply_oct2_verified_shows.py', 'apply_oct3_concert_corrections.py',
     'apply_verified_show_information.py']
 
+# Former independent push guards now execute before current corrections under
+# the one publication lock. Current facts/pruning always win over legacy repair.
+SOURCE_REPAIRS[1:1] = ['enforce_sep11_catalog_audit.py', 'sync_verified_artist_registry.py',
+    'enforce_sep11_catalog_audit.py', 'ensure_verified_fall_2026_shows.py',
+    'apply_echo_nights_official.py', 'preserve_hvo_link.py', 'remove_false_tru_serva.py']
+
 
 def run(script):
     subprocess.run([sys.executable, 'scripts/' + script.split()[0], *script.split()[1:]], check=True)

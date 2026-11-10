@@ -1,12 +1,15 @@
 name: Diagnose current tests
 
 on:
-  push:
-    paths:
-      - '.github/workflows/diagnose-current-tests.yml'
+  workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
 
 jobs:
   diagnose:

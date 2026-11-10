@@ -2,13 +2,14 @@ name: Fix Echo Nights 26 official artwork
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/echo-nights-artwork-trigger.txt'
 
 permissions:
   contents: write
+
+concurrency:
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
 
 jobs:
   fix-echo-artwork:

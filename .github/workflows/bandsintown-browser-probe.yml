@@ -1,15 +1,15 @@
 name: Bandsintown browser probe
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "scripts/bandsintown_browser_probe.py"
-      - ".github/workflows/bandsintown-browser-probe.yml"
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
 
 jobs:
   probe:

@@ -1,21 +1,15 @@
 name: Scan Eventbrite for roster artists
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "scripts/scan_eventbrite_artists.py"
-      - ".github/workflows/eventbrite-artist-scan.yml"
-  schedule:
-    - cron: "7 12 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: kingdom-circuit-eventbrite-scan
-  cancel-in-progress: true
+  group: kingdom-circuit-pages
+  cancel-in-progress: false
+  queue: max
 
 jobs:
   scan-eventbrite:
