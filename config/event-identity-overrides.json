@@ -2,6 +2,18 @@
   "version": 1,
   "merges": [
     {
+      "keepId": "manual:jackie-hill-perry-blameless-memphis-2027-02-16",
+      "identityOnly": true,
+      "keepPath": "/event/blameless-the-tour-with-jackie-hill-perry-2027-02-16-memphis-770ba0/",
+      "aliasIds": [
+        "ticketmaster:G5viZ_pE35CeO"
+      ],
+      "aliasPaths": [
+        "/event/blameless-the-tour-with-jackie-hill-perry-2027-02-16-memphis-fed827/"
+      ],
+      "evidence": "Reviewed November 10: the official https://stillblameless.com/tour schedule has one February 16, 2027 Memphis stop at Minglewood Hall. The saved Ticketmaster concert record https://www.ticketmaster.com/blameless-the-tour-with-jackie-hill-memphis-tennessee-02-16-2027/event/1B006569D22CE0A0 matches the full tour title, artist, date, venue and 1555 Madison Avenue address, with no separate VIP/package identity. Preserve the already published manual URL and all reviewed facts; its unknown start time must not inherit the provider's 19:00. This exact identity correction does not merge other performances or verify new ticket/time details."
+    },
+    {
       "keepId": "manual:jackie-hill-perry-blameless-charlotte-2027-02-18",
       "identityOnly": true,
       "keepPath": "/event/blameless-the-tour-with-jackie-hill-perry-2027-02-18-charlotte-2b5ff9/",

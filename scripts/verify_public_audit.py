@@ -270,7 +270,7 @@ def verify_counts(rel: Path, text: str, audit: Audit) -> None:
         audit.expect(parse_number(past_count.group(1)) == rows, f"{rel}: archived show count does not equal {rows}")
 
     keys = [repair.card_key(card) for card in repair.CARD_RE.findall(text)]
-    populated = [key for key in keys if all(key)]
+    populated = [key for key in keys if key]
     audit.expect(len(populated) == len(set(populated)), f"{rel}: duplicate visible event cards remain")
 
     strip = re.search(

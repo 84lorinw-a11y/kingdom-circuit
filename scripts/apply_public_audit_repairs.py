@@ -366,14 +366,24 @@ def clean_data_search(card: str) -> str:
     return new_opening + card[opening.end():]
 
 
-def card_key(card: str) -> Tuple[str, str, str, str]:
+def card_key(card: str) -> Tuple[str, ...]:
+    # Source reconciliation owns event identity. Presentation cleanup must not
+    # merge distinct event URLs merely because their display facts coincide.
+    for _, href in re.findall(r'<a\b[^>]*\bhref\s*=\s*(["\'])(.*?)\1', card, re.I | re.S):
+        parsed = urlsplit(normalize_internal_url(href))
+        if (not parsed.scheme and not parsed.netloc
+                and re.fullmatch(r'/event/[a-z0-9-]+/(?:index\.html)?', parsed.path)):
+            return ('event-url', parsed.path.removesuffix('index.html'))
+    # Legacy cards without a local event URL retain the existing complete-facts
+    # fallback. Incomplete metadata is not evidence of a duplicate.
     details = card_details(card)
-    return (
+    facts = (
         re.sub(r"\W+", "", details["title"].casefold()),
         details["date"].split(" - ", 1)[0].casefold(),
         re.sub(r"\s+", " ", details["location"].casefold()).strip(),
         details["time"].casefold(),
     )
+    return ('event-facts', *facts) if all(facts[:3]) else ()
 
 
 def repair_cards(text: str, site: Path, rel: Path, report: Dict[str, int]) -> str:
@@ -387,10 +397,10 @@ def repair_cards(text: str, site: Path, rel: Path, report: Dict[str, int]) -> st
             report["brokenEventCardsRemoved"] += 1
             return ""
         key = card_key(card)
-        if all(key[:3]) and key in seen:
+        if key and key in seen:
             report["duplicateEventCardsRemoved"] += 1
             return ""
-        if all(key[:3]):
+        if key:
             seen.add(key)
         return clean_data_search(card)
 

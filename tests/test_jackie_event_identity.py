@@ -1,4 +1,4 @@
-"""Keep all reviewed tour stops when the two provider aliases are reimported."""
+"""Keep all reviewed tour stops when reviewed provider aliases are reimported."""
 import copy
 import json
 from pathlib import Path
@@ -13,6 +13,10 @@ import catalog_removals as catalog
 import url_continuity as continuity
 
 PAIRS = (
+    ('manual:jackie-hill-perry-blameless-memphis-2027-02-16',
+     'ticketmaster:G5viZ_pE35CeO', '19:00',
+     '/event/blameless-the-tour-with-jackie-hill-perry-2027-02-16-memphis-770ba0/',
+     '/event/blameless-the-tour-with-jackie-hill-perry-2027-02-16-memphis-fed827/'),
     ('manual:jackie-hill-perry-blameless-charlotte-2027-02-18',
      'ticketmaster:G5eVZ_pLsqK3P', '19:00',
      '/event/blameless-the-tour-with-jackie-hill-perry-2027-02-18-charlotte-2b5ff9/',
@@ -96,6 +100,32 @@ class JackieEventIdentityTests(unittest.TestCase):
         self.assertEqual(first['redirects'], second['redirects'])
         continuity.prepare(self.root)
         self.assertEqual(replay, continuity.load(self.root / 'events.json', []))
+
+    def test_provider_only_refresh_restores_reviewed_identity_before_artist_cards(self):
+        # The collector can retain the provider ID while consolidating the
+        # manual seed. The published survivor then exists only in history/state.
+        reviewed_ids = {pair[0] for pair in PAIRS}
+        primary = [event for event in self.manual if event['id'] not in reviewed_ids]
+        continuity.save(self.root / 'events.json', primary + self.providers)
+        continuity.prepare(self.root)
+        events, _ = self.assert_tour_preserved()
+
+        import national_discovery
+        records = [{'href': continuity.generated_path(event),
+                    'html': '<article>' + event['id'] + '</article>'} for event in events]
+        schedule = ('<main data-kc-rd-artist-profile><section class="kc-rd-profile-shows">'
+                    + ''.join('<a class="kc-rd-show-row" href="'
+                              + continuity.generated_path(event) + '">Show</a>' for event in events)
+                    + '</section></main>')
+        rendered = national_discovery.artist_details(schedule, {'records': records})
+        self.assertIn('data-artist-show-details', rendered)
+        for _, _, _, keep_path, alias_path in PAIRS:
+            self.assertIn(keep_path, rendered)
+            self.assertNotIn(alias_path, rendered)
+        # Keep the actual failing final-render assertion active for a stale URL.
+        broken = schedule.replace(PAIRS[0][3], PAIRS[0][4])
+        with self.assertRaisesRegex(AssertionError, 'lacks matching full event cards'):
+            national_discovery.artist_details(broken, {'records': records})
 
     def test_unreviewed_provider_session_remains_separate(self):
         other = dict(self.providers[0], id='unreviewed:jackie-late-session', startTime='21:00')
