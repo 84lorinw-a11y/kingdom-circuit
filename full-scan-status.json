@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T14:34:10Z",
+  "generatedAt": "2026-11-10T19:19:13Z",
   "artistsChecked": 418,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
@@ -9,10 +9,10 @@
     "status": "ok",
     "artistsAttempted": 418,
     "resolved": 256,
-    "rawUpcomingUSRows": 72,
+    "rawUpcomingUSRows": 80,
     "rawUpcomingCARows": 4,
-    "rawUpcomingRows": 76,
-    "newEventsPublished": 13,
+    "rawUpcomingRows": 84,
+    "newEventsPublished": 15,
     "festivalCandidatesHeld": 2,
     "requestErrors": 0
   },
@@ -25,8 +25,8 @@
   "sourceStatusCounts": {
     "delegated_to_structured_rest": 418,
     "blocked_by_robots": 422,
-    "no_events": 581,
-    "failed": 7
+    "no_events": 580,
+    "failed": 8
   },
   "newEvents": [],
   "sourceResults": [
@@ -5528,8 +5528,9 @@
       "artist": "Tylynn",
       "source": "official website",
       "url": "https://www.justtylynn.com/",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "IncompleteRead(32768 bytes read, 33956 more expected)"
     },
     {
       "artist": "Tylynn",
