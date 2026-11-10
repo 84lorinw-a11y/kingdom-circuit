@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment-retry.outputs.page_url }}
 
     steps:
       - name: Check out production repository
@@ -621,8 +621,10 @@ jobs:
             --release-id "$release_id" \
             --report publication-audit.json \
             --summary publication-audit.md
+          test -s _site/publication-manifest.json
 
       - name: Upload Pages artifact
+        id: pages-artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # A rerun retains earlier artifacts; select only this attempt's build.
@@ -631,12 +633,34 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
+        continue-on-error: true
         uses: actions/deploy-pages@v5
         with:
           artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
 
+      - name: Retry accepted Pages artifact once
+        id: deployment-retry
+        if: ${{ !cancelled() && steps.publication-audit.outcome == 'success' && steps.pages-artifact.outcome == 'success' && steps.deployment.outcome == 'failure' }}
+        uses: actions/deploy-pages@v5
+        with:
+          artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Require successful Pages publication
+        id: pages-publication
+        if: ${{ !cancelled() }}
+        shell: bash
+        env:
+          FIRST_DEPLOYMENT_OUTCOME: ${{ steps.deployment.outcome }}
+          RETRY_DEPLOYMENT_OUTCOME: ${{ steps.deployment-retry.outcome }}
+        run: |
+          if [ "$FIRST_DEPLOYMENT_OUTCOME" != success ] && [ "$RETRY_DEPLOYMENT_OUTCOME" != success ]; then
+            echo '::error::No Pages deployment succeeded. Publication is not verified.'
+            exit 1
+          fi
+
       - name: Verify exact published release
         id: live-publication-audit
+        if: ${{ !cancelled() && steps.pages-publication.outcome == 'success' }}
         run: |
           python scripts/verify_live_publication.py \
             --base-url https://kingdomcircuit.com \
@@ -645,7 +669,7 @@ jobs:
             --summary live-publication-audit.md
 
       - name: Save successful publication URL history
-        if: ${{ !cancelled() && steps.deployment.conclusion == 'success' }}
+        if: ${{ !cancelled() && (steps.deployment.outcome == 'success' || steps.deployment-retry.outcome == 'success') }}
         run: python scripts/publish_url_state.py
 
       - name: Verify published calendar freshness
@@ -666,9 +690,11 @@ jobs:
           BUILD_AUDIT_OUTCOME: ${{ steps.publication-audit.outcome || 'not run' }}
           LIVE_AUDIT_OUTCOME: ${{ steps.live-publication-audit.outcome || 'not run' }}
           DEPLOYMENT_OUTCOME: ${{ steps.deployment.outcome || 'not run' }}
+          DEPLOYMENT_RETRY_OUTCOME: ${{ steps.deployment-retry.outcome || 'not run' }}
+          PUBLICATION_OUTCOME: ${{ steps.pages-publication.outcome || 'not run' }}
         run: |
-          printf '## Publication verification\n\nBuild audit: %s\n\nPages deployment: %s\n\nLive audit: %s\n\n' \
-            "$BUILD_AUDIT_OUTCOME" "$DEPLOYMENT_OUTCOME" "$LIVE_AUDIT_OUTCOME" >> "$GITHUB_STEP_SUMMARY"
+          printf '## Publication verification\n\nBuild audit: %s\n\nPages first attempt: %s\n\nPages retry: %s\n\nPublication gate: %s\n\nLive audit: %s\n\n' \
+            "$BUILD_AUDIT_OUTCOME" "$DEPLOYMENT_OUTCOME" "$DEPLOYMENT_RETRY_OUTCOME" "$PUBLICATION_OUTCOME" "$LIVE_AUDIT_OUTCOME" >> "$GITHUB_STEP_SUMMARY"
           for report in publication-audit.md live-publication-audit.md; do
             if [ -s "$report" ]; then
               cat "$report" >> "$GITHUB_STEP_SUMMARY"

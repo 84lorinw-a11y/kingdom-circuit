@@ -94,7 +94,9 @@ class FinalPublicationTests(unittest.TestCase):
         record = dict(title='Concert', schemaStartDate='2027-02-26', schemaEndDate=None, offer=None,
                       venue='Hall', venueLocality='Calgary', state='AB', country='CA',
                       artists=['Artist A'], unconfirmedArtists=['Guest B'])
-        schema = dict(name='Concert', url='https://kingdomcircuit.com/event/a/', startDate='2027-02-26', location={'name': 'Hall', 'address': {
+        schema = dict(name='Concert', url='https://kingdomcircuit.com/event/a/', startDate='2027-02-26',
+            eventStatus='https://schema.org/EventScheduled',
+            eventAttendanceMode='https://schema.org/OfflineEventAttendanceMode', location={'name': 'Hall', 'address': {
             'addressLocality': 'Calgary', 'addressRegion': 'AB', 'addressCountry': 'CA'}},
             performer=[{'name': 'Artist A'}])
         self.assertEqual(audit.event_fact_errors('/event/a/', record, [schema]), [])
@@ -107,6 +109,10 @@ class FinalPublicationTests(unittest.TestCase):
         del schema['url']
         errors = audit.event_fact_errors('/event/a/', record, [schema])
         self.assertTrue({'name', 'url'} <= {e.get('field') for e in errors})
+        schema.update(eventStatus='https://schema.org/EventCancelled',
+                      eventAttendanceMode='https://schema.org/OnlineEventAttendanceMode')
+        errors = audit.event_fact_errors('/event/a/', record, [schema])
+        self.assertTrue({'eventStatus', 'eventAttendanceMode'} <= {e.get('field') for e in errors})
 
     def test_manifest_covers_runtime_status_and_webmanifest_icons(self):
         self.put('index.html', self.page(extra='<link rel="manifest" href="/manifest.webmanifest">'))

@@ -142,8 +142,12 @@ def event_fact_errors(path, record, schemas):
         return [issue('private_or_unconfirmed_event_schema', path)] if schemas else []
     if len(schemas) != 1:
         errors.append(issue('public_current_event_schema_count', path, count=len(schemas)))
+    status = {'cancelled': 'EventCancelled', 'canceled': 'EventCancelled',
+              'postponed': 'EventPostponed', 'rescheduled': 'EventRescheduled'}.get(norm(record.get('status')), 'EventScheduled')
     for schema in schemas:
         for key, expected in {'name': record.get('title'), 'url': ORIGIN + path,
+                              'eventStatus': 'https://schema.org/' + status,
+                              'eventAttendanceMode': 'https://schema.org/OfflineEventAttendanceMode',
                               'startDate': record.get('schemaStartDate'),
                               'endDate': record.get('schemaEndDate'), 'offers': record.get('offer')}.items():
             if schema.get(key) != expected:
@@ -350,8 +354,9 @@ def main():
     report['status'] = 'failed' if report['errors'] else 'passed'
     report['provenance'] = {
         'runId': os.environ.get('GITHUB_RUN_ID'), 'attempt': os.environ.get('GITHUB_RUN_ATTEMPT'),
-        'pinnedSources': {key: value for key, value in os.environ.items()
-                          if key.startswith(('KC_SEO_', 'KC_REDESIGN_', 'KC_GAME_')) and key.endswith('_REF')},
+        'pinnedSources': {key: os.environ[key] for key in
+                          ('APPROVED_SEO_REF', 'APPROVED_REDESIGN_REF', 'APPROVED_GAME_REF')
+                          if key in os.environ},
         'sourceDigests': {name: hashlib.sha256((args.source / name).read_bytes()).hexdigest()
                           for name in ('events.json', 'supplemental-events.json', 'config/artists.json',
                                        'config/event-identity-overrides.json', '_url-continuity-state.json')

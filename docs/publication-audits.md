@@ -9,9 +9,11 @@ These checks run for the nightly date update, the 5AM Central full discovery sca
 
 If Pages deploys successfully, publication URL history is saved even when the live check fails. This preserves the record of what was deployed without treating a failed live audit as successful verification.
 
+If the first Pages deployment attempt fails, the workflow retries exactly once using the same accepted and uploaded artifact. It does not rerun collection, rebuild the site, or replace the artifact. The retry requires both a passing final audit and successful artifact upload; cancellation prevents a retry. A separate publication gate requires one deployment attempt to succeed before live verification can run. Failure of both attempts, or a later live audit failure, leaves the workflow failed.
+
 ## Evidence and failure handling
 
-Open the deployment run in GitHub Actions. Its job summary records the build audit, Pages deployment, and live audit outcomes. The `publication-audit-<run>-<attempt>` artifact retains available JSON reports, readable summaries, and the expected manifest for 14 days, including when a required check fails. Existing calendar freshness evidence remains available separately.
+Open the deployment run in GitHub Actions. Its job summary records the build audit, both Pages attempt outcomes, the publication gate, and the live audit. The `publication-audit-<run>-<attempt>` artifact retains available JSON reports, readable summaries, and the expected manifest for 14 days, including when a required check fails. Existing calendar freshness evidence remains available separately.
 
 A failed build audit stops upload and deployment. A failed live audit means the deployment needs investigation: inspect its report to distinguish propagation delays, the wrong release, and content failures. Do not rerun a deployment just to dismiss a failed audit; inspect the reported evidence and correct the cause. The existing deployment-result workflow captures the overall outcome and links to the run. These workflows do not send messages or change notification preferences.
 
