@@ -18,7 +18,8 @@ from catalog_removals import apply as apply_catalog_removals
 from apply_verified_date_corrections import (patch_event as patch_verified_dates,
     normalize_provider_identity, reconcile_scootie_duplicates)
 from apply_oct6_show_audit import apply as apply_oct6_audit
-from apply_verified_show_information import enrich as enrich_reviewed_information
+from apply_verified_show_information import (enrich as enrich_reviewed_information,
+    apply as restore_reviewed_information)
 
 ROOT = Path(__file__).resolve().parents[1]
 DOVE_EVENT_ID = "bandsintown:1040305060"
@@ -112,6 +113,9 @@ def unique(values: list) -> list:
 
 def apply(root: Path = ROOT, today: str | None = None) -> None:
     apply_catalog_removals(root)
+    # A fresh provider row can contain a reviewed old venue label. Restore
+    # guarded old-to-new corrections before comparing duplicate identities.
+    restore_reviewed_information(root)
     today = today or dt.datetime.now(ZoneInfo("America/Los_Angeles")).date().isoformat()
     names = ("events.json", "supplemental-events.json", "config/manual-events.json")
     feeds = {name: json.loads((root / name).read_text()) for name in names}

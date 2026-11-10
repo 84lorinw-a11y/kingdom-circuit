@@ -39,6 +39,73 @@ class SourceCorrectionTests(unittest.TestCase):
     def read(self, path):
         return json.loads((self.root / path).read_text())
 
+    def unity_refresh(self, canonical_current=True):
+        registry = json.loads((repair.ROOT / "config/verified-show-information.json").read_text())
+        reviewed = next(row for row in registry["events"] if row["id"] == "bandsintown:109072940")
+        self.save("config/verified-show-information.json", {"version": 1, "events": [reviewed]})
+        # compact_event returns the queried artist only. The scan preserves
+        # artwork overrides, not reviewed venue names or the complete bill.
+        canonical = dict(id="bandsintown:109072940", title="UNITY POP-UP TOUR",
+                         startDate="2026-11-14", startTime="11:00", timezone="",
+                         venue="UNITY POP-UP TOUR", address="801 Dorscher Rd",
+                         city="Orlando", state="FL", country="US",
+                         artists=["Issac Mansfield"], status="scheduled",
+                         ticketUrl=reviewed["corrections"][0]["expected"]["ticketUrl"],
+                         sources=[{"name": "Issac artist calendar"}], firstSeen="2026-11-10")
+        alias = dict(canonical, id="bandsintown:109044233",
+                     title="SYL noiZ at Grace Bible Church of Central Florida",
+                     venue="Grace Bible Church of Central Florida", artists=["SYL noiZ"],
+                     sources=[{"name": "SYL artist calendar"}])
+        retained = enrich(canonical, [reviewed])
+        retained["artists"] = ["Issac Mansfield", "GIOVANI"]
+        retained["firstSeen"] = "2026-10-24T14:08:55Z"
+        self.save("events.json", [self.other])
+        self.save("supplemental-events.json", [alias] + ([canonical] if canonical_current else []))
+        self.save("event-history.json", {"events": [{"archiveKey": "unity", "event": retained}]})
+        return canonical, alias, retained
+
+    def test_unity_refresh_corrects_known_provider_venue_before_duplicate_validation(self):
+        from build_seo_site import event_path
+        for canonical_current in (True, False):
+            for status in ("scheduled", "cancelled"):
+                with self.subTest(canonical_current=canonical_current, status=status):
+                    canonical, alias, retained = self.unity_refresh(canonical_current)
+                    rows = self.read("supplemental-events.json")
+                    rows[0]["status"] = status
+                    self.save("supplemental-events.json", rows)
+                    repair.apply(self.root, "2026-11-10")
+                    rows = self.read("supplemental-events.json")
+                    self.assertEqual(1, len(rows))
+                    event = rows[0]
+                    self.assertEqual(canonical["id"], event["id"])
+                    self.assertEqual("Grace Bible Church of Central Florida", event["venue"])
+                    self.assertEqual("11:00", event["startTime"])
+                    self.assertEqual(["Issac Mansfield", "GIOVANI", "SYL noiZ"], event["artists"])
+                    self.assertEqual(["Issac Mansfield", "SYL noiZ", "GIOVANI", "Landy", "Cory BiNks"], event["advertisedBilling"])
+                    self.assertEqual("assets/events/issac-unity-pop-up-orlando-2026-11-14-official.webp", event["image"])
+                    self.assertEqual(retained["ticketUrl"], event["ticketUrl"])
+                    self.assertEqual(retained["firstSeen"], event["firstSeen"])
+                    self.assertEqual(status, event["status"])
+                    self.assertEqual(event_path(retained), event_path(event))
+                    self.assertIn(event_path(alias), event["legacyEventPaths"])
+                    self.assertIn(alias["id"], event["mergedFromIds"])
+                    self.assertIn({"name": "SYL artist calendar"}, event["sources"])
+                    self.assertIn(self.other, self.read("events.json"))
+                    before = {str(p): p.read_bytes() for p in self.root.rglob("*.json")}
+                    repair.apply(self.root, "2026-11-10")
+                    self.assertEqual(before, {str(p): p.read_bytes() for p in self.root.rglob("*.json")})
+
+    def test_unity_refresh_keeps_rejecting_changed_venue_and_time(self):
+        for index in (0, 1):
+            for change in ({"venue": "New confirmed venue"}, {"startTime": "19:00"}):
+                with self.subTest(index=index, change=change):
+                    self.unity_refresh()
+                    rows = self.read("supplemental-events.json")
+                    rows[index].update(change)
+                    self.save("supplemental-events.json", rows)
+                    with self.assertRaisesRegex(ValueError, "bandsintown:109044233: reviewed performance identity conflict"):
+                        repair.apply(self.root, "2026-11-10")
+
     def test_stale_collection_is_consolidated_without_removing_unrelated_show(self):
         repair.apply(self.root, "2026-09-26")
         events = self.read("events.json")
