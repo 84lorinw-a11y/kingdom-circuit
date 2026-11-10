@@ -709,8 +709,14 @@ jobs:
       - name: Audit final publication artifact
         id: publication-audit
         shell: bash
+        env:
+          VALIDATED_SOURCE_SHA: ${{ steps.source-save.outputs.validated_source_sha }}
         run: |
-          release_id="$(git rev-parse HEAD)-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          if [[ ! "${VALIDATED_SOURCE_SHA:-}" =~ ^[0-9a-f]{40}$ ]]; then
+            echo '::error::Missing or invalid validated source commit. Publication refused.'
+            exit 1
+          fi
+          release_id="${VALIDATED_SOURCE_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
           python scripts/publication_audit.py --site _site \
             --release-id "$release_id" \
             --report publication-audit.json \

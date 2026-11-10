@@ -148,22 +148,55 @@ class PagesDeploymentRetryTests(unittest.TestCase):
                           'publication-audit': {'outcome': audit}, 'pages-artifact': {'outcome': upload}}
                 self.assertFalse(condition(self.steps['Retry accepted Pages artifact once'], states))
 
+    def artifact_audit_fixture(self):
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        root = Path(temporary.name)
+        commands = root / 'bin'
+        commands.mkdir()
+        for name, content in [
+            ('git', '#!/bin/sh\necho called > git-called\nprintf "%s\\n" "' + 'b' * 40 + '"\n'),
+            ('python', '#!/bin/sh\nprintf "%s\\n" "$@" > audit-arguments\n'),
+        ]:
+            path = commands / name
+            path.write_text(content)
+            path.chmod(0o755)
+        env = os.environ | {'PATH': str(commands) + os.pathsep + os.environ['PATH'],
+                            'VALIDATED_SOURCE_SHA': 'a' * 40,
+                            'GITHUB_RUN_ID': '123', 'GITHUB_RUN_ATTEMPT': '1'}
+        command = ['bash', '-e', '-o', 'pipefail', '-c', shell(self.steps['Audit final publication artifact'])]
+        return root, env, command
+
     def test_build_cannot_upload_without_a_nonempty_public_manifest(self):
-        with tempfile.TemporaryDirectory() as directory:
-            root = Path(directory)
-            commands = root / 'bin'
-            commands.mkdir()
-            for name, content in [('git', '#!/bin/sh\nprintf "fixture-commit\\n"\n'), ('python', '#!/bin/sh\nexit 0\n')]:
-                path = commands / name
-                path.write_text(content)
-                path.chmod(0o755)
-            env = os.environ | {'PATH': str(commands) + os.pathsep + os.environ['PATH'],
-                                'GITHUB_RUN_ID': '123', 'GITHUB_RUN_ATTEMPT': '1'}
-            command = ['bash', '-e', '-o', 'pipefail', '-c', shell(self.steps['Audit final publication artifact'])]
-            self.assertNotEqual(subprocess.run(command, cwd=root, env=env, capture_output=True).returncode, 0)
-            (root / '_site').mkdir()
-            (root / '_site/publication-manifest.json').write_text('{}\n')
-            self.assertEqual(subprocess.run(command, cwd=root, env=env, capture_output=True).returncode, 0)
+        root, env, command = self.artifact_audit_fixture()
+        self.assertNotEqual(subprocess.run(command, cwd=root, env=env, capture_output=True).returncode, 0)
+        (root / '_site').mkdir()
+        (root / '_site/publication-manifest.json').write_text('{}\n')
+        self.assertEqual(subprocess.run(command, cwd=root, env=env, capture_output=True).returncode, 0)
+
+    def test_release_label_uses_saved_source_sha_and_rejects_missing_or_invalid_sha(self):
+        block = self.steps['Audit final publication artifact']
+        self.assertIn('VALIDATED_SOURCE_SHA: ${{ steps.source-save.outputs.validated_source_sha }}', block)
+        root, env, command = self.artifact_audit_fixture()
+        (root / '_site').mkdir()
+        (root / '_site/publication-manifest.json').write_text('{}\n')
+        self.assertEqual(subprocess.run(command, cwd=root, env=env, capture_output=True).returncode, 0)
+        arguments = (root / 'audit-arguments').read_text().splitlines()
+        self.assertEqual(arguments[arguments.index('--release-id') + 1], 'a' * 40 + '-123-1')
+        self.assertFalse((root / 'git-called').exists())
+        (root / 'audit-arguments').unlink()
+        for sha in (None, '', 'a' * 39, 'a' * 41, 'A' * 40, 'g' * 40, 'a' * 40 + '\n'):
+            with self.subTest(sha=sha):
+                invalid_env = env.copy()
+                if sha is None:
+                    invalid_env.pop('VALIDATED_SOURCE_SHA')
+                else:
+                    invalid_env['VALIDATED_SOURCE_SHA'] = sha
+                result = subprocess.run(command, cwd=root, env=invalid_env, capture_output=True, text=True)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn('Missing or invalid validated source commit', result.stdout)
+                self.assertFalse((root / 'audit-arguments').exists())
+                self.assertFalse((root / 'git-called').exists())
 
     def test_source_audit_failure_cannot_become_success_or_reach_deployment(self):
         states, visited, success = self.simulate(source='failure')

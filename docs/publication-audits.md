@@ -2,7 +2,7 @@
 
 Every normal publication runs two required checks in `Update and deploy show calendar`:
 
-1. **Audit final publication artifact** runs after the final page changes and before `Upload Pages artifact`. It checks the completed `_site` and writes `_site/publication-manifest.json` only when the artifact passes. The release ID combines the actual build checkout's Git commit, Actions run ID, and run attempt.
+1. **Audit final publication artifact** runs after the final page changes and before `Upload Pages artifact`. It checks the completed `_site` and writes `_site/publication-manifest.json` only when the artifact passes. The release ID combines the saved, validated source commit, Actions run ID, and run attempt. A missing or malformed source commit stops publication.
 2. **Verify exact published release** runs immediately after Pages deployment. It compares the live site against that build's local manifest. A live check failure makes the workflow fail even if Pages accepted the upload.
 
 These checks run through one workflow for the nightly date update, morning full discovery, manual runs, and human pushes. Collection, archival, source saving, publication, and the final receipt share the `kingdom-circuit-pages` lock. Independent collector completion triggers and automatic legacy writers are retired. Legacy manual tools share the lock and cannot cancel a publication.
