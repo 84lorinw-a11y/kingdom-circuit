@@ -55,6 +55,22 @@ def run(root, script, *arguments):
     subprocess.run([sys.executable, str(root / "scripts" / script), *arguments], cwd=root, check=True)
 
 
+def archive(root):
+    run(root, "archive_event_history.py")
+    # Retain the retired standalone workflow's validation. The archiver can
+    # finish with current rows alone when git history cannot be read.
+    history = read_json(root / "event-history.json")
+    if (not isinstance(history, dict) or history.get("historyVersion") != 2
+            or not isinstance(history.get("events"), list)):
+        raise ValueError("Archive must contain version 2 history and an event list")
+    summary = history.get("summary")
+    if not isinstance(summary, dict) or summary.get("totalArchived") != len(history["events"]):
+        raise ValueError("Archive total does not match its event list")
+    scanned = summary.get("gitSnapshotsScanned", 0)
+    if type(scanned) is not int or scanned < 1:
+        raise ValueError("Archive did not scan any git history snapshots")
+
+
 def run_identity():
     return [os.environ.get("GITHUB_RUN_ID", ""), os.environ.get("GITHUB_RUN_ATTEMPT", "")]
 
@@ -84,7 +100,7 @@ def prepare(root, snapshot):
             retained.append({"candidate": candidate, "accepted": matches[0]})
     payload = {"version": 1, "sourceRoot": str(root.resolve()), "run": run_identity(),
                "generatedAt": stamp().isoformat(), "acceptedWebsiteEvents": retained}
-    run(root, "archive_event_history.py")
+    archive(root)
     run(root, "sync_verified_artist_websites.py")
     save(snapshot, payload)
     return len(retained)
@@ -212,7 +228,7 @@ def websites(root, snapshot):
 
 
 def finalize(root):
-    run(root, "archive_event_history.py")
+    archive(root)
     # Historical git snapshots must not override the latest reviewed corrections.
     run(root, "replay_source_update.py", "normalize")
 

@@ -53,8 +53,15 @@ class CoordinatedSourceRefreshTests(unittest.TestCase):
     def read(self, name):
         return refresh.read_json(self.root / name)
 
+    def archive_command(self, root, script, *args):
+        if script == "archive_event_history.py":
+            events = [{"archiveKey": "id:" + event["id"], "event": event}
+                      for name in refresh.FEEDS for event in self.read(name)]
+            self.write("event-history.json", {"historyVersion": 2, "events": events,
+                "summary": {"totalArchived": len(events), "gitSnapshotsScanned": 1}})
+
     def prepare(self):
-        with patch.object(refresh, "run") as command:
+        with patch.object(refresh, "run", side_effect=self.archive_command) as command:
             result = refresh.prepare(self.root, self.snapshot)
         return result, [tuple(call.args[1:]) for call in command.call_args_list]
 
@@ -254,10 +261,53 @@ class CoordinatedSourceRefreshTests(unittest.TestCase):
         command.assert_not_called()
 
     def test_finalize_archives_then_repairs_without_collecting(self):
-        with patch.object(refresh, "run") as command:
+        with patch.object(refresh, "run", side_effect=self.archive_command) as command:
             refresh.finalize(self.root)
         self.assertEqual([tuple(call.args[1:]) for call in command.call_args_list],
                          [("archive_event_history.py",), ("replay_source_update.py", "normalize")])
+
+    def test_both_archive_stages_reject_invalid_history_shape_counts_and_git_proof(self):
+        valid = {"historyVersion": 2, "events": [{"event": show()}],
+                 "summary": {"totalArchived": 1, "gitSnapshotsScanned": 1}}
+        invalid = [[], dict(valid, historyVersion=1), dict(valid, events={}), dict(valid, summary={}),
+            dict(valid, summary={"totalArchived": 2, "gitSnapshotsScanned": 1}),
+            dict(valid, summary={"totalArchived": 1, "gitSnapshotsScanned": 0}),
+            dict(valid, summary={"totalArchived": 1}),
+            dict(valid, summary={"totalArchived": 1, "gitSnapshotsScanned": "1"})]
+        for stage in ("prepare", "finalize"):
+            for report in invalid:
+                with self.subTest(stage=stage, report=report):
+                    def command(root, script, *args):
+                        self.assertEqual(script, "archive_event_history.py")
+                        self.write("event-history.json", report)
+                    with patch.object(refresh, "run", side_effect=command) as runner, self.assertRaises(ValueError):
+                        if stage == "prepare":
+                            refresh.prepare(self.root, self.snapshot)
+                        else:
+                            refresh.finalize(self.root)
+                    runner.assert_called_once_with(self.root, "archive_event_history.py")
+                    self.assertFalse(self.snapshot.exists(), "Invalid archive must not create retention proof")
+
+    def test_actual_archiver_current_only_success_cannot_bypass_either_stage(self):
+        import archive_event_history as archiver
+        for stage in ("prepare", "finalize"):
+            with self.subTest(stage=stage):
+                def command(root, script, *args):
+                    self.assertEqual(script, "archive_event_history.py")
+                    archiver.main()
+                with patch.multiple(archiver, ROOT=self.root, HISTORY_FILE=self.root / "event-history.json",
+                        EVENT_FILES=tuple(self.root / name for name in refresh.FEEDS)), \
+                        patch.object(archiver, "git_event_snapshots", return_value=[]), \
+                        patch.object(refresh, "run", side_effect=command) as runner, \
+                        contextlib.redirect_stdout(io.StringIO()), \
+                        self.assertRaisesRegex(ValueError, "did not scan any git history"):
+                    if stage == "prepare":
+                        refresh.prepare(self.root, self.snapshot)
+                    else:
+                        refresh.finalize(self.root)
+                self.assertEqual(self.read("event-history.json")["summary"]["totalArchived"], 1)
+                runner.assert_called_once_with(self.root, "archive_event_history.py")
+                self.assertFalse(self.snapshot.exists())
 
 
 if __name__ == "__main__":
