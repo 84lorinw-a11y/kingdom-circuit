@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-10T16:46:28Z",
+  "generatedAt": "2026-11-10T21:25:01Z",
   "artistsConfigured": 418,
   "officialWebsitesChecked": 259,
   "artistsWithEvents": 0,
   "eventsFound": 0,
-  "warningCount": 147,
+  "warningCount": 145,
   "warnings": [
     "Trip Lee: Unable to retrieve https://builttobrag.com/: HTTP Error 500: Internal Server Error",
     "Aaron Cole Bandsintown: Unable to retrieve https://www.bandsintown.com/a/2471775: HTTP Error 403: Forbidden",
@@ -107,5 +107,8 @@
     "Swaizy: robots.txt blocked https://linktr.ee/swaizyofficial",
     "Taelor Gray: robots.txt blocked https://linktr.ee/taelor_gray"
   ],
-  "mode": "all-tracked-artists-official-website-scan"
+  "mode": "all-tracked-artists-official-website-scan",
+  "previouslyAcceptedWebsiteShows": 0,
+  "missingProviderShowsRetained": 0,
+  "missingProviderReview": []
 }

@@ -1586,7 +1586,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-11-10T19:00:56Z",
+    "lastVerified": "2026-11-10T21:06:06Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "center",
@@ -2469,7 +2469,7 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-11-10T19:00:56Z",
+    "lastVerified": "2026-11-10T21:06:06Z",
     "confidence": "high",
     "imageType": "fallback",
     "imagePosition": "center",
@@ -2522,7 +2522,7 @@
         "priority": 120
       }
     ],
-    "lastVerified": "2026-11-10T19:00:56Z",
+    "lastVerified": "2026-11-10T21:06:06Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2650,7 +2650,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-11-10T19:00:56Z",
+    "lastVerified": "2026-11-10T21:06:06Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 0%",
@@ -3658,7 +3658,7 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-11-10T19:00:56Z",
+    "lastVerified": "2026-11-10T21:06:06Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -3705,7 +3705,7 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-11-10T19:00:56Z",
+    "lastVerified": "2026-11-10T21:06:06Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -3827,7 +3827,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-11-10T19:00:56Z",
+    "lastVerified": "2026-11-10T21:06:06Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 0%",
@@ -4020,21 +4020,16 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-11-10T19:00:56Z",
+    "lastVerified": "2026-11-10T21:06:06Z",
     "confidence": "high",
     "endDate": "2026-12-05",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-08-09T00:00:00Z",
+    "authority": "venue_ticket",
+    "lineupExplicit": true,
     "auditVerified": "2026-10-30",
-    "notes": "Official Eventbrite listing and flyer reviewed October 30, 2026: Miles Minnick, CJ Emulous, Nameless Servant, A4L and Th3rddae Da Mouthpiece; December 5 at Vybe Event Center, 2301 South Stearman Drive, Chandler AZ 85286. Doors 6:30 PM; show 7–11 PM; all ages and free parking. Zion Ultra Lounge Inc is the promoter. Existing listing identity and canonical URL retained. November 5 audit corrects the heading to the actual Vybe Event Center venue; Zion Ultra Lounge Inc is the promoter. The three additional supporting acts appear in the full billing without creating unverified artist profiles.",
-    "organizer": {
-      "name": "Zion Ultra Lounge Inc"
-    },
-    "venueUrl": "https://www.vybechandler.com/",
-    "venueInstagram": "https://www.instagram.com/vybechandler/",
-    "organizerWebsite": "https://zulvirtual.com/",
     "doorsTime": "18:30",
     "endTime": "23:00",
     "startDateTime": "2026-12-05T19:00:00-07:00",
@@ -4060,15 +4055,14 @@
       "A4L",
       "Th3rddae Da Mouthpiece"
     ],
-    "lineupExplicit": true,
     "musicConfirmed": true,
     "ageRestriction": "All ages",
-    "authority": "venue_ticket",
     "imageOverride": true,
     "detailImageLayout": "portrait",
     "imageSource": "Zion Ultra Lounge official Eventbrite concert flyer",
     "imageSourceUrl": "https://www.eventbrite.com/e/miles-minnick-concert-tickets-2002952477779",
     "publicDescription": "Zion Ultra Lounge Inc presents Miles Minnick with CJ Emulous, Nameless Servant, A4L and Th3rddae Da Mouthpiece at Vybe Event Center, 2301 South Stearman Drive, Chandler, Arizona, on December 5, 2026. Doors open at 6:30 PM; the concert runs 7–11 PM Mountain Standard Time. All ages welcome. Free parking.",
+    "notes": "Official Eventbrite listing and flyer reviewed October 30, 2026: Miles Minnick, CJ Emulous, Nameless Servant, A4L and Th3rddae Da Mouthpiece; December 5 at Vybe Event Center, 2301 South Stearman Drive, Chandler AZ 85286. Doors 6:30 PM; show 7–11 PM; all ages and free parking. Zion Ultra Lounge Inc is the promoter. Existing listing identity and canonical URL retained. November 5 audit corrects the heading to the actual Vybe Event Center venue; Zion Ultra Lounge Inc is the promoter. The three additional supporting acts appear in the full billing without creating unverified artist profiles.",
     "scheduleDetails": [
       {
         "label": "Admission",
@@ -4083,7 +4077,13 @@
         "text": "Vybe Event Center · 2301 South Stearman Drive, Chandler, AZ 85286"
       }
     ],
-    "canonicalPath": "/event/miles-minnick-and-cj-emulous-at-zion-ultra-lounge-2026-12-05-chandler-bfff69/"
+    "canonicalPath": "/event/miles-minnick-and-cj-emulous-at-zion-ultra-lounge-2026-12-05-chandler-bfff69/",
+    "organizer": {
+      "name": "Zion Ultra Lounge Inc"
+    },
+    "venueUrl": "https://www.vybechandler.com/",
+    "venueInstagram": "https://www.instagram.com/vybechandler/",
+    "organizerWebsite": "https://zulvirtual.com/"
   },
   {
     "id": "manual:egr-2026-12-11-fargo-nd",
@@ -4116,7 +4116,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-11-10T19:00:56Z",
+    "lastVerified": "2026-11-10T21:06:06Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 0%",
@@ -4157,7 +4157,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-11-10T19:00:56Z",
+    "lastVerified": "2026-11-10T21:06:06Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 0%",
@@ -4402,7 +4402,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-11-10T19:00:56Z",
+    "lastVerified": "2026-11-10T21:06:06Z",
     "confidence": "high",
     "endDate": "2026-12-17",
     "imageType": "event_artwork",
@@ -4469,7 +4469,7 @@
         "priority": 74
       }
     ],
-    "lastVerified": "2026-11-10T19:00:56Z",
+    "lastVerified": "2026-11-10T21:06:06Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "center",
@@ -4533,7 +4533,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-11-10T19:00:56Z",
+    "lastVerified": "2026-11-10T21:06:06Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -5107,7 +5107,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-11-10T19:00:56Z",
+    "lastVerified": "2026-11-10T21:06:06Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "center",
@@ -5808,7 +5808,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-11-10T19:00:56Z",
+    "lastVerified": "2026-11-10T21:06:06Z",
     "confidence": "high",
     "endDate": "2027-02-16",
     "imageType": "event_artwork",
@@ -5854,7 +5854,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-11-10T19:00:56Z",
+    "lastVerified": "2026-11-10T21:06:06Z",
     "confidence": "high",
     "endDate": "2027-02-18",
     "imageType": "event_artwork",
@@ -5967,7 +5967,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-11-10T19:00:56Z",
+    "lastVerified": "2026-11-10T21:06:06Z",
     "confidence": "high",
     "endDate": "2027-02-20",
     "imageType": "event_artwork",
@@ -6013,7 +6013,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-11-10T19:00:56Z",
+    "lastVerified": "2026-11-10T21:06:06Z",
     "confidence": "high",
     "endDate": "2027-02-24",
     "imageType": "event_artwork",
@@ -6052,7 +6052,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-11-10T19:00:56Z",
+    "lastVerified": "2026-11-10T21:06:06Z",
     "confidence": "high",
     "endDate": "2027-02-28",
     "imageType": "event_artwork",
@@ -6247,7 +6247,7 @@
         "type": "retained_reference"
       }
     ],
-    "lastVerified": "2026-11-10T19:00:56Z",
+    "lastVerified": "2026-11-10T21:06:06Z",
     "confidence": "high",
     "endDate": "2027-05-01",
     "endTime": "22:00",
