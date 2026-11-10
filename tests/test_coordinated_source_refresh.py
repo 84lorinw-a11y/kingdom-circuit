@@ -266,6 +266,36 @@ class CoordinatedSourceRefreshTests(unittest.TestCase):
         self.assertEqual([tuple(call.args[1:]) for call in command.call_args_list],
                          [("archive_event_history.py",), ("replay_source_update.py", "normalize")])
 
+    def test_finalize_recounts_after_existing_reviewed_removal_without_changing_records_or_metadata(self):
+        import catalog_removals
+        retained = [{"archiveKey": "id:kept", "event": show(), "calendarPresence": "present",
+                     "dateState": "past", "observedOnOrAfterEventDate": True, "observedInGitHistory": True,
+                     "firstSeenOnCalendar": "2026-09-01T12:00:00Z"},
+                    {"archiveKey": "id:also-kept", "event": show(id="also-kept"),
+                     "calendarPresence": "absent", "dateState": "upcoming"}]
+        excluded = {"archiveKey": "id:owner-removed", "event": show(id="owner-removed", artists=["Propaganda"]),
+                    "calendarPresence": "present", "dateState": "past",
+                    "observedOnOrAfterEventDate": True, "observedInGitHistory": True}
+        report = {"historyVersion": 2, "updatedAt": "2026-11-10T12:00:00Z", "customMetadata": {"retain": True},
+                  "events": retained + [excluded], "summary": {"totalArchived": 3, "currentlyPresent": 2,
+                      "pastDated": 2, "observedOnOrAfterEventDate": 2, "gitHistoryBackfilled": 2,
+                      "gitSnapshotsScanned": 7, "unrelatedMetric": 42}}
+        def command(root, script, *args):
+            if script == "archive_event_history.py":
+                self.write("event-history.json", report)
+            else:
+                self.assertEqual((script, args), ("replay_source_update.py", ("normalize",)))
+                catalog_removals.apply(root)  # The established policy removes the reviewed artist.
+                self.assertEqual(self.read("event-history.json")["events"], retained)
+        with patch.object(refresh, "run", side_effect=command):
+            refresh.finalize(self.root)
+        expected = dict(report, events=retained, summary=dict(report["summary"], totalArchived=2,
+            currentlyPresent=1, pastDated=1, observedOnOrAfterEventDate=1, gitHistoryBackfilled=1))
+        self.assertEqual(self.read("event-history.json"), expected)
+        before = (self.root / "event-history.json").read_bytes()
+        refresh.refresh_archive_counts(self.root)
+        self.assertEqual((self.root / "event-history.json").read_bytes(), before)
+
     def test_both_archive_stages_reject_invalid_history_shape_counts_and_git_proof(self):
         valid = {"historyVersion": 2, "events": [{"event": show()}],
                  "summary": {"totalArchived": 1, "gitSnapshotsScanned": 1}}

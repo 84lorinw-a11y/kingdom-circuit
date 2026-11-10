@@ -71,6 +71,22 @@ def archive(root):
         raise ValueError("Archive did not scan any git history snapshots")
 
 
+def refresh_archive_counts(root):
+    """Report the normalized archive without filtering or changing its records."""
+    history = read_json(root / "event-history.json")
+    records = history["events"]
+    counts = {
+        "totalArchived": len(records),
+        "currentlyPresent": sum(1 for record in records if record.get("calendarPresence") == "present"),
+        "pastDated": sum(1 for record in records if record.get("dateState") == "past"),
+        "observedOnOrAfterEventDate": sum(1 for record in records if record.get("observedOnOrAfterEventDate")),
+        "gitHistoryBackfilled": sum(1 for record in records if record.get("observedInGitHistory")),
+    }
+    if any(history["summary"].get(key) != value for key, value in counts.items()):
+        history["summary"].update(counts)
+        save(root / "event-history.json", history)
+
+
 def run_identity():
     return [os.environ.get("GITHUB_RUN_ID", ""), os.environ.get("GITHUB_RUN_ATTEMPT", "")]
 
@@ -231,6 +247,7 @@ def finalize(root):
     archive(root)
     # Historical git snapshots must not override the latest reviewed corrections.
     run(root, "replay_source_update.py", "normalize")
+    refresh_archive_counts(root)
 
 
 def main():
