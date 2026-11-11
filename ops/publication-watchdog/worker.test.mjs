@@ -24,7 +24,12 @@ function setup(options = {}) {
   const calls = [], logs = [];
   const env = { ENABLED: 'true', GITHUB_TOKEN: 'do-not-expose-this-test-secret', WATCHDOG_STATE: kv, ...options.env };
   const fetcher = async (url, init) => {
-    calls.push({ url, method: init?.method || 'GET', body: init?.body, headers: init?.headers });
+    calls.push({ url, method: init?.method || 'GET', body: init?.body, headers: init?.headers, redirect: init?.redirect, signal: init?.signal });
+    // Cloudflare Request supports follow/manual, not Node's redirect:error.
+    if (init?.redirect === 'error') throw new TypeError('Unsupported redirect mode');
+    if (options.redirectAt && url.includes(options.redirectAt))
+      return new Response(null, { status: options.redirectStatus || 302,
+        headers: { Location: 'https://untrusted-redirect.example/target' } });
     if (url.includes('/dispatches')) {
       assert(kv.map.has(`dispatch:${JSON.parse(init.body).inputs.refresh_mode}:${DATE}`), 'claim precedes POST');
       if (options.postThrows) throw new Error('secret network exception do-not-expose-this-test-secret');
@@ -139,6 +144,41 @@ test('dispatch uses only fixed repository/workflow/main and required guard input
   assert(receipt.url.includes('watchdog='));
   assert.equal(receipt.headers.Authorization, undefined);
   assert.equal(h.calls.some(x => x.url.includes('/contents/')), false);
+  for (const call of h.calls) {
+    assert.equal(call.redirect, 'manual');
+    assert.equal(call.signal instanceof AbortSignal, true);
+  }
+});
+
+test('public receipt and catalog redirects fail closed without requesting their destinations', async () => {
+  for (const [redirectAt, reason] of [['raw.githubusercontent.com', 'github_receipt_http_302'],
+    ['fan-show-catalog', 'live_catalog_http_302']]) {
+    const h = setup({ redirectAt }); const result = await runCheck(h.env, h.deps);
+    assert.equal(result.status, 'error'); assert.equal(result.reason, reason);
+    assert.equal(h.calls.some(x => x.url.includes('untrusted-redirect')), false);
+    assert.equal(h.calls.some(x => x.method === 'POST'), false);
+    assert.equal(h.calls.at(-1).redirect, 'manual');
+  }
+});
+
+test('authenticated Actions GET redirects fail closed without forwarding credentials', async () => {
+  const h = setup({ redirectAt: '/runs?', redirectStatus: 307 });
+  const result = await runCheck(h.env, h.deps);
+  assert.equal(result.reason, 'github_runs_http_307');
+  assert.equal(h.calls.filter(x => x.url.includes('/runs?')).length, 1);
+  assert.equal(h.calls.some(x => x.url.includes('untrusted-redirect')), false);
+  assert.equal(h.calls.some(x => x.method === 'POST'), false);
+  assert.equal(h.calls.at(-1).redirect, 'manual');
+});
+
+test('dispatch redirects are rejected once without forwarding credentials or retrying', async () => {
+  const h = setup({ redirectAt: '/dispatches', redirectStatus: 307 });
+  const result = await runCheck(h.env, h.deps);
+  assert.equal(result.status, 'failed'); assert.equal(result.reason, 'dispatch_http_307');
+  assert.equal(h.calls.some(x => x.url.includes('untrusted-redirect')), false);
+  await runCheck(h.env, h.deps);
+  assert.equal(h.calls.filter(x => x.method === 'POST').length, 1);
+  assert.equal(h.calls.find(x => x.method === 'POST').redirect, 'manual');
 });
 
 test('accepted dispatch is not retried before GitHub receipt appears', async () => {

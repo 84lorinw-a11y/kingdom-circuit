@@ -114,7 +114,9 @@ function headers(token) {
 
 async function getJSON(fetcher, url, options, code) {
   let response;
-  try { response = await fetcher(url, { ...options, redirect: 'error', signal: AbortSignal.timeout(15000) }); }
+  // Workers rejects redirect:'error' before sending. Manual returns 3xx to
+  // the failure check below and never forwards credentials to another host.
+  try { response = await fetcher(url, { ...options, redirect: 'manual', signal: AbortSignal.timeout(15000) }); }
   catch { throw new CheckError(`${code}_unavailable`); }
   if (!response.ok) throw new CheckError(`${code}_http_${response.status}`);
   try { return await response.json(); } catch { throw new CheckError(`${code}_invalid_json`); }
@@ -185,7 +187,8 @@ export async function runCheck(env, deps = {}) {
     let response;
     try {
       response = await fetcher(`${API}/actions/workflows/${WORKFLOW}/dispatches`, {
-        method: 'POST', redirect: 'error', signal: AbortSignal.timeout(15000),
+        // As with GET, reject redirects without following or forwarding auth.
+        method: 'POST', redirect: 'manual', signal: AbortSignal.timeout(15000),
         headers: { ...headers(env.GITHUB_TOKEN), 'Content-Type': 'application/json' },
         body: JSON.stringify({ ref: 'main', inputs: { refresh_mode: result.mode,
           automatic_fallback: 'true', expected_day: result.day } }),
