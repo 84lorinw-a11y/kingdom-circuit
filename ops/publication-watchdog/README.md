@@ -26,6 +26,12 @@ repository source, or production assets.
 Use the dedicated `kingdom-circuit-publication-watchdog` Worker, independent of
 Apollo and the Kingdom Circuit site. Upload `worker.mjs` as an ES module.
 
+Production was activated on November 11, 2026. The dedicated KV binding,
+15-minute Cron Trigger, `GITHUB_TOKEN` secret, and `ENABLED=true` setting are
+configured. The committed Wrangler configuration preserves this active state
+on future deployments. A newly created environment must follow the setup
+checks below before enabling recovery.
+
 1. Create/bind a dedicated KV namespace as `WATCHDOG_STATE`.
 2. Add `GITHUB_TOKEN` as a secret: fine-grained token restricted to
    `84lorinw-a11y/kingdom-circuit`, Actions write (plus implicit metadata read).
@@ -38,9 +44,17 @@ Apollo and the Kingdom Circuit site. Upload `worker.mjs` as an ES module.
 5. Set `ENABLED=true` only when ready. Inspect the next actual cron result and
    `/health`; a newly registered trigger can take 15 minutes to propagate.
 
-`wrangler.jsonc` defaults to disabled and contains the dedicated account and KV
-namespace IDs returned by Cloudflare. Never commit tokens. A CLI deployment
-without overriding `ENABLED` will deliberately disable automatic dispatch.
+`wrangler.jsonc` contains the active production setting and the dedicated
+account and KV namespace IDs returned by Cloudflare. Never commit tokens.
+Keep an intentional pause explicit: set `ENABLED=false` in the deployed
+environment and the deployment configuration together.
+
+The repository-scoped GitHub credential expires on November 11, 2027. Its
+nonsecret expiry and activation evidence belong in
+`Kingdom Circuit Audits/2026-11-11/independent-publication-watchdog/setup-status.json`.
+The daily monitor should warn during the final 30 days so the secret can be
+renewed before expiry. Update that receipt after renewal; never include the
+credential value in source, receipts, or logs.
 
 `GET /health` returns the last stored result; it makes no external requests.
 All other HTTP paths return 404 and non-read methods on health return 405.

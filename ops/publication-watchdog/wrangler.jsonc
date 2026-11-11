@@ -8,9 +8,10 @@
   "kv_namespaces": [
     { "binding": "WATCHDOG_STATE", "id": "7a101dfa068b46399f0b40085b696139" }
   ],
-  "vars": { "ENABLED": "false" },
+  "vars": { "ENABLED": "true" },
   "triggers": { "crons": ["*/15 * * * *"] },
   "observability": { "enabled": true }
   // Store GITHUB_TOKEN as a Worker secret. Never put secrets here.
-  // The source default is deliberately disabled until setup is verified.
+  // Production activation was approved and verified on 2026-11-11.
+  // For a new environment, keep ENABLED=false until its setup is verified.
 }
