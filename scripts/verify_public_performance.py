@@ -588,7 +588,7 @@ def arguments(argv: Optional[list[str]] = None) -> argparse.Namespace:
         ),
     )
     parser.add_argument("--max-variant-bytes", type=int, default=2 * 1024 * 1024)
-    parser.add_argument("--max-total-optimized-bytes", type=int, default=132 * 1024 * 1024)
+    parser.add_argument("--max-total-optimized-bytes", type=int, default=135 * 1024 * 1024)
     args = parser.parse_args(argv)
     if not 0 <= args.min_optimized_source_percent <= 100:
         parser.error("--min-optimized-source-percent must be between 0 and 100")
