@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "kingdom-circuit-publication-watchdog",
+  "main": "worker.mjs",
+  "account_id": "171f2c743ce171a8416dfb7fc9bccc20",
+  "compatibility_date": "2026-11-11",
+  "workers_dev": true,
+  "kv_namespaces": [
+    { "binding": "WATCHDOG_STATE", "id": "7a101dfa068b46399f0b40085b696139" }
+  ],
+  "vars": { "ENABLED": "false" },
+  "triggers": { "crons": ["*/15 * * * *"] },
+  "observability": { "enabled": true }
+  // Store GITHUB_TOKEN as a Worker secret. Never put secrets here.
+  // The source default is deliberately disabled until setup is verified.
+}

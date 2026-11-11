@@ -90,6 +90,14 @@ def can_write_or_dispatch(text):
     return bool(capability or direct_write)
 
 
+def named_step(text, name):
+    match = re.search(r'^      - name: ' + re.escape(name) +
+                      r'\n(.*?)(?=^      - |^  [\w-]+:|\Z)', text, re.M | re.S)
+    if not match:
+        raise AssertionError('Missing workflow step: ' + name)
+    return match[1]
+
+
 class CoordinatedWorkflowTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -156,6 +164,55 @@ class CoordinatedWorkflowTests(unittest.TestCase):
         for name, commands in required.items():
             for command in commands:
                 self.assertIn('python scripts/' + command, self.workflows[name], name)
+
+    def test_independent_dispatch_is_opt_in_and_passes_expected_day_to_plan(self):
+        text = self.workflows[PUBLISHER]
+        inputs = section(text, 'on')
+        self.assertRegex(inputs, r'automatic_fallback:\n[^\n]+\n        type: boolean\n        default: false')
+        self.assertRegex(inputs, r'expected_day:\n[^\n]+\n        type: string')
+        claim = named_step(text, 'Claim the daily sequence before collecting anything')
+        for env, value in [('KC_AUTOMATIC_FALLBACK', 'inputs.automatic_fallback'),
+                           ('KC_EXPECTED_DAY', 'inputs.expected_day'),
+                           ('KC_REQUESTED_MODE', 'inputs.refresh_mode')]:
+            self.assertIn(env + ': ${{ ' + value + ' }}', claim)
+        self.assertIn('claim_required: ${{ steps.plan.outputs.claim_required }}', text)
+
+    def test_both_automatic_entrypoints_persist_and_verify_the_same_pinned_claim(self):
+        text = self.workflows[PUBLISHER]
+        for name in ('Persist the daily claim before starting work',
+                     'Verify this run owns the saved daily claim'):
+            with self.subTest(step=name):
+                step = named_step(text, name)
+                self.assertIn("if: steps.plan.outputs.claim_required == 'true' && steps.plan.outputs.run == 'true'", step)
+                self.assertNotIn("github.event_name == 'schedule'", step)
+                self.assertIn('KC_MODE: ${{ steps.plan.outputs.mode }}', step)
+                self.assertIn('KC_DAY: ${{ steps.plan.outputs.day }}', step)
+        persist = named_step(text, 'Persist the daily claim before starting work')
+        self.assertIn('--reuse-validated-output', persist)
+        self.assertIn('--replay "python scripts/coordinated_schedule.py verify-claim"', persist)
+        self.assertNotIn('--replay "python scripts/coordinated_schedule.py claim"', persist)
+        self.assertIn('git show origin/main:daily-publication-status.json',
+                      named_step(text, 'Verify this run owns the saved daily claim'))
+
+    def test_failed_job_rerun_verifies_attempt_before_any_source_work(self):
+        text = self.workflows[PUBLISHER]
+        guard_name = 'Verify the daily claim again before source work'
+        guard = named_step(text, guard_name)
+        self.assertIn("if: needs.plan.outputs.claim_required == 'true'", guard)
+        self.assertIn('KC_MODE: ${{ needs.plan.outputs.mode }}', guard)
+        self.assertIn('KC_DAY: ${{ needs.plan.outputs.day }}', guard)
+        self.assertIn('python scripts/coordinated_schedule.py verify-claim', guard)
+        for step in ('Install pinned image verification backend',
+                     'Archive existing bookings before any source replacement',
+                     'Collect upcoming shows'):
+            self.assertLess(text.index('- name: ' + guard_name), text.index('- name: ' + step))
+
+    def test_skipped_automatic_attempt_never_replaces_the_publication_receipt(self):
+        text = self.workflows[PUBLISHER]
+        record = re.search(r'^  record-result:\n(.*)', text, re.M | re.S)[1]
+        self.assertIn("if: ${{ always() && needs.plan.result == 'success' && needs.plan.outputs.run == 'true' }}", record)
+        self.assertIn('KC_MODE: ${{ needs.plan.outputs.mode }}', record)
+        self.assertIn('KC_DAY: ${{ needs.plan.outputs.day }}', record)
 
 
 if __name__ == '__main__':

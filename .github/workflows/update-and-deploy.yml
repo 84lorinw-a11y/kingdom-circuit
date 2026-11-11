@@ -18,6 +18,14 @@ on:
         type: choice
         options: [full, dates]
         default: full
+      automatic_fallback:
+        description: "Run only if this day and mode have no recorded attempt"
+        type: boolean
+        default: false
+      expected_day:
+        description: "Automatic fallback day (YYYY-MM-DD; Central for full, Pacific for dates)"
+        type: string
+        required: false
 
 permissions:
   contents: write
@@ -45,6 +53,7 @@ jobs:
       run: ${{ steps.plan.outputs.run }}
       mode: ${{ steps.plan.outputs.mode }}
       day: ${{ steps.plan.outputs.day }}
+      claim_required: ${{ steps.plan.outputs.claim_required }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -59,19 +68,22 @@ jobs:
           KC_SCHEDULE: ${{ github.event.schedule }}
           KC_REQUESTED_MODE: ${{ inputs.refresh_mode }}
           KC_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+          KC_AUTOMATIC_FALLBACK: ${{ inputs.automatic_fallback }}
+          KC_EXPECTED_DAY: ${{ inputs.expected_day }}
         run: python scripts/coordinated_schedule.py claim
       - name: Persist the daily claim before starting work
-        if: github.event_name == 'schedule' && steps.plan.outputs.run == 'true'
+        if: steps.plan.outputs.claim_required == 'true' && steps.plan.outputs.run == 'true'
         env:
-          KC_SCHEDULE: ${{ github.event.schedule }}
+          KC_MODE: ${{ steps.plan.outputs.mode }}
+          KC_DAY: ${{ steps.plan.outputs.day }}
         run: |
           python scripts/publish_automation_changes.py \
             --message "Claim coordinated daily publication [skip ci]" \
             --reuse-validated-output \
-            --replay "python scripts/coordinated_schedule.py claim" \
+            --replay "python scripts/coordinated_schedule.py verify-claim" \
             daily-publication-status.json
       - name: Verify this run owns the saved daily claim
-        if: github.event_name == 'schedule' && steps.plan.outputs.run == 'true'
+        if: steps.plan.outputs.claim_required == 'true' && steps.plan.outputs.run == 'true'
         env:
           KC_MODE: ${{ steps.plan.outputs.mode }}
           KC_DAY: ${{ steps.plan.outputs.day }}
@@ -111,6 +123,13 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      - name: Verify the daily claim again before source work
+        if: needs.plan.outputs.claim_required == 'true'
+        env:
+          KC_MODE: ${{ needs.plan.outputs.mode }}
+          KC_DAY: ${{ needs.plan.outputs.day }}
+        run: python scripts/coordinated_schedule.py verify-claim
 
       - name: Install pinned image verification backend
         run: python -c "import sys; sys.path.insert(0, 'scripts'); from finalize_public_experience import ensure_image_backend; print(ensure_image_backend())"
