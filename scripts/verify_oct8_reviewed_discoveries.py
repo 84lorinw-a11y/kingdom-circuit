@@ -8,6 +8,7 @@ import build_seo_site as builder
 from catalog_removals import withheld_event
 from verify_egr_bizzle_updates import uses_image
 from apply_oct2_verified_shows import OWNER_HELD_IDS
+from verify_show_artwork import published_event_path
 
 ROOT = Path(__file__).resolve().parents[1]
 BATCH = "2026-10-08-reviewed-discoveries"
@@ -38,7 +39,8 @@ def verify(site):
         for field in ("title", "startDate", "startTime", "venue", "city", "state",
                       "artists", "advertisedBilling", "officialUrl", "ticketUrl"):
             assert event.get(field) == wanted.get(field), (wanted["id"], field)
-        href = builder.event_path(event)
+        href = (published_event_path(event, ROOT) if not builder.scheduled(wanted)
+                else builder.event_path(event))
         detail = (site / href.strip("/") / "index.html").read_text()
         assert uses_image(detail, site, wanted["image"]), (wanted["id"], "approved image")
         for name in wanted["advertisedBilling"]:

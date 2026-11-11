@@ -13,6 +13,25 @@ from verify_egr_bizzle_updates import uses_image
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def published_event_path(event: dict, root: Path) -> str:
+    """Resolve a retained identity before deriving a URL from mutable details."""
+    history = root / "config/url-continuity.json"
+    if history.is_file():
+        identity = str(event["id"]).removeprefix("manual:")
+        records = json.loads(history.read_text())["events"]
+        matches = [record for key, record in records.items()
+                   if identity in {str(value).removeprefix("manual:")
+                                   for value in [key, *record.get("sourceIds", [])]}]
+        if matches:
+            assert len(matches) == 1, (event["id"], "ambiguous retained URL identity")
+            retained = matches[0]
+            assert retained["event"]["startDate"] == event["startDate"], (event["id"], "retained URL date")
+            href = retained["path"]
+            assert re.fullmatch(r"/event/[a-z0-9-]+/", href), (event["id"], "unsafe retained event URL")
+            return href
+    return builder.event_path(event)
+
+
 def verify(site: Path):
     roster = json.loads((site / "config/artists.json").read_text())
     curated = {builder.norm(artist["name"]): artist["name"]
@@ -60,7 +79,9 @@ def verify(site: Path):
             rf"assets/optimized/{digest}-w\d+\.webp", image_path
         ), (pin["id"], "feed image", {"actual": image_path, "approved": pin["image"], "approved_sha24": digest})
         assert event["imageType"] == pin["imageType"], (pin["id"], "image type")
-        href = builder.event_path(event)
+        href = (published_event_path(event, ROOT)
+                if builder.norm(pin.get("status")) in {"cancelled", "canceled"}
+                else builder.event_path(event))
         targets[href] = pin
         text = (site / href.strip("/") / "index.html").read_text()
         if builder.norm(pin.get("status")) in {"cancelled", "canceled"}:

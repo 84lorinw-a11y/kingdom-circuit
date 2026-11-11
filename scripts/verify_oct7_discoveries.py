@@ -8,14 +8,61 @@ import sys
 import build_seo_site as builder
 from apply_verified_show_information import enrich
 from verify_egr_bizzle_updates import uses_image
+from verify_show_artwork import published_event_path
 
 ROOT = Path(__file__).resolve().parents[1]
 BATCH = "2026-10-07-reviewed-discoveries"
+REVIEWED_CANCELLATION = ("babytooth-experience-huntington-beach-2026-11-21", "2026-11-21")
+
+
+def verify_reviewed_cancellation(site, wanted, raw):
+    """Keep the exact reviewed cancellation accountable after feed removal."""
+    identity = wanted["id"]
+    assert (identity, wanted["startDate"]) == REVIEWED_CANCELLATION
+    assert wanted.get("status") in {"cancelled", "canceled"}, (identity, "cancellation status")
+    assert wanted.get("ticketAvailability") == "cancelled" and not wanted.get("ticketUrl"), (identity, "actionable cancelled ticket")
+    assert not any(str(e["id"]).removeprefix("manual:") == identity for e in raw), (identity, "cancelled event in public feed")
+    event = dict(wanted, id="manual:" + identity)
+    href = published_event_path(event, ROOT)
+    detail = (site / href.strip("/") / "index.html").read_text()
+    assert uses_image(detail, site, wanted["image"]), (identity, "source artwork")
+    for name in wanted["advertisedBilling"]:
+        assert name in html.unescape(detail), (identity, name)
+    schemas = [json.loads(value) for value in re.findall(r'<script[^>]*type="application/ld\+json"[^>]*>(.*?)</script>', detail, re.S)]
+    events = [value for value in schemas if value.get("@type") == "MusicEvent"]
+    assert len(events) == 1, (identity, "missing or duplicated event schema")
+    schema = events[0]
+    assert schema.get("eventStatus") == "https://schema.org/EventCancelled", (identity, "cancellation schema")
+    assert schema.get("name") == wanted["title"] and schema.get("startDate") == wanted["startDate"], (identity, "retained event identity/date")
+    assert schema.get("url") == "https://kingdomcircuit.com" + href, (identity, "retained schema URL")
+    assert schema.get("location", {}).get("name") == wanted["venue"], (identity, "retained venue")
+    address = schema.get("location", {}).get("address", {})
+    assert address.get("addressLocality") == wanted["city"] and address.get("addressRegion") == wanted["state"], (identity, "retained location")
+    assert [p.get("name") for p in schema.get("performer", [])] == wanted["advertisedBilling"], (identity, "retained full billing")
+    assert "offers" not in schema, (identity, "cancelled purchase offer")
+    assert re.search(r'<link[^>]*rel="canonical"[^>]*href="' + re.escape("https://kingdomcircuit.com" + href) + '"', detail), (identity, "retained canonical URL")
+    assert html.escape(wanted["officialUrl"], quote=True) in detail, (identity, "official source")
+    assert re.search(r"cancelled|canceled", html.unescape(re.sub(r"<[^>]+>", " ", detail)), re.I), (identity, "visible cancellation")
+    anchors = re.findall(r'<a\b[^>]*>(.*?)</a>', detail, re.S | re.I)
+    labels = [html.unescape(re.sub(r"<[^>]+>", " ", value)).strip() for value in anchors]
+    assert not any(re.search(r"\b(?:(?:buy|get|purchase)\s+tickets?|rsvp|register(?:\s+now)?)\b", label, re.I) for label in labels), (identity, "cancelled ticket action")
+    assert href not in (site / "shows/index.html").read_text(), (identity, "cancelled show listed")
+    for name in wanted["artists"]:
+        profile = site / builder.artist_path(name).strip("/") / "index.html"
+        profile_text = profile.read_text()
+        archive_pattern = r'<section\b(?=[^>]*\bdata-past-shows-archive(?=[\s=>]))[^>]*>.*?</section>'
+        for archive in re.findall(archive_pattern, profile_text, re.S | re.I):
+            if href in archive:
+                links = re.findall(r'<a\b[^>]*href="' + re.escape(href) + r'"[^>]*>(.*?)</a>', archive, re.S | re.I)
+                assert links and all(re.search(r"cancelled|canceled", value, re.I) for value in links), (identity, "unmarked cancelled archive")
+        upcoming = re.sub(archive_pattern, "", profile_text, flags=re.S | re.I)
+        assert href not in upcoming, (identity, "cancelled artist schedule")
 
 
 def verify(site):
-    rows = builder.merge_events(json.loads((site / "events.json").read_text()),
-                                json.loads((site / "supplemental-events.json").read_text()))
+    primary = json.loads((site / "events.json").read_text())
+    supplemental = json.loads((site / "supplemental-events.json").read_text())
+    rows = builder.merge_events(primary, supplemental)
     registry = ROOT / 'config/verified-show-information.json'
     reviewed = json.loads(registry.read_text()).get('events', []) if registry.exists() else []
     # Later guarded source corrections supersede the original discovery seed.
@@ -24,6 +71,10 @@ def verify(site):
     checked = 0
     for wanted in approved:
         if not builder.current(wanted):
+            continue
+        if ((wanted["id"], wanted["startDate"]) == REVIEWED_CANCELLATION
+                and wanted.get("status") in {"cancelled", "canceled"}):
+            verify_reviewed_cancellation(site, wanted, primary + supplemental)
             continue
         matches = [e for e in rows if str(e["id"]).removeprefix("manual:") == wanted["id"]]
         assert len(matches) == 1, (wanted["id"], "missing or duplicate")

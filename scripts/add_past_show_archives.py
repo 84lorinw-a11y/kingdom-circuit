@@ -236,6 +236,13 @@ def inject(page: pathlib.Path, events: list[dict], known_slugs: set[str]) -> boo
     return False
 
 
+REVIEWED_CANCELLED_SCHEMA_RETENTION = {
+    # November 11 cancellation: retain the already-published structured facts
+    # at the existing URL on this and every subsequent archive rebuild.
+    ("babytooth-experience-huntington-beach-2026-11-21", "2026-11-21"),
+}
+
+
 def past_page(root: pathlib.Path, event: dict, known_slugs: set[str]) -> str:
     title = str(event.get("title") or "Past Christian hip-hop show")
     city = str(event.get("city") or "").strip(); state = str(event.get("state") or "").strip(); venue = str(event.get("venue") or "Venue not provided").strip()
@@ -280,6 +287,19 @@ def past_page(root: pathlib.Path, event: dict, known_slugs: set[str]) -> str:
     is_cancelled = cancelled(event)
     if is_cancelled:
         schema["eventStatus"] = "https://schema.org/EventCancelled"
+        identity = (str(event.get("id", "")).removeprefix("manual:"), event.get("startDate"))
+        if identity in REVIEWED_CANCELLED_SCHEMA_RETENTION:
+            from show_information_model import normalize
+            record = normalize(event)
+            original_image = str(event.get("image") or "").strip()
+            if not original_image or not record.get("schemaEndDate") or not record.get("organizerName"):
+                raise ValueError("Reviewed cancelled event lost retained image, end date or organizer")
+            schema["image"] = [original_image if original_image.startswith("https://")
+                               else SITE_ORIGIN + "/" + original_image.lstrip("/")]
+            schema["endDate"] = record["schemaEndDate"]
+            schema["organizer"] = {"@type": "Organization", "name": record["organizerName"]}
+            if record.get("organizerUrl"):
+                schema["organizer"]["url"] = record["organizerUrl"]
         schema_json = json.dumps(schema, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     page_label = "Cancelled event" if is_cancelled else "Past Show"
     notice = ("<strong>This event was cancelled.</strong><p>The original date and lineup are retained for reference. This event is not an upcoming or completed performance.</p>" if is_cancelled else "<strong>This event has passed.</strong><p>Kingdom Circuit keeps verified past listings available as concert history. Use the links below for current shows.</p>")
