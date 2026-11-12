@@ -114,7 +114,13 @@ class OctoberConcertCorrectionTests(unittest.TestCase):
             self.assertEqual(len(rows), 1)
             for e in [rows[0], json.loads((root / 'event-history.json').read_text())['events'][0]['event']]:
                 self.assertEqual(e['artists'], ['DJ Eternitrock'])
-                self.assertEqual(e['advertisedBilling'], ['DJ Eternitrock'])
+                self.assertEqual(e['advertisedBilling'], [
+                    'DJ Eternitrock', 'FayBN', '90culture™', 'Cyph-N-Sesh', '2EDGE',
+                    'BRB', 'ALUIS', 'NALDO', '8CH2OWENS', 'FASTINDEMAND',
+                    'Jaweg Kidd', 'DJ Magic'])
+                self.assertEqual(e['officialBill'], e['advertisedBilling'])
+                self.assertNotIn('still to be announced', e['publicDescription'])
+                self.assertNotIn('Lace Gambino', e['advertisedBilling'])
                 self.assertEqual(e['address'], '2740 Parker Avenue')
                 self.assertEqual(e['firstSeen'], '2026-10-12T19:39:04Z')
                 self.assertEqual(e['startTime'], '21:00')

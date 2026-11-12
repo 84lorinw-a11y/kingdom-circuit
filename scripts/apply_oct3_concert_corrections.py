@@ -21,8 +21,9 @@ WRONG_ZEKE_IDS = {
     "bandsintown:1040258635",
 }
 ADRENALINE_DUPLICATE = "bandsintown:1040469553"
-# October 24: the owner reapproved Rap Go Round. Its reviewed seed now keeps
-# only the current confirmed DJ billing; Naldo remains outside the roster.
+# November 12: Rap Go Round retains its original artist association while
+# the reviewed seed carries the organizer-confirmed full visible billing.
+# Billing does not create or approve new curated artist profiles.
 
 
 def key(event):
