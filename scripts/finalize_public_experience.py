@@ -156,7 +156,7 @@ def finalize_public_experience(site: Path) -> dict[str, Any]:
         "--max-image-bytes", str(24 * 1024 * 1024),
         # The growing source library exceeds 192 MiB before compression.
         # Keep the separate optimized-output size checks unchanged.
-        "--max-total-bytes", str(353 * 1024 * 1024),
+        "--max-total-bytes", str(354 * 1024 * 1024),
         "--wall-time", "360" if remote_images else "180",
     ]
     if not remote_images:
