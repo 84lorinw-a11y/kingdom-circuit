@@ -9218,10 +9218,32 @@
     ],
     "headliner": "",
     "advertisedBilling": [
-      "DJ Eternitrock"
+      "DJ Eternitrock",
+      "FayBN",
+      "90culture™",
+      "Cyph-N-Sesh",
+      "2EDGE",
+      "BRB",
+      "ALUIS",
+      "NALDO",
+      "8CH2OWENS",
+      "FASTINDEMAND",
+      "Jaweg Kidd",
+      "DJ Magic"
     ],
     "officialBill": [
-      "DJ Eternitrock"
+      "DJ Eternitrock",
+      "FayBN",
+      "90culture™",
+      "Cyph-N-Sesh",
+      "2EDGE",
+      "BRB",
+      "ALUIS",
+      "NALDO",
+      "8CH2OWENS",
+      "FASTINDEMAND",
+      "Jaweg Kidd",
+      "DJ Magic"
     ],
     "eventType": "concert",
     "status": "scheduled",
@@ -9240,10 +9262,10 @@
     "confidence": "high",
     "sourceName": "Official organizer Eventbrite listing",
     "firstSeen": "2026-10-12T19:39:04Z",
-    "lastVerified": "2026-10-25T01:20:09Z",
-    "auditVerified": "2026-10-24",
-    "publicDescription": "Catalyst Hip Hop and Holy Waters Ministry Network present a free, all-ages Christian hip-hop showcase and cypher from 9 PM to midnight. The official flyer confirms live sets from DJ Eternitrock; additional showcase performers are still to be announced. Register through the official event page.",
-    "description": "Catalyst Hip Hop and Holy Waters Ministry Network present a free, all-ages Christian hip-hop showcase and cypher from 9 PM to midnight. The official flyer confirms live sets from DJ Eternitrock; additional showcase performers are still to be announced. Register through the official event page.",
+    "lastVerified": "2026-11-12T21:36:17Z",
+    "auditVerified": "2026-11-12",
+    "publicDescription": "Catalyst Hip Hop and Holy Waters Ministry Network present a free, all-ages Christian hip-hop showcase and cypher from 9 PM to midnight. Performing artists include DJ Eternitrock, FayBN, 90culture™, Cyph-N-Sesh, 2EDGE, BRB, ALUIS, NALDO, 8CH2OWENS, FASTINDEMAND, Jaweg Kidd, and DJ Magic. Register through the official event page.",
+    "description": "Catalyst Hip Hop and Holy Waters Ministry Network present a free, all-ages Christian hip-hop showcase and cypher from 9 PM to midnight. Performing artists include DJ Eternitrock, FayBN, 90culture™, Cyph-N-Sesh, 2EDGE, BRB, ALUIS, NALDO, 8CH2OWENS, FASTINDEMAND, Jaweg Kidd, and DJ Magic. Register through the official event page.",
     "sources": [
       {
         "name": "Official organizer Eventbrite listing and artwork",
@@ -9251,6 +9273,13 @@
         "type": "manual_verified",
         "authority": "venue_ticket",
         "priority": 116
+      },
+      {
+        "name": "Holy Waters Ministry Network — November 20 performing artists",
+        "url": "https://www.holywatersministry.org/",
+        "type": "manual_verified",
+        "authority": "official_organizer",
+        "priority": 117
       }
     ],
     "price": {
@@ -9269,7 +9298,7 @@
       "Catalyst Hip Hop",
       "Holy Waters Hip Hop"
     ],
-    "notes": "Owner explicitly reapproved this event October 24 for the next routine deployment. Restore its existing stable ID, original title/path and October 12 firstSeen rather than treating it as newly discovered. Current Eventbrite flyer explicitly confirms live sets by DJ Eternitrock and says performer reveal soon. Do not restore the former Naldo billing or profile. Current flyer, location and description consistently confirm 2740 Parker Avenue, superseding the old 2470 typo. Event is November 20 from 9 PM to midnight; keep a single November 20 concert date rather than creating a second November 21 listing. No other performer or individual set time inferred.",
+    "notes": "Owner approved the organizer-confirmed expanded lineup November 12 after CHH scope verification. Official Eventbrite explicitly describes this as a Christian hip-hop showcase and confirms DJ Eternitrock; the current Holy Waters November 20 section names the eleven additional performing artists. This supersedes the October 24 performer-reveal hold, including the formerly unconfirmed Naldo billing; it does not approve a new Naldo or other artist profile. Preserve published labels, including 8CH2OWENS (linked organizer handle @8ch2owins). The existing artist association remains DJ Eternitrock; all twelve confirmed names are visible billing. Hosts and fundraiser beneficiary Lace Gambino are not inferred to perform. Preserve stable ID/title/path, October 12 firstSeen, original artwork and verified 2740 Parker Avenue address. One November 20 concert from 9 PM to midnight, with no inferred individual set times or headliner.",
     "organizerWebsite": "https://www.holywatersministry.org/",
     "organizerInstagram": "https://www.instagram.com/holy_waters_hiphop/",
     "organizerLinkName": "Holy Waters Ministry Network"
