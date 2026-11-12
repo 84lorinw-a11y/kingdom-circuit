@@ -460,6 +460,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://lecrae.com",
     "imageUrl": "assets/artists/lecrae-saved.webp",
     "imagePosition": "center",
+    "state": "GA",
+    "country": "US",
     "label": "Reach Records",
     "sourceRegistryVerified": true
   },
@@ -488,6 +490,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.whoiskb.com",
     "imageUrl": "assets/artists/kb-saved.jpg",
     "imagePosition": "center",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "caleb gordon": {
@@ -501,6 +505,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
     "imageUrl": "assets/artists/caleb-gordon-primary.jpg",
     "imagePosition": "center",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "andy mineo": {
@@ -514,6 +520,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://andymineo.com",
     "imageUrl": "assets/artists/andy-mineo-saved.webp",
     "imagePosition": "center",
+    "state": "GA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "nobigdyl.": {
@@ -543,6 +551,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.1kphew.com/bio",
     "imageUrl": "assets/artists/1k-phew-owner-oct13.png",
     "imagePosition": "50% 0%",
+    "state": "GA",
+    "country": "US",
     "label": "Reach Records",
     "sourceRegistryVerified": true
   },
@@ -570,6 +580,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://music.apple.com/us/artist/jon-keith/1139914139",
     "imageUrl": "assets/artists/jon-keith-saved.webp",
     "imagePosition": "center",
+    "state": "TN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "tedashii": {
@@ -583,6 +595,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.reachrecords.com/artists/tedashii/",
     "imageUrl": "assets/artists/tedashii-saved.jpg",
     "imagePosition": "center",
+    "state": "GA",
+    "country": "US",
     "label": "Reach Records",
     "sourceRegistryVerified": true
   },
@@ -638,6 +652,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.iamaaroncole.com/",
     "imageUrl": "assets/artists/aaron-cole-saved.webp",
     "imagePosition": "center",
+    "state": "TN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "whatuprg": {
@@ -681,6 +697,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.limoblaze.com/",
     "imageUrl": "assets/artists/limoblaze-saved.webp",
     "imagePosition": "center",
+    "state": "ENG",
+    "country": "GB",
     "label": "Reach Records",
     "sourceRegistryVerified": true
   },
@@ -696,6 +714,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.jackiehillperry.com/",
     "imageUrl": "assets/artists/jackie-hill-perry-saved.webp",
     "imagePosition": "center",
+    "state": "GA",
+    "country": "US",
     "label": "Reach Records",
     "sourceRegistryVerified": true
   },
@@ -711,6 +731,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://socialclubmisfits.com/",
     "imageUrl": "assets/artists/social-club-misfits-saved.webp",
     "imagePosition": "center",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "steven malcolm": {
@@ -766,6 +788,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.mikemalagiesofficial.com/",
     "imageUrl": "assets/artists/mike-malagies-official-hires-oct22.webp",
     "imagePosition": "50% 35%",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "fern": {
@@ -822,6 +846,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://rixonentertainment.com/skema-boy",
     "imageUrl": "assets/artists/skema-boy.webp",
     "imagePosition": "center",
+    "state": "CA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "zauntee": {
@@ -835,6 +861,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.zauntee.com/",
     "imageUrl": "assets/artists/zauntee.webp",
     "imagePosition": "50% 32%",
+    "state": "TN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "bizzle": {
@@ -875,6 +903,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.getthecanon.com/",
     "imageUrl": "assets/artists/canon-saved.webp",
     "imagePosition": "center",
+    "state": "AZ",
+    "country": "US",
     "label": "Reflection Music Group",
     "sourceRegistryVerified": true
   },
@@ -889,6 +919,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/parrischariz/?hl=en",
     "imageUrl": "assets/artists/parris-chariz-saved.jpg",
     "imagePosition": "center",
+    "state": "TN",
+    "country": "US",
     "label": "Reflection Music Group",
     "sourceRegistryVerified": true
   },
@@ -976,6 +1008,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://forrestfrank.com/",
     "imageUrl": "assets/artists/forrest-frank-saved.webp",
     "imagePosition": "center",
+    "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "indie tribe.": {
@@ -991,6 +1025,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/indiextribe/",
     "imageUrl": "assets/artists/indie-tribe-saved.webp",
     "imagePosition": "center",
+    "state": "TN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "brenno": {
@@ -1004,6 +1040,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/brenno.music/",
     "imageUrl": "assets/artists/brenno-saved.jpg",
     "imagePosition": "center",
+    "state": "MI",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "shepherd": {
@@ -1046,6 +1084,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/hyperfenton/?hl=en",
     "imageUrl": "assets/artists/hyper-fenton-saved.webp",
     "imagePosition": "center",
+    "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "brea miles": {
@@ -1169,6 +1209,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/bishopfreeze_/",
     "imageUrl": "assets/artists/bishop-freeze-saved.webp",
     "imagePosition": "center",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "mike teezy": {
@@ -1208,6 +1250,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://nickygraciousmusic.com/",
     "imageUrl": "assets/artists/nicky-gracious-saved.webp",
     "imagePosition": "center",
+    "state": "IN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "asap preach": {
@@ -1222,6 +1266,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://asappreachmusic.com/",
     "imageUrl": "assets/artists/asap-preach-saved.webp",
     "imagePosition": "center",
+    "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "kijan boone": {
@@ -1261,6 +1307,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/yshadey/",
     "imageUrl": "assets/artists/y-shadey-saved.jpg",
     "imagePosition": "center",
+    "country": "GB",
     "sourceRegistryVerified": true
   },
   "dante' pride": {
@@ -1275,6 +1322,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/dantepride/",
     "imageUrl": "assets/artists/dante-pride-saved.jpg",
     "imagePosition": "center",
+    "state": "GA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "rare of breed": {
@@ -1329,6 +1378,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://thisishismusic.com/pages/about",
     "imageUrl": "assets/artists/b-cody-shields-saved.jpg",
     "imagePosition": "center",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "santana rose": {
@@ -1397,6 +1448,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.thekurtishoppie.com/",
     "imageUrl": "assets/artists/kurtis-hoppie-primary.jpg",
     "imagePosition": "50% 22%",
+    "state": "ID",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "nu tone": {
@@ -1477,6 +1530,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/wuhsahbee/",
     "imageUrl": "assets/artists/wuhsahbee-saved.jpg",
     "imagePosition": "center",
+    "state": "NY",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "kelo": {
@@ -1529,6 +1584,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/thecantonjones/?hl=en",
     "imageUrl": "assets/artists/canton-jones-saved.webp",
     "imagePosition": "center",
+    "state": "GA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "jay-way": {
@@ -1543,6 +1600,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.jaywaythealien.com/",
     "imageUrl": "assets/artists/jay-way-saved.webp",
     "imagePosition": "center",
+    "state": "NH",
+    "country": "NL",
     "sourceRegistryVerified": true
   },
   "stixx aka conejo": {
@@ -1557,6 +1616,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://linktr.ee/stixxwym",
     "imageUrl": "assets/artists/stixx-aka-conejo-saved.webp",
     "imagePosition": "center",
+    "state": "MI",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "ruslan": {
@@ -1586,6 +1647,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/j-j-l-saved.webp",
     "imagePosition": "center",
     "state": "MN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "priest jones": {
@@ -1600,6 +1662,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/priest-jones-saved.webp",
     "imagePosition": "center",
     "state": "MN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "corincris": {
@@ -1614,6 +1677,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/corincris-saved.webp",
     "imagePosition": "center",
     "state": "MN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "f’rael": {
@@ -1630,6 +1694,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/f-rael-saved.webp",
     "imagePosition": "center",
     "state": "MN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "sis n lil bro": {
@@ -1646,6 +1711,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/sis-n-lil-bro-saved.webp",
     "imagePosition": "center",
     "state": "MN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "kaboose": {
@@ -1660,6 +1726,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/kaboose-saved.webp",
     "imagePosition": "center",
     "state": "MN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "tru-serva": {
@@ -1676,6 +1743,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/tru-serva-saved.webp",
     "imagePosition": "center",
     "state": "MN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "vvs big rock": {
@@ -1690,6 +1758,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/vvs-big-rock-saved.jpg",
     "imagePosition": "center",
     "state": "WI",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "sway gttb": {
@@ -1705,6 +1774,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/sway-gttb-official-2026-10-16.jpg",
     "imagePosition": "50% 40%",
     "state": "ND",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "kashh kade": {
@@ -1719,6 +1789,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/kashh-kade-saved.webp",
     "imagePosition": "center",
     "state": "WI",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "ræl the artist": {
@@ -1734,6 +1805,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/r-l-the-artist-saved.jpg",
     "imagePosition": "center",
     "state": "WI",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "justchris": {
@@ -1749,6 +1821,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/justchris-saved.webp",
     "imagePosition": "center",
     "state": "WI",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "stovetop": {
@@ -1763,6 +1836,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/stovetop-saved.jpg",
     "imagePosition": "center",
     "state": "MN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "yumiya!": {
@@ -1777,6 +1851,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/yayayumiya/?hl=en",
     "imageUrl": "assets/artists/yumiya-primary.jpg",
     "imagePosition": "center",
+    "state": "GA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "linga theboss": {
@@ -1791,6 +1867,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.lingatheboss.com/",
     "imageUrl": "assets/artists/linga-theboss-saved.jpg",
     "imagePosition": "center",
+    "state": "TN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "petrina delacey": {
@@ -1804,6 +1882,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/petrinadelacey/?hl=en",
     "imageUrl": "assets/artists/petrina-delacey-saved.webp",
     "imagePosition": "center",
+    "state": "CA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "queen lee": {
@@ -1831,6 +1911,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://biancallove.com/",
     "imageUrl": "assets/artists/biancallove-saved.jpg",
     "imagePosition": "center",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "joz": {
@@ -1938,6 +2020,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://deontehall.com/index.php/about-deonte/",
     "imageUrl": "assets/artists/deonte-hall-saved.webp",
     "imagePosition": "center",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "alex jean": {
@@ -1979,6 +2062,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://toreydshaun.com/",
     "imageUrl": "assets/artists/torey-d-shaun-saved.jpg",
     "imagePosition": "center",
+    "state": "IL",
+    "country": "US",
     "label": "Reflection Music Group",
     "sourceRegistryVerified": true
   },
@@ -2035,6 +2120,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.manafest.com/go",
     "imageUrl": "assets/artists/manafest-saved.jpg",
     "imagePosition": "center",
+    "country": "CA",
     "sourceRegistryVerified": true
   },
   "pastor mike jr.": {
@@ -2050,6 +2136,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://pastormikejr.com/",
     "imageUrl": "assets/artists/pastor-mike-jr-saved.webp",
     "imagePosition": "center",
+    "state": "AL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "nesk only": {
@@ -2090,6 +2178,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/thesondae/",
     "imageUrl": "assets/artists/sondae-saved.webp",
     "imagePosition": "center",
+    "state": "ENG",
+    "country": "GB",
     "sourceRegistryVerified": true
   },
   "dee-1": {
@@ -2157,6 +2247,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/the_eluzai/",
     "imageUrl": "assets/artists/eluzai-saved.webp",
     "imagePosition": "center",
+    "state": "PA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "tylerhateslife": {
@@ -2185,6 +2277,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/gavinthehotrod/",
     "imageUrl": "assets/artists/gavin-the-hotrod-saved.jpg",
     "imagePosition": "center",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "s.b.g.": {
@@ -2240,6 +2334,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/moglitheiceburg/",
     "imageUrl": "assets/artists/mogli-the-iceburg-saved.webp",
     "imagePosition": "center",
+    "state": "TN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "emanueldaprophet": {
@@ -2294,6 +2390,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.aashamarie.com/",
     "imageUrl": "assets/artists/aasha-marie-saved.webp",
     "imagePosition": "center",
+    "state": "FL",
+    "country": "US",
     "label": "Reflection Music Group",
     "sourceRegistryVerified": true
   },
@@ -2335,6 +2433,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/ryantrey/",
     "imageUrl": "assets/artists/ryan-trey-saved.jpg",
     "imagePosition": "center",
+    "state": "GA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "jered sanders": {
@@ -2391,6 +2491,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/jwoodzmuzic/",
     "imageUrl": "assets/artists/jwoodz-saved.webp",
     "imagePosition": "center",
+    "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "kaden jordan": {
@@ -2404,6 +2506,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://kadenjordan.com/",
     "imageUrl": "assets/artists/kaden-jordan-saved.webp",
     "imagePosition": "center",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "jimmy rock": {
@@ -2418,6 +2522,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/jimmyrock/",
     "imageUrl": "assets/artists/jimmy-rock-instagram-profile.jpg",
     "imagePosition": "50% 25%",
+    "state": "OH",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "cj emulous": {
@@ -2447,6 +2553,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.nxtmike.com/about",
     "imageUrl": "assets/artists/nxtmike-about.webp",
     "imagePosition": "50% 15%",
+    "state": "NC",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "chvrch562": {
@@ -2514,6 +2622,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.iamndj.com/",
     "imageUrl": "assets/artists/nathan-davis-jr-saved.webp",
     "imagePosition": "center",
+    "state": "CA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "mayia": {
@@ -2528,6 +2638,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/mayiawarren/?hl=en",
     "imageUrl": "assets/artists/mayia-saved.webp",
     "imagePosition": "center",
+    "state": "NC",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "trendsetter sense": {
@@ -2700,6 +2812,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/therealhychu/",
     "imageUrl": "assets/artists/hy-chu-saved.webp",
     "imagePosition": "center",
+    "state": "CA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "vennisay": {
@@ -2740,6 +2854,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/jreborn_official/",
     "imageUrl": "assets/artists/j-reborn-saved.webp",
     "imagePosition": "center",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "dre skywalker": {
@@ -2900,6 +3016,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/1wxZ1Mv6pAQbaqh30Nq6hB",
     "imageUrl": "assets/artists/lj-the-messenger-spotify.jpg",
     "imagePosition": "50% 25%",
+    "state": "WI",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "deon": {
@@ -2926,6 +3044,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/1N0uKYpKssjI5qrebCKMPo",
     "imageUrl": "assets/artists/man-of-faith-primary.jpg",
     "imagePosition": "50% 0%",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "bobby real montgomery": {
@@ -2939,6 +3059,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "assets/artists/bobby-real-montgomery-artist-supplied.png",
     "imageUrl": "assets/artists/bobby-real-montgomery-artist-supplied.png",
     "imagePosition": "50% 0%",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "dj promote": {
@@ -2952,6 +3074,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/djpromote/p/Caqy1SesDBK/",
     "imageUrl": "assets/artists/dj-promote-primary.jpg",
     "imagePosition": "50% 35%",
+    "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "eli williams": {
@@ -2982,6 +3106,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/6ShMmu8ZCu6MUoJfui5YK6",
     "imageUrl": "assets/artists/jbthapreacher-primary.jpg",
     "imagePosition": "50% 20%",
+    "state": "CA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "heiressirami": {
@@ -2996,6 +3122,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "assets/artists/heiressirami-owner-supplied.png",
     "imageUrl": "assets/artists/heiressirami-owner-supplied.png",
     "imagePosition": "50% 35%",
+    "state": "VA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "giovani": {
@@ -3049,6 +3177,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/christrebel/",
     "imageUrl": "assets/artists/christrebel-approved-oct2.png",
     "imagePosition": "50% 0%",
+    "state": "NJ",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "daeshawn forrest": {
@@ -3103,6 +3233,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/zenwi-approved-oct2.jpg",
     "imagePosition": "50% 25%",
     "state": "FL",
+    "country": "US",
     "label": "Zyatid Records",
     "sourceRegistryVerified": true
   },
@@ -3120,6 +3251,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/jaylxn-approved-oct2.jpg",
     "imagePosition": "50% 30%",
     "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "nehemiah": {
@@ -3136,6 +3268,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/nehemiah-approved-oct2.jpg",
     "imagePosition": "50% 20%",
     "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "wiff.p": {
@@ -3168,6 +3301,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/dondrae-approved-oct2.jpg",
     "imagePosition": "50% 25%",
     "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "h.u.r.t.": {
@@ -3267,6 +3401,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/arize-approved-oct2.jpg",
     "imagePosition": "50% 30%",
     "state": "CA",
+    "country": "US",
     "label": "Rize N Shine",
     "sourceRegistryVerified": true
   },
@@ -3391,6 +3526,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/aitheanomaly/",
     "imageUrl": "assets/artists/a-i-the-anomaly-verified-oct3.jpg",
     "imagePosition": "50% 80%",
+    "state": "NY",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "selah the corner": {
@@ -3473,6 +3610,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/amishobaraka/",
     "imageUrl": "assets/artists/sho-baraka-verified-oct3.jpg",
     "imagePosition": "center",
+    "state": "GA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "shai linne": {
@@ -3486,6 +3625,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/shailinne/",
     "imageUrl": "assets/artists/shai-linne-verified-oct3.jpg",
     "imagePosition": "center",
+    "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "thi'sl": {
@@ -3567,6 +3708,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/notklyde/reel/DduULqLySN-/",
     "imageUrl": "assets/artists/not-klyde-red-hair-instagram-oct7.jpg",
     "imagePosition": "50% 32%",
+    "country": "CA",
     "sourceRegistryVerified": true
   },
   "404 chew": {
@@ -3593,6 +3735,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/5JVL64s0ciD2Q3y9PQ0vQr",
     "imageUrl": "assets/artists/bill-b-approved-oct3.jpg",
     "imagePosition": "50% 20%",
+    "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "g3rm 43": {
@@ -3648,6 +3792,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/0SOCaAojYo3R05ZYfzHENe",
     "imageUrl": "assets/artists/idego-approved-oct3.jpg",
     "imagePosition": "50% 20%",
+    "state": "TN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "megan tossi": {
@@ -3661,6 +3807,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.youtube.com/channel/UCwmZlx-ZHVL3yAB1-E4hBUA",
     "imageUrl": "assets/artists/megan-tossi-approved-oct3.jpg",
     "imagePosition": "50% 20%",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "mica": {
@@ -3767,6 +3915,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/2uOE5DW2uxL7dnyKh50s85",
     "imageUrl": "assets/artists/chris-caro-approved-oct3.jpg",
     "imagePosition": "50% 30%",
+    "state": "QC",
+    "country": "CA",
     "sourceRegistryVerified": true
   },
   "ej swavv": {
@@ -3780,6 +3930,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/3hi8ye8HnAzsAzShlhuWfk",
     "imageUrl": "assets/artists/ej-swavv-approved-oct3.jpg",
     "imagePosition": "50% 30%",
+    "state": "IA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "j.solo": {
@@ -3834,6 +3986,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/50YX6wIj2UNBUvYs13U61H",
     "imageUrl": "assets/artists/tukool-tiff-approved-oct3.jpg",
     "imagePosition": "50% 20%",
+    "state": "NC",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "tylynn": {
@@ -3887,6 +4041,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/73CLBNL3pNWBhIjm9Z5CLw",
     "imageUrl": "assets/artists/jonah-daniel-approved-oct3.jpg",
     "imagePosition": "50% 30%",
+    "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "outr.cty": {
@@ -3930,6 +4086,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/5rEAZYrahTLTvcgv0DgOJQ",
     "imageUrl": "assets/artists/yp-aka-young-paul-approved-oct3.jpg",
     "imagePosition": "50% 15%",
+    "state": "NY",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "untidld": {
@@ -3943,6 +4101,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/6dFi6zWjAsSJeEpZ5IYPtU",
     "imageUrl": "assets/artists/untidld-approved-oct3.jpg",
     "imagePosition": "50% 15%",
+    "state": "PA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "kvng flvcko": {
@@ -3982,6 +4142,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://drealp.com",
     "imageUrl": "assets/artists/drea-lp-approved-oct5.webp",
     "imagePosition": "50% 25%",
+    "state": "MD",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "solachi voz": {
@@ -4021,6 +4183,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/6dj1ndizPRd8Ip0x0RE0AC",
     "imageUrl": "assets/artists/mahogany-jones-approved-oct5.jpg",
     "imagePosition": "50% 15%",
+    "state": "MI",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "shy speaks": {
@@ -4034,6 +4198,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://shyspeaks.com/links",
     "imageUrl": "assets/artists/shy-speaks-approved-oct5.webp",
     "imagePosition": "55% 25%",
+    "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "serious voice": {
@@ -4060,6 +4226,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/5jv3xaqB33eLwFCgEfgJi1",
     "imageUrl": "assets/artists/tarcea-renee-approved-oct5.jpg",
     "imagePosition": "50% 80%",
+    "state": "MO",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "carita cole": {
@@ -4073,6 +4241,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.youtube.com/channel/UCJ-LJT9zonTWjvk4UcGuXZw",
     "imageUrl": "assets/artists/carita-cole-approved-oct5.jpg",
     "imagePosition": "50% 15%",
+    "state": "TN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "dice gamble": {
@@ -4153,6 +4323,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/6nELoJ6eMXfYHX5xocKf33",
     "imageUrl": "assets/artists/s-o-approved-oct5.jpg",
     "imagePosition": "50% 15%",
+    "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "reconcile": {
@@ -4194,6 +4366,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/von-won-approved-oct6.webp",
     "imagePosition": "38% 0%",
     "state": "TX",
+    "country": "US",
     "label": "Grown And Saved",
     "sourceRegistryVerified": true
   },
@@ -4210,6 +4383,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/lil-ziggy-approved-oct6.webp",
     "imagePosition": "50% 0%",
     "state": "TX",
+    "country": "US",
     "label": "Grown And Saved",
     "sourceRegistryVerified": true
   },
@@ -4227,6 +4401,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/young-jayden-approved-oct6.webp",
     "imagePosition": "58% 0%",
     "state": "TX",
+    "country": "US",
     "label": "Grown And Saved / God Wave",
     "sourceRegistryVerified": true
   },
@@ -4243,6 +4418,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/dougie-d-approved-oct6.webp",
     "imagePosition": "48% 0%",
     "state": "TX",
+    "country": "US",
     "label": "Grown And Saved",
     "sourceRegistryVerified": true
   },
@@ -4333,6 +4509,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/dj-bryce-g-official-portrait-oct8.jpg",
     "imagePosition": "50% 0%",
     "state": "FL",
+    "country": "US",
     "label": "The Joyful Noize",
     "sourceRegistryVerified": true
   },
@@ -4348,6 +4525,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/starringo-official-portrait-oct8.jpg",
     "imagePosition": "50% 50%",
     "state": "LA",
+    "country": "US",
     "label": "RMG",
     "sourceRegistryVerified": true
   },
@@ -4365,6 +4543,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/adrion-butler-official-portrait-oct8.jpg",
     "imagePosition": "50% 35%",
     "state": "TX",
+    "country": "US",
     "label": "God Made Muzic",
     "sourceRegistryVerified": true
   },
@@ -4395,6 +4574,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/a3-official-portrait-oct8.jpg",
     "imagePosition": "50% 35%",
     "state": "GA",
+    "country": "US",
     "label": "RMG",
     "sourceRegistryVerified": true
   },
@@ -4414,6 +4594,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/dason-artist-supplied-oct8.png",
     "imagePosition": "50% 25%",
     "state": "TX",
+    "country": "US",
     "label": "Outlandish Live",
     "sourceRegistryVerified": true
   },
@@ -4446,6 +4627,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/epho-official-portrait-oct8.jpg",
     "imagePosition": "50% 20%",
     "state": "TX",
+    "country": "US",
     "label": "BLDCRWN",
     "sourceRegistryVerified": true
   },
@@ -4463,6 +4645,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/jxdy-official-portrait-oct8.jpg",
     "imagePosition": "50% 50%",
     "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "dj geech": {
@@ -4482,6 +4665,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/dj-geech-flavorfest-official-oct8.webp",
     "imagePosition": "50% 20%",
     "state": "FL",
+    "country": "US",
     "label": "Flavor Fest / Crossover Church",
     "sourceRegistryVerified": true
   },
@@ -4562,6 +4746,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/knek-official-portrait-oct9.jpg",
     "imagePosition": "50% 20%",
     "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "darius mullin": {
@@ -4576,6 +4761,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/darius-mullin-spotify-portrait-oct9.jpg",
     "imagePosition": "50% 20%",
     "state": "TN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "tonyxtrotter": {
@@ -4590,6 +4776,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/20eJqy3YU65fubCicAHHvM",
     "imageUrl": "assets/artists/tonyxtrotter-official-performance-oct9.jpg",
     "imagePosition": "50% 25%",
+    "state": "MO",
+    "country": "US",
     "label": "Apollo Records",
     "sourceRegistryVerified": true
   },
@@ -4648,6 +4836,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/3cj7pwtC0GuRFHayrbazV8",
     "imageUrl": "assets/artists/dillon-chase-verified-oct10.jpg",
     "imagePosition": "50% 30%",
+    "state": "OK",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "json": {
@@ -4727,6 +4917,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/0z2ZQQqy9K2IhXbIvcjNWv",
     "imageUrl": "assets/artists/q-flo-verified-oct10.jpg",
     "imagePosition": "50% 30%",
+    "state": "PA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "swaizy": {
@@ -4785,6 +4977,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/1PXBwNCd6LaX8iJTDwdC30",
     "imageUrl": "assets/artists/k-drama-verified-oct10.jpg",
     "imagePosition": "50% 20%",
+    "state": "OH",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "taelor gray": {
@@ -4855,6 +5049,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/5ccLg9PXtgNpXdkIzw7Pvw",
     "imageUrl": "assets/artists/mouthpi3ce-verified-oct10.jpg",
     "imagePosition": "50% 30%",
+    "state": "GA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "deraj": {
@@ -4868,6 +5064,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://bio.site/justderaj",
     "imageUrl": "assets/artists/deraj-verified-oct10.png",
     "imagePosition": "50% 30%",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "mr. del": {
@@ -4895,6 +5093,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.youtube.com/user/freshneturnity/featured",
     "imageUrl": "assets/artists/fresh-ie-verified-oct10.jpg",
     "imagePosition": "50% 30%",
+    "state": "MB",
+    "country": "CA",
     "sourceRegistryVerified": true
   },
   "applejaxx": {
@@ -4960,6 +5160,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/3XgNFNKLstByGKqplDht0H",
     "imageUrl": "assets/artists/guvna-b-verified-oct10.jpg",
     "imagePosition": "50% 30%",
+    "country": "GB",
     "sourceRegistryVerified": true
   },
   "still shadey": {
@@ -4987,6 +5188,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/66Hu6kzjWXGUdTdCCIzmW4",
     "imageUrl": "assets/artists/feed-em-verified-oct10.jpg",
     "imagePosition": "50% 30%",
+    "country": "GB",
     "sourceRegistryVerified": true
   },
   "reblah": {
@@ -5026,6 +5228,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/75sReJhZ3hjZctu6vtoGj6",
     "imageUrl": "assets/artists/dwayne-tryumf-verified-oct10.jpg",
     "imagePosition": "50% 30%",
+    "state": "ENG",
+    "country": "GB",
     "sourceRegistryVerified": true
   },
   "manny montes": {
@@ -5142,6 +5346,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://i.scdn.co/image/ab6761610000939bab7a155320b0ae4eb70c2d64",
     "imageUrl": "assets/artists/xeem-official-oct12.webp",
     "imagePosition": "50% 35%",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "th3 saga": {
@@ -5168,6 +5374,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://i.scdn.co/image/ab6761670000ecd4d560eff4a8d0b02a3510a6dc",
     "imageUrl": "assets/artists/toyalove-official-oct12.jpg",
     "imagePosition": "50% 50%",
+    "state": "GA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "626authentic": {
@@ -5198,6 +5406,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://i.scdn.co/image/ab6761670000ecd46d3ca1c8b59e95c0df4a07f7",
     "imageUrl": "assets/artists/b-e-r-i-d-o-x-official-oct12.jpg",
     "imagePosition": "50% 30%",
+    "state": "PA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "tblessing": {
@@ -5293,6 +5503,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://i.scdn.co/image/ab6761610000939bdbd42b57d5c2ef5aa9db82e8",
     "imageUrl": "assets/artists/joshua-penn-official-oct12.webp",
     "imagePosition": "50% 40%",
+    "state": "PA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "pressnj": {
@@ -5474,6 +5686,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/viktor-2026-10-15.jpg",
     "imagePosition": "50% 0%",
     "state": "CA",
+    "country": "US",
     "label": "Ghost Ride the Gospel",
     "sourceRegistryVerified": true
   },
@@ -5492,6 +5705,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/zay-lowly-2026-10-15.webp",
     "imagePosition": "50% 0%",
     "state": "CA",
+    "country": "US",
     "label": "Nu Wave Entertainment",
     "sourceRegistryVerified": true
   },
@@ -5508,6 +5722,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/gregg-styles-2026-10-15.webp",
     "imagePosition": "50% 10%",
     "state": "CA",
+    "country": "US",
     "label": "HOGMOB Ministries",
     "sourceRegistryVerified": true
   },
@@ -5557,6 +5772,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/jj-stone-submitted-2026-10-15.png",
     "imagePosition": "50% 50%",
     "state": "SK",
+    "country": "CA",
     "label": "True Freedom Entertainment",
     "sourceRegistryVerified": true
   },
@@ -5588,6 +5804,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/1GleyFWOUROB314b8UlM6F",
     "imageUrl": "assets/artists/nate-period-official-oct16.jpg",
     "imagePosition": "50% 0%",
+    "state": "VA",
+    "country": "US",
     "label": "Devoted Music",
     "sourceRegistryVerified": true
   },
@@ -5619,6 +5837,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/crown-one-submitted-oct17.jpg",
     "imagePosition": "50% 0%",
     "state": "OH",
+    "country": "US",
     "label": "KP Music Records",
     "sourceRegistryVerified": true
   },
@@ -5664,6 +5883,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://ryanellismusic.com/about/",
     "imageUrl": "assets/artists/ryan-ellis-press-oct20.jpg",
     "imagePosition": "55% 35%",
+    "state": "CA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "kemara lynn": {
@@ -5680,6 +5901,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/kemara-lynn-artist-submitted-oct20.jpg",
     "imagePosition": "50% 0%",
     "state": "MI",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "r3st0red": {
@@ -5696,6 +5918,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/r3st0red-official-oct23.jpg",
     "imagePosition": "67% 32%",
     "state": "MD",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "altar ego": {
@@ -5712,6 +5935,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "imageUrl": "assets/artists/altar-ego-owner-approved-oct23.jpg",
     "imagePosition": "50% 26.6%",
     "state": "SC",
+    "country": "US",
     "label": "Altar Ego Records",
     "sourceRegistryVerified": true
   },
@@ -5741,6 +5965,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/7GJBelg5G2JgssKWZtoJq7",
     "imageUrl": "assets/artists/qew-official-spotify-oct27.jpg",
     "imagePosition": "50% 0%",
+    "state": "NV",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "jayy brown": {
@@ -5768,6 +5994,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://one8tea.com/about-one8tea",
     "imageUrl": "assets/artists/one8tea-portrait-review-oct31.jpg",
     "imagePosition": "50% 0%",
+    "state": "NB",
     "country": "CA",
     "sourceRegistryVerified": true
   },
@@ -5941,6 +6168,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://kingdomcircuit.com/assets/artists/ant-lee-owner-selected-nov1.png",
     "imageUrl": "assets/artists/ant-lee-owner-selected-nov1.png",
     "imagePosition": "78% 0%",
+    "state": "ON",
     "country": "CA",
     "sourceRegistryVerified": true
   },
@@ -5969,6 +6197,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://open.spotify.com/artist/2AjbOeYS0jcF0t2F0RDgNy",
     "imageUrl": "assets/artists/fame-holiday-portrait-review-oct31.jpg",
     "imagePosition": "50% 0%",
+    "state": "ON",
     "country": "CA",
     "sourceRegistryVerified": true
   },
@@ -6250,6 +6479,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://www.instagram.com/gzeal104/",
     "imageUrl": "assets/artists/gzeal-official-linktree-nov4.png",
     "imagePosition": "58% 0%",
+    "state": "PA",
     "country": "US",
     "sourceRegistryVerified": true
   },
@@ -6318,6 +6548,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://lecrae.com",
     "imageUrl": "assets/artists/lecrae-saved.webp",
     "imagePosition": "center",
+    "state": "GA",
+    "country": "US",
     "label": "Reach Records",
     "sourceRegistryVerified": true
   },
@@ -6346,6 +6578,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.whoiskb.com",
     "imageUrl": "assets/artists/kb-saved.jpg",
     "imagePosition": "center",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "caleb gordon": {
@@ -6359,6 +6593,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://tprlive.co/collections/caleb-gordon-the-eden-experience",
     "imageUrl": "assets/artists/caleb-gordon-primary.jpg",
     "imagePosition": "center",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "andy mineo": {
@@ -6372,6 +6608,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://andymineo.com",
     "imageUrl": "assets/artists/andy-mineo-saved.webp",
     "imagePosition": "center",
+    "state": "GA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "nobigdyl.": {
@@ -6401,6 +6639,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.1kphew.com/bio",
     "imageUrl": "assets/artists/1k-phew-owner-oct13.png",
     "imagePosition": "50% 0%",
+    "state": "GA",
+    "country": "US",
     "label": "Reach Records",
     "sourceRegistryVerified": true
   },
@@ -6428,6 +6668,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://music.apple.com/us/artist/jon-keith/1139914139",
     "imageUrl": "assets/artists/jon-keith-saved.webp",
     "imagePosition": "center",
+    "state": "TN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "tedashii": {
@@ -6441,6 +6683,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.reachrecords.com/artists/tedashii/",
     "imageUrl": "assets/artists/tedashii-saved.jpg",
     "imagePosition": "center",
+    "state": "GA",
+    "country": "US",
     "label": "Reach Records",
     "sourceRegistryVerified": true
   },
@@ -6496,6 +6740,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.iamaaroncole.com/",
     "imageUrl": "assets/artists/aaron-cole-saved.webp",
     "imagePosition": "center",
+    "state": "TN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "whatuprg": {
@@ -6539,6 +6785,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.limoblaze.com/",
     "imageUrl": "assets/artists/limoblaze-saved.webp",
     "imagePosition": "center",
+    "state": "ENG",
+    "country": "GB",
     "label": "Reach Records",
     "sourceRegistryVerified": true
   },
@@ -6554,6 +6802,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.jackiehillperry.com/",
     "imageUrl": "assets/artists/jackie-hill-perry-saved.webp",
     "imagePosition": "center",
+    "state": "GA",
+    "country": "US",
     "label": "Reach Records",
     "sourceRegistryVerified": true
   },
@@ -6569,6 +6819,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://socialclubmisfits.com/",
     "imageUrl": "assets/artists/social-club-misfits-saved.webp",
     "imagePosition": "center",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "steven malcolm": {
@@ -6624,6 +6876,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.mikemalagiesofficial.com/",
     "imageUrl": "assets/artists/mike-malagies-official-hires-oct22.webp",
     "imagePosition": "50% 35%",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "fern": {
@@ -6680,6 +6934,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://rixonentertainment.com/skema-boy",
     "imageUrl": "assets/artists/skema-boy.webp",
     "imagePosition": "center",
+    "state": "CA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "zauntee": {
@@ -6693,6 +6949,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.zauntee.com/",
     "imageUrl": "assets/artists/zauntee.webp",
     "imagePosition": "50% 32%",
+    "state": "TN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "bizzle": {
@@ -6733,6 +6991,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.getthecanon.com/",
     "imageUrl": "assets/artists/canon-saved.webp",
     "imagePosition": "center",
+    "state": "AZ",
+    "country": "US",
     "label": "Reflection Music Group",
     "sourceRegistryVerified": true
   },
@@ -6747,6 +7007,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/parrischariz/?hl=en",
     "imageUrl": "assets/artists/parris-chariz-saved.jpg",
     "imagePosition": "center",
+    "state": "TN",
+    "country": "US",
     "label": "Reflection Music Group",
     "sourceRegistryVerified": true
   },
@@ -6834,6 +7096,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://forrestfrank.com/",
     "imageUrl": "assets/artists/forrest-frank-saved.webp",
     "imagePosition": "center",
+    "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "indie tribe.": {
@@ -6849,6 +7113,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/indiextribe/",
     "imageUrl": "assets/artists/indie-tribe-saved.webp",
     "imagePosition": "center",
+    "state": "TN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "brenno": {
@@ -6862,6 +7128,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/brenno.music/",
     "imageUrl": "assets/artists/brenno-saved.jpg",
     "imagePosition": "center",
+    "state": "MI",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "shepherd": {
@@ -6904,6 +7172,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/hyperfenton/?hl=en",
     "imageUrl": "assets/artists/hyper-fenton-saved.webp",
     "imagePosition": "center",
+    "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "brea miles": {
@@ -7027,6 +7297,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/bishopfreeze_/",
     "imageUrl": "assets/artists/bishop-freeze-saved.webp",
     "imagePosition": "center",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "808 beezy": {
@@ -7080,6 +7352,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://nickygraciousmusic.com/",
     "imageUrl": "assets/artists/nicky-gracious-saved.webp",
     "imagePosition": "center",
+    "state": "IN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "asap preach": {
@@ -7094,6 +7368,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://asappreachmusic.com/",
     "imageUrl": "assets/artists/asap-preach-saved.webp",
     "imagePosition": "center",
+    "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "kijan boone": {
@@ -7133,6 +7409,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/yshadey/",
     "imageUrl": "assets/artists/y-shadey-saved.jpg",
     "imagePosition": "center",
+    "country": "GB",
     "sourceRegistryVerified": true
   },
   "dante' pride": {
@@ -7147,6 +7424,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/dantepride/",
     "imageUrl": "assets/artists/dante-pride-saved.jpg",
     "imagePosition": "center",
+    "state": "GA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "rare of breed": {
@@ -7201,6 +7480,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://thisishismusic.com/pages/about",
     "imageUrl": "assets/artists/b-cody-shields-saved.jpg",
     "imagePosition": "center",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "santana rose": {
@@ -7269,6 +7550,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.thekurtishoppie.com/",
     "imageUrl": "assets/artists/kurtis-hoppie-primary.jpg",
     "imagePosition": "50% 22%",
+    "state": "ID",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "nu tone": {
@@ -7349,6 +7632,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/wuhsahbee/",
     "imageUrl": "assets/artists/wuhsahbee-saved.jpg",
     "imagePosition": "center",
+    "state": "NY",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "kelo": {
@@ -7401,6 +7686,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/thecantonjones/?hl=en",
     "imageUrl": "assets/artists/canton-jones-saved.webp",
     "imagePosition": "center",
+    "state": "GA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "jay-way": {
@@ -7415,6 +7702,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.jaywaythealien.com/",
     "imageUrl": "assets/artists/jay-way-saved.webp",
     "imagePosition": "center",
+    "state": "NH",
+    "country": "NL",
     "sourceRegistryVerified": true
   },
   "stixx aka conejo": {
@@ -7429,6 +7718,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://linktr.ee/stixxwym",
     "imageUrl": "assets/artists/stixx-aka-conejo-saved.webp",
     "imagePosition": "center",
+    "state": "MI",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "ruslan": {
@@ -7458,6 +7749,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/j-j-l-saved.webp",
     "imagePosition": "center",
     "state": "MN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "priest jones": {
@@ -7472,6 +7764,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/priest-jones-saved.webp",
     "imagePosition": "center",
     "state": "MN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "corincris": {
@@ -7486,6 +7779,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/corincris-saved.webp",
     "imagePosition": "center",
     "state": "MN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "f’rael": {
@@ -7502,6 +7796,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/f-rael-saved.webp",
     "imagePosition": "center",
     "state": "MN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "sis n lil bro": {
@@ -7518,6 +7813,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/sis-n-lil-bro-saved.webp",
     "imagePosition": "center",
     "state": "MN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "kaboose": {
@@ -7532,6 +7828,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/kaboose-saved.webp",
     "imagePosition": "center",
     "state": "MN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "tru-serva": {
@@ -7548,6 +7845,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/tru-serva-saved.webp",
     "imagePosition": "center",
     "state": "MN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "vvs big rock": {
@@ -7562,6 +7860,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/vvs-big-rock-saved.jpg",
     "imagePosition": "center",
     "state": "WI",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "sway gttb": {
@@ -7577,6 +7876,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/sway-gttb-official-2026-10-16.jpg",
     "imagePosition": "50% 40%",
     "state": "ND",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "kashh kade": {
@@ -7591,6 +7891,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/kashh-kade-saved.webp",
     "imagePosition": "center",
     "state": "WI",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "ræl the artist": {
@@ -7606,6 +7907,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/r-l-the-artist-saved.jpg",
     "imagePosition": "center",
     "state": "WI",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "justchris": {
@@ -7621,6 +7923,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/justchris-saved.webp",
     "imagePosition": "center",
     "state": "WI",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "stovetop": {
@@ -7635,6 +7938,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/stovetop-saved.jpg",
     "imagePosition": "center",
     "state": "MN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "yumiya!": {
@@ -7649,6 +7953,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/yayayumiya/?hl=en",
     "imageUrl": "assets/artists/yumiya-primary.jpg",
     "imagePosition": "center",
+    "state": "GA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "linga theboss": {
@@ -7663,6 +7969,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.lingatheboss.com/",
     "imageUrl": "assets/artists/linga-theboss-saved.jpg",
     "imagePosition": "center",
+    "state": "TN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "petrina delacey": {
@@ -7676,6 +7984,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/petrinadelacey/?hl=en",
     "imageUrl": "assets/artists/petrina-delacey-saved.webp",
     "imagePosition": "center",
+    "state": "CA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "queen lee": {
@@ -7703,6 +8013,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://biancallove.com/",
     "imageUrl": "assets/artists/biancallove-saved.jpg",
     "imagePosition": "center",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "joz": {
@@ -7810,6 +8122,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://deontehall.com/index.php/about-deonte/",
     "imageUrl": "assets/artists/deonte-hall-saved.webp",
     "imagePosition": "center",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "alex jean": {
@@ -7851,6 +8164,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://toreydshaun.com/",
     "imageUrl": "assets/artists/torey-d-shaun-saved.jpg",
     "imagePosition": "center",
+    "state": "IL",
+    "country": "US",
     "label": "Reflection Music Group",
     "sourceRegistryVerified": true
   },
@@ -7907,6 +8222,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.manafest.com/go",
     "imageUrl": "assets/artists/manafest-saved.jpg",
     "imagePosition": "center",
+    "country": "CA",
     "sourceRegistryVerified": true
   },
   "pastor mike jr.": {
@@ -7922,6 +8238,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://pastormikejr.com/",
     "imageUrl": "assets/artists/pastor-mike-jr-saved.webp",
     "imagePosition": "center",
+    "state": "AL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "nesk only": {
@@ -7962,6 +8280,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/thesondae/",
     "imageUrl": "assets/artists/sondae-saved.webp",
     "imagePosition": "center",
+    "state": "ENG",
+    "country": "GB",
     "sourceRegistryVerified": true
   },
   "dee-1": {
@@ -8029,6 +8349,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/the_eluzai/",
     "imageUrl": "assets/artists/eluzai-saved.webp",
     "imagePosition": "center",
+    "state": "PA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "tylerhateslife": {
@@ -8057,6 +8379,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/gavinthehotrod/",
     "imageUrl": "assets/artists/gavin-the-hotrod-saved.jpg",
     "imagePosition": "center",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "s.b.g.": {
@@ -8112,6 +8436,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/moglitheiceburg/",
     "imageUrl": "assets/artists/mogli-the-iceburg-saved.webp",
     "imagePosition": "center",
+    "state": "TN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "emanueldaprophet": {
@@ -8166,6 +8492,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.aashamarie.com/",
     "imageUrl": "assets/artists/aasha-marie-saved.webp",
     "imagePosition": "center",
+    "state": "FL",
+    "country": "US",
     "label": "Reflection Music Group",
     "sourceRegistryVerified": true
   },
@@ -8207,6 +8535,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/ryantrey/",
     "imageUrl": "assets/artists/ryan-trey-saved.jpg",
     "imagePosition": "center",
+    "state": "GA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "jered sanders": {
@@ -8263,6 +8593,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/jwoodzmuzic/",
     "imageUrl": "assets/artists/jwoodz-saved.webp",
     "imagePosition": "center",
+    "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "kaden jordan": {
@@ -8276,6 +8608,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://kadenjordan.com/",
     "imageUrl": "assets/artists/kaden-jordan-saved.webp",
     "imagePosition": "center",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "jimmy rock": {
@@ -8290,6 +8624,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/jimmyrock/",
     "imageUrl": "assets/artists/jimmy-rock-instagram-profile.jpg",
     "imagePosition": "50% 25%",
+    "state": "OH",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "cj emulous": {
@@ -8319,6 +8655,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.nxtmike.com/about",
     "imageUrl": "assets/artists/nxtmike-about.webp",
     "imagePosition": "50% 15%",
+    "state": "NC",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "chvrch562": {
@@ -8386,6 +8724,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.iamndj.com/",
     "imageUrl": "assets/artists/nathan-davis-jr-saved.webp",
     "imagePosition": "center",
+    "state": "CA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "mayia": {
@@ -8400,6 +8740,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/mayiawarren/?hl=en",
     "imageUrl": "assets/artists/mayia-saved.webp",
     "imagePosition": "center",
+    "state": "NC",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "trendsetter sense": {
@@ -8572,6 +8914,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/therealhychu/",
     "imageUrl": "assets/artists/hy-chu-saved.webp",
     "imagePosition": "center",
+    "state": "CA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "vennisay": {
@@ -8612,6 +8956,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/jreborn_official/",
     "imageUrl": "assets/artists/j-reborn-saved.webp",
     "imagePosition": "center",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "dre skywalker": {
@@ -8772,6 +9118,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/1wxZ1Mv6pAQbaqh30Nq6hB",
     "imageUrl": "assets/artists/lj-the-messenger-spotify.jpg",
     "imagePosition": "50% 25%",
+    "state": "WI",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "deon": {
@@ -8798,6 +9146,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/1N0uKYpKssjI5qrebCKMPo",
     "imageUrl": "assets/artists/man-of-faith-primary.jpg",
     "imagePosition": "50% 0%",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "bobby real montgomery": {
@@ -8811,6 +9161,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "assets/artists/bobby-real-montgomery-artist-supplied.png",
     "imageUrl": "assets/artists/bobby-real-montgomery-artist-supplied.png",
     "imagePosition": "50% 0%",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "dj promote": {
@@ -8824,6 +9176,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/djpromote/p/Caqy1SesDBK/",
     "imageUrl": "assets/artists/dj-promote-primary.jpg",
     "imagePosition": "50% 35%",
+    "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "eli williams": {
@@ -8854,6 +9208,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/6ShMmu8ZCu6MUoJfui5YK6",
     "imageUrl": "assets/artists/jbthapreacher-primary.jpg",
     "imagePosition": "50% 20%",
+    "state": "CA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "heiressirami": {
@@ -8868,6 +9224,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "assets/artists/heiressirami-owner-supplied.png",
     "imageUrl": "assets/artists/heiressirami-owner-supplied.png",
     "imagePosition": "50% 35%",
+    "state": "VA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "giovani": {
@@ -8921,6 +9279,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/christrebel/",
     "imageUrl": "assets/artists/christrebel-approved-oct2.png",
     "imagePosition": "50% 0%",
+    "state": "NJ",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "daeshawn forrest": {
@@ -8975,6 +9335,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/zenwi-approved-oct2.jpg",
     "imagePosition": "50% 25%",
     "state": "FL",
+    "country": "US",
     "label": "Zyatid Records",
     "sourceRegistryVerified": true
   },
@@ -8992,6 +9353,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/jaylxn-approved-oct2.jpg",
     "imagePosition": "50% 30%",
     "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "nehemiah": {
@@ -9008,6 +9370,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/nehemiah-approved-oct2.jpg",
     "imagePosition": "50% 20%",
     "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "wiff.p": {
@@ -9040,6 +9403,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/dondrae-approved-oct2.jpg",
     "imagePosition": "50% 25%",
     "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "h.u.r.t.": {
@@ -9139,6 +9503,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/arize-approved-oct2.jpg",
     "imagePosition": "50% 30%",
     "state": "CA",
+    "country": "US",
     "label": "Rize N Shine",
     "sourceRegistryVerified": true
   },
@@ -9277,6 +9642,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/aitheanomaly/",
     "imageUrl": "assets/artists/a-i-the-anomaly-verified-oct3.jpg",
     "imagePosition": "50% 80%",
+    "state": "NY",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "selah the corner": {
@@ -9359,6 +9726,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/amishobaraka/",
     "imageUrl": "assets/artists/sho-baraka-verified-oct3.jpg",
     "imagePosition": "center",
+    "state": "GA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "shai linne": {
@@ -9372,6 +9741,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/shailinne/",
     "imageUrl": "assets/artists/shai-linne-verified-oct3.jpg",
     "imagePosition": "center",
+    "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "thi'sl": {
@@ -9453,6 +9824,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/notklyde/reel/DduULqLySN-/",
     "imageUrl": "assets/artists/not-klyde-red-hair-instagram-oct7.jpg",
     "imagePosition": "50% 32%",
+    "country": "CA",
     "sourceRegistryVerified": true
   },
   "404 chew": {
@@ -9479,6 +9851,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/5JVL64s0ciD2Q3y9PQ0vQr",
     "imageUrl": "assets/artists/bill-b-approved-oct3.jpg",
     "imagePosition": "50% 20%",
+    "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "g3rm 43": {
@@ -9534,6 +9908,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/0SOCaAojYo3R05ZYfzHENe",
     "imageUrl": "assets/artists/idego-approved-oct3.jpg",
     "imagePosition": "50% 20%",
+    "state": "TN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "megan tossi": {
@@ -9547,6 +9923,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.youtube.com/channel/UCwmZlx-ZHVL3yAB1-E4hBUA",
     "imageUrl": "assets/artists/megan-tossi-approved-oct3.jpg",
     "imagePosition": "50% 20%",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "mica": {
@@ -9653,6 +10031,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/2uOE5DW2uxL7dnyKh50s85",
     "imageUrl": "assets/artists/chris-caro-approved-oct3.jpg",
     "imagePosition": "50% 30%",
+    "state": "QC",
+    "country": "CA",
     "sourceRegistryVerified": true
   },
   "ej swavv": {
@@ -9666,6 +10046,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/3hi8ye8HnAzsAzShlhuWfk",
     "imageUrl": "assets/artists/ej-swavv-approved-oct3.jpg",
     "imagePosition": "50% 30%",
+    "state": "IA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "j.solo": {
@@ -9720,6 +10102,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/50YX6wIj2UNBUvYs13U61H",
     "imageUrl": "assets/artists/tukool-tiff-approved-oct3.jpg",
     "imagePosition": "50% 20%",
+    "state": "NC",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "tylynn": {
@@ -9773,6 +10157,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/73CLBNL3pNWBhIjm9Z5CLw",
     "imageUrl": "assets/artists/jonah-daniel-approved-oct3.jpg",
     "imagePosition": "50% 30%",
+    "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "outr.cty": {
@@ -9816,6 +10202,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/5rEAZYrahTLTvcgv0DgOJQ",
     "imageUrl": "assets/artists/yp-aka-young-paul-approved-oct3.jpg",
     "imagePosition": "50% 15%",
+    "state": "NY",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "untidld": {
@@ -9829,6 +10217,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/6dFi6zWjAsSJeEpZ5IYPtU",
     "imageUrl": "assets/artists/untidld-approved-oct3.jpg",
     "imagePosition": "50% 15%",
+    "state": "PA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "kvng flvcko": {
@@ -9868,6 +10258,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://drealp.com",
     "imageUrl": "assets/artists/drea-lp-approved-oct5.webp",
     "imagePosition": "50% 25%",
+    "state": "MD",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "solachi voz": {
@@ -9907,6 +10299,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/6dj1ndizPRd8Ip0x0RE0AC",
     "imageUrl": "assets/artists/mahogany-jones-approved-oct5.jpg",
     "imagePosition": "50% 15%",
+    "state": "MI",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "shy speaks": {
@@ -9920,6 +10314,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://shyspeaks.com/links",
     "imageUrl": "assets/artists/shy-speaks-approved-oct5.webp",
     "imagePosition": "55% 25%",
+    "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "serious voice": {
@@ -9946,6 +10342,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/5jv3xaqB33eLwFCgEfgJi1",
     "imageUrl": "assets/artists/tarcea-renee-approved-oct5.jpg",
     "imagePosition": "50% 80%",
+    "state": "MO",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "carita cole": {
@@ -9959,6 +10357,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.youtube.com/channel/UCJ-LJT9zonTWjvk4UcGuXZw",
     "imageUrl": "assets/artists/carita-cole-approved-oct5.jpg",
     "imagePosition": "50% 15%",
+    "state": "TN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "dice gamble": {
@@ -10039,6 +10439,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/6nELoJ6eMXfYHX5xocKf33",
     "imageUrl": "assets/artists/s-o-approved-oct5.jpg",
     "imagePosition": "50% 15%",
+    "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "reconcile": {
@@ -10149,6 +10551,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/3cj7pwtC0GuRFHayrbazV8",
     "imageUrl": "assets/artists/dillon-chase-verified-oct10.jpg",
     "imagePosition": "50% 30%",
+    "state": "OK",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "json": {
@@ -10228,6 +10632,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/0z2ZQQqy9K2IhXbIvcjNWv",
     "imageUrl": "assets/artists/q-flo-verified-oct10.jpg",
     "imagePosition": "50% 30%",
+    "state": "PA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "swaizy": {
@@ -10286,6 +10692,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/1PXBwNCd6LaX8iJTDwdC30",
     "imageUrl": "assets/artists/k-drama-verified-oct10.jpg",
     "imagePosition": "50% 20%",
+    "state": "OH",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "taelor gray": {
@@ -10356,6 +10764,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/5ccLg9PXtgNpXdkIzw7Pvw",
     "imageUrl": "assets/artists/mouthpi3ce-verified-oct10.jpg",
     "imagePosition": "50% 30%",
+    "state": "GA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "deraj": {
@@ -10369,6 +10779,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://bio.site/justderaj",
     "imageUrl": "assets/artists/deraj-verified-oct10.png",
     "imagePosition": "50% 30%",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "mr. del": {
@@ -10396,6 +10808,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.youtube.com/user/freshneturnity/featured",
     "imageUrl": "assets/artists/fresh-ie-verified-oct10.jpg",
     "imagePosition": "50% 30%",
+    "state": "MB",
+    "country": "CA",
     "sourceRegistryVerified": true
   },
   "applejaxx": {
@@ -10461,6 +10875,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/3XgNFNKLstByGKqplDht0H",
     "imageUrl": "assets/artists/guvna-b-verified-oct10.jpg",
     "imagePosition": "50% 30%",
+    "country": "GB",
     "sourceRegistryVerified": true
   },
   "still shadey": {
@@ -10488,6 +10903,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/66Hu6kzjWXGUdTdCCIzmW4",
     "imageUrl": "assets/artists/feed-em-verified-oct10.jpg",
     "imagePosition": "50% 30%",
+    "country": "GB",
     "sourceRegistryVerified": true
   },
   "reblah": {
@@ -10527,6 +10943,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/75sReJhZ3hjZctu6vtoGj6",
     "imageUrl": "assets/artists/dwayne-tryumf-verified-oct10.jpg",
     "imagePosition": "50% 30%",
+    "state": "ENG",
+    "country": "GB",
     "sourceRegistryVerified": true
   },
   "manny montes": {
@@ -10581,6 +10999,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/von-won-approved-oct6.webp",
     "imagePosition": "38% 0%",
     "state": "TX",
+    "country": "US",
     "label": "Grown And Saved",
     "sourceRegistryVerified": true
   },
@@ -10597,6 +11016,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/lil-ziggy-approved-oct6.webp",
     "imagePosition": "50% 0%",
     "state": "TX",
+    "country": "US",
     "label": "Grown And Saved",
     "sourceRegistryVerified": true
   },
@@ -10614,6 +11034,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/young-jayden-approved-oct6.webp",
     "imagePosition": "58% 0%",
     "state": "TX",
+    "country": "US",
     "label": "Grown And Saved / God Wave",
     "sourceRegistryVerified": true
   },
@@ -10630,6 +11051,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/dougie-d-approved-oct6.webp",
     "imagePosition": "48% 0%",
     "state": "TX",
+    "country": "US",
     "label": "Grown And Saved",
     "sourceRegistryVerified": true
   },
@@ -10648,6 +11070,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/dj-bryce-g-official-portrait-oct8.jpg",
     "imagePosition": "50% 0%",
     "state": "FL",
+    "country": "US",
     "label": "The Joyful Noize",
     "sourceRegistryVerified": true
   },
@@ -10663,6 +11086,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/starringo-official-portrait-oct8.jpg",
     "imagePosition": "50% 50%",
     "state": "LA",
+    "country": "US",
     "label": "RMG",
     "sourceRegistryVerified": true
   },
@@ -10680,6 +11104,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/adrion-butler-official-portrait-oct8.jpg",
     "imagePosition": "50% 35%",
     "state": "TX",
+    "country": "US",
     "label": "God Made Muzic",
     "sourceRegistryVerified": true
   },
@@ -10710,6 +11135,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/a3-official-portrait-oct8.jpg",
     "imagePosition": "50% 35%",
     "state": "GA",
+    "country": "US",
     "label": "RMG",
     "sourceRegistryVerified": true
   },
@@ -10729,6 +11155,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/dason-artist-supplied-oct8.png",
     "imagePosition": "50% 25%",
     "state": "TX",
+    "country": "US",
     "label": "Outlandish Live",
     "sourceRegistryVerified": true
   },
@@ -10761,6 +11188,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/epho-official-portrait-oct8.jpg",
     "imagePosition": "50% 20%",
     "state": "TX",
+    "country": "US",
     "label": "BLDCRWN",
     "sourceRegistryVerified": true
   },
@@ -10778,6 +11206,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/jxdy-official-portrait-oct8.jpg",
     "imagePosition": "50% 50%",
     "state": "TX",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "dj geech": {
@@ -10797,6 +11226,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/dj-geech-flavorfest-official-oct8.webp",
     "imagePosition": "50% 20%",
     "state": "FL",
+    "country": "US",
     "label": "Flavor Fest / Crossover Church",
     "sourceRegistryVerified": true
   },
@@ -10877,6 +11307,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/knek-official-portrait-oct9.jpg",
     "imagePosition": "50% 20%",
     "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "darius mullin": {
@@ -10891,6 +11322,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/darius-mullin-spotify-portrait-oct9.jpg",
     "imagePosition": "50% 20%",
     "state": "TN",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "tonyxtrotter": {
@@ -10905,6 +11337,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/20eJqy3YU65fubCicAHHvM",
     "imageUrl": "assets/artists/tonyxtrotter-official-performance-oct9.jpg",
     "imagePosition": "50% 25%",
+    "state": "MO",
+    "country": "US",
     "label": "Apollo Records",
     "sourceRegistryVerified": true
   },
@@ -11014,6 +11448,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://i.scdn.co/image/ab6761610000939bab7a155320b0ae4eb70c2d64",
     "imageUrl": "assets/artists/xeem-official-oct12.webp",
     "imagePosition": "50% 35%",
+    "state": "FL",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "th3 saga": {
@@ -11040,6 +11476,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://i.scdn.co/image/ab6761670000ecd4d560eff4a8d0b02a3510a6dc",
     "imageUrl": "assets/artists/toyalove-official-oct12.jpg",
     "imagePosition": "50% 50%",
+    "state": "GA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "626authentic": {
@@ -11070,6 +11508,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://i.scdn.co/image/ab6761670000ecd46d3ca1c8b59e95c0df4a07f7",
     "imageUrl": "assets/artists/b-e-r-i-d-o-x-official-oct12.jpg",
     "imagePosition": "50% 30%",
+    "state": "PA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "tblessing": {
@@ -11165,6 +11605,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://i.scdn.co/image/ab6761610000939bdbd42b57d5c2ef5aa9db82e8",
     "imageUrl": "assets/artists/joshua-penn-official-oct12.webp",
     "imagePosition": "50% 40%",
+    "state": "PA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "pressnj": {
@@ -11346,6 +11788,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/viktor-2026-10-15.jpg",
     "imagePosition": "50% 0%",
     "state": "CA",
+    "country": "US",
     "label": "Ghost Ride the Gospel",
     "sourceRegistryVerified": true
   },
@@ -11364,6 +11807,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/zay-lowly-2026-10-15.webp",
     "imagePosition": "50% 0%",
     "state": "CA",
+    "country": "US",
     "label": "Nu Wave Entertainment",
     "sourceRegistryVerified": true
   },
@@ -11380,6 +11824,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/gregg-styles-2026-10-15.webp",
     "imagePosition": "50% 10%",
     "state": "CA",
+    "country": "US",
     "label": "HOGMOB Ministries",
     "sourceRegistryVerified": true
   },
@@ -11429,6 +11874,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/jj-stone-submitted-2026-10-15.png",
     "imagePosition": "50% 50%",
     "state": "SK",
+    "country": "CA",
     "label": "True Freedom Entertainment",
     "sourceRegistryVerified": true
   },
@@ -11460,6 +11906,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/1GleyFWOUROB314b8UlM6F",
     "imageUrl": "assets/artists/nate-period-official-oct16.jpg",
     "imagePosition": "50% 0%",
+    "state": "VA",
+    "country": "US",
     "label": "Devoted Music",
     "sourceRegistryVerified": true
   },
@@ -11491,6 +11939,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/crown-one-submitted-oct17.jpg",
     "imagePosition": "50% 0%",
     "state": "OH",
+    "country": "US",
     "label": "KP Music Records",
     "sourceRegistryVerified": true
   },
@@ -11536,6 +11985,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://ryanellismusic.com/about/",
     "imageUrl": "assets/artists/ryan-ellis-press-oct20.jpg",
     "imagePosition": "55% 35%",
+    "state": "CA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "kemara lynn": {
@@ -11552,6 +12003,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/kemara-lynn-artist-submitted-oct20.jpg",
     "imagePosition": "50% 0%",
     "state": "MI",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "r3st0red": {
@@ -11568,6 +12020,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/r3st0red-official-oct23.jpg",
     "imagePosition": "67% 32%",
     "state": "MD",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "altar ego": {
@@ -11584,6 +12037,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "imageUrl": "assets/artists/altar-ego-owner-approved-oct23.jpg",
     "imagePosition": "50% 26.6%",
     "state": "SC",
+    "country": "US",
     "label": "Altar Ego Records",
     "sourceRegistryVerified": true
   },
@@ -11613,6 +12067,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/7GJBelg5G2JgssKWZtoJq7",
     "imageUrl": "assets/artists/qew-official-spotify-oct27.jpg",
     "imagePosition": "50% 0%",
+    "state": "NV",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "jayy brown": {
@@ -11640,6 +12096,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://one8tea.com/about-one8tea",
     "imageUrl": "assets/artists/one8tea-portrait-review-oct31.jpg",
     "imagePosition": "50% 0%",
+    "state": "NB",
     "country": "CA",
     "sourceRegistryVerified": true
   },
@@ -11813,6 +12270,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://kingdomcircuit.com/assets/artists/ant-lee-owner-selected-nov1.png",
     "imageUrl": "assets/artists/ant-lee-owner-selected-nov1.png",
     "imagePosition": "78% 0%",
+    "state": "ON",
     "country": "CA",
     "sourceRegistryVerified": true
   },
@@ -11841,6 +12299,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://open.spotify.com/artist/2AjbOeYS0jcF0t2F0RDgNy",
     "imageUrl": "assets/artists/fame-holiday-portrait-review-oct31.jpg",
     "imagePosition": "50% 0%",
+    "state": "ON",
     "country": "CA",
     "sourceRegistryVerified": true
   },
@@ -12122,6 +12581,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://www.instagram.com/gzeal104/",
     "imageUrl": "assets/artists/gzeal-official-linktree-nov4.png",
     "imagePosition": "58% 0%",
+    "state": "PA",
     "country": "US",
     "sourceRegistryVerified": true
   },
