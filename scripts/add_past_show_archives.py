@@ -147,6 +147,12 @@ def cancelled(event: dict) -> bool:
     return norm(event.get("status")) in {"cancelled", "canceled"}
 
 
+def archive_status(event: dict) -> str:
+    if cancelled(event):
+        return "Cancelled"
+    return "Postponed" if norm(event.get("status")) == "postponed" else ""
+
+
 def load_events(root: pathlib.Path) -> tuple[list[dict], dict[str, str]]:
     from build_seo_site import domestic_event
     from catalog_removals import location_review_event, misattributed_event, public_event
@@ -179,10 +185,10 @@ def load_events(root: pathlib.Path) -> tuple[list[dict], dict[str, str]]:
             continue
         if (event.get("id"), event.get("startDate")) in merged:
             continue
-        if not cancelled(event) and not record.get("observedOnOrAfterEventDate"):
+        if not archive_status(event) and not record.get("observedOnOrAfterEventDate"):
             continue
         when = event_date(event)
-        if when is None or (when >= cutoff and not cancelled(event)) or when < oldest:
+        if when is None or (when >= cutoff and not archive_status(event)) or when < oldest:
             continue
         if not domestic_event(event):
             continue
@@ -207,7 +213,7 @@ def archive_row(event: dict, known_slugs: set[str]) -> str:
         artists.append(f"+{len(names)-5} more")
     location = ", ".join(x for x in (str(event.get("city") or "").strip(), str(event.get("state") or "").strip()) if x)
     details = " · ".join(x for x in (" · ".join(artists), esc(event.get("venue")), esc(location)) if x)
-    status = '<strong>Cancelled</strong> · ' if cancelled(event) else ''
+    status = f'<strong>{archive_status(event)}</strong> · ' if archive_status(event) else ''
     return f'<article class="past-show-row"><div class="past-show-date">{esc(date_label(event))}</div><div class="past-show-copy"><h3><a href="{event_path(event)}">{status}{esc(event.get("title"))}</a></h3><p>{details}</p></div></article>'
 
 
@@ -217,8 +223,8 @@ def section(events: list[dict], known_slugs: set[str]) -> str:
         return ""
     rows = "".join(archive_row(event, known_slugs) for event in shown)
     noun = "show" if len(shown) == 1 else "shows"
-    label = 'Show archive' if any(cancelled(event) for event in shown) else 'Past shows'
-    return f'<section class="past-shows-archive" data-past-shows-archive><details><summary><span>{label}</span><span class="past-count">{len(shown)} archived {noun}</span></summary><div class="past-show-list">{rows}</div><p class="past-archive-note">Archived listings are preserved for reference. Cancelled events are marked. Upcoming shows remain at the top of this page.</p></details></section>'
+    label = 'Show archive' if any(archive_status(event) for event in shown) else 'Past shows'
+    return f'<section class="past-shows-archive" data-past-shows-archive><details><summary><span>{label}</span><span class="past-count">{len(shown)} archived {noun}</span></summary><div class="past-show-list">{rows}</div><p class="past-archive-note">Archived listings are preserved for reference. Cancelled and postponed events are marked. Upcoming shows remain at the top of this page.</p></details></section>'
 
 
 def inject(page: pathlib.Path, events: list[dict], known_slugs: set[str]) -> bool:
@@ -237,8 +243,8 @@ def inject(page: pathlib.Path, events: list[dict], known_slugs: set[str]) -> boo
 
 
 REVIEWED_CANCELLED_SCHEMA_RETENTION = {
-    # November 11 cancellation: retain the already-published structured facts
-    # at the existing URL on this and every subsequent archive rebuild.
+    # November 11 cancellation, clarified as postponed on November 12: retain
+    # the already-published structured facts on subsequent archive rebuilds.
     ("babytooth-experience-huntington-beach-2026-11-21", "2026-11-21"),
 }
 
@@ -284,16 +290,17 @@ def past_page(root: pathlib.Path, event: dict, known_slugs: set[str]) -> str:
         if event.get(source_key):
             address[schema_key] = event[source_key]
     schema_json = json.dumps(schema, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    is_cancelled = cancelled(event)
-    if is_cancelled:
-        schema["eventStatus"] = "https://schema.org/EventCancelled"
+    status_label = archive_status(event)
+    is_postponed = status_label == "Postponed"
+    if status_label:
+        schema["eventStatus"] = "https://schema.org/EventPostponed" if is_postponed else "https://schema.org/EventCancelled"
         identity = (str(event.get("id", "")).removeprefix("manual:"), event.get("startDate"))
         if identity in REVIEWED_CANCELLED_SCHEMA_RETENTION:
             from show_information_model import normalize
             record = normalize(event)
             original_image = str(event.get("image") or "").strip()
             if not original_image or not record.get("schemaEndDate") or not record.get("organizerName"):
-                raise ValueError("Reviewed cancelled event lost retained image, end date or organizer")
+                raise ValueError("Reviewed inactive event lost retained image, end date or organizer")
             schema["image"] = [original_image if original_image.startswith("https://")
                                else SITE_ORIGIN + "/" + original_image.lstrip("/")]
             schema["endDate"] = record["schemaEndDate"]
@@ -301,15 +308,21 @@ def past_page(root: pathlib.Path, event: dict, known_slugs: set[str]) -> str:
             if record.get("organizerUrl"):
                 schema["organizer"]["url"] = record["organizerUrl"]
         schema_json = json.dumps(schema, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    page_label = "Cancelled event" if is_cancelled else "Past Show"
-    notice = ("<strong>This event was cancelled.</strong><p>The original date and lineup are retained for reference. This event is not an upcoming or completed performance.</p>" if is_cancelled else "<strong>This event has passed.</strong><p>Kingdom Circuit keeps verified past listings available as concert history. Use the links below for current shows.</p>")
-    status_row = "<div><dt>Status</dt><dd>Cancelled</dd></div>" if is_cancelled else ""
-    top_notice = f'<div class="past-event-notice" role="status">{notice}</div>' if is_cancelled else ""
-    inline_notice = "" if is_cancelled else f'<div class="past-event-notice">{notice}</div>'
-    date_heading = "Originally scheduled" if is_cancelled else "Date"
+    page_label = f"{status_label} event" if status_label else "Past Show"
+    if is_postponed:
+        notice = "<strong>This event was postponed.</strong><p>New date to be announced. The original date and lineup are retained for reference. This event is not an upcoming or completed performance.</p>"
+    elif status_label:
+        notice = "<strong>This event was cancelled.</strong><p>The original date and lineup are retained for reference. This event is not an upcoming or completed performance.</p>"
+    else:
+        notice = "<strong>This event has passed.</strong><p>Kingdom Circuit keeps verified past listings available as concert history. Use the links below for current shows.</p>"
+    status_row = f"<div><dt>Status</dt><dd>{status_label}</dd></div>" if status_label else ""
+    top_notice = f'<div class="past-event-notice" role="status">{notice}</div>' if status_label else ""
+    inline_notice = "" if status_label else f'<div class="past-event-notice">{notice}</div>'
+    date_heading = "Originally scheduled" if status_label else "Date"
     desc = f"Past Christian hip-hop show: {title} in {city}, {state} on {date_label(event)}. Browse current Kingdom Circuit show listings."
-    if is_cancelled:
-        desc = f"Cancelled: {title}, originally scheduled for {date_label(event)} in {city}, {state}. Retained for reference."
+    if status_label:
+        desc = f"{status_label}: {title}, originally scheduled for {date_label(event)} in {city}, {state}. "
+        desc += "New date to be announced." if is_postponed else "Retained for reference."
     return f'''<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="index,follow"><meta name="description" content="{esc(desc)}"><link rel="canonical" href="{esc(canonical)}">{FAVICON_HTML}<link rel="stylesheet" href="/styles.css?v=10.3"><meta property="og:type" content="website"><meta property="og:title" content="{esc(title)} - {page_label} | Kingdom Circuit"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{esc(canonical)}"><script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','{GA_ID}');</script><script type="application/ld+json">{schema_json}</script><title>{esc(title)} - {page_label} | Kingdom Circuit</title>{STYLE}</head><body><header class="site-header"><div class="header-inner"><a class="brand" href="/" aria-label="The Kingdom Circuit home"><img src="{BRAND_LOGO}" alt="The Kingdom Circuit - Christian hip-hop, live and connected"></a></div></header><main><section class="event-detail-section"><p class="eyebrow"><a class="text-link" href="/shows/">Shows</a> / {page_label}</p>{top_notice}<article class="event-detail">{media}<div class="event-detail-copy"><p class="eyebrow">{page_label}</p><h1>{esc(title)}</h1><p class="artist-line">{artists}</p>{inline_notice}<dl class="detail-list">{status_row}<div><dt>{date_heading}</dt><dd>{esc(date_label(event))}</dd></div><div><dt>Venue</dt><dd>{esc(venue)}</dd></div><div><dt>Location</dt><dd>{esc(city)}, {esc(state)}</dd></div></dl><div class="profile-links">{''.join(nav)}</div>{source}</div></article></section></main><footer class="site-footer"><div><strong>The Kingdom Circuit</strong><p>Christian hip-hop, live and connected.</p></div><div class="footer-links"><a href="/shows/">All Shows</a><a href="/artists/">Artists</a><a href="/festivals/">Festivals</a><a href="/submit/">Submit a Show</a></div><p class="footer-note">Past event details are preserved for historical reference.</p></footer></body></html>'''
 
 

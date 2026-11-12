@@ -3113,6 +3113,17 @@
           "evidence": "Official event page explicitly states Hosted by Kaden Jordan; embedded event hostName agrees. Public event title BABYTOOTH EXPERIENCE: LOS ANGELES and Nov. 21 date establish exact event identity.",
           "receipt": "root-source-receipts/eb5ea44e0a7f4f.json",
           "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://www.instagram.com/p/Dfpun-3It0P/",
+          "fields": [
+            "officialUrl",
+            "admissionRestriction",
+            "scheduleNote"
+          ],
+          "quoteOrSummary": "The November 12, 2026 artist/team announcement explicitly postpones the Los Angeles stop and says they are working on a new date. No replacement date has been announced. This supersedes the November 11 cancellation label based on the original Partiful instance, which still says canceled. Owner explicitly requested Postponed.",
+          "reviewedAt": "2026-11-12",
+          "confidence": "high"
         }
       ],
       "expectedVenue": "15202 Transistor Lane",
@@ -3153,6 +3164,28 @@
           },
           "reviewedAt": "2026-11-05",
           "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
+        },
+        {
+          "expected": {
+            "officialUrl": "https://partiful.com/e/9wVqEVujrtfNv03Vr5C7"
+          },
+          "facts": {
+            "officialUrl": "https://www.instagram.com/p/Dfpun-3It0P/"
+          },
+          "reviewedAt": "2026-11-12",
+          "reason": "Artist/team postponement announcement supersedes the original cancelled Partiful instance; no replacement date."
+        },
+        {
+          "expected": {
+            "admissionRestriction": "RSVP/application required through the official event page.",
+            "scheduleNote": "The artist’s official tour page publishes this location through Songkick. RSVP/application is required through Partiful; the performance start time is not announced."
+          },
+          "facts": {
+            "admissionRestriction": "",
+            "scheduleNote": "Postponed — new date to be announced. Location and doors time are from the original November 21 announcement."
+          },
+          "reviewedAt": "2026-11-12",
+          "reason": "Remove outdated attendance instructions after artist-confirmed postponement."
         }
       ]
     },

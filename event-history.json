@@ -40343,7 +40343,7 @@
           "Kaden Jordan",
           "Kai Uriah"
         ],
-        "officialUrl": "https://partiful.com/e/9wVqEVujrtfNv03Vr5C7",
+        "officialUrl": "https://www.instagram.com/p/Dfpun-3It0P/",
         "ticketUrl": "",
         "image": "assets/events/babytooth-experience-huntington-beach-2026-11-21.jpg",
         "imageType": "event_artwork",
@@ -40352,13 +40352,20 @@
         "imageSource": "Verified event source graphic",
         "imageSourceUrl": "https://partiful.com/e/9wVqEVujrtfNv03Vr5C7",
         "eventType": "concert",
-        "status": "cancelled",
+        "status": "postponed",
         "lineupExplicit": true,
         "musicConfirmed": true,
         "confidence": "high",
         "authority": "artist_calendar",
         "sourceName": "Artist or organizer event announcement",
         "sources": [
+          {
+            "name": "Kaden Jordan and Babytooth postponement announcement",
+            "url": "https://www.instagram.com/p/Dfpun-3It0P/",
+            "type": "manual_verified",
+            "authority": "artist_calendar",
+            "priority": 120
+          },
           {
             "name": "Artist or organizer event announcement",
             "url": "https://partiful.com/e/9wVqEVujrtfNv03Vr5C7",
@@ -40368,7 +40375,7 @@
           }
         ],
         "firstSeen": "2026-10-08T00:38:06Z",
-        "lastVerified": "2026-10-08T00:38:06Z",
+        "lastVerified": "2026-11-12T19:49:56Z",
         "auditVerified": "2026-10-07",
         "editorialBatch": "2026-10-07-reviewed-discoveries",
         "notes": "Kaden Jordan's public Partiful page confirms BABYTOOTH EXPERIENCE: LOS ANGELES in Huntington Beach, November 21. Artist-linked Songkick 43449567 explicitly labels 6:30 PM as doors and names Kai Uriah. Concert start remains blank. Songkick publishes street address; Partiful requires RSVP for full location. Official event's own promotional image saved unchanged. Source: https://www.songkick.com/concerts/43449567-kaden-jordan-at-15202-transistor-ln-huntington-beach-ca-92649-united-states",
@@ -40378,15 +40385,15 @@
           "official:962113b5923429ffb4f0"
         ],
         "postalCode": "92649",
-        "ticketAvailability": "cancelled",
-        "publicDescription": "Cancelled. Kaden Jordan’s The Babytooth Experience, originally scheduled for November 21, 2026 in Huntington Beach, will not take place. The original date and announced lineup are retained for reference.",
-        "statusNotes": "The artist-hosted official Partiful page states “Event is canceled.” Confirmed November 11, 2026; the Kingdom Circuit owner explicitly requested this cancellation update.",
-        "statusVerified": "2026-11-11",
+        "ticketAvailability": "postponed",
+        "publicDescription": "Postponed — new date to be announced. Kaden Jordan and the Babytooth team have postponed the Los Angeles stop, originally scheduled for November 21, 2026 in Huntington Beach. The original date, location and announced lineup are retained for reference.",
+        "statusNotes": "The November 12, 2026 artist/team announcement explicitly postpones the Los Angeles stop and says they are working on a new date. No replacement date has been announced. This supersedes the November 11 cancellation label based on the original Partiful instance, which still says canceled. Owner explicitly requested Postponed.",
+        "statusVerified": "2026-11-12",
         "organizer": {
           "name": "Kaden Jordan"
         },
-        "admissionRestriction": "RSVP/application required through the official event page.",
-        "scheduleNote": "The artist’s official tour page publishes this location through Songkick. RSVP/application is required through Partiful; the performance start time is not announced."
+        "admissionRestriction": "",
+        "scheduleNote": "Postponed — new date to be announced. Location and doors time are from the original November 21 announcement."
       }
     },
     {

@@ -16,12 +16,15 @@ REVIEWED_CANCELLATION = ("babytooth-experience-huntington-beach-2026-11-21", "20
 
 
 def verify_reviewed_cancellation(site, wanted, raw):
-    """Keep the exact reviewed cancellation accountable after feed removal."""
+    """Keep the reviewed cancellation/postponement accountable after feed removal."""
     identity = wanted["id"]
     assert (identity, wanted["startDate"]) == REVIEWED_CANCELLATION
-    assert wanted.get("status") in {"cancelled", "canceled"}, (identity, "cancellation status")
-    assert wanted.get("ticketAvailability") == "cancelled" and not wanted.get("ticketUrl"), (identity, "actionable cancelled ticket")
-    assert not any(str(e["id"]).removeprefix("manual:") == identity for e in raw), (identity, "cancelled event in public feed")
+    assert wanted.get("status") in {"cancelled", "canceled", "postponed"}, (identity, "inactive status")
+    postponed = wanted.get("status") == "postponed"
+    status = "postponed" if postponed else "cancelled"
+    status_kind = "postponement" if postponed else "cancellation"
+    assert wanted.get("ticketAvailability") == status and not wanted.get("ticketUrl"), (identity, f"actionable {status} ticket")
+    assert not any(str(e["id"]).removeprefix("manual:") == identity for e in raw), (identity, f"{status} event in public feed")
     event = dict(wanted, id="manual:" + identity)
     href = published_event_path(event, ROOT)
     detail = (site / href.strip("/") / "index.html").read_text()
@@ -32,21 +35,27 @@ def verify_reviewed_cancellation(site, wanted, raw):
     events = [value for value in schemas if value.get("@type") == "MusicEvent"]
     assert len(events) == 1, (identity, "missing or duplicated event schema")
     schema = events[0]
-    assert schema.get("eventStatus") == "https://schema.org/EventCancelled", (identity, "cancellation schema")
+    schema_status = "EventPostponed" if postponed else "EventCancelled"
+    assert schema.get("eventStatus") == "https://schema.org/" + schema_status, (identity, f"{status_kind} schema")
     assert schema.get("name") == wanted["title"] and schema.get("startDate") == wanted["startDate"], (identity, "retained event identity/date")
     assert schema.get("url") == "https://kingdomcircuit.com" + href, (identity, "retained schema URL")
     assert schema.get("location", {}).get("name") == wanted["venue"], (identity, "retained venue")
     address = schema.get("location", {}).get("address", {})
     assert address.get("addressLocality") == wanted["city"] and address.get("addressRegion") == wanted["state"], (identity, "retained location")
     assert [p.get("name") for p in schema.get("performer", [])] == wanted["advertisedBilling"], (identity, "retained full billing")
-    assert "offers" not in schema, (identity, "cancelled purchase offer")
+    assert "offers" not in schema, (identity, f"{status} purchase offer")
     assert re.search(r'<link[^>]*rel="canonical"[^>]*href="' + re.escape("https://kingdomcircuit.com" + href) + '"', detail), (identity, "retained canonical URL")
     assert html.escape(wanted["officialUrl"], quote=True) in detail, (identity, "official source")
-    assert re.search(r"cancelled|canceled", html.unescape(re.sub(r"<[^>]+>", " ", detail)), re.I), (identity, "visible cancellation")
+    visible = re.sub(r"<(?:head|script|style)\b[^>]*>.*?</(?:head|script|style)>", " ", detail, flags=re.S | re.I)
+    visible = html.unescape(re.sub(r"<[^>]+>", " ", visible))
+    status_pattern = r"postponed" if postponed else r"cancelled|canceled"
+    assert re.search(status_pattern, visible, re.I), (identity, f"visible {status_kind}")
+    if postponed:
+        assert re.search(r"new date\s+(?:to be announced|TBA)", visible, re.I), (identity, "postponed new date notice")
     anchors = re.findall(r'<a\b[^>]*>(.*?)</a>', detail, re.S | re.I)
     labels = [html.unescape(re.sub(r"<[^>]+>", " ", value)).strip() for value in anchors]
-    assert not any(re.search(r"\b(?:(?:buy|get|purchase)\s+tickets?|rsvp|register(?:\s+now)?)\b", label, re.I) for label in labels), (identity, "cancelled ticket action")
-    assert href not in (site / "shows/index.html").read_text(), (identity, "cancelled show listed")
+    assert not any(re.search(r"\b(?:(?:buy|get|purchase)\s+tickets?|rsvp|register(?:\s+now)?)\b", label, re.I) for label in labels), (identity, f"{status} ticket action")
+    assert href not in (site / "shows/index.html").read_text(), (identity, f"{status} show listed")
     for name in wanted["artists"]:
         profile = site / builder.artist_path(name).strip("/") / "index.html"
         profile_text = profile.read_text()
@@ -54,9 +63,9 @@ def verify_reviewed_cancellation(site, wanted, raw):
         for archive in re.findall(archive_pattern, profile_text, re.S | re.I):
             if href in archive:
                 links = re.findall(r'<a\b[^>]*href="' + re.escape(href) + r'"[^>]*>(.*?)</a>', archive, re.S | re.I)
-                assert links and all(re.search(r"cancelled|canceled", value, re.I) for value in links), (identity, "unmarked cancelled archive")
+                assert links and all(re.search(status_pattern, value, re.I) for value in links), (identity, f"unmarked {status} archive")
         upcoming = re.sub(archive_pattern, "", profile_text, flags=re.S | re.I)
-        assert href not in upcoming, (identity, "cancelled artist schedule")
+        assert href not in upcoming, (identity, f"{status} artist schedule")
 
 
 def verify(site):
@@ -73,7 +82,7 @@ def verify(site):
         if not builder.current(wanted):
             continue
         if ((wanted["id"], wanted["startDate"]) == REVIEWED_CANCELLATION
-                and wanted.get("status") in {"cancelled", "canceled"}):
+                and wanted.get("status") in {"cancelled", "canceled", "postponed"}):
             verify_reviewed_cancellation(site, wanted, primary + supplemental)
             continue
         matches = [e for e in rows if str(e["id"]).removeprefix("manual:") == wanted["id"]]

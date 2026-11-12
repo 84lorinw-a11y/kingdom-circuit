@@ -11,6 +11,7 @@ from apply_oct2_verified_shows import OWNER_HELD_IDS
 from verify_egr_bizzle_updates import uses_image
 
 ROOT = Path(__file__).resolve().parents[1]
+RETAINED_STATUSES = {"cancelled", "canceled", "postponed"}
 
 
 def published_event_path(event: dict, root: Path) -> str:
@@ -63,8 +64,8 @@ def verify(site: Path):
                 assert matches[0].get("imageType") == pin["imageType"], (pin["id"], label, "held image type")
             assert (site / pin["image"]).is_file(), (pin["id"], "missing retained held artwork")
             continue
-        if not event and builder.norm(pin.get("status")) in {"cancelled", "canceled"}:
-            # Cancelled shows leave public discovery feeds but retain an archive
+        if not event and builder.norm(pin.get("status")) in RETAINED_STATUSES:
+            # Inactive shows leave public discovery feeds but retain an archive
             # page and their approved artwork. Verify that page, not an active card.
             seeds = json.loads((ROOT / "config/manual-events.json").read_text())
             event = next((e for e in seeds if str(e.get("id")).removeprefix("manual:") == pin["id"]
@@ -80,13 +81,17 @@ def verify(site: Path):
         ), (pin["id"], "feed image", {"actual": image_path, "approved": pin["image"], "approved_sha24": digest})
         assert event["imageType"] == pin["imageType"], (pin["id"], "image type")
         href = (published_event_path(event, ROOT)
-                if builder.norm(pin.get("status")) in {"cancelled", "canceled"}
+                if builder.norm(pin.get("status")) in RETAINED_STATUSES
                 else builder.event_path(event))
         targets[href] = pin
         text = (site / href.strip("/") / "index.html").read_text()
-        if builder.norm(pin.get("status")) in {"cancelled", "canceled"}:
-            assert event.get("status") in {"cancelled", "canceled"}
-            assert 'https://schema.org/EventCancelled' in text, (pin["id"], "missing cancellation")
+        if builder.norm(pin.get("status")) in RETAINED_STATUSES:
+            postponed = builder.norm(pin.get("status")) == "postponed"
+            expected = {"postponed"} if postponed else {"cancelled", "canceled"}
+            assert event.get("status") in expected, (pin["id"], "retained status")
+            schema_status = "EventPostponed" if postponed else "EventCancelled"
+            label = "postponement" if postponed else "cancellation"
+            assert 'https://schema.org/' + schema_status in text, (pin["id"], "missing " + label)
         if pin.get("officialUrl"):
             assert event["officialUrl"] == pin["officialUrl"], (pin["id"], "primary source")
             assert event["ticketUrl"] == pin["ticketUrl"], (pin["id"], "ticket destination")

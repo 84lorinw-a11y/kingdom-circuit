@@ -49,7 +49,14 @@ class SourceConflictGuards(unittest.TestCase):
         self.assertNotIn('name',schema['location']);self.assertNotIn('streetAddress',schema['location']['address'])
         self.assertIn('register through Eventbrite for the giveaways',result['price'])
     def test_artist_published_rsvp_location_restored_without_inventing_walk_in_access(self):
-        item=self.reviewed('babytooth-experience-huntington'); original=self.stale(item);result=enrich(original,[item]);norm=normalize(result)
+        # Exercise the November 5 scheduled-show source conflict. The live
+        # registry also contains the later, authorized postponement correction,
+        # which intentionally removes these obsolete RSVP instructions.
+        item=copy.deepcopy(self.reviewed('babytooth-experience-huntington'))
+        item['corrections']=[c for c in item['corrections'] if c['reviewedAt']=='2026-11-05']
+        self.assertEqual(len(item['corrections']),2)
+        original=self.stale(item,'address');original['status']='scheduled'
+        result=enrich(original,[item]);norm=normalize(result)
         self.assertFalse(norm['private']);self.assertEqual(norm['address'],'15202 Transistor Lane');self.assertEqual(norm['postalCode'],'92649')
         self.assertEqual(enrich(result,[item]),result)
         rendered=detail_transform(fixture(),norm)
@@ -57,5 +64,33 @@ class SourceConflictGuards(unittest.TestCase):
         self.assertIn('RSVP/application required',rendered)
         private=normalize(enrich({**original,'admission':'private'},[item]))
         self.assertTrue(private['private']);self.assertFalse(private['address']);self.assertFalse(private['postalCode'])
+    def test_postponement_removes_old_rsvp_instructions_but_preserves_recorded_location(self):
+        from add_past_show_archives import past_page
+        item=self.reviewed('babytooth-experience-huntington')
+        seed=next(e for e in json.loads((ROOT/'config/manual-events.json').read_text())
+                  if e['id']=='babytooth-experience-huntington-beach-2026-11-21')
+        self.assertEqual(seed['status'],'postponed')
+        stale_rsvp=next(c for c in item['corrections']
+                        if c['reviewedAt']=='2026-11-12' and 'admissionRestriction' in c['expected'])
+        for extra in ({}, {**copy.deepcopy(stale_rsvp['expected']),
+                           'officialUrl':'https://partiful.com/e/9wVqEVujrtfNv03Vr5C7'}):
+            original={**copy.deepcopy(seed),**extra}
+            result=enrich(original,[item]);norm=normalize(result)
+            with self.subTest(stale=bool(extra)):
+                self.assertEqual(result['status'],'postponed')
+                self.assertEqual(result['officialUrl'],'https://www.instagram.com/p/Dfpun-3It0P/')
+                self.assertEqual(result['admissionRestriction'],'')
+                self.assertEqual(enrich(result,[item]),result)
+                for field in ('id','startDate','endDate','artists','advertisedBilling','image','firstSeen'):
+                    self.assertEqual(result[field],seed[field],field)
+                self.assertFalse(norm['private']);self.assertEqual(norm['address'],'15202 Transistor Lane')
+                self.assertEqual(norm['postalCode'],'92649');self.assertIsNone(norm['offer'])
+                rendered=detail_transform(past_page(ROOT,result,set()),norm)
+                self.assertIn('New date to be announced.',rendered)
+                self.assertNotIn('RSVP/application',rendered)
+                self.assertIn('15202 Transistor Lane',rendered);self.assertIn('92649',rendered)
+                schema=next(event_schemas(schema_blocks(rendered)[0][1]))
+                self.assertEqual(schema['eventStatus'],'https://schema.org/EventPostponed')
+                self.assertEqual(schema['startDate'],'2026-11-21');self.assertNotIn('offers',schema)
 
 if __name__=='__main__':unittest.main()
