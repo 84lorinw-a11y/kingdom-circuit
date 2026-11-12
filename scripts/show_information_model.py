@@ -495,6 +495,13 @@ def normalize(event, *, artists=()):
         website = _entity_website(event.get('organizerWebsite')) or _entity_website(result.get('organizerUrl'))
         if website:
             result['organizerWebsite'] = website
+            # A verified website for this organizer is also its Event URL.
+            # Explicit canonical URLs win. A separately named co-organizer's
+            # website must remain scoped to that member in More show details.
+            website_name = _text(event.get('organizerWebsiteName')) or _text(event.get('organizerLinkName'))
+            if (not result.get('organizerUrl')
+                    and (not website_name or website_name.casefold() == result['organizerName'].casefold())):
+                result['organizerUrl'] = website
         social = (organizer.get('instagramProfile') or organizer.get('instagram')) if isinstance(organizer, dict) else None
         social = _instagram_profile(social or event.get('organizerInstagram'))
         if social:

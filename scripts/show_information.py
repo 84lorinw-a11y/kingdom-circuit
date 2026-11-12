@@ -421,6 +421,10 @@ def verify(site, ctx=None):
             assert schema.get('startDate') == record.get('schemaStartDate'), f'Start time mismatch: {relative}'
             assert (schema.get('organizer') or {}).get('name') == record.get('organizerName'), f'Organizer schema mismatch: {relative}'
             assert (schema.get('organizer') or {}).get('url') == record.get('organizerUrl'), f'Organizer schema URL mismatch: {relative}'
+            website_name = record.get('organizerWebsiteName') or record.get('organizerLinkName')
+            if (record.get('organizerName') and record.get('organizerWebsite')
+                    and (not website_name or website_name.casefold() == record['organizerName'].casefold())):
+                assert (schema.get('organizer') or {}).get('url'), f'Known organizer website omitted from schema: {relative}'
             assert (schema.get('location', {}).get('address') or {}).get('addressLocality') == record.get('venueLocality'), f'Venue municipality mismatch: {relative}'
             if record.get('offer'):
                 buttons = [n for n in doc.nodes if n.tag == 'a' and n.has('primary-button') and doc.text(n).casefold() == 'official details']
