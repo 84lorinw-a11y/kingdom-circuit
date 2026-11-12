@@ -995,6 +995,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "officialImageSource": "https://wordsplayed.neocities.org/",
     "imageUrl": "assets/artists/wordsplayed-saved.webp",
     "imagePosition": "center",
+    "state": "GA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "forrest frank": {
@@ -7083,6 +7085,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "officialImageSource": "https://wordsplayed.neocities.org/",
     "imageUrl": "assets/artists/wordsplayed-saved.webp",
     "imagePosition": "center",
+    "state": "GA",
+    "country": "US",
     "sourceRegistryVerified": true
   },
   "forrest frank": {
