@@ -155,9 +155,9 @@ def finalize_public_experience(site: Path) -> dict[str, Any]:
         # PNGs) while still generating the same bounded responsive WebPs.
         "--max-image-bytes", str(24 * 1024 * 1024),
         # The growing source library exceeds 192 MiB before compression.
-        # Preserve the current source library and the approved Omaha flyer.
+        # Preserve the current source library and the newly approved concert flyer.
         # The complete measured input requires the next whole MiB allowance.
-        "--max-total-bytes", str(360 * 1024 * 1024),
+        "--max-total-bytes", str(361 * 1024 * 1024),
         "--wall-time", "360" if remote_images else "180",
     ]
     if not remote_images:
