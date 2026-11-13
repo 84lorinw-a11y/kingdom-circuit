@@ -155,8 +155,9 @@ def finalize_public_experience(site: Path) -> dict[str, Any]:
         # PNGs) while still generating the same bounded responsive WebPs.
         "--max-image-bytes", str(24 * 1024 * 1024),
         # The growing source library exceeds 192 MiB before compression.
-        # Keep the separate optimized-output size checks unchanged.
-        "--max-total-bytes", str(354 * 1024 * 1024),
+        # Preserve the Living Water and URY original flyers alongside the
+        # existing library: measured complete input is 376,061,420 bytes.
+        "--max-total-bytes", str(359 * 1024 * 1024),
         "--wall-time", "360" if remote_images else "180",
     ]
     if not remote_images:
