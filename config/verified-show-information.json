@@ -7843,6 +7843,54 @@
           "reviewedAt": "2026-11-06"
         }
       ]
+    },
+    {
+      "id": "manual:jackie-hill-perry-blameless-st-louis-2027-02-15",
+      "startDate": "2027-02-15",
+      "city": "St. Louis",
+      "state": "MO",
+      "country": "US",
+      "expectedVenue": "The Pageant",
+      "expectedAddress": "6161 Delmar Blvd.",
+      "facts": {
+        "doorsTime": "18:15",
+        "ageRestriction": "All ages",
+        "ticketUrl": "https://www.ticketmaster.com/tpr-presents-blameless-the-tour-with-saint-louis-missouri-02-15-2027/event/0600656BB1D597E5",
+        "ticketUrlVerified": true
+      },
+      "corrections": [
+        {
+          "expected": {
+            "startTime": null,
+            "startDateTime": null
+          },
+          "facts": {
+            "startTime": "19:00",
+            "startDateTime": "2027-02-15T19:00:00-06:00"
+          }
+        },
+        {
+          "expected": {
+            "publicDescription": "Jackie Hill Perry brings Blameless: The Tour to The Pageant in St. Louis. Presale begins November 12, 2026; email-list signup is available through the official tour page.",
+            "scheduleNote": "Show time to be announced.",
+            "startTime": "19:00",
+            "startDateTime": "2027-02-15T19:00:00-06:00"
+          },
+          "facts": {
+            "publicDescription": "Jackie Hill Perry brings Blameless: The Tour to The Pageant in St. Louis. The show begins at 7 PM, with general admission doors at 6:15 PM. All ages are welcome.",
+            "scheduleNote": "General admission doors open at 6:15 PM. Show begins at 7 PM.",
+            "startTime": "19:00",
+            "startDateTime": "2027-02-15T19:00:00-06:00"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.ticketmaster.com/tpr-presents-blameless-the-tour-with-saint-louis-missouri-02-15-2027/event/0600656BB1D597E5",
+          "evidence": "Official artist tour directly links this exact Ticketmaster event. Current Ticketmaster page confirms February 15, 2027 at The Pageant, 7 PM show, 6:15 PM general admission doors and all ages. Original discovery and artwork retained.",
+          "reviewedAt": "2026-11-13"
+        }
+      ]
     }
   ]
 }

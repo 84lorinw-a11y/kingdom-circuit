@@ -15604,7 +15604,7 @@
     "authority": "official_event",
     "confidence": "high",
     "firstSeen": "2026-11-09",
-    "lastVerified": "2026-11-09",
+    "lastVerified": "2026-11-13",
     "auditVerified": "2026-11-09",
     "editorialBatch": "2026-11-09-jackie-blameless-tour",
     "image": "assets/events/jackie-hill-perry-blameless-tour-2027.jpg",
@@ -15617,8 +15617,8 @@
     "officialUrl": "https://stillblameless.com/tour",
     "venueUrl": "https://www.thepageant.com/venue-info/the-pageant/",
     "sourceName": "Official artist tour announcement and venue listings",
-    "publicDescription": "Jackie Hill Perry brings Blameless: The Tour to The Pageant in St. Louis. Presale begins November 12, 2026; email-list signup is available through the official tour page.",
-    "scheduleNote": "Show time to be announced.",
+    "publicDescription": "Jackie Hill Perry brings Blameless: The Tour to The Pageant in St. Louis. The show begins at 7 PM, with general admission doors at 6:15 PM. All ages are welcome.",
+    "scheduleNote": "General admission doors open at 6:15 PM. Show begins at 7 PM.",
     "sources": [
       {
         "name": "Official artist tour dates and poster",
@@ -15633,9 +15633,22 @@
         "type": "manual_verified",
         "authority": "official_event",
         "priority": 120
+      },
+      {
+        "name": "Official tour linked Ticketmaster event and admission schedule",
+        "url": "https://www.ticketmaster.com/tpr-presents-blameless-the-tour-with-saint-louis-missouri-02-15-2027/event/0600656BB1D597E5",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 120
       }
     ],
-    "notes": "Owner requested all 15 official Blameless tour stops November 9, 2026. Date/year/venue and headline verified on current official tour page. Presale signup is not a ticket purchase. Unknown performance start, ending time, support lineup, pricing and age policies are not inferred. Additional billed Preston Perry is kept in description only where explicitly advertised; musical role unconfirmed. First KC discovery November 9, 2026; original announcement date unknown. Official venue pages readable; newly announced Jackie listing not exposed in fetched venue/just-added inventory."
+    "notes": "Owner requested all 15 official Blameless tour stops November 9, 2026. Date/year/venue and headline verified on current official tour page. Presale signup is not a ticket purchase. Unknown performance start, ending time, support lineup, pricing and age policies are not inferred. Additional billed Preston Perry is kept in description only where explicitly advertised; musical role unconfirmed. First KC discovery November 9, 2026; original announcement date unknown. Official venue pages readable; newly announced Jackie listing not exposed in fetched venue/just-added inventory. Reviewed November 13: the official tour now links to Ticketmaster event 0600656BB1D597E5, proving the Saint Louis provider row is this same February 15 performance at The Pageant. Ticketmaster confirms 7 PM Central, general admission doors at 6:15 PM and all ages. These current facts supersede the original unknown time and age notes. Pricing, support acts and end time remain unannounced. The provider offsale state is not evidence of cancellation. Original curated identity, November 9 discovery and tour flyer are preserved.",
+    "startTime": "19:00",
+    "startDateTime": "2027-02-15T19:00:00-06:00",
+    "doorsTime": "18:15",
+    "ageRestriction": "All ages",
+    "ticketUrl": "https://www.ticketmaster.com/tpr-presents-blameless-the-tour-with-saint-louis-missouri-02-15-2027/event/0600656BB1D597E5",
+    "ticketUrlVerified": true
   },
   {
     "startDate": "2027-02-16",

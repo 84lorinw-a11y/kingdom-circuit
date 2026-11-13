@@ -2,6 +2,18 @@
   "version": 1,
   "merges": [
     {
+      "keepId": "manual:jackie-hill-perry-blameless-st-louis-2027-02-15",
+      "identityOnly": true,
+      "keepPath": "/event/blameless-the-tour-with-jackie-hill-perry-2027-02-15-st-louis-645bf3/",
+      "aliasIds": [
+        "ticketmaster:vv17bZ_pGkmsg_LP"
+      ],
+      "aliasPaths": [
+        "/event/tpr-presents-blameless-the-tour-with-jackie-hill-perry-2027-02-15-saint-louis-9dcf1c/"
+      ],
+      "evidence": "Reviewed November 13, 2026: the official https://stillblameless.com/tour lists one February 15 performance at The Pageant in St. Louis and directly links to Ticketmaster event 0600656BB1D597E5. The exact provider record ticketmaster:vv17bZ_pGkmsg_LP uses that same ticket URL, artist, date, venue and 6161 Delmar address. Saint Louis and St. Louis are the same city here. Preserve the original manual identity, November 9 discovery, full tour flyer and independently reviewed 19:00 Central start, 18:15 general admission doors and all ages. Retire only this provider alias and redirect its published URL. Do not inherit provider status or unrelated facts."
+    },
+    {
       "keepId": "manual:jackie-hill-perry-blameless-birmingham-2027-02-20",
       "identityOnly": true,
       "keepPath": "/event/blameless-the-tour-with-jackie-hill-perry-2027-02-20-birmingham-7cfada/",

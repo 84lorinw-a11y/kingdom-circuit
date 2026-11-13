@@ -11,8 +11,13 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import catalog_removals as catalog
 import url_continuity as continuity
+import apply_verified_show_information as information
 
 PAIRS = (
+    ('manual:jackie-hill-perry-blameless-st-louis-2027-02-15',
+     'ticketmaster:vv17bZ_pGkmsg_LP', '19:00',
+     '/event/blameless-the-tour-with-jackie-hill-perry-2027-02-15-st-louis-645bf3/',
+     '/event/tpr-presents-blameless-the-tour-with-jackie-hill-perry-2027-02-15-saint-louis-9dcf1c/'),
     ('manual:jackie-hill-perry-blameless-memphis-2027-02-16',
      'ticketmaster:G5viZ_pE35CeO', '19:00',
      '/event/blameless-the-tour-with-jackie-hill-perry-2027-02-16-memphis-770ba0/',
@@ -48,9 +53,16 @@ class JackieEventIdentityTests(unittest.TestCase):
                 'path': continuity.generated_path(event), 'sourceIds': [], 'event': event}
         for keep_id, alias_id, clock, keep_path, old_path in PAIRS:
             self.assertEqual(keep_path, continuity.generated_path(self.original[keep_id]))
-            self.assertFalse(self.original[keep_id].get('startTime'))
+            if alias_id == 'ticketmaster:vv17bZ_pGkmsg_LP':
+                self.assertEqual('19:00', self.original[keep_id].get('startTime'))
+            else:
+                self.assertFalse(self.original[keep_id].get('startTime'))
             provider = dict(self.original[keep_id], id=alias_id, startTime=clock,
                             ticketUrl='https://stillblameless.com/tour')
+            if alias_id == 'ticketmaster:vv17bZ_pGkmsg_LP':
+                provider.update(title='TPR. Presents Blameless: The Tour with Jackie Hill Perry',
+                                city='Saint Louis', address='6161 Delmar', status='offsale',
+                                image='https://s1.ticketm.net/dam/a/e73/5889e730-ed2b-47bd-8c9b-5d62c6a82e73_SOURCE')
             self.assertEqual(old_path, continuity.generated_path(provider))
             self.providers.append(provider)
             # Also repair a previously retained alias, without losing its URL.
@@ -136,6 +148,33 @@ class JackieEventIdentityTests(unittest.TestCase):
         retained = next(event for event in events if event['id'] == other['id'])
         self.assertEqual(other, {key: value for key, value in retained.items() if key != 'mergedFromIds'})
         self.assertFalse(retained.get('mergedFromIds'))
+
+    def test_saint_louis_time_guard_preserves_newer_clocks_and_identity(self):
+        keep_id = 'manual:jackie-hill-perry-blameless-st-louis-2027-02-15'
+        current = copy.deepcopy(self.original[keep_id])
+        rule = next(item for item in json.loads(
+            (ROOT / 'config/verified-show-information.json').read_text())['events']
+                    if item['id'] == keep_id)
+        stale = copy.deepcopy(current)
+        for field in ('startTime', 'startDateTime', 'doorsTime', 'ageRestriction',
+                      'ticketUrl', 'ticketUrlVerified'):
+            stale.pop(field, None)
+        for correction in rule['corrections']:
+            stale.update(correction['expected'])
+        restored = information.enrich(stale, [rule])
+        for field in ('startTime', 'startDateTime', 'doorsTime', 'ageRestriction',
+                      'ticketUrl', 'ticketUrlVerified', 'scheduleNote', 'publicDescription',
+                      'firstSeen', 'image', 'officialBill'):
+            self.assertEqual(current[field], restored[field])
+        self.assertEqual(restored, information.enrich(restored, [rule]))
+        newer = dict(stale, startTime='20:00', startDateTime='2027-02-15T20:00:00-06:00')
+        guarded = information.enrich(newer, [rule])
+        self.assertEqual(newer['startTime'], guarded['startTime'])
+        self.assertEqual(newer['startDateTime'], guarded['startDateTime'])
+        self.assertEqual(newer['publicDescription'], guarded['publicDescription'])
+        self.assertEqual(newer['scheduleNote'], guarded['scheduleNote'])
+        wrong_date = dict(stale, startDate='2027-02-16')
+        self.assertEqual(wrong_date, information.enrich(wrong_date, [rule]))
 
     def test_old_urls_forward_and_all_fifteen_original_pages_remain_in_sitemap(self):
         continuity.prepare(self.root)
