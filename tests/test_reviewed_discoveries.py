@@ -35,9 +35,12 @@ class ReviewedDiscoveriesTests(unittest.TestCase):
         for event in events:
             self.assertEqual(event["firstSeen"], "2026-09-29T23:00:00Z")
             self.assertTrue(event["image"])
-            if event["artists"] in [["EGR"], ["Kevi Morse"]]:
+            if event["artists"] == ["EGR"]:
                 self.assertEqual(event["startTime"], "")
                 self.assertNotIn("startDateTime", event)
+            if event["artists"] == ["Kevi Morse"]:
+                self.assertEqual(event["startTime"], "20:45")
+                self.assertEqual(event["startDateTime"], "2026-12-05T20:45:00-05:00")
         snapshot = copy.deepcopy(events)
         reviewed.apply(self.root, events, supplemental, today="2026-09-29")
         self.assertEqual(events, snapshot)

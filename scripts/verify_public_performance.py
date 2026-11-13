@@ -588,8 +588,8 @@ def arguments(argv: Optional[list[str]] = None) -> argparse.Namespace:
         ),
     )
     parser.add_argument("--max-variant-bytes", type=int, default=2 * 1024 * 1024)
-    # Existing variants plus the two approved flyers total 144,442,474 bytes.
-    parser.add_argument("--max-total-optimized-bytes", type=int, default=138 * 1024 * 1024)
+    # Retain current variants and the approved Omaha flyer at unchanged quality.
+    parser.add_argument("--max-total-optimized-bytes", type=int, default=139 * 1024 * 1024)
     args = parser.parse_args(argv)
     if not 0 <= args.min_optimized_source_percent <= 100:
         parser.error("--min-optimized-source-percent must be between 0 and 100")

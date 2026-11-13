@@ -6100,11 +6100,11 @@
         "scheduleDetails": [
           {
             "label": "Saturday evening",
-            "text": "Sean McDowell’s message begins at 6:30 PM. Kevi Morse performs after the message and a cereal-bar break; an exact concert start time is not announced."
+            "text": "Sean McDowell’s message runs from 6:30 to 8 PM. Kevi Morse’s concert starts at 8:45 PM."
           },
           {
             "label": "Admission",
-            "text": "Saturday evening is open to families, churches and the community. Full-weekend registration is not required for the Saturday session and concert."
+            "text": "Saturday evening is open to families, churches and the community. Full weekend registration is not required for the Saturday session and concert."
           }
         ]
       },
@@ -6120,6 +6120,18 @@
           ],
           "quoteOrSummary": "Fresh official Eventbrite page specifies a 6:30 PM message, then a cereal-bar break, then Kevi Morse. Public Saturday admission 10 dollars; under 5 free. Full-weekend grade 6–12 restrictions must not be imposed on this public session.",
           "reviewedAt": "2026-11-05",
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.instagram.com/josh_murray_official/p/DfpRp30nJa0/",
+          "fields": [
+            "startTime",
+            "startDateTime",
+            "scheduleDetails",
+            "publicDescription"
+          ],
+          "quoteOrSummary": "Organizer caption and original flyer explicitly name December 5, Kevi Morse concert 8:45 PM, and Sean McDowell message 6:30 through 8 PM. Church staff page confirms Josh Murray as Student Ministries Director.",
+          "reviewedAt": "2026-11-13",
           "confidence": "high"
         }
       ],
@@ -6142,6 +6154,56 @@
           },
           "reviewedAt": "2026-11-05",
           "reason": "Fresh official-source follow-up resolves or supplements previously unknown facts."
+        },
+        {
+          "expected": {
+            "startTime": "",
+            "startDateTime": null
+          },
+          "facts": {
+            "startTime": "20:45",
+            "startDateTime": "2026-12-05T20:45:00-05:00"
+          },
+          "reviewedAt": "2026-11-13",
+          "reason": "Organizer announcement and original flyer explicitly establish the concert start time."
+        },
+        {
+          "expected": {
+            "publicDescription": "Kevi Morse performs Saturday evening following Sean McDowell’s 6:30 PM message and a short break. The concert is open to the public; a separate concert start time has not been announced."
+          },
+          "facts": {
+            "publicDescription": "Kevi Morse performs at 8:45 PM following Sean McDowell’s message from 6:30 to 8 PM. The Saturday evening session and concert are open to the public."
+          },
+          "reviewedAt": "2026-11-13",
+          "reason": "Replace the outdated unknown time statement with the confirmed concert time."
+        },
+        {
+          "expected": {
+            "scheduleDetails": [
+              {
+                "label": "Saturday evening",
+                "text": "Sean McDowell’s message begins at 6:30 PM. Kevi Morse performs after the message and a cereal-bar break; an exact concert start time is not announced."
+              },
+              {
+                "label": "Admission",
+                "text": "Saturday evening is open to families, churches and the community. Full-weekend registration is not required for the Saturday session and concert."
+              }
+            ]
+          },
+          "facts": {
+            "scheduleDetails": [
+              {
+                "label": "Saturday evening",
+                "text": "Sean McDowell’s message runs from 6:30 to 8 PM. Kevi Morse’s concert starts at 8:45 PM."
+              },
+              {
+                "label": "Admission",
+                "text": "Saturday evening is open to families, churches and the community. Full weekend registration is not required for the Saturday session and concert."
+              }
+            ]
+          },
+          "reviewedAt": "2026-11-13",
+          "reason": "Preserve separate message and concert times; public session does not require full weekend registration."
         }
       ]
     },
