@@ -52,8 +52,8 @@ class PrivateEventsTests(unittest.TestCase):
                 (root / filename).write_text(json.dumps([stale, other]))
             (root / 'event-history.json').write_text(json.dumps({'events': [{'event': stale}, {'event': other}]}))
             (root / 'config/artist-website-seed-events.json').write_text(json.dumps([stale, other]))
-            self.assertGreater(private.apply(root), 0)
-            self.assertEqual(private.apply(root), 0)
+            self.assertGreater(private.apply(root, as_of='2027-02-12'), 0)
+            self.assertEqual(private.apply(root, as_of='2027-02-12'), 0)
             self.assertEqual(json.loads((root / 'events.json').read_text()), [pinned, other])
             history = json.loads((root / 'event-history.json').read_text())['events']
             self.assertEqual(len(history), 2)

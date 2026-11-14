@@ -2,6 +2,7 @@ import json
 import sys
 import tempfile
 import unittest
+from datetime import datetime
 from pathlib import Path
 from unittest.mock import patch
 
@@ -30,9 +31,11 @@ class September24RegressionTests(unittest.TestCase):
             (root / "config").mkdir()
             for relative in ("config/manual-events.json", "events.json", "supplemental-events.json"):
                 (root / relative).write_text("[]")
-            rock.apply(root)
-            once = (root / "events.json").read_text()
-            rock.apply(root)
+            with patch.object(rock.dt, "datetime", wraps=datetime) as clock:
+                clock.now.return_value = datetime.fromisoformat("2027-04-24T12:00:00+00:00")
+                rock.apply(root)
+                once = (root / "events.json").read_text()
+                rock.apply(root)
             self.assertEqual(once, (root / "events.json").read_text())
             event = json.loads(once)[0]
             self.assertEqual(["Lj the Messenger", "DEON"], event["artists"])
@@ -43,6 +46,20 @@ class September24RegressionTests(unittest.TestCase):
             self.assertIn("<span>LJ THE MESSENGER</span>", card)
             self.assertNotIn("/artists/lj-the-messenger/", card)
             self.assertIn('/artists/deon/', card)
+
+    def test_expired_festival_leaves_upcoming_feeds_but_keeps_manual_seed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "config").mkdir()
+            for relative in ("config/manual-events.json", "events.json", "supplemental-events.json"):
+                (root / relative).write_text(json.dumps([rock.EVENT]))
+            with patch.object(rock.dt, "datetime", wraps=datetime) as clock:
+                clock.now.return_value = datetime.fromisoformat("2027-04-25T12:00:00+00:00")
+                rock.apply(root)
+                rock.apply(root)
+            for relative in ("events.json", "supplemental-events.json"):
+                self.assertEqual([], json.loads((root / relative).read_text()))
+            self.assertEqual([rock.EVENT], json.loads((root / "config/manual-events.json").read_text()))
 
     def jimmy_cards(self):
         cards = []
