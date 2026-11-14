@@ -1,7 +1,7 @@
-import json
 import sys
 import unittest
 from pathlib import Path
+from tests.catalog_history import load_catalog
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,7 +15,7 @@ import build_seo_site
 
 
 def load(relative: str):
-    return json.loads((ROOT / relative).read_text(encoding="utf-8"))
+    return load_catalog(ROOT / relative)
 
 
 class TrnscndSubmissionProductionTests(unittest.TestCase):
