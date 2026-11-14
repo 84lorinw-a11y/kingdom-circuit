@@ -23,6 +23,17 @@ import verify_public_ux as ux_verifier  # noqa: E402
 
 
 class PublicExperiencePipelineTests(unittest.TestCase):
+    def test_image_cache_is_optional_and_can_use_the_shared_build_cache(self):
+        with patch.dict('os.environ', {}, clear=True):
+            self.assertEqual([], public_pipeline.image_cache_args())
+        with patch.dict('os.environ', {'KC_BUILD_CACHE_DIR': '/tmp/build-cache'}, clear=True):
+            self.assertEqual(['--cache-dir', '/tmp/build-cache/images'], public_pipeline.image_cache_args())
+        with patch.dict('os.environ', {
+            'KC_BUILD_CACHE_DIR': '/tmp/build-cache',
+            'KC_PUBLIC_IMAGE_CACHE_DIR': '/tmp/image-cache',
+        }, clear=True):
+            self.assertEqual(['--cache-dir', '/tmp/image-cache'], public_pipeline.image_cache_args())
+
     def test_reviewed_http_website_survives_build_normalization(self):
         url = 'http://www.iloveladycam.com/'
         upgraded = url.replace('http:', 'https:')

@@ -26,6 +26,7 @@ from pathlib import Path
 import re
 import shutil
 import socket
+import stat
 import subprocess
 import sys
 import tempfile
@@ -36,6 +37,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
+import zipfile
 
 
 DEFAULT_BASE = "/"
@@ -113,6 +115,10 @@ SAME_SITE_HOSTS = {
     "www.kingdomcircuit.com",
 }
 OPTIMIZED_NAME = re.compile(r"^[0-9a-f]{24}-w[0-9]+\.webp$")
+CACHE_ENTRY_NAME = re.compile(r"^[0-9a-f]{64}\.zip$")
+CACHE_SCHEMA = 1
+MAX_CACHE_BYTES = 1024 * 1024 * 1024
+MAX_CACHE_ENTRY_BYTES = 64 * 1024 * 1024
 OBSOLETE_IMAGE_REPAIR_SCRIPT = re.compile(
     r"<script\b(?=[^>]*\bsrc=[\"'][^\"']*(?:"
     r"verified-event-artwork-guard\.js|event-image-repair-kc2100\.js"
@@ -727,6 +733,209 @@ def portrait_responsive_widths(path: Path) -> dict[str, tuple[int, ...]]:
     return result
 
 
+def derivative_cache_identity(backend) -> dict[str, object]:
+    """Invalidate derivatives whenever the implementation or encoder changes."""
+    identity: dict[str, object] = {
+        "schema": CACHE_SCHEMA,
+        "optimizerSha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        "portraitFramingSha256": hashlib.sha256(PORTRAIT_FRAMING_PATH.read_bytes()).hexdigest(),
+        "backend": backend.name,
+        "python": sys.version,
+    }
+    if isinstance(backend, PillowBackend):
+        import PIL
+        from PIL import _imaging, _webp, features
+
+        identity["pillow"] = PIL.__version__
+        identity["codecs"] = {name: features.version(name) for name in features.get_supported()}
+        identity["binaries"] = {
+            module.__name__: hashlib.sha256(Path(module.__file__).read_bytes()).hexdigest()
+            for module in (_imaging, _webp)
+        }
+    elif isinstance(backend, ImageMagickBackend):
+        identity["binarySha256"] = hashlib.sha256(Path(backend.prefix[0]).read_bytes()).hexdigest()
+        identity["version"] = backend._run(["-version"], time.monotonic() + 30).stdout.decode("utf-8")
+        # The format listing includes delegate codec versions, unlike the
+        # ImageMagick version number alone.
+        identity["formats"] = backend._run(["-list", "format"], time.monotonic() + 30).stdout.decode("utf-8")
+    else:
+        raise ValueError("Unknown cache encoder identity")
+    return identity
+
+
+class DerivativeCache:
+    """Optional disposable cache. A single atomic archive contains each recipe."""
+
+    def __init__(self, root: Path, identity: dict[str, object], backend) -> None:
+        self.root = root
+        self.identity = identity
+        self.backend = backend
+        self.used: set[str] = set()
+        self.entries: dict[str, int] = {}
+        self.stats = {"enabled": True, "hits": 0, "misses": 0, "invalidEntries": 0,
+                      "writeFailures": 0, "capacitySkips": 0, "prunedEntries": 0,
+                      "bytesReused": 0, "bytesStored": 0}
+        try:
+            if root.is_symlink():
+                raise OSError("Cache directory is a symlink")
+            root.mkdir(parents=True, exist_ok=True)
+            for entry in root.iterdir():
+                info = entry.lstat()
+                if CACHE_ENTRY_NAME.fullmatch(entry.name) and stat.S_ISREG(info.st_mode):
+                    self.entries[entry.name] = info.st_size
+        except OSError:
+            self.stats["enabled"] = False
+
+    def recipe(self, digest: str, width: int, height: int,
+               widths: list[int], quality: int) -> dict[str, object]:
+        return {"identity": self.identity, "sourceSha256": digest,
+                "sourceWidth": width, "sourceHeight": height,
+                "widths": widths, "quality": quality}
+
+    def key(self, recipe: dict[str, object]) -> str:
+        return hashlib.sha256(json.dumps(recipe, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+
+    def restore(self, recipe: dict[str, object], staging: Path, base: str) -> Optional[OptimizedImage]:
+        key = self.key(recipe)
+        self.used.add(key + ".zip")
+        if not self.stats["enabled"]:
+            return None
+        entry = self.root / (key + ".zip")
+        digest = str(recipe["sourceSha256"])
+        filenames = [f"{digest[:24]}-w{width}.webp" for width in recipe["widths"]]
+        copied: list[Path] = []
+        try:
+            # Never follow a cache member symlink. Archive names are checked
+            # against constructed filenames and are never extracted as paths.
+            if not stat.S_ISREG(entry.lstat().st_mode):
+                raise ValueError("Cache member is not a regular file")
+            descriptor = os.open(entry, os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0) | os.O_NONBLOCK)
+            with os.fdopen(descriptor, "rb") as handle:
+                info = os.fstat(handle.fileno())
+                if not stat.S_ISREG(info.st_mode) or info.st_size > MAX_CACHE_ENTRY_BYTES:
+                    raise ValueError("Invalid cache entry size")
+                with zipfile.ZipFile(handle) as archive:
+                    members = archive.infolist()
+                    if (len(members) != len(filenames) + 1 or
+                            {item.filename for item in members} != {"entry.json", *filenames} or
+                            any(item.compress_type != zipfile.ZIP_STORED or item.flag_bits & 1 or
+                                stat.S_ISLNK(item.external_attr >> 16) or
+                                item.file_size > MAX_CACHE_ENTRY_BYTES for item in members) or
+                            archive.getinfo("entry.json").file_size > 64 * 1024):
+                        raise ValueError("Invalid cache members")
+                    metadata = json.loads(archive.read("entry.json"))
+                    if metadata.get("recipe") != recipe or set(metadata.get("variants", {})) != set(filenames):
+                        raise ValueError("Cache recipe mismatch")
+                    restored = []
+                    for width, filename in zip(recipe["widths"], filenames):
+                        data = archive.read(filename)
+                        details = metadata["variants"][filename]
+                        dimensions = webp_dimensions(data)
+                        if (len(data) != details["bytes"] or
+                                hashlib.sha256(data).hexdigest() != details["sha256"] or
+                                list(dimensions) != details["dimensions"] or
+                                dimensions[0] != width or dimensions[1] < 1 or
+                                abs(dimensions[1] - recipe["sourceHeight"] * width / recipe["sourceWidth"]) > 1 or
+                                self.backend.inspect(data) != dimensions):
+                            raise ValueError("Cache derivative mismatch")
+                        restored.append((filename, data, dimensions))
+            # Validate the entire set before writing any cached bytes.
+            for filename, data, _ in restored:
+                destination = staging / filename
+                copied.append(destination)
+                destination.write_bytes(data)
+            self.stats["hits"] += 1
+            self.stats["bytesReused"] += sum(len(data) for _, data, _ in restored)
+            variants = tuple(Variant(width, height, filename, f"{base}assets/optimized/{filename}")
+                             for filename, _, (width, height) in restored)
+            return OptimizedImage(digest[:24], recipe["sourceWidth"], recipe["sourceHeight"], variants)
+        except FileNotFoundError:
+            self.stats["misses"] += 1
+        except (OSError, ValueError, TypeError, KeyError, AttributeError, OverflowError, RecursionError,
+                zipfile.BadZipFile, OptimizationFailure):
+            self.stats["invalidEntries"] += 1
+            self.stats["misses"] += 1
+        for path in copied:
+            try:
+                path.unlink(missing_ok=True)
+            except OSError:
+                pass
+        return None
+
+    def store(self, recipe: dict[str, object], result: OptimizedImage, staging: Path) -> None:
+        if not self.stats["enabled"]:
+            return
+        name = self.key(recipe) + ".zip"
+        self.used.add(name)
+        temporary = None
+        try:
+            variants = {}
+            payloads = {}
+            for variant in result.variants:
+                data = (staging / variant.filename).read_bytes()
+                variants[variant.filename] = {"bytes": len(data), "sha256": hashlib.sha256(data).hexdigest(),
+                                              "dimensions": [variant.width, variant.height]}
+                payloads[variant.filename] = data
+            metadata = json.dumps({"recipe": recipe, "variants": variants}, sort_keys=True).encode()
+            with tempfile.NamedTemporaryFile(prefix=".image-cache-", dir=self.root, delete=False) as handle:
+                temporary = Path(handle.name)
+                with zipfile.ZipFile(handle, "w", compression=zipfile.ZIP_STORED) as archive:
+                    archive.writestr("entry.json", metadata)
+                    for filename, data in payloads.items():
+                        archive.writestr(filename, data)
+            size = temporary.stat().st_size
+            if (size > MAX_CACHE_ENTRY_BYTES or
+                    sum(self.entries.values()) - self.entries.get(name, 0) + size > MAX_CACHE_BYTES):
+                self.stats["capacitySkips"] += 1
+                return
+            # os.replace replaces a malicious or stale symlink itself. It
+            # cannot write through the entry to an external destination.
+            os.replace(temporary, self.root / name)
+            self.entries[name] = size
+            self.stats["bytesStored"] += size
+        except (OSError, ValueError, zipfile.BadZipFile):
+            self.stats["writeFailures"] += 1
+        finally:
+            if temporary is not None:
+                try:
+                    temporary.unlink(missing_ok=True)
+                except OSError:
+                    pass
+
+    def prune_unused(self) -> None:
+        """Remove only our unused regular archives after a complete run."""
+        if not self.stats["enabled"]:
+            return
+        for name in self.entries.keys() - self.used:
+            path = self.root / name
+            try:
+                if stat.S_ISREG(path.lstat().st_mode):
+                    path.unlink()
+                    self.stats["prunedEntries"] += 1
+            except OSError:
+                pass
+
+
+def write_derivative_cache_report(root: Path, report: dict[str, object]) -> None:
+    """Keep optional CI evidence outside the public artifact and cache entries."""
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", prefix=".image-cache-report-",
+                                         dir=root.parent, delete=False) as handle:
+            temporary = Path(handle.name)
+            json.dump(report, handle, sort_keys=True, indent=2)
+            handle.write("\n")
+        os.replace(temporary, root.parent / "image-cache-report.json")
+    except OSError:
+        pass
+    finally:
+        if temporary is not None:
+            try:
+                temporary.unlink(missing_ok=True)
+            except OSError:
+                pass
+
+
 def render_content(
     digest: str,
     data: bytes,
@@ -736,7 +945,10 @@ def render_content(
     quality: int,
     backend,  # type: ignore[no-untyped-def]
     deadline: float,
+    cache: Optional[DerivativeCache] = None,
 ) -> OptimizedImage:
+    if time.monotonic() >= deadline:
+        raise OptimizationFailure("wall-time-limit")
     source_width, source_height = backend.inspect(data)
     if source_width < 2 or source_height < 1:
         raise OptimizationFailure("image-too-small")
@@ -751,6 +963,13 @@ def render_content(
     # the source-digest identity checked by the approved-portrait safeguards.
     if digest == "6df7b566d71761e10c8e1cb99b4a38f94aebbf25d22fdb70307a37addc31e829":
         quality = max(quality, 95)
+    recipe = cache.recipe(digest, source_width, source_height, chosen, quality) if cache else None
+    if cache:
+        restored = cache.restore(recipe, staging, base)
+        if restored is not None:
+            if time.monotonic() >= deadline:
+                raise OptimizationFailure("wall-time-limit")
+            return restored
     targets = [(width, staging / f"{content_id}-w{width}.webp") for width in chosen]
     actual_dimensions = backend.render(data, targets, quality, deadline)
     variants = tuple(
@@ -762,7 +981,10 @@ def render_content(
         )
         for (_, path), (actual_width, actual_height) in zip(targets, actual_dimensions)
     )
-    return OptimizedImage(content_id, source_width, source_height, variants)
+    result = OptimizedImage(content_id, source_width, source_height, variants)
+    if cache:
+        cache.store(recipe, result, staging)
+    return result
 
 
 def render_tag(
@@ -1061,6 +1283,7 @@ def arguments(argv: Optional[list[str]] = None) -> argparse.Namespace:
                         help="Optional inventory ceiling; 0 processes all sources within the byte/time budgets")
     parser.add_argument("--max-image-bytes", type=int, default=12 * 1024 * 1024)
     parser.add_argument("--max-total-bytes", type=int, default=192 * 1024 * 1024)
+    parser.add_argument("--cache-dir", type=Path, help="Optional derivative cache outside the public site")
     parser.add_argument("--offline", action="store_true", help="Skip remote downloads and preserve their URLs")
     args = parser.parse_args(argv)
     if not 1 <= args.workers <= 8:
@@ -1086,11 +1309,20 @@ def arguments(argv: Optional[list[str]] = None) -> argparse.Namespace:
 
 def main(argv: Optional[list[str]] = None) -> int:
     args = arguments(argv)
+    started = time.monotonic()
     site = args.site.expanduser().resolve()
     base = normalize_base(args.base)
     if not site.is_dir() or not (site / "index.html").is_file():
         print("error: site must be a completed production artifact containing index.html", file=sys.stderr)
         return 2
+    cache_root = args.cache_dir.expanduser().absolute() if args.cache_dir else None
+    if cache_root is not None:
+        try:
+            if is_within(cache_root, site) or is_within(cache_root.resolve(), site):
+                print("error: cache directory must be outside the public site", file=sys.stderr)
+                return 2
+        except (OSError, RuntimeError):
+            cache_root = None
 
     try:
         portrait_widths = portrait_responsive_widths(PORTRAIT_FRAMING_PATH)
@@ -1098,6 +1330,16 @@ def main(argv: Optional[list[str]] = None) -> int:
     except (OSError, ValueError, RuntimeError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 2
+
+    cache = None
+    cache_stats = {"enabled": False}
+    if cache_root is not None:
+        try:
+            cache = DerivativeCache(cache_root, derivative_cache_identity(backend), backend)
+            cache_stats = cache.stats
+        except (OSError, ValueError, RuntimeError, ImportError, OptimizationFailure):
+            # Cache availability never replaces the ordinary rendering path.
+            cache_stats["unavailable"] = True
 
     html_pages, json_files, inventory = collect_inventory(site, base)
     ranked = sorted(
@@ -1185,6 +1427,7 @@ def main(argv: Optional[list[str]] = None) -> int:
                         args.quality,
                         backend,
                         deadline,
+                        **({"cache": cache} if cache is not None else {}),
                     )
                 except OptimizationFailure as exc:
                     conversion_failures[digest] = exc.code
@@ -1255,6 +1498,9 @@ def main(argv: Optional[list[str]] = None) -> int:
         for path, text in rewritten_json.items():
             atomic_write_text(path, text)
 
+        if cache and not failures and optimized_local_source_count == local_source_count:
+            cache.prune_unused()
+
         summary = {
             "backend": backend.name,
             "sources": len(inventory),
@@ -1269,7 +1515,12 @@ def main(argv: Optional[list[str]] = None) -> int:
             "socialImageMetaRewritten": meta_rewrites,
             "obsoleteImageRepairScriptsRemoved": obsolete_scripts_removed,
             "bytesRead": budget.used,
+            "derivativeCache": cache_stats,
         }
+        if cache_root is not None:
+            write_derivative_cache_report(cache_root, {
+                "schemaVersion": 1, **summary, "durationSeconds": round(time.monotonic() - started, 6),
+            })
         print(json.dumps(summary, sort_keys=True))
         return 0
     finally:

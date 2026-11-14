@@ -99,6 +99,10 @@ jobs:
     if: needs.plan.outputs.run == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 180
+    env:
+      # Content addressed intermediate results only. Never restore an old
+      # published site as source input to the production transformations.
+      KC_BUILD_CACHE_DIR: ${{ runner.temp }}/kingdom-circuit-build-cache
     outputs:
       collection: ${{ steps.discovery-receipt.outcome }}
       source_save: ${{ steps.source-save.outcome }}
@@ -304,6 +308,18 @@ jobs:
 
       - name: Reconcile durable event identities before page generation
         run: python scripts/url_continuity.py --prepare
+
+      - name: Restore verified reusable page and image work
+        id: build-cache
+        continue-on-error: true
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            ${{ env.KC_BUILD_CACHE_DIR }}/renders
+            ${{ env.KC_BUILD_CACHE_DIR }}/images
+          key: kc-build-v1-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            kc-build-v1-${{ runner.os }}-
 
       - name: Check out pinned approved SEO source
         uses: actions/checkout@v4
@@ -811,6 +827,16 @@ jobs:
           done
           exit 1
 
+      - name: Save reusable work from the verified release
+        if: ${{ steps.live-publication-audit.outcome == 'success' && steps.live-freshness.outcome == 'success' }}
+        continue-on-error: true
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            ${{ env.KC_BUILD_CACHE_DIR }}/renders
+            ${{ env.KC_BUILD_CACHE_DIR }}/images
+          key: kc-build-v1-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
+
       - name: Summarize publication verification
         if: always()
         shell: bash
@@ -854,6 +880,9 @@ jobs:
             live-publication-audit.json
             live-publication-audit.md
             _site/publication-manifest.json
+            incremental-page-build.json
+            _site/assets/optimized/manifest.json
+            ${{ env.KC_BUILD_CACHE_DIR }}/image-cache-report.json
             ${{ runner.temp }}/discovery-receipt.json
           if-no-files-found: ignore
           retention-days: 14

@@ -8,6 +8,10 @@ import pathlib
 import re
 import shutil
 import sys
+if __package__:
+    from .page_render_cache import RenderCache, digest
+else:
+    from page_render_cache import RenderCache, digest
 
 SITE_ORIGIN = "https://kingdomcircuit.com"
 BASE = "/"
@@ -417,6 +421,20 @@ def main(site_root: str) -> None:
         supplemental,
     )
 
+    # Only pure rendering functions are memoized. The approved module still
+    # rebuilds inventories, page heads, related links, state pages and checks.
+    render_cache = RenderCache("approved-seo", report=pathlib.Path.cwd() / "incremental-page-build.json",
+                               extra_code=[overlay_path], public_root=root)
+    # These shared inputs are fixed before the approved renderer runs.
+    context_digest = digest({"base": overlay.BASE, "origin": overlay.TEST_ORIGIN,
+                             "stateNames": overlay.STATE_NAMES, "billingArtists": billing_artists,
+                             "year": overlay.TODAY.year})
+    def render_context():
+        return context_digest
+    for function_name in ("event_card", "artist_page_main", "artist_state_main", "directory_card"):
+        original = getattr(overlay, function_name)
+        setattr(overlay, function_name, render_cache.wrap(function_name, original, context=render_context))
+
     saved_argv = sys.argv[:]
     try:
         sys.argv = [str(overlay_path), str(root)]
@@ -435,6 +453,7 @@ def main(site_root: str) -> None:
     align_artist_schema(root)
     remove_retired_artist_links(root)
     final_production_verify(root)
+    print("Page render cache:", json.dumps(render_cache.finish(), sort_keys=True))
     print("Approved SEO upgrade applied and production safety checks passed")
 
 

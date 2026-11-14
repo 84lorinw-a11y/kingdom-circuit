@@ -66,6 +66,14 @@ def env_enabled(name: str) -> bool:
     return os.environ.get(name, "").strip().casefold() in TRUTHY
 
 
+def image_cache_args() -> list[str]:
+    """Share the optional CI cache without placing private build data in Pages."""
+    explicit = os.environ.get("KC_PUBLIC_IMAGE_CACHE_DIR", "").strip()
+    root = os.environ.get("KC_BUILD_CACHE_DIR", "").strip()
+    cache = Path(explicit) if explicit else (Path(root) / "images" if root else None)
+    return ["--cache-dir", str(cache)] if cache else []
+
+
 def is_production_workflow() -> bool:
     workflow_ref = os.environ.get("GITHUB_WORKFLOW_REF", "")
     workflow_name = os.environ.get("GITHUB_WORKFLOW", "")
@@ -193,6 +201,7 @@ def finalize_public_experience(site: Path) -> dict[str, Any]:
     ]
     if not remote_images:
         optimizer_args.append("--offline")
+    optimizer_args.extend(image_cache_args())
     optimizer_status = optimize_public_images.main(optimizer_args)
     if optimizer_status:
         raise RuntimeError(f"Production image optimization failed with status {optimizer_status}")

@@ -11,6 +11,7 @@ from zoneinfo import ZoneInfo
 from catalog_removals import public_event, removed_event
 from canadian_event_guard import is_canadian
 from show_information_model import normalize as show_information
+from page_render_cache import RenderCache
 
 REPO = pathlib.Path.cwd()
 OUT = REPO / "_site"
@@ -284,7 +285,92 @@ def patch_app(path):
     text=re.sub(r'function artistProfileUrl\(name\)\s*\{.*?\n\}', 'function artistProfileUrl(name) { return `${BASE}artists/${seoSlug(name)}/`; }', text, count=1, flags=re.S)
     path.write_text(text,encoding="utf-8")
 
+def relevant_artists(events, artists):
+    names = {norm(name) for event in events for name in
+             [*event.get("artists", []), *event.get("advertisedBilling", []), event.get("headliner", "")]}
+    return [artist for artist in artists if names &
+            {norm(artist.get("name")), *(norm(alias) for alias in artist.get("aliases", []))}]
+
+
+def render_context():
+    return {"site": SITE, "analytics": GA_ID, "favicon": FAVICON_HTML,
+            "stateNames": STATE_NAMES, "canadianRegions": CANADIAN_REGIONS}
+
+
+def render_event_pages(e, artists, canonical_event=None):
+    pages = {}
+    def write_page(path, content):
+        pages[path] = content
+    p=event_path(e); loc="Location not confirmed" if e.get("locationUnconfirmed") else ", ".join(x for x in (e.get("city"),e.get("state")) if x); names=", ".join(e.get("artists",[])) or e.get("headliner") or "CHH artists"
+    crumbs=[("Shows","/shows/")]
+    if e.get("state"): crumbs.append((STATE_NAMES.get(e["state"],e["state"]),state_path(e["state"])))
+    crumbs.append((e.get("title") or "Event",p))
+    img=image_url(e.get("image")); cls="event-artwork" if e.get("imageType")=="event_artwork" else "artist-photo"; artist_links=billing_links(e, artists); official=e.get("officialUrl") or e.get("ticketUrl") or "#"
+    merged=norm(e.get("status")) == "merged"
+    if merged:
+        canonical=canonical_event
+        if canonical is None:
+            raise ValueError(f"Merged event has no surviving page: {e.get('id')}")
+        target=event_path(canonical)
+        body=f'<section class="page-hero hero-compact"><p class="eyebrow">Merged listing</p><h1>This show has one canonical page</h1><p class="hero-text">This duplicate listing was consolidated with the confirmed venue event.</p><a class="primary-button" href="{target}">View the canonical event</a></section><script>location.replace({json.dumps(target)});</script>'
+        write_page(p,page("Merged event | The Kingdom Circuit","This duplicate show listing has moved to its canonical event page.",target,body))
+        return pages
+    cancelled=norm(e.get("status")) in {"cancelled", "canceled"}
+    postponed=norm(e.get("status")) == "postponed"
+    notice='<div class="empty-panel" role="status"><strong>Cancelled.</strong> The organizer has confirmed this event is cancelled. See the official details below.</div>' if cancelled else rescheduled_notice(e)
+    if postponed:
+        notice='<div class="empty-panel" role="status"><strong>Postponed.</strong> A new date has not been announced. The date below is the original schedule. See the official announcement for updates.</div>'
+    status_label=event_status_label(e)
+    detail_class = "event-detail event-detail--landscape" if e.get("detailImageLayout") == "landscape" else "event-detail"
+    body=f'<section class="event-detail-section">{breadcrumbs(crumbs)}{notice}<article class="{detail_class}"><div class="event-detail-media"><img class="{cls}" src="{esc(img)}" alt="{esc(e.get("title"))}" width="1200" height="675"></div><div class="event-detail-copy"><p class="eyebrow">{esc("Cancelled event" if cancelled else event_type_label(e))}</p><h1>{esc(e.get("title"))}</h1><p class="artist-line">{artist_links}</p>{hosts_line(e)}<dl class="detail-list"><div><dt>Status</dt><dd>{esc(status_label)}</dd></div><div><dt>Date</dt><dd>{esc(format_date(e))}</dd></div><div><dt>Venue</dt><dd>{esc(show_information(e)['venueLabel'])}</dd></div><div><dt>Location</dt><dd>{esc(loc)}</dd></div><div><dt>Source</dt><dd>{esc(source_text(e))}</dd></div></dl><a class="primary-button" href="{esc(official)}" target="_blank" rel="noopener">Official details</a><p class="disclaimer">{"This URL is retained so visitors can confirm the cancellation with the organizer." if cancelled else "Event details may change. Confirm final information with the official organizer or ticket provider before purchasing or traveling."}</p></div></article></section>'
+    if postponed:
+        body=body.replace('<p class="eyebrow">'+esc(event_type_label(e))+'</p>', '<p class="eyebrow">Postponed event</p>', 1).replace('<dt>Date</dt>', '<dt>Originally scheduled</dt>', 1)
+    description = e.get("publicDescription") or f"{names} live in {loc} on {format_date(e)}. See official event information and updates."
+    write_page(p,page(f"{e.get('title')} - {loc} | The Kingdom Circuit",description,p,body,[event_schema(e),breadcrumb_schema(crumbs)]))
+    for legacy in e.get("legacyEventPaths") or []:
+        if not re.fullmatch(r"/event/[a-z0-9-]+/", str(legacy)):
+            raise RuntimeError(f"Unsafe legacy event path: {legacy}")
+        if legacy == p: continue
+        if cancelled:
+            notice="This event was cancelled. The event record is retained for reference."
+            heading="This event was cancelled"
+            label="Cancelled event"
+        elif postponed:
+            notice="This event was postponed. View the current event listing for updates."
+            heading="This event was postponed"
+            label="Postponed event"
+        else:
+            notice=e.get("legacyEventNotice") or "This listing has moved. View the current event details."
+            heading="Updated event listing"
+            label="Updated event"
+        redirect_body=f'<section class="page-hero hero-compact"><p class="eyebrow">{esc(label)}</p><h1>{esc(heading)}</h1><p class="hero-text">{esc(notice)}</p><a class="primary-button" href="{p}">View the updated event</a></section><script>location.replace({json.dumps(p)});</script>'
+        write_page(legacy,page(f"{label} | The Kingdom Circuit",notice,p,redirect_body))
+
+    return pages
+
+
+def render_artist_pages(a, shows, artists):
+    pages = {}
+    def write_page(path, content):
+        pages[path] = content
+    n=a.get("name") or "Artist"; p=artist_path(n); crumbs=[("Artists","/artists/"),(n,p)]
+    links=[]
+    for label,url in (("Instagram",instagram(a)),("Spotify",spotify(a)),("YouTube",youtube(a)),("Website",website(a))):
+        if url: links.append(f'<a class="secondary-button" href="{esc(url)}" target="_blank" rel="noopener">{label}</a>')
+    body=f'<section class="profile-section">{breadcrumbs(crumbs)}<section class="profile-hero profile-hero-no-image"><div><p class="eyebrow">Artist profile</p><h1>{esc(n)}</h1><div class="profile-links">{"".join(links)}</div><p class="profile-count">{len(shows)} upcoming U.S. show{"s" if len(shows)!=1 else ""} currently listed.</p></div></section><section class="calendar"><div class="calendar-heading"><div><p class="eyebrow">Verified listings</p><h2>Upcoming {esc(n)} Shows</h2></div><p class="results-count">{len(shows)} shows</p></div><div class="event-grid">{"".join(event_card(e,artists) for e in shows) if shows else "<div class=\"empty-panel\">No upcoming U.S. shows are currently confirmed.</div>"}</div></section></section>'
+    write_page(p,page(f"{n} Concerts & Tour Dates | The Kingdom Circuit",f"Find upcoming {n} Christian hip-hop concerts, tour dates, festivals, and verified official show links.",p,body,[breadcrumb_schema(crumbs)]))
+    for legacy in a.get("legacyArtistPaths") or []:
+        if not re.fullmatch(r"/artists/[a-z0-9-]+/", str(legacy)):
+            raise RuntimeError(f"Unsafe legacy artist path: {legacy}")
+        if legacy == p: continue
+        redirect_body=f'<section class="page-hero hero-compact"><h1>{esc(n)}</h1><a class="primary-button" href="{p}">View artist profile</a></section><script>location.replace({json.dumps(p)});</script>'
+        write_page(legacy,page(f"{n} | The Kingdom Circuit",f"View the current {n} artist profile.",p,redirect_body))
+
+    return pages
+
+
 def main():
+    render_cache = RenderCache("base-seo", report=REPO / "incremental-page-build.json", public_root=OUT)
     events=json.loads((REPO/"events.json").read_text(encoding="utf-8"))
     artists=json.loads((REPO/"config/artists.json").read_text(encoding="utf-8"))
     supplemental=json.loads((REPO/"supplemental-events.json").read_text(encoding="utf-8")) if (REPO/"supplemental-events.json").exists() else []
@@ -301,6 +387,7 @@ def main():
             "tests",
             "scripts",
             "cache",
+            "incremental-page-build.json",
             "_seo_source",
             "_redesign_source",
         }:
@@ -339,65 +426,29 @@ def main():
         except Exception: pass
 
     for e in retained:
-        p=event_path(e); loc="Location not confirmed" if e.get("locationUnconfirmed") else ", ".join(x for x in (e.get("city"),e.get("state")) if x); names=", ".join(e.get("artists",[])) or e.get("headliner") or "CHH artists"
-        crumbs=[("Shows","/shows/")]
-        if e.get("state"): crumbs.append((STATE_NAMES.get(e["state"],e["state"]),state_path(e["state"])))
-        crumbs.append((e.get("title") or "Event",p))
-        img=image_url(e.get("image")); cls="event-artwork" if e.get("imageType")=="event_artwork" else "artist-photo"; artist_links=billing_links(e, artists); official=e.get("officialUrl") or e.get("ticketUrl") or "#"
-        merged=norm(e.get("status")) == "merged"
-        if merged:
-            canonical=next((item for item in retained if item.get("id") == e.get("mergedIntoId")), None)
-            if canonical is None:
-                raise ValueError(f"Merged event has no surviving page: {e.get('id')}")
-            target=event_path(canonical)
-            body=f'<section class="page-hero hero-compact"><p class="eyebrow">Merged listing</p><h1>This show has one canonical page</h1><p class="hero-text">This duplicate listing was consolidated with the confirmed venue event.</p><a class="primary-button" href="{target}">View the canonical event</a></section><script>location.replace({json.dumps(target)});</script>'
-            write_page(p,page("Merged event | The Kingdom Circuit","This duplicate show listing has moved to its canonical event page.",target,body))
-            continue
-        urls.append(p)
-        cancelled=norm(e.get("status")) in {"cancelled", "canceled"}
-        postponed=norm(e.get("status")) == "postponed"
-        notice='<div class="empty-panel" role="status"><strong>Cancelled.</strong> The organizer has confirmed this event is cancelled. See the official details below.</div>' if cancelled else rescheduled_notice(e)
-        if postponed:
-            notice='<div class="empty-panel" role="status"><strong>Postponed.</strong> A new date has not been announced. The date below is the original schedule. See the official announcement for updates.</div>'
-        status_label=event_status_label(e)
-        detail_class = "event-detail event-detail--landscape" if e.get("detailImageLayout") == "landscape" else "event-detail"
-        body=f'<section class="event-detail-section">{breadcrumbs(crumbs)}{notice}<article class="{detail_class}"><div class="event-detail-media"><img class="{cls}" src="{esc(img)}" alt="{esc(e.get("title"))}" width="1200" height="675"></div><div class="event-detail-copy"><p class="eyebrow">{esc("Cancelled event" if cancelled else event_type_label(e))}</p><h1>{esc(e.get("title"))}</h1><p class="artist-line">{artist_links}</p>{hosts_line(e)}<dl class="detail-list"><div><dt>Status</dt><dd>{esc(status_label)}</dd></div><div><dt>Date</dt><dd>{esc(format_date(e))}</dd></div><div><dt>Venue</dt><dd>{esc(show_information(e)['venueLabel'])}</dd></div><div><dt>Location</dt><dd>{esc(loc)}</dd></div><div><dt>Source</dt><dd>{esc(source_text(e))}</dd></div></dl><a class="primary-button" href="{esc(official)}" target="_blank" rel="noopener">Official details</a><p class="disclaimer">{"This URL is retained so visitors can confirm the cancellation with the organizer." if cancelled else "Event details may change. Confirm final information with the official organizer or ticket provider before purchasing or traveling."}</p></div></article></section>'
-        if postponed:
-            body=body.replace('<p class="eyebrow">'+esc(event_type_label(e))+'</p>', '<p class="eyebrow">Postponed event</p>', 1).replace('<dt>Date</dt>', '<dt>Originally scheduled</dt>', 1)
-        description = e.get("publicDescription") or f"{names} live in {loc} on {format_date(e)}. See official event information and updates."
-        write_page(p,page(f"{e.get('title')} - {loc} | The Kingdom Circuit",description,p,body,[event_schema(e),breadcrumb_schema(crumbs)]))
-        for legacy in e.get("legacyEventPaths") or []:
-            if not re.fullmatch(r"/event/[a-z0-9-]+/", str(legacy)):
-                raise RuntimeError(f"Unsafe legacy event path: {legacy}")
-            if legacy == p: continue
-            if cancelled:
-                notice="This event was cancelled. The event record is retained for reference."
-                heading="This event was cancelled"
-                label="Cancelled event"
-            elif postponed:
-                notice="This event was postponed. View the current event listing for updates."
-                heading="This event was postponed"
-                label="Postponed event"
-            else:
-                notice=e.get("legacyEventNotice") or "This listing has moved. View the current event details."
-                heading="Updated event listing"
-                label="Updated event"
-            redirect_body=f'<section class="page-hero hero-compact"><p class="eyebrow">{esc(label)}</p><h1>{esc(heading)}</h1><p class="hero-text">{esc(notice)}</p><a class="primary-button" href="{p}">View the updated event</a></section><script>location.replace({json.dumps(p)});</script>'
-            write_page(legacy,page(f"{label} | The Kingdom Circuit",notice,p,redirect_body))
+        merged = norm(e.get("status")) == "merged"
+        canonical = next((item for item in retained if item.get("id") == e.get("mergedIntoId")), None) if merged else None
+        billing_artists = relevant_artists([e], artists)
+        paths = {event_path(e), *(e.get("legacyEventPaths") or [] if not merged else [])}
+        pages = render_cache.render("event-pages", {"event": e, "artists": billing_artists,
+            "canonical": canonical, "context": render_context()},
+            lambda: render_event_pages(e, billing_artists, canonical), expected_paths=paths)
+        for path, content in pages.items():
+            write_page(path, content)
+        if not merged:
+            urls.append(event_path(e))
 
     for a in (x for x in artists if x.get("enabled") is not False):
-        n=a.get("name") or "Artist"; p=artist_path(n); urls.append(p); shows=[e for e in events if norm(n) in {norm(x) for x in e.get("artists",[])}]; crumbs=[("Artists","/artists/"),(n,p)]
-        links=[]
-        for label,url in (("Instagram",instagram(a)),("Spotify",spotify(a)),("YouTube",youtube(a)),("Website",website(a))):
-            if url: links.append(f'<a class="secondary-button" href="{esc(url)}" target="_blank" rel="noopener">{label}</a>')
-        body=f'<section class="profile-section">{breadcrumbs(crumbs)}<section class="profile-hero profile-hero-no-image"><div><p class="eyebrow">Artist profile</p><h1>{esc(n)}</h1><div class="profile-links">{"".join(links)}</div><p class="profile-count">{len(shows)} upcoming U.S. show{"s" if len(shows)!=1 else ""} currently listed.</p></div></section><section class="calendar"><div class="calendar-heading"><div><p class="eyebrow">Verified listings</p><h2>Upcoming {esc(n)} Shows</h2></div><p class="results-count">{len(shows)} shows</p></div><div class="event-grid">{"".join(event_card(e,artists) for e in shows) if shows else "<div class=\"empty-panel\">No upcoming U.S. shows are currently confirmed.</div>"}</div></section></section>'
-        write_page(p,page(f"{n} Concerts & Tour Dates | The Kingdom Circuit",f"Find upcoming {n} Christian hip-hop concerts, tour dates, festivals, and verified official show links.",p,body,[breadcrumb_schema(crumbs)]))
-        for legacy in a.get("legacyArtistPaths") or []:
-            if not re.fullmatch(r"/artists/[a-z0-9-]+/", str(legacy)):
-                raise RuntimeError(f"Unsafe legacy artist path: {legacy}")
-            if legacy == p: continue
-            redirect_body=f'<section class="page-hero hero-compact"><h1>{esc(n)}</h1><a class="primary-button" href="{p}">View artist profile</a></section><script>location.replace({json.dumps(p)});</script>'
-            write_page(legacy,page(f"{n} | The Kingdom Circuit",f"View the current {n} artist profile.",p,redirect_body))
+        name = a.get("name") or "Artist"
+        shows = [e for e in events if norm(name) in {norm(n) for n in e.get("artists", [])}]
+        billing_artists = relevant_artists(shows, artists)
+        paths = {artist_path(name), *(a.get("legacyArtistPaths") or [])}
+        pages = render_cache.render("artist-pages", {"artist": a, "shows": shows,
+            "artists": billing_artists, "context": render_context()},
+            lambda: render_artist_pages(a, shows, billing_artists), expected_paths=paths)
+        for path, content in pages.items():
+            write_page(path, content)
+        urls.append(artist_path(name))
 
     for code,shows in by_state.items():
         name=STATE_NAMES.get(code,code); p=state_path(code); urls.append(p); crumbs=[("Shows","/shows/"),(name,p)]; body=f'<section class="page-hero hero-compact">{breadcrumbs(crumbs)}<p class="eyebrow">{esc(name)}</p><h1>Christian Hip-Hop Shows in {esc(name)}</h1><p class="hero-text">Browse upcoming verified CHH concerts, Christian rap shows, and festivals in {esc(name)}.</p></section><section class="calendar"><div class="event-grid">{"".join(event_card(e,artists) for e in shows)}</div></section>'; write_page(p,page(f"Christian Hip-Hop Shows in {name} | The Kingdom Circuit",f"Find upcoming Christian hip-hop concerts and festivals in {name}.",p,body,[breadcrumb_schema(crumbs)]))
@@ -420,5 +471,6 @@ def main():
     assert manifest["artists"]>=250 and manifest["events"]>=20 and manifest["urls"]>=400
     assert (OUT/"CNAME").read_text().strip()=="kingdomcircuit.com"
     print(json.dumps(manifest,indent=2))
+    print("Page render cache:", json.dumps(render_cache.finish(), sort_keys=True))
 
 if __name__=="__main__": main()
