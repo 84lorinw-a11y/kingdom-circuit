@@ -292,6 +292,24 @@ def relevant_artists(events, artists):
             {norm(artist.get("name")), *(norm(alias) for alias in artist.get("aliases", []))}]
 
 
+# This is the complete exclusion contract for the base event and artist renderers.
+# lastVerified is collection metadata, unused by their HTML, cards and schema.
+# Keep every other field, including unknown fields, in the content key. If a
+# renderer starts displaying this timestamp, remove the exclusion and update
+# the metadata reuse regression. Full original records still reach renderers.
+BASE_RENDER_METADATA_FIELDS = frozenset({"lastVerified"})
+
+
+def event_render_key(event):
+    if event is None:
+        return None
+    # Anonymous event URLs hash the entire source record, including metadata.
+    # Only a stable explicit identity makes this exclusion safe.
+    if not isinstance(event.get("id"), str) or not event["id"]:
+        return event
+    return {key: value for key, value in event.items() if key not in BASE_RENDER_METADATA_FIELDS}
+
+
 def render_context():
     return {"site": SITE, "analytics": GA_ID, "favicon": FAVICON_HTML,
             "stateNames": STATE_NAMES, "canadianRegions": CANADIAN_REGIONS}
@@ -430,8 +448,8 @@ def main():
         canonical = next((item for item in retained if item.get("id") == e.get("mergedIntoId")), None) if merged else None
         billing_artists = relevant_artists([e], artists)
         paths = {event_path(e), *(e.get("legacyEventPaths") or [] if not merged else [])}
-        pages = render_cache.render("event-pages", {"event": e, "artists": billing_artists,
-            "canonical": canonical, "context": render_context()},
+        pages = render_cache.render("event-pages", {"event": event_render_key(e), "artists": billing_artists,
+            "canonical": event_render_key(canonical), "context": render_context()},
             lambda: render_event_pages(e, billing_artists, canonical), expected_paths=paths)
         for path, content in pages.items():
             write_page(path, content)
@@ -443,7 +461,7 @@ def main():
         shows = [e for e in events if norm(name) in {norm(n) for n in e.get("artists", [])}]
         billing_artists = relevant_artists(shows, artists)
         paths = {artist_path(name), *(a.get("legacyArtistPaths") or [])}
-        pages = render_cache.render("artist-pages", {"artist": a, "shows": shows,
+        pages = render_cache.render("artist-pages", {"artist": a, "shows": [event_render_key(show) for show in shows],
             "artists": billing_artists, "context": render_context()},
             lambda: render_artist_pages(a, shows, billing_artists), expected_paths=paths)
         for path, content in pages.items():

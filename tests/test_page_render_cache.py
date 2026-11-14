@@ -192,6 +192,47 @@ class BasePageCacheIntegrationTests(unittest.TestCase):
         self.assertEqual(422,report['hits'])
         self.assertEqual(0,report['misses'])
 
+    def test_verification_metadata_reuses_events_artists_and_merged_targets(self):
+        for event in self.events:
+            event['lastVerified'] = '2026-11-13'
+        alias = dict(self.events[0], id='fixture:merged', status='merged', mergedIntoId=self.events[0]['id'])
+        self.save('events.json', self.events)
+        self.save('supplemental-events.json', [alias])
+        with patch.object(builder, 'render_event_pages', wraps=builder.render_event_pages) as renders:
+            before = self.build()
+        self.assertTrue(all(call.args[0]['lastVerified'] == '2026-11-13' for call in renders.call_args_list))
+        for event in self.events:
+            event['lastVerified'] = '2026-11-14'
+        alias['lastVerified'] = '2026-11-14'
+        self.save('events.json', self.events)
+        self.save('supplemental-events.json', [alias])
+        with patch.object(builder, 'render_event_pages', side_effect=AssertionError('metadata rendered an event')), \
+             patch.object(builder, 'render_artist_pages', side_effect=AssertionError('metadata rendered an artist')):
+            after = self.build()
+        self.assertEqual({k:v for k,v in before.items() if k.endswith('.html')},
+                         {k:v for k,v in after.items() if k.endswith('.html')})
+        self.assertEqual(after, self.build(cached=False))
+        self.assertEqual('2026-11-14', json.loads(after['events.json'])[0]['lastVerified'])
+        self.assertEqual('2026-11-14', json.loads(after['supplemental-events.json'])[0]['lastVerified'])
+        self.assertTrue(all(event['lastVerified'] == '2026-11-14' for event in self.events))
+
+    def test_metadata_exclusion_is_narrow_and_preserves_anonymous_url_dependencies(self):
+        original = dict(self.events[0], lastVerified='2026-11-13', unknownFutureFact='one')
+        changed = dict(original, lastVerified='2026-11-14')
+        self.assertEqual(builder.event_render_key(original), builder.event_render_key(changed))
+        self.assertNotEqual(builder.event_render_key(original),
+                            builder.event_render_key(dict(original, unknownFutureFact='two')))
+        self.assertEqual('2026-11-13', original['lastVerified'])
+        for identity in (None, '', 17):
+            with self.subTest(identity=identity):
+                before = dict(original, id=identity)
+                after = dict(changed, id=identity)
+                self.assertNotEqual(builder.event_render_key(before), builder.event_render_key(after))
+                if not identity:
+                    self.assertNotEqual(builder.event_path(before), builder.event_path(after))
+                    self.assertNotEqual(builder.render_event_pages(before, self.artists),
+                                        builder.render_event_pages(after, self.artists))
+
     def test_changed_event_rebuilds_its_page_and_artist_without_touching_other_renderers(self):
         before=self.build()
         self.events[0]['venue']='Updated reviewed hall'
