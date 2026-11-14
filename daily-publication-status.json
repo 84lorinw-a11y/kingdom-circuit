@@ -196,23 +196,23 @@
     }
   },
   "latest": {
-    "runId": "43593672213",
+    "runId": "43594452434",
     "attempt": "1",
-    "conclusion": "success",
-    "mode": "dates",
+    "conclusion": "failure",
+    "mode": "full",
     "day": "2026-11-14",
-    "finishedAt": "2026-11-14T12:27:57.755595+00:00",
+    "finishedAt": "2026-11-14T12:57:58.650277+00:00",
     "stages": {
-      "collection": "skipped",
-      "source_save": "success",
-      "build": "success",
-      "deployment": "success",
-      "live": "success",
-      "freshness": "success"
+      "collection": "success",
+      "source_save": "failure",
+      "build": "skipped",
+      "deployment": "skipped",
+      "live": "skipped",
+      "freshness": "skipped"
     },
-    "catalogDay": "2026-11-14",
-    "savedSourceSha": "6ffd45a21809424f6b0d735886aa556b973ebefa",
-    "htmlUrl": "https://github.com/84lorinw-a11y/kingdom-circuit/actions/runs/43593672213"
+    "catalogDay": "",
+    "savedSourceSha": "",
+    "htmlUrl": "https://github.com/84lorinw-a11y/kingdom-circuit/actions/runs/43594452434"
   },
   "completed": {
     "dates:2026-11-10": {
@@ -368,15 +368,15 @@
       "htmlUrl": "https://github.com/84lorinw-a11y/kingdom-circuit/actions/runs/43593672213"
     },
     "full:2026-11-14": {
-      "runId": "43589122573",
+      "runId": "43594452434",
       "attempt": "1",
       "conclusion": "failure",
       "mode": "full",
       "day": "2026-11-14",
-      "finishedAt": "2026-11-14T11:43:12.473787+00:00",
+      "finishedAt": "2026-11-14T12:57:58.650277+00:00",
       "stages": {
-        "collection": "skipped",
-        "source_save": "skipped",
+        "collection": "success",
+        "source_save": "failure",
         "build": "skipped",
         "deployment": "skipped",
         "live": "skipped",
@@ -384,7 +384,7 @@
       },
       "catalogDay": "",
       "savedSourceSha": "",
-      "htmlUrl": "https://github.com/84lorinw-a11y/kingdom-circuit/actions/runs/43589122573"
+      "htmlUrl": "https://github.com/84lorinw-a11y/kingdom-circuit/actions/runs/43594452434"
     }
   }
 }
