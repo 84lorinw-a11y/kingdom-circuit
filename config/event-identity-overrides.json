@@ -2,6 +2,18 @@
   "version": 1,
   "merges": [
     {
+      "keepId": "bandsintown:109149445",
+      "identityOnly": true,
+      "keepPath": "/event/mike-teezy-at-garner-performing-arts-center-2027-02-27-garner-eb6feb/",
+      "aliasIds": [
+        "official:718febbb9aead6d818e3"
+      ],
+      "aliasPaths": [
+        "/event/mike-teezy-garner-performing-arts-center-2027-02-27-garner-2173a7/"
+      ],
+      "evidence": "Reviewed November 14, 2026: https://music.apple.com/us/concerts/ce.ae39e6bc-d79a-4130-9baa-7006ed2a6140 directly links to https://www.bandsintown.com/e/109149445 and displays February 27, 2027 at 3:00 PM at Garner Performing Arts Center, 742 W Garner Rd, Garner NC. Apple supplies America/New_York with 2027-02-27T20:00:00Z and 2027-02-28T00:00:00Z, which are February 27 at 15:00 and 19:00 locally. The current exact Bandsintown event independently returns those local times. The Apple calendar parser copied UTC clock and date prefixes into local fields, creating this duplicate. Preserve the established Bandsintown identity, URL, 15:00 start and all accepted facts. Redirect only this exact Apple alias, without importing its conflicting time, end date or other facts. Preserve archive records and distinct unreviewed sessions."
+    },
+    {
       "keepId": "manual:jackie-hill-perry-blameless-st-louis-2027-02-15",
       "identityOnly": true,
       "keepPath": "/event/blameless-the-tour-with-jackie-hill-perry-2027-02-15-st-louis-645bf3/",

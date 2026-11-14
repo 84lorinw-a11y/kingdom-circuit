@@ -4,7 +4,7 @@ The daily workflow still discovers shows, preserves accepted records, archives c
 
 ## Reusable work
 
-1. Event and artist page generation uses a cache at its original rendering stage. Keys cover current event facts, artist details, ordered relationships, canonical and legacy paths, rendering context and code. Current page inventories are always recomputed.
+1. Event and artist page generation uses a cache at its original rendering stage. Keys cover current event facts, artist details, ordered relationships, canonical and legacy paths, rendering context and code. Current page inventories are always recomputed. The base render key excludes only the internal lastVerified timestamp for records with a stable explicit ID. Original metadata remains available to rendering, source receipts and validation. Anonymous records keep the timestamp dependency because it can affect their generated URL.
 2. Approved SEO rendering reuses unchanged page bodies and cards. Page heads, related links, date filtering and route inventories still run with current data.
 3. Image derivatives use the full original image hash and encoding recipe. Recipe identity includes sizes, quality, portrait configuration, implementation and encoder versions. Every reused derivative is checked for its hash, size and decoded dimensions.
 
