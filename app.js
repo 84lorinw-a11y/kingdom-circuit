@@ -6909,8 +6909,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/4diLM7OgmADzEyYPOK5aM2",
     "youtubeProfile": "https://www.youtube.com/officialmiztiffany",
     "officialImageSource": "https://www.instagram.com/officialmiztiffany/",
-    "imageUrl": "assets/artists/miz-tiffany-official-profile-nov14.jpg",
-    "imagePosition": "50% 25%",
+    "imageUrl": "assets/artists/miz-tiffany-owner-selected-dfc1apzx1bj.jpg",
+    "imagePosition": "50% 30%",
     "sourceRegistryVerified": true
   },
   "mynista": {
@@ -13418,8 +13418,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/4diLM7OgmADzEyYPOK5aM2",
     "youtubeProfile": "https://www.youtube.com/officialmiztiffany",
     "officialImageSource": "https://www.instagram.com/officialmiztiffany/",
-    "imageUrl": "assets/artists/miz-tiffany-official-profile-nov14.jpg",
-    "imagePosition": "50% 25%",
+    "imageUrl": "assets/artists/miz-tiffany-owner-selected-dfc1apzx1bj.jpg",
+    "imagePosition": "50% 30%",
     "sourceRegistryVerified": true
   },
   "mynista": {
@@ -15251,8 +15251,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 25%"
   },
   "miz tiffany": {
-    "imageUrl": "assets/artists/miz-tiffany-official-profile-nov14.jpg",
-    "imagePosition": "50% 25%"
+    "imageUrl": "assets/artists/miz-tiffany-owner-selected-dfc1apzx1bj.jpg",
+    "imagePosition": "50% 30%"
   },
   "mynista": {
     "imageUrl": "assets/artists/mynista-official-profile-nov14.jpg",
