@@ -28,6 +28,38 @@ PUBLIC_ORIGIN = "https://kingdomcircuit.com"
 PUBLIC_BASE = "/"
 PINNED_PILLOW = "Pillow==12.3.0"
 TRUTHY = {"1", "true", "yes", "on"}
+MAX_IMAGE_WALL_TIME = 900
+MIN_IMAGE_INPUT_BYTES = 361 * 1024 * 1024
+MAX_IMAGE_INPUT_BYTES = 1024 * 1024 * 1024
+REMOTE_IMAGE_INPUT_RESERVE = 64 * 1024 * 1024
+
+
+def image_processing_budget(site: Path, remote_images: bool) -> dict[str, int]:
+    """Scale the bounded processing allowance with the required local work."""
+    site = site.resolve()
+    _, _, inventory = optimize_public_images.collect_inventory(site, PUBLIC_BASE)
+    local_sources = [source
+        for _, source in inventory.values()
+        if source.local_path is not None and not optimize_public_images.is_preserved_vector(source)]
+    local_count = len(local_sources)
+    # Inventory keys match the optimizer's reads. Distinct aliases are counted
+    # separately even when their image bytes will later deduplicate by hash.
+    local_bytes = sum(source.local_path.stat().st_size for source in local_sources)
+    input_bytes = max(MIN_IMAGE_INPUT_BYTES,
+                      local_bytes + (REMOTE_IMAGE_INPUT_RESERVE if remote_images else 0))
+    if input_bytes > MAX_IMAGE_INPUT_BYTES:
+        raise RuntimeError('Required image input allowance exceeds the 1 GiB processing limit')
+    # Encoding is serial even though reads are concurrent. The old fixed 360
+    # seconds can expire at the end of a growing local library. Allow a second
+    # per required local source, plus bounded time for optional remote work.
+    # A hard ceiling and the unchanged complete-local-image gate still apply.
+    seconds = min(MAX_IMAGE_WALL_TIME, max(360 if remote_images else 180,
+                                         local_count + (60 if remote_images else 0)))
+    return {"localSourceCount": local_count, "localInputBytes": local_bytes,
+            "totalInputBytes": input_bytes,
+            "remoteInputReserveBytes": REMOTE_IMAGE_INPUT_RESERVE if remote_images else 0,
+            "wallTimeSeconds": seconds,
+            "hardLimitSeconds": MAX_IMAGE_WALL_TIME}
 
 
 def env_enabled(name: str) -> bool:
@@ -145,6 +177,7 @@ def finalize_public_experience(site: Path) -> dict[str, Any]:
     remote_images = is_production_workflow() or env_enabled("KC_PUBLIC_IMAGE_REMOTE")
     if env_enabled("KC_PUBLIC_IMAGE_OFFLINE"):
         remote_images = False
+    image_budget = image_processing_budget(site, remote_images)
     optimizer_args = [
         str(site),
         "--base", PUBLIC_BASE,
@@ -154,11 +187,9 @@ def finalize_public_experience(site: Path) -> dict[str, Any]:
         # Preserve owner-supplied full-resolution portraits (including 24 MP
         # PNGs) while still generating the same bounded responsive WebPs.
         "--max-image-bytes", str(24 * 1024 * 1024),
-        # The growing source library exceeds 192 MiB before compression.
-        # Preserve the current source library and the newly approved concert flyer.
-        # The complete measured input requires the next whole MiB allowance.
-        "--max-total-bytes", str(361 * 1024 * 1024),
-        "--wall-time", "360" if remote_images else "180",
+        # Reserve the measured local input plus a bounded remote allowance.
+        "--max-total-bytes", str(image_budget["totalInputBytes"]),
+        "--wall-time", str(image_budget["wallTimeSeconds"]),
     ]
     if not remote_images:
         optimizer_args.append("--offline")
@@ -207,6 +238,7 @@ def finalize_public_experience(site: Path) -> dict[str, Any]:
         "productionPublicExperience": "verified",
         "imageMode": "remote-and-local" if remote_images else "local-only",
         "imageBackendReady": image_backend,
+        "imageProcessingBudget": image_budget,
         "auditChecks": audit.checks,
         "auditRepairs": audit_repairs.get("repairs", {}),
         "echoNightsOfficialPin": echo_nights,
