@@ -1,6 +1,7 @@
 import json
 import unittest
 from pathlib import Path
+from tests.catalog_history import load_catalog
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -9,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 class MilesCjFall2026RepairTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.events = json.loads((ROOT / "events.json").read_text(encoding="utf-8"))
+        cls.events = load_catalog(ROOT / "events.json")
         cls.manual = json.loads((ROOT / "config" / "manual-events.json").read_text(encoding="utf-8"))
         cls.supplemental = json.loads((ROOT / "supplemental-events.json").read_text(encoding="utf-8"))
         cls.artists = json.loads((ROOT / "config" / "artists.json").read_text(encoding="utf-8"))

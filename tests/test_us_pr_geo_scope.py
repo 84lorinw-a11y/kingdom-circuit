@@ -7,6 +7,7 @@ import re
 import unittest
 from datetime import datetime
 from zoneinfo import ZoneInfo
+from tests.catalog_history import load_catalog
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -45,7 +46,10 @@ class GeographyAndVenueGuards(unittest.TestCase):
         self.assertEqual(state_path("SK"), "/shows/sk/")
         self.assertEqual(state_path("ON"), "/shows/on/")
         self.assertEqual(city_path("Saskatoon", "SK"), "/shows/saskatoon-sk/")
-        event = next(e for e in json.loads((ROOT / "supplemental-events.json").read_text())
+        # Completed performances move to history. Keep checking their reviewed
+        # facts without requiring them to remain in the upcoming feed forever.
+        # load_catalog only accepts archived rows after their end date.
+        event = next(e for e in load_catalog(ROOT / "supplemental-events.json")
                      if e.get("id") == "submitted:jj-stone-nrg-saskatoon-2026-11-13")
         self.assertIn(event["id"], [e["id"] for e in merge_events([], [event])])
         schema = event_schema(event)
@@ -60,8 +64,8 @@ class GeographyAndVenueGuards(unittest.TestCase):
         self.assertIn('PR:"Puerto Rico"', js)
 
     def test_808_beezy_venues_and_original_first_seen(self):
-        events = json.loads((ROOT / "events.json").read_text(encoding="utf-8"))
-        supplemental = json.loads((ROOT / "supplemental-events.json").read_text(encoding="utf-8"))
+        events = load_catalog(ROOT / "events.json")
+        supplemental = load_catalog(ROOT / "supplemental-events.json")
         seeds = json.loads((ROOT / "config/artist-website-seed-events.json").read_text(encoding="utf-8"))
         private = json.loads((ROOT / "config/private-events.json").read_text())
         for num, venue in {"108856031": "Indiana Tech", "108856562": "North Canton Chapel", "108856576": "North Canton Chapel"}.items():
