@@ -9502,28 +9502,33 @@
   },
   "joshuaa": {
     "artist": "joshuaa*",
-    "imageSha256": "f368211718180d12bce7337c2ac182510f1fbbfd8cf304747bfc9eca6107c88c",
-    "reason": "Reviewed original official portrait. Preserve face, hair and full group membership using CSS framing without changing source pixels.",
+    "imageSha256": "1d40284f4e2a7932432bc447c0870efad2ce747cd05c4e2f9f6ec5480a5e2ee2",
+    "reason": "Owner selected official performance photograph. Use reviewed CSS framing to preserve the complete head and focus on the artist while retaining the exact original image.",
     "desktop": {
       "window": [
-        0,
-        0,
-        1,
-        1
+        0.34,
+        0.12,
+        0.34,
+        0.51
       ],
-      "ratio": 1.0,
-      "nameSize": 5.6
+      "ratio": 1.0002442002442002,
+      "nameSize": 5.6,
+      "originalSource": true
     },
     "mobile": {
       "window": [
-        0,
-        0,
-        1,
-        1
+        0.34,
+        0.12,
+        0.34,
+        0.51
       ],
-      "ratio": 1.0,
+      "ratio": 1.0002442002442002,
       "nameSize": 8.6
-    }
+    },
+    "responsiveCrop": true,
+    "responsiveWidths": [
+      2048
+    ]
   },
   "king-hez": {
     "artist": "King Hez",
