@@ -6711,8 +6711,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/0g4dqela7F6gOIk4wEOgOv",
     "youtubeProfile": "https://www.youtube.com/@Cyfe-II",
     "officialImageSource": "https://www.instagram.com/cyfethe2nd/",
-    "imageUrl": "assets/artists/cyf-ii-official-profile-nov14.jpg",
-    "imagePosition": "50% 30%",
+    "imageUrl": "assets/artists/cyfe-ii-owner-selected-ddm0aauefbh.jpg",
+    "imagePosition": "50% 20%",
     "state": "CO",
     "country": "US",
     "sourceRegistryVerified": true
@@ -13220,8 +13220,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/0g4dqela7F6gOIk4wEOgOv",
     "youtubeProfile": "https://www.youtube.com/@Cyfe-II",
     "officialImageSource": "https://www.instagram.com/cyfethe2nd/",
-    "imageUrl": "assets/artists/cyf-ii-official-profile-nov14.jpg",
-    "imagePosition": "50% 30%",
+    "imageUrl": "assets/artists/cyfe-ii-owner-selected-ddm0aauefbh.jpg",
+    "imagePosition": "50% 20%",
     "state": "CO",
     "country": "US",
     "sourceRegistryVerified": true
@@ -15195,8 +15195,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 25%"
   },
   "cyfë ii": {
-    "imageUrl": "assets/artists/cyf-ii-official-profile-nov14.jpg",
-    "imagePosition": "50% 30%"
+    "imageUrl": "assets/artists/cyfe-ii-owner-selected-ddm0aauefbh.jpg",
+    "imagePosition": "50% 20%"
   },
   "cellus hamilton": {
     "imageUrl": "assets/artists/cellus-hamilton-official-profile-nov14.jpg",
