@@ -6601,8 +6601,8 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/1aTpbM2T26gxuXWTsWL11H",
     "youtubeProfile": "https://www.youtube.com/channel/UClNt5ldm6LZXeqFrpw4Fbaw",
     "officialImageSource": "https://www.instagram.com/levitoddmusic/",
-    "imageUrl": "assets/artists/levi-todd-official-profile-nov14.jpg",
-    "imagePosition": "50% 35%",
+    "imageUrl": "assets/artists/levi-todd-owner-selected-dpo50l3d4ly.jpg",
+    "imagePosition": "40% 20%",
     "sourceRegistryVerified": true
   },
   "47quay": {
@@ -13110,8 +13110,8 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/1aTpbM2T26gxuXWTsWL11H",
     "youtubeProfile": "https://www.youtube.com/channel/UClNt5ldm6LZXeqFrpw4Fbaw",
     "officialImageSource": "https://www.instagram.com/levitoddmusic/",
-    "imageUrl": "assets/artists/levi-todd-official-profile-nov14.jpg",
-    "imagePosition": "50% 35%",
+    "imageUrl": "assets/artists/levi-todd-owner-selected-dpo50l3d4ly.jpg",
+    "imagePosition": "40% 20%",
     "sourceRegistryVerified": true
   },
   "47quay": {
@@ -15163,8 +15163,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "50% 35%"
   },
   "levi todd": {
-    "imageUrl": "assets/artists/levi-todd-official-profile-nov14.jpg",
-    "imagePosition": "50% 35%"
+    "imageUrl": "assets/artists/levi-todd-owner-selected-dpo50l3d4ly.jpg",
+    "imagePosition": "40% 20%"
   },
   "47quay": {
     "imageUrl": "assets/artists/47quay-official-profile-nov14.jpg",
