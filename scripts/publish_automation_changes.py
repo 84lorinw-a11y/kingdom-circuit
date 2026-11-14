@@ -5,8 +5,9 @@ On a push race, replay the named operation in an isolated worktree of latest
 main. Never force-push, choose one side of a conflict, or reset a user's checkout.
 The caller supplies the complete reviewed output allowlist and replay commands.
 Validated-output reuse is an opt-in alternative: carry only the already checked
-file delta onto latest main, reject competing edits to the same file, and use
-the supplied replay commands for offline normalization and validation only.
+file delta onto latest main, reject competing edits to the same record in the
+three known event feeds (or the same file elsewhere), and use the supplied
+replay commands for offline normalization and validation only.
 """
 from __future__ import annotations
 import argparse
@@ -48,18 +49,99 @@ def working_file(root, name):
     return path.read_bytes() if path.exists() else None
 
 
-def reuse_validated_files(work, original, output):
-    """Apply a conservative file-level three-way delta without merging facts."""
+RECORD_MERGE_FEEDS = frozenset({'events.json', 'supplemental-events.json', 'artist-website-events.json'})
+MISSING_RECORD = object()
+
+
+def event_feed_records(content, name):
+    """Read unambiguous event identities and type-sensitive record values."""
+    if content is None:
+        return None  # An absent file is not an empty feed.
+
+    def unique_object(pairs):
+        value = {}
+        for key, item in pairs:
+            if key in value:
+                raise ValueError(f'Duplicate JSON key: {key}')
+            value[key] = item
+        return value
+
+    def invalid_constant(value):
+        raise ValueError(f'Invalid JSON number: {value}')
+
+    try:
+        rows = json.loads(content.decode('utf-8'), object_pairs_hook=unique_object,
+                          parse_constant=invalid_constant)
+        if not isinstance(rows, list):
+            raise ValueError('Expected an array of event objects')
+        records, identities = {}, {}
+        for row in rows:
+            if not isinstance(row, dict):
+                raise ValueError('Expected an event object')
+            identity = row.get('id')
+            if not isinstance(identity, str) or not identity.strip():
+                raise ValueError('Every event requires a nonempty string id')
+            if identity in records:
+                raise ValueError(f'Duplicate event id: {identity}')
+            records[identity] = row
+            # JSON spelling distinguishes bool/int/float, unlike Python equality.
+            identities[identity] = json.dumps(row, sort_keys=True, ensure_ascii=False, allow_nan=False)
+        return records, identities
+    except (ValueError, TypeError, UnicodeError) as exc:
+        raise RuntimeError(f'Invalid event feed for validated reuse: {name}: {exc}') from exc
+
+
+def merge_event_records(name, original, current, output, current_bytes):
+    """Merge independent whole records, never individual facts within a row."""
+    base_rows, base_values = original
+    main_rows, main_values = current
+    out_rows, out_values = output
+    merged = {}
+    conflicts = []
+    # Main keeps its ordering; newly accepted output IDs follow in output order.
+    for identity in dict.fromkeys([*main_rows, *out_rows, *base_rows]):
+        base = base_values.get(identity, MISSING_RECORD)
+        main = main_values.get(identity, MISSING_RECORD)
+        generated = out_values.get(identity, MISSING_RECORD)
+        if generated == base or generated == main:
+            chosen = main_rows.get(identity, MISSING_RECORD)
+        elif main == base:
+            chosen = out_rows.get(identity, MISSING_RECORD)
+        else:
+            conflicts.append(identity)
+            continue
+        if chosen is not MISSING_RECORD:
+            merged[identity] = chosen
+    if conflicts:
+        raise RuntimeError(f'Validated output conflicts with newer main changes: {name}: event ids {sorted(conflicts)}')
+    if list(merged) == list(main_rows) and all(
+            json.dumps(row, sort_keys=True, ensure_ascii=False, allow_nan=False) == main_values[identity]
+            for identity, row in merged.items()):
+        return current_bytes
+    return (json.dumps(list(merged.values()), indent=2, ensure_ascii=False, allow_nan=False) + '\n').encode('utf-8')
+
+
+def reuse_validated_files(work, original, output, *, allowed_paths):
+    """Plan every allowlisted update before writing; reject ambiguous feeds."""
+    if set(original) != set(output) or set(output) - set(allowed_paths):
+        raise RuntimeError('Validated reuse paths must match the caller output allowlist')
     updates = {}
     conflicts = []
     for name, content in output.items():
+        current = working_file(work, name)
+        feeds = ([event_feed_records(raw, name) for raw in (original[name], current, content)]
+                 if name in RECORD_MERGE_FEEDS else None)
         if content == original[name]:
             continue  # An unchanged collection output must not undo newer main.
-        current = working_file(work, name)
         if current == content:
             continue  # Independently accepted identical output has converged.
         if current != original[name]:
-            conflicts.append(name)
+            if feeds is not None and all(feed is not None for feed in feeds):
+                merged = merge_event_records(name, *feeds, current)
+                if merged != current:
+                    updates[name] = merged
+            else:
+                conflicts.append(name)
         else:
             updates[name] = content
     if conflicts:
@@ -151,7 +233,7 @@ def publish(root, paths, commands, message, *, attempts=4, sync=False, before_pu
                 coverage_baseline = (coverage.read_bytes() if 'coverage-gaps.json' in allowed
                                      and coverage.is_file() and not coverage.is_symlink() else None)
                 if reuse_validated_output:
-                    reuse_validated_files(work, original_files, snapshots)
+                    reuse_validated_files(work, original_files, snapshots, allowed_paths=allowed)
                     if latest != original or attempt:
                         print(f'Main changed; reusing validated output on {latest[:12]} '
                               f'with offline checks (attempt {attempt + 1}/{attempts})', flush=True)
@@ -214,7 +296,8 @@ def main():
     parser.add_argument('--replay', action='append', required=True)
     parser.add_argument('--reuse-validated-output', action='store_true', help=(
         'Reuse the validated original-to-output file delta after a push race; '
-        'reject same-file conflicts. In this mode --replay must contain only '
+        'reject same-record conflicts in known event feeds and same-file conflicts elsewhere. '
+        'In this mode --replay must contain only '
         'offline normalization/validation, never network collection.'))
     parser.add_argument('--sync-checkout', action='store_true')
     parser.add_argument('paths', nargs='+')

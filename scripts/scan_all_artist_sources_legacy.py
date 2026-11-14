@@ -216,6 +216,7 @@ def collect_ticket_corroboration(
                 authority="venue_ticket",
                 priority=94,
             )
+            source["requirePerformerMatch"] = True
             events.extend(collect_jsonld_source_from_html(
                 source, ticket_url, html, alias_lookup, checked_at
             ))
@@ -233,6 +234,9 @@ def collect_bandsintown_for_artist(
     name = str(artist.get("name") or "").strip()
     search_url = f"https://www.bandsintown.com/search?q={quote_plus(name)}"
     result: dict[str, Any] = {"artist": name, "source": "Bandsintown", "status": "unmatched", "eventsFound": 0}
+    if artist.get("bandsintownIdentityHold"):
+        result.update(status="identity_mismatch", reason="provider_identity_review_required")
+        return [], result
     try:
         if not robots_allows(search_url):
             result["status"] = "blocked_by_robots"
@@ -269,6 +273,7 @@ def collect_bandsintown_for_artist(
             event_urls.append(absolute)
 
         source = source_record(f"{name} Bandsintown all-artist scan", artist_url, name, priority=74)
+        source["requirePerformerMatch"] = True
         events: list[dict[str, Any]] = []
         for event_url in event_urls[:25]:
             try:
@@ -341,6 +346,7 @@ def collect_songkick_for_artist(
             detail_urls.append(absolute)
 
         source = source_record(f"{name} Songkick all-artist scan", artist_url, name, priority=70)
+        source["requirePerformerMatch"] = True
         events: list[dict[str, Any]] = []
         for detail_url in detail_urls[:20]:
             try:

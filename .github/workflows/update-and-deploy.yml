@@ -284,13 +284,20 @@ jobs:
         id: source-save
         env:
           TICKETMASTER_API_KEY: ${{ secrets.TICKETMASTER_API_KEY }}
+          KC_DISCOVERY_MODE: ${{ steps.refresh-mode.outputs.discovery }}
         shell: bash
         run: |
+          publication_checks=(
+            --replay "python scripts/replay_source_update.py normalize"
+            --replay "python -m unittest discover -s tests -p test_*.py -q"
+          )
+          if [ "$KC_DISCOVERY_MODE" = "true" ]; then
+            publication_checks+=(--replay "python scripts/verify_discovery_receipt.py --source . --report \"$RUNNER_TEMP/discovery-receipt.json\"")
+          fi
           python scripts/publish_automation_changes.py \
             --message "chore: refresh show listings [skip ci]" \
             --reuse-validated-output \
-            --replay "python scripts/replay_source_update.py normalize" \
-            --replay "python -m unittest discover -s tests -p test_*.py -q" \
+            "${publication_checks[@]}" \
             --sync-checkout \
             events.json supplemental-events.json config/manual-events.json config/artists.json app.js coverage-gaps.json run-status.json cache/ticketmaster-attractions.json full-scan-status.json full-scan-candidates.json bandsintown-status.json bandsintown-candidates.json config/permanent-state-pages.json tests/test_update_events.py event-history.json \
             artist-website-events.json artist-website-status.json config/verified-artist-websites.json config/verified-artist-registry-updates.json config/artist-website-seed-events.json eventbrite-scan-status.json eventbrite-scan-candidates.json data/verified-false-matches.json

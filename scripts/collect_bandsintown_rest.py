@@ -135,6 +135,8 @@ def configured_bit_id(artist: dict[str, Any]) -> str:
 
 def resolve_artist(artist: dict[str, Any]) -> tuple[str, str, str]:
     name = str(artist.get("name") or "").strip()
+    if artist.get("bandsintownIdentityHold"):
+        return "", "", "provider_identity_review_required"
     rejected_ids = {str(v).strip() for v in (artist.get("bandsintownRejectedArtistIds") or []) if str(v).strip()}
     configured_id = configured_bit_id(artist)
     if configured_id:
@@ -309,6 +311,7 @@ def main() -> int:
     candidates: list[dict[str, Any]] = []
     holds: list[dict[str, Any]] = []
     errors: list[dict[str, Any]] = []
+    identity_holds: list[dict[str, Any]] = []
     resolved = 0
     duplicates = 0
     raw_us = 0
@@ -319,6 +322,9 @@ def main() -> int:
         name = str(artist.get("name") or "").strip()
         artist_id, resolved_name, identity = resolve_artist(artist)
         if not artist_id:
+            if identity == "provider_identity_review_required":
+                identity_holds.append({"artist": name, "status": "held", "reason": identity})
+                continue
             if identity not in {"not_resolved", "ambiguous_name_requires_configured_id"}:
                 errors.append({"artist": name, "error": identity})
             continue
@@ -371,6 +377,8 @@ def main() -> int:
         "generatedAt": __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat(),
         "artistsChecked": len(enabled),
         "artistsResolved": resolved,
+        "artistsHeldForIdentity": len(identity_holds),
+        "identityHolds": identity_holds,
         "rawUpcomingUSRows": raw_us,
         "rawUpcomingCARows": raw_ca,
         "rawUpcomingRows": raw_us + raw_ca,

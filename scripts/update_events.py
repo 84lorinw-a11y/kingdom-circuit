@@ -977,12 +977,16 @@ def collect_jsonld_source_from_html(
             performer_names = flatten_names(raw_event.get("performer"))
             artists = match_tracked_artists(performer_names, alias_lookup)
             event_type = detect_event_type(title)
-            # A configured artist is a safe fallback for a dedicated artist page,
-            # but never authoritative evidence for a festival lineup.
-            if not artists and event_type != "festival":
+            # Provider pages can link to recommendations for other musicians.
+            # Their event lineup must confirm the artist whose calendar we read.
+            if source.get("requirePerformerMatch") and not set(configured_artists).intersection(artists):
+                continue
+            # Missing lineup data on a dedicated calendar may use its owner.
+            # An explicit different performer must never be replaced by that owner.
+            if not artists and not performer_names and event_type != "festival":
                 artists = configured_artists
-            if not artists:
-                artists = match_artists_in_text(" ".join([title, *performer_names]), alias_lookup)
+            if not artists and not performer_names:
+                artists = match_artists_in_text(title, alias_lookup)
             if not artists:
                 continue
             ticket_url = extract_offer_url(raw_event.get("offers")) or safe_url(raw_event.get("url"))
@@ -1796,9 +1800,10 @@ def collect_bandsintown_public_source(
 
     Event detail pages are preferred because they usually expose structured
     event metadata. Past-show links are excluded by their position on the
-    artist page.
+    artist page. Each detail page must explicitly confirm the configured artist.
     """
 
+    source = {**source, "requirePerformerMatch": True}
     page = PageContentParser()
     page.feed(html)
     chunks = [normalize_whitespace(chunk) for chunk in page.text_chunks]

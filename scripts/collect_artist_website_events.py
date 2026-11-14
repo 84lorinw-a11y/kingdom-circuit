@@ -101,6 +101,8 @@ def candidate_internal_pages(base_url: str, html: str) -> list[str]:
 
 
 def bandsintown_profiles(artist: dict, html: str, base_url: str) -> list[str]:
+    if artist.get("bandsintownIdentityHold"):
+        return []
     urls: list[str] = []
     configured = safe_url(artist.get("bandsintownProfile"))
     if configured:
@@ -144,6 +146,7 @@ def hidden_bandsintown_event_urls(html: str, profile_url: str) -> list[str]:
 
 
 def collect_bandsintown_profile(source: dict, profile_url: str, html: str, client: HttpClient, alias_lookup: dict[str, str], checked_at: str) -> list[dict]:
+    source = {**source, "requirePerformerMatch": True}
     events = collect_bandsintown_public_source(source, profile_url, html, client, alias_lookup, checked_at)
     for event_url in hidden_bandsintown_event_urls(html, profile_url):
         try:

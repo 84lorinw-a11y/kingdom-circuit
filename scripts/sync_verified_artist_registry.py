@@ -125,7 +125,7 @@ def sync_config() -> tuple[list[dict], list[dict], int]:
             "name", "aliases", "category", "monitoringPriority", "ticketmasterEnabled",
             "textMatchEnabled", "website", "instagramProfile", "spotifyProfile",
             "youtubeProfile", "officialImageSource", "imageUrl", "imagePosition",
-            "state", "country", "label", "bandsintownProfile", "bandsintownRejectedArtistIds", "sourceIdentityNotes",
+            "state", "country", "label", "bandsintownProfile", "bandsintownRejectedArtistIds", "bandsintownIdentityHold", "sourceIdentityNotes",
             "socialSearchEnabled", "activeStatus", "legacyArtistPaths",
         ):
             if field in update and target.get(field) != update[field]:
