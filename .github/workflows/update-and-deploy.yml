@@ -99,10 +99,6 @@ jobs:
     if: needs.plan.outputs.run == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 180
-    env:
-      # Content addressed intermediate results only. Never restore an old
-      # published site as source input to the production transformations.
-      KC_BUILD_CACHE_DIR: ${{ runner.temp }}/kingdom-circuit-build-cache
     outputs:
       collection: ${{ steps.discovery-receipt.outcome }}
       source_save: ${{ steps.source-save.outcome }}
@@ -308,6 +304,10 @@ jobs:
 
       - name: Reconcile durable event identities before page generation
         run: python scripts/url_continuity.py --prepare
+
+      - name: Configure reusable build storage outside the checkout
+        shell: bash
+        run: echo "KC_BUILD_CACHE_DIR=$RUNNER_TEMP/kingdom-circuit-build-cache" >> "$GITHUB_ENV"
 
       - name: Restore verified reusable page and image work
         id: build-cache
