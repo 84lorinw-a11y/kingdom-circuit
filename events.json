@@ -1996,7 +1996,7 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-11-13T11:17:34Z",
+    "lastVerified": "2026-11-14T13:22:47Z",
     "confidence": "high",
     "imageType": "fallback",
     "imagePosition": "center",
@@ -2049,7 +2049,7 @@
         "priority": 120
       }
     ],
-    "lastVerified": "2026-11-13T11:17:34Z",
+    "lastVerified": "2026-11-14T13:22:47Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -2177,7 +2177,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-11-13T11:17:34Z",
+    "lastVerified": "2026-11-14T13:22:47Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 0%",
@@ -3196,7 +3196,7 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-11-13T11:17:34Z",
+    "lastVerified": "2026-11-14T13:22:47Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -3243,7 +3243,7 @@
         "priority": 100
       }
     ],
-    "lastVerified": "2026-11-13T11:17:34Z",
+    "lastVerified": "2026-11-14T13:22:47Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 30%",
@@ -3365,7 +3365,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-11-13T11:17:34Z",
+    "lastVerified": "2026-11-14T13:22:47Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 0%",
@@ -3488,7 +3488,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-11-13T11:17:34Z",
+    "lastVerified": "2026-11-14T13:22:47Z",
     "confidence": "high",
     "endDate": "2026-12-05",
     "imageType": "event_artwork",
@@ -3662,7 +3662,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-11-13T11:17:34Z",
+    "lastVerified": "2026-11-14T13:22:47Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 0%",
@@ -3703,7 +3703,7 @@
         "priority": 112
       }
     ],
-    "lastVerified": "2026-11-13T11:17:34Z",
+    "lastVerified": "2026-11-14T13:22:47Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "50% 0%",
@@ -3948,7 +3948,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-11-13T11:17:34Z",
+    "lastVerified": "2026-11-14T13:22:47Z",
     "confidence": "high",
     "endDate": "2026-12-17",
     "imageType": "event_artwork",
@@ -4015,7 +4015,7 @@
         "priority": 74
       }
     ],
-    "lastVerified": "2026-11-13T11:17:34Z",
+    "lastVerified": "2026-11-14T13:22:47Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "center",
@@ -4079,7 +4079,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-11-13T11:17:34Z",
+    "lastVerified": "2026-11-14T13:22:47Z",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -4653,7 +4653,7 @@
         "priority": 84
       }
     ],
-    "lastVerified": "2026-11-13T11:17:34Z",
+    "lastVerified": "2026-11-14T13:22:47Z",
     "confidence": "high",
     "imageType": "artist",
     "imagePosition": "center",
@@ -5318,13 +5318,13 @@
   },
   {
     "id": "ticketmaster:vv17bZ_pGkmsg_LP",
-    "title": "TPR. Presents Blameless: The Tour with Jackie Hill Perry",
+    "title": "Blameless: The Tour with Jackie Hill Perry",
     "startDate": "2027-02-15",
     "startTime": "19:00",
     "timezone": "America/Chicago",
     "venue": "The Pageant",
-    "address": "6161 Delmar",
-    "city": "Saint Louis",
+    "address": "6161 Delmar Blvd.",
+    "city": "St. Louis",
     "state": "MO",
     "country": "US",
     "artists": [
@@ -5332,13 +5332,20 @@
     ],
     "headliner": "Jackie Hill Perry",
     "eventType": "concert",
-    "status": "offsale",
+    "status": "scheduled",
     "ticketUrl": "https://www.ticketmaster.com/tpr-presents-blameless-the-tour-with-saint-louis-missouri-02-15-2027/event/0600656BB1D597E5",
-    "officialUrl": "https://www.ticketmaster.com/tpr-presents-blameless-the-tour-with-saint-louis-missouri-02-15-2027/event/0600656BB1D597E5",
-    "image": "https://s1.ticketm.net/dam/a/e73/5889e730-ed2b-47bd-8c9b-5d62c6a82e73_SOURCE",
+    "officialUrl": "https://stillblameless.com/tour",
+    "image": "assets/events/jackie-hill-perry-blameless-tour-2027.jpg",
     "price": "",
-    "sourceName": "Ticketmaster",
+    "sourceName": "Official artist tour announcement and venue listings",
     "sources": [
+      {
+        "name": "Official artist tour announcement and venue listings",
+        "url": "https://stillblameless.com/tour",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 112
+      },
       {
         "name": "Ticketmaster",
         "url": "https://www.ticketmaster.com/tpr-presents-blameless-the-tour-with-saint-louis-missouri-02-15-2027/event/0600656BB1D597E5",
@@ -5347,8 +5354,9 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-11-13T11:17:34Z",
+    "lastVerified": "2026-11-14T13:22:47Z",
     "confidence": "high",
+    "endDate": "2027-02-15",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
@@ -5392,7 +5400,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-11-13T11:17:34Z",
+    "lastVerified": "2026-11-14T13:22:47Z",
     "confidence": "high",
     "endDate": "2027-02-16",
     "imageType": "event_artwork",
@@ -5438,7 +5446,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-11-13T11:17:34Z",
+    "lastVerified": "2026-11-14T13:22:47Z",
     "confidence": "high",
     "endDate": "2027-02-18",
     "imageType": "event_artwork",
@@ -5551,7 +5559,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-11-13T11:17:34Z",
+    "lastVerified": "2026-11-14T13:22:47Z",
     "confidence": "high",
     "endDate": "2027-02-20",
     "imageType": "event_artwork",
@@ -5597,13 +5605,52 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-11-13T11:17:34Z",
+    "lastVerified": "2026-11-14T13:22:47Z",
     "confidence": "high",
     "endDate": "2027-02-24",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-11-09"
+  },
+  {
+    "id": "official:718febbb9aead6d818e3",
+    "title": "Mike Teezy @ Garner Performing Arts Center",
+    "startDate": "2027-02-27",
+    "startTime": "20:00",
+    "timezone": "",
+    "venue": "Garner Performing Arts Center",
+    "address": "742 W Garner Rd",
+    "city": "Garner",
+    "state": "NC",
+    "country": "US",
+    "artists": [
+      "Mike Teezy"
+    ],
+    "headliner": "Mike Teezy",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://music.apple.com/us/concerts/artist/517774271",
+    "officialUrl": "https://music.apple.com/us/concerts/artist/517774271",
+    "image": "assets/artists/mike-teezy-saved.png",
+    "price": "",
+    "sourceName": "Mike Teezy Apple Music concerts",
+    "sources": [
+      {
+        "name": "Mike Teezy Apple Music concerts",
+        "url": "https://music.apple.com/us/concerts/artist/517774271",
+        "type": "jsonld",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "lastVerified": "2026-11-14T13:22:47Z",
+    "confidence": "high",
+    "endDate": "2027-02-28",
+    "imageType": "artist",
+    "imagePosition": "center",
+    "verifiedVersion": 9,
+    "firstSeen": "2026-11-14T13:22:47Z"
   },
   {
     "id": "ticketmaster:1kAOvP_oGAG4-0T",
@@ -5636,7 +5683,7 @@
         "priority": 94
       }
     ],
-    "lastVerified": "2026-11-13T11:17:34Z",
+    "lastVerified": "2026-11-14T13:22:47Z",
     "confidence": "high",
     "endDate": "2027-02-28",
     "imageType": "event_artwork",
@@ -5831,7 +5878,7 @@
         "type": "retained_reference"
       }
     ],
-    "lastVerified": "2026-11-13T11:17:34Z",
+    "lastVerified": "2026-11-14T13:22:47Z",
     "confidence": "high",
     "endDate": "2027-05-01",
     "endTime": "22:00",

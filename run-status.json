@@ -1,9 +1,9 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-11-13T11:17:34Z",
-  "lastSuccessfulUpdate": "2026-11-13T11:17:34Z",
-  "eventsPublished": 205,
+  "lastAttempt": "2026-11-14T13:22:47Z",
+  "lastSuccessfulUpdate": "2026-11-14T13:22:47Z",
+  "eventsPublished": 206,
   "candidatesCollected": 380,
   "artistsConfigured": 418,
   "artistsByPriority": {
@@ -20,7 +20,7 @@
   "instagramArtistsConfigured": 373,
   "instagramQueriesRun": 375,
   "instagramQueriesAttempted": 373,
-  "instagramResultsFound": 1,
+  "instagramResultsFound": 0,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,16 +46,6 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
-    },
-    {
-      "url": "https://www.instagram.com/p/DfeX0Nnk6Fc/",
-      "title": "Dee | 我還記得大S和我第一次去香港金像獎 ... - Instagram",
-      "artists": [],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
@@ -576,7 +566,7 @@
     {
       "name": "Kaden Jordan official tour / Songkick",
       "status": "ok",
-      "eventsFound": 6
+      "eventsFound": 5
     },
     {
       "name": "FLAME Plano official registration",
@@ -586,7 +576,7 @@
     {
       "name": "Mike Teezy Apple Music concerts",
       "status": "ok",
-      "eventsFound": 0
+      "eventsFound": 1
     },
     {
       "name": "Parris Chariz Apple Music concerts",
@@ -634,5 +624,5 @@
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 20,
   "artistWebsiteEventsAdded": 0,
-  "artistWebsiteMergeAt": "2026-11-14T13:00:33Z"
+  "artistWebsiteMergeAt": "2026-11-14T13:44:51Z"
 }
