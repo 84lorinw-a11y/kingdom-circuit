@@ -1,15 +1,15 @@
 {
-  "run_id": 43595638025,
-  "conclusion": "failure",
-  "head_sha": "841ae896a49e74dab76fb74cefda9cf0b4993e15",
-  "html_url": "https://github.com/84lorinw-a11y/kingdom-circuit/actions/runs/43595638025",
-  "captured_at": "2026-11-14T13:09:59.742706+00:00",
+  "run_id": 43599248023,
+  "conclusion": "success",
+  "head_sha": "41f8786d63ffb8824cd17da070afca0cc3bcaa06",
+  "html_url": "https://github.com/84lorinw-a11y/kingdom-circuit/actions/runs/43599248023",
+  "captured_at": "2026-11-14T14:03:12.858285+00:00",
   "stages": {
-    "collection": "skipped",
+    "collection": "success",
     "source_save": "success",
-    "build": "skipped",
-    "deployment": "skipped",
-    "live": "skipped",
-    "freshness": "skipped"
+    "build": "success",
+    "deployment": "success",
+    "live": "success",
+    "freshness": "success"
   }
 }
