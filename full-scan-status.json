@@ -1,32 +1,32 @@
 {
-  "generatedAt": "2026-11-14T13:41:01Z",
-  "artistsChecked": 418,
+  "generatedAt": "2026-11-15T11:37:32Z",
+  "artistsChecked": 447,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
-  "festivalCandidates": 1,
+  "festivalCandidates": 0,
   "bandsintown": {
     "discoveryMode": "structured_rest",
     "status": "ok",
-    "artistsAttempted": 418,
-    "resolved": 255,
-    "rawUpcomingUSRows": 84,
+    "artistsAttempted": 447,
+    "resolved": 266,
+    "rawUpcomingUSRows": 72,
     "rawUpcomingCARows": 2,
-    "rawUpcomingRows": 86,
-    "newEventsPublished": 15,
-    "festivalCandidatesHeld": 2,
+    "rawUpcomingRows": 74,
+    "newEventsPublished": 13,
+    "festivalCandidatesHeld": 0,
     "requestErrors": 0
   },
   "songkick": {
-    "artistsAttempted": 418,
+    "artistsAttempted": 447,
     "resolved": 0,
-    "blockedByRobots": 418,
+    "blockedByRobots": 447,
     "eventsFound": 0
   },
   "sourceStatusCounts": {
-    "delegated_to_structured_rest": 418,
-    "blocked_by_robots": 422,
-    "no_events": 581,
-    "failed": 7
+    "delegated_to_structured_rest": 447,
+    "blocked_by_robots": 451,
+    "no_events": 620,
+    "failed": 10
   },
   "newEvents": [],
   "sourceResults": [
@@ -8228,9 +8228,8 @@
       "artist": "Lady Cam",
       "source": "official website",
       "url": "http://www.iloveladycam.com/",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve http://www.iloveladycam.com/: HTTP Error 429: Too Many Requests"
+      "status": "no_events",
+      "eventsFound": 0
     },
     {
       "artist": "Lady Cam",
@@ -9194,6 +9193,652 @@
       "artist": "SYL noiZ",
       "source": "Spotify profile",
       "url": "https://open.spotify.com/artist/2OmdAhy2xwZkAyFEQPe7fq",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Lathan Warlick",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Lathan Warlick",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Lathan Warlick",
+      "source": "official website",
+      "url": "https://www.lathanwarlick.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Lathan Warlick",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/6Wg68vsyRjVt7TRJsWNWSP",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Austin White 711",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Austin White 711",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Austin White 711",
+      "source": "official website",
+      "url": "https://www.austinwhite711.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Austin White 711",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/55nLrxYgd3cNP8TksFuE3O",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Levi Todd",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Levi Todd",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Levi Todd",
+      "source": "official website",
+      "url": "https://ffm.to/presavehome1.ODL?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaf4zZ1k0pjYf78kVKn7oiHZ5pIERykp1X-r2fg-Ylxl8KJwuLPzrT4bEywt-w_aem_GdubeujUfS2UbjmYWw1kHg&utm_id=97760_v0_s00_e0_tv3",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Levi Todd",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/1aTpbM2T26gxuXWTsWL11H",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "47Quay",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "47Quay",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "47Quay",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/5eLk1ikbfjmyb4JdFxQ8hl",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jay Manwell",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jay Manwell",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jay Manwell",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/7MDy7SOqkdabf2wweldR0p",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "HypemanPrince",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "HypemanPrince",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "HypemanPrince",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/0mBzBFNJ9OiOVxmmBeSKj7",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "FSG LEXY",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "FSG LEXY",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "FSG LEXY",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/04um1FPdQEg5sgSLXFMkIf",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Aable",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Aable",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Aable",
+      "source": "official website",
+      "url": "https://bio.site/aable",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Aable",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/3LelS8evrI9XeIxtTOOcUw",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "F.L.O.G.I.C.",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "F.L.O.G.I.C.",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "F.L.O.G.I.C.",
+      "source": "official website",
+      "url": "https://www.flogicmusic.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "F.L.O.G.I.C.",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/0hK4w8u7HB7qPcPTZtIIin",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "DreBeeze Da Godson",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "DreBeeze Da Godson",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "DreBeeze Da Godson",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/2HVOHorbpCUYRkYjNuQS93",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Cyfë II",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Cyfë II",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Cyfë II",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/0g4dqela7F6gOIk4wEOgOv",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Cellus Hamilton",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Cellus Hamilton",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Cellus Hamilton",
+      "source": "official website",
+      "url": "https://cellushamilton.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Cellus Hamilton",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/5NwZi7VTgJ1nQ0FLkrNuuT",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Joey DeVille",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Joey DeVille",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Joey DeVille",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/41WIrojbrN8er7uF1Wqnw9",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "OGK Joshua",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "OGK Joshua",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "OGK Joshua",
+      "source": "official website",
+      "url": "https://fvr.fan/ogkjoshua",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "OGK Joshua",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/5x62K4vFOQJPBIRnfPWPJI",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jason Terrell",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jason Terrell",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Jason Terrell",
+      "source": "official website",
+      "url": "https://beacons.ai/jasonterrell_anb",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://beacons.ai/jasonterrell_anb: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Jason Terrell",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/61INlzezCwO975Mnfih5a6",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "TruWerdz",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "TruWerdz",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "TruWerdz",
+      "source": "official website",
+      "url": "https://truwerdzmusic.com/",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "TruWerdz",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/4FEHyhzbeaq9viuvEdhnoe",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "DYP",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "DYP",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "DYP",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/6pPUUGLeFXNr6AgFnNQeuB",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kalculus",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kalculus",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Kalculus",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/5PDvJmyW0Qvy4aejP520aV",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Sb Tone",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Sb Tone",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Sb Tone",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/6PeEYBD8V5B27HU5TKiCwr",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Chris Elijah",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Chris Elijah",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Chris Elijah",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/2icrwgIpdeSSMhdffpJN2w",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "joshuaa*",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "joshuaa*",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "joshuaa*",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/5sxJkjbBNLFl1VRnBujr4c",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "King Hez",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "King Hez",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "King Hez",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/2KIh9iOjz792c7NRZ2XP2H",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "VerbPro 12:4",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "VerbPro 12:4",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "VerbPro 12:4",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/7nqMJhiBlqeeAP6iC1VvjE",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Ryder4Christ",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Ryder4Christ",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Ryder4Christ",
+      "source": "official website",
+      "url": "https://lnk.bio/Ryder4Christ",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Ryder4Christ",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/71dZ4I1OWN9f6bOhnGAEQX",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Miz Tiffany",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Miz Tiffany",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Miz Tiffany",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/4diLM7OgmADzEyYPOK5aM2",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Mynista",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Mynista",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Mynista",
+      "source": "official website",
+      "url": "https://www.mynista.com/",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.mynista.com/: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "Mynista",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/7qsbj1dHYihNT4crQLYLFB",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Plain James",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Plain James",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Plain James",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/4aBcwMGnLwKP2kq9SD71G2",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Marqus Anthony",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Marqus Anthony",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "Marqus Anthony",
+      "source": "official website",
+      "url": "https://www.marqusanthony.com/",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.marqusanthony.com/: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1011)>"
+    },
+    {
+      "artist": "Marqus Anthony",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/3pyaq3zAwZ7nGxdP1P8pid",
+      "status": "no_events",
+      "eventsFound": 0
+    },
+    {
+      "artist": "J68",
+      "source": "Bandsintown",
+      "status": "delegated_to_structured_rest",
+      "eventsFound": 0
+    },
+    {
+      "artist": "J68",
+      "source": "Songkick",
+      "status": "blocked_by_robots",
+      "eventsFound": 0
+    },
+    {
+      "artist": "J68",
+      "source": "official website",
+      "url": "https://distrokid.com/hyperfollow/j681/no-more-running/",
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://distrokid.com/hyperfollow/j681/no-more-running/: HTTP Error 403: Forbidden"
+    },
+    {
+      "artist": "J68",
+      "source": "Spotify profile",
+      "url": "https://open.spotify.com/artist/0iiyE0CcR79UqyfBI61xH5",
       "status": "no_events",
       "eventsFound": 0
     }
