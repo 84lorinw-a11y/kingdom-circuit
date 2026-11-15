@@ -260,6 +260,24 @@ class BasePageCacheIntegrationTests(unittest.TestCase):
         after=self.build('2026-11-15')
         self.assertNotIn(builder.artist_path(self.artists[-1]['name']).strip('/')+'/index.html',after)
 
+    def test_verified_overnight_expires_with_warm_cache_without_changing_source_dates(self):
+        event = self.events[0]
+        event.update(startDate='2026-11-13', endDate='2026-11-14',
+                     startTime='22:00', endTime='01:00',
+                     startDateTime='2026-11-13T22:00:00-06:00',
+                     endDateTime='2026-11-14T01:00:00-06:00')
+        self.save('events.json', self.events)
+        path = builder.event_path(event).strip('/')+'/index.html'
+        before = self.build('2026-11-13')
+        self.assertIn(path, before)
+        self.assertIn(b'2026-11-14T01:00:00-06:00', before[path])
+        after = self.build('2026-11-14')
+        self.assertNotIn(path, after)
+        profile = builder.artist_path(self.artists[0]['name']).strip('/')+'/index.html'
+        self.assertIn(b'0 upcoming U.S. shows', after[profile])
+        self.assertEqual(after, self.build('2026-11-14', cached=False))
+        self.assertEqual('2026-11-14', json.loads((self.source/'events.json').read_text())[0]['endDate'])
+
     def test_alias_resolution_and_merged_targets_are_preserved(self):
         artists=[{'name':'Canonical', 'aliases':['Guest']}, {'name':'Other','aliases':['Guest']}]
         event=dict(self.events[0], artists=['Guest'],advertisedBilling=['Guest'])

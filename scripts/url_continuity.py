@@ -18,6 +18,7 @@ import re
 from urllib.parse import urlsplit
 import xml.etree.ElementTree as ET
 from catalog_removals import public_event, resolved_location_event
+from event_visibility import event_last_active_date
 
 ORIGIN = 'https://kingdomcircuit.com'
 STATE_FILE = 'config/url-continuity.json'
@@ -406,7 +407,7 @@ def reconcile_reviewed_aliases(state, history, current_ids, site):
 def restore_event(site, path, event, today, *, session_review=False):
     esc = html.escape
     status = norm(event.get('status'))
-    day = event.get('endDate') or event.get('startDate', '')
+    day = event_last_active_date(event)
     if status == 'private': notice = 'Private event. Not open to the public.'
     elif status in ('cancelled', 'canceled'): notice = 'This event was cancelled.'
     elif status == 'postponed': notice = 'This event was postponed. A new date has not been confirmed here.'
@@ -526,7 +527,7 @@ def finalize(root, site, today=None):
             restore_event(site, preferred, record['event'], today)
         # Similar archived cards must not hide the source-specific clocks that
         # prevented a reviewed merge. No active performance is rewritten here.
-        if preferred in session_review_paths and (record['event'].get('endDate') or record['event'].get('startDate', '9999')) < today:
+        if preferred in session_review_paths and event_last_active_date(record['event']) < today:
             restore_event(site, preferred, record['event'], today, session_review=True)
         for old in event.get('legacyEventPaths', []):
             if old != preferred: state['redirects'][safe_path(old)] = preferred

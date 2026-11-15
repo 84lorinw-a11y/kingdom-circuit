@@ -6,6 +6,7 @@ import json
 import pathlib
 import re
 from zoneinfo import ZoneInfo
+from event_visibility import event_last_active_date
 
 SITE_ORIGIN = "https://kingdomcircuit.com"
 BRAND_LOGO = "/assets/logo-wordmark.svg?v=1"
@@ -83,7 +84,7 @@ def page_url(root: pathlib.Path, page: pathlib.Path) -> str:
 
 
 def event_date(event: dict) -> dt.date | None:
-    raw = str(event.get("endDate") or event.get("startDate") or "")[:10]
+    raw = event_last_active_date(event)
     try:
         return dt.date.fromisoformat(raw)
     except ValueError:

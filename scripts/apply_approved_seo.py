@@ -382,6 +382,10 @@ def main(site_root: str) -> None:
 
     def production_event_card(event, meta_by_name):
         card = approved_event_card(event, meta_by_name)
+        # This attribute is a visibility boundary, not the displayed/schema date.
+        card = re.sub(r'\bdata-end-date="[^"]*"',
+                      lambda _: 'data-end-date="' + html.escape(production_builder.event_last_active_date(event), quote=True) + '"',
+                      card, count=1)
         # The pinned renderer predates complete billing. Keep guests without
         # curated profiles visible without generating nonexistent profile links.
         artist_links = production_builder.billing_links(event, billing_artists)

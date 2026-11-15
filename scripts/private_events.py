@@ -12,6 +12,7 @@ import re
 from zoneinfo import ZoneInfo
 
 from show_information_model import PRIVATE_ADDRESS_FIELDS, is_private_event
+from event_visibility import event_is_past
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -88,11 +89,11 @@ def apply(root=ROOT, as_of=None):
             pinned = find(event)
             if not pinned:
                 kept.append(event)
-            elif pinned['id'] not in seen and (pinned.get('endDate') or pinned['startDate']) >= day:
+            elif pinned['id'] not in seen and not event_is_past(pinned, day):
                 kept.append(copy.deepcopy(pinned))
                 seen.add(pinned['id'])
         kept.extend(copy.deepcopy(event) for event in private if event['id'] not in seen
-                    and (event.get('endDate') or event['startDate']) >= day)
+                    and not event_is_past(event, day))
         if rows != kept:
             path.write_text(json.dumps(kept, indent=2, ensure_ascii=False) + '\n')
             changed_files += 1
@@ -209,7 +210,7 @@ def verify(site, root=ROOT):
     catalog = json.loads((site / 'assets/fan-show-catalog.json').read_text())
     paths = {path for event in private for path in
              [event_path(event), *event.get('legacyEventPaths', [])]}
-    upcoming = [event for event in private if (event.get('endDate') or event['startDate']) >= catalog['asOf']]
+    upcoming = [event for event in private if not event_is_past(event, catalog['asOf'])]
     by_path = {show['path']: show for show in catalog['shows']}
     for event in upcoming:
         assert 'Private Event' in by_path[event_path(event)]['name'], 'Private listing missing or unlabeled'

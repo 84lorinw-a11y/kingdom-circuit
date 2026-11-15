@@ -8,6 +8,10 @@ import re
 import shutil
 from datetime import datetime
 from zoneinfo import ZoneInfo
+try:
+    from .event_visibility import event_last_active_date, event_is_past
+except ImportError:
+    from event_visibility import event_last_active_date, event_is_past
 
 # Use Pacific time for the rollover so a show dated "today" is never removed
 # while it could still be happening anywhere in the continental U.S.
@@ -35,12 +39,11 @@ def write_json(path: pathlib.Path, value: list) -> None:
 
 
 def event_last_date(event: dict) -> str:
-    return str(event.get("endDate") or event.get("startDate") or "").strip()[:10]
+    return event_last_active_date(event)
 
 
 def is_past_event(event: dict, cutoff: str) -> bool:
-    last_date = event_last_date(event)
-    return bool(re.fullmatch(r"\d{4}-\d{2}-\d{2}", last_date)) and last_date < cutoff
+    return event_is_past(event, cutoff)
 
 
 def prune_json_file(path: pathlib.Path, cutoff: str) -> tuple[int, int]:
@@ -58,7 +61,30 @@ def prune_json_file(path: pathlib.Path, cutoff: str) -> tuple[int, int]:
 
 
 def page_last_date(text: str) -> str | None:
-    # Prefer endDate for multi-day events. Generated event pages expose these in JSON-LD.
+    # Use the same boundary as source pruning, without altering Event schema.
+    def event_dates(value):
+        if isinstance(value, list):
+            return [day for item in value for day in event_dates(item)]
+        if not isinstance(value, dict):
+            return []
+        kinds = value.get('@type', [])
+        kinds = [kinds] if isinstance(kinds, str) else kinds
+        dates = []
+        if set(kinds) & {'Event', 'MusicEvent', 'Festival'}:
+            day = event_last_active_date(value)
+            if re.fullmatch(r'\d{4}-\d{2}-\d{2}', day):
+                dates.append(day)
+        return dates + [day for item in value.values() if isinstance(item, (dict, list))
+                        for day in event_dates(item)]
+    dates = []
+    for raw in re.findall(r'<script\b[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', text, re.I | re.S):
+        try:
+            dates.extend(event_dates(json.loads(raw)))
+        except (ValueError, TypeError):
+            continue
+    if dates:
+        return max(dates)
+    # Older documents without parseable Event schema retain their date fallback.
     end_dates = re.findall(r'"endDate"\s*:\s*"(\d{4}-\d{2}-\d{2})', text, flags=re.I)
     if end_dates:
         return max(end_dates)

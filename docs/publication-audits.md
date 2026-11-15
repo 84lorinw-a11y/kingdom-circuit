@@ -9,6 +9,8 @@ These checks run through one workflow for the nightly date update, morning full 
 
 ## Daily sequence and timing
 
+Daily expiry uses Pacific midnight. A confirmed end timestamp at or before that boundary removes a completed event from upcoming listings, even when its local end date is the new calendar day. Original dates, times, archive records and permanent event URLs remain intact. Missing, ambiguous or contradictory end timestamps retain the conservative final date rule. Festivals that are still continuing remain upcoming. The same effective visibility date is used for cards, artist counts, browser filters and archive selection.
+
 | Local time | GitHub work |
 | --- | --- |
 | 00:15 America/Los_Angeles (normally 02:15 Central) | Archive before pruning, refresh dates from accepted data, validate, publish, verify. No source scan. |

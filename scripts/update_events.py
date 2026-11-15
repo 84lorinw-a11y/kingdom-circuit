@@ -37,6 +37,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 from instagram_monitor import scan_instagram_index
+from event_visibility import event_last_active_date
 import canadian_event_guard
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -406,8 +407,8 @@ def parse_date_prefix(value: Any, timezone_name: str = "") -> tuple[str, str]:
 
 
 def event_is_future(event: dict[str, Any], today: date) -> bool:
-    # Multi-day festivals should remain visible through their final day.
-    date_text = str(event.get("endDate") or event.get("startDate") or "")
+    # Preserve real multiday dates and exclude confirmed completed overnights.
+    date_text = event_last_active_date(event)
     try:
         return date.fromisoformat(date_text) >= today
     except ValueError:
