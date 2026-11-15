@@ -10,6 +10,13 @@ import re
 from urllib.parse import urlsplit
 from zoneinfo import ZoneInfo
 
+if __package__:
+    from .catalog_clock import catalog_date
+    from .event_visibility import event_is_past
+else:
+    from catalog_clock import catalog_date
+    from event_visibility import event_is_past
+
 ROOT = Path(__file__).resolve().parents[1]
 VERIFIED_AT = "2026-09-25T18:55:43Z"
 EVENTS = (
@@ -428,7 +435,7 @@ def matches(row: dict, event: dict) -> bool:
 
 
 def apply(root: Path = ROOT, today: str | None = None) -> None:
-    today = today or dt.datetime.now(ZoneInfo("America/Los_Angeles")).date().isoformat()
+    today = today or catalog_date().isoformat()
     names = ("config/manual-events.json", "events.json", "supplemental-events.json")
     feeds = {name: json.loads((root / name).read_text(encoding="utf-8")) for name in names}
     for event in EVENTS:
@@ -445,7 +452,7 @@ def apply(root: Path = ROOT, today: str | None = None) -> None:
                     canonical["sources"].append(source)
         for name, rows in feeds.items():
             rows[:] = [r for r in rows if not matches(r, event)]
-            if name == "config/manual-events.json" or (name == "events.json" and event["endDate"] >= today):
+            if name == "config/manual-events.json" or (name == "events.json" and not event_is_past(canonical, today)):
                 record = copy.deepcopy(canonical)
                 record["id"] = event["id"] if name.startswith("config/") else "manual:" + event["id"]
                 rows.append(record)

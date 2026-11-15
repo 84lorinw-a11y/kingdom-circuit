@@ -7,6 +7,13 @@ import json
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+if __package__:
+    from .catalog_clock import catalog_date
+    from .event_visibility import event_is_past
+else:
+    from catalog_clock import catalog_date
+    from event_visibility import event_is_past
+
 ROOT = Path(__file__).resolve().parents[1]
 EVENT = {
     "id": "rock-the-pines-tyler-2027",
@@ -39,7 +46,7 @@ EVENT = {
 
 
 def apply(root: Path = ROOT) -> None:
-    upcoming = EVENT["endDate"] >= dt.datetime.now(ZoneInfo("America/Los_Angeles")).date().isoformat()
+    upcoming = not event_is_past(EVENT, catalog_date())
     for relative in ("config/manual-events.json", "events.json", "supplemental-events.json"):
         path = root / relative
         records = json.loads(path.read_text(encoding="utf-8"))

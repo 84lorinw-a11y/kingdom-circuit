@@ -20,6 +20,11 @@ import xml.etree.ElementTree as ET
 from catalog_removals import public_event, resolved_location_event
 from event_visibility import event_last_active_date
 
+if __package__:
+    from .catalog_clock import catalog_date
+else:
+    from catalog_clock import catalog_date
+
 ORIGIN = 'https://kingdomcircuit.com'
 STATE_FILE = 'config/url-continuity.json'
 RULES_FILE = 'config/event-identity-overrides.json'
@@ -476,7 +481,7 @@ def calendar_robots(path, text):
 
 
 def finalize(root, site, today=None):
-    today = today or dt.datetime.now(dt.timezone.utc).date().isoformat()
+    today = today or catalog_date().isoformat()
     # Build overlays copy source trees; these registries are never public assets.
     for internal in (STATE_FILE, RULES_FILE, WORK_FILE):
         (site / internal).unlink(missing_ok=True)

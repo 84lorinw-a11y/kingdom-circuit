@@ -18,6 +18,12 @@ from apply_sep26_requested_lineups import patch_event as apply_reviewed_lineup
 from apply_mayia_postponement import apply as apply_mayia_postponement
 from apply_oct2_verified_shows import OWNER_HELD_IDS
 
+
+if __package__:
+    from .catalog_clock import catalog_date
+else:
+    from catalog_clock import catalog_date
+
 POLICY_VERSION = 7
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
@@ -421,7 +427,7 @@ def held_festival_candidates(
     lineup confirms them. They must not disappear silently while awaiting that
     review, especially when the tracked performer is a priority artist.
     """
-    today = datetime.now(timezone.utc).date().isoformat()
+    today = catalog_date().isoformat()
     unresolved: list[dict[str, Any]] = []
 
     for candidate in candidates:

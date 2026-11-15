@@ -14,10 +14,15 @@ from show_information_model import normalize as show_information
 from page_render_cache import RenderCache
 from event_visibility import event_last_active_date, event_is_past
 
+if __package__:
+    from .catalog_clock import catalog_date
+else:
+    from catalog_clock import catalog_date
+
 REPO = pathlib.Path.cwd()
 OUT = REPO / "_site"
 SITE = "https://kingdomcircuit.com"
-TODAY = dt.datetime.now(ZoneInfo("America/Los_Angeles")).date()
+TODAY = catalog_date()
 VISIBILITY_CUTOFF = TODAY
 GA_ID = "G-N2KK9XF4TJ"
 FAVICON_HTML = '''<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-kc-stacked-v2-48.png"><link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-kc-stacked-v2-96.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-kc-stacked-v2-180.png"><link rel="manifest" href="/manifest.webmanifest"><meta name="apple-mobile-web-app-title" content="Kingdom Circuit">'''

@@ -8,6 +8,13 @@ import json
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+if __package__:
+    from .catalog_clock import catalog_date
+    from .event_visibility import event_is_past
+else:
+    from catalog_clock import catalog_date
+    from event_visibility import event_is_past
+
 ROOT = Path(__file__).resolve().parents[1]
 PORTRAIT = "assets/artists/egr-spotify-primary.jpg"
 PORTRAIT_SOURCE = "https://open.spotify.com/artist/4EJIkbig1thbV3C3B68c56"
@@ -102,7 +109,7 @@ def write(path: Path, data) -> None:
 
 
 def apply(root: Path = ROOT, today: str | None = None) -> None:
-    today = today or dt.datetime.now(ZoneInfo("America/Los_Angeles")).date().isoformat()
+    today = today or catalog_date().isoformat()
     files = ("config/manual-events.json", "events.json", "supplemental-events.json")
     feeds = {name: json.loads((root / name).read_text(encoding="utf-8")) for name in files}
     history_path = root / "event-history.json"
@@ -128,7 +135,7 @@ def apply(root: Path = ROOT, today: str | None = None) -> None:
             canonical.pop(key, None)
         for name, rows in feeds.items():
             rows[:] = [r for r in rows if not matches(r, event)]
-            if name == "config/manual-events.json" or (name == "events.json" and event["endDate"] >= today):
+            if name == "config/manual-events.json" or (name == "events.json" and not event_is_past(canonical, today)):
                 record = copy.deepcopy(canonical)
                 record["id"] = event["id"] if name.startswith("config/") else "manual:" + event["id"]
                 rows.append(record)

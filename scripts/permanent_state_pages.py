@@ -13,6 +13,11 @@ from apply_oct3_concert_corrections import rejected
 from catalog_removals import location_review_event, public_event, removed_event
 from add_past_show_archives import is_test, trusted
 
+if __package__:
+    from .catalog_clock import catalog_date
+else:
+    from catalog_clock import catalog_date
+
 REGISTRY = "config/permanent-state-pages.json"
 US_CODES = set("AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY PR".split())
 CANADIAN_REGIONS = {
@@ -125,7 +130,7 @@ def approved_history(site, source):
     spec.loader.exec_module(module)
     module.configure_environment(True)
     events, _, _ = module.load_source_history(
-        [source / "event-history.json"], site, dt.datetime.now(ZoneInfo("America/Los_Angeles")).date())
+        [source / "event-history.json"], site, catalog_date())
     return [public_event(event) for event in events if eligible(event)]
 
 

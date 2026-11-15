@@ -10,10 +10,11 @@ import re
 import struct
 import xml.etree.ElementTree as ET
 from urllib.parse import unquote, urlsplit
-from zoneinfo import ZoneInfo
 
 from finalize_artist_schedule_years import apply as verify_artist_schedule_years
 from artist_portraits import verify_site as verify_artist_portraits
+from event_visibility import event_last_active_date
+from catalog_clock import catalog_date
 
 
 INACTIVE = {"cancelled", "canceled", "postponed", "merged"}
@@ -64,15 +65,16 @@ def png_ihdr(path: pathlib.Path) -> tuple[int, int, int, int]:
 
 
 def event_last_date(event: dict) -> dt.date | None:
-    raw = str(event.get("endDate") or event.get("startDate") or "")[:10]
+    raw = event_last_active_date(event)
     try:
         return dt.date.fromisoformat(raw)
     except ValueError:
         return None
 
 
-def current_808_count(site: pathlib.Path) -> int:
-    cutoff = dt.datetime.now(ZoneInfo("America/Los_Angeles")).date()
+def current_808_count(site: pathlib.Path, *, as_of=None) -> int:
+    cutoff = (dt.date.fromisoformat(str(as_of)) if as_of is not None
+              else catalog_date())
     rows: list[dict] = []
     for relative in ("events.json", "supplemental-events.json"):
         payload = json.loads(read(site / relative))

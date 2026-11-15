@@ -20,6 +20,11 @@ from zoneinfo import ZoneInfo
 import mobile_discovery as mobile
 from mobile_discovery import Document, replace_spans, source_html
 from artist_thumbnail_framing import CROPS as HOME_ARTIST_CIRCLE_CROPS, frame_portrait
+if __package__:
+    from .catalog_clock import catalog_date
+else:
+    from catalog_clock import catalog_date
+
 SITE_BASE = "/"
 SITE_ORIGIN = "https://kingdomcircuit.com"
 
@@ -101,7 +106,7 @@ def neighbor_states(state, states):
 
 def today():
     # Match the published catalog's existing expiration boundary.
-    return datetime.now(ZoneInfo('America/Los_Angeles')).date()
+    return catalog_date()
 
 
 def weekend_window(day):

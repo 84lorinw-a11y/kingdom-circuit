@@ -9,6 +9,11 @@ import re
 import shutil
 import sys
 if __package__:
+    from .catalog_clock import catalog_date
+else:
+    from catalog_clock import catalog_date
+
+if __package__:
     from .page_render_cache import RenderCache, digest
 else:
     from page_render_cache import RenderCache, digest
@@ -372,6 +377,7 @@ def main(site_root: str) -> None:
         raise SystemExit(f"Approved SEO source is missing: {overlay_path}")
 
     overlay = load_module("kc_approved_overlay", overlay_path)
+    overlay.TODAY = catalog_date()
     overlay.BASE = BASE
     overlay.TEST_ORIGIN = SITE_ORIGIN
     overlay.JS_MARKER = "/* KC SEO DIRECTORY GUARD */"

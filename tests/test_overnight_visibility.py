@@ -106,7 +106,7 @@ class OvernightVisibilityTests(unittest.TestCase):
             @classmethod
             def now(cls, tz=None):
                 return cls(2026,11,14,8,0,tzinfo=tz)
-        with tempfile.TemporaryDirectory() as tmp, patch.object(archive.dt,'datetime',FixedDateTime):
+        with tempfile.TemporaryDirectory() as tmp, patch.object(archive, 'catalog_date', return_value=FixedDateTime.now().date()):
             root = Path(tmp)
             history = {'events':[{'event':event, 'observedOnOrAfterEventDate':True}]}
             (root/'event-history.json').write_text(json.dumps(history))

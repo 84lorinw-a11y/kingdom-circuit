@@ -23,6 +23,11 @@ from update_events import (
     write_json,
 )
 
+if __package__:
+    from .catalog_clock import catalog_date
+else:
+    from catalog_clock import catalog_date
+
 ROOT = Path(__file__).resolve().parents[1]
 WEBSITE_EVENTS_FILE = ROOT / "artist-website-events.json"
 SEED_EVENTS_FILE = ROOT / "config" / "artist-website-seed-events.json"
@@ -33,7 +38,7 @@ def main() -> int:
     apply_private(ROOT)
     private = private_records(ROOT)
     checked_at = iso_z(now_utc())
-    today = now_utc().date()
+    today = catalog_date()
 
     existing = load_json(EVENTS_FILE, [])
     website_events = load_json(WEBSITE_EVENTS_FILE, [])

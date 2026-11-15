@@ -7,6 +7,13 @@ import json
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+if __package__:
+    from .catalog_clock import catalog_date
+    from .event_visibility import event_is_past
+else:
+    from catalog_clock import catalog_date
+    from event_visibility import event_is_past
+
 ROOT = Path(__file__).resolve().parents[1]
 # November 7: the owner reapproved the verified Dallas performance. Keep the
 # shared hold registry for future editorial decisions and all refresh guards.
@@ -18,7 +25,7 @@ def key(event):
 
 
 def apply(root: Path = ROOT, today: str | None = None):
-    today = today or datetime.now(ZoneInfo("America/Los_Angeles")).date().isoformat()
+    today = today or catalog_date().isoformat()
     wanted = json.loads((root / "config/oct2-verified-shows.json").read_text())
     paths = ("events.json", "supplemental-events.json", "config/manual-events.json")
     feeds = {name: json.loads((root / name).read_text()) for name in paths}
@@ -44,7 +51,7 @@ def apply(root: Path = ROOT, today: str | None = None):
             rows[:] = [row for row in rows if key(row) != event_id]
             if name == "config/manual-events.json":
                 rows.append(dict(copy.deepcopy(canonical), id=event_id))
-            elif name == "events.json" and (canonical.get("endDate") or canonical["startDate"]) >= today:
+            elif name == "events.json" and not event_is_past(canonical, today):
                 rows.append(copy.deepcopy(canonical))
         for row in historical:
             if key(row) == event_id:

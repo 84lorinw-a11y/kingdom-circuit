@@ -7,6 +7,12 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
+
+if __package__:
+    from .catalog_clock import catalog_date
+else:
+    from catalog_clock import catalog_date
+
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 EVENTS_FILE = ROOT / "events.json"
@@ -123,7 +129,7 @@ def main() -> int:
         add_source(event, source_name, source_url)
         found_stops.add(key)
 
-    today = date.today().isoformat()
+    today = catalog_date().isoformat()
     required_stops = {key for key in INDIE_TOUR_STOPS if key[0] >= today}
     missing = sorted(required_stops - found_stops)
     if missing:

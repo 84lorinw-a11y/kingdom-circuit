@@ -69,9 +69,14 @@ class EgrBizzleRefreshTests(unittest.TestCase):
         self.assertEqual([self.other_show], self.read("supplemental-events.json"))
         self.assertEqual(2, len(self.read("config/manual-events.json")))
 
-    def test_overnight_show_remains_until_its_final_day(self):
-        self.apply(today="2026-10-04")
+    def test_midnight_show_expires_at_pacific_rollover_and_retains_source_end(self):
+        self.apply(today="2026-10-03")
         self.assertEqual(["Chandler"], [e["city"] for e in self.read("events.json")])
+        self.apply(today="2026-10-04")
+        self.assertEqual([], self.read("events.json"))
+        retained = next(e for e in self.read("config/manual-events.json") if e["city"] == "Chandler")
+        self.assertEqual("2026-10-04", retained["endDate"])
+        self.assertEqual("2026-10-04T00:00:00-07:00", retained["endDateTime"])
 
     def test_midnight_finish_is_one_evening_but_real_multi_day_events_keep_range(self):
         event = repair.EVENTS[1]

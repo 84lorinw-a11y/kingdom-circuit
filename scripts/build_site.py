@@ -20,6 +20,11 @@ from pathlib import Path
 from typing import Any, Iterable
 from urllib.parse import quote, urlencode, urlparse
 
+if __package__:
+    from .catalog_clock import catalog_date
+else:
+    from catalog_clock import catalog_date
+
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = ROOT / "_site"
 BASE_URL = "https://kingdomcircuit.com"
@@ -1069,7 +1074,7 @@ def source_fallback_index() -> str:
 
 
 def generate_site(output_dir: Path, today: date | None = None) -> dict[str, int]:
-    today = today or datetime.now(timezone.utc).date()
+    today = today or catalog_date()
     events = normalize_events(load_json(ROOT / "events.json", []))
     status = load_json(ROOT / "run-status.json", {})
     artist_config = load_json(ROOT / "config" / "artists.json", [])

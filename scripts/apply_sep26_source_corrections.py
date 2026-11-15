@@ -21,6 +21,13 @@ from apply_oct6_show_audit import apply as apply_oct6_audit
 from apply_verified_show_information import (enrich as enrich_reviewed_information,
     apply as restore_reviewed_information)
 
+if __package__:
+    from .catalog_clock import catalog_date
+    from .event_visibility import event_is_past
+else:
+    from catalog_clock import catalog_date
+    from event_visibility import event_is_past
+
 ROOT = Path(__file__).resolve().parents[1]
 DOVE_EVENT_ID = "bandsintown:1040305060"
 DOVE_ARTWORK = {
@@ -116,7 +123,7 @@ def apply(root: Path = ROOT, today: str | None = None) -> None:
     # A fresh provider row can contain a reviewed old venue label. Restore
     # guarded old-to-new corrections before comparing duplicate identities.
     restore_reviewed_information(root)
-    today = today or dt.datetime.now(ZoneInfo("America/Los_Angeles")).date().isoformat()
+    today = today or catalog_date().isoformat()
     names = ("events.json", "supplemental-events.json", "config/manual-events.json")
     feeds = {name: json.loads((root / name).read_text()) for name in names}
     history_path = root / "event-history.json"
@@ -148,7 +155,7 @@ def apply(root: Path = ROOT, today: str | None = None) -> None:
                 canonical = enrich_reviewed_information(canonical, registry["events"])
         for name, rows in feeds.items():
             rows[:] = [row for row in rows if identity(row) != event_id]
-            if name == "events.json" and wanted["startDate"] >= today:
+            if name == "events.json" and not event_is_past(canonical, today):
                 rows.append(copy.deepcopy(canonical))
             elif name == "config/manual-events.json" and event_id != CLEVELAND_ID:
                 rows.append(dict(copy.deepcopy(canonical), id=event_id))
