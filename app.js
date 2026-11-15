@@ -439,7 +439,7 @@ const ARTIST_ROSTER_ORDER = [
   "47Quay",
   "Jay Manwell",
   "HypemanPrince",
-  "FSG Lexy",
+  "FSG LEXY",
   "Aable",
   "F.L.O.G.I.C.",
   "DreBeeze Da Godson",
