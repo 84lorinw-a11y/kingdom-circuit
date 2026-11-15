@@ -15,6 +15,7 @@ from pathlib import Path
 import re
 
 from build_seo_site import artist_path, event_path, merge_events, norm, scheduled
+from event_visibility import event_last_active_date
 from url_continuity import flatten_redirects, merge_details, safe_path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -74,7 +75,10 @@ def source_inventory(repo, day):
         date.fromisoformat(end)
         if end < start:
             raise ValueError(f'Source event ends before it starts: {event.get("id")}')
-        if end < day:
+        # Catalog end is the visibility boundary. Recorded local dates and
+        # exact timestamps remain authoritative source/schema facts below.
+        active_end = event_last_active_date(event)
+        if active_end < day:
             continue
         event_id = event.get('id')
         if not isinstance(event_id, str) or not event_id:
@@ -86,12 +90,13 @@ def source_inventory(repo, day):
         if path in retired:
             continue
         if path not in expected:
-            expected[path] = {'date': start, 'end': end, 'artists': set(), 'sourceIds': [],
+            expected[path] = {'date': start, 'end': active_end, 'sourceEnd': end,
+                              'artists': set(), 'sourceIds': [],
                               'event': deepcopy(event)}
         else:
             expected[path]['event'] = merge_details(expected[path]['event'], event)
         record = expected[path]
-        if (record['date'], record['end']) != (start, end):
+        if (record['date'], record['sourceEnd'], record['end']) != (start, end, active_end):
             raise ValueError(f'Conflicting source dates for retained URL: {path}')
         record['artists'].update(norm(name) for name in event.get('artists', []) if name)
         record['sourceIds'].append(event_id)

@@ -176,6 +176,51 @@ class PublicationInventoryTests(unittest.TestCase):
         self.save_catalog()
         self.assert_error('source date mismatch')
 
+    def test_overnight_visibility_matches_catalog_without_changing_schema_end(self):
+        from publication_audit import event_fact_errors
+        from build_seo_site import event_schema
+        self.event.update(endDate='2026-11-10', startTime='20:00', endTime='01:00',
+                          startDateTime='2026-11-09T20:00:00-05:00',
+                          endDateTime='2026-11-10T01:00:00-05:00',
+                          timezone='America/New_York')
+        self.write('events.json', [self.event])
+        self.catalog['shows'][0]['end'] = '2026-11-09'
+        self.save_catalog()
+        self.assertEqual([], self.verify()['errors'])
+        path = event_path(self.event)
+        record = self.inventory.source_records(self.repo, self.day)[path]
+        self.assertEqual('2026-11-10', record['endDate'])
+        self.assertEqual('2026-11-10T01:00:00-05:00', record['schemaEndDate'])
+        schema = event_schema(self.event)
+        self.assertFalse(any(error.get('field') == 'endDate'
+                             for error in event_fact_errors(path, record, [schema])))
+        schema['endDate'] = '2026-11-09'
+        self.assertTrue(any(error.get('field') == 'endDate'
+                            for error in event_fact_errors(path, record, [schema])))
+        for wrong in ('2026-11-08', '2026-11-10'):
+            self.catalog['shows'][0]['end'] = wrong
+            self.save_catalog()
+            self.assert_error('source date mismatch')
+
+    def test_completed_overnight_must_leave_current_inventory(self):
+        self.event.update(startDate='2026-11-08', endDate=self.day,
+                          startTime='22:00', endTime='01:00',
+                          startDateTime='2026-11-08T22:00:00-06:00',
+                          endDateTime='2026-11-09T01:00:00-06:00')
+        self.write('events.json', [self.event])
+        self.catalog['shows'] = [self.show(self.event)]
+        self.save_catalog()
+        self.assert_error('Unexpected catalog show')
+        self.catalog['shows'] = []
+        self.catalog['artists'][artist_path(self.artist['name'])] = []
+        self.save_catalog()
+        self.assertEqual([], self.verify()['errors'])
+
+    def test_source_end_before_start_remains_invalid_with_visibility_projection(self):
+        self.event.update(endDate='2026-11-08', endDateTime='2026-11-08T23:00:00-06:00')
+        self.write('events.json', [self.event])
+        self.assert_error('Source event ends before it starts')
+
     def test_missing_source_input_fails_closed(self):
         (self.repo / 'events.json').unlink()
         self.assert_error('source inventory')
