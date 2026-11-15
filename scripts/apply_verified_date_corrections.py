@@ -50,6 +50,7 @@ def patch_event(event):
     # A different future move still requires review.
     if event.get("startDate") not in SCOOTIE_REVIEWED_DATES:
         return
+    previous_start_time = event.get('startTime')
     event.update(SCOOTIE_RESCHEDULE_DATES)
     if event.get("status") not in {"cancelled", "canceled", "postponed", "merged"}:
         event["status"] = "rescheduled"
@@ -61,6 +62,28 @@ def patch_event(event):
               "type": "manual_verified", "authority": "organizer", "priority": 115}
     event["sources"] = [source] + [row for row in event.get("sources", [])
                                    if row.get("url") != SCOOTIE_RESCHEDULE_URL]
+    # A lone provider reimport can remain after the old-date aliases expire.
+    # Retain the published identity and venue so the existing reviewed facts
+    # and links registries still match this exact rescheduled performance.
+    if (identifier in SCOOTIE_IDS
+            and previous_start_time == '18:00'
+            and event.get('city') == 'Houston' and event.get('state') == 'TX'
+            and event.get('country') == 'US' and event.get('address') == '3400 Main St'
+            and event.get('artists') == ['Scootie Wop']
+            and event.get('venue') in {'MATCH - Midtown Arts and Theater Center Houston',
+                                       'Match Midtown Arts & Theater Center Houston'}):
+        event['venue'] = 'Match Midtown Arts & Theater Center Houston'
+        if event.get('title') == 'Scootie Wop at MATCH':
+            event['title'] = 'Scootie Wop @ MATCH - Midtown Arts and Theater Center Houston'
+        if event.get('ticketUrl') == ('https://www.bandsintown.com/e/'
+                '1039613019-scootie-wop-at-match-midtown-arts-and-theater-center-houston'):
+            event['ticketUrl'] = ''
+        for alias in ('manual:' + SCOOTIE_MANUAL_ID, SCOOTIE_PROVIDER_ALIAS):
+            if alias not in event.setdefault('mergedFromIds', []):
+                event['mergedFromIds'].append(alias)
+        if not event.get('legacyEventPaths'):
+            event['legacyEventPaths'] = [
+                '/event/scootie-wop-at-match-2026-11-14-houston-939e4b/']
 
 
 def reconcile_scootie_duplicates(rows):

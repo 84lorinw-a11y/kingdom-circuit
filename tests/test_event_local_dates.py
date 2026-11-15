@@ -12,6 +12,58 @@ from apply_verified_date_corrections import (patch_event, normalize_provider_ide
 
 
 class LocalConcertDateTests(unittest.TestCase):
+    def test_single_scootie_reimport_retains_reviewed_public_details(self):
+        from apply_verified_date_corrections import reconcile_scootie_duplicates
+        from apply_verified_show_information import enrich
+        root = Path(__file__).resolve().parents[1]
+        provider = {
+            'id': SCOOTIE_CANONICAL_ID, 'title': 'Scootie Wop at MATCH',
+            'startDate': '2027-05-01', 'startTime': '18:00',
+            'venue': 'MATCH - Midtown Arts and Theater Center Houston',
+            'address': '3400 Main St', 'city': 'Houston', 'state': 'TX', 'country': 'US',
+            'artists': ['Scootie Wop'], 'officialUrl': 'https://www.instagram.com/p/DfTOHOODGjO/',
+            'ticketUrl': 'https://www.bandsintown.com/e/1039613019-scootie-wop-at-match-midtown-arts-and-theater-center-houston',
+        }
+        expected = {
+            'title': 'Scootie Wop @ MATCH - Midtown Arts and Theater Center Houston',
+            'venue': 'Match Midtown Arts & Theater Center Houston',
+            'ticketUrl': '', 'ticketUrlVerified': False,
+            'organizer': {'name': 'APTITUDE'}, 'postalCode': '77002',
+            'venueUrl': 'https://matchouston.org/',
+            'venueInstagram': 'https://www.instagram.com/matchouston/',
+            'organizerWebsite': 'https://www.weareaptitude.org/',
+            'organizerInstagram': 'https://www.instagram.com/weareaptitude/',
+            'mergedFromIds': ['manual:scootie-wop-match-houston-2026', SCOOTIE_PROVIDER_ALIAS],
+            'legacyEventPaths': ['/event/scootie-wop-at-match-2026-11-14-houston-939e4b/'],
+        }
+        rows = [copy.deepcopy(provider)]
+        reconcile_scootie_duplicates(rows)
+        self.assertEqual(1, len(rows))
+        event = rows[0]
+        patch_event(event)
+        for name in ('verified-show-information.json', 'verified-show-links.json'):
+            event = enrich(event, json.loads((root / 'config' / name).read_text())['events'])
+        self.assertEqual(expected, {key: event.get(key) for key in expected})
+        once = copy.deepcopy(event)
+        patch_event(event)
+        self.assertEqual(once, event)
+        for changes in ({'address': 'Another venue address'}, {'venue': 'A different venue'},
+                        {'startTime': '21:00'},
+                        {'id': 'another-show', 'officialUrl': 'https://example.test/other'},
+                        {'startDate': '2027-06-01'}):
+            with self.subTest(changes=changes):
+                other = {**provider, **changes}
+                before = copy.deepcopy(other)
+                patch_event(other)
+                for field in ('title', 'venue', 'ticketUrl', 'mergedFromIds', 'legacyEventPaths'):
+                    self.assertEqual(before.get(field), other.get(field), field)
+        newer = dict(provider, ticketUrl='https://example.test/new-reviewed-ticket',
+                     mergedFromIds=['another-retained-alias'], legacyEventPaths=['/event/other-retained-path/'])
+        patch_event(newer)
+        self.assertEqual('https://example.test/new-reviewed-ticket', newer['ticketUrl'])
+        self.assertIn('another-retained-alias', newer['mergedFromIds'])
+        self.assertIn('/event/other-retained-path/', newer['legacyEventPaths'])
+
     def test_observed_provider_id_change_keeps_existing_public_identity(self):
         from apply_verified_show_artwork import patch_event as pin_artwork
         import build_seo_site as builder
