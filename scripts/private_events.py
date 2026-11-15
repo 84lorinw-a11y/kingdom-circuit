@@ -14,6 +14,11 @@ from zoneinfo import ZoneInfo
 from show_information_model import PRIVATE_ADDRESS_FIELDS, is_private_event
 from event_visibility import event_is_past
 
+if __package__:
+    from .catalog_clock import catalog_date
+else:
+    from catalog_clock import catalog_date
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -74,7 +79,7 @@ def apply(root=ROOT, as_of=None):
     private = records(root)
     def find(event):
         return next((item for item in private if matches(event, item)), None)
-    day = as_of or datetime.now(ZoneInfo('America/Los_Angeles')).date().isoformat()
+    day = as_of or catalog_date().isoformat()
     changed_files = 0
     for name in ('events.json', 'supplemental-events.json'):
         path = root / name

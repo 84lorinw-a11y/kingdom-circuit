@@ -21,6 +21,8 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import quote, urlparse
 from urllib.request import Request, urlopen
 
+from catalog_clock import catalog_date
+
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 EVENTS_FILE = ROOT / "events.json"
@@ -287,7 +289,7 @@ def fetch_event_page(url: str) -> tuple[str, str, str]:
 
 def main() -> int:
     started = datetime.now(timezone.utc)
-    today = started.date().isoformat()
+    today = catalog_date().isoformat()
     artists = load_json(ARTISTS_FILE, [])
     if not isinstance(artists, list):
         raise SystemExit("config/artists.json must be an array")

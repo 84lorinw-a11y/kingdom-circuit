@@ -31,8 +31,7 @@ class September24RegressionTests(unittest.TestCase):
             (root / "config").mkdir()
             for relative in ("config/manual-events.json", "events.json", "supplemental-events.json"):
                 (root / relative).write_text("[]")
-            with patch.object(rock.dt, "datetime", wraps=datetime) as clock:
-                clock.now.return_value = datetime.fromisoformat("2027-04-24T12:00:00+00:00")
+            with patch.object(rock, "catalog_date", return_value=datetime.fromisoformat("2027-04-24T12:00:00+00:00").date()):
                 rock.apply(root)
                 once = (root / "events.json").read_text()
                 rock.apply(root)
@@ -53,8 +52,7 @@ class September24RegressionTests(unittest.TestCase):
             (root / "config").mkdir()
             for relative in ("config/manual-events.json", "events.json", "supplemental-events.json"):
                 (root / relative).write_text(json.dumps([rock.EVENT]))
-            with patch.object(rock.dt, "datetime", wraps=datetime) as clock:
-                clock.now.return_value = datetime.fromisoformat("2027-04-25T12:00:00+00:00")
+            with patch.object(rock, "catalog_date", return_value=datetime.fromisoformat("2027-04-25T12:00:00+00:00").date()):
                 rock.apply(root)
                 rock.apply(root)
             for relative in ("events.json", "supplemental-events.json"):

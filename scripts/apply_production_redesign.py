@@ -6,6 +6,11 @@ import re
 import sys
 
 
+if __package__:
+    from .catalog_clock import catalog_date
+else:
+    from catalog_clock import catalog_date
+
 UNKNOWN_LOCATIONS = {"location not confirmed", "location to be announced"}
 
 
@@ -43,6 +48,7 @@ def main(argv=None):
     ]
     if missing:
         raise SystemExit("Approved redesign interface missing callable(s): " + ", ".join(missing))
+    redesign.site_today = catalog_date
     configure_new_show_keys(redesign)
     original_argv = sys.argv
     try:

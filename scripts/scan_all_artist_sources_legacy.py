@@ -40,6 +40,8 @@ from update_events import (
     write_json,
 )
 
+from catalog_clock import catalog_date
+
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 EVENTS_FILE = ROOT / "events.json"
@@ -413,7 +415,7 @@ def compact_candidate(event: dict[str, Any], reason: str) -> dict[str, Any]:
 def main() -> int:
     started = utc_now()
     checked_at = iso_z(started)
-    today = started.date()
+    today = catalog_date()
 
     artists = load_json(ARTISTS_FILE, [])
     existing = load_json(EVENTS_FILE, [])

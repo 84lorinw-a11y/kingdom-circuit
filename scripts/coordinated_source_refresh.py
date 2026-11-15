@@ -19,6 +19,7 @@ import sys
 
 from apply_curated_catalog_policy import curate_event, is_known_duplicate_fragment
 from canadian_event_guard import today_cutoff
+from event_visibility import event_is_past
 from catalog_removals import removed_event
 from collect_bandsintown_rest import country_code
 from collect_artist_website_events import eligible_website
@@ -171,7 +172,10 @@ def eligible_prior(event, root, artists, cutoff):
         end = date.fromisoformat(str(event.get("endDate") or ""))
     except ValueError:
         end = start
-    return max(start, end).isoformat() >= cutoff
+    # Preserve the existing conservative fallback for malformed/reversed end
+    # dates while using the shared policy for consistent confirmed end clocks.
+    boundary = dict(event, endDate=max(start, end).isoformat())
+    return not event_is_past(boundary, cutoff)
 
 
 def check_status(status, candidates, artists, started):

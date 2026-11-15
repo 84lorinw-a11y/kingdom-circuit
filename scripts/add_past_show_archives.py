@@ -8,6 +8,11 @@ import re
 from zoneinfo import ZoneInfo
 from event_visibility import event_last_active_date
 
+if __package__:
+    from .catalog_clock import catalog_date
+else:
+    from catalog_clock import catalog_date
+
 SITE_ORIGIN = "https://kingdomcircuit.com"
 BRAND_LOGO = "/assets/logo-wordmark.svg?v=1"
 GA_ID = "G-N2KK9XF4TJ"
@@ -166,7 +171,7 @@ def load_events(root: pathlib.Path) -> tuple[list[dict], dict[str, str]]:
         history = json.loads(path.read_text(encoding="utf-8"))
     except json.JSONDecodeError:
         return [], by_slug
-    today = dt.datetime.now(PACIFIC).date()
+    today = catalog_date()
     cutoff = today - dt.timedelta(days=PAST_GRACE_DAYS)
     oldest = today - dt.timedelta(days=ARCHIVE_DAYS)
     selected: dict[str, dict] = {}

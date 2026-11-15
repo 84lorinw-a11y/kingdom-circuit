@@ -141,7 +141,9 @@ jobs:
           KC_REQUESTED_MODE: ${{ inputs.refresh_mode }}
           KC_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
           KC_SCHEDULE: ${{ github.event.schedule }}
-        run: python scripts/calendar_maintenance.py --mode >> "$GITHUB_OUTPUT"
+        run: |
+          python scripts/catalog_clock.py --github-env "$GITHUB_ENV"
+          python scripts/calendar_maintenance.py --mode >> "$GITHUB_OUTPUT"
 
       - name: Snapshot Canadian bookings before automated changes
         run: python scripts/canadian_event_guard.py --snapshot "$RUNNER_TEMP/canadian-bookings.json"
@@ -536,7 +538,10 @@ jobs:
           deonte_post = "https://www.facebook.com/deonte.hall.98832/photos/-battle-creek-michigan-im-coming-im-super-thankful-and-humbled-to-announce-that-/2995157700824677/"
           deonte_artwork = "assets/events/deonte-hall-truth-in-action-2026.webp"
           deonte = [event for event in supplemental if event.get("id") == deonte_id]
-          deonte_is_upcoming = date.today().isoformat() <= "2026-09-12"
+          import sys
+          sys.path.insert(0, "scripts")
+          from catalog_clock import catalog_date
+          deonte_is_upcoming = catalog_date().isoformat() <= "2026-09-12"
           if deonte_is_upcoming and len(deonte) != 1:
               raise SystemExit("Deonte Hall submitted show missing from deployment artifact")
           if deonte_is_upcoming and deonte[0].get("officialUrl") != deonte_post:

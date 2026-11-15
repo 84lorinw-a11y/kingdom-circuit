@@ -6,6 +6,13 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 from apply_oct2_verified_shows import OWNER_HELD_IDS
 
+if __package__:
+    from .catalog_clock import catalog_date
+    from .event_visibility import event_is_past
+else:
+    from catalog_clock import catalog_date
+    from event_visibility import event_is_past
+
 BATCH = "2026-09-29-expanded-source-search"
 APPROVED_BATCHES = {BATCH, "2026-10-31-reviewed-discoveries", '2026-10-29-mike-orlando-g2g', '2026-10-29-ignite-brenno', "2026-09-30-whatuprg-announced", "2026-10-05-submitted-shows", "2026-10-06-submitted-events", "2026-10-07-submitted-events", "2026-10-07-reviewed-discoveries", "2026-10-08-reviewed-discoveries", "2026-10-09-reviewed-discoveries", "2026-10-11-reviewed-discoveries", "2026-10-17-approved-shows", "2026-10-27-approved-shows"}
 
@@ -30,7 +37,7 @@ def apply(root: Path, events: list, supplemental: list, today=None):
     path = root / "config/manual-events.json"
     if not path.exists():
         return
-    today = today or datetime.now(ZoneInfo("America/Los_Angeles")).date().isoformat()
+    today = today or catalog_date().isoformat()
     for approved in json.loads(path.read_text()):
         if approved.get("editorialBatch") not in APPROVED_BATCHES:
             continue
@@ -38,7 +45,7 @@ def apply(root: Path, events: list, supplemental: list, today=None):
             events[:] = [event for event in events if not matches(event, approved)]
             supplemental[:] = [event for event in supplemental if not matches(event, approved)]
             continue
-        if str(approved.get("endDate") or approved["startDate"]) < today:
+        if event_is_past(approved, today):
             continue
         existing = [e for e in events + supplemental if matches(e, approved)]
         # Never turn newer cancellation/postponement evidence back into a show.

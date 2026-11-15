@@ -19,7 +19,7 @@ class PrunePastEventsTests(unittest.TestCase):
             def now(cls, tz=None):
                 return cls(2026, 9, 21, 12, 0, tzinfo=tz)
 
-        with mock.patch.object(pruning, "datetime", FrozenDateTime):
+        with mock.patch.object(pruning, "catalog_date", return_value=FrozenDateTime.now().date()):
             self.assertEqual("2026-09-21", pruning.today_cutoff())
 
         self.assertTrue(

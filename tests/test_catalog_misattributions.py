@@ -94,7 +94,7 @@ class CatalogMisattributionTests(unittest.TestCase):
             (root / 'config').mkdir()
             (root / 'event-history.json').write_text(json.dumps(history))
             (root / 'config/artists.json').write_text(json.dumps([{'name': 'Ryan Ellis'}]))
-            with patch('add_past_show_archives.dt.datetime', AfterShowDate):
+            with patch.object(archives, 'catalog_date', return_value=AfterShowDate.now().date()):
                 selected, _ = archives.load_events(root)
             self.assertEqual([e['id'] for e in selected], ['official:ryan-valid'])
             self.assertEqual(json.loads((root / 'event-history.json').read_text()), history)
@@ -267,7 +267,7 @@ class LocationUnconfirmedBookingTests(unittest.TestCase):
             (root / 'event-history.json').write_text(json.dumps(history))
             (root / 'config/artists.json').write_text(json.dumps([{'name': '1K Phew'}]))
             original = (root / 'event-history.json').read_bytes()
-            with patch('add_past_show_archives.dt.datetime', AfterShowDate):
+            with patch.object(archives, 'catalog_date', return_value=AfterShowDate.now().date()):
                 selected, _ = archives.load_events(root)
             self.assertEqual([event['id'] for event in selected], [good['id']])
             self.assertEqual((root / 'event-history.json').read_bytes(), original)

@@ -25,6 +25,11 @@ from typing import Any
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 from canadian_event_guard import is_canadian
 
+if __package__:
+    from .catalog_clock import catalog_date
+else:
+    from catalog_clock import catalog_date
+
 ROOT = Path(__file__).resolve().parents[1]
 ARTISTS_FILE = ROOT / "config" / "artists.json"
 EVENTS_FILE = ROOT / "events.json"
@@ -289,7 +294,7 @@ def main() -> int:
         raise SystemExit("Expected JSON arrays for artists/events/supplemental")
 
     enabled = [a for a in artists if isinstance(a, dict) and a.get("enabled", True) is not False and a.get("name")]
-    today = date.today().isoformat()
+    today = catalog_date().isoformat()
 
     # Existing provider-owned Bandsintown rows are intentionally excluded from
     # the dedupe baseline. A record can retain a Bandsintown ID after official

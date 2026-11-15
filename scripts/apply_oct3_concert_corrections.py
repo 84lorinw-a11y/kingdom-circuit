@@ -7,6 +7,13 @@ from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+if __package__:
+    from .catalog_clock import catalog_date
+    from .event_visibility import event_is_past
+else:
+    from catalog_clock import catalog_date
+    from event_visibility import event_is_past
+
 ROOT = Path(__file__).resolve().parents[1]
 WRONG_NEHEMIAH_IDS = {
     "bandsintown:1039415097", "bandsintown:1039685355", "bandsintown:108952483",
@@ -39,7 +46,7 @@ def rejected(event):
 
 
 def apply(root=ROOT, today=None):
-    today = today or datetime.now(ZoneInfo("America/Los_Angeles")).date().isoformat()
+    today = today or catalog_date().isoformat()
     names = ("events.json", "supplemental-events.json", "config/manual-events.json", "event-history.json")
     data = {name: json.loads((root / name).read_text()) for name in names}
     rows = {name: value.get("events", []) if isinstance(value, dict) else value for name, value in data.items()}
@@ -64,7 +71,7 @@ def apply(root=ROOT, today=None):
             values[:] = [e for e in values if key(e) != wanted["id"]]
             if name == "config/manual-events.json":
                 values.append(copy.deepcopy(canonical))
-            elif name == "events.json" and (canonical.get("endDate") or canonical["startDate"]) >= today:
+            elif name == "events.json" and not event_is_past(canonical, today):
                 values.append(dict(copy.deepcopy(canonical), id="manual:" + wanted["id"]))
     for name, values in rows.items():
         values[:] = [entry for entry in values if not rejected(entry.get("event", entry))]

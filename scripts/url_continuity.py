@@ -20,6 +20,11 @@ import xml.etree.ElementTree as ET
 from catalog_removals import public_event, resolved_location_event
 from event_visibility import event_last_active_date
 
+if __package__:
+    from .catalog_clock import catalog_date
+else:
+    from catalog_clock import catalog_date
+
 ORIGIN = 'https://kingdomcircuit.com'
 STATE_FILE = 'config/url-continuity.json'
 RULES_FILE = 'config/event-identity-overrides.json'
@@ -143,6 +148,22 @@ def merge_details(preferred, other):
             result.pop(key, None)
     result['id'] = preferred['id']
     result['mergedFromIds'] = sorted(set(result.get('mergedFromIds', [])) | ({other['id']} if other['id'] != preferred['id'] else set()))
+    # Both inputs already identify the same reviewed performance. Discovery
+    # age is the earliest known observation, not whichever feed won the facts.
+    # Compare instants so an offset or fractional seconds cannot reverse age.
+    first_seen = []
+    for event in (preferred, other):
+        value = event.get('firstSeen')
+        if not isinstance(value, str):
+            continue
+        try:
+            instant = dt.datetime.fromisoformat(value.replace('Z', '+00:00'))
+        except ValueError:
+            continue
+        if instant.utcoffset() is not None:
+            first_seen.append((instant, value))
+    if first_seen:
+        result['firstSeen'] = min(first_seen, key=lambda item: item[0])[1]
     # This reviewed booking's scheduled manual seed supplies missing facts,
     # but must not reopen a later cancellation/private/provider status. A
     # retired alias marked merged does not change its surviving show's status.
@@ -476,7 +497,7 @@ def calendar_robots(path, text):
 
 
 def finalize(root, site, today=None):
-    today = today or dt.datetime.now(dt.timezone.utc).date().isoformat()
+    today = today or catalog_date().isoformat()
     # Build overlays copy source trees; these registries are never public assets.
     for internal in (STATE_FILE, RULES_FILE, WORK_FILE):
         (site / internal).unlink(missing_ok=True)

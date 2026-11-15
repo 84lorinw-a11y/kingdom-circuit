@@ -19,6 +19,11 @@ from typing import Any, Iterable
 
 from apply_oct3_concert_corrections import rejected as rejected_event
 
+if __package__:
+    from .catalog_clock import catalog_date
+else:
+    from catalog_clock import catalog_date
+
 ROOT = Path(__file__).resolve().parents[1]
 EVENT_FILES = (ROOT / "events.json", ROOT / "supplemental-events.json")
 HISTORY_FILE = ROOT / "event-history.json"
@@ -318,7 +323,7 @@ def main() -> None:
         record["event"] = canonicalize_known_event_identity(record["event"])
 
     timestamp = now_iso()
-    today = datetime.now(timezone.utc).date()
+    today = catalog_date()
     by_key: dict[str, dict[str, Any]] = {}
     for record in records:
         key = str(record.get("archiveKey") or "")

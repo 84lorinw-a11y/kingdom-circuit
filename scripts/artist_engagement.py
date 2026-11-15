@@ -14,6 +14,11 @@ import re
 from mobile_discovery import Document, replace_spans
 from national_discovery import card_records
 import shutil
+if __package__:
+    from .catalog_clock import catalog_date
+else:
+    from catalog_clock import catalog_date
+
 BASE = '/'
 MANIFEST = 'assets/artist-engagement-manifest.json'
 def source_text(site, relative):
@@ -50,7 +55,7 @@ def context(live, as_of=None):
                 if n.has('kc-rd-show-row') and listing.start < n.start < listing.end]
         artists[rel] = {'name': doc.text(names[0]), 'shows': rows,
                         'empty': not rows, 'path': BASE + rel.removesuffix('index.html')}
-    today = as_of or datetime.now(ZoneInfo('America/Los_Angeles')).date().isoformat()
+    today = as_of or catalog_date().isoformat()
     return {'asOf': today, 'shows': shows, 'artists': artists, 'statePaths': state_paths,
             'count': sum(s['end'] >= today for s in shows)}
 

@@ -15,6 +15,11 @@ from urllib.parse import urlsplit
 from zoneinfo import ZoneInfo
 
 
+if __package__:
+    from .catalog_clock import catalog_date
+else:
+    from catalog_clock import catalog_date
+
 YEAR_STYLE = '''<style data-kc-artist-schedule-years>
 body .kc-rd-show-date { display: grid; grid-template-columns: max-content max-content; row-gap: 4px; }
 body .kc-rd-show-year { grid-column: 1 / -1; font-size: .72em; font-weight: 600; letter-spacing: .06em; }
@@ -162,7 +167,7 @@ def patch_profile(document: str, root: pathlib.Path, today: dt.date) -> str:
 
 
 def apply(root: pathlib.Path, *, today: dt.date | None = None, check_only: bool = False) -> int:
-    today = today or dt.datetime.now(ZoneInfo("America/Los_Angeles")).date()
+    today = today or catalog_date()
     count = 0
     for page in sorted((root / "artists").glob("*/index.html")):
         document = page.read_text(encoding="utf-8")

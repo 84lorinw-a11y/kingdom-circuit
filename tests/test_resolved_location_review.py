@@ -291,7 +291,7 @@ class ResolvedLocationReviewTests(unittest.TestCase):
     def test_archive_projects_raw_history_to_texas_before_eligibility_without_rewriting_it(self):
         history = self.write_history(self.raw())
         original = history.read_bytes()
-        with patch.object(archives.dt, 'datetime', DayAfterShow):
+        with patch.object(archives, 'catalog_date', return_value=DayAfterShow.now().date()):
             selected, _ = archives.load_events(self.root)
         self.assertEqual(len(selected), 1)
         self.assert_resolved(selected[0])
@@ -302,7 +302,7 @@ class ResolvedLocationReviewTests(unittest.TestCase):
             with self.subTest(changes=changes):
                 history = self.write_history(self.raw(**changes))
                 original = history.read_bytes()
-                with patch.object(archives.dt, 'datetime', DayAfterShow):
+                with patch.object(archives, 'catalog_date', return_value=DayAfterShow.now().date()):
                     selected, _ = archives.load_events(self.root)
                 self.assertEqual(selected, [])
                 self.assertEqual(history.read_bytes(), original)

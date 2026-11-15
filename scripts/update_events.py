@@ -38,6 +38,7 @@ if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 from instagram_monitor import scan_instagram_index
 from event_visibility import event_last_active_date
+from catalog_clock import catalog_date
 import canadian_event_guard
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -1088,7 +1089,7 @@ def collect_reach_records_source(
         city, state = parse_city_state(location)
         if not city or state not in US_STATE_CODES:
             continue
-        start_date = infer_date(month_text, day, int(year_text), now_utc().date())
+        start_date = infer_date(month_text, day, int(year_text), catalog_date())
         if not start_date:
             continue
 
@@ -1144,7 +1145,7 @@ def collect_bandsintown_widget_source(
     if artist:
         configured_artists.append(artist)
     events: list[dict[str, Any]] = []
-    today = now_utc().date()
+    today = catalog_date()
     explicit_year = source.get("year")
     try:
         explicit_year = int(explicit_year) if explicit_year else None
@@ -1222,7 +1223,7 @@ def collect_tpr_source(
     for number, match in enumerate(pattern.finditer(text)):
         city = normalize_whitespace(match.group(5))
         state = normalize_state(match.group(6))
-        start_date = infer_date(match.group(1), int(match.group(2)), int(match.group(3)), now_utc().date())
+        start_date = infer_date(match.group(1), int(match.group(2)), int(match.group(3)), catalog_date())
         if not start_date or not state:
             continue
         ticket_url = ticket_links[number] if number < len(ticket_links) else url
@@ -1282,9 +1283,9 @@ def collect_holy_smoke_source(
         return []
     month_text = date_match.group(1)
     year = int(date_match.group(5))
-    start_date = infer_date(month_text, int(date_match.group(2)), year, now_utc().date())
+    start_date = infer_date(month_text, int(date_match.group(2)), year, catalog_date())
     end_day = date_match.group(4) or date_match.group(3) or date_match.group(2)
-    end_date = infer_date(month_text, int(end_day), year, now_utc().date())
+    end_date = infer_date(month_text, int(end_day), year, catalog_date())
     if not start_date:
         return []
     venue = str(source.get("venue") or "Rocketown")
@@ -1382,7 +1383,7 @@ def collect_space_city_source(
     )
     if url_date:
         inferred = infer_date(
-            url_date.group(1), int(url_date.group(2)), int(url_date.group(3)), now_utc().date()
+            url_date.group(1), int(url_date.group(2)), int(url_date.group(3)), catalog_date()
         )
         if inferred:
             event_date = date.fromisoformat(inferred)
@@ -1402,9 +1403,9 @@ def collect_space_city_source(
             flags=re.I,
         )[0]
         candidates = date_candidates_from_text(intro, page.datetimes[:4])
-        event_date = choose_future_date(candidates, now_utc().date())
+        event_date = choose_future_date(candidates, catalog_date())
 
-    if not event_date or event_date < now_utc().date():
+    if not event_date or event_date < catalog_date():
         return []
 
     configured_artists = [
@@ -1484,7 +1485,7 @@ def collect_holy_culture_detail(
                 collected.append(next_chunk)
             location_block = " ".join(collected)
     date_candidates = date_candidates_from_text(date_block or text, page.datetimes)
-    event_date = choose_future_date(date_candidates, now_utc().date())
+    event_date = choose_future_date(date_candidates, catalog_date())
     if not event_date:
         return []
     city, state = extract_city_state_from_block(location_block)
@@ -1606,8 +1607,8 @@ def parse_human_date_range(value: str) -> tuple[str, str]:
     )
     if range_match:
         start_month, start_day, end_month, end_day, year = range_match.groups()
-        start_date = infer_date(start_month, int(start_day), int(year), now_utc().date())
-        end_date = infer_date(end_month or start_month, int(end_day), int(year), now_utc().date())
+        start_date = infer_date(start_month, int(start_day), int(year), catalog_date())
+        end_date = infer_date(end_month or start_month, int(end_day), int(year), catalog_date())
         return start_date, end_date
 
     single_match = re.fullmatch(
@@ -1617,7 +1618,7 @@ def parse_human_date_range(value: str) -> tuple[str, str]:
     )
     if single_match:
         month, day, year = single_match.groups()
-        return infer_date(month, int(day), int(year), now_utc().date()), ""
+        return infer_date(month, int(day), int(year), catalog_date()), ""
     return "", ""
 
 
@@ -1919,7 +1920,7 @@ def collect_sevin_tour_source(
         city_text = re.sub(r"^(?:BUY\s+TICKET\s+)+", "", " ".join(match.group(1).split()), flags=re.IGNORECASE)
         city = city_text.title()
         state = normalize_state(match.group(2))
-        start_date = infer_date(match.group(4), int(match.group(5)), int(match.group(6)), now_utc().date())
+        start_date = infer_date(match.group(4), int(match.group(5)), int(match.group(6)), catalog_date())
         if not start_date or state not in US_STATE_CODES:
             continue
         venue_text = normalize_whitespace(match.group(3)).strip(" -")
@@ -2028,8 +2029,8 @@ def collect_rural_festival_source(
     match = range_pattern.search(text)
     if not match:
         return []
-    start_date = infer_date(match.group(1), int(match.group(2)), int(match.group(3)), now_utc().date())
-    end_date = infer_date(match.group(5), int(match.group(6)), int(match.group(7)), now_utc().date())
+    start_date = infer_date(match.group(1), int(match.group(2)), int(match.group(3)), catalog_date())
+    end_date = infer_date(match.group(5), int(match.group(6)), int(match.group(7)), catalog_date())
     city = str(source.get("city") or "Isle").strip()
     state = normalize_state(str(source.get("state") or "MN"))
     artists = [str(item).strip() for item in source.get("artists", []) if str(item).strip()]
@@ -3028,7 +3029,7 @@ def apply_first_seen(
 def main() -> int:
     started = now_utc()
     checked_at = iso_z(started)
-    today = started.date()
+    today = catalog_date()
     artists = [item for item in load_json(ARTISTS_FILE, []) if isinstance(item, dict) and item.get("enabled", True)]
     global TEXT_MATCH_BLOCKLIST
     TEXT_MATCH_BLOCKLIST = configure_text_match_blocklist(artists)

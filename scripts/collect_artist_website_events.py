@@ -33,6 +33,11 @@ from update_events import (
     write_json,
 )
 
+if __package__:
+    from .catalog_clock import catalog_date
+else:
+    from catalog_clock import catalog_date
+
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_FILE = ROOT / "artist-website-events.json"
 STATUS_FILE = ROOT / "artist-website-status.json"
@@ -204,7 +209,7 @@ def collect_artist(artist: dict, client: HttpClient, alias_lookup: dict[str, str
         except CollectorError as exc:
             warnings.append(f"{artist.get('name')} Bandsintown: {exc}")
 
-    today = now_utc().date()
+    today = catalog_date()
     return merge_events(event for event in events if event_is_future(event, today)), warnings
 
 

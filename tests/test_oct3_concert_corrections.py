@@ -1,6 +1,5 @@
 import copy
 from contextlib import redirect_stdout
-from datetime import datetime
 import io
 import json
 from pathlib import Path
@@ -18,11 +17,6 @@ from apply_oct3_concert_corrections import apply, rejected, WRONG_NEHEMIAH_IDS, 
 
 class OctoberConcertCorrectionTests(unittest.TestCase):
     def test_final_verifier_honors_reviewed_overnight_cutoff_without_relaxing_current_shows(self):
-        class FixedDateTime(datetime):
-            @classmethod
-            def now(cls, tz=None):
-                return cls(2026, 11, 15, 8, tzinfo=tz)
-
         approved = json.loads((ROOT / 'config/oct3-verified-concerts.json').read_text())
         show = next(e for e in approved if e['id'] == 'the-holy-ghost-experience-chattanooga-2026-11-14')
         reviewed = json.loads((ROOT / 'config/verified-show-information.json').read_text())
@@ -61,14 +55,13 @@ class OctoberConcertCorrectionTests(unittest.TestCase):
                     (root / name).write_text(json.dumps(value))
                 before = {name: (root / name).read_bytes() for name in data}
                 with patch.object(verification, 'ROOT', root), \
-                     patch.object(verification, 'datetime', FixedDateTime), \
                      patch.object(verification, 'REVIVAL_NIGHT_EVENT', expired), \
                      patch.object(verification, 'BY_ID', irrelevant), redirect_stdout(io.StringIO()):
                     if must_remain:
                         with self.assertRaisesRegex(AssertionError, show['id']):
-                            verification.verify(root)
+                            verification.verify(root, as_of='2026-11-15')
                     else:
-                        verification.verify(root)
+                        verification.verify(root, as_of='2026-11-15')
                 self.assertEqual(before, {name: (root / name).read_bytes() for name in data})
 
     def test_harvest_fest_provider_refresh_keeps_one_corrected_show(self):

@@ -10,6 +10,12 @@ import re
 import shutil
 from owner_roster import order_records, verify_records
 
+
+if __package__:
+    from .catalog_clock import catalog_date
+else:
+    from catalog_clock import catalog_date
+
 EXCLUDED_ARTISTS = {"chad jones", "erica mason", "big holy", "jay kalyl", "dj maj", "propaganda"}
 EXCLUDED_SLUGS = {"chad-jones", "erica-mason", "big-holy", "jay-kalyl", "dj-maj", "propaganda"}
 FALLBACK_IMAGE = "/assets/event-fallback.webp"
@@ -957,7 +963,7 @@ def verify_site(out_dir: pathlib.Path) -> None:
         # legitimately removes the event, so only reject the old festival-start
         # date if it somehow survives on the artist card.
         card = match.group(0) if match else ""
-        today = dt.date.today()
+        today = catalog_date()
         rural_performance = dt.date(2026, 8, 30)
         if today <= rural_performance:
             if not match or "Sun, Aug 30, 2026" not in card or "Fri, Aug 28, 2026 - 12:00 PM" in card:
@@ -972,7 +978,7 @@ def verify_site(out_dir: pathlib.Path) -> None:
         failures.append("social-club-profile-missing")
     else:
         social_text = social_page.read_text(encoding="utf-8", errors="ignore")
-        today = dt.date.today()
+        today = catalog_date()
         rural_performance = dt.date(2026, 8, 30)
         if today <= rural_performance:
             if "Sun, Aug 30, 2026" not in social_text:

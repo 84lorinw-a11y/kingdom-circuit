@@ -3,10 +3,8 @@ import html
 import hashlib
 import json
 import re
-from datetime import datetime
 from pathlib import Path
 import sys
-from zoneinfo import ZoneInfo
 
 from apply_oct3_concert_corrections import ROOT, WRONG_NEHEMIAH_IDS, WRONG_ZEKE_IDS, rejected, key
 from apply_verified_event_overrides import REVIVAL_NIGHT_EVENT
@@ -15,10 +13,11 @@ from build_seo_site import event_path, fnv
 from verify_egr_bizzle_updates import uses_image
 from apply_verified_show_information import enrich
 from event_visibility import event_is_past
+from catalog_clock import catalog_date
 
 
-def verify(site):
-    today = datetime.now(ZoneInfo('America/Los_Angeles')).date().isoformat()
+def verify(site, *, as_of=None):
+    today = str(as_of) if as_of is not None else catalog_date().isoformat()
     events = [e for name in ['events.json', 'supplemental-events.json'] for e in json.loads((site / name).read_text())]
     assert not any(rejected(e) for e in events)
     history = json.loads((ROOT / 'event-history.json').read_text())['events']

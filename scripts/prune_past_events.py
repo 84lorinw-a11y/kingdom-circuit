@@ -8,6 +8,11 @@ import re
 import shutil
 from datetime import datetime
 from zoneinfo import ZoneInfo
+if __package__:
+    from .catalog_clock import catalog_date
+else:
+    from catalog_clock import catalog_date
+
 try:
     from .event_visibility import event_last_active_date, event_is_past
 except ImportError:
@@ -22,7 +27,7 @@ EVENT_JSON_FILES = ("events.json", "supplemental-events.json")
 def today_cutoff() -> str:
     # Keep each listing active through its event date, then archive it on the
     # next calendar day. Pacific time keeps the rollover safe across the U.S.
-    return datetime.now(SITE_ROLLOVER_TZ).date().isoformat()
+    return catalog_date().isoformat()
 
 
 def load_json(path: pathlib.Path) -> list:
