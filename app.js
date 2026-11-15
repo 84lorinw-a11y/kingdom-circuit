@@ -6854,7 +6854,7 @@ const VERIFIED_ARTIST_REGISTRY = {
     "spotifyProfile": "https://open.spotify.com/artist/5sxJkjbBNLFl1VRnBujr4c",
     "youtubeProfile": "https://www.youtube.com/@theofficialjoshuaa",
     "officialImageSource": "https://www.instagram.com/theofficialjoshuaa/",
-    "imageUrl": "assets/artists/joshuaa-owner-selected-dfsw-9nkab5.jpg",
+    "imageUrl": "assets/artists/joshuaa-owner-selected-20261115.png",
     "imagePosition": "50% 25%",
     "sourceRegistryVerified": true
   },
@@ -13363,7 +13363,7 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "spotifyProfile": "https://open.spotify.com/artist/5sxJkjbBNLFl1VRnBujr4c",
     "youtubeProfile": "https://www.youtube.com/@theofficialjoshuaa",
     "officialImageSource": "https://www.instagram.com/theofficialjoshuaa/",
-    "imageUrl": "assets/artists/joshuaa-owner-selected-dfsw-9nkab5.jpg",
+    "imageUrl": "assets/artists/joshuaa-owner-selected-20261115.png",
     "imagePosition": "50% 25%",
     "sourceRegistryVerified": true
   },
@@ -15235,7 +15235,7 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "55% 45%"
   },
   "joshuaa*": {
-    "imageUrl": "assets/artists/joshuaa-owner-selected-dfsw-9nkab5.jpg",
+    "imageUrl": "assets/artists/joshuaa-owner-selected-20261115.png",
     "imagePosition": "50% 25%"
   },
   "king hez": {

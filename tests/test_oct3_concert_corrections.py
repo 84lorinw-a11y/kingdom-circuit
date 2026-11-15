@@ -1,4 +1,7 @@
 import copy
+from contextlib import redirect_stdout
+from datetime import datetime
+import io
 import json
 from pathlib import Path
 import sys
@@ -9,10 +12,65 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import collect_bandsintown_rest as collector
+import verify_oct3_concert_corrections as verification
 from apply_oct3_concert_corrections import apply, rejected, WRONG_NEHEMIAH_IDS, WRONG_ZEKE_IDS, ADRENALINE_DUPLICATE
 
 
 class OctoberConcertCorrectionTests(unittest.TestCase):
+    def test_final_verifier_honors_reviewed_overnight_cutoff_without_relaxing_current_shows(self):
+        class FixedDateTime(datetime):
+            @classmethod
+            def now(cls, tz=None):
+                return cls(2026, 11, 15, 8, tzinfo=tz)
+
+        approved = json.loads((ROOT / 'config/oct3-verified-concerts.json').read_text())
+        show = next(e for e in approved if e['id'] == 'the-holy-ghost-experience-chattanooga-2026-11-14')
+        reviewed = json.loads((ROOT / 'config/verified-show-information.json').read_text())
+        expired = {'id': 'fixture:expired', 'startDate': '2026-01-01'}
+        irrelevant = {k: dict(expired, id=k) for k in verification.BY_ID}
+        for label, end, clock, must_remain in [
+            ('completed overnight', '2026-11-15T01:00:00-05:00', '01:00', False),
+            ('still active Pacific date', '2026-11-15T08:00:00-05:00', '08:00', True),
+            ('unknown end timestamp', '', '01:00', True),
+            ('conflicting end clock', '2026-11-15T01:00:00-05:00', '03:00', True),
+        ]:
+            with self.subTest(label=label), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                (root / 'config').mkdir()
+                (root / 'artists/nehemiah').mkdir(parents=True)
+                (root / 'artists/nehemiah/index.html').write_text('Nehemiah')
+                (root / 'portrait.png').write_bytes(b'preserved fixture portrait')
+                artists = [
+                    {'name': 'ZEKE', 'bandsintownRejectedArtistIds': ['32942']},
+                    {'name': 'Nehemiah', 'bandsintownRejectedArtistIds': ['15347266'],
+                     'socialSearchEnabled': True, 'ticketmasterEnabled': False,
+                     'textMatchEnabled': False, 'imageUrl': 'portrait.png'},
+                ]
+                source = copy.deepcopy(show)
+                source.update(endDateTime=end, endTime=clock)
+                information = copy.deepcopy(reviewed)
+                data = {'events.json': [], 'supplemental-events.json': [],
+                        'event-history.json': {'events': [{'event': source}]},
+                        'config/artists.json': artists,
+                        'config/oct3-verified-concerts.json': [source],
+                        'config/verified-show-information.json': information,
+                        'config/sep26-requested-lineups.json': {
+                            'ty-brasel-outlandish-fest-fort-worth-2026': {'startDate': '2026-01-01'}},
+                        }
+                for name, value in data.items():
+                    (root / name).write_text(json.dumps(value))
+                before = {name: (root / name).read_bytes() for name in data}
+                with patch.object(verification, 'ROOT', root), \
+                     patch.object(verification, 'datetime', FixedDateTime), \
+                     patch.object(verification, 'REVIVAL_NIGHT_EVENT', expired), \
+                     patch.object(verification, 'BY_ID', irrelevant), redirect_stdout(io.StringIO()):
+                    if must_remain:
+                        with self.assertRaisesRegex(AssertionError, show['id']):
+                            verification.verify(root)
+                    else:
+                        verification.verify(root)
+                self.assertEqual(before, {name: (root / name).read_bytes() for name in data})
+
     def test_harvest_fest_provider_refresh_keeps_one_corrected_show(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

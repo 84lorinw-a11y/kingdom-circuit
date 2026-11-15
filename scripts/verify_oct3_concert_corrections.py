@@ -14,6 +14,7 @@ from apply_verified_show_artwork import BY_ID
 from build_seo_site import event_path, fnv
 from verify_egr_bizzle_updates import uses_image
 from apply_verified_show_information import enrich
+from event_visibility import event_is_past
 
 
 def verify(site):
@@ -50,7 +51,7 @@ def verify(site):
         # Keep the original identity/artwork checks while honoring later
         # source-verified venue and timing corrections for this exact show.
         expected = enrich(expected, reviewed)
-        if (expected.get('endDate') or expected['startDate']) < today:
+        if event_is_past(expected, today):
             continue
         matches = [e for e in events if key(e) == key(expected)]
         assert matches, expected['id']
