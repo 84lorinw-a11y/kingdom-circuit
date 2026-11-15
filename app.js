@@ -6561,9 +6561,9 @@ const VERIFIED_ARTIST_REGISTRY = {
     "instagramProfile": "https://www.instagram.com/sylnoiz/",
     "spotifyProfile": "https://open.spotify.com/artist/2OmdAhy2xwZkAyFEQPe7fq",
     "youtubeProfile": "https://www.youtube.com/@sylnoiz",
-    "officialImageSource": "https://www.sylnoiz.com/",
-    "imageUrl": "assets/artists/syl-noiz-official-portrait-nov9.jpg",
-    "imagePosition": "50% 28%",
+    "officialImageSource": "https://www.instagram.com/p/DY0o-h2CYig/",
+    "imageUrl": "assets/artists/syl-noiz-owner-selected-dy0o-h2cyig.jpg",
+    "imagePosition": "50% 25%",
     "sourceRegistryVerified": true
   },
   "lathan warlick": {
@@ -13070,9 +13070,9 @@ const VERIFIED_ARTIST_REGISTRY_UPDATES = {
     "instagramProfile": "https://www.instagram.com/sylnoiz/",
     "spotifyProfile": "https://open.spotify.com/artist/2OmdAhy2xwZkAyFEQPe7fq",
     "youtubeProfile": "https://www.youtube.com/@sylnoiz",
-    "officialImageSource": "https://www.sylnoiz.com/",
-    "imageUrl": "assets/artists/syl-noiz-official-portrait-nov9.jpg",
-    "imagePosition": "50% 28%",
+    "officialImageSource": "https://www.instagram.com/p/DY0o-h2CYig/",
+    "imageUrl": "assets/artists/syl-noiz-owner-selected-dy0o-h2cyig.jpg",
+    "imagePosition": "50% 25%",
     "sourceRegistryVerified": true
   },
   "lathan warlick": {
@@ -15151,8 +15151,8 @@ const STATIC_ARTIST_PORTRAITS = {
     "imagePosition": "45% 20%"
   },
   "syl noiz": {
-    "imageUrl": "assets/artists/syl-noiz-official-portrait-nov9.jpg",
-    "imagePosition": "50% 28%"
+    "imageUrl": "assets/artists/syl-noiz-owner-selected-dy0o-h2cyig.jpg",
+    "imagePosition": "50% 25%"
   },
   "lathan warlick": {
     "imageUrl": "assets/artists/lathan-warlick-official-profile-nov14.jpg",
