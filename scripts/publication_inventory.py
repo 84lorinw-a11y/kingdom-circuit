@@ -16,6 +16,7 @@ import re
 
 from build_seo_site import artist_path, event_path, merge_events, norm, scheduled
 from event_visibility import event_last_active_date
+from owner_roster import reapproved_occurrence
 from url_continuity import flatten_redirects, merge_details, safe_path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -41,7 +42,7 @@ def source_inventory(repo, day):
 
     def retained(event):
         names = {norm(name) for name in [*event.get('artists', []), event.get('headliner'), event.get('trackedArtist')] if name}
-        return not names or not names.issubset(removed)
+        return not names or not names.issubset(removed) or reapproved_occurrence(event)
 
     # Reuse the production publication/hold/geography and cross-feed merge
     # policies. They operate on copies; the input checkout is never normalized

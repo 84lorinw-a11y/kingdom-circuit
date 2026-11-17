@@ -164,6 +164,25 @@ class PublicationInventoryTests(unittest.TestCase):
         (self.site / event_path(self.event).strip('/') / 'index.html').unlink()
         self.assert_error('missing event page')
 
+    def test_reapproved_madiel_show_required_without_restoring_profile(self):
+        event = next(e for e in json.loads((ROOT / 'config/oct3-verified-concerts.json').read_text())
+                     if e['id'] == 'madiel-lara-columbus-2026-12-12')
+        event = dict(event, id='manual:' + event['id'])
+        self.write('config/owner-reviewed-roster.json',
+                   {'artists': [self.artist], 'removedArtists': ['Madiel Lara']})
+        self.write('events.json', [self.event, event])
+        self.assert_error('missing from catalog')
+        self.catalog['shows'].append(self.show(event))
+        self.save_catalog()
+        self.page(event_path(event))
+        self.assertEqual([], self.verify()['errors'])
+        expected, profiles, _ = self.inventory.source_inventory(self.repo, self.day)
+        self.assertIn(event_path(event), expected)
+        self.assertNotIn('/artists/madiel-lara/', profiles)
+        self.write('events.json', [self.event, dict(event, startDate='2026-12-13')])
+        expected, _, _ = self.inventory.source_inventory(self.repo, self.day)
+        self.assertEqual([event_path(self.event)], list(expected))
+
     def test_duplicate_catalog_rows_and_memberships_are_rejected(self):
         self.catalog['shows'] *= 2
         self.catalog['artists'][artist_path(self.artist['name'])] *= 2

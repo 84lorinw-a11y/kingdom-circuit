@@ -33,6 +33,19 @@ def removed_names():
     return data.get("removedArtists", [])
 
 
+def reapproved_occurrence(row):
+    """Honor the November 16 show request without restoring an artist profile."""
+    return (
+        str(row.get("id") or "").removeprefix("manual:") == "madiel-lara-columbus-2026-12-12"
+        and row.get("startDate") == "2026-12-12"
+        and norm(row.get("city")) == "columbus"
+        and row.get("state") == "OH"
+        and row.get("country") == "US"
+        and row.get("artists") == ["Madiel Lara"]
+        and row.get("officialUrl") == "https://boletos.com/madiel-lara-columbus-oh/90704/"
+    )
+
+
 def filter_events(records):
     """Remove deleted-only listings; preserve mixed bills and historical records."""
     removed = {norm(name) for name in removed_names()}
@@ -40,7 +53,7 @@ def filter_events(records):
     for row in records:
         names = {norm(n) for n in [*(row.get("artists") or []),
                                   row.get("headliner"), row.get("trackedArtist")] if n}
-        if names and names.issubset(removed):
+        if names and names.issubset(removed) and not reapproved_occurrence(row):
             continue
         kept.append(row)
     return kept

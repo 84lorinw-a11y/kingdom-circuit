@@ -74,6 +74,21 @@ class URLContinuityTests(unittest.TestCase):
         self.assertIn('Corrected details', uc.target_file(self.site, self.path).read_text())
         self.assertEqual('', uc.PageFacts(uc.target_file(self.site, self.path).read_text()).refresh)
 
+    def test_reapproved_madiel_page_survives_late_url_cleanup(self):
+        source = Path(__file__).resolve().parents[1]
+        event = next(e for e in uc.load(source / 'config/oct3-verified-concerts.json', [])
+                     if e['id'] == 'madiel-lara-columbus-2026-12-12')
+        event = dict(event, id='manual:' + event['id'])
+        path = uc.generated_path(event)
+        self.write_inputs(primary=[event], state=uc.empty_state())
+        page = self.page(path, 'Madiel Lara in Columbus. Doors 7 PM.')
+        before = page.read_bytes()
+        uc.finalize(self.root, self.site)
+        self.assertEqual(page.read_bytes(), before)
+        self.assertIn(event['id'], uc.load(self.root / uc.WORK_FILE, {})['events'])
+        uc.finalize(self.root, self.site)
+        self.assertEqual(page.read_bytes(), before)
+
     def test_conflicting_sessions_and_venues_are_not_merged(self):
         for update in ({'startTime': '21:00'}, {'venue': 'Different venue'}, {'startTime': ''}, {'state': 'TX'}, {'status': 'private'}):
             with self.subTest(update=update):
