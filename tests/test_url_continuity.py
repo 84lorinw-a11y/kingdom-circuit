@@ -74,6 +74,49 @@ class URLContinuityTests(unittest.TestCase):
         self.assertIn('Corrected details', uc.target_file(self.site, self.path).read_text())
         self.assertEqual('', uc.PageFacts(uc.target_file(self.site, self.path).read_text()).refresh)
 
+    def test_reviewed_old_publication_recovers_archive_without_changing_live_feed(self):
+        old = dict(self.event, startDate='2026-09-17')
+        path = uc.generated_path(old)
+        self.write_inputs(primary=[], state=uc.empty_state(),
+                          rules={'retainedEvents': [{'id': old['id'], 'path': path}]})
+        uc.save(self.root / 'event-history.json', {'events': [{'event': old}]})
+        uc.prepare(self.root)
+        self.assertEqual([], uc.load(self.root / 'events.json', []))
+        uc.finalize(self.root, self.site, today='2026-11-17')
+        text = uc.target_file(self.site, path).read_text()
+        self.assertIn('This date has passed', text)
+        self.assertIn('2026-09-17', text)
+        self.assertFalse(uc.PageFacts(text).schemas)
+        uc.persist(self.root, self.root / uc.WORK_FILE)
+        uc.prepare(self.root)
+        uc.finalize(self.root, self.site, today='2026-11-17')
+        self.assertEqual(text, uc.target_file(self.site, path).read_text())
+
+    def test_reviewed_history_never_reopens_retired_or_rejected_events(self):
+        rejected = dict(self.event, id='rejected', artists=['Propaganda'], headliner='Propaganda')
+        path = uc.generated_path(rejected)
+        rules = {'retainedEvents': [{'id': rejected['id'], 'path': path},
+                                   {'id': self.event['id'], 'path': self.path}],
+                 'retiredPaths': [self.path]}
+        self.write_inputs(primary=[], state=uc.empty_state(), rules=rules)
+        uc.save(self.root / 'event-history.json', {'events': [{'event': rejected}, {'event': self.event}]})
+        uc.prepare(self.root)
+        uc.finalize(self.root, self.site)
+        self.assertFalse(uc.target_file(self.site, path).exists())
+        self.assertFalse(uc.target_file(self.site, self.path).exists())
+
+    def test_reviewed_history_uses_survivor_without_overwriting_current_facts(self):
+        old = dict(self.event, id='old-provider', title='Old title')
+        old_path = uc.generated_path(old)
+        self.state['events'][self.event['id']]['sourceIds'] = ['old-provider']
+        self.write_inputs(rules={'retainedEvents': [{'id': old['id'], 'path': old_path}]})
+        uc.save(self.root / 'event-history.json', {'events': [{'event': old}]})
+        uc.prepare(self.root)
+        state = uc.load(self.root / uc.WORK_FILE, {})
+        self.assertNotIn(old['id'], state['events'])
+        self.assertEqual(self.path, state['redirects'][old_path])
+        self.assertEqual(self.event['title'], state['events'][self.event['id']]['event']['title'])
+
     def test_reapproved_madiel_page_survives_late_url_cleanup(self):
         source = Path(__file__).resolve().parents[1]
         event = next(e for e in uc.load(source / 'config/oct3-verified-concerts.json', [])

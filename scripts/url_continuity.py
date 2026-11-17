@@ -180,6 +180,7 @@ def merge_details(preferred, other):
 def prepare(root):
     state = load(root / STATE_FILE, empty_state())
     rules = load(root / RULES_FILE, {})
+    recover_reviewed_history(root, state, rules)
     aliases = {}
     identity_only_aliases = set()
     for event_id, record in state['events'].items():
@@ -487,6 +488,38 @@ def remember_reviewed_calendars(state, rules, allowed_artists):
                 heading=calendar['title'], eventPaths=[p for _, p in sorted(set(related))])
 
 
+def recover_reviewed_history(root, state, rules):
+    """Backfill documented public URLs that predate the continuity registry.
+
+    Only explicitly reviewed source identities qualify. Current publication
+    exclusions still apply, and recovery never inserts a show into a live feed.
+    """
+    records = {e['id']: e for e in source_events(root) if e.get('id')}
+    retired = set(rules.get('retiredPaths', [])) | set(state.get('retiredPaths', []))
+    for item in rules.get('retainedEvents', []):
+        key, path = item['id'], safe_path(item['path'])
+        event = records.get(key)
+        if path in retired or not event:
+            continue
+        existing = state['events'].get(key)
+        if existing:
+            if path != existing['path']:
+                state['redirects'][path] = existing['path']
+            continue
+        survivor = next((r for r in state['events'].values()
+                         if key in r.get('sourceIds', [])), None)
+        if survivor:
+            if path != survivor['path']:
+                state['redirects'][path] = survivor['path']
+            continue
+        if path in state['redirects']:
+            continue
+        state['events'][key] = {
+            'path': path, 'sourceIds': [],
+            'event': {field: event[field] for field in SNAPSHOT_FIELDS if field in event},
+        }
+
+
 def calendar_robots(path, text):
     """Apply shared eligibility only to artist/state and city calendars."""
     from finalize_seo_indexing_core import classify
@@ -503,6 +536,7 @@ def finalize(root, site, today=None):
         (site / internal).unlink(missing_ok=True)
     state = load(root / WORK_FILE, load(root / STATE_FILE, empty_state()))
     rules = load(root / RULES_FILE, {})
+    recover_reviewed_history(root, state, rules)
     history = {e['id']: e for e in source_events(root) if e.get('id')}
     # Reconciled current feeds outrank older manual seeds and archived snapshots.
     current_ids = set()
