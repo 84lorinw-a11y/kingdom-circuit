@@ -328,14 +328,14 @@
     }
   },
   "latest": {
-    "runId": "44072304035",
+    "runId": "44166099346",
     "attempt": "1",
     "conclusion": "success",
-    "mode": "full",
+    "mode": "dates",
     "day": "2026-11-17",
-    "finishedAt": "2026-11-17T12:02:36.150709+00:00",
+    "finishedAt": "2026-11-17T20:25:02.394202+00:00",
     "stages": {
-      "collection": "success",
+      "collection": "skipped",
       "source_save": "success",
       "build": "success",
       "deployment": "success",
@@ -343,8 +343,8 @@
       "freshness": "success"
     },
     "catalogDay": "2026-11-17",
-    "savedSourceSha": "e5116a14b9c15ac753ed54cf9e5f3b3835cfbc48",
-    "htmlUrl": "https://github.com/84lorinw-a11y/kingdom-circuit/actions/runs/44072304035"
+    "savedSourceSha": "7c2a5c5ba09eec54282ef871cf497790ff76a8ab",
+    "htmlUrl": "https://github.com/84lorinw-a11y/kingdom-circuit/actions/runs/44166099346"
   },
   "completed": {
     "dates:2026-11-10": {
@@ -595,12 +595,12 @@
       "htmlUrl": "https://github.com/84lorinw-a11y/kingdom-circuit/actions/runs/43856078913"
     },
     "dates:2026-11-17": {
-      "runId": "44049397079",
+      "runId": "44166099346",
       "attempt": "1",
       "conclusion": "success",
       "mode": "dates",
       "day": "2026-11-17",
-      "finishedAt": "2026-11-17T09:07:32.344779+00:00",
+      "finishedAt": "2026-11-17T20:25:02.394202+00:00",
       "stages": {
         "collection": "skipped",
         "source_save": "success",
@@ -610,8 +610,8 @@
         "freshness": "success"
       },
       "catalogDay": "2026-11-17",
-      "savedSourceSha": "44270bd9c381982a2d5ace9da1dd05ade9528022",
-      "htmlUrl": "https://github.com/84lorinw-a11y/kingdom-circuit/actions/runs/44049397079"
+      "savedSourceSha": "7c2a5c5ba09eec54282ef871cf497790ff76a8ab",
+      "htmlUrl": "https://github.com/84lorinw-a11y/kingdom-circuit/actions/runs/44166099346"
     },
     "full:2026-11-17": {
       "runId": "44072304035",
