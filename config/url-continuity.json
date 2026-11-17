@@ -6348,7 +6348,10 @@
     },
     "official:82bb2a5f42c828c2537d": {
       "path": "/event/hulvey-live-at-itown-church-madison-campus-2026-11-13-anderson-00b1f0/",
-      "sourceIds": [],
+      "sourceIds": [
+        "bandsintown:109034401",
+        "official:433b136650c8a5f6b264"
+      ],
       "event": {
         "id": "official:82bb2a5f42c828c2537d",
         "title": "Hulvey — Live at ITOWN Church - Madison Campus",
@@ -6372,8 +6375,7 @@
         "image": "assets/artists/hulvey-saved.webp",
         "imageType": "artist",
         "confidence": "high",
-        "publicDescription": "ITOWN Church hosts Hulvey for an evening of Christian hip-hop at its Madison Campus. The concert welcomes all ages.",
-        "mergedFromIds": []
+        "publicDescription": "ITOWN Church hosts Hulvey for an evening of Christian hip-hop at its Madison Campus. The concert welcomes all ages."
       }
     },
     "official:38ea31bd392fcb1bdae4": {
@@ -17547,6 +17549,95 @@
         "publicDescription": "New Year's Eve service with MAYIA at Crossover Church East in Odenton, Maryland. The service begins at 8 PM Eastern on December 31, 2026.",
         "mergedFromIds": []
       }
+    },
+    "manual:gifted-hands-dax-birmingham-2026-10-20": {
+      "path": "/event/dax-the-anger-management-tour-with-gifted-hands-2026-10-20-birmingham-b58f23/",
+      "sourceIds": [],
+      "event": {
+        "id": "manual:gifted-hands-dax-birmingham-2026-10-20",
+        "title": "Dax — The Anger Management Tour with Gifted Hands",
+        "startDate": "2026-10-20",
+        "endDate": "2026-10-20",
+        "startTime": "20:00",
+        "endTime": "",
+        "timezone": "America/Chicago",
+        "city": "Birmingham",
+        "state": "AL",
+        "country": "US",
+        "venue": "Iron City",
+        "artists": [
+          "Gifted Hands"
+        ],
+        "headliner": "Dax",
+        "status": "scheduled",
+        "eventType": "concert",
+        "officialUrl": "https://www.ticketmaster.com/dax-the-anger-management-tour-birmingham-alabama-10-20-2026/event/200064AFCFE54F97",
+        "ticketUrl": "https://www.ticketmaster.com/dax-the-anger-management-tour-birmingham-alabama-10-20-2026/event/200064AFCFE54F97",
+        "image": "assets/events/gifted-hands-dax-anger-management-tour-2026.jpg",
+        "imageType": "event_artwork",
+        "confidence": "high",
+        "publicDescription": "Gifted Hands joins Dax as support on The Anger Management Tour at Iron City in Birmingham. This is a mixed-bill hip-hop concert featuring Gifted Hands; individual support set times are not announced."
+      }
+    },
+    "manual:gifted-hands-dax-dallas-2026-10-23": {
+      "path": "/event/dax-the-anger-management-tour-with-gifted-hands-2026-10-23-dallas-6ead03/",
+      "sourceIds": [],
+      "event": {
+        "id": "manual:gifted-hands-dax-dallas-2026-10-23",
+        "title": "Dax — The Anger Management Tour with Gifted Hands",
+        "startDate": "2026-10-23",
+        "endDate": "2026-10-23",
+        "startTime": "20:00",
+        "endTime": "",
+        "timezone": "America/Chicago",
+        "city": "Dallas",
+        "state": "TX",
+        "country": "US",
+        "venue": "The Echo Lounge & Music Hall",
+        "artists": [
+          "Gifted Hands"
+        ],
+        "headliner": "Dax",
+        "status": "scheduled",
+        "eventType": "concert",
+        "officialUrl": "https://www.ticketmaster.com/dax-the-anger-management-tour-dallas-texas-10-23-2026/event/0C0064B0DC21D5A6",
+        "ticketUrl": "https://www.ticketmaster.com/dax-the-anger-management-tour-dallas-texas-10-23-2026/event/0C0064B0DC21D5A6",
+        "image": "assets/events/gifted-hands-dax-anger-management-tour-2026.jpg",
+        "imageType": "event_artwork",
+        "confidence": "high",
+        "publicDescription": "Gifted Hands joins Dax as support on The Anger Management Tour at The Echo Lounge & Music Hall in Dallas. This is a mixed-bill hip-hop concert featuring Gifted Hands; individual support set times are not announced."
+      }
+    },
+    "manual:hookd-on-god-nashville-2026-10-23": {
+      "path": "/event/hook-d-on-god-concert-2026-10-23-old-hickory-be5a3d/",
+      "sourceIds": [],
+      "event": {
+        "id": "manual:hookd-on-god-nashville-2026-10-23",
+        "title": "Hook’d on God Concert",
+        "startDate": "2026-10-23",
+        "endDate": "2026-10-23",
+        "startTime": "20:00",
+        "endTime": "22:00",
+        "timezone": "America/Chicago",
+        "city": "Old Hickory",
+        "state": "TN",
+        "country": "US",
+        "venue": "We Are Church Nashville",
+        "address": "1501 Hadley Ave",
+        "postalCode": "37138",
+        "artists": [
+          "KC and the Kingdom"
+        ],
+        "headliner": "KC and the Kingdom",
+        "status": "scheduled",
+        "eventType": "concert",
+        "officialUrl": "https://hogmob.com/nashville/",
+        "ticketUrl": "",
+        "image": "assets/events/hookd-on-god-nashville-2026-10-23.jpg",
+        "imageType": "event_artwork",
+        "confidence": "high",
+        "publicDescription": "KC and the Kingdom perform live at We Are Church Nashville in Old Hickory on October 23, 8–10 PM. Sevin is the guest speaker. This concert is separate from the October 24 Nashville events."
+      }
     }
   },
   "redirects": {
@@ -17672,7 +17763,18 @@
     "/event/blameless-the-tour-with-jackie-hill-perry-2027-02-20-birmingham-a8cc5d/": "/event/blameless-the-tour-with-jackie-hill-perry-2027-02-20-birmingham-7cfada/",
     "/event/tpr-presents-blameless-the-tour-with-jackie-hill-perry-2027-02-15-saint-louis-9dcf1c/": "/event/blameless-the-tour-with-jackie-hill-perry-2027-02-15-st-louis-645bf3/",
     "/event/blameless-the-tour-with-jackie-hill-perry-2027-02-15-st-louis-9dcf1c/": "/event/blameless-the-tour-with-jackie-hill-perry-2027-02-15-st-louis-645bf3/",
-    "/event/mike-teezy-garner-performing-arts-center-2027-02-27-garner-2173a7/": "/event/mike-teezy-at-garner-performing-arts-center-2027-02-27-garner-eb6feb/"
+    "/event/mike-teezy-garner-performing-arts-center-2027-02-27-garner-2173a7/": "/event/mike-teezy-at-garner-performing-arts-center-2027-02-27-garner-eb6feb/",
+    "/event/hulvey-at-itown-church-madison-campus-2026-11-13-anderson-0a7a93/": "/event/hulvey-live-at-itown-church-madison-campus-2026-11-13-anderson-00b1f0/",
+    "/event/hulvey-live-at-itown-church-madison-campus-2026-11-13-anderson-091a78/": "/event/hulvey-live-at-itown-church-madison-campus-2026-11-13-anderson-00b1f0/",
+    "/event/whatuprg-live-2026-11-19-houston-082cd9/": "/event/whatuprg-new-saint-holy-tour-2026-11-19-houston-082cd9/",
+    "/event/whatuprg-live-2026-11-20-dallas-d7fd90/": "/event/whatuprg-new-saint-holy-tour-2026-11-20-fort-worth-d7fd90/",
+    "/event/whatuprg-live-2026-11-22-san-antonio-dff06e/": "/event/whatuprg-new-saint-holy-tour-2026-11-22-san-antonio-dff06e/",
+    "/event/miles-minnick-at-the-belasco-theater-2026-11-14-los-angeles-5d10ab/": "/event/miles-minnick-glovember-2026-11-14-los-angeles-5d10ab/",
+    "/event/the-welcome-home-tour-greensboro-2026-12-01-greensboro-46f5d2/": "/event/alex-jean-at-the-pyrle-2026-12-01-greensboro-46f5d2/",
+    "/artists/kt-money/arkansas/": "/artists/ktmoney/arkansas/",
+    "/artists/jj-stone/sk/": "/artists/jj-stone/saskatchewan/",
+    "/shows/sponsor-san-diego-california/": "/shows/san-diego-california/",
+    "/shows/sponsor-kansas-city-missouri/": "/shows/kansas-city-missouri/"
   },
   "pages": {
     "/artists/180mindset/": {
@@ -24462,8 +24564,8 @@
       ]
     },
     "/event/1k-phew-at-big-spring-international-park-2026-10-04-huntsville-eb07e2/": {
-      "fingerprint": "cbfb4b3e94baafbcbe22341e2dc757034c82d1cf168ce9bdeb51ad2ee35e5878",
-      "lastmod": "2026-11-16",
+      "fingerprint": "d3225173c1c5a48876f57a5e6b5bb1735514f72bb4659278f6784757e7e17d8a",
+      "lastmod": "2026-11-17",
       "title": "1K Phew at Big Spring International Park — Huntsville, AL — Oct 4, 2026 | Kingdom Circuit",
       "heading": "1K Phew at Big Spring International Park",
       "eventPaths": []
@@ -24597,15 +24699,15 @@
       "eventPaths": []
     },
     "/event/808-beezy-live-at-rwg-tour-2026-2026-09-18-dola-869218/": {
-      "fingerprint": "11bca93dc18b4f1d3130490fb81c87f592c22360ad759078f6029a5558278143",
-      "lastmod": "2026-11-16",
+      "fingerprint": "bff8ce5be9d4f9b34ecb0307dbbc04f4b727cd2a51b7d5d3bae2500dde0de203",
+      "lastmod": "2026-11-17",
       "title": "808 BEEZY — Live at RWG TOUR 2026 | Kingdom Circuit",
       "heading": "808 BEEZY — Live at RWG TOUR 2026",
       "eventPaths": []
     },
     "/event/808-beezy-live-at-rwg-tour-2026-2026-09-18-dola-f98cbd/": {
-      "fingerprint": "75f53c6a1d7a040b181bf4feb01a9f1123fa35c1c2b501fa139851ad9a8ee1cc",
-      "lastmod": "2026-11-16",
+      "fingerprint": "e4bb767062145ff1ffcc84edf24d294c602273658d804a305dda9c545154d696",
+      "lastmod": "2026-11-17",
       "title": "808 BEEZY — Live at RWG TOUR 2026 | Kingdom Circuit",
       "heading": "808 BEEZY — Live at RWG TOUR 2026",
       "eventPaths": []
@@ -24674,78 +24776,78 @@
       "eventPaths": []
     },
     "/event/808-beezy-live-at-rwg-tour-2026-2026-09-25-wellington-2dc18f/": {
-      "fingerprint": "452e15c4832573fb698d81d6c18dce138c078f3009cac8733c6902dc30a2dcce",
-      "lastmod": "2026-11-16",
+      "fingerprint": "f4874d86560b8a5a5a353373463c7313bd14955c179a6b11a2bd83a6c5f36fda",
+      "lastmod": "2026-11-17",
       "title": "808 BEEZY — Live at RWG TOUR 2026 — Wellington, MO — Sep 25, 2026 | Kingdom Circuit",
       "heading": "808 BEEZY — Live at RWG TOUR 2026",
       "eventPaths": []
     },
     "/event/808-beezy-live-at-rwg-tour-2026-2026-09-25-malta-bend-f3c3e1/": {
-      "fingerprint": "06ac7595e827afdd20a2fb21e601075c374cf84ab7df9ea8cd83069dddf3f305",
-      "lastmod": "2026-11-16",
+      "fingerprint": "3091b83aad93b2e16e81c22f017f8bc94d35e61ba5e9f72baffa7d7c953f270f",
+      "lastmod": "2026-11-17",
       "title": "808 BEEZY — Live at RWG TOUR 2026 — Malta Bend, MO — Sep 25, 2026 | Kingdom Circuit",
       "heading": "808 BEEZY — Live at RWG TOUR 2026",
       "eventPaths": []
     },
     "/event/808-beezy-live-in-attica-oh-2026-10-15-attica-06fb6a/": {
-      "fingerprint": "121780be5e99df9252eb26a023111edce8e6379a6ed4de3d9c0d316819367cf6",
-      "lastmod": "2026-11-16",
+      "fingerprint": "c3280dbbdbc1bfe0932d25578132ac1e201d2ff53aab9c08803d46aaf1566d35",
+      "lastmod": "2026-11-17",
       "title": "808 BEEZY — Live in Attica, OH — Attica, OH — Oct 15, 2026 | Kingdom Circuit",
       "heading": "808 BEEZY — Live in Attica, OH",
       "eventPaths": []
     },
     "/event/808-beezy-live-in-delano-ca-2026-10-08-delano-ccf4b6/": {
-      "fingerprint": "34d00461f4efd6d9cc04bcbf8012e4dd8d25d4968a591bd3e6b94aae09f76ee7",
-      "lastmod": "2026-11-16",
+      "fingerprint": "d503149e8cc83de74e393444e990ed7c0b0c013e35160966d024e21a16ee25e5",
+      "lastmod": "2026-11-17",
       "title": "808 BEEZY — Live in Delano, CA | Kingdom Circuit",
       "heading": "808 BEEZY — Live in Delano, CA",
       "eventPaths": []
     },
     "/event/808-beezy-live-in-delano-ca-2026-10-08-delano-d17357/": {
-      "fingerprint": "2c66c3dcd9cf40570aef4d2c21c646345793edbfbb5c59693f044075868d08e3",
-      "lastmod": "2026-11-16",
+      "fingerprint": "695046512d48aefe984108da7d6dafcac60b68ce70a3000c280f0aa623dc7a5a",
+      "lastmod": "2026-11-17",
       "title": "808 BEEZY — Live in Delano, CA | Kingdom Circuit",
       "heading": "808 BEEZY — Live in Delano, CA",
       "eventPaths": []
     },
     "/event/808-beezy-live-in-dola-oh-2026-10-15-dola-9d0312/": {
-      "fingerprint": "3c78612d14314c5a4ecb280c2627e9413f26492b14fb1af86131940ecce646cc",
-      "lastmod": "2026-11-16",
+      "fingerprint": "f67bea01d23ea162a4c23f894d196661f38b12843b97813adb0e99d6385fda23",
+      "lastmod": "2026-11-17",
       "title": "808 BEEZY — Live in Dola, OH — Dola, OH — Oct 15, 2026 | Kingdom Circuit",
       "heading": "808 BEEZY — Live in Dola, OH",
       "eventPaths": []
     },
     "/event/808-beezy-live-in-fort-recovery-oh-2026-10-16-fort-recovery-aca722/": {
-      "fingerprint": "e036a58390351179344bf1de2a8560cedd741d04c050411e07b9eaf580260e66",
-      "lastmod": "2026-11-16",
+      "fingerprint": "0b3a57d305fd949ee946aab3539315b51f4164d6fdb9a8dbdba6b8e7e41deb7e",
+      "lastmod": "2026-11-17",
       "title": "808 BEEZY — Live in Fort Recovery, OH — Fort Recovery, OH — Oct 16, 2026 | Kingdom Circuit",
       "heading": "808 BEEZY — Live in Fort Recovery, OH",
       "eventPaths": []
     },
     "/event/808-beezy-live-in-oceano-ca-2026-10-09-oceano-c0cb22/": {
-      "fingerprint": "7ea7478528b7da45b22c5a97872ee5eab3f93abcaf8f4d214618d06027a08ba5",
-      "lastmod": "2026-11-16",
+      "fingerprint": "0b5ce75e56595193dde1043850d0b49df96250c2fd1864fb4e003c7d8845c108",
+      "lastmod": "2026-11-17",
       "title": "808 BEEZY — Live in Oceano, CA — Oceano, CA — Oct 9, 2026 | Kingdom Circuit",
       "heading": "808 BEEZY — Live in Oceano, CA",
       "eventPaths": []
     },
     "/event/808-beezy-live-in-salisbury-mo-2026-10-14-salisbury-0afdaf/": {
-      "fingerprint": "3a749d94e5efcf38e3696b740dc9d4850559d99b6fab49d030ce581feda51c42",
-      "lastmod": "2026-11-16",
+      "fingerprint": "553d68883f8c6b523bf38d6e71f0c0ca9587f186e7fde652dc116d2b359b417c",
+      "lastmod": "2026-11-17",
       "title": "808 BEEZY — Live in Salisbury, MO — Salisbury, MO — Oct 14, 2026 | Kingdom Circuit",
       "heading": "808 BEEZY — Live in Salisbury, MO",
       "eventPaths": []
     },
     "/event/808-beezy-live-in-santa-margarita-ca-2026-10-09-santa-margarita-d5defe/": {
-      "fingerprint": "2d0b669d2e7950e77b84648354bbf5c86ad464a324ccd30ca67f2b8e9c4c55f1",
-      "lastmod": "2026-11-16",
+      "fingerprint": "dbfd90de3300e8219122276aec044f6253158654c64b4543dac335bd573fcb88",
+      "lastmod": "2026-11-17",
       "title": "808 BEEZY — Live in Santa Margarita, CA — Santa Margarita, CA — Oct 9, 2026 | Kingdom Circuit",
       "heading": "808 BEEZY — Live in Santa Margarita, CA",
       "eventPaths": []
     },
     "/event/808-beezy-live-in-weldon-ca-2026-10-08-weldon-d48267/": {
-      "fingerprint": "af9d8cd7188b2046c6f239ed134787ae0fd89f08205c263210da0181d2355177",
-      "lastmod": "2026-11-16",
+      "fingerprint": "4f3b1b7e656764009c6dda116bc3f6459ff0f46037c6cf498bdc291b55b75097",
+      "lastmod": "2026-11-17",
       "title": "808 BEEZY — Live in Weldon, CA — Weldon, CA — Oct 8, 2026 | Kingdom Circuit",
       "heading": "808 BEEZY — Live in Weldon, CA",
       "eventPaths": []
@@ -24765,8 +24867,8 @@
       "eventPaths": []
     },
     "/event/aamu-homecoming-gospel-explosion-night-of-gospel-2026-10-11-huntsville-c779c6/": {
-      "fingerprint": "e916eb3ea3b9bb9e115207f68e21f1e538e652682ad41f51396317b89aa982a2",
-      "lastmod": "2026-11-16",
+      "fingerprint": "bdbd10c6b07f7914c25a46df6604b3a9740cbffcaad1537bbddfd5e52bc01e1b",
+      "lastmod": "2026-11-17",
       "title": "AAMU Homecoming Gospel Explosion: Night of Gospel — Huntsville, AL — Oct 11, 2026 | Kingdom Circuit",
       "heading": "AAMU Homecoming Gospel Explosion: Night of Gospel",
       "eventPaths": []
@@ -24779,8 +24881,8 @@
       "eventPaths": []
     },
     "/event/access-granted-marriage-retreat-with-psalm-bird-and-cj-emulous-2026-09-25-winters-351382/": {
-      "fingerprint": "8df1e3394d3d4357b1239aa0daa905db6813fc05e59a85c88269f0d64dae0ae0",
-      "lastmod": "2026-11-16",
+      "fingerprint": "ac05454aaabe00fc69f8b21cd41c010b90d0e177c1684aeaaab4218851e7db00",
+      "lastmod": "2026-11-17",
       "title": "Access Granted Marriage Retreat with Psalm Bird & CJ Emulous — Winters, CA — Sep 25, 2026 | Kingdom Circuit",
       "heading": "Access Granted Marriage Retreat with Psalm Bird & CJ Emulous",
       "eventPaths": []
@@ -24807,8 +24909,8 @@
       "eventPaths": []
     },
     "/event/afterlight-l-a-viktor-friends-2026-10-24-pomona-f8982b/": {
-      "fingerprint": "e97e7ec1b83c1c499d33c88e63d06a9a8d862733643caa93b755389e0f231d71",
-      "lastmod": "2026-11-16",
+      "fingerprint": "5362a2c695b819f0b4027385b0042a23f3d21f7122436307425afbf4d02c4e90",
+      "lastmod": "2026-11-17",
       "title": "Afterlight L.A. — Viktor + Friends — Pomona, CA — Oct 24, 2026 | Kingdom Circuit",
       "heading": "Afterlight L.A. — Viktor + Friends",
       "eventPaths": []
@@ -24946,8 +25048,8 @@
       "eventPaths": []
     },
     "/event/awake-conference-2026-10-10-centreville-cd145d/": {
-      "fingerprint": "52de2ef68c4274c737e0f4a5d4f6d8b8ec7dc4a91d087ac70063391b7304b1e5",
-      "lastmod": "2026-11-16",
+      "fingerprint": "7df74a12bfaca4361fcf789cc3ae745a0a89e4a1b8b740e1a43a42c227f36ec1",
+      "lastmod": "2026-11-17",
       "title": "Awake Conference — Centreville, MI — Oct 10, 2026 | Kingdom Circuit",
       "heading": "Awake Conference",
       "eventPaths": []
@@ -24960,15 +25062,15 @@
       "eventPaths": []
     },
     "/event/awaken-the-spirit-2-2026-10-10-morristown-0d1db2/": {
-      "fingerprint": "ef73d9615bf1908e88820843059c6d88f9bea3d49f27a2b15637cc2b4cd80391",
-      "lastmod": "2026-11-16",
+      "fingerprint": "884212b7ea74011291c61435e2f7f1e9523955a1ebd7ca667b32c39df2169031",
+      "lastmod": "2026-11-17",
       "title": "Awaken The Spirit 2 — Morristown, TN — Oct 10, 2026 | Kingdom Circuit",
       "heading": "Awaken The Spirit 2",
       "eventPaths": []
     },
     "/event/back-to-the-basics-2026-10-10-visalia-d2e925/": {
-      "fingerprint": "30fff972d7eef5ff8be45bf19458c550ccbc0639d7d96aa59df18de42d55498e",
-      "lastmod": "2026-11-16",
+      "fingerprint": "8b2fa314c4af7bd08c646b880843cd116442056d201f697d03682f5fb2ccfc73",
+      "lastmod": "2026-11-17",
       "title": "Back to the Basics — Visalia, CA — Oct 10, 2026 | Kingdom Circuit",
       "heading": "Back to the Basics",
       "eventPaths": []
@@ -24995,8 +25097,8 @@
       "eventPaths": []
     },
     "/event/boxyard-saturdaze-2026-10-10-durham-7853b4/": {
-      "fingerprint": "9875cf0cac1b63042f787d39b2b074a6fdb01c8c2053774db55e36be429d1671",
-      "lastmod": "2026-11-16",
+      "fingerprint": "ab57aeb278a06c9f0b6199afaffa9f9106a09c6d993131e9c89b67faafc05e1c",
+      "lastmod": "2026-11-17",
       "title": "Boxyard Saturdaze — Durham, NC — Oct 10, 2026 | Kingdom Circuit",
       "heading": "Boxyard Saturdaze",
       "eventPaths": []
@@ -25048,8 +25150,8 @@
       "eventPaths": []
     },
     "/event/caleb-gordon-the-eden-experience-2026-08-16-pomona-984284/": {
-      "fingerprint": "139b5b85ae37bce43b874d22a5ec8b98676b4467b94b1ccde766af051afaadec",
-      "lastmod": "2026-11-16",
+      "fingerprint": "b6601c487b79497178b06f4250afa0c52d444302c0f9b446368824d884bb9816",
+      "lastmod": "2026-11-17",
       "title": "Caleb Gordon — The Eden Experience — Pomona, CA — Aug 16, 2026 | Kingdom Circuit",
       "heading": "Caleb Gordon — The Eden Experience",
       "eventPaths": []
@@ -25161,8 +25263,8 @@
       "eventPaths": []
     },
     "/event/cendia-2026-art-night-2026-10-17-toronto-24d95a/": {
-      "fingerprint": "1a2d37cb01cdf5b919cf59f34be54cf7d306affeca532367878cb5f3d1236bad",
-      "lastmod": "2026-11-16",
+      "fingerprint": "db68e7e971466bb5f0f4d4a81c440997b08d619b3aa3fec037593a7e1a06fb8a",
+      "lastmod": "2026-11-17",
       "title": "CENDIA 2026: Art Night — Toronto, ON — Oct 17, 2026 | Kingdom Circuit",
       "heading": "CENDIA 2026: Art Night",
       "eventPaths": []
@@ -25190,15 +25292,15 @@
       ]
     },
     "/event/chh-takeover-night-2026-10-25-huntington-72c73d/": {
-      "fingerprint": "790594d8d748b0c87255e381cc189d8f7c0f6067fe3b2d265c472df82a9cf29a",
-      "lastmod": "2026-11-16",
+      "fingerprint": "b0d72d2165959689004ece151ab7397c9e2fa260b9f21e0a682e890b6f8c7570",
+      "lastmod": "2026-11-17",
       "title": "CHH Takeover Night — Huntington, AR — Oct 25, 2026 | Kingdom Circuit",
       "heading": "CHH Takeover Night",
       "eventPaths": []
     },
     "/event/childlike-cici-at-unity-of-faith-christian-center-2026-10-24-jacksonville-fdd16c/": {
-      "fingerprint": "baebdbb7dbe23996a41ffdc82b4ca8f221f4a32b6eccb3dbb3604a433d37838d",
-      "lastmod": "2026-11-16",
+      "fingerprint": "7e978a5af7d7f2f334dcdc2708f53064b0ff4a8686079f03a0980eefc55053a9",
+      "lastmod": "2026-11-17",
       "title": "Childlike CiCi at Unity of Faith Christian Center — Jacksonville, NC — Oct 24, 2026 | Kingdom Circuit",
       "heading": "Childlike CiCi at Unity of Faith Christian Center",
       "eventPaths": []
@@ -25368,8 +25470,8 @@
       "eventPaths": []
     },
     "/event/echo-nights-26-2026-10-02-brookfield-9c48cb/": {
-      "fingerprint": "4e185a5f6f47e2ba0aed28d873313c98fa0cc0842ad2f628a2d2081e5014ea0a",
-      "lastmod": "2026-11-16",
+      "fingerprint": "afcd05121c433f9bbc7501960e794d182fd0d54095ae98f782915274bc6e60bf",
+      "lastmod": "2026-11-17",
       "title": "ECHO Nights 26 — Brookfield, WI — Oct 2, 2026 | Kingdom Circuit",
       "heading": "ECHO Nights 26",
       "eventPaths": []
@@ -25443,8 +25545,8 @@
       "eventPaths": []
     },
     "/event/egr-live-fresno-2026-08-22-fresno-d107a1/": {
-      "fingerprint": "253ffdfc017d7847fda31877cac1fe05460ff094d928c717f702c64755381234",
-      "lastmod": "2026-11-16",
+      "fingerprint": "ced04e9150fac89e47aef2347360148773c66669cf573186011e36d30476548c",
+      "lastmod": "2026-11-17",
       "title": "EGR Live — Fresno — Fresno, CA — Aug 22, 2026 | Kingdom Circuit",
       "heading": "EGR Live — Fresno",
       "eventPaths": []
@@ -25461,8 +25563,8 @@
       ]
     },
     "/event/egr-live-fresno-2026-10-16-fresno-a4e15b/": {
-      "fingerprint": "3a453a9bad2c69f350f10aa0a6eac2b5540a084d38711111526140570d279641",
-      "lastmod": "2026-11-16",
+      "fingerprint": "da60b55fc8599ccdcec183f983089b624068bad8b6a86bf947838eb89e67c4e5",
+      "lastmod": "2026-11-17",
       "title": "EGR Live — Fresno — Fresno, CA — Oct 16, 2026 | Kingdom Circuit",
       "heading": "EGR Live — Fresno",
       "eventPaths": []
@@ -25517,8 +25619,8 @@
       "eventPaths": []
     },
     "/event/faith-and-blue-weekend-featuring-flame-2026-10-10-abilene-54a12b/": {
-      "fingerprint": "86db3fcd006359fa04b49961348a57003ecfe73c8de80edcca52169bfe1763fd",
-      "lastmod": "2026-11-16",
+      "fingerprint": "6e2bb709bef1a4e6c5cf3cbb60d7628aa498e82b2c13ca9cb8f0e064538b5475",
+      "lastmod": "2026-11-17",
       "title": "Faith & Blue Weekend featuring FLAME — Abilene, KS — Oct 10, 2026 | Kingdom Circuit",
       "heading": "Faith & Blue Weekend featuring FLAME",
       "eventPaths": []
@@ -25531,8 +25633,8 @@
       "eventPaths": []
     },
     "/event/faith-fest-long-beach-2026-10-17-long-beach-a3f17a/": {
-      "fingerprint": "5f1d3cf53016a66b7a5f2bbef64a6cfd9de216ce9efe926895afa7a819af9c2c",
-      "lastmod": "2026-11-16",
+      "fingerprint": "644c91839c44505f736b34c8043cf0db2fee958c5f9e1b50db7158f2a1a73640",
+      "lastmod": "2026-11-17",
       "title": "Faith Fest — Long Beach — Long Beach, CA — Oct 17, 2026 | Kingdom Circuit",
       "heading": "Faith Fest — Long Beach",
       "eventPaths": []
@@ -25545,8 +25647,8 @@
       "eventPaths": []
     },
     "/event/faith-festival-panama-city-beach-2026-10-24-panama-city-beach-7ebe66/": {
-      "fingerprint": "61e6c29c19e5eee7ea7976701d2e5857889f6ca7dc69f5e190fd98d437d393e7",
-      "lastmod": "2026-11-16",
+      "fingerprint": "0f22da7ee32cf8a7488e10c4ee92a41030b170745f301589577dc5f1b3d1ea75",
+      "lastmod": "2026-11-17",
       "title": "Faith Festival — Panama City Beach — Panama City Beach, FL — Oct 24, 2026 | Kingdom Circuit",
       "heading": "Faith Festival — Panama City Beach",
       "eventPaths": []
@@ -25632,8 +25734,8 @@
       "eventPaths": []
     },
     "/event/from-ashes-to-life-fentanyl-awareness-march-2026-10-17-saint-paul-96d2cb/": {
-      "fingerprint": "caf4b90d4f0ef484fb64b8d1e5df0dbf80040d63e675e7aa32684074f9da7138",
-      "lastmod": "2026-11-16",
+      "fingerprint": "c7af1e13b7492715cf8bccd5e15a1862b9503a707934f8b4db3699288d4debdc",
+      "lastmod": "2026-11-17",
       "title": "From Ashes to Life — Fentanyl Awareness March — Saint Paul, MN — Oct 17, 2026 | Kingdom Circuit",
       "heading": "From Ashes to Life — Fentanyl Awareness March",
       "eventPaths": []
@@ -25710,8 +25812,8 @@
       "eventPaths": []
     },
     "/event/good-vibez-and-jesus-glow-in-the-dark-party-2026-10-30-miami-gardens-9d0181/": {
-      "fingerprint": "e5ad4e67fcdff81ba0d96484d5d2f96db7f761fe222439144dff96c0565810f4",
-      "lastmod": "2026-11-16",
+      "fingerprint": "f910f7600d143e001f542a3b6f2f9ab6af526dc4df37f68c39b2854c77af6e73",
+      "lastmod": "2026-11-17",
       "title": "GOOD VIBEZ & JESUS: Glow in the Dark Party — Miami Gardens, FL — Oct 30, 2026 | Kingdom Circuit",
       "heading": "GOOD VIBEZ & JESUS: Glow in the Dark Party",
       "eventPaths": []
@@ -25752,8 +25854,8 @@
       "eventPaths": []
     },
     "/event/harvest-fest-2026-jon-keith-2026-10-30-southfield-4727b6/": {
-      "fingerprint": "78784a8d261d0977e6ee75643498a186dcf9d1da60585d7b686db5a6611c4395",
-      "lastmod": "2026-11-16",
+      "fingerprint": "ef1ac7039e7e9eda743de2b46f8983fa881f43fd963bbc248a4c9de652db0b42",
+      "lastmod": "2026-11-17",
       "title": "Harvest Fest 2026 — Jon Keith — Southfield, MI — Oct 30, 2026 | Kingdom Circuit",
       "heading": "Harvest Fest 2026 — Jon Keith",
       "eventPaths": []
@@ -25809,8 +25911,8 @@
       ]
     },
     "/event/hoj-25th-anniversary-saturday-night-concert-2026-10-24-tallahassee-f6aea8/": {
-      "fingerprint": "7688f6382d20ccdca49eaba0b6904c1b2ceba743c62d3a73e85d4c9b4a966459",
-      "lastmod": "2026-11-16",
+      "fingerprint": "698d209a682e19dfff12f01b3e739a71636aba9a91b6b21cb76ef10eaf15d38c",
+      "lastmod": "2026-11-17",
       "title": "HOJ 25th Anniversary — Saturday Night Concert — Tallahassee, FL — Oct 24, 2026 | Kingdom Circuit",
       "heading": "HOJ 25th Anniversary — Saturday Night Concert",
       "eventPaths": []
@@ -25872,8 +25974,8 @@
       "eventPaths": []
     },
     "/event/homecoming-combined-morning-worship-service-with-mayia-2026-10-04-high-point-7e7e84/": {
-      "fingerprint": "ace7b3e801c49b83fa066d787652f0031e8b67ab25ff187f2b9eca5d31e0ce65",
-      "lastmod": "2026-11-16",
+      "fingerprint": "48867022edc55e40dc7bda444de27c29d5346570e14ea474770440b63a7c7e29",
+      "lastmod": "2026-11-17",
       "title": "HOMEcoming Combined Morning Worship Service with MAYIA — High Point, NC — Oct 4, 2026 | Kingdom Circuit",
       "heading": "HOMEcoming Combined Morning Worship Service with MAYIA",
       "eventPaths": []
@@ -26245,15 +26347,15 @@
       "eventPaths": []
     },
     "/event/jay-way-at-crown-hill-theatre-2026-09-04-brooklyn-2767be/": {
-      "fingerprint": "4cfd8af69c2c19ce8d572cc1e1b5f43a94dfc88d26bd442620910b67e5d9be13",
-      "lastmod": "2026-11-16",
+      "fingerprint": "7312c1320b40779b363ac682e550e30bfb93b81d6a9a7a7327b187432db889ff",
+      "lastmod": "2026-11-17",
       "title": "Jay-Way at Crown Hill Theatre — Brooklyn, NY — Sep 4, 2026 | Kingdom Circuit",
       "heading": "Jay-Way at Crown Hill Theatre",
       "eventPaths": []
     },
     "/event/jimmy-rock-at-the-cathedral-2026-10-30-pomona-6527d0/": {
-      "fingerprint": "0734ee5d26a21641c85d80c97fae178a638913f2679432e941447e99da291ca0",
-      "lastmod": "2026-11-16",
+      "fingerprint": "ced8518757ac2fac295050009d7abd275e620a56e9848a33bec34ae549e44b07",
+      "lastmod": "2026-11-17",
       "title": "JIMMY ROCK at The Cathedral — Pomona, CA — Oct 30, 2026 | Kingdom Circuit",
       "heading": "JIMMY ROCK at The Cathedral",
       "eventPaths": []
@@ -26277,8 +26379,8 @@
       "eventPaths": []
     },
     "/event/jimmy-rock-rave-and-worship-denver-2026-2026-09-25-centennial-12d4ab/": {
-      "fingerprint": "8fff458f78958d799f42187d20d22861cb1c7f822ff8c1fe5b165fa90d0752bd",
-      "lastmod": "2026-11-16",
+      "fingerprint": "89827b6719a61ae8a3c96924bb4b3cf4afdd54a1489787cf7c0d59cee994a515",
+      "lastmod": "2026-11-17",
       "title": "JIMMY ROCK — Rave & Worship Denver 2026 — Centennial, CO — Sep 25, 2026 | Kingdom Circuit",
       "heading": "JIMMY ROCK — Rave & Worship Denver 2026",
       "eventPaths": []
@@ -26313,8 +26415,8 @@
       "eventPaths": []
     },
     "/event/k-drama-youth-leadership-seminar-school-event-2026-10-28-mason-3bebe9/": {
-      "fingerprint": "75a555c5c3b93c2cd7efd6b79abe952a33d677b378b351a360e89cfe4584fdb3",
-      "lastmod": "2026-11-16",
+      "fingerprint": "c3c2b726bad1a7e510446ae74f12fe63bdaee14bd067ae58b5dc860445e9bdbf",
+      "lastmod": "2026-11-17",
       "title": "K-Drama — Youth Leadership Seminar (School Event) — Mason, OH — Oct 28, 2026 | Kingdom Circuit",
       "heading": "K-Drama — Youth Leadership Seminar (School Event)",
       "eventPaths": []
@@ -26395,8 +26497,8 @@
       "eventPaths": []
     },
     "/event/knock-out-breast-cancer-boxing-and-live-music-2026-10-24-riverdale-29d9f3/": {
-      "fingerprint": "eb73360e51101bdfccab80a489df03d6cc3c3000f3ddb4af0a429a2a39ab9fa8",
-      "lastmod": "2026-11-16",
+      "fingerprint": "b4c47757e4c7e9867f4eea218ed569bb6bf1215e6bc7560e1645159cd4aa5fbe",
+      "lastmod": "2026-11-17",
       "title": "Knock Out Breast Cancer — Boxing & Live Music — Riverdale, GA — Oct 24, 2026 | Kingdom Circuit",
       "heading": "Knock Out Breast Cancer — Boxing & Live Music",
       "eventPaths": []
@@ -26467,8 +26569,8 @@
       ]
     },
     "/event/let-the-church-sing-tour-night-3-2026-10-02-dunedin-5d4017/": {
-      "fingerprint": "da00d69071bef09f8f05adc19ebdca403c81726daab73a1cf8db637390c4f997",
-      "lastmod": "2026-11-16",
+      "fingerprint": "305c63cd197e40a1f4d692159834df5924fae91a6996b82602613503d917a65b",
+      "lastmod": "2026-11-17",
       "title": "Let The Church Sing Tour Night 3 — Dunedin, FL — Oct 2, 2026 | Kingdom Circuit",
       "heading": "Let The Church Sing Tour Night 3",
       "eventPaths": []
@@ -26513,8 +26615,8 @@
       ]
     },
     "/event/live-loud-2026-10-07-chico-1b6570/": {
-      "fingerprint": "f588750462315de9c9ddcd966174cf6169f6b6a378beccd1e516ffda280aa580",
-      "lastmod": "2026-11-16",
+      "fingerprint": "7d0a8078377d696285ed2a1f10b4815473beff0467e999fca3c1005315ccf550",
+      "lastmod": "2026-11-17",
       "title": "Live Loud — Chico, CA — Oct 7, 2026 | Kingdom Circuit",
       "heading": "Live Loud",
       "eventPaths": []
@@ -26552,8 +26654,8 @@
       "eventPaths": []
     },
     "/event/mayia-at-songs-that-speak-conference-2026-10-23-pleasant-garden-ed118a/": {
-      "fingerprint": "41c9224962a949fae7b214671a2067272ccf5983171a846e078636d0bce17d4d",
-      "lastmod": "2026-11-16",
+      "fingerprint": "7ef54ec4461f2953fc56deb0924e6e0ef937708ccf33c38834cf0672c3d9bf96",
+      "lastmod": "2026-11-17",
       "title": "MAYIA at Songs That Speak Conference — Pleasant Garden, NC — Oct 23, 2026 | Kingdom Circuit",
       "heading": "MAYIA at Songs That Speak Conference",
       "eventPaths": []
@@ -26777,8 +26879,8 @@
       "eventPaths": []
     },
     "/event/one-day-fall-festival-2026-evening-concert-2026-10-10-aurora-587532/": {
-      "fingerprint": "d39806a32479cb02bcc146425c148eae50f6ec8da60238b605867b346c60df0b",
-      "lastmod": "2026-11-16",
+      "fingerprint": "46ac488e175603b762b3b461a67b26f8a433ec5a7a593a0462d1b9d5a34ea178",
+      "lastmod": "2026-11-17",
       "title": "ONE DAY Fall Festival 2026 — Evening Concert — Aurora, CO — Oct 10, 2026 | Kingdom Circuit",
       "heading": "ONE DAY Fall Festival 2026 — Evening Concert",
       "eventPaths": []
@@ -26805,8 +26907,8 @@
       "eventPaths": []
     },
     "/event/open-skies-bethel-music-with-kb-2026-09-26-topeka-0a9fd5/": {
-      "fingerprint": "927f98b9b3d9ed89d3593db12a04b71cf1e4e11ecb2b1291a0a02838c38d1775",
-      "lastmod": "2026-11-16",
+      "fingerprint": "7baa7742e16da135014f557274968fd4eb62b835c0a0e3b17ca251ff73466cb9",
+      "lastmod": "2026-11-17",
       "title": "Open Skies — Bethel Music with KB — Topeka, KS — Sep 26, 2026 | Kingdom Circuit",
       "heading": "Open Skies — Bethel Music with KB",
       "eventPaths": []
@@ -26819,8 +26921,8 @@
       "eventPaths": []
     },
     "/event/overflow-conference-2026-10-17-buffalo-2997a5/": {
-      "fingerprint": "4f25fafa2940f04c4239acb56f3ea64a2a7bcc6b8c17654d9a9d19625ab5e377",
-      "lastmod": "2026-11-16",
+      "fingerprint": "023307b00490baf73eecd3052209ab4ba879f55334801fa2f592fc79e1d7b8d6",
+      "lastmod": "2026-11-17",
       "title": "Overflow Conference — Buffalo, NY — Oct 17, 2026 | Kingdom Circuit",
       "heading": "Overflow Conference",
       "eventPaths": []
@@ -26894,8 +26996,8 @@
       ]
     },
     "/event/pray-4-my-hood-block-party-nashville-2026-10-24-old-hickory-153d47/": {
-      "fingerprint": "de6db5295092d765912da941e6279de5bf945257d9c533762ca93417a4a4dc2a",
-      "lastmod": "2026-11-16",
+      "fingerprint": "153eedca0458ddb209f761bd2be4094e8977300986b485e7ae6902c699d7e414",
+      "lastmod": "2026-11-17",
       "title": "Pray 4 My Hood Block Party — Nashville — Old Hickory, TN — Oct 24, 2026 | Kingdom Circuit",
       "heading": "Pray 4 My Hood Block Party — Nashville",
       "eventPaths": []
@@ -26972,8 +27074,8 @@
       ]
     },
     "/event/reach1-conference-2026-even-if-featuring-egr-2026-10-22-canton-32251a/": {
-      "fingerprint": "5eb5ce592f137fd0f0a4b63131651df665c471ba8c3ff5a9660fd594e8a947e9",
-      "lastmod": "2026-11-16",
+      "fingerprint": "2cad53ba2618421a53752d29e8f52a79d37a78bf3b5bbfc9df158e7590feed53",
+      "lastmod": "2026-11-17",
       "title": "Reach1 Conference 2026 — Even If… featuring EGR — Canton, OH — Oct 22, 2026 | Kingdom Circuit",
       "heading": "Reach1 Conference 2026 — Even If… featuring EGR",
       "eventPaths": []
@@ -26993,15 +27095,15 @@
       "eventPaths": []
     },
     "/event/reign-volume-one-2026-10-10-brooklyn-fe93fe/": {
-      "fingerprint": "c88299b4e8b9e5c04231e8b4225fd45dbda23b09839b8c30043938cd46332463",
-      "lastmod": "2026-11-16",
+      "fingerprint": "ebedfb58b3c25b56aeecacf292a3dd1a332b2dfe9b86dfe49b46ba4278f18076",
+      "lastmod": "2026-11-17",
       "title": "REIGN volume one — Brooklyn, NY — Oct 10, 2026 — The Vino Theater | Kingdom Circuit",
       "heading": "REIGN volume one",
       "eventPaths": []
     },
     "/event/revival-night-2026-10-23-trinity-5cb419/": {
-      "fingerprint": "322a204998db45351e4b09132b59e6199fd3c7c9de07d2711e5bb240a43260bf",
-      "lastmod": "2026-11-16",
+      "fingerprint": "295e0d252b7610560bc642bfb608c5b7067439d5778efbdb8cb76f7e3d7c0ef9",
+      "lastmod": "2026-11-17",
       "title": "Revival Night — Trinity, FL — Oct 23, 2026 | Kingdom Circuit",
       "heading": "Revival Night",
       "eventPaths": []
@@ -27043,8 +27145,8 @@
       ]
     },
     "/event/rock-n-the-river-viii-2026-10-09-harrison-bc51fa/": {
-      "fingerprint": "8a7c616f2c3e6222b534c8cdde33e677d214ef3786a4688a7e8f8518cc9c965c",
-      "lastmod": "2026-11-16",
+      "fingerprint": "446878dc163df77b448d13e906d62be49de54d016f597e4085e90eabe8ddc1e5",
+      "lastmod": "2026-11-17",
       "title": "Rock-N-The-River VIII — Harrison, AR — Oct 9, 2026 | Kingdom Circuit",
       "heading": "Rock-N-The-River VIII",
       "eventPaths": []
@@ -27199,15 +27301,15 @@
       "eventPaths": []
     },
     "/event/sevin-live-concert-2026-09-26-millville-3b1409/": {
-      "fingerprint": "3cc062c99951b41f2640d75e735b8bd652c88f854edd4968c673016ce613bdad",
-      "lastmod": "2026-11-16",
+      "fingerprint": "738e171242f5b1970d2225fc8bbcbaa068da38b93297f271636b1136bbf3e9bd",
+      "lastmod": "2026-11-17",
       "title": "Sevin Live Concert — Millville, NJ — Sep 26, 2026 | Kingdom Circuit",
       "heading": "Sevin Live Concert",
       "eventPaths": []
     },
     "/event/sevin-live-concert-2026-10-24-old-hickory-76d537/": {
-      "fingerprint": "cf5d0dd1fb347f7eeedd8b9420a967da7d7bbfb4a9dbd0f4d4fbcbfe9c3e9ed5",
-      "lastmod": "2026-11-16",
+      "fingerprint": "a21ce8451a5f68b028b28cee2768855e65e2567b00d71e585274c869b92e19e2",
+      "lastmod": "2026-11-17",
       "title": "Sevin Live Concert — Old Hickory, TN — Oct 24, 2026 | Kingdom Circuit",
       "heading": "Sevin Live Concert",
       "eventPaths": []
@@ -27259,8 +27361,8 @@
       "eventPaths": []
     },
     "/event/spin-awards-chocolate-affair-2026-10-21-lawrenceville-3e392a/": {
-      "fingerprint": "5f5f1617c8b7d64041ebc1116ed1c85a4f4b7d27bb32a566c2fd573680ae0bc7",
-      "lastmod": "2026-11-16",
+      "fingerprint": "e229d430fbd449fe0f25b30e4592cff170ea7c9de7aa7ce59893a2d86e57966a",
+      "lastmod": "2026-11-17",
       "title": "SPIN Awards — Chocolate Affair — Lawrenceville, GA — Oct 21, 2026 | Kingdom Circuit",
       "heading": "SPIN Awards — Chocolate Affair",
       "eventPaths": [
@@ -27268,8 +27370,8 @@
       ]
     },
     "/event/spin-awards-dope-women-in-radio-featuring-lady-cam-2026-10-22-lawrenceville-fed156/": {
-      "fingerprint": "205ee3c4e43e34822a9601a70e2cd27028cb55189cd51490b24e130833028ccd",
-      "lastmod": "2026-11-16",
+      "fingerprint": "74cb8917775d1ecfd363c31110d9564d4a664ceb4da975f25683d19c98ed3b84",
+      "lastmod": "2026-11-17",
       "title": "SPIN Awards — Dope Women in Radio featuring Lady Cam — Lawrenceville, GA — Oct 22, 2026 | Kingdom Circuit",
       "heading": "SPIN Awards — Dope Women in Radio featuring Lady Cam",
       "eventPaths": []
@@ -27300,8 +27402,8 @@
       "eventPaths": []
     },
     "/event/survival-revival-2026-10-24-athens-4b643e/": {
-      "fingerprint": "53035f3a356e3e9528386ee6e7fe33911d46e09bfd9fc51bbe375ed2ebfad627",
-      "lastmod": "2026-11-16",
+      "fingerprint": "c24055c3f3823a4f1776d2be695e5a9eaef265b499a02c1a6298a8305c94da21",
+      "lastmod": "2026-11-17",
       "title": "Survival Revival — Athens, AL — Oct 24, 2026 | Kingdom Circuit",
       "heading": "Survival Revival",
       "eventPaths": []
@@ -27349,8 +27451,8 @@
       "eventPaths": []
     },
     "/event/the-city-wide-christian-music-festival-2026-2026-10-18-fort-smith-f1ec42/": {
-      "fingerprint": "4a0c7e437d019be2b3d67c9b12be5243957159423580a48238939789264eaf1a",
-      "lastmod": "2026-11-16",
+      "fingerprint": "7a9e5af6fbfb7dbe192ef8e16dda7445efd22cdfa589178608ab21e306a731c1",
+      "lastmod": "2026-11-17",
       "title": "The City Wide Christian Music Festival 2026 — Fort Smith, AR — Oct 18, 2026 | Kingdom Circuit",
       "heading": "The City Wide Christian Music Festival 2026",
       "eventPaths": []
@@ -27429,8 +27531,8 @@
       "eventPaths": []
     },
     "/event/the-sac-town-give-back-2026-10-17-west-sacramento-10e63d/": {
-      "fingerprint": "2523b8776b81c138735f35469e161b7c71d819c5eff43ed9ec949481d1d3e04d",
-      "lastmod": "2026-11-16",
+      "fingerprint": "311cb27d5ab06dda75d1bff465abd74c363bedd73fcd30708acc3de256445ce5",
+      "lastmod": "2026-11-17",
       "title": "The Sac Town Give Back — West Sacramento, CA — Oct 17, 2026 | Kingdom Circuit",
       "heading": "The Sac Town Give Back",
       "eventPaths": []
@@ -27443,8 +27545,8 @@
       "eventPaths": []
     },
     "/event/the-spin-awards-10th-anniversary-weekend-2026-10-22-lawrenceville-3623f3/": {
-      "fingerprint": "725276bc72c7f91aa99336782058271ecd6ba3b81e60ea84d7111aebdab025ce",
-      "lastmod": "2026-11-16",
+      "fingerprint": "5934021b6ddf1f4cbc33f76bbf93cf35ebfe4e01b39fb40a34fce0da7f304e30",
+      "lastmod": "2026-11-17",
       "title": "The Spin Awards — 10th Anniversary Weekend — Lawrenceville, GA — Oct 22, 2026 | Kingdom Circuit",
       "heading": "The Spin Awards — 10th Anniversary Weekend",
       "eventPaths": [
@@ -27463,8 +27565,8 @@
       ]
     },
     "/event/tribe-fest-2026-2026-09-25-rialto-2303be/": {
-      "fingerprint": "a8443e581ac8e36038a1db385bac3e755dd2e9a51484299c135d348a16471881",
-      "lastmod": "2026-11-16",
+      "fingerprint": "9b9bcb837a0aa430936e1e629033b821d5b13f4a937fecc16ed933df0801da09",
+      "lastmod": "2026-11-17",
       "title": "Tribe Fest 2026 — Rialto, CA — Sep 25, 2026 | Kingdom Circuit",
       "heading": "Tribe Fest 2026",
       "eventPaths": []
@@ -27491,15 +27593,15 @@
       "eventPaths": []
     },
     "/event/tru-serva-at-cupojoy-cup2-2026-10-09-green-bay-726250/": {
-      "fingerprint": "dffc052e448bf4af3af02be6db40f619035c7c28b519c63f9fd585a7ad6dc410",
-      "lastmod": "2026-11-16",
+      "fingerprint": "dd5ff3b7ad6fce81438e2b018abaea9ae36506fce620177c8f3b3a4e141299ef",
+      "lastmod": "2026-11-17",
       "title": "TRU-SERVA at CupOJoy Cup2 — Green Bay, WI — Oct 9, 2026 | Kingdom Circuit",
       "heading": "TRU-SERVA at CupOJoy Cup2",
       "eventPaths": []
     },
     "/event/tru-serva-30-release-celebration-2026-10-24-maplewood-fdf2a4/": {
-      "fingerprint": "ba88baa37f21555ee81a1b9336b6e6066c5634854bda6a4fac82f9979e21f934",
-      "lastmod": "2026-11-16",
+      "fingerprint": "dd242099a757abe2a683d72b1ead666dcb88f5826e024b7c09c6b09bcadb6ab7",
+      "lastmod": "2026-11-17",
       "title": "TRU-SERVA — “30” Release Celebration — Maplewood, MN — Oct 24, 2026 | Kingdom Circuit",
       "heading": "TRU-SERVA — “30” Release Celebration",
       "eventPaths": []
@@ -27572,15 +27674,15 @@
       "eventPaths": []
     },
     "/event/victory-over-darkness-concert-2026-10-24-fullerton-b1b794/": {
-      "fingerprint": "7e03d1489f54e3fd05a001eebab8c4f748ef6ab63d8c902bf729e1fd26854d89",
-      "lastmod": "2026-11-16",
+      "fingerprint": "363be38f7f6df0f82e59d030f2e9799cb97d24ee1de13c556b906146ef5f8fda",
+      "lastmod": "2026-11-17",
       "title": "Victory Over Darkness Concert — Fullerton, CA — Oct 24, 2026 | Kingdom Circuit",
       "heading": "Victory Over Darkness Concert",
       "eventPaths": []
     },
     "/event/westside-social-holy-ghost-hip-hop-2026-10-25-venice-bf02f7/": {
-      "fingerprint": "13620b990030346ebd4059ccec8c984e44fbef244dd5f3b4ee26afc027a9b3ea",
-      "lastmod": "2026-11-16",
+      "fingerprint": "201a9d59c5802ec4897e7dddf8feb8b004ccf559e78af7023172be23bd5c2a27",
+      "lastmod": "2026-11-17",
       "title": "Westside Social: Holy Ghost Hip-Hop — Venice, CA — Oct 25, 2026 | Kingdom Circuit",
       "heading": "Westside Social: Holy Ghost Hip-Hop",
       "eventPaths": []
@@ -28028,8 +28130,8 @@
       ]
     },
     "/event/worship-night-2026-10-03-oceanside-361a34/": {
-      "fingerprint": "f2bdda082d3356adf36800ea67bf1527b293138534e02baae0ee3d1f302593c0",
-      "lastmod": "2026-11-16",
+      "fingerprint": "25f760252de311aae415f8d2072a804523c4474c9fab1d2f7a6b6239a2ed2b55",
+      "lastmod": "2026-11-17",
       "title": "Worship Night — Oceanside, CA — Oct 3, 2026 | Kingdom Circuit",
       "heading": "Worship Night",
       "eventPaths": []
@@ -28056,8 +28158,8 @@
       ]
     },
     "/event/zauntee-at-brightpoint-church-2026-10-26-markleville-e5440c/": {
-      "fingerprint": "b9affd775125beeb742ee2f6cd3882d8c2787c33076387c4f9da7a3eb78f29a3",
-      "lastmod": "2026-11-16",
+      "fingerprint": "c2ac70f980e11be16f2ef585bdfeccbc39e03e61d78f418065f21a37e9500ad5",
+      "lastmod": "2026-11-17",
       "title": "Zauntee at Brightpoint Church — Markleville, IN — Oct 26, 2026 | Kingdom Circuit",
       "heading": "Zauntee at Brightpoint Church",
       "eventPaths": []
@@ -31212,8 +31314,8 @@
       "eventPaths": []
     },
     "/event/dax-the-anger-management-tour-with-gifted-hands-2026-10-21-baton-rouge-ca8f54/": {
-      "fingerprint": "bb576e9f53ff13891d9ebebc30fae4711bf83316ddd61fd6625aabd65a9743cf",
-      "lastmod": "2026-11-16",
+      "fingerprint": "f60036e1281cbd62123b3a9562d5d9ce145fa1958f06973dcf332b45fbaf5993",
+      "lastmod": "2026-11-17",
       "title": "Dax — The Anger Management Tour with Gifted Hands | Kingdom Circuit",
       "heading": "Dax — The Anger Management Tour with Gifted Hands",
       "eventPaths": []
@@ -34095,7 +34197,7 @@
       ]
     },
     "/shows/archive/": {
-      "fingerprint": "07509e4643fea5b71f181a0c022ee75fce2b6ae979ba1163521971a4ba5511b5",
+      "fingerprint": "98433d21b3cff70ccc2d072a7f8b750390de6f6fc3a4e21c0123d20e60b697ed",
       "lastmod": "2026-11-17",
       "title": "Show archive | Kingdom Circuit",
       "heading": "Show archive",
@@ -34196,7 +34298,9 @@
         "/event/crushing-addiction-rally-2026-2026-11-07-clanton-b60fde/",
         "/event/daeshawn-forrest-live-from-noble-cinema-studios-2026-10-10-vallejo-8299dd/",
         "/event/darius-mullin-joston-cooper-and-illustrate-live-in-memphis-2026-10-15-memphis-354710/",
+        "/event/dax-the-anger-management-tour-with-gifted-hands-2026-10-20-birmingham-b58f23/",
         "/event/dax-the-anger-management-tour-with-gifted-hands-2026-10-21-baton-rouge-ca8f54/",
+        "/event/dax-the-anger-management-tour-with-gifted-hands-2026-10-23-dallas-6ead03/",
         "/event/dax-the-anger-management-tour-with-gifted-hands-2026-10-24-austin-2f7068/",
         "/event/definitely-d-homecoming-album-listening-party-with-dj-cam-2026-10-31-orlando-f2f6e1/",
         "/event/dfw-anthem-night-trap-worship-pop-up-2026-10-30-hurst-71262e/",
@@ -34261,6 +34365,7 @@
         "/event/homecoming-combined-morning-worship-service-with-mayia-2026-10-04-high-point-7e7e84/",
         "/event/homecoming-pep-rally-miles-minnick-and-reece-2026-10-23-chandler-d2e7f7/",
         "/event/homecoming-sunday-the-takeover-edition-2026-10-18-chicago-ab6974/",
+        "/event/hook-d-on-god-concert-2026-10-23-old-hickory-be5a3d/",
         "/event/hope-fest-2026-2026-08-22-daytona-beach-ac6572/",
         "/event/house-of-deliverance-music-fest-2026-10-03-wichita-falls-1dad34/",
         "/event/hrvstland-festival-2026-2026-10-24-charlotte-4dfc0b/",
@@ -34574,11 +34679,1943 @@
       "eventPaths": [
         "/event/new-year-s-eve-service-with-mayia-2026-12-31-odenton-1ab976/"
       ]
+    },
+    "/artists/180mindset/texas/": {
+      "fingerprint": "2fa534c36f1f8d447e056cdb25cc59c4d6c3034bd17b6e148df22565f7350b8f",
+      "lastmod": null,
+      "title": "180MINDSET shows in Texas | Kingdom Circuit",
+      "heading": "180MINDSET shows in Texas",
+      "eventPaths": [
+        "/event/ark-of-worship-gospel-and-christian-music-festival-2026-2026-10-09-houston-ca93e4/"
+      ]
+    },
+    "/artists/180mindset/wisconsin/": {
+      "fingerprint": "2a7b8eac36a6bb0602321e4980313cef92192e9d5acef6b885a803a4ccd3072e",
+      "lastmod": null,
+      "title": "180MINDSET shows in Wisconsin | Kingdom Circuit",
+      "heading": "180MINDSET shows in Wisconsin",
+      "eventPaths": [
+        "/event/echo-nights-26-2026-10-02-brookfield-9c48cb/"
+      ]
+    },
+    "/artists/1k-phew/alabama/": {
+      "fingerprint": "3beb46f6ae3accdb37b970c0617e54affbcd50e5c8c24d7ae225d882ee28ac33",
+      "lastmod": null,
+      "title": "1K Phew shows in Alabama | Kingdom Circuit",
+      "heading": "1K Phew shows in Alabama",
+      "eventPaths": [
+        "/event/1k-phew-at-big-spring-international-park-2026-10-04-huntsville-eb07e2/",
+        "/event/1k-phew-live-at-smac-s-empowerment-luncheon-2026-08-05-birmingham-c15bee/"
+      ]
+    },
+    "/artists/1k-phew/california/": {
+      "fingerprint": "fd9fc8a99127aa2bfd509ac7f78bd06ec247ded6c2a25947ce76f3ba3ea4409b",
+      "lastmod": null,
+      "title": "1K Phew shows in California | Kingdom Circuit",
+      "heading": "1K Phew shows in California",
+      "eventPaths": [
+        "/event/worship-night-2026-10-03-oceanside-361a34/"
+      ]
+    },
+    "/artists/1k-phew/tennessee/": {
+      "fingerprint": "2f4d20dc88504d8f20a9493d518bd3b7ba7fe0f1f7252867e26b868ade1c38c8",
+      "lastmod": null,
+      "title": "1K Phew shows in Tennessee | Kingdom Circuit",
+      "heading": "1K Phew shows in Tennessee",
+      "eventPaths": [
+        "/event/1k-phew-live-at-mt-zion-baptist-church-2026-08-23-whites-creek-ca0d10/",
+        "/event/1k-phew-live-at-pneuma-church-2026-08-01-chattanooga-0260c9/",
+        "/event/future-legacy-hip-hop-showcase-2026-10-04-nashville-4bd33c/"
+      ]
+    },
+    "/artists/808-beezy/california/": {
+      "fingerprint": "d0b5d366349a8ea4a5e654b01c02bcf5481c76a12d8c1da261772f11de8a1eda",
+      "lastmod": null,
+      "title": "808 BEEZY shows in California | Kingdom Circuit",
+      "heading": "808 BEEZY shows in California",
+      "eventPaths": [
+        "/event/808-beezy-live-in-delano-ca-2026-10-08-delano-ccf4b6/",
+        "/event/808-beezy-live-in-delano-ca-2026-10-08-delano-d17357/",
+        "/event/808-beezy-live-in-oceano-ca-2026-10-09-oceano-c0cb22/",
+        "/event/808-beezy-live-in-santa-margarita-ca-2026-10-09-santa-margarita-d5defe/",
+        "/event/808-beezy-live-in-weldon-ca-2026-10-08-weldon-d48267/"
+      ]
+    },
+    "/artists/808-beezy/missouri/": {
+      "fingerprint": "8ce151b7da28d97847a2a7192124d4cdf52aa4bc40ca1ba482e02fc644d10725",
+      "lastmod": null,
+      "title": "808 BEEZY shows in Missouri | Kingdom Circuit",
+      "heading": "808 BEEZY shows in Missouri",
+      "eventPaths": [
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-16-bowling-green-b1c1a6/",
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-16-desloge-bbc3f4/",
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-25-malta-bend-f3c3e1/",
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-25-wellington-2dc18f/",
+        "/event/808-beezy-live-in-salisbury-mo-2026-10-14-salisbury-0afdaf/"
+      ]
+    },
+    "/artists/aasha-marie/new-york/": {
+      "fingerprint": "52be184fe2c073d43f4080bfc8161bfc55b1d297e3a3c1d93d6ad8505234d0ff",
+      "lastmod": null,
+      "title": "Aasha Marie shows in New York | Kingdom Circuit",
+      "heading": "Aasha Marie shows in New York",
+      "eventPaths": [
+        "/event/reign-volume-one-2026-10-10-brooklyn-fe93fe/"
+      ]
+    },
+    "/artists/alex-zurdo/pr/": {
+      "fingerprint": "3de2b9371fef3c34af113b0d6727b064ffec3cda6e447fccf7c4e584cc60881a",
+      "lastmod": null,
+      "title": "Alex Zurdo shows in PR | Kingdom Circuit",
+      "heading": "Alex Zurdo shows in PR",
+      "eventPaths": [
+        "/event/alex-zurdo-zona-zero-2026-10-18-san-juan-6d6263/"
+      ]
+    },
+    "/artists/anike/north-carolina/": {
+      "fingerprint": "843c7f3875c8480fd3e69b73227f201ed507748627eeb26254902ff60f04b2a5",
+      "lastmod": null,
+      "title": "Anike shows in North Carolina | Kingdom Circuit",
+      "heading": "Anike shows in North Carolina",
+      "eventPaths": [
+        "/event/hrvstland-festival-2026-2026-10-24-charlotte-4dfc0b/"
+      ]
+    },
+    "/artists/anike/texas/": {
+      "fingerprint": "eeffbb5c49aa2b0d652036ca6a1948569fb0147d3a86769f75e9eef4feb76abe",
+      "lastmod": null,
+      "title": "Anike shows in Texas | Kingdom Circuit",
+      "heading": "Anike shows in Texas",
+      "eventPaths": [
+        "/event/anike-live-at-3ten-austin-city-limits-live-2026-08-15-austin-499af9/",
+        "/event/anike-live-at-the-all-star-experience-live-concert-2026-10-11-austin-b52a11/",
+        "/event/anike-live-at-the-banquet-2026-08-16-austin-2ba354/",
+        "/event/anike-the-all-star-tour-2026-10-11-austin-208865/",
+        "/event/ark-of-worship-gospel-and-christian-music-festival-2026-2026-10-09-houston-ca93e4/"
+      ]
+    },
+    "/artists/arize/california/": {
+      "fingerprint": "d861220d49dbee13dfadce1200ff515a11b216cdf282e020949a6d89454179e2",
+      "lastmod": null,
+      "title": "Arize shows in California | Kingdom Circuit",
+      "heading": "Arize shows in California",
+      "eventPaths": [
+        "/event/back-to-the-basics-2026-10-10-visalia-d2e925/"
+      ]
+    },
+    "/artists/b-wade-sbg/arkansas/": {
+      "fingerprint": "20b3f0bbdf21e724124a6d3db6b76acc2c76b5e92e5865fdd4b754535b9cf603",
+      "lastmod": null,
+      "title": "B Wade SBG shows in Arkansas | Kingdom Circuit",
+      "heading": "B Wade SBG shows in Arkansas",
+      "eventPaths": [
+        "/event/chh-takeover-night-2026-10-25-huntington-72c73d/"
+      ]
+    },
+    "/artists/big-rev/arkansas/": {
+      "fingerprint": "9deddf1749f5d5390f0bfb034de4f8eee80aef8f4d684eefc2ea2a198ae79e66",
+      "lastmod": null,
+      "title": "Big Rev. shows in Arkansas | Kingdom Circuit",
+      "heading": "Big Rev. shows in Arkansas",
+      "eventPaths": [
+        "/event/chh-takeover-night-2026-10-25-huntington-72c73d/",
+        "/event/rock-n-the-river-viii-2026-10-09-harrison-bc51fa/",
+        "/event/the-city-wide-christian-music-festival-2026-2026-10-18-fort-smith-f1ec42/"
+      ]
+    },
+    "/artists/bigbreeze/north-carolina/": {
+      "fingerprint": "f6cb26173a761013dfdf8606b962becacd8b98cc8bdd00b9bf9fdfc69ebb41ae",
+      "lastmod": null,
+      "title": "BigBreeze shows in North Carolina | Kingdom Circuit",
+      "heading": "BigBreeze shows in North Carolina",
+      "eventPaths": [
+        "/event/passion-fest-ii-2026-10-11-charlotte-2eb238/"
+      ]
+    },
+    "/artists/bizzle/arizona/": {
+      "fingerprint": "e8aa9c1597b8456ec7470b0593877976a6c15c0934e139b99c80b1e7477155c9",
+      "lastmod": null,
+      "title": "Bizzle shows in Arizona | Kingdom Circuit",
+      "heading": "Bizzle shows in Arizona",
+      "eventPaths": [
+        "/event/zion-ultra-lounge-christian-music-pop-up-concert-2026-10-03-chandler-3f4bba/"
+      ]
+    },
+    "/artists/bobby-real-montgomery/georgia/": {
+      "fingerprint": "5d1b1dbb0ae47c3e5cf697f3169d569bf8d6b1225bff566042f03a5c98000978",
+      "lastmod": null,
+      "title": "Bobby Real Montgomery shows in Georgia | Kingdom Circuit",
+      "heading": "Bobby Real Montgomery shows in Georgia",
+      "eventPaths": [
+        "/event/the-spin-awards-10th-anniversary-weekend-2026-10-22-lawrenceville-3623f3/"
+      ]
+    },
+    "/artists/brandon-trejo/california/": {
+      "fingerprint": "a1fcd7473ecce3ef49dc3dacb651b1530398d49e3d4d0937bf01c5a56900e820",
+      "lastmod": null,
+      "title": "Brandon Trejo shows in California | Kingdom Circuit",
+      "heading": "Brandon Trejo shows in California",
+      "eventPaths": [
+        "/event/back-to-the-basics-2026-10-10-visalia-d2e925/"
+      ]
+    },
+    "/artists/brenno/michigan/": {
+      "fingerprint": "6f4f6013644c2f2910e6f3d49a2a6592f67f0c028d5efd05e0b1646d1aec42f8",
+      "lastmod": null,
+      "title": "Brenno shows in Michigan | Kingdom Circuit",
+      "heading": "Brenno shows in Michigan",
+      "eventPaths": [
+        "/event/awake-conference-2026-10-10-centreville-cd145d/"
+      ]
+    },
+    "/artists/brenno/new-york/": {
+      "fingerprint": "0d78615e224462ffa23998815d74d4fc589dda5dea6315ea4d19d0d32e66a883",
+      "lastmod": null,
+      "title": "Brenno shows in New York | Kingdom Circuit",
+      "heading": "Brenno shows in New York",
+      "eventPaths": [
+        "/event/overflow-conference-2026-10-17-buffalo-2997a5/"
+      ]
+    },
+    "/artists/da-young-disciples/california/": {
+      "fingerprint": "d3cc20a83f40e1d0e63a1eaec2c9b80f00c4eccba4a4fc36ac6c73b69612d836",
+      "lastmod": null,
+      "title": "Da Young Disciples shows in California | Kingdom Circuit",
+      "heading": "Da Young Disciples shows in California",
+      "eventPaths": [
+        "/event/back-to-the-basics-2026-10-10-visalia-d2e925/"
+      ]
+    },
+    "/artists/dante-pride/alabama/": {
+      "fingerprint": "b723cd4c337e51f46459689eedf8a199b1546f6a3491966da7586cf1ff482428",
+      "lastmod": null,
+      "title": "Dante' Pride shows in Alabama | Kingdom Circuit",
+      "heading": "Dante' Pride shows in Alabama",
+      "eventPaths": [
+        "/event/aamu-homecoming-gospel-explosion-night-of-gospel-2026-10-11-huntsville-c779c6/"
+      ]
+    },
+    "/artists/dante-pride/north-carolina/": {
+      "fingerprint": "1b3d0fa35b1d21c415d5db5a914eedd98820d46c80044c3613baf15eb7b2ca5b",
+      "lastmod": null,
+      "title": "Dante' Pride shows in North Carolina | Kingdom Circuit",
+      "heading": "Dante' Pride shows in North Carolina",
+      "eventPaths": [
+        "/event/hrvstland-festival-2026-2026-10-24-charlotte-4dfc0b/"
+      ]
+    },
+    "/artists/dante-pride/tennessee/": {
+      "fingerprint": "e2a9ba856d4e46c8a385b08d5eb301b4269dfb47efdc53836e6a94b1f69d18f6",
+      "lastmod": null,
+      "title": "Dante' Pride shows in Tennessee | Kingdom Circuit",
+      "heading": "Dante' Pride shows in Tennessee",
+      "eventPaths": [
+        "/event/after-doves-at-the-c-and-g-2026-10-06-nashville-196af4/"
+      ]
+    },
+    "/artists/dante-pride/texas/": {
+      "fingerprint": "11fda8087f434abfd9385275b7d3ffd5cc44716309a1d9d24395a80521c51e90",
+      "lastmod": null,
+      "title": "Dante' Pride shows in Texas | Kingdom Circuit",
+      "heading": "Dante' Pride shows in Texas",
+      "eventPaths": [
+        "/event/ark-of-worship-gospel-and-christian-music-festival-2026-2026-10-09-houston-ca93e4/"
+      ]
+    },
+    "/artists/dj-promote/california/": {
+      "fingerprint": "08397ab6a82686db48cdebe0b2720b5e7ae03ec61c78a700fe7f578149b80394",
+      "lastmod": null,
+      "title": "DJ Promote shows in California | Kingdom Circuit",
+      "heading": "DJ Promote shows in California",
+      "eventPaths": [
+        "/event/real-ones-day-party-2026-10-04-los-angeles-b66ae4/"
+      ]
+    },
+    "/artists/don-ready/north-carolina/": {
+      "fingerprint": "97a91addafb96e46d09ba89c7faba2d91f45438d671d473058a18d1d27b75ce7",
+      "lastmod": null,
+      "title": "Don Ready shows in North Carolina | Kingdom Circuit",
+      "heading": "Don Ready shows in North Carolina",
+      "eventPaths": [
+        "/event/hrvstland-festival-2026-2026-10-24-charlotte-4dfc0b/"
+      ]
+    },
+    "/artists/don-ready/tennessee/": {
+      "fingerprint": "1a1740b2298b08a73696f0fc70bee698f7ee504cadde3e93fd2ad0c03dfce874",
+      "lastmod": null,
+      "title": "Don Ready shows in Tennessee | Kingdom Circuit",
+      "heading": "Don Ready shows in Tennessee",
+      "eventPaths": [
+        "/event/future-legacy-hip-hop-showcase-2026-10-04-nashville-4bd33c/"
+      ]
+    },
+    "/artists/dondrae/florida/": {
+      "fingerprint": "452cf3d060fb3edf2987018dead500b5a01fc74eeb3c6e250a7533e6b54ed3a5",
+      "lastmod": null,
+      "title": "Dondrae shows in Florida | Kingdom Circuit",
+      "heading": "Dondrae shows in Florida",
+      "eventPaths": [
+        "/event/adrenaline-tampa-christian-music-concert-2026-10-17-valrico-d3561a/"
+      ]
+    },
+    "/artists/dontae/tennessee/": {
+      "fingerprint": "408ce22a7b815ad38d5345f0754a150fb757dfe5952fb22d93778f8b17aa96c6",
+      "lastmod": null,
+      "title": "Dontae shows in Tennessee | Kingdom Circuit",
+      "heading": "Dontae shows in Tennessee",
+      "eventPaths": [
+        "/event/sevin-live-concert-2026-10-24-old-hickory-76d537/"
+      ]
+    },
+    "/artists/drew-ava/california/": {
+      "fingerprint": "73bd50921c1e4b0a62ec2f96e003721fa11e53982a91d74f26ae6618ab45267d",
+      "lastmod": null,
+      "title": "Drew Ava shows in California | Kingdom Circuit",
+      "heading": "Drew Ava shows in California",
+      "eventPaths": [
+        "/event/back-to-the-basics-2026-10-10-visalia-d2e925/"
+      ]
+    },
+    "/artists/egr/ohio/": {
+      "fingerprint": "00a42ebabe06f1b1686596d7b45d97d036e6c84e14c2b6b19143d5549d10599d",
+      "lastmod": null,
+      "title": "EGR shows in Ohio | Kingdom Circuit",
+      "heading": "EGR shows in Ohio",
+      "eventPaths": [
+        "/event/reach1-conference-2026-even-if-featuring-egr-2026-10-22-canton-32251a/"
+      ]
+    },
+    "/artists/eli-montanna/texas/": {
+      "fingerprint": "3e3d0b7abedcfb498edbc319a94c401f90f584b8e30e9298e649db0904c7b9fc",
+      "lastmod": null,
+      "title": "Eli Montanna shows in Texas | Kingdom Circuit",
+      "heading": "Eli Montanna shows in Texas",
+      "eventPaths": [
+        "/event/parris-chariz-the-world-is-watching-live-2026-10-11-dallas-a6a47c/"
+      ]
+    },
+    "/artists/eli-williams/michigan/": {
+      "fingerprint": "7e1b8e87bfa5be836985939856342b942d60dbc4665116b84bf0e49adc74410a",
+      "lastmod": null,
+      "title": "Eli Williams shows in Michigan | Kingdom Circuit",
+      "heading": "Eli Williams shows in Michigan",
+      "eventPaths": [
+        "/event/awake-conference-2026-10-10-centreville-cd145d/"
+      ]
+    },
+    "/artists/gabriel-katon/florida/": {
+      "fingerprint": "f8da7e712fe362d7c02ecfe8928c191aa2029b209f4f05bf8b89f6d7fab55a9a",
+      "lastmod": null,
+      "title": "Gabriel Katon shows in Florida | Kingdom Circuit",
+      "heading": "Gabriel Katon shows in Florida",
+      "eventPaths": [
+        "/event/revival-night-2026-10-23-trinity-5cb419/"
+      ]
+    },
+    "/artists/j-reborn/florida/": {
+      "fingerprint": "33302f2f4999dc795ccff663c50fbf5335fe890df0e78ddbbf5a3fc2e6133b62",
+      "lastmod": null,
+      "title": "J Reborn shows in Florida | Kingdom Circuit",
+      "heading": "J Reborn shows in Florida",
+      "eventPaths": [
+        "/event/revival-night-2026-10-23-trinity-5cb419/"
+      ]
+    },
+    "/artists/jamil/north-carolina/": {
+      "fingerprint": "fe8b964ae72be6433dafb081d5cb1f5ef94eb40660f5490985feec1805a6ead9",
+      "lastmod": null,
+      "title": "Jamil shows in North Carolina | Kingdom Circuit",
+      "heading": "Jamil shows in North Carolina",
+      "eventPaths": [
+        "/event/hrvstland-festival-2026-2026-10-24-charlotte-4dfc0b/",
+        "/event/the-believers-social-2026-10-23-concord-c8c89b/"
+      ]
+    },
+    "/artists/jaylxn/florida/": {
+      "fingerprint": "66d741b8805c91c9fd0125fb62b8e088e2501dd89dc261ce2552d156572d8710",
+      "lastmod": null,
+      "title": "JAYLXN shows in Florida | Kingdom Circuit",
+      "heading": "JAYLXN shows in Florida",
+      "eventPaths": [
+        "/event/adrenaline-tampa-christian-music-concert-2026-10-17-valrico-d3561a/"
+      ]
+    },
+    "/artists/jbthapreacher/colorado/": {
+      "fingerprint": "43f29328ab56ca65914b01623a36ba323b5b21354ffbc2dab272a71d3ceb4b33",
+      "lastmod": null,
+      "title": "JBthaPreacher shows in Colorado | Kingdom Circuit",
+      "heading": "JBthaPreacher shows in Colorado",
+      "eventPaths": [
+        "/event/one-day-fall-festival-2026-evening-concert-2026-10-10-aurora-587532/"
+      ]
+    },
+    "/artists/jimmy-rock/california/": {
+      "fingerprint": "14be9ae5314488c58a786fe5d68a4b773e01c24ed64a3418302d34c117b89885",
+      "lastmod": null,
+      "title": "JIMMY ROCK shows in California | Kingdom Circuit",
+      "heading": "JIMMY ROCK shows in California",
+      "eventPaths": [
+        "/event/jimmy-rock-at-the-cathedral-2026-10-30-pomona-6527d0/"
+      ]
+    },
+    "/artists/jimmy-rock/texas/": {
+      "fingerprint": "ffd17fb9f37aea0e5df47465848626707f863dec06c62b81dc14feb9fd760ee8",
+      "lastmod": null,
+      "title": "JIMMY ROCK shows in Texas | Kingdom Circuit",
+      "heading": "JIMMY ROCK shows in Texas",
+      "eventPaths": [
+        "/event/jimmy-rock-rave-and-worship-dallas-2026-10-18-dallas-384f41/"
+      ]
+    },
+    "/artists/jon-keith/michigan/": {
+      "fingerprint": "2eeedd43029e5ff41a151954b3c13b9c37aeff4d503b948ac2b450e6a9ef5591",
+      "lastmod": null,
+      "title": "Jon Keith shows in Michigan | Kingdom Circuit",
+      "heading": "Jon Keith shows in Michigan",
+      "eventPaths": [
+        "/event/harvest-fest-2026-jon-keith-2026-10-30-southfield-4727b6/"
+      ]
+    },
+    "/artists/joz/florida/": {
+      "fingerprint": "5fc8845cf6bd6e6deed1e34fef3de32ff1a2da882284da38af8d3ec341a07160",
+      "lastmod": null,
+      "title": "Joz shows in Florida | Kingdom Circuit",
+      "heading": "Joz shows in Florida",
+      "eventPaths": [
+        "/event/good-vibez-and-jesus-glow-in-the-dark-party-2026-10-30-miami-gardens-9d0181/"
+      ]
+    },
+    "/artists/kg-santiago/california/": {
+      "fingerprint": "95f0a08ab9a9f17498189ccef9fffee07ba56eca0e6cd80e7e956b8cb668d510",
+      "lastmod": null,
+      "title": "KG Santiago shows in California | Kingdom Circuit",
+      "heading": "KG Santiago shows in California",
+      "eventPaths": [
+        "/event/back-to-the-basics-2026-10-10-visalia-d2e925/"
+      ]
+    },
+    "/artists/kijan-boone/wisconsin/": {
+      "fingerprint": "a5140277ca38323e995cfa121dbf4ec6790f85508c730f30a7b443c1c4a11bca",
+      "lastmod": null,
+      "title": "Kijan Boone shows in Wisconsin | Kingdom Circuit",
+      "heading": "Kijan Boone shows in Wisconsin",
+      "eventPaths": [
+        "/event/echo-nights-26-2026-10-02-brookfield-9c48cb/"
+      ]
+    },
+    "/artists/l-o-g/arkansas/": {
+      "fingerprint": "4f88fb4528ab5b73b34374b19eeacd8eb94477cac268588f661586fb04d03da7",
+      "lastmod": null,
+      "title": "L.O.G. shows in Arkansas | Kingdom Circuit",
+      "heading": "L.O.G. shows in Arkansas",
+      "eventPaths": [
+        "/event/chh-takeover-night-2026-10-25-huntington-72c73d/"
+      ]
+    },
+    "/artists/lanell-grant/tennessee/": {
+      "fingerprint": "577669e3e109a9c320b506ba5dbcf3d1e1ec49068b709de3d9e21ba3e4b913d1",
+      "lastmod": null,
+      "title": "LaNell Grant shows in Tennessee | Kingdom Circuit",
+      "heading": "LaNell Grant shows in Tennessee",
+      "eventPaths": [
+        "/event/future-legacy-hip-hop-showcase-2026-10-04-nashville-4bd33c/",
+        "/event/holy-smoke-2026-2026-08-06-nashville-952f59/"
+      ]
+    },
+    "/artists/lecrae/texas/": {
+      "fingerprint": "9cf591cea4fa5b8935bfe4c03029d44e3494b44cab5f61b25d38cf96a5d32684",
+      "lastmod": null,
+      "title": "Lecrae shows in Texas | Kingdom Circuit",
+      "heading": "Lecrae shows in Texas",
+      "eventPaths": [
+        "/event/space-city-fest-2026-2026-10-25-houston-88bea2/"
+      ]
+    },
+    "/artists/man-of-faith/california/": {
+      "fingerprint": "b2ab62e04104a905c0363d9c04b84294881da98403503f0fb87b8880432351ba",
+      "lastmod": null,
+      "title": "Man Of FAITH shows in California | Kingdom Circuit",
+      "heading": "Man Of FAITH shows in California",
+      "eventPaths": [
+        "/event/a-nu-wave-of-anointing-artist-showcase-2026-10-10-sacramento-f15531/",
+        "/event/ghost-ride-the-gospel-2-2026-10-17-berkeley-903ebf/"
+      ]
+    },
+    "/artists/mike-servin/california/": {
+      "fingerprint": "ec2b571da6e8cd37773d7471a71e30d0504a52595988508ae591c0e2c59fa157",
+      "lastmod": null,
+      "title": "Mike Servin shows in California | Kingdom Circuit",
+      "heading": "Mike Servin shows in California",
+      "eventPaths": [
+        "/event/back-to-the-basics-2026-10-10-visalia-d2e925/"
+      ]
+    },
+    "/artists/mike-teezy/tennessee/": {
+      "fingerprint": "2bd9393d0855dd8d2e547e630c10c5413a13d306647bf40426390c07f85e9f94",
+      "lastmod": null,
+      "title": "Mike Teezy shows in Tennessee | Kingdom Circuit",
+      "heading": "Mike Teezy shows in Tennessee",
+      "eventPaths": [
+        "/event/after-doves-at-the-c-and-g-2026-10-06-nashville-196af4/"
+      ]
+    },
+    "/artists/miles-minnick/texas/": {
+      "fingerprint": "b383200e69bf5b638b498e653f5abb05adca4e2a35870cae0855efe5590de837",
+      "lastmod": null,
+      "title": "Miles Minnick shows in Texas | Kingdom Circuit",
+      "heading": "Miles Minnick shows in Texas",
+      "eventPaths": [
+        "/event/space-city-fest-2026-2026-10-25-houston-88bea2/"
+      ]
+    },
+    "/artists/mission/california/": {
+      "fingerprint": "1aef76e101e52fca0fa4d1a8ccc315486b2fcd740747cf326ddd318028c098c2",
+      "lastmod": null,
+      "title": "Mission shows in California | Kingdom Circuit",
+      "heading": "Mission shows in California",
+      "eventPaths": [
+        "/event/mission-and-special-guests-2026-10-17-sacramento-15909d/"
+      ]
+    },
+    "/artists/nathan-davis-jr/tennessee/": {
+      "fingerprint": "5839f9d7d20b45cb69f08875f6edc0a978649fd71b5cc58aa977474bc94cca46",
+      "lastmod": null,
+      "title": "Nathan Davis Jr. shows in Tennessee | Kingdom Circuit",
+      "heading": "Nathan Davis Jr. shows in Tennessee",
+      "eventPaths": [
+        "/event/future-legacy-hip-hop-showcase-2026-10-04-nashville-4bd33c/"
+      ]
+    },
+    "/artists/nehemiah/florida/": {
+      "fingerprint": "8bff148cc0980f28d4decbde61921f3c7b5504b3f984c0db24070340f4eb1ef4",
+      "lastmod": null,
+      "title": "Nehemiah shows in Florida | Kingdom Circuit",
+      "heading": "Nehemiah shows in Florida",
+      "eventPaths": [
+        "/event/adrenaline-tampa-christian-music-concert-2026-10-17-valrico-d3561a/"
+      ]
+    },
+    "/artists/parris-chariz/tennessee/": {
+      "fingerprint": "b527b37c8b8a803d414c411cbf2210efd253d6ebc2f40c7f39cce3cc93bcee59",
+      "lastmod": null,
+      "title": "Parris Chariz shows in Tennessee | Kingdom Circuit",
+      "heading": "Parris Chariz shows in Tennessee",
+      "eventPaths": [
+        "/event/future-legacy-hip-hop-showcase-2026-10-04-nashville-4bd33c/",
+        "/event/holy-smoke-2026-2026-08-06-nashville-952f59/"
+      ]
+    },
+    "/artists/parris-chariz/texas/": {
+      "fingerprint": "82752c55496ba14b7158f8b003fbc796a29d36bf3b08830d41b76cdfcdbc4f62",
+      "lastmod": null,
+      "title": "Parris Chariz shows in Texas | Kingdom Circuit",
+      "heading": "Parris Chariz shows in Texas",
+      "eventPaths": [
+        "/event/konnect-concert-series-2026-08-22-houston-3d3289/",
+        "/event/parris-chariz-the-world-is-watching-live-2026-10-11-dallas-a6a47c/",
+        "/event/the-world-is-watching-live-2026-10-11-dallas-2f1afe/"
+      ]
+    },
+    "/artists/petrina-delacey/colorado/": {
+      "fingerprint": "5e156275af200c9f527ba6246122a102798e2e9a8141a946d81cd0eff08eb1eb",
+      "lastmod": null,
+      "title": "Petrina DeLacey shows in Colorado | Kingdom Circuit",
+      "heading": "Petrina DeLacey shows in Colorado",
+      "eventPaths": [
+        "/event/one-day-fall-festival-2026-evening-concert-2026-10-10-aurora-587532/"
+      ]
+    },
+    "/artists/priest-jones/minnesota/": {
+      "fingerprint": "286de68a7a55134cf86d34e3d232809f9f3210e139ff8838cf72df27858cb97b",
+      "lastmod": null,
+      "title": "Priest Jones shows in Minnesota | Kingdom Circuit",
+      "heading": "Priest Jones shows in Minnesota",
+      "eventPaths": [
+        "/event/priest-jones-featuring-serv-2026-10-24-willmar-80bbc3/"
+      ]
+    },
+    "/artists/queen-lee/north-carolina/": {
+      "fingerprint": "4d73beff0995d0ffb66abafb1a130034004c90ba90fdd2d95b5265f22c5eb618",
+      "lastmod": null,
+      "title": "Queen Lee shows in North Carolina | Kingdom Circuit",
+      "heading": "Queen Lee shows in North Carolina",
+      "eventPaths": [
+        "/event/hrvstland-festival-2026-2026-10-24-charlotte-4dfc0b/",
+        "/event/passion-fest-ii-2026-10-11-charlotte-2eb238/"
+      ]
+    },
+    "/artists/ruslan/texas/": {
+      "fingerprint": "c122b3e0d78fb4cd1e68cbcac78073c16b616188436b334f067a5ce0409a00d7",
+      "lastmod": null,
+      "title": "Ruslan shows in Texas | Kingdom Circuit",
+      "heading": "Ruslan shows in Texas",
+      "eventPaths": [
+        "/event/godly-ambition-tour-dallas-tx-2026-10-25-dallas-c0038c/",
+        "/event/godly-ambition-tour-houston-tx-2026-10-24-houston-360d40/"
+      ]
+    },
+    "/artists/scarlito-jr/florida/": {
+      "fingerprint": "cac711347fd21ffbad597686ae1a208aa350d1e140e6fd8668387c354eb1f3fc",
+      "lastmod": null,
+      "title": "Scarlito Jr. shows in Florida | Kingdom Circuit",
+      "heading": "Scarlito Jr. shows in Florida",
+      "eventPaths": [
+        "/event/revival-night-2026-10-23-trinity-5cb419/"
+      ]
+    },
+    "/artists/sevin/tennessee/": {
+      "fingerprint": "444bc23f42c0899fd15c28e501cf3ff2768f395948a24f2b7a55b3349b3a17e4",
+      "lastmod": null,
+      "title": "Sevin shows in Tennessee | Kingdom Circuit",
+      "heading": "Sevin shows in Tennessee",
+      "eventPaths": [
+        "/event/pray-4-my-hood-block-party-nashville-2026-10-24-old-hickory-153d47/",
+        "/event/sevin-live-concert-2026-10-24-old-hickory-76d537/"
+      ]
+    },
+    "/artists/skema-boy/illinois/": {
+      "fingerprint": "05f2de2e78231702a8ff65e712b524631ee2c1a2aab50c6f2076f0538fadc966",
+      "lastmod": null,
+      "title": "Skema Boy shows in Illinois | Kingdom Circuit",
+      "heading": "Skema Boy shows in Illinois",
+      "eventPaths": [
+        "/event/zauntee-god-remembers-tour-with-skema-boy-2026-10-27-chicago-dd37a2/"
+      ]
+    },
+    "/artists/skema-boy/ohio/": {
+      "fingerprint": "ca60a400f515d13d720fab045367bf9ce7c390fb9a6f30a0db8225b1c389d58c",
+      "lastmod": null,
+      "title": "Skema Boy shows in Ohio | Kingdom Circuit",
+      "heading": "Skema Boy shows in Ohio",
+      "eventPaths": [
+        "/event/zauntee-god-remembers-tour-with-skema-boy-2026-10-28-columbus-9693cc/"
+      ]
+    },
+    "/artists/steven-malcolm/michigan/": {
+      "fingerprint": "5431c89b65778f34ab95c5cd44339bbbc081c9e1554e3f138761623299609939",
+      "lastmod": null,
+      "title": "Steven Malcolm shows in Michigan | Kingdom Circuit",
+      "heading": "Steven Malcolm shows in Michigan",
+      "eventPaths": [
+        "/event/kulture-on-kalamazoo-2026-10-03-grand-rapids-c5dc45/",
+        "/event/steven-malcolm-at-the-centre-2026-08-20-adrian-4413d3/"
+      ]
+    },
+    "/artists/tommy-zuko/tennessee/": {
+      "fingerprint": "11a9954b3b3b6fd0ae43929f27008b5731f2b1bf7aeca5c1ac2410ec1babac8d",
+      "lastmod": null,
+      "title": "Tommy Zuko shows in Tennessee | Kingdom Circuit",
+      "heading": "Tommy Zuko shows in Tennessee",
+      "eventPaths": [
+        "/event/future-legacy-hip-hop-showcase-2026-10-04-nashville-4bd33c/",
+        "/event/holy-smoke-2026-2026-08-06-nashville-952f59/"
+      ]
+    },
+    "/artists/toschii/texas/": {
+      "fingerprint": "2891c4482e1d295c0c180289f0f0ec6c007776e9d6670494d7db50b572a957eb",
+      "lastmod": null,
+      "title": "Toschii shows in Texas | Kingdom Circuit",
+      "heading": "Toschii shows in Texas",
+      "eventPaths": [
+        "/event/parris-chariz-the-world-is-watching-live-2026-10-11-dallas-a6a47c/",
+        "/event/space-city-lift-off-2026-10-24-houston-bb2653/"
+      ]
+    },
+    "/artists/trendsetter-sense/tennessee/": {
+      "fingerprint": "bcde8fbce928f9fb5531237e5cddf8e1ae1b1e7ab2f4e8b6486edbfd0be401ae",
+      "lastmod": null,
+      "title": "Trendsetter Sense shows in Tennessee | Kingdom Circuit",
+      "heading": "Trendsetter Sense shows in Tennessee",
+      "eventPaths": [
+        "/event/future-legacy-hip-hop-showcase-2026-10-04-nashville-4bd33c/"
+      ]
+    },
+    "/artists/vennisay/florida/": {
+      "fingerprint": "c0ce6577b752f7b10aec33aa0ca3b0504bdf72b496999308a36778c291a9763d",
+      "lastmod": null,
+      "title": "Vennisay shows in Florida | Kingdom Circuit",
+      "heading": "Vennisay shows in Florida",
+      "eventPaths": [
+        "/event/revival-night-2026-10-23-trinity-5cb419/"
+      ]
+    },
+    "/artists/vvs-big-rock/wisconsin/": {
+      "fingerprint": "f08d239b774ceb33f80b480a25b6578d5e9e75e1ed10d3f08b56318e2da83fc2",
+      "lastmod": null,
+      "title": "VVS Big Rock shows in Wisconsin | Kingdom Circuit",
+      "heading": "VVS Big Rock shows in Wisconsin",
+      "eventPaths": [
+        "/event/echo-nights-26-2026-10-02-brookfield-9c48cb/"
+      ]
+    },
+    "/artists/wiff-p/florida/": {
+      "fingerprint": "62543374c0602f72d4b01cf7d62614f649c0eab7f2fb1ebee84bf15a2733b722",
+      "lastmod": null,
+      "title": "Wiff.P shows in Florida | Kingdom Circuit",
+      "heading": "Wiff.P shows in Florida",
+      "eventPaths": [
+        "/event/adrenaline-tampa-christian-music-concert-2026-10-17-valrico-d3561a/"
+      ]
+    },
+    "/artists/xerogangg/california/": {
+      "fingerprint": "cc9f0395e4fad602ddf8285905bfb86c5db4e5e6ae062cd0e9512b9570ffb17c",
+      "lastmod": null,
+      "title": "Xerogangg shows in California | Kingdom Circuit",
+      "heading": "Xerogangg shows in California",
+      "eventPaths": [
+        "/event/back-to-the-basics-2026-10-10-visalia-d2e925/"
+      ]
+    },
+    "/artists/y-shadey/texas/": {
+      "fingerprint": "e9fe857459dd7e5cf7249f28649b36731ee836b2af3106b282fc68adc973df39",
+      "lastmod": null,
+      "title": "Y Shadey shows in Texas | Kingdom Circuit",
+      "heading": "Y Shadey shows in Texas",
+      "eventPaths": [
+        "/event/ark-of-worship-gospel-and-christian-music-festival-2026-2026-10-09-houston-ca93e4/"
+      ]
+    },
+    "/artists/zauntee/illinois/": {
+      "fingerprint": "ca74d98b6a2f3c7b7af91b618c499257f5f5c2896605a0cb359093d13fa74629",
+      "lastmod": null,
+      "title": "Zauntee shows in Illinois | Kingdom Circuit",
+      "heading": "Zauntee shows in Illinois",
+      "eventPaths": [
+        "/event/zauntee-god-remembers-tour-with-skema-boy-2026-10-27-chicago-dd37a2/"
+      ]
+    },
+    "/artists/zauntee/michigan/": {
+      "fingerprint": "6da2bc760112359e58c89e4bfb13e73299a28dc2fd8b83b2de48a8ee7bfc7168",
+      "lastmod": null,
+      "title": "Zauntee shows in Michigan | Kingdom Circuit",
+      "heading": "Zauntee shows in Michigan",
+      "eventPaths": [
+        "/event/zauntee-god-remembers-tour-with-skema-boy-2026-10-29-ferndale-42a126/"
+      ]
+    },
+    "/artists/zauntee/ohio/": {
+      "fingerprint": "297c5f06c5ffc304b3b66c3307c1a25a7a645fba1056c2c06760d83f2cc18456",
+      "lastmod": null,
+      "title": "Zauntee shows in Ohio | Kingdom Circuit",
+      "heading": "Zauntee shows in Ohio",
+      "eventPaths": [
+        "/event/zauntee-god-remembers-tour-with-skema-boy-2026-10-28-columbus-9693cc/"
+      ]
+    },
+    "/artists/zenwi/florida/": {
+      "fingerprint": "5cab4f3e109300ff03d0f2343ec11b6e8b993b561e1a71edb6c14376ec7d07a7",
+      "lastmod": null,
+      "title": "Zenwi shows in Florida | Kingdom Circuit",
+      "heading": "Zenwi shows in Florida",
+      "eventPaths": [
+        "/event/adrenaline-tampa-christian-music-concert-2026-10-17-valrico-d3561a/"
+      ]
+    },
+    "/artists/b4l-lil-don/texas/": {
+      "fingerprint": "acf56f8d9c3f17a32cb421cef90b2df813c946fc10dee41170fb69e5feedc1e2",
+      "lastmod": null,
+      "title": "B4L Lil Don shows in Texas | Kingdom Circuit",
+      "heading": "B4L Lil Don shows in Texas",
+      "eventPaths": [
+        "/event/space-city-lift-off-2026-10-24-houston-bb2653/"
+      ]
+    },
+    "/artists/bobby-bendito/california/": {
+      "fingerprint": "46aa072b9674b42b261a0d1daa3b300328b6e212f3f37b297713403ba6f14de2",
+      "lastmod": null,
+      "title": "Bobby Bendito shows in California | Kingdom Circuit",
+      "heading": "Bobby Bendito shows in California",
+      "eventPaths": [
+        "/event/victory-over-darkness-concert-2026-10-24-fullerton-b1b794/"
+      ]
+    },
+    "/artists/canton-jones/florida/": {
+      "fingerprint": "dbed504e6b27ebf69011be3970194ef3e3c5b75502bdbfecb79e123b5bfb7e14",
+      "lastmod": null,
+      "title": "Canton Jones shows in Florida | Kingdom Circuit",
+      "heading": "Canton Jones shows in Florida",
+      "eventPaths": [
+        "/event/hoj-25th-anniversary-saturday-night-concert-2026-10-24-tallahassee-f6aea8/"
+      ]
+    },
+    "/artists/childlike-cici/north-carolina/": {
+      "fingerprint": "4209a5a6f03f1bc322531097fcb7fe19485673e1670f379cd3c0921caa2936e6",
+      "lastmod": null,
+      "title": "Childlike CiCi shows in North Carolina | Kingdom Circuit",
+      "heading": "Childlike CiCi shows in North Carolina",
+      "eventPaths": [
+        "/event/childlike-cici-at-unity-of-faith-christian-center-2026-10-24-jacksonville-fdd16c/"
+      ]
+    },
+    "/artists/d-maub/ohio/": {
+      "fingerprint": "c254e7f467e654c7377c33cd2362406025929c5016acc8d34d0f5f567bfbebec",
+      "lastmod": null,
+      "title": "D Maub shows in Ohio | Kingdom Circuit",
+      "heading": "D Maub shows in Ohio",
+      "eventPaths": [
+        "/event/take-back-halloween-d-maub-2026-10-30-cincinnati-4ee07b/"
+      ]
+    },
+    "/artists/de-la-cruz/minnesota/": {
+      "fingerprint": "c23d55408adb66cb9b4d5451a58bc555d5b3875840d37f54294bb89a2bd3949f",
+      "lastmod": null,
+      "title": "De La Cruz shows in Minnesota | Kingdom Circuit",
+      "heading": "De La Cruz shows in Minnesota",
+      "eventPaths": [
+        "/event/tru-serva-30-release-celebration-2026-10-24-maplewood-fdf2a4/"
+      ]
+    },
+    "/artists/dj-mr-e/florida/": {
+      "fingerprint": "97960d28f40480554230d34f50c636d4da0b26ef0a1fc9535c6acfaba6213c7e",
+      "lastmod": null,
+      "title": "DJ Mr.E shows in Florida | Kingdom Circuit",
+      "heading": "DJ Mr.E shows in Florida",
+      "eventPaths": [
+        "/event/good-vibez-and-jesus-glow-in-the-dark-party-2026-10-30-miami-gardens-9d0181/"
+      ]
+    },
+    "/artists/dkg-kie/texas/": {
+      "fingerprint": "eb5f178c473ec5206e895df80f1dbcbca66abd74cb2425d1f8024b7b04be0b9e",
+      "lastmod": null,
+      "title": "DKG Kie shows in Texas | Kingdom Circuit",
+      "heading": "DKG Kie shows in Texas",
+      "eventPaths": [
+        "/event/space-city-lift-off-2026-10-24-houston-bb2653/"
+      ]
+    },
+    "/artists/emanueldaprophet/michigan/": {
+      "fingerprint": "7cad1414193aabedc36afbb54a92eaf4caa8e5be446671e5ddb94a11081a8965",
+      "lastmod": null,
+      "title": "EmanuelDaProphet shows in Michigan | Kingdom Circuit",
+      "heading": "EmanuelDaProphet shows in Michigan",
+      "eventPaths": [
+        "/event/holy-house-party-emanueldaprophet-2026-10-30-detroit-80867a/"
+      ]
+    },
+    "/artists/fresh-ie/minnesota/": {
+      "fingerprint": "3d040bb8efd11eac5e8442f0690452e01ad78588c7a61f04a9fdebb197106f22",
+      "lastmod": null,
+      "title": "Fresh IE shows in Minnesota | Kingdom Circuit",
+      "heading": "Fresh IE shows in Minnesota",
+      "eventPaths": [
+        "/event/tru-serva-30-release-celebration-2026-10-24-maplewood-fdf2a4/"
+      ]
+    },
+    "/artists/howard-langford/district-of-columbia/": {
+      "fingerprint": "baf9ddd3a233fbb87933b93c6022397786e4db9bf86145dca720f3c3d41f6966",
+      "lastmod": null,
+      "title": "Howard Langford shows in District of Columbia | Kingdom Circuit",
+      "heading": "Howard Langford shows in District of Columbia",
+      "eventPaths": [
+        "/event/above-the-noise-a-rooftop-experience-2026-10-31-washington-00c89f/"
+      ]
+    },
+    "/artists/ifeargod/california/": {
+      "fingerprint": "f6de5c7a7cef37fa28bc94f26b00bbb9d836f6e28cb74c65ae0ee6dbca3e63c9",
+      "lastmod": null,
+      "title": "IFearGod shows in California | Kingdom Circuit",
+      "heading": "IFearGod shows in California",
+      "eventPaths": [
+        "/event/tribe-fest-2026-2026-09-25-rialto-2303be/",
+        "/event/westside-social-holy-ghost-hip-hop-2026-10-25-venice-bf02f7/"
+      ]
+    },
+    "/artists/joz/georgia/": {
+      "fingerprint": "0be06bf29dae9d4e574c90ccbc3639693b318d528ab2de3f478800ca178b62b4",
+      "lastmod": null,
+      "title": "Joz shows in Georgia | Kingdom Circuit",
+      "heading": "Joz shows in Georgia",
+      "eventPaths": [
+        "/event/knock-out-breast-cancer-boxing-and-live-music-2026-10-24-riverdale-29d9f3/",
+        "/event/the-genesis-show-all-women-s-chh-event-2026-09-19-roswell-9d321d/"
+      ]
+    },
+    "/artists/kenny-jenkins/alabama/": {
+      "fingerprint": "991c1f84a616fd09c3311f5e39328a3003b9a58326f5d2986341b2188d26c1ea",
+      "lastmod": null,
+      "title": "Kenny Jenkins shows in Alabama | Kingdom Circuit",
+      "heading": "Kenny Jenkins shows in Alabama",
+      "eventPaths": [
+        "/event/survival-revival-2026-10-24-athens-4b643e/"
+      ]
+    },
+    "/artists/kevin-kc-campbell/district-of-columbia/": {
+      "fingerprint": "102978e89f2e8c70541fc77f2833d4c82e2d2ab264ba54f1e76afe9e9440ee92",
+      "lastmod": null,
+      "title": "Kevin \"KC\" Campbell shows in District of Columbia | Kingdom Circuit",
+      "heading": "Kevin \"KC\" Campbell shows in District of Columbia",
+      "eventPaths": [
+        "/event/above-the-noise-a-rooftop-experience-2026-10-31-washington-00c89f/"
+      ]
+    },
+    "/artists/ktmoney/arkansas/": {
+      "fingerprint": "fcb5fc651628ccfb30f7e284f049cad883ecd7cbaaf163cf8f238928f4f6c32b",
+      "lastmod": null,
+      "title": "KTMoney shows in Arkansas | Kingdom Circuit",
+      "heading": "KTMoney shows in Arkansas",
+      "eventPaths": [
+        "/event/chh-takeover-night-2026-10-25-huntington-72c73d/"
+      ]
+    },
+    "/artists/kyaliyah/florida/": {
+      "fingerprint": "340f303ce911cb68cea655c6a980c873c79cb4923033e146207acb90555cd3d3",
+      "lastmod": null,
+      "title": "Kyaliyah shows in Florida | Kingdom Circuit",
+      "heading": "Kyaliyah shows in Florida",
+      "eventPaths": [
+        "/event/hoj-25th-anniversary-saturday-night-concert-2026-10-24-tallahassee-f6aea8/"
+      ]
+    },
+    "/artists/lil-ziggy/texas/": {
+      "fingerprint": "bef88f3bfec1cf330b189389197795aa8bff4a1d5aa7c2626bb94a5902b5b2bf",
+      "lastmod": null,
+      "title": "Lil Ziggy shows in Texas | Kingdom Circuit",
+      "heading": "Lil Ziggy shows in Texas",
+      "eventPaths": [
+        "/event/space-city-fest-2026-2026-10-25-houston-88bea2/"
+      ]
+    },
+    "/artists/mikeysochristian/texas/": {
+      "fingerprint": "a5a79055fd1c156f4c315a8ed533c06fc21feab7e65a4e1b3806605a4d409493",
+      "lastmod": null,
+      "title": "MikeySoChristian shows in Texas | Kingdom Circuit",
+      "heading": "MikeySoChristian shows in Texas",
+      "eventPaths": [
+        "/event/space-city-lift-off-2026-10-24-houston-bb2653/"
+      ]
+    },
+    "/artists/nate-period/district-of-columbia/": {
+      "fingerprint": "fd176ee4ef1fcd72b120b695f78afd703d104a60db87a310a901e45c2a2f46bb",
+      "lastmod": null,
+      "title": "Nate Period shows in District of Columbia | Kingdom Circuit",
+      "heading": "Nate Period shows in District of Columbia",
+      "eventPaths": [
+        "/event/above-the-noise-a-rooftop-experience-2026-10-31-washington-00c89f/"
+      ]
+    },
+    "/artists/ryan-trey/florida/": {
+      "fingerprint": "6adec1c8d167040c25e11a5bda50054c87502a8da8e6935e4b54e0d0bd5a8232",
+      "lastmod": null,
+      "title": "Ryan Trey shows in Florida | Kingdom Circuit",
+      "heading": "Ryan Trey shows in Florida",
+      "eventPaths": [
+        "/event/serve-sessions-ryan-trey-album-release-party-2026-10-24-orlando-017aed/"
+      ]
+    },
+    "/artists/tru-serva/minnesota/": {
+      "fingerprint": "0d9165b404b9304f10bd02e099ba694c71061ba90494f9ea577adfd956030e9e",
+      "lastmod": null,
+      "title": "TRU SERVA shows in Minnesota | Kingdom Circuit",
+      "heading": "TRU SERVA shows in Minnesota",
+      "eventPaths": [
+        "/event/from-ashes-to-life-fentanyl-awareness-march-2026-10-17-saint-paul-96d2cb/",
+        "/event/tru-serva-30-release-celebration-2026-10-24-maplewood-fdf2a4/"
+      ]
+    },
+    "/artists/xay-hill/minnesota/": {
+      "fingerprint": "94ed8ffb459589fe5a1d00aa158f99750382641c5865766084771aabd2c2e112",
+      "lastmod": null,
+      "title": "Xay Hill shows in Minnesota | Kingdom Circuit",
+      "heading": "Xay Hill shows in Minnesota",
+      "eventPaths": [
+        "/event/tru-serva-30-release-celebration-2026-10-24-maplewood-fdf2a4/"
+      ]
+    },
+    "/artists/young-jayden/texas/": {
+      "fingerprint": "f7ac11108ba5984ce83d39de6e88f28dce42a9a05f30246fb2d94d6996612587",
+      "lastmod": null,
+      "title": "Young Jayden shows in Texas | Kingdom Circuit",
+      "heading": "Young Jayden shows in Texas",
+      "eventPaths": [
+        "/event/space-city-fest-2026-2026-10-25-houston-88bea2/"
+      ]
+    },
+    "/artists/zauntee/indiana/": {
+      "fingerprint": "34519e088c699514dde51d1790bc5a09b109c867e7839c1074c3557360f5147f",
+      "lastmod": null,
+      "title": "Zauntee shows in Indiana | Kingdom Circuit",
+      "heading": "Zauntee shows in Indiana",
+      "eventPaths": [
+        "/event/zauntee-at-brightpoint-church-2026-10-26-markleville-e5440c/"
+      ]
+    },
+    "/artists/1k-phew/indiana/": {
+      "fingerprint": "517fc20671f74c5623168c7eba94dc08f5bde18a05c0952768af835c53902ca2",
+      "lastmod": null,
+      "title": "1K Phew shows in Indiana | Kingdom Circuit",
+      "heading": "1K Phew shows in Indiana",
+      "eventPaths": [
+        "/event/1k-phew-live-at-fastivalle-2026-2026-09-26-indianapolis-d60ea0/"
+      ]
+    },
+    "/artists/alex-jean/california/": {
+      "fingerprint": "5a3260715deb9e620c08be326c2339c8056b997fafc59fff965365baec666324",
+      "lastmod": null,
+      "title": "Alex Jean shows in California | Kingdom Circuit",
+      "heading": "Alex Jean shows in California",
+      "eventPaths": [
+        "/event/hvo-fest-2026-2026-09-26-los-angeles-32c599/"
+      ]
+    },
+    "/artists/alex-zurdo/new-york/": {
+      "fingerprint": "e4b070543a847cf1b1d7889398dae5903ff90815623c2f24b417ff26f9b48354",
+      "lastmod": null,
+      "title": "Alex Zurdo shows in New York | Kingdom Circuit",
+      "heading": "Alex Zurdo shows in New York",
+      "eventPaths": [
+        "/event/oasis-ministry-qbelv-tour-2026-2026-09-27-new-york-d3b318/"
+      ]
+    },
+    "/artists/asap-preach/tennessee/": {
+      "fingerprint": "4bb8f50a87a2ef3df5da9baeb0d87544e7a55c13483c551af95aefa63f9925ec",
+      "lastmod": null,
+      "title": "ASAP Preach shows in Tennessee | Kingdom Circuit",
+      "heading": "ASAP Preach shows in Tennessee",
+      "eventPaths": [
+        "/event/faith-jam-2026-2026-09-26-sparta-4411b1/"
+      ]
+    },
+    "/artists/b-cody-shields/tennessee/": {
+      "fingerprint": "279eef6965e7526e8aacb4f62ae42344aefd08a486c5a423443f511635d173e4",
+      "lastmod": null,
+      "title": "B. Cody Shields shows in Tennessee | Kingdom Circuit",
+      "heading": "B. Cody Shields shows in Tennessee",
+      "eventPaths": [
+        "/event/faith-jam-2026-2026-09-26-sparta-4411b1/"
+      ]
+    },
+    "/artists/brother-bo/tennessee/": {
+      "fingerprint": "8e3aaa64256740487490e52bb59bc11504d87becd87a09faec112472fec585d7",
+      "lastmod": null,
+      "title": "Brother Bo shows in Tennessee | Kingdom Circuit",
+      "heading": "Brother Bo shows in Tennessee",
+      "eventPaths": [
+        "/event/faith-jam-2026-2026-09-26-sparta-4411b1/"
+      ]
+    },
+    "/artists/caleb-gordon/florida/": {
+      "fingerprint": "9f736eb03fc7adaac586b7aa5d5642f346000a227af62748555a2380cce87354",
+      "lastmod": null,
+      "title": "Caleb Gordon shows in Florida | Kingdom Circuit",
+      "heading": "Caleb Gordon shows in Florida",
+      "eventPaths": [
+        "/event/caleb-gordon-the-eden-experience-2026-09-26-orlando-871a66/"
+      ]
+    },
+    "/artists/hulvey/georgia/": {
+      "fingerprint": "7cb041a07c82dad3b0d3d0d1ca1b8d9113266da7a2dc6796017260d5fa88c53b",
+      "lastmod": null,
+      "title": "Hulvey shows in Georgia | Kingdom Circuit",
+      "heading": "Hulvey shows in Georgia",
+      "eventPaths": [
+        "/event/hulvey-could-be-tonight-tour-2026-09-27-atlanta-48679c/"
+      ]
+    },
+    "/artists/hy-chu/california/": {
+      "fingerprint": "71d51de8fc67dce04fadffc3bddb6dc19d3b46db027b5bf3f916de7d966d7bb6",
+      "lastmod": null,
+      "title": "Hy Chu shows in California | Kingdom Circuit",
+      "heading": "Hy Chu shows in California",
+      "eventPaths": [
+        "/event/tribe-fest-2026-2026-09-25-rialto-2303be/"
+      ]
+    },
+    "/artists/indie-tribe/georgia/": {
+      "fingerprint": "c7a45b14f62ac78a070eb5877668866422f75fd8b71d7090fc7bcc29e765e06f",
+      "lastmod": null,
+      "title": "indie tribe. shows in Georgia | Kingdom Circuit",
+      "heading": "indie tribe. shows in Georgia",
+      "eventPaths": [
+        "/event/hulvey-could-be-tonight-tour-2026-09-27-atlanta-48679c/"
+      ]
+    },
+    "/artists/indie-tribe/ohio/": {
+      "fingerprint": "d6b5492045677a260f9a6ee6d6bc82f67e28411a7190843bac7bde8aeaa4c54a",
+      "lastmod": null,
+      "title": "indie tribe. shows in Ohio | Kingdom Circuit",
+      "heading": "indie tribe. shows in Ohio",
+      "eventPaths": [
+        "/event/hulvey-could-be-tonight-tour-2026-09-26-cincinnati-8f820f/",
+        "/event/hulvey-w-indie-tribe-2026-09-25-columbus-f88802/"
+      ]
+    },
+    "/artists/jimmy-rock/colorado/": {
+      "fingerprint": "902ca03a8d9bfa1c5cd6d18a2151436228b4a023fa6eff42f0383bba9e730c1a",
+      "lastmod": null,
+      "title": "JIMMY ROCK shows in Colorado | Kingdom Circuit",
+      "heading": "JIMMY ROCK shows in Colorado",
+      "eventPaths": [
+        "/event/jimmy-rock-rave-and-worship-denver-2026-2026-09-25-centennial-12d4ab/"
+      ]
+    },
+    "/artists/jimmy-rock/idaho/": {
+      "fingerprint": "f3b228b665cdbe094c872d1ebd426866643af200d54a7192d8d977e5789f21e0",
+      "lastmod": null,
+      "title": "JIMMY ROCK shows in Idaho | Kingdom Circuit",
+      "heading": "JIMMY ROCK shows in Idaho",
+      "eventPaths": [
+        "/event/grand-opening-the-whosoevers-boise-invasion-2026-09-26-boise-98ceee/"
+      ]
+    },
+    "/artists/kb/kansas/": {
+      "fingerprint": "4754898ed947976bee77513136ed1a4a70dc04bb2cf127eac1340a379161a84a",
+      "lastmod": null,
+      "title": "KB shows in Kansas | Kingdom Circuit",
+      "heading": "KB shows in Kansas",
+      "eventPaths": [
+        "/event/open-skies-bethel-music-with-kb-2026-09-26-topeka-0a9fd5/"
+      ]
+    },
+    "/artists/kijan-boone/georgia/": {
+      "fingerprint": "725b833751e68168644a88cc9af21ae3dc1259bbd16b497c5ae440ff1980b47a",
+      "lastmod": null,
+      "title": "Kijan Boone shows in Georgia | Kingdom Circuit",
+      "heading": "Kijan Boone shows in Georgia",
+      "eventPaths": [
+        "/event/hulvey-could-be-tonight-tour-2026-09-27-atlanta-48679c/"
+      ]
+    },
+    "/artists/kijan-boone/ohio/": {
+      "fingerprint": "6f18f9b239eefb9ef262bcfad735d1a1dffca8158186fe0120de3901fa8b5233",
+      "lastmod": null,
+      "title": "Kijan Boone shows in Ohio | Kingdom Circuit",
+      "heading": "Kijan Boone shows in Ohio",
+      "eventPaths": [
+        "/event/hulvey-could-be-tonight-tour-2026-09-26-cincinnati-8f820f/",
+        "/event/hulvey-w-indie-tribe-2026-09-25-columbus-f88802/"
+      ]
+    },
+    "/artists/nicky-gracious/tennessee/": {
+      "fingerprint": "c653be744c306d23b8ca42ddd31cb1bbfc8e2c7f136ff5004d802f0b25b5d808",
+      "lastmod": null,
+      "title": "Nicky Gracious shows in Tennessee | Kingdom Circuit",
+      "heading": "Nicky Gracious shows in Tennessee",
+      "eventPaths": [
+        "/event/faith-jam-2026-2026-09-26-sparta-4411b1/"
+      ]
+    },
+    "/artists/nissi-shalom/california/": {
+      "fingerprint": "a823aa0e331d8541375a754b6c24381a1acf5308d6704b33390b6bbdbda7feae",
+      "lastmod": null,
+      "title": "NISSI SHALOM shows in California | Kingdom Circuit",
+      "heading": "NISSI SHALOM shows in California",
+      "eventPaths": [
+        "/event/tribe-fest-2026-2026-09-25-rialto-2303be/"
+      ]
+    },
+    "/artists/ryan-trey/california/": {
+      "fingerprint": "623d292de6a6798ac492e17e2e8be86a1a14dea570564e29df3885811bfe2197",
+      "lastmod": null,
+      "title": "Ryan Trey shows in California | Kingdom Circuit",
+      "heading": "Ryan Trey shows in California",
+      "eventPaths": [
+        "/event/hvo-fest-2026-2026-09-26-los-angeles-32c599/"
+      ]
+    },
+    "/artists/sevin/new-jersey/": {
+      "fingerprint": "7202bf0e1b68c56d69a5a28d9614eca35811093591578a37c354da91e383fc1a",
+      "lastmod": null,
+      "title": "Sevin shows in New Jersey | Kingdom Circuit",
+      "heading": "Sevin shows in New Jersey",
+      "eventPaths": [
+        "/event/sevin-live-concert-2026-09-26-millville-3b1409/"
+      ]
+    },
+    "/artists/steveunordinary/california/": {
+      "fingerprint": "bbec54b4228642450a6dc293b9ecfe8225f91c592d2d9e844a52b9744b431f54",
+      "lastmod": null,
+      "title": "SteveUnordinary shows in California | Kingdom Circuit",
+      "heading": "SteveUnordinary shows in California",
+      "eventPaths": [
+        "/event/tribe-fest-2026-2026-09-25-rialto-2303be/"
+      ]
+    },
+    "/artists/yasmine-jinelle/california/": {
+      "fingerprint": "7acf2aa2f70f95171ba502703dab6a407d7b65ec3643a006aa81917466b99596",
+      "lastmod": null,
+      "title": "Yasmine Jinelle shows in California | Kingdom Circuit",
+      "heading": "Yasmine Jinelle shows in California",
+      "eventPaths": [
+        "/event/tribe-fest-2026-2026-09-25-rialto-2303be/"
+      ]
+    },
+    "/artists/yung-kriss/california/": {
+      "fingerprint": "a1e2772c0fd4035d71ede88d19576912b37a02abf9f1ded13d335723cd4c4fe7",
+      "lastmod": null,
+      "title": "Yung Kriss shows in California | Kingdom Circuit",
+      "heading": "Yung Kriss shows in California",
+      "eventPaths": [
+        "/event/hvo-fest-2026-2026-09-26-los-angeles-32c599/"
+      ]
+    },
+    "/artists/amos-salem/california/": {
+      "fingerprint": "c3fbf62a4cce636d74138d774d1f356d6ee090589e6629c7314ffc24e1fbc8a2",
+      "lastmod": null,
+      "title": "Amos Salem shows in California | Kingdom Circuit",
+      "heading": "Amos Salem shows in California",
+      "eventPaths": [
+        "/event/faith-fest-long-beach-2026-10-17-long-beach-a3f17a/"
+      ]
+    },
+    "/artists/brother-bo/minnesota/": {
+      "fingerprint": "b0ca378c47e496a9e9e4e4a02a9aefa422d3da8ca3cb79d3600d349014ed12b7",
+      "lastmod": null,
+      "title": "Brother Bo shows in Minnesota | Kingdom Circuit",
+      "heading": "Brother Bo shows in Minnesota",
+      "eventPaths": [
+        "/event/from-ashes-to-life-fentanyl-awareness-march-2026-10-17-saint-paul-96d2cb/"
+      ]
+    },
+    "/artists/gregg-styles/california/": {
+      "fingerprint": "31b15a947d30189bdd688eedefe4f97d7882ee762e18f632b937ae6955da22f8",
+      "lastmod": null,
+      "title": "Gregg Styles shows in California | Kingdom Circuit",
+      "heading": "Gregg Styles shows in California",
+      "eventPaths": [
+        "/event/faith-fest-long-beach-2026-10-17-long-beach-a3f17a/"
+      ]
+    },
+    "/artists/jj-stone/on/": {
+      "fingerprint": "8b0af60662babf7216b3841fb24ea724bc1e9b2822e184c033df4f2c175fc74f",
+      "lastmod": null,
+      "title": "JJ Stone shows in ON | Kingdom Circuit",
+      "heading": "JJ Stone shows in ON",
+      "eventPaths": [
+        "/event/cendia-2026-art-night-2026-10-17-toronto-24d95a/"
+      ]
+    },
+    "/artists/oracle-the-messenger/california/": {
+      "fingerprint": "efe51ba8df2214468d0074ac5edf46db702877c6317326997952d5a566d6560f",
+      "lastmod": null,
+      "title": "Oracle The Messenger shows in California | Kingdom Circuit",
+      "heading": "Oracle The Messenger shows in California",
+      "eventPaths": [
+        "/event/kingdom-seekers-family-day-2026-10-18-stockton-44e815/",
+        "/event/pray-for-my-hood-free-concert-2026-10-11-stockton-08e9f8/"
+      ]
+    },
+    "/artists/zay-lowly/california/": {
+      "fingerprint": "5b79748e58d267167b4f7d2b6379d946989d9b1cbf2f446e587e4ce82021e6bb",
+      "lastmod": null,
+      "title": "Zay Lowly shows in California | Kingdom Circuit",
+      "heading": "Zay Lowly shows in California",
+      "eventPaths": [
+        "/event/ghost-ride-the-gospel-2-2026-10-17-berkeley-903ebf/"
+      ]
+    },
+    "/artists/asap-preach/georgia/": {
+      "fingerprint": "88c1a902ca70d4173d22788b47ed86dfb718181f5a185dc56d6d899705dad575",
+      "lastmod": null,
+      "title": "ASAP Preach shows in Georgia | Kingdom Circuit",
+      "heading": "ASAP Preach shows in Georgia",
+      "eventPaths": [
+        "/event/celebrate-recovery-14-year-anniversary-2026-10-13-thomasville-0175f6/"
+      ]
+    },
+    "/artists/bo-fisher/georgia/": {
+      "fingerprint": "da25e6336febacf42b1ff01892c756c30ca89e92ba91afd5dadf030e1dbf83b5",
+      "lastmod": null,
+      "title": "Bo Fisher shows in Georgia | Kingdom Circuit",
+      "heading": "Bo Fisher shows in Georgia",
+      "eventPaths": [
+        "/event/celebrate-recovery-14-year-anniversary-2026-10-13-thomasville-0175f6/"
+      ]
+    },
+    "/artists/d-riddick/florida/": {
+      "fingerprint": "0bf68eae9845aac2f1f628db77a85687b5cafc2ab312c86bf449a129806fa621",
+      "lastmod": null,
+      "title": "D Riddick shows in Florida | Kingdom Circuit",
+      "heading": "D Riddick shows in Florida",
+      "eventPaths": [
+        "/event/new-kids-on-the-block-concert-and-conference-2026-10-16-orlando-5bdaf8/"
+      ]
+    },
+    "/artists/darius-mullin/tennessee/": {
+      "fingerprint": "28d3a8edccc8e0d5f21c59ddea271b574187c6b7f9b0f0c042045a3fc3c835cb",
+      "lastmod": null,
+      "title": "Darius Mullin shows in Tennessee | Kingdom Circuit",
+      "heading": "Darius Mullin shows in Tennessee",
+      "eventPaths": [
+        "/event/darius-mullin-joston-cooper-and-illustrate-live-in-memphis-2026-10-15-memphis-354710/"
+      ]
+    },
+    "/artists/g-e-s/florida/": {
+      "fingerprint": "02fff2a00ad1261950adf07fe10a47bdaffa5ca4f4df2ef86e20e018cb30a32a",
+      "lastmod": null,
+      "title": "G.E.S. shows in Florida | Kingdom Circuit",
+      "heading": "G.E.S. shows in Florida",
+      "eventPaths": [
+        "/event/creative-hour-featuring-g-e-s-2026-10-14-tampa-644dd5/"
+      ]
+    },
+    "/artists/justo-chalaire/georgia/": {
+      "fingerprint": "731f9addbff4e885c9ecb1339aef374b231f7c48bc051c9757c603eb9b1e954d",
+      "lastmod": null,
+      "title": "Justo Chalaire shows in Georgia | Kingdom Circuit",
+      "heading": "Justo Chalaire shows in Georgia",
+      "eventPaths": [
+        "/event/celebrate-recovery-14-year-anniversary-2026-10-13-thomasville-0175f6/"
+      ]
+    },
+    "/artists/bo-fisher/north-carolina/": {
+      "fingerprint": "b5de461608d0be631620c4ac93f2f322ce30eb0f6ffeca9b40fd2abaf0709b5e",
+      "lastmod": null,
+      "title": "Bo Fisher shows in North Carolina | Kingdom Circuit",
+      "heading": "Bo Fisher shows in North Carolina",
+      "eventPaths": [
+        "/event/passion-fest-ii-2026-10-11-charlotte-2eb238/"
+      ]
+    },
+    "/artists/canton-jones/tennessee/": {
+      "fingerprint": "78502afd0d66c3a14f2e67697926781375658dc067bf8a0d467dfa7d94cf6f77",
+      "lastmod": null,
+      "title": "Canton Jones shows in Tennessee | Kingdom Circuit",
+      "heading": "Canton Jones shows in Tennessee",
+      "eventPaths": [
+        "/event/revolt-mr-del-and-canton-jones-2026-10-10-jackson-9a1bfb/"
+      ]
+    },
+    "/artists/flame/kansas/": {
+      "fingerprint": "5e80bee682682dbd7cba10d3cbd7fb43b1817b6f6e2694357302d2b5b904934b",
+      "lastmod": null,
+      "title": "FLAME shows in Kansas | Kingdom Circuit",
+      "heading": "FLAME shows in Kansas",
+      "eventPaths": [
+        "/event/faith-and-blue-weekend-featuring-flame-2026-10-10-abilene-54a12b/"
+      ]
+    },
+    "/artists/lyric-the-geenyus/north-carolina/": {
+      "fingerprint": "e92e48046d1dcb4adf9e655ea70bdec50ce4c245d108ed1ee8802f261e1a3f93",
+      "lastmod": null,
+      "title": "Lyric The Geenyus shows in North Carolina | Kingdom Circuit",
+      "heading": "Lyric The Geenyus shows in North Carolina",
+      "eventPaths": [
+        "/event/passion-fest-ii-2026-10-11-charlotte-2eb238/"
+      ]
+    },
+    "/artists/mission/north-carolina/": {
+      "fingerprint": "23c0a857a1b84a42c4657632aff67feff2bad1cecb218a7b4e192e06b94114cf",
+      "lastmod": null,
+      "title": "Mission shows in North Carolina | Kingdom Circuit",
+      "heading": "Mission shows in North Carolina",
+      "eventPaths": [
+        "/event/passion-fest-ii-2026-10-11-charlotte-2eb238/"
+      ]
+    },
+    "/artists/mr-del/tennessee/": {
+      "fingerprint": "a936ce8197ba288ebb9576ec998baa948d825ec5ec0b6ff7404eb87014abebc7",
+      "lastmod": null,
+      "title": "Mr. Del shows in Tennessee | Kingdom Circuit",
+      "heading": "Mr. Del shows in Tennessee",
+      "eventPaths": [
+        "/event/revolt-mr-del-and-canton-jones-2026-10-10-jackson-9a1bfb/"
+      ]
+    },
+    "/artists/ahmad-nelson/florida/": {
+      "fingerprint": "cb3e6349a23f3d94dac7d74cdce4d790f3158a3ffab4b256a005577136436983",
+      "lastmod": null,
+      "title": "Ahmad Nelson shows in Florida | Kingdom Circuit",
+      "heading": "Ahmad Nelson shows in Florida",
+      "eventPaths": [
+        "/event/new-kids-on-the-block-concert-and-conference-2026-10-16-orlando-5bdaf8/"
+      ]
+    },
+    "/shows/attica-ohio/": {
+      "fingerprint": "37389d48610d94bf0d64b61da5ba601348a15e27e3e50bd3c58a5a96d190e61d",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Attica, Ohio | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Attica, Ohio",
+      "eventPaths": [
+        "/event/808-beezy-live-in-attica-oh-2026-10-15-attica-06fb6a/"
+      ]
+    },
+    "/shows/aurora-colorado/": {
+      "fingerprint": "49077388feea85b562ab139f5ddb14aa1e58823d567c9989abc887e1e0327a58",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Aurora, Colorado | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Aurora, Colorado",
+      "eventPaths": [
+        "/event/one-day-fall-festival-2026-evening-concert-2026-10-10-aurora-587532/"
+      ]
+    },
+    "/shows/brookfield-wisconsin/": {
+      "fingerprint": "528d7f132834931be6ac716167aa38d4d19d3dcb19360c1e5a4df0e003c63c4a",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Brookfield, Wisconsin | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Brookfield, Wisconsin",
+      "eventPaths": [
+        "/event/echo-nights-26-2026-10-02-brookfield-9c48cb/"
+      ]
+    },
+    "/shows/brooklyn-new-york/": {
+      "fingerprint": "ca670856a5ebed7de2293a91fad177e283e338fafe7896bccb5ddaf8b9b1d534",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Brooklyn, New York | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Brooklyn, New York",
+      "eventPaths": [
+        "/event/jay-way-at-crown-hill-theatre-2026-09-04-brooklyn-2767be/",
+        "/event/reign-volume-one-2026-10-10-brooklyn-fe93fe/"
+      ]
+    },
+    "/shows/buffalo-new-york/": {
+      "fingerprint": "724f102e13d26c14a1f6d77b3b2a6c4ccb19a34d0e58fef4167914397960e8e1",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Buffalo, New York | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Buffalo, New York",
+      "eventPaths": [
+        "/event/overflow-conference-2026-10-17-buffalo-2997a5/"
+      ]
+    },
+    "/shows/canton-ohio/": {
+      "fingerprint": "8dec581d1b3438a683339bf6c7707a9501a29dffbe0c104b9f15eab77bf5e436",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Canton, Ohio | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Canton, Ohio",
+      "eventPaths": [
+        "/event/reach1-conference-2026-even-if-featuring-egr-2026-10-22-canton-32251a/"
+      ]
+    },
+    "/shows/centreville-michigan/": {
+      "fingerprint": "68b6c69116bdd3725ee9d8991841de774fab6d200a6d9bbc294f6519c9bd2548",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Centreville, Michigan | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Centreville, Michigan",
+      "eventPaths": [
+        "/event/awake-conference-2026-10-10-centreville-cd145d/"
+      ]
+    },
+    "/shows/chico-california/": {
+      "fingerprint": "3c75283f5469cc89299ea557a9190d1642ca19767c1d482d19e615bc0f18d0cb",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Chico, California | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Chico, California",
+      "eventPaths": [
+        "/event/live-loud-2026-10-07-chico-1b6570/"
+      ]
+    },
+    "/shows/delano-california/": {
+      "fingerprint": "61ba0e0a0f5af49523c3b00aceabd0ad611abb8709c53bbf122754b3015133ea",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Delano, California | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Delano, California",
+      "eventPaths": [
+        "/event/808-beezy-live-in-delano-ca-2026-10-08-delano-ccf4b6/",
+        "/event/808-beezy-live-in-delano-ca-2026-10-08-delano-d17357/"
+      ]
+    },
+    "/shows/dola-ohio/": {
+      "fingerprint": "a0c898d1b700dd6d9e1629d8d9e0d06395e10114392ee6c988bd5c746af1e87a",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Dola, Ohio | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Dola, Ohio",
+      "eventPaths": [
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-18-dola-869218/",
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-18-dola-f98cbd/",
+        "/event/808-beezy-live-in-dola-oh-2026-10-15-dola-9d0312/"
+      ]
+    },
+    "/shows/dunedin-florida/": {
+      "fingerprint": "4917a62a72965e97703f0ce9d22262c5628303193e6f6fd875935b34cabb0989",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Dunedin, Florida | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Dunedin, Florida",
+      "eventPaths": [
+        "/event/let-the-church-sing-tour-night-3-2026-10-02-dunedin-5d4017/"
+      ]
+    },
+    "/shows/durham-north-carolina/": {
+      "fingerprint": "939115efb17951ecb6431a9bcd4089199b4834cc665fc5332f95c7ac0506ba38",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Durham, North Carolina | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Durham, North Carolina",
+      "eventPaths": [
+        "/event/boxyard-saturdaze-2026-10-10-durham-7853b4/"
+      ]
+    },
+    "/shows/fort-recovery-ohio/": {
+      "fingerprint": "89131d4256cba17a6d38dcbe8755a34cb7cbc4bb0ef0ad23151c5f04615c9f78",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Fort Recovery, Ohio | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Fort Recovery, Ohio",
+      "eventPaths": [
+        "/event/808-beezy-live-in-fort-recovery-oh-2026-10-16-fort-recovery-aca722/"
+      ]
+    },
+    "/shows/fresno-california/": {
+      "fingerprint": "a31d617148eb0429cb7cbc0d38ff0c655c871c53d67b750b84ca1bb37a2bf08b",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Fresno, California | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Fresno, California",
+      "eventPaths": [
+        "/event/egr-live-fresno-2026-08-22-fresno-d107a1/",
+        "/event/egr-live-fresno-2026-10-16-fresno-a4e15b/"
+      ]
+    },
+    "/shows/green-bay-wisconsin/": {
+      "fingerprint": "f24b4b6f68bc1f530048162afc0019f3ca6fd3499868e5d7efba35c55dd027ec",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Green Bay, Wisconsin | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Green Bay, Wisconsin",
+      "eventPaths": [
+        "/event/tru-serva-at-cupojoy-cup2-2026-10-09-green-bay-726250/"
+      ]
+    },
+    "/shows/high-point-north-carolina/": {
+      "fingerprint": "34cd719a2671c1c511536ea1d9bb3bd9ded8a06c1541637506d1f0546bc383ca",
+      "lastmod": null,
+      "title": "Christian hip hop shows in High Point, North Carolina | Kingdom Circuit",
+      "heading": "Christian hip hop shows in High Point, North Carolina",
+      "eventPaths": [
+        "/event/homecoming-combined-morning-worship-service-with-mayia-2026-10-04-high-point-7e7e84/"
+      ]
+    },
+    "/shows/huntington-arkansas/": {
+      "fingerprint": "9009ad243e28cf43bf12f20b9b7d0de03da91dae3f2b3fed1b3093522a3ab80c",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Huntington, Arkansas | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Huntington, Arkansas",
+      "eventPaths": [
+        "/event/chh-takeover-night-2026-10-25-huntington-72c73d/"
+      ]
+    },
+    "/shows/huntsville-alabama/": {
+      "fingerprint": "d34d1d489a0622037d97585d7831e4318b6034c2e3cda49cbe83cd9d521da802",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Huntsville, Alabama | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Huntsville, Alabama",
+      "eventPaths": [
+        "/event/1k-phew-at-big-spring-international-park-2026-10-04-huntsville-eb07e2/",
+        "/event/aamu-homecoming-gospel-explosion-night-of-gospel-2026-10-11-huntsville-c779c6/"
+      ]
+    },
+    "/shows/lawrenceville-georgia/": {
+      "fingerprint": "ab6c727daed27293b6034f87c4dd873568cde30fb34aa1b6b745b354740918f2",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Lawrenceville, Georgia | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Lawrenceville, Georgia",
+      "eventPaths": [
+        "/event/spin-awards-chocolate-affair-2026-10-21-lawrenceville-3e392a/",
+        "/event/spin-awards-dope-women-in-radio-featuring-lady-cam-2026-10-22-lawrenceville-fed156/",
+        "/event/the-spin-awards-10th-anniversary-weekend-2026-10-22-lawrenceville-3623f3/"
+      ]
+    },
+    "/shows/miami-gardens-florida/": {
+      "fingerprint": "83e30baaa549c956e82cd1019e7812eec452f69bb757ed9afa17df16b91080be",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Miami Gardens, Florida | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Miami Gardens, Florida",
+      "eventPaths": [
+        "/event/good-vibez-and-jesus-glow-in-the-dark-party-2026-10-30-miami-gardens-9d0181/"
+      ]
+    },
+    "/shows/oceano-california/": {
+      "fingerprint": "f710ff84f1aae76a9edea754e34e822145a6789aa3d7dd8dd5d7b1305cd49d2f",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Oceano, California | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Oceano, California",
+      "eventPaths": [
+        "/event/808-beezy-live-in-oceano-ca-2026-10-09-oceano-c0cb22/"
+      ]
+    },
+    "/shows/oceanside-california/": {
+      "fingerprint": "5e04f5eab44c5d920522f73379194889da9ad45f31c1540a73325529fb4e95c6",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Oceanside, California | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Oceanside, California",
+      "eventPaths": [
+        "/event/worship-night-2026-10-03-oceanside-361a34/"
+      ]
+    },
+    "/shows/old-hickory-tennessee/": {
+      "fingerprint": "4a0caa28d80e9995fbbac76d9761ad1366631ddbeea7befe74267a4ad8c18e43",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Old Hickory, Tennessee | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Old Hickory, Tennessee",
+      "eventPaths": [
+        "/event/hook-d-on-god-concert-2026-10-23-old-hickory-be5a3d/",
+        "/event/pray-4-my-hood-block-party-nashville-2026-10-24-old-hickory-153d47/",
+        "/event/sevin-live-concert-2026-10-24-old-hickory-76d537/"
+      ]
+    },
+    "/shows/pleasant-garden-north-carolina/": {
+      "fingerprint": "57fcbf8f70a5cc7c277a0eb1dd96d79aa497eb8a9d68728395f05087f8b5ae62",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Pleasant Garden, North Carolina | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Pleasant Garden, North Carolina",
+      "eventPaths": [
+        "/event/mayia-at-songs-that-speak-conference-2026-10-23-pleasant-garden-ed118a/"
+      ]
+    },
+    "/shows/pomona-california/": {
+      "fingerprint": "4ec7a1ae212efe82dec7b93c34ef3c1b77fc737916ff45a419c67b07f956ddad",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Pomona, California | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Pomona, California",
+      "eventPaths": [
+        "/event/afterlight-l-a-viktor-friends-2026-10-24-pomona-f8982b/",
+        "/event/caleb-gordon-the-eden-experience-2026-08-16-pomona-984284/",
+        "/event/jimmy-rock-at-the-cathedral-2026-10-30-pomona-6527d0/"
+      ]
+    },
+    "/shows/salisbury-missouri/": {
+      "fingerprint": "b67161ff5e338d993ddee016026b07d45d9a4fd8b306c8416e82544c26f2e8e5",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Salisbury, Missouri | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Salisbury, Missouri",
+      "eventPaths": [
+        "/event/808-beezy-live-in-salisbury-mo-2026-10-14-salisbury-0afdaf/"
+      ]
+    },
+    "/shows/san-juan-pr/": {
+      "fingerprint": "3eb34ff4f0afa45b926aa5df0824150a2a54bfe0b5a2634ccd9404a3c8f6f423",
+      "lastmod": null,
+      "title": "Christian hip hop shows in San Juan, PR | Kingdom Circuit",
+      "heading": "Christian hip hop shows in San Juan, PR",
+      "eventPaths": [
+        "/event/alex-zurdo-zona-zero-2026-10-18-san-juan-6d6263/"
+      ]
+    },
+    "/shows/santa-margarita-california/": {
+      "fingerprint": "1ea2ba3bc670940446b4c2479ce8f4212fa23bfaae39de0d043adb822ae13fd7",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Santa Margarita, California | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Santa Margarita, California",
+      "eventPaths": [
+        "/event/808-beezy-live-in-santa-margarita-ca-2026-10-09-santa-margarita-d5defe/"
+      ]
+    },
+    "/shows/southfield-michigan/": {
+      "fingerprint": "3b890507041ec1112a340a0b17993351276b55a29718ab6163d165fcded6f49f",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Southfield, Michigan | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Southfield, Michigan",
+      "eventPaths": [
+        "/event/harvest-fest-2026-jon-keith-2026-10-30-southfield-4727b6/"
+      ]
+    },
+    "/shows/trinity-florida/": {
+      "fingerprint": "436042d700930365071e39c4506d1ab9d936c26975ba8889289407290ad8ad9d",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Trinity, Florida | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Trinity, Florida",
+      "eventPaths": [
+        "/event/revival-night-2026-10-23-trinity-5cb419/"
+      ]
+    },
+    "/shows/visalia-california/": {
+      "fingerprint": "dd410544904daa34fbd02cab464464925eca31bafa3b1e17a6de7a2431aa492d",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Visalia, California | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Visalia, California",
+      "eventPaths": [
+        "/event/back-to-the-basics-2026-10-10-visalia-d2e925/"
+      ]
+    },
+    "/shows/weldon-california/": {
+      "fingerprint": "cd4bc41ba1df4b9fb6561beb87cab25faf05bb770ce09ec2c448ee848fdcb648",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Weldon, California | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Weldon, California",
+      "eventPaths": [
+        "/event/808-beezy-live-in-weldon-ca-2026-10-08-weldon-d48267/"
+      ]
+    },
+    "/shows/west-sacramento-california/": {
+      "fingerprint": "5c422a0b351208926424a057b64cc51ebd84997e8e9c1fcc290707b07d0fd84d",
+      "lastmod": null,
+      "title": "Christian hip hop shows in West Sacramento, California | Kingdom Circuit",
+      "heading": "Christian hip hop shows in West Sacramento, California",
+      "eventPaths": [
+        "/event/the-sac-town-give-back-2026-10-17-west-sacramento-10e63d/"
+      ]
+    },
+    "/shows/athens-alabama/": {
+      "fingerprint": "db71b5e97780b24f38356b1b40b6a827fd38b3ead652758ffb8381e5a28ce5b3",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Athens, Alabama | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Athens, Alabama",
+      "eventPaths": [
+        "/event/survival-revival-2026-10-24-athens-4b643e/"
+      ]
+    },
+    "/shows/baton-rouge-louisiana/": {
+      "fingerprint": "24e3777198b4322bd135bd4a143ecf416f3e35258b5fc193f727b0be15facae1",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Baton Rouge, Louisiana | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Baton Rouge, Louisiana",
+      "eventPaths": [
+        "/event/dax-the-anger-management-tour-with-gifted-hands-2026-10-21-baton-rouge-ca8f54/"
+      ]
+    },
+    "/shows/fullerton-california/": {
+      "fingerprint": "bb5054c2b6a086e644aacfa16a7ecd199a9f8f6e61b816ed169d8c58979cde84",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Fullerton, California | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Fullerton, California",
+      "eventPaths": [
+        "/event/victory-over-darkness-concert-2026-10-24-fullerton-b1b794/"
+      ]
+    },
+    "/shows/jacksonville-north-carolina/": {
+      "fingerprint": "26ee8b1c8331e034eb4e2676ca17ad534ff937841ce941f8a4d535fb03af5cd5",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Jacksonville, North Carolina | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Jacksonville, North Carolina",
+      "eventPaths": [
+        "/event/childlike-cici-at-unity-of-faith-christian-center-2026-10-24-jacksonville-fdd16c/"
+      ]
+    },
+    "/shows/maplewood-minnesota/": {
+      "fingerprint": "38802ab61751049a6a5426dd6f23b3b41b3f21eead37ef6db0d36be5544709ec",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Maplewood, Minnesota | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Maplewood, Minnesota",
+      "eventPaths": [
+        "/event/tru-serva-30-release-celebration-2026-10-24-maplewood-fdf2a4/"
+      ]
+    },
+    "/shows/markleville-indiana/": {
+      "fingerprint": "bc183245c5596cc4f2c644048f2a3f52cd7fb4f66a0a26f7d2b720b73d3cfac9",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Markleville, Indiana | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Markleville, Indiana",
+      "eventPaths": [
+        "/event/zauntee-at-brightpoint-church-2026-10-26-markleville-e5440c/"
+      ]
+    },
+    "/shows/mason-ohio/": {
+      "fingerprint": "fb92c76008af4f2e4a372a07c134b75e3a37ff78ef21da1b1a9a56132ec52802",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Mason, Ohio | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Mason, Ohio",
+      "eventPaths": [
+        "/event/k-drama-youth-leadership-seminar-school-event-2026-10-28-mason-3bebe9/"
+      ]
+    },
+    "/shows/panama-city-beach-florida/": {
+      "fingerprint": "4017354c56239df1531402c46eb6d5f163ba4c92e4438efc40441af1cecb8063",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Panama City Beach, Florida | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Panama City Beach, Florida",
+      "eventPaths": [
+        "/event/faith-festival-panama-city-beach-2026-10-24-panama-city-beach-7ebe66/"
+      ]
+    },
+    "/shows/riverdale-georgia/": {
+      "fingerprint": "3edc7cd7e630e250b417c5b1293576a7a102922984cb1eddd97d3f7065561b40",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Riverdale, Georgia | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Riverdale, Georgia",
+      "eventPaths": [
+        "/event/knock-out-breast-cancer-boxing-and-live-music-2026-10-24-riverdale-29d9f3/"
+      ]
+    },
+    "/shows/tallahassee-florida/": {
+      "fingerprint": "62ffddd7696581e729f497474cc2e315da1804d06ef2d403729dc5d504e5f4c1",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Tallahassee, Florida | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Tallahassee, Florida",
+      "eventPaths": [
+        "/event/hoj-25th-anniversary-saturday-night-concert-2026-10-24-tallahassee-f6aea8/"
+      ]
+    },
+    "/shows/venice-california/": {
+      "fingerprint": "07b44d7b1103c27636ddb8257fc4b535c6705fe21eab03fd0d006b3cf6756994",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Venice, California | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Venice, California",
+      "eventPaths": [
+        "/event/westside-social-holy-ghost-hip-hop-2026-10-25-venice-bf02f7/"
+      ]
+    },
+    "/shows/centennial-colorado/": {
+      "fingerprint": "7b05d374ae2a5363f0ea2a6dc67b8f6dd6ac292c266f35cffb927a383b4f5d07",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Centennial, Colorado | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Centennial, Colorado",
+      "eventPaths": [
+        "/event/jimmy-rock-rave-and-worship-denver-2026-2026-09-25-centennial-12d4ab/"
+      ]
+    },
+    "/shows/malta-bend-missouri/": {
+      "fingerprint": "1459fab15fd91e815275d93e4007ae8d83f8dd78b4f2914506e47dc5e77c35eb",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Malta Bend, Missouri | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Malta Bend, Missouri",
+      "eventPaths": [
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-25-malta-bend-f3c3e1/"
+      ]
+    },
+    "/shows/millville-new-jersey/": {
+      "fingerprint": "f9c31aea5490df43ba5ecd46f0d6b7e8237f008d8cebcce5ce179a8a7fc98e34",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Millville, New Jersey | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Millville, New Jersey",
+      "eventPaths": [
+        "/event/sevin-live-concert-2026-09-26-millville-3b1409/"
+      ]
+    },
+    "/shows/rialto-california/": {
+      "fingerprint": "39d4bdb3209442a01a7a5d3b9b568558adb0c8b5dd6579d2e8e7d14981913cd9",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Rialto, California | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Rialto, California",
+      "eventPaths": [
+        "/event/tribe-fest-2026-2026-09-25-rialto-2303be/"
+      ]
+    },
+    "/shows/topeka-kansas/": {
+      "fingerprint": "03f6e96af97a79ff75b64a22dad8bb9f057028a804c0066e3472a5a94d134247",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Topeka, Kansas | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Topeka, Kansas",
+      "eventPaths": [
+        "/event/open-skies-bethel-music-with-kb-2026-09-26-topeka-0a9fd5/"
+      ]
+    },
+    "/shows/wellington-missouri/": {
+      "fingerprint": "0873953cb41366c7eef7d78701790b660a0570a1508727d6c837b3bd0314acfa",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Wellington, Missouri | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Wellington, Missouri",
+      "eventPaths": [
+        "/event/808-beezy-live-at-rwg-tour-2026-2026-09-25-wellington-2dc18f/"
+      ]
+    },
+    "/shows/winters-california/": {
+      "fingerprint": "fa833ec2966c5fcd1b6a5c070d851941c97b4c38538e1a64d3f0f38bf4393267",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Winters, California | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Winters, California",
+      "eventPaths": [
+        "/event/access-granted-marriage-retreat-with-psalm-bird-and-cj-emulous-2026-09-25-winters-351382/"
+      ]
+    },
+    "/shows/fort-smith-arkansas/": {
+      "fingerprint": "dba427489fa563fe5ee3529995413bd366078f7740da52e70589962c857eca25",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Fort Smith, Arkansas | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Fort Smith, Arkansas",
+      "eventPaths": [
+        "/event/the-city-wide-christian-music-festival-2026-2026-10-18-fort-smith-f1ec42/"
+      ]
+    },
+    "/shows/long-beach-california/": {
+      "fingerprint": "580447e90b946a7a4033a8c8a003ac7d61ff22f8a81e9b7223b2003b6203abbf",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Long Beach, California | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Long Beach, California",
+      "eventPaths": [
+        "/event/faith-fest-long-beach-2026-10-17-long-beach-a3f17a/"
+      ]
+    },
+    "/shows/saint-paul-minnesota/": {
+      "fingerprint": "aef5f1bc9c2c14c2f871d609d86b6bed2dea84e9e0eba9999ed803c79a5e5ed1",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Saint Paul, Minnesota | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Saint Paul, Minnesota",
+      "eventPaths": [
+        "/event/from-ashes-to-life-fentanyl-awareness-march-2026-10-17-saint-paul-96d2cb/"
+      ]
+    },
+    "/shows/toronto-on/": {
+      "fingerprint": "572fdd23829401404c98588a29b8f8dbdac98498ebe311fbaf47434f72a246de",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Toronto, ON | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Toronto, ON",
+      "eventPaths": [
+        "/event/cendia-2026-art-night-2026-10-17-toronto-24d95a/"
+      ]
+    },
+    "/shows/abilene-kansas/": {
+      "fingerprint": "93b8b6ba379aec2e7bb380b3ee5f821b13bd099a453b20fafa97ce5b8182fafa",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Abilene, Kansas | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Abilene, Kansas",
+      "eventPaths": [
+        "/event/faith-and-blue-weekend-featuring-flame-2026-10-10-abilene-54a12b/"
+      ]
+    },
+    "/shows/harrison-arkansas/": {
+      "fingerprint": "30b1a88b2d32fb3054ffdacecfd013279065a88d044871a12f82bd23c04240b9",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Harrison, Arkansas | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Harrison, Arkansas",
+      "eventPaths": [
+        "/event/rock-n-the-river-viii-2026-10-09-harrison-bc51fa/"
+      ]
+    },
+    "/shows/morristown-tennessee/": {
+      "fingerprint": "1adb6e7d890dc4f8b2a01361ed25dc25fb051881287865bdcfd0d23b76d463bf",
+      "lastmod": null,
+      "title": "Christian hip hop shows in Morristown, Tennessee | Kingdom Circuit",
+      "heading": "Christian hip hop shows in Morristown, Tennessee",
+      "eventPaths": [
+        "/event/awaken-the-spirit-2-2026-10-10-morristown-0d1db2/"
+      ]
+    },
+    "/artists/indie-tribe/alabama/": {
+      "fingerprint": "ef042afe0f5a49797d149f1bc80b46dee57192b3f57e788e2460f6a653081ab8",
+      "lastmod": null,
+      "title": "indie tribe. shows in Alabama | Kingdom Circuit",
+      "heading": "indie tribe. shows in Alabama",
+      "eventPaths": [
+        "/event/hulvey-could-be-tonight-tour-2026-09-01-birmingham-5a6bb8/"
+      ]
+    },
+    "/artists/hulvey/alabama/": {
+      "fingerprint": "76763de8bf4fbd295e3d6209e03077325f24750620037a9d5447e1ba93725220",
+      "lastmod": null,
+      "title": "Hulvey shows in Alabama | Kingdom Circuit",
+      "heading": "Hulvey shows in Alabama",
+      "eventPaths": [
+        "/event/hulvey-could-be-tonight-tour-2026-09-01-birmingham-5a6bb8/"
+      ]
+    },
+    "/artists/trendsetter-sense/georgia/": {
+      "fingerprint": "931727bc72395bbfe2a6246938a2a33f2b8f7714a1efefdd7c7f3acd157b4022",
+      "lastmod": null,
+      "title": "Trendsetter Sense shows in Georgia | Kingdom Circuit",
+      "heading": "Trendsetter Sense shows in Georgia",
+      "eventPaths": [
+        "/event/cars-and-christ-atlanta-2026-10-24-hampton-ee151a/"
+      ]
+    },
+    "/artists/hulvey/pennsylvania/": {
+      "fingerprint": "f0b0dd716fbc7d2fc6dca921b713e96da70098d8223b6864415ec4d4742dff5e",
+      "lastmod": null,
+      "title": "Hulvey shows in Pennsylvania | Kingdom Circuit",
+      "heading": "Hulvey shows in Pennsylvania",
+      "eventPaths": [
+        "/event/hulvey-w-indie-tribe-2026-09-10-philadelphia-8d612a/",
+        "/event/uprise-festival-2026-2026-09-11-shippensburg-12bad1/"
+      ]
+    },
+    "/event/dax-the-anger-management-tour-with-gifted-hands-2026-10-20-birmingham-b58f23/": {
+      "fingerprint": "13ab9436788feaaf26cc9e3b2e009f3763dd2207567284fff1b177ab5d3e7af3",
+      "lastmod": "2026-11-17",
+      "title": "Dax — The Anger Management Tour with Gifted Hands | Kingdom Circuit",
+      "heading": "Dax — The Anger Management Tour with Gifted Hands",
+      "eventPaths": []
+    },
+    "/event/dax-the-anger-management-tour-with-gifted-hands-2026-10-23-dallas-6ead03/": {
+      "fingerprint": "00eda814ea0add2606e458913f1e107092dd34cd1fab3ca779e9068c8a937941",
+      "lastmod": "2026-11-17",
+      "title": "Dax — The Anger Management Tour with Gifted Hands | Kingdom Circuit",
+      "heading": "Dax — The Anger Management Tour with Gifted Hands",
+      "eventPaths": []
+    },
+    "/event/hook-d-on-god-concert-2026-10-23-old-hickory-be5a3d/": {
+      "fingerprint": "ecbc1aba45683995abba589ff53c757139ffe980400378a16068fa4db13a0b86",
+      "lastmod": "2026-11-17",
+      "title": "Hook’d on God Concert | Kingdom Circuit",
+      "heading": "Hook’d on God Concert",
+      "eventPaths": []
     }
   },
   "retiredPaths": [
     "/event/altar-ego-at-clear-skies-meadery-2027-01-23-rockville-3e2bbf/",
     "/event/ryan-ellis-at-the-betsy-hotel-2026-11-13-miami-beach-e47963/"
   ],
-  "publishedAt": "2026-11-17T21:02:56.796497+00:00"
+  "publishedAt": "2026-11-17T22:08:15.332259+00:00"
 }
