@@ -634,6 +634,8 @@ def finalize(root, site, today=None):
     for source, target in redirects.items():
         file = target_file(site, source); file.parent.mkdir(parents=True, exist_ok=True)
         file.write_text(forwarding_page(target))
+    from history_navigation import connect
+    connect(root, site, state, history, today)
     from finalize_seo_indexing_core import set_robots
     sitemap = ET.Element('urlset', xmlns=NS['s'])
     dated = 0

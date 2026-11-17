@@ -11,3 +11,5 @@ The new directories are core indexable pages in the shared SEO classifier. URL c
 The show information stylesheet stays last in its existing head position so its independent idempotence check remains effective. Navigation assets are inserted before it.
 
 Local verification uses `tests/test_location_navigation.py` and the existing full test suites. Production uses the normal dates publication mode and current source data. No test HTML, feeds or generated assets should be promoted directly.
+
+Historical connections are finalized by `scripts/history_navigation.py` inside the URL continuity pass, before sitemap fingerprints are recorded. The compact Show archive is linked from All Shows, contains ordinary links inside native month disclosures, and reconnects published historical events and past month calendars. Retained events link to existing artist, city and state calendars using verified retained identities. Private and noindex notices are excluded from archive promotion. Current public cards, show facts and original artwork are unchanged.

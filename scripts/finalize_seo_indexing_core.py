@@ -45,6 +45,7 @@ CORE_INDEX_URLS = {
     "/shows/",
     "/shows/states/",
     "/shows/cities/",
+    "/shows/archive/",
     "/shows/this-month/",
     "/festivals/",
     "/new-shows/",
