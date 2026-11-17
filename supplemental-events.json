@@ -2794,14 +2794,14 @@
     "bandsintownResolvedName": "BrvndonP",
     "bandsintownIdentity": "exact_name_or_alias",
     "trackedArtist": "BrvndonP",
-    "postalCode": "60619",
-    "venueUrl": "https://www.greenwoodoasis.com/",
-    "venueInstagram": "https://www.instagram.com/thegreenwoodoasis/",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "imageSource": "Original official Greenwood Oasis event flyer, preserved unchanged",
     "imageSourceUrl": "https://www.instagram.com/p/DfciTUIxiJm/",
+    "postalCode": "60619",
+    "venueUrl": "https://www.greenwoodoasis.com/",
+    "venueInstagram": "https://www.instagram.com/thegreenwoodoasis/",
     "detailImageLayout": "portrait"
   },
   {
@@ -2878,6 +2878,44 @@
         "priority": 120
       }
     ]
+  },
+  {
+    "id": "bandsintown:109165412",
+    "title": "Alex Jean at Underground Arts",
+    "startDate": "2026-12-27",
+    "startTime": "19:00",
+    "timezone": "",
+    "venue": "Underground Arts",
+    "address": "1200 Callowhill St",
+    "city": "Philadelphia",
+    "state": "PA",
+    "country": "US",
+    "artists": [
+      "Alex Jean"
+    ],
+    "headliner": "Alex Jean",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/109165412?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/109165412?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/alex-jean-saved.webp",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/109165412?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "109165412",
+    "bandsintownArtistId": "15570394",
+    "bandsintownResolvedName": "Alex Jean",
+    "bandsintownIdentity": "configured_id",
+    "trackedArtist": "Alex Jean"
   },
   {
     "id": "manual:alex-jean-sony-hall-new-york-2026-12-28",
