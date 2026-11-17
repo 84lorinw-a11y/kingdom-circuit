@@ -18469,5 +18469,106 @@
         "priority": 130
       }
     ]
+  },
+  {
+    "id": "mayia-nye-crossover-east-odenton-2026-12-31",
+    "title": "New Year's Eve Service with MAYIA",
+    "startDate": "2026-12-31",
+    "endDate": "",
+    "startTime": "20:00",
+    "endTime": "",
+    "startDateTime": "2026-12-31T20:00:00-05:00",
+    "timezone": "America/New_York",
+    "venue": "Crossover Church East",
+    "address": "8262 Lokus Rd",
+    "city": "Odenton",
+    "state": "MD",
+    "postalCode": "21113",
+    "country": "US",
+    "artists": [
+      "MAYIA"
+    ],
+    "headliner": "",
+    "advertisedBilling": [
+      "MAYIA"
+    ],
+    "officialBill": [
+      "MAYIA"
+    ],
+    "confirmedMusicalBilling": [],
+    "unconfirmedArtists": [
+      "MAYIA"
+    ],
+    "lineupExplicit": false,
+    "musicConfirmed": false,
+    "liveCHHMusicalPerformanceConfirmed": false,
+    "eventType": "church",
+    "status": "scheduled",
+    "authority": "official_artist",
+    "confidence": "high",
+    "officialUrl": "https://mayiawarren.org/events",
+    "ticketUrl": "",
+    "ticketUrlVerified": false,
+    "firstSeen": "2026-11-17T02:49:10.600899+00:00",
+    "lastVerified": "2026-11-17T20:45:23.312952+00:00",
+    "auditVerified": "2026-11-17",
+    "editorialBatch": "2026-11-17-mayia-approved",
+    "image": "assets/artists/mayia-saved.webp",
+    "imageType": "artist_photo",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Existing approved MAYIA artist portrait",
+    "imageSourceUrl": "https://www.instagram.com/mayiawarren/?hl=en",
+    "detailImageLayout": "portrait",
+    "publicDescription": "New Year's Eve service with MAYIA at Crossover Church East in Odenton, Maryland. The service begins at 8 PM Eastern on December 31, 2026.",
+    "description": "New Year's Eve service with MAYIA at Crossover Church East in Odenton, Maryland. The service begins at 8 PM Eastern on December 31, 2026.",
+    "detailsPending": true,
+    "scheduleNote": "The service begins at 8 PM Eastern. The ending time and full program are not confirmed.",
+    "scheduleDetails": [
+      {
+        "label": "Service",
+        "text": "New Year's Eve service with MAYIA on December 31, 2026 at 8 PM Eastern."
+      },
+      {
+        "label": "Program",
+        "text": "The ending time, additional participants and full program are not confirmed."
+      }
+    ],
+    "sourceName": "MAYIA official event calendar",
+    "sourceEventIds": [
+      "https://mayiawarren.org/events",
+      "https://mayiawarren.org/go/bandsintown/21578/event/109161896",
+      "https://www.bandsintown.com/e/109161896",
+      "109161896"
+    ],
+    "sources": [
+      {
+        "name": "Official artist calendar",
+        "url": "https://mayiawarren.org/events",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 130
+      },
+      {
+        "name": "Official artist occurrence",
+        "url": "https://mayiawarren.org/go/bandsintown/21578/event/109161896",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 130
+      },
+      {
+        "name": "Official church website",
+        "url": "https://www.crossoverchurch.tv/",
+        "type": "manual_verified",
+        "authority": "official_organizer",
+        "priority": 120
+      }
+    ],
+    "notes": "Owner explicitly approved this exact church service appearance after the CHH and musical role uncertainty was disclosed. Keep generic Event classification and MAYIA artist association, without asserting a rap performance or musical performer role. No additional billing, price, age policy, end time, ticket link or dated flyer is confirmed. Reuse unchanged existing approved artist portrait as artist_photo. Official readable destination is the full Events page because occurrence URLs are bare embedded fragments. Timezone is geographic for Odenton; exact official first publication date unknown. Earliest legitimate discovery preserved. Apple Music provider metadata confirms America/New_York and local December31 despite a2027title based onUTCJan1. Its potential standard duration is not independently confirmed by the artist listing, so no end time is published. Organizer website verified separately.",
+    "organizer": {
+      "name": "Crossover Church",
+      "url": "https://www.crossoverchurch.tv/"
+    },
+    "organizerWebsite": "https://www.crossoverchurch.tv/"
   }
 ]
