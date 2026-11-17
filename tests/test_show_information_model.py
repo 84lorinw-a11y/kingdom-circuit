@@ -55,6 +55,42 @@ class ShowInformationModelTests(unittest.TestCase):
             self.assertEqual(result['organizerName'], 'One / Two')
             self.assertEqual(source, before)
 
+    def test_unconfirmed_special_guest_keeps_billing_but_not_performer_instagram(self):
+        registry = [
+            {'name': 'Dillon Chase', 'aliases': ['DillonChase'],
+             'instagramProfile': 'https://www.instagram.com/dillonchase/'},
+            {'name': 'EGR', 'aliases': ['EGR XO'],
+             'instagramProfile': 'https://www.instagram.com/egrxofficial/'},
+        ]
+        for billed, unconfirmed in (
+            ('Dillon Chase', ['  DILLON   CHASE  ']),
+            ('DillonChase', ['dillon chase']),
+            ({'name': 'Dillon Chase'}, [{'name': 'DILLONCHASE'}]),
+            ('Dillon Chase', 'DillonChase'),
+        ):
+            with self.subTest(billed=billed, unconfirmed=unconfirmed):
+                source = self.event(
+                    artists=[billed, 'egr xo'], unconfirmedArtists=unconfirmed,
+                    artistRoles={'Dillon Chase': 'Special guest', 'EGR': 'Performer'},
+                    description='Dillon Chase is a special guest. His musical performance is unconfirmed.')
+                before = copy.deepcopy(source)
+                registry_before = copy.deepcopy(registry)
+                result = normalize(source, artists=registry)
+                self.assertEqual(result['artists'], source['artists'])
+                self.assertEqual(result['unconfirmedArtists'], unconfirmed)
+                self.assertEqual(result['artistRoles'], source['artistRoles'])
+                self.assertEqual(result['description'], source['description'])
+                self.assertEqual(result['performerInstagrams'], [
+                    {'name': 'EGR', 'url': 'https://www.instagram.com/egrxofficial/'}])
+                self.assertEqual(normalize(result, artists=registry), result)
+                self.assertEqual(source, before)
+                self.assertEqual(registry, registry_before)
+
+        guest_only = self.event(artists=['Dillon Chase'], unconfirmedArtists=['DillonChase'],
+            performerInstagrams=[{'name': 'Dillon Chase',
+                                 'url': 'https://www.instagram.com/dillonchase/'}])
+        self.assertNotIn('performerInstagrams', normalize(guest_only, artists=registry))
+
     def test_source_is_preserved_without_mutation_and_notes_are_not_description(self):
         source = self.event(country="CA", notes="Internal research, do not publish", artists=["Artist"])
         before = copy.deepcopy(source)

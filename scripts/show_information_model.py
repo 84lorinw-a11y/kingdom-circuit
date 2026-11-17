@@ -143,6 +143,19 @@ def _performer_instagrams(event, artists):
             alias = ' '.join(_text(alias).casefold().split())
             if alias:
                 lookup.setdefault(alias, set()).add((name, url))
+    # Association and special guest billing do not confirm a musical role.
+    unconfirmed = event.get('unconfirmedArtists') or []
+    if isinstance(unconfirmed, str):
+        unconfirmed = [unconfirmed]
+    unconfirmed_names = {
+        ' '.join(_text(item.get('name') if isinstance(item, dict) else item).casefold().split())
+        for item in unconfirmed
+    }
+    unconfirmed_performers = set()
+    for name in unconfirmed_names:
+        candidates = lookup.get(name, set())
+        if len(candidates) == 1:
+            unconfirmed_performers.update(candidates)
     result, seen = [], set()
     billed = event.get('artists') or []
     if isinstance(billed, str):
@@ -150,7 +163,10 @@ def _performer_instagrams(event, artists):
     for name in billed:
         if isinstance(name, dict):
             name = name.get('name')
-        candidates = lookup.get(' '.join(_text(name).casefold().split()), set())
+        key = ' '.join(_text(name).casefold().split())
+        candidates = lookup.get(key, set())
+        if key in unconfirmed_names or candidates & unconfirmed_performers:
+            continue
         if len(candidates) != 1:
             continue
         canonical, url = next(iter(candidates))
