@@ -749,9 +749,13 @@ jobs:
         run: |
           python scripts/organization_identity.py --site _site
           python scripts/organization_identity.py --site _site --check
+          python scripts/location_navigation.py --site _site --baseline "$RUNNER_TEMP/location-navigation-baseline"
+          python scripts/location_navigation.py --site _site --baseline "$RUNNER_TEMP/location-navigation-baseline" --check
+          node --check _site/assets/location-navigation.js
           python scripts/url_continuity.py --site _site
           python scripts/url_continuity.py --site _site --check
           python scripts/calendar_maintenance.py --site _site --output calendar-freshness-build.json
+          python scripts/location_navigation.py --site _site --verify-current
 
       - name: Audit final publication artifact
         id: publication-audit

@@ -69,6 +69,14 @@ class FinalPublicationTests(unittest.TestCase):
         self.assertEqual(errors, [])
         self.assertIn('/assets/portrait.webp', manifest['files'])
 
+    def test_manifest_covers_dynamic_location_links(self):
+        self.put('index.html', self.page())
+        self.put('404.html', 'not found')
+        self.put('assets/location-navigation-data.json', '{"locations":{}}')
+        manifest, errors = audit.build_manifest(self.site, 'release', '2026-11-16', {'/'})
+        self.assertEqual(errors, [])
+        self.assertIn('/assets/location-navigation-data.json', manifest['files'])
+
     def test_private_booking_cannot_leak_event_schema(self):
         errors = audit.event_fact_errors('/event/private/', {'private': True}, [{'@type': 'MusicEvent'}])
         self.assertEqual(errors[0]['kind'], 'private_or_unconfirmed_event_schema')

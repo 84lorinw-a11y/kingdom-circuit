@@ -43,6 +43,8 @@ STATE_SLUGS.update("ab bc mb nb nl ns nt nu on pe qc sk yt".split())
 CORE_INDEX_URLS = {
     "/",
     "/shows/",
+    "/shows/states/",
+    "/shows/cities/",
     "/shows/this-month/",
     "/festivals/",
     "/new-shows/",

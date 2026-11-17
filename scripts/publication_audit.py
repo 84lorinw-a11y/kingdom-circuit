@@ -224,7 +224,7 @@ def build_manifest(site, release_id, day, image_pages):
         add(page_url(file, site), file)
     for name in ('robots.txt', 'sitemap.xml', 'events.json', 'supplemental-events.json', 'run-status.json',
                  'event-history.json', 'config/artists.json', 'url-continuity-manifest.json',
-                 'assets/fan-show-catalog.json'):
+                 'assets/fan-show-catalog.json', 'assets/location-navigation-data.json'):
         file = site / name
         if file.is_file():
             add('/' + name, file)
