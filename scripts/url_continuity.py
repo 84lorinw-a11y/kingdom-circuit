@@ -18,7 +18,7 @@ import re
 from urllib.parse import urlsplit
 import xml.etree.ElementTree as ET
 from catalog_removals import public_event, resolved_location_event
-from event_visibility import event_last_active_date
+from event_visibility import event_is_past, event_last_active_date
 
 if __package__:
     from .catalog_clock import catalog_date
@@ -529,6 +529,62 @@ def calendar_robots(path, text):
     return None
 
 
+def remove_expired_ticket_offers(site, state, history, today):
+    """Keep historical Event facts without advertising obsolete ticket offers.
+
+    Archived presentation layers predate the current verified offer model. Their
+    preserved Event data can still name a seller that the visible page no longer
+    links to. Only a source-confirmed elapsed boundary permits this cleanup, and
+    the published current catalog is an additional preservation boundary.
+    """
+    from mobile_discovery import Document, replace_spans
+
+    catalog = load(site / 'assets/fan-show-catalog.json', {})
+    current_paths = {show['path'] for show in catalog.get('shows', [])}
+    redirects = state.get('redirects', {})
+    changed_pages = 0
+    expired_paths = []
+
+    def clean(value):
+        if isinstance(value, list):
+            return [clean(child) for child in value]
+        if not isinstance(value, dict):
+            return value
+        result = {key: clean(child) for key, child in value.items()}
+        kind = result.get('@type', [])
+        kinds = kind if isinstance(kind, list) else [kind]
+        if {'Event', 'MusicEvent', 'Festival'} & set(kinds):
+            result.pop('offers', None)
+        return result
+
+    for key, record in state['events'].items():
+        path = record['path']
+        event = history.get(key, record['event'])
+        if path in current_paths or path in redirects or not event_is_past(event, today):
+            continue
+        file = target_file(site, path)
+        if not file.is_file():
+            continue
+        raw = file.read_text()
+        facts = PageFacts(raw)
+        if facts.refresh or facts.canonical != ORIGIN + path:
+            continue
+        expired_paths.append(path)
+        changes = []
+        for node in Document(raw).nodes:
+            if node.tag != 'script' or node.attrs.get('type') != 'application/ld+json':
+                continue
+            value = json.loads(raw[node.opening_end:node.closing_start])
+            updated = clean(value)
+            if updated != value:
+                payload = json.dumps(updated, ensure_ascii=False).replace('<', '\\u003c')
+                changes.append((node.opening_end, node.closing_start, payload))
+        if changes:
+            file.write_text(replace_spans(raw, changes))
+            changed_pages += 1
+    return {'changedPages': changed_pages, 'expiredEventPaths': sorted(expired_paths)}
+
+
 def finalize(root, site, today=None):
     today = today or catalog_date().isoformat()
     # Build overlays copy source trees; these registries are never public assets.
@@ -668,6 +724,7 @@ def finalize(root, site, today=None):
     for source, target in redirects.items():
         file = target_file(site, source); file.parent.mkdir(parents=True, exist_ok=True)
         file.write_text(forwarding_page(target))
+    expired_offers = remove_expired_ticket_offers(site, state, history, today)
     from history_navigation import connect
     connect(root, site, state, history, today)
     from finalize_seo_indexing_core import set_robots
@@ -706,7 +763,8 @@ def finalize(root, site, today=None):
     state['publishedAt'] = dt.datetime.now(dt.timezone.utc).isoformat()
     save(root / WORK_FILE, state)
     # Public receipt contains no source records or internal identity decisions.
-    receipt = {'version': 1, 'redirects': redirects, 'pages': {p: {k: r[k] for k in ('fingerprint', 'lastmod')} for p, r in state['pages'].items() if p not in redirects and target_file(site, p).exists()}, 'datedPages': dated}
+    receipt = {'version': 1, 'redirects': redirects, 'pages': {p: {k: r[k] for k in ('fingerprint', 'lastmod')} for p, r in state['pages'].items() if p not in redirects and target_file(site, p).exists()}, 'datedPages': dated,
+               'expiredEventPaths': expired_offers['expiredEventPaths']}
     save(site / 'url-continuity-manifest.json', receipt)
     verify(site)
     return {'redirects': len(redirects), 'canonicalPages': len(sitemap), 'datedPages': dated}
@@ -716,6 +774,25 @@ def verify(site):
     for internal in (STATE_FILE, RULES_FILE, WORK_FILE):
         if (site / internal).exists(): raise ValueError(f'Internal URL registry was published: {internal}')
     receipt = load(site / 'url-continuity-manifest.json', {})
+    def has_event_offer(value):
+        if isinstance(value, list):
+            return any(has_event_offer(child) for child in value)
+        if not isinstance(value, dict):
+            return False
+        kind = value.get('@type', [])
+        kinds = kind if isinstance(kind, list) else [kind]
+        return (bool({'Event', 'MusicEvent', 'Festival'} & set(kinds)) and 'offers' in value
+                or any(has_event_offer(child) for child in value.values()))
+
+    current_paths = {row['path'] for row in load(site / 'assets/fan-show-catalog.json', {}).get('shows', [])}
+    for path in receipt.get('expiredEventPaths', []):
+        if path in current_paths:
+            raise ValueError(f'Current catalog page marked as expired: {path}')
+        file = target_file(site, path)
+        if not file.is_file():
+            raise ValueError(f'Missing verified past event page: {path}')
+        if has_event_offer(PageFacts(file.read_text()).schemas):
+            raise ValueError(f'Expired event retains ticket Offer markup: {path}')
     redirects = receipt.get('redirects', {})
     if redirects != flatten_redirects(redirects): raise ValueError('Redirect chains remain')
     urls = {}

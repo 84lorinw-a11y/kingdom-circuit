@@ -52,6 +52,80 @@ class FinalPublicationTests(unittest.TestCase):
         self.put('artists/test/index.html', self.page('/artists/test/'))
         self.assertIn('indexable_page_missing_from_sitemap', [e['kind'] for e in self.documents()['errors']])
 
+    def test_sitemap_cannot_mask_an_indexable_page_disconnected_from_home(self):
+        self.put('index.html', self.page())
+        self.put('artists/test/index.html', self.page('/artists/test/'))
+        sitemap = {'https://kingdomcircuit.com/', 'https://kingdomcircuit.com/artists/test/'}
+        result = audit.audit_documents(self.site, {}, sitemap)
+        self.assertIn('indexable_page_unreachable_from_home', [e['kind'] for e in result['errors']])
+        self.put('index.html', self.page(extra='<a href="/artists/test/">Test artist</a>'))
+        result = audit.audit_documents(self.site, {}, sitemap)
+        self.assertEqual(result['errors'], [])
+        self.assertEqual(result['linkGraph']['reachableIndexablePages'], 2)
+
+    def test_nofollow_or_inert_template_links_cannot_replace_navigation(self):
+        self.put('artists/test/index.html', self.page('/artists/test/'))
+        sitemap = {'https://kingdomcircuit.com/', 'https://kingdomcircuit.com/artists/test/'}
+        for extra in ('<a href="/artists/test/" rel="NOFOLLOW">Artist</a>',
+                      '<template><a href="/artists/test/">Artist</a></template>'):
+            with self.subTest(extra=extra):
+                self.put('index.html', self.page(extra=extra))
+                result = audit.audit_documents(self.site, {}, sitemap)
+                self.assertIn('indexable_page_unreachable_from_home', [e['kind'] for e in result['errors']])
+
+    def test_retained_follow_history_connects_pages_but_forwarding_pages_do_not(self):
+        self.put('index.html', self.page(extra='<a href="/history/">History</a>'))
+        self.put('history/index.html', self.page('/history/', robots='noindex,follow',
+                                               extra='<a href="../artists/test/">Artist</a>'))
+        self.put('artists/test/index.html', self.page('/artists/test/'))
+        sitemap = {'https://kingdomcircuit.com/', 'https://kingdomcircuit.com/artists/test/'}
+        result = audit.audit_documents(self.site, {}, sitemap)
+        self.assertEqual(result['errors'], [])
+        self.assertEqual(result['linkGraph']['maximumIndexableDepth'], 2)
+        self.put('history/index.html', self.page('/history/', robots='noindex,nofollow',
+                                               extra='<a href="/artists/test/">Artist</a>'))
+        result = audit.audit_documents(self.site, {}, sitemap)
+        self.assertIn('indexable_page_unreachable_from_home', [e['kind'] for e in result['errors']])
+        self.put('history/index.html', self.page('/artists/test/',
+            extra='<meta http-equiv="refresh" content="0; url=https://kingdomcircuit.com/artists/test/">'
+                  '<a href="/artists/test/">Continue</a>'))
+        result = audit.audit_documents(self.site, {'/history/': '/artists/test/'}, sitemap)
+        self.assertIn('indexable_page_unreachable_from_home', [e['kind'] for e in result['errors']])
+
+    def test_fragment_links_require_real_destination_sections(self):
+        self.put('index.html', self.page(extra='<a href="/artists/test/#missing">Show dates</a>'))
+        self.put('artists/test/index.html', self.page('/artists/test/', extra='<h2 id="schedule">Dates</h2>'))
+        sitemap = {'https://kingdomcircuit.com/', 'https://kingdomcircuit.com/artists/test/'}
+        result = audit.audit_documents(self.site, {}, sitemap)
+        self.assertIn('missing_internal_fragment', [e['kind'] for e in result['errors']])
+        self.put('index.html', self.page(extra='<a href="/artists/test/#schedule">Show dates</a>'))
+        self.assertEqual(audit.audit_documents(self.site, {}, sitemap)['errors'], [])
+
+    def test_fragments_support_named_anchors_encoding_top_and_text_directives(self):
+        self.put('index.html', self.page(extra=''.join([
+            '<a href="https://www.kingdomcircuit.com/artists/test/#caf%C3%A9">Venue</a>',
+            '<a href="/artists/test/index.html#schedule:~:text=Show">Dates</a>',
+            '<a href="/artists/test/#:~:text=Artist">Artist</a>',
+            '<a href="/artists/test/#top">Top</a>',
+            '<a href="/poster.pdf#page=2">Poster</a>',
+            '<a href="https://other.example/#outside">Official site</a>'])))
+        self.put('artists/test/index.html', self.page('/artists/test/',
+            extra='<a name="café"></a><h2 id="schedule">Schedule</h2>'))
+        self.put('poster.pdf', 'fixture asset')
+        sitemap = {'https://kingdomcircuit.com/', 'https://kingdomcircuit.com/artists/test/'}
+        self.assertEqual(audit.audit_documents(self.site, {}, sitemap)['errors'], [])
+
+    def test_page_depth_is_reported_without_an_arbitrary_release_limit(self):
+        sitemap = set()
+        for number in range(5):
+            path = '/' if number == 0 else '/page-' + str(number) + '/'
+            next_link = '<a href="/page-' + str(number + 1) + '/">Next</a>' if number < 4 else ''
+            self.put(path.lstrip('/') + 'index.html', self.page(path, extra=next_link))
+            sitemap.add('https://kingdomcircuit.com' + path)
+        result = audit.audit_documents(self.site, {}, sitemap)
+        self.assertEqual(result['errors'], [])
+        self.assertEqual(result['linkGraph']['maximumIndexableDepth'], 4)
+
     def test_deleted_or_blocking_robots_cannot_be_accepted(self):
         self.assertTrue(audit.robots_errors(self.site, ['/']))
         self.put('robots.txt', 'User-agent: *\nAllow: /\nSitemap: https://kingdomcircuit.com/sitemap.xml\n')

@@ -6,7 +6,7 @@ This checks publication consistency, not whether Google has indexed the release.
 from __future__ import annotations
 
 import argparse
-from collections import Counter
+from collections import Counter, deque
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -73,8 +73,69 @@ def robots_errors(site, paths, agent='Googlebot'):
     return errors
 
 
+def audit_link_graph(site, documents):
+    """Require indexable pages to have an HTML link path from Home.
+
+    A sitemap entry does not replace navigation. Retained noindex,follow pages
+    may lead to useful history, but forwarding pages and nofollow links do not
+    satisfy this requirement. Depth is evidence, not an arbitrary release limit.
+    """
+    errors, edges, anchors = [], {}, 0
+    for source, data in documents.items():
+        edges[source] = set()
+        follow_page = ('nofollow' not in data['directives'] and not data['refresh']
+                       and data['canonical'] == ORIGIN + source)
+        for reference, nofollow in data['links']:
+            parsed = urlsplit(urljoin(ORIGIN + source, reference))
+            if parsed.scheme not in {'http', 'https'} or parsed.hostname not in {
+                    'kingdomcircuit.com', 'www.kingdomcircuit.com'}:
+                continue
+            anchors += 1
+            path = unquote(parsed.path or '/')
+            target = (site / path.lstrip('/')).resolve()
+            if not target.is_relative_to(site.resolve()):
+                continue  # The existing resource check reports unsafe paths.
+            if target.is_dir() or path.endswith('/'):
+                target = target / 'index.html'
+            if target.suffix != '.html' or not target.is_file():
+                continue  # Assets and missing files have separate checks.
+            destination = page_url(target, site.resolve())
+            if destination not in documents:
+                continue  # Parsing failures are reported separately.
+            fragment = unquote(parsed.fragment).split(':~:', 1)[0]
+            if fragment and fragment.lower() != 'top':
+                if fragment not in documents[destination]['ids']:
+                    errors.append(issue('missing_internal_fragment', source,
+                                        target=destination, fragment=fragment, href=reference))
+            if follow_page and not nofollow:
+                edges[source].add(destination)
+    depth, pending = {'/': 0}, deque(['/'])
+    while pending:
+        source = pending.popleft()
+        for target in sorted(edges.get(source, ())):
+            if target not in depth:
+                depth[target] = depth[source] + 1
+                pending.append(target)
+    indexable = {path for path, data in documents.items()
+                 if path not in {'/404.html', '/play/'}
+                 and not data['refresh']
+                 and data['canonical'] == ORIGIN + path
+                 and 'noindex' not in data['robots'].lower()}
+    unreachable = sorted(indexable - depth.keys())
+    errors.extend(issue('indexable_page_unreachable_from_home', path) for path in unreachable)
+    distribution = Counter(depth[path] for path in indexable if path in depth)
+    return {'errors': errors, 'htmlPagesChecked': len(documents),
+            'internalAnchorOccurrences': anchors,
+            'crawlablePageEdges': sum(map(len, edges.values())),
+            'indexablePages': len(indexable),
+            'reachableIndexablePages': len(indexable) - len(unreachable),
+            'unreachableIndexablePages': unreachable,
+            'indexableDepthDistribution': dict(sorted(distribution.items())),
+            'maximumIndexableDepth': max(distribution, default=0)}
+
+
 def audit_documents(site, redirects, sitemap):
-    errors, pages, events, counts = [], {}, {}, Counter()
+    errors, pages, events, counts, documents = [], {}, {}, Counter(), {}
     for file in sorted(site.rglob('*.html')):
         path = page_url(file, site)
         text = file.read_text()
@@ -86,6 +147,20 @@ def audit_documents(site, redirects, sitemap):
         except Exception as exc:
             errors.append(issue('invalid_jsonld_or_html_parse', path, error=str(exc)))
             continue
+        templates = [n for n in doc.nodes if n.tag == 'template']
+        ids = {value for n in doc.nodes
+               if not any(t.start < n.start < t.end for t in templates)
+               for value in (n.attrs.get('id'), n.attrs.get('name') if n.tag == 'a' else None)
+               if value}
+        links = [(n.attrs['href'], 'nofollow' in n.attrs.get('rel', '').lower().split())
+                 for n in doc.nodes if n.tag == 'a' and n.attrs.get('href')
+                 and not any(t.start < n.start < t.end for t in templates)]
+        directives = ','.join(n.attrs.get('content', '') for n in doc.nodes
+                              if n.tag == 'meta' and n.attrs.get('name', '').lower()
+                              in {'robots', 'googlebot'}).lower()
+        documents[path] = {'canonical': facts.canonical, 'refresh': facts.refresh,
+                           'robots': facts.robots, 'directives': directives,
+                           'links': links, 'ids': ids}
         for node in nodes:
             counts.update(t for t in types(node) if t)
         for link in facts.links:
@@ -133,7 +208,10 @@ def audit_documents(site, redirects, sitemap):
     for url in sorted(sitemap):
         if not url.startswith(ORIGIN + '/') or url.removeprefix(ORIGIN) not in pages:
             errors.append(issue('sitemap_missing_or_external_page', url))
-    return dict(errors=errors, pages=pages, events=events, schemaTypes=dict(counts))
+    graph = audit_link_graph(site, documents)
+    errors.extend(graph['errors'])
+    return dict(errors=errors, pages=pages, events=events, schemaTypes=dict(counts),
+                linkGraph={k: v for k, v in graph.items() if k != 'errors'})
 
 
 def event_fact_errors(path, record, schemas):
@@ -318,7 +396,8 @@ def verify(site, day, repo=ROOT):
             errors.append(issue('native_check_failure', label, error=str(exc)))
     return dict(htmlPages=len(documents['pages']), sitemapUrls=len(sitemap_list),
                 currentEvents=len(catalog['shows']), artistProfilesChecked=len(catalog['artists']),
-                schemaTypes=documents['schemaTypes'], checks=checks, errors=errors), set(ctx['paths']) | set(catalog['artists']) | {'/', '/shows/', '/artists/', '/festivals/'}
+                schemaTypes=documents['schemaTypes'], internalLinkGraph=documents['linkGraph'],
+                checks=checks, errors=errors), set(ctx['paths']) | set(catalog['artists']) | {'/', '/shows/', '/artists/', '/festivals/'}
 
 
 def main():
