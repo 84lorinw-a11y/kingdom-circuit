@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T11:41:43Z",
+  "generatedAt": "2026-11-18T11:41:30Z",
   "artistsChecked": 447,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
@@ -9,10 +9,10 @@
     "status": "ok",
     "artistsAttempted": 447,
     "resolved": 266,
-    "rawUpcomingUSRows": 73,
+    "rawUpcomingUSRows": 72,
     "rawUpcomingCARows": 2,
-    "rawUpcomingRows": 75,
-    "newEventsPublished": 15,
+    "rawUpcomingRows": 74,
+    "newEventsPublished": 14,
     "festivalCandidatesHeld": 0,
     "requestErrors": 0
   },
@@ -24,9 +24,9 @@
   },
   "sourceStatusCounts": {
     "delegated_to_structured_rest": 447,
-    "blocked_by_robots": 451,
-    "no_events": 619,
-    "failed": 11
+    "blocked_by_robots": 453,
+    "no_events": 616,
+    "failed": 12
   },
   "newEvents": [],
   "sourceResults": [
@@ -456,8 +456,9 @@
       "artist": "Limoblaze",
       "source": "official website",
       "url": "https://www.limoblaze.com/",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://www.limoblaze.com/: <urlopen error timed out>"
     },
     {
       "artist": "Limoblaze",
@@ -1242,7 +1243,7 @@
       "url": "https://www.shonlock.com/",
       "status": "failed",
       "eventsFound": 0,
-      "error": "Unable to retrieve https://www.shonlock.com/: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate (_ssl.c:1011)>"
+      "error": "Unable to retrieve https://www.shonlock.com/: <urlopen error timed out>"
     },
     {
       "artist": "Shonlock",
@@ -2149,7 +2150,7 @@
       "artist": "Kaboose",
       "source": "official website",
       "url": "https://syntaxrecords.com/artist/kaboose/",
-      "status": "no_events",
+      "status": "blocked_by_robots",
       "eventsFound": 0
     },
     {
@@ -3639,8 +3640,9 @@
       "artist": "Brinson",
       "source": "official website",
       "url": "https://godchaserz.com/",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://godchaserz.com/: <urlopen error timed out>"
     },
     {
       "artist": "Brinson",
@@ -6453,7 +6455,7 @@
       "artist": "Taelor Gray",
       "source": "official profile",
       "url": "https://www.taelorgray.com/",
-      "status": "no_events",
+      "status": "blocked_by_robots",
       "eventsFound": 0
     },
     {
@@ -8228,9 +8230,8 @@
       "artist": "Lady Cam",
       "source": "official website",
       "url": "http://www.iloveladycam.com/",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve http://www.iloveladycam.com/: HTTP Error 429: Too Many Requests"
+      "status": "no_events",
+      "eventsFound": 0
     },
     {
       "artist": "Lady Cam",

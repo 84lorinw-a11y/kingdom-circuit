@@ -1,10 +1,10 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-11-17T11:17:40Z",
-  "lastSuccessfulUpdate": "2026-11-17T11:17:40Z",
+  "lastAttempt": "2026-11-18T11:17:20Z",
+  "lastSuccessfulUpdate": "2026-11-18T11:17:20Z",
   "eventsPublished": 202,
-  "candidatesCollected": 384,
+  "candidatesCollected": 385,
   "artistsConfigured": 447,
   "artistsByPriority": {
     "priority1": 115,
@@ -20,7 +20,7 @@
   "instagramArtistsConfigured": 402,
   "instagramQueriesRun": 404,
   "instagramQueriesAttempted": 402,
-  "instagramResultsFound": 2,
+  "instagramResultsFound": 0,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,30 +46,10 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
-    },
-    {
-      "url": "https://www.instagram.com/p/DftIn97pF34/",
-      "title": "Instagram photo by David Warner • Nov 13, 2026 at 6:29 PM",
-      "artists": [],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 1,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
-    },
-    {
-      "url": "https://www.instagram.com/p/signin/",
-      "title": "Instagram",
-      "artists": [],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 526,
+  "sourcesChecked": 525,
   "unmatchedArtists": [
     "Scootie Wop",
     "Mike Malagies",
@@ -510,7 +490,7 @@
     },
     {
       "name": "Taelor Gray official site",
-      "status": "ok",
+      "status": "warning",
       "eventsFound": 0
     },
     {
@@ -616,7 +596,7 @@
       "queriesRun": 404
     }
   ],
-  "warningCount": 19,
+  "warningCount": 20,
   "errorCount": 0,
   "warnings": [
     "Holy Smoke official festival: Unable to retrieve https://indietribe.us/products/holy-smoke-2026: HTTP Error 404: Not Found",
@@ -628,6 +608,7 @@
     "Derek Minor Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/12211056-derek-minor: HTTP Error 403: Forbidden",
     "Social Club Misfits Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/13345973-social-club-misfits: HTTP Error 403: Forbidden",
     "Hope Fest official venue: Unable to retrieve https://www.riverfrontesplanade.com/upcoming-events/hope-fest: HTTP Error 404: Not Found",
+    "Taelor Gray official site: robots.txt does not allow automated retrieval",
     "Manafest official tour: Unable to retrieve https://www.manafest.com/tour-dates: HTTP Error 404: Not Found",
     "Manafest Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/4465-manafest: HTTP Error 403: Forbidden",
     "GRITS Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/805-grits: HTTP Error 403: Forbidden",
@@ -644,5 +625,5 @@
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 20,
   "artistWebsiteEventsAdded": 0,
-  "artistWebsiteMergeAt": "2026-11-18T08:47:47Z"
+  "artistWebsiteMergeAt": "2026-11-18T11:48:21Z"
 }
