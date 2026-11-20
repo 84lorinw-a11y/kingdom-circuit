@@ -2746,6 +2746,44 @@
     "trackedArtist": "Mike Teezy"
   },
   {
+    "id": "bandsintown:1040895160",
+    "title": "GRITS at Poor David's Pub",
+    "startDate": "2026-12-16",
+    "startTime": "20:00",
+    "timezone": "",
+    "venue": "Poor David's Pub",
+    "address": "1313 Botham Jean Blvd",
+    "city": "Dallas",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "GRITS"
+    ],
+    "headliner": "GRITS",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/1040895160?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.bandsintown.com/e/1040895160?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/grits-saved.jpg",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/1040895160?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "1040895160",
+    "bandsintownArtistId": "805",
+    "bandsintownResolvedName": "Grits",
+    "bandsintownIdentity": "configured_id",
+    "trackedArtist": "GRITS"
+  },
+  {
     "id": "bandsintown:109165412",
     "title": "Alex Jean at Underground Arts",
     "startDate": "2026-12-27",
@@ -3565,6 +3603,44 @@
         "priority": 120
       }
     ]
+  },
+  {
+    "id": "bandsintown:109183179",
+    "title": "Issac Mansfield at THE GALLERY AT YAM",
+    "startDate": "2027-02-06",
+    "startTime": "19:00",
+    "timezone": "",
+    "venue": "THE GALLERY AT YAM",
+    "address": "9850 Walnut Hill Ln suite 427",
+    "city": "Dallas",
+    "state": "TX",
+    "country": "US",
+    "artists": [
+      "Issac Mansfield"
+    ],
+    "headliner": "Issac Mansfield",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/t/109183179?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
+    "officialUrl": "https://www.bandsintown.com/e/109183179?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/issac-mansfield-saved.webp",
+    "price": "",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/109183179?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "109183179",
+    "bandsintownArtistId": "15588396",
+    "bandsintownResolvedName": "Issac Mansfield",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "Issac Mansfield"
   },
   {
     "id": "manual:808-beezy-bandsintown-108856562",

@@ -1,10 +1,10 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-11-19T11:17:37Z",
-  "lastSuccessfulUpdate": "2026-11-19T11:17:37Z",
-  "eventsPublished": 198,
-  "candidatesCollected": 385,
+  "lastAttempt": "2026-11-20T11:17:11Z",
+  "lastSuccessfulUpdate": "2026-11-20T11:17:11Z",
+  "eventsPublished": 199,
+  "candidatesCollected": 384,
   "artistsConfigured": 447,
   "artistsByPriority": {
     "priority1": 115,
@@ -15,12 +15,12 @@
   "socialSearchArtistsEnabled": 402,
   "freeTextAliasesProtected": 313,
   "artistsMatchedOnTicketmaster": 61,
-  "officialEventsFound": 33,
-  "ticketmasterEventsFound": 12,
+  "officialEventsFound": 34,
+  "ticketmasterEventsFound": 10,
   "instagramArtistsConfigured": 402,
   "instagramQueriesRun": 404,
   "instagramQueriesAttempted": 402,
-  "instagramResultsFound": 0,
+  "instagramResultsFound": 1,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,10 +46,20 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
+    },
+    {
+      "url": "https://www.instagram.com/p/DNEJy0ETo9Y/",
+      "title": "Heirloom Books | Stencilled Sprayed Edges | Some Hunger Games memes ...",
+      "artists": [],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
-  "sourcesChecked": 525,
+  "sourcesChecked": 524,
   "unmatchedArtists": [
     "Scootie Wop",
     "Mike Malagies",
@@ -236,7 +246,7 @@
     {
       "name": "Reach Records - WHATUPRG",
       "status": "ok",
-      "eventsFound": 3
+      "eventsFound": 2
     },
     {
       "name": "Holy Smoke official festival",
@@ -265,7 +275,7 @@
     },
     {
       "name": "Uprise Festival official 2026 page",
-      "status": "ok",
+      "status": "warning",
       "eventsFound": 0
     },
     {
@@ -406,7 +416,7 @@
     {
       "name": "ChristianHits consolidated show feed",
       "status": "ok",
-      "eventsFound": 1
+      "eventsFound": 2
     },
     {
       "name": "ChristianHits festival directory",
@@ -576,7 +586,7 @@
     {
       "name": "Mike Teezy Apple Music concerts",
       "status": "ok",
-      "eventsFound": 1
+      "eventsFound": 2
     },
     {
       "name": "Parris Chariz Apple Music concerts",
@@ -596,10 +606,11 @@
       "queriesRun": 404
     }
   ],
-  "warningCount": 20,
+  "warningCount": 21,
   "errorCount": 0,
   "warnings": [
     "Holy Smoke official festival: Unable to retrieve https://indietribe.us/products/holy-smoke-2026: HTTP Error 404: Not Found",
+    "Uprise Festival official 2026 page: Unable to retrieve https://www.uprisefest.com/uprise-2026: HTTP Error 404: Not Found",
     "Mike Malagies official events: Unable to retrieve https://www.mikemalagiesofficial.com/event-list: HTTP Error 404: Not Found",
     "NF Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/11969355-nf: HTTP Error 403: Forbidden",
     "Mike Malagies Bandsintown public calendar: Unable to retrieve https://www.bandsintown.com/a/15593996-mike-malagies: HTTP Error 403: Forbidden",
@@ -625,5 +636,5 @@
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 20,
   "artistWebsiteEventsAdded": 0,
-  "artistWebsiteMergeAt": "2026-11-20T08:47:28Z"
+  "artistWebsiteMergeAt": "2026-11-20T11:42:52Z"
 }
