@@ -36,6 +36,26 @@ def removed_artist(name):
 
 
 def misattributed_event(event):
+    # November 20: this exact Dallas booking is the local rock quartet,
+    # not the Christian rap duo. Retain raw history and other GRITS shows.
+    if event.get("startDate") == "2026-12-16":
+        if (str(event.get("id") or "").removeprefix("manual:") == "bandsintown:1040895160"
+                or str(event.get("bandsintownEventId") or "") == "1040895160"):
+            return True
+        for field in ("officialUrl", "ticketUrl"):
+            try:
+                url = urlsplit(str(event.get(field) or ""))
+                host = (url.hostname or "").lower().removeprefix("www.")
+                port = url.port
+            except ValueError:
+                continue
+            if (url.scheme not in {"http", "https"} or url.username or url.password
+                    or port not in {None, 443 if url.scheme == "https" else 80}):
+                continue
+            if host == "bandsintown.com" and re.fullmatch(r"/[et]/1040895160(?:-[^/]+)?/?", url.path):
+                return True
+            if host == "prekindle.com" and url.path.rstrip("/") == "/event/79173-grits-band-holiday-show-dallas":
+                return True
     # The Jan 23 idol concert bills @altarego_info (NJ/NY idol duo), not
     # @altaregorecords (Bo Fisher / Justo Chalaire). Keep raw evidence/history.
     if event.get("startDate") == "2027-01-23":
@@ -217,6 +237,21 @@ def public_event(event):
     the independent publication copy, using the exact dated identity above.
     """
     result = deepcopy(event)
+    # This Apple concert links directly to the same Bandsintown occurrence.
+    # Its UTC timestamps were copied as local clock/date prefixes. Correct
+    # only these exact dated identities, including stale provider reimports.
+    if (event.get("startDate") == "2026-12-13"
+            and str(event.get("id") or "").removeprefix("manual:") in {
+                "official:22266e20021b7ab47403", "bandsintown:109174921"
+            }):
+        result.update({
+            "endDate": "2026-12-13", "startTime": "16:00", "endTime": "19:00",
+            "timezone": "America/New_York",
+            "startDateTime": "2026-12-13T16:00:00-05:00",
+            "endDateTime": "2026-12-13T19:00:00-05:00",
+        })
+        first_seen = "2026-11-19T11:45:04Z"
+        result["firstSeen"] = min(first_seen, result.get("firstSeen") or first_seen)
     if not _location_review_identity(event):
         return result
     # Retained history records this exact booking on November 3. A provider

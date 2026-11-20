@@ -2861,7 +2861,7 @@
     "title": "Mike Teezy at 690 Jonestown Rd",
     "startDate": "2026-12-13",
     "startTime": "16:00",
-    "timezone": "",
+    "timezone": "America/New_York",
     "venue": "690 Jonestown Rd",
     "address": "690 Jonestown Rd",
     "city": "Winston-Salem",
@@ -2892,45 +2892,12 @@
     "bandsintownArtistId": "4131763",
     "bandsintownResolvedName": "Mike Teezy",
     "bandsintownIdentity": "exact_name_or_alias",
-    "trackedArtist": "Mike Teezy"
-  },
-  {
-    "id": "bandsintown:1040895160",
-    "title": "GRITS at Poor David's Pub",
-    "startDate": "2026-12-16",
-    "startTime": "20:00",
-    "timezone": "",
-    "venue": "Poor David's Pub",
-    "address": "1313 Botham Jean Blvd",
-    "city": "Dallas",
-    "state": "TX",
-    "country": "US",
-    "artists": [
-      "GRITS"
-    ],
-    "headliner": "GRITS",
-    "eventType": "concert",
-    "status": "scheduled",
-    "ticketUrl": "https://www.bandsintown.com/e/1040895160?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "officialUrl": "https://www.bandsintown.com/e/1040895160?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-    "image": "assets/artists/grits-saved.jpg",
-    "price": "",
-    "sourceName": "Bandsintown",
-    "sources": [
-      {
-        "name": "Bandsintown",
-        "url": "https://www.bandsintown.com/e/1040895160?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
-        "type": "bandsintown_rest",
-        "authority": "artist_calendar",
-        "priority": 74
-      }
-    ],
-    "confidence": "medium",
-    "bandsintownEventId": "1040895160",
-    "bandsintownArtistId": "805",
-    "bandsintownResolvedName": "Grits",
-    "bandsintownIdentity": "configured_id",
-    "trackedArtist": "GRITS"
+    "trackedArtist": "Mike Teezy",
+    "endDate": "2026-12-13",
+    "endTime": "19:00",
+    "startDateTime": "2026-12-13T16:00:00-05:00",
+    "endDateTime": "2026-12-13T19:00:00-05:00",
+    "firstSeen": "2026-11-19T11:45:04Z"
   },
   {
     "id": "bandsintown:109165412",

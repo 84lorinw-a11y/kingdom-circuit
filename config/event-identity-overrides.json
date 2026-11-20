@@ -423,6 +423,18 @@
         "/event/hulvey-live-at-itown-church-madison-campus-2026-11-13-anderson-091a78/"
       ],
       "evidence": "November 17 URL audit. Published provider and retained official records identify Hulvey, November 13, 2026 at 19:00, ITOWN Church Madison Campus, 6607 Providence Dr, Anderson IN. The accepted artwork identity map already joins official:433b136650c8a5f6b264 to bandsintown:109034401. Preserve the existing official:82bb2a5f42c828c2537d canonical archive and its facts. Forward both former addresses without importing source differences."
+    },
+    {
+      "keepId": "bandsintown:109174921",
+      "identityOnly": true,
+      "keepPath": "/event/mike-teezy-at-690-jonestown-rd-2026-12-13-winston-salem-681652/",
+      "aliasIds": [
+        "official:22266e20021b7ab47403"
+      ],
+      "aliasPaths": [
+        "/event/mike-teezy-690-jonestown-rd-2026-12-13-winston-salem-f56fa7/"
+      ],
+      "evidence": "Reviewed November 20, 2026. Apple concert https://music.apple.com/us/concerts/ce.e7630a43-33a6-4b8a-8013-3ca99bd35948 directly links to Bandsintown event 109174921 and displays December 13 at 4 PM at 690 Jonestown Rd in Winston Salem. The exact Spotify, Apple and Instagram identities match the curated artist. Apple explicitly supplies America/New_York and start 2026-12-13T21:00:00Z through end 2026-12-14T00:00:00Z. These represent December 13 from 16:00 through 19:00 locally. The source parser copied UTC prefixes as local dates, producing a second listing. Preserve the earlier Bandsintown identity and discovery 2026-11-19T11:45:04Z. Redirect only this exact Apple alias without importing its incorrect clock or ending date. Original provider history remains intact."
     }
   ],
   "redirects": {
