@@ -187,22 +187,27 @@
       "firstSeen": "2026-11-03T18:56:47Z"
     },
     "resolvedAt": "2026-11-07",
-    "resolution": "Organizer's November 7 artist showcard and November 3 DJ announcement confirm Cars & Christ Dallas at Texas Motorplex, November 21, 2026, 5–9 PM Central. Official ticket page and venue address establish Ennis, TX. Preserve original conflicting source snapshot and canonical identity.",
+    "resolution": "Organizer's November 7 artist showcard and November 3 DJ announcement confirm Cars & Christ Dallas at Texas Motorplex, November 21, 2026, 5–9 PM Central. Official ticket page and venue address establish Ennis, TX. Preserve original conflicting source snapshot and canonical identity. November 20 followup: November 19 live concert flyer confirms Project Pat and Cash Cortes alongside 1K Phew. Retain previously confirmed DJ Trendsetter Sense. Current organizer schedule and verified ticket page move the event start to 4 PM Central, gates to 3 PM and concert to 5:30 PM. Original source snapshot, event identity and earliest discovery stay unchanged.",
     "resolutionEvidence": [
       "https://www.instagram.com/p/Dfc4dnzi6DA/",
       "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas",
       "https://www.instagram.com/americashallbesaved/p/DfSEfmSioj1/",
       "https://www.texasmotorplex.com/contact",
-      "https://www.instagram.com/americashallbesaved/p/DfYXUtZi9Ws/"
+      "https://www.instagram.com/americashallbesaved/p/DfYXUtZi9Ws/",
+      "https://www.instagram.com/americashallbesaved/p/Df8G0QZm4hf/",
+      "https://www.instagram.com/p/Df4-JMcgZpx/",
+      "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas?occurrenceId=f7a9c3b3-b569-42e9-929a-b2fdf90ce760",
+      "https://www.instagram.com/americashallbesaved/p/Df5N-s1CkIj/",
+      "https://www.instagram.com/americashallbesaved/p/DfvLvgjib3g/"
     ],
     "resolvedEvent": {
       "id": "official:023c040d4ea33e120949",
       "title": "Cars & Christ Dallas",
       "startDate": "2026-11-21",
       "endDate": "2026-11-21",
-      "startTime": "17:00",
+      "startTime": "16:00",
       "endTime": "21:00",
-      "startDateTime": "2026-11-21T17:00:00-06:00",
+      "startDateTime": "2026-11-21T16:00:00-06:00",
       "endDateTime": "2026-11-21T21:00:00-06:00",
       "timezone": "America/Chicago",
       "venue": "Texas Motorplex",
@@ -218,38 +223,42 @@
       "headliner": "1K Phew",
       "advertisedBilling": [
         "1K Phew",
+        "Project Pat",
+        "Cash Cortes",
         "DJ Trendsetter Sense"
       ],
       "officialBill": [
         "1K Phew",
+        "Project Pat",
+        "Cash Cortes",
         "DJ Trendsetter Sense"
       ],
       "lineupExplicit": true,
       "musicConfirmed": true,
       "eventType": "concert",
       "status": "scheduled",
-      "officialUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas",
-      "ticketUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas",
-      "ticketUrlVerified": false,
+      "officialUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas?occurrenceId=f7a9c3b3-b569-42e9-929a-b2fdf90ce760",
+      "ticketUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas?occurrenceId=f7a9c3b3-b569-42e9-929a-b2fdf90ce760",
+      "ticketUrlVerified": true,
       "registrationUrlVerified": false,
       "price": "Free",
       "organizer": "Cars & Christ",
       "organizerUrl": "https://www.zeffy.com/en-US/organizations/cars-and-christ",
-      "publicDescription": "1K Phew performs live with DJ Trendsetter Sense at Cars & Christ Dallas, a free, family-friendly community event with show cars, music, ministry, baptisms and food trucks. Project Pat and Chosen Journey Show are also advertised to appear. The event runs 5–9 PM Central; individual set times and doors have not been announced. Optional donations are available on the official event page.",
-      "scheduleNote": "Event window: 5–9 PM Central. Individual set times and doors have not been announced.",
-      "image": "assets/events/1k-phew-cars-and-christ-dallas-2026-11-21-original.jpg",
+      "publicDescription": "Cars & Christ Dallas features live music from 1K Phew, Project Pat, Cash Cortes and DJ Trendsetter Sense at Texas Motorplex. The event runs from 4 PM through 9 PM Central, with gates at 3 PM and the concert at 5:30 PM. General admission is free. Parking is separate at $10 per car or $8 per motorcycle. Show cars, ministry, baptisms and food trucks are also advertised. Noble Official with BAA1412 and Chosen Journey Show are announced guests; individual musical performances by those guests have not been confirmed.",
+      "scheduleNote": "Gates open at 3 PM Central. Event hours are 4 PM through 9 PM. Welcoming announcements are at 4:30 PM, the concert at 5:30 PM, the car competition at 6:30 PM, the call to Christ at 7 PM, worship and baptisms at 7:30 PM, the closing message at 8:30 PM and rollout at 9 PM.",
+      "image": "assets/events/cars-and-christ-dallas-live-concert-2026-11-21-original.jpg",
       "imageType": "event_artwork",
       "imagePosition": "center",
       "imageOverride": true,
-      "imageSource": "Cars & Christ Dallas official 1K Phew showcard",
-      "imageSourceUrl": "https://www.instagram.com/p/Dfc4dnzi6DA/",
+      "imageSource": "Cars and Christ Dallas official concert flyer",
+      "imageSourceUrl": "https://www.instagram.com/americashallbesaved/p/Df8G0QZm4hf/",
       "firstSeen": "2026-11-03T18:56:47Z",
       "confidence": "high",
       "locationUnconfirmed": false,
       "sourceName": "Cars & Christ Dallas official announcement",
       "authority": "promoter",
-      "lastVerified": "2026-11-07",
-      "auditVerified": "2026-11-07",
+      "lastVerified": "2026-11-20",
+      "auditVerified": "2026-11-20",
       "sources": [
         {
           "name": "Cars & Christ Dallas — 1K Phew announcement",
@@ -285,6 +294,62 @@
           "type": "manual_verified",
           "authority": "promoter",
           "priority": 115
+        },
+        {
+          "name": "Cars and Christ Dallas current concert bill",
+          "url": "https://www.instagram.com/americashallbesaved/p/Df8G0QZm4hf/",
+          "type": "manual_verified",
+          "authority": "promoter",
+          "priority": 130
+        },
+        {
+          "name": "Cars and Christ official event schedule",
+          "url": "https://www.instagram.com/p/Df4-JMcgZpx/",
+          "type": "manual_verified",
+          "authority": "promoter",
+          "priority": 130
+        },
+        {
+          "name": "Cars and Christ verified registration",
+          "url": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas?occurrenceId=f7a9c3b3-b569-42e9-929a-b2fdf90ce760",
+          "type": "manual_verified",
+          "authority": "official_event",
+          "priority": 130
+        },
+        {
+          "name": "Noble Official announced guest",
+          "url": "https://www.instagram.com/americashallbesaved/p/Df5N-s1CkIj/",
+          "type": "manual_verified",
+          "authority": "promoter",
+          "priority": 130
+        },
+        {
+          "name": "DJ Trendsetter Sense current announcement",
+          "url": "https://www.instagram.com/americashallbesaved/p/DfvLvgjib3g/",
+          "type": "manual_verified",
+          "authority": "promoter",
+          "priority": 130
+        }
+      ],
+      "doorsTime": "15:00",
+      "confirmedMusicalBilling": [
+        "1K Phew",
+        "Project Pat",
+        "Cash Cortes",
+        "DJ Trendsetter Sense"
+      ],
+      "scheduleDetails": [
+        {
+          "label": "Concert",
+          "text": "5:30 PM Central. Individual artist set times have not been announced."
+        },
+        {
+          "label": "Parking",
+          "text": "$10 per car or $8 per motorcycle. General admission is free."
+        },
+        {
+          "label": "Announced guests",
+          "text": "Noble Official with BAA1412 and Chosen Journey Show. Musical roles are unconfirmed."
         }
       ]
     }

@@ -1044,7 +1044,7 @@
     "id": "official:023c040d4ea33e120949",
     "title": "Cars & Christ Dallas",
     "startDate": "2026-11-21",
-    "startTime": "17:00",
+    "startTime": "16:00",
     "timezone": "America/Chicago",
     "venue": "Texas Motorplex",
     "address": "7500 W Hwy 287",
@@ -1058,9 +1058,9 @@
     "headliner": "1K Phew",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas",
-    "officialUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas",
-    "image": "assets/events/1k-phew-cars-and-christ-dallas-2026-11-21-original.jpg",
+    "ticketUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas?occurrenceId=f7a9c3b3-b569-42e9-929a-b2fdf90ce760",
+    "officialUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas?occurrenceId=f7a9c3b3-b569-42e9-929a-b2fdf90ce760",
+    "image": "assets/events/cars-and-christ-dallas-live-concert-2026-11-21-original.jpg",
     "price": "Free",
     "sourceName": "Cars & Christ Dallas official announcement",
     "sources": [
@@ -1105,31 +1105,70 @@
         "type": "manual_verified",
         "authority": "promoter",
         "priority": 115
+      },
+      {
+        "name": "Cars and Christ Dallas current concert bill",
+        "url": "https://www.instagram.com/americashallbesaved/p/Df8G0QZm4hf/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 130
+      },
+      {
+        "name": "Cars and Christ official event schedule",
+        "url": "https://www.instagram.com/p/Df4-JMcgZpx/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 130
+      },
+      {
+        "name": "Cars and Christ verified registration",
+        "url": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas?occurrenceId=f7a9c3b3-b569-42e9-929a-b2fdf90ce760",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 130
+      },
+      {
+        "name": "Noble Official announced guest",
+        "url": "https://www.instagram.com/americashallbesaved/p/Df5N-s1CkIj/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 130
+      },
+      {
+        "name": "DJ Trendsetter Sense current announcement",
+        "url": "https://www.instagram.com/americashallbesaved/p/DfvLvgjib3g/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 130
       }
     ],
-    "lastVerified": "2026-11-07",
+    "lastVerified": "2026-11-20",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "verifiedVersion": 9,
     "firstSeen": "2026-11-03T18:56:47Z",
     "locationUnconfirmed": false,
-    "ticketUrlVerified": false,
+    "ticketUrlVerified": true,
     "registrationUrlVerified": false,
-    "publicDescription": "1K Phew performs live with DJ Trendsetter Sense at Cars & Christ Dallas, a free, family-friendly community event with show cars, music, ministry, baptisms and food trucks. Project Pat and Chosen Journey Show are also advertised to appear. The event runs 5–9 PM Central; individual set times and doors have not been announced. Optional donations are available on the official event page.",
-    "scheduleNote": "Event window: 5–9 PM Central. Individual set times and doors have not been announced.",
+    "publicDescription": "Cars & Christ Dallas features live music from 1K Phew, Project Pat, Cash Cortes and DJ Trendsetter Sense at Texas Motorplex. The event runs from 4 PM through 9 PM Central, with gates at 3 PM and the concert at 5:30 PM. General admission is free. Parking is separate at $10 per car or $8 per motorcycle. Show cars, ministry, baptisms and food trucks are also advertised. Noble Official with BAA1412 and Chosen Journey Show are announced guests; individual musical performances by those guests have not been confirmed.",
+    "scheduleNote": "Gates open at 3 PM Central. Event hours are 4 PM through 9 PM. Welcoming announcements are at 4:30 PM, the concert at 5:30 PM, the car competition at 6:30 PM, the call to Christ at 7 PM, worship and baptisms at 7:30 PM, the closing message at 8:30 PM and rollout at 9 PM.",
     "postalCode": "75119",
     "endTime": "21:00",
-    "startDateTime": "2026-11-21T17:00:00-06:00",
+    "startDateTime": "2026-11-21T16:00:00-06:00",
     "endDateTime": "2026-11-21T21:00:00-06:00",
     "canonicalPath": "/event/1k-phew-live-at-texas-motorplex-2026-11-21-swiss-golf-and-tennis-club-mobile-home-park-a168a7/",
     "endDate": "2026-11-21",
     "advertisedBilling": [
       "1K Phew",
+      "Project Pat",
+      "Cash Cortes",
       "DJ Trendsetter Sense"
     ],
     "officialBill": [
       "1K Phew",
+      "Project Pat",
+      "Cash Cortes",
       "DJ Trendsetter Sense"
     ],
     "lineupExplicit": true,
@@ -1137,16 +1176,37 @@
     "organizer": "Cars & Christ",
     "organizerUrl": "https://www.zeffy.com/en-US/organizations/cars-and-christ",
     "imageOverride": true,
-    "imageSource": "Cars & Christ Dallas official 1K Phew showcard",
-    "imageSourceUrl": "https://www.instagram.com/p/Dfc4dnzi6DA/",
+    "imageSource": "Cars and Christ Dallas official concert flyer",
+    "imageSourceUrl": "https://www.instagram.com/americashallbesaved/p/Df8G0QZm4hf/",
     "authority": "promoter",
-    "auditVerified": "2026-11-07"
+    "auditVerified": "2026-11-20",
+    "doorsTime": "15:00",
+    "confirmedMusicalBilling": [
+      "1K Phew",
+      "Project Pat",
+      "Cash Cortes",
+      "DJ Trendsetter Sense"
+    ],
+    "scheduleDetails": [
+      {
+        "label": "Concert",
+        "text": "5:30 PM Central. Individual artist set times have not been announced."
+      },
+      {
+        "label": "Parking",
+        "text": "$10 per car or $8 per motorcycle. General admission is free."
+      },
+      {
+        "label": "Announced guests",
+        "text": "Noble Official with BAA1412 and Chosen Journey Show. Musical roles are unconfirmed."
+      }
+    ]
   },
   {
     "id": "bandsintown:1040798191",
     "title": "Cars & Christ Dallas",
     "startDate": "2026-11-21",
-    "startTime": "17:00",
+    "startTime": "16:00",
     "timezone": "America/Chicago",
     "venue": "Texas Motorplex",
     "address": "7500 W Hwy 287",
@@ -1160,9 +1220,9 @@
     "headliner": "1K Phew",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas",
-    "officialUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas",
-    "image": "assets/events/1k-phew-cars-and-christ-dallas-2026-11-21-original.jpg",
+    "ticketUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas?occurrenceId=f7a9c3b3-b569-42e9-929a-b2fdf90ce760",
+    "officialUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas?occurrenceId=f7a9c3b3-b569-42e9-929a-b2fdf90ce760",
+    "image": "assets/events/cars-and-christ-dallas-live-concert-2026-11-21-original.jpg",
     "price": "Free",
     "sourceName": "Cars & Christ Dallas official announcement",
     "sources": [
@@ -1207,6 +1267,41 @@
         "type": "manual_verified",
         "authority": "promoter",
         "priority": 115
+      },
+      {
+        "name": "Cars and Christ Dallas current concert bill",
+        "url": "https://www.instagram.com/americashallbesaved/p/Df8G0QZm4hf/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 130
+      },
+      {
+        "name": "Cars and Christ official event schedule",
+        "url": "https://www.instagram.com/p/Df4-JMcgZpx/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 130
+      },
+      {
+        "name": "Cars and Christ verified registration",
+        "url": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas?occurrenceId=f7a9c3b3-b569-42e9-929a-b2fdf90ce760",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 130
+      },
+      {
+        "name": "Noble Official announced guest",
+        "url": "https://www.instagram.com/americashallbesaved/p/Df5N-s1CkIj/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 130
+      },
+      {
+        "name": "DJ Trendsetter Sense current announcement",
+        "url": "https://www.instagram.com/americashallbesaved/p/DfvLvgjib3g/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 130
       }
     ],
     "confidence": "high",
@@ -1219,33 +1314,58 @@
     "endDate": "2026-11-21",
     "postalCode": "75119",
     "endTime": "21:00",
-    "startDateTime": "2026-11-21T17:00:00-06:00",
+    "startDateTime": "2026-11-21T16:00:00-06:00",
     "endDateTime": "2026-11-21T21:00:00-06:00",
     "advertisedBilling": [
       "1K Phew",
+      "Project Pat",
+      "Cash Cortes",
       "DJ Trendsetter Sense"
     ],
     "officialBill": [
       "1K Phew",
+      "Project Pat",
+      "Cash Cortes",
       "DJ Trendsetter Sense"
     ],
     "lineupExplicit": true,
     "musicConfirmed": true,
-    "ticketUrlVerified": false,
+    "ticketUrlVerified": true,
     "registrationUrlVerified": false,
     "organizer": "Cars & Christ",
     "organizerUrl": "https://www.zeffy.com/en-US/organizations/cars-and-christ",
-    "publicDescription": "1K Phew performs live with DJ Trendsetter Sense at Cars & Christ Dallas, a free, family-friendly community event with show cars, music, ministry, baptisms and food trucks. Project Pat and Chosen Journey Show are also advertised to appear. The event runs 5–9 PM Central; individual set times and doors have not been announced. Optional donations are available on the official event page.",
-    "scheduleNote": "Event window: 5–9 PM Central. Individual set times and doors have not been announced.",
+    "publicDescription": "Cars & Christ Dallas features live music from 1K Phew, Project Pat, Cash Cortes and DJ Trendsetter Sense at Texas Motorplex. The event runs from 4 PM through 9 PM Central, with gates at 3 PM and the concert at 5:30 PM. General admission is free. Parking is separate at $10 per car or $8 per motorcycle. Show cars, ministry, baptisms and food trucks are also advertised. Noble Official with BAA1412 and Chosen Journey Show are announced guests; individual musical performances by those guests have not been confirmed.",
+    "scheduleNote": "Gates open at 3 PM Central. Event hours are 4 PM through 9 PM. Welcoming announcements are at 4:30 PM, the concert at 5:30 PM, the car competition at 6:30 PM, the call to Christ at 7 PM, worship and baptisms at 7:30 PM, the closing message at 8:30 PM and rollout at 9 PM.",
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
-    "imageSource": "Cars & Christ Dallas official 1K Phew showcard",
-    "imageSourceUrl": "https://www.instagram.com/p/Dfc4dnzi6DA/",
+    "imageSource": "Cars and Christ Dallas official concert flyer",
+    "imageSourceUrl": "https://www.instagram.com/americashallbesaved/p/Df8G0QZm4hf/",
     "locationUnconfirmed": false,
     "authority": "promoter",
-    "lastVerified": "2026-11-07",
-    "auditVerified": "2026-11-07"
+    "lastVerified": "2026-11-20",
+    "auditVerified": "2026-11-20",
+    "doorsTime": "15:00",
+    "confirmedMusicalBilling": [
+      "1K Phew",
+      "Project Pat",
+      "Cash Cortes",
+      "DJ Trendsetter Sense"
+    ],
+    "scheduleDetails": [
+      {
+        "label": "Concert",
+        "text": "5:30 PM Central. Individual artist set times have not been announced."
+      },
+      {
+        "label": "Parking",
+        "text": "$10 per car or $8 per motorcycle. General admission is free."
+      },
+      {
+        "label": "Announced guests",
+        "text": "Noble Official with BAA1412 and Chosen Journey Show. Musical roles are unconfirmed."
+      }
+    ]
   },
   {
     "id": "clear-hits-radio-friendsgiving-milwaukee-2026-11-21",
@@ -1264,13 +1384,25 @@
     "postalCode": "53210",
     "country": "US",
     "artists": [
-      "TRU-SERVA"
+      "Lj the Messenger",
+      "TRU-SERVA",
+      "RÆL The Artist"
     ],
     "advertisedBilling": [
-      "TRU-SERVA"
+      "LJ the Messenger",
+      "KingTrey",
+      "TRU-SERVA",
+      "Vilij",
+      "RÆL The Artist",
+      "Xavierené"
     ],
     "officialBill": [
-      "TRU-SERVA"
+      "LJ the Messenger",
+      "KingTrey",
+      "TRU-SERVA",
+      "Vilij",
+      "RÆL The Artist",
+      "Xavierené"
     ],
     "lineupExplicit": true,
     "musicConfirmed": true,
@@ -1291,9 +1423,9 @@
       "includesAllFeesConfirmed": false,
       "verifiedUrl": "https://www.zeffy.com/en-US/ticketing/clear-hits-radio-friendsgiving-gala--2026"
     },
-    "publicDescription": "Clear Hits Radio's Friendsgiving Benefit & Auction features dinner, live music and an auction. TRU-SERVA is the first announced live performer. The event runs 6–9 PM CST. General admission is $25; children's tickets are $12. See the official ticket options for eligibility.",
-    "scheduleNote": "6–9 PM is the event window; TRU-SERVA's individual set time has not been announced.",
-    "notes": "Official Clear Hits Radio Instagram performer announcement Dfnv8BFB90k dated November 11 explicitly advertises TRU-SERVA live. Official Zeffy listing confirms November 21, 2026, 6–9 PM CST, City of Light Church and street address, dinner/live music/auction, general admission $25 and children $12. This is the first performer announcement; do not treat the current single confirmed name as an exhaustive lineup or infer other performers. Child age eligibility is conflicting: general flyer ages 6–12/free 5 and under, ticket option ages 5–12. No age range or free-child claim is published. General banquet announcement was public by October 27 via HisAir; that is separate from Kingdom Circuit discovery on November 11 local date. Original artist flyer retained unchanged.",
+    "publicDescription": "Clear Hits Radio's Friendsgiving Benefit & Auction features dinner, live music and an auction, with LJ the Messenger, KingTrey, TRU SERVA, Vilij, RÆL The Artist and Xavierené performing live. The event runs 6 through 9 PM Central. General admission is $25; children's tickets are $12. See the official ticket options for eligibility.",
+    "scheduleNote": "The event runs 6 through 9 PM Central. Individual set times have not been announced.",
+    "notes": "The organizer's November 19 Instagram announcement Df7nuDFG093 explicitly confirms live performances by all six advertised acts. The earlier November 11 TRU-SERVA announcement remains historical source evidence. Lj the Messenger, TRU-SERVA and RÆL The Artist have existing curated profiles; KingTrey, Vilij and Xavierené remain unlinked billing. KingTrey is not Ryan Trey. Existing venue, date, event window, price, original artwork, original discovery and admission uncertainty remain unchanged. Earlier child eligibility evidence conflicts between the general flyer and ticket option, so no new numeric age policy or free-child claim is published. General banquet announcement was public by October 27 via HisAir, separate from Kingdom Circuit first discovery.",
     "image": "assets/events/clear-hits-radio-friendsgiving-milwaukee-2026-11-21.webp",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1318,15 +1450,32 @@
         "type": "manual_verified",
         "authority": "official_event",
         "priority": 112
+      },
+      {
+        "name": "Clear Hits Radio official full live lineup announcement",
+        "url": "https://www.instagram.com/p/Df7nuDFG093/",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 120
       }
     ],
     "sourceEventIds": [
-      "instagram:Dfnv8BFB90k"
+      "instagram:Dfnv8BFB90k",
+      "https://www.instagram.com/p/Df7nuDFG093/"
     ],
     "firstSeen": "2026-11-12T01:02:52Z",
-    "lastVerified": "2026-11-12T01:58:46.945598Z",
-    "auditVerified": "2026-11-11",
-    "editorialBatch": "2026-11-11-clear-hits-friendsgiving"
+    "lastVerified": "2026-11-20T14:07:41.036928+00:00",
+    "auditVerified": "2026-11-20",
+    "editorialBatch": "2026-11-11-clear-hits-friendsgiving",
+    "confirmedMusicalBilling": [
+      "LJ the Messenger",
+      "KingTrey",
+      "TRU-SERVA",
+      "Vilij",
+      "RÆL The Artist",
+      "Xavierené"
+    ],
+    "liveCHHMusicalPerformanceConfirmed": true
   },
   {
     "id": "bandsintown:109085738",

@@ -251,6 +251,7 @@ def public_event(event):
             "organizerUrl", "publicDescription", "scheduleNote", "image", "imageType",
             "imagePosition", "imageOverride", "imageSource", "imageSourceUrl", "confidence",
             "locationUnconfirmed", "sourceName", "authority", "lastVerified", "auditVerified",
+            "doorsTime", "scheduleDetails", "confirmedMusicalBilling",
         )
         for field in fields:
             if field in resolution:

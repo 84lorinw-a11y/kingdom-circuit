@@ -186,6 +186,48 @@ class ResolvedLocationReviewTests(unittest.TestCase):
         self.assertEqual(source, original)
         self.assertEqual(self.review_file.read_bytes(), review_bytes)
 
+    def test_revised_concert_schedule_and_full_bill_survive_stale_alias_refresh(self):
+        bill = ['1K Phew', 'Project Pat', 'Cash Cortes', 'DJ Trendsetter Sense']
+        schedule = [{'label': 'Concert', 'text': '5:30 PM Central'}]
+        self.resolution.update({
+            'startTime': '16:00',
+            'startDateTime': '2026-11-21T16:00:00-06:00',
+            'doorsTime': '15:00',
+            'advertisedBilling': bill,
+            'officialBill': bill,
+            'confirmedMusicalBilling': bill,
+            'scheduleDetails': schedule,
+        })
+        self.write_review()
+        for event_id in (CANONICAL_ID, 'manual:' + CANONICAL_ID,
+                         'bandsintown:1040798191', 'manual:bandsintown:1040798191'):
+            with self.subTest(event_id=event_id):
+                source = self.raw(id=event_id, doorsTime='18:00',
+                    confirmedMusicalBilling=['1K Phew'],
+                    scheduleDetails=[{'label': 'Concert', 'text': 'Unconfirmed'}],
+                    canonicalPath='/event/retained-original-path/',
+                    status='postponed', statusNotes='Later organizer update',
+                    firstSeen='2026-10-30T10:00:00Z', unrelatedEvidence='preserve')
+                snapshot = copy.deepcopy(source)
+                actual = catalog.public_event(source)
+                self.assertEqual(actual['doorsTime'], '15:00')
+                self.assertEqual(actual['scheduleDetails'], schedule)
+                self.assertEqual(actual['confirmedMusicalBilling'], bill)
+                self.assertEqual(actual['advertisedBilling'], bill)
+                self.assertEqual(actual['startTime'], '16:00')
+                self.assertEqual(actual['startDateTime'], '2026-11-21T16:00:00-06:00')
+                self.assertEqual(actual['endTime'], '21:00')
+                self.assertEqual(actual['artists'], ['1K Phew', 'Trendsetter Sense'])
+                for field in ('id', 'canonicalPath', 'firstSeen', 'status',
+                              'statusNotes', 'unrelatedEvidence'):
+                    self.assertEqual(actual[field], snapshot[field], field)
+                self.assertEqual(catalog.public_event(actual), actual)
+                self.assertEqual(source, snapshot)
+                self.assertEqual(self.final_schema(actual)['startDate'],
+                                 '2026-11-21T16:00:00-06:00')
+        other_day = self.raw(startDate='2026-11-22', doorsTime='18:00')
+        self.assertEqual(catalog.public_event(other_day), other_day)
+
     def test_a_legitimate_earlier_discovery_is_never_reset_by_resolution(self):
         actual = catalog.public_event(self.raw(firstSeen='2026-10-30T10:00:00Z'))
         self.assert_resolved(actual)

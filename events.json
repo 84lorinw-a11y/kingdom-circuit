@@ -1646,7 +1646,7 @@
     "id": "official:023c040d4ea33e120949",
     "title": "Cars & Christ Dallas",
     "startDate": "2026-11-21",
-    "startTime": "17:00",
+    "startTime": "16:00",
     "timezone": "America/Chicago",
     "venue": "Texas Motorplex",
     "address": "7500 W Hwy 287",
@@ -1660,9 +1660,9 @@
     "headliner": "1K Phew",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas",
-    "officialUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas",
-    "image": "assets/events/1k-phew-cars-and-christ-dallas-2026-11-21-original.jpg",
+    "ticketUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas?occurrenceId=f7a9c3b3-b569-42e9-929a-b2fdf90ce760",
+    "officialUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas?occurrenceId=f7a9c3b3-b569-42e9-929a-b2fdf90ce760",
+    "image": "assets/events/cars-and-christ-dallas-live-concert-2026-11-21-original.jpg",
     "price": "Free",
     "sourceName": "Cars & Christ Dallas official announcement",
     "sources": [
@@ -1707,9 +1707,44 @@
         "type": "manual_verified",
         "authority": "promoter",
         "priority": 115
+      },
+      {
+        "name": "Cars and Christ Dallas current concert bill",
+        "url": "https://www.instagram.com/americashallbesaved/p/Df8G0QZm4hf/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 130
+      },
+      {
+        "name": "Cars and Christ official event schedule",
+        "url": "https://www.instagram.com/p/Df4-JMcgZpx/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 130
+      },
+      {
+        "name": "Cars and Christ verified registration",
+        "url": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas?occurrenceId=f7a9c3b3-b569-42e9-929a-b2fdf90ce760",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 130
+      },
+      {
+        "name": "Noble Official announced guest",
+        "url": "https://www.instagram.com/americashallbesaved/p/Df5N-s1CkIj/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 130
+      },
+      {
+        "name": "DJ Trendsetter Sense current announcement",
+        "url": "https://www.instagram.com/americashallbesaved/p/DfvLvgjib3g/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 130
       }
     ],
-    "lastVerified": "2026-11-07",
+    "lastVerified": "2026-11-20",
     "confidence": "high",
     "imageType": "event_artwork",
     "imagePosition": "center",
@@ -1718,36 +1753,61 @@
     "endDate": "2026-11-21",
     "postalCode": "75119",
     "endTime": "21:00",
-    "startDateTime": "2026-11-21T17:00:00-06:00",
+    "startDateTime": "2026-11-21T16:00:00-06:00",
     "endDateTime": "2026-11-21T21:00:00-06:00",
     "advertisedBilling": [
       "1K Phew",
+      "Project Pat",
+      "Cash Cortes",
       "DJ Trendsetter Sense"
     ],
     "officialBill": [
       "1K Phew",
+      "Project Pat",
+      "Cash Cortes",
       "DJ Trendsetter Sense"
     ],
     "lineupExplicit": true,
     "musicConfirmed": true,
-    "ticketUrlVerified": false,
+    "ticketUrlVerified": true,
     "registrationUrlVerified": false,
     "organizer": "Cars & Christ",
     "organizerUrl": "https://www.zeffy.com/en-US/organizations/cars-and-christ",
-    "publicDescription": "1K Phew performs live with DJ Trendsetter Sense at Cars & Christ Dallas, a free, family-friendly community event with show cars, music, ministry, baptisms and food trucks. Project Pat and Chosen Journey Show are also advertised to appear. The event runs 5–9 PM Central; individual set times and doors have not been announced. Optional donations are available on the official event page.",
-    "scheduleNote": "Event window: 5–9 PM Central. Individual set times and doors have not been announced.",
+    "publicDescription": "Cars & Christ Dallas features live music from 1K Phew, Project Pat, Cash Cortes and DJ Trendsetter Sense at Texas Motorplex. The event runs from 4 PM through 9 PM Central, with gates at 3 PM and the concert at 5:30 PM. General admission is free. Parking is separate at $10 per car or $8 per motorcycle. Show cars, ministry, baptisms and food trucks are also advertised. Noble Official with BAA1412 and Chosen Journey Show are announced guests; individual musical performances by those guests have not been confirmed.",
+    "scheduleNote": "Gates open at 3 PM Central. Event hours are 4 PM through 9 PM. Welcoming announcements are at 4:30 PM, the concert at 5:30 PM, the car competition at 6:30 PM, the call to Christ at 7 PM, worship and baptisms at 7:30 PM, the closing message at 8:30 PM and rollout at 9 PM.",
     "imageOverride": true,
-    "imageSource": "Cars & Christ Dallas official 1K Phew showcard",
-    "imageSourceUrl": "https://www.instagram.com/p/Dfc4dnzi6DA/",
+    "imageSource": "Cars and Christ Dallas official concert flyer",
+    "imageSourceUrl": "https://www.instagram.com/americashallbesaved/p/Df8G0QZm4hf/",
     "locationUnconfirmed": false,
     "authority": "promoter",
-    "auditVerified": "2026-11-07"
+    "auditVerified": "2026-11-20",
+    "doorsTime": "15:00",
+    "confirmedMusicalBilling": [
+      "1K Phew",
+      "Project Pat",
+      "Cash Cortes",
+      "DJ Trendsetter Sense"
+    ],
+    "scheduleDetails": [
+      {
+        "label": "Concert",
+        "text": "5:30 PM Central. Individual artist set times have not been announced."
+      },
+      {
+        "label": "Parking",
+        "text": "$10 per car or $8 per motorcycle. General admission is free."
+      },
+      {
+        "label": "Announced guests",
+        "text": "Noble Official with BAA1412 and Chosen Journey Show. Musical roles are unconfirmed."
+      }
+    ]
   },
   {
     "id": "manual:official:023c040d4ea33e120949",
     "title": "Cars & Christ Dallas",
     "startDate": "2026-11-21",
-    "startTime": "17:00",
+    "startTime": "16:00",
     "timezone": "America/Chicago",
     "venue": "Texas Motorplex",
     "address": "7500 W Hwy 287",
@@ -1761,9 +1821,9 @@
     "headliner": "1K Phew",
     "eventType": "concert",
     "status": "scheduled",
-    "ticketUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas",
-    "officialUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas",
-    "image": "assets/events/1k-phew-cars-and-christ-dallas-2026-11-21-original.jpg",
+    "ticketUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas?occurrenceId=f7a9c3b3-b569-42e9-929a-b2fdf90ce760",
+    "officialUrl": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas?occurrenceId=f7a9c3b3-b569-42e9-929a-b2fdf90ce760",
+    "image": "assets/events/cars-and-christ-dallas-live-concert-2026-11-21-original.jpg",
     "price": "Free",
     "sourceName": "Cars & Christ Dallas official announcement",
     "sources": [
@@ -1808,9 +1868,44 @@
         "type": "manual_verified",
         "authority": "promoter",
         "priority": 115
+      },
+      {
+        "name": "Cars and Christ Dallas current concert bill",
+        "url": "https://www.instagram.com/americashallbesaved/p/Df8G0QZm4hf/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 130
+      },
+      {
+        "name": "Cars and Christ official event schedule",
+        "url": "https://www.instagram.com/p/Df4-JMcgZpx/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 130
+      },
+      {
+        "name": "Cars and Christ verified registration",
+        "url": "https://www.zeffy.com/en-US/ticketing/cars-and-christ-dallas?occurrenceId=f7a9c3b3-b569-42e9-929a-b2fdf90ce760",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 130
+      },
+      {
+        "name": "Noble Official announced guest",
+        "url": "https://www.instagram.com/americashallbesaved/p/Df5N-s1CkIj/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 130
+      },
+      {
+        "name": "DJ Trendsetter Sense current announcement",
+        "url": "https://www.instagram.com/americashallbesaved/p/DfvLvgjib3g/",
+        "type": "manual_verified",
+        "authority": "promoter",
+        "priority": 130
       }
     ],
-    "lastVerified": "2026-11-07",
+    "lastVerified": "2026-11-20",
     "confidence": "high",
     "endDate": "2026-11-21",
     "imageType": "event_artwork",
@@ -1819,30 +1914,55 @@
     "firstSeen": "2026-11-03T18:56:47Z",
     "postalCode": "75119",
     "endTime": "21:00",
-    "startDateTime": "2026-11-21T17:00:00-06:00",
+    "startDateTime": "2026-11-21T16:00:00-06:00",
     "endDateTime": "2026-11-21T21:00:00-06:00",
     "advertisedBilling": [
       "1K Phew",
+      "Project Pat",
+      "Cash Cortes",
       "DJ Trendsetter Sense"
     ],
     "officialBill": [
       "1K Phew",
+      "Project Pat",
+      "Cash Cortes",
       "DJ Trendsetter Sense"
     ],
     "lineupExplicit": true,
     "musicConfirmed": true,
-    "ticketUrlVerified": false,
+    "ticketUrlVerified": true,
     "registrationUrlVerified": false,
     "organizer": "Cars & Christ",
     "organizerUrl": "https://www.zeffy.com/en-US/organizations/cars-and-christ",
-    "publicDescription": "1K Phew performs live with DJ Trendsetter Sense at Cars & Christ Dallas, a free, family-friendly community event with show cars, music, ministry, baptisms and food trucks. Project Pat and Chosen Journey Show are also advertised to appear. The event runs 5–9 PM Central; individual set times and doors have not been announced. Optional donations are available on the official event page.",
-    "scheduleNote": "Event window: 5–9 PM Central. Individual set times and doors have not been announced.",
+    "publicDescription": "Cars & Christ Dallas features live music from 1K Phew, Project Pat, Cash Cortes and DJ Trendsetter Sense at Texas Motorplex. The event runs from 4 PM through 9 PM Central, with gates at 3 PM and the concert at 5:30 PM. General admission is free. Parking is separate at $10 per car or $8 per motorcycle. Show cars, ministry, baptisms and food trucks are also advertised. Noble Official with BAA1412 and Chosen Journey Show are announced guests; individual musical performances by those guests have not been confirmed.",
+    "scheduleNote": "Gates open at 3 PM Central. Event hours are 4 PM through 9 PM. Welcoming announcements are at 4:30 PM, the concert at 5:30 PM, the car competition at 6:30 PM, the call to Christ at 7 PM, worship and baptisms at 7:30 PM, the closing message at 8:30 PM and rollout at 9 PM.",
     "imageOverride": true,
-    "imageSource": "Cars & Christ Dallas official 1K Phew showcard",
-    "imageSourceUrl": "https://www.instagram.com/p/Dfc4dnzi6DA/",
+    "imageSource": "Cars and Christ Dallas official concert flyer",
+    "imageSourceUrl": "https://www.instagram.com/americashallbesaved/p/Df8G0QZm4hf/",
     "locationUnconfirmed": false,
     "authority": "promoter",
-    "auditVerified": "2026-11-07"
+    "auditVerified": "2026-11-20",
+    "doorsTime": "15:00",
+    "confirmedMusicalBilling": [
+      "1K Phew",
+      "Project Pat",
+      "Cash Cortes",
+      "DJ Trendsetter Sense"
+    ],
+    "scheduleDetails": [
+      {
+        "label": "Concert",
+        "text": "5:30 PM Central. Individual artist set times have not been announced."
+      },
+      {
+        "label": "Parking",
+        "text": "$10 per car or $8 per motorcycle. General admission is free."
+      },
+      {
+        "label": "Announced guests",
+        "text": "Noble Official with BAA1412 and Chosen Journey Show. Musical roles are unconfirmed."
+      }
+    ]
   },
   {
     "id": "manual:kaboose-city-life-willmar-2026-11-21",
@@ -18604,5 +18724,124 @@
       }
     ],
     "notes": "Owner authorized this exact show on November 18. The official church listing and original artist flyer confirm November 21, 2026, 7 PM, full address and six billed music participants. The Ambassador is William Duce Branch of The Cross Movement, not the unrelated reggae namesake. All six remain visible billing without invented curated profile associations. Disciple (D.I.) is not Lyrical Disciple or Da Young Disciples. DJ Triple Threat is explicitly the DJ. The October 28 artist announcement confirms free admission. No checkout, registration requirement, numeric age policy, separate doors, individual set times or ending time is confirmed. Main Instagram announcement was published August 31, 2026 at 19:04:48 UTC; this is separate from the preserved first Kingdom Circuit discovery on November 17 at 21:13:10.941 UTC. Original selected landscape artwork is preserved unchanged."
+  },
+  {
+    "id": "manual:winterslam-sneakerball-morrow-2026-12-05",
+    "title": "Winterslam Sneakerball",
+    "startDate": "2026-12-05",
+    "endDate": "2026-12-05",
+    "startTime": "19:00",
+    "endTime": "22:00",
+    "startDateTime": "2026-12-05T19:00:00-05:00",
+    "endDateTime": "2026-12-05T22:00:00-05:00",
+    "timezone": "America/New_York",
+    "venue": "",
+    "address": "",
+    "city": "Morrow",
+    "state": "GA",
+    "postalCode": "",
+    "country": "US",
+    "artists": [
+      "Yung Kriss",
+      "DKG Kie",
+      "Toyalove",
+      "BigBreeze"
+    ],
+    "advertisedBilling": [
+      "Yung Kriss",
+      "Melodic B",
+      "DKG Kie",
+      "Stevie Rizzo",
+      "Toyalove",
+      "Markel",
+      "Kappaa!"
+    ],
+    "officialBill": [
+      "Yung Kriss",
+      "Melodic B",
+      "DKG Kie",
+      "Stevie Rizzo",
+      "Toyalove",
+      "Markel",
+      "Kappaa!"
+    ],
+    "confirmedMusicalBilling": [
+      "Yung Kriss",
+      "Melodic B",
+      "DKG Kie",
+      "Stevie Rizzo",
+      "Toyalove",
+      "Markel",
+      "Kappaa!"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "liveCHHMusicalPerformanceConfirmed": true,
+    "eventType": "concert",
+    "status": "scheduled",
+    "authority": "official_organizer",
+    "confidence": "high",
+    "officialUrl": "https://posh.vip/e/winterslam-sneakerball-",
+    "ticketUrl": "https://posh.vip/e/winterslam-sneakerball-",
+    "ticketUrlVerified": true,
+    "price": "Tickets from $25.04. See ticket options.",
+    "doorsTime": "",
+    "ageRestriction": "",
+    "firstSeen": "2026-11-20T14:04:25.216788Z",
+    "lastVerified": "2026-11-20T14:08:37.385027+00:00",
+    "auditVerified": "2026-11-20",
+    "editorialBatch": "2026-11-20-requested-lineup-updates",
+    "image": "assets/events/winterslam-sneakerball-morrow-2026-12-05-original.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Original organizer and artist Sneakerball flyer, preserved unchanged",
+    "imageSourceUrl": "https://www.instagram.com/p/Df7zcpoGn6p/",
+    "detailImageLayout": "portrait",
+    "publicDescription": "Winterslam Sneakerball features live Christian hip hop performances by Yung Kriss, Melodic B, DKG Kie, Stevie Rizzo, Toyalove, Markel and Kappaa!, with additional friends not yet named. The evening celebration includes a dance showcase and best dressed competition. The event runs 7 through 10 PM Eastern in Morrow, Georgia. The exact venue and street address will be announced. Tickets start at $25.04; see official ticket options.",
+    "detailsPending": true,
+    "scheduleNote": "Event time is 7 through 10 PM Eastern. Doors and individual performance times have not been announced. The exact venue and street address are pending.",
+    "scheduleDetails": [
+      {
+        "label": "Event",
+        "text": "December 5, 2026, from 7 through 10 PM Eastern."
+      },
+      {
+        "label": "Location",
+        "text": "Morrow, Georgia. The exact venue and street address will be announced."
+      },
+      {
+        "label": "Tickets",
+        "text": "Tickets start at $25.04. Early bird, general admission, VIP and door tiers are described on the official ticket page. Fee inclusion and door pricing are not confirmed."
+      }
+    ],
+    "organizer": {
+      "name": "GOD DON'T MISS LLC",
+      "url": "https://posh.vip/g/god-dont-miss-llc"
+    },
+    "organizerWebsite": "https://posh.vip/g/god-dont-miss-llc",
+    "sourceName": "Official Winterslam organizer announcement and POSH ticket listing",
+    "sourceEventIds": [
+      "https://www.instagram.com/p/Df7zcpoGn6p/",
+      "https://posh.vip/e/winterslam-sneakerball-"
+    ],
+    "sources": [
+      {
+        "name": "Winterslam organizer and artist full live lineup flyer",
+        "url": "https://www.instagram.com/p/Df7zcpoGn6p/",
+        "type": "manual_verified",
+        "authority": "official_organizer",
+        "priority": 125
+      },
+      {
+        "name": "Official Winterslam Sneakerball tickets",
+        "url": "https://posh.vip/e/winterslam-sneakerball-",
+        "type": "manual_verified",
+        "authority": "official_event",
+        "priority": 130
+      }
+    ],
+    "notes": "The November 19 organizer and artist announcement explicitly says LIVE PERFORMANCES BY and names all seven billed acts. Official POSH tickets confirm December 5, 2026, 7 through 10 PM Eastern and Morrow, Georgia; the venue and address remain placeholders. This is a separate evening occurrence from the earlier Forest Park charity tournament; do not move the tournament or copy its address, artwork or 11:30 AM start. Markel is the existing curated BigBreeze identity, confirmed by the exact Spotify artist ID7wrWSJHfACjw7s7gYXOXTt on the official ticket page and current roster. Markel remains the advertised name; BigBreeze is the curated association. Stevie Rizzo, Melodic B and Kappaa! remain unlinked billing, with no new profiles. Other friends remain unnamed. Ticket fees, age policy, exact doors and individual set times are unconfirmed. First source evidence in this research is November 20 at14:04:25.216788UTC; the November19 announcement date is separate.",
+    "description": "Winterslam Sneakerball features live Christian hip hop performances by Yung Kriss, Melodic B, DKG Kie, Stevie Rizzo, Toyalove, Markel and Kappaa!, with additional friends not yet named. The evening celebration includes a dance showcase and best dressed competition. The event runs 7 through 10 PM Eastern in Morrow, Georgia. The exact venue and street address will be announced. Tickets start at $25.04; see official ticket options."
   }
 ]
