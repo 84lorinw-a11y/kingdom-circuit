@@ -159,6 +159,14 @@ def archive_status(event: dict) -> str:
     return "Postponed" if norm(event.get("status")) == "postponed" else ""
 
 
+def superseded_archive_ids(root: pathlib.Path) -> set[str]:
+    """Old provider identities for reviewed reschedules are not past performances."""
+    rules_file = root / "config/event-identity-overrides.json"
+    rules = json.loads(rules_file.read_text()) if rules_file.is_file() else {}
+    return {alias for group in rules.get("merges", []) if group.get("rescheduled")
+            for alias in group["aliasIds"]}
+
+
 def load_events(root: pathlib.Path) -> tuple[list[dict], dict[str, str]]:
     from build_seo_site import domestic_event
     from catalog_removals import location_review_event, misattributed_event, public_event
@@ -180,12 +188,7 @@ def load_events(root: pathlib.Path) -> tuple[list[dict], dict[str, str]]:
     merged = {(alias, row["event"].get("startDate"))
               for row in records if isinstance(row, dict) and isinstance(row.get("event"), dict)
               for alias in row["event"].get("mergedFromIds", [])}
-    # A reschedule may give earlier dates their own IDs in the raw history.
-    # Earlier dates of a reviewed reschedule are not past performances.
-    rules_file = root / "config/event-identity-overrides.json"
-    rules = json.loads(rules_file.read_text()) if rules_file.is_file() else {}
-    superseded_ids = {alias for group in rules.get("merges", []) if group.get("rescheduled")
-                      for alias in group["aliasIds"]}
+    superseded_ids = superseded_archive_ids(root)
     for record in records:
         if not isinstance(record, dict):
             continue

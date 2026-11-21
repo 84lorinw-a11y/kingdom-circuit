@@ -250,10 +250,14 @@ def verify(site, root=ROOT):
 
 
 def public_history(target, root=ROOT):
+    from add_past_show_archives import superseded_archive_ids
+
+    superseded_ids = superseded_archive_ids(root)
     data = json.loads((root / 'event-history.json').read_text())
     private = records(root)
     data['events'] = [entry for entry in data['events']
-                      if entry.get('event', {}).get('status') != 'private'
+                      if entry.get('event', {}).get('id') not in superseded_ids
+                      and entry.get('event', {}).get('status') != 'private'
                       and not any(matches(entry.get('event', {}), held) for held in private)]
     target.write_text(json.dumps(data, ensure_ascii=False) + '\n')
     return len(data['events'])

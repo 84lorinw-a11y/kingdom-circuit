@@ -11,7 +11,7 @@ from zoneinfo import ZoneInfo
 
 from apply_oct3_concert_corrections import rejected
 from catalog_removals import location_review_event, public_event, removed_event
-from add_past_show_archives import is_test, trusted
+from add_past_show_archives import is_test, superseded_archive_ids, trusted
 
 if __package__:
     from .catalog_clock import catalog_date
@@ -131,7 +131,9 @@ def approved_history(site, source):
     module.configure_environment(True)
     events, _, _ = module.load_source_history(
         [source / "event-history.json"], site, catalog_date())
-    return [public_event(event) for event in events if eligible(event)]
+    superseded_ids = superseded_archive_ids(source)
+    return [public_event(event) for event in events
+            if event.get("id") not in superseded_ids and eligible(event)]
 
 
 def archive_section(site, events):
