@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T11:39:05Z",
+  "generatedAt": "2026-11-21T01:20:39Z",
   "artistsChecked": 447,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
@@ -9,24 +9,25 @@
     "status": "ok",
     "artistsAttempted": 447,
     "resolved": 266,
-    "rawUpcomingUSRows": 67,
+    "rawUpcomingUSRows": 68,
     "rawUpcomingCARows": 1,
-    "rawUpcomingRows": 68,
-    "newEventsPublished": 14,
+    "rawUpcomingRows": 69,
+    "newEventsPublished": 15,
     "festivalCandidatesHeld": 0,
     "requestErrors": 0
   },
   "songkick": {
     "artistsAttempted": 447,
     "resolved": 0,
-    "blockedByRobots": 447,
+    "blockedByRobots": 446,
     "eventsFound": 0
   },
   "sourceStatusCounts": {
     "delegated_to_structured_rest": 447,
-    "blocked_by_robots": 451,
-    "no_events": 620,
-    "failed": 10
+    "blocked_by_robots": 450,
+    "no_events": 621,
+    "failed": 9,
+    "identity_mismatch": 1
   },
   "newEvents": [],
   "sourceResults": [
@@ -9411,8 +9412,9 @@
     {
       "artist": "DreBeeze Da Godson",
       "source": "Songkick",
-      "status": "blocked_by_robots",
-      "eventsFound": 0
+      "status": "identity_mismatch",
+      "eventsFound": 0,
+      "artistUrl": "https://www.songkick.com/artists/6532609-fred-da-godson"
     },
     {
       "artist": "DreBeeze Da Godson",
@@ -9758,9 +9760,8 @@
       "artist": "Mynista",
       "source": "official website",
       "url": "https://www.mynista.com/",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://www.mynista.com/: HTTP Error 403: Forbidden"
+      "status": "no_events",
+      "eventsFound": 0
     },
     {
       "artist": "Mynista",

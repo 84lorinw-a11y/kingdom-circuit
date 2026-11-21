@@ -1180,7 +1180,6 @@
     "imageSourceUrl": "https://www.instagram.com/americashallbesaved/p/Df8G0QZm4hf/",
     "authority": "promoter",
     "auditVerified": "2026-11-20",
-    "doorsTime": "15:00",
     "confirmedMusicalBilling": [
       "1K Phew",
       "Project Pat",
@@ -1200,7 +1199,8 @@
         "label": "Announced guests",
         "text": "Noble Official with BAA1412 and Chosen Journey Show. Musical roles are unconfirmed."
       }
-    ]
+    ],
+    "doorsTime": "15:00"
   },
   {
     "id": "bandsintown:1040798191",
@@ -1345,7 +1345,6 @@
     "authority": "promoter",
     "lastVerified": "2026-11-20",
     "auditVerified": "2026-11-20",
-    "doorsTime": "15:00",
     "confirmedMusicalBilling": [
       "1K Phew",
       "Project Pat",
@@ -1365,7 +1364,8 @@
         "label": "Announced guests",
         "text": "Noble Official with BAA1412 and Chosen Journey Show. Musical roles are unconfirmed."
       }
-    ]
+    ],
+    "doorsTime": "15:00"
   },
   {
     "id": "clear-hits-radio-friendsgiving-milwaukee-2026-11-21",
@@ -2900,6 +2900,44 @@
     "firstSeen": "2026-11-19T11:45:04Z"
   },
   {
+    "id": "bandsintown:109187514",
+    "title": "Revival Concert",
+    "startDate": "2026-12-13",
+    "startTime": "17:00",
+    "timezone": "",
+    "venue": "Revival Concert",
+    "address": "2121 S 1st St",
+    "city": "Rogers",
+    "state": "AR",
+    "country": "US",
+    "artists": [
+      "SYL noiZ"
+    ],
+    "headliner": "SYL noiZ",
+    "eventType": "concert",
+    "status": "scheduled",
+    "ticketUrl": "https://www.bandsintown.com/e/109187514?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "officialUrl": "https://www.bandsintown.com/e/109187514?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "image": "assets/artists/syl-noiz-owner-selected-dy0o-h2cyig.jpg",
+    "price": "Free",
+    "sourceName": "Bandsintown",
+    "sources": [
+      {
+        "name": "Bandsintown",
+        "url": "https://www.bandsintown.com/e/109187514?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+        "type": "bandsintown_rest",
+        "authority": "artist_calendar",
+        "priority": 74
+      }
+    ],
+    "confidence": "medium",
+    "bandsintownEventId": "109187514",
+    "bandsintownArtistId": "15542811",
+    "bandsintownResolvedName": "SYL noiZ",
+    "bandsintownIdentity": "exact_name_or_alias",
+    "trackedArtist": "SYL noiZ"
+  },
+  {
     "id": "bandsintown:109165412",
     "title": "Alex Jean at Underground Arts",
     "startDate": "2026-12-27",
@@ -3728,7 +3766,7 @@
     "timezone": "",
     "venue": "THE GALLERY AT YAM",
     "address": "9850 Walnut Hill Ln suite 427",
-    "city": "Dallas",
+    "city": "North East Dallas",
     "state": "TX",
     "country": "US",
     "artists": [
