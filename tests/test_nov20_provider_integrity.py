@@ -13,6 +13,8 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 import catalog_removals as catalog
 import url_continuity as continuity
 import add_past_show_archives as archives
+import build_seo_site as seo
+from show_information_model import normalize as show_information
 
 KEEP_ID = 'bandsintown:109174921'
 ALIAS_ID = 'official:22266e20021b7ab47403'
@@ -166,6 +168,58 @@ class ProviderIntegrityTests(unittest.TestCase):
                 self.assertEqual(KEEP_PATH, state['events'][KEEP_ID]['path'])
                 self.assertEqual(KEEP_PATH, state['redirects'][ALIAS_PATH])
                 self.assertEqual(history, (self.root / 'event-history.json').read_bytes())
+
+    def issac_event(self):
+        return {
+            'id': 'bandsintown:109183179', 'title': 'Issac Mansfield at THE GALLERY AT YAM',
+            'startDate': '2027-02-06', 'startTime': '19:00',
+            'venue': 'THE GALLERY AT YAM', 'address': '9850 Walnut Hill Ln suite 427',
+            'city': 'North East Dallas', 'state': 'TX', 'country': 'US',
+            'artists': ['Issac Mansfield'], 'headliner': 'Issac Mansfield',
+            'status': 'scheduled', 'firstSeen': '2026-11-19T11:45:04Z',
+            'officialUrl': 'https://www.bandsintown.com/e/109183179?came_from=267',
+        }
+
+    def test_dallas_projection_is_exact_and_preserves_source_facts(self):
+        event = self.issac_event()
+        for row in (event, dict(event, id='manual:' + event['id'], status='postponed')):
+            before = copy.deepcopy(row)
+            projected = catalog.public_event(row)
+            self.assertEqual(dict(row, city='Dallas'), projected)
+            self.assertEqual(before, row)
+            self.assertEqual(projected, catalog.public_event(projected))
+        for change in ({'id': event['id'] + '0'}, {'startDate': '2027-02-07'},
+                       {'venue': 'A different venue'}, {'state': 'AR'}, {'country': 'CA'},
+                       {'city': 'Plano'}):
+            other = dict(event, **change)
+            self.assertEqual(other, catalog.public_event(other))
+
+    def test_dallas_feed_city_coverage_schema_and_canonical_stay_consistent(self):
+        event = self.issac_event()
+        path = '/event/issac-mansfield-at-the-gallery-at-yam-2027-02-06-dallas-7fb117/'
+        state = continuity.empty_state()
+        state['events'][event['id']] = {
+            'path': path, 'sourceIds': [], 'event': dict(event, city='Dallas'),
+        }
+        continuity.save(self.root / continuity.STATE_FILE, state)
+        for name in continuity.FEEDS:
+            continuity.save(self.root / name, [event])
+        continuity.save(self.root / 'event-history.json', {'events': [{'event': event}]})
+        history = (self.root / 'event-history.json').read_bytes()
+        continuity.prepare(self.root)
+        for name in continuity.FEEDS:
+            rows = continuity.load(self.root / name, [])
+            self.assertEqual(1, len(rows))
+            self.assertEqual('Dallas', rows[0]['city'])
+            self.assertEqual(event['officialUrl'], rows[0]['officialUrl'])
+        rendered = seo.merge_events(continuity.load(self.root / 'events.json', []), [])
+        self.assertEqual('/shows/dallas-texas/', seo.city_path(rendered[0]['city'], rendered[0]['state']))
+        self.assertEqual('Dallas', seo.event_schema(rendered[0])['location']['address']['addressLocality'])
+        self.assertEqual('Dallas', show_information(event)['venueLocality'])
+        self.assertEqual(path, seo.event_path(rendered[0]))
+        work = continuity.load(self.root / continuity.WORK_FILE, {})
+        self.assertEqual(path, work['events'][event['id']]['path'])
+        self.assertEqual(history, (self.root / 'event-history.json').read_bytes())
 
     def test_duplicate_page_redirects_and_other_same_day_session_remains_separate(self):
         self.install_identity()

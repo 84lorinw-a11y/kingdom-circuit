@@ -237,6 +237,15 @@ def public_event(event):
     the independent publication copy, using the exact dated identity above.
     """
     result = deepcopy(event)
+    # YAM's official address is 9850 Walnut Hill #427, Dallas, TX 75238:
+    # https://yoga-art-music.com/ . The provider substituted a neighborhood
+    # for the accepted municipality. Scope the correction to this booking.
+    if (str(event.get("id") or "").removeprefix("manual:") == "bandsintown:109183179"
+            and event.get("startDate") == "2027-02-06"
+            and str(event.get("venue") or "").strip().casefold() == "the gallery at yam"
+            and event.get("state") == "TX" and event.get("country") == "US"
+            and str(event.get("city") or "").strip().casefold() == "north east dallas"):
+        result["city"] = "Dallas"
     # This Apple concert links directly to the same Bandsintown occurrence.
     # Its UTC timestamps were copied as local clock/date prefixes. Correct
     # only these exact dated identities, including stale provider reimports.
