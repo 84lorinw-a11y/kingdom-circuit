@@ -1,8 +1,8 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-11-21T13:11:46Z",
-  "lastSuccessfulUpdate": "2026-11-21T13:11:46Z",
+  "lastAttempt": "2026-11-21T14:04:54Z",
+  "lastSuccessfulUpdate": "2026-11-21T14:04:54Z",
   "eventsPublished": 190,
   "candidatesCollected": 387,
   "artistsConfigured": 447,
@@ -20,7 +20,7 @@
   "instagramArtistsConfigured": 402,
   "instagramQueriesRun": 404,
   "instagramQueriesAttempted": 402,
-  "instagramResultsFound": 0,
+  "instagramResultsFound": 1,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,6 +46,16 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
+    },
+    {
+      "url": "https://www.instagram.com/p/DQVCOiZkkaQ/",
+      "title": "Entertainment Tonight | Jennifer Lawrence is keeping it real ...",
+      "artists": [],
+      "date": "",
+      "city": "",
+      "state": "",
+      "score": 0,
+      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
@@ -626,5 +636,5 @@
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 20,
   "artistWebsiteEventsAdded": 0,
-  "artistWebsiteMergeAt": "2026-11-21T13:36:33Z"
+  "artistWebsiteMergeAt": "2026-11-21T14:29:05Z"
 }
