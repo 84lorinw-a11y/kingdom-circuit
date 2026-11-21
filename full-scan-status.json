@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T01:20:39Z",
+  "generatedAt": "2026-11-21T11:38:49Z",
   "artistsChecked": 447,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
@@ -9,25 +9,24 @@
     "status": "ok",
     "artistsAttempted": 447,
     "resolved": 266,
-    "rawUpcomingUSRows": 68,
+    "rawUpcomingUSRows": 62,
     "rawUpcomingCARows": 1,
-    "rawUpcomingRows": 69,
-    "newEventsPublished": 15,
+    "rawUpcomingRows": 63,
+    "newEventsPublished": 13,
     "festivalCandidatesHeld": 0,
     "requestErrors": 0
   },
   "songkick": {
     "artistsAttempted": 447,
     "resolved": 0,
-    "blockedByRobots": 446,
+    "blockedByRobots": 447,
     "eventsFound": 0
   },
   "sourceStatusCounts": {
     "delegated_to_structured_rest": 447,
-    "blocked_by_robots": 450,
+    "blocked_by_robots": 451,
     "no_events": 621,
-    "failed": 9,
-    "identity_mismatch": 1
+    "failed": 9
   },
   "newEvents": [],
   "sourceResults": [
@@ -9412,9 +9411,8 @@
     {
       "artist": "DreBeeze Da Godson",
       "source": "Songkick",
-      "status": "identity_mismatch",
-      "eventsFound": 0,
-      "artistUrl": "https://www.songkick.com/artists/6532609-fred-da-godson"
+      "status": "blocked_by_robots",
+      "eventsFound": 0
     },
     {
       "artist": "DreBeeze Da Godson",

@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-11-21T01:26:31Z",
+  "generatedAt": "2026-11-21T11:44:06Z",
   "artistsChecked": 447,
-  "eventLinksFoundAcrossSearches": 846,
-  "uniqueEventPagesDiscovered": 825,
-  "eventPagesChecked": 824,
-  "matchedUpcomingEvents": 132,
+  "eventLinksFoundAcrossSearches": 632,
+  "uniqueEventPagesDiscovered": 629,
+  "eventPagesChecked": 629,
+  "matchedUpcomingEvents": 135,
   "alreadyInCatalog": 2,
-  "newCandidateEvents": 130,
-  "searchFailures": 396,
-  "detailFailures": 1,
+  "newCandidateEvents": 133,
+  "searchFailures": 407,
+  "detailFailures": 0,
   "artistResults": [
     {
       "artist": "180MINDSET",
@@ -60,11 +60,11 @@
     },
     {
       "artist": "808 BEEZY",
-      "searchLinksFound": 25,
+      "searchLinksFound": 0,
       "matchedEvents": 0,
       "newCandidates": 0,
-      "status": "ok",
-      "error": ""
+      "status": "failed",
+      "error": "HTTPError 429 | HTTPError 429"
     },
     {
       "artist": "A.I. The Anomaly",
@@ -380,11 +380,11 @@
     },
     {
       "artist": "Bishop Freeze",
-      "searchLinksFound": 24,
+      "searchLinksFound": 0,
       "matchedEvents": 0,
       "newCandidates": 0,
-      "status": "ok",
-      "error": ""
+      "status": "failed",
+      "error": "HTTPError 429 | HTTPError 429"
     },
     {
       "artist": "Biz Nico",
@@ -452,19 +452,19 @@
     },
     {
       "artist": "Brea Miles",
-      "searchLinksFound": 25,
+      "searchLinksFound": 0,
       "matchedEvents": 0,
       "newCandidates": 0,
-      "status": "ok",
-      "error": ""
+      "status": "failed",
+      "error": "HTTPError 429 | HTTPError 429"
     },
     {
       "artist": "Brenno",
       "searchLinksFound": 0,
       "matchedEvents": 0,
       "newCandidates": 0,
-      "status": "ok",
-      "error": ""
+      "status": "failed",
+      "error": "HTTPError 429"
     },
     {
       "artist": "Brinson",
@@ -540,9 +540,9 @@
     },
     {
       "artist": "Canon",
-      "searchLinksFound": 25,
-      "matchedEvents": 18,
-      "newCandidates": 18,
+      "searchLinksFound": 22,
+      "matchedEvents": 17,
+      "newCandidates": 17,
       "status": "ok",
       "error": ""
     },
@@ -820,7 +820,7 @@
     },
     {
       "artist": "Derek Minor",
-      "searchLinksFound": 23,
+      "searchLinksFound": 25,
       "matchedEvents": 0,
       "newCandidates": 0,
       "status": "ok",
@@ -1117,14 +1117,14 @@
     {
       "artist": "Fern",
       "searchLinksFound": 25,
-      "matchedEvents": 18,
-      "newCandidates": 18,
+      "matchedEvents": 24,
+      "newCandidates": 24,
       "status": "ok",
       "error": ""
     },
     {
       "artist": "FLAME",
-      "searchLinksFound": 24,
+      "searchLinksFound": 25,
       "matchedEvents": 18,
       "newCandidates": 18,
       "status": "ok",
@@ -1132,7 +1132,7 @@
     },
     {
       "artist": "Forrest Frank",
-      "searchLinksFound": 21,
+      "searchLinksFound": 22,
       "matchedEvents": 0,
       "newCandidates": 0,
       "status": "ok",
@@ -1388,11 +1388,11 @@
     },
     {
       "artist": "Hyper Fenton",
-      "searchLinksFound": 22,
+      "searchLinksFound": 0,
       "matchedEvents": 0,
       "newCandidates": 0,
-      "status": "ok",
-      "error": ""
+      "status": "failed",
+      "error": "HTTPError 429 | HTTPError 429"
     },
     {
       "artist": "I.A.N.",
@@ -1436,11 +1436,11 @@
     },
     {
       "artist": "Issac Mansfield",
-      "searchLinksFound": 25,
+      "searchLinksFound": 0,
       "matchedEvents": 0,
       "newCandidates": 0,
-      "status": "ok",
-      "error": ""
+      "status": "failed",
+      "error": "HTTPError 429 | HTTPError 429"
     },
     {
       "artist": "J J L",
@@ -1508,11 +1508,11 @@
     },
     {
       "artist": "Jabari Heavens",
-      "searchLinksFound": 22,
+      "searchLinksFound": 0,
       "matchedEvents": 0,
       "newCandidates": 0,
-      "status": "ok",
-      "error": ""
+      "status": "failed",
+      "error": "HTTPError 429 | HTTPError 429"
     },
     {
       "artist": "Jackie Hill Perry",
@@ -1772,7 +1772,7 @@
     },
     {
       "artist": "Kai Uriah",
-      "searchLinksFound": 25,
+      "searchLinksFound": 23,
       "matchedEvents": 0,
       "newCandidates": 0,
       "status": "ok",
@@ -2125,8 +2125,8 @@
     {
       "artist": "Marty",
       "searchLinksFound": 25,
-      "matchedEvents": 14,
-      "newCandidates": 14,
+      "matchedEvents": 11,
+      "newCandidates": 11,
       "status": "ok",
       "error": ""
     },
@@ -2180,7 +2180,7 @@
     },
     {
       "artist": "Mike Malagies",
-      "searchLinksFound": 21,
+      "searchLinksFound": 25,
       "matchedEvents": 0,
       "newCandidates": 0,
       "status": "ok",
@@ -2652,11 +2652,11 @@
     },
     {
       "artist": "Rhema Soul",
-      "searchLinksFound": 25,
+      "searchLinksFound": 0,
       "matchedEvents": 0,
       "newCandidates": 0,
-      "status": "ok",
-      "error": ""
+      "status": "failed",
+      "error": "HTTPError 429 | HTTPError 429"
     },
     {
       "artist": "ricko!",
@@ -2788,7 +2788,7 @@
     },
     {
       "artist": "Scootie Wop",
-      "searchLinksFound": 25,
+      "searchLinksFound": 23,
       "matchedEvents": 1,
       "newCandidates": 1,
       "status": "ok",
@@ -2872,7 +2872,7 @@
       "matchedEvents": 0,
       "newCandidates": 0,
       "status": "failed",
-      "error": "HTTPError 429"
+      "error": "HTTPError 429 | HTTPError 429"
     },
     {
       "artist": "Shy Speaks",
@@ -2916,9 +2916,9 @@
     },
     {
       "artist": "Social Club Misfits",
-      "searchLinksFound": 23,
-      "matchedEvents": 23,
-      "newCandidates": 23,
+      "searchLinksFound": 25,
+      "matchedEvents": 25,
+      "newCandidates": 25,
       "status": "ok",
       "error": ""
     },
@@ -2972,7 +2972,7 @@
     },
     {
       "artist": "Steven Malcolm",
-      "searchLinksFound": 25,
+      "searchLinksFound": 22,
       "matchedEvents": 0,
       "newCandidates": 0,
       "status": "ok",
@@ -3052,11 +3052,11 @@
     },
     {
       "artist": "T-Bone",
-      "searchLinksFound": 25,
+      "searchLinksFound": 0,
       "matchedEvents": 0,
       "newCandidates": 0,
-      "status": "ok",
-      "error": ""
+      "status": "failed",
+      "error": "HTTPError 429 | HTTPError 429"
     },
     {
       "artist": "Taelor Gray",
@@ -3172,7 +3172,7 @@
     },
     {
       "artist": "Tommy Zuko",
-      "searchLinksFound": 25,
+      "searchLinksFound": 22,
       "matchedEvents": 0,
       "newCandidates": 0,
       "status": "ok",
@@ -3244,7 +3244,7 @@
     },
     {
       "artist": "Trip Lee",
-      "searchLinksFound": 22,
+      "searchLinksFound": 25,
       "matchedEvents": 0,
       "newCandidates": 0,
       "status": "ok",
@@ -3316,11 +3316,11 @@
     },
     {
       "artist": "Tylan1k",
-      "searchLinksFound": 20,
+      "searchLinksFound": 0,
       "matchedEvents": 0,
       "newCandidates": 0,
-      "status": "ok",
-      "error": ""
+      "status": "failed",
+      "error": "HTTPError 429 | HTTPError 429"
     },
     {
       "artist": "tylerhateslife",
@@ -3384,7 +3384,7 @@
       "matchedEvents": 0,
       "newCandidates": 0,
       "status": "failed",
-      "error": "HTTPError 429"
+      "error": "HTTPError 429 | HTTPError 429"
     },
     {
       "artist": "Von Won",
@@ -3404,9 +3404,9 @@
     },
     {
       "artist": "WHATUPRG",
-      "searchLinksFound": 1,
-      "matchedEvents": 1,
-      "newCandidates": 1,
+      "searchLinksFound": 0,
+      "matchedEvents": 0,
+      "newCandidates": 0,
       "status": "ok",
       "error": ""
     },
@@ -3431,8 +3431,8 @@
       "searchLinksFound": 0,
       "matchedEvents": 0,
       "newCandidates": 0,
-      "status": "ok",
-      "error": ""
+      "status": "failed",
+      "error": "HTTPError 429"
     },
     {
       "artist": "Wuhsahbee",
