@@ -435,6 +435,21 @@
         "/event/mike-teezy-690-jonestown-rd-2026-12-13-winston-salem-f56fa7/"
       ],
       "evidence": "Reviewed November 20, 2026. Apple concert https://music.apple.com/us/concerts/ce.e7630a43-33a6-4b8a-8013-3ca99bd35948 directly links to Bandsintown event 109174921 and displays December 13 at 4 PM at 690 Jonestown Rd in Winston Salem. The exact Spotify, Apple and Instagram identities match the curated artist. Apple explicitly supplies America/New_York and start 2026-12-13T21:00:00Z through end 2026-12-14T00:00:00Z. These represent December 13 from 16:00 through 19:00 locally. The source parser copied UTC prefixes as local dates, producing a second listing. Preserve the earlier Bandsintown identity and discovery 2026-11-19T11:45:04Z. Redirect only this exact Apple alias without importing its incorrect clock or ending date. Original provider history remains intact."
+    },
+    {
+      "keepId": "bandsintown:1040991380",
+      "identityOnly": true,
+      "rescheduled": true,
+      "keepPath": "/event/pastor-mike-jr-at-wl-jack-howard-theatre-2027-01-08-monroe-1835da/",
+      "aliasIds": [
+        "bandsintown:1040314202",
+        "bandsintown:1040929611"
+      ],
+      "aliasPaths": [
+        "/event/pastor-mike-jr-at-wl-jack-howard-theatre-2026-11-14-monroe-9ea17f/",
+        "/event/pastor-mike-jr-at-wl-jack-howard-theatre-2026-11-21-monroe-61fe65/"
+      ],
+      "evidence": "Ticketmaster event 1B0065317903452A identifies a single rescheduled performance. Its original November 14 ticket URL in the archive and its updated dated listing https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-01-08-2027/event/1B0065317903452A share the same ID. The November 21 listing was the interim date. Live Nation https://www.livenation.com/event/G5viZ_KAyZVfn/pastor-mike-jr-live confirms January 8 at 8 PM in the same theater. Retain the January canonical, both previous links, the September 19 discovery and the original provider history."
     }
   ],
   "redirects": {

@@ -180,6 +180,12 @@ def load_events(root: pathlib.Path) -> tuple[list[dict], dict[str, str]]:
     merged = {(alias, row["event"].get("startDate"))
               for row in records if isinstance(row, dict) and isinstance(row.get("event"), dict)
               for alias in row["event"].get("mergedFromIds", [])}
+    # A reschedule may give earlier dates their own IDs in the raw history.
+    # Earlier dates of a reviewed reschedule are not past performances.
+    rules_file = root / "config/event-identity-overrides.json"
+    rules = json.loads(rules_file.read_text()) if rules_file.is_file() else {}
+    superseded_ids = {alias for group in rules.get("merges", []) if group.get("rescheduled")
+                      for alias in group["aliasIds"]}
     for record in records:
         if not isinstance(record, dict):
             continue
@@ -189,7 +195,7 @@ def load_events(root: pathlib.Path) -> tuple[list[dict], dict[str, str]]:
         event = public_event(event)
         if misattributed_event(event) or location_review_event(event) or is_test(event) or not trusted(event) or is_private_event(event):
             continue
-        if (event.get("id"), event.get("startDate")) in merged:
+        if event.get("id") in superseded_ids or (event.get("id"), event.get("startDate")) in merged:
             continue
         if not archive_status(event) and not record.get("observedOnOrAfterEventDate"):
             continue

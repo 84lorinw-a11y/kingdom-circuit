@@ -261,6 +261,21 @@ def public_event(event):
         })
         first_seen = "2026-11-19T11:45:04Z"
         result["firstSeen"] = min(first_seen, result.get("firstSeen") or first_seen)
+    if (event.get("id") == "bandsintown:1040991380"
+            and event.get("startDate") == "2027-01-08"):
+        # The ticket ID survived two date changes; its first appearance is in September.
+        first_seen = "2026-09-19T14:02:41Z"
+        result.update({
+            "firstSeen": min(first_seen, result.get("firstSeen") or first_seen),
+            "startTime": "20:00", "timezone": "America/Chicago",
+            "startDateTime": "2027-01-08T20:00:00-06:00",
+            "previousStartDate": "2026-11-21",
+            "officialUrl": "https://www.livenation.com/event/G5viZ_KAyZVfn/pastor-mike-jr-live",
+            "ticketUrl": "https://www.ticketmaster.com/pastor-mike-jr-live-monroe-louisiana-01-08-2027/event/1B0065317903452A",
+            "ticketUrlVerified": True,
+        })
+        if str(event.get("status") or "scheduled").casefold() == "scheduled":
+            result["status"] = "rescheduled"
     if not _location_review_identity(event):
         return result
     # Retained history records this exact booking on November 3. A provider
