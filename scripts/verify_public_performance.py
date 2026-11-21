@@ -8,8 +8,10 @@ import dataclasses
 from html.parser import HTMLParser
 import html
 import json
+import os
 from pathlib import Path
 import re
+import stat
 import sys
 from typing import Iterable, Optional
 import urllib.parse
@@ -17,6 +19,11 @@ import urllib.parse
 
 DEFAULT_BASE = "/"
 DEFAULT_ORIGIN = "https://kingdomcircuit.com"
+# GitHub Pages publishes at most 1 GB. Use decimal bytes conservatively and
+# reserve 100 MB below that limit. Capacity is not a page transfer budget.
+# https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits
+ARTIFACT_WARNING_BYTES = 750_000_000
+MAX_ARTIFACT_BYTES = 900_000_000
 PUBLIC_JSON_FILES = (
     "events.json",
     "supplemental-events.json",
@@ -240,6 +247,68 @@ def short(path: Path, site: Path) -> str:
         return str(path)
 
 
+def audit_artifact_capacity(
+    site: Path,
+    warning_bytes: int = ARTIFACT_WARNING_BYTES,
+    max_bytes: int = MAX_ARTIFACT_BYTES,
+) -> dict[str, object]:
+    """Measure every published file without following links or reading its data.
+
+    Retained originals, archive images, optimized variants and the game all
+    consume hosting space. Count each pathname, even when it is a hard link,
+    because artifact extraction can materialize separate files.
+    """
+    if not 0 < warning_bytes < max_bytes:
+        raise ValueError("Artifact warning must be positive and below its hard limit")
+    errors: list[str] = []
+    warnings: list[str] = []
+    total_bytes = 0
+    files = 0
+
+    def walk_error(exc: OSError) -> None:
+        errors.append(f"artifact: cannot inspect directory ({exc.__class__.__name__})")
+
+    if site.is_symlink() or not site.is_dir():
+        errors.append("artifact: expected a real directory, not a symbolic link")
+    else:
+        for directory, dirs, names in os.walk(site, followlinks=False, onerror=walk_error):
+            root = Path(directory)
+            for name in list(dirs):
+                path = root / name
+                if path.is_symlink():
+                    errors.append(f"{short(path, site)}: symbolic link is not a publishable artifact directory")
+                    dirs.remove(name)
+            for name in names:
+                path = root / name
+                try:
+                    info = path.lstat()
+                except OSError as exc:
+                    errors.append(f"{short(path, site)}: cannot measure artifact file ({exc.__class__.__name__})")
+                    continue
+                if not stat.S_ISREG(info.st_mode):
+                    errors.append(f"{short(path, site)}: artifact entry must be a regular file")
+                    continue
+                files += 1
+                total_bytes += info.st_size
+    if total_bytes > max_bytes:
+        errors.append(f"artifact: {total_bytes} bytes exceed publication capacity of {max_bytes}")
+    elif total_bytes >= warning_bytes:
+        warnings.append(
+            f"artifact: {total_bytes} bytes have reached the capacity warning of {warning_bytes}; "
+            f"{max_bytes - total_bytes} bytes remain before the publication limit"
+        )
+    return {
+        "bytes": total_bytes,
+        "files": files,
+        "warningBytes": warning_bytes,
+        "maxBytes": max_bytes,
+        "remainingBytes": max_bytes - total_bytes,
+        "status": "failed" if errors else "warning" if warnings else "healthy",
+        "errors": errors,
+        "warnings": warnings,
+    }
+
+
 def verify(
     site: Path,
     base: str,
@@ -248,7 +317,7 @@ def verify(
     min_optimized_source_percent: float,
     max_homepage_remotes: Optional[int],
     max_variant_bytes: int,
-    max_total_optimized_bytes: int,
+    max_total_optimized_bytes: Optional[int] = None,
 ) -> tuple[list[str], list[str], dict[str, object]]:
     errors: list[str] = []
     warnings: list[str] = []
@@ -526,11 +595,15 @@ def verify(
             errors.append(
                 f"{short(path, site)}: {size} bytes exceeds per-variant limit of {max_variant_bytes}"
             )
-    if optimized_total_bytes > max_total_optimized_bytes:
+    if max_total_optimized_bytes is not None and optimized_total_bytes > max_total_optimized_bytes:
         errors.append(
             "assets/optimized: total WebP bytes "
             f"{optimized_total_bytes} exceed limit of {max_total_optimized_bytes}"
         )
+
+    capacity = audit_artifact_capacity(site)
+    errors.extend(capacity["errors"])
+    warnings.extend(capacity["warnings"])
 
     if optimized_count < 1:
         errors.append("no optimized responsive HTML images were found")
@@ -549,6 +622,7 @@ def verify(
         "preservedVectorSources": preserved_vector_source_count,
         "optimizedSourcePercent": round(optimized_source_percent, 1),
         "optimizedWebPBytes": optimized_total_bytes,
+        "artifactCapacity": capacity,
         "socialHeroPagesChecked": len(optimized_hero_sources),
         "obsoleteRepairScriptReferences": len(obsolete_script_references),
         "jsonLocalImageReferences": json_local_refs,
@@ -588,11 +662,11 @@ def arguments(argv: Optional[list[str]] = None) -> argparse.Namespace:
         ),
     )
     parser.add_argument("--max-variant-bytes", type=int, default=2 * 1024 * 1024)
-    # Preserve unchanged quality for the retained inventory and approved flyers.
-    # November 20 measurement: 155,537,314 bytes with Sneakerball and the new
-    # Motorplex concert card replacing only its four obsolete generated sizes.
-    # 149 MiB is the minimum whole MiB capacity; per-image limits remain.
-    parser.add_argument("--max-total-optimized-bytes", type=int, default=149 * 1024 * 1024)
+    parser.add_argument(
+        "--max-total-optimized-bytes", type=int, default=None,
+        help=("Optional additional ceiling for the optimized library. By default "
+              "the complete artifact capacity is checked, while every variant keeps its size limit."),
+    )
     args = parser.parse_args(argv)
     if not 0 <= args.min_optimized_source_percent <= 100:
         parser.error("--min-optimized-source-percent must be between 0 and 100")
@@ -600,7 +674,8 @@ def arguments(argv: Optional[list[str]] = None) -> argparse.Namespace:
         parser.error("--max-homepage-remotes must be non-negative")
     if args.max_variant_bytes < 16 * 1024:
         parser.error("--max-variant-bytes must be at least 16 KiB")
-    if args.max_total_optimized_bytes < args.max_variant_bytes:
+    if (args.max_total_optimized_bytes is not None
+            and args.max_total_optimized_bytes < args.max_variant_bytes):
         parser.error("--max-total-optimized-bytes must cover at least one variant")
     try:
         args.origin = normalize_origin(args.origin)

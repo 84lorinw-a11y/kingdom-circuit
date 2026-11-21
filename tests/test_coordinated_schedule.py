@@ -121,6 +121,37 @@ class CoordinatedScheduleTests(unittest.TestCase):
         self.assertEqual(schedule.read_state(self.root)['latest']['catalogDay'], '2026-11-11')
         self.assertEqual(self.claim('15 0 * * *', run='101', now=next_day)['run'], 'true')
 
+    def test_plan_keeps_pacific_catalog_day_separate_from_central_full_claim(self):
+        result = self.claim(now=datetime.fromisoformat('2026-11-12T06:30:00+00:00'))
+        self.assertEqual(result['day'], '2026-11-12')
+        self.assertEqual(result['catalog_day'], '2026-11-11')
+
+    def test_failed_attempt_clock_does_not_claim_a_verified_live_calendar(self):
+        self.claim()
+        env = self.env(KC_RESULT='failure', KC_LIVE='skipped', KC_FRESHNESS='skipped',
+                       KC_VERIFIED_CATALOG_DAY='')
+        schedule.record(self.root, env, datetime.fromisoformat('2026-11-12T08:01:00+00:00'))
+        state = schedule.read_state(self.root)
+        receipt = state['completed']['full:2026-11-11']
+        self.assertEqual(receipt['conclusion'], 'failure')
+        self.assertEqual(receipt['catalogDay'], '')
+        self.assertEqual(receipt['attemptedCatalogDay'], '2026-11-11')
+        self.assertEqual(state['scheduled']['full:2026-11-11']['runId'], '100')
+        self.assertEqual(self.automatic()['run'], 'false')
+
+    def test_attempt_date_cannot_replace_missing_or_invalid_verified_success_date(self):
+        self.claim()
+        before = (self.root / schedule.STATE).read_bytes()
+        for verified in ('', '20261111', '2026-02-30'):
+            with self.subTest(verified=verified), self.assertRaises(ValueError):
+                schedule.record(self.root, self.env(KC_VERIFIED_CATALOG_DAY=verified), self.now)
+            self.assertEqual(before, (self.root / schedule.STATE).read_bytes())
+        for attempted in ('', '20261111', '2026-02-30'):
+            with self.subTest(attempted=attempted), self.assertRaises(ValueError):
+                schedule.record(self.root, self.env(KC_RESULT='failure', KC_CATALOG_DAY=attempted,
+                                                   KC_VERIFIED_CATALOG_DAY=''), self.now)
+            self.assertEqual(before, (self.root / schedule.STATE).read_bytes())
+
     def test_cron_and_independent_fallback_in_either_order_collect_once(self):
         for first in ('cron', 'automatic'):
             with self.subTest(first=first), tempfile.TemporaryDirectory() as tmp:

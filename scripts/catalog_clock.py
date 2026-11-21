@@ -32,12 +32,16 @@ def catalog_date() -> date:
 def main(argv=None) -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--github-env", type=Path, required=True)
+    parser.add_argument("--github-output", type=Path)
     args = parser.parse_args(argv)
     # A new attempt must freeze its actual start day, never inherit a stale
     # override from another build or a local replay.
     day = datetime.now(PACIFIC).date().isoformat()
     with args.github_env.open("a", encoding="utf-8") as stream:
         stream.write(f"KC_CATALOG_DAY={day}\n")
+    if args.github_output:
+        with args.github_output.open("a", encoding="utf-8") as stream:
+            stream.write(f"catalog_day={day}\n")
 
 
 if __name__ == "__main__":

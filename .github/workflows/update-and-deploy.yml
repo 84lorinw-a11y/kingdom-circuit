@@ -53,6 +53,7 @@ jobs:
       run: ${{ steps.plan.outputs.run }}
       mode: ${{ steps.plan.outputs.mode }}
       day: ${{ steps.plan.outputs.day }}
+      catalog_day: ${{ steps.plan.outputs.catalog_day }}
       claim_required: ${{ steps.plan.outputs.claim_required }}
     steps:
       - uses: actions/checkout@v4
@@ -108,6 +109,7 @@ jobs:
       live: ${{ steps.live-publication-audit.outcome }}
       freshness: ${{ steps.live-freshness.outcome }}
       catalog_day: ${{ steps.live-freshness.outputs.as_of }}
+      attempted_catalog_day: ${{ steps.catalog-clock.outputs.catalog_day }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url || steps.deployment-retry.outputs.page_url }}
@@ -123,6 +125,10 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      - name: Freeze the Pacific catalog day before publication work
+        id: catalog-clock
+        run: python scripts/catalog_clock.py --github-env "$GITHUB_ENV" --github-output "$GITHUB_OUTPUT"
 
       - name: Verify the daily claim again before source work
         if: needs.plan.outputs.claim_required == 'true'
@@ -142,7 +148,6 @@ jobs:
           KC_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
           KC_SCHEDULE: ${{ github.event.schedule }}
         run: |
-          python scripts/catalog_clock.py --github-env "$GITHUB_ENV"
           python scripts/calendar_maintenance.py --mode >> "$GITHUB_OUTPUT"
 
       - name: Snapshot Canadian bookings before automated changes
@@ -930,7 +935,10 @@ jobs:
           KC_DEPLOYMENT: ${{ needs.update-and-deploy.outputs.deployment }}
           KC_LIVE: ${{ needs.update-and-deploy.outputs.live }}
           KC_FRESHNESS: ${{ needs.update-and-deploy.outputs.freshness }}
-          KC_CATALOG_DAY: ${{ needs.update-and-deploy.outputs.catalog_day }}
+          # The verified date remains empty when the live check never ran.
+          KC_VERIFIED_CATALOG_DAY: ${{ needs.update-and-deploy.outputs.catalog_day }}
+          # Failed result persistence still needs a valid Pacific guard clock.
+          KC_CATALOG_DAY: ${{ needs.update-and-deploy.outputs.attempted_catalog_day || needs.plan.outputs.catalog_day }}
         run: |
           python scripts/coordinated_schedule.py record
           python scripts/publish_automation_changes.py \

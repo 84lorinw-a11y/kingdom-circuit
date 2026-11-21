@@ -73,6 +73,15 @@ class CatalogClockTests(unittest.TestCase):
                 clock.main(["--github-env", str(environment)])
             self.assertEqual("EXISTING=value\nKC_CATALOG_DAY=2026-11-14\n", environment.read_text())
 
+    def test_frozen_clock_is_exported_for_receipt_job_even_without_a_live_report(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            environment, output = Path(tmp) / 'env', Path(tmp) / 'output'
+            output.write_text('existing=kept\n')
+            with patch.object(clock, 'datetime', at(datetime(2026, 11, 15, 7, 59, tzinfo=timezone.utc))):
+                clock.main(['--github-env', str(environment), '--github-output', str(output)])
+            self.assertEqual('KC_CATALOG_DAY=2026-11-14\n', environment.read_text())
+            self.assertEqual('existing=kept\ncatalog_day=2026-11-14\n', output.read_text())
+
     def test_builder_import_uses_the_frozen_day_for_its_visibility_boundary(self):
         environment = dict(os.environ, KC_CATALOG_DAY="2027-01-01", PYTHONDONTWRITEBYTECODE="1")
         result = subprocess.run([sys.executable, "-c",

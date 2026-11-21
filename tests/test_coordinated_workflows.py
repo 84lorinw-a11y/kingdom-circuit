@@ -214,6 +214,16 @@ class CoordinatedWorkflowTests(unittest.TestCase):
         self.assertIn('KC_MODE: ${{ needs.plan.outputs.mode }}', record)
         self.assertIn('KC_DAY: ${{ needs.plan.outputs.day }}', record)
 
+    def test_attempt_clock_is_exported_before_any_source_or_build_failure(self):
+        text = self.workflows[PUBLISHER]
+        clock = named_step(text, 'Freeze the Pacific catalog day before publication work')
+        self.assertIn('--github-env "$GITHUB_ENV" --github-output "$GITHUB_OUTPUT"', clock)
+        for step in ('Verify the daily claim again before source work',
+                     'Install pinned image verification backend', 'Collect upcoming shows'):
+            self.assertLess(text.index(clock), text.index('- name: ' + step))
+        self.assertIn('attempted_catalog_day: ${{ steps.catalog-clock.outputs.catalog_day }}', text)
+        self.assertIn('catalog_day: ${{ steps.plan.outputs.catalog_day }}', text)
+
 
 if __name__ == '__main__':
     unittest.main()

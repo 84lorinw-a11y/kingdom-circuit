@@ -22,6 +22,7 @@ import calendar_maintenance as calendar
 from mobile_discovery import Document
 import show_information
 import url_continuity as continuity
+from verify_public_performance import audit_artifact_capacity
 
 ORIGIN = continuity.ORIGIN
 EVENT_TYPES = {'Event', 'MusicEvent', 'Festival'}
@@ -428,8 +429,16 @@ def main():
             report['bytesChecked'] = sum(item['size'] for item in manifest['files'].values())
             if not report['errors']:
                 (site / MANIFEST).write_text(json.dumps(manifest, separators=(',', ':'), sort_keys=True) + '\n')
+        # This is after every writer, including game restoration and the receipt.
+        # The earlier image check cannot measure files added by later stages.
+        capacity = audit_artifact_capacity(site)
+        report['artifactCapacity'] = capacity
+        report['errors'].extend(issue('artifact_capacity', '/', error=error)
+                                for error in capacity['errors'])
     except Exception as exc:
         report.setdefault('errors', []).append(issue('audit_failed', '/', error=f'{type(exc).__name__}: {exc}'))
+    if report['errors']:
+        (site / MANIFEST).unlink(missing_ok=True)
     report['status'] = 'failed' if report['errors'] else 'passed'
     report['provenance'] = {
         'runId': os.environ.get('GITHUB_RUN_ID'), 'attempt': os.environ.get('GITHUB_RUN_ATTEMPT'),
@@ -446,6 +455,11 @@ def main():
     lines = ['## Final publication audit: ' + report['status'], '', 'Release: `' + args.release_id + '`', '',
              f"HTML pages: {report.get('htmlPages', 0)}; upcoming shows: {report.get('currentEvents', 0)}; artist profiles: {report.get('artistProfilesChecked', 0)}.", '',
              'Every required check runs after the final page writers. This verifies technical publication, not Google indexing.']
+    if 'artifactCapacity' in report:
+        capacity = report['artifactCapacity']
+        lines.extend(['', f"Complete artifact: {capacity['bytes']} bytes across {capacity['files']} files. "
+                      f"Capacity status: {capacity['status']}. Remaining capacity: {capacity['remainingBytes']} bytes."])
+        lines.extend('\nWarning: ' + warning for warning in capacity['warnings'])
     lines.extend('\n- ' + json.dumps(e, ensure_ascii=False) for e in report['errors'][:50])
     args.summary.parent.mkdir(parents=True, exist_ok=True)
     args.summary.write_text('\n'.join(lines) + '\n')

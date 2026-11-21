@@ -1,11 +1,14 @@
 """Regression cases for final, immutable publication acceptance."""
 import hashlib
+import contextlib
+import io
 import json
 from pathlib import Path
 import sys
 import subprocess
 import tempfile
 import unittest
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 import publication_audit as audit
@@ -171,6 +174,45 @@ class FinalPublicationTests(unittest.TestCase):
         self.assertEqual(result.returncode, 1)
         self.assertEqual(json.loads(report.read_text())['status'], 'failed')
         self.assertFalse((self.site / 'publication-manifest.json').exists())
+
+    def test_final_capacity_counts_late_files_and_acceptance_receipt(self):
+        report = self.site.parent / (self.site.name + '-report.json')
+        summary = self.site.parent / (self.site.name + '-summary.md')
+        self.addCleanup(lambda: report.unlink(missing_ok=True))
+        self.addCleanup(lambda: summary.unlink(missing_ok=True))
+        self.put('index.html', self.page())
+        # This file is not referenced by the content manifest, but will ship.
+        late_game = self.site / 'late-game.bin'
+        with late_game.open('wb') as handle:
+            handle.truncate(900_000_000 - (self.site / 'index.html').stat().st_size)
+        argv = ['publication_audit.py', '--site', str(self.site), '--release-id', 'test',
+                '--source', str(self.site), '--report', str(report), '--summary', str(summary)]
+        manifest = {'files': {}, 'releaseId': 'test'}
+        with patch.object(sys, 'argv', argv), \
+                patch.object(audit, 'verify', return_value=({'errors': []}, set())), \
+                patch.object(audit, 'build_manifest', return_value=(manifest, [])), \
+                patch.object(audit, 'robots_errors', return_value=[]), \
+                contextlib.redirect_stdout(io.StringIO()):
+            self.assertTrue(audit.main())
+        result = json.loads(report.read_text())
+        self.assertGreater(result['artifactCapacity']['bytes'], 900_000_000)
+        self.assertEqual('failed', result['status'])
+        self.assertIn('artifact_capacity', [error['kind'] for error in result['errors']])
+        self.assertFalse((self.site / 'publication-manifest.json').exists())
+
+        with late_game.open('wb') as handle:
+            handle.truncate(750_000_000)
+        with patch.object(sys, 'argv', argv), \
+                patch.object(audit, 'verify', side_effect=lambda *args: ({'errors': []}, set())), \
+                patch.object(audit, 'build_manifest', return_value=(manifest, [])), \
+                patch.object(audit, 'robots_errors', return_value=[]), \
+                contextlib.redirect_stdout(io.StringIO()):
+            self.assertFalse(audit.main())
+        result = json.loads(report.read_text())
+        self.assertEqual('passed', result['status'])
+        self.assertEqual('warning', result['artifactCapacity']['status'])
+        self.assertTrue((self.site / 'publication-manifest.json').exists())
+        self.assertIn('Capacity status: warning', summary.read_text())
 
     def test_schema_cannot_invent_price_time_or_performers(self):
         record = dict(title='Concert', schemaStartDate='2027-02-26', schemaEndDate=None, offer=None,

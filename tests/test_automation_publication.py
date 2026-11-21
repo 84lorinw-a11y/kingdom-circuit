@@ -1,6 +1,8 @@
 import json
 import os
 from pathlib import Path
+import re
+import shlex
 import subprocess
 import sys
 import tempfile
@@ -105,6 +107,55 @@ class AutomationPublicationTests(unittest.TestCase):
             remote,_,bot=self.setup_repo(directory)
             before=git(remote,'rev-parse','main').stdout.strip()
             self.assertEqual(before,publish(bot,['events.json'],['python repair.py'],'No change'))
+
+    def test_early_failure_receipt_reaches_remote_without_live_date_or_source_changes(self):
+        from datetime import datetime
+        root = Path(__file__).resolve().parents[1]
+        with patch.object(sys, 'path', [str(root / 'scripts'), *sys.path]):
+            from scripts import coordinated_schedule as schedule
+        workflow = (root / '.github/workflows/update-and-deploy.yml').read_text()
+        result_step = workflow.split('- name: Save the result while still holding the publication lock', 1)[1]
+        # Resolve the real workflow environment for failures both before and
+        # after clock initialization. No live freshness output was produced.
+        for frozen in ('', '2026-11-21'):
+            with self.subTest(frozen=frozen), tempfile.TemporaryDirectory() as directory:
+                remote, owner, bot = self.setup_repo(directory)
+                now = datetime.fromisoformat('2026-11-21T06:30:00+00:00')
+                planned = schedule.claim(owner, 'workflow_dispatch', '', 'full', '', '100', '1', now)
+                canadian = [{'id': 'accepted-ca', 'country': 'CA', 'startDate': '2026-12-01'}]
+                (owner / 'events.json').write_text(json.dumps(canadian) + '\n')
+                git(owner, 'add', '.'); git(owner, 'commit', '-m', 'Existing claim and Canadian show')
+                git(owner, 'push', 'origin', 'main'); git(bot, 'pull', '--ff-only')
+                original_events = (bot / 'events.json').read_bytes()
+                values = {'needs.plan.outputs.mode': planned['mode'],
+                          'needs.plan.outputs.day': planned['day'],
+                          'needs.plan.outputs.catalog_day': planned['catalog_day'],
+                          'needs.update-and-deploy.result': 'failure',
+                          'needs.update-and-deploy.outputs.attempted_catalog_day': frozen,
+                          'needs.update-and-deploy.outputs.collection': 'success',
+                          'needs.update-and-deploy.outputs.source_save': 'success',
+                          'needs.update-and-deploy.outputs.source_sha': 'accepted-source'}
+                for stage in ('build', 'deployment', 'live', 'freshness'):
+                    values['needs.update-and-deploy.outputs.' + stage] = 'skipped'
+                env = {name: next((values.get(part.strip(), '') for part in expression.split('||')
+                                  if values.get(part.strip(), '')), '')
+                       for name, expression in re.findall(r'^ +([A-Z_]+): \$\{\{ (.*?) \}\}', result_step, re.M)}
+                env.update(GITHUB_RUN_ID='100', GITHUB_RUN_ATTEMPT='1', GITHUB_REPOSITORY='owner/site')
+                command = shlex.join([sys.executable, str(root / 'scripts/coordinated_schedule.py'), 'record'])
+                with patch.dict(os.environ, env):
+                    subprocess.run(shlex.split(command), cwd=bot, check=True)
+                    sha = publish(bot, [schedule.STATE, 'live-deploy-status.json'], [command], 'Save failed attempt')
+                saved = json.loads(git(remote, 'show', sha + ':' + schedule.STATE).stdout)
+                receipt = saved['completed']['full:2026-11-21']
+                self.assertEqual(receipt['conclusion'], 'failure')
+                self.assertEqual(receipt['catalogDay'], '')
+                self.assertEqual(receipt['attemptedCatalogDay'], frozen or '2026-11-20')
+                self.assertEqual(saved['scheduled']['full:2026-11-21']['runId'], '100')
+                self.assertEqual(saved['scheduled']['full:2026-11-21']['conclusion'], 'failure')
+                self.assertEqual(git(remote, 'show', sha + ':events.json').stdout.encode(), original_events)
+                live = json.loads(git(remote, 'show', sha + ':live-deploy-status.json').stdout)
+                self.assertEqual(live['conclusion'], 'failure')
+                self.assertEqual(live['stages']['live'], 'skipped')
 
     def setup_coverage_repo(self, directory, report=None):
         remote, owner, bot = self.setup_repo(directory)

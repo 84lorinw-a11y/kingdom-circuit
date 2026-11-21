@@ -87,6 +87,7 @@ def claim(root, event, schedule, requested, message, run_id, attempt, now,
     day = now.astimezone(ZoneInfo('America/Chicago' if mode == 'full' else 'America/Los_Angeles')).date().isoformat()
     required = event == 'schedule' or automatic
     result = {'run': 'true', 'mode': mode, 'discovery': str(mode == 'full').lower(), 'day': day,
+              'catalog_day': now.astimezone(ZoneInfo('America/Los_Angeles')).date().isoformat(),
               'claim_required': str(required).lower(),
               'reason': 'explicit change or manual request'}
     if event == 'schedule' and schedule not in FULL_SCHEDULES | DATE_SCHEDULES:
@@ -153,15 +154,21 @@ def record(root, env, now):
     conclusion = env.get('KC_RESULT', 'failure')
     if conclusion == 'success' and (stages['live'] != 'success' or stages['freshness'] != 'success'):
         raise ValueError('Cannot record successful publication without exact live and freshness verification')
-    catalog_day = env.get('KC_CATALOG_DAY', '')
+    # The build clock lets preservation guards save failed results, even when
+    # no live report exists. It must never stand in for verified publication.
+    catalog_day = env.get('KC_VERIFIED_CATALOG_DAY', env.get('KC_CATALOG_DAY', ''))
+    if catalog_day:
+        valid_day(catalog_day)
     if conclusion == 'success':
-        date.fromisoformat(catalog_day)  # Must come from the verified live report.
+        valid_day(catalog_day)  # Must come from the verified live report.
     receipt = {'runId': run_id, 'attempt': env.get('GITHUB_RUN_ATTEMPT', '1'),
         'conclusion': conclusion, 'mode': env['KC_MODE'], 'day': env['KC_DAY'],
         'finishedAt': now.isoformat(), 'stages': stages,
         'catalogDay': catalog_day,
         'savedSourceSha': env.get('KC_SOURCE_SHA', ''),
         'htmlUrl': f"https://github.com/{env['GITHUB_REPOSITORY']}/actions/runs/{run_id}"}
+    if 'KC_VERIFIED_CATALOG_DAY' in env:
+        receipt['attemptedCatalogDay'] = valid_day(env.get('KC_CATALOG_DAY', ''))
     latest = state.get('latest', {})
     remember_completed(state, latest)
     remember_completed(state, receipt)
