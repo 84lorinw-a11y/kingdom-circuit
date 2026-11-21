@@ -159,11 +159,11 @@ class NationalDiscoveryTests(unittest.TestCase):
 
     def test_owner_artist_order_precedes_date_order_and_forty_artist_cap(self):
         href = lambda slug: discovery.SITE_BASE + 'artists/' + slug + '/'
-        picks = [href(s) for s in ('whatuprg', 'brenno', '1k-phew', 'joz', 'tru-serva', 'cj-emulous')]
+        picks = [href(s) for s in ('1k-phew', 'cj-emulous', 'andy-mineo', 'jackie-hill-perry', 'egr')]
         remaining = [href(f'artist-{i}') for i in range(45)]
         original = remaining + list(reversed(picks))
         result = discovery.featured_artist_hrefs(original)
-        self.assertEqual(result, picks + remaining[:34])
+        self.assertEqual(result, picks + remaining[:35])
         self.assertEqual(len(result), 40)
         self.assertEqual(original, remaining + list(reversed(picks)))
 
@@ -171,13 +171,44 @@ class NationalDiscoveryTests(unittest.TestCase):
         href = lambda slug: discovery.SITE_BASE + 'artists/' + slug + '/'
         original = [href('mayia'), href('cj-emulous'), href('brenno'), href('hulvey')]
         self.assertEqual(discovery.featured_artist_hrefs(original),
-                         [href('brenno'), href('cj-emulous'), href('mayia'), href('hulvey')])
+                         [href('cj-emulous'), href('mayia'), href('brenno'), href('hulvey')])
         self.assertEqual(discovery.featured_artist_hrefs([]), [])
 
     def test_featured_artist_order_has_no_duplicates_and_preserves_other_artists(self):
         href = lambda slug: discovery.SITE_BASE + 'artists/' + slug + '/'
-        self.assertEqual(discovery.featured_artist_hrefs([href('hulvey'), href('brenno'), href('hulvey'), href('brenno')]),
-                         [href('brenno'), href('hulvey')])
+        self.assertEqual(discovery.featured_artist_hrefs([href('hulvey'), href('egr'), href('hulvey'), href('egr')]),
+                         [href('egr'), href('hulvey')])
+
+    def test_priority_artists_remain_truthful_when_shows_expire_or_are_not_homepage_eligible(self):
+        slugs = ('1k-phew', 'cj-emulous', 'andy-mineo', 'jackie-hill-perry', 'egr', 'hulvey')
+        directory = ''.join(
+            f'<article data-artist-card><h2><a href="/artists/{slug}/">{slug}</a></h2>'
+            f'<img src="/assets/{slug}.webp"></article>' for slug in slugs)
+
+        def record(slug, start, end='', badges=''):
+            return {'href': '/event/' + slug + '/', 'name': 'Concert', 'meta': {}, 'badges': badges,
+                    'attrs': {'data-date': start, 'data-end-date': end},
+                    'artists': f'<p><a href="/artists/{slug}/">{slug}</a></p>'}
+
+        records = [record('1k-phew', '2026-11-20'), record('hulvey', '2026-11-21'),
+                   record('andy-mineo', '2026-11-20', '2026-11-22'),
+                   record('egr', '2026-11-21', badges='Invite only'),
+                   record('cj-emulous', '2026-11-21')]
+
+        for day, expected in [(21, ['cj-emulous', 'andy-mineo', 'hulvey']),
+                              (22, ['andy-mineo']), (23, [])]:
+            with self.subTest(day=day), \
+                 patch.object(discovery.mobile, 'catalog', return_value=[]), \
+                 patch.object(discovery, 'source_html', return_value=directory), \
+                 patch.object(discovery, 'card_records', side_effect=[records, records]):
+                context = discovery.load_context(Path('/unused'), date(2026, 11, day))
+            self.assertEqual([artist['href'] for artist in context['artists']],
+                             ['/artists/' + slug + '/' for slug in expected])
+            self.assertTrue(all(artist['count'] == 1 for artist in context['artists']))
+            searchable = {artist['href']: artist for artist in context['search_artists']}
+            self.assertEqual(searchable['/artists/jackie-hill-perry/']['count'], 0)
+            self.assertEqual(searchable['/artists/1k-phew/']['count'], 0)
+            self.assertEqual(searchable['/artists/egr/']['count'], 1 if day == 21 else 0)
 
     def test_readable_follow_bar_and_tighter_header_spacing(self):
         css = (Path(__file__).resolve().parents[1] / 'assets/national-discovery.css').read_text()

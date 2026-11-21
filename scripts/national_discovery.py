@@ -39,7 +39,7 @@ HOME_HEADING = 'Find CHH Shows Near You!'
 HOME_SUBTITLE = 'CHH concerts, christian rap shows and festivals!'
 # Owner-selected homepage order; only promote artists already eligible below.
 # Canonical profile slugs keep this independent of roster order and aliases.
-HOME_ARTIST_PRIORITY = ('whatuprg', 'brenno', '1k-phew', 'joz', 'tru-serva', 'cj-emulous')
+HOME_ARTIST_PRIORITY = ('1k-phew', 'cj-emulous', 'andy-mineo', 'jackie-hill-perry', 'egr')
 FACEBOOK_HREF = 'https://www.facebook.com/profile.php?id=61593510924754'
 FACEBOOK_BUTTON = (f'<a class="kc-facebook-button" href="{FACEBOOK_HREF}" target="_blank" rel="noopener noreferrer" '
                    'aria-label="Kingdom Circuit on Facebook (opens in new tab)" title="Follow Kingdom Circuit on Facebook">'
