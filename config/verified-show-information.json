@@ -7891,6 +7891,64 @@
           "reviewedAt": "2026-11-13"
         }
       ]
+    },
+    {
+      "id": "bandsintown:109187514",
+      "startDate": "2026-12-13",
+      "city": "Rogers",
+      "state": "AR",
+      "country": "US",
+      "expectedVenue": "Revival Concert",
+      "expectedAddress": "2121 S 1st St",
+      "facts": {
+        "postalCode": "72758",
+        "venueUrl": "https://ccrogers.org/",
+        "ticketUrlVerified": true,
+        "publicDescription": "SYL noiZ performs at Christian Center Church in Rogers. Free admission.",
+        "ticketUrl": "https://www.sylnoiz.com/event-details/revival-concert"
+      },
+      "corrections": [
+        {
+          "expected": {
+            "venue": "Revival Concert",
+            "officialUrl": "https://www.bandsintown.com/e/109187514?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+            "ticketUrl": "https://www.bandsintown.com/e/109187514?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event"
+          },
+          "facts": {
+            "venue": "Christian Center Church",
+            "officialUrl": "https://www.sylnoiz.com/event-details/revival-concert",
+            "ticketUrl": "https://www.sylnoiz.com/event-details/revival-concert"
+          }
+        },
+        {
+          "expected": {
+            "timezone": "",
+            "endTime": null,
+            "startDateTime": null,
+            "endDateTime": null,
+            "startTime": "17:00"
+          },
+          "facts": {
+            "timezone": "America/Chicago",
+            "endTime": "18:30",
+            "startDateTime": "2026-12-13T17:00:00-06:00",
+            "endDateTime": "2026-12-13T18:30:00-06:00",
+            "startTime": "17:00"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.sylnoiz.com/event-details/revival-concert",
+          "reviewedAt": "2026-11-20",
+          "evidence": "Official artist page and original flyer confirm December 13, 2026, 5 PM through 6:30 PM, free admission, church name and street address. Owner explicitly instructed using the listed wall clock time after Wix timezone discrepancy was disclosed. Local America/Chicago is used for the Arkansas event; Wix America/New_York metadata is not converted."
+        },
+        {
+          "url": "https://ccrogers.org/",
+          "reviewedAt": "2026-11-20",
+          "evidence": "Official venue corroboration for the church at 2121 S 1st St, Rogers."
+        }
+      ]
     }
   ]
 }
