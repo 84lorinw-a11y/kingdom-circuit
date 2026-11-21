@@ -32,7 +32,9 @@ Validated source saves use `--reuse-validated-output`. If main advanced, unchang
 
 If Pages deploys successfully, publication URL history is saved even when the live check fails. This preserves the record of what was deployed without treating a failed live audit as successful verification.
 
-If the first Pages deployment attempt fails, the workflow retries exactly once using the same accepted and uploaded artifact. It does not rerun collection, rebuild the site, or replace the artifact. The retry requires both a passing final audit and successful artifact upload; cancellation prevents a retry. A separate publication gate requires one deployment attempt to succeed before live verification can run. Failure of both attempts, or a later live audit failure, leaves the workflow failed.
+After upload, a bounded readiness check validates the exact artifact ID returned by the upload action, its name, originating run, head commit, positive size and unexpired status. It waits at least 30 seconds measured from entry after successful upload. This allows metadata propagation before deployment. REST visibility does not independently prove that the deployment action's internal artifact service is ready. Authentication or identity errors fail immediately, and temporary missing metadata is retried within a 180 second wait budget. Safe readiness receipts are retained with the audit evidence.
+
+If the first Pages deployment attempt fails, the workflow rechecks the same artifact and waits another 30 seconds before retrying exactly once. The retry requires the readiness check, final build audit and artifact upload to succeed. Cancellation prevents a retry. Collection and the build are reused within this attempt. A separate publication gate requires one deployment attempt to succeed before live verification can run. Failure of both attempts, or a later live audit failure, leaves the workflow failed.
 
 ## Evidence and failure handling
 

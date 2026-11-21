@@ -66,14 +66,17 @@ class PagesDeploymentRetryTests(unittest.TestCase):
     def setUp(self):
         self.steps = workflow_steps()
 
-    def simulate(self, *, first='success', retry='success', live='success', source='success', upload='success', cancelled=False):
+    def simulate(self, *, first='success', retry='success', live='success', source='success', upload='success',
+                 ready='success', retry_ready='success', cancelled=False):
         """Model actual conditions and continue-on-error; run the actual shell gate."""
         states = {'publication-audit': {'outcome': source, 'conclusion': source},
                   'pages-artifact': {'outcome': upload if source == 'success' else 'skipped',
                                      'conclusion': upload if source == 'success' else 'skipped'}}
         failed = source != 'success' or upload != 'success'
         visited = []
-        plan = [('Deploy to GitHub Pages', first),
+        plan = [('Wait for the exact uploaded Pages artifact', ready),
+                ('Deploy to GitHub Pages', first),
+                ('Recheck the accepted artifact and allow retry propagation', retry_ready),
                 ('Retry accepted Pages artifact once', retry),
                 ('Require successful Pages publication', None),
                 ('Verify exact published release', live),
@@ -138,15 +141,33 @@ class PagesDeploymentRetryTests(unittest.TestCase):
         self.assertEqual(visited, [])
         # Also exercise cancellation arriving after the first failed deployment.
         after_first = {'deployment': {'outcome': 'failure', 'conclusion': 'success'},
-                       'publication-audit': {'outcome': 'success'}, 'pages-artifact': {'outcome': 'success'}}
+                       'publication-audit': {'outcome': 'success'}, 'pages-artifact': {'outcome': 'success'},
+                       'pages-artifact-retry-ready': {'outcome': 'success'}}
         self.assertFalse(condition(self.steps['Retry accepted Pages artifact once'], after_first, cancelled=True))
 
     def test_retry_requires_both_audit_and_artifact_upload_success(self):
         for audit, upload in [('failure', 'success'), ('success', 'failure'), ('skipped', 'skipped')]:
             with self.subTest(audit=audit, upload=upload):
                 states = {'deployment': {'outcome': 'failure', 'conclusion': 'success'},
-                          'publication-audit': {'outcome': audit}, 'pages-artifact': {'outcome': upload}}
+                          'publication-audit': {'outcome': audit}, 'pages-artifact': {'outcome': upload},
+                          'pages-artifact-retry-ready': {'outcome': 'success'}}
                 self.assertFalse(condition(self.steps['Retry accepted Pages artifact once'], states))
+
+    def test_initial_readiness_failure_cannot_deploy_or_claim_live_success(self):
+        states, visited, success = self.simulate(ready='failure')
+        self.assertFalse(success)
+        self.assertEqual(states['deployment']['outcome'], 'skipped')
+        self.assertEqual(states['deployment-retry']['outcome'], 'skipped')
+        self.assertNotIn('Verify exact published release', visited)
+        self.assertNotIn('Save successful publication URL history', visited)
+
+    def test_retry_readiness_failure_cannot_redeploy_or_claim_success(self):
+        states, visited, success = self.simulate(first='failure', retry_ready='failure')
+        self.assertFalse(success)
+        self.assertEqual(states['pages-artifact-retry-ready']['outcome'], 'failure')
+        self.assertEqual(states['deployment-retry']['outcome'], 'skipped')
+        self.assertEqual(states['pages-publication']['outcome'], 'failure')
+        self.assertNotIn('Verify exact published release', visited)
 
     def artifact_audit_fixture(self):
         temporary = tempfile.TemporaryDirectory()
@@ -228,7 +249,12 @@ class PagesDeploymentRetryTests(unittest.TestCase):
         first = names.index('Deploy to GitHub Pages')
         retry = names.index('Retry accepted Pages artifact once')
         accept = names.index('Require successful Pages publication')
-        self.assertEqual([audit + 1, upload + 1, first + 1, retry + 1], [upload, first, retry, accept])
+        self.assertEqual(names[audit:accept + 1], [
+            'Audit final publication artifact', 'Upload Pages artifact',
+            'Wait for the exact uploaded Pages artifact', 'Deploy to GitHub Pages',
+            'Recheck the accepted artifact and allow retry propagation',
+            'Retry accepted Pages artifact once', 'Require successful Pages publication',
+        ])
         blocks = [self.steps[names[first]], self.steps[names[retry]]]
         self.assertEqual([field(block, 'uses') for block in blocks], ['actions/deploy-pages@v5'] * 2)
         artifact_names = [re.search(r'^          artifact_name: (.+)$', block, re.M)[1] for block in blocks]

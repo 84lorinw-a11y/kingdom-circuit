@@ -224,6 +224,33 @@ class CoordinatedWorkflowTests(unittest.TestCase):
         self.assertIn('attempted_catalog_day: ${{ steps.catalog-clock.outputs.catalog_day }}', text)
         self.assertIn('catalog_day: ${{ steps.plan.outputs.catalog_day }}', text)
 
+    def test_pages_deployment_waits_for_the_uploaded_identity(self):
+        text = self.workflows[PUBLISHER]
+        sequence = ('Upload Pages artifact', 'Wait for the exact uploaded Pages artifact',
+                    'Deploy to GitHub Pages')
+        positions = [text.index('- name: ' + name) for name in sequence]
+        self.assertEqual(positions, sorted(positions))
+        ready = named_step(text, sequence[1])
+        self.assertIn('PAGES_ARTIFACT_ID: ${{ steps.pages-artifact.outputs.artifact_id }}', ready)
+        self.assertIn('python scripts/wait_for_pages_artifact.py', ready)
+        self.assertNotIn('continue-on-error: true', ready)
+        self.assertEqual(mapping_fields(section(text, 'permissions'))['actions'], 'read')
+
+    def test_pages_retry_rechecks_before_using_the_same_artifact(self):
+        text = self.workflows[PUBLISHER]
+        wait_name = 'Recheck the accepted artifact and allow retry propagation'
+        wait = named_step(text, wait_name)
+        retry = named_step(text, 'Retry accepted Pages artifact once')
+        self.assertLess(text.index('- name: ' + wait_name), text.index('- name: Retry accepted Pages artifact once'))
+        self.assertIn("steps.deployment.outcome == 'failure'", wait)
+        self.assertIn('PAGES_ARTIFACT_ID: ${{ steps.pages-artifact.outputs.artifact_id }}', wait)
+        self.assertIn('python scripts/wait_for_pages_artifact.py', wait)
+        self.assertIn("steps.pages-artifact-retry-ready.outcome == 'success'", retry)
+        self.assertIn('artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}', retry)
+        evidence = named_step(text, 'Keep publication audit evidence')
+        self.assertIn('pages-artifact-readiness.json', evidence)
+        self.assertIn('pages-artifact-retry-readiness.json', evidence)
+
 
 if __name__ == '__main__':
     unittest.main()
