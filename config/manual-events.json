@@ -30126,5 +30126,103 @@
     "startDateTime": "2026-12-19T19:00:00-05:00",
     "endDateTime": "2026-12-19T22:00:00-05:00",
     "venueUrl": "https://fbcplantation.org/"
+  },
+  {
+    "id": "el-gran-banquete-su-mesa-cafe-music-fest-st-cloud-2026-12-05",
+    "title": "El Gran Banquete · Su Mesa Café Music Fest",
+    "startDate": "2026-12-05",
+    "endDate": "2026-12-05",
+    "previousStartDate": "2026-11-20",
+    "status": "rescheduled",
+    "rescheduleReason": "weather",
+    "eventType": "festival",
+    "timezone": "America/New_York",
+    "venue": "Harmony Town Square",
+    "address": "7250 Harmony Square Drive South",
+    "city": "St. Cloud",
+    "state": "FL",
+    "postalCode": "34773",
+    "country": "US",
+    "artists": [
+      "Onell Díaz",
+      "Marky-O",
+      "Lemuel Amaury",
+      "Sueño de Hormiga",
+      "Melvin Ayala"
+    ],
+    "advertisedBilling": [
+      "Onell Díaz",
+      "Marky-O",
+      "Lemuel Amaury",
+      "Sueño de Hormiga",
+      "Melvin Ayala"
+    ],
+    "officialBill": [
+      "Onell Díaz",
+      "Marky-O",
+      "Lemuel Amaury",
+      "Sueño de Hormiga",
+      "Melvin Ayala"
+    ],
+    "confirmedMusicalBilling": [
+      "Onell Díaz",
+      "Marky-O",
+      "Lemuel Amaury",
+      "Sueño de Hormiga",
+      "Melvin Ayala"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "liveCHHMusicalPerformanceConfirmed": true,
+    "price": "Free admission",
+    "publicDescription": "Su Mesa Café presents a free outdoor music festival at Harmony Town Square featuring Latin Christian hip hop and worship. The organizer has yet to announce a start time for December 5.",
+    "description": "Su Mesa Café presents a free outdoor music festival at Harmony Town Square featuring Latin Christian hip hop and worship. The organizer has yet to announce a start time for December 5.",
+    "organizer": {
+      "name": "Su Mesa Café",
+      "url": "https://www.sumesacafe.com/"
+    },
+    "organizerWebsite": "https://www.sumesacafe.com/",
+    "organizerInstagram": "https://www.instagram.com/sumesacafe/",
+    "officialUrl": "https://www.instagram.com/sumesacafe/p/Df2_hxRu9Vw/",
+    "imageSourceUrl": "https://www.instagram.com/sumesacafe/p/Df2_hxRu9Vw/",
+    "image": "assets/events/el-gran-banquete-su-mesa-cafe-music-fest-st-cloud-2026-12-05-original.jpg",
+    "imageType": "event_artwork",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Original festival flyer from Su Mesa Café announcing the revised date",
+    "detailImageLayout": "portrait",
+    "firstSeen": "2026-11-10",
+    "auditVerified": "2026-11-21",
+    "lastVerified": "2026-11-21T23:14:28.395604+00:00",
+    "authority": "official_organizer",
+    "confidence": "high",
+    "sourceEventIds": [
+      "https://www.instagram.com/sumesacafe/p/Df2_hxRu9Vw/",
+      "https://www.instagram.com/p/De3GryBOIV7/",
+      "https://sumesacafemusicfest.com/"
+    ],
+    "sources": [
+      {
+        "name": "Su Mesa Café revised festival announcement",
+        "url": "https://www.instagram.com/sumesacafe/p/Df2_hxRu9Vw/",
+        "type": "manual_verified",
+        "authority": "official_source",
+        "priority": 125
+      },
+      {
+        "name": "Su Mesa Café original festival announcement",
+        "url": "https://www.instagram.com/p/De3GryBOIV7/",
+        "type": "manual_verified",
+        "authority": "official_source",
+        "priority": 110
+      },
+      {
+        "name": "Festival website",
+        "url": "https://sumesacafemusicfest.com/",
+        "type": "manual_verified",
+        "authority": "official_source",
+        "priority": 110
+      }
+    ]
   }
 ]
