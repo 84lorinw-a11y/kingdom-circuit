@@ -1,8 +1,9 @@
 """A provider's omission is review evidence, not cancellation evidence."""
 import contextlib
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 import io
 import json
+import os
 from pathlib import Path
 import sys
 import tempfile
@@ -54,7 +55,7 @@ class MissingProviderRetentionTests(unittest.TestCase):
                     SUPPLEMENTAL_FILE=root/'supplemental.json', STATUS_FILE=root/'status.json', CANDIDATES_FILE=root/'candidates.json'), \
                  patch.multiple(refresh, SUPPLEMENTAL=root/'supplemental.json', STATUS=root/'status.json'), \
                  patch.object(collector, 'get_json', side_effect=request), patch.object(collector.time, 'sleep'), \
-                 patch.object(refresh, 'today_cutoff', return_value=day, create=True), contextlib.redirect_stdout(io.StringIO()):
+                 patch.dict(os.environ, {'KC_CATALOG_DAY': day}), contextlib.redirect_stdout(io.StringIO()):
                 if collector_override:
                     with patch.object(collector, 'main', side_effect=lambda: collector_override(root)):
                         try:
@@ -109,6 +110,31 @@ class MissingProviderRetentionTests(unittest.TestCase):
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0]['startTime'], '20:30')
         self.assertEqual(status.get('missingProviderShowsRetained'), 0)
+
+    def test_collector_and_retention_share_scenario_day_across_calendar_boundaries(self):
+        # Exercise real collector eligibility and wrapper retention together.
+        # Patching only the wrapper's cutoff leaves fresh responses on the host
+        # clock, which silently reverts a valid changed time to the prior value.
+        days = ('2026-11-22', '2026-11-30', '2026-12-01', '2026-12-31',
+                '2027-01-01', '2027-03-14', '2027-11-07', '2028-02-29', '2028-03-01')
+        for day in days:
+            yesterday = (date.fromisoformat(day) - timedelta(days=1)).isoformat()
+            prior = show(startDate=day)
+            expired = show(id='bandsintown:222', bandsintownEventId='222', startDate=yesterday,
+                           officialUrl='https://www.bandsintown.com/e/222', ticketUrl='')
+            ongoing = show(id='bandsintown:333', bandsintownEventId='333', startDate=yesterday,
+                           endDate=day, country='CA', state='ON',
+                           officialUrl='https://www.bandsintown.com/e/333', ticketUrl='')
+            with self.subTest(day=day), patch.dict(os.environ, {'KC_CATALOG_DAY': '2099-12-31'}):
+                rows, status = self.run_refresh([prior, expired, ongoing],
+                    [raw('109105799', datetime=day + 'T20:30:00')], day=day)
+                by_id = {row['id']: row for row in rows}
+                self.assertEqual(set(by_id), {prior['id'], ongoing['id']})
+                self.assertEqual(by_id[prior['id']]['startTime'], '20:30')
+                self.assertEqual(by_id[ongoing['id']], ongoing)
+                self.assertEqual(status['missingProviderShowsRetained'], 1)
+                self.assertEqual(status['missingProviderReview'][0]['id'], ongoing['id'])
+                self.assertEqual(os.environ['KC_CATALOG_DAY'], '2099-12-31')
 
     def test_expired_rows_drop_but_ongoing_multiday_remains_through_pacific_final_day(self):
         past = show(startDate='2026-11-06')

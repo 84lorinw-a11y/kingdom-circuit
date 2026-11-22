@@ -4,6 +4,58 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const {searchMatch, weekEnd, dateMatch, matches, artistMatches, calendarScope, completeCalendarURL, syncStateShortcut} = require('../assets/fan-discovery.js');
 const {artistCount, refreshArtistDiscovery, todayString} = require('../assets/fan-discovery.js');
+const {homeShowCount, refreshHomeCount, refreshOnNewDay} = require('../assets/fan-discovery.js');
+test('homepage total expires by Pacific day and includes all published shows without a network request', () => {
+  const rows = [
+    {path:'/event/ended/',date:'2026-11-21',end:'2026-11-21'},
+    {path:'/event/ongoing/',date:'2026-11-21',end:'2026-11-23'},
+    {path:'/event/private/',date:'2026-11-25'},
+    {path:'/event/details-pending/',date:'2026-11-26'}
+  ];
+  rows.push(rows[1]);
+  for (const [stamp,expected] of [
+    ['2026-11-22T07:59:59Z',4],['2026-11-22T08:00:00Z',3],
+    ['2026-11-24T08:00:00Z',2],['2026-11-27T08:00:00Z',0]
+  ]) assert.equal(homeShowCount(rows,null,todayString(new Date(stamp))),expected);
+  assert.equal(homeShowCount(rows,{shows:[]},'2026-11-22'),0,'An updated empty catalog is authoritative');
+  assert.equal(homeShowCount(rows,{shows:[{path:'/event/new/',date:'2026-11-30'}]},'2026-11-22'),1);
+  for (const catalog of [null,{}, {shows:[null]}, {shows:[{path:'/wrong/',date:'invalid'}]}]) {
+    assert.equal(homeShowCount(rows,catalog,'2026-11-22'),3,'Malformed catalog falls back to the complete inline schedule');
+  }
+  const label={textContent:'Browse all 4 shows'};
+  const doc={querySelector:()=>label};
+  refreshHomeCount(doc,null,null,'2026-11-22');
+  assert.equal(label.textContent,'Browse all 4 shows');
+  refreshHomeCount(doc,rows,null,'2026-11-22');
+  assert.equal(label.textContent,'Browse all 3 shows');
+});
+test('homepage total respects year rollover, leap day and daylight saving changes', () => {
+  for (const [start,after,stamp] of [
+    ['2026-12-31','2027-01-01','2027-01-01T08:00:00Z'],
+    ['2028-02-28','2028-02-29','2028-02-29T08:00:00Z'],
+    ['2028-02-29','2028-03-01','2028-03-01T08:00:00Z'],
+    ['2027-03-14','2027-03-15','2027-03-15T07:00:00Z'],
+    ['2027-11-07','2027-11-08','2027-11-08T08:00:00Z']
+  ]) {
+    const rows=[{path:'/event/one/',date:start},{path:'/event/two/',date:after}];
+    assert.equal(homeShowCount(rows,null,start),2);
+    assert.equal(todayString(new Date(stamp)),after);
+    assert.equal(homeShowCount(rows,null,todayString(new Date(stamp))),1);
+  }
+});
+test('an open calendar rechecks existing selections only when the catalog day changes', () => {
+  let day='2026-12-31',calls=0;
+  const filters={q:'CJ',state:'TX',dates:'all'};
+  const cards=[{date:'2026-12-31',search:'CJ',state:'TX'},
+    {date:'2027-01-02',search:'CJ',state:'TX'},
+    {date:'2027-01-02',search:'CJ',state:'FL'}];
+  let visible=cards.filter(card=>matches(card,filters,day));
+  const refresh=refreshOnNewDay(()=>{ calls++; visible=cards.filter(card=>matches(card,filters,day)); },day);
+  refresh(day);assert.equal(calls,0);assert.equal(visible.length,2);
+  day='2027-01-01';refresh(day);assert.equal(calls,1);assert.equal(visible.length,1);
+  assert.equal(visible[0].state,'TX');assert.deepEqual(filters,{q:'CJ',state:'TX',dates:'all'});
+  refresh(day);assert.equal(calls,1);
+});
 test('cached homepage, directory and profile count the same unique current published shows', () => {
   const {artistSchedule, today} = require('../assets/fan-engagement.js');
   const {catalogArtistShows, catalogToday} = require('../assets/artist-filter-fix.js');

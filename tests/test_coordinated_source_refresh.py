@@ -44,8 +44,9 @@ class CoordinatedSourceRefreshTests(unittest.TestCase):
         self.write(refresh.CACHE, [show()])
         self.write(refresh.STATUS, {"old": "status"})
         self.addCleanup(patch.stopall)
-        patch.object(refresh, "today_cutoff", return_value="2026-11-10").start()
-        patch.dict(refresh.os.environ, {"GITHUB_RUN_ID": "123", "GITHUB_RUN_ATTEMPT": "1"}).start()
+        # The wrapper and the real merger must use the same scenario day.
+        patch.dict(refresh.os.environ, {"KC_CATALOG_DAY": "2026-11-10",
+                   "GITHUB_RUN_ID": "123", "GITHUB_RUN_ATTEMPT": "1"}).start()
 
     def write(self, name, value):
         refresh.save(self.root / name, value)

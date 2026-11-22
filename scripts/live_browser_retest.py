@@ -4,12 +4,73 @@ import json
 import os
 from pathlib import Path
 
+ORIGIN = 'https://kingdomcircuit.com'
+PRIMARY_ROUTES = ('/shows/', '/shows/states/', '/shows/cities/', '/artists/', '/festivals/')
+MORE_ROUTES = ('/', '/about-us/', '/submit/', '/shows/this-weekend/', '/shows/this-month/', '/new-shows/')
+PAGE_ROUTES = tuple(dict.fromkeys(('/', *PRIMARY_ROUTES, *MORE_ROUTES, '/artists/kb/')))
+CSS_SELECTOR = 'css selector'
+
+
+def audit_link_group(nav, paths, check, prefix):
+    """Inspect browser resolved URLs and visibility within an opened menu."""
+    links = nav.find_elements(CSS_SELECTOR, 'a[href]')
+    for path in paths:
+        matches = [link for link in links if link.get_attribute('href') == ORIGIN + path]
+        check(f'{prefix} {path}', len(matches) == 1 and matches[0].is_displayed(),
+              f'{len(matches)} matching links; expected {ORIGIN + path}')
+
+
+def audit_navigation(driver, wait, check, width):
+    """Check primary routes and operate the native expandable More menu.
+
+    The date calendars and About page remain required, but now live in More.
+    Check their visibility after opening the menu rather than requiring them
+    to stay visible in the primary navigation bar.
+    """
+    prefix = f'{width}px navigation'
+    primary = driver.find_elements(CSS_SELECTOR, 'nav[aria-label="Primary navigation"]')
+    check(f'{prefix} primary region', len(primary) == 1)
+    if len(primary) == 1:
+        audit_link_group(primary[0], PRIMARY_ROUTES, check, prefix + ' primary')
+    menus = driver.find_elements(CSS_SELECTOR, 'details.kc-location-menu')
+    check(f'{prefix} More menu', len(menus) == 1)
+    if len(menus) != 1:
+        return
+    menu = menus[0]
+    try:
+        summary = menu.find_element(CSS_SELECTOR, 'summary[aria-label="More navigation"]')
+        nav = menu.find_element(CSS_SELECTOR, 'nav[aria-label="More navigation"]')
+        check(f'{prefix} More toggle visible', summary.is_displayed())
+        check(f'{prefix} More initially collapsed', not menu.get_attribute('open') and not nav.is_displayed())
+        if not menu.get_attribute('open'):
+            summary.click()
+        wait.until(lambda d: bool(menu.get_attribute('open')) and nav.is_displayed())
+        check(f'{prefix} More opens', True)
+        audit_link_group(nav, MORE_ROUTES, check, prefix + ' More')
+        summary.click()
+        wait.until(lambda d: not menu.get_attribute('open') and not nav.is_displayed())
+        check(f'{prefix} More closes', True)
+    except Exception as exc:
+        check(f'{prefix} More interaction', False, f'{type(exc).__name__}: {str(exc)[:500]}')
+
+
+def available_state_shortcuts(values, destinations):
+    """Sample offered filter options without requiring bookings in fixed states."""
+    samples = []
+    for value in values:
+        state = destinations.get(value, {})
+        if value and state.get('name') and state.get('href', '').startswith('/shows/'):
+            samples.append((value, state['name'], state['href']))
+        if len(samples) == 2:
+            break
+    return samples
+
 
 def main():
     from selenium import webdriver
     from selenium.webdriver.common.by import By
     from selenium.webdriver.support.ui import WebDriverWait, Select
-    origin = 'https://kingdomcircuit.com'
+    origin = ORIGIN
     output = Path('browser-audit'); output.mkdir(exist_ok=True)
     result = {'runId': os.environ.get('GITHUB_RUN_ID'), 'checks': []}
     def check(name, condition, detail=''):
@@ -24,7 +85,7 @@ def main():
             else: options.add_argument('--window-size=1440,1000')
             driver = webdriver.Chrome(options=options); driver.set_page_load_timeout(45)
             wait = WebDriverWait(driver,30)
-            for route in ('/','/shows/','/artists/','/artists/kb/','/about-us/','/shows/this-weekend/'):
+            for route in PAGE_ROUTES:
                 driver.get(origin+route+'?browser-retest='+str(os.environ.get('GITHUB_RUN_ID','local')))
                 wait.until(lambda d:d.find_elements(By.TAG_NAME,'h1'))
                 metrics=driver.execute_script('return [innerWidth,document.documentElement.scrollWidth,document.body.scrollWidth]')
@@ -32,10 +93,7 @@ def main():
                 check(f'{width}px {route} main heading',len(driver.find_elements(By.TAG_NAME,'h1'))==1)
                 check(f'{width}px {route} production canonical',driver.find_element(By.CSS_SELECTOR,'link[rel="canonical"]').get_attribute('href')==origin+route)
                 if route == '/':
-                    nav=driver.find_element(By.CSS_SELECTOR,'nav[aria-label="Primary navigation"]')
-                    for path in ('/shows/','/shows/this-weekend/','/shows/this-month/','/festivals/','/new-shows/','/artists/','/about-us/'):
-                        links=nav.find_elements(By.CSS_SELECTOR,f'a[href="{path}"]')
-                        check(f'{width}px navigation {path}',len(links)==1 and links[0].is_displayed())
+                    audit_navigation(driver, wait, check, width)
                     check(f'{width}px approved discovery home',bool(driver.find_elements(By.CSS_SELECTOR,'[data-national-home]')))
                     sizes=driver.execute_script('return [...document.querySelectorAll("[data-discovery-show]:not([hidden])")].map(n=>[Math.round(n.getBoundingClientRect().width),Math.round(n.getBoundingClientRect().height)])')
                     check(f'{width}px uniform show cards',not sizes or len(set(map(tuple,sizes)))==1,str(sizes[:4]))
@@ -60,9 +118,13 @@ def main():
                         for summary in driver.find_elements(By.CSS_SELECTOR,'[data-event-filters] details:not([open]) > summary'): summary.click()
                     reset.click(); wait.until(lambda d:len(visible())==baseline)
                     check(f'{width}px reset restores current calendar',True)
-                    for value,name in (('TX','Texas'),('FL','Florida')):
+                    destinations = json.loads(driver.find_element(By.ID, 'kc-state-destinations').get_attribute('textContent'))
+                    shortcuts = available_state_shortcuts(
+                        [option.get_attribute('value') for option in state.options], destinations)
+                    check(f'{width}px state shortcut sample', bool(shortcuts), f'{len(shortcuts)} available destinations')
+                    for value,name,href in shortcuts:
                         state.select_by_value(value)
-                        wait.until(lambda d:d.find_element(By.CSS_SELECTOR,'[data-selected-state]').get_attribute('href')==origin+'/shows/'+name.lower()+'/')
+                        wait.until(lambda d:d.find_element(By.CSS_SELECTOR,'[data-selected-state]').get_attribute('href')==origin+href)
                         check(f'{width}px shortcut follows {name}',name in driver.find_element(By.CSS_SELECTOR,'[data-selected-state]').text)
                 if route == '/artists/kb/':
                     rows=driver.find_elements(By.CSS_SELECTOR,'.kc-rd-show-row')

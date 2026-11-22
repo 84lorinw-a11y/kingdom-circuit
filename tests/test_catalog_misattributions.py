@@ -1,6 +1,7 @@
 import copy
 import datetime as dt
 import json
+import os
 from pathlib import Path
 import sys
 import tempfile
@@ -84,18 +85,13 @@ class CatalogMisattributionTests(unittest.TestCase):
         history = {'events': [{'event': event, 'observedOnOrAfterEventDate': True}
                               for event in (bad, good)]}
 
-        class AfterShowDate(dt.datetime):
-            @classmethod
-            def now(cls, tz=None):
-                return cls(2026, 11, 20, tzinfo=tz)
-
-        with tempfile.TemporaryDirectory() as tmp:
+        with tempfile.TemporaryDirectory() as tmp, \
+                patch.dict(os.environ, {'KC_CATALOG_DAY': '2026-11-20'}):
             root = Path(tmp)
             (root / 'config').mkdir()
             (root / 'event-history.json').write_text(json.dumps(history))
             (root / 'config/artists.json').write_text(json.dumps([{'name': 'Ryan Ellis'}]))
-            with patch.object(archives, 'catalog_date', return_value=AfterShowDate.now().date()):
-                selected, _ = archives.load_events(root)
+            selected, _ = archives.load_events(root)
             self.assertEqual([e['id'] for e in selected], ['official:ryan-valid'])
             self.assertEqual(json.loads((root / 'event-history.json').read_text()), history)
             state = continuity.empty_state()

@@ -1,5 +1,6 @@
 import copy
 import datetime as dt
+import os
 from pathlib import Path
 import sys
 import tempfile
@@ -14,6 +15,10 @@ import catalog_removals as catalog
 
 class URLContinuityTests(unittest.TestCase):
     def setUp(self):
+        # These fixture pages use a November 2026 publication scenario. A
+        # caller's future regression day must not forge future sitemap dates;
+        # the independent real UTC sitemap validator remains enabled.
+        self.enterContext(patch.dict(os.environ, {'KC_CATALOG_DAY': '2026-11-22'}))
         temp = tempfile.TemporaryDirectory(); self.addCleanup(temp.cleanup)
         self.root = Path(temp.name); self.site = self.root / '_site'; self.site.mkdir()
         self.review_file = self.root / 'config/review-held-events.json'

@@ -1,8 +1,10 @@
 import datetime as dt
 import json
+import os
 from pathlib import Path
 import sys
 import unittest
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import add_past_show_archives as archives
@@ -12,6 +14,8 @@ import test_oct7_cancelled_discovery as cancellation
 
 class PostponedEventPreservationTests(unittest.TestCase):
     def setUp(self):
+        self.catalog_day = dt.date(2026, 11, 22)
+        self.enterContext(patch.dict(os.environ, {'KC_CATALOG_DAY': self.catalog_day.isoformat()}))
         self.cancelled = cancellation.October7CancellationGuardTests()
         self.cancelled.setUp()
         self.addCleanup(self.cancelled.doCleanups)
@@ -34,7 +38,7 @@ class PostponedEventPreservationTests(unittest.TestCase):
 
     def test_future_and_past_postponements_are_retained_without_completed_claim(self):
         f = self.fixture
-        today = dt.datetime.now(archives.PACIFIC).date()
+        today = self.catalog_day
         for offset in (3, -1):
             day = (today + dt.timedelta(days=offset)).isoformat()
             event = dict(f.event, id="manual:postponed-fixture", startDate=day, endDate=day,

@@ -1,6 +1,7 @@
 """Canadian bookings must survive discovery refreshes and automated publication."""
 import datetime as dt
 import json
+import os
 from pathlib import Path
 import sys
 import tempfile
@@ -28,6 +29,10 @@ def canadian_show(**changes):
 
 
 class CanadianEventPreservationTests(unittest.TestCase):
+    def setUp(self):
+        self.catalog_day = dt.date(2026, 11, 22)
+        self.enterContext(patch.dict(os.environ, {'KC_CATALOG_DAY': self.catalog_day.isoformat()}))
+
     def test_provider_refresh_owns_canadian_rows_but_not_official_or_cancelled(self):
         for country in ['CA', 'CAN', 'Canada']:
             with self.subTest(country=country):
@@ -124,7 +129,7 @@ class CanadianEventPreservationTests(unittest.TestCase):
             self.assertEqual(before, git(remote, 'rev-parse', 'main').stdout)
 
     def test_completed_canadian_show_is_available_to_public_archive(self):
-        yesterday = (dt.datetime.now(archives.PACIFIC).date()-dt.timedelta(days=1)).isoformat()
+        yesterday = (self.catalog_day-dt.timedelta(days=1)).isoformat()
         event = canadian_show(startDate=yesterday, endDate=yesterday)
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

@@ -29,7 +29,7 @@ SITE_BASE = "/"
 SITE_ORIGIN = "https://kingdomcircuit.com"
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '20261108-artist-counts-1'
+VERSION = '20261122-calendar-counts-1'
 ASSETS = ('national-discovery.css', 'national-discovery.js', 'fan-discovery.css', 'fan-discovery.js')
 WEEKEND_PATH = 'shows/this-weekend/index.html'
 WEEKEND_HREF = SITE_BASE + 'shows/this-weekend/'
@@ -140,6 +140,13 @@ def weekly_inventory(context):
              'html': teaser(r)}
             for r in sorted(context['active'], key=lambda r: r['attrs']['data-date'])
             if feature_eligible(r)]
+
+
+def home_calendar(context):
+    """Count the full published calendar, including shows not featured on home."""
+    return [{'path': r['href'], 'date': r['attrs']['data-date'],
+             'end': r['attrs'].get('data-end-date') or r['attrs']['data-date']}
+            for r in context['active']]
 
 
 def home_selection(context):
@@ -430,8 +437,10 @@ def home_content(text, context):
     options = ''.join(f'<option value="{s["code"] or s["name"]}" data-state-href="{s["href"]}">{escape(s["name"])}</option>' for s in states)
     tiles = ''.join(artist_tile(a) for a in context['artists'])
     inventory = json.dumps(weekly_inventory(context), ensure_ascii=False).replace('<', '\\u003c')
+    calendar = json.dumps(home_calendar(context), ensure_ascii=False).replace('<', '\\u003c')
     out = f'''<div class="kc-discovery-home kc-fan-home" data-national-home data-preview-as-of="{context['as_of']}">
 <script type="application/json" id="kc-weekly-shows">{inventory}</script>
+<script type="application/json" id="kc-home-calendar">{calendar}</script>
 <section class="kc-discovery-hero" aria-label="Find your next show">
 <div class="kc-discovery-intro">{title}
 <p class="kc-discovery-deck">{HOME_SUBTITLE}</p>
@@ -455,7 +464,7 @@ def home_content(text, context):
 <p class="kc-discovery-empty" data-discovery-empty{' hidden' if following else ''}>No featured shows listed for next week yet. <a href="{SITE_BASE}shows/">Explore all shows.</a></p></section>'''
     out += (f'<section class="kc-fan-explore" id="browse-states" aria-label="Browse shows by state">'
             '<h2>Find your next night out</h2><div class="kc-discovery-counts">'
-            f'<a class="kc-discovery-primary" href="{SITE_BASE}shows/">Browse all {len(context["active"])} shows <span aria-hidden="true">↗</span></a>'
+            f'<a class="kc-discovery-primary" href="{SITE_BASE}shows/"><span data-home-show-count>Browse all {len(context["active"])} shows</span> <span aria-hidden="true">↗</span></a>'
             f'<a class="kc-discovery-artist-count" href="{SITE_BASE}artists/"><strong>{context["artist_total"]}</strong> artists <span aria-hidden="true">↗</span></a></div>'
             f'<div class="kc-fan-explore-links"><a href="{SITE_BASE}festivals/">Festivals ↗</a><a href="{WEEKEND_HREF}">This weekend ↗</a><a href="{SITE_BASE}shows/this-month/">This month ↗</a></div>{disclosure}</section>')
     out += (f'<section class="kc-discovery-submit"><div><h2>Know a show we should list?</h2>'
@@ -792,6 +801,8 @@ def verify(live, site, context):
     assert not any(n.has('eyebrow') for n in intro.children), 'Owner removed the homepage tagline'
     counts = home.one(lambda n: n.has('kc-discovery-counts'))
     assert f'Browse all {len(context["active"])} shows' in home.text(counts)
+    schedule = home.one(lambda n: n.attrs.get('id') == 'kc-home-calendar')
+    assert json.loads(home.source[schedule.opening_end:schedule.closing_start]) == home_calendar(context), 'Homepage count must use the full published calendar'
     assert f'{context["artist_total"]} artists' in home.text(counts)
     assert {n.attrs.get('href') for n in counts.children if n.tag == 'a'} == {SITE_BASE + 'shows/', SITE_BASE + 'artists/'}
     search = home.one(lambda n: n.has('kc-discovery-search'))

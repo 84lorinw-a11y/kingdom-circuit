@@ -5,6 +5,7 @@ import sys
 import tempfile
 import datetime as dt
 import json
+import os
 import re
 import unittest
 from unittest.mock import patch
@@ -17,8 +18,12 @@ import add_past_show_archives as past_archives
 
 
 class EventHistoryArchiveTests(unittest.TestCase):
+    def setUp(self):
+        self.catalog_day = dt.date(2026, 11, 22)
+        self.enterContext(patch.dict(os.environ, {'KC_CATALOG_DAY': self.catalog_day.isoformat()}))
+
     def test_cancelled_future_show_is_archived_once_without_marking_it_performed(self) -> None:
-        date = (dt.datetime.now(past_archives.PACIFIC).date() + dt.timedelta(days=3)).isoformat()
+        date = (self.catalog_day + dt.timedelta(days=3)).isoformat()
         event = dict(id="cancelled-rooftop", title="Rooftop concert", startDate=date,
                      city="Washington", state="DC", artists=["Nate Period"],
                      confidence="high", status="cancelled", mergedFromIds=["manual:cancelled-rooftop"])
@@ -31,7 +36,7 @@ class EventHistoryArchiveTests(unittest.TestCase):
             selected, _ = past_archives.load_events(root)
             self.assertEqual([event["id"]], [e["id"] for e in selected])
             self.assertEqual(records, json.loads((root / "event-history.json").read_text())["events"])
-            for day in (date, (dt.datetime.now(past_archives.PACIFIC).date() - dt.timedelta(days=1)).isoformat()):
+            for day in (date, (self.catalog_day - dt.timedelta(days=1)).isoformat()):
                 page = past_archives.past_page(root, dict(event, startDate=day), set())
                 self.assertIn('https://schema.org/EventCancelled', page)
                 self.assertNotIn('EventCompleted', page)
@@ -115,7 +120,7 @@ class EventHistoryArchiveTests(unittest.TestCase):
         self.assertEqual(["Hulvey", "indie tribe.", "Kijan Boone"], repaired["artists"])
 
     def test_past_archive_adds_yesterday_on_the_next_day(self) -> None:
-        today = dt.datetime.now(past_archives.PACIFIC).date()
+        today = self.catalog_day
         events = []
         for days_ago in (0, 1):
             event_date = today - dt.timedelta(days=days_ago)

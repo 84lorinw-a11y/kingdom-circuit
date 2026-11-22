@@ -491,6 +491,22 @@ class NationalDiscoveryTests(unittest.TestCase):
         for label in ['Invite Only', 'School', 'Cancelled', 'Sold out', 'Details pending', 'Venue to be announced']:
             self.assertFalse(discovery.feature_eligible({**record, 'name':label}))
 
+    def test_home_count_schedule_includes_nonfeatured_and_ongoing_shows(self):
+        active = []
+        for name, start, end in [('Concert', '2026-11-22', ''),
+                                 ('Invite Only', '2026-11-22', ''),
+                                 ('Details pending', '2026-11-23', ''),
+                                 ('School', '2026-11-21', '2026-11-24')]:
+            active.append({'name': name, 'meta': {}, 'badges': '',
+                           'href': '/event/' + name.lower().replace(' ', '-') + '/',
+                           'attrs': {'data-date': start, 'data-end-date': end}})
+        schedule = discovery.home_calendar({'active': active})
+        self.assertEqual(len(schedule), 4)
+        self.assertEqual([row['path'] for row in schedule], [row['href'] for row in active])
+        self.assertEqual(schedule[-1]['end'], '2026-11-24')
+        self.assertEqual(schedule[0]['end'], '2026-11-22')
+        self.assertEqual(sum(discovery.feature_eligible(row) for row in active), 1)
+
     def test_new_sitemap_entry_keeps_all_existing_urls_and_has_no_fake_lastmod(self):
         old = b'<urlset><url><loc>original</loc></url></urlset>'
         new = discovery.transform(Path('sitemap.xml'), old, {})
@@ -520,6 +536,8 @@ class NationalDiscoveryTests(unittest.TestCase):
         self.assertNotIn('Why we exist', home)
         self.assertIn('361</strong> artists', home)
         self.assertIn('Browse all 0 shows', home)
+        self.assertIn('<span data-home-show-count>Browse all 0 shows</span>', home)
+        self.assertIn('<script type="application/json" id="kc-home-calendar">[]</script>', home)
         self.assertIn('data-discovery-empty>', home)
         self.assertIn('No featured shows listed for next week yet.', home)
         self.assertIn('October 19–25, 2026 · Nationwide', home)

@@ -172,6 +172,10 @@ jobs:
           node --test tests/artist-intake-submit.test.cjs tests/artist-engagement.test.cjs
           node --test tests/mobile-discovery.test.cjs tests/national-discovery.test.cjs tests/fan-discovery.test.cjs tests/artist-directory-filter.test.cjs
 
+      - name: Verify tests across future calendar dates
+        timeout-minutes: 25
+        run: python scripts/verify_future_catalog_tests.py --report "$RUNNER_TEMP/future-catalog-tests.json"
+
       - name: Add priority artist fallback calendars
         if: steps.refresh-mode.outputs.discovery == 'true'
         run: python scripts/apply_priority_source_fallbacks.py
@@ -916,6 +920,8 @@ jobs:
             _site/assets/optimized/manifest.json
             ${{ env.KC_BUILD_CACHE_DIR }}/image-cache-report.json
             ${{ runner.temp }}/discovery-receipt.json
+            ${{ runner.temp }}/future-catalog-tests.json
+            ${{ runner.temp }}/future-catalog-tests-*.log
           if-no-files-found: ignore
           retention-days: 14
 

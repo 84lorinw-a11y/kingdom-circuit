@@ -80,7 +80,32 @@
       shelf.dispatchEvent(new Event('scroll'));
     }
   }
-  if (typeof module !== 'undefined' && module.exports) module.exports = {normalize, searchMatch, addDays, weekEnd, dateMatch, matches, artistMatches, profileLink, calendarScope, completeCalendarURL, syncStateShortcut, todayString, artistCount, refreshArtistDiscovery};
+  function homeShowCount(inline, catalog, day = todayString()) {
+    const valid = rows => Array.isArray(rows) && rows.every(show => show &&
+      typeof show.path === 'string' && show.path.startsWith('/event/') &&
+      /^\d{4}-\d{2}-\d{2}$/.test(show.date) &&
+      (!show.end || (/^\d{4}-\d{2}-\d{2}$/.test(show.end) && show.end >= show.date)));
+    const shows = valid(catalog?.shows) ? catalog.shows : valid(inline) ? inline : null;
+    // Invalid or unavailable data must not turn a known static total into zero.
+    if (!shows) return null;
+    return new Set(shows.filter(show => (show.end || show.date) >= day).map(show => show.path)).size;
+  }
+  function refreshHomeCount(doc, inline, catalog, day = todayString()) {
+    const label = doc.querySelector('[data-home-show-count]');
+    if (!label) return;
+    const count = homeShowCount(inline, catalog, day);
+    if (count !== null) label.textContent = `Browse all ${count} show${count === 1 ? '' : 's'}`;
+  }
+  function refreshOnNewDay(refresh, initialDay = todayString()) {
+    let lastDay = initialDay;
+    return (day = todayString()) => {
+      if (day === lastDay) return;
+      // Keep the existing controls and URL. Only recalculate their current results.
+      if (refresh) refresh();
+      lastDay = day;
+    };
+  }
+  if (typeof module !== 'undefined' && module.exports) module.exports = {normalize, searchMatch, addDays, weekEnd, dateMatch, matches, artistMatches, profileLink, calendarScope, completeCalendarURL, syncStateShortcut, todayString, artistCount, refreshArtistDiscovery, homeShowCount, refreshHomeCount, refreshOnNewDay};
   if (typeof document === 'undefined') return;
 
   const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; };
@@ -261,12 +286,20 @@
     // The production calendar can finish rendering after initial HTML hydration.
     new MutationObserver(() => apply(false)).observe(grid,{childList:true});
     apply(false);
+    return () => apply(false);
   }
   function init() {
-    shelves(); homeFinder(); calendar();
+    shelves(); homeFinder();
+    const refreshCalendar = refreshOnNewDay(calendar());
     const artists = JSON.parse(document.querySelector('#kc-fan-artists')?.textContent || '[]');
-    if (!artists.length) return;
-    const refresh = () => refreshArtistDiscovery(document, artists, window.KCFanCatalog);
+    let inline = null;
+    try { inline = JSON.parse(document.querySelector('#kc-home-calendar')?.textContent || 'null'); } catch (_) { /* Keep static copy. */ }
+    const refresh = () => {
+      const day = todayString();
+      refreshCalendar(day);
+      refreshHomeCount(document, inline, window.KCFanCatalog, day);
+      refreshArtistDiscovery(document, artists, window.KCFanCatalog, day);
+    };
     document.addEventListener('kc:catalog-updated', refresh);
     document.addEventListener('visibilitychange', () => { if (!document.hidden) refresh(); });
     window.addEventListener('pageshow', refresh);
