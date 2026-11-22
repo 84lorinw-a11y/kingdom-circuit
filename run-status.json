@@ -1,10 +1,10 @@
 {
   "status": "warning",
   "collectorVersion": 8,
-  "lastAttempt": "2026-11-21T14:04:54Z",
-  "lastSuccessfulUpdate": "2026-11-21T14:04:54Z",
-  "eventsPublished": 205,
-  "candidatesCollected": 387,
+  "lastAttempt": "2026-11-22T12:43:46Z",
+  "lastSuccessfulUpdate": "2026-11-22T12:43:46Z",
+  "eventsPublished": 189,
+  "candidatesCollected": 397,
   "artistsConfigured": 447,
   "artistsByPriority": {
     "priority1": 115,
@@ -15,12 +15,12 @@
   "socialSearchArtistsEnabled": 402,
   "freeTextAliasesProtected": 313,
   "artistsMatchedOnTicketmaster": 61,
-  "officialEventsFound": 34,
+  "officialEventsFound": 30,
   "ticketmasterEventsFound": 10,
   "instagramArtistsConfigured": 402,
   "instagramQueriesRun": 404,
   "instagramQueriesAttempted": 402,
-  "instagramResultsFound": 1,
+  "instagramResultsFound": 0,
   "instagramEventsFound": 0,
   "instagramCandidates": [
     {
@@ -46,16 +46,6 @@
       "state": "",
       "score": 2,
       "reason": "the known post was not publicly indexed with enough event details"
-    },
-    {
-      "url": "https://www.instagram.com/p/DQVCOiZkkaQ/",
-      "title": "Entertainment Tonight | Jennifer Lawrence is keeping it real ...",
-      "artists": [],
-      "date": "",
-      "city": "",
-      "state": "",
-      "score": 0,
-      "reason": "official artist ownership was not clear; live-music language was missing; a future date was not explicit; a U.S. city/state was not explicit; no tracked artist was confidently matched"
     }
   ],
   "instagramMode": "free priority-tier public-index scan; Stories, private posts, and unindexed posts are not visible",
@@ -201,12 +191,12 @@
     {
       "name": "Reach Records consolidated calendar",
       "status": "ok",
-      "eventsFound": 8
+      "eventsFound": 7
     },
     {
       "name": "Reach Records - 1K Phew",
       "status": "ok",
-      "eventsFound": 4
+      "eventsFound": 3
     },
     {
       "name": "Reach Records - Anike",
@@ -416,7 +406,7 @@
     {
       "name": "ChristianHits consolidated show feed",
       "status": "ok",
-      "eventsFound": 3
+      "eventsFound": 2
     },
     {
       "name": "ChristianHits festival directory",
@@ -576,7 +566,7 @@
     {
       "name": "Kaden Jordan official tour / Songkick",
       "status": "ok",
-      "eventsFound": 5
+      "eventsFound": 4
     },
     {
       "name": "FLAME Plano official registration",
@@ -636,5 +626,5 @@
   "artistWebsiteEventsFound": 0,
   "artistWebsiteSeedEvents": 20,
   "artistWebsiteEventsAdded": 0,
-  "artistWebsiteMergeAt": "2026-11-22T02:12:20Z"
+  "artistWebsiteMergeAt": "2026-11-22T13:08:50Z"
 }
