@@ -17661,25 +17661,29 @@
       "sourceIds": [],
       "event": {
         "id": "bandsintown:109183179",
-        "title": "Issac Mansfield at THE GALLERY AT YAM",
+        "title": "From the Dust",
         "startDate": "2027-02-06",
         "startTime": "19:00",
-        "timezone": "",
+        "timezone": "America/Chicago",
         "city": "Dallas",
         "state": "TX",
         "country": "US",
-        "venue": "THE GALLERY AT YAM",
-        "address": "9850 Walnut Hill Ln suite 427",
+        "venue": "The Gallery at YAM",
+        "address": "9850 Walnut Hill Ln, Suite 427",
+        "postalCode": "75238",
         "artists": [
-          "Issac Mansfield"
+          "Issac Mansfield",
+          "KEVON"
         ],
         "headliner": "Issac Mansfield",
         "status": "scheduled",
         "eventType": "concert",
         "officialUrl": "https://www.bandsintown.com/e/109183179?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
         "ticketUrl": "https://www.bandsintown.com/t/109183179?app_id=js_kingdomcircuit.com&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-        "image": "assets/artists/issac-mansfield-saved.webp",
+        "image": "assets/events/from-the-dust-dallas-kevon-2027-02-06.jpg",
+        "imageType": "event_artwork",
         "confidence": "medium",
+        "publicDescription": "Issac Mansfield brings From the Dust to Dallas for a night of Christian hip hop and storytelling. KEVON opens the show.",
         "mergedFromIds": []
       }
     },
@@ -18852,6 +18856,38 @@
         "publicDescription": "Deanté Hitchcock brings The Junkies in the Sun Tour to Charlotte. Juby DaGod and Christian hip hop artist Joston Cooper open the show.",
         "mergedFromIds": []
       }
+    },
+    "manual:let-jesus-reign-worship-experience-bedford-2026-12-12": {
+      "path": "/event/let-jesus-reign-worship-experience-2026-12-12-bedford-9e0079/",
+      "sourceIds": [],
+      "event": {
+        "id": "manual:let-jesus-reign-worship-experience-bedford-2026-12-12",
+        "title": "Let Jesus Reign Worship Experience",
+        "startDate": "2026-12-12",
+        "endDate": "2026-12-12",
+        "startTime": "19:00",
+        "endTime": "22:00",
+        "timezone": "America/Chicago",
+        "city": "Bedford",
+        "state": "TX",
+        "country": "US",
+        "venue": "DFW New Beginnings Church",
+        "address": "2000 Forum Parkway",
+        "postalCode": "76021",
+        "artists": [
+          "ASAP Preach",
+          "Epho"
+        ],
+        "status": "scheduled",
+        "eventType": "concert",
+        "officialUrl": "https://www.eventbrite.com/e/asap-preach-epho-let-jesus-reign-christian-concert-tickets-2005214988008",
+        "ticketUrl": "https://www.eventbrite.com/e/asap-preach-epho-let-jesus-reign-christian-concert-tickets-2005214988008",
+        "image": "assets/events/let-jesus-reign-bedford-2026-12-12-original.jpg",
+        "imageType": "event_artwork",
+        "confidence": "high",
+        "publicDescription": "ASAP Preach and Epho perform live at DFW New Beginnings Church. Lifestyle With Jesus Ministries and New Beginnings Young Adults present an evening of Christian rap, R&B, praise and worship.",
+        "mergedFromIds": []
+      }
     }
   },
   "redirects": {
@@ -18993,11 +19029,12 @@
     "/event/issac-mansfield-at-the-gallery-at-yam-2027-02-06-north-east-dallas-7fb117/": "/event/issac-mansfield-at-the-gallery-at-yam-2027-02-06-dallas-7fb117/",
     "/event/pastor-mike-jr-at-wl-jack-howard-theatre-2026-11-14-monroe-9ea17f/": "/event/pastor-mike-jr-at-wl-jack-howard-theatre-2027-01-08-monroe-1835da/",
     "/event/pastor-mike-jr-at-wl-jack-howard-theatre-2026-11-21-monroe-61fe65/": "/event/pastor-mike-jr-at-wl-jack-howard-theatre-2027-01-08-monroe-1835da/",
-    "/event/hulvey-live-at-first-financial-center-2026-12-29-cincinnati-e3eb5e/": "/event/hulvey-live-at-duke-energy-convention-center-2026-12-29-cincinnati-e3eb5e/"
+    "/event/hulvey-live-at-first-financial-center-2026-12-29-cincinnati-e3eb5e/": "/event/hulvey-live-at-duke-energy-convention-center-2026-12-29-cincinnati-e3eb5e/",
+    "/event/from-the-dust-2027-02-06-dallas-7fb117/": "/event/issac-mansfield-at-the-gallery-at-yam-2027-02-06-dallas-7fb117/"
   },
   "pages": {
     "/artists/180mindset/": {
-      "fingerprint": "4b3621d1b5f1501646dc296cb803500c3c230250dcf666c23f98f592293ea882",
+      "fingerprint": "c806c2ecec33c6cac3ae73d9b1acdf816c6f0f76fcf91b32d2e32b2949b7a261",
       "lastmod": "2026-11-23",
       "title": "180MINDSET Concerts & Tour Dates | Kingdom Circuit",
       "heading": "180MINDSET",
@@ -19007,7 +19044,7 @@
       ]
     },
     "/about-us/": {
-      "fingerprint": "009cb0c60ed5ee666f2195ff7268f742b6ec860e31dbb713ea746e4cee654c47",
+      "fingerprint": "351e6b8b80a8069de5b6d1705a891062aa116c01d9c294f31f58aaffbda04baf",
       "lastmod": "2026-11-23",
       "title": "About Us | Kingdom Circuit",
       "heading": "About Us",
@@ -19040,7 +19077,7 @@
       ]
     },
     "/": {
-      "fingerprint": "3134c555165aaa953659f562f1d35b965bf1d84cf5b45a4ea490c0ecced33db6",
+      "fingerprint": "30aff617b276e98e6075213c77b9d23e895390714f17717e8bbacddabc181499",
       "lastmod": "2026-11-23",
       "title": "Christian Hip-Hop Shows & Festivals | Kingdom Circuit",
       "heading": "Find CHH Shows Near You!",
@@ -19094,7 +19131,7 @@
       ]
     },
     "/artists/": {
-      "fingerprint": "051007699fa3f22bf96c026de81faeaf0e623267910204170da13d4b6d8d0e0d",
+      "fingerprint": "0f01a2398a784ac1215a7e264807dcd00a0e997a66fed0090d52024f32dac89f",
       "lastmod": "2026-11-23",
       "title": "Christian Hip-Hop Artists, Rappers & Concerts | Kingdom Circuit",
       "heading": "Christian Hip-Hop Artists",
@@ -19130,7 +19167,7 @@
       ]
     },
     "/artists/350/": {
-      "fingerprint": "2ff0ac42aaba9f023ca1be53dcfe014387b90e58578b279450a4b7b60d3f8d60",
+      "fingerprint": "42a5b2ad2bff6e22d6fbea9597fd1fcde8d522a6da5e545f25f2984a1a3be8c4",
       "lastmod": "2026-11-23",
       "title": "350 Concerts & Tour Dates | Kingdom Circuit",
       "heading": "350",
@@ -19157,7 +19194,7 @@
       ]
     },
     "/artists/404-chew/": {
-      "fingerprint": "36e7ec8988b7ff78c0c48bb2954de35ea50838c5779d4c4669203a9510c579e6",
+      "fingerprint": "ccbac80fefd40400f6dbb5c8cefc183382551f9c674cc8a03f362b2b60d77cb1",
       "lastmod": "2026-11-23",
       "title": "404 Chew Concerts & Tour Dates | Kingdom Circuit",
       "heading": "404 Chew",
@@ -19189,7 +19226,7 @@
       ]
     },
     "/artists/626authentic/": {
-      "fingerprint": "3f3d1cc636e5d7d46692d3201b2cd0d9f3df6bafe63a99fc3be206d33d55e71a",
+      "fingerprint": "1cb0ecc12b15607d71eee4fd4d7c956207f76d50b0e9b9000cd4f5bab3969fa1",
       "lastmod": "2026-11-23",
       "title": "626authentic Concerts & Tour Dates | Kingdom Circuit",
       "heading": "626authentic",
@@ -19332,14 +19369,14 @@
       ]
     },
     "/artists/a-i-the-anomaly/": {
-      "fingerprint": "318389934a57dd6d039d7d66b77f5e9509b9b066bc07ad12846d37d08a1a6714",
+      "fingerprint": "30b313c7726c2e0c9a06fdb9a2e40052de0858c53dc208fa39ddc0b242980668",
       "lastmod": "2026-11-23",
       "title": "A.I. The Anomaly Concerts & Tour Dates | Kingdom Circuit",
       "heading": "A.I. The Anomaly",
       "eventPaths": []
     },
     "/artists/a3/": {
-      "fingerprint": "904c1af1905e7ecb5a7bce61a534cec433f7aff52b05ca7153619ef070471f68",
+      "fingerprint": "967247244d5d447fe69cc259ee3ace8bbc5a4100bd07187600f2d4dfd8778b83",
       "lastmod": "2026-11-23",
       "title": "A3 Concerts & Tour Dates | Kingdom Circuit",
       "heading": "A3",
@@ -19348,7 +19385,7 @@
       ]
     },
     "/artists/aaron-cole/": {
-      "fingerprint": "c84f0ac58cb8c2d5b6da45fdf23ff6dc4df67a28b1ca652e97d98d23db9c3ff4",
+      "fingerprint": "9c24daa247639b7c1e327f069665688d3a76228644afc3e9c825a40b79748640",
       "lastmod": "2026-11-23",
       "title": "Aaron Cole Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Aaron Cole",
@@ -19376,7 +19413,7 @@
       ]
     },
     "/artists/aasha-marie/": {
-      "fingerprint": "d27bfc14c0201794b6dcff97ce8d4eb4815f9254a423c83f8667e21d262d5610",
+      "fingerprint": "50097c3f550f9ede54c6e3a281877e3b324d221f491d67a954d32c14fbad86d8",
       "lastmod": "2026-11-23",
       "title": "Aasha Marie Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Aasha Marie",
@@ -19385,7 +19422,7 @@
       ]
     },
     "/artists/adriel-cruz/": {
-      "fingerprint": "ca0b28b2abe5f0e87971cf58ae5eb22f2f3a3da909153d78b16646f7ce76afa0",
+      "fingerprint": "5ab0b966ff66c6f56216ba2813c1466f3a9196c47241384d4ffea18bddc71dda",
       "lastmod": "2026-11-23",
       "title": "Adriel Cruz Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Adriel Cruz",
@@ -19414,7 +19451,7 @@
       ]
     },
     "/artists/afeni/": {
-      "fingerprint": "1597a628b7de981625db84fb49d961cddd1c149c26a6b390818a7af7d6d60891",
+      "fingerprint": "a6fccf344d10a243311860a0e3eeca7391ec763717e5db81d50dda1e6fc938d2",
       "lastmod": "2026-11-23",
       "title": "Afeni Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Afeni",
@@ -19423,7 +19460,7 @@
       ]
     },
     "/artists/aftrthght/": {
-      "fingerprint": "d8bade6c886313a4b69e6443393bed4e0f4c116c87231a4a1ce399f8f458b2f3",
+      "fingerprint": "07b0aab98a429906a8ba83083a96625807f1a3f874a53a6ab6017004653317bd",
       "lastmod": "2026-11-23",
       "title": "aftrthght Concerts & Tour Dates | Kingdom Circuit",
       "heading": "aftrthght",
@@ -19445,7 +19482,7 @@
       ]
     },
     "/artists/aha-gazelle/": {
-      "fingerprint": "91194e60253d11548408c4c141226846187481c1d83e5d7bdaf0bc1e7bf519bf",
+      "fingerprint": "670259aa9bd29484704fb5c5863c05cabf39a3ce93e5fee9e5f3c1065ba6d16c",
       "lastmod": "2026-11-23",
       "title": "Aha Gazelle Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Aha Gazelle",
@@ -19464,7 +19501,7 @@
       ]
     },
     "/artists/aklesso/": {
-      "fingerprint": "aa908d4bb33b65925a9ae73ebac5e0a77c331cd57f81ce1000eb54267f6f0725",
+      "fingerprint": "ccf87518b878c728cf1c06b0cce23347f5858b561b57a8476bb15d2c42e3b003",
       "lastmod": "2026-11-23",
       "title": "Aklesso Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Aklesso",
@@ -19552,7 +19589,7 @@
       ]
     },
     "/artists/alex-zurdo/": {
-      "fingerprint": "9bd0afbac8041968235b58be8d6ddf4dc490e6a64d7d710c1d2808980aafcf9a",
+      "fingerprint": "8a04350d092720888c48e58f46417f58b1fe9d9e6234dee30ba3f1149a38305e",
       "lastmod": "2026-11-23",
       "title": "Alex Zurdo Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Alex Zurdo",
@@ -19572,7 +19609,7 @@
       ]
     },
     "/artists/alexus-snow/": {
-      "fingerprint": "5e6a78330a3bd28eb1ddc882974845ad5c4f7e78b1cd337f5950dedaac9647c1",
+      "fingerprint": "978fd9d7fde2063a7d27dd2ced643831bec98a20189d7ba2325bcfc7b9f25786",
       "lastmod": "2026-11-23",
       "title": "Alexus Snow Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Alexus Snow",
@@ -19581,7 +19618,7 @@
       ]
     },
     "/artists/ally-minju/": {
-      "fingerprint": "1b7b5408f5af24b8bc465bbfda6779e75ae88e7a00b8893465aaa6f0357e6611",
+      "fingerprint": "a5c2655cd1231e7a15a350c5e3cd97025329a210b0c17ed437cd191bf8a46765",
       "lastmod": "2026-11-23",
       "title": "Ally Minju Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Ally Minju",
@@ -19642,7 +19679,7 @@
       ]
     },
     "/artists/amos-salem/": {
-      "fingerprint": "722be21d50d19402265bc472fe12bf012b4e88c04e7727212c3504d132f294ef",
+      "fingerprint": "bded28804052a38a570fbd97c517deb34a19ec71ed17f1781c5993a7d4897f2a",
       "lastmod": "2026-11-23",
       "title": "Amos Salem Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Amos Salem",
@@ -19887,7 +19924,7 @@
       ]
     },
     "/artists/anike/": {
-      "fingerprint": "41bed9f438ff84358e2c4786173f961fedbef79758d054b7b86cf47263fad4c3",
+      "fingerprint": "0c58de20dd0d7a0b4b33f35364fa99142c437a1bf337f450f9ab5d73db04460c",
       "lastmod": "2026-11-23",
       "title": "Anike Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Anike",
@@ -19932,21 +19969,21 @@
       ]
     },
     "/artists/applejaxx/": {
-      "fingerprint": "4db47eb68874869e7eed03ee03c6ef1b1f822e663c63365d1e3b3359e8a82ccf",
+      "fingerprint": "317cfafc3004d47fd0081ec417e524e20750a94fdb9175b6bc43b2ea58b0cdf6",
       "lastmod": "2026-11-23",
       "title": "Applejaxx Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Applejaxx",
       "eventPaths": []
     },
     "/artists/ariel-kelly/": {
-      "fingerprint": "adc6efcb68bea7636185d5861ddb383562c53697733d499ae8cae48530eb5770",
+      "fingerprint": "b5d4bb19a2d5a002899ed0ae400d045fa6d53462517c215ed2c8f62747a89831",
       "lastmod": "2026-11-23",
       "title": "Ariel Kelly Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Ariel Kelly",
       "eventPaths": []
     },
     "/artists/arize/": {
-      "fingerprint": "7c1f671ecbfe159ce5043c9120ca2ccd8222c7a2180e63fd79b6d7bc8671cfbb",
+      "fingerprint": "f4afede135538d4278542778f4cb118c7642a3261db7d5cd146e0ff9056aac75",
       "lastmod": "2026-11-23",
       "title": "Arize Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Arize",
@@ -19955,15 +19992,16 @@
       ]
     },
     "/artists/asap-preach/": {
-      "fingerprint": "62e063a815a32ba1d4b9d12f0562948292bffd3ef912657df380ade643b6ee39",
+      "fingerprint": "c6272a9fdd9e1101cc7126fb1576d8c62ef24dfda6bccb368d99eb9b0aa49d07",
       "lastmod": "2026-11-23",
-      "title": "ASAP Preach Concerts & Tour Dates | Kingdom Circuit",
+      "title": "ASAP Preach Concerts & Tour Dates 2026 | Kingdom Circuit",
       "heading": "ASAP Preach",
       "eventPaths": [
         "/event/celebrate-recovery-14-year-anniversary-2026-10-13-thomasville-0175f6/",
         "/event/faith-jam-2026-2026-09-26-sparta-4411b1/",
         "/event/hallowed-be-thy-name-2026-10-31-englewood-a90d67/",
         "/event/hope-fest-2026-2026-08-22-daytona-beach-ac6572/",
+        "/event/let-jesus-reign-worship-experience-2026-12-12-bedford-9e0079/",
         "/event/revival-nights-asap-preach-and-dray-day-ministries-2026-11-21-hilliard-884fb3/"
       ]
     },
@@ -19986,7 +20024,7 @@
       ]
     },
     "/artists/ayomilly/": {
-      "fingerprint": "f511517545d8eb2d7e76b06eee7212dc17c36f103aaa7f31360650d28decd9dd",
+      "fingerprint": "6dd14bcd8cdf6b0ab2bd1e8326a1cb258ce9c74713c091fbdf5b76f9124de2d7",
       "lastmod": "2026-11-23",
       "title": "Ayomilly Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Ayomilly",
@@ -20007,7 +20045,7 @@
       ]
     },
     "/artists/b-cody-shields/": {
-      "fingerprint": "6dd18225c1ed38f3ad8ac61387f9ca77e2f03e97a3aa7b81f428cc8111d8408f",
+      "fingerprint": "27b97a2e02dc3582b7e7c6ad2a993bb7bb071e9b83dd393fb138ca8b21eed687",
       "lastmod": "2026-11-23",
       "title": "B. Cody Shields Concerts & Tour Dates | Kingdom Circuit",
       "heading": "B. Cody Shields",
@@ -20022,14 +20060,14 @@
       ]
     },
     "/artists/b-cooper/": {
-      "fingerprint": "d7edde4fc3252211bcef5d6a47c31b3a5415e21369b1ffdb58a4b6cf265ee9d4",
+      "fingerprint": "170cace6f5dc8575115d842a428c5d9202619191085f10c5a580073068da6d13",
       "lastmod": "2026-11-23",
       "title": "B. Cooper Concerts & Tour Dates | Kingdom Circuit",
       "heading": "B. Cooper",
       "eventPaths": []
     },
     "/artists/b-e-r-i-d-o-x/": {
-      "fingerprint": "60ee82970eea582d032c9b22bea596978bf8ffa50299492d163b9be630669673",
+      "fingerprint": "ae79dc53ab612b9a4c4393053f492f3ab592b8f7e7437ae578840f7ed2db5457",
       "lastmod": "2026-11-23",
       "title": "B.E.R.I.D.O.X. Concerts & Tour Dates | Kingdom Circuit",
       "heading": "B.E.R.I.D.O.X.",
@@ -20057,7 +20095,7 @@
       ]
     },
     "/artists/b4l-lil-don/": {
-      "fingerprint": "af20e43a6c1421e3a65596e8da2816760a0a0315f28688d03531f8f7794b2192",
+      "fingerprint": "28219c7a1c7d553596c5773028ee5f8f9939e04f854dc7493bda033de1f7c8f5",
       "lastmod": "2026-11-23",
       "title": "B4L Lil Don Concerts & Tour Dates | Kingdom Circuit",
       "heading": "B4L Lil Don",
@@ -20066,14 +20104,14 @@
       ]
     },
     "/artists/battz/": {
-      "fingerprint": "8092105eaf292372fd364890bf124e5fe5a18d230f3f44e401624beafd8b2b24",
+      "fingerprint": "f82b4852a96146100adc74292506ca98d03150ddc81070743719ba23204790a6",
       "lastmod": "2026-11-23",
       "title": "Battz Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Battz",
       "eventPaths": []
     },
     "/artists/believin-stephen/": {
-      "fingerprint": "267db439767803e2db45f2d7cd3a1c76c6579f1e56b13a75b7d3210101191d3e",
+      "fingerprint": "6c159c9cefa14f40675a35e32a0fb7a2a2e6377f83e1bb63251fd1310c7f5e50",
       "lastmod": "2026-11-23",
       "title": "Believin Stephen Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Believin Stephen",
@@ -20103,7 +20141,7 @@
       ]
     },
     "/artists/big-lek/": {
-      "fingerprint": "040e85481fd52850e6e477ef454b3fcf555cb048ba0b1623e4e35bb34d756c3e",
+      "fingerprint": "0d0b7fe90f0a7ec40f051bdc7e54e8a70fc44d3136d63b02b188c73261229f59",
       "lastmod": "2026-11-23",
       "title": "Big Lek Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Big Lek",
@@ -20113,7 +20151,7 @@
       ]
     },
     "/artists/big-rev/": {
-      "fingerprint": "bf31c3a3626d44c8ae0f49be3a02f5521b1bae326640c8d5b86af206080a5e40",
+      "fingerprint": "d7e8e96aa32cc1575d2fc7b51a38a324e781383fb4ced3200d754a996b8e21ef",
       "lastmod": "2026-11-23",
       "title": "Big Rev. Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Big Rev.",
@@ -20144,21 +20182,21 @@
       ]
     },
     "/artists/bill-b/": {
-      "fingerprint": "be659d88b76325be4d14050054b40d32974b40f6ec8d5525d356c1583741e35c",
+      "fingerprint": "87fa469c310b10c4368717276f98902d2b3f60f33cd7efeaad23467f057924a2",
       "lastmod": "2026-11-23",
       "title": "Bill B. Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Bill B.",
       "eventPaths": []
     },
     "/artists/bishop-freeze/": {
-      "fingerprint": "cde187cf8c5e9617e10dbb532e8cb75c5cd128761b481e7c9c430e66ce78b6dd",
+      "fingerprint": "ce3f1225c3cc8ce721b9142eacdbc083a2f0613bd6f7adb251bd248b35de8310",
       "lastmod": "2026-11-23",
       "title": "Bishop Freeze Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Bishop Freeze",
       "eventPaths": []
     },
     "/artists/biz-nico/": {
-      "fingerprint": "a27d823e2c6d10af2748336fdef809bc8a7c4da53d8e30626acbada14589f4b3",
+      "fingerprint": "f19c9030dbefbfcc559ce20925c429bf859a9740612acd85b84dab1639f29c2a",
       "lastmod": "2026-11-23",
       "title": "Biz Nico Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Biz Nico",
@@ -20167,7 +20205,7 @@
       ]
     },
     "/artists/bizzle/": {
-      "fingerprint": "8cf586f018efe2af67184fc5f64e881a7050f617da298df50be2bce93437c7a0",
+      "fingerprint": "fd2605c130d5dad24fae6416bfced71865ed951cbbb005d92b11f5493ac9f633",
       "lastmod": "2026-11-23",
       "title": "Bizzle Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Bizzle",
@@ -20252,7 +20290,7 @@
       ]
     },
     "/artists/bobby-real-montgomery/": {
-      "fingerprint": "bc2f5300c8015f159fca7c5c396963f9bbdaadf2757025fb4875ee18fd208e54",
+      "fingerprint": "74385ef4ac284ceeed2a529216bb9a6ee381eadcb97694575439d967360c810d",
       "lastmod": "2026-11-23",
       "title": "Bobby Real Montgomery Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Bobby Real Montgomery",
@@ -20261,7 +20299,7 @@
       ]
     },
     "/artists/braille/": {
-      "fingerprint": "36cb93fa51710dd98c8a32c37ad7676a7785c219bff281db452fb108297c5b68",
+      "fingerprint": "ff5c55e9f846479260837bee391ad14db18391eb00744f2df5e11ba250650fdc",
       "lastmod": "2026-11-23",
       "title": "Braille Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Braille",
@@ -20270,7 +20308,7 @@
       ]
     },
     "/artists/brandon-trejo/": {
-      "fingerprint": "b61dfe28ef83312b52260e86ca92e9b32dcad2f51fa219d67e71e63ede23ecfe",
+      "fingerprint": "f01f87119f8fa8e8167308744b9d152dd6ce2961eb8f752d88f7446366c63f0c",
       "lastmod": "2026-11-23",
       "title": "Brandon Trejo Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Brandon Trejo",
@@ -20280,14 +20318,14 @@
       ]
     },
     "/artists/brandyin/": {
-      "fingerprint": "d62ec821c6ecedc40f5c68c7351aa79dc649cb8cad1600922dd88231de78f8f6",
+      "fingerprint": "c5ec2cb3b3067a4c382637266f4c9fb7a86b2a63781e828e589dec0f3c1a12ef",
       "lastmod": "2026-11-23",
       "title": "BrandyIn Concerts & Tour Dates | Kingdom Circuit",
       "heading": "BrandyIn",
       "eventPaths": []
     },
     "/artists/brea-miles/": {
-      "fingerprint": "c88e542ceca5f9d967b8a0452ed70a76981d4648c63ac1c8e08653f00d7155bf",
+      "fingerprint": "a47c27ebffc230369ccde9e0fef1bcef355dc3b59de1303d577eed60aac72d96",
       "lastmod": "2026-11-23",
       "title": "Brea Miles Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Brea Miles",
@@ -20335,7 +20373,7 @@
       ]
     },
     "/artists/brinson/": {
-      "fingerprint": "0622b7416f57d80692ace5521df631c0d493159ea79fa94db00b92c70b8775c7",
+      "fingerprint": "01384428dc094529d4c61ccb82cc2b24b9381d4312f0983ace6d68f2ea5e289f",
       "lastmod": "2026-11-23",
       "title": "Brinson Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Brinson",
@@ -20344,7 +20382,7 @@
       ]
     },
     "/artists/brother-bo/": {
-      "fingerprint": "62334f0f65866d689598cfe2ed942cc8e798c3e88dd2832ad51f25d246129ef1",
+      "fingerprint": "12469fd887c8eee5913995cd723cb5a6c71a64393da5f056686e1899e4417c70",
       "lastmod": "2026-11-23",
       "title": "Brother Bo Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Brother Bo",
@@ -20377,14 +20415,14 @@
       ]
     },
     "/artists/brother-q/": {
-      "fingerprint": "51b8dce6164338c040dbbddfc2a5b23342a17928fdaa0d072cd59cff86cd0a9d",
+      "fingerprint": "dfa7bd0bad568fa19bc0b151f8cc6e2fba362bb639262adc54d12f727650b01a",
       "lastmod": "2026-11-23",
       "title": "Brother Q Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Brother Q",
       "eventPaths": []
     },
     "/artists/bruh/": {
-      "fingerprint": "58651d8be3b2bb431e831843901c96e7946721e52f7f10626ac213367e0c62fd",
+      "fingerprint": "4318adb6aee697498d7101abcfe4315812602b5448dcb4e414fbd50e61bb1947",
       "lastmod": "2026-11-23",
       "title": "Bruh Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Bruh",
@@ -20416,21 +20454,21 @@
       ]
     },
     "/artists/bumps-inf/": {
-      "fingerprint": "eb076cf19de57170025c4c775885c5006fc800195b51986f75abf4139c5ff8f6",
+      "fingerprint": "b8e902be7db3bc990d1d7749147293473527083a4be5c52f7427c3b9cb7206e6",
       "lastmod": "2026-11-23",
       "title": "Bumps INF Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Bumps INF",
       "eventPaths": []
     },
     "/artists/c-dot/": {
-      "fingerprint": "2c1ff3af13f2c7dc9a51b2fd479b435062988087678e70bd7bcf8dcc9f242121",
+      "fingerprint": "5060ba202719e1416f76bf5e0b19421c191e401c187c48ed394506285b679bf4",
       "lastmod": "2026-11-23",
       "title": "C-DOT Concerts & Tour Dates | Kingdom Circuit",
       "heading": "C-DOT",
       "eventPaths": []
     },
     "/artists/c4-crotona/": {
-      "fingerprint": "b807cf6145d4fb45662b44a11634eb21dcd1d895fd396e20d76e3a98065f9c46",
+      "fingerprint": "18a76006045ee01b41a4b61d1ffe5e474364de7e0c9ace1d9fcdfab5690597b2",
       "lastmod": "2026-11-23",
       "title": "C4 Crotona Concerts & Tour Dates | Kingdom Circuit",
       "heading": "C4 Crotona",
@@ -20449,7 +20487,7 @@
       ]
     },
     "/artists/caleb-gordon/": {
-      "fingerprint": "04c612f445658bf8d1782bf631490755da62447725e172bdde53bfc62247174b",
+      "fingerprint": "391ee336606e8dba2579eab58cfb34cab677321d68bf92fa050383eda2cfeb63",
       "lastmod": "2026-11-23",
       "title": "Caleb Gordon Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Caleb Gordon",
@@ -20465,14 +20503,14 @@
       ]
     },
     "/artists/canon/": {
-      "fingerprint": "651fbe0e28b80f3c6af005e6425e0fe27a625e6a45674c5bf7bbdca8cae3b231",
+      "fingerprint": "db30d65fe5bdf4fa7c4acf6325ebd6d514a3d9414f090c07b8b3e1ca3e34251b",
       "lastmod": "2026-11-23",
       "title": "Canon Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Canon",
       "eventPaths": []
     },
     "/artists/canton-jones/": {
-      "fingerprint": "94151fbd9fecc7e270a421c2d116c93d74a7058fa29c99321ec271fa9c9183f9",
+      "fingerprint": "a7c260320ca538eeee2be2464ee80af0486fe0ca2b93949fdf791c9114ed45b0",
       "lastmod": "2026-11-23",
       "title": "Canton Jones Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Canton Jones",
@@ -20483,21 +20521,21 @@
       ]
     },
     "/artists/carita-cole/": {
-      "fingerprint": "8293ca293ac020d3e7b8badfbda48ca837f3a4e7e60d12b2fb35dcd1b8109970",
+      "fingerprint": "749eea32e4c830c38980a6d92c01a4e7dc213b5680c81e6d56bf8a79646ed01d",
       "lastmod": "2026-11-23",
       "title": "Carita Cole Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Carita Cole",
       "eventPaths": []
     },
     "/artists/carlos-cristo/": {
-      "fingerprint": "b7016202aa7ad73d4af46400f84eb8befd4e90b3917076fba3f87c9f62ee78f1",
+      "fingerprint": "d5bfc4d9e91bb9baa956cd04f0a1eed284916b9f4c0ff3965f3ca7f786166cec",
       "lastmod": "2026-11-23",
       "title": "Carlos Cristo Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Carlos Cristo",
       "eventPaths": []
     },
     "/artists/childlike-cici/": {
-      "fingerprint": "4e0f6d7896283be3f60b9503a609abbe66a4b0b48a94865c35b955a199f9223e",
+      "fingerprint": "8bf71f4deecd797677a7b01608e7248c13c72fd77743b833a8f6ad8f08d3eea0",
       "lastmod": "2026-11-23",
       "title": "Childlike CiCi Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Childlike CiCi",
@@ -20507,7 +20545,7 @@
       ]
     },
     "/artists/chosen-few/": {
-      "fingerprint": "7d087e1f0db85fa5f20222a7976f6d71396ab9f5ed042a927704fdd83af073a3",
+      "fingerprint": "ba35d12c62eae0232afcc28080bd601b5bb0f5219438dcbff6e3bc04e368a400",
       "lastmod": "2026-11-23",
       "title": "Chosen Few Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Chosen Few",
@@ -20518,7 +20556,7 @@
       ]
     },
     "/artists/chris-caro/": {
-      "fingerprint": "8935eb5682b3c0f34b085b121bac1f14231a9b0b4f66a6b2987ed5df457aedc8",
+      "fingerprint": "b3e55864895965acf3580616cc1c0cb1d0cb81d1f2466ff8893360aa5882bb41",
       "lastmod": "2026-11-23",
       "title": "Chris Caro Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Chris Caro",
@@ -20527,7 +20565,7 @@
       ]
     },
     "/artists/christopher-syncere/": {
-      "fingerprint": "a67d77f88e5b4d01601474891897bd172477548d90e88cd0b7d73caa941ab148",
+      "fingerprint": "e52fa1df40991d6f8fd49cdf4ff6c20e6995a58a3429ded649288ec689b5025d",
       "lastmod": "2026-11-23",
       "title": "Christopher Syncere Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Christopher Syncere",
@@ -20536,7 +20574,7 @@
       ]
     },
     "/artists/christrebel/": {
-      "fingerprint": "6b10f07cc3914b94e08a45321d44c6a8379a3f9fc9f632599cb9d68a1df4a6e5",
+      "fingerprint": "eb33119ee20c874eef42e2878e45f72405b180a54f838477ad349ba9b6d8fb16",
       "lastmod": "2026-11-23",
       "title": "christrebel Concerts & Tour Dates | Kingdom Circuit",
       "heading": "christrebel",
@@ -20552,7 +20590,7 @@
       ]
     },
     "/artists/chvrch562/": {
-      "fingerprint": "f500b37aba336205e85b36ad28cf0011eb79d0cb385e253db30afba3d5c64982",
+      "fingerprint": "84a67f8fe16c1151d315c85a39d418b4358ad858b138a8147bccd4c9b9ff14ba",
       "lastmod": "2026-11-23",
       "title": "CHVRCH562 Concerts & Tour Dates | Kingdom Circuit",
       "heading": "CHVRCH562",
@@ -20871,35 +20909,35 @@
       ]
     },
     "/artists/corey-paul/": {
-      "fingerprint": "ff1d16ff9acbe8fc20657cc3e0f6885c4ca959a8a612b8101fb54e1a5de30b98",
+      "fingerprint": "bfd7e48a35bf0fb1173a10bce17d25d82bd817b8db7609f01469a09a2e645d01",
       "lastmod": "2026-11-23",
       "title": "Corey Paul Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Corey Paul",
       "eventPaths": []
     },
     "/artists/corincris/": {
-      "fingerprint": "2bb42ac2ae68f9e6cf5322c52ef3f4e34c5dd94fcdd24878a5721048c87e812b",
+      "fingerprint": "443d4c5a251d145471df56a372e501f0cbff1210f64870a4fff73bf4a1dd4c43",
       "lastmod": "2026-11-23",
       "title": "Corincris Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Corincris",
       "eventPaths": []
     },
     "/artists/crown-one/": {
-      "fingerprint": "bef2a514b8bdf875228287986afc397ce54e06bb7631962407e348852799fd23",
+      "fingerprint": "d43fcbaf5447e59600e513a1b4503290cc513e6bd90a941f4d07010bb85c7edf",
       "lastmod": "2026-11-23",
       "title": "Crown One Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Crown One",
       "eventPaths": []
     },
     "/artists/cutright/": {
-      "fingerprint": "567b23336277730224a5458e11b854038a2f376a8be0d16fa66010f8f274eede",
+      "fingerprint": "a5933e737c4b86429be639a77b01c8cb9886d109e16df14cf565c6bcd449f348",
       "lastmod": "2026-11-23",
       "title": "Cutright Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Cutright",
       "eventPaths": []
     },
     "/artists/d-maub/": {
-      "fingerprint": "7e599709bb8e78f9edc6225ae062de01f801b7479cab8449c7f11b8927a0922c",
+      "fingerprint": "51634db9a266f629aab38eb86f4c13f4c64e8c6d36cc10d15c12b1b4965bf299",
       "lastmod": "2026-11-23",
       "title": "D-Maub Concerts & Tour Dates | Kingdom Circuit",
       "heading": "D-Maub",
@@ -20908,7 +20946,7 @@
       ]
     },
     "/artists/d-riddick/": {
-      "fingerprint": "d262a91416588f60827440a00ecd79437872dc4608a032e27ed64cb603f69990",
+      "fingerprint": "3d063c97f5e618293d4d6c136f5c8647a9120502d427a664a584c762974bfda9",
       "lastmod": "2026-11-23",
       "title": "D Riddick Concerts & Tour Dates | Kingdom Circuit",
       "heading": "D Riddick",
@@ -20927,7 +20965,7 @@
       ]
     },
     "/artists/da-t-r-u-t-h/": {
-      "fingerprint": "718024e805bc670f1683492c9aef32951b72e4b6dbb2b7bcea676062ed3c5a4f",
+      "fingerprint": "bda46c2199cc3adecdefdab2cec4001562afb36a68aeebd309fca85f670b1877",
       "lastmod": "2026-11-23",
       "title": "Da' T.R.U.T.H. Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Da' T.R.U.T.H.",
@@ -20945,7 +20983,7 @@
       ]
     },
     "/artists/daeshawn-forrest/": {
-      "fingerprint": "0eadfbd754c812e5e06d79e46df0f85d6eb24bc253a4db4b034ae266a926aa60",
+      "fingerprint": "8e3c608f95fa51d16a9c4282b97ac3975a0f5b7b5e3b92fd7aeacb16f836f200",
       "lastmod": "2026-11-23",
       "title": "DaeShawn Forrest Concerts & Tour Dates | Kingdom Circuit",
       "heading": "DaeShawn Forrest",
@@ -20955,7 +20993,7 @@
       ]
     },
     "/artists/daniel-saad/": {
-      "fingerprint": "0567e3ceb9b74c42da1035b9e36f8f25051d6157fda7a852d0766acb883dc64d",
+      "fingerprint": "878d9b955505c0a846484a5f0acd7f3169b654d58508fafc88430d06225d83e6",
       "lastmod": "2026-11-23",
       "title": "Daniel Saad Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Daniel Saad",
@@ -20988,7 +21026,7 @@
       ]
     },
     "/artists/darius-mullin/": {
-      "fingerprint": "7c9e912218437e975aee8af29b045b52c2795f8b853eb1495b0ebb51afb1e2a1",
+      "fingerprint": "a7650feae5fa5ffec8aecae68dcdeaa3661ea5859422dc4e263d5eacba6cb36a",
       "lastmod": "2026-11-23",
       "title": "Darius Mullin Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Darius Mullin",
@@ -20997,7 +21035,7 @@
       ]
     },
     "/artists/dason/": {
-      "fingerprint": "951e70f52cda7ead77871313a04c7cc69ed090c2febe2dc8334ceaff73393e10",
+      "fingerprint": "eac1b0a8f3b83c2e61bfad7318387783936423c06712b1d35dfc212f7c4fea39",
       "lastmod": "2026-11-23",
       "title": "DASON* Concerts & Tour Dates | Kingdom Circuit",
       "heading": "DASON*",
@@ -21015,7 +21053,7 @@
       ]
     },
     "/artists/datin/": {
-      "fingerprint": "32dd9a6a67db6b8b58c605dc0c57202a26c1263e86110f34666b233293608dc6",
+      "fingerprint": "1ffea71d75aadf9b57db479c5534327de44ceb972d07d614781fe96db5d185d7",
       "lastmod": "2026-11-23",
       "title": "Datin Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Datin",
@@ -21032,14 +21070,14 @@
       ]
     },
     "/artists/de-aris/": {
-      "fingerprint": "635e231b833dd45cac3ec30a1faf76b5ce8978c8cce142833ce0e2eee6948efd",
+      "fingerprint": "604c424aa02048998c58f2a335d7d4cfcfd7df7cde6f3a694bbbc9a6ca358354",
       "lastmod": "2026-11-23",
       "title": "De'Aris Concerts & Tour Dates | Kingdom Circuit",
       "heading": "De'Aris",
       "eventPaths": []
     },
     "/artists/de-la-cruz/": {
-      "fingerprint": "c15cd42ceeb9d49103e11136d3f861b8b8829f551011b10961e5bffef28ac6f3",
+      "fingerprint": "3313fc6562cb1792a79e8e2d5c1eb3ba237fb438463ce8d6a9298fe9d15cb3ba",
       "lastmod": "2026-11-23",
       "title": "De La Cruz Concerts & Tour Dates | Kingdom Circuit",
       "heading": "De La Cruz",
@@ -21082,14 +21120,14 @@
       ]
     },
     "/artists/dee-1/": {
-      "fingerprint": "c1990c5a8d91118424d90fec9304b51a134b19eef846eaa15e6f9180d58d715d",
+      "fingerprint": "e662e8fbe82f23e53a85177934b2717cc93c898a2981dc7205884e264376e79a",
       "lastmod": "2026-11-23",
       "title": "Dee-1 Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Dee-1",
       "eventPaths": []
     },
     "/artists/dell-mac/": {
-      "fingerprint": "11b4e9b6de603a2ff23705d90d41afb93cabfce1faf7e90629125346420027dd",
+      "fingerprint": "617a70a86f30a5d85a590669632fa649bbbb67b9ceab2baca4cff7fd96bfa45d",
       "lastmod": "2026-11-23",
       "title": "Dell Mac Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Dell Mac",
@@ -21127,28 +21165,28 @@
       ]
     },
     "/artists/deraj/": {
-      "fingerprint": "88793ff8e59985f92dff035d26f6cf716fc5cc9a7f9b4fbe614512a15c11078c",
+      "fingerprint": "b8f006b92f1c4dd11273c69895cb146df70f355de4dfffce5e43baf959f5dc09",
       "lastmod": "2026-11-23",
       "title": "Deraj Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Deraj",
       "eventPaths": []
     },
     "/artists/derek-minor/": {
-      "fingerprint": "787b6dc5829ed8b4c0409c4037ac368ce7d33c9bb2c039bdad1a100f567a2579",
+      "fingerprint": "17c56f4ba0cb81744fcd21f20997f4599523cd518a7e68a579009925898260f9",
       "lastmod": "2026-11-23",
       "title": "Derek Minor Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Derek Minor",
       "eventPaths": []
     },
     "/artists/dice-gamble/": {
-      "fingerprint": "732af097a992c5c5a5ee3e30dd355b4c280baf0ccb679849daaf78c105b99462",
+      "fingerprint": "b67929d0041e157bcc14d8b07e1daed38ffdbb46a1be56c96c8d5e88a11fb39e",
       "lastmod": "2026-11-23",
       "title": "Dice Gamble Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Dice Gamble",
       "eventPaths": []
     },
     "/artists/die-rek/": {
-      "fingerprint": "06dbeb97774db1274fe8c4eee998b6e2ec0f9e4d47485bbdda289079ce4f9213",
+      "fingerprint": "1a2eb1b1eb97b16b783352b28eee4d85b144bb2f29484b7df346f194d0b96784",
       "lastmod": "2026-11-23",
       "title": "DIE-REK Concerts & Tour Dates | Kingdom Circuit",
       "heading": "DIE-REK",
@@ -21211,7 +21249,7 @@
       ]
     },
     "/artists/dj-cam/": {
-      "fingerprint": "7769be1fe974f06378fb9de2776cf9ebebb3340c6ceb0807bb266fd510388b9d",
+      "fingerprint": "ece0ae33a03ae7282f031520fe2f1c3e1f2b67a547361125bebea6ecbb8fbf68",
       "lastmod": "2026-11-23",
       "title": "DJ CAM Concerts & Tour Dates | Kingdom Circuit",
       "heading": "DJ CAM",
@@ -21237,7 +21275,7 @@
       ]
     },
     "/artists/dj-geech/": {
-      "fingerprint": "2c863cc59555ff08d6107609a3eb3486725e3929d39499777bb37bcb51d0b2c5",
+      "fingerprint": "9dd305af41ba1e0ed8b6158da95a949f48a441db30802b3b0f147844b2386fc2",
       "lastmod": "2026-11-23",
       "title": "DJ Geech Concerts & Tour Dates | Kingdom Circuit",
       "heading": "DJ Geech",
@@ -21255,7 +21293,7 @@
       ]
     },
     "/artists/dj-mr-e/": {
-      "fingerprint": "761fd51d4d4d43376229e2bb14a529e208942b00a46390ab7f01dfd48d84b1ce",
+      "fingerprint": "25eabaf846d0f5336145c6fa210c13de21220b30d6efdd7d9f886ccd8f6c81e6",
       "lastmod": "2026-11-23",
       "title": "DJ Mr.E Concerts & Tour Dates | Kingdom Circuit",
       "heading": "DJ Mr.E",
@@ -21264,7 +21302,7 @@
       ]
     },
     "/artists/dj-mykael-v/": {
-      "fingerprint": "a3b9e864473e020a4c7dc493f868296a6b3f6dd6e8430f2686a4fecca7626dc5",
+      "fingerprint": "faa6a1e644c87ded14eeae366ec806873c50229b2acbe77538f1213d39c8ad98",
       "lastmod": "2026-11-23",
       "title": "DJ Mykael V Concerts & Tour Dates | Kingdom Circuit",
       "heading": "DJ Mykael V",
@@ -21273,7 +21311,7 @@
       ]
     },
     "/artists/dj-promote/": {
-      "fingerprint": "7b63fb0e96f11dd26dcdd4a7a0256f5296c095b5d4e59c6fd4ce4280d55d8106",
+      "fingerprint": "c8b031922eca962b413d6bb748ae52a86f9b42fed5a6adaac2ba5eb9a3dad6b5",
       "lastmod": "2026-11-23",
       "title": "DJ Promote Concerts & Tour Dates | Kingdom Circuit",
       "heading": "DJ Promote",
@@ -21282,7 +21320,7 @@
       ]
     },
     "/artists/dj-winn/": {
-      "fingerprint": "1cd9c77bb4b6574538c15b1fa56eb1d34eee823b32b16ac6614678247c17cdb6",
+      "fingerprint": "dbaa8b2780f2fd1995330152e8ed83898e16618750dad705f469029f80cae527",
       "lastmod": "2026-11-23",
       "title": "DJ Winn Concerts & Tour Dates | Kingdom Circuit",
       "heading": "DJ Winn",
@@ -21313,7 +21351,7 @@
       ]
     },
     "/artists/don-ready/": {
-      "fingerprint": "39209a7adbe60f6d4146ff9a4ed91746df3e26207183c9342cb0923e3448d459",
+      "fingerprint": "414fa839c55767b60086a9edf943664f967cd428fa553cbef67d534553790a3a",
       "lastmod": "2026-11-23",
       "title": "Don Ready Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Don Ready",
@@ -21342,7 +21380,7 @@
       ]
     },
     "/artists/dondrae/": {
-      "fingerprint": "349f9c4e8c5f1c0f786a40a1a69c215fba4043c057a729de86fe4cac8cb50847",
+      "fingerprint": "ebe2821286e5cba7c5d7b48b707829641b426a4a5f66ca01c465171b6b589d0f",
       "lastmod": "2026-11-23",
       "title": "Dondrae Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Dondrae",
@@ -21351,7 +21389,7 @@
       ]
     },
     "/artists/dontae/": {
-      "fingerprint": "9e6be5bfd9b8b98174834c893eff0383f7e57de0ea39f095cd4096f9bc033561",
+      "fingerprint": "16bfa1fd0c81cbddfd1425f80a533c0808b3f8c211029af1320a4b87c27a03bc",
       "lastmod": "2026-11-23",
       "title": "Dontae Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Dontae",
@@ -21374,14 +21412,14 @@
       ]
     },
     "/artists/dougie-d/": {
-      "fingerprint": "6b582c71c7c447e8902e637d3536d884f1e08b9f26ab10d5c3701a2f843bedb4",
+      "fingerprint": "8192464b012f5a4e961246602cfae17c9f55801824cbf1693eb0b076a4b9cb58",
       "lastmod": "2026-11-23",
       "title": "Dougie D Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Dougie D",
       "eventPaths": []
     },
     "/artists/dre-murray/": {
-      "fingerprint": "6dfc73f8a0e5cde9b55f67d51a28a5f78ffbc32108b8996b155e1cc323e1054a",
+      "fingerprint": "80b7563e60853a12efa46eaa1b210839b152b43a17cd0d437d4d6f250e2479a4",
       "lastmod": "2026-11-23",
       "title": "Dre Murray Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Dre Murray",
@@ -21398,7 +21436,7 @@
       ]
     },
     "/artists/dre-skywalker/": {
-      "fingerprint": "7fe9f184685fa23e663df34f6c5f4f551db82ed61707fbb409af050f6fcc2fe5",
+      "fingerprint": "0cc5f3772e9960b27fa0ee19c9bc0d0dd8733c5ff74124463804069ef4bb7958",
       "lastmod": "2026-11-23",
       "title": "Dre Skywalker Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Dre Skywalker",
@@ -21417,7 +21455,7 @@
       ]
     },
     "/artists/drew-ava/": {
-      "fingerprint": "17828c46f331f974d24728685f6e991ebc4fb8f86b452ba1ad81ded1bd019515",
+      "fingerprint": "c0ea5d83b841a0201a5d067d55ae2665d3b9f3189c1764ea19cd394f085092b9",
       "lastmod": "2026-11-23",
       "title": "Drew Ava Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Drew Ava",
@@ -21426,7 +21464,7 @@
       ]
     },
     "/artists/dwayne-tryumf/": {
-      "fingerprint": "91e72e708dc45617355ca57ddf01954e0a7d6c8ba3da63b8fcd2ff978c228572",
+      "fingerprint": "ce2ada608a69840714db3170889661760a073435361d1cca72686e07018b2b70",
       "lastmod": "2026-11-23",
       "title": "Dwayne Tryumf Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Dwayne Tryumf",
@@ -21512,14 +21550,14 @@
       ]
     },
     "/artists/ej-swavv/": {
-      "fingerprint": "5e20d8194e2218d6a0ae0c05d6248eb5854fa567ed0e74892052d2c74aee8ddb",
+      "fingerprint": "e2aa5c9931c3f0b1292fb8f7b727b50bf395a0288d5798bd89c0d6dd5baf18f8",
       "lastmod": "2026-11-23",
       "title": "EJ Swavv Concerts & Tour Dates | Kingdom Circuit",
       "heading": "EJ Swavv",
       "eventPaths": []
     },
     "/artists/eli-montanna/": {
-      "fingerprint": "936bd2b4d000c5549f7dad09d5ac8920b473bf014fb55c65d1f12e8d71327525",
+      "fingerprint": "103e6cac133aea00dcc810e93c39ba6fb25cbc940e49e03e82913677da18fe6b",
       "lastmod": "2026-11-23",
       "title": "Eli Montanna Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Eli Montanna",
@@ -21573,21 +21611,21 @@
       ]
     },
     "/artists/eliisetapart/": {
-      "fingerprint": "6cd0cd37a63a189bb9ccde48d36357417a3f425535ae371963bbb97a012fdd77",
+      "fingerprint": "aaad97213c716774194187c66fe829e1aff7b1b6dbc02cc0efd8451534d6edc3",
       "lastmod": "2026-11-23",
       "title": "EliiSetApart Concerts & Tour Dates | Kingdom Circuit",
       "heading": "EliiSetApart",
       "eventPaths": []
     },
     "/artists/eluzai/": {
-      "fingerprint": "84d99af3b2112b4ae9acb65211ef5785db51b6eabdf4fb3e824d5da3f0303738",
+      "fingerprint": "1e4927d574498d751ca8de77cffdfe94361937c0b0766b17cfcb01212972ce33",
       "lastmod": "2026-11-23",
       "title": "Eluzai Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Eluzai",
       "eventPaths": []
     },
     "/artists/emanueldaprophet/": {
-      "fingerprint": "e0930d590695c63bb0d779aee2e002e27094a168a0d566d0e7e9f2f4c30e8771",
+      "fingerprint": "6cb3ecc40270a8da3e8309ddf334f3edcccf2fc4ca138373a9d9ea630996afc2",
       "lastmod": "2026-11-23",
       "title": "EmanuelDaProphet Concerts & Tour Dates | Kingdom Circuit",
       "heading": "EmanuelDaProphet",
@@ -21596,41 +21634,43 @@
       ]
     },
     "/artists/epho/": {
-      "fingerprint": "e72f9c8c2dc574bfdd6605e2d320327df4aa129b6f03cbeda41c0c5ca453a282",
+      "fingerprint": "00b9f51859a03fcc671d46e92f0bd8b7d8ef743d9e5fbe0a2c920aa7eddc3b2e",
       "lastmod": "2026-11-23",
-      "title": "Epho Concerts & Tour Dates | Kingdom Circuit",
+      "title": "Epho Concerts & Tour Dates 2026 | Kingdom Circuit",
       "heading": "Epho",
       "eventPaths": [
+        "/event/let-jesus-reign-worship-experience-2026-12-12-bedford-9e0079/",
         "/event/outlandish-fest-2026-2026-11-14-fort-worth-8e2969/",
         "/event/parris-chariz-the-world-is-watching-live-2026-10-11-dallas-a6a47c/"
       ]
     },
     "/artists/epho/texas/": {
-      "fingerprint": "2c32333ead4c9214c9d117ac961d154bfc94cbb862a440f3d9cb69d1aed341d9",
-      "lastmod": "2026-11-15",
-      "title": "Epho Concerts in Texas | Kingdom Circuit",
+      "fingerprint": "a18b013d3f220441dc7688e222dbe6e7ea8fcb53c360893366bb9f6fa6646044",
+      "lastmod": "2026-11-23",
+      "title": "Epho Concerts in Texas | Upcoming Shows",
       "heading": "Epho Concerts in Texas",
       "eventPaths": [
+        "/event/let-jesus-reign-worship-experience-2026-12-12-bedford-9e0079/",
         "/event/outlandish-fest-2026-2026-11-14-fort-worth-8e2969/",
         "/event/parris-chariz-the-world-is-watching-live-2026-10-11-dallas-a6a47c/"
       ]
     },
     "/artists/eshon-burgundy/": {
-      "fingerprint": "ca66b8da38e386c65889f1040dafc2b199bf3c43b0ee0b1b1cb05c5a62bc0e7c",
+      "fingerprint": "213e401fb126415c1d42b93cae78a2cd0e50913fe910952db1478c2c736e798d",
       "lastmod": "2026-11-23",
       "title": "Eshon Burgundy Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Eshon Burgundy",
       "eventPaths": []
     },
     "/artists/f-rael/": {
-      "fingerprint": "932a4014cf10f2bba909a28a24db31b1da49640a45a4a84c751fe71b718fd3e0",
+      "fingerprint": "a984345b62c0b7d9253e2b84de5573927df72e5a55ec22500133a24619ce001b",
       "lastmod": "2026-11-23",
       "title": "F’rael Concerts & Tour Dates | Kingdom Circuit",
       "heading": "F’rael",
       "eventPaths": []
     },
     "/artists/fame-holiday/": {
-      "fingerprint": "8aeb2019eb2fa55136a076f054e2584434e723f6d59cebecf3abf37382ed540b",
+      "fingerprint": "d715707124f44af23e5c146936f2133690b9ab0225647ad5237c0d84a54a66b7",
       "lastmod": "2026-11-23",
       "title": "Fame Holiday Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Fame Holiday",
@@ -21648,28 +21688,28 @@
       ]
     },
     "/artists/fedel/": {
-      "fingerprint": "962c9b66f41142453edc63380dd13003c661466ab537482dec8ab2c4f994d498",
+      "fingerprint": "1e10e492f6ef4da5c1363a34c5fb0ab51d46ef4f698063dd7107028a7769a843",
       "lastmod": "2026-11-23",
       "title": "Fedel Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Fedel",
       "eventPaths": []
     },
     "/artists/fern/": {
-      "fingerprint": "7a6bd4cf4317960477e020e84a8893172259f17a4ae4e3c244fa57f432b023d7",
+      "fingerprint": "55f0e324a92982bf5f58468d15415b6adda3d4f23f2b95f543337644c0b56434",
       "lastmod": "2026-11-23",
       "title": "Fern Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Fern",
       "eventPaths": []
     },
     "/artists/feed-em/": {
-      "fingerprint": "69e83bc8f6cc17bd9c304c90088b163739a6c28265c71b53ab038b74c78e8f40",
+      "fingerprint": "6ecf2a9d534c6be20f53bdebb067528ba8176c1c9860de6255ec31073007fc67",
       "lastmod": "2026-11-23",
       "title": "Feed'Em Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Feed'Em",
       "eventPaths": []
     },
     "/artists/flame/": {
-      "fingerprint": "64d7ad73e2e8d2e278087a36d723bc6a10b2ccaf9694d193c370efe07e3829c4",
+      "fingerprint": "de5d229883470755af2af1253c991d5776707a560d53d626ddfb2c373275f249",
       "lastmod": "2026-11-23",
       "title": "FLAME Concerts & Tour Dates | Kingdom Circuit",
       "heading": "FLAME",
@@ -21679,7 +21719,7 @@
       ]
     },
     "/artists/forrest-frank/": {
-      "fingerprint": "13aec932cd7f98f86266e92aea82a7e721283430eab8a47a8d8a21ab51c40376",
+      "fingerprint": "64a7dd5def0ee00ddf07705ab10f82d9b6bc4b632f45c795b541af30a45dd9d4",
       "lastmod": "2026-11-23",
       "title": "Forrest Frank Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Forrest Frank",
@@ -21690,14 +21730,14 @@
       ]
     },
     "/artists/futuristic/": {
-      "fingerprint": "cbaaf5e697032b57dab9a57790e6b8785ab98d4eaa60b2319162d97ca9039687",
+      "fingerprint": "5fe68f6ccac5473056ca0998194e673377fc21afbfb83a9a8b564f591bb56463",
       "lastmod": "2026-11-23",
       "title": "Futuristic Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Futuristic",
       "eventPaths": []
     },
     "/artists/fresh-ie/": {
-      "fingerprint": "ff638f1e1515406d67f727c0366a32b60cef1812a6cdc64e42bfafcf60a053fb",
+      "fingerprint": "621fc734372781f7e8937e615cce6017f1c3d32dbdc7778af63505f00d81b6d0",
       "lastmod": "2026-11-23",
       "title": "Fresh IE Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Fresh IE",
@@ -21706,7 +21746,7 @@
       ]
     },
     "/artists/g-e-s/": {
-      "fingerprint": "691f76006c09e26cd2ac84051faa7caa8dd37862686070725c71f9439647c5a8",
+      "fingerprint": "d74c5d00b11fdf3d1b3ea93500365a31c3d2ea20ef3c7b1be1e05a7c06165cc8",
       "lastmod": "2026-11-23",
       "title": "G.E.S. Concerts & Tour Dates | Kingdom Circuit",
       "heading": "G.E.S.",
@@ -21716,7 +21756,7 @@
       ]
     },
     "/artists/g3rm-43/": {
-      "fingerprint": "e61aa932dbcc8e58084793984d1399a5c1383e2d4f2becbd3ac47161d04dbee3",
+      "fingerprint": "5bc35f17f945236d6d41fecaf5e70a9969a15f7e80e9d83fd51fdba434029096",
       "lastmod": "2026-11-23",
       "title": "G3rm 43 Concerts & Tour Dates | Kingdom Circuit",
       "heading": "G3rm 43",
@@ -21725,7 +21765,7 @@
       ]
     },
     "/artists/gabriel-katon/": {
-      "fingerprint": "24d02984017d4d3d3eab482e223b3da40aeb017309194e061ac2384dbec3a095",
+      "fingerprint": "21b489ee766311196e4819a972725df252916c11824ea92b762a4fa4c895eb12",
       "lastmod": "2026-11-23",
       "title": "Gabriel Katon Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Gabriel Katon",
@@ -21762,14 +21802,14 @@
       ]
     },
     "/artists/gavin-the-hotrod/": {
-      "fingerprint": "3f427fb0e2dc27f0912d2e5c007067276bda1d599875e7f6cb94030ddd9ccdd1",
+      "fingerprint": "70ff7e63fba4c71c57ac98afa78289a696d7bae02b2b4377e4507137e6579c88",
       "lastmod": "2026-11-23",
       "title": "Gavin the HotRod Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Gavin the HotRod",
       "eventPaths": []
     },
     "/artists/gawvi/": {
-      "fingerprint": "cb1ca2725abf517502e1bebb3598125fcb274744823ee090e4ea7e8fdc72e644",
+      "fingerprint": "f6f687ae1191c042c122db5758643638b96d304ffe09d55fd84663355546ef55",
       "lastmod": "2026-11-23",
       "title": "GAWVI Concerts & Tour Dates | Kingdom Circuit",
       "heading": "GAWVI",
@@ -21787,14 +21827,14 @@
       ]
     },
     "/artists/george-rose/": {
-      "fingerprint": "58ecad9934e2421691670a4194da15a3b416ebb3f89206fc1cc79207c863e837",
+      "fingerprint": "df2e34ba2a4c0d8bcc53e1577df29d8962d604fc33e2a176737dad9e7a8c3694",
       "lastmod": "2026-11-23",
       "title": "George.Rose Concerts & Tour Dates | Kingdom Circuit",
       "heading": "George.Rose",
       "eventPaths": []
     },
     "/artists/gin-sk/": {
-      "fingerprint": "788896bd75db1a57fe8ad981b7b9eea491f4f00d6f3dfc85602becf894dca620",
+      "fingerprint": "7bed855392cae4c2a769c53839a9d3a48ae6cd12d25f7e32717e97f4507cce12",
       "lastmod": "2026-11-23",
       "title": "GiNŌSKŌ Concerts & Tour Dates | Kingdom Circuit",
       "heading": "GiNŌSKŌ",
@@ -21821,7 +21861,7 @@
       ]
     },
     "/artists/giovani/": {
-      "fingerprint": "d30c9f0254a694feda5b3e425f78dc6d5aca858072a08475c53bf959f6891ed5",
+      "fingerprint": "63a6124cb05db1cb76f6d1d05521885d7977592063bf4446263a3979e3337e5a",
       "lastmod": "2026-11-23",
       "title": "GIOVANI Concerts & Tour Dates | Kingdom Circuit",
       "heading": "GIOVANI",
@@ -21845,21 +21885,21 @@
       ]
     },
     "/artists/godina/": {
-      "fingerprint": "6ff3b61341cd4de20c447504c458bba7d92b0d60a444f3a49d3d0776be3a7c95",
+      "fingerprint": "f6aabefef4bd5773378b0f37c9b2ea9bfabd36961e33ab9587e0d0cf99ca0467",
       "lastmod": "2026-11-23",
       "title": "GODINA Concerts & Tour Dates | Kingdom Circuit",
       "heading": "GODINA",
       "eventPaths": []
     },
     "/artists/gospel-gangstaz/": {
-      "fingerprint": "40e1c3e0dc5ead719b2f0b4ab4a44ae02c5db18fd1dae9394d54d1bedd55065e",
+      "fingerprint": "18b287bd1b4e69f1bf9836545693266e052a0363007698f27edbe6a2e39122af",
       "lastmod": "2026-11-23",
       "title": "Gospel Gangstaz Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Gospel Gangstaz",
       "eventPaths": []
     },
     "/artists/gregg-styles/": {
-      "fingerprint": "436a1d3d183af40c7c952ee4cec38b607aeabb190f00a29e8894e915e2d975d3",
+      "fingerprint": "1eb13b66d305f848adcbec2c4f26b1c3c4a155077e4d89a5d2988b2838ddf66a",
       "lastmod": "2026-11-23",
       "title": "Gregg Styles Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Gregg Styles",
@@ -21868,21 +21908,21 @@
       ]
     },
     "/artists/guvna-b/": {
-      "fingerprint": "cf60f6e9f771297d42546c446c3bebf4db4aec4789808b621ace2fe70c4dbaac",
+      "fingerprint": "2da946ad1c508d2542751a7f56c8ac1bdcb447a06eee0c59a300f2aa8ab98819",
       "lastmod": "2026-11-23",
       "title": "Guvna B Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Guvna B",
       "eventPaths": []
     },
     "/artists/grits/": {
-      "fingerprint": "8652c66ac899b4a3064ca60d71339f65445005b4e175f4c3d518f20c68dee8b0",
+      "fingerprint": "b9ed3b283337ca7eb5ae5871b0c262d2eddb17503fdfcea8e5b7ee124f6eaefe",
       "lastmod": "2026-11-23",
       "title": "GRITS Concerts & Tour Dates | Kingdom Circuit",
       "heading": "GRITS",
       "eventPaths": []
     },
     "/artists/h-u-r-t/": {
-      "fingerprint": "d1f13379fb3c65d16ae1cb1abe4b6cd53ec73ae4f7df8b9b40fe9556afb88478",
+      "fingerprint": "e96941b92e85b4567718ece1616a21ae3ef83e6ddf4253ef743e34911698d403",
       "lastmod": "2026-11-23",
       "title": "H.U.R.T. Concerts & Tour Dates | Kingdom Circuit",
       "heading": "H.U.R.T.",
@@ -21900,7 +21940,7 @@
       ]
     },
     "/artists/heesun-lee/": {
-      "fingerprint": "e5a138b7e349974f1cf1090169232f0e86f7e99a24ef199ae055b931fb7ff721",
+      "fingerprint": "d2046a30da30cd03ef14a87463ff85ba0da7044776738cca8e97e235c43b6bad",
       "lastmod": "2026-11-23",
       "title": "Heesun Lee Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Heesun Lee",
@@ -21909,21 +21949,21 @@
       ]
     },
     "/artists/heiressirami/": {
-      "fingerprint": "245de9b124a14cd46b7a36a8f4d6d18031069f23a38c82000a63e397cd9a8e17",
+      "fingerprint": "70f25d5204c78466e54acc93d4c5fccb4aa57d86cc9ecb4878502f7ab3432189",
       "lastmod": "2026-11-23",
       "title": "HeiressIrami Concerts & Tour Dates | Kingdom Circuit",
       "heading": "HeiressIrami",
       "eventPaths": []
     },
     "/artists/holy-gabbana/": {
-      "fingerprint": "9c84df9079e6c5dd784e142798e90d9ae3b31c4ddf493c6f8add2ae7e4cd07fd",
+      "fingerprint": "5da0ff02efbf537d9864e9283834987e1280101ccb663fa965c9c112834c3c10",
       "lastmod": "2026-11-23",
       "title": "Holy Gabbana Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Holy Gabbana",
       "eventPaths": []
     },
     "/artists/howard-langford/": {
-      "fingerprint": "299ceb452e934f5c9f57409727c0259b41effda76abc36d5216fd18c23bd2658",
+      "fingerprint": "0ff6e48671b4602e6f1cb7ffd8f85ddd49544b91239e359aae4edc54d3155447",
       "lastmod": "2026-11-23",
       "title": "Howard Langford Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Howard Langford",
@@ -22041,14 +22081,14 @@
       ]
     },
     "/artists/hyper-fenton/": {
-      "fingerprint": "36420467eb2306b3d165df0be2c7bf4ad61ddeac899994b55c816d9d0c6f625b",
+      "fingerprint": "c729fc94d013dd79ed2f2260826db304d347eb31c0a7b7cd9343233464009abd",
       "lastmod": "2026-11-23",
       "title": "Hyper Fenton Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Hyper Fenton",
       "eventPaths": []
     },
     "/artists/hy-chu/": {
-      "fingerprint": "82d9a5cc953a5630c0c376153d1a3c1482cf3d378af458f5551d34f95ffd0184",
+      "fingerprint": "3ce220d36e45bd2a3605b1b5b24ae74c2913a0fa424e5c3be48d3ea0461428a3",
       "lastmod": "2026-11-23",
       "title": "Hy Chu Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Hy Chu",
@@ -22057,21 +22097,21 @@
       ]
     },
     "/artists/i-a-n/": {
-      "fingerprint": "8c6be4261c275abd2b1ba89b96dbd2745a6a0e685ce4e844328841824cc210d4",
+      "fingerprint": "f91a231ff1cf71491f1585e540b8635524fb189173d8e93756dac8c7ae7033e1",
       "lastmod": "2026-11-23",
       "title": "I.A.N. Concerts & Tour Dates | Kingdom Circuit",
       "heading": "I.A.N.",
       "eventPaths": []
     },
     "/artists/idego/": {
-      "fingerprint": "2bea9d1380ea1691f6dd7a7cdd747b84dc66349efc902426e35f6a2a9cb36fc4",
+      "fingerprint": "dadf41471d1c1eb086148466204993b9509cd511b9b4fe21274c8df9b26cac73",
       "lastmod": "2026-11-23",
       "title": "IDEGO Concerts & Tour Dates | Kingdom Circuit",
       "heading": "IDEGO",
       "eventPaths": []
     },
     "/artists/ifeargod/": {
-      "fingerprint": "759270fbdba3ff638fa6f30372bd412551406cb9d578d90767a6df77395a13b4",
+      "fingerprint": "ffa3b4585fe96466bc54852ab0f8d4c2b4411632850987cbf39e347439c95d72",
       "lastmod": "2026-11-23",
       "title": "IFearGod Concerts & Tour Dates | Kingdom Circuit",
       "heading": "IFearGod",
@@ -22081,7 +22121,7 @@
       ]
     },
     "/artists/indie-tribe/": {
-      "fingerprint": "e8c3cd96510e610a874136c5c3f1a4728434bf794350d73c8518d7d0348089e4",
+      "fingerprint": "66fdf96ff40640914653fa3c841ab4259df81bd8fc8a9ea2ec364497d8b46f05",
       "lastmod": "2026-11-23",
       "title": "indie tribe. Concerts & Tour Dates | Kingdom Circuit",
       "heading": "indie tribe.",
@@ -22115,15 +22155,15 @@
       ]
     },
     "/artists/isaiah-robin/": {
-      "fingerprint": "0fc160f770d6dfd36454302a0e8bbfc0349eef1906f022d745f350eecc996fe0",
+      "fingerprint": "cb41e0519031acd2f9716f04cb1f8cb4aab827d44aaee695d2a696540b92f29a",
       "lastmod": "2026-11-23",
       "title": "Isaiah Robin Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Isaiah Robin",
       "eventPaths": []
     },
     "/artists/issac-mansfield/": {
-      "fingerprint": "ef0855d13a0ad1392ca65efc79af6c4afd79719adfae796faf42ad0bb08e69f8",
-      "lastmod": "2026-11-22",
+      "fingerprint": "44e2ad7080c317533c0261c8a47b512b37b5dbd8b6080aea2e296976c19dc73e",
+      "lastmod": "2026-11-23",
       "title": "Issac Mansfield Concerts & Tour Dates 2027 | Kingdom Circuit",
       "heading": "Issac Mansfield",
       "eventPaths": [
@@ -22149,7 +22189,7 @@
       ]
     },
     "/artists/j-j-l/": {
-      "fingerprint": "daec2ed2a0a780b126f1d463a6481f8bdd672b5a05b44c983bec2b0a11b622d4",
+      "fingerprint": "dda4bc93e7c6cba3876008c115044609aaf00c7ca5b622e55bb9d67d83bb3162",
       "lastmod": "2026-11-23",
       "title": "J J L Concerts & Tour Dates | Kingdom Circuit",
       "heading": "J J L",
@@ -22174,7 +22214,7 @@
       ]
     },
     "/artists/j-lubamba/": {
-      "fingerprint": "d91d0e54247118cb34466d29aadb4a047724a5e9387c18d51ff8c127e70d64b8",
+      "fingerprint": "a4b7e912d06b200349976267e253cff17235cf9b3fd157e426ae9da8f5af3905",
       "lastmod": "2026-11-23",
       "title": "J Lubamba Concerts & Tour Dates | Kingdom Circuit",
       "heading": "J Lubamba",
@@ -22191,14 +22231,14 @@
       ]
     },
     "/artists/j-phish/": {
-      "fingerprint": "ec1e484c2e7a2331fff81088aec384463229a690fad6ea3f7a9f88bc2e444e6a",
+      "fingerprint": "5f7a1adef2e6f18e0b6d7773ce6b2f7e3adaad1aae6ec843ddeac35c370dcaee",
       "lastmod": "2026-11-23",
       "title": "J-Phish Concerts & Tour Dates | Kingdom Circuit",
       "heading": "J-Phish",
       "eventPaths": []
     },
     "/artists/j-reborn/": {
-      "fingerprint": "7df5146f73d8b1f86dc41c700f5a25537b901cfe3aca0c4bd582eaf8b4cc95ae",
+      "fingerprint": "7ee48519f5ca1e1410767c9db2abbfa51f26d55e0ee373889f6f35d177ee00e6",
       "lastmod": "2026-11-23",
       "title": "J Reborn Concerts & Tour Dates | Kingdom Circuit",
       "heading": "J Reborn",
@@ -22207,14 +22247,14 @@
       ]
     },
     "/artists/j-solo/": {
-      "fingerprint": "eef038f88768959fee1e36a19f866c8a7ab22f879000a798b3f449fb76a8a9ba",
+      "fingerprint": "928262f69df7b2b21e93e5b01ef621d1f00a89ec973923151e8736cddaf2641c",
       "lastmod": "2026-11-23",
       "title": "J.Solo Concerts & Tour Dates | Kingdom Circuit",
       "heading": "J.Solo",
       "eventPaths": []
     },
     "/artists/jabari-heavens/": {
-      "fingerprint": "742fefd891ba390d01f6847d55e965079715b3a119203298dd45aec6e9a47bd6",
+      "fingerprint": "08b48820e84d3379f2bec2ad0dacaef6102d7a2a193d2afa5b0459b17134f3ba",
       "lastmod": "2026-11-23",
       "title": "Jabari Heavens Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Jabari Heavens",
@@ -22247,7 +22287,7 @@
       ]
     },
     "/artists/jamil/": {
-      "fingerprint": "95513d23837cc6b953cacd2819acc5c3ef6672e386dd54b4edbc801c8253d1ec",
+      "fingerprint": "c624a7daaf5039cbdf7fd3825705ece298c1b8da7442246fa9f91e81439d4389",
       "lastmod": "2026-11-23",
       "title": "Jamil Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Jamil",
@@ -22257,7 +22297,7 @@
       ]
     },
     "/artists/jay-way/": {
-      "fingerprint": "fca50f147c978a30971e88295e581523d5847fdd48cf14fd6ee9c3e652bcffe0",
+      "fingerprint": "f78d0e10075bc15b8b0cb5387534375c4fe13c1bdbdca3a02cbb03259e696fb7",
       "lastmod": "2026-11-23",
       "title": "Jay-Way Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Jay-Way",
@@ -22266,7 +22306,7 @@
       ]
     },
     "/artists/jaylxn/": {
-      "fingerprint": "a92abd75af692fe9f02f749d3ad8543266403b4572e29034c8b90a1765e6c942",
+      "fingerprint": "25dbadffbc4b1cf07df91665816be665196f556ca5a817a5df2aa44a3e3f6f32",
       "lastmod": "2026-11-23",
       "title": "JAYLXN Concerts & Tour Dates | Kingdom Circuit",
       "heading": "JAYLXN",
@@ -22275,14 +22315,14 @@
       ]
     },
     "/artists/jayy-brown/": {
-      "fingerprint": "e433e16ccdcfe99d8acbb164d429fa70cf71723fbd57ebdcb69f1c98a335ad80",
+      "fingerprint": "0f7d0a796d1579735f288f461e9ba353fd50a9af9e9144c31ea865bd3d8ddaae",
       "lastmod": "2026-11-23",
       "title": "Jayy Brown Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Jayy Brown",
       "eventPaths": []
     },
     "/artists/jbthapreacher/": {
-      "fingerprint": "caf6f994dcc6802c1cfb0dc1858fd40227fed73d94cf4e86309fe6449cd36e0a",
+      "fingerprint": "442ea21bf983e4f06a8b0c83a93aee3bef0499f912f7012fc348bc642255ec41",
       "lastmod": "2026-11-23",
       "title": "JBthaPreacher Concerts & Tour Dates | Kingdom Circuit",
       "heading": "JBthaPreacher",
@@ -22303,14 +22343,14 @@
       ]
     },
     "/artists/jered-sanders/": {
-      "fingerprint": "b3c780208af14cf41cd5e8409664ee74e44e2fa4cfe6dd629ff9a22deb0ca184",
+      "fingerprint": "8b8781a817fa1f4aca1b90447502cf29ba208aaf778204a791d4878e4bdd645a",
       "lastmod": "2026-11-23",
       "title": "Jered Sanders Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Jered Sanders",
       "eventPaths": []
     },
     "/artists/jekasole/": {
-      "fingerprint": "1250d74aeea951269297ff54d80dfffd3ac991e3f78820d6ed3958d9d23aaaa6",
+      "fingerprint": "346fa07aebe7b68d234ce8c6d135b94fa03cfdc4217c5aca544d0d1e31f59bfc",
       "lastmod": "2026-11-23",
       "title": "Jekasole Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Jekasole",
@@ -22361,7 +22401,7 @@
       ]
     },
     "/artists/jj-chosen/": {
-      "fingerprint": "c4840b559fadc7bf470ad03b6caf4a55c8d462d6408d7e99f1b993fc221cc59a",
+      "fingerprint": "5499c2826bbc862e5df3e37b1076d6013a64134af8c8dca6204e7ea56f39cf70",
       "lastmod": "2026-11-23",
       "title": "JJ Chosen Concerts & Tour Dates | Kingdom Circuit",
       "heading": "JJ Chosen",
@@ -22404,7 +22444,7 @@
       ]
     },
     "/artists/jon-corbin/": {
-      "fingerprint": "e9a5613338f2fab4b794f11ff2cf0378c438181146bd8404de5820774301d88f",
+      "fingerprint": "dca5a4edd0aacf585c4aad115498921d95353a1d2c7b6dbe22dda6fb4523b653",
       "lastmod": "2026-11-23",
       "title": "Jon Corbin Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Jon Corbin",
@@ -22433,7 +22473,7 @@
       ]
     },
     "/artists/jonah-daniel/": {
-      "fingerprint": "e32db90782485809bc230e2c747df25f0206a92d232fb738bdd08e64e9753dc4",
+      "fingerprint": "6b2426adc2cf73298c287ce2f1c996cb568fb3948098099e784f49f69dd2772f",
       "lastmod": "2026-11-23",
       "title": "Jonah Daniel Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Jonah Daniel",
@@ -22449,7 +22489,7 @@
       ]
     },
     "/artists/joshua-1-9/": {
-      "fingerprint": "6356d2f7dfaeb0eecdcc3e8a25e84c4fc9e9b506880bb97615bdc41566a3c529",
+      "fingerprint": "12ec231ef99ffd91a5af56c322cabff9b7aa9ba6ba6a597078bfb4afecd63fb7",
       "lastmod": "2026-11-23",
       "title": "joshua 1.9 Concerts & Tour Dates | Kingdom Circuit",
       "heading": "joshua 1.9",
@@ -22466,7 +22506,7 @@
       ]
     },
     "/artists/joz/": {
-      "fingerprint": "13262e8c7fa4a002cf274a26642508a2c0d5df1d1d8f53327b75a2d8a0d80e1c",
+      "fingerprint": "f746d7eb260e8a4278ac6edf7c3b2086e6ae2b101d1658d212216a6e3de3fd30",
       "lastmod": "2026-11-23",
       "title": "Joz Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Joz",
@@ -22486,14 +22526,14 @@
       ]
     },
     "/artists/json/": {
-      "fingerprint": "53175982fc7f079615f345bf3266df66d015e1ef676dbc02cc03a17a75c70248",
+      "fingerprint": "c2816966bcc8c7f31f2197d138440ff0c3cd986e1a7c4ec68496cdc29aa3b9e4",
       "lastmod": "2026-11-23",
       "title": "Json Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Json",
       "eventPaths": []
     },
     "/artists/justchris/": {
-      "fingerprint": "181b50b3c16ec5142daa9d8d45b086b6003606d4c4c09e8b3c6b0ef880844afb",
+      "fingerprint": "ea4cb5e8e0bee97022546118a9e3b1ee6928c16b15cdcc1b52d4f21cf24ced80",
       "lastmod": "2026-11-23",
       "title": "JustChris Concerts & Tour Dates | Kingdom Circuit",
       "heading": "JustChris",
@@ -22539,7 +22579,7 @@
       ]
     },
     "/artists/jwoodz/": {
-      "fingerprint": "5c5453e6409e4ae1756e533eb26ef4543b7a43f13cd7a4b457528467b33876bd",
+      "fingerprint": "2750aceecd8dc8bab3e75e9e3ac901a7cd5ba335334f0534846f5c06caf03763",
       "lastmod": "2026-11-23",
       "title": "JWoodz Concerts & Tour Dates | Kingdom Circuit",
       "heading": "JWoodz",
@@ -22571,7 +22611,7 @@
       ]
     },
     "/artists/jxdy/": {
-      "fingerprint": "cf4875a00576ce29f36df5be54ceb6faff61feca2fb7bfdbc4e6b9657d3fce66",
+      "fingerprint": "3a2dd0e2714b00426d03cd44d7a37dbdb42dfe634aad788aecd10cbe75b6d509",
       "lastmod": "2026-11-23",
       "title": "Jxdy Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Jxdy",
@@ -22623,7 +22663,7 @@
       ]
     },
     "/artists/k-see/": {
-      "fingerprint": "8757555bfd80cc6b4d126330c96a7d2949eb0d3293dd1103ef211193e8e9ea12",
+      "fingerprint": "67e621acd780f0917cd0a05838f6f1ca00eda7b9da7c757911337800aaf0fc72",
       "lastmod": "2026-11-23",
       "title": "K-SEE Concerts & Tour Dates | Kingdom Circuit",
       "heading": "K-SEE",
@@ -22640,7 +22680,7 @@
       ]
     },
     "/artists/kaboose/": {
-      "fingerprint": "1653ea6f4fa57aa73f2ef1365b7f98ea341e019e7c26e411442d7e1cb46ac388",
+      "fingerprint": "5be38ea977c4934bdc9bc612a0a11ab49071f7b962b29c7ffa4f0ae61895af30",
       "lastmod": "2026-11-23",
       "title": "Kaboose Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Kaboose",
@@ -22684,14 +22724,14 @@
       ]
     },
     "/artists/kaden-michael/": {
-      "fingerprint": "e7ba3fe20f6df9c1f424bc124f1a100bdee8d98073a5c0a0a30f0ff8d21e1936",
+      "fingerprint": "fbf9f331e3d30b34422e86f1e63ae4285c28d39179080e7de459d89e9ae941b1",
       "lastmod": "2026-11-23",
       "title": "Kaden Michael Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Kaden Michael",
       "eventPaths": []
     },
     "/artists/kai-uriah/": {
-      "fingerprint": "c80cb25898beaa830f4c447a3f727aba52a2bd43a3951291df5ec0cdbc160ba4",
+      "fingerprint": "d41175abd6b126f8861448069fa53be99ac275d1f11d11fe8bf2268f5087aac1",
       "lastmod": "2026-11-23",
       "title": "Kai Uriah Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Kai Uriah",
@@ -22709,7 +22749,7 @@
       ]
     },
     "/artists/kashh-kade/": {
-      "fingerprint": "7e2e136acc8e1d596a7c6cee0f46c740bf36640d57eca2ba1e9b4d92a98e7915",
+      "fingerprint": "04109d5c93a96e1bbdb1390e89aba2906a2584f2381cdf2bd38e95d9dcbac207",
       "lastmod": "2026-11-23",
       "title": "Kashh Kade Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Kashh Kade",
@@ -22741,7 +22781,7 @@
       ]
     },
     "/artists/kdfromthepack/": {
-      "fingerprint": "78e582e31f2c7d49673bcc9ec38c0d4aadb1ebf18542c555c9cae4e4d819538b",
+      "fingerprint": "962c0b73c1d3ce52225a0992125a241b50c1b96e9c56974986aec20b84bc02b3",
       "lastmod": "2026-11-23",
       "title": "KDfromthepack Concerts & Tour Dates | Kingdom Circuit",
       "heading": "KDfromthepack",
@@ -22757,7 +22797,7 @@
       ]
     },
     "/artists/keiana/": {
-      "fingerprint": "4205b2150eef64b25550a16ec58aaf0048d8c556b1be0e400762b4ab15198ede",
+      "fingerprint": "abdd8129b26310ea41bb77ae9e77604ffef1cbccb92103942db6a6ca83eafff1",
       "lastmod": "2026-11-23",
       "title": "Keiana Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Keiana",
@@ -22783,7 +22823,7 @@
       ]
     },
     "/artists/kemara-lynn/": {
-      "fingerprint": "6496684c05bf037e69b0622118ed9a3679f664147b23158412521ed61cfcb805",
+      "fingerprint": "56b07d19e1271dff43eb1f4473b54c8a897414e4096980a86b9bac02dacfb518",
       "lastmod": "2026-11-23",
       "title": "Kemara Lynn Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Kemara Lynn",
@@ -22801,7 +22841,7 @@
       ]
     },
     "/artists/kenny-jenkins/": {
-      "fingerprint": "bcd8a0b17e38f1c1666d63b918915986d7d731edaec2cdbad3f05758c17ec3bd",
+      "fingerprint": "767c2df9da215df00895bc69a058f5ca15a503a150d4bf4d8de51ce30e002a4b",
       "lastmod": "2026-11-23",
       "title": "Kenny Jenkins Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Kenny Jenkins",
@@ -22829,7 +22869,7 @@
       ]
     },
     "/artists/kevin-kc-campbell/": {
-      "fingerprint": "2909d10a2bce4d8abd450235911417f3e788058a67aa7f3459c0eec3b42f99cd",
+      "fingerprint": "38fdafe0877b555fb325efb61b5a8b6d26f8afaa5bccb6e6263d358ed05584f5",
       "lastmod": "2026-11-23",
       "title": "Kevin \"KC\" Campbell Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Kevin \"KC\" Campbell",
@@ -22838,7 +22878,7 @@
       ]
     },
     "/artists/key-ijah/": {
-      "fingerprint": "706c316b180f01b8fed975c5687c63a146428c321a8442b1ec83cbe4ba087005",
+      "fingerprint": "2560108ac9c2294c0352b59dccc222fe7a65ce48ec2fab04b2475412698b82ee",
       "lastmod": "2026-11-23",
       "title": "Key'ijah Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Key'ijah",
@@ -22869,7 +22909,7 @@
       ]
     },
     "/artists/kham/": {
-      "fingerprint": "a89df927c473189cf9abaae6b684ac72bd0fcaf64f4baaa9084dad1706d37340",
+      "fingerprint": "7e34d7e54d4515ce4ef6567e3740cd14e7cf5b1ea29c8ce36dfcdaf5476ed138",
       "lastmod": "2026-11-23",
       "title": "Kham Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Kham",
@@ -22922,28 +22962,28 @@
       ]
     },
     "/artists/kieran-the-light/": {
-      "fingerprint": "6408d88ffa81a5e489ff5b95ac8c2c816259d682518724d2814ef8a676b59eb3",
+      "fingerprint": "73b9c5fb0087caede359c6c822fc9c3d09eaf2b053b882ec2fc0192c5640e2e0",
       "lastmod": "2026-11-23",
       "title": "Kieran the Light Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Kieran the Light",
       "eventPaths": []
     },
     "/artists/kojo-dave/": {
-      "fingerprint": "6c5a3ecb5d626cfbb68fd51136d777499c2259c50520ad786916601d27590a75",
+      "fingerprint": "47c8ad26d5b8cd210eb2f6793daf0925d394501f7f0789d5dc3e919a54cf73b0",
       "lastmod": "2026-11-23",
       "title": "Kojo Dave Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Kojo Dave",
       "eventPaths": []
     },
     "/artists/kj-52/": {
-      "fingerprint": "3c8efd416d79055c5b2e2f08b9f31c13c82f07f15e1186d68b538a1bcb503146",
+      "fingerprint": "e786f27af50f5b751ad43deb1fba2b7e10789691286e7b178260a5c6f7b1f47d",
       "lastmod": "2026-11-23",
       "title": "KJ-52 Concerts & Tour Dates | Kingdom Circuit",
       "heading": "KJ-52",
       "eventPaths": []
     },
     "/artists/kurtis-hoppie/": {
-      "fingerprint": "e8e970d8557b29751b00763bc89a27e3a51d7a77cbdc467ac711226369a25883",
+      "fingerprint": "e33dac1c4280d2949828561fc99d1698ecef1d0b2a429040d3bfe6c0edc99aeb",
       "lastmod": "2026-11-23",
       "title": "Kurtis Hoppie Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Kurtis Hoppie",
@@ -22955,7 +22995,7 @@
       ]
     },
     "/artists/ktmoney/": {
-      "fingerprint": "a0fdd4e2fa17d78417210a4728fad371dc51f57a7ab1c675a0ab789ee2bd12af",
+      "fingerprint": "adee1520b42ab0f14c4ccbefe0b9eb950e12dbdb2f2a41e7d298e4091cf01f99",
       "lastmod": "2026-11-23",
       "title": "KTMoney Concerts & Tour Dates | Kingdom Circuit",
       "heading": "KTMoney",
@@ -22996,7 +23036,7 @@
       ]
     },
     "/artists/l-o-g/": {
-      "fingerprint": "2be01f7dd431c704187201cf95d24b03bd9e818614721da338baac8749b862b6",
+      "fingerprint": "1d9dde9ccc5ea814a921de8c7b2e231387ab3fbb63cd0dabcad42b0002890c7e",
       "lastmod": "2026-11-23",
       "title": "L.O.G. Concerts & Tour Dates | Kingdom Circuit",
       "heading": "L.O.G.",
@@ -23005,7 +23045,7 @@
       ]
     },
     "/artists/kyaliyah/": {
-      "fingerprint": "2c360a2e7ddec07f920d3b8ffc9052d9a69271a346ce7a8a53aa99e6d80eb746",
+      "fingerprint": "a792a86dbdd037a225916023ae3f8d0f08f8d70dd495f9b04d72bbf1ae638eaf",
       "lastmod": "2026-11-23",
       "title": "Kyaliyah Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Kyaliyah",
@@ -23028,7 +23068,7 @@
       ]
     },
     "/artists/lanell-grant/": {
-      "fingerprint": "5df5f314dacff867ac3001a40866089252d35f96427b0f71787ae3280ccbeca5",
+      "fingerprint": "724145db2f596defda72c2185559d191de9a98c47e9665cd1ee0ffc59d3d5188",
       "lastmod": "2026-11-23",
       "title": "LaNell Grant Concerts & Tour Dates | Kingdom Circuit",
       "heading": "LaNell Grant",
@@ -23068,7 +23108,7 @@
       ]
     },
     "/artists/lil-ziggy/": {
-      "fingerprint": "caa0bf16a6e221d2ef79b3368cb6bc71bb3cff11817a66888d41404396c395ff",
+      "fingerprint": "c047ff2ab5c271aa29388cb845476a2633f7e26fec4c64c643f0ba5705c594db",
       "lastmod": "2026-11-23",
       "title": "Lil Ziggy Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Lil Ziggy",
@@ -23077,21 +23117,21 @@
       ]
     },
     "/artists/licy-be/": {
-      "fingerprint": "85285a6a9923bc8499a58f530db5ea9bbfe2374f31b916ba7fdef7f5cdb78800",
+      "fingerprint": "e5913da0f172a694caa66736ca42471c87d0a468314401c5dfd6406c07d9ae61",
       "lastmod": "2026-11-23",
       "title": "Licy Be Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Licy Be",
       "eventPaths": []
     },
     "/artists/limoblaze/": {
-      "fingerprint": "e47bbdfb096ba7f324a7350a80c9a101798443fb98a86cec90449af37314f485",
+      "fingerprint": "527acf21d7e94493f5d355b360c342cd33aeb6c96d09aa80dfcc37f09d9b5a1d",
       "lastmod": "2026-11-23",
       "title": "Limoblaze Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Limoblaze",
       "eventPaths": []
     },
     "/artists/linga-theboss/": {
-      "fingerprint": "c956e132e13a14b4fd39de7ff575aa13427503eb32ff6fbeec3f0d88a4569369",
+      "fingerprint": "013d09be1b9a61a5955f006579e440753ca12b6c479fc7024e816b535bea6058",
       "lastmod": "2026-11-23",
       "title": "Linga TheBoss Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Linga TheBoss",
@@ -23119,7 +23159,7 @@
       ]
     },
     "/artists/loupin/": {
-      "fingerprint": "ed9a8825df535fae90926394ffe1bddfa26e11debd25a40131cbec6b4b7cc3d7",
+      "fingerprint": "41f23a93a87d204244b1adede8217337a147e0004b1986db1c828d11b74d1849",
       "lastmod": "2026-11-23",
       "title": "Loupin Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Loupin",
@@ -23137,7 +23177,7 @@
       ]
     },
     "/artists/lyric-the-geenyus/": {
-      "fingerprint": "314d8c8ae98a6a21da771fc6df0a047267698eac926a8109f51b2f7a7e9d3265",
+      "fingerprint": "4186b2498ecd862b902f77279261c98cda837049e340beddeaf9891cc221d3b4",
       "lastmod": "2026-11-23",
       "title": "Lyric The Geenyus Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Lyric The Geenyus",
@@ -23168,21 +23208,21 @@
       ]
     },
     "/artists/lyrical-disciple/": {
-      "fingerprint": "044ec6619c475e65ab2c0f91cd60a411ef27362d76988b5f24eda8e217c84364",
+      "fingerprint": "5dcaa0d134d99dbac74fce68ac60a64832c98acc5551442823164887fd3de903",
       "lastmod": "2026-11-23",
       "title": "Lyrical Disciple Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Lyrical Disciple",
       "eventPaths": []
     },
     "/artists/mahogany-jones/": {
-      "fingerprint": "5c70dee258860bddfbeb3d49f6acf92ad48851cfb8aee030bf626e3e95b87ac2",
+      "fingerprint": "cd0baaadfe481f845cbc60dbf58d235085ab8b17f34233597c97cb415f8ffb82",
       "lastmod": "2026-11-23",
       "title": "Mahogany Jones Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Mahogany Jones",
       "eventPaths": []
     },
     "/artists/man-of-faith/": {
-      "fingerprint": "14c8af25e16f0d62862787cd5f7bbdfc82168c938c94487f87b165f6ebfb5f98",
+      "fingerprint": "b459f9efd8efd3fd028593cf086d44a519513f8e7fff583e340ad57f1c2a5497",
       "lastmod": "2026-11-23",
       "title": "Man Of FAITH Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Man Of FAITH",
@@ -23192,21 +23232,21 @@
       ]
     },
     "/artists/manny-montes/": {
-      "fingerprint": "e54dfe80a1ab7e2a93c241612af24cf631af7c2b0c2f477660403f3c3e83f9ea",
+      "fingerprint": "802b5746c791c6da4843420139a8376ef18a6ddd550cda8e9409cd13a67eafb1",
       "lastmod": "2026-11-23",
       "title": "Manny Montes Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Manny Montes",
       "eventPaths": []
     },
     "/artists/manafest/": {
-      "fingerprint": "d32739fc1f905c9995700327d127d94d594bde417c267047e6238360b036163f",
+      "fingerprint": "43345e36d489e46b9957492a9b0a3d27b8b973de3d91bb985361ad8ad17cc60e",
       "lastmod": "2026-11-23",
       "title": "Manafest Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Manafest",
       "eventPaths": []
     },
     "/artists/mark-the-prophet/": {
-      "fingerprint": "a49d6b4d3ceba998530f1c5c32376a5631dada1f0ae156f347dc4b3e322058c8",
+      "fingerprint": "d1e912e2d5a419325a5e01742bbd094d90cc533b4ecd85404359ef9676b30bf9",
       "lastmod": "2026-11-23",
       "title": "Mark the Prophet Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Mark the Prophet",
@@ -23232,7 +23272,7 @@
       ]
     },
     "/artists/marv/": {
-      "fingerprint": "2c000efdd3032ef9152c1a05c51adc4c98649ea6aa731fff97b29b2d4db846a6",
+      "fingerprint": "aeac965b35fb7d1628ffd87d20f35b1291bfe7e3b24678fc280b537feaa9f8b7",
       "lastmod": "2026-11-23",
       "title": "MARV Concerts & Tour Dates | Kingdom Circuit",
       "heading": "MARV",
@@ -23241,7 +23281,7 @@
       ]
     },
     "/artists/matthew-plante/": {
-      "fingerprint": "56676f1047d8413dc587a9d2d94f4d8bc84ae362c1eecf0d95ef49cb855ea237",
+      "fingerprint": "4e7b35865af1d43ba359b7f705d59e2c19ee5fa7e18710a544fba3c31fbd572e",
       "lastmod": "2026-11-23",
       "title": "Matthew Plante Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Matthew Plante",
@@ -23312,14 +23352,14 @@
       ]
     },
     "/artists/megan-tossi/": {
-      "fingerprint": "5f6f26a2b2facd8fa03214e3a6f6061b5ab71041b1c163d9e6cd1ebc3cb5db14",
+      "fingerprint": "f872602b83219bb1339c199cf4d3047d83a42c37dc5df733a8eb2b5587efff9a",
       "lastmod": "2026-11-23",
       "title": "Megan Tossi Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Megan Tossi",
       "eventPaths": []
     },
     "/artists/mic-esco/": {
-      "fingerprint": "6b66a8d9bfc7272f7faddf24a22a15a2a32363cf9adaff97b502704b23827ab3",
+      "fingerprint": "a11f514752b9976b7374ba1e182e6fa68ca45a256a2d34f75f7551514d5f9d98",
       "lastmod": "2026-11-23",
       "title": "Mic Esco Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Mic Esco",
@@ -23329,7 +23369,7 @@
       ]
     },
     "/artists/mica/": {
-      "fingerprint": "2b18065f12a395a8bfd8490ae83edc30b11f2f4b3180105dd4dec13cf4ef3ea6",
+      "fingerprint": "ff5f5afd9a85ef426173fa614c86d50acf04b158363121d9c76ccf9850a3c001",
       "lastmod": "2026-11-23",
       "title": "mica Concerts & Tour Dates | Kingdom Circuit",
       "heading": "mica",
@@ -23389,7 +23429,7 @@
       ]
     },
     "/artists/mike-real/": {
-      "fingerprint": "9501d28c7d9ea6e001f8a7f74bd841b29bbd329fa30602c41916c72df0bc49ed",
+      "fingerprint": "8346d217134382fc74cd36ddeb46bf66467514179116fb61e2824d83889c3960",
       "lastmod": "2026-11-23",
       "title": "Mike REAL Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Mike REAL",
@@ -23523,7 +23563,7 @@
       ]
     },
     "/artists/mission/": {
-      "fingerprint": "f69c400939d317220ba35555615ab1c8f170cd8ced51519049285fcda99463df",
+      "fingerprint": "c2e72dbe79ac936f412d281cd33b2bf59f627276545573492b89fd4da15441c6",
       "lastmod": "2026-11-23",
       "title": "Mission Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Mission",
@@ -23533,21 +23573,21 @@
       ]
     },
     "/artists/mntis/": {
-      "fingerprint": "0314e072c8210b3d2ebd8b702981ea941d4c6eabe23268770dad066cb51c0fb9",
+      "fingerprint": "a5ee66c2ff723fb98abb97eedbb3b41ae2552adbe0b1d9a26905ad4c31c09e97",
       "lastmod": "2026-11-23",
       "title": "MNTIS Concerts & Tour Dates | Kingdom Circuit",
       "heading": "MNTIS",
       "eventPaths": []
     },
     "/artists/milla/": {
-      "fingerprint": "1f3dbef3048275eff687d513cebfb351ac282ca8f3fc93ad2e4c9304e124fc3c",
+      "fingerprint": "18490e808b8360050d2fd1ba3e698cb07a63087b80ce0cf95eb4bf85fe8d20ef",
       "lastmod": "2026-11-23",
       "title": "Milla Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Milla",
       "eventPaths": []
     },
     "/artists/mogli-the-iceburg/": {
-      "fingerprint": "f24ce732affec41dfc8ea10d2030f02eb0f30474ef655fc28022898f170d32ac",
+      "fingerprint": "c9753ac1a74e6762ee25846de50d1fea6edd3f3bb41c7e1c36117793c93b08b9",
       "lastmod": "2026-11-23",
       "title": "Mogli the Iceburg Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Mogli the Iceburg",
@@ -23556,7 +23596,7 @@
       ]
     },
     "/artists/monster-tarver/": {
-      "fingerprint": "51d1ea51a36c46369aaa329a06c9757483fa75fbd4ea708ea90c4c1b28ce3b81",
+      "fingerprint": "9e7a54c7541517ccd2991038d90710bf541ae7951f90f882a13e9d2c3eb6a26b",
       "lastmod": "2026-11-23",
       "title": "Monster Tarver Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Monster Tarver",
@@ -23574,7 +23614,7 @@
       ]
     },
     "/artists/mouthpi3ce/": {
-      "fingerprint": "15339f926de42fb9113137305159b6e125db77dddad4710df6e0b6ad4c996286",
+      "fingerprint": "50f4983076e880ea7ce8a50a1e5d088f83a8cb7c991a1bd6cc5b3fcfd6f69dbf",
       "lastmod": "2026-11-23",
       "title": "Mouthpi3ce Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Mouthpi3ce",
@@ -23591,7 +23631,7 @@
       ]
     },
     "/artists/n-x/": {
-      "fingerprint": "6692584beb1a25cc45d71058ca139e204981836b336d0c142bc9ec29f0410cce",
+      "fingerprint": "954e17d31e4a1683187da51e591f099f3ed548ea91a67a4ead5636231622af7c",
       "lastmod": "2026-11-23",
       "title": "N!X Concerts & Tour Dates | Kingdom Circuit",
       "heading": "N!X",
@@ -23609,7 +23649,7 @@
       ]
     },
     "/artists/nat-lauren/": {
-      "fingerprint": "9ed16b7c406d5464e0e1254d1314940a91dfa911f2ec0fdded6479d226ea3fb9",
+      "fingerprint": "cf16de2030ec190a79355e891e728253db3074ede7895ff984b9abfc1203f8f3",
       "lastmod": "2026-11-23",
       "title": "Nat Lauren Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Nat Lauren",
@@ -23626,7 +23666,7 @@
       ]
     },
     "/artists/nathan-davis-jr/": {
-      "fingerprint": "feb6ea2b80cce3237ad743a12c54dca7cf076e969e22f0bd8e46fd7f36671ec6",
+      "fingerprint": "14f061d3278c60f39c695835f981d524df975b3eecb760be7c7f2f735fdac492",
       "lastmod": "2026-11-23",
       "title": "Nathan Davis Jr. Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Nathan Davis Jr.",
@@ -23635,7 +23675,7 @@
       ]
     },
     "/artists/neisha-glow/": {
-      "fingerprint": "7ad5590905da39149da6e30d502f69a0eba776a82b0080d96cb37292d5c5093a",
+      "fingerprint": "7e65d080ed58507008282839978625fd31e603b85016cb729ca021b9fd616d62",
       "lastmod": "2026-11-23",
       "title": "Neisha Glow Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Neisha Glow",
@@ -23644,7 +23684,7 @@
       ]
     },
     "/artists/nehemiah/": {
-      "fingerprint": "313cb9a0831591193e04e70b86a23bfe12f0d9d4d257c0c112a5650a64499095",
+      "fingerprint": "7202bc9506bf3acbd0f509de0476505787a11d6e8745c764736dae8b9abd8dd2",
       "lastmod": "2026-11-23",
       "title": "Nehemiah Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Nehemiah",
@@ -23653,35 +23693,35 @@
       ]
     },
     "/artists/nesk-only/": {
-      "fingerprint": "52ab0f7f3473ea8cb557d3c0ee37384a19dd815be47c48b7a90da8525fafae5d",
+      "fingerprint": "f8dbb9261303fbe0334aef27da720be5e8fd3e1913d778e53197824e48a35fb7",
       "lastmod": "2026-11-23",
       "title": "Nesk Only Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Nesk Only",
       "eventPaths": []
     },
     "/artists/nf/": {
-      "fingerprint": "5842bcf296f245a21aec836f564a1a1366f7b1f951f6377f20594e3789761767",
+      "fingerprint": "38c60edb2d7dc9d5f464bdd615485c2634175a2d808fad918bb4ec96c1e81c4f",
       "lastmod": "2026-11-23",
       "title": "NF Concerts & Tour Dates | Kingdom Circuit",
       "heading": "NF",
       "eventPaths": []
     },
     "/artists/nic-d/": {
-      "fingerprint": "d9945c29a28f83bc3a20ebea39aab264baacfaa6f670a9e2725f29c78ce343a1",
+      "fingerprint": "e74025600c7fd61d86d25aa62109641c3813eefcbf15a1734473e445409cc82a",
       "lastmod": "2026-11-23",
       "title": "Nic D Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Nic D",
       "eventPaths": []
     },
     "/artists/nick-betzing/": {
-      "fingerprint": "755815425a5318263c73bbd615dffd9dc6806597e6115d25cb8894c50fd592e5",
+      "fingerprint": "310a322382af061d4028f24291d9c5e40078076a0fa5f67b5b403fe0dcaf45be",
       "lastmod": "2026-11-23",
       "title": "Nick Betzing Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Nick Betzing",
       "eventPaths": []
     },
     "/artists/nigil-lee/": {
-      "fingerprint": "036c7a3bb4a27014abb7c7af27223139f846aee4bb0b607dda35109c42eb0881",
+      "fingerprint": "25a5cacff23c3caae56e59776a9cd0bef084d0aa6eb459b8c5282045f1b6c466",
       "lastmod": "2026-11-23",
       "title": "Nigil Lee Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Nigil Lee",
@@ -23690,7 +23730,7 @@
       ]
     },
     "/artists/nicky-gracious/": {
-      "fingerprint": "f848524a6f58c26ffa208513fb9cdd3eedd1ae9c8701fcdd647a3a724ed7393b",
+      "fingerprint": "64127311b21c90d005691b80ecde1d93f5b71c49c2d7b4c78884bb3ef69adb23",
       "lastmod": "2026-11-23",
       "title": "Nicky Gracious Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Nicky Gracious",
@@ -23710,7 +23750,7 @@
       ]
     },
     "/artists/nissi-shalom/": {
-      "fingerprint": "d6c37b440821fa4998f8a37d66522176f0ee29f26809572288de13e384ebe142",
+      "fingerprint": "add87bc192bdd338a22800793f62e0d03622a1bc00d57cf103a44431b26bb5f3",
       "lastmod": "2026-11-23",
       "title": "NISSI SHALOM Concerts & Tour Dates | Kingdom Circuit",
       "heading": "NISSI SHALOM",
@@ -23740,14 +23780,14 @@
       ]
     },
     "/artists/not-klyde/": {
-      "fingerprint": "1324f06d97fd22602c7d7aef0bf1dc66f7038988cf9747c2924075f4eedd0ca3",
+      "fingerprint": "30626a9560a8ee3e72a2f5cf08cdb461ae7e5b44051cd200e46a405cfa851e46",
       "lastmod": "2026-11-23",
       "title": "Not Klyde Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Not Klyde",
       "eventPaths": []
     },
     "/artists/nu-tone/": {
-      "fingerprint": "b9bd728681d00181bc914c18fa34829f862c6037daea053a5012083d1e55f0b3",
+      "fingerprint": "c4d6fe39091f44f935c438cc29ddf0f2a219df890d878e573c90b01f0ac047ca",
       "lastmod": "2026-11-23",
       "title": "Nu Tone Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Nu Tone",
@@ -23765,7 +23805,7 @@
       ]
     },
     "/artists/nxtmike/": {
-      "fingerprint": "6a2d314f994e079eb4d13b54359e183a7bb7cc9a77438f2bb2a9eac85473e633",
+      "fingerprint": "5f0f9e86e3e1b8d7f817ff1c6b51de5f5e9eb71943b9266c7c2f0e253afa1be6",
       "lastmod": "2026-11-23",
       "title": "NXTMIKE Concerts & Tour Dates | Kingdom Circuit",
       "heading": "NXTMIKE",
@@ -23774,14 +23814,14 @@
       ]
     },
     "/artists/one8tea/": {
-      "fingerprint": "cc1e6534b942cbeae9f9ec1e80e4756a0a1848750d6e899c070bb8310722d7d0",
+      "fingerprint": "6dbea9a5d4d4babafafe7dbab1a7976f7a3d67fcd714e037ff8836393d231a1c",
       "lastmod": "2026-11-23",
       "title": "One8tea Concerts & Tour Dates | Kingdom Circuit",
       "heading": "One8tea",
       "eventPaths": []
     },
     "/artists/oracle-the-messenger/": {
-      "fingerprint": "351d0639bd48ad12fa304fbc7fd510529d6fcf813084209050072579a2258a58",
+      "fingerprint": "f1a84eb349d518ac6d732630b63613ad355b89458e353fefccdd65ef204dfefd",
       "lastmod": "2026-11-23",
       "title": "Oracle The Messenger Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Oracle The Messenger",
@@ -23791,14 +23831,14 @@
       ]
     },
     "/artists/outr-cty/": {
-      "fingerprint": "94e76f55d5f4c30795b663aae03b93947f185fbadcc46414e5a08d5bbdd12444",
+      "fingerprint": "79a1f672baaf611ebe6793e9cf7e65d47b5a98cbe9386af6a58977e7d4ef97dc",
       "lastmod": "2026-11-23",
       "title": "outr.cty Concerts & Tour Dates | Kingdom Circuit",
       "heading": "outr.cty",
       "eventPaths": []
     },
     "/artists/parris-chariz/": {
-      "fingerprint": "67433db629f98de266a4815ad981deba4e943e4c3dd3ca6e3f604bf5fdcdb120",
+      "fingerprint": "6dd226046431effa143a76222fdd258fa662fb1282dafd0f3e08ea9046756af3",
       "lastmod": "2026-11-23",
       "title": "Parris Chariz Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Parris Chariz",
@@ -23829,14 +23869,14 @@
       ]
     },
     "/artists/peair/": {
-      "fingerprint": "e59ff48045928dda7523a74f84660f5a7e4c3620fd3fce0c3b29424d9dd8593f",
+      "fingerprint": "79909460e14c1d5b06907cce784bf58a2db50765312a6468fd371c7f3daf01fc",
       "lastmod": "2026-11-23",
       "title": "Peair Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Peair",
       "eventPaths": []
     },
     "/artists/petrina-delacey/": {
-      "fingerprint": "5bf8b8a72f78f00be4fc10f73f1e51f7fc9603207ac2a300b9a584fabbd17566",
+      "fingerprint": "426a60c6e93736ce51d77c7cdeb53a0de9b2f146fdcd04796638c68c83ee645c",
       "lastmod": "2026-11-23",
       "title": "Petrina DeLacey Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Petrina DeLacey",
@@ -23856,14 +23896,14 @@
       ]
     },
     "/artists/pishko/": {
-      "fingerprint": "fd2e837ee50060a64d61a50bcc06fadd1fb3b84ddc12c6bf5868b30415b96ae7",
+      "fingerprint": "5f4849c03715d48b9850c5bc2e2b27fb14b00233c7c2195dd38496da5e1c0f00",
       "lastmod": "2026-11-23",
       "title": "Pishko Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Pishko",
       "eventPaths": []
     },
     "/artists/porsha-love/": {
-      "fingerprint": "b61d9d4bb905b5e5860afa4402b1da05202243414bb934a09ffa44a1473d7a11",
+      "fingerprint": "2c4983a2b77ce05902c1c6626402368bbd5f00b669a5f445c6b4d71e9a72aa1c",
       "lastmod": "2026-11-23",
       "title": "Porsha Love Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Porsha Love",
@@ -23881,7 +23921,7 @@
       ]
     },
     "/artists/pressnj/": {
-      "fingerprint": "f343a7d08707b1f9d15e243d86e681f9b13ba99d41607ae2ab719bdc0599ca1b",
+      "fingerprint": "d6e3f5f859230705d3f00d62e6e6a713e0e0a0f82c3609dfd9cfaf7050d2e5ce",
       "lastmod": "2026-11-23",
       "title": "PressNJ Concerts & Tour Dates | Kingdom Circuit",
       "heading": "PressNJ",
@@ -23899,7 +23939,7 @@
       ]
     },
     "/artists/priest-jones/": {
-      "fingerprint": "5b5debee9d926d5a4c61e0d32dc9104a9c6e10e5b08fd0a228126ba15f084ecd",
+      "fingerprint": "4b755f0a467fbc5fa119b11ccb882e54d7ce041f4239590275fe191505304730",
       "lastmod": "2026-11-23",
       "title": "Priest Jones Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Priest Jones",
@@ -23917,21 +23957,21 @@
       ]
     },
     "/artists/q-flo/": {
-      "fingerprint": "f284cb923f884f7985243b3016fcd7b7cb145842d1d1c524deb692b1f933b638",
+      "fingerprint": "d34226ec07d53f8508e4e64e5d028e9ff85e6d4a1bb899d195cea699961e1f50",
       "lastmod": "2026-11-23",
       "title": "Q-Flo Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Q-Flo",
       "eventPaths": []
     },
     "/artists/qew/": {
-      "fingerprint": "18ec9f8e7e34a261ffb821d8a21105f273cc507ccaf1f30ea2163827fc7e3d38",
+      "fingerprint": "f65c95848c628791406d78e4950a0f28d6fd5c1512e38dd34cee83fa80d1c2b6",
       "lastmod": "2026-11-23",
       "title": "QEW Concerts & Tour Dates | Kingdom Circuit",
       "heading": "QEW",
       "eventPaths": []
     },
     "/artists/queen-lee/": {
-      "fingerprint": "e3850b9d968ce9abf58ca46d151dbcf80799cf89765edb8fe5b90f867ca17a4e",
+      "fingerprint": "2e6a3557292a86cc873a516865d7c37ecbe37d2fa7302907bee9f049b6341bd3",
       "lastmod": "2026-11-23",
       "title": "Queen Lee Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Queen Lee",
@@ -23942,7 +23982,7 @@
       ]
     },
     "/artists/r-l-the-artist/": {
-      "fingerprint": "afa1a4bc9a6f1902f750975c1b118b9c5640b195c6b4210609014c6d77decb7e",
+      "fingerprint": "a76b01a33250bf2baa9f57523adaf2ceae6a0506af86d7f8ac0a1ed7ae025f61",
       "lastmod": "2026-11-23",
       "title": "RÆL The Artist Concerts & Tour Dates | Kingdom Circuit",
       "heading": "RÆL The Artist",
@@ -23951,14 +23991,14 @@
       ]
     },
     "/artists/r3st0red/": {
-      "fingerprint": "21ef460977f57a056f63b975eab241fe87edab2ea76cbf4c62eccac3f1715d50",
+      "fingerprint": "533e51b1c725b0cb9b0dbda8729cae7aa3056dadd5e4f41bdf1e5eacfa7ae376",
       "lastmod": "2026-11-23",
       "title": "R3st0red Concerts & Tour Dates | Kingdom Circuit",
       "heading": "R3st0red",
       "eventPaths": []
     },
     "/artists/r-swift/": {
-      "fingerprint": "7e53b381e159a23cd37f19e4cb6b12be5269da32a120d285c3e65609e23b04a8",
+      "fingerprint": "f907b50146a32ae236655ecf78e8703a4f141deed641b12ae4fc96b163c8f959",
       "lastmod": "2026-11-23",
       "title": "R-Swift Concerts & Tour Dates | Kingdom Circuit",
       "heading": "R-Swift",
@@ -23995,7 +24035,7 @@
       ]
     },
     "/artists/rare-of-breed/": {
-      "fingerprint": "5d45657878f2ce4e5c0f3838a4dafb08cb2258144bccda4d4391dd34bc8b55e0",
+      "fingerprint": "876e8e2280ae5f0206c2367e93b487119ae46adfe4f9d406d5db55f933c151e4",
       "lastmod": "2026-11-23",
       "title": "Rare of Breed Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Rare of Breed",
@@ -24008,35 +24048,35 @@
       ]
     },
     "/artists/razzie/": {
-      "fingerprint": "3ea2e2ee892f0b0ca2cca7bc04a4e0335beaefbf80ee6e601faaa140cf433b27",
+      "fingerprint": "6f696510411f12e3bad76be9da2c52dcbf6e6cda7dc78466d89aaf30d7c93bf0",
       "lastmod": "2026-11-23",
       "title": "Razzie Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Razzie",
       "eventPaths": []
     },
     "/artists/reblah/": {
-      "fingerprint": "d1ac9d621d104190cc5cc0e0323b2ec15f93686c3df5517e3ca27b36980774c4",
+      "fingerprint": "b77c35a3c788cfab41926012a8ec08c900c3af8476d4253219b5cbe069eb9805",
       "lastmod": "2026-11-23",
       "title": "Reblah Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Reblah",
       "eventPaths": []
     },
     "/artists/red-tips/": {
-      "fingerprint": "c2ac7a2aece8bed13d195f58bcec8593961241f349d61ff19fcb600652a92758",
+      "fingerprint": "3070074ec374d875f1445bfcdfa96e68a24fd7d0574e9e46de190f877c239108",
       "lastmod": "2026-11-23",
       "title": "Red Tips Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Red Tips",
       "eventPaths": []
     },
     "/artists/reconcile/": {
-      "fingerprint": "5f1497141050566f50603dbf52b4c662cedccd65f934347e2f6f7797721e7ea1",
+      "fingerprint": "9966280283b2cfa959e04e615d160cfa52624386b59edf4bf9e2c62c76e57f97",
       "lastmod": "2026-11-23",
       "title": "Reconcile Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Reconcile",
       "eventPaths": []
     },
     "/artists/redeemed/": {
-      "fingerprint": "b5f6666cd1fd6c3f63825e56e13f8891cf808528a9d6d1c6272422a0353effe8",
+      "fingerprint": "1b2c8bbe2dd158e78ab3e42cc595d9098c5d67a9ec87f563d033d667768a63f0",
       "lastmod": "2026-11-23",
       "title": "REDEEMED Concerts & Tour Dates | Kingdom Circuit",
       "heading": "REDEEMED",
@@ -24089,7 +24129,7 @@
       ]
     },
     "/artists/reece-lache/": {
-      "fingerprint": "6e75ee74f001b0473e4edd37ebdf64a6aa07b375f9502508d516ac1a0edad421",
+      "fingerprint": "de4cf87d1c13525a52c25989e36818b4683b96c3d6cc9e845a544e5ee48b6b79",
       "lastmod": "2026-11-23",
       "title": "Reece Lache' Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Reece Lache'",
@@ -24105,28 +24145,28 @@
       ]
     },
     "/artists/rhema-soul/": {
-      "fingerprint": "3682e8ebe9e11a33be7465bc3ea067c656793de39dcb30e0cd32f5475902bc97",
+      "fingerprint": "126ccf79781d3a17b1d4af4e2bf3d7380afaca93675c3200e78e3502aeba2a86",
       "lastmod": "2026-11-23",
       "title": "Rhema Soul Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Rhema Soul",
       "eventPaths": []
     },
     "/artists/rio-24k/": {
-      "fingerprint": "8b41088874dc335333ffcadccb1004434db1c75d91b529ecafa06f2983f3800d",
+      "fingerprint": "a91cb53a99afc87563b276c6f29ce4afecb8647c1c970c2d7dffea771ff8030c",
       "lastmod": "2026-11-23",
       "title": "Rio 24k Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Rio 24k",
       "eventPaths": []
     },
     "/artists/rua-young/": {
-      "fingerprint": "81ac4c38eaca9640d631f31261cb6d74c797695df3c187e69eea8e23470190a2",
+      "fingerprint": "7d53b99a8ef4dbaf24d881676448dc7365770b2f56c2f41cff096ab14a52a1e4",
       "lastmod": "2026-11-23",
       "title": "Rua Young Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Rua Young",
       "eventPaths": []
     },
     "/artists/ruslan/": {
-      "fingerprint": "ac96a75bdae157d4eb0299c6c818bb856a95c403f32be46ab492dee5306803a8",
+      "fingerprint": "3f9319adfd18ba58c8db9674da850256b862bce7c6292bf03a68b50a6e4912d5",
       "lastmod": "2026-11-23",
       "title": "Ruslan Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Ruslan",
@@ -24136,14 +24176,14 @@
       ]
     },
     "/artists/rubinsky-rbk/": {
-      "fingerprint": "d73bb0eb5cca0c759d7ea360b2f5f785e33de8860db1e2526a0fca5a8ccc1567",
+      "fingerprint": "071ba60d28437ba451b9c68b5dad70dca20983b4fcb458f413edc23d9551f61b",
       "lastmod": "2026-11-23",
       "title": "Rubinsky RBK Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Rubinsky RBK",
       "eventPaths": []
     },
     "/artists/ryan-ellis/": {
-      "fingerprint": "87d46a5f8f181a06ff4a99d793896fadbfe300446a84238e85b048a28628b438",
+      "fingerprint": "6882e0099bb312f0ef0449b30b3a1cbfadd5b2eb47257a8aa9f1e0b6d149cbac",
       "lastmod": "2026-11-23",
       "title": "Ryan Ellis Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Ryan Ellis",
@@ -24152,7 +24192,7 @@
       ]
     },
     "/artists/ryan-trey/": {
-      "fingerprint": "cd84102417ba4996393f0b6e665f6f6aca85883813ebc8928e9d78eb652a93cc",
+      "fingerprint": "4426b892abe5d3428455d0ab4c03ea06f5ef32d46bb97cb0f059c662b1e77f24",
       "lastmod": "2026-11-23",
       "title": "Ryan Trey Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Ryan Trey",
@@ -24163,21 +24203,21 @@
       ]
     },
     "/artists/s-b-g/": {
-      "fingerprint": "d9fcb3197b4a36085ceb9bb550c262697ff30f5ab2136eff42c352c17cd3ab44",
+      "fingerprint": "0cc1c46fbf0e6a6ea960d7aa726e553610a726e84f29101f82620062ec632d6d",
       "lastmod": "2026-11-23",
       "title": "S.B.G. Concerts & Tour Dates | Kingdom Circuit",
       "heading": "S.B.G.",
       "eventPaths": []
     },
     "/artists/s-o/": {
-      "fingerprint": "51b9ab2dc4112a8601dd1c060de96d52479825a68344449a7a8ec23aeabb83de",
+      "fingerprint": "74da85dd69cbd60c3fc3f9c610b69da8b64339a76ecc789ecdfb522a952dcdbc",
       "lastmod": "2026-11-23",
       "title": "S.O. Concerts & Tour Dates | Kingdom Circuit",
       "heading": "S.O.",
       "eventPaths": []
     },
     "/artists/saint-jones/": {
-      "fingerprint": "6ea445cc2695899a58ef145d58744a33d3b45dce1037220dda6a726bfa20f5db",
+      "fingerprint": "a0ce127798f12f79066f233a6a54acf3e51037612ac45e4864c3154b0feadcce",
       "lastmod": "2026-11-23",
       "title": "Saint Jones Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Saint Jones",
@@ -24193,7 +24233,7 @@
       ]
     },
     "/artists/santana-rose/": {
-      "fingerprint": "609b45d99bd8518dc9d124e4b44078ea765f142f7dba5442a502751ce9e88d1e",
+      "fingerprint": "8c85060ca4221707e5e60c443a3a3efb6996e05cd14cf94c38ff0cb2a1d79279",
       "lastmod": "2026-11-23",
       "title": "Santana Rose Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Santana Rose",
@@ -24202,7 +24242,7 @@
       ]
     },
     "/artists/scarlito-jr/": {
-      "fingerprint": "15d28c8afe36758a9256b855709d91bb0acc170c077e7f8eac45d41b83523d2a",
+      "fingerprint": "7a9cd654d03ac7c0928f4056815d29ac8204567de29aabb47030f3e950168962",
       "lastmod": "2026-11-23",
       "title": "Scarlito Jr. Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Scarlito Jr.",
@@ -24231,28 +24271,28 @@
       ]
     },
     "/artists/scribe-music/": {
-      "fingerprint": "e1be67a63b1b653e7b31214b4c919b14d13a99b90b7f1de609385fbe070483d3",
+      "fingerprint": "852da4319cce5a1c9d6f7b4d56346fc987a34a6c66580a8e7c5fd9f61916e06f",
       "lastmod": "2026-11-23",
       "title": "Scribe Music Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Scribe Music",
       "eventPaths": []
     },
     "/artists/selah-the-corner/": {
-      "fingerprint": "1ff2b523baa2979a696b6f4926cb2f34db8673bdfdab799885d11ee9faed9cb7",
+      "fingerprint": "0c8e60d989496e9e9dc93d37311e08caa43f85300ddc3aef4e5ac1242d9cc9dc",
       "lastmod": "2026-11-23",
       "title": "Selah the Corner Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Selah the Corner",
       "eventPaths": []
     },
     "/artists/serious-voice/": {
-      "fingerprint": "f9109244b867715380ad7e94b31b7f24f2b055283f427ecba628505fcbbdf44f",
+      "fingerprint": "4cc04684e394699001ee0555c3566ac05555f7294564f5f7f05ea85d4bd30e34",
       "lastmod": "2026-11-23",
       "title": "Serious Voice Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Serious Voice",
       "eventPaths": []
     },
     "/artists/sevin/": {
-      "fingerprint": "d374fce79804ab6360472355c6fb66e9340c4cb54d0b988d9d7a0cd0dde6fd80",
+      "fingerprint": "f3056eca640b263f2f2a07b1d6d17e1b7f77eedc8e04006f3a28e60b53bffb0d",
       "lastmod": "2026-11-23",
       "title": "Sevin Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Sevin",
@@ -24341,7 +24381,7 @@
       ]
     },
     "/artists/shepherd/": {
-      "fingerprint": "e6ef2d7a9902e1f9b9e6b485c59a7e15f0686f450157fc5a9cb30f051e0fbd9c",
+      "fingerprint": "0294b999b9eed5779ad485b2d8733671934aac62b8b73c57f373556e37cfd014",
       "lastmod": "2026-11-23",
       "title": "Shepherd Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Shepherd",
@@ -24359,21 +24399,21 @@
       ]
     },
     "/artists/sho-baraka/": {
-      "fingerprint": "cb6ef1e4c565208fe36a4abc238118deec6702498ce0d4fa3df9f69991d2aad5",
+      "fingerprint": "c71758096362d617d25c8820203d1aec18cf71bbda845dc5000e3e39b1bd05af",
       "lastmod": "2026-11-23",
       "title": "Sho Baraka Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Sho Baraka",
       "eventPaths": []
     },
     "/artists/shonlock/": {
-      "fingerprint": "42ffdd5b7a5ed5ff802165f5ae372966d05f7df96e959118ec2f8580ea25036b",
+      "fingerprint": "8d9cf998c53cba0f4dd2bdaf5d5ce8268262fe6f9e6e1beaeaef9de2a57bf2ae",
       "lastmod": "2026-11-23",
       "title": "Shonlock Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Shonlock",
       "eventPaths": []
     },
     "/artists/sir-james/": {
-      "fingerprint": "20f468d294d0dda97c224da042942cb3c90c35ace36f3e4086ca479d3003ee19",
+      "fingerprint": "0ee074a52ff34662e1d306ab7be7a997152ea63ac5994a512f780b76798477bf",
       "lastmod": "2026-11-23",
       "title": "Sir James Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Sir James",
@@ -24383,7 +24423,7 @@
       ]
     },
     "/artists/shy-speaks/": {
-      "fingerprint": "0548f10dd327c6f8268f81af75ed56cf60b238702032d90ad1da6326763d03d1",
+      "fingerprint": "c06fe09f45f6a82a053afdf459d16d9ebc7c6202f904813c1cc8cc0e86ff14a1",
       "lastmod": "2026-11-23",
       "title": "Shy Speaks Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Shy Speaks",
@@ -24400,7 +24440,7 @@
       ]
     },
     "/artists/sis-n-lil-bro/": {
-      "fingerprint": "a1889a7d3744d1bddcc4b577406d4b707235213b335e4142ed744ffa44e47a84",
+      "fingerprint": "21898758fbe1a45688af1b47a08062672c4151b0a9c2f1f7421087ff1cf6f55f",
       "lastmod": "2026-11-23",
       "title": "Sis N Lil Bro Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Sis N Lil Bro",
@@ -24523,7 +24563,7 @@
       ]
     },
     "/artists/soc-driz/": {
-      "fingerprint": "058c09fdded88806e58a1b736cb3a1e20c12a6075776652c247e66e54359041d",
+      "fingerprint": "cd71aa8aa6e0e69463e5a2634f8d260be19092453fc5e38c77a7fa3b65b7d907",
       "lastmod": "2026-11-23",
       "title": "SOC Driz Concerts & Tour Dates | Kingdom Circuit",
       "heading": "SOC Driz",
@@ -24532,7 +24572,7 @@
       ]
     },
     "/artists/social-club-misfits/": {
-      "fingerprint": "8a750082fe01c10f29eb95a1839aeafd214ebbce6ab4a674d413e798814ae930",
+      "fingerprint": "1b22c5341a0f70395d729f5968ce53a82069364e6b6ceb681a81723d26310fff",
       "lastmod": "2026-11-23",
       "title": "Social Club Misfits Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Social Club Misfits",
@@ -24551,21 +24591,21 @@
       ]
     },
     "/artists/sondae/": {
-      "fingerprint": "e84f13db85857f194b4b594332cceef7c565e44f7972c9ca6929801085f7aa25",
+      "fingerprint": "da01073f09261516e344af3aece080ae15538c3284762eeba8e35608faa7d20e",
       "lastmod": "2026-11-23",
       "title": "Sondae Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Sondae",
       "eventPaths": []
     },
     "/artists/spencer-xavier/": {
-      "fingerprint": "0051a0e0860ca4a59b4c5be5a371d0b6fc76de933fc50ba91b73cce11cdb54d5",
+      "fingerprint": "fe018706078d4a3acf6cb432e75de4e107af2543ffe2809f02c048f4c3b14e2a",
       "lastmod": "2026-11-23",
       "title": "Spencer Xavier Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Spencer Xavier",
       "eventPaths": []
     },
     "/artists/starringo/": {
-      "fingerprint": "ab74a97cd9b718e2e2ea468366a91dedd7ad74f74fe04eb702173cf15aca85c1",
+      "fingerprint": "621f88a43dc74fcbabb2d3bdc118e83e05e271f4baf9194eb72e1eb323385079",
       "lastmod": "2026-11-23",
       "title": "Starringo Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Starringo",
@@ -24585,21 +24625,21 @@
       ]
     },
     "/artists/stellar-flo/": {
-      "fingerprint": "ce7c9b5c2917a9e6634f74579e4d9d85e1478f3097a8c0ce834738bedee22191",
+      "fingerprint": "d7b3692c5f4af3c791d64bcbbefee030d263b18b0d8ea46fd1321293ab8f7afb",
       "lastmod": "2026-11-23",
       "title": "Stellar Flo Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Stellar Flo",
       "eventPaths": []
     },
     "/artists/stephen-the-levite/": {
-      "fingerprint": "4d08576f7482d0b791e2358516d1cec0c323a42e3649513603930111a13bf5df",
+      "fingerprint": "ffc52f8510656be80bd4cdc7fc9596de1793fde65576797343b44e907d1cefc4",
       "lastmod": "2026-11-23",
       "title": "Stephen the Levite Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Stephen the Levite",
       "eventPaths": []
     },
     "/artists/steven-malcolm/": {
-      "fingerprint": "cb821c52da53e2f0356178bcbcce62451ddc8c56c5828a113578ec42f106f336",
+      "fingerprint": "10c78f64dbe342a5eb306c2597d88949ed9e2df6cc46d8ad0c5f2dcbacf23d9d",
       "lastmod": "2026-11-23",
       "title": "Steven Malcolm Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Steven Malcolm",
@@ -24609,7 +24649,7 @@
       ]
     },
     "/artists/steveunordinary/": {
-      "fingerprint": "1158d8004684fbe3713a2563f8e72c063965f6d14b042cb04ba63cc6e10e1e53",
+      "fingerprint": "6cb245865940d9c8b650913c950169bd7e392fa39d68ab0daeab40de0f025447",
       "lastmod": "2026-11-23",
       "title": "SteveUnordinary Concerts & Tour Dates | Kingdom Circuit",
       "heading": "SteveUnordinary",
@@ -24618,28 +24658,28 @@
       ]
     },
     "/artists/still-shadey/": {
-      "fingerprint": "b41eb167ef6fcd8051e66191ecd8af9266aedcc7087d16ccd1f117f184391b6e",
+      "fingerprint": "5c695fbaf2f6ca176f6be9ea9cdbe37095dfd1555fd6d2437922257f9d8a461e",
       "lastmod": "2026-11-23",
       "title": "Still Shadey Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Still Shadey",
       "eventPaths": []
     },
     "/artists/stixx-aka-conejo/": {
-      "fingerprint": "c86ffe28814392fd03860bcb73f409e6f86f468f456fdc01d10f3c30da2e48b6",
+      "fingerprint": "bde6115b699a7c1e0c8b41143007a43c581f65664cf97652c0b70afc19090f9e",
       "lastmod": "2026-11-23",
       "title": "Stixx aka Conejo Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Stixx aka Conejo",
       "eventPaths": []
     },
     "/artists/stovetop/": {
-      "fingerprint": "4c67ca91aca4952e9a9c739da00842057e5a2d3747074fd024725befb5ccd686",
+      "fingerprint": "bad53f5043250632e9db5e90b9b97e1ffae4187f77cbd650b8713bfc72e8f992",
       "lastmod": "2026-11-23",
       "title": "Stovetop Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Stovetop",
       "eventPaths": []
     },
     "/artists/swaizy/": {
-      "fingerprint": "558fd66ccb55f2c5cfc3f37dedaf13f6b7f742dca7133f541267ae901e6de51c",
+      "fingerprint": "731348366949f44abd6ce414d6332c79f4d00e96ef890a713e4839c6ce94c0fe",
       "lastmod": "2026-11-23",
       "title": "Swaizy Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Swaizy",
@@ -24648,49 +24688,49 @@
       ]
     },
     "/artists/sway-gttb/": {
-      "fingerprint": "40fe6587c6ad550b92b6614af25146af6fc64598fc5c3b35590bd95bac16059c",
+      "fingerprint": "06ef079ce99f0c0f493b56bca50658c13836ecd2e07e3f92b300f1ffee973f1f",
       "lastmod": "2026-11-23",
       "title": "Sway GTTB Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Sway GTTB",
       "eventPaths": []
     },
     "/artists/swoope/": {
-      "fingerprint": "1ed2c3874c9a3948bdf201fb1dfb7cddfcf8ce307057b8c652a2d966b53c2cea",
+      "fingerprint": "fb5337a82a21bdd00ee876bcf0925f8120bad591e739d59bc84256f59c4a5f06",
       "lastmod": "2026-11-23",
       "title": "Swoope Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Swoope",
       "eventPaths": []
     },
     "/artists/t-log/": {
-      "fingerprint": "e452bba4087be3f83966f764b277b865c6cdc2afbcf3f974940f2668ca29f006",
+      "fingerprint": "61fe6bb17094726ff2d2268f5d5e67d2d0aa1a7d91c4bed0884c94345a72d80a",
       "lastmod": "2026-11-23",
       "title": "T Log Concerts & Tour Dates | Kingdom Circuit",
       "heading": "T Log",
       "eventPaths": []
     },
     "/artists/t-bone/": {
-      "fingerprint": "a74426ed407cca0604ab0e486a27a15e94df2da24829135f7113b2df1d5971e9",
+      "fingerprint": "b78f48b9f7818a558c4a6bea5a08845454d407e6ea32ba1f70beca3b810712a7",
       "lastmod": "2026-11-23",
       "title": "T-Bone Concerts & Tour Dates | Kingdom Circuit",
       "heading": "T-Bone",
       "eventPaths": []
     },
     "/artists/taelor-gray/": {
-      "fingerprint": "ca245045fbee60e863b794050f82018d3701bcdf8b79dd59131d8d1e9627acd1",
+      "fingerprint": "bfc2985f94df6839d9647360e8aef3d0f7f2e48034023fed16c27cd2ce82880a",
       "lastmod": "2026-11-23",
       "title": "Taelor Gray Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Taelor Gray",
       "eventPaths": []
     },
     "/artists/tarcea-renee/": {
-      "fingerprint": "a2ca3aa845edcb4874dcdcb9d582dcc75edd4d8b190721a86a6fcaeecc038a1c",
+      "fingerprint": "4123cd357389722280d1c328c103623d24aa7e81b2d83bc22b830594fbaaec5d",
       "lastmod": "2026-11-23",
       "title": "Tarcea Renee Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Tarcea Renee",
       "eventPaths": []
     },
     "/artists/tay-stunna/": {
-      "fingerprint": "32898dfe9ac1de2570a2c6c36e62764292a6eccc0e406d0243725d051c3c1213",
+      "fingerprint": "197ca3e4ded99b37cf36283ca2d836834d6aeff3bc399ba923747f20f7dc1bd9",
       "lastmod": "2026-11-23",
       "title": "Tay Stunna Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Tay Stunna",
@@ -24718,7 +24758,7 @@
       ]
     },
     "/artists/tblessing/": {
-      "fingerprint": "1641055819e9853e494b3e5de64b11b007fa42710ea7e4c5f08d704d65dceb6a",
+      "fingerprint": "857b5c3821f032af938adbdd5f7f162f479c23792816574083548a537948d466",
       "lastmod": "2026-11-23",
       "title": "TBlessing Concerts & Tour Dates | Kingdom Circuit",
       "heading": "TBlessing",
@@ -24727,21 +24767,21 @@
       ]
     },
     "/artists/tds-cam/": {
-      "fingerprint": "a953b1eaaf646e77403b01b6b974f1b5123444386928c8cb945477898f243ce8",
+      "fingerprint": "364f86d690227ee042693c97e3526aef6a51deda70e8bd8f23b6191f3b839517",
       "lastmod": "2026-11-23",
       "title": "Tds Cam Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Tds Cam",
       "eventPaths": []
     },
     "/artists/tedashii/": {
-      "fingerprint": "053ad485d12612e6711d9e24a63e58b9c71449f4a5baad54a9cd9cf25662afc7",
+      "fingerprint": "b3da097a62a2fc958b2fecff589018232e1bd6052947a17eae0bd06728ae1524",
       "lastmod": "2026-11-23",
       "title": "Tedashii Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Tedashii",
       "eventPaths": []
     },
     "/artists/th3-saga/": {
-      "fingerprint": "59ec3f1af487851ff851e652b66dabc7a531387617b57a2915acf6458ca7ce20",
+      "fingerprint": "5f9e75b9423bba862638da1b5a81a3d228d4d232053bc2b96cc161a117a489a6",
       "lastmod": "2026-11-23",
       "title": "Th3 Saga Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Th3 Saga",
@@ -24761,7 +24801,7 @@
       ]
     },
     "/artists/tha-inspiration/": {
-      "fingerprint": "fabbdbc8f245286d3fbb9cf4792140dcb4fab5126628249d2aa006dc8cf923d8",
+      "fingerprint": "40a70ba9ce11bae257df210283697bf9be9737c1c431bf2baabe7e65aee52cfb",
       "lastmod": "2026-11-23",
       "title": "Tha inspiration Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Tha inspiration",
@@ -24781,21 +24821,21 @@
       ]
     },
     "/artists/thereal-d-tel/": {
-      "fingerprint": "bde76af1aa9df8b8df1aa343e82f55266df6d3b29ccf0137850ebdbbcd86ce42",
+      "fingerprint": "79c4f330ee97a058a0248ee498bc22475393e0b36a65464ce3bbd935bee4d014",
       "lastmod": "2026-11-23",
       "title": "TheReal D.TeL Concerts & Tour Dates | Kingdom Circuit",
       "heading": "TheReal D.TeL",
       "eventPaths": []
     },
     "/artists/thi-sl/": {
-      "fingerprint": "9c646ebe22bd35fcc8dd44f80fecc643dfff2276c703e0f797486ff3f496bb10",
+      "fingerprint": "b25e29cba109cf4e36099db0251a519736e6a5d33dc3ee1a0e925e64fed4d2b4",
       "lastmod": "2026-11-23",
       "title": "Thi'sl Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Thi'sl",
       "eventPaths": []
     },
     "/artists/tommy-chapa/": {
-      "fingerprint": "cb73448252a97f0ea698ca3f420aa701e0ddec5116229d8dfcd7fc6eb0aee94c",
+      "fingerprint": "f01fa95bd1f7a31e90256db2554d2b7e663a2f666b48a367f2ab2b09e7858ffd",
       "lastmod": "2026-11-23",
       "title": "Tommy Chapa Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Tommy Chapa",
@@ -24804,7 +24844,7 @@
       ]
     },
     "/artists/tj-carroll/": {
-      "fingerprint": "14df598b44aaecf5540ea44d71fc751b2a60f886e3e5e1b8a3c760709521ce7d",
+      "fingerprint": "9896e06a74c08001234914a6520e98a8f9672ac93fd0e32c8dbcbbf8d45604a5",
       "lastmod": "2026-11-23",
       "title": "TJ Carroll Concerts & Tour Dates | Kingdom Circuit",
       "heading": "TJ Carroll",
@@ -24872,7 +24912,7 @@
       ]
     },
     "/artists/tony-tillman/": {
-      "fingerprint": "f00e401ef38c80b0d635c3fdae929c7626710186c2af74f55a1d5d6ef9d071e5",
+      "fingerprint": "01d47d631572fd7dbce5f30a2d9f067f7ad6b6e4dfaf3b2744cb2be4f57db268",
       "lastmod": "2026-11-23",
       "title": "Tony Tillman Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Tony Tillman",
@@ -24900,7 +24940,7 @@
       ]
     },
     "/artists/tonyxtrotter/": {
-      "fingerprint": "8f74a8b1ce9084d3f840888986815de09113f81e3c5b280444fde18f4bddec57",
+      "fingerprint": "fa775d8b0f9390dc467b88d6a946b0772f809e0372821e759250f45f1ea28dde",
       "lastmod": "2026-11-23",
       "title": "tonyxtrotter Concerts & Tour Dates | Kingdom Circuit",
       "heading": "tonyxtrotter",
@@ -24927,7 +24967,7 @@
       ]
     },
     "/artists/toschii/": {
-      "fingerprint": "c10d861cebe28606c3d8347b76f11aba2bd0ea904b08b391d2f605c4f3ba4c65",
+      "fingerprint": "2d75672aeada6d36d7691200ff6f2a66bb6598f5f8e548967c814f60a8458647",
       "lastmod": "2026-11-23",
       "title": "Toschii Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Toschii",
@@ -24948,7 +24988,7 @@
       ]
     },
     "/artists/tradition/": {
-      "fingerprint": "c68d6fdc9667f19d42b16b6ee2ce9e95600fb86702847a7e35d4e097f6757b57",
+      "fingerprint": "5cfc6f5c402fb52bac1fb4cd1c6d0d884824635a568f1a87d129516fa45ee846",
       "lastmod": "2026-11-23",
       "title": "Tradition Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Tradition",
@@ -24966,7 +25006,7 @@
       ]
     },
     "/artists/trendsetter-sense/": {
-      "fingerprint": "6babf8659cdc32371496ff3c38da676060584459e7e03fe23ad38b5474c88c90",
+      "fingerprint": "53c1aa10576273362f3fb422b82d31a06ac1f8079de3795d4f7d1c9997e58230",
       "lastmod": "2026-11-23",
       "title": "Trendsetter Sense Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Trendsetter Sense",
@@ -24977,14 +25017,14 @@
       ]
     },
     "/artists/trexyn/": {
-      "fingerprint": "0e926c8eaf4df4740d3039ad50e6ae40f9ea86a1f2960b456f01435b22ddc3a5",
+      "fingerprint": "5fad73de483fca3cbbb38bcb3a9786e830f5e4b62216cc9e62595c004f812371",
       "lastmod": "2026-11-23",
       "title": "Trexyn Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Trexyn",
       "eventPaths": []
     },
     "/artists/trip-lee/": {
-      "fingerprint": "c8bb4c4af5e982c4626d35f5a79d7fbc1aed684e3916667cb1203286993c0705",
+      "fingerprint": "384a032e32466e07301f1b616e90d148f74a8bceab0892e30d6a0eda5fbb8a01",
       "lastmod": "2026-11-23",
       "title": "Trip Lee Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Trip Lee",
@@ -25007,7 +25047,7 @@
       ]
     },
     "/artists/triple-o/": {
-      "fingerprint": "4599195f8c1e6e6644ceb7b05ea5bd85bbe9a2614f0491797b596a8919a9760d",
+      "fingerprint": "f470f194cbe89da4cb8fcf94df0ab2a4c3c548eb7b8270f8f3444217741a8671",
       "lastmod": "2026-11-23",
       "title": "Triple O Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Triple O",
@@ -25023,7 +25063,7 @@
       ]
     },
     "/artists/truthsoldier/": {
-      "fingerprint": "63d62c9dd3325b1e55f92c36a443004516acdc2864d1281ff110fa967ac88b19",
+      "fingerprint": "ace8ef8447640c4c7cdbf9ce66663cd0c0a384804b681dc293451992f55acde4",
       "lastmod": "2026-11-23",
       "title": "TruthSoldier Concerts & Tour Dates | Kingdom Circuit",
       "heading": "TruthSoldier",
@@ -25032,7 +25072,7 @@
       ]
     },
     "/artists/tuv/": {
-      "fingerprint": "f892ab8e1d54e7cd27fe4b9d74a17343ad6f52683f117a5ed666b0d418c104eb",
+      "fingerprint": "f0318b6ce2b456e6b800b47bf5281a7c40381f4341303ebf98f85d5cec389fc2",
       "lastmod": "2026-11-23",
       "title": "TUVÍ Concerts & Tour Dates | Kingdom Circuit",
       "heading": "TUVÍ",
@@ -25041,7 +25081,7 @@
       ]
     },
     "/artists/tukool-tiff/": {
-      "fingerprint": "a6d6af7977945402302106545d187a497eae98d0e76f3d0a2937a7bd6d2567d3",
+      "fingerprint": "5a3401393e63a1d73a4375d2eb134e94820eebea856651e29e294bd429e8a070",
       "lastmod": "2026-11-23",
       "title": "TuKool Tiff Concerts & Tour Dates | Kingdom Circuit",
       "heading": "TuKool Tiff",
@@ -25066,7 +25106,7 @@
       ]
     },
     "/artists/tvnk/": {
-      "fingerprint": "f4453b07f4143538d5420e8e4ae6e6819eba215bb2816a1eedf5a7e7d5de2ab1",
+      "fingerprint": "19db4ba101bc9df531c59e0524e9d24f72dc89fd696a817e2d6f345a916d5127",
       "lastmod": "2026-11-23",
       "title": "TVNK Concerts & Tour Dates | Kingdom Circuit",
       "heading": "TVNK",
@@ -25075,7 +25115,7 @@
       ]
     },
     "/artists/ty-brasel/": {
-      "fingerprint": "cf7069d7edc7bc48bf2bccbcc3d2b6360fe032a1a7afade2215dd35c83a3a17f",
+      "fingerprint": "2121ac876b08d70e5885fe10e60f03ec1b835642b959cf8b0888ed5a53281544",
       "lastmod": "2026-11-23",
       "title": "Ty Brasel Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Ty Brasel",
@@ -25102,35 +25142,35 @@
       ]
     },
     "/artists/tylan1k/": {
-      "fingerprint": "7daf60f5b9c17257845240315582d5101e01a2dabc1c3984aed85c4fa36409ff",
+      "fingerprint": "1decefd7b1a416f9c2e2a2ac5b85023dd0ce685fbcadf17639ea24f09c098aff",
       "lastmod": "2026-11-23",
       "title": "Tylan1k Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Tylan1k",
       "eventPaths": []
     },
     "/artists/tylerhateslife/": {
-      "fingerprint": "f813ded54d3b5b093a7c250ba74ffcef957480c015e871494bc07d331bec8ff1",
+      "fingerprint": "a3c08a7c2f66ad19483666a7a4878acddc4ef53aa3a153f552086349a4b0c5c9",
       "lastmod": "2026-11-23",
       "title": "tylerhateslife Concerts & Tour Dates | Kingdom Circuit",
       "heading": "tylerhateslife",
       "eventPaths": []
     },
     "/artists/tylynn/": {
-      "fingerprint": "81093ccc1d3557429ef451efcad5a6877b6bfa49d2777625134214a132822017",
+      "fingerprint": "65049238ca155eaa8bf73e7122a3afdb43534013379a54eee95b5e63041b3ad4",
       "lastmod": "2026-11-23",
       "title": "Tylynn Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Tylynn",
       "eventPaths": []
     },
     "/artists/untidld/": {
-      "fingerprint": "bc9c93c67c5664e6c61429c374bce6d8b6d031f824451725b61330c5ebde7aad",
+      "fingerprint": "09dac5ff5019001b59d1ec3a9d4731dbfa72566c2c1e7448a6e0564c27b75872",
       "lastmod": "2026-11-23",
       "title": "Untidld Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Untidld",
       "eventPaths": []
     },
     "/artists/vennisay/": {
-      "fingerprint": "926f9c6e85a37df8c6a453387782cd26ae9966a79fd717ad8407168e8014c32d",
+      "fingerprint": "5e015cd6bcd78e1a658ec115bcbd469e19e09eb7685dc57991934ac00dcf004c",
       "lastmod": "2026-11-23",
       "title": "Vennisay Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Vennisay",
@@ -25139,7 +25179,7 @@
       ]
     },
     "/artists/veshone/": {
-      "fingerprint": "4de720cffbdbce9f6962f4bf4ccc33d6998b1958e0583142cc53c6b8b63c3da6",
+      "fingerprint": "2bc61d8ffc2646a2469530b166cb909cf28dd23b6f0f2e97636409080abea44f",
       "lastmod": "2026-11-23",
       "title": "Veshone Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Veshone",
@@ -25158,14 +25198,14 @@
       ]
     },
     "/artists/viktory/": {
-      "fingerprint": "662d40dc96439d2e0c1db4be41772e364d16062a69d2670ad9e08810d346052c",
+      "fingerprint": "9f92e0d322f7b42651cfde1bfa4708e6dd9634259078bea8d5d6568e10ba951e",
       "lastmod": "2026-11-23",
       "title": "Viktory Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Viktory",
       "eventPaths": []
     },
     "/artists/vvs-big-rock/": {
-      "fingerprint": "8928b9d983153d866c674bf24075bf4cc452fc6c4b2ab487612f710f19cdde90",
+      "fingerprint": "37274cab1dd225feadb9e0eca068ec226e2624e43e4073643f6010b867c1a67f",
       "lastmod": "2026-11-23",
       "title": "VVS Big Rock Concerts & Tour Dates | Kingdom Circuit",
       "heading": "VVS Big Rock",
@@ -25184,14 +25224,14 @@
       ]
     },
     "/artists/von-won/": {
-      "fingerprint": "2b555253740f3d5ff2fa5534d9166294cf3fdb8ecd09d52c4f457dda12c88ebc",
+      "fingerprint": "f4f65eac1fd397780fbdd42d663c9bba49bf18dd4655ce4d775e52a1d1a6406f",
       "lastmod": "2026-11-23",
       "title": "Von Won Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Von Won",
       "eventPaths": []
     },
     "/artists/whatuprg/": {
-      "fingerprint": "55c70d665287b813f24d2df492efb403d16dbdaaacb286a596b73e46de029c37",
+      "fingerprint": "d21000b8f93e027add4fd4cd4bd30c252d118ee11748074d97a55e49fa2d24bd",
       "lastmod": "2026-11-23",
       "title": "WHATUPRG Concerts & Tour Dates | Kingdom Circuit",
       "heading": "WHATUPRG",
@@ -25226,7 +25266,7 @@
       ]
     },
     "/artists/wiff-p/": {
-      "fingerprint": "bb3ea8939575d83c9f973458e79f00fb2987abb39c78b33310cde7b25493071e",
+      "fingerprint": "4fc23bef788f1d701c715c0f3116eac4cd36eee801cae123e0c0b613e0c8f86e",
       "lastmod": "2026-11-23",
       "title": "Wiff.P Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Wiff.P",
@@ -25235,7 +25275,7 @@
       ]
     },
     "/artists/will-kellum/": {
-      "fingerprint": "3068ac37ac13dd1b05cf6708f76fcd3510fb7506126607de4cdd398e6f6b0a3c",
+      "fingerprint": "fabde57c02a6218420b01190f97460139d1159db72ecdf06808dfc7a12849a28",
       "lastmod": "2026-11-23",
       "title": "Will Kellum Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Will Kellum",
@@ -25478,14 +25518,14 @@
       ]
     },
     "/artists/wuhsahbee/": {
-      "fingerprint": "e35337f62d5354b727e6bffca1b20e5855d0ba23468cd00d8259c0d3e7e6e3a0",
+      "fingerprint": "977811c249f7dfaba6f0bc000d9dbd06d591e93413fec161be3f72d20a99d8ac",
       "lastmod": "2026-11-23",
       "title": "Wuhsahbee Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Wuhsahbee",
       "eventPaths": []
     },
     "/artists/xay-hill/": {
-      "fingerprint": "4a69f5b4e4bced55a22aabcaa45bbcfd2a0b11e7018f327c9b8c6e64449d5b68",
+      "fingerprint": "70177c4e5aaab916ed0a0fa8c7cb64de86cbb0da14cc850445a75c55393a5382",
       "lastmod": "2026-11-23",
       "title": "Xay Hill Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Xay Hill",
@@ -25533,7 +25573,7 @@
       ]
     },
     "/artists/y-shadey/": {
-      "fingerprint": "b2acf2c9d86234849cf258cfa7a6d1c0ba54623dd79ff2a2d4fbf6f91d4c3cd3",
+      "fingerprint": "1904ea6fe932dab5dd5943ff9cbe08587bfb8d5e41a1c3dd1b1488ceadf128ea",
       "lastmod": "2026-11-23",
       "title": "Y Shadey Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Y Shadey",
@@ -25542,14 +25582,14 @@
       ]
     },
     "/artists/yakithekid/": {
-      "fingerprint": "9b892a98dd6b46bac0fbebd9ec7ba8e9643bbdd9089389b2216ecc7d682f316a",
+      "fingerprint": "08303ade8f49d9fe4046221b7cd609a718639b860fb9ab3ce518652472dc9349",
       "lastmod": "2026-11-23",
       "title": "YakiTheKid Concerts & Tour Dates | Kingdom Circuit",
       "heading": "YakiTheKid",
       "eventPaths": []
     },
     "/artists/yasmine-jinelle/": {
-      "fingerprint": "921edae18ab65747a18493599004601c52fc59dee94992e6113bb5e51d16c69b",
+      "fingerprint": "6558e0f60015fb5dea74b5c631c880f08345634d0619856a28142d85e524d145",
       "lastmod": "2026-11-23",
       "title": "Yasmine Jinelle Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Yasmine Jinelle",
@@ -25559,7 +25599,7 @@
       ]
     },
     "/artists/young-jayden/": {
-      "fingerprint": "50e3681731e5f6c5a7f75ac56c87d648ded80c78cf44fff17026ab23d63ce3eb",
+      "fingerprint": "93ce5ecc1d71cf2b2e3a181759321f0bedf15a03999fe32e53cc255c3d66dc0c",
       "lastmod": "2026-11-23",
       "title": "Young Jayden Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Young Jayden",
@@ -25568,14 +25608,14 @@
       ]
     },
     "/artists/young-bro/": {
-      "fingerprint": "c9d77b309db4c3e5eca4f5ad097a6ba6da021837859e023910f9d35fc1ca1cc8",
+      "fingerprint": "ffcb1fc34b08748dae0de39af6c80ff61bf22cac443d8aba244c02607b4bd6f5",
       "lastmod": "2026-11-23",
       "title": "Young Bro Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Young Bro",
       "eventPaths": []
     },
     "/artists/yumiya/": {
-      "fingerprint": "4d48d3573e7396072e872ac32a066c79c4d022c67fa57dc4060c3a047f0b42db",
+      "fingerprint": "a2b7cc3b1fe8c24c592658603a933b6251655e23a3c23e8a490f4f46b83069a0",
       "lastmod": "2026-11-23",
       "title": "yumiya! Concerts & Tour Dates | Kingdom Circuit",
       "heading": "yumiya!",
@@ -25585,7 +25625,7 @@
       ]
     },
     "/artists/yp-aka-young-paul/": {
-      "fingerprint": "368573c247a8b2c3e11f6eeeac5029329e99c4dffac08e7a0b72b8e572c16329",
+      "fingerprint": "f97855b0df25a820d64b87a8a377d33bc8848b3d06551ef26d34bd9306ff83c2",
       "lastmod": "2026-11-23",
       "title": "YP aka Young Paul Concerts & Tour Dates | Kingdom Circuit",
       "heading": "YP aka Young Paul",
@@ -25616,7 +25656,7 @@
       ]
     },
     "/artists/zaire-ink/": {
-      "fingerprint": "f57e1d834e3eccdadf939ab7898eada16f8be103f8b52511bb8a58dee7b992e9",
+      "fingerprint": "49b0e72c4836258f058aa62b3403a5109b1c614070e1d8f5f1a28659c60c0e1c",
       "lastmod": "2026-11-23",
       "title": "Zaire Ink Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Zaire Ink",
@@ -25625,7 +25665,7 @@
       ]
     },
     "/artists/zauntee/": {
-      "fingerprint": "e9500533928843599f85d2c426823b28b9816c188d315b8eac08d51c2290cc00",
+      "fingerprint": "9fd627c422f12b3c20cae8961d91fee26e42f2a341117627a4d1ea68430215fa",
       "lastmod": "2026-11-23",
       "title": "Zauntee Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Zauntee",
@@ -25733,7 +25773,7 @@
       ]
     },
     "/artists/zay-lowly/": {
-      "fingerprint": "243e0734f74ef9da16fe20690c897f382d13d69e99e67bbcf36f87b120991215",
+      "fingerprint": "8f353ad6895a4c767e5c81c6aa79fe63e9db05187243e0e1b2a50e6c1e2ec3d0",
       "lastmod": "2026-11-23",
       "title": "Zay Lowly Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Zay Lowly",
@@ -25742,21 +25782,21 @@
       ]
     },
     "/artists/zealous/": {
-      "fingerprint": "558135b2818eabaf14b9cd87f0e03970ab2d6763aeb34a23e5b3e6bf935ef94a",
+      "fingerprint": "c2e2ddb4c8c36f59481068a2e2b1de359948a8dcd9d84dba9996e5c941a54dc0",
       "lastmod": "2026-11-23",
       "title": "zealous. Concerts & Tour Dates | Kingdom Circuit",
       "heading": "zealous.",
       "eventPaths": []
     },
     "/artists/zee/": {
-      "fingerprint": "ed8588c072b0d4c46626c3d4d19a374f1e51d7bfe6dc0ffb2d95cca84a6a5581",
+      "fingerprint": "f517a13ad548401a9754b9799297e8c9f9f0e05c29da5eecb4a70f6d1a16d1a4",
       "lastmod": "2026-11-23",
       "title": "ZEE Concerts & Tour Dates | Kingdom Circuit",
       "heading": "ZEE",
       "eventPaths": []
     },
     "/artists/zeke/": {
-      "fingerprint": "9b03624a73b94b8ea2e9e9aa32c0f94187db12f1dfc5b4ea9f1ead95b14e71eb",
+      "fingerprint": "91deb7bf6b097f2421b8c3ae3051b61dd6d05c05877cc44d2e9df9a1b5753036",
       "lastmod": "2026-11-23",
       "title": "ZEKE Concerts & Tour Dates | Kingdom Circuit",
       "heading": "ZEKE",
@@ -25774,7 +25814,7 @@
       ]
     },
     "/artists/zenwi/": {
-      "fingerprint": "4ece05ae35f28fcc95c153b0d41925e111d1c9bbcb90c4156ca0abfc24200af4",
+      "fingerprint": "f14c1a8a9124e6ba3d1c7b0ab40d8d3102cee9404e69e75b580404272cd59542",
       "lastmod": "2026-11-23",
       "title": "Zenwi Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Zenwi",
@@ -29430,7 +29470,7 @@
       ]
     },
     "/shows/": {
-      "fingerprint": "ea4f56e80a2489e27fd2af549964aa1f052d94637d0cc5526cece8f34f19d1d5",
+      "fingerprint": "8f6dd80fd53aefcf868c03744856aa3565e472eeaceca4c9fa1fd152aa816bca",
       "lastmod": "2026-11-23",
       "title": "Christian Hip-Hop Shows & Concerts | The Kingdom Circuit",
       "heading": "Christian Hip-Hop Shows",
@@ -29524,6 +29564,7 @@
         "/event/lady-cam-at-god-s-powerful-hands-ministries-2027-01-14-mcdonough-8c59ff/",
         "/event/lady-leo-s-3rd-annual-ugly-sweater-party-2026-12-17-newark-7e422f/",
         "/event/lecrae-wild-adventures-live-2027-05-08-valdosta-f61d2f/",
+        "/event/let-jesus-reign-worship-experience-2026-12-12-bedford-9e0079/",
         "/event/light-up-the-city-ant-lee-2027-02-26-lloydminster-c950ee/",
         "/event/lights-on-2026-12-02-atlanta-643946/",
         "/event/love-and-unity-christmas-rally-2026-12-12-nipomo-88f937/",
@@ -29649,7 +29690,7 @@
       ]
     },
     "/new-shows/": {
-      "fingerprint": "5e84edc79d56875ffd1eb2bcfb663764beee6acc8352967fde402eb028636cc6",
+      "fingerprint": "2a4468edcb1949aff38cf5d2f63a0107795a424a47b94f5e75ec558945e656d3",
       "lastmod": "2026-11-23",
       "title": "New Christian Hip-Hop Shows | The Kingdom Circuit",
       "heading": "New to Kingdom Circuit",
@@ -29665,6 +29706,7 @@
         "/event/ignite-2027-a-rock-worship-experience-2027-01-16-benton-c7f000/",
         "/event/jm3-presents-the-tonight-show-concert-2026-12-05-pittsburg-d2571c/",
         "/event/lady-leo-s-3rd-annual-ugly-sweater-party-2026-12-17-newark-7e422f/",
+        "/event/let-jesus-reign-worship-experience-2026-12-12-bedford-9e0079/",
         "/event/lights-on-2026-12-02-atlanta-643946/",
         "/event/love-and-unity-christmas-rally-2026-12-12-nipomo-88f937/",
         "/event/mike-teezy-at-690-jonestown-rd-2026-12-13-winston-salem-681652/",
@@ -30157,7 +30199,7 @@
       ]
     },
     "/shows/dallas-texas/": {
-      "fingerprint": "95264f175837cdee79acf1193ecbdb81222f49de65480b5ea870418b621b010f",
+      "fingerprint": "f893336651e8da8f60aff48844b76f31819e9aa3f8ac089c7c84aabb5ba050a7",
       "lastmod": "2026-11-23",
       "title": "Christian Hip-Hop & Rap Concerts in Dallas, TX | Kingdom Circuit",
       "heading": "Christian Hip-Hop & Rap Concerts in Dallas",
@@ -30203,7 +30245,7 @@
       ]
     },
     "/shows/december-2026/": {
-      "fingerprint": "9d85490bb037b3efae2d6ce7f4fc5b669851040a41c4c7db921ae129370266e1",
+      "fingerprint": "4306dda0658a7e59d5bd990ed686bb4a12636bad868c0e77b6b2edaab489df00",
       "lastmod": "2026-11-23",
       "title": "Christian Hip-Hop Shows in December 2026 | The Kingdom Circuit",
       "heading": "Christian Hip-Hop Shows in December 2026",
@@ -30249,6 +30291,7 @@
         "/event/kb-at-diamondback-music-hall-with-skema-boy-2026-12-04-belleville-dd874c/",
         "/event/kelo-cho-presents-the-worship-after-christmas-2026-12-26-jacksonville-3eca8b/",
         "/event/lady-leo-s-3rd-annual-ugly-sweater-party-2026-12-17-newark-7e422f/",
+        "/event/let-jesus-reign-worship-experience-2026-12-12-bedford-9e0079/",
         "/event/lights-on-2026-12-02-atlanta-643946/",
         "/event/love-and-unity-christmas-rally-2026-12-12-nipomo-88f937/",
         "/event/madiel-lara-live-in-columbus-2026-12-12-columbus-c8fc58/",
@@ -30409,7 +30452,7 @@
       ]
     },
     "/shows/february-2027/": {
-      "fingerprint": "0c3c17c40b44d1b6f85dcdf5624786f9cb1106ecb455a4712eb549ed441275ff",
+      "fingerprint": "7c96063e517987c34f04253893e0f4c52ecca1a8eb07190809fe9353296b41d9",
       "lastmod": "2026-11-23",
       "title": "Christian Hip-Hop Shows in February 2027 | The Kingdom Circuit",
       "heading": "Christian Hip-Hop Shows in February 2027",
@@ -30710,7 +30753,7 @@
       ]
     },
     "/shows/houston-texas/": {
-      "fingerprint": "0aba72eb6ae3893fa0bb026cded3788a8b4ea561c95ddc01cbdc66ff18f44f14",
+      "fingerprint": "669a024a1eda4d1794b11f5fab9243a7018affc11dc798f6b5b34a2e27192ec9",
       "lastmod": "2026-11-23",
       "title": "Christian Hip-Hop & Rap Concerts in Houston, TX | Kingdom Circuit",
       "heading": "Christian Hip-Hop & Rap Concerts in Houston",
@@ -31351,7 +31394,7 @@
       ]
     },
     "/shows/new-mexico/": {
-      "fingerprint": "f2010475daf9f3d158c147100c55ed7321f34c5d6820ecc429751a01ea8f15a0",
+      "fingerprint": "2e40b4965e02e6ba65524364f1887d8821369fa18a1680ffea35417d746cf161",
       "lastmod": "2026-11-23",
       "title": "Christian Hip-Hop & Rap Concerts in New Mexico | Kingdom Circuit",
       "heading": "Christian Hip-Hop & Rap Concerts in New Mexico",
@@ -31798,7 +31841,7 @@
       ]
     },
     "/shows/san-antonio-texas/": {
-      "fingerprint": "ca3ee9d4329e57b30278f3cd489e6717842c3a03b85f8736878df69484c930e0",
+      "fingerprint": "3e1a33792ee2f9dfa042a0015052c5d1a6d112cec207d06ad7e9c6a58edc8da6",
       "lastmod": "2026-11-23",
       "title": "Christian Hip-Hop & Rap Concerts in San Antonio, TX | Kingdom Circuit",
       "heading": "Christian Hip-Hop & Rap Concerts in San Antonio",
@@ -32011,7 +32054,7 @@
       ]
     },
     "/shows/texas/": {
-      "fingerprint": "53a3ec4b908e2608c1f7bb97ef3cb4c2c3c57ab526cc79504e0a8a643a485593",
+      "fingerprint": "ee6548f15b0a30f920edf2e60f1e0f2c055855dad24162926a3e507a516df484",
       "lastmod": "2026-11-23",
       "title": "Christian Hip-Hop & Rap Concerts in Texas | Kingdom Circuit",
       "heading": "Christian Hip-Hop & Rap Concerts in Texas",
@@ -32056,6 +32099,7 @@
         "/event/jesus-loves-hip-hop-concert-2026-12-05-dallas-d03a2b/",
         "/event/jimmy-rock-rave-and-worship-dallas-2026-10-18-dallas-384f41/",
         "/event/konnect-concert-series-2026-08-22-houston-3d3289/",
+        "/event/let-jesus-reign-worship-experience-2026-12-12-bedford-9e0079/",
         "/event/light-up-the-world-fest-2026-10-31-dallas-9745b4/",
         "/event/outlandish-fest-2026-2026-11-14-fort-worth-8e2969/",
         "/event/parris-chariz-the-world-is-watching-live-2026-10-11-dallas-a6a47c/",
@@ -32112,7 +32156,7 @@
       ]
     },
     "/shows/this-weekend/": {
-      "fingerprint": "672bb909242dd7e3e0208a6a56fdb287806ccaabcef6c5a64358af6fcc878978",
+      "fingerprint": "5372f923079df318e438ce58d440fdaf7a81ce6d09ce5eb778477a3653f92bd6",
       "lastmod": "2026-11-23",
       "title": "CHH Concerts & Shows This Weekend | Kingdom Circuit",
       "heading": "Christian Hip-Hop Shows This Weekend",
@@ -32914,7 +32958,7 @@
       ]
     },
     "/artists/semajay-thegospelrapper/": {
-      "fingerprint": "130265969966378e9aa4ce12d9375108067a63ed9a45778debefd426c4c988ed",
+      "fingerprint": "2b040252325e185fac126449f5e08766ce2f7cbfae4257cf6c2be93d7c357aaf",
       "lastmod": "2026-11-23",
       "title": "Semajay ThegospelRapper Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Semajay ThegospelRapper",
@@ -34806,70 +34850,70 @@
       ]
     },
     "/artists/47quay/": {
-      "fingerprint": "62aaa5283449c2775ed53035dada188dbebf9c0841e5bd6692ea945c2b9ed457",
+      "fingerprint": "c1d6914d9db13e43261ef1c018ebe3eb34fe740b44d800e1f04ae20e914b1e01",
       "lastmod": "2026-11-23",
       "title": "47Quay Concerts & Tour Dates | Kingdom Circuit",
       "heading": "47Quay",
       "eventPaths": []
     },
     "/artists/aable/": {
-      "fingerprint": "cdd53cd1db9db15f544d52028c8f4f3987ca4cc9ca553ad8619250eb62f7a2f2",
+      "fingerprint": "df765b3390444c0a80592b7b87a4740b1053d818f79f96baf73e66323736b7a3",
       "lastmod": "2026-11-23",
       "title": "Aable Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Aable",
       "eventPaths": []
     },
     "/artists/austin-white-711/": {
-      "fingerprint": "701fbed4de28437cd2038f7b6b05b3218b441e31210364956162a78b40f9750c",
+      "fingerprint": "4b07282f5c764d130ee20219b16c728f2897da4fa7297fa56b0f03bc7325978d",
       "lastmod": "2026-11-23",
       "title": "Austin White 711 Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Austin White 711",
       "eventPaths": []
     },
     "/artists/cellus-hamilton/": {
-      "fingerprint": "46e4c7099fc86e90cc0821acb78760580d981e636fb6d2bd37dde033b3fe6a94",
+      "fingerprint": "dbebd905b0ee4bfdb6ef87520e6c473279a0ddb6951abe10b84c351e38f2f125",
       "lastmod": "2026-11-23",
       "title": "Cellus Hamilton Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Cellus Hamilton",
       "eventPaths": []
     },
     "/artists/chris-elijah/": {
-      "fingerprint": "6c2605d60b95de4835b6c236b031394ed796aea2001230aacf44ee96894cec80",
+      "fingerprint": "247fb1d74f3a24fc5a9f9164da1f540873c6dd0e2c85777f6aef70c3da0f0722",
       "lastmod": "2026-11-23",
       "title": "Chris Elijah Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Chris Elijah",
       "eventPaths": []
     },
     "/artists/cyf-ii/": {
-      "fingerprint": "05b04a010d047f6d77bde859d0b11114a4d09b4864a1a1684aff0d94dbcd3ae1",
+      "fingerprint": "1a9c6838453da49608d2f75eae8a04bbc9b801246ab10455878a8a95fa73eafa",
       "lastmod": "2026-11-23",
       "title": "Cyfë II Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Cyfë II",
       "eventPaths": []
     },
     "/artists/drebeeze-da-godson/": {
-      "fingerprint": "0ffadb60c86113f08c6a31f447d7ceb0506613a51e8b557b71cefb689e3c46f2",
+      "fingerprint": "907382ba6ad6fcfafa50bb1164e71e1a0b22665e7127232a1bfc2215898e4686",
       "lastmod": "2026-11-23",
       "title": "DreBeeze Da Godson Concerts & Tour Dates | Kingdom Circuit",
       "heading": "DreBeeze Da Godson",
       "eventPaths": []
     },
     "/artists/dyp/": {
-      "fingerprint": "044cb772d4b93844dd5de790a7d6d848d6408314635ac175c186f107480e48c2",
+      "fingerprint": "9890ecadc8959938af1d27d1d1f55c21eb8d6256d4d0edfea6b72c826cac978a",
       "lastmod": "2026-11-23",
       "title": "DYP Concerts & Tour Dates | Kingdom Circuit",
       "heading": "DYP",
       "eventPaths": []
     },
     "/artists/f-l-o-g-i-c/": {
-      "fingerprint": "11a992cae85a1046404a8fabb3b104859f6b61756e816f7f3d8cbfa87f2f71c6",
+      "fingerprint": "c2373dff35d17ff20468c5fb1126b557aabe9971a6e84a826b67a387aebfe8bc",
       "lastmod": "2026-11-23",
       "title": "F.L.O.G.I.C. Concerts & Tour Dates | Kingdom Circuit",
       "heading": "F.L.O.G.I.C.",
       "eventPaths": []
     },
     "/artists/fsg-lexy/": {
-      "fingerprint": "90a2ecb78a137f7204040d7f13e4e3ee41840ee892ba161163093627daa5b3af",
+      "fingerprint": "84678806e5c8f8adc79d43e16b66fb4beacaaaa192c715013f484c6a2281be18",
       "lastmod": "2026-11-23",
       "title": "FSG LEXY Concerts & Tour Dates | Kingdom Circuit",
       "heading": "FSG LEXY",
@@ -34885,35 +34929,35 @@
       ]
     },
     "/artists/hypemanprince/": {
-      "fingerprint": "b425d112131eb1578e18e190f1c38879caba57133df157c3c9e38de0a4b94745",
+      "fingerprint": "75bac98c7f049275a0b11524010f15e013614eab096cf4f3ad988dc4f1b4eb0f",
       "lastmod": "2026-11-23",
       "title": "HypemanPrince Concerts & Tour Dates | Kingdom Circuit",
       "heading": "HypemanPrince",
       "eventPaths": []
     },
     "/artists/j68/": {
-      "fingerprint": "bac0db52c6d004e9f454423d779b57e33450e05e4acc499d29e95c3d9ced8ad3",
+      "fingerprint": "6c7b13a351a3bdb8aea234fd66b73cfa72c8224f1c6cc62b45924526d8442781",
       "lastmod": "2026-11-23",
       "title": "J68 Concerts & Tour Dates | Kingdom Circuit",
       "heading": "J68",
       "eventPaths": []
     },
     "/artists/jason-terrell/": {
-      "fingerprint": "ff0fef5f8466fc39ad1d7273e6646bd31dd7eee0997768eb8ab8d985b82d8cbd",
+      "fingerprint": "150add19df08819ce4ce06ea8463f6adbe29ba8137b58b0fe9e1805aef5da783",
       "lastmod": "2026-11-23",
       "title": "Jason Terrell Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Jason Terrell",
       "eventPaths": []
     },
     "/artists/jay-manwell/": {
-      "fingerprint": "46896155c4eecfe230d8dc7f6a70d33e637919c672626ffb316c2f390a158df6",
+      "fingerprint": "37029273a132ff803525fbfb634fae5b01f4fe778470837f48e92ebd9639e93d",
       "lastmod": "2026-11-23",
       "title": "Jay Manwell Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Jay Manwell",
       "eventPaths": []
     },
     "/artists/joey-deville/": {
-      "fingerprint": "87ba1e45c3fea92e2b8af6bda55870b8aa004e9a823ed30324c6c761b22aa77f",
+      "fingerprint": "001471681e5f08686f62183dc305d72bc09a94e4eb6a330315b9984bef41f660",
       "lastmod": "2026-11-23",
       "title": "Joey DeVille Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Joey DeVille",
@@ -34929,14 +34973,14 @@
       ]
     },
     "/artists/joshuaa/": {
-      "fingerprint": "a98491c8bc9aa16fb729126a19d7c297965f941f81a0bf925f7bdad4cb85eaef",
+      "fingerprint": "4d3371c311b32ca9639bb8b5abd43364c608558ef8f6a93332def3a424d6077d",
       "lastmod": "2026-11-23",
       "title": "joshuaa* Concerts & Tour Dates | Kingdom Circuit",
       "heading": "joshuaa*",
       "eventPaths": []
     },
     "/artists/kalculus/": {
-      "fingerprint": "fb400afe8f982cc25118f7792e08c04e02616ae594e9be6eb88cf62d31fc53a4",
+      "fingerprint": "90486e748216ab78023b98d74967ac2510237763fcc350e6039c7d0265879170",
       "lastmod": "2026-11-23",
       "title": "Kalculus Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Kalculus",
@@ -34952,49 +34996,49 @@
       ]
     },
     "/artists/lathan-warlick/": {
-      "fingerprint": "edd4d19159e195121a0df16686e79b438b0f57598a8b33a46a67e1a02410129e",
+      "fingerprint": "30fb5e38ba0c0b9f219c2ff0bed9c155a4401dc921ddbf1820524e3cba158b55",
       "lastmod": "2026-11-23",
       "title": "Lathan Warlick Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Lathan Warlick",
       "eventPaths": []
     },
     "/artists/levi-todd/": {
-      "fingerprint": "fa3cdad55b72b3674be173a73012d132268cb539f55ef776f9ac500434b24d3a",
+      "fingerprint": "a3860c25d0a79f4873004502ca5ecab4fda1cef961233842aa7625633b993f90",
       "lastmod": "2026-11-23",
       "title": "Levi Todd Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Levi Todd",
       "eventPaths": []
     },
     "/artists/marqus-anthony/": {
-      "fingerprint": "074417f1b7f3a59563a6ea76f1f208cf57a00cfd757cb74723031d5eac5e3b57",
+      "fingerprint": "8328db9c6d1b232172fd7f4ae630ce139040cadae80ebaf4a2b9a1e630dce2fb",
       "lastmod": "2026-11-23",
       "title": "Marqus Anthony Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Marqus Anthony",
       "eventPaths": []
     },
     "/artists/miz-tiffany/": {
-      "fingerprint": "cf8145ab196aa01fb7f4e459c04c553adf98bf0766a592b27b2392e2d70538c9",
+      "fingerprint": "d98209e4511eb1515c88a2dfdfef8eed933eeed2e3765039c0485e1b2436ef64",
       "lastmod": "2026-11-23",
       "title": "Miz Tiffany Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Miz Tiffany",
       "eventPaths": []
     },
     "/artists/mynista/": {
-      "fingerprint": "2dafe88d6a88710627fd611ca99660b8aa77824f8d755fad02010c41b71fe7ea",
+      "fingerprint": "65fc344f60da477f7673e48ca531be9a2500b98a25fbbaf7966ef2408f870c9c",
       "lastmod": "2026-11-23",
       "title": "Mynista Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Mynista",
       "eventPaths": []
     },
     "/artists/ogk-joshua/": {
-      "fingerprint": "318d6c8a9f82ce4a178bc83a79d9815a66bcfddb7bdf0b0973666013ca66027c",
+      "fingerprint": "4beb4fd02df16af83affa30451078e78067238e190754f300e6e3f2c99423d6c",
       "lastmod": "2026-11-23",
       "title": "OGK Joshua Concerts & Tour Dates | Kingdom Circuit",
       "heading": "OGK Joshua",
       "eventPaths": []
     },
     "/artists/plain-james/": {
-      "fingerprint": "e5b8785e48844c4dc39e4d3bf3a6198f7940ca66593215395f535ba540479e5a",
+      "fingerprint": "8d57343b0a2301db04332155adbe22239d4736e0287bd1bebf80655d3aaa6e6e",
       "lastmod": "2026-11-23",
       "title": "Plain James Concerts & Tour Dates | Kingdom Circuit",
       "heading": "Plain James",
@@ -35028,14 +35072,14 @@
       ]
     },
     "/artists/truwerdz/": {
-      "fingerprint": "2da12083b92fed92b342626c74b4fb896a0a75d5ff60fd5de9a5d2a8df9785c7",
+      "fingerprint": "35904b696b9c1b75adf826371b85fcced551d1e2d3b619b1d61037b8336b4ed3",
       "lastmod": "2026-11-23",
       "title": "TruWerdz Concerts & Tour Dates | Kingdom Circuit",
       "heading": "TruWerdz",
       "eventPaths": []
     },
     "/artists/verbpro-12-4/": {
-      "fingerprint": "3abea693874917c2184dd14bcf5af3343bfc041c835676154f79560177e6da67",
+      "fingerprint": "6be46190fedc50c124d3161696ad2ebb41ca5ddcc63bcdd260aee21c62d5acd4",
       "lastmod": "2026-11-23",
       "title": "VerbPro 12:4 Concerts & Tour Dates | Kingdom Circuit",
       "heading": "VerbPro 12:4",
@@ -35102,14 +35146,14 @@
       ]
     },
     "/shows/cities/": {
-      "fingerprint": "0a9b6955a623e9a8358f4efd38dd06da34e09f8054d3b85c7fd2bb85ffd3618e",
+      "fingerprint": "9a179f517b714b5790097dcc88b60fa017ed8ac5c50725623566bc6358f6a035",
       "lastmod": "2026-11-23",
       "title": "CHH shows by city | Kingdom Circuit",
       "heading": "CHH shows by city",
       "eventPaths": []
     },
     "/shows/states/": {
-      "fingerprint": "72e0ecbd3137ebcb669c5af0e501c33d55ab56e69f99bf28ab6e9a47c0eefbcc",
+      "fingerprint": "6754c3fe91f55ec513a62e8f572a3b4be02c267fe9adc3233a0e4a0c162f0355",
       "lastmod": "2026-11-23",
       "title": "CHH shows by state | Kingdom Circuit",
       "heading": "CHH shows by state",
@@ -37696,8 +37740,8 @@
       "eventPaths": []
     },
     "/artists/issac-mansfield/texas/": {
-      "fingerprint": "658e728ca5fd854bd2bf634ec0993ee3d450b2d1055e6f7ecb6fdddd4442b164",
-      "lastmod": "2026-11-20",
+      "fingerprint": "6bec2d403553bb9549e367dd832b1c8b418567620cf8c384c3d4254c14e4f90f",
+      "lastmod": "2026-11-23",
       "title": "Issac Mansfield Concerts in Texas | Upcoming Shows",
       "heading": "Issac Mansfield Concerts in Texas",
       "eventPaths": [
@@ -37712,10 +37756,10 @@
       "eventPaths": []
     },
     "/event/issac-mansfield-at-the-gallery-at-yam-2027-02-06-dallas-7fb117/": {
-      "fingerprint": "c9cafbd7879079d90f59896d35cd0c4781654bbf99baf72945a18c55a3a904e2",
+      "fingerprint": "d6a6074c38727fd394ad2c41362deaf8a719219cfd27759c80aed39ad387de6f",
       "lastmod": "2026-11-23",
-      "title": "Issac Mansfield at THE GALLERY AT YAM — Dallas, TX — Sat, Feb 6, 2027 - 7:00 PM | Kingdom Circuit",
-      "heading": "Issac Mansfield at THE GALLERY AT YAM",
+      "title": "From the Dust — Dallas, TX — Sat, Feb 6, 2027 - 7:00 PM | Kingdom Circuit",
+      "heading": "From the Dust",
       "eventPaths": [
         "/event/a-night-of-musical-magic-2026-11-28-san-antonio-0977bc/",
         "/event/god-bless-the-east-2026-12-04-san-antonio-494040/",
@@ -37830,8 +37874,8 @@
       ]
     },
     "/shows/north-east-dallas-texas/": {
-      "fingerprint": "ce544cfffa43ef88e22053158f6f65c6dad1e630c3d6f703e8d2394c7008df58",
-      "lastmod": "2026-11-20",
+      "fingerprint": "578dba5e2bb3bb5835a3bb3434b2a0abde63aeded72c44591f5abbc3cd744c09",
+      "lastmod": "2026-11-23",
       "title": "Christian Hip-Hop & Rap Concerts in North East Dallas | Kingdom Circuit",
       "heading": "Christian Hip-Hop & Rap Concerts in North East Dallas",
       "eventPaths": [
@@ -38393,6 +38437,35 @@
         "/event/hub-city-bash-2026-12-31-jackson-8a6813/",
         "/event/ury-youth-and-young-adult-christmas-party-2026-12-11-charlotte-2f014b/"
       ]
+    },
+    "/artists/asap-preach/texas/": {
+      "fingerprint": "f3939ccf5ea5f798a9b5db4f416517aa5cab530edb0d43182a086e9264b1ee15",
+      "lastmod": "2026-11-23",
+      "title": "ASAP Preach Concerts in Texas | Upcoming Shows",
+      "heading": "ASAP Preach Concerts in Texas",
+      "eventPaths": [
+        "/event/let-jesus-reign-worship-experience-2026-12-12-bedford-9e0079/"
+      ]
+    },
+    "/event/let-jesus-reign-worship-experience-2026-12-12-bedford-9e0079/": {
+      "fingerprint": "8bc80d6c0265f82d82231638e4a4f46dec70198a2d09a54222a0df1d66f09c51",
+      "lastmod": "2026-11-23",
+      "title": "Let Jesus Reign Worship Experience — Bedford, TX — Sat, Dec 12, 2026 - 7:00 PM | Kingdom Circuit",
+      "heading": "Let Jesus Reign Worship Experience",
+      "eventPaths": [
+        "/event/a-night-of-musical-magic-2026-11-28-san-antonio-0977bc/",
+        "/event/god-bless-the-east-2026-12-04-san-antonio-494040/",
+        "/event/jesus-loves-hip-hop-concert-2026-12-05-dallas-d03a2b/"
+      ]
+    },
+    "/shows/bedford-texas/": {
+      "fingerprint": "c6a4b0582bb7a1ff394149a4bb763bf9fa75e9a9040aacb61f06762e4bd154b9",
+      "lastmod": "2026-11-23",
+      "title": "Christian Hip-Hop & Rap Concerts in Bedford, TX | Kingdom Circuit",
+      "heading": "Christian Hip-Hop & Rap Concerts in Bedford",
+      "eventPaths": [
+        "/event/let-jesus-reign-worship-experience-2026-12-12-bedford-9e0079/"
+      ]
     }
   },
   "retiredPaths": [
@@ -38400,5 +38473,5 @@
     "/event/grits-at-poor-david-s-pub-2026-12-16-dallas-2665b8/",
     "/event/ryan-ellis-at-the-betsy-hotel-2026-11-13-miami-beach-e47963/"
   ],
-  "publishedAt": "2026-11-23T15:53:51.990496+00:00"
+  "publishedAt": "2026-11-23T21:46:00.819098+00:00"
 }
