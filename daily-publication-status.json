@@ -581,18 +581,31 @@
       "schedule": "",
       "trigger": "automatic_fallback",
       "startedAt": "2026-11-23T11:15:51.105496+00:00",
-      "conclusion": "started"
+      "conclusion": "success",
+      "finishedAt": "2026-11-23T12:07:22.166659+00:00",
+      "stages": {
+        "collection": "success",
+        "source_save": "success",
+        "build": "success",
+        "deployment": "success",
+        "live": "success",
+        "freshness": "success"
+      },
+      "catalogDay": "2026-11-23",
+      "savedSourceSha": "68ef805cf41b31da40e5d3d94b48282c8b1363c2",
+      "htmlUrl": "https://github.com/84lorinw-a11y/kingdom-circuit/actions/runs/45163464912",
+      "attemptedCatalogDay": "2026-11-23"
     }
   },
   "latest": {
-    "runId": "45141138929",
+    "runId": "45163464912",
     "attempt": "1",
     "conclusion": "success",
-    "mode": "dates",
+    "mode": "full",
     "day": "2026-11-23",
-    "finishedAt": "2026-11-23T09:05:55.276076+00:00",
+    "finishedAt": "2026-11-23T12:07:22.166659+00:00",
     "stages": {
-      "collection": "skipped",
+      "collection": "success",
       "source_save": "success",
       "build": "success",
       "deployment": "success",
@@ -600,8 +613,8 @@
       "freshness": "success"
     },
     "catalogDay": "2026-11-23",
-    "savedSourceSha": "5a006202d7b1baeaf70da8a9ad9c12b0b18f17f4",
-    "htmlUrl": "https://github.com/84lorinw-a11y/kingdom-circuit/actions/runs/45141138929",
+    "savedSourceSha": "68ef805cf41b31da40e5d3d94b48282c8b1363c2",
+    "htmlUrl": "https://github.com/84lorinw-a11y/kingdom-circuit/actions/runs/45163464912",
     "attemptedCatalogDay": "2026-11-23"
   },
   "completed": {
@@ -1104,6 +1117,26 @@
       "catalogDay": "2026-11-23",
       "savedSourceSha": "5a006202d7b1baeaf70da8a9ad9c12b0b18f17f4",
       "htmlUrl": "https://github.com/84lorinw-a11y/kingdom-circuit/actions/runs/45141138929",
+      "attemptedCatalogDay": "2026-11-23"
+    },
+    "full:2026-11-23": {
+      "runId": "45163464912",
+      "attempt": "1",
+      "conclusion": "success",
+      "mode": "full",
+      "day": "2026-11-23",
+      "finishedAt": "2026-11-23T12:07:22.166659+00:00",
+      "stages": {
+        "collection": "success",
+        "source_save": "success",
+        "build": "success",
+        "deployment": "success",
+        "live": "success",
+        "freshness": "success"
+      },
+      "catalogDay": "2026-11-23",
+      "savedSourceSha": "68ef805cf41b31da40e5d3d94b48282c8b1363c2",
+      "htmlUrl": "https://github.com/84lorinw-a11y/kingdom-circuit/actions/runs/45163464912",
       "attemptedCatalogDay": "2026-11-23"
     }
   }
