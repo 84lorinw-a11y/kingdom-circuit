@@ -19,6 +19,7 @@ FIELDS = {'address', 'address2', 'postalCode', 'venue', 'city', 'startTime', 'st
           'registrationUrl', 'registrationUrlVerified', 'primaryTimeKind', 'officialUrl',
           'venueUrl', 'venueInstagram', 'organizerInstagram', 'organizerWebsite',
           'organizerLinkName', 'organizerWebsiteName', 'organizerInstagramName', 'eventInstagram'}
+CORRECTION_FIELDS = FIELDS | {'title'}
 VERIFICATION_URLS = {'ticketUrlVerified': 'ticketUrl',
                      'registrationUrlVerified': 'registrationUrl'}
 
@@ -42,7 +43,7 @@ def enrich(event, reviewed):
         corrections = item.get('corrections', [])
         for correction in corrections:
             expected, replacements = correction['expected'], correction['facts']
-            if not replacements or set(expected) != set(replacements) or set(replacements) - FIELDS:
+            if not replacements or set(expected) != set(replacements) or set(replacements) - CORRECTION_FIELDS:
                 raise ValueError(f"Unsafe reviewed correction for {item['id']}")
             if any(flag in replacements and url not in replacements
                    for flag, url in VERIFICATION_URLS.items()):

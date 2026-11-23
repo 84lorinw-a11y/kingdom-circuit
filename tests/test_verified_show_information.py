@@ -162,6 +162,22 @@ class VerifiedShowInformationTests(unittest.TestCase):
             'expected': {'address': ''}, 'facts': {'address': '100 Hidden St'}}]}
         self.assertFalse(enrich(private, [pin]).get('address'))
 
+    def test_venue_rename_corrects_only_the_obsolete_concert_title(self):
+        registry = json.loads((Path(__file__).resolve().parents[1] /
+                               'config/verified-show-information.json').read_text())['events']
+        pin = next(item for item in registry if item['id'] == 'official:856f1913ed1c6be9b355')
+        event = {key: pin[key] for key in ('id', 'startDate', 'city', 'state', 'country')}
+        event.update(venue='Duke Energy Convention Center', title='Hulvey — Live at Duke Energy Convention Center')
+        renamed = enrich(event, [pin])
+        self.assertEqual(renamed['title'], 'Hulvey Live at First Financial Center')
+        self.assertEqual(renamed['venue'], 'First Financial Center')
+        self.assertEqual(enrich(renamed, [pin]), renamed)
+        newer = enrich({**event, 'title': 'FOLLOW Conference Presents Hulvey'}, [pin])
+        self.assertEqual(newer['title'], 'FOLLOW Conference Presents Hulvey')
+        self.assertEqual(newer['venue'], 'First Financial Center')
+        moved = {**event, 'venue': 'Another venue'}
+        self.assertEqual(enrich(moved, [pin]), moved)
+
     def test_correction_does_not_replace_a_newer_legacy_organizer(self):
         current = {**self.event, 'organizerName': 'New Presenter'}
         pin = {**self.pin, 'facts': {}, 'corrections': [{

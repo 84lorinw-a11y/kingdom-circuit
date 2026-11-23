@@ -3476,10 +3476,38 @@
           "evidence": "Official conference website directly links @followcon2026 as its conference account, separately from parent Next Gen ministry account. Label organizer links FOLLOW Conference.",
           "receipt": "root-source-receipts/46cbbb02cce5ec.json",
           "reviewedAt": "2026-11-06"
+        },
+        {
+          "url": "https://followconference.org/",
+          "fields": [
+            "venue",
+            "title"
+          ],
+          "quoteOrSummary": "The conference FAQ confirms the current venue name and its former name at 525 Elm St. The Tuesday schedule confirms a 9 PM concert by Hulvey.",
+          "reviewedAt": "2026-11-23",
+          "confidence": "high"
         }
       ],
       "expectedVenue": "Duke Energy Convention Center",
-      "expectedAddress": "525 Elm St"
+      "expectedAddress": "525 Elm St",
+      "corrections": [
+        {
+          "expected": {
+            "venue": "Duke Energy Convention Center"
+          },
+          "facts": {
+            "venue": "First Financial Center"
+          }
+        },
+        {
+          "expected": {
+            "title": "Hulvey — Live at Duke Energy Convention Center"
+          },
+          "facts": {
+            "title": "Hulvey Live at First Financial Center"
+          }
+        }
+      ]
     },
     {
       "id": "manual:rock-the-universe-orlando-2027",
