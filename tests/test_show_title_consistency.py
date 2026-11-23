@@ -69,6 +69,24 @@ class ShowTitleConsistencyTests(unittest.TestCase):
         self.assertEqual(titles.page_checks(Document(source), '/shows/', self.expected,
                          {'/event/old-url/': self.path})['errors'], [])
 
+    def test_new_private_booking_can_use_separate_badge_but_not_conflicting_names(self):
+        records = {self.path: {'title': 'Retreat', 'private': True}}
+        catalog = {'shows': [{'path': self.path, 'name': 'Retreat'}]}
+        expected = titles.expected_titles(records, catalog)
+        self.assertEqual(expected[self.path], 'Retreat')
+        source = (f'<h1>Retreat</h1><p>Private event</p>'
+                  f'<h3><a href="{self.path}">Retreat</a></h3>')
+        self.assertEqual(titles.page_checks(Document(source), self.path, expected)['errors'], [])
+        changed = source.replace('<h1>Retreat</h1>', '<h1>Retreat (Private Event)</h1>')
+        self.assertEqual(titles.page_checks(Document(changed), self.path, expected)['errors'][0]['surface'], 'eventHeading')
+
+    def test_catalog_cannot_invent_private_or_public_show_identity(self):
+        catalog = {'shows': [{'path': self.path, 'name': 'Unrelated concert'}]}
+        for private in (True, False):
+            with self.subTest(private=private):
+                expected = titles.expected_titles({self.path: {'title': 'Retreat', 'private': private}}, catalog)
+                self.assertEqual(len(titles.catalog_checks(catalog, expected)['errors']), 1)
+
 
 if __name__ == '__main__':
     unittest.main()

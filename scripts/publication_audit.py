@@ -367,7 +367,7 @@ def verify(site, day, repo=ROOT):
     catalog = json.loads((site / 'assets/fan-show-catalog.json').read_text())
     import publication_inventory
     source_records = publication_inventory.source_records(repo, day)
-    show_titles = show_title_consistency.expected_titles(source_records)
+    show_titles = show_title_consistency.expected_titles(source_records, catalog)
     sitemap_list = [n.text for n in ET.parse(site / 'sitemap.xml').findall('.//{*}loc')]
     documents = audit_documents(site, manifest['redirects'], set(sitemap_list), show_titles)
     title_result = show_title_consistency.catalog_checks(catalog, show_titles)

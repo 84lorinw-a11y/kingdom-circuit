@@ -15,9 +15,20 @@ def normalized(value):
     return ' '.join(str(value or '').split())
 
 
-def expected_titles(records):
-    return {path: display_title(record) if record.get('private') else record['title']
-            for path, record in records.items()}
+def expected_titles(records, catalog=None):
+    # Private admission can be a separate badge. Accept either supported form,
+    # then require the single selected spelling on every published surface.
+    published = {row['path']: row.get('name') for row in (catalog or {}).get('shows', [])}
+    expected = {}
+    for path, record in records.items():
+        title = record['title']
+        if record.get('private'):
+            title = display_title(record)
+            allowed = {normalized(record['title']), normalized(title)}
+            if normalized(published.get(path)) in allowed:
+                title = published[path]
+        expected[path] = title
+    return expected
 
 
 def page_checks(doc, path, expected, redirects=None, include_inventory=True):
