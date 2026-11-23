@@ -72,11 +72,50 @@ class PrivateEventsTests(unittest.TestCase):
         other = dict(event, id='other-event', title='Public show', status='scheduled')
         source = event_card(event, []) + event_card(other, [])
         output = private.label_cards(source)
-        self.assertIn('AMPLIFY — Private Event', output)
+        self.assertIn('AMPLIFY (Private Event)', output)
         self.assertIn('Not open to the public.', output)
         self.assertIn(event_card(other, []), output)
         self.assertIn('href="' + event_path(event) + '"', output)
         self.assertEqual(private.label_cards(output), output)
+
+    def test_private_title_matches_cards_detail_aliases_and_artist_rows(self):
+        from mobile_discovery import Document
+        from finalize_artist_details import enrich_row
+
+        event = dict(private.records()[0], title='Retreat & Worship')
+        original = dict(event)
+        expected = 'Retreat & Worship (Private Event)'
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'config').mkdir()
+            configuration = root / 'config/private-events.json'
+            configuration.write_text(json.dumps([event]))
+            before = configuration.read_bytes()
+            site = root / 'public'
+            site.mkdir()
+            paths = private.write_pages(site, root)
+            card = private.label_cards(event_card(event, []), root)
+            card_doc = Document(card)
+            self.assertEqual(expected, card_doc.text(card_doc.one(lambda n: n.tag == 'h3')))
+            self.assertEqual(private.label_cards(card, root), card)
+            self.assertEqual(event, original)
+            self.assertEqual(configuration.read_bytes(), before)
+            for path in paths:
+                document = Document((site / path.strip('/') / 'index.html').read_text())
+                self.assertEqual(expected, document.text(document.one(lambda n: n.tag == 'h1')))
+                self.assertEqual(expected + ' | Kingdom Circuit',
+                                 document.text(document.one(lambda n: n.tag == 'title')))
+                self.assertEqual(expected + ' | Kingdom Circuit',
+                                 document.one(lambda n: n.tag == 'meta' and n.attrs.get('property') == 'og:title').attrs['content'])
+                self.assertIn('Private event — not open to the public.', document.source)
+                self.assertNotIn('"@type":"MusicEvent"', document.source)
+                row = f'<a class="kc-rd-show-row" href="{path}"><span class="kc-rd-show-venue">Venue</span></a>'
+                enriched = Document(enrich_row(row, site, '/'))
+                self.assertEqual(expected, enriched.text(enriched.one(lambda n: n.has('kc-rd-event-title'))))
+
+    def test_existing_private_title_label_is_not_duplicated(self):
+        self.assertEqual(private.display_title({'title': 'AMPLIFY (Private Event)'}),
+                         'AMPLIFY (Private Event)')
 
     def test_expired_private_dates_are_not_restored_to_upcoming_feeds(self):
         with tempfile.TemporaryDirectory() as tmp:

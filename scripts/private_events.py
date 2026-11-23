@@ -27,6 +27,13 @@ def records(root=ROOT):
     return json.loads(path.read_text()) if path.exists() else []
 
 
+def display_title(event):
+    """Use the same visible booking name on cards and its detail page."""
+    title = str(event.get('title') or 'Event').strip()
+    title = re.sub(r'(?:\s*\(Private Event\))+$', '', title, flags=re.I)
+    return title + ' (Private Event)'
+
+
 def matches(event, private):
     if event.get('startDate') != private.get('startDate'):
         return False
@@ -143,7 +150,7 @@ def label_cards(source, root=ROOT):
             continue
         href = link.attrs['href']
         edits = [(link.opening_end, link.closing_start,
-                  esc(paths[href]['title'] + ' — Private Event'))]
+                  esc(display_title(paths[href])))]
         badges = fragment.one(lambda n: n.has('event-badges'))
         edits.append((badges.start, badges.end,
                       '<div class="event-badges"><span class="badge badge-gold">Private Event</span></div>'))
@@ -179,6 +186,7 @@ def write_pages(site, root=ROOT):
     from build_seo_site import page, esc, event_path, format_date, image_url, breadcrumb_schema
     written = []
     for event in records(root):
+        title = display_title(event)
         canonical = event_path(event)
         paths = [canonical, *event.get('legacyEventPaths', [])]
         for path in dict.fromkeys(paths):
@@ -189,14 +197,14 @@ def write_pages(site, root=ROOT):
 <div class="empty-panel" role="status"><strong>Private event — not open to the public.</strong>
 <p>North Canton Chapel confirmed this booking is for a retreat. Public attendance has not been approved. Please do not make plans to attend unless the church confirms that it is open.</p></div>
 <article class="event-detail"><div class="event-detail-media"><img class="artist-photo" src="{esc(image_url(event['image']))}" alt="808 BEEZY" width="1200" height="675"></div>
-<div class="event-detail-copy"><p class="eyebrow">Private event</p><h1>808 BEEZY — AMPLIFY</h1>
+<div class="event-detail-copy"><p class="eyebrow">Private event</p><h1>{esc(title)}</h1>
 <p class="artist-line"><a href="/artists/808-beezy/">808 BEEZY</a></p>
 <dl class="detail-list"><div><dt>Status</dt><dd>Private Event — not open to the public</dd></div><div><dt>Date</dt><dd><time data-kc-private-date datetime="{esc(event['startDate'])}" data-end-date="{esc(event.get('endDate') or event['startDate'])}">{esc(format_date(event))}</time></dd></div>
 <div><dt>Venue</dt><dd>{esc(event['venue'])}</dd></div><div><dt>Location</dt><dd>{esc(event['city'])}, {esc(event['state'])}</dd></div></dl>
 <p>This listing is retained for reference. We will update it if the church confirms public admission.</p>
 <a class="primary-button" href="/shows/">Explore public shows</a></div></article></section>'''
             # Private bookings are not eligible for public Event rich results.
-            document = page('808 BEEZY — AMPLIFY | Private Event | Kingdom Circuit',
+            document = page(title + ' | Kingdom Circuit',
                             event['publicDescription'], canonical, body,
                             [breadcrumb_schema(crumbs)])
             document = accessible_page(document)

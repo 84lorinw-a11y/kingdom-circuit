@@ -21,6 +21,7 @@ import xml.etree.ElementTree as ET
 import calendar_maintenance as calendar
 from mobile_discovery import Document
 import show_information
+import show_title_consistency
 import url_continuity as continuity
 from verify_public_performance import audit_artifact_capacity
 
@@ -135,8 +136,9 @@ def audit_link_graph(site, documents):
             'maximumIndexableDepth': max(distribution, default=0)}
 
 
-def audit_documents(site, redirects, sitemap):
+def audit_documents(site, redirects, sitemap, show_titles=None):
     errors, pages, events, counts, documents = [], {}, {}, Counter(), {}
+    title_counts = Counter()
     for file in sorted(site.rglob('*.html')):
         path = page_url(file, site)
         text = file.read_text()
@@ -148,6 +150,10 @@ def audit_documents(site, redirects, sitemap):
         except Exception as exc:
             errors.append(issue('invalid_jsonld_or_html_parse', path, error=str(exc)))
             continue
+        if show_titles is not None:
+            title_result = show_title_consistency.page_checks(doc, path, show_titles, redirects)
+            errors.extend(title_result['errors'])
+            title_counts.update(title_result['counts'])
         templates = [n for n in doc.nodes if n.tag == 'template']
         ids = {value for n in doc.nodes
                if not any(t.start < n.start < t.end for t in templates)
@@ -212,6 +218,7 @@ def audit_documents(site, redirects, sitemap):
     graph = audit_link_graph(site, documents)
     errors.extend(graph['errors'])
     return dict(errors=errors, pages=pages, events=events, schemaTypes=dict(counts),
+                showTitles=dict(title_counts),
                 linkGraph={k: v for k, v in graph.items() if k != 'errors'})
 
 
@@ -358,15 +365,19 @@ def verify(site, day, repo=ROOT):
     errors, checks = [], {}
     manifest = json.loads((site / 'url-continuity-manifest.json').read_text())
     catalog = json.loads((site / 'assets/fan-show-catalog.json').read_text())
+    import publication_inventory
+    source_records = publication_inventory.source_records(repo, day)
+    show_titles = show_title_consistency.expected_titles(source_records)
     sitemap_list = [n.text for n in ET.parse(site / 'sitemap.xml').findall('.//{*}loc')]
-    documents = audit_documents(site, manifest['redirects'], set(sitemap_list))
+    documents = audit_documents(site, manifest['redirects'], set(sitemap_list), show_titles)
+    title_result = show_title_consistency.catalog_checks(catalog, show_titles)
+    errors.extend(title_result['errors'])
+    checks['showTitles'] = dict(Counter(documents['showTitles']) + Counter(title_result['counts']))
     errors.extend(documents['errors'])
     errors.extend(robots_errors(site, [p for p, facts in documents['pages'].items() if facts['sitemap']]))
     if len(set(sitemap_list)) != len(sitemap_list):
         errors.append(issue('duplicate_sitemap_urls', '/sitemap.xml'))
     ctx = show_information.context(site)
-    import publication_inventory
-    source_records = publication_inventory.source_records(repo, day)
     for path, record in source_records.items():
         errors.extend(event_fact_errors(path, record, documents['events'].get(path, [])))
         if record.get('private'):
