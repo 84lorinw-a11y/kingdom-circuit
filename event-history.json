@@ -47363,7 +47363,7 @@
         "title": "Jesus Loves Hip Hop Concert",
         "startDate": "2026-12-05",
         "endDate": "2026-12-05",
-        "startTime": "",
+        "startTime": "17:00",
         "timezone": "America/Chicago",
         "venue": "DS Studio",
         "address": "800 Exposition Ave #1",
@@ -47376,27 +47376,30 @@
           "Set Free Music",
           "Fearless",
           "Freddrick HalleluYAH!!!",
-          "CADNCE"
+          "CADNCE",
+          "GODSWILL"
         ],
         "advertisedBilling": [
           "DJ Network",
           "Set Free Music",
           "Fearless",
           "Freddrick HalleluYAH!!!",
-          "CADNCE"
+          "CADNCE",
+          "GODSWILL"
         ],
         "officialBill": [
           "DJ Network",
           "Set Free Music",
           "Fearless",
           "Freddrick HalleluYAH!!!",
-          "CADNCE"
+          "CADNCE",
+          "GODSWILL"
         ],
         "eventType": "concert",
         "status": "scheduled",
         "lineupExplicit": true,
         "musicConfirmed": true,
-        "ticketUrl": "",
+        "ticketUrl": "https://www.eventbrite.com/e/jesus-loves-hip-hop-concert-tickets-2003799493225",
         "officialUrl": "https://www.instagram.com/p/DfRHMeJDtBu/",
         "image": "assets/events/jesus-loves-hip-hop-dallas-2026-12-05.jpg",
         "imageType": "event_artwork",
@@ -47408,10 +47411,24 @@
         "sourceName": "Official artist and organizer announcements",
         "confidence": "high",
         "firstSeen": "2026-11-03T13:35:26Z",
-        "lastVerified": "2026-11-03T13:35:26Z",
-        "auditVerified": "2026-11-03",
-        "publicDescription": "Jesus Loves Hip Hop brings Christian hip-hop to Dallas with DJ Network, Set Free Music, Fearless, Freddrick HalleluYAH!!! and CADNCE. Free admission. Doors open at 4:45 PM Central; a performance start time is not specified.",
+        "lastVerified": "2026-11-24T19:09:17+00:00",
+        "auditVerified": "2026-11-24",
+        "publicDescription": "DJ Network, Set Free Music, Fearless, Freddrick HalleluYAH!!!, CADNCE and GODSWILL perform at DS Studio in Dallas. Doors open at 4:45 PM. The concert runs from 5 to 9 PM Central.",
         "sources": [
+          {
+            "name": "Jesus Loves Hip Hop announces GODSWILL",
+            "url": "https://www.instagram.com/p/DgInUy5mxaH/",
+            "type": "manual_verified",
+            "authority": "official_organizer",
+            "priority": 120
+          },
+          {
+            "name": "Jesus Loves Hip Hop concert registration and lineup",
+            "url": "https://www.eventbrite.com/e/jesus-loves-hip-hop-concert-tickets-2003799493225",
+            "type": "manual_verified",
+            "authority": "official_organizer",
+            "priority": 120
+          },
           {
             "name": "Jesus Loves Hip Hop official main flyer, five artist slides and caption",
             "url": "https://www.instagram.com/p/DfRHMeJDtBu/",
@@ -47422,20 +47439,20 @@
         ],
         "doorsTime": "16:45",
         "price": "Free",
-        "publicNotice": "Doors open at 4:45 PM Central. Performance start time unconfirmed.",
-        "notes": "All six slides and the caption of the organizer post were reviewed on November 3. First slide is the owner-selected main flyer. The 4:45 PM time is explicitly doors, not a confirmed performance start. No end time, age rule or ticket/registration offer has been confirmed. The post was published November 2, 2026 and announces Saturday December 5, consistent with 2026.",
+        "publicNotice": "Free registration is required. Eventbrite lists the event as sold out. Doors open at 4:45 PM Central.",
+        "notes": "The organizer’s November 2 main flyer gives doors at 4:45 PM. The November 24 GODSWILL announcement requires registration. Eventbrite confirms the six artists, concert hours and ticket availability.",
         "scheduleDetails": [
           {
             "label": "Doors open",
             "text": "4:45 PM Central"
           },
           {
-            "label": "Show start",
-            "text": "Unconfirmed"
+            "label": "Concert",
+            "text": "5 PM to 9 PM Central"
           },
           {
             "label": "Admission",
-            "text": "Free"
+            "text": "Free registration required. Sold out on Eventbrite."
           },
           {
             "label": "Venue address",
@@ -47445,7 +47462,19 @@
         "organizer": {
           "name": "Jesus Loves Hip Hop"
         },
-        "organizerInstagram": "https://www.instagram.com/jesusloveshiphop0/"
+        "organizerInstagram": "https://www.instagram.com/jesusloveshiphop0/",
+        "confirmedMusicalBilling": [
+          "DJ Network",
+          "Set Free Music",
+          "Fearless",
+          "Freddrick HalleluYAH!!!",
+          "CADNCE",
+          "GODSWILL"
+        ],
+        "endTime": "21:00",
+        "startDateTime": "2026-12-05T17:00:00-06:00",
+        "endDateTime": "2026-12-05T21:00:00-06:00",
+        "soldOut": true
       }
     },
     {
