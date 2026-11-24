@@ -24814,10 +24814,31 @@
     "city": "Vacaville",
     "state": "CA",
     "country": "US",
-    "artists": [],
-    "advertisedBilling": [],
-    "officialBill": [],
-    "lineupExplicit": false,
+    "artists": [
+      "zealous.",
+      "Elijah Sosa",
+      "Travy",
+      "Apflex",
+      "Tay Stunna",
+      "Andres Calles"
+    ],
+    "advertisedBilling": [
+      "zealous.",
+      "Elijah Sosa",
+      "Travy",
+      "Apflex",
+      "Tay Stunna",
+      "Andres Calles"
+    ],
+    "officialBill": [
+      "zealous.",
+      "Elijah Sosa",
+      "Travy",
+      "Apflex",
+      "Tay Stunna",
+      "Andres Calles"
+    ],
+    "lineupExplicit": true,
     "musicConfirmed": true,
     "eventType": "festival",
     "status": "scheduled",
@@ -24834,9 +24855,23 @@
     "confidence": "high",
     "firstSeen": "2026-11-04",
     "lastVerified": "2026-11-07",
-    "auditVerified": "2026-11-07",
+    "auditVerified": "2026-11-24",
     "editorialBatch": "2026-11-07-owner-approved-missing-shows",
     "sources": [
+      {
+        "name": "Encounter Festival artist flyers",
+        "url": "https://www.youtube.com/post/UgkxGxvvl7htkvAVHbXpv7eqbYlHG-ToLE1s",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 120
+      },
+      {
+        "name": "Headliner announcement from zealous.",
+        "url": "https://www.youtube.com/shorts/pCbw6_URa7E",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 120
+      },
       {
         "name": "Journey Downtown official event page",
         "url": "https://journeydowntown.com/catering-inventory/p/encounter-festival-8-january-2027",
@@ -24851,14 +24886,17 @@
     "ageRestriction": "All ages",
     "detailImageLayout": "portrait",
     "venueUrl": "https://journeydowntown.com/",
-    "publicDescription": "Encounter Festival brings Christian rap, hip-hop, pop and indie music to Journey Downtown in Vacaville. Doors open at 5:30 PM and the festival starts at 6 PM. All ages are welcome; individual performers have not been announced.",
-    "scheduleDetails": [
-      {
-        "label": "Lineup",
-        "text": "Performers have not been announced."
-      }
+    "publicDescription": "Encounter Festival brings Christian rap, hip hop, pop and indie music to Journey Downtown. Andres Calles opens. The lineup features headliner zealous. alongside Elijah Sosa, Travy, Apflex and Tay Stunna. Doors open at 5:30 PM and music starts at 6 PM. All ages are welcome.",
+    "notes": "Owner approved addition November 7. The FULL original official venue-linked flyer explicitly says January 8, 2027, doors 5:30 PM and starts 6:00 PM. Earlier cropped screenshot review missed the start line; the full original is authoritative. The artist flyers confirm six performers. The end time and checkout total are unannounced. Price from current venue page is display-only. Preserve November 4 discovery.",
+    "confirmedMusicalBilling": [
+      "zealous.",
+      "Elijah Sosa",
+      "Travy",
+      "Apflex",
+      "Tay Stunna",
+      "Andres Calles"
     ],
-    "notes": "Owner approved addition November 7. The FULL original official venue-linked flyer explicitly says January 8, 2027, doors 5:30 PM and starts 6:00 PM. Earlier cropped screenshot review missed the start line; the full original is authoritative. Named performers, organizer, end time and checkout total are unannounced. Price from current venue page is display-only. Preserve November 4 discovery."
+    "headliner": "zealous."
   },
   {
     "id": "gospel-melodies-virginia-beach-2027-03-27",
@@ -27050,14 +27088,16 @@
     "lastVerified": "2026-11-09T17:49:10.460577+00:00",
     "ageRestriction": "",
     "doorsTime": "",
-    "scheduleNote": "Published event hours; individual performer set times have not been announced.",
+    "scheduleNote": "Published festival hours. Individual set times are unannounced.",
     "lineupExplicit": true,
     "musicConfirmed": true,
     "imageType": "event_artwork",
     "imagePosition": "center",
     "imageOverride": true,
     "artists": [
-      "SYL noiZ"
+      "SYL noiZ",
+      "DJ CAM",
+      "DJ Bryce G"
     ],
     "title": "Orange Fest Florida 2027",
     "startDate": "2027-04-17",
@@ -27074,17 +27114,23 @@
     "officialUrl": "https://www.sylnoiz.com/event-details/orange-fest-florida-2027",
     "price": "",
     "advertisedBilling": [
-      "SYL noiZ"
+      "SYL noiZ",
+      "DJ CAM",
+      "DJ Bryce G"
     ],
     "organizer": "SYL",
     "organizerWebsite": "https://www.sylnoiz.com/orangefestflorida",
-    "publicDescription": "Orange Fest Florida is an Orlando Christian music festival presented by SYL. SYL noiZ is the first announced artist set to perform; additional artists have not yet been announced. The published event window is 3–10 PM at Church In The Son. RSVP is available through the official event page.",
+    "publicDescription": "SYL presents Orange Fest Florida at Church In The Son. SYL noiZ performs, DJ CAM backs the performers, and DJ Bryce G leads the closing party with the Joyful Noize. The festival runs from 3 PM to 10 PM. RSVP through the official event page.",
     "notes": "Earlier held lead now resolved by additional official festival-homepage performance announcement. Do not infer additional artists from gallery photographs or attendee widget. Price and age policy are unannounced. Official detail JSON-LD incorrectly uses-05:00 in April; advertised3–10PM wall clock is retained with venue-based America/New_York (EDT,-04:00). FirstSeen remainsNovember9 earlier assessment, not new refresh time.",
     "officialBill": [
-      "SYL noiZ"
+      "SYL noiZ",
+      "DJ CAM",
+      "DJ Bryce G"
     ],
     "confirmedMusicalBilling": [
-      "SYL noiZ"
+      "SYL noiZ",
+      "DJ CAM",
+      "DJ Bryce G"
     ],
     "imageSourceUrl": "https://www.sylnoiz.com/event-details/orange-fest-florida-2027",
     "imageSource": "Unchanged full official event artwork from artist event-page image metadata",
@@ -27095,9 +27141,16 @@
     "confidence": "high",
     "authority": "official_artist",
     "sourceName": "SYL noiZ official event calendar",
-    "auditVerified": "2026-11-09",
+    "auditVerified": "2026-11-24",
     "detailsPending": false,
     "sources": [
+      {
+        "name": "Orange Fest Florida DJ announcement",
+        "url": "https://www.instagram.com/p/DgGg0IrhyAR/",
+        "type": "manual_verified",
+        "authority": "official_organizer",
+        "priority": 120
+      },
       {
         "name": "SYL noiZ official event announcement",
         "url": "https://www.sylnoiz.com/event-details/orange-fest-florida-2027",
@@ -27120,7 +27173,7 @@
     "scheduleDetails": [
       {
         "label": "Event hours",
-        "text": "15:00–22:00 local time; individual set times unannounced."
+        "text": "3 PM to 10 PM local time. Individual set times are unannounced."
       }
     ]
   },
@@ -32548,5 +32601,84 @@
     "imageOverride": true,
     "imageSource": "Pajamas & Praise flyer shared by Just Juun",
     "imageSourceUrl": "https://www.instagram.com/reel/DgGBuB2tEVr/"
+  },
+  {
+    "id": "hip-hop-forever-svc-sxsw-austin-2027-03-20",
+    "title": "Hip Hop Forever",
+    "startDate": "2027-03-20",
+    "endDate": "2027-03-20",
+    "startTime": "",
+    "timezone": "America/Chicago",
+    "detailsPending": true,
+    "venue": "Mary E. Branch Gymnasium",
+    "address": "900 Chicon St",
+    "city": "Austin",
+    "state": "TX",
+    "postalCode": "78702",
+    "country": "US",
+    "artists": [
+      "Tedashii"
+    ],
+    "advertisedBilling": [
+      "Tedashii"
+    ],
+    "officialBill": [
+      "Tedashii"
+    ],
+    "confirmedMusicalBilling": [
+      "Tedashii"
+    ],
+    "lineupExplicit": true,
+    "musicConfirmed": true,
+    "liveCHHMusicalPerformanceConfirmed": true,
+    "status": "scheduled",
+    "eventType": "concert",
+    "confidence": "high",
+    "authority": "official_organizer",
+    "organizer": {
+      "name": "SVC Community",
+      "url": "https://sundaysvc.com/"
+    },
+    "organizerWebsite": "https://sundaysvc.com/",
+    "price": "Free",
+    "ageRestriction": "All ages",
+    "publicDescription": "Tedashii performs Saturday evening at Hip Hop Forever during SVC at SXSW. Admission is free for all ages. SXSW badge holders receive priority entry. The start time and additional artists will be announced.",
+    "description": "Tedashii performs Saturday evening at Hip Hop Forever during SVC at SXSW. Admission is free for all ages. SXSW badge holders receive priority entry. The start time and additional artists will be announced.",
+    "officialUrl": "https://sundaysvc.com/schedule",
+    "sources": [
+      {
+        "name": "SVC at SXSW concert schedule",
+        "url": "https://sundaysvc.com/schedule",
+        "type": "manual_verified",
+        "authority": "official_organizer",
+        "priority": 125
+      },
+      {
+        "name": "SVC at SXSW performer lineup",
+        "url": "https://sundaysvc.com/lineup",
+        "type": "manual_verified",
+        "authority": "official_organizer",
+        "priority": 124
+      },
+      {
+        "name": "University venue details",
+        "url": "https://htu.edu/rooms-and-reservations/mary-e-branch-gymnasium/",
+        "type": "manual_verified",
+        "authority": "official_venue",
+        "priority": 115
+      }
+    ],
+    "sourceEventIds": [
+      "hip-hop-forever-svc-sxsw-austin-2027-03-20"
+    ],
+    "firstSeen": "2026-11-24T13:42:47.129Z",
+    "auditVerified": "2026-11-24",
+    "lastVerified": "2026-11-24T15:20:04.914766+00:00",
+    "image": "assets/artists/tedashii-saved.jpg",
+    "imageType": "artist_photo",
+    "imagePosition": "center",
+    "imageOverride": true,
+    "imageSource": "Tedashii official artist portrait",
+    "imageSourceUrl": "https://i.scdn.co/image/ab6761610000e5eb55d05d56afeed09bde2d7b4c"
   }
 ]
