@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T11:39:23Z",
+  "generatedAt": "2026-11-25T11:41:59Z",
   "artistsChecked": 447,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
@@ -12,7 +12,7 @@
     "rawUpcomingUSRows": 53,
     "rawUpcomingCARows": 1,
     "rawUpcomingRows": 54,
-    "newEventsPublished": 12,
+    "newEventsPublished": 13,
     "festivalCandidatesHeld": 0,
     "requestErrors": 0
   },
@@ -25,8 +25,8 @@
   "sourceStatusCounts": {
     "delegated_to_structured_rest": 447,
     "blocked_by_robots": 451,
-    "no_events": 621,
-    "failed": 9
+    "no_events": 619,
+    "failed": 11
   },
   "newEvents": [],
   "sourceResults": [
@@ -1097,8 +1097,9 @@
       "artist": "Hyper Fenton",
       "source": "official website",
       "url": "https://hyperfenton.com/",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve https://hyperfenton.com/: <urlopen error [Errno -3] Temporary failure in name resolution>"
     },
     {
       "artist": "Hyper Fenton",
@@ -8227,8 +8228,9 @@
       "artist": "Lady Cam",
       "source": "official website",
       "url": "http://www.iloveladycam.com/",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve http://www.iloveladycam.com/: HTTP Error 429: Too Many Requests"
     },
     {
       "artist": "Lady Cam",
