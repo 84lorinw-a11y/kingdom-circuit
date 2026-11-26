@@ -29197,8 +29197,8 @@
     "doorsTime": "",
     "ageRestriction": "",
     "firstSeen": "2026-11-20T14:04:25.216788Z",
-    "lastVerified": "2026-11-20T14:08:37.385027+00:00",
-    "auditVerified": "2026-11-20",
+    "lastVerified": "2026-11-26T03:31:39.261015+00:00",
+    "auditVerified": "2026-11-25",
     "editorialBatch": "2026-11-20-requested-lineup-updates",
     "image": "assets/events/winterslam-sneakerball-morrow-2026-12-05-original.jpg",
     "imageType": "event_artwork",
@@ -29207,9 +29207,9 @@
     "imageSource": "Original organizer and artist Sneakerball flyer, preserved unchanged",
     "imageSourceUrl": "https://www.instagram.com/p/Df7zcpoGn6p/",
     "detailImageLayout": "portrait",
-    "publicDescription": "Winterslam Sneakerball features live Christian hip hop performances by Yung Kriss, Melodic B, DKG Kie, Stevie Rizzo, Toyalove, Markel and Kappaa!, with additional friends not yet named. The evening celebration includes a dance showcase and best dressed competition. The event runs 7 through 10 PM Eastern in Morrow, Georgia. The exact venue and street address will be announced. Tickets start at $25.04; see official ticket options.",
+    "publicDescription": "Winterslam Sneakerball features live performances by Yung Kriss, Melodic B, DKG Kie, Stevie Rizzo, Toyalove, Markel and Kappaa!, plus a dance showcase and best dressed competition.",
     "detailsPending": true,
-    "scheduleNote": "Event time is 7 through 10 PM Eastern. Doors and individual performance times have not been announced. The exact venue and street address are pending.",
+    "scheduleNote": "The event runs from 7 to 10 PM Eastern. The organizer has yet to announce a venue name.",
     "scheduleDetails": [
       {
         "label": "Event",
@@ -29217,7 +29217,7 @@
       },
       {
         "label": "Location",
-        "text": "Morrow, Georgia. The exact venue and street address will be announced."
+        "text": "The event flyer lists 2018 Harbin Rd in Morrow. Check with the organizer for directions."
       },
       {
         "label": "Tickets",
@@ -29248,10 +29248,25 @@
         "type": "manual_verified",
         "authority": "official_event",
         "priority": 130
+      },
+      {
+        "name": "Organizer collaboration with printed street address",
+        "url": "https://www.instagram.com/p/DgER2Ncmpve/",
+        "type": "manual_verified",
+        "authority": "official_organizer",
+        "priority": 124
+      },
+      {
+        "name": "DJ appearance flyer with event address",
+        "url": "https://www.instagram.com/p/DgLeg4_A4iQ/",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 110
       }
     ],
     "notes": "The November 19 organizer and artist announcement explicitly says LIVE PERFORMANCES BY and names all seven billed acts. Official POSH tickets confirm December 5, 2026, 7 through 10 PM Eastern and Morrow, Georgia; the venue and address remain placeholders. This is a separate evening occurrence from the earlier Forest Park charity tournament; do not move the tournament or copy its address, artwork or 11:30 AM start. Markel is the existing curated BigBreeze identity, confirmed by the exact Spotify artist ID7wrWSJHfACjw7s7gYXOXTt on the official ticket page and current roster. Markel remains the advertised name; BigBreeze is the curated association. Stevie Rizzo, Melodic B and Kappaa! remain unlinked billing, with no new profiles. Other friends remain unnamed. Ticket fees, age policy, exact doors and individual set times are unconfirmed. First source evidence in this research is November 20 at14:04:25.216788UTC; the November19 announcement date is separate.",
-    "description": "Winterslam Sneakerball features live Christian hip hop performances by Yung Kriss, Melodic B, DKG Kie, Stevie Rizzo, Toyalove, Markel and Kappaa!, with additional friends not yet named. The evening celebration includes a dance showcase and best dressed competition. The event runs 7 through 10 PM Eastern in Morrow, Georgia. The exact venue and street address will be announced. Tickets start at $25.04; see official ticket options."
+    "description": "Winterslam Sneakerball features live performances by Yung Kriss, Melodic B, DKG Kie, Stevie Rizzo, Toyalove, Markel and Kappaa!, plus a dance showcase and best dressed competition.",
+    "publicNotice": "The event flyer lists 2018 Harbin Rd in Morrow. Check with the organizer for directions."
   },
   {
     "id": "kingdom-nights-streetwear-columbia-2026-11-27",
@@ -32870,40 +32885,48 @@
     "title": "Sounds of Urban Gospel",
     "startDate": "2027-01-09",
     "endDate": "2027-01-09",
-    "startTime": "",
+    "startTime": "19:00",
     "timezone": "America/Los_Angeles",
-    "venue": "",
-    "address": "",
+    "venue": "NETWRK Studios",
+    "address": "961 Garcia Avenue, Suite A",
     "city": "Pittsburg",
     "state": "CA",
     "country": "US",
     "artists": [
+      "Nate Banks",
+      "JM3",
       "King Hez",
       "Lil Lou",
-      "JM3",
-      "Nate Banks",
-      "St.Saconni"
+      "Royal Nogueda",
+      "Saint Saconni",
+      "Stephen Pree"
     ],
     "advertisedBilling": [
+      "Nate Banks",
+      "JM3",
       "King Hez",
       "Lil Lou",
-      "JM3",
-      "Nate Banks",
-      "St.Saconni"
+      "Royal Nogueda",
+      "Saint Saconni",
+      "Stephen Pree"
     ],
     "officialBill": [
+      "Nate Banks",
+      "JM3",
       "King Hez",
       "Lil Lou",
-      "JM3",
-      "Nate Banks",
-      "St.Saconni"
+      "Royal Nogueda",
+      "Saint Saconni",
+      "Stephen Pree"
     ],
     "confirmedMusicalBilling": [
+      "Nate Banks",
+      "JM3",
       "King Hez",
       "Lil Lou",
-      "JM3",
-      "Nate Banks",
-      "St.Saconni"
+      "Royal Nogueda",
+      "Saint Saconni",
+      "Stephen Pree"
     ],
     "lineupExplicit": true,
     "musicConfirmed": true,
@@ -32912,29 +32935,45 @@
     "eventType": "concert",
     "confidence": "high",
     "authority": "official_organizer",
-    "officialUrl": "https://www.instagram.com/p/DgGRr0ISXkg/",
+    "officialUrl": "https://www.instagram.com/p/DgJeVPhhkx6/",
     "sourceEventIds": [
       "sounds-of-urban-gospel-pittsburg-2027-01-09",
-      "https://www.instagram.com/p/DgGRr0ISXkg/"
+      "https://www.instagram.com/p/DgGRr0ISXkg/",
+      "https://www.instagram.com/p/DgJeVPhhkx6/",
+      "https://www.eventbrite.com/e/sounds-of-urban-gospel-tickets-2004794468222"
     ],
     "firstSeen": "2026-11-24T19:15:20.495154Z",
-    "lastVerified": "2026-11-24T21:01:29.317954+00:00",
-    "auditVerified": "2026-11-24",
-    "image": "assets/events/sounds-of-urban-gospel-pittsburg-2027-01-09-original.jpg",
+    "lastVerified": "2026-11-26T03:31:39.261015+00:00",
+    "auditVerified": "2026-11-25",
+    "image": "assets/events/sounds-of-urban-gospel-pittsburg-2027-01-09-lineup-flyer.jpg",
     "imageOverride": true,
     "imagePosition": "center",
     "imageType": "event_artwork",
     "organizer": {
-      "name": "Catalan’s Promotions",
-      "url": "https://www.instagram.com/catalanspromotions/"
+      "name": "Sizzle Recording Studio",
+      "url": "https://www.eventbrite.com/o/sizzle-recording-studio-121980318744"
     },
-    "organizerInstagram": "https://www.instagram.com/catalanspromotions/",
-    "detailsPending": true,
-    "publicNotice": "Venue and start time to be announced.",
-    "publicDescription": "King Hez, Lil Lou, JM3, Nate Banks and St.Saconni perform at Sounds of Urban Gospel in Pittsburg. Sizzle Recording Studio presents the concert with Catalan’s Promotions.",
-    "imageSource": "Official event title artwork uploaded by organizer Lucas Catalan",
-    "imageSourceUrl": "https://www.gofundme.com/f/help-bring-faith-and-music-to-community",
+    "organizerInstagram": "https://www.instagram.com/sizzlerecordingstudio/",
+    "detailsPending": false,
+    "publicNotice": "Tickets are $12.51.",
+    "publicDescription": "Sizzle Recording Studio presents Sounds of Urban Gospel with Catalan’s Promotions. Nate Banks, JM3, King Hez, Lil Lou, Royal Nogueda, Saint Saconni and Stephen Pree perform live at NETWRK Studios in Pittsburg.",
+    "imageSource": "Sizzle Recording Studio official concert flyer",
+    "imageSourceUrl": "https://www.instagram.com/p/DgJeVPhhkx6/",
     "sources": [
+      {
+        "name": "Official concert tickets and complete lineup",
+        "url": "https://www.eventbrite.com/e/sounds-of-urban-gospel-tickets-2004794468222",
+        "type": "manual_verified",
+        "authority": "official_organizer",
+        "priority": 131
+      },
+      {
+        "name": "Concert flyer with the full lineup",
+        "url": "https://www.instagram.com/p/DgJeVPhhkx6/",
+        "type": "manual_verified",
+        "authority": "official_organizer",
+        "priority": 130
+      },
       {
         "name": "Organizer concert and lineup announcement",
         "url": "https://www.instagram.com/p/DgGRr0ISXkg/",
@@ -32957,6 +32996,208 @@
         "priority": 114
       }
     ],
-    "description": "King Hez, Lil Lou, JM3, Nate Banks and St.Saconni perform at Sounds of Urban Gospel in Pittsburg. Sizzle Recording Studio presents the concert with Catalan’s Promotions."
+    "description": "Sizzle Recording Studio presents Sounds of Urban Gospel with Catalan’s Promotions. Nate Banks, JM3, King Hez, Lil Lou, Royal Nogueda, Saint Saconni and Stephen Pree perform live at NETWRK Studios in Pittsburg.",
+    "endTime": "22:00",
+    "startDateTime": "2027-01-09T19:00:00-08:00",
+    "endDateTime": "2027-01-09T22:00:00-08:00",
+    "postalCode": "94565",
+    "ticketUrl": "https://www.eventbrite.com/e/sounds-of-urban-gospel-tickets-2004794468222",
+    "ticketUrlVerified": true,
+    "price": "$12.51"
+  },
+  {
+    "title": "More Than A Dream Night",
+    "startDate": "2027-01-09",
+    "endDate": "2027-01-09",
+    "timezone": "America/New_York",
+    "city": "Queens",
+    "state": "NY",
+    "postalCode": "11374",
+    "country": "US",
+    "address": "92-14 63rd Drive",
+    "venue": "Our Saviour New York",
+    "startTime": "19:00",
+    "endTime": "21:00",
+    "ticketUrl": "https://posh.vip/e/more-than-a-dream-night-new-york-city",
+    "officialUrl": "https://posh.vip/e/more-than-a-dream-night-new-york-city",
+    "price": "From $25",
+    "firstSeen": "2026-11-26T03:13:13.338368+00:00",
+    "artists": [
+      "De La Cruz"
+    ],
+    "officialBill": [
+      "De La Cruz",
+      "DJ Boogie"
+    ],
+    "advertisedBilling": [
+      "De La Cruz",
+      "DJ Boogie"
+    ],
+    "confirmedMusicalBilling": [
+      "De La Cruz",
+      "DJ Boogie"
+    ],
+    "doorsTime": "19:00",
+    "publicDescription": "De La Cruz and friends bring More Than A Dream Night to Rego Park in Queens, with music by DJ Boogie.",
+    "publicNotice": "VIP admission begins at 6 PM. General admission runs from 7 to 9 PM. The organizer invites guests to bring a hat.",
+    "id": "more-than-a-dream-night-queens-2027-01-09",
+    "lastVerified": "2026-11-26T03:31:18.275392+00:00",
+    "auditVerified": "2026-11-25",
+    "confidence": "high",
+    "authority": "official_organizer",
+    "status": "scheduled",
+    "eventType": "concert",
+    "musicConfirmed": true,
+    "liveCHHMusicalPerformanceConfirmed": true,
+    "lineupExplicit": true,
+    "ticketUrlVerified": true,
+    "image": "assets/events/more-than-a-dream-night-queens-2027-01-09-original.jpg",
+    "imagePosition": "center",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imageSource": "Original concert artwork from the organizer",
+    "imageSourceUrl": "https://images.posh.vip/originals/6b00c41c390b28dc8bc37d0e",
+    "description": "De La Cruz and friends bring More Than A Dream Night to Rego Park in Queens, with music by DJ Boogie.",
+    "sourceEventIds": [
+      "more-than-a-dream-night-queens-2027-01-09",
+      "https://posh.vip/e/more-than-a-dream-night-new-york-city",
+      "https://www.instagram.com/p/DgLoAywNA8V/"
+    ],
+    "sources": [
+      {
+        "name": "Official concert tickets",
+        "url": "https://posh.vip/e/more-than-a-dream-night-new-york-city",
+        "type": "manual_verified",
+        "authority": "official_organizer",
+        "priority": 130
+      },
+      {
+        "name": "Artist concert announcement",
+        "url": "https://www.instagram.com/p/DgLoAywNA8V/",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 125
+      }
+    ],
+    "headliner": "De La Cruz",
+    "organizer": {
+      "name": "De La Cruz",
+      "url": "https://posh.vip/g/de-la-cruz"
+    },
+    "organizerWebsite": "https://posh.vip/g/de-la-cruz",
+    "startDateTime": "2027-01-09T19:00:00-05:00",
+    "endDateTime": "2027-01-09T21:00:00-05:00"
+  },
+  {
+    "title": "Spring Fest in Whiteville",
+    "startDate": "2027-03-14",
+    "endDate": "2027-03-14",
+    "timezone": "America/New_York",
+    "city": "Whiteville",
+    "state": "NC",
+    "postalCode": "28472",
+    "country": "US",
+    "address": "600 Pinelog Road",
+    "venue": "Brunswick Waccamaw Association Building",
+    "startTime": "18:00",
+    "endTime": "23:00",
+    "ticketUrl": "https://www.eventbrite.com/e/spring-fest-in-whiteville-north-carolina-tickets-2003429116418",
+    "officialUrl": "https://www.eventbrite.com/e/spring-fest-in-whiteville-north-carolina-tickets-2003429116418",
+    "price": "$25 in advance, $35 at the door",
+    "firstSeen": "2026-11-26T03:13:02.893963+00:00",
+    "artists": [
+      "Miz Tiffany"
+    ],
+    "officialBill": [
+      "Kim Person",
+      "Unknown Preacher L.A.",
+      "Terri McConnell",
+      "Supe",
+      "Demarcia Walton",
+      "Kimala Brady",
+      "Asaun Bynum",
+      "Miz Tiffany",
+      "Brooklyn AllStars",
+      "Legendary Mighty Clouds of Joy",
+      "Mighty Echoes"
+    ],
+    "advertisedBilling": [
+      "Kim Person",
+      "Unknown Preacher L.A.",
+      "Terri McConnell",
+      "Supe",
+      "Demarcia Walton",
+      "Kimala Brady",
+      "Asaun Bynum",
+      "Miz Tiffany",
+      "Brooklyn AllStars",
+      "Legendary Mighty Clouds of Joy",
+      "Mighty Echoes"
+    ],
+    "confirmedMusicalBilling": [
+      "Kim Person",
+      "Unknown Preacher L.A.",
+      "Terri McConnell",
+      "Supe",
+      "Demarcia Walton",
+      "Kimala Brady",
+      "Asaun Bynum",
+      "Miz Tiffany",
+      "Brooklyn AllStars",
+      "Legendary Mighty Clouds of Joy",
+      "Mighty Echoes"
+    ],
+    "doorsTime": "17:00",
+    "publicDescription": "Miz Tiffany joins the Spring Fest gospel concert in Whiteville. Reggie Dyson of Rejoice FM hosts.",
+    "publicNotice": "Doors open at 5 PM and music starts at 6 PM. Admission is $25 in advance or $35 at the door.",
+    "id": "whiteville-spring-fest-2027-03-14",
+    "lastVerified": "2026-11-26T03:31:18.275392+00:00",
+    "auditVerified": "2026-11-25",
+    "confidence": "high",
+    "authority": "official_organizer",
+    "status": "scheduled",
+    "eventType": "concert",
+    "musicConfirmed": true,
+    "liveCHHMusicalPerformanceConfirmed": true,
+    "lineupExplicit": true,
+    "ticketUrlVerified": true,
+    "image": "assets/events/whiteville-spring-fest-2027-03-14-original.png",
+    "imagePosition": "center",
+    "imageType": "event_artwork",
+    "imageOverride": true,
+    "imageSource": "Original concert artwork from the organizer",
+    "imageSourceUrl": "https://cdn.evbuc.com/images/1195811564/760443269183/1/original.20261014-195058",
+    "description": "Miz Tiffany joins the Spring Fest gospel concert in Whiteville. Reggie Dyson of Rejoice FM hosts.",
+    "sourceEventIds": [
+      "whiteville-spring-fest-2027-03-14",
+      "https://www.eventbrite.com/e/spring-fest-in-whiteville-north-carolina-tickets-2003429116418",
+      "https://www.instagram.com/p/DgJxeEthouE/"
+    ],
+    "sources": [
+      {
+        "name": "Official concert tickets",
+        "url": "https://www.eventbrite.com/e/spring-fest-in-whiteville-north-carolina-tickets-2003429116418",
+        "type": "manual_verified",
+        "authority": "official_organizer",
+        "priority": 130
+      },
+      {
+        "name": "Artist concert announcement",
+        "url": "https://www.instagram.com/p/DgJxeEthouE/",
+        "type": "manual_verified",
+        "authority": "official_artist",
+        "priority": 125
+      }
+    ],
+    "hosts": [
+      "Reggie Dyson"
+    ],
+    "organizer": {
+      "name": "Blockbuster Records / Calvin Norton",
+      "url": "https://www.eventbrite.com/o/blockbuster-records-calvin-norton-39787545783"
+    },
+    "organizerWebsite": "https://www.eventbrite.com/o/blockbuster-records-calvin-norton-39787545783",
+    "startDateTime": "2027-03-14T18:00:00-04:00",
+    "endDateTime": "2027-03-14T23:00:00-04:00"
   }
 ]
