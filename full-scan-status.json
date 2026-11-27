@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T11:41:32Z",
+  "generatedAt": "2026-11-27T11:39:06Z",
   "artistsChecked": 447,
   "rawEventsFound": 0,
   "newEventsPublished": 0,
@@ -9,10 +9,10 @@
     "status": "ok",
     "artistsAttempted": 447,
     "resolved": 266,
-    "rawUpcomingUSRows": 54,
+    "rawUpcomingUSRows": 55,
     "rawUpcomingCARows": 1,
-    "rawUpcomingRows": 55,
-    "newEventsPublished": 14,
+    "rawUpcomingRows": 56,
+    "newEventsPublished": 15,
     "festivalCandidatesHeld": 0,
     "requestErrors": 0
   },
@@ -24,8 +24,8 @@
   },
   "sourceStatusCounts": {
     "delegated_to_structured_rest": 447,
-    "blocked_by_robots": 451,
-    "no_events": 620,
+    "blocked_by_robots": 452,
+    "no_events": 619,
     "failed": 10
   },
   "newEvents": [],
@@ -2392,9 +2392,8 @@
       "artist": "Queen Lee",
       "source": "Spotify profile",
       "url": "https://open.spotify.com/artist/0ESxKUSobqG0GkLrxg77XS",
-      "status": "failed",
-      "eventsFound": 0,
-      "error": "Unable to retrieve https://open.spotify.com/artist/0ESxKUSobqG0GkLrxg77XS: HTTP Error 500: Internal Server Error"
+      "status": "no_events",
+      "eventsFound": 0
     },
     {
       "artist": "Biancallove",
@@ -5754,7 +5753,7 @@
       "artist": "Drea LP",
       "source": "official website",
       "url": "https://drealp.com",
-      "status": "no_events",
+      "status": "blocked_by_robots",
       "eventsFound": 0
     },
     {
@@ -8228,8 +8227,9 @@
       "artist": "Lady Cam",
       "source": "official website",
       "url": "http://www.iloveladycam.com/",
-      "status": "no_events",
-      "eventsFound": 0
+      "status": "failed",
+      "eventsFound": 0,
+      "error": "Unable to retrieve http://www.iloveladycam.com/: HTTP Error 429: Too Many Requests"
     },
     {
       "artist": "Lady Cam",
